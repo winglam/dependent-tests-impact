@@ -1,0 +1,14 @@
+r3[i2] = 0
+$i4 = i1 + 1
+$c3 = r1[i2]
+if i1 != i0 goto i2 = 0
+$i5 = virtualinvoke r2.<java.lang.StringBuffer: int length()>()
+i2 = 0
+r3[i2] = 1
+$z0 = r3[i2]
+goto [?= i2 = i2 + 1]
+r4 = virtualinvoke r1.<java.lang.String: char[] toCharArray()>()
+r2 = newarray (boolean)[i0]
+i0 = virtualinvoke r1.<java.lang.String: int length()>()
+virtualinvoke r0.<edu.washington.cs.dt.impact.StringPermute: void doPermute(char[],java.lang.StringBuffer,boolean[],int,int)>(r4, r3, r2, i0, 0)
+$r5 = new java.lang.StringBuffer
