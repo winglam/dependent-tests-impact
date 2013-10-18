@@ -14,12 +14,11 @@ import java.util.List;
 
 public class TestListGenerator {
 
-    private static List<TestMethodData> methodList = new ArrayList<TestMethodData>();
     private enum TECHNIQUE {PRIORITIZATION, SELECTION};
     private final static TECHNIQUE DEFAULT_TECHNIQUE = TECHNIQUE.PRIORITIZATION;
     private final static String DEFAULT_TEST_DIR = "sootTestOutput";
     private static String outputFileName;
-
+    private static List<TestMethodData> methodList = new ArrayList<TestMethodData>();
 
     public static void main(String[] args) {
         /* check the arguments */
@@ -31,7 +30,6 @@ public class TestListGenerator {
         // list to parse the arguments
         List<String> argsList = new ArrayList<String>(Arrays.asList(args));
 
-        //
         TECHNIQUE techniqueName = DEFAULT_TECHNIQUE;
         // get the technique
         int techniqueIndex = argsList.indexOf("-technique");
