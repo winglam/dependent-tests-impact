@@ -21,12 +21,6 @@ public class TestListGenerator {
     private static List<TestMethodData> methodList = new ArrayList<TestMethodData>();
 
     public static void main(String[] args) {
-        /* check the arguments */
-        if (args.length == 0) {
-            System.err.println("Usage: java MainDriver [options] classname");
-            System.exit(0);
-        }
-
         // list to parse the arguments
         List<String> argsList = new ArrayList<String>(Arrays.asList(args));
 
