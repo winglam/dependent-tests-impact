@@ -48,7 +48,9 @@ import soot.jimple.ReturnStmt;
 import soot.jimple.ReturnVoidStmt;
 import soot.jimple.Stmt;
 import soot.jimple.StringConstant;
+import soot.tagkit.AnnotationTag;
 import soot.tagkit.LineNumberTag;
+import soot.tagkit.VisibilityAnnotationTag;
 import soot.util.Chain;
 
 public class Instrumenter extends BodyTransformer{
@@ -56,7 +58,11 @@ public class Instrumenter extends BodyTransformer{
     /* some internal fields */
     static SootClass tracerClass;
     static SootMethod trace, output, reset;
-    static boolean testClass;
+    private static final String JUNIT4_TAG = "VisibilityAnnotationTag";
+    private static final String JUNIT4_TYPE = "Lorg/junit/Test;";
+    private static final String JUNIT3_CLASS = "junit.framework.TestCase";
+    private static final String JUNIT3_RETURN = "void";
+    private static final String JUNIT3_METHOD_PREFIX = "test";
 
     static {
         tracerClass    = Scene.v().loadClassAndSupport("edu.washington.cs.dt.impact.Tracer");
@@ -77,6 +83,27 @@ public class Instrumenter extends BodyTransformer{
             return;
         }
 
+        boolean isJUnit4 = false;
+        VisibilityAnnotationTag vat = (VisibilityAnnotationTag) method.getTag(JUNIT4_TAG);
+        if (vat != null) {
+            List<AnnotationTag> tags = vat.getAnnotations();
+            for (AnnotationTag at : tags) {
+                isJUnit4 = at.getType().equals(JUNIT4_TYPE);
+                if (isJUnit4) {
+                    break;
+                }
+            }
+        }
+
+        boolean isJUnit3 = false;
+        if (!isJUnit4 && method.getName().length() > 3) {
+            String retType = method.getReturnType().toString();
+            String name = method.getName().substring(0, 4);
+            String className = method.getDeclaringClass().getSuperclass().getName();
+            isJUnit3 = method.isPublic() && retType.equals(JUNIT3_RETURN)
+                    && className.equals(JUNIT3_CLASS) && name.equals(JUNIT3_METHOD_PREFIX);
+        }
+
         // get body's unit as a chain
         Chain units = body.getUnits();
 
@@ -84,7 +111,7 @@ public class Instrumenter extends BodyTransformer{
         // mutate the chain when iterating over it.
         Iterator stmtIt = units.snapshotIterator();
 
-        if (testClass) {
+        if (isJUnit4 || isJUnit3) {
             // label0:
             //   ... (method body -- before final return)
             // label1:
@@ -99,6 +126,7 @@ public class Instrumenter extends BodyTransformer{
 
             // get access to Throwable class and toString method
             SootClass thrwCls = Scene.v().getSootClass("java.lang.Throwable");
+            SootMethod initThrow = thrwCls.getMethod("java.lang.Throwable initCause(java.lang.Throwable)");
 
             // create probe from label1 to label3 (excluding return)
             List<Stmt> probe = new ArrayList<Stmt>();
@@ -127,6 +155,12 @@ public class Instrumenter extends BodyTransformer{
             Stmt sCatch = Jimple.v().newIdentityStmt(lException1, Jimple.v().newCaughtExceptionRef());
             probe.add(sCatch);
 
+            //            Type throwType = thrwCls.getType();
+            //            Local lSysOut = getCreateLocal(body, "<throw>", throwType);
+            //            Stmt callThrow = Jimple.v().newInvokeStmt(Jimple.v().newVirtualInvokeExpr(lException1, initThrow.makeRef(),
+            //                    lSysOut));
+            //            probe.add(callThrow);
+
             insertRightBeforeNoRedirect(pchain, probe, sLast);
 
             // insert trap (catch)
@@ -144,7 +178,7 @@ public class Instrumenter extends BodyTransformer{
                         ||(stmt instanceof ReturnVoidStmt)) {
                     // 1. make invoke expression of MyCounter.report()
                     InvokeExpr reportExpr= Jimple.v().newStaticInvokeExpr(output.makeRef(),
-                            StringConstant.v(method.getName()));
+                            StringConstant.v(method.getDeclaringClass().getPackageName() + "." + method.getDeclaringClass().getName() + "." + method.getName()));
                     // 2. then, make a invoke statement
                     Stmt reportStmt = Jimple.v().newInvokeStmt(reportExpr);
                     // 3. insert new statement into the chain
@@ -161,8 +195,6 @@ public class Instrumenter extends BodyTransformer{
                 }
             }
         } else {
-            // debugging
-            System.out.println("instrumenting method : " + method.getSignature());
             Set<Integer> lines = new HashSet<Integer>();
 
             // typical while loop for iterating over each statement

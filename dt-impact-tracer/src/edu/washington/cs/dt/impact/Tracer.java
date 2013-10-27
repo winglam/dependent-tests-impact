@@ -24,7 +24,7 @@ public class Tracer {
         }
     }
 
-    public static void output(String methodName) {
+    public static void output(String packageMethodName) {
         File theDir = new File("sootTestOutput");
         // if the directory does not exist, create it
         if (!theDir.exists()) {
@@ -36,7 +36,7 @@ public class Tracer {
         FileWriter output = null;
         BufferedWriter writer = null;
         try {
-            output = new FileWriter("sootTestOutput" + File.separator + methodName);
+            output = new FileWriter("sootTestOutput" + File.separator + packageMethodName);
             writer = new BufferedWriter(output);
             Collection<Set<String>> statementsCalled= statements.values();
 

@@ -53,7 +53,7 @@ public class TestListGenerator {
             // get index of output directory
             int testInputDirNameIndex = testInputDir + 1;
             if (testInputDirNameIndex >= argsList.size()) {
-                System.err.println("Test input directory argument is specified but a directory name is not. Please use the format: -testInputDir adirname");
+                System.err.println("Test input directory argument is specified but a directory name is not. Please use the format: -testInputDir aDirName");
                 System.exit(0);
             }
             testInputDirName = argsList.get(testInputDirNameIndex);
@@ -65,7 +65,7 @@ public class TestListGenerator {
             // get index of output file
             int outputFileNameIndex = outputFile+ 1;
             if (outputFileNameIndex >= argsList.size()) {
-                System.err.println("Output file argument is specified but a file name is not. Please use the format: -outputFile afilename");
+                System.err.println("Output file argument is specified but a file name is not. Please use the format: -outputFile aFileName");
                 System.exit(0);
             }
             outputFileName = argsList.get(outputFileNameIndex);

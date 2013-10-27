@@ -21,12 +21,6 @@ public class MainDriver {
         // list to parse the arguments
         List<String> argsList = new ArrayList<String>(Arrays.asList(args));
 
-        int testClassIndex = argsList.indexOf("-testClasses");
-        Instrumenter.testClass = testClassIndex != -1;
-        if (Instrumenter.testClass) {
-            argsList.remove(testClassIndex);
-        }
-
         // get list of files to instrument
         int inputDirIndex = argsList.indexOf("-inputDir");
         if (inputDirIndex != -1) {
