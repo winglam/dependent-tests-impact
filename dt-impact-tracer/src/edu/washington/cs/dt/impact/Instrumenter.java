@@ -99,9 +99,17 @@ public class Instrumenter extends BodyTransformer{
         if (!isJUnit4 && method.getName().length() > 3) {
             String retType = method.getReturnType().toString();
             String name = method.getName().substring(0, 4);
-            String className = method.getDeclaringClass().getSuperclass().getName();
+            boolean extendsJUnit = false;
+            SootClass superClass = method.getDeclaringClass().getSuperclass();
+            while(superClass.hasSuperclass()) {
+                if (superClass.getName().equals(JUNIT3_CLASS)) {
+                    extendsJUnit = true;
+                    break;
+                }
+                superClass = superClass.getSuperclass();
+            }
             isJUnit3 = method.isPublic() && retType.equals(JUNIT3_RETURN)
-                    && className.equals(JUNIT3_CLASS) && name.equals(JUNIT3_METHOD_PREFIX);
+                    && extendsJUnit && name.equals(JUNIT3_METHOD_PREFIX);
         }
 
         // get body's unit as a chain
@@ -178,7 +186,7 @@ public class Instrumenter extends BodyTransformer{
                         ||(stmt instanceof ReturnVoidStmt)) {
                     // 1. make invoke expression of MyCounter.report()
                     InvokeExpr reportExpr= Jimple.v().newStaticInvokeExpr(output.makeRef(),
-                            StringConstant.v(method.getDeclaringClass().getPackageName() + "." + method.getDeclaringClass().getName() + "." + method.getName()));
+                            StringConstant.v(method.getDeclaringClass().getName() + "." + method.getName()));
                     // 2. then, make a invoke statement
                     Stmt reportStmt = Jimple.v().newInvokeStmt(reportExpr);
                     // 3. insert new statement into the chain
