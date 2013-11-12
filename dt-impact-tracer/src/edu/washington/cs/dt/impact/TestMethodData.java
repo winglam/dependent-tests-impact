@@ -6,28 +6,38 @@ import java.util.Set;
 public class TestMethodData implements Comparable<TestMethodData>{
 
     private String methodName;
-    private Set<String> lines;
+    private Set<String> mLines;
 
     public TestMethodData(String name) {
         this.methodName = name;
-        lines = new HashSet<String>();
+        mLines = new HashSet<String>();
     }
 
     public void addLine(String line) {
-        lines.add(line);
+        mLines.add(line);
     }
 
     public int getLineCount() {
-        return lines.size();
+        return mLines.size();
     }
 
     public String getName() {
         return methodName;
     }
 
+    public void removeLines(Set<String> lines) {
+        for (String line : lines) {
+            mLines.remove(line);
+        }
+    }
+
+    public Set<String> getLines() {
+        return mLines;
+    }
+
     @Override
     public int compareTo(TestMethodData o) {
-        int mLineCount = lines.size();
+        int mLineCount = mLines.size();
         int oLineCount = o.getLineCount();
 
         if (mLineCount < oLineCount) {

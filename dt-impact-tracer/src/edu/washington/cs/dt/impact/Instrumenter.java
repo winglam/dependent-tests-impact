@@ -175,37 +175,26 @@ public class Instrumenter extends BodyTransformer{
             body.getTraps().add(Jimple.v().newTrap(thrwCls, sFirstNonId, sGotoLast, sCatch));
 
             // Do not forget to insert instructions to report the counter
-            // this only happens before the exit points of main method.
-            // re-iterate the body to look for return statement
             stmtIt = units.snapshotIterator();
             while (stmtIt.hasNext()) {
                 Stmt stmt = (Stmt)stmtIt.next();
 
-                // check if the instruction is a return with/without value
                 if ((stmt instanceof ReturnStmt)
                         ||(stmt instanceof ReturnVoidStmt)) {
-                    // 1. make invoke expression of MyCounter.report()
+                    // output the contents of the tracer
                     InvokeExpr reportExpr= Jimple.v().newStaticInvokeExpr(output.makeRef(),
                             StringConstant.v(method.getDeclaringClass().getName() + "." + method.getName()));
-                    // 2. then, make a invoke statement
                     Stmt reportStmt = Jimple.v().newInvokeStmt(reportExpr);
-                    // 3. insert new statement into the chain
-                    //    (we are mutating the unit chain).
                     units.insertBefore(reportStmt, stmt);
 
-                    // 1. make invoke expression of MyCounter.report()
+                    // reset the tracer
                     InvokeExpr resetExpr= Jimple.v().newStaticInvokeExpr(reset.makeRef());
-                    // 2. then, make a invoke statement
                     Stmt resetStmt = Jimple.v().newInvokeStmt(resetExpr);
-                    // 3. insert new statement into the chain
-                    //    (we are mutating the unit chain).
                     units.insertAfter(resetStmt, reportStmt);
                 }
             }
         } else {
             Set<Integer> lines = new HashSet<Integer>();
-
-            // typical while loop for iterating over each statement
             while (stmtIt.hasNext()) {
                 // cast back to a statement.
                 Stmt stmt = (Stmt)stmtIt.next();
@@ -222,24 +211,15 @@ public class Instrumenter extends BodyTransformer{
                 if (stmt.hasTag("LineNumberTag") && !lines.contains(t.getLineNumber())) {
                     lines.add(t.getLineNumber());
 
-                    // now we reach the real instruction
-                    // call Chain.insertBefore() to insert instructions
-                    // 1. first, make a new invoke expression
                     InvokeExpr incExpr= Jimple.v().newStaticInvokeExpr(trace.makeRef(),
                             StringConstant.v(stmt.toString()), StringConstant.v(method.getName()));
-
-                    // 2. then, make a invoke statement
                     Stmt incStmt = Jimple.v().newInvokeStmt(incExpr);
-
-                    // 3. insert new statement into the chain
-                    //    (we are mutating the unit chain).
                     units.insertBefore(incStmt, stmt);
                 }
             }
         }
     }
 
-    /** Insert code just before target stmt, IGNORING any existing probe mappings. */
     private void insertRightBeforeNoRedirect(PatchingChain pchain, List instrumCode, Stmt s) {
         assert !(s instanceof IdentityStmt);
         for (Object stmt : instrumCode) {

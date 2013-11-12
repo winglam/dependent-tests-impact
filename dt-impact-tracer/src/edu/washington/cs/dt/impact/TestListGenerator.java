@@ -14,11 +14,12 @@ import java.util.List;
 
 public class TestListGenerator {
 
-    private enum TECHNIQUE {PRIORITIZATION, SELECTION};
-    private final static TECHNIQUE DEFAULT_TECHNIQUE = TECHNIQUE.PRIORITIZATION;
+    private enum TECHNIQUE {PRIORITIZATION_STMT_ABSOLUTE, PRIORITIZATION_STMT_RELATIVE, SELECTION};
+    private final static TECHNIQUE DEFAULT_TECHNIQUE = TECHNIQUE.PRIORITIZATION_STMT_ABSOLUTE;
     private final static String DEFAULT_TEST_DIR = "sootTestOutput";
     private static String outputFileName;
     private static List<TestMethodData> methodList = new ArrayList<TestMethodData>();
+    private static boolean isRelative = false;
 
     public static void main(String[] args) {
         // list to parse the arguments
@@ -36,12 +37,14 @@ public class TestListGenerator {
             }
 
             String techniqueStr = argsList.get(techniqueNameIndex).toLowerCase().trim();
-            if (techniqueStr.equals("prioritization")) {
-                techniqueName = TECHNIQUE.PRIORITIZATION;
+            if (techniqueStr.equals("prioritization-stmt-absolute")) {
+                techniqueName = TECHNIQUE.PRIORITIZATION_STMT_ABSOLUTE;
+            } else if (techniqueStr.equals("prioritization-stmt-relative")) {
+                techniqueName = TECHNIQUE.PRIORITIZATION_STMT_RELATIVE;
             } else if (techniqueStr.equals("selection")) {
                 techniqueName = TECHNIQUE.SELECTION;
             } else {
-                System.err.println("Technique name is invalid. Try \"prioritization\" or \"selection\".");
+                System.err.println("Technique name is invalid. Try \"prioritization-stmt-absolute\", \"prioritization-stmt-relative\" or \"selection\".");
                 System.exit(0);
             }
         }
@@ -71,19 +74,33 @@ public class TestListGenerator {
             outputFileName = argsList.get(outputFileNameIndex);
         }
 
-        if (techniqueName == TECHNIQUE.PRIORITIZATION) {
-            testPrioritization(testInputDirName);
+        if (techniqueName == TECHNIQUE.PRIORITIZATION_STMT_ABSOLUTE) {
+            testPrioritizationStmt(testInputDirName);
+        } else if (techniqueName == TECHNIQUE.PRIORITIZATION_STMT_RELATIVE) {
+            isRelative = true;
+            testPrioritizationStmt(testInputDirName);
         } else if (techniqueName == TECHNIQUE.SELECTION) {
             testSelection(testInputDirName);
         }
     }
 
-    public static void testPrioritization(String outputDirName) {
+    public static void testPrioritizationStmt(String outputDirName) {
         listFilesForFolder(new File(outputDirName));
         Collections.sort(methodList);
         if (outputFileName == null) {
-            for (TestMethodData methodData : methodList) {
-                System.out.println(methodData.getName());
+            if (isRelative) {
+                while (methodList.size() > 0) {
+                    TestMethodData highestData = methodList.remove(0);
+                    System.out.println(highestData.getName());
+                    for (TestMethodData methodData : methodList) {
+                        methodData.removeLines(highestData.getLines());
+                    }
+                    Collections.sort(methodList);
+                }
+            } else {
+                for (TestMethodData methodData : methodList) {
+                    System.out.println(methodData.getName());
+                }
             }
         } else {
             FileWriter output = null;
@@ -91,8 +108,19 @@ public class TestListGenerator {
             try {
                 output = new FileWriter(outputFileName);
                 writer = new BufferedWriter(output);
-                for (TestMethodData methodData : methodList) {
-                    writer.write(methodData.getName() + "\n");
+                if (isRelative) {
+                    while (methodList.size() > 0) {
+                        TestMethodData highestData = methodList.remove(0);
+                        writer.write(highestData.getName() + "\n");
+                        for (TestMethodData methodData : methodList) {
+                            methodData.removeLines(highestData.getLines());
+                        }
+                        Collections.sort(methodList);
+                    }
+                } else {
+                    for (TestMethodData methodData : methodList) {
+                        writer.write(methodData.getName() + "\n");
+                    }
                 }
             } catch (Exception e) {
                 throw new RuntimeException(e);
