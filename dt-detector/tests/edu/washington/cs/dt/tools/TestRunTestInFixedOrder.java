@@ -58,4 +58,5 @@ public class TestRunTestInFixedOrder extends TestCase {
 		
 		Log.log = null;
 	}
+	
 }
