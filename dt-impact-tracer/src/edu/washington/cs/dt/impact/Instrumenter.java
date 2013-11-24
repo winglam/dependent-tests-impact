@@ -163,6 +163,7 @@ public class Instrumenter extends BodyTransformer{
             Stmt sCatch = Jimple.v().newIdentityStmt(lException1, Jimple.v().newCaughtExceptionRef());
             probe.add(sCatch);
 
+            // TODO after catching an exception in a test, throw the exception back
             //            Type throwType = thrwCls.getType();
             //            Local lSysOut = getCreateLocal(body, "<throw>", throwType);
             //            Stmt callThrow = Jimple.v().newInvokeStmt(Jimple.v().newVirtualInvokeExpr(lException1, initThrow.makeRef(),

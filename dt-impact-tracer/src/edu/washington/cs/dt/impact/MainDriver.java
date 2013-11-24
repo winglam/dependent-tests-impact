@@ -46,12 +46,13 @@ public class MainDriver {
         Pack jtp = PackManager.v().getPack("jtp");
         jtp.add(new Transform("jtp.instrumenter",
                 new Instrumenter()));
-        /* Give control to Soot to process all options,
-         * Instrumenter.internalTransform will get called.
-         */
 
         argsList.add("-keep-line-number");
         String[] sootArgs = argsList.toArray(new String[argsList.size()]);
+
+        /* Give control to Soot to process all options,
+         * Instrumenter.internalTransform will get called.
+         */
         soot.Main.main(sootArgs);
     }
 }

@@ -64,15 +64,38 @@ public class TestListGenerator {
 
         // if specified, the output is saved to the file name instead of printed to console
         int outputFile = argsList.indexOf("-outputFile");
-        if (outputFile!= -1) {
+        if (outputFile != -1) {
             // get index of output file
-            int outputFileNameIndex = outputFile+ 1;
+            int outputFileNameIndex = outputFile + 1;
             if (outputFileNameIndex >= argsList.size()) {
                 System.err.println("Output file argument is specified but a file name is not. Please use the format: -outputFile aFileName");
                 System.exit(0);
             }
             outputFileName = argsList.get(outputFileNameIndex);
         }
+
+        // if specified, the output is saved to the file name instead of printed to console
+        int categoryIndex = argsList.indexOf("-category");
+        if (categoryIndex != -1) {
+            // get index of output file
+            int categoryNameIndex = categoryIndex + 1;
+            if (categoryNameIndex  >= argsList.size()) {
+                System.err.println("Category argument is specified but valid category was not. Please use the format: -category aCategoryName");
+                System.exit(0);
+            }
+            String categoryStr = argsList.get(categoryNameIndex).trim().toLowerCase();
+            if (categoryStr.equals("statement")) {
+                TestMethodData.category = Constants.CATEGORY.STATEMENT;
+            } else if (categoryStr.equals("branch")) {
+                TestMethodData.category = Constants.CATEGORY.BRANCH;
+            } else if (categoryStr.equals("function")) {
+                TestMethodData.category = Constants.CATEGORY.FUNCTION;
+            } else {
+                System.err.println("Category is invalid. Try \"statement\", \"branch\" or \"function\".");
+                System.exit(0);
+            }
+        }
+
 
         if (techniqueName == TECHNIQUE.PRIORITIZATION_STMT_ABSOLUTE) {
             testPrioritizationStmt(testInputDirName);
@@ -141,10 +164,14 @@ public class TestListGenerator {
     }
 
     public static void testSelection(String outputDirName) {
-
+        // TODO
     }
 
     public static void listFilesForFolder(final File folder) {
+        if (folder == null) {
+            throw new RuntimeException("sootOutput is missing some required classes.");
+        }
+
         for (final File fileEntry : folder.listFiles()) {
             if (fileEntry.isFile()) {
                 TestMethodData methodData = new TestMethodData(fileEntry.getName());

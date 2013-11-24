@@ -4,7 +4,6 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -38,12 +37,13 @@ public class Tracer {
         try {
             output = new FileWriter("sootTestOutput" + File.separator + packageMethodName);
             writer = new BufferedWriter(output);
-            Collection<Set<String>> statementsCalled= statements.values();
 
-            for (Set<String> statementsPerClass : statementsCalled) {
-                for (String s : statementsPerClass) {
+            for (String key : statements.keySet()) {
+                writer.write(key + " >>>>>>>>\n");
+                for (String s : statements.get(key)) {
                     writer.write(s + "\n");
                 }
+                writer.write("<<<<<<<< " + key + "\n");
             }
         } catch (Exception e) {
             throw new RuntimeException(e);

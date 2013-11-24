@@ -1,20 +1,25 @@
 package edu.washington.cs.dt.impact;
 
-import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.Set;
 
 public class TestMethodData implements Comparable<TestMethodData>{
+    public static Constants.CATEGORY category = Constants.CATEGORY.STATEMENT;
 
     private String methodName;
     private Set<String> mLines;
 
     public TestMethodData(String name) {
         this.methodName = name;
-        mLines = new HashSet<String>();
+        mLines = new LinkedHashSet<String>();
     }
 
     public void addLine(String line) {
-        mLines.add(line);
+        if (category == Constants.CATEGORY.STATEMENT && (!line.contains(">>>>>>>>") || !line.contains("<<<<<<<<"))) {
+            mLines.add(line);
+        } else if (category == Constants.CATEGORY.FUNCTION && line.contains("<<<<<<<<")) {
+            mLines.add(line);
+        }
     }
 
     public int getLineCount() {
