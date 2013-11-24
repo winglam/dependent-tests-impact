@@ -75,23 +75,23 @@ public class TestListGenerator {
         }
 
         // if specified, the output is saved to the file name instead of printed to console
-        int categoryIndex = argsList.indexOf("-category");
-        if (categoryIndex != -1) {
+        int coverageIndex = argsList.indexOf("-coverage");
+        if (coverageIndex != -1) {
             // get index of output file
-            int categoryNameIndex = categoryIndex + 1;
-            if (categoryNameIndex  >= argsList.size()) {
-                System.err.println("Category argument is specified but valid category was not. Please use the format: -category aCategoryName");
+            int coverageNameIndex = coverageIndex + 1;
+            if (coverageNameIndex  >= argsList.size()) {
+                System.err.println("Coverage argument is specified but valid coverage was not. Please use the format: -coverage aCoverageName");
                 System.exit(0);
             }
-            String categoryStr = argsList.get(categoryNameIndex).trim().toLowerCase();
-            if (categoryStr.equals("statement")) {
-                TestMethodData.category = Constants.CATEGORY.STATEMENT;
-            } else if (categoryStr.equals("branch")) {
-                TestMethodData.category = Constants.CATEGORY.BRANCH;
-            } else if (categoryStr.equals("function")) {
-                TestMethodData.category = Constants.CATEGORY.FUNCTION;
+            String coverageStr = argsList.get(coverageNameIndex).trim().toLowerCase();
+            if (coverageStr.equals("statement")) {
+                TestMethodData.coverage = Constants.COVERAGE.STATEMENT;
+            } else if (coverageStr.equals("branch")) {
+                TestMethodData.coverage = Constants.COVERAGE.BRANCH;
+            } else if (coverageStr.equals("function")) {
+                TestMethodData.coverage = Constants.COVERAGE.FUNCTION;
             } else {
-                System.err.println("Category is invalid. Try \"statement\", \"branch\" or \"function\".");
+                System.err.println("Coverage is invalid. Try \"statement\", \"branch\" or \"function\".");
                 System.exit(0);
             }
         }

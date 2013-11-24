@@ -4,7 +4,7 @@ import java.util.LinkedHashSet;
 import java.util.Set;
 
 public class TestMethodData implements Comparable<TestMethodData>{
-    public static Constants.CATEGORY category = Constants.CATEGORY.STATEMENT;
+    public static Constants.COVERAGE coverage = Constants.COVERAGE.STATEMENT;
 
     private String methodName;
     private Set<String> mLines;
@@ -15,9 +15,9 @@ public class TestMethodData implements Comparable<TestMethodData>{
     }
 
     public void addLine(String line) {
-        if (category == Constants.CATEGORY.STATEMENT && (!line.contains(">>>>>>>>") || !line.contains("<<<<<<<<"))) {
+        if (coverage == Constants.COVERAGE.STATEMENT && (!line.contains(">>>>>>>>") || !line.contains("<<<<<<<<"))) {
             mLines.add(line);
-        } else if (category == Constants.CATEGORY.FUNCTION && line.contains("<<<<<<<<")) {
+        } else if (coverage == Constants.COVERAGE.FUNCTION && line.contains("<<<<<<<<")) {
             mLines.add(line);
         }
     }
