@@ -10,16 +10,24 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class TestListGenerator {
 
-    private enum TECHNIQUE {PRIORITIZATION_STMT_ABSOLUTE, PRIORITIZATION_STMT_RELATIVE, SELECTION};
-    private final static TECHNIQUE DEFAULT_TECHNIQUE = TECHNIQUE.PRIORITIZATION_STMT_ABSOLUTE;
+    private enum TECHNIQUE {
+        PRIORITIZATION_ABSOLUTE, PRIORITIZATION_RELATIVE, SELECTION
+    };
+
+    private final static TECHNIQUE DEFAULT_TECHNIQUE = TECHNIQUE.PRIORITIZATION_ABSOLUTE;
     private final static String DEFAULT_TEST_DIR = "sootTestOutput";
     private static String outputFileName;
     private static List<TestMethodData> methodList = new ArrayList<TestMethodData>();
     private static boolean isRelative = false;
+    private static Set<String> currentLines = new HashSet<String>();
+    private static Set<String> allLines = new HashSet<String>();
+    private static Constants.COVERAGE coverage = Constants.COVERAGE.STATEMENT;
 
     public static void main(String[] args) {
         // list to parse the arguments
@@ -28,23 +36,25 @@ public class TestListGenerator {
         TECHNIQUE techniqueName = DEFAULT_TECHNIQUE;
         // get the technique
         int techniqueIndex = argsList.indexOf("-technique");
-        if (techniqueIndex!= -1) {
+        if (techniqueIndex != -1) {
             // get index of technique name
             int techniqueNameIndex = techniqueIndex + 1;
             if (techniqueNameIndex >= argsList.size()) {
-                System.err.println("Technique argument is specified but technique name is not. Please use the format: -technique aTechniqueName");
+                System.err
+                        .println("Technique argument is specified but technique name is not. Please use the format: -technique aTechniqueName");
                 System.exit(0);
             }
 
             String techniqueStr = argsList.get(techniqueNameIndex).toLowerCase().trim();
-            if (techniqueStr.equals("prioritization-stmt-absolute")) {
-                techniqueName = TECHNIQUE.PRIORITIZATION_STMT_ABSOLUTE;
-            } else if (techniqueStr.equals("prioritization-stmt-relative")) {
-                techniqueName = TECHNIQUE.PRIORITIZATION_STMT_RELATIVE;
+            if (techniqueStr.equals("prioritization-absolute")) {
+                techniqueName = TECHNIQUE.PRIORITIZATION_ABSOLUTE;
+            } else if (techniqueStr.equals("prioritization-relative")) {
+                techniqueName = TECHNIQUE.PRIORITIZATION_RELATIVE;
             } else if (techniqueStr.equals("selection")) {
                 techniqueName = TECHNIQUE.SELECTION;
             } else {
-                System.err.println("Technique name is invalid. Try \"prioritization-stmt-absolute\", \"prioritization-stmt-relative\" or \"selection\".");
+                System.err
+                        .println("Technique name is invalid. Try \"prioritization-absolute\", \"prioritization-relative\" or \"selection\".");
                 System.exit(0);
             }
         }
@@ -56,7 +66,8 @@ public class TestListGenerator {
             // get index of output directory
             int testInputDirNameIndex = testInputDir + 1;
             if (testInputDirNameIndex >= argsList.size()) {
-                System.err.println("Test input directory argument is specified but a directory name is not. Please use the format: -testInputDir aDirName");
+                System.err
+                        .println("Test input directory argument is specified but a directory name is not. Please use the format: -testInputDir aDirName");
                 System.exit(0);
             }
             testInputDirName = argsList.get(testInputDirNameIndex);
@@ -68,7 +79,8 @@ public class TestListGenerator {
             // get index of output file
             int outputFileNameIndex = outputFile + 1;
             if (outputFileNameIndex >= argsList.size()) {
-                System.err.println("Output file argument is specified but a file name is not. Please use the format: -outputFile aFileName");
+                System.err
+                        .println("Output file argument is specified but a file name is not. Please use the format: -outputFile aFileName");
                 System.exit(0);
             }
             outputFileName = argsList.get(outputFileNameIndex);
@@ -79,45 +91,58 @@ public class TestListGenerator {
         if (coverageIndex != -1) {
             // get index of output file
             int coverageNameIndex = coverageIndex + 1;
-            if (coverageNameIndex  >= argsList.size()) {
-                System.err.println("Coverage argument is specified but valid coverage was not. Please use the format: -coverage aCoverageName");
+            if (coverageNameIndex >= argsList.size()) {
+                System.err
+                        .println("Coverage argument is specified but valid coverage was not. Please use the format: -coverage aCoverageName");
                 System.exit(0);
             }
             String coverageStr = argsList.get(coverageNameIndex).trim().toLowerCase();
             if (coverageStr.equals("statement")) {
-                TestMethodData.coverage = Constants.COVERAGE.STATEMENT;
+                coverage = Constants.COVERAGE.STATEMENT;
             } else if (coverageStr.equals("branch")) {
-                TestMethodData.coverage = Constants.COVERAGE.BRANCH;
+                coverage = Constants.COVERAGE.BRANCH;
             } else if (coverageStr.equals("function")) {
-                TestMethodData.coverage = Constants.COVERAGE.FUNCTION;
+                coverage = Constants.COVERAGE.FUNCTION;
             } else {
-                System.err.println("Coverage is invalid. Try \"statement\", \"branch\" or \"function\".");
+                System.err
+                        .println("Coverage is invalid. Try \"statement\", \"branch\" or \"function\".");
                 System.exit(0);
             }
         }
 
-
-        if (techniqueName == TECHNIQUE.PRIORITIZATION_STMT_ABSOLUTE) {
-            testPrioritizationStmt(testInputDirName);
-        } else if (techniqueName == TECHNIQUE.PRIORITIZATION_STMT_RELATIVE) {
+        if (techniqueName == TECHNIQUE.PRIORITIZATION_ABSOLUTE) {
+            testPrioritization(testInputDirName);
+        } else if (techniqueName == TECHNIQUE.PRIORITIZATION_RELATIVE) {
             isRelative = true;
-            testPrioritizationStmt(testInputDirName);
+            testPrioritization(testInputDirName);
         } else if (techniqueName == TECHNIQUE.SELECTION) {
             testSelection(testInputDirName);
         }
     }
 
-    public static void testPrioritizationStmt(String outputDirName) {
+    public static void testPrioritization(String outputDirName) {
         listFilesForFolder(new File(outputDirName));
         Collections.sort(methodList);
         if (outputFileName == null) {
             if (isRelative) {
+                currentLines = new HashSet<String>(allLines);
                 while (methodList.size() > 0) {
                     TestMethodData highestData = methodList.remove(0);
                     System.out.println(highestData.getName());
+                    Set<String> highestDataLines = highestData.getLines();
                     for (TestMethodData methodData : methodList) {
-                        methodData.removeLines(highestData.getLines());
+                        methodData.removeLines(highestDataLines);
                     }
+                    currentLines.removeAll(highestDataLines);
+
+                    // all possible lines of code have been executed
+                    if (currentLines.size() == 0) {
+                        currentLines = new HashSet<String>(allLines);
+                        for (TestMethodData tmd : methodList) {
+                            tmd.reset();
+                        }
+                    }
+
                     Collections.sort(methodList);
                 }
             } else {
@@ -132,12 +157,24 @@ public class TestListGenerator {
                 output = new FileWriter(outputFileName);
                 writer = new BufferedWriter(output);
                 if (isRelative) {
+                    currentLines = new HashSet<String>(allLines);
                     while (methodList.size() > 0) {
                         TestMethodData highestData = methodList.remove(0);
                         writer.write(highestData.getName() + "\n");
+                        Set<String> highestDataLines = highestData.getLines();
                         for (TestMethodData methodData : methodList) {
-                            methodData.removeLines(highestData.getLines());
+                            methodData.removeLines(highestDataLines);
                         }
+                        currentLines.removeAll(highestDataLines);
+
+                        // all possible lines of code have been executed
+                        if (currentLines.size() == 0) {
+                            currentLines = new HashSet<String>(allLines);
+                            for (TestMethodData tmd : methodList) {
+                                tmd.reset();
+                            }
+                        }
+
                         Collections.sort(methodList);
                     }
                 } else {
@@ -180,7 +217,14 @@ public class TestListGenerator {
                     br = new BufferedReader(new FileReader(fileEntry));
                     String line;
                     while ((line = br.readLine()) != null) {
-                        methodData.addLine(line);
+                        if (coverage == Constants.COVERAGE.STATEMENT) {
+                            allLines.add(line);
+                            methodData.addLine(line);
+                        } else if (coverage == Constants.COVERAGE.FUNCTION) {
+                            String functionName = line.split(" ")[0];
+                            allLines.add(functionName);
+                            methodData.addLine(functionName);
+                        }
                     }
                     br.close();
                 } catch (FileNotFoundException e) {
@@ -189,6 +233,7 @@ public class TestListGenerator {
                     e.printStackTrace();
                 }
 
+                methodData.reset();
                 methodList.add(methodData);
             } else {
                 continue;

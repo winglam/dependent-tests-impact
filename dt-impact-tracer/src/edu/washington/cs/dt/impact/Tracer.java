@@ -1,4 +1,5 @@
 package edu.washington.cs.dt.impact;
+
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -8,7 +9,6 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
-
 
 public class Tracer {
     private static Map<String, Set<String>> statements = new HashMap<String, Set<String>>();
@@ -27,7 +27,7 @@ public class Tracer {
         File theDir = new File("sootTestOutput");
         // if the directory does not exist, create it
         if (!theDir.exists()) {
-            if(!theDir.mkdir()) {
+            if (!theDir.mkdir()) {
                 throw new RuntimeException("Output directory could not be created.");
             }
         }
@@ -39,11 +39,9 @@ public class Tracer {
             writer = new BufferedWriter(output);
 
             for (String key : statements.keySet()) {
-                writer.write(key + " >>>>>>>>\n");
                 for (String s : statements.get(key)) {
-                    writer.write(s + "\n");
+                    writer.write(packageMethodName + "." + key + " : " + s + "\n");
                 }
-                writer.write("<<<<<<<< " + key + "\n");
             }
         } catch (Exception e) {
             throw new RuntimeException(e);

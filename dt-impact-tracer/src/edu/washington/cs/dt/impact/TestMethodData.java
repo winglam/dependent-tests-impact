@@ -3,27 +3,28 @@ package edu.washington.cs.dt.impact;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
-public class TestMethodData implements Comparable<TestMethodData>{
-    public static Constants.COVERAGE coverage = Constants.COVERAGE.STATEMENT;
+public class TestMethodData implements Comparable<TestMethodData> {
 
     private String methodName;
-    private Set<String> mLines;
+    private Set<String> allLines;
+    private Set<String> currentLines;
 
     public TestMethodData(String name) {
         this.methodName = name;
-        mLines = new LinkedHashSet<String>();
+        currentLines = new LinkedHashSet<String>();
+        allLines = new LinkedHashSet<String>();
     }
 
     public void addLine(String line) {
-        if (coverage == Constants.COVERAGE.STATEMENT && (!line.contains(">>>>>>>>") || !line.contains("<<<<<<<<"))) {
-            mLines.add(line);
-        } else if (coverage == Constants.COVERAGE.FUNCTION && line.contains("<<<<<<<<")) {
-            mLines.add(line);
-        }
+        allLines.add(line);
+    }
+
+    public void reset() {
+        currentLines = new LinkedHashSet<String>(allLines);
     }
 
     public int getLineCount() {
-        return mLines.size();
+        return currentLines.size();
     }
 
     public String getName() {
@@ -31,18 +32,16 @@ public class TestMethodData implements Comparable<TestMethodData>{
     }
 
     public void removeLines(Set<String> lines) {
-        for (String line : lines) {
-            mLines.remove(line);
-        }
+        currentLines.removeAll(lines);
     }
 
     public Set<String> getLines() {
-        return mLines;
+        return currentLines;
     }
 
     @Override
     public int compareTo(TestMethodData o) {
-        int mLineCount = mLines.size();
+        int mLineCount = currentLines.size();
         int oLineCount = o.getLineCount();
 
         if (mLineCount < oLineCount) {
