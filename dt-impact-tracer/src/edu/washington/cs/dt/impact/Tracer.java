@@ -40,7 +40,7 @@ public class Tracer {
 
             for (String key : statements.keySet()) {
                 for (String s : statements.get(key)) {
-                    writer.write(packageMethodName + "." + key + " : " + s + "\n");
+                    writer.write(key + " : " + s + "\n");
                 }
             }
         } catch (Exception e) {

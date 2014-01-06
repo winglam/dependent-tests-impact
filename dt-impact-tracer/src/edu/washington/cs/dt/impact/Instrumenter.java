@@ -213,7 +213,7 @@ public class Instrumenter extends BodyTransformer{
                     lines.add(t.getLineNumber());
 
                     InvokeExpr incExpr= Jimple.v().newStaticInvokeExpr(trace.makeRef(),
-                            StringConstant.v(stmt.toString()), StringConstant.v(method.getName()));
+                            StringConstant.v(stmt.toString()), StringConstant.v(method.getDeclaringClass().getName() + "." + method.getName()));
                     Stmt incStmt = Jimple.v().newInvokeStmt(incExpr);
                     units.insertBefore(incStmt, stmt);
                 }
