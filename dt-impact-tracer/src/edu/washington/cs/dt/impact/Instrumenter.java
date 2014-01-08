@@ -79,7 +79,7 @@ public class Instrumenter extends BodyTransformer{
         // body's method
         SootMethod method = body.getMethod();
 
-        if (method.getName().equals("<init>")) {
+        if (method.getName().equals("<init>") || method.getName().equals("<clinit>")) {
             return;
         }
 
