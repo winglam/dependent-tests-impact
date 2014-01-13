@@ -1,4 +1,4 @@
-package edu.washington.cs.dt.impact;
+package edu.washington.cs.dt.impact.Main;
 /* Usage: java MainDriver [soot-options] appClass
  */
 
@@ -8,10 +8,11 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import edu.washington.cs.dt.impact.util.Instrumenter;
 import soot.Pack;
 import soot.PackManager;
 import soot.Transform;
-public class MainDriver {
+public class PrioritizationDriver {
     public static void main(String[] args) {
         /* check the arguments */
         if (args.length == 0) {

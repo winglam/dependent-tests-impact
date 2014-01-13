@@ -1,4 +1,4 @@
-package edu.washington.cs.dt.impact;
+package edu.washington.cs.dt.impact.util;
 /*
  * InvokeStaticInstrumenter inserts count instructions before
  * INVOKESTATIC bytecode in a program. The instrumented program will
@@ -23,6 +23,10 @@ package edu.washington.cs.dt.impact;
 /* InvokeStaticInstrumenter extends the abstract class BodyTransformer,
  * and implements <pre>internalTransform</pre> method.
  */
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -52,6 +56,7 @@ import soot.tagkit.AnnotationTag;
 import soot.tagkit.LineNumberTag;
 import soot.tagkit.VisibilityAnnotationTag;
 import soot.util.Chain;
+import edu.washington.cs.dt.impact.util.Constants.TECHNIQUE;
 
 public class Instrumenter extends BodyTransformer{
 
@@ -63,12 +68,22 @@ public class Instrumenter extends BodyTransformer{
     private static final String JUNIT3_CLASS = "junit.framework.TestCase";
     private static final String JUNIT3_RETURN = "void";
     private static final String JUNIT3_METHOD_PREFIX = "test";
+    private static TECHNIQUE technique = Constants.DEFAULT_TECHNIQUE;
+    private static String folderName;
 
     static {
-        tracerClass    = Scene.v().loadClassAndSupport("edu.washington.cs.dt.impact.Tracer");
+        tracerClass    = Scene.v().loadClassAndSupport("edu.washington.cs.dt.impact.util.Tracer");
         trace = tracerClass.getMethodByName("trace");
         output   = tracerClass.getMethodByName("output");
         reset   = tracerClass.getMethodByName("reset");
+    }
+
+    public Instrumenter() {
+    }
+
+    public Instrumenter(TECHNIQUE t, String folderName) {
+        this.folderName = folderName;
+        technique = t;
     }
 
     /* internalTransform goes through a method body and inserts
@@ -113,11 +128,11 @@ public class Instrumenter extends BodyTransformer{
         }
 
         // get body's unit as a chain
-        Chain units = body.getUnits();
+        Chain<Unit> units = body.getUnits();
 
         // get a snapshot iterator of the unit since we are going to
         // mutate the chain when iterating over it.
-        Iterator stmtIt = units.snapshotIterator();
+        Iterator<Unit> stmtIt = units.snapshotIterator();
 
         if (isJUnit4 || isJUnit3) {
             // label0:
@@ -134,7 +149,7 @@ public class Instrumenter extends BodyTransformer{
 
             // get access to Throwable class and toString method
             SootClass thrwCls = Scene.v().getSootClass("java.lang.Throwable");
-            SootMethod initThrow = thrwCls.getMethod("java.lang.Throwable initCause(java.lang.Throwable)");
+            //            SootMethod initThrow = thrwCls.getMethod("java.lang.Throwable initCause(java.lang.Throwable)");
 
             // create probe from label1 to label3 (excluding return)
             List<Stmt> probe = new ArrayList<Stmt>();
@@ -195,6 +210,7 @@ public class Instrumenter extends BodyTransformer{
                 }
             }
         } else {
+            StringBuffer sb = new StringBuffer();
             Set<Integer> lines = new HashSet<Integer>();
             while (stmtIt.hasNext()) {
                 // cast back to a statement.
@@ -208,6 +224,10 @@ public class Instrumenter extends BodyTransformer{
                     continue;
                 }
 
+                if (technique == TECHNIQUE.SELECTION) {
+                    sb.append(stmt + "\n");
+                }
+
                 LineNumberTag t = (LineNumberTag) stmt.getTag("LineNumberTag");
                 if (stmt.hasTag("LineNumberTag") && !lines.contains(t.getLineNumber())) {
                     lines.add(t.getLineNumber());
@@ -218,19 +238,54 @@ public class Instrumenter extends BodyTransformer{
                     units.insertBefore(incStmt, stmt);
                 }
             }
+
+            if (technique == TECHNIQUE.SELECTION) {
+                output(method.getDeclaringClass().getName() + "." + method.getName(), sb);
+            }
         }
     }
 
-    private void insertRightBeforeNoRedirect(PatchingChain pchain, List instrumCode, Stmt s) {
+    public static void output(String packageMethodName, StringBuffer sb) {
+        File theDir = new File(folderName);
+        // if the directory does not exist, create it
+        if (!theDir.exists()) {
+            if (!theDir.mkdir()) {
+                throw new RuntimeException(folderName + " output directory could not be created.");
+            }
+        }
+
+        FileWriter output = null;
+        BufferedWriter writer = null;
+        try {
+            output = new FileWriter(folderName + File.separator + packageMethodName);
+            writer = new BufferedWriter(output);
+            writer.write(sb.toString());
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        } finally {
+            try {
+                if (writer != null) {
+                    writer.close();
+                }
+                if (output != null) {
+                    output.close();
+                }
+            } catch (IOException e) {
+                // Ignore issues during closing
+            }
+        }
+    }
+
+    private void insertRightBeforeNoRedirect(PatchingChain<Unit> pchain, List<Stmt> instrumCode, Stmt s) {
         assert !(s instanceof IdentityStmt);
         for (Object stmt : instrumCode) {
             pchain.insertBeforeNoRedirect((Unit) stmt, s);
         }
     }
 
-    private static Stmt getFirstNonIdStmt(PatchingChain pchain) {
+    private static Stmt getFirstNonIdStmt(PatchingChain<Unit> pchain) {
         Stmt sFirstNonId = null;
-        for (Iterator it = pchain.iterator(); it.hasNext(); ) {
+        for (Iterator<Unit> it = pchain.iterator(); it.hasNext(); ) {
             sFirstNonId = (Stmt) it.next();
             if (!(sFirstNonId instanceof IdentityStmt)) {
                 break;
@@ -247,7 +302,7 @@ public class Instrumenter extends BodyTransformer{
             return l;
         }
         // no luck; create it
-        Chain locals = b.getLocals();
+        Chain<Local> locals = b.getLocals();
         l = Jimple.v().newLocal(localName, t);
         locals.add(l);
         return l;
@@ -255,9 +310,9 @@ public class Instrumenter extends BodyTransformer{
 
     private static Local getLocal(Body b, String localName) {
         // look for existing bs local, and return it if found
-        Chain locals = b.getLocals();
-        for (Iterator itLoc = locals.iterator(); itLoc.hasNext(); ) {
-            Local l = (Local)itLoc.next();
+        Chain<Local> locals = b.getLocals();
+        for (Iterator<Local> itLoc = locals.iterator(); itLoc.hasNext(); ) {
+            Local l = itLoc.next();
             if (l.getName().equals(localName)) {
                 return l;
             }

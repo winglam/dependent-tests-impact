@@ -1,4 +1,4 @@
-package edu.washington.cs.dt.impact;
+package edu.washington.cs.dt.impact.util;
 
 import java.util.LinkedHashSet;
 import java.util.Set;

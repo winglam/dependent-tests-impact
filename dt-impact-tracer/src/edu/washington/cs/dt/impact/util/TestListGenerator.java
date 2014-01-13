@@ -1,4 +1,4 @@
-package edu.washington.cs.dt.impact;
+package edu.washington.cs.dt.impact.util;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -14,26 +14,22 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import edu.washington.cs.dt.impact.util.Constants.COVERAGE;
+import edu.washington.cs.dt.impact.util.Constants.TECHNIQUE;
+
 public class TestListGenerator {
-
-    private enum TECHNIQUE {
-        PRIORITIZATION_ABSOLUTE, PRIORITIZATION_RELATIVE, SELECTION, RANDOM
-    };
-
-    private final static TECHNIQUE DEFAULT_TECHNIQUE = TECHNIQUE.PRIORITIZATION_ABSOLUTE;
-    private final static String DEFAULT_TEST_DIR = "sootTestOutput";
     private static String outputFileName;
     private static List<TestMethodData> methodList = new ArrayList<TestMethodData>();
     private static boolean isRelative = false;
     private static Set<String> currentLines = new HashSet<String>();
     private static Set<String> allLines = new HashSet<String>();
-    private static Constants.COVERAGE coverage = Constants.COVERAGE.STATEMENT;
+    private static COVERAGE coverage = COVERAGE.STATEMENT;
 
     public static void main(String[] args) {
         // list to parse the arguments
         List<String> argsList = new ArrayList<String>(Arrays.asList(args));
 
-        TECHNIQUE techniqueName = DEFAULT_TECHNIQUE;
+        TECHNIQUE techniqueName = Constants.DEFAULT_TECHNIQUE;
         // get the technique, the default is absolute
         int techniqueIndex = argsList.indexOf("-technique");
         if (techniqueIndex != -1) {
@@ -63,7 +59,7 @@ public class TestListGenerator {
 
         // get directory for the input of text files
         int testInputDir = argsList.indexOf("-testInputDir");
-        String testInputDirName = DEFAULT_TEST_DIR;
+        String testInputDirName = Constants.DEFAULT_TEST_DIR;
         if (testInputDir != -1) {
             // get index of output directory
             int testInputDirNameIndex = testInputDir + 1;

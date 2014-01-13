@@ -1,4 +1,4 @@
-package edu.washington.cs.dt.impact;
+package edu.washington.cs.dt.impact.util;
 
 import java.io.BufferedWriter;
 import java.io.File;
