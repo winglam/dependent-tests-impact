@@ -69,7 +69,6 @@ public class Instrumenter extends BodyTransformer{
     private static final String JUNIT3_RETURN = "void";
     private static final String JUNIT3_METHOD_PREFIX = "test";
     private static TECHNIQUE technique = Constants.DEFAULT_TECHNIQUE;
-    private static String folderName;
 
     static {
         tracerClass    = Scene.v().loadClassAndSupport("edu.washington.cs.dt.impact.util.Tracer");
@@ -81,8 +80,7 @@ public class Instrumenter extends BodyTransformer{
     public Instrumenter() {
     }
 
-    public Instrumenter(TECHNIQUE t, String folderName) {
-        this.folderName = folderName;
+    public Instrumenter(TECHNIQUE t) {
         technique = t;
     }
 
@@ -245,19 +243,19 @@ public class Instrumenter extends BodyTransformer{
         }
     }
 
-    public static void output(String packageMethodName, StringBuffer sb) {
-        File theDir = new File(folderName);
+    private static void output(String packageMethodName, StringBuffer sb) {
+        File theDir = new File("selectionOutput");
         // if the directory does not exist, create it
         if (!theDir.exists()) {
             if (!theDir.mkdir()) {
-                throw new RuntimeException(folderName + " output directory could not be created.");
+                throw new RuntimeException("selectionOutput directory could not be created.");
             }
         }
 
         FileWriter output = null;
         BufferedWriter writer = null;
         try {
-            output = new FileWriter(folderName + File.separator + packageMethodName);
+            output = new FileWriter("selectionOutput" + File.separator + packageMethodName);
             writer = new BufferedWriter(output);
             writer.write(sb.toString());
         } catch (Exception e) {

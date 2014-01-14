@@ -8,11 +8,13 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import edu.washington.cs.dt.impact.util.Instrumenter;
 import soot.Pack;
 import soot.PackManager;
 import soot.Transform;
-public class PrioritizationDriver {
+import edu.washington.cs.dt.impact.util.Constants;
+import edu.washington.cs.dt.impact.util.Constants.TECHNIQUE;
+import edu.washington.cs.dt.impact.util.Instrumenter;
+public class MainDriver {
     public static void main(String[] args) {
         /* check the arguments */
         if (args.length == 0) {
@@ -41,12 +43,45 @@ public class PrioritizationDriver {
             argsList.remove(inputDirIndex);
             argsList.add("-process-path");
             argsList.add(inputDirName);
+        } else {
+            System.err.println("No input directory argument is specified. Please use the format: -inputDir adirpath");
+            System.exit(0);
+        }
+
+        TECHNIQUE techniqueName = Constants.DEFAULT_TECHNIQUE;
+        // get the technique, the default is absolute
+        int techniqueIndex = argsList.indexOf("-technique");
+        if (techniqueIndex != -1) {
+            // get index of technique name
+            int techniqueNameIndex = techniqueIndex + 1;
+            if (techniqueNameIndex >= argsList.size()) {
+                System.err
+                .println("Technique argument is specified but technique name is not. Please use the format: -technique aTechniqueName");
+                System.exit(0);
+            }
+
+            String techniqueStr = argsList.get(techniqueNameIndex).toLowerCase().trim();
+            if (techniqueStr.equals("prioritization-absolute")) {
+                techniqueName = TECHNIQUE.PRIORITIZATION_ABSOLUTE;
+            } else if (techniqueStr.equals("prioritization-relative")) {
+                techniqueName = TECHNIQUE.PRIORITIZATION_RELATIVE;
+            } else if (techniqueStr.equals("selection")) {
+                techniqueName = TECHNIQUE.SELECTION;
+            } else if (techniqueStr.equals("random")) {
+                techniqueName = TECHNIQUE.RANDOM;
+            } else {
+                System.err
+                .println("Technique name is invalid. Try \"prioritization-absolute\", \"prioritization-relative\", \"random\" or \"selection\".");
+                System.exit(0);
+            }
+            argsList.remove(techniqueNameIndex);
+            argsList.remove(techniqueIndex);
         }
 
         /* add a phase to transformer pack by call Pack.add */
         Pack jtp = PackManager.v().getPack("jtp");
         jtp.add(new Transform("jtp.instrumenter",
-                new Instrumenter()));
+                new Instrumenter(techniqueName)));
 
         argsList.add("-keep-line-number");
         String[] sootArgs = argsList.toArray(new String[argsList.size()]);

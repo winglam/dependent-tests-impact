@@ -10,8 +10,11 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 import edu.washington.cs.dt.impact.util.Constants.COVERAGE;
@@ -52,7 +55,51 @@ public class TestListGenerator {
                 techniqueName = TECHNIQUE.RANDOM;
             } else {
                 System.err
-                .println("Technique name is invalid. Try \"prioritization-absolute\", \"prioritization-relative\" or \"selection\".");
+                .println("Technique name is invalid. Try \"prioritization-absolute\", \"prioritization-relative\", \"random\" or \"selection\".");
+                System.exit(0);
+            }
+        }
+
+        String selectionOutput1 = null;
+        String selectionOutput2 = null;
+        if (techniqueName == TECHNIQUE.SELECTION) {
+            // get list of files to instrument
+            int oldVersCFGIndex = argsList.indexOf("-oldVersCFG");
+            if (oldVersCFGIndex != -1) {
+                // get index of input directory
+                int oldVersCFGNameIndex = oldVersCFGIndex + 1;
+                if (oldVersCFGNameIndex >= argsList.size()) {
+                    System.err.println("Old version CFG argument is specified but a directory path is not. Please use the format: -oldVersCFG adirpath");
+                    System.exit(0);
+                }
+                selectionOutput1 = argsList.get(oldVersCFGNameIndex);
+                File f = new File(selectionOutput1);
+                if (!f.isDirectory()) {
+                    System.err.println("Old version CFG argument is specified but the directory path is invalid. Please check the directory path.");
+                    System.exit(0);
+                }
+            } else {
+                System.err.println("No input directory argument is specified. Please use the format: -oldVersCFG adirpath");
+                System.exit(0);
+            }
+
+            // get list of files to instrument
+            int newVersCFGIndex = argsList.indexOf("-newVersCFG");
+            if (newVersCFGIndex != -1) {
+                // get index of input directory
+                int newVersCFGNameIndex = newVersCFGIndex + 1;
+                if (newVersCFGNameIndex >= argsList.size()) {
+                    System.err.println("New version CFG argument is specified but a directory path is not. Please use the format: -newVersCFG adirpath");
+                    System.exit(0);
+                }
+                selectionOutput2 = argsList.get(newVersCFGNameIndex);
+                File f = new File(selectionOutput2);
+                if (!f.isDirectory()) {
+                    System.err.println("New version CFG argument is specified but the directory path is invalid. Please check the directory path.");
+                    System.exit(0);
+                }
+            } else {
+                System.err.println("No input directory argument is specified. Please use the format: -newVersCFG adirpath");
                 System.exit(0);
             }
         }
@@ -114,7 +161,7 @@ public class TestListGenerator {
             isRelative = true;
             testPrioritization(testInputDirName);
         } else if (techniqueName == TECHNIQUE.SELECTION) {
-            testSelection(testInputDirName);
+            testSelection(testInputDirName, selectionOutput1, selectionOutput2);
         } else if (techniqueName == TECHNIQUE.RANDOM) {
             testRandom(testInputDirName);
         }
@@ -235,8 +282,88 @@ public class TestListGenerator {
         }
     }
 
-    private static void testSelection(String outputDirName) {
-        // TODO
+    private static void testSelection(String outputDirName, String selectionOutput1, String selectionOutput2) {
+        Map<String, List<String>> oldVersMap = methodToLines(new File(selectionOutput1));
+        Map<String, List<String>> newVersMap = methodToLines(new File(selectionOutput2));
+        Set<String> changedMethods = new HashSet<String>();
+
+        for (String key : oldVersMap.keySet()) {
+            if (!newVersMap.containsKey(key) || !oldVersMap.get(key).equals(newVersMap.get(key))) {
+                changedMethods.add(key);
+            }
+        }
+
+        coverage = COVERAGE.FUNCTION;
+        listFilesForFolder(new File(outputDirName));
+
+        List<TestMethodData> removeList = new LinkedList<TestMethodData>();
+        for (TestMethodData methodData : methodList) {
+            methodData.retainLines(changedMethods);
+            if (methodData.getLineCount() == 0) {
+                removeList.add(methodData);
+            }
+        }
+        methodList.removeAll(removeList);
+        Collections.sort(methodList);
+
+
+        if (outputFileName == null) {
+            for (TestMethodData methodData : methodList) {
+                System.out.println(methodData.getName());
+            }
+        } else {
+            FileWriter output = null;
+            BufferedWriter writer = null;
+            try {
+                output = new FileWriter(outputFileName);
+                writer = new BufferedWriter(output);
+
+                for (TestMethodData methodData : methodList) {
+                    writer.write(methodData.getName() + "\n");
+                }
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            } finally {
+                try {
+                    if (writer != null) {
+                        writer.close();
+                    }
+                    if (output != null) {
+                        output.close();
+                    }
+                } catch (IOException e) {
+                    // Ignore issues during closing
+                }
+            }
+        }
+    }
+
+    private static Map<String, List<String>> methodToLines(final File folder) {
+        Map<String, List<String>> retMap = new HashMap<String, List<String>>();
+
+        for (final File fileEntry : folder.listFiles()) {
+            if (fileEntry.isFile()) {
+                BufferedReader br;
+                try {
+                    br = new BufferedReader(new FileReader(fileEntry));
+                    String line;
+                    List<String> lines = new LinkedList<String>();
+                    while ((line = br.readLine()) != null) {
+                        lines.add(line);
+                    }
+                    br.close();
+                    retMap.put(fileEntry.getName(), lines);
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            } else {
+                continue;
+            }
+        }
+
+        return retMap;
     }
 
     private static void listFilesForFolder(final File folder) {
@@ -252,10 +379,10 @@ public class TestListGenerator {
                     br = new BufferedReader(new FileReader(fileEntry));
                     String line;
                     while ((line = br.readLine()) != null) {
-                        if (coverage == Constants.COVERAGE.STATEMENT) {
+                        if (coverage == COVERAGE.STATEMENT) {
                             allLines.add(line);
                             methodData.addLine(line);
-                        } else if (coverage == Constants.COVERAGE.FUNCTION) {
+                        } else if (coverage == COVERAGE.FUNCTION) {
                             String functionName = line.split(" ")[0];
                             allLines.add(functionName);
                             methodData.addLine(functionName);

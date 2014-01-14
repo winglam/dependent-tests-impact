@@ -1,5 +1,6 @@
 package edu.washington.cs.dt.impact.util;
 
+import java.util.Collections;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
@@ -35,8 +36,12 @@ public class TestMethodData implements Comparable<TestMethodData> {
         currentLines.removeAll(lines);
     }
 
+    public void retainLines(Set<String> lines) {
+        currentLines.retainAll(lines);
+    }
+
     public Set<String> getLines() {
-        return currentLines;
+        return Collections.unmodifiableSet(currentLines);
     }
 
     @Override
