@@ -30,9 +30,11 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Stack;
 
 import soot.Body;
 import soot.BodyTransformer;
@@ -55,6 +57,8 @@ import soot.jimple.StringConstant;
 import soot.tagkit.AnnotationTag;
 import soot.tagkit.LineNumberTag;
 import soot.tagkit.VisibilityAnnotationTag;
+import soot.toolkits.graph.ExceptionalUnitGraph;
+import soot.toolkits.graph.UnitGraph;
 import soot.util.Chain;
 import edu.washington.cs.dt.impact.util.Constants.TECHNIQUE;
 
@@ -62,9 +66,11 @@ public class Instrumenter extends BodyTransformer{
 
     /* some internal fields */
     static SootClass tracerClass;
-    static SootMethod trace, output, reset;
+    static SootMethod trace, output, reset, selectionOutput, selectionTrace;
     private static final String JUNIT4_TAG = "VisibilityAnnotationTag";
     private static final String JUNIT4_TYPE = "Lorg/junit/Test;";
+    private static final String JUNIT4_BEFORE = "Lorg/junit/Before;";
+    private static final String JUNIT4_AFTER = "Lorg/junit/After;";
     private static final String JUNIT3_CLASS = "junit.framework.TestCase";
     private static final String JUNIT3_RETURN = "void";
     private static final String JUNIT3_METHOD_PREFIX = "test";
@@ -73,6 +79,8 @@ public class Instrumenter extends BodyTransformer{
     static {
         tracerClass    = Scene.v().loadClassAndSupport("edu.washington.cs.dt.impact.util.Tracer");
         trace = tracerClass.getMethodByName("trace");
+        selectionTrace = tracerClass.getMethodByName("selectionTrace");
+        selectionOutput = tracerClass.getMethodByName("selectionOutput");
         output   = tracerClass.getMethodByName("output");
         reset   = tracerClass.getMethodByName("reset");
     }
@@ -96,23 +104,27 @@ public class Instrumenter extends BodyTransformer{
             return;
         }
 
+        boolean isSetupOrTeardown = false;
+
         boolean isJUnit4 = false;
         VisibilityAnnotationTag vat = (VisibilityAnnotationTag) method.getTag(JUNIT4_TAG);
         if (vat != null) {
             List<AnnotationTag> tags = vat.getAnnotations();
             for (AnnotationTag at : tags) {
-                isJUnit4 = at.getType().equals(JUNIT4_TYPE);
-                if (isJUnit4) {
-                    break;
+                if (!isJUnit4) {
+                    isJUnit4 = at.getType().equals(JUNIT4_TYPE);
+                }
+                if (!isSetupOrTeardown) {
+                    isSetupOrTeardown = at.getType().equals(JUNIT4_BEFORE) || at.getType().equals(JUNIT4_AFTER);
                 }
             }
         }
 
         boolean isJUnit3 = false;
+        boolean extendsJUnit = false;
         if (!isJUnit4 && method.getName().length() > 3) {
             String retType = method.getReturnType().toString();
-            String name = method.getName().substring(0, 4);
-            boolean extendsJUnit = false;
+            String prefix = method.getName().substring(0, 4);
             SootClass superClass = method.getDeclaringClass().getSuperclass();
             while(superClass.hasSuperclass()) {
                 if (superClass.getName().equals(JUNIT3_CLASS)) {
@@ -122,7 +134,11 @@ public class Instrumenter extends BodyTransformer{
                 superClass = superClass.getSuperclass();
             }
             isJUnit3 = method.isPublic() && retType.equals(JUNIT3_RETURN)
-                    && extendsJUnit && name.equals(JUNIT3_METHOD_PREFIX);
+                    && extendsJUnit && prefix.equals(JUNIT3_METHOD_PREFIX);
+        }
+
+        if ((extendsJUnit && !isJUnit3) || isSetupOrTeardown) {
+            return;
         }
 
         // get body's unit as a chain
@@ -132,6 +148,7 @@ public class Instrumenter extends BodyTransformer{
         // mutate the chain when iterating over it.
         Iterator<Unit> stmtIt = units.snapshotIterator();
 
+        String packageMethodName = method.getDeclaringClass().getName() + "." + method.getName();
         if (isJUnit4 || isJUnit3) {
             // label0:
             //   ... (method body -- before final return)
@@ -195,50 +212,99 @@ public class Instrumenter extends BodyTransformer{
 
                 if ((stmt instanceof ReturnStmt)
                         ||(stmt instanceof ReturnVoidStmt)) {
-                    // output the contents of the tracer
-                    InvokeExpr reportExpr= Jimple.v().newStaticInvokeExpr(output.makeRef(),
-                            StringConstant.v(method.getDeclaringClass().getName() + "." + method.getName()));
-                    Stmt reportStmt = Jimple.v().newInvokeStmt(reportExpr);
-                    units.insertBefore(reportStmt, stmt);
 
-                    // reset the tracer
-                    InvokeExpr resetExpr= Jimple.v().newStaticInvokeExpr(reset.makeRef());
-                    Stmt resetStmt = Jimple.v().newInvokeStmt(resetExpr);
-                    units.insertAfter(resetStmt, reportStmt);
+                    if (technique != TECHNIQUE.SELECTION) {
+                        // output the contents of the tracer
+                        InvokeExpr reportExpr= Jimple.v().newStaticInvokeExpr(output.makeRef(),
+                                StringConstant.v(packageMethodName));
+                        Stmt reportStmt = Jimple.v().newInvokeStmt(reportExpr);
+                        units.insertBefore(reportStmt, stmt);
+
+                        // reset the tracer
+                        InvokeExpr resetExpr= Jimple.v().newStaticInvokeExpr(reset.makeRef());
+                        Stmt resetStmt = Jimple.v().newInvokeStmt(resetExpr);
+                        units.insertAfter(resetStmt, reportStmt);
+                    } else {
+                        // output the contents of the tracer
+                        InvokeExpr reportExpr= Jimple.v().newStaticInvokeExpr(selectionOutput.makeRef(),
+                                StringConstant.v(packageMethodName));
+                        Stmt reportStmt = Jimple.v().newInvokeStmt(reportExpr);
+                        units.insertBefore(reportStmt, stmt);
+
+                        // reset the tracer
+                        InvokeExpr resetExpr= Jimple.v().newStaticInvokeExpr(reset.makeRef());
+                        Stmt resetStmt = Jimple.v().newInvokeStmt(resetExpr);
+                        units.insertAfter(resetStmt, reportStmt);
+                    }
                 }
             }
         } else {
-            StringBuffer sb = new StringBuffer();
-            Set<Integer> lines = new HashSet<Integer>();
-            while (stmtIt.hasNext()) {
-                // cast back to a statement.
-                Stmt stmt = (Stmt)stmtIt.next();
-
-                if (stmt instanceof ReturnVoidStmt) {
-                    continue;
-                }
-
-                if (stmt instanceof IdentityStmt) {
-                    continue;
-                }
-
-                if (technique == TECHNIQUE.SELECTION) {
-                    sb.append(stmt + "\n");
-                }
-
-                LineNumberTag t = (LineNumberTag) stmt.getTag("LineNumberTag");
-                if (stmt.hasTag("LineNumberTag") && !lines.contains(t.getLineNumber())) {
-                    lines.add(t.getLineNumber());
-
-                    InvokeExpr incExpr= Jimple.v().newStaticInvokeExpr(trace.makeRef(),
-                            StringConstant.v(stmt.toString()), StringConstant.v(method.getDeclaringClass().getName() + "." + method.getName()));
-                    Stmt incStmt = Jimple.v().newInvokeStmt(incExpr);
-                    units.insertBefore(incStmt, stmt);
-                }
-            }
-
             if (technique == TECHNIQUE.SELECTION) {
-                output(method.getDeclaringClass().getName() + "." + method.getName(), sb);
+                Set<Unit> duplicates = new HashSet<Unit>();
+                StringBuffer sb = new StringBuffer();
+                UnitGraph ug = new ExceptionalUnitGraph(body);
+                Stack<Unit> remaining = new Stack<Unit>();
+                remaining.addAll(ug.getHeads());
+
+                List<Stmt> incStmts = new LinkedList<Stmt>();
+                List<Stmt> stmts = new LinkedList<Stmt>();
+
+                while(!remaining.empty()) {
+                    Unit current = remaining.pop();
+                    // cast back to a statement.
+                    Stmt stmt = (Stmt)current;
+
+                    if (stmt instanceof ReturnVoidStmt) {
+                        continue;
+                    }
+
+                    if (!duplicates.contains(current)) {
+                        List<Unit> children = ug.getSuccsOf(current);
+                        // hack to not check identity statements (parameters)
+                        if (!(stmt instanceof IdentityStmt)) {
+                            for (Unit u : children) {
+                                sb.append(packageMethodName + " : " + current.toString().split(" goto")[0] + " >>>>>>>> " + packageMethodName + " : " + u.toString().split(" goto")[0] + "\n");
+                            }
+                            InvokeExpr incExpr= Jimple.v().newStaticInvokeExpr(selectionTrace.makeRef(),
+                                    StringConstant.v(stmt.toString()), StringConstant.v(packageMethodName));
+                            Stmt incStmt = Jimple.v().newInvokeStmt(incExpr);
+                            incStmts.add(incStmt);
+                            stmts.add(stmt);
+                        }
+                        remaining.addAll(children);
+                        duplicates.add(current);
+                    }
+                }
+
+                for (int i = 0; i < incStmts.size(); i++) {
+                    units.insertBefore(incStmts.get(i), stmts.get(i));
+                }
+
+                output(packageMethodName, sb);
+            } else {
+                Set<Integer> lines = new HashSet<Integer>();
+                while (stmtIt.hasNext()) {
+                    // cast back to a statement.
+                    Stmt stmt = (Stmt)stmtIt.next();
+
+                    if (stmt instanceof ReturnVoidStmt) {
+                        continue;
+                    }
+
+                    if (stmt instanceof IdentityStmt) {
+                        continue;
+                    }
+
+                    LineNumberTag t = (LineNumberTag) stmt.getTag("LineNumberTag");
+                    if (stmt.hasTag("LineNumberTag") && !lines.contains(t.getLineNumber())) {
+                        lines.add(t.getLineNumber());
+
+                        InvokeExpr incExpr= Jimple.v().newStaticInvokeExpr(trace.makeRef(),
+                                StringConstant.v(stmt.toString()), StringConstant.v(packageMethodName));
+                        Stmt incStmt = Jimple.v().newInvokeStmt(incExpr);
+                        units.insertBefore(incStmt, stmt);
+                    }
+                }
             }
         }
     }

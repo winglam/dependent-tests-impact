@@ -7,11 +7,16 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
 public class Tracer {
     private static Map<String, Set<String>> statements = new HashMap<String, Set<String>>();
+    private static List<String> selectionStatements = new LinkedList<String>();
+    private static final int MAX_LIST_SIZE = 1000;
+    private static boolean printLastElement = true;
 
     public static void trace(String str, String methodName) {
         if (statements.containsKey(methodName)) {
@@ -61,5 +66,70 @@ public class Tracer {
 
     public static void reset() {
         statements.clear();
+        selectionStatements.clear();
+    }
+
+    public static void selectionTrace(String str, String packageMethodName) {
+        if (str.contains("staticinvoke <edu.washington.cs.dt.impact.util.Tracer: void selectionTrace(java.lang.String,java.lang.String)>")) {
+            return;
+        }
+
+        String s = packageMethodName + " : " + str;
+        selectionStatements.add(s);
+        printLastElement = true;
+
+        // prevent out of memory errors, output list if it gets too long
+        if (selectionStatements.size() > MAX_LIST_SIZE) {
+            selectionOutput(packageMethodName);
+            String last = selectionStatements.get(selectionStatements.size() - 1);
+            reset();
+            selectionStatements.add(last);
+            printLastElement = false;
+        }
+    }
+
+    private static void selectionOutput(String packageMethodName) {
+        if (!printLastElement) {
+            return;
+        }
+
+        File theDir = new File("sootTestOutput");
+        // if the directory does not exist, create it
+        if (!theDir.exists()) {
+            if (!theDir.mkdir()) {
+                throw new RuntimeException("Output directory could not be created.");
+            }
+        }
+
+        FileWriter output = null;
+        BufferedWriter writer = null;
+        try {
+            output = new FileWriter("sootTestOutput" + File.separator + packageMethodName, true);
+            writer = new BufferedWriter(output);
+
+            if (selectionStatements.size() > 1) {
+                String prev = selectionStatements.get(0);
+                for (int i = 1; i < selectionStatements.size(); i++) {
+                    writer.write(prev + " >>>>>>>> " + selectionStatements.get(i) + "\n");
+                    prev = selectionStatements.get(i);
+                }
+            } else if (selectionStatements.size() == 1) {
+                writer.write(selectionStatements.get(0) + "\n");
+            }
+
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        } finally {
+            try {
+                if (writer != null) {
+                    writer.close();
+                }
+                if (output != null) {
+                    output.close();
+                }
+            } catch (IOException e) {
+                // Ignore issues during closing
+            }
+        }
     }
 }
