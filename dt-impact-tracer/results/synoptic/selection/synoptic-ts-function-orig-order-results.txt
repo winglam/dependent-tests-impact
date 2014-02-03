@@ -1,0 +1,305 @@
+Jan 31, 2014 1:20:39 AM dynoptic.model.export.GraphExporter exportCFSM
+INFO: Exporting CFSM to: ./test.dot
+Jan 31, 2014 1:20:39 AM dynoptic.model.export.GraphExporter exportCFSM
+INFO: Exporting CFSM to: ./test.dot
+Jan 31, 2014 1:20:39 AM dynoptic.model.export.GraphExporter exportCFSM
+INFO: Exporting CFSM to: ./test.dot
+Jan 31, 2014 1:20:39 AM dynoptic.model.export.GraphExporter exportCFSM
+INFO: Exporting CFSM to: ./test.dot
+Jan 31, 2014 1:20:39 AM dynoptic.model.fifosys.cfsm.CFSMTests scmString
+INFO: scm test:
+
+nb_channels = 2 ;
+/*
+channel 0 : 0-0->1:0->1
+channel 1 : 1-ch-locals:0->0
+*/
+
+parameters :
+real m ;
+real ep0L ;
+real fp1L ;
+
+automaton p0 :
+initial : 0
+state 0 :
+to 1 : when true , 0 ! m ;
+
+
+state 1 :
+to 0 : when true , 1 ! ep0L ;
+
+
+
+automaton p1 :
+initial : 0
+state 0 :
+to 1 : when true , 0 ? m ;
+
+
+state 1 :
+to 0 : when true , 1 ! fp1L ;
+
+
+
+
+Jan 31, 2014 1:20:39 AM dynoptic.model.fifosys.cfsm.CFSMTests augmentWithAFby
+INFO: (0-0->1:0->1 ! m) AFby (0-0->1:0->1 ? m)
+Jan 31, 2014 1:20:39 AM dynoptic.model.fifosys.cfsm.CFSMTests augmentWithAFby
+INFO: (automaton p0: in 1: true
+automaton p1: in 1: true
+with _ . # . (ch0SmTR0 | ch0SmTR1 | ch0RmTR0 | ch0RmTR1)^* . (ch0SmTR0 . ch0SmTR1)^+
+)
+Jan 31, 2014 1:20:39 AM dynoptic.model.fifosys.cfsm.CFSMTests augmentWithAFby
+INFO: scm augmentWithAFby-test:
+
+nb_channels = 3 ;
+/*
+channel 0 : 0-0->1:0->1
+channel 1 : 1-ch-[(0-0->1:0->1 ! m) AFby (0-0->1:0->1 ? m)]:0->0
+channel 2 : 2-ch-locals:0->0
+*/
+
+parameters :
+real m ;
+real ep0L ;
+real fp1L ;
+real ch0SmTR0 ;
+real ch0SmTR1 ;
+real ch0RmTR0 ;
+real ch0RmTR1 ;
+
+automaton p0 :
+initial : 0
+state 0 :
+to 2 : when true , 1 ! ch0SmTR0 ;
+
+
+state 1 :
+to 0 : when true , 2 ! ep0L ;
+
+
+state 2 :
+to 3 : when true , 0 ! m ;
+
+
+state 3 :
+to 1 : when true , 1 ! ch0SmTR1 ;
+
+
+
+automaton p1 :
+initial : 0
+state 0 :
+to 2 : when true , 1 ! ch0RmTR0 ;
+
+
+state 1 :
+to 0 : when true , 2 ! fp1L ;
+
+
+state 2 :
+to 3 : when true , 0 ? m ;
+
+
+state 3 :
+to 1 : when true , 1 ! ch0RmTR1 ;
+
+
+
+
+bad_states:
+(automaton p0: in 1: true
+automaton p1: in 1: true
+with _ . # . (ch0SmTR0 | ch0SmTR1 | ch0RmTR0 | ch0RmTR1)^* . (ch0SmTR0 . ch0SmTR1)^+ . # . (ep0L | fp1L)^*
+)
+
+Jan 31, 2014 1:20:39 AM dynoptic.model.fifosys.cfsm.CFSMTests augmentWithNFby
+INFO: (0-0->1:0->1 ! m) NFby (0-0->1:0->1 ? m)
+Jan 31, 2014 1:20:39 AM dynoptic.model.fifosys.cfsm.CFSMTests augmentWithNFby
+INFO: (automaton p0: in 1: true
+automaton p1: in 1: true
+with _ . # . (ch0SmTR0 | ch0SmTR1 | ch0RmTR0 | ch0RmTR1)^* . (ch0SmTR0 . ch0SmTR1) . (ch0SmTR0 | ch0SmTR1 | ch0RmTR0 | ch0RmTR1)^* . (ch0RmTR0 . ch0RmTR1) . (ch0SmTR0 | ch0SmTR1 | ch0RmTR0 | ch0RmTR1)^*
+)
+Jan 31, 2014 1:20:39 AM dynoptic.model.fifosys.cfsm.CFSMTests augmentWithNFby
+INFO: scm augmentWithNFby-test:
+
+nb_channels = 3 ;
+/*
+channel 0 : 0-0->1:0->1
+channel 1 : 1-ch-[(0-0->1:0->1 ! m) NFby (0-0->1:0->1 ? m)]:0->0
+channel 2 : 2-ch-locals:0->0
+*/
+
+parameters :
+real m ;
+real ep0L ;
+real fp1L ;
+real ch0SmTR0 ;
+real ch0SmTR1 ;
+real ch0RmTR0 ;
+real ch0RmTR1 ;
+
+automaton p0 :
+initial : 0
+state 0 :
+to 2 : when true , 1 ! ch0SmTR0 ;
+
+
+state 1 :
+to 0 : when true , 2 ! ep0L ;
+
+
+state 2 :
+to 3 : when true , 0 ! m ;
+
+
+state 3 :
+to 1 : when true , 1 ! ch0SmTR1 ;
+
+
+
+automaton p1 :
+initial : 0
+state 0 :
+to 2 : when true , 1 ! ch0RmTR0 ;
+
+
+state 1 :
+to 0 : when true , 2 ! fp1L ;
+
+
+state 2 :
+to 3 : when true , 0 ? m ;
+
+
+state 3 :
+to 1 : when true , 1 ! ch0RmTR1 ;
+
+
+
+
+bad_states:
+(automaton p0: in 1: true
+automaton p1: in 1: true
+with _ . # . (ch0SmTR0 | ch0SmTR1 | ch0RmTR0 | ch0RmTR1)^* . (ch0SmTR0 . ch0SmTR1) . (ch0SmTR0 | ch0SmTR1 | ch0RmTR0 | ch0RmTR1)^* . (ch0RmTR0 . ch0RmTR1) . (ch0SmTR0 | ch0SmTR1 | ch0RmTR0 | ch0RmTR1)^* . # . (ep0L | fp1L)^*
+)
+
+Jan 31, 2014 1:20:39 AM dynoptic.model.fifosys.cfsm.CFSMTests augmentWithAP
+INFO: (0-0->1:0->1 ! m) AP (0-0->1:0->1 ? m)
+Jan 31, 2014 1:20:39 AM dynoptic.model.fifosys.cfsm.CFSMTests augmentWithAP
+INFO: (automaton p0: in 1: true
+automaton p1: in 1: true
+with _ . # . (ch0RmTR0 . ch0RmTR1)^+ . (ch0SmTR0 | ch0SmTR1 | ch0RmTR0 | ch0RmTR1)^*
+)
+Jan 31, 2014 1:20:39 AM dynoptic.model.fifosys.cfsm.CFSMTests augmentWithAP
+INFO: scm augmentWithAP-test:
+
+nb_channels = 3 ;
+/*
+channel 0 : 0-0->1:0->1
+channel 1 : 1-ch-[(0-0->1:0->1 ! m) AP (0-0->1:0->1 ? m)]:0->0
+channel 2 : 2-ch-locals:0->0
+*/
+
+parameters :
+real m ;
+real ep0L ;
+real fp1L ;
+real ch0SmTR0 ;
+real ch0SmTR1 ;
+real ch0RmTR0 ;
+real ch0RmTR1 ;
+
+automaton p0 :
+initial : 0
+state 0 :
+to 2 : when true , 1 ! ch0SmTR0 ;
+
+
+state 1 :
+to 0 : when true , 2 ! ep0L ;
+
+
+state 2 :
+to 3 : when true , 0 ! m ;
+
+
+state 3 :
+to 1 : when true , 1 ! ch0SmTR1 ;
+
+
+
+automaton p1 :
+initial : 0
+state 0 :
+to 2 : when true , 1 ! ch0RmTR0 ;
+
+
+state 1 :
+to 0 : when true , 2 ! fp1L ;
+
+
+state 2 :
+to 3 : when true , 0 ? m ;
+
+
+state 3 :
+to 1 : when true , 1 ! ch0RmTR1 ;
+
+
+
+
+bad_states:
+(automaton p0: in 1: true
+automaton p1: in 1: true
+with _ . # . (ch0RmTR0 . ch0RmTR1)^+ . (ch0SmTR0 | ch0SmTR1 | ch0RmTR0 | ch0RmTR1)^* . # . (ep0L | fp1L)^*
+)
+
+Jan 31, 2014 1:20:39 AM dynoptic.model.fifosys.cfsm.fsm.FSMTests scmString
+INFO: initial : 0
+state 0 :
+to 1 : when true , 0 ! m ;
+
+
+state 1 :
+to 0 : when true , 1 ! ep1L ;
+
+
+
+Jan 31, 2014 1:20:39 AM dynoptic.model.fifosys.cfsm.fsm.BadStateTests createAndScmString
+INFO: (automaton p0: in 0: true
+automaton p1: in 2: true
+with .* . # . .*
+)
+Jan 31, 2014 1:20:39 AM dynoptic.model.fifosys.cfsm.fsm.BadStateTests createAndScmString
+INFO: (automaton p0: in 0: true
+automaton p1: in 2: true
+with .* . # . .*
+)
+Jan 31, 2014 1:20:39 AM dynoptic.model.fifosys.cfsm.fsm.FSMStateTests scmString
+INFO: state 0 :
+
+Jan 31, 2014 1:20:39 AM dynoptic.model.fifosys.cfsm.fsm.FSMStateTests scmString
+INFO: state 0 :
+to 1 : when true , 0 ! m ;
+to 1 : when true , 1 ! ep1L ;
+
+Jan 31, 2014 1:20:39 AM dynoptic.model.fifosys.cfsm.fsm.FSMStateTests checkInitAcceptPid
+INFO: 0
+Jan 31, 2014 1:20:39 AM dynoptic.model.fifosys.cfsm.fsm.FSMStateTests checkInitAcceptPid
+INFO: 1
+Jan 31, 2014 1:20:39 AM dynoptic.model.fifosys.gfsm.GFSM addToQueueContentsHashMap
+INFO: Creating a new partition for ch-states like: ChState]
+Jan 31, 2014 1:20:39 AM dynoptic.model.fifosys.gfsm.GFSM getCFSM
+INFO: GFSM -> CFSM: GFSM[num-states=1] : 
+	[0, 1]
+
+Jan 31, 2014 1:20:39 AM dynoptic.model.fifosys.gfsm.GFSM getCFSM
+INFO: Building FSM for pid 0
+Jan 31, 2014 1:20:39 AM dynoptic.model.fifosys.gfsm.GFSM getCFSM
+INFO: GFSMState->FSMState[pid=0] stateMap : {[0, 1]=0}
+0-th run
+Pass: 34, Fail: 0, Error: 14
+{dynoptic.model.automaton.EncodedAutomatonTests.isEquivalentTwoAcceptStateFSM=PASS, dynoptic.model.automaton.EncodedAutomatonTests.isEquivalentFSMDiffEventOrder=PASS, dynoptic.model.automaton.EncodedAutomatonTests.isEquivalentDiffAcceptLabelFSM=PASS, dynoptic.model.automaton.EncodedAutomatonTests.isEquivalentCFSMFalseDiffSize=PASS, dynoptic.model.automaton.EncodedAutomatonTests.isEquivalentOneStateFSM=PASS, dynoptic.model.automaton.EncodedAutomatonTests.isEquivalentTwoStateFSM=PASS, dynoptic.model.automaton.EncodedAutomatonTests.isEquivalentTwoInitStateFSM=PASS, dynoptic.model.automaton.EncodedAutomatonTests.isEquivalentDiffInitLabelFSM=PASS, dynoptic.model.automaton.EncodedAutomatonTests.isEquivalentSameLanguage=PASS, dynoptic.model.automaton.EncodedAutomatonTests.isEquivalentCFSM=PASS, dynoptic.model.automaton.EncodedAutomatonTests.isEquivalentCFSMFalseDiffPid=PASS, dynoptic.model.export.GraphExporterTests.twoFSMsTwoStatesEachLocalEventsTest=ERROR, dynoptic.model.export.GraphExporterTests.oneFSMOneStateTest=ERROR, dynoptic.model.export.GraphExporterTests.oneFSMTwoStatesTest=ERROR, dynoptic.model.export.GraphExporterTests.twoFSMsTwoStatesEachCommEventsTest=ERROR, dynoptic.model.fifosys.cfsm.CFSMStateTests.createCFSMStateWithTxns=PASS, dynoptic.model.fifosys.cfsm.CFSMTests.scmString=PASS, dynoptic.model.fifosys.cfsm.CFSMTests.initsAccepts=PASS, dynoptic.model.fifosys.cfsm.CFSMTests.createEmptyCFSM=PASS, dynoptic.model.fifosys.cfsm.CFSMTests.augmentWithAFby=PASS, dynoptic.model.fifosys.cfsm.CFSMTests.augmentWithNFby=PASS, dynoptic.model.fifosys.cfsm.CFSMTests.augmentWithAP=PASS, dynoptic.model.fifosys.cfsm.McScMCFSMTests.verifyAFby=ERROR, dynoptic.model.fifosys.cfsm.McScMCFSMTests.verifyNFby=ERROR, dynoptic.model.fifosys.cfsm.McScMCFSMTests.verifyAP=ERROR, dynoptic.model.fifosys.cfsm.fsm.FSMTests.scmString=PASS, dynoptic.model.fifosys.cfsm.fsm.FSMTests.createFSM=PASS, dynoptic.model.fifosys.cfsm.fsm.FSMTests.createFSMWithTxns=PASS, dynoptic.model.fifosys.cfsm.fsm.FSMTests.createBadFSM1=ERROR, dynoptic.model.fifosys.cfsm.fsm.FSMTests.createBadFSM2=ERROR, dynoptic.model.fifosys.cfsm.fsm.BadStateTests.createAndScmString=PASS, dynoptic.model.fifosys.cfsm.fsm.FSMMinimizationTests.minimizeTest=PASS, dynoptic.model.fifosys.cfsm.fsm.FSMMinimizationTests.isDeterministicOneStateNoTransition=PASS, dynoptic.model.fifosys.cfsm.fsm.FSMMinimizationTests.isDeterministicOneStateWithTransition=PASS, dynoptic.model.fifosys.cfsm.fsm.FSMMinimizationTests.isDeterministicTwoStatesOneTransition=PASS, dynoptic.model.fifosys.cfsm.fsm.FSMMinimizationTests.isDeterministicTwoStatesTwoTransitions=PASS, dynoptic.model.fifosys.cfsm.fsm.FSMMinimizationTests.nonDeterministicSingleInitState=PASS, dynoptic.model.fifosys.cfsm.fsm.FSMMinimizationTests.nonDeterministicMultipleInitStates=PASS, dynoptic.model.fifosys.cfsm.fsm.FSMStateTests.scmString=PASS, dynoptic.model.fifosys.cfsm.fsm.FSMStateTests.checkInitAcceptPid=PASS, dynoptic.model.fifosys.cfsm.fsm.FSMStateTests.oneTransition=PASS, dynoptic.model.fifosys.cfsm.fsm.FSMStateTests.twoTransitions=PASS, dynoptic.model.fifosys.cfsm.fsm.FSMStateTests.wrongEventPid=ERROR, dynoptic.model.fifosys.gfsm.GFSMTests.gfsmToCFSM=PASS, mcscm.McScMTests.testEmptyScmInput=ERROR, mcscm.McScMTests.testSafeScmInput=ERROR, mcscm.McScMTests.testUnsafeScmInputLen1=ERROR, mcscm.McScMTests.testUnsafeScmInputLen2=ERROR}
+
