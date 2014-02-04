@@ -61,14 +61,10 @@ public class MainDriver {
             }
 
             String techniqueStr = argsList.get(techniqueNameIndex).toLowerCase().trim();
-            if (techniqueStr.equals("prioritization-absolute")) {
-                techniqueName = TECHNIQUE.PRIORITIZATION_ABSOLUTE;
-            } else if (techniqueStr.equals("prioritization-relative")) {
-                techniqueName = TECHNIQUE.PRIORITIZATION_RELATIVE;
+            if (techniqueStr.equals("prioritization")) {
+                techniqueName = TECHNIQUE.PRIORITIZATION;
             } else if (techniqueStr.equals("selection")) {
                 techniqueName = TECHNIQUE.SELECTION;
-            } else if (techniqueStr.equals("random")) {
-                techniqueName = TECHNIQUE.RANDOM;
             } else {
                 System.err
                 .println("Technique name is invalid. Try \"prioritization-absolute\", \"prioritization-relative\", \"random\" or \"selection\".");

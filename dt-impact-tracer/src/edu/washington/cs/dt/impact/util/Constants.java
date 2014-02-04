@@ -5,10 +5,14 @@ public class Constants {
         STATEMENT, FUNCTION, BRANCH
     }
 
-    public final static TECHNIQUE DEFAULT_TECHNIQUE = TECHNIQUE.PRIORITIZATION_ABSOLUTE;
+    public final static TECHNIQUE DEFAULT_TECHNIQUE = TECHNIQUE.PRIORITIZATION;
     public final static String DEFAULT_TEST_DIR = "sootTestOutput";
 
     public enum TECHNIQUE {
-        PRIORITIZATION_ABSOLUTE, PRIORITIZATION_RELATIVE, SELECTION, RANDOM
+        PRIORITIZATION, SELECTION
     };
+
+    public enum ORDER {
+        RANDOM, ABSOLUTE, RELATIVE, ORIGINAL
+    }
 }
