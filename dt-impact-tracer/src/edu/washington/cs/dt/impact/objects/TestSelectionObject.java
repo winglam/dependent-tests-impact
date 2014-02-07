@@ -34,31 +34,38 @@ public class TestSelectionObject extends TestObject {
             }
         }
 
-        if (order == ORDER.ABSOLUTE) {
+        if (order ==  ORDER.RELATIVE) {
             methodList.retainAll(nameToMethodData.values());
+            allLines.retainAll(changedCoverage);
             Collections.sort(methodList);
-        } else if (order == ORDER.RANDOM) {
-            methodList.retainAll(nameToMethodData.values());
-            Collections.shuffle(methodList);
-        } else if (order == ORDER.ORIGINAL) {
-            methodList.clear();
-            BufferedReader br;
-            try {
-                br = new BufferedReader(new FileReader(origOrder));
-                String line;
-                while ((line = br.readLine()) != null) {
-                    if (nameToMethodData.containsKey(line.trim())) {
-                        methodList.add(nameToMethodData.get(line.trim()));
+            orderObj = new RelativeOrderObject(outputFileName, methodList, allLines);
+        } else {
+            if (order == ORDER.ABSOLUTE) {
+                methodList.retainAll(nameToMethodData.values());
+                Collections.sort(methodList);
+            } else if (order == ORDER.RANDOM) {
+                methodList.retainAll(nameToMethodData.values());
+                Collections.shuffle(methodList);
+            } else if (order == ORDER.ORIGINAL) {
+                methodList.clear();
+                BufferedReader br;
+                try {
+                    br = new BufferedReader(new FileReader(origOrder));
+                    String line;
+                    while ((line = br.readLine()) != null) {
+                        if (nameToMethodData.containsKey(line.trim())) {
+                            methodList.add(nameToMethodData.get(line.trim()));
+                        }
                     }
+                    br.close();
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
                 }
-                br.close();
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
             }
+            orderObj = new StandardOrderObject(outputFileName, methodList);
         }
-        orderObj = new StandardOrderObject(outputFileName, methodList);
     }
 
     private  Set<String> findCoverage(File selectionOutput1, File selectionOutput2, final COVERAGE coverage) {

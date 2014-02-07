@@ -1,4 +1,4 @@
-package edu.washington.cs.dt.impact.util;
+package edu.washington.cs.dt.impact.tools;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -8,6 +8,7 @@ import java.util.List;
 import edu.washington.cs.dt.impact.objects.TestObject;
 import edu.washington.cs.dt.impact.objects.TestPrioritizationObject;
 import edu.washington.cs.dt.impact.objects.TestSelectionObject;
+import edu.washington.cs.dt.impact.util.Constants;
 import edu.washington.cs.dt.impact.util.Constants.COVERAGE;
 import edu.washington.cs.dt.impact.util.Constants.ORDER;
 import edu.washington.cs.dt.impact.util.Constants.TECHNIQUE;
@@ -37,7 +38,7 @@ public class TestListGenerator {
                 techniqueName = TECHNIQUE.SELECTION;
             } else {
                 System.err
-                .println("Technique name is invalid. Try \"prioritization-absolute\", \"prioritization-relative\", \"random\" or \"selection\".");
+                .println("Technique name is invalid. Try \"prioritization\" or \"selection\".");
                 System.exit(0);
             }
         }
@@ -97,9 +98,6 @@ public class TestListGenerator {
                 System.exit(0);
             }
             testInputDirName = argsList.get(testInputDirNameIndex);
-        } else {
-            System.err.println("No test input directory argument is specified. Please use the format: -testInputDir aDirName");
-            System.exit(0);
         }
 
         // if specified, the output is saved to the file name instead of printed to console

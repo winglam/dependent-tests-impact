@@ -58,7 +58,7 @@ org.apache.xml.security.test.interop.IBMTest.test_detached_rsa:                 
 org.apache.xml.security.test.external.org.apache.xalan.XPathAPI.XalanBug1425Test.testBad02:                 PASS
 org.apache.xml.security.test.external.org.apache.xalan.XPathAPI.XalanBug1425Test.testBad03:                 PASS
 
-xml-security-ts-statement-orig-order.txt
+xml-security-ts-function-random.txt
                                                                                                             Original order result:        Test order result:
 org.apache.xml.security.test.interop.IBMTest.test_detached_dsa:                                             ERROR
 org.apache.xml.security.test.interop.IBMTest.test_enveloping_dsa_soaped_broken:                             ERROR
@@ -68,17 +68,71 @@ org.apache.xml.security.test.algorithms.implementations.AESWrapperTest.test45:  
 org.apache.xml.security.test.algorithms.implementations.AESWrapperTest.test44:                              PASS
 org.apache.xml.security.test.algorithms.implementations.AESWrapperTest.test41:                              PASS
 org.apache.xml.security.test.algorithms.implementations.AESWrapperTest.test46:                              PASS
-org.apache.xml.security.test.interop.IBMTest.test_enveloping_hmac:                                          ERROR
-org.apache.xml.security.test.c14n.implementations.Canonicalizer20010315Test.test37byNodeList:               PASS
 org.apache.xml.security.test.external.org.apache.xalan.XPathAPI.XalanBug1425Test.testGood04:                PASS
 org.apache.xml.security.test.external.org.apache.xalan.XPathAPI.XalanBug1425Test.testGood05:                PASS
-org.apache.xml.security.test.signature.XMLSignatureInputTest.testOctetStreamIsOctetStream:                  PASS
-org.apache.xml.security.test.signature.XMLSignatureInputTest.testIsInitializedWithOctetStream:              PASS
-org.apache.xml.security.test.signature.XMLSignatureInputTest.testIsInitializedWithNodeSet:                  PASS
 org.apache.xml.security.test.interop.IBMTest.test_enveloping_rsa:                                           ERROR
 org.apache.xml.security.test.c14n.implementations.Canonicalizer20010315Test.testRelativeNSbehaviour:        PASS
 org.apache.xml.security.test.interop.IBMTest.test_enveloped_rsa:                                            ERROR
-org.apache.xml.security.test.utils.resolver.ResourceResolverSpiTest.testExpandSystemId_1:                   PASS
+org.apache.xml.security.test.external.org.apache.xalan.XPathAPI.AttributeAncestorOrSelf.test02:             PASS
+org.apache.xml.security.test.external.org.apache.xalan.XPathAPI.AttributeAncestorOrSelf.test03:             PASS
+org.apache.xml.security.test.signature.XMLSignatureInputTest.testOctetStreamIsNotNodeSet:                   PASS
+org.apache.xml.security.test.signature.XMLSignatureInputTest.testNodeSetIsNodeSet:                          PASS
+org.apache.xml.security.test.algorithms.implementations.BlockEncryptionTest.test_3DES:                      PASS
+org.apache.xml.security.test.c14n.implementations.Canonicalizer20010315Test.testTranslationFromUTF16toUTF8: PASS
+org.apache.xml.security.test.interop.IBMTest.test_enveloped_dsa:                                            ERROR
+org.apache.xml.security.test.external.org.apache.xalan.XPathAPI.XalanBug1425Test.testGood02:                PASS
+org.apache.xml.security.test.external.org.apache.xalan.XPathAPI.XalanBug1425Test.testGood03:                PASS
+org.apache.xml.security.test.external.org.apache.xalan.XPathAPI.XalanBug1425Test.testGood01:                PASS
+org.apache.xml.security.test.interop.IBMTest.test_enveloping_dsa:                                           ERROR
+org.apache.xml.security.test.interop.IBMTest.test_detached_rsa:                                             ERROR
+org.apache.xml.security.test.external.org.apache.xalan.XPathAPI.XalanBug1425Test.testBad02:                 PASS
+org.apache.xml.security.test.external.org.apache.xalan.XPathAPI.XalanBug1425Test.testBad03:                 PASS
+
+xml-security-ts-function-relative.txt
+                                                                                                            Original order result:        Test order result:
+org.apache.xml.security.test.interop.IBMTest.test_detached_dsa:                                             ERROR
+org.apache.xml.security.test.interop.IBMTest.test_enveloping_dsa_soaped_broken:                             ERROR
+org.apache.xml.security.test.algorithms.implementations.AESWrapperTest.test43:                              PASS
+org.apache.xml.security.test.algorithms.implementations.AESWrapperTest.test42:                              PASS
+org.apache.xml.security.test.algorithms.implementations.AESWrapperTest.test45:                              PASS
+org.apache.xml.security.test.algorithms.implementations.AESWrapperTest.test44:                              PASS
+org.apache.xml.security.test.algorithms.implementations.AESWrapperTest.test41:                              PASS
+org.apache.xml.security.test.algorithms.implementations.AESWrapperTest.test46:                              PASS
+org.apache.xml.security.test.external.org.apache.xalan.XPathAPI.XalanBug1425Test.testGood04:                PASS
+org.apache.xml.security.test.external.org.apache.xalan.XPathAPI.XalanBug1425Test.testGood05:                PASS
+org.apache.xml.security.test.interop.IBMTest.test_enveloping_rsa:                                           ERROR
+org.apache.xml.security.test.c14n.implementations.Canonicalizer20010315Test.testRelativeNSbehaviour:        PASS
+org.apache.xml.security.test.interop.IBMTest.test_enveloped_rsa:                                            ERROR
+org.apache.xml.security.test.external.org.apache.xalan.XPathAPI.AttributeAncestorOrSelf.test02:             PASS
+org.apache.xml.security.test.external.org.apache.xalan.XPathAPI.AttributeAncestorOrSelf.test03:             PASS
+org.apache.xml.security.test.signature.XMLSignatureInputTest.testOctetStreamIsNotNodeSet:                   PASS
+org.apache.xml.security.test.signature.XMLSignatureInputTest.testNodeSetIsNodeSet:                          PASS
+org.apache.xml.security.test.algorithms.implementations.BlockEncryptionTest.test_3DES:                      PASS
+org.apache.xml.security.test.c14n.implementations.Canonicalizer20010315Test.testTranslationFromUTF16toUTF8: PASS
+org.apache.xml.security.test.interop.IBMTest.test_enveloped_dsa:                                            ERROR
+org.apache.xml.security.test.external.org.apache.xalan.XPathAPI.XalanBug1425Test.testGood02:                PASS
+org.apache.xml.security.test.external.org.apache.xalan.XPathAPI.XalanBug1425Test.testGood03:                PASS
+org.apache.xml.security.test.external.org.apache.xalan.XPathAPI.XalanBug1425Test.testGood01:                PASS
+org.apache.xml.security.test.interop.IBMTest.test_enveloping_dsa:                                           ERROR
+org.apache.xml.security.test.interop.IBMTest.test_detached_rsa:                                             ERROR
+org.apache.xml.security.test.external.org.apache.xalan.XPathAPI.XalanBug1425Test.testBad02:                 PASS
+org.apache.xml.security.test.external.org.apache.xalan.XPathAPI.XalanBug1425Test.testBad03:                 PASS
+
+xml-security-ts-statement-relative.txt
+                                                                                                            Original order result:        Test order result:
+org.apache.xml.security.test.interop.IBMTest.test_detached_dsa:                                             ERROR
+org.apache.xml.security.test.interop.IBMTest.test_enveloping_dsa_soaped_broken:                             ERROR
+org.apache.xml.security.test.algorithms.implementations.AESWrapperTest.test43:                              PASS
+org.apache.xml.security.test.algorithms.implementations.AESWrapperTest.test42:                              PASS
+org.apache.xml.security.test.algorithms.implementations.AESWrapperTest.test45:                              PASS
+org.apache.xml.security.test.algorithms.implementations.AESWrapperTest.test44:                              PASS
+org.apache.xml.security.test.algorithms.implementations.AESWrapperTest.test41:                              PASS
+org.apache.xml.security.test.algorithms.implementations.AESWrapperTest.test46:                              PASS
+org.apache.xml.security.test.external.org.apache.xalan.XPathAPI.XalanBug1425Test.testGood04:                PASS
+org.apache.xml.security.test.external.org.apache.xalan.XPathAPI.XalanBug1425Test.testGood05:                PASS
+org.apache.xml.security.test.interop.IBMTest.test_enveloping_rsa:                                           ERROR
+org.apache.xml.security.test.c14n.implementations.Canonicalizer20010315Test.testRelativeNSbehaviour:        PASS
+org.apache.xml.security.test.interop.IBMTest.test_enveloped_rsa:                                            ERROR
 org.apache.xml.security.test.external.org.apache.xalan.XPathAPI.AttributeAncestorOrSelf.test02:             PASS
 org.apache.xml.security.test.utils.resolver.ResourceResolverSpiTest.testExpandSystemId_2:                   PASS
 org.apache.xml.security.test.external.org.apache.xalan.XPathAPI.AttributeAncestorOrSelf.test03:             PASS
@@ -90,7 +144,68 @@ org.apache.xml.security.test.interop.IBMTest.test_enveloped_dsa:                
 org.apache.xml.security.test.external.org.apache.xalan.XPathAPI.XalanBug1425Test.testGood02:                PASS
 org.apache.xml.security.test.external.org.apache.xalan.XPathAPI.XalanBug1425Test.testGood03:                PASS
 org.apache.xml.security.test.external.org.apache.xalan.XPathAPI.XalanBug1425Test.testGood01:                PASS
-org.apache.xml.security.test.signature.XMLSignatureInputTest.testNodeSetIsNotOctetStream:                   PASS
+org.apache.xml.security.test.interop.IBMTest.test_enveloping_dsa:                                           ERROR
+org.apache.xml.security.test.interop.IBMTest.test_detached_rsa:                                             ERROR
+org.apache.xml.security.test.external.org.apache.xalan.XPathAPI.XalanBug1425Test.testBad02:                 PASS
+org.apache.xml.security.test.external.org.apache.xalan.XPathAPI.XalanBug1425Test.testBad03:                 PASS
+
+xml-security-ts-statement-random.txt
+                                                                                                            Original order result:        Test order result:
+org.apache.xml.security.test.interop.IBMTest.test_detached_dsa:                                             ERROR
+org.apache.xml.security.test.interop.IBMTest.test_enveloping_dsa_soaped_broken:                             ERROR
+org.apache.xml.security.test.algorithms.implementations.AESWrapperTest.test43:                              PASS
+org.apache.xml.security.test.algorithms.implementations.AESWrapperTest.test42:                              PASS
+org.apache.xml.security.test.algorithms.implementations.AESWrapperTest.test45:                              PASS
+org.apache.xml.security.test.algorithms.implementations.AESWrapperTest.test44:                              PASS
+org.apache.xml.security.test.algorithms.implementations.AESWrapperTest.test41:                              PASS
+org.apache.xml.security.test.algorithms.implementations.AESWrapperTest.test46:                              PASS
+org.apache.xml.security.test.external.org.apache.xalan.XPathAPI.XalanBug1425Test.testGood04:                PASS
+org.apache.xml.security.test.external.org.apache.xalan.XPathAPI.XalanBug1425Test.testGood05:                PASS
+org.apache.xml.security.test.interop.IBMTest.test_enveloping_rsa:                                           ERROR
+org.apache.xml.security.test.c14n.implementations.Canonicalizer20010315Test.testRelativeNSbehaviour:        PASS
+org.apache.xml.security.test.interop.IBMTest.test_enveloped_rsa:                                            ERROR
+org.apache.xml.security.test.external.org.apache.xalan.XPathAPI.AttributeAncestorOrSelf.test02:             PASS
+org.apache.xml.security.test.utils.resolver.ResourceResolverSpiTest.testExpandSystemId_2:                   PASS
+org.apache.xml.security.test.external.org.apache.xalan.XPathAPI.AttributeAncestorOrSelf.test03:             PASS
+org.apache.xml.security.test.signature.XMLSignatureInputTest.testOctetStreamIsNotNodeSet:                   PASS
+org.apache.xml.security.test.signature.XMLSignatureInputTest.testNodeSetIsNodeSet:                          PASS
+org.apache.xml.security.test.algorithms.implementations.BlockEncryptionTest.test_3DES:                      PASS
+org.apache.xml.security.test.c14n.implementations.Canonicalizer20010315Test.testTranslationFromUTF16toUTF8: PASS
+org.apache.xml.security.test.interop.IBMTest.test_enveloped_dsa:                                            ERROR
+org.apache.xml.security.test.external.org.apache.xalan.XPathAPI.XalanBug1425Test.testGood02:                PASS
+org.apache.xml.security.test.external.org.apache.xalan.XPathAPI.XalanBug1425Test.testGood03:                PASS
+org.apache.xml.security.test.external.org.apache.xalan.XPathAPI.XalanBug1425Test.testGood01:                PASS
+org.apache.xml.security.test.interop.IBMTest.test_enveloping_dsa:                                           ERROR
+org.apache.xml.security.test.interop.IBMTest.test_detached_rsa:                                             ERROR
+org.apache.xml.security.test.external.org.apache.xalan.XPathAPI.XalanBug1425Test.testBad02:                 PASS
+org.apache.xml.security.test.external.org.apache.xalan.XPathAPI.XalanBug1425Test.testBad03:                 PASS
+
+xml-security-ts-statement-orig-order.txt
+                                                                                                            Original order result:        Test order result:
+org.apache.xml.security.test.interop.IBMTest.test_detached_dsa:                                             ERROR
+org.apache.xml.security.test.interop.IBMTest.test_enveloping_dsa_soaped_broken:                             ERROR
+org.apache.xml.security.test.algorithms.implementations.AESWrapperTest.test43:                              PASS
+org.apache.xml.security.test.algorithms.implementations.AESWrapperTest.test42:                              PASS
+org.apache.xml.security.test.algorithms.implementations.AESWrapperTest.test45:                              PASS
+org.apache.xml.security.test.algorithms.implementations.AESWrapperTest.test44:                              PASS
+org.apache.xml.security.test.algorithms.implementations.AESWrapperTest.test41:                              PASS
+org.apache.xml.security.test.algorithms.implementations.AESWrapperTest.test46:                              PASS
+org.apache.xml.security.test.external.org.apache.xalan.XPathAPI.XalanBug1425Test.testGood04:                PASS
+org.apache.xml.security.test.external.org.apache.xalan.XPathAPI.XalanBug1425Test.testGood05:                PASS
+org.apache.xml.security.test.interop.IBMTest.test_enveloping_rsa:                                           ERROR
+org.apache.xml.security.test.c14n.implementations.Canonicalizer20010315Test.testRelativeNSbehaviour:        PASS
+org.apache.xml.security.test.interop.IBMTest.test_enveloped_rsa:                                            ERROR
+org.apache.xml.security.test.external.org.apache.xalan.XPathAPI.AttributeAncestorOrSelf.test02:             PASS
+org.apache.xml.security.test.utils.resolver.ResourceResolverSpiTest.testExpandSystemId_2:                   PASS
+org.apache.xml.security.test.external.org.apache.xalan.XPathAPI.AttributeAncestorOrSelf.test03:             PASS
+org.apache.xml.security.test.signature.XMLSignatureInputTest.testOctetStreamIsNotNodeSet:                   PASS
+org.apache.xml.security.test.signature.XMLSignatureInputTest.testNodeSetIsNodeSet:                          PASS
+org.apache.xml.security.test.algorithms.implementations.BlockEncryptionTest.test_3DES:                      PASS
+org.apache.xml.security.test.c14n.implementations.Canonicalizer20010315Test.testTranslationFromUTF16toUTF8: PASS
+org.apache.xml.security.test.interop.IBMTest.test_enveloped_dsa:                                            ERROR
+org.apache.xml.security.test.external.org.apache.xalan.XPathAPI.XalanBug1425Test.testGood02:                PASS
+org.apache.xml.security.test.external.org.apache.xalan.XPathAPI.XalanBug1425Test.testGood03:                PASS
+org.apache.xml.security.test.external.org.apache.xalan.XPathAPI.XalanBug1425Test.testGood01:                PASS
 org.apache.xml.security.test.interop.IBMTest.test_enveloping_dsa:                                           ERROR
 org.apache.xml.security.test.interop.IBMTest.test_detached_rsa:                                             ERROR
 org.apache.xml.security.test.external.org.apache.xalan.XPathAPI.XalanBug1425Test.testBad02:                 PASS
@@ -106,17 +221,11 @@ org.apache.xml.security.test.algorithms.implementations.AESWrapperTest.test45:  
 org.apache.xml.security.test.algorithms.implementations.AESWrapperTest.test44:                              PASS
 org.apache.xml.security.test.algorithms.implementations.AESWrapperTest.test41:                              PASS
 org.apache.xml.security.test.algorithms.implementations.AESWrapperTest.test46:                              PASS
-org.apache.xml.security.test.interop.IBMTest.test_enveloping_hmac:                                          ERROR
-org.apache.xml.security.test.c14n.implementations.Canonicalizer20010315Test.test37byNodeList:               PASS
 org.apache.xml.security.test.external.org.apache.xalan.XPathAPI.XalanBug1425Test.testGood04:                PASS
 org.apache.xml.security.test.external.org.apache.xalan.XPathAPI.XalanBug1425Test.testGood05:                PASS
-org.apache.xml.security.test.signature.XMLSignatureInputTest.testOctetStreamIsOctetStream:                  PASS
-org.apache.xml.security.test.signature.XMLSignatureInputTest.testIsInitializedWithOctetStream:              PASS
-org.apache.xml.security.test.signature.XMLSignatureInputTest.testIsInitializedWithNodeSet:                  PASS
 org.apache.xml.security.test.interop.IBMTest.test_enveloping_rsa:                                           ERROR
 org.apache.xml.security.test.c14n.implementations.Canonicalizer20010315Test.testRelativeNSbehaviour:        PASS
 org.apache.xml.security.test.interop.IBMTest.test_enveloped_rsa:                                            ERROR
-org.apache.xml.security.test.utils.resolver.ResourceResolverSpiTest.testExpandSystemId_1:                   PASS
 org.apache.xml.security.test.external.org.apache.xalan.XPathAPI.AttributeAncestorOrSelf.test02:             PASS
 org.apache.xml.security.test.utils.resolver.ResourceResolverSpiTest.testExpandSystemId_2:                   PASS
 org.apache.xml.security.test.external.org.apache.xalan.XPathAPI.AttributeAncestorOrSelf.test03:             PASS
@@ -128,7 +237,6 @@ org.apache.xml.security.test.interop.IBMTest.test_enveloped_dsa:                
 org.apache.xml.security.test.external.org.apache.xalan.XPathAPI.XalanBug1425Test.testGood02:                PASS
 org.apache.xml.security.test.external.org.apache.xalan.XPathAPI.XalanBug1425Test.testGood03:                PASS
 org.apache.xml.security.test.external.org.apache.xalan.XPathAPI.XalanBug1425Test.testGood01:                PASS
-org.apache.xml.security.test.signature.XMLSignatureInputTest.testNodeSetIsNotOctetStream:                   PASS
 org.apache.xml.security.test.interop.IBMTest.test_enveloping_dsa:                                           ERROR
 org.apache.xml.security.test.interop.IBMTest.test_detached_rsa:                                             ERROR
 org.apache.xml.security.test.external.org.apache.xalan.XPathAPI.XalanBug1425Test.testBad02:                 PASS

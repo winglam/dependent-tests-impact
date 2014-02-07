@@ -16,7 +16,6 @@ public class Tracer {
     private static Map<String, Set<String>> statements = new HashMap<String, Set<String>>();
     private static List<String> selectionStatements = new LinkedList<String>();
     private static Set<String> duplicates = new HashSet<String>();
-    private static final int MAX_LIST_SIZE = 1000;
     private static boolean printLastElement = true;
 
     public static void trace(String str, String methodName) {
@@ -72,7 +71,7 @@ public class Tracer {
     }
 
     public static void selectionTrace(String str, String packageMethodName) {
-        String s = packageMethodName + " : " + str;
+        String s = packageMethodName + " : " + str.split(" goto")[0];
         if (str.contains("staticinvoke <edu.washington.cs.dt.impact.util.Tracer: void selectionTrace(java.lang.String,java.lang.String)>") || duplicates.contains(s)) {
             return;
         }
@@ -80,15 +79,6 @@ public class Tracer {
         duplicates.add(s);
         selectionStatements.add(s);
         printLastElement = true;
-
-        //        // prevent out of memory errors, output list if it gets too long
-        //        if (selectionStatements.size() > MAX_LIST_SIZE) {
-        //            selectionOutput(packageMethodName);
-        //            String last = selectionStatements.get(selectionStatements.size() - 1);
-        //            reset();
-        //            selectionStatements.add(last);
-        //            printLastElement = false;
-        //        }
     }
 
     public static void selectionOutput(String packageMethodName) {

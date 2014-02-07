@@ -6,6 +6,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -18,6 +19,7 @@ public abstract class TestObject {
     protected List<TestMethodData> methodList;
 
     public TestObject(File folder, COVERAGE coverage) {
+        allLines = new HashSet<String>();
         methodList = listFilesForFolder(folder, coverage);
     }
 
