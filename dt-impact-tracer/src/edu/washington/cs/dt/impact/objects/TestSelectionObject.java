@@ -20,8 +20,8 @@ import edu.washington.cs.dt.impact.util.TestMethodData;
 public class TestSelectionObject extends TestObject {
     private OrderObject orderObj;
 
-    public TestSelectionObject(ORDER order, String outputFileName, File inputTestFolder, COVERAGE coverage, File selectionOutput1, File selectionOutput2, File origOrder) {
-        super(inputTestFolder, coverage);
+    public TestSelectionObject(ORDER order, String outputFileName, File inputTestFolder, COVERAGE coverage, File selectionOutput1, File selectionOutput2, File origOrder, File dependentTestsFile) {
+        super(inputTestFolder, coverage, dependentTestsFile);
 
         Set<String> changedCoverage = findCoverage(selectionOutput1, selectionOutput2, coverage);
 

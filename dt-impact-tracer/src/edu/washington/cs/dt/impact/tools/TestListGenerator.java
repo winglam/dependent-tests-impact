@@ -114,6 +114,20 @@ public class TestListGenerator {
             outputFileName = argsList.get(outputFileNameIndex);
         }
 
+        // if specified, the output is saved to the file name instead of printed to console
+        File dependentTestFile = null;
+        int dependentFile = argsList.indexOf("-dependentTestFile");
+        if (dependentFile != -1) {
+            // get index of output file
+            int dependentFileNameIndex = dependentFile + 1;
+            if (dependentFileNameIndex >= argsList.size()) {
+                System.err
+                .println("Dependent test file argument is specified but a file name is not. Please use the format: -dependentTestFile aFileName");
+                System.exit(0);
+            }
+            dependentTestFile = new File(argsList.get(dependentFileNameIndex));
+        }
+
         File selectionOutput1 = null;
         File selectionOutput2 = null;
         File origOrder = null;
@@ -173,9 +187,9 @@ public class TestListGenerator {
 
         TestObject testObj = null;
         if (techniqueName == TECHNIQUE.PRIORITIZATION) {
-            testObj = new TestPrioritizationObject(order, outputFileName, new File(testInputDirName), coverage);
+            testObj = new TestPrioritizationObject(order, outputFileName, new File(testInputDirName), coverage, dependentTestFile);
         } else if (techniqueName == TECHNIQUE.SELECTION) {
-            testObj = new TestSelectionObject(order, outputFileName, new File(testInputDirName), coverage, selectionOutput1, selectionOutput2, origOrder);
+            testObj = new TestSelectionObject(order, outputFileName, new File(testInputDirName), coverage, selectionOutput1, selectionOutput2, origOrder, dependentTestFile);
         }
 
         testObj.printResults();

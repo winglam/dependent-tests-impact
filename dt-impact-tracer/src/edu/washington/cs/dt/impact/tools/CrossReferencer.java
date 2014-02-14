@@ -96,6 +96,9 @@ public class CrossReferencer {
             }
         }
 
+        System.out.println("Number of Inconsistent Tests Found: " + changedTests.size());
+        System.out.println("Number of Tests Missing: " + origOrderResultsCopy.size());
+
         char[] spaces = new char[longestKey];
         Arrays.fill(spaces, ' ');
         System.out.println(new String(spaces) + "  Original order result:        Test order result:");
@@ -132,18 +135,20 @@ public class CrossReferencer {
             }
 
             String[] testResults = br.readLine().split(", ");
-            testResults[0] = testResults[0].substring(1);
-            String lastTest = testResults[testResults.length - 1];
-            testResults[testResults.length - 1] = lastTest.substring(0, lastTest.length() - 1);
+            if (testResults.length > 1) {
+                testResults[0] = testResults[0].substring(1);
+                String lastTest = testResults[testResults.length - 1];
+                testResults[testResults.length - 1] = lastTest.substring(0, lastTest.length() - 1);
 
-            for (String s : testResults) {
-                String[] testAndResult = s.split("=");
-                if (testAndResult[1].equals("PASS")) {
-                    testsToResults.put(testAndResult[0], RESULT.PASS);
-                } else if (testAndResult[1].equals("FAILURE")) {
-                    testsToResults.put(testAndResult[0], RESULT.FAIL);
-                } else if (testAndResult[1].equals("ERROR")) {
-                    testsToResults.put(testAndResult[0], RESULT.ERROR);
+                for (String s : testResults) {
+                    String[] testAndResult = s.split("=");
+                    if (testAndResult[1].equals("PASS")) {
+                        testsToResults.put(testAndResult[0], RESULT.PASS);
+                    } else if (testAndResult[1].equals("FAILURE")) {
+                        testsToResults.put(testAndResult[0], RESULT.FAIL);
+                    } else if (testAndResult[1].equals("ERROR")) {
+                        testsToResults.put(testAndResult[0], RESULT.ERROR);
+                    }
                 }
             }
 
