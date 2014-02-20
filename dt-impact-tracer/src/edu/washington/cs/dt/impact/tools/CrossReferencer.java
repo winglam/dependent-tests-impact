@@ -130,28 +130,34 @@ public class CrossReferencer {
         try {
             br = new BufferedReader(new FileReader(f));
             String line = br.readLine();
-            while (line != null && !line.matches("^Pass: [0-9]+, Fail: [0-9]+, Error: [0-9]+$")) {
-                line = br.readLine();
-            }
+            while(line != null) {
+                while (line != null && !line.matches("^Pass: [0-9]+, Fail: [0-9]+, Error: [0-9]+$")) {
+                    line = br.readLine();
+                }
 
-            String[] testResults = br.readLine().split(", ");
-            if (testResults.length > 1) {
-                testResults[0] = testResults[0].substring(1);
-                String lastTest = testResults[testResults.length - 1];
-                testResults[testResults.length - 1] = lastTest.substring(0, lastTest.length() - 1);
+                if (line == null) {
+                    break;
+                }
 
-                for (String s : testResults) {
-                    String[] testAndResult = s.split("=");
-                    if (testAndResult[1].equals("PASS")) {
-                        testsToResults.put(testAndResult[0], RESULT.PASS);
-                    } else if (testAndResult[1].equals("FAILURE")) {
-                        testsToResults.put(testAndResult[0], RESULT.FAIL);
-                    } else if (testAndResult[1].equals("ERROR")) {
-                        testsToResults.put(testAndResult[0], RESULT.ERROR);
+                String[] testResults = br.readLine().split(", ");
+                if (testResults.length > 1) {
+                    testResults[0] = testResults[0].substring(1);
+                    String lastTest = testResults[testResults.length - 1];
+                    testResults[testResults.length - 1] = lastTest.substring(0, lastTest.length() - 1);
+
+                    for (String s : testResults) {
+                        String[] testAndResult = s.split("=");
+                        if (testAndResult[1].equals("PASS")) {
+                            testsToResults.put(testAndResult[0], RESULT.PASS);
+                        } else if (testAndResult[1].equals("FAILURE")) {
+                            testsToResults.put(testAndResult[0], RESULT.FAIL);
+                        } else if (testAndResult[1].equals("ERROR")) {
+                            testsToResults.put(testAndResult[0], RESULT.ERROR);
+                        }
                     }
                 }
+                line = br.readLine();
             }
-
             br.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();

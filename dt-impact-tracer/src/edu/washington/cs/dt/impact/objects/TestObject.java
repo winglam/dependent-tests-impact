@@ -23,6 +23,7 @@ public abstract class TestObject {
 
     protected Set<String> allLines;
     protected List<TestMethodData> methodList;
+    protected OrderObject orderObj;
 
     // list of tests that when executed before reveals the dependent test
     protected Map<String, List<String>> execBefore;
@@ -124,7 +125,7 @@ public abstract class TestObject {
     }
 
 
-
-    public abstract void printResults();
-
+    public void printResults() {
+        orderObj.printResults();
+    }
 }

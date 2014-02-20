@@ -6,6 +6,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import edu.washington.cs.dt.impact.objects.TestObject;
+import edu.washington.cs.dt.impact.objects.TestParallelizationObject;
 import edu.washington.cs.dt.impact.objects.TestPrioritizationObject;
 import edu.washington.cs.dt.impact.objects.TestSelectionObject;
 import edu.washington.cs.dt.impact.util.Constants;
@@ -36,9 +37,11 @@ public class TestListGenerator {
                 techniqueName = TECHNIQUE.PRIORITIZATION;
             } else if (techniqueStr.equals("selection")) {
                 techniqueName = TECHNIQUE.SELECTION;
+            } else if (techniqueStr.equals("parallelization")) {
+                techniqueName = TECHNIQUE.PARALLELIZATION;
             } else {
                 System.err
-                .println("Technique name is invalid. Try \"prioritization\" or \"selection\".");
+                .println("Technique name is invalid. Try \"prioritization\", \"selection\" or \"parallelization\".");
                 System.exit(0);
             }
         }
@@ -88,16 +91,16 @@ public class TestListGenerator {
         }
 
         // get directory for the input of test files, the default is sootTestOutput
-        int testInputDir = argsList.indexOf("-testInputDir");
-        String testInputDirName = Constants.DEFAULT_TEST_DIR;
-        if (testInputDir != -1) {
-            int testInputDirNameIndex = testInputDir + 1;
+        int testInputDirIndex = argsList.indexOf("-testInputDir");
+        File testInputDir = new File(Constants.DEFAULT_TEST_DIR);
+        if (testInputDirIndex != -1) {
+            int testInputDirNameIndex = testInputDirIndex + 1;
             if (testInputDirNameIndex >= argsList.size()) {
                 System.err
                 .println("Test input directory argument is specified but a directory name is not. Please use the format: -testInputDir aDirName");
                 System.exit(0);
             }
-            testInputDirName = argsList.get(testInputDirNameIndex);
+            testInputDir = new File(argsList.get(testInputDirNameIndex));
         }
 
         // if specified, the output is saved to the file name instead of printed to console
@@ -185,11 +188,46 @@ public class TestListGenerator {
             }
         }
 
+        int numOfMachines = 1;
+        if (techniqueName == TECHNIQUE.PARALLELIZATION) {
+            // get directory of old version's selection output
+            int numOfMachinesIndex = argsList.indexOf("-numOfMachines");
+            if (numOfMachinesIndex != -1) {
+                int numOfMachinesIntIndex = numOfMachinesIndex + 1;
+                if (numOfMachinesIntIndex >= argsList.size()) {
+                    System.err.println("Number of machines argument is specified but a integer is not. Please use the format: -numOfMachines ainteger");
+                    System.exit(0);
+                }
+                numOfMachines = Integer.parseInt(argsList.get(numOfMachinesIntIndex));
+                if (numOfMachines < 1) {
+                    System.err.println("Number of machines argument is specified but the integer value provided is invalid. Please check the integer value.");
+                    System.exit(0);
+                }
+            }
+            // get file for the original order in which the tests should be ordered
+            int origOrderIndex = argsList.indexOf("-origOrder");
+            if (origOrderIndex != -1) {
+                int origOrderNameIndex = origOrderIndex + 1;
+                if (origOrderNameIndex >= argsList.size()) {
+                    System.err.println("Original order argument is specified but a directory path is not. Please use the format: -origOrder afilepath");
+                    System.exit(0);
+                }
+                origOrder = new File(argsList.get(origOrderNameIndex));
+                if (!origOrder.isFile()) {
+                    System.err.println("Original order argument is specified but the file path is invalid. Please check the file path.");
+                    System.exit(0);
+                }
+                order = ORDER.ORIGINAL;
+            }
+        }
+
         TestObject testObj = null;
         if (techniqueName == TECHNIQUE.PRIORITIZATION) {
-            testObj = new TestPrioritizationObject(order, outputFileName, new File(testInputDirName), coverage, dependentTestFile);
+            testObj = new TestPrioritizationObject(order, outputFileName, testInputDir, coverage, dependentTestFile);
         } else if (techniqueName == TECHNIQUE.SELECTION) {
-            testObj = new TestSelectionObject(order, outputFileName, new File(testInputDirName), coverage, selectionOutput1, selectionOutput2, origOrder, dependentTestFile);
+            testObj = new TestSelectionObject(order, outputFileName, testInputDir, coverage, selectionOutput1, selectionOutput2, origOrder, dependentTestFile);
+        } else if (techniqueName == TECHNIQUE.PARALLELIZATION) {
+            testObj = new TestParallelizationObject(order, outputFileName, testInputDir, coverage, dependentTestFile, numOfMachines, origOrder);
         }
 
         testObj.printResults();

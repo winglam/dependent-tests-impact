@@ -18,7 +18,6 @@ import edu.washington.cs.dt.impact.util.Constants.ORDER;
 import edu.washington.cs.dt.impact.util.TestMethodData;
 
 public class TestSelectionObject extends TestObject {
-    private OrderObject orderObj;
 
     public TestSelectionObject(ORDER order, String outputFileName, File inputTestFolder, COVERAGE coverage, File selectionOutput1, File selectionOutput2, File origOrder, File dependentTestsFile) {
         super(inputTestFolder, coverage, dependentTestsFile);
@@ -63,6 +62,9 @@ public class TestSelectionObject extends TestObject {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
+            } else {
+                System.err.println("Test selection is specified with an incompatible order. Compatible orders are: absolute, relative, random and original.");
+                System.exit(0);
             }
             orderObj = new StandardOrderObject(outputFileName, methodList);
         }
@@ -122,10 +124,5 @@ public class TestSelectionObject extends TestObject {
         }
 
         return retMap;
-    }
-
-    @Override
-    public void printResults() {
-        orderObj.printResults();
     }
 }

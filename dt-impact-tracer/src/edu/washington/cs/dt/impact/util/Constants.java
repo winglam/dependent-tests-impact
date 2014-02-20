@@ -9,7 +9,7 @@ public class Constants {
     public final static String DEFAULT_TEST_DIR = "sootTestOutput";
 
     public enum TECHNIQUE {
-        PRIORITIZATION, SELECTION
+        PRIORITIZATION, SELECTION, PARALLELIZATION
     };
 
     public enum ORDER {

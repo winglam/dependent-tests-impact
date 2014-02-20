@@ -7,7 +7,6 @@ import edu.washington.cs.dt.impact.util.Constants.COVERAGE;
 import edu.washington.cs.dt.impact.util.Constants.ORDER;
 
 public class TestPrioritizationObject extends TestObject {
-    private OrderObject orderObj;
 
     public TestPrioritizationObject(ORDER order, String outputFilename, File inputTestFolder, COVERAGE coverage, File dependentTestsFile) {
         super(inputTestFolder, coverage, dependentTestsFile);
@@ -21,11 +20,9 @@ public class TestPrioritizationObject extends TestObject {
         } else if (order == ORDER.RANDOM) {
             Collections.shuffle(methodList);
             orderObj = new StandardOrderObject(outputFilename, methodList);
+        } else {
+            System.err.println("Test prioritization is specified with an incompatible order. Compatible orders are: absolute, relative and random.");
+            System.exit(0);
         }
-    }
-
-    @Override
-    public void printResults() {
-        orderObj.printResults();
     }
 }
