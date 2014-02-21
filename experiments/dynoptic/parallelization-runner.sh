@@ -1,18 +1,18 @@
 #!/bin/bash
 
 # instrument class and test files
-java -cp impact-tools/*:bin/:../lib/*:../synoptic/bin/:../daikonizer/bin/ edu.washington.cs.dt.impact.Main.MainDriver -inputDir bin
+java -cp impact-tools/*:bin/:../synoptic/lib/*:../synoptic/bin/:../daikonizer/bin/ edu.washington.cs.dt.impact.Main.MainDriver -inputDir bin
 
 # generate sootTestOutput
-java -cp impact-tools/*:sootOutput:../lib/*:../synoptic/bin/:../daikonizer/bin/ edu.washington.cs.dt.main.ImpactMain synoptic-orig-order
-#java -cp impact-tools/*:sootOutput:../lib/*:../synoptic/bin/:../daikonizer/bin/ edu.washington.cs.dt.main.ImpactMain synoptic-auto-order
+java -cp impact-tools/*:sootOutput:../synoptic/lib/*:../synoptic/bin/:../daikonizer/bin/ edu.washington.cs.dt.main.ImpactMain synoptic-orig-order
+#java -cp impact-tools/*:sootOutput:../synoptic/lib/*:../synoptic/bin/:../daikonizer/bin/ edu.washington.cs.dt.main.ImpactMain synoptic-auto-order
 
 # generate test orders
-java -cp impact-tools/*:bin:../lib/*:../synoptic/bin/:../daikonizer/bin/ edu.washington.cs.dt.impact.tools.TestListGenerator -technique parallelization -order random -numOfMachines 4 -outputFile synoptic-parallel-random-results.txt
-java -cp impact-tools/*:bin:../lib/*:../synoptic/bin/:../daikonizer/bin/ edu.washington.cs.dt.impact.tools.TestListGenerator -technique parallelization -origOrder synoptic-orig-order -numOfMachines 4 -outputFile synoptic-parallel-orig-order-results.txt
+java -cp impact-tools/*:bin:../synoptic/lib/*:../synoptic/bin/:../daikonizer/bin/ edu.washington.cs.dt.impact.tools.TestListGenerator -technique parallelization -order random -numOfMachines 4 -outputFile synoptic-parallel-random-results.txt
+java -cp impact-tools/*:bin:../synoptic/lib/*:../synoptic/bin/:../daikonizer/bin/ edu.washington.cs.dt.impact.tools.TestListGenerator -technique parallelization -origOrder synoptic-orig-order -numOfMachines 4 -outputFile synoptic-parallel-orig-order-results.txt
 
-java -cp impact-tools/*:bin:../lib/*:../synoptic/bin/:../daikonizer/bin/ edu.washington.cs.dt.main.ImpactMain synoptic-orig-order > synoptic-orig-order-results.txt
-#java -cp impact-tools/*:bin:../lib/*:../synoptic/bin/:../daikonizer/bin/ edu.washington.cs.dt.main.ImpactMain synoptic-auto-order > synoptic-auto-order-results.txt
+java -cp impact-tools/*:bin:../synoptic/lib/*:../synoptic/bin/:../daikonizer/bin/ edu.washington.cs.dt.main.ImpactMain synoptic-orig-order > synoptic-orig-order-results.txt
+#java -cp impact-tools/*:bin:../synoptic/lib/*:../synoptic/bin/:../daikonizer/bin/ edu.washington.cs.dt.main.ImpactMain synoptic-auto-order > synoptic-auto-order-results.txt
 
 rm -rf synoptic-parallel-summary.txt
 echo "synoptic-parallel-random-results.txt" >> synoptic-parallel-summary.txt
