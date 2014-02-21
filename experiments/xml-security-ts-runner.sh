@@ -76,9 +76,15 @@ rm -rf xml-security-ts-statement-orig-order.txt
 cd ..
 
 rm -rf xml-security-orig-v1/sootOutput
-rm -rf xml-security-1_2_0/sootTestOutput
-rm -rf xml-security-1_2_0/sootOutput
 rm -rf xml-security-orig-v1/sootTestOutput
 rm -rf xml-security-orig-v1/tmpfile.txt
+rm -rf xml-security-orig-v1/tmptestfiles.txt
 rm -rf xml-security-orig-v1/selectionOutput
+rm -rf xml-security-orig-v1/'4444444444  4 444444444444 444444444444444444444'
+rm -rf xml-security-1_2_0/sootTestOutput
+rm -rf xml-security-1_2_0/sootOutput
 rm -rf xml-security-1_2_0/selectionOutput
+rm -rf xml-security-1_2_0/tmpfile.txt
+rm -rf xml-security-1_2_0/tmptestfiles.txt
+rm -rf xml-security-1_2_0/'4444444444  4 444444444444 444444444444444444444'
+
