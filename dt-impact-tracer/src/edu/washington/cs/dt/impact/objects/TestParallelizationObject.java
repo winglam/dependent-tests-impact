@@ -7,29 +7,22 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.net.URL;
-import java.net.URLClassLoader;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
-import java.util.Vector;
 
-import edu.washington.cs.dt.TestExecResults;
 import edu.washington.cs.dt.impact.util.Constants.COVERAGE;
 import edu.washington.cs.dt.impact.util.Constants.ORDER;
 import edu.washington.cs.dt.impact.util.TestMethodData;
-import edu.washington.cs.dt.runners.AbstractTestRunner;
-import edu.washington.cs.dt.runners.FixedOrderRunner;
 
 public class TestParallelizationObject extends TestObject {
-    private Vector<TestExecResults> resultsList;
+    private String outputFilename;
+    private List<List<String>> splitTests;
 
     public TestParallelizationObject(ORDER order, String outputFilename, File inputTestFolder, COVERAGE coverage, File dependentTestsFile, int k, File origOrder) {
         super(inputTestFolder, coverage, dependentTestsFile);
-
-        resultsList = new Vector<TestExecResults>();
 
         Map<String, TestMethodData> nameToMethodData = new HashMap<String, TestMethodData>();
         for (TestMethodData methodData : methodList) {
@@ -77,34 +70,21 @@ public class TestParallelizationObject extends TestObject {
             splitTests.add(tests);
         }
 
-        URL[] urls = ((URLClassLoader) (Thread.currentThread().getContextClassLoader())).getURLs();
-        // We will store the threads so that we can check if they are done
-        List<Thread> threads = new LinkedList<Thread>();
-        for (int i = 0; i < k; i++) {
-            Runnable task = new FixedOrderRunnable(splitTests.get(i));
-            Thread worker = new Thread(task);
-            worker.setContextClassLoader(new URLClassLoader(urls));
-            worker.start();
-            threads.add(worker);
-        }
-
-        int running = 0;
-        do {
-            running = 0;
-            for (Thread thread : threads) {
-                if (thread.isAlive()) {
-                    running++;
-                }
-            }
-        } while (running > 0);
-
-        printResults(outputFilename);
+        this.outputFilename = outputFilename;
+        this.splitTests = splitTests;
     }
 
-    private void printResults(String filename) {
+    @Override
+    public void printResults() {
+        for (int i = 0; i < splitTests.size(); i++) {
+            printResults(outputFilename + i, splitTests.get(i));
+        }
+    }
+
+    private void printResults(String filename, List<String> tests) {
         if (filename == null) {
-            for (TestExecResults result : resultsList) {
-                System.out.println(result);
+            for (String s : tests) {
+                System.out.println(s);
             }
         } else {
             FileWriter output = null;
@@ -113,8 +93,8 @@ public class TestParallelizationObject extends TestObject {
                 output = new FileWriter(filename);
                 writer = new BufferedWriter(output);
 
-                for (TestExecResults result : resultsList) {
-                    writer.write(result + "\n");
+                for (String s : tests) {
+                    writer.write(s + "\n");
                 }
             } catch (Exception e) {
                 throw new RuntimeException(e);
@@ -130,25 +110,6 @@ public class TestParallelizationObject extends TestObject {
                     // Ignore issues during closing
                 }
             }
-        }
-    }
-
-    @Override
-    public void printResults() {
-    }
-
-    public class FixedOrderRunnable implements Runnable {
-        private List<String> tests;
-
-        FixedOrderRunnable(List<String> tests) {
-            this.tests = tests;
-        }
-
-        @Override
-        public void run() {
-            AbstractTestRunner runner = new FixedOrderRunner(tests);
-            TestExecResults results = runner.run();
-            resultsList.add(results);
         }
     }
 }
