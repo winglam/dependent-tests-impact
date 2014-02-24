@@ -1,28 +1,24 @@
-#!/bin/bash
+testType=auto
+experiment=synoptic
+experimentCP=impact-tools/*:bin/:../synoptic/lib/*:../synoptic/bin/:../daikonizer/bin/
 
-# instrument class and test files
-java -cp impact-tools/*:bin/:../synoptic/lib/*:../synoptic/bin/:../daikonizer/bin/ edu.washington.cs.dt.impact.Main.MainDriver -inputDir bin
+function clearEnv() {
+  rm -rf test.dot
+}
+
+source ../config.sh
+
+instrumentFiles $experimentCP
 
 # generate sootTestOutput
-java -cp impact-tools/*:sootOutput:../synoptic/lib/*:../synoptic/bin/:../daikonizer/bin/ edu.washington.cs.dt.main.ImpactMain synoptic-orig-order
-#java -cp impact-tools/*:sootOutput:../synoptic/lib/*:../synoptic/bin/:../daikonizer/bin/ edu.washington.cs.dt.main.ImpactMain synoptic-auto-order
+java -cp impact-tools/*:sootOutput:../synoptic/lib/*:../synoptic/bin/:../daikonizer/bin/ edu.washington.cs.dt.main.ImpactMain $experiment-$testType-order
 
 # generate test orders
-java -cp impact-tools/*:bin:../synoptic/lib/*:../synoptic/bin/:../daikonizer/bin/ edu.washington.cs.dt.impact.tools.TestListGenerator -technique parallelization -order random -numOfMachines 4 -outputFile synoptic-parallel-random-results.txt
-java -cp impact-tools/*:bin:../synoptic/lib/*:../synoptic/bin/:../daikonizer/bin/ edu.washington.cs.dt.impact.tools.TestListGenerator -technique parallelization -origOrder synoptic-orig-order -numOfMachines 4 -outputFile synoptic-parallel-orig-order-results.txt
+clearEnv
+java -cp $experimentCP edu.washington.cs.dt.main.ImpactMain $experiment-$testType-order > $experiment-$testType-order-results.txt
 
-java -cp impact-tools/*:bin:../synoptic/lib/*:../synoptic/bin/:../daikonizer/bin/ edu.washington.cs.dt.main.ImpactMain synoptic-orig-order > synoptic-orig-order-results.txt
-#java -cp impact-tools/*:bin:../synoptic/lib/*:../synoptic/bin/:../daikonizer/bin/ edu.washington.cs.dt.main.ImpactMain synoptic-auto-order > synoptic-auto-order-results.txt
+parallelExec $experiment $experimentCP $testType
 
-rm -rf synoptic-parallel-summary.txt
-echo "synoptic-parallel-random-results.txt" >> synoptic-parallel-summary.txt
-java -cp impact-tools/impact.jar edu.washington.cs.dt.impact.tools.CrossReferencer -origOrder synoptic-orig-order-results.txt -testOrder synoptic-parallel-random-results.txt >> synoptic-parallel-summary.txt 
-echo "" >> synoptic-parallel-summary.txt
-echo "synoptic-parallel-orig-order-results.txt" >> synoptic-parallel-summary.txt
-java -cp impact-tools/impact.jar edu.washington.cs.dt.impact.tools.CrossReferencer -origOrder synoptic-orig-order-results.txt -testOrder synoptic-parallel-orig-order-results.txt >> synoptic-parallel-summary.txt 
-echo "" >> synoptic-parallel-summary.txt
+clearTemp
+clearEnv
 
-rm -rf sootOutput
-rm -rf sootTestOutput
-rm -rf tmpfile.txt
-rm -rf tmptestfiles.txt

@@ -1,29 +1,24 @@
-#!/bin/bash
+testType=auto
+experiment=xml-security
+experimentCP=impact-tools/*:bin/:../xml-security-commons/bin/:data/:../xml-security-commons/libs/*
 
-# instrument class and test files
-java -cp impact-tools/*:bin/:../xml-security-commons/bin/:data/:../xml-security-commons/libs/* edu.washington.cs.dt.impact.Main.MainDriver -inputDir bin
+function clearEnv() {
+  rm -rf '4444444444  4 444444444444 444444444444444444444'
+}
+
+source ../config.sh
+
+instrumentFiles $experimentCP
 
 # generate sootTestOutput
 cp -r bin/org/apache/xml/security/resource sootOutput/org/apache/xml/security/
-java -cp impact-tools/*:sootOutput/:../xml-security-commons/bin/:data/:../xml-security-commons/libs/* edu.washington.cs.dt.main.ImpactMain xml-security-orig-order
-#java -cp impact-tools/*:sootOutput/:../xml-security-commons/bin/:data/:../xml-security-commons/libs/* edu.washington.cs.dt.main.ImpactMain xml-security-auto-order
+java -cp impact-tools/*:sootOutput/:../xml-security-commons/bin/:data/:../xml-security-commons/libs/* edu.washington.cs.dt.main.ImpactMain $experiment-$testType-order
 
 # generate test orders
-java -cp impact-tools/*:bin/:../xml-security-commons/bin/:data/:../xml-security-commons/libs/* edu.washington.cs.dt.impact.tools.TestListGenerator -technique parallelization -order random -outputFile xml-security-parallel-random-results.txt -numOfMachines 4
-java -cp impact-tools/*:bin/:../xml-security-commons/bin/:data/:../xml-security-commons/libs/* edu.washington.cs.dt.impact.tools.TestListGenerator -technique parallelization -origOrder xml-security-orig-order -outputFile xml-security-parallel-orig-order-results.txt -numOfMachines 4
+clearEnv
+java -cp $experimentCP edu.washington.cs.dt.main.ImpactMain $experiment-$testType-order > $experiment-$testType-order-results.txt
 
-java -cp impact-tools/*:bin/:../xml-security-commons/bin/:data/:../xml-security-commons/libs/* edu.washington.cs.dt.main.ImpactMain xml-security-orig-order > xml-security-orig-order-results.txt
-#java -cp impact-tools/*:bin/:../xml-security-commons/bin/:data/:../xml-security-commons/libs/* edu.washington.cs.dt.main.ImpactMain xml-security-auto-order > xml-security-auto-order-results.txt
+parallelExec $experiment $experimentCP $testType
 
-rm -rf xml-security-parallel-summary.txt
-echo "xml-security-parallel-random-results.txt" >> xml-security-parallel-summary.txt
-java -cp impact-tools/impact.jar edu.washington.cs.dt.impact.tools.CrossReferencer -origOrder xml-security-orig-order-results.txt -testOrder xml-security-parallel-random-results.txt >> xml-security-parallel-summary.txt 
-echo "" >> xml-security-parallel-summary.txt
-echo "xml-security-parallel-orig-order-results.txt" >> xml-security-parallel-summary.txt
-java -cp impact-tools/impact.jar edu.washington.cs.dt.impact.tools.CrossReferencer -origOrder xml-security-orig-order-results.txt -testOrder xml-security-parallel-orig-order-results.txt >> xml-security-parallel-summary.txt 
-echo "" >> xml-security-parallel-summary.txt
-
-rm -rf sootOutput
-rm -rf sootTestOutput
-rm -rf tmpfile.txt
-rm -rf tmptestfiles.txt
+clearTemp
+clearEnv
