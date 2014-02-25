@@ -55,11 +55,11 @@ public class TestParallelizationObject extends TestObject {
             System.exit(0);
         }
 
+        // split the tests. if the tests can't be split by k perfectly, the size of the first (list size)%k lists are 1 greater than the rest
         int size = methodList.size() / k;
         if (methodList.size() % k != 0) {
             size += 1;
         }
-
         int index = 0;
         for (int j = 0; j < k; j++) {
             List<String> tests = new LinkedList<String>();

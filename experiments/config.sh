@@ -49,3 +49,18 @@ function parallelExec() {
     done
   done
 }
+
+function runCoveragesOrders() {
+  for i in "${coverages[@]}"; do 
+    for j in "${orders[@]}"; do  
+      java -cp $impactJarCP $testListGenClass -technique prioritization -coverage $i -order $j -outputFile $1-tp-$i-$j.txt  
+      clearEnv
+      java -cp $2 edu.washington.cs.dt.main.ImpactMain $1-tp-$i-$j.txt > $1-tp-$i-$j-results.txt
+      rm -rf $1-tp-$i-$j.txt
+
+      echo $1"-tp-"$i"-"$j"-results.txt" >> $1-tp-summary.txt
+      java -cp $impactJarCP $crossReferenceClass -origOrder $1-$3-order-results.txt -testOrder $1-tp-$i-$j-results.txt >> $1-tp-summary.txt 
+      echo "" >> $1-tp-summary.txt
+    done
+  done
+}

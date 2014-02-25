@@ -1,16 +1,9 @@
 testType=orig
-experiment=crystal
-experimentCP=impact-tools/*:bin/:libs/lib/*
+experiment=xml-security
+experimentCP=impact-tools/*:bin/:../xml-security-commons/bin/:data/:../xml-security-commons/libs/*
 
 function clearEnv() {
-  rm -rf 2013-08-28T20-44-41.156-0700
-  rm -rf hi!
-  rm -rf ./'-1 ms'
-  rm -rf 0\ ms
-  rm -rf 1\ ms
-  rm -rf 10\ ms
-  rm -rf 100\ ms
-  rm -rf 382707\ hours\ 44\ min
+  :
 }
 
 source ../config.sh
@@ -18,7 +11,7 @@ source ../config.sh
 instrumentFiles $experimentCP
 
 # generate sootTestOutput
-java -cp impact-tools/*:sootOutput/:libs/lib/* edu.washington.cs.dt.main.ImpactMain $experiment-$testType-order
+java -cp impact-tools/*:sootOutput/:../xml-security-commons/bin/:data/:../xml-security-commons/libs/* edu.washington.cs.dt.main.ImpactMain $experiment-$testType-order
 
 # generate test orders
 clearEnv
