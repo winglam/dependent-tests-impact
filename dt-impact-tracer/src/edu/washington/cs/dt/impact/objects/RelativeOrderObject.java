@@ -5,6 +5,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Collections;
 import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
@@ -21,20 +22,12 @@ public class RelativeOrderObject implements OrderObject{
         this.methodList = methodList;
     }
 
-    @Override
-    public void printResults() {
-        if (outputFileName == null) {
-            printToConsole();
-        } else {
-            printToFile();
-        }
-    }
-
-    private void printToConsole() {
+    public List<TestMethodData> generateRelativeOrderList() {
+        List<TestMethodData> returnList = new LinkedList<TestMethodData>();
         Set<String> currentLines = new HashSet<String>(allLines);
         while (methodList.size() > 0) {
             TestMethodData highestData = methodList.remove(0);
-            System.out.println(highestData.getName());
+            returnList.add(highestData);
             Set<String> highestDataLines = highestData.getLines();
             for (TestMethodData methodData : methodList) {
                 methodData.removeLines(highestDataLines);
@@ -50,6 +43,19 @@ public class RelativeOrderObject implements OrderObject{
             }
 
             Collections.sort(methodList);
+        }
+        return returnList;
+    }
+
+    @Override
+    public void printResults() {
+        if (outputFileName == null) {
+            List<TestMethodData> relativeOrderList = generateRelativeOrderList();
+            for (TestMethodData td : relativeOrderList) {
+                System.out.println(td.getName());
+            }
+        } else {
+            printToFile();
         }
     }
 
