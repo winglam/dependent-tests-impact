@@ -139,8 +139,14 @@ public class CrossReferencer {
                     break;
                 }
 
-                String[] testResults = br.readLine().split(", ");
-                if (testResults.length > 1) {
+                String nextLine = br.readLine();
+                if (nextLine.equals("{}")) {
+                    line = nextLine;
+                    continue;
+                }
+
+                String[] testResults = nextLine.split(", ");
+                if (testResults.length >= 1) {
                     testResults[0] = testResults[0].substring(1);
                     String lastTest = testResults[testResults.length - 1];
                     testResults[testResults.length - 1] = lastTest.substring(0, lastTest.length() - 1);

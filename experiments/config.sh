@@ -29,7 +29,6 @@ function runRandom() {
 }
 
 function parallelExec() {
-  rm -rf $1-parallel-summary.txt
   for k in "${machines[@]}"; do 
     rm -rf $1-parallel-random-results-$k.txt
     java -cp $impactJarCP $testListGenClass -technique parallelization -order random -outputFile $1-parallel-random.txt -numOfMachines $k
@@ -46,6 +45,26 @@ function parallelExec() {
       echo $1"-parallel-"$j"-results.txt k="$k >> $1-parallel-summary.txt
       java -cp $impactJarCP $crossReferenceClass -origOrder $1-$3-order-results.txt -testOrder $1-parallel-$j-results-$k.txt >> $1-parallel-summary.txt 
       echo "" >> $1-parallel-summary.txt
+    done
+  done
+}
+
+function parallelCoveragesOrders() {
+  for k in "${machines[@]}"; do 
+    for m in "${coverages[@]}"; do
+      for j in "${orders[@]}"; do 
+        rm -rf $1-parallel-$m-$j-results-$k.txt
+        java -cp $impactJarCP $testListGenClass -technique parallelization -order $j -coverage $m -outputFile $1-parallel-$m-$j.txt -numOfMachines $k
+        for ((i=0; i < $k; i++)); do
+          clearEnv
+          java -cp $2 edu.washington.cs.dt.main.ImpactMain $1-parallel-$m-$j.txt$i >> $1-parallel-$m-$j-results-$k.txt
+          echo "" >> $1-parallel-$m-$j-results-$k.txt
+          rm -rf $1-parallel-$m-$j.txt$i
+        done
+        echo $1"-parallel-"$m"-"$j"-results.txt k="$k >> $1-parallel-summary.txt
+        java -cp $impactJarCP $crossReferenceClass -origOrder $1-$3-order-results.txt -testOrder $1-parallel-$m-$j-results-$k.txt >> $1-parallel-summary.txt 
+        echo "" >> $1-parallel-summary.txt
+      done
     done
   done
 }
