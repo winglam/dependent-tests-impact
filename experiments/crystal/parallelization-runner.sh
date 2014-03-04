@@ -1,4 +1,4 @@
-testType=auto
+testType=orig
 experiment=crystal
 experimentCP=impact-tools/*:bin/:libs/lib/*
 

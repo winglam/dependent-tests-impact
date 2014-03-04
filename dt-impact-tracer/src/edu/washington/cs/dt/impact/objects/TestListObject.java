@@ -38,4 +38,9 @@ public class TestListObject implements Comparable<TestListObject> {
             return 0;
         }
     }
+
+    @Override
+    public String toString() {
+        return count + "";
+    }
 }

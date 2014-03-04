@@ -4,7 +4,7 @@ impactJarCP=impact-tools/impact.jar
 testListGenClass=edu.washington.cs.dt.impact.tools.TestListGenerator
 crossReferenceClass=edu.washington.cs.dt.impact.tools.CrossReferencer
 machines=(2 4 6 8 16)
-parallelOrders=($testType-order random)
+parallelOrders=($testType-order random time)
 
 function clearTemp() {
   rm -rf sootOutput
@@ -29,11 +29,14 @@ function runRandom() {
 }
 
 function parallelExec() {
+  java -cp $2 edu.washington.cs.dt.main.ImpactMain $1-$3-order -getTime > $1-$3-time.txt
   for k in "${machines[@]}"; do 
     rm -rf $1-parallel-random-results-$k.txt
     java -cp $impactJarCP $testListGenClass -technique parallelization -order random -outputFile $1-parallel-random.txt -numOfMachines $k
     rm -rf $1-parallel-$3-order-results-$k.txt
     java -cp $impactJarCP $testListGenClass -technique parallelization -origOrder $1-$3-order -outputFile $1-parallel-$3-order.txt -numOfMachines $k
+    rm -rf $1-parallel-time-order-results.txt
+    java -cp $impactJarCP $testListGenClass -technique parallelization -timeOrder $1-$3-time.txt -outputFile $1-parallel-time.txt -numOfMachines $k
 
     for j in "${parallelOrders[@]}"; do 
       for ((i=0; i < $k; i++)); do

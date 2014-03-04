@@ -1,0 +1,784 @@
+.E
+Time: 0.147
+There was 1 error:
+1) testInvalidPanelParameter(crystal.util.SpringLayoutUtilityTest)java.lang.IllegalArgumentException: Invalid input for panel.
+	at crystal.util.SpringLayoutUtility.formGridInColumn(SpringLayoutUtility.java:35)
+	at crystal.util.SpringLayoutUtilityTest.testInvalidPanelParameter(SpringLayoutUtilityTest.java:23)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at edu.washington.cs.dt.util.TestRunnerWrapper.main(TestRunnerWrapper.java:56)
+
+FAILURES!!!
+Tests run: 1,  Failures: 0,  Errors: 1
+
+.
+Time: 0.085
+
+OK (1 test)
+
+1
+2
+3
+.F
+Time: 0.003
+There was 1 failure:
+1) warning(junit.framework.TestSuite$1)junit.framework.AssertionFailedError: Exception in constructor: testBasicBehind (java.lang.ExceptionInInitializerError
+	at crystal.server.TestGitStateChecker.generatePreferences(TestGitStateChecker.java:176)
+	at crystal.server.TestGitStateChecker.<init>(TestGitStateChecker.java:46)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at edu.washington.cs.dt.util.TestRunnerWrapper.main(TestRunnerWrapper.java:56)
+Caused by: java.lang.NullPointerException
+	at crystal.server.TestConstants.<clinit>(TestConstants.java:44)
+	... 10 more
+)
+	at edu.washington.cs.dt.util.TestRunnerWrapper.main(TestRunnerWrapper.java:56)
+
+FAILURES!!!
+Tests run: 1,  Failures: 1,  Errors: 0
+
+.F
+Time: 0
+There was 1 failure:
+1) warning(junit.framework.TestSuite$1)junit.framework.AssertionFailedError: Exception in constructor: testBasicCleanMerge (java.lang.NoClassDefFoundError: Could not initialize class crystal.server.TestConstants
+	at crystal.server.TestHgStateChecker.generatePreferences(TestHgStateChecker.java:172)
+	at crystal.server.TestHgStateChecker.<init>(TestHgStateChecker.java:41)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at edu.washington.cs.dt.util.TestRunnerWrapper.main(TestRunnerWrapper.java:56)
+)
+	at edu.washington.cs.dt.util.TestRunnerWrapper.main(TestRunnerWrapper.java:56)
+
+FAILURES!!!
+Tests run: 1,  Failures: 1,  Errors: 0
+
+.
+Time: 0.004
+
+OK (1 test)
+
+.
+Time: 0.045
+
+OK (1 test)
+
+.E
+Time: 0.001
+There was 1 error:
+1) testGetLastAction(crystal.model.LocalStateResultTest)java.lang.NullPointerException
+	at crystal.model.LocalStateResultTest.testGetLastAction(LocalStateResultTest.java:83)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at edu.washington.cs.dt.util.TestRunnerWrapper.main(TestRunnerWrapper.java:56)
+
+FAILURES!!!
+Tests run: 1,  Failures: 0,  Errors: 1
+
+.F
+Time: 0
+There was 1 failure:
+1) testGetProjectCheckoutLocation(crystal.client.ProjectPreferencesTest)junit.framework.AssertionFailedError: null
+	at crystal.client.ProjectPreferencesTest.testGetProjectCheckoutLocation(ProjectPreferencesTest.java:167)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at edu.washington.cs.dt.util.TestRunnerWrapper.main(TestRunnerWrapper.java:56)
+
+FAILURES!!!
+Tests run: 1,  Failures: 1,  Errors: 0
+
+.
+Time: 0.004
+
+OK (1 test)
+
+.
+Time: 0
+
+OK (1 test)
+
+.E
+Time: 0.001
+There was 1 error:
+1) testNullUnion(crystal.util.SetOperationsTest)java.lang.IllegalArgumentException: Null input
+	at crystal.util.ValidInputChecker.checkNullInput(ValidInputChecker.java:125)
+	at crystal.util.SetOperations.union(SetOperations.java:39)
+	at crystal.util.SetOperationsTest.testNullUnion(SetOperationsTest.java:45)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at edu.washington.cs.dt.util.TestRunnerWrapper.main(TestRunnerWrapper.java:56)
+
+FAILURES!!!
+Tests run: 1,  Failures: 0,  Errors: 1
+
+.E
+Time: 0
+There was 1 error:
+1) testDuplicateAddDataSource(crystal.client.ProjectPreferencesTest)java.lang.RuntimeException: Error adding new source; short name: shortName already exists for project: shortName
+	at crystal.client.ProjectPreferences.addDataSource(ProjectPreferences.java:81)
+	at crystal.client.ProjectPreferencesTest.testDuplicateAddDataSource(ProjectPreferencesTest.java:50)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at edu.washington.cs.dt.util.TestRunnerWrapper.main(TestRunnerWrapper.java:56)
+
+FAILURES!!!
+Tests run: 1,  Failures: 0,  Errors: 1
+
+.E
+Time: 0.005
+There was 1 error:
+1) testGetLastErrorMessage(crystal.model.LocalStateResultTest)java.lang.NullPointerException
+	at crystal.model.LocalStateResultTest.testGetLastErrorMessage(LocalStateResultTest.java:108)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at edu.washington.cs.dt.util.TestRunnerWrapper.main(TestRunnerWrapper.java:56)
+
+FAILURES!!!
+Tests run: 1,  Failures: 0,  Errors: 1
+
+.E
+Time: 0.003
+There was 1 error:
+1) testGetLocalState(crystal.model.LocalStateResultTest)java.lang.NullPointerException
+	at crystal.model.LocalStateResultTest.testGetLocalState(LocalStateResultTest.java:125)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at edu.washington.cs.dt.util.TestRunnerWrapper.main(TestRunnerWrapper.java:56)
+
+FAILURES!!!
+Tests run: 1,  Failures: 0,  Errors: 1
+
+.
+Time: 0.001
+
+OK (1 test)
+
+.
+Time: 0.001
+
+OK (1 test)
+
+.
+Time: 0.001
+
+OK (1 test)
+
+.
+Time: 0.002
+
+OK (1 test)
+
+.E
+Time: 0.005
+There was 1 error:
+1) testSetEnabled(crystal.model.DataSourceTest)java.lang.NullPointerException
+	at crystal.model.DataSourceTest.testSetEnabled(DataSourceTest.java:106)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at edu.washington.cs.dt.util.TestRunnerWrapper.main(TestRunnerWrapper.java:56)
+
+FAILURES!!!
+Tests run: 1,  Failures: 0,  Errors: 1
+
+0-th run
+Pass: 9, Fail: 3, Error: 7
+{crystal.util.SpringLayoutUtilityTest.testInvalidPanelParameter=ERROR, crystal.server.GuidanceCheckerTest.testGetWhen=PASS, crystal.server.TestGitStateChecker.testBasicBehind=FAILURE, crystal.server.TestHgStateChecker.testBasicCleanMerge=FAILURE, crystal.model.RelationshipTest.testConstructor=PASS, crystal.client.ClientPreferencesTest.testClone=PASS, crystal.model.LocalStateResultTest.testGetLastAction=ERROR, crystal.client.ProjectPreferencesTest.testGetProjectCheckoutLocation=FAILURE, crystal.util.SetOperationsTest.testXor=PASS, crystal.util.SetOperationsTest.testUnion=PASS, crystal.util.SetOperationsTest.testNullUnion=ERROR, crystal.client.ProjectPreferencesTest.testDuplicateAddDataSource=ERROR, crystal.model.LocalStateResultTest.testGetLastErrorMessage=ERROR, crystal.model.LocalStateResultTest.testGetLocalState=ERROR, crystal.client.ProjectPreferencesTest.testProjectPreferences=PASS, crystal.client.ClientPreferencesTest.testClientPreferences=PASS, crystal.model.LocalStateResultTest.testErrorActionNameConstructor=PASS, crystal.client.ConflictDaemonTest.testGetInstance=PASS, crystal.model.DataSourceTest.testSetEnabled=ERROR}
+
+
+.
+Time: 0.696
+
+OK (1 test)
+
+File not found
+File not found
+.E
+Time: 0.02
+There was 1 error:
+1) testParseLog(crystal.server.HgLogParserTest)java.lang.NullPointerException
+	at crystal.server.HgLogParserTest.testParseLog(HgLogParserTest.java:61)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at edu.washington.cs.dt.util.TestRunnerWrapper.main(TestRunnerWrapper.java:56)
+
+FAILURES!!!
+Tests run: 1,  Failures: 0,  Errors: 1
+
+1
+2
+3
+.F
+Time: 0
+There was 1 failure:
+1) warning(junit.framework.TestSuite$1)junit.framework.AssertionFailedError: Exception in constructor: testBasicCleanMerge (java.lang.ExceptionInInitializerError
+	at crystal.server.TestGitStateChecker.generatePreferences(TestGitStateChecker.java:176)
+	at crystal.server.TestGitStateChecker.<init>(TestGitStateChecker.java:46)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at edu.washington.cs.dt.util.TestRunnerWrapper.main(TestRunnerWrapper.java:56)
+Caused by: java.lang.NullPointerException
+	at crystal.server.TestConstants.<clinit>(TestConstants.java:44)
+	... 10 more
+)
+	at edu.washington.cs.dt.util.TestRunnerWrapper.main(TestRunnerWrapper.java:56)
+
+FAILURES!!!
+Tests run: 1,  Failures: 1,  Errors: 0
+
+.F
+Time: 0
+There was 1 failure:
+1) warning(junit.framework.TestSuite$1)junit.framework.AssertionFailedError: Exception in constructor: testBasicAhead (java.lang.NoClassDefFoundError: Could not initialize class crystal.server.TestConstants
+	at crystal.server.TestGitStateChecker.generatePreferences(TestGitStateChecker.java:176)
+	at crystal.server.TestGitStateChecker.<init>(TestGitStateChecker.java:46)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at edu.washington.cs.dt.util.TestRunnerWrapper.main(TestRunnerWrapper.java:56)
+)
+	at edu.washington.cs.dt.util.TestRunnerWrapper.main(TestRunnerWrapper.java:56)
+
+FAILURES!!!
+Tests run: 1,  Failures: 1,  Errors: 0
+
+.
+Time: 0.004
+
+OK (1 test)
+
+.F
+Time: 0
+There was 1 failure:
+1) warning(junit.framework.TestSuite$1)junit.framework.AssertionFailedError: Exception in constructor: testBasicBehind (java.lang.NoClassDefFoundError: Could not initialize class crystal.server.TestConstants
+	at crystal.server.TestHgStateChecker.generatePreferences(TestHgStateChecker.java:172)
+	at crystal.server.TestHgStateChecker.<init>(TestHgStateChecker.java:41)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at edu.washington.cs.dt.util.TestRunnerWrapper.main(TestRunnerWrapper.java:56)
+)
+	at edu.washington.cs.dt.util.TestRunnerWrapper.main(TestRunnerWrapper.java:56)
+
+FAILURES!!!
+Tests run: 1,  Failures: 1,  Errors: 0
+
+.F
+Time: 0
+There was 1 failure:
+1) warning(junit.framework.TestSuite$1)junit.framework.AssertionFailedError: Exception in constructor: testBasicAhead (java.lang.NoClassDefFoundError: Could not initialize class crystal.server.TestConstants
+	at crystal.server.TestHgStateChecker.generatePreferences(TestHgStateChecker.java:172)
+	at crystal.server.TestHgStateChecker.<init>(TestHgStateChecker.java:41)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at edu.washington.cs.dt.util.TestRunnerWrapper.main(TestRunnerWrapper.java:56)
+)
+	at edu.washington.cs.dt.util.TestRunnerWrapper.main(TestRunnerWrapper.java:56)
+
+FAILURES!!!
+Tests run: 1,  Failures: 1,  Errors: 0
+
+.E
+Time: 0
+There was 1 error:
+1) testSetKind(crystal.model.DataSourceTest)java.lang.NullPointerException
+	at crystal.model.DataSourceTest.testSetKind(DataSourceTest.java:139)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at edu.washington.cs.dt.util.TestRunnerWrapper.main(TestRunnerWrapper.java:56)
+
+FAILURES!!!
+Tests run: 1,  Failures: 0,  Errors: 1
+
+.
+Time: 0.008
+
+OK (1 test)
+
+.F
+Time: 0.001
+There was 1 failure:
+1) warning(junit.framework.TestSuite$1)junit.framework.AssertionFailedError: Exception in constructor: testBasicSame (java.lang.NoClassDefFoundError: Could not initialize class crystal.server.TestConstants
+	at crystal.server.TestHgStateChecker.generatePreferences(TestHgStateChecker.java:172)
+	at crystal.server.TestHgStateChecker.<init>(TestHgStateChecker.java:41)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at edu.washington.cs.dt.util.TestRunnerWrapper.main(TestRunnerWrapper.java:56)
+)
+	at edu.washington.cs.dt.util.TestRunnerWrapper.main(TestRunnerWrapper.java:56)
+
+FAILURES!!!
+Tests run: 1,  Failures: 1,  Errors: 0
+
+.E
+Time: 0
+There was 1 error:
+1) testParseNullLog(crystal.server.HgLogParserTest)java.lang.IllegalArgumentException: Null input
+	at crystal.util.ValidInputChecker.checkNullInput(ValidInputChecker.java:125)
+	at crystal.server.AbstractLogParser.abstractParseLog(AbstractLogParser.java:129)
+	at crystal.server.HgLogParser.parseLog(HgLogParser.java:34)
+	at crystal.server.HgLogParserTest.testParseNullLog(HgLogParserTest.java:29)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at edu.washington.cs.dt.util.TestRunnerWrapper.main(TestRunnerWrapper.java:56)
+
+FAILURES!!!
+Tests run: 1,  Failures: 0,  Errors: 1
+
+.E
+Time: 0
+There was 1 error:
+1) testSetCloneString(crystal.model.DataSourceTest)java.lang.NullPointerException
+	at crystal.model.DataSourceTest.testSetCloneString(DataSourceTest.java:149)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at edu.washington.cs.dt.util.TestRunnerWrapper.main(TestRunnerWrapper.java:56)
+
+FAILURES!!!
+Tests run: 1,  Failures: 0,  Errors: 1
+
+.
+Time: 0
+
+OK (1 test)
+
+.
+Time: 0.004
+
+OK (1 test)
+
+.
+Time: 0
+
+OK (1 test)
+
+.E
+Time: 0
+There was 1 error:
+1) testSetParent(crystal.model.DataSourceTest)java.lang.NullPointerException
+	at crystal.model.DataSourceTest.testSetParent(DataSourceTest.java:126)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at edu.washington.cs.dt.util.TestRunnerWrapper.main(TestRunnerWrapper.java:56)
+
+FAILURES!!!
+Tests run: 1,  Failures: 0,  Errors: 1
+
+.
+Time: 0
+
+OK (1 test)
+
+.
+Time: 0
+
+OK (1 test)
+
+.
+Time: 0
+
+OK (1 test)
+
+.
+Time: 0
+
+OK (1 test)
+
+.
+Time: 0.004
+
+OK (1 test)
+
+0-th run
+Pass: 11, Fail: 5, Error: 5
+{crystal.client.ConflictDaemonTest.testRelationship=PASS, crystal.server.HgLogParserTest.testParseLog=ERROR, crystal.server.TestGitStateChecker.testBasicCleanMerge=FAILURE, crystal.server.TestGitStateChecker.testBasicAhead=FAILURE, crystal.server.HgLogParserTest.testTwoLogs=PASS, crystal.server.TestHgStateChecker.testBasicBehind=FAILURE, crystal.server.TestHgStateChecker.testBasicAhead=FAILURE, crystal.model.DataSourceTest.testSetKind=ERROR, crystal.model.RelationshipTest.testGetActionRepoKind=PASS, crystal.server.TestHgStateChecker.testBasicSame=FAILURE, crystal.server.HgLogParserTest.testParseNullLog=ERROR, crystal.model.DataSourceTest.testSetCloneString=ERROR, crystal.model.LocalStateResultTest.testLocalStateResult=PASS, crystal.util.SetOperationsTest.testIntersection=PASS, crystal.client.ClientPreferencesTest.testRemoveProjectPreferences=PASS, crystal.model.DataSourceTest.testSetParent=ERROR, crystal.model.LocalStateResultTest.testGetLastLocalState=PASS, crystal.model.DataSourceTest.testSetField=PASS, crystal.model.LocalStateResultTest.testGetName=PASS, crystal.model.DataSourceTest.testSetRemoteCmd=PASS, crystal.client.ProjectPreferencesTest.testGetNumOfVisibleSources=PASS}
+
+
+.E
+Time: 0.867
+There was 1 error:
+1) testGetCommitters(crystal.model.RevisionHistoryTest)java.lang.NullPointerException
+	at crystal.model.RevisionHistoryTest.testGetCommitters(RevisionHistoryTest.java:114)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at edu.washington.cs.dt.util.TestRunnerWrapper.main(TestRunnerWrapper.java:56)
+
+FAILURES!!!
+Tests run: 1,  Failures: 0,  Errors: 1
+
+.
+Time: 0.002
+
+OK (1 test)
+
+.E
+Time: 0
+There was 1 error:
+1) testToString(crystal.model.DataSourceTest)java.lang.NullPointerException
+	at crystal.model.DataSourceTest.testToString(DataSourceTest.java:163)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at edu.washington.cs.dt.util.TestRunnerWrapper.main(TestRunnerWrapper.java:56)
+
+FAILURES!!!
+Tests run: 1,  Failures: 0,  Errors: 1
+
+.E
+Time: 0
+There was 1 error:
+1) testIsHidden(crystal.model.DataSourceTest)java.lang.NullPointerException
+	at crystal.model.DataSourceTest.testIsHidden(DataSourceTest.java:116)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at edu.washington.cs.dt.util.TestRunnerWrapper.main(TestRunnerWrapper.java:56)
+
+FAILURES!!!
+Tests run: 1,  Failures: 0,  Errors: 1
+
+.E
+Time: 0.005
+There was 1 error:
+1) testToString(crystal.model.LocalStateResultTest)java.lang.NullPointerException
+	at crystal.model.LocalStateResultTest.testToString(LocalStateResultTest.java:116)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at edu.washington.cs.dt.util.TestRunnerWrapper.main(TestRunnerWrapper.java:56)
+
+FAILURES!!!
+Tests run: 1,  Failures: 0,  Errors: 1
+
+.
+Time: 0.036
+
+OK (1 test)
+
+.
+Time: 0
+
+OK (1 test)
+
+.E
+Time: 0
+There was 1 error:
+1) testGetAction(crystal.model.LocalStateResultTest)java.lang.NullPointerException
+	at crystal.model.LocalStateResultTest.testGetAction(LocalStateResultTest.java:74)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at edu.washington.cs.dt.util.TestRunnerWrapper.main(TestRunnerWrapper.java:56)
+
+FAILURES!!!
+Tests run: 1,  Failures: 0,  Errors: 1
+
+.E
+Time: 0
+There was 1 error:
+1) testSetCompileCommand(crystal.model.DataSourceTest)java.lang.NullPointerException
+	at crystal.model.DataSourceTest.testSetCompileCommand(DataSourceTest.java:95)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at edu.washington.cs.dt.util.TestRunnerWrapper.main(TestRunnerWrapper.java:56)
+
+FAILURES!!!
+Tests run: 1,  Failures: 0,  Errors: 1
+
+.
+Time: 0.002
+
+OK (1 test)
+
+0-th run
+Pass: 4, Fail: 0, Error: 6
+{crystal.model.RevisionHistoryTest.testGetCommitters=ERROR, crystal.model.LocalStateResultTest.testStrangeActionName=PASS, crystal.model.DataSourceTest.testToString=ERROR, crystal.model.DataSourceTest.testIsHidden=ERROR, crystal.model.LocalStateResultTest.testToString=ERROR, crystal.client.ProjectPreferencesTest.testAddDataSource=PASS, crystal.client.ProjectPreferencesTest.testClone=PASS, crystal.model.LocalStateResultTest.testGetAction=ERROR, crystal.model.DataSourceTest.testSetCompileCommand=ERROR, crystal.client.ClientPreferencesTest.testRemoveProjectPreferencesAtIndex=PASS}
+
+
+.E
+Time: 0.064
+There was 1 error:
+1) testNullInputConstructor(crystal.client.ClientPreferencesTest)java.lang.IllegalArgumentException: Invalid string input
+	at crystal.util.ValidInputChecker.checkValidStringInput(ValidInputChecker.java:135)
+	at crystal.client.ClientPreferences.<init>(ClientPreferences.java:175)
+	at crystal.client.ClientPreferencesTest.testNullInputConstructor(ClientPreferencesTest.java:35)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at edu.washington.cs.dt.util.TestRunnerWrapper.main(TestRunnerWrapper.java:56)
+
+FAILURES!!!
+Tests run: 1,  Failures: 0,  Errors: 1
+
+1
+2
+3
+.F
+Time: 0
+There was 1 failure:
+1) warning(junit.framework.TestSuite$1)junit.framework.AssertionFailedError: Exception in constructor: testBasicMergeConflict (java.lang.ExceptionInInitializerError
+	at crystal.server.TestGitStateChecker.generatePreferences(TestGitStateChecker.java:176)
+	at crystal.server.TestGitStateChecker.<init>(TestGitStateChecker.java:46)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at edu.washington.cs.dt.util.TestRunnerWrapper.main(TestRunnerWrapper.java:56)
+Caused by: java.lang.NullPointerException
+	at crystal.server.TestConstants.<clinit>(TestConstants.java:44)
+	... 10 more
+)
+	at edu.washington.cs.dt.util.TestRunnerWrapper.main(TestRunnerWrapper.java:56)
+
+FAILURES!!!
+Tests run: 1,  Failures: 1,  Errors: 0
+
+.F
+Time: 0.003
+There was 1 failure:
+1) warning(junit.framework.TestSuite$1)junit.framework.AssertionFailedError: Exception in constructor: testBasicMergeConflict (java.lang.NoClassDefFoundError: Could not initialize class crystal.server.TestConstants
+	at crystal.server.TestHgStateChecker.generatePreferences(TestHgStateChecker.java:172)
+	at crystal.server.TestHgStateChecker.<init>(TestHgStateChecker.java:41)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at edu.washington.cs.dt.util.TestRunnerWrapper.main(TestRunnerWrapper.java:56)
+)
+	at edu.washington.cs.dt.util.TestRunnerWrapper.main(TestRunnerWrapper.java:56)
+
+FAILURES!!!
+Tests run: 1,  Failures: 1,  Errors: 0
+
+.E
+Time: 0.004
+There was 1 error:
+1) testStrangeNameConstructor(crystal.model.RelationshipTest)java.lang.RuntimeException: Trying to create an invalid Relationship
+	at crystal.model.Relationship.<init>(Relationship.java:111)
+	at crystal.model.RelationshipTest.testStrangeNameConstructor(RelationshipTest.java:29)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at edu.washington.cs.dt.util.TestRunnerWrapper.main(TestRunnerWrapper.java:56)
+
+FAILURES!!!
+Tests run: 1,  Failures: 0,  Errors: 1
+
+.
+Time: 0.05
+
+OK (1 test)
+
+.
+Time: 0.029
+
+OK (1 test)
+
+.F
+Time: 0
+There was 1 failure:
+1) warning(junit.framework.TestSuite$1)junit.framework.AssertionFailedError: Exception in constructor: testBasicSame (java.lang.NoClassDefFoundError: Could not initialize class crystal.server.TestConstants
+	at crystal.server.TestGitStateChecker.generatePreferences(TestGitStateChecker.java:176)
+	at crystal.server.TestGitStateChecker.<init>(TestGitStateChecker.java:46)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at edu.washington.cs.dt.util.TestRunnerWrapper.main(TestRunnerWrapper.java:56)
+)
+	at edu.washington.cs.dt.util.TestRunnerWrapper.main(TestRunnerWrapper.java:56)
+
+FAILURES!!!
+Tests run: 1,  Failures: 1,  Errors: 0
+
+.
+Time: 0
+
+OK (1 test)
+
+.
+Time: 0.01
+
+OK (1 test)
+
+.
+Time: 0
+
+OK (1 test)
+
+.
+Time: 0.005
+
+OK (1 test)
+
+.E
+Time: 0.001
+There was 1 error:
+1) testGetNoErrorMessage(crystal.model.LocalStateResultTest)java.lang.NullPointerException
+	at crystal.model.LocalStateResultTest.testGetNoErrorMessage(LocalStateResultTest.java:99)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at edu.washington.cs.dt.util.TestRunnerWrapper.main(TestRunnerWrapper.java:56)
+
+FAILURES!!!
+Tests run: 1,  Failures: 0,  Errors: 1
+
+.E
+Time: 0.003
+There was 1 error:
+1) testNullIntersection(crystal.util.SetOperationsTest)java.lang.IllegalArgumentException: Null input
+	at crystal.util.ValidInputChecker.checkNullInput(ValidInputChecker.java:125)
+	at crystal.util.SetOperations.intersection(SetOperations.java:18)
+	at crystal.util.SetOperationsTest.testNullIntersection(SetOperationsTest.java:22)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at edu.washington.cs.dt.util.TestRunnerWrapper.main(TestRunnerWrapper.java:56)
+
+FAILURES!!!
+Tests run: 1,  Failures: 0,  Errors: 1
+
+.
+Time: 0
+
+OK (1 test)
+
+.
+Time: 0.001
+
+OK (1 test)
+
+.E
+Time: 0
+There was 1 error:
+1) testDuplicateAddProjectPreferences(crystal.client.ClientPreferencesTest)crystal.client.ClientPreferences$DuplicateProjectNameException: Duplicate project name: shortName
+	at crystal.client.ClientPreferences.addProjectPreferences(ClientPreferences.java:217)
+	at crystal.client.ClientPreferencesTest.testDuplicateAddProjectPreferences(ClientPreferencesTest.java:83)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at edu.washington.cs.dt.util.TestRunnerWrapper.main(TestRunnerWrapper.java:56)
+
+FAILURES!!!
+Tests run: 1,  Failures: 0,  Errors: 1
+
+.
+Time: 0
+
+OK (1 test)
+
+.
+Time: 0
+
+OK (1 test)
+
+.
+Time: 0
+
+OK (1 test)
+
+.
+Time: 0.001
+
+OK (1 test)
+
+.
+Time: 0
+
+OK (1 test)
+
+0-th run
+Pass: 13, Fail: 3, Error: 5
+{crystal.client.ClientPreferencesTest.testNullInputConstructor=ERROR, crystal.server.TestGitStateChecker.testBasicMergeConflict=FAILURE, crystal.server.TestHgStateChecker.testBasicMergeConflict=FAILURE, crystal.model.RelationshipTest.testStrangeNameConstructor=ERROR, crystal.model.RelationshipTest.testCalculateAction=PASS, crystal.server.GuidanceCheckerTest.testGetCommitters=PASS, crystal.server.TestGitStateChecker.testBasicSame=FAILURE, crystal.model.RelationshipTest.testGetDominant=PASS, crystal.client.ConflictDaemonTest.testAddListener=PASS, crystal.util.SpringLayoutUtilityTest.testFormGrid=PASS, crystal.model.RelationshipTest.testEqualsObject=PASS, crystal.model.LocalStateResultTest.testGetNoErrorMessage=ERROR, crystal.util.SetOperationsTest.testNullIntersection=ERROR, crystal.model.DataSourceTest.testClone=PASS, crystal.client.ProjectPreferencesTest.testRemoveDataSource=PASS, crystal.client.ClientPreferencesTest.testDuplicateAddProjectPreferences=ERROR, crystal.client.ClientPreferencesTest.testDefaultSetting=PASS, crystal.client.ClientPreferencesTest.testAddProjectPreferences=PASS, crystal.util.SetOperationsTest.testSetDifference=PASS, crystal.server.HgLogParserTest.testSingleLog=PASS, crystal.client.ClientPreferencesTest.testDuplicateProject=PASS}
+
+
+.
+Time: 0.372
+
+OK (1 test)
+
+0-th run
+Pass: 1, Fail: 0, Error: 0
+{crystal.client.ConflictDaemonTest.testLocalState=PASS}
+
+
+.E
+Time: 1.183
+There was 1 error:
+1) testEqualsObject(crystal.model.RevisionHistoryTest)java.lang.NullPointerException
+	at crystal.model.RevisionHistoryTest.testEqualsObject(RevisionHistoryTest.java:61)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at edu.washington.cs.dt.util.TestRunnerWrapper.main(TestRunnerWrapper.java:56)
+
+FAILURES!!!
+Tests run: 1,  Failures: 0,  Errors: 1
+
+0-th run
+Pass: 0, Fail: 0, Error: 1
+{crystal.model.RevisionHistoryTest.testEqualsObject=ERROR}
+
+
+.E
+Time: 1.216
+There was 1 error:
+1) testSuperSubHistory(crystal.model.RevisionHistoryTest)java.lang.NullPointerException
+	at crystal.model.RevisionHistoryTest.testSuperSubHistory(RevisionHistoryTest.java:91)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at edu.washington.cs.dt.util.TestRunnerWrapper.main(TestRunnerWrapper.java:56)
+
+FAILURES!!!
+Tests run: 1,  Failures: 0,  Errors: 1
+
+0-th run
+Pass: 0, Fail: 0, Error: 1
+{crystal.model.RevisionHistoryTest.testSuperSubHistory=ERROR}
+
+
+.E
+Time: 1.275
+There was 1 error:
+1) testSetHistory(crystal.model.DataSourceTest)java.lang.NullPointerException
+	at crystal.model.DataSourceTest.testSetHistory(DataSourceTest.java:67)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at edu.washington.cs.dt.util.TestRunnerWrapper.main(TestRunnerWrapper.java:56)
+
+FAILURES!!!
+Tests run: 1,  Failures: 0,  Errors: 1
+
+0-th run
+Pass: 0, Fail: 0, Error: 1
+{crystal.model.DataSourceTest.testSetHistory=ERROR}
+
+

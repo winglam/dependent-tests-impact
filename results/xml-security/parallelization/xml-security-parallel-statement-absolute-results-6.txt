@@ -1,7 +1,7 @@
 log4j:WARN No appenders could be found for logger (org.apache.xml.security.test.c14n.implementations.ExclusiveC14NInterop).
 log4j:WARN Please initialize the log4j system properly.
 .E
-Time: 0.789
+Time: 0.44
 There was 1 error:
 1) test_Y1(org.apache.xml.security.test.c14n.implementations.ExclusiveC14NInterop)org.apache.xml.security.c14n.InvalidCanonicalizerException: You must initialize the xml-security library correctly before you use it. Call the static method "org.apache.xml.security.Init.init();" to do that before you use any functionality from that library.
 	at org.apache.xml.security.c14n.Canonicalizer.<init>(Canonicalizer.java:137)
@@ -13,43 +13,68 @@ There was 1 error:
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at edu.washington.cs.dt.util.TestRunnerWrapper.main(TestRunnerWrapper.java:53)
+	at edu.washington.cs.dt.util.TestRunnerWrapper.main(TestRunnerWrapper.java:56)
 
 FAILURES!!!
 Tests run: 1,  Failures: 0,  Errors: 1
 
 .
-Time: 1.823
+Time: 0.987
 
 OK (1 test)
 
 .
-Time: 0.351
+Time: 0.227
 
 OK (1 test)
 
 .
-Time: 0.254
+Time: 0.156
 
 OK (1 test)
 
 .
-Time: 0.222
+Time: 0.21
 
 OK (1 test)
 
 .
-Time: 0.165
+Time: 0.089
 
 OK (1 test)
 
 .
-Time: 0.254
+Time: 0.143
 
 OK (1 test)
 
 .
-Time: 0.056
+Time: 0.014
+
+OK (1 test)
+
+.
+Time: 0.017
+
+OK (1 test)
+
+.
+Time: 0.021
+
+OK (1 test)
+
+.
+Time: 0.014
+
+OK (1 test)
+
+.
+Time: 0.014
+
+OK (1 test)
+
+.
+Time: 0.014
 
 OK (1 test)
 
@@ -59,52 +84,27 @@ Time: 0.054
 OK (1 test)
 
 .
-Time: 0.039
+Time: 0.103
 
 OK (1 test)
 
 .
-Time: 0.028
+Time: 0.035
 
 OK (1 test)
 
 .
-Time: 0.036
+Time: 0.024
 
 OK (1 test)
 
 .
-Time: 0.017
-
-OK (1 test)
-
-.
-Time: 0.116
-
-OK (1 test)
-
-.
-Time: 0.218
-
-OK (1 test)
-
-.
-Time: 0.062
-
-OK (1 test)
-
-.
-Time: 0.027
-
-OK (1 test)
-
-.
-Time: 0.019
+Time: 0.007
 
 OK (1 test)
 
 .E
-Time: 0.022
+Time: 0.004
 There was 1 error:
 1) test_enveloping_dsa_soaped_broken(org.apache.xml.security.test.interop.IBMTest)java.io.FileNotFoundException: data/com/ibm/xss4j-20011029/enveloping-dsa-soaped-broken.sig (No such file or directory)
 	at java.io.FileInputStream.open(Native Method)
@@ -114,23 +114,23 @@ There was 1 error:
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at edu.washington.cs.dt.util.TestRunnerWrapper.main(TestRunnerWrapper.java:53)
+	at edu.washington.cs.dt.util.TestRunnerWrapper.main(TestRunnerWrapper.java:56)
 
 FAILURES!!!
 Tests run: 1,  Failures: 0,  Errors: 1
 
 .
-Time: 0.021
+Time: 0.003
 
 OK (1 test)
 
 .
-Time: 0.05
+Time: 0.016
 
 OK (1 test)
 
 .E
-Time: 0.009
+Time: 0.005
 There was 1 error:
 1) test_enveloped_rsa(org.apache.xml.security.test.interop.IBMTest)java.io.FileNotFoundException: data/com/ibm/xss4j-20011029/enveloped-rsa.sig (No such file or directory)
 	at java.io.FileInputStream.open(Native Method)
@@ -140,13 +140,13 @@ There was 1 error:
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at edu.washington.cs.dt.util.TestRunnerWrapper.main(TestRunnerWrapper.java:53)
+	at edu.washington.cs.dt.util.TestRunnerWrapper.main(TestRunnerWrapper.java:56)
 
 FAILURES!!!
 Tests run: 1,  Failures: 0,  Errors: 1
 
 .E
-Time: 0.027
+Time: 0.003
 There was 1 error:
 1) test_detached_dsa(org.apache.xml.security.test.interop.IBMTest)java.io.FileNotFoundException: data/com/ibm/xss4j-20011029/detached-dsa.sig (No such file or directory)
 	at java.io.FileInputStream.open(Native Method)
@@ -156,10 +156,15 @@ There was 1 error:
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at edu.washington.cs.dt.util.TestRunnerWrapper.main(TestRunnerWrapper.java:53)
+	at edu.washington.cs.dt.util.TestRunnerWrapper.main(TestRunnerWrapper.java:56)
 
 FAILURES!!!
 Tests run: 1,  Failures: 0,  Errors: 1
+
+.
+Time: 0.008
+
+OK (1 test)
 
 .
 Time: 0.029
@@ -167,17 +172,12 @@ Time: 0.029
 OK (1 test)
 
 .
-Time: 0.066
-
-OK (1 test)
-
-.
-Time: 0.037
+Time: 0.009
 
 OK (1 test)
 
 .E
-Time: 0.008
+Time: 0.005
 There was 1 error:
 1) test_enveloping_rsa(org.apache.xml.security.test.interop.IBMTest)java.io.FileNotFoundException: data/com/ibm/xss4j-20011029/enveloping-rsa.sig (No such file or directory)
 	at java.io.FileInputStream.open(Native Method)
@@ -187,13 +187,13 @@ There was 1 error:
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at edu.washington.cs.dt.util.TestRunnerWrapper.main(TestRunnerWrapper.java:53)
+	at edu.washington.cs.dt.util.TestRunnerWrapper.main(TestRunnerWrapper.java:56)
 
 FAILURES!!!
 Tests run: 1,  Failures: 0,  Errors: 1
 
 .E
-Time: 0.013
+Time: 0.005
 There was 1 error:
 1) test_enveloped_dsa(org.apache.xml.security.test.interop.IBMTest)java.io.FileNotFoundException: data/com/ibm/xss4j-20011029/enveloped-dsa.sig (No such file or directory)
 	at java.io.FileInputStream.open(Native Method)
@@ -203,18 +203,18 @@ There was 1 error:
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at edu.washington.cs.dt.util.TestRunnerWrapper.main(TestRunnerWrapper.java:53)
+	at edu.washington.cs.dt.util.TestRunnerWrapper.main(TestRunnerWrapper.java:56)
 
 FAILURES!!!
 Tests run: 1,  Failures: 0,  Errors: 1
 
 .
-Time: 0.039
+Time: 0.018
 
 OK (1 test)
 
 .E
-Time: 0.022
+Time: 0.01
 There was 1 error:
 1) test_detached_rsa(org.apache.xml.security.test.interop.IBMTest)java.io.FileNotFoundException: data/com/ibm/xss4j-20011029/detached-rsa.sig (No such file or directory)
 	at java.io.FileInputStream.open(Native Method)
@@ -224,43 +224,43 @@ There was 1 error:
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at edu.washington.cs.dt.util.TestRunnerWrapper.main(TestRunnerWrapper.java:53)
+	at edu.washington.cs.dt.util.TestRunnerWrapper.main(TestRunnerWrapper.java:56)
 
 FAILURES!!!
 Tests run: 1,  Failures: 0,  Errors: 1
 
 .
-Time: 0.033
+Time: 0.007
 
 OK (1 test)
 
 .
-Time: 0.034
+Time: 0.013
 
 OK (1 test)
 
 .
-Time: 0.015
+Time: 0.002
 
 OK (1 test)
 
 .
-Time: 0.017
+Time: 0.001
 
 OK (1 test)
 
 .
-Time: 0.015
+Time: 0.01
 
 OK (1 test)
 
 .
-Time: 0.029
+Time: 0.02
 
 OK (1 test)
 
 .E
-Time: 0.007
+Time: 0.003
 There was 1 error:
 1) test_enveloping_dsa(org.apache.xml.security.test.interop.IBMTest)java.io.FileNotFoundException: data/com/ibm/xss4j-20011029/enveloping-dsa.sig (No such file or directory)
 	at java.io.FileInputStream.open(Native Method)
@@ -270,7 +270,7 @@ There was 1 error:
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at edu.washington.cs.dt.util.TestRunnerWrapper.main(TestRunnerWrapper.java:53)
+	at edu.washington.cs.dt.util.TestRunnerWrapper.main(TestRunnerWrapper.java:56)
 
 FAILURES!!!
 Tests run: 1,  Failures: 0,  Errors: 1
@@ -283,7 +283,7 @@ Pass: 29, Fail: 0, Error: 8
 log4j:WARN No appenders could be found for logger (org.apache.xml.security.test.c14n.implementations.ExclusiveC14NInterop).
 log4j:WARN Please initialize the log4j system properly.
 .E
-Time: 0.829
+Time: 0.46
 There was 1 error:
 1) test_Y2(org.apache.xml.security.test.c14n.implementations.ExclusiveC14NInterop)org.apache.xml.security.c14n.InvalidCanonicalizerException: You must initialize the xml-security library correctly before you use it. Call the static method "org.apache.xml.security.Init.init();" to do that before you use any functionality from that library.
 	at org.apache.xml.security.c14n.Canonicalizer.<init>(Canonicalizer.java:137)
@@ -295,43 +295,43 @@ There was 1 error:
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at edu.washington.cs.dt.util.TestRunnerWrapper.main(TestRunnerWrapper.java:53)
+	at edu.washington.cs.dt.util.TestRunnerWrapper.main(TestRunnerWrapper.java:56)
 
 FAILURES!!!
 Tests run: 1,  Failures: 0,  Errors: 1
 
 .
-Time: 1.068
+Time: 0.847
 
 OK (1 test)
 
 .
-Time: 0.267
+Time: 0.2
 
 OK (1 test)
 
 .
-Time: 0.249
+Time: 0.219
 
 OK (1 test)
 
 .
-Time: 0.252
+Time: 0.195
 
 OK (1 test)
 
 .
-Time: 0.298
+Time: 0.241
 
 OK (1 test)
 
 .
-Time: 0.156
+Time: 0.14
 
 OK (1 test)
 
 .
-Time: 0.115
+Time: 0.08
 
 OK (1 test)
 
@@ -341,12 +341,12 @@ Time: 0.031
 OK (1 test)
 
 .
-Time: 0.442
+Time: 0.529
 
 OK (1 test)
 
 .E
-Time: 0.021
+Time: 0.023
 There was 1 error:
 1) test_Y4_stripped(org.apache.xml.security.test.c14n.implementations.C14NInterop)java.io.FileNotFoundException: /home/winglam/workspace/dependent-tests-impact/experiments/xml-security-orig-v1/data/interop/c14n/Y4/signatureStripped.xml (No such file or directory)
 	at java.io.FileInputStream.open(Native Method)
@@ -369,78 +369,13 @@ There was 1 error:
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at edu.washington.cs.dt.util.TestRunnerWrapper.main(TestRunnerWrapper.java:53)
+	at edu.washington.cs.dt.util.TestRunnerWrapper.main(TestRunnerWrapper.java:56)
 
 FAILURES!!!
 Tests run: 1,  Failures: 0,  Errors: 1
 
 .
-Time: 0.009
-
-OK (1 test)
-
-.
-Time: 0.004
-
-OK (1 test)
-
-0-th run
-Pass: 11, Fail: 0, Error: 2
-{org.apache.xml.security.test.c14n.implementations.ExclusiveC14NInterop.test_Y2=ERROR, org.apache.xml.security.test.interop.IAIKTest.test_coreFeatures_signatures_manifestSignature_manifest=PASS, org.apache.xml.security.test.interop.IAIKTest.test_coreFeatures_signatures_manifestSignature_core=PASS, org.apache.xml.security.test.interop.BaltimoreTest.test_fifteen_enveloping_hmac_sha1_40=PASS, org.apache.xml.security.test.interop.IAIKTest.test_transforms_signatures_base64DecodeSignature=PASS, org.apache.xml.security.test.algorithms.implementations.KeyWrapTest.test_AES_43=PASS, org.apache.xml.security.test.algorithms.implementations.BlockEncryptionTest.test_AES256=PASS, org.apache.xml.security.test.c14n.implementations.Canonicalizer20010315Test.testXMLAttributes2=PASS, org.apache.xml.security.test.transforms.implementations.TransformBase64DecodeTest.test1=PASS, org.apache.xml.security.test.c14n.implementations.Canonicalizer20010315Test.testTranslationFromUTF16toUTF8=PASS, org.apache.xml.security.test.c14n.implementations.C14NInterop.test_Y4_stripped=ERROR, org.apache.xml.security.test.c14n.helper.C14nHelperTest.testNamespaceIsAbsolute02=PASS, org.apache.xml.security.test.c14n.helper.C14nHelperTest.testNamespaceIsRelative01=PASS}
-
-
-.
-Time: 2.54
-
-OK (1 test)
-
-.
-Time: 0.24
-
-OK (1 test)
-
-.
-Time: 0.185
-
-OK (1 test)
-
-.
-Time: 0.157
-
-OK (1 test)
-
-.
-Time: 0.195
-
-OK (1 test)
-
-.
-Time: 0.278
-
-OK (1 test)
-
-.
-Time: 0.019
-
-OK (1 test)
-
-.
-Time: 0.136
-
-OK (1 test)
-
-.
-Time: 0.09
-
-OK (1 test)
-
-.
-Time: 0.006
-
-OK (1 test)
-
-.
-Time: 0.014
+Time: 0.015
 
 OK (1 test)
 
@@ -449,20 +384,15 @@ Time: 0
 
 OK (1 test)
 
-.
-Time: 0.014
-
-OK (1 test)
-
 0-th run
-Pass: 13, Fail: 0, Error: 0
-{org.apache.xml.security.test.c14n.implementations.Canonicalizer20010315ExclusiveTest.testA=PASS, org.apache.xml.security.test.interop.BaltimoreTest.test_fifteen_enveloping_b64_dsa=PASS, org.apache.xml.security.test.interop.RSASecurityTest.test_enveloping=PASS, org.apache.xml.security.test.interop.BaltimoreTest.test_fifteen_external_b64_dsa=PASS, org.apache.xml.security.test.interop.IAIKTest.test_signatureAlgorithms_signatures_hMACSignature=PASS, org.apache.xml.security.test.algorithms.implementations.KeyWrapTest.test_AES_41=PASS, org.apache.xml.security.test.c14n.implementations.Canonicalizer20010315ExclusiveTest.test222excl=PASS, org.apache.xml.security.test.c14n.implementations.Canonicalizer20010315Test.testXMLAttributes1=PASS, org.apache.xml.security.test.c14n.implementations.Canonicalizer20010315Test.test35=PASS, org.apache.xml.security.test.c14n.implementations.Canonicalizer20010315Test.testRelativeNSbehaviour=PASS, org.apache.xml.security.test.external.org.apache.xalan.XPathAPI.AttributeAncestorOrSelf.test01=PASS, org.apache.xml.security.test.signature.XMLSignatureInputTest.testOctetStreamIsOctetStream=PASS, org.apache.xml.security.test.signature.XMLSignatureInputTest.testNodeSetIsNodeSet=PASS}
+Pass: 11, Fail: 0, Error: 2
+{org.apache.xml.security.test.c14n.implementations.ExclusiveC14NInterop.test_Y2=ERROR, org.apache.xml.security.test.interop.IAIKTest.test_coreFeatures_signatures_manifestSignature_manifest=PASS, org.apache.xml.security.test.interop.IAIKTest.test_coreFeatures_signatures_manifestSignature_core=PASS, org.apache.xml.security.test.interop.BaltimoreTest.test_fifteen_enveloping_hmac_sha1_40=PASS, org.apache.xml.security.test.interop.IAIKTest.test_transforms_signatures_base64DecodeSignature=PASS, org.apache.xml.security.test.algorithms.implementations.KeyWrapTest.test_AES_43=PASS, org.apache.xml.security.test.algorithms.implementations.BlockEncryptionTest.test_AES256=PASS, org.apache.xml.security.test.c14n.implementations.Canonicalizer20010315Test.testXMLAttributes2=PASS, org.apache.xml.security.test.transforms.implementations.TransformBase64DecodeTest.test1=PASS, org.apache.xml.security.test.c14n.implementations.Canonicalizer20010315Test.testTranslationFromUTF16toUTF8=PASS, org.apache.xml.security.test.c14n.implementations.C14NInterop.test_Y4_stripped=ERROR, org.apache.xml.security.test.c14n.helper.C14nHelperTest.testNamespaceIsAbsolute02=PASS, org.apache.xml.security.test.c14n.helper.C14nHelperTest.testNamespaceIsRelative01=PASS}
 
 
 log4j:WARN No appenders could be found for logger (org.apache.xml.security.test.c14n.implementations.ExclusiveC14NInterop).
 log4j:WARN Please initialize the log4j system properly.
 .E
-Time: 0.593
+Time: 0.698
 There was 1 error:
 1) test_Y3(org.apache.xml.security.test.c14n.implementations.ExclusiveC14NInterop)org.apache.xml.security.c14n.InvalidCanonicalizerException: You must initialize the xml-security library correctly before you use it. Call the static method "org.apache.xml.security.Init.init();" to do that before you use any functionality from that library.
 	at org.apache.xml.security.c14n.Canonicalizer.<init>(Canonicalizer.java:137)
@@ -474,58 +404,58 @@ There was 1 error:
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at edu.washington.cs.dt.util.TestRunnerWrapper.main(TestRunnerWrapper.java:53)
+	at edu.washington.cs.dt.util.TestRunnerWrapper.main(TestRunnerWrapper.java:56)
 
 FAILURES!!!
 Tests run: 1,  Failures: 0,  Errors: 1
 
 .
-Time: 1.297
+Time: 1.14
 
 OK (1 test)
 
 .
-Time: 0.357
+Time: 0.412
 
 OK (1 test)
 
 .
-Time: 0.236
+Time: 0.235
 
 OK (1 test)
 
 .
-Time: 0.297
+Time: 0.225
 
 OK (1 test)
 
 .
-Time: 0.318
+Time: 0.315
 
 OK (1 test)
 
 .
-Time: 0.117
+Time: 0.108
 
 OK (1 test)
 
 .
-Time: 0.146
+Time: 0.124
 
 OK (1 test)
 
 .
-Time: 0.018
+Time: 0.024
 
 OK (1 test)
 
 .
-Time: 0.001
+Time: 0.012
 
 OK (1 test)
 
 .
-Time: 0.256
+Time: 0.154
 
 OK (1 test)
 
@@ -535,12 +465,12 @@ Time: 0
 OK (1 test)
 
 .
-Time: 0.009
+Time: 0.002
 
 OK (1 test)
 
 .E
-Time: 0.007
+Time: 0.003
 There was 1 error:
 1) test_enveloping_hmac(org.apache.xml.security.test.interop.IBMTest)java.io.FileNotFoundException: data/com/ibm/xss4j-20011029/enveloping-hmac.key (No such file or directory)
 	at java.io.FileInputStream.open(Native Method)
@@ -551,146 +481,58 @@ There was 1 error:
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at edu.washington.cs.dt.util.TestRunnerWrapper.main(TestRunnerWrapper.java:53)
+	at edu.washington.cs.dt.util.TestRunnerWrapper.main(TestRunnerWrapper.java:56)
 
 FAILURES!!!
 Tests run: 1,  Failures: 0,  Errors: 1
 
 0-th run
 Pass: 12, Fail: 0, Error: 2
-{org.apache.xml.security.test.c14n.implementations.ExclusiveC14NInterop.test_Y3=ERROR, org.apache.xml.security.test.interop.BaltimoreTest.test_fifteen_enveloped_dsa=PASS, org.apache.xml.security.test.interop.RSASecurityTest.test_enveloped=PASS, org.apache.xml.security.test.interop.IAIKTest.test_signatureAlgorithms_signatures_hMACShortSignature=PASS, org.apache.xml.security.test.interop.BaltimoreTest.test_fifteen_external_dsa=PASS, org.apache.xml.security.test.algorithms.implementations.KeyWrapTest.test_AES_46=PASS, org.apache.xml.security.test.algorithms.implementations.BlockEncryptionTest.test_AES192=PASS, org.apache.xml.security.test.c14n.implementations.Canonicalizer20010315Test.testXMLAttributes3=PASS, org.apache.xml.security.test.signature.XMLSignatureInputTest.testSetNodeSetGetOctetStream1=PASS, org.apache.xml.security.test.utils.Base64Test.testA1=PASS, org.apache.xml.security.test.external.org.apache.xalan.XPathAPI.XalanBug1425Test.testBad01=PASS, org.apache.xml.security.test.signature.XMLSignatureInputTest.testIsInitializedWithOctetStream=PASS, org.apache.xml.security.test.c14n.helper.C14nHelperTest.testNamespaceIsRelative02=PASS, org.apache.xml.security.test.interop.IBMTest.test_enveloping_hmac=ERROR}
+{org.apache.xml.security.test.c14n.implementations.ExclusiveC14NInterop.test_Y3=ERROR, org.apache.xml.security.test.interop.BaltimoreTest.test_fifteen_enveloped_dsa=PASS, org.apache.xml.security.test.interop.RSASecurityTest.test_enveloping=PASS, org.apache.xml.security.test.interop.IAIKTest.test_signatureAlgorithms_signatures_hMACShortSignature=PASS, org.apache.xml.security.test.interop.BaltimoreTest.test_fifteen_external_dsa=PASS, org.apache.xml.security.test.algorithms.implementations.KeyWrapTest.test_AES_46=PASS, org.apache.xml.security.test.algorithms.implementations.BlockEncryptionTest.test_AES192=PASS, org.apache.xml.security.test.c14n.implementations.Canonicalizer20010315Test.testXMLAttributes1=PASS, org.apache.xml.security.test.signature.XMLSignatureInputTest.testSetNodeSetGetOctetStream1=PASS, org.apache.xml.security.test.utils.Base64Test.testA1=PASS, org.apache.xml.security.test.external.org.apache.xalan.XPathAPI.XalanBug1425Test.testBad01=PASS, org.apache.xml.security.test.signature.XMLSignatureInputTest.testIsInitializedWithOctetStream=PASS, org.apache.xml.security.test.c14n.helper.C14nHelperTest.testNamespaceIsRelative02=PASS, org.apache.xml.security.test.interop.IBMTest.test_enveloping_hmac=ERROR}
 
 
 .
-Time: 9.307
+Time: 2.627
 
 OK (1 test)
 
 .
-Time: 0.149
+Time: 0.307
 
 OK (1 test)
 
 .
-Time: 0.286
+Time: 0.386
 
 OK (1 test)
 
 .
-Time: 0.284
+Time: 0.227
 
 OK (1 test)
 
 .
-Time: 0.104
+Time: 0.198
 
 OK (1 test)
 
 .
-Time: 0.415
+Time: 0.24
 
 OK (1 test)
 
 .
-Time: 0.26
+Time: 0.019
 
 OK (1 test)
 
 .
-Time: 0.152
+Time: 0.12
 
 OK (1 test)
 
 .
-Time: 0.024
-
-OK (1 test)
-
-.
-Time: 0.033
-
-OK (1 test)
-
-.
-Time: 0.036
-
-OK (1 test)
-
-.
-Time: 0.029
-
-OK (1 test)
-
-.
-Time: 0.007
-
-OK (1 test)
-
-.
-Time: 0
-
-OK (1 test)
-
-.
-Time: 0.029
-
-OK (1 test)
-
-0-th run
-Pass: 15, Fail: 0, Error: 0
-{org.apache.xml.security.test.interop.BaltimoreTest.test_sixteen_external_dsa=PASS, org.apache.xml.security.test.interop.IAIKTest.test_signatureAlgorithms_signatures_dSASignature=PASS, org.apache.xml.security.test.interop.BaltimoreTest.test_fifteen_enveloping_rsa=PASS, org.apache.xml.security.test.interop.BaltimoreTest.test_fifteen_enveloping_hmac_sha1=PASS, org.apache.xml.security.test.transforms.implementations.TransformBase64DecodeTest.test3=PASS, org.apache.xml.security.test.algorithms.implementations.KeyWrapTest.test_3DES=PASS, org.apache.xml.security.test.algorithms.implementations.KeyWrapTest.test_AES_44=PASS, org.apache.xml.security.test.c14n.implementations.Canonicalizer20010315Test.test33=PASS, org.apache.xml.security.test.c14n.implementations.Canonicalizer20010315ExclusiveTest.test221=PASS, org.apache.xml.security.test.transforms.implementations.TransformBase64DecodeTest.test2=PASS, org.apache.xml.security.test.c14n.implementations.Canonicalizer20010315Test.test36=PASS, org.apache.xml.security.test.utils.resolver.ResourceResolverSpiTest.testExpandSystemId_2=PASS, org.apache.xml.security.test.c14n.helper.C14nHelperTest.testNamespaceIsAbsolute01=PASS, org.apache.xml.security.test.c14n.helper.C14nHelperTest.testNamespaceIsAbsolute03=PASS, org.apache.xml.security.test.signature.XMLSignatureInputTest.testNodeSetIsNotOctetStream=PASS}
-
-
-.
-Time: 2.394
-
-OK (1 test)
-
-.F
-Time: 29.302
-There was 1 failure:
-1) test_Y5(org.apache.xml.security.test.c14n.implementations.ExclusiveC14NInterop)junit.framework.AssertionFailedError: 8 10 19 24 26
-	at org.apache.xml.security.test.c14n.implementations.ExclusiveC14NInterop.test_Y5(ExclusiveC14NInterop.java:201)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at edu.washington.cs.dt.util.TestRunnerWrapper.main(TestRunnerWrapper.java:53)
-
-FAILURES!!!
-Tests run: 1,  Failures: 1,  Errors: 0
-
-.
-Time: 0.076
-
-OK (1 test)
-
-.
-Time: 0.091
-
-OK (1 test)
-
-.
-Time: 0.071
-
-OK (1 test)
-
-.
-Time: 0.13
-
-OK (1 test)
-
-.
-Time: 0.01
-
-OK (1 test)
-
-.
-Time: 0.057
-
-OK (1 test)
-
-.
-Time: 0.022
+Time: 0.111
 
 OK (1 test)
 
@@ -700,7 +542,170 @@ Time: 0.014
 OK (1 test)
 
 .
+Time: 0.023
+
+OK (1 test)
+
+.
+Time: 0.009
+
+OK (1 test)
+
+.
+Time: 0.002
+
+OK (1 test)
+
+0-th run
+Pass: 13, Fail: 0, Error: 0
+{org.apache.xml.security.test.c14n.implementations.Canonicalizer20010315ExclusiveTest.testA=PASS, org.apache.xml.security.test.interop.BaltimoreTest.test_fifteen_enveloping_b64_dsa=PASS, org.apache.xml.security.test.interop.RSASecurityTest.test_enveloped=PASS, org.apache.xml.security.test.interop.BaltimoreTest.test_fifteen_external_b64_dsa=PASS, org.apache.xml.security.test.interop.IAIKTest.test_signatureAlgorithms_signatures_hMACSignature=PASS, org.apache.xml.security.test.algorithms.implementations.KeyWrapTest.test_AES_41=PASS, org.apache.xml.security.test.c14n.implementations.Canonicalizer20010315ExclusiveTest.test222excl=PASS, org.apache.xml.security.test.c14n.implementations.Canonicalizer20010315Test.testXMLAttributes3=PASS, org.apache.xml.security.test.c14n.implementations.Canonicalizer20010315Test.test35=PASS, org.apache.xml.security.test.c14n.implementations.Canonicalizer20010315Test.testRelativeNSbehaviour=PASS, org.apache.xml.security.test.external.org.apache.xalan.XPathAPI.AttributeAncestorOrSelf.test01=PASS, org.apache.xml.security.test.signature.XMLSignatureInputTest.testOctetStreamIsOctetStream=PASS, org.apache.xml.security.test.signature.XMLSignatureInputTest.testNodeSetIsNodeSet=PASS}
+
+
+.
+Time: 5.898
+
+OK (1 test)
+
+.
+Time: 0.179
+
+OK (1 test)
+
+.
+Time: 0.223
+
+OK (1 test)
+
+.
+Time: 0.204
+
+OK (1 test)
+
+.
+Time: 0.043
+
+OK (1 test)
+
+.
+Time: 0.274
+
+OK (1 test)
+
+.
+Time: 0.182
+
+OK (1 test)
+
+.
+Time: 0.096
+
+OK (1 test)
+
+.
+Time: 0.015
+
+OK (1 test)
+
+.
+Time: 0.012
+
+OK (1 test)
+
+.
+Time: 0.032
+
+OK (1 test)
+
+.
+Time: 0.024
+
+OK (1 test)
+
+.
+Time: 0.002
+
+OK (1 test)
+
+.
+Time: 0
+
+OK (1 test)
+
+.
+Time: 0.012
+
+OK (1 test)
+
+0-th run
+Pass: 15, Fail: 0, Error: 0
+{org.apache.xml.security.test.interop.BaltimoreTest.test_sixteen_external_dsa=PASS, org.apache.xml.security.test.interop.IAIKTest.test_signatureAlgorithms_signatures_dSASignature=PASS, org.apache.xml.security.test.interop.BaltimoreTest.test_fifteen_enveloping_rsa=PASS, org.apache.xml.security.test.interop.BaltimoreTest.test_fifteen_enveloping_hmac_sha1=PASS, org.apache.xml.security.test.transforms.implementations.TransformBase64DecodeTest.test3=PASS, org.apache.xml.security.test.algorithms.implementations.KeyWrapTest.test_3DES=PASS, org.apache.xml.security.test.algorithms.implementations.KeyWrapTest.test_AES_44=PASS, org.apache.xml.security.test.c14n.implementations.Canonicalizer20010315Test.test33=PASS, org.apache.xml.security.test.c14n.implementations.Canonicalizer20010315ExclusiveTest.test221=PASS, org.apache.xml.security.test.transforms.implementations.TransformBase64DecodeTest.test2=PASS, org.apache.xml.security.test.c14n.implementations.Canonicalizer20010315Test.test36=PASS, org.apache.xml.security.test.utils.resolver.ResourceResolverSpiTest.testExpandSystemId_2=PASS, org.apache.xml.security.test.c14n.helper.C14nHelperTest.testNamespaceIsAbsolute01=PASS, org.apache.xml.security.test.c14n.helper.C14nHelperTest.testNamespaceIsAbsolute03=PASS, org.apache.xml.security.test.signature.XMLSignatureInputTest.testNodeSetIsNotOctetStream=PASS}
+
+
+.
+Time: 1.923
+
+OK (1 test)
+
+.F
+Time: 20.164
+There was 1 failure:
+1) test_Y5(org.apache.xml.security.test.c14n.implementations.ExclusiveC14NInterop)junit.framework.AssertionFailedError: 8 10 19 24 26
+	at org.apache.xml.security.test.c14n.implementations.ExclusiveC14NInterop.test_Y5(ExclusiveC14NInterop.java:201)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at edu.washington.cs.dt.util.TestRunnerWrapper.main(TestRunnerWrapper.java:56)
+
+FAILURES!!!
+Tests run: 1,  Failures: 1,  Errors: 0
+
+.
+Time: 0.038
+
+OK (1 test)
+
+.
+Time: 0.047
+
+OK (1 test)
+
+.
+Time: 0.06
+
+OK (1 test)
+
+.
+Time: 0.076
+
+OK (1 test)
+
+.
+Time: 0.006
+
+OK (1 test)
+
+.
+Time: 0.037
+
+OK (1 test)
+
+.
+Time: 0.01
+
+OK (1 test)
+
+.
+Time: 0.007
+
+OK (1 test)
+
+.
 Time: 0.008
+
+OK (1 test)
+
+.
+Time: 0
 
 OK (1 test)
 
@@ -716,11 +721,6 @@ OK (1 test)
 
 .
 Time: 0
-
-OK (1 test)
-
-.
-Time: 0.005
 
 OK (1 test)
 

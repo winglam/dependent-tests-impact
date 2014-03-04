@@ -15,11 +15,12 @@ import java.util.Map;
 import edu.washington.cs.dt.impact.util.Constants.COVERAGE;
 import edu.washington.cs.dt.impact.util.Constants.ORDER;
 import edu.washington.cs.dt.impact.util.TestMethodData;
+import edu.washington.cs.dt.impact.util.TestTimeData;
 
 public class TestParallelizationObject extends TestObject {
     private List<OrderObject> splitTests;
 
-    public TestParallelizationObject(ORDER order, String outputFileName, File inputTestFolder, COVERAGE coverage, File dependentTestsFile, int k, File origOrder) {
+    public TestParallelizationObject(ORDER order, String outputFileName, File inputTestFolder, COVERAGE coverage, File dependentTestsFile, int k, File origOrder, File timeOrder) {
         super(inputTestFolder, coverage, dependentTestsFile);
 
         splitTests = new LinkedList<OrderObject>();
@@ -27,10 +28,17 @@ public class TestParallelizationObject extends TestObject {
             throw new RuntimeException("Test parallelization cannot be ran without a specified output file name.");
         }
 
-        if (order == ORDER.RELATIVE || order == ORDER.ABSOLUTE) {
+        if (order == ORDER.RELATIVE || order == ORDER.ABSOLUTE || order == ORDER.TIME) {
             Collections.sort(methodList);
             if (order == ORDER.RELATIVE) {
                 methodList = new RelativeOrderObject(outputFileName, methodList, allLines).generateRelativeOrderList();
+            } else if (order == ORDER.TIME) {
+                methodList.clear();
+                Map<String, Long> testNameToTime = processFile(timeOrder);
+                for (String key : testNameToTime.keySet()) {
+                    methodList.add(new TestTimeData(key, testNameToTime.get(key)));
+                }
+                Collections.sort(methodList);
             }
 
             List<TestListObject> tmdLists = new ArrayList<TestListObject>();
@@ -91,6 +99,54 @@ public class TestParallelizationObject extends TestObject {
             System.err.println("Test parallelization is specified with an incompatible order. Compatible orders are: random, relative or absolute.");
             System.exit(0);
         }
+    }
+
+    private static Map<String, Long> processFile(File f) {
+        if (!f.isFile()) {
+            throw new RuntimeException(f.getName() + " file is invalid.");
+        }
+
+        Map<String, Long> testsToResults = new HashMap<String, Long>();
+        BufferedReader br;
+        try {
+            br = new BufferedReader(new FileReader(f));
+            String line = br.readLine();
+            while(line != null) {
+                while (line != null && !line.matches("^Pass: [0-9]+, Fail: [0-9]+, Error: [0-9]+$")) {
+                    line = br.readLine();
+                }
+
+                if (line == null) {
+                    break;
+                }
+
+                String nextLine = br.readLine();
+                if (nextLine.equals("{}")) {
+                    line = nextLine;
+                    continue;
+                }
+
+                String[] testResults = nextLine.split(", ");
+                if (testResults.length >= 1) {
+                    testResults[0] = testResults[0].substring(1);
+                    String lastTest = testResults[testResults.length - 1];
+                    testResults[testResults.length - 1] = lastTest.substring(0, lastTest.length() - 1);
+
+                    for (String s : testResults) {
+                        String[] testAndResult = s.split("=");
+                        testsToResults.put(testAndResult[0], Long.parseLong(testAndResult[1]));
+                    }
+                }
+                line = br.readLine();
+            }
+            br.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return testsToResults;
     }
 
     @Override

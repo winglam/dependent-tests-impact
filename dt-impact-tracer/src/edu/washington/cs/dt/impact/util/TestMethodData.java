@@ -16,20 +16,20 @@ public class TestMethodData implements Comparable<TestMethodData> {
         allLines = new LinkedHashSet<String>();
     }
 
+    public long getLineCount() {
+        return currentLines.size();
+    }
+
+    public String getName() {
+        return methodName;
+    }
+
     public void addLine(String line) {
         allLines.add(line);
     }
 
     public void reset() {
         currentLines = new LinkedHashSet<String>(allLines);
-    }
-
-    public int getLineCount() {
-        return currentLines.size();
-    }
-
-    public String getName() {
-        return methodName;
     }
 
     public void removeLines(Set<String> lines) {
@@ -45,9 +45,14 @@ public class TestMethodData implements Comparable<TestMethodData> {
     }
 
     @Override
+    public String toString() {
+        return getName() + " : " + getLineCount();
+    }
+
+    @Override
     public int compareTo(TestMethodData o) {
-        int mLineCount = currentLines.size();
-        int oLineCount = o.getLineCount();
+        long mLineCount = getLineCount();
+        long oLineCount = o.getLineCount();
 
         if (mLineCount < oLineCount) {
             return 1;

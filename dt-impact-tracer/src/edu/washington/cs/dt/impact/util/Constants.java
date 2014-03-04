@@ -13,6 +13,6 @@ public class Constants {
     };
 
     public enum ORDER {
-        RANDOM, ABSOLUTE, RELATIVE, ORIGINAL
+        RANDOM, ABSOLUTE, RELATIVE, ORIGINAL, TIME
     }
 }

@@ -1,4 +1,4 @@
-testType=auto
+testType=orig
 experiment=jodatime
 experimentCP=impact-tools/*:bin/:resources/:lib/*
 

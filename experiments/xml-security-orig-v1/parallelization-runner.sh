@@ -1,4 +1,4 @@
-testType=auto
+testType=orig
 experiment=xml-security
 experimentCP=impact-tools/*:bin/:../xml-security-commons/bin/:data/:../xml-security-commons/libs/*
 
