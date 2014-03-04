@@ -11,6 +11,14 @@ Number of Tests Missing: 1
 org.joda.time.TestPeriodType.testForFields4:     PASS                          FAIL
 org.joda.time.chrono.gj.MainTest.testChronology: PASS
 
+jodatime-parallel-time-results.txt k=2
+Number of Inconsistent Tests Found: 3
+Number of Tests Missing: 0
+                                                                             Original order result:        Test order result:
+org.joda.time.TestDateMidnight_Basics.testWithZoneRetainFields_DateTimeZone: PASS                          FAIL
+org.joda.time.TestDateTime_Basics.testWithZoneRetainFields_DateTimeZone:     PASS                          FAIL
+org.joda.time.TestDateTime_Basics.testToDateTime_DateTimeZone:               PASS                          FAIL
+
 jodatime-parallel-orig-order-results.txt k=4
 Number of Inconsistent Tests Found: 0
 Number of Tests Missing: 1
@@ -23,6 +31,12 @@ Number of Tests Missing: 1
                                                  Original order result:        Test order result:
 org.joda.time.TestPeriodType.testForFields4:     PASS                          FAIL
 org.joda.time.chrono.gj.MainTest.testChronology: PASS
+
+jodatime-parallel-time-results.txt k=4
+Number of Inconsistent Tests Found: 1
+Number of Tests Missing: 0
+                                             Original order result:        Test order result:
+org.joda.time.TestPeriodType.testForFields4: PASS                          FAIL
 
 jodatime-parallel-orig-order-results.txt k=6
 Number of Inconsistent Tests Found: 0
@@ -37,6 +51,13 @@ Number of Tests Missing: 1
 org.joda.time.TestPeriodType.testForFields4:     PASS                          FAIL
 org.joda.time.chrono.gj.MainTest.testChronology: PASS
 
+jodatime-parallel-time-results.txt k=6
+Number of Inconsistent Tests Found: 2
+Number of Tests Missing: 0
+                                                               Original order result:        Test order result:
+org.joda.time.TestPeriodType.testForFields4:                   PASS                          FAIL
+org.joda.time.TestDateTime_Basics.testToDateTime_DateTimeZone: PASS                          FAIL
+
 jodatime-parallel-orig-order-results.txt k=8
 Number of Inconsistent Tests Found: 0
 Number of Tests Missing: 1
@@ -49,6 +70,11 @@ Number of Tests Missing: 1
                                                  Original order result:        Test order result:
 org.joda.time.TestPeriodType.testForFields4:     PASS                          FAIL
 org.joda.time.chrono.gj.MainTest.testChronology: PASS
+
+jodatime-parallel-time-results.txt k=8
+Number of Inconsistent Tests Found: 0
+Number of Tests Missing: 0
+  Original order result:        Test order result:
 
 jodatime-parallel-orig-order-results.txt k=16
 Number of Inconsistent Tests Found: 0
@@ -63,11 +89,16 @@ Number of Tests Missing: 1
 org.joda.time.TestPeriodType.testForFields4:     PASS                          FAIL
 org.joda.time.chrono.gj.MainTest.testChronology: PASS
 
-jodatime-parallel-statement-absolute-results.txt k=2
+jodatime-parallel-time-results.txt k=16
 Number of Inconsistent Tests Found: 1
+Number of Tests Missing: 0
+                                             Original order result:        Test order result:
+org.joda.time.TestPeriodType.testForFields4: PASS                          FAIL
+
+jodatime-parallel-statement-absolute-results.txt k=2
+Number of Inconsistent Tests Found: 0
 Number of Tests Missing: 1
                                                  Original order result:        Test order result:
-org.joda.time.TestPeriodType.testForFields4:     PASS                          FAIL
 org.joda.time.chrono.gj.MainTest.testChronology: PASS
 
 jodatime-parallel-statement-relative-results.txt k=2
@@ -100,11 +131,12 @@ org.joda.time.TestPeriodType.testForFields4:     PASS                          F
 org.joda.time.chrono.gj.MainTest.testChronology: PASS
 
 jodatime-parallel-statement-relative-results.txt k=4
-Number of Inconsistent Tests Found: 1
+Number of Inconsistent Tests Found: 2
 Number of Tests Missing: 1
-                                                 Original order result:        Test order result:
-org.joda.time.TestPeriodType.testForFields4:     PASS                          FAIL
-org.joda.time.chrono.gj.MainTest.testChronology: PASS
+                                                                             Original order result:        Test order result:
+org.joda.time.TestPeriodType.testForFields4:                                 PASS                          FAIL
+org.joda.time.TestDateMidnight_Basics.testWithZoneRetainFields_DateTimeZone: PASS                          FAIL
+org.joda.time.chrono.gj.MainTest.testChronology:                             PASS
 
 jodatime-parallel-function-absolute-results.txt k=4
 Number of Inconsistent Tests Found: 1
@@ -159,16 +191,19 @@ org.joda.time.TestPeriodType.testForFields4:     PASS                          F
 org.joda.time.chrono.gj.MainTest.testChronology: PASS
 
 jodatime-parallel-statement-relative-results.txt k=8
+Number of Inconsistent Tests Found: 3
+Number of Tests Missing: 1
+                                                                             Original order result:        Test order result:
+org.joda.time.TestPeriodType.testForFields4:                                 PASS                          FAIL
+org.joda.time.TestDateMidnight_Basics.testWithZoneRetainFields_DateTimeZone: PASS                          FAIL
+org.joda.time.TestDateTime_Basics.testWithZoneRetainFields_DateTimeZone:     PASS                          FAIL
+org.joda.time.chrono.gj.MainTest.testChronology:                             PASS
+
+jodatime-parallel-function-absolute-results.txt k=8
 Number of Inconsistent Tests Found: 1
 Number of Tests Missing: 1
                                                  Original order result:        Test order result:
 org.joda.time.TestPeriodType.testForFields4:     PASS                          FAIL
-org.joda.time.chrono.gj.MainTest.testChronology: PASS
-
-jodatime-parallel-function-absolute-results.txt k=8
-Number of Inconsistent Tests Found: 0
-Number of Tests Missing: 1
-                                                 Original order result:        Test order result:
 org.joda.time.chrono.gj.MainTest.testChronology: PASS
 
 jodatime-parallel-function-relative-results.txt k=8

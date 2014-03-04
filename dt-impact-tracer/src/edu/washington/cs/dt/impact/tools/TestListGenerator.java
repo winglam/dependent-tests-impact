@@ -189,6 +189,7 @@ public class TestListGenerator {
         }
 
         int numOfMachines = 1;
+        File timeOrder = null;
         if (techniqueName == TECHNIQUE.PARALLELIZATION) {
             // get directory of old version's selection output
             int numOfMachinesIndex = argsList.indexOf("-numOfMachines");
@@ -204,9 +205,11 @@ public class TestListGenerator {
                     System.exit(0);
                 }
             }
-            // get file for the original order in which the tests should be ordered
+
+            int timeOrderIndex = argsList.indexOf("-timeOrder");
             int origOrderIndex = argsList.indexOf("-origOrder");
             if (origOrderIndex != -1) {
+                // get file for the original order in which the tests should be ordered
                 int origOrderNameIndex = origOrderIndex + 1;
                 if (origOrderNameIndex >= argsList.size()) {
                     System.err.println("Original order argument is specified but a directory path is not. Please use the format: -origOrder afilepath");
@@ -218,6 +221,19 @@ public class TestListGenerator {
                     System.exit(0);
                 }
                 order = ORDER.ORIGINAL;
+            } else if (timeOrderIndex != -1) {
+                // get file for the time each test took
+                int timeOrderNameIndex = timeOrderIndex + 1;
+                if (timeOrderNameIndex >= argsList.size()) {
+                    System.err.println("Time order argument is specified but a directory path is not. Please use the format: -timeOrder afilepath");
+                    System.exit(0);
+                }
+                timeOrder = new File(argsList.get(timeOrderNameIndex));
+                if (!timeOrder.isFile()) {
+                    System.err.println("Time order argument is specified but the file path is invalid. Please check the file path.");
+                    System.exit(0);
+                }
+                order = ORDER.TIME;
             }
         }
 
@@ -227,7 +243,7 @@ public class TestListGenerator {
         } else if (techniqueName == TECHNIQUE.SELECTION) {
             testObj = new TestSelectionObject(order, outputFileName, testInputDir, coverage, selectionOutput1, selectionOutput2, origOrder, dependentTestFile);
         } else if (techniqueName == TECHNIQUE.PARALLELIZATION) {
-            testObj = new TestParallelizationObject(order, outputFileName, testInputDir, coverage, dependentTestFile, numOfMachines, origOrder);
+            testObj = new TestParallelizationObject(order, outputFileName, testInputDir, coverage, dependentTestFile, numOfMachines, origOrder, timeOrder);
         }
 
         testObj.printResults();
