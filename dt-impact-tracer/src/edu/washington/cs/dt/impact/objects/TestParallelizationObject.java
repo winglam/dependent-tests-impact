@@ -18,12 +18,12 @@ import edu.washington.cs.dt.impact.util.TestMethodData;
 import edu.washington.cs.dt.impact.util.TestTimeData;
 
 public class TestParallelizationObject extends TestObject {
-    private List<OrderObject> splitTests;
+    private List<StandardOrderObject> splitTests;
 
     public TestParallelizationObject(ORDER order, String outputFileName, File inputTestFolder, COVERAGE coverage, File dependentTestsFile, int k, File origOrder, File timeOrder) {
         super(inputTestFolder, coverage, dependentTestsFile);
 
-        splitTests = new LinkedList<OrderObject>();
+        splitTests = new LinkedList<StandardOrderObject>();
         if (outputFileName == null) {
             throw new RuntimeException("Test parallelization cannot be ran without a specified output file name.");
         }
@@ -33,10 +33,28 @@ public class TestParallelizationObject extends TestObject {
             if (order == ORDER.RELATIVE) {
                 methodList = new RelativeOrderObject(outputFileName, methodList, allLines).generateRelativeOrderList();
             } else if (order == ORDER.TIME) {
+                Map<String, TestMethodData> nameToMethodData = getNameToMethodData(methodList);
                 methodList.clear();
+                Map<String, TestTimeData> nameToTimeData = new HashMap<String, TestTimeData>();
+
+                // create TestTimeDatas instead of TestMethodDatas
                 Map<String, Long> testNameToTime = processFile(timeOrder);
                 for (String key : testNameToTime.keySet()) {
-                    methodList.add(new TestTimeData(key, testNameToTime.get(key)));
+                    TestTimeData currTTD = new TestTimeData(key, testNameToTime.get(key));
+                    methodList.add(currTTD);
+                    nameToTimeData.put(key, currTTD);
+                }
+
+                // go through each TestMethodData and setup its corresponding TestTimeData's dependences
+                for (String key : nameToMethodData.keySet()) {
+                    TestMethodData currTMD = nameToMethodData.get(key);
+                    TestTimeData currTTD = nameToTimeData.get(key);
+                    for (TestMethodData tmd : currTMD.getDependentTests(true)) {
+                        currTTD.addDependentTest(nameToTimeData.get(tmd.getName()), true);
+                    }
+                    for (TestMethodData tmd : currTMD.getDependentTests(false)) {
+                        currTTD.addDependentTest(nameToTimeData.get(tmd.getName()), false);
+                    }
                 }
                 Collections.sort(methodList);
             }
@@ -58,11 +76,7 @@ public class TestParallelizationObject extends TestObject {
             if (order == ORDER.RANDOM) {
                 Collections.shuffle(methodList);
             } else if (order == ORDER.ORIGINAL) {
-                Map<String, TestMethodData> nameToMethodData = new HashMap<String, TestMethodData>();
-                for (TestMethodData methodData : methodList) {
-                    nameToMethodData.put(methodData.getName(), methodData);
-                }
-
+                Map<String, TestMethodData> nameToMethodData = getNameToMethodData(methodList);
                 methodList.clear();
                 BufferedReader br;
                 try {
@@ -101,7 +115,15 @@ public class TestParallelizationObject extends TestObject {
         }
     }
 
-    private static Map<String, Long> processFile(File f) {
+    private Map<String, TestMethodData> getNameToMethodData(List<TestMethodData> methodList) {
+        Map<String, TestMethodData> nameToMethodData = new HashMap<String, TestMethodData>();
+        for (TestMethodData methodData : methodList) {
+            nameToMethodData.put(methodData.getName(), methodData);
+        }
+        return nameToMethodData;
+    }
+
+    private Map<String, Long> processFile(File f) {
         if (!f.isFile()) {
             throw new RuntimeException(f.getName() + " file is invalid.");
         }
@@ -151,7 +173,8 @@ public class TestParallelizationObject extends TestObject {
 
     @Override
     public void printResults() {
-        for (OrderObject obj : splitTests) {
+        for (StandardOrderObject obj : splitTests) {
+            obj.checkForDependentTests();
             obj.printResults();
         }
     }
