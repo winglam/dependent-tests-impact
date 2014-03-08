@@ -10641,7 +10641,7 @@ org.joda.time.TestLocalDate_Constructors.testConstructor_Object_nullDateTimeZone
 
 jodatime-ts-function-absolute-results.txt
 Number of Inconsistent Tests Found: 0
-Number of Tests Missing: 640
+Number of Tests Missing: 648
                                                                                                             Original order result:        Test order result:
 org.joda.time.field.TestBaseDateTimeField.test_getMaximumValue_long:                                        PASS
 org.joda.time.field.TestFieldUtils.testSafeSubtractLong:                                                    PASS
@@ -10671,6 +10671,7 @@ org.joda.time.TestDateTimeComparator.testListYear:                              
 org.joda.time.convert.TestConverterManager.testAddDurationConverterSecurity:                                PASS
 org.joda.time.field.TestPreciseDurationDateTimeField.test_getLeapAmount_long:                               PASS
 org.joda.time.field.TestPreciseDurationDateTimeField.test_set_long_int:                                     PASS
+org.joda.time.TestWeeks.testFactory_weeksIn_RInterval:                                                      PASS
 org.joda.time.field.TestMillisDurationField.test_getMillis_long_long:                                       PASS
 org.joda.time.field.TestScaledDurationField.test_isSupported:                                               PASS
 org.joda.time.TestMonths.testGetFieldType:                                                                  PASS
@@ -10742,7 +10743,6 @@ org.joda.time.field.TestBaseDateTimeField.test_getLeapDurationField:            
 org.joda.time.TestMinutes.testAddToLocalDate:                                                               PASS
 org.joda.time.format.TestPeriodFormat.test_getDefault_cached:                                               PASS
 org.joda.time.TestDays.testMultipliedBy_int:                                                                PASS
-org.joda.time.TestDateTimeZoneCutover.testDateTimeCreation_newYork:                                         PASS
 org.joda.time.convert.TestConverterManager.testRemoveIntervalConverter3:                                    PASS
 org.joda.time.convert.TestConverterManager.testRemoveIntervalConverter2:                                    PASS
 org.joda.time.convert.TestConverterManager.testRemoveIntervalConverter1:                                    PASS
@@ -10751,6 +10751,7 @@ org.joda.time.convert.TestConverterSet.testRemoveBadIndex1:                     
 org.joda.time.format.TestPeriodFormat.test_wordBased_nl_formatStandard:                                     PASS
 org.joda.time.tz.TestUTCProvider.testGetZone_String:                                                        PASS
 org.joda.time.field.TestPreciseDurationField.test_getValue_long:                                            PASS
+org.joda.time.TestSeconds.testFactory_secondsBetween_RInstant:                                              PASS
 org.joda.time.convert.TestConverterManager.testGetIntervalConverters:                                       PASS
 org.joda.time.tz.TestUTCProvider.testGetAvailableIDs:                                                       PASS
 org.joda.time.TestDateTimeZoneCutover.test_DateTime_withZoneRetainFields_Turk:                              PASS
@@ -10774,10 +10775,11 @@ org.joda.time.TestHours.testIsLessThan:                                         
 org.joda.time.TestDateTimeZoneCutover.test_DateTime_plusHour_Guatemata_Autumn:                              PASS
 org.joda.time.TestSeconds.testAddToLocalDate:                                                               PASS
 org.joda.time.TestDateTimeConstants.testHalfdaysOfDay:                                                      PASS
-org.joda.time.TestDateTimeZoneCutover.testWithHourOfDayInDstChange:                                         PASS
+org.joda.time.TestDays.testFactory_daysIn_RInterval:                                                        PASS
 org.joda.time.TestWeeks.testPlus_Weeks:                                                                     PASS
 org.joda.time.field.TestMillisDurationField.test_getValueAsLong_long_long:                                  PASS
 org.joda.time.convert.TestConverterManager.testRemoveIntervalConverterSecurity:                             PASS
+org.joda.time.TestMinutes.testFactory_minutesBetween_RInstant:                                              PASS
 org.joda.time.TestMinutes.testIsLessThan:                                                                   PASS
 org.joda.time.convert.TestConverterManager.testSingleton:                                                   PASS
 org.joda.time.TestDurationFieldType.test_seconds:                                                           PASS
@@ -10821,7 +10823,6 @@ org.joda.time.format.TestISODateTimeFormat_Fields.testForFields_null:           
 org.joda.time.field.TestBaseDateTimeField.test_getAsShortText_long_Locale:                                  PASS
 org.joda.time.TestDateTimeZoneCutover.test_DateTime_roundFloor_hourOfDay_NewYork_Autumn_postCutover:        PASS
 org.joda.time.convert.TestConverterManager.testGetPartialConverterRemovedNull:                              PASS
-org.joda.time.TestDateTimeZoneCutover.test_getOffsetFromLocal_NewYork_Autumn:                               PASS
 org.joda.time.TestDateTimeComparator.testListMinute:                                                        PASS
 org.joda.time.TestDurationFieldType.test_days:                                                              PASS
 org.joda.time.format.TestPeriodFormat.test_wordBased_es_formatStandard:                                     PASS
@@ -10920,6 +10921,7 @@ org.joda.time.format.TestPeriodFormat.test_wordBased_nl_FormatOneField:         
 org.joda.time.field.TestBaseDateTimeField.test_constructor:                                                 PASS
 org.joda.time.field.TestPreciseDateTimeField.test_getLeapAmount_long:                                       PASS
 org.joda.time.format.TestPeriodFormat.test_wordBased_de_formatStandard:                                     PASS
+org.joda.time.TestHours.testFactory_hoursBetween_RInstant:                                                  PASS
 org.joda.time.TestDays.testPlus_int:                                                                        PASS
 org.joda.time.field.TestPreciseDurationDateTimeField.test_getDifferenceAsLong_long_long:                    PASS
 org.joda.time.TestDateTimeUtils.testGetDurationMillis_RI:                                                   PASS
@@ -10962,6 +10964,7 @@ org.joda.time.TestWeeks.testToStandardDays:                                     
 org.joda.time.format.TestDateTimeFormatterBuilder.test_toFormatter:                                         PASS
 org.joda.time.TestMonths.testGetPeriodType:                                                                 PASS
 org.joda.time.field.TestPreciseDurationField.test_getName:                                                  PASS
+org.joda.time.TestHours.testFactory_hoursIn_RInterval:                                                      PASS
 org.joda.time.TestMinutes.testConstants:                                                                    PASS
 org.joda.time.TestDateTimeZoneCutover.test_DateTime_constructor_NewYork_Autumn:                             PASS
 org.joda.time.convert.TestConverterSet.testAddNullRemoved3:                                                 PASS
@@ -11020,6 +11023,7 @@ org.joda.time.TestDateTimeUtils.testFixedMillis:                                
 org.joda.time.TestStringConvert.testMonths:                                                                 PASS
 org.joda.time.field.TestScaledDurationField.test_constructor:                                               PASS
 org.joda.time.format.TestPeriodFormat.test_wordBased_de_FormatOneField:                                     PASS
+org.joda.time.TestMonths.testFactory_monthsIn_RInterval:                                                    PASS
 org.joda.time.TestDays.testIsLessThan:                                                                      PASS
 org.joda.time.TestWeeks.testPlus_int:                                                                       PASS
 org.joda.time.TestDateTimeZoneCutover.test_DateTime_setHourAcross_NewYork_Spring:                           PASS
@@ -11141,6 +11145,7 @@ org.joda.time.TestMinutes.testSerialization:                                    
 org.joda.time.field.TestPreciseDurationDateTimeField.test_roundHalfEven_long:                               PASS
 org.joda.time.convert.TestConverterManager.testGetPeriodConverterRemovedNull:                               PASS
 org.joda.time.TestDateTimeZoneCutover.test_DateTime_minusHour_Gaza:                                         PASS
+org.joda.time.TestMinutes.testFactory_minutesIn_RInterval:                                                  PASS
 org.joda.time.TestSeconds.testIsGreaterThan:                                                                PASS
 org.joda.time.TestDateTimeComparator.testListTime:                                                          PASS
 org.joda.time.TestDateTimeZoneCutover.test_DateTime_setHourForward_NewYork_Spring:                          PASS
@@ -11157,6 +11162,7 @@ org.joda.time.convert.TestConverterManager.testRemovePeriodConverter2:          
 org.joda.time.convert.TestConverterManager.testRemovePeriodConverter3:                                      PASS
 org.joda.time.convert.TestConverterManager.testRemovePeriodConverter1:                                      PASS
 org.joda.time.TestDurationFieldType.test_eras:                                                              PASS
+org.joda.time.TestSeconds.testFactory_secondsIn_RInterval:                                                  PASS
 org.joda.time.TestDateTimeZoneCutover.test_DateTime_roundCeiling_day_NewYork_Autumn_postCutover:            PASS
 org.joda.time.TestDateTimeComparator.testListBasic:                                                         PASS
 org.joda.time.field.TestPreciseDateTimeField.test_getName:                                                  PASS
@@ -11183,6 +11189,7 @@ org.joda.time.TestDateTimeFieldType.test_minuteOfDay:                           
 org.joda.time.TestDateTimeZoneCutover.test_DateTime_plusDay_Turk:                                           PASS
 org.joda.time.field.TestMillisDurationField.test_getDifferenceAsLong_long_long:                             PASS
 org.joda.time.field.TestBaseDateTimeField.test_set_long_int:                                                PASS
+org.joda.time.TestYears.testFactory_yearsIn_RInterval:                                                      PASS
 org.joda.time.TestDays.testGetPeriodType:                                                                   PASS
 org.joda.time.TestBaseSingleFieldPeriod.testGetSetValue:                                                    PASS
 org.joda.time.field.TestBaseDateTimeField.test_getName:                                                     PASS
@@ -11243,6 +11250,7 @@ org.joda.time.TestDateTimeComparator.testStaticGetTimeOnlyInstance:             
 org.joda.time.TestDateTimeZoneCutover.test_DateTime_roundCeiling_hourOfDay_NewYork_Autumn_preCutover:       PASS
 org.joda.time.field.TestPreciseDurationField.test_getValueAsLong_long_long:                                 PASS
 org.joda.time.TestHours.testToStandardSeconds:                                                              PASS
+org.joda.time.TestDays.testFactory_daysBetween_RInstant:                                                    PASS
 org.joda.time.TestDays.testPlus_Days:                                                                       PASS
 org.joda.time.TestMonths.testFactory_months_int:                                                            PASS
 org.joda.time.TestHours.testFactory_hours_int:                                                              PASS
@@ -11286,7 +11294,7 @@ org.joda.time.TestHours.testConstants:                                          
 
 jodatime-ts-function-relative-results.txt
 Number of Inconsistent Tests Found: 1
-Number of Tests Missing: 640
+Number of Tests Missing: 648
                                                                                                             Original order result:        Test order result:
 org.joda.time.TestDateMidnight_Basics.testWithZoneRetainFields_DateTimeZone:                                PASS                          FAIL
 org.joda.time.field.TestBaseDateTimeField.test_getMaximumValue_long:                                        PASS
@@ -11317,6 +11325,7 @@ org.joda.time.TestDateTimeComparator.testListYear:                              
 org.joda.time.convert.TestConverterManager.testAddDurationConverterSecurity:                                PASS
 org.joda.time.field.TestPreciseDurationDateTimeField.test_getLeapAmount_long:                               PASS
 org.joda.time.field.TestPreciseDurationDateTimeField.test_set_long_int:                                     PASS
+org.joda.time.TestWeeks.testFactory_weeksIn_RInterval:                                                      PASS
 org.joda.time.field.TestMillisDurationField.test_getMillis_long_long:                                       PASS
 org.joda.time.field.TestScaledDurationField.test_isSupported:                                               PASS
 org.joda.time.TestMonths.testGetFieldType:                                                                  PASS
@@ -11388,7 +11397,6 @@ org.joda.time.field.TestBaseDateTimeField.test_getLeapDurationField:            
 org.joda.time.TestMinutes.testAddToLocalDate:                                                               PASS
 org.joda.time.format.TestPeriodFormat.test_getDefault_cached:                                               PASS
 org.joda.time.TestDays.testMultipliedBy_int:                                                                PASS
-org.joda.time.TestDateTimeZoneCutover.testDateTimeCreation_newYork:                                         PASS
 org.joda.time.convert.TestConverterManager.testRemoveIntervalConverter3:                                    PASS
 org.joda.time.convert.TestConverterManager.testRemoveIntervalConverter2:                                    PASS
 org.joda.time.convert.TestConverterManager.testRemoveIntervalConverter1:                                    PASS
@@ -11397,6 +11405,7 @@ org.joda.time.convert.TestConverterSet.testRemoveBadIndex1:                     
 org.joda.time.format.TestPeriodFormat.test_wordBased_nl_formatStandard:                                     PASS
 org.joda.time.tz.TestUTCProvider.testGetZone_String:                                                        PASS
 org.joda.time.field.TestPreciseDurationField.test_getValue_long:                                            PASS
+org.joda.time.TestSeconds.testFactory_secondsBetween_RInstant:                                              PASS
 org.joda.time.convert.TestConverterManager.testGetIntervalConverters:                                       PASS
 org.joda.time.tz.TestUTCProvider.testGetAvailableIDs:                                                       PASS
 org.joda.time.TestDateTimeZoneCutover.test_DateTime_withZoneRetainFields_Turk:                              PASS
@@ -11420,10 +11429,11 @@ org.joda.time.TestHours.testIsLessThan:                                         
 org.joda.time.TestDateTimeZoneCutover.test_DateTime_plusHour_Guatemata_Autumn:                              PASS
 org.joda.time.TestSeconds.testAddToLocalDate:                                                               PASS
 org.joda.time.TestDateTimeConstants.testHalfdaysOfDay:                                                      PASS
-org.joda.time.TestDateTimeZoneCutover.testWithHourOfDayInDstChange:                                         PASS
+org.joda.time.TestDays.testFactory_daysIn_RInterval:                                                        PASS
 org.joda.time.TestWeeks.testPlus_Weeks:                                                                     PASS
 org.joda.time.field.TestMillisDurationField.test_getValueAsLong_long_long:                                  PASS
 org.joda.time.convert.TestConverterManager.testRemoveIntervalConverterSecurity:                             PASS
+org.joda.time.TestMinutes.testFactory_minutesBetween_RInstant:                                              PASS
 org.joda.time.TestMinutes.testIsLessThan:                                                                   PASS
 org.joda.time.convert.TestConverterManager.testSingleton:                                                   PASS
 org.joda.time.TestDurationFieldType.test_seconds:                                                           PASS
@@ -11467,7 +11477,6 @@ org.joda.time.format.TestISODateTimeFormat_Fields.testForFields_null:           
 org.joda.time.field.TestBaseDateTimeField.test_getAsShortText_long_Locale:                                  PASS
 org.joda.time.TestDateTimeZoneCutover.test_DateTime_roundFloor_hourOfDay_NewYork_Autumn_postCutover:        PASS
 org.joda.time.convert.TestConverterManager.testGetPartialConverterRemovedNull:                              PASS
-org.joda.time.TestDateTimeZoneCutover.test_getOffsetFromLocal_NewYork_Autumn:                               PASS
 org.joda.time.TestDateTimeComparator.testListMinute:                                                        PASS
 org.joda.time.TestDurationFieldType.test_days:                                                              PASS
 org.joda.time.format.TestPeriodFormat.test_wordBased_es_formatStandard:                                     PASS
@@ -11566,6 +11575,7 @@ org.joda.time.format.TestPeriodFormat.test_wordBased_nl_FormatOneField:         
 org.joda.time.field.TestBaseDateTimeField.test_constructor:                                                 PASS
 org.joda.time.field.TestPreciseDateTimeField.test_getLeapAmount_long:                                       PASS
 org.joda.time.format.TestPeriodFormat.test_wordBased_de_formatStandard:                                     PASS
+org.joda.time.TestHours.testFactory_hoursBetween_RInstant:                                                  PASS
 org.joda.time.TestDays.testPlus_int:                                                                        PASS
 org.joda.time.field.TestPreciseDurationDateTimeField.test_getDifferenceAsLong_long_long:                    PASS
 org.joda.time.TestDateTimeUtils.testGetDurationMillis_RI:                                                   PASS
@@ -11608,6 +11618,7 @@ org.joda.time.TestWeeks.testToStandardDays:                                     
 org.joda.time.format.TestDateTimeFormatterBuilder.test_toFormatter:                                         PASS
 org.joda.time.TestMonths.testGetPeriodType:                                                                 PASS
 org.joda.time.field.TestPreciseDurationField.test_getName:                                                  PASS
+org.joda.time.TestHours.testFactory_hoursIn_RInterval:                                                      PASS
 org.joda.time.TestMinutes.testConstants:                                                                    PASS
 org.joda.time.TestDateTimeZoneCutover.test_DateTime_constructor_NewYork_Autumn:                             PASS
 org.joda.time.convert.TestConverterSet.testAddNullRemoved3:                                                 PASS
@@ -11666,6 +11677,7 @@ org.joda.time.TestDateTimeUtils.testFixedMillis:                                
 org.joda.time.TestStringConvert.testMonths:                                                                 PASS
 org.joda.time.field.TestScaledDurationField.test_constructor:                                               PASS
 org.joda.time.format.TestPeriodFormat.test_wordBased_de_FormatOneField:                                     PASS
+org.joda.time.TestMonths.testFactory_monthsIn_RInterval:                                                    PASS
 org.joda.time.TestDays.testIsLessThan:                                                                      PASS
 org.joda.time.TestWeeks.testPlus_int:                                                                       PASS
 org.joda.time.TestDateTimeZoneCutover.test_DateTime_setHourAcross_NewYork_Spring:                           PASS
@@ -11787,6 +11799,7 @@ org.joda.time.TestMinutes.testSerialization:                                    
 org.joda.time.field.TestPreciseDurationDateTimeField.test_roundHalfEven_long:                               PASS
 org.joda.time.convert.TestConverterManager.testGetPeriodConverterRemovedNull:                               PASS
 org.joda.time.TestDateTimeZoneCutover.test_DateTime_minusHour_Gaza:                                         PASS
+org.joda.time.TestMinutes.testFactory_minutesIn_RInterval:                                                  PASS
 org.joda.time.TestSeconds.testIsGreaterThan:                                                                PASS
 org.joda.time.TestDateTimeComparator.testListTime:                                                          PASS
 org.joda.time.TestDateTimeZoneCutover.test_DateTime_setHourForward_NewYork_Spring:                          PASS
@@ -11803,6 +11816,7 @@ org.joda.time.convert.TestConverterManager.testRemovePeriodConverter2:          
 org.joda.time.convert.TestConverterManager.testRemovePeriodConverter3:                                      PASS
 org.joda.time.convert.TestConverterManager.testRemovePeriodConverter1:                                      PASS
 org.joda.time.TestDurationFieldType.test_eras:                                                              PASS
+org.joda.time.TestSeconds.testFactory_secondsIn_RInterval:                                                  PASS
 org.joda.time.TestDateTimeZoneCutover.test_DateTime_roundCeiling_day_NewYork_Autumn_postCutover:            PASS
 org.joda.time.TestDateTimeComparator.testListBasic:                                                         PASS
 org.joda.time.field.TestPreciseDateTimeField.test_getName:                                                  PASS
@@ -11829,6 +11843,7 @@ org.joda.time.TestDateTimeFieldType.test_minuteOfDay:                           
 org.joda.time.TestDateTimeZoneCutover.test_DateTime_plusDay_Turk:                                           PASS
 org.joda.time.field.TestMillisDurationField.test_getDifferenceAsLong_long_long:                             PASS
 org.joda.time.field.TestBaseDateTimeField.test_set_long_int:                                                PASS
+org.joda.time.TestYears.testFactory_yearsIn_RInterval:                                                      PASS
 org.joda.time.TestDays.testGetPeriodType:                                                                   PASS
 org.joda.time.TestBaseSingleFieldPeriod.testGetSetValue:                                                    PASS
 org.joda.time.field.TestBaseDateTimeField.test_getName:                                                     PASS
@@ -11889,6 +11904,7 @@ org.joda.time.TestDateTimeComparator.testStaticGetTimeOnlyInstance:             
 org.joda.time.TestDateTimeZoneCutover.test_DateTime_roundCeiling_hourOfDay_NewYork_Autumn_preCutover:       PASS
 org.joda.time.field.TestPreciseDurationField.test_getValueAsLong_long_long:                                 PASS
 org.joda.time.TestHours.testToStandardSeconds:                                                              PASS
+org.joda.time.TestDays.testFactory_daysBetween_RInstant:                                                    PASS
 org.joda.time.TestDays.testPlus_Days:                                                                       PASS
 org.joda.time.TestMonths.testFactory_months_int:                                                            PASS
 org.joda.time.TestHours.testFactory_hours_int:                                                              PASS
@@ -11932,7 +11948,7 @@ org.joda.time.TestHours.testConstants:                                          
 
 jodatime-ts-function-random-results.txt
 Number of Inconsistent Tests Found: 0
-Number of Tests Missing: 640
+Number of Tests Missing: 648
                                                                                                             Original order result:        Test order result:
 org.joda.time.field.TestBaseDateTimeField.test_getMaximumValue_long:                                        PASS
 org.joda.time.field.TestFieldUtils.testSafeSubtractLong:                                                    PASS
@@ -11962,6 +11978,7 @@ org.joda.time.TestDateTimeComparator.testListYear:                              
 org.joda.time.convert.TestConverterManager.testAddDurationConverterSecurity:                                PASS
 org.joda.time.field.TestPreciseDurationDateTimeField.test_getLeapAmount_long:                               PASS
 org.joda.time.field.TestPreciseDurationDateTimeField.test_set_long_int:                                     PASS
+org.joda.time.TestWeeks.testFactory_weeksIn_RInterval:                                                      PASS
 org.joda.time.field.TestMillisDurationField.test_getMillis_long_long:                                       PASS
 org.joda.time.field.TestScaledDurationField.test_isSupported:                                               PASS
 org.joda.time.TestMonths.testGetFieldType:                                                                  PASS
@@ -12033,7 +12050,6 @@ org.joda.time.field.TestBaseDateTimeField.test_getLeapDurationField:            
 org.joda.time.TestMinutes.testAddToLocalDate:                                                               PASS
 org.joda.time.format.TestPeriodFormat.test_getDefault_cached:                                               PASS
 org.joda.time.TestDays.testMultipliedBy_int:                                                                PASS
-org.joda.time.TestDateTimeZoneCutover.testDateTimeCreation_newYork:                                         PASS
 org.joda.time.convert.TestConverterManager.testRemoveIntervalConverter3:                                    PASS
 org.joda.time.convert.TestConverterManager.testRemoveIntervalConverter2:                                    PASS
 org.joda.time.convert.TestConverterManager.testRemoveIntervalConverter1:                                    PASS
@@ -12042,6 +12058,7 @@ org.joda.time.convert.TestConverterSet.testRemoveBadIndex1:                     
 org.joda.time.format.TestPeriodFormat.test_wordBased_nl_formatStandard:                                     PASS
 org.joda.time.tz.TestUTCProvider.testGetZone_String:                                                        PASS
 org.joda.time.field.TestPreciseDurationField.test_getValue_long:                                            PASS
+org.joda.time.TestSeconds.testFactory_secondsBetween_RInstant:                                              PASS
 org.joda.time.convert.TestConverterManager.testGetIntervalConverters:                                       PASS
 org.joda.time.tz.TestUTCProvider.testGetAvailableIDs:                                                       PASS
 org.joda.time.TestDateTimeZoneCutover.test_DateTime_withZoneRetainFields_Turk:                              PASS
@@ -12065,10 +12082,11 @@ org.joda.time.TestHours.testIsLessThan:                                         
 org.joda.time.TestDateTimeZoneCutover.test_DateTime_plusHour_Guatemata_Autumn:                              PASS
 org.joda.time.TestSeconds.testAddToLocalDate:                                                               PASS
 org.joda.time.TestDateTimeConstants.testHalfdaysOfDay:                                                      PASS
-org.joda.time.TestDateTimeZoneCutover.testWithHourOfDayInDstChange:                                         PASS
+org.joda.time.TestDays.testFactory_daysIn_RInterval:                                                        PASS
 org.joda.time.TestWeeks.testPlus_Weeks:                                                                     PASS
 org.joda.time.field.TestMillisDurationField.test_getValueAsLong_long_long:                                  PASS
 org.joda.time.convert.TestConverterManager.testRemoveIntervalConverterSecurity:                             PASS
+org.joda.time.TestMinutes.testFactory_minutesBetween_RInstant:                                              PASS
 org.joda.time.TestMinutes.testIsLessThan:                                                                   PASS
 org.joda.time.convert.TestConverterManager.testSingleton:                                                   PASS
 org.joda.time.TestDurationFieldType.test_seconds:                                                           PASS
@@ -12112,7 +12130,6 @@ org.joda.time.format.TestISODateTimeFormat_Fields.testForFields_null:           
 org.joda.time.field.TestBaseDateTimeField.test_getAsShortText_long_Locale:                                  PASS
 org.joda.time.TestDateTimeZoneCutover.test_DateTime_roundFloor_hourOfDay_NewYork_Autumn_postCutover:        PASS
 org.joda.time.convert.TestConverterManager.testGetPartialConverterRemovedNull:                              PASS
-org.joda.time.TestDateTimeZoneCutover.test_getOffsetFromLocal_NewYork_Autumn:                               PASS
 org.joda.time.TestDateTimeComparator.testListMinute:                                                        PASS
 org.joda.time.TestDurationFieldType.test_days:                                                              PASS
 org.joda.time.format.TestPeriodFormat.test_wordBased_es_formatStandard:                                     PASS
@@ -12211,6 +12228,7 @@ org.joda.time.format.TestPeriodFormat.test_wordBased_nl_FormatOneField:         
 org.joda.time.field.TestBaseDateTimeField.test_constructor:                                                 PASS
 org.joda.time.field.TestPreciseDateTimeField.test_getLeapAmount_long:                                       PASS
 org.joda.time.format.TestPeriodFormat.test_wordBased_de_formatStandard:                                     PASS
+org.joda.time.TestHours.testFactory_hoursBetween_RInstant:                                                  PASS
 org.joda.time.TestDays.testPlus_int:                                                                        PASS
 org.joda.time.field.TestPreciseDurationDateTimeField.test_getDifferenceAsLong_long_long:                    PASS
 org.joda.time.TestDateTimeUtils.testGetDurationMillis_RI:                                                   PASS
@@ -12253,6 +12271,7 @@ org.joda.time.TestWeeks.testToStandardDays:                                     
 org.joda.time.format.TestDateTimeFormatterBuilder.test_toFormatter:                                         PASS
 org.joda.time.TestMonths.testGetPeriodType:                                                                 PASS
 org.joda.time.field.TestPreciseDurationField.test_getName:                                                  PASS
+org.joda.time.TestHours.testFactory_hoursIn_RInterval:                                                      PASS
 org.joda.time.TestMinutes.testConstants:                                                                    PASS
 org.joda.time.TestDateTimeZoneCutover.test_DateTime_constructor_NewYork_Autumn:                             PASS
 org.joda.time.convert.TestConverterSet.testAddNullRemoved3:                                                 PASS
@@ -12311,6 +12330,7 @@ org.joda.time.TestDateTimeUtils.testFixedMillis:                                
 org.joda.time.TestStringConvert.testMonths:                                                                 PASS
 org.joda.time.field.TestScaledDurationField.test_constructor:                                               PASS
 org.joda.time.format.TestPeriodFormat.test_wordBased_de_FormatOneField:                                     PASS
+org.joda.time.TestMonths.testFactory_monthsIn_RInterval:                                                    PASS
 org.joda.time.TestDays.testIsLessThan:                                                                      PASS
 org.joda.time.TestWeeks.testPlus_int:                                                                       PASS
 org.joda.time.TestDateTimeZoneCutover.test_DateTime_setHourAcross_NewYork_Spring:                           PASS
@@ -12432,6 +12452,7 @@ org.joda.time.TestMinutes.testSerialization:                                    
 org.joda.time.field.TestPreciseDurationDateTimeField.test_roundHalfEven_long:                               PASS
 org.joda.time.convert.TestConverterManager.testGetPeriodConverterRemovedNull:                               PASS
 org.joda.time.TestDateTimeZoneCutover.test_DateTime_minusHour_Gaza:                                         PASS
+org.joda.time.TestMinutes.testFactory_minutesIn_RInterval:                                                  PASS
 org.joda.time.TestSeconds.testIsGreaterThan:                                                                PASS
 org.joda.time.TestDateTimeComparator.testListTime:                                                          PASS
 org.joda.time.TestDateTimeZoneCutover.test_DateTime_setHourForward_NewYork_Spring:                          PASS
@@ -12448,6 +12469,7 @@ org.joda.time.convert.TestConverterManager.testRemovePeriodConverter2:          
 org.joda.time.convert.TestConverterManager.testRemovePeriodConverter3:                                      PASS
 org.joda.time.convert.TestConverterManager.testRemovePeriodConverter1:                                      PASS
 org.joda.time.TestDurationFieldType.test_eras:                                                              PASS
+org.joda.time.TestSeconds.testFactory_secondsIn_RInterval:                                                  PASS
 org.joda.time.TestDateTimeZoneCutover.test_DateTime_roundCeiling_day_NewYork_Autumn_postCutover:            PASS
 org.joda.time.TestDateTimeComparator.testListBasic:                                                         PASS
 org.joda.time.field.TestPreciseDateTimeField.test_getName:                                                  PASS
@@ -12474,6 +12496,7 @@ org.joda.time.TestDateTimeFieldType.test_minuteOfDay:                           
 org.joda.time.TestDateTimeZoneCutover.test_DateTime_plusDay_Turk:                                           PASS
 org.joda.time.field.TestMillisDurationField.test_getDifferenceAsLong_long_long:                             PASS
 org.joda.time.field.TestBaseDateTimeField.test_set_long_int:                                                PASS
+org.joda.time.TestYears.testFactory_yearsIn_RInterval:                                                      PASS
 org.joda.time.TestDays.testGetPeriodType:                                                                   PASS
 org.joda.time.TestBaseSingleFieldPeriod.testGetSetValue:                                                    PASS
 org.joda.time.field.TestBaseDateTimeField.test_getName:                                                     PASS
@@ -12534,6 +12557,7 @@ org.joda.time.TestDateTimeComparator.testStaticGetTimeOnlyInstance:             
 org.joda.time.TestDateTimeZoneCutover.test_DateTime_roundCeiling_hourOfDay_NewYork_Autumn_preCutover:       PASS
 org.joda.time.field.TestPreciseDurationField.test_getValueAsLong_long_long:                                 PASS
 org.joda.time.TestHours.testToStandardSeconds:                                                              PASS
+org.joda.time.TestDays.testFactory_daysBetween_RInstant:                                                    PASS
 org.joda.time.TestDays.testPlus_Days:                                                                       PASS
 org.joda.time.TestMonths.testFactory_months_int:                                                            PASS
 org.joda.time.TestHours.testFactory_hours_int:                                                              PASS
@@ -16124,7 +16148,7 @@ org.joda.time.TestLocalDate_Constructors.testConstructor_Object_nullDateTimeZone
 
 jodatime-ts-function-orig-order-results.txt
 Number of Inconsistent Tests Found: 0
-Number of Tests Missing: 640
+Number of Tests Missing: 648
                                                                                                             Original order result:        Test order result:
 org.joda.time.field.TestBaseDateTimeField.test_getMaximumValue_long:                                        PASS
 org.joda.time.field.TestFieldUtils.testSafeSubtractLong:                                                    PASS
@@ -16154,6 +16178,7 @@ org.joda.time.TestDateTimeComparator.testListYear:                              
 org.joda.time.convert.TestConverterManager.testAddDurationConverterSecurity:                                PASS
 org.joda.time.field.TestPreciseDurationDateTimeField.test_getLeapAmount_long:                               PASS
 org.joda.time.field.TestPreciseDurationDateTimeField.test_set_long_int:                                     PASS
+org.joda.time.TestWeeks.testFactory_weeksIn_RInterval:                                                      PASS
 org.joda.time.field.TestMillisDurationField.test_getMillis_long_long:                                       PASS
 org.joda.time.field.TestScaledDurationField.test_isSupported:                                               PASS
 org.joda.time.TestMonths.testGetFieldType:                                                                  PASS
@@ -16225,7 +16250,6 @@ org.joda.time.field.TestBaseDateTimeField.test_getLeapDurationField:            
 org.joda.time.TestMinutes.testAddToLocalDate:                                                               PASS
 org.joda.time.format.TestPeriodFormat.test_getDefault_cached:                                               PASS
 org.joda.time.TestDays.testMultipliedBy_int:                                                                PASS
-org.joda.time.TestDateTimeZoneCutover.testDateTimeCreation_newYork:                                         PASS
 org.joda.time.convert.TestConverterManager.testRemoveIntervalConverter3:                                    PASS
 org.joda.time.convert.TestConverterManager.testRemoveIntervalConverter2:                                    PASS
 org.joda.time.convert.TestConverterManager.testRemoveIntervalConverter1:                                    PASS
@@ -16234,6 +16258,7 @@ org.joda.time.convert.TestConverterSet.testRemoveBadIndex1:                     
 org.joda.time.format.TestPeriodFormat.test_wordBased_nl_formatStandard:                                     PASS
 org.joda.time.tz.TestUTCProvider.testGetZone_String:                                                        PASS
 org.joda.time.field.TestPreciseDurationField.test_getValue_long:                                            PASS
+org.joda.time.TestSeconds.testFactory_secondsBetween_RInstant:                                              PASS
 org.joda.time.convert.TestConverterManager.testGetIntervalConverters:                                       PASS
 org.joda.time.tz.TestUTCProvider.testGetAvailableIDs:                                                       PASS
 org.joda.time.TestDateTimeZoneCutover.test_DateTime_withZoneRetainFields_Turk:                              PASS
@@ -16257,10 +16282,11 @@ org.joda.time.TestHours.testIsLessThan:                                         
 org.joda.time.TestDateTimeZoneCutover.test_DateTime_plusHour_Guatemata_Autumn:                              PASS
 org.joda.time.TestSeconds.testAddToLocalDate:                                                               PASS
 org.joda.time.TestDateTimeConstants.testHalfdaysOfDay:                                                      PASS
-org.joda.time.TestDateTimeZoneCutover.testWithHourOfDayInDstChange:                                         PASS
+org.joda.time.TestDays.testFactory_daysIn_RInterval:                                                        PASS
 org.joda.time.TestWeeks.testPlus_Weeks:                                                                     PASS
 org.joda.time.field.TestMillisDurationField.test_getValueAsLong_long_long:                                  PASS
 org.joda.time.convert.TestConverterManager.testRemoveIntervalConverterSecurity:                             PASS
+org.joda.time.TestMinutes.testFactory_minutesBetween_RInstant:                                              PASS
 org.joda.time.TestMinutes.testIsLessThan:                                                                   PASS
 org.joda.time.convert.TestConverterManager.testSingleton:                                                   PASS
 org.joda.time.TestDurationFieldType.test_seconds:                                                           PASS
@@ -16304,7 +16330,6 @@ org.joda.time.format.TestISODateTimeFormat_Fields.testForFields_null:           
 org.joda.time.field.TestBaseDateTimeField.test_getAsShortText_long_Locale:                                  PASS
 org.joda.time.TestDateTimeZoneCutover.test_DateTime_roundFloor_hourOfDay_NewYork_Autumn_postCutover:        PASS
 org.joda.time.convert.TestConverterManager.testGetPartialConverterRemovedNull:                              PASS
-org.joda.time.TestDateTimeZoneCutover.test_getOffsetFromLocal_NewYork_Autumn:                               PASS
 org.joda.time.TestDateTimeComparator.testListMinute:                                                        PASS
 org.joda.time.TestDurationFieldType.test_days:                                                              PASS
 org.joda.time.format.TestPeriodFormat.test_wordBased_es_formatStandard:                                     PASS
@@ -16403,6 +16428,7 @@ org.joda.time.format.TestPeriodFormat.test_wordBased_nl_FormatOneField:         
 org.joda.time.field.TestBaseDateTimeField.test_constructor:                                                 PASS
 org.joda.time.field.TestPreciseDateTimeField.test_getLeapAmount_long:                                       PASS
 org.joda.time.format.TestPeriodFormat.test_wordBased_de_formatStandard:                                     PASS
+org.joda.time.TestHours.testFactory_hoursBetween_RInstant:                                                  PASS
 org.joda.time.TestDays.testPlus_int:                                                                        PASS
 org.joda.time.field.TestPreciseDurationDateTimeField.test_getDifferenceAsLong_long_long:                    PASS
 org.joda.time.TestDateTimeUtils.testGetDurationMillis_RI:                                                   PASS
@@ -16445,6 +16471,7 @@ org.joda.time.TestWeeks.testToStandardDays:                                     
 org.joda.time.format.TestDateTimeFormatterBuilder.test_toFormatter:                                         PASS
 org.joda.time.TestMonths.testGetPeriodType:                                                                 PASS
 org.joda.time.field.TestPreciseDurationField.test_getName:                                                  PASS
+org.joda.time.TestHours.testFactory_hoursIn_RInterval:                                                      PASS
 org.joda.time.TestMinutes.testConstants:                                                                    PASS
 org.joda.time.TestDateTimeZoneCutover.test_DateTime_constructor_NewYork_Autumn:                             PASS
 org.joda.time.convert.TestConverterSet.testAddNullRemoved3:                                                 PASS
@@ -16503,6 +16530,7 @@ org.joda.time.TestDateTimeUtils.testFixedMillis:                                
 org.joda.time.TestStringConvert.testMonths:                                                                 PASS
 org.joda.time.field.TestScaledDurationField.test_constructor:                                               PASS
 org.joda.time.format.TestPeriodFormat.test_wordBased_de_FormatOneField:                                     PASS
+org.joda.time.TestMonths.testFactory_monthsIn_RInterval:                                                    PASS
 org.joda.time.TestDays.testIsLessThan:                                                                      PASS
 org.joda.time.TestWeeks.testPlus_int:                                                                       PASS
 org.joda.time.TestDateTimeZoneCutover.test_DateTime_setHourAcross_NewYork_Spring:                           PASS
@@ -16624,6 +16652,7 @@ org.joda.time.TestMinutes.testSerialization:                                    
 org.joda.time.field.TestPreciseDurationDateTimeField.test_roundHalfEven_long:                               PASS
 org.joda.time.convert.TestConverterManager.testGetPeriodConverterRemovedNull:                               PASS
 org.joda.time.TestDateTimeZoneCutover.test_DateTime_minusHour_Gaza:                                         PASS
+org.joda.time.TestMinutes.testFactory_minutesIn_RInterval:                                                  PASS
 org.joda.time.TestSeconds.testIsGreaterThan:                                                                PASS
 org.joda.time.TestDateTimeComparator.testListTime:                                                          PASS
 org.joda.time.TestDateTimeZoneCutover.test_DateTime_setHourForward_NewYork_Spring:                          PASS
@@ -16640,6 +16669,7 @@ org.joda.time.convert.TestConverterManager.testRemovePeriodConverter2:          
 org.joda.time.convert.TestConverterManager.testRemovePeriodConverter3:                                      PASS
 org.joda.time.convert.TestConverterManager.testRemovePeriodConverter1:                                      PASS
 org.joda.time.TestDurationFieldType.test_eras:                                                              PASS
+org.joda.time.TestSeconds.testFactory_secondsIn_RInterval:                                                  PASS
 org.joda.time.TestDateTimeZoneCutover.test_DateTime_roundCeiling_day_NewYork_Autumn_postCutover:            PASS
 org.joda.time.TestDateTimeComparator.testListBasic:                                                         PASS
 org.joda.time.field.TestPreciseDateTimeField.test_getName:                                                  PASS
@@ -16666,6 +16696,7 @@ org.joda.time.TestDateTimeFieldType.test_minuteOfDay:                           
 org.joda.time.TestDateTimeZoneCutover.test_DateTime_plusDay_Turk:                                           PASS
 org.joda.time.field.TestMillisDurationField.test_getDifferenceAsLong_long_long:                             PASS
 org.joda.time.field.TestBaseDateTimeField.test_set_long_int:                                                PASS
+org.joda.time.TestYears.testFactory_yearsIn_RInterval:                                                      PASS
 org.joda.time.TestDays.testGetPeriodType:                                                                   PASS
 org.joda.time.TestBaseSingleFieldPeriod.testGetSetValue:                                                    PASS
 org.joda.time.field.TestBaseDateTimeField.test_getName:                                                     PASS
@@ -16726,6 +16757,7 @@ org.joda.time.TestDateTimeComparator.testStaticGetTimeOnlyInstance:             
 org.joda.time.TestDateTimeZoneCutover.test_DateTime_roundCeiling_hourOfDay_NewYork_Autumn_preCutover:       PASS
 org.joda.time.field.TestPreciseDurationField.test_getValueAsLong_long_long:                                 PASS
 org.joda.time.TestHours.testToStandardSeconds:                                                              PASS
+org.joda.time.TestDays.testFactory_daysBetween_RInstant:                                                    PASS
 org.joda.time.TestDays.testPlus_Days:                                                                       PASS
 org.joda.time.TestMonths.testFactory_months_int:                                                            PASS
 org.joda.time.TestHours.testFactory_hours_int:                                                              PASS
