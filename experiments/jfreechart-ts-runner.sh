@@ -1,4 +1,4 @@
-testType=auto
+testType=orig
 experiment=jfreechart
 oldVersCP=impact-tools/*:bin/:lib/*
 newVersCP=impact-tools/*:bin/:lib/*
