@@ -1,5 +1,5 @@
 .E
-Time: 0.068
+Time: 0.053
 There was 1 error:
 1) testNullInputConstructor(crystal.client.ClientPreferencesTest)java.lang.IllegalArgumentException: Invalid string input
 	at crystal.util.ValidInputChecker.checkValidStringInput(ValidInputChecker.java:135)
@@ -14,7 +14,7 @@ FAILURES!!!
 Tests run: 1,  Failures: 0,  Errors: 1
 
 .
-Time: 0
+Time: 0.003
 
 OK (1 test)
 
@@ -24,7 +24,7 @@ Time: 0
 OK (1 test)
 
 .E
-Time: 0.002
+Time: 0
 There was 1 error:
 1) testDuplicateAddProjectPreferences(crystal.client.ClientPreferencesTest)crystal.client.ClientPreferences$DuplicateProjectNameException: Duplicate project name: shortName
 	at crystal.client.ClientPreferences.addProjectPreferences(ClientPreferences.java:217)
@@ -48,36 +48,37 @@ Time: 0
 OK (1 test)
 
 .
-Time: 0
+Time: 0.001
 
 OK (1 test)
 
 .
-Time: 0.002
+Time: 0
 
 OK (1 test)
 
+Execution time: 784753783
 0-th run
 Pass: 6, Fail: 0, Error: 2
 {crystal.client.ClientPreferencesTest.testNullInputConstructor=ERROR, crystal.client.ClientPreferencesTest.testClientPreferences=PASS, crystal.client.ClientPreferencesTest.testDefaultSetting=PASS, crystal.client.ClientPreferencesTest.testDuplicateAddProjectPreferences=ERROR, crystal.client.ClientPreferencesTest.testAddProjectPreferences=PASS, crystal.client.ClientPreferencesTest.testDuplicateProject=PASS, crystal.client.ClientPreferencesTest.testRemoveProjectPreferences=PASS, crystal.client.ClientPreferencesTest.testRemoveProjectPreferencesAtIndex=PASS}
 
 
 .
-Time: 0.086
+Time: 0.068
 
 OK (1 test)
 
 .
-Time: 0.02
+Time: 0.009
 
 OK (1 test)
 
 .
-Time: 0
+Time: 0.001
 
 OK (1 test)
 
-.ERROR 2014-03-04 00:22:55,354 (ConflictDaemon.java:221) - Runtime Exception caught while getting state for: shortName_2_HG_cloneString_2
+.ERROR 2014-03-11 01:54:47,398 (ConflictDaemon.java:221) - Runtime Exception caught while getting state for: shortName_2_HG_cloneString_2
 null
 java.lang.NullPointerException
 	at crystal.client.ConflictClient.refresh(ConflictClient.java:486)
@@ -99,12 +100,12 @@ java.lang.NullPointerException
 	at junit.textui.TestRunner.start(TestRunner.java:178)
 	at edu.washington.cs.dt.util.TestRunnerWrapper.main(TestRunnerWrapper.java:56)
 
-Time: 0.529
+Time: 0.384
 
 OK (1 test)
 
 .F
-Time: 0.084
+Time: 0.071
 There was 1 failure:
 1) testRelationship(crystal.client.ConflictDaemonTest)junit.framework.AssertionFailedError: non listeners expected:<0> but was:<2>
 	at crystal.client.ConflictDaemonTest.testRelationship(ConflictDaemonTest.java:101)
@@ -117,7 +118,7 @@ FAILURES!!!
 Tests run: 1,  Failures: 1,  Errors: 0
 
 .
-Time: 0.005
+Time: 0
 
 OK (1 test)
 
@@ -140,18 +141,19 @@ There was 1 error:
 FAILURES!!!
 Tests run: 1,  Failures: 0,  Errors: 1
 
+Execution time: 1611889006
 0-th run
 Pass: 6, Fail: 1, Error: 1
 {crystal.client.ClientPreferencesTest.testClone=PASS, crystal.client.ConflictDaemonTest.testAddListener=PASS, crystal.client.ConflictDaemonTest.testGetInstance=PASS, crystal.client.ConflictDaemonTest.testLocalState=PASS, crystal.client.ConflictDaemonTest.testRelationship=FAILURE, crystal.client.ProjectPreferencesTest.testClone=PASS, crystal.client.ProjectPreferencesTest.testProjectPreferences=PASS, crystal.client.ProjectPreferencesTest.testDuplicateAddDataSource=ERROR}
 
 
 .
-Time: 0.065
+Time: 0.046
 
 OK (1 test)
 
 .
-Time: 0.002
+Time: 0
 
 OK (1 test)
 
@@ -161,7 +163,7 @@ Time: 0
 OK (1 test)
 
 .F
-Time: 0.001
+Time: 0.003
 There was 1 failure:
 1) testGetProjectCheckoutLocation(crystal.client.ProjectPreferencesTest)junit.framework.AssertionFailedError: null
 	at crystal.client.ProjectPreferencesTest.testGetProjectCheckoutLocation(ProjectPreferencesTest.java:167)
@@ -174,32 +176,33 @@ FAILURES!!!
 Tests run: 1,  Failures: 1,  Errors: 0
 
 .
+Time: 0
+
+OK (1 test)
+
+.
+Time: 0
+
+OK (1 test)
+
+.
+Time: 1.455
+
+OK (1 test)
+
+.
 Time: 0.006
 
 OK (1 test)
 
-.
-Time: 0
-
-OK (1 test)
-
-.
-Time: 1.764
-
-OK (1 test)
-
-.
-Time: 0
-
-OK (1 test)
-
+Execution time: 2551739214
 0-th run
 Pass: 7, Fail: 1, Error: 0
 {crystal.client.ProjectPreferencesTest.testAddDataSource=PASS, crystal.client.ProjectPreferencesTest.testGetNumOfVisibleSources=PASS, crystal.client.ProjectPreferencesTest.testRemoveDataSource=PASS, crystal.client.ProjectPreferencesTest.testGetProjectCheckoutLocation=FAILURE, crystal.model.DataSourceTest.testClone=PASS, crystal.model.DataSourceTest.testSetField=PASS, crystal.model.DataSourceTest.testSetHistory=PASS, crystal.model.DataSourceTest.testSetRemoteCmd=PASS}
 
 
 .E
-Time: 0.008
+Time: 0.005
 There was 1 error:
 1) testSetCompileCommand(crystal.model.DataSourceTest)java.lang.NullPointerException
 	at crystal.model.DataSourceTest.testSetCompileCommand(DataSourceTest.java:95)
@@ -212,7 +215,7 @@ FAILURES!!!
 Tests run: 1,  Failures: 0,  Errors: 1
 
 .E
-Time: 0
+Time: 0.002
 There was 1 error:
 1) testSetEnabled(crystal.model.DataSourceTest)java.lang.NullPointerException
 	at crystal.model.DataSourceTest.testSetEnabled(DataSourceTest.java:106)
@@ -225,7 +228,7 @@ FAILURES!!!
 Tests run: 1,  Failures: 0,  Errors: 1
 
 .E
-Time: 0.001
+Time: 0
 There was 1 error:
 1) testIsHidden(crystal.model.DataSourceTest)java.lang.NullPointerException
 	at crystal.model.DataSourceTest.testIsHidden(DataSourceTest.java:116)
@@ -251,7 +254,7 @@ FAILURES!!!
 Tests run: 1,  Failures: 0,  Errors: 1
 
 .E
-Time: 0.003
+Time: 0.004
 There was 1 error:
 1) testSetKind(crystal.model.DataSourceTest)java.lang.NullPointerException
 	at crystal.model.DataSourceTest.testSetKind(DataSourceTest.java:139)
@@ -264,7 +267,7 @@ FAILURES!!!
 Tests run: 1,  Failures: 0,  Errors: 1
 
 .E
-Time: 0.002
+Time: 0
 There was 1 error:
 1) testSetCloneString(crystal.model.DataSourceTest)java.lang.NullPointerException
 	at crystal.model.DataSourceTest.testSetCloneString(DataSourceTest.java:149)
@@ -290,22 +293,23 @@ FAILURES!!!
 Tests run: 1,  Failures: 0,  Errors: 1
 
 .
-Time: 0.002
+Time: 0.005
 
 OK (1 test)
 
+Execution time: 780558790
 0-th run
 Pass: 1, Fail: 0, Error: 7
 {crystal.model.DataSourceTest.testSetCompileCommand=ERROR, crystal.model.DataSourceTest.testSetEnabled=ERROR, crystal.model.DataSourceTest.testIsHidden=ERROR, crystal.model.DataSourceTest.testSetParent=ERROR, crystal.model.DataSourceTest.testSetKind=ERROR, crystal.model.DataSourceTest.testSetCloneString=ERROR, crystal.model.DataSourceTest.testToString=ERROR, crystal.model.LocalStateResultTest.testStrangeActionName=PASS}
 
 
 .
-Time: 0.011
+Time: 0.007
 
 OK (1 test)
 
 .E
-Time: 0.002
+Time: 0.003
 There was 1 error:
 1) testGetAction(crystal.model.LocalStateResultTest)java.lang.NullPointerException
 	at crystal.model.LocalStateResultTest.testGetAction(LocalStateResultTest.java:74)
@@ -318,7 +322,7 @@ FAILURES!!!
 Tests run: 1,  Failures: 0,  Errors: 1
 
 .E
-Time: 0.002
+Time: 0.001
 There was 1 error:
 1) testGetLastAction(crystal.model.LocalStateResultTest)java.lang.NullPointerException
 	at crystal.model.LocalStateResultTest.testGetLastAction(LocalStateResultTest.java:83)
@@ -344,7 +348,7 @@ FAILURES!!!
 Tests run: 1,  Failures: 0,  Errors: 1
 
 .E
-Time: 0
+Time: 0.002
 There was 1 error:
 1) testGetNoErrorMessage(crystal.model.LocalStateResultTest)java.lang.NullPointerException
 	at crystal.model.LocalStateResultTest.testGetNoErrorMessage(LocalStateResultTest.java:99)
@@ -370,7 +374,7 @@ FAILURES!!!
 Tests run: 1,  Failures: 0,  Errors: 1
 
 .E
-Time: 0
+Time: 0.001
 There was 1 error:
 1) testGetLocalState(crystal.model.LocalStateResultTest)java.lang.NullPointerException
 	at crystal.model.LocalStateResultTest.testGetLocalState(LocalStateResultTest.java:125)
@@ -383,7 +387,7 @@ FAILURES!!!
 Tests run: 1,  Failures: 0,  Errors: 1
 
 .E
-Time: 0.001
+Time: 0.002
 There was 1 error:
 1) testGetLastLocalState(crystal.model.LocalStateResultTest)java.lang.NullPointerException
 	at crystal.model.LocalStateResultTest.testGetLastLocalState(LocalStateResultTest.java:133)
@@ -395,13 +399,14 @@ There was 1 error:
 FAILURES!!!
 Tests run: 1,  Failures: 0,  Errors: 1
 
+Execution time: 773953991
 0-th run
 Pass: 1, Fail: 0, Error: 7
 {crystal.model.LocalStateResultTest.testErrorActionNameConstructor=PASS, crystal.model.LocalStateResultTest.testGetAction=ERROR, crystal.model.LocalStateResultTest.testGetLastAction=ERROR, crystal.model.LocalStateResultTest.testGetName=ERROR, crystal.model.LocalStateResultTest.testGetNoErrorMessage=ERROR, crystal.model.LocalStateResultTest.testGetLastErrorMessage=ERROR, crystal.model.LocalStateResultTest.testGetLocalState=ERROR, crystal.model.LocalStateResultTest.testGetLastLocalState=ERROR}
 
 
 .E
-Time: 0.007
+Time: 0.012
 There was 1 error:
 1) testToString(crystal.model.LocalStateResultTest)java.lang.NullPointerException
 	at crystal.model.LocalStateResultTest.testToString(LocalStateResultTest.java:116)
@@ -414,7 +419,7 @@ FAILURES!!!
 Tests run: 1,  Failures: 0,  Errors: 1
 
 .E
-Time: 0.002
+Time: 0.008
 There was 1 error:
 1) testStrangeNameConstructor(crystal.model.RelationshipTest)java.lang.RuntimeException: Trying to create an invalid Relationship
 	at crystal.model.Relationship.<init>(Relationship.java:111)
@@ -428,17 +433,17 @@ FAILURES!!!
 Tests run: 1,  Failures: 0,  Errors: 1
 
 .
-Time: 0.072
+Time: 0.067
 
 OK (1 test)
 
 .
-Time: 0.01
+Time: 0.006
 
 OK (1 test)
 
 .
-Time: 0.007
+Time: 0.002
 
 OK (1 test)
 
@@ -453,7 +458,7 @@ Time: 0.001
 OK (1 test)
 
 .E
-Time: 1.898
+Time: 1.421
 There was 1 error:
 1) testEqualsObject(crystal.model.RevisionHistoryTest)java.lang.NullPointerException
 	at crystal.model.RevisionHistoryTest.testEqualsObject(RevisionHistoryTest.java:61)
@@ -465,13 +470,14 @@ There was 1 error:
 FAILURES!!!
 Tests run: 1,  Failures: 0,  Errors: 1
 
+Execution time: 2526070562
 0-th run
 Pass: 5, Fail: 0, Error: 3
 {crystal.model.LocalStateResultTest.testToString=ERROR, crystal.model.RelationshipTest.testStrangeNameConstructor=ERROR, crystal.model.RelationshipTest.testConstructor=PASS, crystal.model.RelationshipTest.testCalculateAction=PASS, crystal.model.RelationshipTest.testGetActionRepoKind=PASS, crystal.model.RelationshipTest.testGetDominant=PASS, crystal.model.RelationshipTest.testEqualsObject=PASS, crystal.model.RevisionHistoryTest.testEqualsObject=ERROR}
 
 
 .E
-Time: 1.845
+Time: 1.464
 There was 1 error:
 1) testSuperSubHistory(crystal.model.RevisionHistoryTest)java.lang.NullPointerException
 	at crystal.model.RevisionHistoryTest.testSuperSubHistory(RevisionHistoryTest.java:91)
@@ -484,7 +490,7 @@ FAILURES!!!
 Tests run: 1,  Failures: 0,  Errors: 1
 
 .E
-Time: 0.442
+Time: 0.354
 There was 1 error:
 1) testGetCommitters(crystal.model.RevisionHistoryTest)java.lang.NullPointerException
 	at crystal.model.RevisionHistoryTest.testGetCommitters(RevisionHistoryTest.java:114)
@@ -497,17 +503,17 @@ FAILURES!!!
 Tests run: 1,  Failures: 0,  Errors: 1
 
 .
-Time: 0.009
+Time: 0.015
 
 OK (1 test)
 
 .
-Time: 0.136
+Time: 0.137
 
 OK (1 test)
 
 .E
-Time: 0.005
+Time: 0
 There was 1 error:
 1) testParseNullLog(crystal.server.HgLogParserTest)java.lang.IllegalArgumentException: Null input
 	at crystal.util.ValidInputChecker.checkNullInput(ValidInputChecker.java:125)
@@ -525,7 +531,7 @@ Tests run: 1,  Failures: 0,  Errors: 1
 File not found
 File not found
 .E
-Time: 0.022
+Time: 0.021
 There was 1 error:
 1) testParseLog(crystal.server.HgLogParserTest)java.lang.NullPointerException
 	at crystal.server.HgLogParserTest.testParseLog(HgLogParserTest.java:61)
@@ -538,22 +544,23 @@ FAILURES!!!
 Tests run: 1,  Failures: 0,  Errors: 1
 
 .
-Time: 0
+Time: 0.006
 
 OK (1 test)
 
 .
-Time: 0.003
+Time: 0.002
 
 OK (1 test)
 
+Execution time: 3106752107
 0-th run
 Pass: 4, Fail: 0, Error: 4
 {crystal.model.RevisionHistoryTest.testSuperSubHistory=ERROR, crystal.model.RevisionHistoryTest.testGetCommitters=ERROR, crystal.server.GuidanceCheckerTest.testGetCommitters=PASS, crystal.server.GuidanceCheckerTest.testGetWhen=PASS, crystal.server.HgLogParserTest.testParseNullLog=ERROR, crystal.server.HgLogParserTest.testParseLog=ERROR, crystal.server.HgLogParserTest.testSingleLog=PASS, crystal.server.HgLogParserTest.testTwoLogs=PASS}
 
 
 .E
-Time: 0.016
+Time: 0.007
 There was 1 error:
 1) testNullIntersection(crystal.util.SetOperationsTest)java.lang.IllegalArgumentException: Null input
 	at crystal.util.ValidInputChecker.checkNullInput(ValidInputChecker.java:125)
@@ -568,12 +575,12 @@ FAILURES!!!
 Tests run: 1,  Failures: 0,  Errors: 1
 
 .
-Time: 0.005
+Time: 0.004
 
 OK (1 test)
 
 .E
-Time: 0
+Time: 0.001
 There was 1 error:
 1) testNullUnion(crystal.util.SetOperationsTest)java.lang.IllegalArgumentException: Null input
 	at crystal.util.ValidInputChecker.checkNullInput(ValidInputChecker.java:125)
@@ -588,7 +595,7 @@ FAILURES!!!
 Tests run: 1,  Failures: 0,  Errors: 1
 
 .
-Time: 0.003
+Time: 0
 
 OK (1 test)
 
@@ -603,7 +610,7 @@ Time: 0
 OK (1 test)
 
 .E
-Time: 0.082
+Time: 0.062
 There was 1 error:
 1) testInvalidPanelParameter(crystal.util.SpringLayoutUtilityTest)java.lang.IllegalArgumentException: Invalid input for panel.
 	at crystal.util.SpringLayoutUtility.formGridInColumn(SpringLayoutUtility.java:35)
@@ -616,6 +623,7 @@ There was 1 error:
 FAILURES!!!
 Tests run: 1,  Failures: 0,  Errors: 1
 
+Execution time: 855256667
 0-th run
 Pass: 4, Fail: 0, Error: 3
 {crystal.util.SetOperationsTest.testNullIntersection=ERROR, crystal.util.SetOperationsTest.testIntersection=PASS, crystal.util.SetOperationsTest.testNullUnion=ERROR, crystal.util.SetOperationsTest.testUnion=PASS, crystal.util.SetOperationsTest.testSetDifference=PASS, crystal.util.SetOperationsTest.testXor=PASS, crystal.util.SpringLayoutUtilityTest.testInvalidPanelParameter=ERROR}

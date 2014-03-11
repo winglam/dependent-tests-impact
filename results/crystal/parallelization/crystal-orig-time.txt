@@ -1,5 +1,5 @@
 .E
-Time: 0.04
+Time: 0.047
 There was 1 error:
 1) testNullInputConstructor(crystal.client.ClientPreferencesTest)java.lang.IllegalArgumentException: Invalid string input
 	at crystal.util.ValidInputChecker.checkValidStringInput(ValidInputChecker.java:135)
@@ -14,17 +14,17 @@ FAILURES!!!
 Tests run: 1,  Failures: 0,  Errors: 1
 
 .
-Time: 0.002
+Time: 0.004
 
 OK (1 test)
 
 .
-Time: 0.003
+Time: 0.001
 
 OK (1 test)
 
 .E
-Time: 0
+Time: 0.002
 There was 1 error:
 1) testDuplicateAddProjectPreferences(crystal.client.ClientPreferencesTest)crystal.client.ClientPreferences$DuplicateProjectNameException: Duplicate project name: shortName
 	at crystal.client.ClientPreferences.addProjectPreferences(ClientPreferences.java:217)
@@ -38,7 +38,7 @@ FAILURES!!!
 Tests run: 1,  Failures: 0,  Errors: 1
 
 .
-Time: 0
+Time: 0.002
 
 OK (1 test)
 
@@ -48,7 +48,7 @@ Time: 0
 OK (1 test)
 
 .
-Time: 0
+Time: 0.003
 
 OK (1 test)
 
@@ -58,12 +58,12 @@ Time: 0
 OK (1 test)
 
 .
-Time: 0.009
+Time: 0.014
 
 OK (1 test)
 
 .
-Time: 0.012
+Time: 0.01
 
 OK (1 test)
 
@@ -72,7 +72,7 @@ Time: 0
 
 OK (1 test)
 
-.ERROR 2014-03-04 00:20:54,975 (ConflictDaemon.java:221) - Runtime Exception caught while getting state for: shortName_2_HG_cloneString_2
+.ERROR 2014-03-11 01:53:01,504 (ConflictDaemon.java:221) - Runtime Exception caught while getting state for: shortName_2_HG_cloneString_2
 null
 java.lang.NullPointerException
 	at crystal.client.ConflictClient.refresh(ConflictClient.java:486)
@@ -94,12 +94,12 @@ java.lang.NullPointerException
 	at junit.textui.TestRunner.start(TestRunner.java:178)
 	at edu.washington.cs.dt.util.TestRunnerWrapper.main(TestRunnerWrapper.java:56)
 
-Time: 0.363
+Time: 0.413
 
 OK (1 test)
 
 .F
-Time: 0.05
+Time: 0.052
 There was 1 failure:
 1) testRelationship(crystal.client.ConflictDaemonTest)junit.framework.AssertionFailedError: non listeners expected:<0> but was:<2>
 	at crystal.client.ConflictDaemonTest.testRelationship(ConflictDaemonTest.java:101)
@@ -112,17 +112,17 @@ FAILURES!!!
 Tests run: 1,  Failures: 1,  Errors: 0
 
 .
-Time: 0.002
+Time: 0
 
 OK (1 test)
 
 .
-Time: 0.002
+Time: 0
 
 OK (1 test)
 
 .E
-Time: 0.001
+Time: 0
 There was 1 error:
 1) testDuplicateAddDataSource(crystal.client.ProjectPreferencesTest)java.lang.RuntimeException: Error adding new source; short name: shortName already exists for project: shortName
 	at crystal.client.ProjectPreferences.addDataSource(ProjectPreferences.java:81)
@@ -136,7 +136,7 @@ FAILURES!!!
 Tests run: 1,  Failures: 0,  Errors: 1
 
 .
-Time: 0
+Time: 0.001
 
 OK (1 test)
 
@@ -146,7 +146,7 @@ Time: 0
 OK (1 test)
 
 .
-Time: 0.003
+Time: 0.004
 
 OK (1 test)
 
@@ -164,7 +164,62 @@ FAILURES!!!
 Tests run: 1,  Failures: 1,  Errors: 0
 
 .
-Time: 0.005
+Time: 0.001
+
+OK (1 test)
+
+.
+Time: 0
+
+OK (1 test)
+
+.
+Time: 1.13
+
+OK (1 test)
+
+.
+Time: 0
+
+OK (1 test)
+
+.
+Time: 0
+
+OK (1 test)
+
+.
+Time: 0
+
+OK (1 test)
+
+.
+Time: 0
+
+OK (1 test)
+
+.
+Time: 0
+
+OK (1 test)
+
+.
+Time: 0
+
+OK (1 test)
+
+.
+Time: 0
+
+OK (1 test)
+
+.
+Time: 0.007
+
+OK (1 test)
+
+.
+Time: 0
 
 OK (1 test)
 
@@ -174,7 +229,12 @@ Time: 0.001
 OK (1 test)
 
 .
-Time: 1.102
+Time: 0
+
+OK (1 test)
+
+.
+Time: 0.001
 
 OK (1 test)
 
@@ -189,67 +249,7 @@ Time: 0
 OK (1 test)
 
 .
-Time: 0
-
-OK (1 test)
-
-.
-Time: 0
-
-OK (1 test)
-
-.
-Time: 0
-
-OK (1 test)
-
-.
-Time: 0
-
-OK (1 test)
-
-.
-Time: 0
-
-OK (1 test)
-
-.
-Time: 0
-
-OK (1 test)
-
-.
-Time: 0
-
-OK (1 test)
-
-.
-Time: 0
-
-OK (1 test)
-
-.
-Time: 0
-
-OK (1 test)
-
-.
-Time: 0
-
-OK (1 test)
-
-.
-Time: 0.002
-
-OK (1 test)
-
-.
-Time: 0
-
-OK (1 test)
-
-.
-Time: 0
+Time: 0.005
 
 OK (1 test)
 
@@ -275,7 +275,7 @@ Time: 0
 OK (1 test)
 
 .E
-Time: 0.01
+Time: 0.006
 There was 1 error:
 1) testStrangeNameConstructor(crystal.model.RelationshipTest)java.lang.RuntimeException: Trying to create an invalid Relationship
 	at crystal.model.Relationship.<init>(Relationship.java:111)
@@ -294,27 +294,27 @@ Time: 0.007
 OK (1 test)
 
 .
-Time: 0.013
+Time: 0.008
 
 OK (1 test)
 
 .
-Time: 0.001
+Time: 0
 
 OK (1 test)
 
 .
-Time: 0.001
+Time: 0.006
 
 OK (1 test)
 
 .
-Time: 0.001
+Time: 0.01
 
 OK (1 test)
 
 .E
-Time: 0.792
+Time: 0.647
 There was 1 error:
 1) testEqualsObject(crystal.model.RevisionHistoryTest)java.lang.NullPointerException
 	at crystal.model.RevisionHistoryTest.testEqualsObject(RevisionHistoryTest.java:61)
@@ -327,7 +327,7 @@ FAILURES!!!
 Tests run: 1,  Failures: 0,  Errors: 1
 
 .E
-Time: 0.979
+Time: 0.761
 There was 1 error:
 1) testSuperSubHistory(crystal.model.RevisionHistoryTest)java.lang.NullPointerException
 	at crystal.model.RevisionHistoryTest.testSuperSubHistory(RevisionHistoryTest.java:91)
@@ -340,7 +340,7 @@ FAILURES!!!
 Tests run: 1,  Failures: 0,  Errors: 1
 
 .E
-Time: 0.272
+Time: 0.194
 There was 1 error:
 1) testGetCommitters(crystal.model.RevisionHistoryTest)java.lang.NullPointerException
 	at crystal.model.RevisionHistoryTest.testGetCommitters(RevisionHistoryTest.java:114)
@@ -353,12 +353,12 @@ FAILURES!!!
 Tests run: 1,  Failures: 0,  Errors: 1
 
 .
-Time: 0.014
+Time: 0.012
 
 OK (1 test)
 
 .
-Time: 0.012
+Time: 0.011
 
 OK (1 test)
 
@@ -394,12 +394,12 @@ FAILURES!!!
 Tests run: 1,  Failures: 0,  Errors: 1
 
 .
-Time: 0.001
+Time: 0.007
 
 OK (1 test)
 
 .
-Time: 0.015
+Time: 0.013
 
 OK (1 test)
 
@@ -407,7 +407,7 @@ OK (1 test)
 2
 3
 .F
-Time: 0.002
+Time: 0.011
 There was 1 failure:
 1) warning(junit.framework.TestSuite$1)junit.framework.AssertionFailedError: Exception in constructor: testBasicMergeConflict (java.lang.ExceptionInInitializerError
 	at crystal.server.TestGitStateChecker.generatePreferences(TestGitStateChecker.java:176)
@@ -427,7 +427,7 @@ FAILURES!!!
 Tests run: 1,  Failures: 1,  Errors: 0
 
 .F
-Time: 0.004
+Time: 0.006
 There was 1 failure:
 1) warning(junit.framework.TestSuite$1)junit.framework.AssertionFailedError: Exception in constructor: testBasicCleanMerge (java.lang.NoClassDefFoundError: Could not initialize class crystal.server.TestConstants
 	at crystal.server.TestGitStateChecker.generatePreferences(TestGitStateChecker.java:176)
@@ -444,7 +444,7 @@ FAILURES!!!
 Tests run: 1,  Failures: 1,  Errors: 0
 
 .F
-Time: 0.009
+Time: 0.003
 There was 1 failure:
 1) warning(junit.framework.TestSuite$1)junit.framework.AssertionFailedError: Exception in constructor: testBasicAhead (java.lang.NoClassDefFoundError: Could not initialize class crystal.server.TestConstants
 	at crystal.server.TestGitStateChecker.generatePreferences(TestGitStateChecker.java:176)
@@ -461,7 +461,7 @@ FAILURES!!!
 Tests run: 1,  Failures: 1,  Errors: 0
 
 .F
-Time: 0
+Time: 0.001
 There was 1 failure:
 1) warning(junit.framework.TestSuite$1)junit.framework.AssertionFailedError: Exception in constructor: testBasicBehind (java.lang.NoClassDefFoundError: Could not initialize class crystal.server.TestConstants
 	at crystal.server.TestGitStateChecker.generatePreferences(TestGitStateChecker.java:176)
@@ -478,7 +478,7 @@ FAILURES!!!
 Tests run: 1,  Failures: 1,  Errors: 0
 
 .F
-Time: 0.006
+Time: 0.011
 There was 1 failure:
 1) warning(junit.framework.TestSuite$1)junit.framework.AssertionFailedError: Exception in constructor: testBasicSame (java.lang.NoClassDefFoundError: Could not initialize class crystal.server.TestConstants
 	at crystal.server.TestGitStateChecker.generatePreferences(TestGitStateChecker.java:176)
@@ -495,7 +495,7 @@ FAILURES!!!
 Tests run: 1,  Failures: 1,  Errors: 0
 
 .F
-Time: 0
+Time: 0.001
 There was 1 failure:
 1) warning(junit.framework.TestSuite$1)junit.framework.AssertionFailedError: Exception in constructor: testBasicMergeConflict (java.lang.NoClassDefFoundError: Could not initialize class crystal.server.TestConstants
 	at crystal.server.TestHgStateChecker.generatePreferences(TestHgStateChecker.java:172)
@@ -512,7 +512,7 @@ FAILURES!!!
 Tests run: 1,  Failures: 1,  Errors: 0
 
 .F
-Time: 0
+Time: 0.003
 There was 1 failure:
 1) warning(junit.framework.TestSuite$1)junit.framework.AssertionFailedError: Exception in constructor: testBasicCleanMerge (java.lang.NoClassDefFoundError: Could not initialize class crystal.server.TestConstants
 	at crystal.server.TestHgStateChecker.generatePreferences(TestHgStateChecker.java:172)
@@ -529,7 +529,7 @@ FAILURES!!!
 Tests run: 1,  Failures: 1,  Errors: 0
 
 .F
-Time: 0
+Time: 0.001
 There was 1 failure:
 1) warning(junit.framework.TestSuite$1)junit.framework.AssertionFailedError: Exception in constructor: testBasicAhead (java.lang.NoClassDefFoundError: Could not initialize class crystal.server.TestConstants
 	at crystal.server.TestHgStateChecker.generatePreferences(TestHgStateChecker.java:172)
@@ -546,7 +546,7 @@ FAILURES!!!
 Tests run: 1,  Failures: 1,  Errors: 0
 
 .F
-Time: 0.002
+Time: 0.001
 There was 1 failure:
 1) warning(junit.framework.TestSuite$1)junit.framework.AssertionFailedError: Exception in constructor: testBasicBehind (java.lang.NoClassDefFoundError: Could not initialize class crystal.server.TestConstants
 	at crystal.server.TestHgStateChecker.generatePreferences(TestHgStateChecker.java:172)
@@ -563,7 +563,7 @@ FAILURES!!!
 Tests run: 1,  Failures: 1,  Errors: 0
 
 .F
-Time: 0.001
+Time: 0
 There was 1 failure:
 1) warning(junit.framework.TestSuite$1)junit.framework.AssertionFailedError: Exception in constructor: testBasicSame (java.lang.NoClassDefFoundError: Could not initialize class crystal.server.TestConstants
 	at crystal.server.TestHgStateChecker.generatePreferences(TestHgStateChecker.java:172)
@@ -580,7 +580,7 @@ FAILURES!!!
 Tests run: 1,  Failures: 1,  Errors: 0
 
 .E
-Time: 0.001
+Time: 0
 There was 1 error:
 1) testNullIntersection(crystal.util.SetOperationsTest)java.lang.IllegalArgumentException: Null input
 	at crystal.util.ValidInputChecker.checkNullInput(ValidInputChecker.java:125)
@@ -600,7 +600,7 @@ Time: 0
 OK (1 test)
 
 .E
-Time: 0.002
+Time: 0
 There was 1 error:
 1) testNullUnion(crystal.util.SetOperationsTest)java.lang.IllegalArgumentException: Null input
 	at crystal.util.ValidInputChecker.checkNullInput(ValidInputChecker.java:125)
@@ -615,12 +615,12 @@ FAILURES!!!
 Tests run: 1,  Failures: 0,  Errors: 1
 
 .
-Time: 0.007
+Time: 0
 
 OK (1 test)
 
 .
-Time: 0.001
+Time: 0
 
 OK (1 test)
 
@@ -630,7 +630,7 @@ Time: 0.001
 OK (1 test)
 
 .E
-Time: 0.156
+Time: 0.127
 There was 1 error:
 1) testInvalidPanelParameter(crystal.util.SpringLayoutUtilityTest)java.lang.IllegalArgumentException: Invalid input for panel.
 	at crystal.util.SpringLayoutUtility.formGridInColumn(SpringLayoutUtility.java:35)
@@ -644,11 +644,12 @@ FAILURES!!!
 Tests run: 1,  Failures: 0,  Errors: 1
 
 .
-Time: 0.003
+Time: 0.005
 
 OK (1 test)
 
+Execution time: 4828602716
 0-th run
 Pass: 51, Fail: 12, Error: 12
-{crystal.client.ClientPreferencesTest.testNullInputConstructor=69163894, crystal.client.ClientPreferencesTest.testClientPreferences=2121671, crystal.client.ClientPreferencesTest.testDefaultSetting=3128769, crystal.client.ClientPreferencesTest.testDuplicateAddProjectPreferences=3825222, crystal.client.ClientPreferencesTest.testAddProjectPreferences=2310753, crystal.client.ClientPreferencesTest.testDuplicateProject=849933, crystal.client.ClientPreferencesTest.testRemoveProjectPreferences=4802657, crystal.client.ClientPreferencesTest.testRemoveProjectPreferencesAtIndex=872099, crystal.client.ClientPreferencesTest.testClone=13069083, crystal.client.ConflictDaemonTest.testAddListener=12359123, crystal.client.ConflictDaemonTest.testGetInstance=936168, crystal.client.ConflictDaemonTest.testLocalState=364724525, crystal.client.ConflictDaemonTest.testRelationship=51173513, crystal.client.ProjectPreferencesTest.testClone=2548385, crystal.client.ProjectPreferencesTest.testProjectPreferences=2576016, crystal.client.ProjectPreferencesTest.testDuplicateAddDataSource=4687679, crystal.client.ProjectPreferencesTest.testAddDataSource=3552735, crystal.client.ProjectPreferencesTest.testGetNumOfVisibleSources=916238, crystal.client.ProjectPreferencesTest.testRemoveDataSource=4403445, crystal.client.ProjectPreferencesTest.testGetProjectCheckoutLocation=10677603, crystal.model.DataSourceTest.testClone=5255398, crystal.model.DataSourceTest.testSetField=2385519, crystal.model.DataSourceTest.testSetHistory=1116164579, crystal.model.DataSourceTest.testSetRemoteCmd=1683398, crystal.model.DataSourceTest.testSetCompileCommand=1833435, crystal.model.DataSourceTest.testSetEnabled=697370, crystal.model.DataSourceTest.testIsHidden=4451895, crystal.model.DataSourceTest.testSetParent=4302254, crystal.model.DataSourceTest.testSetKind=14595419, crystal.model.DataSourceTest.testSetCloneString=9023796, crystal.model.DataSourceTest.testToString=5259349, crystal.model.LocalStateResultTest.testLocalStateResult=7342429, crystal.model.LocalStateResultTest.testStrangeActionName=6316927, crystal.model.LocalStateResultTest.testErrorActionNameConstructor=1528265, crystal.model.LocalStateResultTest.testGetAction=1961579, crystal.model.LocalStateResultTest.testGetLastAction=11890064, crystal.model.LocalStateResultTest.testGetName=2168695, crystal.model.LocalStateResultTest.testGetNoErrorMessage=8069899, crystal.model.LocalStateResultTest.testGetLastErrorMessage=4134619, crystal.model.LocalStateResultTest.testGetLocalState=3638109, crystal.model.LocalStateResultTest.testGetLastLocalState=3795420, crystal.model.LocalStateResultTest.testToString=3865752, crystal.model.RelationshipTest.testStrangeNameConstructor=22553151, crystal.model.RelationshipTest.testConstructor=14452613, crystal.model.RelationshipTest.testCalculateAction=19900616, crystal.model.RelationshipTest.testGetActionRepoKind=13106621, crystal.model.RelationshipTest.testGetDominant=13478384, crystal.model.RelationshipTest.testEqualsObject=9420357, crystal.model.RevisionHistoryTest.testEqualsObject=809690940, crystal.model.RevisionHistoryTest.testSuperSubHistory=982657620, crystal.model.RevisionHistoryTest.testGetCommitters=274572644, crystal.server.GuidanceCheckerTest.testGetCommitters=16835790, crystal.server.GuidanceCheckerTest.testGetWhen=21184090, crystal.server.HgLogParserTest.testParseNullLog=11140123, crystal.server.HgLogParserTest.testParseLog=49725981, crystal.server.HgLogParserTest.testSingleLog=1101276, crystal.server.HgLogParserTest.testTwoLogs=21566649, crystal.server.TestGitStateChecker.testBasicMergeConflict=47261700, crystal.server.TestGitStateChecker.testBasicCleanMerge=31901087, crystal.server.TestGitStateChecker.testBasicAhead=25317218, crystal.server.TestGitStateChecker.testBasicBehind=18900380, crystal.server.TestGitStateChecker.testBasicSame=14940962, crystal.server.TestHgStateChecker.testBasicMergeConflict=31020964, crystal.server.TestHgStateChecker.testBasicCleanMerge=15397511, crystal.server.TestHgStateChecker.testBasicAhead=15888373, crystal.server.TestHgStateChecker.testBasicBehind=16836995, crystal.server.TestHgStateChecker.testBasicSame=12006462, crystal.util.SetOperationsTest.testNullIntersection=5843282, crystal.util.SetOperationsTest.testIntersection=5551014, crystal.util.SetOperationsTest.testNullUnion=5379528, crystal.util.SetOperationsTest.testUnion=7336639, crystal.util.SetOperationsTest.testSetDifference=1840714, crystal.util.SetOperationsTest.testXor=8823727, crystal.util.SpringLayoutUtilityTest.testInvalidPanelParameter=158395889, crystal.util.SpringLayoutUtilityTest.testFormGrid=11842957}
+{crystal.client.ClientPreferencesTest.testNullInputConstructor=77441816, crystal.client.ClientPreferencesTest.testClientPreferences=4031022, crystal.client.ClientPreferencesTest.testDefaultSetting=1307141, crystal.client.ClientPreferencesTest.testDuplicateAddProjectPreferences=4420892, crystal.client.ClientPreferencesTest.testAddProjectPreferences=3230683, crystal.client.ClientPreferencesTest.testDuplicateProject=902695, crystal.client.ClientPreferencesTest.testRemoveProjectPreferences=3430990, crystal.client.ClientPreferencesTest.testRemoveProjectPreferencesAtIndex=914546, crystal.client.ClientPreferencesTest.testClone=15096902, crystal.client.ConflictDaemonTest.testAddListener=12182579, crystal.client.ConflictDaemonTest.testGetInstance=4913215, crystal.client.ConflictDaemonTest.testLocalState=413636284, crystal.client.ConflictDaemonTest.testRelationship=53027908, crystal.client.ProjectPreferencesTest.testClone=3394910, crystal.client.ProjectPreferencesTest.testProjectPreferences=945617, crystal.client.ProjectPreferencesTest.testDuplicateAddDataSource=5290179, crystal.client.ProjectPreferencesTest.testAddDataSource=962838, crystal.client.ProjectPreferencesTest.testGetNumOfVisibleSources=2047601, crystal.client.ProjectPreferencesTest.testRemoveDataSource=5150183, crystal.client.ProjectPreferencesTest.testGetProjectCheckoutLocation=16944986, crystal.model.DataSourceTest.testClone=926003, crystal.model.DataSourceTest.testSetField=791244, crystal.model.DataSourceTest.testSetHistory=1140038666, crystal.model.DataSourceTest.testSetRemoteCmd=872139, crystal.model.DataSourceTest.testSetCompileCommand=7539956, crystal.model.DataSourceTest.testSetEnabled=904782, crystal.model.DataSourceTest.testIsHidden=799884, crystal.model.DataSourceTest.testSetParent=2405659, crystal.model.DataSourceTest.testSetKind=10865017, crystal.model.DataSourceTest.testSetCloneString=1242789, crystal.model.DataSourceTest.testToString=10803859, crystal.model.LocalStateResultTest.testLocalStateResult=2914970, crystal.model.LocalStateResultTest.testStrangeActionName=4631318, crystal.model.LocalStateResultTest.testErrorActionNameConstructor=4269807, crystal.model.LocalStateResultTest.testGetAction=2502386, crystal.model.LocalStateResultTest.testGetLastAction=5739030, crystal.model.LocalStateResultTest.testGetName=930128, crystal.model.LocalStateResultTest.testGetNoErrorMessage=6416572, crystal.model.LocalStateResultTest.testGetLastErrorMessage=4518537, crystal.model.LocalStateResultTest.testGetLocalState=4054915, crystal.model.LocalStateResultTest.testGetLastLocalState=4910983, crystal.model.LocalStateResultTest.testToString=17112531, crystal.model.RelationshipTest.testStrangeNameConstructor=14401391, crystal.model.RelationshipTest.testConstructor=8762120, crystal.model.RelationshipTest.testCalculateAction=19717245, crystal.model.RelationshipTest.testGetActionRepoKind=8518538, crystal.model.RelationshipTest.testGetDominant=14063617, crystal.model.RelationshipTest.testEqualsObject=11103780, crystal.model.RevisionHistoryTest.testEqualsObject=661061482, crystal.model.RevisionHistoryTest.testSuperSubHistory=767011192, crystal.model.RevisionHistoryTest.testGetCommitters=202971204, crystal.server.GuidanceCheckerTest.testGetCommitters=14326266, crystal.server.GuidanceCheckerTest.testGetWhen=19975067, crystal.server.HgLogParserTest.testParseNullLog=2892646, crystal.server.HgLogParserTest.testParseLog=38999096, crystal.server.HgLogParserTest.testSingleLog=9937054, crystal.server.HgLogParserTest.testTwoLogs=13505133, crystal.server.TestGitStateChecker.testBasicMergeConflict=33142767, crystal.server.TestGitStateChecker.testBasicCleanMerge=19904003, crystal.server.TestGitStateChecker.testBasicAhead=24394731, crystal.server.TestGitStateChecker.testBasicBehind=13872906, crystal.server.TestGitStateChecker.testBasicSame=23092121, crystal.server.TestHgStateChecker.testBasicMergeConflict=21442204, crystal.server.TestHgStateChecker.testBasicCleanMerge=10046234, crystal.server.TestHgStateChecker.testBasicAhead=11885321, crystal.server.TestHgStateChecker.testBasicBehind=12393730, crystal.server.TestHgStateChecker.testBasicSame=10742497, crystal.util.SetOperationsTest.testNullIntersection=4834786, crystal.util.SetOperationsTest.testIntersection=7452773, crystal.util.SetOperationsTest.testNullUnion=1916321, crystal.util.SetOperationsTest.testUnion=3015641, crystal.util.SetOperationsTest.testSetDifference=7483510, crystal.util.SetOperationsTest.testXor=890230, crystal.util.SpringLayoutUtilityTest.testInvalidPanelParameter=130951598, crystal.util.SpringLayoutUtilityTest.testFormGrid=6385572}
 
