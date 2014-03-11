@@ -4,6 +4,7 @@ oldVersCP=impact-tools/*:bin/:../synoptic/lib/*:../synoptic/bin/:../daikonizer/b
 newVersCP=impact-tools/*:bin/:../synoptic/lib/*:../synoptic-ea407ba0a750/bin/:../daikonizer-ea407ba0a750/bin/
 oldVers=dynoptic
 newVers=dynoptic-ea407ba0a750
+dependentFree=true
 
 function clearEnv() {
   rm -rf test.dot
@@ -31,7 +32,7 @@ java -cp $newVersCP edu.washington.cs.dt.main.ImpactMain $experiment-$testType-o
 clearEnv
 cd ..
 
-selectionRunCoveragesOrders $experiment $newVersCP $testType $oldVers $newVers
-selectionRunOrigOrder $experiment $newVersCP $testType $oldVers $newVers
+selectionRunCoveragesOrders $experiment $newVersCP $testType $oldVers $newVers $dependentFree
+selectionRunOrigOrder $experiment $newVersCP $testType $oldVers $newVers $dependentFree
 
 clearSelectionTemp $oldVers $newVers

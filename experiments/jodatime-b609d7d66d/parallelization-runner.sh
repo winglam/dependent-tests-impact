@@ -1,6 +1,7 @@
 testType=orig
 experiment=jodatime
 experimentCP=impact-tools/*:bin/:resources/:lib/*
+dependentFree=false
 
 function clearEnv() {
   :
@@ -18,8 +19,8 @@ clearEnv
 java -cp $experimentCP edu.washington.cs.dt.main.ImpactMain $experiment-$testType-order > $experiment-$testType-order-results.txt
 
 rm -rf $experiment-parallel-summary.txt
-parallelExec $experiment $experimentCP $testType
-parallelCoveragesOrders $experiment $experimentCP $testType
+parallelExec $experiment $experimentCP $testType $dependentFree
+parallelCoveragesOrders $experiment $experimentCP $testType $dependentFree
 
 clearTemp
 clearEnv

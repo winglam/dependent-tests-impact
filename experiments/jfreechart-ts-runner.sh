@@ -4,6 +4,7 @@ oldVersCP=impact-tools/*:bin/:lib/*
 newVersCP=impact-tools/*:bin/:lib/*
 oldVers=jfreechart-1.0.15
 newVers=jfreechart-1.0.16
+dependentFree=true
 
 function clearEnv() {
   :
@@ -31,8 +32,8 @@ java -cp $newVersCP edu.washington.cs.dt.main.ImpactMain $experiment-$testType-o
 clearEnv
 cd ..
 
-selectionRunCoveragesOrders $experiment $newVersCP $testType $oldVers $newVers
-selectionRunOrigOrder $experiment $newVersCP $testType $oldVers $newVers
+selectionRunCoveragesOrders $experiment $newVersCP $testType $oldVers $newVers $dependentFree
+selectionRunOrigOrder $experiment $newVersCP $testType $oldVers $newVers $dependentFree
 
 clearSelectionTemp $oldVers $newVers
 

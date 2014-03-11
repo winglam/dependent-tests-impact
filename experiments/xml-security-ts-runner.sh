@@ -1,9 +1,10 @@
-testType=auto
+testType=orig
 experiment=xml-security
 oldVersCP=impact-tools/*:bin/:../xml-security-commons/bin/:data/:../xml-security-commons/libs/*
 newVersCP=impact-tools/*:bin/:../xml-security-commons/bin/:data/:../xml-security-commons/libs/*
 oldVers=xml-security-orig-v1
 newVers=xml-security-1_2_0
+dependentFree=true
 
 function clearEnv() {
   rm -rf '4444444444  4 444444444444 444444444444444444444'
@@ -31,8 +32,8 @@ java -cp $newVersCP edu.washington.cs.dt.main.ImpactMain $experiment-$testType-o
 clearEnv
 cd ..
 
-selectionRunCoveragesOrders $experiment $newVersCP $testType $oldVers $newVers
-selectionRunOrigOrder $experiment $newVersCP $testType $oldVers $newVers
+selectionRunCoveragesOrders $experiment $newVersCP $testType $oldVers $newVers $dependentFree
+selectionRunOrigOrder $experiment $newVersCP $testType $oldVers $newVers $dependentFree
 
 clearSelectionTemp $oldVers $newVers
 

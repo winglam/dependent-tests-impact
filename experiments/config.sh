@@ -119,8 +119,12 @@ function parallelCoveragesOrders() {
 
 function selectionRunCoveragesOrders() {
   for i in "${coverages[@]}"; do 
-    for j in "${selectionOrders[@]}"; do  
-      java -Xms512m -Xmx1g -cp $impactJarCP $testListGenClass -technique selection -coverage $i -order $j -outputFile $5/$1-ts-$i-$j.txt -oldVersCFG $4/selectionOutput -newVersCFG $5/selectionOutput -testInputDir $4/sootTestOutput 
+    for j in "${selectionOrders[@]}"; do
+      if [ "$4" = true ] ; then 
+        java -Xms512m -Xmx1g -cp $impactJarCP $testListGenClass -technique selection -coverage $i -order $j -outputFile $5/$1-ts-$i-$j.txt -oldVersCFG $4/selectionOutput -newVersCFG $5/selectionOutput -testInputDir $4/sootTestOutput -dependentTestFile $1-dt
+      else
+        java -Xms512m -Xmx1g -cp $impactJarCP $testListGenClass -technique selection -coverage $i -order $j -outputFile $5/$1-ts-$i-$j.txt -oldVersCFG $4/selectionOutput -newVersCFG $5/selectionOutput -testInputDir $4/sootTestOutput 
+      fi
       cd $5
       clearEnv
       java -cp $2 edu.washington.cs.dt.main.ImpactMain $1-ts-$i-$j.txt > $1-ts-$i-$j-results.txt
@@ -136,7 +140,11 @@ function selectionRunCoveragesOrders() {
 
 function selectionRunOrigOrder() {
   for i in "${coverages[@]}"; do 
-    java -Xms512m -Xmx1g -cp $impactJarCP $testListGenClass -technique selection -coverage $i -origOrder $5/$1-$3-order -outputFile $5/$1-ts-$i-$3-order.txt -oldVersCFG $4/selectionOutput -newVersCFG $5/selectionOutput -testInputDir $4/sootTestOutput 
+   if [ "$4" = true ] ; then 
+      java -Xms512m -Xmx1g -cp $impactJarCP $testListGenClass -technique selection -coverage $i -origOrder $5/$1-$3-order -outputFile $5/$1-ts-$i-$3-order.txt -oldVersCFG $4/selectionOutput -newVersCFG $5/selectionOutput -testInputDir $4/sootTestOutput -dependentTestFile $1-dt
+    else
+      java -Xms512m -Xmx1g -cp $impactJarCP $testListGenClass -technique selection -coverage $i -origOrder $5/$1-$3-order -outputFile $5/$1-ts-$i-$3-order.txt -oldVersCFG $4/selectionOutput -newVersCFG $5/selectionOutput -testInputDir $4/sootTestOutput
+    fi 
     cd $5
     clearEnv
     java -cp $2 edu.washington.cs.dt.main.ImpactMain $1-ts-$i-$3-order.txt > $1-ts-$i-$3-order-results.txt

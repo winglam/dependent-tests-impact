@@ -1,6 +1,7 @@
-testType=orig
+testType=auto
 experiment=crystal
 experimentCP=impact-tools/*:bin/:libs/lib/*
+dependentFree=false
 
 function clearEnv() {
   rm -rf 2013-08-28T20-44-41.156-0700
@@ -25,8 +26,8 @@ clearEnv
 java -cp $experimentCP edu.washington.cs.dt.main.ImpactMain $experiment-$testType-order > $experiment-$testType-order-results.txt
 
 rm -rf $experiment-parallel-summary.txt
-parallelExec $experiment $experimentCP $testType
-parallelCoveragesOrders $experiment $experimentCP $testType
+parallelExec $experiment $experimentCP $testType $dependentFree
+parallelCoveragesOrders $experiment $experimentCP $testType $dependentFree
 
 clearTemp
 clearEnv

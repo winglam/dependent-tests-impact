@@ -5,10 +5,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import edu.washington.cs.dt.impact.objects.TestObject;
-import edu.washington.cs.dt.impact.objects.TestParallelizationObject;
-import edu.washington.cs.dt.impact.objects.TestPrioritizationObject;
-import edu.washington.cs.dt.impact.objects.TestSelectionObject;
+import edu.washington.cs.dt.impact.technique.Test;
+import edu.washington.cs.dt.impact.technique.Parallelization;
+import edu.washington.cs.dt.impact.technique.Prioritization;
+import edu.washington.cs.dt.impact.technique.Selection;
 import edu.washington.cs.dt.impact.util.Constants;
 import edu.washington.cs.dt.impact.util.Constants.COVERAGE;
 import edu.washington.cs.dt.impact.util.Constants.ORDER;
@@ -237,13 +237,13 @@ public class TestListGenerator {
             }
         }
 
-        TestObject testObj = null;
+        Test testObj = null;
         if (techniqueName == TECHNIQUE.PRIORITIZATION) {
-            testObj = new TestPrioritizationObject(order, outputFileName, testInputDir, coverage, dependentTestFile);
+            testObj = new Prioritization(order, outputFileName, testInputDir, coverage, dependentTestFile);
         } else if (techniqueName == TECHNIQUE.SELECTION) {
-            testObj = new TestSelectionObject(order, outputFileName, testInputDir, coverage, selectionOutput1, selectionOutput2, origOrder, dependentTestFile);
+            testObj = new Selection(order, outputFileName, testInputDir, coverage, selectionOutput1, selectionOutput2, origOrder, dependentTestFile);
         } else if (techniqueName == TECHNIQUE.PARALLELIZATION) {
-            testObj = new TestParallelizationObject(order, outputFileName, testInputDir, coverage, dependentTestFile, numOfMachines, origOrder, timeOrder);
+            testObj = new Parallelization(order, outputFileName, testInputDir, coverage, dependentTestFile, numOfMachines, origOrder, timeOrder);
         }
 
         testObj.printResults();

@@ -1,7 +1,7 @@
 testType=orig
 experiment=xml-security
 experimentCP=impact-tools/*:bin/:../xml-security-commons/bin/:data/:../xml-security-commons/libs/*
-dependentFree=true
+dependentFree=false
 
 function clearEnv() {
   rm -rf '4444444444  4 444444444444 444444444444444444444'
