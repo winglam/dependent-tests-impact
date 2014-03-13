@@ -4,7 +4,7 @@ oldVersCP=impact-tools/*:bin/:../xml-security-commons/bin/:data/:../xml-security
 newVersCP=impact-tools/*:bin/:../xml-security-commons/bin/:data/:../xml-security-commons/libs/*
 oldVers=xml-security-orig-v1
 newVers=xml-security-1_2_0
-dependentFree=false
+dependentFree=true
 
 function clearEnv() {
   rm -rf '4444444444  4 444444444444 444444444444444444444'
@@ -36,5 +36,3 @@ selectionRunCoveragesOrders $experiment $newVersCP $testType $oldVers $newVers $
 selectionRunOrigOrder $experiment $newVersCP $testType $oldVers $newVers $dependentFree
 
 clearSelectionTemp $oldVers $newVers
-
-

@@ -22,7 +22,7 @@ cd ..
 # generate sootTestOutput
 # newVers may have less test than oldVers's orders
 cd $oldVers
-java -cp impact-tools/*:sootOutput:resources/ edu.washington.cs.dt.main.ImpactMain ../$newVers/$experiment-$testType-order
+java -cp impact-tools/*:sootOutput/:resources/:lib/* edu.washington.cs.dt.main.ImpactMain ../$newVers/$experiment-$testType-order
 cd ..
 
 # generate test orders

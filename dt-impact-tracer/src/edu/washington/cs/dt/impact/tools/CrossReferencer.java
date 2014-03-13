@@ -98,7 +98,8 @@ public class CrossReferencer {
         }
 
         System.out.println("Number of Inconsistent Tests Found: " + changedTests.size());
-        System.out.println("Number of Tests Missing: " + origOrderResultsCopy.size() + testOrderOnly.size());
+        System.out.println("Number of additional tests: " + testOrderOnly.size());
+        System.out.println("Number of Tests Missing: " + origOrderResultsCopy.size());
 
         char[] spaces = new char[longestKey];
         Arrays.fill(spaces, ' ');
