@@ -1,7 +1,7 @@
 testType=orig
 experiment=jodatime
 experimentCP=impact-tools/*:bin/:resources/:lib/*
-dependentFree=true
+dependentFree=false
 
 function clearEnv() {
   :

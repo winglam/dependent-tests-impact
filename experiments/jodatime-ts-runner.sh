@@ -4,7 +4,7 @@ oldVersCP=impact-tools/*:bin/:resources/:lib/*
 newVersCP=impact-tools/*:bin/:resources/:lib/*
 oldVers=jodatime-b609d7d66d
 newVers=jodatime-d6791cb5f9
-dependentFree=true
+dependentFree=false
 
 function clearEnv() {
   :
