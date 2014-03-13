@@ -1,183 +1,12 @@
-log4j:WARN No appenders could be found for logger (org.apache.xml.security.test.c14n.implementations.ExclusiveC14NInterop).
+log4j:WARN No appenders could be found for logger (org.apache.xml.security.Init).
 log4j:WARN Please initialize the log4j system properly.
-.E
-Time: 0.689
-There was 1 error:
-1) test_Y3(org.apache.xml.security.test.c14n.implementations.ExclusiveC14NInterop)org.apache.xml.security.signature.XMLSignatureException: You must initialize the xml-security library correctly before you use it. Call the static method "org.apache.xml.security.Init.init();" to do that before you use any functionality from that library.
-Original Exception was java.lang.NullPointerException
-	at org.apache.xml.security.algorithms.SignatureAlgorithm.<init>(SignatureAlgorithm.java:162)
-	at org.apache.xml.security.signature.SignedInfo.<init>(SignedInfo.java:197)
-	at org.apache.xml.security.signature.XMLSignature.<init>(XMLSignature.java:271)
-	at org.apache.xml.security.test.c14n.implementations.ExclusiveC14NInterop.t(ExclusiveC14NInterop.java:239)
-	at org.apache.xml.security.test.c14n.implementations.ExclusiveC14NInterop.test_Y3(ExclusiveC14NInterop.java:167)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at edu.washington.cs.dt.util.TestRunnerWrapper.main(TestRunnerWrapper.java:56)
-java.lang.NullPointerException
-	at java.lang.Class.forName0(Native Method)
-	at java.lang.Class.forName(Class.java:190)
-	at org.apache.xml.security.algorithms.SignatureAlgorithm.<init>(SignatureAlgorithm.java:139)
-	at org.apache.xml.security.signature.SignedInfo.<init>(SignedInfo.java:197)
-	at org.apache.xml.security.signature.XMLSignature.<init>(XMLSignature.java:271)
-	at org.apache.xml.security.test.c14n.implementations.ExclusiveC14NInterop.t(ExclusiveC14NInterop.java:239)
-	at org.apache.xml.security.test.c14n.implementations.ExclusiveC14NInterop.test_Y3(ExclusiveC14NInterop.java:167)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at edu.washington.cs.dt.util.TestRunnerWrapper.main(TestRunnerWrapper.java:56)
-
-FAILURES!!!
-Tests run: 1,  Failures: 0,  Errors: 1
-
 .
-Time: 0.04
+Time: 0.123
 
 OK (1 test)
 
 .
-Time: 0.007
-
-OK (1 test)
-
-.
-Time: 0.01
-
-OK (1 test)
-
-.
-Time: 1.019
-
-OK (1 test)
-
-.
-Time: 0.27
-
-OK (1 test)
-
-.
-Time: 0.07
-
-OK (1 test)
-
-.
-Time: 0.028
-
-OK (1 test)
-
-.
-Time: 2.041
-
-OK (1 test)
-
-.
-Time: 0.137
-
-OK (1 test)
-
-.
-Time: 0.031
-
-OK (1 test)
-
-.
-Time: 0.499
-
-OK (1 test)
-
-.F
-Time: 0.039
-There was 1 failure:
-1) testSetOctetStreamGetNodeSet1(org.apache.xml.security.test.signature.XMLSignatureInputTest)junit.framework.AssertionFailedError: _nodeSetInput1 Number of nodes expected:<12> but was:<14>
-	at org.apache.xml.security.test.signature.XMLSignatureInputTest.testSetOctetStreamGetNodeSet1(XMLSignatureInputTest.java:225)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at edu.washington.cs.dt.util.TestRunnerWrapper.main(TestRunnerWrapper.java:56)
-
-FAILURES!!!
-Tests run: 1,  Failures: 1,  Errors: 0
-
-.
-Time: 0.142
-
-OK (1 test)
-
-.
-Time: 0.16
-
-OK (1 test)
-
-.
-Time: 0.086
-
-OK (1 test)
-
-.F
-Time: 0.02
-There was 1 failure:
-1) testSetOctetStreamGetNodeSet3(org.apache.xml.security.test.signature.XMLSignatureInputTest)junit.framework.AssertionFailedError: _nodeSetInput3 Number of nodes expected:<12> but was:<14>
-	at org.apache.xml.security.test.signature.XMLSignatureInputTest.testSetOctetStreamGetNodeSet3(XMLSignatureInputTest.java:302)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at edu.washington.cs.dt.util.TestRunnerWrapper.main(TestRunnerWrapper.java:56)
-
-FAILURES!!!
-Tests run: 1,  Failures: 1,  Errors: 0
-
-.
-Time: 0.04
-
-OK (1 test)
-
-.
-Time: 0.022
-
-OK (1 test)
-
-.
-Time: 0.043
-
-OK (1 test)
-
-.
-Time: 0.005
-
-OK (1 test)
-
-.
-Time: 0.109
-
-OK (1 test)
-
-.
-Time: 0.064
-
-OK (1 test)
-
-.
-Time: 0.013
-
-OK (1 test)
-
-.
-Time: 0.036
-
-OK (1 test)
-
-.
-Time: 0.025
-
-OK (1 test)
-
-.
-Time: 0.038
-
-OK (1 test)
-
-.
-Time: 0.28
+Time: 0.846
 
 OK (1 test)
 
@@ -187,22 +16,87 @@ Time: 0
 OK (1 test)
 
 .
-Time: 0.018
+Time: 0.371
 
 OK (1 test)
 
 .
-Time: 0.028
+Time: 0.243
 
 OK (1 test)
 
 .
-Time: 0.019
+Time: 0.049
 
 OK (1 test)
 
 .
-Time: 0.094
+Time: 0.074
+
+OK (1 test)
+
+.
+Time: 0.084
+
+OK (1 test)
+
+.
+Time: 0.048
+
+OK (1 test)
+
+.
+Time: 0.003
+
+OK (1 test)
+
+.
+Time: 0
+
+OK (1 test)
+
+.
+Time: 0.01
+
+OK (1 test)
+
+.
+Time: 1.7
+
+OK (1 test)
+
+.
+Time: 0.953
+
+OK (1 test)
+
+.
+Time: 0.488
+
+OK (1 test)
+
+.
+Time: 0.049
+
+OK (1 test)
+
+.
+Time: 0.032
+
+OK (1 test)
+
+.
+Time: 0.073
+
+OK (1 test)
+
+.
+Time: 0.082
+
+OK (1 test)
+
+.
+Time: 0.001
 
 OK (1 test)
 
@@ -212,53 +106,32 @@ Time: 0.022
 OK (1 test)
 
 .
-Time: 0.089
+Time: 0.014
 
 OK (1 test)
 
 .
-Time: 0.02
+Time: 0.01
 
 OK (1 test)
 
 .
-Time: 0.007
+Time: 0.137
 
 OK (1 test)
 
 .
-Time: 0.088
+Time: 0.019
 
 OK (1 test)
 
 .
-Time: 0.029
-
-OK (1 test)
-
-.
-Time: 0.184
-
-OK (1 test)
-
-.
-
-Time: 0.008
-
-OK (1 test)
-
-.
-Time: 0.012
-
-OK (1 test)
-
-.
-Time: 0.017
+Time: 0.019
 
 OK (1 test)
 
 .F
-Time: 0.189
+Time: 0.175
 There was 1 failure:
 1) test_Y4_stripped(org.apache.xml.security.test.c14n.implementations.C14NInterop)junit.framework.AssertionFailedError: null
 	at org.apache.xml.security.test.c14n.implementations.C14NInterop.test_Y4_stripped(C14NInterop.java:190)
@@ -271,37 +144,7 @@ FAILURES!!!
 Tests run: 1,  Failures: 1,  Errors: 0
 
 .
-Time: 0
-
-OK (1 test)
-
-.
-Time: 0.091
-
-OK (1 test)
-
-.
-Time: 0.04
-
-OK (1 test)
-
-.
-Time: 0.055
-
-OK (1 test)
-
-.
-Time: 0.012
-
-OK (1 test)
-
-.
-Time: 0.016
-
-OK (1 test)
-
-.
-Time: 0.008
+Time: 0.071
 
 OK (1 test)
 
@@ -311,37 +154,32 @@ Time: 0.004
 OK (1 test)
 
 .
-Time: 0.016
+Time: 0.098
 
 OK (1 test)
 
 .
-Time: 0
+Time: 0.013
 
 OK (1 test)
 
 .
-Time: 0.018
+Time: 0.001
 
 OK (1 test)
 
 .
-Time: 0.077
+Time: 0.033
 
 OK (1 test)
 
 .
-Time: 0
-
-OK (1 test)
-
-.
-Time: 0.05
+Time: 0.032
 
 OK (1 test)
 
 .F
-Time: 0.016
+Time: 0.019
 There was 1 failure:
 1) testSetOctetStreamGetNodeSet2(org.apache.xml.security.test.signature.XMLSignatureInputTest)junit.framework.AssertionFailedError: _nodeSetInput2 Number of nodes expected:<12> but was:<14>
 	at org.apache.xml.security.test.signature.XMLSignatureInputTest.testSetOctetStreamGetNodeSet2(XMLSignatureInputTest.java:264)
@@ -354,75 +192,27 @@ FAILURES!!!
 Tests run: 1,  Failures: 1,  Errors: 0
 
 .
-Time: 0.049
-
-OK (1 test)
-
-.
-Time: 0.179
-
-OK (1 test)
-
-.F
-Time: 6.461
-There was 1 failure:
-1) test_Y5(org.apache.xml.security.test.c14n.implementations.ExclusiveC14NInterop)junit.framework.AssertionFailedError: 3 10 19
-	at org.apache.xml.security.test.c14n.implementations.ExclusiveC14NInterop.test_Y5(ExclusiveC14NInterop.java:201)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at edu.washington.cs.dt.util.TestRunnerWrapper.main(TestRunnerWrapper.java:56)
-
-FAILURES!!!
-Tests run: 1,  Failures: 1,  Errors: 0
-
-.
-Time: 0.056
-
-OK (1 test)
-
-.E
-Time: 0.015
-There was 1 error:
-1) testSetOctetStreamGetNodeSet4(org.apache.xml.security.test.signature.XMLSignatureInputTest)java.lang.NullPointerException
-	at org.apache.xml.security.signature.XMLSignatureInput.getNodeSet(XMLSignatureInput.java:314)
-	at org.apache.xml.security.signature.XMLSignatureInput.getNodeSet(XMLSignatureInput.java:250)
-	at org.apache.xml.security.test.signature.XMLSignatureInputTest.testSetOctetStreamGetNodeSet4(XMLSignatureInputTest.java:337)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at edu.washington.cs.dt.util.TestRunnerWrapper.main(TestRunnerWrapper.java:56)
-
-FAILURES!!!
-Tests run: 1,  Failures: 0,  Errors: 1
-
-.
-Time: 0.83
-
-OK (1 test)
-
-.
-Time: 0.051
-
-OK (1 test)
-
-.
 Time: 0
 
 OK (1 test)
 
 .
-Time: 0.049
+Time: 0.093
 
 OK (1 test)
 
 .
-Time: 0.021
+Time: 0.017
+
+OK (1 test)
+
+.
+Time: 0.047
 
 OK (1 test)
 
 .E
-Time: 0.004
+Time: 0.009
 There was 1 error:
 1) test_enveloping_hmac(org.apache.xml.security.test.interop.IBMTest)java.io.FileNotFoundException: data/com/ibm/xss4j-20011029/enveloping-hmac.key (No such file or directory)
 	at java.io.FileInputStream.open(Native Method)
@@ -438,7 +228,193 @@ There was 1 error:
 FAILURES!!!
 Tests run: 1,  Failures: 0,  Errors: 1
 
+.
+
+Time: 0.043
+
+OK (1 test)
+
+.
+Time: 0.001
+
+OK (1 test)
+
+.
+Time: 0.031
+
+OK (1 test)
+
+.
+Time: 0.435
+
+OK (1 test)
+
+.
+Time: 0.18
+
+OK (1 test)
+
+.
+Time: 0.01
+
+OK (1 test)
+
+.
+Time: 0.024
+
+OK (1 test)
+
+.
+Time: 0.031
+
+OK (1 test)
+
+.
+Time: 0.067
+
+OK (1 test)
+
+.
+Time: 0.022
+
+OK (1 test)
+
+.
+Time: 0.004
+
+OK (1 test)
+
+.F
+Time: 0.015
+There was 1 failure:
+1) testSetOctetStreamGetNodeSet3(org.apache.xml.security.test.signature.XMLSignatureInputTest)junit.framework.AssertionFailedError: _nodeSetInput3 Number of nodes expected:<12> but was:<14>
+	at org.apache.xml.security.test.signature.XMLSignatureInputTest.testSetOctetStreamGetNodeSet3(XMLSignatureInputTest.java:302)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at edu.washington.cs.dt.util.TestRunnerWrapper.main(TestRunnerWrapper.java:56)
+
+FAILURES!!!
+Tests run: 1,  Failures: 1,  Errors: 0
+
+.F
+Time: 0.02
+There was 1 failure:
+1) testSetOctetStreamGetNodeSet1(org.apache.xml.security.test.signature.XMLSignatureInputTest)junit.framework.AssertionFailedError: _nodeSetInput1 Number of nodes expected:<12> but was:<14>
+	at org.apache.xml.security.test.signature.XMLSignatureInputTest.testSetOctetStreamGetNodeSet1(XMLSignatureInputTest.java:225)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at edu.washington.cs.dt.util.TestRunnerWrapper.main(TestRunnerWrapper.java:56)
+
+FAILURES!!!
+Tests run: 1,  Failures: 1,  Errors: 0
+
+.
+Time: 0.014
+
+OK (1 test)
+
+.
+Time: 0.056
+
+OK (1 test)
+
+.F
+Time: 5.506
+There was 1 failure:
+1) test_Y5(org.apache.xml.security.test.c14n.implementations.ExclusiveC14NInterop)junit.framework.AssertionFailedError: 3 10 19
+	at org.apache.xml.security.test.c14n.implementations.ExclusiveC14NInterop.test_Y5(ExclusiveC14NInterop.java:201)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at edu.washington.cs.dt.util.TestRunnerWrapper.main(TestRunnerWrapper.java:56)
+
+FAILURES!!!
+Tests run: 1,  Failures: 1,  Errors: 0
+
+.
+Time: 0.098
+
+OK (1 test)
+
+.
+Time: 0.007
+
+OK (1 test)
+
+.
+Time: 0.061
+
+OK (1 test)
+
+.
+Time: 0.014
+
+OK (1 test)
+
+.
+Time: 0.014
+
+OK (1 test)
+
+.
+Time: 0.072
+
+OK (1 test)
+
+.
+Time: 0.021
+
+OK (1 test)
+
+.
+Time: 0.006
+
+OK (1 test)
+
+.E
+Time: 0.019
+There was 1 error:
+1) testSetOctetStreamGetNodeSet4(org.apache.xml.security.test.signature.XMLSignatureInputTest)java.lang.NullPointerException
+	at org.apache.xml.security.signature.XMLSignatureInput.getNodeSet(XMLSignatureInput.java:314)
+	at org.apache.xml.security.signature.XMLSignatureInput.getNodeSet(XMLSignatureInput.java:250)
+	at org.apache.xml.security.test.signature.XMLSignatureInputTest.testSetOctetStreamGetNodeSet4(XMLSignatureInputTest.java:337)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at edu.washington.cs.dt.util.TestRunnerWrapper.main(TestRunnerWrapper.java:56)
+
+FAILURES!!!
+Tests run: 1,  Failures: 0,  Errors: 1
+
+.
+Time: 0
+
+OK (1 test)
+
+.
+Time: 0.061
+
+OK (1 test)
+
+.
+Time: 0
+
+OK (1 test)
+
+.
+Time: 0.012
+
+OK (1 test)
+
+.
+Time: 0.018
+
+OK (1 test)
+
+Execution time: 15202028215
 0-th run
-Pass: 62, Fail: 5, Error: 3
-{org.apache.xml.security.test.c14n.implementations.ExclusiveC14NInterop.test_Y3=ERROR, org.apache.xml.security.test.c14n.implementations.Canonicalizer20010315ExclusiveTest.test222=PASS, org.apache.xml.security.test.utils.Base64Test.testA1=PASS, org.apache.xml.security.test.c14n.implementations.Canonicalizer20010315ExclusiveTest.test221=PASS, org.apache.xml.security.test.c14n.implementations.ExclusiveC14NInterop.test_Y1=PASS, org.apache.xml.security.test.interop.BaltimoreTest.test_fifteen_external_dsa=PASS, org.apache.xml.security.test.interop.IAIKTest.test_signatureAlgorithms_signatures_rSASignature=PASS, org.apache.xml.security.test.interop.IAIKTest.test_signatureAlgorithms_signatures_dSASignature=PASS, org.apache.xml.security.test.interop.BaltimoreTest.test_sixteen_external_dsa=PASS, org.apache.xml.security.test.external.org.apache.xalan.XPathAPI.XalanBug1425Test.testBad01=PASS, org.apache.xml.security.test.transforms.implementations.TransformBase64DecodeTest.test2=PASS, org.apache.xml.security.test.c14n.implementations.Canonicalizer20010315ExclusiveTest.testA=PASS, org.apache.xml.security.test.signature.XMLSignatureInputTest.testSetOctetStreamGetNodeSet1=FAILURE, org.apache.xml.security.test.c14n.implementations.Canonicalizer20010315Test.test37byNodeList=PASS, org.apache.xml.security.test.c14n.implementations.Canonicalizer20010315Test.test31=PASS, org.apache.xml.security.test.interop.BaltimoreTest.test_fifteen_enveloped_dsa=PASS, org.apache.xml.security.test.signature.XMLSignatureInputTest.testSetOctetStreamGetNodeSet3=FAILURE, org.apache.xml.security.test.external.org.apache.xalan.XPathAPI.AttributeAncestorOrSelf.test01=PASS, org.apache.xml.security.test.transforms.implementations.TransformBase64DecodeTest.test3=PASS, org.apache.xml.security.test.c14n.implementations.Canonicalizer20010315Test.test35=PASS, org.apache.xml.security.test.signature.XMLSignatureInputTest.testSetOctetStreamGetOctetStream=PASS, org.apache.xml.security.test.interop.IAIKTest.test_transforms_signatures_xPathSignature=PASS, org.apache.xml.security.test.interop.IAIKTest.test_coreFeatures_signatures_manifestSignature_core=PASS, org.apache.xml.security.test.transforms.implementations.TransformBase64DecodeTest.test1=PASS, org.apache.xml.security.test.c14n.implementations.Canonicalizer20010315Test.testXMLAttributes2=PASS, org.apache.xml.security.test.c14n.implementations.Canonicalizer20010315ExclusiveTest.test222excl=PASS, org.apache.xml.security.test.c14n.implementations.Canonicalizer20010315Test.test34validatingParser=PASS, org.apache.xml.security.test.c14n.implementations.ExclusiveC14NInterop.test_Y2=PASS, org.apache.xml.security.test.c14n.helper.C14nHelperTest.testNamespaceIsAbsolute01=PASS, org.apache.xml.security.test.c14n.implementations.Canonicalizer20010315Test.test31withComments=PASS, org.apache.xml.security.test.signature.XMLSignatureInputTest.testSetNodeSetGetOctetStream1=PASS, org.apache.xml.security.test.c14n.implementations.Canonicalizer20010315ExclusiveTest.test221excl=PASS, org.apache.xml.security.test.interop.BaltimoreTest.test_fifteen_enveloping_dsa=PASS, org.apache.xml.security.test.signature.XMLSignatureInputTest.testNodeSetIsNotOctetStream=PASS, org.apache.xml.security.test.interop.BaltimoreTest.test_fifteen_enveloping_b64_dsa=PASS, org.apache.xml.security.test.c14n.implementations.Canonicalizer20010315Test.testXMLAttributes3=PASS, org.apache.xml.security.test.c14n.helper.C14nHelperTest.testNamespaceIsAbsolute03=PASS, org.apache.xml.security.test.interop.IAIKTest.test_coreFeatures_signatures_manifestSignature_manifest=PASS, org.apache.xml.security.test.c14n.implementations.Canonicalizer20010315Test.testXMLAttributes1=PASS, org.apache.xml.security.test.interop.BaltimoreTest.test_fifteen_enveloping_hmac_sha1=PASS, org.apache.xml.security.test.utils.resolver.ResourceResolverSpiTest.testExpandSystemId_1=PASS, org.apache.xml.security.test.signature.XMLSignatureInputTest.testIsInitializedWithNodeSet=PASS, org.apache.xml.security.test.signature.XMLSignatureInputTest.testSetNodeSetGetNodeSet1=PASS, org.apache.xml.security.test.c14n.implementations.C14NInterop.test_Y4_stripped=FAILURE, org.apache.xml.security.test.signature.XMLSignatureInputTest.testOctetStreamIsOctetStream=PASS, org.apache.xml.security.test.interop.BaltimoreTest.test_fifteen_external_b64_dsa=PASS, org.apache.xml.security.test.interop.RSASecurityTest.test_enveloped=PASS, org.apache.xml.security.test.interop.BaltimoreTest.test_fifteen_enveloping_rsa=PASS, org.apache.xml.security.test.interop.IAIKTest.test_transforms_signatures_envelopedSignatureSignature=PASS, org.apache.xml.security.test.interop.IAIKTest.test_signatureAlgorithms_signatures_hMACShortSignature=PASS, org.apache.xml.security.test.c14n.implementations.Canonicalizer20010315Test.test32=PASS, org.apache.xml.security.test.c14n.helper.C14nHelperTest.testNamespaceIsRelative02=PASS, org.apache.xml.security.test.interop.IAIKTest.test_signatureAlgorithms_signatures_hMACSignature=PASS, org.apache.xml.security.test.signature.XMLSignatureInputTest.testIsInitializedWithOctetStream=PASS, org.apache.xml.security.test.c14n.implementations.Canonicalizer20010315Test.test33=PASS, org.apache.xml.security.test.interop.IAIKTest.test_coreFeatures_signatures_anonymousReferenceSignature=PASS, org.apache.xml.security.test.c14n.helper.C14nHelperTest.testNamespaceIsRelative01=PASS, org.apache.xml.security.test.interop.BaltimoreTest.test_fifteen_enveloping_hmac_sha1_40=PASS, org.apache.xml.security.test.signature.XMLSignatureInputTest.testSetOctetStreamGetNodeSet2=FAILURE, org.apache.xml.security.test.interop.IAIKTest.test_transforms_signatures_base64DecodeSignature=PASS, org.apache.xml.security.test.interop.IAIKTest.test_coreFeatures_signatures_signatureTypesSignature=PASS, org.apache.xml.security.test.c14n.implementations.ExclusiveC14NInterop.test_Y5=FAILURE, org.apache.xml.security.test.interop.RSASecurityTest.test_enveloping=PASS, org.apache.xml.security.test.signature.XMLSignatureInputTest.testSetOctetStreamGetNodeSet4=ERROR, org.apache.xml.security.test.algorithms.implementations.TripleDESWrapperTest.test34=PASS, org.apache.xml.security.test.interop.IAIKTest.test_transforms_signatures_c14nSignature=PASS, org.apache.xml.security.test.c14n.helper.C14nHelperTest.testNamespaceIsAbsolute02=PASS, org.apache.xml.security.test.c14n.implementations.Canonicalizer20010315Test.test37=PASS, org.apache.xml.security.test.c14n.implementations.Canonicalizer20010315Test.test36=PASS, org.apache.xml.security.test.interop.IBMTest.test_enveloping_hmac=ERROR}
+Pass: 63, Fail: 5, Error: 2
+{org.apache.xml.security.test.c14n.implementations.Canonicalizer20010315Test.test31=PASS, org.apache.xml.security.test.interop.BaltimoreTest.test_fifteen_enveloping_hmac_sha1=PASS, org.apache.xml.security.test.c14n.helper.C14nHelperTest.testNamespaceIsAbsolute01=PASS, org.apache.xml.security.test.interop.IAIKTest.test_coreFeatures_signatures_signatureTypesSignature=PASS, org.apache.xml.security.test.interop.BaltimoreTest.test_fifteen_external_b64_dsa=PASS, org.apache.xml.security.test.interop.IAIKTest.test_transforms_signatures_envelopedSignatureSignature=PASS, org.apache.xml.security.test.interop.IAIKTest.test_coreFeatures_signatures_manifestSignature_core=PASS, org.apache.xml.security.test.interop.BaltimoreTest.test_fifteen_enveloped_dsa=PASS, org.apache.xml.security.test.interop.BaltimoreTest.test_fifteen_enveloping_rsa=PASS, org.apache.xml.security.test.transforms.implementations.TransformBase64DecodeTest.test2=PASS, org.apache.xml.security.test.signature.XMLSignatureInputTest.testIsInitializedWithOctetStream=PASS, org.apache.xml.security.test.c14n.implementations.Canonicalizer20010315Test.test35=PASS, org.apache.xml.security.test.interop.BaltimoreTest.test_sixteen_external_dsa=PASS, org.apache.xml.security.test.algorithms.implementations.TripleDESWrapperTest.test34=PASS, org.apache.xml.security.test.c14n.implementations.Canonicalizer20010315ExclusiveTest.testA=PASS, org.apache.xml.security.test.interop.IAIKTest.test_transforms_signatures_base64DecodeSignature=PASS, org.apache.xml.security.test.c14n.implementations.Canonicalizer20010315Test.test36=PASS, org.apache.xml.security.test.interop.IAIKTest.test_transforms_signatures_c14nSignature=PASS, org.apache.xml.security.test.interop.IAIKTest.test_signatureAlgorithms_signatures_dSASignature=PASS, org.apache.xml.security.test.c14n.helper.C14nHelperTest.testNamespaceIsRelative02=PASS, org.apache.xml.security.test.c14n.implementations.Canonicalizer20010315Test.test33=PASS, org.apache.xml.security.test.c14n.implementations.Canonicalizer20010315Test.testXMLAttributes1=PASS, org.apache.xml.security.test.c14n.implementations.Canonicalizer20010315Test.test34validatingParser=PASS, org.apache.xml.security.test.c14n.implementations.ExclusiveC14NInterop.test_Y2=PASS, org.apache.xml.security.test.c14n.implementations.Canonicalizer20010315Test.testXMLAttributes2=PASS, org.apache.xml.security.test.interop.RSASecurityTest.test_enveloped=PASS, org.apache.xml.security.test.c14n.implementations.C14NInterop.test_Y4_stripped=FAILURE, org.apache.xml.security.test.interop.RSASecurityTest.test_enveloping=PASS, org.apache.xml.security.test.c14n.helper.C14nHelperTest.testNamespaceIsAbsolute02=PASS, org.apache.xml.security.test.interop.BaltimoreTest.test_fifteen_external_dsa=PASS, org.apache.xml.security.test.signature.XMLSignatureInputTest.testSetNodeSetGetOctetStream1=PASS, org.apache.xml.security.test.transforms.implementations.TransformBase64DecodeTest.test1=PASS, org.apache.xml.security.test.interop.IAIKTest.test_signatureAlgorithms_signatures_hMACSignature=PASS, org.apache.xml.security.test.interop.IAIKTest.test_signatureAlgorithms_signatures_rSASignature=PASS, org.apache.xml.security.test.signature.XMLSignatureInputTest.testSetOctetStreamGetNodeSet2=FAILURE, org.apache.xml.security.test.signature.XMLSignatureInputTest.testOctetStreamIsOctetStream=PASS, org.apache.xml.security.test.c14n.implementations.Canonicalizer20010315Test.test37byNodeList=PASS, org.apache.xml.security.test.c14n.implementations.Canonicalizer20010315Test.testXMLAttributes3=PASS, org.apache.xml.security.test.interop.IAIKTest.test_coreFeatures_signatures_anonymousReferenceSignature=PASS, org.apache.xml.security.test.interop.IBMTest.test_enveloping_hmac=ERROR, org.apache.xml.security.test.external.org.apache.xalan.XPathAPI.AttributeAncestorOrSelf.test01=PASS, org.apache.xml.security.test.c14n.helper.C14nHelperTest.testNamespaceIsAbsolute03=PASS, org.apache.xml.security.test.c14n.implementations.Canonicalizer20010315ExclusiveTest.test222excl=PASS, org.apache.xml.security.test.c14n.implementations.ExclusiveC14NInterop.test_Y3=PASS, org.apache.xml.security.test.external.org.apache.xalan.XPathAPI.XalanBug1425Test.testBad01=PASS, org.apache.xml.security.test.c14n.implementations.Canonicalizer20010315ExclusiveTest.test222=PASS, org.apache.xml.security.test.transforms.implementations.TransformBase64DecodeTest.test3=PASS, org.apache.xml.security.test.interop.BaltimoreTest.test_fifteen_enveloping_hmac_sha1_40=PASS, org.apache.xml.security.test.interop.IAIKTest.test_coreFeatures_signatures_manifestSignature_manifest=PASS, org.apache.xml.security.test.interop.IAIKTest.test_signatureAlgorithms_signatures_hMACShortSignature=PASS, org.apache.xml.security.test.utils.resolver.ResourceResolverSpiTest.testExpandSystemId_1=PASS, org.apache.xml.security.test.signature.XMLSignatureInputTest.testSetOctetStreamGetNodeSet3=FAILURE, org.apache.xml.security.test.signature.XMLSignatureInputTest.testSetOctetStreamGetNodeSet1=FAILURE, org.apache.xml.security.test.signature.XMLSignatureInputTest.testNodeSetIsNotOctetStream=PASS, org.apache.xml.security.test.c14n.implementations.Canonicalizer20010315Test.test37=PASS, org.apache.xml.security.test.c14n.implementations.ExclusiveC14NInterop.test_Y5=FAILURE, org.apache.xml.security.test.c14n.implementations.ExclusiveC14NInterop.test_Y1=PASS, org.apache.xml.security.test.signature.XMLSignatureInputTest.testSetNodeSetGetNodeSet1=PASS, org.apache.xml.security.test.interop.BaltimoreTest.test_fifteen_enveloping_b64_dsa=PASS, org.apache.xml.security.test.signature.XMLSignatureInputTest.testIsInitializedWithNodeSet=PASS, org.apache.xml.security.test.c14n.implementations.Canonicalizer20010315Test.test32=PASS, org.apache.xml.security.test.interop.IAIKTest.test_transforms_signatures_xPathSignature=PASS, org.apache.xml.security.test.c14n.implementations.Canonicalizer20010315ExclusiveTest.test221=PASS, org.apache.xml.security.test.utils.Base64Test.testA1=PASS, org.apache.xml.security.test.signature.XMLSignatureInputTest.testSetOctetStreamGetNodeSet4=ERROR, org.apache.xml.security.test.c14n.helper.C14nHelperTest.testNamespaceIsRelative01=PASS, org.apache.xml.security.test.interop.BaltimoreTest.test_fifteen_enveloping_dsa=PASS, org.apache.xml.security.test.signature.XMLSignatureInputTest.testSetOctetStreamGetOctetStream=PASS, org.apache.xml.security.test.c14n.implementations.Canonicalizer20010315ExclusiveTest.test221excl=PASS, org.apache.xml.security.test.c14n.implementations.Canonicalizer20010315Test.test31withComments=PASS}
 

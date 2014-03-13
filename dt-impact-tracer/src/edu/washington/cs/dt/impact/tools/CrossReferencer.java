@@ -72,21 +72,22 @@ public class CrossReferencer {
         Map<String, RESULT> testOrderResults = processFile(file2);
         Set<String> changedTests = new HashSet<String>();
         Set<String> origOrderResultsCopy = new HashSet<String>(origOrderResults.keySet());
+        Set<String> testOrderOnly = new HashSet<String>();
 
         int longestKey = 0;
         for (String key : testOrderResults.keySet()) {
-            if (!origOrderResults.containsKey(key)) {
-                throw new RuntimeException("Test order contains tests the original order did not: " + key);
-            }
+            if (origOrderResults.containsKey(key)) {
+                origOrderResultsCopy.remove(key);
 
-            origOrderResultsCopy.remove(key);
+                if (origOrderResults.get(key) != testOrderResults.get(key)) {
+                    changedTests.add(key);
 
-            if (origOrderResults.get(key) != testOrderResults.get(key)) {
-                changedTests.add(key);
-
-                if (key.length() > longestKey) {
-                    longestKey = key.length();
+                    if (key.length() > longestKey) {
+                        longestKey = key.length();
+                    }
                 }
+            } else {
+                testOrderOnly.add(key);
             }
         }
 
@@ -97,7 +98,7 @@ public class CrossReferencer {
         }
 
         System.out.println("Number of Inconsistent Tests Found: " + changedTests.size());
-        System.out.println("Number of Tests Missing: " + origOrderResultsCopy.size());
+        System.out.println("Number of Tests Missing: " + origOrderResultsCopy.size() + testOrderOnly.size());
 
         char[] spaces = new char[longestKey];
         Arrays.fill(spaces, ' ');
@@ -111,6 +112,12 @@ public class CrossReferencer {
             spaces = new char[longestKey - key.length()];
             Arrays.fill(spaces, ' ');
             System.out.println(key + ": " + new String(spaces) + origOrderResults.get(key) + columnSpaceString + testOrderResults.get(key));
+        }
+
+        for (String key : testOrderOnly) {
+            spaces = new char[longestKey - key.length() + 4 + columnSpaceString.length()];
+            Arrays.fill(spaces, ' ');
+            System.out.println(key + ": " + new String(spaces) + testOrderResults.get(key));
         }
 
         for (String key : origOrderResultsCopy) {
