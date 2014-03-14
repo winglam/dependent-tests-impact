@@ -1,7 +1,7 @@
 testType=orig
 experiment=jfreechart
 experimentCP=impact-tools/*:bin/:lib/*
-dependentFree=true
+dependentFree=false
 
 function clearEnv() {
   :
