@@ -1,7 +1,7 @@
 testType=orig
 experiment=jodatime
 experimentCP=impact-tools/*:bin/:resources/:lib/*
-dependentFree=false
+dependentFree=true
 
 function clearEnv() {
   :
@@ -15,6 +15,7 @@ instrumentFiles $experimentCP
 java -cp impact-tools/*:sootOutput:resources/:lib/* edu.washington.cs.dt.main.ImpactMain $experiment-$testType-order
 
 # generate test orders
+getCoveragesOrders $experiment $experimentCP $testType $dependentFree
 clearEnv
 java -cp $experimentCP edu.washington.cs.dt.main.ImpactMain $experiment-$testType-order > $experiment-$testType-order-results.txt
 rm -rf $experiment-tp-summary.txt

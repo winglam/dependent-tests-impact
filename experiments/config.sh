@@ -64,6 +64,18 @@ function runCoveragesOrders() {
   done
 }
 
+function getCoveragesOrders() {
+  for i in "${coverages[@]}"; do 
+    for j in "${orders[@]}"; do  
+      if [ "$4" = true ] ; then 
+        java -cp $impactJarCP $testListGenClass -technique prioritization -coverage $i -order $j -outputFile $1-tp-$i-$j-coverage.txt -dependentTestFile $1-dt -getCoverage
+      else
+        java -cp $impactJarCP $testListGenClass -technique prioritization -coverage $i -order $j -outputFile $1-tp-$i-$j-coverage.txt -getCoverage
+      fi
+    done
+  done
+}
+
 function parallelExec() {
   java -cp $2 edu.washington.cs.dt.main.ImpactMain $1-$3-order -getTime > $1-$3-time.txt
   for k in "${machines[@]}"; do 

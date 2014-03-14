@@ -11,13 +11,13 @@ import edu.washington.cs.dt.impact.data.TestFunctionStatement;
 public class Relative extends Standard {
     private Set<String> allLines;
 
-    public Relative(String outputFileName, List<TestFunctionStatement> methodList, Set<String> allLines) {
+    public Relative(String outputFileName, List<TestFunctionStatement> methodList, final Set<String> allLines) {
         super(outputFileName, methodList);
         this.allLines = allLines;
         this.methodList = generateRelativeOrderList();
     }
 
-    public List<TestFunctionStatement> generateRelativeOrderList() {
+    private List<TestFunctionStatement> generateRelativeOrderList() {
         List<TestFunctionStatement> returnList = new LinkedList<TestFunctionStatement>();
         Set<String> currentLines = new HashSet<String>(allLines);
         while (methodList.size() > 0) {
@@ -40,5 +40,9 @@ public class Relative extends Standard {
             Collections.sort(methodList);
         }
         return returnList;
+    }
+
+    public List<TestFunctionStatement> getMethodList() {
+        return methodList;
     }
 }
