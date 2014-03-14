@@ -5,10 +5,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import edu.washington.cs.dt.impact.technique.Test;
 import edu.washington.cs.dt.impact.technique.Parallelization;
 import edu.washington.cs.dt.impact.technique.Prioritization;
 import edu.washington.cs.dt.impact.technique.Selection;
+import edu.washington.cs.dt.impact.technique.Test;
 import edu.washington.cs.dt.impact.util.Constants;
 import edu.washington.cs.dt.impact.util.Constants.COVERAGE;
 import edu.washington.cs.dt.impact.util.Constants.ORDER;
@@ -131,6 +131,11 @@ public class TestListGenerator {
             dependentTestFile = new File(argsList.get(dependentFileNameIndex));
         }
 
+        boolean getCoverage = false;
+        if (techniqueName == TECHNIQUE.PRIORITIZATION) {
+            getCoverage = argsList.indexOf("-getCoverage") != -1;
+        }
+
         File selectionOutput1 = null;
         File selectionOutput2 = null;
         File origOrder = null;
@@ -191,7 +196,6 @@ public class TestListGenerator {
         int numOfMachines = 1;
         File timeOrder = null;
         if (techniqueName == TECHNIQUE.PARALLELIZATION) {
-            // get directory of old version's selection output
             int numOfMachinesIndex = argsList.indexOf("-numOfMachines");
             if (numOfMachinesIndex != -1) {
                 int numOfMachinesIntIndex = numOfMachinesIndex + 1;
@@ -239,7 +243,7 @@ public class TestListGenerator {
 
         Test testObj = null;
         if (techniqueName == TECHNIQUE.PRIORITIZATION) {
-            testObj = new Prioritization(order, outputFileName, testInputDir, coverage, dependentTestFile);
+            testObj = new Prioritization(order, outputFileName, testInputDir, coverage, dependentTestFile, getCoverage);
         } else if (techniqueName == TECHNIQUE.SELECTION) {
             testObj = new Selection(order, outputFileName, testInputDir, coverage, selectionOutput1, selectionOutput2, origOrder, dependentTestFile);
         } else if (techniqueName == TECHNIQUE.PARALLELIZATION) {

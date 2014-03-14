@@ -12,8 +12,8 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-import edu.washington.cs.dt.impact.data.TestList;
 import edu.washington.cs.dt.impact.data.TestFunctionStatement;
+import edu.washington.cs.dt.impact.data.TestList;
 import edu.washington.cs.dt.impact.data.TestTime;
 import edu.washington.cs.dt.impact.order.Relative;
 import edu.washington.cs.dt.impact.order.Standard;
@@ -34,7 +34,7 @@ public class Parallelization extends Test {
         if (order == ORDER.RELATIVE || order == ORDER.ABSOLUTE || order == ORDER.TIME) {
             Collections.sort(methodList);
             if (order == ORDER.RELATIVE) {
-                methodList = new Relative(outputFileName, methodList, allLines).generateRelativeOrderList();
+                methodList = new Relative(outputFileName, methodList, allLines).getMethodList();
             } else if (order == ORDER.TIME) {
                 Map<String, TestFunctionStatement> nameToMethodData = getNameToMethodData(methodList);
                 methodList.clear();
