@@ -1,3 +1,8 @@
+/**
+ * Copyright 2014 University of Washington. All Rights Reserved.
+ * @author Wing Lam
+ */
+
 package edu.washington.cs.dt.impact.Main;
 /* Usage: java MainDriver [soot-options] appClass
  */
@@ -30,13 +35,15 @@ public class MainDriver {
             // get index of input directory
             int inputDirNameIndex = inputDirIndex + 1;
             if (inputDirNameIndex >= argsList.size()) {
-                System.err.println("Input directory argument is specified but a directory path is not. Please use the format: -inputDir adirpath");
+                System.err.println("Input directory argument is specified but a directory"
+                        + " path is not. Please use the format: -inputDir adirpath");
                 System.exit(0);
             }
             String inputDirName = argsList.get(inputDirNameIndex);
             File f = new File(inputDirName);
             if (!f.isDirectory()) {
-                System.err.println("Input directory argument is specified but the directory path is invalid. Please check the directory path.");
+                System.err.println("Input directory argument is specified but the directory"
+                        + " path is invalid. Please check the directory path.");
                 System.exit(0);
             }
             argsList.remove(inputDirNameIndex);
@@ -44,7 +51,8 @@ public class MainDriver {
             argsList.add("-process-path");
             argsList.add(inputDirName);
         } else {
-            System.err.println("No input directory argument is specified. Please use the format: -inputDir adirpath");
+            System.err.println("No input directory argument is specified."
+                    + " Please use the format: -inputDir adirpath");
             System.exit(0);
         }
 
@@ -56,7 +64,8 @@ public class MainDriver {
             int techniqueNameIndex = techniqueIndex + 1;
             if (techniqueNameIndex >= argsList.size()) {
                 System.err
-                .println("Technique argument is specified but technique name is not. Please use the format: -technique aTechniqueName");
+                .println("Technique argument is specified but technique name is not."
+                        + " Please use the format: -technique aTechniqueName");
                 System.exit(0);
             }
 
@@ -67,7 +76,8 @@ public class MainDriver {
                 techniqueName = TECHNIQUE.SELECTION;
             } else {
                 System.err
-                .println("Technique name is invalid. Try \"prioritization-absolute\", \"prioritization-relative\", \"random\" or \"selection\".");
+                .println("Technique name is invalid. Try \"prioritization-absolute\","
+                        + " \"prioritization-relative\", \"random\" or \"selection\".");
                 System.exit(0);
             }
             argsList.remove(techniqueNameIndex);

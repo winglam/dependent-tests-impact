@@ -1,3 +1,10 @@
+/**
+ * Copyright 2014 University of Washington. All Rights Reserved.
+ * @author Wing Lam
+ * 
+ * Contains methods and fields used by all test techniques.
+ */
+
 package edu.washington.cs.dt.impact.technique;
 
 import java.io.BufferedReader;
@@ -16,7 +23,6 @@ import java.util.Set;
 import edu.washington.cs.dt.impact.data.TestFunctionStatement;
 import edu.washington.cs.dt.impact.order.Standard;
 import edu.washington.cs.dt.impact.util.Constants.COVERAGE;
-
 
 public class Test {
     private final String TEST_LINE = "Test: ";
@@ -42,7 +48,8 @@ public class Test {
             // list of tests that when executed after reveals the dependent test
             Map<String, List<String>> execAfter = new HashMap<String, List<String>>();
 
-            Map<String, TestFunctionStatement> nameToMethodData = new HashMap<String, TestFunctionStatement>();
+            Map<String, TestFunctionStatement> nameToMethodData =
+                    new HashMap<String, TestFunctionStatement>();
             for (TestFunctionStatement methodData : allMethodList) {
                 nameToMethodData.put(methodData.getName(), methodData);
             }
@@ -75,7 +82,8 @@ public class Test {
         }
     }
 
-    private void parseDependentTestsFile(File dependentTestsFile, Map<String, List<String>>  execBefore, Map<String, List<String>>  execAfter) {
+    private void parseDependentTestsFile(File dependentTestsFile,
+            Map<String, List<String>>  execBefore, Map<String, List<String>>  execAfter) {
         BufferedReader br;
         try {
             br = new BufferedReader(new FileReader(dependentTestsFile));
@@ -117,7 +125,8 @@ public class Test {
         }
     }
 
-    private List<TestFunctionStatement> listFilesForFolder(final File inputTestFolder, final COVERAGE coverage ) {
+    private List<TestFunctionStatement> listFilesForFolder(final File inputTestFolder,
+            final COVERAGE coverage ) {
         List<TestFunctionStatement> methodList = new LinkedList<TestFunctionStatement>();
         if (inputTestFolder == null) {
             throw new RuntimeException("sootOutput is missing some required classes.");

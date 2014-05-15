@@ -33,7 +33,7 @@ function instrumentFiles() {
 
 function runRandom() {
   if [ "$4" = true ] ; then 
-    java -cp $impactJarCP $testListGenClass -technique prioritization -order random -outputFile $1-random.txt -dependentTestFile $1-dt
+    java -cp $impactJarCP $testListGenClass -technique prioritization -order random -outputFile $1-random.txt -dependentTestFile $1-$2-dt
   else
     java -cp $impactJarCP $testListGenClass -technique prioritization -order random -outputFile $1-random.txt
   fi
@@ -49,7 +49,7 @@ function runCoveragesOrders() {
   for i in "${coverages[@]}"; do 
     for j in "${orders[@]}"; do  
       if [ "$4" = true ] ; then 
-        java -cp $impactJarCP $testListGenClass -technique prioritization -coverage $i -order $j -outputFile $1-tp-$i-$j.txt -dependentTestFile $1-dt
+        java -cp $impactJarCP $testListGenClass -technique prioritization -coverage $i -order $j -outputFile $1-tp-$i-$j.txt -dependentTestFile $1-$3-dt
       else
         java -cp $impactJarCP $testListGenClass -technique prioritization -coverage $i -order $j -outputFile $1-tp-$i-$j.txt
       fi
@@ -68,7 +68,7 @@ function getCoveragesOrders() {
   for i in "${coverages[@]}"; do 
     for j in "${orders[@]}"; do  
       if [ "$4" = true ] ; then 
-        java -cp $impactJarCP $testListGenClass -technique prioritization -coverage $i -order $j -outputFile $1-tp-$i-$j-coverage.txt -dependentTestFile $1-dt -getCoverage
+        java -cp $impactJarCP $testListGenClass -technique prioritization -coverage $i -order $j -outputFile $1-tp-$i-$j-coverage.txt -dependentTestFile $1-$3-dt -getCoverage
       else
         java -cp $impactJarCP $testListGenClass -technique prioritization -coverage $i -order $j -outputFile $1-tp-$i-$j-coverage.txt -getCoverage
       fi
@@ -83,9 +83,9 @@ function parallelExec() {
     rm -rf $1-parallel-time-order-results.txt
     rm -rf $1-parallel-$3-order-results-$k.txt
     if [ "$4" = true ] ; then 
-      java -cp $impactJarCP $testListGenClass -technique parallelization -order random -outputFile $1-parallel-random.txt -numOfMachines $k -dependentTestFile $1-dt
-      java -cp $impactJarCP $testListGenClass -technique parallelization -origOrder $1-$3-order -outputFile $1-parallel-$3-order.txt -numOfMachines $k -dependentTestFile $1-dt
-      java -cp $impactJarCP $testListGenClass -technique parallelization -timeOrder $1-$3-time.txt -outputFile $1-parallel-time.txt -numOfMachines $k -dependentTestFile $1-dt
+      java -cp $impactJarCP $testListGenClass -technique parallelization -order random -outputFile $1-parallel-random.txt -numOfMachines $k -dependentTestFile $1-$3-dt
+      java -cp $impactJarCP $testListGenClass -technique parallelization -origOrder $1-$3-order -outputFile $1-parallel-$3-order.txt -numOfMachines $k -dependentTestFile $1-$3-dt
+      java -cp $impactJarCP $testListGenClass -technique parallelization -timeOrder $1-$3-time.txt -outputFile $1-parallel-time.txt -numOfMachines $k -dependentTestFile $1-$3-dt
     else
       java -cp $impactJarCP $testListGenClass -technique parallelization -order random -outputFile $1-parallel-random.txt -numOfMachines $k
       java -cp $impactJarCP $testListGenClass -technique parallelization -origOrder $1-$3-order -outputFile $1-parallel-$3-order.txt -numOfMachines $k
@@ -111,7 +111,7 @@ function parallelCoveragesOrders() {
       for j in "${orders[@]}"; do 
         rm -rf $1-parallel-$m-$j-results-$k.txt
         if [ "$4" = true ] ; then 
-          java -cp $impactJarCP $testListGenClass -technique parallelization -order $j -coverage $m -outputFile $1-parallel-$m-$j.txt -numOfMachines $k -dependentTestFile $1-dt
+          java -cp $impactJarCP $testListGenClass -technique parallelization -order $j -coverage $m -outputFile $1-parallel-$m-$j.txt -numOfMachines $k -dependentTestFile $1-$3-dt
         else
           java -cp $impactJarCP $testListGenClass -technique parallelization -order $j -coverage $m -outputFile $1-parallel-$m-$j.txt -numOfMachines $k
         fi
@@ -133,7 +133,7 @@ function selectionRunCoveragesOrders() {
   for i in "${coverages[@]}"; do 
     for j in "${selectionOrders[@]}"; do
       if [ "$6" = true ] ; then 
-        java -Xms512m -Xmx1g -cp $impactJarCP $testListGenClass -technique selection -coverage $i -order $j -outputFile $5/$1-ts-$i-$j.txt -oldVersCFG $4/selectionOutput -newVersCFG $5/selectionOutput -testInputDir $4/sootTestOutput -dependentTestFile $4/$1-dt
+        java -Xms512m -Xmx1g -cp $impactJarCP $testListGenClass -technique selection -coverage $i -order $j -outputFile $5/$1-ts-$i-$j.txt -oldVersCFG $4/selectionOutput -newVersCFG $5/selectionOutput -testInputDir $4/sootTestOutput -dependentTestFile $4/$1-$3-dt
       else
         java -Xms512m -Xmx1g -cp $impactJarCP $testListGenClass -technique selection -coverage $i -order $j -outputFile $5/$1-ts-$i-$j.txt -oldVersCFG $4/selectionOutput -newVersCFG $5/selectionOutput -testInputDir $4/sootTestOutput 
       fi
@@ -153,7 +153,7 @@ function selectionRunCoveragesOrders() {
 function selectionRunOrigOrder() {
   for i in "${coverages[@]}"; do 
    if [ "$6" = true ] ; then 
-      java -Xms512m -Xmx1g -cp $impactJarCP $testListGenClass -technique selection -coverage $i -origOrder $5/$1-$3-order -outputFile $5/$1-ts-$i-$3-order.txt -oldVersCFG $4/selectionOutput -newVersCFG $5/selectionOutput -testInputDir $4/sootTestOutput -dependentTestFile $4/$1-dt
+      java -Xms512m -Xmx1g -cp $impactJarCP $testListGenClass -technique selection -coverage $i -origOrder $5/$1-$3-order -outputFile $5/$1-ts-$i-$3-order.txt -oldVersCFG $4/selectionOutput -newVersCFG $5/selectionOutput -testInputDir $4/sootTestOutput -dependentTestFile $4/$1-$3-dt
     else
       java -Xms512m -Xmx1g -cp $impactJarCP $testListGenClass -technique selection -coverage $i -origOrder $5/$1-$3-order -outputFile $5/$1-ts-$i-$3-order.txt -oldVersCFG $4/selectionOutput -newVersCFG $5/selectionOutput -testInputDir $4/sootTestOutput
     fi 

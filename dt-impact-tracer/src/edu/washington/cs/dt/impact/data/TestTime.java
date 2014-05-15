@@ -1,3 +1,11 @@
+/**
+ * Copyright 2014 University of Washington. All Rights Reserved.
+ * @author Wing Lam
+ * 
+ * Data class representing a test case. Contains a time counter representing the time
+ * in nanoseconds it takes to execute this test case.
+ */
+
 package edu.washington.cs.dt.impact.data;
 
 
@@ -10,8 +18,9 @@ public class TestTime extends TestFunctionStatement {
     }
 
     /**
-     * @param isBefore true if the ttd reveals this test as a dependent test if ttd is executed before this test
-     *        false if ttd reveals this test as a dependent test if ttd is executed after this test.
+     * @param isBefore
+     *          true if ttd reveals this test as a dependent test when executed before this test
+     *          false if ttd reveals this test as a dependent test when executed after this test.
      */
     public void addDependentTest(TestTime ttd, boolean isBefore) {
         if (ttd != null) {

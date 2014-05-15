@@ -1,3 +1,11 @@
+/**
+ * Copyright 2014 University of Washington. All Rights Reserved.
+ * @author Wing Lam
+ * 
+ * Creates a list of tests that is ordered with test selection based on the parameters
+ * specified to the constructor.
+ */
+
 package edu.washington.cs.dt.impact.technique;
 
 import java.io.BufferedReader;
@@ -21,13 +29,29 @@ import edu.washington.cs.dt.impact.util.Constants.ORDER;
 
 public class Selection extends Test {
 
-    public Selection(ORDER order, String outputFileName, File inputTestFolder, COVERAGE coverage, File selectionOutput1, File selectionOutput2, File origOrder, File dependentTestsFile) {
+    /**
+     * 
+     * @param order the order in which to order the tests with
+     * @param outputFileName the name of the output file
+     * @param inputTestFolder folder containing all test cases
+     * @param coverage the coverage to consider when processing the test cases
+     * @param selectionOutput1 contains the coverage information of each test case
+     * @param selectionOutput2 contains the coverage information of each test case.
+     *  The coverage information here should differ from selectionOutput1
+     * @param origOrder the original order in which the test cases are ran in
+     * @param dependentTestsFile the file containing the information
+     *  regarding which test depends on which
+     */
+    public Selection(ORDER order, String outputFileName, File inputTestFolder, COVERAGE coverage,
+            File selectionOutput1, File selectionOutput2, File origOrder, File dependentTestsFile) {
         super(inputTestFolder, coverage, dependentTestsFile);
 
         Set<String> changedCoverage = findCoverage(selectionOutput1, selectionOutput2, coverage);
 
-        // removes all tests from consideration if they don't execute any of the methods that has been changed
-        Map<String, TestFunctionStatement> nameToMethodData = new HashMap<String, TestFunctionStatement>();
+        // removes all tests from consideration if they don't execute
+        // any of the methods that has been changed
+        Map<String, TestFunctionStatement> nameToMethodData =
+                new HashMap<String, TestFunctionStatement>();
         for (TestFunctionStatement methodData : methodList) {
             methodData.retainLines(changedCoverage);
             if (methodData.getLineCount() != 0) {
@@ -65,14 +89,16 @@ public class Selection extends Test {
                     e.printStackTrace();
                 }
             } else {
-                System.err.println("Test selection is specified with an incompatible order. Compatible orders are: absolute, relative, random and original.");
+                System.err.println("Test selection is specified with an incompatible order."
+                        + " Compatible orders are: absolute, relative, random and original.");
                 System.exit(0);
             }
             orderObj = new Standard(outputFileName, methodList);
         }
     }
 
-    private  Set<String> findCoverage(File selectionOutput1, File selectionOutput2, final COVERAGE coverage) {
+    private Set<String> findCoverage(File selectionOutput1,
+            File selectionOutput2, final COVERAGE coverage) {
         Map<String, List<String>> oldVersMap = coverageCount(selectionOutput1);
         Map<String, List<String>> newVersMap = coverageCount(selectionOutput2);
         Set<String> changedCoverage = new HashSet<String>();
@@ -80,7 +106,8 @@ public class Selection extends Test {
         if (coverage == COVERAGE.FUNCTION) {
             // generate the list of methods that has been changed
             for (String key : oldVersMap.keySet()) {
-                if (!newVersMap.containsKey(key) || !oldVersMap.get(key).equals(newVersMap.get(key))) {
+                if (!newVersMap.containsKey(key) ||
+                        !oldVersMap.get(key).equals(newVersMap.get(key))) {
                     changedCoverage.add(key);
                 }
             }

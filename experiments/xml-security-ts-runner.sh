@@ -1,4 +1,4 @@
-testType=orig
+testType=auto
 experiment=xml-security
 oldVersCP=impact-tools/*:bin/:../xml-security-commons/bin/:data/:../xml-security-commons/libs/*
 newVersCP=impact-tools/*:bin/:../xml-security-commons/bin/:data/:../xml-security-commons/libs/*
