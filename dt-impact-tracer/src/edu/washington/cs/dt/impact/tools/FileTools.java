@@ -1,3 +1,9 @@
+/**
+ * Copyright 2014 University of Washington. All Rights Reserved.
+ * @author Wing Lam
+ * 
+ * Used for debugging. Compares two test list and outputs the differences.
+ */
 package edu.washington.cs.dt.impact.tools;
 
 import java.io.BufferedReader;
@@ -11,11 +17,10 @@ import java.util.List;
 public class FileTools {
 
     public static void main(String[] args) {
+        BufferedReader br;
 
         File f1 = new File(args[0]);
         List<String> f1Set = new LinkedList<String>();
-
-        BufferedReader br;
         try {
             br = new BufferedReader(new FileReader(f1));
             String line;
@@ -34,7 +39,6 @@ public class FileTools {
 
         File f2 = new File(args[1]);
         List<String> f2Set = new LinkedList<String>();
-
         try {
             br = new BufferedReader(new FileReader(f2));
             String line;
@@ -50,11 +54,10 @@ public class FileTools {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        System.out.println("starting...");
+
         for (String s : f1Set) {
             f2Set.remove(s);
         }
-
         for (String s : f2Set) {
             System.out.println(s);
         }

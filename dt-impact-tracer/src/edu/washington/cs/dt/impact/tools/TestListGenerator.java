@@ -1,3 +1,8 @@
+/**
+ * Copyright 2014 University of Washington. All Rights Reserved.
+ * @author Wing Lam
+ */
+
 package edu.washington.cs.dt.impact.tools;
 
 import java.io.File;
@@ -28,7 +33,8 @@ public class TestListGenerator {
             int techniqueNameIndex = techniqueIndex + 1;
             if (techniqueNameIndex >= argsList.size()) {
                 System.err
-                .println("Technique argument is specified but technique name is not. Please use the format: -technique aTechniqueName");
+                .println("Technique argument is specified but technique name is not."
+                        + " Please use the format: -technique aTechniqueName");
                 System.exit(0);
             }
 
@@ -41,7 +47,8 @@ public class TestListGenerator {
                 techniqueName = TECHNIQUE.PARALLELIZATION;
             } else {
                 System.err
-                .println("Technique name is invalid. Try \"prioritization\", \"selection\" or \"parallelization\".");
+                .println("Technique name is invalid. Try \"prioritization\","
+                        + " \"selection\" or \"parallelization\".");
                 System.exit(0);
             }
         }
@@ -53,14 +60,13 @@ public class TestListGenerator {
             int coverageNameIndex = coverageIndex + 1;
             if (coverageNameIndex >= argsList.size()) {
                 System.err
-                .println("Coverage argument is specified but valid coverage was not. Please use the format: -coverage aCoverageName");
+                .println("Coverage argument is specified but valid coverage was not."
+                        + " Please use the format: -coverage aCoverageName");
                 System.exit(0);
             }
             String coverageStr = argsList.get(coverageNameIndex).trim().toLowerCase();
             if (coverageStr.equals("statement")) {
                 coverage = COVERAGE.STATEMENT;
-            } else if (coverageStr.equals("branch")) {
-                coverage = COVERAGE.BRANCH;
             } else if (coverageStr.equals("function")) {
                 coverage = COVERAGE.FUNCTION;
             } else {
@@ -77,7 +83,8 @@ public class TestListGenerator {
             int coverageNameIndex = orderIndex + 1;
             if (coverageNameIndex >= argsList.size()) {
                 System.err
-                .println("Order argument is specified but valid order was not. Please use the format: -order aOrderName");
+                .println("Order argument is specified but valid order was not."
+                        + " Please use the format: -order aOrderName");
                 System.exit(0);
             }
             String coverageStr = argsList.get(coverageNameIndex).trim().toLowerCase();
@@ -97,7 +104,8 @@ public class TestListGenerator {
             int testInputDirNameIndex = testInputDirIndex + 1;
             if (testInputDirNameIndex >= argsList.size()) {
                 System.err
-                .println("Test input directory argument is specified but a directory name is not. Please use the format: -testInputDir aDirName");
+                .println("Test input directory argument is specified but a directory name is not."
+                        + " Please use the format: -testInputDir aDirName");
                 System.exit(0);
             }
             testInputDir = new File(argsList.get(testInputDirNameIndex));
@@ -111,7 +119,8 @@ public class TestListGenerator {
             int outputFileNameIndex = outputFile + 1;
             if (outputFileNameIndex >= argsList.size()) {
                 System.err
-                .println("Output file argument is specified but a file name is not. Please use the format: -outputFile aFileName");
+                .println("Output file argument is specified but a file name is not."
+                        + " Please use the format: -outputFile aFileName");
                 System.exit(0);
             }
             outputFileName = argsList.get(outputFileNameIndex);
@@ -125,7 +134,8 @@ public class TestListGenerator {
             int dependentFileNameIndex = dependentFile + 1;
             if (dependentFileNameIndex >= argsList.size()) {
                 System.err
-                .println("Dependent test file argument is specified but a file name is not. Please use the format: -dependentTestFile aFileName");
+                .println("Dependent test file argument is specified but a file name is not."
+                        + " Please use the format: -dependentTestFile aFileName");
                 System.exit(0);
             }
             dependentTestFile = new File(argsList.get(dependentFileNameIndex));
@@ -145,16 +155,19 @@ public class TestListGenerator {
             if (oldVersCFGIndex != -1) {
                 int oldVersCFGNameIndex = oldVersCFGIndex + 1;
                 if (oldVersCFGNameIndex >= argsList.size()) {
-                    System.err.println("Old version CFG argument is specified but a directory path is not. Please use the format: -oldVersCFG adirpath");
+                    System.err.println("Old version CFG argument is specified but a directory"
+                            + " path is not. Please use the format: -oldVersCFG adirpath");
                     System.exit(0);
                 }
                 selectionOutput1 = new File(argsList.get(oldVersCFGNameIndex));
                 if (!selectionOutput1.isDirectory()) {
-                    System.err.println("Old version CFG argument is specified but the directory path is invalid. Please check the directory path.");
+                    System.err.println("Old version CFG argument is specified but the directory"
+                            + " path is invalid. Please check the directory path.");
                     System.exit(0);
                 }
             } else {
-                System.err.println("No old version CFG argument is specified. Please use the format: -oldVersCFG adirpath");
+                System.err.println("No old version CFG argument is specified."
+                        + " Please use the format: -oldVersCFG adirpath");
                 System.exit(0);
             }
 
@@ -163,16 +176,19 @@ public class TestListGenerator {
             if (newVersCFGIndex != -1) {
                 int newVersCFGNameIndex = newVersCFGIndex + 1;
                 if (newVersCFGNameIndex >= argsList.size()) {
-                    System.err.println("New version CFG argument is specified but a directory path is not. Please use the format: -newVersCFG adirpath");
+                    System.err.println("New version CFG argument is specified but a directory"
+                            + " path is not. Please use the format: -newVersCFG adirpath");
                     System.exit(0);
                 }
                 selectionOutput2 = new File(argsList.get(newVersCFGNameIndex));
                 if (!selectionOutput2.isDirectory()) {
-                    System.err.println("New version CFG argument is specified but the directory path is invalid. Please check the directory path.");
+                    System.err.println("New version CFG argument is specified but the directory"
+                            + " path is invalid. Please check the directory path.");
                     System.exit(0);
                 }
             } else {
-                System.err.println("No new version CFG argument is specified. Please use the format: -newVersCFG adirpath");
+                System.err.println("No new version CFG argument is specified."
+                        + " Please use the format: -newVersCFG adirpath");
                 System.exit(0);
             }
 
@@ -181,12 +197,14 @@ public class TestListGenerator {
             if (origOrderIndex != -1) {
                 int origOrderNameIndex = origOrderIndex + 1;
                 if (origOrderNameIndex >= argsList.size()) {
-                    System.err.println("Original order argument is specified but a directory path is not. Please use the format: -origOrder afilepath");
+                    System.err.println("Original order argument is specified but a directory"
+                            + " path is not. Please use the format: -origOrder afilepath");
                     System.exit(0);
                 }
                 origOrder = new File(argsList.get(origOrderNameIndex));
                 if (!origOrder.isFile()) {
-                    System.err.println("Original order argument is specified but the file path is invalid. Please check the file path.");
+                    System.err.println("Original order argument is specified but the file"
+                            + " path is invalid. Please check the file path.");
                     System.exit(0);
                 }
                 order = ORDER.ORIGINAL;
@@ -200,12 +218,14 @@ public class TestListGenerator {
             if (numOfMachinesIndex != -1) {
                 int numOfMachinesIntIndex = numOfMachinesIndex + 1;
                 if (numOfMachinesIntIndex >= argsList.size()) {
-                    System.err.println("Number of machines argument is specified but a integer is not. Please use the format: -numOfMachines ainteger");
+                    System.err.println("Number of machines argument is specified but a integer"
+                            + " is not. Please use the format: -numOfMachines ainteger");
                     System.exit(0);
                 }
                 numOfMachines = Integer.parseInt(argsList.get(numOfMachinesIntIndex));
                 if (numOfMachines < 1) {
-                    System.err.println("Number of machines argument is specified but the integer value provided is invalid. Please check the integer value.");
+                    System.err.println("Number of machines argument is specified but the integer"
+                            + " value provided is invalid. Please check the integer value.");
                     System.exit(0);
                 }
             }
@@ -216,12 +236,14 @@ public class TestListGenerator {
                 // get file for the original order in which the tests should be ordered
                 int origOrderNameIndex = origOrderIndex + 1;
                 if (origOrderNameIndex >= argsList.size()) {
-                    System.err.println("Original order argument is specified but a directory path is not. Please use the format: -origOrder afilepath");
+                    System.err.println("Original order argument is specified but a directory"
+                            + " path is not. Please use the format: -origOrder afilepath");
                     System.exit(0);
                 }
                 origOrder = new File(argsList.get(origOrderNameIndex));
                 if (!origOrder.isFile()) {
-                    System.err.println("Original order argument is specified but the file path is invalid. Please check the file path.");
+                    System.err.println("Original order argument is specified but the file path"
+                            + " is invalid. Please check the file path.");
                     System.exit(0);
                 }
                 order = ORDER.ORIGINAL;
@@ -229,12 +251,14 @@ public class TestListGenerator {
                 // get file for the time each test took
                 int timeOrderNameIndex = timeOrderIndex + 1;
                 if (timeOrderNameIndex >= argsList.size()) {
-                    System.err.println("Time order argument is specified but a directory path is not. Please use the format: -timeOrder afilepath");
+                    System.err.println("Time order argument is specified but a directory path"
+                            + " is not. Please use the format: -timeOrder afilepath");
                     System.exit(0);
                 }
                 timeOrder = new File(argsList.get(timeOrderNameIndex));
                 if (!timeOrder.isFile()) {
-                    System.err.println("Time order argument is specified but the file path is invalid. Please check the file path.");
+                    System.err.println("Time order argument is specified but the file path"
+                            + " is invalid. Please check the file path.");
                     System.exit(0);
                 }
                 order = ORDER.TIME;
@@ -243,11 +267,14 @@ public class TestListGenerator {
 
         Test testObj = null;
         if (techniqueName == TECHNIQUE.PRIORITIZATION) {
-            testObj = new Prioritization(order, outputFileName, testInputDir, coverage, dependentTestFile, getCoverage);
+            testObj = new Prioritization(order, outputFileName, testInputDir, coverage,
+                    dependentTestFile, getCoverage);
         } else if (techniqueName == TECHNIQUE.SELECTION) {
-            testObj = new Selection(order, outputFileName, testInputDir, coverage, selectionOutput1, selectionOutput2, origOrder, dependentTestFile);
+            testObj = new Selection(order, outputFileName, testInputDir, coverage,
+                    selectionOutput1, selectionOutput2, origOrder, dependentTestFile);
         } else if (techniqueName == TECHNIQUE.PARALLELIZATION) {
-            testObj = new Parallelization(order, outputFileName, testInputDir, coverage, dependentTestFile, numOfMachines, origOrder, timeOrder);
+            testObj = new Parallelization(order, outputFileName, testInputDir, coverage,
+                    dependentTestFile, numOfMachines, origOrder, timeOrder);
         }
 
         testObj.printResults();

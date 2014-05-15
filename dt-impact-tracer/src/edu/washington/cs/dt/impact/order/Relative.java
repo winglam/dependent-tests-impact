@@ -1,3 +1,10 @@
+/**
+ * Copyright 2014 University of Washington. All Rights Reserved.
+ * @author Wing Lam
+ * 
+ * Generates a relative order list based on a list of TestFunctionStatement.
+ */
+
 package edu.washington.cs.dt.impact.order;
 
 import java.util.Collections;
@@ -11,7 +18,8 @@ import edu.washington.cs.dt.impact.data.TestFunctionStatement;
 public class Relative extends Standard {
     private Set<String> allLines;
 
-    public Relative(String outputFileName, List<TestFunctionStatement> methodList, final Set<String> allLines) {
+    public Relative(String outputFileName, List<TestFunctionStatement> methodList,
+            final Set<String> allLines) {
         super(outputFileName, methodList);
         this.allLines = allLines;
         this.methodList = generateRelativeOrderList();

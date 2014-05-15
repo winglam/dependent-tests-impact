@@ -1,3 +1,11 @@
+/**
+ * Copyright 2014 University of Washington. All Rights Reserved.
+ * @author Wing Lam
+ * 
+ * A list of TestFunctionStatement with a counter. The counter represents the sum of the number
+ * of lines in each of the TestFunctionStatement the list contains.
+ */
+
 package edu.washington.cs.dt.impact.data;
 
 import java.util.Collections;

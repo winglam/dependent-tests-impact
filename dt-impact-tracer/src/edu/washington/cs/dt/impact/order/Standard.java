@@ -1,3 +1,11 @@
+/**
+ * Copyright 2014 University of Washington. All Rights Reserved.
+ * @author Wing Lam
+ * 
+ * Reorders a list of TestFunctionStatement based on its dependent tests if specified to do so.
+ * Prints the ordered list of tests.
+ */
+
 package edu.washington.cs.dt.impact.order;
 
 import java.io.BufferedWriter;
@@ -29,7 +37,8 @@ public class Standard {
         this.methodList = dtMethodList;
     }
 
-    private int sortDT(int index, List<TestFunctionStatement> dtMethodList, Set<TestFunctionStatement> printedTests, TestFunctionStatement methodData) {
+    private int sortDT(int index, List<TestFunctionStatement> dtMethodList,
+            Set<TestFunctionStatement> printedTests, TestFunctionStatement methodData) {
         if (!printedTests.contains(methodData)) {
             Set<TestFunctionStatement> execBefore = methodData.getDependentTests(true);
             for (TestFunctionStatement tmd : execBefore) {

@@ -1,6 +1,11 @@
+/**
+ * Copyright 2014 University of Washington. All Rights Reserved.
+ * @author Wing Lam
+ */
+
 package edu.washington.cs.dt.impact.util;
+
 /*
- * InvokeStaticInstrumenter inserts count instructions before
  * INVOKESTATIC bytecode in a program. The instrumented program will
  * report how many static invocations happen in a run.
  *
@@ -64,9 +69,8 @@ import edu.washington.cs.dt.impact.util.Constants.TECHNIQUE;
 
 public class Instrumenter extends BodyTransformer{
 
-    /* some internal fields */
-    static SootClass tracerClass;
-    static SootMethod trace, output, reset, selectionOutput, selectionTrace;
+    private static SootClass tracerClass;
+    private static SootMethod trace, output, reset, selectionOutput, selectionTrace;
     private static final String JUNIT4_TAG = "VisibilityAnnotationTag";
     private static final String JUNIT4_TYPE = "Lorg/junit/Test;";
     private static final String JUNIT4_BEFORE = "Lorg/junit/Before;";
@@ -76,19 +80,17 @@ public class Instrumenter extends BodyTransformer{
     private static final String JUNIT3_METHOD_PREFIX = "test";
     private static TECHNIQUE technique = Constants.DEFAULT_TECHNIQUE;
 
-    static {
-        tracerClass    = Scene.v().loadClassAndSupport("edu.washington.cs.dt.impact.util.Tracer");
+    public Instrumenter() {
+        tracerClass = Scene.v().loadClassAndSupport("edu.washington.cs.dt.impact.util.Tracer");
         trace = tracerClass.getMethodByName("trace");
         selectionTrace = tracerClass.getMethodByName("selectionTrace");
         selectionOutput = tracerClass.getMethodByName("selectionOutput");
-        output   = tracerClass.getMethodByName("output");
-        reset   = tracerClass.getMethodByName("reset");
-    }
-
-    public Instrumenter() {
+        output = tracerClass.getMethodByName("output");
+        reset = tracerClass.getMethodByName("reset");
     }
 
     public Instrumenter(TECHNIQUE t) {
+        this();
         technique = t;
     }
 
@@ -96,7 +98,8 @@ public class Instrumenter extends BodyTransformer{
      * counter instructions before an INVOKESTATIC instruction
      */
     @Override
-    protected void internalTransform(Body body, String phase, Map options) {
+    protected void internalTransform(Body body, String phase,
+            @SuppressWarnings("rawtypes") Map options) {
         // body's method
         SootMethod method = body.getMethod();
 
@@ -115,7 +118,8 @@ public class Instrumenter extends BodyTransformer{
                     isJUnit4 = at.getType().equals(JUNIT4_TYPE);
                 }
                 if (!isSetupOrTeardown) {
-                    isSetupOrTeardown = at.getType().equals(JUNIT4_BEFORE) || at.getType().equals(JUNIT4_AFTER);
+                    isSetupOrTeardown = at.getType().equals(JUNIT4_BEFORE)
+                            || at.getType().equals(JUNIT4_AFTER);
                 }
             }
         }
@@ -150,21 +154,9 @@ public class Instrumenter extends BodyTransformer{
 
         String packageMethodName = method.getDeclaringClass().getName() + "." + method.getName();
         if (isJUnit4 || isJUnit3) {
-            // label0:
-            //   ... (method body -- before final return)
-            // label1:
-            //   goto label3
-            // label2:
-            //   local1 := @caughtexception;
-            //   local1.printStackTrace(System.out);
-            // label3:
-            //   return  (end of old method body)
-            //
-            // catch java.lang.Throwable from label0 to label1 with label2;
 
             // get access to Throwable class and toString method
             SootClass thrwCls = Scene.v().getSootClass("java.lang.Throwable");
-            //            SootMethod initThrow = thrwCls.getMethod("java.lang.Throwable initCause(java.lang.Throwable)");
 
             // create probe from label1 to label3 (excluding return)
             List<Stmt> probe = new ArrayList<Stmt>();
@@ -194,11 +186,11 @@ public class Instrumenter extends BodyTransformer{
             probe.add(sCatch);
 
             // TODO after catching an exception in a test, throw the exception back
-            //            Type throwType = thrwCls.getType();
-            //            Local lSysOut = getCreateLocal(body, "<throw>", throwType);
-            //            Stmt callThrow = Jimple.v().newInvokeStmt(Jimple.v().newVirtualInvokeExpr(lException1, initThrow.makeRef(),
-            //                    lSysOut));
-            //            probe.add(callThrow);
+            // Type throwType = thrwCls.getType();
+            // Local lSysOut = getCreateLocal(body, "<throw>", throwType);
+            // Stmt callThrow = Jimple.v().newInvokeStmt(Jimple.v().newVirtualInvokeExpr(lException1, initThrow.makeRef(),
+            //         lSysOut));
+            // probe.add(callThrow);
 
             insertRightBeforeNoRedirect(pchain, probe, sLast);
 
@@ -226,8 +218,8 @@ public class Instrumenter extends BodyTransformer{
                         units.insertAfter(resetStmt, reportStmt);
                     } else {
                         // output the contents of the tracer
-                        InvokeExpr reportExpr= Jimple.v().newStaticInvokeExpr(selectionOutput.makeRef(),
-                                StringConstant.v(packageMethodName));
+                        InvokeExpr reportExpr= Jimple.v().newStaticInvokeExpr(
+                                selectionOutput.makeRef(), StringConstant.v(packageMethodName));
                         Stmt reportStmt = Jimple.v().newInvokeStmt(reportExpr);
                         units.insertBefore(reportStmt, stmt);
 
@@ -260,13 +252,17 @@ public class Instrumenter extends BodyTransformer{
 
                     if (!duplicates.contains(current)) {
                         List<Unit> children = ug.getSuccsOf(current);
-                        // hack to not check identity statements (parameters)
+                        // don't check identity statements (parameters)
                         if (!(stmt instanceof IdentityStmt)) {
                             for (Unit u : children) {
-                                sb.append(packageMethodName + " : " + current.toString().split(" goto")[0] + " >>>>>>>> " + packageMethodName + " : " + u.toString().split(" goto")[0] + "\n");
+                                sb.append(packageMethodName + " : "
+                                        + current.toString().split(" goto")[0] + " >>>>>>>> "
+                                        + packageMethodName + " : "
+                                        + u.toString().split(" goto")[0] + "\n");
                             }
-                            InvokeExpr incExpr= Jimple.v().newStaticInvokeExpr(selectionTrace.makeRef(),
-                                    StringConstant.v(stmt.toString()), StringConstant.v(packageMethodName));
+                            InvokeExpr incExpr= Jimple.v().newStaticInvokeExpr(
+                                    selectionTrace.makeRef(), StringConstant.v(stmt.toString()),
+                                    StringConstant.v(packageMethodName));
                             Stmt incStmt = Jimple.v().newInvokeStmt(incExpr);
                             incStmts.add(incStmt);
                             stmts.add(stmt);
@@ -300,7 +296,8 @@ public class Instrumenter extends BodyTransformer{
                         lines.add(t.getLineNumber());
 
                         InvokeExpr incExpr= Jimple.v().newStaticInvokeExpr(trace.makeRef(),
-                                StringConstant.v(stmt.toString()), StringConstant.v(packageMethodName));
+                                StringConstant.v(stmt.toString()),
+                                StringConstant.v(packageMethodName));
                         Stmt incStmt = Jimple.v().newInvokeStmt(incExpr);
                         units.insertBefore(incStmt, stmt);
                     }
@@ -340,7 +337,8 @@ public class Instrumenter extends BodyTransformer{
         }
     }
 
-    private void insertRightBeforeNoRedirect(PatchingChain<Unit> pchain, List<Stmt> instrumCode, Stmt s) {
+    private void insertRightBeforeNoRedirect(PatchingChain<Unit> pchain,
+            List<Stmt> instrumCode, Stmt s) {
         assert !(s instanceof IdentityStmt);
         for (Object stmt : instrumCode) {
             pchain.insertBeforeNoRedirect((Unit) stmt, s);

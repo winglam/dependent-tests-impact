@@ -1,3 +1,13 @@
+/**
+ * Copyright 2014 University of Washington. All Rights Reserved.
+ * @author Wing Lam
+ * 
+ * Takes two file arguments and determines whether the test results
+ * in the two files are the same. A file indicating the number of
+ * inconsistent tests, missing tests and additional tests in the two
+ * files are generated.
+ */
+
 package edu.washington.cs.dt.impact.tools;
 
 import java.io.BufferedReader;
@@ -12,7 +22,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-
 
 public class CrossReferencer {
     private enum RESULT {
@@ -33,16 +42,19 @@ public class CrossReferencer {
             int file1NameIndex = file1Index + 1;
             if (file1NameIndex >= argsList.size()) {
                 System.err
-                .println("Original order argument is specified but a file name is not. Please use the format: -origOrder aFileName");
+                .println("Original order argument is specified but a file name is not."
+                        + " Please use the format: -origOrder aFileName");
                 System.exit(0);
             }
             file1 = new File(argsList.get(file1NameIndex));
             if (!file1.isFile()) {
-                System.err.println("Original order argument is specified but the file path is invalid. Please check the file path.");
+                System.err.println("Original order argument is specified but the file path is"
+                        + " invalid. Please check the file path.");
                 System.exit(0);
             }
         } else {
-            System.err.println("No original order argument is specified. Please use the format: -origOrder aFileName");
+            System.err.println("No original order argument is specified."
+                    + " Please use the format: -origOrder aFileName");
             System.exit(0);
         }
 
@@ -54,16 +66,19 @@ public class CrossReferencer {
             int file2NameIndex = file2Index + 1;
             if (file2NameIndex >= argsList.size()) {
                 System.err
-                .println("Test order argument is specified but a file name is not. Please use the format: -testOrder aFileName");
+                .println("Test order argument is specified but a file name is not."
+                        + " Please use the format: -testOrder aFileName");
                 System.exit(0);
             }
             file2 = new File(argsList.get(file2NameIndex));
             if (!file2.isFile()) {
-                System.err.println("Test order argument is specified but the file path is invalid. Please check the file path.");
+                System.err.println("Test order argument is specified"
+                        + " but the file path is invalid. Please check the file path.");
                 System.exit(0);
             }
         } else {
-            System.err.println("No test order argument is specified. Please use the format: -testOrder aFileName");
+            System.err.println("No test order argument is specified."
+                    + " Please use the format: -testOrder aFileName");
             System.exit(0);
         }
 
@@ -103,7 +118,8 @@ public class CrossReferencer {
 
         char[] spaces = new char[longestKey];
         Arrays.fill(spaces, ' ');
-        System.out.println(new String(spaces) + "  Original order result:        Test order result:");
+        System.out.println(new String(spaces)
+        + "  Original order result:        Test order result:");
 
         char[] columnSpaces = new char[26];
         Arrays.fill(columnSpaces, ' ');
@@ -112,7 +128,8 @@ public class CrossReferencer {
         for (String key : changedTests) {
             spaces = new char[longestKey - key.length()];
             Arrays.fill(spaces, ' ');
-            System.out.println(key + ": " + new String(spaces) + origOrderResults.get(key) + columnSpaceString + testOrderResults.get(key));
+            System.out.println(key + ": " + new String(spaces) + origOrderResults.get(key)
+                    + columnSpaceString + testOrderResults.get(key));
         }
 
         for (String key : testOrderOnly) {
@@ -139,7 +156,8 @@ public class CrossReferencer {
             br = new BufferedReader(new FileReader(f));
             String line = br.readLine();
             while(line != null) {
-                while (line != null && !line.matches("^Pass: [0-9]+, Fail: [0-9]+, Error: [0-9]+$")) {
+                while (line != null
+                        && !line.matches("^Pass: [0-9]+, Fail: [0-9]+, Error: [0-9]+$")) {
                     line = br.readLine();
                 }
 
@@ -157,7 +175,8 @@ public class CrossReferencer {
                 if (testResults.length >= 1) {
                     testResults[0] = testResults[0].substring(1);
                     String lastTest = testResults[testResults.length - 1];
-                    testResults[testResults.length - 1] = lastTest.substring(0, lastTest.length() - 1);
+                    testResults[testResults.length - 1] =
+                            lastTest.substring(0, lastTest.length() - 1);
 
                     for (String s : testResults) {
                         String[] testAndResult = s.split("=");

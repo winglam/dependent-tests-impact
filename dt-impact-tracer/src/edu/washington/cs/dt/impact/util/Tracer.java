@@ -1,3 +1,10 @@
+/**
+ * Copyright 2014 University of Washington. All Rights Reserved.
+ * @author Wing Lam
+ * 
+ * Used by the Instrumenter to record the statements and functions a test case covers.
+ */
+
 package edu.washington.cs.dt.impact.util;
 
 import java.io.BufferedWriter;
@@ -72,7 +79,9 @@ public class Tracer {
 
     public static void selectionTrace(String str, String packageMethodName) {
         String s = packageMethodName + " : " + str.split(" goto")[0];
-        if (str.contains("staticinvoke <edu.washington.cs.dt.impact.util.Tracer: void selectionTrace(java.lang.String,java.lang.String)>") || duplicates.contains(s)) {
+        if (str.contains("staticinvoke <edu.washington.cs.dt.impact.util.Tracer:"
+                + " void selectionTrace(java.lang.String,java.lang.String)>")
+                || duplicates.contains(s)) {
             return;
         }
 

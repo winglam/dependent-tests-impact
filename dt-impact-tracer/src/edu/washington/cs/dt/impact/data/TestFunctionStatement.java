@@ -1,3 +1,10 @@
+/**
+ * Copyright 2014 University of Washington. All Rights Reserved.
+ * @author Wing Lam
+ * 
+ * Data class representing a test case.
+ */
+
 package edu.washington.cs.dt.impact.data;
 
 import java.util.Collections;
@@ -8,7 +15,9 @@ import java.util.Set;
 public class TestFunctionStatement implements Comparable<TestFunctionStatement> {
 
     private String methodName;
+    // all lines that this test method contains
     private Set<String> allLines;
+    // current lines of this test method that have yet to be covered
     private Set<String> currentLines;
 
     // list of tests that when executed before reveals methodName as a dependent test
@@ -25,8 +34,9 @@ public class TestFunctionStatement implements Comparable<TestFunctionStatement> 
     }
 
     /**
-     * @param isBefore true if the tmd reveals this test as a dependent test if tmd is executed before this test
-     *        false if tmd reveals this test as a dependent test if tmd is executed after this test.
+     * @param isBefore
+     *          true if tmd reveals this test as a dependent test when executed before this test
+     *          false if tmd reveals this test as a dependent test when executed after this test.
      */
     public void addDependentTest(TestFunctionStatement tmd, boolean isBefore) {
         if (tmd != null) {
