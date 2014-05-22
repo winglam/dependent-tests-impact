@@ -2,7 +2,6 @@
  * Copyright 2014 University of Washington. All Rights Reserved.
  * @author Wing Lam
  */
-
 package edu.washington.cs.dt.impact.tools;
 
 import java.io.File;
