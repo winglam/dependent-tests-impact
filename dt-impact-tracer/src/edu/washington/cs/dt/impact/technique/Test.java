@@ -12,6 +12,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -37,7 +38,7 @@ public class Test {
     public Test(File folder, COVERAGE coverage, File dependentTestsFile) {
         allLines = new HashSet<String>();
         allMethodList = listFilesForFolder(folder, coverage);
-        methodList = new LinkedList<TestFunctionStatement>(allMethodList);
+        methodList = new ArrayList<TestFunctionStatement>(allMethodList);
         processDependentTests(dependentTestsFile);
     }
 

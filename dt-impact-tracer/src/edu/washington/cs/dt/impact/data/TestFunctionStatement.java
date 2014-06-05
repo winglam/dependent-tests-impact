@@ -10,15 +10,21 @@ package edu.washington.cs.dt.impact.data;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
+import java.util.Observable;
+import java.util.Observer;
 import java.util.Set;
 
-public class TestFunctionStatement implements Comparable<TestFunctionStatement> {
+public class TestFunctionStatement extends Observable implements Comparable<TestFunctionStatement>, Observer {
 
     private String methodName;
     // all lines that this test method contains
     private Set<String> allLines;
     // current lines of this test method that have yet to be covered
     private Set<String> currentLines;
+
+    private Set<Set<String>> tests;
+    private Set<TestFunctionStatement> observers;
+
 
     // list of tests that when executed before reveals methodName as a dependent test
     protected Set<TestFunctionStatement> execBefore;
@@ -31,6 +37,9 @@ public class TestFunctionStatement implements Comparable<TestFunctionStatement> 
         allLines = new LinkedHashSet<String>();
         execBefore = new HashSet<TestFunctionStatement>();
         execAfter = new HashSet<TestFunctionStatement>();
+        observers = new HashSet<TestFunctionStatement>();
+        tests = new HashSet<Set<String>>();
+        tests.add(currentLines);
     }
 
     /**
@@ -40,13 +49,27 @@ public class TestFunctionStatement implements Comparable<TestFunctionStatement> 
      */
     public void addDependentTest(TestFunctionStatement tmd, boolean isBefore) {
         if (tmd != null) {
-            allLines.addAll(tmd.getLines());
+            tmd.customAddObserver(this);
+            tests.addAll(tmd.getTests());
+            setChanged();
+            notifyObservers(new HashSet<Object>());
+            //            tests.addAll(tmd.getTests());
+            //            allLines.addAll(tmd.getLines());
             if (isBefore) {
                 execBefore.add(tmd);
             } else {
                 execAfter.add(tmd);
             }
         }
+    }
+
+    public void customAddObserver(TestFunctionStatement tmd) {
+        observers.add(tmd);
+        this.addObserver(tmd);
+    }
+
+    public Set<TestFunctionStatement> getObservers() {
+        return observers;
     }
 
     public Set<TestFunctionStatement> getDependentTests(boolean isBefore) {
@@ -58,7 +81,12 @@ public class TestFunctionStatement implements Comparable<TestFunctionStatement> 
     }
 
     public long getLineCount() {
-        return currentLines.size();
+        Set<String> lines = new HashSet<String>();
+        for (Set<String> s : tests) {
+            lines.addAll(s);
+        }
+        return lines.size();
+        //        return currentLines.size();
     }
 
     public String getName() {
@@ -70,7 +98,8 @@ public class TestFunctionStatement implements Comparable<TestFunctionStatement> 
     }
 
     public void reset() {
-        currentLines = new LinkedHashSet<String>(allLines);
+        currentLines.clear();
+        currentLines.addAll(allLines);
     }
 
     public void removeLines(Set<String> lines) {
@@ -82,7 +111,16 @@ public class TestFunctionStatement implements Comparable<TestFunctionStatement> 
     }
 
     public Set<String> getLines() {
-        return Collections.unmodifiableSet(currentLines);
+        Set<String> lines = new HashSet<String>();
+        for (Set<String> s : tests) {
+            lines.addAll(s);
+        }
+        return Collections.unmodifiableSet(lines);
+        //        return Collections.unmodifiableSet(currentLines);
+    }
+
+    public Set<Set<String>> getTests() {
+        return tests;
     }
 
     @Override
@@ -101,6 +139,27 @@ public class TestFunctionStatement implements Comparable<TestFunctionStatement> 
             return -1;
         } else {
             return 0;
+        }
+    }
+
+    @SuppressWarnings("unchecked")
+    @Override
+    public void update(Observable o, Object arg) {
+        if (!(arg instanceof HashSet<?>)){
+            throw new RuntimeException("Observer received incompatible arg.");
+        }
+
+        if (!(o instanceof TestFunctionStatement)) {
+            throw new RuntimeException("Observer received incompatible o.");
+        }
+
+        Set<Object> newArgs = (HashSet<Object>) arg;
+        TestFunctionStatement tmd = (TestFunctionStatement) o;
+        if (!newArgs.contains(o)) {
+            tests.addAll(tmd.getTests());
+            newArgs.add(o);
+            setChanged();
+            notifyObservers(newArgs);
         }
     }
 }

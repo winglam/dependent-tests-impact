@@ -52,15 +52,53 @@ public class Standard {
                 index = sortDT(index, dtMethodList, printedTests, tmd);
             }
 
-            printedTests.add(methodData);
-            dtMethodList.add(index, methodData);
-            index += 1;
+            if (!printedTests.contains(methodData)) {
+                printedTests.add(methodData);
+                dtMethodList.add(index, methodData);
+                index += 1;
+
+                moveTestsBefore(dtMethodList, methodData);
+
+                for (TestFunctionStatement tmd : methodData.getObservers()) {
+                    // is it possible to inject methodData right inbetween two tests that are suppose to run together?
+                    moveTests(dtMethodList, methodData, tmd);
+                }
+            }
 
             for (TestFunctionStatement tmd : execBefore) {
                 index = sortDT(index, dtMethodList, printedTests, tmd);
             }
         }
         return index;
+    }
+
+    private void moveTestsBefore(List<TestFunctionStatement> dtMethodList, TestFunctionStatement dep) {
+        for (TestFunctionStatement tmd : dep.getDependentTests(false)) {
+            if (dtMethodList.indexOf(tmd) > dtMethodList.indexOf(dep)) {
+                dtMethodList.remove(tmd);
+                dtMethodList.add(dtMethodList.indexOf(dep), tmd);
+                moveTestsBefore(dtMethodList, tmd);
+                for (TestFunctionStatement tmdtmd : tmd.getObservers()) {
+                    // is it possible to inject methodData right inbetween two tests that are suppose to run together?
+                    moveTests(dtMethodList, tmd, tmdtmd);
+                }
+            }
+        }
+    }
+
+    private void moveTests(List<TestFunctionStatement> dtMethodList, TestFunctionStatement dep, TestFunctionStatement indep) {
+        Set<TestFunctionStatement> befores = indep.getDependentTests(true);
+
+        if (befores.contains(dep)) {
+            if (dtMethodList.indexOf(indep) > dtMethodList.indexOf(dep)) {
+                dtMethodList.remove(indep);
+                dtMethodList.add(dtMethodList.indexOf(dep), indep);
+                moveTestsBefore(dtMethodList, indep);
+                for (TestFunctionStatement tmd : indep.getObservers()) {
+                    moveTests(dtMethodList, indep, tmd);
+                }
+            }
+        }
     }
 
     public void printResults() {
