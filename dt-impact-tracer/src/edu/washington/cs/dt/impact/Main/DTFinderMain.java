@@ -74,6 +74,42 @@ public class DTFinderMain {
             System.exit(0);
         }
 
+        String filesToDelete = null;
+        int filesToDeleteIndex = argsList.indexOf("-filesToDelete");
+        if (filesToDeleteIndex != -1) {
+            // get index of output file
+            int filesToDeleteFileIndex = filesToDeleteIndex + 1;
+            if (filesToDeleteFileIndex >= argsList.size()) {
+                System.err
+                .println("Files to delete argument is specified but a file name is not."
+                        + " Please use the format: -filesToDelete aFileName");
+                System.exit(0);
+            }
+            filesToDelete = argsList.get(filesToDeleteFileIndex);
+        } else {
+            System.err.println("No files to delete argument is specified."
+                    + " Please use the format: -filesToDelete aFileName");
+            System.exit(0);
+        }
+
+        String dtFile = null;
+        int dtListIndex = argsList.indexOf("-dtFile");
+        if (dtListIndex != -1) {
+            // get index of output file
+            int dtListFileIndex = dtListIndex + 1;
+            if (dtListFileIndex >= argsList.size()) {
+                System.err
+                .println("DT file argument is specified but a file name is not."
+                        + " Please use the format: -dtFile aFileName");
+                System.exit(0);
+            }
+            dtFile = argsList.get(dtListFileIndex);
+        } else {
+            System.err.println("No DT file argument is specified."
+                    + " Please use the format: -dtFile aFileName");
+            System.exit(0);
+        }
+
         BufferedReader br;
         try {
             br = new BufferedReader(new FileReader(dependentTestFile));
@@ -119,6 +155,10 @@ public class DTFinderMain {
                 argsList.add(currentOrderFile);
                 argsList.add("-originalOrderFile");
                 argsList.add(originalOrderFile);
+                argsList.add("-filesToDelete");
+                argsList.add(filesToDelete);
+                argsList.add("-dtFile");
+                argsList.add(dtFile);
                 String[] newArgs = new String[argsList.size()];
                 newArgs = argsList.toArray(newArgs);
                 DependentTestFinder.main(newArgs);

@@ -4,7 +4,7 @@ experimentCP=impact-tools/*:bin/:../xml-security-commons/bin/:data/:../xml-secur
 dependentFree=true
 
 function clearEnv() {
-  :
+  rm -rf '4444444444  4 444444444444 444444444444444444444'
 }
 
 source ../config.sh
