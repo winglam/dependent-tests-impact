@@ -1,4 +1,4 @@
-testType=orig
+testType=auto
 experiment=jfreechart
 experimentCP=impact-tools/*:bin/:lib/*
 dependentFree=false

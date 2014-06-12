@@ -1,7 +1,7 @@
-testType=auto
+testType=orig
 experiment=crystal
 experimentCP=impact-tools/*:bin/:libs/lib/*
-dependentFree=true
+dependentFree=false
 
 function clearEnv() {
   rm -rf 2013-08-28T20-44-41.156-0700

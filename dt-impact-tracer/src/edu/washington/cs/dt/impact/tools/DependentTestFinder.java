@@ -339,12 +339,11 @@ public class DependentTestFinder {
                 newTopList.removeAll(botTests);
                 newTopList.remove(newTopList.size() - 1);
                 newBotList.removeAll(topTests);
-                newBotList.removeAll(botTests);
                 newBotList.remove(newBotList.size() - 1);
-                if (topTests.size() == 0 && botTests.size() == 0) {
-                    dependentTestSolver(newTopList, dependentTestName, isOriginalOrder, beforeTests, afterTests, topTests, newBotList, useTopBot);
+                if (topResults) {
+                    dependentTestSolver(newTopList, dependentTestName, isOriginalOrder, beforeTests, afterTests, topTests, botTests, useTopBot);
                 } else {
-                    dependentTestSolver(newTopList, dependentTestName, isOriginalOrder, beforeTests, afterTests, topTests, new ArrayList<String>(), useTopBot);
+                    dependentTestSolver(newTopList, dependentTestName, isOriginalOrder, beforeTests, afterTests, topTests, newBotList, useTopBot);
                 }
 
                 if (!beforeTests.equals(newBeforeTests)) {

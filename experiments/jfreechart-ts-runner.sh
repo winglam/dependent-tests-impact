@@ -1,10 +1,10 @@
-testType=orig
+testType=auto
 experiment=jfreechart
 oldVersCP=impact-tools/*:bin/:lib/*
 newVersCP=impact-tools/*:bin/:lib/*
 oldVers=jfreechart-1.0.15
 newVers=jfreechart-1.0.16
-dependentFree=true
+dependentFree=false
 
 function clearEnv() {
   :

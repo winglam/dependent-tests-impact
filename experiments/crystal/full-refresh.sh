@@ -9,7 +9,7 @@ function clearEnv() {
   rm -rf 382707\ hours\ 44\ min
 }
 i=0
-while [ $i -le 0 ]
+while [ $i -le 9 ]
 do
 java -cp impact-tools/*:bin/:libs/lib/* edu.washington.cs.dt.impact.Main.DTFinderMain -dependentTestFile blah -currentOrderFile crystal-tp-statement-absolute.txt -originalOrderFile crystal-auto-order -dtFile crystal-auto-dt -filesToDelete crystal-env-files
 

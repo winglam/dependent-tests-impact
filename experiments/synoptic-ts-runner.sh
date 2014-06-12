@@ -4,7 +4,7 @@ oldVersCP=impact-tools/*:bin/:../synoptic/lib/*:../synoptic/bin/:../daikonizer/b
 newVersCP=impact-tools/*:bin/:../synoptic/lib/*:../synoptic-ea407ba0a750/bin/:../daikonizer-ea407ba0a750/bin/
 oldVers=dynoptic
 newVers=dynoptic-ea407ba0a750
-dependentFree=true
+dependentFree=false
 
 function clearEnv() {
   rm -rf test.dot
