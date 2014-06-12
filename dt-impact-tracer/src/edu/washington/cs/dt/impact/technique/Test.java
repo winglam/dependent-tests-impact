@@ -64,6 +64,9 @@ public class Test {
                         tmd = new TestFunctionStatement(dtTest);
                         nameToMethodData.put(dtTest, tmd);
                     }
+                    if (nameToMethodData.get(testName) == null) {
+                        throw new RuntimeException(testName + " is not a valid test.");
+                    }
                     nameToMethodData.get(testName).addDependentTest(tmd, true);
                 }
                 nameToMethodData.get(testName).reset();
