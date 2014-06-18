@@ -1,33 +1,12 @@
 /**
  * Copyright 2014 University of Washington. All Rights Reserved.
  * @author Wing Lam
+ * 
+ * Tool used to instrument class and test files.
  */
 
 package edu.washington.cs.dt.impact.util;
 
-/*
- * INVOKESTATIC bytecode in a program. The instrumented program will
- * report how many static invocations happen in a run.
- *
- * Goal:
- *   Insert counter instruction before static invocation instruction.
- *   Report counters before program's normal exit point.
- *
- * Approach:
- *   1. Create a counter class which has a counter field, and
- *      a reporting method.
- *   2. Take each method body, go through each instruction, and
- *      insert count instructions before INVOKESTATIC.
- *   3. Make a call of reporting method of the counter class.
- *
- * Things to learn from this example:
- *   1. How to use Soot to examine a Java class.
- *   2. How to insert profiling instructions in a class.
- */
-
-/* InvokeStaticInstrumenter extends the abstract class BodyTransformer,
- * and implements <pre>internalTransform</pre> method.
- */
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -100,7 +79,6 @@ public class Instrumenter extends BodyTransformer{
     @Override
     protected void internalTransform(Body body, String phase,
             @SuppressWarnings("rawtypes") Map options) {
-        // body's method
         SootMethod method = body.getMethod();
 
         if (method.getName().equals("<init>") || method.getName().equals("<clinit>")) {
@@ -141,24 +119,23 @@ public class Instrumenter extends BodyTransformer{
                     && extendsJUnit && prefix.equals(JUNIT3_METHOD_PREFIX);
         }
 
+        // exclude the instrumentation of setups/teardowns
+        // and JUnit3 methods that are not tests
         if ((extendsJUnit && !isJUnit3) || isSetupOrTeardown) {
             return;
         }
 
-        // get body's unit as a chain
         Chain<Unit> units = body.getUnits();
-
         // get a snapshot iterator of the unit since we are going to
         // mutate the chain when iterating over it.
         Iterator<Unit> stmtIt = units.snapshotIterator();
 
         String packageMethodName = method.getDeclaringClass().getName() + "." + method.getName();
         if (isJUnit4 || isJUnit3) {
+            // instrumentation of JUnit files
 
             // get access to Throwable class and toString method
             SootClass thrwCls = Scene.v().getSootClass("java.lang.Throwable");
-
-            // create probe from label1 to label3 (excluding return)
             List<Stmt> probe = new ArrayList<Stmt>();
             PatchingChain<Unit> pchain = body.getUnits();
 
@@ -175,12 +152,8 @@ public class Instrumenter extends BodyTransformer{
                 assert (!(u instanceof ReturnStmt) && !(u instanceof RetStmt)) || u == sLast;
             }
 
-            // label1:
-            //   goto label3
             Stmt sGotoLast = Jimple.v().newGotoStmt(sLast);
             probe.add(sGotoLast);
-            // label2:
-            //   local1 := @caughtexception;
             Local lException1 = getCreateLocal(body, "<ex1>", RefType.v(thrwCls));
             Stmt sCatch = Jimple.v().newIdentityStmt(lException1, Jimple.v().newCaughtExceptionRef());
             probe.add(sCatch);
@@ -232,6 +205,9 @@ public class Instrumenter extends BodyTransformer{
             }
         } else {
             if (technique == TECHNIQUE.SELECTION) {
+                // instrumentation of class files for test selection
+                // creates selectionOutput directory containing what statements
+                // each test executed without duplicates
                 Set<Unit> duplicates = new HashSet<Unit>();
                 StringBuffer sb = new StringBuffer();
                 UnitGraph ug = new ExceptionalUnitGraph(body);
@@ -276,8 +252,9 @@ public class Instrumenter extends BodyTransformer{
                     units.insertBefore(incStmts.get(i), stmts.get(i));
                 }
 
-                output(packageMethodName, sb);
+                selectionOutput(packageMethodName, sb);
             } else {
+                // instrumentation of class files for test prioritization and parallelization
                 Set<Integer> lines = new HashSet<Integer>();
                 while (stmtIt.hasNext()) {
                     // cast back to a statement.
@@ -306,7 +283,8 @@ public class Instrumenter extends BodyTransformer{
         }
     }
 
-    private static void output(String packageMethodName, StringBuffer sb) {
+    // used for the instrumentation of test selection class files
+    private static void selectionOutput(String packageMethodName, StringBuffer sb) {
         File theDir = new File("selectionOutput");
         // if the directory does not exist, create it
         if (!theDir.exists()) {

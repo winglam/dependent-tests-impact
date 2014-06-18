@@ -2,7 +2,7 @@
  * Copyright 2014 University of Washington. All Rights Reserved.
  * @author Wing Lam
  * 
- * Used by the Instrumenter to record the statements and functions a test case covers.
+ * Used by the Instrumenter to record the statements a test case covers.
  */
 
 package edu.washington.cs.dt.impact.util;
@@ -90,6 +90,7 @@ public class Tracer {
         printLastElement = true;
     }
 
+    // used for the instrumentation of test selection test files
     public static void selectionOutput(String packageMethodName) {
         if (!printLastElement) {
             return;

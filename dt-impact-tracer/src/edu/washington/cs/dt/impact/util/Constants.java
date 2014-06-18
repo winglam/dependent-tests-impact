@@ -1,6 +1,8 @@
 /**
  * Copyright 2014 University of Washington. All Rights Reserved.
  * @author Wing Lam
+ * 
+ * Constants used throughout this project.
  */
 
 package edu.washington.cs.dt.impact.util;

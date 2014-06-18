@@ -1,6 +1,8 @@
 /**
  * Copyright 2014 University of Washington. All Rights Reserved.
  * @author Wing Lam
+ * 
+ * Generates a regression testing order based on the arguments provided.
  */
 package edu.washington.cs.dt.impact.tools;
 
