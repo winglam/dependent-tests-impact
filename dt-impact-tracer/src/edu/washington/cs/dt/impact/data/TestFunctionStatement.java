@@ -22,9 +22,10 @@ public class TestFunctionStatement extends Observable implements Comparable<Test
     // current lines of this test method that have yet to be covered
     private Set<String> currentLines;
 
-    private Set<Set<String>> tests;
+    // lines belonging to this test's and its dependencies'
+    private Set<Set<String>> setOfCurrentLines;
+    // tests that this test depends on
     private Set<TestFunctionStatement> observers;
-
 
     // list of tests that when executed before reveals methodName as a dependent test
     protected Set<TestFunctionStatement> execBefore;
@@ -38,8 +39,8 @@ public class TestFunctionStatement extends Observable implements Comparable<Test
         execBefore = new HashSet<TestFunctionStatement>();
         execAfter = new HashSet<TestFunctionStatement>();
         observers = new HashSet<TestFunctionStatement>();
-        tests = new HashSet<Set<String>>();
-        tests.add(currentLines);
+        setOfCurrentLines = new HashSet<Set<String>>();
+        setOfCurrentLines.add(currentLines);
     }
 
     /**
@@ -50,11 +51,9 @@ public class TestFunctionStatement extends Observable implements Comparable<Test
     public void addDependentTest(TestFunctionStatement tmd, boolean isBefore) {
         if (tmd != null) {
             tmd.customAddObserver(this);
-            tests.addAll(tmd.getTests());
+            setOfCurrentLines.addAll(tmd.getTests());
             setChanged();
             notifyObservers(new HashSet<Object>());
-            //            tests.addAll(tmd.getTests());
-            //            allLines.addAll(tmd.getLines());
             if (isBefore) {
                 execBefore.add(tmd);
             } else {
@@ -82,11 +81,10 @@ public class TestFunctionStatement extends Observable implements Comparable<Test
 
     public long getLineCount() {
         Set<String> lines = new HashSet<String>();
-        for (Set<String> s : tests) {
+        for (Set<String> s : setOfCurrentLines) {
             lines.addAll(s);
         }
         return lines.size();
-        //        return currentLines.size();
     }
 
     public String getName() {
@@ -112,15 +110,14 @@ public class TestFunctionStatement extends Observable implements Comparable<Test
 
     public Set<String> getLines() {
         Set<String> lines = new HashSet<String>();
-        for (Set<String> s : tests) {
+        for (Set<String> s : setOfCurrentLines) {
             lines.addAll(s);
         }
         return Collections.unmodifiableSet(lines);
-        //        return Collections.unmodifiableSet(currentLines);
     }
 
     public Set<Set<String>> getTests() {
-        return tests;
+        return setOfCurrentLines;
     }
 
     @Override
@@ -156,7 +153,7 @@ public class TestFunctionStatement extends Observable implements Comparable<Test
         Set<Object> newArgs = (HashSet<Object>) arg;
         TestFunctionStatement tmd = (TestFunctionStatement) o;
         if (!newArgs.contains(o)) {
-            tests.addAll(tmd.getTests());
+            setOfCurrentLines.addAll(tmd.getTests());
             newArgs.add(o);
             setChanged();
             notifyObservers(newArgs);

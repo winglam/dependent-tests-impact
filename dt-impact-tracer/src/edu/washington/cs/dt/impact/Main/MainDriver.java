@@ -1,13 +1,12 @@
 /**
  * Copyright 2014 University of Washington. All Rights Reserved.
  * @author Wing Lam
+ * 
+ * Main class to instrument a project.
  */
 
 package edu.washington.cs.dt.impact.Main;
-/* Usage: java MainDriver [soot-options] appClass
- */
 
-/* import necessary soot packages */
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -56,8 +55,8 @@ public class MainDriver {
             System.exit(0);
         }
 
-        TECHNIQUE techniqueName = Constants.DEFAULT_TECHNIQUE;
         // get the technique, the default is absolute
+        TECHNIQUE techniqueName = Constants.DEFAULT_TECHNIQUE;
         int techniqueIndex = argsList.indexOf("-technique");
         if (techniqueIndex != -1) {
             // get index of technique name
@@ -92,7 +91,8 @@ public class MainDriver {
         argsList.add("-keep-line-number");
         String[] sootArgs = argsList.toArray(new String[argsList.size()]);
 
-        /* Give control to Soot to process all options,
+        /*
+         * Give control to Soot to process all options,
          * Instrumenter.internalTransform will get called.
          */
         soot.Main.main(sootArgs);

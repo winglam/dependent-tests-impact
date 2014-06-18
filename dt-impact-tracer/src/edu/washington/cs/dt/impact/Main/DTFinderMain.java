@@ -1,6 +1,10 @@
 /**
  * Copyright 2014 University of Washington. All Rights Reserved.
  * @author Wing Lam
+ * 
+ * Main class to retrieve a dependent test and output what tests should
+ * come before and after it in order for the dependent test to attain
+ * a desired result in a new order.
  */
 package edu.washington.cs.dt.impact.Main;
 
@@ -20,11 +24,9 @@ public class DTFinderMain {
     public static void main(String[] args) {
         List<String> argsList = new ArrayList<String>(Arrays.asList(args));
 
-        // if specified, the output is saved to the file name instead of printed to console
         File dependentTestFile = null;
         int dependentFile = argsList.indexOf("-dependentTestFile");
         if (dependentFile != -1) {
-            // get index of output file
             int dependentFileNameIndex = dependentFile + 1;
             if (dependentFileNameIndex >= argsList.size()) {
                 System.err
@@ -77,7 +79,6 @@ public class DTFinderMain {
         String filesToDelete = null;
         int filesToDeleteIndex = argsList.indexOf("-filesToDelete");
         if (filesToDeleteIndex != -1) {
-            // get index of output file
             int filesToDeleteFileIndex = filesToDeleteIndex + 1;
             if (filesToDeleteFileIndex >= argsList.size()) {
                 System.err
@@ -95,7 +96,6 @@ public class DTFinderMain {
         String dtFile = null;
         int dtListIndex = argsList.indexOf("-dtFile");
         if (dtListIndex != -1) {
-            // get index of output file
             int dtListFileIndex = dtListIndex + 1;
             if (dtListFileIndex >= argsList.size()) {
                 System.err
