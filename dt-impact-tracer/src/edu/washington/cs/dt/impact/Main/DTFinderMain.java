@@ -18,12 +18,12 @@ import java.util.Scanner;
 
 import edu.washington.cs.dt.impact.tools.DependentTestFinder;
 
-
 public class DTFinderMain {
-
     public static void main(String[] args) {
         List<String> argsList = new ArrayList<String>(Arrays.asList(args));
 
+        // file containing the list of dependent tests that manifested when
+        // running the test suite in the current test order
         File dependentTestFile = null;
         int dependentFile = argsList.indexOf("-dependentTestFile");
         if (dependentFile != -1) {
@@ -42,6 +42,7 @@ public class DTFinderMain {
             System.exit(0);
         }
 
+        // file containing the current test order the dependent test was ran in
         String currentOrderFile = null;
         int currentOrderIndex = argsList.indexOf("-currentOrderFile");
         if (currentOrderIndex != -1) {
@@ -59,6 +60,7 @@ public class DTFinderMain {
             System.exit(0);
         }
 
+        // file containing the original order the dependent test was ran in
         String originalOrderFile = null;
         int originalOrderIndex = argsList.indexOf("-originalOrderFile");
         if (originalOrderIndex != -1) {
@@ -76,6 +78,7 @@ public class DTFinderMain {
             System.exit(0);
         }
 
+        // file containing a list of files to delete before each test suite execution
         String filesToDelete = null;
         int filesToDeleteIndex = argsList.indexOf("-filesToDelete");
         if (filesToDeleteIndex != -1) {
@@ -93,6 +96,8 @@ public class DTFinderMain {
             System.exit(0);
         }
 
+        // file containing all the information about which
+        // test depends on which other test
         String dtFile = null;
         int dtListIndex = argsList.indexOf("-dtFile");
         if (dtListIndex != -1) {
@@ -110,11 +115,13 @@ public class DTFinderMain {
             System.exit(0);
         }
 
+        // parse the dependentTestFile and retrieve a dependent test to solve
         BufferedReader br;
         try {
             br = new BufferedReader(new FileReader(dependentTestFile));
             String line = br.readLine();
-            while (line != null && !line.trim().matches("Original order result:        Test order result:")) {
+            while (line != null && !line.trim().matches(
+                    "Original order result:        Test order result:")) {
                 line = br.readLine();
             }
 
@@ -144,8 +151,9 @@ public class DTFinderMain {
                     s.close();
                     throw new RuntimeException("Incorrect format for dependent test file.");
                 }
-
                 s.close();
+
+                // recreate the argsList for DependentTestFinder
                 argsList.clear();
                 argsList.add("-dependentTestName");
                 argsList.add(testName);

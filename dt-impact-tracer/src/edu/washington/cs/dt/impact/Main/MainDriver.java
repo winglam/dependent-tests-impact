@@ -73,6 +73,8 @@ public class MainDriver {
                 techniqueName = TECHNIQUE.PRIORITIZATION;
             } else if (techniqueStr.equals("selection")) {
                 techniqueName = TECHNIQUE.SELECTION;
+            } else if (techniqueStr.equals("parallelization")) {
+                techniqueName = TECHNIQUE.PARALLELIZATION;
             } else {
                 System.err
                 .println("Technique name is invalid. Try \"prioritization-absolute\","
