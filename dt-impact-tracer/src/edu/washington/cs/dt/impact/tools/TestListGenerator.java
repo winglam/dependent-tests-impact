@@ -26,8 +26,8 @@ public class TestListGenerator {
         // list to parse the arguments
         List<String> argsList = new ArrayList<String>(Arrays.asList(args));
 
-        // get the technique, the default is prioritization
-        TECHNIQUE techniqueName = Constants.DEFAULT_TECHNIQUE;
+        // get the technique
+        TECHNIQUE techniqueName = null;
         int techniqueIndex = argsList.indexOf("-technique");
         if (techniqueIndex != -1) {
             // get index of technique name
@@ -52,10 +52,14 @@ public class TestListGenerator {
                         + " \"selection\" or \"parallelization\".");
                 System.exit(0);
             }
+        } else {
+            System.err.println("No technique argument is specified."
+                    + " Please use the format: -technique aTechniqueName");
+            System.exit(0);
         }
 
-        // get the coverage, the default is statement
-        COVERAGE coverage = COVERAGE.STATEMENT;
+        // get the coverage
+        COVERAGE coverage= null;
         int coverageIndex = argsList.indexOf("-coverage");
         if (coverageIndex != -1) {
             int coverageNameIndex = coverageIndex + 1;
@@ -75,10 +79,14 @@ public class TestListGenerator {
                 .println("Coverage is invalid. Try \"statement\", \"branch\" or \"function\".");
                 System.exit(0);
             }
+        } else {
+            System.err.println("No coverage argument is specified."
+                    + " Please use the format: -coverage aCoverageName");
+            System.exit(0);
         }
 
-        // get the order, the default is absolute
-        ORDER order = ORDER.ABSOLUTE;
+        // get the order
+        ORDER order = null;
         int orderIndex = argsList.indexOf("-order");
         if (orderIndex != -1) {
             int coverageNameIndex = orderIndex + 1;
@@ -96,6 +104,10 @@ public class TestListGenerator {
             } else if (coverageStr.equals("random")) {
                 order = ORDER.RANDOM;
             }
+        } else {
+            System.err.println("No order argument is specified."
+                    + " Please use the format: -order aOrderName");
+            System.exit(0);
         }
 
         // get directory for the input of test files, the default is sootTestOutput
@@ -127,7 +139,7 @@ public class TestListGenerator {
             outputFileName = argsList.get(outputFileNameIndex);
         }
 
-        // if specified, the output is saved to the file name instead of printed to console
+        // if specified, the test list generated will consider the dependencies in this file
         File dependentTestFile = null;
         int dependentFile = argsList.indexOf("-dependentTestFile");
         if (dependentFile != -1) {
@@ -157,7 +169,7 @@ public class TestListGenerator {
                 int oldVersCFGNameIndex = oldVersCFGIndex + 1;
                 if (oldVersCFGNameIndex >= argsList.size()) {
                     System.err.println("Old version CFG argument is specified but a directory"
-                            + " path is not. Please use the format: -oldVersCFG adirpath");
+                            + " path is not. Please use the format: -oldVersCFG aDirPath");
                     System.exit(0);
                 }
                 selectionOutput1 = new File(argsList.get(oldVersCFGNameIndex));
@@ -168,7 +180,7 @@ public class TestListGenerator {
                 }
             } else {
                 System.err.println("No old version CFG argument is specified."
-                        + " Please use the format: -oldVersCFG adirpath");
+                        + " Please use the format: -oldVersCFG aDirPath");
                 System.exit(0);
             }
 
@@ -178,7 +190,7 @@ public class TestListGenerator {
                 int newVersCFGNameIndex = newVersCFGIndex + 1;
                 if (newVersCFGNameIndex >= argsList.size()) {
                     System.err.println("New version CFG argument is specified but a directory"
-                            + " path is not. Please use the format: -newVersCFG adirpath");
+                            + " path is not. Please use the format: -newVersCFG aDirPath");
                     System.exit(0);
                 }
                 selectionOutput2 = new File(argsList.get(newVersCFGNameIndex));
@@ -189,7 +201,7 @@ public class TestListGenerator {
                 }
             } else {
                 System.err.println("No new version CFG argument is specified."
-                        + " Please use the format: -newVersCFG adirpath");
+                        + " Please use the format: -newVersCFG aDirPath");
                 System.exit(0);
             }
 
@@ -199,7 +211,7 @@ public class TestListGenerator {
                 int origOrderNameIndex = origOrderIndex + 1;
                 if (origOrderNameIndex >= argsList.size()) {
                     System.err.println("Original order argument is specified but a directory"
-                            + " path is not. Please use the format: -origOrder afilepath");
+                            + " path is not. Please use the format: -origOrder aFilePath");
                     System.exit(0);
                 }
                 origOrder = new File(argsList.get(origOrderNameIndex));
@@ -220,7 +232,7 @@ public class TestListGenerator {
                 int numOfMachinesIntIndex = numOfMachinesIndex + 1;
                 if (numOfMachinesIntIndex >= argsList.size()) {
                     System.err.println("Number of machines argument is specified but a integer"
-                            + " is not. Please use the format: -numOfMachines ainteger");
+                            + " is not. Please use the format: -numOfMachines aInteger");
                     System.exit(0);
                 }
                 numOfMachines = Integer.parseInt(argsList.get(numOfMachinesIntIndex));
@@ -238,7 +250,7 @@ public class TestListGenerator {
                 int origOrderNameIndex = origOrderIndex + 1;
                 if (origOrderNameIndex >= argsList.size()) {
                     System.err.println("Original order argument is specified but a directory"
-                            + " path is not. Please use the format: -origOrder afilepath");
+                            + " path is not. Please use the format: -origOrder aFilePath");
                     System.exit(0);
                 }
                 origOrder = new File(argsList.get(origOrderNameIndex));
@@ -253,7 +265,7 @@ public class TestListGenerator {
                 int timeOrderNameIndex = timeOrderIndex + 1;
                 if (timeOrderNameIndex >= argsList.size()) {
                     System.err.println("Time order argument is specified but a directory path"
-                            + " is not. Please use the format: -timeOrder afilepath");
+                            + " is not. Please use the format: -timeOrder aFilePath");
                     System.exit(0);
                 }
                 timeOrder = new File(argsList.get(timeOrderNameIndex));

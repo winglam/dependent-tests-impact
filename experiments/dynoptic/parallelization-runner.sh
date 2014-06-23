@@ -1,4 +1,4 @@
-testType=orig
+testType=auto
 experiment=synoptic
 experimentCP=impact-tools/*:bin/:../synoptic/lib/*:../synoptic/bin/:../daikonizer/bin/
 dependentFree=false
