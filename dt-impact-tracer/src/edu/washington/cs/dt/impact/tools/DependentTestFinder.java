@@ -260,6 +260,7 @@ public class DependentTestFinder {
                 // use the entire original order
                 startIndex = 0;
             } else {
+                // TODO original order finds test that is already part of the chain
                 // the missing test is between botTests.get(i) and dependentTestName
                 // in the original order
                 useTopBot = true;
