@@ -17,8 +17,10 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 
 import edu.washington.cs.dt.RESULT;
 import edu.washington.cs.dt.TestExecResult;
@@ -222,93 +224,132 @@ public class DependentTestFinder {
             botTests.add(descendingOrder.get(i));
         }
 
-        int endIndex = -1;
-        List<String> topTests = new ArrayList<String>();
-        boolean useTopBot = false;
-        boolean chainTestResult = isTestResultDifferent(dependentTestName, botTests);
-
         // run just dependentTestName and the tests that must come before it
+        List<String> chainSubTests;
+        int chainIndex = 0;
+        boolean chainTestResult = isTestResultDifferent(dependentTestName, botTests);
         if (chainTestResult) {
             // just the chain causes dependentTestName to attain a different result
             // look inside the original order for what it is missing
             fullTests = ORIGINAL_ORDER_TESTS;
             isOriginalOrder = true;
-            endIndex = fullTests.indexOf(dependentTestName);
             int i = botTests.size() - 2;
-            List<String> fullSubTests = fullTests.subList(fullTests.indexOf(botTests.get(i)),
-                    fullTests.indexOf(dependentTestName) + 1);
-            List<String> chainSubTests = botTests.subList(i, botTests.size());
-            chainTestResult = isTestResultDifferent(dependentTestName, chainSubTests);
-            boolean fullTestResult = isTestResultDifferent(dependentTestName, fullSubTests);
 
-            // go up the chain and determine between what test in the chain
-            // and dependentTestName is the missing test at
-            while (chainTestResult == fullTestResult && i >= 0) {
+            chainSubTests = botTests.subList(i, botTests.size());
+            chainTestResult = isTestResultDifferent(dependentTestName, chainSubTests);
+
+            // go up the chain and find the minimum part of the chain we need
+            // to get the dependent test to manifest
+            while (!chainTestResult && i > 0) {
                 i -= 1;
-                if (i == -1) {
-                    break;
-                }
-                fullSubTests = fullTests.subList(fullTests.indexOf(botTests.get(i)),
-                        fullTests.indexOf(dependentTestName) + 1);
                 chainSubTests = botTests.subList(i, botTests.size());
                 chainTestResult = isTestResultDifferent(dependentTestName, chainSubTests);
-                fullTestResult = isTestResultDifferent(dependentTestName, fullSubTests);
             }
 
-            if (i == -1) {
-                // the missing test is outside of the dependence chain,
-                // use the entire original order
-                startIndex = 0;
-            } else {
-                // TODO original order finds test that is already part of the chain
-                // the missing test is between botTests.get(i) and dependentTestName
-                // in the original order
-                useTopBot = true;
-                topTests.add(botTests.get(i));
-                startIndex = fullTests.indexOf(botTests.get(i)) + 1;
+            String currentKey = chainSubTests.get(0);
+            Map<String, List<String>> testToChunk = new HashMap<String, List<String>>();
+            for (int j = 1; j < chainSubTests.size(); j++) {
+                int fromIndex = fullTests.indexOf(currentKey);
+                int toIndex = fullTests.indexOf(chainSubTests.get(j));
+                testToChunk.put(currentKey, new ArrayList<String>(
+                        fullTests.subList(fromIndex, toIndex)));
+                currentKey = chainSubTests.get(j);
             }
-            botTests.clear();
+
+            // use the minimum part of our chain and inject tests from the original order
+            // into the chain to determine which part contains the test we need
+            // TODO #1. This is incomplete. If the dependent test requires A and B to run
+            // before it and A and B are in different sections of the chain
+            // this will be unable to identify it.
+            // We need to do delta debugging on the different sections of the chain
+            // identify which sections are relevant to the dependent test.
+            // Then use the depednentTestSolver and change the topAddOn and botAddOn
+            // tests to pin down the tests in each section that is relevant to the dependent test.
+            List<String> fullChainTests = new ArrayList<String>();
+            for (; chainIndex < chainSubTests.size() - 1; chainIndex++) {
+                fullChainTests.addAll(chainSubTests.subList(0, chainIndex));
+                fullChainTests.addAll(testToChunk.get(chainSubTests.get(chainIndex)));
+                fullChainTests.addAll(chainSubTests.subList(chainIndex + 1, chainSubTests.size()));
+
+                boolean fullChainResult = isTestResultDifferent(dependentTestName, fullChainTests);
+                if (!fullChainResult) {
+                    // this current chunk of fullTests contains the test that will prevent
+                    // the dependent test from manifesting
+                    break;
+                }
+                fullChainTests.clear();
+            }
         } else {
             // the chain does not cause dependentTestName to attain a different result
             // but something between the chain or before it is causing it to
             fullTests = CURRENT_ORDER_TESTS;
             isOriginalOrder = false;
             int i = botTests.size() - 2;
-            List<String> fullSubTests = fullTests.subList(fullTests.indexOf(botTests.get(i)),
-                    fullTests.indexOf(dependentTestName) + 1);
-            List<String> chainSubTests = botTests.subList(i, botTests.size());
-            chainTestResult = isTestResultDifferent(dependentTestName, chainSubTests);
-            boolean fullTestResult = isTestResultDifferent(dependentTestName, fullSubTests);
 
-            // go up the chain and determine between what test in the chain
-            // and dependentTestName is the missing test at
-            while (chainTestResult == fullTestResult && i >= 0) {
+            chainSubTests = botTests.subList(i, botTests.size());
+            chainTestResult = isTestResultDifferent(dependentTestName, chainSubTests);
+
+            // go up the chain and find the minimum part of the chain we need
+            // to get the dependent test to not manifest
+            while (chainTestResult && i > 0) {
                 i -= 1;
-                if (i == -1) {
-                    break;
-                }
-                fullSubTests = fullTests.subList(fullTests.indexOf(botTests.get(i)),
-                        fullTests.indexOf(dependentTestName) + 1);
                 chainSubTests = botTests.subList(i, botTests.size());
                 chainTestResult = isTestResultDifferent(dependentTestName, chainSubTests);
-                fullTestResult = isTestResultDifferent(dependentTestName, fullSubTests);
             }
 
-            useTopBot = true;
-            if (i == -1) {
-                // the missing test is outside of the dependence chain,
-                // use the entire current order to the start of the chain
-                startIndex = 0;
-                endIndex = fullTests.indexOf(botTests.get(0));
-            } else {
-                // the missing test is between botTests.get(i) and dependentTestName
-                // in the current order
-                startIndex = fullTests.indexOf(botTests.get(i)) + 1;
-                endIndex = fullTests.indexOf(dependentTestName);
-                topTests.add(botTests.get(i));
-                botTests.clear();
+            String currentKey = chainSubTests.get(0);
+            Map<String, List<String>> testToChunk = new HashMap<String, List<String>>();
+            for (int j = 1; j < chainSubTests.size(); j++) {
+                int fromIndex = fullTests.indexOf(currentKey);
+                int toIndex = fullTests.indexOf(chainSubTests.get(j));
+                testToChunk.put(currentKey, new ArrayList<String>(
+                        fullTests.subList(fromIndex, toIndex)));
+                currentKey = chainSubTests.get(j);
             }
-            botTests.remove(dependentTestName);
+
+            // use the minimum part of our chain and inject tests from the current order
+            // into the chain to determine which part contains the test we need
+            // TODO #2. This is incomplete. If the dependent test requires A and B to run
+            // before it and A and B are in different sections of the chain
+            // this will be unable to identify it.
+            // We need to do delta debugging on the different sections of the chain
+            // identify which sections are relevant to the dependent test.
+            // Then use the depednentTestSolver and change the topAddOn and botAddOn
+            // tests to pin down the tests in each section that is relevant to the dependent test.
+            List<String> fullChainTests;
+            for (; chainIndex < chainSubTests.size() - 1; chainIndex++) {
+                fullChainTests = new ArrayList<String>();
+                fullChainTests.addAll(chainSubTests.subList(0, chainIndex));
+                fullChainTests.addAll(testToChunk.get(chainSubTests.get(chainIndex)));
+                fullChainTests.addAll(chainSubTests.subList(chainIndex + 1, chainSubTests.size()));
+
+                boolean fullChainResult = isTestResultDifferent(dependentTestName, fullChainTests);
+                if (fullChainResult) {
+                    // this current chunk of fullTests contains the test that will cause
+                    // the dependent test to manifest
+                    break;
+                }
+            }
+        }
+
+        int endIndex = -1;
+        boolean useTopBot = true;
+        List<String> topTests = new ArrayList<String>();
+        if (chainIndex == chainSubTests.size() - 1) {
+            // the relevant test is outside of the dependence chain,
+            // use the entire fullTests order to the start of the chain
+            startIndex = 0;
+            endIndex = fullTests.indexOf(botTests.get(0));
+            botTests = new ArrayList<String>(fullTests.subList(
+                    fullTests.indexOf(botTests.get(0)), fullTests.indexOf(dependentTestName)));
+            topTests = new ArrayList<String>();
+        } else {
+            // the relevant test is in between two tests in the dependence chain
+            startIndex = fullTests.indexOf(chainSubTests.get(chainIndex)) + 1;
+            endIndex = fullTests.indexOf(chainSubTests.get(chainIndex + 1));
+            topTests = new ArrayList<String>(chainSubTests.subList(0, chainIndex + 1));
+            botTests = new ArrayList<String>(chainSubTests.subList(chainIndex + 1,
+                    chainSubTests.size() - 1));
         }
 
         if (startIndex > fullTests.indexOf(dependentTestName)) {
@@ -375,9 +416,13 @@ public class DependentTestFinder {
                 newBotList.removeAll(topAddOnTests);
                 newBotList.remove(newBotList.size() - 1);
                 if (topResults) {
+                    // A or B causes the dependent test to manifest
+                    // recursive call with a truncated test list to identify A first
                     dependentTestSolver(newTopList, dependentTestName, isOriginalOrder,
                             beforeTests, afterTests, topAddOnTests, botAddOnTests, useAddOnTests);
                 } else {
+                    // A and B causes the dependent test to manifest
+                    // recursive call with the bottom half of tests fixed
                     dependentTestSolver(newTopList, dependentTestName, isOriginalOrder,
                             beforeTests, afterTests, topAddOnTests, newBotList, useAddOnTests);
                 }
@@ -409,7 +454,7 @@ public class DependentTestFinder {
                 orderedTests.add(dependentTestName);
                 boolean testResult = isTestResultDifferent(dependentTestName, orderedTests);
                 if (!((!isOriginalOrder && testResult) || (isOriginalOrder && !testResult))) {
-                    // case of A and B needs to come before C or B and C need to come after A
+                    // case of A and B needs to come before C
                     dependentTestSolver(newBotList, dependentTestName, isOriginalOrder,
                             beforeTests, afterTests, topAddOnTests, botAddOnTests, useAddOnTests);
                 } else if (testResult && isOriginalOrder) {
@@ -439,6 +484,143 @@ public class DependentTestFinder {
                 beforeTests.add(tests.get(0));
             } else {
                 afterTests.add(tests.get(0));
+            }
+        }
+    }
+
+    // Will be used to fix TODO #1 and TODO #2.
+    // Uses delta debugging to identify which sections of a
+    // dependence chain is relevant to the dependent test.
+    private static void dependentTestSolverChunks(List<String> keys, List<String> allTests,
+            Map<String, List<String>> testToChunk, String dependentTestName,
+            boolean isOriginalOrder, List<String> beforeTests, List<String> afterTests,
+            List<String> topAddOnTests, List<String> botAddOnTests, boolean useAddOnTests) {
+
+        if (keys.size() == 0) {
+            throw new RuntimeException("There are no chunks to delta debug.");
+        }
+
+        while(keys.size() > 1) {
+            List<String> topHalfKeys = new LinkedList<String>(keys.subList(0, keys.size() / 2));
+            List<String> botHalfKeys = new LinkedList<String>(keys.subList(keys.size() / 2,
+                    keys.size()));
+
+            List<String> topHalf = new ArrayList<String>();
+            List<String> botHalf = new ArrayList<String>();
+            for (String key : topHalfKeys) {
+                topHalf.addAll(testToChunk.get(key));
+            }
+            for (String key : botHalfKeys) {
+                botHalf.addAll(testToChunk.get(key));
+            }
+
+            if (useAddOnTests) {
+                topHalf.addAll(0, topAddOnTests);
+                botHalf.addAll(0, topAddOnTests);
+
+                topHalf.addAll(topHalf.size(), botAddOnTests);
+                botHalf.addAll(botHalf.size(), botAddOnTests);
+            }
+
+            topHalf.add(dependentTestName);
+            botHalf.add(dependentTestName);
+
+            clearEnv();
+            AbstractTestRunner runner = new FixedOrderRunner(topHalf);
+            boolean topResults = checkTestMatch(isOriginalOrder,
+                    runner.run().getExecutionRecords().get(0), dependentTestName);
+
+            clearEnv();
+            runner = new FixedOrderRunner(botHalf);
+            boolean botResults = checkTestMatch(isOriginalOrder,
+                    runner.run().getExecutionRecords().get(0), dependentTestName);
+
+            // dependent test depends on more than one test in tests
+            if (topResults == botResults) {
+
+                // if splitting the tests no longer reveals the dependent test behavior,
+                // then use both sides in the recursive call
+                useAddOnTests = !topResults || useAddOnTests;
+
+                List<String> newBeforeTests = new ArrayList<String>(beforeTests);
+                List<String> newAfterTests = new ArrayList<String>(afterTests);
+                List<String> newBotList = new ArrayList<String>(botHalf);
+
+                // find the test in the bottom half of our current list
+                newBotList.removeAll(topAddOnTests);
+                newBotList.remove(newBotList.size() - 1);
+                if (topResults) {
+                    // A or B causes the dependent test to manifest
+                    // recursive call with a truncated test list to identify A first
+                    dependentTestSolverChunks(topHalfKeys, allTests, testToChunk, dependentTestName,
+                            isOriginalOrder, beforeTests, afterTests, topAddOnTests, botAddOnTests,
+                            useAddOnTests);
+                } else {
+                    // A and B causes the dependent test to manifest
+                    // recursive call with the bottom half of tests fixed
+                    dependentTestSolverChunks(topHalfKeys, allTests, testToChunk, dependentTestName,
+                            isOriginalOrder, beforeTests, afterTests, topAddOnTests, newBotList,
+                            useAddOnTests);
+                }
+
+                // if we found new dependent tests add them to our top fixed tests
+                // so we don't find them again
+                if (!beforeTests.equals(newBeforeTests)) {
+                    List<String> tempBeforeTests = new ArrayList<String>(beforeTests);
+                    beforeTests.removeAll(newBeforeTests);
+                    if (!topAddOnTests.containsAll(beforeTests)) {
+                        beforeTests.removeAll(topAddOnTests);
+                        for (String key : beforeTests) {
+                            topAddOnTests.addAll(testToChunk.get(key));
+                        }
+                    }
+                    beforeTests.clear();
+                    beforeTests.addAll(tempBeforeTests);
+                }
+                if (!afterTests.equals(newAfterTests)) {
+                    List<String> tempAfterTests = new ArrayList<String>(afterTests);
+                    afterTests.removeAll(newAfterTests);
+                    if (!topAddOnTests.containsAll(afterTests)) {
+                        afterTests.removeAll(topAddOnTests);
+                        for (String key : afterTests) {
+                            topAddOnTests.addAll(testToChunk.get(key));
+                        }
+                    }
+                    afterTests.clear();
+                    afterTests.addAll(tempAfterTests);
+                }
+
+                // we have found A, now look for B for A and B needs to come before C or
+                // A or B needs to come before C
+                List<String> orderedTests = new ArrayList<String>(topAddOnTests);
+                orderedTests.addAll(botAddOnTests);
+                orderedTests.add(dependentTestName);
+                boolean testResult = isTestResultDifferent(dependentTestName, orderedTests);
+                if (!((!isOriginalOrder && testResult) || (isOriginalOrder && !testResult))) {
+                    // case of A and B needs to come before C
+                    dependentTestSolverChunks(botHalfKeys, allTests, testToChunk, dependentTestName,
+                            isOriginalOrder, beforeTests, afterTests, topAddOnTests, botAddOnTests,
+                            useAddOnTests);
+                } else if (testResult && isOriginalOrder) {
+                    dependentTestSolverChunks(botHalfKeys, allTests, testToChunk, dependentTestName,
+                            isOriginalOrder, beforeTests, afterTests, topAddOnTests, botAddOnTests,
+                            false);
+                }
+                return;
+            }
+
+            if (topResults) {
+                keys = topHalfKeys;
+            } else {
+                keys = botHalfKeys;
+            }
+        }
+
+        if (!beforeTests.contains(keys.get(0)) && !afterTests.contains(keys.get(0))) {
+            if (isOriginalOrder) {
+                beforeTests.add(keys.get(0));
+            } else {
+                afterTests.add(keys.get(0));
             }
         }
     }
