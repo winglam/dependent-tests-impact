@@ -1,0 +1,8 @@
+This document contains information about what we plan to change within the repository when the time permits.
+
+1. There is an edge case identified by XML-Security, function, relative where the dependent test finder is unable to correctly determine the correct sub-list to look in for the next dependent test edge. This case has been documented in the code.
+2. Fully identify all time sensitive automated tests of Jodatime. So far about 200 have been identified just by running the same test order multiple times and discarding the tests that obtained inconsistent results. I believe there may be more but it should be plausible to identify all of them eventually and collect Jodatime automated results for the paper. 
+3. Implement wrapper to use the output from the CrossReferencer to continually use the DependentTestFinder to identify all dependent test edges of a project.
+4. Recollect all the dependent test edges of all experiments with the wrapper from #3 and use that information to collect test prioritization, selection and parallelization results. 
+5. When we instrument JUnit test files we hope to collect information about ALL the test cases with just a catch clause. Instead of using a catch clause a finally clause would better guarantee that each test's information is collected. However Soot did not have a clear way to do this when the Instrumenter was implemented.
+6. The time results collected for test parallelization is based on one execution. For more accurate results we should run a test multiple times, ignore the first two runs' time and average a couple of its subsequent test runs.
