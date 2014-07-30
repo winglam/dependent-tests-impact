@@ -1,20 +1,60 @@
 \begin{abstract}
 
-In unit testing each test should properly initialize and reset its execution environment
-and/or any resources it will use to avoid affecting another test's execution.
-Order-dependent tests (dependent tests, for short) are tests whose execution results
-are affected by another tests' execution. One common way dependent tests are
-revealed in software systems is when developers utilize regression testing
-techniques that alters the order in which tests of a suite are executed.
-By changing the order in which tests are executed, tests that may have been passing
-may now fail. The tests may fail due to its reliance on another test to
-setup particular resources or environment. 
+In a test suite, all the test cases should be independent:
+no test should affect any other test's result, and running
+the tests in any order should produce the same test results.
+The assumption of test independence is important so that
+tests behave consistently as designed. In addition, many
+downstream testing techniques, including test prioritization,
+test selection, and test parallelization,
+assume test independence. However, as shown in our recent work,
+this critical assumption often does not hold in practice. 
+%the impact
+%of test dependence is still unclear.
 
-This paper studies the effects of order-dependent tests on a particular
-regression testing technique called test prioritization.
-Test prioritization schedules test cases in an order that increases their
-effectiveness in meeting some performance goal. Some examples of these performance goals include increasing the likelihood of revealing faults earlier and increasing the coverage of code at a faster rate. When using test prioritization to generate a new execution order for a test suite, how often are the results of the new order affected by dependent tests? To what extent is the impact of them and how should we augment these existing regression testing techniques to deal with dependent tests? By developing a program that will generate test prioritization execution orders for test suites and studying five real-world programs, we provide concrete evidence to the questions above. We show that dependent tests does affect test prioritization techniques by analyzing five real-world programs. In three of the five programs we analyzed, their test suites attained different results when we applied test prioritization techniques to generate unique test execution orders. We also show how to deal with dependent tests by describing an impending feature for the tool we created to generate test prioritization execution orders.
+%This paper addresses the following question: how is the impact
+%of test dependence on downstream testing techniques?
+%We 
+This paper empirically investigates the impact of test dependence
+on three downstream testing techniques (i.e., test
+selection, prioritization, and parallelization) and propose algorithms
+to cope with such impact. It presents three results.
 
+First, we describe an empirical study to assess the impact of
+test dependence
+on \prionum test prioritization, \selnum test selection, and
+\parnum test parallelization
+algorithms. The study suggests that test dependence
+affects the results of \textit{all} evaluated downstream
+testing algorithms in an nonignorable manner.
+
+Second, we present a family of algorithms to 
+enhance each test prioritization, selection, and parallelization
+technique to respect test dependence, so that each test
+yields the same result before and after applying
+the downstream testing technique.
+%, ensuring they output
+%consistent results.
+%The first technique monitors the
+%test execution of a test suite and generates a concise report
+%to describe the root cause of test dependence.
+%The report permits developers understand why and how
+%test dependence arises.
+%The second technique enhances existing test prioritization,
+%test selection, and test parallelization algorithms to ensure
+%they respect the test dependence.
+
+Third, we evaluate all enhanced testing techniques and
+show that they %describe an experimental evaluation 
+%to show that all enhanced testing techniques
+output consistent results in the presence of
+test dependence without compromising their effectiveness.
+
+%techniques for coping with
+%the test dependence impact are useful and effective. They
+%help developers understand why and how test dependence arises
+%and enable downstream techniques output consistent results
+%in the presence of test dependence.
 
 \end{abstract}
 

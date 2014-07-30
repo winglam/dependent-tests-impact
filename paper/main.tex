@@ -1,5 +1,7 @@
 
-\documentclass{sig-alternate-issta}
+%\documentclass{sig-alternate-issta}
+\documentclass[conference]{IEEEtran}
+
 \usepackage{multirow}
 \usepackage{fancyheadings}
 \usepackage{algorithmic}
@@ -69,12 +71,18 @@
 
 \newcommand{\rest}{REST\xspace}
 
+\newcommand{\dtexplain}{DTExplainer\xspace}
+
 \newcommand{\errornum}{XXX\xspace}
 \newcommand{\subjnum}{XXX\xspace}
 
+\newcommand{\selnum}{XXX\xspace}
+\newcommand{\prionum}{XXX\xspace}
+\newcommand{\parnum}{XXX\xspace}
+
 \newcommand{\preitemizespace}{\vspace{-1mm}}
 
-\renewcommand{\captionfont}{\small\bf}
+%\renewcommand{\captionfont}{\small\bf}
 
 
 
@@ -102,15 +110,18 @@
 \widowpenalty = 10000
 \displaywidowpenalty = 10000
 
-\title{When Tests Collide: The Impact of Order-Dependent Tests}
-\numberofauthors{1}
+\title{When Tests Collide: Evaluating and Coping with\\ the Impact of Test Dependence}
+%\numberofauthors{1}
 
-\author{
-\alignauthor Wing Lam \quad Sai Zhang \quad Michael D. Ernst\\
-       \affaddr{Department of Computer Science \& Engineering}\\
-       \affaddr{University of Washington}\\
-       \email{\{winglam, szhang, mernst\}@cs.washington.edu}
+
+
+\author{\IEEEauthorblockN{ Wing Lam \quad Sai Zhang \quad Michael D. Ernst}
+\IEEEauthorblockA{Department of Computer Science \& Engineering\\
+University of Washington\\
+Seattle, WA, USA\\
+\{winglam, szhang, mernst\}@cs.washiongton.edu}
 }
+
 
 
 \maketitle
@@ -121,11 +132,15 @@
 
 \input{introduction}
 
-\input{approach}
+%\input{downstream}
 
-\input{implementation}
+%\input{implementation}
 
-\input{evaluation}
+\input{understandimpact}
+
+\input{copewithimpact}
+
+\input{experiments}
 
 \input{related}
 
@@ -138,7 +153,7 @@
 \bibliographystyle{abbrv}
 %\small{
 %\bibliography{confdiagnoser}
-\bibliography{bib}
+\bibliography{references}
 %}
 \end{document}
 
