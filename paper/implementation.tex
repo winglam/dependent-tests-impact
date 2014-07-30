@@ -1,5 +1,7 @@
 \section{Implementation}
 
+\begin{comment}
+
 Due to how we were unable to find any existing tools out there that provides direct access to statement and function coverage information or can generate test prioritization orders based on the techniques we studied, we decided to develop our own tools.
 
 In order to calculate for each test the number of statements and functions it executes, we implemented a prototype tool called Instrumenter. Instrumenter supports JUnit 3.x/4.x tests. To implement Instrumenter we used Soot[8], a Java optimization framework for analyzing and transforming Java bytecode. Specifically Instrumenter uses Soot to insert Java bytecode into compiled program files so that for each statement and function that is executed, those statements and functions will be saved into a class called Tracer. Tracer is a data class that simply stores information given to it by the instrumented program files and will print the information it stores when the instrumented test files requests it to do so. By inserting try/catch clauses, Instrumenter is also used to transform test files so that each test case is guaranteed to request Tracer to print out the statements and functions it executed. 
@@ -41,3 +43,4 @@ Limitations of our prototype tools include:
 
 The Instrumenter and TestListGenerator is available at: \url{https://code.google.com/p/dependent-tests-impact/}.
 
+\end{comment}
