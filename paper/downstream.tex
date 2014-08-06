@@ -1,6 +1,7 @@
 Test prioritization, selection, and parallelization are three
-important types of downstream testing techniques. They aim to
-change an existing test suite in certain ways to make it run
+important downstream testing techniques. These three techniques may
+change the execution order of an existing test suite in
+certain ways to make it run
 faster, achieve coverage faster, detect faults earlier,
 or fulfill other testing goals.
 
@@ -24,8 +25,9 @@ cases based on their estimated ability to reveal faults
 in the code components that they cover. In addition to the
 test execution information, the third
 category requires a comprehensive history of known
-faults, which are often absent in practice and
-approximated by seeded faults~\cite{}.
+faults, which are often absent in practice.
+% and
+%approximated by seeded faults~\cite{}.
 
 
 \begin{figure}
@@ -65,6 +67,7 @@ available for our subject programs.)
 In this paper, we focus on evaluating 5 well-known test prioritization
 techniques from the first and second categories (summarized
 in Figure~\ref{tab:testprio}).
+\todo{evalaute combination of test prioritization and selection}
 
 %We wish to empirically investigate the validity of this unverified
 %conventional wisdom, in order to understand whether
@@ -75,8 +78,7 @@ in Figure~\ref{tab:testprio}).
 \subsubsection{Test selection.}
 
 Test selection techniques are often designed for improving
-regression testing, which is the process of validating modified
-software to detect whether new defects
+regression testing to detect whether new defects
 have been introduced into previously tested code and
 to provide confidence that modifications
 are correct. 
@@ -91,18 +93,19 @@ reduce the testing cost.
 %Since test selection techniques execute only a subset of the original
 %test suite, they 
 Test selection techniques may change the execution
-environment of each selected test. 
-Further, test selection is often used together with
+environment (i.e., tests running before the
+selected test) of each selected test. 
+Test selection can also be used together with
 test prioritization by prioritizing the selected
 subset of tests~\cite{}. Thus, the test independence
 assumption becomes particularly important to keep the
 selected tests behaving the same as in the original test suite.
 
-In this paper, we focus on evaluating 2 popular test
+In this paper, we focus on evaluating 2 well-known test
 selection techniques (listed
-in Figure~\ref{tab:testsel}) and conduct empirical evaluations
+in Figure~\ref{tab:testsel}). We conduct empirical evaluations
 to investigate whether test dependence will affect their results.
-For every test selection technique,
+For each test selection technique,
 we also evalaute its effectiveness when combined with each test
 prioritization technique listed in Figure~\ref{tab:testprio}.
 
@@ -140,18 +143,17 @@ industry. For example, Visual Studio 2010 (and later)
 supports a model of executing tests in parallel on a multi-CPU/core machine~\cite{}.
 \todo{more evidence here}
 
-Similarly, the test independence assumption is also critical to
-test execution parallelization, since scheduling tests
-to multiple machines may change the execution environment
-of each test and then affect the result. 
+Scheduling tests to multiple machines may change the execution
+environment of each test and then affect the test result.
+%Similarly, the test independence assumption is also critical to
+%test execution parallelization, since  
 %However, this critical
 %assumption still remains unverified: to the best of our
 %knowledge, all existing test parallelization techniques and
 %tools~\cite{} implicitly assume that each test in a test
 %suite is independent from one another.
-
-In this paper, we focus on \parnum test parallelization techniques
-(listed in Figure~\ref{tab:testpar}) and empirically investigate
+This paper focuses on \parnum test parallelization techniques
+(listed in Figure~\ref{tab:testpar}) and empirically investigates
 the impacts of test dependence on them.
 
 \begin{figure}
@@ -181,35 +183,3 @@ each technique with $k$ = 2, 4, 8, and 16.
 \label{tab:testpar}
 \end{figure}
 
-\begin{figure}
-\centering
-\setlength{\tabcolsep}{0.25\tabcolsep}
-\begin{tabular}{|l|l|c|c|l|}
-%\toprule
-\hline
-\textbf{Program} & \textbf{LOC} & \textbf{\#Tests} & \textbf{\#Auto Tests} & \textbf{Revision}
-\\
-\hline
-%JFreechart & 92253 & \jfreecharttests & \jfreechartautotests& 1.0.15\\
-%if we add JFreechart, need to change the total num, and num of subject program
-%\midrule
-\jt & 27183 & \jodatimetests
-% 3875 is retrieved by running mvn test on the related revision
-& -- &  b609d7d66d\\
-XML Security & 18302 & \xmlsecuritytests & \xmlsecurityautotests& version 1.0.4 \\ 
-Crystal & 4676 & \crystaltests & \crystalautotests& trunk version\\
-Synoptic & 28872 & \synoptictests & \synopticautotests&  trunk version\\ 
-JFreechart& xxx & xxx & xxx &  xxx \\ 
-%\bottomrule
-\hline
-%\textbf{Total}& &  & &  \\ 
-%\hline
-\end{tabular}
-\caption{Subject programs used in our evaluation.
-Column ``\#Tests'' shows the number of human-written
-unit tests. Column
-``\#Auto Tests'' shows the number of 
-unit tests generated by Randoop~\cite{PachecoLET2007}.
-}
-\label{tab:subjects}
-\end{figure}
