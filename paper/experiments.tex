@@ -4,35 +4,37 @@
 \label{sec:evaluation}
 
 This section evaluates the enhanced downstream
-testing techniques on real-world subject programs
-that contains test dependence.
+testing techniques on the programs in Section~\ref{sec:subj}
+and their test suites.
 
-\subsection{Subject Programs}
+%\subsection{Subject Programs}
 
-For each of the downstream testing techniques we studied,
-we only applied our enhanced version of the technique
-if the subject program and its corresponding test suite revealed
-dependent tests in its nonenhanced orders. 
-The subject program characteristics are shown
-in Section~\ref{sec:subj}.
 
-\subsection{Methodology}
+\subsection{Evaluation Procedure}
 
-We evaluate each testing technique in two aspects:
+For each human-written or automatically-generated
+test suite that reveals different results after
+applying a downstream testing technique, we applied
+the corresponding enhanced testing technique to the
+same test suite and measure three results:
+
 \begin{enumerate}
-\item We apply each technique to all test suites containing
-test dependence, and then check whether the test dependence
-has been properly handled, i.e., no test in the output
+\item whether the test dependence
+has been properly handled, that is, no test should
 reveals different results than being executed in the original
 test suite in the default order.
-\item We analyze the outcome of each enhanced,
-dependence-aware testing technique, and check whether
-the technique effectiveness has been compromised or not.
+
+\item the time cost of running the enhanced
+testing technique.
+
+\item whether the enhanced testing technique has compromised
+the effectiveness of the original testing technique.
 Specifically, for test prioritization techniques, we measure
-the test coverage of the prioritized test suite. For test
+the test coverage of the prioritized test suite; for test
 selection techniques, we measure the size of the selected
-test subset. For test parallelization techniques, we measure
-the execution time for the whole test suite.
+test subset; and for test parallelization techniques, we measure
+the execution time of the whole test suite after parallelization.
+
 
 \end{enumerate}
 
@@ -71,9 +73,10 @@ nonenhanced orders revealed any dependent tests.
 \end{figure}
 
 
+\subsection{Results}
 
 
-\subsection{Dependence-Aware Test Prioritization}
+\subsubsection{Enhanced Test Prioritization Techniques}
 
 All tests reveal the same results as being executed
 in the default, unprioritized test suite in the prioritized
@@ -104,9 +107,9 @@ coverage slower in our unenhanced orders was because of the
 occurrences of events that disrupts the normal flow of
 instructions and the different paths of execution taken for branches. 
 
-\subsection{Dependence-Aware Test Selection}
+\subsubsection{Enhanced Test Selection Techniques}
 
-\begin{table}
+\begin{figure}
 \centering
 \setlength{\tabcolsep}{1.25\tabcolsep}
 \begin{tabular}{|l|c|c|}
@@ -134,7 +137,7 @@ JFreeChart and Synoptic were omitted because none of the orders from their
 nonenhanced orders revealed any dependent tests.
 }
 \label{tab:enhancedselresult}
-\end{table}
+\end{figure}
 
 All tests in the test subset selected by all test selection
 techniques reveal the same result as in the default
@@ -150,9 +153,9 @@ shows the results. The enhanced techniques
 slightly increase the selected test subset by
 less than  1\%.
 
-\subsection{Dependence-Aware Test Parallelization}
+\subsubsection{Enhanced Test Parallelization Techniques}
 
-\begin{table*}
+\begin{figure*}
 \centering
 \setlength{\tabcolsep}{1.25\tabcolsep}
 \begin{tabular}{|l| l|l|l|l| l|l|l|l| l|l|l|l|}
@@ -187,7 +190,7 @@ any dependent tests.
 \todo{show the slow}
 }
 \label{tab:enhancedparresult}
-\end{table*}
+\end{figure*}
 
 By using the enhanced test parallelization techniques,
 all tests scheduled on different machines reveal the
