@@ -1,0 +1,91 @@
+The test dependence elimination algorithms
+
+\begin{figure}[t!]
+	\textbf{Auxiliary methods}: \\
+    exec($\mathit{T}$): executes a test suite $T$ in a fresh JVM and returns the
+    results of all tests. exec($\mathit{T}$)[$\mathit{t}$] returns the result of
+    a test $\mathit{t} \in T$.\\
+    getFirstDifferentTest($\mathit{T_{orig}}$, $\mathit{T_{new}}$): returns the first
+    test $\mathit{t} \in \mathit{T_{orig}} \cap \mathit{T_{new}}$ that yields
+    different results in $\mathit{T_{orig}}$ and $\mathit{T_{new}}$.\\
+    ddmin($\mathit{T}$, $\mathit{t}$, $\mathit{r}$): uses delta debugging to minimize
+    the test suite $\mathit{T}$ while keeping a given test $\mathit{t}$ yield result $\mathit{r}$. \\
+    reorderTests($\mathit{T}$, $\mathit{T_{ordered}}$): returns a reordered sequence of $\mathit{T}$ in which each test follows the relative test order of $\mathit{T_{ordered}}$\\
+    merge($\mathit{T_1}$, $\mathit{T_2}$): merges
+    $\mathit{T_1}$ and $\mathit{T_2}$ into one ordered sequence (keeping
+    the relative test order in both $\mathit{T_1}$ and $\mathit{T_2}$)
+    and returns the merged sequence.
+    This method can be overriden based on a specific ordering critieria 
+    by different prioritization algorithms in Figure~\ref{fig:copetestprio}.
+        By default, it returns a test sequence
+    that concatenates $\mathit{T_1}$ and $\mathit{T_2}$.\\
+
+    \vspace{-3mm}
+	nullifyTestDependence($\mathit{T_{orig}}$, $\mathit{T_{new}}$)\\
+	\textbf{Input}: an original test suite (i.e., an ordered sequence of
+    tests) $\mathit{T_{orig}}$, and its
+    reordered subsequence $\mathit{T_{new}}$\\
+	\textbf{Output}: an ordered sequence of tests in which every test
+    yields the same result as in $\mathit{T_{orig}}$\\
+	 \begin{algorithmic}[1]
+	 	\vspace{-5mm}
+        \STATE $\mathit{R_{orig}} \leftarrow$ exec($\mathit{T_{orig}}$)
+        \STATE $\mathit{R_{new}} \leftarrow$ exec($\mathit{T_{new}}$)
+        \IF{$\mathit{R_{orig}} \neq \mathit{R_{new}}$}
+        \STATE $\mathit{t} \leftarrow$ getFirstDifferentTest($\mathit{T_{orig}}$, $\mathit{T_{new}}$)
+        %\STATE $\mathit{T} \leftarrow$ new List$\langle$Test$\rangle$
+        \STATE $\mathit{T} \leftarrow$ [$\mathit{t}$] \COMMENT{$\mathit{T}$ is a list}
+        %\STATE $\mathit{T}$.add($\mathit{t}$)
+        \STATE $\mathit{r_t} \leftarrow$ exec($\mathit{T}$)[$\mathit{t}$]
+        \STATE $\mathit{T_{base}} \leftarrow T_{orig}$
+        \STATE $\mathit{T_{ref}} \leftarrow T_{new}$
+        \IF{$\mathit{r_t} \neq \mathit{R_{orig}}$[$\mathit{t}$]}
+          \STATE $\mathit{T_{base}} \leftarrow T_{new}$
+          \STATE $\mathit{T_{ref}} \leftarrow T_{orig}$
+        \ENDIF
+        \STATE $\mathit{T_{min}} \leftarrow$ ddmin($\mathit{T_{ref}} \setminus \mathit{T}$, $\mathit{t}$, $\mathit{r_t}$)
+        \STATE $\mathit{T} \leftarrow$ reorderTests($\mathit{T} \cup \mathit{T_{min}}$, $\mathit{T_{orig}}$)
+        \STATE $\mathit{r_t} \leftarrow$ exec($\mathit{T}$)[$\mathit{t}$]
+        \IF{$\mathit{r_t} \neq \mathit{R_{orig}}$[$\mathit{t}$]}
+        \STATE $\mathit{T_{min}} \leftarrow$ ddmin($\mathit{T_{base}} \setminus \mathit{T}$, $\mathit{t}$, $\mathit{r_t}$)
+        \STATE $\mathit{T} \leftarrow$ reorderTests($\mathit{T} \cup \mathit{T_{min}}$, $\mathit{T_{orig}}$)
+        \ENDIF
+        \STATE $\mathit{T_{new}} \leftarrow$ merge($\mathit{T}$, $\mathit{T_{new}}$ $\setminus$ $\mathit{T}$)
+        \RETURN nullifyTestDependence($\mathit{T_{orig}}$, $\mathit{T_{new}}$)
+        \ENDIF
+        \RETURN $\mathit{T_{new}}$
+	\end{algorithmic}
+	\vspace{-3mm}
+	\caption {
+        A general algorithm to remove test dependence. It converts
+        a new test suite (i.e., $\mathit{T_{new}}$, an ordered sequence of tests)
+        into another ordered sequence of tests where each test yields
+        the same result as in $\mathit{T_{orig}}$. The returned new
+        sequence contains every test in $\mathit{T_{new}}$ but can be
+        larger than $\mathit{T_{new}}$. This algorithm is instantiated
+        in Figures~\ref{fig:copetestprio},~\ref{fig:copetestsel},
+        and~\ref{fig:copetestpar} to cope with test dependence in test prioritization,
+        test selection, and test parallelization, respectively.
+	}
+	\label{fig:basealgorithm}
+\end{figure}
+
+Figure~\ref{fig:basealgorithm} describes a general algorithm that
+``nullifies'' the impact of test dependence. This algorithm converts
+an ordered sequence of tests (in which some dependent tests exhibits)
+into another sequence of tests where each test yields the same result
+as in the original test suite. The converted sequence includes every
+test in the given sequence and can be possibly larger than the given
+sequence.
+
+The basic idea of this algorithm is to use Delta debugging~\cite{}
+to minimize the test set that cause a dependent test to yield different
+result (line 13), then reorder the given test sequence
+to make the dependent test yield the same result as in the original
+suite (line 14). It is possible that the reordered sequence still
+yields a different result when executed with the rest tests (line 16).
+The algorithm employs Delta debugging again to identify the minimal
+set of tests from the \textit{original} test suite that must be
+executed in the output sequence (lines 17 -- 18). The recursion (line 21)
+continues until the effects of all dependent tests have been nullified.
+\todo{need more explanation}
