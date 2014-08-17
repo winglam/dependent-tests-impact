@@ -9,12 +9,7 @@ package edu.washington.cs.dt.impact.technique;
 
 import java.io.File;
 import java.util.Collections;
-import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Set;
 
-import edu.washington.cs.dt.impact.data.TestFunctionStatement;
 import edu.washington.cs.dt.impact.order.Relative;
 import edu.washington.cs.dt.impact.order.Standard;
 import edu.washington.cs.dt.impact.util.Constants.COVERAGE;
@@ -42,10 +37,7 @@ public class Prioritization extends Test {
             if (order == ORDER.RELATIVE) {
                 methodList = new Relative(outputFilename, methodList, allLines).getMethodList();
             }
-            if (getCoverage) {
-                methodList = changeToCoverage();
-            }
-            orderObj = new Standard(outputFilename, methodList);
+            orderObj = new Standard(outputFilename, methodList, getCoverage, allLines);
         } else if (order == ORDER.RANDOM) {
             Collections.shuffle(methodList);
             orderObj = new Standard(outputFilename, methodList);
@@ -54,23 +46,5 @@ public class Prioritization extends Test {
                     + " Compatible orders are: absolute, relative and random.");
             System.exit(0);
         }
-    }
-
-    // Used to get the percent coverage each test is responsible for based on their current
-    // order in methodList
-    private List<TestFunctionStatement> changeToCoverage() {
-        Set<String> allLinesCpy = new HashSet<String>(allLines);
-        List<TestFunctionStatement> coverageList = new LinkedList<TestFunctionStatement>();
-        while (methodList.size() > 0) {
-            TestFunctionStatement tfs = methodList.remove(0);
-            int beforeSize = allLinesCpy.size();
-            allLinesCpy.removeAll(tfs.getLines());
-            int afterSize = beforeSize - allLinesCpy.size();
-
-            // record the percent of coverage as xx.xx%
-            long displayPercent = (long) ((((double) afterSize) / allLines.size()) * 10000);
-            coverageList.add(new TestFunctionStatement(tfs.getName() + " : " + displayPercent));
-        }
-        return coverageList;
     }
 }

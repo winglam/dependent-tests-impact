@@ -135,7 +135,6 @@ public class Test {
         if (inputTestFolder == null) {
             throw new RuntimeException("sootOutput is missing some required classes.");
         }
-
         for (final File fileEntry : inputTestFolder.listFiles()) {
             if (fileEntry.isFile()) {
                 TestFunctionStatement methodData = new TestFunctionStatement(fileEntry.getName());
@@ -143,6 +142,7 @@ public class Test {
                 try {
                     br = new BufferedReader(new FileReader(fileEntry));
                     String line;
+
                     while ((line = br.readLine()) != null) {
                         if (coverage == COVERAGE.STATEMENT) {
                             allLines.add(line);

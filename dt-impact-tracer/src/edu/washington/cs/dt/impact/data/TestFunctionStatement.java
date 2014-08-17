@@ -120,6 +120,10 @@ public class TestFunctionStatement extends Observable implements Comparable<Test
         return setOfCurrentLines;
     }
 
+    public void setName(String name) {
+        this.methodName = name;
+    }
+
     @Override
     public String toString() {
         return getName() + " : " + getLineCount();
