@@ -225,39 +225,27 @@ public class DependentTestFinder {
         }
 
         // run just dependentTestName and the tests that must come before it
-        List<String> chainSubTests;
-        int chainIndex = 0;
+        int chainIndex = botTests.size() - 2;
         boolean chainTestResult = isTestResultDifferent(dependentTestName, botTests);
         if (chainTestResult) {
             // just the chain causes dependentTestName to attain a different result
             // look inside the original order for what it is missing
             fullTests = ORIGINAL_ORDER_TESTS;
             isOriginalOrder = true;
-            int i = botTests.size() - 2;
+            List<String> fullChainTests = new ArrayList<String>();
 
-            chainSubTests = botTests.subList(i, botTests.size());
-            chainTestResult = isTestResultDifferent(dependentTestName, chainSubTests);
-
-            // go up the chain and find the minimum part of the chain we need
-            // to get the dependent test to manifest
-            while (!chainTestResult && i > 0) {
-                i -= 1;
-                chainSubTests = botTests.subList(i, botTests.size());
-                chainTestResult = isTestResultDifferent(dependentTestName, chainSubTests);
-            }
-
-            String currentKey = chainSubTests.get(0);
+            String currentKey = botTests.get(0);
             Map<String, List<String>> testToChunk = new HashMap<String, List<String>>();
-            for (int j = 1; j < chainSubTests.size(); j++) {
+            for (int j = 1; j < botTests.size(); j++) {
                 int fromIndex = fullTests.indexOf(currentKey);
-                int toIndex = fullTests.indexOf(chainSubTests.get(j));
+                int toIndex = fullTests.indexOf(botTests.get(j));
                 testToChunk.put(currentKey, new ArrayList<String>(
                         fullTests.subList(fromIndex, toIndex)));
-                currentKey = chainSubTests.get(j);
+                currentKey = botTests.get(j);
             }
 
-            // use the minimum part of our chain and inject tests from the original order
-            // into the chain to determine which part contains the test we need
+            // inject tests from the original order into the chain to determine
+            // which part contains the test we need
             // TODO #1. This is incomplete. If the dependent test requires A and B to run
             // before it and A and B are in different sections of the chain
             // this will be unable to identify it.
@@ -265,11 +253,10 @@ public class DependentTestFinder {
             // identify which sections are relevant to the dependent test.
             // Then use the depednentTestSolver and change the topAddOn and botAddOn
             // tests to pin down the tests in each section that is relevant to the dependent test.
-            List<String> fullChainTests = new ArrayList<String>();
-            for (; chainIndex < chainSubTests.size() - 1; chainIndex++) {
-                fullChainTests.addAll(chainSubTests.subList(0, chainIndex));
-                fullChainTests.addAll(testToChunk.get(chainSubTests.get(chainIndex)));
-                fullChainTests.addAll(chainSubTests.subList(chainIndex + 1, chainSubTests.size()));
+            for (; chainIndex >= 0 ; chainIndex--) {
+                fullChainTests.addAll(botTests.subList(0, chainIndex));
+                fullChainTests.addAll(testToChunk.get(botTests.get(chainIndex)));
+                fullChainTests.addAll(botTests.subList(chainIndex + 1, botTests.size()));
 
                 boolean fullChainResult = isTestResultDifferent(dependentTestName, fullChainTests);
                 if (!fullChainResult) {
@@ -284,31 +271,20 @@ public class DependentTestFinder {
             // but something between the chain or before it is causing it to
             fullTests = CURRENT_ORDER_TESTS;
             isOriginalOrder = false;
-            int i = botTests.size() - 2;
+            List<String> fullChainTests = new ArrayList<String>();
 
-            chainSubTests = botTests.subList(i, botTests.size());
-            chainTestResult = isTestResultDifferent(dependentTestName, chainSubTests);
-
-            // go up the chain and find the minimum part of the chain we need
-            // to get the dependent test to not manifest
-            while (chainTestResult && i > 0) {
-                i -= 1;
-                chainSubTests = botTests.subList(i, botTests.size());
-                chainTestResult = isTestResultDifferent(dependentTestName, chainSubTests);
-            }
-
-            String currentKey = chainSubTests.get(0);
+            String currentKey = botTests.get(0);
             Map<String, List<String>> testToChunk = new HashMap<String, List<String>>();
-            for (int j = 1; j < chainSubTests.size(); j++) {
+            for (int j = 1; j < botTests.size(); j++) {
                 int fromIndex = fullTests.indexOf(currentKey);
-                int toIndex = fullTests.indexOf(chainSubTests.get(j));
+                int toIndex = fullTests.indexOf(botTests.get(j));
                 testToChunk.put(currentKey, new ArrayList<String>(
                         fullTests.subList(fromIndex, toIndex)));
-                currentKey = chainSubTests.get(j);
+                currentKey = botTests.get(j);
             }
 
-            // use the minimum part of our chain and inject tests from the current order
-            // into the chain to determine which part contains the test we need
+            // inject tests from the current order into the chain to determine
+            // which part contains the test we need
             // TODO #2. This is incomplete. If the dependent test requires A and B to run
             // before it and A and B are in different sections of the chain
             // this will be unable to identify it.
@@ -316,12 +292,10 @@ public class DependentTestFinder {
             // identify which sections are relevant to the dependent test.
             // Then use the depednentTestSolver and change the topAddOn and botAddOn
             // tests to pin down the tests in each section that is relevant to the dependent test.
-            List<String> fullChainTests;
-            for (; chainIndex < chainSubTests.size() - 1; chainIndex++) {
-                fullChainTests = new ArrayList<String>();
-                fullChainTests.addAll(chainSubTests.subList(0, chainIndex));
-                fullChainTests.addAll(testToChunk.get(chainSubTests.get(chainIndex)));
-                fullChainTests.addAll(chainSubTests.subList(chainIndex + 1, chainSubTests.size()));
+            for (; chainIndex >= 0 ; chainIndex--) {
+                fullChainTests.addAll(botTests.subList(0, chainIndex));
+                fullChainTests.addAll(testToChunk.get(botTests.get(chainIndex)));
+                fullChainTests.addAll(botTests.subList(chainIndex + 1, botTests.size()));
 
                 boolean fullChainResult = isTestResultDifferent(dependentTestName, fullChainTests);
                 if (fullChainResult) {
@@ -329,13 +303,14 @@ public class DependentTestFinder {
                     // the dependent test to manifest
                     break;
                 }
+                fullChainTests.clear();
             }
         }
 
         int endIndex = -1;
         boolean useTopBot = true;
         List<String> topTests = new ArrayList<String>();
-        if (chainIndex == chainSubTests.size() - 1) {
+        if (chainIndex == - 1) {
             // the relevant test is outside of the dependence chain,
             // use the entire fullTests order to the start of the chain
             startIndex = 0;
@@ -345,11 +320,11 @@ public class DependentTestFinder {
             topTests = new ArrayList<String>();
         } else {
             // the relevant test is in between two tests in the dependence chain
-            startIndex = fullTests.indexOf(chainSubTests.get(chainIndex)) + 1;
-            endIndex = fullTests.indexOf(chainSubTests.get(chainIndex + 1));
-            topTests = new ArrayList<String>(chainSubTests.subList(0, chainIndex + 1));
-            botTests = new ArrayList<String>(chainSubTests.subList(chainIndex + 1,
-                    chainSubTests.size() - 1));
+            startIndex = fullTests.indexOf(botTests.get(chainIndex)) + 1;
+            endIndex = fullTests.indexOf(botTests.get(chainIndex + 1));
+            topTests = new ArrayList<String>(botTests.subList(0, botTests.indexOf(botTests.get(chainIndex)) + 1));
+            botTests = new ArrayList<String>(botTests.subList(chainIndex + 1,
+                    botTests.size() - 1));
         }
 
         if (startIndex > fullTests.indexOf(dependentTestName)) {

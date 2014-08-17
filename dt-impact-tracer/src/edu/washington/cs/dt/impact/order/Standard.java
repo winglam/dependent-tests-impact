@@ -22,10 +22,21 @@ import edu.washington.cs.dt.impact.data.TestFunctionStatement;
 public class Standard {
     protected String filename;
     protected List<TestFunctionStatement> methodList;
+    private boolean getCoverage;
+    protected Set<String> allLines;
+
+    public Standard(String outputFileName, List<TestFunctionStatement> methodList, boolean getCoverage, Set<String> allLines) {
+        this.filename = outputFileName;
+        this.methodList = methodList;
+        this.getCoverage = getCoverage;
+        this.allLines = allLines;
+    }
 
     public Standard(String outputFileName, List<TestFunctionStatement> methodList) {
         this.filename = outputFileName;
         this.methodList = methodList;
+        this.getCoverage = false;
+        allLines = null;
     }
 
     public void checkForDependentTests() {
@@ -112,7 +123,31 @@ public class Standard {
         }
     }
 
+    // Used to get the percent coverage each test is responsible for based on their current
+    // order in methodList
+    private List<TestFunctionStatement> changeToCoverage() {
+        Set<String> allLinesCpy = new HashSet<String>(allLines);
+        List<TestFunctionStatement> coverageList = new LinkedList<TestFunctionStatement>();
+        while (methodList.size() > 0) {
+            TestFunctionStatement tfs = methodList.remove(0);
+            tfs.reset();
+            int beforeSize = allLinesCpy.size();
+            allLinesCpy.removeAll(tfs.getLines());
+            int afterSize = beforeSize - allLinesCpy.size();
+
+            // record the percent of coverage as xx.xx%
+            long displayPercent = (long) ((((double) afterSize) / allLines.size()) * 10000);
+            tfs.setName((tfs.getName() + " : " + displayPercent));
+            coverageList.add(tfs);
+        }
+        return coverageList;
+    }
+
     public void printResults() {
+        if (getCoverage) {
+            methodList = changeToCoverage();
+        }
+
         if (filename == null) {
             for (TestFunctionStatement methodData : methodList) {
                 System.out.println(methodData.getName());
