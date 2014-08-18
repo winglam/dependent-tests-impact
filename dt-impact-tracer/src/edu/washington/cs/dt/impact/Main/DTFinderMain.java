@@ -151,6 +151,11 @@ public class DTFinderMain {
                     s.close();
                     throw new RuntimeException("Incorrect format for dependent test file.");
                 }
+
+                if (!s.hasNext()) {
+                    s.close();
+                    throw new RuntimeException("The remaining tests are not dependent tests!.");
+                }
                 s.close();
 
                 // recreate the argsList for DependentTestFinder

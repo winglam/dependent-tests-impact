@@ -22,7 +22,7 @@ instrumentFiles $experimentCP
 java -cp impact-tools/*:sootOutput/:libs/lib/* edu.washington.cs.dt.main.ImpactMain $experiment-$testType-order
 
 # generate test orders
-getCoveragesOrders $experiment $experimentCP $testType $dependentFree
+getCoveragesOrders $experiment $experimentCP $testType
 clearEnv
 java -cp $experimentCP edu.washington.cs.dt.main.ImpactMain $experiment-$testType-order > $experiment-$testType-order-results.txt
 rm -rf $experiment-tp-summary.txt

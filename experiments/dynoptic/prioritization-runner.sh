@@ -1,7 +1,7 @@
 testType=orig
 experiment=synoptic
 experimentCP=impact-tools/*:bin/:../synoptic/lib/*:../synoptic/bin/:../daikonizer/bin/
-dependentFree=true
+dependentFree=false
 
 function clearEnv() {
   :
@@ -15,6 +15,7 @@ instrumentFiles $experimentCP
 java -cp impact-tools/*:sootOutput:../synoptic/lib/*:../synoptic/bin/:../daikonizer/bin/ edu.washington.cs.dt.main.ImpactMain $experiment-$testType-order
 
 # generate test orders
+getCoveragesOrders $experiment $experimentCP $testType
 clearEnv
 java -cp $experimentCP edu.washington.cs.dt.main.ImpactMain $experiment-$testType-order > $experiment-$testType-order-results.txt
 rm -rf $experiment-tp-summary.txt

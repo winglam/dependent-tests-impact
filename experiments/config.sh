@@ -168,3 +168,37 @@ function selectionRunOrigOrder() {
     cd ..
   done
 }
+
+function buildDTChainPrioritization() {
+  DTChainCoverages=(statement)
+  for i in "${DTChainCoverages[@]}"; do 
+    for j in "${orders[@]}"; do
+        echo "" > $1-$3-dt-$i-$j
+        java -cp $impactJarCP $testListGenClass -technique prioritization -coverage $i -order $j -outputFile $1-tp-$i-$j.txt
+        
+        clearEnv
+        java -cp $2 edu.washington.cs.dt.main.ImpactMain $1-tp-$i-$j.txt > $1-tp-$i-$j-results-dt.txt
+        java -cp $impactJarCP $crossReferenceClass -origOrder $1-$3-order-results.txt -testOrder $1-tp-$i-$j-results-dt.txt > $1-tp-$i-$j-summary.txt 
+        rm -rf $1-tp-$i-$j-results-dt.txt
+      
+        k=0
+        while [ $k -le $4 ] 
+        do
+            rm -rf $1-tp-$i-$j-results-dt.txt
+            java -cp $2 edu.washington.cs.dt.impact.Main.DTFinderMain -dependentTestFile $1-tp-$i-$j-summary.txt  -currentOrderFile $1-tp-$i-$j.txt -originalOrderFile $1-$3-order -dtFile $1-$3-dt-$i-$j -filesToDelete $1-env-files
+
+            java -cp $impactJarCP $testListGenClass -technique prioritization -coverage $i -order $j -outputFile $1-tp-$i-$j.txt -dependentTestFile $1-$3-dt-$i-$j
+            
+            clearEnv
+            java -cp $2 edu.washington.cs.dt.main.ImpactMain $1-tp-$i-$j.txt > $1-tp-$i-$j-results-dt.txt
+            java -cp $impactJarCP $crossReferenceClass -origOrder $1-$3-order-results.txt -testOrder $1-tp-$i-$j-results-dt.txt > $1-tp-$i-$j-summary.txt 
+      
+            k=$(($k+1))
+        done
+        echo '======================= Finish ' $i ' - ' $j ' ======================='
+        rm -rf $1-tp-$i-$j.txt 
+	java -cp $impactJarCP $testListGenClass -technique prioritization -coverage $i -order $j -outputFile $1-tp-$i-$j-coverage-dt.txt -dependentTestFile $1-$3-dt-$i-$j -getCoverage
+    done
+  done
+  clearEnv
+}

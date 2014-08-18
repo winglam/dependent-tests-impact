@@ -1,5 +1,6 @@
 crystal-tp-statement-absolute-results.txt
 Number of Inconsistent Tests Found: 11
+Number of additional tests: 0
 Number of Tests Missing: 12
                                                             Original order result:        Test order result:
 crystal.model.LocalStateResultTest.testGetAction:           PASS                          ERROR
@@ -28,6 +29,7 @@ crystal.server.TestGitStateChecker.testBasicAhead:          FAIL
 
 crystal-tp-statement-relative-results.txt
 Number of Inconsistent Tests Found: 16
+Number of additional tests: 0
 Number of Tests Missing: 12
                                                             Original order result:        Test order result:
 crystal.model.LocalStateResultTest.testGetAction:           PASS                          ERROR
@@ -61,6 +63,7 @@ crystal.server.TestGitStateChecker.testBasicAhead:          FAIL
 
 crystal-tp-function-absolute-results.txt
 Number of Inconsistent Tests Found: 11
+Number of additional tests: 0
 Number of Tests Missing: 12
                                                             Original order result:        Test order result:
 crystal.model.LocalStateResultTest.testGetAction:           PASS                          ERROR
@@ -89,6 +92,7 @@ crystal.server.TestGitStateChecker.testBasicAhead:          FAIL
 
 crystal-tp-function-relative-results.txt
 Number of Inconsistent Tests Found: 12
+Number of additional tests: 0
 Number of Tests Missing: 12
                                                             Original order result:        Test order result:
 crystal.model.LocalStateResultTest.testGetAction:           PASS                          ERROR
@@ -117,19 +121,18 @@ crystal.server.TestGitStateChecker.testBasicBehind:         FAIL
 crystal.server.TestGitStateChecker.testBasicAhead:          FAIL
 
 crystal-random-results.txt
-Number of Inconsistent Tests Found: 12
+Number of Inconsistent Tests Found: 10
+Number of additional tests: 0
 Number of Tests Missing: 12
                                                             Original order result:        Test order result:
-crystal.model.DataSourceTest.testIsHidden:                  PASS                          ERROR
 crystal.model.LocalStateResultTest.testGetAction:           PASS                          ERROR
-crystal.model.DataSourceTest.testSetRemoteCmd:              PASS                          ERROR
+crystal.client.ConflictDaemonTest.testRelationship:         FAIL                          PASS
 crystal.model.LocalStateResultTest.testGetLastLocalState:   PASS                          ERROR
 crystal.model.LocalStateResultTest.testGetLastErrorMessage: PASS                          ERROR
 crystal.model.LocalStateResultTest.testGetName:             PASS                          ERROR
 crystal.model.LocalStateResultTest.testGetNoErrorMessage:   PASS                          ERROR
-crystal.model.LocalStateResultTest.testGetLastAction:       PASS                          ERROR
 crystal.model.LocalStateResultTest.testToString:            PASS                          ERROR
-crystal.model.DataSourceTest.testSetParent:                 PASS                          ERROR
+crystal.model.LocalStateResultTest.testGetLastAction:       PASS                          ERROR
 crystal.model.LocalStateResultTest.testGetLocalState:       PASS                          ERROR
 crystal.model.DataSourceTest.testSetCompileCommand:         PASS                          ERROR
 crystal.server.TestHgStateChecker.testBasicAhead:           FAIL
