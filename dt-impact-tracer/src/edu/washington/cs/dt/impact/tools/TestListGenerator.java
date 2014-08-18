@@ -79,10 +79,6 @@ public class TestListGenerator {
                 .println("Coverage is invalid. Try \"statement\", \"branch\" or \"function\".");
                 System.exit(0);
             }
-        } else {
-            System.err.println("No coverage argument is specified."
-                    + " Please use the format: -coverage aCoverageName");
-            System.exit(0);
         }
 
         // get the order
