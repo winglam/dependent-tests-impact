@@ -1,0 +1,384 @@
+Aug 31, 2014 12:05:45 AM dynoptic.invariants.NeverFollowedByTests create
+INFO: (0-0->1:0->1 ! e1) NFby (1-1->0:1->0 ! e2)
+Aug 31, 2014 12:05:45 AM dynoptic.invariants.NeverFollowedByTests scmBadStatesString
+INFO: (ch0Se1TR0 | ch0Se1TR1 | ch1Se2TR0 | ch1Se2TR1)^* . (ch0Se1TR0 . ch0Se1TR1) . (ch0Se1TR0 | ch0Se1TR1 | ch1Se2TR0 | ch1Se2TR1)^* . (ch1Se2TR0 . ch1Se2TR1) . (ch0Se1TR0 | ch0Se1TR1 | ch1Se2TR0 | ch1Se2TR1)^*
+Aug 31, 2014 12:05:45 AM dynoptic.invariants.AlwaysPrecedesTests create
+INFO: (0-0->1:0->1 ! e1) AP (1-1->0:1->0 ! e2)
+Aug 31, 2014 12:05:45 AM dynoptic.invariants.AlwaysPrecedesTests scmBadStatesString
+INFO: (ch1Se2TR0 . ch1Se2TR1)^+ . (ch0Se1TR0 | ch0Se1TR1 | ch1Se2TR0 | ch1Se2TR1)^*
+Aug 31, 2014 12:05:45 AM dynoptic.invariants.EventuallyHappensTests create
+INFO: (INITIALp-1L) Eventually (0-0->1:0->1 ! e1)
+Aug 31, 2014 12:05:45 AM dynoptic.invariants.EventuallyHappensTests scmBadStatesString
+INFO: _
+Aug 31, 2014 12:05:45 AM dynoptic.invariants.AlwaysFollowedByTests create
+INFO: (0-0->1:0->1 ! e1) AFby (1-1->0:1->0 ! e2)
+Aug 31, 2014 12:05:45 AM dynoptic.invariants.AlwaysFollowedByTests scmBadStatesString
+INFO: (ch0Se1TR0 | ch0Se1TR1 | ch1Se2TR0 | ch1Se2TR1)^* . (ch0Se1TR0 . ch0Se1TR1)^+
+Aug 31, 2014 12:05:45 AM dynoptic.model.alphabet.DistEventTypeTests createRecv
+INFO: 0-A:1->2 ? e
+Aug 31, 2014 12:05:45 AM dynoptic.model.alphabet.DistEventTypeTests createSend
+INFO: 0-A:1->2 ! e
+Aug 31, 2014 12:05:45 AM dynoptic.model.alphabet.DistEventTypeTests createLocal
+INFO: ep1L
+Aug 31, 2014 12:05:45 AM dynoptic.model.alphabet.DistEventTypeTests createSynthSend
+INFO: 0-A:1->2 ! ch0ReTR0
+Aug 31, 2014 12:05:45 AM dynoptic.model.export.GraphExporter exportCFSM
+INFO: Exporting CFSM to: ./test.dot
+Aug 31, 2014 12:05:45 AM dynoptic.model.export.GraphExporter exportCFSM
+INFO: Exporting CFSM to: ./test.dot
+Aug 31, 2014 12:05:45 AM dynoptic.model.export.GraphExporter exportCFSM
+INFO: Exporting CFSM to: ./test.dot
+Aug 31, 2014 12:05:45 AM dynoptic.model.export.GraphExporter exportCFSM
+INFO: Exporting CFSM to: ./test.dot
+Aug 31, 2014 12:05:45 AM dynoptic.model.fifosys.cfsm.CFSMTests scmString
+INFO: scm test:
+
+nb_channels = 2 ;
+/*
+channel 0 : 0-0->1:0->1
+channel 1 : 1-ch-locals:0->0
+*/
+
+parameters :
+real m ;
+real ep0L ;
+real fp1L ;
+
+automaton p0 :
+initial : 0
+state 0 :
+to 1 : when true , 0 ! m ;
+
+
+state 1 :
+to 0 : when true , 1 ! ep0L ;
+
+
+
+automaton p1 :
+initial : 0
+state 0 :
+to 1 : when true , 0 ? m ;
+
+
+state 1 :
+to 0 : when true , 1 ! fp1L ;
+
+
+
+
+Aug 31, 2014 12:05:45 AM dynoptic.model.fifosys.cfsm.CFSMTests augmentWithAFby
+INFO: (0-0->1:0->1 ! m) AFby (0-0->1:0->1 ? m)
+Aug 31, 2014 12:05:45 AM dynoptic.model.fifosys.cfsm.CFSMTests augmentWithAFby
+INFO: (automaton p0: in 1: true
+automaton p1: in 1: true
+with _ . # . (ch0SmTR0 | ch0SmTR1 | ch0RmTR0 | ch0RmTR1)^* . (ch0SmTR0 . ch0SmTR1)^+
+)
+Aug 31, 2014 12:05:45 AM dynoptic.model.fifosys.cfsm.CFSMTests augmentWithAFby
+INFO: scm augmentWithAFby-test:
+
+nb_channels = 3 ;
+/*
+channel 0 : 0-0->1:0->1
+channel 1 : 1-ch-[(0-0->1:0->1 ! m) AFby (0-0->1:0->1 ? m)]:0->0
+channel 2 : 2-ch-locals:0->0
+*/
+
+parameters :
+real m ;
+real ep0L ;
+real fp1L ;
+real ch0SmTR0 ;
+real ch0SmTR1 ;
+real ch0RmTR0 ;
+real ch0RmTR1 ;
+
+automaton p0 :
+initial : 0
+state 0 :
+to 2 : when true , 1 ! ch0SmTR0 ;
+
+
+state 1 :
+to 0 : when true , 2 ! ep0L ;
+
+
+state 2 :
+to 3 : when true , 0 ! m ;
+
+
+state 3 :
+to 1 : when true , 1 ! ch0SmTR1 ;
+
+
+
+automaton p1 :
+initial : 0
+state 0 :
+to 2 : when true , 1 ! ch0RmTR0 ;
+
+
+state 1 :
+to 0 : when true , 2 ! fp1L ;
+
+
+state 2 :
+to 3 : when true , 0 ? m ;
+
+
+state 3 :
+to 1 : when true , 1 ! ch0RmTR1 ;
+
+
+
+
+bad_states:
+(automaton p0: in 1: true
+automaton p1: in 1: true
+with _ . # . (ch0SmTR0 | ch0SmTR1 | ch0RmTR0 | ch0RmTR1)^* . (ch0SmTR0 . ch0SmTR1)^+ . # . (ep0L | fp1L)^*
+)
+
+Aug 31, 2014 12:05:45 AM dynoptic.model.fifosys.cfsm.CFSMTests augmentWithNFby
+INFO: (0-0->1:0->1 ! m) NFby (0-0->1:0->1 ? m)
+Aug 31, 2014 12:05:45 AM dynoptic.model.fifosys.cfsm.CFSMTests augmentWithNFby
+INFO: (automaton p0: in 1: true
+automaton p1: in 1: true
+with _ . # . (ch0SmTR0 | ch0SmTR1 | ch0RmTR0 | ch0RmTR1)^* . (ch0SmTR0 . ch0SmTR1) . (ch0SmTR0 | ch0SmTR1 | ch0RmTR0 | ch0RmTR1)^* . (ch0RmTR0 . ch0RmTR1) . (ch0SmTR0 | ch0SmTR1 | ch0RmTR0 | ch0RmTR1)^*
+)
+Aug 31, 2014 12:05:45 AM dynoptic.model.fifosys.cfsm.CFSMTests augmentWithNFby
+INFO: scm augmentWithNFby-test:
+
+nb_channels = 3 ;
+/*
+channel 0 : 0-0->1:0->1
+channel 1 : 1-ch-[(0-0->1:0->1 ! m) NFby (0-0->1:0->1 ? m)]:0->0
+channel 2 : 2-ch-locals:0->0
+*/
+
+parameters :
+real m ;
+real ep0L ;
+real fp1L ;
+real ch0SmTR0 ;
+real ch0SmTR1 ;
+real ch0RmTR0 ;
+real ch0RmTR1 ;
+
+automaton p0 :
+initial : 0
+state 0 :
+to 2 : when true , 1 ! ch0SmTR0 ;
+
+
+state 1 :
+to 0 : when true , 2 ! ep0L ;
+
+
+state 2 :
+to 3 : when true , 0 ! m ;
+
+
+state 3 :
+to 1 : when true , 1 ! ch0SmTR1 ;
+
+
+
+automaton p1 :
+initial : 0
+state 0 :
+to 2 : when true , 1 ! ch0RmTR0 ;
+
+
+state 1 :
+to 0 : when true , 2 ! fp1L ;
+
+
+state 2 :
+to 3 : when true , 0 ? m ;
+
+
+state 3 :
+to 1 : when true , 1 ! ch0RmTR1 ;
+
+
+
+
+bad_states:
+(automaton p0: in 1: true
+automaton p1: in 1: true
+with _ . # . (ch0SmTR0 | ch0SmTR1 | ch0RmTR0 | ch0RmTR1)^* . (ch0SmTR0 . ch0SmTR1) . (ch0SmTR0 | ch0SmTR1 | ch0RmTR0 | ch0RmTR1)^* . (ch0RmTR0 . ch0RmTR1) . (ch0SmTR0 | ch0SmTR1 | ch0RmTR0 | ch0RmTR1)^* . # . (ep0L | fp1L)^*
+)
+
+Aug 31, 2014 12:05:45 AM dynoptic.model.fifosys.cfsm.CFSMTests augmentWithAP
+INFO: (0-0->1:0->1 ! m) AP (0-0->1:0->1 ? m)
+Aug 31, 2014 12:05:45 AM dynoptic.model.fifosys.cfsm.CFSMTests augmentWithAP
+INFO: (automaton p0: in 1: true
+automaton p1: in 1: true
+with _ . # . (ch0RmTR0 . ch0RmTR1)^+ . (ch0SmTR0 | ch0SmTR1 | ch0RmTR0 | ch0RmTR1)^*
+)
+Aug 31, 2014 12:05:45 AM dynoptic.model.fifosys.cfsm.CFSMTests augmentWithAP
+INFO: scm augmentWithAP-test:
+
+nb_channels = 3 ;
+/*
+channel 0 : 0-0->1:0->1
+channel 1 : 1-ch-[(0-0->1:0->1 ! m) AP (0-0->1:0->1 ? m)]:0->0
+channel 2 : 2-ch-locals:0->0
+*/
+
+parameters :
+real m ;
+real ep0L ;
+real fp1L ;
+real ch0SmTR0 ;
+real ch0SmTR1 ;
+real ch0RmTR0 ;
+real ch0RmTR1 ;
+
+automaton p0 :
+initial : 0
+state 0 :
+to 2 : when true , 1 ! ch0SmTR0 ;
+
+
+state 1 :
+to 0 : when true , 2 ! ep0L ;
+
+
+state 2 :
+to 3 : when true , 0 ! m ;
+
+
+state 3 :
+to 1 : when true , 1 ! ch0SmTR1 ;
+
+
+
+automaton p1 :
+initial : 0
+state 0 :
+to 2 : when true , 1 ! ch0RmTR0 ;
+
+
+state 1 :
+to 0 : when true , 2 ! fp1L ;
+
+
+state 2 :
+to 3 : when true , 0 ? m ;
+
+
+state 3 :
+to 1 : when true , 1 ! ch0RmTR1 ;
+
+
+
+
+bad_states:
+(automaton p0: in 1: true
+automaton p1: in 1: true
+with _ . # . (ch0RmTR0 . ch0RmTR1)^+ . (ch0SmTR0 | ch0SmTR1 | ch0RmTR0 | ch0RmTR1)^* . # . (ep0L | fp1L)^*
+)
+
+Aug 31, 2014 12:05:45 AM dynoptic.model.fifosys.cfsm.fsm.FSMTests scmString
+INFO: initial : 0
+state 0 :
+to 1 : when true , 0 ! m ;
+
+
+state 1 :
+to 0 : when true , 1 ! ep1L ;
+
+
+
+Aug 31, 2014 12:05:45 AM dynoptic.model.fifosys.cfsm.fsm.BadStateTests createAndScmString
+INFO: (automaton p0: in 0: true
+automaton p1: in 2: true
+with .* . # . .*
+)
+Aug 31, 2014 12:05:45 AM dynoptic.model.fifosys.cfsm.fsm.BadStateTests createAndScmString
+INFO: (automaton p0: in 0: true
+automaton p1: in 2: true
+with .* . # . .*
+)
+Aug 31, 2014 12:05:45 AM dynoptic.model.fifosys.cfsm.fsm.FSMStateTests scmString
+INFO: state 0 :
+
+Aug 31, 2014 12:05:45 AM dynoptic.model.fifosys.cfsm.fsm.FSMStateTests scmString
+INFO: state 0 :
+to 1 : when true , 0 ! m ;
+to 1 : when true , 1 ! ep1L ;
+
+Aug 31, 2014 12:05:45 AM dynoptic.model.fifosys.cfsm.fsm.FSMStateTests checkInitAcceptPid
+INFO: 0
+Aug 31, 2014 12:05:45 AM dynoptic.model.fifosys.cfsm.fsm.FSMStateTests checkInitAcceptPid
+INFO: 1
+Aug 31, 2014 12:05:45 AM dynoptic.model.fifosys.channel.channelid.ChannelIdTests invChannelId
+INFO: 0-ch-[(ep0L) AFby (fp0L)]:0->0
+Aug 31, 2014 12:05:45 AM dynoptic.model.fifosys.channel.channelid.ChannelIdTests createChannelId
+INFO: 0-1->2:1->2
+Aug 31, 2014 12:05:45 AM dynoptic.model.fifosys.channel.channelid.ChannelIdTests createChannelId
+INFO: 0-ChName:1->2
+Aug 31, 2014 12:05:46 AM dynoptic.model.fifosys.channel.channelid.ChannelIdTests localEventsChannelId
+INFO: 42-ch-locals:0->0
+Aug 31, 2014 12:05:46 AM synoptic.model.channelid.ChannelId parseChannelSpec
+INFO: Parsed ChannelId : 0-M:0->1
+Aug 31, 2014 12:05:46 AM synoptic.model.channelid.ChannelId parseChannelSpec
+INFO: Parsed ChannelId : 1-A:1->0
+Aug 31, 2014 12:05:46 AM synoptic.model.channelid.ChannelId parseChannelSpec
+INFO: Parsed ChannelId : 0-M:0->1
+Aug 31, 2014 12:05:46 AM synoptic.model.channelid.ChannelId parseChannelSpec
+INFO: Parsed ChannelId : 1-A:1->0
+Aug 31, 2014 12:05:46 AM synoptic.model.channelid.ChannelId parseChannelSpec
+INFO: Parsed ChannelId : 0-M:22->100
+Aug 31, 2014 12:05:46 AM synoptic.model.channelid.ChannelId parseChannelSpec
+INFO: Parsed ChannelId : 0-M:0->1
+Aug 31, 2014 12:05:46 AM synoptic.model.channelid.ChannelId parseChannelSpec
+INFO: Parsed ChannelId : 0-M:0->1
+Aug 31, 2014 12:05:46 AM dynoptic.model.fifosys.channel.channelstate.MutibleMultiChStateTests toStringCheck
+INFO: ChStates[0-1->2:1->2: [], 1-2->1:2->1: []]
+Aug 31, 2014 12:05:46 AM dynoptic.model.fifosys.gfsm.GFSMStateTests stateWithObs
+INFO: [0]
+Aug 31, 2014 12:05:46 AM dynoptic.model.fifosys.gfsm.GFSMStateTests createGFSMState
+INFO: []
+Aug 31, 2014 12:05:46 AM dynoptic.model.fifosys.gfsm.GFSM addToQueueContentsHashMap
+INFO: Creating a new partition for ch-states like: ChState]
+Aug 31, 2014 12:05:46 AM dynoptic.model.fifosys.gfsm.GFSM getCFSM
+INFO: GFSM -> CFSM: GFSM[num-states=1] : 
+	[3, 4]
+
+Aug 31, 2014 12:05:46 AM dynoptic.model.fifosys.gfsm.GFSM getCFSM
+INFO: Building FSM for pid 0
+Aug 31, 2014 12:05:46 AM dynoptic.model.fifosys.gfsm.GFSM getCFSM
+INFO: GFSMState->FSMState[pid=0] stateMap : {[3, 4]=0}
+Aug 31, 2014 12:05:46 AM dynoptic.model.fifosys.gfsm.GFSM addToQueueContentsHashMap
+INFO: Creating a new partition for ch-states like: ChState]
+Aug 31, 2014 12:05:46 AM dynoptic.model.fifosys.gfsm.GFSM addToQueueContentsHashMap
+INFO: Creating a new partition for ch-states like: ChState]
+Aug 31, 2014 12:05:46 AM dynoptic.model.fifosys.gfsm.GFSM addToQueueContentsHashMap
+INFO: Creating a new partition for ch-states like: ChState]
+Aug 31, 2014 12:05:46 AM dynoptic.model.export.GraphExporter exportGFSM
+INFO: Exporting GFSM to: ./test.dot
+Aug 31, 2014 12:05:46 AM dynoptic.model.fifosys.gfsm.observed.ObsMultFSMStateTests create
+INFO: FSMStates[p_t, q_t]
+Aug 31, 2014 12:05:46 AM dynoptic.model.fifosys.gfsm.observed.ObsFSMStateTests createConsistentAnonInit
+INFO: i_a0
+Aug 31, 2014 12:05:46 AM dynoptic.model.fifosys.gfsm.observed.ObsFSMStateTests createNamed
+INFO: a
+Aug 31, 2014 12:05:46 AM dynoptic.model.fifosys.gfsm.observed.ObsFSMStateTests createConsistentAnonIntermediate
+INFO: a0.ep0L
+Aug 31, 2014 12:05:46 AM dynoptic.model.fifosys.gfsm.observed.fifosys.ObsFifoSysStateTests checkCreate
+INFO: 11
+Aug 31, 2014 12:05:46 AM mcscm.McScMTests testEmptyScmInput
+INFO: Verify threw an exception: java.io.IOException: Cannot run program "../bin/mcscm/verify.native.linux.static" (in directory "."): error=2, No such file or directory
+Aug 31, 2014 12:05:46 AM mcscm.McScMTests testSafeScmInput
+INFO: Verify threw an exception: java.io.IOException: Cannot run program "../bin/mcscm/verify.native.linux.static" (in directory "."): error=2, No such file or directory
+Aug 31, 2014 12:05:46 AM mcscm.McScMTests testUnsafeScmInputLen1
+INFO: Verify threw an exception: java.io.IOException: Cannot run program "../bin/mcscm/verify.native.linux.static" (in directory "."): error=2, No such file or directory
+Aug 31, 2014 12:05:46 AM mcscm.McScMTests testUnsafeScmInputLen2
+INFO: Verify threw an exception: java.io.IOException: Cannot run program "../bin/mcscm/verify.native.linux.static" (in directory "."): error=2, No such file or directory
+Execution time: 1099174017
+0-th run
+Pass: 102, Fail: 0, Error: 16
+{dynoptic.invariants.NeverFollowedByTests.create=149666437, dynoptic.invariants.NeverFollowedByTests.testSatisfies=2899879, dynoptic.invariants.NeverFollowedByTests.getFirstSecond=2625885, dynoptic.invariants.NeverFollowedByTests.scmBadStatesString=8173953, dynoptic.invariants.NeverFollowedByTests.equality=3152658, dynoptic.invariants.AlwaysPrecedesTests.create=4671107, dynoptic.invariants.AlwaysPrecedesTests.testSatisfies=6635216, dynoptic.invariants.AlwaysPrecedesTests.getFirstSecond=3117520, dynoptic.invariants.AlwaysPrecedesTests.scmBadStatesString=3544287, dynoptic.invariants.AlwaysPrecedesTests.equality=2548150, dynoptic.invariants.EventuallyHappensTests.create=4618658, dynoptic.invariants.EventuallyHappensTests.testSatisfies=3105630, dynoptic.invariants.EventuallyHappensTests.getFirstSecond=2350136, dynoptic.invariants.EventuallyHappensTests.scmBadStatesString=3365354, dynoptic.invariants.EventuallyHappensTests.equality=2697455, dynoptic.invariants.AlwaysFollowedByTests.create=5379126, dynoptic.invariants.AlwaysFollowedByTests.testSatisfies=2888278, dynoptic.invariants.AlwaysFollowedByTests.getFirstSecond=2316776, dynoptic.invariants.AlwaysFollowedByTests.scmBadStatesString=3411137, dynoptic.invariants.AlwaysFollowedByTests.equality=2583054, dynoptic.invariants.checkers.CheckersTests.checkEventually=2935288, dynoptic.invariants.checkers.CheckersTests.checkAFby=2273342, dynoptic.invariants.checkers.CheckersTests.checkNFby=5824671, dynoptic.invariants.checkers.CheckersTests.checkAP=8640950, dynoptic.model.alphabet.DistEventTypeTests.createRecv=8488642, dynoptic.model.alphabet.DistEventTypeTests.createSend=4272684, dynoptic.model.alphabet.DistEventTypeTests.createLocal=4834352, dynoptic.model.alphabet.DistEventTypeTests.createSynthSend=4163884, dynoptic.model.alphabet.DistEventTypeTests.checkEventStrParsingSend=6660872, dynoptic.model.alphabet.DistEventTypeTests.checkEventStrParsingRecv=8334462, dynoptic.model.alphabet.DistEventTypeTests.checkEventStrParsingLocal=4990829, dynoptic.model.alphabet.DistEventTypeTests.checkEventStrParsingErr1=5062223, dynoptic.model.alphabet.DistEventTypeTests.checkEventStrParsingErr2=3535721, dynoptic.model.automaton.EncodedAutomatonTests.isEquivalentTwoAcceptStateFSM=20894932, dynoptic.model.automaton.EncodedAutomatonTests.isEquivalentFSMDiffEventOrder=16190398, dynoptic.model.automaton.EncodedAutomatonTests.isEquivalentDiffAcceptLabelFSM=6053020, dynoptic.model.automaton.EncodedAutomatonTests.isEquivalentCFSMFalseDiffSize=15039357, dynoptic.model.automaton.EncodedAutomatonTests.isEquivalentOneStateFSM=15656363, dynoptic.model.automaton.EncodedAutomatonTests.isEquivalentTwoStateFSM=12972571, dynoptic.model.automaton.EncodedAutomatonTests.isEquivalentTwoInitStateFSM=6640589, dynoptic.model.automaton.EncodedAutomatonTests.isEquivalentDiffInitLabelFSM=9043448, dynoptic.model.automaton.EncodedAutomatonTests.isEquivalentSameLanguage=7445918, dynoptic.model.automaton.EncodedAutomatonTests.isEquivalentCFSM=13115899, dynoptic.model.automaton.EncodedAutomatonTests.isEquivalentCFSMFalseDiffPid=8568341, dynoptic.model.automaton.EventTypeEncodingsTests.encodeZeroEvent=2565409, dynoptic.model.automaton.EventTypeEncodingsTests.encodeOneEvent=1812475, dynoptic.model.automaton.EventTypeEncodingsTests.encodeTwoEvents=1869862, dynoptic.model.automaton.EventTypeEncodingsTests.encodeThreeEvents=1911199, dynoptic.model.automaton.EventTypeEncodingsTests.encodeDifferentEvents=2646694, dynoptic.model.export.GraphExporterTests.twoFSMsTwoStatesEachLocalEventsTest=14376064, dynoptic.model.export.GraphExporterTests.oneFSMOneStateTest=3345399, dynoptic.model.export.GraphExporterTests.oneFSMTwoStatesTest=8489744, dynoptic.model.export.GraphExporterTests.twoFSMsTwoStatesEachCommEventsTest=16916838, dynoptic.model.fifosys.cfsm.CFSMStateTests.createCFSMState=5845386, dynoptic.model.fifosys.cfsm.CFSMStateTests.createCFSMStateWithTxns=1556656, dynoptic.model.fifosys.cfsm.CFSMTests.scmString=22047164, dynoptic.model.fifosys.cfsm.CFSMTests.initsAccepts=2622309, dynoptic.model.fifosys.cfsm.CFSMTests.createEmptyCFSM=3008994, dynoptic.model.fifosys.cfsm.CFSMTests.augmentWithAFby=16084016, dynoptic.model.fifosys.cfsm.CFSMTests.augmentWithNFby=6953172, dynoptic.model.fifosys.cfsm.CFSMTests.augmentWithAP=6922826, dynoptic.model.fifosys.cfsm.McScMCFSMTests.verifyAFby=8360730, dynoptic.model.fifosys.cfsm.McScMCFSMTests.verifyNFby=2524804, dynoptic.model.fifosys.cfsm.McScMCFSMTests.verifyAP=2482115, dynoptic.model.fifosys.cfsm.fsm.FSMTests.scmString=2880945, dynoptic.model.fifosys.cfsm.fsm.FSMTests.createFSM=2179712, dynoptic.model.fifosys.cfsm.fsm.FSMTests.createFSMWithTxns=1824412, dynoptic.model.fifosys.cfsm.fsm.FSMTests.createBadFSM1=2149173, dynoptic.model.fifosys.cfsm.fsm.FSMTests.createBadFSM2=2426010, dynoptic.model.fifosys.cfsm.fsm.BadStateTests.createAndScmString=2593948, dynoptic.model.fifosys.cfsm.fsm.FSMMinimizationTests.minimizeTest=5894794, dynoptic.model.fifosys.cfsm.fsm.FSMMinimizationTests.isDeterministicOneStateNoTransition=6962688, dynoptic.model.fifosys.cfsm.fsm.FSMMinimizationTests.isDeterministicOneStateWithTransition=1960089, dynoptic.model.fifosys.cfsm.fsm.FSMMinimizationTests.isDeterministicTwoStatesOneTransition=5466851, dynoptic.model.fifosys.cfsm.fsm.FSMMinimizationTests.isDeterministicTwoStatesTwoTransitions=5876120, dynoptic.model.fifosys.cfsm.fsm.FSMMinimizationTests.nonDeterministicSingleInitState=2188290, dynoptic.model.fifosys.cfsm.fsm.FSMMinimizationTests.nonDeterministicMultipleInitStates=8186242, dynoptic.model.fifosys.cfsm.fsm.FSMStateTests.scmString=7736060, dynoptic.model.fifosys.cfsm.fsm.FSMStateTests.checkInitAcceptPid=5653631, dynoptic.model.fifosys.cfsm.fsm.FSMStateTests.oneTransition=5892895, dynoptic.model.fifosys.cfsm.fsm.FSMStateTests.twoTransitions=7842128, dynoptic.model.fifosys.cfsm.fsm.FSMStateTests.wrongEventPid=2042940, dynoptic.model.fifosys.channel.channelid.ChannelIdTests.invChannelId=9397963, dynoptic.model.fifosys.channel.channelid.ChannelIdTests.createChannelId=9763726, dynoptic.model.fifosys.channel.channelid.ChannelIdTests.createBadChannelId=5437492, dynoptic.model.fifosys.channel.channelid.ChannelIdTests.localEventsChannelId=13358133, dynoptic.model.fifosys.channel.channelid.ChannelIdTests.localEventsChannelIdMapping=8601174, dynoptic.model.fifosys.channel.channelid.ChannelIdTests.channelIdEquals=9623127, dynoptic.model.fifosys.channel.channelid.ChannelIdTests.parseChannelIds=17598793, dynoptic.model.fifosys.channel.channelid.ChannelIdTests.parseChannelIdsErrorDuplicateChNames=9278956, dynoptic.model.fifosys.channel.channelid.ChannelIdTests.parseChannelIdsErrorUnparseable=10047487, dynoptic.model.fifosys.channel.channelstate.MutibleMultiChStateTests.equals=11898026, dynoptic.model.fifosys.channel.channelstate.MutibleMultiChStateTests.isEmpty=2654330, dynoptic.model.fifosys.channel.channelstate.MutibleMultiChStateTests.cloneMCState=9616601, dynoptic.model.fifosys.channel.channelstate.MutibleMultiChStateTests.toStringCheck=2751914, dynoptic.model.fifosys.channel.channelstate.MutibleMultiChStateTests.enqueueDequeueSeq=1771060, dynoptic.model.fifosys.gfsm.GFSMStateTests.stateWithObs=8105029, dynoptic.model.fifosys.gfsm.GFSMStateTests.createGFSMState=4827150, dynoptic.model.fifosys.gfsm.GFSMPathTests.createPath=2035384, dynoptic.model.fifosys.gfsm.GFSMTests.gfsmToCFSM=18929306, dynoptic.model.fifosys.gfsm.GFSMTests.createEmptyGFSM=2728056, dynoptic.model.fifosys.gfsm.GFSMTests.checkGFSMFromOneTrace=4875197, dynoptic.model.fifosys.gfsm.GFSMTests.exportGFSM=10502392, dynoptic.model.fifosys.gfsm.observed.ObsDistEventTypeTests.buildInstance=805293, dynoptic.model.fifosys.gfsm.observed.ObsDistEventTypeTests.traceIds=776929, dynoptic.model.fifosys.gfsm.observed.ObsDistEventTypeTests.equality=879604, dynoptic.model.fifosys.gfsm.observed.ObsMultFSMStateTests.create=1162297, dynoptic.model.fifosys.gfsm.observed.ObsFSMStateTests.createConsistentAnonInit=2012596, dynoptic.model.fifosys.gfsm.observed.ObsFSMStateTests.createAnon=1155140, dynoptic.model.fifosys.gfsm.observed.ObsFSMStateTests.createNamed=1603429, dynoptic.model.fifosys.gfsm.observed.ObsFSMStateTests.createConsistentAnonIntermediate=2284085, dynoptic.model.fifosys.gfsm.observed.dag.ObsDagNodeTests.create=1092745, dynoptic.model.fifosys.gfsm.observed.fifosys.ObsFifoSysStateTests.checkCreate=5186823, dynoptic.model.fifosys.gfsm.observed.fifosys.ObsFifoSysStateTests.checkTxns=803650, mcscm.McScMTests.testEmptyScmInput=2354554, mcscm.McScMTests.testSafeScmInput=2166374, mcscm.McScMTests.testUnsafeScmInputLen1=2217836, mcscm.McScMTests.testUnsafeScmInputLen2=2123339}
+

@@ -100,10 +100,6 @@ public class TestListGenerator {
             } else if (coverageStr.equals("random")) {
                 order = ORDER.RANDOM;
             }
-        } else {
-            System.err.println("No order argument is specified."
-                    + " Please use the format: -order aOrderName");
-            System.exit(0);
         }
 
         // get directory for the input of test files, the default is sootTestOutput
