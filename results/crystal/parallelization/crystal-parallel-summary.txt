@@ -1,5 +1,6 @@
 crystal-parallel-orig-order-results.txt k=2
 Number of Inconsistent Tests Found: 8
+Number of additional tests: 0
 Number of Tests Missing: 12
                                                             Original order result:        Test order result:
 crystal.model.LocalStateResultTest.testGetAction:           PASS                          ERROR
@@ -24,25 +25,25 @@ crystal.server.TestGitStateChecker.testBasicBehind:         FAIL
 crystal.server.TestGitStateChecker.testBasicAhead:          FAIL
 
 crystal-parallel-random-results.txt k=2
-Number of Inconsistent Tests Found: 16
+Number of Inconsistent Tests Found: 15
+Number of additional tests: 0
 Number of Tests Missing: 12
                                                             Original order result:        Test order result:
 crystal.model.LocalStateResultTest.testGetAction:           PASS                          ERROR
 crystal.model.DataSourceTest.testIsHidden:                  PASS                          ERROR
-crystal.model.DataSourceTest.testSetKind:                   PASS                          ERROR
 crystal.model.DataSourceTest.testSetCloneString:            PASS                          ERROR
 crystal.model.LocalStateResultTest.testGetNoErrorMessage:   PASS                          ERROR
 crystal.model.DataSourceTest.testToString:                  PASS                          ERROR
 crystal.model.LocalStateResultTest.testGetLastAction:       PASS                          ERROR
 crystal.model.LocalStateResultTest.testToString:            PASS                          ERROR
 crystal.model.DataSourceTest.testSetParent:                 PASS                          ERROR
+crystal.model.DataSourceTest.testSetEnabled:                PASS                          ERROR
 crystal.model.DataSourceTest.testSetHistory:                PASS                          ERROR
-crystal.client.ConflictDaemonTest.testRelationship:         FAIL                          PASS
+crystal.model.DataSourceTest.testSetRemoteCmd:              PASS                          ERROR
 crystal.model.LocalStateResultTest.testGetLastErrorMessage: PASS                          ERROR
 crystal.model.LocalStateResultTest.testGetLastLocalState:   PASS                          ERROR
 crystal.model.LocalStateResultTest.testGetName:             PASS                          ERROR
 crystal.model.LocalStateResultTest.testGetLocalState:       PASS                          ERROR
-crystal.model.DataSourceTest.testSetCompileCommand:         PASS                          ERROR
 crystal.server.TestHgStateChecker.testBasicAhead:           FAIL
 crystal.server.TestHgStateChecker.testBasicBehind:          FAIL
 crystal.server.TestGitStateChecker.testBasicMergeConflict:  FAIL
@@ -58,17 +59,18 @@ crystal.server.TestGitStateChecker.testBasicAhead:          FAIL
 
 crystal-parallel-time-results.txt k=2
 Number of Inconsistent Tests Found: 17
+Number of additional tests: 0
 Number of Tests Missing: 0
                                                             Original order result:        Test order result:
+crystal.model.LocalStateResultTest.testGetAction:           PASS                          ERROR
 crystal.model.DataSourceTest.testIsHidden:                  PASS                          ERROR
 crystal.model.DataSourceTest.testSetKind:                   PASS                          ERROR
 crystal.model.DataSourceTest.testSetCloneString:            PASS                          ERROR
 crystal.model.LocalStateResultTest.testGetNoErrorMessage:   PASS                          ERROR
 crystal.model.DataSourceTest.testToString:                  PASS                          ERROR
-crystal.model.LocalStateResultTest.testToString:            PASS                          ERROR
 crystal.model.LocalStateResultTest.testGetLastAction:       PASS                          ERROR
+crystal.model.LocalStateResultTest.testToString:            PASS                          ERROR
 crystal.model.DataSourceTest.testSetParent:                 PASS                          ERROR
-crystal.model.DataSourceTest.testSetEnabled:                PASS                          ERROR
 crystal.model.DataSourceTest.testSetHistory:                PASS                          ERROR
 crystal.model.DataSourceTest.testSetRemoteCmd:              PASS                          ERROR
 crystal.client.ConflictDaemonTest.testRelationship:         FAIL                          PASS
@@ -80,6 +82,7 @@ crystal.model.DataSourceTest.testSetCompileCommand:         PASS                
 
 crystal-parallel-orig-order-results.txt k=4
 Number of Inconsistent Tests Found: 8
+Number of additional tests: 0
 Number of Tests Missing: 12
                                                             Original order result:        Test order result:
 crystal.model.LocalStateResultTest.testGetAction:           PASS                          ERROR
@@ -104,17 +107,18 @@ crystal.server.TestGitStateChecker.testBasicBehind:         FAIL
 crystal.server.TestGitStateChecker.testBasicAhead:          FAIL
 
 crystal-parallel-random-results.txt k=4
-Number of Inconsistent Tests Found: 16
+Number of Inconsistent Tests Found: 17
+Number of additional tests: 0
 Number of Tests Missing: 12
                                                             Original order result:        Test order result:
 crystal.model.LocalStateResultTest.testGetAction:           PASS                          ERROR
 crystal.model.DataSourceTest.testIsHidden:                  PASS                          ERROR
-crystal.model.DataSourceTest.testSetKind:                   PASS                          ERROR
 crystal.model.DataSourceTest.testSetCloneString:            PASS                          ERROR
 crystal.model.LocalStateResultTest.testGetNoErrorMessage:   PASS                          ERROR
 crystal.model.DataSourceTest.testToString:                  PASS                          ERROR
-crystal.model.LocalStateResultTest.testGetLastAction:       PASS                          ERROR
 crystal.model.LocalStateResultTest.testToString:            PASS                          ERROR
+crystal.model.LocalStateResultTest.testGetLastAction:       PASS                          ERROR
+crystal.model.DataSourceTest.testSetParent:                 PASS                          ERROR
 crystal.model.DataSourceTest.testSetEnabled:                PASS                          ERROR
 crystal.model.DataSourceTest.testSetHistory:                PASS                          ERROR
 crystal.model.DataSourceTest.testSetRemoteCmd:              PASS                          ERROR
@@ -123,6 +127,7 @@ crystal.model.LocalStateResultTest.testGetLastErrorMessage: PASS                
 crystal.model.LocalStateResultTest.testGetLastLocalState:   PASS                          ERROR
 crystal.model.LocalStateResultTest.testGetName:             PASS                          ERROR
 crystal.model.LocalStateResultTest.testGetLocalState:       PASS                          ERROR
+crystal.model.DataSourceTest.testSetCompileCommand:         PASS                          ERROR
 crystal.server.TestHgStateChecker.testBasicAhead:           FAIL
 crystal.server.TestHgStateChecker.testBasicBehind:          FAIL
 crystal.server.TestGitStateChecker.testBasicMergeConflict:  FAIL
@@ -137,7 +142,8 @@ crystal.server.TestGitStateChecker.testBasicBehind:         FAIL
 crystal.server.TestGitStateChecker.testBasicAhead:          FAIL
 
 crystal-parallel-time-results.txt k=4
-Number of Inconsistent Tests Found: 17
+Number of Inconsistent Tests Found: 18
+Number of additional tests: 0
 Number of Tests Missing: 0
                                                             Original order result:        Test order result:
 crystal.model.DataSourceTest.testSetKind:                   PASS                          ERROR
@@ -155,11 +161,13 @@ crystal.model.DataSourceTest.testSetRemoteCmd:              PASS                
 crystal.client.ConflictDaemonTest.testRelationship:         FAIL                          PASS
 crystal.model.LocalStateResultTest.testGetLastErrorMessage: PASS                          ERROR
 crystal.model.LocalStateResultTest.testGetLastLocalState:   PASS                          ERROR
+crystal.model.LocalStateResultTest.testGetName:             PASS                          ERROR
 crystal.model.LocalStateResultTest.testGetLocalState:       PASS                          ERROR
 crystal.model.DataSourceTest.testSetCompileCommand:         PASS                          ERROR
 
 crystal-parallel-orig-order-results.txt k=6
 Number of Inconsistent Tests Found: 18
+Number of additional tests: 0
 Number of Tests Missing: 12
                                                             Original order result:        Test order result:
 crystal.model.DataSourceTest.testSetKind:                   PASS                          ERROR
@@ -194,16 +202,18 @@ crystal.server.TestGitStateChecker.testBasicBehind:         FAIL
 crystal.server.TestGitStateChecker.testBasicAhead:          FAIL
 
 crystal-parallel-random-results.txt k=6
-Number of Inconsistent Tests Found: 17
+Number of Inconsistent Tests Found: 18
+Number of additional tests: 0
 Number of Tests Missing: 12
                                                             Original order result:        Test order result:
+crystal.model.DataSourceTest.testSetKind:                   PASS                          ERROR
 crystal.model.LocalStateResultTest.testGetAction:           PASS                          ERROR
 crystal.model.DataSourceTest.testIsHidden:                  PASS                          ERROR
-crystal.model.DataSourceTest.testSetKind:                   PASS                          ERROR
 crystal.model.DataSourceTest.testSetCloneString:            PASS                          ERROR
 crystal.model.LocalStateResultTest.testGetNoErrorMessage:   PASS                          ERROR
-crystal.model.LocalStateResultTest.testGetLastAction:       PASS                          ERROR
+crystal.model.DataSourceTest.testToString:                  PASS                          ERROR
 crystal.model.LocalStateResultTest.testToString:            PASS                          ERROR
+crystal.model.LocalStateResultTest.testGetLastAction:       PASS                          ERROR
 crystal.model.DataSourceTest.testSetParent:                 PASS                          ERROR
 crystal.model.DataSourceTest.testSetEnabled:                PASS                          ERROR
 crystal.model.DataSourceTest.testSetHistory:                PASS                          ERROR
@@ -229,6 +239,7 @@ crystal.server.TestGitStateChecker.testBasicAhead:          FAIL
 
 crystal-parallel-time-results.txt k=6
 Number of Inconsistent Tests Found: 18
+Number of additional tests: 0
 Number of Tests Missing: 0
                                                             Original order result:        Test order result:
 crystal.model.DataSourceTest.testSetKind:                   PASS                          ERROR
@@ -252,6 +263,7 @@ crystal.model.DataSourceTest.testSetCompileCommand:         PASS                
 
 crystal-parallel-orig-order-results.txt k=8
 Number of Inconsistent Tests Found: 15
+Number of additional tests: 0
 Number of Tests Missing: 12
                                                             Original order result:        Test order result:
 crystal.model.LocalStateResultTest.testGetAction:           PASS                          ERROR
@@ -284,6 +296,7 @@ crystal.server.TestGitStateChecker.testBasicAhead:          FAIL
 
 crystal-parallel-random-results.txt k=8
 Number of Inconsistent Tests Found: 18
+Number of additional tests: 0
 Number of Tests Missing: 12
                                                             Original order result:        Test order result:
 crystal.model.DataSourceTest.testSetKind:                   PASS                          ERROR
@@ -292,8 +305,8 @@ crystal.model.DataSourceTest.testIsHidden:                  PASS                
 crystal.model.DataSourceTest.testSetCloneString:            PASS                          ERROR
 crystal.model.LocalStateResultTest.testGetNoErrorMessage:   PASS                          ERROR
 crystal.model.DataSourceTest.testToString:                  PASS                          ERROR
-crystal.model.LocalStateResultTest.testToString:            PASS                          ERROR
 crystal.model.LocalStateResultTest.testGetLastAction:       PASS                          ERROR
+crystal.model.LocalStateResultTest.testToString:            PASS                          ERROR
 crystal.model.DataSourceTest.testSetParent:                 PASS                          ERROR
 crystal.model.DataSourceTest.testSetEnabled:                PASS                          ERROR
 crystal.model.DataSourceTest.testSetHistory:                PASS                          ERROR
@@ -319,6 +332,7 @@ crystal.server.TestGitStateChecker.testBasicAhead:          FAIL
 
 crystal-parallel-time-results.txt k=8
 Number of Inconsistent Tests Found: 18
+Number of additional tests: 0
 Number of Tests Missing: 0
                                                             Original order result:        Test order result:
 crystal.model.DataSourceTest.testSetKind:                   PASS                          ERROR
@@ -342,6 +356,7 @@ crystal.model.DataSourceTest.testSetCompileCommand:         PASS                
 
 crystal-parallel-orig-order-results.txt k=16
 Number of Inconsistent Tests Found: 16
+Number of additional tests: 0
 Number of Tests Missing: 12
                                                             Original order result:        Test order result:
 crystal.model.LocalStateResultTest.testGetAction:           PASS                          ERROR
@@ -374,19 +389,19 @@ crystal.server.TestGitStateChecker.testBasicBehind:         FAIL
 crystal.server.TestGitStateChecker.testBasicAhead:          FAIL
 
 crystal-parallel-random-results.txt k=16
-Number of Inconsistent Tests Found: 18
+Number of Inconsistent Tests Found: 16
+Number of additional tests: 0
 Number of Tests Missing: 12
                                                             Original order result:        Test order result:
-crystal.model.DataSourceTest.testSetKind:                   PASS                          ERROR
 crystal.model.LocalStateResultTest.testGetAction:           PASS                          ERROR
 crystal.model.DataSourceTest.testIsHidden:                  PASS                          ERROR
+crystal.model.DataSourceTest.testSetKind:                   PASS                          ERROR
 crystal.model.DataSourceTest.testSetCloneString:            PASS                          ERROR
 crystal.model.LocalStateResultTest.testGetNoErrorMessage:   PASS                          ERROR
 crystal.model.DataSourceTest.testToString:                  PASS                          ERROR
 crystal.model.LocalStateResultTest.testGetLastAction:       PASS                          ERROR
 crystal.model.LocalStateResultTest.testToString:            PASS                          ERROR
 crystal.model.DataSourceTest.testSetParent:                 PASS                          ERROR
-crystal.model.DataSourceTest.testSetEnabled:                PASS                          ERROR
 crystal.model.DataSourceTest.testSetHistory:                PASS                          ERROR
 crystal.model.DataSourceTest.testSetRemoteCmd:              PASS                          ERROR
 crystal.client.ConflictDaemonTest.testRelationship:         FAIL                          PASS
@@ -394,7 +409,6 @@ crystal.model.LocalStateResultTest.testGetLastErrorMessage: PASS                
 crystal.model.LocalStateResultTest.testGetLastLocalState:   PASS                          ERROR
 crystal.model.LocalStateResultTest.testGetName:             PASS                          ERROR
 crystal.model.LocalStateResultTest.testGetLocalState:       PASS                          ERROR
-crystal.model.DataSourceTest.testSetCompileCommand:         PASS                          ERROR
 crystal.server.TestHgStateChecker.testBasicAhead:           FAIL
 crystal.server.TestHgStateChecker.testBasicBehind:          FAIL
 crystal.server.TestGitStateChecker.testBasicMergeConflict:  FAIL
@@ -410,6 +424,7 @@ crystal.server.TestGitStateChecker.testBasicAhead:          FAIL
 
 crystal-parallel-time-results.txt k=16
 Number of Inconsistent Tests Found: 18
+Number of additional tests: 0
 Number of Tests Missing: 0
                                                             Original order result:        Test order result:
 crystal.model.DataSourceTest.testSetKind:                   PASS                          ERROR
@@ -433,6 +448,7 @@ crystal.model.DataSourceTest.testSetCompileCommand:         PASS                
 
 crystal-parallel-statement-absolute-results.txt k=2
 Number of Inconsistent Tests Found: 16
+Number of additional tests: 0
 Number of Tests Missing: 12
                                                             Original order result:        Test order result:
 crystal.model.LocalStateResultTest.testGetAction:           PASS                          ERROR
@@ -466,6 +482,7 @@ crystal.server.TestGitStateChecker.testBasicAhead:          FAIL
 
 crystal-parallel-statement-relative-results.txt k=2
 Number of Inconsistent Tests Found: 16
+Number of additional tests: 0
 Number of Tests Missing: 12
                                                             Original order result:        Test order result:
 crystal.model.LocalStateResultTest.testGetAction:           PASS                          ERROR
@@ -499,6 +516,7 @@ crystal.server.TestGitStateChecker.testBasicAhead:          FAIL
 
 crystal-parallel-function-absolute-results.txt k=2
 Number of Inconsistent Tests Found: 15
+Number of additional tests: 0
 Number of Tests Missing: 12
                                                             Original order result:        Test order result:
 crystal.model.LocalStateResultTest.testGetAction:           PASS                          ERROR
@@ -531,6 +549,7 @@ crystal.server.TestGitStateChecker.testBasicAhead:          FAIL
 
 crystal-parallel-function-relative-results.txt k=2
 Number of Inconsistent Tests Found: 15
+Number of additional tests: 0
 Number of Tests Missing: 12
                                                             Original order result:        Test order result:
 crystal.model.LocalStateResultTest.testGetAction:           PASS                          ERROR
@@ -563,6 +582,7 @@ crystal.server.TestGitStateChecker.testBasicAhead:          FAIL
 
 crystal-parallel-statement-absolute-results.txt k=4
 Number of Inconsistent Tests Found: 18
+Number of additional tests: 0
 Number of Tests Missing: 12
                                                             Original order result:        Test order result:
 crystal.model.DataSourceTest.testSetKind:                   PASS                          ERROR
@@ -597,13 +617,13 @@ crystal.server.TestGitStateChecker.testBasicBehind:         FAIL
 crystal.server.TestGitStateChecker.testBasicAhead:          FAIL
 
 crystal-parallel-statement-relative-results.txt k=4
-Number of Inconsistent Tests Found: 18
+Number of Inconsistent Tests Found: 17
+Number of additional tests: 0
 Number of Tests Missing: 12
                                                             Original order result:        Test order result:
 crystal.model.DataSourceTest.testSetKind:                   PASS                          ERROR
 crystal.model.LocalStateResultTest.testGetAction:           PASS                          ERROR
 crystal.model.DataSourceTest.testIsHidden:                  PASS                          ERROR
-crystal.model.DataSourceTest.testSetCloneString:            PASS                          ERROR
 crystal.model.LocalStateResultTest.testGetNoErrorMessage:   PASS                          ERROR
 crystal.model.DataSourceTest.testToString:                  PASS                          ERROR
 crystal.model.LocalStateResultTest.testToString:            PASS                          ERROR
@@ -633,6 +653,7 @@ crystal.server.TestGitStateChecker.testBasicAhead:          FAIL
 
 crystal-parallel-function-absolute-results.txt k=4
 Number of Inconsistent Tests Found: 18
+Number of additional tests: 0
 Number of Tests Missing: 12
                                                             Original order result:        Test order result:
 crystal.model.DataSourceTest.testSetKind:                   PASS                          ERROR
@@ -668,6 +689,7 @@ crystal.server.TestGitStateChecker.testBasicAhead:          FAIL
 
 crystal-parallel-function-relative-results.txt k=4
 Number of Inconsistent Tests Found: 16
+Number of additional tests: 0
 Number of Tests Missing: 12
                                                             Original order result:        Test order result:
 crystal.model.LocalStateResultTest.testGetAction:           PASS                          ERROR
@@ -701,6 +723,7 @@ crystal.server.TestGitStateChecker.testBasicAhead:          FAIL
 
 crystal-parallel-statement-absolute-results.txt k=6
 Number of Inconsistent Tests Found: 17
+Number of additional tests: 0
 Number of Tests Missing: 12
                                                             Original order result:        Test order result:
 crystal.model.DataSourceTest.testSetKind:                   PASS                          ERROR
@@ -734,13 +757,13 @@ crystal.server.TestGitStateChecker.testBasicBehind:         FAIL
 crystal.server.TestGitStateChecker.testBasicAhead:          FAIL
 
 crystal-parallel-statement-relative-results.txt k=6
-Number of Inconsistent Tests Found: 18
+Number of Inconsistent Tests Found: 17
+Number of additional tests: 0
 Number of Tests Missing: 12
                                                             Original order result:        Test order result:
 crystal.model.DataSourceTest.testSetKind:                   PASS                          ERROR
 crystal.model.LocalStateResultTest.testGetAction:           PASS                          ERROR
 crystal.model.DataSourceTest.testIsHidden:                  PASS                          ERROR
-crystal.model.DataSourceTest.testSetCloneString:            PASS                          ERROR
 crystal.model.LocalStateResultTest.testGetNoErrorMessage:   PASS                          ERROR
 crystal.model.DataSourceTest.testToString:                  PASS                          ERROR
 crystal.model.LocalStateResultTest.testGetLastAction:       PASS                          ERROR
@@ -770,6 +793,7 @@ crystal.server.TestGitStateChecker.testBasicAhead:          FAIL
 
 crystal-parallel-function-absolute-results.txt k=6
 Number of Inconsistent Tests Found: 16
+Number of additional tests: 0
 Number of Tests Missing: 12
                                                             Original order result:        Test order result:
 crystal.model.LocalStateResultTest.testGetAction:           PASS                          ERROR
@@ -803,6 +827,7 @@ crystal.server.TestGitStateChecker.testBasicAhead:          FAIL
 
 crystal-parallel-function-relative-results.txt k=6
 Number of Inconsistent Tests Found: 15
+Number of additional tests: 0
 Number of Tests Missing: 12
                                                             Original order result:        Test order result:
 crystal.model.LocalStateResultTest.testGetAction:           PASS                          ERROR
@@ -835,6 +860,7 @@ crystal.server.TestGitStateChecker.testBasicAhead:          FAIL
 
 crystal-parallel-statement-absolute-results.txt k=8
 Number of Inconsistent Tests Found: 16
+Number of additional tests: 0
 Number of Tests Missing: 12
                                                             Original order result:        Test order result:
 crystal.model.LocalStateResultTest.testGetAction:           PASS                          ERROR
@@ -868,6 +894,7 @@ crystal.server.TestGitStateChecker.testBasicAhead:          FAIL
 
 crystal-parallel-statement-relative-results.txt k=8
 Number of Inconsistent Tests Found: 18
+Number of additional tests: 0
 Number of Tests Missing: 12
                                                             Original order result:        Test order result:
 crystal.model.DataSourceTest.testSetKind:                   PASS                          ERROR
@@ -876,8 +903,8 @@ crystal.model.DataSourceTest.testIsHidden:                  PASS                
 crystal.model.DataSourceTest.testSetCloneString:            PASS                          ERROR
 crystal.model.LocalStateResultTest.testGetNoErrorMessage:   PASS                          ERROR
 crystal.model.DataSourceTest.testToString:                  PASS                          ERROR
-crystal.model.LocalStateResultTest.testToString:            PASS                          ERROR
 crystal.model.LocalStateResultTest.testGetLastAction:       PASS                          ERROR
+crystal.model.LocalStateResultTest.testToString:            PASS                          ERROR
 crystal.model.DataSourceTest.testSetParent:                 PASS                          ERROR
 crystal.model.DataSourceTest.testSetEnabled:                PASS                          ERROR
 crystal.model.DataSourceTest.testSetHistory:                PASS                          ERROR
@@ -903,6 +930,7 @@ crystal.server.TestGitStateChecker.testBasicAhead:          FAIL
 
 crystal-parallel-function-absolute-results.txt k=8
 Number of Inconsistent Tests Found: 16
+Number of additional tests: 0
 Number of Tests Missing: 12
                                                             Original order result:        Test order result:
 crystal.model.LocalStateResultTest.testGetAction:           PASS                          ERROR
@@ -936,6 +964,7 @@ crystal.server.TestGitStateChecker.testBasicAhead:          FAIL
 
 crystal-parallel-function-relative-results.txt k=8
 Number of Inconsistent Tests Found: 18
+Number of additional tests: 0
 Number of Tests Missing: 12
                                                             Original order result:        Test order result:
 crystal.model.DataSourceTest.testSetKind:                   PASS                          ERROR
@@ -971,6 +1000,7 @@ crystal.server.TestGitStateChecker.testBasicAhead:          FAIL
 
 crystal-parallel-statement-absolute-results.txt k=16
 Number of Inconsistent Tests Found: 17
+Number of additional tests: 0
 Number of Tests Missing: 12
                                                             Original order result:        Test order result:
 crystal.model.LocalStateResultTest.testGetAction:           PASS                          ERROR
@@ -1005,6 +1035,7 @@ crystal.server.TestGitStateChecker.testBasicAhead:          FAIL
 
 crystal-parallel-statement-relative-results.txt k=16
 Number of Inconsistent Tests Found: 18
+Number of additional tests: 0
 Number of Tests Missing: 12
                                                             Original order result:        Test order result:
 crystal.model.DataSourceTest.testSetKind:                   PASS                          ERROR
@@ -1040,6 +1071,7 @@ crystal.server.TestGitStateChecker.testBasicAhead:          FAIL
 
 crystal-parallel-function-absolute-results.txt k=16
 Number of Inconsistent Tests Found: 18
+Number of additional tests: 0
 Number of Tests Missing: 12
                                                             Original order result:        Test order result:
 crystal.model.DataSourceTest.testSetKind:                   PASS                          ERROR
@@ -1075,6 +1107,7 @@ crystal.server.TestGitStateChecker.testBasicAhead:          FAIL
 
 crystal-parallel-function-relative-results.txt k=16
 Number of Inconsistent Tests Found: 17
+Number of additional tests: 0
 Number of Tests Missing: 12
                                                             Original order result:        Test order result:
 crystal.model.DataSourceTest.testSetKind:                   PASS                          ERROR

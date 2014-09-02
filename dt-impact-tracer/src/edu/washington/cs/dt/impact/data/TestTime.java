@@ -24,7 +24,6 @@ public class TestTime extends TestFunctionStatement {
      */
     public void addDependentTest(TestTime ttd, boolean isBefore) {
         if (ttd != null) {
-            count += ttd.getLineCount();
             if (isBefore) {
                 execBefore.add(ttd);
             } else {

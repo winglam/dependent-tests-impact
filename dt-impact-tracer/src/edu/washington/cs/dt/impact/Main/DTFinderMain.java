@@ -154,6 +154,7 @@ public class DTFinderMain {
 
                 if (!s.hasNext()) {
                     s.close();
+                    System.out.println("java.lang.RuntimeException: The remaining tests are not dependent tests!.");
                     throw new RuntimeException("The remaining tests are not dependent tests!.");
                 }
                 s.close();

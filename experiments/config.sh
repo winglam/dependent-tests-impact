@@ -3,7 +3,7 @@ orders=(absolute relative)
 impactJarCP=impact-tools/impact.jar
 testListGenClass=edu.washington.cs.dt.impact.tools.TestListGenerator
 crossReferenceClass=edu.washington.cs.dt.impact.tools.CrossReferencer
-machines=(2 4 6 8 16)
+machines=(2 4 8 16)
 parallelOrders=($testType-order random time)
 selectionOrders=(absolute relative random)
 
@@ -24,6 +24,11 @@ function clearSelectionTemp() {
   rm -rf $2/selectionOutput
   rm -rf $2/tmpfile.txt
   rm -rf $2/tmptestfiles.txt
+  cd $1
+  clearEnv
+  cd ../$2
+  clearEnv
+  cd ..
 }
 
 function instrumentFiles() {
@@ -201,4 +206,150 @@ function buildDTChainPrioritization() {
     done
   done
   clearEnv
+}
+
+function buildDTChainSelectionOrigOrder() {
+  for i in "${coverages[@]}"; do 
+    java -Xms512m -Xmx1g -cp $impactJarCP $testListGenClass -technique selection -coverage $i -origOrder $5/$1-$3-order -outputFile $5/$1-ts-$i-$3-order.txt -oldVersCFG $4/selectionOutput -newVersCFG $5/selectionOutput -testInputDir $4/sootTestOutput
+
+    cd $5
+    echo "" > $1-$3-dt-$i
+    clearEnv
+    java -cp $2 edu.washington.cs.dt.main.ImpactMain $1-ts-$i-$3-order.txt > $1-ts-$i-$3-order-results-dt.txt
+    java -cp $impactJarCP $crossReferenceClass -origOrder $1-$3-order-results.txt -testOrder $1-ts-$i-$3-order-results-dt.txt > $1-ts-$i-$3-summary.txt
+    rm -rf $1-ts-$i-$3-order-results-dt.txt
+
+    k=0
+    while [ $k -le $6 ] 
+    do
+      rm -rf $1-ts-$i-$3-order-results-dt.txt
+      java -cp $2 edu.washington.cs.dt.impact.Main.DTFinderMain -dependentTestFile $1-ts-$i-$3-summary.txt -currentOrderFile $1-ts-$i-$3-order.txt -originalOrderFile $1-$3-order -dtFile $1-$3-dt-$i -filesToDelete $1-env-files
+
+      cd ..
+      java -Xms512m -Xmx1g -cp $impactJarCP $testListGenClass -technique selection -coverage $i -origOrder $5/$1-$3-order -outputFile $5/$1-ts-$i-$3-order.txt -oldVersCFG $4/selectionOutput -newVersCFG $5/selectionOutput -testInputDir $4/sootTestOutput -dependentTestFile $5/$1-$3-dt-$i
+        
+      cd $5
+      clearEnv
+      java -cp $2 edu.washington.cs.dt.main.ImpactMain $1-ts-$i-$3-order.txt > $1-ts-$i-$3-order-results-dt.txt
+      java -cp $impactJarCP $crossReferenceClass -origOrder $1-$3-order-results.txt -testOrder $1-ts-$i-$3-order-results-dt.txt > $1-ts-$i-$3-summary.txt
+      
+      k=$(($k+1))
+    done
+    cd ..
+    echo '======================= Finish ' $i ' ======================='
+    rm -rf $1-ts-$i-$3-order.txt
+  done
+}
+
+function buildDTChainParallelOrig() {
+  for k in "${machines[@]}"; do 
+    java -cp $impactJarCP $testListGenClass -technique parallelization -origOrder $1-$3-order -outputFile $1-parallel-$3-order.txt -numOfMachines $k
+
+    echo "" > $1-$3-dt-orig-$k
+    for ((i=0; i < $k; i++)); do
+      clearEnv
+      java -cp $2 edu.washington.cs.dt.main.ImpactMain $1-parallel-$3-order.txt$i > $1-parallel-$3-order-results-$k.txt$i
+      java -cp $impactJarCP $crossReferenceClass -origOrder $1-$3-order-results.txt -testOrder $1-parallel-$3-order-results-$k.txt$i > $1-parallel-$3-order-$k-summary.txt$i
+
+      c=0
+      while [ true ] 
+      do
+        rm -rf $1-parallel-$3-order-results-$k.txt$i
+        java -cp $2 edu.washington.cs.dt.impact.Main.DTFinderMain -dependentTestFile $1-parallel-$3-order-$k-summary.txt$i -currentOrderFile $1-parallel-$3-order.txt$i -originalOrderFile $1-$3-order -dtFile $1-$3-dt-orig-$k -filesToDelete $1-env-files > dtChainTemp
+
+        java -cp $impactJarCP $testListGenClass -technique parallelization -origOrder $1-$3-order -outputFile $1-parallel-$3-order.txt -numOfMachines $k -dependentTestFile $1-$3-dt-orig-$k
+            
+        clearEnv
+        java -cp $2 edu.washington.cs.dt.main.ImpactMain $1-parallel-$3-order.txt$i > $1-parallel-$3-order-results-$k.txt$i
+        java -cp $impactJarCP $crossReferenceClass -origOrder $1-$3-order-results.txt -testOrder $1-parallel-$3-order-results-$k.txt$i > $1-parallel-$3-order-$k-summary.txt$i
+      
+        if grep -q 'java.lang.RuntimeException: The remaining tests are not dependent tests!.' "dtChainTemp"; then
+          echo '======================= There are no more dependent tests left! ======================='
+          break
+        fi
+      done
+      rm -rf dtChainTemp
+      rm -rf $1-parallel-$3-order-results-$k.txt$i
+      rm -rf $1-parallel-$3-order-$k-summary.txt$i
+    done
+    echo "" > $1-$3-orig-parallel-results.txt$k
+    for ((j=0; j < $k; j++)); do
+      clearEnv
+      java -cp $2 edu.washington.cs.dt.main.ImpactMain $1-parallel-$3-order.txt$j >> $1-$3-orig-parallel-results.txt$k
+      echo "" >> $1-$3-orig-parallel-results.txt$k
+      rm -rf $1-parallel-$3-order.txt$j
+      rm -rf $1-parallel-$3-order-results-$k.txt$j
+    done
+    echo '======================= Finish ' $k ' ======================='
+    java -cp $impactJarCP $crossReferenceClass -origOrder $1-$3-order-results.txt -testOrder $1-$3-orig-parallel-results.txt$k > $1-$3-orig-parallel-summary.txt$k
+  done
+}
+
+function buildDTChainParallelTime() {
+  java -cp $2 edu.washington.cs.dt.main.ImpactMain $1-$3-order -getTime > $1-$3-time.txt
+  for k in "${machines[@]}"; do 
+    java -cp $impactJarCP $testListGenClass -technique parallelization -timeOrder $1-$3-time.txt -outputFile $1-parallel-$3-time.txt -numOfMachines $k
+
+    echo "" > $1-$3-dt-time-$k
+    for ((i=0; i < $k; i++)); do
+      clearEnv
+      java -cp $2 edu.washington.cs.dt.main.ImpactMain $1-parallel-$3-time.txt$i > $1-parallel-$3-time-results-$k.txt$i
+      java -cp $impactJarCP $crossReferenceClass -origOrder $1-$3-order-results.txt -testOrder $1-parallel-$3-time-results-$k.txt$i > $1-parallel-$3-time-$k-summary.txt$i
+
+      c=0
+      while [ true ] 
+      do
+        rm -rf $1-parallel-$3-time-results-$k.txt$i
+        java -cp $2 edu.washington.cs.dt.impact.Main.DTFinderMain -dependentTestFile $1-parallel-$3-time-$k-summary.txt$i -currentOrderFile $1-parallel-$3-time.txt$i -originalOrderFile $1-$3-order -dtFile $1-$3-dt-time-$k -filesToDelete $1-env-files > dtChainTemp
+
+        java -cp $impactJarCP $testListGenClass -technique parallelization -timeOrder $1-$3-time.txt -outputFile $1-parallel-$3-time.txt -numOfMachines $k -dependentTestFile $1-$3-dt-time-$k
+            
+        clearEnv
+        java -cp $2 edu.washington.cs.dt.main.ImpactMain $1-parallel-$3-time.txt$i > $1-parallel-$3-time-results-$k.txt$i
+        java -cp $impactJarCP $crossReferenceClass -origOrder $1-$3-order-results.txt -testOrder $1-parallel-$3-time-results-$k.txt$i > $1-parallel-$3-time-$k-summary.txt$i
+        
+        if grep -q 'java.lang.RuntimeException: The remaining tests are not dependent tests!.' "dtChainTemp"; then
+          echo '======================= There are no more dependent tests left! ======================='
+          break
+        fi
+      done
+      rm -rf dtChainTemp
+      rm -rf $1-parallel-$3-time-results-$k.txt$
+      rm -rf $1-parallel-$3-time-$k-summary.txt$i  
+    done
+    echo "" > $1-$3-time-parallel-results.txt$k
+    for ((j=0; j < $k; j++)); do
+      clearEnv
+      java -cp $2 edu.washington.cs.dt.main.ImpactMain $1-parallel-$3-time.txt$j >> $1-$3-time-parallel-results.txt$k
+      echo "" >> $1-$3-time-parallel-results.txt$k
+      rm -rf $1-parallel-$3-time.txt$j
+      rm -rf $1-parallel-$3-time-results-$k.txt$j
+    done
+    echo '======================= Finish ' $k ' ======================='
+    java -cp $impactJarCP $crossReferenceClass -origOrder $1-$3-order-results.txt -testOrder $1-$3-time-parallel-results.txt$k > $1-$3-time-parallel-summary.txt$k
+  done
+}
+
+function buildDTChainParallelCoveragesOrders() {
+  for k in "${machines[@]}"; do 
+    for m in "${coverages[@]}"; do
+      for j in "${orders[@]}"; do 
+        rm -rf $1-parallel-$m-$j-results-$k.txt
+        if [ "$4" = true ] ; then 
+          java -cp $impactJarCP $testListGenClass -technique parallelization -order $j -coverage $m -outputFile $1-parallel-$m-$j.txt -numOfMachines $k -dependentTestFile $1-$3-dt
+        else
+          java -cp $impactJarCP $testListGenClass -technique parallelization -order $j -coverage $m -outputFile $1-parallel-$m-$j.txt -numOfMachines $k
+        fi
+        for ((i=0; i < $k; i++)); do
+          clearEnv
+          java -cp $2 edu.washington.cs.dt.main.ImpactMain $1-parallel-$m-$j.txt$i >> $1-parallel-$m-$j-results-$k.txt
+          echo "" >> $1-parallel-$m-$j-results-$k.txt
+          rm -rf $1-parallel-$m-$j.txt$i
+        done
+        echo $1"-parallel-"$m"-"$j"-results.txt k="$k >> $1-parallel-summary.txt
+        java -cp $impactJarCP $crossReferenceClass -origOrder $1-$3-order-results.txt -testOrder $1-parallel-$m-$j-results-$k.txt >> $1-parallel-summary.txt 
+        echo "" >> $1-parallel-summary.txt
+      done
+    done
+  done
 }
