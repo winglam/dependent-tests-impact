@@ -19,9 +19,9 @@ clearEnv
 java -cp $experimentCP edu.washington.cs.dt.main.ImpactMain $experiment-$testType-order > $experiment-$testType-order-results.txt
 
 rm -rf $experiment-parallel-summary.txt
-#parallelExec $experiment $experimentCP $testType $dependentFree
+parallelExec $experiment $experimentCP $testType $dependentFree
 #parallelCoveragesOrders $experiment $experimentCP $testType $dependentFree
-buildDTChainParallelTime $experiment $experimentCP $testType
+#buildDTChainParallelTime $experiment $experimentCP $testType
 #buildDTChainParallelOrig $experiment $experimentCP $testType
 
 clearTemp

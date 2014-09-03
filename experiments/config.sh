@@ -4,7 +4,7 @@ impactJarCP=impact-tools/impact.jar
 testListGenClass=edu.washington.cs.dt.impact.tools.TestListGenerator
 crossReferenceClass=edu.washington.cs.dt.impact.tools.CrossReferencer
 machines=(2 4 8 16)
-parallelOrders=($testType-order random time)
+parallelOrders=($testType-order time)
 selectionOrders=(absolute relative random)
 
 function clearTemp() {
