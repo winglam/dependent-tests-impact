@@ -32,8 +32,10 @@ java -cp $newVersCP edu.washington.cs.dt.main.ImpactMain $experiment-$testType-o
 clearEnv
 cd ..
 
-#selectionRunCoveragesOrders $experiment $newVersCP $testType $oldVers $newVers $dependentFree
+selectionRunCoveragesOrders $experiment $newVersCP $testType $oldVers $newVers $dependentFree
 selectionRunOrigOrder $experiment $newVersCP $testType $oldVers $newVers $dependentFree
+#buildDTChainSelectionOrigOrder $experiment $newVersCP $testType $oldVers $newVers
+#buildDTChainSelectionCoverages $experiment $newVersCP $testType $oldVers $newVers
 
 clearSelectionTemp $oldVers $newVers
 

@@ -1,4 +1,4 @@
-testType=orig
+testType=auto
 experiment=jodatime
 experimentCP=impact-tools/*:bin/:resources/:lib/*
 dependentFree=false

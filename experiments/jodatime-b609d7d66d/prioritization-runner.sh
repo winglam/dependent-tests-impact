@@ -22,8 +22,8 @@ rm -rf $experiment-tp-summary.txt
 
 runCoveragesOrders $experiment $experimentCP $testType $dependentFree
 
-clearEnv
-runRandom $experiment $testType $experimentCP $dependentFree
+#clearEnv
+#runRandom $experiment $testType $experimentCP $dependentFree
 
 clearTemp
 clearEnv

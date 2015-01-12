@@ -1,0 +1,496 @@
+diff -r dynoptic/src/dynoptic/main/DynopticMain.java dynoptic-ea407ba0a750/src/dynoptic/main/DynopticMain.java
+9,11d8
+< import mcscm.McScM;
+< import mcscm.McScMCExample;
+< import mcscm.VerifyResult;
+16a14,18
+> import dynoptic.mc.MC;
+> import dynoptic.mc.MCResult;
+> import dynoptic.mc.MCcExample;
+> import dynoptic.mc.mcscm.McScM;
+> import dynoptic.mc.spin.Spin;
+75c77,87
+<         DynopticMain main = new DynopticMain(opts);
+---
+>         DynopticMain main;
+>         try {
+>             main = new DynopticMain(opts);
+>         } catch (OptionException oe) {
+>             if (!oe.isPrintHelpException()) {
+>                 logger.severe(oe.toString());
+>                 throw oe;
+>             }
+>             return;
+>         }
+> 
+120c132
+<     private McScM mcscm = null;
+---
+>     private MC mc = null;
+134c146
+<     public DynopticMain(DynopticOptions opts) throws Exception {
+---
+>     public DynopticMain(DynopticOptions opts) throws OptionException {
+138d149
+<         mcscm = new McScM(opts.mcPath);
+143,145d153
+<      * 
+<      * @param optns
+<      * @throws Exception
+147c155
+<     public void checkOptions(DynopticOptions optns) throws Exception {
+---
+>     public void checkOptions(DynopticOptions optns) throws OptionException {
+153,154c161
+<             err = "";
+<             throw new OptionException(err);
+---
+>             throw new OptionException();
+160,161c167
+<             err = "";
+<             throw new OptionException(err);
+---
+>             throw new OptionException();
+170c176,180
+<         channelIds = ChannelId.parseChannelSpec(opts.channelSpec);
+---
+>         try {
+>             channelIds = ChannelId.parseChannelSpec(opts.channelSpec);
+>         } catch (Exception e) {
+>             throw new OptionException(e.getMessage());
+>         }
+187a198,212
+> 
+>         // Determine the model checker type.
+>         if (optns.mcType.equals("spin")) {
+>             mc = new Spin(opts.mcPath);
+>             if (opts.spinChannelCapacity <= 0) {
+>                 err = "Invalid channel capacity for use with spin: "
+>                         + opts.spinChannelCapacity;
+>                 throw new OptionException(err);
+>             }
+>         } else if (optns.mcType.equals("mcscm")) {
+>             mc = new McScM(opts.mcPath);
+>         } else {
+>             err = "Invalid model checker type '" + opts.mcType + "'";
+>             throw new OptionException(err);
+>         }
+700,705c725,742
+<             // Augment the CFSM with synthetic states/events to check curInv.
+<             cfsm.augmentWithInvTracing(curInv);
+< 
+<             // Model check the CFSM using the McScM model checker.
+<             String cStr = cfsm.toScmString("checking_"
+<                     + curInv.getConnectorString());
+---
+>             String mcInputStr;
+>             if (mc instanceof McScM) {
+>                 // Model check the CFSM using the McScM model checker.
+> 
+>                 // Augment the CFSM with synthetic states/events to check
+>                 // curInv (only fone for McScM).
+>                 cfsm.augmentWithInvTracing(curInv);
+> 
+>                 mcInputStr = cfsm.toScmString("checking_scm_"
+>                         + curInv.getConnectorString());
+>             } else if (mc instanceof Spin) {
+>                 mcInputStr = cfsm.toPromelaString(
+>                         "checking_pml_" + curInv.getConnectorString(),
+>                         opts.spinChannelCapacity);
+>             } else {
+>                 throw new RuntimeException(
+>                         "Model checker is not properly specified.");
+>             }
+715c752
+<                 mcscm.verify(cStr, curTimeout);
+---
+>                 mc.verify(mcInputStr, curTimeout);
+755c792
+<             VerifyResult result = mcscm.getVerifyResult(cfsm.getChannelIds());
+---
+>             MCResult result = mc.getVerifyResult(cfsm.getChannelIds());
+809c846
+<     private void refineCExample(GFSM pGraph, McScMCExample cexample)
+---
+>     private void refineCExample(GFSM pGraph, MCcExample cexample)
+diff -r dynoptic/src/dynoptic/main/DynopticOptions.java dynoptic-ea407ba0a750/src/dynoptic/main/DynopticOptions.java
+148,151c148,150
+<     @OptionGroup("Verify Options")
+<     @Option(
+<             value = "-v Complete path to the verify McScM model checker binary",
+<             aliases = { "-verify-path" })
+---
+>     @OptionGroup("Model Checking Options")
+>     @Option(value = "Complete path to the model checker binary",
+>             aliases = { "-mc-path" })
+153a153,160
+>     @Option(
+>             value = "Model checker type to use. Must be either 'spin' or 'mcscm'")
+>     public String mcType = "mcscm";
+> 
+>     @Option(
+>             value = "Default channel capacity to use when using the spin model checker.")
+>     public int spinChannelCapacity = 8;
+> 
+155,156c162,163
+<      * The base timeout that is used to time out invocations of McScM
+<      * verification (which may run indefinitely).
+---
+>      * The base timeout that is used to time out invocations of verification
+>      * (which may run indefinitely).
+159c166
+<             value = "Initial timeout (in seconds) that is used to time out McScM verification.",
+---
+>             value = "Initial timeout (in seconds) that is used to time out a model-checker run.",
+164,165c171
+<      * The amount of time added to baseTimeout before retrying the McScM
+<      * verification.
+---
+>      * The amount of time added to baseTimeout before retrying verification.
+168c174
+<             value = "Time (in seconds) to add to -base-timeout after each time McScM times out, before reaching max timeout.",
+---
+>             value = "Time (in seconds) to add to -base-timeout after each time the model checker times out, before reaching max timeout.",
+176c182
+<             value = "Maximum timeout (in seconds) to use for McScM verification.",
+---
+>             value = "Maximum timeout (in seconds) to use for a model checking run.",
+180c186
+<     // end option group "Verify Options"
+---
+>     // end option group "Model Checking Options"
+diff -r dynoptic/src/dynoptic/main/OptionException.java dynoptic-ea407ba0a750/src/dynoptic/main/OptionException.java
+4,5c4
+<  * Represents an issue/early-termination raised by command line options
+<  * processing.
+---
+>  * Represents an issue/early-termination raised by cmd line options processing.
+8d6
+<     private static final long serialVersionUID = 1L;
+10,11c8
+<     // The error string corresponding to this exception.
+<     private final String err;
+---
+>     private boolean printHelpException;
+14c11,17
+<         this.err = err;
+---
+>         super(err);
+>         printHelpException = false;
+>     }
+> 
+>     public OptionException() {
+>         super();
+>         printHelpException = true;
+17,19c20,21
+<     @Override
+<     public String toString() {
+<         return err;
+---
+>     public boolean isPrintHelpException() {
+>         return printHelpException;
+20a23,24
+> 
+>     private static final long serialVersionUID = 1L;
+Only in dynoptic-ea407ba0a750/src/dynoptic: mc
+diff -r dynoptic/src/dynoptic/model/alphabet/FSMAlphabet.java dynoptic-ea407ba0a750/src/dynoptic/model/alphabet/FSMAlphabet.java
+7,8d6
+< import dynoptic.util.Util;
+< 
+9a8
+> import dynoptic.util.Util;
+17,18c16,17
+<         Set<TxnEType> {
+<     private static final String EMPTY_STR_SCM_RE = "(_)";
+---
+> Set<TxnEType> {
+>     // private static final String EMPTY_STR_SCM_RE = "(_)";
+115c114
+<         for (String eStr : getUniqueEventStrings(null)) {
+---
+>         for (String eStr : getUniqueEventStrings()) {
+121,130d119
+<     public String anyEventScmQRe() {
+<         return scmQRe(null);
+<     }
+< 
+<     public String anyEventExceptOneScmQRe(TxnEType ignoreE) {
+<         assert events.contains(ignoreE);
+< 
+<         return scmQRe(ignoreE);
+<     }
+< 
+134,158d122
+<      * Concatenates a list of event strings into a re expression representing a
+<      * set of strings.
+<      */
+<     private String scmQRe(TxnEType ignoreE) {
+<         String ret = "(";
+<         Set<String> eventStrings = getUniqueEventStrings(ignoreE);
+<         Iterator<String> iter = eventStrings.iterator();
+< 
+<         while (iter.hasNext()) {
+<             String e = iter.next();
+<             ret = ret + e + " | ";
+<         }
+< 
+<         // The re encodes no events -- return empty string re.
+<         if (ret.length() == 1) {
+<             return EMPTY_STR_SCM_RE;
+<         }
+< 
+<         // Remove the dangling "."
+<         ret = ret.substring(0, ret.length() - 3);
+< 
+<         return ret + ")";
+<     }
+< 
+<     /**
+160,162c124,125
+<      * event though the event types are unique. For example, the two event types
+<      * '0!m' and '0?m' are unique, but the event string for both event types is
+<      * 'm'.
+---
+>      * though the event types are unique. For example, the two event types '0!m'
+>      * and '0?m' are unique, but the event string for both event types is 'm'.
+164c127
+<     private Set<String> getUniqueEventStrings(TxnEType ignoreE) {
+---
+>     private Set<String> getUniqueEventStrings() {
+167,169d129
+<             if ((ignoreE != null) && e.equals(ignoreE)) {
+<                 continue;
+<             }
+172a133,137
+>     }
+> 
+>     public String anyEventScmQRe() {
+>         // TODO Auto-generated method stub
+>         return null;
+diff -r dynoptic/src/dynoptic/model/fifosys/cfsm/BadState.java dynoptic-ea407ba0a750/src/dynoptic/model/fifosys/cfsm/BadState.java
+39c39
+<                     + fsmState.getFSMState(pid).getScmId() + ": true\n";
+---
+>                     + fsmState.getFSMState(pid).getStateId() + ": true\n";
+diff -r dynoptic/src/dynoptic/model/fifosys/cfsm/CFSMExecution.java dynoptic-ea407ba0a750/src/dynoptic/model/fifosys/cfsm/CFSMExecution.java
+5c5
+< import mcscm.McScMCExample;
+---
+> import dynoptic.mc.MCcExample;
+11c11
+<     private final McScMCExample cexample;
+---
+>     private final MCcExample cexample;
+13c13
+<     public CFSMExecution(McScMCExample cexample) {
+---
+>     public CFSMExecution(MCcExample cexample) {
+diff -r dynoptic/src/dynoptic/model/fifosys/cfsm/CFSM.java dynoptic-ea407ba0a750/src/dynoptic/model/fifosys/cfsm/CFSM.java
+311c311
+<      * and not interfere with the normal execution of the FIFO system.
+---
+>      * and have not interfered with the normal execution of the FIFO system.
+330a331,382
+>     }
+> 
+>     /**
+>      * Generate a Promela representation of this CFSM, to be used with SPIN.
+>      * This representation includes an appropriate LTL formula corresponding to
+>      * any invariants that augment this CFSM.
+>      */
+>     public String toPromelaString(String cfsmName, int chanCapacity) {
+>         assert unSpecifiedPids == 0;
+> 
+>         String ret = "/* Spin-promela " + cfsmName + " */\n\n";
+> 
+>         // Message types:
+>         ret += "/* Message types: */\n";
+>         for (int i = 0; i < channelIds.size(); i++) {
+>             String iStr = Integer.toString(i);
+>             ret += "mtypesChan" + iStr + " = {";
+>             //
+>             // TODO: output channel event types here.
+>             //
+>             ret += "};";
+>         }
+>         ret += "\n\n";
+> 
+>         // Channels:
+>         ret += "/* Channels: */\n";
+>         for (int i = 0; i < channelIds.size(); i++) {
+>             String iStr = Integer.toString(i);
+>             ret += "chan chan" + iStr + " = [" + Integer.toString(chanCapacity)
+>                     + "] of { mtypesChan" + iStr + "}\n";
+>         }
+>         ret += "\n\n";
+> 
+>         // FSM state vars declaration, one per FSM:
+>         ret += "/* FSM state vars: */\n";
+>         for (int pid = 0; pid < numProcesses; pid++) {
+>             ret += "byte state" + Integer.toString(pid) + " = 0;\n";
+>         }
+>         ret += "\n\n";
+> 
+>         // Each of the FSMs in the CFSM:
+>         for (int pid = 0; pid < numProcesses; pid++) {
+>             String stateVar = "state" + Integer.toString(pid);
+>             FSM f = fsms.get(pid);
+>             ret += "active proctype p" + Integer.toString(pid) + "()\n";
+>             ret += "{\n";
+>             f.toPromelaString(stateVar);
+>             ret += "}\n\n";
+>         }
+>         ret += "\n\n";
+> 
+>         return ret;
+diff -r dynoptic/src/dynoptic/model/fifosys/cfsm/fsm/FSM.java dynoptic-ea407ba0a750/src/dynoptic/model/fifosys/cfsm/fsm/FSM.java
+63c63
+<                 scmIds.add(s.getScmId());
+---
+>                 scmIds.add(s.getStateId());
+66c66
+<                 assert nextScmFSMStateId > s.getScmId();
+---
+>                 assert nextScmFSMStateId > s.getStateId();
+311c311
+<                 ret = "initial : " + s.getScmId();
+---
+>                 ret = "initial : " + s.getStateId();
+313c313
+<                 ret += " , " + s.getScmId();
+---
+>                 ret += " , " + s.getStateId();
+322a323,348
+>         return ret;
+>     }
+> 
+>     /**
+>      * Generate Promela representation of this FSM.
+>      */
+>     public String toPromelaString(String stateVar) {
+>         assert !initStates.isEmpty();
+> 
+>         String ret = "";
+> 
+>         // If we have more than one initial state, then we choose
+>         // non-deterministically between the available initial states.
+>         if (initStates.size() > 1) {
+>             ret += "select(" + stateVar + " : 0 .. "
+>                     + Integer.toString(initStates.size() - 1) + ")";
+>         }
+> 
+>         ret += "do\n";
+>         ret += " :: ";
+>         for (FSMState s : states) {
+>             ret += s.toPromelaString(stateVar);
+>             ret += "\n\n";
+>         }
+> 
+>         ret += "od\n";
+diff -r dynoptic/src/dynoptic/model/fifosys/cfsm/fsm/FSMState.java dynoptic-ea407ba0a750/src/dynoptic/model/fifosys/cfsm/fsm/FSMState.java
+5a6
+> import synoptic.model.event.DistEventType;
+10,11d10
+< import synoptic.model.event.DistEventType;
+< 
+36,37c35,37
+<     // The id used by this FSMState in scm output.
+<     private final int scmId;
+---
+>     // The id used by this FSMState in scm and promela output. This state id is
+>     // a positive integer that is unique to this state in the FSM.
+>     private final int stateId;
+43c43
+<         this.scmId = scmId;
+---
+>         this.stateId = scmId;
+86c86
+<                 + "] id[" + scmId + "]";
+---
+>                 + "] id[" + stateId + "]";
+91c91
+<         return String.valueOf(scmId);
+---
+>         return String.valueOf(stateId);
+107c107
+<         ret = ret * 31 + scmId;
+---
+>         ret = ret * 31 + stateId;
+138c138
+<         if (state.scmId != this.scmId) {
+---
+>         if (state.stateId != this.stateId) {
+156,158c156,158
+<     /** Returns the scmId that this state is associated with. */
+<     public int getScmId() {
+<         return scmId;
+---
+>     /** Returns this state's id. */
+>     public int getStateId() {
+>         return stateId;
+218c218
+<         String ret = "state " + scmId + " :\n";
+---
+>         String ret = "state " + stateId + " :\n";
+234c234
+<                 ret += "to " + next.getScmId() + " : when true , " + eStr
+---
+>                 ret += "to " + next.getStateId() + " : when true , " + eStr
+241a242,282
+>     /**
+>      * Returns a Promela representation of this FSMState.
+>      */
+>     public String toPromelaString(String stateVar) {
+>         String ret = ":: (" + stateVar + " == " + this.getStateId() + ") -> ";
+> 
+>         if (transitions.keySet().size() == 1) {
+>             DistEventType e = transitions.keySet().iterator().next();
+>             // TODO:
+>             String trans = "Y";
+>             //
+>             if (e.isCommEvent()) {
+>                 // TODO:
+>                 ret += "atomic{" + e.toPromelaString() + "; " + trans + "}";
+>                 //
+>             } else {
+>                 // Local event:
+>                 ret += trans;
+>             }
+>             return ret;
+>         }
+> 
+>         ret += "\t do";
+>         // TODO:
+>         /*
+>          * String eStr; for (DistEventType e : transitions.keySet()) { // Build
+>          * an scm representation of this event type. if (e.isCommEvent()) { eStr
+>          * = e.toString( Integer.toString(e.getChannelId().getScmId()), ' '); }
+>          * else { // Local event: use local queue for local events. String
+>          * eTypeStr = e.getScmEventFullString();
+>          * localEventsChId.addLocalEventString(e, eTypeStr); eStr =
+>          * localEventsChId.getScmId() + " ! " + eTypeStr; }
+>          * 
+>          * for (FSMState next : transitions.get(e)) { ret += "to " +
+>          * next.getScmId() + " : when true , " + eStr + " ;\n"; } }
+>          */
+> 
+>         ret += "\t od";
+>         return ret;
+>     }
+> 
+256a298,302
+>     }
+> 
+>     public int getScmId() {
+>         // TODO Auto-generated method stub
+>         return 0;
+diff -r dynoptic/src/dynoptic/model/fifosys/gfsm/GFSM.java dynoptic-ea407ba0a750/src/dynoptic/model/fifosys/gfsm/GFSM.java
+11d10
+< import mcscm.McScMCExample;
+12a12
+> import dynoptic.mc.MCcExample;
+675c675
+<     public Set<GFSMPath> getCExamplePaths(McScMCExample cExample, int pid) {
+---
+>     public Set<GFSMPath> getCExamplePaths(MCcExample cExample, int pid) {
+Only in dynoptic/src: mcscm
