@@ -1,4 +1,4 @@
-testType=auto
+testType=orig
 experiment=jodatime
 oldVersCP=impact-tools/*:bin/:resources/:lib/*
 newVersCP=impact-tools/*:bin/:resources/:lib/*

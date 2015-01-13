@@ -1,4 +1,4 @@
-testType=orig
+testType=auto
 experiment=crystal
 experimentCP=impact-tools/*:bin/:lib/*
 dependentFree=false
