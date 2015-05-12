@@ -29,7 +29,7 @@ public class Prioritization extends Test {
      *  if false, the execution result will be printed
      */
     public Prioritization(ORDER order, String outputFilename, File inputTestFolder,
-            COVERAGE coverage, File dependentTestsFile, boolean getCoverage) {
+            COVERAGE coverage, File dependentTestsFile, boolean getCoverage, File origOrder) {
         super(inputTestFolder, coverage, dependentTestsFile);
 
         if (order == ORDER.ABSOLUTE || order == ORDER.RELATIVE) {
@@ -41,6 +41,9 @@ public class Prioritization extends Test {
         } else if (order == ORDER.RANDOM) {
             Collections.shuffle(methodList);
             orderObj = new Standard(outputFilename, methodList);
+        } else if (order == ORDER.ORIGINAL) {
+            parseOrigOrderToMethodList(origOrder, getNameToMethodData(methodList));
+            orderObj = new Standard(outputFilename, methodList, getCoverage, allLines);
         } else {
             System.err.println("Test prioritization is specified with an incompatible order."
                     + " Compatible orders are: absolute, relative and random.");

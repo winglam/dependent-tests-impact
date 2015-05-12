@@ -169,6 +169,35 @@ public class Test {
         return methodList;
     }
 
+    protected void parseOrigOrderToMethodList(File origOrder, Map<String, TestFunctionStatement> nameToMethodData) {
+        methodList.clear();
+        BufferedReader br;
+        try {
+            br = new BufferedReader(new FileReader(origOrder));
+            String line;
+            while ((line = br.readLine()) != null) {
+                if (nameToMethodData.containsKey(line.trim())) {
+                    methodList.add(nameToMethodData.get(line.trim()));
+                }
+            }
+            br.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    protected Map<String, TestFunctionStatement> getNameToMethodData(
+            List<TestFunctionStatement> methodList) {
+        Map<String, TestFunctionStatement> nameToMethodData =
+                new HashMap<String, TestFunctionStatement>();
+        for (TestFunctionStatement methodData : methodList) {
+            nameToMethodData.put(methodData.getName(), methodData);
+        }
+        return nameToMethodData;
+    }
+
     public void printResults() {
         orderObj.checkForDependentTests();
         orderObj.printResults();
