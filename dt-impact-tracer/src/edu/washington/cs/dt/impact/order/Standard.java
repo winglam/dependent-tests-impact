@@ -33,10 +33,11 @@ public class Standard {
     }
 
     public Standard(String outputFileName, List<TestFunctionStatement> methodList) {
-        this.filename = outputFileName;
-        this.methodList = methodList;
-        this.getCoverage = false;
-        allLines = null;
+        this(outputFileName, methodList, false);
+    }
+
+    public Standard(String outputFileName, List<TestFunctionStatement> methodList, boolean getCoverage) {
+        this(outputFileName, methodList, getCoverage, null);
     }
 
     public void checkForDependentTests() {

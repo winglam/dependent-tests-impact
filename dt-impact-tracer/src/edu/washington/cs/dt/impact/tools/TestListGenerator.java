@@ -151,9 +151,27 @@ public class TestListGenerator {
             getCoverage = argsList.indexOf("-getCoverage") != -1;
         }
 
+        // get file for the original order in which the tests should be ordered
+        File origOrder = null;
+        int origOrderIndex = argsList.indexOf("-origOrder");
+        if (origOrderIndex != -1) {
+            int origOrderNameIndex = origOrderIndex + 1;
+            if (origOrderNameIndex >= argsList.size()) {
+                System.err.println("Original order argument is specified but a directory"
+                        + " path is not. Please use the format: -origOrder aFilePath");
+                System.exit(0);
+            }
+            origOrder = new File(argsList.get(origOrderNameIndex));
+            if (!origOrder.isFile()) {
+                System.err.println("Original order argument is specified but the file"
+                        + " path is invalid. Please check the file path.");
+                System.exit(0);
+            }
+            order = ORDER.ORIGINAL;
+        }
+
         File selectionOutput1 = null;
         File selectionOutput2 = null;
-        File origOrder = null;
         if (techniqueName == TECHNIQUE.SELECTION) {
             // get directory of old version's selection output
             int oldVersCFGIndex = argsList.indexOf("-oldVersCFG");
@@ -196,24 +214,6 @@ public class TestListGenerator {
                         + " Please use the format: -newVersCFG aDirPath");
                 System.exit(0);
             }
-
-            // get file for the original order in which the tests should be ordered
-            int origOrderIndex = argsList.indexOf("-origOrder");
-            if (origOrderIndex != -1) {
-                int origOrderNameIndex = origOrderIndex + 1;
-                if (origOrderNameIndex >= argsList.size()) {
-                    System.err.println("Original order argument is specified but a directory"
-                            + " path is not. Please use the format: -origOrder aFilePath");
-                    System.exit(0);
-                }
-                origOrder = new File(argsList.get(origOrderNameIndex));
-                if (!origOrder.isFile()) {
-                    System.err.println("Original order argument is specified but the file"
-                            + " path is invalid. Please check the file path.");
-                    System.exit(0);
-                }
-                order = ORDER.ORIGINAL;
-            }
         }
 
         int numOfMachines = 1;
@@ -236,23 +236,7 @@ public class TestListGenerator {
             }
 
             int timeOrderIndex = argsList.indexOf("-timeOrder");
-            int origOrderIndex = argsList.indexOf("-origOrder");
-            if (origOrderIndex != -1) {
-                // get file for the original order in which the tests should be ordered
-                int origOrderNameIndex = origOrderIndex + 1;
-                if (origOrderNameIndex >= argsList.size()) {
-                    System.err.println("Original order argument is specified but a directory"
-                            + " path is not. Please use the format: -origOrder aFilePath");
-                    System.exit(0);
-                }
-                origOrder = new File(argsList.get(origOrderNameIndex));
-                if (!origOrder.isFile()) {
-                    System.err.println("Original order argument is specified but the file path"
-                            + " is invalid. Please check the file path.");
-                    System.exit(0);
-                }
-                order = ORDER.ORIGINAL;
-            } else if (timeOrderIndex != -1) {
+            if (timeOrderIndex != -1) {
                 // get file for the time each test took
                 int timeOrderNameIndex = timeOrderIndex + 1;
                 if (timeOrderNameIndex >= argsList.size()) {
@@ -273,7 +257,7 @@ public class TestListGenerator {
         Test testObj = null;
         if (techniqueName == TECHNIQUE.PRIORITIZATION) {
             testObj = new Prioritization(order, outputFileName, testInputDir, coverage,
-                    dependentTestFile, getCoverage);
+                    dependentTestFile, getCoverage, origOrder);
         } else if (techniqueName == TECHNIQUE.SELECTION) {
             testObj = new Selection(order, outputFileName, testInputDir, coverage,
                     selectionOutput1, selectionOutput2, origOrder, dependentTestFile);

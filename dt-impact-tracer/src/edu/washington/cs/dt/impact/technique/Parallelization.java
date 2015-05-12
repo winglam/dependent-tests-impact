@@ -106,24 +106,7 @@ public class Parallelization extends Test {
             if (order == ORDER.RANDOM) {
                 Collections.shuffle(methodList);
             } else if (order == ORDER.ORIGINAL) {
-                Map<String, TestFunctionStatement> nameToMethodData =
-                        getNameToMethodData(methodList);
-                methodList.clear();
-                BufferedReader br;
-                try {
-                    br = new BufferedReader(new FileReader(origOrder));
-                    String line;
-                    while ((line = br.readLine()) != null) {
-                        if (nameToMethodData.containsKey(line.trim())) {
-                            methodList.add(nameToMethodData.get(line.trim()));
-                        }
-                    }
-                    br.close();
-                } catch (FileNotFoundException e) {
-                    e.printStackTrace();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+                parseOrigOrderToMethodList(origOrder, getNameToMethodData(methodList));
             }
 
             // split the tests. if the tests can't be split by k perfectly,
@@ -147,16 +130,6 @@ public class Parallelization extends Test {
                     + " Compatible orders are: random, relative or absolute.");
             System.exit(0);
         }
-    }
-
-    private Map<String, TestFunctionStatement> getNameToMethodData(
-            List<TestFunctionStatement> methodList) {
-        Map<String, TestFunctionStatement> nameToMethodData =
-                new HashMap<String, TestFunctionStatement>();
-        for (TestFunctionStatement methodData : methodList) {
-            nameToMethodData.put(methodData.getName(), methodData);
-        }
-        return nameToMethodData;
     }
 
     private Map<String, Long> processFile(File f) {

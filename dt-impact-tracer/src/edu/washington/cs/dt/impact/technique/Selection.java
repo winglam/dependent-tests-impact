@@ -72,22 +72,7 @@ public class Selection extends Test {
                 methodList.retainAll(nameToMethodData.values());
                 Collections.shuffle(methodList);
             } else if (order == ORDER.ORIGINAL) {
-                methodList.clear();
-                BufferedReader br;
-                try {
-                    br = new BufferedReader(new FileReader(origOrder));
-                    String line;
-                    while ((line = br.readLine()) != null) {
-                        if (nameToMethodData.containsKey(line.trim())) {
-                            methodList.add(nameToMethodData.get(line.trim()));
-                        }
-                    }
-                    br.close();
-                } catch (FileNotFoundException e) {
-                    e.printStackTrace();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+                parseOrigOrderToMethodList(origOrder, nameToMethodData);
             } else {
                 System.err.println("Test selection is specified with an incompatible order."
                         + " Compatible orders are: absolute, relative, random and original.");
