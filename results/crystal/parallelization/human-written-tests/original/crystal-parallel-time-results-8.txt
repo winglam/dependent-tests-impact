@@ -1,18 +1,4 @@
-Execution time: 642158000
-0-th run
-Pass: 8, Fail: 0, Error: 0
-{crystal.util.SpringLayoutUtilityTest.testInvalidPanelParameter=PASS, crystal.client.ClientPreferencesTest.testDefaultSetting=PASS, crystal.client.ClientPreferencesTest.testRemoveProjectPreferencesAtIndex=PASS, crystal.client.ClientPreferencesTest.testAddProjectPreferences=PASS, crystal.client.ConflictDaemonTest.testGetInstance=PASS, crystal.model.RelationshipTest.testStrangeNameConstructor=PASS, crystal.model.DataSourceTest.testSetField=PASS, crystal.util.SpringLayoutUtilityTest.testFormGrid=PASS}
-
-
-false
-false
-Execution time: 905910881
-0-th run
-Pass: 4, Fail: 0, Error: 7
-{crystal.client.ConflictDaemonTest.testLocalState=PASS, crystal.util.ValidInputCheckerTest.testCheckValidDirectoryPath=ERROR, crystal.model.DataSourceTest.testIsHidden=ERROR, crystal.client.ClientPreferencesTest.testLoadPreferencesFromXML=ERROR, crystal.client.ProjectPreferencesTest.testGetProjectCheckoutLocation=ERROR, crystal.server.TestHgStateChecker.testBasicCleanMerge=ERROR, crystal.client.ProjectPreferencesTest.testRemoveDataSource=ERROR, crystal.client.ProjectPreferencesTest.testClone=PASS, crystal.model.RelationshipTest.testConstructor=PASS, crystal.model.DataSourceTest.testSetParent=ERROR, crystal.util.SetOperationsTest.testXor=PASS}
-
-
-ERROR 2015-01-11 15:09:54,615 (ConflictDaemon.java:153) - Runtime Exception caught while getting state for: shortName_HG_cloneString
+ERROR 2015-01-22 18:17:38,622 (ConflictDaemon.java:153) - Runtime Exception caught while getting state for: shortName_HG_cloneString
 null
 java.lang.NullPointerException
 	at crystal.client.ConflictDaemon.calculateRelationship(ConflictDaemon.java:111)
@@ -39,45 +25,228 @@ java.lang.NullPointerException
 	at org.junit.runner.JUnitCore.run(JUnitCore.java:138)
 	at edu.washington.cs.dt.util.JUnitTestExecutor.executeWithJUnit4Runner(JUnitTestExecutor.java:64)
 	at edu.washington.cs.dt.util.TestRunnerWrapper.main(TestRunnerWrapper.java:46)
-Execution time: 622993256
+Execution time: 807742021
 0-th run
-Pass: 4, Fail: 0, Error: 1
-{crystal.client.ConflictDaemonTest.testRelationship=ERROR, crystal.model.LocalStateResultTest.testToString=PASS, crystal.model.LocalStateResultTest.testGetLastAction=PASS, crystal.model.LocalStateResultTest.testGetLastLocalState=PASS, crystal.util.SetOperationsTest.testNullIntersection=PASS}
+Pass: 9, Fail: 0, Error: 12
+{crystal.client.ClientPreferencesTest.testSavePreferencesToXML=ERROR, crystal.client.ConflictDaemonTest.testRelationship=ERROR, crystal.server.GuidanceCheckerTest.testGetWhen=PASS, crystal.model.LocalStateResultTest.testErrorActionNameConstructor=PASS, crystal.server.HgLogParserTest.testSingleLog=PASS, crystal.model.RelationshipTest.testConstructor=PASS, crystal.model.DataSourceTest.testSetParent=ERROR, crystal.model.DataSourceTest.testClone=PASS, crystal.client.ClientPreferencesTest.testDuplicateProject=ERROR, crystal.client.ProjectPreferencesTest.testGetProjectCheckoutLocation=ERROR, crystal.client.ClientPreferencesTest.testDefaultSetting=PASS, crystal.client.ProjectPreferencesTest.testRemoveDataSource=ERROR, crystal.model.DataSourceTest.testSetRemoteCmd=ERROR, crystal.model.DataSourceTest.testIsHidden=ERROR, crystal.client.ClientPreferencesTest.testNullInputConstructor=PASS, crystal.model.RelationshipTest.testCalculateAction=ERROR, crystal.model.LocalStateResultTest.testGetLocalState=PASS, crystal.model.RelationshipTest.testNullInputConstructor=ERROR, crystal.server.TestHgStateChecker.testBasicCleanMerge=ERROR, crystal.server.TestHgStateChecker.testBasicAhead=ERROR, crystal.util.SpringLayoutUtilityTest.testFormGrid=PASS}
 
 
-Execution time: 732327623
-0-th run
-Pass: 6, Fail: 0, Error: 6
-{crystal.model.LocalStateResultTest.testGetName=PASS, crystal.model.LocalStateResultTest.testGetAction=PASS, crystal.model.DataSourceTest.testSetKind=ERROR, crystal.model.DataSourceTest.testSetCompileCommand=ERROR, crystal.model.RelationshipTest.testCalculateAction=ERROR, crystal.model.DataSourceTest.testClone=PASS, crystal.client.ConflictDaemonTest.testPrePerformCalculations=ERROR, crystal.client.ClientPreferencesTest.testNullInputConstructor=PASS, crystal.model.RelationshipTest.testGetDominant=ERROR, crystal.model.DataSourceTest.testToString=ERROR, crystal.util.SetOperationsTest.testIntersection=PASS, crystal.server.HgLogParserTest.testTwoLogs=PASS}
-
-
+myProject
+myProject
 false
 false
 false
-Execution time: 796790941
+Execution time: 789351133
 0-th run
-Pass: 7, Fail: 0, Error: 5
-{crystal.server.TestHgStateChecker.testBasicSame=ERROR, crystal.client.ClientPreferencesTest.testRemoveProjectPreferences=PASS, crystal.client.ConflictDaemonTest.testAddListener=PASS, crystal.model.LocalStateResultTest.testStrangeActionName=ERROR, crystal.util.ValidInputCheckerTest.testCheckValidFilePath=ERROR, crystal.model.RelationshipTest.testNullInputConstructor=ERROR, crystal.client.ProjectPreferencesTest.testAddDataSource=ERROR, crystal.client.ClientPreferencesTest.testDuplicateAddProjectPreferences=PASS, crystal.model.RelationshipTest.testGetActionRepoKind=PASS, crystal.server.HgLogParserTest.testParseNullLog=PASS, crystal.util.SetOperationsTest.testUnion=PASS, crystal.server.GuidanceCheckerTest.testGetCommitters=PASS}
+Pass: 10, Fail: 0, Error: 4
+{crystal.client.ProjectPreferencesTest.testNullInputConstructor=ERROR, crystal.client.ProjectPreferencesTest.testGetNumOfVisibleSources=PASS, crystal.client.ProjectPreferencesTest.testDuplicateAddDataSource=PASS, crystal.client.ClientPreferencesTest.testClone=PASS, crystal.client.ConflictDaemonTest.testGetInstance=PASS, crystal.model.DataSourceTest.testSetCompileCommand=ERROR, crystal.model.DataSourceTest.testSetKind=ERROR, crystal.client.ClientPreferencesTest.testClientPreferences=PASS, crystal.util.SetOperationsTest.testIntersection=PASS, crystal.model.RelationshipTest.testEqualsObject=PASS, crystal.model.LocalStateResultTest.testGetLastAction=PASS, crystal.model.RelationshipTest.testStrangeNameConstructor=PASS, crystal.util.ValidInputCheckerTest.testCheckValidFilePath=ERROR, crystal.util.SetOperationsTest.testSetDifference=PASS}
 
 
-Execution time: 776758764
+Execution time: 685546947
 0-th run
-Pass: 3, Fail: 0, Error: 1
-{crystal.client.ClientPreferencesTest.testSavePreferencesToXML=ERROR, crystal.server.GuidanceCheckerTest.testGetWhen=PASS, crystal.server.HgLogParserTest.testSingleLog=PASS, crystal.util.SetOperationsTest.testNullUnion=PASS}
+Pass: 14, Fail: 0, Error: 7
+{crystal.client.ProjectPreferencesTest.testProjectPreferences=PASS, crystal.client.ConflictDaemonTest.testLocalState=PASS, crystal.util.SpringLayoutUtilityTest.testInvalidPanelParameter=PASS, crystal.server.HgLogParserTest.testParseNullLog=PASS, crystal.client.ClientPreferencesTest.testRemoveProjectPreferences=PASS, crystal.client.ConflictDaemonTest.testAddListener=PASS, crystal.client.ClientPreferencesTest.testLoadPreferencesFromXML=ERROR, crystal.model.DataSourceTest.testSetCloneString=ERROR, crystal.client.ConflictDaemonTest.testPrePerformCalculations=ERROR, crystal.model.LocalStateResultTest.testGetNoErrorMessage=PASS, crystal.server.TestHgStateChecker.testBasicMergeConflict=ERROR, crystal.client.ClientPreferencesTest.testRemoveProjectPreferencesAtIndex=PASS, crystal.client.ProjectPreferencesTest.testClone=PASS, crystal.util.SetOperationsTest.testUnion=PASS, crystal.model.LocalStateResultTest.testStrangeActionName=ERROR, crystal.model.LocalStateResultTest.testGetLastLocalState=PASS, crystal.model.LocalStateResultTest.testGetAction=PASS, crystal.model.LocalStateResultTest.testLocalStateResult=ERROR, crystal.util.SetOperationsTest.testNullIntersection=PASS, crystal.server.TestHgStateChecker.testBasicBehind=ERROR, crystal.server.HgLogParserTest.testTwoLogs=PASS}
 
 
 Kenneth Reitz <me@kennethreitz.com> and Georg Brandl <georg@python.org>
-myProject
-myProject
-Execution time: 22957341106
+false
+false
+Execution time: 1363067934
 0-th run
-Pass: 7, Fail: 0, Error: 8
-{crystal.util.ValidInputCheckerTest.testCheckUrl=ERROR, crystal.model.DataSourceTest.testSetHistory=ERROR, crystal.model.RevisionHistoryTest.testEqualsObject=PASS, crystal.server.HgLogParserTest.testParseLog=ERROR, crystal.model.RevisionHistoryTest.testSuperSubHistory=PASS, crystal.client.ProjectPreferencesTest.testNullInputConstructor=ERROR, crystal.model.RevisionHistoryTest.testGetCommitters=ERROR, crystal.client.ProjectPreferencesTest.testProjectPreferences=PASS, crystal.model.LocalStateResultTest.testErrorActionNameConstructor=PASS, crystal.model.LocalStateResultTest.testGetLastErrorMessage=PASS, crystal.client.ClientPreferencesTest.testClone=PASS, crystal.client.ClientPreferencesTest.testClientPreferences=PASS, crystal.model.DataSourceTest.testSetEnabled=ERROR, crystal.model.LocalStateResultTest.testLocalStateResult=ERROR, crystal.server.TestHgStateChecker.testBasicBehind=ERROR}
+Pass: 11, Fail: 0, Error: 6
+{crystal.model.RevisionHistoryTest.testGetCommitters=ERROR, crystal.model.LocalStateResultTest.testGetName=PASS, crystal.model.DataSourceTest.testSetEnabled=ERROR, crystal.model.DataSourceTest.testSetField=PASS, crystal.model.DataSourceTest.testToString=PASS, crystal.client.ClientPreferencesTest.testAddProjectPreferences=PASS, crystal.util.ValidInputCheckerTest.testCheckValidDirectoryPath=ERROR, crystal.client.ProjectPreferencesTest.testAddDataSource=ERROR, crystal.client.ClientPreferencesTest.testDuplicateAddProjectPreferences=PASS, crystal.util.SetOperationsTest.testXor=PASS, crystal.model.LocalStateResultTest.testGetLastErrorMessage=PASS, crystal.model.LocalStateResultTest.testToString=PASS, crystal.model.RelationshipTest.testGetActionRepoKind=PASS, crystal.model.RelationshipTest.testGetDominant=ERROR, crystal.server.TestHgStateChecker.testBasicSame=ERROR, crystal.server.GuidanceCheckerTest.testGetCommitters=PASS, crystal.util.SetOperationsTest.testNullUnion=PASS}
 
 
-Execution time: 769823970
+Execution time: 981794437
 0-th run
-Pass: 6, Fail: 0, Error: 5
-{crystal.server.TestHgStateChecker.testBasicMergeConflict=ERROR, crystal.client.ClientPreferencesTest.testDuplicateProject=ERROR, crystal.model.DataSourceTest.testSetRemoteCmd=ERROR, crystal.client.ProjectPreferencesTest.testGetNumOfVisibleSources=PASS, crystal.client.ProjectPreferencesTest.testDuplicateAddDataSource=PASS, crystal.model.LocalStateResultTest.testGetNoErrorMessage=PASS, crystal.model.RelationshipTest.testEqualsObject=PASS, crystal.model.LocalStateResultTest.testGetLocalState=PASS, crystal.model.DataSourceTest.testSetCloneString=ERROR, crystal.server.TestHgStateChecker.testBasicAhead=ERROR, crystal.util.SetOperationsTest.testSetDifference=PASS}
+Pass: 1, Fail: 0, Error: 0
+{crystal.model.RevisionHistoryTest.testSuperSubHistory=PASS}
+
+
+Execution time: 1316040317
+0-th run
+Pass: 0, Fail: 0, Error: 1
+{crystal.server.HgLogParserTest.testParseLog=ERROR}
+
+
+Execution time: 19660496855
+0-th run
+Pass: 0, Fail: 0, Error: 2
+{crystal.util.ValidInputCheckerTest.testCheckUrl=ERROR, crystal.model.DataSourceTest.testSetHistory=ERROR}
+
+
+Execution time: 899840600
+0-th run
+Pass: 1, Fail: 0, Error: 0
+{crystal.model.RevisionHistoryTest.testEqualsObject=PASS}
+
+
+
+ERROR 2015-01-22 18:18:05,951 (ConflictDaemon.java:153) - Runtime Exception caught while getting state for: shortName_HG_cloneString
+null
+java.lang.NullPointerException
+	at crystal.client.ConflictDaemon.calculateRelationship(ConflictDaemon.java:111)
+	at crystal.client.ConflictDaemonTest.testRelationship(ConflictDaemonTest.java:84)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:44)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:41)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:31)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:44)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:180)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:41)
+	at org.junit.runners.ParentRunner$1.evaluate(ParentRunner.java:173)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:31)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:220)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:159)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:138)
+	at edu.washington.cs.dt.util.JUnitTestExecutor.executeWithJUnit4Runner(JUnitTestExecutor.java:64)
+	at edu.washington.cs.dt.util.TestRunnerWrapper.main(TestRunnerWrapper.java:46)
+Execution time: 792101568
+0-th run
+Pass: 9, Fail: 0, Error: 12
+{crystal.client.ClientPreferencesTest.testSavePreferencesToXML=ERROR, crystal.client.ConflictDaemonTest.testRelationship=ERROR, crystal.server.GuidanceCheckerTest.testGetWhen=PASS, crystal.model.LocalStateResultTest.testErrorActionNameConstructor=PASS, crystal.server.HgLogParserTest.testSingleLog=PASS, crystal.model.RelationshipTest.testConstructor=PASS, crystal.model.DataSourceTest.testSetParent=ERROR, crystal.model.DataSourceTest.testClone=PASS, crystal.client.ClientPreferencesTest.testDuplicateProject=ERROR, crystal.client.ProjectPreferencesTest.testGetProjectCheckoutLocation=ERROR, crystal.client.ClientPreferencesTest.testDefaultSetting=PASS, crystal.client.ProjectPreferencesTest.testRemoveDataSource=ERROR, crystal.model.DataSourceTest.testSetRemoteCmd=ERROR, crystal.model.DataSourceTest.testIsHidden=ERROR, crystal.client.ClientPreferencesTest.testNullInputConstructor=PASS, crystal.model.RelationshipTest.testCalculateAction=ERROR, crystal.model.LocalStateResultTest.testGetLocalState=PASS, crystal.model.RelationshipTest.testNullInputConstructor=ERROR, crystal.server.TestHgStateChecker.testBasicCleanMerge=ERROR, crystal.server.TestHgStateChecker.testBasicAhead=ERROR, crystal.util.SpringLayoutUtilityTest.testFormGrid=PASS}
+
+
+myProject
+myProject
+false
+false
+false
+Execution time: 807313966
+0-th run
+Pass: 10, Fail: 0, Error: 4
+{crystal.client.ProjectPreferencesTest.testNullInputConstructor=ERROR, crystal.client.ProjectPreferencesTest.testGetNumOfVisibleSources=PASS, crystal.client.ProjectPreferencesTest.testDuplicateAddDataSource=PASS, crystal.client.ClientPreferencesTest.testClone=PASS, crystal.client.ConflictDaemonTest.testGetInstance=PASS, crystal.model.DataSourceTest.testSetCompileCommand=ERROR, crystal.model.DataSourceTest.testSetKind=ERROR, crystal.client.ClientPreferencesTest.testClientPreferences=PASS, crystal.util.SetOperationsTest.testIntersection=PASS, crystal.model.RelationshipTest.testEqualsObject=PASS, crystal.model.LocalStateResultTest.testGetLastAction=PASS, crystal.model.RelationshipTest.testStrangeNameConstructor=PASS, crystal.util.ValidInputCheckerTest.testCheckValidFilePath=ERROR, crystal.util.SetOperationsTest.testSetDifference=PASS}
+
+
+Execution time: 696882199
+0-th run
+Pass: 14, Fail: 0, Error: 7
+{crystal.client.ProjectPreferencesTest.testProjectPreferences=PASS, crystal.client.ConflictDaemonTest.testLocalState=PASS, crystal.util.SpringLayoutUtilityTest.testInvalidPanelParameter=PASS, crystal.server.HgLogParserTest.testParseNullLog=PASS, crystal.client.ClientPreferencesTest.testRemoveProjectPreferences=PASS, crystal.client.ConflictDaemonTest.testAddListener=PASS, crystal.client.ClientPreferencesTest.testLoadPreferencesFromXML=ERROR, crystal.model.DataSourceTest.testSetCloneString=ERROR, crystal.client.ConflictDaemonTest.testPrePerformCalculations=ERROR, crystal.model.LocalStateResultTest.testGetNoErrorMessage=PASS, crystal.server.TestHgStateChecker.testBasicMergeConflict=ERROR, crystal.client.ClientPreferencesTest.testRemoveProjectPreferencesAtIndex=PASS, crystal.client.ProjectPreferencesTest.testClone=PASS, crystal.util.SetOperationsTest.testUnion=PASS, crystal.model.LocalStateResultTest.testStrangeActionName=ERROR, crystal.model.LocalStateResultTest.testGetLastLocalState=PASS, crystal.model.LocalStateResultTest.testGetAction=PASS, crystal.model.LocalStateResultTest.testLocalStateResult=ERROR, crystal.util.SetOperationsTest.testNullIntersection=PASS, crystal.server.TestHgStateChecker.testBasicBehind=ERROR, crystal.server.HgLogParserTest.testTwoLogs=PASS}
+
+
+Kenneth Reitz <me@kennethreitz.com> and Georg Brandl <georg@python.org>
+false
+false
+Execution time: 1383272124
+0-th run
+Pass: 11, Fail: 0, Error: 6
+{crystal.model.RevisionHistoryTest.testGetCommitters=ERROR, crystal.model.LocalStateResultTest.testGetName=PASS, crystal.model.DataSourceTest.testSetEnabled=ERROR, crystal.model.DataSourceTest.testSetField=PASS, crystal.model.DataSourceTest.testToString=PASS, crystal.client.ClientPreferencesTest.testAddProjectPreferences=PASS, crystal.util.ValidInputCheckerTest.testCheckValidDirectoryPath=ERROR, crystal.client.ProjectPreferencesTest.testAddDataSource=ERROR, crystal.client.ClientPreferencesTest.testDuplicateAddProjectPreferences=PASS, crystal.util.SetOperationsTest.testXor=PASS, crystal.model.LocalStateResultTest.testGetLastErrorMessage=PASS, crystal.model.LocalStateResultTest.testToString=PASS, crystal.model.RelationshipTest.testGetActionRepoKind=PASS, crystal.model.RelationshipTest.testGetDominant=ERROR, crystal.server.TestHgStateChecker.testBasicSame=ERROR, crystal.server.GuidanceCheckerTest.testGetCommitters=PASS, crystal.util.SetOperationsTest.testNullUnion=PASS}
+
+
+Execution time: 962431645
+0-th run
+Pass: 1, Fail: 0, Error: 0
+{crystal.model.RevisionHistoryTest.testSuperSubHistory=PASS}
+
+
+Execution time: 1340979584
+0-th run
+Pass: 0, Fail: 0, Error: 1
+{crystal.server.HgLogParserTest.testParseLog=ERROR}
+
+
+Execution time: 19673448002
+0-th run
+Pass: 0, Fail: 0, Error: 2
+{crystal.util.ValidInputCheckerTest.testCheckUrl=ERROR, crystal.model.DataSourceTest.testSetHistory=ERROR}
+
+
+Execution time: 903162560
+0-th run
+Pass: 1, Fail: 0, Error: 0
+{crystal.model.RevisionHistoryTest.testEqualsObject=PASS}
+
+
+
+ERROR 2015-01-22 18:18:33,361 (ConflictDaemon.java:153) - Runtime Exception caught while getting state for: shortName_HG_cloneString
+null
+java.lang.NullPointerException
+	at crystal.client.ConflictDaemon.calculateRelationship(ConflictDaemon.java:111)
+	at crystal.client.ConflictDaemonTest.testRelationship(ConflictDaemonTest.java:84)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:44)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:41)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:31)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:44)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:180)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:41)
+	at org.junit.runners.ParentRunner$1.evaluate(ParentRunner.java:173)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:31)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:220)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:159)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:138)
+	at edu.washington.cs.dt.util.JUnitTestExecutor.executeWithJUnit4Runner(JUnitTestExecutor.java:64)
+	at edu.washington.cs.dt.util.TestRunnerWrapper.main(TestRunnerWrapper.java:46)
+Execution time: 804730040
+0-th run
+Pass: 9, Fail: 0, Error: 12
+{crystal.client.ClientPreferencesTest.testSavePreferencesToXML=ERROR, crystal.client.ConflictDaemonTest.testRelationship=ERROR, crystal.server.GuidanceCheckerTest.testGetWhen=PASS, crystal.model.LocalStateResultTest.testErrorActionNameConstructor=PASS, crystal.server.HgLogParserTest.testSingleLog=PASS, crystal.model.RelationshipTest.testConstructor=PASS, crystal.model.DataSourceTest.testSetParent=ERROR, crystal.model.DataSourceTest.testClone=PASS, crystal.client.ClientPreferencesTest.testDuplicateProject=ERROR, crystal.client.ProjectPreferencesTest.testGetProjectCheckoutLocation=ERROR, crystal.client.ClientPreferencesTest.testDefaultSetting=PASS, crystal.client.ProjectPreferencesTest.testRemoveDataSource=ERROR, crystal.model.DataSourceTest.testSetRemoteCmd=ERROR, crystal.model.DataSourceTest.testIsHidden=ERROR, crystal.client.ClientPreferencesTest.testNullInputConstructor=PASS, crystal.model.RelationshipTest.testCalculateAction=ERROR, crystal.model.LocalStateResultTest.testGetLocalState=PASS, crystal.model.RelationshipTest.testNullInputConstructor=ERROR, crystal.server.TestHgStateChecker.testBasicCleanMerge=ERROR, crystal.server.TestHgStateChecker.testBasicAhead=ERROR, crystal.util.SpringLayoutUtilityTest.testFormGrid=PASS}
+
+
+myProject
+myProject
+false
+false
+false
+Execution time: 797132686
+0-th run
+Pass: 10, Fail: 0, Error: 4
+{crystal.client.ProjectPreferencesTest.testNullInputConstructor=ERROR, crystal.client.ProjectPreferencesTest.testGetNumOfVisibleSources=PASS, crystal.client.ProjectPreferencesTest.testDuplicateAddDataSource=PASS, crystal.client.ClientPreferencesTest.testClone=PASS, crystal.client.ConflictDaemonTest.testGetInstance=PASS, crystal.model.DataSourceTest.testSetCompileCommand=ERROR, crystal.model.DataSourceTest.testSetKind=ERROR, crystal.client.ClientPreferencesTest.testClientPreferences=PASS, crystal.util.SetOperationsTest.testIntersection=PASS, crystal.model.RelationshipTest.testEqualsObject=PASS, crystal.model.LocalStateResultTest.testGetLastAction=PASS, crystal.model.RelationshipTest.testStrangeNameConstructor=PASS, crystal.util.ValidInputCheckerTest.testCheckValidFilePath=ERROR, crystal.util.SetOperationsTest.testSetDifference=PASS}
+
+
+Execution time: 709833454
+0-th run
+Pass: 14, Fail: 0, Error: 7
+{crystal.client.ProjectPreferencesTest.testProjectPreferences=PASS, crystal.client.ConflictDaemonTest.testLocalState=PASS, crystal.util.SpringLayoutUtilityTest.testInvalidPanelParameter=PASS, crystal.server.HgLogParserTest.testParseNullLog=PASS, crystal.client.ClientPreferencesTest.testRemoveProjectPreferences=PASS, crystal.client.ConflictDaemonTest.testAddListener=PASS, crystal.client.ClientPreferencesTest.testLoadPreferencesFromXML=ERROR, crystal.model.DataSourceTest.testSetCloneString=ERROR, crystal.client.ConflictDaemonTest.testPrePerformCalculations=ERROR, crystal.model.LocalStateResultTest.testGetNoErrorMessage=PASS, crystal.server.TestHgStateChecker.testBasicMergeConflict=ERROR, crystal.client.ClientPreferencesTest.testRemoveProjectPreferencesAtIndex=PASS, crystal.client.ProjectPreferencesTest.testClone=PASS, crystal.util.SetOperationsTest.testUnion=PASS, crystal.model.LocalStateResultTest.testStrangeActionName=ERROR, crystal.model.LocalStateResultTest.testGetLastLocalState=PASS, crystal.model.LocalStateResultTest.testGetAction=PASS, crystal.model.LocalStateResultTest.testLocalStateResult=ERROR, crystal.util.SetOperationsTest.testNullIntersection=PASS, crystal.server.TestHgStateChecker.testBasicBehind=ERROR, crystal.server.HgLogParserTest.testTwoLogs=PASS}
+
+
+Kenneth Reitz <me@kennethreitz.com> and Georg Brandl <georg@python.org>
+false
+false
+Execution time: 1413223179
+0-th run
+Pass: 11, Fail: 0, Error: 6
+{crystal.model.RevisionHistoryTest.testGetCommitters=ERROR, crystal.model.LocalStateResultTest.testGetName=PASS, crystal.model.DataSourceTest.testSetEnabled=ERROR, crystal.model.DataSourceTest.testSetField=PASS, crystal.model.DataSourceTest.testToString=PASS, crystal.client.ClientPreferencesTest.testAddProjectPreferences=PASS, crystal.util.ValidInputCheckerTest.testCheckValidDirectoryPath=ERROR, crystal.client.ProjectPreferencesTest.testAddDataSource=ERROR, crystal.client.ClientPreferencesTest.testDuplicateAddProjectPreferences=PASS, crystal.util.SetOperationsTest.testXor=PASS, crystal.model.LocalStateResultTest.testGetLastErrorMessage=PASS, crystal.model.LocalStateResultTest.testToString=PASS, crystal.model.RelationshipTest.testGetActionRepoKind=PASS, crystal.model.RelationshipTest.testGetDominant=ERROR, crystal.server.TestHgStateChecker.testBasicSame=ERROR, crystal.server.GuidanceCheckerTest.testGetCommitters=PASS, crystal.util.SetOperationsTest.testNullUnion=PASS}
+
+
+Execution time: 948531747
+0-th run
+Pass: 1, Fail: 0, Error: 0
+{crystal.model.RevisionHistoryTest.testSuperSubHistory=PASS}
+
+
+Execution time: 1294763489
+0-th run
+Pass: 0, Fail: 0, Error: 1
+{crystal.server.HgLogParserTest.testParseLog=ERROR}
+
+
+Execution time: 19716164508
+0-th run
+Pass: 0, Fail: 0, Error: 2
+{crystal.util.ValidInputCheckerTest.testCheckUrl=ERROR, crystal.model.DataSourceTest.testSetHistory=ERROR}
+
+
+Execution time: 894648095
+0-th run
+Pass: 1, Fail: 0, Error: 0
+{crystal.model.RevisionHistoryTest.testEqualsObject=PASS}
+
 
 
