@@ -73,6 +73,7 @@ function runCoveragesOrders() {
 function getCoveragesOrders() {
   DTChainCoverages=(statement)
   for i in "${DTChainCoverages[@]}"; do 
+    java -cp $impactJarCP $testListGenClass -technique prioritization -coverage $i -outputFile $1-tp-$i-orig-coverage.txt -getCoverage -origOrder $1-$3-order
     for j in "${orders[@]}"; do  
       if [ "$4" = true ] ; then 
         java -cp $impactJarCP $testListGenClass -technique prioritization -coverage $i -order $j -outputFile $1-tp-$i-$j-coverage.txt -dependentTestFile $1-$3-dt -getCoverage
@@ -84,7 +85,7 @@ function getCoveragesOrders() {
 }
 
 function parallelExec() {
-  java -cp $2 edu.washington.cs.dt.main.ImpactMain $1-$3-order -getTime > $1-$3-time.txt
+#  java -cp $2 edu.washington.cs.dt.main.ImpactMain $1-$3-order -getTime > $1-$3-time.txt
   for k in "${machines[@]}"; do 
     rm -rf $1-parallel-time-order-results.txt
     rm -rf $1-parallel-$3-order-results-$k.txt
