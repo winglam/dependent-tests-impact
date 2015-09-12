@@ -33,7 +33,7 @@ function clearSelectionTemp() {
 
 function instrumentFiles() {
   # instrument class and test files
-  java -cp $1 edu.washington.cs.dt.impact.Main.MainDriver -inputDir bin
+  java -cp $1 edu.washington.cs.dt.impact.Main.InstrumentationMain -inputDir bin
 }
 
 function runRandom() {
@@ -178,34 +178,33 @@ function buildDTChainPrioritization() {
   DTChainCoverages=(statement)
   for i in "${DTChainCoverages[@]}"; do
     for j in "${orders[@]}"; do
-        echo "" > $1-$3-dt-$i-$j
-        java -cp $impactJarCP $testListGenClass -technique prioritization -coverage $i -order $j -outputFile $1-tp-$i-$j.txt
+      echo "" > $1-$3-dt-$i-$j
+      java -cp $impactJarCP $testListGenClass -technique prioritization -coverage $i -order $j -outputFile $1-tp-$i-$j.txt
+
+      clearEnv
+      java -cp $2 edu.washington.cs.dt.main.ImpactMain $1-tp-$i-$j.txt > $1-tp-$i-$j-results-dt.txt
+      java -cp $impactJarCP $crossReferenceClass -origOrder $1-$3-order-results.txt -testOrder $1-tp-$i-$j-results-dt.txt > $1-tp-$i-$j-summary.txt
+      rm -rf $1-tp-$i-$j-results-dt.txt
+
+      while [ true ]
+      do
+        rm -rf $1-tp-$i-$j-results-dt.txt
+        java -cp $2 edu.washington.cs.dt.impact.Main.DTFinderMain -dependentTestFile $1-tp-$i-$j-summary.txt  -currentOrderFile $1-tp-$i-$j.txt -originalOrderFile $1-$3-order -dtFile $1-$3-dt-$i-$j -filesToDelete $1-env-files > dtChainTemp
+
+        java -cp $impactJarCP $testListGenClass -technique prioritization -coverage $i -order $j -outputFile $1-tp-$i-$j.txt -dependentTestFile $1-$3-dt-$i-$j
 
         clearEnv
         java -cp $2 edu.washington.cs.dt.main.ImpactMain $1-tp-$i-$j.txt > $1-tp-$i-$j-results-dt.txt
         java -cp $impactJarCP $crossReferenceClass -origOrder $1-$3-order-results.txt -testOrder $1-tp-$i-$j-results-dt.txt > $1-tp-$i-$j-summary.txt
-        rm -rf $1-tp-$i-$j-results-dt.txt
-
-        while [ true ]
-        do
-            rm -rf $1-tp-$i-$j-results-dt.txt
-            java -cp $2 edu.washington.cs.dt.impact.Main.DTFinderMain -dependentTestFile $1-tp-$i-$j-summary.txt  -currentOrderFile $1-tp-$i-$j.txt -originalOrderFile $1-$3-order -dtFile $1-$3-dt-$i-$j -filesToDelete $1-env-files > dtChainTemp
-
-            java -cp $impactJarCP $testListGenClass -technique prioritization -coverage $i -order $j -outputFile $1-tp-$i-$j.txt -dependentTestFile $1-$3-dt-$i-$j
-
-            clearEnv
-            java -cp $2 edu.washington.cs.dt.main.ImpactMain $1-tp-$i-$j.txt > $1-tp-$i-$j-results-dt.txt
-            java -cp $impactJarCP $crossReferenceClass -origOrder $1-$3-order-results.txt -testOrder $1-tp-$i-$j-results-dt.txt > $1-tp-$i-$j-summary.txt
-
-            if grep -q 'There are no dependent tests left!' "dtChainTemp"; then
-              echo '======================= There are no more dependent tests left! ======================='
-              break
-            fi
-        done
-        echo '======================= Finish ' $i ' - ' $j ' ======================='
-        rm -rf $1-tp-$i-$j.txt
-        rm -rf dtChainTemp
-	java -cp $impactJarCP $testListGenClass -technique prioritization -coverage $i -order $j -outputFile $1-tp-$i-$j-coverage-dt.txt -dependentTestFile $1-$3-dt-$i-$j -getCoverage
+        if grep -q 'There are no dependent tests left!' "dtChainTemp"; then
+          echo '======================= There are no more dependent tests left! ======================='
+          break
+        fi
+      done
+      echo '======================= Finish ' $i ' - ' $j ' ======================='
+      rm -rf $1-tp-$i-$j.txt
+      rm -rf dtChainTemp
+      java -cp $impactJarCP $testListGenClass -technique prioritization -coverage $i -order $j -outputFile $1-tp-$i-$j-coverage-dt.txt -dependentTestFile $1-$3-dt-$i-$j -getCoverage
     done
   done
   clearEnv

@@ -18,7 +18,7 @@ import soot.Transform;
 import edu.washington.cs.dt.impact.util.Constants;
 import edu.washington.cs.dt.impact.util.Constants.TECHNIQUE;
 import edu.washington.cs.dt.impact.util.Instrumenter;
-public class MainDriver {
+public class InstrumentationMain {
     public static void main(String[] args) {
         /* check the arguments */
         if (args.length == 0) {
