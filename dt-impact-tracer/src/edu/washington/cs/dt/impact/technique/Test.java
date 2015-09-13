@@ -23,10 +23,10 @@ import java.util.Set;
 
 import edu.washington.cs.dt.impact.data.TestFunctionStatement;
 import edu.washington.cs.dt.impact.order.Standard;
+import edu.washington.cs.dt.impact.util.Constants;
 import edu.washington.cs.dt.impact.util.Constants.COVERAGE;
 
 public class Test {
-    private final String TEST_LINE = "Test: ";
     private final String EXECUTE_AFTER = "when executed after: ";
     private final String TEST_SEP = ", ";
 
@@ -97,7 +97,7 @@ public class Test {
                     continue;
                 }
 
-                String testName = line.split(TEST_LINE)[1];
+                String testName = line.split(Constants.TEST_LINE)[1];
 
                 // intended behavior line
                 br.readLine();
@@ -201,5 +201,10 @@ public class Test {
     public void printResults() {
         orderObj.checkForDependentTests();
         orderObj.printResults();
+    }
+
+    public List<TestFunctionStatement> getResults() {
+        orderObj.checkForDependentTests();
+        return orderObj.getMethodList();
     }
 }

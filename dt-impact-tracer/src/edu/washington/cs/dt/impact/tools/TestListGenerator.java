@@ -85,19 +85,19 @@ public class TestListGenerator {
         ORDER order = null;
         int orderIndex = argsList.indexOf("-order");
         if (orderIndex != -1) {
-            int coverageNameIndex = orderIndex + 1;
-            if (coverageNameIndex >= argsList.size()) {
+            int orderNameIndex = orderIndex + 1;
+            if (orderNameIndex >= argsList.size()) {
                 System.err
                 .println("Order argument is specified but valid order was not."
                         + " Please use the format: -order aOrderName");
                 System.exit(0);
             }
-            String coverageStr = argsList.get(coverageNameIndex).trim().toLowerCase();
-            if (coverageStr.equals("absolute")) {
+            String orderStr = argsList.get(orderNameIndex).trim().toLowerCase();
+            if (orderStr.equals("absolute")) {
                 order = ORDER.ABSOLUTE;
-            } else if (coverageStr.equals("relative")) {
+            } else if (orderStr.equals("relative")) {
                 order = ORDER.RELATIVE;
-            } else if (coverageStr.equals("random")) {
+            } else if (orderStr.equals("random")) {
                 order = ORDER.RANDOM;
             }
         }

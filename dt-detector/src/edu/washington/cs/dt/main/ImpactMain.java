@@ -80,4 +80,9 @@ public class ImpactMain {
         System.out.println("Execution time: " + total);
         System.out.println(results);
     }
+
+    public static TestExecResults getResults(List<String> tests) {
+        AbstractTestRunner runner = new FixedOrderRunner(tests);
+        return runner.run();
+    }
 }

@@ -11,6 +11,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -61,5 +62,33 @@ public class FileTools {
         for (String s : f2Set) {
             System.out.println(s);
         }
+    }
+
+    // returns a list of Strings where each String is a line of the file
+    public static List<String> parseFileToList(File orderFile) {
+        List<String> tests = new ArrayList<String>();
+        BufferedReader br = null;
+        try {
+            br = new BufferedReader(new FileReader(orderFile));
+            String line = br.readLine();
+
+            while (line != null) {
+                if (!line.equals("")) {
+                    tests.add(line);
+                }
+                line = br.readLine();
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                br.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return tests;
     }
 }

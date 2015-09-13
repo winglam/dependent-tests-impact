@@ -3,6 +3,7 @@
  */ 
 package edu.washington.cs.dt;
 
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -20,6 +21,8 @@ public class TestExecResult {
 	protected List<String> passingTestsInOrder = new LinkedList<String>();
 	protected List<String> failingTestsInOrder = new LinkedList<String>();
 	protected List<String> errorTestsInOrder = new LinkedList<String>();
+	protected Map<String, RESULT> nameToResultsMap = new HashMap<String, RESULT>();
+
 	
 	public TestExecResult(Map<String, OneTestExecResult> singleRun) {
 		this.singleRun = singleRun;
@@ -30,10 +33,13 @@ public class TestExecResult {
 			OneTestExecResult r = this.singleRun.get(test);
 			if(r.result.equals(RESULT.PASS)) {
 				this.passingTestsInOrder.add(test);
+				nameToResultsMap.put(test, RESULT.PASS);
 			} else if (r.result.equals(RESULT.FAILURE)) {
 				this.failingTestsInOrder.add(test);
+				nameToResultsMap.put(test, RESULT.FAILURE);
 			} else if (r.result.equals(RESULT.ERROR)) {
 				this.errorTestsInOrder.add(test);
+				nameToResultsMap.put(test, RESULT.ERROR);
 			} else {
 				throw new RuntimeException("Unknown results: " + r);
 			}
@@ -60,6 +66,10 @@ public class TestExecResult {
 		return this.errorTestsInOrder.contains(test);
 	}
 	
+	public Map<String, RESULT> getNameToResultsMap() {
+	    return nameToResultsMap;
+	}
+
 	@Override
 	public String toString() {
 		return this.singleRun.toString();
