@@ -144,6 +144,10 @@ public class Standard {
         return coverageList;
     }
 
+    public List<TestFunctionStatement> getMethodList() {
+        return methodList;
+    }
+
     public void printResults() {
         if (getCoverage) {
             methodList = changeToCoverage();

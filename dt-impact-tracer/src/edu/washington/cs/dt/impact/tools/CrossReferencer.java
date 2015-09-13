@@ -23,10 +23,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import edu.washington.cs.dt.RESULT;
+
 public class CrossReferencer {
-    private enum RESULT {
-        PASS, FAIL, ERROR
-    };
+
     /**
      * @param args
      */
@@ -41,8 +41,7 @@ public class CrossReferencer {
             // get index of output directory
             int file1NameIndex = file1Index + 1;
             if (file1NameIndex >= argsList.size()) {
-                System.err
-                .println("Original order argument is specified but a file name is not."
+                System.err.println("Original order argument is specified but a file name is not."
                         + " Please use the format: -origOrder aFileName");
                 System.exit(0);
             }
@@ -65,8 +64,7 @@ public class CrossReferencer {
             // get index of output directory
             int file2NameIndex = file2Index + 1;
             if (file2NameIndex >= argsList.size()) {
-                System.err
-                .println("Test order argument is specified but a file name is not."
+                System.err.println("Test order argument is specified but a file name is not."
                         + " Please use the format: -testOrder aFileName");
                 System.exit(0);
             }
@@ -82,9 +80,11 @@ public class CrossReferencer {
             System.exit(0);
         }
 
+        compareResults(processFile(file1), processFile(file2), true);
+    }
 
-        Map<String, RESULT> origOrderResults = processFile(file1);
-        Map<String, RESULT> testOrderResults = processFile(file2);
+    public static Set<String> compareResults(Map<String, RESULT> origOrderResults,
+            Map<String, RESULT> testOrderResults, boolean printResults) {
         Set<String> changedTests = new HashSet<String>();
         Set<String> origOrderResultsCopy = new HashSet<String>(origOrderResults.keySet());
         Set<String> testOrderOnly = new HashSet<String>();
@@ -112,37 +112,40 @@ public class CrossReferencer {
             }
         }
 
-        System.out.println("Number of Inconsistent Tests Found: " + changedTests.size());
-        System.out.println("Number of additional tests: " + testOrderOnly.size());
-        System.out.println("Number of Tests Missing: " + origOrderResultsCopy.size());
+        if (printResults) {
+            System.out.println("Number of Inconsistent Tests Found: " + changedTests.size());
+            System.out.println("Number of additional tests: " + testOrderOnly.size());
+            System.out.println("Number of Tests Missing: " + origOrderResultsCopy.size());
 
-        char[] spaces = new char[longestKey];
-        Arrays.fill(spaces, ' ');
-        System.out.println(new String(spaces)
-        + "  Original order result:        Test order result:");
-
-        char[] columnSpaces = new char[26];
-        Arrays.fill(columnSpaces, ' ');
-        String columnSpaceString = new String(columnSpaces);
-
-        for (String key : changedTests) {
-            spaces = new char[longestKey - key.length()];
+            char[] spaces = new char[longestKey];
             Arrays.fill(spaces, ' ');
-            System.out.println(key + ": " + new String(spaces) + origOrderResults.get(key)
-                    + columnSpaceString + testOrderResults.get(key));
-        }
+            System.out.println(
+                    new String(spaces) + "  Original order result:        Test order result:");
 
-        for (String key : testOrderOnly) {
-            spaces = new char[longestKey - key.length() + 4 + columnSpaceString.length()];
-            Arrays.fill(spaces, ' ');
-            System.out.println(key + ": " + new String(spaces) + testOrderResults.get(key));
-        }
+            char[] columnSpaces = new char[26];
+            Arrays.fill(columnSpaces, ' ');
+            String columnSpaceString = new String(columnSpaces);
 
-        for (String key : origOrderResultsCopy) {
-            spaces = new char[longestKey - key.length()];
-            Arrays.fill(spaces, ' ');
-            System.out.println(key + ": " + new String(spaces) + origOrderResults.get(key));
+            for (String key : changedTests) {
+                spaces = new char[longestKey - key.length()];
+                Arrays.fill(spaces, ' ');
+                System.out.println(key + ": " + new String(spaces) + origOrderResults.get(key)
+                        + columnSpaceString + testOrderResults.get(key));
+            }
+
+            for (String key : testOrderOnly) {
+                spaces = new char[longestKey - key.length() + 4 + columnSpaceString.length()];
+                Arrays.fill(spaces, ' ');
+                System.out.println(key + ": " + new String(spaces) + testOrderResults.get(key));
+            }
+
+            for (String key : origOrderResultsCopy) {
+                spaces = new char[longestKey - key.length()];
+                Arrays.fill(spaces, ' ');
+                System.out.println(key + ": " + new String(spaces) + origOrderResults.get(key));
+            }
         }
+        return changedTests;
     }
 
     private static Map<String, RESULT> processFile(File f) {
@@ -155,7 +158,7 @@ public class CrossReferencer {
         try {
             br = new BufferedReader(new FileReader(f));
             String line = br.readLine();
-            while(line != null) {
+            while (line != null) {
                 while (line != null
                         && !line.matches("^Pass: [0-9]+, Fail: [0-9]+, Error: [0-9]+$")) {
                     line = br.readLine();
@@ -175,15 +178,15 @@ public class CrossReferencer {
                 if (testResults.length >= 1) {
                     testResults[0] = testResults[0].substring(1);
                     String lastTest = testResults[testResults.length - 1];
-                    testResults[testResults.length - 1] =
-                            lastTest.substring(0, lastTest.length() - 1);
+                    testResults[testResults.length - 1] = lastTest.substring(0,
+                            lastTest.length() - 1);
 
                     for (String s : testResults) {
                         String[] testAndResult = s.split("=");
                         if (testAndResult[1].equals("PASS")) {
                             testsToResults.put(testAndResult[0], RESULT.PASS);
                         } else if (testAndResult[1].equals("FAILURE")) {
-                            testsToResults.put(testAndResult[0], RESULT.FAIL);
+                            testsToResults.put(testAndResult[0], RESULT.FAILURE);
                         } else if (testAndResult[1].equals("ERROR")) {
                             testsToResults.put(testAndResult[0], RESULT.ERROR);
                         }
