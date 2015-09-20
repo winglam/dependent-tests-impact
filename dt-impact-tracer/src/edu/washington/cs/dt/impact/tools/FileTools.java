@@ -66,6 +66,9 @@ public class FileTools {
 
     // returns a list of Strings where each String is a line of the file
     public static List<String> parseFileToList(File orderFile) {
+        if (orderFile == null) {
+            return null;
+        }
         List<String> tests = new ArrayList<String>();
         BufferedReader br = null;
         try {

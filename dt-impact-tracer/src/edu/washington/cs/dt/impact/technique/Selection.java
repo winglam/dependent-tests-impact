@@ -61,9 +61,9 @@ public class Selection extends Test {
 
         if (order ==  ORDER.RELATIVE) {
             methodList.retainAll(nameToMethodData.values());
-            allLines.retainAll(changedCoverage);
+            allCoverageLines.retainAll(changedCoverage);
             Collections.sort(methodList);
-            orderObj = new Relative(outputFileName, methodList, allLines);
+            orderObj = new Relative(outputFileName, methodList, allCoverageLines);
         } else {
             if (order == ORDER.ABSOLUTE) {
                 methodList.retainAll(nameToMethodData.values());

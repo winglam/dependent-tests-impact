@@ -56,7 +56,7 @@ public class Parallelization extends Test {
         if (order == ORDER.RELATIVE || order == ORDER.ABSOLUTE || order == ORDER.TIME) {
             Collections.sort(methodList);
             if (order == ORDER.RELATIVE) {
-                methodList = new Relative(outputFileName, methodList, allLines).getMethodList();
+                methodList = new Relative(outputFileName, methodList, allCoverageLines).getMethodList();
             } else if (order == ORDER.TIME) {
                 Map<String, TestFunctionStatement> nameToMethodData =
                         getNameToMethodData(methodList);
