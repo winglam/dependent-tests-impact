@@ -9,6 +9,7 @@ package edu.washington.cs.dt.impact.technique;
 
 import java.io.File;
 import java.util.Collections;
+import java.util.List;
 
 import edu.washington.cs.dt.impact.order.Relative;
 import edu.washington.cs.dt.impact.order.Standard;
@@ -35,15 +36,37 @@ public class Prioritization extends Test {
         if (order == ORDER.ABSOLUTE || order == ORDER.RELATIVE) {
             Collections.sort(methodList);
             if (order == ORDER.RELATIVE) {
-                methodList = new Relative(outputFilename, methodList, allLines).getMethodList();
+                methodList = new Relative(outputFilename, methodList, allCoverageLines).getMethodList();
             }
-            orderObj = new Standard(outputFilename, methodList, getCoverage, allLines);
+            orderObj = new Standard(outputFilename, methodList, getCoverage, allCoverageLines);
         } else if (order == ORDER.RANDOM) {
             Collections.shuffle(methodList);
             orderObj = new Standard(outputFilename, methodList);
         } else if (order == ORDER.ORIGINAL) {
             parseOrigOrderToMethodList(origOrder, getNameToMethodData(methodList));
-            orderObj = new Standard(outputFilename, methodList, getCoverage, allLines);
+            orderObj = new Standard(outputFilename, methodList, getCoverage, allCoverageLines);
+        } else {
+            System.err.println("Test prioritization is specified with an incompatible order."
+                    + " Compatible orders are: absolute, relative and random.");
+            System.exit(0);
+        }
+    }
+
+    public Prioritization(ORDER order, String outputFilename,COVERAGE coverage, List<String> allDTList,
+            boolean getCoverage, List<String> origOrder) {
+        super(coverage, allDTList);
+        if (order == ORDER.ABSOLUTE || order == ORDER.RELATIVE) {
+            Collections.sort(methodList);
+            if (order == ORDER.RELATIVE) {
+                methodList = new Relative(outputFilename, methodList, allCoverageLines).getMethodList();
+            }
+            orderObj = new Standard(outputFilename, methodList, getCoverage, allCoverageLines);
+        } else if (order == ORDER.RANDOM) {
+            Collections.shuffle(methodList);
+            orderObj = new Standard(outputFilename, methodList);
+        } else if (order == ORDER.ORIGINAL) {
+            parseOrigOrderListToMethodList(origOrder, getNameToMethodData(methodList));
+            orderObj = new Standard(outputFilename, methodList, getCoverage, allCoverageLines);
         } else {
             System.err.println("Test prioritization is specified with an incompatible order."
                     + " Compatible orders are: absolute, relative and random.");
