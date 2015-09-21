@@ -22,7 +22,7 @@ public class InstrumentationMain {
     public static void main(String[] args) {
         /* check the arguments */
         if (args.length == 0) {
-            System.err.println("Usage: java MainDriver [options] classname");
+            System.err.println("Usage: java InstrumentationMain [options] classname");
             System.exit(0);}
 
         // list to parse the arguments
@@ -91,6 +91,7 @@ public class InstrumentationMain {
                 new Instrumenter(techniqueName)));
 
         argsList.add("-keep-line-number");
+        argsList.add("-pp");
         String[] sootArgs = argsList.toArray(new String[argsList.size()]);
 
         /*
