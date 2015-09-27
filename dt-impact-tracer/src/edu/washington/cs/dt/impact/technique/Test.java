@@ -45,14 +45,18 @@ public class Test {
             allMethodList = listFilesForFolder(coverage);
         }
         methodList = new ArrayList<TestFunctionStatement>(allMethodList);
-        processDependentTests(dependentTestsFile, null);
+        if (dependentTestsFile != null) {
+            processDependentTests(dependentTestsFile, null);
+        }
     }
 
     public Test(COVERAGE coverage, List<String> allDTList) {
         allCoverageLines = new HashSet<String>();
         allMethodList = listFilesForFolder(coverage);
         methodList = new ArrayList<TestFunctionStatement>(allMethodList);
-        processDependentTests(null, allDTList);
+        if (allDTList != null) {
+            processDependentTests(null, allDTList);
+        }
     }
 
     private void processDependentTests(File dependentTestsFile, List<String> allDTList) {
