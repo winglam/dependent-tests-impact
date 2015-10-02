@@ -59,6 +59,12 @@ public class Test {
         }
     }
 
+    public void resetDTList(List<String> allDTList) {
+        if (allDTList != null) {
+            processDependentTests(null, allDTList);
+        }
+    }
+
     private void processDependentTests(File dependentTestsFile, List<String> allDTList) {
         // list of tests that when executed before reveals the dependent test
         Map<String, List<String>> execBefore = new HashMap<String, List<String>>();
