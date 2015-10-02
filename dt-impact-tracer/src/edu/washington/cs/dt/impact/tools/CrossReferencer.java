@@ -23,8 +23,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import edu.washington.cs.dt.RESULT;
+
 public class CrossReferencer {
-    private enum RESULT {PASS, FAILURE, ERROR }
 
     /**
      * @param args

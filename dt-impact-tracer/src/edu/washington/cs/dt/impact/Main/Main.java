@@ -130,9 +130,9 @@ public class Main {
                 System.out.println(
                         "Since you've selected original order, where is the original order file located?");
                 String origOrderStr = reader.nextLine().toLowerCase().trim();
-                while (origOrder == null || !origOrder.isFile()) {
+                while (origOrder == null || !origOrder.isFile() || !origOrder.exists()) {
                     origOrder = new File(origOrderStr);
-                    if (!origOrder.isFile()) {
+                    if (!origOrder.isFile() || !origOrder.exists()) {
                         System.err.println("Original order was specified but the file"
                                 + " path is invalid. Please check the file path.");
                         origOrderStr = reader.nextLine().toLowerCase().trim();
@@ -145,9 +145,9 @@ public class Main {
                 System.out.println(
                         "Since you've selected time order, where is the file containing the time each test took to execute?");
                 String timeOrderStr = reader.nextLine().toLowerCase().trim();
-                while (timeOrder == null || !timeOrder.isFile()) {
+                while (timeOrder == null || !timeOrder.isFile() || !timeOrder.exists()) {
                     timeOrder = new File(timeOrderStr);
-                    if (!timeOrder.isFile()) {
+                    if (!timeOrder.isFile() || !timeOrder.exists()) {
                         System.err.println("Time order was specified but the time order file"
                                 + " path is invalid. Please check the file path.");
                         timeOrderStr = reader.nextLine().toLowerCase().trim();
@@ -163,11 +163,11 @@ public class Main {
 
         if (origOrder == null) {
             // get file for the original order
-            System.out.println("Where is the original order file located?");
+            System.out.println("What is the path to the original order file?");
             String origOrderStr = reader.nextLine().toLowerCase().trim();
-            while (origOrder == null || !origOrder.isFile()) {
+            while (origOrder == null || !origOrder.isFile() || !origOrder.exists()) {
                 origOrder = new File(origOrderStr);
-                if (!origOrder.isFile()) {
+                if (!origOrder.isFile() || !origOrder.exists()) {
                     System.err.println("The path for the original order file"
                             + " is invalid. Please check the file path.");
                     origOrderStr = reader.nextLine().toLowerCase().trim();
@@ -175,7 +175,7 @@ public class Main {
             }
         }
 
-        System.out.println("Where is the test input directory located (sootTestOutput)?");
+        System.out.println("What is the path to the test input directory (sootTestOutput)?");
         String testInputDirStr = reader.nextLine().toLowerCase().trim();
         File testInputDir = null;
         while (testInputDir == null || !testInputDir.isDirectory()) {
@@ -188,27 +188,32 @@ public class Main {
         }
 
         // if specified, the test list generated will consider the dependencies in this file
-        System.out.println("Where is the file containing known dependent tests?\n"
+        System.out.println("What is the path to the file containing known dependent tests?\n"
                 + "If you would like to omit providing such file, please type \"none\".");
         String dependentTestFileStr = reader.nextLine().toLowerCase().trim();
         File dependentTestFile = null;
-        while ((dependentTestFile == null || !dependentTestFile.isFile())
+        while ((dependentTestFile == null || !dependentTestFile.isFile() || !dependentTestFile.exists())
                 && !dependentTestFileStr.toLowerCase().trim().equals("none")) {
             dependentTestFile = new File(dependentTestFileStr);
-            if (!dependentTestFile.isFile()) {
+            if (!dependentTestFile.isFile() || !dependentTestFile.exists()) {
                 System.err.println("The path for the dependent test file"
                         + " is invalid.\nPlease check the file path"
                         + " or type \"none\" to proceed without providing one.");
                 dependentTestFileStr = reader.nextLine().toLowerCase().trim();
             }
         }
-        List<String> allDTList = FileTools.parseFileToList(dependentTestFile);
+        List<String> allDTList;
+        if (!dependentTestFileStr.toLowerCase().trim().equals("none")) {
+            allDTList = FileTools.parseFileToList(dependentTestFile);
+        } else {
+            allDTList = null;
+        }
 
         System.out.println("Would you like us to resolve any test dependences that may arise\n"
                 + "from using regression testing? (y/n)");
         String resolveDependencesStr = reader.nextLine().toLowerCase().trim();
         boolean resolveDependences = false;
-        while (!resolveDependencesStr.equals("y") || !resolveDependencesStr.equals("n")) {
+        while ((!resolveDependencesStr.equals("y") || !resolveDependencesStr.equals("n")) && !resolveDependences) {
             if (resolveDependencesStr.equals("y")) {
                 resolveDependences = true;
             } else if (resolveDependencesStr.equals("n")) {
@@ -221,13 +226,13 @@ public class Main {
 
         // file containing list of files that should be deleted before the test suite is executed
         // again
-        System.out.println("Where is the file containing known the list of files to delete before"
-                + "executing the test suite again?");
+        System.out.println("What is the path to the file containing the list of files to delete before"
+                + " executing the test suite again?");
         String filesToDeleteStr = reader.nextLine().toLowerCase().trim();
         File filesToDeleteFile = null;
-        while ((filesToDeleteFile == null || !filesToDeleteFile.isFile())) {
+        while (filesToDeleteFile == null || !filesToDeleteFile.isFile() || !filesToDeleteFile.exists()) {
             filesToDeleteFile = new File(filesToDeleteStr);
-            if (!filesToDeleteFile.isFile()) {
+            if (!filesToDeleteFile.isFile() || !filesToDeleteFile.exists()) {
                 System.err.println("The path for the list of files to delete"
                         + " is invalid.\nPlease check the file path.");
                 filesToDeleteStr = reader.nextLine().toLowerCase().trim();
@@ -294,18 +299,22 @@ public class Main {
             List<String> filesToDelete = FileTools.parseFileToList(filesToDeleteFile);
             int counter = 0;
             while (!changedTests.isEmpty()) {
-                System.out.println(counter + " iteration");
+                System.out.println("iteration number: " + counter);
                 String testName = changedTests.iterator().next();
                 DependentTestFinder.runDTF(testName, nameToOrigResults.get(testName),
                         currentOrderTestList, origOrderTestList, filesToDelete, allDTList);
                 allDTList = DependentTestFinder.getAllDTs();
+                testObj.resetDTList(allDTList);
                 currentOrderTestList = getCurrentTestList(testObj);
                 nameToTestResults = getCurrentOrderTestListResults(currentOrderTestList);
                 changedTests = CrossReferencer.compareResults(nameToOrigResults, nameToTestResults,
                         !resolveDependences);
+                counter += 1;
             }
-            System.out.println("Test order list:\n");
+            System.out.println("Test order list:");
             System.out.println(currentOrderTestList.toString());
+            System.out.println("\nDependent test list:");
+            System.out.println(allDTList.toString());
         }
 
         // Inputs:
