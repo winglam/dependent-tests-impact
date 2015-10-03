@@ -2,7 +2,12 @@
  * Copyright 2015 University of Washington. All Rights Reserved.
  * @author Wing Lam
  * 
- * 
+ * Main class that relies on user inputs to generate a regression testing
+ * execution order. The following options are supported:
+ * Technique - prioritization, selection, parallelization
+ * Coverage - statement, function
+ * Order - absolute, relative, random, original
+ * Whether the test order generated will be dependent test free or not - yes, no
  */
 package edu.washington.cs.dt.impact.Main;
 
@@ -28,7 +33,7 @@ import edu.washington.cs.dt.impact.util.Constants.ORDER;
 import edu.washington.cs.dt.impact.util.Constants.TECHNIQUE;
 import edu.washington.cs.dt.main.ImpactMain;
 
-public class Main {
+public class UserInputWrapper {
 
     public static void main(String[] args) {
         Scanner reader = new Scanner(System.in);
