@@ -382,12 +382,12 @@ public class DependentTestFinder {
             topHalf.add(dependentTestName);
             botHalf.add(dependentTestName);
 
-            clearEnv();
+            FileTools.clearEnv(FILES_TO_DELETE);
             AbstractTestRunner runner = new FixedOrderRunner(topHalf);
             boolean topResults = checkTestMatch(isOriginalOrder,
                     runner.run().getExecutionRecords().get(0), dependentTestName);
 
-            clearEnv();
+            FileTools.clearEnv(FILES_TO_DELETE);
             runner = new FixedOrderRunner(botHalf);
             boolean botResults = checkTestMatch(isOriginalOrder,
                     runner.run().getExecutionRecords().get(0), dependentTestName);
@@ -520,12 +520,12 @@ public class DependentTestFinder {
             topHalf.add(dependentTestName);
             botHalf.add(dependentTestName);
 
-            clearEnv();
+            FileTools.clearEnv(FILES_TO_DELETE);
             AbstractTestRunner runner = new FixedOrderRunner(topHalf);
             boolean topResults = checkTestMatch(isOriginalOrder,
                     runner.run().getExecutionRecords().get(0), dependentTestName);
 
-            clearEnv();
+            FileTools.clearEnv(FILES_TO_DELETE);
             runner = new FixedOrderRunner(botHalf);
             boolean botResults = checkTestMatch(isOriginalOrder,
                     runner.run().getExecutionRecords().get(0), dependentTestName);
@@ -867,7 +867,7 @@ public class DependentTestFinder {
     // does not match DEPENDENT_TEST_RESULT, false otherwise
     private static boolean isTestResultDifferent(String dependentTestName,
             List<String> orderedTests) {
-        clearEnv();
+        FileTools.clearEnv(FILES_TO_DELETE);
         AbstractTestRunner runner = new FixedOrderRunner(orderedTests);
         TestExecResults results = runner.run();
 
@@ -898,13 +898,5 @@ public class DependentTestFinder {
         }
 
         return testResult == isOriginalOrder;
-    }
-
-    // deletes the files in FILES_TO_DELETE.
-    // used to clear the environment of any temp files created by tests
-    private static void clearEnv() {
-        for (String s : FILES_TO_DELETE) {
-            new File(s).delete();
-        }
     }
 }
