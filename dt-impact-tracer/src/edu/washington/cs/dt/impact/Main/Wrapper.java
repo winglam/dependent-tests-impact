@@ -6,7 +6,7 @@
  * execution order. The following options are supported:
  * -technique - prioritization, selection, parallelization
  * -coverage - statement, function
- * -order - absolute, relative, random, original
+ * -order - absolute, relative, random, original, time (if technique is parallelization)
  * -resolveDependences - when specified the output test order will not be affected 
  * by dependent tests
  * -numMachines - integer value (only valid when technique is parallelization
@@ -64,7 +64,7 @@ public class Wrapper {
                     + "execution order. The following options are supported:\n"
                     + "-technique - prioritization, selection, parallelization\n"
                     + "-coverage - statement, function\n"
-                    + "-order - absolute, relative, random, original\n"
+                    + "-order - absolute, relative, random, original, time (if technique is parallelization)\n"
                     + "-resolveDependences - when specified the output will not be affected "
                     + "by dependent tests\n"
                     + "-numMachines - integer value (only valid when technique is parallelization\n"
@@ -136,9 +136,14 @@ public class Wrapper {
                 .println("Coverage is invalid. Try \"statement\", \"branch\" or \"function\".");
                 System.exit(0);
             }
+        }else {
+            System.err.println("No coverage argument is specified."
+                    + " Please use the format: -coverage aCoverageName");
+            System.exit(0);
         }
 
         // get the order
+        File timeOrder = null;
         ORDER order = null;
         int orderIndex = argsList.indexOf("-order");
         if (orderIndex != -1) {
@@ -156,7 +161,40 @@ public class Wrapper {
                 order = ORDER.RELATIVE;
             } else if (orderStr.equals("random")) {
                 order = ORDER.RANDOM;
+            } else if (orderStr.equals("original")) {
+                order = ORDER.ORIGINAL;
+            } else if (orderStr.equals("time") && techniqueName == TECHNIQUE.PARALLELIZATION) {
+                int timeOrderIndex = argsList.indexOf("-timeOrder");
+                if (timeOrderIndex != -1) {
+                    // get file for the time each test took
+                    int timeOrderNameIndex = timeOrderIndex + 1;
+                    if (timeOrderNameIndex >= argsList.size()) {
+                        System.err.println("Time order argument is specified but a directory path"
+                                + " is not. Please use the format: -timeOrder aFilePath");
+                        System.exit(0);
+                    }
+                    timeOrder = new File(argsList.get(timeOrderNameIndex));
+                    if (!timeOrder.isFile()) {
+                        System.err.println("Time order argument is specified but the file path"
+                                + " is invalid. Please check the file path.");
+                        System.exit(0);
+                    }
+                    order = ORDER.TIME;
+                } else {
+                    System.err.println("Time is specified as the order but no -timeOrder is "
+                            + " supplied. Please add -timeOrder aFilePath argument.");
+                    System.exit(0);
+                }
+            } else {
+                System.err.println("Order is invalid. Please input a valid order.\n"
+                        + "Try \"absolute\", \"relative\", \"random\", or \"original\".\n"
+                        + "If your technique is parallelization then \"time\" is also valid.");
+                System.exit(0);
             }
+        } else {
+            System.err.println("No order argument is specified."
+                    + " Please use the format: -order aOrderName");
+            System.exit(0);
         }
 
         // get directory for the input of test files, the default is sootTestOutput
@@ -171,6 +209,10 @@ public class Wrapper {
                 System.exit(0);
             }
             testInputDir = new File(argsList.get(testInputDirNameIndex));
+        } else {
+            System.err.println("No test input directory argument is specified."
+                    + " Please use the format: -testInputDir aDirectoryPath");
+            System.exit(0);
         }
 
         // if specified, the output is saved to the file name instead of printed to console
@@ -204,7 +246,10 @@ public class Wrapper {
                         + " path is invalid. Please check the file path.");
                 System.exit(0);
             }
-            order = ORDER.ORIGINAL;
+        } else {
+            System.err.println("No original order argument is specified."
+                    + " Please use the format: -origOrder aFileName");
+            System.exit(0);
         }
 
         File selectionOutput1 = null;
@@ -254,7 +299,6 @@ public class Wrapper {
         }
 
         int numOfMachines = 1;
-        File timeOrder = null;
         if (techniqueName == TECHNIQUE.PARALLELIZATION) {
             int numOfMachinesIndex = argsList.indexOf("-numOfMachines");
             if (numOfMachinesIndex != -1) {
@@ -270,24 +314,6 @@ public class Wrapper {
                             + " value provided is invalid. Please check the integer value.");
                     System.exit(0);
                 }
-            }
-
-            int timeOrderIndex = argsList.indexOf("-timeOrder");
-            if (timeOrderIndex != -1) {
-                // get file for the time each test took
-                int timeOrderNameIndex = timeOrderIndex + 1;
-                if (timeOrderNameIndex >= argsList.size()) {
-                    System.err.println("Time order argument is specified but a directory path"
-                            + " is not. Please use the format: -timeOrder aFilePath");
-                    System.exit(0);
-                }
-                timeOrder = new File(argsList.get(timeOrderNameIndex));
-                if (!timeOrder.isFile()) {
-                    System.err.println("Time order argument is specified but the file path"
-                            + " is invalid. Please check the file path.");
-                    System.exit(0);
-                }
-                order = ORDER.TIME;
             }
         }
 
@@ -325,10 +351,6 @@ public class Wrapper {
                 System.exit(0);
             }
             filesToDeleteStr = argsList.get(filesToDeleteFileIndex);
-        } else {
-            System.err.println("No files to delete argument is specified."
-                    + " Please use the format: -filesToDelete aFileName");
-            System.exit(0);
         }
 
         // TODO handle the case for getting coverage information on tests
