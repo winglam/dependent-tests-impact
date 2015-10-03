@@ -45,6 +45,7 @@ public class TestExecUtils {
         commandList.add("java");
         commandList.add("-cp");
         commandList.add(classPath + Globals.pathSep + System.getProperties().getProperty("java.class.path", null));
+//        commandList.add(classPath + Globals.pathSep + System.getProperties().getProperty("java.class.path", null) + "/Users/winglam/Box Sync/research/dt-impact/dependent-tests-impact/experiments/crystalvc/impact-tools/*:/Users/winglam/Box Sync/research/dt-impact/dependent-tests-impact/experiments/crystalvc/bin/:/Users/winglam/Box Sync/research/dt-impact/dependent-tests-impact/experiments/crystalvc/lib/*");
 
         if(tests.size() < threshhold) {
             commandList.add("edu.washington.cs.dt.util.TestRunnerWrapper");
