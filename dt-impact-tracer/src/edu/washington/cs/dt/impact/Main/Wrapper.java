@@ -310,7 +310,7 @@ public class Wrapper {
             allDTList = null;
         }
 
-        boolean resolveDependences = argsList.indexOf("-resolveDependences") != -1;
+        boolean resolveDependences = argsList.contains("-resolveDependences");
 
         // file containing list of files that should be deleted before the test suite is executed
         // again
