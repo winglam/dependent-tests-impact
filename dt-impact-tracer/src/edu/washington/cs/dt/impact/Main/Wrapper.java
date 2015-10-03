@@ -19,6 +19,8 @@
  * -dependentTestFile - path to file containing existing known dependent tests
  * -filesToDelete - path to file containing list of files to delete to clean the environment
  * each time the tests are executed
+ * -outputFile - path to file to output the regression test order, dependent test list and
+ * execution time, if unspecified the output will be sent to System.out
  * -help - display this message
  */
 
@@ -58,23 +60,25 @@ public class Wrapper {
 
         if (argsList.contains("-help")) {
             System.out.println(
-                    "Main class that relies on program arguments to generate a regression testing\n"
+                    "Main class that relies on program arguments to generate a regression testing "
                     + "execution order. The following options are supported:\n"
                     + "-technique - prioritization, selection, parallelization\n"
                     + "-coverage - statement, function\n"
                     + "-order - absolute, relative, random, original\n"
-                    + "-resolveDependences - when specified the output will not be affected\n"
+                    + "-resolveDependences - when specified the output will not be affected "
                     + "by dependent tests\n"
                     + "-numMachines - integer value (only valid when technique is parallelization\n"
-                    + "-selectionOldVers - path to directory to older version of program's selectionOutput\n"
+                    + "-selectionOldVers - path to directory to older version of program's selectionOutput "
                     + "(only valid when technique is selection)\n"
-                    + "-selectionNewVers - path to directory to newer version of program's selectionOutput\n"
+                    + "-selectionNewVers - path to directory to newer version of program's selectionOutput "
                     + "(only valid when technique is selection)\n"
                     + "-origOrder - path to file containing the original order the tests are executed in\n"
                     + "-testInputDir - path to directory to sootTestOutput\n"
                     + "-dependentTestFile - path to file containing existing known dependent tests\n"
-                    + "-filesToDelete - path to file containing list of files to delete to clean the environment\n"
+                    + "-filesToDelete - path to file containing list of files to delete to clean the environment "
                     + "each time the tests are executed\n"
+                    + "-outputFile - path to file to output the regression test order, dependent test list and "
+                    + "execution time, if unspecified the output will be sent to System.out\n"
                     + "-help - display this message\n");
             System.exit(0);
         }
