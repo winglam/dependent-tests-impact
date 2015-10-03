@@ -13,6 +13,9 @@ cp ./dt-detector.jar ./experiments/jodatime-d6791cb5f9/impact-tools/
 rm -rf ./dt-impact/experiments/crystal/impact-tools/dt-detector.jar
 cp ./dt-detector.jar ./experiments/crystal/impact-tools/
 
+rm -rf ./dt-impact/experiments/crystalvc/impact-tools/dt-detector.jar
+cp ./dt-detector.jar ./experiments/crystalvc/impact-tools/
+
 rm -rf ./dt-impact/experiments/dynoptic/impact-tools/dt-detector.jar
 cp ./dt-detector.jar ./experiments/dynoptic/impact-tools/
 
@@ -35,5 +38,3 @@ rm -rf ./dt-detector/lib/dt-detector.jar
 cp ./dt-detector.jar ./dt-detector/lib/dt-detector.jar
 
 rm -rf ./dt-detector.jar
-
-
