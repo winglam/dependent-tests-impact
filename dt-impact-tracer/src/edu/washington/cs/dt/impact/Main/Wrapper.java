@@ -24,7 +24,10 @@
 
 package edu.washington.cs.dt.impact.Main;
 
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
@@ -332,6 +335,11 @@ public class Wrapper {
         TestExecResults origResults = ImpactMain.getResults(origOrderTestList);
         Map<String, RESULT> nameToOrigResults = origResults.getExecutionRecords().get(0)
                 .getNameToResultsMap();
+        List<String> filesToDelete = FileTools.parseFileToList(new File(filesToDeleteStr));
+        FileTools.clearEnv(filesToDelete);
+
+        // capture start time
+        long start = System.nanoTime();
 
         // TestListGenerator
         Test testObj = null;
@@ -359,29 +367,63 @@ public class Wrapper {
                 nameToTestResults, !resolveDependences);
 
         if (resolveDependences) {
-            List<String> filesToDelete = FileTools.parseFileToList(new File(filesToDeleteStr));
             int counter = 0;
             while (!changedTests.isEmpty()) {
                 System.out.println("iteration number: " + counter);
+                counter += 1;
                 String testName = changedTests.iterator().next();
+                // DependentTestFinder
                 DependentTestFinder.runDTF(testName, nameToOrigResults.get(testName),
                         currentOrderTestList, origOrderTestList, filesToDelete, allDTList);
                 allDTList = DependentTestFinder.getAllDTs();
+                // TestListGenerator
                 testObj.resetDTList(allDTList);
                 currentOrderTestList = getCurrentTestList(testObj);
+                // ImpactMain
                 nameToTestResults = getCurrentOrderTestListResults(currentOrderTestList);
+                // Cross Referencer
                 changedTests = CrossReferencer.compareResults(nameToOrigResults, nameToTestResults,
                         !resolveDependences);
-                counter += 1;
             }
+        }
 
-            if (outputFileName == null) {
-                System.out.println("Test order list:");
-                System.out.println(currentOrderTestList.toString());
+        // capture end time
+        long total = System.nanoTime() - start;
+
+        FileTools.clearEnv(filesToDelete);
+        if (outputFileName == null) {
+            System.out.println("Execution time: " + total);
+            System.out.println("Test order list:");
+            System.out.println(currentOrderTestList.toString());
+            if (allDTList != null) {
                 System.out.println("\nDependent test list:");
                 System.out.println(allDTList.toString());
-            } else {
-                // TODO output to the file
+            }
+        } else {
+            FileWriter output = null;
+            BufferedWriter writer = null;
+            try {
+                output = new FileWriter(outputFileName);
+                writer = new BufferedWriter(output);
+                writer.write("Execution time: " + total + "\n");
+                writer.write("Test order list:\n");
+                writer.write(currentOrderTestList.toString() + "\n");
+                if (allDTList != null) {
+                    writer.write("\nDependent test list:\n");
+                    writer.write(allDTList.toString() + "\n");
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            } finally {
+                try {
+                    if (writer != null) {
+                        writer.close();
+                    }
+                    if (output != null) {
+                        output.close();
+                    }
+                } catch (IOException e) {
+                }
             }
         }
 

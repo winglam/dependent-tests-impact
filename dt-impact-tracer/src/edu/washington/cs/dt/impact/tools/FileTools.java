@@ -94,4 +94,12 @@ public class FileTools {
         }
         return tests;
     }
+
+    // deletes the files in filesToDelete.
+    // used to clear the environment of any temp files created by tests
+    public static void clearEnv(List<String> filesToDelete) {
+        for (String s : filesToDelete) {
+            new File(s).delete();
+        }
+    }
 }
