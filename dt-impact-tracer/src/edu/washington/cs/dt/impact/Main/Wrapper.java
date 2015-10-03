@@ -417,6 +417,7 @@ public class Wrapper {
         long total = System.nanoTime() - start;
 
         FileTools.clearEnv(filesToDelete);
+        // TODO add a line depicting the configurations used (technique, number of machines, etc)
         if (outputFileName == null) {
             System.out.println("Execution time: " + total);
             System.out.println("Test order list:");
@@ -429,7 +430,7 @@ public class Wrapper {
             FileWriter output = null;
             BufferedWriter writer = null;
             try {
-                output = new FileWriter(outputFileName);
+                output = new FileWriter(outputFileName + "-" + techniqueName + "-" + coverage + "-" + order);
                 writer = new BufferedWriter(output);
                 writer.write("Execution time: " + total + "\n");
                 writer.write("Test order list:\n");
