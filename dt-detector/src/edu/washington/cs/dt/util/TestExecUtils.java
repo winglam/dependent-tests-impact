@@ -66,7 +66,7 @@ public class TestExecUtils {
 
         Map<String, OneTestExecResult> testResults = parseTestResults(outputFile);
 
-        Utils.checkTrue(tests.size() == testResults.size(), "Test num not equal.");
+        Utils.checkTrue(tests.size() == testResults.size(), "Test num not equal. Results is size " + testResults.size() + ". Tests is size " + tests.size() + ".");
 
         return testResults;
     }

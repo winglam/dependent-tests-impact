@@ -210,7 +210,7 @@ public class Test {
             throw new RuntimeException("sootOutput is missing some required classes.");
         }
         for (final File fileEntry : inputTestFolder.listFiles()) {
-            if (fileEntry.isFile()) {
+            if (fileEntry.isFile() && !fileEntry.getName().startsWith(".") && !fileEntry.isHidden()) {
                 BufferedReader br;
                 try {
                     br = new BufferedReader(new FileReader(fileEntry));
@@ -277,7 +277,7 @@ public class Test {
         orderObj.printResults();
     }
 
-    public List<TestFunctionStatement> getResults() {
+    public List<TestFunctionStatement> getResults(int machine) {
         orderObj.checkForDependentTests();
         return orderObj.getMethodList();
     }

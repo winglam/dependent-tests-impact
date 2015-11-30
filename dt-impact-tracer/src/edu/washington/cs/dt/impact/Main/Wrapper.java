@@ -32,6 +32,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -357,12 +358,10 @@ public class Wrapper {
         // and how to output to a file.
         boolean getCoverage = false;
 
-        List<String> origOrderTestList = FileTools.parseFileToList(origOrder);
-        TestExecResults origResults = ImpactMain.getResults(origOrderTestList);
-        Map<String, RESULT> nameToOrigResults = origResults.getExecutionRecords().get(0)
-                .getNameToResultsMap();
         List<String> filesToDelete = FileTools.parseFileToList(new File(filesToDeleteStr));
-        FileTools.clearEnv(filesToDelete);
+        List<String> origOrderTestList = FileTools.parseFileToList(origOrder);
+        Map<String, RESULT> nameToOrigResults = getCurrentOrderTestListResults(origOrderTestList,
+                filesToDelete);
 
         // capture start time
         long start = System.nanoTime();
@@ -384,61 +383,88 @@ public class Wrapper {
                             + " program and try again.");
             System.exit(0);
         }
-        List<String> currentOrderTestList = getCurrentTestList(testObj);
-        // ImpactMain
-        Map<String, RESULT> nameToTestResults = getCurrentOrderTestListResults(
-                currentOrderTestList);
-        // CrossReferencer
-        Set<String> changedTests = CrossReferencer.compareResults(nameToOrigResults,
-                nameToTestResults, !resolveDependences);
+        long TLGTime = System.nanoTime() - start;
 
-        if (resolveDependences) {
-            int counter = 0;
-            while (!changedTests.isEmpty()) {
-                System.out.println("iteration number: " + counter);
-                counter += 1;
-                String testName = changedTests.iterator().next();
-                // DependentTestFinder
-                DependentTestFinder.runDTF(testName, nameToOrigResults.get(testName),
-                        currentOrderTestList, origOrderTestList, filesToDelete, allDTList);
-                allDTList = DependentTestFinder.getAllDTs();
-                // TestListGenerator
-                testObj.resetDTList(allDTList);
-                currentOrderTestList = getCurrentTestList(testObj);
+        Map<List<String>, Long> testListToTime = new HashMap<>();
+        for (int i = 0; i < numOfMachines; i++) {
+            start = System.nanoTime();
+
+            List<String> currentOrderTestList = getCurrentTestList(testObj, i);
+            if (resolveDependences) {
                 // ImpactMain
-                nameToTestResults = getCurrentOrderTestListResults(currentOrderTestList);
-                // Cross Referencer
-                changedTests = CrossReferencer.compareResults(nameToOrigResults, nameToTestResults,
-                        !resolveDependences);
+                Map<String, RESULT> nameToTestResults = getCurrentOrderTestListResults(
+                        currentOrderTestList, filesToDelete);
+                // CrossReferencer
+                Set<String> changedTests = CrossReferencer.compareResults(nameToOrigResults,
+                        nameToTestResults, !resolveDependences);
+                int counter = 0;
+                while (!changedTests.isEmpty()) {
+                    System.out.println("iteration number: " + counter);
+                    counter += 1;
+                    String testName = changedTests.iterator().next();
+                    // DependentTestFinder
+                    DependentTestFinder.runDTF(testName, nameToOrigResults.get(testName),
+                            currentOrderTestList, origOrderTestList, filesToDelete, allDTList);
+                    allDTList = DependentTestFinder.getAllDTs();
+                    // TestListGenerator
+                    testObj.resetDTList(allDTList);
+                    currentOrderTestList = getCurrentTestList(testObj, i);
+                    // ImpactMain
+                    nameToTestResults = getCurrentOrderTestListResults(currentOrderTestList,
+                            filesToDelete);
+                    // Cross Referencer
+                    changedTests = CrossReferencer.compareResults(nameToOrigResults, nameToTestResults,
+                            !resolveDependences);
+                }
             }
-        }
 
-        // capture end time
-        long total = System.nanoTime() - start;
+            // capture end time
+            long runTotal = System.nanoTime() - start;
+            testListToTime.put(currentOrderTestList, runTotal);
+        }
 
         FileTools.clearEnv(filesToDelete);
         // TODO add a line depicting the configurations used (technique, number of machines, etc)
+        long totalTime = TLGTime;
+        long maxTime = Long.MIN_VALUE;
+        long testListTime;
         if (outputFileName == null) {
-            System.out.println("Execution time: " + total);
-            System.out.println("Test order list:");
-            System.out.println(currentOrderTestList.toString());
-            if (allDTList != null) {
-                System.out.println("\nDependent test list:");
-                System.out.println(allDTList.toString());
+            for (List<String> testList : testListToTime.keySet()) {
+                testListTime = testListToTime.get(testList);
+                totalTime += testListTime;
+                maxTime = Math.max(maxTime, testListTime);
+                System.out.println("Execution time: " + testListTime);
+                System.out.println("Test order list:");
+                System.out.println(testList.toString());
+                if (allDTList != null) {
+                    System.out.println("\nDependent test list:");
+                    System.out.println(allDTList.toString());
+                }
+                System.out.println("--------------------------");
             }
+            System.out.println("\nTotal time: " + totalTime);
+            System.out.print("Max time: " + (maxTime + TLGTime));
         } else {
             FileWriter output = null;
             BufferedWriter writer = null;
             try {
                 output = new FileWriter(outputFileName + "-" + techniqueName + "-" + coverage + "-" + order);
                 writer = new BufferedWriter(output);
-                writer.write("Execution time: " + total + "\n");
-                writer.write("Test order list:\n");
-                writer.write(currentOrderTestList.toString() + "\n");
-                if (allDTList != null) {
-                    writer.write("\nDependent test list:\n");
-                    writer.write(allDTList.toString() + "\n");
+                for (List<String> testList : testListToTime.keySet()) {
+                    testListTime = testListToTime.get(testList);
+                    totalTime += testListTime;
+                    maxTime = Math.max(maxTime, testListTime);
+                    writer.write("Execution time: " + testListTime + "\n");
+                    writer.write("Test order list:\n");
+                    writer.write(testList.toString() + "\n");
+                    if (allDTList != null) {
+                        writer.write("\nDependent test list:\n");
+                        writer.write(allDTList.toString() + "\n");
+                    }
+                    writer.write("--------------------------\n");
                 }
+                writer.write("\nTotal time: " + totalTime + "\n");
+                writer.write("Max time: " + (maxTime + TLGTime));
             } catch (IOException e) {
                 e.printStackTrace();
             } finally {
@@ -480,16 +506,17 @@ public class Wrapper {
     }
 
     private static Map<String, RESULT> getCurrentOrderTestListResults(
-            List<String> currentOrderTestList) {
+            List<String> currentOrderTestList, List<String> filesToDelete) {
         // ImpactMain
+        FileTools.clearEnv(filesToDelete);
         TestExecResults results = ImpactMain.getResults(currentOrderTestList);
         return results.getExecutionRecords().get(0).getNameToResultsMap();
     }
 
-    private static List<String> getCurrentTestList(Test testObj) {
+    private static List<String> getCurrentTestList(Test testObj, int numOfMachines) {
         // TestListGenerator
         List<String> currentOrderTestList = new LinkedList<String>();
-        for (TestFunctionStatement tfs : testObj.getResults()) {
+        for (TestFunctionStatement tfs : testObj.getResults(numOfMachines)) {
             currentOrderTestList.add(tfs.getName());
         }
         return currentOrderTestList;
