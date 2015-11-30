@@ -189,4 +189,10 @@ public class Parallelization extends Test {
             obj.printResults();
         }
     }
+
+    @Override
+    public List<TestFunctionStatement> getResults(int machine) {
+        splitTests.get(machine).checkForDependentTests();
+        return splitTests.get(machine).getMethodList();
+    }
 }

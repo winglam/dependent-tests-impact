@@ -357,9 +357,9 @@ public class UserInputWrapper {
     private static List<String> getCurrentTestList(Test testObj) {
         // TestListGenerator
         List<String> currentOrderTestList = new LinkedList<String>();
-        for (TestFunctionStatement tfs : testObj.getResults()) {
-            currentOrderTestList.add(tfs.getName());
-        }
+//        for (TestFunctionStatement tfs : testObj.getResults()) {
+//            currentOrderTestList.add(tfs.getName());
+//        }
         return currentOrderTestList;
     }
 }
