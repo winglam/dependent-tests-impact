@@ -44,8 +44,9 @@ public class TestExecUtils {
         List<String> commandList = new LinkedList<String>();
         commandList.add("java");
         commandList.add("-cp");
-        commandList.add(classPath + Globals.pathSep + System.getProperties().getProperty("java.class.path", null));
-//        commandList.add(classPath + Globals.pathSep + System.getProperties().getProperty("java.class.path", null) + "/Users/winglam/Box Sync/research/dt-impact/dependent-tests-impact/experiments/crystalvc/impact-tools/*:/Users/winglam/Box Sync/research/dt-impact/dependent-tests-impact/experiments/crystalvc/bin/:/Users/winglam/Box Sync/research/dt-impact/dependent-tests-impact/experiments/crystalvc/lib/*");
+//        commandList.add(classPath + Globals.pathSep + System.getProperties().getProperty("java.class.path", null));
+//        commandList.add(classPath + Globals.pathSep + System.getProperties().getProperty("java.class.path", null) + "/Users/winglam/GoogleDrive/research/dt-impact/experiments/experiments/crystalvc/impact-tools/*:/Users/winglam/GoogleDrive/research/dt-impact/experiments/experiments/crystalvc/bin/");
+        commandList.add(classPath + Globals.pathSep + System.getProperties().getProperty("java.class.path", null) + "/mnt/hgfs/winglam/GoogleDrive/research/dt-impact/experiments/experiments/crystalvc/impact-tools/*:/mnt/hgfs/winglam/GoogleDrive/research/dt-impact/experiments/experiments/crystalvc/bin/");
 
         if(tests.size() < threshhold) {
             commandList.add("edu.washington.cs.dt.util.TestRunnerWrapper");
