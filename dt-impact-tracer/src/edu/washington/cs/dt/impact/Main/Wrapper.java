@@ -2,26 +2,26 @@
  * Copyright 2015 University of Washington. All Rights Reserved.
  * @author Wing Lam
  * 
- * Main class that relies on program arguments to generate a regression testing
- * execution order. The following options are supported:
- * -technique - prioritization, selection, parallelization
- * -coverage - statement, function
- * -order - absolute, relative, random, original, time (if technique is parallelization)
- * -resolveDependences - when specified the output test order will not be affected 
- * by dependent tests
- * -numMachines - integer value (only valid when technique is parallelization
- * -selectionOldVers - path to directory to older version of program's selectionOutput
- * (only valid when technique is selection)
- * -selectionNewVers - path to directory to newer version of program's selectionOutput
- * (only valid when technique is selection)
- * -origOrder - path to file containing the original order the tests are executed in
- * -testInputDir - path to directory to sootTestOutput
- * -dependentTestFile - path to file containing existing known dependent tests
- * -filesToDelete - path to file containing list of files to delete to clean the environment
- * each time the tests are executed
- * -outputFile - path to file to output the regression test order, dependent test list and
- * execution time, if unspecified the output will be sent to System.out
- * -help - display this message
+ *         Main class that relies on program arguments to generate a regression testing
+ *         execution order. The following options are supported:
+ *         -technique - prioritization, selection, parallelization
+ *         -coverage - statement, function
+ *         -order - absolute, relative, random, original, time (if technique is parallelization)
+ *         -resolveDependences - when specified the output test order will not be affected
+ *         by dependent tests
+ *         -numMachines - integer value (only valid when technique is parallelization
+ *         -selectionOldVers - path to directory to older version of program's selectionOutput
+ *         (only valid when technique is selection)
+ *         -selectionNewVers - path to directory to newer version of program's selectionOutput
+ *         (only valid when technique is selection)
+ *         -origOrder - path to file containing the original order the tests are executed in
+ *         -testInputDir - path to directory to sootTestOutput
+ *         -dependentTestFile - path to file containing existing known dependent tests
+ *         -filesToDelete - path to file containing list of files to delete to clean the environment
+ *         each time the tests are executed
+ *         -outputFile - path to file to output the regression test order, dependent test list and
+ *         execution time, if unspecified the output will be sent to System.out
+ *         -help - display this message
  */
 
 package edu.washington.cs.dt.impact.Main;
@@ -60,14 +60,11 @@ public class Wrapper {
         List<String> argsList = new ArrayList<String>(Arrays.asList(args));
 
         if (argsList.contains("-help")) {
-            System.out.println(
-                    "Main class that relies on program arguments to generate a regression testing "
+            System.out.println("Main class that relies on program arguments to generate a regression testing "
                     + "execution order. The following options are supported:\n"
-                    + "-technique - prioritization, selection, parallelization\n"
-                    + "-coverage - statement, function\n"
+                    + "-technique - prioritization, selection, parallelization\n" + "-coverage - statement, function\n"
                     + "-order - absolute, relative, random, original, time (if technique is parallelization)\n"
-                    + "-resolveDependences - when specified the output will not be affected "
-                    + "by dependent tests\n"
+                    + "-resolveDependences - when specified the output will not be affected " + "by dependent tests\n"
                     + "-numMachines - integer value (only valid when technique is parallelization\n"
                     + "-selectionOldVers - path to directory to older version of program's selectionOutput "
                     + "(only valid when technique is selection)\n"
@@ -91,8 +88,7 @@ public class Wrapper {
             // get index of technique name
             int techniqueNameIndex = techniqueIndex + 1;
             if (techniqueNameIndex >= argsList.size()) {
-                System.err
-                .println("Technique argument is specified but technique name is not."
+                System.err.println("Technique argument is specified but technique name is not."
                         + " Please use the format: -technique aTechniqueName");
                 System.exit(0);
             }
@@ -105,8 +101,7 @@ public class Wrapper {
             } else if (techniqueStr.equals("parallelization")) {
                 techniqueName = TECHNIQUE.PARALLELIZATION;
             } else {
-                System.err
-                .println("Technique name is invalid. Try \"prioritization\","
+                System.err.println("Technique name is invalid. Try \"prioritization\","
                         + " \"selection\" or \"parallelization\".");
                 System.exit(0);
             }
@@ -117,13 +112,12 @@ public class Wrapper {
         }
 
         // get the coverage
-        COVERAGE coverage= null;
+        COVERAGE coverage = null;
         int coverageIndex = argsList.indexOf("-coverage");
         if (coverageIndex != -1) {
             int coverageNameIndex = coverageIndex + 1;
             if (coverageNameIndex >= argsList.size()) {
-                System.err
-                .println("Coverage argument is specified but valid coverage was not."
+                System.err.println("Coverage argument is specified but valid coverage was not."
                         + " Please use the format: -coverage aCoverageName");
                 System.exit(0);
             }
@@ -133,13 +127,12 @@ public class Wrapper {
             } else if (coverageStr.equals("function")) {
                 coverage = COVERAGE.FUNCTION;
             } else {
-                System.err
-                .println("Coverage is invalid. Try \"statement\", \"branch\" or \"function\".");
+                System.err.println("Coverage is invalid. Try \"statement\", \"branch\" or \"function\".");
                 System.exit(0);
             }
-        }else {
-            System.err.println("No coverage argument is specified."
-                    + " Please use the format: -coverage aCoverageName");
+        } else {
+            System.err
+                    .println("No coverage argument is specified." + " Please use the format: -coverage aCoverageName");
             System.exit(0);
         }
 
@@ -150,8 +143,7 @@ public class Wrapper {
         if (orderIndex != -1) {
             int orderNameIndex = orderIndex + 1;
             if (orderNameIndex >= argsList.size()) {
-                System.err
-                .println("Order argument is specified but valid order was not."
+                System.err.println("Order argument is specified but valid order was not."
                         + " Please use the format: -order aOrderName");
                 System.exit(0);
             }
@@ -193,8 +185,7 @@ public class Wrapper {
                 System.exit(0);
             }
         } else {
-            System.err.println("No order argument is specified."
-                    + " Please use the format: -order aOrderName");
+            System.err.println("No order argument is specified." + " Please use the format: -order aOrderName");
             System.exit(0);
         }
 
@@ -204,8 +195,7 @@ public class Wrapper {
         if (testInputDirIndex != -1) {
             int testInputDirNameIndex = testInputDirIndex + 1;
             if (testInputDirNameIndex >= argsList.size()) {
-                System.err
-                .println("Test input directory argument is specified but a directory name is not."
+                System.err.println("Test input directory argument is specified but a directory name is not."
                         + " Please use the format: -testInputDir aDirName");
                 System.exit(0);
             }
@@ -223,8 +213,7 @@ public class Wrapper {
             // get index of output file
             int outputFileNameIndex = outputFile + 1;
             if (outputFileNameIndex >= argsList.size()) {
-                System.err
-                .println("Output file argument is specified but a file name is not."
+                System.err.println("Output file argument is specified but a file name is not."
                         + " Please use the format: -outputFile aFileName");
                 System.exit(0);
             }
@@ -326,8 +315,7 @@ public class Wrapper {
             // get index of output file
             int dependentFileNameIndex = dependentFile + 1;
             if (dependentFileNameIndex >= argsList.size()) {
-                System.err
-                .println("Dependent test file argument is specified but a file name is not."
+                System.err.println("Dependent test file argument is specified but a file name is not."
                         + " Please use the format: -dependentTestFile aFileName");
                 System.exit(0);
             }
@@ -346,8 +334,7 @@ public class Wrapper {
         if (filesToDeleteIndex != -1) {
             int filesToDeleteFileIndex = filesToDeleteIndex + 1;
             if (filesToDeleteFileIndex >= argsList.size()) {
-                System.err
-                .println("Files to delete argument is specified but a file name is not."
+                System.err.println("Files to delete argument is specified but a file name is not."
                         + " Please use the format: -filesToDelete aFileName");
                 System.exit(0);
             }
@@ -360,8 +347,7 @@ public class Wrapper {
 
         List<String> filesToDelete = FileTools.parseFileToList(new File(filesToDeleteStr));
         List<String> origOrderTestList = FileTools.parseFileToList(origOrder);
-        Map<String, RESULT> nameToOrigResults = getCurrentOrderTestListResults(origOrderTestList,
-                filesToDelete);
+        Map<String, RESULT> nameToOrigResults = getCurrentOrderTestListResults(origOrderTestList, filesToDelete);
 
         // capture start time
         long start = System.nanoTime();
@@ -369,18 +355,17 @@ public class Wrapper {
         // TestListGenerator
         Test testObj = null;
         if (techniqueName == TECHNIQUE.PRIORITIZATION) {
-            testObj = new Prioritization(order, outputFileName, testInputDir, coverage,
-                    dependentTestFile, getCoverage, origOrder);
+            testObj = new Prioritization(order, outputFileName, testInputDir, coverage, dependentTestFile, getCoverage,
+                    origOrder);
         } else if (techniqueName == TECHNIQUE.SELECTION) {
-            testObj = new Selection(order, outputFileName, testInputDir, coverage, selectionOutput1,
-                    selectionOutput2, origOrder, dependentTestFile);
+            testObj = new Selection(order, outputFileName, testInputDir, coverage, selectionOutput1, selectionOutput2,
+                    origOrder, dependentTestFile);
         } else if (techniqueName == TECHNIQUE.PARALLELIZATION) {
-            testObj = new Parallelization(order, outputFileName, testInputDir, coverage,
-                    dependentTestFile, numOfMachines, origOrder, timeOrder);
+            testObj = new Parallelization(order, outputFileName, testInputDir, coverage, dependentTestFile,
+                    numOfMachines, origOrder, timeOrder);
         } else {
-            System.err.println(
-                    "The regression testing technique selected is invalid. Please restart the"
-                            + " program and try again.");
+            System.err.println("The regression testing technique selected is invalid. Please restart the"
+                    + " program and try again.");
             System.exit(0);
         }
         long TLGTime = System.nanoTime() - start;
@@ -392,26 +377,25 @@ public class Wrapper {
             List<String> currentOrderTestList = getCurrentTestList(testObj, i);
             if (resolveDependences) {
                 // ImpactMain
-                Map<String, RESULT> nameToTestResults = getCurrentOrderTestListResults(
-                        currentOrderTestList, filesToDelete);
+                Map<String, RESULT> nameToTestResults = getCurrentOrderTestListResults(currentOrderTestList,
+                        filesToDelete);
                 // CrossReferencer
-                Set<String> changedTests = CrossReferencer.compareResults(nameToOrigResults,
-                        nameToTestResults, !resolveDependences);
+                Set<String> changedTests = CrossReferencer.compareResults(nameToOrigResults, nameToTestResults,
+                        !resolveDependences);
                 int counter = 0;
                 while (!changedTests.isEmpty()) {
                     System.out.println("iteration number: " + counter);
                     counter += 1;
                     String testName = changedTests.iterator().next();
                     // DependentTestFinder
-                    DependentTestFinder.runDTF(testName, nameToOrigResults.get(testName),
-                            currentOrderTestList, origOrderTestList, filesToDelete, allDTList);
+                    DependentTestFinder.runDTF(testName, nameToOrigResults.get(testName), currentOrderTestList,
+                            origOrderTestList, filesToDelete, allDTList);
                     allDTList = DependentTestFinder.getAllDTs();
                     // TestListGenerator
                     testObj.resetDTList(allDTList);
                     currentOrderTestList = getCurrentTestList(testObj, i);
                     // ImpactMain
-                    nameToTestResults = getCurrentOrderTestListResults(currentOrderTestList,
-                            filesToDelete);
+                    nameToTestResults = getCurrentOrderTestListResults(currentOrderTestList, filesToDelete);
                     // Cross Referencer
                     changedTests = CrossReferencer.compareResults(nameToOrigResults, nameToTestResults,
                             !resolveDependences);
@@ -428,10 +412,12 @@ public class Wrapper {
         long totalTime = TLGTime;
         long maxTime = Long.MIN_VALUE;
         long testListTime;
+        int numTests = 0;
         if (outputFileName == null) {
             for (List<String> testList : testListToTime.keySet()) {
                 testListTime = testListToTime.get(testList);
                 totalTime += testListTime;
+                numTests += testList.size();
                 maxTime = Math.max(maxTime, testListTime);
                 System.out.println("Execution time: " + testListTime);
                 System.out.println("Test order list:");
@@ -442,8 +428,11 @@ public class Wrapper {
                 }
                 System.out.println("--------------------------");
             }
-            System.out.println("\nTotal time: " + totalTime);
-            System.out.print("Max time: " + (maxTime + TLGTime));
+            System.out.print("\nTotal time: " + totalTime);
+            if (techniqueName == TECHNIQUE.PARALLELIZATION) {
+                System.out.print("\nMax time: " + (maxTime + TLGTime));
+                System.out.print("\nNumber of tests: " + numTests);
+            }
         } else {
             FileWriter output = null;
             BufferedWriter writer = null;
@@ -453,6 +442,7 @@ public class Wrapper {
                 for (List<String> testList : testListToTime.keySet()) {
                     testListTime = testListToTime.get(testList);
                     totalTime += testListTime;
+                    numTests += testList.size();
                     maxTime = Math.max(maxTime, testListTime);
                     writer.write("Execution time: " + testListTime + "\n");
                     writer.write("Test order list:\n");
@@ -463,8 +453,11 @@ public class Wrapper {
                     }
                     writer.write("--------------------------\n");
                 }
-                writer.write("\nTotal time: " + totalTime + "\n");
-                writer.write("Max time: " + (maxTime + TLGTime));
+                writer.write("\nTotal time: " + totalTime);
+                if (techniqueName == TECHNIQUE.PARALLELIZATION) {
+                    writer.write("\nMax time: " + (maxTime + TLGTime));
+                    writer.write("\nNumber of tests: " + numTests);
+                }
             } catch (IOException e) {
                 e.printStackTrace();
             } finally {
@@ -505,8 +498,8 @@ public class Wrapper {
         // output results
     }
 
-    private static Map<String, RESULT> getCurrentOrderTestListResults(
-            List<String> currentOrderTestList, List<String> filesToDelete) {
+    private static Map<String, RESULT> getCurrentOrderTestListResults(List<String> currentOrderTestList,
+            List<String> filesToDelete) {
         // ImpactMain
         FileTools.clearEnv(filesToDelete);
         TestExecResults results = ImpactMain.getResults(currentOrderTestList);
