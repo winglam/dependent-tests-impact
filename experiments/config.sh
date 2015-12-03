@@ -37,6 +37,20 @@ function clearSelectionTemp() {
   cd ..
 }
 
+function compileSource() {
+  index=0
+  count=${#experiments[@]}
+  while [ "$index" -lt "$count" ]; do
+    echo -e "Compiling experiment: ${experiments[$index]}"
+    cd ${directories[$index]}
+    rm -rf bin/
+    mkdir bin/
+    javac -cp ${experimentsCP[$index]} -d bin src/**/*.java -Xlint:unchecked
+    javac -cp ${experimentsCP[$index]} -d bin test-src/**/*.java -Xlint:unchecked
+    cd ..
+  done
+}
+
 function instrumentFiles() {
   # instrument class and test files
   java -cp $1 edu.washington.cs.dt.impact.Main.InstrumentationMain -inputDir bin
