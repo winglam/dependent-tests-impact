@@ -131,7 +131,7 @@ public class Wrapper {
 				System.err.println("Coverage is invalid. Try \"statement\", \"branch\" or \"function\".");
 				System.exit(0);
 			}
-		} else {
+		} else if (techniqueName != TECHNIQUE.PARALLELIZATION){
 			System.err
 			.println("No coverage argument is specified." + " Please use the format: -coverage aCoverageName");
 			System.exit(0);

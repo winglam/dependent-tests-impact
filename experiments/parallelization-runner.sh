@@ -11,7 +11,7 @@ while [ "$index" -lt "$count" ]; do
 
 	# generate sootTestOutput
   	java -cp ${sootCP[$index]} edu.washington.cs.dt.main.ImpactMain ${experiments[$index]}-$j-order
-    runPrioritizationWrapper ${experiments[$index]} ${experimentsCP[$index]} $j
+    runParallelizationWrapper ${experiments[$index]} ${experimentsCP[$index]} $j
     clearTemp
   done
 

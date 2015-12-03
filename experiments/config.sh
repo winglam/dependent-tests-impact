@@ -7,6 +7,12 @@ machines=(2 4 8 16)
 parallelOrders=($testType-order time)
 selectionOrders=(absolute relative)
 
+directories=(crystalvc dynoptic jfreechart-1.0.15 jodatime-b609d7d66d xml-security-orig-v1)
+experiments=(crystal synoptic jfreechart jodatime xml-security)
+testTypes=(orig auto)
+experimentsCP=(impact-tools/*:bin/:lib/* impact-tools/*:bin/:../synoptic/lib/*:../synoptic/bin/:../daikonizer/bin/ impact-tools/*:bin/:lib/* impact-tools/*:bin/:resources/:lib/* impact-tools/*:bin/:../xml-security-commons/bin/:data/:../xml-security-commons/libs/*)
+sootCP=(impact-tools/*:sootOutput/:lib/* impact-tools/*:sootOutput/:../synoptic/lib/*:../synoptic/bin/:../daikonizer/bin/ impact-tools/*:sootOutput/:lib/* impact-tools/*:sootOutput/:resources/:lib/* impact-tools/*:sootOutput/:../xml-security-commons/bin/:data/:../xml-security-commons/libs/*)
+
 function clearTemp() {
   rm -rf sootOutput
   rm -rf sootTestOutput
@@ -57,6 +63,16 @@ function runPrioritizationWrapper() {
         java -cp $2 edu.washington.cs.dt.impact.Main.Wrapper -technique prioritization -coverage $i -order $j -resolveDependences -origOrder $1-$3-order -testInputDir sootTestOutput -filesToDelete $1-env-files -outputFile $1-$3-DT
         java -cp $2 edu.washington.cs.dt.impact.Main.Wrapper -technique prioritization -coverage $i -order $j -origOrder $1-$3-order -testInputDir sootTestOutput -filesToDelete $1-env-files -outputFile $1-$3
     done
+  done
+}
+
+function runParallelizationWrapper() {
+  java -cp $2 edu.washington.cs.dt.main.ImpactMain $1-$3-order -getTime > $1-$3-time.txt
+  for k in "${machines[@]}"; do
+    java -cp $2 edu.washington.cs.dt.impact.Main.Wrapper -technique parallelization -order time -timeOrder $1-$3-time.txt -resolveDependences -origOrder $1-$3-order -testInputDir sootTestOutput -filesToDelete $1-env-files -outputFile $1-$3-DT -numOfMachines $k
+    java -cp $2 edu.washington.cs.dt.impact.Main.Wrapper -technique parallelization -order original -resolveDependences -origOrder $1-$3-order -testInputDir sootTestOutput -filesToDelete $1-env-files -outputFile $1-$3-DT -numOfMachines $k
+    java -cp $2 edu.washington.cs.dt.impact.Main.Wrapper -technique parallelization -order time -timeOrder $1-$3-time.txt -origOrder $1-$3-order -testInputDir sootTestOutput -filesToDelete $1-env-files -outputFile $1-$3-DT -numOfMachines $k
+    java -cp $2 edu.washington.cs.dt.impact.Main.Wrapper -technique parallelization -order original -origOrder $1-$3-order -testInputDir sootTestOutput -filesToDelete $1-env-files -outputFile $1-$3-DT -numOfMachines $k
   done
 }
 
