@@ -54,11 +54,8 @@ function runPrioritizationWrapper() {
   DTChainCoverages=(statement)
   for i in "${DTChainCoverages[@]}"; do
     for j in "${orders[@]}"; do
-        if [ "$4" = true ] ; then
-          java -cp $2 edu.washington.cs.dt.impact.Main.Wrapper -technique prioritization -coverage $i -order $j -resolveDependences -origOrder $1-$3-order -testInputDir sootTestOutput -filesToDelete $1-env-files -outputFile $1-$3-wrapper-results
-        else
-          java -cp $2 edu.washington.cs.dt.impact.Main.Wrapper -technique prioritization -coverage $i -order $j -origOrder $1-$3-order -testInputDir sootTestOutput -filesToDelete $1-env-files -outputFile $1-$3-wrapper-results
-        fi
+        java -cp $2 edu.washington.cs.dt.impact.Main.Wrapper -technique prioritization -coverage $i -order $j -resolveDependences -origOrder $1-$3-order -testInputDir sootTestOutput -filesToDelete $1-env-files -outputFile $1-$3-DT
+        java -cp $2 edu.washington.cs.dt.impact.Main.Wrapper -technique prioritization -coverage $i -order $j -origOrder $1-$3-order -testInputDir sootTestOutput -filesToDelete $1-env-files -outputFile $1-$3
     done
   done
 }
