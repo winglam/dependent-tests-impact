@@ -33,6 +33,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -370,23 +371,28 @@ public class Wrapper {
         }
         long TLGTime = System.nanoTime() - start;
 
+        Map<List<String>, Integer> testListToRemainDT = new HashMap<>();
+        Map<List<String>, Integer> testListToIdentifiedDT = new HashMap<>();
         Map<List<String>, Long> testListToTime = new HashMap<>();
         for (int i = 0; i < numOfMachines; i++) {
             start = System.nanoTime();
 
             List<String> currentOrderTestList = getCurrentTestList(testObj, i);
+            // ImpactMain
+            Map<String, RESULT> nameToTestResults = getCurrentOrderTestListResults(currentOrderTestList,
+                    filesToDelete);
+            // CrossReferencer
+            Set<String> changedTests = CrossReferencer.compareResults(nameToOrigResults, nameToTestResults,
+                    !resolveDependences);
+            
+            Set<String> identifiedDT = new HashSet<>();
             if (resolveDependences) {
-                // ImpactMain
-                Map<String, RESULT> nameToTestResults = getCurrentOrderTestListResults(currentOrderTestList,
-                        filesToDelete);
-                // CrossReferencer
-                Set<String> changedTests = CrossReferencer.compareResults(nameToOrigResults, nameToTestResults,
-                        !resolveDependences);
                 int counter = 0;
                 while (!changedTests.isEmpty()) {
                     System.out.println("iteration number: " + counter);
                     counter += 1;
                     String testName = changedTests.iterator().next();
+                    identifiedDT.add(testName);
                     // DependentTestFinder
                     DependentTestFinder.runDTF(testName, nameToOrigResults.get(testName), currentOrderTestList,
                             origOrderTestList, filesToDelete, allDTList);
@@ -405,6 +411,8 @@ public class Wrapper {
             // capture end time
             long runTotal = System.nanoTime() - start;
             testListToTime.put(currentOrderTestList, runTotal);
+            testListToRemainDT.put(currentOrderTestList, changedTests.size());
+            testListToIdentifiedDT.put(currentOrderTestList, identifiedDT.size());
         }
 
         FileTools.clearEnv(filesToDelete);
@@ -420,6 +428,8 @@ public class Wrapper {
                 numTests += testList.size();
                 maxTime = Math.max(maxTime, testListTime);
                 System.out.println("Execution time: " + testListTime);
+                System.out.println("Remaining number of DTs: " + testListToRemainDT.get(testList));
+                System.out.println("Identified number of DTs: " + testListToIdentifiedDT.get(testList));
                 System.out.println("Test order list:");
                 System.out.println(testList.toString());
                 if (allDTList != null) {
@@ -437,7 +447,13 @@ public class Wrapper {
             FileWriter output = null;
             BufferedWriter writer = null;
             try {
-                output = new FileWriter(outputFileName + "-" + techniqueName + "-" + coverage + "-" + order);
+            	if (techniqueName == TECHNIQUE.PARALLELIZATION) {
+                    output = new FileWriter(outputFileName + "-" + techniqueName + "-" + coverage +
+                    		"-" + order + "-" + numOfMachines);            		
+            	} else {
+                    output = new FileWriter(outputFileName + "-" + techniqueName + "-" + coverage +
+                    		"-" + order);            		
+            	}
                 writer = new BufferedWriter(output);
                 for (List<String> testList : testListToTime.keySet()) {
                     testListTime = testListToTime.get(testList);
@@ -445,6 +461,8 @@ public class Wrapper {
                     numTests += testList.size();
                     maxTime = Math.max(maxTime, testListTime);
                     writer.write("Execution time: " + testListTime + "\n");
+                    writer.write("Remaining number of DTs: " + testListToRemainDT.get(testList) + "\n");
+                    writer.write("Identified number of DTs: " + testListToIdentifiedDT.get(testList) + "\n");
                     writer.write("Test order list:\n");
                     writer.write(testList.toString() + "\n");
                     if (allDTList != null) {
