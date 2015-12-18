@@ -12,6 +12,7 @@ experiments=(crystal synoptic jfreechart jodatime xml-security)
 testTypes=(orig auto)
 experimentsCP=(impact-tools/*:bin/:lib/* impact-tools/*:bin/:../synoptic/lib/*:../synoptic/bin/:../daikonizer/bin/ impact-tools/*:bin/:lib/* impact-tools/*:bin/:resources/:lib/* impact-tools/*:bin/:../xml-security-commons/bin/:data/:../xml-security-commons/libs/*)
 sootCP=(impact-tools/*:sootOutput/:lib/* impact-tools/*:sootOutput/:../synoptic/lib/*:../synoptic/bin/:../daikonizer/bin/ impact-tools/*:sootOutput/:lib/* impact-tools/*:sootOutput/:resources/:lib/* impact-tools/*:sootOutput/:../xml-security-commons/bin/:data/:../xml-security-commons/libs/*)
+compileCP=(bin/:lib/* bin/:../synoptic/lib/*:../synoptic/bin/:../daikonizer/bin/ impact-tools/*:bin/:lib/* bin/:resources/:lib/* bin/:../xml-security-commons/bin/:data/:../xml-security-commons/libs/*)
 
 function clearTemp() {
   rm -rf sootOutput
@@ -37,6 +38,11 @@ function clearSelectionTemp() {
   cd ..
 }
 
+function instrumentFiles() {
+  # instrument class and test files
+  java -cp $1 edu.washington.cs.dt.impact.Main.InstrumentationMain -inputDir bin
+}
+
 function compileSource() {
   index=0
   count=${#experiments[@]}
@@ -45,29 +51,11 @@ function compileSource() {
     cd ${directories[$index]}
     rm -rf bin/
     mkdir bin/
-    javac -cp ${experimentsCP[$index]} -d bin src/**/*.java -Xlint:unchecked
-    javac -cp ${experimentsCP[$index]} -d bin test-src/**/*.java -Xlint:unchecked
+    javac -cp ${compileCP[$index]} -d bin src/**/*.java -Xlint:none -encoding iso-8859-1
+    javac -cp ${compileCP[$index]} -d bin tests/**/*.java -Xlint:none -encoding iso-8859-1
+    let "index++"
     cd ..
   done
-}
-
-function instrumentFiles() {
-  # instrument class and test files
-  java -cp $1 edu.washington.cs.dt.impact.Main.InstrumentationMain -inputDir bin
-}
-
-function runRandom() {
-  if [ "$4" = true ] ; then
-    java -cp $impactJarCP $testListGenClass -technique prioritization -order random -outputFile $1-random.txt -dependentTestFile $1-$2-dt
-  else
-    java -cp $impactJarCP $testListGenClass -technique prioritization -order random -outputFile $1-random.txt
-  fi
-  java -cp $3 edu.washington.cs.dt.main.ImpactMain $1-random.txt > $1-random-results.txt
-  rm -rf $1-random.txt
-
-  echo $1"-random-results.txt" >> $1-tp-summary.txt
-  java -cp $impactJarCP $crossReferenceClass -origOrder $1-$2-order-results.txt -testOrder $1-random-results.txt >> $1-tp-summary.txt
-  echo "" >> $1-tp-summary.txt
 }
 
 function runPrioritizationWrapper() {
@@ -88,6 +76,20 @@ function runParallelizationWrapper() {
     java -cp $2 edu.washington.cs.dt.impact.Main.Wrapper -technique parallelization -order time -timeOrder $1-$3-time.txt -origOrder $1-$3-order -testInputDir sootTestOutput -filesToDelete $1-env-files -outputFile $1-$3-DT -numOfMachines $k
     java -cp $2 edu.washington.cs.dt.impact.Main.Wrapper -technique parallelization -order original -origOrder $1-$3-order -testInputDir sootTestOutput -filesToDelete $1-env-files -outputFile $1-$3-DT -numOfMachines $k
   done
+}
+
+function runRandom() {
+  if [ "$4" = true ] ; then
+    java -cp $impactJarCP $testListGenClass -technique prioritization -order random -outputFile $1-random.txt -dependentTestFile $1-$2-dt
+  else
+    java -cp $impactJarCP $testListGenClass -technique prioritization -order random -outputFile $1-random.txt
+  fi
+  java -cp $3 edu.washington.cs.dt.main.ImpactMain $1-random.txt > $1-random-results.txt
+  rm -rf $1-random.txt
+
+  echo $1"-random-results.txt" >> $1-tp-summary.txt
+  java -cp $impactJarCP $crossReferenceClass -origOrder $1-$2-order-results.txt -testOrder $1-random-results.txt >> $1-tp-summary.txt
+  echo "" >> $1-tp-summary.txt
 }
 
 function runCoveragesOrders() {

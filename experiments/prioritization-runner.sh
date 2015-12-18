@@ -1,5 +1,7 @@
 source ./config.sh
 
+compileSource
+
 index=0
 count=${#experiments[@]}
 while [ "$index" -lt "$count" ]; do
