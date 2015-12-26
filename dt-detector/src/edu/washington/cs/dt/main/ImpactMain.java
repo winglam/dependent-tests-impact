@@ -27,11 +27,11 @@ public class ImpactMain {
 
         int inputTestListIndex = argsList.indexOf("-inputTests");
         List<String> tests = new LinkedList<String>();
-        if (inputTestListIndex != 1) {
+        if (inputTestListIndex != -1) {
             int inputTestList = inputTestListIndex + 1;
             if (inputTestList >= argsList.size()) {
-                System.err.println("Original order argument is specified but a"
-                        + " directory path is not. Please use the format: -origOrder afilepath");
+                System.err.println("Input test list argument is specified but a"
+                        + " file path is not. Please use the format: -inputTests afilepath");
                 System.exit(0);
             }
 
@@ -61,12 +61,9 @@ public class ImpactMain {
                 }
             }
         } else {
-            System.err
-            .println("No input test list is specified. Please use the format"
-                    + " -inputTest atestlistfile");
+            System.err.println("No input test list is specified. Please use the format" + " -inputTest atestlistfile");
             System.exit(0);
         }
-
 
         int timeIndex = argsList.indexOf("-getTime");
         if (timeIndex != -1) {
@@ -82,6 +79,11 @@ public class ImpactMain {
     }
 
     public static TestExecResults getResults(List<String> tests) {
+        return getResults(tests, false);
+    }
+
+    public static TestExecResults getResults(List<String> tests, boolean getTime) {
+        useTimer = getTime;
         AbstractTestRunner runner = new FixedOrderRunner(tests);
         return runner.run();
     }
