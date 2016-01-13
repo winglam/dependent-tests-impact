@@ -371,7 +371,7 @@ public class Wrapper {
         }
         long TLGTime = System.nanoTime() - start;
 
-        Map<String, RESULT> nameToTime = new HashMap<>();;
+        String nameToTime = "";
         Map<List<String>, Integer> testListToRemainDT = new HashMap<>();
         Map<List<String>, Integer> testListToIdentifiedDT = new HashMap<>();
         Map<List<String>, Long> testListToTime = new HashMap<>();
@@ -413,7 +413,9 @@ public class Wrapper {
             testListToIdentifiedDT.put(currentOrderTestList, identifiedDT.size());
 
             if (techniqueName == TECHNIQUE.PRIORITIZATION) {
-                nameToTime = getCurrentOrderTestListResults(currentOrderTestList, filesToDelete, true);
+                FileTools.clearEnv(filesToDelete);
+                nameToTime = "\nTime each test takes to run:\n"
+                        + ImpactMain.getResults(currentOrderTestList, true).toString();
             }
         }
 
@@ -423,29 +425,34 @@ public class Wrapper {
         long maxTime = Long.MIN_VALUE;
         long testListTime;
         int numTests = 0;
-        if (outputFileName == null) {
-            for (List<String> testList : testListToTime.keySet()) {
-                testListTime = testListToTime.get(testList);
-                totalTime += testListTime;
-                numTests += testList.size();
-                maxTime = Math.max(maxTime, testListTime);
-                System.out.println("Execution time: " + testListTime);
-                System.out.println("Remaining number of DTs: " + testListToRemainDT.get(testList));
-                System.out.println("Identified number of DTs: " + testListToIdentifiedDT.get(testList));
-                System.out.println("Test order list:");
-                System.out.println(testList.toString());
-                if (allDTList != null) {
-                    System.out.println("\nDependent test list:");
-                    System.out.println(allDTList.toString());
-                }
-                System.out.println("--------------------------");
+        List<String> outputArr = new ArrayList<>();
+        for (List<String> testList : testListToTime.keySet()) {
+            testListTime = testListToTime.get(testList);
+            totalTime += testListTime;
+            numTests += testList.size();
+            maxTime = Math.max(maxTime, testListTime);
+            outputArr.add("Execution time: " + testListTime + "\n");
+            outputArr.add("Remaining number of DTs: " + testListToRemainDT.get(testList) + "\n");
+            outputArr.add("Identified number of DTs: " + testListToIdentifiedDT.get(testList) + "\n");
+            outputArr.add("Test order list:\n");
+            outputArr.add(testList.toString() + "\n");
+            if (allDTList != null) {
+                outputArr.add("\nDependent test list:\n");
+                outputArr.add(allDTList.toString() + "\n");
             }
-            System.out.print("\nTotal time: " + totalTime);
-            if (techniqueName == TECHNIQUE.PARALLELIZATION) {
-                System.out.print("\nMax time: " + (maxTime + TLGTime));
-                System.out.print("\nNumber of tests: " + numTests);
-            } else if (techniqueName == TECHNIQUE.PRIORITIZATION) {
-                System.out.print(nameToTime.toString());
+            outputArr.add("--------------------------\n");
+        }
+        outputArr.add("\nTotal time: " + totalTime);
+        if (techniqueName == TECHNIQUE.PARALLELIZATION) {
+            outputArr.add("\nMax time: " + (maxTime + TLGTime));
+            outputArr.add("\nNumber of tests: " + numTests);
+        } else if (techniqueName == TECHNIQUE.PRIORITIZATION) {
+            outputArr.add(nameToTime);
+        }
+
+        if (outputFileName == null) {
+            for (String line : outputArr) {
+                System.out.print(line);
             }
         } else {
             FileWriter output = null;
@@ -458,28 +465,8 @@ public class Wrapper {
                     output = new FileWriter(outputFileName + "-" + techniqueName + "-" + coverage + "-" + order);
                 }
                 writer = new BufferedWriter(output);
-                for (List<String> testList : testListToTime.keySet()) {
-                    testListTime = testListToTime.get(testList);
-                    totalTime += testListTime;
-                    numTests += testList.size();
-                    maxTime = Math.max(maxTime, testListTime);
-                    writer.write("Execution time: " + testListTime + "\n");
-                    writer.write("Remaining number of DTs: " + testListToRemainDT.get(testList) + "\n");
-                    writer.write("Identified number of DTs: " + testListToIdentifiedDT.get(testList) + "\n");
-                    writer.write("Test order list:\n");
-                    writer.write(testList.toString() + "\n");
-                    if (allDTList != null) {
-                        writer.write("\nDependent test list:\n");
-                        writer.write(allDTList.toString() + "\n");
-                    }
-                    writer.write("--------------------------\n");
-                }
-                writer.write("\nTotal time: " + totalTime);
-                if (techniqueName == TECHNIQUE.PARALLELIZATION) {
-                    writer.write("\nMax time: " + (maxTime + TLGTime));
-                    writer.write("\nNumber of tests: " + numTests);
-                } else if (techniqueName == TECHNIQUE.PRIORITIZATION) {
-                    writer.write(nameToTime.toString());
+                for (String line : outputArr) {
+                    writer.write(line);
                 }
             } catch (IOException e) {
                 e.printStackTrace();
@@ -522,16 +509,11 @@ public class Wrapper {
     }
 
     private static Map<String, RESULT> getCurrentOrderTestListResults(List<String> currentOrderTestList,
-            List<String> filesToDelete, boolean getTime) {
+            List<String> filesToDelete) {
         // ImpactMain
         FileTools.clearEnv(filesToDelete);
         TestExecResults results = ImpactMain.getResults(currentOrderTestList);
         return results.getExecutionRecords().get(0).getNameToResultsMap();
-    }
-
-    private static Map<String, RESULT> getCurrentOrderTestListResults(List<String> currentOrderTestList,
-            List<String> filesToDelete) {
-        return getCurrentOrderTestListResults(currentOrderTestList, filesToDelete);
     }
 
     private static List<String> getCurrentTestList(Test testObj, int numOfMachines) {
