@@ -414,8 +414,8 @@ public class Wrapper {
 
             if (techniqueName == TECHNIQUE.PRIORITIZATION) {
                 FileTools.clearEnv(filesToDelete);
-                nameToTime = "\nTime each test takes to run:\n"
-                        + ImpactMain.getResults(currentOrderTestList, true).toString();
+                nameToTime = "\n\nTime each test takes to run in the new order:\n"
+                        + ImpactMain.getResults(currentOrderTestList, true).getExecutionRecords().get(0).toString();
             }
         }
 
@@ -431,7 +431,7 @@ public class Wrapper {
             totalTime += testListTime;
             numTests += testList.size();
             maxTime = Math.max(maxTime, testListTime);
-            outputArr.add("Execution time: " + testListTime + "\n");
+            outputArr.add("Execution time (of 1 machine and its iterations): " + testListTime + "\n");
             outputArr.add("Remaining number of DTs: " + testListToRemainDT.get(testList) + "\n");
             outputArr.add("Identified number of DTs: " + testListToIdentifiedDT.get(testList) + "\n");
             outputArr.add("Test order list:\n");
@@ -442,10 +442,10 @@ public class Wrapper {
             }
             outputArr.add("--------------------------\n");
         }
-        outputArr.add("\nTotal time: " + totalTime);
+        outputArr.add("Total time (of all machines and iterations plus initial TestListGenerator): " + totalTime);
         if (techniqueName == TECHNIQUE.PARALLELIZATION) {
-            outputArr.add("\nMax time: " + (maxTime + TLGTime));
-            outputArr.add("\nNumber of tests: " + numTests);
+            outputArr.add("\n\nMax time: " + (maxTime + TLGTime));
+            outputArr.add("\n\nNumber of tests: " + numTests);
         } else if (techniqueName == TECHNIQUE.PRIORITIZATION) {
             outputArr.add(nameToTime);
         }
@@ -482,30 +482,6 @@ public class Wrapper {
                 }
             }
         }
-
-        // Inputs:
-        // ClearEnv list of files
-        // $experiment $experimentCP $testType $dependentFree
-
-        // start timer
-
-        // need to generate test order with TestListGenerator
-        // clearEnv
-        // Run ImpactMain
-        // CrossReferencer
-
-        // if $dependentFree is true
-        // while there are dependent tests
-        // DTFinder
-        // TestListGenerator
-        // ImpactMain
-        // CrossReferencer
-        // end timer
-        // output file with all DT chains
-        // output results
-
-        // end timer
-        // output results
     }
 
     private static Map<String, RESULT> getCurrentOrderTestListResults(List<String> currentOrderTestList,
