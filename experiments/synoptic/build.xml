@@ -1,173 +1,172 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-
-<project basedir="." default="build" name="Synoptic">
-    <description>
-      Provides targets to build, test, and package the Synoptic
-      project into a synoptic.jar archive.
-    </description>
-
-    <!-- Include ant xml file with shared utils. -->
-    <include file="../ant-util.xml" as="util" />
-
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. --><project basedir="." default="build" name="synoptic">
     <property environment="env"/>
-    
-    <!-- Where to create the synoptic.jar file. -->
-    <property name="synoptic.jarpath" value="${util.synoptic.libdir}/synoptic.jar"/>
-
-    <!-- Where to output junit test results. -->
-    <property name="junit.output.dir" value="junit"/>
-
-    <!-- Where to find tests (relative to bin). -->
-    <property name="synoptic.testdir" value="synoptic/tests/" />
-
-    <!-- Where to find the generated synoptic classes. -->
-    <path id="synoptic.classes.classpath">
-        <pathelement location="bin"/>
-    </path>
-
-    <!-- The set of jars synoptic depends on, in classpath format. -->
-    <path id="synoptic.depjars.classpath">
-      <pathelement location="${util.synoptic.libdir}/junit-4.9b2.jar"/>
-      <pathelement location="${util.synoptic.libdir}/daikonizer.jar"/>
-      <pathelement location="${util.synoptic.libdir}/plume.jar"/>
-    </path>
-
-    <!-- The complete classpath for running the compiled synoptic. -->
-    <path id="synoptic.classpath">
-      <path refid="synoptic.classes.classpath"/>
-      <path refid="synoptic.depjars.classpath"/>
-    </path>
-
-    <manifestclasspath property="jar.liblist" jarfile="${synoptic.jarpath}">
-      <classpath refid="synoptic.depjars.classpath" />
-    </manifestclasspath>
-
+    <property name="synoptic.location" value="../synoptic"/>
+    <property name="dynoptic.location" value="../dynoptic"/>
+    <property name="daikonizer.location" value="../daikonizer"/>
     <property name="debuglevel" value="source,lines,vars"/>
-    <property name="target" value="1.6"/>
-    <property name="source" value="1.6"/>
-
-    <!--=====================================================================-->
+    <property name="target" value="1.7"/>
+    <property name="source" value="1.7"/>
+    <path id="daikonizer.classpath">
+        <pathelement location="${daikonizer.location}/bin"/>
+        <pathelement location="${synoptic.location}/lib/gwt/gwt-dev.jar"/>
+        <pathelement location="${synoptic.location}/lib/gwt/gwt-servlet-deps.jar"/>
+        <pathelement location="${synoptic.location}/lib/gwt/gwt-servlet.jar"/>
+        <pathelement location="${synoptic.location}/lib/gwt/gwt-user.jar"/>
+        <pathelement location="${synoptic.location}/lib/gwt/validation-api-1.0.0.GA-sources.jar"/>
+        <pathelement location="${synoptic.location}/lib/gwt/validation-api-1.0.0.GA.jar"/>
+        <pathelement location="${synoptic.location}/lib/jetty/jsp/com.sun.el_1.0.0.v201004190952.jar"/>
+        <pathelement location="${synoptic.location}/lib/jetty/jsp/ecj-3.6.jar"/>
+        <pathelement location="${synoptic.location}/lib/jetty/jsp/javax.el_2.1.0.v201004190952.jar"/>
+        <pathelement location="${synoptic.location}/lib/jetty/jsp/javax.servlet.jsp_2.1.0.v201004190952.jar"/>
+        <pathelement location="${synoptic.location}/lib/jetty/jsp/javax.servlet.jsp.jstl_1.2.0.v201004190952.jar"/>
+        <pathelement location="${synoptic.location}/lib/jetty/jsp/jetty-jsp-2.1-7.4.0.v20110414.jar"/>
+        <pathelement location="${synoptic.location}/lib/jetty/jsp/org.apache.jasper.glassfish_2.1.0.v201007080150.jar"/>
+        <pathelement location="${synoptic.location}/lib/jetty/jsp/org.apache.taglibs.standard.glassfish_1.2.0.v201004190952.jar"/>
+        <pathelement location="${synoptic.location}/lib/jetty/jetty-ajp-7.3.0.v20110203.jar"/>
+        <pathelement location="${synoptic.location}/lib/jetty/jetty-annotations-7.3.0.v20110203.jar"/>
+        <pathelement location="${synoptic.location}/lib/jetty/jetty-client-7.3.0.v20110203.jar"/>
+        <pathelement location="${synoptic.location}/lib/jetty/jetty-continuation-7.3.0.v20110203.jar"/>
+        <pathelement location="${synoptic.location}/lib/jetty/jetty-deploy-7.3.0.v20110203.jar"/>
+        <pathelement location="${synoptic.location}/lib/jetty/jetty-http-7.3.0.v20110203.jar"/>
+        <pathelement location="${synoptic.location}/lib/jetty/jetty-io-7.3.0.v20110203.jar"/>
+        <pathelement location="${synoptic.location}/lib/jetty/jetty-jmx-7.3.0.v20110203.jar"/>
+        <pathelement location="${synoptic.location}/lib/jetty/jetty-jndi-7.3.0.v20110203.jar"/>
+        <pathelement location="${synoptic.location}/lib/jetty/jetty-plus-7.3.0.v20110203.jar"/>
+        <pathelement location="${synoptic.location}/lib/jetty/jetty-policy-7.3.0.v20110203.jar"/>
+        <pathelement location="${synoptic.location}/lib/jetty/jetty-rewrite-7.3.0.v20110203.jar"/>
+        <pathelement location="${synoptic.location}/lib/jetty/jetty-security-7.3.0.v20110203.jar"/>
+        <pathelement location="${synoptic.location}/lib/jetty/jetty-server-7.3.0.v20110203.jar"/>
+        <pathelement location="${synoptic.location}/lib/jetty/jetty-servlet-7.3.0.v20110203.jar"/>
+        <pathelement location="${synoptic.location}/lib/jetty/jetty-servlets-7.3.0.v20110203.jar"/>
+        <pathelement location="${synoptic.location}/lib/jetty/jetty-util-7.3.0.v20110203.jar"/>
+        <pathelement location="${synoptic.location}/lib/jetty/jetty-webapp-7.3.0.v20110203.jar"/>
+        <pathelement location="${synoptic.location}/lib/jetty/jetty-websocket-7.3.0.v20110203.jar"/>
+        <pathelement location="${synoptic.location}/lib/jetty/jetty-xml-7.3.0.v20110203.jar"/>
+        <pathelement location="${synoptic.location}/lib/jetty/servlet-api-2.5.jar"/>
+        <pathelement location="${synoptic.location}/lib/jung/collections-generic-4.01.jar"/>
+        <pathelement location="${synoptic.location}/lib/jung/jung-algorithms-2.0.1.jar"/>
+        <pathelement location="${synoptic.location}/lib/jung/jung-api-2.0.1.jar"/>
+        <pathelement location="${synoptic.location}/lib/jung/jung-graph-impl-2.0.1.jar"/>
+        <pathelement location="${synoptic.location}/lib/jung/jung-visualization-2.0.1.jar"/>
+        <pathelement location="${synoptic.location}/lib/aspectjrt.jar"/>
+        <pathelement location="${synoptic.location}/lib/automaton.jar"/>
+        <pathelement location="${synoptic.location}/lib/commons-fileupload-1.2.2.jar"/>
+        <pathelement location="${synoptic.location}/lib/commons-io-2.0.1.jar"/>
+        <pathelement location="${synoptic.location}/lib/daikon.jar"/>
+        <pathelement location="${synoptic.location}/lib/derby-10.8.2.2.jar"/>
+        <pathelement location="${synoptic.location}/lib/json-simple-1.1.1.jar"/>
+        <pathelement location="${synoptic.location}/lib/junit-4.9b2.jar"/>
+        <pathelement location="${synoptic.location}/lib/plume.jar"/>
+        <pathelement location="${synoptic.location}/lib/stixar-0.0.1-alpha.jar"/>
+    </path>
+    <path id="synoptic.classpath">
+        <pathelement location="bin"/>
+        <path refid="daikonizer.classpath"/>
+        <pathelement location="lib/gwt/gwt-dev.jar"/>
+        <pathelement location="lib/gwt/gwt-servlet-deps.jar"/>
+        <pathelement location="lib/gwt/gwt-servlet.jar"/>
+        <pathelement location="lib/gwt/gwt-user.jar"/>
+        <pathelement location="lib/gwt/validation-api-1.0.0.GA-sources.jar"/>
+        <pathelement location="lib/gwt/validation-api-1.0.0.GA.jar"/>
+        <pathelement location="lib/jetty/jsp/com.sun.el_1.0.0.v201004190952.jar"/>
+        <pathelement location="lib/jetty/jsp/ecj-3.6.jar"/>
+        <pathelement location="lib/jetty/jsp/javax.el_2.1.0.v201004190952.jar"/>
+        <pathelement location="lib/jetty/jsp/javax.servlet.jsp_2.1.0.v201004190952.jar"/>
+        <pathelement location="lib/jetty/jsp/javax.servlet.jsp.jstl_1.2.0.v201004190952.jar"/>
+        <pathelement location="lib/jetty/jsp/jetty-jsp-2.1-7.4.0.v20110414.jar"/>
+        <pathelement location="lib/jetty/jsp/org.apache.jasper.glassfish_2.1.0.v201007080150.jar"/>
+        <pathelement location="lib/jetty/jsp/org.apache.taglibs.standard.glassfish_1.2.0.v201004190952.jar"/>
+        <pathelement location="lib/jetty/jetty-ajp-7.3.0.v20110203.jar"/>
+        <pathelement location="lib/jetty/jetty-annotations-7.3.0.v20110203.jar"/>
+        <pathelement location="lib/jetty/jetty-client-7.3.0.v20110203.jar"/>
+        <pathelement location="lib/jetty/jetty-continuation-7.3.0.v20110203.jar"/>
+        <pathelement location="lib/jetty/jetty-deploy-7.3.0.v20110203.jar"/>
+        <pathelement location="lib/jetty/jetty-http-7.3.0.v20110203.jar"/>
+        <pathelement location="lib/jetty/jetty-io-7.3.0.v20110203.jar"/>
+        <pathelement location="lib/jetty/jetty-jmx-7.3.0.v20110203.jar"/>
+        <pathelement location="lib/jetty/jetty-jndi-7.3.0.v20110203.jar"/>
+        <pathelement location="lib/jetty/jetty-plus-7.3.0.v20110203.jar"/>
+        <pathelement location="lib/jetty/jetty-policy-7.3.0.v20110203.jar"/>
+        <pathelement location="lib/jetty/jetty-rewrite-7.3.0.v20110203.jar"/>
+        <pathelement location="lib/jetty/jetty-security-7.3.0.v20110203.jar"/>
+        <pathelement location="lib/jetty/jetty-server-7.3.0.v20110203.jar"/>
+        <pathelement location="lib/jetty/jetty-servlet-7.3.0.v20110203.jar"/>
+        <pathelement location="lib/jetty/jetty-servlets-7.3.0.v20110203.jar"/>
+        <pathelement location="lib/jetty/jetty-util-7.3.0.v20110203.jar"/>
+        <pathelement location="lib/jetty/jetty-webapp-7.3.0.v20110203.jar"/>
+        <pathelement location="lib/jetty/jetty-websocket-7.3.0.v20110203.jar"/>
+        <pathelement location="lib/jetty/jetty-xml-7.3.0.v20110203.jar"/>
+        <pathelement location="lib/jetty/servlet-api-2.5.jar"/>
+        <pathelement location="lib/jung/collections-generic-4.01.jar"/>
+        <pathelement location="lib/jung/jung-algorithms-2.0.1.jar"/>
+        <pathelement location="lib/jung/jung-api-2.0.1.jar"/>
+        <pathelement location="lib/jung/jung-graph-impl-2.0.1.jar"/>
+        <pathelement location="lib/jung/jung-visualization-2.0.1.jar"/>
+        <pathelement location="lib/aspectjrt.jar"/>
+        <pathelement location="lib/automaton.jar"/>
+        <pathelement location="lib/commons-fileupload-1.2.2.jar"/>
+        <pathelement location="lib/commons-io-2.0.1.jar"/>
+        <pathelement location="lib/daikon.jar"/>
+        <pathelement location="lib/derby-10.8.2.2.jar"/>
+        <pathelement location="lib/json-simple-1.1.1.jar"/>
+        <pathelement location="lib/junit-4.9b2.jar"/>
+        <pathelement location="lib/plume.jar"/>
+        <pathelement location="lib/stixar-0.0.1-alpha.jar"/>
+    </path>
+    <target name="init">
+        <mkdir dir="bin"/>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="src">
+                <exclude name="**/*.launch"/>
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
     <target name="clean">
-      <delete dir="bin"/>
-      <delete dir="junit"/>
+        <delete dir="bin"/>
     </target>
-
-    <!--=====================================================================-->
-    <target name="build">
-      <!-- Create the bin/ dir where compiled .class files will go. -->
-      <mkdir dir="bin"/>
-      
-      <echo message="${ant.project.name}: ${ant.file}"/>
-      <javac debug="true" debuglevel="${debuglevel}" includeantruntime="false" destdir="bin" source="${source}" target="${target}">
-	<!-- <compilerarg value="-Xlint:unchecked" /> -->
-        <src path="src"/>
-        <classpath refid="synoptic.classpath"/>
-      </javac>
+    <target depends="clean" name="cleanall">
+        <ant antfile="build.xml" dir="${daikonizer.location}" inheritAll="false" target="clean"/>
     </target>
-    
-    <!--=====================================================================-->
-    <target name="jar" depends="build,util.hg-rev-extract">
-      <echo message="Embedding hg changeset number ${util.hg.revision}" />
-
-      <!-- Build a jar composed of compiled .class files. -->
-      <jar destfile="${synoptic.jarpath}"
-           basedir="./bin/"
-           includes="**/*.class">
-        <manifest>
-	  <attribute name="Manifest-Version" value="1.0" />
-	  <attribute name="Implementation-Title" value="synoptic" />
-	  <attribute name="Implementation-Version" value="0.1" />
-	  <attribute name="Main-Class" value="synoptic.main.SynopticMain" />
-	  <attribute name="Class-Path" value="${jar.liblist}" />
-	  <attribute name="ChangesetID" value="${util.hg.revision}" />
-	</manifest>
-      </jar>
+    <target depends="build-subprojects,build-project" name="build"/>
+    <target name="build-subprojects">
+        <ant antfile="build.xml" dir="${daikonizer.location}" inheritAll="false" target="build-project">
+            <propertyset>
+                <propertyref name="build.compiler"/>
+            </propertyset>
+        </ant>
     </target>
-    <!--====================================================================-->
-	
-    <!-- 
-	 Runs test(s) that match a regex partially defined by the
-	 -Djunit.include option from the command line. For example,
-
-	 $ ant -Djunit.include=Foo test
-
-	 Would run all test classes that match the regex '.*Foo.*(\.class)?$'
-
-
-         For example, to run just the unit tests, use:
-
-         $ ant -Djunit.include=units test
-
-
-	 Note: This searches for classes in synoptic's testing directory
-	 and executes all matching files across all subdirectories.
-      -->
-    <target name="test" depends="build"> 
-      <!-- If junit.include is not set, complain. -->
-      <fail unless="junit.include">Must supply a class name with -Djunit.include</fail>
-      <echo message="Looking for files matching '.*${junit.include}.*(\.class)?$' in bin/${synoptic.testdir}" />
-
-      <mkdir dir="${junit.output.dir}"/>
-
-      <!-- Build the file set and make sure it's not empty. -->
-      <property name="junit.regex" value=".*${junit.include}.*(\.class)?$" />
-      <condition property="dir.empty">
-	<length length="0">
-	  <fileset id="junit.include.fileset" dir="bin/" includes="${synoptic.testdir}">
-	    <filename regex="${junit.regex}"/>
-	  </fileset>
-	</length>
-      </condition>
-
-      <!-- If there were no files found, exit. -->
-      <fail if="dir.empty">No files matching ${junit.include} were found</fail>
-
-      <!-- Print the files to be run. -->
-      <echo>Running JUnit on these files:</echo>
-      <pathconvert pathsep="${line.separator}    --"             
-		   property="junit.include.path"             
-		   refid="junit.include.fileset">
-      </pathconvert>
-      <echo>    ${junit.include.path}</echo>
-      
-      <!-- Run junit on the found files. -->
-      <junit fork="no" printsummary="withOutAndErr" showoutput="true">
-	<classpath refid="synoptic.classpath"/>
-	<formatter type="xml"/>
-	<batchtest fork="yes" todir="${junit.output.dir}">
-	  <!-- Include all class files, then filter. -->
-	  <fileset refid="junit.include.fileset" />
-	</batchtest>
-      </junit>
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
+            <src path="src"/>
+            <classpath refid="synoptic.classpath"/>
+        </javac>
     </target>
-
-    <!--=====================================================================-->
-    <target name="tests" depends="build">
-      <mkdir dir="${junit.output.dir}"/>
-
-      <junit fork="no" printsummary="withOutAndErr" showoutput="true">
-	<classpath refid="synoptic.classpath"/>
-	<formatter type="xml"/>
-	
-	<batchtest fork="no" todir="${junit.output.dir}">
-	  <fileset dir="bin/">
-            <!-- TODO: use synoptic.testdir instead of the hardcoded path here-->
-	    <include name="synoptic/tests/units/*Tests.class"/>
-	    <include name="synoptic/tests/integration/*Tests.class"/>
-	  </fileset>
-	</batchtest>
-	
-      </junit>
+    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects">
+        <ant antfile="build.xml" dir="${dynoptic.location}" inheritAll="false" target="clean"/>
+        <ant antfile="build.xml" dir="${dynoptic.location}" inheritAll="false" target="build">
+            <propertyset>
+                <propertyref name="build.compiler"/>
+            </propertyset>
+        </ant>
     </target>
-    
-    <!--=====================================================================-->
-    <target name="junitreport">
-      <junitreport todir="${junit.output.dir}">
-        <fileset dir="${junit.output.dir}">
-          <include name="TEST-*.xml"/>
-        </fileset>
-        <report format="frames" todir="${junit.output.dir}"/>
-      </junitreport>
+    <target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
+        <copy todir="${ant.library.dir}">
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </copy>
+        <unzip dest="${ant.library.dir}">
+            <patternset includes="jdtCompilerAdapter.jar"/>
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </unzip>
     </target>
-
+    <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
+        <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
+        <antcall target="build"/>
+    </target>
 </project>

@@ -3,26 +3,17 @@
               Any modifications will be overwritten.
               To include a user specific buildfile here, simply create one in the same
               directory with the processing instruction <?eclipse.ant.import?>
-              as the first entry and export the buildfile again. --><project basedir="." default="build" name="xml-security-1_2_0">
+              as the first entry and export the buildfile again. --><project basedir="." default="build" name="jfreechart-1.0.15">
     <property environment="env"/>
-    <property name="xml-security-commons.location" value="../xml-security-commons"/>
     <property name="debuglevel" value="source,lines,vars"/>
-    <property name="target" value="1.7"/>
-    <property name="source" value="1.7"/>
-    <path id="xml-security-1_2_0.classpath">
+    <property name="target" value="1.6"/>
+    <property name="source" value="1.6"/>
+    <path id="jfreechart-1.0.15.classpath">
         <pathelement location="bin"/>
-        <pathelement location="${xml-security-commons.location}/libs/bc-jce-jdk13-114.jar"/>
-        <pathelement location="${xml-security-commons.location}/libs/commons-logging-api.jar"/>
-        <pathelement location="${xml-security-commons.location}/libs/commons-logging.jar"/>
-        <pathelement location="${xml-security-commons.location}/libs/log4j-1.2.8.jar"/>
-        <pathelement location="${xml-security-commons.location}/libs/style-apachexml.jar"/>
-        <pathelement location="${xml-security-commons.location}/libs/stylebook-1.0-b3_xalan-2.jar"/>
-        <pathelement location="${xml-security-commons.location}/libs/xalan.jar"/>
-        <pathelement location="${xml-security-commons.location}/libs/xercesImpl.jar"/>
-        <pathelement location="${xml-security-commons.location}/libs/xml-apis.jar"/>
-        <pathelement location="${xml-security-commons.location}/libs/xmlParserAPIs.jar"/>
-        <pathelement location="${xml-security-commons.location}/libs/junit3.8.1.jar"/>
-        <pathelement location="${xml-security-commons.location}/libs/ant.jar"/>
+        <pathelement location="lib/iText-2.1.5.jar"/>
+        <pathelement location="lib/jcommon-1.0.18.jar"/>
+        <pathelement location="lib/junit.jar"/>
+        <pathelement location="lib/servlet.jar"/>
     </path>
     <target name="init">
         <mkdir dir="bin"/>
@@ -50,7 +41,7 @@
         <javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
             <src path="src"/>
             <src path="tests"/>
-            <classpath refid="xml-security-1_2_0.classpath"/>
+            <classpath refid="jfreechart-1.0.15.classpath"/>
         </javac>
     </target>
     <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>

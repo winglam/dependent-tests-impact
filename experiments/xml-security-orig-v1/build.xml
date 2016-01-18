@@ -3,13 +3,13 @@
               Any modifications will be overwritten.
               To include a user specific buildfile here, simply create one in the same
               directory with the processing instruction <?eclipse.ant.import?>
-              as the first entry and export the buildfile again. --><project basedir="." default="build" name="xml-security-1_2_0">
+              as the first entry and export the buildfile again. --><project basedir="." default="build" name="xml-security-orig-v1">
     <property environment="env"/>
     <property name="xml-security-commons.location" value="../xml-security-commons"/>
     <property name="debuglevel" value="source,lines,vars"/>
-    <property name="target" value="1.7"/>
-    <property name="source" value="1.7"/>
-    <path id="xml-security-1_2_0.classpath">
+    <property name="target" value="1.6"/>
+    <property name="source" value="1.6"/>
+    <path id="xml-security-orig-v1.classpath">
         <pathelement location="bin"/>
         <pathelement location="${xml-security-commons.location}/libs/bc-jce-jdk13-114.jar"/>
         <pathelement location="${xml-security-commons.location}/libs/commons-logging-api.jar"/>
@@ -50,7 +50,7 @@
         <javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
             <src path="src"/>
             <src path="tests"/>
-            <classpath refid="xml-security-1_2_0.classpath"/>
+            <classpath refid="xml-security-orig-v1.classpath"/>
         </javac>
     </target>
     <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
