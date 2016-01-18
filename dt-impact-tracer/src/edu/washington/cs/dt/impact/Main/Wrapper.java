@@ -414,6 +414,7 @@ public class Wrapper {
 
             if (techniqueName == TECHNIQUE.PRIORITIZATION) {
                 FileTools.clearEnv(filesToDelete);
+                // TODO get total time
                 nameToTime = "\n\nTime each test takes to run in the new order:\n"
                         + ImpactMain.getResults(currentOrderTestList, true).getExecutionRecords().get(0).toString();
             }
@@ -445,7 +446,7 @@ public class Wrapper {
         outputArr.add("Total time (of all machines and iterations plus initial TestListGenerator): " + totalTime);
         if (techniqueName == TECHNIQUE.PARALLELIZATION) {
             outputArr.add("\n\nMax time: " + (maxTime + TLGTime));
-            outputArr.add("\n\nNumber of tests: " + numTests);
+            outputArr.add("\nNumber of tests: " + numTests);
         } else if (techniqueName == TECHNIQUE.PRIORITIZATION) {
             outputArr.add(nameToTime);
         }
@@ -459,10 +460,9 @@ public class Wrapper {
             BufferedWriter writer = null;
             try {
                 if (techniqueName == TECHNIQUE.PARALLELIZATION) {
-                    output = new FileWriter(outputFileName + "-" + techniqueName + "-" + coverage + "-" + order + "-"
-                            + numOfMachines);
+                    output = new FileWriter(outputFileName + numOfMachines);
                 } else {
-                    output = new FileWriter(outputFileName + "-" + techniqueName + "-" + coverage + "-" + order);
+                    output = new FileWriter(outputFileName);
                 }
                 writer = new BufferedWriter(output);
                 for (String line : outputArr) {
