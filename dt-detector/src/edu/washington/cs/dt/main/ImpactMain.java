@@ -61,7 +61,7 @@ public class ImpactMain {
                 }
             }
         } else {
-            System.err.println("No input test list is specified. Please use the format" + " -inputTest atestlistfile");
+            System.err.println("No input test list is specified. Please use the format" + " -inputTests atestlistfile");
             System.exit(0);
         }
 

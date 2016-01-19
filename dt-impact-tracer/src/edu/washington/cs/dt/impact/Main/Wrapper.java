@@ -1,7 +1,7 @@
 /**
  * Copyright 2015 University of Washington. All Rights Reserved.
  * @author Wing Lam
- * 
+ *
  *         Main class that relies on program arguments to generate a regression testing
  *         execution order. The following options are supported:
  *         -technique - prioritization, selection, parallelization
@@ -107,8 +107,8 @@ public class Wrapper {
                 System.exit(0);
             }
         } else {
-            System.err.println("No technique argument is specified."
-                    + " Please use the format: -technique aTechniqueName");
+            System.err.println(
+                    "No technique argument is specified." + " Please use the format: -technique aTechniqueName");
             System.exit(0);
         }
 
@@ -238,8 +238,8 @@ public class Wrapper {
                 System.exit(0);
             }
         } else {
-            System.err.println("No original order argument is specified."
-                    + " Please use the format: -origOrder aFileName");
+            System.err.println(
+                    "No original order argument is specified." + " Please use the format: -origOrder aFileName");
             System.exit(0);
         }
 
@@ -262,8 +262,8 @@ public class Wrapper {
                     System.exit(0);
                 }
             } else {
-                System.err.println("No old version CFG argument is specified."
-                        + " Please use the format: -oldVersCFG aDirPath");
+                System.err.println(
+                        "No old version CFG argument is specified." + " Please use the format: -oldVersCFG aDirPath");
                 System.exit(0);
             }
 
@@ -283,8 +283,8 @@ public class Wrapper {
                     System.exit(0);
                 }
             } else {
-                System.err.println("No new version CFG argument is specified."
-                        + " Please use the format: -newVersCFG aDirPath");
+                System.err.println(
+                        "No new version CFG argument is specified." + " Please use the format: -newVersCFG aDirPath");
                 System.exit(0);
             }
         }
@@ -372,8 +372,8 @@ public class Wrapper {
         long TLGTime = System.nanoTime() - start;
 
         String nameToTime = "";
-        Map<List<String>, Integer> testListToRemainDT = new HashMap<>();
-        Map<List<String>, Integer> testListToIdentifiedDT = new HashMap<>();
+        Map<List<String>, Integer> testListToNotFixedDT = new HashMap<>();
+        Map<List<String>, Integer> testListToFixedDT = new HashMap<>();
         Map<List<String>, Long> testListToTime = new HashMap<>();
         for (int i = 0; i < numOfMachines; i++) {
             start = System.nanoTime();
@@ -384,14 +384,14 @@ public class Wrapper {
             // CrossReferencer
             Set<String> changedTests = CrossReferencer.compareResults(nameToOrigResults, nameToTestResults, false);
 
-            Set<String> identifiedDT = new HashSet<>();
+            Set<String> fixedDT = new HashSet<>();
             if (resolveDependences) {
                 int counter = 0;
                 while (!changedTests.isEmpty()) {
                     System.out.println("iteration number: " + counter);
                     counter += 1;
                     String testName = changedTests.iterator().next();
-                    identifiedDT.add(testName);
+                    fixedDT.add(testName);
                     // DependentTestFinder
                     DependentTestFinder.runDTF(testName, nameToOrigResults.get(testName), currentOrderTestList,
                             origOrderTestList, filesToDelete, allDTList);
@@ -409,10 +409,10 @@ public class Wrapper {
             // capture end time
             long runTotal = System.nanoTime() - start;
             testListToTime.put(currentOrderTestList, runTotal);
-            testListToRemainDT.put(currentOrderTestList, changedTests.size());
-            testListToIdentifiedDT.put(currentOrderTestList, identifiedDT.size());
+            testListToNotFixedDT.put(currentOrderTestList, changedTests.size());
+            testListToFixedDT.put(currentOrderTestList, fixedDT.size());
 
-            if (techniqueName == TECHNIQUE.PRIORITIZATION) {
+            if (techniqueName == TECHNIQUE.PRIORITIZATION || techniqueName == TECHNIQUE.SELECTION) {
                 FileTools.clearEnv(filesToDelete);
                 // TODO get total time
                 nameToTime = "\n\nTime each test takes to run in the new order:\n"
@@ -433,8 +433,12 @@ public class Wrapper {
             numTests += testList.size();
             maxTime = Math.max(maxTime, testListTime);
             outputArr.add("Execution time (of 1 machine and its iterations): " + testListTime + "\n");
-            outputArr.add("Remaining number of DTs: " + testListToRemainDT.get(testList) + "\n");
-            outputArr.add("Identified number of DTs: " + testListToIdentifiedDT.get(testList) + "\n");
+            if (techniqueName == TECHNIQUE.SELECTION) {
+                outputArr.add("Number of tests selected out of total in original order: " + testList.size() + " / "
+                        + origOrderTestList.size() + "\n");
+            }
+            outputArr.add("Number of DTs not fixed: " + testListToNotFixedDT.get(testList) + "\n");
+            outputArr.add("Number of DTs fixed: " + testListToFixedDT.get(testList) + "\n");
             outputArr.add("Test order list:\n");
             outputArr.add(testList.toString() + "\n");
             if (allDTList != null) {
@@ -446,8 +450,9 @@ public class Wrapper {
         outputArr.add("Total time (of all machines and iterations plus initial TestListGenerator): " + totalTime);
         if (techniqueName == TECHNIQUE.PARALLELIZATION) {
             outputArr.add("\n\nMax time: " + (maxTime + TLGTime));
-            outputArr.add("\nNumber of tests: " + numTests);
-        } else if (techniqueName == TECHNIQUE.PRIORITIZATION) {
+            outputArr.add("\nTotal number of tests executed in all machines out of total in original order: " + numTests
+                    + " / " + origOrderTestList.size());
+        } else if (techniqueName == TECHNIQUE.PRIORITIZATION || techniqueName == TECHNIQUE.SELECTION) {
             outputArr.add(nameToTime);
         }
 
