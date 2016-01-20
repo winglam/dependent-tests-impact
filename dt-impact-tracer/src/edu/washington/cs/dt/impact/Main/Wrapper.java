@@ -258,7 +258,8 @@ public class Wrapper {
                 selectionOutput1 = new File(argsList.get(oldVersCFGNameIndex));
                 if (!selectionOutput1.isDirectory()) {
                     System.err.println("Old version CFG argument is specified but the directory"
-                            + " path is invalid. Please check the directory path.");
+                            + " path is invalid. Please check the directory path. The input path was: "
+                            + selectionOutput1);
                     System.exit(0);
                 }
             } else {
@@ -279,7 +280,8 @@ public class Wrapper {
                 selectionOutput2 = new File(argsList.get(newVersCFGNameIndex));
                 if (!selectionOutput2.isDirectory()) {
                     System.err.println("New version CFG argument is specified but the directory"
-                            + " path is invalid. Please check the directory path.");
+                            + " path is invalid. Please check the directory path. The input path was: "
+                            + selectionOutput2);
                     System.exit(0);
                 }
             } else {
