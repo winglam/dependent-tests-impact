@@ -2,7 +2,7 @@
  * Copyright 2014 University of Washington. All Rights Reserved.
  * @author Wing Lam
  * 
- * Data class representing a test case.
+ *         Data class representing a test case.
  */
 
 package edu.washington.cs.dt.impact.data;
@@ -18,14 +18,14 @@ public class TestFunctionStatement extends Observable implements Comparable<Test
 
     private String methodName;
     // all lines that this test method contains
-    private Set<String> allLines;
+    private final Set<String> allLines;
     // current lines of this test method that have yet to be covered
-    private Set<String> currentLines;
+    private final Set<String> currentLines;
 
     // lines belonging to this test's and its dependencies'
-    private Set<Set<String>> setOfCurrentLines;
+    private final Set<Set<String>> setOfCurrentLines;
     // tests that this test depends on
-    private Set<TestFunctionStatement> observers;
+    private final Set<TestFunctionStatement> observers;
 
     // list of tests that when executed before reveals methodName as a dependent test
     protected Set<TestFunctionStatement> execBefore;
@@ -45,8 +45,8 @@ public class TestFunctionStatement extends Observable implements Comparable<Test
 
     /**
      * @param isBefore
-     *          true if tmd reveals this test as a dependent test when executed before this test
-     *          false if tmd reveals this test as a dependent test when executed after this test.
+     *            true if tmd reveals this test as a dependent test when executed before this test
+     *            false if tmd reveals this test as a dependent test when executed after this test.
      */
     public void addDependentTest(TestFunctionStatement tmd, boolean isBefore) {
         if (tmd != null) {
@@ -105,7 +105,15 @@ public class TestFunctionStatement extends Observable implements Comparable<Test
     }
 
     public void retainLines(Set<String> lines) {
-        currentLines.retainAll(lines);
+        // currentLines.retainAll(lines);
+        Set<String> newLines = new HashSet<String>();
+        for (String line : currentLines) {
+            if (lines.contains(line)) {
+                newLines.add(line);
+            }
+        }
+        currentLines.clear();
+        currentLines.addAll(newLines);
     }
 
     public Set<String> getLines() {
@@ -146,7 +154,7 @@ public class TestFunctionStatement extends Observable implements Comparable<Test
     @SuppressWarnings("unchecked")
     @Override
     public void update(Observable o, Object arg) {
-        if (!(arg instanceof HashSet<?>)){
+        if (!(arg instanceof HashSet<?>)) {
             throw new RuntimeException("Observer received incompatible arg.");
         }
 
