@@ -215,11 +215,6 @@ public class RandomizeWrapper {
 
         // capture start time
         long start = System.nanoTime();
-
-        // TestListGenerator
-        Test testObj = new Prioritization(order, outputFileName, testInputDir, COVERAGE.STATEMENT, dependentTestFile,
-                getCoverage, origOrder);
-
         long TLGTime = System.nanoTime() - start;
 
         Map<List<String>, String> testListToDTList = new HashMap<>();
@@ -242,8 +237,8 @@ public class RandomizeWrapper {
                 origOrderCopy.remove(randomNumSelected);
             }
 
-            testObj = new Prioritization(order, outputFileName, COVERAGE.STATEMENT, allDTList, getCoverage,
-                    origOrderCopy, testInputDir);
+            Test testObj = new Prioritization(order, outputFileName, COVERAGE.STATEMENT, allDTList, getCoverage,
+                    origOrderCopy, testInputDir, true);
             List<String> currentOrderTestList = getCurrentTestList(testObj, 0);
 
             // ImpactMain
