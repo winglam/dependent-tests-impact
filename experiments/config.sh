@@ -1,41 +1,40 @@
-coverages=(statement function)
-orders=(absolute relative)
+#coverages=(statement function)
+#orders=(absolute relative)
 impactJarCP=impact-tools/impact.jar
 testListGenClass=edu.washington.cs.dt.impact.tools.TestListGenerator
 crossReferenceClass=edu.washington.cs.dt.impact.tools.CrossReferencer
 machines=(2 4 8 16)
 parallelOrders=($testType-order time)
-selectionOrders=(absolute relative)
 
 #experiments=(crystal synoptic jfreechart jodatime xml-security)
 #testTypes=(orig auto)
-#coverages=(statement)
-experiments=(crystal synoptic xml-security)
+orders=(absolute relative)
+coverages=(statement function)
+experiments=(jfreechart jodatime)
 testTypes=(auto)
 
 #directories=(crystalvc dynoptic jfreechart-1.0.15 jodatime-b609d7d66d xml-security-orig-v1)
 #experimentsCP=(impact-tools/*:bin/:lib/* impact-tools/*:bin/:../synoptic/lib/*:../synoptic/bin/:../daikonizer/bin/ impact-tools/*:bin/:lib/* impact-tools/*:bin/:resources/:lib/* impact-tools/*:bin/:../xml-security-commons/bin/:data/:../xml-security-commons/libs/*)
 #sootCP=(impact-tools/*:sootOutput/:lib/* impact-tools/*:sootOutput/:../synoptic/lib/*:../synoptic/bin/:../daikonizer/bin/ impact-tools/*:sootOutput/:lib/* impact-tools/*:sootOutput/:resources/:lib/* impact-tools/*:sootOutput/:../xml-security-commons/bin/:data/:../xml-security-commons/libs/*)
-directories=(crystalvc dynoptic xml-security-orig-v1)
-experimentsCP=(impact-tools/*:bin/:lib/* impact-tools/*:bin/:../synoptic/lib/*:../synoptic/bin/:../daikonizer/bin/ impact-tools/*:bin/:../xml-security-commons/bin/:data/:../xml-security-commons/libs/*)
-sootCP=(impact-tools/*:sootOutput/:lib/* impact-tools/*:sootOutput/:../synoptic/lib/*:../synoptic/bin/:../daikonizer/bin/ impact-tools/*:sootOutput/:../xml-security-commons/bin/:data/:../xml-security-commons/libs/*)
-
+directories=(jfreechart-1.0.15 jodatime-b609d7d66d)
+experimentsCP=(impact-tools/*:bin/:lib/* impact-tools/*:bin/:resources/:lib/*)
+sootCP=(impact-tools/*:sootOutput/:lib/* impact-tools/*:sootOutput/:resources/:lib/*)
 
 #newDirectories=(crystal dynoptic-ea407ba0a750 jfreechart-1.0.16 jodatime-d6791cb5f9 xml-security-1_2_0)
 #newExperimentsCP=(crystal/impact-tools/*:crystal/bin/:crystal/libs/lib/* dynoptic-ea407ba0a750/impact-tools/*:dynoptic-ea407ba0a750/bin/:synoptic/lib/*:synoptic-ea407ba0a750/bin/:daikonizer-ea407ba0a750/bin/ jfreechart-1.0.16/impact-tools/*:jfreechart-1.0.16/bin/:jfreechart-1.0.16/lib/* jodatime-d6791cb5f9/impact-tools/*:jodatime-d6791cb5f9/bin/:jodatime-d6791cb5f9/resources/:jodatime-d6791cb5f9/lib/* xml-security-1_2_0/impact-tools/*:xml-security-1_2_0/bin/:xml-security-commons/bin/:xml-security-1_2_0/data/:xml-security-commons/libs/*)
 #instrumentNewExperimentsCP=(impact-tools/*:bin/:libs/lib/* impact-tools/*:bin/:../synoptic/lib/*:../synoptic-ea407ba0a750/bin/:../daikonizer-ea407ba0a750/bin/ impact-tools/*:bin/:lib/* impact-tools/*:bin/:resources/:lib/* impact-tools/*:bin/:../xml-security-commons/bin/:data/:../xml-security-commons/libs/*)
 #oldExperimentsCP=(crystalvc/impact-tools/*:crystalvc/bin/:crystalvc/lib/* dynoptic/impact-tools/*:dynoptic/bin/:synoptic/lib/*:synoptic/bin/:daikonizer/bin/ jfreechart-1.0.15/impact-tools/*:jfreechart-1.0.15/bin/:jfreechart-1.0.15/lib/* jodatime-b609d7d66d/impact-tools/*:jodatime-b609d7d66d/bin/:jodatime-b609d7d66d/resources/:jodatime-b609d7d66d/lib/* xml-security-orig-v1/impact-tools/*:xml-security-orig-v1/bin/:xml-security-commons/bin/:xml-security-orig-v1/data/:xml-security-commons/libs/*)
 
-newDirectories=(crystal dynoptic-ea407ba0a750 xml-security-1_2_0)
-newExperimentsCP=(crystal/impact-tools/*:crystal/bin/:crystal/libs/lib/* dynoptic-ea407ba0a750/impact-tools/*:dynoptic-ea407ba0a750/bin/:synoptic/lib/*:synoptic-ea407ba0a750/bin/:daikonizer-ea407ba0a750/bin/ xml-security-1_2_0/impact-tools/*:xml-security-1_2_0/bin/:xml-security-commons/bin/:xml-security-1_2_0/data/:xml-security-commons/libs/*)
-instrumentNewExperimentsCP=(impact-tools/*:bin/:libs/lib/* impact-tools/*:bin/:../synoptic/lib/*:../synoptic-ea407ba0a750/bin/:../daikonizer-ea407ba0a750/bin/ impact-tools/*:bin/:../xml-security-commons/bin/:data/:../xml-security-commons/libs/*)
-oldExperimentsCP=(crystalvc/impact-tools/*:crystalvc/bin/:crystalvc/lib/* dynoptic/impact-tools/*:dynoptic/bin/:synoptic/lib/*:synoptic/bin/:daikonizer/bin/ xml-security-orig-v1/impact-tools/*:xml-security-orig-v1/bin/:xml-security-commons/bin/:xml-security-orig-v1/data/:xml-security-commons/libs/*)
+newDirectories=(jfreechart-1.0.16 jodatime-d6791cb5f9)
+newExperimentsCP=(jfreechart-1.0.16/impact-tools/*:jfreechart-1.0.16/bin/:jfreechart-1.0.16/lib/* jodatime-d6791cb5f9/impact-tools/*:jodatime-d6791cb5f9/bin/:jodatime-d6791cb5f9/resources/:jodatime-d6791cb5f9/lib/*)
+instrumentNewExperimentsCP=(impact-tools/*:bin/:lib/* impact-tools/*:bin/:resources/:lib/*)
+oldExperimentsCP=(jfreechart-1.0.15/impact-tools/*:jfreechart-1.0.15/bin/:jfreechart-1.0.15/lib/* jodatime-b609d7d66d/impact-tools/*:jodatime-b609d7d66d/bin/:jodatime-b609d7d66d/resources/:jodatime-b609d7d66d/lib/*)
 
 #compileCP=(bin/:lib/* bin/:../synoptic/lib/*:../synoptic/bin/:../daikonizer/bin/ impact-tools/*:bin/:lib/* bin/:resources/:lib/* bin/:../xml-security-commons/bin/:data/:../xml-security-commons/libs/*)
 #newCompileCP=(bin/:lib/* bin/:../synoptic/lib/*:../synoptic/bin/:../daikonizer/bin/ impact-tools/*:bin/:lib/* bin/:resources/:lib/* bin/:../xml-security-commons/bin/:data/:../xml-security-commons/libs/*)
 
-compileCP=(bin/:lib/* bin/:../synoptic/lib/*:../synoptic/bin/:../daikonizer/bin/ bin/:../xml-security-commons/bin/:data/:../xml-security-commons/libs/*)
-newCompileCP=(bin/:lib/* bin/:../synoptic/lib/*:../synoptic/bin/:../daikonizer/bin/ bin/:../xml-security-commons/bin/:data/:../xml-security-commons/libs/*)
+compileCP=(impact-tools/*:bin/:lib/* bin/:resources/:lib/*)
+newCompileCP=(impact-tools/*:bin/:lib/* bin/:resources/:lib/*)
 
 
 function clearTemp() {
@@ -198,19 +197,20 @@ function parallelCoveragesOrders() {
 
 function selectionRunCoveragesOrders() {
   for i in "${coverages[@]}"; do
-    for j in "${selectionOrders[@]}"; do
+    for j in "${orders[@]}"; do
       if [ "$6" = true ] ; then
-        java -Xms512m -Xmx1g -cp $impactJarCP $testListGenClass -technique selection -coverage $i -order $j -outputFile $5/$1-ts-$i-$j.txt -oldVersCFG $4/selectionOutput -newVersCFG $5/selectionOutput -testInputDir $4/sootTestOutput -dependentTestFile $4/$1-$3-dt
+        java -Xms512m -Xmx1g -cp $impactJarCP $testListGenClass -technique selection -coverage $i -order $j -outputFile $5/$1-ts-$i-$j.txt -oldVersCFG $4/selectionOutput -newVersCFG $5/selectionOutput -testInputDir $4/sootTestOutput -origOrder $5/$1-$3-order
+        #-dependentTestFile $1-$3-DT-selection
       else
         java -Xms512m -Xmx1g -cp $impactJarCP $testListGenClass -technique selection -coverage $i -order $j -outputFile $5/$1-ts-$i-$j.txt -oldVersCFG $4/selectionOutput -newVersCFG $5/selectionOutput -testInputDir $4/sootTestOutput
       fi
       cd $5
       clearEnv
-      java -cp $2 edu.washington.cs.dt.main.ImpactMain $1-ts-$i-$j.txt > $1-ts-$i-$j-results.txt
+      java -cp $2 edu.washington.cs.dt.main.ImpactMain -inputTests $1-ts-$i-$j.txt > $1-ts-$i-$j-results.txt
       rm -rf $1-ts-$i-$j.txt
 
       echo $1"-ts-"$i"-"$j"-results.txt" >> $1-ts-summary.txt
-      java -cp $impactJarCP $crossReferenceClass -origOrder $1-$3-order-results.txt -testOrder $1-ts-$i-$j-results.txt >> $1-ts-summary.txt
+      java -cp $2 $crossReferenceClass -origOrder $1-$3-order-results.txt -testOrder $1-ts-$i-$j-results.txt >> $1-ts-summary.txt
       echo "" >> $1-ts-summary.txt
       cd ..
     done

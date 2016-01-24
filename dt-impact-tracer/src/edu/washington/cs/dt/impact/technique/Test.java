@@ -2,7 +2,7 @@
  * Copyright 2014 University of Washington. All Rights Reserved.
  * @author Wing Lam
  * 
- * Contains methods and fields used by all test techniques.
+ *         Contains methods and fields used by all test techniques.
  */
 
 package edu.washington.cs.dt.impact.technique;
@@ -35,7 +35,7 @@ public class Test {
     protected List<TestFunctionStatement> methodList;
     protected List<TestFunctionStatement> allMethodList;
     protected Standard orderObj;
-    private Map<String, Set<String>> testToAllLines;
+    private final Map<String, Set<String>> testToAllLines;
 
     public Test(File folder, COVERAGE coverage, File dependentTestsFile) {
         allCoverageLines = new HashSet<String>();
@@ -50,8 +50,10 @@ public class Test {
         }
     }
 
-    public Test(COVERAGE coverage, List<String> allDTList) {
+    public Test(COVERAGE coverage, List<String> allDTList, File folder) {
+        testToAllLines = new HashMap<String, Set<String>>();
         allCoverageLines = new HashSet<String>();
+        setAllLines(folder);
         allMethodList = listFilesForFolder(coverage);
         methodList = new ArrayList<TestFunctionStatement>(allMethodList);
         if (allDTList != null) {
@@ -110,8 +112,8 @@ public class Test {
         }
     }
 
-    private void parseDependentTestsList(List<String> allDTList,
-            Map<String, List<String>>  execBefore, Map<String, List<String>>  execAfter) {
+    private void parseDependentTestsList(List<String> allDTList, Map<String, List<String>> execBefore,
+            Map<String, List<String>> execAfter) {
         for (int j = 0; j < allDTList.size();) {
             String line = allDTList.get(j);
             if (line.length() == 0) {
@@ -134,7 +136,7 @@ public class Test {
             // tests reveal dependence when executed before testName
             line = allDTList.get(j);
             String beforeTestsStr = line.split(EXECUTE_AFTER)[1];
-            if (beforeTestsStr.length() > 2 ) {
+            if (beforeTestsStr.length() > 2) {
                 beforeTestsStr = beforeTestsStr.substring(1, beforeTestsStr.length() - 1);
                 execBefore.put(testName, Arrays.asList(beforeTestsStr.split(TEST_SEP)));
             }
@@ -142,8 +144,8 @@ public class Test {
         }
     }
 
-    private void parseDependentTestsFile(File dependentTestsFile,
-            Map<String, List<String>>  execBefore, Map<String, List<String>>  execAfter) {
+    private void parseDependentTestsFile(File dependentTestsFile, Map<String, List<String>> execBefore,
+            Map<String, List<String>> execAfter) {
         BufferedReader br;
         try {
             br = new BufferedReader(new FileReader(dependentTestsFile));
@@ -172,7 +174,7 @@ public class Test {
                 // tests reveal dependence when executed before testName
                 line = br.readLine();
                 String beforeTestsStr = line.split(EXECUTE_AFTER)[1];
-                if (beforeTestsStr.length() > 2 ) {
+                if (beforeTestsStr.length() > 2) {
                     beforeTestsStr = beforeTestsStr.substring(1, beforeTestsStr.length() - 1);
                     execBefore.put(testName, Arrays.asList(beforeTestsStr.split(TEST_SEP)));
                 }
@@ -185,7 +187,7 @@ public class Test {
         }
     }
 
-    private List<TestFunctionStatement> listFilesForFolder(final COVERAGE coverage ) {
+    private List<TestFunctionStatement> listFilesForFolder(final COVERAGE coverage) {
         List<TestFunctionStatement> methodList = new LinkedList<TestFunctionStatement>();
         for (String testName : testToAllLines.keySet()) {
             TestFunctionStatement methodData = new TestFunctionStatement(testName);
@@ -252,20 +254,19 @@ public class Test {
         }
     }
 
-    protected void parseOrigOrderListToMethodList(List<String> origOrder, Map<String, TestFunctionStatement> nameToMethodData) {
+    protected void parseOrigOrderListToMethodList(List<String> origOrder,
+            Map<String, TestFunctionStatement> nameToMethodData) {
         methodList.clear();
         for (String line : origOrder) {
             if (nameToMethodData.containsKey(line.trim())) {
                 methodList.add(nameToMethodData.get(line.trim()));
             }
-            
+
         }
     }
 
-    protected Map<String, TestFunctionStatement> getNameToMethodData(
-            List<TestFunctionStatement> methodList) {
-        Map<String, TestFunctionStatement> nameToMethodData =
-                new HashMap<String, TestFunctionStatement>();
+    protected Map<String, TestFunctionStatement> getNameToMethodData(List<TestFunctionStatement> methodList) {
+        Map<String, TestFunctionStatement> nameToMethodData = new HashMap<String, TestFunctionStatement>();
         for (TestFunctionStatement methodData : methodList) {
             nameToMethodData.put(methodData.getName(), methodData);
         }
