@@ -3,7 +3,7 @@ source ./config.sh
 compileSource
 compileNewSource
 
-index=1
+index=0
 count=${#experiments[@]}
 ARRAY=()
 
@@ -35,17 +35,17 @@ while [ "$index" -lt "$count" ]; do
         #java -cp ${oldExperimentsCP[$index]} edu.washington.cs.dt.impact.Main.Wrapper -technique selection -coverage $i -order $j -origOrder ${directories[$index]}/${experiments[$index]}-$k-order -testInputDir ${directories[$index]}/sootTestOutput -filesToDelete ${directories[$index]}/${experiments[$index]}-env-files -outputFile ${experiments[$index]}-$k-selection-oldVers-$i-$j -oldVersCFG ${directories[$index]}/selectionOutput -newVersCFG ${newDirectories[$index]}/selectionOutput
 
         echo 'Running selection on V2 without resolveDependences and with dependentTestFile'
-        java -Xms1g -Xmx2g -cp ${newExperimentsCP[$index]} edu.washington.cs.dt.impact.Main.Wrapper -technique selection -coverage $i -order $j -origOrder ${newDirectories[$index]}/${experiments[$index]}-$k-order -testInputDir ${directories[$index]}/sootTestOutput -filesToDelete ${newDirectories[$index]}/${experiments[$index]}-env-files -outputFile ${experiments[$index]}-$k-selection-newVers-$i-$j-with-DT -oldVersCFG ${directories[$index]}/selectionOutput -newVersCFG ${newDirectories[$index]}/selectionOutput -dependentTestFile ${experiments[$index]}-$k-DT-selection
+        java -Xms1g -Xmx2g -cp ${newExperimentsCP[$index]} edu.washington.cs.dt.impact.Main.Wrapper -technique selection -coverage $i -order $j -origOrder ${newDirectories[$index]}/${experiments[$index]}-$k-order -testInputDir ${directories[$index]}/sootTestOutput -filesToDelete ${newDirectories[$index]}/${experiments[$index]}-env-files -outputFile ${experiments[$index]}-$k-selection-newVers-$i-$j-with-DT -oldVersCFG ${directories[$index]}/selectionOutput -newVersCFG ${newDirectories[$index]}/selectionOutput -dependentTestFile crystal-auto-DT-selection-100-prioritization-250-selection-100
         #echo 'Running selection on V2 without resolveDependences and without dependentTestFile'
         #java -Xms1g -Xmx2g -cp ${newExperimentsCP[$index]} edu.washington.cs.dt.impact.Main.Wrapper -technique selection -coverage $i -order $j -origOrder ${newDirectories[$index]}/${experiments[$index]}-$k-order -testInputDir ${directories[$index]}/sootTestOutput -filesToDelete ${newDirectories[$index]}/${experiments[$index]}-env-files -outputFile ${experiments[$index]}-$k-selection-newVers-$i-$j-no-DT -oldVersCFG ${directories[$index]}/selectionOutput -newVersCFG ${newDirectories[$index]}/selectionOutput
-        echo 'Running selection on V2 with resolveDependences and with dependentTestFile'
-        java -Xms1g -Xmx2g -cp ${newExperimentsCP[$index]} edu.washington.cs.dt.impact.Main.Wrapper -technique selection -coverage $i -order $j -resolveDependences -origOrder ${newDirectories[$index]}/${experiments[$index]}-$k-order -testInputDir ${directories[$index]}/sootTestOutput -filesToDelete ${newDirectories[$index]}/${experiments[$index]}-env-files -outputFile ${experiments[$index]}-$k-fixed-DT-selection-newVers-$i-$j -oldVersCFG ${directories[$index]}/selectionOutput -newVersCFG ${newDirectories[$index]}/selectionOutput -dependentTestFile ${experiments[$index]}-$k-DT-selection
+        #echo 'Running selection on V2 with resolveDependences and with dependentTestFile'
+        #java -Xms1g -Xmx2g -cp ${newExperimentsCP[$index]} edu.washington.cs.dt.impact.Main.Wrapper -technique selection -coverage $i -order $j -resolveDependences -origOrder ${newDirectories[$index]}/${experiments[$index]}-$k-order -testInputDir ${directories[$index]}/sootTestOutput -filesToDelete ${newDirectories[$index]}/${experiments[$index]}-env-files -outputFile ${experiments[$index]}-$k-fixed-DT-selection-newVers-$i-$j -oldVersCFG ${directories[$index]}/selectionOutput -newVersCFG ${newDirectories[$index]}/selectionOutput -dependentTestFile ${experiments[$index]}-$k-DT-selection
         #-dependentTestFile ${experiments[$index]}-$k-DT-selection-oldVers-$i-$j
 
         ARRAY+=(${directories[$index]}/${experiments[$index]}-$k-selection-$i-$j)
       done
     done
-    #clearSelectionTemp ${directories[$index]} ${newDirectories[$index]}
+    clearSelectionTemp ${directories[$index]} ${newDirectories[$index]}
   done
 
   let "index++"

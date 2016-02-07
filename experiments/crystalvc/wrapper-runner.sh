@@ -9,8 +9,8 @@ source ../config.sh
 #instrumentFiles $experimentCP
 
 # generate sootTestOutput
-java -cp impact-tools/*:sootOutput/:lib/* edu.washington.cs.dt.main.ImpactMain $experiment-$testType-order
+#java -cp impact-tools/*:sootOutput/:lib/* edu.washington.cs.dt.main.ImpactMain $experiment-$testType-order
 
-#runPrioritizationWrapper $experiment $experimentCP $testType $dependentFree
+runPrioritizationWrapper $experiment $experimentCP $testType $dependentFree
 
 #clearTemp
