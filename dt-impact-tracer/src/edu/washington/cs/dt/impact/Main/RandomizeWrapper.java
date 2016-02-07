@@ -226,7 +226,7 @@ public class RandomizeWrapper {
 
         Random rand = new Random();
         for (int i = 0; i < randomTimes; i++) {
-
+            System.out.println("Iteration: " + i + " / " + randomTimes);
             List<String> origOrderCopy = new ArrayList<>();
             for (String s : origOrderTestList) {
                 origOrderCopy.add(s.toString());
