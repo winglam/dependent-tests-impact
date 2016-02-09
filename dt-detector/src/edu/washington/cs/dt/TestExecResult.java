@@ -4,10 +4,13 @@
  */
 package edu.washington.cs.dt;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+
+import edu.washington.cs.dt.main.ImpactMain;
 
 /**
  * TODO should add an exception stack trace here
@@ -70,8 +73,19 @@ public class TestExecResult {
         return nameToResultsMap;
     }
 
+    public List<String> getValues() {
+        List<String> retValues = new ArrayList<>();
+        for (OneTestExecResult result : singleRun.values()) {
+            retValues.add(result.toString());
+        }
+        return retValues;
+    }
+
     @Override
     public String toString() {
+        if (ImpactMain.useTimer) {
+            return singleRun.values().toString();
+        }
         return this.singleRun.toString();
     }
 }

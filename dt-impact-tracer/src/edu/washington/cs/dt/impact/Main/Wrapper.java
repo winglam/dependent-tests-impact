@@ -1,7 +1,7 @@
 /**
  * Copyright 2015 University of Washington. All Rights Reserved.
  * @author Wing Lam
- *
+ * 
  *         Main class that relies on program arguments to generate a regression testing
  *         execution order. The following options are supported:
  *         -technique - prioritization, selection, parallelization
@@ -32,7 +32,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
@@ -42,6 +41,7 @@ import java.util.Set;
 import edu.washington.cs.dt.RESULT;
 import edu.washington.cs.dt.TestExecResults;
 import edu.washington.cs.dt.impact.data.TestFunctionStatement;
+import edu.washington.cs.dt.impact.data.WrapperTestList;
 import edu.washington.cs.dt.impact.technique.Parallelization;
 import edu.washington.cs.dt.impact.technique.Prioritization;
 import edu.washington.cs.dt.impact.technique.Selection;
@@ -107,8 +107,8 @@ public class Wrapper {
                 System.exit(0);
             }
         } else {
-            System.err.println(
-                    "No technique argument is specified." + " Please use the format: -technique aTechniqueName");
+            System.err.println("No technique argument is specified."
+                    + " Please use the format: -technique aTechniqueName");
             System.exit(0);
         }
 
@@ -238,8 +238,8 @@ public class Wrapper {
                 System.exit(0);
             }
         } else {
-            System.err.println(
-                    "No original order argument is specified." + " Please use the format: -origOrder aFileName");
+            System.err.println("No original order argument is specified."
+                    + " Please use the format: -origOrder aFileName");
             System.exit(0);
         }
 
@@ -263,8 +263,8 @@ public class Wrapper {
                     System.exit(0);
                 }
             } else {
-                System.err.println(
-                        "No old version CFG argument is specified." + " Please use the format: -oldVersCFG aDirPath");
+                System.err.println("No old version CFG argument is specified."
+                        + " Please use the format: -oldVersCFG aDirPath");
                 System.exit(0);
             }
 
@@ -285,8 +285,8 @@ public class Wrapper {
                     System.exit(0);
                 }
             } else {
-                System.err.println(
-                        "No new version CFG argument is specified." + " Please use the format: -newVersCFG aDirPath");
+                System.err.println("No new version CFG argument is specified."
+                        + " Please use the format: -newVersCFG aDirPath");
                 System.exit(0);
             }
         }
@@ -344,9 +344,7 @@ public class Wrapper {
             filesToDeleteStr = argsList.get(filesToDeleteFileIndex);
         }
 
-        // TODO handle the case for getting coverage information on tests
-        // and how to output to a file.
-        boolean getCoverage = false;
+        boolean getCoverage = argsList.contains("-getCoverage");
 
         List<String> filesToDelete = FileTools.parseFileToList(new File(filesToDeleteStr));
         List<String> origOrderTestList = FileTools.parseFileToList(origOrder);
@@ -358,7 +356,7 @@ public class Wrapper {
         // TestListGenerator
         Test testObj = null;
         if (techniqueName == TECHNIQUE.PRIORITIZATION) {
-            testObj = new Prioritization(order, outputFileName, testInputDir, coverage, dependentTestFile, getCoverage,
+            testObj = new Prioritization(order, outputFileName, testInputDir, coverage, dependentTestFile, false,
                     origOrder);
         } else if (techniqueName == TECHNIQUE.SELECTION) {
             testObj = new Selection(order, outputFileName, testInputDir, coverage, selectionOutput1, selectionOutput2,
@@ -373,13 +371,11 @@ public class Wrapper {
         }
         long TLGTime = System.nanoTime() - start;
 
-        String nameToTime = "";
-        Map<List<String>, Integer> testListToNotFixedDT = new HashMap<>();
-        Map<List<String>, Integer> testListToFixedDT = new HashMap<>();
-        Map<List<String>, Long> testListToTime = new HashMap<>();
+        List<WrapperTestList> listTestList = new ArrayList<>();
         for (int i = 0; i < numOfMachines; i++) {
             start = System.nanoTime();
 
+            WrapperTestList testList = new WrapperTestList();
             List<String> currentOrderTestList = getCurrentTestList(testObj, i);
             // ImpactMain
             Map<String, RESULT> nameToTestResults = getCurrentOrderTestListResults(currentOrderTestList, filesToDelete);
@@ -410,15 +406,22 @@ public class Wrapper {
 
             // capture end time
             long runTotal = System.nanoTime() - start;
-            testListToTime.put(currentOrderTestList, runTotal);
-            testListToNotFixedDT.put(currentOrderTestList, changedTests.size());
-            testListToFixedDT.put(currentOrderTestList, fixedDT.size());
+            testList.setTotalTime(runTotal);
+            testList.setNumNotFixedDT(changedTests.size());
+            testList.setNumFixedDT(fixedDT.size());
+            testList.setTestList(currentOrderTestList);
 
-            if (techniqueName == TECHNIQUE.PRIORITIZATION || techniqueName == TECHNIQUE.SELECTION) {
+            if (getCoverage) {
+                // Get time each test took
+                List<String> timeEachTest = ImpactMain.getResults(currentOrderTestList, true).getExecutionRecords()
+                        .get(0).getValues();
                 FileTools.clearEnv(filesToDelete);
-                // TODO get total time
-                nameToTime = "\n\nTime each test takes to run in the new order:\n"
-                        + ImpactMain.getResults(currentOrderTestList, true).getExecutionRecords().get(0).toString();
+                testList.setTimeEachTest(timeEachTest.toString());
+
+                // Get coverage each test achieved
+                List<String> coverageEachTest = getCurrentCoverage(testObj, i);
+                testList.setCoverage(coverageEachTest);
+                testList.setAPFD(getAPFD(timeEachTest, coverageEachTest));
             }
         }
 
@@ -429,33 +432,38 @@ public class Wrapper {
         long testListTime;
         int numTests = 0;
         List<String> outputArr = new ArrayList<>();
-        for (List<String> testList : testListToTime.keySet()) {
-            testListTime = testListToTime.get(testList);
+        for (WrapperTestList testList : listTestList) {
+            testListTime = testList.getTotalTime();
             totalTime += testListTime;
-            numTests += testList.size();
+            numTests += testList.getTestList().size();
             maxTime = Math.max(maxTime, testListTime);
             outputArr.add("Execution time (of 1 machine and its iterations): " + testListTime + "\n");
-            if (techniqueName == TECHNIQUE.SELECTION) {
-                outputArr.add("Number of tests selected out of total in original order: " + testList.size() + " / "
-                        + origOrderTestList.size() + "\n");
+            outputArr.add("Number of tests selected out of total in original order: " + testList.getTestList().size()
+                    + " / " + origOrderTestList.size() + "\n");
+            outputArr.add("Number of DTs not fixed: " + testList.getNumNotFixedDT() + "\n");
+            outputArr.add("Number of DTs fixed: " + testList.getNumFixedDT() + "\n");
+            if (getCoverage) {
+                outputArr.add("APFD value: " + testList.getAPFD() + "\n");
             }
-            outputArr.add("Number of DTs not fixed: " + testListToNotFixedDT.get(testList) + "\n");
-            outputArr.add("Number of DTs fixed: " + testListToFixedDT.get(testList) + "\n");
             outputArr.add("Test order list:\n");
             outputArr.add(testList.toString() + "\n");
             if (allDTList != null) {
                 outputArr.add("\nDependent test list:\n");
                 outputArr.add(allDTList.toString() + "\n");
             }
+            if (getCoverage) {
+                outputArr.add("\nCoverage test list:\n");
+                outputArr.add(testList.getCoverage() + "\n");
+                outputArr.add("\nTime each test takes to run in the new order:\n");
+                outputArr.add(testList.getTimeEachTest() + "\n");
+            }
             outputArr.add("--------------------------\n");
         }
         outputArr.add("Total time (of all machines and iterations plus initial TestListGenerator): " + totalTime);
         if (techniqueName == TECHNIQUE.PARALLELIZATION) {
             outputArr.add("\n\nMax time: " + (maxTime + TLGTime));
-            outputArr.add("\nTotal number of tests executed in all machines out of total in original order: " + numTests
-                    + " / " + origOrderTestList.size());
-        } else if (techniqueName == TECHNIQUE.PRIORITIZATION || techniqueName == TECHNIQUE.SELECTION) {
-            outputArr.add(nameToTime);
+            outputArr.add("\nTotal number of tests executed in all machines out of total in original order: "
+                    + numTests + " / " + origOrderTestList.size());
         }
 
         if (outputFileName == null) {
@@ -491,6 +499,38 @@ public class Wrapper {
         }
     }
 
+    private static double getAPFD(List<String> time, List<String> coverage) {
+        List<Double> cumulTime = getCumulList(time);
+        List<Double> cumulCoverage = getCumulList(coverage);
+        if (cumulTime.size() < 2 || cumulCoverage.size() < 1) {
+            throw new IllegalArgumentException("cumulTime or cumulCoverage is too small to get APFD.\ncumulTime is: "
+                    + cumulTime + "\ncumulCoverage is: " + cumulCoverage);
+        }
+
+        List<Double> testAPFD = new ArrayList<>();
+        testAPFD.add((cumulTime.get(1) - cumulTime.get(0)) * cumulCoverage.get(0));
+        for (int i = 2; i < cumulTime.size(); i++) {
+            testAPFD.add((cumulTime.get(i) - cumulTime.get(i - 1)) * cumulCoverage.get(i - 1));
+        }
+        double sumAPFD = 0.0;
+        for (double apfd : testAPFD) {
+            sumAPFD += apfd;
+        }
+        return sumAPFD / (cumulTime.get(cumulTime.size() - 1) * cumulCoverage.get(cumulCoverage.size() - 1));
+    }
+
+    private static List<Double> getCumulList(List<String> list) {
+        if (list == null || list.size() < 1) {
+            throw new IllegalArgumentException("getCumulList recieved argument: " + list);
+        }
+        List<Double> cumulList = new ArrayList<>();
+        cumulList.add(Double.valueOf(list.get(0)));
+        for (int i = 1; i < list.size(); i++) {
+            cumulList.add(Double.valueOf(list.get(i)) + cumulList.get(i - 1));
+        }
+        return cumulList;
+    }
+
     private static Map<String, RESULT> getCurrentOrderTestListResults(List<String> currentOrderTestList,
             List<String> filesToDelete) {
         // ImpactMain
@@ -503,6 +543,14 @@ public class Wrapper {
         // TestListGenerator
         List<String> currentOrderTestList = new LinkedList<String>();
         for (TestFunctionStatement tfs : testObj.getResults(numOfMachines)) {
+            currentOrderTestList.add(tfs.getName());
+        }
+        return currentOrderTestList;
+    }
+
+    private static List<String> getCurrentCoverage(Test testObj, int numOfMachines) {
+        List<String> currentOrderTestList = new LinkedList<String>();
+        for (TestFunctionStatement tfs : testObj.getCoverage(numOfMachines)) {
             currentOrderTestList.add(tfs.getName());
         }
         return currentOrderTestList;

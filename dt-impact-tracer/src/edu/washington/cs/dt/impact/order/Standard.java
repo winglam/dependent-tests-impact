@@ -124,7 +124,7 @@ public class Standard {
 
     // Used to get the percent coverage each test is responsible for based on their current
     // order in methodList
-    private List<TestFunctionStatement> changeToCoverage() {
+    public List<TestFunctionStatement> getCoverage(boolean includeName) {
         Set<String> allLinesCpy = new HashSet<String>(allLines);
         List<TestFunctionStatement> coverageList = new LinkedList<TestFunctionStatement>();
         while (methodList.size() > 0) {
@@ -136,7 +136,11 @@ public class Standard {
 
             // record the percent of coverage as xx.xx%
             long displayPercent = (long) ((((double) afterSize) / allLines.size()) * 10000);
-            tfs.setName((tfs.getName() + " : " + displayPercent));
+            if (includeName) {
+                tfs.setName((tfs.getName() + " : " + displayPercent));
+            } else {
+                tfs.setName(String.valueOf(displayPercent));
+            }
             coverageList.add(tfs);
         }
         return coverageList;
@@ -148,7 +152,7 @@ public class Standard {
 
     public void printResults() {
         if (getCoverage) {
-            methodList = changeToCoverage();
+            methodList = getCoverage(true);
         }
 
         if (filename == null) {

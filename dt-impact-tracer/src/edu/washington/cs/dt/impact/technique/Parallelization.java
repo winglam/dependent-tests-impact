@@ -191,4 +191,10 @@ public class Parallelization extends Test {
         splitTests.get(machine).checkForDependentTests();
         return splitTests.get(machine).getMethodList();
     }
+
+    @Override
+    public List<TestFunctionStatement> getCoverage(int machine) {
+        splitTests.get(machine).checkForDependentTests();
+        return splitTests.get(machine).getCoverage(false);
+    }
 }
