@@ -2,7 +2,7 @@ source ./config.sh
 
 compileSource
 
-index=3
+index=0
 count=${#experiments[@]}
 ARRAY=()
 
@@ -21,10 +21,10 @@ while [ "$index" -lt "$count" ]; do
       for j in "${orders[@]}"; do
         #echo 'Running prioritization without resolveDependences and with dependentTestFile'
         #java -cp ${experimentsCP[$index]} edu.washington.cs.dt.impact.Main.Wrapper -technique prioritization -coverage $i -order $j -origOrder ${experiments[$index]}-$k-order -testInputDir sootTestOutput -filesToDelete ${experiments[$index]}-env-files -outputFile ${experiments[$index]}-$k-DT-prioritization-$i-$j-with-DT -dependentTestFile ../${experiments[$index]}-$k-DT-prioritization-with-gods-eye
-        echo 'Running prioritization with resolveDependences and with dependentTestFile'
-        java -cp ${experimentsCP[$index]} edu.washington.cs.dt.impact.Main.Wrapper -technique prioritization -coverage $i -order $j -origOrder ${experiments[$index]}-$k-order -testInputDir sootTestOutput -filesToDelete ${experiments[$index]}-env-files -outputFile ${experiments[$index]}-$k-DT-prioritization-$i-$j-fixed-DT -dependentTestFile ../${experiments[$index]}-$k-DT-prioritization-with-gods-eye
-        #echo 'Running prioritization without resolveDependences and without dependentTestFile'
-        #java -cp ${experimentsCP[$index]} edu.washington.cs.dt.impact.Main.Wrapper -technique prioritization -coverage $i -order $j -origOrder ${experiments[$index]}-$k-order -testInputDir sootTestOutput -filesToDelete ${experiments[$index]}-env-files -outputFile ${experiments[$index]}-$k-prioritization-$i-$j-no-DT
+        #echo 'Running prioritization with resolveDependences and with dependentTestFile'
+        #java -cp ${experimentsCP[$index]} edu.washington.cs.dt.impact.Main.Wrapper -technique prioritization -coverage $i -order $j -origOrder ${experiments[$index]}-$k-order -testInputDir sootTestOutput -filesToDelete ${experiments[$index]}-env-files -outputFile ${experiments[$index]}-$k-DT-prioritization-$i-$j-fixed-DT -dependentTestFile ../${experiments[$index]}-$k-DT-prioritization-with-gods-eye
+        echo 'Running prioritization without resolveDependences and without dependentTestFile'
+        java -cp ${experimentsCP[$index]} edu.washington.cs.dt.impact.Main.Wrapper -technique prioritization -coverage $i -order $j -origOrder ${experiments[$index]}-$k-order -testInputDir sootTestOutput -filesToDelete ${experiments[$index]}-env-files -outputFile ${experiments[$index]}-$k-prioritization-$i-$j-no-DT -getCoverage
 
         ARRAY+=(${directories[$index]}/${experiments[$index]}-$k-prioritization-$i-$j)
       done

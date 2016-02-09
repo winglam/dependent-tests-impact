@@ -106,6 +106,9 @@ public class Test {
                     tmd = new TestFunctionStatement(dtTest);
                     nameToMethodData.put(dtTest, tmd);
                 }
+                if (nameToMethodData.get(testName) == null) {
+                    throw new RuntimeException(testName + " is not a valid test.");
+                }
                 nameToMethodData.get(testName).addDependentTest(tmd, false);
             }
             nameToMethodData.get(testName).reset();
@@ -281,5 +284,10 @@ public class Test {
     public List<TestFunctionStatement> getResults(int machine) {
         orderObj.checkForDependentTests();
         return orderObj.getMethodList();
+    }
+
+    public List<TestFunctionStatement> getCoverage(int machine) {
+        orderObj.checkForDependentTests();
+        return orderObj.getCoverage(false);
     }
 }
