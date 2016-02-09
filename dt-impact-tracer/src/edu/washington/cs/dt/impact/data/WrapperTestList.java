@@ -5,11 +5,20 @@ import java.util.List;
 public class WrapperTestList {
     private int numNotFixedDT;
     private int numFixedDT;
-    private long totalTime;
+    private long nullifyDTTime;
     private List<String> coverage;
     private double APFD;
     private String timeEachTest;
     private List<String> testList;
+    private double newOrderTime;
+
+    public double getNewOrderTime() {
+        return newOrderTime;
+    }
+
+    public void setNewOrderTime(double newOrderTime) {
+        this.newOrderTime = newOrderTime;
+    }
 
     public List<String> getTestList() {
         return testList;
@@ -43,12 +52,12 @@ public class WrapperTestList {
         this.numFixedDT = numFixedDT;
     }
 
-    public long getTotalTime() {
-        return totalTime;
+    public long getNullifyDTTime() {
+        return nullifyDTTime;
     }
 
-    public void setTotalTime(long totalTime) {
-        this.totalTime = totalTime;
+    public void setNullifyDTTime(long nullifyDTTime) {
+        this.nullifyDTTime = nullifyDTTime;
     }
 
     public List<String> getCoverage() {

@@ -37,6 +37,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.TreeMap;
 
 import edu.washington.cs.dt.RESULT;
 import edu.washington.cs.dt.TestExecResults;
@@ -310,6 +311,23 @@ public class Wrapper {
             }
         }
 
+        int timesToRun = 1;
+        int timesToRunIndex = argsList.indexOf("-timesToRun");
+        if (timesToRunIndex != -1) {
+            int timesToRunIntIndex = timesToRunIndex + 1;
+            if (timesToRunIntIndex >= argsList.size()) {
+                System.err.println("Times to run argument is specified but a integer"
+                        + " is not. Please use the format: -timesToRun aInteger");
+                System.exit(0);
+            }
+            timesToRun = Integer.parseInt(argsList.get(timesToRunIntIndex));
+            if (timesToRun < 1) {
+                System.err.println("Times to run argument is specified but the integer"
+                        + " value provided is invalid. Please check the integer value.");
+                System.exit(0);
+            }
+        }
+
         // if specified, the test list generated will consider the dependencies in this file
         List<String> allDTList;
         File dependentTestFile = null;
@@ -386,7 +404,7 @@ public class Wrapper {
             if (resolveDependences) {
                 int counter = 0;
                 while (!changedTests.isEmpty()) {
-                    System.out.println("iteration number: " + counter);
+                    System.out.println("Nullifying DTs iteration number: " + counter);
                     counter += 1;
                     String testName = changedTests.iterator().next();
                     fixedDT.add(testName);
@@ -406,38 +424,52 @@ public class Wrapper {
 
             // capture end time
             long runTotal = System.nanoTime() - start;
-            testList.setTotalTime(runTotal);
+            testList.setNullifyDTTime(runTotal);
             testList.setNumNotFixedDT(changedTests.size());
             testList.setNumFixedDT(fixedDT.size());
             testList.setTestList(currentOrderTestList);
 
             if (getCoverage) {
                 // Get time each test took
-                List<String> timeEachTest = ImpactMain.getResults(currentOrderTestList, true).getExecutionRecords()
-                        .get(0).getValues();
-                FileTools.clearEnv(filesToDelete);
-                testList.setTimeEachTest(timeEachTest.toString());
+                Map<Double, List<Double>> totalTimeToCumulTime = new TreeMap<>();
+                Map<Double, List<String>> totalTimeToTimeEachTest = new TreeMap<>();
+                for (int j = 0; j < timesToRun; j++) {
+                    System.out.println("Getting median in iteration: " + j);
+                    FileTools.clearEnv(filesToDelete);
+                    List<String> timeEachTest = ImpactMain.getResults(currentOrderTestList, true).getExecutionRecords()
+                            .get(0).getValues();
+                    List<Double> cumulTime = getCumulList(timeEachTest);
+                    double totalTimeNewOrder = getSum(cumulTime);
+                    totalTimeToCumulTime.put(totalTimeNewOrder, cumulTime);
+                    totalTimeToTimeEachTest.put(totalTimeNewOrder, timeEachTest);
+                }
+                Double[] keys = totalTimeToCumulTime.keySet().toArray(new Double[totalTimeToCumulTime.keySet().size()]);
+                double median = keys[keys.length / 2];
+                testList.setTimeEachTest(totalTimeToTimeEachTest.get(median).toString());
+                testList.setNewOrderTime(median);
 
                 // Get coverage each test achieved
                 List<String> coverageEachTest = getCurrentCoverage(testObj, i);
                 testList.setCoverage(coverageEachTest);
-                testList.setAPFD(getAPFD(timeEachTest, coverageEachTest));
+                List<Double> cumulCoverage = getCumulList(coverageEachTest);
+                testList.setAPFD(getAPFD(totalTimeToCumulTime.get(median), cumulCoverage));
             }
         }
 
         FileTools.clearEnv(filesToDelete);
         // TODO add a line depicting the configurations used (technique, number of machines, etc)
         long totalTime = TLGTime;
-        long maxTime = Long.MIN_VALUE;
-        long testListTime;
+        double maxTime = Double.MIN_VALUE;
+        double testListTime;
         int numTests = 0;
         List<String> outputArr = new ArrayList<>();
         for (WrapperTestList testList : listTestList) {
-            testListTime = testList.getTotalTime();
+            testListTime = testList.getNewOrderTime();
             totalTime += testListTime;
             numTests += testList.getTestList().size();
             maxTime = Math.max(maxTime, testListTime);
-            outputArr.add("Execution time (of 1 machine and its iterations): " + testListTime + "\n");
+            outputArr.add("Execution time (of 1 machine and its time to find/nullify any DTs): "
+                    + testList.getNullifyDTTime() + "\n");
             outputArr.add("Number of tests selected out of total in original order: " + testList.getTestList().size()
                     + " / " + origOrderTestList.size() + "\n");
             outputArr.add("Number of DTs not fixed: " + testList.getNumNotFixedDT() + "\n");
@@ -445,6 +477,7 @@ public class Wrapper {
             if (getCoverage) {
                 outputArr.add("APFD value: " + testList.getAPFD() + "\n");
             }
+            outputArr.add("Execution time for the following testing order: " + testListTime + "\n");
             outputArr.add("Test order list:\n");
             outputArr.add(testList.toString() + "\n");
             if (allDTList != null) {
@@ -499,9 +532,7 @@ public class Wrapper {
         }
     }
 
-    private static double getAPFD(List<String> time, List<String> coverage) {
-        List<Double> cumulTime = getCumulList(time);
-        List<Double> cumulCoverage = getCumulList(coverage);
+    private static double getAPFD(List<Double> cumulTime, List<Double> cumulCoverage) {
         if (cumulTime.size() < 2 || cumulCoverage.size() < 1) {
             throw new IllegalArgumentException("cumulTime or cumulCoverage is too small to get APFD.\ncumulTime is: "
                     + cumulTime + "\ncumulCoverage is: " + cumulCoverage);
@@ -512,11 +543,15 @@ public class Wrapper {
         for (int i = 2; i < cumulTime.size(); i++) {
             testAPFD.add((cumulTime.get(i) - cumulTime.get(i - 1)) * cumulCoverage.get(i - 1));
         }
-        double sumAPFD = 0.0;
-        for (double apfd : testAPFD) {
-            sumAPFD += apfd;
+        return getSum(testAPFD) / (cumulTime.get(cumulTime.size() - 1) * cumulCoverage.get(cumulCoverage.size() - 1));
+    }
+
+    private static double getSum(List<Double> list) {
+        double sum = 0.0;
+        for (double val : list) {
+            sum += val;
         }
-        return sumAPFD / (cumulTime.get(cumulTime.size() - 1) * cumulCoverage.get(cumulCoverage.size() - 1));
+        return sum;
     }
 
     private static List<Double> getCumulList(List<String> list) {
