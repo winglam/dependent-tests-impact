@@ -2,8 +2,8 @@
  * Copyright 2014 University of Washington. All Rights Reserved.
  * @author Wing Lam
  * 
- * Creates a list of tests that is ordered with test parallelization based on the parameters
- * specified to the constructor.
+ *         Creates a list of tests that is ordered with test parallelization based on the parameters
+ *         specified to the constructor.
  */
 
 package edu.washington.cs.dt.impact.technique;
@@ -38,19 +38,18 @@ public class Parallelization extends Test {
      * @param inputTestFolder folder containing all test cases
      * @param coverage the coverage to consider when processing the test cases
      * @param dependentTestsFile the file containing the information
-     *  regarding which test depends on which
+     *            regarding which test depends on which
      * @param k the number of lists to split the tests into
      * @param origOrder the original order in which the test cases are ran in
      * @param timeOrder file specifying the amount of nanoseconds each test takes to execute
      */
-    public Parallelization(ORDER order, String outputFileName, File inputTestFolder,
-            COVERAGE coverage, File dependentTestsFile, int k, File origOrder, File timeOrder) {
+    public Parallelization(ORDER order, String outputFileName, File inputTestFolder, COVERAGE coverage,
+            File dependentTestsFile, int k, File origOrder, File timeOrder) {
         super(inputTestFolder, coverage, dependentTestsFile);
 
         splitTests = new LinkedList<Standard>();
         if (outputFileName == null) {
-            throw new RuntimeException("Test parallelization cannot be ran"
-                    + " without a specified output file name.");
+            throw new RuntimeException("Test parallelization cannot be ran" + " without a specified output file name.");
         }
 
         if (order == ORDER.RELATIVE || order == ORDER.ABSOLUTE || order == ORDER.TIME) {
@@ -58,8 +57,7 @@ public class Parallelization extends Test {
             if (order == ORDER.RELATIVE) {
                 methodList = new Relative(outputFileName, methodList, allCoverageLines).getMethodList();
             } else if (order == ORDER.TIME) {
-                Map<String, TestFunctionStatement> nameToMethodData =
-                        getNameToMethodData(methodList);
+                Map<String, TestFunctionStatement> nameToMethodData = getNameToMethodData(methodList);
                 methodList.clear();
                 Map<String, TestTime> nameToTimeData = new HashMap<String, TestTime>();
 
@@ -142,9 +140,8 @@ public class Parallelization extends Test {
         try {
             br = new BufferedReader(new FileReader(f));
             String line = br.readLine();
-            while(line != null) {
-                while (line != null && !line.matches("^Pass: [0-9]+,"
-                        + " Fail: [0-9]+, Error: [0-9]+$")) {
+            while (line != null) {
+                while (line != null && !line.matches("^Pass: [0-9]+," + " Fail: [0-9]+, Error: [0-9]+$")) {
                     line = br.readLine();
                 }
 
@@ -162,8 +159,7 @@ public class Parallelization extends Test {
                 if (testResults.length >= 1) {
                     testResults[0] = testResults[0].substring(1);
                     String lastTest = testResults[testResults.length - 1];
-                    testResults[testResults.length - 1] =
-                            lastTest.substring(0, lastTest.length() - 1);
+                    testResults[testResults.length - 1] = lastTest.substring(0, lastTest.length() - 1);
 
                     for (String s : testResults) {
                         String[] testAndResult = s.split("=");

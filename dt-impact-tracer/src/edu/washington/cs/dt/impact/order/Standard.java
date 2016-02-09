@@ -2,8 +2,8 @@
  * Copyright 2014 University of Washington. All Rights Reserved.
  * @author Wing Lam
  * 
- * Reorders a list of TestFunctionStatement based on its dependent tests if specified to do so.
- * Prints the ordered list of tests.
+ *         Reorders a list of TestFunctionStatement based on its dependent tests if specified to do so.
+ *         Prints the ordered list of tests.
  */
 
 package edu.washington.cs.dt.impact.order;
@@ -18,14 +18,14 @@ import java.util.Set;
 
 import edu.washington.cs.dt.impact.data.TestFunctionStatement;
 
-
 public class Standard {
     protected String filename;
     protected List<TestFunctionStatement> methodList;
     private boolean getCoverage;
     protected Set<String> allLines;
 
-    public Standard(String outputFileName, List<TestFunctionStatement> methodList, boolean getCoverage, Set<String> allLines) {
+    public Standard(String outputFileName, List<TestFunctionStatement> methodList, boolean getCoverage,
+            Set<String> allLines) {
         this.filename = outputFileName;
         this.methodList = methodList;
         this.getCoverage = getCoverage;
@@ -49,8 +49,8 @@ public class Standard {
         this.methodList = dtMethodList;
     }
 
-    private int sortDT(int index, List<TestFunctionStatement> dtMethodList,
-            Set<TestFunctionStatement> printedTests, TestFunctionStatement methodData) {
+    private int sortDT(int index, List<TestFunctionStatement> dtMethodList, Set<TestFunctionStatement> printedTests,
+            TestFunctionStatement methodData) {
         if (!printedTests.contains(methodData)) {
             Set<TestFunctionStatement> execBefore = methodData.getDependentTests(true);
             for (TestFunctionStatement tmd : execBefore) {
@@ -88,8 +88,7 @@ public class Standard {
         return index;
     }
 
-    private void moveTestsBefore(List<TestFunctionStatement> dtMethodList,
-            TestFunctionStatement dep) {
+    private void moveTestsBefore(List<TestFunctionStatement> dtMethodList, TestFunctionStatement dep) {
         for (TestFunctionStatement methodDataTests : dep.getDependentTests(false)) {
             if (dtMethodList.indexOf(methodDataTests) > dtMethodList.indexOf(dep)) {
                 dtMethodList.remove(methodDataTests);
@@ -97,8 +96,7 @@ public class Standard {
                 moveTestsBefore(dtMethodList, methodDataTests);
                 // check whether after moving methodData elsewhere whether that
                 // affected any tests that depends on methodData
-                for (TestFunctionStatement testsDependingOnMethodData
-                        : methodDataTests.getObservers()) {
+                for (TestFunctionStatement testsDependingOnMethodData : methodDataTests.getObservers()) {
                     moveTests(dtMethodList, methodDataTests, testsDependingOnMethodData);
                 }
             }
