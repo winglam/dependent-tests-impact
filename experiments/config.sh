@@ -11,7 +11,7 @@ parallelOrders=($testType-order time)
 experiments=(crystal)
 testTypes=(orig)
 orders=(absolute)
-coverages=(statement function)
+coverages=(statement)
 
 #directories=(crystalvc dynoptic jfreechart-1.0.15 jodatime-b609d7d66d xml-security-orig-v1)
 #experimentsCP=(impact-tools/*:bin/:lib/* impact-tools/*:bin/:../synoptic/lib/*:../synoptic/bin/:../daikonizer/bin/ impact-tools/*:bin/:lib/* impact-tools/*:bin/:resources/:lib/* impact-tools/*:bin/:../xml-security-commons/bin/:data/:../xml-security-commons/libs/*)
