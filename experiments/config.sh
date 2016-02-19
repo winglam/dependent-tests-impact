@@ -3,15 +3,16 @@
 impactJarCP=impact-tools/impact.jar
 testListGenClass=edu.washington.cs.dt.impact.tools.TestListGenerator
 crossReferenceClass=edu.washington.cs.dt.impact.tools.CrossReferencer
-machines=(2 4 8 16)
+#machines=(2 4 8 16)
 parallelOrders=($testType-order time)
 
-#experiments=(crystal synoptic jfreechart jodatime xml-security)
+#experiments=(crystal synoptic jfreechart jodatime xml_security)
 #testTypes=(orig auto)
 experiments=(crystal)
 testTypes=(orig)
 orders=(absolute)
 coverages=(statement)
+machines=(2 4)
 
 #directories=(crystalvc dynoptic jfreechart-1.0.15 jodatime-b609d7d66d xml-security-orig-v1)
 #experimentsCP=(impact-tools/*:bin/:lib/* impact-tools/*:bin/:../synoptic/lib/*:../synoptic/bin/:../daikonizer/bin/ impact-tools/*:bin/:lib/* impact-tools/*:bin/:resources/:lib/* impact-tools/*:bin/:../xml-security-commons/bin/:data/:../xml-security-commons/libs/*)
@@ -91,12 +92,16 @@ function compileSource() {
 }
 
 function runParallelizationWrapper() {
-  java -cp $2 edu.washington.cs.dt.main.ImpactMain $1-$3-order -getTime > $1-$3-time.txt
+  java -cp $2 edu.washington.cs.dt.main.ImpactMain -inputTests $1-$3-order -getTime > $1-$3-time.txt
   for k in "${machines[@]}"; do
-    java -cp $2 edu.washington.cs.dt.impact.Main.Wrapper -technique parallelization -order time -timeOrder $1-$3-time.txt -resolveDependences -origOrder $1-$3-order -testInputDir sootTestOutput -filesToDelete $1-env-files -outputFile $1-$3-DT -numOfMachines $k
-    java -cp $2 edu.washington.cs.dt.impact.Main.Wrapper -technique parallelization -order original -resolveDependences -origOrder $1-$3-order -testInputDir sootTestOutput -filesToDelete $1-env-files -outputFile $1-$3-DT -numOfMachines $k
-    java -cp $2 edu.washington.cs.dt.impact.Main.Wrapper -technique parallelization -order time -timeOrder $1-$3-time.txt -origOrder $1-$3-order -testInputDir sootTestOutput -filesToDelete $1-env-files -outputFile $1-$3-DT -numOfMachines $k
-    java -cp $2 edu.washington.cs.dt.impact.Main.Wrapper -technique parallelization -order original -origOrder $1-$3-order -testInputDir sootTestOutput -filesToDelete $1-env-files -outputFile $1-$3-DT -numOfMachines $k
+    #echo 'Running parallelization with resolveDependences for time order'
+    #java -cp $2 edu.washington.cs.dt.impact.Main.Wrapper -technique parallelization -order time -timeOrder $1-$3-time.txt -resolveDependences -origOrder $1-$3-order -testInputDir sootTestOutput -filesToDelete $1-env-files -project $1 -testType $3 -numOfMachines $k
+    #echo 'Running parallelization with resolveDependences for original order'
+    #java -cp $2 edu.washington.cs.dt.impact.Main.Wrapper -technique parallelization -order original -resolveDependences -origOrder $1-$3-order -testInputDir sootTestOutput -filesToDelete $1-env-files -project $1 -testType $3 -numOfMachines $k
+    echo 'Running parallelization without resolveDependences for time order'
+    java -cp $2 edu.washington.cs.dt.impact.Main.Wrapper -technique parallelization -order time -timeOrder $1-$3-time.txt -origOrder $1-$3-order -testInputDir sootTestOutput -filesToDelete $1-env-files -numOfMachines $k -project $1 -testType $3
+    echo 'Running parallelization without resolveDependences for original order'
+    java -cp $2 edu.washington.cs.dt.impact.Main.Wrapper -technique parallelization -order original -origOrder $1-$3-order -testInputDir sootTestOutput -filesToDelete $1-env-files -project $1 -testType $3 -numOfMachines $k
   done
 }
 
