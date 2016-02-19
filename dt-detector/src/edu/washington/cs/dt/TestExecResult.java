@@ -10,12 +10,10 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-import edu.washington.cs.dt.main.ImpactMain;
-
 /**
  * TODO should add an exception stack trace here
  * to see the exactly error has been thrown
- * */
+ */
 public class TestExecResult {
     public final Map<String, OneTestExecResult> singleRun;
 
@@ -83,9 +81,6 @@ public class TestExecResult {
 
     @Override
     public String toString() {
-        if (ImpactMain.useTimer) {
-            return singleRun.values().toString();
-        }
         return this.singleRun.toString();
     }
 }
