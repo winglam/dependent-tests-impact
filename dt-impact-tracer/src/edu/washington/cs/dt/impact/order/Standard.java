@@ -125,6 +125,7 @@ public class Standard {
     // Used to get the percent coverage each test is responsible for based on their current
     // order in methodList
     public List<TestFunctionStatement> getCoverage(boolean includeName) {
+        // TODO does not work with parallelization, not sure why.
         Set<String> allLinesCpy = new HashSet<String>(allLines);
         List<TestFunctionStatement> coverageList = new LinkedList<TestFunctionStatement>();
         while (methodList.size() > 0) {

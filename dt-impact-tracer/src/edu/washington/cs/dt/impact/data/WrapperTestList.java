@@ -5,7 +5,7 @@ import java.util.List;
 public class WrapperTestList {
     private int numNotFixedDT;
     private int numFixedDT;
-    private long nullifyDTTime;
+    private double nullifyDTTime;
     private List<String> coverage;
     private double APFD;
     private String timeEachTest;
@@ -52,11 +52,11 @@ public class WrapperTestList {
         this.numFixedDT = numFixedDT;
     }
 
-    public long getNullifyDTTime() {
+    public double getNullifyDTTime() {
         return nullifyDTTime;
     }
 
-    public void setNullifyDTTime(long nullifyDTTime) {
+    public void setNullifyDTTime(double nullifyDTTime) {
         this.nullifyDTTime = nullifyDTTime;
     }
 

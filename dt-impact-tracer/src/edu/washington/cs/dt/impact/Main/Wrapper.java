@@ -52,8 +52,13 @@ import edu.washington.cs.dt.impact.tools.DependentTestFinder;
 import edu.washington.cs.dt.impact.tools.FileTools;
 import edu.washington.cs.dt.impact.util.Constants;
 import edu.washington.cs.dt.impact.util.Constants.COVERAGE;
+import edu.washington.cs.dt.impact.util.Constants.DT_SETTING;
+import edu.washington.cs.dt.impact.util.Constants.MACHINES;
 import edu.washington.cs.dt.impact.util.Constants.ORDER;
+import edu.washington.cs.dt.impact.util.Constants.PROJECT;
+import edu.washington.cs.dt.impact.util.Constants.TD_SETTING;
 import edu.washington.cs.dt.impact.util.Constants.TECHNIQUE;
+import edu.washington.cs.dt.impact.util.Constants.TEST_TYPE;
 import edu.washington.cs.dt.main.ImpactMain;
 
 public class Wrapper {
@@ -292,7 +297,7 @@ public class Wrapper {
             }
         }
 
-        int numOfMachines = 1;
+        Constants.MACHINES numOfMachines = MACHINES.ONE;
         if (techniqueName == TECHNIQUE.PARALLELIZATION) {
             int numOfMachinesIndex = argsList.indexOf("-numOfMachines");
             if (numOfMachinesIndex != -1) {
@@ -302,10 +307,18 @@ public class Wrapper {
                             + " is not. Please use the format: -numOfMachines aInteger");
                     System.exit(0);
                 }
-                numOfMachines = Integer.parseInt(argsList.get(numOfMachinesIntIndex));
-                if (numOfMachines < 1) {
+                int machines = Integer.parseInt(argsList.get(numOfMachinesIntIndex));
+                if (machines == 2) {
+                    numOfMachines = MACHINES.TWO;
+                } else if (machines == 4) {
+                    numOfMachines = MACHINES.FOUR;
+                } else if (machines == 8) {
+                    numOfMachines = MACHINES.EIGHT;
+                } else if (machines == 16) {
+                    numOfMachines = MACHINES.SIXTEEN;
+                } else {
                     System.err.println("Number of machines argument is specified but the integer"
-                            + " value provided is invalid. Please check the integer value.");
+                            + " value provided is invalid. Please input either 2, 4, 8 or 16.");
                     System.exit(0);
                 }
             }
@@ -326,6 +339,62 @@ public class Wrapper {
                         + " value provided is invalid. Please check the integer value.");
                 System.exit(0);
             }
+        }
+
+        Constants.PROJECT project = PROJECT.CRYSTAL;
+        int projectIndex = argsList.indexOf("-project");
+        if (projectIndex != -1) {
+            int projectStrIndex = projectIndex + 1;
+            if (projectStrIndex >= argsList.size()) {
+                System.err.println("Project argument is specified but a project name"
+                        + " is not. Please use the format: -project aProjectName");
+                System.exit(0);
+            }
+            String projectName = argsList.get(projectStrIndex);
+            if (projectName.equals("crystal")) {
+                project = PROJECT.CRYSTAL;
+            } else if (projectName.equals("jfreechart")) {
+                project = PROJECT.JFREECHART;
+            } else if (projectName.equals("jodatime")) {
+                project = PROJECT.JODATIME;
+            } else if (projectName.equals("synoptic")) {
+                project = PROJECT.SYNOPTIC;
+            } else if (projectName.equals("xml_security")) {
+                project = PROJECT.XML_SECURITY;
+            } else {
+                System.err
+                        .println("Project argument is specified but the project name"
+                                + " value provided is invalid. Please use either crystal, jfreechart, jodatime, synoptic or xml_security.");
+                System.exit(0);
+            }
+        } else {
+            System.err.println("No project argument is specified." + " Please use the format: -project aProjectName");
+            System.exit(0);
+        }
+
+        Constants.TEST_TYPE testType = TEST_TYPE.ORIG;
+        int testTypeIndex = argsList.indexOf("-testType");
+        if (testTypeIndex != -1) {
+            int testTypeStrIndex = testTypeIndex + 1;
+            if (testTypeStrIndex >= argsList.size()) {
+                System.err.println("Test type argument is specified but a test type name"
+                        + " is not. Please use the format: -testType aTestTypeName");
+                System.exit(0);
+            }
+            String testTypeName = argsList.get(testTypeStrIndex);
+            if (testTypeName.equals("orig")) {
+                testType = TEST_TYPE.ORIG;
+            } else if (testTypeName.equals("auto")) {
+                testType = TEST_TYPE.AUTO;
+            } else {
+                System.err.println("Test type argument is specified but the test type name"
+                        + " value provided is invalid. Please use either orig or auto.");
+                System.exit(0);
+            }
+        } else {
+            System.err.println("No test type argument is specified."
+                    + " Please use the format: -testType aTestTypeName");
+            System.exit(0);
         }
 
         // if specified, the test list generated will consider the dependencies in this file
@@ -368,8 +437,21 @@ public class Wrapper {
         List<String> origOrderTestList = FileTools.parseFileToList(origOrder);
         Map<String, RESULT> nameToOrigResults = getCurrentOrderTestListResults(origOrderTestList, filesToDelete);
 
+        // double totalTimeOrigOrder = 1.0;
+        // if (techniqueName == TECHNIQUE.PARALLELIZATION) {
+        // WrapperTestList origOrderTestListData = new WrapperTestList();
+        // setTestListMedianTime(timesToRun, filesToDelete, origOrderTestList, origOrderTestListData);
+        // totalTimeOrigOrder = origOrderTestListData.getNewOrderTime();
+        // }
+
+        if (outputFileName == null) {
+            outputFileName = Constants.getOutputFileName(coverage, techniqueName, order, project, testType,
+                    numOfMachines, resolveDependences ? DT_SETTING.FIXED_DT : DT_SETTING.CONTAINS_DT,
+                    allDTList == null ? TD_SETTING.OMITTED_TD : TD_SETTING.GIVEN_TD);
+        }
+
         // capture start time
-        long start = System.nanoTime();
+        double start = System.nanoTime();
 
         // TestListGenerator
         Test testObj = null;
@@ -381,16 +463,16 @@ public class Wrapper {
                     origOrder, dependentTestFile);
         } else if (techniqueName == TECHNIQUE.PARALLELIZATION) {
             testObj = new Parallelization(order, outputFileName, testInputDir, coverage, dependentTestFile,
-                    numOfMachines, origOrder, timeOrder);
+                    numOfMachines.getValue(), origOrder, timeOrder);
         } else {
             System.err.println("The regression testing technique selected is invalid. Please restart the"
                     + " program and try again.");
             System.exit(0);
         }
-        long TLGTime = System.nanoTime() - start;
+        double TLGTime = System.nanoTime() - start;
 
         List<WrapperTestList> listTestList = new ArrayList<>();
-        for (int i = 0; i < numOfMachines; i++) {
+        for (int i = 0; i < numOfMachines.getValue(); i++) {
             start = System.nanoTime();
 
             WrapperTestList testList = new WrapperTestList();
@@ -423,53 +505,40 @@ public class Wrapper {
             }
 
             // capture end time
-            long runTotal = System.nanoTime() - start;
+            double runTotal = System.nanoTime() - start;
             testList.setNullifyDTTime(runTotal);
             testList.setNumNotFixedDT(changedTests.size());
             testList.setNumFixedDT(fixedDT.size());
             testList.setTestList(currentOrderTestList);
+            Map<Double, List<Double>> totalTimeToCumulTime = setTestListMedianTime(timesToRun, filesToDelete,
+                    currentOrderTestList, testList);
 
             if (getCoverage) {
-                // Get time each test took
-                Map<Double, List<Double>> totalTimeToCumulTime = new TreeMap<>();
-                Map<Double, List<String>> totalTimeToTimeEachTest = new TreeMap<>();
-                for (int j = 0; j < timesToRun; j++) {
-                    System.out.println("Getting median in iteration: " + j);
-                    FileTools.clearEnv(filesToDelete);
-                    List<String> timeEachTest = ImpactMain.getResults(currentOrderTestList, true).getExecutionRecords()
-                            .get(0).getValues();
-                    List<Double> cumulTime = getCumulList(timeEachTest);
-                    double totalTimeNewOrder = getSum(cumulTime);
-                    totalTimeToCumulTime.put(totalTimeNewOrder, cumulTime);
-                    totalTimeToTimeEachTest.put(totalTimeNewOrder, timeEachTest);
-                }
-                Double[] keys = totalTimeToCumulTime.keySet().toArray(new Double[totalTimeToCumulTime.keySet().size()]);
-                double median = keys[keys.length / 2];
-                testList.setTimeEachTest(totalTimeToTimeEachTest.get(median).toString());
-                testList.setNewOrderTime(median);
-
                 // Get coverage each test achieved
                 List<String> coverageEachTest = getCurrentCoverage(testObj, i);
                 testList.setCoverage(coverageEachTest);
                 List<Double> cumulCoverage = getCumulList(coverageEachTest);
-                testList.setAPFD(getAPFD(totalTimeToCumulTime.get(median), cumulCoverage));
+                testList.setAPFD(getAPFD(totalTimeToCumulTime.get(testList.getNewOrderTime()), cumulCoverage));
             }
+            listTestList.add(testList);
         }
 
         FileTools.clearEnv(filesToDelete);
-        // TODO add a line depicting the configurations used (technique, number of machines, etc)
-        long totalTime = TLGTime;
+        double totalTime = TLGTime;
         double maxTime = Double.MIN_VALUE;
         double testListTime;
         int numTests = 0;
         List<String> outputArr = new ArrayList<>();
+        outputArr.add("The following arguments were used to generate this output.\n");
+        outputArr.add(argsList + "\n\n");
         for (WrapperTestList testList : listTestList) {
             testListTime = testList.getNewOrderTime();
             totalTime += testListTime;
             numTests += testList.getTestList().size();
             maxTime = Math.max(maxTime, testListTime);
-            outputArr.add("Execution time (of 1 machine and its time to find/nullify any DTs): "
-                    + testList.getNullifyDTTime() + "\n");
+            outputArr.add("Execution time of TLG and its time to find/nullify any DTs for 1 machine"
+                    + " (does not include the time to run the tests in the new order): "
+                    + nanosecondToSecond(testList.getNullifyDTTime()) + "\n");
             outputArr.add("Number of tests selected out of total in original order: " + testList.getTestList().size()
                     + " / " + origOrderTestList.size() + "\n");
             outputArr.add("Number of DTs not fixed: " + testList.getNumNotFixedDT() + "\n");
@@ -477,9 +546,12 @@ public class Wrapper {
             if (getCoverage) {
                 outputArr.add("APFD value: " + testList.getAPFD() + "\n");
             }
-            outputArr.add("Execution time for the following testing order: " + testListTime + "\n");
+            outputArr.add("Execution time for executing the following testing order: "
+                    + nanosecondToSecond(testListTime) + "\n");
             outputArr.add("Test order list:\n");
-            outputArr.add(testList.toString() + "\n");
+            outputArr.add(testList.getTestList() + "\n");
+            outputArr.add("\nTime each test takes to run in the new order:\n");
+            outputArr.add(testList.getTimeEachTest() + "\n");
             if (allDTList != null) {
                 outputArr.add("\nDependent test list:\n");
                 outputArr.add(allDTList.toString() + "\n");
@@ -487,49 +559,65 @@ public class Wrapper {
             if (getCoverage) {
                 outputArr.add("\nCoverage test list:\n");
                 outputArr.add(testList.getCoverage() + "\n");
-                outputArr.add("\nTime each test takes to run in the new order:\n");
-                outputArr.add(testList.getTimeEachTest() + "\n");
             }
             outputArr.add("--------------------------\n");
         }
-        outputArr.add("Total time (of all machines and iterations plus initial TestListGenerator): " + totalTime);
+        outputArr.add("Total time (of all machines and iterations plus initial TestListGenerator): "
+                + nanosecondToSecond(totalTime));
         if (techniqueName == TECHNIQUE.PARALLELIZATION) {
-            outputArr.add("\n\nMax time: " + (maxTime + TLGTime));
+            outputArr.add("\nNew order time: " + nanosecondToSecond(maxTime));
             outputArr.add("\nTotal number of tests executed in all machines out of total in original order: "
                     + numTests + " / " + origOrderTestList.size());
         }
 
-        if (outputFileName == null) {
+        FileWriter output = null;
+        BufferedWriter writer = null;
+        try {
+            output = new FileWriter(outputFileName);
+            writer = new BufferedWriter(output);
             for (String line : outputArr) {
-                System.out.print(line);
+                writer.write(line);
             }
-        } else {
-            FileWriter output = null;
-            BufferedWriter writer = null;
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
             try {
-                if (techniqueName == TECHNIQUE.PARALLELIZATION) {
-                    output = new FileWriter(outputFileName + numOfMachines);
-                } else {
-                    output = new FileWriter(outputFileName);
+                if (writer != null) {
+                    writer.close();
                 }
-                writer = new BufferedWriter(output);
-                for (String line : outputArr) {
-                    writer.write(line);
+                if (output != null) {
+                    output.close();
                 }
             } catch (IOException e) {
-                e.printStackTrace();
-            } finally {
-                try {
-                    if (writer != null) {
-                        writer.close();
-                    }
-                    if (output != null) {
-                        output.close();
-                    }
-                } catch (IOException e) {
-                }
             }
         }
+    }
+
+    private static String nanosecondToSecond(double nanoseconds) {
+        double sec = nanoseconds / 1E9;
+        return String.format("%.3f", sec);
+    }
+
+    private static Map<Double, List<Double>> setTestListMedianTime(int timesToRun, List<String> filesToDelete,
+            List<String> currentOrderTestList, WrapperTestList testList) {
+        // Get time each test took
+        Map<Double, List<Double>> totalTimeToCumulTime = new TreeMap<>();
+        Map<Double, List<String>> totalTimeToTimeEachTest = new TreeMap<>();
+        for (int j = 0; j < timesToRun; j++) {
+            System.out.println("Getting median in iteration: " + j);
+            FileTools.clearEnv(filesToDelete);
+            List<String> timeEachTest = ImpactMain.getResults(currentOrderTestList, true).getExecutionRecords().get(0)
+                    .getValues();
+            List<Double> cumulTime = getCumulList(timeEachTest);
+            double totalTimeNewOrder = getSum(cumulTime);
+            totalTimeToCumulTime.put(totalTimeNewOrder, cumulTime);
+            totalTimeToTimeEachTest.put(totalTimeNewOrder, timeEachTest);
+        }
+        Double[] keys = totalTimeToCumulTime.keySet().toArray(new Double[totalTimeToCumulTime.keySet().size()]);
+        double median = keys[keys.length / 2];
+        testList.setTimeEachTest(totalTimeToTimeEachTest.get(median).toString());
+        testList.setNewOrderTime(median);
+        return totalTimeToCumulTime;
     }
 
     private static double getAPFD(List<Double> cumulTime, List<Double> cumulCoverage) {
@@ -548,7 +636,7 @@ public class Wrapper {
 
     private static double getSum(List<Double> list) {
         double sum = 0.0;
-        for (double val : list) {
+        for (Double val : list) {
             sum += val;
         }
         return sum;
