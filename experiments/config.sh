@@ -1,3 +1,5 @@
+# This file is to share variables and functions. Please do not run this file.
+
 #coverages=(statement function)
 #orders=(absolute relative)
 impactJarCP=impact-tools/impact.jar
