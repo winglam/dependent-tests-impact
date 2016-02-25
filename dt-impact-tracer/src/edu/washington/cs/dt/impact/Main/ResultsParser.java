@@ -130,6 +130,10 @@ public class ResultsParser {
      * @return line without the commas and whitespace, i.e. "prioritization"
      */
     private static String parseArgs(String line) {
+        // line == null only if this flag was not found
+        if (line == null) {
+            return null;
+        }
         int delimiterIndex = line.indexOf(",", 1);
         // -1 if last argument..takes on form: "-testType, orig]"
         if (delimiterIndex == -1) {
@@ -215,26 +219,9 @@ public class ResultsParser {
 
         File directory = new File(directoryName);
         File[] fList = directory.listFiles();
-        // arrayList of diff projectNames
-        List<String> projectName_array = new ArrayList<String>(5);
-
-        // find how many diff projectNames there are
-        // maybe if user inputted them this would be easier
-        for (File file : fList) {
-            if (file.isFile()) {
-                String projectName = parseFile(file, "-project");
-                projectName = parseArgs(projectName);
-                if (!projectName_array.contains(projectName)) {
-                    projectName_array.add(projectName);
-                }
-            }
-        }
-        int size = projectName_array.size();
         // create a list of project Objects that each have a diff project name
+        int size = 5;
         List<project> proj_arrayList = new ArrayList<project>(size);
-        for (int i = 0; i < size; i++) {
-            proj_arrayList.add(new project(projectName_array.get(i)));
-        }
 
         for (File file : fList) {
             if (file.isFile()) {
@@ -260,10 +247,23 @@ public class ResultsParser {
                 String testType = parseFile(file, "-testType");
                 testType = parseArgs(testType);
 
-                // index of this project in the arrayList, might be -1
+                String resolveDependences = parseFile(file, "-resolveDependences");
+                resolveDependences = parseArgs(resolveDependences);
+                // resolveDependences will be null if flag not found in file
+
+                // index of this project in the arrayList, might be -1 if not found
                 int indexOfProj = indexOfByName(proj_arrayList, projectName);
+
                 // project Object that corresponds to the current project name in this file
-                project currProj = proj_arrayList.get(indexOfProj);
+                project currProj = null;
+
+                if (indexOfProj != -1) {
+                    currProj = proj_arrayList.get(indexOfProj);
+                } else {// projectName not seen before
+
+                    currProj = new project(projectName);
+                    proj_arrayList.add(currProj);
+                }
 
                 // TODO: get the data for all the diff techniques and store in project class arrays
 
@@ -275,17 +275,100 @@ public class ResultsParser {
                     String apfd_value = parseFile(file, APFD_VALUE);
                     currProj.useFig18();
 
+                    // original values, index should be i=0, i+=2
+                    if (testType.equals("orig")) { // original
+                        if (coverageName.equals("statement")) {
+                            if (orderName.equals("original")) {
+                                // S1
+                            } else if (orderName.equals("absolute")) {
+                                // S2
+                            } else {
+                                // S3
+                            }
+
+                        } else if (coverageName.equals("function")) {
+                            if (orderName.equals("original")) {
+                                // S4
+
+                            } else if (orderName.equals("absolute")) {
+                                // S5
+                            } else {
+                                // S6
+                            }
+                        }
+
+                    } else { // auto, index should be i = 1, i+=2
+                        if (coverageName.equals("statement")) {
+                            if (orderName.equals("original")) {
+                                // S1
+                            } else if (orderName.equals("absolute")) {
+                                // S2
+                            } else {
+                                // S3
+                            }
+
+                        } else if (coverageName.equals("function")) {
+                            if (orderName.equals("original")) {
+                                // S4
+
+                            } else if (orderName.equals("absolute")) {
+                                // S5
+                            } else {
+                                // S6
+                            }
+                        }
+                    }
+
                 } // prioritization techinque
                 else if (techniqueName.equals("prioritization")) {
                     String apfd_value = parseFile(file, APFD_VALUE);
                     currProj.useFig17();
+
+                    // original values, index should be i=0, i+=2
+                    if (testType.equals("orig")) {
+                        if (coverageName.equals("statement")) {
+                            if (orderName.equals("absolute")) {
+                                // T3
+                            } else {
+                                // T4
+                            }
+
+                        } else if (coverageName.equals("function")) {
+                            if (orderName.equals("absolute")) {
+                                // T5
+
+                            } else {
+                                // T7
+                            }
+                        }
+
+                    } else { // auto, index should be i = 1, i+=2
+                        if (coverageName.equals("statement")) {
+                            if (orderName.equals("absolute")) {
+                                // T3
+                            } else {
+                                // T4
+                            }
+
+                        } else if (coverageName.equals("function")) {
+                            if (orderName.equals("absolute")) {
+                                // T5
+
+                            } else {
+                                // T7
+                            }
+                        }
+
+                    }
+
                 } else {// garbage value...return error
 
                 }
 
             }
         }
-        // for every project name in the hashamp, generate strings
+
+        // for every project name in the arrayList, generate strings
         /*
          * TODO: make sure generate17() and generate18() are getting values correctly
          * actual data value in LaTeX graph = fig**[i] - fig**[i + 1]
@@ -304,6 +387,8 @@ public class ResultsParser {
             }
 
         }
+        latex17 = latex17.substring(0, latex17.length());
+        latex18 = latex18.substring(0, latex18.length());
 
         // TODO: write to output file
     }
@@ -319,6 +404,11 @@ public class ResultsParser {
  */
 
 // The tables needed to be generated and the type of args they require
+
+/*
+ * T3 will correspond to the file name PRIORITIZATION-ORIG-CRYSTAL-STATEMENT-ABSOLUTE-CONTAINS_DT-OMITTED_TD.
+ * T4 will correspond to the file name PRIORITIZATION-ORIG-CRYSTAL-STATEMENT-RELATIVE-CONTAINS_DT-OMITTED_TD.
+ */
 
 /*
  * T3 Prioritize on coverage of statements
