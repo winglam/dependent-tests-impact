@@ -61,7 +61,7 @@ import edu.washington.cs.dt.impact.util.Constants.TECHNIQUE;
 import edu.washington.cs.dt.impact.util.Constants.TEST_TYPE;
 import edu.washington.cs.dt.main.ImpactMain;
 
-public class Wrapper {
+public class OneConfigurationRunner {
 
     public static void main(String[] args) {
         List<String> argsList = new ArrayList<String>(Arrays.asList(args));
