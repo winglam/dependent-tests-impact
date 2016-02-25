@@ -79,21 +79,19 @@ public class ResultsParser {
      * A private method to search a file for a keyword and return the value that follows
      * that keyword
      *
-     * @return the data value without any leading or trailing whitespaces
+     * @return the data value without any leading or trailing whitespaces, null if keyword not found
      */
     private static String parseFile(File file, String keyword) throws FileNotFoundException {
 
         Scanner scanner = new Scanner(file);
         while (scanner.hasNextLine()) {
             String currLine = scanner.nextLine();
-            // lineNum++;
             if (currLine.contains(keyword)) {
                 // gets numeric value of data
                 String data = currLine.substring(keyword.length(), currLine.length());
                 scanner.close(); // close Scanner before returning
                 // trim away any whitespaces leading or after the data value
                 return data.trim();
-
             }
         }
         scanner.close();
@@ -155,7 +153,13 @@ public class ResultsParser {
      */
     private static String generate17(String projectName, double[] values) {
         String result = projectName;
-        for (double val : values) {
+        /*
+         * for (double val : values) {
+         * result += " & " + val;
+         * }
+         */
+        for (int i = 0; i + 1 < values.length; i += 2) {
+            double val = values[i] - values[i + 1];
             result += " & " + val;
         }
         result += " \\\\"; // "\\"
@@ -175,10 +179,21 @@ public class ResultsParser {
      */
     private static String generate18(String projectName, double[] percentages, double[] values) {
         String result = projectName + "       ";
-        for (double percent : percentages) {
+        /*
+         * for (double percent : percentages) {
+         * result += " & " + percent + "\\%\\pa"; // "\%\pa"
+         * }
+         * for (double val : values) {
+         * result += " & " + val;
+         * }
+         */
+
+        for (int i = 0; i + 1 < percentages.length; i += 2) {
+            double percent = percentages[i] - percentages[i + 1];
             result += " & " + percent + "\\%\\pa"; // "\%\pa"
         }
-        for (double val : values) {
+        for (int i = 0; i + 1 < values.length; i += 2) {
+            double val = values[i] - values[i + 1];
             result += " & " + val;
         }
         result += " \\\\"; // "\\"
@@ -221,7 +236,8 @@ public class ResultsParser {
         File[] fList = directory.listFiles();
         // create a list of project Objects that each have a diff project name
         int size = 5;
-        List<project> proj_arrayList = new ArrayList<project>(size);
+        List<project> proj_human_arrayList = new ArrayList<project>(size);
+        List<project> proj_auto_arrayList = new ArrayList<project>(size);
 
         for (File file : fList) {
             if (file.isFile()) {
@@ -233,36 +249,56 @@ public class ResultsParser {
                 // parseArgs returns "prioritization"
 
                 String techniqueName = parseFile(file, "-technique");
-                techniqueName = parseArgs(techniqueName);
+                if (techniqueName != null) {
+                    techniqueName = parseArgs(techniqueName);
+                }
 
                 String coverageName = parseFile(file, "-coverage");
-                coverageName = parseArgs(coverageName);
+                if (coverageName != null) {
+                    coverageName = parseArgs(coverageName);
+                }
 
                 String orderName = parseFile(file, "-order");
-                orderName = parseArgs(orderName);
+                if (orderName != null) {
+                    orderName = parseArgs(orderName);
+                }
 
                 String projectName = parseFile(file, "-project");
-                projectName = parseArgs(projectName);
+                if (projectName != null) {
+                    projectName = parseArgs(projectName);
+                }
 
                 String testType = parseFile(file, "-testType");
-                testType = parseArgs(testType);
+                if (testType != null) {
+                    testType = parseArgs(testType);
+                }
 
                 String resolveDependences = parseFile(file, "-resolveDependences");
-                resolveDependences = parseArgs(resolveDependences);
-                // resolveDependences will be null if flag not found in file
+                if (resolveDependences != null) {
+                    resolveDependences = parseArgs(resolveDependences);
+                    // resolveDependences will be null if flag not found in file
+                }
+
+                // see if List needs to orig or auto generated one
+                List<project> currProjList = null;
+                if (testType.equals("auto")) {
+                    currProjList = proj_auto_arrayList;
+                } else if (testType.equals("orig")) {
+                    currProjList = proj_human_arrayList;
+                }
 
                 // index of this project in the arrayList, might be -1 if not found
-                int indexOfProj = indexOfByName(proj_arrayList, projectName);
+                int indexOfProj = indexOfByName(currProjList, projectName);
 
                 // project Object that corresponds to the current project name in this file
                 project currProj = null;
 
                 if (indexOfProj != -1) {
-                    currProj = proj_arrayList.get(indexOfProj);
+                    currProj = currProjList.get(indexOfProj);
                 } else {// projectName not seen before
 
                     currProj = new project(projectName);
-                    proj_arrayList.add(currProj);
+                    currProjList.add(currProj);
                 }
 
                 // TODO: get the data for all the diff techniques and store in project class arrays
@@ -274,26 +310,32 @@ public class ResultsParser {
                 else if (techniqueName.equals("selection")) {
                     String apfd_value = parseFile(file, APFD_VALUE);
                     currProj.useFig18();
-
+                    double[] fig18_values_array = currProj.get_fig18_values();
                     // original values, index should be i=0, i+=2
-                    if (testType.equals("orig")) { // original
+                    if (resolveDependences == null) { // original
                         if (coverageName.equals("statement")) {
                             if (orderName.equals("original")) {
                                 // S1
+                                fig18_values_array[0] = Double.parseDouble(apfd_value);
                             } else if (orderName.equals("absolute")) {
                                 // S2
+                                fig18_values_array[2] = Double.parseDouble(apfd_value);
                             } else {
                                 // S3
+                                fig18_values_array[4] = Double.parseDouble(apfd_value);
                             }
 
                         } else if (coverageName.equals("function")) {
                             if (orderName.equals("original")) {
                                 // S4
+                                fig18_values_array[6] = Double.parseDouble(apfd_value);
 
                             } else if (orderName.equals("absolute")) {
                                 // S5
+                                fig18_values_array[8] = Double.parseDouble(apfd_value);
                             } else {
                                 // S6
+                                fig18_values_array[10] = Double.parseDouble(apfd_value);
                             }
                         }
 
@@ -301,20 +343,26 @@ public class ResultsParser {
                         if (coverageName.equals("statement")) {
                             if (orderName.equals("original")) {
                                 // S1
+                                fig18_values_array[1] = Double.parseDouble(apfd_value);
                             } else if (orderName.equals("absolute")) {
                                 // S2
+                                fig18_values_array[3] = Double.parseDouble(apfd_value);
                             } else {
                                 // S3
+                                fig18_values_array[5] = Double.parseDouble(apfd_value);
                             }
 
                         } else if (coverageName.equals("function")) {
                             if (orderName.equals("original")) {
                                 // S4
+                                fig18_values_array[7] = Double.parseDouble(apfd_value);
 
                             } else if (orderName.equals("absolute")) {
                                 // S5
+                                fig18_values_array[9] = Double.parseDouble(apfd_value);
                             } else {
                                 // S6
+                                fig18_values_array[11] = Double.parseDouble(apfd_value);
                             }
                         }
                     }
@@ -323,22 +371,26 @@ public class ResultsParser {
                 else if (techniqueName.equals("prioritization")) {
                     String apfd_value = parseFile(file, APFD_VALUE);
                     currProj.useFig17();
-
+                    double[] fig17_array = currProj.get_fig17_values();
                     // original values, index should be i=0, i+=2
-                    if (testType.equals("orig")) {
+                    if (resolveDependences == null) {
                         if (coverageName.equals("statement")) {
                             if (orderName.equals("absolute")) {
                                 // T3
+                                fig17_array[0] = Double.parseDouble(apfd_value);
                             } else {
                                 // T4
+                                fig17_array[2] = Double.parseDouble(apfd_value);
                             }
 
                         } else if (coverageName.equals("function")) {
                             if (orderName.equals("absolute")) {
                                 // T5
+                                fig17_array[4] = Double.parseDouble(apfd_value);
 
                             } else {
                                 // T7
+                                fig17_array[6] = Double.parseDouble(apfd_value);
                             }
                         }
 
@@ -346,16 +398,20 @@ public class ResultsParser {
                         if (coverageName.equals("statement")) {
                             if (orderName.equals("absolute")) {
                                 // T3
+                                fig17_array[1] = Double.parseDouble(apfd_value);
                             } else {
                                 // T4
+                                fig17_array[3] = Double.parseDouble(apfd_value);
                             }
 
                         } else if (coverageName.equals("function")) {
                             if (orderName.equals("absolute")) {
                                 // T5
+                                fig17_array[5] = Double.parseDouble(apfd_value);
 
                             } else {
                                 // T7
+                                fig17_array[7] = Double.parseDouble(apfd_value);
                             }
                         }
 
@@ -374,21 +430,39 @@ public class ResultsParser {
          * actual data value in LaTeX graph = fig**[i] - fig**[i + 1]
          * where i = 0, i+=2
          */
-        String latex17 = "";
-        String latex18 = "";
-        for (project temp : proj_arrayList) {
+        // generate LaTeX for the human-written test suites
+        String latex17_human = "";
+        String latex18_human = "";
+        for (project temp : proj_human_arrayList) {
             if (temp.isFig17()) {
-                latex17 += generate17(temp.getName(), temp.get_fig17_values());
-                latex17 += '\n';
+                latex17_human += generate17(temp.getName(), temp.get_fig17_values());
+                latex17_human += '\n';
             }
             if (temp.isFig18()) {
-                latex18 += generate18(temp.getName(), temp.get_fig18_percents(), temp.get_fig18_values());
-                latex18 += '\n';
+                latex18_human += generate18(temp.getName(), temp.get_fig18_percents(), temp.get_fig18_values());
+                latex18_human += '\n';
             }
 
         }
-        latex17 = latex17.substring(0, latex17.length());
-        latex18 = latex18.substring(0, latex18.length());
+        // latex17_human = latex17_human.substring(0, latex17_human.length() - 1);
+        // latex18_human = latex18_human.substring(0, latex18_human.length() - 1);
+
+        // generate LaTeX for the automatically-generated test suites
+        String latex17_auto = "";
+        String latex18_auto = "";
+        for (project temp : proj_auto_arrayList) {
+            if (temp.isFig17()) {
+                latex17_auto += generate17(temp.getName(), temp.get_fig17_values());
+                latex17_auto += '\n';
+            }
+            if (temp.isFig18()) {
+                latex18_auto += generate18(temp.getName(), temp.get_fig18_percents(), temp.get_fig18_values());
+                latex18_auto += '\n';
+            }
+
+        }
+        // latex17_auto = latex17_auto.substring(0, latex17_auto.length() - 1);
+        // latex18_auto = latex18_auto.substring(0, latex18_auto.length() - 1);
 
         // TODO: write to output file
     }
