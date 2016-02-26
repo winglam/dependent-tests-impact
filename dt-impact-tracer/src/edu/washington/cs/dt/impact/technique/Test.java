@@ -1,7 +1,7 @@
 /**
  * Copyright 2014 University of Washington. All Rights Reserved.
  * @author Wing Lam
- * 
+ *
  *         Contains methods and fields used by all test techniques.
  */
 
@@ -23,6 +23,7 @@ import java.util.Set;
 
 import edu.washington.cs.dt.impact.data.TestFunctionStatement;
 import edu.washington.cs.dt.impact.order.Standard;
+import edu.washington.cs.dt.impact.tools.FileTools;
 import edu.washington.cs.dt.impact.util.Constants;
 import edu.washington.cs.dt.impact.util.Constants.COVERAGE;
 
@@ -239,32 +240,17 @@ public class Test {
     }
 
     protected void parseOrigOrderToMethodList(File origOrder, Map<String, TestFunctionStatement> nameToMethodData) {
-        methodList.clear();
-        BufferedReader br;
-        try {
-            br = new BufferedReader(new FileReader(origOrder));
-            String line;
-            while ((line = br.readLine()) != null) {
-                if (nameToMethodData.containsKey(line.trim())) {
-                    methodList.add(nameToMethodData.get(line.trim()));
-                }
-            }
-            br.close();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        List<String> origOrderList = FileTools.parseFileToList(origOrder);
+        parseOrigOrderListToMethodList(origOrderList, nameToMethodData);
     }
 
     protected void parseOrigOrderListToMethodList(List<String> origOrder,
             Map<String, TestFunctionStatement> nameToMethodData) {
         methodList.clear();
         for (String line : origOrder) {
-            if (nameToMethodData.containsKey(line.trim())) {
-                methodList.add(nameToMethodData.get(line.trim()));
+            if (nameToMethodData.containsKey(line)) {
+                methodList.add(nameToMethodData.get(line));
             }
-
         }
     }
 

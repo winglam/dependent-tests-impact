@@ -12,7 +12,7 @@ parallelOrders=($testType-order time)
 #testTypes=(orig auto)
 experiments=(crystal)
 testTypes=(orig)
-orders=(absolute)
+orders=(absolute relative original)
 coverages=(statement)
 machines=(2 4)
 
