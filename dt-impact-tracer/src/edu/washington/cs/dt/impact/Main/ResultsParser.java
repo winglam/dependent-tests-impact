@@ -1,13 +1,19 @@
-package edu.washington.cs.dt.impact.Main;
 
+// package edu.washington.cs.dt.impact.Main;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
-class project {
+class Project {
     private String name;
 
     /*
@@ -26,7 +32,7 @@ class project {
     private boolean uses_fig17;
     private boolean uses_fig18;
 
-    public project(String projName) {
+    public Project(String projName) {
         name = projName;
         fig17_values = new double[4 * 2];
         fig18_values = new double[6 * 2];
@@ -81,21 +87,55 @@ public class ResultsParser {
      *
      * @return the data value without any leading or trailing whitespaces, null if keyword not found
      */
-    private static String parseFile(File file, String keyword) throws FileNotFoundException {
-
-        Scanner scanner = new Scanner(file);
-        while (scanner.hasNextLine()) {
-            String currLine = scanner.nextLine();
-            if (currLine.contains(keyword)) {
-                // gets numeric value of data
-                String data = currLine.substring(keyword.length(), currLine.length());
-                scanner.close(); // close Scanner before returning
-                // trim away any whitespaces leading or after the data value
-                return data.trim();
+    private static String parseFile(File file, String keyword) {
+        Scanner scanner = null;
+        try {
+            scanner = new Scanner(file);
+            while (scanner.hasNextLine()) {
+                String currLine = scanner.nextLine();
+                if (currLine.contains(keyword)) {
+                    // gets numeric value of data
+                    String data = currLine.substring(keyword.length(), currLine.length());
+                    scanner.close(); // close Scanner before returning
+                    // trim away any whitespaces leading or after the data value
+                    return data.trim();
+                }
             }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+            System.exit(2);
+        } finally {
+            scanner.close();
         }
-        scanner.close();
+
         return null; // none of the lines contained the keyword
+
+    }
+    /*
+     * a private method that gets the line with all the flags in the file
+     * that line starts with "-technique"
+     */
+
+    private static String getFlagsLine(File file) {
+        Scanner scanner = null;
+        String keyword = "-technique";
+        try {
+            scanner = new Scanner(file);
+            while (scanner.hasNextLine()) {
+                String currLine = scanner.nextLine();
+                if (currLine.contains(keyword)) {
+                    scanner.close(); // close Scanner before returning
+                    return currLine;
+                }
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+            System.exit(2);
+        } finally {
+            scanner.close();
+        }
+
+        return null; // none of the lines contained the keyword -technique
     }
 
     /*
@@ -113,7 +153,7 @@ public class ResultsParser {
                         + flag + " flagName");
                 System.exit(0);
             }
-            flagName = argsList.get(nameIndex).toLowerCase().trim();
+            flagName = argsList.get(nameIndex);
         } else {
             System.err
                     .println("No" + flag + " argument is specified." + " Please use the format: " + flag + " flagName");
@@ -123,28 +163,9 @@ public class ResultsParser {
     }
 
     /*
-     * @param line will be a String of form ", prioritization, [...]"
-     *
-     * @return line without the commas and whitespace, i.e. "prioritization"
-     */
-    private static String parseArgs(String line) {
-        // line == null only if this flag was not found
-        if (line == null) {
-            return null;
-        }
-        int delimiterIndex = line.indexOf(",", 1);
-        // -1 if last argument..takes on form: "-testType, orig]"
-        if (delimiterIndex == -1) {
-            delimiterIndex = line.indexOf("]");
-        }
-        return line.substring(1, delimiterIndex).trim();
-
-    }
-
-    /*
      * a private method to generate a line of LaTeX needed for figure 17
      *
-     * @param projectName the name of the project
+     * @param projectName the name of the Project
      *
      * @param values the ordered values that need to be written
      *
@@ -153,11 +174,6 @@ public class ResultsParser {
      */
     private static String generate17(String projectName, double[] values) {
         String result = projectName;
-        /*
-         * for (double val : values) {
-         * result += " & " + val;
-         * }
-         */
         for (int i = 0; i + 1 < values.length; i += 2) {
             double val = values[i] - values[i + 1];
             result += " & " + val;
@@ -179,15 +195,6 @@ public class ResultsParser {
      */
     private static String generate18(String projectName, double[] percentages, double[] values) {
         String result = projectName + "       ";
-        /*
-         * for (double percent : percentages) {
-         * result += " & " + percent + "\\%\\pa"; // "\%\pa"
-         * }
-         * for (double val : values) {
-         * result += " & " + val;
-         * }
-         */
-
         for (int i = 0; i + 1 < percentages.length; i += 2) {
             double percent = percentages[i] - percentages[i + 1];
             result += " & " + percent + "\\%\\pa"; // "\%\pa"
@@ -200,14 +207,14 @@ public class ResultsParser {
         return result;
     }
     /*
-     * a private method that searches a List<project> objects for the project that matches projName
+     * a private method that searches a List<Project> objects for the project that matches projName
      *
      * @return -1 if no match found, otherwise index of the project with projName
      */
 
-    private static int indexOfByName(List<project> projList, String projName) {
+    private static int indexOfByName(List<Project> projList, String projName) {
         int index = 0;
-        for (project temp : projList) {
+        for (Project temp : projList) {
             if (temp.getName().equals(projName)) {
                 return index;
             }
@@ -223,9 +230,9 @@ public class ResultsParser {
         List<String> argsList = new ArrayList<String>(Arrays.asList(args));
 
         String directoryName = getArgName(argsList, "-directory");
+        // name of directory where templates are stored
+        String templateDirectoryName = getArgName(argsList, "-templateDirectory");
 
-        // open files with LaTeX template for figures 17, 18, and 19
-        // TODO *****************
         /*
          * 17: prioritization
          * 18: selection
@@ -236,51 +243,46 @@ public class ResultsParser {
         File[] fList = directory.listFiles();
         // create a list of project Objects that each have a diff project name
         int size = 5;
-        List<project> proj_human_arrayList = new ArrayList<project>(size);
-        List<project> proj_auto_arrayList = new ArrayList<project>(size);
+        List<Project> proj_human_arrayList = new ArrayList<Project>(size);
+        List<Project> proj_auto_arrayList = new ArrayList<Project>(size);
 
         for (File file : fList) {
             if (file.isFile()) {
-                // do something with the file here
-                // figure out how to generate the LaTeX needed for the
-                // diagrams...see Constants.java
 
-                // parseFile returns String of form ", prioritization, [...]"
-                // parseArgs returns "prioritization"
-
-                String techniqueName = parseFile(file, "-technique");
-                if (techniqueName != null) {
-                    techniqueName = parseArgs(techniqueName);
+                // String containing all the flags
+                String flagsInFile = getFlagsLine(file);
+                // get rid of square brackets
+                flagsInFile = flagsInFile.substring(1, flagsInFile.length() - 1);
+                String[] flags = flagsInFile.split(",");
+                List<String> flagsList = Arrays.asList(flags);
+                for (int i = 0; i < flagsList.size(); i++) {
+                    flagsList.set(i, flagsList.get(i).trim());
                 }
+                int index = flagsList.indexOf("-technique");
+                // index + 1 because want arg after the index of flag
+                String techniqueName = flagsList.get(index + 1);
 
-                String coverageName = parseFile(file, "-coverage");
-                if (coverageName != null) {
-                    coverageName = parseArgs(coverageName);
-                }
+                index = flagsList.indexOf("-coverage");
+                String coverageName = flagsList.get(index + 1);
 
-                String orderName = parseFile(file, "-order");
-                if (orderName != null) {
-                    orderName = parseArgs(orderName);
-                }
+                index = flagsList.indexOf("-order");
+                String orderName = flagsList.get(index + 1);
 
-                String projectName = parseFile(file, "-project");
-                if (projectName != null) {
-                    projectName = parseArgs(projectName);
-                }
+                index = flagsList.indexOf("-project");
+                String projectName = flagsList.get(index + 1);
 
-                String testType = parseFile(file, "-testType");
-                if (testType != null) {
-                    testType = parseArgs(testType);
-                }
+                index = flagsList.indexOf("-testType");
+                String testType = flagsList.get(index + 1);
 
-                String resolveDependences = parseFile(file, "-resolveDependences");
-                if (resolveDependences != null) {
-                    resolveDependences = parseArgs(resolveDependences);
-                    // resolveDependences will be null if flag not found in file
+                index = flagsList.indexOf("-resolveDependences");
+                String resolveDependences = null;
+                // if index = -1, flag not present
+                if (index != -1) {
+                    resolveDependences = flagsList.get(index);
                 }
 
                 // see if List needs to orig or auto generated one
-                List<project> currProjList = null;
+                List<Project> currProjList = null;
                 if (testType.equals("auto")) {
                     currProjList = proj_auto_arrayList;
                 } else if (testType.equals("orig")) {
@@ -290,24 +292,29 @@ public class ResultsParser {
                 // index of this project in the arrayList, might be -1 if not found
                 int indexOfProj = indexOfByName(currProjList, projectName);
 
-                // project Object that corresponds to the current project name in this file
-                project currProj = null;
+                // Project Object that corresponds to the current project name in this file
+                Project currProj = null;
 
                 if (indexOfProj != -1) {
                     currProj = currProjList.get(indexOfProj);
                 } else {// projectName not seen before
 
-                    currProj = new project(projectName);
+                    currProj = new Project(projectName);
                     currProjList.add(currProj);
                 }
-
-                // TODO: get the data for all the diff techniques and store in project class arrays
 
                 if (techniqueName.equals("parallelization")) {
                     String order_time = parseFile(file, ORDER_TIME);
 
                 } // selection technique
                 else if (techniqueName.equals("selection")) {
+                    // TODO check if all the original and enchanced files are in the directory
+
+                    /*
+                     * TODO: Calculate percentages for run time
+                     * take average of S1-S3 and S4-S6
+                     * percentage is =
+                     */
                     String apfd_value = parseFile(file, APFD_VALUE);
                     currProj.useFig18();
                     double[] fig18_values_array = currProj.get_fig18_values();
@@ -418,7 +425,7 @@ public class ResultsParser {
                     }
 
                 } else {// garbage value...return error
-
+                    // TODO throw an exception and exit
                 }
 
             }
@@ -433,38 +440,103 @@ public class ResultsParser {
         // generate LaTeX for the human-written test suites
         String latex17_human = "";
         String latex18_human = "";
-        for (project temp : proj_human_arrayList) {
+        for (Project temp : proj_human_arrayList) {
             if (temp.isFig17()) {
                 latex17_human += generate17(temp.getName(), temp.get_fig17_values());
-                latex17_human += '\n';
+                latex17_human += "\r\n";
             }
             if (temp.isFig18()) {
                 latex18_human += generate18(temp.getName(), temp.get_fig18_percents(), temp.get_fig18_values());
-                latex18_human += '\n';
+                latex18_human += "\r\n";
             }
 
         }
-        // latex17_human = latex17_human.substring(0, latex17_human.length() - 1);
-        // latex18_human = latex18_human.substring(0, latex18_human.length() - 1);
+        // get rid of the newline at the very end of the string
+        if (latex17_human.length() > 0) {
+            latex17_human = latex17_human.substring(0, latex17_human.length() - 1);
+        }
+        if (latex18_human.length() > 0) {
+            latex18_human = latex18_human.substring(0, latex18_human.length() - 1);
+        }
 
         // generate LaTeX for the automatically-generated test suites
         String latex17_auto = "";
         String latex18_auto = "";
-        for (project temp : proj_auto_arrayList) {
+        for (Project temp : proj_auto_arrayList) {
             if (temp.isFig17()) {
                 latex17_auto += generate17(temp.getName(), temp.get_fig17_values());
-                latex17_auto += '\n';
+                latex17_auto += "\r\n";
             }
             if (temp.isFig18()) {
                 latex18_auto += generate18(temp.getName(), temp.get_fig18_percents(), temp.get_fig18_values());
-                latex18_auto += '\n';
+                latex18_auto += "\r\n";
             }
 
         }
-        // latex17_auto = latex17_auto.substring(0, latex17_auto.length() - 1);
-        // latex18_auto = latex18_auto.substring(0, latex18_auto.length() - 1);
+        // get rid of the newline at the very end of the string
+        if (latex17_auto.length() > 0) {
+            latex17_auto = latex17_auto.substring(0, latex17_auto.length() - 1);
+        }
+        if (latex18_auto.length() > 0) {
+            latex18_auto = latex18_auto.substring(0, latex18_auto.length() - 1);
+        }
+
+        /*
+         * System.out.println(latex17_human);
+         * File file = new File("C:/Users/Aaron/Documents/PURE/templates");
+         * for (String fileNames : file.list()) {
+         * System.out.println(fileNames);
+         * }
+         */
 
         // TODO: write to output file
+        // TODO: have directory of template files as an arg
+        try {
+
+            File figure17_latex = new File(templateDirectoryName + "/figure17_template.txt");
+            FileReader f17_reader = new FileReader(figure17_latex);
+            File figure18_latex = new File(templateDirectoryName + "/figure18_template.txt");
+            FileReader f18_reader = new FileReader(figure18_latex);
+
+            BufferedReader br = new BufferedReader(f17_reader);
+            String temp;
+            String oldtext = "";
+            while ((temp = br.readLine()) != null) {
+                oldtext += temp + "\r\n";
+            }
+            // TODO: "\\" at end of line is getting replaced with a single "\"
+            // TODO: transform this part into a single method to make things easier
+            String resultText = oldtext.replaceFirst("-fig17orig", latex17_human);
+            resultText = resultText.replaceFirst("-fig17auto", latex17_auto);
+
+            File newFile = new File(templateDirectoryName + "/figure17_LaTeX.txt");
+            FileWriter writer = new FileWriter(newFile);
+            BufferedWriter bw = new BufferedWriter(writer);
+            bw.write(resultText);
+            bw.close();
+
+            br = new BufferedReader(f18_reader);
+            oldtext = "";
+            while ((temp = br.readLine()) != null) {
+                oldtext += temp + "\r\n";
+            }
+            resultText = oldtext.replaceFirst("-fig18orig", latex18_human);
+            resultText = resultText.replaceFirst("-fig18auto", latex18_auto);
+
+            newFile = new File(templateDirectoryName + "/figure18_LaTeX.txt");
+            writer = new FileWriter(newFile);
+            bw = new BufferedWriter(writer);
+            bw.write(resultText);
+            bw.close();
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+            System.exit(2);
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.exit(2);
+        }
+
     }
 
 }
