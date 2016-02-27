@@ -16,6 +16,7 @@ import java.util.List;
 import edu.washington.cs.dt.TestExecResults;
 import edu.washington.cs.dt.runners.AbstractTestRunner;
 import edu.washington.cs.dt.runners.FixedOrderRunner;
+import edu.washington.cs.dt.runners.RandomOrderRunner;
 
 public class ImpactMain {
 
@@ -70,7 +71,14 @@ public class ImpactMain {
             useTimer = true;
         }
 
-        AbstractTestRunner runner = new FixedOrderRunner(tests);
+        boolean randomize = argsList.contains("-randomize");
+
+        AbstractTestRunner runner;
+        if (randomize) {
+            runner = new RandomOrderRunner(tests);
+        } else {
+            runner = new FixedOrderRunner(tests);
+        }
         long start = System.nanoTime();
         TestExecResults results = runner.run();
         long total = System.nanoTime() - start;
