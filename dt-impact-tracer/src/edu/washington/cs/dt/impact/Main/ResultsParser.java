@@ -31,6 +31,7 @@ class Project {
 
     private boolean uses_fig17;
     private boolean uses_fig18;
+    private boolean uses_fig19;
 
     public Project(String projName) {
         name = projName;
@@ -39,6 +40,7 @@ class Project {
         fig18_percents = new double[2 * 2];
         uses_fig17 = false;
         uses_fig18 = false;
+        uses_fig19 = false;
     }
 
     public boolean isFig17() {
@@ -49,12 +51,20 @@ class Project {
         return uses_fig18;
     }
 
+    public boolean isFig19() {
+        return uses_fig19;
+    }
+
     public void useFig17() {
         uses_fig17 = true;
     }
 
     public void useFig18() {
         uses_fig18 = true;
+    }
+
+    public void usesFig19() {
+        uses_fig19 = true;
     }
 
     public String getName() {
@@ -179,6 +189,8 @@ public class ResultsParser {
             result += " & " + val;
         }
         result += " \\\\"; // "\\"
+        result += "\\\\"; // need to do twice because the String returned will have "\\"
+        // writeToLatexFile will read "\\" as only one '\' char, but need "\\"
         return result;
     }
 
@@ -204,6 +216,8 @@ public class ResultsParser {
             result += " & " + val;
         }
         result += " \\\\"; // "\\"
+        result += "\\\\"; // need to do twice because the String returned will have "\\"
+        // writeToLatexFile will read "\\" as only one '\' char, but need "\\"
         return result;
     }
     /*
@@ -221,6 +235,62 @@ public class ResultsParser {
             index++;
         }
         return -1;
+    }
+    /*
+     * a private method to generate the LaTeX format of the data of each Project in projList
+     *
+     * @param projList a list of Projects that each contain data
+     */
+
+    private static String generateLatexString(List<Project> projList) {
+        String latexString = "";
+        for (Project temp : projList) {
+            if (temp.isFig17()) {
+                latexString += generate17(temp.getName(), temp.get_fig17_values());
+                latexString += "\r\n";
+            } else if (temp.isFig18()) {
+                latexString += generate18(temp.getName(), temp.get_fig18_percents(), temp.get_fig18_values());
+                latexString += "\r\n";
+            }
+        }
+        if (latexString.length() > 0) {
+            latexString = latexString.substring(0, latexString.length() - 2);
+        }
+        return latexString;
+    }
+    /*
+     * a private method that writes to the output file specified using the given template file
+     * the flags that need to be replaced should be specified
+     *
+     */
+
+    private static void writeToLatexFile(String humanLatex, String humanFlag, String autoLatex, String autoFlag,
+            String templateFileName, String outputFileName) {
+        try {
+            File file = new File(templateFileName);
+            FileReader fr = new FileReader(file);
+            BufferedReader br = new BufferedReader(fr);
+            String temp;
+            String oldtext = "";
+            while ((temp = br.readLine()) != null) {
+                oldtext += temp + "\r\n";
+            }
+            String resultText = oldtext.replaceFirst(humanFlag, humanLatex);
+            resultText = resultText.replaceFirst(autoFlag, autoLatex);
+            File outputFile = new File(outputFileName);
+            FileWriter writer = new FileWriter(outputFile);
+            BufferedWriter bw = new BufferedWriter(writer);
+            bw.write(resultText);
+            bw.close();
+            br.close();
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+            System.exit(2);
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.exit(2);
+        }
     }
 
     /**
@@ -255,6 +325,7 @@ public class ResultsParser {
                 flagsInFile = flagsInFile.substring(1, flagsInFile.length() - 1);
                 String[] flags = flagsInFile.split(",");
                 List<String> flagsList = Arrays.asList(flags);
+                // get rid of whitespaces
                 for (int i = 0; i < flagsList.size(); i++) {
                     flagsList.set(i, flagsList.get(i).trim());
                 }
@@ -303,10 +374,11 @@ public class ResultsParser {
                     currProjList.add(currProj);
                 }
 
+                // parallelization technique, figure 19
                 if (techniqueName.equals("parallelization")) {
                     String order_time = parseFile(file, ORDER_TIME);
 
-                } // selection technique
+                } // selection technique, figure 18
                 else if (techniqueName.equals("selection")) {
                     // TODO check if all the original and enchanced files are in the directory
 
@@ -374,7 +446,7 @@ public class ResultsParser {
                         }
                     }
 
-                } // prioritization techinque
+                } // prioritization techinque, figure 17
                 else if (techniqueName.equals("prioritization")) {
                     String apfd_value = parseFile(file, APFD_VALUE);
                     currProj.useFig17();
@@ -431,142 +503,25 @@ public class ResultsParser {
             }
         }
 
-        // for every project name in the arrayList, generate strings
-        /*
-         * TODO: make sure generate17() and generate18() are getting values correctly
-         * actual data value in LaTeX graph = fig**[i] - fig**[i + 1]
-         * where i = 0, i+=2
-         */
-        // generate LaTeX for the human-written test suites
-        String latex17_human = "";
-        String latex18_human = "";
-        for (Project temp : proj_human_arrayList) {
-            if (temp.isFig17()) {
-                latex17_human += generate17(temp.getName(), temp.get_fig17_values());
-                latex17_human += "\r\n";
-            }
-            if (temp.isFig18()) {
-                latex18_human += generate18(temp.getName(), temp.get_fig18_percents(), temp.get_fig18_values());
-                latex18_human += "\r\n";
-            }
-
+        // generate LaTeX for the human-written and automatic test suites
+        String humanLatexString = generateLatexString(proj_human_arrayList);
+        String autoLatexString = generateLatexString(proj_auto_arrayList);
+        String figNum = null;
+        if (proj_human_arrayList.get(0).isFig17()) {
+            figNum = "17";
+        } else if (proj_human_arrayList.get(0).isFig18()) {
+            figNum = "18";
+        } else {
+            figNum = "19";
         }
-        // get rid of the newline at the very end of the string
-        if (latex17_human.length() > 0) {
-            latex17_human = latex17_human.substring(0, latex17_human.length() - 1);
-        }
-        if (latex18_human.length() > 0) {
-            latex18_human = latex18_human.substring(0, latex18_human.length() - 1);
-        }
-
-        // generate LaTeX for the automatically-generated test suites
-        String latex17_auto = "";
-        String latex18_auto = "";
-        for (Project temp : proj_auto_arrayList) {
-            if (temp.isFig17()) {
-                latex17_auto += generate17(temp.getName(), temp.get_fig17_values());
-                latex17_auto += "\r\n";
-            }
-            if (temp.isFig18()) {
-                latex18_auto += generate18(temp.getName(), temp.get_fig18_percents(), temp.get_fig18_values());
-                latex18_auto += "\r\n";
-            }
-
-        }
-        // get rid of the newline at the very end of the string
-        if (latex17_auto.length() > 0) {
-            latex17_auto = latex17_auto.substring(0, latex17_auto.length() - 1);
-        }
-        if (latex18_auto.length() > 0) {
-            latex18_auto = latex18_auto.substring(0, latex18_auto.length() - 1);
-        }
-
-        /*
-         * System.out.println(latex17_human);
-         * File file = new File("C:/Users/Aaron/Documents/PURE/templates");
-         * for (String fileNames : file.list()) {
-         * System.out.println(fileNames);
-         * }
-         */
-
-        // TODO: write to output file
-        // TODO: have directory of template files as an arg
-        try {
-
-            File figure17_latex = new File(templateDirectoryName + "/figure17_template.txt");
-            FileReader f17_reader = new FileReader(figure17_latex);
-            File figure18_latex = new File(templateDirectoryName + "/figure18_template.txt");
-            FileReader f18_reader = new FileReader(figure18_latex);
-
-            BufferedReader br = new BufferedReader(f17_reader);
-            String temp;
-            String oldtext = "";
-            while ((temp = br.readLine()) != null) {
-                oldtext += temp + "\r\n";
-            }
-            // TODO: "\\" at end of line is getting replaced with a single "\"
-            // TODO: transform this part into a single method to make things easier
-            String resultText = oldtext.replaceFirst("-fig17orig", latex17_human);
-            resultText = resultText.replaceFirst("-fig17auto", latex17_auto);
-
-            File newFile = new File(templateDirectoryName + "/figure17_LaTeX.txt");
-            FileWriter writer = new FileWriter(newFile);
-            BufferedWriter bw = new BufferedWriter(writer);
-            bw.write(resultText);
-            bw.close();
-
-            br = new BufferedReader(f18_reader);
-            oldtext = "";
-            while ((temp = br.readLine()) != null) {
-                oldtext += temp + "\r\n";
-            }
-            resultText = oldtext.replaceFirst("-fig18orig", latex18_human);
-            resultText = resultText.replaceFirst("-fig18auto", latex18_auto);
-
-            newFile = new File(templateDirectoryName + "/figure18_LaTeX.txt");
-            writer = new FileWriter(newFile);
-            bw = new BufferedWriter(writer);
-            bw.write(resultText);
-            bw.close();
-
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-            System.exit(2);
-        } catch (IOException e) {
-            e.printStackTrace();
-            System.exit(2);
-        }
+        // the flag to replace in template file should be flexible
+        String flagToReplace = "-fig" + figNum;
+        // output and template file name should be flexible
+        String outputFileName = templateDirectoryName + "/figure" + figNum + "_latex.txt";
+        String templateFileName = templateDirectoryName + "/figure" + figNum + "_template.txt";
+        writeToLatexFile(humanLatexString, flagToReplace + "orig", autoLatexString, flagToReplace + "auto",
+                templateFileName, outputFileName);
 
     }
-
 }
-
-/*
- * template for LaTeX generation for figure 17
- * Crystal & 0.026 & 0.001 & 0.000 & 0.000 \\
- *
- * for figure 18
- * Crystal & 5.4\%\pa & 1.3\%\pa & 0.000 & 0.000 & 0.008 & 0.015 & 0.036 & 0.000 \\
- */
-
-// The tables needed to be generated and the type of args they require
-
-/*
- * T3 will correspond to the file name PRIORITIZATION-ORIG-CRYSTAL-STATEMENT-ABSOLUTE-CONTAINS_DT-OMITTED_TD.
- * T4 will correspond to the file name PRIORITIZATION-ORIG-CRYSTAL-STATEMENT-RELATIVE-CONTAINS_DT-OMITTED_TD.
- */
-
-/*
- * T3 Prioritize on coverage of statements
- * T4 Prioritize on coverage of statements not yet covered
- * T5 Prioritize on coverage of functions
- * T7 Prioritize on coverage of functions not yet covered
- *
- * S1 Statement Test id (no re-ordering)
- * S2 Statement Number of elements tests cover
- * S3 Statement Number of uncovered elements tests cover
- * S4 Function Test id (no re-ordering)
- * S5 Function Number of elements tests cover
- * S6 Function Number of uncovered elements tests cover
- */
 
