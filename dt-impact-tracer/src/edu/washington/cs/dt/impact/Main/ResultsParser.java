@@ -1,11 +1,9 @@
 
-// package edu.washington.cs.dt.impact.Main;
+package edu.washington.cs.dt.impact.Main;
 
-import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -13,81 +11,10 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
-class Project {
-    private String name;
-
-    /*
-     * fig**[i] corresponds to orig value
-     * fig**[i+1] corresponds to new value
-     * where i=0, i+=2
-     * so when doing calculations, do data = fig**[i] - fig**[i+1]
-     */
-    // corresponds to T3, T4, T5, and T7 respectively
-    private double[] fig17_values;
-    // corresponds to S1, S2, S3, S4, S5, and S6 respectively
-    private double[] fig18_values;
-    // corresponds to S1--S3 and S4--S6
-    private double[] fig18_percents;
-
-    private boolean uses_fig17;
-    private boolean uses_fig18;
-    private boolean uses_fig19;
-
-    public Project(String projName) {
-        name = projName;
-        fig17_values = new double[4 * 2];
-        fig18_values = new double[6 * 2];
-        fig18_percents = new double[2 * 2];
-        uses_fig17 = false;
-        uses_fig18 = false;
-        uses_fig19 = false;
-    }
-
-    public boolean isFig17() {
-        return uses_fig17;
-    }
-
-    public boolean isFig18() {
-        return uses_fig18;
-    }
-
-    public boolean isFig19() {
-        return uses_fig19;
-    }
-
-    public void useFig17() {
-        uses_fig17 = true;
-    }
-
-    public void useFig18() {
-        uses_fig18 = true;
-    }
-
-    public void usesFig19() {
-        uses_fig19 = true;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public double[] get_fig17_values() {
-        return fig17_values;
-    }
-
-    public double[] get_fig18_values() {
-        return fig18_values;
-    }
-
-    public double[] get_fig18_percents() {
-        return fig18_percents;
-    }
-}
-
 public class ResultsParser {
 
     // name of line to get values from in Parallelization technique
-    public static final String ORDER_TIME = "New order time:";
+    public static final String ORDER_TIME = "Execution time for executing the following testing order:";
     // name of line to get values from in selection and prioritization
     public static final String APFD_VALUE = "APFD value:";
 
@@ -189,8 +116,6 @@ public class ResultsParser {
             result += " & " + val;
         }
         result += " \\\\"; // "\\"
-        result += "\\\\"; // need to do twice because the String returned will have "\\"
-        // writeToLatexFile will read "\\" as only one '\' char, but need "\\"
         return result;
     }
 
@@ -216,10 +141,22 @@ public class ResultsParser {
             result += " & " + val;
         }
         result += " \\\\"; // "\\"
-        result += "\\\\"; // need to do twice because the String returned will have "\\"
-        // writeToLatexFile will read "\\" as only one '\' char, but need "\\"
         return result;
     }
+
+    private static String generate19(String projectName, double[] orig_values, double[] time_values) {
+        String result = projectName;
+        for (int i = 0; i + 1 < orig_values.length; i += 2) {
+            result += " & " + orig_values[i] + " &\\rightarrow$ " + orig_values[i + 1];
+        }
+        for (int i = 0; i + 1 < time_values.length; i += 2) {
+            result += " & " + time_values[i] + " &\\rightarrow$ " + time_values[i + 1];
+        }
+        result += "\\\\";
+
+        return result;
+    }
+
     /*
      * a private method that searches a List<Project> objects for the project that matches projName
      *
@@ -251,38 +188,29 @@ public class ResultsParser {
             } else if (temp.isFig18()) {
                 latexString += generate18(temp.getName(), temp.get_fig18_percents(), temp.get_fig18_values());
                 latexString += "\r\n";
+            } else if (temp.isFig19()) {
+                latexString += generate19(temp.getName(), temp.get_fig19_orig(), temp.get_fig19_time());
+                latexString += "\r\n";
             }
         }
+        // take off the "\r\n" from the last line
         if (latexString.length() > 0) {
             latexString = latexString.substring(0, latexString.length() - 2);
         }
         return latexString;
     }
     /*
-     * a private method that writes to the output file specified using the given template file
-     * the flags that need to be replaced should be specified
+     * a private method that writes to the output file specified using the given latex string
      *
      */
 
-    private static void writeToLatexFile(String humanLatex, String humanFlag, String autoLatex, String autoFlag,
-            String templateFileName, String outputFileName) {
+    private static void writeToLatexFile(String latex, String outputFileName) {
         try {
-            File file = new File(templateFileName);
-            FileReader fr = new FileReader(file);
-            BufferedReader br = new BufferedReader(fr);
-            String temp;
-            String oldtext = "";
-            while ((temp = br.readLine()) != null) {
-                oldtext += temp + "\r\n";
-            }
-            String resultText = oldtext.replaceFirst(humanFlag, humanLatex);
-            resultText = resultText.replaceFirst(autoFlag, autoLatex);
             File outputFile = new File(outputFileName);
             FileWriter writer = new FileWriter(outputFile);
             BufferedWriter bw = new BufferedWriter(writer);
-            bw.write(resultText);
+            bw.write(latex);
             bw.close();
-            br.close();
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -300,8 +228,8 @@ public class ResultsParser {
         List<String> argsList = new ArrayList<String>(Arrays.asList(args));
 
         String directoryName = getArgName(argsList, "-directory");
-        // name of directory where templates are stored
-        String templateDirectoryName = getArgName(argsList, "-templateDirectory");
+        // name of directory where files should be outputted
+        String outputDirectoryName = getArgName(argsList, "-outputDirectory");
 
         /*
          * 17: prioritization
@@ -313,7 +241,7 @@ public class ResultsParser {
         File[] fList = directory.listFiles();
         // create a list of project Objects that each have a diff project name
         int size = 5;
-        List<Project> proj_human_arrayList = new ArrayList<Project>(size);
+        List<Project> proj_orig_arrayList = new ArrayList<Project>(size);
         List<Project> proj_auto_arrayList = new ArrayList<Project>(size);
 
         for (File file : fList) {
@@ -357,7 +285,7 @@ public class ResultsParser {
                 if (testType.equals("auto")) {
                     currProjList = proj_auto_arrayList;
                 } else if (testType.equals("orig")) {
-                    currProjList = proj_human_arrayList;
+                    currProjList = proj_orig_arrayList;
                 }
 
                 // index of this project in the arrayList, might be -1 if not found
@@ -376,7 +304,45 @@ public class ResultsParser {
 
                 // parallelization technique, figure 19
                 if (techniqueName.equals("parallelization")) {
-                    String order_time = parseFile(file, ORDER_TIME);
+                    String order_time_string = parseFile(file, ORDER_TIME);
+                    double order_time = Double.parseDouble(order_time_string);
+                    // order will be time or original
+                    // k = 2, 4, 8, 16 is the number of machines
+                    index = flagsList.indexOf("-numOfMachines");
+                    String numMachines_string = flagsList.get(index + 1);
+                    int numMachines = Integer.parseInt(numMachines_string);
+
+                    currProj.useFig19();
+                    // this array will correspond to P1 or P2
+                    double[] curr_fig19_array = null;
+                    if (orderName.equals("original")) {
+                        curr_fig19_array = currProj.get_fig19_orig();
+                    } else { // orderName == time
+                        curr_fig19_array = currProj.get_fig19_time();
+                    }
+
+                    if (resolveDependences == null) { // original test suite
+                        if (numMachines == 2) {
+                            curr_fig19_array[0] = order_time;
+                        } else if (numMachines == 4) {
+                            curr_fig19_array[2] = order_time;
+                        } else if (numMachines == 8) {
+                            curr_fig19_array[4] = order_time;
+                        } else if (numMachines == 16) {
+                            curr_fig19_array[6] = order_time;
+                        }
+                    } else // dependence-aware algorithm
+                    {
+                        if (numMachines == 2) {
+                            curr_fig19_array[1] = order_time;
+                        } else if (numMachines == 4) {
+                            curr_fig19_array[3] = order_time;
+                        } else if (numMachines == 8) {
+                            curr_fig19_array[5] = order_time;
+                        } else if (numMachines == 16) {
+                            curr_fig19_array[7] = order_time;
+                        }
+                    }
 
                 } // selection technique, figure 18
                 else if (techniqueName.equals("selection")) {
@@ -387,7 +353,8 @@ public class ResultsParser {
                      * take average of S1-S3 and S4-S6
                      * percentage is =
                      */
-                    String apfd_value = parseFile(file, APFD_VALUE);
+                    String apfd_value_string = parseFile(file, APFD_VALUE);
+                    double apfd_value = Double.parseDouble(apfd_value_string);
                     currProj.useFig18();
                     double[] fig18_values_array = currProj.get_fig18_values();
                     // original values, index should be i=0, i+=2
@@ -395,26 +362,26 @@ public class ResultsParser {
                         if (coverageName.equals("statement")) {
                             if (orderName.equals("original")) {
                                 // S1
-                                fig18_values_array[0] = Double.parseDouble(apfd_value);
+                                fig18_values_array[0] = apfd_value;
                             } else if (orderName.equals("absolute")) {
                                 // S2
-                                fig18_values_array[2] = Double.parseDouble(apfd_value);
+                                fig18_values_array[2] = apfd_value;
                             } else {
                                 // S3
-                                fig18_values_array[4] = Double.parseDouble(apfd_value);
+                                fig18_values_array[4] = apfd_value;
                             }
 
                         } else if (coverageName.equals("function")) {
                             if (orderName.equals("original")) {
                                 // S4
-                                fig18_values_array[6] = Double.parseDouble(apfd_value);
+                                fig18_values_array[6] = apfd_value;
 
                             } else if (orderName.equals("absolute")) {
                                 // S5
-                                fig18_values_array[8] = Double.parseDouble(apfd_value);
+                                fig18_values_array[8] = apfd_value;
                             } else {
                                 // S6
-                                fig18_values_array[10] = Double.parseDouble(apfd_value);
+                                fig18_values_array[10] = apfd_value;
                             }
                         }
 
@@ -422,33 +389,34 @@ public class ResultsParser {
                         if (coverageName.equals("statement")) {
                             if (orderName.equals("original")) {
                                 // S1
-                                fig18_values_array[1] = Double.parseDouble(apfd_value);
+                                fig18_values_array[1] = apfd_value;
                             } else if (orderName.equals("absolute")) {
                                 // S2
-                                fig18_values_array[3] = Double.parseDouble(apfd_value);
+                                fig18_values_array[3] = apfd_value;
                             } else {
                                 // S3
-                                fig18_values_array[5] = Double.parseDouble(apfd_value);
+                                fig18_values_array[5] = apfd_value;
                             }
 
                         } else if (coverageName.equals("function")) {
                             if (orderName.equals("original")) {
                                 // S4
-                                fig18_values_array[7] = Double.parseDouble(apfd_value);
+                                fig18_values_array[7] = apfd_value;
 
                             } else if (orderName.equals("absolute")) {
                                 // S5
-                                fig18_values_array[9] = Double.parseDouble(apfd_value);
+                                fig18_values_array[9] = apfd_value;
                             } else {
                                 // S6
-                                fig18_values_array[11] = Double.parseDouble(apfd_value);
+                                fig18_values_array[11] = apfd_value;
                             }
                         }
                     }
 
                 } // prioritization techinque, figure 17
                 else if (techniqueName.equals("prioritization")) {
-                    String apfd_value = parseFile(file, APFD_VALUE);
+                    String apfd_value_string = parseFile(file, APFD_VALUE);
+                    double apfd_value = Double.parseDouble(apfd_value_string);
                     currProj.useFig17();
                     double[] fig17_array = currProj.get_fig17_values();
                     // original values, index should be i=0, i+=2
@@ -456,20 +424,20 @@ public class ResultsParser {
                         if (coverageName.equals("statement")) {
                             if (orderName.equals("absolute")) {
                                 // T3
-                                fig17_array[0] = Double.parseDouble(apfd_value);
-                            } else {
+                                fig17_array[0] = apfd_value;
+                            } else { // relative
                                 // T4
-                                fig17_array[2] = Double.parseDouble(apfd_value);
+                                fig17_array[2] = apfd_value;
                             }
 
                         } else if (coverageName.equals("function")) {
                             if (orderName.equals("absolute")) {
                                 // T5
-                                fig17_array[4] = Double.parseDouble(apfd_value);
+                                fig17_array[4] = apfd_value;
 
-                            } else {
+                            } else { // relative
                                 // T7
-                                fig17_array[6] = Double.parseDouble(apfd_value);
+                                fig17_array[6] = apfd_value;
                             }
                         }
 
@@ -477,20 +445,20 @@ public class ResultsParser {
                         if (coverageName.equals("statement")) {
                             if (orderName.equals("absolute")) {
                                 // T3
-                                fig17_array[1] = Double.parseDouble(apfd_value);
+                                fig17_array[1] = apfd_value;
                             } else {
                                 // T4
-                                fig17_array[3] = Double.parseDouble(apfd_value);
+                                fig17_array[3] = apfd_value;
                             }
 
                         } else if (coverageName.equals("function")) {
                             if (orderName.equals("absolute")) {
                                 // T5
-                                fig17_array[5] = Double.parseDouble(apfd_value);
+                                fig17_array[5] = apfd_value;
 
                             } else {
                                 // T7
-                                fig17_array[7] = Double.parseDouble(apfd_value);
+                                fig17_array[7] = apfd_value;
                             }
                         }
 
@@ -503,24 +471,25 @@ public class ResultsParser {
             }
         }
 
-        // generate LaTeX for the human-written and automatic test suites
-        String humanLatexString = generateLatexString(proj_human_arrayList);
+        // generate LaTeX for the orig-written and automatic test suites
+        String origLatexString = generateLatexString(proj_orig_arrayList);
         String autoLatexString = generateLatexString(proj_auto_arrayList);
-        String figNum = null;
-        if (proj_human_arrayList.get(0).isFig17()) {
-            figNum = "17";
-        } else if (proj_human_arrayList.get(0).isFig18()) {
-            figNum = "18";
-        } else {
-            figNum = "19";
+
+        String origOutputFilename = outputDirectoryName + "/";
+        String autoOutputFilename = outputDirectoryName + "/";
+        if (proj_orig_arrayList.get(0).isFig17()) {
+            origOutputFilename += "enhanced-prior-orig-results.tex";
+            autoOutputFilename += "enhanced-prior-auto-results.tex";
+        } else if (proj_orig_arrayList.get(0).isFig18()) {
+            origOutputFilename += "enhanced-sele-orig-results.tex";
+            autoOutputFilename += "enhanced-sele-auto-results.tex";
+        } else { // fig 19
+            origOutputFilename += "enhanced-para-orig-results.tex";
+            autoOutputFilename += "enhanced-para-auto-results.tex";
         }
-        // the flag to replace in template file should be flexible
-        String flagToReplace = "-fig" + figNum;
-        // output and template file name should be flexible
-        String outputFileName = templateDirectoryName + "/figure" + figNum + "_latex.txt";
-        String templateFileName = templateDirectoryName + "/figure" + figNum + "_template.txt";
-        writeToLatexFile(humanLatexString, flagToReplace + "orig", autoLatexString, flagToReplace + "auto",
-                templateFileName, outputFileName);
+
+        writeToLatexFile(origLatexString, origOutputFilename);
+        writeToLatexFile(autoLatexString, autoOutputFilename);
 
     }
 }
