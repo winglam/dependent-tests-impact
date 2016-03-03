@@ -128,12 +128,23 @@ public class ResultsParser {
      *
      * @param values the ordered values that need to be written
      *
+     * @param orig_value the run time for running the entire original test suite unordered
+     *
      * format: Crystal & 5.4\%\pa & 1.3\%\pa & 0.000 & 0.000 & 0.008 & 0.015 & 0.036 & 0.000 \\
      */
-    private static String generate18(String projectName, double[] percentages, double[] values) {
+    private static String generate18(String projectName, double[] percentages, double[] values, double orig_value) {
         String result = projectName + "       ";
-        for (int i = 0; i + 1 < percentages.length; i += 2) {
-            double percent = percentages[i] - percentages[i + 1];
+        for (int i = 0; i + 6 < percentages.length; i += 6) {
+            // calc1,2,3 correspond to either S1,S2,S3 or S4,S5,S6
+            // enhanced - unenhanced
+            double calc1 = (percentages[i + 1] - percentages[i]) / orig_value * 100;
+            double calc2 = (percentages[i + 3] - percentages[i + 2]) / orig_value * 100;
+            double calc3 = (percentages[i + 5] - percentages[i + 4]) / orig_value * 100;
+            // the max. of these 3 values
+            double percent = Math.max(calc1, Math.max(calc2, calc3));
+            // if negative, ensure it's 0
+            percent = Math.max(0, percent);
+
             result += " & " + percent + "\\%\\pa"; // "\%\pa"
         }
         for (int i = 0; i + 1 < values.length; i += 2) {
@@ -144,13 +155,23 @@ public class ResultsParser {
         return result;
     }
 
-    private static String generate19(String projectName, double[] orig_values, double[] time_values) {
+    /*
+     * a private method that generates Figure 19
+     */
+    private static String generate19(String projectName, double[] orig_values, double[] time_values,
+            double orig_value) {
         String result = projectName;
+        double calc1 = 0;
+        double calc2 = 0;
         for (int i = 0; i + 1 < orig_values.length; i += 2) {
-            result += " & " + orig_values[i] + " &\\rightarrow$ " + orig_values[i + 1];
+            calc1 = (orig_values[i] / orig_value) * 100;
+            calc2 = (orig_values[i + 2] / orig_value) * 100;
+            result += " & " + calc1 + " &\\rightarrow$ " + calc2;
         }
         for (int i = 0; i + 1 < time_values.length; i += 2) {
-            result += " & " + time_values[i] + " &\\rightarrow$ " + time_values[i + 1];
+            calc1 = (time_values[i] / orig_value) * 100;
+            calc2 = (time_values[i + 1] / orig_value) * 100;
+            result += " & " + calc1 + " &\\rightarrow$ " + calc2;
         }
         result += "\\\\";
 
@@ -186,10 +207,12 @@ public class ResultsParser {
                 latexString += generate17(temp.getName(), temp.get_fig17_values());
                 latexString += "\r\n";
             } else if (temp.isFig18()) {
-                latexString += generate18(temp.getName(), temp.get_fig18_percents(), temp.get_fig18_values());
+                latexString += generate18(temp.getName(), temp.get_fig18_percents(), temp.get_fig18_values(),
+                        temp.getOrigValue());
                 latexString += "\r\n";
             } else if (temp.isFig19()) {
-                latexString += generate19(temp.getName(), temp.get_fig19_orig(), temp.get_fig19_time());
+                latexString +=
+                        generate19(temp.getName(), temp.get_fig19_orig(), temp.get_fig19_time(), temp.getOrigValue());
                 latexString += "\r\n";
             }
         }
@@ -321,7 +344,7 @@ public class ResultsParser {
                         curr_fig19_array = currProj.get_fig19_time();
                     }
 
-                    if (resolveDependences == null) { // original test suite
+                    if (resolveDependences == null) { // non-enhanced
                         if (numMachines == 2) {
                             curr_fig19_array[0] = order_time;
                         } else if (numMachines == 4) {
@@ -331,7 +354,7 @@ public class ResultsParser {
                         } else if (numMachines == 16) {
                             curr_fig19_array[6] = order_time;
                         }
-                    } else // dependence-aware algorithm
+                    } else // enhanced
                     {
                         if (numMachines == 2) {
                             curr_fig19_array[1] = order_time;
@@ -355,33 +378,42 @@ public class ResultsParser {
                      */
                     String apfd_value_string = parseFile(file, APFD_VALUE);
                     double apfd_value = Double.parseDouble(apfd_value_string);
+                    String order_time_string = parseFile(file, ORDER_TIME);
+                    double order_time = Double.parseDouble(order_time_string);
                     currProj.useFig18();
                     double[] fig18_values_array = currProj.get_fig18_values();
+                    double[] fig18_percents_array = currProj.get_fig18_percents();
                     // original values, index should be i=0, i+=2
                     if (resolveDependences == null) { // original
                         if (coverageName.equals("statement")) {
                             if (orderName.equals("original")) {
                                 // S1
                                 fig18_values_array[0] = apfd_value;
+                                fig18_percents_array[0] = order_time;
                             } else if (orderName.equals("absolute")) {
                                 // S2
                                 fig18_values_array[2] = apfd_value;
+                                fig18_percents_array[2] = order_time;
                             } else {
                                 // S3
                                 fig18_values_array[4] = apfd_value;
+                                fig18_percents_array[4] = order_time;
                             }
 
                         } else if (coverageName.equals("function")) {
                             if (orderName.equals("original")) {
                                 // S4
                                 fig18_values_array[6] = apfd_value;
+                                fig18_percents_array[6] = order_time;
 
                             } else if (orderName.equals("absolute")) {
                                 // S5
                                 fig18_values_array[8] = apfd_value;
+                                fig18_percents_array[8] = order_time;
                             } else {
                                 // S6
                                 fig18_values_array[10] = apfd_value;
+                                fig18_percents_array[10] = order_time;
                             }
                         }
 
@@ -390,31 +422,45 @@ public class ResultsParser {
                             if (orderName.equals("original")) {
                                 // S1
                                 fig18_values_array[1] = apfd_value;
+                                fig18_percents_array[1] = order_time;
                             } else if (orderName.equals("absolute")) {
                                 // S2
                                 fig18_values_array[3] = apfd_value;
+                                fig18_percents_array[3] = order_time;
                             } else {
                                 // S3
                                 fig18_values_array[5] = apfd_value;
+                                fig18_percents_array[5] = order_time;
                             }
 
                         } else if (coverageName.equals("function")) {
                             if (orderName.equals("original")) {
                                 // S4
                                 fig18_values_array[7] = apfd_value;
+                                fig18_percents_array[7] = order_time;
 
                             } else if (orderName.equals("absolute")) {
                                 // S5
                                 fig18_values_array[9] = apfd_value;
+                                fig18_percents_array[9] = order_time;
                             } else {
                                 // S6
                                 fig18_values_array[11] = apfd_value;
+                                fig18_percents_array[11] = order_time;
                             }
                         }
                     }
 
                 } // prioritization techinque, figure 17
                 else if (techniqueName.equals("prioritization")) {
+                    // if orderName is original, run time for entire test suite
+                    // TODO make more efficient
+                    if (orderName.equals("original")) {
+                        String order_time_string = parseFile(file, ORDER_TIME);
+                        double order_time = Double.parseDouble(order_time_string);
+                        currProj.setOrigValue(order_time);
+                        continue;
+                    }
                     String apfd_value_string = parseFile(file, APFD_VALUE);
                     double apfd_value = Double.parseDouble(apfd_value_string);
                     currProj.useFig17();
@@ -471,7 +517,7 @@ public class ResultsParser {
             }
         }
 
-        // generate LaTeX for the orig-written and automatic test suites
+        // generate LaTeX for the human-written and automatic test suites
         String origLatexString = generateLatexString(proj_orig_arrayList);
         String autoLatexString = generateLatexString(proj_auto_arrayList);
 

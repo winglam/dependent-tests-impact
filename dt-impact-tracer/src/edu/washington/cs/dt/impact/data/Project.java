@@ -1,5 +1,6 @@
 class Project {
     private String name;
+    private double orig_value;
 
     /*
      * fig**[i] corresponds to orig value
@@ -11,7 +12,11 @@ class Project {
     private double[] fig17_values;
     // corresponds to S1, S2, S3, S4, S5, and S6 respectively
     private double[] fig18_values;
-    // corresponds to S1--S3 and S4--S6
+    /*
+     * corresponds to S1, S2, S3, S4, S5 and S6
+     * fig18_percents[i] corresponds to nonenhanced
+     * fig18_percents[i + 1] corresponds to enhanced
+     */
     private double[] fig18_percents;
 
     /*
@@ -30,10 +35,10 @@ class Project {
 
     public Project(String projName) {
         name = projName;
+        orig_value = 0;
         fig17_values = new double[4 * 2];
         fig18_values = new double[6 * 2];
-        fig18_percents = new double[2 * 2];
-        // TODO: fix fig19_percents array size
+        fig18_percents = new double[6];
         fig19_orig = new double[2 * 4];
         fig19_time = new double[2 * 4];
         uses_fig17 = false;
@@ -87,6 +92,14 @@ class Project {
 
     public double[] get_fig19_time() {
         return fig19_time;
+    }
+
+    public void setOrigValue(double val) {
+        orig_value = val;
+    }
+
+    public double getOrigValue() {
+        return orig_value;
     }
 }
 
