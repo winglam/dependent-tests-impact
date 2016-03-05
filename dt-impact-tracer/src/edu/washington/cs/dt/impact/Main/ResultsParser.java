@@ -132,7 +132,8 @@ public class ResultsParser {
      *
      * format: Crystal & 5.4\%\pa & 1.3\%\pa & 0.000 & 0.000 & 0.008 & 0.015 & 0.036 & 0.000 \\
      */
-    private static String generate18(String projectName, double[] percentages, double[] values, double orig_value) {
+    private static String generate18(String projectName, double[] percentages, double[] values, double orig_value,
+            String type) {
         String result = projectName + "       ";
         for (int i = 0; i + 6 < percentages.length; i += 6) {
             // calc1,2,3 correspond to either S1,S2,S3 or S4,S5,S6
@@ -144,8 +145,11 @@ public class ResultsParser {
             double percent = Math.max(calc1, Math.max(calc2, calc3));
             // if negative, ensure it's 0
             percent = Math.max(0, percent);
-
-            result += " & " + percent + "\\%\\pa"; // "\%\pa"
+            if (projectName.equals("crystal") && type.equals("auto")) {
+                result += " & " + percent + "\\%\\ra"; // "\%\ra"
+            } else {
+                result += " & " + percent + "\\%\\pa"; // "\%\pa"
+            }
         }
         for (int i = 0; i + 1 < values.length; i += 2) {
             double val = values[i] - values[i + 1];
@@ -163,12 +167,12 @@ public class ResultsParser {
         String result = projectName;
         double calc1 = 0;
         double calc2 = 0;
-        for (int i = 0; i + 1 < orig_values.length; i += 2) {
+        for (int i = 0; i + 2 < orig_values.length; i += 2) {
             calc1 = (orig_values[i] / orig_value) * 100;
-            calc2 = (orig_values[i + 2] / orig_value) * 100;
+            calc2 = (orig_values[i + 1] / orig_value) * 100;
             result += " & " + calc1 + " &\\rightarrow$ " + calc2;
         }
-        for (int i = 0; i + 1 < time_values.length; i += 2) {
+        for (int i = 0; i + 2 < time_values.length; i += 2) {
             calc1 = (time_values[i] / orig_value) * 100;
             calc2 = (time_values[i + 1] / orig_value) * 100;
             result += " & " + calc1 + " &\\rightarrow$ " + calc2;
@@ -200,15 +204,16 @@ public class ResultsParser {
      * @param projList a list of Projects that each contain data
      */
 
-    private static String generateLatexString(List<Project> projList) {
+    private static String generateLatexString(List<Project> projList, String type) {
         String latexString = "";
+
         for (Project temp : projList) {
             if (temp.isFig17()) {
                 latexString += generate17(temp.getName(), temp.get_fig17_values());
                 latexString += "\r\n";
             } else if (temp.isFig18()) {
                 latexString += generate18(temp.getName(), temp.get_fig18_percents(), temp.get_fig18_values(),
-                        temp.getOrigValue());
+                        temp.getOrigValue(), type);
                 latexString += "\r\n";
             } else if (temp.isFig19()) {
                 latexString +=
@@ -217,9 +222,6 @@ public class ResultsParser {
             }
         }
         // take off the "\r\n" from the last line
-        if (latexString.length() > 0) {
-            latexString = latexString.substring(0, latexString.length() - 2);
-        }
         return latexString;
     }
     /*
@@ -369,13 +371,7 @@ public class ResultsParser {
 
                 } // selection technique, figure 18
                 else if (techniqueName.equals("selection")) {
-                    // TODO check if all the original and enchanced files are in the directory
 
-                    /*
-                     * TODO: Calculate percentages for run time
-                     * take average of S1-S3 and S4-S6
-                     * percentage is =
-                     */
                     String apfd_value_string = parseFile(file, APFD_VALUE);
                     double apfd_value = Double.parseDouble(apfd_value_string);
                     String order_time_string = parseFile(file, ORDER_TIME);
@@ -454,7 +450,6 @@ public class ResultsParser {
                 } // prioritization techinque, figure 17
                 else if (techniqueName.equals("prioritization")) {
                     // if orderName is original, run time for entire test suite
-                    // TODO make more efficient
                     if (orderName.equals("original")) {
                         String order_time_string = parseFile(file, ORDER_TIME);
                         double order_time = Double.parseDouble(order_time_string);
@@ -518,8 +513,8 @@ public class ResultsParser {
         }
 
         // generate LaTeX for the human-written and automatic test suites
-        String origLatexString = generateLatexString(proj_orig_arrayList);
-        String autoLatexString = generateLatexString(proj_auto_arrayList);
+        String origLatexString = generateLatexString(proj_orig_arrayList, "orig");
+        String autoLatexString = generateLatexString(proj_auto_arrayList, "auto");
 
         String origOutputFilename = outputDirectoryName + "/";
         String autoOutputFilename = outputDirectoryName + "/";
