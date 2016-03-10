@@ -462,7 +462,7 @@ public class OneConfigurationRunner {
                     origOrder, dependentTestFile, getCoverage);
         } else if (techniqueName == TECHNIQUE.PARALLELIZATION) {
             testObj = new Parallelization(order, outputFileName, testInputDir, coverage, dependentTestFile,
-                    numOfMachines.getValue(), origOrder, timeOrder);
+                    numOfMachines.getValue(), origOrder, timeOrder, getCoverage);
         } else {
             System.err.println("The regression testing technique selected is invalid. Please restart the"
                     + " program and try again.");
