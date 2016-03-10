@@ -46,7 +46,7 @@ public class Parallelization extends Test {
      * @param timeOrder file specifying the amount of nanoseconds each test takes to execute
      */
     public Parallelization(ORDER order, String outputFileName, File inputTestFolder, COVERAGE coverage,
-            File dependentTestsFile, int k, File origOrder, File timeOrder, boolean getCoverage) {
+            File dependentTestsFile, int k, File origOrder, File timeOrder, boolean getCoverage, List<String> origList) {
         super(inputTestFolder, coverage, dependentTestsFile);
 
         splitTests = new LinkedList<Standard>();
@@ -109,8 +109,17 @@ public class Parallelization extends Test {
 
             // create a Standard for the test list corresponding to each machine
             for (int i = 0; i < tmdLists.size(); i++) {
-                splitTests.add(new Standard(outputFileName + i, tmdLists.get(i).getTestList(), getCoverage,
-                        allCoverageLines));
+                Map<String, TestFunctionStatement> nameToMethodData = getNameToMethodData(tmdLists.get(i).getTestList());
+
+                // Sort the list with respect to the original order
+                List<TestFunctionStatement> sortedList = new ArrayList<TestFunctionStatement>();
+                for (final String name : origList) {
+                    if (nameToMethodData.keySet().contains(name)) {
+                        sortedList.add(nameToMethodData.get(name));
+                    }
+                }
+
+                splitTests.add(new Standard(outputFileName + i, sortedList, getCoverage, allCoverageLines));
             }
         } else if (order == ORDER.RANDOM || order == ORDER.ORIGINAL) {
             if (order == ORDER.RANDOM) {

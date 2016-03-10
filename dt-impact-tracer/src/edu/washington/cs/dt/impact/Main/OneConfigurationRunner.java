@@ -446,26 +446,6 @@ public class OneConfigurationRunner {
                     allDTList == null ? TD_SETTING.OMITTED_TD : TD_SETTING.GIVEN_TD);
         }
 
-        // capture start time
-        double start = System.nanoTime();
-
-        // TestListGenerator
-        Test testObj = null;
-        if (techniqueName == TECHNIQUE.PRIORITIZATION) {
-            testObj = new Prioritization(order, outputFileName, testInputDir, coverage, dependentTestFile, false,
-                    origOrder);
-        } else if (techniqueName == TECHNIQUE.SELECTION) {
-            testObj = new Selection(order, outputFileName, testInputDir, coverage, selectionOutput1, selectionOutput2,
-                    origOrder, dependentTestFile, getCoverage);
-        } else if (techniqueName == TECHNIQUE.PARALLELIZATION) {
-            testObj = new Parallelization(order, outputFileName, testInputDir, coverage, dependentTestFile,
-                    numOfMachines.getValue(), origOrder, timeOrder, getCoverage);
-        } else {
-            System.err.println("The regression testing technique selected is invalid. Please restart the"
-                    + " program and try again.");
-            System.exit(0);
-        }
-
         List<String> filesToDelete = FileTools.parseFileToList(new File(filesToDeleteStr));
         List<String> origOrderTestList = FileTools.parseFileToList(origOrder);
 
@@ -479,6 +459,26 @@ public class OneConfigurationRunner {
         }
         origOrderTestList.removeAll(extraFiles);
         Map<String, RESULT> nameToOrigResults = getCurrentOrderTestListResults(origOrderTestList, filesToDelete);
+
+        // capture start time
+        double start = System.nanoTime();
+
+        // TestListGenerator
+        Test testObj = null;
+        if (techniqueName == TECHNIQUE.PRIORITIZATION) {
+            testObj = new Prioritization(order, outputFileName, testInputDir, coverage, dependentTestFile, false,
+                    origOrder);
+        } else if (techniqueName == TECHNIQUE.SELECTION) {
+            testObj = new Selection(order, outputFileName, testInputDir, coverage, selectionOutput1, selectionOutput2,
+                    origOrder, dependentTestFile, getCoverage);
+        } else if (techniqueName == TECHNIQUE.PARALLELIZATION) {
+            testObj = new Parallelization(order, outputFileName, testInputDir, coverage, dependentTestFile,
+                    numOfMachines.getValue(), origOrder, timeOrder, getCoverage, origOrderTestList);
+        } else {
+            System.err.println("The regression testing technique selected is invalid. Please restart the"
+                    + " program and try again.");
+            System.exit(0);
+        }
 
         double TLGTime = System.nanoTime() - start;
 
