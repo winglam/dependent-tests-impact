@@ -1,7 +1,7 @@
 /**
  * Copyright 2014 University of Washington. All Rights Reserved.
  * @author Wing Lam
- *
+ * 
  *         Creates a list of tests that is ordered with test parallelization based on the parameters
  *         specified to the constructor.
  */
@@ -16,9 +16,11 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import edu.washington.cs.dt.impact.data.TestFunctionStatement;
 import edu.washington.cs.dt.impact.data.TestList;
@@ -32,7 +34,7 @@ public class Parallelization extends Test {
     private List<Standard> splitTests;
 
     /**
-     *
+     * 
      * @param order the order in which to order the tests with
      * @param outputFileName the name of the output file
      * @param inputTestFolder folder containing all test cases
@@ -63,6 +65,15 @@ public class Parallelization extends Test {
 
                 // create TestTimeDatas instead of TestMethodDatas
                 Map<String, Long> testNameToTime = processFile(timeOrder);
+                Set<String> extraFiles = new HashSet<String>(testNameToTime.keySet());
+                for (final File fileEntry : inputTestFolder.listFiles()) {
+                    if (fileEntry.isFile() && !fileEntry.getName().startsWith(".") && !fileEntry.isHidden()) {
+                        extraFiles.remove(fileEntry.getName());
+                    } else {
+                        continue;
+                    }
+                }
+                testNameToTime.keySet().removeAll(extraFiles);
                 for (String key : testNameToTime.keySet()) {
                     TestTime currTTD = new TestTime(key, testNameToTime.get(key));
                     methodList.add(currTTD);
@@ -98,8 +109,8 @@ public class Parallelization extends Test {
 
             // create a Standard for the test list corresponding to each machine
             for (int i = 0; i < tmdLists.size(); i++) {
-                splitTests.add(
-                        new Standard(outputFileName + i, tmdLists.get(i).getTestList(), getCoverage, allCoverageLines));
+                splitTests.add(new Standard(outputFileName + i, tmdLists.get(i).getTestList(), getCoverage,
+                        allCoverageLines));
             }
         } else if (order == ORDER.RANDOM || order == ORDER.ORIGINAL) {
             if (order == ORDER.RANDOM) {

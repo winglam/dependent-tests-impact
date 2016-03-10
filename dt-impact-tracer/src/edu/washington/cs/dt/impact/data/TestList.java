@@ -2,19 +2,20 @@
  * Copyright 2014 University of Washington. All Rights Reserved.
  * @author Wing Lam
  * 
- * A list of TestFunctionStatement with a counter. The counter represents the sum of the number
- * of lines in each of the TestFunctionStatement the list contains.
+ *         A list of TestFunctionStatement with a counter. The counter represents the sum of the number
+ *         of lines in each of the TestFunctionStatement the list contains.
  */
 
 package edu.washington.cs.dt.impact.data;
 
+import java.text.NumberFormat;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
 public class TestList implements Comparable<TestList> {
     private List<TestFunctionStatement> testList;
-    private int count;
+    private long count;
 
     public TestList() {
         testList = new LinkedList<TestFunctionStatement>();
@@ -26,7 +27,7 @@ public class TestList implements Comparable<TestList> {
         count += tmd.getLineCount();
     }
 
-    public int getCount() {
+    public long getCount() {
         return count;
     }
 
@@ -47,6 +48,6 @@ public class TestList implements Comparable<TestList> {
 
     @Override
     public String toString() {
-        return count + "";
+        return NumberFormat.getInstance().format(count) + "";
     }
 }
