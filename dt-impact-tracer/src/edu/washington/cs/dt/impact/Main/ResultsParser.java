@@ -1,4 +1,3 @@
-
 package edu.washington.cs.dt.impact.Main;
 
 import java.io.BufferedWriter;
@@ -135,7 +134,7 @@ public class ResultsParser {
     private static String generate18(String projectName, double[] percentages, double[] values, double orig_value,
             String type) {
         String result = projectName + "       ";
-        for (int i = 0; i + 6 < percentages.length; i += 6) {
+        for (int i = 0; i + 5 < percentages.length; i += 6) {
             // calc1,2,3 correspond to either S1,S2,S3 or S4,S5,S6
             // enhanced - unenhanced
             double calc1 = (percentages[i + 1] - percentages[i]) / orig_value * 100;
@@ -204,22 +203,26 @@ public class ResultsParser {
      * @param projList a list of Projects that each contain data
      */
 
-    private static String generateLatexString(List<Project> projList, String type) {
+    private static String generateLatexString(List<Project> projList, List<Project> otherProjList, String type) {
         String latexString = "";
 
+        int index = 0;
         for (Project temp : projList) {
+            // get the correct orig_value...one of the Lists will not have the correct value (will be 0)
+            double orig_value =
+                    (temp.getOrigValue() == 0) ? otherProjList.get(index).getOrigValue() : temp.getOrigValue();
             if (temp.isFig17()) {
                 latexString += generate17(temp.getName(), temp.get_fig17_values());
                 latexString += "\r\n";
             } else if (temp.isFig18()) {
                 latexString += generate18(temp.getName(), temp.get_fig18_percents(), temp.get_fig18_values(),
-                        temp.getOrigValue(), type);
+                        orig_value, type);
                 latexString += "\r\n";
             } else if (temp.isFig19()) {
-                latexString +=
-                        generate19(temp.getName(), temp.get_fig19_orig(), temp.get_fig19_time(), temp.getOrigValue());
+                latexString += generate19(temp.getName(), temp.get_fig19_orig(), temp.get_fig19_time(), orig_value);
                 latexString += "\r\n";
             }
+            index++;
         }
         // take off the "\r\n" from the last line
         return latexString;
@@ -513,8 +516,8 @@ public class ResultsParser {
         }
 
         // generate LaTeX for the human-written and automatic test suites
-        String origLatexString = generateLatexString(proj_orig_arrayList, "orig");
-        String autoLatexString = generateLatexString(proj_auto_arrayList, "auto");
+        String origLatexString = generateLatexString(proj_orig_arrayList, proj_auto_arrayList, "orig");
+        String autoLatexString = generateLatexString(proj_auto_arrayList, proj_orig_arrayList, "auto");
 
         String origOutputFilename = outputDirectoryName + "/";
         String autoOutputFilename = outputDirectoryName + "/";

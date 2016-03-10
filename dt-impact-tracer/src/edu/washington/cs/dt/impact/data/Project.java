@@ -38,7 +38,7 @@ class Project {
         orig_value = 0;
         fig17_values = new double[4 * 2];
         fig18_values = new double[6 * 2];
-        fig18_percents = new double[6];
+        fig18_percents = new double[6 * 2];
         fig19_orig = new double[2 * 4];
         fig19_time = new double[2 * 4];
         uses_fig17 = false;
