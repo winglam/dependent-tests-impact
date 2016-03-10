@@ -1,4 +1,6 @@
-class Project {
+package edu.washington.cs.dt.impact.data;
+
+public class Project {
     private String name;
     private double orig_value;
 
@@ -102,4 +104,3 @@ class Project {
         return orig_value;
     }
 }
-
