@@ -19,7 +19,7 @@ import edu.washington.cs.dt.impact.util.Constants.ORDER;
 public class Prioritization extends Test {
 
     /**
-     * 
+     *
      * @param order the order in which to order the tests with
      * @param outputFileName the name of the output file
      * @param inputTestFolder folder containing all test cases
@@ -36,7 +36,7 @@ public class Prioritization extends Test {
         if (order == ORDER.ABSOLUTE || order == ORDER.RELATIVE) {
             Collections.sort(methodList);
             if (order == ORDER.RELATIVE) {
-                methodList = new Relative(outputFilename, methodList, allCoverageLines).getMethodList();
+                methodList = new Relative(outputFilename, methodList, getCoverage, allCoverageLines).getMethodList();
             }
             orderObj = new Standard(outputFilename, methodList, getCoverage, allCoverageLines);
         } else if (order == ORDER.RANDOM) {
@@ -58,7 +58,7 @@ public class Prioritization extends Test {
         if (order == ORDER.ABSOLUTE || order == ORDER.RELATIVE) {
             Collections.sort(methodList);
             if (order == ORDER.RELATIVE) {
-                methodList = new Relative(outputFilename, methodList, allCoverageLines).getMethodList();
+                methodList = new Relative(outputFilename, methodList, getCoverage, allCoverageLines).getMethodList();
             }
             orderObj = new Standard(outputFilename, methodList, getCoverage, allCoverageLines);
         } else if (order == ORDER.RANDOM) {

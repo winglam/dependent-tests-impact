@@ -1,7 +1,7 @@
 /**
  * Copyright 2014 University of Washington. All Rights Reserved.
  * @author Wing Lam
- * 
+ *
  *         Reorders a list of TestFunctionStatement based on its dependent tests if specified to do so.
  *         Prints the ordered list of tests.
  */
@@ -21,7 +21,7 @@ import edu.washington.cs.dt.impact.data.TestFunctionStatement;
 public class Standard {
     protected String filename;
     protected List<TestFunctionStatement> methodList;
-    private boolean getCoverage;
+    protected boolean getCoverage;
     protected Set<String> allLines;
 
     public Standard(String outputFileName, List<TestFunctionStatement> methodList, boolean getCoverage,
