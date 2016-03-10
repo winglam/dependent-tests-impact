@@ -1,7 +1,7 @@
 /**
  * Copyright 2015 University of Washington. All Rights Reserved.
  * @author Wing Lam
- * 
+ *
  *         Main class that relies on program arguments to generate a regression testing
  *         execution order. The following options are supported:
  *         -technique - prioritization, selection, parallelization
@@ -113,8 +113,8 @@ public class OneConfigurationRunner {
                 System.exit(0);
             }
         } else {
-            System.err.println("No technique argument is specified."
-                    + " Please use the format: -technique aTechniqueName");
+            System.err.println(
+                    "No technique argument is specified." + " Please use the format: -technique aTechniqueName");
             System.exit(0);
         }
 
@@ -244,8 +244,8 @@ public class OneConfigurationRunner {
                 System.exit(0);
             }
         } else {
-            System.err.println("No original order argument is specified."
-                    + " Please use the format: -origOrder aFileName");
+            System.err.println(
+                    "No original order argument is specified." + " Please use the format: -origOrder aFileName");
             System.exit(0);
         }
 
@@ -269,8 +269,8 @@ public class OneConfigurationRunner {
                     System.exit(0);
                 }
             } else {
-                System.err.println("No old version CFG argument is specified."
-                        + " Please use the format: -oldVersCFG aDirPath");
+                System.err.println(
+                        "No old version CFG argument is specified." + " Please use the format: -oldVersCFG aDirPath");
                 System.exit(0);
             }
 
@@ -291,8 +291,8 @@ public class OneConfigurationRunner {
                     System.exit(0);
                 }
             } else {
-                System.err.println("No new version CFG argument is specified."
-                        + " Please use the format: -newVersCFG aDirPath");
+                System.err.println(
+                        "No new version CFG argument is specified." + " Please use the format: -newVersCFG aDirPath");
                 System.exit(0);
             }
         }
@@ -362,9 +362,8 @@ public class OneConfigurationRunner {
             } else if (projectName.equals("xml_security")) {
                 project = PROJECT.XML_SECURITY;
             } else {
-                System.err
-                        .println("Project argument is specified but the project name"
-                                + " value provided is invalid. Please use either crystal, jfreechart, jodatime, synoptic or xml_security.");
+                System.err.println("Project argument is specified but the project name"
+                        + " value provided is invalid. Please use either crystal, jfreechart, jodatime, synoptic or xml_security.");
                 System.exit(0);
             }
         } else {
@@ -392,8 +391,8 @@ public class OneConfigurationRunner {
                 System.exit(0);
             }
         } else {
-            System.err.println("No test type argument is specified."
-                    + " Please use the format: -testType aTestTypeName");
+            System.err
+                    .println("No test type argument is specified." + " Please use the format: -testType aTestTypeName");
             System.exit(0);
         }
 
@@ -460,7 +459,7 @@ public class OneConfigurationRunner {
                     origOrder);
         } else if (techniqueName == TECHNIQUE.SELECTION) {
             testObj = new Selection(order, outputFileName, testInputDir, coverage, selectionOutput1, selectionOutput2,
-                    origOrder, dependentTestFile);
+                    origOrder, dependentTestFile, getCoverage);
         } else if (techniqueName == TECHNIQUE.PARALLELIZATION) {
             testObj = new Parallelization(order, outputFileName, testInputDir, coverage, dependentTestFile,
                     numOfMachines.getValue(), origOrder, timeOrder);
@@ -510,8 +509,8 @@ public class OneConfigurationRunner {
             testList.setNumNotFixedDT(changedTests.size());
             testList.setNumFixedDT(fixedDT.size());
             testList.setTestList(currentOrderTestList);
-            Map<Double, List<Double>> totalTimeToCumulTime = setTestListMedianTime(timesToRun, filesToDelete,
-                    currentOrderTestList, testList);
+            Map<Double, List<Double>> totalTimeToCumulTime =
+                    setTestListMedianTime(timesToRun, filesToDelete, currentOrderTestList, testList);
 
             if (getCoverage) {
                 // Get coverage each test achieved
@@ -566,8 +565,8 @@ public class OneConfigurationRunner {
                 + nanosecondToSecond(totalTime));
         if (techniqueName == TECHNIQUE.PARALLELIZATION) {
             outputArr.add("\nNew order time: " + nanosecondToSecond(maxTime));
-            outputArr.add("\nTotal number of tests executed in all machines out of total in original order: "
-                    + numTests + " / " + origOrderTestList.size());
+            outputArr.add("\nTotal number of tests executed in all machines out of total in original order: " + numTests
+                    + " / " + origOrderTestList.size());
         }
 
         FileWriter output = null;
@@ -606,8 +605,8 @@ public class OneConfigurationRunner {
         for (int j = 0; j < timesToRun; j++) {
             System.out.println("Getting median in iteration: " + j);
             FileTools.clearEnv(filesToDelete);
-            List<String> timeEachTest = ImpactMain.getResults(currentOrderTestList, true).getExecutionRecords().get(0)
-                    .getValues();
+            List<String> timeEachTest =
+                    ImpactMain.getResults(currentOrderTestList, true).getExecutionRecords().get(0).getValues();
             List<Double> cumulTime = getCumulList(timeEachTest);
             double totalTimeNewOrder = getSum(cumulTime);
             totalTimeToCumulTime.put(totalTimeNewOrder, cumulTime);
