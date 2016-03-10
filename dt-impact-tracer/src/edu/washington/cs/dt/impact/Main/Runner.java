@@ -386,16 +386,25 @@ public abstract class Runner {
         }
 
         // if specified, the test list generated will consider the dependencies in this file
-        int dependentFile = argsList.indexOf("-dependentTestFile");
-        if (dependentFile != -1) {
+        int dependentFileIndex = argsList.indexOf("-dependentTestFile");
+        if (dependentFileIndex != -1) {
             // get index of output file
-            int dependentFileNameIndex = dependentFile + 1;
+            int dependentFileNameIndex = dependentFileIndex + 1;
             if (dependentFileNameIndex >= argsList.size()) {
                 System.err.println("Dependent test file argument is specified but a file name is not."
                         + " Please use the format: -dependentTestFile aFileName");
                 System.exit(0);
             }
             dependentTestFile = new File(argsList.get(dependentFileNameIndex));
+            if (dependentTestFile.isDirectory()) {
+                try {
+                    dependentTestFile =
+                            new File(dependentTestFile.getCanonicalPath() + System.getProperty("file.separator")
+                                    + Constants.getDTListFileName(techniqueName, project, testType));
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
             allDTList = FileTools.parseFileToList(dependentTestFile);
         } else {
             allDTList = null;

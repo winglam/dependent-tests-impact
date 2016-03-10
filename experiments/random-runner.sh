@@ -7,8 +7,7 @@ randomTimes=2
 count=${#experiments[@]}
 ARRAY=()
 
-
-#while [ "$index" -lt "$count" ]; do
+while [ "$index" -lt "$count" ]; do
   echo -e "Starting experiment: ${experiments[$index]}"
   for k in "${testTypes[@]}"; do
     cd ${directories[$index]}
@@ -23,5 +22,5 @@ ARRAY=()
     clearSelectionTemp ${directories[$index]} ${newDirectories[$index]}
   done
 
-#  let "index++"
-#done
+  let "index++"
+done
