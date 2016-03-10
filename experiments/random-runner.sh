@@ -3,7 +3,7 @@ source ./config.sh
 compileSource
 
 index=0
-randomTimes=100
+randomTimes=2
 count=${#experiments[@]}
 ARRAY=()
 
@@ -18,7 +18,7 @@ ARRAY=()
     java -cp ${sootCP[$index]} edu.washington.cs.dt.main.ImpactMain -inputTests ${experiments[$index]}-$k-order
     cd ..
 
-    java -Xms1g -Xmx2g -cp ${oldExperimentsCP[$index]} edu.washington.cs.dt.impact.Main.RandomizeWrapper -order original -resolveDependences -origOrder ${directories[$index]}/${experiments[$index]}-$k-order -testInputDir ${directories[$index]}/sootTestOutput -filesToDelete ${directories[$index]}/${experiments[$index]}-env-files -outputFile ${experiments[$index]}-$k-DT-selected-$randomTimes -randomTimes $randomTimes -dependentTestFile crystal-auto-DT-selection-350
+    java -Xms1g -Xmx2g -cp ${oldExperimentsCP[$index]} edu.washington.cs.dt.impact.Main.RandomizeRunner -technique prioritization -coverage statement -order original -resolveDependences -origOrder ${directories[$index]}/${experiments[$index]}-$k-order -testInputDir ${directories[$index]}/sootTestOutput -filesToDelete ${directories[$index]}/${experiments[$index]}-env-files -randomTimes $randomTimes -project ${experiments[$index]} -testType $k -outputDir ./
 
     clearSelectionTemp ${directories[$index]} ${newDirectories[$index]}
   done

@@ -24,7 +24,7 @@ while [ "$index" -lt "$count" ]; do
         #echo 'Running prioritization with resolveDependences and with dependentTestFile'
         #java -cp ${experimentsCP[$index]} edu.washington.cs.dt.impact.Main.OneConfigurationRunner -technique prioritization -coverage $i -order $j -origOrder ${experiments[$index]}-$k-order -testInputDir sootTestOutput -filesToDelete ${experiments[$index]}-env-files -project ${experiments[$index]} -testType $k -dependentTestFile ../${experiments[$index]}-$k-DT-prioritization-with-gods-eye
         echo 'Running prioritization without resolveDependences and without dependentTestFile'
-        java -cp ${experimentsCP[$index]} edu.washington.cs.dt.impact.Main.OneConfigurationRunner -technique prioritization -coverage $i -order $j -origOrder ${experiments[$index]}-$k-order -testInputDir sootTestOutput -filesToDelete ${experiments[$index]}-env-files -getCoverage -project ${experiments[$index]} -testType $k
+        java -cp ${experimentsCP[$index]} edu.washington.cs.dt.impact.Main.OneConfigurationRunner -technique prioritization -coverage $i -order $j -origOrder ${experiments[$index]}-$k-order -testInputDir sootTestOutput -filesToDelete ${experiments[$index]}-env-files -getCoverage -project ${experiments[$index]} -testType $k -outputDir ../${priorDir}
 
         ARRAY+=(${directories[$index]}/${experiments[$index]}-$k-prioritization-$i-$j)
       done
@@ -35,10 +35,3 @@ while [ "$index" -lt "$count" ]; do
   cd ..
   let "index++"
 done
-
-arguments=''
-for k in "${ARRAY[@]}"; do
-  arguments="$arguments $k"
-done
-
-java -cp $impactJarCP edu.washington.cs.dt.impact.Main.ResultsParser $arguments
