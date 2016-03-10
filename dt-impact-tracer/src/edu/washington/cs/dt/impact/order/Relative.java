@@ -16,19 +16,20 @@ import java.util.Set;
 import edu.washington.cs.dt.impact.data.TestFunctionStatement;
 
 public class Relative extends Standard {
-    private Set<String> allLines;
+    private Set<String> relativeLines;
 
     public Relative(String outputFileName, List<TestFunctionStatement> methodList, boolean getCoverage,
             Set<String> allLines) {
         super(outputFileName, methodList);
         this.getCoverage = getCoverage;
+        this.relativeLines = allLines;
         this.allLines = allLines;
         this.methodList = generateRelativeOrderList();
     }
 
     private List<TestFunctionStatement> generateRelativeOrderList() {
         List<TestFunctionStatement> returnList = new LinkedList<TestFunctionStatement>();
-        Set<String> currentLines = new HashSet<String>(allLines);
+        Set<String> currentLines = new HashSet<String>(relativeLines);
         while (methodList.size() > 0) {
             TestFunctionStatement highestData = methodList.remove(0);
             returnList.add(highestData);
@@ -40,7 +41,7 @@ public class Relative extends Standard {
 
             // all possible lines of code have been executed
             if (currentLines.size() == 0) {
-                currentLines = new HashSet<String>(allLines);
+                currentLines = new HashSet<String>(relativeLines);
                 for (TestFunctionStatement tmd : methodList) {
                     tmd.reset();
                 }
