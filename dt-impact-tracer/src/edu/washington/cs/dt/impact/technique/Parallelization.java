@@ -1,7 +1,7 @@
 /**
  * Copyright 2014 University of Washington. All Rights Reserved.
  * @author Wing Lam
- * 
+ *
  *         Creates a list of tests that is ordered with test parallelization based on the parameters
  *         specified to the constructor.
  */
@@ -32,7 +32,7 @@ public class Parallelization extends Test {
     private List<Standard> splitTests;
 
     /**
-     * 
+     *
      * @param order the order in which to order the tests with
      * @param outputFileName the name of the output file
      * @param inputTestFolder folder containing all test cases
@@ -44,7 +44,7 @@ public class Parallelization extends Test {
      * @param timeOrder file specifying the amount of nanoseconds each test takes to execute
      */
     public Parallelization(ORDER order, String outputFileName, File inputTestFolder, COVERAGE coverage,
-            File dependentTestsFile, int k, File origOrder, File timeOrder) {
+            File dependentTestsFile, int k, File origOrder, File timeOrder, boolean getCoverage) {
         super(inputTestFolder, coverage, dependentTestsFile);
 
         splitTests = new LinkedList<Standard>();
@@ -55,7 +55,7 @@ public class Parallelization extends Test {
         if (order == ORDER.RELATIVE || order == ORDER.ABSOLUTE || order == ORDER.TIME) {
             Collections.sort(methodList);
             if (order == ORDER.RELATIVE) {
-                methodList = new Relative(outputFileName, methodList, allCoverageLines).getMethodList();
+                methodList = new Relative(outputFileName, methodList, getCoverage, allCoverageLines).getMethodList();
             } else if (order == ORDER.TIME) {
                 Map<String, TestFunctionStatement> nameToMethodData = getNameToMethodData(methodList);
                 methodList.clear();
@@ -98,7 +98,8 @@ public class Parallelization extends Test {
 
             // create a Standard for the test list corresponding to each machine
             for (int i = 0; i < tmdLists.size(); i++) {
-                splitTests.add(new Standard(outputFileName + i, tmdLists.get(i).getTestList()));
+                splitTests.add(
+                        new Standard(outputFileName + i, tmdLists.get(i).getTestList(), getCoverage, allCoverageLines));
             }
         } else if (order == ORDER.RANDOM || order == ORDER.ORIGINAL) {
             if (order == ORDER.RANDOM) {
@@ -121,7 +122,7 @@ public class Parallelization extends Test {
                     tests.add(methodList.get(index));
                     counter += 1;
                 }
-                splitTests.add(new Standard(outputFileName + j, tests));
+                splitTests.add(new Standard(outputFileName + j, tests, getCoverage, allCoverageLines));
             }
         } else {
             System.err.println("Test parallelization is specified with an incompatible order."
