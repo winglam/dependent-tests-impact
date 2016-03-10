@@ -11,6 +11,15 @@ public class WrapperTestList {
     private String timeEachTest;
     private List<String> testList;
     private double newOrderTime;
+    private List<String> dtList;
+
+    public List<String> getDtList() {
+        return dtList;
+    }
+
+    public void setDtList(List<String> dtList) {
+        this.dtList = dtList;
+    }
 
     public double getNewOrderTime() {
         return newOrderTime;

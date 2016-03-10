@@ -30,53 +30,67 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 import java.util.Set;
 
 import edu.washington.cs.dt.RESULT;
 import edu.washington.cs.dt.impact.data.WrapperTestList;
-import edu.washington.cs.dt.impact.technique.Parallelization;
 import edu.washington.cs.dt.impact.technique.Prioritization;
-import edu.washington.cs.dt.impact.technique.Selection;
 import edu.washington.cs.dt.impact.technique.Test;
 import edu.washington.cs.dt.impact.tools.CrossReferencer;
 import edu.washington.cs.dt.impact.tools.DependentTestFinder;
-import edu.washington.cs.dt.impact.util.Constants.TECHNIQUE;
+import edu.washington.cs.dt.impact.util.Constants.COVERAGE;
 
-public class OneConfigurationRunner extends Runner {
+public class RandomizeRunner extends Runner {
 
     public static void main(String[] args) {
+        // Parse the input arguments
         parseArgs(args);
 
+        int randomTimes = 1;
+        int randomTimesIndex = argsList.indexOf("-randomTimes");
+        if (randomTimesIndex != -1) {
+            int randomTimesIntIndex = randomTimesIndex + 1;
+            if (randomTimesIntIndex >= argsList.size()) {
+                System.err.println("Number of random times argument is specified but a integer"
+                        + " is not. Please use the format: -randomTimes aInteger");
+                System.exit(0);
+            }
+            randomTimes = Integer.parseInt(argsList.get(randomTimesIntIndex));
+            if (randomTimes < 1) {
+                System.err.println("Number of random times argument is specified but the integer"
+                        + " value provided is invalid. Please check the integer value.");
+                System.exit(0);
+            }
+        }
         Map<String, RESULT> nameToOrigResults = getCurrentOrderTestListResults(origOrderTestList, filesToDelete);
 
         // capture start time
         double start = System.nanoTime();
-
-        // TestListGenerator
-        Test testObj = null;
-        if (techniqueName == TECHNIQUE.PRIORITIZATION) {
-            testObj = new Prioritization(order, outputFileName, testInputDir, coverage, dependentTestFile, false,
-                    origOrder);
-        } else if (techniqueName == TECHNIQUE.SELECTION) {
-            testObj = new Selection(order, outputFileName, testInputDir, coverage, selectionOutput1, selectionOutput2,
-                    origOrder, dependentTestFile, getCoverage);
-        } else if (techniqueName == TECHNIQUE.PARALLELIZATION) {
-            testObj = new Parallelization(order, outputFileName, testInputDir, coverage, dependentTestFile,
-                    numOfMachines.getValue(), origOrder, timeOrder, getCoverage, origOrderTestList);
-        } else {
-            System.err.println("The regression testing technique selected is invalid. Please restart the"
-                    + " program and try again.");
-            System.exit(0);
-        }
-
         TLGTime = System.nanoTime() - start;
 
         listTestList = new ArrayList<>();
-        for (int i = 0; i < numOfMachines.getValue(); i++) {
-            start = System.nanoTime();
+        start = System.nanoTime();
 
+        Random rand = new Random();
+        for (int i = 0; i < randomTimes; i++) {
             WrapperTestList testList = new WrapperTestList();
-            List<String> currentOrderTestList = getCurrentTestList(testObj, i);
+
+            System.out.println("Iteration: " + i + " / " + randomTimes);
+            List<String> origOrderCopy = new ArrayList<>();
+            for (String s : origOrderTestList) {
+                origOrderCopy.add(s.toString());
+            }
+            int randomNumToRemove = rand.nextInt(origOrderCopy.size() - 1) + 1;
+            for (int j = 0; j < randomNumToRemove; j++) {
+                int randomNumSelected = rand.nextInt(origOrderCopy.size());
+                origOrderCopy.remove(randomNumSelected);
+            }
+
+            Test testObj = new Prioritization(order, outputFileName, COVERAGE.STATEMENT, allDTList, getCoverage,
+                    origOrderCopy, testInputDir, true);
+            List<String> currentOrderTestList = getCurrentTestList(testObj, 0);
+
             // ImpactMain
             Map<String, RESULT> nameToTestResults = getCurrentOrderTestListResults(currentOrderTestList, filesToDelete);
             // CrossReferencer
@@ -86,7 +100,7 @@ public class OneConfigurationRunner extends Runner {
             if (resolveDependences) {
                 int counter = 0;
                 while (!changedTests.isEmpty()) {
-                    System.out.println("Nullifying DTs iteration number: " + counter);
+                    System.out.println("iteration number: " + counter);
                     counter += 1;
                     String testName = changedTests.iterator().next();
                     fixedDT.add(testName);
@@ -96,7 +110,7 @@ public class OneConfigurationRunner extends Runner {
                     allDTList = DependentTestFinder.getAllDTs();
                     // TestListGenerator
                     testObj.resetDTList(allDTList);
-                    currentOrderTestList = getCurrentTestList(testObj, i);
+                    currentOrderTestList = getCurrentTestList(testObj, 0);
                     // ImpactMain
                     nameToTestResults = getCurrentOrderTestListResults(currentOrderTestList, filesToDelete);
                     // Cross Referencer
@@ -106,26 +120,21 @@ public class OneConfigurationRunner extends Runner {
 
             // capture end time
             double runTotal = System.nanoTime() - start;
+
             testList.setNullifyDTTime(runTotal);
             testList.setNumNotFixedDT(changedTests.size());
             testList.setNumFixedDT(fixedDT.size());
             testList.setTestList(currentOrderTestList);
-            Map<Double, List<Double>> totalTimeToCumulTime =
-                    setTestListMedianTime(timesToRun, filesToDelete, currentOrderTestList, testList);
+            setTestListMedianTime(timesToRun, filesToDelete, currentOrderTestList, testList);
+
             if (allDTList != null) {
                 testList.setDtList(new ArrayList<String>(allDTList));
             }
 
-            if (getCoverage) {
-                // Get coverage each test achieved
-                List<String> coverageEachTest = getCurrentCoverage(testObj, i);
-                testList.setCoverage(coverageEachTest);
-                List<Double> cumulCoverage = getCumulList(coverageEachTest);
-                testList.setAPFD(getAPFD(totalTimeToCumulTime.get(testList.getNewOrderTime()), cumulCoverage));
-            }
             listTestList.add(testList);
         }
 
-        output(false);
+        // Output the results
+        output(true);
     }
 }

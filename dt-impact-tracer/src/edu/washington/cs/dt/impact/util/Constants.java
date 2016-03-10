@@ -1,7 +1,7 @@
 /**
  * Copyright 2014 University of Washington. All Rights Reserved.
  * @author Wing Lam
- * 
+ *
  *         Constants used throughout this project.
  */
 
@@ -23,6 +23,11 @@ public class Constants {
                     + "-" + td_setting;
         }
         return ret_str.concat(".txt");
+    }
+
+    public static String getDTListFileName(TECHNIQUE technique, PROJECT project, TEST_TYPE test_type) {
+        String ret_str = technique + "-" + test_type + "-" + project + ".txt";
+        return ret_str;
     }
 
     /**
