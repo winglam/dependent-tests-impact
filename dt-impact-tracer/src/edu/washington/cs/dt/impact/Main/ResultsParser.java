@@ -10,6 +10,8 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
+import edu.washington.cs.dt.impact.data.Project;
+
 public class ResultsParser {
 
     // name of line to get values from in Parallelization technique
@@ -537,4 +539,3 @@ public class ResultsParser {
 
     }
 }
-
