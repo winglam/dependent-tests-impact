@@ -220,7 +220,7 @@ public abstract class Runner {
                         + " Please use the format: -outputFile aFileName");
                 System.exit(0);
             }
-            outputDir = new File(argsList.get(outputFileNameIndex));
+            outputFileName = argsList.get(outputFileNameIndex);
         }
 
         // get file for the original order in which the tests should be ordered
@@ -517,8 +517,13 @@ public abstract class Runner {
             if (outputDTListSeparately) {
                 output = new FileWriter(dirPath + Constants.getDTListFileName(techniqueName, project, testType));
                 writer = new BufferedWriter(output);
-                for (String line : allDTList) {
-                    writer.write(line);
+
+                for (int j = 0; j < allDTList.size();) {
+                    for (int i = 0; i < 5; j++) {
+                        writer.write(allDTList.get(j) + "\n");
+                        i++;
+                    }
+                    writer.write("\n");
                 }
             }
         } catch (IOException e) {

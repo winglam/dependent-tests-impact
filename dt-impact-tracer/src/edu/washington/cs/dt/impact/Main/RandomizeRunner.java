@@ -73,10 +73,10 @@ public class RandomizeRunner extends Runner {
         start = System.nanoTime();
 
         Random rand = new Random();
-        for (int i = 0; i < randomTimes; i++) {
+        for (int i = 1; i <= randomTimes; i++) {
             WrapperTestList testList = new WrapperTestList();
 
-            System.out.println("Iteration: " + i + " / " + randomTimes);
+            System.out.println("Randomization iteration number: " + i + " / " + randomTimes);
             List<String> origOrderCopy = new ArrayList<>();
             for (String s : origOrderTestList) {
                 origOrderCopy.add(s.toString());
