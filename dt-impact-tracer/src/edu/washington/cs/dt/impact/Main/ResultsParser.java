@@ -182,15 +182,15 @@ public class ResultsParser {
         String result = projectName;
         double calc1 = 0;
         double calc2 = 0;
-        for (int i = 0; i + 2 < orig_values.length; i += 2) {
+        for (int i = 0; i + 2 <= orig_values.length; i += 2) {
             calc1 = (orig_values[i] / orig_value) * 100;
             calc2 = (orig_values[i + 1] / orig_value) * 100;
-            result += " & " + timeFormat.format(calc1) + " &\\rightarrow$ " + timeFormat.format(calc2);
+            result += " & " + timeFormat.format(calc1) + " $\\rightarrow$ " + timeFormat.format(calc2);
         }
-        for (int i = 0; i + 2 < time_values.length; i += 2) {
+        for (int i = 0; i + 2 <= time_values.length; i += 2) {
             calc1 = (time_values[i] / orig_value) * 100;
             calc2 = (time_values[i + 1] / orig_value) * 100;
-            result += " & " + timeFormat.format(calc1) + " &\\rightarrow$ " + timeFormat.format(calc2);
+            result += " & " + timeFormat.format(calc1) + " $\\rightarrow$ " + timeFormat.format(calc2);
         }
         result += "\\\\";
 
@@ -319,6 +319,21 @@ public class ResultsParser {
 
                 index = flagsList.indexOf("-project");
                 String projectName = flagsList.get(index + 1);
+                if (projectName.equals("crystal")) {
+                    projectName = "Crystal";
+                } else if (projectName.equals("jfreechart")) {
+                    projectName = "JFreechart";
+                } else if (projectName.equals("jodatime")) {
+                    projectName = "Joda-Time";
+                } else if (projectName.equals("synoptic")) {
+                    projectName = "Synoptic";
+                } else if (projectName.equals("xml_security")) {
+                    projectName = "XML Security";
+                } else {
+                    System.err.println("Project argument is specified but the project name"
+                            + " value provided is invalid. Please use either crystal, jfreechart, jodatime, synoptic or xml_security.");
+                    System.exit(0);
+                }
 
                 index = flagsList.indexOf("-testType");
                 String testType = flagsList.get(index + 1);

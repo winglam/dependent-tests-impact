@@ -4,7 +4,7 @@ medianTimes=3
 randomTimes=2
 
 #experiments=(crystal jfreechart jodatime synoptic xml_security)
-experiments=(crystal)
+experiments=(crystal jfreechart)
 testTypes=(orig auto)
 coverages=(statement function)
 #machines=(2 4 8 16)
