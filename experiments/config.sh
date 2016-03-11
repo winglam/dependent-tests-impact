@@ -1,40 +1,31 @@
 # This file is to share variables and functions. Please do not run this file.
 
-#coverages=(statement function)
-#orders=(absolute relative)
-impactJarCP=impact-tools/impact.jar
-testListGenClass=edu.washington.cs.dt.impact.tools.TestListGenerator
-crossReferenceClass=edu.washington.cs.dt.impact.tools.CrossReferencer
-#machines=(2 4 8 16)
 medianTimes=3
+randomTimes=2
+
+#experiments=(crystal jfreechart jodatime synoptic xml_security)
+experiments=(crystal)
+#testTypes=(orig auto)
+testTypes=(orig)
+coverages=(statement function)
+#machines=(2 4 8 16)
+machines=(2 4)
 
 priorOrders=(absolute relative)
 seleOrders=(original absolute relative)
 parallelOrders=($testType-order time)
 
-#experiments=(crystal jfreechart jodatime synoptic xml_security)
-#testTypes=(orig auto)
-experiments=(crystal)
-testTypes=(orig)
-coverages=(statement function)
-machines=(2 4)
-randomTimes=2
-
 priorDir=prioritization-results
 seleDir=selection-results
 paraDir=parallelization-results
 
-#directories=(crystalvc jfreechart-1.0.15 jodatime-b609d7d66d dynoptic xml-security-orig-v1)
-#experimentsCP=(impact-tools/*:bin/:lib/* impact-tools/*:bin/:lib/* impact-tools/*:bin/:resources/:lib/* impact-tools/*:bin/:../synoptic/lib/*:../synoptic/bin/:../daikonizer/bin/ impact-tools/*:bin/:../xml-security-commons/bin/:data/:../xml-security-commons/libs/*)
-#sootCP=(impact-tools/*:sootOutput/:lib/* impact-tools/*:sootOutput/:lib/* impact-tools/*:sootOutput/:resources/:lib/* impact-tools/*:sootOutput/:../synoptic/lib/*:../synoptic/bin/:../daikonizer/bin/ impact-tools/*:sootOutput/:../xml-security-commons/bin/:data/:../xml-security-commons/libs/*)
+impactJarCP=impact-tools/impact.jar
+testListGenClass=edu.washington.cs.dt.impact.tools.TestListGenerator
+crossReferenceClass=edu.washington.cs.dt.impact.tools.CrossReferencer
+
 directories=(crystalvc jfreechart-1.0.15 jodatime-b609d7d66d dynoptic xml-security-orig-v1)
 experimentsCP=(impact-tools/*:bin/:lib/* impact-tools/*:bin/:lib/* impact-tools/*:bin/:resources/:lib/* impact-tools/*:bin/:../synoptic/lib/*:../synoptic/bin/:../daikonizer/bin/ impact-tools/*:bin/:../xml-security-commons/bin/:data/:../xml-security-commons/libs/*)
 sootCP=(impact-tools/*:sootOutput/:lib/* impact-tools/*:sootOutput/:lib/* impact-tools/*:sootOutput/:resources/:lib/* impact-tools/*:sootOutput/:../synoptic/lib/*:../synoptic/bin/:../daikonizer/bin/ impact-tools/*:sootOutput/:../xml-security-commons/bin/:data/:../xml-security-commons/libs/*)
-
-#newDirectories=(crystal jfreechart-1.0.16 jodatime-d6791cb5f9 dynoptic-ea407ba0a750 xml-security-1_2_0)
-#newExperimentsCP=(crystal/impact-tools/*:crystal/bin/:crystal/libs/lib/* jfreechart-1.0.16/impact-tools/*:jfreechart-1.0.16/bin/:jfreechart-1.0.16/lib/* jodatime-d6791cb5f9/impact-tools/*:jodatime-d6791cb5f9/bin/:jodatime-d6791cb5f9/resources/:jodatime-d6791cb5f9/lib/* dynoptic-ea407ba0a750/impact-tools/*:dynoptic-ea407ba0a750/bin/:synoptic/lib/*:synoptic-ea407ba0a750/bin/:daikonizer-ea407ba0a750/bin/ xml-security-1_2_0/impact-tools/*:xml-security-1_2_0/bin/:xml-security-commons/bin/:xml-security-1_2_0/data/:xml-security-commons/libs/*)
-#instrumentNewExperimentsCP=(impact-tools/*:bin/:libs/lib/* impact-tools/*:bin/:lib/* impact-tools/*:bin/:resources/:lib/* impact-tools/*:bin/:../synoptic/lib/*:../synoptic-ea407ba0a750/bin/:../daikonizer-ea407ba0a750/bin/ impact-tools/*:bin/:../xml-security-commons/bin/:data/:../xml-security-commons/libs/*)
-#oldExperimentsCP=(crystalvc/impact-tools/*:crystalvc/bin/:crystalvc/lib/* jfreechart-1.0.15/impact-tools/*:jfreechart-1.0.15/bin/:jfreechart-1.0.15/lib/* jodatime-b609d7d66d/impact-tools/*:jodatime-b609d7d66d/bin/:jodatime-b609d7d66d/resources/:jodatime-b609d7d66d/lib/* dynoptic/impact-tools/*:dynoptic/bin/:synoptic/lib/*:synoptic/bin/:daikonizer/bin/ xml-security-orig-v1/impact-tools/*:xml-security-orig-v1/bin/:xml-security-commons/bin/:xml-security-orig-v1/data/:xml-security-commons/libs/*)
 
 newDirectories=(crystal jfreechart-1.0.16 jodatime-d6791cb5f9 dynoptic-ea407ba0a750 xml-security-1_2_0)
 newExperimentsCP=(crystal/impact-tools/*:crystal/bin/:crystal/libs/lib/* jfreechart-1.0.16/impact-tools/*:jfreechart-1.0.16/bin/:jfreechart-1.0.16/lib/* jodatime-d6791cb5f9/impact-tools/*:jodatime-d6791cb5f9/bin/:jodatime-d6791cb5f9/resources/:jodatime-d6791cb5f9/lib/* dynoptic-ea407ba0a750/impact-tools/*:dynoptic-ea407ba0a750/bin/:synoptic/lib/*:synoptic-ea407ba0a750/bin/:daikonizer-ea407ba0a750/bin/ xml-security-1_2_0/impact-tools/*:xml-security-1_2_0/bin/:xml-security-commons/bin/:xml-security-1_2_0/data/:xml-security-commons/libs/*)
@@ -42,12 +33,8 @@ instrumentNewExperimentsCP=(impact-tools/*:bin/:libs/lib/* impact-tools/*:bin/:l
 sootNewExperimentsCP=(impact-tools/*:sootOutput/:libs/lib/* impact-tools/*:sootOutput/:lib/* impact-tools/*:sootOutput/:resources/:lib/* impact-tools/*:sootOutput/:../synoptic/lib/*:../synoptic-ea407ba0a750/bin/:../daikonizer-ea407ba0a750/bin/ impact-tools/*:sootOutput/:../xml-security-commons/bin/:data/:../xml-security-commons/libs/*)
 oldExperimentsCP=(crystalvc/impact-tools/*:crystalvc/bin/:crystalvc/lib/* jfreechart-1.0.15/impact-tools/*:jfreechart-1.0.15/bin/:jfreechart-1.0.15/lib/* jodatime-b609d7d66d/impact-tools/*:jodatime-b609d7d66d/bin/:jodatime-b609d7d66d/resources/:jodatime-b609d7d66d/lib/* dynoptic/impact-tools/*:dynoptic/bin/:synoptic/lib/*:synoptic/bin/:daikonizer/bin/ xml-security-orig-v1/impact-tools/*:xml-security-orig-v1/bin/:xml-security-commons/bin/:xml-security-orig-v1/data/:xml-security-commons/libs/*)
 
-#compileCP=(bin/:lib/* impact-tools/*:bin/:lib/* bin/:resources/:lib/* bin/:../synoptic/lib/*:../synoptic/bin/:../daikonizer/bin/ bin/:../xml-security-commons/bin/:data/:../xml-security-commons/libs/*)
-#newCompileCP=(bin/:lib/* impact-tools/*:bin/:lib/* bin/:resources/:lib/* bin/:../synoptic/lib/*:../synoptic/bin/:../daikonizer/bin/ bin/:../xml-security-commons/bin/:data/:../xml-security-commons/libs/*)
-
 compileCP=(bin/:lib/* impact-tools/*:bin/:lib/* bin/:resources/:lib/* bin/:../synoptic/lib/*:../synoptic/bin/:../daikonizer/bin/ bin/:../xml-security-commons/bin/:data/:../xml-security-commons/libs/*)
 newCompileCP=(bin/:lib/* impact-tools/*:bin/:lib/* bin/:resources/:lib/* bin/:../synoptic/lib/*:../synoptic/bin/:../daikonizer/bin/ bin/:../xml-security-commons/bin/:data/:../xml-security-commons/libs/*)
-
 
 function clearTemp() {
   rm -rf sootOutput
@@ -69,7 +56,6 @@ function clearSelectionTemp() {
 }
 
 function instrumentFiles() {
-  # instrument class and test files
   echo 'Instrumenting files'
   java -cp $1 edu.washington.cs.dt.impact.Main.InstrumentationMain -inputDir bin
 }
@@ -103,10 +89,6 @@ function compileSource() {
 function runParallelizationOneConfigurationRunner() {
   java -cp $2 edu.washington.cs.dt.main.ImpactMain -inputTests $1-$3-order -getTime > $1-$3-time.txt
   for k in "${machines[@]}"; do
-    #echo 'Running parallelization with resolveDependences for time order'
-    #java -cp $2 edu.washington.cs.dt.impact.Main.OneConfigurationRunner -technique parallelization -order time -timeOrder $1-$3-time.txt -resolveDependences -origOrder $1-$3-order -testInputDir sootTestOutput -filesToDelete $1-env-files -project $1 -testType $3 -numOfMachines $k
-    #echo 'Running parallelization with resolveDependences for original order'
-    #java -cp $2 edu.washington.cs.dt.impact.Main.OneConfigurationRunner -technique parallelization -order original -resolveDependences -origOrder $1-$3-order -testInputDir sootTestOutput -filesToDelete $1-env-files -project $1 -testType $3 -numOfMachines $k
     echo 'Running parallelization without resolveDependences and without dependentTestFile for time order'
     java -cp $2 edu.washington.cs.dt.impact.Main.OneConfigurationRunner -technique parallelization -order time -timeOrder $1-$3-time.txt -origOrder $1-$3-order -testInputDir sootTestOutput -filesToDelete $1-env-files -numOfMachines $k -project $1 -testType $3 -timesToRun 3 -outputDir ../${paraDir}
     echo 'Running parallelization without resolveDependences and without dependentTestFile for original order'

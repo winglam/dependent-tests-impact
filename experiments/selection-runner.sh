@@ -5,7 +5,6 @@ compileNewSource
 
 index=0
 count=${#experiments[@]}
-ARRAY=()
 
 while [ "$index" -lt "$count" ]; do
   echo -e "Starting experiment: ${experiments[$index]}"
@@ -28,21 +27,10 @@ while [ "$index" -lt "$count" ]; do
 
     for i in "${coverages[@]}"; do
       for j in "${seleOrders[@]}"; do
-        # run selection on V1
-        #echo 'Running selection on V1 with resolveDependences'
-        #java -cp ${oldExperimentsCP[$index]} edu.washington.cs.dt.impact.Main.OneConfigurationRunner -technique selection -coverage $i -order $j -resolveDependences -origOrder ${directories[$index]}/${experiments[$index]}-$k-order -testInputDir ${directories[$index]}/sootTestOutput -filesToDelete ${directories[$index]}/${experiments[$index]}-env-files -project ${experiments[$index]} -testType $k -oldVersCFG ${directories[$index]}/selectionOutput -newVersCFG ${newDirectories[$index]}/selectionOutput
-        #echo 'Running selection on V1 without resolveDependences'
-        #java -cp ${oldExperimentsCP[$index]} edu.washington.cs.dt.impact.Main.OneConfigurationRunner -technique selection -coverage $i -order $j -origOrder ${directories[$index]}/${experiments[$index]}-$k-order -testInputDir ${directories[$index]}/sootTestOutput -filesToDelete ${directories[$index]}/${experiments[$index]}-env-files -project ${experiments[$index]} -testType $k -oldVersCFG ${directories[$index]}/selectionOutput -newVersCFG ${newDirectories[$index]}/selectionOutput
-
         echo 'Running selection without resolveDependences and with dependentTestFile'
         java -Xms1g -Xmx2g -cp ${newExperimentsCP[$index]} edu.washington.cs.dt.impact.Main.OneConfigurationRunner -technique selection -coverage $i -order $j -origOrder ${newDirectories[$index]}/${experiments[$index]}-$k-order -testInputDir ${directories[$index]}/sootTestOutput -filesToDelete ${newDirectories[$index]}/${experiments[$index]}-env-files -project ${experiments[$index]} -testType $k -oldVersCFG ${directories[$index]}/selectionOutput -newVersCFG ${newDirectories[$index]}/selectionOutput -getCoverage -outputDir ./${seleDir} -timesToRun ${medianTimes} -dependentTestFile ./
         echo 'Running selection without resolveDependences and without dependentTestFile'
         java -Xms1g -Xmx2g -cp ${newExperimentsCP[$index]} edu.washington.cs.dt.impact.Main.OneConfigurationRunner -technique selection -coverage $i -order $j -origOrder ${newDirectories[$index]}/${experiments[$index]}-$k-order -testInputDir ${directories[$index]}/sootTestOutput -filesToDelete ${newDirectories[$index]}/${experiments[$index]}-env-files -project ${experiments[$index]} -testType $k -oldVersCFG ${directories[$index]}/selectionOutput -newVersCFG ${newDirectories[$index]}/selectionOutput -getCoverage -outputDir ./${seleDir} -timesToRun ${medianTimes}
-        #echo 'Running selection on V2 with resolveDependences and with dependentTestFile'
-        #java -Xms1g -Xmx2g -cp ${newExperimentsCP[$index]} edu.washington.cs.dt.impact.Main.OneConfigurationRunner -technique selection -coverage $i -order $j -resolveDependences -origOrder ${newDirectories[$index]}/${experiments[$index]}-$k-order -testInputDir ${directories[$index]}/sootTestOutput -filesToDelete ${newDirectories[$index]}/${experiments[$index]}-env-files -project ${experiments[$index]} -testType $k -oldVersCFG ${directories[$index]}/selectionOutput -newVersCFG ${newDirectories[$index]}/selectionOutput -dependentTestFile ${experiments[$index]}-$k-DT-selection
-        #-dependentTestFile ${experiments[$index]}-$k-DT-selection-oldVers-$i-$j
-
-        ARRAY+=(${directories[$index]}/${experiments[$index]}-$k-selection-$i-$j)
       done
     done
     clearSelectionTemp ${directories[$index]} ${newDirectories[$index]}
