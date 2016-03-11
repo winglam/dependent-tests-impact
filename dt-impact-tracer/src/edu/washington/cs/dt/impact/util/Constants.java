@@ -26,7 +26,7 @@ public class Constants {
     }
 
     public static String getDTListFileName(PROJECT project, TEST_TYPE test_type) {
-        String ret_str = project + "-" + test_type + "DT_LIST.txt";
+        String ret_str = project + "-" + test_type + "-DT_LIST.txt";
         return ret_str;
     }
 

@@ -22,8 +22,8 @@ while [ "$index" -lt "$count" ]; do
     java -cp ${sootCP[$index]} edu.washington.cs.dt.main.ImpactMain -inputTests ../${newDirectories[$index]}/${experiments[$index]}-$k-order
     cd ..
 
-    echo 'Running selection on V2 for original order'
-    java -Xms1g -Xmx2g -cp ${newExperimentsCP[$index]} edu.washington.cs.dt.impact.Main.OneConfigurationRunner -technique prioritization -coverage statement -order original -origOrder ${newDirectories[$index]}/${experiments[$index]}-$k-order -testInputDir ${directories[$index]}/sootTestOutput -filesToDelete ${newDirectories[$index]}/${experiments[$index]}-env-files -project ${experiments[$index]} -testType $k -getCoverage -outputDir ./${seleDir} -timesToRun ${medianTimes}
+    echo 'Running prioritization for original order'
+    java -Xms1g -Xmx2g -cp ${newExperimentsCP[$index]} edu.washington.cs.dt.impact.Main.OneConfigurationRunner -technique prioritization -coverage statement -order original -origOrder ${newDirectories[$index]}/${experiments[$index]}-$k-order -testInputDir ${directories[$index]}/sootTestOutput -filesToDelete ${newDirectories[$index]}/${experiments[$index]}-env-files -project ${experiments[$index]} -testType $k -outputDir ./${seleDir} -timesToRun ${medianTimes}
 
     for i in "${coverages[@]}"; do
       for j in "${seleOrders[@]}"; do

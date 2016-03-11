@@ -22,7 +22,7 @@ function runParallelization() {
     rm -rf ${paraDir}
     mkdir ${paraDir}
 
-    ./paralleization-runner.sh
+    ./parallelization-runner.sh
     java -cp ${impactJarCP} edu.washington.cs.dt.impact.Main.ResultsParser -directory ${paraDir} -outputDirectory ${paraDir}
 }
 
@@ -30,10 +30,10 @@ echo "Running random-runner script"
 ./random-runner.sh
 
 echo "Running prioritization-runner script"
-#runPrioritization
+runPrioritization
 
 echo "Running selection-runner script"
 runSelection
 
 echo "Running paralleization-runner script"
-#runParallelization
+runParallelization

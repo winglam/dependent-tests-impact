@@ -17,6 +17,7 @@ public class ResultsParser {
 
     // name of line to get values from in Parallelization technique
     public static final String ORDER_TIME = "Execution time for executing the following testing order:";
+    public static final String ORDER_TIME_PARA = "New order time:";
     // name of line to get values from in selection and prioritization
     public static final String APFD_VALUE = "APFD value:";
     private static final DecimalFormat apfdFormat = new DecimalFormat("0.000");
@@ -295,6 +296,9 @@ public class ResultsParser {
 
                 // String containing all the flags
                 String flagsInFile = getFlagsLine(file);
+                if (flagsInFile == null) {
+                    continue;
+                }
                 // get rid of square brackets
                 flagsInFile = flagsInFile.substring(1, flagsInFile.length() - 1);
                 String[] flags = flagsInFile.split(",");
@@ -350,7 +354,7 @@ public class ResultsParser {
 
                 // parallelization technique, figure 19
                 if (techniqueName.equals("parallelization")) {
-                    String order_time_string = parseFile(file, ORDER_TIME);
+                    String order_time_string = parseFile(file, ORDER_TIME_PARA);
                     double order_time = Double.parseDouble(order_time_string);
                     // order will be time or original
                     // k = 2, 4, 8, 16 is the number of machines
