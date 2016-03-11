@@ -398,9 +398,8 @@ public abstract class Runner {
             dependentTestFile = new File(argsList.get(dependentFileNameIndex));
             if (dependentTestFile.isDirectory()) {
                 try {
-                    dependentTestFile =
-                            new File(dependentTestFile.getCanonicalPath() + System.getProperty("file.separator")
-                                    + Constants.getDTListFileName(techniqueName, project, testType));
+                    dependentTestFile = new File(dependentTestFile.getCanonicalPath()
+                            + System.getProperty("file.separator") + Constants.getDTListFileName(project, testType));
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -515,7 +514,7 @@ public abstract class Runner {
             output.close();
 
             if (outputDTListSeparately) {
-                output = new FileWriter(dirPath + Constants.getDTListFileName(techniqueName, project, testType));
+                output = new FileWriter(dirPath + Constants.getDTListFileName(project, testType));
                 writer = new BufferedWriter(output);
 
                 for (int j = 0; j < allDTList.size();) {

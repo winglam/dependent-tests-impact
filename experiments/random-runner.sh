@@ -3,7 +3,6 @@ source ./config.sh
 compileSource
 
 index=0
-randomTimes=2
 count=${#experiments[@]}
 ARRAY=()
 

@@ -25,8 +25,8 @@ public class Constants {
         return ret_str.concat(".txt");
     }
 
-    public static String getDTListFileName(TECHNIQUE technique, PROJECT project, TEST_TYPE test_type) {
-        String ret_str = technique + "-" + test_type + "-" + project + ".txt";
+    public static String getDTListFileName(PROJECT project, TEST_TYPE test_type) {
+        String ret_str = project + "-" + test_type + "DT_LIST.txt";
         return ret_str;
     }
 

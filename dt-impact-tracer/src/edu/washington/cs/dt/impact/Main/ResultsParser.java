@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -18,6 +19,9 @@ public class ResultsParser {
     public static final String ORDER_TIME = "Execution time for executing the following testing order:";
     // name of line to get values from in selection and prioritization
     public static final String APFD_VALUE = "APFD value:";
+    private static final DecimalFormat apfdFormat = new DecimalFormat("0.000");
+    private static final DecimalFormat timeFormat = new DecimalFormat("0.00");
+    private static final DecimalFormat percentFormat = new DecimalFormat("0.0");
 
     /*
      * A private method to search a file for a keyword and return the value that follows
@@ -114,7 +118,10 @@ public class ResultsParser {
         String result = projectName;
         for (int i = 0; i + 1 < values.length; i += 2) {
             double val = values[i] - values[i + 1];
-            result += " & " + val;
+            if (val < 0.0) {
+                val = 0.0;
+            }
+            result += " & " + apfdFormat.format(val);
         }
         result += " \\\\"; // "\\"
         return result;
@@ -146,15 +153,21 @@ public class ResultsParser {
             double percent = Math.max(calc1, Math.max(calc2, calc3));
             // if negative, ensure it's 0
             percent = Math.max(0, percent);
+            if (percent < 0.0) {
+                percent = 0.0;
+            }
             if (projectName.equals("crystal") && type.equals("auto")) {
-                result += " & " + percent + "\\%\\ra"; // "\%\ra"
+                result += " & " + percentFormat.format(percent) + "\\%\\ra"; // "\%\ra"
             } else {
-                result += " & " + percent + "\\%\\pa"; // "\%\pa"
+                result += " & " + percentFormat.format(percent) + "\\%\\pa"; // "\%\pa"
             }
         }
         for (int i = 0; i + 1 < values.length; i += 2) {
             double val = values[i] - values[i + 1];
-            result += " & " + val;
+            if (val < 0.0) {
+                val = 0.0;
+            }
+            result += " & " + apfdFormat.format(val);
         }
         result += " \\\\"; // "\\"
         return result;
@@ -171,12 +184,12 @@ public class ResultsParser {
         for (int i = 0; i + 2 < orig_values.length; i += 2) {
             calc1 = (orig_values[i] / orig_value) * 100;
             calc2 = (orig_values[i + 1] / orig_value) * 100;
-            result += " & " + calc1 + " &\\rightarrow$ " + calc2;
+            result += " & " + timeFormat.format(calc1) + " &\\rightarrow$ " + timeFormat.format(calc2);
         }
         for (int i = 0; i + 2 < time_values.length; i += 2) {
             calc1 = (time_values[i] / orig_value) * 100;
             calc2 = (time_values[i + 1] / orig_value) * 100;
-            result += " & " + calc1 + " &\\rightarrow$ " + calc2;
+            result += " & " + timeFormat.format(calc1) + " &\\rightarrow$ " + timeFormat.format(calc2);
         }
         result += "\\\\";
 
@@ -211,19 +224,19 @@ public class ResultsParser {
         int index = 0;
         for (Project temp : projList) {
             // get the correct orig_value...one of the Lists will not have the correct value (will be 0)
-            
+
             if (temp.isFig17()) {
                 latexString += generate17(temp.getName(), temp.get_fig17_values());
                 latexString += "\r\n";
             } else if (temp.isFig18()) {
-		double orig_value =
-                    (temp.getOrigValue() == 0) ? otherProjList.get(index).getOrigValue() : temp.getOrigValue();
+                double orig_value =
+                        (temp.getOrigValue() == 0) ? otherProjList.get(index).getOrigValue() : temp.getOrigValue();
                 latexString += generate18(temp.getName(), temp.get_fig18_percents(), temp.get_fig18_values(),
                         orig_value, type);
                 latexString += "\r\n";
             } else if (temp.isFig19()) {
-		double orig_value =
-                    (temp.getOrigValue() == 0) ? otherProjList.get(index).getOrigValue() : temp.getOrigValue();
+                double orig_value =
+                        (temp.getOrigValue() == 0) ? otherProjList.get(index).getOrigValue() : temp.getOrigValue();
                 latexString += generate19(temp.getName(), temp.get_fig19_orig(), temp.get_fig19_time(), orig_value);
                 latexString += "\r\n";
             }
@@ -524,8 +537,8 @@ public class ResultsParser {
         String origLatexString = generateLatexString(proj_orig_arrayList, proj_auto_arrayList, "orig");
         String autoLatexString = generateLatexString(proj_auto_arrayList, proj_orig_arrayList, "auto");
 
-        String origOutputFilename = outputDirectoryName + "/";
-        String autoOutputFilename = outputDirectoryName + "/";
+        String origOutputFilename = outputDirectoryName + System.getProperty("file.separator");
+        String autoOutputFilename = outputDirectoryName + System.getProperty("file.separator");
         if (proj_orig_arrayList.get(0).isFig17()) {
             origOutputFilename += "enhanced-prior-orig-results.tex";
             autoOutputFilename += "enhanced-prior-auto-results.tex";
