@@ -23,7 +23,7 @@ while [ "$index" -lt "$count" ]; do
         java -cp ${experimentsCP[$index]} edu.washington.cs.dt.impact.Main.OneConfigurationRunner -technique prioritization -coverage $i -order $j -origOrder ${experiments[$index]}-$k-order -testInputDir sootTestOutput -filesToDelete ${experiments[$index]}-env-files -getCoverage -project ${experiments[$index]} -testType $k -outputDir ../${priorDir} -timesToRun ${medianTimes}
       done
     done
-    clearTemp
+    clearTemp ${experiments[$index]} $k
   done
 
   cd ..

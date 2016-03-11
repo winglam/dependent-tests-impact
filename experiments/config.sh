@@ -40,6 +40,7 @@ function clearTemp() {
   rm -rf sootTestOutput
   rm -rf tmpfile.txt
   rm -rf tmptestfiles.txt
+  rm -rf $1-$2-time.txt
 }
 
 function clearSelectionTemp() {
