@@ -303,7 +303,7 @@ public class ResultsParser {
                 index = flagsList.indexOf("-testType");
                 String testType = flagsList.get(index + 1);
 
-                index = flagsList.indexOf("-resolveDependences");
+                index = flagsList.indexOf("-dependentTestFile");
                 String resolveDependences = null;
                 // if index = -1, flag not present
                 if (index != -1) {
