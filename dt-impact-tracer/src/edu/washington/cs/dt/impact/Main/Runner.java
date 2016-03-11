@@ -551,7 +551,7 @@ public abstract class Runner {
         Map<Double, List<Double>> totalTimeToCumulTime = new TreeMap<>();
         Map<Double, List<String>> totalTimeToTimeEachTest = new TreeMap<>();
         for (int j = 0; j < timesToRun; j++) {
-            System.out.println("Getting median in iteration: " + j);
+            System.out.println("Getting median in iteration: " + (j + 1) + " / " + timesToRun);
             FileTools.clearEnv(filesToDelete);
             List<String> timeEachTest =
                     ImpactMain.getResults(currentOrderTestList, true).getExecutionRecords().get(0).getValues();

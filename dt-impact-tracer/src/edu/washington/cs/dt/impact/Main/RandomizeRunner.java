@@ -100,7 +100,8 @@ public class RandomizeRunner extends Runner {
             if (resolveDependences) {
                 int counter = 0;
                 while (!changedTests.isEmpty()) {
-                    System.out.println("Nullifying DTs iteration number: " + counter + " / " + changedTests.size());
+                    System.out.println("Nullifying DTs iteration number / possible iterations left: " + counter + " / "
+                            + changedTests.size());
                     counter += 1;
                     String testName = changedTests.iterator().next();
                     fixedDT.add(testName);
