@@ -556,7 +556,7 @@ public abstract class Runner {
             List<String> timeEachTest =
                     ImpactMain.getResults(currentOrderTestList, true).getExecutionRecords().get(0).getValues();
             List<Double> cumulTime = getCumulList(timeEachTest);
-            double totalTimeNewOrder = getSum(cumulTime);
+            double totalTimeNewOrder = getSumStr(timeEachTest);
             totalTimeToCumulTime.put(totalTimeNewOrder, cumulTime);
             totalTimeToTimeEachTest.put(totalTimeNewOrder, timeEachTest);
         }
@@ -587,6 +587,14 @@ public abstract class Runner {
             sum += val;
         }
         return sum;
+    }
+
+    protected static double getSumStr(List<String> list) {
+        List<Double> doubleList = new ArrayList<>();
+        for (String val : list) {
+            doubleList.add(Double.valueOf(val));
+        }
+        return getSum(doubleList);
     }
 
     protected static List<Double> getCumulList(List<String> list) {
