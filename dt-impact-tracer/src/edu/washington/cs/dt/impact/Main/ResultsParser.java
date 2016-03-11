@@ -211,16 +211,19 @@ public class ResultsParser {
         int index = 0;
         for (Project temp : projList) {
             // get the correct orig_value...one of the Lists will not have the correct value (will be 0)
-            double orig_value =
-                    (temp.getOrigValue() == 0) ? otherProjList.get(index).getOrigValue() : temp.getOrigValue();
+            
             if (temp.isFig17()) {
                 latexString += generate17(temp.getName(), temp.get_fig17_values());
                 latexString += "\r\n";
             } else if (temp.isFig18()) {
+		double orig_value =
+                    (temp.getOrigValue() == 0) ? otherProjList.get(index).getOrigValue() : temp.getOrigValue();
                 latexString += generate18(temp.getName(), temp.get_fig18_percents(), temp.get_fig18_values(),
                         orig_value, type);
                 latexString += "\r\n";
             } else if (temp.isFig19()) {
+		double orig_value =
+                    (temp.getOrigValue() == 0) ? otherProjList.get(index).getOrigValue() : temp.getOrigValue();
                 latexString += generate19(temp.getName(), temp.get_fig19_orig(), temp.get_fig19_time(), orig_value);
                 latexString += "\r\n";
             }
