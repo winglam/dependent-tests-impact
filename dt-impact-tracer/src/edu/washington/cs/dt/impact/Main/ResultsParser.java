@@ -581,10 +581,12 @@ public class ResultsParser {
 
         String origOutputFilename = outputDirectoryName + System.getProperty("file.separator");
         String autoOutputFilename = outputDirectoryName + System.getProperty("file.separator");
-        if (proj_orig_arrayList.get(0).isFig17()) {
+        if ((!proj_orig_arrayList.isEmpty() && proj_orig_arrayList.get(0).isFig17())
+                || (!proj_auto_arrayList.isEmpty() && proj_auto_arrayList.get(0).isFig17())) {
             origOutputFilename += "enhanced-prior-orig-results.tex";
             autoOutputFilename += "enhanced-prior-auto-results.tex";
-        } else if (proj_orig_arrayList.get(0).isFig18()) {
+        } else if ((!proj_orig_arrayList.isEmpty() && proj_orig_arrayList.get(0).isFig18())
+                || (!proj_auto_arrayList.isEmpty() && proj_auto_arrayList.get(0).isFig18())) {
             origOutputFilename += "enhanced-sele-orig-results.tex";
             autoOutputFilename += "enhanced-sele-auto-results.tex";
         } else { // fig 19
