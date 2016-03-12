@@ -1,4 +1,9 @@
 #!/bin/bash
+
+cd dt-impact-tracer/
+ant
+cd ..
+
 jar -cf ./impact.jar -C ./dt-impact-tracer/bin .
 
 rm -rf ./experiments/impact-tools/impact.jar
