@@ -1,23 +1,26 @@
 # This file is to share variables and functions. Please do not run this file.
 
+# Number of times to run the time order before taking the median
 medianTimes=3
+# Number of times to randomize the test order for the pre computed dependences
 randomTimes=2
 
-#experiments=(crystal jfreechart jodatime synoptic xml_security)
-experiments=(crystal jfreechart)
+experiments=(crystal jfreechart jodatime synoptic xml_security)
 testTypes=(orig auto)
 coverages=(statement function)
-#machines=(2 4 8 16)
-machines=(2 4)
+machines=(2 4 8 16)
 
+# Ordering for the three techniques
 priorOrders=(absolute relative)
 seleOrders=(original absolute relative)
 parallelOrders=($testType-order time)
 
+# Directory to output the results
 priorDir=prioritization-results
 seleDir=selection-results
 paraDir=parallelization-results
 
+# Do not change the values below unless you know specifically what you are doing
 impactJarCP=impact-tools/impact.jar
 testListGenClass=edu.washington.cs.dt.impact.tools.TestListGenerator
 crossReferenceClass=edu.washington.cs.dt.impact.tools.CrossReferencer

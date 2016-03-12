@@ -7,7 +7,7 @@ function runPrioritization() {
     mkdir ${priorDir}
 
     ./prioritization-runner.sh
-    java -cp ${impactJarCP} edu.washington.cs.dt.impact.Main.ResultsParser -directory ${priorDir} -outputDirectory ${priorDir}
+    java -cp ${impactJarCP} edu.washington.cs.dt.impact.Main.ResultsParser -directory ${priorDir} -outputDirectory ${priorDir} -allowNegatives
 }
 
 function runSelection() {
@@ -15,7 +15,7 @@ function runSelection() {
     mkdir ${seleDir}
 
     ./selection-runner.sh
-    java -cp ${impactJarCP} edu.washington.cs.dt.impact.Main.ResultsParser -directory ${seleDir} -outputDirectory ${seleDir}
+    java -cp ${impactJarCP} edu.washington.cs.dt.impact.Main.ResultsParser -directory ${seleDir} -outputDirectory ${seleDir} -allowNegatives
 }
 
 function runParallelization() {
@@ -23,11 +23,11 @@ function runParallelization() {
     mkdir ${paraDir}
 
     ./parallelization-runner.sh
-    java -cp ${impactJarCP} edu.washington.cs.dt.impact.Main.ResultsParser -directory ${paraDir} -outputDirectory ${paraDir}
+    java -cp ${impactJarCP} edu.washington.cs.dt.impact.Main.ResultsParser -directory ${paraDir} -outputDirectory ${paraDir} -allowNegatives
 }
 
 echo "Running random-runner script"
-./random-runner.sh
+#./random-runner.sh
 
 echo "Running prioritization-runner script"
 runPrioritization

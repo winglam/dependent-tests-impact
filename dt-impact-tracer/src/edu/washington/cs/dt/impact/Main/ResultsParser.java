@@ -23,6 +23,7 @@ public class ResultsParser {
     private static final DecimalFormat apfdFormat = new DecimalFormat("0.000");
     private static final DecimalFormat timeFormat = new DecimalFormat("0.00");
     private static final DecimalFormat percentFormat = new DecimalFormat("0.0");
+    private static boolean allowNegatives = false;
 
     /*
      * A private method to search a file for a keyword and return the value that follows
@@ -119,7 +120,7 @@ public class ResultsParser {
         String result = projectName;
         for (int i = 0; i + 1 < values.length; i += 2) {
             double val = values[i] - values[i + 1];
-            if (val < 0.0) {
+            if (allowNegatives && val < 0.0) {
                 val = 0.0;
             }
             result += " & " + apfdFormat.format(val);
@@ -154,7 +155,7 @@ public class ResultsParser {
             double percent = Math.max(calc1, Math.max(calc2, calc3));
             // if negative, ensure it's 0
             percent = Math.max(0, percent);
-            if (percent < 0.0) {
+            if (allowNegatives && percent < 0.0) {
                 percent = 0.0;
             }
             if (projectName.equals("crystal") && type.equals("auto")) {
@@ -165,7 +166,7 @@ public class ResultsParser {
         }
         for (int i = 0; i + 1 < values.length; i += 2) {
             double val = values[i] - values[i + 1];
-            if (val < 0.0) {
+            if (allowNegatives && val < 0.0) {
                 val = 0.0;
             }
             result += " & " + apfdFormat.format(val);
@@ -273,6 +274,8 @@ public class ResultsParser {
      */
     public static void main(String[] args) {
         List<String> argsList = new ArrayList<String>(Arrays.asList(args));
+
+        allowNegatives = argsList.contains("-allowNegatives");
 
         String directoryName = getArgName(argsList, "-directory");
         // name of directory where files should be outputted
