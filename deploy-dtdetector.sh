@@ -1,4 +1,9 @@
 #!/bin/bash
+
+cd dt-detector/
+ant
+cd ..
+
 jar -cf ./dt-detector.jar -C ./dt-detector/bin .
 
 rm -rf ./dt-impact/experiments/impact-tools/dt-detector.jar

@@ -244,7 +244,7 @@ public class ResultsParser {
         sortList(projList, sortedList, XMLSECURITY_NAME);
 
         int index = 0;
-        for (Project temp : projList) {
+        for (Project temp : sortedList) {
             // get the correct orig_value...one of the Lists will not have the correct value (will be 0)
 
             if (temp.isFig17()) {
