@@ -24,6 +24,11 @@ public class ResultsParser {
     private static final DecimalFormat timeFormat = new DecimalFormat("0.00");
     private static final DecimalFormat percentFormat = new DecimalFormat("0.0");
     private static boolean allowNegatives = false;
+    private static final String CRYSTAL_NAME = "Crystal";
+    private static final String JFREECHART_NAME = "JFreechart";
+    private static final String JODATIME_NAME = "Joda-Time";
+    private static final String SYNOTPIC_NAME = "Synoptic";
+    private static final String XMLSECURITY_NAME = "XML Security";
 
     /*
      * A private method to search a file for a keyword and return the value that follows
@@ -120,7 +125,7 @@ public class ResultsParser {
         String result = projectName;
         for (int i = 0; i + 1 < values.length; i += 2) {
             double val = values[i] - values[i + 1];
-            if (allowNegatives && val < 0.0) {
+            if (!allowNegatives && val < 0.0) {
                 val = 0.0;
             }
             result += " & " + apfdFormat.format(val);
@@ -155,10 +160,10 @@ public class ResultsParser {
             double percent = Math.max(calc1, Math.max(calc2, calc3));
             // if negative, ensure it's 0
             percent = Math.max(0, percent);
-            if (allowNegatives && percent < 0.0) {
+            if (!allowNegatives && percent < 0.0) {
                 percent = 0.0;
             }
-            if (projectName.equals("crystal") && type.equals("auto")) {
+            if (projectName.equals(CRYSTAL_NAME) && type.equals("auto")) {
                 result += " & " + percentFormat.format(percent) + "\\%\\ra"; // "\%\ra"
             } else {
                 result += " & " + percentFormat.format(percent) + "\\%\\pa"; // "\%\pa"
@@ -166,7 +171,7 @@ public class ResultsParser {
         }
         for (int i = 0; i + 1 < values.length; i += 2) {
             double val = values[i] - values[i + 1];
-            if (allowNegatives && val < 0.0) {
+            if (!allowNegatives && val < 0.0) {
                 val = 0.0;
             }
             result += " & " + apfdFormat.format(val);
@@ -214,6 +219,15 @@ public class ResultsParser {
         }
         return -1;
     }
+
+    private static void sortList(List<Project> projList, List<Project> sortedList, String keyword) {
+        for (Project temp : projList) {
+            if (temp.getName().equals(keyword)) {
+                sortedList.add(temp);
+            }
+        }
+    }
+
     /*
      * a private method to generate the LaTeX format of the data of each Project in projList
      *
@@ -222,6 +236,12 @@ public class ResultsParser {
 
     private static String generateLatexString(List<Project> projList, List<Project> otherProjList, String type) {
         String latexString = "";
+        List<Project> sortedList = new ArrayList<Project>();
+        sortList(projList, sortedList, CRYSTAL_NAME);
+        sortList(projList, sortedList, JFREECHART_NAME);
+        sortList(projList, sortedList, JODATIME_NAME);
+        sortList(projList, sortedList, SYNOTPIC_NAME);
+        sortList(projList, sortedList, XMLSECURITY_NAME);
 
         int index = 0;
         for (Project temp : projList) {
@@ -323,15 +343,15 @@ public class ResultsParser {
                 index = flagsList.indexOf("-project");
                 String projectName = flagsList.get(index + 1);
                 if (projectName.equals("crystal")) {
-                    projectName = "Crystal";
+                    projectName = CRYSTAL_NAME;
                 } else if (projectName.equals("jfreechart")) {
-                    projectName = "JFreechart";
+                    projectName = JFREECHART_NAME;
                 } else if (projectName.equals("jodatime")) {
-                    projectName = "Joda-Time";
+                    projectName = JODATIME_NAME;
                 } else if (projectName.equals("synoptic")) {
-                    projectName = "Synoptic";
+                    projectName = SYNOTPIC_NAME;
                 } else if (projectName.equals("xml_security")) {
-                    projectName = "XML Security";
+                    projectName = XMLSECURITY_NAME;
                 } else {
                     System.err.println("Project argument is specified but the project name"
                             + " value provided is invalid. Please use either crystal, jfreechart, jodatime, synoptic or xml_security.");
