@@ -131,14 +131,21 @@ public class Parallelization extends Test {
             // split the tests. if the tests can't be split by k perfectly,
             // the size of the first (list size)%k lists are 1 greater than the rest
             int size = methodList.size() / k;
+            int numBigMachines = 0;
             if (methodList.size() % k != 0) {
-                size += 1;
+                numBigMachines = methodList.size() - (k * size);
             }
 
             int index = 0;
             for (int j = 0; j < k; j++) {
+                int machineSize;
+                if (j < numBigMachines) {
+                    machineSize = size + 1;
+                } else {
+                    machineSize = size;
+                }
                 List<TestFunctionStatement> tests = new LinkedList<TestFunctionStatement>();
-                for (int counter = 0; index < methodList.size() && counter < size; index++) {
+                for (int counter = 0; index < methodList.size() && counter < machineSize; index++) {
                     tests.add(methodList.get(index));
                     counter += 1;
                 }
