@@ -128,6 +128,10 @@ public class ResultsParser {
             if (!allowNegatives && val < 0.0) {
                 val = 0.0;
             }
+            String output = apfdFormat.format(val);
+            if (output.equals("-0.000")) {
+                output = "0.000";
+            }
             result += " & " + apfdFormat.format(val);
         }
         result += " \\\\"; // "\\"
@@ -163,6 +167,10 @@ public class ResultsParser {
             if (!allowNegatives && percent < 0.0) {
                 percent = 0.0;
             }
+            String output = apfdFormat.format(percent);
+            if (output.equals("-0.0")) {
+                output = "0.0";
+            }
             if (projectName.equals(CRYSTAL_NAME) && type.equals("auto")) {
                 result += " & " + percentFormat.format(percent) + "\\%\\ra"; // "\%\ra"
             } else {
@@ -173,6 +181,10 @@ public class ResultsParser {
             double val = values[i] - values[i + 1];
             if (!allowNegatives && val < 0.0) {
                 val = 0.0;
+            }
+            String output = apfdFormat.format(val);
+            if (output.equals("-0.000")) {
+                output = "0.000";
             }
             result += " & " + apfdFormat.format(val);
         }
