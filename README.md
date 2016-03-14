@@ -4,6 +4,16 @@ To reproduce figures 17, 18 and 19 in our paper do the following:
 2. cd dependent-tests-impact/experiments
 3. ./figureGenerator.sh
 
+Once the script finishes running, the results for prioritization,
+selection and parallelization can be found in dependent-tests-impact/experiments/prioritization-results, dependent-tests-impact/experiments/selection-results and dependent-tests-impact/experiments/parallelization-results (respectively).
+Due to the calculation for APFD values (for figures 17 and 18) and runtime
+differences (for figures 18 and 19) being dependent on the time it takes
+for a test order to run and how the time it takes for a test
+order to run may vary depending on external factors such as OS scheduling,
+the results generated will most likely not match the figures in the paper
+exactly. Nevertheless, the results generated should convey the same
+overall message and should not differ significantly.
+
 In light of saving run time of the scripts, the following files are
 provided:
 - CRYSTAL-AUTO-DT_LIST.txt
