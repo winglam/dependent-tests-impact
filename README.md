@@ -7,14 +7,14 @@ cd dependent-tests-impact/experiments
 ```
 
 Once the script finishes running, the results for prioritization,
-selection and parallelization can be found in dependent-tests-impact/experiments/prioritization-results, dependent-tests-impact/experiments/selection-results and dependent-tests-impact/experiments/parallelization-results (respectively).
-Due to the calculation for APFD values (for figures 17 and 18) and runtime
-differences (for figures 18 and 19) being dependent on the time it takes
-for a test order to run and how the time it takes for a test
-order to run may vary depending on external factors such as OS scheduling,
-the results generated will most likely not match the figures in the paper
-exactly. Nevertheless, the results generated should convey the same
-overall message and should not differ significantly.
+selection and parallelization can be found in
+dependent-tests-impact/experiments/prioritization-results,
+dependent-tests-impact/experiments/selection-results and
+dependent-tests-impact/experiments/parallelization-results (respectively).
+The results won't be digit-for-digit identical with those in the submitted
+paper, because the calculation for APFD values (for figures 17 and 18) and
+runtime (for figures 18 and 19) depend on factors such as machine load and
+OS scheduling.  However, the results still support our paper's claims.
 
 The `figureGenerator.sh` script
 takes on average 9 hours to complete on a machine with the following
