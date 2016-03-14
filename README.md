@@ -6,6 +6,10 @@ cd dependent-tests-impact/experiments
 ./figureGenerator.sh
 ```
 
+The `figureGenerator.sh` script takes 9 hours to complete on a
+machine with the following configuration:
+Intel(R) Core(TM) i5-4590T CPU @ 2.00GHz 8GB RAM
+
 Once the script finishes running, the results for prioritization,
 selection and parallelization can be found in
 dependent-tests-impact/experiments/prioritization-results,
@@ -15,11 +19,6 @@ The results won't be digit-for-digit identical with those in the submitted
 paper, because the calculation for APFD values (for figures 17 and 18) and
 runtime (for figures 18 and 19) depend on factors such as machine load and
 OS scheduling.  However, the results still support our paper's claims.
-
-The `figureGenerator.sh` script
-takes on average 9 hours to complete on a machine with the following
-configuration:
-Intel(R) Core(TM) i5-4590T CPU @ 2.00GHz 8GB RAM
 
 The following files contain the results of pre-computed test dependences:
 - CRYSTAL-AUTO-DT_LIST.txt
