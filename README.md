@@ -15,10 +15,12 @@ selection and parallelization can be found in
 dependent-tests-impact/experiments/prioritization-results,
 dependent-tests-impact/experiments/selection-results and
 dependent-tests-impact/experiments/parallelization-results (respectively).
-The results won't be digit-for-digit identical with those in the submitted
-paper, because the calculation for APFD values (for figures 17 and 18) and
-runtime (for figures 18 and 19) depend on factors such as machine load and
-OS scheduling.  However, the results still support our paper's claims.
+The results are not identical with those in the submitted paper, for two
+main reason.  First, for the submitted paper some of the data was computed
+on a loaded machine that was running other jobs, though we don't know
+exactly which data.  (That was a methodological error.)  The current data
+was computed on an unloaded machine.  While the numerical results differ,
+they still support the paper's claims.
 
 The following files contain the results of pre-computed test dependences:
 - CRYSTAL-AUTO-DT_LIST.txt
@@ -32,10 +34,11 @@ The following files contain the results of pre-computed test dependences:
 - XML_SECURITY-AUTO-DT_LIST.txt
 - XML_SECURITY-ORIG-DT_LIST.txt
 
-You can re-generate these pre-computed test dependences instead of using the provided ones:
-delete the files listed above and uncomment line 30 in
+You can re-generate these pre-computed test dependences instead of using
+the provided ones:
+delete the files listed above,
+and uncomment line 30 (`#./random-runner.sh` -> `./random-runner.sh`) in
 dependent-tests-impact/experiments/figureGenerator.sh.
-`#./random-runner.sh` -> `./random-runner.sh`
 However, note that doing so will require even more run time.
 
 Another way to significantly affect run time is with two variables
