@@ -25,6 +25,15 @@ dependent-tests-impact/experiments/figureGenerator.sh.
 `#./random-runner.sh` -> `./random-runner.sh`
 
 With the pre-computed dependences provided the figureGenerator.sh
-takes on average about 9 hours to complete on a machine with the following
+takes on average 9 hours to complete on a machine with the following
 configuration:
 Intel(R) Core(TM) i5-4590T CPU @ 2.00GHz 8GB RAM
+
+The following two variables in dependent-tests-impact/experiments/config.sh
+are also worth noting, `medianTimes=3` and `randomTimes=100`.
+`medianTimes=3` represents the number of times to run the test order before
+taking the median.
+`randomTimes=100` represents the number of times to randomize the test
+order when calculating the precomputed dependences.
+The setting of these two variables may significantly affect the run time
+of the scripts.
