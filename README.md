@@ -25,6 +25,6 @@ dependent-tests-impact/experiments/figureGenerator.sh.
 `#./random-runner.sh` -> `./random-runner.sh`
 
 With the pre-computed dependences provided the figureGenerator.sh
-took about 9 hours to complete on a machine with the following
+takes on average about 9 hours to complete on a machine with the following
 configuration:
 Intel(R) Core(TM) i5-4590T CPU @ 2.00GHz 8GB RAM
