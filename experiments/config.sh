@@ -1,9 +1,9 @@
 # This file is to share variables and functions. Please do not run this file.
 
-# Number of times to run the time order before taking the median
+# Number of times to run the test order before taking the median
 medianTimes=3
-# Number of times to randomize the test order for the pre computed dependences
-randomTimes=2
+# Number of times to randomize the test order when calculating the precomputed dependences
+randomTimes=100
 
 experiments=(crystal jfreechart jodatime synoptic xml_security)
 testTypes=(orig auto)
