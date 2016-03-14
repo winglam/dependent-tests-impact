@@ -197,13 +197,13 @@ public class ResultsParser {
         double calc1 = 0;
         double calc2 = 0;
         for (int i = 0; i + 2 <= orig_values.length; i += 2) {
-            calc1 = (orig_values[i] / orig_value) * 100;
-            calc2 = (orig_values[i + 1] / orig_value) * 100;
+            calc1 = (orig_values[i] / orig_value);
+            calc2 = (orig_values[i + 1] / orig_value);
             result += " & " + timeFormat.format(calc1) + " $\\rightarrow$ " + timeFormat.format(calc2);
         }
         for (int i = 0; i + 2 <= time_values.length; i += 2) {
-            calc1 = (time_values[i] / orig_value) * 100;
-            calc2 = (time_values[i + 1] / orig_value) * 100;
+            calc1 = (time_values[i] / orig_value);
+            calc2 = (time_values[i + 1] / orig_value);
             result += " & " + timeFormat.format(calc1) + " $\\rightarrow$ " + timeFormat.format(calc2);
         }
         result += "\\\\";
