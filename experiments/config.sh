@@ -1,10 +1,17 @@
-# This file is to share variables and functions. Please do not run this file.
+# This file is to share variables and functions. Please do not run this
+# file.
 
 # Number of times to run the test order before taking the median
 medianTimes=3
-# Number of times to randomize the test order when calculating the precomputed dependences
+# Number of times to randomize the test order when calculating the
+# precomputed dependences
 randomTimes=100
 
+# If you would like to run only a subset of the experiments, you must
+# remove experiments starting from the back of the list and not
+# leave any gaps. Ex. You can run only Crystal and JFreechart but
+# cannot run JFreechart and Jodatime. You can run Crystal, JFreechart
+# and Jodatime but cannot run Crystal and Jodatime.
 experiments=(crystal jfreechart jodatime synoptic xml_security)
 testTypes=(orig auto)
 coverages=(statement function)
@@ -20,7 +27,8 @@ priorDir=prioritization-results
 seleDir=selection-results
 paraDir=parallelization-results
 
-# Do not change the values below unless you know specifically what you are doing
+# Do not change the values below unless you know specifically what you
+# are doing
 impactJarCP=impact-tools/impact.jar
 testListGenClass=edu.washington.cs.dt.impact.tools.TestListGenerator
 crossReferenceClass=edu.washington.cs.dt.impact.tools.CrossReferencer
