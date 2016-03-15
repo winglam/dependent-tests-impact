@@ -11,10 +11,10 @@ machine with the following configuration:
 Intel(R) Core(TM) i5-4590T CPU @ 2.00GHz 8GB RAM
 
 Once the script finishes running, the results for prioritization,
-selection and parallelization can be found in
-dependent-tests-impact/experiments/prioritization-results,
-dependent-tests-impact/experiments/selection-results and
-dependent-tests-impact/experiments/parallelization-results (respectively).
+selection and parallelization can be found in files:
+  dependent-tests-impact/experiments/prioritization-results
+  dependent-tests-impact/experiments/selection-results
+  dependent-tests-impact/experiments/parallelization-results
 The results are not identical with those in the submitted paper, for two
 main reason.  First, for the submitted paper some of the data was computed
 on a loaded machine that was running other jobs, though we don't know
@@ -36,9 +36,9 @@ The following files contain the results of pre-computed test dependences:
 
 You can re-generate these pre-computed test dependences instead of using
 the provided ones:
-delete the files listed above,
-and uncomment line 30 (`#./random-runner.sh` -> `./random-runner.sh`) in
-dependent-tests-impact/experiments/figureGenerator.sh.
+ * delete the files listed above, and
+ * uncomment line 30 (`#./random-runner.sh` -> `./random-runner.sh`) in
+   dependent-tests-impact/experiments/figureGenerator.sh.
 However, note that doing so will require even more run time.
 
 Another way to significantly affect run time is with two variables
