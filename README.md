@@ -17,12 +17,12 @@ selection and parallelization can be found in files:
     dependent-tests-impact/experiments/selection-results
     dependent-tests-impact/experiments/parallelization-results
 
-The results are not identical with those in the submitted paper, for two
-main reason.  First, for the submitted paper some of the data was computed
-on a loaded machine that was running other jobs, though we don't know
-exactly which data.  (That was a methodological error.)  The current data
-was computed on an unloaded machine.  While the numerical results differ,
-they still support the paper's claims.
+The results are not identical with those in the submitted paper.  For the
+submitted paper, some of the data was computed on a loaded machine that was
+running other jobs, though we don't know exactly which data.  (That was a
+methodological error.)  You should run your computation on an unloaded
+machine; using the median of three runs further mitigates run-time variance.
+While the numerical results differ, they still support the paper's claims.
 
 The following files contain the results of pre-computed test dependences:
 - CRYSTAL-AUTO-DT_LIST.txt
