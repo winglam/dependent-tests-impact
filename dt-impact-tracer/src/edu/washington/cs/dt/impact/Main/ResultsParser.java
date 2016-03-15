@@ -11,7 +11,9 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
+import edu.washington.cs.dt.impact.data.GeometricMeanData;
 import edu.washington.cs.dt.impact.data.Project;
+import edu.washington.cs.dt.impact.util.Constants;
 
 public class ResultsParser {
 
@@ -191,8 +193,8 @@ public class ResultsParser {
     /*
      * a private method that generates Figure 19
      */
-    private static String generate19(String projectName, double[] orig_values, double[] time_values,
-            double orig_value) {
+    private static String generate19(String projectName, double[] orig_values, double[] time_values, double orig_value,
+            List<GeometricMeanData> fig19GeoData) {
         String result = projectName;
         double calc1 = 0;
         double calc2 = 0;
@@ -200,15 +202,36 @@ public class ResultsParser {
             calc1 = (orig_values[i] / orig_value);
             calc2 = (orig_values[i + 1] / orig_value);
             result += " & " + timeFormat.format(calc1) + " $\\rightarrow$ " + timeFormat.format(calc2);
+            fig19GeoData.add(
+                    new GeometricMeanData(getK(i), calc1, Constants.TD_SETTING.OMITTED_TD, Constants.ORDER.ORIGINAL));
+            fig19GeoData.add(
+                    new GeometricMeanData(getK(i), calc2, Constants.TD_SETTING.GIVEN_TD, Constants.ORDER.ORIGINAL));
         }
         for (int i = 0; i + 2 <= time_values.length; i += 2) {
             calc1 = (time_values[i] / orig_value);
             calc2 = (time_values[i + 1] / orig_value);
             result += " & " + timeFormat.format(calc1) + " $\\rightarrow$ " + timeFormat.format(calc2);
+            fig19GeoData
+                    .add(new GeometricMeanData(getK(i), calc1, Constants.TD_SETTING.OMITTED_TD, Constants.ORDER.TIME));
+            fig19GeoData
+                    .add(new GeometricMeanData(getK(i), calc2, Constants.TD_SETTING.GIVEN_TD, Constants.ORDER.TIME));
         }
         result += "\\\\";
 
         return result;
+    }
+
+    private static int getK(int i) {
+        if (i == 0) {
+            return 2;
+        } else if (i == 2) {
+            return 4;
+        } else if (i == 4) {
+            return 8;
+        } else if (i == 6) {
+            return 16;
+        }
+        return 1;
     }
 
     /*
@@ -232,6 +255,7 @@ public class ResultsParser {
         for (Project temp : projList) {
             if (temp.getName().equals(keyword)) {
                 sortedList.add(temp);
+                return;
             }
         }
     }
@@ -252,6 +276,7 @@ public class ResultsParser {
         sortList(projList, sortedList, XMLSECURITY_NAME);
 
         int index = 0;
+        List<GeometricMeanData> fig19GeoData = new ArrayList<>();
         for (Project temp : sortedList) {
             // get the correct orig_value...one of the Lists will not have the correct value (will be 0)
 
@@ -267,11 +292,82 @@ public class ResultsParser {
             } else if (temp.isFig19()) {
                 double orig_value =
                         (temp.getOrigValue() == 0) ? otherProjList.get(index).getOrigValue() : temp.getOrigValue();
-                latexString += generate19(temp.getName(), temp.get_fig19_orig(), temp.get_fig19_time(), orig_value);
+                latexString += generate19(temp.getName(), temp.get_fig19_orig(), temp.get_fig19_time(), orig_value,
+                        fig19GeoData);
                 latexString += "\r\n";
             }
             index++;
         }
+
+        if (!fig19GeoData.isEmpty()) {
+            int columns = 16;
+            double[] geometricMeans = new double[columns];
+            for (int i = 0; i < columns; i++) {
+                double value = 1.0;
+                int counter = 0;
+                for (GeometricMeanData data : fig19GeoData) {
+                    if (i % 2 == 0 && !data.getTdSetting().equals(Constants.TD_SETTING.OMITTED_TD)) {
+                        continue;
+                    }
+                    if (i % 2 == 1 && !data.getTdSetting().equals(Constants.TD_SETTING.GIVEN_TD)) {
+                        continue;
+                    }
+                    if (i >= 0 && i < 8 && !data.getOrder().equals(Constants.ORDER.ORIGINAL)) {
+                        continue;
+                    }
+                    if (i >= 8 && i < 16 && !data.getOrder().equals(Constants.ORDER.TIME)) {
+                        continue;
+                    }
+
+                    if (i == 0 && data.getK() == 2) {
+                        value *= data.getValue();
+                    } else if (i == 1 && data.getK() == 2) {
+                        value *= data.getValue();
+                    } else if (i == 2 && data.getK() == 4) {
+                        value *= data.getValue();
+                    } else if (i == 3 && data.getK() == 4) {
+                        value *= data.getValue();
+                    } else if (i == 4 && data.getK() == 8) {
+                        value *= data.getValue();
+                    } else if (i == 5 && data.getK() == 8) {
+                        value *= data.getValue();
+                    } else if (i == 6 && data.getK() == 16) {
+                        value *= data.getValue();
+                    } else if (i == 7 && data.getK() == 16) {
+                        value *= data.getValue();
+                    } else if (i == 8 && data.getK() == 2) {
+                        value *= data.getValue();
+                    } else if (i == 9 && data.getK() == 2) {
+                        value *= data.getValue();
+                    } else if (i == 10 && data.getK() == 4) {
+                        value *= data.getValue();
+                    } else if (i == 11 && data.getK() == 4) {
+                        value *= data.getValue();
+                    } else if (i == 12 && data.getK() == 8) {
+                        value *= data.getValue();
+                    } else if (i == 13 && data.getK() == 8) {
+                        value *= data.getValue();
+                    } else if (i == 14 && data.getK() == 16) {
+                        value *= data.getValue();
+                    } else if (i == 15 && data.getK() == 16) {
+                        value *= data.getValue();
+                    } else {
+                        continue;
+                    }
+                    counter += 1;
+                }
+                geometricMeans[i] = Math.pow(value, (1.0 / counter));
+            }
+            StringBuilder sb = new StringBuilder();
+            sb.append("\\hline\r\nGeometric mean");
+            for (int i = 0; i + 2 <= geometricMeans.length; i += 2) {
+                sb.append(" & " + timeFormat.format(geometricMeans[i]) + " $\\rightarrow$ "
+                        + timeFormat.format(geometricMeans[i + 1]));
+            }
+            sb.append(" \\\\");
+            latexString += sb.toString();
+        }
+
         // take off the "\r\n" from the last line
         return latexString;
     }
