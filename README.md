@@ -1,4 +1,4 @@
-To reproduce figures 17, 18 and 19 in our paper do the following:
+To reproduce figures 17, 18, and 19 in our paper do the following:
 
 ```
 git clone https://github.com/winglam/dependent-tests-impact.git
