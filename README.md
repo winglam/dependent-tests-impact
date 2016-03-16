@@ -1,10 +1,12 @@
-To reproduce figures 17, 18 and 19 in our paper do the following:
+To reproduce figures 17, 18, and 19 in our paper do the following:
 
 ```
 git clone https://github.com/winglam/dependent-tests-impact.git
 cd dependent-tests-impact/experiments
 ./figureGenerator.sh
 ```
+
+You must use Java 7; the version of Soot that we use does not work with Java 7.
 
 The `figureGenerator.sh` script takes 9 hours to complete on a
 machine with the following configuration:
@@ -14,16 +16,18 @@ with Java 8. The script was ran on a machine with Java version "1.7.0_91"
 but should run accordingly for all versions of Java 7.
 
 Once the script finishes running, the results for prioritization,
-selection and parallelization can be found in
-dependent-tests-impact/experiments/prioritization-results,
-dependent-tests-impact/experiments/selection-results and
-dependent-tests-impact/experiments/parallelization-results (respectively).
-The results are not identical with those in the submitted paper, for two
-main reason.  First, for the submitted paper some of the data was computed
-on a loaded machine that was running other jobs, though we don't know
-exactly which data.  (That was a methodological error.)  The current data
-was computed on an unloaded machine.  While the numerical results differ,
-they still support the paper's claims.
+selection and parallelization can be found in files:
+
+    dependent-tests-impact/experiments/prioritization-results
+    dependent-tests-impact/experiments/selection-results
+    dependent-tests-impact/experiments/parallelization-results
+
+The results are not identical with those in the submitted paper.  For the
+submitted paper, some of the data was computed on a loaded machine that was
+running other jobs, though we don't know exactly which data.  (That was a
+methodological error.)  You should run your computation on an unloaded
+machine; using the median of three runs further mitigates run-time variance.
+While the numerical results differ, they still support the paper's claims.
 
 The following files contain the results of pre-computed test dependences:
 - CRYSTAL-AUTO-DT_LIST.txt
@@ -39,9 +43,9 @@ The following files contain the results of pre-computed test dependences:
 
 You can re-generate these pre-computed test dependences instead of using
 the provided ones:
-delete the files listed above,
-and uncomment line 30 (`#./random-runner.sh` -> `./random-runner.sh`) in
-dependent-tests-impact/experiments/figureGenerator.sh.
+ * delete the files listed above, and
+ * uncomment line 30 (`#./random-runner.sh` -> `./random-runner.sh`) in
+   dependent-tests-impact/experiments/figureGenerator.sh.
 However, note that doing so will require even more run time.
 
 Another way to significantly affect run time is with two variables
