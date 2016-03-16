@@ -13,11 +13,11 @@ machine with the following configuration:
 Intel(R) Core(TM) i5-4590T CPU @ 2.00GHz 8GB RAM
 
 Once the script finishes running, the results for prioritization,
-selection and parallelization can be found in files:
+selection and parallelization can be found in .tex files in directories:
 
-    dependent-tests-impact/experiments/prioritization-results
-    dependent-tests-impact/experiments/selection-results
-    dependent-tests-impact/experiments/parallelization-results
+    dependent-tests-impact/experiments/prioritization-results/
+    dependent-tests-impact/experiments/selection-results/
+    dependent-tests-impact/experiments/parallelization-results/
 
 The results are not identical with those in the submitted paper.  For the
 submitted paper, some of the data was computed on a loaded machine that was
