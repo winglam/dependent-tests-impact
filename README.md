@@ -9,6 +9,9 @@ cd dependent-tests-impact/experiments
 The `figureGenerator.sh` script takes 9 hours to complete on a
 machine with the following configuration:
 Intel(R) Core(TM) i5-4590T CPU @ 2.00GHz 8GB RAM
+Please note that it is confirmed that the script does not run as expected
+with Java 8. The script was ran on a machine with Java version "1.7.0_91"
+but should run accordingly for all versions of Java 7.
 
 Once the script finishes running, the results for prioritization,
 selection and parallelization can be found in
