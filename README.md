@@ -7,12 +7,14 @@ cd dependent-tests-impact/experiments
 ```
 
 You must use Java 7; the version of Soot that we use does not work with Java 8.
-The script was ran on a machine with Java version "1.7.0_91"
-but should run as expected for all versions of Java 7.
+We ran our experiments on a machine with Java version "1.7.0_91".
 
 The `figureGenerator.sh` script takes 9 hours to complete on a
 machine with the following configuration:
 Intel(R) Core(TM) i5-4590T CPU @ 2.00GHz 8GB RAM
+
+The subject programs print some error messages to the console; this is
+expected and normal.
 
 Once the script finishes running, the results for prioritization,
 selection and parallelization can be found in .tex files in directories:
