@@ -9,6 +9,7 @@ cd dependent-tests-impact/experiments
 You must use Java 7; the version of Soot that we use does not work with Java 8.
 The script was ran on a machine with Java version "1.7.0_91"
 but should run as expected for all versions of Java 7.
+Ant is also required in order to build the subject programs.
 
 The `figureGenerator.sh` script takes 9 hours to complete on a
 machine with the following configuration:
