@@ -57,7 +57,7 @@ in `dependent-tests-impact/experiments/config.sh`:
  * `randomTimes=100` represents the number of times to randomize the test
    order when calculating the precomputed dependences.
 
-The artifact can also be evaluated in the VM provided. The VM runs Ubuntu version 14.04 with Java 7 and ant installed.
+The artifact can also be evaluated in a provided VM. The provided VM runs Ubuntu version 14.04 with Java 7 and ant installed.
 - Username for the VM is: user
 - Password for the VM is: asdf
 - Download link: https://drive.google.com/folderview?id=0B66sUcs7lhDVUWh2NVFrSTNjY28
