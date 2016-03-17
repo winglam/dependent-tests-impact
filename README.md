@@ -60,4 +60,4 @@ in `dependent-tests-impact/experiments/config.sh`:
 The artifact can also be evaluated in the VM provided. The VM runs Ubuntu version 14.04 with Java 7 and ant installed.
 - Username for the VM is: user
 - Password for the VM is: asdf
-- Download link: https://drive.google.com/file/d/0B66sUcs7lhDVTERkQ2pPZldDLTQ
+- Download link: https://drive.google.com/folderview?id=0B66sUcs7lhDVUWh2NVFrSTNjY28
