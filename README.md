@@ -10,12 +10,18 @@ You must use Java 7; the version of Soot that we use does not work with Java 8.
 We ran our experiments on a machine with Java version "1.7.0_91".
 Ant is also required in order to build the subject programs.
 
+The artifact can also be evaluated in a provided VM.
+The provided VM runs Ubuntu version 14.04 with Java 7 and ant installed.
+- Username for the VM: user
+- Password for the VM: asdf
+- Download link: https://drive.google.com/folderview?id=0B66sUcs7lhDVUWh2NVFrSTNjY28
+
 The `figureGenerator.sh` script takes 9 hours to complete on a
 machine with the following configuration:
 Intel(R) Core(TM) i5-4590T CPU @ 2.00GHz 8GB RAM
 
-The subject programs print some error messages to the console; this is
-expected and normal.
+The subject programs does print some error messages to the console;
+this is expected and normal.
 
 Once the script finishes running, the results for prioritization,
 selection and parallelization can be found in .tex files in directories:
@@ -28,8 +34,9 @@ The results are not identical with those in the submitted paper.  For the
 submitted paper, some of the data was computed on a loaded machine that was
 running other jobs, though we don't know exactly which data.  (That was a
 methodological error.)  You should run your computation on an unloaded
-machine; using the median of three runs further mitigates run-time variance.
-While the numerical results differ, they still support the paper's claims.
+machine; using the median of at least three runs further mitigates run-time
+variance. While the numerical results differ, they still support the
+paper's claims.
 
 The following files contain the results of pre-computed test dependences:
 - CRYSTAL-AUTO-DT_LIST.txt
@@ -56,8 +63,3 @@ in `dependent-tests-impact/experiments/config.sh`:
    taking the median.
  * `randomTimes=100` represents the number of times to randomize the test
    order when calculating the precomputed dependences.
-
-The artifact can also be evaluated in a provided VM. The provided VM runs Ubuntu version 14.04 with Java 7 and ant installed.
-- Username for the VM is: user
-- Password for the VM is: asdf
-- Download link: https://drive.google.com/folderview?id=0B66sUcs7lhDVUWh2NVFrSTNjY28
