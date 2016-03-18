@@ -10,8 +10,10 @@ You must use Java 7; the version of Soot that we use does not work with Java 8.
 We ran our experiments on a machine with Java version "1.7.0_91".
 Ant is also required in order to build the subject programs.
 
-The artifact can also be evaluated in a provided VM.
-The provided VM runs Ubuntu version 14.04 with Java 7 and ant installed.
+We have tested the scripts on multiple machines and operating systems, and
+it worked on all but one.  In case you have trouble running the experiments
+on your machine, we have also provided the artifact pre-installed in a
+virtual machine that runs Ubuntu version 14.04 with Java 7 and ant installed.
 - Username for the VM: user
 - Password for the VM: asdf
 - Download link: https://drive.google.com/folderview?id=0B66sUcs7lhDVUWh2NVFrSTNjY28
