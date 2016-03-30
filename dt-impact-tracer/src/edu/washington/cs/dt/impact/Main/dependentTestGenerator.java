@@ -348,8 +348,7 @@ public class dependentTestGenerator {
                 index = flagsList.indexOf("-testType");
                 String testType = flagsList.get(index + 1);
 
-                // TODO: change back to index = flagsList.indexOf("-dependentTestFile");
-                index = flagsList.indexOf("-resolveDependences");
+                index = flagsList.indexOf("-dependentTestFile");
                 String resolveDependences = null;
                 // if index = -1, flag not present
                 if (index != -1) {
