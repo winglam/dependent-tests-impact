@@ -1,3 +1,4 @@
+
 package edu.washington.cs.dt.impact.Main;
 
 import java.io.BufferedWriter;
@@ -5,17 +6,32 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
+import edu.washington.cs.dt.impact.data.GeometricMeanData;
+import edu.washington.cs.dt.impact.data.Project;
+import edu.washington.cs.dt.impact.util.Constants;
+
 public class ResultsParser {
 
     // name of line to get values from in Parallelization technique
     public static final String ORDER_TIME = "Execution time for executing the following testing order:";
+    public static final String ORDER_TIME_PARA = "New order time:";
     // name of line to get values from in selection and prioritization
     public static final String APFD_VALUE = "APFD value:";
+    private static final DecimalFormat apfdFormat = new DecimalFormat("0.000");
+    private static final DecimalFormat timeFormat = new DecimalFormat("0.00");
+    private static final DecimalFormat percentFormat = new DecimalFormat("0.0");
+    private static boolean allowNegatives = false;
+    private static final String CRYSTAL_NAME = "Crystal";
+    private static final String JFREECHART_NAME = "JFreechart";
+    private static final String JODATIME_NAME = "Joda-Time";
+    private static final String SYNOTPIC_NAME = "Synoptic";
+    private static final String XMLSECURITY_NAME = "XML Security";
 
     /*
      * A private method to search a file for a keyword and return the value that follows
@@ -112,7 +128,17 @@ public class ResultsParser {
         String result = projectName;
         for (int i = 0; i + 1 < values.length; i += 2) {
             double val = values[i] - values[i + 1];
-            result += " & " + val;
+            if (!allowNegatives && val < 0.0) {
+                val = 0.0;
+            }
+            String output = apfdFormat.format(val);
+            if (output.equals("-0.000")) {
+                output = "0.000";
+            }
+            if (val >= 0.0) {
+                output = "\\phantom{-} " + output;
+            }
+            result += " & " + output;
         }
         result += " \\\\"; // "\\"
         return result;
@@ -144,15 +170,28 @@ public class ResultsParser {
             double percent = Math.max(calc1, Math.max(calc2, calc3));
             // if negative, ensure it's 0
             percent = Math.max(0, percent);
-            if (projectName.equals("crystal") && type.equals("auto")) {
-                result += " & " + percent + "\\%\\ra"; // "\%\ra"
+            if (!allowNegatives && percent < 0.0) {
+                percent = 0.0;
+            }
+            if (projectName.equals(CRYSTAL_NAME) && type.equals("auto")) {
+                result += " & " + percentFormat.format(percent) + "\\%\\ra"; // "\%\ra"
             } else {
-                result += " & " + percent + "\\%\\pa"; // "\%\pa"
+                result += " & " + percentFormat.format(percent) + "\\%\\pa"; // "\%\pa"
             }
         }
         for (int i = 0; i + 1 < values.length; i += 2) {
             double val = values[i] - values[i + 1];
-            result += " & " + val;
+            if (!allowNegatives && val < 0.0) {
+                val = 0.0;
+            }
+            String output = apfdFormat.format(val);
+            if (output.equals("-0.000")) {
+                output = "0.000";
+            }
+            if (val >= 0.0) {
+                output = "\\phantom{-} " + output;
+            }
+            result += " & " + output;
         }
         result += " \\\\"; // "\\"
         return result;
@@ -161,24 +200,58 @@ public class ResultsParser {
     /*
      * a private method that generates Figure 19
      */
-    private static String generate19(String projectName, double[] orig_values, double[] time_values,
-            double orig_value) {
+    private static String generate19(String projectName, double[] orig_values, double[] time_values, double orig_value,
+            List<GeometricMeanData> fig19GeoData) {
         String result = projectName;
         double calc1 = 0;
         double calc2 = 0;
-        for (int i = 0; i + 2 < orig_values.length; i += 2) {
-            calc1 = (orig_values[i] / orig_value) * 100;
-            calc2 = (orig_values[i + 1] / orig_value) * 100;
-            result += " & " + calc1 + " &\\rightarrow$ " + calc2;
+        double calc3 = 0;
+        for (int i = 0; i + 2 <= orig_values.length; i += 2) {
+            calc1 = (orig_values[i] / orig_value);
+            calc2 = (orig_values[i + 1] / orig_value);
+            calc3 = calc2 - calc1;
+            result += " & ";
+            if (calc3 >= 0.0) {
+                result = "\\phantom{-} " + result;
+            }
+            result += timeFormat.format(calc3);
+            // result += " & " + timeFormat.format(calc1) + " $\\rightarrow$ " + timeFormat.format(calc2);
+            fig19GeoData.add(
+                    new GeometricMeanData(getK(i), calc1, Constants.TD_SETTING.OMITTED_TD, Constants.ORDER.ORIGINAL));
+            fig19GeoData.add(
+                    new GeometricMeanData(getK(i), calc2, Constants.TD_SETTING.GIVEN_TD, Constants.ORDER.ORIGINAL));
         }
-        for (int i = 0; i + 2 < time_values.length; i += 2) {
-            calc1 = (time_values[i] / orig_value) * 100;
-            calc2 = (time_values[i + 1] / orig_value) * 100;
-            result += " & " + calc1 + " &\\rightarrow$ " + calc2;
+        for (int i = 0; i + 2 <= time_values.length; i += 2) {
+            calc1 = (time_values[i] / orig_value);
+            calc2 = (time_values[i + 1] / orig_value);
+            calc3 = calc2 - calc1;
+            result += " & ";
+            if (calc3 >= 0.0) {
+                result = "\\phantom{-} " + result;
+            }
+            result += timeFormat.format(calc3);
+            // result += " & " + timeFormat.format(calc1) + " $\\rightarrow$ " + timeFormat.format(calc2);
+            fig19GeoData
+                    .add(new GeometricMeanData(getK(i), calc1, Constants.TD_SETTING.OMITTED_TD, Constants.ORDER.TIME));
+            fig19GeoData
+                    .add(new GeometricMeanData(getK(i), calc2, Constants.TD_SETTING.GIVEN_TD, Constants.ORDER.TIME));
         }
         result += "\\\\";
 
         return result;
+    }
+
+    private static int getK(int i) {
+        if (i == 0) {
+            return 2;
+        } else if (i == 2) {
+            return 4;
+        } else if (i == 4) {
+            return 8;
+        } else if (i == 6) {
+            return 16;
+        }
+        return 1;
     }
 
     /*
@@ -197,6 +270,16 @@ public class ResultsParser {
         }
         return -1;
     }
+
+    private static void sortList(List<Project> projList, List<Project> sortedList, String keyword) {
+        for (Project temp : projList) {
+            if (temp.getName().equals(keyword)) {
+                sortedList.add(temp);
+                return;
+            }
+        }
+    }
+
     /*
      * a private method to generate the LaTeX format of the data of each Project in projList
      *
@@ -205,28 +288,106 @@ public class ResultsParser {
 
     private static String generateLatexString(List<Project> projList, List<Project> otherProjList, String type) {
         String latexString = "";
+        List<Project> sortedList = new ArrayList<Project>();
+        sortList(projList, sortedList, CRYSTAL_NAME);
+        sortList(projList, sortedList, JFREECHART_NAME);
+        sortList(projList, sortedList, JODATIME_NAME);
+        sortList(projList, sortedList, SYNOTPIC_NAME);
+        sortList(projList, sortedList, XMLSECURITY_NAME);
 
         int index = 0;
-        for (Project temp : projList) {
+        List<GeometricMeanData> fig19GeoData = new ArrayList<>();
+        for (Project temp : sortedList) {
             // get the correct orig_value...one of the Lists will not have the correct value (will be 0)
-            
+
             if (temp.isFig17()) {
                 latexString += generate17(temp.getName(), temp.get_fig17_values());
                 latexString += "\r\n";
             } else if (temp.isFig18()) {
-		double orig_value =
-                    (temp.getOrigValue() == 0) ? otherProjList.get(index).getOrigValue() : temp.getOrigValue();
+                double orig_value =
+                        (temp.getOrigValue() == 0) ? otherProjList.get(index).getOrigValue() : temp.getOrigValue();
                 latexString += generate18(temp.getName(), temp.get_fig18_percents(), temp.get_fig18_values(),
                         orig_value, type);
                 latexString += "\r\n";
             } else if (temp.isFig19()) {
-		double orig_value =
-                    (temp.getOrigValue() == 0) ? otherProjList.get(index).getOrigValue() : temp.getOrigValue();
-                latexString += generate19(temp.getName(), temp.get_fig19_orig(), temp.get_fig19_time(), orig_value);
+                double orig_value =
+                        (temp.getOrigValue() == 0) ? otherProjList.get(index).getOrigValue() : temp.getOrigValue();
+                latexString += generate19(temp.getName(), temp.get_fig19_orig(), temp.get_fig19_time(), orig_value,
+                        fig19GeoData);
                 latexString += "\r\n";
             }
             index++;
         }
+
+        if (!fig19GeoData.isEmpty()) {
+            int columns = 16;
+            double[] geometricMeans = new double[columns];
+            for (int i = 0; i < columns; i++) {
+                double value = 1.0;
+                int counter = 0;
+                for (GeometricMeanData data : fig19GeoData) {
+                    if (i % 2 == 0 && !data.getTdSetting().equals(Constants.TD_SETTING.OMITTED_TD)) {
+                        continue;
+                    }
+                    if (i % 2 == 1 && !data.getTdSetting().equals(Constants.TD_SETTING.GIVEN_TD)) {
+                        continue;
+                    }
+                    if (i >= 0 && i < 8 && !data.getOrder().equals(Constants.ORDER.ORIGINAL)) {
+                        continue;
+                    }
+                    if (i >= 8 && i < 16 && !data.getOrder().equals(Constants.ORDER.TIME)) {
+                        continue;
+                    }
+
+                    if (i == 0 && data.getK() == 2) {
+                        value *= data.getValue();
+                    } else if (i == 1 && data.getK() == 2) {
+                        value *= data.getValue();
+                    } else if (i == 2 && data.getK() == 4) {
+                        value *= data.getValue();
+                    } else if (i == 3 && data.getK() == 4) {
+                        value *= data.getValue();
+                    } else if (i == 4 && data.getK() == 8) {
+                        value *= data.getValue();
+                    } else if (i == 5 && data.getK() == 8) {
+                        value *= data.getValue();
+                    } else if (i == 6 && data.getK() == 16) {
+                        value *= data.getValue();
+                    } else if (i == 7 && data.getK() == 16) {
+                        value *= data.getValue();
+                    } else if (i == 8 && data.getK() == 2) {
+                        value *= data.getValue();
+                    } else if (i == 9 && data.getK() == 2) {
+                        value *= data.getValue();
+                    } else if (i == 10 && data.getK() == 4) {
+                        value *= data.getValue();
+                    } else if (i == 11 && data.getK() == 4) {
+                        value *= data.getValue();
+                    } else if (i == 12 && data.getK() == 8) {
+                        value *= data.getValue();
+                    } else if (i == 13 && data.getK() == 8) {
+                        value *= data.getValue();
+                    } else if (i == 14 && data.getK() == 16) {
+                        value *= data.getValue();
+                    } else if (i == 15 && data.getK() == 16) {
+                        value *= data.getValue();
+                    } else {
+                        continue;
+                    }
+                    counter += 1;
+                }
+                geometricMeans[i] = Math.pow(value, (1.0 / counter));
+            }
+            StringBuilder sb = new StringBuilder();
+            sb.append("\\hline\r\nGeometric mean");
+            for (int i = 0; i + 2 <= geometricMeans.length; i += 2) {
+                sb.append(" & " + timeFormat.format(geometricMeans[i]) + " $\\rightarrow$ "
+                        + timeFormat.format(geometricMeans[i + 1]));
+            }
+            sb.append(" \\\\");
+            latexString += sb.toString();
+        }
+
         // take off the "\r\n" from the last line
         return latexString;
     }
@@ -258,6 +419,8 @@ public class ResultsParser {
     public static void main(String[] args) {
         List<String> argsList = new ArrayList<String>(Arrays.asList(args));
 
+        allowNegatives = argsList.contains("-allowNegatives");
+
         String directoryName = getArgName(argsList, "-directory");
         // name of directory where files should be outputted
         String outputDirectoryName = getArgName(argsList, "-outputDirectory");
@@ -280,6 +443,9 @@ public class ResultsParser {
 
                 // String containing all the flags
                 String flagsInFile = getFlagsLine(file);
+                if (flagsInFile == null) {
+                    continue;
+                }
                 // get rid of square brackets
                 flagsInFile = flagsInFile.substring(1, flagsInFile.length() - 1);
                 String[] flags = flagsInFile.split(",");
@@ -300,11 +466,26 @@ public class ResultsParser {
 
                 index = flagsList.indexOf("-project");
                 String projectName = flagsList.get(index + 1);
+                if (projectName.equals("crystal")) {
+                    projectName = CRYSTAL_NAME;
+                } else if (projectName.equals("jfreechart")) {
+                    projectName = JFREECHART_NAME;
+                } else if (projectName.equals("jodatime")) {
+                    projectName = JODATIME_NAME;
+                } else if (projectName.equals("synoptic")) {
+                    projectName = SYNOTPIC_NAME;
+                } else if (projectName.equals("xml_security")) {
+                    projectName = XMLSECURITY_NAME;
+                } else {
+                    System.err.println("Project argument is specified but the project name"
+                            + " value provided is invalid. Please use either crystal, jfreechart, jodatime, synoptic or xml_security.");
+                    System.exit(0);
+                }
 
                 index = flagsList.indexOf("-testType");
                 String testType = flagsList.get(index + 1);
 
-                index = flagsList.indexOf("-resolveDependences");
+                index = flagsList.indexOf("-dependentTestFile");
                 String resolveDependences = null;
                 // if index = -1, flag not present
                 if (index != -1) {
@@ -335,7 +516,7 @@ public class ResultsParser {
 
                 // parallelization technique, figure 19
                 if (techniqueName.equals("parallelization")) {
-                    String order_time_string = parseFile(file, ORDER_TIME);
+                    String order_time_string = parseFile(file, ORDER_TIME_PARA);
                     double order_time = Double.parseDouble(order_time_string);
                     // order will be time or original
                     // k = 2, 4, 8, 16 is the number of machines
@@ -522,12 +703,14 @@ public class ResultsParser {
         String origLatexString = generateLatexString(proj_orig_arrayList, proj_auto_arrayList, "orig");
         String autoLatexString = generateLatexString(proj_auto_arrayList, proj_orig_arrayList, "auto");
 
-        String origOutputFilename = outputDirectoryName + "/";
-        String autoOutputFilename = outputDirectoryName + "/";
-        if (proj_orig_arrayList.get(0).isFig17()) {
+        String origOutputFilename = outputDirectoryName + System.getProperty("file.separator");
+        String autoOutputFilename = outputDirectoryName + System.getProperty("file.separator");
+        if ((!proj_orig_arrayList.isEmpty() && proj_orig_arrayList.get(0).isFig17())
+                || (!proj_auto_arrayList.isEmpty() && proj_auto_arrayList.get(0).isFig17())) {
             origOutputFilename += "enhanced-prior-orig-results.tex";
             autoOutputFilename += "enhanced-prior-auto-results.tex";
-        } else if (proj_orig_arrayList.get(0).isFig18()) {
+        } else if ((!proj_orig_arrayList.isEmpty() && proj_orig_arrayList.get(0).isFig18())
+                || (!proj_auto_arrayList.isEmpty() && proj_auto_arrayList.get(0).isFig18())) {
             origOutputFilename += "enhanced-sele-orig-results.tex";
             autoOutputFilename += "enhanced-sele-auto-results.tex";
         } else { // fig 19
@@ -540,4 +723,3 @@ public class ResultsParser {
 
     }
 }
-
