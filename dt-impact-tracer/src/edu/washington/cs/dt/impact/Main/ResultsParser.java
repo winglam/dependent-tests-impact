@@ -135,12 +135,9 @@ public class ResultsParser {
             if (output.equals("-0.000")) {
                 output = "0.000";
             }
-<<<<<<< HEAD
-=======
             if (val >= 0.0) {
                 output = "\\phantom{-} " + output;
             }
->>>>>>> 9b605162a82961f80bdfee6c1c7413eb90e85d9a
             result += " & " + output;
         }
         result += " \\\\"; // "\\"
@@ -191,12 +188,9 @@ public class ResultsParser {
             if (output.equals("-0.000")) {
                 output = "0.000";
             }
-<<<<<<< HEAD
-=======
             if (val >= 0.0) {
                 output = "\\phantom{-} " + output;
             }
->>>>>>> 9b605162a82961f80bdfee6c1c7413eb90e85d9a
             result += " & " + output;
         }
         result += " \\\\"; // "\\"
@@ -211,12 +205,6 @@ public class ResultsParser {
         String result = projectName;
         double calc1 = 0;
         double calc2 = 0;
-<<<<<<< HEAD
-        for (int i = 0; i + 2 <= orig_values.length; i += 2) {
-            calc1 = (orig_values[i] / orig_value);
-            calc2 = (orig_values[i + 1] / orig_value);
-            result += " & " + timeFormat.format(calc1) + " $\\rightarrow$ " + timeFormat.format(calc2);
-=======
         double calc3 = 0;
         for (int i = 0; i + 2 <= orig_values.length; i += 2) {
             calc1 = (orig_values[i] / orig_value);
@@ -228,7 +216,6 @@ public class ResultsParser {
             }
             result += timeFormat.format(calc3);
             // result += " & " + timeFormat.format(calc1) + " $\\rightarrow$ " + timeFormat.format(calc2);
->>>>>>> 9b605162a82961f80bdfee6c1c7413eb90e85d9a
             fig19GeoData.add(
                     new GeometricMeanData(getK(i), calc1, Constants.TD_SETTING.OMITTED_TD, Constants.ORDER.ORIGINAL));
             fig19GeoData.add(
@@ -237,9 +224,6 @@ public class ResultsParser {
         for (int i = 0; i + 2 <= time_values.length; i += 2) {
             calc1 = (time_values[i] / orig_value);
             calc2 = (time_values[i + 1] / orig_value);
-<<<<<<< HEAD
-            result += " & " + timeFormat.format(calc1) + " $\\rightarrow$ " + timeFormat.format(calc2);
-=======
             calc3 = calc2 - calc1;
             result += " & ";
             if (calc3 >= 0.0) {
@@ -247,7 +231,6 @@ public class ResultsParser {
             }
             result += timeFormat.format(calc3);
             // result += " & " + timeFormat.format(calc1) + " $\\rightarrow$ " + timeFormat.format(calc2);
->>>>>>> 9b605162a82961f80bdfee6c1c7413eb90e85d9a
             fig19GeoData
                     .add(new GeometricMeanData(getK(i), calc1, Constants.TD_SETTING.OMITTED_TD, Constants.ORDER.TIME));
             fig19GeoData
