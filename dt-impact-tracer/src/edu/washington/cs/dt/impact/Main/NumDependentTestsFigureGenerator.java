@@ -112,12 +112,19 @@ public class NumDependentTestsFigureGenerator extends FigureGenerator {
                 latexString += "\r\n";
             }
         }
-        latexString += "Total";
+        latexString += "%\\bottomrule";
+        latexString += "\r\n";
+        latexString += "\\hline";
+        latexString += "\r\n";
+        latexString += "\\textbf{Total}";
         for (int i = 0; i < total.length; i++) {
             latexString += " & ";
             latexString += total[i];
         }
-        latexString += " \\\\";
+        latexString += "\\\\";
+
+        latexString += "\r\n";
+        latexString += "\\hline";
 
         // take off the "\r\n" from the last line
         return latexString;
