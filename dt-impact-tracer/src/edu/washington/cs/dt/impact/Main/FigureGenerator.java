@@ -1,3 +1,5 @@
+package edu.washington.cs.dt.impact.Main;
+
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -6,8 +8,6 @@ import java.io.IOException;
 import java.text.DecimalFormat;
 import java.util.List;
 import java.util.Scanner;
-
-import edu.washington.cs.dt.impact.data.Project;
 
 public class FigureGenerator {
     // for Figures 17, 18, and 19

@@ -36,7 +36,7 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
             }
             result += " & ";
             if (val >= 0.0) {
-                result += "\\phantom{-} ";// + output;
+                result += "\\phantom{-}";// + output;
             }
             result += output;
         }
@@ -60,14 +60,17 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
     private static String generate18(String projectName, double[] percentages, double[] values, double orig_value,
             String type) {
         String result = projectName + "       ";
-        for (int i = 0; i + 5 < percentages.length; i += 6) {
+        for (int i = 0; i + 1 < percentages.length; i += 2) {
             // calc1,2,3 correspond to either S1,S2,S3 or S4,S5,S6
             // enhanced - unenhanced
-            double calc1 = (percentages[i + 1] - percentages[i]) / orig_value * 100;
-            double calc2 = (percentages[i + 3] - percentages[i + 2]) / orig_value * 100;
-            double calc3 = (percentages[i + 5] - percentages[i + 4]) / orig_value * 100;
-            // the max. of these 3 values
-            double percent = Math.max(calc1, Math.max(calc2, calc3));
+            /*
+             * double calc1 = (percentages[i + 1] - percentages[i]) / orig_value * 100;
+             * double calc2 = (percentages[i + 3] - percentages[i + 2]) / orig_value * 100;
+             * double calc3 = (percentages[i + 5] - percentages[i + 4]) / orig_value * 100;
+             * // the max. of these 3 values
+             * double percent = Math.max(calc1, Math.max(calc2, calc3));
+             */
+            double percent = (percentages[i + 1] - percentages[i]) / orig_value * 100;
             // if negative, ensure it's 0
             percent = Math.max(0, percent);
             if (!allowNegatives && percent < 0.0) {
@@ -90,7 +93,7 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
             }
             result += " & ";
             if (val >= 0.0) {
-                result += "\\phantom{-} ";
+                result += "\\phantom{-}";
             }
             result += output;
         }
@@ -111,11 +114,18 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
             calc1 = (orig_values[i] / orig_value);
             calc2 = (orig_values[i + 1] / orig_value);
             calc3 = calc2 - calc1;
-            result += " & ";
-            if (calc3 >= 0.0) {
-                result += "\\phantom{-} ";
+
+            String output = timeFormat.format(calc3);
+            if (output.equals("-0.00")) {
+                output = "0.00";
             }
-            result += timeFormat.format(calc3);
+
+            result += " & ";
+            if (calc3 >= 0.0 || output.equals("0.00")) {
+                result += "\\phantom{-}";
+            }
+
+            result += output;
             // result += " & " + timeFormat.format(calc1) + " $\\rightarrow$ " + timeFormat.format(calc2);
             fig19GeoData.add(
                     new GeometricMeanData(getK(i), calc1, Constants.TD_SETTING.OMITTED_TD, Constants.ORDER.ORIGINAL));
@@ -126,11 +136,17 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
             calc1 = (time_values[i] / orig_value);
             calc2 = (time_values[i + 1] / orig_value);
             calc3 = calc2 - calc1;
-            result += " & ";
-            if (calc3 >= 0.0) {
-                result += "\\phantom{-} ";
+
+            String output = timeFormat.format(calc3);
+            if (output.equals("-0.00")) {
+                output = "0.00";
             }
-            result += timeFormat.format(calc3);
+
+            result += " & ";
+            if (calc3 >= 0.0 || output.equals("0.00")) {
+                result += "\\phantom{-}";
+            }
+            result += output;
             // result += " & " + timeFormat.format(calc1) + " $\\rightarrow$ " + timeFormat.format(calc2);
             fig19GeoData
                     .add(new GeometricMeanData(getK(i), calc1, Constants.TD_SETTING.OMITTED_TD, Constants.ORDER.TIME));
