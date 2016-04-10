@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.text.DecimalFormat;
 import java.util.List;
 import java.util.Scanner;
+import edu.washington.cs.dt.impact.data.Project;
 
 public class FigureGenerator {
     // for Figures 17, 18, and 19
