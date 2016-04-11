@@ -33,7 +33,7 @@ echo "Running prioritization-runner script"
 runPrioritization
 
 echo "Running selection-runner script"
-runSelection
+#runSelection
 
 echo "Running paralleization-runner script"
-runParallelization
+#runParallelization
