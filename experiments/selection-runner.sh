@@ -23,7 +23,7 @@ while [ "$index" -lt "$count" ]; do
     cd ..
 
     echo 'Running prioritization for original order'
-    java -Xms1g -Xmx2g -cp ${newExperimentsCP[$index]} edu.washington.cs.dt.impact.Main.OneConfigurationRunner -technique prioritization -coverage statement -order original -origOrder ${newDirectories[$index]}/${experiments[$index]}-$k-order -testInputDir ${directories[$index]}/sootTestOutput -filesToDelete ${newDirectories[$index]}/${experiments[$index]}-env-files -project ${experiments[$index]} -testType $k -outputDir ./${seleDir} -timesToRun ${medianTimes} 
+    java -Xms1g -Xmx2g -cp ${newExperimentsCP[$index]} edu.washington.cs.dt.impact.Main.OneConfigurationRunner -technique prioritization -coverage statement -order original -origOrder ${newDirectories[$index]}/${experiments[$index]}-$k-order -testInputDir ${directories[$index]}/sootTestOutput -filesToDelete ${newDirectories[$index]}/${experiments[$index]}-env-files -project ${experiments[$index]} -testType $k -outputDir ./${seleDir} -timesToRun ${medianTimes} -getCoverage
 
     for i in "${coverages[@]}"; do
       for j in "${seleOrders[@]}"; do
