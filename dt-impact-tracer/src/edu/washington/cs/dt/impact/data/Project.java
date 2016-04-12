@@ -6,6 +6,5 @@ public abstract class Project {
 
     }
 
-    abstract String getName();
+    public abstract String getName();
 }
-
