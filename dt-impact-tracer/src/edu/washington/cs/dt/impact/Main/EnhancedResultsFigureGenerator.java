@@ -23,10 +23,15 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
      *
      * format: Crystal & 0.026 & 0.001 & 0.000 & 0.000 \\
      */
-    private static String generate17(String projectName, double[] values) {
+    private static String generate17(String projectName, double[] values, double orig_apfd_value, boolean[] nonZero) {
         String result = projectName;
         for (int i = 0; i + 1 < values.length; i += 2) {
-            double val = values[i] - values[i + 1];
+            double val;
+            if (!nonZero[i]) {
+                val = values[i] - values[i + 1];
+            } else {
+                val = orig_apfd_value - values[i + 1];
+            }
             if (!allowNegatives && val < 0.0) {
                 val = 0.0;
             }
@@ -57,8 +62,8 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
      *
      * format: Crystal & 5.4\%\pa & 1.3\%\pa & 0.000 & 0.000 & 0.008 & 0.015 & 0.036 & 0.000 \\
      */
-    private static String generate18(String projectName, double[] percentages, double[] values, double orig_value,
-            String type) {
+    private static String generate18(String projectName, double[] percentages, double[] values, double orig_time_value,
+            String type, boolean[] nonZero, double orig_apfd_value) {
         String result = projectName + "       ";
         for (int i = 0; i + 1 < percentages.length; i += 2) {
             // calc1,2,3 correspond to either S1,S2,S3 or S4,S5,S6
@@ -70,7 +75,13 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
              * // the max. of these 3 values
              * double percent = Math.max(calc1, Math.max(calc2, calc3));
              */
-            double percent = (percentages[i + 1] - percentages[i]) / orig_value * 100;
+            double percent;
+            if (!nonZero[i]) {
+                percent = (percentages[i + 1] - percentages[i]) / orig_time_value * 100;
+            } else {
+
+                percent = (orig_time_value - percentages[i]) / orig_time_value * 100;
+            }
             // if negative, ensure it's 0
             percent = Math.max(0, percent);
             if (!allowNegatives && percent < 0.0) {
@@ -83,11 +94,21 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
             }
         }
         for (int i = 0; i + 1 < values.length; i += 2) {
-            double val = values[i] - values[i + 1];
+            double val;
+            if (!nonZero[i]) {
+                val = values[i] - values[i + 1];
+                // System.out.println("..." + projectName + i + " " + val);
+            } else {
+                val = orig_apfd_value - values[i + 1];
+                // System.out.println("nonzero! " + projectName + i + " " + val);
+            }
+            // System.out.println("val" + val + "..." + allowNegatives);
             if (!allowNegatives && val < 0.0) {
                 val = 0.0;
             }
+            // System.out.println("..." + val);
             String output = apfdFormat.format(val);
+            // System.out.println(output);
             if (output.equals("-0.000")) {
                 output = "0.000";
             }
@@ -104,16 +125,22 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
     /*
      * a private method that generates Figure 19
      */
-    private static String generate19(String projectName, double[] orig_values, double[] time_values, double orig_value,
-            List<GeometricMeanData> fig19GeoData) {
+    private static String generate19(String projectName, double[] orig_values, double[] time_values,
+            double orig_time_value, List<GeometricMeanData> fig19GeoData, boolean[] nonZero, double orig_apfd_value) {
         String result = projectName;
         double calc1 = 0;
         double calc2 = 0;
         double calc3 = 0;
         for (int i = 0; i + 2 <= orig_values.length; i += 2) {
-            calc1 = (orig_values[i] / orig_value);
-            calc2 = (orig_values[i + 1] / orig_value);
-            calc3 = calc2 - calc1;
+            if (!nonZero[i]) {
+                calc1 = (orig_values[i] / orig_time_value);
+                calc2 = (orig_values[i + 1] / orig_time_value);
+                calc3 = calc2 - calc1;
+            } else {
+                calc1 = (orig_values[i] / orig_time_value);
+                calc2 = (orig_apfd_value / orig_time_value);
+                calc3 = calc2 - calc1;
+            }
 
             String output = timeFormat.format(calc3);
             if (output.equals("-0.00")) {
@@ -133,9 +160,15 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
                     new GeometricMeanData(getK(i), calc2, Constants.TD_SETTING.GIVEN_TD, Constants.ORDER.ORIGINAL));
         }
         for (int i = 0; i + 2 <= time_values.length; i += 2) {
-            calc1 = (time_values[i] / orig_value);
-            calc2 = (time_values[i + 1] / orig_value);
-            calc3 = calc2 - calc1;
+            if (!nonZero[i]) {
+                calc1 = (time_values[i] / orig_time_value);
+                calc2 = (time_values[i + 1] / orig_time_value);
+                calc3 = calc2 - calc1;
+            } else {
+                calc1 = (time_values[i] / orig_time_value);
+                calc2 = (orig_apfd_value / orig_time_value);
+                calc3 = calc2 - calc1;
+            }
 
             String output = timeFormat.format(calc3);
             if (output.equals("-0.00")) {
@@ -179,19 +212,37 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
             ProjectEnhancedResults temp = (ProjectEnhancedResults) projTemp;
             // get the correct orig_value...one of the Lists will not have the correct value (will be 0)
             if (temp.isFig19()) {
-                double orig_value = (temp.getOrigValue() == 0)
-                        ? ((ProjectEnhancedResults) otherProjList.get(index)).getOrigValue() : temp.getOrigValue();
-                latexString += generate19(temp.getName(), temp.get_fig19_orig(), temp.get_fig19_time(), orig_value,
-                        fig19GeoData);
+                double orig_time_value = (temp.getOrigTimeValue() == 0)
+                        ? ((ProjectEnhancedResults) otherProjList.get(index)).getOrigTimeValue()
+                        : temp.getOrigTimeValue();
+                double orig_apfd_value = (temp.getOrigAPFDValue() == 0)
+                        ? ((ProjectEnhancedResults) otherProjList.get(index)).getOrigAPFDValue()
+                        : temp.getOrigAPFDValue();
+                latexString += generate19(temp.getName(), temp.get_fig19_orig(), temp.get_fig19_time(), orig_time_value,
+                        fig19GeoData, temp.get_fig19_nonzero(), orig_apfd_value);
                 latexString += "\r\n";
             } else if (temp.isFig18()) {
-                double orig_value = (temp.getOrigValue() == 0)
-                        ? ((ProjectEnhancedResults) otherProjList.get(index)).getOrigValue() : temp.getOrigValue();
+                double orig_time_value = (temp.getOrigTimeValue() == 0)
+                        ? ((ProjectEnhancedResults) otherProjList.get(index)).getOrigTimeValue()
+                        : temp.getOrigTimeValue();
+                double orig_apfd_value = (temp.getOrigAPFDValue() == 0)
+                        ? ((ProjectEnhancedResults) otherProjList.get(index)).getOrigAPFDValue()
+                        : temp.getOrigAPFDValue();
+
+                /*
+                 * System.out.println("Name: " + temp.getName() + "orig_apfd_value: " + orig_apfd_value + "nonzero: "
+                 * + temp.get_fig18_nonzero());
+                 */
+
                 latexString += generate18(temp.getName(), temp.get_fig18_percents(), temp.get_fig18_values(),
-                        orig_value, type);
+                        orig_time_value, type, temp.get_fig18_nonzero(), orig_apfd_value);
                 latexString += "\r\n";
             } else if (temp.isFig17()) {
-                latexString += generate17(temp.getName(), temp.get_fig17_values());
+                double orig_apfd_value = (temp.getOrigAPFDValue() == 0)
+                        ? ((ProjectEnhancedResults) otherProjList.get(index)).getOrigAPFDValue()
+                        : temp.getOrigAPFDValue();
+                latexString +=
+                        generate17(temp.getName(), temp.get_fig17_values(), orig_apfd_value, temp.get_fig17_nonzero());
                 latexString += "\r\n";
             }
             index++;
@@ -372,6 +423,10 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
                 }
                 ProjectEnhancedResults currProj = (ProjectEnhancedResults) currProj2;
 
+                int numFixed = Integer.parseInt(parseFile(file, FIXED_DTS));
+                int numNotFixed = Integer.parseInt(parseFile(file, NOT_FIXED_DTS));
+                int numTotal = numFixed + numNotFixed;
+
                 // parallelization technique, figure 19
                 if (techniqueName.equals("parallelization")) {
                     String order_time_string = parseFile(file, ORDER_TIME_PARA);
@@ -394,12 +449,16 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
                     if (resolveDependences == null) { // non-enhanced
                         if (numMachines == 2) {
                             curr_fig19_array[0] = order_time;
+                            currProj.setNumTotalDependentTests(19, 0, numTotal);
                         } else if (numMachines == 4) {
                             curr_fig19_array[2] = order_time;
+                            currProj.setNumTotalDependentTests(19, 2, numTotal);
                         } else if (numMachines == 8) {
                             curr_fig19_array[4] = order_time;
+                            currProj.setNumTotalDependentTests(19, 4, numTotal);
                         } else if (numMachines == 16) {
                             curr_fig19_array[6] = order_time;
+                            currProj.setNumTotalDependentTests(19, 6, numTotal);
                         }
                     } else // enhanced
                     {
@@ -431,14 +490,17 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
                                 // S1
                                 fig18_values_array[0] = apfd_value;
                                 fig18_percents_array[0] = order_time;
+                                currProj.setNumTotalDependentTests(18, 0, numTotal);
                             } else if (orderName.equals("absolute")) {
                                 // S2
                                 fig18_values_array[2] = apfd_value;
                                 fig18_percents_array[2] = order_time;
+                                currProj.setNumTotalDependentTests(18, 2, numTotal);
                             } else {
                                 // S3
                                 fig18_values_array[4] = apfd_value;
                                 fig18_percents_array[4] = order_time;
+                                currProj.setNumTotalDependentTests(18, 4, numTotal);
                             }
 
                         } else if (coverageName.equals("function")) {
@@ -446,15 +508,18 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
                                 // S4
                                 fig18_values_array[6] = apfd_value;
                                 fig18_percents_array[6] = order_time;
+                                currProj.setNumTotalDependentTests(18, 6, numTotal);
 
                             } else if (orderName.equals("absolute")) {
                                 // S5
                                 fig18_values_array[8] = apfd_value;
                                 fig18_percents_array[8] = order_time;
+                                currProj.setNumTotalDependentTests(18, 8, numTotal);
                             } else {
                                 // S6
                                 fig18_values_array[10] = apfd_value;
                                 fig18_percents_array[10] = order_time;
+                                currProj.setNumTotalDependentTests(18, 10, numTotal);
                             }
                         }
 
@@ -498,7 +563,15 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
                     if (orderName.equals("original")) {
                         String order_time_string = parseFile(file, ORDER_TIME);
                         double order_time = Double.parseDouble(order_time_string);
-                        currProj.setOrigValue(order_time);
+                        currProj.setOrigTimeValue(order_time);
+                        String apfd_value_string = parseFile(file, APFD_VALUE);
+                        double apfd_value = Double.parseDouble(apfd_value_string);
+
+                        // double apfd_value = apfd_value_string != null ? Double.parseDouble(apfd_value_string) :
+                        // -1.00;
+                        // System.out.println(apfd_value);
+
+                        currProj.setOrigAPFDValue(apfd_value);
                         continue;
                     }
                     String apfd_value_string = parseFile(file, APFD_VALUE);
@@ -511,19 +584,23 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
                             if (orderName.equals("absolute")) {
                                 // T3
                                 fig17_array[0] = apfd_value;
+                                currProj.setNumTotalDependentTests(17, 0, numTotal);
                             } else { // relative
                                 // T4
                                 fig17_array[2] = apfd_value;
+                                currProj.setNumTotalDependentTests(17, 2, numTotal);
                             }
 
                         } else if (coverageName.equals("function")) {
                             if (orderName.equals("absolute")) {
                                 // T5
                                 fig17_array[4] = apfd_value;
+                                currProj.setNumTotalDependentTests(17, 4, numTotal);
 
                             } else { // relative
                                 // T7
                                 fig17_array[6] = apfd_value;
+                                currProj.setNumTotalDependentTests(17, 6, numTotal);
                             }
                         }
 
