@@ -121,6 +121,13 @@ public class ProjectEnhancedResults extends Project {
     public double getOrigAPFDValue() {
         return orig_apfd_value;
     }
+    /*
+     * @param figNum represents the figure number in the paper (17, 18, or 19)
+     * 
+     * @param index indicates which column in the figure it corresponds to (i.e. Figure 17 column 0 represents T3)
+     * 
+     * @param numTotal is the total number of DTS for that file
+     */
 
     public void setNumTotalDependentTests(int figNum, int index, int numTotal) {
         if (figNum == 17) {
@@ -129,7 +136,6 @@ public class ProjectEnhancedResults extends Project {
             fig18_nonzero[index] = numTotal != 0;
         } else { // 19
             fig19_nonzero[index] = numTotal != 0;
-
         }
     }
 
