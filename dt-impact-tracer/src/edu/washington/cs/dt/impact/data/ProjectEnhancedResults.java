@@ -123,9 +123,9 @@ public class ProjectEnhancedResults extends Project {
     }
     /*
      * @param figNum represents the figure number in the paper (17, 18, or 19)
-     * 
+     *
      * @param index indicates which column in the figure it corresponds to (i.e. Figure 17 column 0 represents T3)
-     * 
+     *
      * @param numTotal is the total number of DTS for that file
      */
 
@@ -139,15 +139,15 @@ public class ProjectEnhancedResults extends Project {
         }
     }
 
-    public boolean[] get_fig17_nonzero() {
+    public boolean[] get_fig17_nonZeroNumOfDTS() {
         return fig17_nonzero;
     }
 
-    public boolean[] get_fig18_nonzero() {
+    public boolean[] get_fig18_nonZeroNumOfDTS() {
         return fig18_nonzero;
     }
 
-    public boolean[] get_fig19_nonzero() {
+    public boolean[] get_fig19_nonZeroNumOfDTS() {
         return fig19_nonzero;
     }
 }
