@@ -67,14 +67,14 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
             String type, boolean[] nonZeroNumOfDTS, double orig_apfd_value) {
         String result = projectName + "       ";
         for (int i = 0; i + 1 < percentages.length; i += 2) {
-            // calc1,2,3 correspond to either S1,S2,S3 or S4,S5,S6
+            // enhancedParaSpeedup,2,3 correspond to either S1,S2,S3 or S4,S5,S6
             // enhanced - unenhanced
             /*
-             * double calc1 = (percentages[i + 1] - percentages[i]) / orig_value * 100;
-             * double calc2 = (percentages[i + 3] - percentages[i + 2]) / orig_value * 100;
-             * double calc3 = (percentages[i + 5] - percentages[i + 4]) / orig_value * 100;
+             * double enhancedParaSpeedup = (percentages[i + 1] - percentages[i]) / orig_value * 100;
+             * double unenhancedPara = (percentages[i + 3] - percentages[i + 2]) / orig_value * 100;
+             * double diffBetweenEnhancedUnenhanced = (percentages[i + 5] - percentages[i + 4]) / orig_value * 100;
              * // the max. of these 3 values
-             * double percent = Math.max(calc1, Math.max(calc2, calc3));
+             * double percent = Math.max(enhancedParaSpeedup, Math.max(unenhancedPara, diffBetweenEnhancedUnenhanced));
              */
             double percent;
             if (!nonZeroNumOfDTS[i]) {
@@ -124,25 +124,25 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
             double orig_time_value, List<GeometricMeanData> fig19GeoData, boolean[] nonZeroNumOfDTS,
             double orig_apfd_value) {
         String result = projectName;
-        double calc1 = 0;
-        double calc2 = 0;
-        double calc3 = 0;
+        double enhancedParaSpeedup = 0;
+        double unenhancedPara = 0;
+        double diffBetweenEnhancedUnenhanced = 0;
         for (int i = 0; i + 2 <= orig_values.length; i += 2) {
-            calc1 = (orig_values[i] / orig_time_value);
+            enhancedParaSpeedup = (orig_values[i] / orig_time_value);
             if (!nonZeroNumOfDTS[i]) {
-                calc2 = (orig_values[i + 1] / orig_time_value);
+                unenhancedPara = (orig_values[i + 1] / orig_time_value);
             } else {
-                calc2 = (orig_apfd_value / orig_time_value);
+                unenhancedPara = (orig_apfd_value / orig_time_value);
             }
-            calc3 = calc2 - calc1;
+            diffBetweenEnhancedUnenhanced = unenhancedPara - enhancedParaSpeedup;
 
-            String output = timeFormat.format(calc3);
+            String output = timeFormat.format(diffBetweenEnhancedUnenhanced);
             if (output.equals("-0\\%")) {
                 output = "0\\%";
             }
 
             result += " & ";
-            if (calc3 >= 0.0 || output.equals("0\\%")) {
+            if (diffBetweenEnhancedUnenhanced >= 0.0 || output.equals("0\\%")) {
                 result += "\\phantom{-}";
                 if (output.length() == 3) // single digit number, #\%
                 {
@@ -155,28 +155,29 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
             }
 
             result += output;
-            // result += " & " + timeFormat.format(calc1) + " $\\rightarrow$ " + timeFormat.format(calc2);
-            fig19GeoData.add(
-                    new GeometricMeanData(getK(i), calc1, Constants.TD_SETTING.OMITTED_TD, Constants.ORDER.ORIGINAL));
-            fig19GeoData.add(
-                    new GeometricMeanData(getK(i), calc2, Constants.TD_SETTING.GIVEN_TD, Constants.ORDER.ORIGINAL));
+            // result += " & " + timeFormat.format(enhancedParaSpeedup) + " $\\rightarrow$ " +
+            // timeFormat.format(unenhancedPara);
+            fig19GeoData.add(new GeometricMeanData(getK(i), enhancedParaSpeedup, Constants.TD_SETTING.OMITTED_TD,
+                    Constants.ORDER.ORIGINAL));
+            fig19GeoData.add(new GeometricMeanData(getK(i), unenhancedPara, Constants.TD_SETTING.GIVEN_TD,
+                    Constants.ORDER.ORIGINAL));
         }
         for (int i = 0; i + 2 <= time_values.length; i += 2) {
-            calc1 = (time_values[i] / orig_time_value);
+            enhancedParaSpeedup = (time_values[i] / orig_time_value);
             if (!nonZeroNumOfDTS[i]) {
-                calc2 = (time_values[i + 1] / orig_time_value);
+                unenhancedPara = (time_values[i + 1] / orig_time_value);
             } else {
-                calc2 = (orig_apfd_value / orig_time_value);
+                unenhancedPara = (orig_apfd_value / orig_time_value);
             }
-            calc3 = calc2 - calc1;
+            diffBetweenEnhancedUnenhanced = unenhancedPara - enhancedParaSpeedup;
 
-            String output = timeFormat.format(calc3);
+            String output = timeFormat.format(diffBetweenEnhancedUnenhanced);
             if (output.equals("-0\\%")) {
                 output = "0\\%";
             }
 
             result += " & ";
-            if (calc3 >= 0.0 || output.equals("0\\%")) {
+            if (diffBetweenEnhancedUnenhanced >= 0.0 || output.equals("0\\%")) {
                 result += "\\phantom{-}";
                 if (output.length() == 3) // single digit number, #\%
                 {
@@ -189,11 +190,12 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
             }
 
             result += output;
-            // result += " & " + timeFormat.format(calc1) + " $\\rightarrow$ " + timeFormat.format(calc2);
-            fig19GeoData
-                    .add(new GeometricMeanData(getK(i), calc1, Constants.TD_SETTING.OMITTED_TD, Constants.ORDER.TIME));
-            fig19GeoData
-                    .add(new GeometricMeanData(getK(i), calc2, Constants.TD_SETTING.GIVEN_TD, Constants.ORDER.TIME));
+            // result += " & " + timeFormat.format(enhancedParaSpeedup) + " $\\rightarrow$ " +
+            // timeFormat.format(unenhancedPara);
+            fig19GeoData.add(new GeometricMeanData(getK(i), enhancedParaSpeedup, Constants.TD_SETTING.OMITTED_TD,
+                    Constants.ORDER.TIME));
+            fig19GeoData.add(new GeometricMeanData(getK(i), unenhancedPara, Constants.TD_SETTING.GIVEN_TD,
+                    Constants.ORDER.TIME));
         }
         result += "\\\\";
 
