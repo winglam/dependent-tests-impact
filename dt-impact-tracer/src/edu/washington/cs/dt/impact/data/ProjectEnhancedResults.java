@@ -2,7 +2,8 @@ package edu.washington.cs.dt.impact.data;
 
 public class ProjectEnhancedResults extends Project {
     private String name;
-    private double orig_value;
+    private double orig_time_value;
+    private double orig_apfd_value;
 
     /*
      * fig**[i] corresponds to orig value
@@ -31,18 +32,26 @@ public class ProjectEnhancedResults extends Project {
     // corresponds to P2(Time-Minimized)
     private double[] fig19_time;
 
+    private boolean[] fig17_nonzero;
+    private boolean[] fig18_nonzero;
+    private boolean[] fig19_nonzero;
+
     private boolean uses_fig17;
     private boolean uses_fig18;
     private boolean uses_fig19;
 
     public ProjectEnhancedResults(String projName) {
         name = projName;
-        orig_value = 0;
+        orig_time_value = 0;
+        orig_apfd_value = 0;
         fig17_values = new double[4 * 2];
         fig18_values = new double[6 * 2];
         fig18_percents = new double[6 * 2];
         fig19_orig = new double[2 * 4];
         fig19_time = new double[2 * 4];
+        fig17_nonzero = new boolean[4 * 2];
+        fig18_nonzero = new boolean[6 * 2];
+        fig19_nonzero = new boolean[4 * 2];
         uses_fig17 = false;
         uses_fig18 = false;
         uses_fig19 = false;
@@ -97,12 +106,49 @@ public class ProjectEnhancedResults extends Project {
         return fig19_time;
     }
 
-    public void setOrigValue(double val) {
-        orig_value = val;
+    public void setOrigTimeValue(double val) {
+        orig_time_value = val;
     }
 
-    public double getOrigValue() {
-        return orig_value;
+    public double getOrigTimeValue() {
+        return orig_time_value;
+    }
+
+    public void setOrigAPFDValue(double val) {
+        orig_apfd_value = val;
+    }
+
+    public double getOrigAPFDValue() {
+        return orig_apfd_value;
+    }
+    /*
+     * @param figNum represents the figure number in the paper (17, 18, or 19)
+     * 
+     * @param index indicates which column in the figure it corresponds to (i.e. Figure 17 column 0 represents T3)
+     * 
+     * @param numTotal is the total number of DTS for that file
+     */
+
+    public void setNumTotalDependentTests(int figNum, int index, int numTotal) {
+        if (figNum == 17) {
+            fig17_nonzero[index] = numTotal != 0;
+        } else if (figNum == 18) {
+            fig18_nonzero[index] = numTotal != 0;
+        } else { // 19
+            fig19_nonzero[index] = numTotal != 0;
+        }
+    }
+
+    public boolean[] get_fig17_nonzero() {
+        return fig17_nonzero;
+    }
+
+    public boolean[] get_fig18_nonzero() {
+        return fig18_nonzero;
+    }
+
+    public boolean[] get_fig19_nonzero() {
+        return fig19_nonzero;
     }
 }
 
