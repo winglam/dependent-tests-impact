@@ -30,21 +30,21 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
         for (int i = 0; i + 1 < values.length; i += 2) {
             double val;
             if (!nonZeroNumOfDTS[i]) {
-                // unenhanced - enhanced
-                val = values[i] - values[i + 1];
+                // enhanced - unenhanced
+                val = values[i + 1] - values[i];
             } else {
-                // orig - enhanced
-                val = orig_apfd_value - values[i + 1];
+                // enhanced - orig
+                val = values[i + 1] - orig_apfd_value;
             }
             if (!allowNegatives && val < 0.0) {
                 val = 0.0;
             }
             String output = apfdFormat.format(val);
-            if (output.equals("-0.000")) {
-                output = "0.000";
+            if (output.equals("-.00")) {
+                output = ".00";
             }
             result += " & ";
-            if (val >= 0.0) {
+            if (val >= 0.0 || output.equals(".00")) {
                 result += "\\phantom{-}";// + output;
             }
             result += output;
@@ -86,19 +86,32 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
                 // unenhanced - enhanced
                 percent = (percentages[i] - percentages[i + 1]) / orig_time_value * 100;
             } else {
-                // unenhanced - orig
-                percent = (percentages[i] - orig_time_value) / orig_time_value * 100;
+                // orig - enhanced
+                percent = (orig_time_value - percentages[i + 1]) / orig_time_value * 100;
             }
+
             if (!allowNegatives && percent < 0.0) {
                 percent = 0.0;
             }
 
             result += " & ";
-            if (percent < 10.0) {
-                result += "\\phantom{1}";
+            String output = percentFormat.format(percent);
+            if (output.equals("-0.0")) {
+                output = "0.0";
+            }
+            if (percent >= 0.0 || output.equals("0.0")) {
+                result += "\\phantom{-}";
+                if (output.length() == 3) // single digit number, #\%
+                {
+                    result += "\\phantom{1}";
+                }
+            } else { // negative
+                if (output.length() == 4) {// single digit number, #\%
+                    result += "\\phantom{1}";
+                }
             }
 
-            result += percentFormat.format(percent) + "\\%\\pa"; // "\%\pa"
+            result += output + "\\%\\pa"; // "\%\pa"
 
         }
         // i represents unenhanced, i + 1 represents enhanced
@@ -106,21 +119,21 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
             double val;
 
             if (!nonZeroNumOfDTS[i]) {
-                // unenhanced - enhanced
-                val = values[i] - values[i + 1];
+                // enhanced - unenhanced
+                val = values[i + 1] - values[i];
             } else {
-                // orig - enhanced
-                val = orig_apfd_value - values[i + 1];
+                // enhanced - orig
+                val = values[i + 1] - orig_apfd_value;
             }
             if (!allowNegatives && val < 0.0) {
                 val = 0.0;
             }
             String output = apfdFormat.format(val);
-            if (output.equals("-0.000")) {
-                output = "0.000";
+            if (output.equals("-.00")) {
+                output = ".00";
             }
             result += " & ";
-            if (val >= 0.0) {
+            if (val >= 0.0 || output.equals(".00")) {
                 result += "\\phantom{-}";
             }
             result += output;
@@ -151,7 +164,7 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
                 unenhancedPara = (orig_time_value / orig_time_value);
             }
             // enhanced - unenhanced or enhanced - orig if DTS != 0
-            diffBetweenEnhancedUnenhanced = enhancedParaSpeedup - unenhancedPara;
+            diffBetweenEnhancedUnenhanced = unenhancedPara - enhancedParaSpeedup;
 
             String output = timeFormat.format(diffBetweenEnhancedUnenhanced);
             if (output.equals("-0\\%")) {
@@ -191,8 +204,7 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
                 unenhancedPara = (orig_time_value / orig_time_value);
             }
             // enhanced - unenhanced or enhanced - orig if DTS != 0
-            diffBetweenEnhancedUnenhanced = enhancedParaSpeedup - unenhancedPara;
-
+            diffBetweenEnhancedUnenhanced = unenhancedPara - enhancedParaSpeedup;
             String output = timeFormat.format(diffBetweenEnhancedUnenhanced);
             if (output.equals("-0\\%")) {
                 output = "0\\%";
@@ -341,6 +353,12 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
                 String diffStringFormat = timeFormat.format(diffOfGeometricMeans);
                 if (diffStringFormat.equals("-0\\%")) {
                     diffStringFormat = "0\\%";
+                }
+                if (diffOfGeometricMeans >= 0.0 || diffStringFormat.equals("0\\%")) {
+                    diffStringFormat = "\\phantom{-}" + diffStringFormat;
+                }
+                if (diffOfGeometricMeans * 100 < 10.0 && diffOfGeometricMeans * 100 > -10.0) {
+                    diffStringFormat = "\\phantom{1}" + diffStringFormat;
                 }
                 sb.append(" & " + diffStringFormat);
             }
