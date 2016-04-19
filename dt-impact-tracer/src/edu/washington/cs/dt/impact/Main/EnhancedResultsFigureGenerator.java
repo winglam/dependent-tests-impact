@@ -26,11 +26,14 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
     private static String generate17(String projectName, double[] values, double orig_apfd_value,
             boolean[] nonZeroNumOfDTS) {
         String result = projectName;
+        // i represents unenhanced, i + 1 represents enhanced
         for (int i = 0; i + 1 < values.length; i += 2) {
             double val;
             if (!nonZeroNumOfDTS[i]) {
+                // unenhanced - enhanced
                 val = values[i] - values[i + 1];
             } else {
+                // orig - enhanced
                 val = orig_apfd_value - values[i + 1];
             }
             if (!allowNegatives && val < 0.0) {
@@ -66,6 +69,7 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
     private static String generate18(String projectName, double[] percentages, double[] values, double orig_time_value,
             String type, boolean[] nonZeroNumOfDTS, double orig_apfd_value) {
         String result = projectName + "       ";
+        // i represents unenhanced, i + 1 represents enhanced
         for (int i = 0; i + 1 < percentages.length; i += 2) {
             // enhancedParaSpeedup,2,3 correspond to either S1,S2,S3 or S4,S5,S6
             // enhanced - unenhanced
@@ -77,27 +81,37 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
              * double percent = Math.max(enhancedParaSpeedup, Math.max(unenhancedPara, diffBetweenEnhancedUnenhanced));
              */
             double percent;
+            // i represents unenhanced, i + 1 represents enhanced
             if (!nonZeroNumOfDTS[i]) {
-                percent = (percentages[i + 1] - percentages[i]) / orig_time_value * 100;
+                // unenhanced - enhanced
+                percent = (percentages[i] - percentages[i + 1]) / orig_time_value * 100;
             } else {
-                percent = (orig_time_value - percentages[i]) / orig_time_value * 100;
+                // unenhanced - orig
+                percent = (percentages[i] - orig_time_value) / orig_time_value * 100;
             }
             // if negative, ensure it's 0
             percent = Math.max(0, percent);
             if (!allowNegatives && percent < 0.0) {
                 percent = 0.0;
             }
-            if (projectName.equals(CRYSTAL_NAME) && type.equals("auto")) {
-                result += " & " + percentFormat.format(percent) + "\\%\\ra"; // "\%\ra"
-            } else {
-                result += " & " + percentFormat.format(percent) + "\\%\\pa"; // "\%\pa"
+
+            result += " & ";
+            if (percent < 10.0) {
+                result += "\\phantom{1}";
             }
+
+            result += percentFormat.format(percent) + "\\%\\pa"; // "\%\pa"
+
         }
+        // i represents unenhanced, i + 1 represents enhanced
         for (int i = 0; i + 1 < values.length; i += 2) {
             double val;
+
             if (!nonZeroNumOfDTS[i]) {
+                // unenhanced - enhanced
                 val = values[i] - values[i + 1];
             } else {
+                // orig - enhanced
                 val = orig_apfd_value - values[i + 1];
             }
             if (!allowNegatives && val < 0.0) {
@@ -127,14 +141,19 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
         double enhancedParaSpeedup = 0;
         double unenhancedPara = 0;
         double diffBetweenEnhancedUnenhanced = 0;
+        // i represents unenhanced, i + 1 represents enhanced
         for (int i = 0; i + 2 <= orig_values.length; i += 2) {
-            enhancedParaSpeedup = (orig_values[i] / orig_time_value);
+            // enhanced
+            enhancedParaSpeedup = (orig_values[i + 1] / orig_time_value);
             if (!nonZeroNumOfDTS[i]) {
-                unenhancedPara = (orig_values[i + 1] / orig_time_value);
+                // unenhanced
+                unenhancedPara = (orig_values[i] / orig_time_value);
             } else {
-                unenhancedPara = (orig_apfd_value / orig_time_value);
+                // orig
+                unenhancedPara = (orig_time_value / orig_time_value);
             }
-            diffBetweenEnhancedUnenhanced = unenhancedPara - enhancedParaSpeedup;
+            // enhanced - unenhanced or enhanced - orig if DTS != 0
+            diffBetweenEnhancedUnenhanced = enhancedParaSpeedup - unenhancedPara;
 
             String output = timeFormat.format(diffBetweenEnhancedUnenhanced);
             if (output.equals("-0\\%")) {
@@ -162,14 +181,19 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
             fig19GeoData.add(new GeometricMeanData(getK(i), unenhancedPara, Constants.TD_SETTING.GIVEN_TD,
                     Constants.ORDER.ORIGINAL));
         }
+        // i represents unenhanced, i + 1 represents enhanced
         for (int i = 0; i + 2 <= time_values.length; i += 2) {
-            enhancedParaSpeedup = (time_values[i] / orig_time_value);
+            // enhanced
+            enhancedParaSpeedup = (time_values[i + 1] / orig_time_value);
             if (!nonZeroNumOfDTS[i]) {
-                unenhancedPara = (time_values[i + 1] / orig_time_value);
+                // unenhanced
+                unenhancedPara = (time_values[i] / orig_time_value);
             } else {
-                unenhancedPara = (orig_apfd_value / orig_time_value);
+                // orig
+                unenhancedPara = (orig_time_value / orig_time_value);
             }
-            diffBetweenEnhancedUnenhanced = unenhancedPara - enhancedParaSpeedup;
+            // enhanced - unenhanced or enhanced - orig if DTS != 0
+            diffBetweenEnhancedUnenhanced = enhancedParaSpeedup - unenhancedPara;
 
             String output = timeFormat.format(diffBetweenEnhancedUnenhanced);
             if (output.equals("-0\\%")) {
@@ -315,8 +339,12 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
             StringBuilder sb = new StringBuilder();
             sb.append("\\hline\r\nGeometric mean");
             for (int i = 0; i + 2 <= geometricMeans.length; i += 2) {
-                sb.append(" & " + timeFormat.format(geometricMeans[i]) + " $\\rightarrow$ "
-                        + timeFormat.format(geometricMeans[i + 1]));
+                double diffOfGeometricMeans = geometricMeans[i] - geometricMeans[i + 1];
+                String diffStringFormat = timeFormat.format(diffOfGeometricMeans);
+                if (diffStringFormat.equals("-0\\%")) {
+                    diffStringFormat = "0\\%";
+                }
+                sb.append(" & " + diffStringFormat);
             }
             sb.append(" \\\\");
             latexString += sb.toString();
@@ -504,7 +532,7 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
                     double[] fig18_values_array = currProj.get_fig18_values();
                     double[] fig18_percents_array = currProj.get_fig18_percents();
                     // original values, index should be i=0, i+=2
-                    if (resolveDependences == null) { // original
+                    if (resolveDependences == null) { // orig, unenhanced
                         if (coverageName.equals("statement")) {
                             if (orderName.equals("original")) {
                                 // S1
@@ -543,7 +571,7 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
                             }
                         }
 
-                    } else { // auto, index should be i = 1, i+=2
+                    } else { // auto, enhanced, index should be i = 1, i+=2
                         if (coverageName.equals("statement")) {
                             if (orderName.equals("original")) {
                                 // S1
@@ -594,7 +622,7 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
                     currProj.useFig17();
                     double[] fig17_array = currProj.get_fig17_values();
                     // original values, index should be i=0, i+=2
-                    if (resolveDependences == null) {
+                    if (resolveDependences == null) { // orig, unenhanced
                         if (coverageName.equals("statement")) {
                             if (orderName.equals("absolute")) {
                                 // T3
@@ -619,7 +647,7 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
                             }
                         }
 
-                    } else { // auto, index should be i = 1, i+=2
+                    } else { // auto, enhanced, index should be i = 1, i+=2
                         if (coverageName.equals("statement")) {
                             if (orderName.equals("absolute")) {
                                 // T3
