@@ -10,6 +10,7 @@ import edu.washington.cs.dt.impact.data.GeometricMeanData;
 import edu.washington.cs.dt.impact.data.Project;
 import edu.washington.cs.dt.impact.data.ProjectEnhancedResults;
 import edu.washington.cs.dt.impact.util.Constants;
+import edu.washington.cs.dt.impact.Main.FigureGenerator;
 
 public class EnhancedResultsFigureGenerator extends FigureGenerator {
 
@@ -96,17 +97,17 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
 
             result += " & ";
             String output = percentFormat.format(percent);
-            if (output.equals("-0.0")) {
-                output = "0.0";
+            if (output.equals("-0")) {
+                output = "0";
             }
-            if (percent >= 0.0 || output.equals("0.0")) {
+            if (percent >= 0.0 || output.equals("0")) {
                 result += "\\phantom{-}";
-                if (output.length() == 3) // single digit number, #\%
+                if (output.length() == 1) // single digit number, #\%
                 {
                     result += "\\phantom{1}";
                 }
             } else { // negative
-                if (output.length() == 4) {// single digit number, #\%
+                if (output.length() == 2) {// single digit number, #\%
                     result += "\\phantom{1}";
                 }
             }
@@ -349,7 +350,7 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
             StringBuilder sb = new StringBuilder();
             sb.append("\\hline\r\nGeometric mean");
             for (int i = 0; i + 2 <= geometricMeans.length; i += 2) {
-                double diffOfGeometricMeans = geometricMeans[i] - geometricMeans[i + 1];
+                double diffOfGeometricMeans = geometricMeans[i + 1] - geometricMeans[i];
                 String diffStringFormat = timeFormat.format(diffOfGeometricMeans);
                 if (diffStringFormat.equals("-0\\%")) {
                     diffStringFormat = "0\\%";
