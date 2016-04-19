@@ -89,8 +89,6 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
                 // unenhanced - orig
                 percent = (percentages[i] - orig_time_value) / orig_time_value * 100;
             }
-            // if negative, ensure it's 0
-            percent = Math.max(0, percent);
             if (!allowNegatives && percent < 0.0) {
                 percent = 0.0;
             }
