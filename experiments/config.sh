@@ -20,7 +20,6 @@ machines=(2 4 8 16)
 # Ordering for the three techniques
 priorOrders=(absolute relative)
 seleOrders=(original absolute relative)
-parallelOrders=($testType-order time)
 
 # Directory to output the results
 priorDir=prioritization-results
