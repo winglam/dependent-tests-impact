@@ -1,6 +1,6 @@
 package edu.washington.cs.dt.impact.Main;
-
 import java.io.BufferedWriter;
+import edu.washington.cs.dt.impact.data.Project;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
@@ -8,16 +8,16 @@ import java.io.IOException;
 import java.text.DecimalFormat;
 import java.util.List;
 import java.util.Scanner;
-import edu.washington.cs.dt.impact.data.Project;
+
 
 public class FigureGenerator {
     // for Figures 17, 18, and 19
     protected static final String ORDER_TIME = "Execution time for executing the following testing order:";
     protected static final String ORDER_TIME_PARA = "New order time:";
     protected static final String APFD_VALUE = "APFD value:";
-    protected static final DecimalFormat apfdFormat = new DecimalFormat("0.000");
-    protected static final DecimalFormat timeFormat = new DecimalFormat("0.00");
-    protected static final DecimalFormat percentFormat = new DecimalFormat("0.0");
+    protected static final DecimalFormat apfdFormat = new DecimalFormat(".00");
+    protected static final DecimalFormat timeFormat = new DecimalFormat("#\\%");
+    protected static final DecimalFormat percentFormat = new DecimalFormat("0");
     protected static boolean allowNegatives = false;
     // For Figures 7,8,9
     protected static final String FIXED_DTS = "Number of DTs fixed:";
