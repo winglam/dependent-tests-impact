@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import edu.washington.cs.dt.impact.data.GeometricMeanData;
 import edu.washington.cs.dt.impact.data.Project;
 import edu.washington.cs.dt.impact.data.ProjectNumDependentTests;
 import edu.washington.cs.dt.impact.util.Constants;
@@ -71,11 +70,11 @@ public class NumDependentTestsFigureGenerator extends FigureGenerator {
     private static String generateLatexString(List<Project> projList, List<Project> otherProjList, String type) {
         String latexString = "";
         List<Project> sortedList = new ArrayList<Project>();
-        sortList(projList, sortedList, CRYSTAL_NAME);
-        sortList(projList, sortedList, JFREECHART_NAME);
-        sortList(projList, sortedList, JODATIME_NAME);
-        sortList(projList, sortedList, SYNOTPIC_NAME);
-        sortList(projList, sortedList, XMLSECURITY_NAME);
+        sortList(projList, sortedList, Constants.CRYSTAL_NAME);
+        sortList(projList, sortedList, Constants.JFREECHART_NAME);
+        sortList(projList, sortedList, Constants.JODATIME_NAME);
+        sortList(projList, sortedList, Constants.SYNOTPIC_NAME);
+        sortList(projList, sortedList, Constants.XMLSECURITY_NAME);
         int[] total;
         if (((ProjectNumDependentTests) sortedList.get(0)).isFig9()) {
             total = new int[8];
@@ -112,7 +111,6 @@ public class NumDependentTestsFigureGenerator extends FigureGenerator {
                 latexString += "\r\n";
             }
         }
-        latexString += "%\\bottomrule";
         latexString += "\r\n";
         latexString += "\\hline";
         latexString += "\r\n";
@@ -157,7 +155,7 @@ public class NumDependentTestsFigureGenerator extends FigureGenerator {
             if (file.isFile()) {
 
                 // String containing all the flags
-                String flagsInFile = getFlagsLine(file);
+                String flagsInFile = getFlagsLine(file, Constants.ARGUMENT_STRING);
                 if (flagsInFile == null) {
                     continue;
                 }
@@ -182,15 +180,15 @@ public class NumDependentTestsFigureGenerator extends FigureGenerator {
                 index = flagsList.indexOf("-project");
                 String projectName = flagsList.get(index + 1);
                 if (projectName.equals("crystal")) {
-                    projectName = CRYSTAL_NAME;
+                    projectName = Constants.CRYSTAL_NAME;
                 } else if (projectName.equals("jfreechart")) {
-                    projectName = JFREECHART_NAME;
+                    projectName = Constants.JFREECHART_NAME;
                 } else if (projectName.equals("jodatime")) {
-                    projectName = JODATIME_NAME;
+                    projectName = Constants.JODATIME_NAME;
                 } else if (projectName.equals("synoptic")) {
-                    projectName = SYNOTPIC_NAME;
+                    projectName = Constants.SYNOTPIC_NAME;
                 } else if (projectName.equals("xml_security")) {
-                    projectName = XMLSECURITY_NAME;
+                    projectName = Constants.XMLSECURITY_NAME;
                 } else {
                     System.err.println("Project argument is specified but the project name"
                             + " value provided is invalid. Please use either crystal, jfreechart, jodatime, synoptic or xml_security.");
@@ -229,8 +227,8 @@ public class NumDependentTestsFigureGenerator extends FigureGenerator {
 
                 // get the number of dts
 
-                int numFixed = Integer.parseInt(parseFile(file, FIXED_DTS));
-                int numNotFixed = Integer.parseInt(parseFile(file, NOT_FIXED_DTS));
+                int numFixed = Integer.parseInt(parseFile(file, Constants.FIXED_DTS));
+                int numNotFixed = Integer.parseInt(parseFile(file, Constants.NOT_FIXED_DTS));
                 int numTotal = numFixed + numNotFixed;
 
                 // parallelization technique, figure 9
@@ -418,4 +416,3 @@ public class NumDependentTestsFigureGenerator extends FigureGenerator {
 
     }
 }
-

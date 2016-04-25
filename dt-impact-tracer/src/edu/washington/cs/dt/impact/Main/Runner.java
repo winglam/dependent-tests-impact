@@ -460,7 +460,7 @@ public abstract class Runner {
         double testListTime;
         int numTests = 0;
         List<String> outputArr = new ArrayList<>();
-        outputArr.add("The following arguments were used to generate this output.\n");
+        outputArr.add(Constants.ARGUMENT_STRING + "\n");
         outputArr.add(argsList + "\n\n");
         for (WrapperTestList testList : listTestList) {
             testListTime = testList.getNewOrderTime();
@@ -472,23 +472,22 @@ public abstract class Runner {
                     + nanosecondToSecond(testList.getNullifyDTTime()) + "\n");
             outputArr.add("Number of tests selected out of total in original order: " + testList.getTestList().size()
                     + " / " + origOrderTestList.size() + "\n");
-            outputArr.add("Number of DTs not fixed: " + testList.getNumNotFixedDT() + "\n");
-            outputArr.add("Number of DTs fixed: " + testList.getNumFixedDT() + "\n");
+            outputArr.add(Constants.NOT_FIXED_DTS + " " + testList.getNumNotFixedDT() + "\n");
+            outputArr.add(Constants.FIXED_DTS + " " + testList.getNumFixedDT() + "\n");
             if (getCoverage) {
-                outputArr.add("APFD value: " + testList.getAPFD() + "\n");
+                outputArr.add(Constants.APFD_VALUE + " " + testList.getAPFD() + "\n");
             }
-            outputArr.add("Execution time for executing the following testing order: "
-                    + nanosecondToSecond(testListTime) + "\n");
+            outputArr.add(Constants.ORDER_TIME + " " + nanosecondToSecond(testListTime) + "\n");
             outputArr.add("Test order list:\n");
             outputArr.add(testList.getTestList() + "\n");
-            outputArr.add("\nTime each test takes to run in the new order:\n");
+            outputArr.add("\n" + Constants.TIME_STRING + "\n");
             outputArr.add(testList.getTimeEachTest() + "\n");
             if (testList.getDtList() != null) {
                 outputArr.add("\nDependent test list:\n");
                 outputArr.add(testList.getDtList() + "\n");
             }
             if (getCoverage) {
-                outputArr.add("\nCoverage test list:\n");
+                outputArr.add("\n" + Constants.COVERAGE_STRING + "\n");
                 outputArr.add(testList.getCoverage() + "\n");
             }
             outputArr.add("--------------------------\n");
@@ -496,7 +495,7 @@ public abstract class Runner {
         outputArr.add("Total time (of all machines and iterations plus initial TestListGenerator): "
                 + nanosecondToSecond(totalTime));
         if (techniqueName == TECHNIQUE.PARALLELIZATION) {
-            outputArr.add("\nNew order time: " + nanosecondToSecond(maxTime));
+            outputArr.add("\n" + Constants.ORDER_TIME_PARA + " " + nanosecondToSecond(maxTime));
             outputArr.add("\nTotal number of tests executed in all machines out of total in original order: " + numTests
                     + " / " + origOrderTestList.size());
         }
@@ -567,7 +566,7 @@ public abstract class Runner {
         return totalTimeToCumulTime;
     }
 
-    protected static double getAPFD(List<Double> cumulTime, List<Double> cumulCoverage) {
+    public static double getAPFD(List<Double> cumulTime, List<Double> cumulCoverage) {
         if (cumulTime.size() < 2 || cumulCoverage.size() < 1) {
             throw new IllegalArgumentException("cumulTime or cumulCoverage is too small to get APFD.\ncumulTime is: "
                     + cumulTime + "\ncumulCoverage is: " + cumulCoverage);
@@ -597,7 +596,7 @@ public abstract class Runner {
         return getSum(doubleList);
     }
 
-    protected static List<Double> getCumulList(List<String> list) {
+    public static List<Double> getCumulList(List<String> list) {
         if (list == null || list.size() < 1) {
             throw new IllegalArgumentException("getCumulList recieved argument: " + list);
         }
@@ -605,6 +604,18 @@ public abstract class Runner {
         cumulList.add(Double.valueOf(list.get(0)));
         for (int i = 1; i < list.size(); i++) {
             cumulList.add(Double.valueOf(list.get(i)) + cumulList.get(i - 1));
+        }
+        return cumulList;
+    }
+
+    public static List<Double> getCumulListDouble(List<Double> list) {
+        if (list == null || list.size() < 1) {
+            throw new IllegalArgumentException("getCumulList recieved argument: " + list);
+        }
+        List<Double> cumulList = new ArrayList<>();
+        cumulList.add(list.get(0));
+        for (int i = 1; i < list.size(); i++) {
+            cumulList.add(list.get(i) + cumulList.get(i - 1));
         }
         return cumulList;
     }

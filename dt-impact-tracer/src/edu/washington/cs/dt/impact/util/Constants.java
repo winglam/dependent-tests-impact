@@ -8,9 +8,28 @@
 package edu.washington.cs.dt.impact.util;
 
 public class Constants {
-    public final static TECHNIQUE DEFAULT_TECHNIQUE = TECHNIQUE.PRIORITIZATION;
-    public final static String DEFAULT_TEST_DIR = "sootTestOutput";
+    public static final TECHNIQUE DEFAULT_TECHNIQUE = TECHNIQUE.PRIORITIZATION;
+    public static final String DEFAULT_TEST_DIR = "sootTestOutput";
     public static final String TEST_LINE = "Test: ";
+
+    // For Figures 7,8,9
+    public static final String FIXED_DTS = "Number of DTs fixed:";
+    public static final String NOT_FIXED_DTS = "Number of DTs not fixed:";
+
+    // Project Names
+    public static final String CRYSTAL_NAME = "Crystal";
+    public static final String JFREECHART_NAME = "JFreechart";
+    public static final String JODATIME_NAME = "Joda-Time";
+    public static final String SYNOTPIC_NAME = "Synoptic";
+    public static final String XMLSECURITY_NAME = "XML Security";
+
+    // for Figures 17, 18, and 19
+    public static final String ARGUMENT_STRING = "The following arguments were used to generate this output.";
+    public static final String TIME_STRING = "Time each test takes to run in the new order:";
+    public static final String COVERAGE_STRING = "Coverage test list:";
+    public static final String ORDER_TIME = "Execution time for executing the following testing order:";
+    public static final String ORDER_TIME_PARA = "New order time:";
+    public static final String APFD_VALUE = "APFD value:";
 
     public static String getOutputFileName(COVERAGE coverage, TECHNIQUE technique, ORDER order, PROJECT project,
             TEST_TYPE test_type, MACHINES machines, DT_SETTING dt_setting, TD_SETTING td_setting) {

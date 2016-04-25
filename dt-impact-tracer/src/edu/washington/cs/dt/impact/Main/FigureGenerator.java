@@ -1,6 +1,6 @@
 package edu.washington.cs.dt.impact.Main;
+
 import java.io.BufferedWriter;
-import edu.washington.cs.dt.impact.data.Project;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
@@ -9,25 +9,13 @@ import java.text.DecimalFormat;
 import java.util.List;
 import java.util.Scanner;
 
+import edu.washington.cs.dt.impact.data.Project;
 
 public class FigureGenerator {
-    // for Figures 17, 18, and 19
-    protected static final String ORDER_TIME = "Execution time for executing the following testing order:";
-    protected static final String ORDER_TIME_PARA = "New order time:";
-    protected static final String APFD_VALUE = "APFD value:";
     protected static final DecimalFormat apfdFormat = new DecimalFormat(".00");
     protected static final DecimalFormat timeFormat = new DecimalFormat("#\\%");
     protected static final DecimalFormat percentFormat = new DecimalFormat("0");
     protected static boolean allowNegatives = false;
-    // For Figures 7,8,9
-    protected static final String FIXED_DTS = "Number of DTs fixed:";
-    protected static final String NOT_FIXED_DTS = "Number of DTs not fixed:";
-    // Project Names
-    protected static final String CRYSTAL_NAME = "Crystal";
-    protected static final String JFREECHART_NAME = "JFreechart";
-    protected static final String JODATIME_NAME = "Joda-Time";
-    protected static final String SYNOTPIC_NAME = "Synoptic";
-    protected static final String XMLSECURITY_NAME = "XML Security";
 
     /*
      * A public method to search a file for a keyword and return the value that follows
@@ -64,14 +52,14 @@ public class FigureGenerator {
      * that line starts with "-technique"
      */
 
-    public static String getFlagsLine(File file) {
+    public static String getFlagsLine(File file, String keyword) {
         Scanner scanner = null;
-        String keyword = "-technique";
         try {
             scanner = new Scanner(file);
             while (scanner.hasNextLine()) {
                 String currLine = scanner.nextLine();
                 if (currLine.contains(keyword)) {
+                    currLine = scanner.nextLine();
                     scanner.close(); // close Scanner before returning
                     return currLine;
                 }
@@ -172,4 +160,3 @@ public class FigureGenerator {
     }
 
 }
-
