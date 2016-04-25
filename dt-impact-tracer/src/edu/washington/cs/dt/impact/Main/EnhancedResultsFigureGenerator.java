@@ -10,7 +10,6 @@ import edu.washington.cs.dt.impact.data.GeometricMeanData;
 import edu.washington.cs.dt.impact.data.Project;
 import edu.washington.cs.dt.impact.data.ProjectEnhancedResults;
 import edu.washington.cs.dt.impact.util.Constants;
-import edu.washington.cs.dt.impact.Main.FigureGenerator;
 
 public class EnhancedResultsFigureGenerator extends FigureGenerator {
 
@@ -24,9 +23,13 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
      *
      * format: Crystal & 0.026 & 0.001 & 0.000 & 0.000 \\
      */
-    private static String generate17(String projectName, double[] values, double orig_apfd_value,
-            boolean[] nonZeroNumOfDTS) {
-        String result = projectName;
+    private static String generate17(ProjectEnhancedResults project) {
+        double[] values = project.get_fig17_values();
+        boolean[] nonZeroNumOfDTS = project.get_fig17_nonZeroNumOfDTS();
+        String result = project.getName();
+        List<Double> origTime = Arrays.asList(project.getOrig_time());
+        List<Double> origCoverage = Arrays.asList(project.getOrig_coverage());
+
         // i represents unenhanced, i + 1 represents enhanced
         for (int i = 0; i + 1 < values.length; i += 2) {
             double val;
@@ -35,7 +38,18 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
                 val = values[i + 1] - values[i];
             } else {
                 // enhanced - orig
-                val = values[i + 1] - orig_apfd_value;
+                Double[] enhancedTime = project.getFig17_time()[i + 1];
+                List<Double> totalTime = new ArrayList<Double>(Arrays.asList(enhancedTime));
+                int enhancedSize = totalTime.size();
+                totalTime.addAll(origTime);
+                List<Double> totalCoverage = new ArrayList<Double>();
+                for (int j = 0; j < enhancedSize; j++) {
+                    totalCoverage.add(0.0);
+                }
+                totalCoverage.addAll(origCoverage);
+
+                val = values[i + 1] - Runner.getAPFD(Runner.getCumulListDouble(totalTime),
+                        Runner.getCumulListDouble(totalCoverage));
             }
             if (!allowNegatives && val < 0.0) {
                 val = 0.0;
@@ -46,7 +60,7 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
             }
             result += " & ";
             if (val >= 0.0 || output.equals(".00")) {
-                result += "\\phantom{-}";// + output;
+                result += "\\pMinus";// + output;
             }
             result += output;
         }
@@ -67,9 +81,13 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
      *
      * format: Crystal & 5.4\%\pa & 1.3\%\pa & 0.000 & 0.000 & 0.008 & 0.015 & 0.036 & 0.000 \\
      */
-    private static String generate18(String projectName, double[] percentages, double[] values, double orig_time_value,
-            String type, boolean[] nonZeroNumOfDTS, double orig_apfd_value) {
-        String result = projectName + "       ";
+    private static String generate18(ProjectEnhancedResults project, double orig_time_value) {
+        double[] percentages = project.get_fig18_percents();
+        double[] values = project.get_fig18_values();
+        boolean[] nonZeroNumOfDTS = project.get_fig18_nonZeroNumOfDTS();
+        String result = project.getName() + "       ";
+        List<Double> origTime = Arrays.asList(project.getOrig_time());
+        List<Double> origCoverage = Arrays.asList(project.getOrig_coverage());
         // i represents unenhanced, i + 1 represents enhanced
         for (int i = 0; i + 1 < percentages.length; i += 2) {
             // enhancedParaSpeedup,2,3 correspond to either S1,S2,S3 or S4,S5,S6
@@ -101,18 +119,18 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
                 output = "0";
             }
             if (percent >= 0.0 || output.equals("0")) {
-                result += "\\phantom{-}";
+                result += "\\pMinus";
                 if (output.length() == 1) // single digit number, #\%
                 {
-                    result += "\\phantom{1}";
+                    result += "\\z";
                 }
             } else { // negative
                 if (output.length() == 2) {// single digit number, #\%
-                    result += "\\phantom{1}";
+                    result += "\\z";
                 }
             }
 
-            result += output + "\\%\\pa"; // "\%\pa"
+            result += output + "\\%"; // "\%"
 
         }
         // i represents unenhanced, i + 1 represents enhanced
@@ -124,7 +142,17 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
                 val = values[i + 1] - values[i];
             } else {
                 // enhanced - orig
-                val = values[i + 1] - orig_apfd_value;
+                Double[] enhancedTime = project.getFig18_time()[i + 1];
+                List<Double> totalTime = new ArrayList<Double>(Arrays.asList(enhancedTime));
+                int enhancedSize = totalTime.size();
+                totalTime.addAll(origTime);
+                List<Double> totalCoverage = new ArrayList<Double>();
+                for (int j = 0; j < enhancedSize; j++) {
+                    totalCoverage.add(0.0);
+                }
+                totalCoverage.addAll(origCoverage);
+                val = values[i + 1] - Runner.getAPFD(Runner.getCumulListDouble(totalTime),
+                        Runner.getCumulListDouble(totalCoverage));
             }
             if (!allowNegatives && val < 0.0) {
                 val = 0.0;
@@ -135,7 +163,7 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
             }
             result += " & ";
             if (val >= 0.0 || output.equals(".00")) {
-                result += "\\phantom{-}";
+                result += "\\pMinus";
             }
             result += output;
         }
@@ -146,10 +174,12 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
     /*
      * a private method that generates Figure 19
      */
-    private static String generate19(String projectName, double[] orig_values, double[] time_values,
-            double orig_time_value, List<GeometricMeanData> fig19GeoData, boolean[] nonZeroNumOfDTS,
-            double orig_apfd_value) {
-        String result = projectName;
+    private static String generate19(ProjectEnhancedResults project, double orig_time_value,
+            List<GeometricMeanData> fig19GeoData) {
+        boolean[] nonZeroNumOfDTS = project.get_fig19_nonZeroNumOfDTS();
+        double[] orig_values = project.get_fig19_orig();
+        double[] time_values = project.get_fig19_time();
+        String result = project.getName();
         double enhancedParaSpeedup = 0;
         double unenhancedPara = 0;
         double diffBetweenEnhancedUnenhanced = 0;
@@ -174,14 +204,14 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
 
             result += " & ";
             if (diffBetweenEnhancedUnenhanced >= 0.0 || output.equals("0\\%")) {
-                result += "\\phantom{-}";
+                result += "\\pMinus";
                 if (output.length() == 3) // single digit number, #\%
                 {
-                    result += "\\phantom{1}";
+                    result += "\\z";
                 }
             } else { // negative
                 if (output.length() == 4) {// single digit number, #\%
-                    result += "\\phantom{1}";
+                    result += "\\z";
                 }
             }
 
@@ -213,14 +243,14 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
 
             result += " & ";
             if (diffBetweenEnhancedUnenhanced >= 0.0 || output.equals("0\\%")) {
-                result += "\\phantom{-}";
+                result += "\\pMinus";
                 if (output.length() == 3) // single digit number, #\%
                 {
-                    result += "\\phantom{1}";
+                    result += "\\z";
                 }
             } else { // negative
                 if (output.length() == 4) {// single digit number, #\%
-                    result += "\\phantom{1}";
+                    result += "\\z";
                 }
             }
 
@@ -246,11 +276,11 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
     private static String generateLatexString(List<Project> projList, List<Project> otherProjList, String type) {
         String latexString = "";
         List<Project> sortedList = new ArrayList<Project>();
-        sortList(projList, sortedList, CRYSTAL_NAME);
-        sortList(projList, sortedList, JFREECHART_NAME);
-        sortList(projList, sortedList, JODATIME_NAME);
-        sortList(projList, sortedList, SYNOTPIC_NAME);
-        sortList(projList, sortedList, XMLSECURITY_NAME);
+        sortList(projList, sortedList, Constants.CRYSTAL_NAME);
+        sortList(projList, sortedList, Constants.JFREECHART_NAME);
+        sortList(projList, sortedList, Constants.JODATIME_NAME);
+        sortList(projList, sortedList, Constants.SYNOTPIC_NAME);
+        sortList(projList, sortedList, Constants.XMLSECURITY_NAME);
 
         int index = 0;
         List<GeometricMeanData> fig19GeoData = new ArrayList<>();
@@ -261,28 +291,16 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
                 double orig_time_value = (temp.getOrigTimeValue() == 0)
                         ? ((ProjectEnhancedResults) otherProjList.get(index)).getOrigTimeValue()
                         : temp.getOrigTimeValue();
-                double orig_apfd_value = (temp.getOrigAPFDValue() == 0)
-                        ? ((ProjectEnhancedResults) otherProjList.get(index)).getOrigAPFDValue()
-                        : temp.getOrigAPFDValue();
-                latexString += generate19(temp.getName(), temp.get_fig19_orig(), temp.get_fig19_time(), orig_time_value,
-                        fig19GeoData, temp.get_fig19_nonZeroNumOfDTS(), orig_apfd_value);
+                latexString += generate19(temp, orig_time_value, fig19GeoData);
                 latexString += "\r\n";
             } else if (temp.isFig18()) {
                 double orig_time_value = (temp.getOrigTimeValue() == 0)
                         ? ((ProjectEnhancedResults) otherProjList.get(index)).getOrigTimeValue()
                         : temp.getOrigTimeValue();
-                double orig_apfd_value = (temp.getOrigAPFDValue() == 0)
-                        ? ((ProjectEnhancedResults) otherProjList.get(index)).getOrigAPFDValue()
-                        : temp.getOrigAPFDValue();
-                latexString += generate18(temp.getName(), temp.get_fig18_percents(), temp.get_fig18_values(),
-                        orig_time_value, type, temp.get_fig18_nonZeroNumOfDTS(), orig_apfd_value);
+                latexString += generate18(temp, orig_time_value);
                 latexString += "\r\n";
             } else if (temp.isFig17()) {
-                double orig_apfd_value = (temp.getOrigAPFDValue() == 0)
-                        ? ((ProjectEnhancedResults) otherProjList.get(index)).getOrigAPFDValue()
-                        : temp.getOrigAPFDValue();
-                latexString += generate17(temp.getName(), temp.get_fig17_values(), orig_apfd_value,
-                        temp.get_fig17_nonZeroNumOfDTS());
+                latexString += generate17(temp);
                 latexString += "\r\n";
             }
             index++;
@@ -356,10 +374,10 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
                     diffStringFormat = "0\\%";
                 }
                 if (diffOfGeometricMeans >= 0.0 || diffStringFormat.equals("0\\%")) {
-                    diffStringFormat = "\\phantom{-}" + diffStringFormat;
+                    diffStringFormat = "\\pMinus" + diffStringFormat;
                 }
                 if (diffOfGeometricMeans * 100 < 10.0 && diffOfGeometricMeans * 100 > -10.0) {
-                    diffStringFormat = "\\phantom{1}" + diffStringFormat;
+                    diffStringFormat = "\\z" + diffStringFormat;
                 }
                 sb.append(" & " + diffStringFormat);
             }
@@ -400,14 +418,16 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
             if (file.isFile()) {
 
                 // String containing all the flags
-                String flagsInFile = getFlagsLine(file);
+                String flagsInFile = getFlagsLine(file, Constants.ARGUMENT_STRING);
                 if (flagsInFile == null) {
                     continue;
                 }
+
+                String timeInFile = getFlagsLine(file, Constants.TIME_STRING);
+                String coverageInFile = getFlagsLine(file, Constants.COVERAGE_STRING);
+
                 // get rid of square brackets
-                flagsInFile = flagsInFile.substring(1, flagsInFile.length() - 1);
-                String[] flags = flagsInFile.split(",");
-                List<String> flagsList = Arrays.asList(flags);
+                List<String> flagsList = getRidSquareBrackets(flagsInFile);
                 // get rid of whitespaces
                 for (int i = 0; i < flagsList.size(); i++) {
                     flagsList.set(i, flagsList.get(i).trim());
@@ -425,15 +445,15 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
                 index = flagsList.indexOf("-project");
                 String projectName = flagsList.get(index + 1);
                 if (projectName.equals("crystal")) {
-                    projectName = CRYSTAL_NAME;
+                    projectName = Constants.CRYSTAL_NAME;
                 } else if (projectName.equals("jfreechart")) {
-                    projectName = JFREECHART_NAME;
+                    projectName = Constants.JFREECHART_NAME;
                 } else if (projectName.equals("jodatime")) {
-                    projectName = JODATIME_NAME;
+                    projectName = Constants.JODATIME_NAME;
                 } else if (projectName.equals("synoptic")) {
-                    projectName = SYNOTPIC_NAME;
+                    projectName = Constants.SYNOTPIC_NAME;
                 } else if (projectName.equals("xml_security")) {
-                    projectName = XMLSECURITY_NAME;
+                    projectName = Constants.XMLSECURITY_NAME;
                 } else {
                     System.err.println("Project argument is specified but the project name"
                             + " value provided is invalid. Please use either crystal, jfreechart, jodatime, synoptic or xml_security.");
@@ -467,14 +487,13 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
                 if (indexOfProj != -1) {
                     currProj2 = currProjList.get(indexOfProj);
                 } else {// projectName not seen before
-
                     currProj2 = new ProjectEnhancedResults(projectName);
                     currProjList.add(currProj2);
                 }
                 ProjectEnhancedResults currProj = (ProjectEnhancedResults) currProj2;
 
-                int numFixed = Integer.parseInt(parseFile(file, FIXED_DTS));
-                int numNotFixed = Integer.parseInt(parseFile(file, NOT_FIXED_DTS));
+                int numFixed = Integer.parseInt(parseFile(file, Constants.FIXED_DTS));
+                int numNotFixed = Integer.parseInt(parseFile(file, Constants.NOT_FIXED_DTS));
                 int numTotal = numFixed + numNotFixed;
 
                 /*
@@ -494,7 +513,7 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
 
                 // parallelization technique, figure 19
                 if (techniqueName.equals("parallelization")) {
-                    String order_time_string = parseFile(file, ORDER_TIME_PARA);
+                    String order_time_string = parseFile(file, Constants.ORDER_TIME_PARA);
                     double order_time = Double.parseDouble(order_time_string);
                     // order will be time or original
                     // k = 2, 4, 8, 16 is the number of machines
@@ -515,35 +534,41 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
                         if (numMachines == 2) {
                             curr_fig19_array[0] = order_time;
                             currProj.setNumTotalDependentTests(19, 0, numTotal);
+                            setTimeAndCoverage(currProj, 19, timeInFile, coverageInFile, 0);
                         } else if (numMachines == 4) {
                             curr_fig19_array[2] = order_time;
                             currProj.setNumTotalDependentTests(19, 2, numTotal);
+                            setTimeAndCoverage(currProj, 19, timeInFile, coverageInFile, 2);
                         } else if (numMachines == 8) {
                             curr_fig19_array[4] = order_time;
                             currProj.setNumTotalDependentTests(19, 4, numTotal);
+                            setTimeAndCoverage(currProj, 19, timeInFile, coverageInFile, 4);
                         } else if (numMachines == 16) {
                             curr_fig19_array[6] = order_time;
                             currProj.setNumTotalDependentTests(19, 6, numTotal);
+                            setTimeAndCoverage(currProj, 19, timeInFile, coverageInFile, 6);
                         }
-                    } else // enhanced
-                    {
+                    } else { // enhanced
                         if (numMachines == 2) {
                             curr_fig19_array[1] = order_time;
+                            setTimeAndCoverage(currProj, 19, timeInFile, coverageInFile, 1);
                         } else if (numMachines == 4) {
                             curr_fig19_array[3] = order_time;
+                            setTimeAndCoverage(currProj, 19, timeInFile, coverageInFile, 3);
                         } else if (numMachines == 8) {
                             curr_fig19_array[5] = order_time;
+                            setTimeAndCoverage(currProj, 19, timeInFile, coverageInFile, 5);
                         } else if (numMachines == 16) {
                             curr_fig19_array[7] = order_time;
+                            setTimeAndCoverage(currProj, 19, timeInFile, coverageInFile, 7);
                         }
                     }
-
                 } // selection technique, figure 18
                 else if (techniqueName.equals("selection")) {
 
-                    String apfd_value_string = parseFile(file, APFD_VALUE);
+                    String apfd_value_string = parseFile(file, Constants.APFD_VALUE);
                     double apfd_value = Double.parseDouble(apfd_value_string);
-                    String order_time_string = parseFile(file, ORDER_TIME);
+                    String order_time_string = parseFile(file, Constants.ORDER_TIME);
                     double order_time = Double.parseDouble(order_time_string);
                     currProj.useFig18();
                     double[] fig18_values_array = currProj.get_fig18_values();
@@ -556,16 +581,19 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
                                 fig18_values_array[0] = apfd_value;
                                 fig18_percents_array[0] = order_time;
                                 currProj.setNumTotalDependentTests(18, 0, numTotal);
+                                setTimeAndCoverage(currProj, 18, timeInFile, coverageInFile, 0);
                             } else if (orderName.equals("absolute")) {
                                 // S2
                                 fig18_values_array[2] = apfd_value;
                                 fig18_percents_array[2] = order_time;
                                 currProj.setNumTotalDependentTests(18, 2, numTotal);
+                                setTimeAndCoverage(currProj, 18, timeInFile, coverageInFile, 2);
                             } else {
                                 // S3
                                 fig18_values_array[4] = apfd_value;
                                 fig18_percents_array[4] = order_time;
                                 currProj.setNumTotalDependentTests(18, 4, numTotal);
+                                setTimeAndCoverage(currProj, 18, timeInFile, coverageInFile, 4);
                             }
 
                         } else if (coverageName.equals("function")) {
@@ -574,17 +602,19 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
                                 fig18_values_array[6] = apfd_value;
                                 fig18_percents_array[6] = order_time;
                                 currProj.setNumTotalDependentTests(18, 6, numTotal);
-
+                                setTimeAndCoverage(currProj, 18, timeInFile, coverageInFile, 6);
                             } else if (orderName.equals("absolute")) {
                                 // S5
                                 fig18_values_array[8] = apfd_value;
                                 fig18_percents_array[8] = order_time;
                                 currProj.setNumTotalDependentTests(18, 8, numTotal);
+                                setTimeAndCoverage(currProj, 18, timeInFile, coverageInFile, 8);
                             } else {
                                 // S6
                                 fig18_values_array[10] = apfd_value;
                                 fig18_percents_array[10] = order_time;
                                 currProj.setNumTotalDependentTests(18, 10, numTotal);
+                                setTimeAndCoverage(currProj, 18, timeInFile, coverageInFile, 10);
                             }
                         }
 
@@ -594,30 +624,34 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
                                 // S1
                                 fig18_values_array[1] = apfd_value;
                                 fig18_percents_array[1] = order_time;
+                                setTimeAndCoverage(currProj, 18, timeInFile, coverageInFile, 1);
                             } else if (orderName.equals("absolute")) {
                                 // S2
                                 fig18_values_array[3] = apfd_value;
                                 fig18_percents_array[3] = order_time;
+                                setTimeAndCoverage(currProj, 18, timeInFile, coverageInFile, 3);
                             } else {
                                 // S3
                                 fig18_values_array[5] = apfd_value;
                                 fig18_percents_array[5] = order_time;
+                                setTimeAndCoverage(currProj, 18, timeInFile, coverageInFile, 5);
                             }
-
                         } else if (coverageName.equals("function")) {
                             if (orderName.equals("original")) {
                                 // S4
                                 fig18_values_array[7] = apfd_value;
                                 fig18_percents_array[7] = order_time;
-
+                                setTimeAndCoverage(currProj, 18, timeInFile, coverageInFile, 7);
                             } else if (orderName.equals("absolute")) {
                                 // S5
                                 fig18_values_array[9] = apfd_value;
                                 fig18_percents_array[9] = order_time;
+                                setTimeAndCoverage(currProj, 18, timeInFile, coverageInFile, 9);
                             } else {
                                 // S6
                                 fig18_values_array[11] = apfd_value;
                                 fig18_percents_array[11] = order_time;
+                                setTimeAndCoverage(currProj, 18, timeInFile, coverageInFile, 11);
                             }
                         }
                     }
@@ -626,15 +660,19 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
                 else if (techniqueName.equals("prioritization")) {
                     // if orderName is original, run time for entire test suite
                     if (orderName.equals("original")) {
-                        String order_time_string = parseFile(file, ORDER_TIME);
+                        String order_time_string = parseFile(file, Constants.ORDER_TIME);
                         double order_time = Double.parseDouble(order_time_string);
                         currProj.setOrigTimeValue(order_time);
-                        String apfd_value_string = parseFile(file, APFD_VALUE);
+                        String apfd_value_string = parseFile(file, Constants.APFD_VALUE);
                         double apfd_value = Double.parseDouble(apfd_value_string);
                         currProj.setOrigAPFDValue(apfd_value);
+                        if (timeInFile != null && coverageInFile != null) {
+                            currProj.setOrig_time(strArrayToDoubleArray(getRidSquareBrackets(timeInFile)));
+                            currProj.setOrig_coverage(strArrayToDoubleArray(getRidSquareBrackets(coverageInFile)));
+                        }
                         continue;
                     }
-                    String apfd_value_string = parseFile(file, APFD_VALUE);
+                    String apfd_value_string = parseFile(file, Constants.APFD_VALUE);
                     double apfd_value = Double.parseDouble(apfd_value_string);
                     currProj.useFig17();
                     double[] fig17_array = currProj.get_fig17_values();
@@ -645,52 +683,53 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
                                 // T3
                                 fig17_array[0] = apfd_value;
                                 currProj.setNumTotalDependentTests(17, 0, numTotal);
+                                setTimeAndCoverage(currProj, 17, timeInFile, coverageInFile, 0);
                             } else { // relative
                                 // T4
                                 fig17_array[2] = apfd_value;
                                 currProj.setNumTotalDependentTests(17, 2, numTotal);
+                                setTimeAndCoverage(currProj, 17, timeInFile, coverageInFile, 2);
                             }
-
                         } else if (coverageName.equals("function")) {
                             if (orderName.equals("absolute")) {
                                 // T5
                                 fig17_array[4] = apfd_value;
                                 currProj.setNumTotalDependentTests(17, 4, numTotal);
-
+                                setTimeAndCoverage(currProj, 17, timeInFile, coverageInFile, 4);
                             } else { // relative
                                 // T7
                                 fig17_array[6] = apfd_value;
                                 currProj.setNumTotalDependentTests(17, 6, numTotal);
+                                setTimeAndCoverage(currProj, 17, timeInFile, coverageInFile, 6);
                             }
                         }
-
                     } else { // auto, enhanced, index should be i = 1, i+=2
                         if (coverageName.equals("statement")) {
                             if (orderName.equals("absolute")) {
                                 // T3
                                 fig17_array[1] = apfd_value;
+                                setTimeAndCoverage(currProj, 17, timeInFile, coverageInFile, 1);
                             } else {
                                 // T4
                                 fig17_array[3] = apfd_value;
+                                setTimeAndCoverage(currProj, 17, timeInFile, coverageInFile, 3);
                             }
 
                         } else if (coverageName.equals("function")) {
                             if (orderName.equals("absolute")) {
                                 // T5
                                 fig17_array[5] = apfd_value;
-
+                                setTimeAndCoverage(currProj, 17, timeInFile, coverageInFile, 5);
                             } else {
                                 // T7
                                 fig17_array[7] = apfd_value;
+                                setTimeAndCoverage(currProj, 17, timeInFile, coverageInFile, 7);
                             }
                         }
-
                     }
-
                 } else {// garbage value...return error
                     // TODO throw an exception and exit
                 }
-
             }
         }
 
@@ -715,11 +754,32 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
         } else { // fig 17
             origOutputFilename += "enhanced-prior-orig-results.tex";
             autoOutputFilename += "enhanced-prior-auto-results.tex";
-
         }
 
         writeToLatexFile(origLatexString, origOutputFilename);
         writeToLatexFile(autoLatexString, autoOutputFilename);
+    }
 
+    private static List<String> getRidSquareBrackets(String line) {
+        String lineNoBrackets = line.substring(1, line.length() - 1);
+        String[] elements = lineNoBrackets.split(",");
+        return Arrays.asList(elements);
+    }
+
+    private static Double[] strArrayToDoubleArray(List<String> strArr) {
+        Double[] doubleArr = new Double[strArr.size()];
+        for (int i = 0; i < strArr.size(); i++) {
+            doubleArr[i] = Double.valueOf(strArr.get(i));
+        }
+        return doubleArr;
+    }
+
+    private static void setTimeAndCoverage(ProjectEnhancedResults currProj, int figNum, String timeInFile,
+            String coverageInFile, int indexOfProj) {
+        // Get time and coverage information for this configuration
+        if (timeInFile != null && coverageInFile != null) {
+            currProj.setCoverageInfo(figNum, indexOfProj, strArrayToDoubleArray(getRidSquareBrackets(coverageInFile)));
+            currProj.setTimeInfo(figNum, indexOfProj, strArrayToDoubleArray(getRidSquareBrackets(timeInFile)));
+        }
     }
 }

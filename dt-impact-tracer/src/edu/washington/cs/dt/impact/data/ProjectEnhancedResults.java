@@ -28,9 +28,9 @@ public class ProjectEnhancedResults extends Project {
      * where i =0, i+=2
      */
     // corresponds to P1(Original Order)
-    private double[] fig19_orig;
+    private double[] fig19_orig_order;
     // corresponds to P2(Time-Minimized)
-    private double[] fig19_time;
+    private double[] fig19_time_order;
 
     private boolean[] fig17_nonzero;
     private boolean[] fig18_nonzero;
@@ -40,6 +40,55 @@ public class ProjectEnhancedResults extends Project {
     private boolean uses_fig18;
     private boolean uses_fig19;
 
+    private Double[][] fig17_time;
+    private Double[][] fig17_coverage;
+    private Double[][] fig18_time;
+    private Double[][] fig18_coverage;
+    private Double[][] fig19_time;
+    private Double[][] fig19_coverage;
+    private Double[] orig_time;
+    private Double[] orig_coverage;
+
+    public Double[][] getFig17_time() {
+        return fig17_time;
+    }
+
+    public Double[][] getFig17_coverage() {
+        return fig17_coverage;
+    }
+
+    public Double[][] getFig18_time() {
+        return fig18_time;
+    }
+
+    public Double[][] getFig18_coverage() {
+        return fig18_coverage;
+    }
+
+    public Double[][] getFig19_time() {
+        return fig19_time;
+    }
+
+    public Double[][] getFig19_coverage() {
+        return fig19_coverage;
+    }
+
+    public Double[] getOrig_time() {
+        return orig_time;
+    }
+
+    public void setOrig_time(Double[] orig_time) {
+        this.orig_time = orig_time;
+    }
+
+    public Double[] getOrig_coverage() {
+        return orig_coverage;
+    }
+
+    public void setOrig_coverage(Double[] orig_coverage) {
+        this.orig_coverage = orig_coverage;
+    }
+
     public ProjectEnhancedResults(String projName) {
         name = projName;
         orig_time_value = 0;
@@ -47,14 +96,20 @@ public class ProjectEnhancedResults extends Project {
         fig17_values = new double[4 * 2];
         fig18_values = new double[6 * 2];
         fig18_percents = new double[6 * 2];
-        fig19_orig = new double[2 * 4];
-        fig19_time = new double[2 * 4];
+        fig19_orig_order = new double[2 * 4];
+        fig19_time_order = new double[2 * 4];
         fig17_nonzero = new boolean[4 * 2];
         fig18_nonzero = new boolean[6 * 2];
         fig19_nonzero = new boolean[4 * 2];
         uses_fig17 = false;
         uses_fig18 = false;
         uses_fig19 = false;
+        fig17_time = new Double[4 * 2][];
+        fig17_coverage = new Double[4 * 2][];
+        fig18_time = new Double[6 * 2][];
+        fig18_coverage = new Double[6 * 2][];
+        fig19_time = new Double[2 * 4][];
+        fig19_coverage = new Double[2 * 4][];
     }
 
     public boolean isFig17() {
@@ -99,11 +154,11 @@ public class ProjectEnhancedResults extends Project {
     }
 
     public double[] get_fig19_orig() {
-        return fig19_orig;
+        return fig19_orig_order;
     }
 
     public double[] get_fig19_time() {
-        return fig19_time;
+        return fig19_time_order;
     }
 
     public void setOrigTimeValue(double val) {
@@ -121,6 +176,7 @@ public class ProjectEnhancedResults extends Project {
     public double getOrigAPFDValue() {
         return orig_apfd_value;
     }
+
     /*
      * @param figNum represents the figure number in the paper (17, 18, or 19)
      *
@@ -128,7 +184,6 @@ public class ProjectEnhancedResults extends Project {
      *
      * @param numTotal is the total number of DTS for that file
      */
-
     public void setNumTotalDependentTests(int figNum, int index, int numTotal) {
         if (figNum == 17) {
             fig17_nonzero[index] = numTotal != 0;
@@ -136,6 +191,26 @@ public class ProjectEnhancedResults extends Project {
             fig18_nonzero[index] = numTotal != 0;
         } else { // 19
             fig19_nonzero[index] = numTotal != 0;
+        }
+    }
+
+    public void setCoverageInfo(int figNum, int index, Double[] coverageList) {
+        if (figNum == 17) {
+            fig17_coverage[index] = coverageList;
+        } else if (figNum == 18) {
+            fig18_coverage[index] = coverageList;
+        } else { // 19
+            fig19_coverage[index] = coverageList;
+        }
+    }
+
+    public void setTimeInfo(int figNum, int index, Double[] timeList) {
+        if (figNum == 17) {
+            fig17_time[index] = timeList;
+        } else if (figNum == 18) {
+            fig18_time[index] = timeList;
+        } else { // 19
+            fig19_time[index] = timeList;
         }
     }
 
@@ -151,4 +226,3 @@ public class ProjectEnhancedResults extends Project {
         return fig19_nonzero;
     }
 }
-
