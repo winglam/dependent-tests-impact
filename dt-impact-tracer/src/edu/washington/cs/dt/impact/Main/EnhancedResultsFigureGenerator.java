@@ -23,7 +23,7 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
      *
      * format: Crystal & 0.026 & 0.001 & 0.000 & 0.000 \\
      */
-    private static String generate17(ProjectEnhancedResults project) {
+    private static String generate17(ProjectEnhancedResults project, List<GeometricMeanData> fig17Data) {
         double[] values = project.get_fig17_values();
         boolean[] nonZeroNumOfDTS = project.get_fig17_nonZeroNumOfDTS();
         String result = project.getName();
@@ -54,6 +54,7 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
             if (!allowNegatives && val < 0.0) {
                 val = 0.0;
             }
+            fig17Data.add(new GeometricMeanData(1, val, null, null));
             String output = apfdFormat.format(val);
             if (output.equals("-.00")) {
                 output = ".00";
@@ -81,7 +82,8 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
      *
      * format: Crystal & 5.4\%\pa & 1.3\%\pa & 0.000 & 0.000 & 0.008 & 0.015 & 0.036 & 0.000 \\
      */
-    private static String generate18(ProjectEnhancedResults project, double orig_time_value) {
+    private static String generate18(ProjectEnhancedResults project, double orig_time_value,
+            List<GeometricMeanData> fig18apfd, List<GeometricMeanData> fig18percent) {
         double[] percentages = project.get_fig18_percents();
         double[] values = project.get_fig18_values();
         boolean[] nonZeroNumOfDTS = project.get_fig18_nonZeroNumOfDTS();
@@ -112,7 +114,7 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
             if (!allowNegatives && percent < 0.0) {
                 percent = 0.0;
             }
-
+            fig18percent.add(new GeometricMeanData(1, percent / 100, null, null));
             result += " & ";
             String output = percentFormat.format(percent);
             if (output.equals("-0")) {
@@ -157,6 +159,7 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
             if (!allowNegatives && val < 0.0) {
                 val = 0.0;
             }
+            fig18apfd.add(new GeometricMeanData(1, val, null, null));
             String output = apfdFormat.format(val);
             if (output.equals("-.00")) {
                 output = ".00";
@@ -222,6 +225,7 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
                     Constants.ORDER.ORIGINAL));
             fig19GeoData.add(new GeometricMeanData(getK(i), unenhancedPara, Constants.TD_SETTING.GIVEN_TD,
                     Constants.ORDER.ORIGINAL));
+            fig19GeoData.add(new GeometricMeanData(1, diffBetweenEnhancedUnenhanced, null, null));
         }
         // i represents unenhanced, i + 1 represents enhanced
         for (int i = 0; i + 2 <= time_values.length; i += 2) {
@@ -261,10 +265,30 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
                     Constants.ORDER.TIME));
             fig19GeoData.add(new GeometricMeanData(getK(i), unenhancedPara, Constants.TD_SETTING.GIVEN_TD,
                     Constants.ORDER.TIME));
+            fig19GeoData.add(new GeometricMeanData(1, diffBetweenEnhancedUnenhanced, null, null));
         }
         result += "\\\\";
-
         return result;
+    }
+
+    private static String formatPercent(double num) {
+        String diffStringFormat = timeFormat.format(num);
+        if (diffStringFormat.equals("-0\\%")) {
+            diffStringFormat = "0\\%";
+        }
+        return diffStringFormat;
+    }
+
+    private static String formatAPFD(double num) {
+        double val = num;
+        if (!allowNegatives && val < 0.0) {
+            val = 0.0;
+        }
+        String output = apfdFormat.format(val);
+        if (output.equals("-.00")) {
+            output = ".00";
+        }
+        return output;
     }
 
     /*
@@ -283,6 +307,9 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
         sortList(projList, sortedList, Constants.XMLSECURITY_NAME);
 
         int index = 0;
+        List<GeometricMeanData> fig17GeoData = new ArrayList<>();
+        List<GeometricMeanData> fig18GeoDataPercent = new ArrayList<>();
+        List<GeometricMeanData> fig18GeoDataAPFD = new ArrayList<>();
         List<GeometricMeanData> fig19GeoData = new ArrayList<>();
         for (Project projTemp : sortedList) {
             ProjectEnhancedResults temp = (ProjectEnhancedResults) projTemp;
@@ -297,13 +324,35 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
                 double orig_time_value = (temp.getOrigTimeValue() == 0)
                         ? ((ProjectEnhancedResults) otherProjList.get(index)).getOrigTimeValue()
                         : temp.getOrigTimeValue();
-                latexString += generate18(temp, orig_time_value);
+                latexString += generate18(temp, orig_time_value, fig18GeoDataAPFD, fig18GeoDataPercent);
                 latexString += "\r\n";
             } else if (temp.isFig17()) {
-                latexString += generate17(temp);
+                latexString += generate17(temp, fig17GeoData);
                 latexString += "\r\n";
             }
             index++;
+        }
+
+        if (!fig17GeoData.isEmpty()) {
+            if (type.equals("orig")) {
+                latexString += getMeanOfDiffs("priorHumanWritten", fig17GeoData, false);
+            } else if (type.equals("auto")) {
+                latexString += getMeanOfDiffs("priorAutoGenerated", fig17GeoData, false);
+            } else {
+                throw new RuntimeException();
+            }
+        }
+
+        if (!fig18GeoDataPercent.isEmpty()) {
+            if (type.equals("orig")) {
+                latexString += getMeanOfDiffs("seleHumanWrittenPercent", fig18GeoDataPercent, true);
+                latexString += getMeanOfDiffs("seleHumanWrittenAPFD", fig18GeoDataAPFD, false);
+            } else if (type.equals("auto")) {
+                latexString += getMeanOfDiffs("seleAutoGeneratedPercent", fig18GeoDataPercent, true);
+                latexString += getMeanOfDiffs("seleAutoGeneratedAPFD", fig18GeoDataAPFD, false);
+            } else {
+                throw new RuntimeException();
+            }
         }
 
         if (!fig19GeoData.isEmpty()) {
@@ -313,6 +362,9 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
                 double value = 1.0;
                 int counter = 0;
                 for (GeometricMeanData data : fig19GeoData) {
+                    if (data.getOrder() == null || data.getTdSetting() == null) {
+                        continue;
+                    }
                     if (i % 2 == 0 && !data.getTdSetting().equals(Constants.TD_SETTING.OMITTED_TD)) {
                         continue;
                     }
@@ -383,10 +435,40 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
             }
             sb.append(" \\\\");
             latexString += sb.toString();
+
+            if (type.equals("orig")) {
+                latexString += getMeanOfDiffs("paraHumanWritten", fig19GeoData, true);
+            } else if (type.equals("auto")) {
+                latexString += getMeanOfDiffs("paraAutoGenerated", fig19GeoData, true);
+            } else {
+                throw new RuntimeException();
+            }
         }
 
         // take off the "\r\n" from the last line
         return latexString;
+    }
+
+    private static String getMeanOfDiffs(String name, List<GeometricMeanData> figData, boolean isPercent) {
+        // Get mean of the differences
+        double diffOfOrig = 1.0;
+        int origCounter = 0;
+        for (GeometricMeanData data : figData) {
+            if (data.getTdSetting() != null || data.getOrder() != null) {
+                continue;
+            }
+            diffOfOrig *= data.getValue() + 1.0;
+            origCounter += 1;
+        }
+
+        double origGeoMean = 1.0 - (Math.pow(diffOfOrig, (1.0 / origCounter)) - 1.0);
+        String data;
+        if (isPercent) {
+            data = formatPercent(origGeoMean);
+        } else {
+            data = formatAPFD(origGeoMean);
+        }
+        return "\n%\\newcommand{\\" + name + "}{" + data + "}";
     }
 
     /**
