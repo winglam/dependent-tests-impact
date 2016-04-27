@@ -16,12 +16,15 @@ public class NumDependentTestsFigureGenerator extends FigureGenerator {
      * a private method to generate a line of LaTeX needed for figure 7
      *
      */
-    private static String generate7(String projectName, int[] dts, int[] total) {
+    private static String generate7(String projectName, int[] dts, int[] total, IntegerWrapper numConfigWithDT) {
         String result = projectName;
         for (int i = 0; i < dts.length; i++) {
             total[i] += dts[i];
             int val = dts[i];
             result += " & " + val;
+            if (val > 0) {
+                numConfigWithDT.numConfigWithDT += 1;
+            }
         }
         result += " \\\\"; // "\\"
         return result;
@@ -31,12 +34,15 @@ public class NumDependentTestsFigureGenerator extends FigureGenerator {
      * a private method to generate a line of LaTeX needed for figure 8
      *
      */
-    private static String generate8(String projectName, int[] dts, int[] total) {
+    private static String generate8(String projectName, int[] dts, int[] total, IntegerWrapper numConfigWithDT) {
         String result = projectName;
         for (int i = 0; i < dts.length; i++) {
             total[i] += dts[i];
             int val = dts[i];
             result += " & " + val;
+            if (val > 0) {
+                numConfigWithDT.numConfigWithDT += 1;
+            }
         }
         result += " \\\\"; // "\\"
         return result;
@@ -45,20 +51,37 @@ public class NumDependentTestsFigureGenerator extends FigureGenerator {
     /*
      * a private method that generates Figure 9
      */
-    private static String generate9(String projectName, int[] orig_order, int[] time, int[] total) {
+    private static String generate9(String projectName, int[] orig_order, int[] time, int[] total,
+            IntegerWrapper numConfigWithDT) {
         String result = projectName;
         for (int i = 0; i < orig_order.length; i++) {
             total[i] += orig_order[i];
             int val = orig_order[i];
             result += " & " + val;
+            if (val > 0) {
+                numConfigWithDT.numConfigWithDT += 1;
+            }
         }
         for (int i = 0; i < time.length; i++) {
             total[i + 4] += time[i];
             int val = time[i];
             result += " & " + val;
+            if (val > 0) {
+                numConfigWithDT.numConfigWithDT += 1;
+            }
         }
         result += " \\\\"; // "\\"
         return result;
+    }
+
+    private static class IntegerWrapper {
+        public int numConfigWithDT;
+        public int numConfig;
+
+        public IntegerWrapper() {
+            numConfigWithDT = 0;
+            numConfig = 0;
+        }
     }
 
     /*
@@ -66,8 +89,8 @@ public class NumDependentTestsFigureGenerator extends FigureGenerator {
      *
      * @param projList a list of Projects that each contain data
      */
-
-    private static String generateLatexString(List<Project> projList, List<Project> otherProjList, String type) {
+    private static String generateLatexString(List<Project> projList, List<Project> otherProjList, String type,
+            IntegerWrapper numConfigWithDT) {
         String latexString = "";
         List<Project> sortedList = new ArrayList<Project>();
         sortList(projList, sortedList, Constants.CRYSTAL_NAME);
@@ -83,34 +106,36 @@ public class NumDependentTestsFigureGenerator extends FigureGenerator {
         } else {
             total = new int[4];
         }
+
         for (Project temp2 : sortedList) {
             ProjectNumDependentTests temp = (ProjectNumDependentTests) temp2;
             // get the correct orig_value...one of the Lists will not have the correct value (will be 0)
             if (temp.isFig9()) {
                 if (type.equals("orig")) {
-                    latexString +=
-                            generate9(temp.getName(), temp.get_fig9_human_orig(), temp.get_fig9_human_time(), total);
+                    latexString += generate9(temp.getName(), temp.get_fig9_human_orig(), temp.get_fig9_human_time(),
+                            total, numConfigWithDT);
                 } else {
-                    latexString +=
-                            generate9(temp.getName(), temp.get_fig9_auto_orig(), temp.get_fig9_auto_time(), total);
+                    latexString += generate9(temp.getName(), temp.get_fig9_auto_orig(), temp.get_fig9_auto_time(),
+                            total, numConfigWithDT);
                 }
                 latexString += "\r\n";
             } else if (temp.isFig8()) {
                 if (type.equals("orig")) {
-                    latexString += generate8(temp.getName(), temp.get_fig8_human(), total);
+                    latexString += generate8(temp.getName(), temp.get_fig8_human(), total, numConfigWithDT);
                 } else {
-                    latexString += generate8(temp.getName(), temp.get_fig8_auto(), total);
+                    latexString += generate8(temp.getName(), temp.get_fig8_auto(), total, numConfigWithDT);
                 }
                 latexString += "\r\n";
             } else if (temp.isFig7()) {
                 if (type.equals("orig")) {
-                    latexString += generate7(temp.getName(), temp.get_fig7_human(), total);
+                    latexString += generate7(temp.getName(), temp.get_fig7_human(), total, numConfigWithDT);
                 } else {
-                    latexString += generate7(temp.getName(), temp.get_fig7_auto(), total);
+                    latexString += generate7(temp.getName(), temp.get_fig7_auto(), total, numConfigWithDT);
                 }
                 latexString += "\r\n";
             }
         }
+
         latexString += "\r\n";
         latexString += "\\hline";
         latexString += "\r\n";
@@ -123,6 +148,8 @@ public class NumDependentTestsFigureGenerator extends FigureGenerator {
 
         latexString += "\r\n";
         latexString += "\\hline";
+
+        numConfigWithDT.numConfig += total.length * sortedList.size();
 
         // take off the "\r\n" from the last line
         return latexString;
@@ -333,7 +360,6 @@ public class NumDependentTestsFigureGenerator extends FigureGenerator {
                             }
                         }
                     }
-
                 } // prioritization techinque, figure 7
                 else if (techniqueName.equals("prioritization")) {
                     currProj.useFig7();
@@ -359,7 +385,6 @@ public class NumDependentTestsFigureGenerator extends FigureGenerator {
                                 fig7_human[3] = numTotal;
                             }
                         }
-
                     } else { // auto
                         if (coverageName.equals("statement")) {
                             if (orderName.equals("absolute")) {
@@ -382,17 +407,23 @@ public class NumDependentTestsFigureGenerator extends FigureGenerator {
                         }
 
                     }
-
                 } else {// garbage value...return error
                     // TODO throw an exception and exit
                 }
-
             }
         }
 
+        IntegerWrapper numConfigWithDT = new IntegerWrapper();
+
         // generate LaTeX for the human-written and automatic test suites
-        String origLatexString = generateLatexString(proj_orig_arrayList, proj_auto_arrayList, "orig");
-        String autoLatexString = generateLatexString(proj_auto_arrayList, proj_orig_arrayList, "auto");
+        String origLatexString = generateLatexString(proj_orig_arrayList, proj_auto_arrayList, "orig", numConfigWithDT);
+        String autoLatexString = generateLatexString(proj_auto_arrayList, proj_orig_arrayList, "auto", numConfigWithDT);
+        origLatexString +=
+                "\n%Number of configurations with DT (including orig and auto): " + numConfigWithDT.numConfigWithDT;
+        origLatexString += "\n%Number of configurations (including orig and auto): " + numConfigWithDT.numConfig;
+        autoLatexString +=
+                "\n%Number of configurations with DT (including orig and auto): " + numConfigWithDT.numConfigWithDT;
+        autoLatexString += "\n%Number of configurations (including orig and auto): " + numConfigWithDT.numConfig;
 
         String origOutputFilename = outputDirectoryName + System.getProperty("file.separator");
         String autoOutputFilename = outputDirectoryName + System.getProperty("file.separator");
