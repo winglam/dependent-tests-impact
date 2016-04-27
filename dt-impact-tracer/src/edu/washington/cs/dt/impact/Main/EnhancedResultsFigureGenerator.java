@@ -83,7 +83,8 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
      * format: Crystal & 5.4\%\pa & 1.3\%\pa & 0.000 & 0.000 & 0.008 & 0.015 & 0.036 & 0.000 \\
      */
     private static String generate18(ProjectEnhancedResults project, double orig_time_value,
-            List<GeometricMeanData> fig18apfd, List<GeometricMeanData> fig18percent) {
+            List<GeometricMeanData> fig18apfd, List<GeometricMeanData> fig18percent,
+            PercentWrapper percentComparedToUnenhanced) {
         double[] percentages = project.get_fig18_percents();
         double[] values = project.get_fig18_values();
         boolean[] nonZeroNumOfDTS = project.get_fig18_nonZeroNumOfDTS();
@@ -110,6 +111,10 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
                 // orig - enhanced
                 percent = (orig_time_value - percentages[i + 1]) / orig_time_value * 100;
             }
+
+            // Increase in runtime of enhanced compared to unenhanced
+            percentComparedToUnenhanced.percent += (percentages[i + 1] - percentages[i]) / orig_time_value;
+            percentComparedToUnenhanced.numPercents += 1;
 
             if (!allowNegatives && percent < 0.0) {
                 percent = 0.0;
@@ -178,7 +183,7 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
      * a private method that generates Figure 19
      */
     private static String generate19(ProjectEnhancedResults project, double orig_time_value,
-            List<GeometricMeanData> fig19GeoData) {
+            List<GeometricMeanData> fig19GeoData, PercentWrapper percentComparedToUnenhanced) {
         boolean[] nonZeroNumOfDTS = project.get_fig19_nonZeroNumOfDTS();
         double[] orig_values = project.get_fig19_orig();
         double[] time_values = project.get_fig19_time();
@@ -199,6 +204,10 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
             }
             // enhanced - unenhanced or enhanced - orig if DTS != 0
             diffBetweenEnhancedUnenhanced = unenhancedPara - enhancedParaSpeedup;
+
+            // Increase in runtime of enhanced compared to unenhanced
+            percentComparedToUnenhanced.percent += enhancedParaSpeedup - (orig_values[i] / orig_time_value);
+            percentComparedToUnenhanced.numPercents += 1;
 
             String output = timeFormat.format(diffBetweenEnhancedUnenhanced);
             if (output.equals("-0\\%")) {
@@ -240,6 +249,11 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
             }
             // enhanced - unenhanced or enhanced - orig if DTS != 0
             diffBetweenEnhancedUnenhanced = unenhancedPara - enhancedParaSpeedup;
+
+            // Increase in runtime of enhanced compared to unenhanced
+            percentComparedToUnenhanced.percent += enhancedParaSpeedup - (orig_values[i] / orig_time_value);
+            percentComparedToUnenhanced.numPercents += 1;
+
             String output = timeFormat.format(diffBetweenEnhancedUnenhanced);
             if (output.equals("-0\\%")) {
                 output = "0\\%";
@@ -271,14 +285,6 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
         return result;
     }
 
-    private static String formatPercent(double num) {
-        String diffStringFormat = timeFormat.format(num);
-        if (diffStringFormat.equals("-0\\%")) {
-            diffStringFormat = "0\\%";
-        }
-        return diffStringFormat;
-    }
-
     private static String formatAPFD(double num) {
         double val = num;
         if (!allowNegatives && val < 0.0) {
@@ -297,7 +303,8 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
      * @param projList a list of Projects that each contain data
      */
 
-    private static String generateLatexString(List<Project> projList, List<Project> otherProjList, String type) {
+    private static String generateLatexString(List<Project> projList, List<Project> otherProjList, String type,
+            PercentWrapper percentComparedToUnenhanced) {
         String latexString = "";
         List<Project> sortedList = new ArrayList<Project>();
         sortList(projList, sortedList, Constants.CRYSTAL_NAME);
@@ -318,13 +325,14 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
                 double orig_time_value = (temp.getOrigTimeValue() == 0)
                         ? ((ProjectEnhancedResults) otherProjList.get(index)).getOrigTimeValue()
                         : temp.getOrigTimeValue();
-                latexString += generate19(temp, orig_time_value, fig19GeoData);
+                latexString += generate19(temp, orig_time_value, fig19GeoData, percentComparedToUnenhanced);
                 latexString += "\r\n";
             } else if (temp.isFig18()) {
                 double orig_time_value = (temp.getOrigTimeValue() == 0)
                         ? ((ProjectEnhancedResults) otherProjList.get(index)).getOrigTimeValue()
                         : temp.getOrigTimeValue();
-                latexString += generate18(temp, orig_time_value, fig18GeoDataAPFD, fig18GeoDataPercent);
+                latexString += generate18(temp, orig_time_value, fig18GeoDataAPFD, fig18GeoDataPercent,
+                        percentComparedToUnenhanced);
                 latexString += "\r\n";
             } else if (temp.isFig17()) {
                 latexString += generate17(temp, fig17GeoData);
@@ -815,9 +823,18 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
             }
         }
 
+        PercentWrapper percentRuntime = new PercentWrapper();
+
         // generate LaTeX for the human-written and automatic test suites
-        String origLatexString = generateLatexString(proj_orig_arrayList, proj_auto_arrayList, "orig");
-        String autoLatexString = generateLatexString(proj_auto_arrayList, proj_orig_arrayList, "auto");
+        String origLatexString = generateLatexString(proj_orig_arrayList, proj_auto_arrayList, "orig", percentRuntime);
+        String autoLatexString = generateLatexString(proj_auto_arrayList, proj_orig_arrayList, "auto", percentRuntime);
+
+        origLatexString += "\n%Percent increase compared to unenhanced (including orig and auto): "
+                + formatPercent(percentRuntime.percent);
+        origLatexString += "\n%Number of comparisons (including orig and auto): " + percentRuntime.numPercents;
+        autoLatexString += "\n%Percent increase compared to unenhanced (including orig and auto): "
+                + formatPercent(percentRuntime.percent);
+        autoLatexString += "\n%Number of comparisons (including orig and auto): " + percentRuntime.numPercents;
 
         String origOutputFilename = outputDirectoryName + System.getProperty("file.separator");
         String autoOutputFilename = outputDirectoryName + System.getProperty("file.separator");
@@ -840,6 +857,16 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
 
         writeToLatexFile(origLatexString, origOutputFilename);
         writeToLatexFile(autoLatexString, autoOutputFilename);
+    }
+
+    private static class PercentWrapper {
+        public double percent;
+        public int numPercents;
+
+        public PercentWrapper() {
+            percent = 0.0;
+            numPercents = 0;
+        }
     }
 
     private static List<String> getRidSquareBrackets(String line) {

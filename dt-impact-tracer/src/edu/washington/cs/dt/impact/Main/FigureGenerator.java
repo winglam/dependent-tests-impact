@@ -47,11 +47,19 @@ public class FigureGenerator {
         return null; // none of the lines contained the keyword
 
     }
+
+    protected static String formatPercent(double num) {
+        String diffStringFormat = timeFormat.format(num);
+        if (diffStringFormat.equals("-0\\%")) {
+            diffStringFormat = "0\\%";
+        }
+        return diffStringFormat;
+    }
+
     /*
      * a public method that gets the line with all the flags in the file
      * that line starts with "-technique"
      */
-
     public static String getFlagsLine(File file, String keyword) {
         Scanner scanner = null;
         try {
