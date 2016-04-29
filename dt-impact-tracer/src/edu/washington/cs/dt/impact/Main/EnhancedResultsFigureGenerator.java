@@ -125,17 +125,17 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
             if (output.equals("-0")) {
                 output = "0";
             }
-            if (percent >= 0.0 || output.equals("0")) {
-                result += "\\pMinus";
-                if (output.length() == 1) // single digit number, #\%
-                {
-                    result += "\\z";
-                }
-            } else { // negative
-                if (output.length() == 2) {// single digit number, #\%
-                    result += "\\z";
-                }
-            }
+            // if (percent >= 0.0 || output.equals("0")) {
+            // result += "\\pMinus";
+            // if (output.length() == 1) // single digit number, #\%
+            // {
+            // result += "\\z";
+            // }
+            // } else { // negative
+            // if (output.length() == 2) {// single digit number, #\%
+            // result += "\\z";
+            // }
+            // }
 
             result += output + "\\%"; // "\%"
 
@@ -170,9 +170,9 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
                 output = ".00";
             }
             result += " & ";
-            if (val >= 0.0 || output.equals(".00")) {
-                result += "\\pMinus";
-            }
+            // if (val >= 0.0 || output.equals(".00")) {
+            // result += "\\pMinus";
+            // }
             result += output;
         }
         result += " \\\\"; // "\\"
@@ -215,17 +215,17 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
             }
 
             result += " & ";
-            if (diffBetweenEnhancedUnenhanced >= 0.0 || output.equals("0\\%")) {
-                result += "\\pMinus";
-                if (output.length() == 3) // single digit number, #\%
-                {
-                    result += "\\z";
-                }
-            } else { // negative
-                if (output.length() == 4) {// single digit number, #\%
-                    result += "\\z";
-                }
-            }
+            // if (diffBetweenEnhancedUnenhanced >= 0.0 || output.equals("0\\%")) {
+            // result += "\\pMinus";
+            // if (output.length() == 3) // single digit number, #\%
+            // {
+            // result += "\\z";
+            // }
+            // } else { // negative
+            // if (output.length() == 4) {// single digit number, #\%
+            // result += "\\z";
+            // }
+            // }
 
             result += output;
             // result += " & " + timeFormat.format(enhancedParaSpeedup) + " $\\rightarrow$ " +
@@ -260,17 +260,17 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
             }
 
             result += " & ";
-            if (diffBetweenEnhancedUnenhanced >= 0.0 || output.equals("0\\%")) {
-                result += "\\pMinus";
-                if (output.length() == 3) // single digit number, #\%
-                {
-                    result += "\\z";
-                }
-            } else { // negative
-                if (output.length() == 4) {// single digit number, #\%
-                    result += "\\z";
-                }
-            }
+            // if (diffBetweenEnhancedUnenhanced >= 0.0 || output.equals("0\\%")) {
+            // result += "\\pMinus";
+            // if (output.length() == 3) // single digit number, #\%
+            // {
+            // result += "\\z";
+            // }
+            // } else { // negative
+            // if (output.length() == 4) {// single digit number, #\%
+            // result += "\\z";
+            // }
+            // }
 
             result += output;
             // result += " & " + timeFormat.format(enhancedParaSpeedup) + " $\\rightarrow$ " +
@@ -433,12 +433,12 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
                 if (diffStringFormat.equals("-0\\%")) {
                     diffStringFormat = "0\\%";
                 }
-                if (diffOfGeometricMeans >= 0.0 || diffStringFormat.equals("0\\%")) {
-                    diffStringFormat = "\\pMinus" + diffStringFormat;
-                }
-                if (diffOfGeometricMeans * 100 < 10.0 && diffOfGeometricMeans * 100 > -10.0) {
-                    diffStringFormat = "\\z" + diffStringFormat;
-                }
+                // if (diffOfGeometricMeans >= 0.0 || diffStringFormat.equals("0\\%")) {
+                // diffStringFormat = "\\pMinus" + diffStringFormat;
+                // }
+                // if (diffOfGeometricMeans * 100 < 10.0 && diffOfGeometricMeans * 100 > -10.0) {
+                // diffStringFormat = "\\z" + diffStringFormat;
+                // }
                 sb.append(" & " + diffStringFormat);
             }
             sb.append(" \\\\");
