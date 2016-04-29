@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.Scanner;
 
 import edu.washington.cs.dt.impact.data.Project;
+import edu.washington.cs.dt.impact.util.Constants;
 
 public class FigureGenerator {
     protected static final DecimalFormat apfdFormat = new DecimalFormat(".00");
@@ -43,9 +44,67 @@ public class FigureGenerator {
         } finally {
             scanner.close();
         }
-
         return null; // none of the lines contained the keyword
+    }
 
+    /*
+     * A public method to search a file for a keyword and return the value that follows
+     * that keyword
+     *
+     * @return the data value without any leading or trailing whitespaces, null if keyword not found
+     */
+    public static int parseFileForDTs(File file, String keyword) {
+        int numDTs = 0;
+        Scanner scanner = null;
+        try {
+            scanner = new Scanner(file);
+            while (scanner.hasNextLine()) {
+                String currLine = scanner.nextLine();
+                if (currLine.contains(keyword)) {
+                    // gets numeric value of data
+                    String data = currLine.substring(keyword.length(), currLine.length());
+                    // trim away any whitespaces leading or after the data value
+                    numDTs += Integer.valueOf(data.trim());
+                }
+            }
+            scanner.close(); // close Scanner before returning
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+            System.exit(2);
+        } finally {
+            scanner.close();
+        }
+        return numDTs; // none of the lines contained the keyword
+    }
+
+    /*
+     * A public method to search a file for a keyword and return the value that follows
+     * that keyword
+     *
+     * @return the data value without any leading or trailing whitespaces, null if keyword not found
+     */
+    public static String getLongestTime(File file, String keyword) {
+        Scanner scanner = null;
+        try {
+            scanner = new Scanner(file);
+            while (scanner.hasNextLine()) {
+                String currLine = scanner.nextLine();
+                if (currLine.contains(keyword)) {
+                    currLine = scanner.nextLine();
+                    while (!currLine.contains(Constants.TIME_STRING)) {
+                        currLine = scanner.nextLine();
+                    }
+                    return scanner.nextLine();
+                }
+            }
+            scanner.close(); // close Scanner before returning
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+            System.exit(2);
+        } finally {
+            scanner.close();
+        }
+        return null; // none of the lines contained the keyword
     }
 
     protected static String formatPercent(double num) {
@@ -150,10 +209,10 @@ public class FigureGenerator {
      *
      */
 
-    public static void writeToLatexFile(String latex, String outputFileName) {
+    public static void writeToLatexFile(String latex, String outputFileName, boolean append) {
         try {
             File outputFile = new File(outputFileName);
-            FileWriter writer = new FileWriter(outputFile);
+            FileWriter writer = new FileWriter(outputFile, append);
             BufferedWriter bw = new BufferedWriter(writer);
             bw.write(latex);
             bw.close();
