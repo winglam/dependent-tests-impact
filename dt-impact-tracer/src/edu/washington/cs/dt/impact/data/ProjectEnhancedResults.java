@@ -34,7 +34,8 @@ public class ProjectEnhancedResults extends Project {
 
     private boolean[] fig17_nonzero;
     private boolean[] fig18_nonzero;
-    private boolean[] fig19_nonzero;
+    private boolean[] fig19_nonzero_time;
+    private boolean[] fig19_nonzero_orig;
 
     private boolean uses_fig17;
     private boolean uses_fig18;
@@ -100,7 +101,8 @@ public class ProjectEnhancedResults extends Project {
         fig19_time_order = new double[2 * 4];
         fig17_nonzero = new boolean[4 * 2];
         fig18_nonzero = new boolean[6 * 2];
-        fig19_nonzero = new boolean[4 * 2];
+        fig19_nonzero_orig = new boolean[4 * 2];
+        fig19_nonzero_time = new boolean[4 * 2];
         uses_fig17 = false;
         uses_fig18 = false;
         uses_fig19 = false;
@@ -189,8 +191,16 @@ public class ProjectEnhancedResults extends Project {
             fig17_nonzero[index] = numTotal != 0;
         } else if (figNum == 18) {
             fig18_nonzero[index] = numTotal != 0;
-        } else { // 19
-            fig19_nonzero[index] = numTotal != 0;
+        } else {
+            throw new RuntimeException();
+        }
+    }
+
+    public void setNumTotalDependentTestsPara(boolean isOriginal, int index, int numTotal) {
+        if (isOriginal) {
+            fig19_nonzero_orig[index] = numTotal != 0;
+        } else {
+            fig19_nonzero_time[index] = numTotal != 0;
         }
     }
 
@@ -222,7 +232,11 @@ public class ProjectEnhancedResults extends Project {
         return fig18_nonzero;
     }
 
-    public boolean[] get_fig19_nonZeroNumOfDTS() {
-        return fig19_nonzero;
+    public boolean[] get_fig19_nonZeroNumOfDTSOrig() {
+        return fig19_nonzero_orig;
+    }
+
+    public boolean[] get_fig19_nonZeroNumOfDTSTime() {
+        return fig19_nonzero_time;
     }
 }

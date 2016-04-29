@@ -253,10 +253,7 @@ public class NumDependentTestsFigureGenerator extends FigureGenerator {
                 ProjectNumDependentTests currProj = (ProjectNumDependentTests) currProj2;
 
                 // get the number of dts
-
-                int numFixed = Integer.parseInt(parseFile(file, Constants.FIXED_DTS));
-                int numNotFixed = Integer.parseInt(parseFile(file, Constants.NOT_FIXED_DTS));
-                int numTotal = numFixed + numNotFixed;
+                int numTotal = parseFileForDTs(file, Constants.NOT_FIXED_DTS);
 
                 // parallelization technique, figure 9
                 if (techniqueName.equals("parallelization")) {
@@ -442,8 +439,7 @@ public class NumDependentTestsFigureGenerator extends FigureGenerator {
             autoOutputFilename += "figure7-auto-results.tex";
         }
 
-        writeToLatexFile(origLatexString, origOutputFilename);
-        writeToLatexFile(autoLatexString, autoOutputFilename);
-
+        writeToLatexFile(origLatexString, origOutputFilename, false);
+        writeToLatexFile(autoLatexString, autoOutputFilename, false);
     }
 }
