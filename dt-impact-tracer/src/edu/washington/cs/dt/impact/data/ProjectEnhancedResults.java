@@ -41,37 +41,37 @@ public class ProjectEnhancedResults extends Project {
     private boolean uses_fig18;
     private boolean uses_fig19;
 
-    private Double[][] fig17_time;
-    private Double[][] fig17_coverage;
-    private Double[][] fig18_time;
-    private Double[][] fig18_coverage;
-    private Double[][] fig19_time;
-    private Double[][] fig19_coverage;
+    private Double[][] fig17_time_en;
+    private Double[][] fig18_time_en;
+    private Double[][] fig19_time_en;
+    private Double[][] fig17_time_unen;
+    private Double[][] fig18_time_unen;
+    private Double[][] fig19_time_unen;
     private Double[] orig_time;
     private Double[] orig_coverage;
 
-    public Double[][] getFig17_time() {
-        return fig17_time;
+    public Double[][] getFig17_time_en() {
+        return fig17_time_en;
     }
 
-    public Double[][] getFig17_coverage() {
-        return fig17_coverage;
+    public Double[][] getFig18_time_en() {
+        return fig18_time_en;
     }
 
-    public Double[][] getFig18_time() {
-        return fig18_time;
+    public Double[][] getFig19_time_en() {
+        return fig19_time_en;
     }
 
-    public Double[][] getFig18_coverage() {
-        return fig18_coverage;
+    public Double[][] getFig17_time_unen() {
+        return fig17_time_unen;
     }
 
-    public Double[][] getFig19_time() {
-        return fig19_time;
+    public Double[][] getFig18_time_unen() {
+        return fig18_time_unen;
     }
 
-    public Double[][] getFig19_coverage() {
-        return fig19_coverage;
+    public Double[][] getFig19_time_unen() {
+        return fig19_time_unen;
     }
 
     public Double[] getOrig_time() {
@@ -106,12 +106,12 @@ public class ProjectEnhancedResults extends Project {
         uses_fig17 = false;
         uses_fig18 = false;
         uses_fig19 = false;
-        fig17_time = new Double[4 * 2][];
-        fig17_coverage = new Double[4 * 2][];
-        fig18_time = new Double[6 * 2][];
-        fig18_coverage = new Double[6 * 2][];
-        fig19_time = new Double[2 * 4][];
-        fig19_coverage = new Double[2 * 4][];
+        fig17_time_en = new Double[4 * 2][];
+        fig18_time_en = new Double[6 * 2][];
+        fig19_time_en = new Double[2 * 4][];
+        fig17_time_unen = new Double[4 * 2][];
+        fig18_time_unen = new Double[6 * 2][];
+        fig19_time_unen = new Double[2 * 4][];
     }
 
     public boolean isFig17() {
@@ -151,7 +151,7 @@ public class ProjectEnhancedResults extends Project {
         return fig18_values;
     }
 
-    public double[] get_fig18_percents() {
+    public double[] get_fig18_time() {
         return fig18_percents;
     }
 
@@ -204,23 +204,25 @@ public class ProjectEnhancedResults extends Project {
         }
     }
 
-    public void setCoverageInfo(int figNum, int index, Double[] coverageList) {
+    public void setTimeInfo(int figNum, int index, Double[] timeList, boolean isEnhanced) {
         if (figNum == 17) {
-            fig17_coverage[index] = coverageList;
+            if (isEnhanced) {
+                fig17_time_en[index] = timeList;
+            } else {
+                fig17_time_unen[index] = timeList;
+            }
         } else if (figNum == 18) {
-            fig18_coverage[index] = coverageList;
+            if (isEnhanced) {
+                fig18_time_en[index] = timeList;
+            } else {
+                fig18_time_unen[index] = timeList;
+            }
         } else { // 19
-            fig19_coverage[index] = coverageList;
-        }
-    }
-
-    public void setTimeInfo(int figNum, int index, Double[] timeList) {
-        if (figNum == 17) {
-            fig17_time[index] = timeList;
-        } else if (figNum == 18) {
-            fig18_time[index] = timeList;
-        } else { // 19
-            fig19_time[index] = timeList;
+            if (isEnhanced) {
+                fig19_time_en[index] = timeList;
+            } else {
+                fig19_time_unen[index] = timeList;
+            }
         }
     }
 
