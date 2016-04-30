@@ -49,17 +49,16 @@ public class ProjectEnhancedResults extends Project {
     private Double[][] fig19_time_unen;
     private Double[] orig_time;
     private Double[] orig_coverage;
-
-    public Double[][] getFig17_time_en() {
-        return fig17_time_en;
-    }
+    private String[] orig_tests;
+    private String[][] fig17_enhanced_tests;
+    private String[][] fig17_unenhanced_tests;
+    private String[][] fig18_enhanced_tests;
+    private String[][] fig18_unenhanced_tests;
+    private String[][] fig19_enhanced_tests;
+    private String[][] fig19_unenhanced_tests;
 
     public Double[][] getFig18_time_en() {
         return fig18_time_en;
-    }
-
-    public Double[][] getFig19_time_en() {
-        return fig19_time_en;
     }
 
     public Double[][] getFig17_time_unen() {
@@ -68,6 +67,22 @@ public class ProjectEnhancedResults extends Project {
 
     public Double[][] getFig18_time_unen() {
         return fig18_time_unen;
+    }
+
+    public String[][] getFig18_enhanced_tests() {
+        return fig18_enhanced_tests;
+    }
+
+    public String[][] getFig18_unenhanced_tests() {
+        return fig18_unenhanced_tests;
+    }
+
+    public String[][] getFig19_enhanced_tests() {
+        return fig19_enhanced_tests;
+    }
+
+    public String[][] getFig19_unenhanced_tests() {
+        return fig19_unenhanced_tests;
     }
 
     public Double[][] getFig19_time_unen() {
@@ -88,6 +103,14 @@ public class ProjectEnhancedResults extends Project {
 
     public void setOrig_coverage(Double[] orig_coverage) {
         this.orig_coverage = orig_coverage;
+    }
+
+    public String[] getOrig_tests() {
+        return orig_tests;
+    }
+
+    public void setOrig_tests(String[] orig_tests) {
+        this.orig_tests = orig_tests;
     }
 
     public ProjectEnhancedResults(String projName) {
@@ -222,6 +245,28 @@ public class ProjectEnhancedResults extends Project {
                 fig19_time_en[index] = timeList;
             } else {
                 fig19_time_unen[index] = timeList;
+            }
+        }
+    }
+
+    public void setTestList(int figNum, int index, String[] testList, boolean isEnhanced) {
+        if (figNum == 17) {
+            if (isEnhanced) {
+                fig17_enhanced_tests[index] = testList;
+            } else {
+                fig17_unenhanced_tests[index] = testList;
+            }
+        } else if (figNum == 18) {
+            if (isEnhanced) {
+                fig18_enhanced_tests[index] = testList;
+            } else {
+                fig18_unenhanced_tests[index] = testList;
+            }
+        } else { // 19
+            if (isEnhanced) {
+                fig19_enhanced_tests[index] = testList;
+            } else {
+                fig19_unenhanced_tests[index] = testList;
             }
         }
     }
