@@ -10,7 +10,6 @@ import java.util.List;
 import java.util.Scanner;
 
 import edu.washington.cs.dt.impact.data.Project;
-import edu.washington.cs.dt.impact.util.Constants;
 
 public class FigureGenerator {
     protected static final DecimalFormat apfdFormat = new DecimalFormat(".00");
@@ -83,15 +82,15 @@ public class FigureGenerator {
      *
      * @return the data value without any leading or trailing whitespaces, null if keyword not found
      */
-    public static String getLongestTime(File file, String keyword) {
+    public static String getNextLine(File file, String currLineKeyword, String nextLineKeyword) {
         Scanner scanner = null;
         try {
             scanner = new Scanner(file);
             while (scanner.hasNextLine()) {
                 String currLine = scanner.nextLine();
-                if (currLine.contains(keyword)) {
+                if (currLine.contains(currLineKeyword)) {
                     currLine = scanner.nextLine();
-                    while (!currLine.contains(Constants.TIME_STRING)) {
+                    while (!currLine.contains(nextLineKeyword)) {
                         currLine = scanner.nextLine();
                     }
                     return scanner.nextLine();
