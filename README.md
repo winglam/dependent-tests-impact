@@ -1,4 +1,4 @@
-To reproduce figures 17, 18, and 19 in our paper do the following:
+To reproduce figures 7, 8, 9, 18, 19, and 20 in our paper do the following:
 
 ```
 git clone https://github.com/winglam/dependent-tests-impact.git
@@ -14,6 +14,7 @@ We have tested the scripts on multiple machines and operating systems, and
 it worked on all but one.  In case you have trouble running the experiments
 on your machine, we have also provided the artifact pre-installed in a
 virtual machine that runs Ubuntu version 14.04 with Java 7 and ant installed.
+The dependent-tests-impact folder is under `/home/user/dependent-tests-impact`.
 - Username for the VM: user
 - Password for the VM: asdf
 - Download link: https://drive.google.com/folderview?id=0B66sUcs7lhDVUWh2NVFrSTNjY28
