@@ -40,27 +40,32 @@ public class Standard {
         this(outputFileName, methodList, getCoverage, null);
     }
 
-    public void checkForDependentTests() {
+    public void applyDeps() {
         List<TestFunctionStatement> orderedListOfTests = new LinkedList<TestFunctionStatement>();
         for (TestFunctionStatement test : methodList) {
-            applyDeps(orderedListOfTests.size(), orderedListOfTests, test);
+            applyDepsHelper(orderedListOfTests, test);
         }
         methodList = orderedListOfTests;
     }
 
-    private int applyDeps(int index, List<TestFunctionStatement> orderedListOfTests, TestFunctionStatement newTest) {
+    // If newTest is not in orderedListOfTests, adds newTest as the last
+    // element, and may also add, before newTest, dependee tests that newTest
+    // depends on.
+    // Precondition: orderedListOfTests satisfies all test dependences: for
+    // every test in the list, all of its dependees appear before it.
+    // Postcondition: orderedListOfTests contains newTest and satisfies all
+    // test dependences
+    private void applyDepsHelper(List<TestFunctionStatement> orderedListOfTests, TestFunctionStatement newTest) {
         if (!orderedListOfTests.contains(newTest)) {
             Set<TestFunctionStatement> testsThatNeedsToExecuteBeforeNewTest = newTest.getDependentTests(false);
             // Add all tests that needs to come before newTest to the orderedListOfTests
             for (TestFunctionStatement positiveDependee : testsThatNeedsToExecuteBeforeNewTest) {
-                index = applyDeps(index, orderedListOfTests, positiveDependee);
+                applyDepsHelper(orderedListOfTests, positiveDependee);
             }
 
             // Add newTest to orderedListOfTests
-            orderedListOfTests.add(index, newTest);
-            index += 1;
+            orderedListOfTests.add(newTest);
         }
-        return index;
     }
 
     // Used to get the percent coverage each test is responsible for based on their current

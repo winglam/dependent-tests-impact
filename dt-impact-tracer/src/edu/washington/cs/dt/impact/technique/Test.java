@@ -263,17 +263,17 @@ public class Test {
     }
 
     public void printResults() {
-        orderObj.checkForDependentTests();
+        orderObj.applyDeps();
         orderObj.printResults();
     }
 
     public List<TestFunctionStatement> getResults(int machine) {
-        orderObj.checkForDependentTests();
+        orderObj.applyDeps();
         return orderObj.getMethodList();
     }
 
     public List<TestFunctionStatement> getCoverage(int machine) {
-        orderObj.checkForDependentTests();
+        orderObj.applyDeps();
         return orderObj.getCoverage(false);
     }
 }

@@ -209,20 +209,20 @@ public class Parallelization extends Test {
     @Override
     public void printResults() {
         for (Standard obj : splitTests) {
-            obj.checkForDependentTests();
+            obj.applyDeps();
             obj.printResults();
         }
     }
 
     @Override
     public List<TestFunctionStatement> getResults(int machine) {
-        splitTests.get(machine).checkForDependentTests();
+        splitTests.get(machine).applyDeps();
         return splitTests.get(machine).getMethodList();
     }
 
     @Override
     public List<TestFunctionStatement> getCoverage(int machine) {
-        splitTests.get(machine).checkForDependentTests();
+        splitTests.get(machine).applyDeps();
         return splitTests.get(machine).getCoverage(false);
     }
 }
