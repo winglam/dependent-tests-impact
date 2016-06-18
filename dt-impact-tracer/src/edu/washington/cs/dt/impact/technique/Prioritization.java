@@ -10,6 +10,7 @@ package edu.washington.cs.dt.impact.technique;
 import java.io.File;
 import java.util.Collections;
 import java.util.List;
+import java.util.Random;
 
 import edu.washington.cs.dt.impact.order.Relative;
 import edu.washington.cs.dt.impact.order.Standard;
@@ -31,6 +32,12 @@ public class Prioritization extends Test {
      */
     public Prioritization(ORDER order, String outputFilename, File inputTestFolder, COVERAGE coverage,
             File dependentTestsFile, boolean getCoverage, File origOrder) {
+        this(order, outputFilename, inputTestFolder, coverage, dependentTestsFile, getCoverage, origOrder,
+                new Random().nextInt());
+    }
+
+    public Prioritization(ORDER order, String outputFilename, File inputTestFolder, COVERAGE coverage,
+            File dependentTestsFile, boolean getCoverage, File origOrder, int seed) {
         super(inputTestFolder, coverage, dependentTestsFile);
 
         if (order == ORDER.ABSOLUTE || order == ORDER.RELATIVE) {
@@ -40,7 +47,7 @@ public class Prioritization extends Test {
             }
             orderObj = new Standard(outputFilename, methodList, getCoverage, allCoverageLines);
         } else if (order == ORDER.RANDOM) {
-            Collections.shuffle(methodList);
+            Collections.shuffle(methodList, new Random(seed));
             orderObj = new Standard(outputFilename, methodList);
         } else if (order == ORDER.ORIGINAL) {
             parseOrigOrderToMethodList(origOrder, getNameToMethodData(methodList));
