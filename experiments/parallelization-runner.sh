@@ -7,6 +7,7 @@ while [ "$index" -lt "$count" ]; do
   cd ${directories[$index]}
 
   for j in "${testTypes[@]}"; do
+    #enhancedInstrumentFiles ${instrumentationCP[$index]}
     instrumentFiles ${experimentsCP[$index]}
 
     echo 'Generating sootTestOutput'
