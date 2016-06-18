@@ -2,7 +2,7 @@
 # file.
 
 # Number of times to run the test order before taking the median
-medianTimes=3
+medianTimes=1
 # Number of times to randomize the test order when calculating the
 # precomputed dependences
 randomTimes=100
@@ -100,12 +100,12 @@ function runParallelizationOneConfigurationRunner() {
   java -cp $2 edu.washington.cs.dt.main.ImpactMain -inputTests $1-$3-order -getTime > $1-$3-time.txt
   for k in "${machines[@]}"; do
     echo 'Running parallelization without resolveDependences and without dependentTestFile for time order'
-    java -cp $2 edu.washington.cs.dt.impact.Main.OneConfigurationRunner -technique parallelization -order time -timeOrder $1-$3-time.txt -origOrder $1-$3-order -testInputDir sootTestOutput -filesToDelete $1-env-files -numOfMachines $k -project $1 -testType $3 -timesToRun 3 -outputDir ../${paraDir}
+    java -cp $2 edu.washington.cs.dt.impact.Main.OneConfigurationRunner -technique parallelization -order time -timeOrder $1-$3-time.txt -origOrder $1-$3-order -testInputDir sootTestOutput -filesToDelete $1-env-files -numOfMachines $k -project $1 -testType $3 -timesToRun ${medianTimes} -outputDir ../${paraDir}
     echo 'Running parallelization without resolveDependences and without dependentTestFile for original order'
-    java -cp $2 edu.washington.cs.dt.impact.Main.OneConfigurationRunner -technique parallelization -order original -origOrder $1-$3-order -testInputDir sootTestOutput -filesToDelete $1-env-files -project $1 -testType $3 -numOfMachines $k -outputDir ../${paraDir} -timesToRun 3
     echo 'Running parallelization without resolveDependences and with dependentTestFile for time order'
     java -cp $2 edu.washington.cs.dt.impact.Main.OneConfigurationRunner -technique parallelization -order time -timeOrder $1-$3-time.txt -origOrder $1-$3-order -testInputDir sootTestOutput -filesToDelete $1-env-files -numOfMachines $k -project $1 -testType $3 -timesToRun ${medianTimes} -outputDir ../${paraDir} -dependentTestFile ../
     echo 'Running parallelization without resolveDependences and with dependentTestFile for original order'
     java -cp $2 edu.washington.cs.dt.impact.Main.OneConfigurationRunner -technique parallelization -order original -origOrder $1-$3-order -testInputDir sootTestOutput -filesToDelete $1-env-files -project $1 -testType $3 -numOfMachines $k -outputDir ../${paraDir} -timesToRun ${medianTimes} -dependentTestFile ../
+    java -cp $2 edu.washington.cs.dt.impact.Main.OneConfigurationRunner -technique parallelization -order original -origOrder $1-$3-order -testInputDir sootTestOutput -filesToDelete $1-env-files -project $1 -testType $3 -numOfMachines $k -outputDir ../${paraDir} -timesToRun ${medianTimes}
   done
 }
