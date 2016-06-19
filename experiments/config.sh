@@ -33,15 +33,14 @@ testListGenClass=edu.washington.cs.dt.impact.tools.TestListGenerator
 crossReferenceClass=edu.washington.cs.dt.impact.tools.CrossReferencer
 
 directories=(crystalvc jfreechart-1.0.15 jodatime-b609d7d66d dynoptic xml-security-orig-v1)
-instrumentationCP=(impact-tools/*:lib/* impact-tools/*:lib/* impact-tools/*:resources/:lib/* impact-tools/*:../synoptic/lib/*:../synoptic/bin/:../daikonizer/bin/ impact-tools/*:../xml-security-commons/bin/:data/:../xml-security-commons/libs/*)
+fixerCP=(impact-tools/*:lib/* impact-tools/*:lib/* impact-tools/*:resources/:lib/* impact-tools/*:../synoptic/lib/*:../synoptic/bin/:../daikonizer/bin/ impact-tools/*:../xml-security-commons/bin/:data/:../xml-security-commons/libs/*)
 experimentsCP=(impact-tools/*:bin/:lib/* impact-tools/*:bin/:lib/* impact-tools/*:bin/:resources/:lib/* impact-tools/*:bin/:../synoptic/lib/*:../synoptic/bin/:../daikonizer/bin/ impact-tools/*:bin/:../xml-security-commons/bin/:data/:../xml-security-commons/libs/*)
 sootCP=(impact-tools/*:sootOutput/:lib/* impact-tools/*:sootOutput/:lib/* impact-tools/*:sootOutput/:resources/:lib/* impact-tools/*:sootOutput/:../synoptic/lib/*:../synoptic/bin/:../daikonizer/bin/ impact-tools/*:sootOutput/:../xml-security-commons/bin/:data/:../xml-security-commons/libs/*)
 
 newDirectories=(crystal jfreechart-1.0.16 jodatime-d6791cb5f9 dynoptic-ea407ba0a750 xml-security-1_2_0)
 newExperimentsCP=(crystal/impact-tools/*:crystal/bin/:crystal/libs/lib/* jfreechart-1.0.16/impact-tools/*:jfreechart-1.0.16/bin/:jfreechart-1.0.16/lib/* jodatime-d6791cb5f9/impact-tools/*:jodatime-d6791cb5f9/bin/:jodatime-d6791cb5f9/resources/:jodatime-d6791cb5f9/lib/* dynoptic-ea407ba0a750/impact-tools/*:dynoptic-ea407ba0a750/bin/:synoptic/lib/*:synoptic-ea407ba0a750/bin/:daikonizer-ea407ba0a750/bin/ xml-security-1_2_0/impact-tools/*:xml-security-1_2_0/bin/:xml-security-commons/bin/:xml-security-1_2_0/data/:xml-security-commons/libs/*)
 instrumentNewExperimentsCP=(impact-tools/*:bin/:libs/lib/* impact-tools/*:bin/:lib/* impact-tools/*:bin/:resources/:lib/* impact-tools/*:bin/:../synoptic/lib/*:../synoptic-ea407ba0a750/bin/:../daikonizer-ea407ba0a750/bin/ impact-tools/*:bin/:../xml-security-commons/bin/:data/:../xml-security-commons/libs/*)
-sootNewExperimentsCP=(impact-tools/*:sootOutput/:libs/lib/* impact-tools/*:sootOutput/:lib/* impact-tools/*:sootOutput/:resources/:lib/* impact-tools/*:sootOutput/:../synoptic/lib/*:../synoptic-ea407ba0a750/bin/:../daikonizer-ea407ba0a750/bin/ impact-tools/*:sootOutput/:../xml-security-commons/bin/:data/:../xml-security-commons/libs/*)
-oldExperimentsCP=(crystalvc/impact-tools/*:crystalvc/bin/:crystalvc/lib/* jfreechart-1.0.15/impact-tools/*:jfreechart-1.0.15/bin/:jfreechart-1.0.15/lib/* jodatime-b609d7d66d/impact-tools/*:jodatime-b609d7d66d/bin/:jodatime-b609d7d66d/resources/:jodatime-b609d7d66d/lib/* dynoptic/impact-tools/*:dynoptic/bin/:synoptic/lib/*:synoptic/bin/:daikonizer/bin/ xml-security-orig-v1/impact-tools/*:xml-security-orig-v1/bin/:xml-security-commons/bin/:xml-security-orig-v1/data/:xml-security-commons/libs/*)
+fixerNewExperimentsCP=(impact-tools/*:libs/lib/* impact-tools/*:lib/* impact-tools/*:resources/:lib/* impact-tools/*:../synoptic/lib/*:../synoptic-ea407ba0a750/bin/:../daikonizer-ea407ba0a750/bin/ impact-tools/*:../xml-security-commons/bin/:data/:../xml-security-commons/libs/*)
 
 compileCP=(bin/:lib/* impact-tools/*:bin/:lib/* bin/:resources/:lib/* bin/:../synoptic/lib/*:../synoptic/bin/:../daikonizer/bin/ bin/:../xml-security-commons/bin/:data/:../xml-security-commons/libs/*)
 newCompileCP=(bin/:lib/* impact-tools/*:bin/:lib/* bin/:resources/:lib/* bin/:../synoptic/lib/*:../synoptic/bin/:../daikonizer/bin/ bin/:../xml-security-commons/bin/:data/:../xml-security-commons/libs/*)
@@ -73,7 +72,7 @@ function instrumentFiles() {
   java -cp $1 edu.washington.cs.dt.impact.Main.InstrumentationMain -inputDir bin
 }
 
-function enhancedInstrumentFiles() {
+function fixerInstrumentFiles() {
   echo 'Enhanced instrumenting files'
   # Enable the following command to take an output argument
   java -cp $1:bin/ edu.washington.cs.dt.fixer.Main.InstrumentationMain -inputDir bin -cpDir bin

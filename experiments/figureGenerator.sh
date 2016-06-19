@@ -33,10 +33,10 @@ echo "Running random-runner script"
 #./random-runner.sh
 
 echo "Running prioritization-runner script"
-runPrioritization
+#runPrioritization
 
 echo "Running selection-runner script"
-#runSelection
+runSelection
 
 echo "Running paralleization-runner script"
 #runParallelization
