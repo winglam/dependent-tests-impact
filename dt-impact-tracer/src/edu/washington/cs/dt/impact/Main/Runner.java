@@ -484,7 +484,7 @@ public abstract class Runner {
             outputArr.add(testList.getTimeEachTest() + "\n");
             if (testList.getNumNotFixedDT() != 0) {
                 outputArr.add("\n" + Constants.NOT_FIXED_DTS + "\n");
-                outputArr.add(testList.getNumNotFixedDT() + "\n");
+                outputArr.add(testList.getNotFixedDT() + "\n");
             }
             if (testList.getDtList() != null) {
                 outputArr.add("\nDependent test list:\n");
