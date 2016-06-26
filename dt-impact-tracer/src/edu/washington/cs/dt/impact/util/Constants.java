@@ -14,7 +14,8 @@ public class Constants {
 
     // For Figures 7,8,9
     public static final String FIXED_DTS = "Number of DTs fixed:";
-    public static final String NOT_FIXED_DTS = "Number of DTs not fixed:";
+    public static final String NUM_NOT_FIXED_DTS = "Number of DTs not fixed:";
+    public static final String NOT_FIXED_DTS = "DTs not fixed are:";
 
     // Project Names
     public static final String CRYSTAL_NAME = "Crystal";

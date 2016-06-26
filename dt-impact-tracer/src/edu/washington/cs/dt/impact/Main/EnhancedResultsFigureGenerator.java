@@ -641,7 +641,7 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
                 }
                 ProjectEnhancedResults currProj = (ProjectEnhancedResults) currProj2;
 
-                int numTotal = parseFileForDTs(file, Constants.NOT_FIXED_DTS);
+                int numTotal = parseFileForDTs(file, Constants.NUM_NOT_FIXED_DTS);
 
                 /*
                  * The method setNumTotalDependentTests sets the number of DTS for a specific file corresponding to a

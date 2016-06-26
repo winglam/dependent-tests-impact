@@ -123,7 +123,7 @@ public class RandomizeRunner extends Runner {
             double runTotal = System.nanoTime() - start;
 
             testList.setNullifyDTTime(runTotal);
-            testList.setNumNotFixedDT(changedTests.size());
+            testList.setNumNotFixedDT(changedTests);
             testList.setNumFixedDT(fixedDT.size());
             testList.setTestList(currentOrderTestList);
             setTestListMedianTime(timesToRun, filesToDelete, currentOrderTestList, testList);

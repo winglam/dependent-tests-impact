@@ -1,9 +1,10 @@
 package edu.washington.cs.dt.impact.data;
 
 import java.util.List;
+import java.util.Set;
 
 public class WrapperTestList {
-    private int numNotFixedDT;
+    private Set<String> notFixedDT;
     private int numFixedDT;
     private double nullifyDTTime;
     private List<String> coverage;
@@ -46,11 +47,15 @@ public class WrapperTestList {
     }
 
     public int getNumNotFixedDT() {
-        return numNotFixedDT;
+        return notFixedDT.size();
     }
 
-    public void setNumNotFixedDT(int numNotFixedDT) {
-        this.numNotFixedDT = numNotFixedDT;
+    public Set<String> getNotFixedDT() {
+        return notFixedDT;
+    }
+
+    public void setNumNotFixedDT(Set<String> notFixedDT) {
+        this.notFixedDT = notFixedDT;
     }
 
     public int getNumFixedDT() {

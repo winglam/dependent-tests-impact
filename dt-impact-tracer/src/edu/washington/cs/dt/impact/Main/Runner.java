@@ -472,7 +472,7 @@ public abstract class Runner {
                     + nanosecondToSecond(testList.getNullifyDTTime()) + "\n");
             outputArr.add("Number of tests selected out of total in original order: " + testList.getTestList().size()
                     + " / " + origOrderTestList.size() + "\n");
-            outputArr.add(Constants.NOT_FIXED_DTS + " " + testList.getNumNotFixedDT() + "\n");
+            outputArr.add(Constants.NUM_NOT_FIXED_DTS + " " + testList.getNumNotFixedDT() + "\n");
             outputArr.add(Constants.FIXED_DTS + " " + testList.getNumFixedDT() + "\n");
             if (getCoverage) {
                 outputArr.add(Constants.APFD_VALUE + " " + testList.getAPFD() + "\n");
@@ -482,6 +482,10 @@ public abstract class Runner {
             outputArr.add(testList.getTestList() + "\n");
             outputArr.add("\n" + Constants.TIME_STRING + "\n");
             outputArr.add(testList.getTimeEachTest() + "\n");
+            if (testList.getNumNotFixedDT() != 0) {
+                outputArr.add("\n" + Constants.NOT_FIXED_DTS + "\n");
+                outputArr.add(testList.getNumNotFixedDT() + "\n");
+            }
             if (testList.getDtList() != null) {
                 outputArr.add("\nDependent test list:\n");
                 outputArr.add(testList.getDtList() + "\n");
