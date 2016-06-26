@@ -253,7 +253,7 @@ public class NumDependentTestsFigureGenerator extends FigureGenerator {
                 ProjectNumDependentTests currProj = (ProjectNumDependentTests) currProj2;
 
                 // get the number of dts
-                int numTotal = parseFileForDTs(file, Constants.NOT_FIXED_DTS);
+                int numTotal = parseFileForDTs(file, Constants.NUM_NOT_FIXED_DTS);
 
                 // parallelization technique, figure 9
                 if (techniqueName.equals("parallelization")) {
