@@ -7,41 +7,32 @@
 
 package edu.washington.cs.dt.fixer.Main;
 
+import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
+import java.io.OutputStreamWriter;
+import java.io.UnsupportedEncodingException;
+import java.io.Writer;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
+
+import com.thoughtworks.xstream.XStream;
+import com.thoughtworks.xstream.io.xml.StaxDriver;
 
 import soot.Pack;
 import soot.PackManager;
 import soot.Transform;
 import soot.Value;
-import soot.jimple.Constant;
-import soot.jimple.DoubleConstant;
-import soot.jimple.FloatConstant;
-import soot.jimple.IntConstant;
-import soot.jimple.LongConstant;
-import soot.jimple.NullConstant;
-import soot.jimple.StaticFieldRef;
-import soot.jimple.StringConstant;
-import soot.jimple.internal.JStaticInvokeExpr;
+import soot.jimple.internal.JAssignStmt;
 
 public class InstrumentationMain {
-    public static Map<Value, Value> staticStmts = new HashMap<>();
     public static boolean parseVariables = true;
     public static final String VARIABLE_TO_TYPE = "variableToType.dat";
-    public static Set<ValueData> parsedStaticFields = new HashSet<>();
-    private static boolean includeStaticObjStmt = false;
+    public static Map<JAssignStmt, Value> parsedStaticFields = new HashMap<>();
 
     @SuppressWarnings("unchecked")
     public static void main(String[] args) {
@@ -84,10 +75,6 @@ public class InstrumentationMain {
             System.exit(0);
         }
 
-        if (argsList.remove("-includeStaticObjStmt")) {
-            includeStaticObjStmt = true;
-        }
-
         // get list of files to instrument
         int parsedStaticFieldsIndex = argsList.indexOf("-parsedStaticFields");
         if (parsedStaticFieldsIndex != -1) {
@@ -101,15 +88,9 @@ public class InstrumentationMain {
             File f = new File(VARIABLE_TO_TYPE);
             if (f.exists() && f.isFile()) {
                 parseVariables = false;
-                try {
-                    ObjectInputStream iis =
-                            new ObjectInputStream(new FileInputStream(argsList.get(parsedStaticFieldsNameIndex)));
-                    parsedStaticFields = (HashSet<ValueData>) iis.readObject();
-                    iis.close();
-                } catch (FileNotFoundException e) {
-                } catch (IOException e) {
-                } catch (ClassNotFoundException e) {
-                }
+                XStream xstream = new XStream(new StaxDriver());
+                parsedStaticFields = (HashMap<JAssignStmt, Value>) xstream.fromXML(f);
+                Instrumenter.staticStmts = parsedStaticFields;
             }
             argsList.remove(parsedStaticFieldsNameIndex);
             argsList.remove(parsedStaticFieldsIndex);
@@ -160,47 +141,13 @@ public class InstrumentationMain {
         soot.Main.main(sootArgs);
 
         if (parseVariables) {
-            HashSet<ValueData> varToType = new HashSet<>();
-            for (Value left : staticStmts.keySet()) {
-                Value rightVal = staticStmts.get(left);
-
-                if (includeStaticObjStmt && rightVal instanceof JStaticInvokeExpr) {
-                    JStaticInvokeExpr staticInvokeBox = (JStaticInvokeExpr) rightVal;
-                    if (staticInvokeBox.getArgCount() == 1) {
-                        rightVal = staticInvokeBox.getArg(0);
-                    }
-                }
-
-                if (rightVal instanceof Constant) {
-                    if (rightVal instanceof IntConstant) {
-                        varToType.add(new ValueData(left.toString(), IntConstant.v(((IntConstant) rightVal).value),
-                                ((StaticFieldRef) left).getFieldRef().name()));
-                    } else if (rightVal instanceof StringConstant) {
-                        varToType
-                                .add(new ValueData(left.toString(), StringConstant.v(((StringConstant) rightVal).value),
-                                        ((StaticFieldRef) left).getFieldRef().name()));
-                    } else if (rightVal instanceof DoubleConstant) {
-                        varToType
-                                .add(new ValueData(left.toString(), DoubleConstant.v(((DoubleConstant) rightVal).value),
-                                        ((StaticFieldRef) left).getFieldRef().name()));
-                    } else if (rightVal instanceof FloatConstant) {
-                        varToType.add(new ValueData(left.toString(), FloatConstant.v(((FloatConstant) rightVal).value),
-                                ((StaticFieldRef) left).getFieldRef().name()));
-                    } else if (rightVal instanceof LongConstant) {
-                        varToType.add(new ValueData(left.toString(), LongConstant.v(((LongConstant) rightVal).value),
-                                ((StaticFieldRef) left).getFieldRef().name()));
-                    } else if (rightVal instanceof NullConstant) {
-                        varToType.add(new ValueData(left.toString(), NullConstant.v(),
-                                ((StaticFieldRef) left).getFieldRef().name()));
-                    }
-                }
-            }
-
+            XStream xstream = new XStream(new StaxDriver());
+            File xmlFile = new File(VARIABLE_TO_TYPE);
             try {
-                ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(VARIABLE_TO_TYPE));
-                oos.writeObject(varToType);
-                oos.close();
-            } catch (Exception e) {
+                Writer out = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(xmlFile), "UTF-8"));
+                parsedStaticFields = Instrumenter.staticStmts;
+                xstream.toXML(parsedStaticFields, out);
+            } catch (UnsupportedEncodingException | FileNotFoundException e) {
                 e.printStackTrace();
             }
         }
