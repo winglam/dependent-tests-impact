@@ -46,12 +46,15 @@ compileCP=(bin/:lib/* impact-tools/*:bin/:lib/* bin/:resources/:lib/* bin/:../sy
 newCompileCP=(bin/:lib/* impact-tools/*:bin/:lib/* bin/:resources/:lib/* bin/:../synoptic/lib/*:../synoptic/bin/:../daikonizer/bin/ bin/:../xml-security-commons/bin/:data/:../xml-security-commons/libs/*)
 
 function clearTemp() {
-  rm -rf sootOutput
   rm -rf sootTestOutput
   rm -rf tmpfile.txt
   rm -rf tmptestfiles.txt
   rm -rf $1-$2-time.txt
   rm -rf dtFixerOutput
+}
+
+function clearInstrumentation() {
+  rm -rf sootOutput
   rm -rf variableToType.dat
 }
 
