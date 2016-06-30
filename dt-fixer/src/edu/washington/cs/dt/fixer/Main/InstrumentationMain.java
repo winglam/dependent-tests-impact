@@ -55,16 +55,19 @@ public class InstrumentationMain {
                         + " path is not. Please use the format: -cpDir adirpath");
                 System.exit(0);
             }
-            String cpDirName = argsList.get(cpDirNameIndex);
+            String cpDirNames = argsList.get(cpDirNameIndex);
             argsList.remove(cpDirNameIndex);
             argsList.remove(cpDirIndex);
 
+            String[] splitByColon = cpDirNames.split(":");
             StringBuffer sb = new StringBuffer();
-            File cpDir = new File(cpDirName);
-            for (File fileEntry : cpDir.listFiles()) {
-                if (fileEntry.isFile() && !fileEntry.getName().startsWith(".") && !fileEntry.isHidden()) {
-                    sb.append(fileEntry.getAbsolutePath());
-                    sb.append(":");
+            for (String cpDirName : splitByColon) {
+                File cpDir = new File(cpDirName);
+                for (File fileEntry : cpDir.listFiles()) {
+                    if (fileEntry.isFile() && !fileEntry.getName().startsWith(".") && !fileEntry.isHidden()) {
+                        sb.append(fileEntry.getAbsolutePath());
+                        sb.append(":");
+                    }
                 }
             }
 
