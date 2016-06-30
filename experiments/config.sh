@@ -33,7 +33,7 @@ testListGenClass=edu.washington.cs.dt.impact.tools.TestListGenerator
 crossReferenceClass=edu.washington.cs.dt.impact.tools.CrossReferencer
 
 directories=(crystalvc jfreechart-1.0.15 jodatime-b609d7d66d dynoptic xml-security-orig-v1)
-fixerCP=(impact-tools/*:lib/* impact-tools/*:lib/* impact-tools/*:resources/:lib/* impact-tools/*:../synoptic/lib/*:../synoptic/bin/:../daikonizer/bin/ impact-tools/*:../xml-security-commons/bin/:data/:../xml-security-commons/libs/*)
+fixerCP=(../fixer-libs/*:lib/* ../fixer-libs/*:lib/* ../fixer-libs/*:resources/:lib/* ../fixer-libs/*:../synoptic/lib/*:../synoptic/bin/:../daikonizer/bin/ ../fixer-libs/*:../xml-security-commons/bin/:data/:../xml-security-commons/libs/*)
 experimentsCP=(impact-tools/*:bin/:lib/* impact-tools/*:bin/:lib/* impact-tools/*:bin/:resources/:lib/* impact-tools/*:bin/:../synoptic/lib/*:../synoptic/bin/:../daikonizer/bin/ impact-tools/*:bin/:../xml-security-commons/bin/:data/:../xml-security-commons/libs/*)
 sootCP=(impact-tools/*:sootOutput/:lib/* impact-tools/*:sootOutput/:lib/* impact-tools/*:sootOutput/:resources/:lib/* impact-tools/*:sootOutput/:../synoptic/lib/*:../synoptic/bin/:../daikonizer/bin/ impact-tools/*:sootOutput/:../xml-security-commons/bin/:data/:../xml-security-commons/libs/*)
 
@@ -78,9 +78,9 @@ function instrumentFiles() {
 function fixerInstrumentFiles() {
   echo 'Enhanced instrumenting files'
   # Enable the following command to take an output argument
-  java -cp $1:bin/ edu.washington.cs.dt.fixer.Main.InstrumentationMain -inputDir bin -cpDir bin
+  java -cp $1:bin/ edu.washington.cs.dt.fixer.Main.InstrumentationMain -inputDir bin -cpDir $1
   # Enable the following command to output to a particular directory
-  java -cp $1:bin/ edu.washington.cs.dt.fixer.Main.InstrumentationMain -inputDir bin -cpDir bin  -parsedStaticFields variableToType.dat
+  java -cp $1:bin/ edu.washington.cs.dt.fixer.Main.InstrumentationMain -inputDir bin -cpDir $1  -parsedStaticFields variableToType.dat
 
   mv sootOutput dtFixerOutput
   java -cp $1:dtFixerOutput edu.washington.cs.dt.impact.Main.InstrumentationMain -inputDir dtFixerOutput
