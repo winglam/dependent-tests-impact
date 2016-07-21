@@ -135,6 +135,12 @@ public class ProjectEnhancedResults extends Project {
         fig17_time_unen = new Double[4 * 2][];
         fig18_time_unen = new Double[6 * 2][];
         fig19_time_unen = new Double[2 * 4][];
+        fig17_enhanced_tests = new String[4 * 2][];
+        fig17_unenhanced_tests = new String[4 * 2][];
+        fig18_enhanced_tests = new String[6 * 2][];
+        fig18_unenhanced_tests = new String[6 * 2][];
+        fig19_enhanced_tests = new String[4 * 2][];
+        fig19_unenhanced_tests = new String[4 * 2][];
     }
 
     public boolean isFig17() {

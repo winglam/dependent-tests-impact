@@ -86,10 +86,15 @@ public class OneConfigurationRunner extends Runner {
             if (resolveDependences) {
                 int counter = 0;
                 while (!changedTests.isEmpty()) {
+                    String testName = changedTests.iterator().next();
+                    while (!currentOrderTestList.contains(testName)) {
+                        testName = changedTests.iterator().next();
+                    }
+
                     System.out.println("Nullifying DTs iteration number / possible iterations left: " + counter + " / "
                             + changedTests.size());
                     counter += 1;
-                    String testName = changedTests.iterator().next();
+
                     fixedDT.add(testName);
                     // DependentTestFinder
                     DependentTestFinder.runDTF(testName, nameToOrigResults.get(testName), currentOrderTestList,
