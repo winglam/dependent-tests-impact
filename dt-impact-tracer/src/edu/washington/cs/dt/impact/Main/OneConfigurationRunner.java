@@ -85,14 +85,19 @@ public class OneConfigurationRunner extends Runner {
             Set<String> fixedDT = new HashSet<>();
             if (resolveDependences) {
                 int counter = 0;
-                while (!changedTests.isEmpty()) {
-                    String testName = changedTests.iterator().next();
-                    while (!currentOrderTestList.contains(testName)) {
-                        testName = changedTests.iterator().next();
+
+                Set<String> dtToFix = new HashSet<String>();
+                for (String test : changedTests) {
+                    if (currentOrderTestList.contains(test)) {
+                        dtToFix.add(test);
                     }
+                }
+
+                while (!dtToFix.isEmpty()) {
+                    String testName = dtToFix.iterator().next();
 
                     System.out.println("Nullifying DTs iteration number / possible iterations left: " + counter + " / "
-                            + changedTests.size());
+                            + dtToFix.size());
                     counter += 1;
 
                     fixedDT.add(testName);
@@ -107,6 +112,13 @@ public class OneConfigurationRunner extends Runner {
                     nameToTestResults = getCurrentOrderTestListResults(currentOrderTestList, filesToDelete);
                     // Cross Referencer
                     changedTests = CrossReferencer.compareResults(nameToOrigResults, nameToTestResults, false);
+
+                    dtToFix.clear();
+                    for (String test : changedTests) {
+                        if (currentOrderTestList.contains(test)) {
+                            dtToFix.add(test);
+                        }
+                    }
                 }
             }
 
