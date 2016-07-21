@@ -101,11 +101,6 @@ public class OneConfigurationRunner extends Runner {
                     counter += 1;
 
                     fixedDT.add(testName);
-
-                    System.out.println("Test name: " + testName);
-                    System.out.println("Current order test list:");
-                    System.out.println(currentOrderTestList);
-
                     // DependentTestFinder
                     DependentTestFinder.runDTF(testName, nameToOrigResults.get(testName), currentOrderTestList,
                             origOrderTestList, filesToDelete, allDTList);
