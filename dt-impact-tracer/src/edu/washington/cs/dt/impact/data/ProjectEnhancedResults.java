@@ -32,10 +32,14 @@ public class ProjectEnhancedResults extends Project {
     // corresponds to P2(Time-Minimized)
     private double[] fig19_time_order;
 
-    private boolean[] fig17_nonzero;
-    private boolean[] fig18_nonzero;
-    private boolean[] fig19_nonzero_time;
-    private boolean[] fig19_nonzero_orig;
+    private boolean[] fig17_num_DTs_unen;
+    private boolean[] fig18_num_DTs_unen;
+    private boolean[] fig19_num_DTs_time_unen;
+    private boolean[] fig19_num_DTs_orig_unen;
+    private boolean[] fig17_num_DTs_en;
+    private boolean[] fig18_num_DTs_en;
+    private boolean[] fig19_num_DTs_time_en;
+    private boolean[] fig19_num_DTs_orig_en;
 
     private boolean uses_fig17;
     private boolean uses_fig18;
@@ -56,6 +60,14 @@ public class ProjectEnhancedResults extends Project {
     private String[][] fig18_unenhanced_tests;
     private String[][] fig19_enhanced_tests;
     private String[][] fig19_unenhanced_tests;
+
+    public Double[][] getFig17_time_en() {
+        return fig17_time_en;
+    }
+
+    public Double[][] getFig19_time_en() {
+        return fig19_time_en;
+    }
 
     public Double[][] getFig18_time_en() {
         return fig18_time_en;
@@ -122,10 +134,14 @@ public class ProjectEnhancedResults extends Project {
         fig18_percents = new double[6 * 2];
         fig19_orig_order = new double[2 * 4];
         fig19_time_order = new double[2 * 4];
-        fig17_nonzero = new boolean[4 * 2];
-        fig18_nonzero = new boolean[6 * 2];
-        fig19_nonzero_orig = new boolean[4 * 2];
-        fig19_nonzero_time = new boolean[4 * 2];
+        fig17_num_DTs_unen = new boolean[4 * 2];
+        fig18_num_DTs_unen = new boolean[6 * 2];
+        fig19_num_DTs_orig_unen = new boolean[4 * 2];
+        fig19_num_DTs_time_unen = new boolean[4 * 2];
+        fig17_num_DTs_en = new boolean[4 * 2];
+        fig18_num_DTs_en = new boolean[6 * 2];
+        fig19_num_DTs_orig_en = new boolean[4 * 2];
+        fig19_num_DTs_time_en = new boolean[4 * 2];
         uses_fig17 = false;
         uses_fig18 = false;
         uses_fig19 = false;
@@ -215,21 +231,39 @@ public class ProjectEnhancedResults extends Project {
      *
      * @param numTotal is the total number of DTS for that file
      */
-    public void setNumTotalDependentTests(int figNum, int index, int numTotal) {
-        if (figNum == 17) {
-            fig17_nonzero[index] = numTotal != 0;
-        } else if (figNum == 18) {
-            fig18_nonzero[index] = numTotal != 0;
+    public void setNumTotalDependentTests(int figNum, int index, int numTotal, boolean isEnhanced) {
+        if (!isEnhanced) {
+            if (figNum == 17) {
+                fig17_num_DTs_unen[index] = numTotal != 0;
+            } else if (figNum == 18) {
+                fig18_num_DTs_unen[index] = numTotal != 0;
+            } else {
+                throw new RuntimeException();
+            }
         } else {
-            throw new RuntimeException();
+            if (figNum == 17) {
+                fig17_num_DTs_en[index] = numTotal != 0;
+            } else if (figNum == 18) {
+                fig18_num_DTs_en[index] = numTotal != 0;
+            } else {
+                throw new RuntimeException();
+            }
         }
     }
 
-    public void setNumTotalDependentTestsPara(boolean isOriginal, int index, int numTotal) {
-        if (isOriginal) {
-            fig19_nonzero_orig[index] = numTotal != 0;
+    public void setNumTotalDependentTestsPara(boolean isOriginal, int index, int numTotal, boolean isEnhanced) {
+        if (!isEnhanced) {
+            if (isOriginal) {
+                fig19_num_DTs_orig_unen[index] = numTotal != 0;
+            } else {
+                fig19_num_DTs_time_unen[index] = numTotal != 0;
+            }
         } else {
-            fig19_nonzero_time[index] = numTotal != 0;
+            if (isOriginal) {
+                fig19_num_DTs_orig_en[index] = numTotal != 0;
+            } else {
+                fig19_num_DTs_time_en[index] = numTotal != 0;
+            }
         }
     }
 
@@ -277,19 +311,35 @@ public class ProjectEnhancedResults extends Project {
         }
     }
 
-    public boolean[] get_fig17_nonZeroNumOfDTS() {
-        return fig17_nonzero;
+    public boolean[] get_fig17_NumOfDTs_unen() {
+        return fig17_num_DTs_unen;
     }
 
-    public boolean[] get_fig18_nonZeroNumOfDTS() {
-        return fig18_nonzero;
+    public boolean[] get_fig18_NumOfDTs_unen() {
+        return fig18_num_DTs_unen;
     }
 
-    public boolean[] get_fig19_nonZeroNumOfDTSOrig() {
-        return fig19_nonzero_orig;
+    public boolean[] get_fig19_NumOfDTs_orig_unen() {
+        return fig19_num_DTs_orig_unen;
     }
 
-    public boolean[] get_fig19_nonZeroNumOfDTSTime() {
-        return fig19_nonzero_time;
+    public boolean[] get_fig19_NumOfDTs_time_unen() {
+        return fig19_num_DTs_time_unen;
+    }
+
+    public boolean[] get_fig17_NumOfDTs_en() {
+        return fig17_num_DTs_en;
+    }
+
+    public boolean[] get_fig18_NumOfDTs_en() {
+        return fig18_num_DTs_en;
+    }
+
+    public boolean[] get_fig19_NumOfDTs_orig_en() {
+        return fig19_num_DTs_orig_en;
+    }
+
+    public boolean[] get_fig19_NumOfDTs_time_en() {
+        return fig19_num_DTs_time_en;
     }
 }
