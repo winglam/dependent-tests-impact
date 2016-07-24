@@ -25,8 +25,8 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
      */
     private static String generate17(ProjectEnhancedResults project, List<GeometricMeanData> fig17Data) {
         double[] values = project.get_fig17_values();
-        boolean[] unenNumOfDTS = project.get_fig17_NumOfDTs_unen();
-        boolean[] enNumOfDTS = project.get_fig17_NumOfDTs_en();
+        boolean[] unenNumOfDTs = project.get_fig17_NumOfDTs_unen();
+        boolean[] enNumOfDTs = project.get_fig17_NumOfDTs_en();
         String result = project.getName();
         List<Double> origTime = Arrays.asList(project.getOrig_time());
         List<Double> origCoverage = Arrays.asList(project.getOrig_coverage());
@@ -35,17 +35,17 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
         for (int i = 0; i + 1 < values.length; i += 2) {
             double val;
 
-            if (!unenNumOfDTS[i]) {
+            if (!unenNumOfDTs[i]) {
                 // Case A
                 // Enhanced - unenhanced
                 val = values[i + 1] - values[i];
-            } else if (unenNumOfDTS[i] && enNumOfDTS[i]) {
+            } else if (unenNumOfDTs[i] && enNumOfDTs[i]) {
                 // } else if (project.getName().equals(Constants.CRYSTAL_NAME) && type.equals("auto") && i != 0 && i !=
                 // 6) {
                 // Case B
                 // Shift_by_enhanced’s_time(orig) - shift_by_unsound’s_time(orig)
-                val = shift_by_time(project.getFig17_time_unen()[i], origTime, origCoverage)
-                        - shift_by_time(project.getFig17_time_en()[i], origTime, origCoverage);
+                val = shift_by_time(project.getFig17_time_en()[i], origTime, origCoverage)
+                        - shift_by_time(project.getFig17_time_unen()[i], origTime, origCoverage);
             } else {
                 // Case C
                 // Enhanced - shift_by_unsound’s_time(orig)
@@ -70,6 +70,32 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
     }
 
     /*
+     * For selection and parallelization, you don't
+     * have to run all of T_orig, just enough to cover all the selected tests.
+     * This method finds the highest index of the tests in testList that are also in origTestList.
+     */
+    private static int getHighestIndexInOrigTestList(String[] testList, List<String> origTestList) {
+        int highestIndex = -1;
+        for (String test : testList) {
+            int index = origTestList.indexOf(test);
+            if (index > highestIndex) {
+                highestIndex = index;
+            }
+        }
+        // Expected to be used with .sublist which excludes the last index so we add 1 to include the highestIndex
+        return highestIndex + 1;
+    }
+
+    private static double listToTime(List<Double> timeList) {
+        double value = 0;
+        for (double time : timeList) {
+            value += time;
+        }
+
+        return value / 1E9;
+    }
+
+    /*
      * a private method to generate a line of LaTeX needed for figure 18
      *
      * @param projectName the name of the project
@@ -87,11 +113,12 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
             PercentWrapper percentComparedToUnenhanced, String type) {
         double[] time = project.get_fig18_time();
         double[] values = project.get_fig18_values();
-        boolean[] unenNumOfDTS = project.get_fig18_NumOfDTs_unen();
-        boolean[] enNumOfDTS = project.get_fig18_NumOfDTs_en();
+        boolean[] unenNumOfDTs = project.get_fig18_NumOfDTs_unen();
+        boolean[] enNumOfDTs = project.get_fig18_NumOfDTs_en();
         String result = project.getName() + "       ";
         List<Double> origTime = Arrays.asList(project.getOrig_time());
         List<Double> origCoverage = Arrays.asList(project.getOrig_coverage());
+        List<String> origTestList = Arrays.asList(project.getOrig_tests());
 
         // i represents unenhanced, i + 1 represents enhanced
         for (int i = 0; i + 1 < time.length; i += 2) {
@@ -113,20 +140,26 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
             // }
 
             double percent;
-            if (!unenNumOfDTS[i]) {
+            if (!unenNumOfDTs[i]) {
                 // Case A
                 // 1 - Enh / (uns)
                 percent = 1 - (time[i + 1] / time[i]);
-            } else if (unenNumOfDTS[i] && enNumOfDTS[i]) {
+            } else if (unenNumOfDTs[i] && enNumOfDTs[i]) {
                 // } else if (project.getName().equals(Constants.CRYSTAL_NAME) && type.equals("auto") && i != 0 && i !=
                 // 6) {
                 // Case B
                 // 1 - (Enh + orig) / (uns + orig)
-                percent = 1 - ((time[i + 1] + orig_time_value) / (time[i] + orig_time_value));
+                double enOrigTimeVal = listToTime(new ArrayList<Double>(origTime.subList(0,
+                        getHighestIndexInOrigTestList(project.getFig18_en_test_list()[i], origTestList))));
+                double unenOrigTimeVal = listToTime(new ArrayList<Double>(origTime.subList(0,
+                        getHighestIndexInOrigTestList(project.getFig18_unen_test_list()[i], origTestList))));
+                percent = 1 - ((time[i + 1] + enOrigTimeVal) / (time[i] + unenOrigTimeVal));
             } else {
                 // Case C
                 // 1 - Enh / (uns + orig)
-                percent = 1 - (time[i + 1] / (time[i] + orig_time_value));
+                double unenOrigTimeVal = listToTime(new ArrayList<Double>(origTime.subList(0,
+                        getHighestIndexInOrigTestList(project.getFig18_unen_test_list()[i], origTestList))));
+                percent = 1 - (time[i + 1] / (time[i] + unenOrigTimeVal));
             }
             fig18percent.add(new GeometricMeanData(i, percent, null, null));
             percent *= 100;
@@ -161,21 +194,31 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
         for (int i = 0; i + 1 < values.length; i += 2) {
             double val;
 
-            if (!unenNumOfDTS[i]) {
+            if (!unenNumOfDTs[i]) {
                 // Case A
                 // Enhanced - unenhanced
                 val = values[i + 1] - values[i];
-            } else if (unenNumOfDTS[i] && enNumOfDTS[i]) {
+            } else if (unenNumOfDTs[i] && enNumOfDTs[i]) {
                 // } else if (project.getName().equals(Constants.CRYSTAL_NAME) && type.equals("auto") && i != 0 && i !=
                 // 6) {
                 // Case B
                 // Shift_by_enhanced’s_time(orig) - shift_by_unsound’s_time(orig)
-                val = shift_by_time(project.getFig18_time_en()[i], origTime, origCoverage)
-                        - shift_by_time(project.getFig18_time_unen()[i], origTime, origCoverage);
+                int unenIndex = getHighestIndexInOrigTestList(project.getFig18_unen_test_list()[i], origTestList);
+                int enIndex = getHighestIndexInOrigTestList(project.getFig18_en_test_list()[i], origTestList);
+
+                val = shift_by_time(project.getFig18_time_en()[i], new ArrayList<Double>(origTime.subList(0, enIndex)),
+                        new ArrayList<Double>(origCoverage.subList(0, enIndex)))
+                        - shift_by_time(project.getFig18_time_unen()[i],
+                                new ArrayList<Double>(origTime.subList(0, unenIndex)),
+                                new ArrayList<Double>(origCoverage.subList(0, unenIndex)));
             } else {
                 // Case C
                 // Enhanced - shift_by_unsound’s_time(orig)
-                val = values[i + 1] - shift_by_time(project.getFig18_time_unen()[i], origTime, origCoverage);
+                int index = getHighestIndexInOrigTestList(project.getFig18_unen_test_list()[i], origTestList);
+
+                val = values[i + 1] - shift_by_time(project.getFig18_time_unen()[i],
+                        new ArrayList<Double>(origTime.subList(0, index)),
+                        new ArrayList<Double>(origCoverage.subList(0, index)));
             }
             if (!allowNegatives && val < 0.0) {
                 val = 0.0;
@@ -218,30 +261,38 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
         double enhancedParaSpeedup = 0;
         double unenhancedPara = 0;
         double diffBetweenEnhancedUnenhanced = 0;
-        boolean[] unenNumOfDTS = project.get_fig19_NumOfDTs_orig_unen();
-        boolean[] enNumOfDTS = project.get_fig19_NumOfDTs_orig_en();
+        boolean[] unenNumOfDTs = project.get_fig19_NumOfDTs_orig_unen();
+        boolean[] enNumOfDTs = project.get_fig19_NumOfDTs_orig_en();
+        List<Double> origTime = Arrays.asList(project.getOrig_time());
+        List<String> origTestList = Arrays.asList(project.getOrig_tests());
 
         // i represents unenhanced, i + 1 represents enhanced
         for (int i = 0; i + 2 <= orig_values.length; i += 2) {
             // enhanced
             enhancedParaSpeedup = orig_values[i + 1];
             unenhancedPara = orig_values[i];
-            if (!unenNumOfDTS[i]) {
+            if (!unenNumOfDTs[i]) {
                 // Case A
                 // 1 - Enh / (uns)
                 diffBetweenEnhancedUnenhanced = 1 - (enhancedParaSpeedup / unenhancedPara);
-            } else if (unenNumOfDTS[i] && enNumOfDTS[i]) {
+            } else if (unenNumOfDTs[i] && enNumOfDTs[i]) {
                 // } else if (project.getName().equals(Constants.CRYSTAL_NAME) && type.equals("auto") && i != 0 && i !=
                 // 6) {
                 // Case B
                 // 1 - (Enh + orig) / (uns + orig)
+                double enOrigTimeVal = listToTime(new ArrayList<Double>(origTime.subList(0,
+                        getHighestIndexInOrigTestList(project.getFig19_en_test_list()[i], origTestList))));
+                double unenOrigTimeVal = listToTime(new ArrayList<Double>(origTime.subList(0,
+                        getHighestIndexInOrigTestList(project.getFig19_unen_test_list()[i], origTestList))));
                 diffBetweenEnhancedUnenhanced =
-                        1 - ((enhancedParaSpeedup + orig_time_value) / (unenhancedPara + orig_time_value));
+                        1 - ((enhancedParaSpeedup + enOrigTimeVal) / (unenhancedPara + unenOrigTimeVal));
             } else {
                 // orig
                 // Case C
                 // 1 - Enh / (uns + orig)
-                diffBetweenEnhancedUnenhanced = 1 - (enhancedParaSpeedup / (unenhancedPara + orig_time_value));
+                double unenOrigTimeVal = listToTime(new ArrayList<Double>(origTime.subList(0,
+                        getHighestIndexInOrigTestList(project.getFig19_unen_test_list()[i], origTestList))));
+                diffBetweenEnhancedUnenhanced = 1 - (enhancedParaSpeedup / (unenhancedPara + unenOrigTimeVal));
             }
 
             // Increase in runtime of enhanced compared to unenhanced
@@ -275,29 +326,35 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
                     Constants.ORDER.ORIGINAL));
             fig19GeoData.add(new GeometricMeanData(i, diffBetweenEnhancedUnenhanced, null, Constants.ORDER.ORIGINAL));
         }
-        unenNumOfDTS = project.get_fig19_NumOfDTs_time_unen();
-        enNumOfDTS = project.get_fig19_NumOfDTs_time_en();
+        unenNumOfDTs = project.get_fig19_NumOfDTs_time_unen();
+        enNumOfDTs = project.get_fig19_NumOfDTs_time_en();
 
         // i represents unenhanced, i + 1 represents enhanced
         for (int i = 0; i + 2 <= time_values.length; i += 2) {
             enhancedParaSpeedup = time_values[i + 1];
             unenhancedPara = time_values[i];
-            if (!unenNumOfDTS[i]) {
+            if (!unenNumOfDTs[i]) {
                 // Case A
                 // 1 - Enh / (uns)
                 diffBetweenEnhancedUnenhanced = 1 - (enhancedParaSpeedup / unenhancedPara);
-            } else if (unenNumOfDTS[i] && enNumOfDTS[i]) {
+            } else if (unenNumOfDTs[i] && enNumOfDTs[i]) {
                 // } else if (project.getName().equals(Constants.CRYSTAL_NAME) && type.equals("auto") && i != 0 && i !=
                 // 6) {
                 // Case B
                 // 1 - (Enh + orig) / (uns + orig)
+                double enOrigTimeVal = listToTime(new ArrayList<Double>(origTime.subList(0,
+                        getHighestIndexInOrigTestList(project.getFig19_en_test_list()[i], origTestList))));
+                double unenOrigTimeVal = listToTime(new ArrayList<Double>(origTime.subList(0,
+                        getHighestIndexInOrigTestList(project.getFig19_unen_test_list()[i], origTestList))));
                 diffBetweenEnhancedUnenhanced =
-                        1 - ((enhancedParaSpeedup + orig_time_value) / (unenhancedPara + orig_time_value));
+                        1 - ((enhancedParaSpeedup + enOrigTimeVal) / (unenhancedPara + unenOrigTimeVal));
             } else {
                 // orig
                 // Case C
                 // 1 - Enh / (uns + orig)
-                diffBetweenEnhancedUnenhanced = 1 - (enhancedParaSpeedup / (unenhancedPara + orig_time_value));
+                double unenOrigTimeVal = listToTime(new ArrayList<Double>(origTime.subList(0,
+                        getHighestIndexInOrigTestList(project.getFig19_unen_test_list()[i], origTestList))));
+                diffBetweenEnhancedUnenhanced = 1 - (enhancedParaSpeedup / (unenhancedPara + unenOrigTimeVal));
             }
 
             // Increase in runtime of enhanced compared to unenhanced

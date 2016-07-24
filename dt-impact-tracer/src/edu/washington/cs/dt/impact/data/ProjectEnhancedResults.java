@@ -54,12 +54,12 @@ public class ProjectEnhancedResults extends Project {
     private Double[] orig_time;
     private Double[] orig_coverage;
     private String[] orig_tests;
-    private String[][] fig17_enhanced_tests;
-    private String[][] fig17_unenhanced_tests;
-    private String[][] fig18_enhanced_tests;
-    private String[][] fig18_unenhanced_tests;
-    private String[][] fig19_enhanced_tests;
-    private String[][] fig19_unenhanced_tests;
+    private String[][] fig17_en_test_list;
+    private String[][] fig17_unen_test_list;
+    private String[][] fig18_en_test_list;
+    private String[][] fig18_unen_test_list;
+    private String[][] fig19_en_test_list;
+    private String[][] fig19_unen_test_list;
 
     public Double[][] getFig17_time_en() {
         return fig17_time_en;
@@ -81,20 +81,28 @@ public class ProjectEnhancedResults extends Project {
         return fig18_time_unen;
     }
 
-    public String[][] getFig18_enhanced_tests() {
-        return fig18_enhanced_tests;
+    public String[][] getFig17_en_test_list() {
+        return fig17_en_test_list;
     }
 
-    public String[][] getFig18_unenhanced_tests() {
-        return fig18_unenhanced_tests;
+    public String[][] getFig17_unen_test_list() {
+        return fig17_unen_test_list;
     }
 
-    public String[][] getFig19_enhanced_tests() {
-        return fig19_enhanced_tests;
+    public String[][] getFig18_en_test_list() {
+        return fig18_en_test_list;
     }
 
-    public String[][] getFig19_unenhanced_tests() {
-        return fig19_unenhanced_tests;
+    public String[][] getFig18_unen_test_list() {
+        return fig18_unen_test_list;
+    }
+
+    public String[][] getFig19_en_test_list() {
+        return fig19_en_test_list;
+    }
+
+    public String[][] getFig19_unen_test_list() {
+        return fig19_unen_test_list;
     }
 
     public Double[][] getFig19_time_unen() {
@@ -151,12 +159,12 @@ public class ProjectEnhancedResults extends Project {
         fig17_time_unen = new Double[4 * 2][];
         fig18_time_unen = new Double[6 * 2][];
         fig19_time_unen = new Double[2 * 4][];
-        fig17_enhanced_tests = new String[4 * 2][];
-        fig17_unenhanced_tests = new String[4 * 2][];
-        fig18_enhanced_tests = new String[6 * 2][];
-        fig18_unenhanced_tests = new String[6 * 2][];
-        fig19_enhanced_tests = new String[4 * 2][];
-        fig19_unenhanced_tests = new String[4 * 2][];
+        fig17_en_test_list = new String[4 * 2][];
+        fig17_unen_test_list = new String[4 * 2][];
+        fig18_en_test_list = new String[6 * 2][];
+        fig18_unen_test_list = new String[6 * 2][];
+        fig19_en_test_list = new String[4 * 2][];
+        fig19_unen_test_list = new String[4 * 2][];
     }
 
     public boolean isFig17() {
@@ -292,21 +300,21 @@ public class ProjectEnhancedResults extends Project {
     public void setTestList(int figNum, int index, String[] testList, boolean isEnhanced) {
         if (figNum == 17) {
             if (isEnhanced) {
-                fig17_enhanced_tests[index] = testList;
+                fig17_en_test_list[index] = testList;
             } else {
-                fig17_unenhanced_tests[index] = testList;
+                fig17_unen_test_list[index] = testList;
             }
         } else if (figNum == 18) {
             if (isEnhanced) {
-                fig18_enhanced_tests[index] = testList;
+                fig18_en_test_list[index] = testList;
             } else {
-                fig18_unenhanced_tests[index] = testList;
+                fig18_unen_test_list[index] = testList;
             }
         } else { // 19
             if (isEnhanced) {
-                fig19_enhanced_tests[index] = testList;
+                fig19_en_test_list[index] = testList;
             } else {
-                fig19_unenhanced_tests[index] = testList;
+                fig19_unen_test_list[index] = testList;
             }
         }
     }
