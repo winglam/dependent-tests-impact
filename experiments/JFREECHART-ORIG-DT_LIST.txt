@@ -42,7 +42,7 @@ when executed after: []
 
 Test: org.jfree.chart.axis.junit.SegmentedTimelineTests2.test6
 Intended behavior: FAILURE
-when executed after: [org.jfree.chart.axis.junit.SegmentedTimelineTests2.test1]
+when executed after: [org.jfree.chart.axis.junit.SegmentedTimelineTests2.test4]
 The revealed different behavior: PASS
 when executed after: []
 
@@ -54,7 +54,7 @@ when executed after: []
 
 Test: org.jfree.data.time.junit.DayTests.testParseDay
 Intended behavior: FAILURE
-when executed after: [org.jfree.data.time.junit.SecondTests.testGetStart]
+when executed after: [org.jfree.data.time.junit.MillisecondTests.testGetStart]
 The revealed different behavior: PASS
 when executed after: []
 
@@ -78,13 +78,55 @@ when executed after: []
 
 Test: org.jfree.data.time.junit.SecondTests.testGetStart
 Intended behavior: FAILURE
-when executed after: [org.jfree.data.time.junit.MonthTests.testParseMonth]
+when executed after: [org.jfree.data.time.junit.SecondTests.testGetEnd]
 The revealed different behavior: PASS
 when executed after: []
 
 Test: org.jfree.data.time.junit.MinuteTests.testGetStart
 Intended behavior: FAILURE
+when executed after: [org.jfree.data.time.junit.MinuteTests.testGetEnd]
+The revealed different behavior: PASS
+when executed after: []
+
+Test: org.jfree.chart.axis.junit.SegmentedTimelineTests2.test2
+Intended behavior: FAILURE
+when executed after: [org.jfree.chart.axis.junit.SegmentedTimelineTests2.test3]
+The revealed different behavior: PASS
+when executed after: []
+
+Test: org.jfree.chart.axis.junit.SegmentedTimelineTests2.test3
+Intended behavior: FAILURE
+when executed after: [org.jfree.chart.axis.junit.SegmentedTimelineTests2.test1]
+The revealed different behavior: PASS
+when executed after: []
+
+Test: org.jfree.data.time.junit.MillisecondTests.testGetStart
+Intended behavior: FAILURE
+when executed after: [org.jfree.data.time.junit.SecondTests.testGetStart]
+The revealed different behavior: PASS
+when executed after: []
+
+Test: org.jfree.chart.axis.junit.SegmentedTimelineTests2.test4
+Intended behavior: FAILURE
+when executed after: [org.jfree.chart.axis.junit.SegmentedTimelineTests2.test2]
+The revealed different behavior: PASS
+when executed after: []
+
+Test: org.jfree.data.time.junit.SecondTests.testGetEnd
+Intended behavior: FAILURE
+when executed after: [org.jfree.data.time.junit.MonthTests.testParseMonth]
+The revealed different behavior: PASS
+when executed after: []
+
+Test: org.jfree.data.time.junit.MinuteTests.testGetEnd
+Intended behavior: FAILURE
 when executed after: [org.jfree.data.time.junit.TimeSeriesCollectionTests.testFindDomainBounds]
+The revealed different behavior: PASS
+when executed after: []
+
+Test: org.jfree.data.time.junit.DayTests.testGetStart
+Intended behavior: FAILURE
+when executed after: [org.jfree.data.time.junit.DayTests.testParseDay]
 The revealed different behavior: PASS
 when executed after: []
 
