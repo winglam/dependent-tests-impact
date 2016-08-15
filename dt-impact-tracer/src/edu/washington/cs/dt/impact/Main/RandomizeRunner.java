@@ -92,9 +92,11 @@ public class RandomizeRunner extends Runner {
         Random rand = new Random();
         if (nIterations == -1) {
             for (int i = 1; i <= randomTimes; i++) {
+                System.out.println("Randomization iteration number: " + i + " / " + randomTimes);
                 runIteration(i, randomTimes, rand, nameToOrigResults, start);
             }
         } else {
+            double startTime = System.nanoTime();
             int i = 1;
             while (i < nIterations) {
                 if (runIteration(i, randomTimes, rand, nameToOrigResults, start)) {
@@ -105,6 +107,8 @@ public class RandomizeRunner extends Runner {
                     i += 1;
                 }
             }
+            double runTotal = System.nanoTime() - startTime;
+            System.out.println(">>>> Runtime to generate the dependent test list: " + nanosecondToSecond(runTotal));
         }
 
         // Output the results
@@ -125,7 +129,6 @@ public class RandomizeRunner extends Runner {
         boolean didFindNewTests = false;
         WrapperTestList testList = new WrapperTestList();
 
-        System.out.println("Randomization iteration number: " + i + " / " + randomTimes);
         List<String> origOrderCopy = new ArrayList<>();
         for (String s : origOrderTestList) {
             origOrderCopy.add(s.toString());
