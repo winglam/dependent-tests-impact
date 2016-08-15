@@ -39,6 +39,6 @@ echo "Running selection-runner script"
 runSelection
 
 echo "Running paralleization-runner script"
-#runParallelization
+runParallelization
 
 echo "Script has finished running."
