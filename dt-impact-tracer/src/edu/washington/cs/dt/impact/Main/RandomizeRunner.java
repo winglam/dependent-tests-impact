@@ -98,7 +98,7 @@ public class RandomizeRunner extends Runner {
         } else {
             double startTime = System.nanoTime();
             int i = 1;
-            while (i < nIterations) {
+            while (i <= nIterations) {
                 if (runIteration(i, randomTimes, rand, nameToOrigResults, start)) {
                     System.out.println("Found new dependent tests. Resetting i.");
                     i = 1;
