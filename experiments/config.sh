@@ -2,7 +2,7 @@
 # file.
 
 # Number of times to run the test order before taking the median
-medianTimes=1
+medianTimes=3
 # Number of times to randomize the test order when calculating the
 # precomputed dependences
 randomTimes=100
@@ -33,8 +33,9 @@ testListGenClass=edu.washington.cs.dt.impact.tools.TestListGenerator
 crossReferenceClass=edu.washington.cs.dt.impact.tools.CrossReferencer
 
 directories=(crystalvc jfreechart-1.0.15 jodatime-b609d7d66d dynoptic xml-security-orig-v1)
-fixerCP=(impact-tools/*:lib/* impact-tools/*:lib/* impact-tools/*:resources/:lib/* impact-tools/*:../synoptic/lib/*:../synoptic/bin/:../daikonizer/bin/ impact-tools/*:../xml-security-commons/bin/:data/:../xml-security-commons/libs/*)
+fixerCP=(../fixer-libs/*:lib/* ../fixer-libs/*:lib/* ../fixer-libs/*:resources/:lib/* ../fixer-libs/*:../synoptic/lib/*:../synoptic/bin/:../daikonizer/bin/ ../fixer-libs/*:../xml-security-commons/bin/:data/:../xml-security-commons/libs/*)
 experimentsCP=(impact-tools/*:bin/:lib/* impact-tools/*:bin/:lib/* impact-tools/*:bin/:resources/:lib/* impact-tools/*:bin/:../synoptic/lib/*:../synoptic/bin/:../daikonizer/bin/ impact-tools/*:bin/:../xml-security-commons/bin/:data/:../xml-security-commons/libs/*)
+experimentsCPWithDirectory=(crystalvc/impact-tools/*:crystalvc/bin/:crystalvc/lib/* jfreechart-1.0.15/impact-tools/*:jfreechart-1.0.15/bin/:jfreechart-1.0.15/lib/* jodatime-b609d7d66d/impact-tools/*:jodatime-b609d7d66d/bin/:jodatime-b609d7d66d/resources/:jodatime-b609d7d66d/lib/* dynoptic/impact-tools/*:dynoptic/bin/:synoptic/lib/*:synoptic/bin/:daikonizer/bin/ xml-security-orig-v1/impact-tools/*:xml-security-orig-v1/bin/:xml-security-commons/bin/:data/:xml-security-commons/libs/*)
 sootCP=(impact-tools/*:sootOutput/:lib/* impact-tools/*:sootOutput/:lib/* impact-tools/*:sootOutput/:resources/:lib/* impact-tools/*:sootOutput/:../synoptic/lib/*:../synoptic/bin/:../daikonizer/bin/ impact-tools/*:sootOutput/:../xml-security-commons/bin/:data/:../xml-security-commons/libs/*)
 
 newDirectories=(crystal jfreechart-1.0.16 jodatime-d6791cb5f9 dynoptic-ea407ba0a750 xml-security-1_2_0)
@@ -46,12 +47,15 @@ compileCP=(bin/:lib/* impact-tools/*:bin/:lib/* bin/:resources/:lib/* bin/:../sy
 newCompileCP=(bin/:lib/* impact-tools/*:bin/:lib/* bin/:resources/:lib/* bin/:../synoptic/lib/*:../synoptic/bin/:../daikonizer/bin/ bin/:../xml-security-commons/bin/:data/:../xml-security-commons/libs/*)
 
 function clearTemp() {
-  rm -rf sootOutput
   rm -rf sootTestOutput
   rm -rf tmpfile.txt
   rm -rf tmptestfiles.txt
   rm -rf $1-$2-time.txt
   rm -rf dtFixerOutput
+}
+
+function clearInstrumentation() {
+  rm -rf sootOutput
   rm -rf variableToType.dat
 }
 
@@ -116,9 +120,9 @@ function runParallelizationOneConfigurationRunner() {
     java -cp $2 edu.washington.cs.dt.impact.Main.OneConfigurationRunner -technique parallelization -order time -timeOrder $1-$3-time.txt -origOrder $1-$3-order -testInputDir sootTestOutput -filesToDelete $1-env-files -numOfMachines $k -project $1 -testType $3 -timesToRun ${medianTimes} -outputDir ../${paraDir}
     echo 'Running parallelization without resolveDependences and without dependentTestFile for original order'
     java -cp $2 edu.washington.cs.dt.impact.Main.OneConfigurationRunner -technique parallelization -order original -origOrder $1-$3-order -testInputDir sootTestOutput -filesToDelete $1-env-files -project $1 -testType $3 -numOfMachines $k -outputDir ../${paraDir} -timesToRun ${medianTimes}
-    #echo 'Running parallelization without resolveDependences and with dependentTestFile for time order'
-    #java -cp $2 edu.washington.cs.dt.impact.Main.OneConfigurationRunner -technique parallelization -order time -timeOrder $1-$3-time.txt -origOrder $1-$3-order -testInputDir sootTestOutput -filesToDelete $1-env-files -numOfMachines $k -project $1 -testType $3 -timesToRun ${medianTimes} -outputDir ../${paraDir} -dependentTestFile ../
-    #echo 'Running parallelization without resolveDependences and with dependentTestFile for original order'
-    #java -cp $2 edu.washington.cs.dt.impact.Main.OneConfigurationRunner -technique parallelization -order original -origOrder $1-$3-order -testInputDir sootTestOutput -filesToDelete $1-env-files -project $1 -testType $3 -numOfMachines $k -outputDir ../${paraDir} -timesToRun ${medianTimes} -dependentTestFile ../
+    echo 'Running parallelization without resolveDependences and with dependentTestFile for time order'
+    java -cp $2 edu.washington.cs.dt.impact.Main.OneConfigurationRunner -technique parallelization -order time -timeOrder $1-$3-time.txt -origOrder $1-$3-order -testInputDir sootTestOutput -filesToDelete $1-env-files -numOfMachines $k -project $1 -testType $3 -timesToRun ${medianTimes} -outputDir ../${paraDir} -dependentTestFile ../
+    echo 'Running parallelization without resolveDependences and with dependentTestFile for original order'
+    java -cp $2 edu.washington.cs.dt.impact.Main.OneConfigurationRunner -technique parallelization -order original -origOrder $1-$3-order -testInputDir sootTestOutput -filesToDelete $1-env-files -project $1 -testType $3 -numOfMachines $k -outputDir ../${paraDir} -timesToRun ${medianTimes} -dependentTestFile ../
   done
 }

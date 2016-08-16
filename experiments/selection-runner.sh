@@ -3,7 +3,7 @@ source ./config.sh
 function fixerInstrumentSelectionFiles() {
   cd $1
   echo 'Enhanced instrumenting new subject'
-      # Enable the following command to take an output argument
+  # Enable the following command to take an output argument
   java -cp $2:bin/ edu.washington.cs.dt.fixer.Main.InstrumentationMain -inputDir bin -cpDir bin
   # Enable the following command to output to a particular directory
   java -cp $2:bin/ edu.washington.cs.dt.fixer.Main.InstrumentationMain -inputDir bin -cpDir bin  -parsedStaticFields variableToType.dat
@@ -13,7 +13,7 @@ function fixerInstrumentSelectionFiles() {
 
   cd ../$3
   echo 'Enhanced instrumenting old subject'
-    # Enable the following command to take an output argument
+  # Enable the following command to take an output argument
   java -cp $4:bin/ edu.washington.cs.dt.fixer.Main.InstrumentationMain -inputDir bin -cpDir bin
   # Enable the following command to output to a particular directory
   java -cp $4:bin/ edu.washington.cs.dt.fixer.Main.InstrumentationMain -inputDir bin -cpDir bin  -parsedStaticFields variableToType.dat
@@ -58,8 +58,8 @@ while [ "$index" -lt "$count" ]; do
 
     for i in "${coverages[@]}"; do
       for j in "${seleOrders[@]}"; do
-        #echo 'Running selection without resolveDependences and with dependentTestFile'
-        #java -Xms1g -Xmx2g -cp ${newExperimentsCP[$index]} edu.washington.cs.dt.impact.Main.OneConfigurationRunner -technique selection -coverage $i -order $j -origOrder ${newDirectories[$index]}/${experiments[$index]}-$k-order -testInputDir ${directories[$index]}/sootTestOutput -filesToDelete ${newDirectories[$index]}/${experiments[$index]}-env-files -project ${experiments[$index]} -testType $k -oldVersCFG ${directories[$index]}/selectionOutput -newVersCFG ${newDirectories[$index]}/selectionOutput -getCoverage -outputDir ./${seleDir} -timesToRun ${medianTimes} -dependentTestFile ./
+        echo 'Running selection without resolveDependences and with dependentTestFile'
+        java -Xms1g -Xmx2g -cp ${newExperimentsCP[$index]} edu.washington.cs.dt.impact.Main.OneConfigurationRunner -technique selection -coverage $i -order $j -origOrder ${newDirectories[$index]}/${experiments[$index]}-$k-order -testInputDir ${directories[$index]}/sootTestOutput -filesToDelete ${newDirectories[$index]}/${experiments[$index]}-env-files -project ${experiments[$index]} -testType $k -oldVersCFG ${directories[$index]}/selectionOutput -newVersCFG ${newDirectories[$index]}/selectionOutput -getCoverage -outputDir ./${seleDir} -timesToRun ${medianTimes} -dependentTestFile ./
         echo 'Running selection without resolveDependences and without dependentTestFile'
         java -Xms1g -Xmx2g -cp ${newExperimentsCP[$index]} edu.washington.cs.dt.impact.Main.OneConfigurationRunner -technique selection -coverage $i -order $j -origOrder ${newDirectories[$index]}/${experiments[$index]}-$k-order -testInputDir ${directories[$index]}/sootTestOutput -filesToDelete ${newDirectories[$index]}/${experiments[$index]}-env-files -project ${experiments[$index]} -testType $k -oldVersCFG ${directories[$index]}/selectionOutput -newVersCFG ${newDirectories[$index]}/selectionOutput -getCoverage -outputDir ./${seleDir} -timesToRun ${medianTimes}
       done

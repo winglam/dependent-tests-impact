@@ -16,9 +16,9 @@ while [ $k -le $numTimesToRun ]
 do
   echo '======================= Start ' $k ' ======================='
   clearEnv
-  java -cp $experimentCP edu.washington.cs.dt.main.ImpactMain deterministic-order > $experiment-$testType-order-results.txt
+  java -cp $experimentCP edu.washington.cs.dt.main.ImpactMain -inputTests deterministic-order > $experiment-$testType-order-results.txt
   clearEnv
-  java -cp $experimentCP edu.washington.cs.dt.main.ImpactMain deterministic-order > $experiment-$testType-rerun-results.txt
+  java -cp $experimentCP edu.washington.cs.dt.main.ImpactMain -inputTests deterministic-order > $experiment-$testType-rerun-results.txt
 
   java -cp $experimentCP $crossReferenceClass -origOrder $experiment-$testType-order-results.txt -testOrder $experiment-$testType-rerun-results.txt > cross-referencer-file
 
