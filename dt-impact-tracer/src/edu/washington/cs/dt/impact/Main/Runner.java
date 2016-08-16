@@ -516,7 +516,7 @@ public abstract class Runner {
             writer.close();
             output.close();
 
-            if (outputDTListSeparately) {
+            if (outputDTListSeparately && allDTList != null && !allDTList.isEmpty()) {
                 output = new FileWriter(dirPath + Constants.getDTListFileName(project, testType));
                 writer = new BufferedWriter(output);
 
