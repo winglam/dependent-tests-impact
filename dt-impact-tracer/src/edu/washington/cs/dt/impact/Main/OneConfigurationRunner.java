@@ -85,11 +85,25 @@ public class OneConfigurationRunner extends Runner {
             Set<String> fixedDT = new HashSet<>();
             if (resolveDependences) {
                 int counter = 0;
-                while (!changedTests.isEmpty()) {
+
+                Set<String> dtToFix = new HashSet<String>();
+                for (String test : changedTests) {
+                    if (currentOrderTestList.contains(test)) {
+                        dtToFix.add(test);
+                    }
+                }
+
+                // TODO there may be a bug in the generation of parallelization orders where tests that needs to come
+                // before a dependent test from the ALL_DT_LIST is not actually putting all tests before the dependent
+                // test. Print botTests in determineSubLists to know for sure if all tests in there are in the
+                // ALL_DT_LIST and is in the current test order.
+                while (!dtToFix.isEmpty()) {
+                    String testName = dtToFix.iterator().next();
+
                     System.out.println("Nullifying DTs iteration number / possible iterations left: " + counter + " / "
-                            + changedTests.size());
+                            + dtToFix.size());
                     counter += 1;
-                    String testName = changedTests.iterator().next();
+
                     fixedDT.add(testName);
                     // DependentTestFinder
                     DependentTestFinder.runDTF(testName, nameToOrigResults.get(testName), currentOrderTestList,
@@ -102,6 +116,13 @@ public class OneConfigurationRunner extends Runner {
                     nameToTestResults = getCurrentOrderTestListResults(currentOrderTestList, filesToDelete);
                     // Cross Referencer
                     changedTests = CrossReferencer.compareResults(nameToOrigResults, nameToTestResults, false);
+
+                    dtToFix.clear();
+                    for (String test : changedTests) {
+                        if (currentOrderTestList.contains(test)) {
+                            dtToFix.add(test);
+                        }
+                    }
                 }
             }
 

@@ -47,6 +47,23 @@ public class RandomizeRunner extends Runner {
         // Parse the input arguments
         parseArgs(args);
 
+        int nIterations = -1;
+        int nIterationsIndex = argsList.indexOf("-nIterations");
+        if (nIterationsIndex != -1) {
+            int nIterationsIntIndex = nIterationsIndex + 1;
+            if (nIterationsIntIndex >= argsList.size()) {
+                System.err.println("Number of n iterations argument is specified but a integer"
+                        + " is not. Please use the format: -nIterations aInteger");
+                System.exit(0);
+            }
+            nIterations = Integer.parseInt(argsList.get(nIterationsIntIndex));
+            if (nIterations < 1) {
+                System.err.println("Number of n iterations argument is specified but the integer"
+                        + " value provided is invalid. Please check the integer value.");
+                System.exit(0);
+            }
+        }
+
         int randomTimes = 1;
         int randomTimesIndex = argsList.indexOf("-randomTimes");
         if (randomTimesIndex != -1) {
@@ -73,69 +90,105 @@ public class RandomizeRunner extends Runner {
         start = System.nanoTime();
 
         Random rand = new Random();
-        for (int i = 1; i <= randomTimes; i++) {
-            WrapperTestList testList = new WrapperTestList();
-
-            System.out.println("Randomization iteration number: " + i + " / " + randomTimes);
-            List<String> origOrderCopy = new ArrayList<>();
-            for (String s : origOrderTestList) {
-                origOrderCopy.add(s.toString());
+        if (nIterations == -1) {
+            for (int i = 1; i <= randomTimes; i++) {
+                System.out.println("Randomization iteration number: " + i + " / " + randomTimes);
+                runIteration(i, randomTimes, rand, nameToOrigResults, start);
             }
-            int randomNumToRemove = rand.nextInt(origOrderCopy.size() - 1) + 1;
-            for (int j = 0; j < randomNumToRemove; j++) {
-                int randomNumSelected = rand.nextInt(origOrderCopy.size());
-                origOrderCopy.remove(randomNumSelected);
-            }
-
-            Test testObj = new Prioritization(order, outputFileName, COVERAGE.STATEMENT, allDTList, getCoverage,
-                    origOrderCopy, testInputDir, true);
-            List<String> currentOrderTestList = getCurrentTestList(testObj, 0);
-
-            // ImpactMain
-            Map<String, RESULT> nameToTestResults = getCurrentOrderTestListResults(currentOrderTestList, filesToDelete);
-            // CrossReferencer
-            Set<String> changedTests = CrossReferencer.compareResults(nameToOrigResults, nameToTestResults, false);
-
-            Set<String> fixedDT = new HashSet<>();
-            if (resolveDependences) {
-                int counter = 0;
-                while (!changedTests.isEmpty()) {
-                    System.out.println("Nullifying DTs iteration number / possible iterations left: " + counter + " / "
-                            + changedTests.size());
-                    counter += 1;
-                    String testName = changedTests.iterator().next();
-                    fixedDT.add(testName);
-                    // DependentTestFinder
-                    DependentTestFinder.runDTF(testName, nameToOrigResults.get(testName), currentOrderTestList,
-                            origOrderTestList, filesToDelete, allDTList);
-                    allDTList = DependentTestFinder.getAllDTs();
-                    // TestListGenerator
-                    testObj.resetDTList(allDTList);
-                    currentOrderTestList = getCurrentTestList(testObj, 0);
-                    // ImpactMain
-                    nameToTestResults = getCurrentOrderTestListResults(currentOrderTestList, filesToDelete);
-                    // Cross Referencer
-                    changedTests = CrossReferencer.compareResults(nameToOrigResults, nameToTestResults, false);
+        } else {
+            double startTime = System.nanoTime();
+            int i = 1;
+            while (i < nIterations) {
+                if (runIteration(i, randomTimes, rand, nameToOrigResults, start)) {
+                    System.out.println("Found new dependent tests. Resetting i.");
+                    i = 1;
+                } else {
+                    System.out.println("No dependent tests found. i is " + i + " / " + nIterations);
+                    i += 1;
                 }
             }
-
-            // capture end time
-            double runTotal = System.nanoTime() - start;
-
-            testList.setNullifyDTTime(runTotal);
-            testList.setNumNotFixedDT(changedTests);
-            testList.setNumFixedDT(fixedDT.size());
-            testList.setTestList(currentOrderTestList);
-            setTestListMedianTime(timesToRun, filesToDelete, currentOrderTestList, testList);
-
-            if (allDTList != null) {
-                testList.setDtList(new ArrayList<String>(allDTList));
-            }
-
-            listTestList.add(testList);
+            double runTotal = System.nanoTime() - startTime;
+            System.out.println(">>>> Runtime to generate the dependent test list: " + nanosecondToSecond(runTotal));
         }
 
         // Output the results
         output(true);
+    }
+
+    /**
+     * Returns true if the iteration found new dependent tests, false otherwise
+     * @param i
+     * @param randomTimes
+     * @param rand
+     * @param nameToOrigResults
+     * @param start
+     * @return
+     */
+    private static boolean runIteration(int i, int randomTimes, Random rand, Map<String, RESULT> nameToOrigResults,
+            double start) {
+        boolean didFindNewTests = false;
+        WrapperTestList testList = new WrapperTestList();
+
+        List<String> origOrderCopy = new ArrayList<>();
+        for (String s : origOrderTestList) {
+            origOrderCopy.add(s.toString());
+        }
+        int randomNumToRemove = rand.nextInt(origOrderCopy.size() - 1) + 1;
+        for (int j = 0; j < randomNumToRemove; j++) {
+            int randomNumSelected = rand.nextInt(origOrderCopy.size());
+            origOrderCopy.remove(randomNumSelected);
+        }
+
+        Test testObj = new Prioritization(order, outputFileName, COVERAGE.STATEMENT, allDTList, getCoverage,
+                origOrderCopy, testInputDir, true);
+        List<String> currentOrderTestList = getCurrentTestList(testObj, 0);
+
+        // ImpactMain
+        Map<String, RESULT> nameToTestResults = getCurrentOrderTestListResults(currentOrderTestList, filesToDelete);
+        // CrossReferencer
+        Set<String> changedTests = CrossReferencer.compareResults(nameToOrigResults, nameToTestResults, false);
+
+        Set<String> fixedDT = new HashSet<>();
+        if (resolveDependences) {
+            int counter = 0;
+            while (!changedTests.isEmpty()) {
+                System.out.println("Nullifying DTs iteration number / possible iterations left: " + counter + " / "
+                        + changedTests.size());
+                counter += 1;
+                String testName = changedTests.iterator().next();
+                fixedDT.add(testName);
+                // DependentTestFinder
+                DependentTestFinder.runDTF(testName, nameToOrigResults.get(testName), currentOrderTestList,
+                        origOrderTestList, filesToDelete, allDTList);
+                List<String> newDTList = DependentTestFinder.getAllDTs();
+                if (allDTList.size() != newDTList.size()) {
+                    didFindNewTests = true;
+                }
+                allDTList = newDTList;
+                // TestListGenerator
+                testObj.resetDTList(allDTList);
+                currentOrderTestList = getCurrentTestList(testObj, 0);
+                // ImpactMain
+                nameToTestResults = getCurrentOrderTestListResults(currentOrderTestList, filesToDelete);
+                // Cross Referencer
+                changedTests = CrossReferencer.compareResults(nameToOrigResults, nameToTestResults, false);
+            }
+        }
+
+        // capture end time
+        double runTotal = System.nanoTime() - start;
+
+        testList.setNullifyDTTime(runTotal);
+        testList.setNumNotFixedDT(changedTests);
+        testList.setNumFixedDT(fixedDT.size());
+        testList.setTestList(currentOrderTestList);
+        setTestListMedianTime(timesToRun, filesToDelete, currentOrderTestList, testList);
+
+        if (allDTList != null) {
+            testList.setDtList(new ArrayList<String>(allDTList));
+        }
+
+        listTestList.add(testList);
+        return didFindNewTests;
     }
 }
