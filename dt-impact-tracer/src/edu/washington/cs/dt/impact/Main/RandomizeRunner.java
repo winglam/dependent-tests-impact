@@ -89,6 +89,8 @@ public class RandomizeRunner extends Runner {
         listTestList = new ArrayList<>();
         start = System.nanoTime();
 
+        double withNIterationsTime = -1.0;
+        double withoutNIterationsTime = -1.0;
         Random rand = new Random();
         if (nIterations == -1) {
             for (int i = 1; i <= randomTimes; i++) {
@@ -111,16 +113,12 @@ public class RandomizeRunner extends Runner {
                 }
             }
             double endTime = System.nanoTime();
-            double runTotal = endTime - startTime;
-            double withoutNIterationsTime = runTotal - (endTime - nIterationsNoDTTime);
-            System.out.println(">>>> Runtime to generate the dependent test list including nIterations time: "
-                    + nanosecondToSecond(runTotal));
-            System.out.println(">>>> Runtime to generate the dependent test list without nIterations time: "
-                    + nanosecondToSecond(withoutNIterationsTime));
+            withNIterationsTime = endTime - startTime;
+            withoutNIterationsTime = withNIterationsTime - (endTime - nIterationsNoDTTime);
         }
 
         // Output the results
-        output(true);
+        output(true, withNIterationsTime, withoutNIterationsTime);
     }
 
     /**
