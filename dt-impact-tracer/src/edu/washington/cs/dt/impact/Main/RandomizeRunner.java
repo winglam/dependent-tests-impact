@@ -96,19 +96,27 @@ public class RandomizeRunner extends Runner {
                 runIteration(i, randomTimes, rand, nameToOrigResults, start);
             }
         } else {
+            // Only record time up to when we found dependences
             double startTime = System.nanoTime();
             int i = 1;
+            double nIterationsNoDTTime = startTime;
             while (i <= nIterations) {
                 if (runIteration(i, randomTimes, rand, nameToOrigResults, start)) {
                     System.out.println("Found new dependent tests. Resetting i.");
+                    nIterationsNoDTTime = System.nanoTime();
                     i = 1;
                 } else {
                     System.out.println("No dependent tests found. i is " + i + " / " + nIterations);
                     i += 1;
                 }
             }
-            double runTotal = System.nanoTime() - startTime;
-            System.out.println(">>>> Runtime to generate the dependent test list: " + nanosecondToSecond(runTotal));
+            double endTime = System.nanoTime();
+            double runTotal = endTime - startTime;
+            double withoutNIterationsTime = runTotal - (endTime - nIterationsNoDTTime);
+            System.out.println(">>>> Runtime to generate the dependent test list including nIterations time: "
+                    + nanosecondToSecond(runTotal));
+            System.out.println(">>>> Runtime to generate the dependent test list without nIterations time: "
+                    + nanosecondToSecond(withoutNIterationsTime));
         }
 
         // Output the results
