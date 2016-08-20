@@ -454,6 +454,11 @@ public abstract class Runner {
     }
 
     protected static void output(boolean outputDTListSeparately) {
+        output(outputDTListSeparately, -1.0, -1.0);
+    }
+
+    protected static void output(boolean outputDTListSeparately, double withNIterationTime,
+            double withoutNIterationTime) {
         FileTools.clearEnv(filesToDelete);
         double totalTime = TLGTime;
         double maxTime = Double.MIN_VALUE;
@@ -498,6 +503,12 @@ public abstract class Runner {
         }
         outputArr.add("Total time (of all machines and iterations plus initial TestListGenerator): "
                 + nanosecondToSecond(totalTime));
+        if (withNIterationTime != -1.0 && withoutNIterationTime != -1.0) {
+            outputArr.add(
+                    "\nRuntime to generate the dependent test list including nIterations time: " + withNIterationTime);
+            outputArr.add(
+                    "\nRuntime to generate the dependent test list without nIterations time: " + withoutNIterationTime);
+        }
         if (techniqueName == TECHNIQUE.PARALLELIZATION) {
             outputArr.add("\n" + Constants.ORDER_TIME_PARA + " " + nanosecondToSecond(maxTime));
             outputArr.add("\nTotal number of tests executed in all machines out of total in original order: " + numTests
