@@ -118,7 +118,7 @@ public class RandomizeRunner extends Runner {
         }
 
         // Output the results
-        output(true, withNIterationsTime, withoutNIterationsTime);
+        output(true, nanosecondToSecond(withNIterationsTime), nanosecondToSecond(withoutNIterationsTime));
     }
 
     /**

@@ -454,11 +454,11 @@ public abstract class Runner {
     }
 
     protected static void output(boolean outputDTListSeparately) {
-        output(outputDTListSeparately, -1.0, -1.0);
+        output(outputDTListSeparately, null, null);
     }
 
-    protected static void output(boolean outputDTListSeparately, double withNIterationTime,
-            double withoutNIterationTime) {
+    protected static void output(boolean outputDTListSeparately, String withNIterationTime,
+            String withoutNIterationTime) {
         FileTools.clearEnv(filesToDelete);
         double totalTime = TLGTime;
         double maxTime = Double.MIN_VALUE;
@@ -503,7 +503,7 @@ public abstract class Runner {
         }
         outputArr.add("Total time (of all machines and iterations plus initial TestListGenerator): "
                 + nanosecondToSecond(totalTime));
-        if (withNIterationTime != -1.0 && withoutNIterationTime != -1.0) {
+        if (withNIterationTime != null && withoutNIterationTime != null) {
             outputArr.add(
                     "\nRuntime to generate the dependent test list including nIterations time: " + withNIterationTime);
             outputArr.add(
