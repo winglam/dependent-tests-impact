@@ -514,7 +514,7 @@ public abstract class Runner {
             }
 
             if (i < listTestList.size()) {
-                writeToFile(outputArr, outputDTListSeparately);
+                writeToFile(outputArr, false);
                 outputArr.clear();
             }
         }
