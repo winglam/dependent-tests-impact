@@ -457,7 +457,7 @@ public abstract class Runner {
         output(outputDTListSeparately, null, null);
     }
 
-    private static final int MAX_ARRAY_SIZE_TO_WRITE = 100; // 100,000
+    private static final int MAX_ARRAY_SIZE_TO_WRITE = 10000; // 10,000
 
     protected static void output(boolean outputDTListSeparately, String withNIterationTime,
             String withoutNIterationTime) {
@@ -514,7 +514,7 @@ public abstract class Runner {
             }
 
             if (i < listTestList.size()) {
-                writeToFile(outputArr, outputDTListSeparately);
+                writeToFile(outputArr, false);
                 outputArr.clear();
             }
         }
