@@ -457,6 +457,8 @@ public abstract class Runner {
         output(outputDTListSeparately, null, null);
     }
 
+    private static final int MAX_ARRAY_SIZE_TO_WRITE = 100; // 100,000
+
     protected static void output(boolean outputDTListSeparately, String withNIterationTime,
             String withoutNIterationTime) {
         FileTools.clearEnv(filesToDelete);
@@ -467,40 +469,56 @@ public abstract class Runner {
         List<String> outputArr = new ArrayList<>();
         outputArr.add(Constants.ARGUMENT_STRING + "\n");
         outputArr.add(argsList + "\n\n");
-        for (WrapperTestList testList : listTestList) {
-            testListTime = testList.getNewOrderTime();
-            totalTime += testListTime;
-            numTests += testList.getTestList().size();
-            maxTime = Math.max(maxTime, testListTime);
-            outputArr.add("Execution time of TLG and its time to find/nullify any DTs for 1 machine"
-                    + " (does not include the time to run the tests in the new order): "
-                    + nanosecondToSecond(testList.getNullifyDTTime()) + "\n");
-            outputArr.add("Number of tests selected out of total in original order: " + testList.getTestList().size()
-                    + " / " + origOrderTestList.size() + "\n");
-            outputArr.add(Constants.NUM_NOT_FIXED_DTS + " " + testList.getNumNotFixedDT() + "\n");
-            outputArr.add(Constants.FIXED_DTS + " " + testList.getNumFixedDT() + "\n");
-            if (getCoverage) {
-                outputArr.add(Constants.APFD_VALUE + " " + testList.getAPFD() + "\n");
+
+        int i = 0;
+        while (i < listTestList.size()) {
+            for (; i < listTestList.size(); i++) {
+                WrapperTestList testList = listTestList.get(i);
+                testListTime = testList.getNewOrderTime();
+                totalTime += testListTime;
+                numTests += testList.getTestList().size();
+                maxTime = Math.max(maxTime, testListTime);
+                outputArr.add("Execution time of TLG and its time to find/nullify any DTs for 1 machine"
+                        + " (does not include the time to run the tests in the new order): "
+                        + nanosecondToSecond(testList.getNullifyDTTime()) + "\n");
+                outputArr.add("Number of tests selected out of total in original order: "
+                        + testList.getTestList().size() + " / " + origOrderTestList.size() + "\n");
+                outputArr.add(Constants.NUM_NOT_FIXED_DTS + " " + testList.getNumNotFixedDT() + "\n");
+                outputArr.add(Constants.FIXED_DTS + " " + testList.getNumFixedDT() + "\n");
+                if (getCoverage) {
+                    outputArr.add(Constants.APFD_VALUE + " " + testList.getAPFD() + "\n");
+                }
+                outputArr.add(Constants.ORDER_TIME + " " + nanosecondToSecond(testListTime) + "\n");
+                outputArr.add("Test order list:\n");
+                outputArr.add(testList.getTestList() + "\n");
+                outputArr.add("\n" + Constants.TIME_STRING + "\n");
+                outputArr.add(testList.getTimeEachTest() + "\n");
+                if (testList.getNumNotFixedDT() != 0) {
+                    outputArr.add("\n" + Constants.NOT_FIXED_DTS + "\n");
+                    outputArr.add(testList.getNotFixedDT() + "\n");
+                }
+                if (testList.getDtList() != null) {
+                    outputArr.add("\nDependent test list:\n");
+                    outputArr.add(testList.getDtList() + "\n");
+                }
+                if (getCoverage) {
+                    outputArr.add("\n" + Constants.COVERAGE_STRING + "\n");
+                    outputArr.add(testList.getCoverage() + "\n");
+                }
+                outputArr.add("--------------------------\n");
+
+                // Size of the output array is getting too big. We will write this to a file first then continue4
+                if (outputArr.size() > MAX_ARRAY_SIZE_TO_WRITE) {
+                    break;
+                }
             }
-            outputArr.add(Constants.ORDER_TIME + " " + nanosecondToSecond(testListTime) + "\n");
-            outputArr.add("Test order list:\n");
-            outputArr.add(testList.getTestList() + "\n");
-            outputArr.add("\n" + Constants.TIME_STRING + "\n");
-            outputArr.add(testList.getTimeEachTest() + "\n");
-            if (testList.getNumNotFixedDT() != 0) {
-                outputArr.add("\n" + Constants.NOT_FIXED_DTS + "\n");
-                outputArr.add(testList.getNotFixedDT() + "\n");
+
+            if (i < listTestList.size()) {
+                writeToFile(outputArr, outputDTListSeparately);
+                outputArr.clear();
             }
-            if (testList.getDtList() != null) {
-                outputArr.add("\nDependent test list:\n");
-                outputArr.add(testList.getDtList() + "\n");
-            }
-            if (getCoverage) {
-                outputArr.add("\n" + Constants.COVERAGE_STRING + "\n");
-                outputArr.add(testList.getCoverage() + "\n");
-            }
-            outputArr.add("--------------------------\n");
         }
+
         outputArr.add("Total time (of all machines and iterations plus initial TestListGenerator): "
                 + nanosecondToSecond(totalTime));
         if (withNIterationTime != null && withoutNIterationTime != null) {
@@ -514,12 +532,24 @@ public abstract class Runner {
             outputArr.add("\nTotal number of tests executed in all machines out of total in original order: " + numTests
                     + " / " + origOrderTestList.size());
         }
+        writeToFile(outputArr, outputDTListSeparately);
+    }
 
+    private static void writeToFile(List<String> outputArr, boolean outputDTListSeparately) {
         FileWriter output = null;
         BufferedWriter writer = null;
         try {
             String dirPath = outputDir.getCanonicalPath() + System.getProperty("file.separator"); // / or \
-            output = new FileWriter(dirPath + outputFileName);
+            String filePathName = dirPath + outputFileName;
+            File outputFile = new File(filePathName);
+
+            // Loop until outputFile is one that does not exist already
+            int k = 1;
+            while (outputFile.isFile()) {
+                outputFile = new File(filePathName + k);
+            }
+
+            output = new FileWriter(outputFile);
             writer = new BufferedWriter(output);
             for (String line : outputArr) {
                 writer.write(line);
