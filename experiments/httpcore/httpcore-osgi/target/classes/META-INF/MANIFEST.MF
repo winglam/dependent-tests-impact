@@ -1,0 +1,107 @@
+Manifest-Version: 1.0
+Bundle-License: LICENSE.txt
+Bundle-SymbolicName: org.apache.httpcomponents.httpcore
+Built-By: winglam
+Bnd-LastModified: 1471902027556
+Specification-Title: HttpComponents HttpCore OSGi bundle
+Implementation-Vendor-Id: org.apache
+Bundle-DocURL: http://www.apache.org/
+Include-Resource: @/Users/winglam/GoogleDrive/research/dt-impact/exper
+ iments/experiments/httpcore/httpcore/target/httpcore-4.2-alpha2-SNAPS
+ HOT.jar,@/Users/winglam/GoogleDrive/research/dt-impact/experiments/ex
+ periments/httpcore/httpcore-nio/target/httpcore-nio-4.2-alpha2-SNAPSH
+ OT.jar,META-INF/LICENSE.txt=target/notice-and-license/LICENSE.txt,MET
+ A-INF/NOTICE.txt=target/notice-and-license/NOTICE.txt
+Import-Package: javax.net.ssl
+Export-Package: org.apache.http.nio.params;uses:="org.apache.http.para
+ ms";version="4.2.0.alpha2-SNAPSHOT",org.apache.http.impl.nio.pool;use
+ s:="org.apache.http.concurrent,org.apache.http.nio.reactor,org.apache
+ .http.params,org.apache.http.nio.pool,org.apache.http.pool,org.apache
+ .http";version="4.2.0.alpha2-SNAPSHOT",org.apache.http.nio.util;uses:
+ ="org.apache.http.nio,org.apache.http.io";version="4.2.0.alpha2-SNAPS
+ HOT",org.apache.http.entity;uses:="org.apache.http.protocol,org.apach
+ e.http,org.apache.http.message,org.apache.http.util";version="4.2.0.a
+ lpha2-SNAPSHOT",org.apache.http.impl.nio.reactor;uses:="org.apache.ht
+ tp.nio.reactor,org.apache.http.nio.params,org.apache.http.params,java
+ x.net.ssl,org.apache.http.nio.util,org.apache.http.util,org.apache.ht
+ tp.protocol";version="4.2.0.alpha2-SNAPSHOT",org.apache.http.util;use
+ s:="org.apache.http.protocol,org.apache.http";version="4.2.0.alpha2-S
+ NAPSHOT",org.apache.http.protocol;uses:="org.apache.http,org.apache.h
+ ttp.params,org.apache.http.entity,org.apache.http.util";version="4.2.
+ 0.alpha2-SNAPSHOT",org.apache.http.io;uses:="org.apache.http,org.apac
+ he.http.util";version="4.2.0.alpha2-SNAPSHOT",org.apache.http.annotat
+ ion;version="4.2.0.alpha2-SNAPSHOT",org.apache.http.impl.nio.ssl;uses
+ :="org.apache.http.nio.util,org.apache.http.impl,org.apache.http.nio.
+ reactor,org.apache.http.impl.nio.reactor,org.apache.http.protocol,org
+ .apache.http,org.apache.http.nio,org.apache.http.impl.nio,org.apache.
+ http.params,javax.net.ssl";version="4.2.0.alpha2-SNAPSHOT",org.apache
+ .http.nio.protocol;uses:="org.apache.http.nio.entity,org.apache.http,
+ org.apache.http.nio,org.apache.http.nio.util,org.apache.http.params,o
+ rg.apache.http.protocol,org.apache.http.util,org.apache.http.entity,o
+ rg.apache.http.nio.params";version="4.2.0.alpha2-SNAPSHOT",org.apache
+ .http.impl.entity;uses:="org.apache.http.entity,org.apache.http.proto
+ col,org.apache.http.io,org.apache.http.impl.io,org.apache.http,org.ap
+ ache.http.params";version="4.2.0.alpha2-SNAPSHOT",org.apache.http.nio
+ ;uses:="org.apache.http,org.apache.http.protocol";version="4.2.0.alph
+ a2-SNAPSHOT",org.apache.http.params;uses:="org.apache.http,org.apache
+ .http.protocol";version="4.2.0.alpha2-SNAPSHOT",org.apache.http.impl.
+ pool;uses:="org.apache.http.impl,org.apache.http.params,org.apache.ht
+ tp.pool,javax.net.ssl,org.apache.http";version="4.2.0.alpha2-SNAPSHOT
+ ",org.apache.http.message;uses:="org.apache.http.params,org.apache.ht
+ tp,org.apache.http.util,org.apache.http.protocol";version="4.2.0.alph
+ a2-SNAPSHOT",org.apache.http.concurrent;version="4.2.0.alpha2-SNAPSHO
+ T",org.apache.http.impl;uses:="org.apache.http.impl.entity,org.apache
+ .http.params,org.apache.http.entity,org.apache.http.io,org.apache.htt
+ p.impl.io,org.apache.http,org.apache.http.message,org.apache.http.pro
+ tocol";version="4.2.0.alpha2-SNAPSHOT",org.apache.http.nio.reactor;us
+ es:="org.apache.http.util";version="4.2.0.alpha2-SNAPSHOT",org.apache
+ .http.nio.pool;uses:="org.apache.http.pool,org.apache.http.nio.reacto
+ r,org.apache.http.concurrent";version="4.2.0.alpha2-SNAPSHOT",org.apa
+ che.http.impl.io;uses:="org.apache.http.params,org.apache.http.util,o
+ rg.apache.http.io,org.apache.http.message,org.apache.http,org.apache.
+ http.protocol";version="4.2.0.alpha2-SNAPSHOT",org.apache.http;uses:=
+ "org.apache.http.protocol,org.apache.http.util,org.apache.http.params
+ ";version="4.2.0.alpha2-SNAPSHOT",org.apache.http.nio.entity;uses:="o
+ rg.apache.http.nio,org.apache.http.nio.util,org.apache.http.entity,or
+ g.apache.http,org.apache.http.io,org.apache.http.protocol";version="4
+ .2.0.alpha2-SNAPSHOT",org.apache.http.impl.nio.codecs;uses:="org.apac
+ he.http.nio,org.apache.http.nio.reactor,org.apache.http.impl.io,org.a
+ pache.http.params,org.apache.http.util,org.apache.http,org.apache.htt
+ p.message,org.apache.http.protocol,org.apache.http.io";version="4.2.0
+ .alpha2-SNAPSHOT",org.apache.http.impl.nio;uses:="org.apache.http.nio
+ ,org.apache.http.nio.util,org.apache.http.impl,org.apache.http.params
+ ,org.apache.http.nio.reactor,org.apache.http.protocol,org.apache.http
+ ,org.apache.http.impl.nio.reactor,org.apache.http.impl.io,org.apache.
+ http.impl.nio.codecs,org.apache.http.message,org.apache.http.entity,o
+ rg.apache.http.io,org.apache.http.impl.entity,javax.net.ssl";version=
+ "4.2.0.alpha2-SNAPSHOT",org.apache.http.pool;version="4.2.0.alpha2-SN
+ APSHOT"
+Bundle-Name: Apache HttpCore OSGi bundle
+Ignore-Package: org.apache.http.nio.params,org.apache.http.impl.nio.po
+ ol,org.apache.http.nio.util,org.apache.http.entity,org.apache.http.im
+ pl.nio.reactor,org.apache.http.util,org.apache.http.protocol,org.apac
+ he.http.io,org.apache.http.annotation,org.apache.http.impl.nio.ssl,or
+ g.apache.http.nio.protocol,org.apache.http.impl.entity,org.apache.htt
+ p.nio,org.apache.http.params,org.apache.http.impl.pool,org.apache.htt
+ p.message,org.apache.http.concurrent,org.apache.http.impl,org.apache.
+ http.nio.reactor,org.apache.http.nio.pool,org.apache.http.impl.io,org
+ .apache.http,org.apache.http.nio.entity,org.apache.http.impl.nio.code
+ cs,org.apache.http.impl.nio,org.apache.http.pool
+Bundle-Description: HttpComponents Core (OSGi bundle)
+Implementation-Title: HttpComponents HttpCore OSGi bundle
+Implementation-Version: 4.2-alpha2-SNAPSHOT
+Bundle-ManifestVersion: 2
+Embed-Dependency: *;scope=compile|runtime;inline=true
+Specification-Vendor: The Apache Software Foundation
+Bundle-Vendor: The Apache Software Foundation
+Tool: Bnd-0.0.357
+url: http://hc.apache.org/httpcomponents-core-ga
+Implementation-Vendor: The Apache Software Foundation
+Bundle-Version: 4.2.0.alpha2-SNAPSHOT
+X-Compile-Target-JDK: 1.5
+Private-Package: !*
+X-Compile-Source-JDK: 1.5
+Created-By: Apache Maven Bundle Plugin
+Build-Jdk: 1.8.0_65
+Specification-Version: 4.2-alpha2-SNAPSHOT
+
