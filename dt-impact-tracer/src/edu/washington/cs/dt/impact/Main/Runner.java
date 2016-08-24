@@ -547,6 +547,7 @@ public abstract class Runner {
             int k = 1;
             while (outputFile.isFile()) {
                 outputFile = new File(filePathName + k);
+                k += 1;
             }
 
             output = new FileWriter(outputFile);

@@ -5,7 +5,7 @@ compileSource
 index=3
 count=${#experiments[@]}
 ARRAY=()
-iterationsBeforeDone=2
+iterationsBeforeDone=100
 
 while [ "$index" -lt "$count" ]; do
   echo -e "Starting experiment: ${experiments[$index]}"

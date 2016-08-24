@@ -8,7 +8,7 @@ function clearEnv() {
   :
 }
 
-source ../config.sh
+source ../../../config.sh
 
 j=0
 k=0
