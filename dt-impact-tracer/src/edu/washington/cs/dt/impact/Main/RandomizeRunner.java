@@ -118,7 +118,11 @@ public class RandomizeRunner extends Runner {
         }
 
         // Output the results
-        output(true, nanosecondToSecond(withNIterationsTime), nanosecondToSecond(withoutNIterationsTime));
+        if (withNIterationsTime == -1.0 || withoutNIterationsTime == -1.0) {
+            output(true);
+        } else {
+            output(true, nanosecondToSecond(withNIterationsTime), nanosecondToSecond(withoutNIterationsTime));
+        }
     }
 
     /**
