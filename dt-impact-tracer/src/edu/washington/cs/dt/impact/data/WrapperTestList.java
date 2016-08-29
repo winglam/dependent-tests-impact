@@ -13,6 +13,15 @@ public class WrapperTestList {
     private List<String> testList;
     private double newOrderTime;
     private String dtList;
+    private int testListSize;
+
+    public int getTestListSize() {
+        return testListSize;
+    }
+
+    public void setTestListSize(int size) {
+        this.testListSize = size;
+    }
 
     public String getDtList() {
         return dtList;

@@ -201,6 +201,7 @@ public class RandomizeRunner extends Runner {
         if (printTestLists) {
             testList.setTestList(currentOrderTestList);
         }
+        testList.setTestListSize(currentOrderTestList.size());
         setTestListMedianTime(timesToRun, filesToDelete, currentOrderTestList, testList, printTestLists);
 
         if (allDTList != null && DT_LIST_STRING != null) {

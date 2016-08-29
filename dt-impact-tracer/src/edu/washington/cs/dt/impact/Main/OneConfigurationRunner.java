@@ -132,6 +132,7 @@ public class OneConfigurationRunner extends Runner {
             testList.setNumNotFixedDT(changedTests);
             testList.setNumFixedDT(fixedDT.size());
             testList.setTestList(currentOrderTestList);
+            testList.setTestListSize(currentOrderTestList.size());
             Map<Double, List<Double>> totalTimeToCumulTime =
                     setTestListMedianTime(timesToRun, filesToDelete, currentOrderTestList, testList, true);
             if (allDTList != null) {
