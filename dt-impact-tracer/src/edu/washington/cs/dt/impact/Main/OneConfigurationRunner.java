@@ -133,9 +133,9 @@ public class OneConfigurationRunner extends Runner {
             testList.setNumFixedDT(fixedDT.size());
             testList.setTestList(currentOrderTestList);
             Map<Double, List<Double>> totalTimeToCumulTime =
-                    setTestListMedianTime(timesToRun, filesToDelete, currentOrderTestList, testList);
+                    setTestListMedianTime(timesToRun, filesToDelete, currentOrderTestList, testList, true);
             if (allDTList != null) {
-                testList.setDtList(new ArrayList<String>(allDTList));
+                testList.setDtList(allDTList.toString());
             }
 
             if (getCoverage) {
