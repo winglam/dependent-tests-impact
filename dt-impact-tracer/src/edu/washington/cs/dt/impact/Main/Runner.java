@@ -481,7 +481,7 @@ public abstract class Runner {
                         + " (does not include the time to run the tests in the new order): "
                         + nanosecondToSecond(testList.getNullifyDTTime()) + "\n");
                 outputArr.add("Number of tests selected out of total in original order: "
-                        + testList.getTestList().size() + " / " + origOrderTestList.size() + "\n");
+                        + testList.getTestListSize() + " / " + origOrderTestList.size() + "\n");
                 outputArr.add(Constants.NUM_NOT_FIXED_DTS + " " + testList.getNumNotFixedDT() + "\n");
                 outputArr.add(Constants.FIXED_DTS + " " + testList.getNumFixedDT() + "\n");
                 if (getCoverage) {
