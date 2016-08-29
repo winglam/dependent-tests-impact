@@ -12,13 +12,13 @@ public class WrapperTestList {
     private String timeEachTest;
     private List<String> testList;
     private double newOrderTime;
-    private List<String> dtList;
+    private String dtList;
 
-    public List<String> getDtList() {
+    public String getDtList() {
         return dtList;
     }
 
-    public void setDtList(List<String> dtList) {
+    public void setDtList(String dtList) {
         this.dtList = dtList;
     }
 

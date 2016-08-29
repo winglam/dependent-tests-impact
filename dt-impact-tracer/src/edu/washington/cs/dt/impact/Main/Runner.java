@@ -488,11 +488,15 @@ public abstract class Runner {
                 if (getCoverage) {
                     outputArr.add(Constants.APFD_VALUE + " " + testList.getAPFD() + "\n");
                 }
-                outputArr.add(Constants.ORDER_TIME + " " + nanosecondToSecond(testListTime) + "\n");
-                outputArr.add("Test order list:\n");
-                outputArr.add(testList.getTestList() + "\n");
-                outputArr.add("\n" + Constants.TIME_STRING + "\n");
-                outputArr.add(testList.getTimeEachTest() + "\n");
+                outputArr.add(Constants.ORDER_TIME + " " + nanosecondToSecond(testListTime));
+                if (testList.getTestList() != null) {
+                    outputArr.add("\nTest order list:\n");
+                    outputArr.add(testList.getTestList() + "\n");
+                }
+                if (testList.getTimeEachTest() != null) {
+                    outputArr.add("\n" + Constants.TIME_STRING + "\n");
+                    outputArr.add(testList.getTimeEachTest() + "\n");
+                }
                 if (testList.getNumNotFixedDT() != 0) {
                     outputArr.add("\n" + Constants.NOT_FIXED_DTS + "\n");
                     outputArr.add(testList.getNotFixedDT() + "\n");
@@ -591,7 +595,7 @@ public abstract class Runner {
     }
 
     protected static Map<Double, List<Double>> setTestListMedianTime(int timesToRun, List<String> filesToDelete,
-            List<String> currentOrderTestList, WrapperTestList testList) {
+            List<String> currentOrderTestList, WrapperTestList testList, boolean printTestLists) {
         // Get time each test took
         Map<Double, List<Double>> totalTimeToCumulTime = new TreeMap<>();
         Map<Double, List<String>> totalTimeToTimeEachTest = new TreeMap<>();
@@ -607,7 +611,9 @@ public abstract class Runner {
         }
         Double[] keys = totalTimeToCumulTime.keySet().toArray(new Double[totalTimeToCumulTime.keySet().size()]);
         double median = keys[keys.length / 2];
-        testList.setTimeEachTest(totalTimeToTimeEachTest.get(median).toString());
+        if (printTestLists) {
+            testList.setTimeEachTest(totalTimeToTimeEachTest.get(median).toString());
+        }
         testList.setNewOrderTime(median);
         return totalTimeToCumulTime;
     }

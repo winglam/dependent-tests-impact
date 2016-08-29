@@ -80,6 +80,9 @@ public class RandomizeRunner extends Runner {
                 System.exit(0);
             }
         }
+
+        boolean printTestLists = argsList.contains("-printTestLists");
+
         Map<String, RESULT> nameToOrigResults = getCurrentOrderTestListResults(origOrderTestList, filesToDelete);
 
         // capture start time
@@ -95,7 +98,7 @@ public class RandomizeRunner extends Runner {
         if (nIterations == -1) {
             for (int i = 1; i <= randomTimes; i++) {
                 System.out.println("Randomization iteration number: " + i + " / " + randomTimes);
-                runIteration(i, randomTimes, rand, nameToOrigResults, start);
+                runIteration(i, randomTimes, rand, nameToOrigResults, start, printTestLists);
             }
         } else {
             // Only record time up to when we found dependences
@@ -103,7 +106,7 @@ public class RandomizeRunner extends Runner {
             int i = 1;
             double nIterationsNoDTTime = startTime;
             while (i <= nIterations) {
-                if (runIteration(i, randomTimes, rand, nameToOrigResults, start)) {
+                if (runIteration(i, randomTimes, rand, nameToOrigResults, start, printTestLists)) {
                     System.out.println("Found new dependent tests. Resetting i.");
                     nIterationsNoDTTime = System.nanoTime();
                     i = 1;
@@ -125,6 +128,8 @@ public class RandomizeRunner extends Runner {
         }
     }
 
+    private static String DT_LIST_STRING = null;
+
     /**
      * Returns true if the iteration found new dependent tests, false otherwise
      * @param i
@@ -135,7 +140,7 @@ public class RandomizeRunner extends Runner {
      * @return
      */
     private static boolean runIteration(int i, int randomTimes, Random rand, Map<String, RESULT> nameToOrigResults,
-            double start) {
+            double start, boolean printTestLists) {
         boolean didFindNewTests = false;
         WrapperTestList testList = new WrapperTestList();
 
@@ -173,8 +178,10 @@ public class RandomizeRunner extends Runner {
                 List<String> newDTList = DependentTestFinder.getAllDTs();
                 if ((allDTList == null && !newDTList.isEmpty()) || (allDTList.size() != newDTList.size())) {
                     didFindNewTests = true;
+                    allDTList = newDTList;
+                    DT_LIST_STRING = allDTList.toString();
                 }
-                allDTList = newDTList;
+
                 // TestListGenerator
                 testObj.resetDTList(allDTList);
                 currentOrderTestList = getCurrentTestList(testObj, 0);
@@ -191,11 +198,13 @@ public class RandomizeRunner extends Runner {
         testList.setNullifyDTTime(runTotal);
         testList.setNumNotFixedDT(changedTests);
         testList.setNumFixedDT(fixedDT.size());
-        testList.setTestList(currentOrderTestList);
-        setTestListMedianTime(timesToRun, filesToDelete, currentOrderTestList, testList);
+        if (printTestLists) {
+            testList.setTestList(currentOrderTestList);
+        }
+        setTestListMedianTime(timesToRun, filesToDelete, currentOrderTestList, testList, printTestLists);
 
-        if (allDTList != null) {
-            testList.setDtList(new ArrayList<String>(allDTList));
+        if (allDTList != null && DT_LIST_STRING != null) {
+            testList.setDtList(DT_LIST_STRING);
         }
 
         listTestList.add(testList);
