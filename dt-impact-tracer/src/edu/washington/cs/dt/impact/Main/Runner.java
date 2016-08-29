@@ -476,7 +476,6 @@ public abstract class Runner {
                 WrapperTestList testList = listTestList.get(i);
                 testListTime = testList.getNewOrderTime();
                 totalTime += testListTime;
-                numTests += testList.getTestList().size();
                 maxTime = Math.max(maxTime, testListTime);
                 outputArr.add("Execution time of TLG and its time to find/nullify any DTs for 1 machine"
                         + " (does not include the time to run the tests in the new order): "
@@ -490,6 +489,7 @@ public abstract class Runner {
                 }
                 outputArr.add(Constants.ORDER_TIME + " " + nanosecondToSecond(testListTime));
                 if (testList.getTestList() != null) {
+                    numTests += testList.getTestList().size();
                     outputArr.add("\nTest order list:\n");
                     outputArr.add(testList.getTestList() + "\n");
                 }
