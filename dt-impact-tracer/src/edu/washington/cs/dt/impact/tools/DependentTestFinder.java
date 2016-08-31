@@ -459,7 +459,7 @@ public class DependentTestFinder {
             botHalf = new LinkedList<String>(tests.subList(tests.size() / 2, tests.size()));
         }
 
-        if (!beforeTests.contains(tests.get(0)) && !afterTests.contains(tests.get(0))) {
+        if (!tests.isEmpty() && !beforeTests.contains(tests.get(0)) && !afterTests.contains(tests.get(0))) {
             if (isOriginalOrder) {
                 beforeTests.add(tests.get(0));
             } else {
