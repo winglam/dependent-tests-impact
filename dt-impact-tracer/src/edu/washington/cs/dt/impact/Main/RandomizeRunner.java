@@ -115,9 +115,8 @@ public class RandomizeRunner extends Runner {
                     i += 1;
                 }
             }
-            double endTime = System.nanoTime();
-            withNIterationsTime = endTime - startTime;
-            withoutNIterationsTime = withNIterationsTime - (endTime - nIterationsNoDTTime);
+            withNIterationsTime = System.nanoTime() - startTime;
+            withoutNIterationsTime = nIterationsNoDTTime - startTime;
         }
 
         // Output the results
@@ -174,9 +173,10 @@ public class RandomizeRunner extends Runner {
                 fixedDT.add(testName);
                 // DependentTestFinder
                 DependentTestFinder.runDTF(testName, nameToOrigResults.get(testName), currentOrderTestList,
-                        origOrderTestList, filesToDelete, allDTList);
+                        origOrderTestList, filesToDelete, new ArrayList<String>(allDTList));
                 List<String> newDTList = DependentTestFinder.getAllDTs();
-                if ((allDTList == null && !newDTList.isEmpty()) || (allDTList.size() != newDTList.size())) {
+                if ((allDTList == null && !newDTList.isEmpty())
+                        || (allDTList != null && allDTList.size() != newDTList.size())) {
                     didFindNewTests = true;
                     allDTList = newDTList;
                     DT_LIST_STRING = allDTList.toString();
