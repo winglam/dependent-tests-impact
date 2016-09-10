@@ -1,7 +1,7 @@
 /**
  * Copyright 2014 University of Washington. All Rights Reserved.
  * @author Wing Lam
- * 
+ *
  *         Data class representing a test case.
  */
 
@@ -147,7 +147,7 @@ public class TestFunctionStatement extends Observable implements Comparable<Test
         } else if (mLineCount > oLineCount) {
             return -1;
         } else {
-            return 0;
+            return getName().compareTo(o.getName());
         }
     }
 
