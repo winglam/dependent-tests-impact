@@ -1,12 +1,13 @@
 package edu.washington.cs.dt.fixer.Main;
 
 import soot.SootMethod;
+import soot.jimple.internal.JAssignStmt;
 
 public class MethodAndStaticStmt {
     public SootMethod method;
-    public ValueData staticSmt;
+    public JAssignStmt staticSmt;
 
-    public MethodAndStaticStmt(SootMethod method, ValueData staticStmt) {
+    public MethodAndStaticStmt(SootMethod method, JAssignStmt staticStmt) {
         this.method = method;
         this.staticSmt = staticStmt;
     }
