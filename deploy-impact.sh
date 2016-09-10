@@ -43,6 +43,9 @@ cp ./impact.jar ./experiments/jfreechart-1.0.15/impact-tools/
 rm -rf ./experiments/jfreechart-1.0.16/impact-tools/impact.jar
 cp ./impact.jar ./experiments/jfreechart-1.0.16/impact-tools/
 
+rm -rf ./experiments/fixer-libs/impact.jar
+cp ./impact.jar ./experiments/fixer-libs/
+
 rm -rf ./impact.jar
 
 # DTDetector
@@ -83,7 +86,10 @@ rm -rf ./experiments/jfreechart-1.0.16/impact-tools/dt-detector.jar
 cp ./dt-detector.jar ./experiments/jfreechart-1.0.16/impact-tools/
 
 rm -rf ./dt-detector/lib/dt-detector.jar
-cp ./dt-detector.jar ./dt-detector/lib/dt-detector.jar
+cp ./dt-detector.jar ./dt-detector/lib/
+
+rm -rf ./experiments/fixer-libs/dt-detector.jar
+cp ./dt-detector.jar ./experiments/fixer-libs/
 
 rm -rf ./dt-detector.jar
 
@@ -94,7 +100,7 @@ cd ..
 
 jar -cf ./dt-fixer.jar -C ./dt-fixer/bin .
 
-rm -rf ./dt-impact/experiments/fixer-libs/dt-fixer.jar
+rm -rf ./experiments/fixer-libs/dt-fixer.jar
 cp ./dt-fixer.jar ./experiments/fixer-libs/
 
 rm -rf ./dt-fixer.jar

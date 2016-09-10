@@ -79,9 +79,9 @@ function instrumentFiles() {
 function fixerInstrumentFiles() {
   echo 'Enhanced instrumenting files'
   # Enable the following command to take an output argument
-  java -cp $1:bin/ edu.washington.cs.dt.fixer.Main.InstrumentationMain -inputDir bin -cpDir bin
+  java -Xms1g -Xmx2g -cp $1:bin/ edu.washington.cs.dt.fixer.Main.InstrumentationMain -inputDir bin -cpDir bin -f n
   # Enable the following command to output to a particular directory
-  java -cp $1:bin/ edu.washington.cs.dt.fixer.Main.InstrumentationMain -inputDir bin -cpDir bin  -parsedStaticFields variableToType.dat
+  java -Xms1g -Xmx2g -cp $1:bin/ edu.washington.cs.dt.fixer.Main.InstrumentationMain -inputDir bin -cpDir bin  -parsedStaticFields variableToType.dat -f c
 
   mv sootOutput dtFixerOutput
   java -cp $1:dtFixerOutput edu.washington.cs.dt.impact.Main.InstrumentationMain -inputDir dtFixerOutput
