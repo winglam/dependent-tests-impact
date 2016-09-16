@@ -2,7 +2,7 @@
 # file.
 
 # Number of times to run the test order before taking the median
-medianTimes=3
+medianTimes=1
 # Number of times to randomize the test order when calculating the
 # precomputed dependences
 randomTimes=100
@@ -12,8 +12,8 @@ randomTimes=100
 # leave any gaps. Ex. You can run only Crystal and JFreechart but
 # cannot run JFreechart and Jodatime. You can run Crystal, JFreechart
 # and Jodatime but cannot run Crystal and Jodatime.
-experiments=(crystal jfreechart jodatime synoptic)
-testTypes=(orig)
+experiments=(crystal jfreechart jodatime synoptic xml_security)
+testTypes=(orig auto)
 coverages=(statement function)
 machines=(2 4 8 16)
 
