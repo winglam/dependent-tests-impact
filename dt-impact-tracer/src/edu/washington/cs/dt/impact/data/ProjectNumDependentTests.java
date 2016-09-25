@@ -25,17 +25,25 @@ public class ProjectNumDependentTests extends Project {
 
     public ProjectNumDependentTests(String projName) {
         name = projName;
-        fig7_human = new int[4];
-        fig7_auto = new int[4];
-        fig8_human = new int[6];
-        fig8_auto = new int[6];
-        fig9_human_orig = new int[4];
-        fig9_auto_orig = new int[4];
-        fig9_human_time = new int[4];
-        fig9_auto_time = new int[4];
+        fig7_human = initIntArray(4);
+        fig7_auto = initIntArray(4);
+        fig8_human = initIntArray(6);
+        fig8_auto = initIntArray(6);
+        fig9_human_orig = initIntArray(4);
+        fig9_auto_orig = initIntArray(4);
+        fig9_human_time = initIntArray(4);
+        fig9_auto_time = initIntArray(4);
         uses_fig7 = false;
         uses_fig8 = false;
         uses_fig9 = false;
+    }
+
+    private int[] initIntArray(int size) {
+        int[] intArr = new int[size];
+        for (int i = 0; i < size; i++) {
+            intArr[i] = -1;
+        }
+        return intArr;
     }
 
     public boolean isFig7() {
@@ -99,4 +107,3 @@ public class ProjectNumDependentTests extends Project {
         return fig9_auto_time;
     }
 }
-
