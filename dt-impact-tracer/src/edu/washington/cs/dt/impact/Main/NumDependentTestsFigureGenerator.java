@@ -367,17 +367,15 @@ public class NumDependentTestsFigureGenerator extends FigureGenerator {
                             if (orderName.equals("absolute")) {
                                 // T3
                                 fig7_human[0] = numTotal;
-                            } else { // relative
+                            } else if (orderName.equals("relative")) { // relative
                                 // T4
                                 fig7_human[1] = numTotal;
                             }
-
                         } else if (coverageName.equals("function")) {
                             if (orderName.equals("absolute")) {
                                 // T5
                                 fig7_human[2] = numTotal;
-
-                            } else { // relative
+                            } else if (orderName.equals("relative")) { // relative
                                 // T7
                                 fig7_human[3] = numTotal;
                             }
@@ -387,17 +385,15 @@ public class NumDependentTestsFigureGenerator extends FigureGenerator {
                             if (orderName.equals("absolute")) {
                                 // T3
                                 fig7_auto[0] = numTotal;
-                            } else {
+                            } else if (orderName.equals("relative")) {
                                 // T4
                                 fig7_auto[1] = numTotal;
                             }
-
                         } else if (coverageName.equals("function")) {
                             if (orderName.equals("absolute")) {
                                 // T5
                                 fig7_auto[2] = numTotal;
-
-                            } else {
+                            } else if (orderName.equals("relative")) {
                                 // T7
                                 fig7_auto[3] = numTotal;
                             }
