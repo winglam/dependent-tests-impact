@@ -50,7 +50,6 @@ function clearTemp() {
   rm -rf sootTestOutput
   rm -rf tmpfile.txt
   rm -rf tmptestfiles.txt
-  rm -rf $1-$2-time.txt
   rm -rf dtFixerOutput
 }
 
@@ -114,7 +113,7 @@ function compileSource() {
 }
 
 function runParallelizationOneConfigurationRunner() {
-  java -cp $2 edu.washington.cs.dt.main.ImpactMain -inputTests $1-$3-order -getTime > $1-$3-time.txt
+  #java -cp $2 edu.washington.cs.dt.main.ImpactMain -inputTests $1-$3-order -getTime > $1-$3-time.txt
   for k in "${machines[@]}"; do
     echo 'Running parallelization without resolveDependences and without dependentTestFile for time order'
     java -cp $2 edu.washington.cs.dt.impact.Main.OneConfigurationRunner -technique parallelization -order time -timeOrder $1-$3-time.txt -origOrder $1-$3-order -testInputDir sootTestOutput -filesToDelete $1-env-files -numOfMachines $k -project $1 -testType $3 -timesToRun ${medianTimes} -outputDir ../${paraDir}
