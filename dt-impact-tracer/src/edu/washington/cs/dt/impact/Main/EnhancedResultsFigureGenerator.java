@@ -761,8 +761,11 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
                     double[] curr_fig19_array = null;
                     if (orderName.equals("original")) {
                         curr_fig19_array = currProj.get_fig19_orig();
-                    } else { // orderName == time
+                    } else if (orderName.equals("time")) { // orderName == time
                         curr_fig19_array = currProj.get_fig19_time();
+                    } else {
+                        throw new RuntimeException("Unexpected order: " + orderName + System.lineSeparator()
+                                + Thread.currentThread().getStackTrace());
                     }
 
                     String testStr =
@@ -791,6 +794,9 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
                             currProj.setNumTotalDependentTestsPara(orderName.equals("original"), 6, numTotal, false);
                             setTime(currProj, 19, timeInFile, 6, false);
                             currProj.setTestList(19, 6, test_list, false);
+                        } else {
+                            throw new RuntimeException("Unexpected numMachines: " + numMachines + System.lineSeparator()
+                                    + Thread.currentThread().getStackTrace());
                         }
                     } else { // enhanced
                         if (numMachines == 2) {
@@ -813,6 +819,9 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
                             currProj.setNumTotalDependentTestsPara(orderName.equals("original"), 6, numTotal, true);
                             setTime(currProj, 19, timeInFile, 6, true);
                             currProj.setTestList(19, 6, test_list, true);
+                        } else {
+                            throw new RuntimeException("Unexpected numMachines: " + numMachines + System.lineSeparator()
+                                    + Thread.currentThread().getStackTrace());
                         }
                     }
                 } // selection technique, figure 18
@@ -846,13 +855,16 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
                                 currProj.setNumTotalDependentTests(18, 2, numTotal, false);
                                 setTime(currProj, 18, timeInFile, 2, false);
                                 currProj.setTestList(18, 2, test_list, false);
-                            } else {
+                            } else if (orderName.equals("relative")) {
                                 // S3
                                 fig18_values_array[4] = apfd_value;
                                 fig18_time_array[4] = order_time;
                                 currProj.setNumTotalDependentTests(18, 4, numTotal, false);
                                 setTime(currProj, 18, timeInFile, 4, false);
                                 currProj.setTestList(18, 4, test_list, false);
+                            } else {
+                                throw new RuntimeException("Unexpected order: " + orderName + System.lineSeparator()
+                                        + Thread.currentThread().getStackTrace());
                             }
                         } else if (coverageName.equals("function")) {
                             if (orderName.equals("original")) {
@@ -869,16 +881,22 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
                                 currProj.setNumTotalDependentTests(18, 8, numTotal, false);
                                 setTime(currProj, 18, timeInFile, 8, false);
                                 currProj.setTestList(18, 8, test_list, false);
-                            } else {
+                            } else if (orderName.equals("relative")) {
                                 // S6
                                 fig18_values_array[10] = apfd_value;
                                 fig18_time_array[10] = order_time;
                                 currProj.setNumTotalDependentTests(18, 10, numTotal, false);
                                 setTime(currProj, 18, timeInFile, 10, false);
                                 currProj.setTestList(18, 10, test_list, false);
+                            } else {
+                                throw new RuntimeException("Unexpected order: " + orderName + System.lineSeparator()
+                                        + Thread.currentThread().getStackTrace());
                             }
+                        } else {
+                            throw new RuntimeException("Unexpected coverageName: " + coverageName
+                                    + System.lineSeparator() + Thread.currentThread().getStackTrace());
                         }
-                    } else { // auto, enhanced, index should be i = 1, i+=2
+                    } else if (testType.equals("auto")) { // auto, enhanced, index should be i = 1, i+=2
                         if (coverageName.equals("statement")) {
                             if (orderName.equals("original")) {
                                 // S1
@@ -894,13 +912,16 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
                                 currProj.setNumTotalDependentTests(18, 2, numTotal, true);
                                 setTime(currProj, 18, timeInFile, 2, true);
                                 currProj.setTestList(18, 2, test_list, true);
-                            } else {
+                            } else if (orderName.equals("relative")) {
                                 // S3
                                 fig18_values_array[5] = apfd_value;
                                 fig18_time_array[5] = order_time;
                                 currProj.setNumTotalDependentTests(18, 4, numTotal, true);
                                 setTime(currProj, 18, timeInFile, 4, true);
                                 currProj.setTestList(18, 4, test_list, true);
+                            } else {
+                                throw new RuntimeException("Unexpected order: " + orderName + System.lineSeparator()
+                                        + Thread.currentThread().getStackTrace());
                             }
                         } else if (coverageName.equals("function")) {
                             if (orderName.equals("original")) {
@@ -917,17 +938,25 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
                                 currProj.setNumTotalDependentTests(18, 8, numTotal, true);
                                 setTime(currProj, 18, timeInFile, 8, true);
                                 currProj.setTestList(18, 8, test_list, true);
-                            } else {
+                            } else if (orderName.equals("relative")) {
                                 // S6
                                 fig18_values_array[11] = apfd_value;
                                 fig18_time_array[11] = order_time;
                                 currProj.setNumTotalDependentTests(18, 10, numTotal, true);
                                 setTime(currProj, 18, timeInFile, 10, true);
                                 currProj.setTestList(18, 10, test_list, true);
+                            } else {
+                                throw new RuntimeException("Unexpected order: " + orderName + System.lineSeparator()
+                                        + Thread.currentThread().getStackTrace());
                             }
+                        } else {
+                            throw new RuntimeException("Unexpected coverageName: " + coverageName
+                                    + System.lineSeparator() + Thread.currentThread().getStackTrace());
                         }
+                    } else {
+                        throw new RuntimeException("Unexpected testType: " + testType + System.lineSeparator()
+                                + Thread.currentThread().getStackTrace());
                     }
-
                 } // prioritization techinque, figure 17
                 else if (techniqueName.equals("prioritization")) {
                     // if orderName is original, run time for entire test suite
@@ -961,12 +990,15 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
                                 currProj.setNumTotalDependentTests(17, 0, numTotal, false);
                                 setTime(currProj, 17, timeInFile, 0, false);
                                 currProj.setTestList(17, 0, test_list, false);
-                            } else { // relative
+                            } else if (orderName.equals("relative")) { // relative
                                 // T4
                                 fig17_array[2] = apfd_value;
                                 currProj.setNumTotalDependentTests(17, 2, numTotal, false);
                                 setTime(currProj, 17, timeInFile, 2, false);
                                 currProj.setTestList(17, 2, test_list, false);
+                            } else {
+                                throw new RuntimeException("Unexpected order: " + orderName + System.lineSeparator()
+                                        + Thread.currentThread().getStackTrace());
                             }
                         } else if (coverageName.equals("function")) {
                             if (orderName.equals("absolute")) {
@@ -975,15 +1007,18 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
                                 currProj.setNumTotalDependentTests(17, 4, numTotal, false);
                                 setTime(currProj, 17, timeInFile, 4, false);
                                 currProj.setTestList(17, 4, test_list, false);
-                            } else { // relative
+                            } else if (orderName.equals("relative")) { // relative
                                 // T7
                                 fig17_array[6] = apfd_value;
                                 currProj.setNumTotalDependentTests(17, 6, numTotal, false);
                                 setTime(currProj, 17, timeInFile, 6, false);
                                 currProj.setTestList(17, 6, test_list, false);
+                            } else {
+                                throw new RuntimeException("Unexpected order: " + orderName + System.lineSeparator()
+                                        + Thread.currentThread().getStackTrace());
                             }
                         }
-                    } else { // auto, enhanced, index should be i = 1, i+=2
+                    } else if (testType.equals("auto")) { // auto, enhanced, index should be i = 1, i+=2
                         if (coverageName.equals("statement")) {
                             if (orderName.equals("absolute")) {
                                 // T3
@@ -991,14 +1026,16 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
                                 currProj.setNumTotalDependentTests(17, 0, numTotal, true);
                                 setTime(currProj, 17, timeInFile, 0, true);
                                 currProj.setTestList(17, 0, test_list, true);
-                            } else {
+                            } else if (orderName.equals("relative")) {
                                 // T4
                                 fig17_array[3] = apfd_value;
                                 currProj.setNumTotalDependentTests(17, 2, numTotal, true);
                                 setTime(currProj, 17, timeInFile, 2, true);
                                 currProj.setTestList(17, 2, test_list, true);
+                            } else {
+                                throw new RuntimeException("Unexpected order: " + orderName + System.lineSeparator()
+                                        + Thread.currentThread().getStackTrace());
                             }
-
                         } else if (coverageName.equals("function")) {
                             if (orderName.equals("absolute")) {
                                 // T5
@@ -1006,17 +1043,27 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
                                 currProj.setNumTotalDependentTests(17, 4, numTotal, true);
                                 setTime(currProj, 17, timeInFile, 4, true);
                                 currProj.setTestList(17, 4, test_list, true);
-                            } else {
+                            } else if (orderName.equals("relative")) {
                                 // T7
                                 fig17_array[7] = apfd_value;
                                 currProj.setNumTotalDependentTests(17, 6, numTotal, true);
                                 setTime(currProj, 17, timeInFile, 6, true);
                                 currProj.setTestList(17, 6, test_list, true);
+                            } else {
+                                throw new RuntimeException("Unexpected order: " + orderName + System.lineSeparator()
+                                        + Thread.currentThread().getStackTrace());
                             }
+                        } else {
+                            throw new RuntimeException("Unexpected coverageName: " + coverageName
+                                    + System.lineSeparator() + Thread.currentThread().getStackTrace());
                         }
+                    } else {
+                        throw new RuntimeException("Unexpected testType: " + testType + System.lineSeparator()
+                                + Thread.currentThread().getStackTrace());
                     }
-                } else {// garbage value...return error
-                    // TODO throw an exception and exit
+                } else {
+                    throw new RuntimeException("Unexpected techniqueName: " + techniqueName + System.lineSeparator()
+                            + Thread.currentThread().getStackTrace());
                 }
             }
         }
