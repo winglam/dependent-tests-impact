@@ -46,6 +46,12 @@ public class FigureGenerator {
         return null; // none of the lines contained the keyword
     }
 
+    protected static void exitWithError(String message) {
+        System.err.println(message);
+        Thread.dumpStack();
+        System.exit(0);
+    }
+
     /*
      * A public method to search a file for a keyword and return the value that follows
      * that keyword
