@@ -1,7 +1,7 @@
 testType=auto
 experiment=jodatime
 experimentCP=impact-tools/*:bin/:resources/:lib/*
-numTimesToRun=999
+numTimesToRun=9999
 crossReferenceClass=edu.washington.cs.dt.impact.tools.CrossReferencer
 
 function clearEnv() {

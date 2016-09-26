@@ -16,6 +16,9 @@ experiments=(crystal jfreechart jodatime synoptic xml_security)
 testTypes=(orig auto)
 coverages=(statement function)
 machines=(2 4 8 16)
+#doubleNumOfOrigTests=(156 4468 7750 500 216)
+doubleNumOfOrigTests=(78 2234 3875 118 108)
+doubleNumOfAuttoTests=(6396 4876 4468 4934 1330)
 
 # Ordering for the three techniques
 priorOrders=(absolute relative)
