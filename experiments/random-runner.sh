@@ -6,6 +6,9 @@ index=0
 count=${#experiments[@]}
 ARRAY=()
 
+rm -rf random-runner-results/
+mkdir random-runner-results
+
 while [ "$index" -lt "$count" ]; do
   echo -e "Starting experiment: ${experiments[$index]}"
   for k in "${testTypes[@]}"; do
