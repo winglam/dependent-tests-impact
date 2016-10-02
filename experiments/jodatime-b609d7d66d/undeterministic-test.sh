@@ -10,7 +10,7 @@ function clearEnv() {
 
 source ../config.sh
 
-compileSource
+ant
 
 j=0
 k=0
