@@ -1,4 +1,4 @@
-testType=auto
+testType=orig
 experiment=jodatime
 experimentCP=impact-tools/*:bin/:resources/:lib/*
 numTimesToRun=9999
@@ -9,6 +9,8 @@ function clearEnv() {
 }
 
 source ../config.sh
+
+compileSource
 
 j=0
 k=0
