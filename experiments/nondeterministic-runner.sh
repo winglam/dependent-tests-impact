@@ -1,7 +1,7 @@
 source ./config.sh
 
 testType=orig
-numTimesToRun=1
+numTimesToRun=9999
 crossReferenceClass=edu.washington.cs.dt.impact.tools.CrossReferencer
 
 compileSource
