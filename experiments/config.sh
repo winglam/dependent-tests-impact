@@ -73,6 +73,23 @@ function clearSelectionTemp() {
   rm -rf $2/tmptestfiles.txt
 }
 
+function clearProjectFiles() {
+  rm -rf ./'2013-08-28T20-44-41.156-0700'
+  rm -rf ./'hi!'
+  rm -rf ./'-1 ms'
+  rm -rf ./'0 ms'
+  rm -rf ./'1 ms'
+  rm -rf ./'10 ms'
+  rm -rf ./'100 ms'
+  rm -rf ./'382707 hours 44 min'
+  rm -rf ./'testDataFile\testSave.xml'
+  rm -rf ./'test.dot'
+  rm -rf ./'test2.dot'
+  rm -rf ./'4444444444  4 444444444444 444444444444444444444'
+  rm -rf tmpfile.txt
+  rm -rf tmptestfiles.txt
+}
+
 function instrumentFiles() {
   echo 'Instrumenting files'
   java -cp $1 edu.washington.cs.dt.impact.Main.InstrumentationMain -inputDir bin
