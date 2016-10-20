@@ -13,12 +13,14 @@ randomTimes=100
 # cannot run JFreechart and Jodatime. You can run Crystal, JFreechart
 # and Jodatime but cannot run Crystal and Jodatime.
 experiments=(crystal jfreechart jodatime synoptic xml_security)
-testTypes=(auto)
+testTypes=(orig auto)
 coverages=(statement function)
 machines=(2 4 8 16)
-#doubleNumOfOrigTests=(156 4468 7750 500 216)
+
+# Used only by the random runner
+doubleNumOfOrigTests=(156 4468 7750 500 216)
 numOfOrigTests=(78 2234 3875 118 108)
-doubleNumOfAuttoTests=(6396 4876 4468 4934 1330)
+doubleNumOfAutoTests=(6396 4876 4468 4934 1330)
 numOfAutoTests=(3198 2438 2234 2467 665)
 
 # Ordering for the three techniques
@@ -140,9 +142,9 @@ function runParallelizationOneConfigurationRunner() {
     java -cp $2 edu.washington.cs.dt.impact.Main.OneConfigurationRunner -technique parallelization -order time -timeOrder $1-$3-time.txt -origOrder $1-$3-order -testInputDir sootTestOutput -filesToDelete $1-env-files -numOfMachines $k -project $1 -testType $3 -timesToRun ${medianTimes} -outputDir ../${paraDir}
     echo 'Running parallelization without resolveDependences and without dependentTestFile for original order'
     java -cp $2 edu.washington.cs.dt.impact.Main.OneConfigurationRunner -technique parallelization -order original -origOrder $1-$3-order -testInputDir sootTestOutput -filesToDelete $1-env-files -project $1 -testType $3 -numOfMachines $k -outputDir ../${paraDir} -timesToRun ${medianTimes}
-    #echo 'Running parallelization without resolveDependences and with dependentTestFile for time order'
-    #java -cp $2 edu.washington.cs.dt.impact.Main.OneConfigurationRunner -technique parallelization -order time -timeOrder $1-$3-time.txt -origOrder $1-$3-order -testInputDir sootTestOutput -filesToDelete $1-env-files -numOfMachines $k -project $1 -testType $3 -timesToRun ${medianTimes} -outputDir ../${paraDir} -dependentTestFile ../
-    #echo 'Running parallelization without resolveDependences and with dependentTestFile for original order'
-    #java -cp $2 edu.washington.cs.dt.impact.Main.OneConfigurationRunner -technique parallelization -order original -origOrder $1-$3-order -testInputDir sootTestOutput -filesToDelete $1-env-files -project $1 -testType $3 -numOfMachines $k -outputDir ../${paraDir} -timesToRun ${medianTimes} -dependentTestFile ../
+    echo 'Running parallelization without resolveDependences and with dependentTestFile for time order'
+    java -cp $2 edu.washington.cs.dt.impact.Main.OneConfigurationRunner -technique parallelization -order time -timeOrder $1-$3-time.txt -origOrder $1-$3-order -testInputDir sootTestOutput -filesToDelete $1-env-files -numOfMachines $k -project $1 -testType $3 -timesToRun ${medianTimes} -outputDir ../${paraDir} -dependentTestFile ../
+    echo 'Running parallelization without resolveDependences and with dependentTestFile for original order'
+    java -cp $2 edu.washington.cs.dt.impact.Main.OneConfigurationRunner -technique parallelization -order original -origOrder $1-$3-order -testInputDir sootTestOutput -filesToDelete $1-env-files -project $1 -testType $3 -numOfMachines $k -outputDir ../${paraDir} -timesToRun ${medianTimes} -dependentTestFile ../
   done
 }
