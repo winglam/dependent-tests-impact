@@ -771,7 +771,6 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
                             getNextLine(file, Constants.ORDER_TIME + " " + order_time, Constants.TEST_ORDER_LIST);
                     testStr = testStr.substring(1, testStr.length() - 2);
                     String[] test_list = testStr.split(", ");
-
                     if (resolveDependences == null) { // non-enhanced
                         if (numMachines == 2) {
                             curr_fig19_array[0] = order_time;
@@ -836,7 +835,7 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
                     String[] test_list = testStr.split(", ");
 
                     // original values, index should be i=0, i+=2
-                    if (resolveDependences == null) { // orig, unenhanced
+                    if (resolveDependences == null) { // unenhanced
                         if (coverageName.equals("statement")) {
                             if (orderName.equals("original")) {
                                 // S1
@@ -890,7 +889,7 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
                         } else {
                             exitWithError("Unexpected coverageName: " + coverageName);
                         }
-                    } else if (testType.equals("auto")) { // auto, enhanced, index should be i = 1, i+=2
+                    } else { // enhanced, index should be i = 1, i+=2
                         if (coverageName.equals("statement")) {
                             if (orderName.equals("original")) {
                                 // S1
@@ -944,8 +943,6 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
                         } else {
                             exitWithError("Unexpected coverageName: " + coverageName);
                         }
-                    } else {
-                        exitWithError("Unexpected testType: " + testType);
                     }
                 } // prioritization techinque, figure 17
                 else if (techniqueName.equals("prioritization")) {
@@ -1008,7 +1005,7 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
                         } else {
                             exitWithError("Unexpected coverageName: " + coverageName);
                         }
-                    } else if (testType.equals("auto")) { // auto, enhanced, index should be i = 1, i+=2
+                    } else { // enhanced, index should be i = 1, i+=2
                         if (coverageName.equals("statement")) {
                             if (orderName.equals("absolute")) {
                                 // T3
@@ -1044,8 +1041,6 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
                         } else {
                             exitWithError("Unexpected coverageName: " + coverageName);
                         }
-                    } else {
-                        exitWithError("Unexpected testType: " + testType);
                     }
                 } else {
                     exitWithError("Unexpected techniqueName: " + techniqueName);
