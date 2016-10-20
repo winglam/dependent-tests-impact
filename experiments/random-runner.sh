@@ -20,7 +20,7 @@ while [ "$index" -lt "$count" ]; do
     cd ..
 
     # Run this only with orig or auto testType and not both. Since -nIterations is not testType aware.
-    java -Xms1g -Xmx2g -cp ${experimentsCPWithDirectory[$index]} edu.washington.cs.dt.impact.Main.RandomizeRunner -technique prioritization -coverage statement -order original -resolveDependences -origOrder ${directories[$index]}/${experiments[$index]}-$k-order -testInputDir ${directories[$index]}/sootTestOutput -filesToDelete ${directories[$index]}/${experiments[$index]}-env-files -randomTimes $randomTimes -project ${experiments[$index]} -testType $k -outputDir ./random-runner-results -nIterations ${doubleNumOfOrigTests[$index]}
+    java -Xms1g -Xmx2g -cp ${experimentsCPWithDirectory[$index]} edu.washington.cs.dt.impact.Main.RandomizeRunner -technique prioritization -coverage statement -order original -resolveDependences -origOrder ${directories[$index]}/${experiments[$index]}-$k-order -testInputDir ${directories[$index]}/sootTestOutput -filesToDelete ${directories[$index]}/${experiments[$index]}-env-files -randomTimes $randomTimes -project ${experiments[$index]} -testType $k -outputDir ./random-runner-results -nIterations ${numOfAutoTests[$index]}
 
     clearSelectionTemp ${directories[$index]} ${newDirectories[$index]}
   done

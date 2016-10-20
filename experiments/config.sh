@@ -13,12 +13,13 @@ randomTimes=100
 # cannot run JFreechart and Jodatime. You can run Crystal, JFreechart
 # and Jodatime but cannot run Crystal and Jodatime.
 experiments=(crystal jfreechart jodatime synoptic xml_security)
-testTypes=(orig auto)
+testTypes=(auto)
 coverages=(statement function)
 machines=(2 4 8 16)
 #doubleNumOfOrigTests=(156 4468 7750 500 216)
-doubleNumOfOrigTests=(78 2234 3875 118 108)
+numOfOrigTests=(78 2234 3875 118 108)
 doubleNumOfAuttoTests=(6396 4876 4468 4934 1330)
+numOfAutoTests=(3198 2438 2234 2467 665)
 
 # Ordering for the three techniques
 priorOrders=(absolute relative)
