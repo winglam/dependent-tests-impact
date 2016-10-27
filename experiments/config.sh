@@ -12,8 +12,8 @@ randomTimes=100
 # leave any gaps. Ex. You can run only Crystal and JFreechart but
 # cannot run JFreechart and Jodatime. You can run Crystal, JFreechart
 # and Jodatime but cannot run Crystal and Jodatime.
-experiments=(crystal jfreechart jodatime synoptic xml_security)
-testTypes=(orig auto)
+experiments=(crystal jfreechart jodatime)
+testTypes=(auto)
 coverages=(statement function)
 machines=(2 4 8 16)
 

@@ -2,7 +2,7 @@ source ./config.sh
 
 compileSource
 
-index=0
+index=2
 count=${#experiments[@]}
 ARRAY=()
 
