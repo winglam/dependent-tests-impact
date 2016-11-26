@@ -1,0 +1,37 @@
+dynoptic.mc.mcscm.McScMResult.parseVerifyOutput : z0 = 0 >>>>>>>> dynoptic.mc.mcscm.McScMResult.parseVerifyOutput : i0 = 0
+dynoptic.mc.mcscm.McScMResult.parseVerifyOutput : i0 = 0 >>>>>>>> dynoptic.mc.mcscm.McScMResult.parseVerifyOutput : r2 = interfaceinvoke r1.<java.util.List: java.util.Iterator iterator()>()
+dynoptic.mc.mcscm.McScMResult.parseVerifyOutput : r2 = interfaceinvoke r1.<java.util.List: java.util.Iterator iterator()>() >>>>>>>> dynoptic.mc.mcscm.McScMResult.parseVerifyOutput : $z1 = interfaceinvoke r2.<java.util.Iterator: boolean hasNext()>()
+dynoptic.mc.mcscm.McScMResult.parseVerifyOutput : $z1 = interfaceinvoke r2.<java.util.Iterator: boolean hasNext()>() >>>>>>>> dynoptic.mc.mcscm.McScMResult.parseVerifyOutput : if $z1 == 0
+dynoptic.mc.mcscm.McScMResult.parseVerifyOutput : if $z1 == 0 >>>>>>>> dynoptic.mc.mcscm.McScMResult.parseVerifyOutput : $r5 = interfaceinvoke r2.<java.util.Iterator: java.lang.Object next()>()
+dynoptic.mc.mcscm.McScMResult.parseVerifyOutput : if $z1 == 0 >>>>>>>> dynoptic.mc.mcscm.McScMResult.parseVerifyOutput : if z0 != 0
+dynoptic.mc.mcscm.McScMResult.parseVerifyOutput : if z0 != 0 >>>>>>>> dynoptic.mc.mcscm.McScMResult.parseVerifyOutput : $r10 = new dynoptic.mc.mcscm.VerifyOutputParseException
+dynoptic.mc.mcscm.McScMResult.parseVerifyOutput : if z0 != 0 >>>>>>>> dynoptic.mc.mcscm.McScMResult.parseVerifyOutput : return
+dynoptic.mc.mcscm.McScMResult.parseVerifyOutput : $r10 = new dynoptic.mc.mcscm.VerifyOutputParseException >>>>>>>> dynoptic.mc.mcscm.McScMResult.parseVerifyOutput : specialinvoke $r10.<dynoptic.mc.mcscm.VerifyOutputParseException: void <init>(java.lang.String)>("Unable to parse verify result: cannot determine model safety")
+dynoptic.mc.mcscm.McScMResult.parseVerifyOutput : specialinvoke $r10.<dynoptic.mc.mcscm.VerifyOutputParseException: void <init>(java.lang.String)>("Unable to parse verify result: cannot determine model safety") >>>>>>>> dynoptic.mc.mcscm.McScMResult.parseVerifyOutput : throw $r10
+dynoptic.mc.mcscm.McScMResult.parseVerifyOutput : $r5 = interfaceinvoke r2.<java.util.Iterator: java.lang.Object next()>() >>>>>>>> dynoptic.mc.mcscm.McScMResult.parseVerifyOutput : r3 = (java.lang.String) $r5
+dynoptic.mc.mcscm.McScMResult.parseVerifyOutput : r3 = (java.lang.String) $r5 >>>>>>>> dynoptic.mc.mcscm.McScMResult.parseVerifyOutput : $r4 = <dynoptic.mc.mcscm.McScMResult: java.lang.String syntaxErrRe>
+dynoptic.mc.mcscm.McScMResult.parseVerifyOutput : $r4 = <dynoptic.mc.mcscm.McScMResult: java.lang.String syntaxErrRe> >>>>>>>> dynoptic.mc.mcscm.McScMResult.parseVerifyOutput : $z2 = virtualinvoke r3.<java.lang.String: boolean matches(java.lang.String)>($r4)
+dynoptic.mc.mcscm.McScMResult.parseVerifyOutput : $z2 = virtualinvoke r3.<java.lang.String: boolean matches(java.lang.String)>($r4) >>>>>>>> dynoptic.mc.mcscm.McScMResult.parseVerifyOutput : if $z2 == 0
+dynoptic.mc.mcscm.McScMResult.parseVerifyOutput : if $z2 == 0 >>>>>>>> dynoptic.mc.mcscm.McScMResult.parseVerifyOutput : $r6 = new dynoptic.mc.mcscm.ScmSyntaxException
+dynoptic.mc.mcscm.McScMResult.parseVerifyOutput : if $z2 == 0 >>>>>>>> dynoptic.mc.mcscm.McScMResult.parseVerifyOutput : $r7 = <dynoptic.mc.mcscm.McScMResult: java.lang.String safeRe>
+dynoptic.mc.mcscm.McScMResult.parseVerifyOutput : $r7 = <dynoptic.mc.mcscm.McScMResult: java.lang.String safeRe> >>>>>>>> dynoptic.mc.mcscm.McScMResult.parseVerifyOutput : $z3 = virtualinvoke r3.<java.lang.String: boolean matches(java.lang.String)>($r7)
+dynoptic.mc.mcscm.McScMResult.parseVerifyOutput : $z3 = virtualinvoke r3.<java.lang.String: boolean matches(java.lang.String)>($r7) >>>>>>>> dynoptic.mc.mcscm.McScMResult.parseVerifyOutput : if $z3 == 0
+dynoptic.mc.mcscm.McScMResult.parseVerifyOutput : if $z3 == 0 >>>>>>>> dynoptic.mc.mcscm.McScMResult.parseVerifyOutput : r0.<dynoptic.mc.mcscm.McScMResult: boolean modelIsSafe> = 1
+dynoptic.mc.mcscm.McScMResult.parseVerifyOutput : if $z3 == 0 >>>>>>>> dynoptic.mc.mcscm.McScMResult.parseVerifyOutput : $r8 = <dynoptic.mc.mcscm.McScMResult: java.lang.String unsafeRe>
+dynoptic.mc.mcscm.McScMResult.parseVerifyOutput : $r8 = <dynoptic.mc.mcscm.McScMResult: java.lang.String unsafeRe> >>>>>>>> dynoptic.mc.mcscm.McScMResult.parseVerifyOutput : $z4 = virtualinvoke r3.<java.lang.String: boolean matches(java.lang.String)>($r8)
+dynoptic.mc.mcscm.McScMResult.parseVerifyOutput : $z4 = virtualinvoke r3.<java.lang.String: boolean matches(java.lang.String)>($r8) >>>>>>>> dynoptic.mc.mcscm.McScMResult.parseVerifyOutput : if $z4 == 0
+dynoptic.mc.mcscm.McScMResult.parseVerifyOutput : if $z4 == 0 >>>>>>>> dynoptic.mc.mcscm.McScMResult.parseVerifyOutput : r0.<dynoptic.mc.mcscm.McScMResult: boolean modelIsSafe> = 0
+dynoptic.mc.mcscm.McScMResult.parseVerifyOutput : if $z4 == 0 >>>>>>>> dynoptic.mc.mcscm.McScMResult.parseVerifyOutput : $r9 = <dynoptic.mc.mcscm.McScMResult: java.lang.String counterExRe>
+dynoptic.mc.mcscm.McScMResult.parseVerifyOutput : $r9 = <dynoptic.mc.mcscm.McScMResult: java.lang.String counterExRe> >>>>>>>> dynoptic.mc.mcscm.McScMResult.parseVerifyOutput : $z5 = virtualinvoke r3.<java.lang.String: boolean matches(java.lang.String)>($r9)
+dynoptic.mc.mcscm.McScMResult.parseVerifyOutput : $z5 = virtualinvoke r3.<java.lang.String: boolean matches(java.lang.String)>($r9) >>>>>>>> dynoptic.mc.mcscm.McScMResult.parseVerifyOutput : if $z5 == 0
+dynoptic.mc.mcscm.McScMResult.parseVerifyOutput : if $z5 == 0 >>>>>>>> dynoptic.mc.mcscm.McScMResult.parseVerifyOutput : specialinvoke r0.<dynoptic.mc.mcscm.McScMResult: void parseCounterExample(java.util.List,int)>(r1, i0)
+dynoptic.mc.mcscm.McScMResult.parseVerifyOutput : if $z5 == 0 >>>>>>>> dynoptic.mc.mcscm.McScMResult.parseVerifyOutput : i0 = i0 + 1
+dynoptic.mc.mcscm.McScMResult.parseVerifyOutput : i0 = i0 + 1 >>>>>>>> dynoptic.mc.mcscm.McScMResult.parseVerifyOutput : goto [?= $z1 = interfaceinvoke r2.<java.util.Iterator: boolean hasNext()>()]
+dynoptic.mc.mcscm.McScMResult.parseVerifyOutput : goto [?= $z1 = interfaceinvoke r2.<java.util.Iterator: boolean hasNext()>()] >>>>>>>> dynoptic.mc.mcscm.McScMResult.parseVerifyOutput : $z1 = interfaceinvoke r2.<java.util.Iterator: boolean hasNext()>()
+dynoptic.mc.mcscm.McScMResult.parseVerifyOutput : specialinvoke r0.<dynoptic.mc.mcscm.McScMResult: void parseCounterExample(java.util.List,int)>(r1, i0) >>>>>>>> dynoptic.mc.mcscm.McScMResult.parseVerifyOutput : i0 = i0 + 1
+dynoptic.mc.mcscm.McScMResult.parseVerifyOutput : r0.<dynoptic.mc.mcscm.McScMResult: boolean modelIsSafe> = 0 >>>>>>>> dynoptic.mc.mcscm.McScMResult.parseVerifyOutput : z0 = 1
+dynoptic.mc.mcscm.McScMResult.parseVerifyOutput : z0 = 1 >>>>>>>> dynoptic.mc.mcscm.McScMResult.parseVerifyOutput : $r9 = <dynoptic.mc.mcscm.McScMResult: java.lang.String counterExRe>
+dynoptic.mc.mcscm.McScMResult.parseVerifyOutput : r0.<dynoptic.mc.mcscm.McScMResult: boolean modelIsSafe> = 1 >>>>>>>> dynoptic.mc.mcscm.McScMResult.parseVerifyOutput : z0 = 1
+dynoptic.mc.mcscm.McScMResult.parseVerifyOutput : z0 = 1 >>>>>>>> dynoptic.mc.mcscm.McScMResult.parseVerifyOutput : $r8 = <dynoptic.mc.mcscm.McScMResult: java.lang.String unsafeRe>
+dynoptic.mc.mcscm.McScMResult.parseVerifyOutput : $r6 = new dynoptic.mc.mcscm.ScmSyntaxException >>>>>>>> dynoptic.mc.mcscm.McScMResult.parseVerifyOutput : specialinvoke $r6.<dynoptic.mc.mcscm.ScmSyntaxException: void <init>(java.lang.String)>(r3)
+dynoptic.mc.mcscm.McScMResult.parseVerifyOutput : specialinvoke $r6.<dynoptic.mc.mcscm.ScmSyntaxException: void <init>(java.lang.String)>(r3) >>>>>>>> dynoptic.mc.mcscm.McScMResult.parseVerifyOutput : throw $r6

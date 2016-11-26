@@ -37,6 +37,7 @@ function instrumentSelectionFiles() {
 
   echo 'Generating sootTestOutput on old subject'
   java -cp $5 edu.washington.cs.dt.main.ImpactMain -inputTests ../$1/$6
+  mv sootTestOutput sootTestOutput-$7-selection
   cd ..
 }
 
@@ -50,18 +51,18 @@ while [ "$index" -lt "$count" ]; do
   echo -e "Starting experiment: ${experiments[$index]}"
 
   for k in "${testTypes[@]}"; do
-    instrumentSelectionFiles ${newDirectories[$index]} ${instrumentNewExperimentsCP[$index]} ${directories[$index]} ${experimentsCP[$index]} ${sootCP[$index]} ${experiments[$index]}-$k-order
+    #instrumentSelectionFiles ${newDirectories[$index]} ${instrumentNewExperimentsCP[$index]} ${directories[$index]} ${experimentsCP[$index]} ${sootCP[$index]} ${experiments[$index]}-$k-order $k
     #fixerInstrumentSelectionFiles ${newDirectories[$index]} ${fixerNewExperimentsCP[$index]} ${directories[$index]} ${fixerCP[$index]} ${sootCP[$index]} ${experiments[$index]}-$k-order
 
     echo 'Running prioritization for original order'
-    java -Xms1g -Xmx2g -cp ${newExperimentsCP[$index]} edu.washington.cs.dt.impact.Main.OneConfigurationRunner -technique prioritization -coverage statement -order original -origOrder ${newDirectories[$index]}/${experiments[$index]}-$k-order -testInputDir ${directories[$index]}/sootTestOutput -filesToDelete ${newDirectories[$index]}/${experiments[$index]}-env-files -project ${experiments[$index]} -testType $k -outputDir ./${seleDir} -timesToRun ${medianTimes} -getCoverage
+    java -Xms1g -Xmx2g -cp ${newExperimentsCP[$index]} edu.washington.cs.dt.impact.Main.OneConfigurationRunner -technique prioritization -coverage statement -order original -origOrder ${newDirectories[$index]}/${experiments[$index]}-$k-order -testInputDir ${directories[$index]}/sootTestOutput-$k-selection -filesToDelete ${newDirectories[$index]}/${experiments[$index]}-env-files -project ${experiments[$index]} -testType $k -outputDir ./${seleDir} -timesToRun ${medianTimes} -getCoverage
 
     for i in "${coverages[@]}"; do
       for j in "${seleOrders[@]}"; do
         echo 'Running selection without resolveDependences and with dependentTestFile'
-        java -Xms1g -Xmx2g -cp ${newExperimentsCP[$index]} edu.washington.cs.dt.impact.Main.OneConfigurationRunner -technique selection -coverage $i -order $j -origOrder ${newDirectories[$index]}/${experiments[$index]}-$k-order -testInputDir ${directories[$index]}/sootTestOutput -filesToDelete ${newDirectories[$index]}/${experiments[$index]}-env-files -project ${experiments[$index]} -testType $k -oldVersCFG ${directories[$index]}/selectionOutput -newVersCFG ${newDirectories[$index]}/selectionOutput -getCoverage -outputDir ./${seleDir} -timesToRun ${medianTimes} -dependentTestFile ./
+        java -Xms1g -Xmx2g -cp ${newExperimentsCP[$index]} edu.washington.cs.dt.impact.Main.OneConfigurationRunner -technique selection -coverage $i -order $j -origOrder ${newDirectories[$index]}/${experiments[$index]}-$k-order -testInputDir ${directories[$index]}/sootTestOutput-$k-selection -filesToDelete ${newDirectories[$index]}/${experiments[$index]}-env-files -project ${experiments[$index]} -testType $k -oldVersCFG ${directories[$index]}/selectionOutput -newVersCFG ${newDirectories[$index]}/selectionOutput -getCoverage -outputDir ./${seleDir} -timesToRun ${medianTimes} -dependentTestFile ./
         echo 'Running selection without resolveDependences and without dependentTestFile'
-        java -Xms1g -Xmx2g -cp ${newExperimentsCP[$index]} edu.washington.cs.dt.impact.Main.OneConfigurationRunner -technique selection -coverage $i -order $j -origOrder ${newDirectories[$index]}/${experiments[$index]}-$k-order -testInputDir ${directories[$index]}/sootTestOutput -filesToDelete ${newDirectories[$index]}/${experiments[$index]}-env-files -project ${experiments[$index]} -testType $k -oldVersCFG ${directories[$index]}/selectionOutput -newVersCFG ${newDirectories[$index]}/selectionOutput -getCoverage -outputDir ./${seleDir} -timesToRun ${medianTimes}
+        java -Xms1g -Xmx2g -cp ${newExperimentsCP[$index]} edu.washington.cs.dt.impact.Main.OneConfigurationRunner -technique selection -coverage $i -order $j -origOrder ${newDirectories[$index]}/${experiments[$index]}-$k-order -testInputDir ${directories[$index]}/sootTestOutput-$k-selection -filesToDelete ${newDirectories[$index]}/${experiments[$index]}-env-files -project ${experiments[$index]} -testType $k -oldVersCFG ${directories[$index]}/selectionOutput -newVersCFG ${newDirectories[$index]}/selectionOutput -getCoverage -outputDir ./${seleDir} -timesToRun ${medianTimes}
       done
     done
     clearSelectionTemp ${directories[$index]} ${newDirectories[$index]}

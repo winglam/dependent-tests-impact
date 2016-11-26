@@ -1,0 +1,100 @@
+org.jfree.chart.ChartPanel.saveAsSVG : r2 = r1 >>>>>>>> org.jfree.chart.ChartPanel.saveAsSVG : if r2 != null
+org.jfree.chart.ChartPanel.saveAsSVG : if r2 != null >>>>>>>> org.jfree.chart.ChartPanel.saveAsSVG : $r10 = new javax.swing.JFileChooser
+org.jfree.chart.ChartPanel.saveAsSVG : if r2 != null >>>>>>>> org.jfree.chart.ChartPanel.saveAsSVG : if r2 == null
+org.jfree.chart.ChartPanel.saveAsSVG : if r2 == null >>>>>>>> org.jfree.chart.ChartPanel.saveAsSVG : $i2 = virtualinvoke r0.<org.jfree.chart.ChartPanel: int getWidth()>()
+org.jfree.chart.ChartPanel.saveAsSVG : if r2 == null >>>>>>>> org.jfree.chart.ChartPanel.saveAsSVG : return
+org.jfree.chart.ChartPanel.saveAsSVG : $i2 = virtualinvoke r0.<org.jfree.chart.ChartPanel: int getWidth()>() >>>>>>>> org.jfree.chart.ChartPanel.saveAsSVG : $i3 = virtualinvoke r0.<org.jfree.chart.ChartPanel: int getHeight()>()
+org.jfree.chart.ChartPanel.saveAsSVG : $i3 = virtualinvoke r0.<org.jfree.chart.ChartPanel: int getHeight()>() >>>>>>>> org.jfree.chart.ChartPanel.saveAsSVG : r21 = specialinvoke r0.<org.jfree.chart.ChartPanel: java.lang.String generateSVG(int,int)>($i2, $i3)
+org.jfree.chart.ChartPanel.saveAsSVG : r21 = specialinvoke r0.<org.jfree.chart.ChartPanel: java.lang.String generateSVG(int,int)>($i2, $i3) >>>>>>>> org.jfree.chart.ChartPanel.saveAsSVG : r22 = null
+org.jfree.chart.ChartPanel.saveAsSVG : r22 = null >>>>>>>> org.jfree.chart.ChartPanel.saveAsSVG : $r23 = new java.io.BufferedWriter
+org.jfree.chart.ChartPanel.saveAsSVG : r22 = null >>>>>>>> org.jfree.chart.ChartPanel.saveAsSVG : $r32 := @caughtexception
+org.jfree.chart.ChartPanel.saveAsSVG : r8 = $r32 >>>>>>>> org.jfree.chart.ChartPanel.saveAsSVG : $r33 := @caughtexception
+org.jfree.chart.ChartPanel.saveAsSVG : r8 = $r32 >>>>>>>> org.jfree.chart.ChartPanel.saveAsSVG : $r32 := @caughtexception
+org.jfree.chart.ChartPanel.saveAsSVG : r8 = $r32 >>>>>>>> org.jfree.chart.ChartPanel.saveAsSVG : if r22 == null
+org.jfree.chart.ChartPanel.saveAsSVG : if r22 == null >>>>>>>> org.jfree.chart.ChartPanel.saveAsSVG : virtualinvoke r22.<java.io.BufferedWriter: void close()>()
+org.jfree.chart.ChartPanel.saveAsSVG : if r22 == null >>>>>>>> org.jfree.chart.ChartPanel.saveAsSVG : goto [?= throw r8]
+org.jfree.chart.ChartPanel.saveAsSVG : if r22 == null >>>>>>>> org.jfree.chart.ChartPanel.saveAsSVG : $r33 := @caughtexception
+org.jfree.chart.ChartPanel.saveAsSVG : r9 = $r33 >>>>>>>> org.jfree.chart.ChartPanel.saveAsSVG : $r34 = new java.lang.RuntimeException
+org.jfree.chart.ChartPanel.saveAsSVG : $r34 = new java.lang.RuntimeException >>>>>>>> org.jfree.chart.ChartPanel.saveAsSVG : specialinvoke $r34.<java.lang.RuntimeException: void <init>(java.lang.Throwable)>(r9)
+org.jfree.chart.ChartPanel.saveAsSVG : specialinvoke $r34.<java.lang.RuntimeException: void <init>(java.lang.Throwable)>(r9) >>>>>>>> org.jfree.chart.ChartPanel.saveAsSVG : throw $r34
+org.jfree.chart.ChartPanel.saveAsSVG : goto [?= throw r8] >>>>>>>> org.jfree.chart.ChartPanel.saveAsSVG : throw r8
+org.jfree.chart.ChartPanel.saveAsSVG : virtualinvoke r22.<java.io.BufferedWriter: void close()>() >>>>>>>> org.jfree.chart.ChartPanel.saveAsSVG : goto [?= throw r8]
+org.jfree.chart.ChartPanel.saveAsSVG : virtualinvoke r22.<java.io.BufferedWriter: void close()>() >>>>>>>> org.jfree.chart.ChartPanel.saveAsSVG : $r33 := @caughtexception
+org.jfree.chart.ChartPanel.saveAsSVG : $r23 = new java.io.BufferedWriter >>>>>>>> org.jfree.chart.ChartPanel.saveAsSVG : $r24 = new java.io.FileWriter
+org.jfree.chart.ChartPanel.saveAsSVG : $r23 = new java.io.BufferedWriter >>>>>>>> org.jfree.chart.ChartPanel.saveAsSVG : $r32 := @caughtexception
+org.jfree.chart.ChartPanel.saveAsSVG : $r24 = new java.io.FileWriter >>>>>>>> org.jfree.chart.ChartPanel.saveAsSVG : specialinvoke $r24.<java.io.FileWriter: void <init>(java.io.File)>(r2)
+org.jfree.chart.ChartPanel.saveAsSVG : $r24 = new java.io.FileWriter >>>>>>>> org.jfree.chart.ChartPanel.saveAsSVG : $r32 := @caughtexception
+org.jfree.chart.ChartPanel.saveAsSVG : specialinvoke $r24.<java.io.FileWriter: void <init>(java.io.File)>(r2) >>>>>>>> org.jfree.chart.ChartPanel.saveAsSVG : specialinvoke $r23.<java.io.BufferedWriter: void <init>(java.io.Writer)>($r24)
+org.jfree.chart.ChartPanel.saveAsSVG : specialinvoke $r24.<java.io.FileWriter: void <init>(java.io.File)>(r2) >>>>>>>> org.jfree.chart.ChartPanel.saveAsSVG : $r32 := @caughtexception
+org.jfree.chart.ChartPanel.saveAsSVG : specialinvoke $r23.<java.io.BufferedWriter: void <init>(java.io.Writer)>($r24) >>>>>>>> org.jfree.chart.ChartPanel.saveAsSVG : r22 = $r23
+org.jfree.chart.ChartPanel.saveAsSVG : specialinvoke $r23.<java.io.BufferedWriter: void <init>(java.io.Writer)>($r24) >>>>>>>> org.jfree.chart.ChartPanel.saveAsSVG : $r32 := @caughtexception
+org.jfree.chart.ChartPanel.saveAsSVG : r22 = $r23 >>>>>>>> org.jfree.chart.ChartPanel.saveAsSVG : virtualinvoke r22.<java.io.BufferedWriter: void write(java.lang.String)>("<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">\n")
+org.jfree.chart.ChartPanel.saveAsSVG : r22 = $r23 >>>>>>>> org.jfree.chart.ChartPanel.saveAsSVG : $r32 := @caughtexception
+org.jfree.chart.ChartPanel.saveAsSVG : virtualinvoke r22.<java.io.BufferedWriter: void write(java.lang.String)>("<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">\n") >>>>>>>> org.jfree.chart.ChartPanel.saveAsSVG : $r25 = new java.lang.StringBuilder
+org.jfree.chart.ChartPanel.saveAsSVG : virtualinvoke r22.<java.io.BufferedWriter: void write(java.lang.String)>("<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">\n") >>>>>>>> org.jfree.chart.ChartPanel.saveAsSVG : $r32 := @caughtexception
+org.jfree.chart.ChartPanel.saveAsSVG : $r25 = new java.lang.StringBuilder >>>>>>>> org.jfree.chart.ChartPanel.saveAsSVG : specialinvoke $r25.<java.lang.StringBuilder: void <init>()>()
+org.jfree.chart.ChartPanel.saveAsSVG : $r25 = new java.lang.StringBuilder >>>>>>>> org.jfree.chart.ChartPanel.saveAsSVG : $r32 := @caughtexception
+org.jfree.chart.ChartPanel.saveAsSVG : specialinvoke $r25.<java.lang.StringBuilder: void <init>()>() >>>>>>>> org.jfree.chart.ChartPanel.saveAsSVG : $r26 = virtualinvoke $r25.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r21)
+org.jfree.chart.ChartPanel.saveAsSVG : specialinvoke $r25.<java.lang.StringBuilder: void <init>()>() >>>>>>>> org.jfree.chart.ChartPanel.saveAsSVG : $r32 := @caughtexception
+org.jfree.chart.ChartPanel.saveAsSVG : $r26 = virtualinvoke $r25.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r21) >>>>>>>> org.jfree.chart.ChartPanel.saveAsSVG : $r27 = virtualinvoke $r26.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\n")
+org.jfree.chart.ChartPanel.saveAsSVG : $r26 = virtualinvoke $r25.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r21) >>>>>>>> org.jfree.chart.ChartPanel.saveAsSVG : $r32 := @caughtexception
+org.jfree.chart.ChartPanel.saveAsSVG : $r27 = virtualinvoke $r26.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\n") >>>>>>>> org.jfree.chart.ChartPanel.saveAsSVG : $r28 = virtualinvoke $r27.<java.lang.StringBuilder: java.lang.String toString()>()
+org.jfree.chart.ChartPanel.saveAsSVG : $r27 = virtualinvoke $r26.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\n") >>>>>>>> org.jfree.chart.ChartPanel.saveAsSVG : $r32 := @caughtexception
+org.jfree.chart.ChartPanel.saveAsSVG : $r28 = virtualinvoke $r27.<java.lang.StringBuilder: java.lang.String toString()>() >>>>>>>> org.jfree.chart.ChartPanel.saveAsSVG : virtualinvoke r22.<java.io.BufferedWriter: void write(java.lang.String)>($r28)
+org.jfree.chart.ChartPanel.saveAsSVG : $r28 = virtualinvoke $r27.<java.lang.StringBuilder: java.lang.String toString()>() >>>>>>>> org.jfree.chart.ChartPanel.saveAsSVG : $r32 := @caughtexception
+org.jfree.chart.ChartPanel.saveAsSVG : virtualinvoke r22.<java.io.BufferedWriter: void write(java.lang.String)>($r28) >>>>>>>> org.jfree.chart.ChartPanel.saveAsSVG : virtualinvoke r22.<java.io.BufferedWriter: void flush()>()
+org.jfree.chart.ChartPanel.saveAsSVG : virtualinvoke r22.<java.io.BufferedWriter: void write(java.lang.String)>($r28) >>>>>>>> org.jfree.chart.ChartPanel.saveAsSVG : $r32 := @caughtexception
+org.jfree.chart.ChartPanel.saveAsSVG : virtualinvoke r22.<java.io.BufferedWriter: void flush()>() >>>>>>>> org.jfree.chart.ChartPanel.saveAsSVG : $r32 := @caughtexception
+org.jfree.chart.ChartPanel.saveAsSVG : virtualinvoke r22.<java.io.BufferedWriter: void flush()>() >>>>>>>> org.jfree.chart.ChartPanel.saveAsSVG : $r29 := @caughtexception
+org.jfree.chart.ChartPanel.saveAsSVG : virtualinvoke r22.<java.io.BufferedWriter: void flush()>() >>>>>>>> org.jfree.chart.ChartPanel.saveAsSVG : if r22 == null
+org.jfree.chart.ChartPanel.saveAsSVG : if r22 == null >>>>>>>> org.jfree.chart.ChartPanel.saveAsSVG : virtualinvoke r22.<java.io.BufferedWriter: void close()>()
+org.jfree.chart.ChartPanel.saveAsSVG : if r22 == null >>>>>>>> org.jfree.chart.ChartPanel.saveAsSVG : goto [?= return]
+org.jfree.chart.ChartPanel.saveAsSVG : if r22 == null >>>>>>>> org.jfree.chart.ChartPanel.saveAsSVG : $r29 := @caughtexception
+org.jfree.chart.ChartPanel.saveAsSVG : r30 = $r29 >>>>>>>> org.jfree.chart.ChartPanel.saveAsSVG : $r31 = new java.lang.RuntimeException
+org.jfree.chart.ChartPanel.saveAsSVG : $r31 = new java.lang.RuntimeException >>>>>>>> org.jfree.chart.ChartPanel.saveAsSVG : specialinvoke $r31.<java.lang.RuntimeException: void <init>(java.lang.Throwable)>(r30)
+org.jfree.chart.ChartPanel.saveAsSVG : specialinvoke $r31.<java.lang.RuntimeException: void <init>(java.lang.Throwable)>(r30) >>>>>>>> org.jfree.chart.ChartPanel.saveAsSVG : throw $r31
+org.jfree.chart.ChartPanel.saveAsSVG : goto [?= return] >>>>>>>> org.jfree.chart.ChartPanel.saveAsSVG : return
+org.jfree.chart.ChartPanel.saveAsSVG : virtualinvoke r22.<java.io.BufferedWriter: void close()>() >>>>>>>> org.jfree.chart.ChartPanel.saveAsSVG : goto [?= return]
+org.jfree.chart.ChartPanel.saveAsSVG : virtualinvoke r22.<java.io.BufferedWriter: void close()>() >>>>>>>> org.jfree.chart.ChartPanel.saveAsSVG : $r29 := @caughtexception
+org.jfree.chart.ChartPanel.saveAsSVG : $r10 = new javax.swing.JFileChooser >>>>>>>> org.jfree.chart.ChartPanel.saveAsSVG : specialinvoke $r10.<javax.swing.JFileChooser: void <init>()>()
+org.jfree.chart.ChartPanel.saveAsSVG : specialinvoke $r10.<javax.swing.JFileChooser: void <init>()>() >>>>>>>> org.jfree.chart.ChartPanel.saveAsSVG : r3 = $r10
+org.jfree.chart.ChartPanel.saveAsSVG : r3 = $r10 >>>>>>>> org.jfree.chart.ChartPanel.saveAsSVG : $r11 = r0.<org.jfree.chart.ChartPanel: java.io.File defaultDirectoryForSaveAs>
+org.jfree.chart.ChartPanel.saveAsSVG : $r11 = r0.<org.jfree.chart.ChartPanel: java.io.File defaultDirectoryForSaveAs> >>>>>>>> org.jfree.chart.ChartPanel.saveAsSVG : virtualinvoke r3.<javax.swing.JFileChooser: void setCurrentDirectory(java.io.File)>($r11)
+org.jfree.chart.ChartPanel.saveAsSVG : virtualinvoke r3.<javax.swing.JFileChooser: void setCurrentDirectory(java.io.File)>($r11) >>>>>>>> org.jfree.chart.ChartPanel.saveAsSVG : $r12 = new javax.swing.filechooser.FileNameExtensionFilter
+org.jfree.chart.ChartPanel.saveAsSVG : $r12 = new javax.swing.filechooser.FileNameExtensionFilter >>>>>>>> org.jfree.chart.ChartPanel.saveAsSVG : $r4 = <org.jfree.chart.ChartPanel: java.util.ResourceBundle localizationResources>
+org.jfree.chart.ChartPanel.saveAsSVG : $r4 = <org.jfree.chart.ChartPanel: java.util.ResourceBundle localizationResources> >>>>>>>> org.jfree.chart.ChartPanel.saveAsSVG : $r13 = virtualinvoke $r4.<java.util.ResourceBundle: java.lang.String getString(java.lang.String)>("SVG_Files")
+org.jfree.chart.ChartPanel.saveAsSVG : $r13 = virtualinvoke $r4.<java.util.ResourceBundle: java.lang.String getString(java.lang.String)>("SVG_Files") >>>>>>>> org.jfree.chart.ChartPanel.saveAsSVG : $r14 = newarray (java.lang.String)[1]
+org.jfree.chart.ChartPanel.saveAsSVG : $r14 = newarray (java.lang.String)[1] >>>>>>>> org.jfree.chart.ChartPanel.saveAsSVG : $r14[0] = "svg"
+org.jfree.chart.ChartPanel.saveAsSVG : $r14[0] = "svg" >>>>>>>> org.jfree.chart.ChartPanel.saveAsSVG : specialinvoke $r12.<javax.swing.filechooser.FileNameExtensionFilter: void <init>(java.lang.String,java.lang.String[])>($r13, $r14)
+org.jfree.chart.ChartPanel.saveAsSVG : specialinvoke $r12.<javax.swing.filechooser.FileNameExtensionFilter: void <init>(java.lang.String,java.lang.String[])>($r13, $r14) >>>>>>>> org.jfree.chart.ChartPanel.saveAsSVG : r5 = $r12
+org.jfree.chart.ChartPanel.saveAsSVG : r5 = $r12 >>>>>>>> org.jfree.chart.ChartPanel.saveAsSVG : virtualinvoke r3.<javax.swing.JFileChooser: void addChoosableFileFilter(javax.swing.filechooser.FileFilter)>(r5)
+org.jfree.chart.ChartPanel.saveAsSVG : virtualinvoke r3.<javax.swing.JFileChooser: void addChoosableFileFilter(javax.swing.filechooser.FileFilter)>(r5) >>>>>>>> org.jfree.chart.ChartPanel.saveAsSVG : virtualinvoke r3.<javax.swing.JFileChooser: void setFileFilter(javax.swing.filechooser.FileFilter)>(r5)
+org.jfree.chart.ChartPanel.saveAsSVG : virtualinvoke r3.<javax.swing.JFileChooser: void setFileFilter(javax.swing.filechooser.FileFilter)>(r5) >>>>>>>> org.jfree.chart.ChartPanel.saveAsSVG : i0 = virtualinvoke r3.<javax.swing.JFileChooser: int showSaveDialog(java.awt.Component)>(r0)
+org.jfree.chart.ChartPanel.saveAsSVG : i0 = virtualinvoke r3.<javax.swing.JFileChooser: int showSaveDialog(java.awt.Component)>(r0) >>>>>>>> org.jfree.chart.ChartPanel.saveAsSVG : if i0 != 0
+org.jfree.chart.ChartPanel.saveAsSVG : if i0 != 0 >>>>>>>> org.jfree.chart.ChartPanel.saveAsSVG : $r15 = virtualinvoke r3.<javax.swing.JFileChooser: java.io.File getSelectedFile()>()
+org.jfree.chart.ChartPanel.saveAsSVG : if i0 != 0 >>>>>>>> org.jfree.chart.ChartPanel.saveAsSVG : if r2 == null
+org.jfree.chart.ChartPanel.saveAsSVG : $r15 = virtualinvoke r3.<javax.swing.JFileChooser: java.io.File getSelectedFile()>() >>>>>>>> org.jfree.chart.ChartPanel.saveAsSVG : r6 = virtualinvoke $r15.<java.io.File: java.lang.String getPath()>()
+org.jfree.chart.ChartPanel.saveAsSVG : r6 = virtualinvoke $r15.<java.io.File: java.lang.String getPath()>() >>>>>>>> org.jfree.chart.ChartPanel.saveAsSVG : $z0 = virtualinvoke r0.<org.jfree.chart.ChartPanel: boolean isEnforceFileExtensions()>()
+org.jfree.chart.ChartPanel.saveAsSVG : $z0 = virtualinvoke r0.<org.jfree.chart.ChartPanel: boolean isEnforceFileExtensions()>() >>>>>>>> org.jfree.chart.ChartPanel.saveAsSVG : if $z0 == 0
+org.jfree.chart.ChartPanel.saveAsSVG : if $z0 == 0 >>>>>>>> org.jfree.chart.ChartPanel.saveAsSVG : $z1 = virtualinvoke r6.<java.lang.String: boolean endsWith(java.lang.String)>(".svg")
+org.jfree.chart.ChartPanel.saveAsSVG : if $z0 == 0 >>>>>>>> org.jfree.chart.ChartPanel.saveAsSVG : $r19 = new java.io.File
+org.jfree.chart.ChartPanel.saveAsSVG : $r19 = new java.io.File >>>>>>>> org.jfree.chart.ChartPanel.saveAsSVG : specialinvoke $r19.<java.io.File: void <init>(java.lang.String)>(r6)
+org.jfree.chart.ChartPanel.saveAsSVG : specialinvoke $r19.<java.io.File: void <init>(java.lang.String)>(r6) >>>>>>>> org.jfree.chart.ChartPanel.saveAsSVG : r2 = $r19
+org.jfree.chart.ChartPanel.saveAsSVG : r2 = $r19 >>>>>>>> org.jfree.chart.ChartPanel.saveAsSVG : $z2 = virtualinvoke r2.<java.io.File: boolean exists()>()
+org.jfree.chart.ChartPanel.saveAsSVG : $z2 = virtualinvoke r2.<java.io.File: boolean exists()>() >>>>>>>> org.jfree.chart.ChartPanel.saveAsSVG : if $z2 == 0
+org.jfree.chart.ChartPanel.saveAsSVG : if $z2 == 0 >>>>>>>> org.jfree.chart.ChartPanel.saveAsSVG : $r20 = <org.jfree.chart.ChartPanel: java.util.ResourceBundle localizationResources>
+org.jfree.chart.ChartPanel.saveAsSVG : if $z2 == 0 >>>>>>>> org.jfree.chart.ChartPanel.saveAsSVG : if r2 == null
+org.jfree.chart.ChartPanel.saveAsSVG : $r20 = <org.jfree.chart.ChartPanel: java.util.ResourceBundle localizationResources> >>>>>>>> org.jfree.chart.ChartPanel.saveAsSVG : r7 = virtualinvoke $r20.<java.util.ResourceBundle: java.lang.String getString(java.lang.String)>("FILE_EXISTS_CONFIRM_OVERWRITE")
+org.jfree.chart.ChartPanel.saveAsSVG : r7 = virtualinvoke $r20.<java.util.ResourceBundle: java.lang.String getString(java.lang.String)>("FILE_EXISTS_CONFIRM_OVERWRITE") >>>>>>>> org.jfree.chart.ChartPanel.saveAsSVG : i1 = staticinvoke <javax.swing.JOptionPane: int showConfirmDialog(java.awt.Component,java.lang.Object,java.lang.String,int)>(r0, r7, "Save As SVG", 2)
+org.jfree.chart.ChartPanel.saveAsSVG : i1 = staticinvoke <javax.swing.JOptionPane: int showConfirmDialog(java.awt.Component,java.lang.Object,java.lang.String,int)>(r0, r7, "Save As SVG", 2) >>>>>>>> org.jfree.chart.ChartPanel.saveAsSVG : if i1 != 2
+org.jfree.chart.ChartPanel.saveAsSVG : if i1 != 2 >>>>>>>> org.jfree.chart.ChartPanel.saveAsSVG : r2 = null
+org.jfree.chart.ChartPanel.saveAsSVG : if i1 != 2 >>>>>>>> org.jfree.chart.ChartPanel.saveAsSVG : if r2 == null
+org.jfree.chart.ChartPanel.saveAsSVG : r2 = null >>>>>>>> org.jfree.chart.ChartPanel.saveAsSVG : if r2 == null
+org.jfree.chart.ChartPanel.saveAsSVG : $z1 = virtualinvoke r6.<java.lang.String: boolean endsWith(java.lang.String)>(".svg") >>>>>>>> org.jfree.chart.ChartPanel.saveAsSVG : if $z1 != 0
+org.jfree.chart.ChartPanel.saveAsSVG : if $z1 != 0 >>>>>>>> org.jfree.chart.ChartPanel.saveAsSVG : $r16 = new java.lang.StringBuilder
+org.jfree.chart.ChartPanel.saveAsSVG : if $z1 != 0 >>>>>>>> org.jfree.chart.ChartPanel.saveAsSVG : $r19 = new java.io.File
+org.jfree.chart.ChartPanel.saveAsSVG : $r16 = new java.lang.StringBuilder >>>>>>>> org.jfree.chart.ChartPanel.saveAsSVG : specialinvoke $r16.<java.lang.StringBuilder: void <init>()>()
+org.jfree.chart.ChartPanel.saveAsSVG : specialinvoke $r16.<java.lang.StringBuilder: void <init>()>() >>>>>>>> org.jfree.chart.ChartPanel.saveAsSVG : $r17 = virtualinvoke $r16.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r6)
+org.jfree.chart.ChartPanel.saveAsSVG : $r17 = virtualinvoke $r16.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r6) >>>>>>>> org.jfree.chart.ChartPanel.saveAsSVG : $r18 = virtualinvoke $r17.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(".svg")
+org.jfree.chart.ChartPanel.saveAsSVG : $r18 = virtualinvoke $r17.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(".svg") >>>>>>>> org.jfree.chart.ChartPanel.saveAsSVG : r6 = virtualinvoke $r18.<java.lang.StringBuilder: java.lang.String toString()>()
+org.jfree.chart.ChartPanel.saveAsSVG : r6 = virtualinvoke $r18.<java.lang.StringBuilder: java.lang.String toString()>() >>>>>>>> org.jfree.chart.ChartPanel.saveAsSVG : $r19 = new java.io.File

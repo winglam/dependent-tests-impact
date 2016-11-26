@@ -1,0 +1,147 @@
+org.apache.xml.security.utils.Base64.decode : z0 = 0 >>>>>>>> org.apache.xml.security.utils.Base64.decode : z1 = 0
+org.apache.xml.security.utils.Base64.decode : z1 = 0 >>>>>>>> org.apache.xml.security.utils.Base64.decode : z2 = 0
+org.apache.xml.security.utils.Base64.decode : z2 = 0 >>>>>>>> org.apache.xml.security.utils.Base64.decode : z3 = 0
+org.apache.xml.security.utils.Base64.decode : z3 = 0 >>>>>>>> org.apache.xml.security.utils.Base64.decode : i0 = 0
+org.apache.xml.security.utils.Base64.decode : i0 = 0 >>>>>>>> org.apache.xml.security.utils.Base64.decode : r2 = newarray (byte)[4]
+org.apache.xml.security.utils.Base64.decode : r2 = newarray (byte)[4] >>>>>>>> org.apache.xml.security.utils.Base64.decode : $i6 = virtualinvoke r0.<java.io.InputStream: int read()>()
+org.apache.xml.security.utils.Base64.decode : $i6 = virtualinvoke r0.<java.io.InputStream: int read()>() >>>>>>>> org.apache.xml.security.utils.Base64.decode : i1 = $i6
+org.apache.xml.security.utils.Base64.decode : i1 = $i6 >>>>>>>> org.apache.xml.security.utils.Base64.decode : if $i6 <= 0
+org.apache.xml.security.utils.Base64.decode : if $i6 <= 0 >>>>>>>> org.apache.xml.security.utils.Base64.decode : b2 = (byte) i1
+org.apache.xml.security.utils.Base64.decode : if $i6 <= 0 >>>>>>>> org.apache.xml.security.utils.Base64.decode : b33 = r2[0]
+org.apache.xml.security.utils.Base64.decode : b33 = r2[0] >>>>>>>> org.apache.xml.security.utils.Base64.decode : b3 = r2[1]
+org.apache.xml.security.utils.Base64.decode : b3 = r2[1] >>>>>>>> org.apache.xml.security.utils.Base64.decode : b4 = r2[2]
+org.apache.xml.security.utils.Base64.decode : b4 = r2[2] >>>>>>>> org.apache.xml.security.utils.Base64.decode : b5 = r2[3]
+org.apache.xml.security.utils.Base64.decode : b5 = r2[3] >>>>>>>> org.apache.xml.security.utils.Base64.decode : $r8 = <org.apache.xml.security.utils.Base64: byte[] base64Alphabet>
+org.apache.xml.security.utils.Base64.decode : $r8 = <org.apache.xml.security.utils.Base64: byte[] base64Alphabet> >>>>>>>> org.apache.xml.security.utils.Base64.decode : b34 = $r8[b33]
+org.apache.xml.security.utils.Base64.decode : b34 = $r8[b33] >>>>>>>> org.apache.xml.security.utils.Base64.decode : $r9 = <org.apache.xml.security.utils.Base64: byte[] base64Alphabet>
+org.apache.xml.security.utils.Base64.decode : $r9 = <org.apache.xml.security.utils.Base64: byte[] base64Alphabet> >>>>>>>> org.apache.xml.security.utils.Base64.decode : b35 = $r9[b3]
+org.apache.xml.security.utils.Base64.decode : b35 = $r9[b3] >>>>>>>> org.apache.xml.security.utils.Base64.decode : $z7 = staticinvoke <org.apache.xml.security.utils.Base64: boolean isData(byte)>(b4)
+org.apache.xml.security.utils.Base64.decode : $z7 = staticinvoke <org.apache.xml.security.utils.Base64: boolean isData(byte)>(b4) >>>>>>>> org.apache.xml.security.utils.Base64.decode : if $z7 == 0
+org.apache.xml.security.utils.Base64.decode : if $z7 == 0 >>>>>>>> org.apache.xml.security.utils.Base64.decode : $z8 = staticinvoke <org.apache.xml.security.utils.Base64: boolean isData(byte)>(b5)
+org.apache.xml.security.utils.Base64.decode : if $z7 == 0 >>>>>>>> org.apache.xml.security.utils.Base64.decode : $z9 = staticinvoke <org.apache.xml.security.utils.Base64: boolean isPad(byte)>(b4)
+org.apache.xml.security.utils.Base64.decode : $z9 = staticinvoke <org.apache.xml.security.utils.Base64: boolean isPad(byte)>(b4) >>>>>>>> org.apache.xml.security.utils.Base64.decode : if $z9 == 0
+org.apache.xml.security.utils.Base64.decode : if $z9 == 0 >>>>>>>> org.apache.xml.security.utils.Base64.decode : $z10 = staticinvoke <org.apache.xml.security.utils.Base64: boolean isPad(byte)>(b5)
+org.apache.xml.security.utils.Base64.decode : if $z9 == 0 >>>>>>>> org.apache.xml.security.utils.Base64.decode : $z11 = staticinvoke <org.apache.xml.security.utils.Base64: boolean isPad(byte)>(b4)
+org.apache.xml.security.utils.Base64.decode : $z11 = staticinvoke <org.apache.xml.security.utils.Base64: boolean isPad(byte)>(b4) >>>>>>>> org.apache.xml.security.utils.Base64.decode : if $z11 != 0
+org.apache.xml.security.utils.Base64.decode : if $z11 != 0 >>>>>>>> org.apache.xml.security.utils.Base64.decode : $z12 = staticinvoke <org.apache.xml.security.utils.Base64: boolean isPad(byte)>(b5)
+org.apache.xml.security.utils.Base64.decode : if $z11 != 0 >>>>>>>> org.apache.xml.security.utils.Base64.decode : $r13 = new org.apache.xml.security.exceptions.Base64DecodingException
+org.apache.xml.security.utils.Base64.decode : $r13 = new org.apache.xml.security.exceptions.Base64DecodingException >>>>>>>> org.apache.xml.security.utils.Base64.decode : specialinvoke $r13.<org.apache.xml.security.exceptions.Base64DecodingException: void <init>(java.lang.String)>("decoding.general")
+org.apache.xml.security.utils.Base64.decode : specialinvoke $r13.<org.apache.xml.security.exceptions.Base64DecodingException: void <init>(java.lang.String)>("decoding.general") >>>>>>>> org.apache.xml.security.utils.Base64.decode : throw $r13
+org.apache.xml.security.utils.Base64.decode : $z12 = staticinvoke <org.apache.xml.security.utils.Base64: boolean isPad(byte)>(b5) >>>>>>>> org.apache.xml.security.utils.Base64.decode : if $z12 == 0
+org.apache.xml.security.utils.Base64.decode : if $z12 == 0 >>>>>>>> org.apache.xml.security.utils.Base64.decode : $r11 = <org.apache.xml.security.utils.Base64: byte[] base64Alphabet>
+org.apache.xml.security.utils.Base64.decode : if $z12 == 0 >>>>>>>> org.apache.xml.security.utils.Base64.decode : $r13 = new org.apache.xml.security.exceptions.Base64DecodingException
+org.apache.xml.security.utils.Base64.decode : $r11 = <org.apache.xml.security.utils.Base64: byte[] base64Alphabet> >>>>>>>> org.apache.xml.security.utils.Base64.decode : b41 = $r11[b4]
+org.apache.xml.security.utils.Base64.decode : b41 = $r11[b4] >>>>>>>> org.apache.xml.security.utils.Base64.decode : $b42 = b41 & 3
+org.apache.xml.security.utils.Base64.decode : $b42 = b41 & 3 >>>>>>>> org.apache.xml.security.utils.Base64.decode : if $b42 == 0
+org.apache.xml.security.utils.Base64.decode : if $b42 == 0 >>>>>>>> org.apache.xml.security.utils.Base64.decode : $r12 = new org.apache.xml.security.exceptions.Base64DecodingException
+org.apache.xml.security.utils.Base64.decode : if $b42 == 0 >>>>>>>> org.apache.xml.security.utils.Base64.decode : $i43 = b34 << 2
+org.apache.xml.security.utils.Base64.decode : $i43 = b34 << 2 >>>>>>>> org.apache.xml.security.utils.Base64.decode : $b44 = b35 >> 4
+org.apache.xml.security.utils.Base64.decode : $b44 = b35 >> 4 >>>>>>>> org.apache.xml.security.utils.Base64.decode : $i45 = $i43 | $b44
+org.apache.xml.security.utils.Base64.decode : $i45 = $i43 | $b44 >>>>>>>> org.apache.xml.security.utils.Base64.decode : $b46 = (byte) $i45
+org.apache.xml.security.utils.Base64.decode : $b46 = (byte) $i45 >>>>>>>> org.apache.xml.security.utils.Base64.decode : virtualinvoke r1.<java.io.OutputStream: void write(int)>($b46)
+org.apache.xml.security.utils.Base64.decode : virtualinvoke r1.<java.io.OutputStream: void write(int)>($b46) >>>>>>>> org.apache.xml.security.utils.Base64.decode : $b47 = b35 & 15
+org.apache.xml.security.utils.Base64.decode : $b47 = b35 & 15 >>>>>>>> org.apache.xml.security.utils.Base64.decode : $i48 = $b47 << 4
+org.apache.xml.security.utils.Base64.decode : $i48 = $b47 << 4 >>>>>>>> org.apache.xml.security.utils.Base64.decode : $b49 = b41 >> 2
+org.apache.xml.security.utils.Base64.decode : $b49 = b41 >> 2 >>>>>>>> org.apache.xml.security.utils.Base64.decode : $b50 = $b49 & 15
+org.apache.xml.security.utils.Base64.decode : $b50 = $b49 & 15 >>>>>>>> org.apache.xml.security.utils.Base64.decode : $i51 = $i48 | $b50
+org.apache.xml.security.utils.Base64.decode : $i51 = $i48 | $b50 >>>>>>>> org.apache.xml.security.utils.Base64.decode : $b52 = (byte) $i51
+org.apache.xml.security.utils.Base64.decode : $b52 = (byte) $i51 >>>>>>>> org.apache.xml.security.utils.Base64.decode : virtualinvoke r1.<java.io.OutputStream: void write(int)>($b52)
+org.apache.xml.security.utils.Base64.decode : virtualinvoke r1.<java.io.OutputStream: void write(int)>($b52) >>>>>>>> org.apache.xml.security.utils.Base64.decode : goto [?= return]
+org.apache.xml.security.utils.Base64.decode : goto [?= return] >>>>>>>> org.apache.xml.security.utils.Base64.decode : return
+org.apache.xml.security.utils.Base64.decode : $r12 = new org.apache.xml.security.exceptions.Base64DecodingException >>>>>>>> org.apache.xml.security.utils.Base64.decode : specialinvoke $r12.<org.apache.xml.security.exceptions.Base64DecodingException: void <init>(java.lang.String)>("decoding.general")
+org.apache.xml.security.utils.Base64.decode : specialinvoke $r12.<org.apache.xml.security.exceptions.Base64DecodingException: void <init>(java.lang.String)>("decoding.general") >>>>>>>> org.apache.xml.security.utils.Base64.decode : throw $r12
+org.apache.xml.security.utils.Base64.decode : $z10 = staticinvoke <org.apache.xml.security.utils.Base64: boolean isPad(byte)>(b5) >>>>>>>> org.apache.xml.security.utils.Base64.decode : if $z10 == 0
+org.apache.xml.security.utils.Base64.decode : if $z10 == 0 >>>>>>>> org.apache.xml.security.utils.Base64.decode : $b36 = b35 & 15
+org.apache.xml.security.utils.Base64.decode : if $z10 == 0 >>>>>>>> org.apache.xml.security.utils.Base64.decode : $z11 = staticinvoke <org.apache.xml.security.utils.Base64: boolean isPad(byte)>(b4)
+org.apache.xml.security.utils.Base64.decode : $b36 = b35 & 15 >>>>>>>> org.apache.xml.security.utils.Base64.decode : if $b36 == 0
+org.apache.xml.security.utils.Base64.decode : if $b36 == 0 >>>>>>>> org.apache.xml.security.utils.Base64.decode : $r10 = new org.apache.xml.security.exceptions.Base64DecodingException
+org.apache.xml.security.utils.Base64.decode : if $b36 == 0 >>>>>>>> org.apache.xml.security.utils.Base64.decode : $i37 = b34 << 2
+org.apache.xml.security.utils.Base64.decode : $i37 = b34 << 2 >>>>>>>> org.apache.xml.security.utils.Base64.decode : $b38 = b35 >> 4
+org.apache.xml.security.utils.Base64.decode : $b38 = b35 >> 4 >>>>>>>> org.apache.xml.security.utils.Base64.decode : $i39 = $i37 | $b38
+org.apache.xml.security.utils.Base64.decode : $i39 = $i37 | $b38 >>>>>>>> org.apache.xml.security.utils.Base64.decode : $b40 = (byte) $i39
+org.apache.xml.security.utils.Base64.decode : $b40 = (byte) $i39 >>>>>>>> org.apache.xml.security.utils.Base64.decode : virtualinvoke r1.<java.io.OutputStream: void write(int)>($b40)
+org.apache.xml.security.utils.Base64.decode : virtualinvoke r1.<java.io.OutputStream: void write(int)>($b40) >>>>>>>> org.apache.xml.security.utils.Base64.decode : goto [?= return]
+org.apache.xml.security.utils.Base64.decode : goto [?= return] >>>>>>>> org.apache.xml.security.utils.Base64.decode : return
+org.apache.xml.security.utils.Base64.decode : $r10 = new org.apache.xml.security.exceptions.Base64DecodingException >>>>>>>> org.apache.xml.security.utils.Base64.decode : specialinvoke $r10.<org.apache.xml.security.exceptions.Base64DecodingException: void <init>(java.lang.String)>("decoding.general")
+org.apache.xml.security.utils.Base64.decode : specialinvoke $r10.<org.apache.xml.security.exceptions.Base64DecodingException: void <init>(java.lang.String)>("decoding.general") >>>>>>>> org.apache.xml.security.utils.Base64.decode : throw $r10
+org.apache.xml.security.utils.Base64.decode : $z8 = staticinvoke <org.apache.xml.security.utils.Base64: boolean isData(byte)>(b5) >>>>>>>> org.apache.xml.security.utils.Base64.decode : if $z8 != 0
+org.apache.xml.security.utils.Base64.decode : if $z8 != 0 >>>>>>>> org.apache.xml.security.utils.Base64.decode : $z9 = staticinvoke <org.apache.xml.security.utils.Base64: boolean isPad(byte)>(b4)
+org.apache.xml.security.utils.Base64.decode : if $z8 != 0 >>>>>>>> org.apache.xml.security.utils.Base64.decode : $r14 = <org.apache.xml.security.utils.Base64: byte[] base64Alphabet>
+org.apache.xml.security.utils.Base64.decode : $r14 = <org.apache.xml.security.utils.Base64: byte[] base64Alphabet> >>>>>>>> org.apache.xml.security.utils.Base64.decode : b53 = $r14[b4]
+org.apache.xml.security.utils.Base64.decode : b53 = $r14[b4] >>>>>>>> org.apache.xml.security.utils.Base64.decode : $r15 = <org.apache.xml.security.utils.Base64: byte[] base64Alphabet>
+org.apache.xml.security.utils.Base64.decode : $r15 = <org.apache.xml.security.utils.Base64: byte[] base64Alphabet> >>>>>>>> org.apache.xml.security.utils.Base64.decode : b54 = $r15[b5]
+org.apache.xml.security.utils.Base64.decode : b54 = $r15[b5] >>>>>>>> org.apache.xml.security.utils.Base64.decode : $i55 = b34 << 2
+org.apache.xml.security.utils.Base64.decode : $i55 = b34 << 2 >>>>>>>> org.apache.xml.security.utils.Base64.decode : $b56 = b35 >> 4
+org.apache.xml.security.utils.Base64.decode : $b56 = b35 >> 4 >>>>>>>> org.apache.xml.security.utils.Base64.decode : $i57 = $i55 | $b56
+org.apache.xml.security.utils.Base64.decode : $i57 = $i55 | $b56 >>>>>>>> org.apache.xml.security.utils.Base64.decode : $b58 = (byte) $i57
+org.apache.xml.security.utils.Base64.decode : $b58 = (byte) $i57 >>>>>>>> org.apache.xml.security.utils.Base64.decode : virtualinvoke r1.<java.io.OutputStream: void write(int)>($b58)
+org.apache.xml.security.utils.Base64.decode : virtualinvoke r1.<java.io.OutputStream: void write(int)>($b58) >>>>>>>> org.apache.xml.security.utils.Base64.decode : $b59 = b35 & 15
+org.apache.xml.security.utils.Base64.decode : $b59 = b35 & 15 >>>>>>>> org.apache.xml.security.utils.Base64.decode : $i60 = $b59 << 4
+org.apache.xml.security.utils.Base64.decode : $i60 = $b59 << 4 >>>>>>>> org.apache.xml.security.utils.Base64.decode : $b61 = b53 >> 2
+org.apache.xml.security.utils.Base64.decode : $b61 = b53 >> 2 >>>>>>>> org.apache.xml.security.utils.Base64.decode : $b62 = $b61 & 15
+org.apache.xml.security.utils.Base64.decode : $b62 = $b61 & 15 >>>>>>>> org.apache.xml.security.utils.Base64.decode : $i63 = $i60 | $b62
+org.apache.xml.security.utils.Base64.decode : $i63 = $i60 | $b62 >>>>>>>> org.apache.xml.security.utils.Base64.decode : $b64 = (byte) $i63
+org.apache.xml.security.utils.Base64.decode : $b64 = (byte) $i63 >>>>>>>> org.apache.xml.security.utils.Base64.decode : virtualinvoke r1.<java.io.OutputStream: void write(int)>($b64)
+org.apache.xml.security.utils.Base64.decode : virtualinvoke r1.<java.io.OutputStream: void write(int)>($b64) >>>>>>>> org.apache.xml.security.utils.Base64.decode : $i65 = b53 << 6
+org.apache.xml.security.utils.Base64.decode : $i65 = b53 << 6 >>>>>>>> org.apache.xml.security.utils.Base64.decode : $i66 = $i65 | b54
+org.apache.xml.security.utils.Base64.decode : $i66 = $i65 | b54 >>>>>>>> org.apache.xml.security.utils.Base64.decode : $b67 = (byte) $i66
+org.apache.xml.security.utils.Base64.decode : $b67 = (byte) $i66 >>>>>>>> org.apache.xml.security.utils.Base64.decode : virtualinvoke r1.<java.io.OutputStream: void write(int)>($b67)
+org.apache.xml.security.utils.Base64.decode : virtualinvoke r1.<java.io.OutputStream: void write(int)>($b67) >>>>>>>> org.apache.xml.security.utils.Base64.decode : return
+org.apache.xml.security.utils.Base64.decode : b2 = (byte) i1 >>>>>>>> org.apache.xml.security.utils.Base64.decode : $z4 = staticinvoke <org.apache.xml.security.utils.Base64: boolean isWhiteSpace(byte)>(b2)
+org.apache.xml.security.utils.Base64.decode : $z4 = staticinvoke <org.apache.xml.security.utils.Base64: boolean isWhiteSpace(byte)>(b2) >>>>>>>> org.apache.xml.security.utils.Base64.decode : if $z4 == 0
+org.apache.xml.security.utils.Base64.decode : if $z4 == 0 >>>>>>>> org.apache.xml.security.utils.Base64.decode : goto [?= $i6 = virtualinvoke r0.<java.io.InputStream: int read()>()]
+org.apache.xml.security.utils.Base64.decode : if $z4 == 0 >>>>>>>> org.apache.xml.security.utils.Base64.decode : $z5 = staticinvoke <org.apache.xml.security.utils.Base64: boolean isPad(byte)>(b2)
+org.apache.xml.security.utils.Base64.decode : $z5 = staticinvoke <org.apache.xml.security.utils.Base64: boolean isPad(byte)>(b2) >>>>>>>> org.apache.xml.security.utils.Base64.decode : if $z5 == 0
+org.apache.xml.security.utils.Base64.decode : if $z5 == 0 >>>>>>>> org.apache.xml.security.utils.Base64.decode : i7 = i0 + 1
+org.apache.xml.security.utils.Base64.decode : if $z5 == 0 >>>>>>>> org.apache.xml.security.utils.Base64.decode : $z6 = staticinvoke <org.apache.xml.security.utils.Base64: boolean isData(byte)>(b2)
+org.apache.xml.security.utils.Base64.decode : $z6 = staticinvoke <org.apache.xml.security.utils.Base64: boolean isData(byte)>(b2) >>>>>>>> org.apache.xml.security.utils.Base64.decode : if $z6 != 0
+org.apache.xml.security.utils.Base64.decode : if $z6 != 0 >>>>>>>> org.apache.xml.security.utils.Base64.decode : $r3 = new org.apache.xml.security.exceptions.Base64DecodingException
+org.apache.xml.security.utils.Base64.decode : if $z6 != 0 >>>>>>>> org.apache.xml.security.utils.Base64.decode : $i11 = i0
+org.apache.xml.security.utils.Base64.decode : $i11 = i0 >>>>>>>> org.apache.xml.security.utils.Base64.decode : i0 = i0 + 1
+org.apache.xml.security.utils.Base64.decode : i0 = i0 + 1 >>>>>>>> org.apache.xml.security.utils.Base64.decode : r2[$i11] = b2
+org.apache.xml.security.utils.Base64.decode : r2[$i11] = b2 >>>>>>>> org.apache.xml.security.utils.Base64.decode : if i0 == 4
+org.apache.xml.security.utils.Base64.decode : if i0 == 4 >>>>>>>> org.apache.xml.security.utils.Base64.decode : goto [?= $i6 = virtualinvoke r0.<java.io.InputStream: int read()>()]
+org.apache.xml.security.utils.Base64.decode : if i0 == 4 >>>>>>>> org.apache.xml.security.utils.Base64.decode : i0 = 0
+org.apache.xml.security.utils.Base64.decode : i0 = 0 >>>>>>>> org.apache.xml.security.utils.Base64.decode : $r4 = <org.apache.xml.security.utils.Base64: byte[] base64Alphabet>
+org.apache.xml.security.utils.Base64.decode : $r4 = <org.apache.xml.security.utils.Base64: byte[] base64Alphabet> >>>>>>>> org.apache.xml.security.utils.Base64.decode : $b12 = r2[0]
+org.apache.xml.security.utils.Base64.decode : $b12 = r2[0] >>>>>>>> org.apache.xml.security.utils.Base64.decode : b13 = $r4[$b12]
+org.apache.xml.security.utils.Base64.decode : b13 = $r4[$b12] >>>>>>>> org.apache.xml.security.utils.Base64.decode : $r5 = <org.apache.xml.security.utils.Base64: byte[] base64Alphabet>
+org.apache.xml.security.utils.Base64.decode : $r5 = <org.apache.xml.security.utils.Base64: byte[] base64Alphabet> >>>>>>>> org.apache.xml.security.utils.Base64.decode : $b14 = r2[1]
+org.apache.xml.security.utils.Base64.decode : $b14 = r2[1] >>>>>>>> org.apache.xml.security.utils.Base64.decode : b15 = $r5[$b14]
+org.apache.xml.security.utils.Base64.decode : b15 = $r5[$b14] >>>>>>>> org.apache.xml.security.utils.Base64.decode : $r6 = <org.apache.xml.security.utils.Base64: byte[] base64Alphabet>
+org.apache.xml.security.utils.Base64.decode : $r6 = <org.apache.xml.security.utils.Base64: byte[] base64Alphabet> >>>>>>>> org.apache.xml.security.utils.Base64.decode : $b16 = r2[2]
+org.apache.xml.security.utils.Base64.decode : $b16 = r2[2] >>>>>>>> org.apache.xml.security.utils.Base64.decode : b17 = $r6[$b16]
+org.apache.xml.security.utils.Base64.decode : b17 = $r6[$b16] >>>>>>>> org.apache.xml.security.utils.Base64.decode : $r7 = <org.apache.xml.security.utils.Base64: byte[] base64Alphabet>
+org.apache.xml.security.utils.Base64.decode : $r7 = <org.apache.xml.security.utils.Base64: byte[] base64Alphabet> >>>>>>>> org.apache.xml.security.utils.Base64.decode : $b18 = r2[3]
+org.apache.xml.security.utils.Base64.decode : $b18 = r2[3] >>>>>>>> org.apache.xml.security.utils.Base64.decode : b19 = $r7[$b18]
+org.apache.xml.security.utils.Base64.decode : b19 = $r7[$b18] >>>>>>>> org.apache.xml.security.utils.Base64.decode : $i20 = b13 << 2
+org.apache.xml.security.utils.Base64.decode : $i20 = b13 << 2 >>>>>>>> org.apache.xml.security.utils.Base64.decode : $b21 = b15 >> 4
+org.apache.xml.security.utils.Base64.decode : $b21 = b15 >> 4 >>>>>>>> org.apache.xml.security.utils.Base64.decode : $i22 = $i20 | $b21
+org.apache.xml.security.utils.Base64.decode : $i22 = $i20 | $b21 >>>>>>>> org.apache.xml.security.utils.Base64.decode : $b23 = (byte) $i22
+org.apache.xml.security.utils.Base64.decode : $b23 = (byte) $i22 >>>>>>>> org.apache.xml.security.utils.Base64.decode : virtualinvoke r1.<java.io.OutputStream: void write(int)>($b23)
+org.apache.xml.security.utils.Base64.decode : virtualinvoke r1.<java.io.OutputStream: void write(int)>($b23) >>>>>>>> org.apache.xml.security.utils.Base64.decode : $b24 = b15 & 15
+org.apache.xml.security.utils.Base64.decode : $b24 = b15 & 15 >>>>>>>> org.apache.xml.security.utils.Base64.decode : $i25 = $b24 << 4
+org.apache.xml.security.utils.Base64.decode : $i25 = $b24 << 4 >>>>>>>> org.apache.xml.security.utils.Base64.decode : $b26 = b17 >> 2
+org.apache.xml.security.utils.Base64.decode : $b26 = b17 >> 2 >>>>>>>> org.apache.xml.security.utils.Base64.decode : $b27 = $b26 & 15
+org.apache.xml.security.utils.Base64.decode : $b27 = $b26 & 15 >>>>>>>> org.apache.xml.security.utils.Base64.decode : $i28 = $i25 | $b27
+org.apache.xml.security.utils.Base64.decode : $i28 = $i25 | $b27 >>>>>>>> org.apache.xml.security.utils.Base64.decode : $b29 = (byte) $i28
+org.apache.xml.security.utils.Base64.decode : $b29 = (byte) $i28 >>>>>>>> org.apache.xml.security.utils.Base64.decode : virtualinvoke r1.<java.io.OutputStream: void write(int)>($b29)
+org.apache.xml.security.utils.Base64.decode : virtualinvoke r1.<java.io.OutputStream: void write(int)>($b29) >>>>>>>> org.apache.xml.security.utils.Base64.decode : $i30 = b17 << 6
+org.apache.xml.security.utils.Base64.decode : $i30 = b17 << 6 >>>>>>>> org.apache.xml.security.utils.Base64.decode : $i31 = $i30 | b19
+org.apache.xml.security.utils.Base64.decode : $i31 = $i30 | b19 >>>>>>>> org.apache.xml.security.utils.Base64.decode : $b32 = (byte) $i31
+org.apache.xml.security.utils.Base64.decode : $b32 = (byte) $i31 >>>>>>>> org.apache.xml.security.utils.Base64.decode : virtualinvoke r1.<java.io.OutputStream: void write(int)>($b32)
+org.apache.xml.security.utils.Base64.decode : virtualinvoke r1.<java.io.OutputStream: void write(int)>($b32) >>>>>>>> org.apache.xml.security.utils.Base64.decode : goto [?= $i6 = virtualinvoke r0.<java.io.InputStream: int read()>()]
+org.apache.xml.security.utils.Base64.decode : goto [?= $i6 = virtualinvoke r0.<java.io.InputStream: int read()>()] >>>>>>>> org.apache.xml.security.utils.Base64.decode : $i6 = virtualinvoke r0.<java.io.InputStream: int read()>()
+org.apache.xml.security.utils.Base64.decode : goto [?= $i6 = virtualinvoke r0.<java.io.InputStream: int read()>()] >>>>>>>> org.apache.xml.security.utils.Base64.decode : $i6 = virtualinvoke r0.<java.io.InputStream: int read()>()
+org.apache.xml.security.utils.Base64.decode : $r3 = new org.apache.xml.security.exceptions.Base64DecodingException >>>>>>>> org.apache.xml.security.utils.Base64.decode : specialinvoke $r3.<org.apache.xml.security.exceptions.Base64DecodingException: void <init>(java.lang.String)>("decoding.general")
+org.apache.xml.security.utils.Base64.decode : specialinvoke $r3.<org.apache.xml.security.exceptions.Base64DecodingException: void <init>(java.lang.String)>("decoding.general") >>>>>>>> org.apache.xml.security.utils.Base64.decode : throw $r3
+org.apache.xml.security.utils.Base64.decode : i7 = i0 + 1 >>>>>>>> org.apache.xml.security.utils.Base64.decode : r2[i0] = b2
+org.apache.xml.security.utils.Base64.decode : r2[i0] = b2 >>>>>>>> org.apache.xml.security.utils.Base64.decode : if i7 != 3
+org.apache.xml.security.utils.Base64.decode : if i7 != 3 >>>>>>>> org.apache.xml.security.utils.Base64.decode : i8 = i7 + 1
+org.apache.xml.security.utils.Base64.decode : if i7 != 3 >>>>>>>> org.apache.xml.security.utils.Base64.decode : b33 = r2[0]
+org.apache.xml.security.utils.Base64.decode : i8 = i7 + 1 >>>>>>>> org.apache.xml.security.utils.Base64.decode : $i9 = virtualinvoke r0.<java.io.InputStream: int read()>()
+org.apache.xml.security.utils.Base64.decode : $i9 = virtualinvoke r0.<java.io.InputStream: int read()>() >>>>>>>> org.apache.xml.security.utils.Base64.decode : $b10 = (byte) $i9
+org.apache.xml.security.utils.Base64.decode : $b10 = (byte) $i9 >>>>>>>> org.apache.xml.security.utils.Base64.decode : r2[i7] = $b10
+org.apache.xml.security.utils.Base64.decode : r2[i7] = $b10 >>>>>>>> org.apache.xml.security.utils.Base64.decode : goto [?= b33 = r2[0]]
+org.apache.xml.security.utils.Base64.decode : goto [?= b33 = r2[0]] >>>>>>>> org.apache.xml.security.utils.Base64.decode : b33 = r2[0]
+org.apache.xml.security.utils.Base64.decode : goto [?= $i6 = virtualinvoke r0.<java.io.InputStream: int read()>()] >>>>>>>> org.apache.xml.security.utils.Base64.decode : $i6 = virtualinvoke r0.<java.io.InputStream: int read()>()

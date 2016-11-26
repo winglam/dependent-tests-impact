@@ -1,0 +1,22 @@
+dynoptic.mc.MCProcess.getInputStreamContent : $z0 = <dynoptic.mc.MCProcess: boolean $assertionsDisabled> >>>>>>>> dynoptic.mc.MCProcess.getInputStreamContent : if $z0 != 0
+dynoptic.mc.MCProcess.getInputStreamContent : if $z0 != 0 >>>>>>>> dynoptic.mc.MCProcess.getInputStreamContent : $r6 = r0.<dynoptic.mc.MCProcess: java.lang.Process process>
+dynoptic.mc.MCProcess.getInputStreamContent : if $z0 != 0 >>>>>>>> dynoptic.mc.MCProcess.getInputStreamContent : $r8 = r0.<dynoptic.mc.MCProcess: java.lang.Process process>
+dynoptic.mc.MCProcess.getInputStreamContent : $r8 = r0.<dynoptic.mc.MCProcess: java.lang.Process process> >>>>>>>> dynoptic.mc.MCProcess.getInputStreamContent : r1 = virtualinvoke $r8.<java.lang.Process: java.io.InputStream getInputStream()>()
+dynoptic.mc.MCProcess.getInputStreamContent : r1 = virtualinvoke $r8.<java.lang.Process: java.io.InputStream getInputStream()>() >>>>>>>> dynoptic.mc.MCProcess.getInputStreamContent : $r9 = new java.io.BufferedReader
+dynoptic.mc.MCProcess.getInputStreamContent : $r9 = new java.io.BufferedReader >>>>>>>> dynoptic.mc.MCProcess.getInputStreamContent : $r2 = new java.io.InputStreamReader
+dynoptic.mc.MCProcess.getInputStreamContent : $r2 = new java.io.InputStreamReader >>>>>>>> dynoptic.mc.MCProcess.getInputStreamContent : specialinvoke $r2.<java.io.InputStreamReader: void <init>(java.io.InputStream)>(r1)
+dynoptic.mc.MCProcess.getInputStreamContent : specialinvoke $r2.<java.io.InputStreamReader: void <init>(java.io.InputStream)>(r1) >>>>>>>> dynoptic.mc.MCProcess.getInputStreamContent : specialinvoke $r9.<java.io.BufferedReader: void <init>(java.io.Reader)>($r2)
+dynoptic.mc.MCProcess.getInputStreamContent : specialinvoke $r9.<java.io.BufferedReader: void <init>(java.io.Reader)>($r2) >>>>>>>> dynoptic.mc.MCProcess.getInputStreamContent : r3 = $r9
+dynoptic.mc.MCProcess.getInputStreamContent : r3 = $r9 >>>>>>>> dynoptic.mc.MCProcess.getInputStreamContent : r4 = staticinvoke <dynoptic.util.Util: java.util.List newList()>()
+dynoptic.mc.MCProcess.getInputStreamContent : r4 = staticinvoke <dynoptic.util.Util: java.util.List newList()>() >>>>>>>> dynoptic.mc.MCProcess.getInputStreamContent : $r10 = virtualinvoke r3.<java.io.BufferedReader: java.lang.String readLine()>()
+dynoptic.mc.MCProcess.getInputStreamContent : $r10 = virtualinvoke r3.<java.io.BufferedReader: java.lang.String readLine()>() >>>>>>>> dynoptic.mc.MCProcess.getInputStreamContent : r5 = $r10
+dynoptic.mc.MCProcess.getInputStreamContent : r5 = $r10 >>>>>>>> dynoptic.mc.MCProcess.getInputStreamContent : if $r10 == null
+dynoptic.mc.MCProcess.getInputStreamContent : if $r10 == null >>>>>>>> dynoptic.mc.MCProcess.getInputStreamContent : interfaceinvoke r4.<java.util.List: boolean add(java.lang.Object)>(r5)
+dynoptic.mc.MCProcess.getInputStreamContent : if $r10 == null >>>>>>>> dynoptic.mc.MCProcess.getInputStreamContent : return r4
+dynoptic.mc.MCProcess.getInputStreamContent : interfaceinvoke r4.<java.util.List: boolean add(java.lang.Object)>(r5) >>>>>>>> dynoptic.mc.MCProcess.getInputStreamContent : goto [?= $r10 = virtualinvoke r3.<java.io.BufferedReader: java.lang.String readLine()>()]
+dynoptic.mc.MCProcess.getInputStreamContent : goto [?= $r10 = virtualinvoke r3.<java.io.BufferedReader: java.lang.String readLine()>()] >>>>>>>> dynoptic.mc.MCProcess.getInputStreamContent : $r10 = virtualinvoke r3.<java.io.BufferedReader: java.lang.String readLine()>()
+dynoptic.mc.MCProcess.getInputStreamContent : $r6 = r0.<dynoptic.mc.MCProcess: java.lang.Process process> >>>>>>>> dynoptic.mc.MCProcess.getInputStreamContent : if $r6 != null
+dynoptic.mc.MCProcess.getInputStreamContent : if $r6 != null >>>>>>>> dynoptic.mc.MCProcess.getInputStreamContent : $r7 = new java.lang.AssertionError
+dynoptic.mc.MCProcess.getInputStreamContent : if $r6 != null >>>>>>>> dynoptic.mc.MCProcess.getInputStreamContent : $r8 = r0.<dynoptic.mc.MCProcess: java.lang.Process process>
+dynoptic.mc.MCProcess.getInputStreamContent : $r7 = new java.lang.AssertionError >>>>>>>> dynoptic.mc.MCProcess.getInputStreamContent : specialinvoke $r7.<java.lang.AssertionError: void <init>()>()
+dynoptic.mc.MCProcess.getInputStreamContent : specialinvoke $r7.<java.lang.AssertionError: void <init>()>() >>>>>>>> dynoptic.mc.MCProcess.getInputStreamContent : throw $r7

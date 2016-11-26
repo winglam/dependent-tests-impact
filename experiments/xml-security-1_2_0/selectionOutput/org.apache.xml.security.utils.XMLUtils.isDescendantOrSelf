@@ -1,0 +1,15 @@
+org.apache.xml.security.utils.XMLUtils.isDescendantOrSelf : if r0 != r1 >>>>>>>> org.apache.xml.security.utils.XMLUtils.isDescendantOrSelf : return 1
+org.apache.xml.security.utils.XMLUtils.isDescendantOrSelf : if r0 != r1 >>>>>>>> org.apache.xml.security.utils.XMLUtils.isDescendantOrSelf : r2 = r1
+org.apache.xml.security.utils.XMLUtils.isDescendantOrSelf : r2 = r1 >>>>>>>> org.apache.xml.security.utils.XMLUtils.isDescendantOrSelf : if r2 != null
+org.apache.xml.security.utils.XMLUtils.isDescendantOrSelf : if r2 != null >>>>>>>> org.apache.xml.security.utils.XMLUtils.isDescendantOrSelf : return 0
+org.apache.xml.security.utils.XMLUtils.isDescendantOrSelf : if r2 != null >>>>>>>> org.apache.xml.security.utils.XMLUtils.isDescendantOrSelf : if r2 != r0
+org.apache.xml.security.utils.XMLUtils.isDescendantOrSelf : if r2 != r0 >>>>>>>> org.apache.xml.security.utils.XMLUtils.isDescendantOrSelf : return 1
+org.apache.xml.security.utils.XMLUtils.isDescendantOrSelf : if r2 != r0 >>>>>>>> org.apache.xml.security.utils.XMLUtils.isDescendantOrSelf : $s0 = interfaceinvoke r2.<org.w3c.dom.Node: short getNodeType()>()
+org.apache.xml.security.utils.XMLUtils.isDescendantOrSelf : $s0 = interfaceinvoke r2.<org.w3c.dom.Node: short getNodeType()>() >>>>>>>> org.apache.xml.security.utils.XMLUtils.isDescendantOrSelf : if $s0 != 2
+org.apache.xml.security.utils.XMLUtils.isDescendantOrSelf : if $s0 != 2 >>>>>>>> org.apache.xml.security.utils.XMLUtils.isDescendantOrSelf : $r3 = (org.w3c.dom.Attr) r2
+org.apache.xml.security.utils.XMLUtils.isDescendantOrSelf : if $s0 != 2 >>>>>>>> org.apache.xml.security.utils.XMLUtils.isDescendantOrSelf : r2 = interfaceinvoke r2.<org.w3c.dom.Node: org.w3c.dom.Node getParentNode()>()
+org.apache.xml.security.utils.XMLUtils.isDescendantOrSelf : r2 = interfaceinvoke r2.<org.w3c.dom.Node: org.w3c.dom.Node getParentNode()>() >>>>>>>> org.apache.xml.security.utils.XMLUtils.isDescendantOrSelf : goto [?= (branch)]
+org.apache.xml.security.utils.XMLUtils.isDescendantOrSelf : goto [?= (branch)] >>>>>>>> org.apache.xml.security.utils.XMLUtils.isDescendantOrSelf : if r2 != null
+org.apache.xml.security.utils.XMLUtils.isDescendantOrSelf : $r3 = (org.w3c.dom.Attr) r2 >>>>>>>> org.apache.xml.security.utils.XMLUtils.isDescendantOrSelf : r2 = interfaceinvoke $r3.<org.w3c.dom.Attr: org.w3c.dom.Element getOwnerElement()>()
+org.apache.xml.security.utils.XMLUtils.isDescendantOrSelf : r2 = interfaceinvoke $r3.<org.w3c.dom.Attr: org.w3c.dom.Element getOwnerElement()>() >>>>>>>> org.apache.xml.security.utils.XMLUtils.isDescendantOrSelf : goto [?= (branch)]
+org.apache.xml.security.utils.XMLUtils.isDescendantOrSelf : goto [?= (branch)] >>>>>>>> org.apache.xml.security.utils.XMLUtils.isDescendantOrSelf : if r2 != null

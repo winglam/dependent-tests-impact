@@ -1,0 +1,12 @@
+org.apache.xml.security.utils.XMLUtils.selectNodeText : r3 = staticinvoke <org.apache.xml.security.utils.XMLUtils: org.w3c.dom.Element selectNode(org.w3c.dom.Node,java.lang.String,java.lang.String,int)>(r0, r1, r2, i0) >>>>>>>> org.apache.xml.security.utils.XMLUtils.selectNodeText : if r3 != null
+org.apache.xml.security.utils.XMLUtils.selectNodeText : if r3 != null >>>>>>>> org.apache.xml.security.utils.XMLUtils.selectNodeText : return null
+org.apache.xml.security.utils.XMLUtils.selectNodeText : if r3 != null >>>>>>>> org.apache.xml.security.utils.XMLUtils.selectNodeText : r4 = interfaceinvoke r3.<org.w3c.dom.Node: org.w3c.dom.Node getFirstChild()>()
+org.apache.xml.security.utils.XMLUtils.selectNodeText : r4 = interfaceinvoke r3.<org.w3c.dom.Node: org.w3c.dom.Node getFirstChild()>() >>>>>>>> org.apache.xml.security.utils.XMLUtils.selectNodeText : if r4 == null
+org.apache.xml.security.utils.XMLUtils.selectNodeText : if r4 == null >>>>>>>> org.apache.xml.security.utils.XMLUtils.selectNodeText : $s1 = interfaceinvoke r4.<org.w3c.dom.Node: short getNodeType()>()
+org.apache.xml.security.utils.XMLUtils.selectNodeText : if r4 == null >>>>>>>> org.apache.xml.security.utils.XMLUtils.selectNodeText : $r5 = (org.w3c.dom.Text) r4
+org.apache.xml.security.utils.XMLUtils.selectNodeText : $r5 = (org.w3c.dom.Text) r4 >>>>>>>> org.apache.xml.security.utils.XMLUtils.selectNodeText : return $r5
+org.apache.xml.security.utils.XMLUtils.selectNodeText : $s1 = interfaceinvoke r4.<org.w3c.dom.Node: short getNodeType()>() >>>>>>>> org.apache.xml.security.utils.XMLUtils.selectNodeText : if $s1 == 3
+org.apache.xml.security.utils.XMLUtils.selectNodeText : if $s1 == 3 >>>>>>>> org.apache.xml.security.utils.XMLUtils.selectNodeText : r4 = interfaceinvoke r4.<org.w3c.dom.Node: org.w3c.dom.Node getNextSibling()>()
+org.apache.xml.security.utils.XMLUtils.selectNodeText : if $s1 == 3 >>>>>>>> org.apache.xml.security.utils.XMLUtils.selectNodeText : $r5 = (org.w3c.dom.Text) r4
+org.apache.xml.security.utils.XMLUtils.selectNodeText : r4 = interfaceinvoke r4.<org.w3c.dom.Node: org.w3c.dom.Node getNextSibling()>() >>>>>>>> org.apache.xml.security.utils.XMLUtils.selectNodeText : goto [?= (branch)]
+org.apache.xml.security.utils.XMLUtils.selectNodeText : goto [?= (branch)] >>>>>>>> org.apache.xml.security.utils.XMLUtils.selectNodeText : if r4 == null

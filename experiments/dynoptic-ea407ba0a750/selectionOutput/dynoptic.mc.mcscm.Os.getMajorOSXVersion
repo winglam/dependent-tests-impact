@@ -1,0 +1,10 @@
+dynoptic.mc.mcscm.Os.getMajorOSXVersion : r0 = staticinvoke <dynoptic.mc.mcscm.Os: java.lang.String getOsVersion()>() >>>>>>>> dynoptic.mc.mcscm.Os.getMajorOSXVersion : $z0 = virtualinvoke r0.<java.lang.String: boolean contains(java.lang.CharSequence)>(".")
+dynoptic.mc.mcscm.Os.getMajorOSXVersion : $z0 = virtualinvoke r0.<java.lang.String: boolean contains(java.lang.CharSequence)>(".") >>>>>>>> dynoptic.mc.mcscm.Os.getMajorOSXVersion : if $z0 != 0
+dynoptic.mc.mcscm.Os.getMajorOSXVersion : if $z0 != 0 >>>>>>>> dynoptic.mc.mcscm.Os.getMajorOSXVersion : return r0
+dynoptic.mc.mcscm.Os.getMajorOSXVersion : if $z0 != 0 >>>>>>>> dynoptic.mc.mcscm.Os.getMajorOSXVersion : i0 = virtualinvoke r0.<java.lang.String: int indexOf(java.lang.String)>(".")
+dynoptic.mc.mcscm.Os.getMajorOSXVersion : i0 = virtualinvoke r0.<java.lang.String: int indexOf(java.lang.String)>(".") >>>>>>>> dynoptic.mc.mcscm.Os.getMajorOSXVersion : i1 = virtualinvoke r0.<java.lang.String: int lastIndexOf(java.lang.String)>(".")
+dynoptic.mc.mcscm.Os.getMajorOSXVersion : i1 = virtualinvoke r0.<java.lang.String: int lastIndexOf(java.lang.String)>(".") >>>>>>>> dynoptic.mc.mcscm.Os.getMajorOSXVersion : if i0 != i1
+dynoptic.mc.mcscm.Os.getMajorOSXVersion : if i0 != i1 >>>>>>>> dynoptic.mc.mcscm.Os.getMajorOSXVersion : return r0
+dynoptic.mc.mcscm.Os.getMajorOSXVersion : if i0 != i1 >>>>>>>> dynoptic.mc.mcscm.Os.getMajorOSXVersion : i2 = virtualinvoke r0.<java.lang.String: int lastIndexOf(java.lang.String)>(".")
+dynoptic.mc.mcscm.Os.getMajorOSXVersion : i2 = virtualinvoke r0.<java.lang.String: int lastIndexOf(java.lang.String)>(".") >>>>>>>> dynoptic.mc.mcscm.Os.getMajorOSXVersion : $r1 = virtualinvoke r0.<java.lang.String: java.lang.String substring(int,int)>(0, i2)
+dynoptic.mc.mcscm.Os.getMajorOSXVersion : $r1 = virtualinvoke r0.<java.lang.String: java.lang.String substring(int,int)>(0, i2) >>>>>>>> dynoptic.mc.mcscm.Os.getMajorOSXVersion : return $r1

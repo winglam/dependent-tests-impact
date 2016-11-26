@@ -1,0 +1,36 @@
+dynoptic.mc.MCProcess.runProcess : $r1 = new java.lang.ProcessBuilder >>>>>>>> dynoptic.mc.MCProcess.runProcess : $r5 = r0.<dynoptic.mc.MCProcess: java.lang.String[] command>
+dynoptic.mc.MCProcess.runProcess : $r5 = r0.<dynoptic.mc.MCProcess: java.lang.String[] command> >>>>>>>> dynoptic.mc.MCProcess.runProcess : specialinvoke $r1.<java.lang.ProcessBuilder: void <init>(java.lang.String[])>($r5)
+dynoptic.mc.MCProcess.runProcess : specialinvoke $r1.<java.lang.ProcessBuilder: void <init>(java.lang.String[])>($r5) >>>>>>>> dynoptic.mc.MCProcess.runProcess : r2 = $r1
+dynoptic.mc.MCProcess.runProcess : r2 = $r1 >>>>>>>> dynoptic.mc.MCProcess.runProcess : $r6 = r0.<dynoptic.mc.MCProcess: java.io.File processDir>
+dynoptic.mc.MCProcess.runProcess : $r6 = r0.<dynoptic.mc.MCProcess: java.io.File processDir> >>>>>>>> dynoptic.mc.MCProcess.runProcess : virtualinvoke r2.<java.lang.ProcessBuilder: java.lang.ProcessBuilder directory(java.io.File)>($r6)
+dynoptic.mc.MCProcess.runProcess : virtualinvoke r2.<java.lang.ProcessBuilder: java.lang.ProcessBuilder directory(java.io.File)>($r6) >>>>>>>> dynoptic.mc.MCProcess.runProcess : $r8 = virtualinvoke r2.<java.lang.ProcessBuilder: java.lang.Process start()>()
+dynoptic.mc.MCProcess.runProcess : $r8 = virtualinvoke r2.<java.lang.ProcessBuilder: java.lang.Process start()>() >>>>>>>> dynoptic.mc.MCProcess.runProcess : r0.<dynoptic.mc.MCProcess: java.lang.Process process> = $r8
+dynoptic.mc.MCProcess.runProcess : r0.<dynoptic.mc.MCProcess: java.lang.Process process> = $r8 >>>>>>>> dynoptic.mc.MCProcess.runProcess : $r9 = r0.<dynoptic.mc.MCProcess: java.lang.String stdinInput>
+dynoptic.mc.MCProcess.runProcess : $r9 = r0.<dynoptic.mc.MCProcess: java.lang.String stdinInput> >>>>>>>> dynoptic.mc.MCProcess.runProcess : $z0 = virtualinvoke $r9.<java.lang.String: boolean equals(java.lang.Object)>("")
+dynoptic.mc.MCProcess.runProcess : $z0 = virtualinvoke $r9.<java.lang.String: boolean equals(java.lang.Object)>("") >>>>>>>> dynoptic.mc.MCProcess.runProcess : if $z0 != 0
+dynoptic.mc.MCProcess.runProcess : if $z0 != 0 >>>>>>>> dynoptic.mc.MCProcess.runProcess : $r10 = r0.<dynoptic.mc.MCProcess: java.lang.Process process>
+dynoptic.mc.MCProcess.runProcess : if $z0 != 0 >>>>>>>> dynoptic.mc.MCProcess.runProcess : $r13 = new dynoptic.mc.ProcessKillTimer
+dynoptic.mc.MCProcess.runProcess : $r13 = new dynoptic.mc.ProcessKillTimer >>>>>>>> dynoptic.mc.MCProcess.runProcess : $r14 = r0.<dynoptic.mc.MCProcess: java.lang.Process process>
+dynoptic.mc.MCProcess.runProcess : $r14 = r0.<dynoptic.mc.MCProcess: java.lang.Process process> >>>>>>>> dynoptic.mc.MCProcess.runProcess : $i0 = r0.<dynoptic.mc.MCProcess: int timeoutSecs>
+dynoptic.mc.MCProcess.runProcess : $i0 = r0.<dynoptic.mc.MCProcess: int timeoutSecs> >>>>>>>> dynoptic.mc.MCProcess.runProcess : specialinvoke $r13.<dynoptic.mc.ProcessKillTimer: void <init>(java.lang.Process,int)>($r14, $i0)
+dynoptic.mc.MCProcess.runProcess : specialinvoke $r13.<dynoptic.mc.ProcessKillTimer: void <init>(java.lang.Process,int)>($r14, $i0) >>>>>>>> dynoptic.mc.MCProcess.runProcess : r15 = $r13
+dynoptic.mc.MCProcess.runProcess : r15 = $r13 >>>>>>>> dynoptic.mc.MCProcess.runProcess : $r16 = new java.lang.Thread
+dynoptic.mc.MCProcess.runProcess : $r16 = new java.lang.Thread >>>>>>>> dynoptic.mc.MCProcess.runProcess : specialinvoke $r16.<java.lang.Thread: void <init>(java.lang.Runnable)>(r15)
+dynoptic.mc.MCProcess.runProcess : specialinvoke $r16.<java.lang.Thread: void <init>(java.lang.Runnable)>(r15) >>>>>>>> dynoptic.mc.MCProcess.runProcess : r4 = $r16
+dynoptic.mc.MCProcess.runProcess : r4 = $r16 >>>>>>>> dynoptic.mc.MCProcess.runProcess : virtualinvoke r4.<java.lang.Thread: void start()>()
+dynoptic.mc.MCProcess.runProcess : virtualinvoke r4.<java.lang.Thread: void start()>() >>>>>>>> dynoptic.mc.MCProcess.runProcess : $r17 = r0.<dynoptic.mc.MCProcess: java.lang.Process process>
+dynoptic.mc.MCProcess.runProcess : $r17 = r0.<dynoptic.mc.MCProcess: java.lang.Process process> >>>>>>>> dynoptic.mc.MCProcess.runProcess : virtualinvoke $r17.<java.lang.Process: int waitFor()>()
+dynoptic.mc.MCProcess.runProcess : virtualinvoke $r17.<java.lang.Process: int waitFor()>() >>>>>>>> dynoptic.mc.MCProcess.runProcess : $z1 = r15.<dynoptic.mc.ProcessKillTimer: boolean killed>
+dynoptic.mc.MCProcess.runProcess : $z1 = r15.<dynoptic.mc.ProcessKillTimer: boolean killed> >>>>>>>> dynoptic.mc.MCProcess.runProcess : if $z1 != 0
+dynoptic.mc.MCProcess.runProcess : if $z1 != 0 >>>>>>>> dynoptic.mc.MCProcess.runProcess : virtualinvoke r4.<java.lang.Thread: void interrupt()>()
+dynoptic.mc.MCProcess.runProcess : if $z1 != 0 >>>>>>>> dynoptic.mc.MCProcess.runProcess : $r18 = new java.lang.InterruptedException
+dynoptic.mc.MCProcess.runProcess : $r18 = new java.lang.InterruptedException >>>>>>>> dynoptic.mc.MCProcess.runProcess : specialinvoke $r18.<java.lang.InterruptedException: void <init>(java.lang.String)>("Verify process killed.")
+dynoptic.mc.MCProcess.runProcess : specialinvoke $r18.<java.lang.InterruptedException: void <init>(java.lang.String)>("Verify process killed.") >>>>>>>> dynoptic.mc.MCProcess.runProcess : throw $r18
+dynoptic.mc.MCProcess.runProcess : virtualinvoke r4.<java.lang.Thread: void interrupt()>() >>>>>>>> dynoptic.mc.MCProcess.runProcess : goto [?= return]
+dynoptic.mc.MCProcess.runProcess : goto [?= return] >>>>>>>> dynoptic.mc.MCProcess.runProcess : return
+dynoptic.mc.MCProcess.runProcess : $r10 = r0.<dynoptic.mc.MCProcess: java.lang.Process process> >>>>>>>> dynoptic.mc.MCProcess.runProcess : r3 = virtualinvoke $r10.<java.lang.Process: java.io.OutputStream getOutputStream()>()
+dynoptic.mc.MCProcess.runProcess : r3 = virtualinvoke $r10.<java.lang.Process: java.io.OutputStream getOutputStream()>() >>>>>>>> dynoptic.mc.MCProcess.runProcess : $r11 = r0.<dynoptic.mc.MCProcess: java.lang.String stdinInput>
+dynoptic.mc.MCProcess.runProcess : $r11 = r0.<dynoptic.mc.MCProcess: java.lang.String stdinInput> >>>>>>>> dynoptic.mc.MCProcess.runProcess : $r12 = virtualinvoke $r11.<java.lang.String: byte[] getBytes()>()
+dynoptic.mc.MCProcess.runProcess : $r12 = virtualinvoke $r11.<java.lang.String: byte[] getBytes()>() >>>>>>>> dynoptic.mc.MCProcess.runProcess : virtualinvoke r3.<java.io.OutputStream: void write(byte[])>($r12)
+dynoptic.mc.MCProcess.runProcess : virtualinvoke r3.<java.io.OutputStream: void write(byte[])>($r12) >>>>>>>> dynoptic.mc.MCProcess.runProcess : virtualinvoke r3.<java.io.OutputStream: void close()>()
+dynoptic.mc.MCProcess.runProcess : virtualinvoke r3.<java.io.OutputStream: void close()>() >>>>>>>> dynoptic.mc.MCProcess.runProcess : $r13 = new dynoptic.mc.ProcessKillTimer

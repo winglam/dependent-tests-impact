@@ -1,0 +1,46 @@
+org.apache.xml.security.utils.XMLUtils.getSetRec : if r0 != r2 >>>>>>>> org.apache.xml.security.utils.XMLUtils.getSetRec : return
+org.apache.xml.security.utils.XMLUtils.getSetRec : if r0 != r2 >>>>>>>> org.apache.xml.security.utils.XMLUtils.getSetRec : $s1 = interfaceinvoke r0.<org.w3c.dom.Node: short getNodeType()>()
+org.apache.xml.security.utils.XMLUtils.getSetRec : $s1 = interfaceinvoke r0.<org.w3c.dom.Node: short getNodeType()>() >>>>>>>> org.apache.xml.security.utils.XMLUtils.getSetRec : tableswitch($s1) {     case 1:
+org.apache.xml.security.utils.XMLUtils.getSetRec : tableswitch($s1) {     case 1: >>>>>>>> org.apache.xml.security.utils.XMLUtils.getSetRec : interfaceinvoke r1.<java.util.Set: boolean add(java.lang.Object)>(r0)
+org.apache.xml.security.utils.XMLUtils.getSetRec : tableswitch($s1) {     case 1: >>>>>>>> org.apache.xml.security.utils.XMLUtils.getSetRec : interfaceinvoke r1.<java.util.Set: boolean add(java.lang.Object)>(r0)
+org.apache.xml.security.utils.XMLUtils.getSetRec : tableswitch($s1) {     case 1: >>>>>>>> org.apache.xml.security.utils.XMLUtils.getSetRec : if z0 == 0
+org.apache.xml.security.utils.XMLUtils.getSetRec : tableswitch($s1) {     case 1: >>>>>>>> org.apache.xml.security.utils.XMLUtils.getSetRec : r7 = interfaceinvoke r0.<org.w3c.dom.Node: org.w3c.dom.Node getFirstChild()>()
+org.apache.xml.security.utils.XMLUtils.getSetRec : tableswitch($s1) {     case 1: >>>>>>>> org.apache.xml.security.utils.XMLUtils.getSetRec : return
+org.apache.xml.security.utils.XMLUtils.getSetRec : r7 = interfaceinvoke r0.<org.w3c.dom.Node: org.w3c.dom.Node getFirstChild()>() >>>>>>>> org.apache.xml.security.utils.XMLUtils.getSetRec : if r7 == null
+org.apache.xml.security.utils.XMLUtils.getSetRec : if r7 == null >>>>>>>> org.apache.xml.security.utils.XMLUtils.getSetRec : $s3 = interfaceinvoke r7.<org.w3c.dom.Node: short getNodeType()>()
+org.apache.xml.security.utils.XMLUtils.getSetRec : if r7 == null >>>>>>>> org.apache.xml.security.utils.XMLUtils.getSetRec : return
+org.apache.xml.security.utils.XMLUtils.getSetRec : $s3 = interfaceinvoke r7.<org.w3c.dom.Node: short getNodeType()>() >>>>>>>> org.apache.xml.security.utils.XMLUtils.getSetRec : if $s3 != 3
+org.apache.xml.security.utils.XMLUtils.getSetRec : if $s3 != 3 >>>>>>>> org.apache.xml.security.utils.XMLUtils.getSetRec : interfaceinvoke r1.<java.util.Set: boolean add(java.lang.Object)>(r7)
+org.apache.xml.security.utils.XMLUtils.getSetRec : if $s3 != 3 >>>>>>>> org.apache.xml.security.utils.XMLUtils.getSetRec : staticinvoke <org.apache.xml.security.utils.XMLUtils: void getSetRec(org.w3c.dom.Node,java.util.Set,org.w3c.dom.Node,boolean)>(r7, r1, r2, z0)
+org.apache.xml.security.utils.XMLUtils.getSetRec : staticinvoke <org.apache.xml.security.utils.XMLUtils: void getSetRec(org.w3c.dom.Node,java.util.Set,org.w3c.dom.Node,boolean)>(r7, r1, r2, z0) >>>>>>>> org.apache.xml.security.utils.XMLUtils.getSetRec : r7 = interfaceinvoke r7.<org.w3c.dom.Node: org.w3c.dom.Node getNextSibling()>()
+org.apache.xml.security.utils.XMLUtils.getSetRec : r7 = interfaceinvoke r7.<org.w3c.dom.Node: org.w3c.dom.Node getNextSibling()>() >>>>>>>> org.apache.xml.security.utils.XMLUtils.getSetRec : goto [?= (branch)]
+org.apache.xml.security.utils.XMLUtils.getSetRec : goto [?= (branch)] >>>>>>>> org.apache.xml.security.utils.XMLUtils.getSetRec : if r7 == null
+org.apache.xml.security.utils.XMLUtils.getSetRec : interfaceinvoke r1.<java.util.Set: boolean add(java.lang.Object)>(r7) >>>>>>>> org.apache.xml.security.utils.XMLUtils.getSetRec : if r7 == null
+org.apache.xml.security.utils.XMLUtils.getSetRec : if r7 == null >>>>>>>> org.apache.xml.security.utils.XMLUtils.getSetRec : $s4 = interfaceinvoke r7.<org.w3c.dom.Node: short getNodeType()>()
+org.apache.xml.security.utils.XMLUtils.getSetRec : if r7 == null >>>>>>>> org.apache.xml.security.utils.XMLUtils.getSetRec : if r7 != null
+org.apache.xml.security.utils.XMLUtils.getSetRec : if r7 != null >>>>>>>> org.apache.xml.security.utils.XMLUtils.getSetRec : return
+org.apache.xml.security.utils.XMLUtils.getSetRec : if r7 != null >>>>>>>> org.apache.xml.security.utils.XMLUtils.getSetRec : staticinvoke <org.apache.xml.security.utils.XMLUtils: void getSetRec(org.w3c.dom.Node,java.util.Set,org.w3c.dom.Node,boolean)>(r7, r1, r2, z0)
+org.apache.xml.security.utils.XMLUtils.getSetRec : $s4 = interfaceinvoke r7.<org.w3c.dom.Node: short getNodeType()>() >>>>>>>> org.apache.xml.security.utils.XMLUtils.getSetRec : if $s4 != 3
+org.apache.xml.security.utils.XMLUtils.getSetRec : if $s4 != 3 >>>>>>>> org.apache.xml.security.utils.XMLUtils.getSetRec : r7 = interfaceinvoke r7.<org.w3c.dom.Node: org.w3c.dom.Node getNextSibling()>()
+org.apache.xml.security.utils.XMLUtils.getSetRec : if $s4 != 3 >>>>>>>> org.apache.xml.security.utils.XMLUtils.getSetRec : if r7 != null
+org.apache.xml.security.utils.XMLUtils.getSetRec : r7 = interfaceinvoke r7.<org.w3c.dom.Node: org.w3c.dom.Node getNextSibling()>() >>>>>>>> org.apache.xml.security.utils.XMLUtils.getSetRec : goto [?= (branch)]
+org.apache.xml.security.utils.XMLUtils.getSetRec : goto [?= (branch)] >>>>>>>> org.apache.xml.security.utils.XMLUtils.getSetRec : if r7 == null
+org.apache.xml.security.utils.XMLUtils.getSetRec : if z0 == 0 >>>>>>>> org.apache.xml.security.utils.XMLUtils.getSetRec : interfaceinvoke r1.<java.util.Set: boolean add(java.lang.Object)>(r0)
+org.apache.xml.security.utils.XMLUtils.getSetRec : if z0 == 0 >>>>>>>> org.apache.xml.security.utils.XMLUtils.getSetRec : return
+org.apache.xml.security.utils.XMLUtils.getSetRec : interfaceinvoke r1.<java.util.Set: boolean add(java.lang.Object)>(r0) >>>>>>>> org.apache.xml.security.utils.XMLUtils.getSetRec : return
+org.apache.xml.security.utils.XMLUtils.getSetRec : interfaceinvoke r1.<java.util.Set: boolean add(java.lang.Object)>(r0) >>>>>>>> org.apache.xml.security.utils.XMLUtils.getSetRec : return
+org.apache.xml.security.utils.XMLUtils.getSetRec : interfaceinvoke r1.<java.util.Set: boolean add(java.lang.Object)>(r0) >>>>>>>> org.apache.xml.security.utils.XMLUtils.getSetRec : r3 = (org.w3c.dom.Element) r0
+org.apache.xml.security.utils.XMLUtils.getSetRec : r3 = (org.w3c.dom.Element) r0 >>>>>>>> org.apache.xml.security.utils.XMLUtils.getSetRec : $z2 = interfaceinvoke r3.<org.w3c.dom.Element: boolean hasAttributes()>()
+org.apache.xml.security.utils.XMLUtils.getSetRec : $z2 = interfaceinvoke r3.<org.w3c.dom.Element: boolean hasAttributes()>() >>>>>>>> org.apache.xml.security.utils.XMLUtils.getSetRec : if $z2 == 0
+org.apache.xml.security.utils.XMLUtils.getSetRec : if $z2 == 0 >>>>>>>> org.apache.xml.security.utils.XMLUtils.getSetRec : $r5 = (org.w3c.dom.Element) r0
+org.apache.xml.security.utils.XMLUtils.getSetRec : if $z2 == 0 >>>>>>>> org.apache.xml.security.utils.XMLUtils.getSetRec : r7 = interfaceinvoke r0.<org.w3c.dom.Node: org.w3c.dom.Node getFirstChild()>()
+org.apache.xml.security.utils.XMLUtils.getSetRec : $r5 = (org.w3c.dom.Element) r0 >>>>>>>> org.apache.xml.security.utils.XMLUtils.getSetRec : r4 = interfaceinvoke $r5.<org.w3c.dom.Element: org.w3c.dom.NamedNodeMap getAttributes()>()
+org.apache.xml.security.utils.XMLUtils.getSetRec : r4 = interfaceinvoke $r5.<org.w3c.dom.Element: org.w3c.dom.NamedNodeMap getAttributes()>() >>>>>>>> org.apache.xml.security.utils.XMLUtils.getSetRec : i0 = 0
+org.apache.xml.security.utils.XMLUtils.getSetRec : i0 = 0 >>>>>>>> org.apache.xml.security.utils.XMLUtils.getSetRec : $i2 = interfaceinvoke r4.<org.w3c.dom.NamedNodeMap: int getLength()>()
+org.apache.xml.security.utils.XMLUtils.getSetRec : $i2 = interfaceinvoke r4.<org.w3c.dom.NamedNodeMap: int getLength()>() >>>>>>>> org.apache.xml.security.utils.XMLUtils.getSetRec : if i0 >= $i2
+org.apache.xml.security.utils.XMLUtils.getSetRec : if i0 >= $i2 >>>>>>>> org.apache.xml.security.utils.XMLUtils.getSetRec : $r6 = interfaceinvoke r4.<org.w3c.dom.NamedNodeMap: org.w3c.dom.Node item(int)>(i0)
+org.apache.xml.security.utils.XMLUtils.getSetRec : if i0 >= $i2 >>>>>>>> org.apache.xml.security.utils.XMLUtils.getSetRec : r7 = interfaceinvoke r0.<org.w3c.dom.Node: org.w3c.dom.Node getFirstChild()>()
+org.apache.xml.security.utils.XMLUtils.getSetRec : $r6 = interfaceinvoke r4.<org.w3c.dom.NamedNodeMap: org.w3c.dom.Node item(int)>(i0) >>>>>>>> org.apache.xml.security.utils.XMLUtils.getSetRec : interfaceinvoke r1.<java.util.Set: boolean add(java.lang.Object)>($r6)
+org.apache.xml.security.utils.XMLUtils.getSetRec : interfaceinvoke r1.<java.util.Set: boolean add(java.lang.Object)>($r6) >>>>>>>> org.apache.xml.security.utils.XMLUtils.getSetRec : i0 = i0 + 1
+org.apache.xml.security.utils.XMLUtils.getSetRec : i0 = i0 + 1 >>>>>>>> org.apache.xml.security.utils.XMLUtils.getSetRec : goto [?= $i2 = interfaceinvoke r4.<org.w3c.dom.NamedNodeMap: int getLength()>()]
+org.apache.xml.security.utils.XMLUtils.getSetRec : goto [?= $i2 = interfaceinvoke r4.<org.w3c.dom.NamedNodeMap: int getLength()>()] >>>>>>>> org.apache.xml.security.utils.XMLUtils.getSetRec : $i2 = interfaceinvoke r4.<org.w3c.dom.NamedNodeMap: int getLength()>()

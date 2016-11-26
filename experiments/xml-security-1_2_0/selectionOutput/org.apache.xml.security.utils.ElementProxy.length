@@ -1,0 +1,16 @@
+org.apache.xml.security.utils.ElementProxy.length : i0 = 0 >>>>>>>> org.apache.xml.security.utils.ElementProxy.length : $r4 = r0.<org.apache.xml.security.utils.ElementProxy: org.w3c.dom.Element _constructionElement>
+org.apache.xml.security.utils.ElementProxy.length : $r4 = r0.<org.apache.xml.security.utils.ElementProxy: org.w3c.dom.Element _constructionElement> >>>>>>>> org.apache.xml.security.utils.ElementProxy.length : r3 = interfaceinvoke $r4.<org.w3c.dom.Element: org.w3c.dom.Node getFirstChild()>()
+org.apache.xml.security.utils.ElementProxy.length : r3 = interfaceinvoke $r4.<org.w3c.dom.Element: org.w3c.dom.Node getFirstChild()>() >>>>>>>> org.apache.xml.security.utils.ElementProxy.length : if r3 == null
+org.apache.xml.security.utils.ElementProxy.length : if r3 == null >>>>>>>> org.apache.xml.security.utils.ElementProxy.length : $r5 = interfaceinvoke r3.<org.w3c.dom.Node: java.lang.String getLocalName()>()
+org.apache.xml.security.utils.ElementProxy.length : if r3 == null >>>>>>>> org.apache.xml.security.utils.ElementProxy.length : return i0
+org.apache.xml.security.utils.ElementProxy.length : $r5 = interfaceinvoke r3.<org.w3c.dom.Node: java.lang.String getLocalName()>() >>>>>>>> org.apache.xml.security.utils.ElementProxy.length : $z0 = virtualinvoke r2.<java.lang.String: boolean equals(java.lang.Object)>($r5)
+org.apache.xml.security.utils.ElementProxy.length : $z0 = virtualinvoke r2.<java.lang.String: boolean equals(java.lang.Object)>($r5) >>>>>>>> org.apache.xml.security.utils.ElementProxy.length : if $z0 == 0
+org.apache.xml.security.utils.ElementProxy.length : if $z0 == 0 >>>>>>>> org.apache.xml.security.utils.ElementProxy.length : $r6 = interfaceinvoke r3.<org.w3c.dom.Node: java.lang.String getNamespaceURI()>()
+org.apache.xml.security.utils.ElementProxy.length : if $z0 == 0 >>>>>>>> org.apache.xml.security.utils.ElementProxy.length : r3 = interfaceinvoke r3.<org.w3c.dom.Node: org.w3c.dom.Node getNextSibling()>()
+org.apache.xml.security.utils.ElementProxy.length : r3 = interfaceinvoke r3.<org.w3c.dom.Node: org.w3c.dom.Node getNextSibling()>() >>>>>>>> org.apache.xml.security.utils.ElementProxy.length : goto [?= (branch)]
+org.apache.xml.security.utils.ElementProxy.length : goto [?= (branch)] >>>>>>>> org.apache.xml.security.utils.ElementProxy.length : if r3 == null
+org.apache.xml.security.utils.ElementProxy.length : $r6 = interfaceinvoke r3.<org.w3c.dom.Node: java.lang.String getNamespaceURI()>() >>>>>>>> org.apache.xml.security.utils.ElementProxy.length : $z1 = virtualinvoke r1.<java.lang.String: boolean equals(java.lang.Object)>($r6)
+org.apache.xml.security.utils.ElementProxy.length : $z1 = virtualinvoke r1.<java.lang.String: boolean equals(java.lang.Object)>($r6) >>>>>>>> org.apache.xml.security.utils.ElementProxy.length : if $z1 == 0
+org.apache.xml.security.utils.ElementProxy.length : if $z1 == 0 >>>>>>>> org.apache.xml.security.utils.ElementProxy.length : i0 = i0 + 1
+org.apache.xml.security.utils.ElementProxy.length : if $z1 == 0 >>>>>>>> org.apache.xml.security.utils.ElementProxy.length : r3 = interfaceinvoke r3.<org.w3c.dom.Node: org.w3c.dom.Node getNextSibling()>()
+org.apache.xml.security.utils.ElementProxy.length : i0 = i0 + 1 >>>>>>>> org.apache.xml.security.utils.ElementProxy.length : r3 = interfaceinvoke r3.<org.w3c.dom.Node: org.w3c.dom.Node getNextSibling()>()

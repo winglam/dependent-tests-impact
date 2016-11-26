@@ -1,0 +1,15 @@
+dynoptic.mc.MCResult.toRawString : r1 = "" >>>>>>>> dynoptic.mc.MCResult.toRawString : $r4 = r0.<dynoptic.mc.MCResult: java.util.List verifyRawLines>
+dynoptic.mc.MCResult.toRawString : $r4 = r0.<dynoptic.mc.MCResult: java.util.List verifyRawLines> >>>>>>>> dynoptic.mc.MCResult.toRawString : r2 = interfaceinvoke $r4.<java.util.List: java.util.Iterator iterator()>()
+dynoptic.mc.MCResult.toRawString : r2 = interfaceinvoke $r4.<java.util.List: java.util.Iterator iterator()>() >>>>>>>> dynoptic.mc.MCResult.toRawString : $z0 = interfaceinvoke r2.<java.util.Iterator: boolean hasNext()>()
+dynoptic.mc.MCResult.toRawString : $z0 = interfaceinvoke r2.<java.util.Iterator: boolean hasNext()>() >>>>>>>> dynoptic.mc.MCResult.toRawString : if $z0 == 0
+dynoptic.mc.MCResult.toRawString : if $z0 == 0 >>>>>>>> dynoptic.mc.MCResult.toRawString : $r5 = interfaceinvoke r2.<java.util.Iterator: java.lang.Object next()>()
+dynoptic.mc.MCResult.toRawString : if $z0 == 0 >>>>>>>> dynoptic.mc.MCResult.toRawString : return r1
+dynoptic.mc.MCResult.toRawString : $r5 = interfaceinvoke r2.<java.util.Iterator: java.lang.Object next()>() >>>>>>>> dynoptic.mc.MCResult.toRawString : r3 = (java.lang.String) $r5
+dynoptic.mc.MCResult.toRawString : r3 = (java.lang.String) $r5 >>>>>>>> dynoptic.mc.MCResult.toRawString : $r6 = new java.lang.StringBuilder
+dynoptic.mc.MCResult.toRawString : $r6 = new java.lang.StringBuilder >>>>>>>> dynoptic.mc.MCResult.toRawString : specialinvoke $r6.<java.lang.StringBuilder: void <init>()>()
+dynoptic.mc.MCResult.toRawString : specialinvoke $r6.<java.lang.StringBuilder: void <init>()>() >>>>>>>> dynoptic.mc.MCResult.toRawString : $r7 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r1)
+dynoptic.mc.MCResult.toRawString : $r7 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r1) >>>>>>>> dynoptic.mc.MCResult.toRawString : $r8 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r3)
+dynoptic.mc.MCResult.toRawString : $r8 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r3) >>>>>>>> dynoptic.mc.MCResult.toRawString : $r9 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\n")
+dynoptic.mc.MCResult.toRawString : $r9 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\n") >>>>>>>> dynoptic.mc.MCResult.toRawString : r1 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.String toString()>()
+dynoptic.mc.MCResult.toRawString : r1 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.String toString()>() >>>>>>>> dynoptic.mc.MCResult.toRawString : goto [?= $z0 = interfaceinvoke r2.<java.util.Iterator: boolean hasNext()>()]
+dynoptic.mc.MCResult.toRawString : goto [?= $z0 = interfaceinvoke r2.<java.util.Iterator: boolean hasNext()>()] >>>>>>>> dynoptic.mc.MCResult.toRawString : $z0 = interfaceinvoke r2.<java.util.Iterator: boolean hasNext()>()

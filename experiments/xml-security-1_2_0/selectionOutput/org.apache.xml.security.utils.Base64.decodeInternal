@@ -1,0 +1,189 @@
+org.apache.xml.security.utils.Base64.decodeInternal : i0 = staticinvoke <org.apache.xml.security.utils.Base64: int removeWhiteSpace(byte[])>(r0) >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : $i3 = i0 % 4
+org.apache.xml.security.utils.Base64.decodeInternal : $i3 = i0 % 4 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : if $i3 == 0
+org.apache.xml.security.utils.Base64.decodeInternal : if $i3 == 0 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : $r1 = new org.apache.xml.security.exceptions.Base64DecodingException
+org.apache.xml.security.utils.Base64.decodeInternal : if $i3 == 0 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : i1 = i0 / 4
+org.apache.xml.security.utils.Base64.decodeInternal : i1 = i0 / 4 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : if i1 != 0
+org.apache.xml.security.utils.Base64.decodeInternal : if i1 != 0 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : $r2 = newarray (byte)[0]
+org.apache.xml.security.utils.Base64.decodeInternal : if i1 != 0 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : n0 = null
+org.apache.xml.security.utils.Base64.decodeInternal : n0 = null >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : z0 = 0
+org.apache.xml.security.utils.Base64.decodeInternal : z0 = 0 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : z1 = 0
+org.apache.xml.security.utils.Base64.decodeInternal : z1 = 0 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : z2 = 0
+org.apache.xml.security.utils.Base64.decodeInternal : z2 = 0 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : z3 = 0
+org.apache.xml.security.utils.Base64.decodeInternal : z3 = 0 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : z4 = 0
+org.apache.xml.security.utils.Base64.decodeInternal : z4 = 0 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : z5 = 0
+org.apache.xml.security.utils.Base64.decodeInternal : z5 = 0 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : z6 = 0
+org.apache.xml.security.utils.Base64.decodeInternal : z6 = 0 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : z7 = 0
+org.apache.xml.security.utils.Base64.decodeInternal : z7 = 0 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : i2 = 0
+org.apache.xml.security.utils.Base64.decodeInternal : i2 = 0 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : z8 = 0
+org.apache.xml.security.utils.Base64.decodeInternal : z8 = 0 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : z9 = 0
+org.apache.xml.security.utils.Base64.decodeInternal : z9 = 0 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : $i4 = i1 - 1
+org.apache.xml.security.utils.Base64.decodeInternal : $i4 = i1 - 1 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : i5 = $i4 * 4
+org.apache.xml.security.utils.Base64.decodeInternal : i5 = $i4 * 4 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : $i6 = i1 - 1
+org.apache.xml.security.utils.Base64.decodeInternal : $i6 = i1 - 1 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : i7 = $i6 * 3
+org.apache.xml.security.utils.Base64.decodeInternal : i7 = $i6 * 3 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : i8 = i5 + 1
+org.apache.xml.security.utils.Base64.decodeInternal : i8 = i5 + 1 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : $b9 = r0[i5]
+org.apache.xml.security.utils.Base64.decodeInternal : $b9 = r0[i5] >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : b10 = $b9
+org.apache.xml.security.utils.Base64.decodeInternal : b10 = $b9 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : $z10 = staticinvoke <org.apache.xml.security.utils.Base64: boolean isData(byte)>($b9)
+org.apache.xml.security.utils.Base64.decodeInternal : $z10 = staticinvoke <org.apache.xml.security.utils.Base64: boolean isData(byte)>($b9) >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : if $z10 == 0
+org.apache.xml.security.utils.Base64.decodeInternal : if $z10 == 0 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : i11 = i8 + 1
+org.apache.xml.security.utils.Base64.decodeInternal : if $z10 == 0 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : $r3 = new org.apache.xml.security.exceptions.Base64DecodingException
+org.apache.xml.security.utils.Base64.decodeInternal : $r3 = new org.apache.xml.security.exceptions.Base64DecodingException >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : specialinvoke $r3.<org.apache.xml.security.exceptions.Base64DecodingException: void <init>(java.lang.String)>("decoding.general")
+org.apache.xml.security.utils.Base64.decodeInternal : specialinvoke $r3.<org.apache.xml.security.exceptions.Base64DecodingException: void <init>(java.lang.String)>("decoding.general") >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : throw $r3
+org.apache.xml.security.utils.Base64.decodeInternal : i11 = i8 + 1 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : $b12 = r0[i8]
+org.apache.xml.security.utils.Base64.decodeInternal : $b12 = r0[i8] >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : b13 = $b12
+org.apache.xml.security.utils.Base64.decodeInternal : b13 = $b12 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : $z11 = staticinvoke <org.apache.xml.security.utils.Base64: boolean isData(byte)>($b12)
+org.apache.xml.security.utils.Base64.decodeInternal : $z11 = staticinvoke <org.apache.xml.security.utils.Base64: boolean isData(byte)>($b12) >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : if $z11 != 0
+org.apache.xml.security.utils.Base64.decodeInternal : if $z11 != 0 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : $r3 = new org.apache.xml.security.exceptions.Base64DecodingException
+org.apache.xml.security.utils.Base64.decodeInternal : if $z11 != 0 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : $r4 = <org.apache.xml.security.utils.Base64: byte[] base64Alphabet>
+org.apache.xml.security.utils.Base64.decodeInternal : $r4 = <org.apache.xml.security.utils.Base64: byte[] base64Alphabet> >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : b14 = $r4[b10]
+org.apache.xml.security.utils.Base64.decodeInternal : b14 = $r4[b10] >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : $r5 = <org.apache.xml.security.utils.Base64: byte[] base64Alphabet>
+org.apache.xml.security.utils.Base64.decodeInternal : $r5 = <org.apache.xml.security.utils.Base64: byte[] base64Alphabet> >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : b15 = $r5[b13]
+org.apache.xml.security.utils.Base64.decodeInternal : b15 = $r5[b13] >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : i16 = i11 + 1
+org.apache.xml.security.utils.Base64.decodeInternal : i16 = i11 + 1 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : b17 = r0[i11]
+org.apache.xml.security.utils.Base64.decodeInternal : b17 = r0[i11] >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : i18 = i16 + 1
+org.apache.xml.security.utils.Base64.decodeInternal : i18 = i16 + 1 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : b19 = r0[i16]
+org.apache.xml.security.utils.Base64.decodeInternal : b19 = r0[i16] >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : $z12 = staticinvoke <org.apache.xml.security.utils.Base64: boolean isData(byte)>(b17)
+org.apache.xml.security.utils.Base64.decodeInternal : $z12 = staticinvoke <org.apache.xml.security.utils.Base64: boolean isData(byte)>(b17) >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : if $z12 == 0
+org.apache.xml.security.utils.Base64.decodeInternal : if $z12 == 0 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : $z13 = staticinvoke <org.apache.xml.security.utils.Base64: boolean isData(byte)>(b19)
+org.apache.xml.security.utils.Base64.decodeInternal : if $z12 == 0 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : $z14 = staticinvoke <org.apache.xml.security.utils.Base64: boolean isPad(byte)>(b17)
+org.apache.xml.security.utils.Base64.decodeInternal : $z14 = staticinvoke <org.apache.xml.security.utils.Base64: boolean isPad(byte)>(b17) >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : if $z14 == 0
+org.apache.xml.security.utils.Base64.decodeInternal : if $z14 == 0 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : $z15 = staticinvoke <org.apache.xml.security.utils.Base64: boolean isPad(byte)>(b19)
+org.apache.xml.security.utils.Base64.decodeInternal : if $z14 == 0 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : $z16 = staticinvoke <org.apache.xml.security.utils.Base64: boolean isPad(byte)>(b17)
+org.apache.xml.security.utils.Base64.decodeInternal : $z16 = staticinvoke <org.apache.xml.security.utils.Base64: boolean isPad(byte)>(b17) >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : if $z16 != 0
+org.apache.xml.security.utils.Base64.decodeInternal : if $z16 != 0 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : $z17 = staticinvoke <org.apache.xml.security.utils.Base64: boolean isPad(byte)>(b19)
+org.apache.xml.security.utils.Base64.decodeInternal : if $z16 != 0 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : $r10 = new org.apache.xml.security.exceptions.Base64DecodingException
+org.apache.xml.security.utils.Base64.decodeInternal : $r10 = new org.apache.xml.security.exceptions.Base64DecodingException >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : specialinvoke $r10.<org.apache.xml.security.exceptions.Base64DecodingException: void <init>(java.lang.String)>("decoding.general")
+org.apache.xml.security.utils.Base64.decodeInternal : specialinvoke $r10.<org.apache.xml.security.exceptions.Base64DecodingException: void <init>(java.lang.String)>("decoding.general") >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : throw $r10
+org.apache.xml.security.utils.Base64.decodeInternal : $z17 = staticinvoke <org.apache.xml.security.utils.Base64: boolean isPad(byte)>(b19) >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : if $z17 == 0
+org.apache.xml.security.utils.Base64.decodeInternal : if $z17 == 0 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : $r8 = <org.apache.xml.security.utils.Base64: byte[] base64Alphabet>
+org.apache.xml.security.utils.Base64.decodeInternal : if $z17 == 0 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : $r10 = new org.apache.xml.security.exceptions.Base64DecodingException
+org.apache.xml.security.utils.Base64.decodeInternal : $r8 = <org.apache.xml.security.utils.Base64: byte[] base64Alphabet> >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : b26 = $r8[b17]
+org.apache.xml.security.utils.Base64.decodeInternal : b26 = $r8[b17] >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : $b27 = b26 & 3
+org.apache.xml.security.utils.Base64.decodeInternal : $b27 = b26 & 3 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : if $b27 == 0
+org.apache.xml.security.utils.Base64.decodeInternal : if $b27 == 0 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : $r9 = new org.apache.xml.security.exceptions.Base64DecodingException
+org.apache.xml.security.utils.Base64.decodeInternal : if $b27 == 0 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : $i28 = i7 + 2
+org.apache.xml.security.utils.Base64.decodeInternal : $i28 = i7 + 2 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : r7 = newarray (byte)[$i28]
+org.apache.xml.security.utils.Base64.decodeInternal : r7 = newarray (byte)[$i28] >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : i29 = i7 + 1
+org.apache.xml.security.utils.Base64.decodeInternal : i29 = i7 + 1 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : $i30 = b14 << 2
+org.apache.xml.security.utils.Base64.decodeInternal : $i30 = b14 << 2 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : $b31 = b15 >> 4
+org.apache.xml.security.utils.Base64.decodeInternal : $b31 = b15 >> 4 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : $i32 = $i30 | $b31
+org.apache.xml.security.utils.Base64.decodeInternal : $i32 = $i30 | $b31 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : $b33 = (byte) $i32
+org.apache.xml.security.utils.Base64.decodeInternal : $b33 = (byte) $i32 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : r7[i7] = $b33
+org.apache.xml.security.utils.Base64.decodeInternal : r7[i7] = $b33 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : $b34 = b15 & 15
+org.apache.xml.security.utils.Base64.decodeInternal : $b34 = b15 & 15 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : $i35 = $b34 << 4
+org.apache.xml.security.utils.Base64.decodeInternal : $i35 = $b34 << 4 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : $b36 = b26 >> 2
+org.apache.xml.security.utils.Base64.decodeInternal : $b36 = b26 >> 2 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : $b37 = $b36 & 15
+org.apache.xml.security.utils.Base64.decodeInternal : $b37 = $b36 & 15 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : $i38 = $i35 | $b37
+org.apache.xml.security.utils.Base64.decodeInternal : $i38 = $i35 | $b37 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : $b39 = (byte) $i38
+org.apache.xml.security.utils.Base64.decodeInternal : $b39 = (byte) $i38 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : r7[i29] = $b39
+org.apache.xml.security.utils.Base64.decodeInternal : r7[i29] = $b39 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : goto [?= i59 = 0]
+org.apache.xml.security.utils.Base64.decodeInternal : goto [?= i59 = 0] >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : i59 = 0
+org.apache.xml.security.utils.Base64.decodeInternal : i59 = 0 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : i60 = 0
+org.apache.xml.security.utils.Base64.decodeInternal : i60 = 0 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : $i61 = i1 - 1
+org.apache.xml.security.utils.Base64.decodeInternal : $i61 = i1 - 1 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : if i2 >= $i61
+org.apache.xml.security.utils.Base64.decodeInternal : if i2 >= $i61 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : i62 = i60 + 1
+org.apache.xml.security.utils.Base64.decodeInternal : if i2 >= $i61 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : return r7
+org.apache.xml.security.utils.Base64.decodeInternal : i62 = i60 + 1 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : $b63 = r0[i60]
+org.apache.xml.security.utils.Base64.decodeInternal : $b63 = r0[i60] >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : b64 = $b63
+org.apache.xml.security.utils.Base64.decodeInternal : b64 = $b63 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : $z18 = staticinvoke <org.apache.xml.security.utils.Base64: boolean isData(byte)>($b63)
+org.apache.xml.security.utils.Base64.decodeInternal : $z18 = staticinvoke <org.apache.xml.security.utils.Base64: boolean isData(byte)>($b63) >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : if $z18 == 0
+org.apache.xml.security.utils.Base64.decodeInternal : if $z18 == 0 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : i65 = i62 + 1
+org.apache.xml.security.utils.Base64.decodeInternal : if $z18 == 0 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : $r13 = new org.apache.xml.security.exceptions.Base64DecodingException
+org.apache.xml.security.utils.Base64.decodeInternal : $r13 = new org.apache.xml.security.exceptions.Base64DecodingException >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : specialinvoke $r13.<org.apache.xml.security.exceptions.Base64DecodingException: void <init>(java.lang.String)>("decoding.general")
+org.apache.xml.security.utils.Base64.decodeInternal : specialinvoke $r13.<org.apache.xml.security.exceptions.Base64DecodingException: void <init>(java.lang.String)>("decoding.general") >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : throw $r13
+org.apache.xml.security.utils.Base64.decodeInternal : i65 = i62 + 1 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : $b66 = r0[i62]
+org.apache.xml.security.utils.Base64.decodeInternal : $b66 = r0[i62] >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : b67 = $b66
+org.apache.xml.security.utils.Base64.decodeInternal : b67 = $b66 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : $z19 = staticinvoke <org.apache.xml.security.utils.Base64: boolean isData(byte)>($b66)
+org.apache.xml.security.utils.Base64.decodeInternal : $z19 = staticinvoke <org.apache.xml.security.utils.Base64: boolean isData(byte)>($b66) >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : if $z19 == 0
+org.apache.xml.security.utils.Base64.decodeInternal : if $z19 == 0 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : i68 = i65 + 1
+org.apache.xml.security.utils.Base64.decodeInternal : if $z19 == 0 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : $r13 = new org.apache.xml.security.exceptions.Base64DecodingException
+org.apache.xml.security.utils.Base64.decodeInternal : i68 = i65 + 1 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : $b69 = r0[i65]
+org.apache.xml.security.utils.Base64.decodeInternal : $b69 = r0[i65] >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : b70 = $b69
+org.apache.xml.security.utils.Base64.decodeInternal : b70 = $b69 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : $z20 = staticinvoke <org.apache.xml.security.utils.Base64: boolean isData(byte)>($b69)
+org.apache.xml.security.utils.Base64.decodeInternal : $z20 = staticinvoke <org.apache.xml.security.utils.Base64: boolean isData(byte)>($b69) >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : if $z20 == 0
+org.apache.xml.security.utils.Base64.decodeInternal : if $z20 == 0 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : i60 = i68 + 1
+org.apache.xml.security.utils.Base64.decodeInternal : if $z20 == 0 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : $r13 = new org.apache.xml.security.exceptions.Base64DecodingException
+org.apache.xml.security.utils.Base64.decodeInternal : i60 = i68 + 1 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : $b71 = r0[i68]
+org.apache.xml.security.utils.Base64.decodeInternal : $b71 = r0[i68] >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : b72 = $b71
+org.apache.xml.security.utils.Base64.decodeInternal : b72 = $b71 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : $z21 = staticinvoke <org.apache.xml.security.utils.Base64: boolean isData(byte)>($b71)
+org.apache.xml.security.utils.Base64.decodeInternal : $z21 = staticinvoke <org.apache.xml.security.utils.Base64: boolean isData(byte)>($b71) >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : if $z21 != 0
+org.apache.xml.security.utils.Base64.decodeInternal : if $z21 != 0 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : $r13 = new org.apache.xml.security.exceptions.Base64DecodingException
+org.apache.xml.security.utils.Base64.decodeInternal : if $z21 != 0 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : $r14 = <org.apache.xml.security.utils.Base64: byte[] base64Alphabet>
+org.apache.xml.security.utils.Base64.decodeInternal : $r14 = <org.apache.xml.security.utils.Base64: byte[] base64Alphabet> >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : b73 = $r14[b64]
+org.apache.xml.security.utils.Base64.decodeInternal : b73 = $r14[b64] >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : $r15 = <org.apache.xml.security.utils.Base64: byte[] base64Alphabet>
+org.apache.xml.security.utils.Base64.decodeInternal : $r15 = <org.apache.xml.security.utils.Base64: byte[] base64Alphabet> >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : b74 = $r15[b67]
+org.apache.xml.security.utils.Base64.decodeInternal : b74 = $r15[b67] >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : $r16 = <org.apache.xml.security.utils.Base64: byte[] base64Alphabet>
+org.apache.xml.security.utils.Base64.decodeInternal : $r16 = <org.apache.xml.security.utils.Base64: byte[] base64Alphabet> >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : b75 = $r16[b70]
+org.apache.xml.security.utils.Base64.decodeInternal : b75 = $r16[b70] >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : $r17 = <org.apache.xml.security.utils.Base64: byte[] base64Alphabet>
+org.apache.xml.security.utils.Base64.decodeInternal : $r17 = <org.apache.xml.security.utils.Base64: byte[] base64Alphabet> >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : b76 = $r17[b72]
+org.apache.xml.security.utils.Base64.decodeInternal : b76 = $r17[b72] >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : i77 = i59 + 1
+org.apache.xml.security.utils.Base64.decodeInternal : i77 = i59 + 1 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : $i78 = b73 << 2
+org.apache.xml.security.utils.Base64.decodeInternal : $i78 = b73 << 2 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : $b79 = b74 >> 4
+org.apache.xml.security.utils.Base64.decodeInternal : $b79 = b74 >> 4 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : $i80 = $i78 | $b79
+org.apache.xml.security.utils.Base64.decodeInternal : $i80 = $i78 | $b79 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : $b81 = (byte) $i80
+org.apache.xml.security.utils.Base64.decodeInternal : $b81 = (byte) $i80 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : r7[i59] = $b81
+org.apache.xml.security.utils.Base64.decodeInternal : r7[i59] = $b81 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : i82 = i77 + 1
+org.apache.xml.security.utils.Base64.decodeInternal : i82 = i77 + 1 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : $b83 = b74 & 15
+org.apache.xml.security.utils.Base64.decodeInternal : $b83 = b74 & 15 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : $i84 = $b83 << 4
+org.apache.xml.security.utils.Base64.decodeInternal : $i84 = $b83 << 4 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : $b85 = b75 >> 2
+org.apache.xml.security.utils.Base64.decodeInternal : $b85 = b75 >> 2 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : $b86 = $b85 & 15
+org.apache.xml.security.utils.Base64.decodeInternal : $b86 = $b85 & 15 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : $i87 = $i84 | $b86
+org.apache.xml.security.utils.Base64.decodeInternal : $i87 = $i84 | $b86 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : $b88 = (byte) $i87
+org.apache.xml.security.utils.Base64.decodeInternal : $b88 = (byte) $i87 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : r7[i77] = $b88
+org.apache.xml.security.utils.Base64.decodeInternal : r7[i77] = $b88 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : i59 = i82 + 1
+org.apache.xml.security.utils.Base64.decodeInternal : i59 = i82 + 1 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : $i89 = b75 << 6
+org.apache.xml.security.utils.Base64.decodeInternal : $i89 = b75 << 6 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : $i90 = $i89 | b76
+org.apache.xml.security.utils.Base64.decodeInternal : $i90 = $i89 | b76 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : $b91 = (byte) $i90
+org.apache.xml.security.utils.Base64.decodeInternal : $b91 = (byte) $i90 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : r7[i82] = $b91
+org.apache.xml.security.utils.Base64.decodeInternal : r7[i82] = $b91 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : i2 = i2 + 1
+org.apache.xml.security.utils.Base64.decodeInternal : i2 = i2 + 1 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : goto [?= $i61 = i1 - 1]
+org.apache.xml.security.utils.Base64.decodeInternal : goto [?= $i61 = i1 - 1] >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : $i61 = i1 - 1
+org.apache.xml.security.utils.Base64.decodeInternal : $r9 = new org.apache.xml.security.exceptions.Base64DecodingException >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : specialinvoke $r9.<org.apache.xml.security.exceptions.Base64DecodingException: void <init>(java.lang.String)>("decoding.general")
+org.apache.xml.security.utils.Base64.decodeInternal : specialinvoke $r9.<org.apache.xml.security.exceptions.Base64DecodingException: void <init>(java.lang.String)>("decoding.general") >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : throw $r9
+org.apache.xml.security.utils.Base64.decodeInternal : $z15 = staticinvoke <org.apache.xml.security.utils.Base64: boolean isPad(byte)>(b19) >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : if $z15 == 0
+org.apache.xml.security.utils.Base64.decodeInternal : if $z15 == 0 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : $b20 = b15 & 15
+org.apache.xml.security.utils.Base64.decodeInternal : if $z15 == 0 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : $z16 = staticinvoke <org.apache.xml.security.utils.Base64: boolean isPad(byte)>(b17)
+org.apache.xml.security.utils.Base64.decodeInternal : $b20 = b15 & 15 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : if $b20 == 0
+org.apache.xml.security.utils.Base64.decodeInternal : if $b20 == 0 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : $r6 = new org.apache.xml.security.exceptions.Base64DecodingException
+org.apache.xml.security.utils.Base64.decodeInternal : if $b20 == 0 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : $i21 = i7 + 1
+org.apache.xml.security.utils.Base64.decodeInternal : $i21 = i7 + 1 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : r7 = newarray (byte)[$i21]
+org.apache.xml.security.utils.Base64.decodeInternal : r7 = newarray (byte)[$i21] >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : $i22 = b14 << 2
+org.apache.xml.security.utils.Base64.decodeInternal : $i22 = b14 << 2 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : $b23 = b15 >> 4
+org.apache.xml.security.utils.Base64.decodeInternal : $b23 = b15 >> 4 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : $i24 = $i22 | $b23
+org.apache.xml.security.utils.Base64.decodeInternal : $i24 = $i22 | $b23 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : $b25 = (byte) $i24
+org.apache.xml.security.utils.Base64.decodeInternal : $b25 = (byte) $i24 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : r7[i7] = $b25
+org.apache.xml.security.utils.Base64.decodeInternal : r7[i7] = $b25 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : goto [?= i59 = 0]
+org.apache.xml.security.utils.Base64.decodeInternal : goto [?= i59 = 0] >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : i59 = 0
+org.apache.xml.security.utils.Base64.decodeInternal : $r6 = new org.apache.xml.security.exceptions.Base64DecodingException >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : specialinvoke $r6.<org.apache.xml.security.exceptions.Base64DecodingException: void <init>(java.lang.String)>("decoding.general")
+org.apache.xml.security.utils.Base64.decodeInternal : specialinvoke $r6.<org.apache.xml.security.exceptions.Base64DecodingException: void <init>(java.lang.String)>("decoding.general") >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : throw $r6
+org.apache.xml.security.utils.Base64.decodeInternal : $z13 = staticinvoke <org.apache.xml.security.utils.Base64: boolean isData(byte)>(b19) >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : if $z13 != 0
+org.apache.xml.security.utils.Base64.decodeInternal : if $z13 != 0 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : $z14 = staticinvoke <org.apache.xml.security.utils.Base64: boolean isPad(byte)>(b17)
+org.apache.xml.security.utils.Base64.decodeInternal : if $z13 != 0 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : $i40 = i7 + 3
+org.apache.xml.security.utils.Base64.decodeInternal : $i40 = i7 + 3 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : r7 = newarray (byte)[$i40]
+org.apache.xml.security.utils.Base64.decodeInternal : r7 = newarray (byte)[$i40] >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : $r11 = <org.apache.xml.security.utils.Base64: byte[] base64Alphabet>
+org.apache.xml.security.utils.Base64.decodeInternal : $r11 = <org.apache.xml.security.utils.Base64: byte[] base64Alphabet> >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : b41 = $r11[b17]
+org.apache.xml.security.utils.Base64.decodeInternal : b41 = $r11[b17] >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : $r12 = <org.apache.xml.security.utils.Base64: byte[] base64Alphabet>
+org.apache.xml.security.utils.Base64.decodeInternal : $r12 = <org.apache.xml.security.utils.Base64: byte[] base64Alphabet> >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : b42 = $r12[b19]
+org.apache.xml.security.utils.Base64.decodeInternal : b42 = $r12[b19] >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : i43 = i7 + 1
+org.apache.xml.security.utils.Base64.decodeInternal : i43 = i7 + 1 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : $i44 = b14 << 2
+org.apache.xml.security.utils.Base64.decodeInternal : $i44 = b14 << 2 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : $b45 = b15 >> 4
+org.apache.xml.security.utils.Base64.decodeInternal : $b45 = b15 >> 4 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : $i46 = $i44 | $b45
+org.apache.xml.security.utils.Base64.decodeInternal : $i46 = $i44 | $b45 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : $b47 = (byte) $i46
+org.apache.xml.security.utils.Base64.decodeInternal : $b47 = (byte) $i46 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : r7[i7] = $b47
+org.apache.xml.security.utils.Base64.decodeInternal : r7[i7] = $b47 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : i48 = i43 + 1
+org.apache.xml.security.utils.Base64.decodeInternal : i48 = i43 + 1 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : $b49 = b15 & 15
+org.apache.xml.security.utils.Base64.decodeInternal : $b49 = b15 & 15 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : $i50 = $b49 << 4
+org.apache.xml.security.utils.Base64.decodeInternal : $i50 = $b49 << 4 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : $b51 = b41 >> 2
+org.apache.xml.security.utils.Base64.decodeInternal : $b51 = b41 >> 2 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : $b52 = $b51 & 15
+org.apache.xml.security.utils.Base64.decodeInternal : $b52 = $b51 & 15 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : $i53 = $i50 | $b52
+org.apache.xml.security.utils.Base64.decodeInternal : $i53 = $i50 | $b52 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : $b54 = (byte) $i53
+org.apache.xml.security.utils.Base64.decodeInternal : $b54 = (byte) $i53 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : r7[i43] = $b54
+org.apache.xml.security.utils.Base64.decodeInternal : r7[i43] = $b54 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : i55 = i48 + 1
+org.apache.xml.security.utils.Base64.decodeInternal : i55 = i48 + 1 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : $i56 = b41 << 6
+org.apache.xml.security.utils.Base64.decodeInternal : $i56 = b41 << 6 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : $i57 = $i56 | b42
+org.apache.xml.security.utils.Base64.decodeInternal : $i57 = $i56 | b42 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : $b58 = (byte) $i57
+org.apache.xml.security.utils.Base64.decodeInternal : $b58 = (byte) $i57 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : r7[i48] = $b58
+org.apache.xml.security.utils.Base64.decodeInternal : r7[i48] = $b58 >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : i59 = 0
+org.apache.xml.security.utils.Base64.decodeInternal : $r2 = newarray (byte)[0] >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : return $r2
+org.apache.xml.security.utils.Base64.decodeInternal : $r1 = new org.apache.xml.security.exceptions.Base64DecodingException >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : specialinvoke $r1.<org.apache.xml.security.exceptions.Base64DecodingException: void <init>(java.lang.String)>("It should be dived by four")
+org.apache.xml.security.utils.Base64.decodeInternal : specialinvoke $r1.<org.apache.xml.security.exceptions.Base64DecodingException: void <init>(java.lang.String)>("It should be dived by four") >>>>>>>> org.apache.xml.security.utils.Base64.decodeInternal : throw $r1

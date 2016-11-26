@@ -1,0 +1,16 @@
+org.apache.xml.security.utils.XMLUtils.selectNode : if r0 == null >>>>>>>> org.apache.xml.security.utils.XMLUtils.selectNode : $r3 = interfaceinvoke r0.<org.w3c.dom.Node: java.lang.String getLocalName()>()
+org.apache.xml.security.utils.XMLUtils.selectNode : if r0 == null >>>>>>>> org.apache.xml.security.utils.XMLUtils.selectNode : return null
+org.apache.xml.security.utils.XMLUtils.selectNode : $r3 = interfaceinvoke r0.<org.w3c.dom.Node: java.lang.String getLocalName()>() >>>>>>>> org.apache.xml.security.utils.XMLUtils.selectNode : $z0 = virtualinvoke r2.<java.lang.String: boolean equals(java.lang.Object)>($r3)
+org.apache.xml.security.utils.XMLUtils.selectNode : $z0 = virtualinvoke r2.<java.lang.String: boolean equals(java.lang.Object)>($r3) >>>>>>>> org.apache.xml.security.utils.XMLUtils.selectNode : if $z0 == 0
+org.apache.xml.security.utils.XMLUtils.selectNode : if $z0 == 0 >>>>>>>> org.apache.xml.security.utils.XMLUtils.selectNode : $r4 = interfaceinvoke r0.<org.w3c.dom.Node: java.lang.String getNamespaceURI()>()
+org.apache.xml.security.utils.XMLUtils.selectNode : if $z0 == 0 >>>>>>>> org.apache.xml.security.utils.XMLUtils.selectNode : r0 = interfaceinvoke r0.<org.w3c.dom.Node: org.w3c.dom.Node getNextSibling()>()
+org.apache.xml.security.utils.XMLUtils.selectNode : r0 = interfaceinvoke r0.<org.w3c.dom.Node: org.w3c.dom.Node getNextSibling()>() >>>>>>>> org.apache.xml.security.utils.XMLUtils.selectNode : goto [?= (branch)]
+org.apache.xml.security.utils.XMLUtils.selectNode : goto [?= (branch)] >>>>>>>> org.apache.xml.security.utils.XMLUtils.selectNode : if r0 == null
+org.apache.xml.security.utils.XMLUtils.selectNode : $r4 = interfaceinvoke r0.<org.w3c.dom.Node: java.lang.String getNamespaceURI()>() >>>>>>>> org.apache.xml.security.utils.XMLUtils.selectNode : $z1 = virtualinvoke r1.<java.lang.String: boolean equals(java.lang.Object)>($r4)
+org.apache.xml.security.utils.XMLUtils.selectNode : $z1 = virtualinvoke r1.<java.lang.String: boolean equals(java.lang.Object)>($r4) >>>>>>>> org.apache.xml.security.utils.XMLUtils.selectNode : if $z1 == 0
+org.apache.xml.security.utils.XMLUtils.selectNode : if $z1 == 0 >>>>>>>> org.apache.xml.security.utils.XMLUtils.selectNode : if i0 != 0
+org.apache.xml.security.utils.XMLUtils.selectNode : if $z1 == 0 >>>>>>>> org.apache.xml.security.utils.XMLUtils.selectNode : r0 = interfaceinvoke r0.<org.w3c.dom.Node: org.w3c.dom.Node getNextSibling()>()
+org.apache.xml.security.utils.XMLUtils.selectNode : if i0 != 0 >>>>>>>> org.apache.xml.security.utils.XMLUtils.selectNode : $r5 = (org.w3c.dom.Element) r0
+org.apache.xml.security.utils.XMLUtils.selectNode : if i0 != 0 >>>>>>>> org.apache.xml.security.utils.XMLUtils.selectNode : i0 = i0 + -1
+org.apache.xml.security.utils.XMLUtils.selectNode : i0 = i0 + -1 >>>>>>>> org.apache.xml.security.utils.XMLUtils.selectNode : r0 = interfaceinvoke r0.<org.w3c.dom.Node: org.w3c.dom.Node getNextSibling()>()
+org.apache.xml.security.utils.XMLUtils.selectNode : $r5 = (org.w3c.dom.Element) r0 >>>>>>>> org.apache.xml.security.utils.XMLUtils.selectNode : return $r5

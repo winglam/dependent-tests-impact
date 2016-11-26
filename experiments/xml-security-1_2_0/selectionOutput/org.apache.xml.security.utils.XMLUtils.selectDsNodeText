@@ -1,0 +1,12 @@
+org.apache.xml.security.utils.XMLUtils.selectDsNodeText : r2 = staticinvoke <org.apache.xml.security.utils.XMLUtils: org.w3c.dom.Element selectDsNode(org.w3c.dom.Node,java.lang.String,int)>(r0, r1, i0) >>>>>>>> org.apache.xml.security.utils.XMLUtils.selectDsNodeText : if r2 != null
+org.apache.xml.security.utils.XMLUtils.selectDsNodeText : if r2 != null >>>>>>>> org.apache.xml.security.utils.XMLUtils.selectDsNodeText : return null
+org.apache.xml.security.utils.XMLUtils.selectDsNodeText : if r2 != null >>>>>>>> org.apache.xml.security.utils.XMLUtils.selectDsNodeText : r3 = interfaceinvoke r2.<org.w3c.dom.Node: org.w3c.dom.Node getFirstChild()>()
+org.apache.xml.security.utils.XMLUtils.selectDsNodeText : r3 = interfaceinvoke r2.<org.w3c.dom.Node: org.w3c.dom.Node getFirstChild()>() >>>>>>>> org.apache.xml.security.utils.XMLUtils.selectDsNodeText : if r3 == null
+org.apache.xml.security.utils.XMLUtils.selectDsNodeText : if r3 == null >>>>>>>> org.apache.xml.security.utils.XMLUtils.selectDsNodeText : $s1 = interfaceinvoke r3.<org.w3c.dom.Node: short getNodeType()>()
+org.apache.xml.security.utils.XMLUtils.selectDsNodeText : if r3 == null >>>>>>>> org.apache.xml.security.utils.XMLUtils.selectDsNodeText : $r4 = (org.w3c.dom.Text) r3
+org.apache.xml.security.utils.XMLUtils.selectDsNodeText : $r4 = (org.w3c.dom.Text) r3 >>>>>>>> org.apache.xml.security.utils.XMLUtils.selectDsNodeText : return $r4
+org.apache.xml.security.utils.XMLUtils.selectDsNodeText : $s1 = interfaceinvoke r3.<org.w3c.dom.Node: short getNodeType()>() >>>>>>>> org.apache.xml.security.utils.XMLUtils.selectDsNodeText : if $s1 == 3
+org.apache.xml.security.utils.XMLUtils.selectDsNodeText : if $s1 == 3 >>>>>>>> org.apache.xml.security.utils.XMLUtils.selectDsNodeText : r3 = interfaceinvoke r3.<org.w3c.dom.Node: org.w3c.dom.Node getNextSibling()>()
+org.apache.xml.security.utils.XMLUtils.selectDsNodeText : if $s1 == 3 >>>>>>>> org.apache.xml.security.utils.XMLUtils.selectDsNodeText : $r4 = (org.w3c.dom.Text) r3
+org.apache.xml.security.utils.XMLUtils.selectDsNodeText : r3 = interfaceinvoke r3.<org.w3c.dom.Node: org.w3c.dom.Node getNextSibling()>() >>>>>>>> org.apache.xml.security.utils.XMLUtils.selectDsNodeText : goto [?= (branch)]
+org.apache.xml.security.utils.XMLUtils.selectDsNodeText : goto [?= (branch)] >>>>>>>> org.apache.xml.security.utils.XMLUtils.selectDsNodeText : if r3 == null
