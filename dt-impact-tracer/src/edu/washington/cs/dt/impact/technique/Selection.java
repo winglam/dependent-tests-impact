@@ -86,6 +86,18 @@ public class Selection extends Test {
         Map<String, List<String>> newVersMap = coverageCount(selectionOutput2);
         Set<String> changedCoverage = new HashSet<String>();
 
+        // !oldVersMap.get(key).equals(newVersMap.get(key)) does not work well.
+        // Ex. selectionOuputs for org.joda.time.tz.ZoneInfoProvider.loadZoneInfoMap:
+        /*
+         * org.joda.time.tz.ZoneInfoProvider.loadZoneInfoMap : staticinvoke <org.joda.time.tz.ZoneInfoProvider: void readZoneInfoMap(java.io.DataInputStream,java.util.Map)>(r3, r2) >>>>>>>> org.joda.time.tz.ZoneInfoProvider.loadZoneInfoMap : $r10 := @caughtexception
+         * org.joda.time.tz.ZoneInfoProvider.loadZoneInfoMap : staticinvoke <org.joda.time.tz.ZoneInfoProvider: void readZoneInfoMap(java.io.DataInputStream,java.util.Map)>(r3, r2) >>>>>>>> org.joda.time.tz.ZoneInfoProvider.loadZoneInfoMap : $r9 := @caughtexception
+         */
+        // While another may output the following.
+        /*
+		 * org.joda.time.tz.ZoneInfoProvider.loadZoneInfoMap : staticinvoke <org.joda.time.tz.ZoneInfoProvider: void readZoneInfoMap(java.io.DataInputStream,java.util.Map)>(r3, r2) >>>>>>>> org.joda.time.tz.ZoneInfoProvider.loadZoneInfoMap : $r9 := @caughtexception
+		 * org.joda.time.tz.ZoneInfoProvider.loadZoneInfoMap : staticinvoke <org.joda.time.tz.ZoneInfoProvider: void readZoneInfoMap(java.io.DataInputStream,java.util.Map)>(r3, r2) >>>>>>>> org.joda.time.tz.ZoneInfoProvider.loadZoneInfoMap : $r10 := @caughtexception
+         */
+
         if (coverage == COVERAGE.FUNCTION) {
             // generate the list of methods that has been changed
             for (String key : oldVersMap.keySet()) {
