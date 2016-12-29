@@ -414,11 +414,7 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
             PercentWrapper percentComparedToUnenhanced) {
         String latexString = "";
         List<Project> sortedList = new ArrayList<Project>();
-        sortList(projList, sortedList, Constants.CRYSTAL_NAME);
-        sortList(projList, sortedList, Constants.JFREECHART_NAME);
-        sortList(projList, sortedList, Constants.JODATIME_NAME);
-        sortList(projList, sortedList, Constants.SYNOTPIC_NAME);
-        sortList(projList, sortedList, Constants.XMLSECURITY_NAME);
+        sortList(projList, sortedList);
 
         int index = 0;
         List<GeometricMeanData> fig17GeoData = new ArrayList<>();
@@ -632,9 +628,9 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
 
         allowNegatives = argsList.contains("-allowNegatives");
 
-        String directoryName = getArgName(argsList, "-directory");
+        String directoryName = mustGetArgName(argsList, "-directory");
         // name of directory where files should be outputted
-        outputDirectoryName = getArgName(argsList, "-outputDirectory");
+        outputDirectoryName = mustGetArgName(argsList, "-outputDirectory");
 
         /*
          * 17: prioritization
@@ -678,22 +674,7 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
                 String orderName = flagsList.get(index + 1);
 
                 index = flagsList.indexOf("-project");
-                String projectName = flagsList.get(index + 1);
-                if (projectName.equals("crystal")) {
-                    projectName = Constants.CRYSTAL_NAME;
-                } else if (projectName.equals("jfreechart")) {
-                    projectName = Constants.JFREECHART_NAME;
-                } else if (projectName.equals("jodatime")) {
-                    projectName = Constants.JODATIME_NAME;
-                } else if (projectName.equals("synoptic")) {
-                    projectName = Constants.SYNOTPIC_NAME;
-                } else if (projectName.equals("xml_security")) {
-                    projectName = Constants.XMLSECURITY_NAME;
-                } else {
-                    System.err.println("Project argument is specified but the project name"
-                            + " value provided is invalid. Please use either crystal, jfreechart, jodatime, synoptic or xml_security.");
-                    System.exit(0);
-                }
+                String projectName = mapNameToProjectName(flagsList.get(index + 1));
 
                 index = flagsList.indexOf("-testType");
                 String testType = flagsList.get(index + 1);
@@ -727,7 +708,7 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
                 }
                 ProjectEnhancedResults currProj = (ProjectEnhancedResults) currProj2;
 
-                int numTotal = parseFileForDTs(file, Constants.NUM_NOT_FIXED_DTS);
+                int numTotal = parseFileForNumOfDTs(file, Constants.NUM_NOT_FIXED_DTS);
 
                 /*
                  * The method setNumTotalDependentTests sets the number of DTS for a specific file corresponding to a
