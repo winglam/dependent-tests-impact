@@ -246,7 +246,6 @@ public class NumDependentTestsFigureGenerator extends FigureGenerator {
 				if (sb == null) {
 					sb = new StringBuilder();
 					sb.append(origProj.getName());
-					sb.append(" &");
 					projectToStr.put(origProj.getName(), sb);
 				}
 
@@ -293,7 +292,7 @@ public class NumDependentTestsFigureGenerator extends FigureGenerator {
 						typeToTechnique.get("auto").get(0).get(k).addAll(autoProj.get_fig7_auto()[k]);
 					}
 				}
-				sb.append(" ");
+				sb.append(" & ");
 				double origPercent = (double) origDTs.size() / origProjectToDT.get(origProj.getName());
 				sb.append(formatPercent(origPercent));
 				sb.append(" & ");
