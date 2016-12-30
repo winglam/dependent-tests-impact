@@ -177,7 +177,6 @@ public class NumDependentTestsFigureGenerator extends FigureGenerator {
 		String minBoundAutoDTFile = getArgName(argsList, "-minBoundAutoDTFile");
 		Map<String, Integer> autoProjectToDT = parseDTFile(minBoundAutoDTFile);
 
-		boolean combineResults = argsList.contains("-combineResults");
 		List<List<Project>> proj_orig_arrayList = new ArrayList<List<Project>>();
 		List<List<Project>> proj_auto_arrayList = new ArrayList<List<Project>>();
 
@@ -187,13 +186,13 @@ public class NumDependentTestsFigureGenerator extends FigureGenerator {
 			List<Project> prior_proj_orig_arrayList = new ArrayList<Project>(NUM_PROJECTS);
 			List<Project> prior_proj_auto_arrayList = new ArrayList<Project>(NUM_PROJECTS);
 			setProjectLists(argsList, priorDirectoryName, prior_proj_orig_arrayList, prior_proj_auto_arrayList);
-			if (!combineResults) {
-				generateLatexFile(outputDirectoryName, prior_proj_orig_arrayList, prior_proj_auto_arrayList);
-				proj_orig_arrayList.add(prior_proj_orig_arrayList);
-				proj_auto_arrayList.add(prior_proj_auto_arrayList);
+			generateLatexFile(outputDirectoryName, prior_proj_orig_arrayList, prior_proj_auto_arrayList);
+			proj_orig_arrayList.add(prior_proj_orig_arrayList);
+			proj_auto_arrayList.add(prior_proj_auto_arrayList);
 		}
 		if (seleDirectoryName != null) {
-			// create a list of project Objects that each have a diff project
+			// create a list of project Objects that each have a diff
+			// project
 			// name
 			List<Project> sele_proj_orig_arrayList = new ArrayList<Project>(NUM_PROJECTS);
 			List<Project> sele_proj_auto_arrayList = new ArrayList<Project>(NUM_PROJECTS);
@@ -203,7 +202,8 @@ public class NumDependentTestsFigureGenerator extends FigureGenerator {
 			proj_auto_arrayList.add(sele_proj_auto_arrayList);
 		}
 		if (paraDirectoryName != null) {
-			// create a list of project Objects that each have a diff project
+			// create a list of project Objects that each have a diff
+			// project
 			// name
 			List<Project> para_proj_orig_arrayList = new ArrayList<Project>(NUM_PROJECTS);
 			List<Project> para_proj_auto_arrayList = new ArrayList<Project>(NUM_PROJECTS);
@@ -330,7 +330,6 @@ public class NumDependentTestsFigureGenerator extends FigureGenerator {
 		buildPerAlgoString(perAlgoString, typeToTechnique, autoLowerBoundSum, "auto");
 		perAlgoString.append(" \\\\\r\n");
 		writeToLatexFile(perAlgoString.toString(), perAlgoOutputFilename, false);
-		}
 	}
 
 	private static void buildPerAlgoString(StringBuilder perAlgoString,
