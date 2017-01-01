@@ -650,7 +650,7 @@ public abstract class Runner {
 
     public static List<Double> getCumulList(List<String> list) {
         if (list == null || list.size() < 1) {
-            throw new IllegalArgumentException("getCumulList recieved argument: " + list);
+            throw new IllegalArgumentException("getCumulList received argument: " + list);
         }
         List<Double> cumulList = new ArrayList<>();
         cumulList.add(Double.valueOf(list.get(0)));
@@ -662,7 +662,7 @@ public abstract class Runner {
 
     public static List<Double> getCumulListDouble(List<Double> list) {
         if (list == null || list.size() < 1) {
-            throw new IllegalArgumentException("getCumulList recieved argument: " + list);
+            throw new IllegalArgumentException("getCumulList received argument: " + list);
         }
         List<Double> cumulList = new ArrayList<>();
         cumulList.add(list.get(0));
