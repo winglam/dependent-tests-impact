@@ -1,7 +1,7 @@
 testType=orig
 experiment=httpcore
 experimentCP=../../../impact-tools/*:classes/:test-classes/:dependency/*:
-numTimesToRun=999
+numTimesToRun=9999
 crossReferenceClass=edu.washington.cs.dt.impact.tools.CrossReferencer
 
 function clearEnv() {
@@ -31,7 +31,7 @@ do
   cat cross-referencer-file >> debug.log$j
   echo "" >> debug.log$j
 
-  java -cp $experimentCP edu.washington.cs.dt.impact.tools.UndeterministicTestFinder -undeterministicTestFile undeterminisitic-order -deterministicTestFile deterministic-order -crossReferenceFile cross-referencer-file -randomizeDeterministicTests
+  java -cp $experimentCP edu.washington.cs.dt.impact.tools.UndeterministicTestFinder -undeterministicTestFile undeterministic-order -deterministicTestFile deterministic-order -crossReferenceFile cross-referencer-file -randomizeDeterministicTests
   k=$(($k+1))
 done
 
