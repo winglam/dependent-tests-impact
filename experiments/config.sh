@@ -12,7 +12,7 @@ randomTimes=100
 # leave any gaps. Ex. You can run only Crystal and JFreechart but
 # cannot run JFreechart and Jodatime. You can run Crystal, JFreechart
 # and Jodatime but cannot run Crystal and Jodatime.
-experiments=(crystal jfreechart jodatime synoptic xml_security)
+experiments=(crystal jfreechart jodatime synoptic xml_security httpcore)
 testTypes=(orig auto)
 coverages=(statement function)
 machines=(2 4 8 16)
@@ -38,9 +38,10 @@ impactJarCP=impact-tools/impact.jar
 testListGenClass=edu.washington.cs.dt.impact.tools.TestListGenerator
 crossReferenceClass=edu.washington.cs.dt.impact.tools.CrossReferencer
 
-directories=(crystalvc jfreechart-1.0.15 jodatime-b609d7d66d dynoptic xml-security-orig-v1)
+directories=(crystalvc jfreechart-1.0.15 jodatime-b609d7d66d dynoptic xml-security-orig-v1 httpcore/httpcore/target/)
+# Not compatible with httpcore
 fixerCP=(../fixer-libs/*:lib/* ../fixer-libs/*:lib/* ../fixer-libs/*:resources/:lib/* ../fixer-libs/*:../synoptic/lib/*:../synoptic/bin/:../daikonizer/bin/ ../fixer-libs/*:../xml-security-commons/bin/:data/:../xml-security-commons/libs/*)
-experimentsCP=(impact-tools/*:bin/:lib/* impact-tools/*:bin/:lib/* impact-tools/*:bin/:resources/:lib/* impact-tools/*:bin/:../synoptic/lib/*:../synoptic/bin/:../daikonizer/bin/ impact-tools/*:bin/:../xml-security-commons/bin/:data/:../xml-security-commons/libs/*)
+experimentsCP=(impact-tools/*:bin/:lib/* impact-tools/*:bin/:lib/* impact-tools/*:bin/:resources/:lib/* impact-tools/*:bin/:../synoptic/lib/*:../synoptic/bin/:../daikonizer/bin/ impact-tools/*:bin/:../xml-security-commons/bin/:data/:../xml-security-commons/libs/* ../../../impact-tools/*:classes/:test-classes/:dependency/*:)
 experimentsCPWithDirectory=(crystalvc/impact-tools/*:crystalvc/bin/:crystalvc/lib/* jfreechart-1.0.15/impact-tools/*:jfreechart-1.0.15/bin/:jfreechart-1.0.15/lib/* jodatime-b609d7d66d/impact-tools/*:jodatime-b609d7d66d/bin/:jodatime-b609d7d66d/resources/:jodatime-b609d7d66d/lib/* dynoptic/impact-tools/*:dynoptic/bin/:synoptic/lib/*:synoptic/bin/:daikonizer/bin/ xml-security-orig-v1/impact-tools/*:xml-security-orig-v1/bin/:xml-security-commons/bin/:data/:xml-security-commons/libs/*)
 sootCP=(impact-tools/*:sootOutput/:lib/* impact-tools/*:sootOutput/:lib/* impact-tools/*:sootOutput/:resources/:lib/* impact-tools/*:sootOutput/:../synoptic/lib/*:../synoptic/bin/:../daikonizer/bin/ impact-tools/*:sootOutput/:../xml-security-commons/bin/:data/:../xml-security-commons/libs/*)
 
