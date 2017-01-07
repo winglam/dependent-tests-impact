@@ -1,0 +1,30 @@
+org.apache.http.impl.io.AbstractSessionInputBuffer.init : if i0 > 0 goto (branch)
+org.apache.http.impl.io.AbstractSessionInputBuffer.init : $r10 = r0.<org.apache.http.impl.io.AbstractSessionInputBuffer: java.nio.charset.Charset charset>
+org.apache.http.impl.io.AbstractSessionInputBuffer.init : $r7 = new org.apache.http.util.ByteArrayBuffer
+org.apache.http.impl.io.AbstractSessionInputBuffer.init : r0.<org.apache.http.impl.io.AbstractSessionInputBuffer: int bufferpos> = 0
+org.apache.http.impl.io.AbstractSessionInputBuffer.init : r0.<org.apache.http.impl.io.AbstractSessionInputBuffer: int bufferlen> = 0
+org.apache.http.impl.io.AbstractSessionInputBuffer.init : $i1 = interfaceinvoke r2.<org.apache.http.params.HttpParams: int getIntParameter(java.lang.String,int)>("http.connection.max-line-length", -1)
+org.apache.http.impl.io.AbstractSessionInputBuffer.init : if r1 != null goto (branch)
+org.apache.http.impl.io.AbstractSessionInputBuffer.init : if r2 != null goto r0.<org.apache.http.impl.io.AbstractSessionInputBuffer: java.io.InputStream instream> = r1
+org.apache.http.impl.io.AbstractSessionInputBuffer.init : r0.<org.apache.http.impl.io.AbstractSessionInputBuffer: java.io.InputStream instream> = r1
+org.apache.http.impl.io.AbstractSessionInputBuffer.init : r0.<org.apache.http.impl.io.AbstractSessionInputBuffer: java.nio.charset.CharsetDecoder decoder> = null
+org.apache.http.impl.io.AbstractSessionInputBuffer.init : $i2 = interfaceinvoke r2.<org.apache.http.params.HttpParams: int getIntParameter(java.lang.String,int)>("http.connection.min-chunk-limit", 512)
+org.apache.http.impl.io.AbstractSessionInputBuffer.init : $r8 = staticinvoke <org.apache.http.params.HttpProtocolParams: java.lang.String getHttpElementCharset(org.apache.http.params.HttpParams)>(r2)
+org.apache.http.impl.io.AbstractSessionInputBuffer.init : $r12 = virtualinvoke r0.<org.apache.http.impl.io.AbstractSessionInputBuffer: org.apache.http.impl.io.HttpTransportMetricsImpl createTransportMetrics()>()
+org.apache.http.impl.io.AbstractSessionInputBuffer.init : $r6 = newarray (byte)[i0]
+org.apache.http.impl.io.IdentityInputStream.close : r0.<org.apache.http.impl.io.IdentityInputStream: boolean closed> = 1
+org.apache.http.params.HttpProtocolParams.getHttpElementCharset : if r0 != null goto $r3 = interfaceinvoke r0.<org.apache.http.params.HttpParams: java.lang.Object getParameter(java.lang.String)>("http.protocol.element-charset")
+org.apache.http.params.HttpProtocolParams.getHttpElementCharset : $r3 = interfaceinvoke r0.<org.apache.http.params.HttpParams: java.lang.Object getParameter(java.lang.String)>("http.protocol.element-charset")
+org.apache.http.params.HttpProtocolParams.getHttpElementCharset : if r1 != null goto return r1
+org.apache.http.params.HttpProtocolParams.getHttpElementCharset : r1 = "US-ASCII"
+org.apache.http.params.HttpProtocolParams.getHttpElementCharset : return r1
+org.apache.http.impl.io.AbstractSessionInputBuffer.createTransportMetrics : $r1 = new org.apache.http.impl.io.HttpTransportMetricsImpl
+org.apache.http.impl.io.IdentityInputStream.available : $r2 = r0.<org.apache.http.impl.io.IdentityInputStream: org.apache.http.io.SessionInputBuffer in>
+org.apache.http.impl.io.IdentityInputStream.available : $r1 = r0.<org.apache.http.impl.io.IdentityInputStream: org.apache.http.io.SessionInputBuffer in>
+org.apache.http.impl.io.AbstractSessionInputBuffer.length : $i0 = r0.<org.apache.http.impl.io.AbstractSessionInputBuffer: int bufferlen>
+org.apache.http.params.BasicHttpParams.getParameter : $r2 = r0.<org.apache.http.params.BasicHttpParams: java.util.HashMap parameters>
+org.apache.http.impl.io.IdentityInputStream.read : return -1
+org.apache.http.impl.io.IdentityInputStream.read : $z0 = r0.<org.apache.http.impl.io.IdentityInputStream: boolean closed>
+org.apache.http.params.AbstractHttpParams.getIntParameter : return i0
+org.apache.http.params.AbstractHttpParams.getIntParameter : r2 = virtualinvoke r0.<org.apache.http.params.AbstractHttpParams: java.lang.Object getParameter(java.lang.String)>(r1)
+org.apache.http.params.AbstractHttpParams.getIntParameter : if r2 != null goto $r3 = (java.lang.Integer) r2

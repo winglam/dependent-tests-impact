@@ -1,0 +1,98 @@
+org.apache.http.impl.io.AbstractSessionInputBuffer.getMetrics : $r1 = r0.<org.apache.http.impl.io.AbstractSessionInputBuffer: org.apache.http.impl.io.HttpTransportMetricsImpl metrics>
+org.apache.http.impl.io.AbstractSessionInputBuffer.init : if i0 > 0 goto (branch)
+org.apache.http.impl.io.AbstractSessionInputBuffer.init : $r10 = r0.<org.apache.http.impl.io.AbstractSessionInputBuffer: java.nio.charset.Charset charset>
+org.apache.http.impl.io.AbstractSessionInputBuffer.init : $r7 = new org.apache.http.util.ByteArrayBuffer
+org.apache.http.impl.io.AbstractSessionInputBuffer.init : r0.<org.apache.http.impl.io.AbstractSessionInputBuffer: int bufferpos> = 0
+org.apache.http.impl.io.AbstractSessionInputBuffer.init : r0.<org.apache.http.impl.io.AbstractSessionInputBuffer: int bufferlen> = 0
+org.apache.http.impl.io.AbstractSessionInputBuffer.init : $i1 = interfaceinvoke r2.<org.apache.http.params.HttpParams: int getIntParameter(java.lang.String,int)>("http.connection.max-line-length", -1)
+org.apache.http.impl.io.AbstractSessionInputBuffer.init : if r1 != null goto (branch)
+org.apache.http.impl.io.AbstractSessionInputBuffer.init : if r2 != null goto r0.<org.apache.http.impl.io.AbstractSessionInputBuffer: java.io.InputStream instream> = r1
+org.apache.http.impl.io.AbstractSessionInputBuffer.init : r0.<org.apache.http.impl.io.AbstractSessionInputBuffer: java.io.InputStream instream> = r1
+org.apache.http.impl.io.AbstractSessionInputBuffer.init : r0.<org.apache.http.impl.io.AbstractSessionInputBuffer: java.nio.charset.CharsetDecoder decoder> = null
+org.apache.http.impl.io.AbstractSessionInputBuffer.init : $i2 = interfaceinvoke r2.<org.apache.http.params.HttpParams: int getIntParameter(java.lang.String,int)>("http.connection.min-chunk-limit", 512)
+org.apache.http.impl.io.AbstractSessionInputBuffer.init : $r8 = staticinvoke <org.apache.http.params.HttpProtocolParams: java.lang.String getHttpElementCharset(org.apache.http.params.HttpParams)>(r2)
+org.apache.http.impl.io.AbstractSessionInputBuffer.init : $r12 = virtualinvoke r0.<org.apache.http.impl.io.AbstractSessionInputBuffer: org.apache.http.impl.io.HttpTransportMetricsImpl createTransportMetrics()>()
+org.apache.http.impl.io.AbstractSessionInputBuffer.init : $r6 = newarray (byte)[i0]
+org.apache.http.impl.io.AbstractSessionInputBuffer.read : $i0 = lengthof r1
+org.apache.http.impl.io.AbstractSessionInputBuffer.read : goto [?= staticinvoke <edu.washington.cs.dt.impact.util.Tracer: void trace(java.lang.String,java.lang.String)>("$z1 = virtualinvoke r0.<org.apache.http.impl.io.AbstractSessionInputBuffer: boolean hasBufferedData()>()", "org.apache.http.impl.io.AbstractSessionInputBuffer.read")]
+org.apache.http.impl.io.AbstractSessionInputBuffer.read : if r1 != null goto $i0 = lengthof r1
+org.apache.http.impl.io.AbstractSessionInputBuffer.read : $z0 = virtualinvoke r0.<org.apache.http.impl.io.AbstractSessionInputBuffer: boolean hasBufferedData()>()
+org.apache.http.impl.io.AbstractSessionInputBuffer.read : $i13 = r0.<org.apache.http.impl.io.AbstractSessionInputBuffer: int bufferlen>
+org.apache.http.impl.io.AbstractSessionInputBuffer.read : $i7 = r0.<org.apache.http.impl.io.AbstractSessionInputBuffer: int bufferpos>
+org.apache.http.impl.io.AbstractSessionInputBuffer.read : $z1 = virtualinvoke r0.<org.apache.http.impl.io.AbstractSessionInputBuffer: boolean hasBufferedData()>()
+org.apache.http.impl.io.AbstractSessionInputBuffer.read : return 0
+org.apache.http.impl.io.AbstractSessionInputBuffer.read : $i18 = r0.<org.apache.http.impl.io.AbstractSessionInputBuffer: int bufferpos>
+org.apache.http.impl.io.AbstractSessionInputBuffer.read : return -1
+org.apache.http.impl.io.AbstractSessionInputBuffer.read : i12 = virtualinvoke r0.<org.apache.http.impl.io.AbstractSessionInputBuffer: int fillBuffer()>()
+org.apache.http.impl.io.AbstractSessionInputBuffer.read : $r6 = r0.<org.apache.http.impl.io.AbstractSessionInputBuffer: byte[] buffer>
+org.apache.http.impl.io.AbstractSessionInputBuffer.read : $r2 = r0.<org.apache.http.impl.io.AbstractSessionInputBuffer: byte[] buffer>
+org.apache.http.impl.io.AbstractSessionInputBuffer.read : if i12 != -1 goto (branch)
+org.apache.http.impl.io.AbstractSessionInputBuffer.read : $i9 = r0.<org.apache.http.impl.io.AbstractSessionInputBuffer: int minChunkLimit>
+org.apache.http.impl.io.AbstractSessionInputBuffer.read : if r1 != null goto $z0 = virtualinvoke r0.<org.apache.http.impl.io.AbstractSessionInputBuffer: boolean hasBufferedData()>()
+org.apache.http.impl.io.AbstractSessionInputBuffer.read : return i16
+org.apache.http.impl.io.AbstractSessionInputBuffer.read : return i2
+org.apache.http.impl.io.AbstractSessionInputBuffer.read : $i3 = r0.<org.apache.http.impl.io.AbstractSessionInputBuffer: int bufferlen>
+org.apache.http.impl.io.HttpTransportMetricsImpl.getBytesTransferred : $l0 = r0.<org.apache.http.impl.io.HttpTransportMetricsImpl: long bytesTransferred>
+org.apache.http.params.HttpProtocolParams.getHttpElementCharset : if r0 != null goto $r3 = interfaceinvoke r0.<org.apache.http.params.HttpParams: java.lang.Object getParameter(java.lang.String)>("http.protocol.element-charset")
+org.apache.http.params.HttpProtocolParams.getHttpElementCharset : $r3 = interfaceinvoke r0.<org.apache.http.params.HttpParams: java.lang.Object getParameter(java.lang.String)>("http.protocol.element-charset")
+org.apache.http.params.HttpProtocolParams.getHttpElementCharset : if r1 != null goto return r1
+org.apache.http.params.HttpProtocolParams.getHttpElementCharset : r1 = "US-ASCII"
+org.apache.http.params.HttpProtocolParams.getHttpElementCharset : return r1
+org.apache.http.util.ByteArrayBuffer.clear : r0.<org.apache.http.util.ByteArrayBuffer: int len> = 0
+org.apache.http.impl.io.AbstractSessionInputBuffer.fillBuffer : r0.<org.apache.http.impl.io.AbstractSessionInputBuffer: int bufferlen> = i0
+org.apache.http.impl.io.AbstractSessionInputBuffer.fillBuffer : $r6 = r0.<org.apache.http.impl.io.AbstractSessionInputBuffer: org.apache.http.impl.io.HttpTransportMetricsImpl metrics>
+org.apache.http.impl.io.AbstractSessionInputBuffer.fillBuffer : r0.<org.apache.http.impl.io.AbstractSessionInputBuffer: int bufferpos> = 0
+org.apache.http.impl.io.AbstractSessionInputBuffer.fillBuffer : $i4 = r0.<org.apache.http.impl.io.AbstractSessionInputBuffer: int bufferlen>
+org.apache.http.impl.io.AbstractSessionInputBuffer.fillBuffer : return -1
+org.apache.http.impl.io.AbstractSessionInputBuffer.fillBuffer : $r3 = r0.<org.apache.http.impl.io.AbstractSessionInputBuffer: byte[] buffer>
+org.apache.http.impl.io.AbstractSessionInputBuffer.fillBuffer : $r4 = r0.<org.apache.http.impl.io.AbstractSessionInputBuffer: java.io.InputStream instream>
+org.apache.http.impl.io.AbstractSessionInputBuffer.fillBuffer : $i3 = r0.<org.apache.http.impl.io.AbstractSessionInputBuffer: int bufferpos>
+org.apache.http.impl.io.AbstractSessionInputBuffer.fillBuffer : if i0 <= 0 goto r0.<org.apache.http.impl.io.AbstractSessionInputBuffer: int bufferpos> = 0
+org.apache.http.impl.io.AbstractSessionInputBuffer.fillBuffer : if i8 != -1 goto $i9 = i1 + i8
+org.apache.http.impl.io.AbstractSessionInputBuffer.fillBuffer : return i8
+org.apache.http.impl.io.AbstractSessionInputBuffer.fillBuffer : $i9 = i1 + i8
+org.apache.http.impl.io.AbstractSessionInputBuffer.fillBuffer : i1 = r0.<org.apache.http.impl.io.AbstractSessionInputBuffer: int bufferlen>
+org.apache.http.impl.io.AbstractSessionOutputBuffer.createTransportMetrics : $r1 = new org.apache.http.impl.io.HttpTransportMetricsImpl
+org.apache.http.impl.io.AbstractSessionOutputBuffer.flush : $r1 = r0.<org.apache.http.impl.io.AbstractSessionOutputBuffer: java.io.OutputStream outstream>
+org.apache.http.impl.io.AbstractSessionOutputBuffer.flush : virtualinvoke r0.<org.apache.http.impl.io.AbstractSessionOutputBuffer: void flushBuffer()>()
+org.apache.http.impl.io.AbstractSessionOutputBuffer.init : $r11 = virtualinvoke r0.<org.apache.http.impl.io.AbstractSessionOutputBuffer: org.apache.http.impl.io.HttpTransportMetricsImpl createTransportMetrics()>()
+org.apache.http.impl.io.AbstractSessionOutputBuffer.init : if i0 > 0 goto (branch)
+org.apache.http.impl.io.AbstractSessionOutputBuffer.init : if r2 != null goto r0.<org.apache.http.impl.io.AbstractSessionOutputBuffer: java.io.OutputStream outstream> = r1
+org.apache.http.impl.io.AbstractSessionOutputBuffer.init : $i1 = interfaceinvoke r2.<org.apache.http.params.HttpParams: int getIntParameter(java.lang.String,int)>("http.connection.min-chunk-limit", 512)
+org.apache.http.impl.io.AbstractSessionOutputBuffer.init : $r6 = new org.apache.http.util.ByteArrayBuffer
+org.apache.http.impl.io.AbstractSessionOutputBuffer.init : if r1 != null goto (branch)
+org.apache.http.impl.io.AbstractSessionOutputBuffer.init : r0.<org.apache.http.impl.io.AbstractSessionOutputBuffer: java.nio.charset.CharsetEncoder encoder> = null
+org.apache.http.impl.io.AbstractSessionOutputBuffer.init : $r9 = r0.<org.apache.http.impl.io.AbstractSessionOutputBuffer: java.nio.charset.Charset charset>
+org.apache.http.impl.io.AbstractSessionOutputBuffer.init : r0.<org.apache.http.impl.io.AbstractSessionOutputBuffer: java.io.OutputStream outstream> = r1
+org.apache.http.impl.io.AbstractSessionOutputBuffer.init : $r7 = staticinvoke <org.apache.http.params.HttpProtocolParams: java.lang.String getHttpElementCharset(org.apache.http.params.HttpParams)>(r2)
+org.apache.http.impl.io.AbstractSessionOutputBuffer.write : $i3 = r0.<org.apache.http.impl.io.AbstractSessionOutputBuffer: int minChunkLimit>
+org.apache.http.impl.io.AbstractSessionOutputBuffer.write : virtualinvoke r0.<org.apache.http.impl.io.AbstractSessionOutputBuffer: void flushBuffer()>()
+org.apache.http.impl.io.AbstractSessionOutputBuffer.write : $r7 = r0.<org.apache.http.impl.io.AbstractSessionOutputBuffer: org.apache.http.util.ByteArrayBuffer buffer>
+org.apache.http.impl.io.AbstractSessionOutputBuffer.write : if i1 <= i2 goto $r7 = r0.<org.apache.http.impl.io.AbstractSessionOutputBuffer: org.apache.http.util.ByteArrayBuffer buffer>
+org.apache.http.impl.io.AbstractSessionOutputBuffer.write : $r5 = r0.<org.apache.http.impl.io.AbstractSessionOutputBuffer: org.apache.http.util.ByteArrayBuffer buffer>
+org.apache.http.impl.io.AbstractSessionOutputBuffer.write : if r1 != null goto $i3 = r0.<org.apache.http.impl.io.AbstractSessionOutputBuffer: int minChunkLimit>
+org.apache.http.impl.io.AbstractSessionOutputBuffer.flushBuffer : $r2 = r0.<org.apache.http.impl.io.AbstractSessionOutputBuffer: java.io.OutputStream outstream>
+org.apache.http.impl.io.AbstractSessionOutputBuffer.flushBuffer : $r6 = r0.<org.apache.http.impl.io.AbstractSessionOutputBuffer: org.apache.http.impl.io.HttpTransportMetricsImpl metrics>
+org.apache.http.impl.io.AbstractSessionOutputBuffer.flushBuffer : $r5 = r0.<org.apache.http.impl.io.AbstractSessionOutputBuffer: org.apache.http.util.ByteArrayBuffer buffer>
+org.apache.http.impl.io.AbstractSessionOutputBuffer.flushBuffer : $r1 = r0.<org.apache.http.impl.io.AbstractSessionOutputBuffer: org.apache.http.util.ByteArrayBuffer buffer>
+org.apache.http.impl.io.AbstractSessionOutputBuffer.flushBuffer : if i0 <= 0 goto return
+org.apache.http.params.AbstractHttpParams.getIntParameter : return i0
+org.apache.http.params.AbstractHttpParams.getIntParameter : r2 = virtualinvoke r0.<org.apache.http.params.AbstractHttpParams: java.lang.Object getParameter(java.lang.String)>(r1)
+org.apache.http.params.AbstractHttpParams.getIntParameter : if r2 != null goto $r3 = (java.lang.Integer) r2
+org.apache.http.impl.io.HttpTransportMetricsImpl.incrementBytesTransferred : $l1 = r0.<org.apache.http.impl.io.HttpTransportMetricsImpl: long bytesTransferred>
+org.apache.http.util.ByteArrayBuffer.append : r0.<org.apache.http.util.ByteArrayBuffer: int len> = i2
+org.apache.http.util.ByteArrayBuffer.append : if i1 != 0 goto $i8 = r0.<org.apache.http.util.ByteArrayBuffer: int len>
+org.apache.http.util.ByteArrayBuffer.append : $i8 = r0.<org.apache.http.util.ByteArrayBuffer: int len>
+org.apache.http.util.ByteArrayBuffer.append : if r1 != null goto (branch)
+org.apache.http.util.ByteArrayBuffer.append : if i0 < 0 goto $r3 = new java.lang.IndexOutOfBoundsException
+org.apache.http.util.ByteArrayBuffer.append : $r11 = r0.<org.apache.http.util.ByteArrayBuffer: byte[] buffer>
+org.apache.http.util.ByteArrayBuffer.append : $r12 = r0.<org.apache.http.util.ByteArrayBuffer: byte[] buffer>
+org.apache.http.impl.io.AbstractSessionInputBuffer.createTransportMetrics : $r1 = new org.apache.http.impl.io.HttpTransportMetricsImpl
+org.apache.http.impl.io.AbstractSessionInputBuffer.hasBufferedData : $i0 = r0.<org.apache.http.impl.io.AbstractSessionInputBuffer: int bufferpos>
+org.apache.http.util.ByteArrayBuffer.capacity : $r1 = r0.<org.apache.http.util.ByteArrayBuffer: byte[] buffer>
+org.apache.http.impl.io.AbstractSessionOutputBuffer.getMetrics : $r1 = r0.<org.apache.http.impl.io.AbstractSessionOutputBuffer: org.apache.http.impl.io.HttpTransportMetricsImpl metrics>
+org.apache.http.util.ByteArrayBuffer.length : $i0 = r0.<org.apache.http.util.ByteArrayBuffer: int len>
+org.apache.http.impl.SessionOutputBufferMock.getData : $r2 = r0.<org.apache.http.impl.SessionOutputBufferMock: java.io.ByteArrayOutputStream buffer>
+org.apache.http.impl.SessionOutputBufferMock.getData : $r1 = r0.<org.apache.http.impl.SessionOutputBufferMock: java.io.ByteArrayOutputStream buffer>
+org.apache.http.util.ByteArrayBuffer.buffer : $r1 = r0.<org.apache.http.util.ByteArrayBuffer: byte[] buffer>
+org.apache.http.params.BasicHttpParams.getParameter : $r2 = r0.<org.apache.http.params.BasicHttpParams: java.util.HashMap parameters>

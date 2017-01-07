@@ -1,0 +1,31 @@
+org.apache.http.message.BasicHeader.getName : $r1 = r0.<org.apache.http.message.BasicHeader: java.lang.String name>
+org.apache.http.message.BasicHeader.getValue : $r1 = r0.<org.apache.http.message.BasicHeader: java.lang.String value>
+org.apache.http.util.CharArrayBuffer.toString : $r1 = new java.lang.String
+org.apache.http.message.HeaderGroup.clear : $r1 = r0.<org.apache.http.message.HeaderGroup: java.util.List headers>
+org.apache.http.message.HeaderGroup.getCondensedHeader : $r9 = r2[i0]
+org.apache.http.message.HeaderGroup.getCondensedHeader : virtualinvoke r3.<org.apache.http.util.CharArrayBuffer: void append(java.lang.String)>(", ")
+org.apache.http.message.HeaderGroup.getCondensedHeader : return null
+org.apache.http.message.HeaderGroup.getCondensedHeader : i0 = 1
+org.apache.http.message.HeaderGroup.getCondensedHeader : r2 = virtualinvoke r0.<org.apache.http.message.HeaderGroup: org.apache.http.Header[] getHeaders(java.lang.String)>(r1)
+org.apache.http.message.HeaderGroup.getCondensedHeader : $r7 = r2[0]
+org.apache.http.message.HeaderGroup.getCondensedHeader : $r11 = new org.apache.http.message.BasicHeader
+org.apache.http.message.HeaderGroup.getCondensedHeader : $i2 = lengthof r2
+org.apache.http.message.HeaderGroup.getCondensedHeader : $r5 = r2[0]
+org.apache.http.message.HeaderGroup.getCondensedHeader : $i1 = lengthof r2
+org.apache.http.message.HeaderGroup.getCondensedHeader : $r6 = new org.apache.http.util.CharArrayBuffer
+org.apache.http.message.HeaderGroup.setHeaders : virtualinvoke r0.<org.apache.http.message.HeaderGroup: void clear()>()
+org.apache.http.message.HeaderGroup.setHeaders : i0 = 0
+org.apache.http.message.HeaderGroup.setHeaders : $r2 = r0.<org.apache.http.message.HeaderGroup: java.util.List headers>
+org.apache.http.message.HeaderGroup.setHeaders : if r1 != null goto i0 = 0
+org.apache.http.util.CharArrayBuffer.append : $i2 = r0.<org.apache.http.util.CharArrayBuffer: int len>
+org.apache.http.util.CharArrayBuffer.append : i0 = virtualinvoke r1.<java.lang.String: int length()>()
+org.apache.http.util.CharArrayBuffer.append : $r3 = r0.<org.apache.http.util.CharArrayBuffer: char[] buffer>
+org.apache.http.util.CharArrayBuffer.append : r0.<org.apache.http.util.CharArrayBuffer: int len> = i1
+org.apache.http.util.CharArrayBuffer.append : if r1 != null goto i0 = virtualinvoke r1.<java.lang.String: int length()>()
+org.apache.http.util.CharArrayBuffer.append : $r2 = r0.<org.apache.http.util.CharArrayBuffer: char[] buffer>
+org.apache.http.message.HeaderGroup.getHeaders : $r6 = r0.<org.apache.http.message.HeaderGroup: java.util.List headers>
+org.apache.http.message.HeaderGroup.getHeaders : $r8 = interfaceinvoke r4.<org.apache.http.Header: java.lang.String getName()>()
+org.apache.http.message.HeaderGroup.getHeaders : interfaceinvoke r3.<java.util.List: boolean add(java.lang.Object)>(r4)
+org.apache.http.message.HeaderGroup.getHeaders : i0 = 0
+org.apache.http.message.HeaderGroup.getHeaders : $i2 = interfaceinvoke r3.<java.util.List: int size()>()
+org.apache.http.message.HeaderGroup.getHeaders : $r2 = new java.util.ArrayList

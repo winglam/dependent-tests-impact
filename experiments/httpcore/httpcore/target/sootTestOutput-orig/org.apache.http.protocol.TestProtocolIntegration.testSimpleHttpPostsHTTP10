@@ -1,0 +1,1098 @@
+org.apache.http.ProtocolVersion.getMajor : $i0 = r0.<org.apache.http.ProtocolVersion: int major>
+org.apache.http.protocol.UriPatternMatcher.matchUriRequestPattern : return 1
+org.apache.http.protocol.UriPatternMatcher.matchUriRequestPattern : $z0 = virtualinvoke r1.<java.lang.String: boolean equals(java.lang.Object)>("*")
+org.apache.http.params.HttpConnectionParams.getSoTimeout : $i0 = interfaceinvoke r0.<org.apache.http.params.HttpParams: int getIntParameter(java.lang.String,int)>("http.socket.timeout", 0)
+org.apache.http.params.HttpConnectionParams.getSoTimeout : if r0 != null goto $i0 = interfaceinvoke r0.<org.apache.http.params.HttpParams: int getIntParameter(java.lang.String,int)>("http.socket.timeout", 0)
+org.apache.http.impl.DefaultHttpServerConnection.bind : $z0 = staticinvoke <org.apache.http.params.HttpConnectionParams: boolean getTcpNoDelay(org.apache.http.params.HttpParams)>(r2)
+org.apache.http.impl.DefaultHttpServerConnection.bind : i0 = staticinvoke <org.apache.http.params.HttpConnectionParams: int getLinger(org.apache.http.params.HttpParams)>(r2)
+org.apache.http.impl.DefaultHttpServerConnection.bind : $i1 = staticinvoke <org.apache.http.params.HttpConnectionParams: int getSoTimeout(org.apache.http.params.HttpParams)>(r2)
+org.apache.http.impl.DefaultHttpServerConnection.bind : if r1 != null goto (branch)
+org.apache.http.impl.DefaultHttpServerConnection.bind : specialinvoke r0.<org.apache.http.impl.SocketHttpServerConnection: void bind(java.net.Socket,org.apache.http.params.HttpParams)>(r1, r2)
+org.apache.http.impl.DefaultHttpServerConnection.bind : if i0 < 0 goto specialinvoke r0.<org.apache.http.impl.SocketHttpServerConnection: void bind(java.net.Socket,org.apache.http.params.HttpParams)>(r1, r2)
+org.apache.http.impl.DefaultHttpServerConnection.bind : virtualinvoke r0.<org.apache.http.impl.DefaultHttpServerConnection: void assertNotOpen()>()
+org.apache.http.impl.DefaultHttpServerConnection.bind : if r2 != null goto virtualinvoke r0.<org.apache.http.impl.DefaultHttpServerConnection: void assertNotOpen()>()
+org.apache.http.ProtocolVersion.equals : return 1
+org.apache.http.ProtocolVersion.equals : if r0 != r1 goto $z0 = r1 instanceof org.apache.http.ProtocolVersion
+org.apache.http.impl.AbstractHttpClientConnection.doFlush : $r1 = r0.<org.apache.http.impl.AbstractHttpClientConnection: org.apache.http.io.SessionOutputBuffer outbuffer>
+org.apache.http.impl.DefaultHttpResponseFactory.newHttpResponse : $r5 = new org.apache.http.message.BasicHttpResponse
+org.apache.http.impl.DefaultHttpResponseFactory.newHttpResponse : $r8 = new org.apache.http.message.BasicStatusLine
+org.apache.http.impl.DefaultHttpResponseFactory.newHttpResponse : $r7 = r0.<org.apache.http.impl.DefaultHttpResponseFactory: org.apache.http.ReasonPhraseCatalog reasonCatalog>
+org.apache.http.impl.DefaultHttpResponseFactory.newHttpResponse : if r1 != null goto r3 = virtualinvoke r0.<org.apache.http.impl.DefaultHttpResponseFactory: java.util.Locale determineLocale(org.apache.http.protocol.HttpContext)>(r2)
+org.apache.http.impl.DefaultHttpResponseFactory.newHttpResponse : r3 = virtualinvoke r0.<org.apache.http.impl.DefaultHttpResponseFactory: java.util.Locale determineLocale(org.apache.http.protocol.HttpContext)>(r2)
+org.apache.http.impl.DefaultHttpResponseFactory.newHttpResponse : $r9 = new org.apache.http.message.BasicHttpResponse
+org.apache.http.impl.AbstractHttpClientConnection.createResponseParser : $r4 = new org.apache.http.impl.io.HttpResponseParser
+org.apache.http.message.HeaderGroup.getFirstHeader : return r2
+org.apache.http.message.HeaderGroup.getFirstHeader : return null
+org.apache.http.message.HeaderGroup.getFirstHeader : i0 = 0
+org.apache.http.message.HeaderGroup.getFirstHeader : $r6 = interfaceinvoke r2.<org.apache.http.Header: java.lang.String getName()>()
+org.apache.http.message.HeaderGroup.getFirstHeader : $r4 = r0.<org.apache.http.message.HeaderGroup: java.util.List headers>
+org.apache.http.impl.AbstractHttpClientConnection.receiveResponseEntity : virtualinvoke r0.<org.apache.http.impl.AbstractHttpClientConnection: void assertOpen()>()
+org.apache.http.impl.AbstractHttpClientConnection.receiveResponseEntity : $r4 = r0.<org.apache.http.impl.AbstractHttpClientConnection: org.apache.http.impl.entity.EntityDeserializer entitydeserializer>
+org.apache.http.impl.AbstractHttpClientConnection.receiveResponseEntity : if r1 != null goto virtualinvoke r0.<org.apache.http.impl.AbstractHttpClientConnection: void assertOpen()>()
+org.apache.http.impl.AbstractHttpClientConnection.receiveResponseEntity : interfaceinvoke r1.<org.apache.http.HttpResponse: void setEntity(org.apache.http.HttpEntity)>(r2)
+org.apache.http.impl.AbstractHttpClientConnection.receiveResponseHeader : $r2 = r0.<org.apache.http.impl.AbstractHttpClientConnection: org.apache.http.io.HttpMessageParser responseParser>
+org.apache.http.impl.AbstractHttpClientConnection.receiveResponseHeader : virtualinvoke r0.<org.apache.http.impl.AbstractHttpClientConnection: void assertOpen()>()
+org.apache.http.impl.AbstractHttpClientConnection.receiveResponseHeader : $r5 = r0.<org.apache.http.impl.AbstractHttpClientConnection: org.apache.http.impl.HttpConnectionMetricsImpl metrics>
+org.apache.http.impl.AbstractHttpClientConnection.receiveResponseHeader : $r4 = interfaceinvoke r1.<org.apache.http.HttpResponse: org.apache.http.StatusLine getStatusLine()>()
+org.apache.http.impl.AbstractHttpClientConnection.receiveResponseHeader : return r1
+org.apache.http.impl.io.HttpResponseWriter.writeHeadLine : $r2 = r0.<org.apache.http.impl.io.HttpResponseWriter: org.apache.http.message.LineFormatter lineFormatter>
+org.apache.http.impl.io.HttpResponseWriter.writeHeadLine : $r2 = (org.apache.http.HttpResponse) r1
+org.apache.http.impl.io.HttpResponseWriter.writeHeadLine : $r6 = r0.<org.apache.http.impl.io.HttpResponseWriter: org.apache.http.io.SessionOutputBuffer sessionBuffer>
+org.apache.http.message.BasicHeader.getValue : $r1 = r0.<org.apache.http.message.BasicHeader: java.lang.String value>
+org.apache.http.util.CharArrayBuffer.length : $i0 = r0.<org.apache.http.util.CharArrayBuffer: int len>
+org.apache.http.impl.DefaultHttpClientConnection.bind : $z0 = staticinvoke <org.apache.http.params.HttpConnectionParams: boolean getTcpNoDelay(org.apache.http.params.HttpParams)>(r2)
+org.apache.http.impl.DefaultHttpClientConnection.bind : specialinvoke r0.<org.apache.http.impl.SocketHttpClientConnection: void bind(java.net.Socket,org.apache.http.params.HttpParams)>(r1, r2)
+org.apache.http.impl.DefaultHttpClientConnection.bind : i0 = staticinvoke <org.apache.http.params.HttpConnectionParams: int getLinger(org.apache.http.params.HttpParams)>(r2)
+org.apache.http.impl.DefaultHttpClientConnection.bind : $i1 = staticinvoke <org.apache.http.params.HttpConnectionParams: int getSoTimeout(org.apache.http.params.HttpParams)>(r2)
+org.apache.http.impl.DefaultHttpClientConnection.bind : if r2 != null goto virtualinvoke r0.<org.apache.http.impl.DefaultHttpClientConnection: void assertNotOpen()>()
+org.apache.http.impl.DefaultHttpClientConnection.bind : if r1 != null goto (branch)
+org.apache.http.impl.DefaultHttpClientConnection.bind : if i0 < 0 goto specialinvoke r0.<org.apache.http.impl.SocketHttpClientConnection: void bind(java.net.Socket,org.apache.http.params.HttpParams)>(r1, r2)
+org.apache.http.impl.DefaultHttpClientConnection.bind : virtualinvoke r0.<org.apache.http.impl.DefaultHttpClientConnection: void assertNotOpen()>()
+org.apache.http.message.ParserCursor.updatePos : $i3 = r0.<org.apache.http.message.ParserCursor: int upperBound>
+org.apache.http.message.ParserCursor.updatePos : r0.<org.apache.http.message.ParserCursor: int pos> = i0
+org.apache.http.message.ParserCursor.updatePos : $i1 = r0.<org.apache.http.message.ParserCursor: int lowerBound>
+org.apache.http.impl.AbstractHttpClientConnection.sendRequestEntity : virtualinvoke r0.<org.apache.http.impl.AbstractHttpClientConnection: void assertOpen()>()
+org.apache.http.impl.AbstractHttpClientConnection.sendRequestEntity : $r4 = r0.<org.apache.http.impl.AbstractHttpClientConnection: org.apache.http.impl.entity.EntitySerializer entityserializer>
+org.apache.http.impl.AbstractHttpClientConnection.sendRequestEntity : if r1 != null goto virtualinvoke r0.<org.apache.http.impl.AbstractHttpClientConnection: void assertOpen()>()
+org.apache.http.impl.AbstractHttpClientConnection.sendRequestEntity : $r3 = interfaceinvoke r1.<org.apache.http.HttpEntityEnclosingRequest: org.apache.http.HttpEntity getEntity()>()
+org.apache.http.protocol.RequestExpectContinue.process : if r1 != null goto $z0 = r1 instanceof org.apache.http.HttpEntityEnclosingRequest
+org.apache.http.protocol.RequestExpectContinue.process : if r3 == null goto return
+org.apache.http.protocol.RequestExpectContinue.process : $z0 = r1 instanceof org.apache.http.HttpEntityEnclosingRequest
+org.apache.http.protocol.RequestExpectContinue.process : $r6 = (org.apache.http.HttpEntityEnclosingRequest) r1
+org.apache.http.protocol.RequestExpectContinue.process : $r8 = interfaceinvoke r1.<org.apache.http.HttpRequest: org.apache.http.params.HttpParams getParams()>()
+org.apache.http.protocol.RequestExpectContinue.process : $r7 = interfaceinvoke r1.<org.apache.http.HttpRequest: org.apache.http.RequestLine getRequestLine()>()
+org.apache.http.params.AbstractHttpParams.setIntParameter : $r2 = new java.lang.Integer
+org.apache.http.params.AbstractHttpParams.setIntParameter : return r0
+org.apache.http.impl.AbstractHttpServerConnection.createEntityDeserializer : $r1 = new org.apache.http.impl.entity.EntityDeserializer
+org.apache.http.HttpHost.getHostName : $r1 = r0.<org.apache.http.HttpHost: java.lang.String hostname>
+org.apache.http.impl.entity.LaxContentLengthStrategy.determineLength : goto [?= $b9 = l6 cmp 0L]
+org.apache.http.impl.entity.LaxContentLengthStrategy.determineLength : $b9 = l6 cmp 0L
+org.apache.http.impl.entity.LaxContentLengthStrategy.determineLength : r2 = interfaceinvoke r1.<org.apache.http.HttpMessage: org.apache.http.params.HttpParams getParams()>()
+org.apache.http.impl.entity.LaxContentLengthStrategy.determineLength : r7 = r29[i0]
+org.apache.http.impl.entity.LaxContentLengthStrategy.determineLength : if r3 == null goto (branch)
+org.apache.http.impl.entity.LaxContentLengthStrategy.determineLength : r29 = interfaceinvoke r1.<org.apache.http.HttpMessage: org.apache.http.Header[] getHeaders(java.lang.String)>("Content-Length")
+org.apache.http.impl.entity.LaxContentLengthStrategy.determineLength : return l6
+org.apache.http.impl.entity.LaxContentLengthStrategy.determineLength : if r4 == null goto return -1L
+org.apache.http.impl.entity.LaxContentLengthStrategy.determineLength : if z0 == 0 goto $i8 = lengthof r29
+org.apache.http.impl.entity.LaxContentLengthStrategy.determineLength : $i8 = lengthof r29
+org.apache.http.impl.entity.LaxContentLengthStrategy.determineLength : $r31 = interfaceinvoke r7.<org.apache.http.Header: java.lang.String getValue()>()
+org.apache.http.impl.entity.LaxContentLengthStrategy.determineLength : z0 = interfaceinvoke r2.<org.apache.http.params.HttpParams: boolean isParameterTrue(java.lang.String)>("http.protocol.strict-transfer-encoding")
+org.apache.http.impl.entity.LaxContentLengthStrategy.determineLength : r4 = interfaceinvoke r1.<org.apache.http.HttpMessage: org.apache.http.Header getFirstHeader(java.lang.String)>("Content-Length")
+org.apache.http.impl.entity.LaxContentLengthStrategy.determineLength : l6 = -1L
+org.apache.http.impl.entity.LaxContentLengthStrategy.determineLength : if r1 != null goto r2 = interfaceinvoke r1.<org.apache.http.HttpMessage: org.apache.http.params.HttpParams getParams()>()
+org.apache.http.impl.entity.LaxContentLengthStrategy.determineLength : r3 = interfaceinvoke r1.<org.apache.http.HttpMessage: org.apache.http.Header getFirstHeader(java.lang.String)>("Transfer-Encoding")
+org.apache.http.impl.io.HttpRequestParser.parseHead : if i0 != -1 goto $r7 = new org.apache.http.message.ParserCursor
+org.apache.http.impl.io.HttpRequestParser.parseHead : $r2 = virtualinvoke r0.<org.apache.http.impl.io.HttpRequestParser: org.apache.http.HttpRequest parseHead(org.apache.http.io.SessionInputBuffer)>(r1)
+org.apache.http.impl.io.HttpRequestParser.parseHead : $r7 = new org.apache.http.message.ParserCursor
+org.apache.http.impl.io.HttpRequestParser.parseHead : $r6 = new org.apache.http.ConnectionClosedException
+org.apache.http.impl.io.HttpRequestParser.parseHead : $r9 = r0.<org.apache.http.impl.io.HttpRequestParser: org.apache.http.message.LineParser lineParser>
+org.apache.http.impl.io.HttpRequestParser.parseHead : $r5 = r0.<org.apache.http.impl.io.HttpRequestParser: org.apache.http.util.CharArrayBuffer lineBuf>
+org.apache.http.impl.io.HttpRequestParser.parseHead : $r4 = r0.<org.apache.http.impl.io.HttpRequestParser: org.apache.http.util.CharArrayBuffer lineBuf>
+org.apache.http.impl.io.HttpRequestParser.parseHead : $r11 = r0.<org.apache.http.impl.io.HttpRequestParser: org.apache.http.HttpRequestFactory requestFactory>
+org.apache.http.message.BasicLineFormatter.formatRequestLine : virtualinvoke r0.<org.apache.http.message.BasicLineFormatter: void doFormatRequestLine(org.apache.http.util.CharArrayBuffer,org.apache.http.RequestLine)>(r3, r2)
+org.apache.http.message.BasicLineFormatter.formatRequestLine : r3 = virtualinvoke r0.<org.apache.http.message.BasicLineFormatter: org.apache.http.util.CharArrayBuffer initBuffer(org.apache.http.util.CharArrayBuffer)>(r1)
+org.apache.http.message.BasicLineFormatter.formatRequestLine : if r2 != null goto r3 = virtualinvoke r0.<org.apache.http.message.BasicLineFormatter: org.apache.http.util.CharArrayBuffer initBuffer(org.apache.http.util.CharArrayBuffer)>(r1)
+org.apache.http.message.BasicLineFormatter.formatRequestLine : return r3
+org.apache.http.message.BasicLineParser.createStatusLine : $r3 = new org.apache.http.message.BasicStatusLine
+org.apache.http.util.CharArrayBuffer.substringTrimmed : $i2 = r0.<org.apache.http.util.CharArrayBuffer: int len>
+org.apache.http.util.CharArrayBuffer.substringTrimmed : i0 = i0 + 1
+org.apache.http.util.CharArrayBuffer.substringTrimmed : $r22 = new java.lang.String
+org.apache.http.util.CharArrayBuffer.substringTrimmed : if i0 >= 0 goto $i2 = r0.<org.apache.http.util.CharArrayBuffer: int len>
+org.apache.http.util.CharArrayBuffer.substringTrimmed : if i0 >= i1 goto (branch)
+org.apache.http.util.CharArrayBuffer.substringTrimmed : if i0 <= i1 goto (branch)
+org.apache.http.util.CharArrayBuffer.substringTrimmed : if i1 <= i0 goto $r22 = new java.lang.String
+org.apache.http.util.CharArrayBuffer.charAt : $r1 = r0.<org.apache.http.util.CharArrayBuffer: char[] buffer>
+org.apache.http.impl.AbstractHttpServerConnection.createEntitySerializer : $r1 = new org.apache.http.impl.entity.EntitySerializer
+org.apache.http.testserver.HttpServer.access$700 : $r1 = r0.<org.apache.http.testserver.HttpServer: org.apache.http.params.HttpParams params>
+org.apache.http.protocol.RequestUserAgent.process : if r1 != null goto $z0 = interfaceinvoke r1.<org.apache.http.HttpRequest: boolean containsHeader(java.lang.String)>("User-Agent")
+org.apache.http.protocol.RequestUserAgent.process : if r3 == null goto return
+org.apache.http.protocol.RequestUserAgent.process : $z0 = interfaceinvoke r1.<org.apache.http.HttpRequest: boolean containsHeader(java.lang.String)>("User-Agent")
+org.apache.http.protocol.RequestUserAgent.process : interfaceinvoke r1.<org.apache.http.HttpRequest: void addHeader(java.lang.String,java.lang.String)>("User-Agent", r3)
+org.apache.http.protocol.RequestUserAgent.process : $r5 = interfaceinvoke r1.<org.apache.http.HttpRequest: org.apache.http.params.HttpParams getParams()>()
+org.apache.http.impl.io.AbstractSessionOutputBuffer.writeLine : $r2 = r0.<org.apache.http.impl.io.AbstractSessionOutputBuffer: org.apache.http.util.ByteArrayBuffer buffer>
+org.apache.http.impl.io.AbstractSessionOutputBuffer.writeLine : if r1 != null goto $z0 = r0.<org.apache.http.impl.io.AbstractSessionOutputBuffer: boolean ascii>
+org.apache.http.impl.io.AbstractSessionOutputBuffer.writeLine : i0 = i0 + i5
+org.apache.http.impl.io.AbstractSessionOutputBuffer.writeLine : $r4 = r0.<org.apache.http.impl.io.AbstractSessionOutputBuffer: org.apache.http.util.ByteArrayBuffer buffer>
+org.apache.http.impl.io.AbstractSessionOutputBuffer.writeLine : i0 = 0
+org.apache.http.impl.io.AbstractSessionOutputBuffer.writeLine : goto [?= staticinvoke <edu.washington.cs.dt.impact.util.Tracer: void trace(java.lang.String,java.lang.String)>("if i1 <= 0 goto (branch)", "org.apache.http.impl.io.AbstractSessionOutputBuffer.writeLine")]
+org.apache.http.impl.io.AbstractSessionOutputBuffer.writeLine : $r8 = <org.apache.http.impl.io.AbstractSessionOutputBuffer: byte[] CRLF>
+org.apache.http.impl.io.AbstractSessionOutputBuffer.writeLine : i5 = staticinvoke <java.lang.Math: int min(int,int)>(i2, i1)
+org.apache.http.impl.io.AbstractSessionOutputBuffer.writeLine : i1 = virtualinvoke r1.<org.apache.http.util.CharArrayBuffer: int length()>()
+org.apache.http.impl.io.AbstractSessionOutputBuffer.writeLine : $z0 = r0.<org.apache.http.impl.io.AbstractSessionOutputBuffer: boolean ascii>
+org.apache.http.impl.io.AbstractSessionOutputBuffer.writeLine : goto [?= $r8 = <org.apache.http.impl.io.AbstractSessionOutputBuffer: byte[] CRLF>]
+org.apache.http.impl.io.AbstractSessionOutputBuffer.writeLine : $r5 = r0.<org.apache.http.impl.io.AbstractSessionOutputBuffer: org.apache.http.util.ByteArrayBuffer buffer>
+org.apache.http.impl.io.AbstractSessionOutputBuffer.writeLine : if i5 <= 0 goto $r5 = r0.<org.apache.http.impl.io.AbstractSessionOutputBuffer: org.apache.http.util.ByteArrayBuffer buffer>
+org.apache.http.impl.io.AbstractSessionOutputBuffer.writeLine : i1 = i1 - i5
+org.apache.http.impl.io.AbstractSessionOutputBuffer.writeLine : if i1 <= 0 goto (branch)
+org.apache.http.params.AbstractHttpParams.getIntParameter : return i0
+org.apache.http.params.AbstractHttpParams.getIntParameter : r2 = virtualinvoke r0.<org.apache.http.params.AbstractHttpParams: java.lang.Object getParameter(java.lang.String)>(r1)
+org.apache.http.params.AbstractHttpParams.getIntParameter : $r3 = (java.lang.Integer) r2
+org.apache.http.params.AbstractHttpParams.getIntParameter : if r2 != null goto $r3 = (java.lang.Integer) r2
+org.apache.http.impl.SocketHttpClientConnection.assertOpen : $z0 = r0.<org.apache.http.impl.SocketHttpClientConnection: boolean open>
+org.apache.http.impl.SocketHttpClientConnection.assertNotOpen : $z0 = r0.<org.apache.http.impl.SocketHttpClientConnection: boolean open>
+org.apache.http.protocol.ResponseContent.process : $r11 = interfaceinvoke r4.<org.apache.http.HttpEntity: org.apache.http.Header getContentType()>()
+org.apache.http.protocol.ResponseContent.process : if r1 != null goto $z0 = interfaceinvoke r1.<org.apache.http.HttpResponse: boolean containsHeader(java.lang.String)>("Transfer-Encoding")
+org.apache.http.protocol.ResponseContent.process : $l2 = interfaceinvoke r4.<org.apache.http.HttpEntity: long getContentLength()>()
+org.apache.http.protocol.ResponseContent.process : if r4 == null goto $r15 = interfaceinvoke r1.<org.apache.http.HttpResponse: org.apache.http.StatusLine getStatusLine()>()
+org.apache.http.protocol.ResponseContent.process : r4 = interfaceinvoke r1.<org.apache.http.HttpResponse: org.apache.http.HttpEntity getEntity()>()
+org.apache.http.protocol.ResponseContent.process : $z0 = interfaceinvoke r1.<org.apache.http.HttpResponse: boolean containsHeader(java.lang.String)>("Transfer-Encoding")
+org.apache.http.protocol.ResponseContent.process : l0 = interfaceinvoke r4.<org.apache.http.HttpEntity: long getContentLength()>()
+org.apache.http.protocol.ResponseContent.process : $z2 = interfaceinvoke r1.<org.apache.http.HttpResponse: boolean containsHeader(java.lang.String)>("Content-Length")
+org.apache.http.protocol.ResponseContent.process : $b1 = l0 cmp 0L
+org.apache.http.protocol.ResponseContent.process : goto [?= return]
+org.apache.http.protocol.ResponseContent.process : $z4 = interfaceinvoke r4.<org.apache.http.HttpEntity: boolean isChunked()>()
+org.apache.http.protocol.ResponseContent.process : $r8 = interfaceinvoke r1.<org.apache.http.HttpResponse: org.apache.http.StatusLine getStatusLine()>()
+org.apache.http.protocol.ResponseContent.process : $r13 = interfaceinvoke r4.<org.apache.http.HttpEntity: org.apache.http.Header getContentEncoding()>()
+org.apache.http.message.HeaderGroup.clear : $r1 = r0.<org.apache.http.message.HeaderGroup: java.util.List headers>
+org.apache.http.impl.io.ContentLengthOutputStream.flush : $r1 = r0.<org.apache.http.impl.io.ContentLengthOutputStream: org.apache.http.io.SessionOutputBuffer out>
+org.apache.http.impl.DefaultHttpRequestFactory.isOneOf : $r2 = r0[i0]
+org.apache.http.impl.DefaultHttpRequestFactory.isOneOf : i0 = 0
+org.apache.http.impl.DefaultHttpRequestFactory.isOneOf : return 1
+org.apache.http.impl.DefaultHttpRequestFactory.isOneOf : return 0
+org.apache.http.impl.io.ContentLengthInputStream.read : return -1
+org.apache.http.impl.io.ContentLengthInputStream.read : $i0 = lengthof r1
+org.apache.http.impl.io.ContentLengthInputStream.read : $l6 = r0.<org.apache.http.impl.io.ContentLengthInputStream: long pos>
+org.apache.http.impl.io.ContentLengthInputStream.read : $r3 = r0.<org.apache.http.impl.io.ContentLengthInputStream: org.apache.http.io.SessionInputBuffer in>
+org.apache.http.impl.io.ContentLengthInputStream.read : $l19 = r0.<org.apache.http.impl.io.ContentLengthInputStream: long pos>
+org.apache.http.impl.io.ContentLengthInputStream.read : $l11 = r0.<org.apache.http.impl.io.ContentLengthInputStream: long contentLength>
+org.apache.http.impl.io.ContentLengthInputStream.read : $l3 = r0.<org.apache.http.impl.io.ContentLengthInputStream: long pos>
+org.apache.http.impl.io.ContentLengthInputStream.read : if i2 <= 0 goto return i2
+org.apache.http.impl.io.ContentLengthInputStream.read : if i2 != -1 goto (branch)
+org.apache.http.impl.io.ContentLengthInputStream.read : $z0 = r0.<org.apache.http.impl.io.ContentLengthInputStream: boolean closed>
+org.apache.http.impl.io.ContentLengthInputStream.read : return i2
+org.apache.http.testserver.HttpServer.access$200 : $r1 = r0.<org.apache.http.testserver.HttpServer: org.apache.http.protocol.HttpProcessor httpproc>
+org.apache.http.message.HeaderGroup.setHeaders : virtualinvoke r0.<org.apache.http.message.HeaderGroup: void clear()>()
+org.apache.http.message.HeaderGroup.setHeaders : i0 = 0
+org.apache.http.message.HeaderGroup.setHeaders : $r2 = r0.<org.apache.http.message.HeaderGroup: java.util.List headers>
+org.apache.http.message.HeaderGroup.setHeaders : if r1 != null goto i0 = 0
+org.apache.http.entity.BasicHttpEntity.getContent : $r1 = r0.<org.apache.http.entity.BasicHttpEntity: java.io.InputStream content>
+org.apache.http.entity.BasicHttpEntity.getContent : $r3 = r0.<org.apache.http.entity.BasicHttpEntity: java.io.InputStream content>
+org.apache.http.impl.EnglishReasonPhraseCatalog.getReason : r3 = null
+org.apache.http.impl.EnglishReasonPhraseCatalog.getReason : i1 = i0 / 100
+org.apache.http.impl.EnglishReasonPhraseCatalog.getReason : return r3
+org.apache.http.impl.EnglishReasonPhraseCatalog.getReason : $r11 = <org.apache.http.impl.EnglishReasonPhraseCatalog: java.lang.String[][] REASON_PHRASES>
+org.apache.http.impl.EnglishReasonPhraseCatalog.getReason : $r9 = <org.apache.http.impl.EnglishReasonPhraseCatalog: java.lang.String[][] REASON_PHRASES>
+org.apache.http.impl.EnglishReasonPhraseCatalog.getReason : $i3 = 100 * i1
+org.apache.http.impl.EnglishReasonPhraseCatalog.getReason : if i0 < 100 goto $r4 = new java.lang.IllegalArgumentException
+org.apache.http.impl.io.AbstractSessionInputBuffer.readLine : if i1 == -1 goto $z2 = virtualinvoke r0.<org.apache.http.impl.io.AbstractSessionInputBuffer: boolean hasBufferedData()>()
+org.apache.http.impl.io.AbstractSessionInputBuffer.readLine : $z2 = virtualinvoke r0.<org.apache.http.impl.io.AbstractSessionInputBuffer: boolean hasBufferedData()>()
+org.apache.http.impl.io.AbstractSessionInputBuffer.readLine : if i0 != -1 goto $i16 = specialinvoke r0.<org.apache.http.impl.io.AbstractSessionInputBuffer: int lineFromLineBuffer(org.apache.http.util.CharArrayBuffer)>(r1)
+org.apache.http.impl.io.AbstractSessionInputBuffer.readLine : $i13 = r0.<org.apache.http.impl.io.AbstractSessionInputBuffer: int maxLineLen>
+org.apache.http.impl.io.AbstractSessionInputBuffer.readLine : if r1 != null goto i0 = 0
+org.apache.http.impl.io.AbstractSessionInputBuffer.readLine : return -1
+org.apache.http.impl.io.AbstractSessionInputBuffer.readLine : if z0 == 0 goto (branch)
+org.apache.http.impl.io.AbstractSessionInputBuffer.readLine : goto [?= staticinvoke <edu.washington.cs.dt.impact.util.Tracer: void trace(java.lang.String,java.lang.String)>("if z0 == 0 goto (branch)", "org.apache.http.impl.io.AbstractSessionInputBuffer.readLine")]
+org.apache.http.impl.io.AbstractSessionInputBuffer.readLine : z0 = 1
+org.apache.http.impl.io.AbstractSessionInputBuffer.readLine : z0 = 0
+org.apache.http.impl.io.AbstractSessionInputBuffer.readLine : i1 = specialinvoke r0.<org.apache.http.impl.io.AbstractSessionInputBuffer: int locateLF()>()
+org.apache.http.impl.io.AbstractSessionInputBuffer.readLine : i0 = virtualinvoke r0.<org.apache.http.impl.io.AbstractSessionInputBuffer: int fillBuffer()>()
+org.apache.http.impl.io.AbstractSessionInputBuffer.readLine : i0 = 0
+org.apache.http.impl.io.AbstractSessionInputBuffer.readLine : if i0 != -1 goto $i13 = r0.<org.apache.http.impl.io.AbstractSessionInputBuffer: int maxLineLen>
+org.apache.http.impl.io.AbstractSessionInputBuffer.readLine : $i3 = specialinvoke r0.<org.apache.http.impl.io.AbstractSessionInputBuffer: int lineFromReadBuffer(org.apache.http.util.CharArrayBuffer,int)>(r1, i1)
+org.apache.http.impl.io.AbstractSessionInputBuffer.readLine : $r3 = r0.<org.apache.http.impl.io.AbstractSessionInputBuffer: org.apache.http.util.ByteArrayBuffer linebuffer>
+org.apache.http.testserver.HttpServer.acceptConnection : return r2
+org.apache.http.testserver.HttpServer.acceptConnection : $r3 = r0.<org.apache.http.testserver.HttpServer: java.net.ServerSocket serversocket>
+org.apache.http.testserver.HttpServer.acceptConnection : $r4 = new org.apache.http.impl.DefaultHttpServerConnection
+org.apache.http.testserver.HttpServer.acceptConnection : $r5 = r0.<org.apache.http.testserver.HttpServer: org.apache.http.params.HttpParams params>
+org.apache.http.message.BasicListHeaderIterator.filterHeader : $r6 = r0.<org.apache.http.message.BasicListHeaderIterator: java.lang.String headerName>
+org.apache.http.message.BasicListHeaderIterator.filterHeader : $r3 = r0.<org.apache.http.message.BasicListHeaderIterator: java.util.List allHeaders>
+org.apache.http.message.BasicListHeaderIterator.filterHeader : $r2 = r0.<org.apache.http.message.BasicListHeaderIterator: java.lang.String headerName>
+org.apache.http.message.BasicListHeaderIterator.filterHeader : return 1
+org.apache.http.message.BasicLineFormatter.initBuffer : virtualinvoke r1.<org.apache.http.util.CharArrayBuffer: void clear()>()
+org.apache.http.message.BasicLineFormatter.initBuffer : if r1 == null goto $r2 = new org.apache.http.util.CharArrayBuffer
+org.apache.http.message.BasicLineFormatter.initBuffer : return r1
+org.apache.http.message.AbstractHttpMessage.setHeader : $r4 = r0.<org.apache.http.message.AbstractHttpMessage: org.apache.http.message.HeaderGroup headergroup>
+org.apache.http.message.AbstractHttpMessage.setHeader : if r1 != null goto $r4 = r0.<org.apache.http.message.AbstractHttpMessage: org.apache.http.message.HeaderGroup headergroup>
+org.apache.http.protocol.RequestContent.process : if r1 != null goto $z0 = r1 instanceof org.apache.http.HttpEntityEnclosingRequest
+org.apache.http.protocol.RequestContent.process : $r9 = (org.apache.http.HttpEntityEnclosingRequest) r1
+org.apache.http.protocol.RequestContent.process : $l2 = interfaceinvoke r4.<org.apache.http.HttpEntity: long getContentLength()>()
+org.apache.http.protocol.RequestContent.process : $z0 = r1 instanceof org.apache.http.HttpEntityEnclosingRequest
+org.apache.http.protocol.RequestContent.process : if r4 != null goto $z3 = interfaceinvoke r4.<org.apache.http.HttpEntity: boolean isChunked()>()
+org.apache.http.protocol.RequestContent.process : $z3 = interfaceinvoke r4.<org.apache.http.HttpEntity: boolean isChunked()>()
+org.apache.http.protocol.RequestContent.process : $z1 = interfaceinvoke r1.<org.apache.http.HttpRequest: boolean containsHeader(java.lang.String)>("Transfer-Encoding")
+org.apache.http.protocol.RequestContent.process : $r19 = interfaceinvoke r4.<org.apache.http.HttpEntity: org.apache.http.Header getContentEncoding()>()
+org.apache.http.protocol.RequestContent.process : $r17 = interfaceinvoke r4.<org.apache.http.HttpEntity: org.apache.http.Header getContentType()>()
+org.apache.http.protocol.RequestContent.process : $r8 = interfaceinvoke r1.<org.apache.http.HttpRequest: org.apache.http.RequestLine getRequestLine()>()
+org.apache.http.protocol.RequestContent.process : $z2 = interfaceinvoke r1.<org.apache.http.HttpRequest: boolean containsHeader(java.lang.String)>("Content-Length")
+org.apache.http.impl.AbstractHttpServerConnection.createResponseWriter : $r3 = new org.apache.http.impl.io.HttpResponseWriter
+org.apache.http.impl.io.AbstractSessionOutputBuffer.getMetrics : $r1 = r0.<org.apache.http.impl.io.AbstractSessionOutputBuffer: org.apache.http.impl.io.HttpTransportMetricsImpl metrics>
+org.apache.http.message.ParserCursor.getUpperBound : $i0 = r0.<org.apache.http.message.ParserCursor: int upperBound>
+org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse : return r4
+org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse : if r3 != null goto r4 = null
+org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse : $z0 = virtualinvoke r0.<org.apache.http.protocol.HttpRequestExecutor: boolean canResponseHaveBody(org.apache.http.HttpRequest,org.apache.http.HttpResponse)>(r1, r4)
+org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse : r4 = interfaceinvoke r2.<org.apache.http.HttpClientConnection: org.apache.http.HttpResponse receiveResponseHeader()>()
+org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse : i0 = 0
+org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse : r4 = null
+org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse : if r1 != null goto (branch)
+org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse : if r4 == null goto r4 = interfaceinvoke r2.<org.apache.http.HttpClientConnection: org.apache.http.HttpResponse receiveResponseHeader()>()
+org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse : $r8 = interfaceinvoke r4.<org.apache.http.HttpResponse: org.apache.http.StatusLine getStatusLine()>()
+org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse : interfaceinvoke r2.<org.apache.http.HttpClientConnection: void receiveResponseEntity(org.apache.http.HttpResponse)>(r4)
+org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse : if r2 != null goto (branch)
+org.apache.http.testserver.HttpClient.execute : return r4
+org.apache.http.testserver.HttpClient.execute : $r19 = r0.<org.apache.http.testserver.HttpClient: org.apache.http.protocol.HttpRequestExecutor httpexecutor>
+org.apache.http.testserver.HttpClient.execute : $r16 = new org.apache.http.params.DefaultedHttpParams
+org.apache.http.testserver.HttpClient.execute : $r11 = r0.<org.apache.http.testserver.HttpClient: org.apache.http.protocol.HttpRequestExecutor httpexecutor>
+org.apache.http.testserver.HttpClient.execute : $r6 = r0.<org.apache.http.testserver.HttpClient: org.apache.http.protocol.HttpContext context>
+org.apache.http.testserver.HttpClient.execute : $r14 = r0.<org.apache.http.testserver.HttpClient: org.apache.http.protocol.HttpRequestExecutor httpexecutor>
+org.apache.http.testserver.HttpClient.execute : $r8 = new org.apache.http.params.DefaultedHttpParams
+org.apache.http.testserver.HttpClient.execute : $r5 = r0.<org.apache.http.testserver.HttpClient: org.apache.http.protocol.HttpContext context>
+org.apache.http.testserver.HttpClient.execute : $r7 = r0.<org.apache.http.testserver.HttpClient: org.apache.http.protocol.HttpContext context>
+org.apache.http.params.HttpConnectionParams.getTcpNoDelay : if r0 != null goto $z0 = interfaceinvoke r0.<org.apache.http.params.HttpParams: boolean getBooleanParameter(java.lang.String,boolean)>("http.tcp.nodelay", 1)
+org.apache.http.params.HttpConnectionParams.getTcpNoDelay : $z0 = interfaceinvoke r0.<org.apache.http.params.HttpParams: boolean getBooleanParameter(java.lang.String,boolean)>("http.tcp.nodelay", 1)
+org.apache.http.message.BasicHttpEntityEnclosingRequest.setEntity : r0.<org.apache.http.message.BasicHttpEntityEnclosingRequest: org.apache.http.HttpEntity entity> = r1
+org.apache.http.impl.SocketHttpServerConnection.createSessionInputBuffer : $r3 = new org.apache.http.impl.io.SocketInputBuffer
+org.apache.http.testserver.HttpServer.getPort : $r1 = r0.<org.apache.http.testserver.HttpServer: java.net.ServerSocket serversocket>
+org.apache.http.impl.HttpConnectionMetricsImpl.getRequestCount : $l0 = r0.<org.apache.http.impl.HttpConnectionMetricsImpl: long requestCount>
+org.apache.http.protocol.UriPatternMatcher.register : if r1 != null goto $r4 = r0.<org.apache.http.protocol.UriPatternMatcher: java.util.Map map>
+org.apache.http.protocol.UriPatternMatcher.register : $r4 = r0.<org.apache.http.protocol.UriPatternMatcher: java.util.Map map>
+org.apache.http.params.HttpConnectionParams.getSocketBufferSize : if r0 != null goto $i0 = interfaceinvoke r0.<org.apache.http.params.HttpParams: int getIntParameter(java.lang.String,int)>("http.socket.buffer-size", -1)
+org.apache.http.params.HttpConnectionParams.getSocketBufferSize : $i0 = interfaceinvoke r0.<org.apache.http.params.HttpParams: int getIntParameter(java.lang.String,int)>("http.socket.buffer-size", -1)
+org.apache.http.protocol.UriPatternMatcher.lookup : return r2
+org.apache.http.protocol.UriPatternMatcher.lookup : $r10 = interfaceinvoke r4.<java.util.Iterator: java.lang.Object next()>()
+org.apache.http.protocol.UriPatternMatcher.lookup : $r7 = r0.<org.apache.http.protocol.UriPatternMatcher: java.util.Map map>
+org.apache.http.protocol.UriPatternMatcher.lookup : goto [?= $z0 = interfaceinvoke r4.<java.util.Iterator: boolean hasNext()>()]
+org.apache.http.protocol.UriPatternMatcher.lookup : if r3 == null goto $r11 = r0.<org.apache.http.protocol.UriPatternMatcher: java.util.Map map>
+org.apache.http.protocol.UriPatternMatcher.lookup : if r2 != null goto return r2
+org.apache.http.protocol.UriPatternMatcher.lookup : $z1 = virtualinvoke r0.<org.apache.http.protocol.UriPatternMatcher: boolean matchUriRequestPattern(java.lang.String,java.lang.String)>(r5, r1)
+org.apache.http.protocol.UriPatternMatcher.lookup : r3 = r5
+org.apache.http.protocol.UriPatternMatcher.lookup : i0 = virtualinvoke r1.<java.lang.String: int indexOf(java.lang.String)>("?")
+org.apache.http.protocol.UriPatternMatcher.lookup : $r8 = r0.<org.apache.http.protocol.UriPatternMatcher: java.util.Map map>
+org.apache.http.protocol.UriPatternMatcher.lookup : r3 = null
+org.apache.http.protocol.UriPatternMatcher.lookup : $r11 = r0.<org.apache.http.protocol.UriPatternMatcher: java.util.Map map>
+org.apache.http.protocol.UriPatternMatcher.lookup : if r1 != null goto i0 = virtualinvoke r1.<java.lang.String: int indexOf(java.lang.String)>("?")
+org.apache.http.protocol.UriPatternMatcher.lookup : if i0 == -1 goto $r7 = r0.<org.apache.http.protocol.UriPatternMatcher: java.util.Map map>
+org.apache.http.util.CharArrayBuffer.append : $r12 = r0.<org.apache.http.util.CharArrayBuffer: char[] buffer>
+org.apache.http.util.CharArrayBuffer.append : $r11 = r0.<org.apache.http.util.CharArrayBuffer: char[] buffer>
+org.apache.http.util.CharArrayBuffer.append : $i2 = r0.<org.apache.http.util.CharArrayBuffer: int len>
+org.apache.http.util.CharArrayBuffer.append : $r3 = r0.<org.apache.http.util.CharArrayBuffer: char[] buffer>
+org.apache.http.util.CharArrayBuffer.append : if r1 != null goto (branch)
+org.apache.http.util.CharArrayBuffer.append : $r1 = r0.<org.apache.http.util.CharArrayBuffer: char[] buffer>
+org.apache.http.util.CharArrayBuffer.append : $r2 = r0.<org.apache.http.util.CharArrayBuffer: char[] buffer>
+org.apache.http.util.CharArrayBuffer.append : i3 = i2 + i1
+org.apache.http.util.CharArrayBuffer.append : i0 = virtualinvoke r1.<java.lang.String: int length()>()
+org.apache.http.util.CharArrayBuffer.append : r0.<org.apache.http.util.CharArrayBuffer: int len> = i1
+org.apache.http.util.CharArrayBuffer.append : i2 = r0.<org.apache.http.util.CharArrayBuffer: int len>
+org.apache.http.util.CharArrayBuffer.append : r0.<org.apache.http.util.CharArrayBuffer: int len> = i3
+org.apache.http.util.CharArrayBuffer.append : if r1 != null goto i0 = virtualinvoke r1.<java.lang.String: int length()>()
+org.apache.http.util.CharArrayBuffer.append : i4 = i0
+org.apache.http.util.CharArrayBuffer.append : if i0 < 0 goto $r3 = new java.lang.IndexOutOfBoundsException
+org.apache.http.util.CharArrayBuffer.append : if i1 != 0 goto i2 = r0.<org.apache.http.util.CharArrayBuffer: int len>
+org.apache.http.impl.DefaultConnectionReuseStrategy.createTokenIterator : $r2 = new org.apache.http.message.BasicTokenIterator
+org.apache.http.impl.entity.EntitySerializer.serialize : r4 = virtualinvoke r0.<org.apache.http.impl.entity.EntitySerializer: java.io.OutputStream doSerialize(org.apache.http.io.SessionOutputBuffer,org.apache.http.HttpMessage)>(r1, r2)
+org.apache.http.impl.entity.EntitySerializer.serialize : if r1 != null goto (branch)
+org.apache.http.impl.entity.EntitySerializer.serialize : interfaceinvoke r3.<org.apache.http.HttpEntity: void writeTo(java.io.OutputStream)>(r4)
+org.apache.http.impl.entity.EntitySerializer.serialize : virtualinvoke r4.<java.io.OutputStream: void close()>()
+org.apache.http.impl.entity.EntitySerializer.serialize : if r3 != null goto r4 = virtualinvoke r0.<org.apache.http.impl.entity.EntitySerializer: java.io.OutputStream doSerialize(org.apache.http.io.SessionOutputBuffer,org.apache.http.HttpMessage)>(r1, r2)
+org.apache.http.impl.entity.EntitySerializer.serialize : if r2 != null goto (branch)
+org.apache.http.message.BasicRequestLine.getMethod : $r1 = r0.<org.apache.http.message.BasicRequestLine: java.lang.String method>
+org.apache.http.entity.AbstractHttpEntity.setChunked : r0.<org.apache.http.entity.AbstractHttpEntity: boolean chunked> = z0
+org.apache.http.message.BasicHttpResponse.setEntity : r0.<org.apache.http.message.BasicHttpResponse: org.apache.http.HttpEntity entity> = r1
+org.apache.http.impl.AbstractHttpServerConnection.sendResponseHeader : $r5 = r0.<org.apache.http.impl.AbstractHttpServerConnection: org.apache.http.impl.HttpConnectionMetricsImpl metrics>
+org.apache.http.impl.AbstractHttpServerConnection.sendResponseHeader : $r4 = interfaceinvoke r1.<org.apache.http.HttpResponse: org.apache.http.StatusLine getStatusLine()>()
+org.apache.http.impl.AbstractHttpServerConnection.sendResponseHeader : if r1 != null goto virtualinvoke r0.<org.apache.http.impl.AbstractHttpServerConnection: void assertOpen()>()
+org.apache.http.impl.AbstractHttpServerConnection.sendResponseHeader : $r3 = r0.<org.apache.http.impl.AbstractHttpServerConnection: org.apache.http.io.HttpMessageWriter responseWriter>
+org.apache.http.impl.AbstractHttpServerConnection.sendResponseHeader : virtualinvoke r0.<org.apache.http.impl.AbstractHttpServerConnection: void assertOpen()>()
+org.apache.http.impl.io.AbstractSessionInputBuffer.getMetrics : $r1 = r0.<org.apache.http.impl.io.AbstractSessionInputBuffer: org.apache.http.impl.io.HttpTransportMetricsImpl metrics>
+org.apache.http.impl.io.AbstractMessageParser.parse : return r2
+org.apache.http.impl.io.AbstractMessageParser.parse : $r8 = r0.<org.apache.http.impl.io.AbstractMessageParser: org.apache.http.io.SessionInputBuffer sessionBuffer>
+org.apache.http.impl.io.AbstractMessageParser.parse : r0.<org.apache.http.impl.io.AbstractMessageParser: int state> = 1
+org.apache.http.impl.io.AbstractMessageParser.parse : r0.<org.apache.http.impl.io.AbstractMessageParser: org.apache.http.HttpMessage message> = null
+org.apache.http.impl.io.AbstractMessageParser.parse : lookupswitch(i0) {     case 0: goto $r3 = r0.<org.apache.http.impl.io.AbstractMessageParser: org.apache.http.io.SessionInputBuffer sessionBuffer>;     case 1: goto $r8 = r0.<org.apache.http.impl.io.AbstractMessageParser: org.apache.http.io.SessionInputBuffer sessionBuffer>;     default: goto $r14 = new java.lang.IllegalStateException; }
+org.apache.http.impl.io.AbstractMessageParser.parse : $r13 = r0.<org.apache.http.impl.io.AbstractMessageParser: java.util.List headerLines>
+org.apache.http.impl.io.AbstractMessageParser.parse : $r12 = r0.<org.apache.http.impl.io.AbstractMessageParser: org.apache.http.HttpMessage message>
+org.apache.http.impl.io.AbstractMessageParser.parse : goto [?= r0.<org.apache.http.impl.io.AbstractMessageParser: int state> = 1]
+org.apache.http.impl.io.AbstractMessageParser.parse : r0.<org.apache.http.impl.io.AbstractMessageParser: int state> = 0
+org.apache.http.impl.io.AbstractMessageParser.parse : i0 = r0.<org.apache.http.impl.io.AbstractMessageParser: int state>
+org.apache.http.impl.io.AbstractMessageParser.parse : r2 = r0.<org.apache.http.impl.io.AbstractMessageParser: org.apache.http.HttpMessage message>
+org.apache.http.impl.io.AbstractMessageParser.parse : $r3 = r0.<org.apache.http.impl.io.AbstractMessageParser: org.apache.http.io.SessionInputBuffer sessionBuffer>
+org.apache.http.impl.HttpConnectionMetricsImpl.incrementRequestCount : $l0 = r0.<org.apache.http.impl.HttpConnectionMetricsImpl: long requestCount>
+org.apache.http.protocol.HttpRequestExecutor.canResponseHaveBody : $r6 = interfaceinvoke r2.<org.apache.http.HttpResponse: org.apache.http.StatusLine getStatusLine()>()
+org.apache.http.protocol.HttpRequestExecutor.canResponseHaveBody : $r3 = "HEAD"
+org.apache.http.protocol.HttpRequestExecutor.canResponseHaveBody : if i0 < 200 goto $z1 = 0
+org.apache.http.entity.ByteArrayEntity.getContentLength : $i0 = r0.<org.apache.http.entity.ByteArrayEntity: int len>
+org.apache.http.params.HttpProtocolParams.getHttpElementCharset : if r0 != null goto $r3 = interfaceinvoke r0.<org.apache.http.params.HttpParams: java.lang.Object getParameter(java.lang.String)>("http.protocol.element-charset")
+org.apache.http.params.HttpProtocolParams.getHttpElementCharset : $r3 = interfaceinvoke r0.<org.apache.http.params.HttpParams: java.lang.Object getParameter(java.lang.String)>("http.protocol.element-charset")
+org.apache.http.params.HttpProtocolParams.getHttpElementCharset : if r1 != null goto return r1
+org.apache.http.params.HttpProtocolParams.getHttpElementCharset : r1 = "US-ASCII"
+org.apache.http.params.HttpProtocolParams.getHttpElementCharset : return r1
+org.apache.http.util.ByteArrayBuffer.clear : r0.<org.apache.http.util.ByteArrayBuffer: int len> = 0
+org.apache.http.params.HttpConnectionParams.getLinger : $i0 = interfaceinvoke r0.<org.apache.http.params.HttpParams: int getIntParameter(java.lang.String,int)>("http.socket.linger", -1)
+org.apache.http.params.HttpConnectionParams.getLinger : if r0 != null goto $i0 = interfaceinvoke r0.<org.apache.http.params.HttpParams: int getIntParameter(java.lang.String,int)>("http.socket.linger", -1)
+org.apache.http.message.HeaderGroup.iterator : $r2 = new org.apache.http.message.BasicListHeaderIterator
+org.apache.http.message.HeaderGroup.iterator : $r1 = new org.apache.http.message.BasicListHeaderIterator
+org.apache.http.protocol.HttpRequestExecutor.preProcess : if r3 != null goto interfaceinvoke r3.<org.apache.http.protocol.HttpContext: void setAttribute(java.lang.String,java.lang.Object)>("http.request", r1)
+org.apache.http.protocol.HttpRequestExecutor.preProcess : if r1 != null goto (branch)
+org.apache.http.protocol.HttpRequestExecutor.preProcess : interfaceinvoke r2.<org.apache.http.protocol.HttpProcessor: void process(org.apache.http.HttpRequest,org.apache.http.protocol.HttpContext)>(r1, r3)
+org.apache.http.protocol.HttpRequestExecutor.preProcess : interfaceinvoke r3.<org.apache.http.protocol.HttpContext: void setAttribute(java.lang.String,java.lang.Object)>("http.request", r1)
+org.apache.http.protocol.HttpRequestExecutor.preProcess : if r2 != null goto (branch)
+org.apache.http.message.ParserCursor.atEnd : $i0 = r0.<org.apache.http.message.ParserCursor: int pos>
+org.apache.http.entity.ByteArrayEntity.writeTo : if r1 != null goto $r3 = r0.<org.apache.http.entity.ByteArrayEntity: byte[] b>
+org.apache.http.entity.ByteArrayEntity.writeTo : $r3 = r0.<org.apache.http.entity.ByteArrayEntity: byte[] b>
+org.apache.http.entity.ByteArrayEntity.writeTo : virtualinvoke r1.<java.io.OutputStream: void flush()>()
+org.apache.http.HttpVersion.forVersion : if i1 != 0 goto (branch)
+org.apache.http.HttpVersion.forVersion : $r1 = <org.apache.http.HttpVersion: org.apache.http.HttpVersion HTTP_1_0>
+org.apache.http.HttpVersion.forVersion : $i2 = r0.<org.apache.http.HttpVersion: int major>
+org.apache.http.HttpVersion.forVersion : if i0 != 1 goto (branch)
+org.apache.http.message.BasicLineFormatter.doFormatRequestLine : r4 = interfaceinvoke r2.<org.apache.http.RequestLine: java.lang.String getUri()>()
+org.apache.http.message.BasicLineFormatter.doFormatRequestLine : virtualinvoke r1.<org.apache.http.util.CharArrayBuffer: void append(char)>(32)
+org.apache.http.message.BasicLineFormatter.doFormatRequestLine : r3 = interfaceinvoke r2.<org.apache.http.RequestLine: java.lang.String getMethod()>()
+org.apache.http.message.BasicLineFormatter.doFormatRequestLine : $i1 = virtualinvoke r3.<java.lang.String: int length()>()
+org.apache.http.message.BasicLineFormatter.doFormatRequestLine : virtualinvoke r1.<org.apache.http.util.CharArrayBuffer: void append(java.lang.String)>(r3)
+org.apache.http.message.BasicLineFormatter.doFormatRequestLine : $r6 = interfaceinvoke r2.<org.apache.http.RequestLine: org.apache.http.ProtocolVersion getProtocolVersion()>()
+org.apache.http.message.BasicLineFormatter.doFormatRequestLine : virtualinvoke r1.<org.apache.http.util.CharArrayBuffer: void append(java.lang.String)>(r4)
+org.apache.http.message.BasicLineFormatter.doFormatRequestLine : virtualinvoke r1.<org.apache.http.util.CharArrayBuffer: void ensureCapacity(int)>(i0)
+org.apache.http.message.BasicHttpEntityEnclosingRequest.getEntity : $r1 = r0.<org.apache.http.message.BasicHttpEntityEnclosingRequest: org.apache.http.HttpEntity entity>
+org.apache.http.impl.io.AbstractSessionOutputBuffer.flush : $r1 = r0.<org.apache.http.impl.io.AbstractSessionOutputBuffer: java.io.OutputStream outstream>
+org.apache.http.impl.io.AbstractSessionOutputBuffer.flush : virtualinvoke r0.<org.apache.http.impl.io.AbstractSessionOutputBuffer: void flushBuffer()>()
+org.apache.http.message.BasicLineParser.parseProtocolVersion : virtualinvoke r2.<org.apache.http.message.ParserCursor: void updatePos(int)>(i18)
+org.apache.http.message.BasicLineParser.parseProtocolVersion : i1 = virtualinvoke r2.<org.apache.http.message.ParserCursor: int getPos()>()
+org.apache.http.message.BasicLineParser.parseProtocolVersion : i16 = virtualinvoke r1.<org.apache.http.util.CharArrayBuffer: int indexOf(int,int,int)>(46, i15, i2)
+org.apache.http.message.BasicLineParser.parseProtocolVersion : virtualinvoke r0.<org.apache.http.message.BasicLineParser: void skipWhitespace(org.apache.http.util.CharArrayBuffer,org.apache.http.message.ParserCursor)>(r1, r2)
+org.apache.http.message.BasicLineParser.parseProtocolVersion : if z0 != 0 goto $i14 = i0 + 1
+org.apache.http.message.BasicLineParser.parseProtocolVersion : i18 = virtualinvoke r1.<org.apache.http.util.CharArrayBuffer: int indexOf(int,int,int)>(32, i17, i2)
+org.apache.http.message.BasicLineParser.parseProtocolVersion : if r1 != null goto (branch)
+org.apache.http.message.BasicLineParser.parseProtocolVersion : if r2 != null goto $r8 = r0.<org.apache.http.message.BasicLineParser: org.apache.http.ProtocolVersion protocol>
+org.apache.http.message.BasicLineParser.parseProtocolVersion : $i9 = i3 + i4
+org.apache.http.message.BasicLineParser.parseProtocolVersion : $i7 = i3 + i0
+org.apache.http.message.BasicLineParser.parseProtocolVersion : $r27 = virtualinvoke r1.<org.apache.http.util.CharArrayBuffer: java.lang.String substringTrimmed(int,int)>(i15, i16)
+org.apache.http.message.BasicLineParser.parseProtocolVersion : if i18 != -1 goto $r35 = virtualinvoke r1.<org.apache.http.util.CharArrayBuffer: java.lang.String substringTrimmed(int,int)>(i17, i18)
+org.apache.http.message.BasicLineParser.parseProtocolVersion : $i14 = i0 + 1
+org.apache.http.message.BasicLineParser.parseProtocolVersion : goto [?= i17 = i16 + 1]
+org.apache.http.message.BasicLineParser.parseProtocolVersion : $r8 = r0.<org.apache.http.message.BasicLineParser: org.apache.http.ProtocolVersion protocol>
+org.apache.http.message.BasicLineParser.parseProtocolVersion : i17 = i16 + 1
+org.apache.http.message.BasicLineParser.parseProtocolVersion : i3 = virtualinvoke r2.<org.apache.http.message.ParserCursor: int getPos()>()
+org.apache.http.message.BasicLineParser.parseProtocolVersion : if i16 != -1 goto $r27 = virtualinvoke r1.<org.apache.http.util.CharArrayBuffer: java.lang.String substringTrimmed(int,int)>(i15, i16)
+org.apache.http.message.BasicLineParser.parseProtocolVersion : i18 = i2
+org.apache.http.message.BasicLineParser.parseProtocolVersion : if z0 == 0 goto (branch)
+org.apache.http.message.BasicLineParser.parseProtocolVersion : z0 = 1
+org.apache.http.message.BasicLineParser.parseProtocolVersion : i0 = virtualinvoke r3.<java.lang.String: int length()>()
+org.apache.http.message.BasicLineParser.parseProtocolVersion : $i12 = i3 + i0
+org.apache.http.message.BasicLineParser.parseProtocolVersion : $r35 = virtualinvoke r1.<org.apache.http.util.CharArrayBuffer: java.lang.String substringTrimmed(int,int)>(i17, i18)
+org.apache.http.message.BasicLineParser.parseProtocolVersion : goto [?= virtualinvoke r2.<org.apache.http.message.ParserCursor: void updatePos(int)>(i18)]
+org.apache.http.message.BasicLineParser.parseProtocolVersion : $r43 = virtualinvoke r0.<org.apache.http.message.BasicLineParser: org.apache.http.ProtocolVersion createProtocolVersion(int,int)>(i5, i6)
+org.apache.http.message.BasicLineParser.parseProtocolVersion : i4 = 0
+org.apache.http.message.BasicLineParser.parseProtocolVersion : i2 = virtualinvoke r2.<org.apache.http.message.ParserCursor: int getUpperBound()>()
+org.apache.http.impl.io.HttpResponseParser.parseHead : $r11 = r0.<org.apache.http.impl.io.HttpResponseParser: org.apache.http.HttpResponseFactory responseFactory>
+org.apache.http.impl.io.HttpResponseParser.parseHead : if i0 != -1 goto $r7 = new org.apache.http.message.ParserCursor
+org.apache.http.impl.io.HttpResponseParser.parseHead : $r4 = r0.<org.apache.http.impl.io.HttpResponseParser: org.apache.http.util.CharArrayBuffer lineBuf>
+org.apache.http.impl.io.HttpResponseParser.parseHead : $r2 = virtualinvoke r0.<org.apache.http.impl.io.HttpResponseParser: org.apache.http.HttpResponse parseHead(org.apache.http.io.SessionInputBuffer)>(r1)
+org.apache.http.impl.io.HttpResponseParser.parseHead : $r9 = r0.<org.apache.http.impl.io.HttpResponseParser: org.apache.http.message.LineParser lineParser>
+org.apache.http.impl.io.HttpResponseParser.parseHead : $r7 = new org.apache.http.message.ParserCursor
+org.apache.http.impl.io.HttpResponseParser.parseHead : $r5 = r0.<org.apache.http.impl.io.HttpResponseParser: org.apache.http.util.CharArrayBuffer lineBuf>
+org.apache.http.message.BasicListHeaderIterator.next : $r1 = virtualinvoke r0.<org.apache.http.message.BasicListHeaderIterator: org.apache.http.Header next()>()
+org.apache.http.message.BasicListHeaderIterator.next : $r1 = virtualinvoke r0.<org.apache.http.message.BasicListHeaderIterator: org.apache.http.Header nextHeader()>()
+org.apache.http.message.BasicLineParser.parseStatusLine : virtualinvoke r0.<org.apache.http.message.BasicLineParser: void skipWhitespace(org.apache.http.util.CharArrayBuffer,org.apache.http.message.ParserCursor)>(r1, r2)
+org.apache.http.message.BasicLineParser.parseStatusLine : if i3 >= 0 goto z0 = 0
+org.apache.http.message.BasicLineParser.parseStatusLine : r3 = virtualinvoke r0.<org.apache.http.message.BasicLineParser: org.apache.http.ProtocolVersion parseProtocolVersion(org.apache.http.util.CharArrayBuffer,org.apache.http.message.ParserCursor)>(r1, r2)
+org.apache.http.message.BasicLineParser.parseStatusLine : $r22 = virtualinvoke r0.<org.apache.http.message.BasicLineParser: org.apache.http.StatusLine createStatusLine(org.apache.http.ProtocolVersion,int,java.lang.String)>(r3, i7, r21)
+org.apache.http.message.BasicLineParser.parseStatusLine : n0 = null
+org.apache.http.message.BasicLineParser.parseStatusLine : i1 = virtualinvoke r2.<org.apache.http.message.ParserCursor: int getUpperBound()>()
+org.apache.http.message.BasicLineParser.parseStatusLine : if r1 != null goto (branch)
+org.apache.http.message.BasicLineParser.parseStatusLine : if i8 >= i1 goto r21 = ""
+org.apache.http.message.BasicLineParser.parseStatusLine : i3 = virtualinvoke r1.<org.apache.http.util.CharArrayBuffer: int indexOf(int,int,int)>(32, i2, i1)
+org.apache.http.message.BasicLineParser.parseStatusLine : i2 = virtualinvoke r2.<org.apache.http.message.ParserCursor: int getPos()>()
+org.apache.http.message.BasicLineParser.parseStatusLine : r4 = virtualinvoke r1.<org.apache.http.util.CharArrayBuffer: java.lang.String substringTrimmed(int,int)>(i2, i3)
+org.apache.http.message.BasicLineParser.parseStatusLine : i0 = virtualinvoke r2.<org.apache.http.message.ParserCursor: int getPos()>()
+org.apache.http.message.BasicLineParser.parseStatusLine : z0 = 0
+org.apache.http.message.BasicLineParser.parseStatusLine : i7 = staticinvoke <java.lang.Integer: int parseInt(java.lang.String)>(r4)
+org.apache.http.message.BasicLineParser.parseStatusLine : r21 = virtualinvoke r1.<org.apache.http.util.CharArrayBuffer: java.lang.String substringTrimmed(int,int)>(i8, i1)
+org.apache.http.message.BasicLineParser.parseStatusLine : i8 = i3
+org.apache.http.message.BasicLineParser.parseStatusLine : if r2 != null goto i0 = virtualinvoke r2.<org.apache.http.message.ParserCursor: int getPos()>()
+org.apache.http.message.BasicLineParser.parseStatusLine : goto [?= i8 = i3]
+org.apache.http.message.BasicLineParser.parseStatusLine : $c6 = virtualinvoke r4.<java.lang.String: char charAt(int)>(i4)
+org.apache.http.message.BasicLineParser.parseStatusLine : i4 = 0
+org.apache.http.impl.io.AbstractSessionInputBuffer.lineFromReadBuffer : $r4 = r0.<org.apache.http.impl.io.AbstractSessionInputBuffer: byte[] buffer>
+org.apache.http.impl.io.AbstractSessionInputBuffer.lineFromReadBuffer : $z0 = r0.<org.apache.http.impl.io.AbstractSessionInputBuffer: boolean ascii>
+org.apache.http.impl.io.AbstractSessionInputBuffer.lineFromReadBuffer : if i0 <= 0 goto i2 = i0 - i1
+org.apache.http.impl.io.AbstractSessionInputBuffer.lineFromReadBuffer : $i3 = i0 + 1
+org.apache.http.impl.io.AbstractSessionInputBuffer.lineFromReadBuffer : i1 = r0.<org.apache.http.impl.io.AbstractSessionInputBuffer: int bufferpos>
+org.apache.http.impl.io.AbstractSessionInputBuffer.lineFromReadBuffer : i2 = i0 - i1
+org.apache.http.impl.io.AbstractSessionInputBuffer.lineFromReadBuffer : i0 = i0 + -1
+org.apache.http.impl.io.AbstractSessionInputBuffer.lineFromReadBuffer : return i2
+org.apache.http.impl.AbstractHttpServerConnection.receiveRequestHeader : $r2 = r0.<org.apache.http.impl.AbstractHttpServerConnection: org.apache.http.io.HttpMessageParser requestParser>
+org.apache.http.impl.AbstractHttpServerConnection.receiveRequestHeader : return r1
+org.apache.http.impl.AbstractHttpServerConnection.receiveRequestHeader : $r4 = r0.<org.apache.http.impl.AbstractHttpServerConnection: org.apache.http.impl.HttpConnectionMetricsImpl metrics>
+org.apache.http.impl.AbstractHttpServerConnection.receiveRequestHeader : virtualinvoke r0.<org.apache.http.impl.AbstractHttpServerConnection: void assertOpen()>()
+org.apache.http.impl.SocketHttpServerConnection.createSessionOutputBuffer : $r3 = new org.apache.http.impl.io.SocketOutputBuffer
+org.apache.http.message.BasicHttpEntityEnclosingRequest.expectContinue : if r1 == null goto $z1 = 0
+org.apache.http.message.BasicHttpEntityEnclosingRequest.expectContinue : r1 = virtualinvoke r0.<org.apache.http.message.BasicHttpEntityEnclosingRequest: org.apache.http.Header getFirstHeader(java.lang.String)>("Expect")
+org.apache.http.entity.BasicHttpEntity.setContentLength : r0.<org.apache.http.entity.BasicHttpEntity: long length> = l0
+org.apache.http.impl.io.ContentLengthOutputStream.write : $z0 = r0.<org.apache.http.impl.io.ContentLengthOutputStream: boolean closed>
+org.apache.http.impl.io.ContentLengthOutputStream.write : $r3 = r0.<org.apache.http.impl.io.ContentLengthOutputStream: org.apache.http.io.SessionOutputBuffer out>
+org.apache.http.impl.io.ContentLengthOutputStream.write : $l6 = r0.<org.apache.http.impl.io.ContentLengthOutputStream: long contentLength>
+org.apache.http.impl.io.ContentLengthOutputStream.write : $l3 = r0.<org.apache.http.impl.io.ContentLengthOutputStream: long total>
+org.apache.http.impl.io.ContentLengthOutputStream.write : $l8 = (long) i1
+org.apache.http.impl.io.ContentLengthOutputStream.write : $l10 = r0.<org.apache.http.impl.io.ContentLengthOutputStream: long total>
+org.apache.http.params.DefaultedHttpParams.getParameter : return r2
+org.apache.http.params.DefaultedHttpParams.getParameter : $r3 = r0.<org.apache.http.params.DefaultedHttpParams: org.apache.http.params.HttpParams local>
+org.apache.http.params.DefaultedHttpParams.getParameter : if r2 != null goto return r2
+org.apache.http.params.DefaultedHttpParams.getParameter : $r5 = r0.<org.apache.http.params.DefaultedHttpParams: org.apache.http.params.HttpParams defaults>
+org.apache.http.impl.AbstractHttpServerConnection.receiveRequestEntity : interfaceinvoke r1.<org.apache.http.HttpEntityEnclosingRequest: void setEntity(org.apache.http.HttpEntity)>(r2)
+org.apache.http.impl.AbstractHttpServerConnection.receiveRequestEntity : $r4 = r0.<org.apache.http.impl.AbstractHttpServerConnection: org.apache.http.impl.entity.EntityDeserializer entitydeserializer>
+org.apache.http.impl.AbstractHttpServerConnection.receiveRequestEntity : if r1 != null goto virtualinvoke r0.<org.apache.http.impl.AbstractHttpServerConnection: void assertOpen()>()
+org.apache.http.impl.AbstractHttpServerConnection.receiveRequestEntity : virtualinvoke r0.<org.apache.http.impl.AbstractHttpServerConnection: void assertOpen()>()
+org.apache.http.message.AbstractHttpMessage.setParams : r0.<org.apache.http.message.AbstractHttpMessage: org.apache.http.params.HttpParams params> = r1
+org.apache.http.message.AbstractHttpMessage.setParams : if r1 != null goto r0.<org.apache.http.message.AbstractHttpMessage: org.apache.http.params.HttpParams params> = r1
+org.apache.http.ProtocolVersion.isComparable : if r1 == null goto $z1 = 0
+org.apache.http.impl.AbstractHttpClientConnection.createHttpResponseFactory : $r1 = new org.apache.http.impl.DefaultHttpResponseFactory
+org.apache.http.message.AbstractHttpMessage.getFirstHeader : $r2 = r0.<org.apache.http.message.AbstractHttpMessage: org.apache.http.message.HeaderGroup headergroup>
+org.apache.http.protocol.RequestTargetHost.process : $z0 = virtualinvoke r4.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("CONNECT")
+org.apache.http.protocol.RequestTargetHost.process : $r21 = virtualinvoke r5.<org.apache.http.HttpHost: java.lang.String toHostString()>()
+org.apache.http.protocol.RequestTargetHost.process : $z2 = interfaceinvoke r1.<org.apache.http.HttpRequest: boolean containsHeader(java.lang.String)>("Host")
+org.apache.http.protocol.RequestTargetHost.process : if r5 != null goto $r21 = virtualinvoke r5.<org.apache.http.HttpHost: java.lang.String toHostString()>()
+org.apache.http.protocol.RequestTargetHost.process : $r11 = interfaceinvoke r1.<org.apache.http.HttpRequest: org.apache.http.RequestLine getRequestLine()>()
+org.apache.http.protocol.RequestTargetHost.process : $r10 = interfaceinvoke r1.<org.apache.http.HttpRequest: org.apache.http.RequestLine getRequestLine()>()
+org.apache.http.protocol.RequestTargetHost.process : $r13 = interfaceinvoke r2.<org.apache.http.protocol.HttpContext: java.lang.Object getAttribute(java.lang.String)>("http.target_host")
+org.apache.http.protocol.RequestTargetHost.process : if r1 != null goto (branch)
+org.apache.http.protocol.RequestTargetHost.process : if r2 != null goto $r10 = interfaceinvoke r1.<org.apache.http.HttpRequest: org.apache.http.RequestLine getRequestLine()>()
+org.apache.http.util.ByteArrayBuffer.toByteArray : $i1 = r0.<org.apache.http.util.ByteArrayBuffer: int len>
+org.apache.http.util.ByteArrayBuffer.toByteArray : $i0 = r0.<org.apache.http.util.ByteArrayBuffer: int len>
+org.apache.http.util.ByteArrayBuffer.toByteArray : return r1
+org.apache.http.util.ByteArrayBuffer.toByteArray : $r2 = r0.<org.apache.http.util.ByteArrayBuffer: byte[] buffer>
+org.apache.http.impl.SocketHttpClientConnection.bind : $r5 = virtualinvoke r0.<org.apache.http.impl.SocketHttpClientConnection: org.apache.http.io.SessionInputBuffer createSessionInputBuffer(java.net.Socket,int,org.apache.http.params.HttpParams)>(r1, i0, r2)
+org.apache.http.impl.SocketHttpClientConnection.bind : r0.<org.apache.http.impl.SocketHttpClientConnection: boolean open> = 1
+org.apache.http.impl.SocketHttpClientConnection.bind : r0.<org.apache.http.impl.SocketHttpClientConnection: java.net.Socket socket> = r1
+org.apache.http.impl.SocketHttpClientConnection.bind : if r2 != null goto r0.<org.apache.http.impl.SocketHttpClientConnection: java.net.Socket socket> = r1
+org.apache.http.impl.SocketHttpClientConnection.bind : if r1 != null goto (branch)
+org.apache.http.impl.SocketHttpClientConnection.bind : i0 = staticinvoke <org.apache.http.params.HttpConnectionParams: int getSocketBufferSize(org.apache.http.params.HttpParams)>(r2)
+org.apache.http.impl.entity.EntityDeserializer.doDeserialize : return r4
+org.apache.http.impl.entity.EntityDeserializer.doDeserialize : if r6 == null goto return r4
+org.apache.http.impl.entity.EntityDeserializer.doDeserialize : r6 = interfaceinvoke r2.<org.apache.http.HttpMessage: org.apache.http.Header getFirstHeader(java.lang.String)>("Content-Encoding")
+org.apache.http.impl.entity.EntityDeserializer.doDeserialize : if r5 == null goto r6 = interfaceinvoke r2.<org.apache.http.HttpMessage: org.apache.http.Header getFirstHeader(java.lang.String)>("Content-Encoding")
+org.apache.http.impl.entity.EntityDeserializer.doDeserialize : r5 = interfaceinvoke r2.<org.apache.http.HttpMessage: org.apache.http.Header getFirstHeader(java.lang.String)>("Content-Type")
+org.apache.http.impl.entity.EntityDeserializer.doDeserialize : virtualinvoke r4.<org.apache.http.entity.BasicHttpEntity: void setContentLength(long)>(l0)
+org.apache.http.impl.entity.EntityDeserializer.doDeserialize : $r7 = r0.<org.apache.http.impl.entity.EntityDeserializer: org.apache.http.entity.ContentLengthStrategy lenStrategy>
+org.apache.http.impl.entity.EntityDeserializer.doDeserialize : $r10 = new org.apache.http.impl.io.ContentLengthInputStream
+org.apache.http.impl.entity.EntityDeserializer.doDeserialize : $r3 = new org.apache.http.entity.BasicHttpEntity
+org.apache.http.impl.entity.EntityDeserializer.doDeserialize : virtualinvoke r4.<org.apache.http.entity.BasicHttpEntity: void setChunked(boolean)>(0)
+org.apache.http.impl.entity.EntityDeserializer.doDeserialize : $b2 = l0 cmp -1L
+org.apache.http.impl.entity.EntityDeserializer.doDeserialize : $b1 = l0 cmp -2L
+org.apache.http.impl.entity.StrictContentLengthStrategy.determineLength : l0 = staticinvoke <java.lang.Long: long parseLong(java.lang.String)>(r21)
+org.apache.http.impl.entity.StrictContentLengthStrategy.determineLength : if r3 == null goto return -1L
+org.apache.http.impl.entity.StrictContentLengthStrategy.determineLength : if r2 == null goto (branch)
+org.apache.http.impl.entity.StrictContentLengthStrategy.determineLength : r2 = interfaceinvoke r1.<org.apache.http.HttpMessage: org.apache.http.Header getFirstHeader(java.lang.String)>("Transfer-Encoding")
+org.apache.http.impl.entity.StrictContentLengthStrategy.determineLength : r21 = interfaceinvoke r3.<org.apache.http.Header: java.lang.String getValue()>()
+org.apache.http.impl.entity.StrictContentLengthStrategy.determineLength : $b1 = l0 cmp 0L
+org.apache.http.impl.entity.StrictContentLengthStrategy.determineLength : return l0
+org.apache.http.impl.entity.StrictContentLengthStrategy.determineLength : r3 = interfaceinvoke r1.<org.apache.http.HttpMessage: org.apache.http.Header getFirstHeader(java.lang.String)>("Content-Length")
+org.apache.http.impl.entity.StrictContentLengthStrategy.determineLength : if r1 != null goto r2 = interfaceinvoke r1.<org.apache.http.HttpMessage: org.apache.http.Header getFirstHeader(java.lang.String)>("Transfer-Encoding")
+org.apache.http.ProtocolVersion.compareToVersion : return i0
+org.apache.http.ProtocolVersion.compareToVersion : $i3 = virtualinvoke r0.<org.apache.http.ProtocolVersion: int getMinor()>()
+org.apache.http.ProtocolVersion.compareToVersion : if r1 != null goto $r3 = r0.<org.apache.http.ProtocolVersion: java.lang.String protocol>
+org.apache.http.ProtocolVersion.compareToVersion : if i0 != 0 goto return i0
+org.apache.http.ProtocolVersion.compareToVersion : $r3 = r0.<org.apache.http.ProtocolVersion: java.lang.String protocol>
+org.apache.http.ProtocolVersion.compareToVersion : $i1 = virtualinvoke r0.<org.apache.http.ProtocolVersion: int getMajor()>()
+org.apache.http.impl.io.HttpRequestWriter.writeHeadLine : $r2 = r0.<org.apache.http.impl.io.HttpRequestWriter: org.apache.http.message.LineFormatter lineFormatter>
+org.apache.http.impl.io.HttpRequestWriter.writeHeadLine : $r6 = r0.<org.apache.http.impl.io.HttpRequestWriter: org.apache.http.io.SessionOutputBuffer sessionBuffer>
+org.apache.http.impl.io.HttpRequestWriter.writeHeadLine : $r2 = (org.apache.http.HttpRequest) r1
+org.apache.http.message.BasicStatusLine.getStatusCode : $i0 = r0.<org.apache.http.message.BasicStatusLine: int statusCode>
+org.apache.http.util.ByteArrayBuffer.isFull : $i0 = r0.<org.apache.http.util.ByteArrayBuffer: int len>
+org.apache.http.impl.SocketHttpServerConnection.assertOpen : $z0 = r0.<org.apache.http.impl.SocketHttpServerConnection: boolean open>
+org.apache.http.entity.BasicHttpEntity.isStreaming : $r1 = r0.<org.apache.http.entity.BasicHttpEntity: java.io.InputStream content>
+org.apache.http.impl.io.AbstractSessionInputBuffer.createTransportMetrics : $r1 = new org.apache.http.impl.io.HttpTransportMetricsImpl
+org.apache.http.protocol.HttpRequestExecutor.doSendRequest : return r4
+org.apache.http.protocol.HttpRequestExecutor.doSendRequest : if r3 != null goto r4 = null
+org.apache.http.protocol.HttpRequestExecutor.doSendRequest : interfaceinvoke r2.<org.apache.http.HttpClientConnection: void sendRequestHeader(org.apache.http.HttpRequest)>(r1)
+org.apache.http.protocol.HttpRequestExecutor.doSendRequest : $r22 = <java.lang.Boolean: java.lang.Boolean TRUE>
+org.apache.http.protocol.HttpRequestExecutor.doSendRequest : $r10 = interfaceinvoke r1.<org.apache.http.HttpRequest: org.apache.http.RequestLine getRequestLine()>()
+org.apache.http.protocol.HttpRequestExecutor.doSendRequest : $r21 = (org.apache.http.HttpEntityEnclosingRequest) r1
+org.apache.http.protocol.HttpRequestExecutor.doSendRequest : r4 = null
+org.apache.http.protocol.HttpRequestExecutor.doSendRequest : if r1 != null goto (branch)
+org.apache.http.protocol.HttpRequestExecutor.doSendRequest : $r11 = (org.apache.http.HttpEntityEnclosingRequest) r1
+org.apache.http.protocol.HttpRequestExecutor.doSendRequest : if r2 != null goto (branch)
+org.apache.http.protocol.HttpRequestExecutor.doSendRequest : $z1 = r1 instanceof org.apache.http.HttpEntityEnclosingRequest
+org.apache.http.protocol.HttpRequestExecutor.doSendRequest : $r9 = <java.lang.Boolean: java.lang.Boolean FALSE>
+org.apache.http.protocol.HttpRequestExecutor.doSendRequest : z0 = 1
+org.apache.http.protocol.HttpRequestExecutor.doSendRequest : interfaceinvoke r3.<org.apache.http.protocol.HttpContext: void setAttribute(java.lang.String,java.lang.Object)>("http.connection", r2)
+org.apache.http.protocol.HttpRequestExecutor.doSendRequest : interfaceinvoke r2.<org.apache.http.HttpClientConnection: void flush()>()
+org.apache.http.protocol.HttpRequestExecutor.doSendRequest : if z0 == 0 goto interfaceinvoke r2.<org.apache.http.HttpClientConnection: void flush()>()
+org.apache.http.HttpHost.toHostString : $r4 = r0.<org.apache.http.HttpHost: java.lang.String hostname>
+org.apache.http.HttpHost.toHostString : $i3 = r0.<org.apache.http.HttpHost: int port>
+org.apache.http.HttpHost.toHostString : virtualinvoke r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(":")
+org.apache.http.HttpHost.toHostString : $r9 = virtualinvoke r1.<java.lang.StringBuilder: java.lang.String toString()>()
+org.apache.http.HttpHost.toHostString : $i0 = r0.<org.apache.http.HttpHost: int port>
+org.apache.http.HttpHost.toHostString : $r2 = new java.lang.StringBuilder
+org.apache.http.impl.AbstractHttpServerConnection.createHttpRequestFactory : $r1 = new org.apache.http.impl.DefaultHttpRequestFactory
+org.apache.http.impl.io.AbstractSessionInputBuffer.hasBufferedData : $i0 = r0.<org.apache.http.impl.io.AbstractSessionInputBuffer: int bufferpos>
+org.apache.http.HttpHost.getPort : $i0 = r0.<org.apache.http.HttpHost: int port>
+org.apache.http.entity.BasicHttpEntity.getContentLength : $l0 = r0.<org.apache.http.entity.BasicHttpEntity: long length>
+org.apache.http.message.BasicLineParser.createRequestLine : $r4 = new org.apache.http.message.BasicRequestLine
+org.apache.http.ProtocolVersion.getProtocol : $r1 = r0.<org.apache.http.ProtocolVersion: java.lang.String protocol>
+org.apache.http.util.ByteArrayBuffer.capacity : $r1 = r0.<org.apache.http.util.ByteArrayBuffer: byte[] buffer>
+org.apache.http.message.BasicListHeaderIterator.findNext : z0 = virtualinvoke r0.<org.apache.http.message.BasicListHeaderIterator: boolean filterHeader(int)>(i0)
+org.apache.http.message.BasicListHeaderIterator.findNext : if i0 >= -1 goto $r1 = r0.<org.apache.http.message.BasicListHeaderIterator: java.util.List allHeaders>
+org.apache.http.message.BasicListHeaderIterator.findNext : z0 = 0
+org.apache.http.message.BasicListHeaderIterator.findNext : i0 = i0 + 1
+org.apache.http.message.BasicListHeaderIterator.findNext : $r1 = r0.<org.apache.http.message.BasicListHeaderIterator: java.util.List allHeaders>
+org.apache.http.message.BasicListHeaderIterator.findNext : if z0 == 0 goto $i3 = -1
+org.apache.http.message.BasicListHeaderIterator.findNext : if z0 != 0 goto (branch)
+org.apache.http.message.AbstractHttpMessage.addHeader : $r4 = r0.<org.apache.http.message.AbstractHttpMessage: org.apache.http.message.HeaderGroup headergroup>
+org.apache.http.message.AbstractHttpMessage.addHeader : if r1 != null goto $r4 = r0.<org.apache.http.message.AbstractHttpMessage: org.apache.http.message.HeaderGroup headergroup>
+org.apache.http.impl.AbstractHttpServerConnection.createRequestParser : $r4 = new org.apache.http.impl.io.HttpRequestParser
+org.apache.http.message.BasicLineParser.parseHeader : $r2 = new org.apache.http.message.BufferedHeader
+org.apache.http.message.BufferedHeader.getName : $r1 = r0.<org.apache.http.message.BufferedHeader: java.lang.String name>
+org.apache.http.message.BasicTokenIterator.createToken : $r2 = virtualinvoke r1.<java.lang.String: java.lang.String substring(int,int)>(i0, i1)
+org.apache.http.impl.entity.EntitySerializer.doSerialize : $r6 = new org.apache.http.impl.io.ContentLengthOutputStream
+org.apache.http.impl.entity.EntitySerializer.doSerialize : $r3 = r0.<org.apache.http.impl.entity.EntitySerializer: org.apache.http.entity.ContentLengthStrategy lenStrategy>
+org.apache.http.impl.entity.EntitySerializer.doSerialize : $b2 = l0 cmp -1L
+org.apache.http.impl.entity.EntitySerializer.doSerialize : $b1 = l0 cmp -2L
+org.apache.http.protocol.HttpDateGenerator.getCurrentDate : l0 = staticinvoke <java.lang.System: long currentTimeMillis()>()
+org.apache.http.protocol.HttpDateGenerator.getCurrentDate : $r4 = r0.<org.apache.http.protocol.HttpDateGenerator: java.lang.String dateAsText>
+org.apache.http.protocol.HttpDateGenerator.getCurrentDate : $l1 = r0.<org.apache.http.protocol.HttpDateGenerator: long dateAsLong>
+org.apache.http.testserver.HttpServer$WorkerThread.run : r12 = $r11
+org.apache.http.testserver.HttpServer$WorkerThread.run : $r7 = r0.<org.apache.http.testserver.HttpServer$WorkerThread: org.apache.http.protocol.HttpService httpservice>
+org.apache.http.testserver.HttpServer$WorkerThread.run : $z0 = staticinvoke <java.lang.Thread: boolean interrupted()>()
+org.apache.http.testserver.HttpServer$WorkerThread.run : $r1 = new org.apache.http.protocol.BasicHttpContext
+org.apache.http.impl.AbstractHttpClientConnection.flush : virtualinvoke r0.<org.apache.http.impl.AbstractHttpClientConnection: void assertOpen()>()
+org.apache.http.impl.AbstractHttpClientConnection.flush : virtualinvoke r0.<org.apache.http.impl.AbstractHttpClientConnection: void doFlush()>()
+org.apache.http.message.BasicLineFormatter.appendProtocolVersion : virtualinvoke r3.<org.apache.http.util.CharArrayBuffer: void append(char)>(46)
+org.apache.http.message.BasicLineFormatter.appendProtocolVersion : return r3
+org.apache.http.message.BasicLineFormatter.appendProtocolVersion : virtualinvoke r3.<org.apache.http.util.CharArrayBuffer: void append(char)>(47)
+org.apache.http.message.BasicLineFormatter.appendProtocolVersion : $i2 = virtualinvoke r2.<org.apache.http.ProtocolVersion: int getMinor()>()
+org.apache.http.message.BasicLineFormatter.appendProtocolVersion : if r3 != null goto virtualinvoke r3.<org.apache.http.util.CharArrayBuffer: void ensureCapacity(int)>(i0)
+org.apache.http.message.BasicLineFormatter.appendProtocolVersion : virtualinvoke r3.<org.apache.http.util.CharArrayBuffer: void ensureCapacity(int)>(i0)
+org.apache.http.message.BasicLineFormatter.appendProtocolVersion : $r6 = virtualinvoke r2.<org.apache.http.ProtocolVersion: java.lang.String getProtocol()>()
+org.apache.http.message.BasicLineFormatter.appendProtocolVersion : if r2 != null goto r3 = r1
+org.apache.http.message.BasicLineFormatter.appendProtocolVersion : $i1 = virtualinvoke r2.<org.apache.http.ProtocolVersion: int getMajor()>()
+org.apache.http.message.BasicLineFormatter.appendProtocolVersion : r3 = r1
+org.apache.http.message.BasicLineFormatter.appendProtocolVersion : i0 = virtualinvoke r0.<org.apache.http.message.BasicLineFormatter: int estimateProtocolVersionLen(org.apache.http.ProtocolVersion)>(r2)
+org.apache.http.message.BasicLineParser.createProtocolVersion : $r1 = r0.<org.apache.http.message.BasicLineParser: org.apache.http.ProtocolVersion protocol>
+org.apache.http.impl.AbstractHttpServerConnection.createConnectionMetrics : $r3 = new org.apache.http.impl.HttpConnectionMetricsImpl
+org.apache.http.message.HeaderGroup.getHeaders : $r6 = r0.<org.apache.http.message.HeaderGroup: java.util.List headers>
+org.apache.http.message.HeaderGroup.getHeaders : $r8 = interfaceinvoke r4.<org.apache.http.Header: java.lang.String getName()>()
+org.apache.http.message.HeaderGroup.getHeaders : interfaceinvoke r3.<java.util.List: boolean add(java.lang.Object)>(r4)
+org.apache.http.message.HeaderGroup.getHeaders : i0 = 0
+org.apache.http.message.HeaderGroup.getHeaders : $i2 = interfaceinvoke r3.<java.util.List: int size()>()
+org.apache.http.message.HeaderGroup.getHeaders : $r2 = new java.util.ArrayList
+org.apache.http.util.EntityUtils.toByteArray : r4 = virtualinvoke r2.<org.apache.http.util.ByteArrayBuffer: byte[] toByteArray()>()
+org.apache.http.util.EntityUtils.toByteArray : $l2 = interfaceinvoke r0.<org.apache.http.HttpEntity: long getContentLength()>()
+org.apache.http.util.EntityUtils.toByteArray : $i5 = virtualinvoke r1.<java.io.InputStream: int read(byte[])>(r3)
+org.apache.http.util.EntityUtils.toByteArray : if r0 != null goto r1 = interfaceinvoke r0.<org.apache.http.HttpEntity: java.io.InputStream getContent()>()
+org.apache.http.util.EntityUtils.toByteArray : if r1 != null goto $l2 = interfaceinvoke r0.<org.apache.http.HttpEntity: long getContentLength()>()
+org.apache.http.util.EntityUtils.toByteArray : r3 = newarray (byte)[4096]
+org.apache.http.util.EntityUtils.toByteArray : $l4 = interfaceinvoke r0.<org.apache.http.HttpEntity: long getContentLength()>()
+org.apache.http.util.EntityUtils.toByteArray : r1 = interfaceinvoke r0.<org.apache.http.HttpEntity: java.io.InputStream getContent()>()
+org.apache.http.util.EntityUtils.toByteArray : virtualinvoke r1.<java.io.InputStream: void close()>()
+org.apache.http.util.EntityUtils.toByteArray : $r8 = new org.apache.http.util.ByteArrayBuffer
+org.apache.http.util.EntityUtils.toByteArray : if i0 >= 0 goto $r8 = new org.apache.http.util.ByteArrayBuffer
+org.apache.http.util.EntityUtils.toByteArray : virtualinvoke r2.<org.apache.http.util.ByteArrayBuffer: void append(byte[],int,int)>(r3, 0, i1)
+org.apache.http.params.AbstractHttpParams.isParameterTrue : $z0 = virtualinvoke r0.<org.apache.http.params.AbstractHttpParams: boolean getBooleanParameter(java.lang.String,boolean)>(r1, 0)
+org.apache.http.impl.HttpConnectionMetricsImpl.incrementResponseCount : $l0 = r0.<org.apache.http.impl.HttpConnectionMetricsImpl: long responseCount>
+org.apache.http.util.EntityUtils.consume : if r1 == null goto return
+org.apache.http.util.EntityUtils.consume : $z0 = interfaceinvoke r0.<org.apache.http.HttpEntity: boolean isStreaming()>()
+org.apache.http.util.EntityUtils.consume : r1 = interfaceinvoke r0.<org.apache.http.HttpEntity: java.io.InputStream getContent()>()
+org.apache.http.util.EntityUtils.consume : virtualinvoke r1.<java.io.InputStream: void close()>()
+org.apache.http.util.EntityUtils.consume : if r0 != null goto $z0 = interfaceinvoke r0.<org.apache.http.HttpEntity: boolean isStreaming()>()
+org.apache.http.message.ParserCursor.getPos : $i0 = r0.<org.apache.http.message.ParserCursor: int pos>
+org.apache.http.impl.io.AbstractSessionInputBuffer.read : $r2 = r0.<org.apache.http.impl.io.AbstractSessionInputBuffer: byte[] buffer>
+org.apache.http.impl.io.AbstractSessionInputBuffer.read : $z0 = virtualinvoke r0.<org.apache.http.impl.io.AbstractSessionInputBuffer: boolean hasBufferedData()>()
+org.apache.http.impl.io.AbstractSessionInputBuffer.read : $i7 = r0.<org.apache.http.impl.io.AbstractSessionInputBuffer: int bufferpos>
+org.apache.http.impl.io.AbstractSessionInputBuffer.read : if r1 != null goto $z0 = virtualinvoke r0.<org.apache.http.impl.io.AbstractSessionInputBuffer: boolean hasBufferedData()>()
+org.apache.http.impl.io.AbstractSessionInputBuffer.read : return i2
+org.apache.http.impl.io.AbstractSessionInputBuffer.read : $i3 = r0.<org.apache.http.impl.io.AbstractSessionInputBuffer: int bufferlen>
+org.apache.http.protocol.HTTP.isWhitespace : if c0 == 32 goto $z0 = 1
+org.apache.http.impl.AbstractHttpClientConnection.createEntityDeserializer : $r1 = new org.apache.http.impl.entity.EntityDeserializer
+org.apache.http.message.BasicRequestLine.getProtocolVersion : $r1 = r0.<org.apache.http.message.BasicRequestLine: org.apache.http.ProtocolVersion protoversion>
+org.apache.http.util.ByteArrayBuffer.isEmpty : $i0 = r0.<org.apache.http.util.ByteArrayBuffer: int len>
+org.apache.http.message.BasicStatusLine.getReasonPhrase : $r1 = r0.<org.apache.http.message.BasicStatusLine: java.lang.String reasonPhrase>
+org.apache.http.message.BasicLineParser.parseRequestLine : virtualinvoke r0.<org.apache.http.message.BasicLineParser: void skipWhitespace(org.apache.http.util.CharArrayBuffer,org.apache.http.message.ParserCursor)>(r1, r2)
+org.apache.http.message.BasicLineParser.parseRequestLine : virtualinvoke r2.<org.apache.http.message.ParserCursor: void updatePos(int)>(i3)
+org.apache.http.message.BasicLineParser.parseRequestLine : i5 = virtualinvoke r1.<org.apache.http.util.CharArrayBuffer: int indexOf(int,int,int)>(32, i4, i1)
+org.apache.http.message.BasicLineParser.parseRequestLine : r5 = virtualinvoke r0.<org.apache.http.message.BasicLineParser: org.apache.http.ProtocolVersion parseProtocolVersion(org.apache.http.util.CharArrayBuffer,org.apache.http.message.ParserCursor)>(r1, r2)
+org.apache.http.message.BasicLineParser.parseRequestLine : if i3 >= 0 goto r3 = virtualinvoke r1.<org.apache.http.util.CharArrayBuffer: java.lang.String substringTrimmed(int,int)>(i2, i3)
+org.apache.http.message.BasicLineParser.parseRequestLine : r3 = virtualinvoke r1.<org.apache.http.util.CharArrayBuffer: java.lang.String substringTrimmed(int,int)>(i2, i3)
+org.apache.http.message.BasicLineParser.parseRequestLine : virtualinvoke r2.<org.apache.http.message.ParserCursor: void updatePos(int)>(i5)
+org.apache.http.message.BasicLineParser.parseRequestLine : r4 = virtualinvoke r1.<org.apache.http.util.CharArrayBuffer: java.lang.String substringTrimmed(int,int)>(i4, i5)
+org.apache.http.message.BasicLineParser.parseRequestLine : i1 = virtualinvoke r2.<org.apache.http.message.ParserCursor: int getUpperBound()>()
+org.apache.http.message.BasicLineParser.parseRequestLine : if r1 != null goto (branch)
+org.apache.http.message.BasicLineParser.parseRequestLine : i3 = virtualinvoke r1.<org.apache.http.util.CharArrayBuffer: int indexOf(int,int,int)>(32, i2, i1)
+org.apache.http.message.BasicLineParser.parseRequestLine : i2 = virtualinvoke r2.<org.apache.http.message.ParserCursor: int getPos()>()
+org.apache.http.message.BasicLineParser.parseRequestLine : $z0 = virtualinvoke r2.<org.apache.http.message.ParserCursor: boolean atEnd()>()
+org.apache.http.message.BasicLineParser.parseRequestLine : i0 = virtualinvoke r2.<org.apache.http.message.ParserCursor: int getPos()>()
+org.apache.http.message.BasicLineParser.parseRequestLine : i4 = virtualinvoke r2.<org.apache.http.message.ParserCursor: int getPos()>()
+org.apache.http.message.BasicLineParser.parseRequestLine : $r26 = virtualinvoke r0.<org.apache.http.message.BasicLineParser: org.apache.http.RequestLine createRequestLine(java.lang.String,java.lang.String,org.apache.http.ProtocolVersion)>(r3, r4, r5)
+org.apache.http.message.BasicLineParser.parseRequestLine : if i5 >= 0 goto r4 = virtualinvoke r1.<org.apache.http.util.CharArrayBuffer: java.lang.String substringTrimmed(int,int)>(i4, i5)
+org.apache.http.message.BasicLineParser.parseRequestLine : if r2 != null goto i0 = virtualinvoke r2.<org.apache.http.message.ParserCursor: int getPos()>()
+org.apache.http.protocol.RequestConnControl.process : $z0 = virtualinvoke r3.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("CONNECT")
+org.apache.http.protocol.RequestConnControl.process : if r1 != null goto $r5 = interfaceinvoke r1.<org.apache.http.HttpRequest: org.apache.http.RequestLine getRequestLine()>()
+org.apache.http.protocol.RequestConnControl.process : $r5 = interfaceinvoke r1.<org.apache.http.HttpRequest: org.apache.http.RequestLine getRequestLine()>()
+org.apache.http.protocol.RequestConnControl.process : interfaceinvoke r1.<org.apache.http.HttpRequest: void addHeader(java.lang.String,java.lang.String)>("Connection", "Keep-Alive")
+org.apache.http.protocol.RequestConnControl.process : $z1 = interfaceinvoke r1.<org.apache.http.HttpRequest: boolean containsHeader(java.lang.String)>("Connection")
+org.apache.http.util.CharArrayBuffer.indexOf : return -1
+org.apache.http.util.CharArrayBuffer.indexOf : i3 = i1
+org.apache.http.util.CharArrayBuffer.indexOf : if i1 >= 0 goto $i4 = r0.<org.apache.http.util.CharArrayBuffer: int len>
+org.apache.http.util.CharArrayBuffer.indexOf : $i1 = r0.<org.apache.http.util.CharArrayBuffer: int len>
+org.apache.http.util.CharArrayBuffer.indexOf : $i4 = r0.<org.apache.http.util.CharArrayBuffer: int len>
+org.apache.http.util.CharArrayBuffer.indexOf : return i3
+org.apache.http.util.CharArrayBuffer.indexOf : $r1 = r0.<org.apache.http.util.CharArrayBuffer: char[] buffer>
+org.apache.http.util.CharArrayBuffer.indexOf : if i1 <= i2 goto i3 = i1
+org.apache.http.impl.SocketHttpServerConnection.isOpen : $z0 = r0.<org.apache.http.impl.SocketHttpServerConnection: boolean open>
+org.apache.http.message.BasicLineFormatter.estimateProtocolVersionLen : $r2 = virtualinvoke r1.<org.apache.http.ProtocolVersion: java.lang.String getProtocol()>()
+org.apache.http.message.BasicTokenIterator.findTokenSeparator : return i0
+org.apache.http.message.BasicTokenIterator.findTokenSeparator : z0 = 0
+org.apache.http.message.BasicTokenIterator.findTokenSeparator : if z0 != 0 goto return i0
+org.apache.http.message.BasicTokenIterator.findTokenSeparator : if i0 >= 0 goto z0 = 0
+org.apache.http.message.BasicTokenIterator.findTokenSeparator : $r6 = r0.<org.apache.http.message.BasicTokenIterator: java.lang.String currentHeader>
+org.apache.http.impl.entity.EntityDeserializer.deserialize : if r2 != null goto $r5 = virtualinvoke r0.<org.apache.http.impl.entity.EntityDeserializer: org.apache.http.entity.BasicHttpEntity doDeserialize(org.apache.http.io.SessionInputBuffer,org.apache.http.HttpMessage)>(r1, r2)
+org.apache.http.impl.entity.EntityDeserializer.deserialize : $r5 = virtualinvoke r0.<org.apache.http.impl.entity.EntityDeserializer: org.apache.http.entity.BasicHttpEntity doDeserialize(org.apache.http.io.SessionInputBuffer,org.apache.http.HttpMessage)>(r1, r2)
+org.apache.http.impl.entity.EntityDeserializer.deserialize : if r1 != null goto (branch)
+org.apache.http.protocol.BasicHttpContext.getAttribute : return r2
+org.apache.http.protocol.BasicHttpContext.getAttribute : if r1 != null goto r2 = null
+org.apache.http.protocol.BasicHttpContext.getAttribute : $r5 = r0.<org.apache.http.protocol.BasicHttpContext: java.util.Map map>
+org.apache.http.protocol.BasicHttpContext.getAttribute : $r4 = r0.<org.apache.http.protocol.BasicHttpContext: java.util.Map map>
+org.apache.http.protocol.BasicHttpContext.getAttribute : if r2 != null goto return r2
+org.apache.http.protocol.BasicHttpContext.getAttribute : r2 = null
+org.apache.http.message.BasicHttpRequest.getRequestLine : $r2 = new org.apache.http.message.BasicRequestLine
+org.apache.http.message.BasicHttpRequest.getRequestLine : $r3 = r0.<org.apache.http.message.BasicHttpRequest: org.apache.http.RequestLine requestline>
+org.apache.http.message.BasicHttpRequest.getRequestLine : $r4 = virtualinvoke r0.<org.apache.http.message.BasicHttpRequest: org.apache.http.params.HttpParams getParams()>()
+org.apache.http.message.BasicHttpRequest.getRequestLine : $r7 = r0.<org.apache.http.message.BasicHttpRequest: org.apache.http.RequestLine requestline>
+org.apache.http.impl.DefaultConnectionReuseStrategy.keepAlive : $z9 = 1
+org.apache.http.impl.DefaultConnectionReuseStrategy.keepAlive : r5 = interfaceinvoke r1.<org.apache.http.HttpResponse: org.apache.http.Header[] getHeaders(java.lang.String)>("Content-Length")
+org.apache.http.impl.DefaultConnectionReuseStrategy.keepAlive : r4 = interfaceinvoke r1.<org.apache.http.HttpResponse: org.apache.http.Header getFirstHeader(java.lang.String)>("Transfer-Encoding")
+org.apache.http.impl.DefaultConnectionReuseStrategy.keepAlive : r7 = interfaceinvoke r17.<org.apache.http.TokenIterator: java.lang.String nextToken()>()
+org.apache.http.impl.DefaultConnectionReuseStrategy.keepAlive : $r13 = interfaceinvoke r6.<org.apache.http.Header: java.lang.String getValue()>()
+org.apache.http.impl.DefaultConnectionReuseStrategy.keepAlive : $r18 = "Close"
+org.apache.http.impl.DefaultConnectionReuseStrategy.keepAlive : if r1 != null goto (branch)
+org.apache.http.impl.DefaultConnectionReuseStrategy.keepAlive : if r2 != null goto $r10 = interfaceinvoke r1.<org.apache.http.HttpResponse: org.apache.http.StatusLine getStatusLine()>()
+org.apache.http.impl.DefaultConnectionReuseStrategy.keepAlive : if r4 == null goto r5 = interfaceinvoke r1.<org.apache.http.HttpResponse: org.apache.http.Header[] getHeaders(java.lang.String)>("Content-Length")
+org.apache.http.impl.DefaultConnectionReuseStrategy.keepAlive : if i0 >= 0 goto (branch)
+org.apache.http.impl.DefaultConnectionReuseStrategy.keepAlive : $z2 = interfaceinvoke r16.<org.apache.http.HeaderIterator: boolean hasNext()>()
+org.apache.http.impl.DefaultConnectionReuseStrategy.keepAlive : if r5 == null goto return 0
+org.apache.http.impl.DefaultConnectionReuseStrategy.keepAlive : $r19 = "Keep-Alive"
+org.apache.http.impl.DefaultConnectionReuseStrategy.keepAlive : $z5 = interfaceinvoke r17.<org.apache.http.TokenIterator: boolean hasNext()>()
+org.apache.http.impl.DefaultConnectionReuseStrategy.keepAlive : $r10 = interfaceinvoke r1.<org.apache.http.HttpResponse: org.apache.http.StatusLine getStatusLine()>()
+org.apache.http.impl.DefaultConnectionReuseStrategy.keepAlive : z4 = 0
+org.apache.http.impl.DefaultConnectionReuseStrategy.keepAlive : r6 = r5[0]
+org.apache.http.impl.DefaultConnectionReuseStrategy.keepAlive : r16 = interfaceinvoke r1.<org.apache.http.HttpResponse: org.apache.http.HeaderIterator headerIterator(java.lang.String)>("Connection")
+org.apache.http.impl.DefaultConnectionReuseStrategy.keepAlive : if z4 == 0 goto (branch)
+org.apache.http.impl.DefaultConnectionReuseStrategy.keepAlive : goto [?= r16 = interfaceinvoke r1.<org.apache.http.HttpResponse: org.apache.http.HeaderIterator headerIterator(java.lang.String)>("Connection")]
+org.apache.http.impl.DefaultConnectionReuseStrategy.keepAlive : goto [?= staticinvoke <edu.washington.cs.dt.impact.util.Tracer: void trace(java.lang.String,java.lang.String)>("$z5 = interfaceinvoke r17.<org.apache.http.TokenIterator: boolean hasNext()>()", "org.apache.http.impl.DefaultConnectionReuseStrategy.keepAlive")]
+org.apache.http.impl.DefaultConnectionReuseStrategy.keepAlive : r17 = virtualinvoke r0.<org.apache.http.impl.DefaultConnectionReuseStrategy: org.apache.http.TokenIterator createTokenIterator(org.apache.http.HeaderIterator)>(r16)
+org.apache.http.impl.DefaultConnectionReuseStrategy.keepAlive : $z3 = interfaceinvoke r16.<org.apache.http.HeaderIterator: boolean hasNext()>()
+org.apache.http.impl.DefaultConnectionReuseStrategy.keepAlive : z4 = 1
+org.apache.http.impl.io.AbstractMessageWriter.write : $r6 = r0.<org.apache.http.impl.io.AbstractMessageWriter: org.apache.http.io.SessionOutputBuffer sessionBuffer>
+org.apache.http.impl.io.AbstractMessageWriter.write : virtualinvoke r0.<org.apache.http.impl.io.AbstractMessageWriter: void writeHeadLine(org.apache.http.HttpMessage)>(r1)
+org.apache.http.impl.io.AbstractMessageWriter.write : $r10 = r0.<org.apache.http.impl.io.AbstractMessageWriter: org.apache.http.util.CharArrayBuffer lineBuf>
+org.apache.http.impl.io.AbstractMessageWriter.write : $r11 = r0.<org.apache.http.impl.io.AbstractMessageWriter: org.apache.http.io.SessionOutputBuffer sessionBuffer>
+org.apache.http.impl.io.AbstractMessageWriter.write : $r5 = interfaceinvoke r2.<java.util.Iterator: java.lang.Object next()>()
+org.apache.http.impl.io.AbstractMessageWriter.write : if r1 != null goto virtualinvoke r0.<org.apache.http.impl.io.AbstractMessageWriter: void writeHeadLine(org.apache.http.HttpMessage)>(r1)
+org.apache.http.impl.io.AbstractMessageWriter.write : goto [?= $z0 = interfaceinvoke r2.<java.util.Iterator: boolean hasNext()>()]
+org.apache.http.impl.io.AbstractMessageWriter.write : r2 = interfaceinvoke r1.<org.apache.http.HttpMessage: org.apache.http.HeaderIterator headerIterator()>()
+org.apache.http.entity.AbstractHttpEntity.getContentType : $r1 = r0.<org.apache.http.entity.AbstractHttpEntity: org.apache.http.Header contentType>
+org.apache.http.message.HeaderGroup.updateHeader : i0 = 0
+org.apache.http.message.HeaderGroup.updateHeader : $r6 = interfaceinvoke r2.<org.apache.http.Header: java.lang.String getName()>()
+org.apache.http.message.HeaderGroup.updateHeader : $r4 = r0.<org.apache.http.message.HeaderGroup: java.util.List headers>
+org.apache.http.message.HeaderGroup.updateHeader : $r10 = r0.<org.apache.http.message.HeaderGroup: java.util.List headers>
+org.apache.http.message.HeaderGroup.updateHeader : if r1 != null goto i0 = 0
+org.apache.http.params.AbstractHttpParams.setBooleanParameter : if z0 == 0 goto $r4 = <java.lang.Boolean: java.lang.Boolean FALSE>
+org.apache.http.params.AbstractHttpParams.setBooleanParameter : return r0
+org.apache.http.message.BasicLineFormatter.formatStatusLine : r3 = virtualinvoke r0.<org.apache.http.message.BasicLineFormatter: org.apache.http.util.CharArrayBuffer initBuffer(org.apache.http.util.CharArrayBuffer)>(r1)
+org.apache.http.message.BasicLineFormatter.formatStatusLine : if r2 != null goto r3 = virtualinvoke r0.<org.apache.http.message.BasicLineFormatter: org.apache.http.util.CharArrayBuffer initBuffer(org.apache.http.util.CharArrayBuffer)>(r1)
+org.apache.http.message.BasicLineFormatter.formatStatusLine : return r3
+org.apache.http.message.BasicLineFormatter.formatStatusLine : virtualinvoke r0.<org.apache.http.message.BasicLineFormatter: void doFormatStatusLine(org.apache.http.util.CharArrayBuffer,org.apache.http.StatusLine)>(r3, r2)
+org.apache.http.impl.AbstractHttpServerConnection.init : $r9 = virtualinvoke r0.<org.apache.http.impl.AbstractHttpServerConnection: org.apache.http.io.HttpMessageWriter createResponseWriter(org.apache.http.io.SessionOutputBuffer,org.apache.http.params.HttpParams)>(r2, r3)
+org.apache.http.impl.AbstractHttpServerConnection.init : r0.<org.apache.http.impl.AbstractHttpServerConnection: org.apache.http.io.SessionOutputBuffer outbuffer> = r2
+org.apache.http.impl.AbstractHttpServerConnection.init : $r10 = interfaceinvoke r1.<org.apache.http.io.SessionInputBuffer: org.apache.http.io.HttpTransportMetrics getMetrics()>()
+org.apache.http.impl.AbstractHttpServerConnection.init : r0.<org.apache.http.impl.AbstractHttpServerConnection: org.apache.http.io.SessionInputBuffer inbuffer> = r1
+org.apache.http.impl.AbstractHttpServerConnection.init : if r2 != null goto r0.<org.apache.http.impl.AbstractHttpServerConnection: org.apache.http.io.SessionInputBuffer inbuffer> = r1
+org.apache.http.impl.AbstractHttpServerConnection.init : $r6 = (org.apache.http.io.EofSensor) r1
+org.apache.http.impl.AbstractHttpServerConnection.init : $z0 = r1 instanceof org.apache.http.io.EofSensor
+org.apache.http.impl.AbstractHttpServerConnection.init : $r7 = virtualinvoke r0.<org.apache.http.impl.AbstractHttpServerConnection: org.apache.http.HttpRequestFactory createHttpRequestFactory()>()
+org.apache.http.impl.AbstractHttpServerConnection.init : if r1 != null goto (branch)
+org.apache.http.message.BasicTokenIterator.findNext : return -1
+org.apache.http.message.BasicTokenIterator.findNext : i3 = virtualinvoke r0.<org.apache.http.message.BasicTokenIterator: int findTokenSeparator(int)>(i0)
+org.apache.http.message.BasicTokenIterator.findNext : i1 = virtualinvoke r0.<org.apache.http.message.BasicTokenIterator: int findTokenStart(int)>(i3)
+org.apache.http.message.BasicTokenIterator.findNext : if i1 >= 0 goto i2 = virtualinvoke r0.<org.apache.http.message.BasicTokenIterator: int findTokenEnd(int)>(i1)
+org.apache.http.message.BasicTokenIterator.findNext : if i0 >= 0 goto i3 = virtualinvoke r0.<org.apache.http.message.BasicTokenIterator: int findTokenSeparator(int)>(i0)
+org.apache.http.message.BasicTokenIterator.findNext : $r2 = r0.<org.apache.http.message.BasicTokenIterator: org.apache.http.HeaderIterator headerIt>
+org.apache.http.message.BasicTokenIterator.findNext : i3 = 0
+org.apache.http.message.BasicTokenIterator.findNext : r0.<org.apache.http.message.BasicTokenIterator: java.lang.String currentToken> = null
+org.apache.http.message.BasicTokenIterator.findNext : $r5 = r0.<org.apache.http.message.BasicTokenIterator: java.lang.String currentHeader>
+org.apache.http.message.BasicTokenIterator.findNext : i2 = virtualinvoke r0.<org.apache.http.message.BasicTokenIterator: int findTokenEnd(int)>(i1)
+org.apache.http.message.BasicTokenIterator.findNext : return i2
+org.apache.http.message.BasicTokenIterator.findNext : $r1 = r0.<org.apache.http.message.BasicTokenIterator: org.apache.http.HeaderIterator headerIt>
+org.apache.http.impl.SocketHttpServerConnection.assertNotOpen : $z0 = r0.<org.apache.http.impl.SocketHttpServerConnection: boolean open>
+org.apache.http.entity.AbstractHttpEntity.isChunked : $z0 = r0.<org.apache.http.entity.AbstractHttpEntity: boolean chunked>
+org.apache.http.protocol.TestProtocolIntegration$4.handle : $r8 = new org.apache.http.entity.ByteArrayEntity
+org.apache.http.protocol.TestProtocolIntegration$4.handle : r5 = staticinvoke <org.apache.http.util.EntityUtils: byte[] toByteArray(org.apache.http.HttpEntity)>(r4)
+org.apache.http.protocol.TestProtocolIntegration$4.handle : $r7 = (org.apache.http.HttpEntityEnclosingRequest) r1
+org.apache.http.protocol.TestProtocolIntegration$4.handle : $z0 = r1 instanceof org.apache.http.HttpEntityEnclosingRequest
+org.apache.http.protocol.TestProtocolIntegration$4.handle : goto [?= return]
+org.apache.http.protocol.TestProtocolIntegration$4.handle : interfaceinvoke r2.<org.apache.http.HttpResponse: void setEntity(org.apache.http.HttpEntity)>(r6)
+org.apache.http.protocol.TestProtocolIntegration$4.handle : virtualinvoke r6.<org.apache.http.entity.ByteArrayEntity: void setChunked(boolean)>(0)
+org.apache.http.protocol.HttpRequestExecutor.execute : return r4
+org.apache.http.protocol.HttpRequestExecutor.execute : if r3 != null goto r4 = virtualinvoke r0.<org.apache.http.protocol.HttpRequestExecutor: org.apache.http.HttpResponse doSendRequest(org.apache.http.HttpRequest,org.apache.http.HttpClientConnection,org.apache.http.protocol.HttpContext)>(r1, r2, r3)
+org.apache.http.protocol.HttpRequestExecutor.execute : r4 = virtualinvoke r0.<org.apache.http.protocol.HttpRequestExecutor: org.apache.http.HttpResponse doReceiveResponse(org.apache.http.HttpRequest,org.apache.http.HttpClientConnection,org.apache.http.protocol.HttpContext)>(r1, r2, r3)
+org.apache.http.protocol.HttpRequestExecutor.execute : r4 = virtualinvoke r0.<org.apache.http.protocol.HttpRequestExecutor: org.apache.http.HttpResponse doSendRequest(org.apache.http.HttpRequest,org.apache.http.HttpClientConnection,org.apache.http.protocol.HttpContext)>(r1, r2, r3)
+org.apache.http.protocol.HttpRequestExecutor.execute : if r1 != null goto (branch)
+org.apache.http.protocol.HttpRequestExecutor.execute : if r4 != null goto return r4
+org.apache.http.protocol.HttpRequestExecutor.execute : if r2 != null goto (branch)
+org.apache.http.impl.DefaultHttpRequestFactory.newHttpRequest : $r7 = new org.apache.http.message.BasicHttpEntityEnclosingRequest
+org.apache.http.impl.DefaultHttpRequestFactory.newHttpRequest : $r6 = <org.apache.http.impl.DefaultHttpRequestFactory: java.lang.String[] RFC2616_ENTITY_ENC_METHODS>
+org.apache.http.impl.DefaultHttpRequestFactory.newHttpRequest : if r1 != null goto r2 = interfaceinvoke r1.<org.apache.http.RequestLine: java.lang.String getMethod()>()
+org.apache.http.impl.DefaultHttpRequestFactory.newHttpRequest : r2 = interfaceinvoke r1.<org.apache.http.RequestLine: java.lang.String getMethod()>()
+org.apache.http.impl.DefaultHttpRequestFactory.newHttpRequest : $r4 = <org.apache.http.impl.DefaultHttpRequestFactory: java.lang.String[] RFC2616_COMMON_METHODS>
+org.apache.http.impl.io.AbstractMessageParser.parseHeaders : return r12
+org.apache.http.impl.io.AbstractMessageParser.parseHeaders : $i17 = interfaceinvoke r2.<java.util.List: int size()>()
+org.apache.http.impl.io.AbstractMessageParser.parseHeaders : $r15 = interfaceinvoke r1.<org.apache.http.message.LineParser: org.apache.http.Header parseHeader(org.apache.http.util.CharArrayBuffer)>(r14)
+org.apache.http.impl.io.AbstractMessageParser.parseHeaders : i2 = interfaceinvoke r0.<org.apache.http.io.SessionInputBuffer: int readLine(org.apache.http.util.CharArrayBuffer)>(r3)
+org.apache.http.impl.io.AbstractMessageParser.parseHeaders : $r13 = interfaceinvoke r2.<java.util.List: java.lang.Object get(int)>(i18)
+org.apache.http.impl.io.AbstractMessageParser.parseHeaders : if r2 != null goto r3 = null
+org.apache.http.impl.io.AbstractMessageParser.parseHeaders : r4 = null
+org.apache.http.impl.io.AbstractMessageParser.parseHeaders : if r1 != null goto (branch)
+org.apache.http.impl.io.AbstractMessageParser.parseHeaders : goto [?= staticinvoke <edu.washington.cs.dt.impact.util.Tracer: void trace(java.lang.String,java.lang.String)>("if r3 != null goto virtualinvoke r3.<org.apache.http.util.CharArrayBuffer: void clear()>()", "org.apache.http.impl.io.AbstractMessageParser.parseHeaders")]
+org.apache.http.impl.io.AbstractMessageParser.parseHeaders : if r3 != null goto virtualinvoke r3.<org.apache.http.util.CharArrayBuffer: void clear()>()
+org.apache.http.impl.io.AbstractMessageParser.parseHeaders : goto [?= i18 = i18 + 1]
+org.apache.http.impl.io.AbstractMessageParser.parseHeaders : r3 = null
+org.apache.http.impl.io.AbstractMessageParser.parseHeaders : r4 = r3
+org.apache.http.impl.io.AbstractMessageParser.parseHeaders : goto [?= $i17 = interfaceinvoke r2.<java.util.List: int size()>()]
+org.apache.http.impl.io.AbstractMessageParser.parseHeaders : if i0 <= 0 goto (branch)
+org.apache.http.impl.io.AbstractMessageParser.parseHeaders : if i2 == -1 goto $i17 = interfaceinvoke r2.<java.util.List: int size()>()
+org.apache.http.impl.io.AbstractMessageParser.parseHeaders : i18 = 0
+org.apache.http.impl.io.AbstractMessageParser.parseHeaders : $c6 = virtualinvoke r3.<org.apache.http.util.CharArrayBuffer: char charAt(int)>(0)
+org.apache.http.impl.io.AbstractMessageParser.parseHeaders : interfaceinvoke r2.<java.util.List: boolean add(java.lang.Object)>(r3)
+org.apache.http.impl.io.AbstractMessageParser.parseHeaders : $r9 = new org.apache.http.util.CharArrayBuffer
+org.apache.http.impl.io.AbstractMessageParser.parseHeaders : if r0 != null goto (branch)
+org.apache.http.ProtocolVersion.getMinor : $i0 = r0.<org.apache.http.ProtocolVersion: int minor>
+org.apache.http.impl.io.HttpTransportMetricsImpl.incrementBytesTransferred : $l1 = r0.<org.apache.http.impl.io.HttpTransportMetricsImpl: long bytesTransferred>
+org.apache.http.impl.DefaultHttpResponseFactory.determineLocale : $r2 = staticinvoke <java.util.Locale: java.util.Locale getDefault()>()
+org.apache.http.message.AbstractHttpMessage.containsHeader : $r2 = r0.<org.apache.http.message.AbstractHttpMessage: org.apache.http.message.HeaderGroup headergroup>
+org.apache.http.impl.io.ContentLengthInputStream.close : $l0 = r0.<org.apache.http.impl.io.ContentLengthInputStream: long pos>
+org.apache.http.impl.io.ContentLengthInputStream.close : r0.<org.apache.http.impl.io.ContentLengthInputStream: boolean closed> = 1
+org.apache.http.impl.io.ContentLengthInputStream.close : goto [?= return]
+org.apache.http.impl.io.ContentLengthInputStream.close : $z0 = r0.<org.apache.http.impl.io.ContentLengthInputStream: boolean closed>
+org.apache.http.impl.SocketHttpServerConnection.shutdown : virtualinvoke r1.<java.net.Socket: void close()>()
+org.apache.http.impl.SocketHttpServerConnection.shutdown : if r1 == null goto return
+org.apache.http.impl.SocketHttpServerConnection.shutdown : r1 = r0.<org.apache.http.impl.SocketHttpServerConnection: java.net.Socket socket>
+org.apache.http.impl.SocketHttpServerConnection.shutdown : r0.<org.apache.http.impl.SocketHttpServerConnection: boolean open> = 0
+org.apache.http.protocol.HttpRequestHandlerRegistry.lookup : $r2 = r0.<org.apache.http.protocol.HttpRequestHandlerRegistry: org.apache.http.protocol.UriPatternMatcher matcher>
+org.apache.http.params.HttpProtocolParams.getUserAgent : if r0 != null goto $r2 = interfaceinvoke r0.<org.apache.http.params.HttpParams: java.lang.Object getParameter(java.lang.String)>("http.useragent")
+org.apache.http.params.HttpProtocolParams.getUserAgent : $r2 = interfaceinvoke r0.<org.apache.http.params.HttpParams: java.lang.Object getParameter(java.lang.String)>("http.useragent")
+org.apache.http.message.BasicTokenIterator.nextToken : $i0 = r0.<org.apache.http.message.BasicTokenIterator: int searchPos>
+org.apache.http.message.BasicTokenIterator.nextToken : $r2 = r0.<org.apache.http.message.BasicTokenIterator: java.lang.String currentToken>
+org.apache.http.message.BasicTokenIterator.nextToken : return r1
+org.apache.http.message.BasicTokenIterator.nextToken : r1 = r0.<org.apache.http.message.BasicTokenIterator: java.lang.String currentToken>
+org.apache.http.message.BasicListHeaderIterator.nextHeader : $r2 = r0.<org.apache.http.message.BasicListHeaderIterator: java.util.List allHeaders>
+org.apache.http.message.BasicListHeaderIterator.nextHeader : i0 = r0.<org.apache.http.message.BasicListHeaderIterator: int currentIndex>
+org.apache.http.message.BasicListHeaderIterator.nextHeader : if i0 >= 0 goto r0.<org.apache.http.message.BasicListHeaderIterator: int lastIndex> = i0
+org.apache.http.message.BasicListHeaderIterator.nextHeader : $i1 = virtualinvoke r0.<org.apache.http.message.BasicListHeaderIterator: int findNext(int)>(i0)
+org.apache.http.message.BasicListHeaderIterator.nextHeader : r0.<org.apache.http.message.BasicListHeaderIterator: int lastIndex> = i0
+org.apache.http.util.ByteArrayBuffer.append : r0.<org.apache.http.util.ByteArrayBuffer: int len> = i2
+org.apache.http.util.ByteArrayBuffer.append : if i1 != 0 goto i2 = r0.<org.apache.http.util.ByteArrayBuffer: int len>
+org.apache.http.util.ByteArrayBuffer.append : i3 = i2 + i1
+org.apache.http.util.ByteArrayBuffer.append : if i1 != 0 goto $i8 = r0.<org.apache.http.util.ByteArrayBuffer: int len>
+org.apache.http.util.ByteArrayBuffer.append : r0.<org.apache.http.util.ByteArrayBuffer: int len> = i3
+org.apache.http.util.ByteArrayBuffer.append : $r2 = virtualinvoke r1.<org.apache.http.util.CharArrayBuffer: char[] buffer()>()
+org.apache.http.util.ByteArrayBuffer.append : $i8 = r0.<org.apache.http.util.ByteArrayBuffer: int len>
+org.apache.http.util.ByteArrayBuffer.append : if r1 != null goto (branch)
+org.apache.http.util.ByteArrayBuffer.append : i4 = i0
+org.apache.http.util.ByteArrayBuffer.append : if r1 != null goto $r2 = virtualinvoke r1.<org.apache.http.util.CharArrayBuffer: char[] buffer()>()
+org.apache.http.util.ByteArrayBuffer.append : if i0 < 0 goto $r3 = new java.lang.IndexOutOfBoundsException
+org.apache.http.util.ByteArrayBuffer.append : $r11 = r0.<org.apache.http.util.ByteArrayBuffer: byte[] buffer>
+org.apache.http.util.ByteArrayBuffer.append : $r12 = r0.<org.apache.http.util.ByteArrayBuffer: byte[] buffer>
+org.apache.http.util.ByteArrayBuffer.append : i2 = r0.<org.apache.http.util.ByteArrayBuffer: int len>
+org.apache.http.protocol.BasicHttpContext.setAttribute : if r1 != null goto $r4 = r0.<org.apache.http.protocol.BasicHttpContext: java.util.Map map>
+org.apache.http.protocol.BasicHttpContext.setAttribute : $r4 = r0.<org.apache.http.protocol.BasicHttpContext: java.util.Map map>
+org.apache.http.protocol.BasicHttpContext.setAttribute : $r5 = new java.util.HashMap
+org.apache.http.protocol.BasicHttpContext.setAttribute : $r6 = r0.<org.apache.http.protocol.BasicHttpContext: java.util.Map map>
+org.apache.http.impl.AbstractHttpClientConnection.createRequestWriter : $r3 = new org.apache.http.impl.io.HttpRequestWriter
+org.apache.http.impl.AbstractHttpServerConnection.sendResponseEntity : $r3 = r0.<org.apache.http.impl.AbstractHttpServerConnection: org.apache.http.impl.entity.EntitySerializer entityserializer>
+org.apache.http.impl.AbstractHttpServerConnection.sendResponseEntity : $r2 = interfaceinvoke r1.<org.apache.http.HttpResponse: org.apache.http.HttpEntity getEntity()>()
+org.apache.http.message.BasicTokenIterator.isWhitespace : if c0 == 9 goto $z1 = 1
+org.apache.http.protocol.HttpService.handleRequest : goto [?= interfaceinvoke r2.<org.apache.http.protocol.HttpContext: void setAttribute(java.lang.String,java.lang.Object)>("http.response", r3)]
+org.apache.http.protocol.HttpService.handleRequest : $r12 = (org.apache.http.HttpEntityEnclosingRequest) r4
+org.apache.http.protocol.HttpService.handleRequest : $r42 = r0.<org.apache.http.protocol.HttpService: org.apache.http.protocol.HttpProcessor processor>
+org.apache.http.protocol.HttpService.handleRequest : $r11 = <org.apache.http.HttpVersion: org.apache.http.HttpVersion HTTP_1_1>
+org.apache.http.protocol.HttpService.handleRequest : $r7 = new org.apache.http.params.DefaultedHttpParams
+org.apache.http.protocol.HttpService.handleRequest : virtualinvoke r0.<org.apache.http.protocol.HttpService: void doService(org.apache.http.HttpRequest,org.apache.http.HttpResponse,org.apache.http.protocol.HttpContext)>(r4, r3, r2)
+org.apache.http.protocol.HttpService.handleRequest : interfaceinvoke r1.<org.apache.http.HttpServerConnection: void sendResponseHeader(org.apache.http.HttpResponse)>(r3)
+org.apache.http.protocol.HttpService.handleRequest : $r29 = new org.apache.http.params.DefaultedHttpParams
+org.apache.http.protocol.HttpService.handleRequest : interfaceinvoke r1.<org.apache.http.HttpServerConnection: void flush()>()
+org.apache.http.protocol.HttpService.handleRequest : $r32 = r0.<org.apache.http.protocol.HttpService: org.apache.http.protocol.HttpProcessor processor>
+org.apache.http.protocol.HttpService.handleRequest : r3 = null
+org.apache.http.protocol.HttpService.handleRequest : $r27 = (org.apache.http.HttpEntityEnclosingRequest) r4
+org.apache.http.protocol.HttpService.handleRequest : $r33 = (org.apache.http.HttpEntityEnclosingRequest) r4
+org.apache.http.protocol.HttpService.handleRequest : $r43 = r0.<org.apache.http.protocol.HttpService: org.apache.http.ConnectionReuseStrategy connStrategy>
+org.apache.http.protocol.HttpService.handleRequest : interfaceinvoke r2.<org.apache.http.protocol.HttpContext: void setAttribute(java.lang.String,java.lang.Object)>("http.connection", r1)
+org.apache.http.protocol.HttpService.handleRequest : interfaceinvoke r1.<org.apache.http.HttpServerConnection: void sendResponseEntity(org.apache.http.HttpResponse)>(r3)
+org.apache.http.protocol.HttpService.handleRequest : $r28 = r0.<org.apache.http.protocol.HttpService: org.apache.http.HttpResponseFactory responseFactory>
+org.apache.http.protocol.HttpService.handleRequest : interfaceinvoke r2.<org.apache.http.protocol.HttpContext: void setAttribute(java.lang.String,java.lang.Object)>("http.request", r4)
+org.apache.http.protocol.HttpService.handleRequest : staticinvoke <org.apache.http.util.EntityUtils: void consume(org.apache.http.HttpEntity)>(r34)
+org.apache.http.protocol.HttpService.handleRequest : interfaceinvoke r2.<org.apache.http.protocol.HttpContext: void setAttribute(java.lang.String,java.lang.Object)>("http.response", r3)
+org.apache.http.protocol.HttpService.handleRequest : r4 = interfaceinvoke r1.<org.apache.http.HttpServerConnection: org.apache.http.HttpRequest receiveRequestHeader()>()
+org.apache.http.protocol.HttpService.handleRequest : $z3 = r4 instanceof org.apache.http.HttpEntityEnclosingRequest
+org.apache.http.protocol.HttpService.handleRequest : $r10 = interfaceinvoke r4.<org.apache.http.HttpRequest: org.apache.http.RequestLine getRequestLine()>()
+org.apache.http.protocol.HttpService.handleRequest : if r3 != null goto $z3 = r4 instanceof org.apache.http.HttpEntityEnclosingRequest
+org.apache.http.protocol.HttpService.handleRequest : $z1 = r4 instanceof org.apache.http.HttpEntityEnclosingRequest
+org.apache.http.util.ByteArrayBuffer.length : $i0 = r0.<org.apache.http.util.ByteArrayBuffer: int len>
+org.apache.http.message.BasicHttpResponse.getEntity : $r1 = r0.<org.apache.http.message.BasicHttpResponse: org.apache.http.HttpEntity entity>
+org.apache.http.impl.SocketHttpServerConnection.bind : if r2 != null goto r0.<org.apache.http.impl.SocketHttpServerConnection: java.net.Socket socket> = r1
+org.apache.http.impl.SocketHttpServerConnection.bind : r0.<org.apache.http.impl.SocketHttpServerConnection: java.net.Socket socket> = r1
+org.apache.http.impl.SocketHttpServerConnection.bind : if r1 != null goto (branch)
+org.apache.http.impl.SocketHttpServerConnection.bind : r0.<org.apache.http.impl.SocketHttpServerConnection: boolean open> = 1
+org.apache.http.impl.SocketHttpServerConnection.bind : i0 = staticinvoke <org.apache.http.params.HttpConnectionParams: int getSocketBufferSize(org.apache.http.params.HttpParams)>(r2)
+org.apache.http.impl.SocketHttpServerConnection.bind : $r5 = virtualinvoke r0.<org.apache.http.impl.SocketHttpServerConnection: org.apache.http.io.SessionInputBuffer createSessionInputBuffer(java.net.Socket,int,org.apache.http.params.HttpParams)>(r1, i0, r2)
+org.apache.http.protocol.ResponseDate.process : $r5 = interfaceinvoke r1.<org.apache.http.HttpResponse: org.apache.http.StatusLine getStatusLine()>()
+org.apache.http.protocol.ResponseDate.process : $r6 = <org.apache.http.protocol.ResponseDate: org.apache.http.protocol.HttpDateGenerator DATE_GENERATOR>
+org.apache.http.protocol.ResponseDate.process : if i0 < 200 goto return
+org.apache.http.protocol.ResponseDate.process : if r1 != null goto $r5 = interfaceinvoke r1.<org.apache.http.HttpResponse: org.apache.http.StatusLine getStatusLine()>()
+org.apache.http.protocol.ResponseDate.process : interfaceinvoke r1.<org.apache.http.HttpResponse: void setHeader(java.lang.String,java.lang.String)>("Date", r3)
+org.apache.http.testserver.HttpServer.access$000 : $z0 = r0.<org.apache.http.testserver.HttpServer: boolean shutdown>
+org.apache.http.protocol.ResponseConnControl.process : r3 = interfaceinvoke r1.<org.apache.http.HttpResponse: org.apache.http.HttpEntity getEntity()>()
+org.apache.http.protocol.ResponseConnControl.process : $r11 = interfaceinvoke r2.<org.apache.http.protocol.HttpContext: java.lang.Object getAttribute(java.lang.String)>("http.request")
+org.apache.http.protocol.ResponseConnControl.process : r5 = interfaceinvoke r12.<org.apache.http.HttpRequest: org.apache.http.Header getFirstHeader(java.lang.String)>("Connection")
+org.apache.http.protocol.ResponseConnControl.process : $r9 = interfaceinvoke r1.<org.apache.http.HttpResponse: org.apache.http.StatusLine getStatusLine()>()
+org.apache.http.protocol.ResponseConnControl.process : $l1 = interfaceinvoke r3.<org.apache.http.HttpEntity: long getContentLength()>()
+org.apache.http.protocol.ResponseConnControl.process : if r1 != null goto (branch)
+org.apache.http.protocol.ResponseConnControl.process : if r2 != null goto $r8 = interfaceinvoke r1.<org.apache.http.HttpResponse: org.apache.http.StatusLine getStatusLine()>()
+org.apache.http.protocol.ResponseConnControl.process : if i0 == 400 goto interfaceinvoke r1.<org.apache.http.HttpResponse: void setHeader(java.lang.String,java.lang.String)>("Connection", "Close")
+org.apache.http.protocol.ResponseConnControl.process : $r13 = interfaceinvoke r5.<org.apache.http.Header: java.lang.String getValue()>()
+org.apache.http.protocol.ResponseConnControl.process : if r12 == null goto return
+org.apache.http.protocol.ResponseConnControl.process : if r3 == null goto $r11 = interfaceinvoke r2.<org.apache.http.protocol.HttpContext: java.lang.Object getAttribute(java.lang.String)>("http.request")
+org.apache.http.protocol.ResponseConnControl.process : $r8 = interfaceinvoke r1.<org.apache.http.HttpResponse: org.apache.http.StatusLine getStatusLine()>()
+org.apache.http.protocol.ResponseConnControl.process : if r5 == null goto return
+org.apache.http.util.CharArrayBuffer.clear : r0.<org.apache.http.util.CharArrayBuffer: int len> = 0
+org.apache.http.testserver.HttpServer$1.run : r23 = $r22
+org.apache.http.testserver.HttpServer$1.run : $r19 = new org.apache.http.testserver.HttpServer$WorkerThread
+org.apache.http.testserver.HttpServer$1.run : virtualinvoke r3.<java.lang.Thread: void start()>()
+org.apache.http.testserver.HttpServer$1.run : $r5 = r0.<org.apache.http.testserver.HttpServer$1: org.apache.http.testserver.HttpServer this$0>
+org.apache.http.testserver.HttpServer$1.run : goto [?= staticinvoke <edu.washington.cs.dt.impact.util.Tracer: void trace(java.lang.String,java.lang.String)>("$r4 = r0.<org.apache.http.testserver.HttpServer$1: org.apache.http.testserver.HttpServer this$0>", "org.apache.http.testserver.HttpServer$1.run")]
+org.apache.http.testserver.HttpServer$1.run : $r4 = r0.<org.apache.http.testserver.HttpServer$1: org.apache.http.testserver.HttpServer this$0>
+org.apache.http.testserver.HttpServer$1.run : virtualinvoke r3.<java.lang.Thread: void setDaemon(boolean)>(1)
+org.apache.http.testserver.HttpServer$1.run : goto [?= return]
+org.apache.http.testserver.HttpServer$1.run : $r6 = new org.apache.http.protocol.HttpService
+org.apache.http.protocol.HttpService.doService : $r6 = r0.<org.apache.http.protocol.HttpService: org.apache.http.protocol.HttpRequestHandlerResolver handlerResolver>
+org.apache.http.protocol.HttpService.doService : interfaceinvoke r4.<org.apache.http.protocol.HttpRequestHandler: void handle(org.apache.http.HttpRequest,org.apache.http.HttpResponse,org.apache.http.protocol.HttpContext)>(r1, r2, r3)
+org.apache.http.protocol.HttpService.doService : if r4 == null goto interfaceinvoke r2.<org.apache.http.HttpResponse: void setStatusCode(int)>(501)
+org.apache.http.protocol.HttpService.doService : r4 = null
+org.apache.http.protocol.HttpService.doService : $r8 = r0.<org.apache.http.protocol.HttpService: org.apache.http.protocol.HttpRequestHandlerResolver handlerResolver>
+org.apache.http.protocol.HttpService.doService : $r7 = interfaceinvoke r1.<org.apache.http.HttpRequest: org.apache.http.RequestLine getRequestLine()>()
+org.apache.http.params.BasicHttpParams.getParameter : $r2 = r0.<org.apache.http.params.BasicHttpParams: java.util.HashMap parameters>
+org.apache.http.impl.AbstractHttpClientConnection.sendRequestHeader : virtualinvoke r0.<org.apache.http.impl.AbstractHttpClientConnection: void assertOpen()>()
+org.apache.http.impl.AbstractHttpClientConnection.sendRequestHeader : $r4 = r0.<org.apache.http.impl.AbstractHttpClientConnection: org.apache.http.impl.HttpConnectionMetricsImpl metrics>
+org.apache.http.impl.AbstractHttpClientConnection.sendRequestHeader : if r1 != null goto virtualinvoke r0.<org.apache.http.impl.AbstractHttpClientConnection: void assertOpen()>()
+org.apache.http.impl.AbstractHttpClientConnection.sendRequestHeader : $r3 = r0.<org.apache.http.impl.AbstractHttpClientConnection: org.apache.http.io.HttpMessageWriter requestWriter>
+org.apache.http.impl.io.SocketInputBuffer.fillBuffer : if i0 != -1 goto $z0 = 0
+org.apache.http.impl.io.SocketInputBuffer.fillBuffer : return i0
+org.apache.http.impl.io.SocketInputBuffer.fillBuffer : i0 = specialinvoke r0.<org.apache.http.impl.io.AbstractSessionInputBuffer: int fillBuffer()>()
+org.apache.http.testserver.HttpServer.access$400 : $r1 = r0.<org.apache.http.testserver.HttpServer: org.apache.http.HttpResponseFactory responseFactory>
+org.apache.http.message.BasicListHeaderIterator.hasNext : $i0 = r0.<org.apache.http.message.BasicListHeaderIterator: int currentIndex>
+org.apache.http.message.BasicRequestLine.getUri : $r1 = r0.<org.apache.http.message.BasicRequestLine: java.lang.String uri>
+org.apache.http.testserver.HttpClient.keepAlive : $r2 = r0.<org.apache.http.testserver.HttpClient: org.apache.http.ConnectionReuseStrategy connStrategy>
+org.apache.http.message.BasicLineFormatter.doFormatHeader : if r4 == null goto return
+org.apache.http.message.BasicLineFormatter.doFormatHeader : virtualinvoke r1.<org.apache.http.util.CharArrayBuffer: void append(java.lang.String)>(": ")
+org.apache.http.message.BasicLineFormatter.doFormatHeader : $i1 = virtualinvoke r3.<java.lang.String: int length()>()
+org.apache.http.message.BasicLineFormatter.doFormatHeader : r3 = interfaceinvoke r2.<org.apache.http.Header: java.lang.String getName()>()
+org.apache.http.message.BasicLineFormatter.doFormatHeader : virtualinvoke r1.<org.apache.http.util.CharArrayBuffer: void append(java.lang.String)>(r3)
+org.apache.http.message.BasicLineFormatter.doFormatHeader : r4 = interfaceinvoke r2.<org.apache.http.Header: java.lang.String getValue()>()
+org.apache.http.message.BasicLineFormatter.doFormatHeader : $i2 = virtualinvoke r4.<java.lang.String: int length()>()
+org.apache.http.message.BasicLineFormatter.doFormatHeader : virtualinvoke r1.<org.apache.http.util.CharArrayBuffer: void append(java.lang.String)>(r4)
+org.apache.http.message.BasicLineFormatter.doFormatHeader : if r4 == null goto virtualinvoke r1.<org.apache.http.util.CharArrayBuffer: void ensureCapacity(int)>(i0)
+org.apache.http.message.BasicLineFormatter.doFormatHeader : virtualinvoke r1.<org.apache.http.util.CharArrayBuffer: void ensureCapacity(int)>(i0)
+org.apache.http.impl.io.AbstractSessionInputBuffer.init : if i0 > 0 goto (branch)
+org.apache.http.impl.io.AbstractSessionInputBuffer.init : $r10 = r0.<org.apache.http.impl.io.AbstractSessionInputBuffer: java.nio.charset.Charset charset>
+org.apache.http.impl.io.AbstractSessionInputBuffer.init : $r7 = new org.apache.http.util.ByteArrayBuffer
+org.apache.http.impl.io.AbstractSessionInputBuffer.init : r0.<org.apache.http.impl.io.AbstractSessionInputBuffer: int bufferpos> = 0
+org.apache.http.impl.io.AbstractSessionInputBuffer.init : r0.<org.apache.http.impl.io.AbstractSessionInputBuffer: int bufferlen> = 0
+org.apache.http.impl.io.AbstractSessionInputBuffer.init : $i1 = interfaceinvoke r2.<org.apache.http.params.HttpParams: int getIntParameter(java.lang.String,int)>("http.connection.max-line-length", -1)
+org.apache.http.impl.io.AbstractSessionInputBuffer.init : if r1 != null goto (branch)
+org.apache.http.impl.io.AbstractSessionInputBuffer.init : if r2 != null goto r0.<org.apache.http.impl.io.AbstractSessionInputBuffer: java.io.InputStream instream> = r1
+org.apache.http.impl.io.AbstractSessionInputBuffer.init : r0.<org.apache.http.impl.io.AbstractSessionInputBuffer: java.io.InputStream instream> = r1
+org.apache.http.impl.io.AbstractSessionInputBuffer.init : r0.<org.apache.http.impl.io.AbstractSessionInputBuffer: java.nio.charset.CharsetDecoder decoder> = null
+org.apache.http.impl.io.AbstractSessionInputBuffer.init : $i2 = interfaceinvoke r2.<org.apache.http.params.HttpParams: int getIntParameter(java.lang.String,int)>("http.connection.min-chunk-limit", 512)
+org.apache.http.impl.io.AbstractSessionInputBuffer.init : $r8 = staticinvoke <org.apache.http.params.HttpProtocolParams: java.lang.String getHttpElementCharset(org.apache.http.params.HttpParams)>(r2)
+org.apache.http.impl.io.AbstractSessionInputBuffer.init : $r12 = virtualinvoke r0.<org.apache.http.impl.io.AbstractSessionInputBuffer: org.apache.http.impl.io.HttpTransportMetricsImpl createTransportMetrics()>()
+org.apache.http.impl.io.AbstractSessionInputBuffer.init : $r6 = newarray (byte)[i0]
+org.apache.http.params.BasicHttpParams.setParameter : $r3 = r0.<org.apache.http.params.BasicHttpParams: java.util.HashMap parameters>
+org.apache.http.params.BasicHttpParams.setParameter : return r0
+org.apache.http.ProtocolVersion.lessEquals : $z0 = virtualinvoke r0.<org.apache.http.ProtocolVersion: boolean isComparable(org.apache.http.ProtocolVersion)>(r1)
+org.apache.http.impl.SocketHttpClientConnection.createSessionInputBuffer : $r3 = new org.apache.http.impl.io.SocketInputBuffer
+org.apache.http.entity.AbstractHttpEntity.getContentEncoding : $r1 = r0.<org.apache.http.entity.AbstractHttpEntity: org.apache.http.Header contentEncoding>
+org.apache.http.message.BasicHeader.getName : $r1 = r0.<org.apache.http.message.BasicHeader: java.lang.String name>
+org.apache.http.params.SyncBasicHttpParams.getParameter : $r2 = specialinvoke r0.<org.apache.http.params.BasicHttpParams: java.lang.Object getParameter(java.lang.String)>(r1)
+org.apache.http.message.AbstractHttpMessage.getHeaders : $r2 = r0.<org.apache.http.message.AbstractHttpMessage: org.apache.http.message.HeaderGroup headergroup>
+org.apache.http.message.BasicLineFormatter.formatHeader : return r5
+org.apache.http.message.BasicLineFormatter.formatHeader : virtualinvoke r0.<org.apache.http.message.BasicLineFormatter: void doFormatHeader(org.apache.http.util.CharArrayBuffer,org.apache.http.Header)>(r5, r2)
+org.apache.http.message.BasicLineFormatter.formatHeader : r5 = virtualinvoke r0.<org.apache.http.message.BasicLineFormatter: org.apache.http.util.CharArrayBuffer initBuffer(org.apache.http.util.CharArrayBuffer)>(r1)
+org.apache.http.message.BasicLineFormatter.formatHeader : n0 = null
+org.apache.http.message.BasicLineFormatter.formatHeader : if r2 != null goto n0 = null
+org.apache.http.message.BasicLineFormatter.formatHeader : $z0 = r2 instanceof org.apache.http.FormattedHeader
+org.apache.http.impl.io.AbstractSessionInputBuffer.fillBuffer : r0.<org.apache.http.impl.io.AbstractSessionInputBuffer: int bufferlen> = i0
+org.apache.http.impl.io.AbstractSessionInputBuffer.fillBuffer : $r6 = r0.<org.apache.http.impl.io.AbstractSessionInputBuffer: org.apache.http.impl.io.HttpTransportMetricsImpl metrics>
+org.apache.http.impl.io.AbstractSessionInputBuffer.fillBuffer : r0.<org.apache.http.impl.io.AbstractSessionInputBuffer: int bufferpos> = 0
+org.apache.http.impl.io.AbstractSessionInputBuffer.fillBuffer : $i4 = r0.<org.apache.http.impl.io.AbstractSessionInputBuffer: int bufferlen>
+org.apache.http.impl.io.AbstractSessionInputBuffer.fillBuffer : return -1
+org.apache.http.impl.io.AbstractSessionInputBuffer.fillBuffer : $r3 = r0.<org.apache.http.impl.io.AbstractSessionInputBuffer: byte[] buffer>
+org.apache.http.impl.io.AbstractSessionInputBuffer.fillBuffer : $r4 = r0.<org.apache.http.impl.io.AbstractSessionInputBuffer: java.io.InputStream instream>
+org.apache.http.impl.io.AbstractSessionInputBuffer.fillBuffer : $i3 = r0.<org.apache.http.impl.io.AbstractSessionInputBuffer: int bufferpos>
+org.apache.http.impl.io.AbstractSessionInputBuffer.fillBuffer : if i0 <= 0 goto r0.<org.apache.http.impl.io.AbstractSessionInputBuffer: int bufferpos> = 0
+org.apache.http.impl.io.AbstractSessionInputBuffer.fillBuffer : if i8 != -1 goto $i9 = i1 + i8
+org.apache.http.impl.io.AbstractSessionInputBuffer.fillBuffer : return i8
+org.apache.http.impl.io.AbstractSessionInputBuffer.fillBuffer : $i9 = i1 + i8
+org.apache.http.impl.io.AbstractSessionInputBuffer.fillBuffer : i1 = r0.<org.apache.http.impl.io.AbstractSessionInputBuffer: int bufferlen>
+org.apache.http.impl.io.AbstractSessionOutputBuffer.createTransportMetrics : $r1 = new org.apache.http.impl.io.HttpTransportMetricsImpl
+org.apache.http.impl.io.AbstractSessionOutputBuffer.init : $r11 = virtualinvoke r0.<org.apache.http.impl.io.AbstractSessionOutputBuffer: org.apache.http.impl.io.HttpTransportMetricsImpl createTransportMetrics()>()
+org.apache.http.impl.io.AbstractSessionOutputBuffer.init : if i0 > 0 goto (branch)
+org.apache.http.impl.io.AbstractSessionOutputBuffer.init : if r2 != null goto r0.<org.apache.http.impl.io.AbstractSessionOutputBuffer: java.io.OutputStream outstream> = r1
+org.apache.http.impl.io.AbstractSessionOutputBuffer.init : $i1 = interfaceinvoke r2.<org.apache.http.params.HttpParams: int getIntParameter(java.lang.String,int)>("http.connection.min-chunk-limit", 512)
+org.apache.http.impl.io.AbstractSessionOutputBuffer.init : $r6 = new org.apache.http.util.ByteArrayBuffer
+org.apache.http.impl.io.AbstractSessionOutputBuffer.init : if r1 != null goto (branch)
+org.apache.http.impl.io.AbstractSessionOutputBuffer.init : r0.<org.apache.http.impl.io.AbstractSessionOutputBuffer: java.nio.charset.CharsetEncoder encoder> = null
+org.apache.http.impl.io.AbstractSessionOutputBuffer.init : $r9 = r0.<org.apache.http.impl.io.AbstractSessionOutputBuffer: java.nio.charset.Charset charset>
+org.apache.http.impl.io.AbstractSessionOutputBuffer.init : r0.<org.apache.http.impl.io.AbstractSessionOutputBuffer: java.io.OutputStream outstream> = r1
+org.apache.http.impl.io.AbstractSessionOutputBuffer.init : $r7 = staticinvoke <org.apache.http.params.HttpProtocolParams: java.lang.String getHttpElementCharset(org.apache.http.params.HttpParams)>(r2)
+org.apache.http.message.BasicStatusLine.getProtocolVersion : $r1 = r0.<org.apache.http.message.BasicStatusLine: org.apache.http.ProtocolVersion protoVersion>
+org.apache.http.testserver.HttpServer.registerHandler : $r3 = r0.<org.apache.http.testserver.HttpServer: org.apache.http.protocol.HttpRequestHandlerRegistry reqistry>
+org.apache.http.message.BasicHttpResponse.getStatusLine : $r1 = r0.<org.apache.http.message.BasicHttpResponse: org.apache.http.StatusLine statusline>
+org.apache.http.impl.SocketHttpClientConnection.createSessionOutputBuffer : $r3 = new org.apache.http.impl.io.SocketOutputBuffer
+org.apache.http.impl.io.AbstractSessionOutputBuffer.write : $i0 = lengthof r1
+org.apache.http.impl.io.AbstractSessionOutputBuffer.write : $i3 = r0.<org.apache.http.impl.io.AbstractSessionOutputBuffer: int minChunkLimit>
+org.apache.http.impl.io.AbstractSessionOutputBuffer.write : if r1 != null goto $i0 = lengthof r1
+org.apache.http.impl.io.AbstractSessionOutputBuffer.write : $r4 = r0.<org.apache.http.impl.io.AbstractSessionOutputBuffer: org.apache.http.impl.io.HttpTransportMetricsImpl metrics>
+org.apache.http.impl.io.AbstractSessionOutputBuffer.write : $r3 = r0.<org.apache.http.impl.io.AbstractSessionOutputBuffer: java.io.OutputStream outstream>
+org.apache.http.impl.io.AbstractSessionOutputBuffer.write : virtualinvoke r0.<org.apache.http.impl.io.AbstractSessionOutputBuffer: void flushBuffer()>()
+org.apache.http.impl.io.AbstractSessionOutputBuffer.write : $r7 = r0.<org.apache.http.impl.io.AbstractSessionOutputBuffer: org.apache.http.util.ByteArrayBuffer buffer>
+org.apache.http.impl.io.AbstractSessionOutputBuffer.write : if i1 <= i2 goto $r7 = r0.<org.apache.http.impl.io.AbstractSessionOutputBuffer: org.apache.http.util.ByteArrayBuffer buffer>
+org.apache.http.impl.io.AbstractSessionOutputBuffer.write : $r5 = r0.<org.apache.http.impl.io.AbstractSessionOutputBuffer: org.apache.http.util.ByteArrayBuffer buffer>
+org.apache.http.impl.io.AbstractSessionOutputBuffer.write : if r1 != null goto $i3 = r0.<org.apache.http.impl.io.AbstractSessionOutputBuffer: int minChunkLimit>
+org.apache.http.message.BasicTokenIterator.isTokenChar : $z2 = virtualinvoke r0.<org.apache.http.message.BasicTokenIterator: boolean isHttpSeparator(char)>(c0)
+org.apache.http.message.BasicTokenIterator.isTokenChar : $z0 = staticinvoke <java.lang.Character: boolean isLetterOrDigit(char)>(c0)
+org.apache.http.message.BasicTokenIterator.isTokenChar : $z1 = staticinvoke <java.lang.Character: boolean isISOControl(char)>(c0)
+org.apache.http.message.BasicTokenIterator.isTokenChar : return 1
+org.apache.http.impl.SocketHttpClientConnection.isOpen : $z0 = r0.<org.apache.http.impl.SocketHttpClientConnection: boolean open>
+org.apache.http.impl.AbstractHttpClientConnection.getMetrics : $r1 = r0.<org.apache.http.impl.AbstractHttpClientConnection: org.apache.http.impl.HttpConnectionMetricsImpl metrics>
+org.apache.http.impl.AbstractHttpClientConnection.init : r0.<org.apache.http.impl.AbstractHttpClientConnection: org.apache.http.io.SessionInputBuffer inbuffer> = r1
+org.apache.http.impl.AbstractHttpClientConnection.init : $r10 = interfaceinvoke r1.<org.apache.http.io.SessionInputBuffer: org.apache.http.io.HttpTransportMetrics getMetrics()>()
+org.apache.http.impl.AbstractHttpClientConnection.init : $r7 = virtualinvoke r0.<org.apache.http.impl.AbstractHttpClientConnection: org.apache.http.HttpResponseFactory createHttpResponseFactory()>()
+org.apache.http.impl.AbstractHttpClientConnection.init : if r2 != null goto r0.<org.apache.http.impl.AbstractHttpClientConnection: org.apache.http.io.SessionInputBuffer inbuffer> = r1
+org.apache.http.impl.AbstractHttpClientConnection.init : $r9 = virtualinvoke r0.<org.apache.http.impl.AbstractHttpClientConnection: org.apache.http.io.HttpMessageWriter createRequestWriter(org.apache.http.io.SessionOutputBuffer,org.apache.http.params.HttpParams)>(r2, r3)
+org.apache.http.impl.AbstractHttpClientConnection.init : $r6 = (org.apache.http.io.EofSensor) r1
+org.apache.http.impl.AbstractHttpClientConnection.init : $z0 = r1 instanceof org.apache.http.io.EofSensor
+org.apache.http.impl.AbstractHttpClientConnection.init : r0.<org.apache.http.impl.AbstractHttpClientConnection: org.apache.http.io.SessionOutputBuffer outbuffer> = r2
+org.apache.http.impl.AbstractHttpClientConnection.init : if r1 != null goto (branch)
+org.apache.http.message.BasicTokenIterator.findTokenStart : $r8 = r0.<org.apache.http.message.BasicTokenIterator: java.lang.String currentHeader>
+org.apache.http.message.BasicTokenIterator.findTokenStart : z0 = 1
+org.apache.http.message.BasicTokenIterator.findTokenStart : goto [?= staticinvoke <edu.washington.cs.dt.impact.util.Tracer: void trace(java.lang.String,java.lang.String)>("if z0 != 0 goto (branch)", "org.apache.http.message.BasicTokenIterator.findTokenStart")]
+org.apache.http.message.BasicTokenIterator.findTokenStart : z0 = 0
+org.apache.http.message.BasicTokenIterator.findTokenStart : $r18 = r0.<org.apache.http.message.BasicTokenIterator: org.apache.http.HeaderIterator headerIt>
+org.apache.http.message.BasicTokenIterator.findTokenStart : $r9 = r0.<org.apache.http.message.BasicTokenIterator: java.lang.String currentHeader>
+org.apache.http.message.BasicTokenIterator.findTokenStart : if z0 == 0 goto $i4 = -1
+org.apache.http.message.BasicTokenIterator.findTokenStart : $r7 = r0.<org.apache.http.message.BasicTokenIterator: java.lang.String currentHeader>
+org.apache.http.message.BasicTokenIterator.findTokenStart : $z1 = virtualinvoke r0.<org.apache.http.message.BasicTokenIterator: boolean isTokenSeparator(char)>(c2)
+org.apache.http.message.BasicTokenIterator.findTokenStart : if z0 != 0 goto (branch)
+org.apache.http.message.BasicTokenIterator.findTokenStart : if i0 >= 0 goto z0 = 0
+org.apache.http.message.BasicTokenIterator.findTokenStart : r0.<org.apache.http.message.BasicTokenIterator: java.lang.String currentHeader> = null
+org.apache.http.testserver.HttpServer.access$600 : $r1 = r0.<org.apache.http.testserver.HttpServer: org.apache.http.protocol.HttpExpectationVerifier expectationVerifier>
+org.apache.http.impl.AbstractHttpServerConnection.doFlush : $r1 = r0.<org.apache.http.impl.AbstractHttpServerConnection: org.apache.http.io.SessionOutputBuffer outbuffer>
+org.apache.http.util.CharArrayBuffer.buffer : $r1 = r0.<org.apache.http.util.CharArrayBuffer: char[] buffer>
+org.apache.http.message.BufferedHeader.getValue : $r1 = r0.<org.apache.http.message.BufferedHeader: org.apache.http.util.CharArrayBuffer buffer>
+org.apache.http.message.AbstractHttpMessage.headerIterator : $r1 = r0.<org.apache.http.message.AbstractHttpMessage: org.apache.http.message.HeaderGroup headergroup>
+org.apache.http.message.AbstractHttpMessage.headerIterator : $r2 = r0.<org.apache.http.message.AbstractHttpMessage: org.apache.http.message.HeaderGroup headergroup>
+org.apache.http.impl.AbstractHttpClientConnection.createEntitySerializer : $r1 = new org.apache.http.impl.entity.EntitySerializer
+org.apache.http.message.HeaderGroup.addHeader : $r2 = r0.<org.apache.http.message.HeaderGroup: java.util.List headers>
+org.apache.http.message.HeaderGroup.addHeader : if r1 != null goto $r2 = r0.<org.apache.http.message.HeaderGroup: java.util.List headers>
+org.apache.http.impl.io.AbstractSessionOutputBuffer.flushBuffer : $r2 = r0.<org.apache.http.impl.io.AbstractSessionOutputBuffer: java.io.OutputStream outstream>
+org.apache.http.impl.io.AbstractSessionOutputBuffer.flushBuffer : $r6 = r0.<org.apache.http.impl.io.AbstractSessionOutputBuffer: org.apache.http.impl.io.HttpTransportMetricsImpl metrics>
+org.apache.http.impl.io.AbstractSessionOutputBuffer.flushBuffer : $r5 = r0.<org.apache.http.impl.io.AbstractSessionOutputBuffer: org.apache.http.util.ByteArrayBuffer buffer>
+org.apache.http.impl.io.AbstractSessionOutputBuffer.flushBuffer : $r1 = r0.<org.apache.http.impl.io.AbstractSessionOutputBuffer: org.apache.http.util.ByteArrayBuffer buffer>
+org.apache.http.impl.io.AbstractSessionOutputBuffer.flushBuffer : if i0 <= 0 goto return
+org.apache.http.params.AbstractHttpParams.getBooleanParameter : r2 = virtualinvoke r0.<org.apache.http.params.AbstractHttpParams: java.lang.Object getParameter(java.lang.String)>(r1)
+org.apache.http.params.AbstractHttpParams.getBooleanParameter : $r3 = (java.lang.Boolean) r2
+org.apache.http.params.AbstractHttpParams.getBooleanParameter : return z0
+org.apache.http.params.AbstractHttpParams.getBooleanParameter : if r2 != null goto $r3 = (java.lang.Boolean) r2
+org.apache.http.message.BasicTokenIterator.hasNext : $r1 = r0.<org.apache.http.message.BasicTokenIterator: java.lang.String currentToken>
+org.apache.http.impl.AbstractHttpClientConnection.createConnectionMetrics : $r3 = new org.apache.http.impl.HttpConnectionMetricsImpl
+org.apache.http.message.BasicTokenIterator.isHttpSeparator : $r1 = " ,;=()<>@:\\\"/[]?{}\t"
+org.apache.http.protocol.HttpRequestExecutor.postProcess : interfaceinvoke r3.<org.apache.http.protocol.HttpContext: void setAttribute(java.lang.String,java.lang.Object)>("http.response", r1)
+org.apache.http.protocol.HttpRequestExecutor.postProcess : interfaceinvoke r2.<org.apache.http.protocol.HttpProcessor: void process(org.apache.http.HttpResponse,org.apache.http.protocol.HttpContext)>(r1, r3)
+org.apache.http.protocol.HttpRequestExecutor.postProcess : if r1 != null goto (branch)
+org.apache.http.protocol.HttpRequestExecutor.postProcess : if r3 != null goto interfaceinvoke r3.<org.apache.http.protocol.HttpContext: void setAttribute(java.lang.String,java.lang.Object)>("http.response", r1)
+org.apache.http.protocol.HttpRequestExecutor.postProcess : if r2 != null goto (branch)
+org.apache.http.impl.io.ContentLengthOutputStream.close : $z0 = r0.<org.apache.http.impl.io.ContentLengthOutputStream: boolean closed>
+org.apache.http.impl.io.ContentLengthOutputStream.close : r0.<org.apache.http.impl.io.ContentLengthOutputStream: boolean closed> = 1
+org.apache.http.impl.io.ContentLengthOutputStream.close : $r1 = r0.<org.apache.http.impl.io.ContentLengthOutputStream: org.apache.http.io.SessionOutputBuffer out>
+org.apache.http.protocol.HttpRequestHandlerRegistry.register : if r2 != null goto $r5 = r0.<org.apache.http.protocol.HttpRequestHandlerRegistry: org.apache.http.protocol.UriPatternMatcher matcher>
+org.apache.http.protocol.HttpRequestHandlerRegistry.register : $r5 = r0.<org.apache.http.protocol.HttpRequestHandlerRegistry: org.apache.http.protocol.UriPatternMatcher matcher>
+org.apache.http.protocol.HttpRequestHandlerRegistry.register : if r1 != null goto (branch)
+org.apache.http.message.AbstractHttpMessage.getParams : $r2 = r0.<org.apache.http.message.AbstractHttpMessage: org.apache.http.params.HttpParams params>
+org.apache.http.message.AbstractHttpMessage.getParams : $r3 = r0.<org.apache.http.message.AbstractHttpMessage: org.apache.http.params.HttpParams params>
+org.apache.http.message.AbstractHttpMessage.getParams : $r1 = new org.apache.http.params.BasicHttpParams
+org.apache.http.params.SyncBasicHttpParams.setParameter : $r3 = specialinvoke r0.<org.apache.http.params.BasicHttpParams: org.apache.http.params.HttpParams setParameter(java.lang.String,java.lang.Object)>(r1, r2)
+org.apache.http.message.BasicTokenIterator.isTokenSeparator : if c0 != 44 goto $z0 = 0
+org.apache.http.params.HttpProtocolParams.useExpectContinue : $z0 = interfaceinvoke r0.<org.apache.http.params.HttpParams: boolean getBooleanParameter(java.lang.String,boolean)>("http.protocol.expect-continue", 0)
+org.apache.http.params.HttpProtocolParams.useExpectContinue : if r0 != null goto $z0 = interfaceinvoke r0.<org.apache.http.params.HttpParams: boolean getBooleanParameter(java.lang.String,boolean)>("http.protocol.expect-continue", 0)
+org.apache.http.message.AbstractHttpMessage.setHeaders : $r2 = r0.<org.apache.http.message.AbstractHttpMessage: org.apache.http.message.HeaderGroup headergroup>
+org.apache.http.testserver.HttpServer.access$300 : $r1 = r0.<org.apache.http.testserver.HttpServer: org.apache.http.ConnectionReuseStrategy connStrategy>
+org.apache.http.message.BasicLineParser.skipWhitespace : virtualinvoke r2.<org.apache.http.message.ParserCursor: void updatePos(int)>(i0)
+org.apache.http.message.BasicLineParser.skipWhitespace : if i0 >= i1 goto virtualinvoke r2.<org.apache.http.message.ParserCursor: void updatePos(int)>(i0)
+org.apache.http.message.BasicLineParser.skipWhitespace : i0 = virtualinvoke r2.<org.apache.http.message.ParserCursor: int getPos()>()
+org.apache.http.message.BasicLineParser.skipWhitespace : i0 = i0 + 1
+org.apache.http.message.BasicLineParser.skipWhitespace : i1 = virtualinvoke r2.<org.apache.http.message.ParserCursor: int getUpperBound()>()
+org.apache.http.protocol.ImmutableHttpProcessor.process : $r4 = r0.<org.apache.http.protocol.ImmutableHttpProcessor: org.apache.http.HttpRequestInterceptor[] requestInterceptors>
+org.apache.http.protocol.ImmutableHttpProcessor.process : $r4 = r0.<org.apache.http.protocol.ImmutableHttpProcessor: org.apache.http.HttpResponseInterceptor[] responseInterceptors>
+org.apache.http.protocol.ImmutableHttpProcessor.process : i0 = 0
+org.apache.http.testserver.HttpServer.access$100 : $r1 = specialinvoke r0.<org.apache.http.testserver.HttpServer: org.apache.http.HttpServerConnection acceptConnection()>()
+org.apache.http.impl.HttpConnectionMetricsImpl.getResponseCount : $l0 = r0.<org.apache.http.impl.HttpConnectionMetricsImpl: long responseCount>
+org.apache.http.testserver.HttpServer.shutdown : r0.<org.apache.http.testserver.HttpServer: boolean shutdown> = 1
+org.apache.http.testserver.HttpServer.shutdown : $z0 = r0.<org.apache.http.testserver.HttpServer: boolean shutdown>
+org.apache.http.testserver.HttpServer.shutdown : $r2 = r0.<org.apache.http.testserver.HttpServer: java.net.ServerSocket serversocket>
+org.apache.http.testserver.HttpServer.shutdown : $r5 = r0.<org.apache.http.testserver.HttpServer: java.lang.Thread listener>
+org.apache.http.testserver.HttpServer.shutdown : $r4 = r0.<org.apache.http.testserver.HttpServer: java.lang.Thread listener>
+org.apache.http.testserver.HttpServer.shutdown : goto [?= return]
+org.apache.http.testserver.HttpServer.shutdown : goto [?= $r4 = r0.<org.apache.http.testserver.HttpServer: java.lang.Thread listener>]
+org.apache.http.message.HeaderGroup.containsHeader : i0 = 0
+org.apache.http.message.HeaderGroup.containsHeader : $r6 = interfaceinvoke r2.<org.apache.http.Header: java.lang.String getName()>()
+org.apache.http.message.HeaderGroup.containsHeader : $r4 = r0.<org.apache.http.message.HeaderGroup: java.util.List headers>
+org.apache.http.message.HeaderGroup.containsHeader : return 0
+org.apache.http.testserver.HttpServer.start : $r5 = r0.<org.apache.http.testserver.HttpServer: java.lang.Thread listener>
+org.apache.http.testserver.HttpServer.start : $r4 = new java.lang.Thread
+org.apache.http.testserver.HttpServer.start : $r2 = r0.<org.apache.http.testserver.HttpServer: java.lang.Thread listener>
+org.apache.http.util.ByteArrayBuffer.buffer : $r1 = r0.<org.apache.http.util.ByteArrayBuffer: byte[] buffer>
+org.apache.http.testserver.HttpClient.getParams : $r1 = r0.<org.apache.http.testserver.HttpClient: org.apache.http.params.HttpParams params>
+org.apache.http.message.BasicLineFormatter.doFormatStatusLine : if r3 == null goto virtualinvoke r1.<org.apache.http.util.CharArrayBuffer: void ensureCapacity(int)>(i0)
+org.apache.http.message.BasicLineFormatter.doFormatStatusLine : $i5 = interfaceinvoke r2.<org.apache.http.StatusLine: int getStatusCode()>()
+org.apache.http.message.BasicLineFormatter.doFormatStatusLine : if r3 == null goto return
+org.apache.http.message.BasicLineFormatter.doFormatStatusLine : virtualinvoke r1.<org.apache.http.util.CharArrayBuffer: void append(char)>(32)
+org.apache.http.message.BasicLineFormatter.doFormatStatusLine : r3 = interfaceinvoke r2.<org.apache.http.StatusLine: java.lang.String getReasonPhrase()>()
+org.apache.http.message.BasicLineFormatter.doFormatStatusLine : virtualinvoke r1.<org.apache.http.util.CharArrayBuffer: void append(java.lang.String)>(r3)
+org.apache.http.message.BasicLineFormatter.doFormatStatusLine : $i4 = virtualinvoke r3.<java.lang.String: int length()>()
+org.apache.http.message.BasicLineFormatter.doFormatStatusLine : $r5 = interfaceinvoke r2.<org.apache.http.StatusLine: org.apache.http.ProtocolVersion getProtocolVersion()>()
+org.apache.http.message.BasicLineFormatter.doFormatStatusLine : virtualinvoke r1.<org.apache.http.util.CharArrayBuffer: void ensureCapacity(int)>(i0)
+org.apache.http.message.BasicLineFormatter.doFormatStatusLine : $r4 = interfaceinvoke r2.<org.apache.http.StatusLine: org.apache.http.ProtocolVersion getProtocolVersion()>()
+org.apache.http.impl.SocketHttpClientConnection.close : virtualinvoke r1.<java.net.Socket: void shutdownInput()>()
+org.apache.http.impl.SocketHttpClientConnection.close : goto [?= virtualinvoke r1.<java.net.Socket: void shutdownInput()>()]
+org.apache.http.impl.SocketHttpClientConnection.close : virtualinvoke r1.<java.net.Socket: void close()>()
+org.apache.http.impl.SocketHttpClientConnection.close : r1 = r0.<org.apache.http.impl.SocketHttpClientConnection: java.net.Socket socket>
+org.apache.http.impl.SocketHttpClientConnection.close : $z0 = r0.<org.apache.http.impl.SocketHttpClientConnection: boolean open>
+org.apache.http.impl.SocketHttpClientConnection.close : virtualinvoke r0.<org.apache.http.impl.SocketHttpClientConnection: void doFlush()>()
+org.apache.http.impl.SocketHttpClientConnection.close : r0.<org.apache.http.impl.SocketHttpClientConnection: boolean open> = 0
+org.apache.http.impl.SocketHttpClientConnection.close : virtualinvoke r1.<java.net.Socket: void shutdownOutput()>()
+org.apache.http.impl.SocketHttpClientConnection.close : goto [?= return]
+org.apache.http.impl.SocketHttpClientConnection.close : goto [?= (branch)]
+org.apache.http.impl.SocketHttpClientConnection.close : goto [?= virtualinvoke r1.<java.net.Socket: void close()>()]
+org.apache.http.entity.BasicHttpEntity.setContent : r0.<org.apache.http.entity.BasicHttpEntity: java.io.InputStream content> = r1
+org.apache.http.message.BasicTokenIterator.findTokenEnd : if i2 >= i1 goto return i2
+org.apache.http.message.BasicTokenIterator.findTokenEnd : i2 = i0 + 1
+org.apache.http.message.BasicTokenIterator.findTokenEnd : if i0 >= 0 goto $r6 = r0.<org.apache.http.message.BasicTokenIterator: java.lang.String currentHeader>
+org.apache.http.message.BasicTokenIterator.findTokenEnd : i2 = i2 + 1
+org.apache.http.message.BasicTokenIterator.findTokenEnd : return i2
+org.apache.http.message.BasicTokenIterator.findTokenEnd : $r6 = r0.<org.apache.http.message.BasicTokenIterator: java.lang.String currentHeader>
+org.apache.http.params.HttpProtocolParams.getVersion : if r1 != null goto $r4 = (org.apache.http.ProtocolVersion) r1
+org.apache.http.params.HttpProtocolParams.getVersion : r1 = interfaceinvoke r0.<org.apache.http.params.HttpParams: java.lang.Object getParameter(java.lang.String)>("http.protocol.version")
+org.apache.http.params.HttpProtocolParams.getVersion : $r4 = (org.apache.http.ProtocolVersion) r1
+org.apache.http.params.HttpProtocolParams.getVersion : if r0 != null goto r1 = interfaceinvoke r0.<org.apache.http.params.HttpParams: java.lang.Object getParameter(java.lang.String)>("http.protocol.version")
+org.apache.http.util.CharArrayBuffer.ensureCapacity : if i0 <= i1 goto return
+org.apache.http.util.CharArrayBuffer.ensureCapacity : $r1 = r0.<org.apache.http.util.CharArrayBuffer: char[] buffer>
+org.apache.http.util.CharArrayBuffer.ensureCapacity : if i0 > 0 goto $r1 = r0.<org.apache.http.util.CharArrayBuffer: char[] buffer>
+org.apache.http.testserver.HttpServer.access$500 : $r1 = r0.<org.apache.http.testserver.HttpServer: org.apache.http.protocol.HttpRequestHandlerRegistry reqistry>
+org.apache.http.protocol.ResponseServer.process : if r3 == null goto return
+org.apache.http.protocol.ResponseServer.process : $z0 = interfaceinvoke r1.<org.apache.http.HttpResponse: boolean containsHeader(java.lang.String)>("Server")
+org.apache.http.protocol.ResponseServer.process : $r5 = interfaceinvoke r1.<org.apache.http.HttpResponse: org.apache.http.params.HttpParams getParams()>()
+org.apache.http.protocol.ResponseServer.process : interfaceinvoke r1.<org.apache.http.HttpResponse: void addHeader(java.lang.String,java.lang.String)>("Server", r3)
+org.apache.http.protocol.ResponseServer.process : if r1 != null goto $z0 = interfaceinvoke r1.<org.apache.http.HttpResponse: boolean containsHeader(java.lang.String)>("Server")
+org.apache.http.impl.io.AbstractSessionInputBuffer.locateLF : return -1
+org.apache.http.impl.io.AbstractSessionInputBuffer.locateLF : return i0
+org.apache.http.impl.io.AbstractSessionInputBuffer.locateLF : $r1 = r0.<org.apache.http.impl.io.AbstractSessionInputBuffer: byte[] buffer>
+org.apache.http.impl.io.AbstractSessionInputBuffer.locateLF : i0 = r0.<org.apache.http.impl.io.AbstractSessionInputBuffer: int bufferpos>
+org.apache.http.impl.AbstractHttpServerConnection.flush : virtualinvoke r0.<org.apache.http.impl.AbstractHttpServerConnection: void doFlush()>()
+org.apache.http.impl.AbstractHttpServerConnection.flush : virtualinvoke r0.<org.apache.http.impl.AbstractHttpServerConnection: void assertOpen()>()

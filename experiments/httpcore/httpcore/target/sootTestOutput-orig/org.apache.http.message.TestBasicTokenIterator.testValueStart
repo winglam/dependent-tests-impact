@@ -1,0 +1,62 @@
+org.apache.http.message.BasicHeaderIterator.nextHeader : if i0 >= 0 goto $i1 = virtualinvoke r0.<org.apache.http.message.BasicHeaderIterator: int findNext(int)>(i0)
+org.apache.http.message.BasicHeaderIterator.nextHeader : i0 = r0.<org.apache.http.message.BasicHeaderIterator: int currentIndex>
+org.apache.http.message.BasicHeaderIterator.nextHeader : $r2 = r0.<org.apache.http.message.BasicHeaderIterator: org.apache.http.Header[] allHeaders>
+org.apache.http.message.BasicHeaderIterator.nextHeader : $i1 = virtualinvoke r0.<org.apache.http.message.BasicHeaderIterator: int findNext(int)>(i0)
+org.apache.http.message.BasicHeader.getValue : $r1 = r0.<org.apache.http.message.BasicHeader: java.lang.String value>
+org.apache.http.message.BasicHeaderIterator.hasNext : $i0 = r0.<org.apache.http.message.BasicHeaderIterator: int currentIndex>
+org.apache.http.message.BasicTokenIterator.isTokenChar : $z0 = staticinvoke <java.lang.Character: boolean isLetterOrDigit(char)>(c0)
+org.apache.http.message.BasicTokenIterator.isTokenChar : return 1
+org.apache.http.message.BasicTokenIterator.findTokenStart : $r18 = r0.<org.apache.http.message.BasicTokenIterator: org.apache.http.HeaderIterator headerIt>
+org.apache.http.message.BasicTokenIterator.findTokenStart : $r9 = r0.<org.apache.http.message.BasicTokenIterator: java.lang.String currentHeader>
+org.apache.http.message.BasicTokenIterator.findTokenStart : if z0 == 0 goto $i4 = -1
+org.apache.http.message.BasicTokenIterator.findTokenStart : $r7 = r0.<org.apache.http.message.BasicTokenIterator: java.lang.String currentHeader>
+org.apache.http.message.BasicTokenIterator.findTokenStart : $z1 = virtualinvoke r0.<org.apache.http.message.BasicTokenIterator: boolean isTokenSeparator(char)>(c2)
+org.apache.http.message.BasicTokenIterator.findTokenStart : r0.<org.apache.http.message.BasicTokenIterator: java.lang.String currentHeader> = null
+org.apache.http.message.BasicTokenIterator.findTokenStart : $r8 = r0.<org.apache.http.message.BasicTokenIterator: java.lang.String currentHeader>
+org.apache.http.message.BasicTokenIterator.findTokenStart : z0 = 1
+org.apache.http.message.BasicTokenIterator.findTokenStart : z0 = 0
+org.apache.http.message.BasicTokenIterator.findTokenStart : goto [?= staticinvoke <edu.washington.cs.dt.impact.util.Tracer: void trace(java.lang.String,java.lang.String)>("if z0 != 0 goto (branch)", "org.apache.http.message.BasicTokenIterator.findTokenStart")]
+org.apache.http.message.BasicTokenIterator.findTokenStart : $r19 = r0.<org.apache.http.message.BasicTokenIterator: org.apache.http.HeaderIterator headerIt>
+org.apache.http.message.BasicTokenIterator.findTokenStart : i0 = i0 + 1
+org.apache.http.message.BasicTokenIterator.findTokenStart : i0 = 0
+org.apache.http.message.BasicTokenIterator.findTokenStart : if i0 >= 0 goto z0 = 0
+org.apache.http.message.BasicTokenIterator.findTokenStart : if z0 != 0 goto (branch)
+org.apache.http.message.BasicTokenIterator.findTokenSeparator : return i0
+org.apache.http.message.BasicTokenIterator.findTokenSeparator : z0 = 0
+org.apache.http.message.BasicTokenIterator.findTokenSeparator : if z0 != 0 goto return i0
+org.apache.http.message.BasicTokenIterator.findTokenSeparator : if i0 >= 0 goto z0 = 0
+org.apache.http.message.BasicTokenIterator.findTokenSeparator : $r6 = r0.<org.apache.http.message.BasicTokenIterator: java.lang.String currentHeader>
+org.apache.http.message.BasicHeaderIterator.filterHeader : $r1 = r0.<org.apache.http.message.BasicHeaderIterator: java.lang.String headerName>
+org.apache.http.message.BasicTokenIterator.findNext : return -1
+org.apache.http.message.BasicTokenIterator.findNext : i3 = virtualinvoke r0.<org.apache.http.message.BasicTokenIterator: int findTokenSeparator(int)>(i0)
+org.apache.http.message.BasicTokenIterator.findNext : i1 = virtualinvoke r0.<org.apache.http.message.BasicTokenIterator: int findTokenStart(int)>(i3)
+org.apache.http.message.BasicTokenIterator.findNext : if i1 >= 0 goto i2 = virtualinvoke r0.<org.apache.http.message.BasicTokenIterator: int findTokenEnd(int)>(i1)
+org.apache.http.message.BasicTokenIterator.findNext : if i0 >= 0 goto i3 = virtualinvoke r0.<org.apache.http.message.BasicTokenIterator: int findTokenSeparator(int)>(i0)
+org.apache.http.message.BasicTokenIterator.findNext : $r2 = r0.<org.apache.http.message.BasicTokenIterator: org.apache.http.HeaderIterator headerIt>
+org.apache.http.message.BasicTokenIterator.findNext : i3 = 0
+org.apache.http.message.BasicTokenIterator.findNext : r0.<org.apache.http.message.BasicTokenIterator: java.lang.String currentToken> = null
+org.apache.http.message.BasicTokenIterator.findNext : $r5 = r0.<org.apache.http.message.BasicTokenIterator: java.lang.String currentHeader>
+org.apache.http.message.BasicTokenIterator.findNext : i2 = virtualinvoke r0.<org.apache.http.message.BasicTokenIterator: int findTokenEnd(int)>(i1)
+org.apache.http.message.BasicTokenIterator.findNext : return i2
+org.apache.http.message.BasicTokenIterator.findNext : $r1 = r0.<org.apache.http.message.BasicTokenIterator: org.apache.http.HeaderIterator headerIt>
+org.apache.http.message.BasicHeaderIterator.findNext : if i0 >= -1 goto $r1 = r0.<org.apache.http.message.BasicHeaderIterator: org.apache.http.Header[] allHeaders>
+org.apache.http.message.BasicHeaderIterator.findNext : z0 = 0
+org.apache.http.message.BasicHeaderIterator.findNext : $r1 = r0.<org.apache.http.message.BasicHeaderIterator: org.apache.http.Header[] allHeaders>
+org.apache.http.message.BasicHeaderIterator.findNext : z0 = virtualinvoke r0.<org.apache.http.message.BasicHeaderIterator: boolean filterHeader(int)>(i0)
+org.apache.http.message.BasicHeaderIterator.findNext : i0 = i0 + 1
+org.apache.http.message.BasicHeaderIterator.findNext : if z0 == 0 goto $i3 = -1
+org.apache.http.message.BasicHeaderIterator.findNext : if z0 != 0 goto (branch)
+org.apache.http.message.BasicTokenIterator.hasNext : $r1 = r0.<org.apache.http.message.BasicTokenIterator: java.lang.String currentToken>
+org.apache.http.message.BasicTokenIterator.nextToken : $i0 = r0.<org.apache.http.message.BasicTokenIterator: int searchPos>
+org.apache.http.message.BasicTokenIterator.nextToken : $r2 = r0.<org.apache.http.message.BasicTokenIterator: java.lang.String currentToken>
+org.apache.http.message.BasicTokenIterator.nextToken : return r1
+org.apache.http.message.BasicTokenIterator.nextToken : r1 = r0.<org.apache.http.message.BasicTokenIterator: java.lang.String currentToken>
+org.apache.http.message.BasicTokenIterator.isTokenSeparator : if c0 != 44 goto $z0 = 0
+org.apache.http.message.BasicTokenIterator.isWhitespace : if c0 == 9 goto $z1 = 1
+org.apache.http.message.BasicTokenIterator.createToken : $r2 = virtualinvoke r1.<java.lang.String: java.lang.String substring(int,int)>(i0, i1)
+org.apache.http.message.BasicTokenIterator.findTokenEnd : if i2 >= i1 goto return i2
+org.apache.http.message.BasicTokenIterator.findTokenEnd : i2 = i0 + 1
+org.apache.http.message.BasicTokenIterator.findTokenEnd : if i0 >= 0 goto $r6 = r0.<org.apache.http.message.BasicTokenIterator: java.lang.String currentHeader>
+org.apache.http.message.BasicTokenIterator.findTokenEnd : i2 = i2 + 1
+org.apache.http.message.BasicTokenIterator.findTokenEnd : return i2
+org.apache.http.message.BasicTokenIterator.findTokenEnd : $r6 = r0.<org.apache.http.message.BasicTokenIterator: java.lang.String currentHeader>

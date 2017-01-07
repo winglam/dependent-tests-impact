@@ -1,0 +1,19 @@
+org.apache.http.message.HeaderGroup.getFirstHeader : return null
+org.apache.http.message.HeaderGroup.getFirstHeader : i0 = 0
+org.apache.http.message.AbstractHttpMessage.getFirstHeader : $r2 = r0.<org.apache.http.message.AbstractHttpMessage: org.apache.http.message.HeaderGroup headergroup>
+org.apache.http.message.BasicStatusLine.getStatusCode : $i0 = r0.<org.apache.http.message.BasicStatusLine: int statusCode>
+org.apache.http.protocol.BasicHttpContext.getAttribute : return r2
+org.apache.http.protocol.BasicHttpContext.getAttribute : if r1 != null goto r2 = null
+org.apache.http.protocol.BasicHttpContext.getAttribute : $r4 = r0.<org.apache.http.protocol.BasicHttpContext: java.util.Map map>
+org.apache.http.protocol.BasicHttpContext.getAttribute : if r2 != null goto return r2
+org.apache.http.protocol.BasicHttpContext.getAttribute : r2 = null
+org.apache.http.message.BasicHttpResponse.getEntity : $r1 = r0.<org.apache.http.message.BasicHttpResponse: org.apache.http.HttpEntity entity>
+org.apache.http.protocol.ResponseConnControl.process : r3 = interfaceinvoke r1.<org.apache.http.HttpResponse: org.apache.http.HttpEntity getEntity()>()
+org.apache.http.protocol.ResponseConnControl.process : if r2 != null goto $r8 = interfaceinvoke r1.<org.apache.http.HttpResponse: org.apache.http.StatusLine getStatusLine()>()
+org.apache.http.protocol.ResponseConnControl.process : $r11 = interfaceinvoke r2.<org.apache.http.protocol.HttpContext: java.lang.Object getAttribute(java.lang.String)>("http.request")
+org.apache.http.protocol.ResponseConnControl.process : if i0 == 400 goto interfaceinvoke r1.<org.apache.http.HttpResponse: void setHeader(java.lang.String,java.lang.String)>("Connection", "Close")
+org.apache.http.protocol.ResponseConnControl.process : if r12 == null goto return
+org.apache.http.protocol.ResponseConnControl.process : if r3 == null goto $r11 = interfaceinvoke r2.<org.apache.http.protocol.HttpContext: java.lang.Object getAttribute(java.lang.String)>("http.request")
+org.apache.http.protocol.ResponseConnControl.process : if r1 != null goto (branch)
+org.apache.http.protocol.ResponseConnControl.process : $r8 = interfaceinvoke r1.<org.apache.http.HttpResponse: org.apache.http.StatusLine getStatusLine()>()
+org.apache.http.message.BasicHttpResponse.getStatusLine : $r1 = r0.<org.apache.http.message.BasicHttpResponse: org.apache.http.StatusLine statusline>

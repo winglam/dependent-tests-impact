@@ -1,0 +1,6 @@
+org.apache.http.entity.AbstractHttpEntity.setContentType : r0.<org.apache.http.entity.AbstractHttpEntity: org.apache.http.Header contentType> = r1
+org.apache.http.entity.ContentType.get : r1 = interfaceinvoke r0.<org.apache.http.HttpEntity: org.apache.http.Header getContentType()>()
+org.apache.http.entity.ContentType.get : return null
+org.apache.http.entity.ContentType.get : if r1 == null goto return null
+org.apache.http.entity.ContentType.get : if r0 != null goto r1 = interfaceinvoke r0.<org.apache.http.HttpEntity: org.apache.http.Header getContentType()>()
+org.apache.http.entity.AbstractHttpEntity.getContentType : $r1 = r0.<org.apache.http.entity.AbstractHttpEntity: org.apache.http.Header contentType>

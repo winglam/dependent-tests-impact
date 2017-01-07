@@ -1,0 +1,72 @@
+org.apache.http.entity.AbstractHttpEntity.setChunked : r0.<org.apache.http.entity.AbstractHttpEntity: boolean chunked> = z0
+org.apache.http.impl.io.AbstractSessionInputBuffer.init : if i0 > 0 goto (branch)
+org.apache.http.impl.io.AbstractSessionInputBuffer.init : $r10 = r0.<org.apache.http.impl.io.AbstractSessionInputBuffer: java.nio.charset.Charset charset>
+org.apache.http.impl.io.AbstractSessionInputBuffer.init : $r7 = new org.apache.http.util.ByteArrayBuffer
+org.apache.http.impl.io.AbstractSessionInputBuffer.init : r0.<org.apache.http.impl.io.AbstractSessionInputBuffer: int bufferpos> = 0
+org.apache.http.impl.io.AbstractSessionInputBuffer.init : r0.<org.apache.http.impl.io.AbstractSessionInputBuffer: int bufferlen> = 0
+org.apache.http.impl.io.AbstractSessionInputBuffer.init : $i1 = interfaceinvoke r2.<org.apache.http.params.HttpParams: int getIntParameter(java.lang.String,int)>("http.connection.max-line-length", -1)
+org.apache.http.impl.io.AbstractSessionInputBuffer.init : if r1 != null goto (branch)
+org.apache.http.impl.io.AbstractSessionInputBuffer.init : if r2 != null goto r0.<org.apache.http.impl.io.AbstractSessionInputBuffer: java.io.InputStream instream> = r1
+org.apache.http.impl.io.AbstractSessionInputBuffer.init : r0.<org.apache.http.impl.io.AbstractSessionInputBuffer: java.io.InputStream instream> = r1
+org.apache.http.impl.io.AbstractSessionInputBuffer.init : r0.<org.apache.http.impl.io.AbstractSessionInputBuffer: java.nio.charset.CharsetDecoder decoder> = null
+org.apache.http.impl.io.AbstractSessionInputBuffer.init : $i2 = interfaceinvoke r2.<org.apache.http.params.HttpParams: int getIntParameter(java.lang.String,int)>("http.connection.min-chunk-limit", 512)
+org.apache.http.impl.io.AbstractSessionInputBuffer.init : $r8 = staticinvoke <org.apache.http.params.HttpProtocolParams: java.lang.String getHttpElementCharset(org.apache.http.params.HttpParams)>(r2)
+org.apache.http.impl.io.AbstractSessionInputBuffer.init : $r12 = virtualinvoke r0.<org.apache.http.impl.io.AbstractSessionInputBuffer: org.apache.http.impl.io.HttpTransportMetricsImpl createTransportMetrics()>()
+org.apache.http.impl.io.AbstractSessionInputBuffer.init : $r6 = newarray (byte)[i0]
+org.apache.http.params.AbstractHttpParams.isParameterTrue : $z0 = virtualinvoke r0.<org.apache.http.params.AbstractHttpParams: boolean getBooleanParameter(java.lang.String,boolean)>(r1, 0)
+org.apache.http.message.AbstractHttpMessage.getFirstHeader : $r2 = r0.<org.apache.http.message.AbstractHttpMessage: org.apache.http.message.HeaderGroup headergroup>
+org.apache.http.entity.AbstractHttpEntity.getContentEncoding : $r1 = r0.<org.apache.http.entity.AbstractHttpEntity: org.apache.http.Header contentEncoding>
+org.apache.http.impl.entity.EntityDeserializer.doDeserialize : return r4
+org.apache.http.impl.entity.EntityDeserializer.doDeserialize : $r9 = new org.apache.http.impl.io.IdentityInputStream
+org.apache.http.impl.entity.EntityDeserializer.doDeserialize : if r5 == null goto r6 = interfaceinvoke r2.<org.apache.http.HttpMessage: org.apache.http.Header getFirstHeader(java.lang.String)>("Content-Encoding")
+org.apache.http.impl.entity.EntityDeserializer.doDeserialize : virtualinvoke r4.<org.apache.http.entity.BasicHttpEntity: void setContentEncoding(org.apache.http.Header)>(r6)
+org.apache.http.impl.entity.EntityDeserializer.doDeserialize : $r3 = new org.apache.http.entity.BasicHttpEntity
+org.apache.http.impl.entity.EntityDeserializer.doDeserialize : virtualinvoke r4.<org.apache.http.entity.BasicHttpEntity: void setChunked(boolean)>(0)
+org.apache.http.impl.entity.EntityDeserializer.doDeserialize : $b1 = l0 cmp -2L
+org.apache.http.impl.entity.EntityDeserializer.doDeserialize : $b2 = l0 cmp -1L
+org.apache.http.impl.entity.EntityDeserializer.doDeserialize : r6 = interfaceinvoke r2.<org.apache.http.HttpMessage: org.apache.http.Header getFirstHeader(java.lang.String)>("Content-Encoding")
+org.apache.http.impl.entity.EntityDeserializer.doDeserialize : if r6 == null goto return r4
+org.apache.http.impl.entity.EntityDeserializer.doDeserialize : r5 = interfaceinvoke r2.<org.apache.http.HttpMessage: org.apache.http.Header getFirstHeader(java.lang.String)>("Content-Type")
+org.apache.http.impl.entity.EntityDeserializer.doDeserialize : $r7 = r0.<org.apache.http.impl.entity.EntityDeserializer: org.apache.http.entity.ContentLengthStrategy lenStrategy>
+org.apache.http.impl.entity.EntityDeserializer.doDeserialize : virtualinvoke r4.<org.apache.http.entity.BasicHttpEntity: void setContentLength(long)>(-1L)
+org.apache.http.message.BasicHeader.getName : $r1 = r0.<org.apache.http.message.BasicHeader: java.lang.String name>
+org.apache.http.params.HttpProtocolParams.getHttpElementCharset : if r0 != null goto $r3 = interfaceinvoke r0.<org.apache.http.params.HttpParams: java.lang.Object getParameter(java.lang.String)>("http.protocol.element-charset")
+org.apache.http.params.HttpProtocolParams.getHttpElementCharset : $r3 = interfaceinvoke r0.<org.apache.http.params.HttpParams: java.lang.Object getParameter(java.lang.String)>("http.protocol.element-charset")
+org.apache.http.params.HttpProtocolParams.getHttpElementCharset : if r1 != null goto return r1
+org.apache.http.params.HttpProtocolParams.getHttpElementCharset : r1 = "US-ASCII"
+org.apache.http.params.HttpProtocolParams.getHttpElementCharset : return r1
+org.apache.http.message.AbstractHttpMessage.getParams : $r2 = r0.<org.apache.http.message.AbstractHttpMessage: org.apache.http.params.HttpParams params>
+org.apache.http.message.AbstractHttpMessage.getParams : $r3 = r0.<org.apache.http.message.AbstractHttpMessage: org.apache.http.params.HttpParams params>
+org.apache.http.message.AbstractHttpMessage.getParams : $r1 = new org.apache.http.params.BasicHttpParams
+org.apache.http.message.HeaderGroup.getFirstHeader : return r2
+org.apache.http.message.HeaderGroup.getFirstHeader : return null
+org.apache.http.message.HeaderGroup.getFirstHeader : i0 = 0
+org.apache.http.message.HeaderGroup.getFirstHeader : $r6 = interfaceinvoke r2.<org.apache.http.Header: java.lang.String getName()>()
+org.apache.http.message.HeaderGroup.getFirstHeader : $r4 = r0.<org.apache.http.message.HeaderGroup: java.util.List headers>
+org.apache.http.impl.io.AbstractSessionInputBuffer.createTransportMetrics : $r1 = new org.apache.http.impl.io.HttpTransportMetricsImpl
+org.apache.http.message.BasicHeader.getValue : $r1 = r0.<org.apache.http.message.BasicHeader: java.lang.String value>
+org.apache.http.message.AbstractHttpMessage.addHeader : $r4 = r0.<org.apache.http.message.AbstractHttpMessage: org.apache.http.message.HeaderGroup headergroup>
+org.apache.http.message.AbstractHttpMessage.addHeader : if r1 != null goto $r4 = r0.<org.apache.http.message.AbstractHttpMessage: org.apache.http.message.HeaderGroup headergroup>
+org.apache.http.impl.entity.EntityDeserializer.deserialize : if r2 != null goto $r5 = virtualinvoke r0.<org.apache.http.impl.entity.EntityDeserializer: org.apache.http.entity.BasicHttpEntity doDeserialize(org.apache.http.io.SessionInputBuffer,org.apache.http.HttpMessage)>(r1, r2)
+org.apache.http.impl.entity.EntityDeserializer.deserialize : $r5 = virtualinvoke r0.<org.apache.http.impl.entity.EntityDeserializer: org.apache.http.entity.BasicHttpEntity doDeserialize(org.apache.http.io.SessionInputBuffer,org.apache.http.HttpMessage)>(r1, r2)
+org.apache.http.impl.entity.EntityDeserializer.deserialize : if r1 != null goto (branch)
+org.apache.http.impl.entity.LaxContentLengthStrategy.determineLength : r2 = interfaceinvoke r1.<org.apache.http.HttpMessage: org.apache.http.params.HttpParams getParams()>()
+org.apache.http.impl.entity.LaxContentLengthStrategy.determineLength : if r3 == null goto (branch)
+org.apache.http.impl.entity.LaxContentLengthStrategy.determineLength : if r4 == null goto return -1L
+org.apache.http.impl.entity.LaxContentLengthStrategy.determineLength : z0 = interfaceinvoke r2.<org.apache.http.params.HttpParams: boolean isParameterTrue(java.lang.String)>("http.protocol.strict-transfer-encoding")
+org.apache.http.impl.entity.LaxContentLengthStrategy.determineLength : return -1L
+org.apache.http.impl.entity.LaxContentLengthStrategy.determineLength : r4 = interfaceinvoke r1.<org.apache.http.HttpMessage: org.apache.http.Header getFirstHeader(java.lang.String)>("Content-Length")
+org.apache.http.impl.entity.LaxContentLengthStrategy.determineLength : r3 = interfaceinvoke r1.<org.apache.http.HttpMessage: org.apache.http.Header getFirstHeader(java.lang.String)>("Transfer-Encoding")
+org.apache.http.impl.entity.LaxContentLengthStrategy.determineLength : if r1 != null goto r2 = interfaceinvoke r1.<org.apache.http.HttpMessage: org.apache.http.params.HttpParams getParams()>()
+org.apache.http.message.HeaderGroup.addHeader : $r2 = r0.<org.apache.http.message.HeaderGroup: java.util.List headers>
+org.apache.http.message.HeaderGroup.addHeader : if r1 != null goto $r2 = r0.<org.apache.http.message.HeaderGroup: java.util.List headers>
+org.apache.http.entity.AbstractHttpEntity.setContentEncoding : r0.<org.apache.http.entity.AbstractHttpEntity: org.apache.http.Header contentEncoding> = r1
+org.apache.http.params.BasicHttpParams.getParameter : $r2 = r0.<org.apache.http.params.BasicHttpParams: java.util.HashMap parameters>
+org.apache.http.entity.BasicHttpEntity.setContentLength : r0.<org.apache.http.entity.BasicHttpEntity: long length> = l0
+org.apache.http.params.AbstractHttpParams.getBooleanParameter : r2 = virtualinvoke r0.<org.apache.http.params.AbstractHttpParams: java.lang.Object getParameter(java.lang.String)>(r1)
+org.apache.http.params.AbstractHttpParams.getBooleanParameter : return z0
+org.apache.http.params.AbstractHttpParams.getBooleanParameter : if r2 != null goto $r3 = (java.lang.Boolean) r2
+org.apache.http.entity.BasicHttpEntity.setContent : r0.<org.apache.http.entity.BasicHttpEntity: java.io.InputStream content> = r1
+org.apache.http.params.AbstractHttpParams.getIntParameter : return i0
+org.apache.http.params.AbstractHttpParams.getIntParameter : r2 = virtualinvoke r0.<org.apache.http.params.AbstractHttpParams: java.lang.Object getParameter(java.lang.String)>(r1)
+org.apache.http.params.AbstractHttpParams.getIntParameter : if r2 != null goto $r3 = (java.lang.Integer) r2

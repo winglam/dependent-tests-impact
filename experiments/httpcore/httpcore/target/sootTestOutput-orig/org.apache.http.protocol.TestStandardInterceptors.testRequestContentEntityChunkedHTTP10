@@ -1,0 +1,64 @@
+org.apache.http.ProtocolVersion.getMajor : $i0 = r0.<org.apache.http.ProtocolVersion: int major>
+org.apache.http.protocol.RequestContent.process : if r1 != null goto $z0 = r1 instanceof org.apache.http.HttpEntityEnclosingRequest
+org.apache.http.protocol.RequestContent.process : $r10 = <org.apache.http.HttpVersion: org.apache.http.HttpVersion HTTP_1_0>
+org.apache.http.protocol.RequestContent.process : $r9 = (org.apache.http.HttpEntityEnclosingRequest) r1
+org.apache.http.protocol.RequestContent.process : $z0 = r1 instanceof org.apache.http.HttpEntityEnclosingRequest
+org.apache.http.protocol.RequestContent.process : if r4 != null goto $z3 = interfaceinvoke r4.<org.apache.http.HttpEntity: boolean isChunked()>()
+org.apache.http.protocol.RequestContent.process : $z3 = interfaceinvoke r4.<org.apache.http.HttpEntity: boolean isChunked()>()
+org.apache.http.protocol.RequestContent.process : $z1 = interfaceinvoke r1.<org.apache.http.HttpRequest: boolean containsHeader(java.lang.String)>("Transfer-Encoding")
+org.apache.http.protocol.RequestContent.process : $r11 = new org.apache.http.ProtocolException
+org.apache.http.protocol.RequestContent.process : $r8 = interfaceinvoke r1.<org.apache.http.HttpRequest: org.apache.http.RequestLine getRequestLine()>()
+org.apache.http.protocol.RequestContent.process : $z2 = interfaceinvoke r1.<org.apache.http.HttpRequest: boolean containsHeader(java.lang.String)>("Content-Length")
+org.apache.http.message.BasicHttpEntityEnclosingRequest.setEntity : r0.<org.apache.http.message.BasicHttpEntityEnclosingRequest: org.apache.http.HttpEntity entity> = r1
+org.apache.http.entity.ContentType.getCharset : $r1 = r0.<org.apache.http.entity.ContentType: java.lang.String charset>
+org.apache.http.message.BasicRequestLine.getMethod : $r1 = r0.<org.apache.http.message.BasicRequestLine: java.lang.String method>
+org.apache.http.entity.AbstractHttpEntity.setChunked : r0.<org.apache.http.entity.AbstractHttpEntity: boolean chunked> = z0
+org.apache.http.message.BasicHttpEntityEnclosingRequest.getEntity : $r1 = r0.<org.apache.http.message.BasicHttpEntityEnclosingRequest: org.apache.http.HttpEntity entity>
+org.apache.http.ProtocolVersion.isComparable : if r1 == null goto $z1 = 0
+org.apache.http.ProtocolVersion.compareToVersion : return i0
+org.apache.http.ProtocolVersion.compareToVersion : $i3 = virtualinvoke r0.<org.apache.http.ProtocolVersion: int getMinor()>()
+org.apache.http.ProtocolVersion.compareToVersion : if r1 != null goto $r3 = r0.<org.apache.http.ProtocolVersion: java.lang.String protocol>
+org.apache.http.ProtocolVersion.compareToVersion : if i0 != 0 goto return i0
+org.apache.http.ProtocolVersion.compareToVersion : $r3 = r0.<org.apache.http.ProtocolVersion: java.lang.String protocol>
+org.apache.http.ProtocolVersion.compareToVersion : $i1 = virtualinvoke r0.<org.apache.http.ProtocolVersion: int getMajor()>()
+org.apache.http.entity.ContentType.create : r3 = null
+org.apache.http.entity.ContentType.create : $i0 = virtualinvoke r2.<java.lang.String: int length()>()
+org.apache.http.entity.ContentType.create : $r5 = virtualinvoke r0.<java.lang.String: java.lang.String trim()>()
+org.apache.http.entity.ContentType.create : $r12 = new org.apache.http.entity.ContentType
+org.apache.http.entity.ContentType.create : if r1 == null goto $r12 = new org.apache.http.entity.ContentType
+org.apache.http.entity.ContentType.create : $z1 = staticinvoke <org.apache.http.entity.ContentType: boolean valid(java.lang.String)>(r3)
+org.apache.http.entity.ContentType.create : if r0 != null goto $r5 = virtualinvoke r0.<java.lang.String: java.lang.String trim()>()
+org.apache.http.entity.ContentType.create : $r9 = virtualinvoke r1.<java.lang.String: java.lang.String trim()>()
+org.apache.http.entity.ContentType.create : $z0 = staticinvoke <org.apache.http.entity.ContentType: boolean valid(java.lang.String)>(r2)
+org.apache.http.entity.AbstractHttpEntity.setContentType : r0.<org.apache.http.entity.AbstractHttpEntity: org.apache.http.Header contentType> = r1
+org.apache.http.entity.AbstractHttpEntity.setContentType : virtualinvoke r0.<org.apache.http.entity.AbstractHttpEntity: void setContentType(org.apache.http.Header)>(r2)
+org.apache.http.entity.AbstractHttpEntity.setContentType : if r1 == null goto virtualinvoke r0.<org.apache.http.entity.AbstractHttpEntity: void setContentType(org.apache.http.Header)>(r2)
+org.apache.http.entity.AbstractHttpEntity.setContentType : $r3 = new org.apache.http.message.BasicHeader
+org.apache.http.entity.AbstractHttpEntity.setContentType : r2 = null
+org.apache.http.message.BasicRequestLine.getProtocolVersion : $r1 = r0.<org.apache.http.message.BasicRequestLine: org.apache.http.ProtocolVersion protoversion>
+org.apache.http.ProtocolVersion.toString : $r11 = virtualinvoke r2.<java.lang.StringBuilder: java.lang.String toString()>()
+org.apache.http.ProtocolVersion.toString : $i0 = r0.<org.apache.http.ProtocolVersion: int major>
+org.apache.http.ProtocolVersion.toString : $i1 = r0.<org.apache.http.ProtocolVersion: int minor>
+org.apache.http.ProtocolVersion.toString : virtualinvoke r2.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(47)
+org.apache.http.ProtocolVersion.toString : $r3 = r0.<org.apache.http.ProtocolVersion: java.lang.String protocol>
+org.apache.http.ProtocolVersion.toString : virtualinvoke r2.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(46)
+org.apache.http.ProtocolVersion.toString : $r1 = new java.lang.StringBuilder
+org.apache.http.message.BasicHttpRequest.getRequestLine : $r3 = r0.<org.apache.http.message.BasicHttpRequest: org.apache.http.RequestLine requestline>
+org.apache.http.message.BasicHttpRequest.getRequestLine : $r7 = r0.<org.apache.http.message.BasicHttpRequest: org.apache.http.RequestLine requestline>
+org.apache.http.entity.AbstractHttpEntity.isChunked : $z0 = r0.<org.apache.http.entity.AbstractHttpEntity: boolean chunked>
+org.apache.http.ProtocolVersion.getMinor : $i0 = r0.<org.apache.http.ProtocolVersion: int minor>
+org.apache.http.message.AbstractHttpMessage.containsHeader : $r2 = r0.<org.apache.http.message.AbstractHttpMessage: org.apache.http.message.HeaderGroup headergroup>
+org.apache.http.entity.ContentType.toString : $r9 = virtualinvoke r2.<java.lang.StringBuilder: java.lang.String toString()>()
+org.apache.http.entity.ContentType.toString : $r5 = r0.<org.apache.http.entity.ContentType: java.lang.String charset>
+org.apache.http.entity.ContentType.toString : $r7 = r0.<org.apache.http.entity.ContentType: java.lang.String charset>
+org.apache.http.entity.ContentType.toString : $r3 = r0.<org.apache.http.entity.ContentType: java.lang.String mimeType>
+org.apache.http.entity.ContentType.toString : $r1 = new java.lang.StringBuilder
+org.apache.http.entity.ContentType.toString : virtualinvoke r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("; charset=")
+org.apache.http.message.BasicRequestLine.getUri : $r1 = r0.<org.apache.http.message.BasicRequestLine: java.lang.String uri>
+org.apache.http.ProtocolVersion.lessEquals : $z0 = virtualinvoke r0.<org.apache.http.ProtocolVersion: boolean isComparable(org.apache.http.ProtocolVersion)>(r1)
+org.apache.http.message.HeaderGroup.containsHeader : i0 = 0
+org.apache.http.message.HeaderGroup.containsHeader : return 0
+org.apache.http.entity.ContentType.valid : i0 = 0
+org.apache.http.entity.ContentType.valid : if c1 == 34 goto return 0
+org.apache.http.entity.ContentType.valid : return 1
+org.apache.http.entity.ContentType.valid : c1 = virtualinvoke r0.<java.lang.String: char charAt(int)>(i0)

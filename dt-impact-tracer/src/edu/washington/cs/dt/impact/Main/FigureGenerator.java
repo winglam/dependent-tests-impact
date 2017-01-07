@@ -261,6 +261,7 @@ public class FigureGenerator {
     
     public static void sortList(List<Project> projList, List<Project> sortedList) {
         sortList(projList, sortedList, Constants.CRYSTAL_NAME);
+        sortList(projList, sortedList, Constants.HTTPCORE_NAME);
         sortList(projList, sortedList, Constants.JFREECHART_NAME);
         sortList(projList, sortedList, Constants.JODATIME_NAME);
         sortList(projList, sortedList, Constants.SYNOTPIC_NAME);
@@ -279,6 +280,8 @@ public class FigureGenerator {
         	return Constants.SYNOTPIC_NAME;
         } else if (formattedString.equals("xml_security")) {
             return Constants.XMLSECURITY_NAME;
+        } else if (formattedString.equals("httpcore")) {
+            return Constants.HTTPCORE_NAME;
         } else {
         	throw new RuntimeException("Project argument is specified but the project name"
                     + " value provided is invalid. Please use either crystal, jfreechart, jodatime, synoptic or xml_security.");

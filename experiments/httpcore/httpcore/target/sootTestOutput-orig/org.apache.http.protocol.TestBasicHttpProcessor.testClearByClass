@@ -1,0 +1,9 @@
+org.apache.http.protocol.BasicHttpProcessor.removeRequestInterceptorByClass : r3 = interfaceinvoke r2.<java.util.Iterator: java.lang.Object next()>()
+org.apache.http.protocol.BasicHttpProcessor.removeRequestInterceptorByClass : $r4 = r0.<org.apache.http.protocol.BasicHttpProcessor: java.util.List requestInterceptors>
+org.apache.http.protocol.BasicHttpProcessor.removeRequestInterceptorByClass : $z0 = interfaceinvoke r2.<java.util.Iterator: boolean hasNext()>()
+org.apache.http.protocol.BasicHttpProcessor.removeRequestInterceptorByClass : interfaceinvoke r2.<java.util.Iterator: void remove()>()
+org.apache.http.protocol.BasicHttpProcessor.removeRequestInterceptorByClass : goto [?= staticinvoke <edu.washington.cs.dt.impact.util.Tracer: void trace(java.lang.String,java.lang.String)>("$z0 = interfaceinvoke r2.<java.util.Iterator: boolean hasNext()>()", "org.apache.http.protocol.BasicHttpProcessor.removeRequestInterceptorByClass")]
+org.apache.http.protocol.BasicHttpProcessor.removeRequestInterceptorByClass : $r5 = virtualinvoke r3.<java.lang.Object: java.lang.Class getClass()>()
+org.apache.http.protocol.BasicHttpProcessor.getRequestInterceptorCount : $r1 = r0.<org.apache.http.protocol.BasicHttpProcessor: java.util.List requestInterceptors>
+org.apache.http.protocol.BasicHttpProcessor.addRequestInterceptor : $r2 = r0.<org.apache.http.protocol.BasicHttpProcessor: java.util.List requestInterceptors>
+org.apache.http.protocol.BasicHttpProcessor.addRequestInterceptor : if r1 != null goto $r2 = r0.<org.apache.http.protocol.BasicHttpProcessor: java.util.List requestInterceptors>

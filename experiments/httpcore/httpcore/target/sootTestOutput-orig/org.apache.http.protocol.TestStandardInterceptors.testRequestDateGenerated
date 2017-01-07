@@ -1,0 +1,26 @@
+org.apache.http.message.HeaderGroup.getFirstHeader : return r2
+org.apache.http.message.HeaderGroup.getFirstHeader : i0 = 0
+org.apache.http.message.HeaderGroup.getFirstHeader : $r6 = interfaceinvoke r2.<org.apache.http.Header: java.lang.String getName()>()
+org.apache.http.message.HeaderGroup.getFirstHeader : $r4 = r0.<org.apache.http.message.HeaderGroup: java.util.List headers>
+org.apache.http.message.AbstractHttpMessage.setHeader : $r4 = r0.<org.apache.http.message.AbstractHttpMessage: org.apache.http.message.HeaderGroup headergroup>
+org.apache.http.message.AbstractHttpMessage.setHeader : if r1 != null goto $r4 = r0.<org.apache.http.message.AbstractHttpMessage: org.apache.http.message.HeaderGroup headergroup>
+org.apache.http.message.AbstractHttpMessage.getFirstHeader : $r2 = r0.<org.apache.http.message.AbstractHttpMessage: org.apache.http.message.HeaderGroup headergroup>
+org.apache.http.protocol.HttpDateGenerator.getCurrentDate : r0.<org.apache.http.protocol.HttpDateGenerator: long dateAsLong> = l0
+org.apache.http.protocol.HttpDateGenerator.getCurrentDate : $r1 = r0.<org.apache.http.protocol.HttpDateGenerator: java.text.DateFormat dateformat>
+org.apache.http.protocol.HttpDateGenerator.getCurrentDate : l0 = staticinvoke <java.lang.System: long currentTimeMillis()>()
+org.apache.http.protocol.HttpDateGenerator.getCurrentDate : $r4 = r0.<org.apache.http.protocol.HttpDateGenerator: java.lang.String dateAsText>
+org.apache.http.protocol.HttpDateGenerator.getCurrentDate : $l1 = r0.<org.apache.http.protocol.HttpDateGenerator: long dateAsLong>
+org.apache.http.message.HeaderGroup.updateHeader : i0 = 0
+org.apache.http.message.HeaderGroup.updateHeader : $r10 = r0.<org.apache.http.message.HeaderGroup: java.util.List headers>
+org.apache.http.message.HeaderGroup.updateHeader : if r1 != null goto i0 = 0
+org.apache.http.message.AbstractHttpMessage.containsHeader : $r2 = r0.<org.apache.http.message.AbstractHttpMessage: org.apache.http.message.HeaderGroup headergroup>
+org.apache.http.message.BasicHeader.getName : $r1 = r0.<org.apache.http.message.BasicHeader: java.lang.String name>
+org.apache.http.protocol.RequestDate.process : $r5 = <org.apache.http.protocol.RequestDate: org.apache.http.protocol.HttpDateGenerator DATE_GENERATOR>
+org.apache.http.protocol.RequestDate.process : if r1 != null goto $z0 = r1 instanceof org.apache.http.HttpEntityEnclosingRequest
+org.apache.http.protocol.RequestDate.process : interfaceinvoke r1.<org.apache.http.HttpRequest: void setHeader(java.lang.String,java.lang.String)>("Date", r3)
+org.apache.http.protocol.RequestDate.process : $z0 = r1 instanceof org.apache.http.HttpEntityEnclosingRequest
+org.apache.http.message.HeaderGroup.containsHeader : i0 = 0
+org.apache.http.message.HeaderGroup.containsHeader : $r6 = interfaceinvoke r2.<org.apache.http.Header: java.lang.String getName()>()
+org.apache.http.message.HeaderGroup.containsHeader : return 1
+org.apache.http.message.HeaderGroup.containsHeader : $r4 = r0.<org.apache.http.message.HeaderGroup: java.util.List headers>
+org.apache.http.message.HeaderGroup.containsHeader : return 0

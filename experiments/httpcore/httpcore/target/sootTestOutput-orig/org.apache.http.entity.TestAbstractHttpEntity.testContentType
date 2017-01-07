@@ -1,0 +1,8 @@
+org.apache.http.entity.AbstractHttpEntity.setContentType : r0.<org.apache.http.entity.AbstractHttpEntity: org.apache.http.Header contentType> = r1
+org.apache.http.entity.AbstractHttpEntity.setContentType : virtualinvoke r0.<org.apache.http.entity.AbstractHttpEntity: void setContentType(org.apache.http.Header)>(r2)
+org.apache.http.entity.AbstractHttpEntity.setContentType : if r1 == null goto virtualinvoke r0.<org.apache.http.entity.AbstractHttpEntity: void setContentType(org.apache.http.Header)>(r2)
+org.apache.http.entity.AbstractHttpEntity.setContentType : $r3 = new org.apache.http.message.BasicHeader
+org.apache.http.entity.AbstractHttpEntity.setContentType : r2 = null
+org.apache.http.message.BasicHeader.getName : $r1 = r0.<org.apache.http.message.BasicHeader: java.lang.String name>
+org.apache.http.entity.AbstractHttpEntity.getContentType : $r1 = r0.<org.apache.http.entity.AbstractHttpEntity: org.apache.http.Header contentType>
+org.apache.http.message.BasicHeader.getValue : $r1 = r0.<org.apache.http.message.BasicHeader: java.lang.String value>

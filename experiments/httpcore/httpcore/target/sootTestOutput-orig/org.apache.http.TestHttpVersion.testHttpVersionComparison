@@ -1,0 +1,11 @@
+org.apache.http.ProtocolVersion.getMajor : $i0 = r0.<org.apache.http.ProtocolVersion: int major>
+org.apache.http.ProtocolVersion.isComparable : if r1 == null goto $z1 = 0
+org.apache.http.ProtocolVersion.compareToVersion : $i3 = virtualinvoke r0.<org.apache.http.ProtocolVersion: int getMinor()>()
+org.apache.http.ProtocolVersion.compareToVersion : return i0
+org.apache.http.ProtocolVersion.compareToVersion : if r1 != null goto $r3 = r0.<org.apache.http.ProtocolVersion: java.lang.String protocol>
+org.apache.http.ProtocolVersion.compareToVersion : if i0 != 0 goto return i0
+org.apache.http.ProtocolVersion.compareToVersion : $r3 = r0.<org.apache.http.ProtocolVersion: java.lang.String protocol>
+org.apache.http.ProtocolVersion.compareToVersion : $i1 = virtualinvoke r0.<org.apache.http.ProtocolVersion: int getMajor()>()
+org.apache.http.ProtocolVersion.getMinor : $i0 = r0.<org.apache.http.ProtocolVersion: int minor>
+org.apache.http.ProtocolVersion.lessEquals : $z0 = virtualinvoke r0.<org.apache.http.ProtocolVersion: boolean isComparable(org.apache.http.ProtocolVersion)>(r1)
+org.apache.http.ProtocolVersion.greaterEquals : $z0 = virtualinvoke r0.<org.apache.http.ProtocolVersion: boolean isComparable(org.apache.http.ProtocolVersion)>(r1)

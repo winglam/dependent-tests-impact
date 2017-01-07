@@ -1,0 +1,9 @@
+org.apache.http.HttpHost.toString : $r1 = virtualinvoke r0.<org.apache.http.HttpHost: java.lang.String toURI()>()
+org.apache.http.HttpHost.toURI : virtualinvoke r2.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(58)
+org.apache.http.HttpHost.toURI : $r3 = r0.<org.apache.http.HttpHost: java.lang.String schemeName>
+org.apache.http.HttpHost.toURI : $r11 = virtualinvoke r2.<java.lang.StringBuilder: java.lang.String toString()>()
+org.apache.http.HttpHost.toURI : $r6 = r0.<org.apache.http.HttpHost: java.lang.String hostname>
+org.apache.http.HttpHost.toURI : $r1 = new java.lang.StringBuilder
+org.apache.http.HttpHost.toURI : $i0 = r0.<org.apache.http.HttpHost: int port>
+org.apache.http.HttpHost.toURI : virtualinvoke r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("://")
+org.apache.http.HttpHost.toURI : $i1 = r0.<org.apache.http.HttpHost: int port>

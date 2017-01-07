@@ -1,0 +1,10 @@
+org.apache.http.protocol.BasicHttpContext.removeAttribute : $r3 = r0.<org.apache.http.protocol.BasicHttpContext: java.util.Map map>
+org.apache.http.protocol.BasicHttpContext.removeAttribute : return null
+org.apache.http.protocol.BasicHttpContext.removeAttribute : if r1 != null goto $r3 = r0.<org.apache.http.protocol.BasicHttpContext: java.util.Map map>
+org.apache.http.protocol.SyncBasicHttpContext.getAttribute : $r2 = specialinvoke r0.<org.apache.http.protocol.BasicHttpContext: java.lang.Object getAttribute(java.lang.String)>(r1)
+org.apache.http.protocol.SyncBasicHttpContext.removeAttribute : $r2 = specialinvoke r0.<org.apache.http.protocol.BasicHttpContext: java.lang.Object removeAttribute(java.lang.String)>(r1)
+org.apache.http.protocol.BasicHttpContext.getAttribute : return r2
+org.apache.http.protocol.BasicHttpContext.getAttribute : if r1 != null goto r2 = null
+org.apache.http.protocol.BasicHttpContext.getAttribute : $r4 = r0.<org.apache.http.protocol.BasicHttpContext: java.util.Map map>
+org.apache.http.protocol.BasicHttpContext.getAttribute : if r2 != null goto return r2
+org.apache.http.protocol.BasicHttpContext.getAttribute : r2 = null

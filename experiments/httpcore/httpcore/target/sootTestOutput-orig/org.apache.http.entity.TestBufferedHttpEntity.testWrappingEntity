@@ -1,0 +1,13 @@
+org.apache.http.entity.AbstractHttpEntity.setChunked : r0.<org.apache.http.entity.AbstractHttpEntity: boolean chunked> = z0
+org.apache.http.entity.BufferedHttpEntity.getContent : $r4 = r0.<org.apache.http.entity.BufferedHttpEntity: org.apache.http.HttpEntity wrappedEntity>
+org.apache.http.entity.BufferedHttpEntity.getContent : $r1 = r0.<org.apache.http.entity.BufferedHttpEntity: byte[] buffer>
+org.apache.http.entity.ByteArrayEntity.getContentLength : $i0 = r0.<org.apache.http.entity.ByteArrayEntity: int len>
+org.apache.http.entity.BufferedHttpEntity.isRepeatable : return 1
+org.apache.http.entity.BufferedHttpEntity.getContentLength : $r3 = r0.<org.apache.http.entity.BufferedHttpEntity: org.apache.http.HttpEntity wrappedEntity>
+org.apache.http.entity.BufferedHttpEntity.getContentLength : $r1 = r0.<org.apache.http.entity.BufferedHttpEntity: byte[] buffer>
+org.apache.http.entity.ByteArrayEntity.isRepeatable : return 1
+org.apache.http.entity.ByteArrayEntity.getContent : $r1 = new java.io.ByteArrayInputStream
+org.apache.http.entity.BufferedHttpEntity.isChunked : $r1 = r0.<org.apache.http.entity.BufferedHttpEntity: byte[] buffer>
+org.apache.http.entity.ByteArrayEntity.isStreaming : return 0
+org.apache.http.entity.AbstractHttpEntity.isChunked : $z0 = r0.<org.apache.http.entity.AbstractHttpEntity: boolean chunked>
+org.apache.http.entity.BufferedHttpEntity.isStreaming : $r1 = r0.<org.apache.http.entity.BufferedHttpEntity: byte[] buffer>

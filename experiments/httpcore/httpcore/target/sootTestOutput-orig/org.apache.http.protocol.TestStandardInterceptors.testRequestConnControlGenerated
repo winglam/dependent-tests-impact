@@ -1,0 +1,33 @@
+org.apache.http.message.HeaderGroup.getFirstHeader : return r2
+org.apache.http.message.HeaderGroup.getFirstHeader : i0 = 0
+org.apache.http.message.HeaderGroup.getFirstHeader : $r6 = interfaceinvoke r2.<org.apache.http.Header: java.lang.String getName()>()
+org.apache.http.message.HeaderGroup.getFirstHeader : $r4 = r0.<org.apache.http.message.HeaderGroup: java.util.List headers>
+org.apache.http.message.BasicHeader.getValue : $r1 = r0.<org.apache.http.message.BasicHeader: java.lang.String value>
+org.apache.http.message.BasicRequestLine.getMethod : $r1 = r0.<org.apache.http.message.BasicRequestLine: java.lang.String method>
+org.apache.http.message.AbstractHttpMessage.getFirstHeader : $r2 = r0.<org.apache.http.message.AbstractHttpMessage: org.apache.http.message.HeaderGroup headergroup>
+org.apache.http.message.AbstractHttpMessage.addHeader : $r4 = r0.<org.apache.http.message.AbstractHttpMessage: org.apache.http.message.HeaderGroup headergroup>
+org.apache.http.message.AbstractHttpMessage.addHeader : if r1 != null goto $r4 = r0.<org.apache.http.message.AbstractHttpMessage: org.apache.http.message.HeaderGroup headergroup>
+org.apache.http.protocol.RequestConnControl.process : $z0 = virtualinvoke r3.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("CONNECT")
+org.apache.http.protocol.RequestConnControl.process : if r1 != null goto $r5 = interfaceinvoke r1.<org.apache.http.HttpRequest: org.apache.http.RequestLine getRequestLine()>()
+org.apache.http.protocol.RequestConnControl.process : $r5 = interfaceinvoke r1.<org.apache.http.HttpRequest: org.apache.http.RequestLine getRequestLine()>()
+org.apache.http.protocol.RequestConnControl.process : interfaceinvoke r1.<org.apache.http.HttpRequest: void addHeader(java.lang.String,java.lang.String)>("Connection", "Keep-Alive")
+org.apache.http.protocol.RequestConnControl.process : $z1 = interfaceinvoke r1.<org.apache.http.HttpRequest: boolean containsHeader(java.lang.String)>("Connection")
+org.apache.http.message.BasicHttpRequest.getRequestLine : $r2 = new org.apache.http.message.BasicRequestLine
+org.apache.http.message.BasicHttpRequest.getRequestLine : $r3 = r0.<org.apache.http.message.BasicHttpRequest: org.apache.http.RequestLine requestline>
+org.apache.http.message.BasicHttpRequest.getRequestLine : $r4 = virtualinvoke r0.<org.apache.http.message.BasicHttpRequest: org.apache.http.params.HttpParams getParams()>()
+org.apache.http.message.BasicHttpRequest.getRequestLine : $r7 = r0.<org.apache.http.message.BasicHttpRequest: org.apache.http.RequestLine requestline>
+org.apache.http.message.AbstractHttpMessage.containsHeader : $r2 = r0.<org.apache.http.message.AbstractHttpMessage: org.apache.http.message.HeaderGroup headergroup>
+org.apache.http.params.BasicHttpParams.getParameter : $r2 = r0.<org.apache.http.params.BasicHttpParams: java.util.HashMap parameters>
+org.apache.http.message.BasicHeader.getName : $r1 = r0.<org.apache.http.message.BasicHeader: java.lang.String name>
+org.apache.http.message.HeaderGroup.addHeader : $r2 = r0.<org.apache.http.message.HeaderGroup: java.util.List headers>
+org.apache.http.message.HeaderGroup.addHeader : if r1 != null goto $r2 = r0.<org.apache.http.message.HeaderGroup: java.util.List headers>
+org.apache.http.message.AbstractHttpMessage.getParams : $r2 = r0.<org.apache.http.message.AbstractHttpMessage: org.apache.http.params.HttpParams params>
+org.apache.http.message.AbstractHttpMessage.getParams : $r3 = r0.<org.apache.http.message.AbstractHttpMessage: org.apache.http.params.HttpParams params>
+org.apache.http.message.AbstractHttpMessage.getParams : $r1 = new org.apache.http.params.BasicHttpParams
+org.apache.http.testserver.HttpServer.shutdown : $z0 = r0.<org.apache.http.testserver.HttpServer: boolean shutdown>
+org.apache.http.message.HeaderGroup.containsHeader : i0 = 0
+org.apache.http.message.HeaderGroup.containsHeader : return 0
+org.apache.http.params.HttpProtocolParams.getVersion : if r1 != null goto $r4 = (org.apache.http.ProtocolVersion) r1
+org.apache.http.params.HttpProtocolParams.getVersion : $r3 = <org.apache.http.HttpVersion: org.apache.http.HttpVersion HTTP_1_1>
+org.apache.http.params.HttpProtocolParams.getVersion : r1 = interfaceinvoke r0.<org.apache.http.params.HttpParams: java.lang.Object getParameter(java.lang.String)>("http.protocol.version")
+org.apache.http.params.HttpProtocolParams.getVersion : if r0 != null goto r1 = interfaceinvoke r0.<org.apache.http.params.HttpParams: java.lang.Object getParameter(java.lang.String)>("http.protocol.version")

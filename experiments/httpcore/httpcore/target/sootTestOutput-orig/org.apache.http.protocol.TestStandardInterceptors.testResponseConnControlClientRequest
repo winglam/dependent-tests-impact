@@ -1,0 +1,56 @@
+org.apache.http.message.HeaderGroup.getFirstHeader : return r2
+org.apache.http.message.HeaderGroup.getFirstHeader : i0 = 0
+org.apache.http.message.HeaderGroup.getFirstHeader : $r6 = interfaceinvoke r2.<org.apache.http.Header: java.lang.String getName()>()
+org.apache.http.message.HeaderGroup.getFirstHeader : $r4 = r0.<org.apache.http.message.HeaderGroup: java.util.List headers>
+org.apache.http.message.BasicHeader.getValue : $r1 = r0.<org.apache.http.message.BasicHeader: java.lang.String value>
+org.apache.http.message.AbstractHttpMessage.setHeader : $r4 = r0.<org.apache.http.message.AbstractHttpMessage: org.apache.http.message.HeaderGroup headergroup>
+org.apache.http.message.AbstractHttpMessage.setHeader : if r1 != null goto $r4 = r0.<org.apache.http.message.AbstractHttpMessage: org.apache.http.message.HeaderGroup headergroup>
+org.apache.http.entity.ContentType.getCharset : $r1 = r0.<org.apache.http.entity.ContentType: java.lang.String charset>
+org.apache.http.message.BasicHttpResponse.setEntity : r0.<org.apache.http.message.BasicHttpResponse: org.apache.http.HttpEntity entity> = r1
+org.apache.http.message.AbstractHttpMessage.getFirstHeader : $r2 = r0.<org.apache.http.message.AbstractHttpMessage: org.apache.http.message.HeaderGroup headergroup>
+org.apache.http.entity.StringEntity.getContentLength : $r1 = r0.<org.apache.http.entity.StringEntity: byte[] content>
+org.apache.http.message.BasicStatusLine.getStatusCode : $i0 = r0.<org.apache.http.message.BasicStatusLine: int statusCode>
+org.apache.http.message.AbstractHttpMessage.addHeader : $r2 = r0.<org.apache.http.message.AbstractHttpMessage: org.apache.http.message.HeaderGroup headergroup>
+org.apache.http.entity.AbstractHttpEntity.setContentType : r0.<org.apache.http.entity.AbstractHttpEntity: org.apache.http.Header contentType> = r1
+org.apache.http.entity.AbstractHttpEntity.setContentType : virtualinvoke r0.<org.apache.http.entity.AbstractHttpEntity: void setContentType(org.apache.http.Header)>(r2)
+org.apache.http.entity.AbstractHttpEntity.setContentType : if r1 == null goto virtualinvoke r0.<org.apache.http.entity.AbstractHttpEntity: void setContentType(org.apache.http.Header)>(r2)
+org.apache.http.entity.AbstractHttpEntity.setContentType : $r3 = new org.apache.http.message.BasicHeader
+org.apache.http.entity.AbstractHttpEntity.setContentType : r2 = null
+org.apache.http.protocol.BasicHttpContext.getAttribute : return r2
+org.apache.http.protocol.BasicHttpContext.getAttribute : if r1 != null goto r2 = null
+org.apache.http.protocol.BasicHttpContext.getAttribute : $r5 = r0.<org.apache.http.protocol.BasicHttpContext: java.util.Map map>
+org.apache.http.protocol.BasicHttpContext.getAttribute : $r4 = r0.<org.apache.http.protocol.BasicHttpContext: java.util.Map map>
+org.apache.http.protocol.BasicHttpContext.getAttribute : if r2 != null goto return r2
+org.apache.http.protocol.BasicHttpContext.getAttribute : r2 = null
+org.apache.http.message.HeaderGroup.updateHeader : i0 = 0
+org.apache.http.message.HeaderGroup.updateHeader : $r10 = r0.<org.apache.http.message.HeaderGroup: java.util.List headers>
+org.apache.http.message.HeaderGroup.updateHeader : if r1 != null goto i0 = 0
+org.apache.http.protocol.BasicHttpContext.setAttribute : if r1 != null goto $r4 = r0.<org.apache.http.protocol.BasicHttpContext: java.util.Map map>
+org.apache.http.protocol.BasicHttpContext.setAttribute : $r4 = r0.<org.apache.http.protocol.BasicHttpContext: java.util.Map map>
+org.apache.http.protocol.BasicHttpContext.setAttribute : $r5 = new java.util.HashMap
+org.apache.http.protocol.BasicHttpContext.setAttribute : $r6 = r0.<org.apache.http.protocol.BasicHttpContext: java.util.Map map>
+org.apache.http.message.BasicHttpResponse.getEntity : $r1 = r0.<org.apache.http.message.BasicHttpResponse: org.apache.http.HttpEntity entity>
+org.apache.http.protocol.ResponseConnControl.process : r3 = interfaceinvoke r1.<org.apache.http.HttpResponse: org.apache.http.HttpEntity getEntity()>()
+org.apache.http.protocol.ResponseConnControl.process : $r11 = interfaceinvoke r2.<org.apache.http.protocol.HttpContext: java.lang.Object getAttribute(java.lang.String)>("http.request")
+org.apache.http.protocol.ResponseConnControl.process : r5 = interfaceinvoke r12.<org.apache.http.HttpRequest: org.apache.http.Header getFirstHeader(java.lang.String)>("Connection")
+org.apache.http.protocol.ResponseConnControl.process : $r9 = interfaceinvoke r1.<org.apache.http.HttpResponse: org.apache.http.StatusLine getStatusLine()>()
+org.apache.http.protocol.ResponseConnControl.process : $l1 = interfaceinvoke r3.<org.apache.http.HttpEntity: long getContentLength()>()
+org.apache.http.protocol.ResponseConnControl.process : if r1 != null goto (branch)
+org.apache.http.protocol.ResponseConnControl.process : if r2 != null goto $r8 = interfaceinvoke r1.<org.apache.http.HttpResponse: org.apache.http.StatusLine getStatusLine()>()
+org.apache.http.protocol.ResponseConnControl.process : if i0 == 400 goto interfaceinvoke r1.<org.apache.http.HttpResponse: void setHeader(java.lang.String,java.lang.String)>("Connection", "Close")
+org.apache.http.protocol.ResponseConnControl.process : $r13 = interfaceinvoke r5.<org.apache.http.Header: java.lang.String getValue()>()
+org.apache.http.protocol.ResponseConnControl.process : if r12 == null goto return
+org.apache.http.protocol.ResponseConnControl.process : if r3 == null goto $r11 = interfaceinvoke r2.<org.apache.http.protocol.HttpContext: java.lang.Object getAttribute(java.lang.String)>("http.request")
+org.apache.http.protocol.ResponseConnControl.process : $r8 = interfaceinvoke r1.<org.apache.http.HttpResponse: org.apache.http.StatusLine getStatusLine()>()
+org.apache.http.protocol.ResponseConnControl.process : if r5 == null goto return
+org.apache.http.entity.ContentType.toString : $r9 = virtualinvoke r2.<java.lang.StringBuilder: java.lang.String toString()>()
+org.apache.http.entity.ContentType.toString : $r5 = r0.<org.apache.http.entity.ContentType: java.lang.String charset>
+org.apache.http.entity.ContentType.toString : $r7 = r0.<org.apache.http.entity.ContentType: java.lang.String charset>
+org.apache.http.entity.ContentType.toString : $r3 = r0.<org.apache.http.entity.ContentType: java.lang.String mimeType>
+org.apache.http.entity.ContentType.toString : $r1 = new java.lang.StringBuilder
+org.apache.http.entity.ContentType.toString : virtualinvoke r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("; charset=")
+org.apache.http.message.BasicHeader.getName : $r1 = r0.<org.apache.http.message.BasicHeader: java.lang.String name>
+org.apache.http.message.BasicStatusLine.getProtocolVersion : $r1 = r0.<org.apache.http.message.BasicStatusLine: org.apache.http.ProtocolVersion protoVersion>
+org.apache.http.message.BasicHttpResponse.getStatusLine : $r1 = r0.<org.apache.http.message.BasicHttpResponse: org.apache.http.StatusLine statusline>
+org.apache.http.message.HeaderGroup.addHeader : $r2 = r0.<org.apache.http.message.HeaderGroup: java.util.List headers>
+org.apache.http.message.HeaderGroup.addHeader : if r1 != null goto $r2 = r0.<org.apache.http.message.HeaderGroup: java.util.List headers>

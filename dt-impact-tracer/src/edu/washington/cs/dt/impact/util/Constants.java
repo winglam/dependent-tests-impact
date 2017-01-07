@@ -23,6 +23,7 @@ public class Constants {
     public static final String JODATIME_NAME = "Joda-Time";
     public static final String SYNOTPIC_NAME = "Synoptic";
     public static final String XMLSECURITY_NAME = "XML Security";
+    public static final String HTTPCORE_NAME = "HttpCore";
 
     // for Figures 17, 18, and 19
     public static final String ARGUMENT_STRING = "The following arguments were used to generate this output.";
@@ -83,7 +84,7 @@ public class Constants {
      * Test projects that are currently supported.
      */
     public enum PROJECT {
-        CRYSTAL, JFREECHART, JODATIME, SYNOPTIC, XML_SECURITY
+        CRYSTAL, JFREECHART, JODATIME, SYNOPTIC, XML_SECURITY, HTTPCORE
     }
 
     /**

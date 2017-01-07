@@ -1,0 +1,28 @@
+org.apache.http.message.BasicListHeaderIterator.hasNext : $i0 = r0.<org.apache.http.message.BasicListHeaderIterator: int currentIndex>
+org.apache.http.message.HeaderGroup.iterator : $r1 = new org.apache.http.message.BasicListHeaderIterator
+org.apache.http.message.BasicListHeaderIterator.next : $r1 = virtualinvoke r0.<org.apache.http.message.BasicListHeaderIterator: org.apache.http.Header next()>()
+org.apache.http.message.BasicListHeaderIterator.next : $r1 = virtualinvoke r0.<org.apache.http.message.BasicListHeaderIterator: org.apache.http.Header nextHeader()>()
+org.apache.http.message.HeaderGroup.getAllHeaders : $r1 = r0.<org.apache.http.message.HeaderGroup: java.util.List headers>
+org.apache.http.message.BasicListHeaderIterator.remove : r0.<org.apache.http.message.BasicListHeaderIterator: int lastIndex> = -1
+org.apache.http.message.BasicListHeaderIterator.remove : $i2 = r0.<org.apache.http.message.BasicListHeaderIterator: int currentIndex>
+org.apache.http.message.BasicListHeaderIterator.remove : $r2 = r0.<org.apache.http.message.BasicListHeaderIterator: java.util.List allHeaders>
+org.apache.http.message.BasicListHeaderIterator.remove : $i0 = r0.<org.apache.http.message.BasicListHeaderIterator: int lastIndex>
+org.apache.http.message.HeaderGroup.clear : $r1 = r0.<org.apache.http.message.HeaderGroup: java.util.List headers>
+org.apache.http.message.BasicListHeaderIterator.nextHeader : $r2 = r0.<org.apache.http.message.BasicListHeaderIterator: java.util.List allHeaders>
+org.apache.http.message.BasicListHeaderIterator.nextHeader : i0 = r0.<org.apache.http.message.BasicListHeaderIterator: int currentIndex>
+org.apache.http.message.BasicListHeaderIterator.nextHeader : if i0 >= 0 goto r0.<org.apache.http.message.BasicListHeaderIterator: int lastIndex> = i0
+org.apache.http.message.BasicListHeaderIterator.nextHeader : $i1 = virtualinvoke r0.<org.apache.http.message.BasicListHeaderIterator: int findNext(int)>(i0)
+org.apache.http.message.BasicListHeaderIterator.nextHeader : r0.<org.apache.http.message.BasicListHeaderIterator: int lastIndex> = i0
+org.apache.http.message.HeaderGroup.setHeaders : virtualinvoke r0.<org.apache.http.message.HeaderGroup: void clear()>()
+org.apache.http.message.HeaderGroup.setHeaders : i0 = 0
+org.apache.http.message.HeaderGroup.setHeaders : $r2 = r0.<org.apache.http.message.HeaderGroup: java.util.List headers>
+org.apache.http.message.HeaderGroup.setHeaders : if r1 != null goto i0 = 0
+org.apache.http.message.BasicListHeaderIterator.filterHeader : $r2 = r0.<org.apache.http.message.BasicListHeaderIterator: java.lang.String headerName>
+org.apache.http.message.BasicListHeaderIterator.filterHeader : return 1
+org.apache.http.message.BasicListHeaderIterator.findNext : z0 = virtualinvoke r0.<org.apache.http.message.BasicListHeaderIterator: boolean filterHeader(int)>(i0)
+org.apache.http.message.BasicListHeaderIterator.findNext : if i0 >= -1 goto $r1 = r0.<org.apache.http.message.BasicListHeaderIterator: java.util.List allHeaders>
+org.apache.http.message.BasicListHeaderIterator.findNext : z0 = 0
+org.apache.http.message.BasicListHeaderIterator.findNext : i0 = i0 + 1
+org.apache.http.message.BasicListHeaderIterator.findNext : $r1 = r0.<org.apache.http.message.BasicListHeaderIterator: java.util.List allHeaders>
+org.apache.http.message.BasicListHeaderIterator.findNext : if z0 == 0 goto $i3 = -1
+org.apache.http.message.BasicListHeaderIterator.findNext : if z0 != 0 goto (branch)

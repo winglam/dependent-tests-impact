@@ -1,0 +1,16 @@
+org.apache.http.util.CharArrayBuffer.append : $i2 = r0.<org.apache.http.util.CharArrayBuffer: int len>
+org.apache.http.util.CharArrayBuffer.append : i0 = virtualinvoke r1.<java.lang.String: int length()>()
+org.apache.http.util.CharArrayBuffer.append : $r3 = r0.<org.apache.http.util.CharArrayBuffer: char[] buffer>
+org.apache.http.util.CharArrayBuffer.append : r0.<org.apache.http.util.CharArrayBuffer: int len> = i1
+org.apache.http.util.CharArrayBuffer.append : if r1 != null goto i0 = virtualinvoke r1.<java.lang.String: int length()>()
+org.apache.http.util.CharArrayBuffer.append : $r2 = r0.<org.apache.http.util.CharArrayBuffer: char[] buffer>
+org.apache.http.util.CharArrayBuffer.indexOf : return -1
+org.apache.http.util.CharArrayBuffer.indexOf : i1 = 0
+org.apache.http.util.CharArrayBuffer.indexOf : i3 = i1
+org.apache.http.util.CharArrayBuffer.indexOf : if i1 >= 0 goto $i4 = r0.<org.apache.http.util.CharArrayBuffer: int len>
+org.apache.http.util.CharArrayBuffer.indexOf : $i1 = r0.<org.apache.http.util.CharArrayBuffer: int len>
+org.apache.http.util.CharArrayBuffer.indexOf : i2 = r0.<org.apache.http.util.CharArrayBuffer: int len>
+org.apache.http.util.CharArrayBuffer.indexOf : $i4 = r0.<org.apache.http.util.CharArrayBuffer: int len>
+org.apache.http.util.CharArrayBuffer.indexOf : return i3
+org.apache.http.util.CharArrayBuffer.indexOf : $r1 = r0.<org.apache.http.util.CharArrayBuffer: char[] buffer>
+org.apache.http.util.CharArrayBuffer.indexOf : if i1 <= i2 goto i3 = i1

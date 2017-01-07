@@ -1,0 +1,34 @@
+org.apache.http.message.BasicLineFormatter.doFormatHeader : if r4 == null goto return
+org.apache.http.message.BasicLineFormatter.doFormatHeader : virtualinvoke r1.<org.apache.http.util.CharArrayBuffer: void append(java.lang.String)>(": ")
+org.apache.http.message.BasicLineFormatter.doFormatHeader : $i1 = virtualinvoke r3.<java.lang.String: int length()>()
+org.apache.http.message.BasicLineFormatter.doFormatHeader : r3 = interfaceinvoke r2.<org.apache.http.Header: java.lang.String getName()>()
+org.apache.http.message.BasicLineFormatter.doFormatHeader : virtualinvoke r1.<org.apache.http.util.CharArrayBuffer: void append(java.lang.String)>(r3)
+org.apache.http.message.BasicLineFormatter.doFormatHeader : r4 = interfaceinvoke r2.<org.apache.http.Header: java.lang.String getValue()>()
+org.apache.http.message.BasicLineFormatter.doFormatHeader : $i2 = virtualinvoke r4.<java.lang.String: int length()>()
+org.apache.http.message.BasicLineFormatter.doFormatHeader : virtualinvoke r1.<org.apache.http.util.CharArrayBuffer: void append(java.lang.String)>(r4)
+org.apache.http.message.BasicLineFormatter.doFormatHeader : if r4 == null goto virtualinvoke r1.<org.apache.http.util.CharArrayBuffer: void ensureCapacity(int)>(i0)
+org.apache.http.message.BasicLineFormatter.doFormatHeader : virtualinvoke r1.<org.apache.http.util.CharArrayBuffer: void ensureCapacity(int)>(i0)
+org.apache.http.message.BasicHeader.getName : $r1 = r0.<org.apache.http.message.BasicHeader: java.lang.String name>
+org.apache.http.message.BasicLineFormatter.formatHeader : return r5
+org.apache.http.message.BasicLineFormatter.formatHeader : virtualinvoke r0.<org.apache.http.message.BasicLineFormatter: void doFormatHeader(org.apache.http.util.CharArrayBuffer,org.apache.http.Header)>(r5, r2)
+org.apache.http.message.BasicLineFormatter.formatHeader : if r1 != null goto $r2 = interfaceinvoke r1.<org.apache.http.message.LineFormatter: org.apache.http.util.CharArrayBuffer formatHeader(org.apache.http.util.CharArrayBuffer,org.apache.http.Header)>(null, r0)
+org.apache.http.message.BasicLineFormatter.formatHeader : r5 = virtualinvoke r0.<org.apache.http.message.BasicLineFormatter: org.apache.http.util.CharArrayBuffer initBuffer(org.apache.http.util.CharArrayBuffer)>(r1)
+org.apache.http.message.BasicLineFormatter.formatHeader : n0 = null
+org.apache.http.message.BasicLineFormatter.formatHeader : if r2 != null goto n0 = null
+org.apache.http.message.BasicLineFormatter.formatHeader : $z0 = r2 instanceof org.apache.http.FormattedHeader
+org.apache.http.message.BasicLineFormatter.formatHeader : $r2 = interfaceinvoke r1.<org.apache.http.message.LineFormatter: org.apache.http.util.CharArrayBuffer formatHeader(org.apache.http.util.CharArrayBuffer,org.apache.http.Header)>(null, r0)
+org.apache.http.message.BasicLineFormatter.formatHeader : r1 = <org.apache.http.message.BasicLineFormatter: org.apache.http.message.BasicLineFormatter DEFAULT>
+org.apache.http.message.BasicHeader.getValue : $r1 = r0.<org.apache.http.message.BasicHeader: java.lang.String value>
+org.apache.http.util.CharArrayBuffer.toString : $r1 = new java.lang.String
+org.apache.http.message.BasicLineFormatter.initBuffer : if r1 == null goto $r2 = new org.apache.http.util.CharArrayBuffer
+org.apache.http.message.BasicLineFormatter.initBuffer : return r1
+org.apache.http.message.BasicLineFormatter.initBuffer : $r2 = new org.apache.http.util.CharArrayBuffer
+org.apache.http.util.CharArrayBuffer.append : $i2 = r0.<org.apache.http.util.CharArrayBuffer: int len>
+org.apache.http.util.CharArrayBuffer.append : i0 = virtualinvoke r1.<java.lang.String: int length()>()
+org.apache.http.util.CharArrayBuffer.append : $r3 = r0.<org.apache.http.util.CharArrayBuffer: char[] buffer>
+org.apache.http.util.CharArrayBuffer.append : r0.<org.apache.http.util.CharArrayBuffer: int len> = i1
+org.apache.http.util.CharArrayBuffer.append : if r1 != null goto i0 = virtualinvoke r1.<java.lang.String: int length()>()
+org.apache.http.util.CharArrayBuffer.append : $r2 = r0.<org.apache.http.util.CharArrayBuffer: char[] buffer>
+org.apache.http.util.CharArrayBuffer.ensureCapacity : if i0 <= i1 goto return
+org.apache.http.util.CharArrayBuffer.ensureCapacity : $r1 = r0.<org.apache.http.util.CharArrayBuffer: char[] buffer>
+org.apache.http.util.CharArrayBuffer.ensureCapacity : if i0 > 0 goto $r1 = r0.<org.apache.http.util.CharArrayBuffer: char[] buffer>

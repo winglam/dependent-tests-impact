@@ -1,0 +1,74 @@
+org.apache.http.message.BasicHeaderValueFormatter.estimateNameValuePairLen : return i0
+org.apache.http.message.BasicHeaderValueFormatter.estimateNameValuePairLen : r2 = interfaceinvoke r1.<org.apache.http.NameValuePair: java.lang.String getValue()>()
+org.apache.http.message.BasicHeaderValueFormatter.estimateNameValuePairLen : $r3 = interfaceinvoke r1.<org.apache.http.NameValuePair: java.lang.String getName()>()
+org.apache.http.message.BasicHeaderValueFormatter.estimateNameValuePairLen : if r1 != null goto $r3 = interfaceinvoke r1.<org.apache.http.NameValuePair: java.lang.String getName()>()
+org.apache.http.message.BasicHeaderValueFormatter.estimateNameValuePairLen : $i1 = virtualinvoke r2.<java.lang.String: int length()>()
+org.apache.http.message.BasicHeaderValueFormatter.estimateNameValuePairLen : if r2 == null goto return i0
+org.apache.http.message.BasicHeaderValueFormatter.estimateHeaderElementLen : return i0
+org.apache.http.message.BasicHeaderValueFormatter.estimateHeaderElementLen : i1 = interfaceinvoke r1.<org.apache.http.HeaderElement: int getParameterCount()>()
+org.apache.http.message.BasicHeaderValueFormatter.estimateHeaderElementLen : $r4 = interfaceinvoke r1.<org.apache.http.HeaderElement: org.apache.http.NameValuePair getParameter(int)>(i2)
+org.apache.http.message.BasicHeaderValueFormatter.estimateHeaderElementLen : r2 = interfaceinvoke r1.<org.apache.http.HeaderElement: java.lang.String getValue()>()
+org.apache.http.message.BasicHeaderValueFormatter.estimateHeaderElementLen : i2 = 0
+org.apache.http.message.BasicHeaderValueFormatter.estimateHeaderElementLen : if r2 == null goto i1 = interfaceinvoke r1.<org.apache.http.HeaderElement: int getParameterCount()>()
+org.apache.http.message.BasicHeaderValueFormatter.estimateHeaderElementLen : $i3 = virtualinvoke r2.<java.lang.String: int length()>()
+org.apache.http.message.BasicHeaderValueFormatter.estimateHeaderElementLen : $r3 = interfaceinvoke r1.<org.apache.http.HeaderElement: java.lang.String getName()>()
+org.apache.http.message.BasicHeaderValueFormatter.estimateHeaderElementLen : if r1 != null goto $r3 = interfaceinvoke r1.<org.apache.http.HeaderElement: java.lang.String getName()>()
+org.apache.http.message.BasicHeaderValueFormatter.estimateHeaderElementLen : if i1 <= 0 goto return i0
+org.apache.http.message.BasicHeaderValueFormatter.isSeparator : $r1 = " ;,:@()<>\\\"/[]?={}\t"
+org.apache.http.message.BasicHeaderValueFormatter.formatNameValuePair : r3 = interfaceinvoke r2.<org.apache.http.NameValuePair: java.lang.String getValue()>()
+org.apache.http.message.BasicHeaderValueFormatter.formatNameValuePair : virtualinvoke r1.<org.apache.http.util.CharArrayBuffer: void append(char)>(61)
+org.apache.http.message.BasicHeaderValueFormatter.formatNameValuePair : if r3 == null goto return r1
+org.apache.http.message.BasicHeaderValueFormatter.formatNameValuePair : if r2 != null goto i0 = virtualinvoke r0.<org.apache.http.message.BasicHeaderValueFormatter: int estimateNameValuePairLen(org.apache.http.NameValuePair)>(r2)
+org.apache.http.message.BasicHeaderValueFormatter.formatNameValuePair : return r1
+org.apache.http.message.BasicHeaderValueFormatter.formatNameValuePair : if r1 != null goto virtualinvoke r1.<org.apache.http.util.CharArrayBuffer: void ensureCapacity(int)>(i0)
+org.apache.http.message.BasicHeaderValueFormatter.formatNameValuePair : virtualinvoke r0.<org.apache.http.message.BasicHeaderValueFormatter: void doFormatValue(org.apache.http.util.CharArrayBuffer,java.lang.String,boolean)>(r1, r3, z0)
+org.apache.http.message.BasicHeaderValueFormatter.formatNameValuePair : $r6 = interfaceinvoke r2.<org.apache.http.NameValuePair: java.lang.String getName()>()
+org.apache.http.message.BasicHeaderValueFormatter.formatNameValuePair : virtualinvoke r1.<org.apache.http.util.CharArrayBuffer: void ensureCapacity(int)>(i0)
+org.apache.http.message.BasicHeaderValueFormatter.formatNameValuePair : i0 = virtualinvoke r0.<org.apache.http.message.BasicHeaderValueFormatter: int estimateNameValuePairLen(org.apache.http.NameValuePair)>(r2)
+org.apache.http.message.BasicNameValuePair.getValue : $r1 = r0.<org.apache.http.message.BasicNameValuePair: java.lang.String value>
+org.apache.http.message.BasicHeaderElement.getValue : $r1 = r0.<org.apache.http.message.BasicHeaderElement: java.lang.String value>
+org.apache.http.util.CharArrayBuffer.toString : $r1 = new java.lang.String
+org.apache.http.message.BasicHeaderValueFormatter.isUnsafe : $r1 = "\"\\"
+org.apache.http.message.BasicHeaderValueFormatter.formatHeaderElement : r3 = interfaceinvoke r2.<org.apache.http.HeaderElement: java.lang.String getValue()>()
+org.apache.http.message.BasicHeaderValueFormatter.formatHeaderElement : if r1 != null goto virtualinvoke r1.<org.apache.http.util.CharArrayBuffer: void ensureCapacity(int)>(i0)
+org.apache.http.message.BasicHeaderValueFormatter.formatHeaderElement : $r5 = new org.apache.http.util.CharArrayBuffer
+org.apache.http.message.BasicHeaderValueFormatter.formatHeaderElement : $r6 = interfaceinvoke r2.<org.apache.http.HeaderElement: java.lang.String getName()>()
+org.apache.http.message.BasicHeaderValueFormatter.formatHeaderElement : virtualinvoke r0.<org.apache.http.message.BasicHeaderValueFormatter: void doFormatValue(org.apache.http.util.CharArrayBuffer,java.lang.String,boolean)>(r1, r3, z0)
+org.apache.http.message.BasicHeaderValueFormatter.formatHeaderElement : i0 = virtualinvoke r0.<org.apache.http.message.BasicHeaderValueFormatter: int estimateHeaderElementLen(org.apache.http.HeaderElement)>(r2)
+org.apache.http.message.BasicHeaderValueFormatter.formatHeaderElement : $r7 = interfaceinvoke r2.<org.apache.http.HeaderElement: org.apache.http.NameValuePair getParameter(int)>(i2)
+org.apache.http.message.BasicHeaderValueFormatter.formatHeaderElement : r1 = <org.apache.http.message.BasicHeaderValueFormatter: org.apache.http.message.BasicHeaderValueFormatter DEFAULT>
+org.apache.http.message.BasicHeaderValueFormatter.formatHeaderElement : $r2 = interfaceinvoke r1.<org.apache.http.message.HeaderValueFormatter: org.apache.http.util.CharArrayBuffer formatHeaderElement(org.apache.http.util.CharArrayBuffer,org.apache.http.HeaderElement,boolean)>(null, r0, z0)
+org.apache.http.message.BasicHeaderValueFormatter.formatHeaderElement : i1 = interfaceinvoke r2.<org.apache.http.HeaderElement: int getParameterCount()>()
+org.apache.http.message.BasicHeaderValueFormatter.formatHeaderElement : virtualinvoke r1.<org.apache.http.util.CharArrayBuffer: void append(char)>(61)
+org.apache.http.message.BasicHeaderValueFormatter.formatHeaderElement : i2 = 0
+org.apache.http.message.BasicHeaderValueFormatter.formatHeaderElement : if r1 != null goto $r2 = interfaceinvoke r1.<org.apache.http.message.HeaderValueFormatter: org.apache.http.util.CharArrayBuffer formatHeaderElement(org.apache.http.util.CharArrayBuffer,org.apache.http.HeaderElement,boolean)>(null, r0, z0)
+org.apache.http.message.BasicHeaderValueFormatter.formatHeaderElement : return r1
+org.apache.http.message.BasicHeaderValueFormatter.formatHeaderElement : if r2 != null goto i0 = virtualinvoke r0.<org.apache.http.message.BasicHeaderValueFormatter: int estimateHeaderElementLen(org.apache.http.HeaderElement)>(r2)
+org.apache.http.message.BasicHeaderValueFormatter.formatHeaderElement : if r3 == null goto i1 = interfaceinvoke r2.<org.apache.http.HeaderElement: int getParameterCount()>()
+org.apache.http.message.BasicHeaderValueFormatter.formatHeaderElement : virtualinvoke r1.<org.apache.http.util.CharArrayBuffer: void append(java.lang.String)>("; ")
+org.apache.http.message.BasicHeaderValueFormatter.formatHeaderElement : if i1 <= 0 goto return r1
+org.apache.http.message.BasicHeaderElement.getName : $r1 = r0.<org.apache.http.message.BasicHeaderElement: java.lang.String name>
+org.apache.http.message.BasicHeaderValueFormatter.doFormatValue : if z0 == 0 goto return
+org.apache.http.message.BasicHeaderValueFormatter.doFormatValue : $z1 = virtualinvoke r0.<org.apache.http.message.BasicHeaderValueFormatter: boolean isUnsafe(char)>(c1)
+org.apache.http.message.BasicHeaderValueFormatter.doFormatValue : virtualinvoke r1.<org.apache.http.util.CharArrayBuffer: void append(char)>(c1)
+org.apache.http.message.BasicHeaderValueFormatter.doFormatValue : $c3 = virtualinvoke r2.<java.lang.String: char charAt(int)>(i0)
+org.apache.http.message.BasicHeaderValueFormatter.doFormatValue : virtualinvoke r1.<org.apache.http.util.CharArrayBuffer: void append(char)>(92)
+org.apache.http.message.BasicHeaderValueFormatter.doFormatValue : c1 = virtualinvoke r2.<java.lang.String: char charAt(int)>(i4)
+org.apache.http.message.BasicHeaderValueFormatter.doFormatValue : i0 = 0
+org.apache.http.message.BasicHeaderValueFormatter.doFormatValue : virtualinvoke r1.<org.apache.http.util.CharArrayBuffer: void append(char)>(34)
+org.apache.http.message.BasicHeaderValueFormatter.doFormatValue : if z0 == 0 goto i4 = 0
+org.apache.http.message.BasicHeaderValueFormatter.doFormatValue : if z0 != 0 goto (branch)
+org.apache.http.message.BasicHeaderValueFormatter.doFormatValue : i4 = 0
+org.apache.http.message.BasicNameValuePair.getName : $r1 = r0.<org.apache.http.message.BasicNameValuePair: java.lang.String name>
+org.apache.http.message.BasicHeaderElement.getParameterCount : $r1 = r0.<org.apache.http.message.BasicHeaderElement: org.apache.http.NameValuePair[] parameters>
+org.apache.http.message.BasicHeaderElement.getParameter : $r1 = r0.<org.apache.http.message.BasicHeaderElement: org.apache.http.NameValuePair[] parameters>
+org.apache.http.util.CharArrayBuffer.append : $i2 = r0.<org.apache.http.util.CharArrayBuffer: int len>
+org.apache.http.util.CharArrayBuffer.append : i0 = virtualinvoke r1.<java.lang.String: int length()>()
+org.apache.http.util.CharArrayBuffer.append : $r3 = r0.<org.apache.http.util.CharArrayBuffer: char[] buffer>
+org.apache.http.util.CharArrayBuffer.append : r0.<org.apache.http.util.CharArrayBuffer: int len> = i1
+org.apache.http.util.CharArrayBuffer.append : if r1 != null goto i0 = virtualinvoke r1.<java.lang.String: int length()>()
+org.apache.http.util.CharArrayBuffer.append : $r1 = r0.<org.apache.http.util.CharArrayBuffer: char[] buffer>
+org.apache.http.util.CharArrayBuffer.append : $r2 = r0.<org.apache.http.util.CharArrayBuffer: char[] buffer>
+org.apache.http.util.CharArrayBuffer.ensureCapacity : if i0 <= i1 goto return
+org.apache.http.util.CharArrayBuffer.ensureCapacity : $r1 = r0.<org.apache.http.util.CharArrayBuffer: char[] buffer>
+org.apache.http.util.CharArrayBuffer.ensureCapacity : if i0 > 0 goto $r1 = r0.<org.apache.http.util.CharArrayBuffer: char[] buffer>

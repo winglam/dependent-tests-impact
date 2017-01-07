@@ -1,7 +1,7 @@
 testType=orig
 experiment=httpcore
 experimentCP=../../../impact-tools/*:classes/:test-classes/:dependency/*:
-numTimesToRun=9999
+numTimesToRun=9
 crossReferenceClass=edu.washington.cs.dt.impact.tools.CrossReferencer
 
 function clearEnv() {

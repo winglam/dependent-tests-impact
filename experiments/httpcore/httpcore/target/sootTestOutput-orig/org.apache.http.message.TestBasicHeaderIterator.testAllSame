@@ -1,0 +1,14 @@
+org.apache.http.message.BasicHeaderIterator.nextHeader : if i0 >= 0 goto $i1 = virtualinvoke r0.<org.apache.http.message.BasicHeaderIterator: int findNext(int)>(i0)
+org.apache.http.message.BasicHeaderIterator.nextHeader : i0 = r0.<org.apache.http.message.BasicHeaderIterator: int currentIndex>
+org.apache.http.message.BasicHeaderIterator.nextHeader : $r2 = r0.<org.apache.http.message.BasicHeaderIterator: org.apache.http.Header[] allHeaders>
+org.apache.http.message.BasicHeaderIterator.nextHeader : $i1 = virtualinvoke r0.<org.apache.http.message.BasicHeaderIterator: int findNext(int)>(i0)
+org.apache.http.message.BasicHeader.getName : $r1 = r0.<org.apache.http.message.BasicHeader: java.lang.String name>
+org.apache.http.message.BasicHeaderIterator.hasNext : $i0 = r0.<org.apache.http.message.BasicHeaderIterator: int currentIndex>
+org.apache.http.message.BasicHeaderIterator.filterHeader : $r1 = r0.<org.apache.http.message.BasicHeaderIterator: java.lang.String headerName>
+org.apache.http.message.BasicHeaderIterator.findNext : if i0 >= -1 goto $r1 = r0.<org.apache.http.message.BasicHeaderIterator: org.apache.http.Header[] allHeaders>
+org.apache.http.message.BasicHeaderIterator.findNext : z0 = 0
+org.apache.http.message.BasicHeaderIterator.findNext : $r1 = r0.<org.apache.http.message.BasicHeaderIterator: org.apache.http.Header[] allHeaders>
+org.apache.http.message.BasicHeaderIterator.findNext : z0 = virtualinvoke r0.<org.apache.http.message.BasicHeaderIterator: boolean filterHeader(int)>(i0)
+org.apache.http.message.BasicHeaderIterator.findNext : i0 = i0 + 1
+org.apache.http.message.BasicHeaderIterator.findNext : if z0 == 0 goto $i3 = -1
+org.apache.http.message.BasicHeaderIterator.findNext : if z0 != 0 goto (branch)

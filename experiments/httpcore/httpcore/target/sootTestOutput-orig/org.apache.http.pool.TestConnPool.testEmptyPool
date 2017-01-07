@@ -1,0 +1,42 @@
+org.apache.http.pool.AbstractConnPool.getStats : $r8 = r0.<org.apache.http.pool.AbstractConnPool: java.util.concurrent.locks.Lock lock>
+org.apache.http.pool.AbstractConnPool.getStats : $r7 = new org.apache.http.pool.PoolStats
+org.apache.http.pool.AbstractConnPool.getStats : if r1 != null goto $r6 = r0.<org.apache.http.pool.AbstractConnPool: java.util.concurrent.locks.Lock lock>
+org.apache.http.pool.AbstractConnPool.getStats : $r6 = r0.<org.apache.http.pool.AbstractConnPool: java.util.concurrent.locks.Lock lock>
+org.apache.http.pool.AbstractConnPool.getStats : r2 = specialinvoke r0.<org.apache.http.pool.AbstractConnPool: org.apache.http.pool.RouteSpecificPool getPool(java.lang.Object)>(r1)
+org.apache.http.pool.AbstractConnPool.getPool : $r5 = new org.apache.http.pool.AbstractConnPool$1
+org.apache.http.pool.AbstractConnPool.getPool : return r2
+org.apache.http.pool.AbstractConnPool.getPool : $r6 = r0.<org.apache.http.pool.AbstractConnPool: java.util.Map routeToPool>
+org.apache.http.pool.AbstractConnPool.getPool : if r2 != null goto return r2
+org.apache.http.pool.AbstractConnPool.getPool : $r3 = r0.<org.apache.http.pool.AbstractConnPool: java.util.Map routeToPool>
+org.apache.http.pool.AbstractConnPool.getTotalStats : $r8 = r0.<org.apache.http.pool.AbstractConnPool: java.util.concurrent.locks.Lock lock>
+org.apache.http.pool.AbstractConnPool.getTotalStats : $r4 = new org.apache.http.pool.PoolStats
+org.apache.http.pool.AbstractConnPool.getTotalStats : $r3 = r0.<org.apache.http.pool.AbstractConnPool: java.util.concurrent.locks.Lock lock>
+org.apache.http.pool.PoolStats.getMax : $i0 = r0.<org.apache.http.pool.PoolStats: int max>
+org.apache.http.pool.PoolStats.getAvailable : $i0 = r0.<org.apache.http.pool.PoolStats: int available>
+org.apache.http.pool.AbstractConnPool.setMaxPerRoute : $r5 = r0.<org.apache.http.pool.AbstractConnPool: java.util.concurrent.locks.Lock lock>
+org.apache.http.pool.AbstractConnPool.setMaxPerRoute : $r9 = r0.<org.apache.http.pool.AbstractConnPool: java.util.concurrent.locks.Lock lock>
+org.apache.http.pool.AbstractConnPool.setMaxPerRoute : if i0 > 0 goto $r5 = r0.<org.apache.http.pool.AbstractConnPool: java.util.concurrent.locks.Lock lock>
+org.apache.http.pool.AbstractConnPool.setMaxPerRoute : goto [?= return]
+org.apache.http.pool.AbstractConnPool.setMaxPerRoute : if r1 != null goto (branch)
+org.apache.http.pool.AbstractConnPool.setMaxPerRoute : $r6 = r0.<org.apache.http.pool.AbstractConnPool: java.util.Map maxPerRoute>
+org.apache.http.pool.RouteSpecificPool.getPendingCount : $r1 = r0.<org.apache.http.pool.RouteSpecificPool: java.util.LinkedList pending>
+org.apache.http.pool.AbstractConnPool.toString : $r10 = r0.<org.apache.http.pool.AbstractConnPool: java.util.LinkedList pending>
+org.apache.http.pool.AbstractConnPool.toString : $r13 = virtualinvoke r2.<java.lang.StringBuilder: java.lang.String toString()>()
+org.apache.http.pool.AbstractConnPool.toString : $r4 = r0.<org.apache.http.pool.AbstractConnPool: java.util.Set leased>
+org.apache.http.pool.AbstractConnPool.toString : virtualinvoke r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("[leased: ")
+org.apache.http.pool.AbstractConnPool.toString : $r7 = r0.<org.apache.http.pool.AbstractConnPool: java.util.LinkedList available>
+org.apache.http.pool.AbstractConnPool.toString : virtualinvoke r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("][available: ")
+org.apache.http.pool.AbstractConnPool.toString : virtualinvoke r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("]")
+org.apache.http.pool.AbstractConnPool.toString : $r1 = new java.lang.StringBuilder
+org.apache.http.pool.AbstractConnPool.toString : virtualinvoke r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("][pending: ")
+org.apache.http.pool.AbstractConnPool.getMaxPerRoute : $i0 = virtualinvoke r2.<java.lang.Integer: int intValue()>()
+org.apache.http.pool.AbstractConnPool.getMaxPerRoute : if r2 == null goto $i1 = r0.<org.apache.http.pool.AbstractConnPool: int defaultMaxPerRoute>
+org.apache.http.pool.AbstractConnPool.getMaxPerRoute : $r3 = r0.<org.apache.http.pool.AbstractConnPool: java.util.Map maxPerRoute>
+org.apache.http.pool.PoolStats.getLeased : $i0 = r0.<org.apache.http.pool.PoolStats: int leased>
+org.apache.http.pool.AbstractConnPool.setDefaultMaxPerRoute : if i0 > 0 goto $r3 = r0.<org.apache.http.pool.AbstractConnPool: java.util.concurrent.locks.Lock lock>
+org.apache.http.pool.AbstractConnPool.setDefaultMaxPerRoute : $r3 = r0.<org.apache.http.pool.AbstractConnPool: java.util.concurrent.locks.Lock lock>
+org.apache.http.pool.AbstractConnPool.setDefaultMaxPerRoute : $r4 = r0.<org.apache.http.pool.AbstractConnPool: java.util.concurrent.locks.Lock lock>
+org.apache.http.pool.AbstractConnPool.setDefaultMaxPerRoute : goto [?= return]
+org.apache.http.pool.AbstractConnPool.setDefaultMaxPerRoute : r0.<org.apache.http.pool.AbstractConnPool: int defaultMaxPerRoute> = i0
+org.apache.http.pool.RouteSpecificPool.getLeasedCount : $r1 = r0.<org.apache.http.pool.RouteSpecificPool: java.util.Set leased>
+org.apache.http.pool.RouteSpecificPool.getAvailableCount : $r1 = r0.<org.apache.http.pool.RouteSpecificPool: java.util.LinkedList available>

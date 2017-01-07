@@ -1,0 +1,10 @@
+org.apache.http.entity.BasicHttpEntity.getContent : $r1 = r0.<org.apache.http.entity.BasicHttpEntity: java.io.InputStream content>
+org.apache.http.entity.BasicHttpEntity.getContent : $r3 = r0.<org.apache.http.entity.BasicHttpEntity: java.io.InputStream content>
+org.apache.http.entity.BasicHttpEntity.setContentLength : r0.<org.apache.http.entity.BasicHttpEntity: long length> = l0
+org.apache.http.entity.BasicHttpEntity.getContentLength : $l0 = r0.<org.apache.http.entity.BasicHttpEntity: long length>
+org.apache.http.util.EntityUtils.toByteArray : $r7 = new java.lang.IllegalArgumentException
+org.apache.http.util.EntityUtils.toByteArray : $l2 = interfaceinvoke r0.<org.apache.http.HttpEntity: long getContentLength()>()
+org.apache.http.util.EntityUtils.toByteArray : if r0 != null goto r1 = interfaceinvoke r0.<org.apache.http.HttpEntity: java.io.InputStream getContent()>()
+org.apache.http.util.EntityUtils.toByteArray : if r1 != null goto $l2 = interfaceinvoke r0.<org.apache.http.HttpEntity: long getContentLength()>()
+org.apache.http.util.EntityUtils.toByteArray : r1 = interfaceinvoke r0.<org.apache.http.HttpEntity: java.io.InputStream getContent()>()
+org.apache.http.entity.BasicHttpEntity.setContent : r0.<org.apache.http.entity.BasicHttpEntity: java.io.InputStream content> = r1

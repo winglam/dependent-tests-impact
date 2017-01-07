@@ -1,0 +1,49 @@
+org.apache.http.params.AbstractHttpParams.isParameterTrue : $z0 = virtualinvoke r0.<org.apache.http.params.AbstractHttpParams: boolean getBooleanParameter(java.lang.String,boolean)>(r1, 0)
+org.apache.http.params.BasicHttpParams.setParameter : $r3 = r0.<org.apache.http.params.BasicHttpParams: java.util.HashMap parameters>
+org.apache.http.params.BasicHttpParams.setParameter : return r0
+org.apache.http.message.AbstractHttpMessage.getFirstHeader : $r2 = r0.<org.apache.http.message.AbstractHttpMessage: org.apache.http.message.HeaderGroup headergroup>
+org.apache.http.message.BasicHeader.getName : $r1 = r0.<org.apache.http.message.BasicHeader: java.lang.String name>
+org.apache.http.message.AbstractHttpMessage.getHeaders : $r2 = r0.<org.apache.http.message.AbstractHttpMessage: org.apache.http.message.HeaderGroup headergroup>
+org.apache.http.message.AbstractHttpMessage.getParams : $r2 = r0.<org.apache.http.message.AbstractHttpMessage: org.apache.http.params.HttpParams params>
+org.apache.http.message.AbstractHttpMessage.getParams : $r3 = r0.<org.apache.http.message.AbstractHttpMessage: org.apache.http.params.HttpParams params>
+org.apache.http.message.AbstractHttpMessage.getParams : $r1 = new org.apache.http.params.BasicHttpParams
+org.apache.http.message.HeaderGroup.getFirstHeader : return r2
+org.apache.http.message.HeaderGroup.getFirstHeader : return null
+org.apache.http.message.HeaderGroup.getFirstHeader : i0 = 0
+org.apache.http.message.HeaderGroup.getFirstHeader : $r6 = interfaceinvoke r2.<org.apache.http.Header: java.lang.String getName()>()
+org.apache.http.message.HeaderGroup.getFirstHeader : $r4 = r0.<org.apache.http.message.HeaderGroup: java.util.List headers>
+org.apache.http.message.BasicHeader.getValue : $r1 = r0.<org.apache.http.message.BasicHeader: java.lang.String value>
+org.apache.http.message.AbstractHttpMessage.addHeader : $r4 = r0.<org.apache.http.message.AbstractHttpMessage: org.apache.http.message.HeaderGroup headergroup>
+org.apache.http.message.AbstractHttpMessage.addHeader : if r1 != null goto $r4 = r0.<org.apache.http.message.AbstractHttpMessage: org.apache.http.message.HeaderGroup headergroup>
+org.apache.http.impl.entity.LaxContentLengthStrategy.determineLength : $r30 = new org.apache.http.ProtocolException
+org.apache.http.impl.entity.LaxContentLengthStrategy.determineLength : $b9 = l6 cmp 0L
+org.apache.http.impl.entity.LaxContentLengthStrategy.determineLength : r2 = interfaceinvoke r1.<org.apache.http.HttpMessage: org.apache.http.params.HttpParams getParams()>()
+org.apache.http.impl.entity.LaxContentLengthStrategy.determineLength : r7 = r29[i0]
+org.apache.http.impl.entity.LaxContentLengthStrategy.determineLength : if r3 == null goto (branch)
+org.apache.http.impl.entity.LaxContentLengthStrategy.determineLength : r29 = interfaceinvoke r1.<org.apache.http.HttpMessage: org.apache.http.Header[] getHeaders(java.lang.String)>("Content-Length")
+org.apache.http.impl.entity.LaxContentLengthStrategy.determineLength : if z0 == 0 goto i0 = i0 + -1
+org.apache.http.impl.entity.LaxContentLengthStrategy.determineLength : if r4 == null goto return -1L
+org.apache.http.impl.entity.LaxContentLengthStrategy.determineLength : if z0 == 0 goto $i8 = lengthof r29
+org.apache.http.impl.entity.LaxContentLengthStrategy.determineLength : $i8 = lengthof r29
+org.apache.http.impl.entity.LaxContentLengthStrategy.determineLength : $r31 = interfaceinvoke r7.<org.apache.http.Header: java.lang.String getValue()>()
+org.apache.http.impl.entity.LaxContentLengthStrategy.determineLength : z0 = interfaceinvoke r2.<org.apache.http.params.HttpParams: boolean isParameterTrue(java.lang.String)>("http.protocol.strict-transfer-encoding")
+org.apache.http.impl.entity.LaxContentLengthStrategy.determineLength : return -1L
+org.apache.http.impl.entity.LaxContentLengthStrategy.determineLength : r4 = interfaceinvoke r1.<org.apache.http.HttpMessage: org.apache.http.Header getFirstHeader(java.lang.String)>("Content-Length")
+org.apache.http.impl.entity.LaxContentLengthStrategy.determineLength : l6 = -1L
+org.apache.http.impl.entity.LaxContentLengthStrategy.determineLength : r8 = $r32
+org.apache.http.impl.entity.LaxContentLengthStrategy.determineLength : if r1 != null goto r2 = interfaceinvoke r1.<org.apache.http.HttpMessage: org.apache.http.params.HttpParams getParams()>()
+org.apache.http.impl.entity.LaxContentLengthStrategy.determineLength : r3 = interfaceinvoke r1.<org.apache.http.HttpMessage: org.apache.http.Header getFirstHeader(java.lang.String)>("Transfer-Encoding")
+org.apache.http.message.HeaderGroup.addHeader : $r2 = r0.<org.apache.http.message.HeaderGroup: java.util.List headers>
+org.apache.http.message.HeaderGroup.addHeader : if r1 != null goto $r2 = r0.<org.apache.http.message.HeaderGroup: java.util.List headers>
+org.apache.http.params.BasicHttpParams.getParameter : $r2 = r0.<org.apache.http.params.BasicHttpParams: java.util.HashMap parameters>
+org.apache.http.params.AbstractHttpParams.getBooleanParameter : r2 = virtualinvoke r0.<org.apache.http.params.AbstractHttpParams: java.lang.Object getParameter(java.lang.String)>(r1)
+org.apache.http.params.AbstractHttpParams.getBooleanParameter : $r3 = (java.lang.Boolean) r2
+org.apache.http.params.AbstractHttpParams.getBooleanParameter : if r2 != null goto $r3 = (java.lang.Boolean) r2
+org.apache.http.params.AbstractHttpParams.setBooleanParameter : if z0 == 0 goto $r4 = <java.lang.Boolean: java.lang.Boolean FALSE>
+org.apache.http.params.AbstractHttpParams.setBooleanParameter : return r0
+org.apache.http.message.HeaderGroup.getHeaders : $r6 = r0.<org.apache.http.message.HeaderGroup: java.util.List headers>
+org.apache.http.message.HeaderGroup.getHeaders : $r8 = interfaceinvoke r4.<org.apache.http.Header: java.lang.String getName()>()
+org.apache.http.message.HeaderGroup.getHeaders : interfaceinvoke r3.<java.util.List: boolean add(java.lang.Object)>(r4)
+org.apache.http.message.HeaderGroup.getHeaders : i0 = 0
+org.apache.http.message.HeaderGroup.getHeaders : $i2 = interfaceinvoke r3.<java.util.List: int size()>()
+org.apache.http.message.HeaderGroup.getHeaders : $r2 = new java.util.ArrayList

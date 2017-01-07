@@ -1,0 +1,33 @@
+org.apache.http.entity.ContentType.create : r3 = null
+org.apache.http.entity.ContentType.create : $i0 = virtualinvoke r2.<java.lang.String: int length()>()
+org.apache.http.entity.ContentType.create : $r5 = virtualinvoke r0.<java.lang.String: java.lang.String trim()>()
+org.apache.http.entity.ContentType.create : $r12 = new org.apache.http.entity.ContentType
+org.apache.http.entity.ContentType.create : if r1 == null goto $r12 = new org.apache.http.entity.ContentType
+org.apache.http.entity.ContentType.create : $z1 = staticinvoke <org.apache.http.entity.ContentType: boolean valid(java.lang.String)>(r3)
+org.apache.http.entity.ContentType.create : if r0 != null goto $r5 = virtualinvoke r0.<java.lang.String: java.lang.String trim()>()
+org.apache.http.entity.ContentType.create : $r9 = virtualinvoke r1.<java.lang.String: java.lang.String trim()>()
+org.apache.http.entity.ContentType.create : $z0 = staticinvoke <org.apache.http.entity.ContentType: boolean valid(java.lang.String)>(r2)
+org.apache.http.entity.AbstractHttpEntity.setContentType : r0.<org.apache.http.entity.AbstractHttpEntity: org.apache.http.Header contentType> = r1
+org.apache.http.entity.AbstractHttpEntity.setContentType : virtualinvoke r0.<org.apache.http.entity.AbstractHttpEntity: void setContentType(org.apache.http.Header)>(r2)
+org.apache.http.entity.AbstractHttpEntity.setContentType : if r1 == null goto virtualinvoke r0.<org.apache.http.entity.AbstractHttpEntity: void setContentType(org.apache.http.Header)>(r2)
+org.apache.http.entity.AbstractHttpEntity.setContentType : $r3 = new org.apache.http.message.BasicHeader
+org.apache.http.entity.AbstractHttpEntity.setContentType : r2 = null
+org.apache.http.entity.ContentType.valid : i0 = 0
+org.apache.http.entity.ContentType.valid : if c1 == 34 goto return 0
+org.apache.http.entity.ContentType.valid : return 1
+org.apache.http.entity.ContentType.valid : c1 = virtualinvoke r0.<java.lang.String: char charAt(int)>(i0)
+org.apache.http.entity.FileEntity.writeTo : $i1 = virtualinvoke r2.<java.io.InputStream: int read(byte[])>(r3)
+org.apache.http.entity.FileEntity.writeTo : virtualinvoke r1.<java.io.OutputStream: void flush()>()
+org.apache.http.entity.FileEntity.writeTo : virtualinvoke r1.<java.io.OutputStream: void write(byte[],int,int)>(r3, 0, i0)
+org.apache.http.entity.FileEntity.writeTo : virtualinvoke r2.<java.io.InputStream: void close()>()
+org.apache.http.entity.FileEntity.writeTo : $r6 = new java.io.FileInputStream
+org.apache.http.entity.FileEntity.writeTo : if r1 != null goto $r6 = new java.io.FileInputStream
+org.apache.http.entity.FileEntity.writeTo : $r5 = new java.lang.IllegalArgumentException
+org.apache.http.entity.FileEntity.writeTo : goto [?= return]
+org.apache.http.entity.FileEntity.writeTo : r3 = newarray (byte)[4096]
+org.apache.http.entity.ContentType.toString : $r9 = virtualinvoke r2.<java.lang.StringBuilder: java.lang.String toString()>()
+org.apache.http.entity.ContentType.toString : $r5 = r0.<org.apache.http.entity.ContentType: java.lang.String charset>
+org.apache.http.entity.ContentType.toString : $r7 = r0.<org.apache.http.entity.ContentType: java.lang.String charset>
+org.apache.http.entity.ContentType.toString : $r3 = r0.<org.apache.http.entity.ContentType: java.lang.String mimeType>
+org.apache.http.entity.ContentType.toString : $r1 = new java.lang.StringBuilder
+org.apache.http.entity.ContentType.toString : virtualinvoke r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("; charset=")

@@ -1,0 +1,28 @@
+org.apache.http.message.HeaderGroup.getFirstHeader : return r2
+org.apache.http.message.HeaderGroup.getFirstHeader : i0 = 0
+org.apache.http.message.HeaderGroup.getFirstHeader : $r6 = interfaceinvoke r2.<org.apache.http.Header: java.lang.String getName()>()
+org.apache.http.message.HeaderGroup.getFirstHeader : $r4 = r0.<org.apache.http.message.HeaderGroup: java.util.List headers>
+org.apache.http.message.BasicHeader.getValue : $r1 = r0.<org.apache.http.message.BasicHeader: java.lang.String value>
+org.apache.http.protocol.ResponseContent.process : $z0 = interfaceinvoke r1.<org.apache.http.HttpResponse: boolean containsHeader(java.lang.String)>("Transfer-Encoding")
+org.apache.http.protocol.ResponseContent.process : if r1 != null goto $z0 = interfaceinvoke r1.<org.apache.http.HttpResponse: boolean containsHeader(java.lang.String)>("Transfer-Encoding")
+org.apache.http.protocol.ResponseContent.process : interfaceinvoke r1.<org.apache.http.HttpResponse: void setHeader(java.lang.String,java.lang.String)>("Content-Length", "0")
+org.apache.http.protocol.ResponseContent.process : if i3 == 204 goto return
+org.apache.http.protocol.ResponseContent.process : $z2 = interfaceinvoke r1.<org.apache.http.HttpResponse: boolean containsHeader(java.lang.String)>("Content-Length")
+org.apache.http.protocol.ResponseContent.process : $r15 = interfaceinvoke r1.<org.apache.http.HttpResponse: org.apache.http.StatusLine getStatusLine()>()
+org.apache.http.protocol.ResponseContent.process : if r4 == null goto $r15 = interfaceinvoke r1.<org.apache.http.HttpResponse: org.apache.http.StatusLine getStatusLine()>()
+org.apache.http.protocol.ResponseContent.process : $r8 = interfaceinvoke r1.<org.apache.http.HttpResponse: org.apache.http.StatusLine getStatusLine()>()
+org.apache.http.protocol.ResponseContent.process : r4 = interfaceinvoke r1.<org.apache.http.HttpResponse: org.apache.http.HttpEntity getEntity()>()
+org.apache.http.message.AbstractHttpMessage.setHeader : $r4 = r0.<org.apache.http.message.AbstractHttpMessage: org.apache.http.message.HeaderGroup headergroup>
+org.apache.http.message.AbstractHttpMessage.setHeader : if r1 != null goto $r4 = r0.<org.apache.http.message.AbstractHttpMessage: org.apache.http.message.HeaderGroup headergroup>
+org.apache.http.message.AbstractHttpMessage.getFirstHeader : $r2 = r0.<org.apache.http.message.AbstractHttpMessage: org.apache.http.message.HeaderGroup headergroup>
+org.apache.http.message.BasicStatusLine.getStatusCode : $i0 = r0.<org.apache.http.message.BasicStatusLine: int statusCode>
+org.apache.http.message.HeaderGroup.updateHeader : i0 = 0
+org.apache.http.message.HeaderGroup.updateHeader : $r10 = r0.<org.apache.http.message.HeaderGroup: java.util.List headers>
+org.apache.http.message.HeaderGroup.updateHeader : if r1 != null goto i0 = 0
+org.apache.http.message.AbstractHttpMessage.containsHeader : $r2 = r0.<org.apache.http.message.AbstractHttpMessage: org.apache.http.message.HeaderGroup headergroup>
+org.apache.http.message.BasicHttpResponse.getEntity : $r1 = r0.<org.apache.http.message.BasicHttpResponse: org.apache.http.HttpEntity entity>
+org.apache.http.message.BasicHeader.getName : $r1 = r0.<org.apache.http.message.BasicHeader: java.lang.String name>
+org.apache.http.message.BasicStatusLine.getProtocolVersion : $r1 = r0.<org.apache.http.message.BasicStatusLine: org.apache.http.ProtocolVersion protoVersion>
+org.apache.http.message.BasicHttpResponse.getStatusLine : $r1 = r0.<org.apache.http.message.BasicHttpResponse: org.apache.http.StatusLine statusline>
+org.apache.http.message.HeaderGroup.containsHeader : i0 = 0
+org.apache.http.message.HeaderGroup.containsHeader : return 0

@@ -1,0 +1,71 @@
+org.apache.http.message.ParserCursor.getPos : $i0 = r0.<org.apache.http.message.ParserCursor: int pos>
+org.apache.http.protocol.HTTP.isWhitespace : if c0 == 32 goto $z0 = 1
+org.apache.http.message.ParserCursor.updatePos : $i3 = r0.<org.apache.http.message.ParserCursor: int upperBound>
+org.apache.http.message.ParserCursor.updatePos : r0.<org.apache.http.message.ParserCursor: int pos> = i0
+org.apache.http.message.ParserCursor.updatePos : $i1 = r0.<org.apache.http.message.ParserCursor: int lowerBound>
+org.apache.http.message.BasicLineParser.parseProtocolVersion : i16 = virtualinvoke r1.<org.apache.http.util.CharArrayBuffer: int indexOf(int,int,int)>(46, i15, i2)
+org.apache.http.message.BasicLineParser.parseProtocolVersion : i1 = virtualinvoke r2.<org.apache.http.message.ParserCursor: int getPos()>()
+org.apache.http.message.BasicLineParser.parseProtocolVersion : r1 = <org.apache.http.message.BasicLineParser: org.apache.http.message.BasicLineParser DEFAULT>
+org.apache.http.message.BasicLineParser.parseProtocolVersion : virtualinvoke r0.<org.apache.http.message.BasicLineParser: void skipWhitespace(org.apache.http.util.CharArrayBuffer,org.apache.http.message.ParserCursor)>(r1, r2)
+org.apache.http.message.BasicLineParser.parseProtocolVersion : i18 = virtualinvoke r1.<org.apache.http.util.CharArrayBuffer: int indexOf(int,int,int)>(32, i17, i2)
+org.apache.http.message.BasicLineParser.parseProtocolVersion : if z0 != 0 goto $i14 = i0 + 1
+org.apache.http.message.BasicLineParser.parseProtocolVersion : $r7 = interfaceinvoke r1.<org.apache.http.message.LineParser: org.apache.http.ProtocolVersion parseProtocolVersion(org.apache.http.util.CharArrayBuffer,org.apache.http.message.ParserCursor)>(r2, r3)
+org.apache.http.message.BasicLineParser.parseProtocolVersion : if r1 != null goto (branch)
+org.apache.http.message.BasicLineParser.parseProtocolVersion : if r2 != null goto $r8 = r0.<org.apache.http.message.BasicLineParser: org.apache.http.ProtocolVersion protocol>
+org.apache.http.message.BasicLineParser.parseProtocolVersion : $i9 = i3 + i4
+org.apache.http.message.BasicLineParser.parseProtocolVersion : $r27 = virtualinvoke r1.<org.apache.http.util.CharArrayBuffer: java.lang.String substringTrimmed(int,int)>(i15, i16)
+org.apache.http.message.BasicLineParser.parseProtocolVersion : $i7 = i3 + i0
+org.apache.http.message.BasicLineParser.parseProtocolVersion : r4 = $r28
+org.apache.http.message.BasicLineParser.parseProtocolVersion : if i18 != -1 goto $r35 = virtualinvoke r1.<org.apache.http.util.CharArrayBuffer: java.lang.String substringTrimmed(int,int)>(i17, i18)
+org.apache.http.message.BasicLineParser.parseProtocolVersion : $i14 = i0 + 1
+org.apache.http.message.BasicLineParser.parseProtocolVersion : goto [?= i17 = i16 + 1]
+org.apache.http.message.BasicLineParser.parseProtocolVersion : $r9 = new org.apache.http.ParseException
+org.apache.http.message.BasicLineParser.parseProtocolVersion : $r21 = new org.apache.http.ParseException
+org.apache.http.message.BasicLineParser.parseProtocolVersion : $r6 = new org.apache.http.message.ParserCursor
+org.apache.http.message.BasicLineParser.parseProtocolVersion : if r0 != null goto (branch)
+org.apache.http.message.BasicLineParser.parseProtocolVersion : $r8 = r0.<org.apache.http.message.BasicLineParser: org.apache.http.ProtocolVersion protocol>
+org.apache.http.message.BasicLineParser.parseProtocolVersion : i17 = i16 + 1
+org.apache.http.message.BasicLineParser.parseProtocolVersion : i3 = virtualinvoke r2.<org.apache.http.message.ParserCursor: int getPos()>()
+org.apache.http.message.BasicLineParser.parseProtocolVersion : $r29 = new org.apache.http.ParseException
+org.apache.http.message.BasicLineParser.parseProtocolVersion : virtualinvoke r2.<org.apache.http.util.CharArrayBuffer: void append(java.lang.String)>(r0)
+org.apache.http.message.BasicLineParser.parseProtocolVersion : $r5 = new org.apache.http.util.CharArrayBuffer
+org.apache.http.message.BasicLineParser.parseProtocolVersion : if i16 != -1 goto $r27 = virtualinvoke r1.<org.apache.http.util.CharArrayBuffer: java.lang.String substringTrimmed(int,int)>(i15, i16)
+org.apache.http.message.BasicLineParser.parseProtocolVersion : r5 = $r36
+org.apache.http.message.BasicLineParser.parseProtocolVersion : if z0 == 0 goto (branch)
+org.apache.http.message.BasicLineParser.parseProtocolVersion : z0 = 1
+org.apache.http.message.BasicLineParser.parseProtocolVersion : $r37 = new org.apache.http.ParseException
+org.apache.http.message.BasicLineParser.parseProtocolVersion : i0 = virtualinvoke r3.<java.lang.String: int length()>()
+org.apache.http.message.BasicLineParser.parseProtocolVersion : $i12 = i3 + i0
+org.apache.http.message.BasicLineParser.parseProtocolVersion : $r4 = new java.lang.IllegalArgumentException
+org.apache.http.message.BasicLineParser.parseProtocolVersion : $r35 = virtualinvoke r1.<org.apache.http.util.CharArrayBuffer: java.lang.String substringTrimmed(int,int)>(i17, i18)
+org.apache.http.message.BasicLineParser.parseProtocolVersion : if r1 != null goto $r5 = new org.apache.http.util.CharArrayBuffer
+org.apache.http.message.BasicLineParser.parseProtocolVersion : i2 = virtualinvoke r2.<org.apache.http.message.ParserCursor: int getUpperBound()>()
+org.apache.http.message.BasicLineParser.parseProtocolVersion : i4 = 0
+org.apache.http.util.CharArrayBuffer.indexOf : return -1
+org.apache.http.util.CharArrayBuffer.indexOf : i3 = i1
+org.apache.http.util.CharArrayBuffer.indexOf : if i1 >= 0 goto $i4 = r0.<org.apache.http.util.CharArrayBuffer: int len>
+org.apache.http.util.CharArrayBuffer.indexOf : $i4 = r0.<org.apache.http.util.CharArrayBuffer: int len>
+org.apache.http.util.CharArrayBuffer.indexOf : return i3
+org.apache.http.util.CharArrayBuffer.indexOf : $r1 = r0.<org.apache.http.util.CharArrayBuffer: char[] buffer>
+org.apache.http.util.CharArrayBuffer.indexOf : if i1 <= i2 goto i3 = i1
+org.apache.http.util.CharArrayBuffer.substring : $r1 = new java.lang.String
+org.apache.http.util.CharArrayBuffer.substringTrimmed : $i2 = r0.<org.apache.http.util.CharArrayBuffer: int len>
+org.apache.http.util.CharArrayBuffer.substringTrimmed : $r22 = new java.lang.String
+org.apache.http.util.CharArrayBuffer.substringTrimmed : if i0 >= 0 goto $i2 = r0.<org.apache.http.util.CharArrayBuffer: int len>
+org.apache.http.util.CharArrayBuffer.substringTrimmed : if i0 >= i1 goto (branch)
+org.apache.http.util.CharArrayBuffer.substringTrimmed : if i0 <= i1 goto (branch)
+org.apache.http.util.CharArrayBuffer.substringTrimmed : if i1 <= i0 goto $r22 = new java.lang.String
+org.apache.http.util.CharArrayBuffer.charAt : $r1 = r0.<org.apache.http.util.CharArrayBuffer: char[] buffer>
+org.apache.http.ProtocolVersion.getProtocol : $r1 = r0.<org.apache.http.ProtocolVersion: java.lang.String protocol>
+org.apache.http.message.ParserCursor.getUpperBound : $i0 = r0.<org.apache.http.message.ParserCursor: int upperBound>
+org.apache.http.message.BasicLineParser.skipWhitespace : virtualinvoke r2.<org.apache.http.message.ParserCursor: void updatePos(int)>(i0)
+org.apache.http.message.BasicLineParser.skipWhitespace : if i0 >= i1 goto virtualinvoke r2.<org.apache.http.message.ParserCursor: void updatePos(int)>(i0)
+org.apache.http.message.BasicLineParser.skipWhitespace : i0 = virtualinvoke r2.<org.apache.http.message.ParserCursor: int getPos()>()
+org.apache.http.message.BasicLineParser.skipWhitespace : i0 = i0 + 1
+org.apache.http.message.BasicLineParser.skipWhitespace : i1 = virtualinvoke r2.<org.apache.http.message.ParserCursor: int getUpperBound()>()
+org.apache.http.util.CharArrayBuffer.append : $i2 = r0.<org.apache.http.util.CharArrayBuffer: int len>
+org.apache.http.util.CharArrayBuffer.append : i0 = virtualinvoke r1.<java.lang.String: int length()>()
+org.apache.http.util.CharArrayBuffer.append : $r3 = r0.<org.apache.http.util.CharArrayBuffer: char[] buffer>
+org.apache.http.util.CharArrayBuffer.append : r0.<org.apache.http.util.CharArrayBuffer: int len> = i1
+org.apache.http.util.CharArrayBuffer.append : if r1 != null goto i0 = virtualinvoke r1.<java.lang.String: int length()>()
+org.apache.http.util.CharArrayBuffer.append : $r2 = r0.<org.apache.http.util.CharArrayBuffer: char[] buffer>

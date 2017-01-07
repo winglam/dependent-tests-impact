@@ -1,0 +1,19 @@
+org.apache.http.params.AbstractHttpParams.isParameterTrue : $z0 = virtualinvoke r0.<org.apache.http.params.AbstractHttpParams: boolean getBooleanParameter(java.lang.String,boolean)>(r1, 0)
+org.apache.http.message.AbstractHttpMessage.getFirstHeader : $r2 = r0.<org.apache.http.message.AbstractHttpMessage: org.apache.http.message.HeaderGroup headergroup>
+org.apache.http.message.AbstractHttpMessage.getParams : $r2 = r0.<org.apache.http.message.AbstractHttpMessage: org.apache.http.params.HttpParams params>
+org.apache.http.message.AbstractHttpMessage.getParams : $r3 = r0.<org.apache.http.message.AbstractHttpMessage: org.apache.http.params.HttpParams params>
+org.apache.http.message.AbstractHttpMessage.getParams : $r1 = new org.apache.http.params.BasicHttpParams
+org.apache.http.message.HeaderGroup.getFirstHeader : return null
+org.apache.http.message.HeaderGroup.getFirstHeader : i0 = 0
+org.apache.http.impl.entity.LaxContentLengthStrategy.determineLength : r2 = interfaceinvoke r1.<org.apache.http.HttpMessage: org.apache.http.params.HttpParams getParams()>()
+org.apache.http.impl.entity.LaxContentLengthStrategy.determineLength : if r3 == null goto (branch)
+org.apache.http.impl.entity.LaxContentLengthStrategy.determineLength : if r4 == null goto return -1L
+org.apache.http.impl.entity.LaxContentLengthStrategy.determineLength : z0 = interfaceinvoke r2.<org.apache.http.params.HttpParams: boolean isParameterTrue(java.lang.String)>("http.protocol.strict-transfer-encoding")
+org.apache.http.impl.entity.LaxContentLengthStrategy.determineLength : return -1L
+org.apache.http.impl.entity.LaxContentLengthStrategy.determineLength : r4 = interfaceinvoke r1.<org.apache.http.HttpMessage: org.apache.http.Header getFirstHeader(java.lang.String)>("Content-Length")
+org.apache.http.impl.entity.LaxContentLengthStrategy.determineLength : r3 = interfaceinvoke r1.<org.apache.http.HttpMessage: org.apache.http.Header getFirstHeader(java.lang.String)>("Transfer-Encoding")
+org.apache.http.impl.entity.LaxContentLengthStrategy.determineLength : if r1 != null goto r2 = interfaceinvoke r1.<org.apache.http.HttpMessage: org.apache.http.params.HttpParams getParams()>()
+org.apache.http.params.BasicHttpParams.getParameter : $r2 = r0.<org.apache.http.params.BasicHttpParams: java.util.HashMap parameters>
+org.apache.http.params.AbstractHttpParams.getBooleanParameter : r2 = virtualinvoke r0.<org.apache.http.params.AbstractHttpParams: java.lang.Object getParameter(java.lang.String)>(r1)
+org.apache.http.params.AbstractHttpParams.getBooleanParameter : return z0
+org.apache.http.params.AbstractHttpParams.getBooleanParameter : if r2 != null goto $r3 = (java.lang.Boolean) r2

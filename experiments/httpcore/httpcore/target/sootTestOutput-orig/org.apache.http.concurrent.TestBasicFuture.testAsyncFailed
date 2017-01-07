@@ -1,0 +1,21 @@
+org.apache.http.concurrent.BasicFuture.failed : r0.<org.apache.http.concurrent.BasicFuture: java.lang.Exception ex> = r1
+org.apache.http.concurrent.BasicFuture.failed : $z0 = r0.<org.apache.http.concurrent.BasicFuture: boolean completed>
+org.apache.http.concurrent.BasicFuture.failed : virtualinvoke r0.<java.lang.Object: void notifyAll()>()
+org.apache.http.concurrent.BasicFuture.failed : $r2 = r0.<org.apache.http.concurrent.BasicFuture: org.apache.http.concurrent.FutureCallback callback>
+org.apache.http.concurrent.BasicFuture.failed : r0.<org.apache.http.concurrent.BasicFuture: boolean completed> = 1
+org.apache.http.concurrent.BasicFuture.failed : return 1
+org.apache.http.concurrent.TestBasicFuture$2.run : staticinvoke <java.lang.Thread: void sleep(long)>(100L)
+org.apache.http.concurrent.TestBasicFuture$2.run : goto [?= return]
+org.apache.http.concurrent.TestBasicFuture$2.run : $r2 = r0.<org.apache.http.concurrent.TestBasicFuture$2: org.apache.http.concurrent.BasicFuture val$future>
+org.apache.http.concurrent.BasicFuture.getResult : $r1 = r0.<org.apache.http.concurrent.BasicFuture: java.lang.Exception ex>
+org.apache.http.concurrent.BasicFuture.getResult : $r2 = new java.util.concurrent.ExecutionException
+org.apache.http.concurrent.BasicFuture.isCancelled : $z0 = r0.<org.apache.http.concurrent.BasicFuture: boolean cancelled>
+org.apache.http.concurrent.BasicFuture.get : $r4 = specialinvoke r0.<org.apache.http.concurrent.BasicFuture: java.lang.Object getResult()>()
+org.apache.http.concurrent.BasicFuture.get : $z0 = r0.<org.apache.http.concurrent.BasicFuture: boolean completed>
+org.apache.http.concurrent.BasicFuture.get : virtualinvoke r0.<java.lang.Object: void wait(long)>(l3)
+org.apache.http.concurrent.BasicFuture.get : l3 = l1
+org.apache.http.concurrent.BasicFuture.get : l1 = virtualinvoke r1.<java.util.concurrent.TimeUnit: long toMillis(long)>(l0)
+org.apache.http.concurrent.BasicFuture.get : $z1 = r0.<org.apache.http.concurrent.BasicFuture: boolean completed>
+org.apache.http.concurrent.BasicFuture.get : $b6 = l3 cmp 0L
+org.apache.http.concurrent.BasicFuture.get : $b4 = l1 cmp 0L
+org.apache.http.concurrent.BasicFuture.isDone : $z0 = r0.<org.apache.http.concurrent.BasicFuture: boolean completed>

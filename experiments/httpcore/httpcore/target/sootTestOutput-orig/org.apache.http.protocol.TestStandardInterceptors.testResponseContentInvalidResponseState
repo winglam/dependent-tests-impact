@@ -1,0 +1,15 @@
+org.apache.http.protocol.ResponseContent.process : $z0 = interfaceinvoke r1.<org.apache.http.HttpResponse: boolean containsHeader(java.lang.String)>("Transfer-Encoding")
+org.apache.http.protocol.ResponseContent.process : if r1 != null goto $z0 = interfaceinvoke r1.<org.apache.http.HttpResponse: boolean containsHeader(java.lang.String)>("Transfer-Encoding")
+org.apache.http.protocol.ResponseContent.process : $z2 = interfaceinvoke r1.<org.apache.http.HttpResponse: boolean containsHeader(java.lang.String)>("Content-Length")
+org.apache.http.protocol.ResponseContent.process : $r6 = new org.apache.http.ProtocolException
+org.apache.http.protocol.ResponseContent.process : $r7 = new org.apache.http.ProtocolException
+org.apache.http.message.AbstractHttpMessage.addHeader : $r2 = r0.<org.apache.http.message.AbstractHttpMessage: org.apache.http.message.HeaderGroup headergroup>
+org.apache.http.message.AbstractHttpMessage.containsHeader : $r2 = r0.<org.apache.http.message.AbstractHttpMessage: org.apache.http.message.HeaderGroup headergroup>
+org.apache.http.message.BasicHeader.getName : $r1 = r0.<org.apache.http.message.BasicHeader: java.lang.String name>
+org.apache.http.message.HeaderGroup.addHeader : $r2 = r0.<org.apache.http.message.HeaderGroup: java.util.List headers>
+org.apache.http.message.HeaderGroup.addHeader : if r1 != null goto $r2 = r0.<org.apache.http.message.HeaderGroup: java.util.List headers>
+org.apache.http.message.HeaderGroup.containsHeader : i0 = 0
+org.apache.http.message.HeaderGroup.containsHeader : $r6 = interfaceinvoke r2.<org.apache.http.Header: java.lang.String getName()>()
+org.apache.http.message.HeaderGroup.containsHeader : return 1
+org.apache.http.message.HeaderGroup.containsHeader : return 0
+org.apache.http.message.HeaderGroup.containsHeader : $r4 = r0.<org.apache.http.message.HeaderGroup: java.util.List headers>

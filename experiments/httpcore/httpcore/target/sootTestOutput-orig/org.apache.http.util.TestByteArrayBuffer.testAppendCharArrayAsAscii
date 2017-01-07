@@ -1,0 +1,17 @@
+org.apache.http.util.ByteArrayBuffer.toByteArray : $i1 = r0.<org.apache.http.util.ByteArrayBuffer: int len>
+org.apache.http.util.ByteArrayBuffer.toByteArray : $i0 = r0.<org.apache.http.util.ByteArrayBuffer: int len>
+org.apache.http.util.ByteArrayBuffer.toByteArray : return r1
+org.apache.http.util.ByteArrayBuffer.toByteArray : $r2 = r0.<org.apache.http.util.ByteArrayBuffer: byte[] buffer>
+org.apache.http.util.ByteArrayBuffer.append : if i1 != 0 goto i2 = r0.<org.apache.http.util.ByteArrayBuffer: int len>
+org.apache.http.util.ByteArrayBuffer.append : specialinvoke r0.<org.apache.http.util.ByteArrayBuffer: void expand(int)>(i3)
+org.apache.http.util.ByteArrayBuffer.append : i3 = i2 + i1
+org.apache.http.util.ByteArrayBuffer.append : r0.<org.apache.http.util.ByteArrayBuffer: int len> = i3
+org.apache.http.util.ByteArrayBuffer.append : if r1 != null goto (branch)
+org.apache.http.util.ByteArrayBuffer.append : i4 = i0
+org.apache.http.util.ByteArrayBuffer.append : if i0 < 0 goto $r3 = new java.lang.IndexOutOfBoundsException
+org.apache.http.util.ByteArrayBuffer.append : $r11 = r0.<org.apache.http.util.ByteArrayBuffer: byte[] buffer>
+org.apache.http.util.ByteArrayBuffer.append : $r12 = r0.<org.apache.http.util.ByteArrayBuffer: byte[] buffer>
+org.apache.http.util.ByteArrayBuffer.append : i2 = r0.<org.apache.http.util.ByteArrayBuffer: int len>
+org.apache.http.util.ByteArrayBuffer.expand : r0.<org.apache.http.util.ByteArrayBuffer: byte[] buffer> = r1
+org.apache.http.util.ByteArrayBuffer.expand : $r2 = r0.<org.apache.http.util.ByteArrayBuffer: byte[] buffer>
+org.apache.http.util.ByteArrayBuffer.expand : $r3 = r0.<org.apache.http.util.ByteArrayBuffer: byte[] buffer>

@@ -1,0 +1,34 @@
+org.apache.http.util.EntityUtils.toByteArray : $l2 = interfaceinvoke r0.<org.apache.http.HttpEntity: long getContentLength()>()
+org.apache.http.util.EntityUtils.toByteArray : r4 = virtualinvoke r2.<org.apache.http.util.ByteArrayBuffer: byte[] toByteArray()>()
+org.apache.http.util.EntityUtils.toByteArray : if r0 != null goto r1 = interfaceinvoke r0.<org.apache.http.HttpEntity: java.io.InputStream getContent()>()
+org.apache.http.util.EntityUtils.toByteArray : $i5 = virtualinvoke r1.<java.io.InputStream: int read(byte[])>(r3)
+org.apache.http.util.EntityUtils.toByteArray : i0 = 4096
+org.apache.http.util.EntityUtils.toByteArray : r3 = newarray (byte)[4096]
+org.apache.http.util.EntityUtils.toByteArray : r1 = interfaceinvoke r0.<org.apache.http.HttpEntity: java.io.InputStream getContent()>()
+org.apache.http.util.EntityUtils.toByteArray : if i0 >= 0 goto $r8 = new org.apache.http.util.ByteArrayBuffer
+org.apache.http.util.EntityUtils.toByteArray : $r8 = new org.apache.http.util.ByteArrayBuffer
+org.apache.http.util.EntityUtils.toByteArray : virtualinvoke r2.<org.apache.http.util.ByteArrayBuffer: void append(byte[],int,int)>(r3, 0, i1)
+org.apache.http.util.EntityUtils.toByteArray : if r1 != null goto $l2 = interfaceinvoke r0.<org.apache.http.HttpEntity: long getContentLength()>()
+org.apache.http.util.EntityUtils.toByteArray : $l4 = interfaceinvoke r0.<org.apache.http.HttpEntity: long getContentLength()>()
+org.apache.http.util.EntityUtils.toByteArray : virtualinvoke r1.<java.io.InputStream: void close()>()
+org.apache.http.util.ByteArrayBuffer.toByteArray : $i1 = r0.<org.apache.http.util.ByteArrayBuffer: int len>
+org.apache.http.util.ByteArrayBuffer.toByteArray : $i0 = r0.<org.apache.http.util.ByteArrayBuffer: int len>
+org.apache.http.util.ByteArrayBuffer.toByteArray : return r1
+org.apache.http.util.ByteArrayBuffer.toByteArray : $r2 = r0.<org.apache.http.util.ByteArrayBuffer: byte[] buffer>
+org.apache.http.entity.BufferedHttpEntity.getContent : $r1 = r0.<org.apache.http.entity.BufferedHttpEntity: byte[] buffer>
+org.apache.http.entity.BufferedHttpEntity.getContent : $r2 = new java.io.ByteArrayInputStream
+org.apache.http.entity.BufferedHttpEntity.isRepeatable : return 1
+org.apache.http.entity.BufferedHttpEntity.getContentLength : $r2 = r0.<org.apache.http.entity.BufferedHttpEntity: byte[] buffer>
+org.apache.http.entity.BufferedHttpEntity.getContentLength : $r1 = r0.<org.apache.http.entity.BufferedHttpEntity: byte[] buffer>
+org.apache.http.entity.InputStreamEntity.isRepeatable : return 0
+org.apache.http.util.ByteArrayBuffer.append : r0.<org.apache.http.util.ByteArrayBuffer: int len> = i2
+org.apache.http.util.ByteArrayBuffer.append : if i1 != 0 goto $i8 = r0.<org.apache.http.util.ByteArrayBuffer: int len>
+org.apache.http.util.ByteArrayBuffer.append : $i8 = r0.<org.apache.http.util.ByteArrayBuffer: int len>
+org.apache.http.util.ByteArrayBuffer.append : if r1 != null goto (branch)
+org.apache.http.util.ByteArrayBuffer.append : if i0 < 0 goto $r3 = new java.lang.IndexOutOfBoundsException
+org.apache.http.util.ByteArrayBuffer.append : $r11 = r0.<org.apache.http.util.ByteArrayBuffer: byte[] buffer>
+org.apache.http.util.ByteArrayBuffer.append : $r12 = r0.<org.apache.http.util.ByteArrayBuffer: byte[] buffer>
+org.apache.http.entity.InputStreamEntity.getContent : $r1 = r0.<org.apache.http.entity.InputStreamEntity: java.io.InputStream content>
+org.apache.http.entity.BufferedHttpEntity.isChunked : $r1 = r0.<org.apache.http.entity.BufferedHttpEntity: byte[] buffer>
+org.apache.http.entity.InputStreamEntity.getContentLength : $l0 = r0.<org.apache.http.entity.InputStreamEntity: long length>
+org.apache.http.entity.BufferedHttpEntity.isStreaming : $r1 = r0.<org.apache.http.entity.BufferedHttpEntity: byte[] buffer>

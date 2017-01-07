@@ -1,0 +1,117 @@
+org.apache.http.impl.io.AbstractSessionInputBuffer.getMetrics : $r1 = r0.<org.apache.http.impl.io.AbstractSessionInputBuffer: org.apache.http.impl.io.HttpTransportMetricsImpl metrics>
+org.apache.http.params.HttpConnectionParams.getSoTimeout : $i0 = interfaceinvoke r0.<org.apache.http.params.HttpParams: int getIntParameter(java.lang.String,int)>("http.socket.timeout", 0)
+org.apache.http.params.HttpConnectionParams.getSoTimeout : if r0 != null goto $i0 = interfaceinvoke r0.<org.apache.http.params.HttpParams: int getIntParameter(java.lang.String,int)>("http.socket.timeout", 0)
+org.apache.http.impl.io.AbstractSessionInputBuffer.init : if i0 > 0 goto (branch)
+org.apache.http.impl.io.AbstractSessionInputBuffer.init : $r10 = r0.<org.apache.http.impl.io.AbstractSessionInputBuffer: java.nio.charset.Charset charset>
+org.apache.http.impl.io.AbstractSessionInputBuffer.init : $r7 = new org.apache.http.util.ByteArrayBuffer
+org.apache.http.impl.io.AbstractSessionInputBuffer.init : r0.<org.apache.http.impl.io.AbstractSessionInputBuffer: int bufferpos> = 0
+org.apache.http.impl.io.AbstractSessionInputBuffer.init : r0.<org.apache.http.impl.io.AbstractSessionInputBuffer: int bufferlen> = 0
+org.apache.http.impl.io.AbstractSessionInputBuffer.init : $i1 = interfaceinvoke r2.<org.apache.http.params.HttpParams: int getIntParameter(java.lang.String,int)>("http.connection.max-line-length", -1)
+org.apache.http.impl.io.AbstractSessionInputBuffer.init : if r1 != null goto (branch)
+org.apache.http.impl.io.AbstractSessionInputBuffer.init : if r2 != null goto r0.<org.apache.http.impl.io.AbstractSessionInputBuffer: java.io.InputStream instream> = r1
+org.apache.http.impl.io.AbstractSessionInputBuffer.init : r0.<org.apache.http.impl.io.AbstractSessionInputBuffer: java.io.InputStream instream> = r1
+org.apache.http.impl.io.AbstractSessionInputBuffer.init : r0.<org.apache.http.impl.io.AbstractSessionInputBuffer: java.nio.charset.CharsetDecoder decoder> = null
+org.apache.http.impl.io.AbstractSessionInputBuffer.init : $i2 = interfaceinvoke r2.<org.apache.http.params.HttpParams: int getIntParameter(java.lang.String,int)>("http.connection.min-chunk-limit", 512)
+org.apache.http.impl.io.AbstractSessionInputBuffer.init : $r8 = staticinvoke <org.apache.http.params.HttpProtocolParams: java.lang.String getHttpElementCharset(org.apache.http.params.HttpParams)>(r2)
+org.apache.http.impl.io.AbstractSessionInputBuffer.init : $r12 = virtualinvoke r0.<org.apache.http.impl.io.AbstractSessionInputBuffer: org.apache.http.impl.io.HttpTransportMetricsImpl createTransportMetrics()>()
+org.apache.http.impl.io.AbstractSessionInputBuffer.init : $r6 = newarray (byte)[i0]
+org.apache.http.impl.SocketHttpClientConnection.createSessionInputBuffer : $r3 = new org.apache.http.impl.io.SocketInputBuffer
+org.apache.http.params.HttpConnectionParams.getConnectionTimeout : if r0 != null goto $i0 = interfaceinvoke r0.<org.apache.http.params.HttpParams: int getIntParameter(java.lang.String,int)>("http.connection.timeout", 0)
+org.apache.http.params.HttpConnectionParams.getConnectionTimeout : $i0 = interfaceinvoke r0.<org.apache.http.params.HttpParams: int getIntParameter(java.lang.String,int)>("http.connection.timeout", 0)
+org.apache.http.impl.AbstractHttpClientConnection.doFlush : $r1 = r0.<org.apache.http.impl.AbstractHttpClientConnection: org.apache.http.io.SessionOutputBuffer outbuffer>
+org.apache.http.params.HttpProtocolParams.getHttpElementCharset : if r0 != null goto $r3 = interfaceinvoke r0.<org.apache.http.params.HttpParams: java.lang.Object getParameter(java.lang.String)>("http.protocol.element-charset")
+org.apache.http.params.HttpProtocolParams.getHttpElementCharset : $r3 = interfaceinvoke r0.<org.apache.http.params.HttpParams: java.lang.Object getParameter(java.lang.String)>("http.protocol.element-charset")
+org.apache.http.params.HttpProtocolParams.getHttpElementCharset : if r1 != null goto return r1
+org.apache.http.params.HttpProtocolParams.getHttpElementCharset : r1 = "US-ASCII"
+org.apache.http.params.HttpProtocolParams.getHttpElementCharset : return r1
+org.apache.http.impl.AbstractHttpClientConnection.createEntityDeserializer : $r1 = new org.apache.http.impl.entity.EntityDeserializer
+org.apache.http.params.HttpConnectionParams.getLinger : $i0 = interfaceinvoke r0.<org.apache.http.params.HttpParams: int getIntParameter(java.lang.String,int)>("http.socket.linger", -1)
+org.apache.http.params.HttpConnectionParams.getLinger : if r0 != null goto $i0 = interfaceinvoke r0.<org.apache.http.params.HttpParams: int getIntParameter(java.lang.String,int)>("http.socket.linger", -1)
+org.apache.http.impl.AbstractHttpClientConnection.createResponseParser : $r4 = new org.apache.http.impl.io.HttpResponseParser
+org.apache.http.impl.io.AbstractSessionOutputBuffer.createTransportMetrics : $r1 = new org.apache.http.impl.io.HttpTransportMetricsImpl
+org.apache.http.impl.DefaultHttpClientConnection.bind : $z0 = staticinvoke <org.apache.http.params.HttpConnectionParams: boolean getTcpNoDelay(org.apache.http.params.HttpParams)>(r2)
+org.apache.http.impl.DefaultHttpClientConnection.bind : specialinvoke r0.<org.apache.http.impl.SocketHttpClientConnection: void bind(java.net.Socket,org.apache.http.params.HttpParams)>(r1, r2)
+org.apache.http.impl.DefaultHttpClientConnection.bind : i0 = staticinvoke <org.apache.http.params.HttpConnectionParams: int getLinger(org.apache.http.params.HttpParams)>(r2)
+org.apache.http.impl.DefaultHttpClientConnection.bind : $i1 = staticinvoke <org.apache.http.params.HttpConnectionParams: int getSoTimeout(org.apache.http.params.HttpParams)>(r2)
+org.apache.http.impl.DefaultHttpClientConnection.bind : if r2 != null goto virtualinvoke r0.<org.apache.http.impl.DefaultHttpClientConnection: void assertNotOpen()>()
+org.apache.http.impl.DefaultHttpClientConnection.bind : if i0 <= 0 goto $z1 = 0
+org.apache.http.impl.DefaultHttpClientConnection.bind : if r1 != null goto (branch)
+org.apache.http.impl.DefaultHttpClientConnection.bind : if i0 < 0 goto specialinvoke r0.<org.apache.http.impl.SocketHttpClientConnection: void bind(java.net.Socket,org.apache.http.params.HttpParams)>(r1, r2)
+org.apache.http.impl.DefaultHttpClientConnection.bind : virtualinvoke r0.<org.apache.http.impl.DefaultHttpClientConnection: void assertNotOpen()>()
+org.apache.http.impl.io.AbstractSessionOutputBuffer.flush : $r1 = r0.<org.apache.http.impl.io.AbstractSessionOutputBuffer: java.io.OutputStream outstream>
+org.apache.http.impl.io.AbstractSessionOutputBuffer.flush : virtualinvoke r0.<org.apache.http.impl.io.AbstractSessionOutputBuffer: void flushBuffer()>()
+org.apache.http.impl.io.AbstractSessionOutputBuffer.init : $r11 = virtualinvoke r0.<org.apache.http.impl.io.AbstractSessionOutputBuffer: org.apache.http.impl.io.HttpTransportMetricsImpl createTransportMetrics()>()
+org.apache.http.impl.io.AbstractSessionOutputBuffer.init : if i0 > 0 goto (branch)
+org.apache.http.impl.io.AbstractSessionOutputBuffer.init : if r2 != null goto r0.<org.apache.http.impl.io.AbstractSessionOutputBuffer: java.io.OutputStream outstream> = r1
+org.apache.http.impl.io.AbstractSessionOutputBuffer.init : $i1 = interfaceinvoke r2.<org.apache.http.params.HttpParams: int getIntParameter(java.lang.String,int)>("http.connection.min-chunk-limit", 512)
+org.apache.http.impl.io.AbstractSessionOutputBuffer.init : $r6 = new org.apache.http.util.ByteArrayBuffer
+org.apache.http.impl.io.AbstractSessionOutputBuffer.init : if r1 != null goto (branch)
+org.apache.http.impl.io.AbstractSessionOutputBuffer.init : r0.<org.apache.http.impl.io.AbstractSessionOutputBuffer: java.nio.charset.CharsetEncoder encoder> = null
+org.apache.http.impl.io.AbstractSessionOutputBuffer.init : $r9 = r0.<org.apache.http.impl.io.AbstractSessionOutputBuffer: java.nio.charset.Charset charset>
+org.apache.http.impl.io.AbstractSessionOutputBuffer.init : r0.<org.apache.http.impl.io.AbstractSessionOutputBuffer: java.io.OutputStream outstream> = r1
+org.apache.http.impl.io.AbstractSessionOutputBuffer.init : $r7 = staticinvoke <org.apache.http.params.HttpProtocolParams: java.lang.String getHttpElementCharset(org.apache.http.params.HttpParams)>(r2)
+org.apache.http.impl.SocketHttpClientConnection.createSessionOutputBuffer : $r3 = new org.apache.http.impl.io.SocketOutputBuffer
+org.apache.http.impl.SocketHttpClientConnection.isOpen : $z0 = r0.<org.apache.http.impl.SocketHttpClientConnection: boolean open>
+org.apache.http.impl.AbstractHttpClientConnection.init : r0.<org.apache.http.impl.AbstractHttpClientConnection: org.apache.http.io.SessionInputBuffer inbuffer> = r1
+org.apache.http.impl.AbstractHttpClientConnection.init : $r10 = interfaceinvoke r1.<org.apache.http.io.SessionInputBuffer: org.apache.http.io.HttpTransportMetrics getMetrics()>()
+org.apache.http.impl.AbstractHttpClientConnection.init : $r7 = virtualinvoke r0.<org.apache.http.impl.AbstractHttpClientConnection: org.apache.http.HttpResponseFactory createHttpResponseFactory()>()
+org.apache.http.impl.AbstractHttpClientConnection.init : if r2 != null goto r0.<org.apache.http.impl.AbstractHttpClientConnection: org.apache.http.io.SessionInputBuffer inbuffer> = r1
+org.apache.http.impl.AbstractHttpClientConnection.init : $r9 = virtualinvoke r0.<org.apache.http.impl.AbstractHttpClientConnection: org.apache.http.io.HttpMessageWriter createRequestWriter(org.apache.http.io.SessionOutputBuffer,org.apache.http.params.HttpParams)>(r2, r3)
+org.apache.http.impl.AbstractHttpClientConnection.init : $r6 = (org.apache.http.io.EofSensor) r1
+org.apache.http.impl.AbstractHttpClientConnection.init : $z0 = r1 instanceof org.apache.http.io.EofSensor
+org.apache.http.impl.AbstractHttpClientConnection.init : r0.<org.apache.http.impl.AbstractHttpClientConnection: org.apache.http.io.SessionOutputBuffer outbuffer> = r2
+org.apache.http.impl.AbstractHttpClientConnection.init : if r1 != null goto (branch)
+org.apache.http.HttpHost.getHostName : $r1 = r0.<org.apache.http.HttpHost: java.lang.String hostname>
+org.apache.http.impl.AbstractHttpClientConnection.createEntitySerializer : $r1 = new org.apache.http.impl.entity.EntitySerializer
+org.apache.http.impl.io.AbstractSessionOutputBuffer.flushBuffer : $r1 = r0.<org.apache.http.impl.io.AbstractSessionOutputBuffer: org.apache.http.util.ByteArrayBuffer buffer>
+org.apache.http.impl.io.AbstractSessionOutputBuffer.flushBuffer : if i0 <= 0 goto return
+org.apache.http.impl.SocketHttpClientConnection.assertNotOpen : $z0 = r0.<org.apache.http.impl.SocketHttpClientConnection: boolean open>
+org.apache.http.impl.AbstractHttpClientConnection.createHttpResponseFactory : $r1 = new org.apache.http.impl.DefaultHttpResponseFactory
+org.apache.http.impl.SocketHttpClientConnection.getSocketTimeout : $r2 = r0.<org.apache.http.impl.SocketHttpClientConnection: java.net.Socket socket>
+org.apache.http.impl.SocketHttpClientConnection.getSocketTimeout : $r3 = r0.<org.apache.http.impl.SocketHttpClientConnection: java.net.Socket socket>
+org.apache.http.impl.AbstractHttpClientConnection.createConnectionMetrics : $r3 = new org.apache.http.impl.HttpConnectionMetricsImpl
+org.apache.http.impl.SocketHttpClientConnection.bind : $r5 = virtualinvoke r0.<org.apache.http.impl.SocketHttpClientConnection: org.apache.http.io.SessionInputBuffer createSessionInputBuffer(java.net.Socket,int,org.apache.http.params.HttpParams)>(r1, i0, r2)
+org.apache.http.impl.SocketHttpClientConnection.bind : r0.<org.apache.http.impl.SocketHttpClientConnection: boolean open> = 1
+org.apache.http.impl.SocketHttpClientConnection.bind : r0.<org.apache.http.impl.SocketHttpClientConnection: java.net.Socket socket> = r1
+org.apache.http.impl.SocketHttpClientConnection.bind : if r2 != null goto r0.<org.apache.http.impl.SocketHttpClientConnection: java.net.Socket socket> = r1
+org.apache.http.impl.SocketHttpClientConnection.bind : if r1 != null goto (branch)
+org.apache.http.impl.SocketHttpClientConnection.bind : i0 = staticinvoke <org.apache.http.params.HttpConnectionParams: int getSocketBufferSize(org.apache.http.params.HttpParams)>(r2)
+org.apache.http.impl.io.AbstractSessionInputBuffer.createTransportMetrics : $r1 = new org.apache.http.impl.io.HttpTransportMetricsImpl
+org.apache.http.impl.AbstractHttpClientConnection.createRequestWriter : $r3 = new org.apache.http.impl.io.HttpRequestWriter
+org.apache.http.HttpHost.getPort : $i0 = r0.<org.apache.http.HttpHost: int port>
+org.apache.http.impl.pool.BasicConnPool.createConnection : if r5 != null goto $r16 = r0.<org.apache.http.impl.pool.BasicConnPool: org.apache.http.params.HttpParams params>
+org.apache.http.impl.pool.BasicConnPool.createConnection : return r3
+org.apache.http.impl.pool.BasicConnPool.createConnection : $r18 = new java.net.InetSocketAddress
+org.apache.http.impl.pool.BasicConnPool.createConnection : virtualinvoke r5.<java.net.Socket: void setSoTimeout(int)>(i1)
+org.apache.http.impl.pool.BasicConnPool.createConnection : $r9 = "https"
+org.apache.http.impl.pool.BasicConnPool.createConnection : $r17 = r0.<org.apache.http.impl.pool.BasicConnPool: org.apache.http.params.HttpParams params>
+org.apache.http.impl.pool.BasicConnPool.createConnection : $r10 = r0.<org.apache.http.impl.pool.BasicConnPool: javax.net.ssl.SSLSocketFactory sslfactory>
+org.apache.http.impl.pool.BasicConnPool.createConnection : $r2 = new org.apache.http.impl.DefaultHttpClientConnection
+org.apache.http.impl.pool.BasicConnPool.createConnection : $r16 = r0.<org.apache.http.impl.pool.BasicConnPool: org.apache.http.params.HttpParams params>
+org.apache.http.impl.pool.BasicConnPool.createConnection : $r20 = r0.<org.apache.http.impl.pool.BasicConnPool: org.apache.http.params.HttpParams params>
+org.apache.http.impl.pool.BasicConnPool.createConnection : $r7 = "http"
+org.apache.http.impl.pool.BasicConnPool.createConnection : r4 = virtualinvoke r1.<org.apache.http.HttpHost: java.lang.String getSchemeName()>()
+org.apache.http.impl.pool.BasicConnPool.createConnection : r5 = null
+org.apache.http.impl.pool.BasicConnPool.createConnection : $r11 = r0.<org.apache.http.impl.pool.BasicConnPool: javax.net.ssl.SSLSocketFactory sslfactory>
+org.apache.http.HttpHost.getSchemeName : $r1 = r0.<org.apache.http.HttpHost: java.lang.String schemeName>
+org.apache.http.impl.io.AbstractSessionOutputBuffer.getMetrics : $r1 = r0.<org.apache.http.impl.io.AbstractSessionOutputBuffer: org.apache.http.impl.io.HttpTransportMetricsImpl metrics>
+org.apache.http.util.ByteArrayBuffer.length : $i0 = r0.<org.apache.http.util.ByteArrayBuffer: int len>
+org.apache.http.params.HttpConnectionParams.getTcpNoDelay : if r0 != null goto $z0 = interfaceinvoke r0.<org.apache.http.params.HttpParams: boolean getBooleanParameter(java.lang.String,boolean)>("http.tcp.nodelay", 1)
+org.apache.http.params.HttpConnectionParams.getTcpNoDelay : $z0 = interfaceinvoke r0.<org.apache.http.params.HttpParams: boolean getBooleanParameter(java.lang.String,boolean)>("http.tcp.nodelay", 1)
+org.apache.http.params.HttpConnectionParams.getSocketBufferSize : if r0 != null goto $i0 = interfaceinvoke r0.<org.apache.http.params.HttpParams: int getIntParameter(java.lang.String,int)>("http.socket.buffer-size", -1)
+org.apache.http.params.HttpConnectionParams.getSocketBufferSize : $i0 = interfaceinvoke r0.<org.apache.http.params.HttpParams: int getIntParameter(java.lang.String,int)>("http.socket.buffer-size", -1)
+org.apache.http.impl.SocketHttpClientConnection.shutdown : virtualinvoke r1.<java.net.Socket: void close()>()
+org.apache.http.impl.SocketHttpClientConnection.shutdown : r1 = r0.<org.apache.http.impl.SocketHttpClientConnection: java.net.Socket socket>
+org.apache.http.impl.SocketHttpClientConnection.shutdown : r0.<org.apache.http.impl.SocketHttpClientConnection: boolean open> = 0
+org.apache.http.impl.SocketHttpClientConnection.shutdown : if r1 == null goto return
+org.apache.http.impl.SocketHttpClientConnection.close : virtualinvoke r1.<java.net.Socket: void shutdownInput()>()
+org.apache.http.impl.SocketHttpClientConnection.close : goto [?= virtualinvoke r1.<java.net.Socket: void shutdownInput()>()]
+org.apache.http.impl.SocketHttpClientConnection.close : virtualinvoke r1.<java.net.Socket: void close()>()
+org.apache.http.impl.SocketHttpClientConnection.close : r1 = r0.<org.apache.http.impl.SocketHttpClientConnection: java.net.Socket socket>
+org.apache.http.impl.SocketHttpClientConnection.close : $z0 = r0.<org.apache.http.impl.SocketHttpClientConnection: boolean open>
+org.apache.http.impl.SocketHttpClientConnection.close : virtualinvoke r0.<org.apache.http.impl.SocketHttpClientConnection: void doFlush()>()
+org.apache.http.impl.SocketHttpClientConnection.close : r0.<org.apache.http.impl.SocketHttpClientConnection: boolean open> = 0
+org.apache.http.impl.SocketHttpClientConnection.close : virtualinvoke r1.<java.net.Socket: void shutdownOutput()>()
+org.apache.http.impl.SocketHttpClientConnection.close : goto [?= return]
+org.apache.http.impl.SocketHttpClientConnection.close : goto [?= (branch)]
+org.apache.http.impl.SocketHttpClientConnection.close : goto [?= virtualinvoke r1.<java.net.Socket: void close()>()]

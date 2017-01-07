@@ -1,0 +1,13 @@
+org.apache.http.util.CharArrayBuffer.substring : $r1 = new java.lang.String
+org.apache.http.util.CharArrayBuffer.substringTrimmed : $i2 = r0.<org.apache.http.util.CharArrayBuffer: int len>
+org.apache.http.util.CharArrayBuffer.substringTrimmed : $r6 = new java.lang.IndexOutOfBoundsException
+org.apache.http.util.CharArrayBuffer.substringTrimmed : if i0 >= 0 goto $i2 = r0.<org.apache.http.util.CharArrayBuffer: int len>
+org.apache.http.util.CharArrayBuffer.substringTrimmed : $r2 = new java.lang.IndexOutOfBoundsException
+org.apache.http.util.CharArrayBuffer.substringTrimmed : if i0 <= i1 goto (branch)
+org.apache.http.util.CharArrayBuffer.substringTrimmed : $r13 = new java.lang.IndexOutOfBoundsException
+org.apache.http.util.CharArrayBuffer.append : $i2 = r0.<org.apache.http.util.CharArrayBuffer: int len>
+org.apache.http.util.CharArrayBuffer.append : i0 = virtualinvoke r1.<java.lang.String: int length()>()
+org.apache.http.util.CharArrayBuffer.append : $r3 = r0.<org.apache.http.util.CharArrayBuffer: char[] buffer>
+org.apache.http.util.CharArrayBuffer.append : r0.<org.apache.http.util.CharArrayBuffer: int len> = i1
+org.apache.http.util.CharArrayBuffer.append : if r1 != null goto i0 = virtualinvoke r1.<java.lang.String: int length()>()
+org.apache.http.util.CharArrayBuffer.append : $r2 = r0.<org.apache.http.util.CharArrayBuffer: char[] buffer>

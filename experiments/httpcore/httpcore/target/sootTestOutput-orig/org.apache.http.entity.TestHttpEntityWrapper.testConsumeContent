@@ -1,0 +1,16 @@
+org.apache.http.util.EntityUtils.consume : $z0 = interfaceinvoke r0.<org.apache.http.HttpEntity: boolean isStreaming()>()
+org.apache.http.util.EntityUtils.consume : if r0 != null goto $z0 = interfaceinvoke r0.<org.apache.http.HttpEntity: boolean isStreaming()>()
+org.apache.http.entity.StringEntity.isStreaming : return 0
+org.apache.http.entity.AbstractHttpEntity.setContentType : r0.<org.apache.http.entity.AbstractHttpEntity: org.apache.http.Header contentType> = r1
+org.apache.http.entity.AbstractHttpEntity.setContentType : virtualinvoke r0.<org.apache.http.entity.AbstractHttpEntity: void setContentType(org.apache.http.Header)>(r2)
+org.apache.http.entity.AbstractHttpEntity.setContentType : if r1 == null goto virtualinvoke r0.<org.apache.http.entity.AbstractHttpEntity: void setContentType(org.apache.http.Header)>(r2)
+org.apache.http.entity.AbstractHttpEntity.setContentType : $r3 = new org.apache.http.message.BasicHeader
+org.apache.http.entity.AbstractHttpEntity.setContentType : r2 = null
+org.apache.http.entity.ContentType.getCharset : $r1 = r0.<org.apache.http.entity.ContentType: java.lang.String charset>
+org.apache.http.entity.HttpEntityWrapper.isStreaming : $r1 = r0.<org.apache.http.entity.HttpEntityWrapper: org.apache.http.HttpEntity wrappedEntity>
+org.apache.http.entity.ContentType.toString : $r9 = virtualinvoke r2.<java.lang.StringBuilder: java.lang.String toString()>()
+org.apache.http.entity.ContentType.toString : $r5 = r0.<org.apache.http.entity.ContentType: java.lang.String charset>
+org.apache.http.entity.ContentType.toString : $r7 = r0.<org.apache.http.entity.ContentType: java.lang.String charset>
+org.apache.http.entity.ContentType.toString : $r3 = r0.<org.apache.http.entity.ContentType: java.lang.String mimeType>
+org.apache.http.entity.ContentType.toString : $r1 = new java.lang.StringBuilder
+org.apache.http.entity.ContentType.toString : virtualinvoke r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("; charset=")

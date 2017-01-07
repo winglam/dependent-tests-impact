@@ -1,0 +1,12 @@
+org.apache.http.entity.BasicHttpEntity.writeTo : if r1 != null goto r2 = virtualinvoke r0.<org.apache.http.entity.BasicHttpEntity: java.io.InputStream getContent()>()
+org.apache.http.entity.BasicHttpEntity.writeTo : $i1 = virtualinvoke r2.<java.io.InputStream: int read(byte[])>(r3)
+org.apache.http.entity.BasicHttpEntity.writeTo : virtualinvoke r1.<java.io.OutputStream: void write(byte[],int,int)>(r3, 0, i0)
+org.apache.http.entity.BasicHttpEntity.writeTo : r3 = newarray (byte)[2048]
+org.apache.http.entity.BasicHttpEntity.writeTo : virtualinvoke r2.<java.io.InputStream: void close()>()
+org.apache.http.entity.BasicHttpEntity.writeTo : $r5 = new java.lang.IllegalArgumentException
+org.apache.http.entity.BasicHttpEntity.writeTo : goto [?= return]
+org.apache.http.entity.BasicHttpEntity.writeTo : r2 = virtualinvoke r0.<org.apache.http.entity.BasicHttpEntity: java.io.InputStream getContent()>()
+org.apache.http.entity.BasicHttpEntity.getContent : $r1 = r0.<org.apache.http.entity.BasicHttpEntity: java.io.InputStream content>
+org.apache.http.entity.BasicHttpEntity.getContent : $r2 = new java.lang.IllegalStateException
+org.apache.http.entity.BasicHttpEntity.getContent : $r3 = r0.<org.apache.http.entity.BasicHttpEntity: java.io.InputStream content>
+org.apache.http.entity.BasicHttpEntity.setContent : r0.<org.apache.http.entity.BasicHttpEntity: java.io.InputStream content> = r1

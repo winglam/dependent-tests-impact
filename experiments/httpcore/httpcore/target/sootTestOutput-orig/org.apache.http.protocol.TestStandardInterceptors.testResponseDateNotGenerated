@@ -1,0 +1,12 @@
+org.apache.http.message.HeaderGroup.getFirstHeader : return null
+org.apache.http.message.HeaderGroup.getFirstHeader : i0 = 0
+org.apache.http.message.AbstractHttpMessage.getFirstHeader : $r2 = r0.<org.apache.http.message.AbstractHttpMessage: org.apache.http.message.HeaderGroup headergroup>
+org.apache.http.message.BasicStatusLine.getStatusCode : $i0 = r0.<org.apache.http.message.BasicStatusLine: int statusCode>
+org.apache.http.message.BasicHttpResponse.getReason : $r1 = r0.<org.apache.http.message.BasicHttpResponse: org.apache.http.ReasonPhraseCatalog reasonCatalog>
+org.apache.http.protocol.ResponseDate.process : $r5 = interfaceinvoke r1.<org.apache.http.HttpResponse: org.apache.http.StatusLine getStatusLine()>()
+org.apache.http.protocol.ResponseDate.process : if i0 < 200 goto return
+org.apache.http.protocol.ResponseDate.process : if r1 != null goto $r5 = interfaceinvoke r1.<org.apache.http.HttpResponse: org.apache.http.StatusLine getStatusLine()>()
+org.apache.http.message.BasicStatusLine.getProtocolVersion : $r1 = r0.<org.apache.http.message.BasicStatusLine: org.apache.http.ProtocolVersion protoVersion>
+org.apache.http.message.BasicHttpResponse.getStatusLine : $r1 = r0.<org.apache.http.message.BasicHttpResponse: org.apache.http.StatusLine statusline>
+org.apache.http.message.BasicHttpResponse.setStatusCode : $r3 = r0.<org.apache.http.message.BasicHttpResponse: org.apache.http.StatusLine statusline>
+org.apache.http.message.BasicHttpResponse.setStatusCode : $r2 = new org.apache.http.message.BasicStatusLine

@@ -1,0 +1,35 @@
+org.apache.http.entity.BasicHttpEntity.getContent : $r1 = r0.<org.apache.http.entity.BasicHttpEntity: java.io.InputStream content>
+org.apache.http.entity.BasicHttpEntity.getContent : $r3 = r0.<org.apache.http.entity.BasicHttpEntity: java.io.InputStream content>
+org.apache.http.util.CharArrayBuffer.append : $r12 = r0.<org.apache.http.util.CharArrayBuffer: char[] buffer>
+org.apache.http.util.CharArrayBuffer.append : $r11 = r0.<org.apache.http.util.CharArrayBuffer: char[] buffer>
+org.apache.http.util.CharArrayBuffer.append : if i1 != 0 goto $i8 = r0.<org.apache.http.util.CharArrayBuffer: int len>
+org.apache.http.util.CharArrayBuffer.append : $i8 = r0.<org.apache.http.util.CharArrayBuffer: int len>
+org.apache.http.util.CharArrayBuffer.append : r0.<org.apache.http.util.CharArrayBuffer: int len> = i2
+org.apache.http.util.CharArrayBuffer.append : if r1 != null goto (branch)
+org.apache.http.util.CharArrayBuffer.append : if i0 < 0 goto $r3 = new java.lang.IndexOutOfBoundsException
+org.apache.http.util.CharArrayBuffer.toString : $r1 = new java.lang.String
+org.apache.http.util.EntityUtils.toString : $r11 = new java.io.InputStreamReader
+org.apache.http.util.EntityUtils.toString : $i5 = virtualinvoke r4.<java.io.Reader: int read(char[])>(r6)
+org.apache.http.util.EntityUtils.toString : $l2 = interfaceinvoke r0.<org.apache.http.HttpEntity: long getContentLength()>()
+org.apache.http.util.EntityUtils.toString : $r12 = new org.apache.http.util.CharArrayBuffer
+org.apache.http.util.EntityUtils.toString : if i0 >= 0 goto r3 = staticinvoke <org.apache.http.util.EntityUtils: java.lang.String getContentCharSet(org.apache.http.HttpEntity)>(r0)
+org.apache.http.util.EntityUtils.toString : r3 = r1
+org.apache.http.util.EntityUtils.toString : r6 = newarray (char)[1024]
+org.apache.http.util.EntityUtils.toString : virtualinvoke r5.<org.apache.http.util.CharArrayBuffer: void append(char[],int,int)>(r6, 0, i1)
+org.apache.http.util.EntityUtils.toString : r3 = staticinvoke <org.apache.http.util.EntityUtils: java.lang.String getContentCharSet(org.apache.http.HttpEntity)>(r0)
+org.apache.http.util.EntityUtils.toString : r2 = interfaceinvoke r0.<org.apache.http.HttpEntity: java.io.InputStream getContent()>()
+org.apache.http.util.EntityUtils.toString : if r3 != null goto $r11 = new java.io.InputStreamReader
+org.apache.http.util.EntityUtils.toString : if r3 != null goto (branch)
+org.apache.http.util.EntityUtils.toString : r7 = virtualinvoke r5.<org.apache.http.util.CharArrayBuffer: java.lang.String toString()>()
+org.apache.http.util.EntityUtils.toString : if r2 != null goto $l2 = interfaceinvoke r0.<org.apache.http.HttpEntity: long getContentLength()>()
+org.apache.http.util.EntityUtils.toString : virtualinvoke r2.<java.io.InputStream: void close()>()
+org.apache.http.util.EntityUtils.toString : $l4 = interfaceinvoke r0.<org.apache.http.HttpEntity: long getContentLength()>()
+org.apache.http.util.EntityUtils.toString : if r0 != null goto r2 = interfaceinvoke r0.<org.apache.http.HttpEntity: java.io.InputStream getContent()>()
+org.apache.http.entity.BasicHttpEntity.setContentLength : r0.<org.apache.http.entity.BasicHttpEntity: long length> = l0
+org.apache.http.util.EntityUtils.getContentCharSet : $r5 = interfaceinvoke r0.<org.apache.http.HttpEntity: org.apache.http.Header getContentType()>()
+org.apache.http.util.EntityUtils.getContentCharSet : if r0 != null goto r1 = null
+org.apache.http.util.EntityUtils.getContentCharSet : r1 = null
+org.apache.http.util.EntityUtils.getContentCharSet : return r1
+org.apache.http.entity.BasicHttpEntity.getContentLength : $l0 = r0.<org.apache.http.entity.BasicHttpEntity: long length>
+org.apache.http.entity.AbstractHttpEntity.getContentType : $r1 = r0.<org.apache.http.entity.AbstractHttpEntity: org.apache.http.Header contentType>
+org.apache.http.entity.BasicHttpEntity.setContent : r0.<org.apache.http.entity.BasicHttpEntity: java.io.InputStream content> = r1

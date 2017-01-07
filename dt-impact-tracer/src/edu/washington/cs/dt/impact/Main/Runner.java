@@ -351,6 +351,8 @@ public abstract class Runner {
                 project = PROJECT.SYNOPTIC;
             } else if (projectName.equals("xml_security")) {
                 project = PROJECT.XML_SECURITY;
+            } else if (projectName.equals("httpcore")) {
+                project = PROJECT.HTTPCORE;
             } else {
                 System.err.println("Project argument is specified but the project name"
                         + " value provided is invalid. Please use either crystal, jfreechart, jodatime, synoptic or xml_security.");
