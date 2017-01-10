@@ -1,9 +1,0 @@
-org.apache.http.entity.BufferedHttpEntity.writeTo : $r5 = r0.<org.apache.http.entity.BufferedHttpEntity: org.apache.http.HttpEntity wrappedEntity>
-org.apache.http.entity.BufferedHttpEntity.writeTo : $r3 = r0.<org.apache.http.entity.BufferedHttpEntity: byte[] buffer>
-org.apache.http.entity.BufferedHttpEntity.writeTo : if r1 != null goto $r3 = r0.<org.apache.http.entity.BufferedHttpEntity: byte[] buffer>
-org.apache.http.entity.BufferedHttpEntity.writeTo : $r2 = new java.lang.IllegalArgumentException
-org.apache.http.entity.ByteArrayEntity.getContentLength : $i0 = r0.<org.apache.http.entity.ByteArrayEntity: int len>
-org.apache.http.entity.ByteArrayEntity.isRepeatable : return 1
-org.apache.http.entity.ByteArrayEntity.writeTo : if r1 != null goto $r3 = r0.<org.apache.http.entity.ByteArrayEntity: byte[] b>
-org.apache.http.entity.ByteArrayEntity.writeTo : $r3 = r0.<org.apache.http.entity.ByteArrayEntity: byte[] b>
-org.apache.http.entity.ByteArrayEntity.writeTo : virtualinvoke r1.<java.io.OutputStream: void flush()>()

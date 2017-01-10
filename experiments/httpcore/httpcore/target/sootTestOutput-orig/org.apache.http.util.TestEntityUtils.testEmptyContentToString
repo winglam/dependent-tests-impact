@@ -1,6 +1,0 @@
-org.apache.http.util.TestEntityUtils$NullHttpEntity.getContent : return null
-org.apache.http.util.EntityUtils.toString : $r1 = staticinvoke <org.apache.http.util.EntityUtils: java.lang.String toString(org.apache.http.HttpEntity,java.lang.String)>(r0, null)
-org.apache.http.util.EntityUtils.toString : return null
-org.apache.http.util.EntityUtils.toString : if r2 != null goto $l2 = interfaceinvoke r0.<org.apache.http.HttpEntity: long getContentLength()>()
-org.apache.http.util.EntityUtils.toString : r2 = interfaceinvoke r0.<org.apache.http.HttpEntity: java.io.InputStream getContent()>()
-org.apache.http.util.EntityUtils.toString : if r0 != null goto r2 = interfaceinvoke r0.<org.apache.http.HttpEntity: java.io.InputStream getContent()>()

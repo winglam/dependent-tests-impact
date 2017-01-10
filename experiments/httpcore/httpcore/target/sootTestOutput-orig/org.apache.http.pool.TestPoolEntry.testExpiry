@@ -1,9 +1,0 @@
-org.apache.http.pool.PoolEntry.getExpiry : $l0 = r0.<org.apache.http.pool.PoolEntry: long expiry>
-org.apache.http.pool.PoolEntry.getUpdated : $l0 = r0.<org.apache.http.pool.PoolEntry: long updated>
-org.apache.http.pool.PoolEntry.getCreated : $l0 = r0.<org.apache.http.pool.PoolEntry: long created>
-org.apache.http.pool.PoolEntry.updateExpiry : $l2 = staticinvoke <java.lang.System: long currentTimeMillis()>()
-org.apache.http.pool.PoolEntry.updateExpiry : l1 = 9223372036854775807L
-org.apache.http.pool.PoolEntry.updateExpiry : $b3 = l0 cmp 0L
-org.apache.http.pool.PoolEntry.updateExpiry : $l6 = r0.<org.apache.http.pool.PoolEntry: long validUnit>
-org.apache.http.pool.PoolEntry.updateExpiry : $l4 = r0.<org.apache.http.pool.PoolEntry: long updated>
-org.apache.http.pool.PoolEntry.updateExpiry : if r1 != null goto $l2 = staticinvoke <java.lang.System: long currentTimeMillis()>()
