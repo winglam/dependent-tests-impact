@@ -1,0 +1,28 @@
+org.apache.http.nio.pool.RouteSpecificPool.getAvailableCount : $r1 = r0.<org.apache.http.nio.pool.RouteSpecificPool: java.util.LinkedList available>
+org.apache.http.nio.pool.AbstractNIOConnPool.getTotalStats : $r8 = r0.<org.apache.http.nio.pool.AbstractNIOConnPool: java.util.concurrent.locks.Lock lock>
+org.apache.http.nio.pool.AbstractNIOConnPool.getTotalStats : $r4 = new org.apache.http.pool.PoolStats
+org.apache.http.nio.pool.AbstractNIOConnPool.getTotalStats : $r3 = r0.<org.apache.http.nio.pool.AbstractNIOConnPool: java.util.concurrent.locks.Lock lock>
+org.apache.http.nio.pool.RouteSpecificPool.getPendingCount : $r1 = r0.<org.apache.http.nio.pool.RouteSpecificPool: java.util.Map pending>
+org.apache.http.nio.pool.AbstractNIOConnPool.getPool : return r2
+org.apache.http.nio.pool.AbstractNIOConnPool.getPool : $r6 = r0.<org.apache.http.nio.pool.AbstractNIOConnPool: java.util.Map routeToPool>
+org.apache.http.nio.pool.AbstractNIOConnPool.getPool : $r3 = r0.<org.apache.http.nio.pool.AbstractNIOConnPool: java.util.Map routeToPool>
+org.apache.http.nio.pool.AbstractNIOConnPool.getPool : if r2 != null goto return r2
+org.apache.http.nio.pool.AbstractNIOConnPool.getPool : $r5 = new org.apache.http.nio.pool.AbstractNIOConnPool$1
+org.apache.http.nio.pool.AbstractNIOConnPool.getMaxPerRoute : if r2 == null goto $i1 = r0.<org.apache.http.nio.pool.AbstractNIOConnPool: int defaultMaxPerRoute>
+org.apache.http.nio.pool.AbstractNIOConnPool.getMaxPerRoute : $r3 = r0.<org.apache.http.nio.pool.AbstractNIOConnPool: java.util.Map maxPerRoute>
+org.apache.http.nio.pool.AbstractNIOConnPool.getMaxPerRoute : $i1 = r0.<org.apache.http.nio.pool.AbstractNIOConnPool: int defaultMaxPerRoute>
+org.apache.http.nio.pool.AbstractNIOConnPool.getStats : r2 = specialinvoke r0.<org.apache.http.nio.pool.AbstractNIOConnPool: org.apache.http.nio.pool.RouteSpecificPool getPool(java.lang.Object)>(r1)
+org.apache.http.nio.pool.AbstractNIOConnPool.getStats : $r6 = r0.<org.apache.http.nio.pool.AbstractNIOConnPool: java.util.concurrent.locks.Lock lock>
+org.apache.http.nio.pool.AbstractNIOConnPool.getStats : $r8 = r0.<org.apache.http.nio.pool.AbstractNIOConnPool: java.util.concurrent.locks.Lock lock>
+org.apache.http.nio.pool.AbstractNIOConnPool.getStats : $r7 = new org.apache.http.pool.PoolStats
+org.apache.http.nio.pool.AbstractNIOConnPool.getStats : if r1 != null goto $r6 = r0.<org.apache.http.nio.pool.AbstractNIOConnPool: java.util.concurrent.locks.Lock lock>
+org.apache.http.nio.pool.RouteSpecificPool.getLeasedCount : $r1 = r0.<org.apache.http.nio.pool.RouteSpecificPool: java.util.Set leased>
+org.apache.http.nio.pool.AbstractNIOConnPool.toString : $r13 = virtualinvoke r2.<java.lang.StringBuilder: java.lang.String toString()>()
+org.apache.http.nio.pool.AbstractNIOConnPool.toString : virtualinvoke r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("[leased: ")
+org.apache.http.nio.pool.AbstractNIOConnPool.toString : $r7 = r0.<org.apache.http.nio.pool.AbstractNIOConnPool: java.util.LinkedList available>
+org.apache.http.nio.pool.AbstractNIOConnPool.toString : virtualinvoke r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("][available: ")
+org.apache.http.nio.pool.AbstractNIOConnPool.toString : $r4 = r0.<org.apache.http.nio.pool.AbstractNIOConnPool: java.util.Set leased>
+org.apache.http.nio.pool.AbstractNIOConnPool.toString : virtualinvoke r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("]")
+org.apache.http.nio.pool.AbstractNIOConnPool.toString : $r1 = new java.lang.StringBuilder
+org.apache.http.nio.pool.AbstractNIOConnPool.toString : $r10 = r0.<org.apache.http.nio.pool.AbstractNIOConnPool: java.util.Set pending>
+org.apache.http.nio.pool.AbstractNIOConnPool.toString : virtualinvoke r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("][pending: ")

@@ -1,0 +1,50 @@
+org.apache.http.impl.nio.reactor.SessionOutputBufferImpl.writeCRLF : $r1 = <org.apache.http.impl.nio.reactor.SessionOutputBufferImpl: byte[] CRLF>
+org.apache.http.nio.util.ExpandableBuffer.setInputMode : $i0 = r0.<org.apache.http.nio.util.ExpandableBuffer: int mode>
+org.apache.http.impl.nio.reactor.SessionOutputBufferImpl.write : i1 = lengthof r1
+org.apache.http.impl.nio.reactor.SessionOutputBufferImpl.write : virtualinvoke r0.<org.apache.http.impl.nio.reactor.SessionOutputBufferImpl: void ensureCapacity(int)>(i2)
+org.apache.http.impl.nio.reactor.SessionOutputBufferImpl.write : $r3 = r0.<org.apache.http.impl.nio.reactor.SessionOutputBufferImpl: java.nio.ByteBuffer buffer>
+org.apache.http.impl.nio.reactor.SessionOutputBufferImpl.write : virtualinvoke r0.<org.apache.http.impl.nio.reactor.SessionOutputBufferImpl: void setInputMode()>()
+org.apache.http.impl.nio.reactor.SessionOutputBufferImpl.write : if r1 != null goto virtualinvoke r0.<org.apache.http.impl.nio.reactor.SessionOutputBufferImpl: void setInputMode()>()
+org.apache.http.impl.nio.reactor.SessionOutputBufferImpl.write : $r2 = r0.<org.apache.http.impl.nio.reactor.SessionOutputBufferImpl: java.nio.ByteBuffer buffer>
+org.apache.http.impl.nio.reactor.SessionOutputBufferImpl.write : b0 = 0
+org.apache.http.nio.util.HeapByteBufferAllocator.allocate : $r1 = staticinvoke <java.nio.ByteBuffer: java.nio.ByteBuffer allocate(int)>(i0)
+org.apache.http.nio.util.ExpandableBuffer.ensureCapacity : $r1 = r0.<org.apache.http.nio.util.ExpandableBuffer: java.nio.ByteBuffer buffer>
+org.apache.http.impl.nio.reactor.SessionOutputBufferImpl.writeLine : if i0 <= 0 goto z6 = 1
+org.apache.http.impl.nio.reactor.SessionOutputBufferImpl.writeLine : $r3 = r0.<org.apache.http.impl.nio.reactor.SessionOutputBufferImpl: java.nio.charset.CharsetEncoder charencoder>
+org.apache.http.impl.nio.reactor.SessionOutputBufferImpl.writeLine : virtualinvoke r0.<org.apache.http.impl.nio.reactor.SessionOutputBufferImpl: void setInputMode()>()
+org.apache.http.impl.nio.reactor.SessionOutputBufferImpl.writeLine : $z7 = virtualinvoke r18.<java.nio.charset.CoderResult: boolean isError()>()
+org.apache.http.impl.nio.reactor.SessionOutputBufferImpl.writeLine : virtualinvoke r2.<org.apache.http.util.CharArrayBuffer: void append(java.lang.String)>(r1)
+org.apache.http.impl.nio.reactor.SessionOutputBufferImpl.writeLine : $z9 = virtualinvoke r18.<java.nio.charset.CoderResult: boolean isUnderflow()>()
+org.apache.http.impl.nio.reactor.SessionOutputBufferImpl.writeLine : $r9 = r0.<org.apache.http.impl.nio.reactor.SessionOutputBufferImpl: java.nio.CharBuffer charbuffer>
+org.apache.http.impl.nio.reactor.SessionOutputBufferImpl.writeLine : i1 = 0
+org.apache.http.impl.nio.reactor.SessionOutputBufferImpl.writeLine : i2 = i0
+org.apache.http.impl.nio.reactor.SessionOutputBufferImpl.writeLine : i0 = i0 - i2
+org.apache.http.impl.nio.reactor.SessionOutputBufferImpl.writeLine : if r1 != null goto $i0 = virtualinvoke r1.<java.lang.String: int length()>()
+org.apache.http.impl.nio.reactor.SessionOutputBufferImpl.writeLine : if z6 == 0 goto specialinvoke r0.<org.apache.http.impl.nio.reactor.SessionOutputBufferImpl: void writeCRLF()>()
+org.apache.http.impl.nio.reactor.SessionOutputBufferImpl.writeLine : z1 = 1
+org.apache.http.impl.nio.reactor.SessionOutputBufferImpl.writeLine : goto [?= return]
+org.apache.http.impl.nio.reactor.SessionOutputBufferImpl.writeLine : if z1 == 0 goto $r14 = r0.<org.apache.http.impl.nio.reactor.SessionOutputBufferImpl: java.nio.CharBuffer charbuffer>
+org.apache.http.impl.nio.reactor.SessionOutputBufferImpl.writeLine : $r16 = r0.<org.apache.http.impl.nio.reactor.SessionOutputBufferImpl: java.nio.charset.CharsetEncoder charencoder>
+org.apache.http.impl.nio.reactor.SessionOutputBufferImpl.writeLine : if r1 != null goto $i3 = virtualinvoke r1.<org.apache.http.util.CharArrayBuffer: int length()>()
+org.apache.http.impl.nio.reactor.SessionOutputBufferImpl.writeLine : $r5 = r0.<org.apache.http.impl.nio.reactor.SessionOutputBufferImpl: java.nio.CharBuffer charbuffer>
+org.apache.http.impl.nio.reactor.SessionOutputBufferImpl.writeLine : $z8 = virtualinvoke r18.<java.nio.charset.CoderResult: boolean isOverflow()>()
+org.apache.http.impl.nio.reactor.SessionOutputBufferImpl.writeLine : $z3 = virtualinvoke r2.<java.nio.charset.CoderResult: boolean isOverflow()>()
+org.apache.http.impl.nio.reactor.SessionOutputBufferImpl.writeLine : goto [?= staticinvoke <edu.washington.cs.dt.impact.util.Tracer: void trace(java.lang.String,java.lang.String)>("if i0 <= 0 goto z6 = 1", "org.apache.http.impl.nio.reactor.SessionOutputBufferImpl.writeLine")]
+org.apache.http.impl.nio.reactor.SessionOutputBufferImpl.writeLine : i0 = virtualinvoke r1.<org.apache.http.util.CharArrayBuffer: int length()>()
+org.apache.http.impl.nio.reactor.SessionOutputBufferImpl.writeLine : $z2 = virtualinvoke r2.<java.nio.charset.CoderResult: boolean isError()>()
+org.apache.http.impl.nio.reactor.SessionOutputBufferImpl.writeLine : i1 = i1 + i2
+org.apache.http.impl.nio.reactor.SessionOutputBufferImpl.writeLine : z6 = 1
+org.apache.http.impl.nio.reactor.SessionOutputBufferImpl.writeLine : $r11 = r0.<org.apache.http.impl.nio.reactor.SessionOutputBufferImpl: java.nio.charset.CharsetEncoder charencoder>
+org.apache.http.impl.nio.reactor.SessionOutputBufferImpl.writeLine : $r6 = r0.<org.apache.http.impl.nio.reactor.SessionOutputBufferImpl: java.nio.CharBuffer charbuffer>
+org.apache.http.impl.nio.reactor.SessionOutputBufferImpl.writeLine : z0 = 1
+org.apache.http.impl.nio.reactor.SessionOutputBufferImpl.writeLine : z0 = 0
+org.apache.http.impl.nio.reactor.SessionOutputBufferImpl.writeLine : $r3 = new org.apache.http.util.CharArrayBuffer
+org.apache.http.impl.nio.reactor.SessionOutputBufferImpl.writeLine : $r14 = r0.<org.apache.http.impl.nio.reactor.SessionOutputBufferImpl: java.nio.CharBuffer charbuffer>
+org.apache.http.impl.nio.reactor.SessionOutputBufferImpl.writeLine : specialinvoke r0.<org.apache.http.impl.nio.reactor.SessionOutputBufferImpl: void writeCRLF()>()
+org.apache.http.impl.nio.reactor.SessionOutputBufferImpl.writeLine : if i0 > i2 goto $r6 = r0.<org.apache.http.impl.nio.reactor.SessionOutputBufferImpl: java.nio.CharBuffer charbuffer>
+org.apache.http.impl.nio.reactor.SessionOutputBufferImpl.writeLine : goto [?= staticinvoke <edu.washington.cs.dt.impact.util.Tracer: void trace(java.lang.String,java.lang.String)>("if z6 == 0 goto specialinvoke r0.<org.apache.http.impl.nio.reactor.SessionOutputBufferImpl: void writeCRLF()>()", "org.apache.http.impl.nio.reactor.SessionOutputBufferImpl.writeLine")]
+org.apache.http.impl.nio.reactor.SessionOutputBufferImpl.writeLine : goto [?= staticinvoke <edu.washington.cs.dt.impact.util.Tracer: void trace(java.lang.String,java.lang.String)>("if z1 == 0 goto $r14 = r0.<org.apache.http.impl.nio.reactor.SessionOutputBufferImpl: java.nio.CharBuffer charbuffer>", "org.apache.http.impl.nio.reactor.SessionOutputBufferImpl.writeLine")]
+org.apache.http.impl.nio.reactor.SessionOutputBufferImpl.writeLine : virtualinvoke r0.<org.apache.http.impl.nio.reactor.SessionOutputBufferImpl: void writeLine(org.apache.http.util.CharArrayBuffer)>(r2)
+org.apache.http.impl.nio.reactor.SessionOutputBufferImpl.writeLine : $i3 = virtualinvoke r1.<org.apache.http.util.CharArrayBuffer: int length()>()
+org.apache.http.impl.nio.reactor.SessionOutputBufferImpl.writeLine : $z4 = virtualinvoke r2.<java.nio.charset.CoderResult: boolean isUnderflow()>()
+org.apache.http.impl.nio.reactor.SessionOutputBufferImpl.writeLine : $i0 = virtualinvoke r1.<java.lang.String: int length()>()

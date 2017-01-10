@@ -1,0 +1,18 @@
+org.apache.http.impl.nio.codecs.LengthDelimitedDecoder.transfer : $l11 = (long) i2
+org.apache.http.impl.nio.codecs.LengthDelimitedDecoder.transfer : $r2 = r0.<org.apache.http.impl.nio.codecs.LengthDelimitedDecoder: org.apache.http.nio.reactor.SessionInputBuffer buffer>
+org.apache.http.impl.nio.codecs.LengthDelimitedDecoder.transfer : $l13 = virtualinvoke r1.<java.nio.channels.FileChannel: long size()>()
+org.apache.http.impl.nio.codecs.LengthDelimitedDecoder.transfer : l1 = (long) i2
+org.apache.http.impl.nio.codecs.LengthDelimitedDecoder.transfer : $z0 = r0.<org.apache.http.impl.nio.codecs.LengthDelimitedDecoder: boolean completed>
+org.apache.http.impl.nio.codecs.LengthDelimitedDecoder.transfer : $r7 = new java.io.IOException
+org.apache.http.impl.nio.codecs.LengthDelimitedDecoder.transfer : $r6 = r0.<org.apache.http.impl.nio.codecs.LengthDelimitedDecoder: java.nio.channels.ReadableByteChannel channel>
+org.apache.http.impl.nio.codecs.LengthDelimitedDecoder.transfer : $l5 = r0.<org.apache.http.impl.nio.codecs.LengthDelimitedDecoder: long contentLength>
+org.apache.http.impl.nio.codecs.LengthDelimitedDecoder.transfer : if r1 != null goto $z0 = r0.<org.apache.http.impl.nio.codecs.LengthDelimitedDecoder: boolean completed>
+org.apache.http.nio.util.ExpandableBuffer.hasData : $r1 = r0.<org.apache.http.nio.util.ExpandableBuffer: java.nio.ByteBuffer buffer>
+org.apache.http.nio.util.ExpandableBuffer.hasData : virtualinvoke r0.<org.apache.http.nio.util.ExpandableBuffer: void setOutputMode()>()
+org.apache.http.nio.util.HeapByteBufferAllocator.allocate : $r1 = staticinvoke <java.nio.ByteBuffer: java.nio.ByteBuffer allocate(int)>(i0)
+org.apache.http.nio.util.ExpandableBuffer.setOutputMode : $i0 = r0.<org.apache.http.nio.util.ExpandableBuffer: int mode>
+org.apache.http.nio.util.ExpandableBuffer.setOutputMode : r0.<org.apache.http.nio.util.ExpandableBuffer: int mode> = 1
+org.apache.http.nio.util.ExpandableBuffer.setOutputMode : $r1 = r0.<org.apache.http.nio.util.ExpandableBuffer: java.nio.ByteBuffer buffer>
+org.apache.http.impl.nio.codecs.TestLengthDelimitedDecoder.createTempFile : $r2 = r0.<org.apache.http.impl.nio.codecs.TestLengthDelimitedDecoder: java.io.File tmpfile>
+org.apache.http.impl.nio.codecs.TestLengthDelimitedDecoder.createTempFile : $r1 = staticinvoke <java.io.File: java.io.File createTempFile(java.lang.String,java.lang.String)>("testFile", ".txt")
+org.apache.http.ReadableByteChannelMock.isOpen : $z0 = r0.<org.apache.http.ReadableByteChannelMock: boolean closed>

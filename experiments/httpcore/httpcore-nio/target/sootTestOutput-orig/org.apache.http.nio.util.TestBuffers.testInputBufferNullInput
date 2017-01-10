@@ -1,0 +1,11 @@
+org.apache.http.nio.util.SimpleInputBuffer.read : if r1 != null goto $i0 = lengthof r1
+org.apache.http.nio.util.SimpleInputBuffer.read : if r1 != null goto virtualinvoke r0.<org.apache.http.nio.util.SimpleInputBuffer: void setOutputMode()>()
+org.apache.http.nio.util.SimpleInputBuffer.read : return 0
+org.apache.http.nio.util.SimpleInputBuffer.read : $z0 = virtualinvoke r0.<org.apache.http.nio.util.SimpleInputBuffer: boolean isEndOfStream()>()
+org.apache.http.nio.util.ExpandableBuffer.hasData : $r1 = r0.<org.apache.http.nio.util.ExpandableBuffer: java.nio.ByteBuffer buffer>
+org.apache.http.nio.util.ExpandableBuffer.hasData : virtualinvoke r0.<org.apache.http.nio.util.ExpandableBuffer: void setOutputMode()>()
+org.apache.http.nio.util.SimpleInputBuffer.isEndOfStream : $z0 = virtualinvoke r0.<org.apache.http.nio.util.SimpleInputBuffer: boolean hasData()>()
+org.apache.http.nio.util.DirectByteBufferAllocator.allocate : $r1 = staticinvoke <java.nio.ByteBuffer: java.nio.ByteBuffer allocateDirect(int)>(i0)
+org.apache.http.nio.util.ExpandableBuffer.setOutputMode : $i0 = r0.<org.apache.http.nio.util.ExpandableBuffer: int mode>
+org.apache.http.nio.util.ExpandableBuffer.setOutputMode : r0.<org.apache.http.nio.util.ExpandableBuffer: int mode> = 1
+org.apache.http.nio.util.ExpandableBuffer.setOutputMode : $r1 = r0.<org.apache.http.nio.util.ExpandableBuffer: java.nio.ByteBuffer buffer>

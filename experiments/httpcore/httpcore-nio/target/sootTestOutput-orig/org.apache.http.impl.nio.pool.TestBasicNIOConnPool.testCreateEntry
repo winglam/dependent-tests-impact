@@ -1,0 +1,4 @@
+org.apache.http.impl.nio.pool.BasicNIOConnPool.createConnection : return r2
+org.apache.http.impl.nio.pool.BasicNIOConnPool.createEntry : $r3 = new org.apache.http.impl.nio.pool.BasicNIOPoolEntry
+org.apache.http.impl.nio.pool.BasicNIOConnPool.closeEntry : interfaceinvoke r2.<org.apache.http.nio.reactor.IOSession: void shutdown()>()
+org.apache.http.impl.nio.pool.BasicNIOConnPool.closeEntry : $r3 = virtualinvoke r1.<org.apache.http.impl.nio.pool.BasicNIOPoolEntry: java.lang.Object getConnection()>()

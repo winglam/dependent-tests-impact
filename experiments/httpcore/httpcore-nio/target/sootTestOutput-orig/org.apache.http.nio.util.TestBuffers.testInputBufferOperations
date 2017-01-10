@@ -1,0 +1,63 @@
+org.apache.http.nio.util.SimpleInputBuffer.read : return -1
+org.apache.http.nio.util.SimpleInputBuffer.read : $i0 = lengthof r1
+org.apache.http.nio.util.SimpleInputBuffer.read : i2 = i1
+org.apache.http.nio.util.SimpleInputBuffer.read : $r1 = r0.<org.apache.http.nio.util.SimpleInputBuffer: java.nio.ByteBuffer buffer>
+org.apache.http.nio.util.SimpleInputBuffer.read : if r1 != null goto $i0 = lengthof r1
+org.apache.http.nio.util.SimpleInputBuffer.read : $r2 = r0.<org.apache.http.nio.util.SimpleInputBuffer: java.nio.ByteBuffer buffer>
+org.apache.http.nio.util.SimpleInputBuffer.read : if r1 != null goto virtualinvoke r0.<org.apache.http.nio.util.SimpleInputBuffer: void setOutputMode()>()
+org.apache.http.nio.util.SimpleInputBuffer.read : $r3 = r0.<org.apache.http.nio.util.SimpleInputBuffer: java.nio.ByteBuffer buffer>
+org.apache.http.nio.util.SimpleInputBuffer.read : virtualinvoke r0.<org.apache.http.nio.util.SimpleInputBuffer: void setOutputMode()>()
+org.apache.http.nio.util.SimpleInputBuffer.read : $z0 = virtualinvoke r0.<org.apache.http.nio.util.SimpleInputBuffer: boolean isEndOfStream()>()
+org.apache.http.nio.util.SimpleInputBuffer.read : return i2
+org.apache.http.nio.util.SimpleInputBuffer.read : $r4 = r0.<org.apache.http.nio.util.SimpleInputBuffer: java.nio.ByteBuffer buffer>
+org.apache.http.nio.util.ContentDecoderMock.read : return i0
+org.apache.http.nio.util.ContentDecoderMock.read : $r3 = r0.<org.apache.http.nio.util.ContentDecoderMock: java.nio.channels.ReadableByteChannel channel>
+org.apache.http.nio.util.ContentDecoderMock.read : r0.<org.apache.http.nio.util.ContentDecoderMock: boolean completed> = 1
+org.apache.http.nio.util.ContentDecoderMock.read : $z0 = r0.<org.apache.http.nio.util.ContentDecoderMock: boolean completed>
+org.apache.http.nio.util.ContentDecoderMock.read : if r1 != null goto $z0 = r0.<org.apache.http.nio.util.ContentDecoderMock: boolean completed>
+org.apache.http.nio.util.ContentDecoderMock.read : if i0 != -1 goto return i0
+org.apache.http.ReadableByteChannelMock.prepareChunk : r0.<org.apache.http.ReadableByteChannelMock: boolean closed> = 1
+org.apache.http.ReadableByteChannelMock.prepareChunk : $r7 = r0.<org.apache.http.ReadableByteChannelMock: java.lang.String charset>
+org.apache.http.ReadableByteChannelMock.prepareChunk : $i3 = r0.<org.apache.http.ReadableByteChannelMock: int chunkCount>
+org.apache.http.ReadableByteChannelMock.prepareChunk : $r2 = r0.<org.apache.http.ReadableByteChannelMock: java.nio.ByteBuffer currentChunk>
+org.apache.http.ReadableByteChannelMock.prepareChunk : $i0 = r0.<org.apache.http.ReadableByteChannelMock: int chunkCount>
+org.apache.http.ReadableByteChannelMock.prepareChunk : goto [?= return]
+org.apache.http.ReadableByteChannelMock.prepareChunk : $r5 = r0.<org.apache.http.ReadableByteChannelMock: java.lang.String[] chunks>
+org.apache.http.nio.util.ExpandableBuffer.expand : if i0 >= 0 goto specialinvoke r0.<org.apache.http.nio.util.ExpandableBuffer: void expandCapacity(int)>(i0)
+org.apache.http.nio.util.ExpandableBuffer.expand : specialinvoke r0.<org.apache.http.nio.util.ExpandableBuffer: void expandCapacity(int)>(i0)
+org.apache.http.nio.util.ExpandableBuffer.expand : $r1 = r0.<org.apache.http.nio.util.ExpandableBuffer: java.nio.ByteBuffer buffer>
+org.apache.http.nio.util.ExpandableBuffer.hasData : $r1 = r0.<org.apache.http.nio.util.ExpandableBuffer: java.nio.ByteBuffer buffer>
+org.apache.http.nio.util.ExpandableBuffer.hasData : virtualinvoke r0.<org.apache.http.nio.util.ExpandableBuffer: void setOutputMode()>()
+org.apache.http.nio.util.ExpandableBuffer.setInputMode : $i0 = r0.<org.apache.http.nio.util.ExpandableBuffer: int mode>
+org.apache.http.nio.util.SimpleInputBuffer.reset : specialinvoke r0.<org.apache.http.nio.util.ExpandableBuffer: void clear()>()
+org.apache.http.nio.util.SimpleInputBuffer.reset : r0.<org.apache.http.nio.util.SimpleInputBuffer: boolean endOfStream> = 0
+org.apache.http.nio.util.SimpleInputBuffer.isEndOfStream : $z0 = virtualinvoke r0.<org.apache.http.nio.util.SimpleInputBuffer: boolean hasData()>()
+org.apache.http.nio.util.DirectByteBufferAllocator.allocate : $r1 = staticinvoke <java.nio.ByteBuffer: java.nio.ByteBuffer allocateDirect(int)>(i0)
+org.apache.http.nio.util.ContentDecoderMock.isCompleted : $z0 = r0.<org.apache.http.nio.util.ContentDecoderMock: boolean completed>
+org.apache.http.nio.util.ExpandableBuffer.clear : r0.<org.apache.http.nio.util.ExpandableBuffer: int mode> = 0
+org.apache.http.nio.util.ExpandableBuffer.clear : $r1 = r0.<org.apache.http.nio.util.ExpandableBuffer: java.nio.ByteBuffer buffer>
+org.apache.http.nio.util.SimpleInputBuffer.consumeContent : virtualinvoke r0.<org.apache.http.nio.util.SimpleInputBuffer: void expand()>()
+org.apache.http.nio.util.SimpleInputBuffer.consumeContent : return i0
+org.apache.http.nio.util.SimpleInputBuffer.consumeContent : i0 = i0 + i1
+org.apache.http.nio.util.SimpleInputBuffer.consumeContent : virtualinvoke r0.<org.apache.http.nio.util.SimpleInputBuffer: void setInputMode()>()
+org.apache.http.nio.util.SimpleInputBuffer.consumeContent : $r2 = r0.<org.apache.http.nio.util.SimpleInputBuffer: java.nio.ByteBuffer buffer>
+org.apache.http.nio.util.SimpleInputBuffer.consumeContent : i0 = 0
+org.apache.http.nio.util.SimpleInputBuffer.consumeContent : r0.<org.apache.http.nio.util.SimpleInputBuffer: boolean endOfStream> = 1
+org.apache.http.nio.util.SimpleInputBuffer.consumeContent : if i1 == -1 goto r0.<org.apache.http.nio.util.SimpleInputBuffer: boolean endOfStream> = 1
+org.apache.http.nio.util.SimpleInputBuffer.consumeContent : $r3 = r0.<org.apache.http.nio.util.SimpleInputBuffer: java.nio.ByteBuffer buffer>
+org.apache.http.nio.util.SimpleInputBuffer.consumeContent : if i1 != 0 goto i0 = i0 + i1
+org.apache.http.nio.util.ExpandableBuffer.expandCapacity : virtualinvoke r1.<java.nio.ByteBuffer: java.nio.Buffer flip()>()
+org.apache.http.nio.util.ExpandableBuffer.expandCapacity : $r2 = r0.<org.apache.http.nio.util.ExpandableBuffer: org.apache.http.nio.util.ByteBufferAllocator allocator>
+org.apache.http.nio.util.ExpandableBuffer.expandCapacity : $r5 = r0.<org.apache.http.nio.util.ExpandableBuffer: java.nio.ByteBuffer buffer>
+org.apache.http.nio.util.ExpandableBuffer.expandCapacity : r1 = r0.<org.apache.http.nio.util.ExpandableBuffer: java.nio.ByteBuffer buffer>
+org.apache.http.ReadableByteChannelMock.read : return -1
+org.apache.http.ReadableByteChannelMock.read : return i0
+org.apache.http.ReadableByteChannelMock.read : specialinvoke r0.<org.apache.http.ReadableByteChannelMock: void prepareChunk()>()
+org.apache.http.ReadableByteChannelMock.read : $z0 = r0.<org.apache.http.ReadableByteChannelMock: boolean closed>
+org.apache.http.ReadableByteChannelMock.read : i0 = i0 + 1
+org.apache.http.ReadableByteChannelMock.read : $z1 = virtualinvoke r1.<java.nio.ByteBuffer: boolean hasRemaining()>()
+org.apache.http.ReadableByteChannelMock.read : i0 = 0
+org.apache.http.ReadableByteChannelMock.read : $r3 = r0.<org.apache.http.ReadableByteChannelMock: java.nio.ByteBuffer currentChunk>
+org.apache.http.nio.util.ExpandableBuffer.setOutputMode : $i0 = r0.<org.apache.http.nio.util.ExpandableBuffer: int mode>
+org.apache.http.nio.util.ExpandableBuffer.setOutputMode : r0.<org.apache.http.nio.util.ExpandableBuffer: int mode> = 1
+org.apache.http.nio.util.ExpandableBuffer.setOutputMode : $r1 = r0.<org.apache.http.nio.util.ExpandableBuffer: java.nio.ByteBuffer buffer>

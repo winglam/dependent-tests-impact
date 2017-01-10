@@ -1,0 +1,119 @@
+org.apache.http.nio.util.ExpandableBuffer.length : $r1 = r0.<org.apache.http.nio.util.ExpandableBuffer: java.nio.ByteBuffer buffer>
+org.apache.http.nio.util.ExpandableBuffer.length : virtualinvoke r0.<org.apache.http.nio.util.ExpandableBuffer: void setOutputMode()>()
+org.apache.http.ReadableByteChannelMock.prepareChunk : r0.<org.apache.http.ReadableByteChannelMock: boolean closed> = 1
+org.apache.http.ReadableByteChannelMock.prepareChunk : $r7 = r0.<org.apache.http.ReadableByteChannelMock: java.lang.String charset>
+org.apache.http.ReadableByteChannelMock.prepareChunk : $i3 = r0.<org.apache.http.ReadableByteChannelMock: int chunkCount>
+org.apache.http.ReadableByteChannelMock.prepareChunk : $r2 = r0.<org.apache.http.ReadableByteChannelMock: java.nio.ByteBuffer currentChunk>
+org.apache.http.ReadableByteChannelMock.prepareChunk : $i0 = r0.<org.apache.http.ReadableByteChannelMock: int chunkCount>
+org.apache.http.ReadableByteChannelMock.prepareChunk : goto [?= return]
+org.apache.http.ReadableByteChannelMock.prepareChunk : $r5 = r0.<org.apache.http.ReadableByteChannelMock: java.lang.String[] chunks>
+org.apache.http.nio.util.ExpandableBuffer.hasData : $r1 = r0.<org.apache.http.nio.util.ExpandableBuffer: java.nio.ByteBuffer buffer>
+org.apache.http.nio.util.ExpandableBuffer.hasData : virtualinvoke r0.<org.apache.http.nio.util.ExpandableBuffer: void setOutputMode()>()
+org.apache.http.nio.util.ExpandableBuffer.setInputMode : $r2 = r0.<org.apache.http.nio.util.ExpandableBuffer: java.nio.ByteBuffer buffer>
+org.apache.http.nio.util.ExpandableBuffer.setInputMode : r0.<org.apache.http.nio.util.ExpandableBuffer: int mode> = 0
+org.apache.http.nio.util.ExpandableBuffer.setInputMode : $i0 = r0.<org.apache.http.nio.util.ExpandableBuffer: int mode>
+org.apache.http.nio.util.ExpandableBuffer.setInputMode : $r4 = r0.<org.apache.http.nio.util.ExpandableBuffer: java.nio.ByteBuffer buffer>
+org.apache.http.nio.util.ExpandableBuffer.setInputMode : $r1 = r0.<org.apache.http.nio.util.ExpandableBuffer: java.nio.ByteBuffer buffer>
+org.apache.http.nio.util.HeapByteBufferAllocator.allocate : $r1 = staticinvoke <java.nio.ByteBuffer: java.nio.ByteBuffer allocate(int)>(i0)
+org.apache.http.impl.nio.reactor.SessionInputBufferImpl.readLine : i12 = i12 + -1
+org.apache.http.impl.nio.reactor.SessionInputBufferImpl.readLine : $r15 = r0.<org.apache.http.impl.nio.reactor.SessionInputBufferImpl: java.nio.charset.CharsetDecoder chardecoder>
+org.apache.http.impl.nio.reactor.SessionInputBufferImpl.readLine : $r11 = r0.<org.apache.http.impl.nio.reactor.SessionInputBufferImpl: java.nio.ByteBuffer buffer>
+org.apache.http.impl.nio.reactor.SessionInputBufferImpl.readLine : $r9 = r0.<org.apache.http.impl.nio.reactor.SessionInputBufferImpl: java.nio.ByteBuffer buffer>
+org.apache.http.impl.nio.reactor.SessionInputBufferImpl.readLine : $r13 = r0.<org.apache.http.impl.nio.reactor.SessionInputBufferImpl: java.nio.charset.CharsetDecoder chardecoder>
+org.apache.http.impl.nio.reactor.SessionInputBufferImpl.readLine : virtualinvoke r1.<org.apache.http.util.CharArrayBuffer: void setLength(int)>(i17)
+org.apache.http.impl.nio.reactor.SessionInputBufferImpl.readLine : virtualinvoke r1.<org.apache.http.util.CharArrayBuffer: void ensureCapacity(int)>(i7)
+org.apache.http.impl.nio.reactor.SessionInputBufferImpl.readLine : $i15 = i12 - 1
+org.apache.http.impl.nio.reactor.SessionInputBufferImpl.readLine : $r5 = r0.<org.apache.http.impl.nio.reactor.SessionInputBufferImpl: java.nio.ByteBuffer buffer>
+org.apache.http.impl.nio.reactor.SessionInputBufferImpl.readLine : z1 = 1
+org.apache.http.impl.nio.reactor.SessionInputBufferImpl.readLine : $r33 = r0.<org.apache.http.impl.nio.reactor.SessionInputBufferImpl: java.nio.CharBuffer charbuffer>
+org.apache.http.impl.nio.reactor.SessionInputBufferImpl.readLine : $i13 = i12 - 1
+org.apache.http.impl.nio.reactor.SessionInputBufferImpl.readLine : z1 = 0
+org.apache.http.impl.nio.reactor.SessionInputBufferImpl.readLine : $r28 = r0.<org.apache.http.impl.nio.reactor.SessionInputBufferImpl: java.nio.charset.CharsetDecoder chardecoder>
+org.apache.http.impl.nio.reactor.SessionInputBufferImpl.readLine : goto [?= (branch)]
+org.apache.http.impl.nio.reactor.SessionInputBufferImpl.readLine : i0 = -1
+org.apache.http.impl.nio.reactor.SessionInputBufferImpl.readLine : $r34 = r0.<org.apache.http.impl.nio.reactor.SessionInputBufferImpl: java.nio.CharBuffer charbuffer>
+org.apache.http.impl.nio.reactor.SessionInputBufferImpl.readLine : $r8 = r0.<org.apache.http.impl.nio.reactor.SessionInputBufferImpl: java.nio.ByteBuffer buffer>
+org.apache.http.impl.nio.reactor.SessionInputBufferImpl.readLine : $z4 = virtualinvoke r2.<java.nio.charset.CoderResult: boolean isOverflow()>()
+org.apache.http.impl.nio.reactor.SessionInputBufferImpl.readLine : i17 = i12 + -1
+org.apache.http.impl.nio.reactor.SessionInputBufferImpl.readLine : goto [?= $r26 = r0.<org.apache.http.impl.nio.reactor.SessionInputBufferImpl: java.nio.ByteBuffer buffer>]
+org.apache.http.impl.nio.reactor.SessionInputBufferImpl.readLine : return 1
+org.apache.http.impl.nio.reactor.SessionInputBufferImpl.readLine : $r31 = r0.<org.apache.http.impl.nio.reactor.SessionInputBufferImpl: java.nio.CharBuffer charbuffer>
+org.apache.http.impl.nio.reactor.SessionInputBufferImpl.readLine : i0 = i1 + 1
+org.apache.http.impl.nio.reactor.SessionInputBufferImpl.readLine : virtualinvoke r1.<org.apache.http.util.CharArrayBuffer: void setLength(int)>(i12)
+org.apache.http.impl.nio.reactor.SessionInputBufferImpl.readLine : if i12 <= 0 goto return 1
+org.apache.http.impl.nio.reactor.SessionInputBufferImpl.readLine : $z3 = virtualinvoke r2.<java.nio.charset.CoderResult: boolean isError()>()
+org.apache.http.impl.nio.reactor.SessionInputBufferImpl.readLine : if b2 != 10 goto i1 = i1 + 1
+org.apache.http.impl.nio.reactor.SessionInputBufferImpl.readLine : $z5 = virtualinvoke r2.<java.nio.charset.CoderResult: boolean isUnderflow()>()
+org.apache.http.impl.nio.reactor.SessionInputBufferImpl.readLine : $r3 = r0.<org.apache.http.impl.nio.reactor.SessionInputBufferImpl: java.nio.ByteBuffer buffer>
+org.apache.http.impl.nio.reactor.SessionInputBufferImpl.readLine : $r26 = r0.<org.apache.http.impl.nio.reactor.SessionInputBufferImpl: java.nio.ByteBuffer buffer>
+org.apache.http.impl.nio.reactor.SessionInputBufferImpl.readLine : i12 = virtualinvoke r1.<org.apache.http.util.CharArrayBuffer: int length()>()
+org.apache.http.impl.nio.reactor.SessionInputBufferImpl.readLine : virtualinvoke r0.<org.apache.http.impl.nio.reactor.SessionInputBufferImpl: void setOutputMode()>()
+org.apache.http.impl.nio.reactor.SessionInputBufferImpl.readLine : if z1 != 0 goto $r8 = r0.<org.apache.http.impl.nio.reactor.SessionInputBufferImpl: java.nio.ByteBuffer buffer>
+org.apache.http.impl.nio.reactor.SessionInputBufferImpl.read : $r2 = r0.<org.apache.http.impl.nio.reactor.SessionInputBufferImpl: java.nio.ByteBuffer buffer>
+org.apache.http.impl.nio.reactor.SessionInputBufferImpl.read : $i4 = virtualinvoke r1.<java.nio.ByteBuffer: int remaining()>()
+org.apache.http.impl.nio.reactor.SessionInputBufferImpl.read : if r1 != null goto virtualinvoke r0.<org.apache.http.impl.nio.reactor.SessionInputBufferImpl: void setOutputMode()>()
+org.apache.http.impl.nio.reactor.SessionInputBufferImpl.read : i3 = 0
+org.apache.http.impl.nio.reactor.SessionInputBufferImpl.read : $r1 = r0.<org.apache.http.impl.nio.reactor.SessionInputBufferImpl: java.nio.ByteBuffer buffer>
+org.apache.http.impl.nio.reactor.SessionInputBufferImpl.read : $r3 = r0.<org.apache.http.impl.nio.reactor.SessionInputBufferImpl: java.nio.ByteBuffer buffer>
+org.apache.http.impl.nio.reactor.SessionInputBufferImpl.read : virtualinvoke r0.<org.apache.http.impl.nio.reactor.SessionInputBufferImpl: void setOutputMode()>()
+org.apache.http.impl.nio.reactor.SessionInputBufferImpl.read : return i2
+org.apache.http.impl.nio.codecs.ChunkDecoder.read : if i2 <= 0 goto $r9 = r0.<org.apache.http.impl.nio.codecs.ChunkDecoder: org.apache.http.nio.reactor.SessionInputBuffer buffer>
+org.apache.http.impl.nio.codecs.ChunkDecoder.read : r0.<org.apache.http.impl.nio.codecs.ChunkDecoder: int chunkSize> = -1
+org.apache.http.impl.nio.codecs.ChunkDecoder.read : $i4 = r0.<org.apache.http.impl.nio.codecs.ChunkDecoder: int state>
+org.apache.http.impl.nio.codecs.ChunkDecoder.read : if r1 != null goto $i3 = r0.<org.apache.http.impl.nio.codecs.ChunkDecoder: int state>
+org.apache.http.impl.nio.codecs.ChunkDecoder.read : $i9 = r0.<org.apache.http.impl.nio.codecs.ChunkDecoder: int chunkSize>
+org.apache.http.impl.nio.codecs.ChunkDecoder.read : goto [?= staticinvoke <edu.washington.cs.dt.impact.util.Tracer: void trace(java.lang.String,java.lang.String)>("$i4 = r0.<org.apache.http.impl.nio.codecs.ChunkDecoder: int state>", "org.apache.http.impl.nio.codecs.ChunkDecoder.read")]
+org.apache.http.impl.nio.codecs.ChunkDecoder.read : i0 = i0 + i2
+org.apache.http.impl.nio.codecs.ChunkDecoder.read : $i3 = r0.<org.apache.http.impl.nio.codecs.ChunkDecoder: int state>
+org.apache.http.impl.nio.codecs.ChunkDecoder.read : $i8 = r0.<org.apache.http.impl.nio.codecs.ChunkDecoder: int chunkSize>
+org.apache.http.impl.nio.codecs.ChunkDecoder.read : $i7 = r0.<org.apache.http.impl.nio.codecs.ChunkDecoder: int state>
+org.apache.http.impl.nio.codecs.ChunkDecoder.read : specialinvoke r0.<org.apache.http.impl.nio.codecs.ChunkDecoder: void readChunkHead()>()
+org.apache.http.impl.nio.codecs.ChunkDecoder.read : $r4 = r0.<org.apache.http.impl.nio.codecs.ChunkDecoder: org.apache.http.nio.reactor.SessionInputBuffer buffer>
+org.apache.http.impl.nio.codecs.ChunkDecoder.read : goto [?= (branch)]
+org.apache.http.impl.nio.codecs.ChunkDecoder.read : r0.<org.apache.http.impl.nio.codecs.ChunkDecoder: int pos> = 0
+org.apache.http.impl.nio.codecs.ChunkDecoder.read : if i1 != -1 goto $i7 = r0.<org.apache.http.impl.nio.codecs.ChunkDecoder: int state>
+org.apache.http.impl.nio.codecs.ChunkDecoder.read : $r6 = r0.<org.apache.http.impl.nio.codecs.ChunkDecoder: org.apache.http.impl.io.HttpTransportMetricsImpl metrics>
+org.apache.http.impl.nio.codecs.ChunkDecoder.read : $r3 = r0.<org.apache.http.impl.nio.codecs.ChunkDecoder: org.apache.http.nio.reactor.SessionInputBuffer buffer>
+org.apache.http.impl.nio.codecs.ChunkDecoder.read : $r7 = r0.<org.apache.http.impl.nio.codecs.ChunkDecoder: org.apache.http.nio.reactor.SessionInputBuffer buffer>
+org.apache.http.impl.nio.codecs.ChunkDecoder.read : $i11 = r0.<org.apache.http.impl.nio.codecs.ChunkDecoder: int chunkSize>
+org.apache.http.impl.nio.codecs.ChunkDecoder.read : $i18 = r0.<org.apache.http.impl.nio.codecs.ChunkDecoder: int pos>
+org.apache.http.impl.nio.codecs.ChunkDecoder.read : $i14 = r0.<org.apache.http.impl.nio.codecs.ChunkDecoder: int pos>
+org.apache.http.impl.nio.codecs.ChunkDecoder.read : i0 = 0
+org.apache.http.impl.nio.codecs.ChunkDecoder.read : $i10 = r0.<org.apache.http.impl.nio.codecs.ChunkDecoder: int chunkSize>
+org.apache.http.impl.nio.codecs.ChunkDecoder.read : r0.<org.apache.http.impl.nio.codecs.ChunkDecoder: boolean endOfChunk> = 1
+org.apache.http.impl.nio.codecs.ChunkDecoder.read : r0.<org.apache.http.impl.nio.codecs.ChunkDecoder: boolean endOfStream> = 1
+org.apache.http.impl.nio.codecs.ChunkDecoder.read : if i1 <= 0 goto (branch)
+org.apache.http.impl.nio.reactor.SessionInputBufferImpl.fill : return i0
+org.apache.http.impl.nio.reactor.SessionInputBufferImpl.fill : $r4 = r0.<org.apache.http.impl.nio.reactor.SessionInputBufferImpl: java.nio.ByteBuffer buffer>
+org.apache.http.impl.nio.reactor.SessionInputBufferImpl.fill : $r3 = r0.<org.apache.http.impl.nio.reactor.SessionInputBufferImpl: java.nio.ByteBuffer buffer>
+org.apache.http.impl.nio.reactor.SessionInputBufferImpl.fill : virtualinvoke r0.<org.apache.http.impl.nio.reactor.SessionInputBufferImpl: void setInputMode()>()
+org.apache.http.impl.nio.reactor.SessionInputBufferImpl.fill : if r1 != null goto virtualinvoke r0.<org.apache.http.impl.nio.reactor.SessionInputBufferImpl: void setInputMode()>()
+org.apache.http.impl.nio.codecs.ChunkDecoder.readChunkHead : $r3 = r0.<org.apache.http.impl.nio.codecs.ChunkDecoder: org.apache.http.nio.reactor.SessionInputBuffer buffer>
+org.apache.http.impl.nio.codecs.ChunkDecoder.readChunkHead : if i3 >= 0 goto $r12 = r0.<org.apache.http.impl.nio.codecs.ChunkDecoder: org.apache.http.util.CharArrayBuffer lineBuf>
+org.apache.http.impl.nio.codecs.ChunkDecoder.readChunkHead : $i4 = staticinvoke <java.lang.Integer: int parseInt(java.lang.String,int)>(r13, 16)
+org.apache.http.impl.nio.codecs.ChunkDecoder.readChunkHead : $r1 = r0.<org.apache.http.impl.nio.codecs.ChunkDecoder: org.apache.http.nio.reactor.SessionInputBuffer buffer>
+org.apache.http.impl.nio.codecs.ChunkDecoder.readChunkHead : $z0 = r0.<org.apache.http.impl.nio.codecs.ChunkDecoder: boolean endOfChunk>
+org.apache.http.impl.nio.codecs.ChunkDecoder.readChunkHead : goto [?= r0.<org.apache.http.impl.nio.codecs.ChunkDecoder: int pos> = 0]
+org.apache.http.impl.nio.codecs.ChunkDecoder.readChunkHead : $r7 = r0.<org.apache.http.impl.nio.codecs.ChunkDecoder: org.apache.http.util.CharArrayBuffer lineBuf>
+org.apache.http.impl.nio.codecs.ChunkDecoder.readChunkHead : $r5 = r0.<org.apache.http.impl.nio.codecs.ChunkDecoder: org.apache.http.util.CharArrayBuffer lineBuf>
+org.apache.http.impl.nio.codecs.ChunkDecoder.readChunkHead : $r2 = r0.<org.apache.http.impl.nio.codecs.ChunkDecoder: org.apache.http.nio.reactor.SessionInputBuffer buffer>
+org.apache.http.impl.nio.codecs.ChunkDecoder.readChunkHead : if i0 != 13 goto $r4 = new org.apache.http.MalformedChunkCodingException
+org.apache.http.impl.nio.codecs.ChunkDecoder.readChunkHead : $r4 = new org.apache.http.MalformedChunkCodingException
+org.apache.http.impl.nio.codecs.ChunkDecoder.readChunkHead : $r11 = r0.<org.apache.http.impl.nio.codecs.ChunkDecoder: org.apache.http.util.CharArrayBuffer lineBuf>
+org.apache.http.impl.nio.codecs.ChunkDecoder.readChunkHead : $r10 = r0.<org.apache.http.impl.nio.codecs.ChunkDecoder: org.apache.http.util.CharArrayBuffer lineBuf>
+org.apache.http.impl.nio.codecs.ChunkDecoder.readChunkHead : $r12 = r0.<org.apache.http.impl.nio.codecs.ChunkDecoder: org.apache.http.util.CharArrayBuffer lineBuf>
+org.apache.http.impl.nio.codecs.ChunkDecoder.readChunkHead : r0.<org.apache.http.impl.nio.codecs.ChunkDecoder: boolean endOfChunk> = 0
+org.apache.http.impl.nio.codecs.ChunkDecoder.readChunkHead : $r6 = new org.apache.http.util.CharArrayBuffer
+org.apache.http.impl.nio.codecs.ChunkDecoder.readChunkHead : $r8 = r0.<org.apache.http.impl.nio.codecs.ChunkDecoder: org.apache.http.nio.reactor.SessionInputBuffer buffer>
+org.apache.http.impl.nio.codecs.ChunkDecoder.readChunkHead : r0.<org.apache.http.impl.nio.codecs.ChunkDecoder: int pos> = 0
+org.apache.http.ReadableByteChannelMock.read : return -1
+org.apache.http.ReadableByteChannelMock.read : return i0
+org.apache.http.ReadableByteChannelMock.read : specialinvoke r0.<org.apache.http.ReadableByteChannelMock: void prepareChunk()>()
+org.apache.http.ReadableByteChannelMock.read : $z0 = r0.<org.apache.http.ReadableByteChannelMock: boolean closed>
+org.apache.http.ReadableByteChannelMock.read : i0 = i0 + 1
+org.apache.http.ReadableByteChannelMock.read : $z1 = virtualinvoke r1.<java.nio.ByteBuffer: boolean hasRemaining()>()
+org.apache.http.ReadableByteChannelMock.read : i0 = 0
+org.apache.http.ReadableByteChannelMock.read : $r3 = r0.<org.apache.http.ReadableByteChannelMock: java.nio.ByteBuffer currentChunk>
+org.apache.http.nio.util.ExpandableBuffer.setOutputMode : $i0 = r0.<org.apache.http.nio.util.ExpandableBuffer: int mode>
+org.apache.http.nio.util.ExpandableBuffer.setOutputMode : r0.<org.apache.http.nio.util.ExpandableBuffer: int mode> = 1
+org.apache.http.nio.util.ExpandableBuffer.setOutputMode : $r1 = r0.<org.apache.http.nio.util.ExpandableBuffer: java.nio.ByteBuffer buffer>

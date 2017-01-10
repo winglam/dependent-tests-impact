@@ -1,0 +1,27 @@
+org.apache.http.impl.nio.codecs.TestLengthDelimitedEncoder.deleteWithCheck : $z0 = virtualinvoke r1.<java.io.File: boolean delete()>()
+org.apache.http.impl.nio.codecs.LengthDelimitedEncoder.write : if i3 <= 0 goto $l11 = r0.<org.apache.http.impl.nio.codecs.LengthDelimitedEncoder: long len>
+org.apache.http.impl.nio.codecs.LengthDelimitedEncoder.write : $l4 = r0.<org.apache.http.impl.nio.codecs.LengthDelimitedEncoder: long contentLength>
+org.apache.http.impl.nio.codecs.LengthDelimitedEncoder.write : if r1 != null goto virtualinvoke r0.<org.apache.http.impl.nio.codecs.LengthDelimitedEncoder: void assertNotCompleted()>()
+org.apache.http.impl.nio.codecs.LengthDelimitedEncoder.write : r0.<org.apache.http.impl.nio.codecs.LengthDelimitedEncoder: boolean completed> = 1
+org.apache.http.impl.nio.codecs.LengthDelimitedEncoder.write : $i7 = virtualinvoke r1.<java.nio.ByteBuffer: int remaining()>()
+org.apache.http.impl.nio.codecs.LengthDelimitedEncoder.write : virtualinvoke r0.<org.apache.http.impl.nio.codecs.LengthDelimitedEncoder: void assertNotCompleted()>()
+org.apache.http.impl.nio.codecs.LengthDelimitedEncoder.write : $r6 = r0.<org.apache.http.impl.nio.codecs.LengthDelimitedEncoder: org.apache.http.impl.io.HttpTransportMetricsImpl metrics>
+org.apache.http.impl.nio.codecs.LengthDelimitedEncoder.write : $r5 = r0.<org.apache.http.impl.nio.codecs.LengthDelimitedEncoder: java.nio.channels.WritableByteChannel channel>
+org.apache.http.impl.nio.codecs.LengthDelimitedEncoder.write : return i3
+org.apache.http.impl.nio.codecs.LengthDelimitedEncoder.write : $l14 = r0.<org.apache.http.impl.nio.codecs.LengthDelimitedEncoder: long len>
+org.apache.http.impl.nio.codecs.LengthDelimitedEncoder.write : $l11 = r0.<org.apache.http.impl.nio.codecs.LengthDelimitedEncoder: long len>
+org.apache.http.impl.nio.codecs.TestLengthDelimitedEncoder.newChannel : $r1 = staticinvoke <java.nio.channels.Channels: java.nio.channels.WritableByteChannel newChannel(java.io.OutputStream)>(r0)
+org.apache.http.nio.util.HeapByteBufferAllocator.allocate : $r1 = staticinvoke <java.nio.ByteBuffer: java.nio.ByteBuffer allocate(int)>(i0)
+org.apache.http.impl.nio.codecs.AbstractContentEncoder.isCompleted : $z0 = r0.<org.apache.http.impl.nio.codecs.AbstractContentEncoder: boolean completed>
+org.apache.http.impl.nio.codecs.LengthDelimitedEncoder.transfer : $l4 = r0.<org.apache.http.impl.nio.codecs.LengthDelimitedEncoder: long contentLength>
+org.apache.http.impl.nio.codecs.LengthDelimitedEncoder.transfer : $l12 = r0.<org.apache.http.impl.nio.codecs.LengthDelimitedEncoder: long len>
+org.apache.http.impl.nio.codecs.LengthDelimitedEncoder.transfer : l1 = (long) i2
+org.apache.http.impl.nio.codecs.LengthDelimitedEncoder.transfer : $b9 = l3 cmp 0L
+org.apache.http.impl.nio.codecs.LengthDelimitedEncoder.transfer : if r1 != null goto virtualinvoke r0.<org.apache.http.impl.nio.codecs.LengthDelimitedEncoder: void assertNotCompleted()>()
+org.apache.http.impl.nio.codecs.LengthDelimitedEncoder.transfer : return l3
+org.apache.http.impl.nio.codecs.LengthDelimitedEncoder.transfer : $l7 = (long) i2
+org.apache.http.impl.nio.codecs.LengthDelimitedEncoder.transfer : virtualinvoke r0.<org.apache.http.impl.nio.codecs.LengthDelimitedEncoder: void assertNotCompleted()>()
+org.apache.http.impl.nio.codecs.LengthDelimitedEncoder.transfer : $l10 = r0.<org.apache.http.impl.nio.codecs.LengthDelimitedEncoder: long len>
+org.apache.http.impl.nio.codecs.LengthDelimitedEncoder.transfer : $r2 = r0.<org.apache.http.impl.nio.codecs.LengthDelimitedEncoder: java.nio.channels.WritableByteChannel channel>
+org.apache.http.impl.nio.codecs.TestLengthDelimitedEncoder.wrap : $r1 = staticinvoke <org.apache.http.util.EncodingUtils: byte[] getAsciiBytes(java.lang.String)>(r0)
+org.apache.http.impl.nio.codecs.AbstractContentEncoder.assertNotCompleted : $z0 = r0.<org.apache.http.impl.nio.codecs.AbstractContentEncoder: boolean completed>

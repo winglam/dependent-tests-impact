@@ -1,0 +1,6 @@
+org.apache.http.nio.pool.AbstractNIOConnPool.release : if r1 != null goto $z1 = r0.<org.apache.http.nio.pool.AbstractNIOConnPool: boolean isShutDown>
+org.apache.http.nio.pool.AbstractNIOConnPool.release : $r8 = r0.<org.apache.http.nio.pool.AbstractNIOConnPool: java.util.concurrent.locks.Lock lock>
+org.apache.http.nio.pool.AbstractNIOConnPool.release : $z1 = r0.<org.apache.http.nio.pool.AbstractNIOConnPool: boolean isShutDown>
+org.apache.http.nio.pool.AbstractNIOConnPool.release : goto [?= return]
+org.apache.http.nio.pool.AbstractNIOConnPool.release : $r5 = r0.<org.apache.http.nio.pool.AbstractNIOConnPool: java.util.Set leased>
+org.apache.http.nio.pool.AbstractNIOConnPool.release : $r4 = r0.<org.apache.http.nio.pool.AbstractNIOConnPool: java.util.concurrent.locks.Lock lock>

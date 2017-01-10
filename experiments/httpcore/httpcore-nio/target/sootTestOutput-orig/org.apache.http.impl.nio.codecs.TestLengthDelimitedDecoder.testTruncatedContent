@@ -1,0 +1,42 @@
+org.apache.http.ReadableByteChannelMock.prepareChunk : r0.<org.apache.http.ReadableByteChannelMock: boolean closed> = 1
+org.apache.http.ReadableByteChannelMock.prepareChunk : $r7 = r0.<org.apache.http.ReadableByteChannelMock: java.lang.String charset>
+org.apache.http.ReadableByteChannelMock.prepareChunk : $i3 = r0.<org.apache.http.ReadableByteChannelMock: int chunkCount>
+org.apache.http.ReadableByteChannelMock.prepareChunk : $r2 = r0.<org.apache.http.ReadableByteChannelMock: java.nio.ByteBuffer currentChunk>
+org.apache.http.ReadableByteChannelMock.prepareChunk : $i0 = r0.<org.apache.http.ReadableByteChannelMock: int chunkCount>
+org.apache.http.ReadableByteChannelMock.prepareChunk : goto [?= return]
+org.apache.http.ReadableByteChannelMock.prepareChunk : $r5 = r0.<org.apache.http.ReadableByteChannelMock: java.lang.String[] chunks>
+org.apache.http.nio.util.ExpandableBuffer.hasData : $r1 = r0.<org.apache.http.nio.util.ExpandableBuffer: java.nio.ByteBuffer buffer>
+org.apache.http.nio.util.ExpandableBuffer.hasData : virtualinvoke r0.<org.apache.http.nio.util.ExpandableBuffer: void setOutputMode()>()
+org.apache.http.nio.util.HeapByteBufferAllocator.allocate : $r1 = staticinvoke <java.nio.ByteBuffer: java.nio.ByteBuffer allocate(int)>(i0)
+org.apache.http.impl.nio.codecs.LengthDelimitedDecoder.read : r0.<org.apache.http.impl.nio.codecs.LengthDelimitedDecoder: boolean completed> = 1
+org.apache.http.impl.nio.codecs.LengthDelimitedDecoder.read : $z2 = r0.<org.apache.http.impl.nio.codecs.LengthDelimitedDecoder: boolean completed>
+org.apache.http.impl.nio.codecs.LengthDelimitedDecoder.read : $r7 = r0.<org.apache.http.impl.nio.codecs.LengthDelimitedDecoder: java.nio.channels.ReadableByteChannel channel>
+org.apache.http.impl.nio.codecs.LengthDelimitedDecoder.read : if i2 != -1 goto $l19 = r0.<org.apache.http.impl.nio.codecs.LengthDelimitedDecoder: long len>
+org.apache.http.impl.nio.codecs.LengthDelimitedDecoder.read : $i9 = virtualinvoke r1.<java.nio.ByteBuffer: int remaining()>()
+org.apache.http.impl.nio.codecs.LengthDelimitedDecoder.read : $r3 = r0.<org.apache.http.impl.nio.codecs.LengthDelimitedDecoder: org.apache.http.nio.reactor.SessionInputBuffer buffer>
+org.apache.http.impl.nio.codecs.LengthDelimitedDecoder.read : if i2 <= 0 goto (branch)
+org.apache.http.impl.nio.codecs.LengthDelimitedDecoder.read : virtualinvoke r1.<java.nio.ByteBuffer: java.nio.Buffer limit(int)>(i3)
+org.apache.http.impl.nio.codecs.LengthDelimitedDecoder.read : $z0 = r0.<org.apache.http.impl.nio.codecs.LengthDelimitedDecoder: boolean completed>
+org.apache.http.impl.nio.codecs.LengthDelimitedDecoder.read : $r11 = new org.apache.http.ConnectionClosedException
+org.apache.http.impl.nio.codecs.LengthDelimitedDecoder.read : $l14 = r0.<org.apache.http.impl.nio.codecs.LengthDelimitedDecoder: long len>
+org.apache.http.impl.nio.codecs.LengthDelimitedDecoder.read : if r1 != null goto $z0 = r0.<org.apache.http.impl.nio.codecs.LengthDelimitedDecoder: boolean completed>
+org.apache.http.impl.nio.codecs.LengthDelimitedDecoder.read : $l4 = r0.<org.apache.http.impl.nio.codecs.LengthDelimitedDecoder: long contentLength>
+org.apache.http.impl.nio.codecs.LengthDelimitedDecoder.read : $l22 = r0.<org.apache.http.impl.nio.codecs.LengthDelimitedDecoder: long len>
+org.apache.http.impl.nio.codecs.LengthDelimitedDecoder.read : $r10 = r0.<org.apache.http.impl.nio.codecs.LengthDelimitedDecoder: org.apache.http.impl.io.HttpTransportMetricsImpl metrics>
+org.apache.http.impl.nio.codecs.LengthDelimitedDecoder.read : $l19 = r0.<org.apache.http.impl.nio.codecs.LengthDelimitedDecoder: long len>
+org.apache.http.impl.nio.codecs.LengthDelimitedDecoder.read : $i11 = virtualinvoke r1.<java.nio.ByteBuffer: int remaining()>()
+org.apache.http.impl.nio.codecs.LengthDelimitedDecoder.read : virtualinvoke r1.<java.nio.ByteBuffer: java.nio.Buffer limit(int)>(i10)
+org.apache.http.impl.nio.codecs.LengthDelimitedDecoder.read : goto [?= (branch)]
+org.apache.http.impl.nio.codecs.LengthDelimitedDecoder.read : return i2
+org.apache.http.impl.nio.codecs.LengthDelimitedDecoder.read : i10 = virtualinvoke r1.<java.nio.ByteBuffer: int limit()>()
+org.apache.http.ReadableByteChannelMock.read : return -1
+org.apache.http.ReadableByteChannelMock.read : return i0
+org.apache.http.ReadableByteChannelMock.read : specialinvoke r0.<org.apache.http.ReadableByteChannelMock: void prepareChunk()>()
+org.apache.http.ReadableByteChannelMock.read : $z0 = r0.<org.apache.http.ReadableByteChannelMock: boolean closed>
+org.apache.http.ReadableByteChannelMock.read : i0 = i0 + 1
+org.apache.http.ReadableByteChannelMock.read : $z1 = virtualinvoke r1.<java.nio.ByteBuffer: boolean hasRemaining()>()
+org.apache.http.ReadableByteChannelMock.read : i0 = 0
+org.apache.http.ReadableByteChannelMock.read : $r3 = r0.<org.apache.http.ReadableByteChannelMock: java.nio.ByteBuffer currentChunk>
+org.apache.http.nio.util.ExpandableBuffer.setOutputMode : $i0 = r0.<org.apache.http.nio.util.ExpandableBuffer: int mode>
+org.apache.http.nio.util.ExpandableBuffer.setOutputMode : r0.<org.apache.http.nio.util.ExpandableBuffer: int mode> = 1
+org.apache.http.nio.util.ExpandableBuffer.setOutputMode : $r1 = r0.<org.apache.http.nio.util.ExpandableBuffer: java.nio.ByteBuffer buffer>

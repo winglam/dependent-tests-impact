@@ -1,0 +1,59 @@
+org.apache.http.nio.util.ExpandableBuffer.setInputMode : $i0 = r0.<org.apache.http.nio.util.ExpandableBuffer: int mode>
+org.apache.http.nio.util.HeapByteBufferAllocator.allocate : $r1 = staticinvoke <java.nio.ByteBuffer: java.nio.ByteBuffer allocate(int)>(i0)
+org.apache.http.impl.nio.reactor.TestSessionInOutBuffers.constructString : i0 = 0
+org.apache.http.impl.nio.reactor.TestSessionInOutBuffers.constructString : $r4 = virtualinvoke r2.<java.lang.StringBuilder: java.lang.String toString()>()
+org.apache.http.impl.nio.reactor.TestSessionInOutBuffers.constructString : $r1 = new java.lang.StringBuilder
+org.apache.http.impl.nio.reactor.TestSessionInOutBuffers.constructString : if r0 == null goto $r4 = virtualinvoke r2.<java.lang.StringBuilder: java.lang.String toString()>()
+org.apache.http.impl.nio.reactor.TestSessionInOutBuffers.constructString : $i2 = r0[i0]
+org.apache.http.impl.nio.reactor.SessionInputBufferImpl.readLine : if z0 == 0 goto return 0
+org.apache.http.impl.nio.reactor.SessionInputBufferImpl.readLine : $r8 = r0.<org.apache.http.impl.nio.reactor.SessionInputBufferImpl: java.nio.ByteBuffer buffer>
+org.apache.http.impl.nio.reactor.SessionInputBufferImpl.readLine : virtualinvoke r2.<java.nio.charset.CoderResult: void throwException()>()
+org.apache.http.impl.nio.reactor.SessionInputBufferImpl.readLine : $r1 = new org.apache.http.util.CharArrayBuffer
+org.apache.http.impl.nio.reactor.SessionInputBufferImpl.readLine : $r15 = r0.<org.apache.http.impl.nio.reactor.SessionInputBufferImpl: java.nio.charset.CharsetDecoder chardecoder>
+org.apache.http.impl.nio.reactor.SessionInputBufferImpl.readLine : $r11 = r0.<org.apache.http.impl.nio.reactor.SessionInputBufferImpl: java.nio.ByteBuffer buffer>
+org.apache.http.impl.nio.reactor.SessionInputBufferImpl.readLine : $r9 = r0.<org.apache.http.impl.nio.reactor.SessionInputBufferImpl: java.nio.ByteBuffer buffer>
+org.apache.http.impl.nio.reactor.SessionInputBufferImpl.readLine : $r13 = r0.<org.apache.http.impl.nio.reactor.SessionInputBufferImpl: java.nio.charset.CharsetDecoder chardecoder>
+org.apache.http.impl.nio.reactor.SessionInputBufferImpl.readLine : z1 = virtualinvoke r0.<org.apache.http.impl.nio.reactor.SessionInputBufferImpl: boolean readLine(org.apache.http.util.CharArrayBuffer,boolean)>(r2, z0)
+org.apache.http.impl.nio.reactor.SessionInputBufferImpl.readLine : virtualinvoke r1.<org.apache.http.util.CharArrayBuffer: void ensureCapacity(int)>(i7)
+org.apache.http.impl.nio.reactor.SessionInputBufferImpl.readLine : $r7 = r0.<org.apache.http.impl.nio.reactor.SessionInputBufferImpl: java.nio.ByteBuffer buffer>
+org.apache.http.impl.nio.reactor.SessionInputBufferImpl.readLine : $z3 = virtualinvoke r2.<java.nio.charset.CoderResult: boolean isError()>()
+org.apache.http.impl.nio.reactor.SessionInputBufferImpl.readLine : if b2 != 10 goto i1 = i1 + 1
+org.apache.http.impl.nio.reactor.SessionInputBufferImpl.readLine : $r5 = r0.<org.apache.http.impl.nio.reactor.SessionInputBufferImpl: java.nio.ByteBuffer buffer>
+org.apache.http.impl.nio.reactor.SessionInputBufferImpl.readLine : z1 = 0
+org.apache.http.impl.nio.reactor.SessionInputBufferImpl.readLine : $r3 = r0.<org.apache.http.impl.nio.reactor.SessionInputBufferImpl: java.nio.ByteBuffer buffer>
+org.apache.http.impl.nio.reactor.SessionInputBufferImpl.readLine : virtualinvoke r0.<org.apache.http.impl.nio.reactor.SessionInputBufferImpl: void setOutputMode()>()
+org.apache.http.impl.nio.reactor.SessionInputBufferImpl.readLine : i0 = -1
+org.apache.http.impl.nio.reactor.SessionInputBufferImpl.readLine : if z1 != 0 goto $r8 = r0.<org.apache.http.impl.nio.reactor.SessionInputBufferImpl: java.nio.ByteBuffer buffer>
+org.apache.http.impl.nio.reactor.TestSessionInOutBuffers.newChannel : $r1 = new java.io.ByteArrayInputStream
+org.apache.http.impl.nio.reactor.SessionOutputBufferImpl.writeLine : if i0 <= 0 goto z6 = 1
+org.apache.http.impl.nio.reactor.SessionOutputBufferImpl.writeLine : virtualinvoke r2.<java.nio.charset.CoderResult: void throwException()>()
+org.apache.http.impl.nio.reactor.SessionOutputBufferImpl.writeLine : $r3 = r0.<org.apache.http.impl.nio.reactor.SessionOutputBufferImpl: java.nio.charset.CharsetEncoder charencoder>
+org.apache.http.impl.nio.reactor.SessionOutputBufferImpl.writeLine : virtualinvoke r0.<org.apache.http.impl.nio.reactor.SessionOutputBufferImpl: void setInputMode()>()
+org.apache.http.impl.nio.reactor.SessionOutputBufferImpl.writeLine : $z2 = virtualinvoke r2.<java.nio.charset.CoderResult: boolean isError()>()
+org.apache.http.impl.nio.reactor.SessionOutputBufferImpl.writeLine : virtualinvoke r2.<org.apache.http.util.CharArrayBuffer: void append(java.lang.String)>(r1)
+org.apache.http.impl.nio.reactor.SessionOutputBufferImpl.writeLine : i0 = virtualinvoke r1.<org.apache.http.util.CharArrayBuffer: int length()>()
+org.apache.http.impl.nio.reactor.SessionOutputBufferImpl.writeLine : $r9 = r0.<org.apache.http.impl.nio.reactor.SessionOutputBufferImpl: java.nio.CharBuffer charbuffer>
+org.apache.http.impl.nio.reactor.SessionOutputBufferImpl.writeLine : $r11 = r0.<org.apache.http.impl.nio.reactor.SessionOutputBufferImpl: java.nio.charset.CharsetEncoder charencoder>
+org.apache.http.impl.nio.reactor.SessionOutputBufferImpl.writeLine : i2 = i0
+org.apache.http.impl.nio.reactor.SessionOutputBufferImpl.writeLine : i1 = 0
+org.apache.http.impl.nio.reactor.SessionOutputBufferImpl.writeLine : $r6 = r0.<org.apache.http.impl.nio.reactor.SessionOutputBufferImpl: java.nio.CharBuffer charbuffer>
+org.apache.http.impl.nio.reactor.SessionOutputBufferImpl.writeLine : z0 = 1
+org.apache.http.impl.nio.reactor.SessionOutputBufferImpl.writeLine : z0 = 0
+org.apache.http.impl.nio.reactor.SessionOutputBufferImpl.writeLine : if r1 != null goto $i0 = virtualinvoke r1.<java.lang.String: int length()>()
+org.apache.http.impl.nio.reactor.SessionOutputBufferImpl.writeLine : $r3 = new org.apache.http.util.CharArrayBuffer
+org.apache.http.impl.nio.reactor.SessionOutputBufferImpl.writeLine : z1 = 1
+org.apache.http.impl.nio.reactor.SessionOutputBufferImpl.writeLine : if i0 > i2 goto $r6 = r0.<org.apache.http.impl.nio.reactor.SessionOutputBufferImpl: java.nio.CharBuffer charbuffer>
+org.apache.http.impl.nio.reactor.SessionOutputBufferImpl.writeLine : virtualinvoke r0.<org.apache.http.impl.nio.reactor.SessionOutputBufferImpl: void writeLine(org.apache.http.util.CharArrayBuffer)>(r2)
+org.apache.http.impl.nio.reactor.SessionOutputBufferImpl.writeLine : if z1 == 0 goto $r14 = r0.<org.apache.http.impl.nio.reactor.SessionOutputBufferImpl: java.nio.CharBuffer charbuffer>
+org.apache.http.impl.nio.reactor.SessionOutputBufferImpl.writeLine : $i3 = virtualinvoke r1.<org.apache.http.util.CharArrayBuffer: int length()>()
+org.apache.http.impl.nio.reactor.SessionOutputBufferImpl.writeLine : $r5 = r0.<org.apache.http.impl.nio.reactor.SessionOutputBufferImpl: java.nio.CharBuffer charbuffer>
+org.apache.http.impl.nio.reactor.SessionOutputBufferImpl.writeLine : $i0 = virtualinvoke r1.<java.lang.String: int length()>()
+org.apache.http.impl.nio.reactor.SessionOutputBufferImpl.writeLine : if r1 != null goto $i3 = virtualinvoke r1.<org.apache.http.util.CharArrayBuffer: int length()>()
+org.apache.http.impl.nio.reactor.SessionInputBufferImpl.fill : return i0
+org.apache.http.impl.nio.reactor.SessionInputBufferImpl.fill : $r4 = r0.<org.apache.http.impl.nio.reactor.SessionInputBufferImpl: java.nio.ByteBuffer buffer>
+org.apache.http.impl.nio.reactor.SessionInputBufferImpl.fill : $r3 = r0.<org.apache.http.impl.nio.reactor.SessionInputBufferImpl: java.nio.ByteBuffer buffer>
+org.apache.http.impl.nio.reactor.SessionInputBufferImpl.fill : virtualinvoke r0.<org.apache.http.impl.nio.reactor.SessionInputBufferImpl: void setInputMode()>()
+org.apache.http.impl.nio.reactor.SessionInputBufferImpl.fill : if r1 != null goto virtualinvoke r0.<org.apache.http.impl.nio.reactor.SessionInputBufferImpl: void setInputMode()>()
+org.apache.http.nio.util.ExpandableBuffer.setOutputMode : $i0 = r0.<org.apache.http.nio.util.ExpandableBuffer: int mode>
+org.apache.http.nio.util.ExpandableBuffer.setOutputMode : r0.<org.apache.http.nio.util.ExpandableBuffer: int mode> = 1
+org.apache.http.nio.util.ExpandableBuffer.setOutputMode : $r1 = r0.<org.apache.http.nio.util.ExpandableBuffer: java.nio.ByteBuffer buffer>

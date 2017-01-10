@@ -1,0 +1,21 @@
+org.apache.http.nio.util.ExpandableBuffer.expand : if i0 >= 0 goto specialinvoke r0.<org.apache.http.nio.util.ExpandableBuffer: void expandCapacity(int)>(i0)
+org.apache.http.nio.util.ExpandableBuffer.expand : specialinvoke r0.<org.apache.http.nio.util.ExpandableBuffer: void expandCapacity(int)>(i0)
+org.apache.http.nio.util.ExpandableBuffer.expand : $r1 = r0.<org.apache.http.nio.util.ExpandableBuffer: java.nio.ByteBuffer buffer>
+org.apache.http.nio.util.ExpandableBuffer.setInputMode : $i0 = r0.<org.apache.http.nio.util.ExpandableBuffer: int mode>
+org.apache.http.nio.util.HeapByteBufferAllocator.allocate : $r1 = staticinvoke <java.nio.ByteBuffer: java.nio.ByteBuffer allocate(int)>(i0)
+org.apache.http.impl.nio.reactor.SessionInputBufferImpl.read : $r1 = r0.<org.apache.http.impl.nio.reactor.SessionInputBufferImpl: java.nio.ByteBuffer buffer>
+org.apache.http.impl.nio.reactor.SessionInputBufferImpl.read : virtualinvoke r0.<org.apache.http.impl.nio.reactor.SessionInputBufferImpl: void setOutputMode()>()
+org.apache.http.impl.nio.reactor.TestSessionInOutBuffers.newChannel : $r1 = new java.io.ByteArrayInputStream
+org.apache.http.impl.nio.reactor.SessionInputBufferImpl.fill : virtualinvoke r0.<org.apache.http.impl.nio.reactor.SessionInputBufferImpl: void expand()>()
+org.apache.http.impl.nio.reactor.SessionInputBufferImpl.fill : return i0
+org.apache.http.impl.nio.reactor.SessionInputBufferImpl.fill : $r4 = r0.<org.apache.http.impl.nio.reactor.SessionInputBufferImpl: java.nio.ByteBuffer buffer>
+org.apache.http.impl.nio.reactor.SessionInputBufferImpl.fill : $r3 = r0.<org.apache.http.impl.nio.reactor.SessionInputBufferImpl: java.nio.ByteBuffer buffer>
+org.apache.http.impl.nio.reactor.SessionInputBufferImpl.fill : virtualinvoke r0.<org.apache.http.impl.nio.reactor.SessionInputBufferImpl: void setInputMode()>()
+org.apache.http.impl.nio.reactor.SessionInputBufferImpl.fill : if r1 != null goto virtualinvoke r0.<org.apache.http.impl.nio.reactor.SessionInputBufferImpl: void setInputMode()>()
+org.apache.http.nio.util.ExpandableBuffer.expandCapacity : virtualinvoke r1.<java.nio.ByteBuffer: java.nio.Buffer flip()>()
+org.apache.http.nio.util.ExpandableBuffer.expandCapacity : $r2 = r0.<org.apache.http.nio.util.ExpandableBuffer: org.apache.http.nio.util.ByteBufferAllocator allocator>
+org.apache.http.nio.util.ExpandableBuffer.expandCapacity : $r5 = r0.<org.apache.http.nio.util.ExpandableBuffer: java.nio.ByteBuffer buffer>
+org.apache.http.nio.util.ExpandableBuffer.expandCapacity : r1 = r0.<org.apache.http.nio.util.ExpandableBuffer: java.nio.ByteBuffer buffer>
+org.apache.http.nio.util.ExpandableBuffer.setOutputMode : $i0 = r0.<org.apache.http.nio.util.ExpandableBuffer: int mode>
+org.apache.http.nio.util.ExpandableBuffer.setOutputMode : r0.<org.apache.http.nio.util.ExpandableBuffer: int mode> = 1
+org.apache.http.nio.util.ExpandableBuffer.setOutputMode : $r1 = r0.<org.apache.http.nio.util.ExpandableBuffer: java.nio.ByteBuffer buffer>
