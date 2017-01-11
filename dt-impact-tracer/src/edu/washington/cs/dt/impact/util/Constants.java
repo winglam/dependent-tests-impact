@@ -17,14 +17,6 @@ public class Constants {
     public static final String NUM_NOT_FIXED_DTS = "Number of DTs not fixed:";
     public static final String NOT_FIXED_DTS = "DTs not fixed are:";
 
-    // Project Names
-    public static final String CRYSTAL_NAME = "Crystal";
-    public static final String JFREECHART_NAME = "JFreechart";
-    public static final String JODATIME_NAME = "Joda-Time";
-    public static final String SYNOTPIC_NAME = "Synoptic";
-    public static final String XMLSECURITY_NAME = "XML Security";
-    public static final String HTTPCORE_NAME = "HttpCore";
-
     // for Figures 17, 18, and 19
     public static final String ARGUMENT_STRING = "The following arguments were used to generate this output.";
     public static final String TIME_STRING = "Time each test takes to run in the new order:";

@@ -373,8 +373,8 @@ public class NumDependentTestsFigureGenerator extends FigureGenerator {
 		List<String> dtFile = FileTools.parseFileToList(new File(fileName));
 		Map<String, Integer> projectToDT = new HashMap<String, Integer>();
 		for (String s : dtFile) {
-			String[] sArr = s.split(" ");
-			projectToDT.put(mapNameToProjectName(sArr[0]), Integer.parseInt(sArr[1]));
+			String[] sArr = s.split("|");
+			projectToDT.put(sArr[0], Integer.parseInt(sArr[1]));
 		}
 		return projectToDT;
 	}
@@ -470,7 +470,7 @@ public class NumDependentTestsFigureGenerator extends FigureGenerator {
 				String orderName = flagsList.get(index + 1);
 
 				index = flagsList.indexOf("-project");
-				String projectName = mapNameToProjectName(flagsList.get(index + 1));
+				String projectName = flagsList.get(index + 1);
 
 				index = flagsList.indexOf("-testType");
 				String testType = flagsList.get(index + 1);
