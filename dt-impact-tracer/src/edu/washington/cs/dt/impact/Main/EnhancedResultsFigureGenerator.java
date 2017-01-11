@@ -674,7 +674,7 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
                 String orderName = flagsList.get(index + 1);
 
                 index = flagsList.indexOf("-project");
-                String projectName = mapNameToProjectName(flagsList.get(index + 1));
+                String projectName = flagsList.get(index + 1);
 
                 index = flagsList.indexOf("-testType");
                 String testType = flagsList.get(index + 1);

@@ -8,6 +8,8 @@ import java.io.IOException;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
 
@@ -259,33 +261,19 @@ public class FigureGenerator {
         }
     }
     
-    public static void sortList(List<Project> projList, List<Project> sortedList) {
-        sortList(projList, sortedList, Constants.CRYSTAL_NAME);
-        sortList(projList, sortedList, Constants.HTTPCORE_NAME);
-        sortList(projList, sortedList, Constants.JFREECHART_NAME);
-        sortList(projList, sortedList, Constants.JODATIME_NAME);
-        sortList(projList, sortedList, Constants.SYNOTPIC_NAME);
-        sortList(projList, sortedList, Constants.XMLSECURITY_NAME);
-    }
-    
-    public static String mapNameToProjectName(String projectName) {
-    	String formattedString = projectName.trim().toLowerCase();
-        if (formattedString.equals("crystal")) {
-        	return Constants.CRYSTAL_NAME;
-        } else if (formattedString.equals("jfreechart")) {
-        	return Constants.JFREECHART_NAME;
-        } else if (formattedString.equals("jodatime")) {
-        	return Constants.JODATIME_NAME;
-        } else if (formattedString.equals("synoptic")) {
-        	return Constants.SYNOTPIC_NAME;
-        } else if (formattedString.equals("xml_security")) {
-            return Constants.XMLSECURITY_NAME;
-        } else if (formattedString.equals("httpcore")) {
-            return Constants.HTTPCORE_NAME;
-        } else {
-        	throw new RuntimeException("Project argument is specified but the project name"
-                    + " value provided is invalid. Please use either crystal, jfreechart, jodatime, synoptic or xml_security.");
+    private static Comparator<Project> ALPHABETICAL_ORDER = new Comparator<Project>() {
+        public int compare(Project str1, Project str2) {
+            int res = String.CASE_INSENSITIVE_ORDER.compare(str1.getName(), str2.getName());
+            if (res == 0) {
+                res = str1.getName().compareTo(str2.getName());
+            }
+            return res;
         }
+    };
+    
+    public static void sortList(List<Project> projList, List<Project> sortedList) {
+    	Collections.copy(projList, sortedList);
+    	Collections.sort(sortedList, ALPHABETICAL_ORDER);
     }
 
     /*
