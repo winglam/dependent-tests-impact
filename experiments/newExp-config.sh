@@ -1,12 +1,12 @@
 source ./config.sh
 
-newExperiments=(httpcore)
+newExperiments=(ambari-logfeeder)
 newExpTestTypes=(orig)
 
-newExpDirectories=(httpcore/httpcore/target)
-newExpCompileDirectories=(httpcore)
-newExpCP=(../../../impact-tools/*:classes/:test-classes/:dependency/*)
-newExpSootCP=(../../../impact-tools/*:sootOutput/:dependency/*)
+newExpDirectories=(ambari/ambari-logsearch/ambari-logsearch-logfeeder/target)
+newExpCompileDirectories=(ambari)
+newExpCP=(../../../../impact-tools/*:classes/:test-classes/:dependency/*)
+newExpSootCP=(../../../../impact-tools/*:sootOutput/:dependency/*)
 
 function compileNewExpSource() {
   index=0
@@ -15,7 +15,9 @@ function compileNewExpSource() {
     echo ""
     echo -e "Compiling experiment: ${newExperiments[$index]} in ${newExpCompileDirectories[$index]}/"
     cd ${newExpCompileDirectories[$index]}
+    mvn compile
     mvn test-compile
+    mvn install -fn -DskipTests dependency:copy-dependencies
     let "index++"
     cd ..
   done
