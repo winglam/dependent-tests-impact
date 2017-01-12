@@ -6,7 +6,7 @@ import edu.washington.cs.dt.impact.util.Constants.TD_SETTING;
 
 public class GeometricMeanData {
 
-    private Constants.PROJECT project;
+    private String project;
     private int k;
     private double value;
     private Constants.TD_SETTING tdSetting;
@@ -36,11 +36,11 @@ public class GeometricMeanData {
         this.tdSetting = tdSetting;
     }
 
-    public Constants.PROJECT getProject() {
+    public String getProject() {
         return project;
     }
 
-    public void setProject(Constants.PROJECT project) {
+    public void setProject(String project) {
         this.project = project;
     }
 

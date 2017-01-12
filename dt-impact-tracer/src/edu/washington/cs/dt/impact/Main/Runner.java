@@ -22,7 +22,6 @@ import edu.washington.cs.dt.impact.util.Constants.COVERAGE;
 import edu.washington.cs.dt.impact.util.Constants.DT_SETTING;
 import edu.washington.cs.dt.impact.util.Constants.MACHINES;
 import edu.washington.cs.dt.impact.util.Constants.ORDER;
-import edu.washington.cs.dt.impact.util.Constants.PROJECT;
 import edu.washington.cs.dt.impact.util.Constants.TD_SETTING;
 import edu.washington.cs.dt.impact.util.Constants.TECHNIQUE;
 import edu.washington.cs.dt.impact.util.Constants.TEST_TYPE;
@@ -40,7 +39,7 @@ public abstract class Runner {
     protected static File selectionOutput2 = null;
     protected static Constants.MACHINES numOfMachines = MACHINES.ONE;
     protected static int timesToRun = 1;
-    protected static Constants.PROJECT project = PROJECT.CRYSTAL;
+    protected static String project = "CRYSTAL";
     protected static Constants.TEST_TYPE testType = TEST_TYPE.ORIG;
     protected static List<String> allDTList;
     protected static File dependentTestFile = null;
@@ -340,24 +339,7 @@ public abstract class Runner {
                         + " is not. Please use the format: -project aProjectName");
                 System.exit(0);
             }
-            String projectName = argsList.get(projectStrIndex);
-            if (projectName.equals("crystal")) {
-                project = PROJECT.CRYSTAL;
-            } else if (projectName.equals("jfreechart")) {
-                project = PROJECT.JFREECHART;
-            } else if (projectName.equals("jodatime")) {
-                project = PROJECT.JODATIME;
-            } else if (projectName.equals("synoptic")) {
-                project = PROJECT.SYNOPTIC;
-            } else if (projectName.equals("xml_security")) {
-                project = PROJECT.XML_SECURITY;
-            } else if (projectName.equals("httpcore")) {
-                project = PROJECT.HTTPCORE;
-            } else {
-                System.err.println("Project argument is specified but the project name"
-                        + " value provided is invalid. Please use either crystal, jfreechart, jodatime, synoptic or xml_security.");
-                System.exit(0);
-            }
+            project = argsList.get(projectStrIndex);
         } else {
             System.err.println("No project argument is specified." + " Please use the format: -project aProjectName");
             System.exit(0);
@@ -565,7 +547,7 @@ public abstract class Runner {
             output.close();
 
             if (outputDTListSeparately && allDTList != null && !allDTList.isEmpty()) {
-                output = new FileWriter(dirPath + Constants.getDTListFileName(project, testType));
+                output = new FileWriter(dirPath + Constants.getDTListFileName(project.replace(" ", "_").toUpperCase(), testType));
                 writer = new BufferedWriter(output);
 
                 for (int j = 0; j < allDTList.size();) {
