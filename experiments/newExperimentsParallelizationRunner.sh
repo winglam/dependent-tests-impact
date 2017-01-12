@@ -1,6 +1,6 @@
 source ./newExp-config.sh
 
-compileNewExpSource
+#compileNewExpSource
 
 index=0
 count=${#newExperiments[@]}
