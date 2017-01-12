@@ -26,21 +26,21 @@ public class Constants {
     public static final String APFD_VALUE = "APFD value:";
     public static final String TEST_ORDER_LIST = "Test order list:";
 
-    public static String getOutputFileName(COVERAGE coverage, TECHNIQUE technique, ORDER order, PROJECT project,
+    public static String getOutputFileName(COVERAGE coverage, TECHNIQUE technique, ORDER order, String project,
             TEST_TYPE test_type, MACHINES machines, DT_SETTING dt_setting, TD_SETTING td_setting) {
         String ret_str;
         if (technique == TECHNIQUE.PARALLELIZATION) {
-            ret_str = technique + "-" + test_type + "-" + project + "-" + order + "-" + dt_setting + "-" + td_setting
+            ret_str = technique + "-" + test_type + "-" + project.replace(" ", "_").toUpperCase() + "-" + order + "-" + dt_setting + "-" + td_setting
                     + "-" + machines;
         } else {
-            ret_str = technique + "-" + test_type + "-" + project + "-" + coverage + "-" + order + "-" + dt_setting
+            ret_str = technique + "-" + test_type + "-" + project.replace(" ", "_").toUpperCase() + "-" + coverage + "-" + order + "-" + dt_setting
                     + "-" + td_setting;
         }
         return ret_str.concat(".txt");
     }
 
-    public static String getDTListFileName(PROJECT project, TEST_TYPE test_type) {
-        String ret_str = project + "-" + test_type + "-DT_LIST.txt";
+    public static String getDTListFileName(String project, TEST_TYPE test_type) {
+        String ret_str = project.replace(" ", "_").toUpperCase() + "-" + test_type + "-DT_LIST.txt";
         return ret_str;
     }
 
@@ -70,13 +70,6 @@ public class Constants {
      */
     public enum TEST_TYPE {
         ORIG, AUTO
-    }
-
-    /**
-     * Test projects that are currently supported.
-     */
-    public enum PROJECT {
-        CRYSTAL, JFREECHART, JODATIME, SYNOPTIC, XML_SECURITY, HTTPCORE
     }
 
     /**
