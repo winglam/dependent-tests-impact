@@ -207,6 +207,15 @@ public class Parallelization extends Test {
     }
 
     @Override
+    public void resetDTList(List<String> allDTList) {
+        if (allDTList != null) {
+            for (Standard obj : splitTests) {
+                processDependentTests(null, allDTList, obj.getMethodList());
+            }
+        }
+    }
+
+    @Override
     public void printResults() {
         for (Standard obj : splitTests) {
             obj.applyDeps();
