@@ -42,8 +42,9 @@ public class Standard {
 
     public void applyDeps() {
         List<TestFunctionStatement> orderedListOfTests = new LinkedList<TestFunctionStatement>();
+        Set<String> alreadyAddedTests = new HashSet<String>();
         for (TestFunctionStatement test : methodList) {
-            applyDepsHelper(orderedListOfTests, test);
+            applyDepsHelper(orderedListOfTests, test, alreadyAddedTests);
         }
         methodList = orderedListOfTests;
     }
@@ -55,16 +56,19 @@ public class Standard {
     // every test in the list, all of its dependees appear before it.
     // Postcondition: orderedListOfTests contains newTest and satisfies all
     // test dependences
-    private void applyDepsHelper(List<TestFunctionStatement> orderedListOfTests, TestFunctionStatement newTest) {
+    private void applyDepsHelper(List<TestFunctionStatement> orderedListOfTests, TestFunctionStatement newTest, Set<String> alreadyAddedTests) {
         if (!orderedListOfTests.contains(newTest)) {
             Set<TestFunctionStatement> testsThatNeedsToExecuteBeforeNewTest = newTest.getDependentTests(false);
             // Add all tests that needs to come before newTest to the orderedListOfTests
             for (TestFunctionStatement positiveDependee : testsThatNeedsToExecuteBeforeNewTest) {
-                applyDepsHelper(orderedListOfTests, positiveDependee);
+                applyDepsHelper(orderedListOfTests, positiveDependee, alreadyAddedTests);
             }
 
             // Add newTest to orderedListOfTests
-            orderedListOfTests.add(newTest);
+            if (!alreadyAddedTests.contains(newTest.getName())) {
+                orderedListOfTests.add(newTest);
+                alreadyAddedTests.add(newTest.getName());
+            }
         }
     }
 
