@@ -47,7 +47,7 @@ public class Test {
         }
         methodList = new ArrayList<TestFunctionStatement>(allMethodList);
         if (dependentTestsFile != null) {
-            processDependentTests(dependentTestsFile, null);
+            processDependentTests(dependentTestsFile, null, allMethodList);
         }
     }
 
@@ -58,24 +58,24 @@ public class Test {
         allMethodList = listFilesForFolder(coverage);
         methodList = new ArrayList<TestFunctionStatement>(allMethodList);
         if (allDTList != null) {
-            processDependentTests(null, allDTList);
+            processDependentTests(null, allDTList, allMethodList);
         }
     }
 
     public void resetDTList(List<String> allDTList) {
         if (allDTList != null) {
-            processDependentTests(null, allDTList);
+            processDependentTests(null, allDTList, allMethodList);
         }
     }
 
-    private void processDependentTests(File dependentTestsFile, List<String> allDTList) {
+    protected void processDependentTests(File dependentTestsFile, List<String> allDTList, List<TestFunctionStatement> dtMethodList) {
         // list of tests that when executed before reveals the dependent test
         Map<String, List<String>> execBefore = new HashMap<String, List<String>>();
         // list of tests that when executed after reveals the dependent test
         Map<String, List<String>> execAfter = new HashMap<String, List<String>>();
 
         Map<String, TestFunctionStatement> nameToMethodData = new HashMap<String, TestFunctionStatement>();
-        for (TestFunctionStatement methodData : allMethodList) {
+        for (TestFunctionStatement methodData : dtMethodList) {
             nameToMethodData.put(methodData.getName(), methodData);
         }
 
@@ -86,14 +86,15 @@ public class Test {
         }
 
         for (String testName : execBefore.keySet()) {
+            if (nameToMethodData.get(testName) == null) {
+                TestFunctionStatement tmd = new TestFunctionStatement(testName);
+                nameToMethodData.put(testName, tmd);
+            }
             for (String dtTest : execBefore.get(testName)) {
                 TestFunctionStatement tmd = nameToMethodData.get(dtTest);
                 if (tmd == null) {
                     tmd = new TestFunctionStatement(dtTest);
                     nameToMethodData.put(dtTest, tmd);
-                }
-                if (nameToMethodData.get(testName) == null) {
-                    throw new RuntimeException(testName + " is not a valid test.");
                 }
                 nameToMethodData.get(testName).addDependentTest(tmd, true);
             }
@@ -101,14 +102,15 @@ public class Test {
         }
 
         for (String testName : execAfter.keySet()) {
+            if (nameToMethodData.get(testName) == null) {
+                TestFunctionStatement tmd = new TestFunctionStatement(testName);
+                nameToMethodData.put(testName, tmd);
+            }
             for (String dtTest : execAfter.get(testName)) {
                 TestFunctionStatement tmd = nameToMethodData.get(dtTest);
                 if (tmd == null) {
                     tmd = new TestFunctionStatement(dtTest);
                     nameToMethodData.put(dtTest, tmd);
-                }
-                if (nameToMethodData.get(testName) == null) {
-                    throw new RuntimeException(testName + " is not a valid test.");
                 }
                 nameToMethodData.get(testName).addDependentTest(tmd, false);
             }
