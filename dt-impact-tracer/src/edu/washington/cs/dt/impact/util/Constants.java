@@ -17,6 +17,10 @@ public class Constants {
     public static final String NUM_NOT_FIXED_DTS = "Number of DTs not fixed:";
     public static final String NOT_FIXED_DTS = "DTs not fixed are:";
 
+    // For figure showing the time to get precomputed dependences
+    public static final String NUM_TESTS_OUT_OF_ORIG = "Number of tests selected out of total in original order:";
+    public static final String TIME_INCL_DTF = "Execution time of TLG and its time to find/nullify any DTs for 1 machine (does not include the time to run the tests in the new order):";
+
     // for Figures 17, 18, and 19
     public static final String ARGUMENT_STRING = "The following arguments were used to generate this output.";
     public static final String TIME_STRING = "Time each test takes to run in the new order:";

@@ -22,6 +22,13 @@ public class ProjectNumDependentTests extends Project {
 
     private List<String>[] fig9_auto_time;
 
+    private double[] fig7_human_fixed_time;
+    private double[] fig8_human_fixed_time;
+    private double[] fig9_human_fixed_time;
+    private double[] fig7_auto_fixed_time;
+    private double[] fig8_auto_fixed_time;
+    private double[] fig9_auto_fixed_time;
+
     private boolean uses_fig7;
     private boolean uses_fig8;
     private boolean uses_fig9;
@@ -39,6 +46,13 @@ public class ProjectNumDependentTests extends Project {
         uses_fig7 = false;
         uses_fig8 = false;
         uses_fig9 = false;
+
+        fig7_human_fixed_time = new double[4];
+        fig8_human_fixed_time = new double[6];
+        fig9_human_fixed_time = new double[8];
+        fig7_auto_fixed_time = new double[4];
+        fig8_auto_fixed_time = new double[6];
+        fig9_auto_fixed_time = new double[8];
     }
 
     private List<String>[] initListArray(int size) {
@@ -111,6 +125,30 @@ public class ProjectNumDependentTests extends Project {
         return fig9_auto_time;
     }
     
+    public double[] getFig7_human_fixed_time() {
+		return fig7_human_fixed_time;
+	}
+
+	public double[] getFig8_human_fixed_time() {
+		return fig8_human_fixed_time;
+	}
+
+	public double[] getFig9_human_fixed_time() {
+		return fig9_human_fixed_time;
+	}
+
+	public double[] getFig7_auto_fixed_time() {
+		return fig7_auto_fixed_time;
+	}
+
+	public double[] getFig8_auto_fixed_time() {
+		return fig8_auto_fixed_time;
+	}
+
+	public double[] getFig9_auto_fixed_time() {
+		return fig9_auto_fixed_time;
+	}
+
     @Override
     public String toString() {
     	return getName() + " 7:" + uses_fig7 + " 8:" + uses_fig8 + " 9:" + uses_fig9;

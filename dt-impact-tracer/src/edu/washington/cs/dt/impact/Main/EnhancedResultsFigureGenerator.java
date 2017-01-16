@@ -413,15 +413,14 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
     private static String generateLatexString(List<Project> projList, List<Project> otherProjList, String type,
             PercentWrapper percentComparedToUnenhanced) {
         String latexString = "";
-        List<Project> sortedList = new ArrayList<Project>();
-        sortList(projList, sortedList);
+        sortList(projList);
 
         int index = 0;
         List<GeometricMeanData> fig17GeoData = new ArrayList<>();
         List<GeometricMeanData> fig18GeoDataPercent = new ArrayList<>();
         List<GeometricMeanData> fig18GeoDataAPFD = new ArrayList<>();
         List<GeometricMeanData> fig19GeoData = new ArrayList<>();
-        for (Project projTemp : sortedList) {
+        for (Project projTemp : projList) {
             ProjectEnhancedResults temp = (ProjectEnhancedResults) projTemp;
             // get the correct orig_value...one of the Lists will not have the correct value (will be 0)
             if (temp.isFig19()) {
