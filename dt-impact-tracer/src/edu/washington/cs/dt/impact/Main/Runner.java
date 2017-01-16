@@ -461,10 +461,8 @@ public abstract class Runner {
                 testListTime = testList.getNewOrderTime();
                 totalTime += testListTime;
                 maxTime = Math.max(maxTime, testListTime);
-                outputArr.add("Execution time of TLG and its time to find/nullify any DTs for 1 machine"
-                        + " (does not include the time to run the tests in the new order): "
-                        + nanosecondToSecond(testList.getNullifyDTTime()) + "\n");
-                outputArr.add("Number of tests selected out of total in original order: " + testList.getTestListSize()
+                outputArr.add(Constants.TIME_INCL_DTF + " " + nanosecondToSecond(testList.getNullifyDTTime()) + "\n");
+                outputArr.add(Constants.NUM_TESTS_OUT_OF_ORIG + " " + testList.getTestListSize()
                         + " / " + origOrderTestList.size() + "\n");
                 outputArr.add(Constants.NUM_NOT_FIXED_DTS + " " + testList.getNumNotFixedDT() + "\n");
                 outputArr.add(Constants.FIXED_DTS + " " + testList.getNumFixedDT() + "\n");

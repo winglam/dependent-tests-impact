@@ -101,18 +101,17 @@ public class NumDependentTestsFigureGenerator extends FigureGenerator {
 	 */
 	private static String generateLatexString(List<Project> projList, String type, IntegerWrapper numConfigWithDT) {
 		String latexString = "";
-		List<Project> sortedList = new ArrayList<Project>();
-		sortList(projList, sortedList);
+		sortList(projList);
 		int[] total;
-		if (((ProjectNumDependentTests) sortedList.get(0)).isFig9()) {
+		if (((ProjectNumDependentTests) projList.get(0)).isFig9()) {
 			total = new int[NUM_PARA_TECHNIQUES];
-		} else if (((ProjectNumDependentTests) sortedList.get(0)).isFig8()) {
+		} else if (((ProjectNumDependentTests) projList.get(0)).isFig8()) {
 			total = new int[NUM_SELE_TECHNIQUES];
 		} else {
 			total = new int[NUM_PRIOR_TECHNIQUES];
 		}
 
-		for (Project temp2 : sortedList) {
+		for (Project temp2 : projList) {
 			ProjectNumDependentTests temp = (ProjectNumDependentTests) temp2;
 			if (temp.isFig9()) {
 				if (type.equals("orig")) {
@@ -153,7 +152,7 @@ public class NumDependentTestsFigureGenerator extends FigureGenerator {
 		latexString += "\r\n";
 		latexString += "\\hline";
 
-		numConfigWithDT.numConfig += total.length * sortedList.size();
+		numConfigWithDT.numConfig += total.length * projList.size();
 
 		// take off the "\r\n" from the last line
 		return latexString;
@@ -176,6 +175,8 @@ public class NumDependentTestsFigureGenerator extends FigureGenerator {
 		Map<String, Integer> origProjectToDT = parseDTFile(minBoundOrigDTFile);
 		String minBoundAutoDTFile = getArgName(argsList, "-minBoundAutoDTFile");
 		Map<String, Integer> autoProjectToDT = parseDTFile(minBoundAutoDTFile);
+
+		boolean outputPrecomputedDependencesTime = argsList.contains("-getPrecomputedDependencesTime");
 
 		List<List<Project>> proj_orig_arrayList = new ArrayList<List<Project>>();
 		List<List<Project>> proj_auto_arrayList = new ArrayList<List<Project>>();
@@ -222,17 +223,18 @@ public class NumDependentTestsFigureGenerator extends FigureGenerator {
 		}
 
 		Map<String, StringBuilder> projectToStr = new TreeMap<String, StringBuilder>();
+		Map<String, StringBuilder> projectToPrecomputedDepStr = new TreeMap<String, StringBuilder>();
 
 		Map<String, List<List<Set<String>>>> typeToTechnique = new HashMap<String, List<List<Set<String>>>>();
 		typeToTechnique.put("orig", initDTsExposedPerAlgoArray());
 		typeToTechnique.put("auto", initDTsExposedPerAlgoArray());
 
 		for (int i = 0; i < proj_orig_arrayList.size(); i++) {
-			List<Project> origList = new ArrayList<Project>();
-			List<Project> autoList = new ArrayList<Project>();
+			List<Project> origList = proj_orig_arrayList.get(i);
+			List<Project> autoList = proj_auto_arrayList.get(i);
 
-			sortList(proj_orig_arrayList.get(i), origList);
-			sortList(proj_auto_arrayList.get(i), autoList);
+			sortList(origList);
+			sortList(autoList);
 
 			for (int j = 0; j < origList.size(); j++) {
 				ProjectNumDependentTests origProj = (ProjectNumDependentTests) origList.get(j);
@@ -240,6 +242,13 @@ public class NumDependentTestsFigureGenerator extends FigureGenerator {
 
 				if (!origProj.getName().equals(autoProj.getName())) {
 					throw new RuntimeException("Orig and Auto project names do not match.");
+				}
+
+				StringBuilder preDepSb = projectToPrecomputedDepStr.get(origProj.getName());
+				if (preDepSb == null) {
+					preDepSb = new StringBuilder();
+					preDepSb.append(origProj.getName());
+					projectToPrecomputedDepStr.put(origProj.getName(), preDepSb);
 				}
 
 				StringBuilder sb = projectToStr.get(origProj.getName());
@@ -251,6 +260,9 @@ public class NumDependentTestsFigureGenerator extends FigureGenerator {
 
 				Set<String> origDTs = new HashSet<String>();
 				Set<String> autoDTs = new HashSet<String>();
+
+				double avgPreDepOrigTime = 0.0;
+				double avgPreDepAutoTime = 0.0;
 
 				if (origProj.isFig9()) {
 					// typeToTechnique.get("orig").get(2) gets list of
@@ -273,6 +285,8 @@ public class NumDependentTestsFigureGenerator extends FigureGenerator {
 						autoDTs.addAll(DTs);
 						typeToTechnique.get("auto").get(2).get(1).addAll(DTs);
 					}
+					avgPreDepOrigTime = computeAverageTimeInArray(origProj.getFig9_human_fixed_time());
+					avgPreDepAutoTime = computeAverageTimeInArray(autoProj.getFig9_auto_fixed_time());
 				} else if (origProj.isFig8()) {
 					for (int k = 0; k < origProj.get_fig8_human().length; k++) {
 						origDTs.addAll(origProj.get_fig8_human()[k]);
@@ -282,6 +296,8 @@ public class NumDependentTestsFigureGenerator extends FigureGenerator {
 						autoDTs.addAll(autoProj.get_fig8_auto()[k]);
 						typeToTechnique.get("auto").get(1).get(k).addAll(autoProj.get_fig8_auto()[k]);
 					}
+					avgPreDepOrigTime = computeAverageTimeInArray(origProj.getFig8_human_fixed_time());
+					avgPreDepAutoTime = computeAverageTimeInArray(autoProj.getFig8_auto_fixed_time());
 				} else if (origProj.isFig7()) {
 					for (int k = 0; k < origProj.get_fig7_human().length; k++) {
 						origDTs.addAll(origProj.get_fig7_human()[k]);
@@ -291,6 +307,8 @@ public class NumDependentTestsFigureGenerator extends FigureGenerator {
 						autoDTs.addAll(autoProj.get_fig7_auto()[k]);
 						typeToTechnique.get("auto").get(0).get(k).addAll(autoProj.get_fig7_auto()[k]);
 					}
+					avgPreDepOrigTime = computeAverageTimeInArray(origProj.getFig7_human_fixed_time());
+					avgPreDepAutoTime = computeAverageTimeInArray(autoProj.getFig7_auto_fixed_time());
 				}
 				sb.append(" & ");
 				double origPercent = (double) origDTs.size() / origProjectToDT.get(origProj.getName());
@@ -298,7 +316,23 @@ public class NumDependentTestsFigureGenerator extends FigureGenerator {
 				sb.append(" & ");
 				double autoPercent = (double) autoDTs.size() / autoProjectToDT.get(autoProj.getName());
 				sb.append(formatPercent(autoPercent));
+
+				preDepSb.append(" & ");
+				preDepSb.append(formatTimeToString(avgPreDepOrigTime));
+				preDepSb.append(" & ");
+				preDepSb.append(formatTimeToString(avgPreDepAutoTime));
 			}
+		}
+
+		if (outputPrecomputedDependencesTime) {
+			String precomputedDepTimeOutputFilename = outputDirectoryName + System.getProperty("file.separator")
+				+ "precomputed-dependences-time-per-program.tex";
+			StringBuilder precomputedDepTimeString = new StringBuilder();
+			for (String key : projectToPrecomputedDepStr.keySet()) {
+				precomputedDepTimeString.append(projectToPrecomputedDepStr.get(key));
+				precomputedDepTimeString.append(" \\\\\r\n");
+			}
+			writeToLatexFile(precomputedDepTimeString.toString(), precomputedDepTimeOutputFilename, false);
 		}
 
 		String perProgramOutputFilename = outputDirectoryName + System.getProperty("file.separator")
@@ -329,6 +363,53 @@ public class NumDependentTestsFigureGenerator extends FigureGenerator {
 		buildPerAlgoString(perAlgoString, typeToTechnique, autoLowerBoundSum, "auto");
 		perAlgoString.append(" \\\\\r\n");
 		writeToLatexFile(perAlgoString.toString(), perAlgoOutputFilename, false);
+	}
+
+	private static String formatTimeToString(double time) {
+		int intTime = (int) time;
+		StringBuilder sb = new StringBuilder();
+
+	    final int MINUTES_IN_AN_HOUR = 60;
+	    final int SECONDS_IN_A_MINUTE = 60;
+
+	    int minutes = intTime / SECONDS_IN_A_MINUTE;
+	    intTime -= minutes * SECONDS_IN_A_MINUTE;
+
+	    int hours = minutes / MINUTES_IN_AN_HOUR;
+	    minutes -= hours * MINUTES_IN_AN_HOUR;
+
+		if (hours != 0) {
+//			if (hours < 10) {
+//				sb.append("\\z");
+//			}
+			sb.append(hours);
+			sb.append("h ");
+		}
+		if (minutes != 0) {
+			if (minutes < 10) {
+				sb.append("\\z");
+			}
+			sb.append(minutes);
+			sb.append("m ");
+		}
+		if (intTime < 10) {
+			sb.append("\\z");
+		}
+		sb.append(intTime);
+		sb.append("s");
+		return sb.toString();
+	}
+
+	private static double computeAverageTimeInArray(double[] timeArr) {
+		int count = 0;
+		double sum = 0.0;
+		for (double d : timeArr) {
+			if (d != 0.0) {
+				count += 1;
+				sum += d;
+			}
+		}
+		return sum / count;
 	}
 
 	private static void buildPerAlgoString(StringBuilder perAlgoString,
@@ -373,7 +454,7 @@ public class NumDependentTestsFigureGenerator extends FigureGenerator {
 		List<String> dtFile = FileTools.parseFileToList(new File(fileName));
 		Map<String, Integer> projectToDT = new HashMap<String, Integer>();
 		for (String s : dtFile) {
-			String[] sArr = s.split("|");
+			String[] sArr = s.split("\\|");
 			projectToDT.put(sArr[0], Integer.parseInt(sArr[1]));
 		}
 		return projectToDT;
@@ -506,6 +587,9 @@ public class NumDependentTestsFigureGenerator extends FigureGenerator {
 				// get the number of dts
 				List<String> numTotal = parseFileForDTs(file, Constants.NOT_FIXED_DTS);
 
+				int numOfFixedDTs = parseFileForNumOfDTs(file, Constants.FIXED_DTS);
+				double timeInFile = parseFileForMaxTime(file, Constants.TIME_INCL_DTF);
+
 				// parallelization technique, figure 9
 				if (techniqueName.equals("parallelization")) {
 					// order will be time or original
@@ -517,12 +601,14 @@ public class NumDependentTestsFigureGenerator extends FigureGenerator {
 					currProj.useFig9();
 					// this array will correspond to P1 or P2
 					List<String>[] curr_fig9_human, curr_fig9_auto;
+					int timeFixedDTs = 0;
 					if (orderName.equals("original")) {
 						curr_fig9_human = currProj.get_fig9_human_orig();
 						curr_fig9_auto = currProj.get_fig9_auto_orig();
 					} else if (orderName.equals("time")) { // orderName == time
 						curr_fig9_human = currProj.get_fig9_human_time();
 						curr_fig9_auto = currProj.get_fig9_auto_time();
+						timeFixedDTs = 4;
 					} else {
 						exitWithError("Unexpected order: " + orderName);
 						curr_fig9_human = null;
@@ -531,12 +617,24 @@ public class NumDependentTestsFigureGenerator extends FigureGenerator {
 
 					if (testType.equals("orig")) { // human
 						if (numMachines == 2) {
+							if (numOfFixedDTs != 0) {
+								currProj.getFig9_human_fixed_time()[timeFixedDTs] = timeInFile;
+							}
 							curr_fig9_human[0] = numTotal;
 						} else if (numMachines == 4) {
+							if (numOfFixedDTs != 0) {
+								currProj.getFig9_human_fixed_time()[timeFixedDTs + 1] = timeInFile;
+							}
 							curr_fig9_human[1] = numTotal;
 						} else if (numMachines == 8) {
+							if (numOfFixedDTs != 0) {
+								currProj.getFig9_human_fixed_time()[timeFixedDTs + 2] = timeInFile;
+							}
 							curr_fig9_human[2] = numTotal;
 						} else if (numMachines == 16) {
+							if (numOfFixedDTs != 0) {
+								currProj.getFig9_human_fixed_time()[timeFixedDTs + 3] = timeInFile;
+							}
 							curr_fig9_human[3] = numTotal;
 						} else {
 							exitWithError("Unexpected numMachines: " + numMachines);
@@ -544,12 +642,24 @@ public class NumDependentTestsFigureGenerator extends FigureGenerator {
 					} else if (testType.equals("auto")) // auto
 					{
 						if (numMachines == 2) {
+							if (numOfFixedDTs != 0) {
+								currProj.getFig9_auto_fixed_time()[timeFixedDTs] = timeInFile;
+							}
 							curr_fig9_auto[0] = numTotal;
 						} else if (numMachines == 4) {
+							if (numOfFixedDTs != 0) {
+								currProj.getFig9_auto_fixed_time()[timeFixedDTs + 1] = timeInFile;
+							}
 							curr_fig9_auto[1] = numTotal;
 						} else if (numMachines == 8) {
+							if (numOfFixedDTs != 0) {
+								currProj.getFig9_auto_fixed_time()[timeFixedDTs + 2] = timeInFile;
+							}
 							curr_fig9_auto[2] = numTotal;
 						} else if (numMachines == 16) {
+							if (numOfFixedDTs != 0) {
+								currProj.getFig9_auto_fixed_time()[timeFixedDTs + 3] = timeInFile;
+							}
 							curr_fig9_auto[3] = numTotal;
 						} else {
 							exitWithError("Unexpected numMachines: " + numMachines);
@@ -569,12 +679,21 @@ public class NumDependentTestsFigureGenerator extends FigureGenerator {
 							if (orderName.equals("original")) {
 								// S1
 								fig8_human[0] = numTotal;
+								if (numOfFixedDTs != 0) {
+									currProj.getFig8_human_fixed_time()[0] = timeInFile;
+								}
 							} else if (orderName.equals("absolute")) {
 								// S2
 								fig8_human[1] = numTotal;
+								if (numOfFixedDTs != 0) {
+									currProj.getFig8_human_fixed_time()[1] = timeInFile;
+								}
 							} else if (orderName.equals("relative")) {
 								// S3
 								fig8_human[2] = numTotal;
+								if (numOfFixedDTs != 0) {
+									currProj.getFig8_human_fixed_time()[2] = timeInFile;
+								}
 							} else {
 								exitWithError("Unexpected order: " + orderName);
 							}
@@ -582,12 +701,21 @@ public class NumDependentTestsFigureGenerator extends FigureGenerator {
 							if (orderName.equals("original")) {
 								// S4
 								fig8_human[3] = numTotal;
+								if (numOfFixedDTs != 0) {
+									currProj.getFig8_human_fixed_time()[3] = timeInFile;
+								}
 							} else if (orderName.equals("absolute")) {
 								// S5
 								fig8_human[4] = numTotal;
+								if (numOfFixedDTs != 0) {
+									currProj.getFig8_human_fixed_time()[4] = timeInFile;
+								}
 							} else if (orderName.equals("relative")) {
 								// S6
 								fig8_human[5] = numTotal;
+								if (numOfFixedDTs != 0) {
+									currProj.getFig8_human_fixed_time()[5] = timeInFile;
+								}
 							} else {
 								exitWithError("Unexpected order: " + orderName);
 							}
@@ -599,12 +727,21 @@ public class NumDependentTestsFigureGenerator extends FigureGenerator {
 							if (orderName.equals("original")) {
 								// S1
 								fig8_auto[0] = numTotal;
+								if (numOfFixedDTs != 0) {
+									currProj.getFig8_auto_fixed_time()[0] = timeInFile;
+								}
 							} else if (orderName.equals("absolute")) {
 								// S2
 								fig8_auto[1] = numTotal;
+								if (numOfFixedDTs != 0) {
+									currProj.getFig8_auto_fixed_time()[1] = timeInFile;
+								}
 							} else if (orderName.equals("relative")) {
 								// S3
 								fig8_auto[2] = numTotal;
+								if (numOfFixedDTs != 0) {
+									currProj.getFig8_auto_fixed_time()[2] = timeInFile;
+								}
 							} else {
 								exitWithError("Unexpected order: " + orderName);
 							}
@@ -612,12 +749,21 @@ public class NumDependentTestsFigureGenerator extends FigureGenerator {
 							if (orderName.equals("original")) {
 								// S4
 								fig8_auto[3] = numTotal;
+								if (numOfFixedDTs != 0) {
+									currProj.getFig8_auto_fixed_time()[3] = timeInFile;
+								}
 							} else if (orderName.equals("absolute")) {
 								// S5
 								fig8_auto[4] = numTotal;
+								if (numOfFixedDTs != 0) {
+									currProj.getFig8_auto_fixed_time()[4] = timeInFile;
+								}
 							} else if (orderName.equals("relative")) {
 								// S6
 								fig8_auto[5] = numTotal;
+								if (numOfFixedDTs != 0) {
+									currProj.getFig8_auto_fixed_time()[5] = timeInFile;
+								}
 							} else {
 								exitWithError("Unexpected order: " + orderName);
 							}
@@ -640,9 +786,15 @@ public class NumDependentTestsFigureGenerator extends FigureGenerator {
 							if (orderName.equals("absolute")) {
 								// T3
 								fig7_human[0] = numTotal;
+								if (numOfFixedDTs != 0) {
+									currProj.getFig7_human_fixed_time()[0] = timeInFile;
+								}
 							} else if (orderName.equals("relative")) { // relative
 								// T4
 								fig7_human[1] = numTotal;
+								if (numOfFixedDTs != 0) {
+									currProj.getFig7_human_fixed_time()[1] = timeInFile;
+								}
 							} else {
 								exitWithError("Unexpected order: " + orderName);
 							}
@@ -650,9 +802,15 @@ public class NumDependentTestsFigureGenerator extends FigureGenerator {
 							if (orderName.equals("absolute")) {
 								// T5
 								fig7_human[2] = numTotal;
+								if (numOfFixedDTs != 0) {
+									currProj.getFig7_human_fixed_time()[2] = timeInFile;
+								}
 							} else if (orderName.equals("relative")) { // relative
 								// T7
 								fig7_human[3] = numTotal;
+								if (numOfFixedDTs != 0) {
+									currProj.getFig7_human_fixed_time()[3] = timeInFile;
+								}
 							} else {
 								exitWithError("Unexpected order: " + orderName);
 							}
@@ -664,9 +822,15 @@ public class NumDependentTestsFigureGenerator extends FigureGenerator {
 							if (orderName.equals("absolute")) {
 								// T3
 								fig7_auto[0] = numTotal;
+								if (numOfFixedDTs != 0) {
+									currProj.getFig7_auto_fixed_time()[0] = timeInFile;
+								}
 							} else if (orderName.equals("relative")) {
 								// T4
 								fig7_auto[1] = numTotal;
+								if (numOfFixedDTs != 0) {
+									currProj.getFig7_auto_fixed_time()[1] = timeInFile;
+								}
 							} else {
 								exitWithError("Unexpected order: " + orderName);
 							}
@@ -674,9 +838,15 @@ public class NumDependentTestsFigureGenerator extends FigureGenerator {
 							if (orderName.equals("absolute")) {
 								// T5
 								fig7_auto[2] = numTotal;
+								if (numOfFixedDTs != 0) {
+									currProj.getFig7_auto_fixed_time()[2] = timeInFile;
+								}
 							} else if (orderName.equals("relative")) {
 								// T7
 								fig7_auto[3] = numTotal;
+								if (numOfFixedDTs != 0) {
+									currProj.getFig7_auto_fixed_time()[3] = timeInFile;
+								}
 							} else {
 								exitWithError("Unexpected order: " + orderName);
 							}

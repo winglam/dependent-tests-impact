@@ -14,7 +14,6 @@ import java.util.List;
 import java.util.Scanner;
 
 import edu.washington.cs.dt.impact.data.Project;
-import edu.washington.cs.dt.impact.util.Constants;
 
 public class FigureGenerator {
     protected static final DecimalFormat apfdFormat = new DecimalFormat(".00");
@@ -113,6 +112,30 @@ public class FigureGenerator {
             scanner.close();
         }
         return DTs; // none of the lines contained the keyword
+    }
+
+    public static double parseFileForMaxTime(File file, String keyword) {
+        double maxTime = 0.0;
+        Scanner scanner = null;
+        try {
+            scanner = new Scanner(file);
+            while (scanner.hasNextLine()) {
+                String currLine = scanner.nextLine();
+                if (currLine.contains(keyword)) {
+                    double data = Double.parseDouble(currLine.substring(keyword.length(), currLine.length()).trim());
+                    if (data > maxTime) {
+                        maxTime = data;
+                    }
+                }
+            }
+            scanner.close(); // close Scanner before returning
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+            System.exit(2);
+        } finally {
+            scanner.close();
+        }
+        return maxTime; // none of the lines contained the keyword
     }
 
     /*
@@ -271,9 +294,8 @@ public class FigureGenerator {
         }
     };
     
-    public static void sortList(List<Project> projList, List<Project> sortedList) {
-    	Collections.copy(projList, sortedList);
-    	Collections.sort(sortedList, ALPHABETICAL_ORDER);
+    public static void sortList(List<Project> projList) {
+        Collections.sort(projList, ALPHABETICAL_ORDER);
     }
 
     /*
