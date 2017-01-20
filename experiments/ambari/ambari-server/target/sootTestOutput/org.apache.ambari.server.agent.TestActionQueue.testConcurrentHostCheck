@@ -1,0 +1,31 @@
+org.apache.ambari.server.agent.TestActionQueue$ActionQueueOperation.stop : r0.<org.apache.ambari.server.agent.TestActionQueue$ActionQueueOperation: boolean shouldRun> = 0
+org.apache.ambari.server.agent.ActionQueue.hasPendingTask : if r2 == null goto return 0
+org.apache.ambari.server.agent.ActionQueue.hasPendingTask : r2 = r0.<org.apache.ambari.server.agent.ActionQueue: java.util.HashSet hostsWithPendingTask>
+org.apache.ambari.server.agent.ActionQueue.hasPendingTask : $z0 = virtualinvoke r2.<java.util.HashSet: boolean contains(java.lang.Object)>(r1)
+org.apache.ambari.server.agent.TestActionQueue$ActionQueueOperation.updateHostList : $r6 = r0.<org.apache.ambari.server.agent.TestActionQueue$ActionQueueOperation: org.apache.ambari.server.agent.ActionQueue actionQueue>
+org.apache.ambari.server.agent.TestActionQueue$ActionQueueOperation.updateHostList : virtualinvoke r2.<java.util.HashSet: boolean add(java.lang.Object)>(r4)
+org.apache.ambari.server.agent.TestActionQueue$ActionQueueOperation.updateHostList : staticinvoke <java.lang.Thread: void sleep(long)>(1L)
+org.apache.ambari.server.agent.TestActionQueue$ActionQueueOperation.updateHostList : $z0 = r0.<org.apache.ambari.server.agent.TestActionQueue$ActionQueueOperation: boolean shouldRun>
+org.apache.ambari.server.agent.TestActionQueue$ActionQueueOperation.updateHostList : r3 = r0.<org.apache.ambari.server.agent.TestActionQueue$ActionQueueOperation: java.lang.String[] hosts>
+org.apache.ambari.server.agent.TestActionQueue$ActionQueueOperation.updateHostList : $i2 = virtualinvoke r2.<java.util.HashSet: int size()>()
+org.apache.ambari.server.agent.TestActionQueue$ActionQueueOperation.updateHostList : $r1 = new java.util.HashSet
+org.apache.ambari.server.agent.TestActionQueue$ActionQueueOperation.updateHostList : $r5 = r0.<org.apache.ambari.server.agent.TestActionQueue$ActionQueueOperation: org.apache.ambari.server.agent.ActionQueue actionQueue>
+org.apache.ambari.server.agent.TestActionQueue$ActionQueueOperation.updateHostList : $r7 = r0.<org.apache.ambari.server.agent.TestActionQueue$ActionQueueOperation: long[] opCounts>
+org.apache.ambari.server.agent.TestActionQueue$ActionQueueOperation.run : specialinvoke r0.<org.apache.ambari.server.agent.TestActionQueue$ActionQueueOperation: void updateHostList()>()
+org.apache.ambari.server.agent.TestActionQueue$ActionQueueOperation.run : $r1 = <org.apache.ambari.server.agent.TestActionQueue$1: int[] $SwitchMap$org$apache$ambari$server$agent$TestActionQueue$ActionQueueOperation$OpType>
+org.apache.ambari.server.agent.TestActionQueue$ActionQueueOperation.run : goto [?= (branch)]
+org.apache.ambari.server.agent.TestActionQueue$ActionQueueOperation.run : goto [?= return]
+org.apache.ambari.server.agent.TestActionQueue$ActionQueueOperation.run : specialinvoke r0.<org.apache.ambari.server.agent.TestActionQueue$ActionQueueOperation: void checkPending()>()
+org.apache.ambari.server.agent.ActionQueue.updateListOfHostsWithPendingTask : $r3 = <org.apache.ambari.server.agent.ActionQueue: java.util.HashSet EMPTY_HOST_LIST>
+org.apache.ambari.server.agent.ActionQueue.updateListOfHostsWithPendingTask : r0.<org.apache.ambari.server.agent.ActionQueue: java.util.HashSet hostsWithPendingTask> = r1
+org.apache.ambari.server.agent.ActionQueue.updateListOfHostsWithPendingTask : if r1 == null goto $r2 = r0.<org.apache.ambari.server.agent.ActionQueue: java.util.HashSet hostsWithPendingTask>
+org.apache.ambari.server.agent.ActionQueue.updateListOfHostsWithPendingTask : $r2 = r0.<org.apache.ambari.server.agent.ActionQueue: java.util.HashSet hostsWithPendingTask>
+org.apache.ambari.server.agent.TestActionQueue$ActionQueueOperation.getOpCounts : $r1 = r0.<org.apache.ambari.server.agent.TestActionQueue$ActionQueueOperation: long[] opCounts>
+org.apache.ambari.server.agent.TestActionQueue$ActionQueueOperation.checkPending : i0 = i0 + 1
+org.apache.ambari.server.agent.TestActionQueue$ActionQueueOperation.checkPending : i0 = 0
+org.apache.ambari.server.agent.TestActionQueue$ActionQueueOperation.checkPending : $r3 = r0.<org.apache.ambari.server.agent.TestActionQueue$ActionQueueOperation: org.apache.ambari.server.agent.ActionQueue actionQueue>
+org.apache.ambari.server.agent.TestActionQueue$ActionQueueOperation.checkPending : staticinvoke <java.lang.Thread: void sleep(long)>(1L)
+org.apache.ambari.server.agent.TestActionQueue$ActionQueueOperation.checkPending : $r4 = r0.<org.apache.ambari.server.agent.TestActionQueue$ActionQueueOperation: long[] opCounts>
+org.apache.ambari.server.agent.TestActionQueue$ActionQueueOperation.checkPending : $z0 = r0.<org.apache.ambari.server.agent.TestActionQueue$ActionQueueOperation: boolean shouldRun>
+org.apache.ambari.server.agent.TestActionQueue$ActionQueueOperation.checkPending : r1 = r0.<org.apache.ambari.server.agent.TestActionQueue$ActionQueueOperation: java.lang.String[] hosts>
+org.apache.ambari.server.agent.TestActionQueue$ActionQueueOperation.checkPending : goto [?= staticinvoke <edu.washington.cs.dt.impact.util.Tracer: void trace(java.lang.String,java.lang.String)>("$z0 = r0.<org.apache.ambari.server.agent.TestActionQueue$ActionQueueOperation: boolean shouldRun>", "org.apache.ambari.server.agent.TestActionQueue$ActionQueueOperation.checkPending")]

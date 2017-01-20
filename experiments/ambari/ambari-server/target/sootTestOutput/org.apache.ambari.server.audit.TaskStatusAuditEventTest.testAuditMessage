@@ -1,0 +1,31 @@
+org.apache.ambari.server.audit.event.TaskStatusAuditEvent$TaskStatusAuditEventBuilder.newAuditEvent : $r1 = virtualinvoke r0.<org.apache.ambari.server.audit.event.TaskStatusAuditEvent$TaskStatusAuditEventBuilder: org.apache.ambari.server.audit.event.TaskStatusAuditEvent newAuditEvent()>()
+org.apache.ambari.server.audit.event.TaskStatusAuditEvent$TaskStatusAuditEventBuilder.newAuditEvent : $r1 = new org.apache.ambari.server.audit.event.TaskStatusAuditEvent
+org.apache.ambari.server.audit.event.AbstractAuditEvent$AbstractAuditEventBuilder.withTimestamp : r0.<org.apache.ambari.server.audit.event.AbstractAuditEvent$AbstractAuditEventBuilder: java.lang.Long timestamp> = r1
+org.apache.ambari.server.audit.event.AbstractAuditEvent$AbstractAuditEventBuilder.withTimestamp : $r2 = virtualinvoke r0.<org.apache.ambari.server.audit.event.AbstractAuditEvent$AbstractAuditEventBuilder: org.apache.ambari.server.audit.event.AbstractAuditEvent$AbstractAuditEventBuilder self()>()
+org.apache.ambari.server.audit.event.TaskStatusAuditEvent$TaskStatusAuditEventBuilder.buildAuditMessage : $r9 = virtualinvoke r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("), Details(")
+org.apache.ambari.server.audit.event.TaskStatusAuditEvent$TaskStatusAuditEventBuilder.buildAuditMessage : $r8 = r0.<org.apache.ambari.server.audit.event.TaskStatusAuditEvent$TaskStatusAuditEventBuilder: java.lang.String details>
+org.apache.ambari.server.audit.event.TaskStatusAuditEvent$TaskStatusAuditEventBuilder.buildAuditMessage : $r2 = virtualinvoke r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("User(")
+org.apache.ambari.server.audit.event.TaskStatusAuditEvent$TaskStatusAuditEventBuilder.buildAuditMessage : $r12 = virtualinvoke r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("), Status(")
+org.apache.ambari.server.audit.event.TaskStatusAuditEvent$TaskStatusAuditEventBuilder.withUserName : r0.<org.apache.ambari.server.audit.event.TaskStatusAuditEvent$TaskStatusAuditEventBuilder: java.lang.String userName> = r1
+org.apache.ambari.server.audit.event.TaskStatusAuditEvent$TaskStatusAuditEventBuilder.withUserName : return r0
+org.apache.ambari.server.audit.event.AbstractAuditEvent.getAuditMessage : $r1 = r0.<org.apache.ambari.server.audit.event.AbstractAuditEvent: java.lang.String auditMessage>
+org.apache.ambari.server.audit.event.AbstractAuditEvent$AbstractAuditEventBuilder.access$000 : $r1 = r0.<org.apache.ambari.server.audit.event.AbstractAuditEvent$AbstractAuditEventBuilder: java.lang.Long timestamp>
+org.apache.ambari.server.audit.event.TaskStatusAuditEvent$TaskStatusAuditEventBuilder.withStatus : r0.<org.apache.ambari.server.audit.event.TaskStatusAuditEvent$TaskStatusAuditEventBuilder: java.lang.String status> = r1
+org.apache.ambari.server.audit.event.TaskStatusAuditEvent$TaskStatusAuditEventBuilder.withStatus : return r0
+org.apache.ambari.server.audit.event.TaskStatusAuditEvent$TaskStatusAuditEventBuilder.withHostName : r0.<org.apache.ambari.server.audit.event.TaskStatusAuditEvent$TaskStatusAuditEventBuilder: java.lang.String hostName> = r1
+org.apache.ambari.server.audit.event.TaskStatusAuditEvent$TaskStatusAuditEventBuilder.withHostName : return r0
+org.apache.ambari.server.audit.event.TaskStatusAuditEvent$TaskStatusAuditEventBuilder.withRequestId : r0.<org.apache.ambari.server.audit.event.TaskStatusAuditEvent$TaskStatusAuditEventBuilder: java.lang.String requestId> = r1
+org.apache.ambari.server.audit.event.TaskStatusAuditEvent$TaskStatusAuditEventBuilder.withRequestId : return r0
+org.apache.ambari.server.audit.event.TaskStatusAuditEvent$TaskStatusAuditEventBuilder.withOperation : r0.<org.apache.ambari.server.audit.event.TaskStatusAuditEvent$TaskStatusAuditEventBuilder: java.lang.String operation> = r1
+org.apache.ambari.server.audit.event.TaskStatusAuditEvent$TaskStatusAuditEventBuilder.withOperation : return r0
+org.apache.ambari.server.audit.event.AbstractAuditEvent$AbstractAuditEventBuilder.build : $r1 = new java.lang.StringBuilder
+org.apache.ambari.server.audit.event.AbstractAuditEvent$AbstractAuditEventBuilder.build : virtualinvoke r0.<org.apache.ambari.server.audit.event.AbstractAuditEvent$AbstractAuditEventBuilder: void buildAuditMessage(java.lang.StringBuilder)>(r2)
+org.apache.ambari.server.audit.event.AbstractAuditEvent$AbstractAuditEventBuilder.build : $r3 = virtualinvoke r2.<java.lang.StringBuilder: java.lang.String toString()>()
+org.apache.ambari.server.audit.event.AbstractAuditEvent$AbstractAuditEventBuilder.build : $r4 = virtualinvoke r0.<org.apache.ambari.server.audit.event.AbstractAuditEvent$AbstractAuditEventBuilder: org.apache.ambari.server.audit.event.AbstractAuditEvent newAuditEvent()>()
+org.apache.ambari.server.audit.event.AbstractAuditEvent$AbstractAuditEventBuilder.access$100 : $r1 = r0.<org.apache.ambari.server.audit.event.AbstractAuditEvent$AbstractAuditEventBuilder: java.lang.String auditMessage>
+org.apache.ambari.server.audit.event.TaskStatusAuditEvent.builder : $r0 = new org.apache.ambari.server.audit.event.TaskStatusAuditEvent$TaskStatusAuditEventBuilder
+org.apache.ambari.server.audit.event.TaskStatusAuditEvent$TaskStatusAuditEventBuilder.withTaskId : return r0
+org.apache.ambari.server.audit.event.TaskStatusAuditEvent$TaskStatusAuditEventBuilder.withTaskId : r0.<org.apache.ambari.server.audit.event.TaskStatusAuditEvent$TaskStatusAuditEventBuilder: java.lang.String taskId> = r1
+org.apache.ambari.server.audit.event.AbstractAuditEvent$AbstractAuditEventBuilder.self : $r1 = r0.<org.apache.ambari.server.audit.event.AbstractAuditEvent$AbstractAuditEventBuilder: java.lang.Class builderClass>
+org.apache.ambari.server.audit.event.TaskStatusAuditEvent$TaskStatusAuditEventBuilder.withDetails : r0.<org.apache.ambari.server.audit.event.TaskStatusAuditEvent$TaskStatusAuditEventBuilder: java.lang.String details> = r1
+org.apache.ambari.server.audit.event.TaskStatusAuditEvent$TaskStatusAuditEventBuilder.withDetails : return r0

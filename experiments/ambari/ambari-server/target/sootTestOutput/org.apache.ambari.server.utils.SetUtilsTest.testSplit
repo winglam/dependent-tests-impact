@@ -1,0 +1,13 @@
+org.apache.ambari.server.utils.SetUtils.split : if i0 > 0 goto (branch)
+org.apache.ambari.server.utils.SetUtils.split : $i4 = interfaceinvoke r0.<java.util.Set: int size()>()
+org.apache.ambari.server.utils.SetUtils.split : $r5 = staticinvoke <java.util.Collections: java.util.List emptyList()>()
+org.apache.ambari.server.utils.SetUtils.split : $r8 = interfaceinvoke r2.<java.util.Iterator: java.lang.Object next()>()
+org.apache.ambari.server.utils.SetUtils.split : $r4 = new java.lang.IllegalArgumentException
+org.apache.ambari.server.utils.SetUtils.split : i2 = 0
+org.apache.ambari.server.utils.SetUtils.split : return r1
+org.apache.ambari.server.utils.SetUtils.split : $r7 = new java.util.LinkedHashSet
+org.apache.ambari.server.utils.SetUtils.split : $r6 = new java.util.ArrayList
+org.apache.ambari.server.utils.SetUtils.split : if r0 == null goto $r5 = staticinvoke <java.util.Collections: java.util.List emptyList()>()
+org.apache.ambari.server.utils.SetUtils.split : virtualinvoke r1.<java.util.ArrayList: boolean add(java.lang.Object)>(r3)
+org.apache.ambari.server.utils.SetUtils.split : i3 = 0
+org.apache.ambari.server.utils.SetUtils.split : r2 = interfaceinvoke r0.<java.util.Set: java.util.Iterator iterator()>()

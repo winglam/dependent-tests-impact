@@ -1,0 +1,9 @@
+org.apache.ambari.server.security.authorization.AmbariLdapUtils.isLdapObjectOutOfScopeFromBaseDn : z0 = 0
+org.apache.ambari.server.security.authorization.AmbariLdapUtils.isLdapObjectOutOfScopeFromBaseDn : $r6 = new org.springframework.ldap.core.DistinguishedName
+org.apache.ambari.server.security.authorization.AmbariLdapUtils.isLdapObjectOutOfScopeFromBaseDn : $z2 = virtualinvoke r3.<org.springframework.ldap.core.DistinguishedName: boolean startsWith(javax.naming.Name)>(r4)
+org.apache.ambari.server.security.authorization.AmbariLdapUtils.isLdapObjectOutOfScopeFromBaseDn : goto [?= return z0]
+org.apache.ambari.server.security.authorization.AmbariLdapUtils.isLdapObjectOutOfScopeFromBaseDn : return z0
+org.apache.ambari.server.security.authorization.AmbariLdapUtils.isLdapObjectOutOfScopeFromBaseDn : if r2 == null goto $z1 = 0
+org.apache.ambari.server.security.authorization.AmbariLdapUtils.isLdapObjectOutOfScopeFromBaseDn : z0 = 1
+org.apache.ambari.server.security.authorization.AmbariLdapUtils.isLdapObjectOutOfScopeFromBaseDn : r2 = virtualinvoke r0.<org.springframework.ldap.core.DirContextAdapter: javax.naming.Name getDn()>()
+org.apache.ambari.server.security.authorization.AmbariLdapUtils.isLdapObjectOutOfScopeFromBaseDn : $r5 = (org.springframework.ldap.core.DistinguishedName) r2

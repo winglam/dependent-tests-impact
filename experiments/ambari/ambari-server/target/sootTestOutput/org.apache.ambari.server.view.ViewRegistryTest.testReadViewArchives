@@ -1,0 +1,473 @@
+org.apache.ambari.server.controller.spi.Resource$Type.hashCode : return i3
+org.apache.ambari.server.controller.spi.Resource$Type.hashCode : $r1 = r0.<org.apache.ambari.server.controller.spi.Resource$Type: java.lang.String name>
+org.apache.ambari.server.controller.spi.Resource$Type.hashCode : $i1 = 31 * i0
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : virtualinvoke r21.<org.apache.ambari.server.orm.entities.ResourceEntity: void setResourceType(org.apache.ambari.server.orm.entities.ResourceTypeEntity)>(r13)
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : $r126 = virtualinvoke r1.<java.io.File: java.io.File[] listFiles()>()
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : interfaceinvoke r68.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>("/var/lib/ambari-server/resources/views/work/MY_VIEW{1.0.0}", r4)
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : $z14 = virtualinvoke r11.<java.util.jar.JarEntry: boolean isDirectory()>()
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : $r185 = staticinvoke <org.easymock.EasyMock: java.lang.Object anyObject(java.lang.Class)>(class "[B")
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : $z12 = virtualinvoke r4.<java.io.File: boolean mkdir()>()
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : $r54 = new org.apache.ambari.server.orm.entities.ResourceTypeEntity
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : interfaceinvoke r68.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>("/var/lib/ambari-server/resources/views/work/MY_VIEW{1.0.0}/view.xml", r5)
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : interfaceinvoke r68.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>("/var/lib/ambari-server/resources/views/work", r2)
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : $r44 = staticinvoke <org.easymock.EasyMock: java.lang.Object createNiceMock(java.lang.Class)>(class "java/io/File")
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : $r259 = new org.apache.ambari.server.state.StackId
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : $r58 = new org.apache.ambari.server.orm.entities.ViewEntityEntity
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : $r199 = <org.apache.ambari.server.view.ViewRegistryTest: org.apache.ambari.server.orm.dao.ViewDAO viewDAO>
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : $r60 = virtualinvoke r17.<org.apache.ambari.server.orm.entities.ViewInstanceEntity: java.lang.String getName()>()
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : $r65 = new org.apache.ambari.server.orm.entities.ResourceEntity
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : $r238 = <org.apache.ambari.server.view.ViewRegistryTest: org.apache.ambari.server.configuration.Configuration configuration>
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : $r321 = <org.apache.ambari.view.ViewDefinition$ViewStatus: org.apache.ambari.view.ViewDefinition$ViewStatus DEPLOYED>
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : $r66 = staticinvoke <java.lang.Long: java.lang.Long valueOf(long)>(l2)
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : $z17 = virtualinvoke r6.<java.io.File: boolean exists()>()
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : r35 = null
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : $z20 = virtualinvoke r311.<org.apache.ambari.server.view.ViewRegistryTest$TestViewArchiveUtility: boolean isDeploymentFailed()>()
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : $r55 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(10)
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : virtualinvoke r12.<java.io.FileOutputStream: void flush()>()
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : $z18 = virtualinvoke r7.<java.io.File: boolean exists()>()
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : virtualinvoke r14.<org.apache.ambari.server.orm.entities.ViewEntity: void setResourceType(org.apache.ambari.server.orm.entities.ResourceTypeEntity)>(r13)
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : $r82 = new java.util.HashMap
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : virtualinvoke r34.<org.apache.ambari.server.view.ViewRegistry: void readViewArchives()>()
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : if z2 == 0 goto $b13 = 2
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : $r49 = staticinvoke <org.easymock.EasyMock: java.lang.Object createNiceMock(java.lang.Class)>(class "java/io/File")
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : $r93 = staticinvoke <java.lang.System: java.lang.String getProperty(java.lang.String)>("os.name")
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : $r248 = virtualinvoke r26.<org.apache.ambari.server.orm.entities.ViewInstanceDataEntity: java.lang.String getName()>()
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : $r98 = virtualinvoke r1.<java.io.File: java.lang.String getAbsolutePath()>()
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : virtualinvoke r19.<org.apache.ambari.server.orm.entities.ViewEntityEntity: void setViewInstance(org.apache.ambari.server.orm.entities.ViewInstanceEntity)>(r17)
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : r35 = virtualinvoke r34.<org.apache.ambari.server.view.ViewRegistry: org.apache.ambari.server.orm.entities.ViewEntity getDefinition(java.lang.String,java.lang.String)>("MY_VIEW", "1.0.0")
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : $r43 = staticinvoke <org.easymock.EasyMock: java.lang.Object createNiceMock(java.lang.Class)>(class "java/io/File")
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : $r256 = new java.util.HashMap
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : virtualinvoke r10.<java.util.jar.JarInputStream: void closeEntry()>()
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : $r51 = staticinvoke <org.easymock.EasyMock: java.lang.Object createNiceMock(java.lang.Class)>(class "java/util/jar/JarInputStream")
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : $z16 = virtualinvoke r2.<java.io.File: boolean mkdir()>()
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : $r139 = virtualinvoke r3.<java.io.File: java.lang.String getAbsolutePath()>()
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : $r218 = virtualinvoke r6.<java.io.File: java.net.URI toURI()>()
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : $r312 = <org.apache.ambari.server.view.ViewRegistryTest: org.apache.ambari.server.orm.dao.ViewDAO viewDAO>
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : staticinvoke <org.junit.Assert: void assertNotNull(java.lang.Object)>(r35)
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : interfaceinvoke r68.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>("/var/lib/ambari-server/resources/views/work/MY_VIEW{1.0.0}/WEB-INF/classes", r6)
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : if z2 == 0 goto $r294 = <org.apache.ambari.server.view.ViewRegistryTest: org.apache.ambari.server.state.Clusters clusters>
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : virtualinvoke r13.<org.apache.ambari.server.orm.entities.ResourceTypeEntity: void setName(java.lang.String)>("MY_VIEW{1.0.0}")
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : r25 = staticinvoke <org.easymock.EasyMock: org.easymock.Capture newCapture()>()
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : $r246 = staticinvoke <org.easymock.EasyMock: java.lang.Object createNiceMock(java.lang.Class)>(class "org/apache/ambari/server/orm/entities/ViewInstanceEntity")
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : $r120 = <org.apache.ambari.server.view.ViewRegistryTest: org.apache.ambari.server.configuration.Configuration configuration>
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : $r53 = staticinvoke <org.easymock.EasyMock: java.lang.Object createMock(java.lang.Class)>(class "java/io/FileOutputStream")
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : goto [?= $z5 = interfaceinvoke r63.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : virtualinvoke r19.<org.apache.ambari.server.orm.entities.ViewEntityEntity: void setClassName(java.lang.String)>("class")
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : if z0 == 0 goto staticinvoke <org.junit.Assert: void assertNotNull(java.lang.Object)>(r35)
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : $r88 = <org.apache.ambari.server.view.ViewRegistryTest: org.apache.ambari.server.configuration.Configuration configuration>
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : $r52 = staticinvoke <org.easymock.EasyMock: java.lang.Object createNiceMock(java.lang.Class)>(class "java/util/jar/JarEntry")
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : $r244 = staticinvoke <org.easymock.EasyMock: java.lang.Object createNiceMock(java.lang.Class)>(class "org/apache/ambari/server/state/Cluster")
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : $z15 = virtualinvoke r2.<java.io.File: boolean exists()>()
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : $r233 = virtualinvoke r9.<java.io.File: java.net.URI toURI()>()
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : r15 = staticinvoke <org.apache.ambari.server.orm.entities.ViewInstanceEntityTest: java.util.Set getViewInstanceEntities(org.apache.ambari.server.orm.entities.ViewEntity)>(r14)
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : $r47 = staticinvoke <org.easymock.EasyMock: java.lang.Object createNiceMock(java.lang.Class)>(class "java/io/File")
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : $r178 = virtualinvoke r11.<java.util.jar.JarEntry: java.lang.String getName()>()
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : l2 = 99L
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : $r228 = virtualinvoke r7.<java.io.File: java.io.File[] listFiles()>()
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : virtualinvoke r14.<org.apache.ambari.server.orm.entities.ViewEntity: void setInstances(java.util.Collection)>(r15)
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : $r42 = staticinvoke <org.easymock.EasyMock: java.lang.Object createNiceMock(java.lang.Class)>(class "java/io/File")
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : interfaceinvoke r68.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>("/var/lib/ambari-server/resources/views/work/MY_VIEW{1.0.0}/WEB-INF/lib", r7)
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : $r197 = staticinvoke <org.easymock.EasyMock: java.lang.Object anyObject(java.lang.Class)>(class "[B")
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : $r85 = new java.util.HashMap
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : $r57 = new java.util.HashSet
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : $r61 = virtualinvoke r14.<org.apache.ambari.server.orm.entities.ViewEntity: org.apache.ambari.server.view.configuration.ViewConfig getConfiguration()>()
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : $r294 = <org.apache.ambari.server.view.ViewRegistryTest: org.apache.ambari.server.state.Clusters clusters>
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : $r252 = virtualinvoke r26.<org.apache.ambari.server.orm.entities.ViewInstanceDataEntity: java.lang.String getUser()>()
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : $r67 = new java.util.HashMap
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : virtualinvoke r10.<java.util.jar.JarInputStream: void close()>()
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : if z0 != 0 goto $z15 = virtualinvoke r2.<java.io.File: boolean exists()>()
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : $z10 = virtualinvoke r4.<java.io.File: boolean exists()>()
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : virtualinvoke r17.<org.apache.ambari.server.orm.entities.ViewInstanceEntity: void setEntities(java.util.Collection)>(r18)
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : virtualinvoke r20.<org.apache.ambari.server.orm.entities.ViewInstanceEntity: void setResource(org.apache.ambari.server.orm.entities.ResourceEntity)>(r21)
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : $r304 = newarray (java.lang.Object)[19]
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : $r108 = <org.apache.ambari.server.view.ViewRegistryTest: org.apache.ambari.server.configuration.Configuration configuration>
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : $r69 = staticinvoke <java.lang.System: java.lang.String getProperty(java.lang.String)>("os.name")
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : $r172 = virtualinvoke r10.<java.util.jar.JarInputStream: java.util.jar.JarEntry getNextJarEntry()>()
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : $z8 = virtualinvoke r3.<java.io.File: boolean isDirectory()>()
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : $r102 = <org.apache.ambari.server.view.ViewRegistryTest: org.apache.ambari.server.configuration.Configuration configuration>
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : virtualinvoke r19.<org.apache.ambari.server.orm.entities.ViewEntityEntity: void setViewName(java.lang.String)>("MY_VIEW{1.0.0}")
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : $r191 = staticinvoke <org.easymock.EasyMock: java.lang.Object anyObject(java.lang.Class)>(class "[B")
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : goto [?= $z3 = interfaceinvoke r16.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : r63 = interfaceinvoke r15.<java.util.Set: java.util.Iterator iterator()>()
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : r14 = staticinvoke <org.apache.ambari.server.orm.entities.ViewEntityTest: org.apache.ambari.server.orm.entities.ViewEntity getViewEntity()>()
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : $z13 = virtualinvoke r8.<java.io.File: boolean mkdir()>()
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : $r245 = staticinvoke <org.easymock.EasyMock: java.lang.Object createNiceMock(java.lang.Class)>(class "org/apache/ambari/server/state/Service")
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : interfaceinvoke r27.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>("HDFS", r23)
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : $l10 = staticinvoke <java.lang.System: long currentTimeMillis()>()
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : $r162 = virtualinvoke r4.<java.io.File: java.net.URI toURI()>()
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : $r48 = staticinvoke <org.easymock.EasyMock: java.lang.Object createNiceMock(java.lang.Class)>(class "java/io/File")
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : virtualinvoke r17.<org.apache.ambari.server.orm.entities.ViewInstanceEntity: void putInstanceData(java.lang.String,java.lang.String)>("p1", "v1")
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : interfaceinvoke r86.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>(r3, r10)
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : $r153 = virtualinvoke r4.<java.io.File: java.lang.String getAbsolutePath()>()
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : $r247 = staticinvoke <org.easymock.EasyMock: java.lang.Object createNiceMock(java.lang.Class)>(class "org/apache/ambari/server/orm/entities/ViewInstanceDataEntity")
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : $r45 = staticinvoke <org.easymock.EasyMock: java.lang.Object createNiceMock(java.lang.Class)>(class "java/io/File")
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : interfaceinvoke r18.<java.util.Collection: boolean add(java.lang.Object)>(r19)
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : virtualinvoke r12.<java.io.FileOutputStream: void close()>()
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : interfaceinvoke r68.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>("/var/lib/ambari-server/resources/views/work/MY_VIEW{1.0.0}/META-INF", r8)
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : $r310 = new org.apache.ambari.server.view.ViewRegistryTest$TestViewArchiveUtility
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : $r59 = staticinvoke <java.lang.Long: java.lang.Long valueOf(long)>(99L)
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : r16 = interfaceinvoke r15.<java.util.Set: java.util.Iterator iterator()>()
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : $r114 = <org.apache.ambari.server.view.ViewRegistryTest: org.apache.ambari.server.configuration.Configuration configuration>
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : $r148 = staticinvoke <java.lang.System: java.lang.String getProperty(java.lang.String)>("os.name")
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : virtualinvoke r19.<org.apache.ambari.server.orm.entities.ViewEntityEntity: void setIdProperty(java.lang.String)>("id")
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : $r46 = staticinvoke <org.easymock.EasyMock: java.lang.Object createNiceMock(java.lang.Class)>(class "java/io/File")
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : interfaceinvoke r83.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>(r5, r12)
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : if z1 == 0 goto $r304 = newarray (java.lang.Object)[19]
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : $r134 = staticinvoke <java.lang.System: java.lang.String getProperty(java.lang.String)>("os.name")
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : interfaceinvoke r27.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>("HIVE", r23)
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : $r50 = staticinvoke <org.easymock.EasyMock: java.lang.Object createNiceMock(java.lang.Class)>(class "java/io/File")
+org.apache.ambari.server.view.ViewRegistryTest.testReadViewArchives : $r175 = virtualinvoke r10.<java.util.jar.JarInputStream: java.util.jar.JarEntry getNextJarEntry()>()
+org.apache.ambari.server.orm.entities.ViewInstanceDataEntity.setUser : virtualinvoke r0.<org.apache.ambari.server.orm.entities.ViewInstanceDataEntity: void _persistence_set_user(java.lang.String)>(r1)
+org.apache.ambari.server.orm.entities.ViewEntityEntity.setViewInstance : virtualinvoke r0.<org.apache.ambari.server.orm.entities.ViewEntityEntity: void _persistence_set_viewInstance(org.apache.ambari.server.orm.entities.ViewInstanceEntity)>(r1)
+org.apache.ambari.server.orm.entities.ViewEntityEntity.setViewInstanceName : virtualinvoke r0.<org.apache.ambari.server.orm.entities.ViewEntityEntity: void _persistence_set_viewInstanceName(java.lang.String)>(r1)
+org.apache.ambari.server.view.ViewRegistry.readViewArchive : $r24 = r0.<org.apache.ambari.server.view.ViewRegistry: org.apache.ambari.server.view.ViewExtractor extractor>
+org.apache.ambari.server.view.ViewRegistry.readViewArchive : $r18 = <org.apache.ambari.server.view.ViewRegistry: org.slf4j.Logger LOG>
+org.apache.ambari.server.view.ViewRegistry.readViewArchive : specialinvoke r0.<org.apache.ambari.server.view.ViewRegistry: void configureViewLogging(org.apache.ambari.server.orm.entities.ViewEntity,java.lang.ClassLoader)>(r1, r8)
+org.apache.ambari.server.view.ViewRegistry.readViewArchive : $r49 = new java.lang.StringBuilder
+org.apache.ambari.server.view.ViewRegistry.readViewArchive : $r5 = <org.apache.ambari.view.ViewDefinition$ViewStatus: org.apache.ambari.view.ViewDefinition$ViewStatus DEPLOYING>
+org.apache.ambari.server.view.ViewRegistry.readViewArchive : $r61 = <org.apache.ambari.server.view.ViewRegistry: org.slf4j.Logger LOG>
+org.apache.ambari.server.view.ViewRegistry.readViewArchive : r7 = virtualinvoke r3.<java.io.File: java.lang.String getAbsolutePath()>()
+org.apache.ambari.server.view.ViewRegistry.readViewArchive : r48 = $r47
+org.apache.ambari.server.view.ViewRegistry.readViewArchive : $r25 = r0.<org.apache.ambari.server.view.ViewRegistry: org.apache.ambari.server.view.ViewArchiveUtility archiveUtility>
+org.apache.ambari.server.view.ViewRegistry.readViewArchive : virtualinvoke r0.<org.apache.ambari.server.view.ViewRegistry: org.apache.ambari.server.orm.entities.ViewEntity setupViewDefinition(org.apache.ambari.server.orm.entities.ViewEntity,java.lang.ClassLoader)>(r1, r8)
+org.apache.ambari.server.view.ViewRegistry.readViewArchive : virtualinvoke r1.<org.apache.ambari.server.orm.entities.ViewEntity: void setConfiguration(org.apache.ambari.server.view.configuration.ViewConfig)>(r9)
+org.apache.ambari.server.view.ViewRegistry.readViewArchive : $r54 = <org.apache.ambari.view.ViewDefinition$ViewStatus: org.apache.ambari.view.ViewDefinition$ViewStatus ERROR>
+org.apache.ambari.server.view.ViewRegistry.readViewArchive : $z1 = virtualinvoke r0.<org.apache.ambari.server.view.ViewRegistry: boolean checkViewVersions(org.apache.ambari.server.orm.entities.ViewEntity,java.lang.String)>(r1, r4)
+org.apache.ambari.server.orm.entities.ViewEntity.setStatusDetail : r0.<org.apache.ambari.server.orm.entities.ViewEntity: java.lang.String statusDetail> = r1
+org.apache.ambari.server.view.configuration.ViewConfig.getMinAmbariVersion : $r1 = r0.<org.apache.ambari.server.view.configuration.ViewConfig: java.lang.String minAmbariVersion>
+org.apache.ambari.server.view.ViewRegistryTest$TestViewArchiveUtility.getViewConfigFromExtractedArchive : $r9 = r0.<org.apache.ambari.server.view.ViewRegistryTest$TestViewArchiveUtility: java.util.Map viewConfigs>
+org.apache.ambari.server.view.ViewRegistryTest$TestViewArchiveUtility.getViewConfigFromExtractedArchive : $r5 = r0.<org.apache.ambari.server.view.ViewRegistryTest$TestViewArchiveUtility: java.util.Map viewConfigs>
+org.apache.ambari.server.view.ViewRegistryTest$TestViewArchiveUtility.getViewConfigFromExtractedArchive : $r8 = virtualinvoke r3.<java.io.File: java.lang.String getAbsolutePath()>()
+org.apache.ambari.server.view.ViewRegistryTest$TestViewArchiveUtility.getViewConfigFromExtractedArchive : $z1 = r0.<org.apache.ambari.server.view.ViewRegistryTest$TestViewArchiveUtility: boolean badArchive>
+org.apache.ambari.server.orm.entities.ViewParameterEntity.setMasked : if z0 == 0 goto $c0 = 78
+org.apache.ambari.server.configuration.Configuration$ConfigurationProperty.getKey : $r1 = r0.<org.apache.ambari.server.configuration.Configuration$ConfigurationProperty: java.lang.String m_key>
+org.apache.ambari.server.orm.entities.ViewEntityTest.getViewEntity : virtualinvoke r2.<java.util.Properties: java.lang.Object put(java.lang.Object,java.lang.Object)>("p1", "v1")
+org.apache.ambari.server.orm.entities.ViewEntityTest.getViewEntity : virtualinvoke r4.<org.apache.ambari.server.orm.entities.ViewEntity: void setResourceType(org.apache.ambari.server.orm.entities.ResourceTypeEntity)>(r5)
+org.apache.ambari.server.orm.entities.ViewEntityTest.getViewEntity : $r0 = staticinvoke <org.apache.ambari.server.view.configuration.ViewConfigTest: org.apache.ambari.server.view.configuration.ViewConfig getConfig()>()
+org.apache.ambari.server.orm.entities.ViewEntityTest.getViewEntity : $r18 = virtualinvoke r4.<org.apache.ambari.server.orm.entities.ViewEntity: java.lang.String getName()>()
+org.apache.ambari.server.orm.entities.ViewEntityTest.getViewEntity : $r16 = new org.apache.ambari.server.orm.entities.ResourceTypeEntity
+org.apache.ambari.server.orm.entities.ViewEntityTest.getViewEntity : return r4
+org.apache.ambari.server.orm.entities.ViewEntityTest.getViewEntity : $r12 = new org.apache.ambari.server.configuration.Configuration
+org.apache.ambari.server.orm.entities.ViewEntityTest.getViewEntity : $r14 = class "org/apache/ambari/server/orm/entities/ViewEntityTest"
+org.apache.ambari.server.orm.entities.ViewEntityTest.getViewEntity : $r19 = virtualinvoke r4.<org.apache.ambari.server.orm.entities.ViewEntity: java.util.Collection getInstances()>()
+org.apache.ambari.server.orm.entities.ViewEntityTest.getViewEntity : virtualinvoke r2.<java.util.Properties: java.lang.Object put(java.lang.Object,java.lang.Object)>("p2", "v2")
+org.apache.ambari.server.orm.entities.ViewEntityTest.getViewEntity : $r1 = new java.util.Properties
+org.apache.ambari.server.orm.entities.ViewEntityTest.getViewEntity : virtualinvoke r2.<java.util.Properties: java.lang.Object put(java.lang.Object,java.lang.Object)>("p3", "v3")
+org.apache.ambari.server.orm.entities.ViewEntityTest.getViewEntity : $r13 = new org.apache.ambari.server.orm.entities.ViewEntity
+org.apache.ambari.server.orm.entities.ViewEntityTest.getViewEntity : $r17 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(10)
+org.apache.ambari.server.orm.entities.ViewEntityTest.getViewEntity : l0 = 20L
+org.apache.ambari.server.orm.entities.ViewInstanceEntity.getInstanceData : r2 = virtualinvoke r0.<org.apache.ambari.server.orm.entities.ViewInstanceEntity: java.lang.String getCurrentUserName()>()
+org.apache.ambari.server.orm.entities.ViewInstanceEntity.getInstanceData : return null
+org.apache.ambari.server.orm.entities.ViewInstanceEntity.getInstanceData : $r5 = virtualinvoke r0.<org.apache.ambari.server.orm.entities.ViewInstanceEntity: java.util.Collection _persistence_get_data()>()
+org.apache.ambari.server.view.configuration.ParameterConfig.isRequired : $z0 = r0.<org.apache.ambari.server.view.configuration.ParameterConfig: boolean required>
+org.apache.ambari.server.view.ViewRegistry.getDefinition : $r3 = staticinvoke <org.apache.ambari.server.orm.entities.ViewEntity: java.lang.String getViewName(java.lang.String,java.lang.String)>(r1, r2)
+org.apache.ambari.server.view.ViewRegistry.getDefinition : $r2 = r0.<org.apache.ambari.server.view.ViewRegistry: java.util.Map viewDefinitions>
+org.apache.ambari.server.view.ViewRegistry.getDefinitions : $r1 = r0.<org.apache.ambari.server.view.ViewRegistry: java.util.Map viewDefinitions>
+org.apache.ambari.server.view.ViewClassLoader.getInitContext : virtualinvoke r2.<org.eclipse.jetty.webapp.WebAppContext: void addSystemClass(java.lang.String)>("org.apache.ambari.server.")
+org.apache.ambari.server.view.ViewClassLoader.getInitContext : r3 = virtualinvoke r0.<org.apache.ambari.server.view.configuration.ViewConfig: java.lang.String getExtraClasspath()>()
+org.apache.ambari.server.view.ViewClassLoader.getInitContext : return r2
+org.apache.ambari.server.view.ViewClassLoader.getInitContext : virtualinvoke r2.<org.eclipse.jetty.webapp.WebAppContext: void addSystemClass(java.lang.String)>("org.apache.velocity.")
+org.apache.ambari.server.view.ViewClassLoader.getInitContext : if r3 == null goto return r2
+org.apache.ambari.server.view.ViewClassLoader.getInitContext : virtualinvoke r2.<org.eclipse.jetty.webapp.WebAppContext: void addSystemClass(java.lang.String)>("com.sun.jersey.")
+org.apache.ambari.server.view.ViewClassLoader.getInitContext : virtualinvoke r2.<org.eclipse.jetty.webapp.WebAppContext: void addSystemClass(java.lang.String)>("com.google.inject.")
+org.apache.ambari.server.view.ViewClassLoader.getInitContext : virtualinvoke r2.<org.eclipse.jetty.webapp.WebAppContext: void addSystemClass(java.lang.String)>("org.slf4j.")
+org.apache.ambari.server.view.ViewClassLoader.getInitContext : if r0 == null goto return r2
+org.apache.ambari.server.view.ViewClassLoader.getInitContext : $r1 = new org.eclipse.jetty.webapp.WebAppContext
+org.apache.ambari.server.view.ViewClassLoader.getInitContext : virtualinvoke r2.<org.eclipse.jetty.webapp.WebAppContext: void addSystemClass(java.lang.String)>("org.apache.ambari.view.")
+org.apache.ambari.server.view.configuration.InstanceConfig.getDescription : $r1 = r0.<org.apache.ambari.server.view.configuration.InstanceConfig: java.lang.String description>
+org.apache.ambari.server.orm.entities.ViewParameterEntity.setRequired : if z0 == 0 goto $c0 = 78
+org.apache.ambari.server.security.SecurityHelperImpl.getInstance : $r0 = <org.apache.ambari.server.security.SecurityHelperImpl: org.apache.ambari.server.security.SecurityHelper singleton>
+org.apache.ambari.server.view.ViewRegistryTest$1.get : $r1 = virtualinvoke r0.<org.apache.ambari.server.view.ViewRegistryTest$1: org.apache.ambari.server.api.services.AmbariMetaInfo get()>()
+org.apache.ambari.server.view.ViewRegistryTest$1.get : $r1 = r0.<org.apache.ambari.server.view.ViewRegistryTest$1: org.apache.ambari.server.api.services.AmbariMetaInfo val$finalMetaInfo>
+org.apache.ambari.server.view.configuration.InstanceConfig.getLabel : $r1 = r0.<org.apache.ambari.server.view.configuration.InstanceConfig: java.lang.String label>
+org.apache.ambari.server.view.configuration.ViewConfig.getMasker : $r1 = r0.<org.apache.ambari.server.view.configuration.ViewConfig: java.lang.String masker>
+org.apache.ambari.server.view.ViewRegistryTest$TestViewArchiveUtility.getFile : $r2 = r0.<org.apache.ambari.server.view.ViewRegistryTest$TestViewArchiveUtility: java.util.Map files>
+org.apache.ambari.server.orm.entities.ViewParameterEntity.setDefaultValue : virtualinvoke r0.<org.apache.ambari.server.orm.entities.ViewParameterEntity: void _persistence_set_defaultValue(java.lang.String)>(r1)
+org.apache.ambari.server.view.ViewRegistry.configureViewLogging : r3 = virtualinvoke r2.<java.lang.ClassLoader: java.io.InputStream getResourceAsStream(java.lang.String)>("view.log4j.properties")
+org.apache.ambari.server.view.ViewRegistry.configureViewLogging : r4 = null
+org.apache.ambari.server.view.ViewRegistry.configureViewLogging : if null == r3 goto return
+org.apache.ambari.server.orm.entities.ViewEntityEntity.hashCode : $i2 = 31 * i0
+org.apache.ambari.server.orm.entities.ViewEntityEntity.hashCode : $i8 = 31 * i7
+org.apache.ambari.server.orm.entities.ViewEntityEntity.hashCode : $i5 = 31 * i4
+org.apache.ambari.server.orm.entities.ViewEntityEntity.hashCode : return i13
+org.apache.ambari.server.orm.entities.ViewEntityEntity.hashCode : $i11 = 31 * i10
+org.apache.ambari.server.orm.entities.ViewEntityEntity.hashCode : $r1 = virtualinvoke r0.<org.apache.ambari.server.orm.entities.ViewEntityEntity: java.lang.Long _persistence_get_id()>()
+org.apache.ambari.server.view.ViewExtractor.ensureExtractedArchiveDirectory : $r3 = r0.<org.apache.ambari.server.view.ViewExtractor: org.apache.ambari.server.view.ViewArchiveUtility archiveUtility>
+org.apache.ambari.server.view.ViewExtractor.ensureExtractedArchiveDirectory : $z0 = virtualinvoke r2.<java.io.File: boolean exists()>()
+org.apache.ambari.server.orm.entities.ViewInstanceDataEntity.setName : virtualinvoke r0.<org.apache.ambari.server.orm.entities.ViewInstanceDataEntity: void _persistence_set_name(java.lang.String)>(r1)
+org.apache.ambari.server.view.configuration.ViewConfig.getIcon : $r1 = r0.<org.apache.ambari.server.view.configuration.ViewConfig: java.lang.String icon>
+org.apache.ambari.server.controller.spi.Resource$Type.getNextOrdinal : $i0 = <org.apache.ambari.server.controller.spi.Resource$Type: int nextOrdinal>
+org.apache.ambari.server.view.configuration.InstanceConfigTest.getInstanceConfigs : r0 = staticinvoke <org.apache.ambari.server.view.configuration.ViewConfigTest: org.apache.ambari.server.view.configuration.ViewConfig getConfig()>()
+org.apache.ambari.server.view.configuration.InstanceConfigTest.getInstanceConfigs : $r1 = virtualinvoke r0.<org.apache.ambari.server.view.configuration.ViewConfig: java.util.List getInstances()>()
+org.apache.ambari.server.view.configuration.ViewConfigTest.getConfig : $r7 = interfaceinvoke r4.<javax.xml.bind.Unmarshaller: java.lang.Object unmarshal(java.io.InputStream)>(r2)
+org.apache.ambari.server.view.configuration.ViewConfigTest.getConfig : $r6 = newarray (java.lang.Class)[1]
+org.apache.ambari.server.view.configuration.ViewConfigTest.getConfig : r4 = virtualinvoke r3.<javax.xml.bind.JAXBContext: javax.xml.bind.Unmarshaller createUnmarshaller()>()
+org.apache.ambari.server.view.configuration.ViewConfigTest.getConfig : $r0 = <org.apache.ambari.server.view.configuration.ViewConfigTest: java.lang.String xml>
+org.apache.ambari.server.view.configuration.ViewConfigTest.getConfig : $r1 = new java.io.ByteArrayInputStream
+org.apache.ambari.server.orm.entities.ViewParameterEntity.setDescription : virtualinvoke r0.<org.apache.ambari.server.orm.entities.ViewParameterEntity: void _persistence_set_description(java.lang.String)>(r1)
+org.apache.ambari.server.orm.entities.ViewEntityEntity.setId : virtualinvoke r0.<org.apache.ambari.server.orm.entities.ViewEntityEntity: void _persistence_set_id(java.lang.Long)>(r1)
+org.apache.ambari.server.orm.entities.ViewParameterEntity.setPlaceholder : virtualinvoke r0.<org.apache.ambari.server.orm.entities.ViewParameterEntity: void _persistence_set_placeholder(java.lang.String)>(r1)
+org.apache.ambari.server.orm.entities.ViewInstanceEntity.removeInstanceData : r2 = virtualinvoke r0.<org.apache.ambari.server.orm.entities.ViewInstanceEntity: org.apache.ambari.server.orm.entities.ViewInstanceDataEntity getInstanceData(java.lang.String)>(r1)
+org.apache.ambari.server.orm.entities.ViewInstanceEntity.removeInstanceData : if r2 == null goto return
+org.apache.ambari.server.view.ViewRegistry.readViewArchives : r7 = r4
+org.apache.ambari.server.view.ViewRegistry.readViewArchives : goto [?= i1 = i1 + 1]
+org.apache.ambari.server.view.ViewRegistry.readViewArchives : $z5 = virtualinvoke r12.<java.lang.String: boolean matches(java.lang.String)>(r1)
+org.apache.ambari.server.view.ViewRegistry.readViewArchives : goto [?= $z8 = interfaceinvoke r47.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.view.ViewRegistry.readViewArchives : $r35 = new org.apache.ambari.server.orm.entities.ViewEntity
+org.apache.ambari.server.view.ViewRegistry.readViewArchives : if z2 != 0 goto specialinvoke r0.<org.apache.ambari.server.view.ViewRegistry: void readViewArchive(org.apache.ambari.server.orm.entities.ViewEntity,java.io.File,java.io.File,java.lang.String)>(r15, r8, r14, r6)
+org.apache.ambari.server.view.ViewRegistry.readViewArchives : $r29 = new java.lang.StringBuilder
+org.apache.ambari.server.view.ViewRegistry.readViewArchives : goto [?= (branch)]
+org.apache.ambari.server.view.ViewRegistry.readViewArchives : $r25 = r0.<org.apache.ambari.server.view.ViewRegistry: javax.inject.Provider ambariMetaInfoProvider>
+org.apache.ambari.server.view.ViewRegistry.readViewArchives : $z4 = virtualinvoke r8.<java.io.File: boolean isDirectory()>()
+org.apache.ambari.server.view.ViewRegistry.readViewArchives : $r16 = r0.<org.apache.ambari.server.view.ViewRegistry: org.apache.ambari.server.configuration.Configuration configuration>
+org.apache.ambari.server.view.ViewRegistry.readViewArchives : if z1 == 0 goto $r58 = r0.<org.apache.ambari.server.view.ViewRegistry: org.apache.ambari.server.configuration.Configuration configuration>
+org.apache.ambari.server.view.ViewRegistry.readViewArchives : if r4 == null goto (branch)
+org.apache.ambari.server.view.ViewRegistry.readViewArchives : $r8 = <org.apache.ambari.server.view.ViewRegistry: org.slf4j.Logger LOG>
+org.apache.ambari.server.view.ViewRegistry.readViewArchives : z2 = virtualinvoke r15.<org.apache.ambari.server.orm.entities.ViewEntity: boolean isSystem()>()
+org.apache.ambari.server.view.ViewRegistry.readViewArchives : r10 = virtualinvoke r9.<org.apache.ambari.server.view.configuration.ViewConfig: java.lang.String getName()>()
+org.apache.ambari.server.view.ViewRegistry.readViewArchives : $r58 = r0.<org.apache.ambari.server.view.ViewRegistry: org.apache.ambari.server.configuration.Configuration configuration>
+org.apache.ambari.server.view.ViewRegistry.readViewArchives : r4 = virtualinvoke r2.<java.io.File: java.io.File[] listFiles()>()
+org.apache.ambari.server.view.ViewRegistry.readViewArchives : $r24 = new java.util.HashSet
+org.apache.ambari.server.view.ViewRegistry.readViewArchives : virtualinvoke r0.<org.apache.ambari.server.view.ViewRegistry: void addDefinition(org.apache.ambari.server.orm.entities.ViewEntity)>(r15)
+org.apache.ambari.server.view.ViewRegistry.readViewArchives : r12 = staticinvoke <org.apache.ambari.server.orm.entities.ViewEntity: java.lang.String getViewName(java.lang.String,java.lang.String)>(r10, r11)
+org.apache.ambari.server.view.ViewRegistry.readViewArchives : $r2 = r0.<org.apache.ambari.server.view.ViewRegistry: org.apache.ambari.server.configuration.Configuration configuration>
+org.apache.ambari.server.view.ViewRegistry.readViewArchives : $r50 = virtualinvoke r49.<org.apache.ambari.server.orm.entities.ViewEntity: org.apache.ambari.view.ViewDefinition$ViewStatus getStatus()>()
+org.apache.ambari.server.view.ViewRegistry.readViewArchives : $r17 = new java.lang.StringBuilder
+org.apache.ambari.server.view.ViewRegistry.readViewArchives : $r23 = r0.<org.apache.ambari.server.view.ViewRegistry: org.apache.ambari.server.view.ViewExtractor extractor>
+org.apache.ambari.server.view.ViewRegistry.readViewArchives : $r28 = r0.<org.apache.ambari.server.view.ViewRegistry: org.apache.ambari.server.view.ViewArchiveUtility archiveUtility>
+org.apache.ambari.server.view.ViewRegistry.readViewArchives : $r34 = r0.<org.apache.ambari.server.view.ViewRegistry: org.apache.ambari.server.view.ViewArchiveUtility archiveUtility>
+org.apache.ambari.server.view.ViewRegistry.readViewArchives : goto [?= return]
+org.apache.ambari.server.view.ViewRegistry.readViewArchives : if z0 == 0 goto virtualinvoke r0.<org.apache.ambari.server.view.ViewRegistry: void addDefinition(org.apache.ambari.server.orm.entities.ViewEntity)>(r15)
+org.apache.ambari.server.view.ViewRegistry.readViewArchives : specialinvoke r0.<org.apache.ambari.server.view.ViewRegistry: void readViewArchives(boolean,boolean,java.lang.String)>(z0, 0, ".*")
+org.apache.ambari.server.view.ViewRegistry.readViewArchives : r11 = virtualinvoke r9.<org.apache.ambari.server.view.configuration.ViewConfig: java.lang.String getVersion()>()
+org.apache.ambari.server.view.ViewRegistry.readViewArchives : specialinvoke r0.<org.apache.ambari.server.view.ViewRegistry: void readViewArchive(org.apache.ambari.server.orm.entities.ViewEntity,java.io.File,java.io.File,java.lang.String)>(r15, r8, r14, r6)
+org.apache.ambari.server.view.ViewRegistry.readViewArchives : $r46 = virtualinvoke r0.<org.apache.ambari.server.view.ViewRegistry: java.util.Collection getDefinitions()>()
+org.apache.ambari.server.orm.entities.ViewParameterEntity.setLabel : virtualinvoke r0.<org.apache.ambari.server.orm.entities.ViewParameterEntity: void _persistence_set_label(java.lang.String)>(r1)
+org.apache.ambari.server.view.configuration.ParameterConfig.getDefaultValue : $r1 = r0.<org.apache.ambari.server.view.configuration.ParameterConfig: java.lang.String defaultValue>
+org.apache.ambari.server.orm.entities.ViewEntity.isSystem : $r1 = virtualinvoke r0.<org.apache.ambari.server.orm.entities.ViewEntity: java.lang.Integer _persistence_get_system()>()
+org.apache.ambari.server.orm.entities.ViewEntity.getIcon64 : $r1 = virtualinvoke r0.<org.apache.ambari.server.orm.entities.ViewEntity: java.lang.String _persistence_get_icon64()>()
+org.apache.ambari.server.view.configuration.InstanceConfig.isVisible : $z0 = r0.<org.apache.ambari.server.view.configuration.InstanceConfig: boolean visible>
+org.apache.ambari.server.view.configuration.InstanceConfig.getIcon64 : $r1 = r0.<org.apache.ambari.server.view.configuration.InstanceConfig: java.lang.String icon64>
+org.apache.ambari.server.orm.entities.ViewEntity.getStatus : $r1 = r0.<org.apache.ambari.server.orm.entities.ViewEntity: org.apache.ambari.view.ViewDefinition$ViewStatus status>
+org.apache.ambari.server.orm.entities.ViewParameterEntity.setViewName : virtualinvoke r0.<org.apache.ambari.server.orm.entities.ViewParameterEntity: void _persistence_set_viewName(java.lang.String)>(r1)
+org.apache.ambari.server.orm.entities.ResourceTypeEntity.setId : virtualinvoke r0.<org.apache.ambari.server.orm.entities.ResourceTypeEntity: void _persistence_set_id(java.lang.Integer)>(r1)
+org.apache.ambari.server.orm.entities.ResourceEntity.setId : virtualinvoke r0.<org.apache.ambari.server.orm.entities.ResourceEntity: void _persistence_set_id(java.lang.Long)>(r1)
+org.apache.ambari.server.view.ViewExternalSubResourceProvider._getPropertyIds : interfaceinvoke r1.<java.util.Set: boolean add(java.lang.Object)>("version")
+org.apache.ambari.server.view.ViewExternalSubResourceProvider._getPropertyIds : interfaceinvoke r1.<java.util.Set: boolean add(java.lang.Object)>("view_name")
+org.apache.ambari.server.view.ViewExternalSubResourceProvider._getPropertyIds : interfaceinvoke r1.<java.util.Set: boolean add(java.lang.Object)>("name")
+org.apache.ambari.server.view.ViewExternalSubResourceProvider._getPropertyIds : interfaceinvoke r1.<java.util.Set: boolean add(java.lang.Object)>("instance_name")
+org.apache.ambari.server.view.ViewExternalSubResourceProvider._getPropertyIds : return r1
+org.apache.ambari.server.view.ViewExternalSubResourceProvider._getPropertyIds : $r0 = new java.util.HashSet
+org.apache.ambari.server.orm.entities.ViewEntity.setStatus : r0.<org.apache.ambari.server.orm.entities.ViewEntity: org.apache.ambari.view.ViewDefinition$ViewStatus status> = r1
+org.apache.ambari.server.view.ViewRegistryTest$TestViewArchiveUtility.getJarFileStream : $r2 = r0.<org.apache.ambari.server.view.ViewRegistryTest$TestViewArchiveUtility: java.util.Map jarFiles>
+org.apache.ambari.server.orm.entities.ViewInstanceDataEntity.setViewInstanceName : virtualinvoke r0.<org.apache.ambari.server.orm.entities.ViewInstanceDataEntity: void _persistence_set_viewInstanceName(java.lang.String)>(r1)
+org.apache.ambari.server.view.configuration.ViewConfig.isSystem : $z0 = r0.<org.apache.ambari.server.view.configuration.ViewConfig: boolean system>
+org.apache.ambari.server.orm.entities.ViewEntity.getIcon : $r1 = virtualinvoke r0.<org.apache.ambari.server.orm.entities.ViewEntity: java.lang.String _persistence_get_icon()>()
+org.apache.ambari.server.view.configuration.InstanceConfig.getName : $r1 = r0.<org.apache.ambari.server.view.configuration.InstanceConfig: java.lang.String name>
+org.apache.ambari.server.orm.entities.ViewEntity.getConfiguration : $r1 = r0.<org.apache.ambari.server.orm.entities.ViewEntity: org.apache.ambari.server.view.configuration.ViewConfig configuration>
+org.apache.ambari.server.view.ViewRegistry.checkViewVersion : return 1
+org.apache.ambari.server.view.ViewRegistry.checkViewVersion : if r2 == null goto return 1
+org.apache.ambari.server.orm.entities.ViewInstanceDataEntity.setViewName : virtualinvoke r0.<org.apache.ambari.server.orm.entities.ViewInstanceDataEntity: void _persistence_set_viewName(java.lang.String)>(r1)
+org.apache.ambari.server.view.configuration.ViewConfig.getMaxAmbariVersion : $r1 = r0.<org.apache.ambari.server.view.configuration.ViewConfig: java.lang.String maxAmbariVersion>
+org.apache.ambari.server.orm.entities.ViewEntity.getName : $r1 = virtualinvoke r0.<org.apache.ambari.server.orm.entities.ViewEntity: java.lang.String _persistence_get_name()>()
+org.apache.ambari.server.orm.entities.ViewParameterEntity.setClusterConfig : virtualinvoke r0.<org.apache.ambari.server.orm.entities.ViewParameterEntity: void _persistence_set_clusterConfig(java.lang.String)>(r1)
+org.apache.ambari.server.orm.entities.ViewParameterEntity.setName : virtualinvoke r0.<org.apache.ambari.server.orm.entities.ViewParameterEntity: void _persistence_set_name(java.lang.String)>(r1)
+org.apache.ambari.server.view.ViewRegistry.setupViewDefinition : $r27 = virtualinvoke r8.<org.apache.ambari.server.view.configuration.ParameterConfig: java.lang.String getClusterConfig()>()
+org.apache.ambari.server.view.ViewRegistry.setupViewDefinition : r28 = virtualinvoke r3.<org.apache.ambari.server.view.configuration.ViewConfig: java.util.List getResources()>()
+org.apache.ambari.server.view.ViewRegistry.setupViewDefinition : r6 = virtualinvoke r1.<org.apache.ambari.server.orm.entities.ViewEntity: java.lang.String getName()>()
+org.apache.ambari.server.view.ViewRegistry.setupViewDefinition : $z1 = virtualinvoke r8.<org.apache.ambari.server.view.configuration.ParameterConfig: boolean isRequired()>()
+org.apache.ambari.server.view.ViewRegistry.setupViewDefinition : r29 = virtualinvoke r1.<org.apache.ambari.server.orm.entities.ViewEntity: org.apache.ambari.server.controller.spi.Resource$Type getExternalResourceType()>()
+org.apache.ambari.server.view.ViewRegistry.setupViewDefinition : r4 = virtualinvoke r3.<org.apache.ambari.server.view.configuration.ViewConfig: java.util.List getParameters()>()
+org.apache.ambari.server.view.ViewRegistry.setupViewDefinition : virtualinvoke r9.<org.apache.ambari.server.orm.entities.ViewParameterEntity: void setViewName(java.lang.String)>(r6)
+org.apache.ambari.server.view.ViewRegistry.setupViewDefinition : $r23 = virtualinvoke r8.<org.apache.ambari.server.view.configuration.ParameterConfig: java.lang.String getDescription()>()
+org.apache.ambari.server.view.ViewRegistry.setupViewDefinition : goto [?= $z0 = interfaceinvoke r7.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.view.ViewRegistry.setupViewDefinition : $r22 = virtualinvoke r8.<org.apache.ambari.server.view.configuration.ParameterConfig: java.lang.String getName()>()
+org.apache.ambari.server.view.ViewRegistry.setupViewDefinition : r3 = virtualinvoke r1.<org.apache.ambari.server.orm.entities.ViewEntity: org.apache.ambari.server.view.configuration.ViewConfig getConfiguration()>()
+org.apache.ambari.server.view.ViewRegistry.setupViewDefinition : $r25 = virtualinvoke r8.<org.apache.ambari.server.view.configuration.ParameterConfig: java.lang.String getPlaceholder()>()
+org.apache.ambari.server.view.ViewRegistry.setupViewDefinition : virtualinvoke r9.<org.apache.ambari.server.orm.entities.ViewParameterEntity: void setViewEntity(org.apache.ambari.server.orm.entities.ViewEntity)>(r1)
+org.apache.ambari.server.view.ViewRegistry.setupViewDefinition : $r21 = new org.apache.ambari.server.orm.entities.ViewParameterEntity
+org.apache.ambari.server.view.ViewRegistry.setupViewDefinition : $r24 = virtualinvoke r8.<org.apache.ambari.server.view.configuration.ParameterConfig: java.lang.String getLabel()>()
+org.apache.ambari.server.view.ViewRegistry.setupViewDefinition : r7 = interfaceinvoke r4.<java.util.List: java.util.Iterator iterator()>()
+org.apache.ambari.server.view.ViewRegistry.setupViewDefinition : $r26 = virtualinvoke r8.<org.apache.ambari.server.view.configuration.ParameterConfig: java.lang.String getDefaultValue()>()
+org.apache.ambari.server.view.ViewRegistry.setupViewDefinition : $z2 = virtualinvoke r8.<org.apache.ambari.server.view.configuration.ParameterConfig: boolean isMasked()>()
+org.apache.ambari.server.view.ViewRegistry.setupViewDefinition : $r19 = new java.util.HashSet
+org.apache.ambari.server.view.ViewRegistry.setupViewDefinition : virtualinvoke r1.<org.apache.ambari.server.orm.entities.ViewEntity: void setParameters(java.util.Collection)>(r5)
+org.apache.ambari.server.view.ViewRegistry.setupViewDefinition : $r30 = new org.apache.ambari.server.view.ViewExternalSubResourceProvider
+org.apache.ambari.server.view.ViewRegistry.setupViewDefinition : virtualinvoke r1.<org.apache.ambari.server.orm.entities.ViewEntity: void setClassLoader(java.lang.ClassLoader)>(r2)
+org.apache.ambari.server.view.ViewRegistry.setupViewDefinition : interfaceinvoke r5.<java.util.Collection: boolean add(java.lang.Object)>(r9)
+org.apache.ambari.server.view.configuration.InstanceConfig.getIcon : $r1 = r0.<org.apache.ambari.server.view.configuration.InstanceConfig: java.lang.String icon>
+org.apache.ambari.server.orm.entities.ViewInstanceEntity.hashCode : return i3
+org.apache.ambari.server.orm.entities.ViewInstanceEntity.hashCode : $i1 = 31 * i0
+org.apache.ambari.server.orm.entities.ViewInstanceEntity.hashCode : $r1 = virtualinvoke r0.<org.apache.ambari.server.orm.entities.ViewInstanceEntity: java.lang.String _persistence_get_viewName()>()
+org.apache.ambari.server.view.configuration.ViewConfig.getClusterConfigOptions : $r1 = r0.<org.apache.ambari.server.view.configuration.ViewConfig: java.lang.String clusterConfigOptions>
+org.apache.ambari.server.view.ViewExternalSubResourceProvider._getKeyPropertyIds : $r3 = <org.apache.ambari.server.controller.spi.Resource$Type: org.apache.ambari.server.controller.spi.Resource$Type View>
+org.apache.ambari.server.view.ViewExternalSubResourceProvider._getKeyPropertyIds : $r5 = <org.apache.ambari.server.controller.spi.Resource$Type: org.apache.ambari.server.controller.spi.Resource$Type ViewVersion>
+org.apache.ambari.server.view.ViewExternalSubResourceProvider._getKeyPropertyIds : return r2
+org.apache.ambari.server.view.ViewExternalSubResourceProvider._getKeyPropertyIds : $r1 = new java.util.HashMap
+org.apache.ambari.server.view.ViewExternalSubResourceProvider._getKeyPropertyIds : $r7 = <org.apache.ambari.server.controller.spi.Resource$Type: org.apache.ambari.server.controller.spi.Resource$Type ViewInstance>
+org.apache.ambari.server.view.ViewExternalSubResourceProvider._getKeyPropertyIds : interfaceinvoke r2.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>(r0, "name")
+org.apache.ambari.server.configuration.Configuration.getProperty : r2 = null
+org.apache.ambari.server.configuration.Configuration.getProperty : $r4 = virtualinvoke r1.<org.apache.ambari.server.configuration.Configuration$ConfigurationProperty: java.lang.Object getDefaultValue()>()
+org.apache.ambari.server.configuration.Configuration.getProperty : $r5 = r0.<org.apache.ambari.server.configuration.Configuration: java.util.Properties properties>
+org.apache.ambari.server.configuration.Configuration.getProperty : $r3 = virtualinvoke r1.<org.apache.ambari.server.configuration.Configuration$ConfigurationProperty: java.lang.Object getDefaultValue()>()
+org.apache.ambari.server.view.ViewRegistry.initInstance : <org.apache.ambari.server.view.ViewRegistry: org.apache.ambari.server.view.ViewRegistry singleton> = r0
+org.apache.ambari.server.view.configuration.ViewConfig.getExtraClasspath : $r1 = r0.<org.apache.ambari.server.view.configuration.ViewConfig: java.util.List classpath>
+org.apache.ambari.server.view.configuration.ViewConfig.getName : $r1 = r0.<org.apache.ambari.server.view.configuration.ViewConfig: java.lang.String name>
+org.apache.ambari.server.orm.entities.ViewEntity.getViewName : $r2 = new java.lang.StringBuilder
+org.apache.ambari.server.view.configuration.ParameterConfig.getDescription : $r1 = r0.<org.apache.ambari.server.view.configuration.ParameterConfig: java.lang.String description>
+org.apache.ambari.server.configuration.Configuration.loadSSLParams : $r15 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty SSL_TRUSTSTORE_TYPE>
+org.apache.ambari.server.configuration.Configuration.loadSSLParams : $r1 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty SSL_TRUSTSTORE_PATH>
+org.apache.ambari.server.configuration.Configuration.loadSSLParams : $r7 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty SSL_TRUSTSTORE_PASSWORD>
+org.apache.ambari.server.view.configuration.ParameterConfig.getName : $r1 = r0.<org.apache.ambari.server.view.configuration.ParameterConfig: java.lang.String name>
+org.apache.ambari.server.view.configuration.ParameterConfig.getPlaceholder : $r1 = r0.<org.apache.ambari.server.view.configuration.ParameterConfig: java.lang.String placeholder>
+org.apache.ambari.server.orm.entities.ViewInstanceEntity.getUsername : $r1 = r0.<org.apache.ambari.server.orm.entities.ViewInstanceEntity: org.apache.ambari.server.security.SecurityHelper securityHelper>
+org.apache.ambari.server.orm.entities.ViewEntityEntity.setViewName : virtualinvoke r0.<org.apache.ambari.server.orm.entities.ViewEntityEntity: void _persistence_set_viewName(java.lang.String)>(r1)
+org.apache.ambari.server.configuration.Configuration$ConfigurationProperty.getDefaultValue : $r1 = r0.<org.apache.ambari.server.configuration.Configuration$ConfigurationProperty: java.lang.Object m_defaultValue>
+org.apache.ambari.server.orm.entities.ViewEntity.getExternalResourceType : $r1 = r0.<org.apache.ambari.server.orm.entities.ViewEntity: org.apache.ambari.server.controller.spi.Resource$Type externalResourceType>
+org.apache.ambari.server.orm.entities.ViewParameterEntity.setViewEntity : virtualinvoke r0.<org.apache.ambari.server.orm.entities.ViewParameterEntity: void _persistence_set_view(org.apache.ambari.server.orm.entities.ViewEntity)>(r1)
+org.apache.ambari.server.orm.entities.ViewEntity.getQualifiedResourceTypeName : $r2 = new java.lang.StringBuilder
+org.apache.ambari.server.orm.entities.ViewEntity.setInstances : virtualinvoke r0.<org.apache.ambari.server.orm.entities.ViewEntity: void _persistence_set_instances(java.util.Collection)>(r1)
+org.apache.ambari.server.state.StackId.parseStackIdHelper : if r2 == null goto r1.<org.apache.ambari.server.state.StackId: java.lang.String stackName> = ""
+org.apache.ambari.server.state.StackId.parseStackIdHelper : $r8 = virtualinvoke r2.<java.lang.String: java.lang.String substring(int,int)>(0, i0)
+org.apache.ambari.server.state.StackId.parseStackIdHelper : i0 = virtualinvoke r2.<java.lang.String: int indexOf(int)>(45)
+org.apache.ambari.server.state.StackId.parseStackIdHelper : if i0 == -1 goto $r3 = new java.lang.RuntimeException
+org.apache.ambari.server.state.StackId.parseStackIdHelper : $i3 = i0 + 1
+org.apache.ambari.server.orm.entities.ResourceEntity.setResourceType : virtualinvoke r0.<org.apache.ambari.server.orm.entities.ResourceEntity: void _persistence_set_resourceType(org.apache.ambari.server.orm.entities.ResourceTypeEntity)>(r1)
+org.apache.ambari.server.view.configuration.ViewConfig.getLabel : $r1 = r0.<org.apache.ambari.server.view.configuration.ViewConfig: java.lang.String label>
+org.apache.ambari.server.orm.entities.ResourceTypeEntity.setName : virtualinvoke r0.<org.apache.ambari.server.orm.entities.ResourceTypeEntity: void _persistence_set_name(java.lang.String)>(r1)
+org.apache.ambari.server.view.configuration.ViewConfig.getResources : $r1 = r0.<org.apache.ambari.server.view.configuration.ViewConfig: java.util.List resources>
+org.apache.ambari.server.view.configuration.ViewConfig.getBuild : $r1 = r0.<org.apache.ambari.server.view.configuration.ViewConfig: java.lang.String build>
+org.apache.ambari.server.view.ViewRegistry.addDefinition : $r2 = r0.<org.apache.ambari.server.view.ViewRegistry: java.util.Map viewDefinitions>
+org.apache.ambari.server.orm.entities.ViewInstanceDataEntity.setViewInstanceEntity : virtualinvoke r0.<org.apache.ambari.server.orm.entities.ViewInstanceDataEntity: void _persistence_set_viewInstance(org.apache.ambari.server.orm.entities.ViewInstanceEntity)>(r1)
+org.apache.ambari.server.view.ViewExtractor.extractViewArchive : $r16 = new java.lang.StringBuilder
+org.apache.ambari.server.view.ViewExtractor.extractViewArchive : $r20 = <org.apache.ambari.server.view.ViewExtractor: org.slf4j.Logger LOG>
+org.apache.ambari.server.view.ViewExtractor.extractViewArchive : virtualinvoke r1.<org.apache.ambari.server.orm.entities.ViewEntity: void setStatusDetail(java.lang.String)>(r27)
+org.apache.ambari.server.view.ViewExtractor.extractViewArchive : $r91 = r0.<org.apache.ambari.server.view.ViewExtractor: org.apache.ambari.server.view.ViewArchiveUtility archiveUtility>
+org.apache.ambari.server.view.ViewExtractor.extractViewArchive : goto [?= (branch)]
+org.apache.ambari.server.view.ViewExtractor.extractViewArchive : $z3 = virtualinvoke r7.<java.io.File: boolean mkdir()>()
+org.apache.ambari.server.view.ViewExtractor.extractViewArchive : $i4 = virtualinvoke r6.<java.util.jar.JarInputStream: int read(byte[])>(r12)
+org.apache.ambari.server.view.ViewExtractor.extractViewArchive : virtualinvoke r11.<java.io.FileOutputStream: void close()>()
+org.apache.ambari.server.view.ViewExtractor.extractViewArchive : r4 = virtualinvoke r3.<java.io.File: java.lang.String getAbsolutePath()>()
+org.apache.ambari.server.view.ViewExtractor.extractViewArchive : virtualinvoke r11.<java.io.FileOutputStream: void write(byte[],int,int)>(r12, 0, i0)
+org.apache.ambari.server.view.ViewExtractor.extractViewArchive : $r51 = r0.<org.apache.ambari.server.view.ViewExtractor: org.apache.ambari.server.view.ViewArchiveUtility archiveUtility>
+org.apache.ambari.server.view.ViewExtractor.extractViewArchive : $r64 = r0.<org.apache.ambari.server.view.ViewExtractor: org.apache.ambari.server.view.ViewArchiveUtility archiveUtility>
+org.apache.ambari.server.view.ViewExtractor.extractViewArchive : virtualinvoke r11.<java.io.FileOutputStream: void flush()>()
+org.apache.ambari.server.view.ViewExtractor.extractViewArchive : $r65 = <org.apache.ambari.server.view.ViewExtractor: org.slf4j.Logger LOG>
+org.apache.ambari.server.view.ViewExtractor.extractViewArchive : r12 = newarray (byte)[1024]
+org.apache.ambari.server.view.ViewExtractor.extractViewArchive : virtualinvoke r1.<org.apache.ambari.server.orm.entities.ViewEntity: void setStatusDetail(java.lang.String)>(r5)
+org.apache.ambari.server.view.ViewExtractor.extractViewArchive : $z2 = virtualinvoke r3.<java.io.File: boolean mkdir()>()
+org.apache.ambari.server.view.ViewExtractor.extractViewArchive : $r73 = <org.apache.ambari.server.view.ViewExtractor: org.slf4j.Logger LOG>
+org.apache.ambari.server.view.ViewExtractor.extractViewArchive : goto [?= virtualinvoke r6.<java.util.jar.JarInputStream: void closeEntry()>()]
+org.apache.ambari.server.view.ViewExtractor.extractViewArchive : $r29 = r0.<org.apache.ambari.server.view.ViewExtractor: org.apache.ambari.server.view.ViewArchiveUtility archiveUtility>
+org.apache.ambari.server.view.ViewExtractor.extractViewArchive : $r39 = virtualinvoke r6.<java.util.jar.JarInputStream: java.util.jar.JarEntry getNextJarEntry()>()
+org.apache.ambari.server.view.ViewExtractor.extractViewArchive : $z1 = virtualinvoke r3.<java.io.File: boolean exists()>()
+org.apache.ambari.server.view.ViewExtractor.extractViewArchive : goto [?= $r91 = r0.<org.apache.ambari.server.view.ViewExtractor: org.apache.ambari.server.view.ViewArchiveUtility archiveUtility>]
+org.apache.ambari.server.view.ViewExtractor.extractViewArchive : $r46 = <org.apache.ambari.server.view.ViewExtractor: org.slf4j.Logger LOG>
+org.apache.ambari.server.view.ViewExtractor.extractViewArchive : $r93 = specialinvoke r0.<org.apache.ambari.server.view.ViewExtractor: java.lang.ClassLoader getArchiveClassLoader(org.apache.ambari.server.view.configuration.ViewConfig,java.io.File)>(r92, r3)
+org.apache.ambari.server.view.ViewExtractor.extractViewArchive : virtualinvoke r6.<java.util.jar.JarInputStream: void close()>()
+org.apache.ambari.server.view.ViewExtractor.extractViewArchive : $r21 = r0.<org.apache.ambari.server.view.ViewExtractor: org.apache.ambari.server.view.ViewArchiveUtility archiveUtility>
+org.apache.ambari.server.view.ViewExtractor.extractViewArchive : $r22 = new java.lang.StringBuilder
+org.apache.ambari.server.view.ViewExtractor.extractViewArchive : $r28 = <org.apache.ambari.server.view.ViewExtractor: org.slf4j.Logger LOG>
+org.apache.ambari.server.view.ViewExtractor.extractViewArchive : $z4 = virtualinvoke r8.<java.util.jar.JarEntry: boolean isDirectory()>()
+org.apache.ambari.server.view.ViewExtractor.extractViewArchive : $z0 = virtualinvoke r3.<java.io.File: boolean exists()>()
+org.apache.ambari.server.view.ViewExtractor.extractViewArchive : $r40 = new java.lang.StringBuilder
+org.apache.ambari.server.view.ViewExtractor.extractViewArchive : virtualinvoke r6.<java.util.jar.JarInputStream: void closeEntry()>()
+org.apache.ambari.server.orm.entities.ViewInstanceEntity.setResource : virtualinvoke r0.<org.apache.ambari.server.orm.entities.ViewInstanceEntity: void _persistence_set_resource(org.apache.ambari.server.orm.entities.ResourceEntity)>(r1)
+org.apache.ambari.server.security.SecurityHelperImpl.getCurrentUserName : return r4
+org.apache.ambari.server.security.SecurityHelperImpl.getCurrentUserName : if r1 != null goto $r5 = interfaceinvoke r1.<org.springframework.security.core.context.SecurityContext: org.springframework.security.core.Authentication getAuthentication()>()
+org.apache.ambari.server.security.SecurityHelperImpl.getCurrentUserName : if r3 != null goto $r9 = virtualinvoke r3.<java.lang.Object: java.lang.String toString()>()
+org.apache.ambari.server.security.SecurityHelperImpl.getCurrentUserName : r1 = staticinvoke <org.springframework.security.core.context.SecurityContextHolder: org.springframework.security.core.context.SecurityContext getContext()>()
+org.apache.ambari.server.security.SecurityHelperImpl.getCurrentUserName : $z1 = r3 instanceof org.apache.ambari.server.security.authorization.User
+org.apache.ambari.server.security.SecurityHelperImpl.getCurrentUserName : if r2 != null goto $r6 = interfaceinvoke r2.<org.springframework.security.core.Authentication: java.lang.Object getPrincipal()>()
+org.apache.ambari.server.security.SecurityHelperImpl.getCurrentUserName : $z0 = r3 instanceof org.springframework.security.core.userdetails.UserDetails
+org.apache.ambari.server.configuration.Configuration.getApiSSLAuthentication : $r1 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty API_USE_SSL>
+org.apache.ambari.server.orm.entities.ViewEntity.setParameters : virtualinvoke r0.<org.apache.ambari.server.orm.entities.ViewEntity: void _persistence_set_parameters(java.util.Collection)>(r1)
+org.apache.ambari.server.orm.entities.ViewEntity.setConfiguration : r0.<org.apache.ambari.server.orm.entities.ViewEntity: org.apache.ambari.server.view.configuration.ViewConfig configuration> = r1
+org.apache.ambari.server.orm.entities.ViewEntity.setConfiguration : r0.<org.apache.ambari.server.orm.entities.ViewEntity: boolean clusterConfigurable> = 0
+org.apache.ambari.server.orm.entities.ViewEntity.setConfiguration : r0.<org.apache.ambari.server.orm.entities.ViewEntity: boolean clusterConfigurable> = 1
+org.apache.ambari.server.orm.entities.ViewEntity.setConfiguration : $r5 = virtualinvoke r1.<org.apache.ambari.server.view.configuration.ViewConfig: java.lang.String getClusterConfigOptions()>()
+org.apache.ambari.server.view.configuration.ViewConfig.getDescription : $r1 = r0.<org.apache.ambari.server.view.configuration.ViewConfig: java.lang.String description>
+org.apache.ambari.server.view.configuration.ViewConfig.getVersion : $r1 = r0.<org.apache.ambari.server.view.configuration.ViewConfig: java.lang.String version>
+org.apache.ambari.server.orm.entities.ViewInstanceEntity.setEntities : virtualinvoke r0.<org.apache.ambari.server.orm.entities.ViewInstanceEntity: void _persistence_set_entities(java.util.Collection)>(r1)
+org.apache.ambari.server.view.configuration.ViewConfig.getParameters : $r1 = r0.<org.apache.ambari.server.view.configuration.ViewConfig: java.util.List parameters>
+org.apache.ambari.server.view.ViewExtractor.getArchiveClassLoader : $z2 = virtualinvoke r8.<java.io.File: boolean exists()>()
+org.apache.ambari.server.view.ViewExtractor.getArchiveClassLoader : $z3 = virtualinvoke r11.<java.io.File: boolean isDirectory()>()
+org.apache.ambari.server.view.ViewExtractor.getArchiveClassLoader : r10 = r9
+org.apache.ambari.server.view.ViewExtractor.getArchiveClassLoader : $r21 = new java.lang.StringBuilder
+org.apache.ambari.server.view.ViewExtractor.getArchiveClassLoader : $r13 = new java.lang.StringBuilder
+org.apache.ambari.server.view.ViewExtractor.getArchiveClassLoader : $r29 = virtualinvoke r2.<java.io.File: java.net.URI toURI()>()
+org.apache.ambari.server.view.ViewExtractor.getArchiveClassLoader : $r18 = r0.<org.apache.ambari.server.view.ViewExtractor: org.apache.ambari.server.view.ViewArchiveUtility archiveUtility>
+org.apache.ambari.server.view.ViewExtractor.getArchiveClassLoader : r9 = virtualinvoke r8.<java.io.File: java.io.File[] listFiles()>()
+org.apache.ambari.server.view.ViewExtractor.getArchiveClassLoader : $r27 = virtualinvoke r11.<java.io.File: java.net.URI toURI()>()
+org.apache.ambari.server.view.ViewExtractor.getArchiveClassLoader : $r12 = new java.util.LinkedList
+org.apache.ambari.server.view.ViewExtractor.getArchiveClassLoader : if r9 == null goto $r29 = virtualinvoke r2.<java.io.File: java.net.URI toURI()>()
+org.apache.ambari.server.view.ViewExtractor.getArchiveClassLoader : $r26 = r0.<org.apache.ambari.server.view.ViewExtractor: org.apache.ambari.server.view.ViewArchiveUtility archiveUtility>
+org.apache.ambari.server.view.ViewExtractor.getArchiveClassLoader : $r31 = new org.apache.ambari.server.view.ViewClassLoader
+org.apache.ambari.server.view.ViewExtractor.getArchiveClassLoader : r3 = virtualinvoke r2.<java.io.File: java.lang.String getAbsolutePath()>()
+org.apache.ambari.server.view.ViewExtractor.getArchiveClassLoader : $r19 = virtualinvoke r6.<java.io.File: java.net.URI toURI()>()
+org.apache.ambari.server.view.ViewExtractor.getArchiveClassLoader : $z0 = virtualinvoke r6.<java.io.File: boolean exists()>()
+org.apache.ambari.server.view.ViewRegistryTest$TestViewArchiveUtility.getFileOutputStream : $r2 = r0.<org.apache.ambari.server.view.ViewRegistryTest$TestViewArchiveUtility: java.util.Map outputStreams>
+org.apache.ambari.server.security.authentication.kerberos.AmbariKerberosAuthenticationProperties.isKerberosAuthenticationEnabled : $z0 = r0.<org.apache.ambari.server.security.authentication.kerberos.AmbariKerberosAuthenticationProperties: boolean kerberosAuthenticationEnabled>
+org.apache.ambari.server.orm.entities.ViewInstanceEntity.putInstanceData : virtualinvoke r0.<org.apache.ambari.server.orm.entities.ViewInstanceEntity: void removeInstanceData(java.lang.String)>(r1)
+org.apache.ambari.server.orm.entities.ViewInstanceEntity.putInstanceData : $r4 = new org.apache.ambari.server.orm.entities.ViewInstanceDataEntity
+org.apache.ambari.server.orm.entities.ViewInstanceEntity.putInstanceData : $r5 = virtualinvoke r0.<org.apache.ambari.server.orm.entities.ViewInstanceEntity: java.lang.String _persistence_get_viewName()>()
+org.apache.ambari.server.orm.entities.ViewInstanceEntity.putInstanceData : virtualinvoke r3.<org.apache.ambari.server.orm.entities.ViewInstanceDataEntity: void setViewInstanceEntity(org.apache.ambari.server.orm.entities.ViewInstanceEntity)>(r0)
+org.apache.ambari.server.orm.entities.ViewInstanceEntity.putInstanceData : $r7 = virtualinvoke r0.<org.apache.ambari.server.orm.entities.ViewInstanceEntity: java.lang.String getCurrentUserName()>()
+org.apache.ambari.server.orm.entities.ViewInstanceEntity.putInstanceData : virtualinvoke r3.<org.apache.ambari.server.orm.entities.ViewInstanceDataEntity: void setName(java.lang.String)>(r1)
+org.apache.ambari.server.orm.entities.ViewInstanceEntity.putInstanceData : virtualinvoke r3.<org.apache.ambari.server.orm.entities.ViewInstanceDataEntity: void setValue(java.lang.String)>(r2)
+org.apache.ambari.server.orm.entities.ViewInstanceEntity.putInstanceData : $r8 = virtualinvoke r0.<org.apache.ambari.server.orm.entities.ViewInstanceEntity: java.util.Collection _persistence_get_data()>()
+org.apache.ambari.server.orm.entities.ViewInstanceEntity.putInstanceData : $r6 = virtualinvoke r0.<org.apache.ambari.server.orm.entities.ViewInstanceEntity: java.lang.String _persistence_get_name()>()
+org.apache.ambari.server.controller.spi.Resource$Type.setType : $r2 = <org.apache.ambari.server.controller.spi.Resource$Type: java.util.Map types>
+org.apache.ambari.server.view.ViewRegistry.checkViewVersions : $r4 = virtualinvoke r3.<org.apache.ambari.server.view.configuration.ViewConfig: java.lang.String getMinAmbariVersion()>()
+org.apache.ambari.server.view.ViewRegistry.checkViewVersions : r3 = virtualinvoke r1.<org.apache.ambari.server.orm.entities.ViewEntity: org.apache.ambari.server.view.configuration.ViewConfig getConfiguration()>()
+org.apache.ambari.server.view.configuration.ParameterConfig.isMasked : $z0 = r0.<org.apache.ambari.server.view.configuration.ParameterConfig: boolean masked>
+org.apache.ambari.server.orm.entities.ViewEntity.setClassLoader : r0.<org.apache.ambari.server.orm.entities.ViewEntity: java.lang.ClassLoader classLoader> = r1
+org.apache.ambari.server.orm.entities.ViewInstanceDataEntity.setValue : virtualinvoke r0.<org.apache.ambari.server.orm.entities.ViewInstanceDataEntity: void _persistence_set_value(java.lang.String)>(r1)
+org.apache.ambari.server.view.configuration.ViewConfig.getIcon64 : $r1 = r0.<org.apache.ambari.server.view.configuration.ViewConfig: java.lang.String icon64>
+org.apache.ambari.server.orm.entities.ViewEntity.getInstances : $r1 = virtualinvoke r0.<org.apache.ambari.server.orm.entities.ViewEntity: java.util.Collection _persistence_get_instances()>()
+org.apache.ambari.server.view.ViewRegistry.setViewStatus : virtualinvoke r1.<org.apache.ambari.server.orm.entities.ViewEntity: void setStatusDetail(java.lang.String)>(r3)
+org.apache.ambari.server.view.ViewRegistry.setViewStatus : virtualinvoke r1.<org.apache.ambari.server.orm.entities.ViewEntity: void setStatus(org.apache.ambari.view.ViewDefinition$ViewStatus)>(r2)
+org.apache.ambari.server.orm.entities.ViewEntity.setResourceType : virtualinvoke r0.<org.apache.ambari.server.orm.entities.ViewEntity: void _persistence_set_resourceType(org.apache.ambari.server.orm.entities.ResourceTypeEntity)>(r1)
+org.apache.ambari.server.view.configuration.ParameterConfig.getClusterConfig : $r1 = r0.<org.apache.ambari.server.view.configuration.ParameterConfig: java.lang.String clusterConfig>
+org.apache.ambari.server.security.authentication.kerberos.AmbariKerberosAuthenticationProperties.setKerberosAuthenticationEnabled : r0.<org.apache.ambari.server.security.authentication.kerberos.AmbariKerberosAuthenticationProperties: boolean kerberosAuthenticationEnabled> = z0
+org.apache.ambari.server.orm.entities.ViewInstanceEntityTest.getViewInstanceEntities : $r6 = new org.apache.ambari.server.orm.entities.ViewInstanceEntity
+org.apache.ambari.server.orm.entities.ViewInstanceEntityTest.getViewInstanceEntities : return r2
+org.apache.ambari.server.orm.entities.ViewInstanceEntityTest.getViewInstanceEntities : $r4 = staticinvoke <org.apache.ambari.server.view.configuration.InstanceConfigTest: java.util.List getInstanceConfigs()>()
+org.apache.ambari.server.orm.entities.ViewInstanceEntityTest.getViewInstanceEntities : $r1 = new java.util.HashSet
+org.apache.ambari.server.orm.entities.ViewInstanceEntityTest.getViewInstanceEntities : $r7 = staticinvoke <org.apache.ambari.server.view.configuration.InstanceConfigTest: java.util.List getInstanceConfigs()>()
+org.apache.ambari.server.orm.entities.ViewInstanceEntityTest.getViewInstanceEntities : $r10 = new org.apache.ambari.server.orm.entities.ViewInstanceEntity
+org.apache.ambari.server.view.ViewRegistryTest.getRegistry : r15 = r11
+org.apache.ambari.server.view.ViewRegistryTest.getRegistry : if r10 != null goto $r24 = r10
+org.apache.ambari.server.view.ViewRegistryTest.getRegistry : $r17 = staticinvoke <org.easymock.EasyMock: java.lang.Object createNiceMock(java.lang.Class)>(class "org/apache/ambari/server/events/publishers/AmbariEventPublisher")
+org.apache.ambari.server.view.ViewRegistryTest.getRegistry : r14.<org.apache.ambari.server.view.ViewRegistry: org.apache.ambari.server.security.SecurityHelper securityHelper> = r7
+org.apache.ambari.server.view.ViewRegistryTest.getRegistry : $r28 = new org.apache.ambari.server.view.ViewRegistryTest$2
+org.apache.ambari.server.view.ViewRegistryTest.getRegistry : r14.<org.apache.ambari.server.view.ViewRegistry: org.apache.ambari.server.orm.dao.UserDAO userDAO> = r2
+org.apache.ambari.server.view.ViewRegistryTest.getRegistry : $r25 = r14.<org.apache.ambari.server.view.ViewRegistry: org.apache.ambari.server.view.ViewExtractor extractor>
+org.apache.ambari.server.view.ViewRegistryTest.getRegistry : $r20 = <org.apache.ambari.server.view.ViewRegistryTest: org.apache.ambari.server.configuration.Configuration configuration>
+org.apache.ambari.server.view.ViewRegistryTest.getRegistry : r16 = r12
+org.apache.ambari.server.view.ViewRegistryTest.getRegistry : r14.<org.apache.ambari.server.view.ViewRegistry: org.apache.ambari.server.orm.dao.ResourceDAO resourceDAO> = r5
+org.apache.ambari.server.view.ViewRegistryTest.getRegistry : r14.<org.apache.ambari.server.view.ViewRegistry: org.apache.ambari.server.orm.dao.MemberDAO memberDAO> = r3
+org.apache.ambari.server.view.ViewRegistryTest.getRegistry : r14.<org.apache.ambari.server.view.ViewRegistry: org.apache.ambari.server.orm.dao.ResourceTypeDAO resourceTypeDAO> = r6
+org.apache.ambari.server.view.ViewRegistryTest.getRegistry : $r27 = new org.apache.ambari.server.view.ViewRegistryTest$1
+org.apache.ambari.server.view.ViewRegistryTest.getRegistry : r14.<org.apache.ambari.server.view.ViewRegistry: org.apache.ambari.server.orm.dao.ViewDAO viewDAO> = r0
+org.apache.ambari.server.view.ViewRegistryTest.getRegistry : r14.<org.apache.ambari.server.view.ViewRegistry: org.apache.ambari.server.view.ViewInstanceHandlerList handlerList> = r8
+org.apache.ambari.server.view.ViewRegistryTest.getRegistry : r14.<org.apache.ambari.server.view.ViewRegistry: org.apache.ambari.server.orm.dao.ViewInstanceDAO instanceDAO> = r1
+org.apache.ambari.server.view.ViewRegistryTest.getRegistry : r14.<org.apache.ambari.server.view.ViewRegistry: org.apache.ambari.server.orm.dao.PrivilegeDAO privilegeDAO> = r4
+org.apache.ambari.server.view.ViewRegistryTest.getRegistry : if r9 != null goto $r22 = r9
+org.apache.ambari.server.view.ViewRegistryTest.getRegistry : $r18 = newarray (java.lang.Object)[1]
+org.apache.ambari.server.view.ViewRegistryTest.getRegistry : return r14
+org.apache.ambari.server.view.ViewRegistryTest.getRegistry : $r19 = new org.apache.ambari.server.view.ViewRegistry
+org.apache.ambari.server.orm.entities.ViewInstanceEntity.getCurrentUserName : r1 = virtualinvoke r0.<org.apache.ambari.server.orm.entities.ViewInstanceEntity: java.lang.String getUsername()>()
+org.apache.ambari.server.orm.entities.ViewInstanceEntity.getCurrentUserName : if r1 == null goto $r2 = " "
+org.apache.ambari.server.view.ViewRegistryTest$TestViewArchiveUtility.isDeploymentFailed : $z0 = r0.<org.apache.ambari.server.view.ViewRegistryTest$TestViewArchiveUtility: boolean deploymentFailed>
+org.apache.ambari.server.view.configuration.ViewConfig.getInstances : $r1 = r0.<org.apache.ambari.server.view.configuration.ViewConfig: java.util.List instances>
+org.apache.ambari.server.orm.entities.ViewEntityEntity.setClassName : virtualinvoke r0.<org.apache.ambari.server.orm.entities.ViewEntityEntity: void _persistence_set_className(java.lang.String)>(r1)
+org.apache.ambari.server.view.configuration.ParameterConfig.getLabel : $r1 = r0.<org.apache.ambari.server.view.configuration.ParameterConfig: java.lang.String label>
+org.apache.ambari.server.configuration.Configuration.createKerberosAuthenticationProperties : $r3 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty KERBEROS_AUTH_ENABLED>
+org.apache.ambari.server.configuration.Configuration.createKerberosAuthenticationProperties : return r2
+org.apache.ambari.server.configuration.Configuration.createKerberosAuthenticationProperties : $z1 = virtualinvoke r2.<org.apache.ambari.server.security.authentication.kerberos.AmbariKerberosAuthenticationProperties: boolean isKerberosAuthenticationEnabled()>()
+org.apache.ambari.server.configuration.Configuration.createKerberosAuthenticationProperties : $r1 = new org.apache.ambari.server.security.authentication.kerberos.AmbariKerberosAuthenticationProperties
+org.apache.ambari.server.orm.entities.ViewEntityEntity.setIdProperty : virtualinvoke r0.<org.apache.ambari.server.orm.entities.ViewEntityEntity: void _persistence_set_idProperty(java.lang.String)>(r1)
+org.apache.ambari.server.view.ViewRegistryTest$TestViewArchiveUtility.getViewConfigFromArchive : $r3 = r0.<org.apache.ambari.server.view.ViewRegistryTest$TestViewArchiveUtility: java.util.Map viewConfigs>
+org.apache.ambari.server.view.ViewRegistryTest$TestViewArchiveUtility.getViewConfigFromArchive : $z0 = r0.<org.apache.ambari.server.view.ViewRegistryTest$TestViewArchiveUtility: boolean badArchive>
+org.apache.ambari.server.orm.entities.ViewInstanceEntity.getName : $r1 = virtualinvoke r0.<org.apache.ambari.server.orm.entities.ViewInstanceEntity: java.lang.String _persistence_get_name()>()

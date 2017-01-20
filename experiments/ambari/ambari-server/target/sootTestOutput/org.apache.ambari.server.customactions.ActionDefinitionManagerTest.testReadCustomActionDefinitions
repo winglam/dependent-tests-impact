@@ -1,0 +1,74 @@
+org.apache.ambari.server.utils.ShellCommandUtil.streamToString : $r7 = virtualinvoke r3.<java.io.BufferedReader: java.lang.String readLine()>()
+org.apache.ambari.server.utils.ShellCommandUtil.streamToString : $r1 = new java.io.InputStreamReader
+org.apache.ambari.server.utils.ShellCommandUtil.streamToString : $r11 = virtualinvoke r4.<java.lang.StringBuilder: java.lang.String toString()>()
+org.apache.ambari.server.utils.ShellCommandUtil.streamToString : $r6 = new java.lang.StringBuilder
+org.apache.ambari.server.utils.ShellCommandUtil.streamToString : $r5 = new java.io.BufferedReader
+org.apache.ambari.server.utils.ShellCommandUtil.streamToString : n0 = null
+org.apache.ambari.server.configuration.Configuration$ConfigurationProperty.getKey : $r1 = r0.<org.apache.ambari.server.configuration.Configuration$ConfigurationProperty: java.lang.String m_key>
+org.apache.ambari.server.security.CertGenerationTest.tearDownAfterClass : $r0 = <org.apache.ambari.server.security.CertGenerationTest: org.junit.rules.TemporaryFolder temp>
+org.apache.ambari.server.customactions.ActionDefinitionManager.getAllActionDefinition : $r1 = new java.util.ArrayList
+org.apache.ambari.server.security.CertGenerationTest.getConfigurationConstructor : $r0 = class "org/apache/ambari/server/configuration/Configuration"
+org.apache.ambari.server.security.CertGenerationTest.init : <org.apache.ambari.server.security.CertGenerationTest: org.apache.ambari.server.security.CertificateManager certMan> = r0
+org.apache.ambari.server.security.CertGenerationTest$SecurityModule.configure : $r6 = virtualinvoke r0.<org.apache.ambari.server.security.CertGenerationTest$SecurityModule: com.google.inject.binder.AnnotatedBindingBuilder bind(java.lang.Class)>(class "org/apache/ambari/server/state/stack/OsFamily")
+org.apache.ambari.server.security.CertGenerationTest$SecurityModule.configure : $r3 = virtualinvoke r0.<org.apache.ambari.server.security.CertGenerationTest$SecurityModule: com.google.inject.binder.AnnotatedBindingBuilder bind(java.lang.Class)>(class "org/apache/ambari/server/configuration/Configuration")
+org.apache.ambari.server.security.CertGenerationTest$SecurityModule.configure : $r8 = newarray (java.lang.Class)[1]
+org.apache.ambari.server.security.CertGenerationTest$SecurityModule.configure : $r1 = virtualinvoke r0.<org.apache.ambari.server.security.CertGenerationTest$SecurityModule: com.google.inject.binder.AnnotatedBindingBuilder bind(java.lang.Class)>(class "java/util/Properties")
+org.apache.ambari.server.configuration.Configuration.getProperty : r2 = null
+org.apache.ambari.server.configuration.Configuration.getProperty : $r4 = virtualinvoke r1.<org.apache.ambari.server.configuration.Configuration$ConfigurationProperty: java.lang.Object getDefaultValue()>()
+org.apache.ambari.server.configuration.Configuration.getProperty : $r5 = r0.<org.apache.ambari.server.configuration.Configuration: java.util.Properties properties>
+org.apache.ambari.server.configuration.Configuration.getProperty : $r3 = virtualinvoke r1.<org.apache.ambari.server.configuration.Configuration$ConfigurationProperty: java.lang.Object getDefaultValue()>()
+org.apache.ambari.server.configuration.Configuration.loadSSLParams : $r15 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty SSL_TRUSTSTORE_TYPE>
+org.apache.ambari.server.configuration.Configuration.loadSSLParams : $r1 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty SSL_TRUSTSTORE_PATH>
+org.apache.ambari.server.configuration.Configuration.loadSSLParams : $r7 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty SSL_TRUSTSTORE_PASSWORD>
+org.apache.ambari.server.configuration.Configuration$ConfigurationProperty.getDefaultValue : $r1 = r0.<org.apache.ambari.server.configuration.Configuration$ConfigurationProperty: java.lang.Object m_defaultValue>
+org.apache.ambari.server.utils.ShellCommandUtil.setUnixFilePermissions : goto [?= return]
+org.apache.ambari.server.utils.ShellCommandUtil.setUnixFilePermissions : $r3 = newarray (java.lang.String)[3]
+org.apache.ambari.server.utils.ShellCommandUtil.setUnixFilePermissions : $z0 = <org.apache.ambari.server.utils.ShellCommandUtil: boolean LINUX>
+org.apache.ambari.server.customactions.ActionDefinitionManager.readCustomActionDefinitions : if r1 == null goto $r13 = <org.apache.ambari.server.customactions.ActionDefinitionManager: org.slf4j.Logger LOG>
+org.apache.ambari.server.customactions.ActionDefinitionManager.readCustomActionDefinitions : $r22 = <org.apache.ambari.server.api.services.AmbariMetaInfo: java.io.FilenameFilter FILENAME_FILTER>
+org.apache.ambari.server.customactions.ActionDefinitionManager.readCustomActionDefinitions : if r3 == null goto return
+org.apache.ambari.server.customactions.ActionDefinitionManager.readCustomActionDefinitions : $r13 = <org.apache.ambari.server.customactions.ActionDefinitionManager: org.slf4j.Logger LOG>
+org.apache.ambari.server.security.CertGenerationTest.setUpBeforeClass : $r12 = staticinvoke <java.lang.System: java.lang.String getProperty(java.lang.String)>("os.name")
+org.apache.ambari.server.security.CertGenerationTest.setUpBeforeClass : $r6 = newarray (com.google.inject.Module)[1]
+org.apache.ambari.server.security.CertGenerationTest.setUpBeforeClass : $r28 = new java.io.File
+org.apache.ambari.server.security.CertGenerationTest.setUpBeforeClass : virtualinvoke r4.<java.io.File: boolean createNewFile()>()
+org.apache.ambari.server.security.CertGenerationTest.setUpBeforeClass : virtualinvoke r44.<java.io.IOException: void printStackTrace()>()
+org.apache.ambari.server.security.CertGenerationTest.setUpBeforeClass : $r8 = <org.apache.ambari.server.security.CertGenerationTest: com.google.inject.Injector injector>
+org.apache.ambari.server.security.CertGenerationTest.setUpBeforeClass : $r11 = new java.io.File
+org.apache.ambari.server.security.CertGenerationTest.setUpBeforeClass : staticinvoke <junit.framework.TestCase: void fail()>()
+org.apache.ambari.server.security.CertGenerationTest.setUpBeforeClass : r44 = $r43
+org.apache.ambari.server.security.CertGenerationTest.setUpBeforeClass : $r32 = new java.io.FileInputStream
+org.apache.ambari.server.security.CertGenerationTest.setUpBeforeClass : $r24 = new java.io.File
+org.apache.ambari.server.security.CertGenerationTest.setUpBeforeClass : $r20 = new java.io.File
+org.apache.ambari.server.security.CertGenerationTest.setUpBeforeClass : virtualinvoke r3.<java.io.File: boolean mkdirs()>()
+org.apache.ambari.server.configuration.Configuration.getApiSSLAuthentication : $r1 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty API_USE_SSL>
+org.apache.ambari.server.security.CertGenerationTest.buildTestProperties : return r5
+org.apache.ambari.server.security.CertGenerationTest.buildTestProperties : $r17 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty SRVR_CRT_PASS_FILE>
+org.apache.ambari.server.security.CertGenerationTest.buildTestProperties : $r6 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty SRVR_KSTR_DIR>
+org.apache.ambari.server.security.CertGenerationTest.buildTestProperties : $r12 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty SRVR_CRT_PASS_LEN>
+org.apache.ambari.server.security.CertGenerationTest.buildTestProperties : $r16 = staticinvoke <org.apache.commons.lang.RandomStringUtils: java.lang.String randomAlphabetic(int)>(20)
+org.apache.ambari.server.security.CertGenerationTest.buildTestProperties : $r11 = new java.util.Random
+org.apache.ambari.server.security.CertGenerationTest.buildTestProperties : $r4 = new java.util.Properties
+org.apache.ambari.server.security.CertGenerationTest.buildTestProperties : $r0 = <org.apache.ambari.server.security.CertGenerationTest: org.junit.rules.TemporaryFolder temp>
+org.apache.ambari.server.security.CertGenerationTest.buildTestProperties : goto [?= $r4 = new java.util.Properties]
+org.apache.ambari.server.security.authentication.kerberos.AmbariKerberosAuthenticationProperties.isKerberosAuthenticationEnabled : $z0 = r0.<org.apache.ambari.server.security.authentication.kerberos.AmbariKerberosAuthenticationProperties: boolean kerberosAuthenticationEnabled>
+org.apache.ambari.server.security.authentication.kerberos.AmbariKerberosAuthenticationProperties.setKerberosAuthenticationEnabled : r0.<org.apache.ambari.server.security.authentication.kerberos.AmbariKerberosAuthenticationProperties: boolean kerberosAuthenticationEnabled> = z0
+org.apache.ambari.server.configuration.Configuration.createKerberosAuthenticationProperties : $r3 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty KERBEROS_AUTH_ENABLED>
+org.apache.ambari.server.configuration.Configuration.createKerberosAuthenticationProperties : return r2
+org.apache.ambari.server.configuration.Configuration.createKerberosAuthenticationProperties : $z1 = virtualinvoke r2.<org.apache.ambari.server.security.authentication.kerberos.AmbariKerberosAuthenticationProperties: boolean isKerberosAuthenticationEnabled()>()
+org.apache.ambari.server.configuration.Configuration.createKerberosAuthenticationProperties : $r1 = new org.apache.ambari.server.security.authentication.kerberos.AmbariKerberosAuthenticationProperties
+org.apache.ambari.server.utils.ShellCommandUtil.runCommand : r16 = virtualinvoke r14.<java.lang.Process: java.io.InputStream getInputStream()>()
+org.apache.ambari.server.utils.ShellCommandUtil.runCommand : r14 = virtualinvoke r4.<java.lang.ProcessBuilder: java.lang.Process start()>()
+org.apache.ambari.server.utils.ShellCommandUtil.runCommand : r3 = r0
+org.apache.ambari.server.utils.ShellCommandUtil.runCommand : $z1 = <org.apache.ambari.server.utils.ShellCommandUtil: boolean WINDOWS>
+org.apache.ambari.server.utils.ShellCommandUtil.runCommand : if r2 == null goto virtualinvoke r14.<java.lang.Process: int waitFor()>()
+org.apache.ambari.server.utils.ShellCommandUtil.runCommand : r29 = staticinvoke <org.apache.ambari.server.utils.ShellCommandUtil: java.lang.String streamToString(java.io.InputStream)>(r16)
+org.apache.ambari.server.utils.ShellCommandUtil.runCommand : if r1 == null goto $z1 = <org.apache.ambari.server.utils.ShellCommandUtil: boolean WINDOWS>
+org.apache.ambari.server.utils.ShellCommandUtil.runCommand : $r32 = new org.apache.ambari.server.utils.ShellCommandUtil$Result
+org.apache.ambari.server.utils.ShellCommandUtil.runCommand : $r30 = virtualinvoke r14.<java.lang.Process: java.io.InputStream getErrorStream()>()
+org.apache.ambari.server.utils.ShellCommandUtil.runCommand : if z0 == 0 goto r3 = r0
+org.apache.ambari.server.utils.ShellCommandUtil.runCommand : $r1 = staticinvoke <org.apache.ambari.server.utils.ShellCommandUtil: org.apache.ambari.server.utils.ShellCommandUtil$Result runCommand(java.lang.String[],java.util.Map)>(r0, null)
+org.apache.ambari.server.utils.ShellCommandUtil.runCommand : $r12 = new java.lang.ProcessBuilder
+org.apache.ambari.server.utils.ShellCommandUtil.runCommand : virtualinvoke r14.<java.lang.Process: int waitFor()>()
+org.apache.ambari.server.utils.ShellCommandUtil.runCommand : i6 = virtualinvoke r14.<java.lang.Process: int exitValue()>()
+org.apache.ambari.server.utils.ShellCommandUtil.runCommand : $r2 = staticinvoke <org.apache.ambari.server.utils.ShellCommandUtil: org.apache.ambari.server.utils.ShellCommandUtil$Result runCommand(java.lang.String[],java.util.Map,org.apache.ambari.server.utils.ShellCommandUtil$InteractiveHandler,boolean)>(r0, r1, null, 0)

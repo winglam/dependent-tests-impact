@@ -1,0 +1,156 @@
+org.apache.ambari.server.orm.entities.BlueprintEntity.getSecurityDescriptorReference : $r1 = virtualinvoke r0.<org.apache.ambari.server.orm.entities.BlueprintEntity: java.lang.String _persistence_get_securityDescriptorReference()>()
+org.apache.ambari.server.orm.entities.HostGroupEntity.setComponents : virtualinvoke r0.<org.apache.ambari.server.orm.entities.HostGroupEntity: void _persistence_set_components(java.util.Collection)>(r1)
+org.apache.ambari.server.orm.entities.HostGroupComponentEntity.setHostGroupEntity : virtualinvoke r0.<org.apache.ambari.server.orm.entities.HostGroupComponentEntity: void _persistence_set_hostGroup(org.apache.ambari.server.orm.entities.HostGroupEntity)>(r1)
+org.apache.ambari.server.orm.entities.BlueprintEntity.setBlueprintName : virtualinvoke r0.<org.apache.ambari.server.orm.entities.BlueprintEntity: void _persistence_set_blueprintName(java.lang.String)>(r1)
+org.apache.ambari.server.topology.BlueprintImpl.createBlueprintConfigEntities : $r20 = virtualinvoke r3.<com.google.gson.Gson: java.lang.String toJson(java.lang.Object)>(r9)
+org.apache.ambari.server.topology.BlueprintImpl.createBlueprintConfigEntities : r4 = virtualinvoke r0.<org.apache.ambari.server.topology.BlueprintImpl: org.apache.ambari.server.topology.Configuration getConfiguration()>()
+org.apache.ambari.server.topology.BlueprintImpl.createBlueprintConfigEntities : $r12 = virtualinvoke r4.<org.apache.ambari.server.topology.Configuration: java.util.Map getProperties()>()
+org.apache.ambari.server.topology.BlueprintImpl.createBlueprintConfigEntities : $r16 = interfaceinvoke r7.<java.util.Map$Entry: java.lang.Object getValue()>()
+org.apache.ambari.server.topology.BlueprintImpl.createBlueprintConfigEntities : $r19 = virtualinvoke r0.<org.apache.ambari.server.topology.BlueprintImpl: java.lang.String getName()>()
+org.apache.ambari.server.topology.BlueprintImpl.createBlueprintConfigEntities : $r21 = virtualinvoke r4.<org.apache.ambari.server.topology.Configuration: java.util.Map getAttributes()>()
+org.apache.ambari.server.topology.BlueprintImpl.createBlueprintConfigEntities : $r11 = new java.util.HashMap
+org.apache.ambari.server.topology.BlueprintImpl.createBlueprintConfigEntities : $r15 = interfaceinvoke r7.<java.util.Map$Entry: java.lang.Object getKey()>()
+org.apache.ambari.server.topology.BlueprintImpl.createBlueprintConfigEntities : virtualinvoke r10.<org.apache.ambari.server.orm.entities.BlueprintConfigEntity: void setType(java.lang.String)>(r8)
+org.apache.ambari.server.topology.BlueprintImpl.createBlueprintConfigEntities : $r17 = new org.apache.ambari.server.orm.entities.BlueprintConfigEntity
+org.apache.ambari.server.topology.BlueprintImpl.createBlueprintConfigEntities : virtualinvoke r10.<org.apache.ambari.server.orm.entities.BlueprintConfigEntity: void setBlueprintEntity(org.apache.ambari.server.orm.entities.BlueprintEntity)>(r1)
+org.apache.ambari.server.topology.BlueprintImpl.createBlueprintConfigEntities : $r36 = interfaceinvoke r5.<java.util.Map: java.util.Collection values()>()
+org.apache.ambari.server.topology.BlueprintImpl.createBlueprintConfigEntities : $r2 = new com.google.gson.Gson
+org.apache.ambari.server.topology.BlueprintImpl.createBlueprintConfigEntities : interfaceinvoke r5.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>(r8, r10)
+org.apache.ambari.server.topology.BlueprintImpl.createBlueprintConfigEntities : goto [?= $z0 = interfaceinvoke r6.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.orm.entities.StackEntity.setStackVersion : virtualinvoke r0.<org.apache.ambari.server.orm.entities.StackEntity: void _persistence_set_stackVersion(java.lang.String)>(r1)
+org.apache.ambari.server.topology.Component.getProvisionAction : $r1 = r0.<org.apache.ambari.server.topology.Component: org.apache.ambari.server.controller.internal.ProvisionAction provisionAction>
+org.apache.ambari.server.controller.internal.Stack$ConfigProperty.getType : $r1 = r0.<org.apache.ambari.server.controller.internal.Stack$ConfigProperty: java.lang.String type>
+org.apache.ambari.server.topology.SecurityConfiguration.getDescriptorReference : $r1 = r0.<org.apache.ambari.server.topology.SecurityConfiguration: java.lang.String descriptorReference>
+org.apache.ambari.server.orm.entities.HostGroupEntity.setCardinality : if r1 == null goto return
+org.apache.ambari.server.orm.entities.HostGroupEntity.setCardinality : virtualinvoke r0.<org.apache.ambari.server.orm.entities.HostGroupEntity: void _persistence_set_cardinality(java.lang.String)>(r1)
+org.apache.ambari.server.topology.ClusterTopologyImpl.isNameNodeHAEnabled : $z0 = interfaceinvoke r0.<java.util.Map: boolean containsKey(java.lang.Object)>("hdfs-site")
+org.apache.ambari.server.topology.Configuration.getParentConfiguration : $r1 = r0.<org.apache.ambari.server.topology.Configuration: org.apache.ambari.server.topology.Configuration parentConfiguration>
+org.apache.ambari.server.orm.entities.HostGroupEntity.setName : virtualinvoke r0.<org.apache.ambari.server.orm.entities.HostGroupEntity: void _persistence_set_name(java.lang.String)>(r1)
+org.apache.ambari.server.orm.entities.HostGroupComponentEntity.setName : virtualinvoke r0.<org.apache.ambari.server.orm.entities.HostGroupComponentEntity: void _persistence_set_name(java.lang.String)>(r1)
+org.apache.ambari.server.topology.BlueprintImpl.getSetting : $r1 = r0.<org.apache.ambari.server.topology.BlueprintImpl: org.apache.ambari.server.topology.Setting setting>
+org.apache.ambari.server.orm.entities.HostGroupEntity.setConfigurations : virtualinvoke r0.<org.apache.ambari.server.orm.entities.HostGroupEntity: void _persistence_set_configurations(java.util.Collection)>(r1)
+org.apache.ambari.server.orm.entities.BlueprintEntity.setStack : virtualinvoke r0.<org.apache.ambari.server.orm.entities.BlueprintEntity: void _persistence_set_stack(org.apache.ambari.server.orm.entities.StackEntity)>(r1)
+org.apache.ambari.server.orm.entities.HostGroupComponentEntity.setBlueprintName : virtualinvoke r0.<org.apache.ambari.server.orm.entities.HostGroupComponentEntity: void _persistence_set_blueprintName(java.lang.String)>(r1)
+org.apache.ambari.server.topology.BlueprintImpl.createHostGroupEntities : virtualinvoke r1.<org.apache.ambari.server.orm.entities.BlueprintEntity: void setHostGroups(java.util.Collection)>(r3)
+org.apache.ambari.server.topology.BlueprintImpl.createHostGroupEntities : $r10 = new org.apache.ambari.server.orm.entities.HostGroupEntity
+org.apache.ambari.server.topology.BlueprintImpl.createHostGroupEntities : virtualinvoke r6.<org.apache.ambari.server.orm.entities.HostGroupEntity: void setBlueprintEntity(org.apache.ambari.server.orm.entities.BlueprintEntity)>(r1)
+org.apache.ambari.server.topology.BlueprintImpl.createHostGroupEntities : goto [?= $z0 = interfaceinvoke r4.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.topology.BlueprintImpl.createHostGroupEntities : $r13 = interfaceinvoke r5.<org.apache.ambari.server.topology.HostGroup: java.lang.String getCardinality()>()
+org.apache.ambari.server.topology.BlueprintImpl.createHostGroupEntities : $r14 = interfaceinvoke r5.<org.apache.ambari.server.topology.HostGroup: org.apache.ambari.server.topology.Configuration getConfiguration()>()
+org.apache.ambari.server.topology.BlueprintImpl.createHostGroupEntities : interfaceinvoke r3.<java.util.Collection: boolean add(java.lang.Object)>(r6)
+org.apache.ambari.server.topology.BlueprintImpl.createHostGroupEntities : $r11 = interfaceinvoke r5.<org.apache.ambari.server.topology.HostGroup: java.lang.String getName()>()
+org.apache.ambari.server.topology.BlueprintImpl.createHostGroupEntities : $r15 = interfaceinvoke r5.<org.apache.ambari.server.topology.HostGroup: java.util.Collection getComponents()>()
+org.apache.ambari.server.topology.BlueprintImpl.createHostGroupEntities : $r7 = virtualinvoke r0.<org.apache.ambari.server.topology.BlueprintImpl: java.util.Map getHostGroups()>()
+org.apache.ambari.server.topology.BlueprintImpl.createHostGroupEntities : $r2 = new java.util.ArrayList
+org.apache.ambari.server.topology.BlueprintImpl.createHostGroupEntities : $r12 = virtualinvoke r0.<org.apache.ambari.server.topology.BlueprintImpl: java.lang.String getName()>()
+org.apache.ambari.server.orm.entities.HostGroupEntity.getName : $r1 = virtualinvoke r0.<org.apache.ambari.server.orm.entities.HostGroupEntity: java.lang.String _persistence_get_name()>()
+org.apache.ambari.server.orm.entities.HostGroupEntity.setBlueprintName : virtualinvoke r0.<org.apache.ambari.server.orm.entities.HostGroupEntity: void _persistence_set_blueprintName(java.lang.String)>(r1)
+org.apache.ambari.server.topology.BlueprintImpl.getStack : $r1 = r0.<org.apache.ambari.server.topology.BlueprintImpl: org.apache.ambari.server.controller.internal.Stack stack>
+org.apache.ambari.server.orm.entities.BlueprintConfigEntity.setConfigData : virtualinvoke r0.<org.apache.ambari.server.orm.entities.BlueprintConfigEntity: void _persistence_set_configData(java.lang.String)>(r1)
+org.apache.ambari.server.topology.SecurityConfiguration.getType : $r1 = r0.<org.apache.ambari.server.topology.SecurityConfiguration: org.apache.ambari.server.state.SecurityType type>
+org.apache.ambari.server.orm.entities.BlueprintEntity.getSecurityType : $r1 = virtualinvoke r0.<org.apache.ambari.server.orm.entities.BlueprintEntity: org.apache.ambari.server.state.SecurityType _persistence_get_securityType()>()
+org.apache.ambari.server.topology.BlueprintImpl.getConfiguration : $r1 = r0.<org.apache.ambari.server.topology.BlueprintImpl: org.apache.ambari.server.topology.Configuration configuration>
+org.apache.ambari.server.topology.BlueprintImpl.getHostGroups : $r1 = r0.<org.apache.ambari.server.topology.BlueprintImpl: java.util.Map hostGroups>
+org.apache.ambari.server.topology.BlueprintImpl.toEntity : $r10 = r0.<org.apache.ambari.server.topology.BlueprintImpl: org.apache.ambari.server.topology.SecurityConfiguration security>
+org.apache.ambari.server.topology.BlueprintImpl.toEntity : $r8 = r0.<org.apache.ambari.server.topology.BlueprintImpl: org.apache.ambari.server.topology.SecurityConfiguration security>
+org.apache.ambari.server.topology.BlueprintImpl.toEntity : specialinvoke r0.<org.apache.ambari.server.topology.BlueprintImpl: void createBlueprintConfigEntities(org.apache.ambari.server.orm.entities.BlueprintEntity)>(r2)
+org.apache.ambari.server.topology.BlueprintImpl.toEntity : $r1 = new org.apache.ambari.server.orm.entities.BlueprintEntity
+org.apache.ambari.server.topology.BlueprintImpl.toEntity : specialinvoke r0.<org.apache.ambari.server.topology.BlueprintImpl: void createBlueprintSettingEntities(org.apache.ambari.server.orm.entities.BlueprintEntity)>(r2)
+org.apache.ambari.server.topology.BlueprintImpl.toEntity : specialinvoke r0.<org.apache.ambari.server.topology.BlueprintImpl: void createHostGroupEntities(org.apache.ambari.server.orm.entities.BlueprintEntity)>(r2)
+org.apache.ambari.server.topology.BlueprintImpl.toEntity : $r4 = r0.<org.apache.ambari.server.topology.BlueprintImpl: java.lang.String name>
+org.apache.ambari.server.topology.BlueprintImpl.toEntity : $r17 = r0.<org.apache.ambari.server.topology.BlueprintImpl: org.apache.ambari.server.controller.internal.Stack stack>
+org.apache.ambari.server.topology.BlueprintImpl.toEntity : return r2
+org.apache.ambari.server.topology.BlueprintImpl.toEntity : $r5 = r0.<org.apache.ambari.server.topology.BlueprintImpl: org.apache.ambari.server.topology.SecurityConfiguration security>
+org.apache.ambari.server.topology.BlueprintImpl.toEntity : $r14 = new org.apache.ambari.server.orm.entities.StackEntity
+org.apache.ambari.server.topology.BlueprintImpl.toEntity : $r6 = r0.<org.apache.ambari.server.topology.BlueprintImpl: org.apache.ambari.server.topology.SecurityConfiguration security>
+org.apache.ambari.server.topology.BlueprintImpl.toEntity : $r12 = r0.<org.apache.ambari.server.topology.BlueprintImpl: org.apache.ambari.server.topology.SecurityConfiguration security>
+org.apache.ambari.server.topology.BlueprintImpl.toEntity : $r15 = r0.<org.apache.ambari.server.topology.BlueprintImpl: org.apache.ambari.server.controller.internal.Stack stack>
+org.apache.ambari.server.topology.BlueprintImpl.toEntity : virtualinvoke r2.<org.apache.ambari.server.orm.entities.BlueprintEntity: void setStack(org.apache.ambari.server.orm.entities.StackEntity)>(r3)
+org.apache.ambari.server.topology.BlueprintImpl.createComponentEntities : $r12 = virtualinvoke r1.<org.apache.ambari.server.orm.entities.HostGroupEntity: java.lang.String getName()>()
+org.apache.ambari.server.topology.BlueprintImpl.createComponentEntities : goto [?= $z0 = interfaceinvoke r5.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.topology.BlueprintImpl.createComponentEntities : $r9 = new org.apache.ambari.server.orm.entities.HostGroupComponentEntity
+org.apache.ambari.server.topology.BlueprintImpl.createComponentEntities : interfaceinvoke r4.<java.util.Collection: boolean add(java.lang.Object)>(r7)
+org.apache.ambari.server.topology.BlueprintImpl.createComponentEntities : virtualinvoke r1.<org.apache.ambari.server.orm.entities.HostGroupEntity: void setComponents(java.util.Collection)>(r4)
+org.apache.ambari.server.topology.BlueprintImpl.createComponentEntities : r5 = interfaceinvoke r2.<java.util.Collection: java.util.Iterator iterator()>()
+org.apache.ambari.server.topology.BlueprintImpl.createComponentEntities : $r10 = virtualinvoke r6.<org.apache.ambari.server.topology.Component: java.lang.String getName()>()
+org.apache.ambari.server.topology.BlueprintImpl.createComponentEntities : $r3 = new java.util.HashSet
+org.apache.ambari.server.topology.BlueprintImpl.createComponentEntities : virtualinvoke r7.<org.apache.ambari.server.orm.entities.HostGroupComponentEntity: void setHostGroupEntity(org.apache.ambari.server.orm.entities.HostGroupEntity)>(r1)
+org.apache.ambari.server.topology.BlueprintImpl.createComponentEntities : $r11 = virtualinvoke r1.<org.apache.ambari.server.orm.entities.HostGroupEntity: java.lang.String getBlueprintName()>()
+org.apache.ambari.server.topology.BlueprintImpl.createComponentEntities : $r13 = virtualinvoke r6.<org.apache.ambari.server.topology.Component: org.apache.ambari.server.controller.internal.ProvisionAction getProvisionAction()>()
+org.apache.ambari.server.topology.Component.getName : $r1 = r0.<org.apache.ambari.server.topology.Component: java.lang.String name>
+org.apache.ambari.server.topology.BlueprintImpl.getName : $r1 = r0.<org.apache.ambari.server.topology.BlueprintImpl: java.lang.String name>
+org.apache.ambari.server.orm.entities.BlueprintConfigEntity.setBlueprintEntity : virtualinvoke r0.<org.apache.ambari.server.orm.entities.BlueprintConfigEntity: void _persistence_set_blueprint(org.apache.ambari.server.orm.entities.BlueprintEntity)>(r1)
+org.apache.ambari.server.topology.BlueprintValidatorImpl.validateRequiredProperties : z0 = 0
+org.apache.ambari.server.topology.BlueprintValidatorImpl.validateRequiredProperties : $r1 = new java.util.HashMap
+org.apache.ambari.server.topology.BlueprintValidatorImpl.validateRequiredProperties : $z36 = interfaceinvoke r55.<java.util.Map: boolean containsKey(java.lang.Object)>(r137)
+org.apache.ambari.server.topology.BlueprintValidatorImpl.validateRequiredProperties : $r56 = interfaceinvoke r49.<org.apache.ambari.server.topology.HostGroup: org.apache.ambari.server.topology.Configuration getConfiguration()>()
+org.apache.ambari.server.topology.BlueprintValidatorImpl.validateRequiredProperties : $z26 = virtualinvoke r61.<java.lang.String: boolean equals(java.lang.Object)>("OOZIE_SERVER")
+org.apache.ambari.server.topology.BlueprintValidatorImpl.validateRequiredProperties : $z30 = virtualinvoke r61.<java.lang.String: boolean equals(java.lang.Object)>("AMBARI_SERVER")
+org.apache.ambari.server.topology.BlueprintValidatorImpl.validateRequiredProperties : $r23 = interfaceinvoke r6.<java.util.Map$Entry: java.lang.Object getValue()>()
+org.apache.ambari.server.topology.BlueprintValidatorImpl.validateRequiredProperties : $r29 = interfaceinvoke r9.<java.util.Map$Entry: java.lang.Object getValue()>()
+org.apache.ambari.server.topology.BlueprintValidatorImpl.validateRequiredProperties : $r24 = interfaceinvoke r6.<java.util.Map$Entry: java.lang.Object getValue()>()
+org.apache.ambari.server.topology.BlueprintValidatorImpl.validateRequiredProperties : $r138 = interfaceinvoke r135.<java.util.Map$Entry: java.lang.Object getValue()>()
+org.apache.ambari.server.topology.BlueprintValidatorImpl.validateRequiredProperties : $r22 = interfaceinvoke r6.<java.util.Map$Entry: java.lang.Object getKey()>()
+org.apache.ambari.server.topology.BlueprintValidatorImpl.validateRequiredProperties : r123 = interfaceinvoke r122.<java.util.Collection: java.util.Iterator iterator()>()
+org.apache.ambari.server.topology.BlueprintValidatorImpl.validateRequiredProperties : $r129 = interfaceinvoke r53.<java.util.Map: java.lang.Object get(java.lang.Object)>(r126)
+org.apache.ambari.server.topology.BlueprintValidatorImpl.validateRequiredProperties : $z3 = staticinvoke <org.apache.ambari.server.utils.SecretReference: boolean isSecret(java.lang.String)>(r11)
+org.apache.ambari.server.topology.BlueprintValidatorImpl.validateRequiredProperties : $z38 = interfaceinvoke r139.<java.util.Collection: boolean isEmpty()>()
+org.apache.ambari.server.topology.BlueprintValidatorImpl.validateRequiredProperties : goto [?= $z5 = interfaceinvoke r59.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.topology.BlueprintValidatorImpl.validateRequiredProperties : $r54 = new java.util.HashMap
+org.apache.ambari.server.topology.BlueprintValidatorImpl.validateRequiredProperties : $r121 = r0.<org.apache.ambari.server.topology.BlueprintValidatorImpl: org.apache.ambari.server.controller.internal.Stack stack>
+org.apache.ambari.server.topology.BlueprintValidatorImpl.validateRequiredProperties : $r128 = r0.<org.apache.ambari.server.topology.BlueprintValidatorImpl: org.apache.ambari.server.controller.internal.Stack stack>
+org.apache.ambari.server.topology.BlueprintValidatorImpl.validateRequiredProperties : $r19 = new java.lang.StringBuilder
+org.apache.ambari.server.topology.BlueprintValidatorImpl.validateRequiredProperties : goto [?= $z1 = interfaceinvoke r5.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.topology.BlueprintValidatorImpl.validateRequiredProperties : r127 = virtualinvoke r125.<org.apache.ambari.server.controller.internal.Stack$ConfigProperty: java.lang.String getName()>()
+org.apache.ambari.server.topology.BlueprintValidatorImpl.validateRequiredProperties : if r3 == null goto $r44 = r0.<org.apache.ambari.server.topology.BlueprintValidatorImpl: org.apache.ambari.server.topology.Blueprint blueprint>
+org.apache.ambari.server.topology.BlueprintValidatorImpl.validateRequiredProperties : $z6 = virtualinvoke r61.<java.lang.String: boolean equals(java.lang.Object)>("MYSQL_SERVER")
+org.apache.ambari.server.topology.BlueprintValidatorImpl.validateRequiredProperties : $r17 = r0.<org.apache.ambari.server.topology.BlueprintValidatorImpl: org.apache.ambari.server.topology.Blueprint blueprint>
+org.apache.ambari.server.topology.BlueprintValidatorImpl.validateRequiredProperties : r126 = virtualinvoke r125.<org.apache.ambari.server.controller.internal.Stack$ConfigProperty: java.lang.String getType()>()
+org.apache.ambari.server.topology.BlueprintValidatorImpl.validateRequiredProperties : $z22 = virtualinvoke r61.<java.lang.String: boolean equals(java.lang.Object)>("HIVE_METASTORE")
+org.apache.ambari.server.topology.BlueprintValidatorImpl.validateRequiredProperties : goto [?= $z4 = interfaceinvoke r47.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.topology.BlueprintValidatorImpl.validateRequiredProperties : interfaceinvoke r139.<java.util.Collection: boolean removeAll(java.util.Collection)>(r143)
+org.apache.ambari.server.topology.BlueprintValidatorImpl.validateRequiredProperties : if r11 == null goto (branch)
+org.apache.ambari.server.topology.BlueprintValidatorImpl.validateRequiredProperties : goto [?= $z35 = interfaceinvoke r133.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.topology.BlueprintValidatorImpl.validateRequiredProperties : interfaceinvoke r53.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>(r126, r16)
+org.apache.ambari.server.topology.BlueprintValidatorImpl.validateRequiredProperties : $r28 = interfaceinvoke r9.<java.util.Map$Entry: java.lang.Object getKey()>()
+org.apache.ambari.server.topology.BlueprintValidatorImpl.validateRequiredProperties : goto [?= $z2 = interfaceinvoke r8.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.topology.BlueprintValidatorImpl.validateRequiredProperties : $r20 = interfaceinvoke r3.<java.util.Map: java.util.Set entrySet()>()
+org.apache.ambari.server.topology.BlueprintValidatorImpl.validateRequiredProperties : $r132 = interfaceinvoke r53.<java.util.Map: java.util.Set entrySet()>()
+org.apache.ambari.server.topology.BlueprintValidatorImpl.validateRequiredProperties : $r52 = new java.util.HashMap
+org.apache.ambari.server.topology.BlueprintValidatorImpl.validateRequiredProperties : $r119 = r0.<org.apache.ambari.server.topology.BlueprintValidatorImpl: org.apache.ambari.server.controller.internal.Stack stack>
+org.apache.ambari.server.topology.BlueprintValidatorImpl.validateRequiredProperties : $z9 = staticinvoke <org.apache.ambari.server.topology.ClusterTopologyImpl: boolean isNameNodeHAEnabled(java.util.Map)>(r3)
+org.apache.ambari.server.topology.BlueprintValidatorImpl.validateRequiredProperties : $r130 = new java.util.HashSet
+org.apache.ambari.server.topology.BlueprintValidatorImpl.validateRequiredProperties : interfaceinvoke r16.<java.util.Collection: boolean add(java.lang.Object)>(r127)
+org.apache.ambari.server.topology.BlueprintValidatorImpl.validateRequiredProperties : $r58 = interfaceinvoke r49.<org.apache.ambari.server.topology.HostGroup: java.util.Collection getComponentNames()>()
+org.apache.ambari.server.topology.BlueprintValidatorImpl.validateRequiredProperties : $r136 = interfaceinvoke r135.<java.util.Map$Entry: java.lang.Object getKey()>()
+org.apache.ambari.server.topology.BlueprintValidatorImpl.validateRequiredProperties : $z39 = interfaceinvoke r2.<java.util.Map: boolean isEmpty()>()
+org.apache.ambari.server.topology.BlueprintValidatorImpl.validateRequiredProperties : if z0 == 0 goto $r44 = r0.<org.apache.ambari.server.topology.BlueprintValidatorImpl: org.apache.ambari.server.topology.Blueprint blueprint>
+org.apache.ambari.server.topology.BlueprintValidatorImpl.validateRequiredProperties : if r16 != null goto interfaceinvoke r16.<java.util.Collection: boolean add(java.lang.Object)>(r127)
+org.apache.ambari.server.topology.BlueprintValidatorImpl.validateRequiredProperties : $r44 = r0.<org.apache.ambari.server.topology.BlueprintValidatorImpl: org.apache.ambari.server.topology.Blueprint blueprint>
+org.apache.ambari.server.topology.BlueprintValidatorImpl.validateRequiredProperties : $r50 = new java.util.HashSet
+org.apache.ambari.server.topology.BlueprintValidatorImpl.validateRequiredProperties : $z31 = interfaceinvoke r51.<java.util.Collection: boolean add(java.lang.Object)>(r120)
+org.apache.ambari.server.topology.BlueprintValidatorImpl.validateRequiredProperties : goto [?= $z32 = interfaceinvoke r123.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.orm.entities.HostGroupEntity.getBlueprintName : $r1 = virtualinvoke r0.<org.apache.ambari.server.orm.entities.HostGroupEntity: java.lang.String _persistence_get_blueprintName()>()
+org.apache.ambari.server.orm.entities.BlueprintConfigEntity.setBlueprintName : virtualinvoke r0.<org.apache.ambari.server.orm.entities.BlueprintConfigEntity: void _persistence_set_blueprintName(java.lang.String)>(r1)
+org.apache.ambari.server.topology.BlueprintImpl.validateRequiredProperties : $r1 = r0.<org.apache.ambari.server.topology.BlueprintImpl: org.apache.ambari.server.topology.BlueprintValidator validator>
+org.apache.ambari.server.topology.Configuration.getAttributes : $r1 = r0.<org.apache.ambari.server.topology.Configuration: java.util.Map attributes>
+org.apache.ambari.server.orm.entities.HostGroupComponentEntity.setHostGroupName : virtualinvoke r0.<org.apache.ambari.server.orm.entities.HostGroupComponentEntity: void _persistence_set_hostGroupName(java.lang.String)>(r1)
+org.apache.ambari.server.orm.entities.BlueprintEntity.setSecurityDescriptorReference : virtualinvoke r0.<org.apache.ambari.server.orm.entities.BlueprintEntity: void _persistence_set_securityDescriptorReference(java.lang.String)>(r1)
+org.apache.ambari.server.orm.entities.BlueprintEntity.setSecurityType : virtualinvoke r0.<org.apache.ambari.server.orm.entities.BlueprintEntity: void _persistence_set_securityType(org.apache.ambari.server.state.SecurityType)>(r1)
+org.apache.ambari.server.orm.entities.HostGroupEntity.setBlueprintEntity : virtualinvoke r0.<org.apache.ambari.server.orm.entities.HostGroupEntity: void _persistence_set_blueprint(org.apache.ambari.server.orm.entities.BlueprintEntity)>(r1)
+org.apache.ambari.server.orm.entities.BlueprintConfigEntity.setType : virtualinvoke r0.<org.apache.ambari.server.orm.entities.BlueprintConfigEntity: void _persistence_set_type(java.lang.String)>(r1)
+org.apache.ambari.server.topology.Configuration.getProperties : $r1 = r0.<org.apache.ambari.server.topology.Configuration: java.util.Map properties>
+org.apache.ambari.server.utils.SecretReference.isSecret : r1 = virtualinvoke r0.<java.lang.String: java.lang.String[] split(java.lang.String)>(":")
+org.apache.ambari.server.utils.SecretReference.isSecret : $i0 = lengthof r1
+org.apache.ambari.server.orm.entities.BlueprintEntity.setConfigurations : virtualinvoke r0.<org.apache.ambari.server.orm.entities.BlueprintEntity: void _persistence_set_configurations(java.util.Collection)>(r1)
+org.apache.ambari.server.topology.BlueprintImpl.createHostGroupConfigEntities : $r22 = virtualinvoke r2.<org.apache.ambari.server.topology.Configuration: java.util.Map getAttributes()>()
+org.apache.ambari.server.topology.BlueprintImpl.createHostGroupConfigEntities : $r12 = virtualinvoke r2.<org.apache.ambari.server.topology.Configuration: java.util.Map getProperties()>()
+org.apache.ambari.server.topology.BlueprintImpl.createHostGroupConfigEntities : $r38 = interfaceinvoke r5.<java.util.Map: java.util.Collection values()>()
+org.apache.ambari.server.topology.BlueprintImpl.createHostGroupConfigEntities : $r3 = new com.google.gson.Gson
+org.apache.ambari.server.topology.BlueprintImpl.createHostGroupConfigEntities : $r11 = new java.util.HashMap
+org.apache.ambari.server.orm.entities.StackEntity.setStackName : virtualinvoke r0.<org.apache.ambari.server.orm.entities.StackEntity: void _persistence_set_stackName(java.lang.String)>(r1)
+org.apache.ambari.server.orm.entities.BlueprintEntity.setHostGroups : virtualinvoke r0.<org.apache.ambari.server.orm.entities.BlueprintEntity: void _persistence_set_hostGroups(java.util.Collection)>(r1)
+org.apache.ambari.server.topology.BlueprintImpl.createBlueprintSettingEntities : r4 = virtualinvoke r0.<org.apache.ambari.server.topology.BlueprintImpl: org.apache.ambari.server.topology.Setting getSetting()>()
+org.apache.ambari.server.topology.BlueprintImpl.createBlueprintSettingEntities : if r4 == null goto return
+org.apache.ambari.server.topology.BlueprintImpl.createBlueprintSettingEntities : $r2 = new com.google.gson.Gson
+org.apache.ambari.server.controller.internal.Stack$ConfigProperty.getName : $r1 = r0.<org.apache.ambari.server.controller.internal.Stack$ConfigProperty: java.lang.String name>

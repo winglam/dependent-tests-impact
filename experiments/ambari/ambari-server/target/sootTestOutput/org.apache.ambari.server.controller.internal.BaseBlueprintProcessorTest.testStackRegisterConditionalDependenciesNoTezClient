@@ -1,0 +1,41 @@
+org.apache.ambari.server.controller.StackLevelConfigurationRequest.setPropertyName : r0.<org.apache.ambari.server.controller.StackLevelConfigurationRequest: java.lang.String propertyName> = r1
+org.apache.ambari.server.controller.StackServiceRequest.setServiceName : r0.<org.apache.ambari.server.controller.StackServiceRequest: java.lang.String serviceName> = r1
+org.apache.ambari.server.controller.StackVersionRequest.setStackVersion : r0.<org.apache.ambari.server.controller.StackVersionRequest: java.lang.String stackVersion> = r1
+org.apache.ambari.server.controller.internal.BaseBlueprintProcessorTest$4.getDependenciesForComponent : $r4 = r0.<org.apache.ambari.server.controller.internal.BaseBlueprintProcessorTest$4: org.apache.ambari.server.state.DependencyInfo val$hCatDependency>
+org.apache.ambari.server.controller.internal.BaseBlueprintProcessorTest$4.getDependenciesForComponent : $r6 = r0.<org.apache.ambari.server.controller.internal.BaseBlueprintProcessorTest$4: org.apache.ambari.server.state.DependencyInfo val$mapReduceTwoClientDependency>
+org.apache.ambari.server.controller.internal.BaseBlueprintProcessorTest$4.getDependenciesForComponent : return r2
+org.apache.ambari.server.controller.internal.BaseBlueprintProcessorTest$4.getDependenciesForComponent : $r7 = r0.<org.apache.ambari.server.controller.internal.BaseBlueprintProcessorTest$4: org.apache.ambari.server.state.DependencyInfo val$oozieClientDependency>
+org.apache.ambari.server.controller.internal.BaseBlueprintProcessorTest$4.getDependenciesForComponent : $r3 = new java.util.HashSet
+org.apache.ambari.server.controller.internal.BaseBlueprintProcessorTest$4.getDependenciesForComponent : $z0 = virtualinvoke r1.<java.lang.String: boolean equals(java.lang.Object)>("FAKE_MONITORING_SERVER")
+org.apache.ambari.server.controller.internal.BaseBlueprintProcessorTest$4.getDependenciesForComponent : $r5 = r0.<org.apache.ambari.server.controller.internal.BaseBlueprintProcessorTest$4: org.apache.ambari.server.state.DependencyInfo val$yarnClientDependency>
+org.apache.ambari.server.state.DependencyInfo.setName : i0 = virtualinvoke r1.<java.lang.String: int indexOf(int)>(47)
+org.apache.ambari.server.state.DependencyInfo.setName : r0.<org.apache.ambari.server.state.DependencyInfo: java.lang.String name> = r1
+org.apache.ambari.server.state.DependencyInfo.setName : $z0 = virtualinvoke r1.<java.lang.String: boolean contains(java.lang.CharSequence)>("/")
+org.apache.ambari.server.state.DependencyInfo.setName : $r3 = virtualinvoke r1.<java.lang.String: java.lang.String substring(int,int)>(0, i0)
+org.apache.ambari.server.state.DependencyInfo.setName : $i1 = i0 + 1
+org.apache.ambari.server.state.DependencyInfo.hashCode : $i2 = 31 * i0
+org.apache.ambari.server.state.DependencyInfo.hashCode : $i8 = 31 * i7
+org.apache.ambari.server.state.DependencyInfo.hashCode : $i5 = 31 * i4
+org.apache.ambari.server.state.DependencyInfo.hashCode : return i13
+org.apache.ambari.server.state.DependencyInfo.hashCode : $r1 = r0.<org.apache.ambari.server.state.DependencyInfo: java.lang.String name>
+org.apache.ambari.server.state.DependencyInfo.hashCode : $i11 = 31 * i10
+org.apache.ambari.server.controller.internal.Stack.parseStackConfigurations : r3 = interfaceinvoke r2.<java.util.Set: java.util.Iterator iterator()>()
+org.apache.ambari.server.controller.internal.Stack.parseStackConfigurations : $r8 = r0.<org.apache.ambari.server.controller.internal.Stack: org.apache.ambari.server.controller.AmbariManagementController controller>
+org.apache.ambari.server.state.DependencyInfo.getComponentName : $r1 = r0.<org.apache.ambari.server.state.DependencyInfo: java.lang.String componentName>
+org.apache.ambari.server.controller.internal.Stack.registerConditionalDependencies : $r1 = r0.<org.apache.ambari.server.controller.internal.Stack: java.util.Map dbDependencyInfo>
+org.apache.ambari.server.controller.internal.BaseBlueprintProcessorTest$4.registerConditionalDependencies : $r10 = virtualinvoke r4.<org.apache.ambari.server.state.DependencyInfo: java.lang.String getComponentName()>()
+org.apache.ambari.server.controller.internal.BaseBlueprintProcessorTest$4.registerConditionalDependencies : interfaceinvoke r1.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>(r4, "YARN")
+org.apache.ambari.server.controller.internal.BaseBlueprintProcessorTest$4.registerConditionalDependencies : $r8 = virtualinvoke r4.<org.apache.ambari.server.state.DependencyInfo: java.lang.String getComponentName()>()
+org.apache.ambari.server.controller.internal.BaseBlueprintProcessorTest$4.registerConditionalDependencies : specialinvoke r0.<org.apache.ambari.server.controller.internal.Stack: void registerConditionalDependencies()>()
+org.apache.ambari.server.controller.internal.BaseBlueprintProcessorTest$4.registerConditionalDependencies : $r14 = virtualinvoke r4.<org.apache.ambari.server.state.DependencyInfo: java.lang.String getComponentName()>()
+org.apache.ambari.server.controller.internal.BaseBlueprintProcessorTest$4.registerConditionalDependencies : r1 = virtualinvoke r0.<org.apache.ambari.server.controller.internal.BaseBlueprintProcessorTest$4: java.util.Map getDependencyConditionalServiceMap()>()
+org.apache.ambari.server.controller.internal.BaseBlueprintProcessorTest$4.registerConditionalDependencies : interfaceinvoke r1.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>(r4, "MAPREDUCE2")
+org.apache.ambari.server.controller.internal.BaseBlueprintProcessorTest$4.registerConditionalDependencies : interfaceinvoke r1.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>(r4, "OOZIE")
+org.apache.ambari.server.controller.internal.BaseBlueprintProcessorTest$4.registerConditionalDependencies : $r12 = virtualinvoke r4.<org.apache.ambari.server.state.DependencyInfo: java.lang.String getComponentName()>()
+org.apache.ambari.server.controller.internal.BaseBlueprintProcessorTest$4.registerConditionalDependencies : r3 = interfaceinvoke r2.<java.util.Collection: java.util.Iterator iterator()>()
+org.apache.ambari.server.controller.internal.BaseBlueprintProcessorTest$4.registerConditionalDependencies : r2 = virtualinvoke r0.<org.apache.ambari.server.controller.internal.BaseBlueprintProcessorTest$4: java.util.Collection getDependenciesForComponent(java.lang.String)>("FAKE_MONITORING_SERVER")
+org.apache.ambari.server.controller.internal.BaseBlueprintProcessorTest$4.registerConditionalDependencies : $r6 = virtualinvoke r4.<org.apache.ambari.server.state.DependencyInfo: java.lang.String getComponentName()>()
+org.apache.ambari.server.controller.internal.BaseBlueprintProcessorTest$4.registerConditionalDependencies : goto [?= $z0 = interfaceinvoke r3.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.controller.internal.BaseBlueprintProcessorTest$4.registerConditionalDependencies : interfaceinvoke r1.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>(r4, "HIVE")
+org.apache.ambari.server.controller.internal.Stack.getDependencyConditionalServiceMap : $r1 = r0.<org.apache.ambari.server.controller.internal.Stack: java.util.Map dependencyConditionalServiceMap>
+org.apache.ambari.server.controller.StackRequest.setStackName : r0.<org.apache.ambari.server.controller.StackRequest: java.lang.String stackName> = r1

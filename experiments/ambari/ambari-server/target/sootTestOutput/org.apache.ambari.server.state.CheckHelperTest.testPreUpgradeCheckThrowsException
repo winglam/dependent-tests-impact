@@ -1,0 +1,30 @@
+org.apache.ambari.server.state.CheckHelper.getApplicablePrerequisiteChecks : $r3 = new java.util.LinkedList
+org.apache.ambari.server.state.CheckHelper.getApplicablePrerequisiteChecks : r5 = virtualinvoke r1.<org.apache.ambari.server.controller.PrereqCheckRequest: java.lang.String getClusterName()>()
+org.apache.ambari.server.state.CheckHelper.getApplicablePrerequisiteChecks : return r4
+org.apache.ambari.server.state.CheckHelper.getApplicablePrerequisiteChecks : $r11 = new org.apache.ambari.server.state.stack.PrerequisiteCheck
+org.apache.ambari.server.state.CheckHelper.getApplicablePrerequisiteChecks : $z1 = virtualinvoke r7.<org.apache.ambari.server.checks.AbstractCheckDescriptor: boolean isApplicable(org.apache.ambari.server.controller.PrereqCheckRequest)>(r1)
+org.apache.ambari.server.state.CheckHelper.getApplicablePrerequisiteChecks : goto [?= (branch)]
+org.apache.ambari.server.state.CheckHelper.getApplicablePrerequisiteChecks : r6 = interfaceinvoke r2.<java.util.List: java.util.Iterator iterator()>()
+org.apache.ambari.server.state.CheckHelper.getApplicablePrerequisiteChecks : $r13 = new org.apache.ambari.server.state.DescriptorPreCheck
+org.apache.ambari.server.state.CheckHelper.getApplicablePrerequisiteChecks : goto [?= $z0 = interfaceinvoke r6.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.controller.PrereqCheckRequest.addResult : $r3 = r0.<org.apache.ambari.server.controller.PrereqCheckRequest: java.util.Map m_results>
+org.apache.ambari.server.checks.CheckDescription.name : $r1 = r0.<org.apache.ambari.server.checks.CheckDescription: java.lang.String m_name>
+org.apache.ambari.server.state.CheckHelper.performChecks : $r36 = <org.apache.ambari.server.state.CheckHelper: org.slf4j.Logger LOG>
+org.apache.ambari.server.state.CheckHelper.performChecks : r3 = virtualinvoke r1.<org.apache.ambari.server.controller.PrereqCheckRequest: java.lang.String getClusterName()>()
+org.apache.ambari.server.state.CheckHelper.performChecks : r6 = interfaceinvoke r5.<java.util.List: java.util.Iterator iterator()>()
+org.apache.ambari.server.state.CheckHelper.performChecks : r5 = virtualinvoke r0.<org.apache.ambari.server.state.CheckHelper: java.util.List getApplicablePrerequisiteChecks(org.apache.ambari.server.controller.PrereqCheckRequest,java.util.List)>(r1, r2)
+org.apache.ambari.server.state.CheckHelper.performChecks : virtualinvoke r8.<org.apache.ambari.server.checks.AbstractCheckDescriptor: void perform(org.apache.ambari.server.state.stack.PrerequisiteCheck,org.apache.ambari.server.controller.PrereqCheckRequest)>(r9, r1)
+org.apache.ambari.server.state.CheckHelper.performChecks : $r10 = new java.util.ArrayList
+org.apache.ambari.server.state.CheckHelper.performChecks : virtualinvoke r9.<org.apache.ambari.server.state.stack.PrerequisiteCheck: void setFailReason(java.lang.String)>("Unexpected server error happened")
+org.apache.ambari.server.state.CheckHelper.performChecks : return r4
+org.apache.ambari.server.state.CheckHelper.performChecks : $r44 = <org.apache.ambari.server.state.stack.PrereqCheckStatus: org.apache.ambari.server.state.stack.PrereqCheckStatus FAIL>
+org.apache.ambari.server.state.CheckHelper.performChecks : r8 = r7.<org.apache.ambari.server.state.DescriptorPreCheck: org.apache.ambari.server.checks.AbstractCheckDescriptor descriptor>
+org.apache.ambari.server.state.CheckHelper.performChecks : r35 = $r34
+org.apache.ambari.server.state.CheckHelper.performChecks : r9 = r7.<org.apache.ambari.server.state.DescriptorPreCheck: org.apache.ambari.server.state.stack.PrerequisiteCheck check>
+org.apache.ambari.server.state.CheckHelper.performChecks : interfaceinvoke r4.<java.util.List: boolean add(java.lang.Object)>(r9)
+org.apache.ambari.server.state.CheckHelper.performChecks : goto [?= $z1 = interfaceinvoke r6.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.state.CheckHelper.performChecks : $r45 = virtualinvoke r8.<org.apache.ambari.server.checks.AbstractCheckDescriptor: org.apache.ambari.server.checks.CheckDescription getDescription()>()
+org.apache.ambari.server.state.stack.PrerequisiteCheck.setFailReason : r0.<org.apache.ambari.server.state.stack.PrerequisiteCheck: java.lang.String m_failReason> = r1
+org.apache.ambari.server.state.stack.PrerequisiteCheck.getStatus : $r1 = r0.<org.apache.ambari.server.state.stack.PrerequisiteCheck: org.apache.ambari.server.state.stack.PrereqCheckStatus m_status>
+org.apache.ambari.server.state.stack.PrerequisiteCheck.setStatus : r0.<org.apache.ambari.server.state.stack.PrerequisiteCheck: org.apache.ambari.server.state.stack.PrereqCheckStatus m_status> = r1
+org.apache.ambari.server.controller.PrereqCheckRequest.getClusterName : $r1 = r0.<org.apache.ambari.server.controller.PrereqCheckRequest: java.lang.String m_clusterName>

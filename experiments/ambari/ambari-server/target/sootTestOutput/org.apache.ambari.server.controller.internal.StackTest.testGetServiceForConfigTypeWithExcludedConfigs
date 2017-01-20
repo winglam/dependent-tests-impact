@@ -1,0 +1,66 @@
+org.apache.ambari.server.controller.StackLevelConfigurationRequest.setPropertyName : r0.<org.apache.ambari.server.controller.StackLevelConfigurationRequest: java.lang.String propertyName> = r1
+org.apache.ambari.server.controller.StackServiceRequest.setServiceName : r0.<org.apache.ambari.server.controller.StackServiceRequest: java.lang.String serviceName> = r1
+org.apache.ambari.server.controller.internal.Stack$ConfigProperty.getType : $r1 = r0.<org.apache.ambari.server.controller.internal.Stack$ConfigProperty: java.lang.String type>
+org.apache.ambari.server.controller.StackConfigurationRequest.setPropertyName : r0.<org.apache.ambari.server.controller.StackConfigurationRequest: java.lang.String propertyName> = r1
+org.apache.ambari.server.controller.StackVersionRequest.setStackVersion : r0.<org.apache.ambari.server.controller.StackVersionRequest: java.lang.String stackVersion> = r1
+org.apache.ambari.server.controller.internal.Stack$ConfigProperty.normalizeType : $i0 = virtualinvoke r1.<java.lang.String: int length()>()
+org.apache.ambari.server.controller.internal.Stack$ConfigProperty.normalizeType : $z0 = virtualinvoke r1.<java.lang.String: boolean endsWith(java.lang.String)>(".xml")
+org.apache.ambari.server.controller.internal.Stack$ConfigProperty.normalizeType : return r1
+org.apache.ambari.server.controller.internal.Stack.parseComponents : r5 = interfaceinvoke r4.<java.util.Set: java.util.Iterator iterator()>()
+org.apache.ambari.server.controller.internal.Stack.parseComponents : $r2 = new java.util.HashSet
+org.apache.ambari.server.controller.internal.Stack.parseComponents : interfaceinvoke r3.<java.util.Collection: boolean add(java.lang.Object)>(r7)
+org.apache.ambari.server.controller.internal.Stack.parseComponents : $r17 = r0.<org.apache.ambari.server.controller.internal.Stack: java.util.Map componentService>
+org.apache.ambari.server.controller.internal.Stack.parseComponents : $z3 = virtualinvoke r6.<org.apache.ambari.server.controller.StackServiceComponentResponse: boolean isMaster()>()
+org.apache.ambari.server.controller.internal.Stack.parseComponents : $r23 = r0.<org.apache.ambari.server.controller.internal.Stack: org.apache.ambari.server.controller.AmbariManagementController controller>
+org.apache.ambari.server.controller.internal.Stack.parseComponents : if r10 == null goto $z3 = virtualinvoke r6.<org.apache.ambari.server.controller.StackServiceComponentResponse: boolean isMaster()>()
+org.apache.ambari.server.controller.internal.Stack.parseComponents : goto [?= $z0 = interfaceinvoke r5.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.controller.internal.Stack.parseComponents : r9 = virtualinvoke r6.<org.apache.ambari.server.controller.StackServiceComponentResponse: org.apache.ambari.server.state.AutoDeployInfo getAutoDeploy()>()
+org.apache.ambari.server.controller.internal.Stack.parseComponents : if r8 == null goto r9 = virtualinvoke r6.<org.apache.ambari.server.controller.StackServiceComponentResponse: org.apache.ambari.server.state.AutoDeployInfo getAutoDeploy()>()
+org.apache.ambari.server.controller.internal.Stack.parseComponents : if r9 == null goto $r23 = r0.<org.apache.ambari.server.controller.internal.Stack: org.apache.ambari.server.controller.AmbariManagementController controller>
+org.apache.ambari.server.controller.internal.Stack.parseComponents : $r11 = r0.<org.apache.ambari.server.controller.internal.Stack: org.apache.ambari.server.controller.AmbariManagementController controller>
+org.apache.ambari.server.controller.internal.Stack.parseComponents : r8 = virtualinvoke r6.<org.apache.ambari.server.controller.StackServiceComponentResponse: java.lang.String getCardinality()>()
+org.apache.ambari.server.controller.internal.Stack.parseComponents : $r30 = r0.<org.apache.ambari.server.controller.internal.Stack: java.util.Map serviceComponents>
+org.apache.ambari.server.controller.internal.Stack.parseComponents : r7 = virtualinvoke r6.<org.apache.ambari.server.controller.StackServiceComponentResponse: java.lang.String getComponentName()>()
+org.apache.ambari.server.controller.internal.Stack.parseExcludedConfigurations : $r2 = r0.<org.apache.ambari.server.controller.internal.Stack: java.util.Map excludedConfigurationTypes>
+org.apache.ambari.server.controller.StackServiceComponentRequest.setComponentName : r0.<org.apache.ambari.server.controller.StackServiceComponentRequest: java.lang.String componentName> = r1
+org.apache.ambari.server.controller.internal.Stack.parseConfigurations : $r32 = new java.util.HashMap
+org.apache.ambari.server.controller.internal.Stack.parseConfigurations : $r13 = new java.util.HashMap
+org.apache.ambari.server.controller.internal.Stack.parseConfigurations : $r34 = virtualinvoke r8.<org.apache.ambari.server.controller.StackConfigurationResponse: java.lang.String getPropertyName()>()
+org.apache.ambari.server.controller.internal.Stack.parseConfigurations : $r17 = r0.<org.apache.ambari.server.controller.internal.Stack: java.util.Map requiredServiceConfigurations>
+org.apache.ambari.server.controller.internal.Stack.parseConfigurations : $r15 = r0.<org.apache.ambari.server.controller.internal.Stack: java.util.Map serviceConfigurations>
+org.apache.ambari.server.controller.internal.Stack.parseConfigurations : $r14 = new java.util.HashMap
+org.apache.ambari.server.controller.internal.Stack.parseConfigurations : if r11 != null goto $r34 = virtualinvoke r8.<org.apache.ambari.server.controller.StackConfigurationResponse: java.lang.String getPropertyName()>()
+org.apache.ambari.server.controller.internal.Stack.parseConfigurations : $r19 = r0.<org.apache.ambari.server.controller.internal.Stack: org.apache.ambari.server.controller.AmbariManagementController controller>
+org.apache.ambari.server.controller.internal.Stack.parseConfigurations : $z4 = interfaceinvoke r3.<java.util.Map: boolean containsKey(java.lang.Object)>(r46)
+org.apache.ambari.server.controller.internal.Stack.parseConfigurations : r2 = virtualinvoke r1.<org.apache.ambari.server.controller.StackServiceResponse: java.lang.String getServiceName()>()
+org.apache.ambari.server.controller.internal.Stack.parseConfigurations : r10 = virtualinvoke r9.<org.apache.ambari.server.controller.internal.Stack$ConfigProperty: java.lang.String getType()>()
+org.apache.ambari.server.controller.internal.Stack.parseConfigurations : $r36 = virtualinvoke r8.<org.apache.ambari.server.controller.StackConfigurationResponse: java.lang.Boolean isRequired()>()
+org.apache.ambari.server.controller.internal.Stack.parseConfigurations : $r40 = virtualinvoke r8.<org.apache.ambari.server.controller.StackConfigurationResponse: java.lang.String getPropertyName()>()
+org.apache.ambari.server.controller.internal.Stack.parseConfigurations : $r37 = interfaceinvoke r4.<java.util.Map: java.lang.Object get(java.lang.Object)>(r10)
+org.apache.ambari.server.controller.internal.Stack.parseConfigurations : $r31 = interfaceinvoke r3.<java.util.Map: java.lang.Object get(java.lang.Object)>(r10)
+org.apache.ambari.server.controller.internal.Stack.parseConfigurations : $r38 = new java.util.HashMap
+org.apache.ambari.server.controller.internal.Stack.parseConfigurations : $r30 = new org.apache.ambari.server.controller.internal.Stack$ConfigProperty
+org.apache.ambari.server.controller.internal.Stack.parseConfigurations : interfaceinvoke r4.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>(r10, r12)
+org.apache.ambari.server.controller.internal.Stack.parseConfigurations : r7 = interfaceinvoke r5.<java.util.Set: java.util.Iterator iterator()>()
+org.apache.ambari.server.controller.internal.Stack.parseConfigurations : goto [?= $z1 = interfaceinvoke r7.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.controller.internal.Stack.parseConfigurations : interfaceinvoke r3.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>(r10, r11)
+org.apache.ambari.server.controller.internal.Stack.parseConfigurations : r44 = interfaceinvoke r43.<java.util.Set: java.util.Iterator iterator()>()
+org.apache.ambari.server.controller.internal.Stack.parseConfigurations : $r42 = virtualinvoke r1.<org.apache.ambari.server.controller.StackServiceResponse: java.util.Map getConfigTypes()>()
+org.apache.ambari.server.controller.internal.Stack.parseConfigurations : $r47 = staticinvoke <java.util.Collections: java.util.Map emptyMap()>()
+org.apache.ambari.server.controller.internal.Stack.parseConfigurations : if r12 != null goto $r40 = virtualinvoke r8.<org.apache.ambari.server.controller.StackConfigurationResponse: java.lang.String getPropertyName()>()
+org.apache.ambari.server.controller.internal.Stack.parseConfigurations : $r24 = r0.<org.apache.ambari.server.controller.internal.Stack: org.apache.ambari.server.controller.AmbariManagementController controller>
+org.apache.ambari.server.controller.internal.Stack.parseConfigurations : interfaceinvoke r5.<java.util.Set: boolean addAll(java.util.Collection)>(r6)
+org.apache.ambari.server.controller.internal.Stack.parseConfigurations : goto [?= $z3 = interfaceinvoke r44.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.controller.internal.Stack.parseStackConfigurations : r3 = interfaceinvoke r2.<java.util.Set: java.util.Iterator iterator()>()
+org.apache.ambari.server.controller.internal.Stack.parseStackConfigurations : $r8 = r0.<org.apache.ambari.server.controller.internal.Stack: org.apache.ambari.server.controller.AmbariManagementController controller>
+org.apache.ambari.server.controller.internal.Stack.registerConditionalDependencies : $r1 = r0.<org.apache.ambari.server.controller.internal.Stack: java.util.Map dbDependencyInfo>
+org.apache.ambari.server.controller.internal.Stack.getServiceForConfigType : $z1 = interfaceinvoke r4.<java.util.Map: boolean containsKey(java.lang.Object)>(r1)
+org.apache.ambari.server.controller.internal.Stack.getServiceForConfigType : return r5
+org.apache.ambari.server.controller.internal.Stack.getServiceForConfigType : $r7 = r0.<org.apache.ambari.server.controller.internal.Stack: java.util.Map serviceConfigurations>
+org.apache.ambari.server.controller.internal.Stack.getServiceForConfigType : $r10 = interfaceinvoke r3.<java.util.Map$Entry: java.lang.Object getValue()>()
+org.apache.ambari.server.controller.internal.Stack.getServiceForConfigType : $r13 = new java.lang.IllegalArgumentException
+org.apache.ambari.server.controller.internal.Stack.getServiceForConfigType : goto [?= $z0 = interfaceinvoke r2.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.controller.internal.Stack.getServiceForConfigType : $r11 = interfaceinvoke r3.<java.util.Map$Entry: java.lang.Object getKey()>()
+org.apache.ambari.server.controller.StackRequest.setStackName : r0.<org.apache.ambari.server.controller.StackRequest: java.lang.String stackName> = r1
+org.apache.ambari.server.controller.StackServiceComponentRequest.setRecoveryEnabled : r0.<org.apache.ambari.server.controller.StackServiceComponentRequest: java.lang.String recoveryEnabled> = r1
+org.apache.ambari.server.controller.internal.Stack.getExcludedConfigurationTypes : $r2 = r0.<org.apache.ambari.server.controller.internal.Stack: java.util.Map excludedConfigurationTypes>

@@ -1,0 +1,245 @@
+org.apache.ambari.server.api.predicate.QueryLexer.tokens : $r2 = staticinvoke <java.util.Collections: java.util.Set emptySet()>()
+org.apache.ambari.server.api.predicate.QueryLexer.tokens : virtualinvoke r4.<org.apache.ambari.server.api.predicate.QueryLexer$ScanContext: void addPropertiesToIgnore(java.util.Collection)>(r2)
+org.apache.ambari.server.api.predicate.QueryLexer.tokens : z0 = 0
+org.apache.ambari.server.api.predicate.QueryLexer.tokens : virtualinvoke r4.<org.apache.ambari.server.api.predicate.QueryLexer$ScanContext: void validateEndState()>()
+org.apache.ambari.server.api.predicate.QueryLexer.tokens : $r24 = virtualinvoke r4.<org.apache.ambari.server.api.predicate.QueryLexer$ScanContext: java.util.List getTokenList()>()
+org.apache.ambari.server.api.predicate.QueryLexer.tokens : $r11 = <org.apache.ambari.server.api.predicate.QueryLexer: java.util.Map TOKEN_HANDLERS>
+org.apache.ambari.server.api.predicate.QueryLexer.tokens : $r9 = specialinvoke r0.<org.apache.ambari.server.api.predicate.QueryLexer: java.util.List parseStringTokens(java.lang.String)>(r1)
+org.apache.ambari.server.api.predicate.QueryLexer.tokens : $r3 = new org.apache.ambari.server.api.predicate.QueryLexer$ScanContext
+org.apache.ambari.server.api.predicate.QueryLexer.tokens : i0 = 0
+org.apache.ambari.server.api.predicate.QueryLexer.tokens : $i2 = i0
+org.apache.ambari.server.api.predicate.QueryLexer.tokens : goto [?= $z1 = interfaceinvoke r5.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.api.predicate.QueryLexer.tokens : if z0 != 0 goto (branch)
+org.apache.ambari.server.api.predicate.QueryLexer.tokens : $r8 = <org.apache.ambari.server.api.predicate.QueryLexer: java.util.Set SET_IGNORE>
+org.apache.ambari.server.api.predicate.QueryParser$ParseContext.setTokenType : r0.<org.apache.ambari.server.api.predicate.QueryParser$ParseContext: org.apache.ambari.server.api.predicate.Token$TYPE m_previousTokenType> = r1
+org.apache.ambari.server.api.predicate.expressions.RelationalExpression.toPredicate : $r1 = virtualinvoke r0.<org.apache.ambari.server.api.predicate.expressions.RelationalExpression: org.apache.ambari.server.api.predicate.operators.Operator getOperator()>()
+org.apache.ambari.server.api.predicate.QueryLexer$PropertyOperandTokenHandler.getType : $r1 = <org.apache.ambari.server.api.predicate.Token$TYPE: org.apache.ambari.server.api.predicate.Token$TYPE PROPERTY_OPERAND>
+org.apache.ambari.server.topology.HostGroupInfo.getHostNames : $r3 = r0.<org.apache.ambari.server.topology.HostGroupInfo: java.util.Collection hostNames>
+org.apache.ambari.server.topology.HostGroupInfo.getHostNames : $r4 = new java.util.HashSet
+org.apache.ambari.server.topology.HostGroupInfo.setPredicate : $r2 = <org.apache.ambari.server.topology.HostGroupInfo: org.apache.ambari.server.api.predicate.PredicateCompiler predicateCompiler>
+org.apache.ambari.server.topology.HostGroupInfo.setPredicate : r0.<org.apache.ambari.server.topology.HostGroupInfo: java.lang.String predicateString> = r1
+org.apache.ambari.server.api.predicate.QueryLexer$ScanContext.addPropertiesToIgnore : if r1 == null goto return
+org.apache.ambari.server.api.predicate.QueryLexer$ScanContext.addPropertiesToIgnore : $r2 = r0.<org.apache.ambari.server.api.predicate.QueryLexer$ScanContext: java.util.Set m_propertiesToIgnore>
+org.apache.ambari.server.topology.ClusterTopologyImpl.getBlueprint : $r1 = r0.<org.apache.ambari.server.topology.ClusterTopologyImpl: org.apache.ambari.server.topology.Blueprint blueprint>
+org.apache.ambari.server.topology.Configuration.getFullProperties : if i0 != 0 goto $r15 = r0.<org.apache.ambari.server.topology.Configuration: org.apache.ambari.server.topology.Configuration parentConfiguration>
+org.apache.ambari.server.topology.Configuration.getFullProperties : goto [?= $z1 = interfaceinvoke r22.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.topology.Configuration.getFullProperties : $r25 = interfaceinvoke r24.<java.util.Map$Entry: java.lang.Object getKey()>()
+org.apache.ambari.server.topology.Configuration.getFullProperties : $z2 = interfaceinvoke r19.<java.util.Map: boolean containsKey(java.lang.Object)>(r5)
+org.apache.ambari.server.topology.Configuration.getFullProperties : return r19
+org.apache.ambari.server.topology.Configuration.getFullProperties : $r20 = r0.<org.apache.ambari.server.topology.Configuration: java.util.Map properties>
+org.apache.ambari.server.topology.Configuration.getFullProperties : $r1 = virtualinvoke r0.<org.apache.ambari.server.topology.Configuration: java.util.Map getFullProperties(int)>(2147483647)
+org.apache.ambari.server.topology.Configuration.getFullProperties : $r15 = r0.<org.apache.ambari.server.topology.Configuration: org.apache.ambari.server.topology.Configuration parentConfiguration>
+org.apache.ambari.server.topology.Configuration.getFullProperties : $r26 = new java.util.HashMap
+org.apache.ambari.server.topology.Configuration.getFullProperties : interfaceinvoke r19.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>(r5, r6)
+org.apache.ambari.server.topology.ClusterTopologyImpl.validateTopology : $r7 = new org.apache.ambari.server.topology.InvalidTopologyException
+org.apache.ambari.server.topology.ClusterTopologyImpl.validateTopology : r6 = virtualinvoke r0.<org.apache.ambari.server.topology.ClusterTopologyImpl: java.util.Collection getHostAssignmentsForComponent(java.lang.String)>("NAMENODE")
+org.apache.ambari.server.topology.ClusterTopologyImpl.validateTopology : $z1 = virtualinvoke r0.<org.apache.ambari.server.topology.ClusterTopologyImpl: boolean isNameNodeHAEnabled()>()
+org.apache.ambari.server.topology.ClusterTopologyImpl.validateTopology : $i0 = interfaceinvoke r6.<java.util.Collection: int size()>()
+org.apache.ambari.server.topology.ClusterTopologyImpl.validateTopology : r2 = interfaceinvoke r1.<java.util.List: java.util.Iterator iterator()>()
+org.apache.ambari.server.api.predicate.QueryLexer$RelationalOperatorTokenHandler._handleToken : $r3 = new org.apache.ambari.server.api.predicate.Token
+org.apache.ambari.server.api.predicate.QueryLexer$RelationalOperatorTokenHandler._handleToken : $r5 = new org.apache.ambari.server.api.predicate.Token
+org.apache.ambari.server.api.predicate.QueryLexer$ScanContext.getLastTokenType : $r1 = r0.<org.apache.ambari.server.api.predicate.QueryLexer$ScanContext: org.apache.ambari.server.api.predicate.Token$TYPE m_lastType>
+org.apache.ambari.server.api.predicate.QueryParser$PropertyOperandTokenHandler._handleToken : $r4 = virtualinvoke r1.<org.apache.ambari.server.api.predicate.QueryParser$ParseContext: org.apache.ambari.server.api.predicate.expressions.Expression getPrecedingExpression()>()
+org.apache.ambari.server.api.predicate.QueryParser$PropertyOperandTokenHandler._handleToken : return 1
+org.apache.ambari.server.api.predicate.QueryParser$PropertyOperandTokenHandler._handleToken : $r3 = virtualinvoke r1.<org.apache.ambari.server.api.predicate.QueryParser$ParseContext: org.apache.ambari.server.api.predicate.Token[] getTokens()>()
+org.apache.ambari.server.topology.ClusterTopologyImplTest$TestTopologyRequest.getBlueprint : $r1 = staticinvoke <org.apache.ambari.server.topology.ClusterTopologyImplTest: org.apache.ambari.server.topology.Blueprint access$000()>()
+org.apache.ambari.server.topology.HostGroupInfo.getConfiguration : $r1 = r0.<org.apache.ambari.server.topology.HostGroupInfo: org.apache.ambari.server.topology.Configuration configuration>
+org.apache.ambari.server.api.predicate.QueryLexer$ScanContext.addToken : $r2 = r0.<org.apache.ambari.server.api.predicate.QueryLexer$ScanContext: org.apache.ambari.server.api.predicate.Token$TYPE m_ignoreSegmentEndToken>
+org.apache.ambari.server.api.predicate.QueryLexer$ScanContext.addToken : $r3 = r0.<org.apache.ambari.server.api.predicate.QueryLexer$ScanContext: java.util.List m_listTokens>
+org.apache.ambari.server.api.predicate.QueryParser$ParseContext.getExpressions : $r1 = r0.<org.apache.ambari.server.api.predicate.QueryParser$ParseContext: java.util.List m_listExpressions>
+org.apache.ambari.server.api.predicate.QueryLexer$PropertyOperandTokenHandler.handles : $z0 = virtualinvoke r1.<java.lang.String: boolean matches(java.lang.String)>("[^!&\\|<=|>=|!=|=|<|>\\(\\)]+")
+org.apache.ambari.server.topology.ClusterTopologyImpl.isNameNodeHAEnabled : $z0 = interfaceinvoke r0.<java.util.Map: boolean containsKey(java.lang.Object)>("hdfs-site")
+org.apache.ambari.server.topology.ClusterTopologyImpl.isNameNodeHAEnabled : $r1 = r0.<org.apache.ambari.server.topology.ClusterTopologyImpl: org.apache.ambari.server.topology.Configuration configuration>
+org.apache.ambari.server.api.predicate.QueryLexer$ComplexValueOperandTokenHandler.validateEndState : $i0 = virtualinvoke r1.<org.apache.ambari.server.api.predicate.QueryLexer$ScanContext: int getBracketScore()>()
+org.apache.ambari.server.topology.ClusterTopologyImplTest.access$000 : $r0 = <org.apache.ambari.server.topology.ClusterTopologyImplTest: org.apache.ambari.server.topology.Blueprint blueprint>
+org.apache.ambari.server.api.predicate.QueryParser$ValueOperandTokenHandler._handleToken : $r4 = virtualinvoke r1.<org.apache.ambari.server.api.predicate.QueryParser$ParseContext: org.apache.ambari.server.api.predicate.expressions.Expression getPrecedingExpression()>()
+org.apache.ambari.server.api.predicate.QueryParser$ValueOperandTokenHandler._handleToken : $r5 = virtualinvoke r1.<org.apache.ambari.server.api.predicate.QueryParser$ParseContext: org.apache.ambari.server.api.predicate.expressions.Expression getPrecedingExpression()>()
+org.apache.ambari.server.api.predicate.QueryParser$ValueOperandTokenHandler._handleToken : return 1
+org.apache.ambari.server.api.predicate.QueryParser$ValueOperandTokenHandler._handleToken : $r3 = virtualinvoke r1.<org.apache.ambari.server.api.predicate.QueryParser$ParseContext: org.apache.ambari.server.api.predicate.Token[] getTokens()>()
+org.apache.ambari.server.api.predicate.QueryParser.parseExpressions : $r2 = new org.apache.ambari.server.api.predicate.QueryParser$ParseContext
+org.apache.ambari.server.api.predicate.QueryParser.parseExpressions : return r3
+org.apache.ambari.server.api.predicate.QueryParser.parseExpressions : $i3 = virtualinvoke r3.<org.apache.ambari.server.api.predicate.QueryParser$ParseContext: int getPrecedenceLevel()>()
+org.apache.ambari.server.api.predicate.QueryParser.parseExpressions : $i0 = virtualinvoke r3.<org.apache.ambari.server.api.predicate.QueryParser$ParseContext: int getCurrentTokensIndex()>()
+org.apache.ambari.server.api.predicate.QueryParser.parseExpressions : $r4 = <org.apache.ambari.server.api.predicate.QueryParser: java.util.Map TOKEN_HANDLERS>
+org.apache.ambari.server.api.predicate.expressions.AbstractExpression.getRightOperand : $r1 = r0.<org.apache.ambari.server.api.predicate.expressions.AbstractExpression: java.lang.Object m_right>
+org.apache.ambari.server.topology.HostGroupInfo.setRequestedCount : r0.<org.apache.ambari.server.topology.HostGroupInfo: int requested_count> = i0
+org.apache.ambari.server.api.predicate.QueryLexer$ScanContext.getIntermediateTokens : $r1 = r0.<org.apache.ambari.server.api.predicate.QueryLexer$ScanContext: java.util.Deque m_intermediateTokens>
+org.apache.ambari.server.api.predicate.expressions.AbstractExpression.setLeftOperand : r0.<org.apache.ambari.server.api.predicate.expressions.AbstractExpression: java.lang.Object m_left> = r1
+org.apache.ambari.server.topology.ClusterTopologyImpl.getConfiguration : $r1 = r0.<org.apache.ambari.server.topology.ClusterTopologyImpl: org.apache.ambari.server.topology.Configuration configuration>
+org.apache.ambari.server.api.predicate.QueryParser$ParseContext.getTokens : $r1 = r0.<org.apache.ambari.server.api.predicate.QueryParser$ParseContext: org.apache.ambari.server.api.predicate.Token[] m_tokens>
+org.apache.ambari.server.api.predicate.QueryLexer$LogicalUnaryOperatorTokenHandler.handles : $r3 = "!"
+org.apache.ambari.server.api.predicate.QueryLexer.generatePattern : virtualinvoke r2.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(41)
+org.apache.ambari.server.api.predicate.QueryLexer.generatePattern : virtualinvoke r2.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(40)
+org.apache.ambari.server.api.predicate.QueryLexer.generatePattern : $r1 = new java.lang.StringBuilder
+org.apache.ambari.server.api.predicate.QueryLexer.generatePattern : virtualinvoke r2.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(92)
+org.apache.ambari.server.api.predicate.QueryLexer.generatePattern : $i2 = virtualinvoke r2.<java.lang.StringBuilder: int length()>()
+org.apache.ambari.server.api.predicate.QueryLexer.generatePattern : r3 = <org.apache.ambari.server.api.predicate.QueryLexer: java.lang.String[] ALL_DELIMS>
+org.apache.ambari.server.api.predicate.QueryLexer.generatePattern : virtualinvoke r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r4)
+org.apache.ambari.server.api.predicate.QueryLexer.generatePattern : $r10 = virtualinvoke r2.<java.lang.StringBuilder: java.lang.String toString()>()
+org.apache.ambari.server.api.predicate.QueryLexer.access$1000 : $r0 = <org.apache.ambari.server.api.predicate.QueryLexer: java.util.Map TOKEN_HANDLERS>
+org.apache.ambari.server.api.predicate.QueryLexer.parseStringTokens : return r4
+org.apache.ambari.server.api.predicate.QueryLexer.parseStringTokens : $i2 = virtualinvoke r3.<java.util.regex.Matcher: int start()>()
+org.apache.ambari.server.api.predicate.QueryLexer.parseStringTokens : $r5 = new java.util.ArrayList
+org.apache.ambari.server.api.predicate.QueryLexer.parseStringTokens : i0 = 0
+org.apache.ambari.server.api.predicate.QueryLexer.parseStringTokens : $r7 = virtualinvoke r3.<java.util.regex.Matcher: java.lang.String group()>()
+org.apache.ambari.server.api.predicate.QueryLexer.parseStringTokens : r3 = virtualinvoke r2.<java.util.regex.Pattern: java.util.regex.Matcher matcher(java.lang.CharSequence)>(r1)
+org.apache.ambari.server.api.predicate.QueryLexer.parseStringTokens : $i3 = virtualinvoke r1.<java.lang.String: int length()>()
+org.apache.ambari.server.api.predicate.QueryLexer.parseStringTokens : $i1 = virtualinvoke r3.<java.util.regex.Matcher: int start()>()
+org.apache.ambari.server.api.predicate.QueryLexer.parseStringTokens : $r8 = virtualinvoke r1.<java.lang.String: java.lang.String substring(int)>(i0)
+org.apache.ambari.server.api.predicate.QueryLexer.parseStringTokens : r2 = specialinvoke r0.<org.apache.ambari.server.api.predicate.QueryLexer: java.util.regex.Pattern generatePattern()>()
+org.apache.ambari.server.api.predicate.QueryLexer.parseStringTokens : $z0 = virtualinvoke r3.<java.util.regex.Matcher: boolean find()>()
+org.apache.ambari.server.api.predicate.QueryLexer.parseStringTokens : i0 = virtualinvoke r3.<java.util.regex.Matcher: int end()>()
+org.apache.ambari.server.api.predicate.QueryLexer$ScanContext.validateEndState : virtualinvoke r3.<org.apache.ambari.server.api.predicate.QueryLexer$TokenHandler: void validateEndState(org.apache.ambari.server.api.predicate.QueryLexer$ScanContext)>(r0)
+org.apache.ambari.server.api.predicate.QueryLexer$ScanContext.validateEndState : goto [?= $z0 = interfaceinvoke r2.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.api.predicate.QueryLexer$ScanContext.validateEndState : $r1 = staticinvoke <org.apache.ambari.server.api.predicate.QueryLexer: java.util.Map access$1000()>()
+org.apache.ambari.server.topology.ClusterTopologyImplTest.replayAll : $r2 = newarray (java.lang.Object)[5]
+org.apache.ambari.server.topology.ClusterTopologyImpl.registerHostGroupInfo : $r27 = r0.<org.apache.ambari.server.topology.ClusterTopologyImpl: java.util.Map hostGroupInfoMap>
+org.apache.ambari.server.topology.ClusterTopologyImpl.registerHostGroupInfo : $r13 = virtualinvoke r0.<org.apache.ambari.server.topology.ClusterTopologyImpl: org.apache.ambari.server.topology.Blueprint getBlueprint()>()
+org.apache.ambari.server.topology.ClusterTopologyImpl.registerHostGroupInfo : goto [?= (branch)]
+org.apache.ambari.server.topology.ClusterTopologyImpl.registerHostGroupInfo : r8 = interfaceinvoke r6.<org.apache.ambari.server.topology.HostGroup: org.apache.ambari.server.topology.Configuration getConfiguration()>()
+org.apache.ambari.server.topology.ClusterTopologyImpl.registerHostGroupInfo : specialinvoke r0.<org.apache.ambari.server.topology.ClusterTopologyImpl: void checkForDuplicateHosts(java.util.Map)>(r1)
+org.apache.ambari.server.topology.ClusterTopologyImpl.registerHostGroupInfo : $r22 = new org.apache.ambari.server.topology.Configuration
+org.apache.ambari.server.topology.ClusterTopologyImpl.registerHostGroupInfo : $r26 = virtualinvoke r4.<org.apache.ambari.server.topology.HostGroupInfo: org.apache.ambari.server.topology.Configuration getConfiguration()>()
+org.apache.ambari.server.topology.ClusterTopologyImpl.registerHostGroupInfo : r5 = virtualinvoke r4.<org.apache.ambari.server.topology.HostGroupInfo: java.lang.String getHostGroupName()>()
+org.apache.ambari.server.topology.ClusterTopologyImpl.registerHostGroupInfo : $r11 = interfaceinvoke r1.<java.util.Map: java.util.Collection values()>()
+org.apache.ambari.server.topology.ClusterTopologyImpl.registerHostGroupInfo : $r20 = r0.<org.apache.ambari.server.topology.ClusterTopologyImpl: java.util.Map hostGroupInfoMap>
+org.apache.ambari.server.topology.ClusterTopologyImpl.registerHostGroupInfo : $r2 = <org.apache.ambari.server.topology.ClusterTopologyImpl: org.slf4j.Logger LOG>
+org.apache.ambari.server.topology.ClusterTopologyImpl.registerHostGroupInfo : if r7 != null goto $r29 = virtualinvoke r4.<org.apache.ambari.server.topology.HostGroupInfo: java.util.Collection getHostNames()>()
+org.apache.ambari.server.topology.ClusterTopologyImpl.registerHostGroupInfo : if r6 != null goto $r20 = r0.<org.apache.ambari.server.topology.ClusterTopologyImpl: java.util.Map hostGroupInfoMap>
+org.apache.ambari.server.topology.ClusterTopologyImpl.registerHostGroupInfo : goto [?= $z0 = interfaceinvoke r3.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.api.predicate.expressions.AbstractExpression.getLeftOperand : $r1 = r0.<org.apache.ambari.server.api.predicate.expressions.AbstractExpression: java.lang.Object m_left>
+org.apache.ambari.server.api.predicate.QueryParser$TokenHandler.handleToken : $i2 = virtualinvoke r1.<org.apache.ambari.server.api.predicate.QueryParser$ParseContext: int getCurrentTokensIndex()>()
+org.apache.ambari.server.api.predicate.QueryParser$TokenHandler.handleToken : $r18 = virtualinvoke r2.<org.apache.ambari.server.api.predicate.Token: org.apache.ambari.server.api.predicate.Token$TYPE getType()>()
+org.apache.ambari.server.api.predicate.QueryParser$TokenHandler.handleToken : i0 = virtualinvoke r0.<org.apache.ambari.server.api.predicate.QueryParser$TokenHandler: int _handleToken(org.apache.ambari.server.api.predicate.QueryParser$ParseContext)>(r1)
+org.apache.ambari.server.api.predicate.QueryParser$TokenHandler.handleToken : $r4 = virtualinvoke r1.<org.apache.ambari.server.api.predicate.QueryParser$ParseContext: org.apache.ambari.server.api.predicate.Token[] getTokens()>()
+org.apache.ambari.server.api.predicate.QueryParser$TokenHandler.handleToken : $r5 = virtualinvoke r1.<org.apache.ambari.server.api.predicate.QueryParser$ParseContext: org.apache.ambari.server.api.predicate.Token$TYPE getPreviousTokenType()>()
+org.apache.ambari.server.api.predicate.QueryParser.parse : r3 = virtualinvoke r2.<org.apache.ambari.server.api.predicate.QueryParser$ParseContext: java.util.List getExpressions()>()
+org.apache.ambari.server.api.predicate.QueryParser.parse : specialinvoke r0.<org.apache.ambari.server.api.predicate.QueryParser: void changeHostNameToLowerCase(java.util.List)>(r3)
+org.apache.ambari.server.api.predicate.QueryParser.parse : $i0 = virtualinvoke r2.<org.apache.ambari.server.api.predicate.QueryParser$ParseContext: int getMaxPrecedence()>()
+org.apache.ambari.server.api.predicate.QueryParser.parse : $z0 = interfaceinvoke r4.<java.util.List: boolean isEmpty()>()
+org.apache.ambari.server.api.predicate.QueryParser.parse : r2 = specialinvoke r0.<org.apache.ambari.server.api.predicate.QueryParser: org.apache.ambari.server.api.predicate.QueryParser$ParseContext parseExpressions(org.apache.ambari.server.api.predicate.Token[])>(r1)
+org.apache.ambari.server.api.predicate.QueryParser$ParseContext.getPrecedenceLevel : $i0 = r0.<org.apache.ambari.server.api.predicate.QueryParser$ParseContext: int m_precedence>
+org.apache.ambari.server.topology.ClusterTopologyImpl.getHostGroupsForComponent : goto [?= $z0 = interfaceinvoke r4.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.topology.ClusterTopologyImpl.getHostGroupsForComponent : return r3
+org.apache.ambari.server.topology.ClusterTopologyImpl.getHostGroupsForComponent : $r6 = virtualinvoke r0.<org.apache.ambari.server.topology.ClusterTopologyImpl: org.apache.ambari.server.topology.Blueprint getBlueprint()>()
+org.apache.ambari.server.topology.ClusterTopologyImpl.getHostGroupsForComponent : $r11 = interfaceinvoke r5.<org.apache.ambari.server.topology.HostGroup: java.lang.String getName()>()
+org.apache.ambari.server.topology.ClusterTopologyImpl.getHostGroupsForComponent : $r10 = interfaceinvoke r5.<org.apache.ambari.server.topology.HostGroup: java.util.Collection getComponentNames()>()
+org.apache.ambari.server.topology.ClusterTopologyImpl.getHostGroupsForComponent : $r2 = new java.util.ArrayList
+org.apache.ambari.server.api.predicate.QueryLexer$ScanContext.getPropertyOperand : $r1 = r0.<org.apache.ambari.server.api.predicate.QueryLexer$ScanContext: java.lang.String m_propertyName>
+org.apache.ambari.server.api.predicate.operators.EqualsOperator.toPredicate : $r3 = new org.apache.ambari.server.controller.predicate.EqualsPredicate
+org.apache.ambari.server.topology.Configuration.setProperty : return r4
+org.apache.ambari.server.topology.Configuration.setProperty : interfaceinvoke r5.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>(r2, r3)
+org.apache.ambari.server.topology.Configuration.setProperty : if r5 != null goto interfaceinvoke r5.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>(r2, r3)
+org.apache.ambari.server.topology.Configuration.setProperty : $r8 = new java.util.HashMap
+org.apache.ambari.server.topology.Configuration.setProperty : $r6 = r0.<org.apache.ambari.server.topology.Configuration: java.util.Map properties>
+org.apache.ambari.server.topology.Configuration.setProperty : $r9 = r0.<org.apache.ambari.server.topology.Configuration: java.util.Map properties>
+org.apache.ambari.server.topology.Configuration.setProperty : r4 = virtualinvoke r0.<org.apache.ambari.server.topology.Configuration: java.lang.String getPropertyValue(java.lang.String,java.lang.String)>(r1, r2)
+org.apache.ambari.server.api.predicate.QueryParser$ParseContext.addExpression : $r2 = r0.<org.apache.ambari.server.api.predicate.QueryParser$ParseContext: java.util.List m_listExpressions>
+org.apache.ambari.server.api.predicate.QueryLexer$TokenHandler.validateEndState : $r2 = virtualinvoke r1.<org.apache.ambari.server.api.predicate.QueryLexer$ScanContext: java.util.Deque getIntermediateTokens()>()
+org.apache.ambari.server.api.predicate.Token.getValue : $r1 = r0.<org.apache.ambari.server.api.predicate.Token: java.lang.String m_value>
+org.apache.ambari.server.api.predicate.QueryParser$RelationalOperatorTokenHandler.validate : if r1 == null goto $z0 = 1
+org.apache.ambari.server.topology.ClusterTopologyImplTest.access$100 : $r1 = r0.<org.apache.ambari.server.topology.ClusterTopologyImplTest: org.apache.ambari.server.topology.Configuration bpconfiguration>
+org.apache.ambari.server.api.predicate.QueryLexer$ValueOperandTokenHandler.handles : $z0 = virtualinvoke r1.<java.lang.String: boolean matches(java.lang.String)>("[^!&\\|<=|>=|!=|=|<|>]+")
+org.apache.ambari.server.topology.ClusterTopologyImpl.checkForDuplicateHosts : interfaceinvoke r3.<java.util.Set: boolean addAll(java.util.Collection)>(r7)
+org.apache.ambari.server.topology.ClusterTopologyImpl.checkForDuplicateHosts : goto [?= $z4 = interfaceinvoke r9.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.topology.ClusterTopologyImpl.checkForDuplicateHosts : r9 = interfaceinvoke r7.<java.util.Collection: java.util.Iterator iterator()>()
+org.apache.ambari.server.topology.ClusterTopologyImpl.checkForDuplicateHosts : $r12 = interfaceinvoke r1.<java.util.Map: java.util.Collection values()>()
+org.apache.ambari.server.topology.ClusterTopologyImpl.checkForDuplicateHosts : $r11 = new java.util.HashSet
+org.apache.ambari.server.topology.ClusterTopologyImpl.checkForDuplicateHosts : $r14 = new java.util.HashSet
+org.apache.ambari.server.topology.ClusterTopologyImpl.checkForDuplicateHosts : $r2 = new java.util.HashSet
+org.apache.ambari.server.topology.ClusterTopologyImpl.checkForDuplicateHosts : goto [?= $z0 = interfaceinvoke r5.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.topology.ClusterTopologyImpl.checkForDuplicateHosts : interfaceinvoke r8.<java.util.Collection: boolean retainAll(java.util.Collection)>(r3)
+org.apache.ambari.server.topology.ClusterTopologyImpl.checkForDuplicateHosts : $z6 = interfaceinvoke r4.<java.util.Set: boolean isEmpty()>()
+org.apache.ambari.server.topology.ClusterTopologyImpl.checkForDuplicateHosts : r7 = virtualinvoke r6.<org.apache.ambari.server.topology.HostGroupInfo: java.util.Collection getHostNames()>()
+org.apache.ambari.server.topology.ClusterTopologyImpl.checkForDuplicateHosts : $r17 = virtualinvoke r0.<org.apache.ambari.server.topology.ClusterTopologyImpl: java.lang.String getHostGroupForHost(java.lang.String)>(r10)
+org.apache.ambari.server.topology.ClusterTopologyImpl.checkForDuplicateHosts : interfaceinvoke r4.<java.util.Set: boolean addAll(java.util.Collection)>(r8)
+org.apache.ambari.server.api.predicate.QueryLexer$ScanContext.getBracketScore : $i0 = r0.<org.apache.ambari.server.api.predicate.QueryLexer$ScanContext: int bracketScore>
+org.apache.ambari.server.api.predicate.QueryLexer$ValueOperandTokenHandler._handleToken : $r3 = new org.apache.ambari.server.api.predicate.Token
+org.apache.ambari.server.api.predicate.QueryParser.changeHostNameToLowerCase : r5 = virtualinvoke r4.<java.lang.Object: java.lang.String toString()>()
+org.apache.ambari.server.api.predicate.QueryParser.changeHostNameToLowerCase : if r4 == null goto (branch)
+org.apache.ambari.server.api.predicate.QueryParser.changeHostNameToLowerCase : $r7 = interfaceinvoke r3.<org.apache.ambari.server.api.predicate.expressions.Expression: java.lang.Object getRightOperand()>()
+org.apache.ambari.server.api.predicate.QueryParser.changeHostNameToLowerCase : goto [?= $z0 = interfaceinvoke r2.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.api.predicate.QueryParser.changeHostNameToLowerCase : goto [?= return]
+org.apache.ambari.server.api.predicate.QueryParser.changeHostNameToLowerCase : r4 = interfaceinvoke r3.<org.apache.ambari.server.api.predicate.expressions.Expression: java.lang.Object getLeftOperand()>()
+org.apache.ambari.server.api.predicate.QueryParser.changeHostNameToLowerCase : $z1 = virtualinvoke r5.<java.lang.String: boolean endsWith(java.lang.String)>("/host_name")
+org.apache.ambari.server.api.predicate.QueryParser.changeHostNameToLowerCase : r2 = interfaceinvoke r1.<java.util.List: java.util.Iterator iterator()>()
+org.apache.ambari.server.topology.ClusterTopologyImpl.getHostGroupInfo : $r1 = r0.<org.apache.ambari.server.topology.ClusterTopologyImpl: java.util.Map hostGroupInfoMap>
+org.apache.ambari.server.topology.HostGroupInfo.addHosts : r3 = interfaceinvoke r1.<java.util.Collection: java.util.Iterator iterator()>()
+org.apache.ambari.server.topology.HostGroupInfo.addHosts : $r6 = r0.<org.apache.ambari.server.topology.HostGroupInfo: java.util.Collection hostNames>
+org.apache.ambari.server.topology.HostGroupInfo.addHosts : exitmonitor r2
+org.apache.ambari.server.topology.HostGroupInfo.addHosts : virtualinvoke r0.<org.apache.ambari.server.topology.HostGroupInfo: void addHost(java.lang.String)>(r4)
+org.apache.ambari.server.topology.HostGroupInfo.addHosts : goto [?= $z0 = interfaceinvoke r3.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.api.predicate.QueryLexer$ScanContext.setPropertyOperand : r0.<org.apache.ambari.server.api.predicate.QueryLexer$ScanContext: java.lang.String m_propertyName> = r1
+org.apache.ambari.server.api.predicate.QueryParser$ParseContext.getPreviousTokenType : $r1 = r0.<org.apache.ambari.server.api.predicate.QueryParser$ParseContext: org.apache.ambari.server.api.predicate.Token$TYPE m_previousTokenType>
+org.apache.ambari.server.api.predicate.expressions.AbstractExpression.setRightOperand : r0.<org.apache.ambari.server.api.predicate.expressions.AbstractExpression: java.lang.Object m_right> = r1
+org.apache.ambari.server.api.predicate.QueryLexer$ValueOperandTokenHandler.getType : $r1 = <org.apache.ambari.server.api.predicate.Token$TYPE: org.apache.ambari.server.api.predicate.Token$TYPE VALUE_OPERAND>
+org.apache.ambari.server.topology.HostGroupInfo.setConfiguration : r0.<org.apache.ambari.server.topology.HostGroupInfo: org.apache.ambari.server.topology.Configuration configuration> = r1
+org.apache.ambari.server.api.predicate.QueryParser$ParseContext.getPrecedingExpression : $r1 = r0.<org.apache.ambari.server.api.predicate.QueryParser$ParseContext: java.util.List m_listExpressions>
+org.apache.ambari.server.api.predicate.QueryLexer$PropertyOperandTokenHandler._handleToken : $r3 = virtualinvoke r2.<org.apache.ambari.server.api.predicate.QueryLexer$ScanContext: java.util.Set getPropertiesToIgnore()>()
+org.apache.ambari.server.api.predicate.QueryLexer$PropertyOperandTokenHandler._handleToken : virtualinvoke r2.<org.apache.ambari.server.api.predicate.QueryLexer$ScanContext: void setPropertyOperand(java.lang.String)>(r1)
+org.apache.ambari.server.topology.ClusterTopologyImpl.getHostAssignmentsForComponent : goto [?= $z0 = interfaceinvoke r5.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.topology.ClusterTopologyImpl.getHostAssignmentsForComponent : r4 = virtualinvoke r0.<org.apache.ambari.server.topology.ClusterTopologyImpl: java.util.Collection getHostGroupsForComponent(java.lang.String)>(r1)
+org.apache.ambari.server.topology.ClusterTopologyImpl.getHostAssignmentsForComponent : $r9 = virtualinvoke r0.<org.apache.ambari.server.topology.ClusterTopologyImpl: java.util.Map getHostGroupInfo()>()
+org.apache.ambari.server.topology.ClusterTopologyImpl.getHostAssignmentsForComponent : r5 = interfaceinvoke r4.<java.util.Collection: java.util.Iterator iterator()>()
+org.apache.ambari.server.topology.ClusterTopologyImpl.getHostAssignmentsForComponent : return r3
+org.apache.ambari.server.topology.ClusterTopologyImpl.getHostAssignmentsForComponent : if r7 == null goto $r12 = <org.apache.ambari.server.topology.ClusterTopologyImpl: org.slf4j.Logger LOG>
+org.apache.ambari.server.topology.ClusterTopologyImpl.getHostAssignmentsForComponent : $r2 = new java.util.ArrayList
+org.apache.ambari.server.topology.ClusterTopologyImpl.getHostAssignmentsForComponent : $r11 = virtualinvoke r7.<org.apache.ambari.server.topology.HostGroupInfo: java.util.Collection getHostNames()>()
+org.apache.ambari.server.topology.Configuration.getAttributes : $r1 = r0.<org.apache.ambari.server.topology.Configuration: java.util.Map attributes>
+org.apache.ambari.server.api.predicate.QueryLexer$ScanContext.getPropertiesToIgnore : $r1 = r0.<org.apache.ambari.server.api.predicate.QueryLexer$ScanContext: java.util.Set m_propertiesToIgnore>
+org.apache.ambari.server.api.predicate.QueryLexer$ScanContext.setLastTokenType : r0.<org.apache.ambari.server.api.predicate.QueryLexer$ScanContext: org.apache.ambari.server.api.predicate.Token$TYPE m_lastType> = r1
+org.apache.ambari.server.api.predicate.expressions.AbstractExpression.getOperator : $r1 = r0.<org.apache.ambari.server.api.predicate.expressions.AbstractExpression: org.apache.ambari.server.api.predicate.operators.Operator m_op>
+org.apache.ambari.server.api.predicate.QueryParser$ParseContext.access$800 : specialinvoke r0.<org.apache.ambari.server.api.predicate.QueryParser$ParseContext: void setTokenType(org.apache.ambari.server.api.predicate.Token$TYPE)>(r1)
+org.apache.ambari.server.api.predicate.QueryParser$ParseContext.setCurrentTokensIndex : r0.<org.apache.ambari.server.api.predicate.QueryParser$ParseContext: int m_tokensIdx> = i0
+org.apache.ambari.server.topology.HostGroupInfo.getHostGroupName : $r1 = r0.<org.apache.ambari.server.topology.HostGroupInfo: java.lang.String hostGroupName>
+org.apache.ambari.server.api.predicate.QueryParser.mergeExpressions : $i1 = interfaceinvoke r1.<java.util.List: int size()>()
+org.apache.ambari.server.api.predicate.QueryParser.mergeExpressions : return r1
+org.apache.ambari.server.topology.ClusterTopologyImplTest$TestTopologyRequest.getConfiguration : $r1 = r0.<org.apache.ambari.server.topology.ClusterTopologyImplTest$TestTopologyRequest: org.apache.ambari.server.topology.ClusterTopologyImplTest this$0>
+org.apache.ambari.server.topology.HostGroupInfo.addHost : $r5 = r0.<org.apache.ambari.server.topology.HostGroupInfo: java.util.Collection hostNames>
+org.apache.ambari.server.topology.HostGroupInfo.addHost : $z0 = virtualinvoke r1.<java.lang.String: boolean equals(java.lang.Object)>(r3)
+org.apache.ambari.server.topology.HostGroupInfo.addHost : exitmonitor r2
+org.apache.ambari.server.topology.HostGroupInfo.addHost : $r7 = r0.<org.apache.ambari.server.topology.HostGroupInfo: java.util.Collection hostNames>
+org.apache.ambari.server.topology.HostGroupInfo.addHost : r3 = virtualinvoke r1.<java.lang.String: java.lang.String toLowerCase()>()
+org.apache.ambari.server.topology.ClusterTopologyImplTest.access$200 : $r1 = r0.<org.apache.ambari.server.topology.ClusterTopologyImplTest: java.util.Map hostGroupInfoMap>
+org.apache.ambari.server.api.predicate.QueryLexer$ScanContext.getTokenList : $r1 = r0.<org.apache.ambari.server.api.predicate.QueryLexer$ScanContext: java.util.List m_listTokens>
+org.apache.ambari.server.api.predicate.QueryLexer$RelationalOperatorTokenHandler.getType : $r1 = <org.apache.ambari.server.api.predicate.Token$TYPE: org.apache.ambari.server.api.predicate.Token$TYPE RELATIONAL_OPERATOR>
+org.apache.ambari.server.topology.HostGroupInfo.removeHost : $r5 = r0.<org.apache.ambari.server.topology.HostGroupInfo: java.util.Collection hostNames>
+org.apache.ambari.server.topology.HostGroupInfo.removeHost : $r4 = r0.<org.apache.ambari.server.topology.HostGroupInfo: java.util.Collection hostNames>
+org.apache.ambari.server.topology.HostGroupInfo.removeHost : exitmonitor r2
+org.apache.ambari.server.topology.ClusterTopologyImplTest$TestTopologyRequest.getClusterId : $r1 = staticinvoke <java.lang.Long: java.lang.Long valueOf(long)>(1L)
+org.apache.ambari.server.api.predicate.PredicateCompiler.compile : $r2 = r0.<org.apache.ambari.server.api.predicate.PredicateCompiler: org.apache.ambari.server.api.predicate.QueryParser parser>
+org.apache.ambari.server.api.predicate.QueryParser$PropertyOperandTokenHandler.validate : $r2 = <org.apache.ambari.server.api.predicate.Token$TYPE: org.apache.ambari.server.api.predicate.Token$TYPE RELATIONAL_OPERATOR>
+org.apache.ambari.server.api.predicate.Token.getType : $r1 = r0.<org.apache.ambari.server.api.predicate.Token: org.apache.ambari.server.api.predicate.Token$TYPE m_type>
+org.apache.ambari.server.controller.predicate.ComparisonPredicate.stringToDouble : $i0 = virtualinvoke r2.<java.text.ParsePosition: int getIndex()>()
+org.apache.ambari.server.controller.predicate.ComparisonPredicate.stringToDouble : $r5 = new java.text.ParsePosition
+org.apache.ambari.server.controller.predicate.ComparisonPredicate.stringToDouble : r4 = virtualinvoke r3.<java.text.NumberFormat: java.lang.Number parse(java.lang.String,java.text.ParsePosition)>(r1, r2)
+org.apache.ambari.server.controller.predicate.ComparisonPredicate.stringToDouble : if r1 == null goto return null
+org.apache.ambari.server.controller.predicate.ComparisonPredicate.stringToDouble : r3 = staticinvoke <java.text.NumberFormat: java.text.NumberFormat getInstance()>()
+org.apache.ambari.server.api.predicate.QueryLexer$RelationalOperatorTokenHandler.handles : $z0 = virtualinvoke r1.<java.lang.String: boolean matches(java.lang.String)>("<=|>=|!=|=|<|>")
+org.apache.ambari.server.topology.Configuration.getProperties : $r1 = r0.<org.apache.ambari.server.topology.Configuration: java.util.Map properties>
+org.apache.ambari.server.topology.ClusterTopologyImplTest$TestTopologyRequest.getTopologyValidators : $r1 = r0.<org.apache.ambari.server.topology.ClusterTopologyImplTest$TestTopologyRequest: org.apache.ambari.server.topology.ClusterTopologyImplTest this$0>
+org.apache.ambari.server.topology.Configuration.getPropertyValue : r3 = null
+org.apache.ambari.server.topology.Configuration.getPropertyValue : $r4 = r0.<org.apache.ambari.server.topology.Configuration: java.util.Map properties>
+org.apache.ambari.server.topology.Configuration.getPropertyValue : return r3
+org.apache.ambari.server.topology.Configuration.getPropertyValue : $r12 = r0.<org.apache.ambari.server.topology.Configuration: org.apache.ambari.server.topology.Configuration parentConfiguration>
+org.apache.ambari.server.api.predicate.QueryParser$ParseContext.getMaxPrecedence : $i0 = r0.<org.apache.ambari.server.api.predicate.QueryParser$ParseContext: int m_maxPrecedence>
+org.apache.ambari.server.topology.Configuration.setParentConfiguration : r0.<org.apache.ambari.server.topology.Configuration: org.apache.ambari.server.topology.Configuration parentConfiguration> = r1
+org.apache.ambari.server.api.predicate.QueryLexer$TokenHandler.handleToken : $z0 = virtualinvoke r0.<org.apache.ambari.server.api.predicate.QueryLexer$TokenHandler: boolean handles(java.lang.String,org.apache.ambari.server.api.predicate.QueryLexer$ScanContext)>(r1, r2)
+org.apache.ambari.server.api.predicate.QueryLexer$TokenHandler.handleToken : return 1
+org.apache.ambari.server.api.predicate.QueryLexer$TokenHandler.handleToken : return 0
+org.apache.ambari.server.api.predicate.QueryLexer$TokenHandler.handleToken : virtualinvoke r0.<org.apache.ambari.server.api.predicate.QueryLexer$TokenHandler: void _handleToken(java.lang.String,org.apache.ambari.server.api.predicate.QueryLexer$ScanContext)>(r1, r2)
+org.apache.ambari.server.api.predicate.QueryLexer$TokenHandler.handleToken : $r3 = virtualinvoke r0.<org.apache.ambari.server.api.predicate.QueryLexer$TokenHandler: org.apache.ambari.server.api.predicate.Token$TYPE getType()>()
+org.apache.ambari.server.api.predicate.QueryParser$RelationalOperatorTokenHandler._handleToken : return 1
+org.apache.ambari.server.api.predicate.QueryParser$RelationalOperatorTokenHandler._handleToken : $r6 = new org.apache.ambari.server.api.predicate.expressions.RelationalExpression
+org.apache.ambari.server.api.predicate.QueryParser$RelationalOperatorTokenHandler._handleToken : $r4 = virtualinvoke r1.<org.apache.ambari.server.api.predicate.QueryParser$ParseContext: org.apache.ambari.server.api.predicate.Token[] getTokens()>()
+org.apache.ambari.server.api.predicate.QueryParser$RelationalOperatorTokenHandler._handleToken : $r5 = virtualinvoke r2.<org.apache.ambari.server.api.predicate.Token: java.lang.String getValue()>()
+org.apache.ambari.server.topology.ClusterTopologyImplTest.access$300 : $r1 = r0.<org.apache.ambari.server.topology.ClusterTopologyImplTest: java.util.List topologyValidators>
+org.apache.ambari.server.api.predicate.operators.RelationalOperatorFactory.createOperator : $r5 = new org.apache.ambari.server.api.predicate.operators.EqualsOperator
+org.apache.ambari.server.api.predicate.operators.RelationalOperatorFactory.createOperator : $r4 = "="
+org.apache.ambari.server.api.predicate.operators.RelationalOperatorFactory.createOperator : $r1 = "!="
+org.apache.ambari.server.api.predicate.QueryParser$ParseContext.getCurrentTokensIndex : $i0 = r0.<org.apache.ambari.server.api.predicate.QueryParser$ParseContext: int m_tokensIdx>
+org.apache.ambari.server.topology.ClusterTopologyImplTest$TestTopologyRequest.getHostGroupInfo : $r1 = r0.<org.apache.ambari.server.topology.ClusterTopologyImplTest$TestTopologyRequest: org.apache.ambari.server.topology.ClusterTopologyImplTest this$0>
+org.apache.ambari.server.api.predicate.QueryParser$ValueOperandTokenHandler.validate : $r2 = <org.apache.ambari.server.api.predicate.Token$TYPE: org.apache.ambari.server.api.predicate.Token$TYPE PROPERTY_OPERAND>
+org.apache.ambari.server.topology.ClusterTopologyImpl.getHostGroupForHost : return null
+org.apache.ambari.server.topology.ClusterTopologyImpl.getHostGroupForHost : $r4 = r0.<org.apache.ambari.server.topology.ClusterTopologyImpl: java.util.Map hostGroupInfoMap>
+org.apache.ambari.server.api.predicate.QueryLexer$OpenBracketTokenHandler.handles : $z0 = virtualinvoke r1.<java.lang.String: boolean matches(java.lang.String)>("\\(")

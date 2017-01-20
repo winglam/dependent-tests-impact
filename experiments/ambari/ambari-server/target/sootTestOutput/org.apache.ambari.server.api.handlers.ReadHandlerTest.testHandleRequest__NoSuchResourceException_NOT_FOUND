@@ -1,0 +1,20 @@
+org.apache.ambari.server.api.services.ResultImpl.getStatus : $r1 = r0.<org.apache.ambari.server.api.services.ResultImpl: org.apache.ambari.server.api.services.ResultStatus m_status>
+org.apache.ambari.server.api.services.ResultStatus.getStatus : $r1 = r0.<org.apache.ambari.server.api.services.ResultStatus: org.apache.ambari.server.api.services.ResultStatus$STATUS m_status>
+org.apache.ambari.server.api.handlers.ReadHandler.addFieldsToQuery : $r6 = interfaceinvoke r1.<org.apache.ambari.server.api.services.Request: java.util.Map getFields()>()
+org.apache.ambari.server.api.handlers.ReadHandler.handleRequest : specialinvoke r0.<org.apache.ambari.server.api.handlers.ReadHandler: void addFieldsToQuery(org.apache.ambari.server.api.services.Request,org.apache.ambari.server.api.query.Query)>(r1, r2)
+org.apache.ambari.server.api.handlers.ReadHandler.handleRequest : r3 = interfaceinvoke r1.<org.apache.ambari.server.api.services.Request: org.apache.ambari.server.api.services.RequestBody getBody()>()
+org.apache.ambari.server.api.handlers.ReadHandler.handleRequest : $r8 = interfaceinvoke r1.<org.apache.ambari.server.api.services.Request: org.apache.ambari.server.api.resources.ResourceInstance getResource()>()
+org.apache.ambari.server.api.handlers.ReadHandler.handleRequest : goto [?= r6 = null]
+org.apache.ambari.server.api.handlers.ReadHandler.handleRequest : r6 = null
+org.apache.ambari.server.api.handlers.ReadHandler.handleRequest : $r9 = interfaceinvoke r1.<org.apache.ambari.server.api.services.Request: org.apache.ambari.server.controller.spi.PageRequest getPageRequest()>()
+org.apache.ambari.server.api.handlers.ReadHandler.handleRequest : if r3 == null goto specialinvoke r0.<org.apache.ambari.server.api.handlers.ReadHandler: void addFieldsToQuery(org.apache.ambari.server.api.services.Request,org.apache.ambari.server.api.query.Query)>(r1, r2)
+org.apache.ambari.server.api.handlers.ReadHandler.handleRequest : r43 = $r42
+org.apache.ambari.server.api.handlers.ReadHandler.handleRequest : return r17
+org.apache.ambari.server.api.handlers.ReadHandler.handleRequest : interfaceinvoke r2.<org.apache.ambari.server.api.query.Query: void setUserPredicate(org.apache.ambari.server.controller.spi.Predicate)>(r6)
+org.apache.ambari.server.api.handlers.ReadHandler.handleRequest : r6 = interfaceinvoke r1.<org.apache.ambari.server.api.services.Request: org.apache.ambari.server.controller.spi.Predicate getQueryPredicate()>()
+org.apache.ambari.server.api.handlers.ReadHandler.handleRequest : $r10 = interfaceinvoke r1.<org.apache.ambari.server.api.services.Request: org.apache.ambari.server.controller.spi.SortRequest getSortRequest()>()
+org.apache.ambari.server.api.handlers.ReadHandler.handleRequest : $r44 = new org.apache.ambari.server.api.services.ResultImpl
+org.apache.ambari.server.api.handlers.ReadHandler.handleRequest : r17 = interfaceinvoke r2.<org.apache.ambari.server.api.query.Query: org.apache.ambari.server.api.services.Result execute()>()
+org.apache.ambari.server.api.handlers.ReadHandler.handleRequest : if r6 != null goto $r48 = new org.apache.ambari.server.api.services.ResultImpl
+org.apache.ambari.server.api.handlers.ReadHandler.handleRequest : $r11 = interfaceinvoke r1.<org.apache.ambari.server.api.services.Request: org.apache.ambari.server.api.query.render.Renderer getRenderer()>()
+org.apache.ambari.server.api.services.ResultStatus.getMessage : $r1 = r0.<org.apache.ambari.server.api.services.ResultStatus: java.lang.String m_msg>

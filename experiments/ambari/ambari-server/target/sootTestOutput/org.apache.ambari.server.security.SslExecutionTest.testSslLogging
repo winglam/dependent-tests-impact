@@ -1,0 +1,143 @@
+org.apache.ambari.server.utils.ShellCommandUtil.streamToString : $r7 = virtualinvoke r3.<java.io.BufferedReader: java.lang.String readLine()>()
+org.apache.ambari.server.utils.ShellCommandUtil.streamToString : $r1 = new java.io.InputStreamReader
+org.apache.ambari.server.utils.ShellCommandUtil.streamToString : $r11 = virtualinvoke r4.<java.lang.StringBuilder: java.lang.String toString()>()
+org.apache.ambari.server.utils.ShellCommandUtil.streamToString : $r6 = new java.lang.StringBuilder
+org.apache.ambari.server.utils.ShellCommandUtil.streamToString : $r5 = new java.io.BufferedReader
+org.apache.ambari.server.utils.ShellCommandUtil.streamToString : n0 = null
+org.apache.ambari.server.configuration.Configuration$ConfigurationProperty.getKey : $r1 = r0.<org.apache.ambari.server.configuration.Configuration$ConfigurationProperty: java.lang.String m_key>
+org.apache.ambari.server.security.SslExecutionTest.getConfigurationConstructor : $r1 = class "org/apache/ambari/server/configuration/Configuration"
+org.apache.ambari.server.utils.ShellCommandUtil.hideOpenSslPassword : $z1 = virtualinvoke r0.<java.lang.String: boolean contains(java.lang.CharSequence)>("-key ")
+org.apache.ambari.server.utils.ShellCommandUtil.hideOpenSslPassword : $r4 = virtualinvoke r0.<java.lang.String: java.lang.String replace(java.lang.CharSequence,java.lang.CharSequence)>(r1, "****")
+org.apache.ambari.server.utils.ShellCommandUtil.hideOpenSslPassword : $i3 = virtualinvoke r0.<java.lang.String: int indexOf(java.lang.String)>("-key ")
+org.apache.ambari.server.utils.ShellCommandUtil.hideOpenSslPassword : $z0 = virtualinvoke r0.<java.lang.String: boolean contains(java.lang.CharSequence)>("pass:")
+org.apache.ambari.server.utils.ShellCommandUtil.hideOpenSslPassword : $i5 = virtualinvoke r0.<java.lang.String: int indexOf(java.lang.String,int)>(" ", i0)
+org.apache.ambari.server.utils.ShellCommandUtil.hideOpenSslPassword : $i1 = virtualinvoke r0.<java.lang.String: int indexOf(java.lang.String)>("pass:")
+org.apache.ambari.server.security.SignCertResponse.getResult : $r1 = r0.<org.apache.ambari.server.security.SignCertResponse: java.lang.String result>
+org.apache.ambari.server.utils.HostUtils.isValidHostname : if r0 == null goto $z1 = 0
+org.apache.ambari.server.configuration.Configuration.validateAgentHostnames : $r1 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty SRVR_AGENT_HOSTNAME_VALIDATE>
+org.apache.ambari.server.utils.ShellCommandUtil.getOpenSslCommandResult : $r1 = new java.lang.StringBuilder
+org.apache.ambari.server.security.SignCertResponse.setResult : r0.<org.apache.ambari.server.security.SignCertResponse: java.lang.String result> = r1
+org.apache.ambari.server.configuration.Configuration.getProperty : r2 = null
+org.apache.ambari.server.configuration.Configuration.getProperty : $r4 = virtualinvoke r1.<org.apache.ambari.server.configuration.Configuration$ConfigurationProperty: java.lang.Object getDefaultValue()>()
+org.apache.ambari.server.configuration.Configuration.getProperty : $r5 = r0.<org.apache.ambari.server.configuration.Configuration: java.util.Properties properties>
+org.apache.ambari.server.configuration.Configuration.getProperty : $r3 = virtualinvoke r1.<org.apache.ambari.server.configuration.Configuration$ConfigurationProperty: java.lang.Object getDefaultValue()>()
+org.apache.ambari.server.configuration.Configuration.loadSSLParams : $r15 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty SSL_TRUSTSTORE_TYPE>
+org.apache.ambari.server.configuration.Configuration.loadSSLParams : $r1 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty SSL_TRUSTSTORE_PATH>
+org.apache.ambari.server.configuration.Configuration.loadSSLParams : $r7 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty SSL_TRUSTSTORE_PASSWORD>
+org.apache.ambari.server.configuration.Configuration$ConfigurationProperty.getDefaultValue : $r1 = r0.<org.apache.ambari.server.configuration.Configuration$ConfigurationProperty: java.lang.Object m_defaultValue>
+org.apache.ambari.server.utils.ShellCommandUtil.setUnixFilePermissions : goto [?= return]
+org.apache.ambari.server.utils.ShellCommandUtil.setUnixFilePermissions : $r3 = newarray (java.lang.String)[3]
+org.apache.ambari.server.utils.ShellCommandUtil.setUnixFilePermissions : $z0 = <org.apache.ambari.server.utils.ShellCommandUtil: boolean LINUX>
+org.apache.ambari.server.security.SignCertResponse.setMessage : r0.<org.apache.ambari.server.security.SignCertResponse: java.lang.String message> = r1
+org.apache.ambari.server.configuration.Configuration.getConfigsMap : $r1 = r0.<org.apache.ambari.server.configuration.Configuration: java.util.Map configsMap>
+org.apache.ambari.server.security.SslExecutionTest.buildTestProperties : return r5
+org.apache.ambari.server.security.SslExecutionTest.buildTestProperties : $r6 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty SRVR_KSTR_DIR>
+org.apache.ambari.server.security.SslExecutionTest.buildTestProperties : $r4 = new java.util.Properties
+org.apache.ambari.server.security.SslExecutionTest.buildTestProperties : $r2 = r0.<org.apache.ambari.server.security.SslExecutionTest: org.junit.rules.TemporaryFolder temp>
+org.apache.ambari.server.security.SslExecutionTest.buildTestProperties : goto [?= $r4 = new java.util.Properties]
+org.apache.ambari.server.utils.ShellCommandUtil.getOpenSslExitCodeDescription : return "an error occurred parsing the command options."
+org.apache.ambari.server.utils.ShellCommandUtil.getOpenSslExitCodeDescription : return "the operation was completely successfully."
+org.apache.ambari.server.utils.ShellCommandUtil.getOpenSslExitCodeDescription : tableswitch(i0) {     case 0: goto return "the operation was completely successfully.";     case 1: goto return "an error occurred parsing the command options.";     case 2: goto return "one of the input files could not be read.";     case 3: goto return "an error occurred creating the PKCS#7 file or when reading the MIME message.";     case 4: goto return "an error occurred decrypting or verifying the message.";     case 5: goto return "the message was verified correctly but an error occurred writing out the signers certificates.";     default: goto return "unsupported code"; }
+org.apache.ambari.server.security.SignCertResponse.getMessage : $r1 = r0.<org.apache.ambari.server.security.SignCertResponse: java.lang.String message>
+org.apache.ambari.server.configuration.Configuration.getApiSSLAuthentication : $r1 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty API_USE_SSL>
+org.apache.ambari.server.security.authentication.kerberos.AmbariKerberosAuthenticationProperties.isKerberosAuthenticationEnabled : $z0 = r0.<org.apache.ambari.server.security.authentication.kerberos.AmbariKerberosAuthenticationProperties: boolean kerberosAuthenticationEnabled>
+org.apache.ambari.server.utils.ShellCommandUtil.logOpenSslExitCode : if i0 != 0 goto $r3 = <org.apache.ambari.server.utils.ShellCommandUtil: org.apache.commons.logging.Log LOG>
+org.apache.ambari.server.utils.ShellCommandUtil.logOpenSslExitCode : $r1 = <org.apache.ambari.server.utils.ShellCommandUtil: org.apache.commons.logging.Log LOG>
+org.apache.ambari.server.utils.ShellCommandUtil.logOpenSslExitCode : $r3 = <org.apache.ambari.server.utils.ShellCommandUtil: org.apache.commons.logging.Log LOG>
+org.apache.ambari.server.security.CertificateManager.isCertExists : $r10 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty SRVR_CRT_NAME>
+org.apache.ambari.server.security.CertificateManager.isCertExists : $r19 = <org.apache.ambari.server.security.CertificateManager: org.slf4j.Logger LOG>
+org.apache.ambari.server.security.CertificateManager.isCertExists : $r7 = r0.<org.apache.ambari.server.security.CertificateManager: org.apache.ambari.server.configuration.Configuration configs>
+org.apache.ambari.server.security.CertificateManager.isCertExists : $r2 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty SRVR_KSTR_DIR>
+org.apache.ambari.server.security.CertificateManager.isCertExists : $r24 = <org.apache.ambari.server.security.CertificateManager: org.slf4j.Logger LOG>
+org.apache.ambari.server.security.CertificateManager.isCertExists : $z0 = virtualinvoke r6.<java.io.File: boolean exists()>()
+org.apache.ambari.server.security.CertificateManager.isCertExists : $r13 = new java.io.File
+org.apache.ambari.server.security.CertificateManager.isCertExists : $r29 = <org.apache.ambari.server.security.CertificateManager: org.slf4j.Logger LOG>
+org.apache.ambari.server.security.CertificateManager.generateServerCertificate : $r36 = <org.apache.ambari.server.security.CertificateManager: java.lang.String EXPRT_KSTR>
+org.apache.ambari.server.security.CertificateManager.generateServerCertificate : $r18 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty SRVR_CSR_NAME>
+org.apache.ambari.server.security.CertificateManager.generateServerCertificate : $r24 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty KSTR_NAME>
+org.apache.ambari.server.security.CertificateManager.generateServerCertificate : $r30 = newarray (java.lang.Object)[6]
+org.apache.ambari.server.security.CertificateManager.generateServerCertificate : $r1 = <org.apache.ambari.server.security.CertificateManager: org.slf4j.Logger LOG>
+org.apache.ambari.server.security.CertificateManager.generateServerCertificate : $r15 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty SRVR_CRT_NAME>
+org.apache.ambari.server.security.CertificateManager.generateServerCertificate : $r21 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty SRVR_KEY_NAME>
+org.apache.ambari.server.security.CertificateManager.generateServerCertificate : $r12 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty SRVR_KSTR_DIR>
+org.apache.ambari.server.security.CertificateManager.generateServerCertificate : $r34 = <org.apache.ambari.server.security.CertificateManager: java.lang.String SIGN_SRVR_CRT>
+org.apache.ambari.server.security.CertificateManager.generateServerCertificate : virtualinvoke r0.<org.apache.ambari.server.security.CertificateManager: int runCommand(java.lang.String)>(r33)
+org.apache.ambari.server.security.CertificateManager.generateServerCertificate : $r27 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty SRVR_CRT_PASS>
+org.apache.ambari.server.security.CertificateManager.generateServerCertificate : virtualinvoke r0.<org.apache.ambari.server.security.CertificateManager: int runCommand(java.lang.String)>(r10)
+org.apache.ambari.server.security.CertificateManager.generateServerCertificate : virtualinvoke r0.<org.apache.ambari.server.security.CertificateManager: int runCommand(java.lang.String)>(r35)
+org.apache.ambari.server.security.CertificateManager.generateServerCertificate : virtualinvoke r0.<org.apache.ambari.server.security.CertificateManager: int runCommand(java.lang.String)>(r37)
+org.apache.ambari.server.security.CertificateManager.generateServerCertificate : $r31 = <org.apache.ambari.server.security.CertificateManager: java.lang.String GEN_SRVR_KEY>
+org.apache.ambari.server.security.CertificateManager.generateServerCertificate : $r11 = r0.<org.apache.ambari.server.security.CertificateManager: org.apache.ambari.server.configuration.Configuration configs>
+org.apache.ambari.server.security.CertificateManager.generateServerCertificate : $r32 = <org.apache.ambari.server.security.CertificateManager: java.lang.String GEN_SRVR_REQ>
+org.apache.ambari.server.security.CertificateManager.runCommand : n1 = null
+org.apache.ambari.server.security.CertificateManager.runCommand : $r7 = staticinvoke <java.lang.Runtime: java.lang.Runtime getRuntime()>()
+org.apache.ambari.server.security.CertificateManager.runCommand : r2 = null
+org.apache.ambari.server.security.CertificateManager.runCommand : i0 = virtualinvoke r8.<java.lang.Process: int exitValue()>()
+org.apache.ambari.server.security.CertificateManager.runCommand : virtualinvoke r2.<java.io.BufferedReader: void close()>()
+org.apache.ambari.server.security.CertificateManager.runCommand : $r9 = new java.io.BufferedReader
+org.apache.ambari.server.security.CertificateManager.runCommand : goto [?= return i0]
+org.apache.ambari.server.security.CertificateManager.runCommand : if r2 == null goto return i0
+org.apache.ambari.server.security.CertificateManager.runCommand : $i2 = virtualinvoke r8.<java.lang.Process: int exitValue()>()
+org.apache.ambari.server.security.CertificateManager.runCommand : n0 = null
+org.apache.ambari.server.security.CertificateManager.runCommand : $r12 = virtualinvoke r2.<java.io.BufferedReader: java.lang.String readLine()>()
+org.apache.ambari.server.security.CertificateManager.runCommand : virtualinvoke r8.<java.lang.Process: int waitFor()>()
+org.apache.ambari.server.security.authentication.kerberos.AmbariKerberosAuthenticationProperties.setKerberosAuthenticationEnabled : r0.<org.apache.ambari.server.security.authentication.kerberos.AmbariKerberosAuthenticationProperties: boolean kerberosAuthenticationEnabled> = z0
+org.apache.ambari.server.security.SslExecutionTest.init : <org.apache.ambari.server.security.SslExecutionTest: org.apache.ambari.server.security.CertificateManager certMan> = r0
+org.apache.ambari.server.configuration.Configuration.createKerberosAuthenticationProperties : $r3 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty KERBEROS_AUTH_ENABLED>
+org.apache.ambari.server.configuration.Configuration.createKerberosAuthenticationProperties : return r2
+org.apache.ambari.server.configuration.Configuration.createKerberosAuthenticationProperties : $z1 = virtualinvoke r2.<org.apache.ambari.server.security.authentication.kerberos.AmbariKerberosAuthenticationProperties: boolean isKerberosAuthenticationEnabled()>()
+org.apache.ambari.server.configuration.Configuration.createKerberosAuthenticationProperties : $r1 = new org.apache.ambari.server.security.authentication.kerberos.AmbariKerberosAuthenticationProperties
+org.apache.ambari.server.utils.ShellCommandUtil.runCommand : r16 = virtualinvoke r14.<java.lang.Process: java.io.InputStream getInputStream()>()
+org.apache.ambari.server.utils.ShellCommandUtil.runCommand : r14 = virtualinvoke r4.<java.lang.ProcessBuilder: java.lang.Process start()>()
+org.apache.ambari.server.utils.ShellCommandUtil.runCommand : r3 = r0
+org.apache.ambari.server.utils.ShellCommandUtil.runCommand : $z1 = <org.apache.ambari.server.utils.ShellCommandUtil: boolean WINDOWS>
+org.apache.ambari.server.utils.ShellCommandUtil.runCommand : if r2 == null goto virtualinvoke r14.<java.lang.Process: int waitFor()>()
+org.apache.ambari.server.utils.ShellCommandUtil.runCommand : r29 = staticinvoke <org.apache.ambari.server.utils.ShellCommandUtil: java.lang.String streamToString(java.io.InputStream)>(r16)
+org.apache.ambari.server.utils.ShellCommandUtil.runCommand : if r1 == null goto $z1 = <org.apache.ambari.server.utils.ShellCommandUtil: boolean WINDOWS>
+org.apache.ambari.server.utils.ShellCommandUtil.runCommand : $r32 = new org.apache.ambari.server.utils.ShellCommandUtil$Result
+org.apache.ambari.server.utils.ShellCommandUtil.runCommand : $r30 = virtualinvoke r14.<java.lang.Process: java.io.InputStream getErrorStream()>()
+org.apache.ambari.server.utils.ShellCommandUtil.runCommand : if z0 == 0 goto r3 = r0
+org.apache.ambari.server.utils.ShellCommandUtil.runCommand : $r1 = staticinvoke <org.apache.ambari.server.utils.ShellCommandUtil: org.apache.ambari.server.utils.ShellCommandUtil$Result runCommand(java.lang.String[],java.util.Map)>(r0, null)
+org.apache.ambari.server.utils.ShellCommandUtil.runCommand : $r12 = new java.lang.ProcessBuilder
+org.apache.ambari.server.utils.ShellCommandUtil.runCommand : virtualinvoke r14.<java.lang.Process: int waitFor()>()
+org.apache.ambari.server.utils.ShellCommandUtil.runCommand : i6 = virtualinvoke r14.<java.lang.Process: int exitValue()>()
+org.apache.ambari.server.utils.ShellCommandUtil.runCommand : $r2 = staticinvoke <org.apache.ambari.server.utils.ShellCommandUtil: org.apache.ambari.server.utils.ShellCommandUtil$Result runCommand(java.lang.String[],java.util.Map,org.apache.ambari.server.utils.ShellCommandUtil$InteractiveHandler,boolean)>(r0, r1, null, 0)
+org.apache.ambari.server.security.CertificateManager.signAgentCrt : $r23 = <org.apache.ambari.server.security.CertificateManager: org.slf4j.Logger LOG>
+org.apache.ambari.server.security.CertificateManager.signAgentCrt : $r70 = new java.io.File
+org.apache.ambari.server.security.CertificateManager.signAgentCrt : $r19 = <org.apache.ambari.server.security.CertificateManager: org.slf4j.Logger LOG>
+org.apache.ambari.server.security.CertificateManager.signAgentCrt : $r80 = <org.apache.ambari.server.security.CertificateManager: java.lang.String SIGN_AGENT_CRT>
+org.apache.ambari.server.security.CertificateManager.signAgentCrt : $r82 = <org.apache.ambari.server.security.CertificateManager: org.slf4j.Logger LOG>
+org.apache.ambari.server.security.CertificateManager.signAgentCrt : $r48 = new java.lang.StringBuilder
+org.apache.ambari.server.security.CertificateManager.signAgentCrt : $r51 = new java.lang.StringBuilder
+org.apache.ambari.server.security.CertificateManager.signAgentCrt : $r26 = <org.apache.ambari.server.security.CertificateManager: org.slf4j.Logger LOG>
+org.apache.ambari.server.security.CertificateManager.signAgentCrt : $z2 = staticinvoke <org.apache.ambari.server.utils.HostUtils: boolean isValidHostname(java.lang.String)>(r20)
+org.apache.ambari.server.security.CertificateManager.signAgentCrt : $r4 = new org.apache.ambari.server.security.SignCertResponse
+org.apache.ambari.server.security.CertificateManager.signAgentCrt : $r33 = virtualinvoke r3.<java.lang.String: java.lang.String trim()>()
+org.apache.ambari.server.security.CertificateManager.signAgentCrt : goto [?= $r80 = <org.apache.ambari.server.security.CertificateManager: java.lang.String SIGN_AGENT_CRT>]
+org.apache.ambari.server.security.CertificateManager.signAgentCrt : $r45 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty SRVR_KEY_NAME>
+org.apache.ambari.server.security.CertificateManager.signAgentCrt : if i1 == 0 goto r17 = ""
+org.apache.ambari.server.security.CertificateManager.signAgentCrt : $r84 = staticinvoke <org.apache.ambari.server.utils.ShellCommandUtil: java.lang.String getOpenSslCommandResult(java.lang.String,int)>(r81, i1)
+org.apache.ambari.server.security.CertificateManager.signAgentCrt : $r55 = new java.io.File
+org.apache.ambari.server.security.CertificateManager.signAgentCrt : staticinvoke <org.apache.commons.io.FileUtils: void writeStringToFile(java.io.File,java.lang.String)>(r77, r2)
+org.apache.ambari.server.security.CertificateManager.signAgentCrt : $z0 = staticinvoke <org.apache.commons.lang.StringUtils: boolean isEmpty(java.lang.String)>(r20)
+org.apache.ambari.server.security.CertificateManager.signAgentCrt : $r22 = r0.<org.apache.ambari.server.security.CertificateManager: org.apache.ambari.server.configuration.Configuration configs>
+org.apache.ambari.server.security.CertificateManager.signAgentCrt : return r5
+org.apache.ambari.server.security.CertificateManager.signAgentCrt : $r39 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty SRVR_CRT_PASS>
+org.apache.ambari.server.security.CertificateManager.signAgentCrt : $z4 = virtualinvoke r15.<java.io.File: boolean exists()>()
+org.apache.ambari.server.security.CertificateManager.signAgentCrt : r20 = staticinvoke <org.apache.commons.lang.StringUtils: java.lang.String trim(java.lang.String)>(r1)
+org.apache.ambari.server.security.CertificateManager.signAgentCrt : $r35 = r0.<org.apache.ambari.server.security.CertificateManager: org.apache.ambari.server.configuration.Configuration configs>
+org.apache.ambari.server.security.CertificateManager.signAgentCrt : $r27 = r0.<org.apache.ambari.server.security.CertificateManager: org.apache.ambari.server.configuration.Configuration configs>
+org.apache.ambari.server.security.CertificateManager.signAgentCrt : i1 = virtualinvoke r0.<org.apache.ambari.server.security.CertificateManager: int runCommand(java.lang.String)>(r81)
+org.apache.ambari.server.security.CertificateManager.signAgentCrt : virtualinvoke r5.<org.apache.ambari.server.security.SignCertResponse: void setResult(java.lang.String)>("ERROR")
+org.apache.ambari.server.security.CertificateManager.signAgentCrt : $r36 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty SRVR_KSTR_DIR>
+org.apache.ambari.server.security.CertificateManager.signAgentCrt : $r42 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty SRVR_CRT_NAME>
+org.apache.ambari.server.security.CertificateManager.signAgentCrt : $r54 = newarray (java.lang.Object)[6]
+org.apache.ambari.server.security.SslExecutionTest$SecurityModule.configure : $r8 = virtualinvoke r0.<org.apache.ambari.server.security.SslExecutionTest$SecurityModule: com.google.inject.binder.AnnotatedBindingBuilder bind(java.lang.Class)>(class "org/apache/ambari/server/state/stack/OsFamily")
+org.apache.ambari.server.security.SslExecutionTest$SecurityModule.configure : $r10 = newarray (java.lang.Class)[1]
+org.apache.ambari.server.security.SslExecutionTest$SecurityModule.configure : $r1 = virtualinvoke r0.<org.apache.ambari.server.security.SslExecutionTest$SecurityModule: com.google.inject.binder.AnnotatedBindingBuilder bind(java.lang.Class)>(class "java/util/Properties")
+org.apache.ambari.server.security.SslExecutionTest$SecurityModule.configure : $r4 = virtualinvoke r0.<org.apache.ambari.server.security.SslExecutionTest$SecurityModule: com.google.inject.binder.AnnotatedBindingBuilder bind(java.lang.Class)>(class "org/apache/ambari/server/configuration/Configuration")
+org.apache.ambari.server.security.CertificateManager.initRootCert : $r2 = <org.apache.ambari.server.security.CertificateManager: org.slf4j.Logger LOG>
+org.apache.ambari.server.security.CertificateManager.initRootCert : z0 = specialinvoke r0.<org.apache.ambari.server.security.CertificateManager: boolean isCertExists()>()
+org.apache.ambari.server.security.CertificateManager.initRootCert : specialinvoke r0.<org.apache.ambari.server.security.CertificateManager: void generateServerCertificate()>()
+org.apache.ambari.server.security.CertificateManager.initRootCert : $r1 = <org.apache.ambari.server.security.CertificateManager: org.slf4j.Logger LOG>
+org.apache.ambari.server.security.CertificateManager.initRootCert : if z0 != 0 goto return

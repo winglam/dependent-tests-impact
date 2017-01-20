@@ -1,0 +1,33 @@
+org.apache.ambari.server.state.stack.PrerequisiteCheck.getFailedOn : $r1 = r0.<org.apache.ambari.server.state.stack.PrerequisiteCheck: java.util.LinkedHashSet m_failedOn>
+org.apache.ambari.server.checks.CheckDescription.name : $r1 = r0.<org.apache.ambari.server.checks.CheckDescription: java.lang.String m_name>
+org.apache.ambari.server.state.stack.PrerequisiteCheck.getFailReason : $r1 = r0.<org.apache.ambari.server.state.stack.PrerequisiteCheck: java.lang.String m_failReason>
+org.apache.ambari.server.state.CheckHelperTest$CheckHelperMock.getApplicablePrerequisiteChecks : $r3 = new java.util.LinkedList
+org.apache.ambari.server.state.CheckHelperTest$CheckHelperMock.getApplicablePrerequisiteChecks : goto [?= return r4]
+org.apache.ambari.server.state.CheckHelperTest$CheckHelperMock.getApplicablePrerequisiteChecks : return r4
+org.apache.ambari.server.state.CheckHelperTest$CheckHelperMock.getApplicablePrerequisiteChecks : $r10 = staticinvoke <org.easymock.EasyMock: java.lang.Object createNiceMock(java.lang.Class)>(class "org/apache/ambari/server/checks/AbstractCheckDescriptor")
+org.apache.ambari.server.state.CheckHelperTest$CheckHelperMock.getApplicablePrerequisiteChecks : $z1 = virtualinvoke r7.<org.apache.ambari.server.checks.AbstractCheckDescriptor: boolean isStackUpgradeAllowedToBypassPreChecks()>()
+org.apache.ambari.server.state.CheckHelperTest$CheckHelperMock.getApplicablePrerequisiteChecks : $r9 = <org.apache.ambari.server.state.stack.PrereqCheckStatus: org.apache.ambari.server.state.stack.PrereqCheckStatus FAIL>
+org.apache.ambari.server.state.CheckHelperTest$CheckHelperMock.getApplicablePrerequisiteChecks : $r11 = staticinvoke <org.easymock.EasyMock: java.lang.Object anyObject()>()
+org.apache.ambari.server.state.CheckHelperTest$CheckHelperMock.getApplicablePrerequisiteChecks : $r25 = newarray (java.lang.Object)[1]
+org.apache.ambari.server.state.CheckHelperTest$CheckHelperMock.getApplicablePrerequisiteChecks : r5 = <org.apache.ambari.server.checks.CheckDescription: org.apache.ambari.server.checks.CheckDescription SERVICES_UP>
+org.apache.ambari.server.state.CheckHelperTest$CheckHelperMock.getApplicablePrerequisiteChecks : $r26 = new org.apache.ambari.server.state.DescriptorPreCheck
+org.apache.ambari.server.state.CheckHelperTest$CheckHelperMock.getApplicablePrerequisiteChecks : $r17 = virtualinvoke r7.<org.apache.ambari.server.checks.AbstractCheckDescriptor: org.apache.ambari.server.checks.CheckDescription getDescription()>()
+org.apache.ambari.server.state.CheckHelperTest$CheckHelperMock.getApplicablePrerequisiteChecks : $r8 = new org.apache.ambari.server.state.stack.PrerequisiteCheck
+org.apache.ambari.server.state.CheckHelper.performChecks : r3 = virtualinvoke r1.<org.apache.ambari.server.controller.PrereqCheckRequest: java.lang.String getClusterName()>()
+org.apache.ambari.server.state.CheckHelper.performChecks : r6 = interfaceinvoke r5.<java.util.List: java.util.Iterator iterator()>()
+org.apache.ambari.server.state.CheckHelper.performChecks : r5 = virtualinvoke r0.<org.apache.ambari.server.state.CheckHelper: java.util.List getApplicablePrerequisiteChecks(org.apache.ambari.server.controller.PrereqCheckRequest,java.util.List)>(r1, r2)
+org.apache.ambari.server.state.CheckHelper.performChecks : $r14 = <org.apache.ambari.server.state.CheckHelper: org.slf4j.Logger LOG>
+org.apache.ambari.server.state.CheckHelper.performChecks : goto [?= (branch)]
+org.apache.ambari.server.state.CheckHelper.performChecks : $r12 = virtualinvoke r9.<org.apache.ambari.server.state.stack.PrerequisiteCheck: org.apache.ambari.server.state.stack.PrereqCheckStatus getStatus()>()
+org.apache.ambari.server.state.CheckHelper.performChecks : z0 = virtualinvoke r8.<org.apache.ambari.server.checks.AbstractCheckDescriptor: boolean isStackUpgradeAllowedToBypassPreChecks()>()
+org.apache.ambari.server.state.CheckHelper.performChecks : virtualinvoke r8.<org.apache.ambari.server.checks.AbstractCheckDescriptor: void perform(org.apache.ambari.server.state.stack.PrerequisiteCheck,org.apache.ambari.server.controller.PrereqCheckRequest)>(r9, r1)
+org.apache.ambari.server.state.CheckHelper.performChecks : $r10 = new java.util.ArrayList
+org.apache.ambari.server.state.CheckHelper.performChecks : $r21 = <org.apache.ambari.server.state.stack.PrereqCheckStatus: org.apache.ambari.server.state.stack.PrereqCheckStatus BYPASS>
+org.apache.ambari.server.state.CheckHelper.performChecks : return r4
+org.apache.ambari.server.state.CheckHelper.performChecks : r8 = r7.<org.apache.ambari.server.state.DescriptorPreCheck: org.apache.ambari.server.checks.AbstractCheckDescriptor descriptor>
+org.apache.ambari.server.state.CheckHelper.performChecks : r9 = r7.<org.apache.ambari.server.state.DescriptorPreCheck: org.apache.ambari.server.state.stack.PrerequisiteCheck check>
+org.apache.ambari.server.state.CheckHelper.performChecks : interfaceinvoke r4.<java.util.List: boolean add(java.lang.Object)>(r9)
+org.apache.ambari.server.state.CheckHelper.performChecks : $r22 = virtualinvoke r8.<org.apache.ambari.server.checks.AbstractCheckDescriptor: org.apache.ambari.server.checks.CheckDescription getDescription()>()
+org.apache.ambari.server.state.CheckHelper.performChecks : goto [?= $z1 = interfaceinvoke r6.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.state.stack.PrerequisiteCheck.getStatus : $r1 = r0.<org.apache.ambari.server.state.stack.PrerequisiteCheck: org.apache.ambari.server.state.stack.PrereqCheckStatus m_status>
+org.apache.ambari.server.state.stack.PrerequisiteCheck.setStatus : r0.<org.apache.ambari.server.state.stack.PrerequisiteCheck: org.apache.ambari.server.state.stack.PrereqCheckStatus m_status> = r1

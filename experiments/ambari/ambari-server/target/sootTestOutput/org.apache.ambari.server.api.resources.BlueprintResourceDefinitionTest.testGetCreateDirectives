@@ -1,0 +1,7 @@
+org.apache.ambari.server.api.resources.BlueprintResourceDefinition.getCreateDirectives : r1 = specialinvoke r0.<org.apache.ambari.server.api.resources.BaseResourceDefinition: java.util.Collection getCreateDirectives()>()
+org.apache.ambari.server.api.resources.BlueprintResourceDefinition.getCreateDirectives : interfaceinvoke r1.<java.util.Collection: boolean add(java.lang.Object)>("validate_topology")
+org.apache.ambari.server.api.resources.BlueprintResourceDefinition.getCreateDirectives : return r1
+org.apache.ambari.server.api.resources.BaseResourceDefinition.initializeDirectives : $r3 = new java.util.HashSet
+org.apache.ambari.server.api.resources.BaseResourceDefinition.initializeDirectives : $r8 = r0.<org.apache.ambari.server.api.resources.BaseResourceDefinition: java.util.Map directives>
+org.apache.ambari.server.api.resources.BaseResourceDefinition.initializeDirectives : if r2 == null goto $r8 = r0.<org.apache.ambari.server.api.resources.BaseResourceDefinition: java.util.Map directives>
+org.apache.ambari.server.api.resources.BaseResourceDefinition.getCreateDirectives : $r2 = r0.<org.apache.ambari.server.api.resources.BaseResourceDefinition: java.util.Map directives>

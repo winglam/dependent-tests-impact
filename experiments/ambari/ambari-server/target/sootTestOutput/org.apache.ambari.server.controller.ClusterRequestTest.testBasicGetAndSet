@@ -1,0 +1,19 @@
+org.apache.ambari.server.controller.ClusterRequest.setSecurityType : r0.<org.apache.ambari.server.controller.ClusterRequest: org.apache.ambari.server.state.SecurityType securityType> = r1
+org.apache.ambari.server.state.StackId.getStackId : $r1 = r0.<org.apache.ambari.server.state.StackId: java.lang.String stackName>
+org.apache.ambari.server.state.StackId.getStackId : $r3 = new java.lang.StringBuilder
+org.apache.ambari.server.controller.ClusterRequest.setHostNames : r0.<org.apache.ambari.server.controller.ClusterRequest: java.util.Set hostNames> = r1
+org.apache.ambari.server.controller.ClusterRequest.getStackVersion : $r1 = r0.<org.apache.ambari.server.controller.ClusterRequest: java.lang.String stackVersion>
+org.apache.ambari.server.controller.ClusterRequest.setClusterId : r0.<org.apache.ambari.server.controller.ClusterRequest: java.lang.Long clusterId> = r1
+org.apache.ambari.server.controller.ClusterRequest.getHostNames : $r1 = r0.<org.apache.ambari.server.controller.ClusterRequest: java.util.Set hostNames>
+org.apache.ambari.server.controller.ClusterRequest.getSecurityType : $r1 = r0.<org.apache.ambari.server.controller.ClusterRequest: org.apache.ambari.server.state.SecurityType securityType>
+org.apache.ambari.server.controller.ClusterRequest.getClusterId : $r1 = r0.<org.apache.ambari.server.controller.ClusterRequest: java.lang.Long clusterId>
+org.apache.ambari.server.controller.ClusterRequest.getProvisioningState : $r1 = r0.<org.apache.ambari.server.controller.ClusterRequest: java.lang.String provisioningState>
+org.apache.ambari.server.controller.ClusterRequest.getClusterName : $r1 = r0.<org.apache.ambari.server.controller.ClusterRequest: java.lang.String clusterName>
+org.apache.ambari.server.state.StackId.parseStackIdHelper : if r2 == null goto r1.<org.apache.ambari.server.state.StackId: java.lang.String stackName> = ""
+org.apache.ambari.server.state.StackId.parseStackIdHelper : $r8 = virtualinvoke r2.<java.lang.String: java.lang.String substring(int,int)>(0, i0)
+org.apache.ambari.server.state.StackId.parseStackIdHelper : i0 = virtualinvoke r2.<java.lang.String: int indexOf(int)>(45)
+org.apache.ambari.server.state.StackId.parseStackIdHelper : if i0 == -1 goto $r3 = new java.lang.RuntimeException
+org.apache.ambari.server.state.StackId.parseStackIdHelper : $i3 = i0 + 1
+org.apache.ambari.server.controller.ClusterRequest.setClusterName : r0.<org.apache.ambari.server.controller.ClusterRequest: java.lang.String clusterName> = r1
+org.apache.ambari.server.controller.ClusterRequest.setProvisioningState : r0.<org.apache.ambari.server.controller.ClusterRequest: java.lang.String provisioningState> = r1
+org.apache.ambari.server.controller.ClusterRequest.setStackVersion : r0.<org.apache.ambari.server.controller.ClusterRequest: java.lang.String stackVersion> = r1

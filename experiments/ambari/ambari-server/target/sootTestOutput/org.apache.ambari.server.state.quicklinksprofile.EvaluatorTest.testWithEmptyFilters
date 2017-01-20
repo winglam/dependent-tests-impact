@@ -1,0 +1,14 @@
+org.apache.ambari.server.state.quicklinks.Link.setAttributes : r0.<org.apache.ambari.server.state.quicklinks.Link: java.util.List attributes> = r1
+org.apache.ambari.server.state.quicklinksprofile.Evaluator.isVisible : $r4 = r0.<org.apache.ambari.server.state.quicklinksprofile.Evaluator: java.util.Map linkNameFilters>
+org.apache.ambari.server.state.quicklinksprofile.Evaluator.isVisible : $r13 = r0.<org.apache.ambari.server.state.quicklinksprofile.Evaluator: java.util.Set hideAttributes>
+org.apache.ambari.server.state.quicklinksprofile.Evaluator.isVisible : goto [?= $z3 = interfaceinvoke r18.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.state.quicklinksprofile.Evaluator.isVisible : $r24 = r0.<org.apache.ambari.server.state.quicklinksprofile.Evaluator: com.google.common.base.Optional acceptAllFilter>
+org.apache.ambari.server.state.quicklinksprofile.Evaluator.isVisible : goto [?= $z1 = interfaceinvoke r2.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.state.quicklinksprofile.Evaluator.isVisible : $r16 = virtualinvoke r1.<org.apache.ambari.server.state.quicklinks.Link: java.util.List getAttributes()>()
+org.apache.ambari.server.state.quicklinksprofile.Evaluator.isVisible : $r21 = r0.<org.apache.ambari.server.state.quicklinksprofile.Evaluator: java.util.Set showAttributes>
+org.apache.ambari.server.state.quicklinksprofile.Evaluator.isVisible : $r10 = virtualinvoke r1.<org.apache.ambari.server.state.quicklinks.Link: java.util.List getAttributes()>()
+org.apache.ambari.server.state.quicklinks.Link.getName : $r1 = r0.<org.apache.ambari.server.state.quicklinks.Link: java.lang.String name>
+org.apache.ambari.server.state.quicklinksprofile.QuickLinksProfileEvaluator.nullToEmptyList : if r0 == null goto $r1 = staticinvoke <java.util.Collections: java.util.List emptyList()>()
+org.apache.ambari.server.state.quicklinks.Link.setComponentName : r0.<org.apache.ambari.server.state.quicklinks.Link: java.lang.String componentName> = r1
+org.apache.ambari.server.state.quicklinks.Link.setName : r0.<org.apache.ambari.server.state.quicklinks.Link: java.lang.String name> = r1
+org.apache.ambari.server.state.quicklinks.Link.getAttributes : $r1 = r0.<org.apache.ambari.server.state.quicklinks.Link: java.util.List attributes>

@@ -1,0 +1,12 @@
+org.apache.ambari.server.api.services.RequestBody.getBody : $r1 = r0.<org.apache.ambari.server.api.services.RequestBody: java.lang.String m_body>
+org.apache.ambari.server.api.services.RequestBody.setBody : if r1 == null goto return
+org.apache.ambari.server.api.services.RequestBody.getPartialResponseFields : $r1 = r0.<org.apache.ambari.server.api.services.RequestBody: java.lang.String m_fields>
+org.apache.ambari.server.api.services.parsers.JsonRequestBodyParser.parse : $z9 = interfaceinvoke r3.<java.util.Set: boolean isEmpty()>()
+org.apache.ambari.server.api.services.parsers.JsonRequestBodyParser.parse : return r3
+org.apache.ambari.server.api.services.parsers.JsonRequestBodyParser.parse : $r17 = new org.apache.ambari.server.api.services.RequestBody
+org.apache.ambari.server.api.services.parsers.JsonRequestBodyParser.parse : virtualinvoke r4.<org.apache.ambari.server.api.services.RequestBody: void setBody(java.lang.String)>(r1)
+org.apache.ambari.server.api.services.parsers.JsonRequestBodyParser.parse : $r2 = new java.util.HashSet
+org.apache.ambari.server.api.services.parsers.JsonRequestBodyParser.parse : if r1 == null goto $z9 = interfaceinvoke r3.<java.util.Set: boolean isEmpty()>()
+org.apache.ambari.server.api.services.parsers.JsonRequestBodyParser.parse : interfaceinvoke r3.<java.util.Set: boolean add(java.lang.Object)>(r4)
+org.apache.ambari.server.api.services.RequestBody.getQueryString : $r1 = r0.<org.apache.ambari.server.api.services.RequestBody: java.lang.String m_query>
+org.apache.ambari.server.api.services.RequestBody.getNamedPropertySets : $r1 = r0.<org.apache.ambari.server.api.services.RequestBody: java.util.Set m_propertySets>

@@ -1,0 +1,14 @@
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.access$000 : $r0 = <org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator: org.slf4j.Logger LOG>
+org.apache.ambari.server.security.authorization.AmbariLdapUtils.isLdapObjectOutOfScopeFromBaseDn : r8 = $r7
+org.apache.ambari.server.security.authorization.AmbariLdapUtils.isLdapObjectOutOfScopeFromBaseDn : return z0
+org.apache.ambari.server.security.authorization.AmbariLdapUtils.isLdapObjectOutOfScopeFromBaseDn : if r2 == null goto $z1 = 0
+org.apache.ambari.server.security.authorization.AmbariLdapUtils.isLdapObjectOutOfScopeFromBaseDn : z0 = 1
+org.apache.ambari.server.security.authorization.AmbariLdapUtils.isLdapObjectOutOfScopeFromBaseDn : r2 = virtualinvoke r0.<org.springframework.ldap.core.DirContextAdapter: javax.naming.Name getDn()>()
+org.apache.ambari.server.security.authorization.AmbariLdapUtils.isLdapObjectOutOfScopeFromBaseDn : $r9 = <org.apache.ambari.server.security.authorization.AmbariLdapUtils: org.slf4j.Logger LOG>
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator$LdapUserContextMapper.mapFromContext : $r6 = r0.<org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator$LdapUserContextMapper: org.apache.ambari.server.security.authorization.LdapServerProperties ldapServerProperties>
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator$LdapUserContextMapper.mapFromContext : if z0 == 0 goto (branch)
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator$LdapUserContextMapper.mapFromContext : $r8 = r0.<org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator$LdapUserContextMapper: org.apache.ambari.server.security.authorization.LdapServerProperties ldapServerProperties>
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator$LdapUserContextMapper.mapFromContext : $r10 = staticinvoke <org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator: org.slf4j.Logger access$000()>()
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator$LdapUserContextMapper.mapFromContext : return null
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator$LdapUserContextMapper.mapFromContext : r2 = (org.springframework.ldap.core.DirContextAdapter) r1
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator$LdapUserContextMapper.mapFromContext : r4 = virtualinvoke r2.<org.springframework.ldap.core.DirContextAdapter: java.lang.String getStringAttribute(java.lang.String)>("uid")

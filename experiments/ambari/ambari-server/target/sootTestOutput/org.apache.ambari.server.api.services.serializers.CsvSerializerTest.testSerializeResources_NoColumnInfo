@@ -1,0 +1,11 @@
+org.apache.ambari.server.api.services.ResultImpl.setResultStatus : r0.<org.apache.ambari.server.api.services.ResultImpl: org.apache.ambari.server.api.services.ResultStatus m_status> = r1
+org.apache.ambari.server.api.util.TreeNodeImpl.setName : r0.<org.apache.ambari.server.api.util.TreeNodeImpl: java.lang.String m_name> = r1
+org.apache.ambari.server.api.services.serializers.CsvSerializerTest.addChildResource : if r3 == null goto $r14 = newarray (java.lang.Object)[2]
+org.apache.ambari.server.api.services.serializers.CsvSerializerTest.addChildResource : $r11 = interfaceinvoke r8.<java.util.Map$Entry: java.lang.Object getKey()>()
+org.apache.ambari.server.api.services.serializers.CsvSerializerTest.addChildResource : $r4 = new org.apache.ambari.server.controller.internal.ResourceImpl
+org.apache.ambari.server.api.services.serializers.CsvSerializerTest.addChildResource : $r9 = interfaceinvoke r3.<java.util.Map: java.util.Set entrySet()>()
+org.apache.ambari.server.controller.internal.ResourceImpl.setProperty : $r5 = staticinvoke <org.apache.ambari.server.controller.utilities.PropertyHelper: java.lang.String getPropertyCategory(java.lang.String)>(r1)
+org.apache.ambari.server.api.util.TreeNodeImpl.setProperty : $r4 = r0.<org.apache.ambari.server.api.util.TreeNodeImpl: java.util.Map m_mapNodeProps>
+org.apache.ambari.server.api.util.TreeNodeImpl.setProperty : $r3 = new java.util.LinkedHashMap
+org.apache.ambari.server.api.util.TreeNodeImpl.setProperty : $r5 = r0.<org.apache.ambari.server.api.util.TreeNodeImpl: java.util.Map m_mapNodeProps>
+org.apache.ambari.server.api.services.ResultImpl.getResultTree : $r1 = r0.<org.apache.ambari.server.api.services.ResultImpl: org.apache.ambari.server.api.util.TreeNode m_tree>

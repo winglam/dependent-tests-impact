@@ -1,0 +1,71 @@
+org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationProperties.getPublicKey : $r1 = r0.<org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationProperties: java.security.interfaces.RSAPublicKey publicKey>
+org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationFilterTest.getSignedToken : virtualinvoke r7.<com.nimbusds.jwt.JWTClaimsSet: void setIssuer(java.lang.String)>("unit-test")
+org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationFilterTest.getSignedToken : $r10 = new com.nimbusds.jwt.JWTClaimsSet
+org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationFilterTest.getSignedToken : $r12 = new com.nimbusds.jwt.SignedJWT
+org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationFilterTest.getSignedToken : virtualinvoke r9.<com.nimbusds.jwt.SignedJWT: void sign(com.nimbusds.jose.JWSSigner)>(r5)
+org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationFilterTest.getSignedToken : virtualinvoke r2.<java.util.Calendar: void add(int,int)>(5, 1)
+org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationFilterTest.getSignedToken : virtualinvoke r7.<com.nimbusds.jwt.JWTClaimsSet: void setAudience(java.lang.String)>(r2)
+org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationFilterTest.getSignedToken : r2 = staticinvoke <java.util.Calendar: java.util.Calendar getInstance()>()
+org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationFilterTest.getSignedToken : $r11 = virtualinvoke r6.<java.util.Calendar: java.util.Date getTime()>()
+org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationFilterTest.getSignedToken : virtualinvoke r7.<com.nimbusds.jwt.JWTClaimsSet: void setSubject(java.lang.String)>("test-user")
+org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationFilterTest.getSignedToken : return r9
+org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationFilterTest.getSignedToken : virtualinvoke r7.<com.nimbusds.jwt.JWTClaimsSet: void setExpirationTime(java.util.Date)>(r1)
+org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationFilterTest.getSignedToken : $r3 = virtualinvoke r2.<java.util.Calendar: java.util.Date getTime()>()
+org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationFilterTest.getSignedToken : $l0 = staticinvoke <java.lang.System: long currentTimeMillis()>()
+org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationFilterTest.getSignedToken : $r3 = new com.nimbusds.jose.crypto.RSASSASigner
+org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationFilterTest.getSignedToken : $r1 = specialinvoke r0.<org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationFilterTest: com.nimbusds.jwt.SignedJWT getSignedToken(java.lang.String)>("test-audience")
+org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationFilterTest.getSignedToken : r6 = staticinvoke <java.util.Calendar: java.util.Calendar getInstance()>()
+org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationFilterTest.createTestProperties : $r1 = staticinvoke <java.util.Collections: java.util.List singletonList(java.lang.Object)>("test-audience")
+org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationFilterTest.createTestProperties : virtualinvoke r3.<org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationProperties: void setAudiences(java.util.List)>(r1)
+org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationFilterTest.createTestProperties : return r3
+org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationFilterTest.createTestProperties : $r2 = new org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationProperties
+org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationFilterTest.createTestProperties : virtualinvoke r3.<org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationProperties: void setCookieName(java.lang.String)>("non-default")
+org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationFilterTest.createTestProperties : $r4 = <org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationFilterTest: java.security.interfaces.RSAPublicKey publicKey>
+org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationFilter.validateAudiences : z0 = 0
+org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationFilter.validateAudiences : $r6 = r0.<org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationFilter: java.util.List audiences>
+org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationFilter.validateAudiences : $r10 = <org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationFilter: org.slf4j.Logger LOG>
+org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationFilter.validateAudiences : return z0
+org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationFilter.validateAudiences : r3 = interfaceinvoke r2.<java.util.List: java.util.Iterator iterator()>()
+org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationFilter.validateAudiences : z0 = 1
+org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationFilter.validateAudiences : goto [?= (branch)]
+org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationFilter.validateAudiences : $r11 = <org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationFilter: org.slf4j.Logger LOG>
+org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationFilter.validateAudiences : $r5 = virtualinvoke r1.<com.nimbusds.jwt.SignedJWT: com.nimbusds.jwt.ReadOnlyJWTClaimsSet getJWTClaimsSet()>()
+org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationFilter.validateAudiences : $r9 = r0.<org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationFilter: java.util.List audiences>
+org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationFilter.validateAudiences : goto [?= return z0]
+org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationFilter.validateAudiences : if r2 != null goto r3 = interfaceinvoke r2.<java.util.List: java.util.Iterator iterator()>()
+org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationFilter.validateAudiences : if z0 != 0 goto (branch)
+org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationFilter.validateAudiences : goto [?= $z2 = interfaceinvoke r3.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationProperties.setPublicKey : r0.<org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationProperties: java.security.interfaces.RSAPublicKey publicKey> = r1
+org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationFilterTest.getInvalidToken : virtualinvoke r7.<com.nimbusds.jwt.SignedJWT: void sign(com.nimbusds.jose.JWSSigner)>(r3)
+org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationFilterTest.getInvalidToken : $r8 = new com.nimbusds.jwt.JWTClaimsSet
+org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationFilterTest.getInvalidToken : virtualinvoke r5.<com.nimbusds.jwt.JWTClaimsSet: void setSubject(java.lang.String)>("test-user")
+org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationFilterTest.getInvalidToken : $r11 = new com.nimbusds.jwt.SignedJWT
+org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationFilterTest.getInvalidToken : virtualinvoke r5.<com.nimbusds.jwt.JWTClaimsSet: void setIssuer(java.lang.String)>("unit-test")
+org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationFilterTest.getInvalidToken : $r9 = virtualinvoke r4.<java.util.Calendar: java.util.Date getTime()>()
+org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationFilterTest.getInvalidToken : virtualinvoke r4.<java.util.Calendar: void add(int,int)>(5, 1)
+org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationFilterTest.getInvalidToken : $r10 = virtualinvoke r4.<java.util.Calendar: java.util.Date getTime()>()
+org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationFilterTest.getInvalidToken : return r7
+org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationFilterTest.getInvalidToken : virtualinvoke r5.<com.nimbusds.jwt.JWTClaimsSet: void setAudience(java.lang.String)>("test-audience-invalid")
+org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationFilterTest.getInvalidToken : r4 = staticinvoke <java.util.Calendar: java.util.Calendar getInstance()>()
+org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationFilterTest.getInvalidToken : $l0 = staticinvoke <java.lang.System: long currentTimeMillis()>()
+org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationFilterTest.getInvalidToken : virtualinvoke r4.<java.util.Calendar: void add(int,int)>(5, -2)
+org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationFilterTest.getInvalidToken : $r1 = new com.nimbusds.jose.crypto.RSASSASigner
+org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationProperties.setCookieName : r0.<org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationProperties: java.lang.String cookieName> = r1
+org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationProperties.getOriginalUrlQueryParam : $r1 = r0.<org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationProperties: java.lang.String originalUrlQueryParam>
+org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationProperties.getCookieName : $r1 = r0.<org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationProperties: java.lang.String cookieName>
+org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationFilter.loadJwtProperties : $r6 = r0.<org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationFilter: org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationProperties jwtProperties>
+org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationFilter.loadJwtProperties : $r1 = r0.<org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationFilter: org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationProperties jwtProperties>
+org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationFilter.loadJwtProperties : $r2 = r0.<org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationFilter: org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationProperties jwtProperties>
+org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationFilter.loadJwtProperties : $r4 = r0.<org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationFilter: org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationProperties jwtProperties>
+org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationFilter.loadJwtProperties : $r10 = r0.<org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationFilter: org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationProperties jwtProperties>
+org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationFilter.loadJwtProperties : $r8 = r0.<org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationFilter: org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationProperties jwtProperties>
+org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationProperties.setAudiences : r0.<org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationProperties: java.util.List audiences> = r1
+org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationProperties.getAuthenticationProviderUrl : $r1 = r0.<org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationProperties: java.lang.String authenticationProviderUrl>
+org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationProperties.getAudiences : $r1 = r0.<org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationProperties: java.util.List audiences>
+org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationFilterTest.generateKeyPair : virtualinvoke r0.<java.security.KeyPairGenerator: void initialize(int)>(512)
+org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationFilterTest.generateKeyPair : $r7 = virtualinvoke r6.<java.security.KeyPair: java.security.PrivateKey getPrivate()>()
+org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationFilterTest.generateKeyPair : $r4 = virtualinvoke r1.<java.security.KeyPair: java.security.PrivateKey getPrivate()>()
+org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationFilterTest.generateKeyPair : r1 = virtualinvoke r0.<java.security.KeyPairGenerator: java.security.KeyPair generateKeyPair()>()
+org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationFilterTest.generateKeyPair : r0 = staticinvoke <java.security.KeyPairGenerator: java.security.KeyPairGenerator getInstance(java.lang.String)>("RSA")
+org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationFilterTest.generateKeyPair : $r2 = virtualinvoke r1.<java.security.KeyPair: java.security.PublicKey getPublic()>()
+org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationFilterTest.generateKeyPair : r6 = virtualinvoke r0.<java.security.KeyPairGenerator: java.security.KeyPair generateKeyPair()>()

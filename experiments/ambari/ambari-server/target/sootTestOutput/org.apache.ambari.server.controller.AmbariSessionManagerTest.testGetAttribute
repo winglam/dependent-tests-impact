@@ -1,0 +1,3 @@
+org.apache.ambari.server.controller.AmbariSessionManager.getAttribute : if r2 == null goto return null
+org.apache.ambari.server.controller.AmbariSessionManager.getAttribute : r2 = virtualinvoke r0.<org.apache.ambari.server.controller.AmbariSessionManager: javax.servlet.http.HttpSession getHttpSession()>()
+org.apache.ambari.server.controller.AmbariSessionManager.getAttribute : $r3 = interfaceinvoke r2.<javax.servlet.http.HttpSession: java.lang.Object getAttribute(java.lang.String)>(r1)

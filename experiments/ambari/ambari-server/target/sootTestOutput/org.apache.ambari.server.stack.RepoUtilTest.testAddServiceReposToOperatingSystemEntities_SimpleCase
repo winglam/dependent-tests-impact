@@ -1,0 +1,59 @@
+org.apache.ambari.server.orm.entities.OperatingSystemEntity.getOsType : $r1 = r0.<org.apache.ambari.server.orm.entities.OperatingSystemEntity: java.lang.String osType>
+org.apache.ambari.server.orm.entities.RepositoryEntity.setName : r0.<org.apache.ambari.server.orm.entities.RepositoryEntity: java.lang.String name> = r1
+org.apache.ambari.server.stack.RepoUtilTest.repoEntity : return r4
+org.apache.ambari.server.stack.RepoUtilTest.repoEntity : virtualinvoke r4.<org.apache.ambari.server.orm.entities.RepositoryEntity: void setBaseUrl(java.lang.String)>(r2)
+org.apache.ambari.server.stack.RepoUtilTest.repoEntity : $r3 = new org.apache.ambari.server.orm.entities.RepositoryEntity
+org.apache.ambari.server.stack.RepoUtilTest.repoEntity : virtualinvoke r4.<org.apache.ambari.server.orm.entities.RepositoryEntity: void setRepositoryId(java.lang.String)>(r1)
+org.apache.ambari.server.stack.RepoUtilTest.repoEntity : virtualinvoke r4.<org.apache.ambari.server.orm.entities.RepositoryEntity: void setName(java.lang.String)>(r0)
+org.apache.ambari.server.orm.entities.RepositoryEntity.setBaseUrl : r0.<org.apache.ambari.server.orm.entities.RepositoryEntity: java.lang.String baseUrl> = r1
+org.apache.ambari.server.stack.RepoUtil$1.apply : $r2 = (org.apache.ambari.server.orm.entities.RepositoryEntity) r1
+org.apache.ambari.server.stack.RepoUtil$1.apply : $r2 = virtualinvoke r1.<org.apache.ambari.server.orm.entities.RepositoryEntity: java.lang.String getName()>()
+org.apache.ambari.server.state.RepositoryInfo.setRepoName : r0.<org.apache.ambari.server.state.RepositoryInfo: java.lang.String repoName> = r1
+org.apache.ambari.server.state.RepositoryInfo.setBaseUrl : r0.<org.apache.ambari.server.state.RepositoryInfo: java.lang.String baseUrl> = r1
+org.apache.ambari.server.stack.RepoUtilTest.osEntity : r4 = r1
+org.apache.ambari.server.stack.RepoUtilTest.osEntity : $r2 = new org.apache.ambari.server.orm.entities.OperatingSystemEntity
+org.apache.ambari.server.stack.RepoUtilTest.osEntity : return r3
+org.apache.ambari.server.stack.RepoUtilTest.osEntity : $r6 = virtualinvoke r3.<org.apache.ambari.server.orm.entities.OperatingSystemEntity: java.util.List getRepositories()>()
+org.apache.ambari.server.stack.RepoUtilTest.osEntity : virtualinvoke r3.<org.apache.ambari.server.orm.entities.OperatingSystemEntity: void setOsType(java.lang.String)>(r0)
+org.apache.ambari.server.stack.RepoUtilTest.serviceRepos : goto [?= $z0 = interfaceinvoke r5.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.stack.RepoUtilTest.serviceRepos : return r4
+org.apache.ambari.server.stack.RepoUtilTest.serviceRepos : interfaceinvoke r4.<com.google.common.collect.ListMultimap: boolean put(java.lang.Object,java.lang.Object)>(r6, r7)
+org.apache.ambari.server.stack.RepoUtilTest.serviceRepos : $r9 = new org.apache.ambari.server.state.RepositoryInfo
+org.apache.ambari.server.stack.RepoUtilTest.serviceRepos : r4 = staticinvoke <com.google.common.collect.ArrayListMultimap: com.google.common.collect.ArrayListMultimap create()>()
+org.apache.ambari.server.stack.RepoUtilTest.serviceRepos : virtualinvoke r7.<org.apache.ambari.server.state.RepositoryInfo: void setRepoName(java.lang.String)>(r1)
+org.apache.ambari.server.stack.RepoUtilTest.serviceRepos : virtualinvoke r7.<org.apache.ambari.server.state.RepositoryInfo: void setRepoId(java.lang.String)>(r2)
+org.apache.ambari.server.stack.RepoUtilTest.serviceRepos : virtualinvoke r7.<org.apache.ambari.server.state.RepositoryInfo: void setOsType(java.lang.String)>(r6)
+org.apache.ambari.server.stack.RepoUtilTest.serviceRepos : r5 = interfaceinvoke r0.<java.util.List: java.util.Iterator iterator()>()
+org.apache.ambari.server.stack.RepoUtilTest.serviceRepos : virtualinvoke r7.<org.apache.ambari.server.state.RepositoryInfo: void setBaseUrl(java.lang.String)>(r3)
+org.apache.ambari.server.state.RepositoryInfo.setRepoId : r0.<org.apache.ambari.server.state.RepositoryInfo: java.lang.String repoId> = r1
+org.apache.ambari.server.stack.RepoUtil.toRepositoryEntity : $r3 = virtualinvoke r0.<org.apache.ambari.server.state.RepositoryInfo: java.lang.String getBaseUrl()>()
+org.apache.ambari.server.stack.RepoUtil.toRepositoryEntity : return r2
+org.apache.ambari.server.stack.RepoUtil.toRepositoryEntity : $r4 = virtualinvoke r0.<org.apache.ambari.server.state.RepositoryInfo: java.lang.String getRepoName()>()
+org.apache.ambari.server.stack.RepoUtil.toRepositoryEntity : $r1 = new org.apache.ambari.server.orm.entities.RepositoryEntity
+org.apache.ambari.server.stack.RepoUtil.toRepositoryEntity : $r5 = virtualinvoke r0.<org.apache.ambari.server.state.RepositoryInfo: java.lang.String getRepoId()>()
+org.apache.ambari.server.state.RepositoryInfo.getBaseUrl : $r1 = r0.<org.apache.ambari.server.state.RepositoryInfo: java.lang.String baseUrl>
+org.apache.ambari.server.state.RepositoryInfo.getRepoName : $r1 = r0.<org.apache.ambari.server.state.RepositoryInfo: java.lang.String repoName>
+org.apache.ambari.server.stack.RepoUtil.addServiceReposToOperatingSystemEntities : goto [?= $z0 = interfaceinvoke r4.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.stack.RepoUtil.addServiceReposToOperatingSystemEntities : $r23 = <org.apache.ambari.server.stack.RepoUtil: org.slf4j.Logger LOG>
+org.apache.ambari.server.stack.RepoUtil.addServiceReposToOperatingSystemEntities : r4 = interfaceinvoke r0.<java.util.List: java.util.Iterator iterator()>()
+org.apache.ambari.server.stack.RepoUtil.addServiceReposToOperatingSystemEntities : r8 = interfaceinvoke r6.<java.util.List: java.util.Iterator iterator()>()
+org.apache.ambari.server.stack.RepoUtil.addServiceReposToOperatingSystemEntities : $r19 = newarray (java.lang.Object)[2]
+org.apache.ambari.server.stack.RepoUtil.addServiceReposToOperatingSystemEntities : $r2 = new java.util.HashSet
+org.apache.ambari.server.stack.RepoUtil.addServiceReposToOperatingSystemEntities : $r16 = virtualinvoke r9.<org.apache.ambari.server.state.RepositoryInfo: java.lang.String getRepoName()>()
+org.apache.ambari.server.stack.RepoUtil.addServiceReposToOperatingSystemEntities : $r11 = virtualinvoke r5.<org.apache.ambari.server.orm.entities.OperatingSystemEntity: java.lang.String getOsType()>()
+org.apache.ambari.server.stack.RepoUtil.addServiceReposToOperatingSystemEntities : $r12 = virtualinvoke r5.<org.apache.ambari.server.orm.entities.OperatingSystemEntity: java.util.List getRepositories()>()
+org.apache.ambari.server.stack.RepoUtil.addServiceReposToOperatingSystemEntities : $r17 = virtualinvoke r5.<org.apache.ambari.server.orm.entities.OperatingSystemEntity: java.util.List getRepositories()>()
+org.apache.ambari.server.orm.entities.RepositoryEntity.hashCode : $i2 = 31 * i0
+org.apache.ambari.server.orm.entities.RepositoryEntity.hashCode : $i5 = 31 * i4
+org.apache.ambari.server.orm.entities.RepositoryEntity.hashCode : return i7
+org.apache.ambari.server.orm.entities.RepositoryEntity.hashCode : $r1 = r0.<org.apache.ambari.server.orm.entities.RepositoryEntity: java.lang.String name>
+org.apache.ambari.server.orm.entities.RepositoryEntity.setRepositoryId : r0.<org.apache.ambari.server.orm.entities.RepositoryEntity: java.lang.String repositoryId> = r1
+org.apache.ambari.server.orm.entities.RepositoryEntity.getName : $r1 = r0.<org.apache.ambari.server.orm.entities.RepositoryEntity: java.lang.String name>
+org.apache.ambari.server.state.RepositoryInfo.getRepoId : $r1 = r0.<org.apache.ambari.server.state.RepositoryInfo: java.lang.String repoId>
+org.apache.ambari.server.stack.RepoUtilTest.findRepoEntityById : $r7 = staticinvoke <com.google.common.base.Optional: com.google.common.base.Optional absent()>()
+org.apache.ambari.server.stack.RepoUtilTest.findRepoEntityById : r2 = interfaceinvoke r0.<java.lang.Iterable: java.util.Iterator iterator()>()
+org.apache.ambari.server.stack.RepoUtilTest.findRepoEntityById : $r6 = staticinvoke <com.google.common.base.Optional: com.google.common.base.Optional of(java.lang.Object)>(r3)
+org.apache.ambari.server.state.RepositoryInfo.setOsType : r0.<org.apache.ambari.server.state.RepositoryInfo: java.lang.String osType> = r1
+org.apache.ambari.server.orm.entities.OperatingSystemEntity.setOsType : r0.<org.apache.ambari.server.orm.entities.OperatingSystemEntity: java.lang.String osType> = r1
+org.apache.ambari.server.orm.entities.OperatingSystemEntity.getRepositories : $r1 = r0.<org.apache.ambari.server.orm.entities.OperatingSystemEntity: java.util.List repositories>
+org.apache.ambari.server.orm.entities.RepositoryEntity.getRepositoryId : $r1 = r0.<org.apache.ambari.server.orm.entities.RepositoryEntity: java.lang.String repositoryId>

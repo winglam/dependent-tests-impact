@@ -1,0 +1,11 @@
+org.apache.ambari.server.collections.functors.AndPredicate.toMap : $r1 = specialinvoke r0.<org.apache.ambari.server.collections.functors.DelegatedMultiplePredicateContainer: java.util.Map toMap()>()
+org.apache.ambari.server.collections.Predicate.getName : $r1 = r0.<org.apache.ambari.server.collections.Predicate: java.lang.String name>
+org.apache.ambari.server.collections.functors.DelegatedMultiplePredicateContainer.toMap : $r1 = virtualinvoke r0.<org.apache.ambari.server.collections.functors.DelegatedMultiplePredicateContainer: java.lang.String getName()>()
+org.apache.ambari.server.collections.functors.DelegatedMultiplePredicateContainer.containedPredicatesToMaps : $z0 = r5 instanceof org.apache.ambari.server.collections.Predicate
+org.apache.ambari.server.collections.functors.DelegatedMultiplePredicateContainer.containedPredicatesToMaps : return r2
+org.apache.ambari.server.collections.functors.DelegatedMultiplePredicateContainer.containedPredicatesToMaps : if r3 == null goto return r2
+org.apache.ambari.server.collections.functors.DelegatedMultiplePredicateContainer.containedPredicatesToMaps : r4 = r3
+org.apache.ambari.server.collections.functors.DelegatedMultiplePredicateContainer.containedPredicatesToMaps : $r1 = new java.util.ArrayList
+org.apache.ambari.server.collections.functors.DelegatedMultiplePredicateContainer.containedPredicatesToMaps : $r7 = r0.<org.apache.ambari.server.collections.functors.DelegatedMultiplePredicateContainer: org.apache.commons.collections.functors.PredicateDecorator delegate>
+org.apache.ambari.server.collections.functors.DelegatedMultiplePredicateContainer.containedPredicatesToMaps : $r8 = (org.apache.ambari.server.collections.Predicate) r5
+org.apache.ambari.server.collections.functors.DelegatedMultiplePredicateContainer.containedPredicatesToMaps : $r6 = r0.<org.apache.ambari.server.collections.functors.DelegatedMultiplePredicateContainer: org.apache.commons.collections.functors.PredicateDecorator delegate>

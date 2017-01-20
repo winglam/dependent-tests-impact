@@ -1,0 +1,30 @@
+org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper.closeConnection : $r0 = <org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper: java.sql.Connection connection>
+org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper.closeConnection : goto [?= return]
+org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper.setConnection : <org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper: java.sql.Connection connection> = r0
+org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper.setInjector : <org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper: org.apache.ambari.server.api.services.AmbariMetaInfo ambariMetaInfo> = null
+org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper.setInjector : <org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper: java.sql.Connection connection> = null
+org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper.setInjector : <org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper: com.google.inject.Injector injector> = r0
+org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper.setInjector : staticinvoke <org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper: void closeConnection()>()
+org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper.setInjector : <org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper: org.apache.ambari.server.orm.DBAccessor dbAccessor> = null
+org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper.setInjector : <org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper: org.apache.ambari.server.orm.dao.MetainfoDAO metainfoDAO> = null
+org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper.checkForConfigsSelectedMoreThanOnce : r3 = null
+org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper.checkForConfigsSelectedMoreThanOnce : r1 = "select c.cluster_name, ccm.type_name from clusterconfigmapping ccm join clusters c on ccm.cluster_id=c.cluster_id group by c.cluster_name, ccm.type_name having sum(selected) > 1"
+org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper.checkForConfigsSelectedMoreThanOnce : r4 = null
+org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper.checkForConfigsSelectedMoreThanOnce : goto [?= (branch)]
+org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper.checkForConfigsSelectedMoreThanOnce : goto [?= return]
+org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper.checkForConfigsSelectedMoreThanOnce : $r16 = <org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper: java.sql.Connection connection>
+org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper.checkForConfigsSelectedMoreThanOnce : if r3 == null goto (branch)
+org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper.checkForConfigsSelectedMoreThanOnce : interfaceinvoke r4.<java.sql.Statement: void close()>()
+org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper.checkForConfigsSelectedMoreThanOnce : if r4 == null goto return
+org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper.checkForConfigsSelectedMoreThanOnce : $r9 = <org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper: java.sql.Connection connection>
+org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper.checkForConfigsSelectedMoreThanOnce : $z0 = interfaceinvoke r3.<java.sql.ResultSet: boolean next()>()
+org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper.checkForConfigsSelectedMoreThanOnce : r3 = interfaceinvoke r4.<java.sql.Statement: java.sql.ResultSet executeQuery(java.lang.String)>(r1)
+org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper.checkForConfigsSelectedMoreThanOnce : $r0 = <org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper: org.slf4j.Logger LOG>
+org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper.checkForConfigsSelectedMoreThanOnce : $r19 = interfaceinvoke r2.<com.google.common.collect.Multimap: java.util.Set keySet()>()
+org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper.checkForConfigsSelectedMoreThanOnce : interfaceinvoke r3.<java.sql.ResultSet: void close()>()
+org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper.checkForConfigsSelectedMoreThanOnce : r2 = staticinvoke <com.google.common.collect.HashMultimap: com.google.common.collect.HashMultimap create()>()
+org.apache.ambari.server.checks.DatabaseConsistencyCheckHelperTest$2.configure : $r9 = virtualinvoke r0.<org.apache.ambari.server.checks.DatabaseConsistencyCheckHelperTest$2: com.google.inject.binder.AnnotatedBindingBuilder bind(java.lang.Class)>(class "org/apache/ambari/server/state/stack/OsFamily")
+org.apache.ambari.server.checks.DatabaseConsistencyCheckHelperTest$2.configure : $r5 = virtualinvoke r0.<org.apache.ambari.server.checks.DatabaseConsistencyCheckHelperTest$2: com.google.inject.binder.AnnotatedBindingBuilder bind(java.lang.Class)>(class "org/apache/ambari/server/orm/DBAccessor")
+org.apache.ambari.server.checks.DatabaseConsistencyCheckHelperTest$2.configure : $r7 = virtualinvoke r0.<org.apache.ambari.server.checks.DatabaseConsistencyCheckHelperTest$2: com.google.inject.binder.AnnotatedBindingBuilder bind(java.lang.Class)>(class "org/apache/ambari/server/state/Clusters")
+org.apache.ambari.server.checks.DatabaseConsistencyCheckHelperTest$2.configure : $r1 = virtualinvoke r0.<org.apache.ambari.server.checks.DatabaseConsistencyCheckHelperTest$2: com.google.inject.binder.AnnotatedBindingBuilder bind(java.lang.Class)>(class "org/apache/ambari/server/stack/StackManagerFactory")
+org.apache.ambari.server.checks.DatabaseConsistencyCheckHelperTest$2.configure : $r3 = virtualinvoke r0.<org.apache.ambari.server.checks.DatabaseConsistencyCheckHelperTest$2: com.google.inject.binder.AnnotatedBindingBuilder bind(java.lang.Class)>(class "javax/persistence/EntityManager")

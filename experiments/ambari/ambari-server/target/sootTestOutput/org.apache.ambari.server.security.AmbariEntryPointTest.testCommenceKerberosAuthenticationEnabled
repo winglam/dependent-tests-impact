@@ -1,0 +1,14 @@
+org.apache.ambari.server.configuration.Configuration$ConfigurationProperty.getKey : $r1 = r0.<org.apache.ambari.server.configuration.Configuration$ConfigurationProperty: java.lang.String m_key>
+org.apache.ambari.server.security.AmbariEntryPointTest.testCommence : $r11 = staticinvoke <org.easymock.EasyMock: org.easymock.IExpectationSetters expectLastCall()>()
+org.apache.ambari.server.security.AmbariEntryPointTest.testCommence : $r21 = new java.util.Properties
+org.apache.ambari.server.security.AmbariEntryPointTest.testCommence : $r9 = virtualinvoke r0.<org.apache.ambari.server.security.AmbariEntryPointTest: java.lang.Object createStrictMock(java.lang.Class)>(class "org/springframework/security/core/AuthenticationException")
+org.apache.ambari.server.security.AmbariEntryPointTest.testCommence : virtualinvoke r0.<org.apache.ambari.server.security.AmbariEntryPointTest: void replayAll()>()
+org.apache.ambari.server.security.AmbariEntryPointTest.testCommence : $r10 = <java.lang.Boolean: java.lang.Boolean TRUE>
+org.apache.ambari.server.security.AmbariEntryPointTest.testCommence : if r1 == null goto $r32 = new org.apache.ambari.server.security.AmbariEntryPoint
+org.apache.ambari.server.security.AmbariEntryPointTest.testCommence : interfaceinvoke r3.<javax.servlet.http.HttpServletResponse: void sendError(int,java.lang.String)>(401, "Authentication requested")
+org.apache.ambari.server.security.AmbariEntryPointTest.testCommence : $r13 = staticinvoke <org.easymock.EasyMock: org.easymock.IExpectationSetters expectLastCall()>()
+org.apache.ambari.server.security.AmbariEntryPointTest.testCommence : $r7 = virtualinvoke r0.<org.apache.ambari.server.security.AmbariEntryPointTest: java.lang.Object createStrictMock(java.lang.Class)>(class "javax/servlet/http/HttpServletRequest")
+org.apache.ambari.server.security.AmbariEntryPointTest.testCommence : interfaceinvoke r3.<javax.servlet.http.HttpServletResponse: void setHeader(java.lang.String,java.lang.String)>("WWW-Authenticate", "Negotiate")
+org.apache.ambari.server.security.AmbariEntryPointTest.testCommence : $r8 = virtualinvoke r0.<org.apache.ambari.server.security.AmbariEntryPointTest: java.lang.Object createStrictMock(java.lang.Class)>(class "javax/servlet/http/HttpServletResponse")
+org.apache.ambari.server.security.AmbariEntryPointTest.testCommence : $r22 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty KERBEROS_AUTH_ENABLED>
+org.apache.ambari.server.security.AmbariEntryPointTest.testCommence : $r26 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty KERBEROS_AUTH_SPNEGO_KEYTAB_FILE>

@@ -1,0 +1,68 @@
+org.apache.ambari.server.state.quicklinksprofile.Component.getFilters : $r1 = r0.<org.apache.ambari.server.state.quicklinksprofile.Component: java.util.List filters>
+org.apache.ambari.server.state.quicklinksprofile.Component.setFilters : r0.<org.apache.ambari.server.state.quicklinksprofile.Component: java.util.List filters> = r1
+org.apache.ambari.server.state.quicklinksprofile.QuickLinksProfileEvaluator.evaluateServiceRules : $r3 = r0.<org.apache.ambari.server.state.quicklinksprofile.QuickLinksProfileEvaluator: java.util.Map serviceRules>
+org.apache.ambari.server.state.quicklinksprofile.QuickLinksProfile.setServices : r0.<org.apache.ambari.server.state.quicklinksprofile.QuickLinksProfile: java.util.List services> = r1
+org.apache.ambari.server.state.quicklinksprofile.QuickLinksProfileEvaluator.isVisible : r4 = specialinvoke r0.<org.apache.ambari.server.state.quicklinksprofile.QuickLinksProfileEvaluator: com.google.common.base.Optional evaluateServiceRules(java.lang.String,org.apache.ambari.server.state.quicklinks.Link)>(r1, r2)
+org.apache.ambari.server.state.quicklinksprofile.QuickLinksProfileEvaluator.isVisible : $z2 = virtualinvoke r4.<com.google.common.base.Optional: boolean isPresent()>()
+org.apache.ambari.server.state.quicklinksprofile.QuickLinksProfileEvaluator.isVisible : r3 = specialinvoke r0.<org.apache.ambari.server.state.quicklinksprofile.QuickLinksProfileEvaluator: com.google.common.base.Optional evaluateComponentRules(java.lang.String,org.apache.ambari.server.state.quicklinks.Link)>(r1, r2)
+org.apache.ambari.server.state.quicklinksprofile.QuickLinksProfileEvaluator.isVisible : $z0 = virtualinvoke r3.<com.google.common.base.Optional: boolean isPresent()>()
+org.apache.ambari.server.state.quicklinksprofile.QuickLinksProfileEvaluator.isVisible : $r7 = virtualinvoke r4.<com.google.common.base.Optional: java.lang.Object get()>()
+org.apache.ambari.server.state.quicklinks.Link.getComponentName : $r1 = r0.<org.apache.ambari.server.state.quicklinks.Link: java.lang.String componentName>
+org.apache.ambari.server.state.quicklinksprofile.QuickLinksProfile.getServices : $r1 = r0.<org.apache.ambari.server.state.quicklinksprofile.QuickLinksProfile: java.util.List services>
+org.apache.ambari.server.state.quicklinks.Link.setAttributes : r0.<org.apache.ambari.server.state.quicklinks.Link: java.util.List attributes> = r1
+org.apache.ambari.server.state.quicklinksprofile.ServiceComponent.hashCode : $r1 = newarray (java.lang.Object)[2]
+org.apache.ambari.server.state.quicklinksprofile.Filter.linkAttributeFilter : return r2
+org.apache.ambari.server.state.quicklinksprofile.Filter.linkAttributeFilter : $r1 = new org.apache.ambari.server.state.quicklinksprofile.LinkAttributeFilter
+org.apache.ambari.server.state.quicklinksprofile.Filter.linkAttributeFilter : virtualinvoke r2.<org.apache.ambari.server.state.quicklinksprofile.LinkAttributeFilter: void setVisible(boolean)>(z0)
+org.apache.ambari.server.state.quicklinksprofile.Filter.linkAttributeFilter : virtualinvoke r2.<org.apache.ambari.server.state.quicklinksprofile.LinkAttributeFilter: void setLinkAttribute(java.lang.String)>(r0)
+org.apache.ambari.server.state.quicklinksprofile.Component.getName : $r1 = r0.<org.apache.ambari.server.state.quicklinksprofile.Component: java.lang.String name>
+org.apache.ambari.server.state.quicklinksprofile.Component.create : virtualinvoke r3.<org.apache.ambari.server.state.quicklinksprofile.Component: void setFilters(java.util.List)>(r1)
+org.apache.ambari.server.state.quicklinksprofile.Component.create : return r3
+org.apache.ambari.server.state.quicklinksprofile.Component.create : virtualinvoke r3.<org.apache.ambari.server.state.quicklinksprofile.Component: void setName(java.lang.String)>(r0)
+org.apache.ambari.server.state.quicklinksprofile.Component.create : $r2 = new org.apache.ambari.server.state.quicklinksprofile.Component
+org.apache.ambari.server.state.quicklinksprofile.Evaluator.isVisible : $r4 = r0.<org.apache.ambari.server.state.quicklinksprofile.Evaluator: java.util.Map linkNameFilters>
+org.apache.ambari.server.state.quicklinksprofile.Evaluator.isVisible : $r13 = r0.<org.apache.ambari.server.state.quicklinksprofile.Evaluator: java.util.Set hideAttributes>
+org.apache.ambari.server.state.quicklinksprofile.Evaluator.isVisible : goto [?= $z3 = interfaceinvoke r18.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.state.quicklinksprofile.Evaluator.isVisible : $r24 = r0.<org.apache.ambari.server.state.quicklinksprofile.Evaluator: com.google.common.base.Optional acceptAllFilter>
+org.apache.ambari.server.state.quicklinksprofile.Evaluator.isVisible : goto [?= $z1 = interfaceinvoke r2.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.state.quicklinksprofile.Evaluator.isVisible : $r16 = virtualinvoke r1.<org.apache.ambari.server.state.quicklinks.Link: java.util.List getAttributes()>()
+org.apache.ambari.server.state.quicklinksprofile.Evaluator.isVisible : $r21 = r0.<org.apache.ambari.server.state.quicklinksprofile.Evaluator: java.util.Set showAttributes>
+org.apache.ambari.server.state.quicklinksprofile.Evaluator.isVisible : $r10 = virtualinvoke r1.<org.apache.ambari.server.state.quicklinks.Link: java.util.List getAttributes()>()
+org.apache.ambari.server.state.quicklinks.Link.getName : $r1 = r0.<org.apache.ambari.server.state.quicklinks.Link: java.lang.String name>
+org.apache.ambari.server.state.quicklinksprofile.Service.getComponents : $r1 = r0.<org.apache.ambari.server.state.quicklinksprofile.Service: java.util.List components>
+org.apache.ambari.server.state.quicklinksprofile.Filter.acceptAllFilter : $r0 = new org.apache.ambari.server.state.quicklinksprofile.AcceptAllFilter
+org.apache.ambari.server.state.quicklinksprofile.Filter.acceptAllFilter : virtualinvoke r1.<org.apache.ambari.server.state.quicklinksprofile.AcceptAllFilter: void setVisible(boolean)>(z0)
+org.apache.ambari.server.state.quicklinksprofile.Filter.acceptAllFilter : return r1
+org.apache.ambari.server.state.quicklinksprofile.QuickLinksProfile.create : $r2 = new org.apache.ambari.server.state.quicklinksprofile.QuickLinksProfile
+org.apache.ambari.server.state.quicklinksprofile.QuickLinksProfile.create : return r3
+org.apache.ambari.server.state.quicklinksprofile.QuickLinksProfile.create : virtualinvoke r3.<org.apache.ambari.server.state.quicklinksprofile.QuickLinksProfile: void setFilters(java.util.List)>(r0)
+org.apache.ambari.server.state.quicklinksprofile.QuickLinksProfile.create : virtualinvoke r3.<org.apache.ambari.server.state.quicklinksprofile.QuickLinksProfile: void setServices(java.util.List)>(r1)
+org.apache.ambari.server.state.quicklinksprofile.QuickLinksProfile.setFilters : r0.<org.apache.ambari.server.state.quicklinksprofile.QuickLinksProfile: java.util.List filters> = r1
+org.apache.ambari.server.state.quicklinksprofile.Filter.isVisible : $z0 = r0.<org.apache.ambari.server.state.quicklinksprofile.Filter: boolean visible>
+org.apache.ambari.server.state.quicklinksprofile.QuickLinksProfileEvaluator.evaluateComponentRules : if r3 == null goto $r10 = staticinvoke <com.google.common.base.Optional: com.google.common.base.Optional absent()>()
+org.apache.ambari.server.state.quicklinksprofile.QuickLinksProfileEvaluator.evaluateComponentRules : $r6 = r0.<org.apache.ambari.server.state.quicklinksprofile.QuickLinksProfileEvaluator: java.util.Map componentRules>
+org.apache.ambari.server.state.quicklinksprofile.QuickLinksProfileEvaluator.evaluateComponentRules : $r4 = virtualinvoke r2.<org.apache.ambari.server.state.quicklinks.Link: java.lang.String getComponentName()>()
+org.apache.ambari.server.state.quicklinksprofile.ServiceComponent.equals : if r1 == null goto return 0
+org.apache.ambari.server.state.quicklinksprofile.ServiceComponent.equals : if r0 != r1 goto (branch)
+org.apache.ambari.server.state.quicklinksprofile.ServiceComponent.equals : $r5 = r0.<org.apache.ambari.server.state.quicklinksprofile.ServiceComponent: java.lang.String service>
+org.apache.ambari.server.state.quicklinksprofile.ServiceComponent.equals : r2 = (org.apache.ambari.server.state.quicklinksprofile.ServiceComponent) r1
+org.apache.ambari.server.state.quicklinksprofile.Service.getFilters : $r1 = r0.<org.apache.ambari.server.state.quicklinksprofile.Service: java.util.List filters>
+org.apache.ambari.server.state.quicklinksprofile.Service.create : return r4
+org.apache.ambari.server.state.quicklinksprofile.Service.create : virtualinvoke r4.<org.apache.ambari.server.state.quicklinksprofile.Service: void setFilters(java.util.List)>(r1)
+org.apache.ambari.server.state.quicklinksprofile.Service.create : virtualinvoke r4.<org.apache.ambari.server.state.quicklinksprofile.Service: void setName(java.lang.String)>(r0)
+org.apache.ambari.server.state.quicklinksprofile.Service.create : $r3 = new org.apache.ambari.server.state.quicklinksprofile.Service
+org.apache.ambari.server.state.quicklinksprofile.Service.create : virtualinvoke r4.<org.apache.ambari.server.state.quicklinksprofile.Service: void setComponents(java.util.List)>(r2)
+org.apache.ambari.server.state.quicklinksprofile.Service.setFilters : r0.<org.apache.ambari.server.state.quicklinksprofile.Service: java.util.List filters> = r1
+org.apache.ambari.server.state.quicklinksprofile.QuickLinksProfileEvaluator.nullToEmptyList : if r0 == null goto $r1 = staticinvoke <java.util.Collections: java.util.List emptyList()>()
+org.apache.ambari.server.state.quicklinksprofile.Service.setName : r0.<org.apache.ambari.server.state.quicklinksprofile.Service: java.lang.String name> = r1
+org.apache.ambari.server.state.quicklinksprofile.LinkAttributeFilter.getLinkAttribute : $r1 = r0.<org.apache.ambari.server.state.quicklinksprofile.LinkAttributeFilter: java.lang.String linkAttribute>
+org.apache.ambari.server.state.quicklinksprofile.Component.setName : r0.<org.apache.ambari.server.state.quicklinksprofile.Component: java.lang.String name> = r1
+org.apache.ambari.server.state.quicklinksprofile.LinkAttributeFilter.setLinkAttribute : r0.<org.apache.ambari.server.state.quicklinksprofile.LinkAttributeFilter: java.lang.String linkAttribute> = r1
+org.apache.ambari.server.state.quicklinksprofile.ServiceComponent.of : $r2 = new org.apache.ambari.server.state.quicklinksprofile.ServiceComponent
+org.apache.ambari.server.state.quicklinksprofile.Service.getName : $r1 = r0.<org.apache.ambari.server.state.quicklinksprofile.Service: java.lang.String name>
+org.apache.ambari.server.state.quicklinksprofile.Service.setComponents : r0.<org.apache.ambari.server.state.quicklinksprofile.Service: java.util.List components> = r1
+org.apache.ambari.server.state.quicklinks.Link.setComponentName : r0.<org.apache.ambari.server.state.quicklinks.Link: java.lang.String componentName> = r1
+org.apache.ambari.server.state.quicklinksprofile.Filter.setVisible : r0.<org.apache.ambari.server.state.quicklinksprofile.Filter: boolean visible> = z0
+org.apache.ambari.server.state.quicklinksprofile.QuickLinksProfile.getFilters : $r1 = r0.<org.apache.ambari.server.state.quicklinksprofile.QuickLinksProfile: java.util.List filters>
+org.apache.ambari.server.state.quicklinks.Link.setName : r0.<org.apache.ambari.server.state.quicklinks.Link: java.lang.String name> = r1
+org.apache.ambari.server.state.quicklinks.Link.getAttributes : $r1 = r0.<org.apache.ambari.server.state.quicklinks.Link: java.util.List attributes>

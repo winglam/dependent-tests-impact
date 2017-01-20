@@ -1,0 +1,113 @@
+org.apache.ambari.server.api.services.CredentialServiceTest$TestCredentialService.getRequestFactory : $r1 = r0.<org.apache.ambari.server.api.services.CredentialServiceTest$TestCredentialService: org.apache.ambari.server.api.services.CredentialServiceTest this$0>
+org.apache.ambari.server.api.services.ResultImpl.getStatus : $r1 = r0.<org.apache.ambari.server.api.services.ResultImpl: org.apache.ambari.server.api.services.ResultStatus m_status>
+org.apache.ambari.server.api.services.CredentialServiceTest$TestCredentialService.getResultSerializer : $r1 = r0.<org.apache.ambari.server.api.services.CredentialServiceTest$TestCredentialService: org.apache.ambari.server.api.services.CredentialServiceTest this$0>
+org.apache.ambari.server.api.services.BaseServiceTest$ServiceTestInvocation.getRequestType : $r1 = r0.<org.apache.ambari.server.api.services.BaseServiceTest$ServiceTestInvocation: org.apache.ambari.server.api.services.Request$Type m_type>
+org.apache.ambari.server.api.services.BaseServiceTest.getUriInfo : $r1 = r0.<org.apache.ambari.server.api.services.BaseServiceTest: javax.ws.rs.core.UriInfo uriInfo>
+org.apache.ambari.server.api.services.BaseServiceTest.replayMocks : $r1 = newarray (java.lang.Object)[8]
+org.apache.ambari.server.api.services.ResultStatus.getStatus : $r1 = r0.<org.apache.ambari.server.api.services.ResultStatus: org.apache.ambari.server.api.services.ResultStatus$STATUS m_status>
+org.apache.ambari.server.api.services.CredentialServiceTest$TestCredentialService.createCredentialResource : $r3 = r0.<org.apache.ambari.server.api.services.CredentialServiceTest$TestCredentialService: org.apache.ambari.server.api.services.CredentialServiceTest this$0>
+org.apache.ambari.server.api.services.CredentialServiceTest$TestCredentialService.createCredentialResource : $r2 = r0.<org.apache.ambari.server.api.services.CredentialServiceTest$TestCredentialService: java.lang.String alias>
+org.apache.ambari.server.api.services.BaseServiceTest$ServiceTestInvocation.getBody : $r1 = r0.<org.apache.ambari.server.api.services.BaseServiceTest$ServiceTestInvocation: java.lang.String m_body>
+org.apache.ambari.server.api.services.BaseServiceTest.testMethod_bodyParseException : r2 = staticinvoke <org.easymock.EasyMock: org.easymock.Capture newCapture()>()
+org.apache.ambari.server.api.services.BaseServiceTest.testMethod_bodyParseException : specialinvoke r0.<org.apache.ambari.server.api.services.BaseServiceTest: void verifyAndResetMocks()>()
+org.apache.ambari.server.api.services.BaseServiceTest.testMethod_bodyParseException : $r18 = r0.<org.apache.ambari.server.api.services.BaseServiceTest: java.lang.Object serializedResult>
+org.apache.ambari.server.api.services.BaseServiceTest.testMethod_bodyParseException : specialinvoke r0.<org.apache.ambari.server.api.services.BaseServiceTest: void replayMocks()>()
+org.apache.ambari.server.api.services.BaseServiceTest.testMethod_bodyParseException : specialinvoke r0.<org.apache.ambari.server.api.services.BaseServiceTest: void addExpectForInitialRequest(org.apache.ambari.server.api.services.BaseServiceTest$ServiceTestInvocation)>(r1)
+org.apache.ambari.server.api.services.BaseServiceTest.testMethod_bodyParseException : $r6 = r0.<org.apache.ambari.server.api.services.BaseServiceTest: org.apache.ambari.server.api.services.parsers.RequestBodyParser bodyParser>
+org.apache.ambari.server.api.services.BaseServiceTest.testMethod_bodyParseException : $r5 = new org.apache.ambari.server.api.services.parsers.BodyParseException
+org.apache.ambari.server.api.services.BaseServiceTest.testMethod_bodyParseException : r4 = virtualinvoke r1.<org.apache.ambari.server.api.services.BaseServiceTest$ServiceTestInvocation: javax.ws.rs.core.Response invoke()>()
+org.apache.ambari.server.api.services.BaseServiceTest.testMethod_bodyParseException : $i0 = virtualinvoke r4.<javax.ws.rs.core.Response: int getStatus()>()
+org.apache.ambari.server.api.services.BaseServiceTest.testMethod_bodyParseException : $r11 = r0.<org.apache.ambari.server.api.services.BaseServiceTest: org.apache.ambari.server.api.services.serializers.ResultSerializer serializer>
+org.apache.ambari.server.api.services.CredentialService.getCredential : $r4 = <org.apache.ambari.server.api.services.Request$Type: org.apache.ambari.server.api.services.Request$Type GET>
+org.apache.ambari.server.api.services.BaseService.handleRequest : $r59 = virtualinvoke r57.<javax.ws.rs.core.Response$ResponseBuilder: javax.ws.rs.core.Response build()>()
+org.apache.ambari.server.api.services.BaseService.handleRequest : staticinvoke <org.apache.ambari.server.utils.RetryHelper: void clearAffectedClusters()>()
+org.apache.ambari.server.api.services.BaseService.handleRequest : $r19 = virtualinvoke r0.<org.apache.ambari.server.api.services.BaseService: org.apache.ambari.server.api.services.parsers.RequestBodyParser getBodyParser()>()
+org.apache.ambari.server.api.services.BaseService.handleRequest : $r24 = virtualinvoke r0.<org.apache.ambari.server.api.services.BaseService: org.apache.ambari.server.api.services.RequestFactory getRequestFactory()>()
+org.apache.ambari.server.api.services.BaseService.handleRequest : $r32 = <org.apache.ambari.server.api.services.BaseService: org.apache.ambari.server.audit.request.RequestAuditLogger requestAuditLogger>
+org.apache.ambari.server.api.services.BaseService.handleRequest : goto [?= (branch)]
+org.apache.ambari.server.api.services.BaseService.handleRequest : $r35 = new org.apache.ambari.server.api.services.ResultImpl
+org.apache.ambari.server.api.services.BaseService.handleRequest : $r54 = interfaceinvoke r10.<org.apache.ambari.server.api.services.Result: org.apache.ambari.server.api.services.ResultStatus getStatus()>()
+org.apache.ambari.server.api.services.BaseService.handleRequest : r34 = $r33
+org.apache.ambari.server.api.services.BaseService.handleRequest : $z3 = interfaceinvoke r11.<java.util.Set: boolean isEmpty()>()
+org.apache.ambari.server.api.services.BaseService.handleRequest : $z0 = interfaceinvoke r12.<java.util.Iterator: boolean hasNext()>()
+org.apache.ambari.server.api.services.BaseService.handleRequest : if r5 == null goto staticinvoke <org.apache.ambari.server.utils.RetryHelper: void clearAffectedClusters()>()
+org.apache.ambari.server.api.services.BaseService.handleRequest : $r25 = <org.apache.ambari.server.api.services.ResultStatus$STATUS: org.apache.ambari.server.api.services.ResultStatus$STATUS OK>
+org.apache.ambari.server.api.services.BaseService.handleRequest : $r45 = <org.apache.ambari.server.api.services.BaseService: org.apache.ambari.server.audit.request.RequestAuditLogger requestAuditLogger>
+org.apache.ambari.server.api.services.BaseService.handleRequest : $r7 = new org.apache.ambari.server.api.services.RequestBody
+org.apache.ambari.server.api.services.BaseService.handleRequest : if r5 != null goto $r52 = virtualinvoke r0.<org.apache.ambari.server.api.services.BaseService: org.apache.ambari.server.api.services.serializers.ResultSerializer getResultSerializer(javax.ws.rs.core.MediaType)>(r5)
+org.apache.ambari.server.api.services.BaseService.handleRequest : $r16 = new org.apache.ambari.server.api.services.ResultImpl
+org.apache.ambari.server.api.services.BaseService.handleRequest : $r23 = interfaceinvoke r12.<java.util.Iterator: java.lang.Object next()>()
+org.apache.ambari.server.api.services.BaseService.handleRequest : virtualinvoke r8.<org.apache.ambari.server.api.services.RequestBody: void setBody(java.lang.String)>(r2)
+org.apache.ambari.server.api.services.BaseService.handleRequest : r10 = interfaceinvoke r9.<org.apache.ambari.server.api.services.Request: org.apache.ambari.server.api.services.Result process()>()
+org.apache.ambari.server.api.services.BaseService.handleRequest : goto [?= staticinvoke <edu.washington.cs.dt.impact.util.Tracer: void trace(java.lang.String,java.lang.String)>("$z0 = interfaceinvoke r12.<java.util.Iterator: boolean hasNext()>()", "org.apache.ambari.server.api.services.BaseService.handleRequest")]
+org.apache.ambari.server.api.services.BaseService.handleRequest : r12 = interfaceinvoke r11.<java.util.Set: java.util.Iterator iterator()>()
+org.apache.ambari.server.api.services.BaseService.handleRequest : $r6 = virtualinvoke r0.<org.apache.ambari.server.api.services.BaseService: javax.ws.rs.core.Response handleRequest(javax.ws.rs.core.HttpHeaders,java.lang.String,javax.ws.rs.core.UriInfo,org.apache.ambari.server.api.services.Request$Type,javax.ws.rs.core.MediaType,org.apache.ambari.server.api.resources.ResourceInstance)>(r1, r2, r3, r4, null, r5)
+org.apache.ambari.server.api.services.BaseService.handleRequest : $r15 = virtualinvoke r0.<org.apache.ambari.server.api.services.BaseService: org.apache.ambari.server.api.services.RequestFactory getRequestFactory()>()
+org.apache.ambari.server.api.services.BaseService.handleRequest : $r39 = <org.apache.ambari.server.api.services.BaseService: org.slf4j.Logger LOG>
+org.apache.ambari.server.api.services.CredentialServiceTest$TestCredentialService.getBodyParser : $r1 = r0.<org.apache.ambari.server.api.services.CredentialServiceTest$TestCredentialService: org.apache.ambari.server.api.services.CredentialServiceTest this$0>
+org.apache.ambari.server.api.services.BaseServiceTest$ServiceTestInvocation.getStatusCode : $r1 = <org.apache.ambari.server.api.services.BaseServiceTest$ServiceTestInvocation: java.util.Map mapStatusCodes>
+org.apache.ambari.server.api.services.CredentialService.getCredentials : $r3 = <org.apache.ambari.server.api.services.Request$Type: org.apache.ambari.server.api.services.Request$Type GET>
+org.apache.ambari.server.api.services.BaseServiceTest.verifyAndResetMocks : $r10 = newarray (java.lang.Object)[8]
+org.apache.ambari.server.api.services.BaseServiceTest.verifyAndResetMocks : $r1 = newarray (java.lang.Object)[8]
+org.apache.ambari.server.api.services.BaseServiceTest.getTestResource : $r1 = r0.<org.apache.ambari.server.api.services.BaseServiceTest: org.apache.ambari.server.api.resources.ResourceInstance resourceInstance>
+org.apache.ambari.server.api.services.BaseService.init : <org.apache.ambari.server.api.services.BaseService: org.apache.ambari.server.audit.request.RequestAuditLogger requestAuditLogger> = r0
+org.apache.ambari.server.api.services.BaseServiceTest.getTestBodyParser : $r1 = r0.<org.apache.ambari.server.api.services.BaseServiceTest: org.apache.ambari.server.api.services.parsers.RequestBodyParser bodyParser>
+org.apache.ambari.server.api.services.BaseServiceTest.getTestResultSerializer : $r1 = r0.<org.apache.ambari.server.api.services.BaseServiceTest: org.apache.ambari.server.api.services.serializers.ResultSerializer serializer>
+org.apache.ambari.server.api.services.BaseServiceTest.testMethod : goto [?= virtualinvoke r0.<org.apache.ambari.server.api.services.BaseServiceTest: void assertCreateRequest(org.apache.ambari.server.api.services.BaseServiceTest$ServiceTestInvocation)>(r1)]
+org.apache.ambari.server.api.services.BaseServiceTest.testMethod : specialinvoke r0.<org.apache.ambari.server.api.services.BaseServiceTest: void verifyAndResetMocks()>()
+org.apache.ambari.server.api.services.BaseServiceTest.testMethod : specialinvoke r0.<org.apache.ambari.server.api.services.BaseServiceTest: void replayMocks()>()
+org.apache.ambari.server.api.services.BaseServiceTest.testMethod : $r16 = r0.<org.apache.ambari.server.api.services.BaseServiceTest: org.apache.ambari.server.api.services.Result result>
+org.apache.ambari.server.api.services.BaseServiceTest.testMethod : $r22 = r0.<org.apache.ambari.server.api.services.BaseServiceTest: org.apache.ambari.server.api.services.ResultStatus status>
+org.apache.ambari.server.api.services.BaseServiceTest.testMethod : $r35 = r0.<org.apache.ambari.server.api.services.BaseServiceTest: java.lang.Object serializedResult>
+org.apache.ambari.server.api.services.BaseServiceTest.testMethod : r34 = virtualinvoke r1.<org.apache.ambari.server.api.services.BaseServiceTest$ServiceTestInvocation: javax.ws.rs.core.Response invoke()>()
+org.apache.ambari.server.api.services.BaseServiceTest.testMethod : $r11 = r0.<org.apache.ambari.server.api.services.BaseServiceTest: org.apache.ambari.server.api.services.Request request>
+org.apache.ambari.server.api.services.BaseServiceTest.testMethod : virtualinvoke r0.<org.apache.ambari.server.api.services.BaseServiceTest: void assertCreateRequest(org.apache.ambari.server.api.services.BaseServiceTest$ServiceTestInvocation)>(r1)
+org.apache.ambari.server.api.services.BaseServiceTest.testMethod : $r3 = r0.<org.apache.ambari.server.api.services.BaseServiceTest: org.apache.ambari.server.api.services.parsers.RequestBodyParser bodyParser>
+org.apache.ambari.server.api.services.BaseServiceTest.testMethod : $i2 = virtualinvoke r1.<org.apache.ambari.server.api.services.BaseServiceTest$ServiceTestInvocation: int getStatusCode()>()
+org.apache.ambari.server.api.services.BaseServiceTest.testMethod : $r28 = r0.<org.apache.ambari.server.api.services.BaseServiceTest: org.apache.ambari.server.api.services.serializers.ResultSerializer serializer>
+org.apache.ambari.server.api.services.RequestBody.setBody : $r2 = r0.<org.apache.ambari.server.api.services.RequestBody: java.util.Map m_requestInfoProps>
+org.apache.ambari.server.api.services.RequestBody.setBody : if r1 == null goto return
+org.apache.ambari.server.api.services.RequestBody.setBody : r0.<org.apache.ambari.server.api.services.RequestBody: java.lang.String m_body> = r1
+org.apache.ambari.server.api.services.ResultStatus.getStatusCode : $r1 = r0.<org.apache.ambari.server.api.services.ResultStatus: org.apache.ambari.server.api.services.ResultStatus$STATUS m_status>
+org.apache.ambari.server.api.services.CredentialService.createCredential : $r5 = <org.apache.ambari.server.api.services.Request$Type: org.apache.ambari.server.api.services.Request$Type POST>
+org.apache.ambari.server.api.services.BaseServiceTest.assertCreateRequest : $r2 = r0.<org.apache.ambari.server.api.services.BaseServiceTest: org.apache.ambari.server.api.services.RequestFactory requestFactory>
+org.apache.ambari.server.api.services.BaseServiceTest.assertCreateRequest : specialinvoke r0.<org.apache.ambari.server.api.services.BaseServiceTest: void addExpectForInitialRequest(org.apache.ambari.server.api.services.BaseServiceTest$ServiceTestInvocation)>(r1)
+org.apache.ambari.server.api.services.BaseServiceTest.getHttpHeaders : $r1 = r0.<org.apache.ambari.server.api.services.BaseServiceTest: javax.ws.rs.core.HttpHeaders httpHeaders>
+org.apache.ambari.server.api.services.ResultStatus$STATUS.getStatus : $i0 = r0.<org.apache.ambari.server.api.services.ResultStatus$STATUS: int m_code>
+org.apache.ambari.server.utils.RetryHelper.clearAffectedClusters : $i0 = <org.apache.ambari.server.utils.RetryHelper: int operationsRetryAttempts>
+org.apache.ambari.server.api.services.BaseServiceTest.testMethod_resultInErrorState : goto [?= virtualinvoke r0.<org.apache.ambari.server.api.services.BaseServiceTest: void assertCreateRequest(org.apache.ambari.server.api.services.BaseServiceTest$ServiceTestInvocation)>(r1)]
+org.apache.ambari.server.api.services.BaseServiceTest.testMethod_resultInErrorState : specialinvoke r0.<org.apache.ambari.server.api.services.BaseServiceTest: void verifyAndResetMocks()>()
+org.apache.ambari.server.api.services.BaseServiceTest.testMethod_resultInErrorState : specialinvoke r0.<org.apache.ambari.server.api.services.BaseServiceTest: void replayMocks()>()
+org.apache.ambari.server.api.services.BaseServiceTest.testMethod_resultInErrorState : $r16 = r0.<org.apache.ambari.server.api.services.BaseServiceTest: org.apache.ambari.server.api.services.Result result>
+org.apache.ambari.server.api.services.BaseServiceTest.testMethod_resultInErrorState : $i1 = virtualinvoke r34.<javax.ws.rs.core.Response: int getStatus()>()
+org.apache.ambari.server.api.services.BaseServiceTest.testMethod_resultInErrorState : $r22 = r0.<org.apache.ambari.server.api.services.BaseServiceTest: org.apache.ambari.server.api.services.ResultStatus status>
+org.apache.ambari.server.api.services.BaseServiceTest.testMethod_resultInErrorState : $r35 = r0.<org.apache.ambari.server.api.services.BaseServiceTest: java.lang.Object serializedResult>
+org.apache.ambari.server.api.services.BaseServiceTest.testMethod_resultInErrorState : r34 = virtualinvoke r1.<org.apache.ambari.server.api.services.BaseServiceTest$ServiceTestInvocation: javax.ws.rs.core.Response invoke()>()
+org.apache.ambari.server.api.services.BaseServiceTest.testMethod_resultInErrorState : $r11 = r0.<org.apache.ambari.server.api.services.BaseServiceTest: org.apache.ambari.server.api.services.Request request>
+org.apache.ambari.server.api.services.BaseServiceTest.testMethod_resultInErrorState : virtualinvoke r0.<org.apache.ambari.server.api.services.BaseServiceTest: void assertCreateRequest(org.apache.ambari.server.api.services.BaseServiceTest$ServiceTestInvocation)>(r1)
+org.apache.ambari.server.api.services.BaseServiceTest.testMethod_resultInErrorState : $r3 = r0.<org.apache.ambari.server.api.services.BaseServiceTest: org.apache.ambari.server.api.services.parsers.RequestBodyParser bodyParser>
+org.apache.ambari.server.api.services.BaseServiceTest.testMethod_resultInErrorState : $r28 = r0.<org.apache.ambari.server.api.services.BaseServiceTest: org.apache.ambari.server.api.services.serializers.ResultSerializer serializer>
+org.apache.ambari.server.api.services.CredentialServiceTest.getTestInvocations : $r38 = virtualinvoke r37.<java.lang.Object: java.lang.Class getClass()>()
+org.apache.ambari.server.api.services.CredentialServiceTest.getTestInvocations : $r14 = new org.apache.ambari.server.api.services.CredentialServiceTest$TestCredentialService
+org.apache.ambari.server.api.services.CredentialServiceTest.getTestInvocations : $r1 = new java.util.ArrayList
+org.apache.ambari.server.api.services.CredentialServiceTest.getTestInvocations : $r6 = new org.apache.ambari.server.api.services.CredentialServiceTest$TestCredentialService
+org.apache.ambari.server.api.services.CredentialServiceTest.getTestInvocations : $r23 = new org.apache.ambari.server.api.services.BaseServiceTest$ServiceTestInvocation
+org.apache.ambari.server.api.services.CredentialServiceTest.getTestInvocations : $r19 = newarray (java.lang.Object)[2]
+org.apache.ambari.server.api.services.CredentialServiceTest.getTestInvocations : $r7 = virtualinvoke r3.<java.lang.Object: java.lang.Class getClass()>()
+org.apache.ambari.server.api.services.CredentialServiceTest.getTestInvocations : $r34 = new org.apache.ambari.server.api.services.BaseServiceTest$ServiceTestInvocation
+org.apache.ambari.server.api.services.CredentialServiceTest.getTestInvocations : $r25 = new org.apache.ambari.server.api.services.CredentialServiceTest$TestCredentialService
+org.apache.ambari.server.api.services.CredentialServiceTest.getTestInvocations : $r30 = newarray (java.lang.Object)[4]
+org.apache.ambari.server.api.services.CredentialServiceTest.getTestInvocations : $r9 = newarray (java.lang.Object)[3]
+org.apache.ambari.server.api.services.CredentialServiceTest.getTestInvocations : $r41 = newarray (java.lang.Object)[3]
+org.apache.ambari.server.api.services.CredentialServiceTest.getTestInvocations : $r45 = new org.apache.ambari.server.api.services.BaseServiceTest$ServiceTestInvocation
+org.apache.ambari.server.api.services.CredentialServiceTest.getTestInvocations : $r36 = new org.apache.ambari.server.api.services.CredentialServiceTest$TestCredentialService
+org.apache.ambari.server.api.services.CredentialServiceTest.getTestInvocations : return r2
+org.apache.ambari.server.api.services.CredentialServiceTest.getTestInvocations : $r12 = new org.apache.ambari.server.api.services.BaseServiceTest$ServiceTestInvocation
+org.apache.ambari.server.api.services.CredentialServiceTest.getTestInvocations : $r16 = virtualinvoke r15.<java.lang.Object: java.lang.Class getClass()>()
+org.apache.ambari.server.api.services.CredentialServiceTest.getTestInvocations : $r27 = virtualinvoke r26.<java.lang.Object: java.lang.Class getClass()>()
+org.apache.ambari.server.api.services.BaseServiceTest.addExpectForInitialRequest : $r2 = new org.apache.ambari.server.api.services.RequestBody
+org.apache.ambari.server.api.services.BaseServiceTest.addExpectForInitialRequest : $r4 = virtualinvoke r1.<org.apache.ambari.server.api.services.BaseServiceTest$ServiceTestInvocation: java.lang.String getBody()>()
+org.apache.ambari.server.api.services.BaseServiceTest.addExpectForInitialRequest : $r5 = r0.<org.apache.ambari.server.api.services.BaseServiceTest: org.apache.ambari.server.api.services.RequestFactory requestFactory>
+org.apache.ambari.server.api.services.CredentialService.deleteCredential : $r4 = <org.apache.ambari.server.api.services.Request$Type: org.apache.ambari.server.api.services.Request$Type DELETE>
+org.apache.ambari.server.api.services.BaseServiceTest.getTestRequestFactory : $r1 = r0.<org.apache.ambari.server.api.services.BaseServiceTest: org.apache.ambari.server.api.services.RequestFactory requestFactory>
+org.apache.ambari.server.api.services.BaseServiceTest$ServiceTestInvocation.invoke : $r1 = r0.<org.apache.ambari.server.api.services.BaseServiceTest$ServiceTestInvocation: java.lang.reflect.Method m_method>

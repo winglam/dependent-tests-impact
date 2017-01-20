@@ -1,0 +1,11 @@
+org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationFilter.loadJwtProperties : $r1 = r0.<org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationFilter: org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationProperties jwtProperties>
+org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationFilter.shouldApply : z0 = 0
+org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationFilter.shouldApply : $r3 = r0.<org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationFilter: org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationProperties jwtProperties>
+org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationFilter.shouldApply : return z0
+org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationFilterTest.generateKeyPair : virtualinvoke r0.<java.security.KeyPairGenerator: void initialize(int)>(512)
+org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationFilterTest.generateKeyPair : $r7 = virtualinvoke r6.<java.security.KeyPair: java.security.PrivateKey getPrivate()>()
+org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationFilterTest.generateKeyPair : $r4 = virtualinvoke r1.<java.security.KeyPair: java.security.PrivateKey getPrivate()>()
+org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationFilterTest.generateKeyPair : r1 = virtualinvoke r0.<java.security.KeyPairGenerator: java.security.KeyPair generateKeyPair()>()
+org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationFilterTest.generateKeyPair : r0 = staticinvoke <java.security.KeyPairGenerator: java.security.KeyPairGenerator getInstance(java.lang.String)>("RSA")
+org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationFilterTest.generateKeyPair : $r2 = virtualinvoke r1.<java.security.KeyPair: java.security.PublicKey getPublic()>()
+org.apache.ambari.server.security.authorization.jwt.JwtAuthenticationFilterTest.generateKeyPair : r6 = virtualinvoke r0.<java.security.KeyPairGenerator: java.security.KeyPair generateKeyPair()>()

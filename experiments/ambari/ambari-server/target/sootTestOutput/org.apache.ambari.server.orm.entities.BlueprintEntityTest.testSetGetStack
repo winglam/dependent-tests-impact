@@ -1,0 +1,6 @@
+org.apache.ambari.server.orm.entities.StackEntity.equals : return 1
+org.apache.ambari.server.orm.entities.StackEntity.equals : if r0 != r1 goto (branch)
+org.apache.ambari.server.orm.entities.StackEntity.setStackVersion : virtualinvoke r0.<org.apache.ambari.server.orm.entities.StackEntity: void _persistence_set_stackVersion(java.lang.String)>(r1)
+org.apache.ambari.server.orm.entities.BlueprintEntity.setStack : virtualinvoke r0.<org.apache.ambari.server.orm.entities.BlueprintEntity: void _persistence_set_stack(org.apache.ambari.server.orm.entities.StackEntity)>(r1)
+org.apache.ambari.server.orm.entities.BlueprintEntity.getStack : $r1 = virtualinvoke r0.<org.apache.ambari.server.orm.entities.BlueprintEntity: org.apache.ambari.server.orm.entities.StackEntity _persistence_get_stack()>()
+org.apache.ambari.server.orm.entities.StackEntity.setStackName : virtualinvoke r0.<org.apache.ambari.server.orm.entities.StackEntity: void _persistence_set_stackName(java.lang.String)>(r1)

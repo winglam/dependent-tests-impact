@@ -1,0 +1,21 @@
+org.apache.ambari.server.checks.ServicesTezDistributedCacheCheckTest.access$000 : $r1 = r0.<org.apache.ambari.server.checks.ServicesTezDistributedCacheCheckTest: org.apache.ambari.server.state.Clusters clusters>
+org.apache.ambari.server.checks.AbstractCheckDescriptor.isApplicable : $r11 = interfaceinvoke r3.<org.apache.ambari.server.state.Cluster: java.util.Map getServices()>()
+org.apache.ambari.server.checks.AbstractCheckDescriptor.isApplicable : if z0 == 0 goto $z3 = 0
+org.apache.ambari.server.checks.AbstractCheckDescriptor.isApplicable : return z1
+org.apache.ambari.server.checks.AbstractCheckDescriptor.isApplicable : z1 = 0
+org.apache.ambari.server.checks.AbstractCheckDescriptor.isApplicable : goto [?= return z1]
+org.apache.ambari.server.checks.AbstractCheckDescriptor.isApplicable : r5 = interfaceinvoke r2.<java.util.List: java.util.Iterator iterator()>()
+org.apache.ambari.server.checks.AbstractCheckDescriptor.isApplicable : goto [?= $z4 = interfaceinvoke r5.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.checks.AbstractCheckDescriptor.isApplicable : $r7 = r0.<org.apache.ambari.server.checks.AbstractCheckDescriptor: com.google.inject.Provider clustersProvider>
+org.apache.ambari.server.checks.AbstractCheckDescriptor.isApplicable : $z5 = interfaceinvoke r4.<java.util.Set: boolean contains(java.lang.Object)>(r6)
+org.apache.ambari.server.checks.AbstractCheckDescriptor.isApplicable : $z6 = interfaceinvoke r4.<java.util.Set: boolean contains(java.lang.Object)>(r6)
+org.apache.ambari.server.controller.PrereqCheckRequest.getResult : $r2 = r0.<org.apache.ambari.server.controller.PrereqCheckRequest: java.util.Map m_results>
+org.apache.ambari.server.checks.ServicesTezDistributedCacheCheck.isApplicable : return 1
+org.apache.ambari.server.checks.ServicesTezDistributedCacheCheck.isApplicable : return 0
+org.apache.ambari.server.checks.ServicesTezDistributedCacheCheck.isApplicable : if null == r2 goto return 1
+org.apache.ambari.server.checks.ServicesTezDistributedCacheCheck.isApplicable : $r5 = <org.apache.ambari.server.checks.CheckDescription: org.apache.ambari.server.checks.CheckDescription SERVICES_NAMENODE_HA>
+org.apache.ambari.server.checks.ServicesTezDistributedCacheCheck.isApplicable : $r3 = newarray (java.lang.String)[1]
+org.apache.ambari.server.controller.PrereqCheckRequest.addResult : $r3 = r0.<org.apache.ambari.server.controller.PrereqCheckRequest: java.util.Map m_results>
+org.apache.ambari.server.checks.ServicesTezDistributedCacheCheckTest$1.get : $r1 = virtualinvoke r0.<org.apache.ambari.server.checks.ServicesTezDistributedCacheCheckTest$1: org.apache.ambari.server.state.Clusters get()>()
+org.apache.ambari.server.checks.ServicesTezDistributedCacheCheckTest$1.get : $r1 = r0.<org.apache.ambari.server.checks.ServicesTezDistributedCacheCheckTest$1: org.apache.ambari.server.checks.ServicesTezDistributedCacheCheckTest this$0>
+org.apache.ambari.server.controller.PrereqCheckRequest.getClusterName : $r1 = r0.<org.apache.ambari.server.controller.PrereqCheckRequest: java.lang.String m_clusterName>

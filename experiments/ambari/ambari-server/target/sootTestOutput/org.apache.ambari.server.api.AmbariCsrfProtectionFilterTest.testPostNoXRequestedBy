@@ -1,0 +1,23 @@
+org.apache.ambari.server.api.services.ResultStatus.getStatus : $r1 = r0.<org.apache.ambari.server.api.services.ResultStatus: org.apache.ambari.server.api.services.ResultStatus$STATUS m_status>
+org.apache.ambari.server.api.services.serializers.JsonSerializer.createJsonGenerator : return r3
+org.apache.ambari.server.api.services.serializers.JsonSerializer.createJsonGenerator : $r5 = r0.<org.apache.ambari.server.api.services.serializers.JsonSerializer: org.codehaus.jackson.JsonFactory m_factory>
+org.apache.ambari.server.api.services.serializers.JsonSerializer.createJsonGenerator : virtualinvoke r3.<org.codehaus.jackson.JsonGenerator: org.codehaus.jackson.JsonGenerator setPrettyPrinter(org.codehaus.jackson.PrettyPrinter)>(r4)
+org.apache.ambari.server.api.services.serializers.JsonSerializer.createJsonGenerator : $r8 = new org.codehaus.jackson.util.DefaultPrettyPrinter
+org.apache.ambari.server.api.services.serializers.JsonSerializer.createJsonGenerator : $r9 = new org.codehaus.jackson.util.DefaultPrettyPrinter$Lf2SpacesIndenter
+org.apache.ambari.server.api.services.serializers.JsonSerializer.serializeError : $r9 = r0.<org.apache.ambari.server.api.services.serializers.JsonSerializer: org.codehaus.jackson.JsonGenerator m_generator>
+org.apache.ambari.server.api.services.serializers.JsonSerializer.serializeError : r2 = specialinvoke r0.<org.apache.ambari.server.api.services.serializers.JsonSerializer: java.io.ByteArrayOutputStream init()>()
+org.apache.ambari.server.api.services.serializers.JsonSerializer.serializeError : $r6 = r0.<org.apache.ambari.server.api.services.serializers.JsonSerializer: org.codehaus.jackson.JsonGenerator m_generator>
+org.apache.ambari.server.api.services.serializers.JsonSerializer.serializeError : $r10 = virtualinvoke r2.<java.io.ByteArrayOutputStream: java.lang.String toString(java.lang.String)>("UTF-8")
+org.apache.ambari.server.api.services.serializers.JsonSerializer.serializeError : $r4 = r0.<org.apache.ambari.server.api.services.serializers.JsonSerializer: org.codehaus.jackson.JsonGenerator m_generator>
+org.apache.ambari.server.api.services.serializers.JsonSerializer.serializeError : $r8 = r0.<org.apache.ambari.server.api.services.serializers.JsonSerializer: org.codehaus.jackson.JsonGenerator m_generator>
+org.apache.ambari.server.api.services.serializers.JsonSerializer.serializeError : $r3 = r0.<org.apache.ambari.server.api.services.serializers.JsonSerializer: org.codehaus.jackson.JsonGenerator m_generator>
+org.apache.ambari.server.api.services.ResultStatus.getMessage : $r1 = r0.<org.apache.ambari.server.api.services.ResultStatus: java.lang.String m_msg>
+org.apache.ambari.server.api.services.ResultStatus$STATUS.getStatus : $i0 = r0.<org.apache.ambari.server.api.services.ResultStatus$STATUS: int m_code>
+org.apache.ambari.server.api.AmbariCsrfProtectionFilter.filter : $r9 = new javax.ws.rs.WebApplicationException
+org.apache.ambari.server.api.AmbariCsrfProtectionFilter.filter : $r2 = <org.apache.ambari.server.api.AmbariCsrfProtectionFilter: java.util.Set IGNORED_METHODS>
+org.apache.ambari.server.api.services.serializers.JsonSerializer.init : $r6 = new org.codehaus.jackson.util.DefaultPrettyPrinter$Lf2SpacesIndenter
+org.apache.ambari.server.api.services.serializers.JsonSerializer.init : return r2
+org.apache.ambari.server.api.services.serializers.JsonSerializer.init : $r5 = new org.codehaus.jackson.util.DefaultPrettyPrinter
+org.apache.ambari.server.api.services.serializers.JsonSerializer.init : $r4 = specialinvoke r0.<org.apache.ambari.server.api.services.serializers.JsonSerializer: org.codehaus.jackson.JsonGenerator createJsonGenerator(java.io.ByteArrayOutputStream)>(r2)
+org.apache.ambari.server.api.services.serializers.JsonSerializer.init : $r1 = new java.io.ByteArrayOutputStream
+org.apache.ambari.server.api.services.serializers.JsonSerializer.init : $r7 = r0.<org.apache.ambari.server.api.services.serializers.JsonSerializer: org.codehaus.jackson.JsonGenerator m_generator>

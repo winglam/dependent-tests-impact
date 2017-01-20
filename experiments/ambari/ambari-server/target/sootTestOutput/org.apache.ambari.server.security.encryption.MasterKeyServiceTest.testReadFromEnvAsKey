@@ -1,0 +1,15 @@
+org.apache.ambari.server.security.encryption.MasterKeyServiceImpl.isMasterKeyInitialized : $r1 = r0.<org.apache.ambari.server.security.encryption.MasterKeyServiceImpl: char[] master>
+org.apache.ambari.server.security.encryption.MasterKeyServiceImpl.getMasterSecret : $r1 = r0.<org.apache.ambari.server.security.encryption.MasterKeyServiceImpl: char[] master>
+org.apache.ambari.server.security.encryption.MasterKeyServiceImpl.readMasterKey : if r2 == null goto return r1
+org.apache.ambari.server.security.encryption.MasterKeyServiceImpl.readMasterKey : r1 = null
+org.apache.ambari.server.security.encryption.MasterKeyServiceImpl.readMasterKey : if r1 == null goto $r7 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty MASTER_KEY_LOCATION>
+org.apache.ambari.server.security.encryption.MasterKeyServiceImpl.readMasterKey : $r6 = interfaceinvoke r2.<java.util.Map: java.lang.Object get(java.lang.Object)>("AMBARI_SECURITY_MASTER_KEY")
+org.apache.ambari.server.security.encryption.MasterKeyServiceImpl.readMasterKey : return r1
+org.apache.ambari.server.security.encryption.MasterKeyServiceImpl.readMasterKey : r2 = staticinvoke <java.lang.System: java.util.Map getenv()>()
+org.apache.ambari.server.security.encryption.AESEncryptor.getKeyFromPassword : r3 = null
+org.apache.ambari.server.security.encryption.AESEncryptor.getKeyFromPassword : return r3
+org.apache.ambari.server.security.encryption.AESEncryptor.getKeyFromPassword : $r6 = new javax.crypto.spec.PBEKeySpec
+org.apache.ambari.server.security.encryption.AESEncryptor.getKeyFromPassword : $r2 = r0.<org.apache.ambari.server.security.encryption.AESEncryptor: byte[] salt>
+org.apache.ambari.server.security.encryption.AESEncryptor.getKeyFromPassword : r4 = staticinvoke <javax.crypto.SecretKeyFactory: javax.crypto.SecretKeyFactory getInstance(java.lang.String)>("PBKDF2WithHmacSHA1")
+org.apache.ambari.server.security.encryption.AESEncryptor.getKeyFromPassword : r3 = virtualinvoke r4.<javax.crypto.SecretKeyFactory: javax.crypto.SecretKey generateSecret(java.security.spec.KeySpec)>(r5)
+org.apache.ambari.server.security.encryption.AESEncryptor.getKeyFromPassword : goto [?= return r3]

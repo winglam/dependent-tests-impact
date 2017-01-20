@@ -1,0 +1,33 @@
+org.apache.ambari.server.topology.TopologyManager.register : $r1 = r0.<org.apache.ambari.server.topology.TopologyManager: org.apache.ambari.server.events.publishers.AmbariEventPublisher ambariEventPublisher>
+org.apache.ambari.server.topology.TopologyManager.setPersistedState : $r1 = r0.<org.apache.ambari.server.topology.TopologyManager: org.apache.ambari.server.topology.AmbariContext ambariContext>
+org.apache.ambari.server.topology.AmbariContext.getPersistedTopologyState : $r1 = r0.<org.apache.ambari.server.topology.AmbariContext: org.apache.ambari.server.topology.PersistedState persistedState>
+org.apache.ambari.server.utils.StageUtilsTest$1.configure : $r4 = virtualinvoke r0.<org.apache.ambari.server.utils.StageUtilsTest$1: com.google.inject.binder.AnnotatedBindingBuilder bind(java.lang.Class)>(class "org/apache/ambari/server/orm/DBAccessor")
+org.apache.ambari.server.utils.StageUtilsTest$1.configure : $r31 = virtualinvoke r0.<org.apache.ambari.server.utils.StageUtilsTest$1: com.google.inject.binder.AnnotatedBindingBuilder bind(java.lang.Class)>(class "org/apache/ambari/server/stack/StackManagerFactory")
+org.apache.ambari.server.utils.StageUtilsTest$1.configure : $r50 = new com.google.inject.assistedinject.FactoryModuleBuilder
+org.apache.ambari.server.utils.StageUtilsTest$1.configure : $r47 = virtualinvoke r0.<org.apache.ambari.server.utils.StageUtilsTest$1: com.google.inject.binder.AnnotatedBindingBuilder bind(java.lang.Class)>(class "org/apache/ambari/server/orm/dao/HostRoleCommandDAO")
+org.apache.ambari.server.utils.StageUtilsTest$1.configure : $r13 = virtualinvoke r0.<org.apache.ambari.server.utils.StageUtilsTest$1: com.google.inject.binder.AnnotatedBindingBuilder bind(java.lang.Class)>(class "org/apache/ambari/server/security/SecurityHelper")
+org.apache.ambari.server.utils.StageUtilsTest$1.configure : $r7 = virtualinvoke r0.<org.apache.ambari.server.utils.StageUtilsTest$1: com.google.inject.binder.AnnotatedBindingBuilder bind(java.lang.Class)>(class "org/apache/ambari/server/state/cluster/ClusterFactory")
+org.apache.ambari.server.utils.StageUtilsTest$1.configure : $r16 = virtualinvoke r0.<org.apache.ambari.server.utils.StageUtilsTest$1: com.google.inject.binder.AnnotatedBindingBuilder bind(java.lang.Class)>(class "org/apache/ambari/server/state/stack/OsFamily")
+org.apache.ambari.server.utils.StageUtilsTest$1.configure : $r44 = virtualinvoke r0.<org.apache.ambari.server.utils.StageUtilsTest$1: com.google.inject.binder.AnnotatedBindingBuilder bind(java.lang.Class)>(class "org/apache/ambari/server/topology/PersistedState")
+org.apache.ambari.server.utils.StageUtilsTest$1.configure : $r41 = virtualinvoke r0.<org.apache.ambari.server.utils.StageUtilsTest$1: com.google.inject.binder.AnnotatedBindingBuilder bind(java.lang.Class)>(class "org/apache/ambari/server/orm/dao/HostDAO")
+org.apache.ambari.server.utils.StageUtilsTest$1.configure : $r28 = virtualinvoke r0.<org.apache.ambari.server.utils.StageUtilsTest$1: com.google.inject.binder.AnnotatedBindingBuilder bind(java.lang.Class)>(class "org/apache/ambari/server/state/Clusters")
+org.apache.ambari.server.utils.StageUtilsTest$1.configure : $r10 = virtualinvoke r0.<org.apache.ambari.server.utils.StageUtilsTest$1: com.google.inject.binder.AnnotatedBindingBuilder bind(java.lang.Class)>(class "org/apache/ambari/server/state/host/HostFactory")
+org.apache.ambari.server.utils.StageUtilsTest$1.configure : $r52 = new com.google.inject.assistedinject.FactoryModuleBuilder
+org.apache.ambari.server.utils.StageUtilsTest$1.configure : $r1 = virtualinvoke r0.<org.apache.ambari.server.utils.StageUtilsTest$1: com.google.inject.binder.AnnotatedBindingBuilder bind(java.lang.Class)>(class "javax/persistence/EntityManager")
+org.apache.ambari.server.utils.StageUtilsTest$1.configure : $r25 = virtualinvoke r0.<org.apache.ambari.server.utils.StageUtilsTest$1: com.google.inject.binder.AnnotatedBindingBuilder bind(java.lang.Class)>(class "org/apache/ambari/server/api/services/AmbariMetaInfo")
+org.apache.ambari.server.utils.StageUtilsTest$1.configure : $r22 = virtualinvoke r0.<org.apache.ambari.server.utils.StageUtilsTest$1: com.google.inject.binder.AnnotatedBindingBuilder bind(java.lang.Class)>(class "org/apache/ambari/server/topology/TopologyManager")
+org.apache.ambari.server.utils.StageUtilsTest$1.configure : $r37 = virtualinvoke r0.<org.apache.ambari.server.utils.StageUtilsTest$1: com.google.inject.binder.AnnotatedBindingBuilder bind(java.lang.Class)>(class "org/apache/ambari/server/actionmanager/StageFactory")
+org.apache.ambari.server.utils.StageUtilsTest$1.configure : $r34 = virtualinvoke r0.<org.apache.ambari.server.utils.StageUtilsTest$1: com.google.inject.binder.AnnotatedBindingBuilder bind(java.lang.Class)>(class "org/apache/ambari/server/state/ServiceComponentHostFactory")
+org.apache.ambari.server.utils.StageUtilsTest$1.configure : $r19 = virtualinvoke r0.<org.apache.ambari.server.utils.StageUtilsTest$1: com.google.inject.binder.AnnotatedBindingBuilder bind(java.lang.Class)>(class "org/apache/ambari/server/security/encryption/CredentialStoreService")
+org.apache.ambari.server.utils.StageUtilsTest$1.configure : $r39 = virtualinvoke r0.<org.apache.ambari.server.utils.StageUtilsTest$1: com.google.inject.binder.AnnotatedBindingBuilder bind(java.lang.Class)>(class "org/apache/ambari/server/actionmanager/HostRoleCommandFactory")
+org.apache.ambari.server.configuration.Configuration.readConfigFile : $r0 = new java.util.Properties
+org.apache.ambari.server.configuration.Configuration.readConfigFile : if r2 != null goto virtualinvoke r1.<java.util.Properties: void load(java.io.InputStream)>(r2)
+org.apache.ambari.server.configuration.Configuration.readConfigFile : $r6 = new java.lang.RuntimeException
+org.apache.ambari.server.configuration.Configuration.readConfigFile : $r4 = class "org/apache/ambari/server/configuration/Configuration"
+org.apache.ambari.server.utils.ShellCommandUtil.runCommand : if r1 == null goto $z1 = <org.apache.ambari.server.utils.ShellCommandUtil: boolean WINDOWS>
+org.apache.ambari.server.utils.ShellCommandUtil.runCommand : r14 = virtualinvoke r4.<java.lang.ProcessBuilder: java.lang.Process start()>()
+org.apache.ambari.server.utils.ShellCommandUtil.runCommand : if z0 == 0 goto r3 = r0
+org.apache.ambari.server.utils.ShellCommandUtil.runCommand : r3 = r0
+org.apache.ambari.server.utils.ShellCommandUtil.runCommand : $r12 = new java.lang.ProcessBuilder
+org.apache.ambari.server.utils.ShellCommandUtil.runCommand : $z1 = <org.apache.ambari.server.utils.ShellCommandUtil: boolean WINDOWS>
+org.apache.ambari.server.events.publishers.AmbariEventPublisher.register : $r2 = r0.<org.apache.ambari.server.events.publishers.AmbariEventPublisher: com.google.common.eventbus.EventBus m_eventBus>

@@ -1,0 +1,96 @@
+org.apache.ambari.server.controller.PrereqCheckRequest.setPrerequisiteCheckConfig : r0.<org.apache.ambari.server.controller.PrereqCheckRequest: org.apache.ambari.server.state.stack.UpgradePack$PrerequisiteCheckConfig m_prereqCheckConfig> = r1
+org.apache.ambari.server.checks.AbstractCheckDescriptor.getProperty : $r14 = virtualinvoke r7.<org.apache.ambari.server.state.DesiredConfig: java.lang.String getTag()>()
+org.apache.ambari.server.checks.AbstractCheckDescriptor.getProperty : r9 = interfaceinvoke r8.<org.apache.ambari.server.state.Config: java.util.Map getProperties()>()
+org.apache.ambari.server.checks.AbstractCheckDescriptor.getProperty : if null != r7 goto $r14 = virtualinvoke r7.<org.apache.ambari.server.state.DesiredConfig: java.lang.String getTag()>()
+org.apache.ambari.server.checks.AbstractCheckDescriptor.getProperty : r6 = interfaceinvoke r5.<org.apache.ambari.server.state.Cluster: java.util.Map getDesiredConfigs()>()
+org.apache.ambari.server.checks.AbstractCheckDescriptor.getProperty : $r10 = r0.<org.apache.ambari.server.checks.AbstractCheckDescriptor: com.google.inject.Provider clustersProvider>
+org.apache.ambari.server.checks.AbstractCheckDescriptor.getProperty : $r13 = interfaceinvoke r6.<java.util.Map: java.lang.Object get(java.lang.Object)>(r2)
+org.apache.ambari.server.checks.AbstractCheckDescriptor.getProperty : r4 = virtualinvoke r1.<org.apache.ambari.server.controller.PrereqCheckRequest: java.lang.String getClusterName()>()
+org.apache.ambari.server.checks.AbstractCheckDescriptor.getProperty : $r15 = interfaceinvoke r9.<java.util.Map: java.lang.Object get(java.lang.Object)>(r3)
+org.apache.ambari.server.checks.HiveDynamicServiceDiscoveryCheckTest.access$000 : $r1 = r0.<org.apache.ambari.server.checks.HiveDynamicServiceDiscoveryCheckTest: org.apache.ambari.server.state.Clusters m_clusters>
+org.apache.ambari.server.controller.PrereqCheckRequest.getTargetStackId : $r1 = r0.<org.apache.ambari.server.controller.PrereqCheckRequest: org.apache.ambari.server.state.StackId m_targetStackId>
+org.apache.ambari.server.utils.VersionUtils.compareVersions : $i0 = staticinvoke <org.apache.ambari.server.utils.VersionUtils: int compareVersions(java.lang.String,java.lang.String,int)>(r0, r1, 0)
+org.apache.ambari.server.utils.VersionUtils.compareVersions : $i21 = virtualinvoke r29.<java.lang.Integer: int intValue()>()
+org.apache.ambari.server.utils.VersionUtils.compareVersions : $i17 = interfaceinvoke r4.<java.util.List: int size()>()
+org.apache.ambari.server.utils.VersionUtils.compareVersions : $i12 = lengthof r2
+org.apache.ambari.server.utils.VersionUtils.compareVersions : $i6 = virtualinvoke r10.<java.lang.String: int indexOf(int)>(45)
+org.apache.ambari.server.utils.VersionUtils.compareVersions : $r16 = new java.util.ArrayList
+org.apache.ambari.server.utils.VersionUtils.compareVersions : $r30 = interfaceinvoke r5.<java.util.List: java.lang.Object get(int)>(i20)
+org.apache.ambari.server.utils.VersionUtils.compareVersions : $r28 = interfaceinvoke r4.<java.util.List: java.lang.Object get(int)>(i20)
+org.apache.ambari.server.utils.VersionUtils.compareVersions : return -1
+org.apache.ambari.server.utils.VersionUtils.compareVersions : if r1 != null goto r9 = staticinvoke <org.apache.commons.lang.StringUtils: java.lang.String trim(java.lang.String)>(r0)
+org.apache.ambari.server.utils.VersionUtils.compareVersions : r9 = staticinvoke <org.apache.commons.lang.StringUtils: java.lang.String trim(java.lang.String)>(r0)
+org.apache.ambari.server.utils.VersionUtils.compareVersions : $r14 = "${ambariVersion}"
+org.apache.ambari.server.utils.VersionUtils.compareVersions : $i4 = virtualinvoke r9.<java.lang.String: int indexOf(int)>(45)
+org.apache.ambari.server.utils.VersionUtils.compareVersions : $r19 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(i3)
+org.apache.ambari.server.utils.VersionUtils.compareVersions : i20 = 0
+org.apache.ambari.server.utils.VersionUtils.compareVersions : r10 = staticinvoke <org.apache.commons.lang.StringUtils: java.lang.String trim(java.lang.String)>(r1)
+org.apache.ambari.server.utils.VersionUtils.compareVersions : goto [?= $i14 = lengthof r3]
+org.apache.ambari.server.utils.VersionUtils.compareVersions : i2 = 0
+org.apache.ambari.server.utils.VersionUtils.compareVersions : $z1 = virtualinvoke r10.<java.lang.String: boolean isEmpty()>()
+org.apache.ambari.server.utils.VersionUtils.compareVersions : if i0 >= 0 goto $r14 = "${ambariVersion}"
+org.apache.ambari.server.utils.VersionUtils.compareVersions : $r17 = new java.util.ArrayList
+org.apache.ambari.server.utils.VersionUtils.compareVersions : if r0 != null goto (branch)
+org.apache.ambari.server.utils.VersionUtils.compareVersions : $i23 = virtualinvoke r29.<java.lang.Integer: int intValue()>()
+org.apache.ambari.server.utils.VersionUtils.compareVersions : return 1
+org.apache.ambari.server.utils.VersionUtils.compareVersions : r2 = virtualinvoke r9.<java.lang.String: java.lang.String[] split(java.lang.String)>("\\.")
+org.apache.ambari.server.utils.VersionUtils.compareVersions : $z0 = virtualinvoke r9.<java.lang.String: boolean isEmpty()>()
+org.apache.ambari.server.utils.VersionUtils.compareVersions : r3 = virtualinvoke r10.<java.lang.String: java.lang.String[] split(java.lang.String)>("\\.")
+org.apache.ambari.server.utils.VersionUtils.compareVersions : $i14 = lengthof r3
+org.apache.ambari.server.utils.VersionUtils.compareVersions : $i8 = lengthof r2
+org.apache.ambari.server.utils.VersionUtils.compareVersions : $r24 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(i16)
+org.apache.ambari.server.utils.VersionUtils.compareVersions : if i0 == 0 goto $i10 = i1
+org.apache.ambari.server.utils.VersionUtils.compareVersions : goto [?= i2 = i2 + 1]
+org.apache.ambari.server.state.stack.PrerequisiteCheck.getFailedOn : $r1 = r0.<org.apache.ambari.server.state.stack.PrerequisiteCheck: java.util.LinkedHashSet m_failedOn>
+org.apache.ambari.server.controller.PrereqCheckRequest.getSourceStackId : $r1 = r0.<org.apache.ambari.server.controller.PrereqCheckRequest: org.apache.ambari.server.state.StackId m_sourceStackId>
+org.apache.ambari.server.controller.PrereqCheckRequest.setSourceStackId : r0.<org.apache.ambari.server.controller.PrereqCheckRequest: org.apache.ambari.server.state.StackId m_sourceStackId> = r1
+org.apache.ambari.server.state.StackId.parseStackIdHelper : if r2 == null goto r1.<org.apache.ambari.server.state.StackId: java.lang.String stackName> = ""
+org.apache.ambari.server.state.StackId.parseStackIdHelper : $r8 = virtualinvoke r2.<java.lang.String: java.lang.String substring(int,int)>(0, i0)
+org.apache.ambari.server.state.StackId.parseStackIdHelper : i0 = virtualinvoke r2.<java.lang.String: int indexOf(int)>(45)
+org.apache.ambari.server.state.StackId.parseStackIdHelper : if i0 == -1 goto $r3 = new java.lang.RuntimeException
+org.apache.ambari.server.state.StackId.parseStackIdHelper : $i3 = i0 + 1
+org.apache.ambari.server.checks.HiveDynamicServiceDiscoveryCheckTest$1.get : $r1 = r0.<org.apache.ambari.server.checks.HiveDynamicServiceDiscoveryCheckTest$1: org.apache.ambari.server.checks.HiveDynamicServiceDiscoveryCheckTest this$0>
+org.apache.ambari.server.checks.HiveDynamicServiceDiscoveryCheckTest$1.get : $r1 = virtualinvoke r0.<org.apache.ambari.server.checks.HiveDynamicServiceDiscoveryCheckTest$1: org.apache.ambari.server.state.Clusters get()>()
+org.apache.ambari.server.checks.CheckDescription.getFail : $r2 = r0.<org.apache.ambari.server.checks.CheckDescription: java.util.Map m_fails>
+org.apache.ambari.server.state.stack.PrerequisiteCheck.setFailReason : r0.<org.apache.ambari.server.state.stack.PrerequisiteCheck: java.lang.String m_failReason> = r1
+org.apache.ambari.server.checks.HiveDynamicServiceDiscoveryCheck.perform : r11 = <org.apache.ambari.server.state.stack.PrereqCheckStatus: org.apache.ambari.server.state.stack.PrereqCheckStatus WARNING>
+org.apache.ambari.server.checks.HiveDynamicServiceDiscoveryCheck.perform : $r18 = virtualinvoke r0.<java.lang.Object: java.lang.Class getClass()>()
+org.apache.ambari.server.checks.HiveDynamicServiceDiscoveryCheck.perform : r7 = virtualinvoke r0.<org.apache.ambari.server.checks.HiveDynamicServiceDiscoveryCheck: java.lang.String getProperty(org.apache.ambari.server.controller.PrereqCheckRequest,java.lang.String,java.lang.String)>(r2, "hive-site", "hive.server2.zookeeper.namespace")
+org.apache.ambari.server.checks.HiveDynamicServiceDiscoveryCheck.perform : $z4 = staticinvoke <org.apache.commons.lang.StringUtils: boolean isBlank(java.lang.String)>(r7)
+org.apache.ambari.server.checks.HiveDynamicServiceDiscoveryCheck.perform : $r21 = staticinvoke <org.apache.commons.lang.StringUtils: java.lang.String join(java.util.Collection,java.lang.String)>(r4, " ")
+org.apache.ambari.server.checks.HiveDynamicServiceDiscoveryCheck.perform : r12 = virtualinvoke r8.<java.lang.String: java.lang.String[] split(java.lang.String)>("-")
+org.apache.ambari.server.checks.HiveDynamicServiceDiscoveryCheck.perform : $z2 = staticinvoke <org.apache.commons.lang.StringUtils: boolean isBlank(java.lang.String)>(r6)
+org.apache.ambari.server.checks.HiveDynamicServiceDiscoveryCheck.perform : r11 = <org.apache.ambari.server.state.stack.PrereqCheckStatus: org.apache.ambari.server.state.stack.PrereqCheckStatus FAIL>
+org.apache.ambari.server.checks.HiveDynamicServiceDiscoveryCheck.perform : $r17 = virtualinvoke r0.<org.apache.ambari.server.checks.HiveDynamicServiceDiscoveryCheck: java.lang.String getFailReason(java.lang.String,org.apache.ambari.server.state.stack.PrerequisiteCheck,org.apache.ambari.server.controller.PrereqCheckRequest)>("hive.dynamic-service.zk-namespace.key", r1, r2)
+org.apache.ambari.server.checks.HiveDynamicServiceDiscoveryCheck.perform : r6 = virtualinvoke r0.<org.apache.ambari.server.checks.HiveDynamicServiceDiscoveryCheck: java.lang.String getProperty(org.apache.ambari.server.controller.PrereqCheckRequest,java.lang.String,java.lang.String)>(r2, "hive-site", "hive.zookeeper.quorum")
+org.apache.ambari.server.checks.HiveDynamicServiceDiscoveryCheck.perform : $r23 = virtualinvoke r2.<org.apache.ambari.server.controller.PrereqCheckRequest: org.apache.ambari.server.state.StackId getSourceStackId()>()
+org.apache.ambari.server.checks.HiveDynamicServiceDiscoveryCheck.perform : r9 = virtualinvoke r2.<org.apache.ambari.server.controller.PrereqCheckRequest: org.apache.ambari.server.state.stack.UpgradePack$PrerequisiteCheckConfig getPrerequisiteCheckConfig()>()
+org.apache.ambari.server.checks.HiveDynamicServiceDiscoveryCheck.perform : if r9 == null goto (branch)
+org.apache.ambari.server.checks.HiveDynamicServiceDiscoveryCheck.perform : if r10 == null goto $z7 = interfaceinvoke r4.<java.util.List: boolean isEmpty()>()
+org.apache.ambari.server.checks.HiveDynamicServiceDiscoveryCheck.perform : r10 = null
+org.apache.ambari.server.checks.HiveDynamicServiceDiscoveryCheck.perform : $r22 = virtualinvoke r1.<org.apache.ambari.server.state.stack.PrerequisiteCheck: java.util.LinkedHashSet getFailedOn()>()
+org.apache.ambari.server.checks.HiveDynamicServiceDiscoveryCheck.perform : $r20 = interfaceinvoke r10.<java.util.Map: java.lang.Object get(java.lang.Object)>("min-failure-stack-version")
+org.apache.ambari.server.checks.HiveDynamicServiceDiscoveryCheck.perform : $r15 = virtualinvoke r0.<org.apache.ambari.server.checks.HiveDynamicServiceDiscoveryCheck: java.lang.String getFailReason(java.lang.String,org.apache.ambari.server.state.stack.PrerequisiteCheck,org.apache.ambari.server.controller.PrereqCheckRequest)>("hive.dynamic-service.discovery.enabled.key", r1, r2)
+org.apache.ambari.server.checks.HiveDynamicServiceDiscoveryCheck.perform : $r3 = new java.util.ArrayList
+org.apache.ambari.server.checks.HiveDynamicServiceDiscoveryCheck.perform : r5 = virtualinvoke r0.<org.apache.ambari.server.checks.HiveDynamicServiceDiscoveryCheck: java.lang.String getProperty(org.apache.ambari.server.controller.PrereqCheckRequest,java.lang.String,java.lang.String)>(r2, "hive-site", "hive.server2.support.dynamic.service.discovery")
+org.apache.ambari.server.checks.HiveDynamicServiceDiscoveryCheck.perform : $z7 = interfaceinvoke r4.<java.util.List: boolean isEmpty()>()
+org.apache.ambari.server.checks.HiveDynamicServiceDiscoveryCheck.perform : if null == r5 goto $r15 = virtualinvoke r0.<org.apache.ambari.server.checks.HiveDynamicServiceDiscoveryCheck: java.lang.String getFailReason(java.lang.String,org.apache.ambari.server.state.stack.PrerequisiteCheck,org.apache.ambari.server.controller.PrereqCheckRequest)>("hive.dynamic-service.discovery.enabled.key", r1, r2)
+org.apache.ambari.server.checks.HiveDynamicServiceDiscoveryCheck.perform : $r25 = virtualinvoke r2.<org.apache.ambari.server.controller.PrereqCheckRequest: org.apache.ambari.server.state.StackId getSourceStackId()>()
+org.apache.ambari.server.checks.HiveDynamicServiceDiscoveryCheck.perform : r8 = null
+org.apache.ambari.server.checks.HiveDynamicServiceDiscoveryCheck.perform : $i0 = lengthof r12
+org.apache.ambari.server.checks.HiveDynamicServiceDiscoveryCheck.perform : r13 = r12[0]
+org.apache.ambari.server.checks.HiveDynamicServiceDiscoveryCheck.perform : $r16 = virtualinvoke r0.<org.apache.ambari.server.checks.HiveDynamicServiceDiscoveryCheck: java.lang.String getFailReason(java.lang.String,org.apache.ambari.server.state.stack.PrerequisiteCheck,org.apache.ambari.server.controller.PrereqCheckRequest)>("hive.dynamic-service.discovery.zk-quorum.key", r1, r2)
+org.apache.ambari.server.checks.HiveDynamicServiceDiscoveryCheck.perform : if r8 == null goto virtualinvoke r1.<org.apache.ambari.server.state.stack.PrerequisiteCheck: void setStatus(org.apache.ambari.server.state.stack.PrereqCheckStatus)>(r11)
+org.apache.ambari.server.checks.HiveDynamicServiceDiscoveryCheck.perform : virtualinvoke r1.<org.apache.ambari.server.state.stack.PrerequisiteCheck: void setStatus(org.apache.ambari.server.state.stack.PrereqCheckStatus)>(r11)
+org.apache.ambari.server.checks.HiveDynamicServiceDiscoveryCheck.perform : r14 = r12[1]
+org.apache.ambari.server.state.StackId.getStackName : $r1 = r0.<org.apache.ambari.server.state.StackId: java.lang.String stackName>
+org.apache.ambari.server.state.stack.PrerequisiteCheck.getStatus : $r1 = r0.<org.apache.ambari.server.state.stack.PrerequisiteCheck: org.apache.ambari.server.state.stack.PrereqCheckStatus m_status>
+org.apache.ambari.server.state.StackId.getStackVersion : $r1 = r0.<org.apache.ambari.server.state.StackId: java.lang.String stackVersion>
+org.apache.ambari.server.controller.PrereqCheckRequest.getPrerequisiteCheckConfig : $r1 = r0.<org.apache.ambari.server.controller.PrereqCheckRequest: org.apache.ambari.server.state.stack.UpgradePack$PrerequisiteCheckConfig m_prereqCheckConfig>
+org.apache.ambari.server.controller.PrereqCheckRequest.setTargetStackId : r0.<org.apache.ambari.server.controller.PrereqCheckRequest: org.apache.ambari.server.state.StackId m_targetStackId> = r1
+org.apache.ambari.server.checks.AbstractCheckDescriptor.getFailReason : return r4
+org.apache.ambari.server.checks.AbstractCheckDescriptor.getFailReason : $r13 = r0.<org.apache.ambari.server.checks.AbstractCheckDescriptor: org.apache.ambari.server.checks.CheckDescription m_description>
+org.apache.ambari.server.checks.AbstractCheckDescriptor.getFailReason : $z1 = virtualinvoke r4.<java.lang.String: boolean contains(java.lang.CharSequence)>("{{fails}}")
+org.apache.ambari.server.checks.AbstractCheckDescriptor.getFailReason : $z0 = virtualinvoke r4.<java.lang.String: boolean contains(java.lang.CharSequence)>("{{version}}")
+org.apache.ambari.server.state.stack.PrerequisiteCheck.setStatus : r0.<org.apache.ambari.server.state.stack.PrerequisiteCheck: org.apache.ambari.server.state.stack.PrereqCheckStatus m_status> = r1
+org.apache.ambari.server.controller.PrereqCheckRequest.getClusterName : $r1 = r0.<org.apache.ambari.server.controller.PrereqCheckRequest: java.lang.String m_clusterName>

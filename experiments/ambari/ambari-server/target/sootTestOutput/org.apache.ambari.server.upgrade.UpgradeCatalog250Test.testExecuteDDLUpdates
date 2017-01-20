@@ -1,0 +1,130 @@
+org.apache.ambari.server.upgrade.UpgradeCatalog250Test$1.configure : $r11 = interfaceinvoke r1.<com.google.inject.Binder: com.google.inject.binder.AnnotatedBindingBuilder bind(java.lang.Class)>(class "org/apache/ambari/server/configuration/Configuration")
+org.apache.ambari.server.upgrade.UpgradeCatalog250Test$1.configure : $r5 = interfaceinvoke r1.<com.google.inject.Binder: com.google.inject.binder.AnnotatedBindingBuilder bind(java.lang.Class)>(class "org/apache/ambari/server/state/stack/OsFamily")
+org.apache.ambari.server.upgrade.UpgradeCatalog250Test$1.configure : $r2 = interfaceinvoke r1.<com.google.inject.Binder: com.google.inject.binder.AnnotatedBindingBuilder bind(java.lang.Class)>(class "org/apache/ambari/server/orm/DBAccessor")
+org.apache.ambari.server.upgrade.UpgradeCatalog250Test$1.configure : $r8 = interfaceinvoke r1.<com.google.inject.Binder: com.google.inject.binder.AnnotatedBindingBuilder bind(java.lang.Class)>(class "javax/persistence/EntityManager")
+org.apache.ambari.server.configuration.Configuration.loadSSLParams : $r15 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty SSL_TRUSTSTORE_TYPE>
+org.apache.ambari.server.configuration.Configuration.loadSSLParams : $r1 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty SSL_TRUSTSTORE_PATH>
+org.apache.ambari.server.configuration.Configuration.loadSSLParams : $r7 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty SSL_TRUSTSTORE_PASSWORD>
+org.apache.ambari.server.upgrade.UpgradeCatalog250.updateHostComponentDesiredStateTable : $z1 = interfaceinvoke r3.<java.sql.ResultSet: boolean next()>()
+org.apache.ambari.server.upgrade.UpgradeCatalog250.updateHostComponentDesiredStateTable : r3 = null
+org.apache.ambari.server.upgrade.UpgradeCatalog250.updateHostComponentDesiredStateTable : r2 = null
+org.apache.ambari.server.upgrade.UpgradeCatalog250.updateHostComponentDesiredStateTable : if null != r30 goto $r35 = r0.<org.apache.ambari.server.upgrade.UpgradeCatalog250: org.apache.ambari.server.orm.DBAccessor dbAccessor>
+org.apache.ambari.server.upgrade.UpgradeCatalog250.updateHostComponentDesiredStateTable : $r15 = new java.util.concurrent.atomic.AtomicLong
+org.apache.ambari.server.upgrade.UpgradeCatalog250.updateHostComponentDesiredStateTable : $l3 = virtualinvoke r1.<java.util.concurrent.atomic.AtomicLong: long get()>()
+org.apache.ambari.server.upgrade.UpgradeCatalog250.updateHostComponentDesiredStateTable : goto [?= (branch)]
+org.apache.ambari.server.upgrade.UpgradeCatalog250.updateHostComponentDesiredStateTable : $r13 = r0.<org.apache.ambari.server.upgrade.UpgradeCatalog250: org.apache.ambari.server.orm.DBAccessor dbAccessor>
+org.apache.ambari.server.upgrade.UpgradeCatalog250.updateHostComponentDesiredStateTable : $r38 = r0.<org.apache.ambari.server.upgrade.UpgradeCatalog250: org.apache.ambari.server.orm.DBAccessor dbAccessor>
+org.apache.ambari.server.upgrade.UpgradeCatalog250.updateHostComponentDesiredStateTable : $r16 = r0.<org.apache.ambari.server.upgrade.UpgradeCatalog250: org.apache.ambari.server.orm.DBAccessor dbAccessor>
+org.apache.ambari.server.upgrade.UpgradeCatalog250.updateHostComponentDesiredStateTable : $r11 = r0.<org.apache.ambari.server.upgrade.UpgradeCatalog250: org.apache.ambari.server.orm.DBAccessor dbAccessor>
+org.apache.ambari.server.upgrade.UpgradeCatalog250.updateHostComponentDesiredStateTable : $r29 = r0.<org.apache.ambari.server.upgrade.UpgradeCatalog250: org.apache.ambari.server.orm.DBAccessor dbAccessor>
+org.apache.ambari.server.upgrade.UpgradeCatalog250.updateHostComponentDesiredStateTable : staticinvoke <org.springframework.jdbc.support.JdbcUtils: void closeResultSet(java.sql.ResultSet)>(r3)
+org.apache.ambari.server.upgrade.UpgradeCatalog250.updateHostComponentDesiredStateTable : $r18 = newarray (java.lang.Object)[1]
+org.apache.ambari.server.upgrade.UpgradeCatalog250.updateHostComponentDesiredStateTable : $r26 = r0.<org.apache.ambari.server.upgrade.UpgradeCatalog250: org.apache.ambari.server.configuration.Configuration configuration>
+org.apache.ambari.server.upgrade.UpgradeCatalog250.updateHostComponentDesiredStateTable : staticinvoke <org.springframework.jdbc.support.JdbcUtils: void closeStatement(java.sql.Statement)>(r2)
+org.apache.ambari.server.upgrade.UpgradeCatalog250.updateHostComponentDesiredStateTable : $r36 = r0.<org.apache.ambari.server.upgrade.UpgradeCatalog250: org.apache.ambari.server.orm.DBAccessor dbAccessor>
+org.apache.ambari.server.upgrade.UpgradeCatalog250.updateHostComponentDesiredStateTable : $r24 = r0.<org.apache.ambari.server.upgrade.UpgradeCatalog250: org.apache.ambari.server.orm.DBAccessor dbAccessor>
+org.apache.ambari.server.upgrade.UpgradeCatalog250.updateHostComponentDesiredStateTable : n0 = null
+org.apache.ambari.server.upgrade.UpgradeCatalog250.updateHostComponentDesiredStateTable : $r28 = <org.apache.ambari.server.upgrade.UpgradeCatalog250$1: int[] $SwitchMap$org$apache$ambari$server$configuration$Configuration$DatabaseType>
+org.apache.ambari.server.upgrade.UpgradeCatalog250.updateHostComponentDesiredStateTable : r3 = interfaceinvoke r2.<java.sql.Statement: java.sql.ResultSet executeQuery(java.lang.String)>(r4)
+org.apache.ambari.server.upgrade.UpgradeCatalog250.updateHostComponentDesiredStateTable : goto [?= $r24 = r0.<org.apache.ambari.server.upgrade.UpgradeCatalog250: org.apache.ambari.server.orm.DBAccessor dbAccessor>]
+org.apache.ambari.server.upgrade.UpgradeCatalog250.updateHostComponentDesiredStateTable : $r34 = <org.apache.ambari.server.upgrade.UpgradeCatalog250: org.slf4j.Logger LOG>
+org.apache.ambari.server.upgrade.UpgradeCatalog250.updateHostComponentDesiredStateTable : if r2 == null goto staticinvoke <org.springframework.jdbc.support.JdbcUtils: void closeResultSet(java.sql.ResultSet)>(r3)
+org.apache.ambari.server.upgrade.AbstractUpgradeCatalog.addSequence : $z1 = interfaceinvoke r4.<java.sql.ResultSet: boolean next()>()
+org.apache.ambari.server.upgrade.AbstractUpgradeCatalog.addSequence : r3 = null
+org.apache.ambari.server.upgrade.AbstractUpgradeCatalog.addSequence : if r4 == null goto (branch)
+org.apache.ambari.server.upgrade.AbstractUpgradeCatalog.addSequence : $r15 = <org.apache.ambari.server.upgrade.AbstractUpgradeCatalog: org.slf4j.Logger LOG>
+org.apache.ambari.server.upgrade.AbstractUpgradeCatalog.addSequence : r4 = null
+org.apache.ambari.server.upgrade.AbstractUpgradeCatalog.addSequence : $r6 = r0.<org.apache.ambari.server.upgrade.AbstractUpgradeCatalog: org.apache.ambari.server.orm.DBAccessor dbAccessor>
+org.apache.ambari.server.upgrade.AbstractUpgradeCatalog.addSequence : interfaceinvoke r4.<java.sql.ResultSet: void close()>()
+org.apache.ambari.server.upgrade.AbstractUpgradeCatalog.addSequence : interfaceinvoke r3.<java.sql.Statement: void close()>()
+org.apache.ambari.server.upgrade.AbstractUpgradeCatalog.addSequence : if r3 == null goto return
+org.apache.ambari.server.upgrade.AbstractUpgradeCatalog.addSequence : $r8 = newarray (java.lang.Object)[2]
+org.apache.ambari.server.upgrade.AbstractUpgradeCatalog.addSequence : if r3 == null goto (branch)
+org.apache.ambari.server.configuration.Configuration$ConfigurationProperty.getKey : $r1 = r0.<org.apache.ambari.server.configuration.Configuration$ConfigurationProperty: java.lang.String m_key>
+org.apache.ambari.server.configuration.Configuration$ConfigurationProperty.getDefaultValue : $r1 = r0.<org.apache.ambari.server.configuration.Configuration$ConfigurationProperty: java.lang.Object m_defaultValue>
+org.apache.ambari.server.orm.DBAccessor$DBColumnInfo.getLength : $r1 = r0.<org.apache.ambari.server.orm.DBAccessor$DBColumnInfo: java.lang.Integer length>
+org.apache.ambari.server.orm.DBAccessor$DBColumnInfo.getDefaultValue : $r1 = r0.<org.apache.ambari.server.orm.DBAccessor$DBColumnInfo: java.lang.Object defaultValue>
+org.apache.ambari.server.orm.DBAccessor$DBColumnInfo.getType : $r1 = r0.<org.apache.ambari.server.orm.DBAccessor$DBColumnInfo: java.lang.Class type>
+org.apache.ambari.server.upgrade.UpgradeCatalog240Test.classSetUp : $r1 = newarray (com.google.inject.Module)[1]
+org.apache.ambari.server.upgrade.UpgradeCatalog250.createComponentVersionTable : $r4 = new org.apache.ambari.server.orm.DBAccessor$DBColumnInfo
+org.apache.ambari.server.upgrade.UpgradeCatalog250.createComponentVersionTable : $r7 = new org.apache.ambari.server.orm.DBAccessor$DBColumnInfo
+org.apache.ambari.server.upgrade.UpgradeCatalog250.createComponentVersionTable : $r1 = new java.util.ArrayList
+org.apache.ambari.server.upgrade.UpgradeCatalog250.createComponentVersionTable : $r16 = r0.<org.apache.ambari.server.upgrade.UpgradeCatalog250: org.apache.ambari.server.orm.DBAccessor dbAccessor>
+org.apache.ambari.server.upgrade.UpgradeCatalog250.createComponentVersionTable : $r11 = r0.<org.apache.ambari.server.upgrade.UpgradeCatalog250: org.apache.ambari.server.orm.DBAccessor dbAccessor>
+org.apache.ambari.server.upgrade.UpgradeCatalog250.createComponentVersionTable : $r9 = new org.apache.ambari.server.orm.DBAccessor$DBColumnInfo
+org.apache.ambari.server.upgrade.UpgradeCatalog250.createComponentVersionTable : $r15 = r0.<org.apache.ambari.server.upgrade.UpgradeCatalog250: org.apache.ambari.server.orm.DBAccessor dbAccessor>
+org.apache.ambari.server.upgrade.UpgradeCatalog250.createComponentVersionTable : $r13 = r0.<org.apache.ambari.server.upgrade.UpgradeCatalog250: org.apache.ambari.server.orm.DBAccessor dbAccessor>
+org.apache.ambari.server.upgrade.UpgradeCatalog250.createComponentVersionTable : $r3 = <org.apache.ambari.server.upgrade.UpgradeCatalog250: org.slf4j.Logger LOG>
+org.apache.ambari.server.upgrade.UpgradeCatalog250.createComponentVersionTable : $r5 = new org.apache.ambari.server.orm.DBAccessor$DBColumnInfo
+org.apache.ambari.server.upgrade.UpgradeCatalog250.createComponentVersionTable : $r17 = staticinvoke <java.lang.Long: java.lang.Long valueOf(long)>(0L)
+org.apache.ambari.server.upgrade.UpgradeCatalog250.createComponentVersionTable : $r6 = new org.apache.ambari.server.orm.DBAccessor$DBColumnInfo
+org.apache.ambari.server.orm.DBAccessor$DBColumnInfo.isNullable : $z0 = r0.<org.apache.ambari.server.orm.DBAccessor$DBColumnInfo: boolean isNullable>
+org.apache.ambari.server.configuration.Configuration$DatabaseType.values : $r0 = <org.apache.ambari.server.configuration.Configuration$DatabaseType: org.apache.ambari.server.configuration.Configuration$DatabaseType[] $VALUES>
+org.apache.ambari.server.upgrade.UpgradeCatalog250.updateHostVersionTable : $r1 = <org.apache.ambari.server.upgrade.UpgradeCatalog250: org.slf4j.Logger LOG>
+org.apache.ambari.server.upgrade.UpgradeCatalog250.updateHostVersionTable : $r2 = r0.<org.apache.ambari.server.upgrade.UpgradeCatalog250: org.apache.ambari.server.orm.DBAccessor dbAccessor>
+org.apache.ambari.server.configuration.Configuration.getApiSSLAuthentication : $r1 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty API_USE_SSL>
+org.apache.ambari.server.state.stack.OsFamily.init : r2 = null
+org.apache.ambari.server.state.stack.OsFamily.init : $r24 = new java.lang.RuntimeException
+org.apache.ambari.server.state.stack.OsFamily.init : $r8 = new java.io.File
+org.apache.ambari.server.state.stack.OsFamily.init : $r9 = new java.lang.Exception
+org.apache.ambari.server.state.stack.OsFamily.init : r19 = $r18
+org.apache.ambari.server.state.stack.OsFamily.init : $z0 = virtualinvoke r3.<java.io.File: boolean exists()>()
+org.apache.ambari.server.state.stack.OsFamily.init : $r20 = r0.<org.apache.ambari.server.state.stack.OsFamily: org.slf4j.Logger LOG>
+org.apache.ambari.server.controller.HostsMap.setupMap : $r11 = r0.<org.apache.ambari.server.controller.HostsMap: java.lang.String hostsMapFile>
+org.apache.ambari.server.controller.HostsMap.setupMap : r1 = null
+org.apache.ambari.server.controller.HostsMap.setupMap : if r1 == null goto return
+org.apache.ambari.server.controller.HostsMap.setupMap : $r6 = <org.apache.ambari.server.controller.HostsMap: org.slf4j.Logger LOG>
+org.apache.ambari.server.upgrade.UpgradeCatalog250Test.access$200 : $r1 = r0.<org.apache.ambari.server.upgrade.UpgradeCatalog250Test: javax.persistence.EntityManager entityManager>
+org.apache.ambari.server.upgrade.UpgradeCatalog250.getTargetVersion : return "2.5.0"
+org.apache.ambari.server.upgrade.UpgradeCatalog250Test.access$000 : $r1 = r0.<org.apache.ambari.server.upgrade.UpgradeCatalog250Test: org.apache.ambari.server.orm.DBAccessor dbAccessor>
+org.apache.ambari.server.upgrade.UpgradeCatalog250.updateGroupsTable : $r1 = <org.apache.ambari.server.upgrade.UpgradeCatalog250: org.slf4j.Logger LOG>
+org.apache.ambari.server.upgrade.UpgradeCatalog250.updateGroupsTable : $r5 = r0.<org.apache.ambari.server.upgrade.UpgradeCatalog250: org.apache.ambari.server.orm.DBAccessor dbAccessor>
+org.apache.ambari.server.upgrade.UpgradeCatalog250.updateGroupsTable : $r4 = r0.<org.apache.ambari.server.upgrade.UpgradeCatalog250: org.apache.ambari.server.orm.DBAccessor dbAccessor>
+org.apache.ambari.server.upgrade.UpgradeCatalog250.updateGroupsTable : $r2 = r0.<org.apache.ambari.server.upgrade.UpgradeCatalog250: org.apache.ambari.server.orm.DBAccessor dbAccessor>
+org.apache.ambari.server.configuration.Configuration$DatabaseType.getName : $r1 = r0.<org.apache.ambari.server.configuration.Configuration$DatabaseType: java.lang.String m_databaseType>
+org.apache.ambari.server.security.authentication.kerberos.AmbariKerberosAuthenticationProperties.isKerberosAuthenticationEnabled : $z0 = r0.<org.apache.ambari.server.security.authentication.kerberos.AmbariKerberosAuthenticationProperties: boolean kerberosAuthenticationEnabled>
+org.apache.ambari.server.configuration.Configuration.getSharedResourcesDirPath : $r1 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty SHARED_RESOURCES_DIR>
+org.apache.ambari.server.orm.InMemoryDefaultTestModule.configure : $r52 = r0.<org.apache.ambari.server.orm.InMemoryDefaultTestModule: java.util.Properties properties>
+org.apache.ambari.server.orm.InMemoryDefaultTestModule.configure : $r34 = r0.<org.apache.ambari.server.orm.InMemoryDefaultTestModule: java.util.Properties properties>
+org.apache.ambari.server.orm.InMemoryDefaultTestModule.configure : $r59 = newarray (com.google.inject.Module)[1]
+org.apache.ambari.server.orm.InMemoryDefaultTestModule.configure : $r20 = r0.<org.apache.ambari.server.orm.InMemoryDefaultTestModule: java.util.Properties properties>
+org.apache.ambari.server.orm.InMemoryDefaultTestModule.configure : $r38 = r0.<org.apache.ambari.server.orm.InMemoryDefaultTestModule: java.util.Properties properties>
+org.apache.ambari.server.orm.InMemoryDefaultTestModule.configure : r74 = $r73
+org.apache.ambari.server.orm.InMemoryDefaultTestModule.configure : $r17 = r0.<org.apache.ambari.server.orm.InMemoryDefaultTestModule: java.util.Properties properties>
+org.apache.ambari.server.orm.InMemoryDefaultTestModule.configure : $r24 = r0.<org.apache.ambari.server.orm.InMemoryDefaultTestModule: java.util.Properties properties>
+org.apache.ambari.server.orm.InMemoryDefaultTestModule.configure : r4 = "src/test/resources/"
+org.apache.ambari.server.orm.InMemoryDefaultTestModule.configure : $r8 = staticinvoke <java.lang.System: java.lang.String getProperty(java.lang.String)>("os.name")
+org.apache.ambari.server.orm.InMemoryDefaultTestModule.configure : $r27 = r0.<org.apache.ambari.server.orm.InMemoryDefaultTestModule: java.util.Properties properties>
+org.apache.ambari.server.orm.InMemoryDefaultTestModule.configure : r1 = "src/test/resources/stacks"
+org.apache.ambari.server.orm.InMemoryDefaultTestModule.configure : $r55 = r0.<org.apache.ambari.server.orm.InMemoryDefaultTestModule: java.util.Properties properties>
+org.apache.ambari.server.orm.InMemoryDefaultTestModule.configure : $r41 = r0.<org.apache.ambari.server.orm.InMemoryDefaultTestModule: java.util.Properties properties>
+org.apache.ambari.server.orm.InMemoryDefaultTestModule.configure : $r75 = new java.lang.RuntimeException
+org.apache.ambari.server.orm.InMemoryDefaultTestModule.configure : $r31 = r0.<org.apache.ambari.server.orm.InMemoryDefaultTestModule: java.util.Properties properties>
+org.apache.ambari.server.orm.InMemoryDefaultTestModule.configure : r3 = "src/test/resources/"
+org.apache.ambari.server.orm.InMemoryDefaultTestModule.configure : $r45 = r0.<org.apache.ambari.server.orm.InMemoryDefaultTestModule: java.util.Properties properties>
+org.apache.ambari.server.orm.InMemoryDefaultTestModule.configure : $r48 = r0.<org.apache.ambari.server.orm.InMemoryDefaultTestModule: java.util.Properties properties>
+org.apache.ambari.server.orm.InMemoryDefaultTestModule.configure : r2 = "src/test/resources/version"
+org.apache.ambari.server.upgrade.AbstractUpgradeCatalog.registerCatalog : $r2 = <org.apache.ambari.server.upgrade.AbstractUpgradeCatalog: java.util.Map upgradeCatalogMap>
+org.apache.ambari.server.upgrade.UpgradeCatalog250.updateServiceDesiredStateTable : $r4 = r0.<org.apache.ambari.server.upgrade.UpgradeCatalog250: org.apache.ambari.server.orm.DBAccessor dbAccessor>
+org.apache.ambari.server.upgrade.UpgradeCatalog250.updateServiceDesiredStateTable : $r2 = r0.<org.apache.ambari.server.upgrade.UpgradeCatalog250: org.apache.ambari.server.orm.DBAccessor dbAccessor>
+org.apache.ambari.server.configuration.Configuration.getHostsMapFile : $r1 = <org.apache.ambari.server.configuration.Configuration: org.slf4j.Logger LOG>
+org.apache.ambari.server.configuration.Configuration.getHostsMapFile : $r8 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty SRVR_HOSTS_MAPPING>
+org.apache.ambari.server.state.SecurityState.values : $r0 = <org.apache.ambari.server.state.SecurityState: org.apache.ambari.server.state.SecurityState[] $VALUES>
+org.apache.ambari.server.upgrade.UpgradeCatalog250.executeDDLUpdates : specialinvoke r0.<org.apache.ambari.server.upgrade.UpgradeCatalog250: void createComponentVersionTable()>()
+org.apache.ambari.server.upgrade.UpgradeCatalog250.executeDDLUpdates : virtualinvoke r0.<org.apache.ambari.server.upgrade.UpgradeCatalog250: void updateGroupsTable()>()
+org.apache.ambari.server.upgrade.UpgradeCatalog250.executeDDLUpdates : $r3 = r0.<org.apache.ambari.server.upgrade.UpgradeCatalog250: org.apache.ambari.server.orm.DBAccessor dbAccessor>
+org.apache.ambari.server.upgrade.UpgradeCatalog250.executeDDLUpdates : virtualinvoke r0.<org.apache.ambari.server.upgrade.UpgradeCatalog250: void updateHostVersionTable()>()
+org.apache.ambari.server.upgrade.UpgradeCatalog250.executeDDLUpdates : specialinvoke r0.<org.apache.ambari.server.upgrade.UpgradeCatalog250: void updateServiceDesiredStateTable()>()
+org.apache.ambari.server.upgrade.UpgradeCatalog250.executeDDLUpdates : specialinvoke r0.<org.apache.ambari.server.upgrade.UpgradeCatalog250: void updateHostComponentDesiredStateTable()>()
+org.apache.ambari.server.security.authentication.kerberos.AmbariKerberosAuthenticationProperties.setKerberosAuthenticationEnabled : r0.<org.apache.ambari.server.security.authentication.kerberos.AmbariKerberosAuthenticationProperties: boolean kerberosAuthenticationEnabled> = z0
+org.apache.ambari.server.configuration.Configuration.createKerberosAuthenticationProperties : $r3 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty KERBEROS_AUTH_ENABLED>
+org.apache.ambari.server.configuration.Configuration.createKerberosAuthenticationProperties : return r2
+org.apache.ambari.server.configuration.Configuration.createKerberosAuthenticationProperties : $z1 = virtualinvoke r2.<org.apache.ambari.server.security.authentication.kerberos.AmbariKerberosAuthenticationProperties: boolean isKerberosAuthenticationEnabled()>()
+org.apache.ambari.server.configuration.Configuration.createKerberosAuthenticationProperties : $r1 = new org.apache.ambari.server.security.authentication.kerberos.AmbariKerberosAuthenticationProperties
+org.apache.ambari.server.configuration.Configuration.getProperty : r2 = null
+org.apache.ambari.server.configuration.Configuration.getProperty : $r4 = virtualinvoke r1.<org.apache.ambari.server.configuration.Configuration$ConfigurationProperty: java.lang.Object getDefaultValue()>()
+org.apache.ambari.server.configuration.Configuration.getProperty : $r5 = r0.<org.apache.ambari.server.configuration.Configuration: java.util.Properties properties>
+org.apache.ambari.server.configuration.Configuration.getProperty : $r3 = virtualinvoke r1.<org.apache.ambari.server.configuration.Configuration$ConfigurationProperty: java.lang.Object getDefaultValue()>()
+org.apache.ambari.server.upgrade.UpgradeCatalog250Test.access$100 : $r1 = r0.<org.apache.ambari.server.upgrade.UpgradeCatalog250Test: org.apache.ambari.server.state.stack.OsFamily osFamily>
+org.apache.ambari.server.upgrade.UpgradeCatalog250Test.access$300 : $r1 = r0.<org.apache.ambari.server.upgrade.UpgradeCatalog250Test: org.apache.ambari.server.configuration.Configuration configuration>
+org.apache.ambari.server.orm.DBAccessor$DBColumnInfo.getName : $r1 = r0.<org.apache.ambari.server.orm.DBAccessor$DBColumnInfo: java.lang.String name>

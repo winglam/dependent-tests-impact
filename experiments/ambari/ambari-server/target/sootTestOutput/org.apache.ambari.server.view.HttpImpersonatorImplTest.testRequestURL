@@ -1,0 +1,21 @@
+org.apache.ambari.server.view.HttpImpersonatorImpl.requestURL : r4 = ""
+org.apache.ambari.server.view.HttpImpersonatorImpl.requestURL : virtualinvoke r9.<java.io.BufferedReader: void close()>()
+org.apache.ambari.server.view.HttpImpersonatorImpl.requestURL : goto [?= return r4]
+org.apache.ambari.server.view.HttpImpersonatorImpl.requestURL : r6 = interfaceinvoke r3.<org.apache.ambari.view.ImpersonatorSetting: java.lang.String getUsername()>()
+org.apache.ambari.server.view.HttpImpersonatorImpl.requestURL : $r11 = virtualinvoke r1.<java.lang.String: java.lang.String toLowerCase()>()
+org.apache.ambari.server.view.HttpImpersonatorImpl.requestURL : r8 = virtualinvoke r26.<java.net.HttpURLConnection: java.io.InputStream getInputStream()>()
+org.apache.ambari.server.view.HttpImpersonatorImpl.requestURL : $r24 = r0.<org.apache.ambari.server.view.HttpImpersonatorImpl: org.apache.ambari.server.controller.internal.URLStreamProvider urlStreamProvider>
+org.apache.ambari.server.view.HttpImpersonatorImpl.requestURL : $r29 = new java.lang.StringBuilder
+org.apache.ambari.server.view.HttpImpersonatorImpl.requestURL : $i1 = <org.apache.ambari.server.proxy.ProxyService: int HTTP_ERROR_RANGE_START>
+org.apache.ambari.server.view.HttpImpersonatorImpl.requestURL : $r20 = new org.apache.http.client.utils.URIBuilder
+org.apache.ambari.server.view.HttpImpersonatorImpl.requestURL : i0 = virtualinvoke r26.<java.net.HttpURLConnection: int getResponseCode()>()
+org.apache.ambari.server.view.HttpImpersonatorImpl.requestURL : r10 = virtualinvoke r9.<java.io.BufferedReader: java.lang.String readLine()>()
+org.apache.ambari.server.view.HttpImpersonatorImpl.requestURL : return r4
+org.apache.ambari.server.view.HttpImpersonatorImpl.requestURL : if r6 == null goto $r24 = r0.<org.apache.ambari.server.view.HttpImpersonatorImpl: org.apache.ambari.server.controller.internal.URLStreamProvider urlStreamProvider>
+org.apache.ambari.server.view.HttpImpersonatorImpl.requestURL : if r10 == null goto virtualinvoke r9.<java.io.BufferedReader: void close()>()
+org.apache.ambari.server.view.HttpImpersonatorImpl.requestURL : $r23 = virtualinvoke r7.<org.apache.http.client.utils.URIBuilder: java.net.URI build()>()
+org.apache.ambari.server.view.HttpImpersonatorImpl.requestURL : $r27 = new java.io.BufferedReader
+org.apache.ambari.server.view.HttpImpersonatorImpl.requestURL : $r21 = interfaceinvoke r3.<org.apache.ambari.view.ImpersonatorSetting: java.lang.String getDoAsParamName()>()
+org.apache.ambari.server.view.HttpImpersonatorImpl.requestURL : if r9 == null goto (branch)
+org.apache.ambari.server.view.ImpersonatorSettingImpl.getDoAsParamName : $r1 = r0.<org.apache.ambari.server.view.ImpersonatorSettingImpl: java.lang.String doAsParamName>
+org.apache.ambari.server.view.ImpersonatorSettingImpl.getUsername : $r1 = r0.<org.apache.ambari.server.view.ImpersonatorSettingImpl: java.lang.String username>

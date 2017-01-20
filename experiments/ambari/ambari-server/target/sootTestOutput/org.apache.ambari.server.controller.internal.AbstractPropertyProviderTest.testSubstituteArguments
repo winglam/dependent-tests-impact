@@ -1,0 +1,42 @@
+org.apache.ambari.server.controller.internal.AbstractPropertyProvider.addArgument : $r6 = <java.lang.Integer: java.lang.Class TYPE>
+org.apache.ambari.server.controller.internal.AbstractPropertyProvider.addArgument : $i4 = staticinvoke <java.lang.Integer: int parseInt(java.lang.String)>(r3)
+org.apache.ambari.server.controller.internal.AbstractPropertyProvider.addArgument : interfaceinvoke r1.<java.util.List: boolean add(java.lang.Object)>(r4)
+org.apache.ambari.server.controller.internal.AbstractPropertyProvider.addArgument : r3 = virtualinvoke r0.<java.lang.String: java.lang.String substring(int,int)>(i0, i1)
+org.apache.ambari.server.controller.internal.AbstractPropertyProvider.addArgument : $z0 = virtualinvoke r3.<java.lang.String: boolean contains(java.lang.CharSequence)>("\"")
+org.apache.ambari.server.controller.internal.AbstractPropertyProvider.addArgument : $i2 = virtualinvoke r3.<java.lang.String: int length()>()
+org.apache.ambari.server.controller.internal.AbstractPropertyProvider.addArgument : interfaceinvoke r2.<java.util.List: boolean add(java.lang.Object)>(class "java/lang/String")
+org.apache.ambari.server.controller.internal.AbstractPropertyProvider.substituteArgument : $z1 = virtualinvoke r15.<java.util.regex.Matcher: boolean find()>()
+org.apache.ambari.server.controller.internal.AbstractPropertyProvider.substituteArgument : $z2 = virtualinvoke r10.<java.util.regex.Matcher: boolean find()>()
+org.apache.ambari.server.controller.internal.AbstractPropertyProvider.substituteArgument : $r13 = <org.apache.ambari.server.controller.internal.AbstractPropertyProvider: java.util.regex.Pattern CHECK_FOR_METRIC_ARGUMENT_METHODS_REGEX>
+org.apache.ambari.server.controller.internal.AbstractPropertyProvider.substituteArgument : $z0 = virtualinvoke r5.<java.util.regex.Matcher: boolean find()>()
+org.apache.ambari.server.controller.internal.AbstractPropertyProvider.substituteArgument : if r2 != null goto $r12 = r2
+org.apache.ambari.server.controller.internal.AbstractPropertyProvider.substituteArgument : $r14 = <org.apache.ambari.server.controller.internal.AbstractPropertyProvider: java.util.regex.Pattern FIND_ARGUMENT_METHOD_REGEX>
+org.apache.ambari.server.controller.internal.AbstractPropertyProvider.substituteArgument : goto [?= (branch)]
+org.apache.ambari.server.controller.internal.AbstractPropertyProvider.substituteArgument : i2 = staticinvoke <org.apache.ambari.server.controller.internal.AbstractPropertyProvider: int indexOfClosingParenthesis(java.lang.String,int)>(r1, i1)
+org.apache.ambari.server.controller.internal.AbstractPropertyProvider.substituteArgument : $r18 = <org.apache.ambari.server.controller.internal.AbstractPropertyProvider: java.util.regex.Pattern FIND_ARGUMENT_METHOD_ARGUMENTS_REGEX>
+org.apache.ambari.server.controller.internal.AbstractPropertyProvider.substituteArgument : $r29 = virtualinvoke r0.<java.lang.String: java.lang.String replace(java.lang.CharSequence,java.lang.CharSequence)>(r1, r3)
+org.apache.ambari.server.controller.internal.AbstractPropertyProvider.substituteArgument : $r16 = new java.util.LinkedList
+org.apache.ambari.server.controller.internal.AbstractPropertyProvider.substituteArgument : $i8 = i1 + 1
+org.apache.ambari.server.controller.internal.AbstractPropertyProvider.substituteArgument : r3 = staticinvoke <org.apache.ambari.server.controller.internal.AbstractPropertyProvider: java.lang.String invokeArgumentMethod(java.lang.String,java.lang.String,java.util.List,java.util.List)>(r3, r6, r8, r9)
+org.apache.ambari.server.controller.internal.AbstractPropertyProvider.substituteArgument : r4 = virtualinvoke r0.<java.lang.String: java.lang.String substring(int)>(i0)
+org.apache.ambari.server.controller.internal.AbstractPropertyProvider.substituteArgument : $i3 = virtualinvoke r5.<java.util.regex.Matcher: int start()>()
+org.apache.ambari.server.controller.internal.AbstractPropertyProvider.substituteArgument : i0 = virtualinvoke r0.<java.lang.String: int indexOf(java.lang.String)>(r1)
+org.apache.ambari.server.controller.internal.AbstractPropertyProvider.substituteArgument : goto [?= staticinvoke <edu.washington.cs.dt.impact.util.Tracer: void trace(java.lang.String,java.lang.String)>("$z1 = virtualinvoke r15.<java.util.regex.Matcher: boolean find()>()", "org.apache.ambari.server.controller.internal.AbstractPropertyProvider.substituteArgument")]
+org.apache.ambari.server.controller.internal.AbstractPropertyProvider.substituteArgument : if i0 <= -1 goto $r30 = new java.lang.IllegalArgumentException
+org.apache.ambari.server.controller.internal.AbstractPropertyProvider.substituteArgument : $i9 = virtualinvoke r10.<java.util.regex.Matcher: int start()>()
+org.apache.ambari.server.controller.internal.AbstractPropertyProvider.substituteArgument : $i5 = virtualinvoke r15.<java.util.regex.Matcher: int start()>()
+org.apache.ambari.server.controller.internal.AbstractPropertyProvider.substituteArgument : $i6 = virtualinvoke r15.<java.util.regex.Matcher: int start()>()
+org.apache.ambari.server.controller.internal.AbstractPropertyProvider.substituteArgument : $r17 = new java.util.LinkedList
+org.apache.ambari.server.controller.internal.AbstractPropertyProvider.substituteArgument : $z3 = virtualinvoke r3.<java.lang.String: boolean equals(java.lang.Object)>(r2)
+org.apache.ambari.server.controller.internal.AbstractPropertyProvider.indexOfClosingParenthesis : i1 = i1 + -1
+org.apache.ambari.server.controller.internal.AbstractPropertyProvider.indexOfClosingParenthesis : if i0 >= i2 goto return -1
+org.apache.ambari.server.controller.internal.AbstractPropertyProvider.indexOfClosingParenthesis : if c3 != 41 goto (branch)
+org.apache.ambari.server.controller.internal.AbstractPropertyProvider.indexOfClosingParenthesis : return i0
+org.apache.ambari.server.controller.internal.AbstractPropertyProvider.indexOfClosingParenthesis : if c3 != 40 goto (branch)
+org.apache.ambari.server.controller.internal.AbstractPropertyProvider.indexOfClosingParenthesis : $i4 = i0
+org.apache.ambari.server.controller.internal.AbstractPropertyProvider.indexOfClosingParenthesis : i1 = i1 + 1
+org.apache.ambari.server.controller.internal.AbstractPropertyProvider.indexOfClosingParenthesis : i1 = 0
+org.apache.ambari.server.controller.internal.AbstractPropertyProvider.indexOfClosingParenthesis : i2 = virtualinvoke r0.<java.lang.String: int length()>()
+org.apache.ambari.server.controller.internal.AbstractPropertyProvider.indexOfClosingParenthesis : goto [?= staticinvoke <edu.washington.cs.dt.impact.util.Tracer: void trace(java.lang.String,java.lang.String)>("if i0 >= i2 goto return -1", "org.apache.ambari.server.controller.internal.AbstractPropertyProvider.indexOfClosingParenthesis")]
+org.apache.ambari.server.controller.internal.AbstractPropertyProvider.invokeArgumentMethod : $i1 = interfaceinvoke r2.<java.util.List: int size()>()
+org.apache.ambari.server.controller.internal.AbstractPropertyProvider.invokeArgumentMethod : $r4 = class "java/lang/String"

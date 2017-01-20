@@ -1,0 +1,10 @@
+org.apache.ambari.server.controller.spi.Resource$Type.equals : return 1
+org.apache.ambari.server.controller.spi.Resource$Type.equals : if r0 != r1 goto (branch)
+org.apache.ambari.server.security.authorization.internal.InternalAuthenticationToken.setAuthenticated : r0.<org.apache.ambari.server.security.authorization.internal.InternalAuthenticationToken: boolean authenticated> = z0
+org.apache.ambari.server.controller.AmbariManagementControllerImpl.getClientHostForRunningAction : $r5 = <org.apache.ambari.server.controller.spi.Resource$Type: org.apache.ambari.server.controller.spi.Resource$Type Cluster>
+org.apache.ambari.server.controller.AmbariManagementControllerImpl.getClientHostForRunningAction : if r3 == null goto return null
+org.apache.ambari.server.controller.AmbariManagementControllerImpl.getClientHostForRunningAction : $r7 = interfaceinvoke r3.<org.apache.ambari.server.state.ServiceComponent: java.util.Map getServiceComponentHosts()>()
+org.apache.ambari.server.controller.AmbariManagementControllerImpl.getClientHostForRunningAction : $r8 = virtualinvoke r0.<org.apache.ambari.server.controller.AmbariManagementControllerImpl: java.lang.String getHealthyHost(java.util.Set)>(r4)
+org.apache.ambari.server.controller.AmbariManagementControllerImplTest.setupAuthentication : virtualinvoke r1.<org.apache.ambari.server.security.authorization.internal.InternalAuthenticationToken: void setAuthenticated(boolean)>(1)
+org.apache.ambari.server.controller.AmbariManagementControllerImplTest.setupAuthentication : $r2 = staticinvoke <org.springframework.security.core.context.SecurityContextHolder: org.springframework.security.core.context.SecurityContext getContext()>()
+org.apache.ambari.server.controller.AmbariManagementControllerImplTest.setupAuthentication : $r0 = new org.apache.ambari.server.security.authorization.internal.InternalAuthenticationToken

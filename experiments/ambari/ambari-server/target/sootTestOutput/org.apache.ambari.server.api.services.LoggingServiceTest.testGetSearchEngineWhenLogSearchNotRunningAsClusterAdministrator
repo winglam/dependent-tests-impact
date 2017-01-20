@@ -1,0 +1,141 @@
+org.apache.ambari.server.api.services.LoggingService.getClusterResourceId : $r4 = r0.<org.apache.ambari.server.api.services.LoggingService: org.apache.ambari.server.api.services.LoggingService$ControllerFactory controllerFactory>
+org.apache.ambari.server.api.services.LoggingService.getClusterResourceId : r1 = null
+org.apache.ambari.server.api.services.LoggingService.getClusterResourceId : r1 = interfaceinvoke r2.<org.apache.ambari.server.state.Cluster: java.lang.Long getResourceId()>()
+org.apache.ambari.server.api.services.LoggingService.getClusterResourceId : if r2 != null goto r1 = interfaceinvoke r2.<org.apache.ambari.server.state.Cluster: java.lang.Long getResourceId()>()
+org.apache.ambari.server.api.services.LoggingService.getClusterResourceId : $r3 = r0.<org.apache.ambari.server.api.services.LoggingService: java.lang.String clusterName>
+org.apache.ambari.server.api.services.LoggingService.getClusterResourceId : goto [?= return r1]
+org.apache.ambari.server.api.services.LoggingService.getClusterResourceId : return r1
+org.apache.ambari.server.orm.entities.RoleAuthorizationEntity.setAuthorizationName : virtualinvoke r0.<org.apache.ambari.server.orm.entities.RoleAuthorizationEntity: void _persistence_set_authorizationName(java.lang.String)>(r1)
+org.apache.ambari.server.orm.entities.RoleAuthorizationEntity.getAuthorizationId : $r1 = virtualinvoke r0.<org.apache.ambari.server.orm.entities.RoleAuthorizationEntity: java.lang.String _persistence_get_authorizationId()>()
+org.apache.ambari.server.orm.entities.PrivilegeEntity.getPermission : $r1 = virtualinvoke r0.<org.apache.ambari.server.orm.entities.PrivilegeEntity: org.apache.ambari.server.orm.entities.PermissionEntity _persistence_get_permission()>()
+org.apache.ambari.server.security.TestAuthenticationFactory.createRoleAuthorizationEntity : $r1 = new org.apache.ambari.server.orm.entities.RoleAuthorizationEntity
+org.apache.ambari.server.security.TestAuthenticationFactory.createRoleAuthorizationEntity : return r2
+org.apache.ambari.server.security.TestAuthenticationFactory.createRoleAuthorizationEntity : $r3 = virtualinvoke r0.<org.apache.ambari.server.security.authorization.RoleAuthorization: java.lang.String getId()>()
+org.apache.ambari.server.security.TestAuthenticationFactory.createRoleAuthorizationEntity : $r4 = virtualinvoke r0.<org.apache.ambari.server.security.authorization.RoleAuthorization: java.lang.String name()>()
+org.apache.ambari.server.api.services.LoggingService.getSearchEngine : $r8 = <javax.ws.rs.core.MediaType: javax.ws.rs.core.MediaType TEXT_PLAIN_TYPE>
+org.apache.ambari.server.api.services.LoggingService.getSearchEngine : $r4 = <org.apache.ambari.server.security.authorization.ResourceType: org.apache.ambari.server.security.authorization.ResourceType CLUSTER>
+org.apache.ambari.server.security.authorization.ResourceType.valueOf : $r1 = staticinvoke <java.lang.Enum: java.lang.Enum valueOf(java.lang.Class,java.lang.String)>(class "org/apache/ambari/server/security/authorization/ResourceType", r0)
+org.apache.ambari.server.security.authorization.AuthorizationHelperInitializer.viewInstanceDAOReturningNull : $r4 = interfaceinvoke r0.<com.google.inject.Provider: java.lang.Object get()>()
+org.apache.ambari.server.security.authorization.AuthorizationHelperInitializer.viewInstanceDAOReturningNull : $r2 = staticinvoke <org.easymock.EasyMock: java.lang.Object createNiceMock(java.lang.Class)>(class "com/google/inject/Provider")
+org.apache.ambari.server.security.authorization.AuthorizationHelperInitializer.viewInstanceDAOReturningNull : $r3 = staticinvoke <org.easymock.EasyMock: java.lang.Object createNiceMock(java.lang.Class)>(class "org/apache/ambari/server/orm/dao/ViewInstanceDAO")
+org.apache.ambari.server.security.authorization.AuthorizationHelperInitializer.viewInstanceDAOReturningNull : $l0 = staticinvoke <org.easymock.EasyMock: long anyLong()>()
+org.apache.ambari.server.security.authorization.AuthorizationHelperInitializer.viewInstanceDAOReturningNull : $r12 = newarray (java.lang.Object)[2]
+org.apache.ambari.server.security.authorization.AuthorizationHelperInitializer.viewInstanceDAOReturningNull : <org.apache.ambari.server.security.authorization.AuthorizationHelper: com.google.inject.Provider viewInstanceDAOProvider> = r0
+org.apache.ambari.server.security.authorization.AmbariGrantedAuthority.getPrivilegeEntity : $r1 = r0.<org.apache.ambari.server.security.authorization.AmbariGrantedAuthority: org.apache.ambari.server.orm.entities.PrivilegeEntity privilegeEntity>
+org.apache.ambari.server.security.TestAuthenticationFactory.createClusterAdministratorGrantedAuthority : $r1 = new org.apache.ambari.server.security.authorization.AmbariGrantedAuthority
+org.apache.ambari.server.orm.entities.ResourceEntity.setId : virtualinvoke r0.<org.apache.ambari.server.orm.entities.ResourceEntity: void _persistence_set_id(java.lang.Long)>(r1)
+org.apache.ambari.server.orm.entities.ResourceTypeEntity.setId : virtualinvoke r0.<org.apache.ambari.server.orm.entities.ResourceTypeEntity: void _persistence_set_id(java.lang.Integer)>(r1)
+org.apache.ambari.server.security.authorization.RoleAuthorization.translate : if r0 != null goto r1 = virtualinvoke r0.<java.lang.String: java.lang.String trim()>()
+org.apache.ambari.server.security.authorization.RoleAuthorization.translate : $r2 = virtualinvoke r1.<java.lang.String: java.lang.String replace(java.lang.CharSequence,java.lang.CharSequence)>(".", "_")
+org.apache.ambari.server.security.authorization.RoleAuthorization.translate : r1 = virtualinvoke r0.<java.lang.String: java.lang.String trim()>()
+org.apache.ambari.server.security.authorization.RoleAuthorization.translate : $z0 = virtualinvoke r1.<java.lang.String: boolean isEmpty()>()
+org.apache.ambari.server.security.authorization.AuthorizationHelper.getAuthentication : if r0 != null goto $r1 = interfaceinvoke r0.<org.springframework.security.core.context.SecurityContext: org.springframework.security.core.Authentication getAuthentication()>()
+org.apache.ambari.server.security.authorization.AuthorizationHelper.getAuthentication : r0 = staticinvoke <org.springframework.security.core.context.SecurityContextHolder: org.springframework.security.core.context.SecurityContext getContext()>()
+org.apache.ambari.server.security.TestAuthenticationFactory.createClusterAdministratorPrivilegeEntity : $r1 = new org.apache.ambari.server.orm.entities.PrivilegeEntity
+org.apache.ambari.server.security.TestAuthenticationFactory.createClusterAdministratorPrivilegeEntity : return r2
+org.apache.ambari.server.security.TestAuthenticationFactory.createClusterAdministratorPrivilegeEntity : $r4 = staticinvoke <org.apache.ambari.server.security.TestAuthenticationFactory: org.apache.ambari.server.orm.entities.PermissionEntity createClusterAdministratorPermission()>()
+org.apache.ambari.server.security.TestAuthenticationFactory.createClusterAdministratorPrivilegeEntity : $r3 = staticinvoke <org.apache.ambari.server.security.TestAuthenticationFactory: org.apache.ambari.server.orm.entities.ResourceEntity createClusterResourceEntity(java.lang.Long)>(r0)
+org.apache.ambari.server.orm.entities.PermissionEntity.getAuthorizations : $r1 = virtualinvoke r0.<org.apache.ambari.server.orm.entities.PermissionEntity: java.util.Collection _persistence_get_authorizations()>()
+org.apache.ambari.server.security.TestAuthenticationFactory.createClusterAdministrator : $r2 = new org.apache.ambari.server.security.TestAuthenticationFactory$TestAuthorization
+org.apache.ambari.server.security.TestAuthenticationFactory.createClusterAdministrator : $r0 = staticinvoke <java.lang.Long: java.lang.Long valueOf(long)>(4L)
+org.apache.ambari.server.orm.entities.PermissionEntity.setAuthorizations : virtualinvoke r0.<org.apache.ambari.server.orm.entities.PermissionEntity: void _persistence_set_authorizations(java.util.Collection)>(r1)
+org.apache.ambari.server.orm.entities.ResourceTypeEntity.getName : $r1 = virtualinvoke r0.<org.apache.ambari.server.orm.entities.ResourceTypeEntity: java.lang.String _persistence_get_name()>()
+org.apache.ambari.server.security.TestAuthenticationFactory.createResourceTypeEntity : return r3
+org.apache.ambari.server.security.TestAuthenticationFactory.createResourceTypeEntity : virtualinvoke r3.<org.apache.ambari.server.orm.entities.ResourceTypeEntity: void setName(java.lang.String)>(r0)
+org.apache.ambari.server.security.TestAuthenticationFactory.createResourceTypeEntity : $r1 = virtualinvoke r0.<org.apache.ambari.server.security.authorization.ResourceType: java.lang.String name()>()
+org.apache.ambari.server.security.TestAuthenticationFactory.createResourceTypeEntity : $r2 = new org.apache.ambari.server.orm.entities.ResourceTypeEntity
+org.apache.ambari.server.security.TestAuthenticationFactory.createResourceTypeEntity : $i0 = virtualinvoke r1.<java.lang.Integer: int intValue()>()
+org.apache.ambari.server.security.TestAuthenticationFactory.createClusterResourceEntity : $r1 = <org.apache.ambari.server.security.authorization.ResourceType: org.apache.ambari.server.security.authorization.ResourceType CLUSTER>
+org.apache.ambari.server.security.authorization.ResourceType.translate : $r3 = virtualinvoke r2.<java.lang.String: java.lang.String toUpperCase()>()
+org.apache.ambari.server.security.authorization.ResourceType.translate : if r0 != null goto r2 = virtualinvoke r0.<java.lang.String: java.lang.String trim()>()
+org.apache.ambari.server.security.authorization.ResourceType.translate : $z0 = virtualinvoke r2.<java.lang.String: boolean isEmpty()>()
+org.apache.ambari.server.security.authorization.ResourceType.translate : r2 = virtualinvoke r0.<java.lang.String: java.lang.String trim()>()
+org.apache.ambari.server.api.services.ResultStatus.getStatusCode : $r1 = r0.<org.apache.ambari.server.api.services.ResultStatus: org.apache.ambari.server.api.services.ResultStatus$STATUS m_status>
+org.apache.ambari.server.api.services.LoggingServiceTest.testGetSearchEngineWhenLogSearchNotRunning : $r46 = staticinvoke <org.springframework.security.core.context.SecurityContextHolder: org.springframework.security.core.context.SecurityContext getContext()>()
+org.apache.ambari.server.api.services.LoggingServiceTest.testGetSearchEngineWhenLogSearchNotRunning : $r48 = virtualinvoke r12.<javax.ws.rs.core.Response: java.lang.Object getEntity()>()
+org.apache.ambari.server.api.services.LoggingServiceTest.testGetSearchEngineWhenLogSearchNotRunning : r3 = "LogSearch is not currently available.  If LogSearch is deployed in this cluster, please verify that the LogSearch services are running."
+org.apache.ambari.server.api.services.LoggingServiceTest.testGetSearchEngineWhenLogSearchNotRunning : $r33 = interfaceinvoke r6.<org.apache.ambari.server.controller.AmbariManagementController: org.apache.ambari.server.state.Clusters getClusters()>()
+org.apache.ambari.server.api.services.LoggingServiceTest.testGetSearchEngineWhenLogSearchNotRunning : $r41 = interfaceinvoke r8.<org.apache.ambari.server.state.Cluster: java.lang.Long getResourceId()>()
+org.apache.ambari.server.api.services.LoggingServiceTest.testGetSearchEngineWhenLogSearchNotRunning : staticinvoke <org.apache.ambari.server.security.authorization.AuthorizationHelperInitializer: void viewInstanceDAOReturningNull()>()
+org.apache.ambari.server.api.services.LoggingServiceTest.testGetSearchEngineWhenLogSearchNotRunning : $r19 = virtualinvoke r4.<org.easymock.EasyMockSupport: java.lang.Object createMock(java.lang.Class)>(class "javax/ws/rs/core/UriInfo")
+org.apache.ambari.server.api.services.LoggingServiceTest.testGetSearchEngineWhenLogSearchNotRunning : $r29 = interfaceinvoke r5.<org.apache.ambari.server.api.services.LoggingService$ControllerFactory: org.apache.ambari.server.controller.AmbariManagementController getController()>()
+org.apache.ambari.server.api.services.LoggingServiceTest.testGetSearchEngineWhenLogSearchNotRunning : $r37 = interfaceinvoke r7.<org.apache.ambari.server.state.Clusters: org.apache.ambari.server.state.Cluster getCluster(java.lang.String)>("clusterone")
+org.apache.ambari.server.api.services.LoggingServiceTest.testGetSearchEngineWhenLogSearchNotRunning : $r18 = virtualinvoke r4.<org.easymock.EasyMockSupport: java.lang.Object createMock(java.lang.Class)>(class "org/apache/ambari/server/controller/logging/LoggingRequestHelperFactory")
+org.apache.ambari.server.api.services.LoggingServiceTest.testGetSearchEngineWhenLogSearchNotRunning : r2 = "clusterone"
+org.apache.ambari.server.api.services.LoggingServiceTest.testGetSearchEngineWhenLogSearchNotRunning : virtualinvoke r11.<org.apache.ambari.server.api.services.LoggingService: void setLoggingRequestHelperFactory(org.apache.ambari.server.controller.logging.LoggingRequestHelperFactory)>(r9)
+org.apache.ambari.server.api.services.LoggingServiceTest.testGetSearchEngineWhenLogSearchNotRunning : $r25 = interfaceinvoke r9.<org.apache.ambari.server.controller.logging.LoggingRequestHelperFactory: org.apache.ambari.server.controller.logging.LoggingRequestHelper getHelper(org.apache.ambari.server.controller.AmbariManagementController,java.lang.String)>(r6, "clusterone")
+org.apache.ambari.server.api.services.LoggingServiceTest.testGetSearchEngineWhenLogSearchNotRunning : $r14 = virtualinvoke r4.<org.easymock.EasyMockSupport: java.lang.Object createMock(java.lang.Class)>(class "org/apache/ambari/server/api/services/LoggingService$ControllerFactory")
+org.apache.ambari.server.api.services.LoggingServiceTest.testGetSearchEngineWhenLogSearchNotRunning : $r15 = virtualinvoke r4.<org.easymock.EasyMockSupport: java.lang.Object createMock(java.lang.Class)>(class "org/apache/ambari/server/controller/AmbariManagementController")
+org.apache.ambari.server.api.services.LoggingServiceTest.testGetSearchEngineWhenLogSearchNotRunning : $r17 = virtualinvoke r4.<org.easymock.EasyMockSupport: java.lang.Object createMock(java.lang.Class)>(class "org/apache/ambari/server/state/Cluster")
+org.apache.ambari.server.api.services.LoggingServiceTest.testGetSearchEngineWhenLogSearchNotRunning : $r47 = new org.apache.ambari.server.api.services.LoggingService
+org.apache.ambari.server.api.services.LoggingServiceTest.testGetSearchEngineWhenLogSearchNotRunning : virtualinvoke r4.<org.easymock.EasyMockSupport: void replayAll()>()
+org.apache.ambari.server.api.services.LoggingServiceTest.testGetSearchEngineWhenLogSearchNotRunning : r12 = virtualinvoke r11.<org.apache.ambari.server.api.services.LoggingService: javax.ws.rs.core.Response getSearchEngine(java.lang.String,javax.ws.rs.core.HttpHeaders,javax.ws.rs.core.UriInfo)>("", null, r10)
+org.apache.ambari.server.api.services.LoggingServiceTest.testGetSearchEngineWhenLogSearchNotRunning : if z0 == 0 goto $i2 = virtualinvoke r12.<javax.ws.rs.core.Response: int getStatus()>()
+org.apache.ambari.server.api.services.LoggingServiceTest.testGetSearchEngineWhenLogSearchNotRunning : $r20 = interfaceinvoke r10.<javax.ws.rs.core.UriInfo: javax.ws.rs.core.MultivaluedMap getQueryParameters()>()
+org.apache.ambari.server.api.services.LoggingServiceTest.testGetSearchEngineWhenLogSearchNotRunning : $i0 = virtualinvoke r12.<javax.ws.rs.core.Response: int getStatus()>()
+org.apache.ambari.server.api.services.LoggingServiceTest.testGetSearchEngineWhenLogSearchNotRunning : $r16 = virtualinvoke r4.<org.easymock.EasyMockSupport: java.lang.Object createMock(java.lang.Class)>(class "org/apache/ambari/server/state/Clusters")
+org.apache.ambari.server.api.services.LoggingServiceTest.testGetSearchEngineWhenLogSearchNotRunning : if z0 == 0 goto $r29 = interfaceinvoke r5.<org.apache.ambari.server.api.services.LoggingService$ControllerFactory: org.apache.ambari.server.controller.AmbariManagementController getController()>()
+org.apache.ambari.server.api.services.LoggingServiceTest.testGetSearchEngineWhenLogSearchNotRunning : virtualinvoke r4.<org.easymock.EasyMockSupport: void verifyAll()>()
+org.apache.ambari.server.api.services.LoggingServiceTest.testGetSearchEngineWhenLogSearchNotRunning : staticinvoke <org.junit.Assert: void assertNotNull(java.lang.String,java.lang.Object)>("The response returned by the LoggingService should not have been null", r12)
+org.apache.ambari.server.api.services.LoggingServiceTest.testGetSearchEngineWhenLogSearchNotRunning : $r13 = new org.easymock.EasyMockSupport
+org.apache.ambari.server.api.services.LoggingServiceTest.testGetSearchEngineWhenLogSearchNotRunning : $r49 = virtualinvoke r12.<javax.ws.rs.core.Response: java.lang.Object getEntity()>()
+org.apache.ambari.server.security.TestAuthenticationFactory.createClusterAdministratorPermission : $r6 = <org.apache.ambari.server.security.authorization.RoleAuthorization: org.apache.ambari.server.security.authorization.RoleAuthorization CLUSTER_MANAGE_CREDENTIALS>
+org.apache.ambari.server.security.TestAuthenticationFactory.createClusterAdministratorPermission : $r3 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(3)
+org.apache.ambari.server.security.TestAuthenticationFactory.createClusterAdministratorPermission : $r0 = new org.apache.ambari.server.orm.entities.PermissionEntity
+org.apache.ambari.server.security.TestAuthenticationFactory.createClusterAdministratorPermission : $r4 = <org.apache.ambari.server.security.authorization.ResourceType: org.apache.ambari.server.security.authorization.ResourceType CLUSTER>
+org.apache.ambari.server.security.TestAuthenticationFactory.createClusterAdministratorPermission : return r1
+org.apache.ambari.server.orm.entities.RoleAuthorizationEntity.setAuthorizationId : virtualinvoke r0.<org.apache.ambari.server.orm.entities.RoleAuthorizationEntity: void _persistence_set_authorizationId(java.lang.String)>(r1)
+org.apache.ambari.server.orm.entities.ResourceEntity.setResourceType : virtualinvoke r0.<org.apache.ambari.server.orm.entities.ResourceEntity: void _persistence_set_resourceType(org.apache.ambari.server.orm.entities.ResourceTypeEntity)>(r1)
+org.apache.ambari.server.orm.entities.ResourceTypeEntity.setName : virtualinvoke r0.<org.apache.ambari.server.orm.entities.ResourceTypeEntity: void _persistence_set_name(java.lang.String)>(r1)
+org.apache.ambari.server.orm.entities.ResourceEntity.getResourceType : $r1 = virtualinvoke r0.<org.apache.ambari.server.orm.entities.ResourceEntity: org.apache.ambari.server.orm.entities.ResourceTypeEntity _persistence_get_resourceType()>()
+org.apache.ambari.server.api.services.ResultStatus$STATUS.getStatus : $i0 = r0.<org.apache.ambari.server.api.services.ResultStatus$STATUS: int m_code>
+org.apache.ambari.server.security.authorization.AuthorizationHelper.isAuthorized : if r1 == null goto (branch)
+org.apache.ambari.server.security.authorization.AuthorizationHelper.isAuthorized : r6 = (org.apache.ambari.server.security.authorization.AmbariGrantedAuthority) r5
+org.apache.ambari.server.security.authorization.AuthorizationHelper.isAuthorized : $r23 = virtualinvoke r13.<org.apache.ambari.server.orm.entities.RoleAuthorizationEntity: java.lang.String getAuthorizationId()>()
+org.apache.ambari.server.security.authorization.AuthorizationHelper.isAuthorized : if r0 != null goto $r15 = interfaceinvoke r0.<org.springframework.security.core.Authentication: java.util.Collection getAuthorities()>()
+org.apache.ambari.server.security.authorization.AuthorizationHelper.isAuthorized : $r15 = interfaceinvoke r0.<org.springframework.security.core.Authentication: java.util.Collection getAuthorities()>()
+org.apache.ambari.server.security.authorization.AuthorizationHelper.isAuthorized : if r11 == null goto (branch)
+org.apache.ambari.server.security.authorization.AuthorizationHelper.isAuthorized : goto [?= (branch)]
+org.apache.ambari.server.security.authorization.AuthorizationHelper.isAuthorized : $z7 = 1
+org.apache.ambari.server.security.authorization.AuthorizationHelper.isAuthorized : $r19 = <org.apache.ambari.server.security.authorization.ResourceType: org.apache.ambari.server.security.authorization.ResourceType AMBARI>
+org.apache.ambari.server.security.authorization.AuthorizationHelper.isAuthorized : if r2 == null goto $z4 = 1
+org.apache.ambari.server.security.authorization.AuthorizationHelper.isAuthorized : $r3 = staticinvoke <org.apache.ambari.server.security.authorization.AuthorizationHelper: org.springframework.security.core.Authentication getAuthentication()>()
+org.apache.ambari.server.security.authorization.AuthorizationHelper.isAuthorized : r8 = virtualinvoke r7.<org.apache.ambari.server.orm.entities.PrivilegeEntity: org.apache.ambari.server.orm.entities.ResourceEntity getResource()>()
+org.apache.ambari.server.security.authorization.AuthorizationHelper.isAuthorized : r10 = virtualinvoke r7.<org.apache.ambari.server.orm.entities.PrivilegeEntity: org.apache.ambari.server.orm.entities.PermissionEntity getPermission()>()
+org.apache.ambari.server.security.authorization.AuthorizationHelper.isAuthorized : r7 = virtualinvoke r6.<org.apache.ambari.server.security.authorization.AmbariGrantedAuthority: org.apache.ambari.server.orm.entities.PrivilegeEntity getPrivilegeEntity()>()
+org.apache.ambari.server.security.authorization.AuthorizationHelper.isAuthorized : goto [?= $z5 = interfaceinvoke r12.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.security.authorization.AuthorizationHelper.isAuthorized : if r3 == null goto return 1
+org.apache.ambari.server.security.authorization.AuthorizationHelper.isAuthorized : $r17 = virtualinvoke r8.<org.apache.ambari.server.orm.entities.ResourceEntity: org.apache.ambari.server.orm.entities.ResourceTypeEntity getResourceType()>()
+org.apache.ambari.server.security.authorization.AuthorizationHelper.isAuthorized : if r10 != null goto $r21 = virtualinvoke r10.<org.apache.ambari.server.orm.entities.PermissionEntity: java.util.Collection getAuthorizations()>()
+org.apache.ambari.server.security.authorization.AuthorizationHelper.isAuthorized : if z0 == 0 goto (branch)
+org.apache.ambari.server.security.authorization.AuthorizationHelper.isAuthorized : r12 = interfaceinvoke r11.<java.util.Collection: java.util.Iterator iterator()>()
+org.apache.ambari.server.orm.entities.PrivilegeEntity.setResource : virtualinvoke r0.<org.apache.ambari.server.orm.entities.PrivilegeEntity: void _persistence_set_resource(org.apache.ambari.server.orm.entities.ResourceEntity)>(r1)
+org.apache.ambari.server.security.authorization.RoleAuthorization.valueOf : $r1 = staticinvoke <java.lang.Enum: java.lang.Enum valueOf(java.lang.Class,java.lang.String)>(class "org/apache/ambari/server/security/authorization/RoleAuthorization", r0)
+org.apache.ambari.server.orm.entities.PrivilegeEntity.getResource : $r1 = virtualinvoke r0.<org.apache.ambari.server.orm.entities.PrivilegeEntity: org.apache.ambari.server.orm.entities.ResourceEntity _persistence_get_resource()>()
+org.apache.ambari.server.orm.entities.PermissionEntity.setResourceType : virtualinvoke r0.<org.apache.ambari.server.orm.entities.PermissionEntity: void _persistence_set_resourceType(org.apache.ambari.server.orm.entities.ResourceTypeEntity)>(r1)
+org.apache.ambari.server.security.TestAuthenticationFactory.createResourceEntity : return r3
+org.apache.ambari.server.security.TestAuthenticationFactory.createResourceEntity : $r2 = new org.apache.ambari.server.orm.entities.ResourceEntity
+org.apache.ambari.server.security.TestAuthenticationFactory.createResourceEntity : virtualinvoke r3.<org.apache.ambari.server.orm.entities.ResourceEntity: void setId(java.lang.Long)>(r1)
+org.apache.ambari.server.security.TestAuthenticationFactory.createResourceEntity : $r4 = staticinvoke <org.apache.ambari.server.security.TestAuthenticationFactory: org.apache.ambari.server.orm.entities.ResourceTypeEntity createResourceTypeEntity(org.apache.ambari.server.security.authorization.ResourceType)>(r0)
+org.apache.ambari.server.security.TestAuthenticationFactory.createAuthorizations : return r2
+org.apache.ambari.server.security.TestAuthenticationFactory.createAuthorizations : $r1 = new java.util.ArrayList
+org.apache.ambari.server.security.TestAuthenticationFactory.createAuthorizations : $r6 = staticinvoke <org.apache.ambari.server.security.TestAuthenticationFactory: org.apache.ambari.server.orm.entities.RoleAuthorizationEntity createRoleAuthorizationEntity(org.apache.ambari.server.security.authorization.RoleAuthorization)>(r4)
+org.apache.ambari.server.security.TestAuthenticationFactory.createAuthorizations : r3 = interfaceinvoke r0.<java.util.Set: java.util.Iterator iterator()>()
+org.apache.ambari.server.security.TestAuthenticationFactory.createAuthorizations : goto [?= $z0 = interfaceinvoke r3.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.orm.entities.PermissionEntity.setId : virtualinvoke r0.<org.apache.ambari.server.orm.entities.PermissionEntity: void _persistence_set_id(java.lang.Integer)>(r1)
+org.apache.ambari.server.api.services.LoggingService.handleDirectRequest : $r14 = interfaceinvoke r3.<javax.ws.rs.core.MultivaluedMap: java.util.Set keySet()>()
+org.apache.ambari.server.api.services.LoggingService.handleDirectRequest : $r50 = virtualinvoke r48.<javax.ws.rs.core.Response$ResponseBuilder: javax.ws.rs.core.Response build()>()
+org.apache.ambari.server.api.services.LoggingService.handleDirectRequest : $r13 = new java.util.HashMap
+org.apache.ambari.server.api.services.LoggingService.handleDirectRequest : $r45 = <org.apache.ambari.server.api.services.LoggingService: org.slf4j.Logger LOG>
+org.apache.ambari.server.api.services.LoggingService.handleDirectRequest : $r21 = r0.<org.apache.ambari.server.api.services.LoggingService: org.apache.ambari.server.controller.logging.LoggingRequestHelperFactory helperFactory>
+org.apache.ambari.server.api.services.LoggingService.handleDirectRequest : r3 = interfaceinvoke r1.<javax.ws.rs.core.UriInfo: javax.ws.rs.core.MultivaluedMap getQueryParameters()>()
+org.apache.ambari.server.api.services.LoggingService.handleDirectRequest : if r23 == null goto $r45 = <org.apache.ambari.server.api.services.LoggingService: org.slf4j.Logger LOG>
+org.apache.ambari.server.api.services.LoggingService.handleDirectRequest : $r19 = r0.<org.apache.ambari.server.api.services.LoggingService: org.apache.ambari.server.api.services.LoggingService$ControllerFactory controllerFactory>
+org.apache.ambari.server.api.services.LoggingService.handleDirectRequest : $r46 = new org.apache.ambari.server.api.services.ResultStatus
+org.apache.ambari.server.api.services.LoggingService.handleDirectRequest : virtualinvoke r48.<javax.ws.rs.core.Response$ResponseBuilder: javax.ws.rs.core.Response$ResponseBuilder entity(java.lang.Object)>("LogSearch is not currently available.  If LogSearch is deployed in this cluster, please verify that the LogSearch services are running.")
+org.apache.ambari.server.api.services.LoggingService.setLoggingRequestHelperFactory : r0.<org.apache.ambari.server.api.services.LoggingService: org.apache.ambari.server.controller.logging.LoggingRequestHelperFactory helperFactory> = r1
+org.apache.ambari.server.orm.entities.ResourceEntity.getId : $r1 = virtualinvoke r0.<org.apache.ambari.server.orm.entities.ResourceEntity: java.lang.Long _persistence_get_id()>()
+org.apache.ambari.server.security.authorization.ResourceType.getId : $i0 = r0.<org.apache.ambari.server.security.authorization.ResourceType: int id>
+org.apache.ambari.server.security.TestAuthenticationFactory$TestAuthorization.getAuthorities : $r1 = r0.<org.apache.ambari.server.security.TestAuthenticationFactory$TestAuthorization: java.util.Collection authorities>
+org.apache.ambari.server.security.authorization.RoleAuthorization.getId : $r1 = r0.<org.apache.ambari.server.security.authorization.RoleAuthorization: java.lang.String id>
+org.apache.ambari.server.orm.entities.PrivilegeEntity.setPermission : virtualinvoke r0.<org.apache.ambari.server.orm.entities.PrivilegeEntity: void _persistence_set_permission(org.apache.ambari.server.orm.entities.PermissionEntity)>(r1)

@@ -1,0 +1,13 @@
+org.apache.ambari.server.api.services.parsers.JsonRequestBodyParser.ensureArrayFormat : $z0 = virtualinvoke r1.<java.lang.String: boolean startsWith(java.lang.String)>("[")
+org.apache.ambari.server.api.services.RequestBody.setBody : $r2 = r0.<org.apache.ambari.server.api.services.RequestBody: java.util.Map m_requestInfoProps>
+org.apache.ambari.server.api.services.RequestBody.setBody : if r1 == null goto return
+org.apache.ambari.server.api.services.RequestBody.setBody : r0.<org.apache.ambari.server.api.services.RequestBody: java.lang.String m_body> = r1
+org.apache.ambari.server.api.services.parsers.JsonRequestBodyParser.parse : $r33 = <org.apache.ambari.server.api.services.parsers.JsonRequestBodyParser: org.slf4j.Logger LOG>
+org.apache.ambari.server.api.services.parsers.JsonRequestBodyParser.parse : $r17 = new org.apache.ambari.server.api.services.RequestBody
+org.apache.ambari.server.api.services.parsers.JsonRequestBodyParser.parse : virtualinvoke r4.<org.apache.ambari.server.api.services.RequestBody: void setBody(java.lang.String)>(r1)
+org.apache.ambari.server.api.services.parsers.JsonRequestBodyParser.parse : $r18 = new org.codehaus.jackson.map.ObjectMapper
+org.apache.ambari.server.api.services.parsers.JsonRequestBodyParser.parse : $r40 = new org.apache.ambari.server.api.services.parsers.BodyParseException
+org.apache.ambari.server.api.services.parsers.JsonRequestBodyParser.parse : $r2 = new java.util.HashSet
+org.apache.ambari.server.api.services.parsers.JsonRequestBodyParser.parse : r32 = $r31
+org.apache.ambari.server.api.services.parsers.JsonRequestBodyParser.parse : if r1 == null goto $z9 = interfaceinvoke r3.<java.util.Set: boolean isEmpty()>()
+org.apache.ambari.server.api.services.parsers.JsonRequestBodyParser.parse : $r19 = specialinvoke r0.<org.apache.ambari.server.api.services.parsers.JsonRequestBodyParser: java.lang.String ensureArrayFormat(java.lang.String)>(r1)

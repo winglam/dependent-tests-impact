@@ -1,0 +1,25 @@
+org.apache.ambari.server.state.kerberos.KerberosPrincipalType.valueOf : $r1 = staticinvoke <java.lang.Enum: java.lang.Enum valueOf(java.lang.Class,java.lang.String)>(class "org/apache/ambari/server/state/kerberos/KerberosPrincipalType", r0)
+org.apache.ambari.server.state.kerberos.KerberosPrincipalDescriptorTest.createFromMap : $r0 = new org.apache.ambari.server.state.kerberos.KerberosPrincipalDescriptor
+org.apache.ambari.server.state.kerberos.KerberosPrincipalType.values : $r0 = <org.apache.ambari.server.state.kerberos.KerberosPrincipalType: org.apache.ambari.server.state.kerberos.KerberosPrincipalType[] $VALUES>
+org.apache.ambari.server.state.kerberos.KerberosPrincipalDescriptor.setLocalUsername : r0.<org.apache.ambari.server.state.kerberos.KerberosPrincipalDescriptor: java.lang.String localUsername> = r1
+org.apache.ambari.server.state.kerberos.KerberosPrincipalDescriptor.getKerberosPrincipalTypeValue : $r3 = virtualinvoke r2.<java.lang.String: java.lang.String toUpperCase()>()
+org.apache.ambari.server.state.kerberos.KerberosPrincipalDescriptor.getKerberosPrincipalTypeValue : if r2 == null goto return null
+org.apache.ambari.server.state.kerberos.KerberosPrincipalDescriptor.getKerberosPrincipalTypeValue : r2 = staticinvoke <org.apache.ambari.server.state.kerberos.KerberosPrincipalDescriptor: java.lang.String getStringValue(java.util.Map,java.lang.String)>(r0, r1)
+org.apache.ambari.server.state.kerberos.KerberosPrincipalDescriptor.getLocalUsername : $r1 = r0.<org.apache.ambari.server.state.kerberos.KerberosPrincipalDescriptor: java.lang.String localUsername>
+org.apache.ambari.server.state.kerberos.KerberosPrincipalDescriptor.getType : $r1 = r0.<org.apache.ambari.server.state.kerberos.KerberosPrincipalDescriptor: org.apache.ambari.server.state.kerberos.KerberosPrincipalType type>
+org.apache.ambari.server.state.kerberos.KerberosPrincipalDescriptor.setType : r0.<org.apache.ambari.server.state.kerberos.KerberosPrincipalDescriptor: org.apache.ambari.server.state.kerberos.KerberosPrincipalType type> = r1
+org.apache.ambari.server.state.kerberos.KerberosPrincipalDescriptor.getValue : $r1 = virtualinvoke r0.<org.apache.ambari.server.state.kerberos.KerberosPrincipalDescriptor: java.lang.String getName()>()
+org.apache.ambari.server.state.kerberos.AbstractKerberosDescriptor.getStringValue : if r2 != null goto $r3 = virtualinvoke r2.<java.lang.Object: java.lang.String toString()>()
+org.apache.ambari.server.state.kerberos.AbstractKerberosDescriptor.getStringValue : r2 = staticinvoke <org.apache.ambari.server.state.kerberos.AbstractKerberosDescriptor: java.lang.Object getValue(java.util.Map,java.lang.String)>(r0, r1)
+org.apache.ambari.server.state.kerberos.KerberosPrincipalDescriptor.getConfiguration : $r1 = r0.<org.apache.ambari.server.state.kerberos.KerberosPrincipalDescriptor: java.lang.String configuration>
+org.apache.ambari.server.state.kerberos.KerberosPrincipalDescriptorTest.validateFromMap : $r2 = virtualinvoke r0.<org.apache.ambari.server.state.kerberos.KerberosPrincipalDescriptor: java.lang.String getConfiguration()>()
+org.apache.ambari.server.state.kerberos.KerberosPrincipalDescriptorTest.validateFromMap : staticinvoke <junit.framework.Assert: void assertNotNull(java.lang.Object)>(r0)
+org.apache.ambari.server.state.kerberos.KerberosPrincipalDescriptorTest.validateFromMap : $z0 = virtualinvoke r0.<org.apache.ambari.server.state.kerberos.KerberosPrincipalDescriptor: boolean isContainer()>()
+org.apache.ambari.server.state.kerberos.KerberosPrincipalDescriptorTest.validateFromMap : $r5 = virtualinvoke r0.<org.apache.ambari.server.state.kerberos.KerberosPrincipalDescriptor: java.lang.String getLocalUsername()>()
+org.apache.ambari.server.state.kerberos.KerberosPrincipalDescriptorTest.validateFromMap : $r3 = <org.apache.ambari.server.state.kerberos.KerberosPrincipalType: org.apache.ambari.server.state.kerberos.KerberosPrincipalType USER>
+org.apache.ambari.server.state.kerberos.KerberosPrincipalDescriptorTest.validateFromMap : $r1 = virtualinvoke r0.<org.apache.ambari.server.state.kerberos.KerberosPrincipalDescriptor: java.lang.String getValue()>()
+org.apache.ambari.server.state.kerberos.AbstractKerberosDescriptor.getName : $r1 = r0.<org.apache.ambari.server.state.kerberos.AbstractKerberosDescriptor: java.lang.String name>
+org.apache.ambari.server.state.kerberos.AbstractKerberosDescriptor.setName : r0.<org.apache.ambari.server.state.kerberos.AbstractKerberosDescriptor: java.lang.String name> = r1
+org.apache.ambari.server.state.kerberos.AbstractKerberosDescriptor.isContainer : return 0
+org.apache.ambari.server.state.kerberos.AbstractKerberosDescriptor.getValue : if r0 == null goto $r2 = null
+org.apache.ambari.server.state.kerberos.KerberosPrincipalDescriptor.setConfiguration : r0.<org.apache.ambari.server.state.kerberos.KerberosPrincipalDescriptor: java.lang.String configuration> = r1

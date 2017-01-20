@@ -1,0 +1,57 @@
+org.apache.ambari.server.view.ViewDataMigrationUtility.migrateData : interfaceinvoke r4.<org.apache.ambari.view.migration.ViewDataMigrator: void afterMigration()>()
+org.apache.ambari.server.view.ViewDataMigrationUtility.migrateData : interfaceinvoke r4.<org.apache.ambari.view.migration.ViewDataMigrator: void migrateInstanceData()>()
+org.apache.ambari.server.view.ViewDataMigrationUtility.migrateData : if z0 == 0 goto r4 = virtualinvoke r0.<org.apache.ambari.server.view.ViewDataMigrationUtility: org.apache.ambari.view.migration.ViewDataMigrator getViewDataMigrator(org.apache.ambari.server.orm.entities.ViewInstanceEntity,org.apache.ambari.server.view.ViewDataMigrationContextImpl)>(r1, r3)
+org.apache.ambari.server.view.ViewDataMigrationUtility.migrateData : $r29 = interfaceinvoke r8.<java.util.Map$Entry: java.lang.Object getKey()>()
+org.apache.ambari.server.view.ViewDataMigrationUtility.migrateData : $r45 = <org.apache.ambari.server.view.ViewDataMigrationUtility: org.slf4j.Logger LOG>
+org.apache.ambari.server.view.ViewDataMigrationUtility.migrateData : $r32 = interfaceinvoke r8.<java.util.Map$Entry: java.lang.Object getValue()>()
+org.apache.ambari.server.view.ViewDataMigrationUtility.migrateData : goto [?= (branch)]
+org.apache.ambari.server.view.ViewDataMigrationUtility.migrateData : r3 = virtualinvoke r0.<org.apache.ambari.server.view.ViewDataMigrationUtility: org.apache.ambari.server.view.ViewDataMigrationContextImpl getViewDataMigrationContext(org.apache.ambari.server.orm.entities.ViewInstanceEntity,org.apache.ambari.server.orm.entities.ViewInstanceEntity)>(r1, r2)
+org.apache.ambari.server.view.ViewDataMigrationUtility.migrateData : $r11 = <org.apache.ambari.server.view.ViewDataMigrationUtility: org.slf4j.Logger LOG>
+org.apache.ambari.server.view.ViewDataMigrationUtility.migrateData : goto [?= $z3 = interfaceinvoke r7.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.view.ViewDataMigrationUtility.migrateData : $z2 = interfaceinvoke r4.<org.apache.ambari.view.migration.ViewDataMigrator: boolean beforeMigration()>()
+org.apache.ambari.server.view.ViewDataMigrationUtility.migrateData : $r22 = <org.apache.ambari.server.view.ViewDataMigrationUtility: org.slf4j.Logger LOG>
+org.apache.ambari.server.view.ViewDataMigrationUtility.migrateData : $r46 = <org.apache.ambari.server.view.ViewDataMigrationUtility: org.slf4j.Logger LOG>
+org.apache.ambari.server.view.ViewDataMigrationUtility.migrateData : r19 = virtualinvoke r3.<org.apache.ambari.server.view.ViewDataMigrationContextImpl: java.util.Map getOriginEntityClasses()>()
+org.apache.ambari.server.view.ViewDataMigrationUtility.migrateData : r4 = virtualinvoke r0.<org.apache.ambari.server.view.ViewDataMigrationUtility: org.apache.ambari.view.migration.ViewDataMigrator getViewDataMigrator(org.apache.ambari.server.orm.entities.ViewInstanceEntity,org.apache.ambari.server.view.ViewDataMigrationContextImpl)>(r1, r3)
+org.apache.ambari.server.view.ViewDataMigrationUtility.migrateData : $r44 = <org.apache.ambari.server.view.ViewDataMigrationUtility: org.slf4j.Logger LOG>
+org.apache.ambari.server.view.ViewDataMigrationUtility.migrateData : $r30 = interfaceinvoke r8.<java.util.Map$Entry: java.lang.Object getKey()>()
+org.apache.ambari.server.view.ViewDataMigrationUtility.migrateData : $r48 = virtualinvoke r2.<org.apache.ambari.server.orm.entities.ViewInstanceEntity: org.apache.ambari.server.orm.entities.ViewEntity getViewEntity()>()
+org.apache.ambari.server.view.ViewDataMigrationUtility.migrateData : virtualinvoke r3.<org.apache.ambari.server.view.ViewDataMigrationContextImpl: void closeMigration()>()
+org.apache.ambari.server.view.ViewDataMigrationUtility.migrateData : $r47 = r0.<org.apache.ambari.server.view.ViewDataMigrationUtility: org.apache.ambari.server.view.ViewRegistry viewRegistry>
+org.apache.ambari.server.view.ViewDataMigrationUtility.migrateData : r6 = virtualinvoke r3.<org.apache.ambari.server.view.ViewDataMigrationContextImpl: java.util.Map getCurrentEntityClasses()>()
+org.apache.ambari.server.view.ViewDataMigrationUtility.migrateData : $r20 = interfaceinvoke r19.<java.util.Map: java.util.Set entrySet()>()
+org.apache.ambari.server.view.ViewDataMigrationUtilityTest$TestViewDataMigrationUtility.setMigrationContext : r0.<org.apache.ambari.server.view.ViewDataMigrationUtilityTest$TestViewDataMigrationUtility: org.apache.ambari.server.view.ViewDataMigrationContextImpl migrationContext> = r1
+org.apache.ambari.server.view.ViewDataMigrationUtilityTest.getViewDataMigrationContext : $r2 = staticinvoke <org.easymock.EasyMock: java.lang.Object createNiceMock(java.lang.Class)>(class "org/apache/ambari/server/view/ViewDataMigrationContextImpl")
+org.apache.ambari.server.view.ViewDataMigrationUtilityTest.getViewDataMigrationContext : $r21 = virtualinvoke r1.<org.apache.ambari.server.view.ViewDataMigrationContextImpl: java.util.Map getCurrentInstanceDataByUser()>()
+org.apache.ambari.server.view.ViewDataMigrationUtilityTest.getViewDataMigrationContext : $i2 = virtualinvoke r1.<org.apache.ambari.server.view.ViewDataMigrationContextImpl: int getOriginDataVersion()>()
+org.apache.ambari.server.view.ViewDataMigrationUtilityTest.getViewDataMigrationContext : $r25 = newarray (java.lang.Object)[1]
+org.apache.ambari.server.view.ViewDataMigrationUtilityTest.getViewDataMigrationContext : $r17 = virtualinvoke r1.<org.apache.ambari.server.view.ViewDataMigrationContextImpl: java.util.Map getCurrentEntityClasses()>()
+org.apache.ambari.server.view.ViewDataMigrationUtilityTest.getViewDataMigrationContext : r0 = staticinvoke <java.util.Collections: java.util.Map singletonMap(java.lang.Object,java.lang.Object)>("MyEntityClass", class "java/lang/Object")
+org.apache.ambari.server.view.ViewDataMigrationUtilityTest.getViewDataMigrationContext : return r1
+org.apache.ambari.server.view.ViewDataMigrationUtilityTest.getViewDataMigrationContext : $r13 = virtualinvoke r1.<org.apache.ambari.server.view.ViewDataMigrationContextImpl: java.util.Map getOriginEntityClasses()>()
+org.apache.ambari.server.view.ViewDataMigrationUtilityTest.getViewDataMigrationContext : $i3 = virtualinvoke r1.<org.apache.ambari.server.view.ViewDataMigrationContextImpl: int getCurrentDataVersion()>()
+org.apache.ambari.server.view.ViewRegistry.initInstance : <org.apache.ambari.server.view.ViewRegistry: org.apache.ambari.server.view.ViewRegistry singleton> = r0
+org.apache.ambari.server.view.ViewDataMigrationUtility.getViewDataMigrator : $r3 = <org.apache.ambari.server.view.ViewDataMigrationUtility: org.slf4j.Logger LOG>
+org.apache.ambari.server.view.ViewDataMigrationUtility.getViewDataMigrator : goto [?= return r5]
+org.apache.ambari.server.view.ViewDataMigrationUtility.getViewDataMigrator : return r5
+org.apache.ambari.server.view.ViewDataMigrationUtility.getViewDataMigrator : $i2 = virtualinvoke r2.<org.apache.ambari.server.view.ViewDataMigrationContextImpl: int getOriginDataVersion()>()
+org.apache.ambari.server.view.ViewDataMigrationUtility.getViewDataMigrator : r5 = virtualinvoke r1.<org.apache.ambari.server.orm.entities.ViewInstanceEntity: org.apache.ambari.view.migration.ViewDataMigrator getDataMigrator(org.apache.ambari.view.migration.ViewDataMigrationContext)>(r2)
+org.apache.ambari.server.view.ViewDataMigrationUtility.getViewDataMigrator : if r5 != null goto $r26 = <org.apache.ambari.server.view.ViewDataMigrationUtility: org.slf4j.Logger LOG>
+org.apache.ambari.server.view.ViewDataMigrationUtility.getViewDataMigrator : $r26 = <org.apache.ambari.server.view.ViewDataMigrationUtility: org.slf4j.Logger LOG>
+org.apache.ambari.server.view.ViewDataMigrationUtilityTest.getInstanceDefinition : $r17 = virtualinvoke r6.<org.apache.ambari.server.orm.entities.ViewInstanceEntity: org.apache.ambari.server.orm.entities.ViewEntity getViewEntity()>()
+org.apache.ambari.server.view.ViewDataMigrationUtilityTest.getInstanceDefinition : $r32 = newarray (java.lang.Object)[1]
+org.apache.ambari.server.view.ViewDataMigrationUtilityTest.getInstanceDefinition : $r20 = virtualinvoke r6.<org.apache.ambari.server.orm.entities.ViewInstanceEntity: java.lang.String getViewName()>()
+org.apache.ambari.server.view.ViewDataMigrationUtilityTest.getInstanceDefinition : $r23 = virtualinvoke r6.<org.apache.ambari.server.orm.entities.ViewInstanceEntity: java.lang.String getInstanceName()>()
+org.apache.ambari.server.view.ViewDataMigrationUtilityTest.getInstanceDefinition : $r6 = newarray (java.lang.Object)[1]
+org.apache.ambari.server.view.ViewDataMigrationUtilityTest.getInstanceDefinition : $r7 = specialinvoke r0.<org.apache.ambari.server.view.ViewDataMigrationUtilityTest: org.apache.ambari.server.orm.entities.ViewInstanceEntity getInstanceDefinition(java.lang.String,java.lang.String,java.lang.String,org.apache.ambari.view.migration.ViewDataMigrator)>(r1, r2, r3, r4)
+org.apache.ambari.server.view.ViewDataMigrationUtilityTest.getInstanceDefinition : $r16 = staticinvoke <org.easymock.EasyMock: java.lang.Object createNiceMock(java.lang.Class)>(class "org/apache/ambari/server/orm/entities/ViewInstanceEntity")
+org.apache.ambari.server.view.ViewDataMigrationUtilityTest.getInstanceDefinition : $r9 = virtualinvoke r5.<org.apache.ambari.server.orm.entities.ViewEntity: java.lang.String getViewName()>()
+org.apache.ambari.server.view.ViewDataMigrationUtilityTest.getInstanceDefinition : $r12 = virtualinvoke r5.<org.apache.ambari.server.orm.entities.ViewEntity: java.lang.String getVersion()>()
+org.apache.ambari.server.view.ViewDataMigrationUtilityTest.getInstanceDefinition : $r8 = staticinvoke <org.easymock.EasyMock: java.lang.Object createNiceMock(java.lang.Class)>(class "org/apache/ambari/server/orm/entities/ViewEntity")
+org.apache.ambari.server.view.ViewDataMigrationUtilityTest.getInstanceDefinition : goto [?= $r32 = newarray (java.lang.Object)[1]]
+org.apache.ambari.server.view.ViewDataMigrationUtilityTest.getInstanceDefinition : $r26 = staticinvoke <org.easymock.EasyMock: java.lang.Object anyObject(java.lang.Class)>(class "org/apache/ambari/view/migration/ViewDataMigrationContext")
+org.apache.ambari.server.view.ViewDataMigrationUtilityTest.getInstanceDefinition : $r5 = staticinvoke <org.easymock.EasyMock: java.lang.Object createNiceMock(java.lang.Class)>(class "org/apache/ambari/view/migration/ViewDataMigrator")
+org.apache.ambari.server.view.ViewDataMigrationUtilityTest.getInstanceDefinition : return r6
+org.apache.ambari.server.view.ViewDataMigrationUtilityTest.getInstanceDefinition : $r15 = newarray (java.lang.Object)[1]
+org.apache.ambari.server.view.ViewDataMigrationUtilityTest$TestViewDataMigrationUtility.getViewDataMigrationContext : $r5 = r0.<org.apache.ambari.server.view.ViewDataMigrationUtilityTest$TestViewDataMigrationUtility: org.apache.ambari.server.view.ViewDataMigrationContextImpl migrationContext>
+org.apache.ambari.server.view.ViewDataMigrationUtilityTest$TestViewDataMigrationUtility.getViewDataMigrationContext : $r3 = r0.<org.apache.ambari.server.view.ViewDataMigrationUtilityTest$TestViewDataMigrationUtility: org.apache.ambari.server.view.ViewDataMigrationContextImpl migrationContext>

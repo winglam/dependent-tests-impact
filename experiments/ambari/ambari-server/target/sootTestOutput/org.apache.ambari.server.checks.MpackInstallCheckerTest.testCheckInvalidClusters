@@ -1,0 +1,37 @@
+org.apache.ambari.server.checks.MpackInstallCheckerTest$2.configure : $r3 = virtualinvoke r0.<org.apache.ambari.server.checks.MpackInstallCheckerTest$2: com.google.inject.binder.AnnotatedBindingBuilder bind(java.lang.Class)>(class "com/google/inject/persist/PersistService")
+org.apache.ambari.server.checks.MpackInstallCheckerTest$2.configure : $r1 = virtualinvoke r0.<org.apache.ambari.server.checks.MpackInstallCheckerTest$2: com.google.inject.binder.AnnotatedBindingBuilder bind(java.lang.Class)>(class "org/apache/ambari/server/orm/DBAccessor")
+org.apache.ambari.server.checks.MpackInstallChecker.getConnection : $r2 = r0.<org.apache.ambari.server.checks.MpackInstallChecker: org.apache.ambari.server.orm.DBAccessor dbAccessor>
+org.apache.ambari.server.checks.MpackInstallChecker.getConnection : $r8 = r0.<org.apache.ambari.server.checks.MpackInstallChecker: java.sql.Connection connection>
+org.apache.ambari.server.checks.MpackInstallChecker.getConnection : $r1 = r0.<org.apache.ambari.server.checks.MpackInstallChecker: java.sql.Connection connection>
+org.apache.ambari.server.checks.MpackInstallChecker.getConnection : $r6 = r0.<org.apache.ambari.server.checks.MpackInstallChecker: org.apache.ambari.server.orm.DBAccessor dbAccessor>
+org.apache.ambari.server.checks.MpackInstallChecker.checkClusters : r2 = interfaceinvoke r3.<java.sql.Statement: java.sql.ResultSet executeQuery(java.lang.String)>(r5)
+org.apache.ambari.server.checks.MpackInstallChecker.checkClusters : r6 = virtualinvoke r0.<org.apache.ambari.server.checks.MpackInstallChecker: java.sql.Connection getConnection()>()
+org.apache.ambari.server.checks.MpackInstallChecker.checkClusters : $r26 = interfaceinvoke r8.<java.util.Map$Entry: java.lang.Object getKey()>()
+org.apache.ambari.server.checks.MpackInstallChecker.checkClusters : $r17 = new java.util.HashMap
+org.apache.ambari.server.checks.MpackInstallChecker.checkClusters : goto [?= (branch)]
+org.apache.ambari.server.checks.MpackInstallChecker.checkClusters : $r28 = interfaceinvoke r10.<java.util.Map: java.util.Set keySet()>()
+org.apache.ambari.server.checks.MpackInstallChecker.checkClusters : $r32 = newarray (java.lang.Object)[4]
+org.apache.ambari.server.checks.MpackInstallChecker.checkClusters : $z2 = virtualinvoke r1.<java.util.HashSet: boolean contains(java.lang.Object)>(r11)
+org.apache.ambari.server.checks.MpackInstallChecker.checkClusters : if r2 == null goto $r23 = interfaceinvoke r4.<java.util.Map: java.util.Set entrySet()>()
+org.apache.ambari.server.checks.MpackInstallChecker.checkClusters : r0.<org.apache.ambari.server.checks.MpackInstallChecker: boolean errorsFound> = 1
+org.apache.ambari.server.checks.MpackInstallChecker.checkClusters : $z0 = interfaceinvoke r2.<java.sql.ResultSet: boolean next()>()
+org.apache.ambari.server.checks.MpackInstallChecker.checkClusters : goto [?= $z1 = interfaceinvoke r24.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.checks.MpackInstallChecker.checkClusters : goto [?= staticinvoke <edu.washington.cs.dt.impact.util.Tracer: void trace(java.lang.String,java.lang.String)>("$z0 = interfaceinvoke r2.<java.sql.ResultSet: boolean next()>()", "org.apache.ambari.server.checks.MpackInstallChecker.checkClusters")]
+org.apache.ambari.server.checks.MpackInstallChecker.checkClusters : $r27 = interfaceinvoke r8.<java.util.Map$Entry: java.lang.Object getValue()>()
+org.apache.ambari.server.checks.MpackInstallChecker.checkClusters : r3 = null
+org.apache.ambari.server.checks.MpackInstallChecker.checkClusters : r2 = null
+org.apache.ambari.server.checks.MpackInstallChecker.checkClusters : r5 = "select c.cluster_name, s.stack_name, s.stack_version from clusters c join stack s on c.desired_stack_id = s.stack_id"
+org.apache.ambari.server.checks.MpackInstallChecker.checkClusters : $r34 = <org.apache.ambari.server.checks.MpackInstallChecker: org.slf4j.Logger LOG>
+org.apache.ambari.server.checks.MpackInstallChecker.checkClusters : $r18 = interfaceinvoke r2.<java.sql.ResultSet: java.lang.String getString(java.lang.String)>("stack_name")
+org.apache.ambari.server.checks.MpackInstallChecker.checkClusters : $r23 = interfaceinvoke r4.<java.util.Map: java.util.Set entrySet()>()
+org.apache.ambari.server.checks.MpackInstallChecker.checkClusters : if r3 == null goto return
+org.apache.ambari.server.checks.MpackInstallChecker.checkClusters : goto [?= return]
+org.apache.ambari.server.checks.MpackInstallChecker.checkClusters : $r21 = interfaceinvoke r2.<java.sql.ResultSet: java.lang.String getString(java.lang.String)>("cluster_name")
+org.apache.ambari.server.checks.MpackInstallChecker.checkClusters : interfaceinvoke r2.<java.sql.ResultSet: void close()>()
+org.apache.ambari.server.checks.MpackInstallChecker.checkClusters : r3 = interfaceinvoke r6.<java.sql.Connection: java.sql.Statement createStatement(int,int)>(1005, 1008)
+org.apache.ambari.server.checks.MpackInstallChecker.checkClusters : if r2 == null goto (branch)
+org.apache.ambari.server.checks.MpackInstallChecker.checkClusters : $r35 = <java.lang.System: java.io.PrintStream err>
+org.apache.ambari.server.checks.MpackInstallChecker.checkClusters : $r16 = new java.util.HashMap
+org.apache.ambari.server.checks.MpackInstallChecker.checkClusters : interfaceinvoke r3.<java.sql.Statement: void close()>()
+org.apache.ambari.server.checks.MpackInstallChecker.checkClusters : $r31 = interfaceinvoke r10.<java.util.Map: java.lang.Object get(java.lang.Object)>(r11)
+org.apache.ambari.server.checks.MpackInstallChecker.isErrorsFound : $z0 = r0.<org.apache.ambari.server.checks.MpackInstallChecker: boolean errorsFound>

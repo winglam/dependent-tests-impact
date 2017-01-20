@@ -1,0 +1,12 @@
+org.apache.ambari.server.utils.VersionUtils.areVersionsEqual : $i0 = staticinvoke <org.apache.ambari.server.utils.VersionUtils: int compareVersions(java.lang.String,java.lang.String,boolean)>(r0, r1, z0)
+org.apache.ambari.server.utils.VersionUtils.compareVersions : $i4 = virtualinvoke r9.<java.lang.String: int indexOf(int)>(45)
+org.apache.ambari.server.utils.VersionUtils.compareVersions : if r0 != null goto (branch)
+org.apache.ambari.server.utils.VersionUtils.compareVersions : r10 = staticinvoke <org.apache.commons.lang.StringUtils: java.lang.String trim(java.lang.String)>(r1)
+org.apache.ambari.server.utils.VersionUtils.compareVersions : $i6 = virtualinvoke r10.<java.lang.String: int indexOf(int)>(45)
+org.apache.ambari.server.utils.VersionUtils.compareVersions : if z0 == 0 goto $i0 = staticinvoke <org.apache.ambari.server.utils.VersionUtils: int compareVersions(java.lang.String,java.lang.String,int)>(r0, r1, 0)
+org.apache.ambari.server.utils.VersionUtils.compareVersions : $i0 = staticinvoke <org.apache.ambari.server.utils.VersionUtils: int compareVersions(java.lang.String,java.lang.String,int)>(r0, r1, 0)
+org.apache.ambari.server.utils.VersionUtils.compareVersions : $r12 = new java.lang.IllegalArgumentException
+org.apache.ambari.server.utils.VersionUtils.compareVersions : $z0 = virtualinvoke r9.<java.lang.String: boolean isEmpty()>()
+org.apache.ambari.server.utils.VersionUtils.compareVersions : if r1 != null goto r9 = staticinvoke <org.apache.commons.lang.StringUtils: java.lang.String trim(java.lang.String)>(r0)
+org.apache.ambari.server.utils.VersionUtils.compareVersions : r9 = staticinvoke <org.apache.commons.lang.StringUtils: java.lang.String trim(java.lang.String)>(r0)
+org.apache.ambari.server.utils.VersionUtils.compareVersions : $z1 = virtualinvoke r10.<java.lang.String: boolean isEmpty()>()

@@ -1,0 +1,23 @@
+org.apache.ambari.server.notifications.dispatchers.SNMPDispatcher$SnmpVersion.valueOf : $r1 = staticinvoke <java.lang.Enum: java.lang.Enum valueOf(java.lang.Class,java.lang.String)>(class "org/apache/ambari/server/notifications/dispatchers/SNMPDispatcher$SnmpVersion", r0)
+org.apache.ambari.server.notifications.dispatchers.SNMPDispatcher.getSnmpVersion : r2 = staticinvoke <org.apache.ambari.server.notifications.dispatchers.SNMPDispatcher: java.lang.String getDispatchProperty(java.util.Map,java.lang.String)>(r1, "ambari.dispatch.snmp.version")
+org.apache.ambari.server.notifications.dispatchers.SNMPDispatcher.getSnmpVersion : $r5 = staticinvoke <org.apache.ambari.server.notifications.dispatchers.SNMPDispatcher$SnmpVersion: org.apache.ambari.server.notifications.dispatchers.SNMPDispatcher$SnmpVersion valueOf(java.lang.String)>(r2)
+org.apache.ambari.server.notifications.dispatchers.SNMPDispatcher.createTransportMapping : $r14 = new org.snmp4j.transport.DefaultUdpTransportMapping
+org.apache.ambari.server.notifications.dispatchers.SNMPDispatcher.createTransportMapping : r1 = r0
+org.apache.ambari.server.notifications.dispatchers.SNMPDispatcher.createTransportMapping : $r6 = r0.<org.apache.ambari.server.notifications.dispatchers.SNMPDispatcher: org.snmp4j.transport.UdpTransportMapping transportMapping>
+org.apache.ambari.server.notifications.dispatchers.SNMPDispatcher.createTransportMapping : $r4 = r0.<org.apache.ambari.server.notifications.dispatchers.SNMPDispatcher: org.snmp4j.transport.UdpTransportMapping transportMapping>
+org.apache.ambari.server.notifications.dispatchers.SNMPDispatcher.createTransportMapping : $r8 = <org.apache.ambari.server.notifications.dispatchers.SNMPDispatcher: org.slf4j.Logger LOG>
+org.apache.ambari.server.notifications.dispatchers.SNMPDispatcher.createTransportMapping : $r7 = r0.<org.apache.ambari.server.notifications.dispatchers.SNMPDispatcher: java.lang.Integer port>
+org.apache.ambari.server.notifications.dispatchers.SNMPDispatcher.createTransportMapping : exitmonitor r1
+org.apache.ambari.server.notifications.dispatchers.SNMPDispatcher.failureCallback : $r3 = r1.<org.apache.ambari.server.notifications.Notification: org.apache.ambari.server.notifications.DispatchCallback Callback>
+org.apache.ambari.server.notifications.dispatchers.SNMPDispatcher.failureCallback : $r2 = r1.<org.apache.ambari.server.notifications.Notification: org.apache.ambari.server.notifications.DispatchCallback Callback>
+org.apache.ambari.server.notifications.dispatchers.SNMPDispatcher.dispatch : r0.<org.apache.ambari.server.notifications.dispatchers.SNMPDispatcher: org.snmp4j.transport.UdpTransportMapping transportMapping> = null
+org.apache.ambari.server.notifications.dispatchers.SNMPDispatcher.dispatch : specialinvoke r0.<org.apache.ambari.server.notifications.dispatchers.SNMPDispatcher: void createTransportMapping()>()
+org.apache.ambari.server.notifications.dispatchers.SNMPDispatcher.dispatch : $r7 = r1.<org.apache.ambari.server.notifications.Notification: java.util.Map DispatchProperties>
+org.apache.ambari.server.notifications.dispatchers.SNMPDispatcher.dispatch : virtualinvoke r0.<org.apache.ambari.server.notifications.dispatchers.SNMPDispatcher: void sendTraps(org.apache.ambari.server.notifications.Notification,org.apache.ambari.server.notifications.dispatchers.SNMPDispatcher$SnmpVersion)>(r1, r3)
+org.apache.ambari.server.notifications.dispatchers.SNMPDispatcher.dispatch : r17 = $r16
+org.apache.ambari.server.notifications.dispatchers.SNMPDispatcher.dispatch : specialinvoke r0.<org.apache.ambari.server.notifications.dispatchers.SNMPDispatcher: void failureCallback(org.apache.ambari.server.notifications.Notification)>(r1)
+org.apache.ambari.server.notifications.dispatchers.SNMPDispatcher.dispatch : $r2 = <org.apache.ambari.server.notifications.dispatchers.SNMPDispatcher: org.slf4j.Logger LOG>
+org.apache.ambari.server.notifications.dispatchers.SNMPDispatcher.dispatch : $r5 = new org.snmp4j.Snmp
+org.apache.ambari.server.notifications.dispatchers.SNMPDispatcher.dispatch : $r18 = <org.apache.ambari.server.notifications.dispatchers.SNMPDispatcher: org.slf4j.Logger LOG>
+org.apache.ambari.server.notifications.dispatchers.SNMPDispatcher.getDispatchProperty : if r0 == null goto $r2 = new org.apache.ambari.server.notifications.dispatchers.SNMPDispatcher$InvalidSnmpConfigurationException
+org.apache.ambari.server.notifications.dispatchers.SNMPDispatcher.getDispatchProperty : $r5 = interfaceinvoke r0.<java.util.Map: java.lang.Object get(java.lang.Object)>(r1)

@@ -1,0 +1,16 @@
+org.apache.ambari.server.utils.AmbariPath.getPath : $r3 = <org.apache.ambari.server.utils.AmbariPath: org.slf4j.Logger LOG>
+org.apache.ambari.server.utils.AmbariPath.getPath : $r1 = <org.apache.ambari.server.utils.AmbariPath: java.lang.String rootDirectory>
+org.apache.ambari.server.utils.AmbariPath.getPath : return r0
+org.apache.ambari.server.controller.AmbariServer.getController : $r0 = <org.apache.ambari.server.controller.AmbariServer: org.apache.ambari.server.controller.AmbariManagementController clusterController>
+org.apache.ambari.server.api.query.render.ClusterBlueprintRenderer.requiresPropertyProviderInput : return 0
+org.apache.ambari.server.topology.HostGroupInfo.setConfiguration : r0.<org.apache.ambari.server.topology.HostGroupInfo: org.apache.ambari.server.topology.Configuration configuration> = r1
+org.apache.ambari.server.topology.HostGroupInfo.addHost : $r5 = r0.<org.apache.ambari.server.topology.HostGroupInfo: java.util.Collection hostNames>
+org.apache.ambari.server.topology.HostGroupInfo.addHost : $z0 = virtualinvoke r1.<java.lang.String: boolean equals(java.lang.Object)>(r3)
+org.apache.ambari.server.topology.HostGroupInfo.addHost : exitmonitor r2
+org.apache.ambari.server.topology.HostGroupInfo.addHost : $r7 = r0.<org.apache.ambari.server.topology.HostGroupInfo: java.util.Collection hostNames>
+org.apache.ambari.server.topology.HostGroupInfo.addHost : r3 = virtualinvoke r1.<java.lang.String: java.lang.String toLowerCase()>()
+org.apache.ambari.server.topology.HostGroupInfo.addHosts : r3 = interfaceinvoke r1.<java.util.Collection: java.util.Iterator iterator()>()
+org.apache.ambari.server.topology.HostGroupInfo.addHosts : $r6 = r0.<org.apache.ambari.server.topology.HostGroupInfo: java.util.Collection hostNames>
+org.apache.ambari.server.topology.HostGroupInfo.addHosts : exitmonitor r2
+org.apache.ambari.server.topology.HostGroupInfo.addHosts : virtualinvoke r0.<org.apache.ambari.server.topology.HostGroupInfo: void addHost(java.lang.String)>(r4)
+org.apache.ambari.server.topology.HostGroupInfo.addHosts : goto [?= $z0 = interfaceinvoke r3.<java.util.Iterator: boolean hasNext()>()]

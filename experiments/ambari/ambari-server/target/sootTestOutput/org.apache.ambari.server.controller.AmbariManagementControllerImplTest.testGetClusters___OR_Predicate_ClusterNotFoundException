@@ -1,0 +1,67 @@
+org.apache.ambari.server.security.authorization.internal.InternalAuthenticationToken.getAuthorities : $r1 = <org.apache.ambari.server.security.authorization.internal.InternalAuthenticationToken: java.util.Collection AUTHORITIES>
+org.apache.ambari.server.orm.entities.RoleAuthorizationEntity.getAuthorizationId : $r1 = virtualinvoke r0.<org.apache.ambari.server.orm.entities.RoleAuthorizationEntity: java.lang.String _persistence_get_authorizationId()>()
+org.apache.ambari.server.controller.AmbariManagementControllerImpl.getClusters : $i0 = interfaceinvoke r1.<java.util.Set: int size()>()
+org.apache.ambari.server.controller.AmbariManagementControllerImpl.getClusters : interfaceinvoke r3.<java.util.Set: boolean add(java.lang.Object)>(r32)
+org.apache.ambari.server.controller.AmbariManagementControllerImpl.getClusters : $r22 = virtualinvoke r1.<org.apache.ambari.server.controller.ClusterRequest: java.lang.String getClusterName()>()
+org.apache.ambari.server.controller.AmbariManagementControllerImpl.getClusters : goto [?= $z0 = interfaceinvoke r4.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.controller.AmbariManagementControllerImpl.getClusters : $r8 = specialinvoke r0.<org.apache.ambari.server.controller.AmbariManagementControllerImpl: java.util.Set getClusters(org.apache.ambari.server.controller.ClusterRequest)>(r5)
+org.apache.ambari.server.controller.AmbariManagementControllerImpl.getClusters : r4 = null
+org.apache.ambari.server.controller.AmbariManagementControllerImpl.getClusters : $r9 = <org.apache.ambari.server.controller.AmbariManagementControllerImpl: org.slf4j.Logger LOG>
+org.apache.ambari.server.controller.AmbariManagementControllerImpl.getClusters : goto [?= (branch)]
+org.apache.ambari.server.controller.AmbariManagementControllerImpl.getClusters : $r34 = interfaceinvoke r4.<org.apache.ambari.server.state.Cluster: java.util.Map getActiveServiceConfigVersions()>()
+org.apache.ambari.server.controller.AmbariManagementControllerImpl.getClusters : $r2 = new java.util.HashSet
+org.apache.ambari.server.controller.AmbariManagementControllerImpl.getClusters : $r23 = r0.<org.apache.ambari.server.controller.AmbariManagementControllerImpl: org.apache.ambari.server.state.Clusters clusters>
+org.apache.ambari.server.controller.AmbariManagementControllerImpl.getClusters : r6 = $r9
+org.apache.ambari.server.controller.AmbariManagementControllerImpl.getClusters : if r4 == null goto $r36 = r0.<org.apache.ambari.server.controller.AmbariManagementControllerImpl: org.apache.ambari.server.state.Clusters clusters>
+org.apache.ambari.server.controller.AmbariManagementControllerImpl.getClusters : r32 = interfaceinvoke r4.<org.apache.ambari.server.state.Cluster: org.apache.ambari.server.controller.ClusterResponse convertToResponse()>()
+org.apache.ambari.server.controller.AmbariManagementControllerImpl.getClusters : $r33 = interfaceinvoke r4.<org.apache.ambari.server.state.Cluster: java.util.Map getDesiredConfigs()>()
+org.apache.ambari.server.controller.AmbariManagementControllerImpl.getClusters : return r3
+org.apache.ambari.server.controller.AmbariManagementControllerImpl.getClusters : $r29 = <org.apache.ambari.server.security.authorization.ResourceType: org.apache.ambari.server.security.authorization.ResourceType AMBARI>
+org.apache.ambari.server.controller.AmbariManagementControllerImpl.getClusters : throw r5
+org.apache.ambari.server.controller.AmbariManagementControllerImpl.getClusters : r4 = interfaceinvoke r1.<java.util.Set: java.util.Iterator iterator()>()
+org.apache.ambari.server.controller.AmbariManagementControllerImpl.getClusters : r5 = $r28
+org.apache.ambari.server.controller.AmbariManagementControllerImpl.getClusters : $r35 = virtualinvoke r0.<org.apache.ambari.server.controller.AmbariManagementControllerImpl: java.util.Map getCredentialStoreServiceProperties()>()
+org.apache.ambari.server.security.authorization.internal.InternalAuthenticationToken.setAuthenticated : r0.<org.apache.ambari.server.security.authorization.internal.InternalAuthenticationToken: boolean authenticated> = z0
+org.apache.ambari.server.orm.entities.PrivilegeEntity.getPermission : $r1 = virtualinvoke r0.<org.apache.ambari.server.orm.entities.PrivilegeEntity: org.apache.ambari.server.orm.entities.PermissionEntity _persistence_get_permission()>()
+org.apache.ambari.server.security.authorization.ResourceType.valueOf : $r1 = staticinvoke <java.lang.Enum: java.lang.Enum valueOf(java.lang.Class,java.lang.String)>(class "org/apache/ambari/server/security/authorization/ResourceType", r0)
+org.apache.ambari.server.security.authorization.AmbariGrantedAuthority.getPrivilegeEntity : $r1 = r0.<org.apache.ambari.server.security.authorization.AmbariGrantedAuthority: org.apache.ambari.server.orm.entities.PrivilegeEntity privilegeEntity>
+org.apache.ambari.server.security.authorization.RoleAuthorization.translate : if r0 != null goto r1 = virtualinvoke r0.<java.lang.String: java.lang.String trim()>()
+org.apache.ambari.server.security.authorization.RoleAuthorization.translate : $r2 = virtualinvoke r1.<java.lang.String: java.lang.String replace(java.lang.CharSequence,java.lang.CharSequence)>(".", "_")
+org.apache.ambari.server.security.authorization.RoleAuthorization.translate : r1 = virtualinvoke r0.<java.lang.String: java.lang.String trim()>()
+org.apache.ambari.server.security.authorization.RoleAuthorization.translate : $z0 = virtualinvoke r1.<java.lang.String: boolean isEmpty()>()
+org.apache.ambari.server.security.authorization.AuthorizationHelper.getAuthentication : if r0 != null goto $r1 = interfaceinvoke r0.<org.springframework.security.core.context.SecurityContext: org.springframework.security.core.Authentication getAuthentication()>()
+org.apache.ambari.server.security.authorization.AuthorizationHelper.getAuthentication : r0 = staticinvoke <org.springframework.security.core.context.SecurityContextHolder: org.springframework.security.core.context.SecurityContext getContext()>()
+org.apache.ambari.server.orm.entities.PermissionEntity.getAuthorizations : $r1 = virtualinvoke r0.<org.apache.ambari.server.orm.entities.PermissionEntity: java.util.Collection _persistence_get_authorizations()>()
+org.apache.ambari.server.orm.entities.ResourceTypeEntity.getName : $r1 = virtualinvoke r0.<org.apache.ambari.server.orm.entities.ResourceTypeEntity: java.lang.String _persistence_get_name()>()
+org.apache.ambari.server.security.authorization.ResourceType.translate : $r3 = virtualinvoke r2.<java.lang.String: java.lang.String toUpperCase()>()
+org.apache.ambari.server.security.authorization.ResourceType.translate : if r0 != null goto r2 = virtualinvoke r0.<java.lang.String: java.lang.String trim()>()
+org.apache.ambari.server.security.authorization.ResourceType.translate : $z0 = virtualinvoke r2.<java.lang.String: boolean isEmpty()>()
+org.apache.ambari.server.security.authorization.ResourceType.translate : r2 = virtualinvoke r0.<java.lang.String: java.lang.String trim()>()
+org.apache.ambari.server.controller.ClusterRequest.getClusterName : $r1 = r0.<org.apache.ambari.server.controller.ClusterRequest: java.lang.String clusterName>
+org.apache.ambari.server.controller.AmbariManagementControllerImplTest.setupAuthentication : virtualinvoke r1.<org.apache.ambari.server.security.authorization.internal.InternalAuthenticationToken: void setAuthenticated(boolean)>(1)
+org.apache.ambari.server.controller.AmbariManagementControllerImplTest.setupAuthentication : $r2 = staticinvoke <org.springframework.security.core.context.SecurityContextHolder: org.springframework.security.core.context.SecurityContext getContext()>()
+org.apache.ambari.server.controller.AmbariManagementControllerImplTest.setupAuthentication : $r0 = new org.apache.ambari.server.security.authorization.internal.InternalAuthenticationToken
+org.apache.ambari.server.orm.entities.ResourceEntity.getResourceType : $r1 = virtualinvoke r0.<org.apache.ambari.server.orm.entities.ResourceEntity: org.apache.ambari.server.orm.entities.ResourceTypeEntity _persistence_get_resourceType()>()
+org.apache.ambari.server.security.authorization.AuthorizationHelper.isAuthorized : r6 = (org.apache.ambari.server.security.authorization.AmbariGrantedAuthority) r5
+org.apache.ambari.server.security.authorization.AuthorizationHelper.isAuthorized : $r23 = virtualinvoke r13.<org.apache.ambari.server.orm.entities.RoleAuthorizationEntity: java.lang.String getAuthorizationId()>()
+org.apache.ambari.server.security.authorization.AuthorizationHelper.isAuthorized : if r0 != null goto $r15 = interfaceinvoke r0.<org.springframework.security.core.Authentication: java.util.Collection getAuthorities()>()
+org.apache.ambari.server.security.authorization.AuthorizationHelper.isAuthorized : $r15 = interfaceinvoke r0.<org.springframework.security.core.Authentication: java.util.Collection getAuthorities()>()
+org.apache.ambari.server.security.authorization.AuthorizationHelper.isAuthorized : z0 = 1
+org.apache.ambari.server.security.authorization.AuthorizationHelper.isAuthorized : if r11 == null goto (branch)
+org.apache.ambari.server.security.authorization.AuthorizationHelper.isAuthorized : $z7 = 1
+org.apache.ambari.server.security.authorization.AuthorizationHelper.isAuthorized : $r19 = <org.apache.ambari.server.security.authorization.ResourceType: org.apache.ambari.server.security.authorization.ResourceType AMBARI>
+org.apache.ambari.server.security.authorization.AuthorizationHelper.isAuthorized : $r3 = staticinvoke <org.apache.ambari.server.security.authorization.AuthorizationHelper: org.springframework.security.core.Authentication getAuthentication()>()
+org.apache.ambari.server.security.authorization.AuthorizationHelper.isAuthorized : r8 = virtualinvoke r7.<org.apache.ambari.server.orm.entities.PrivilegeEntity: org.apache.ambari.server.orm.entities.ResourceEntity getResource()>()
+org.apache.ambari.server.security.authorization.AuthorizationHelper.isAuthorized : r10 = virtualinvoke r7.<org.apache.ambari.server.orm.entities.PrivilegeEntity: org.apache.ambari.server.orm.entities.PermissionEntity getPermission()>()
+org.apache.ambari.server.security.authorization.AuthorizationHelper.isAuthorized : r7 = virtualinvoke r6.<org.apache.ambari.server.security.authorization.AmbariGrantedAuthority: org.apache.ambari.server.orm.entities.PrivilegeEntity getPrivilegeEntity()>()
+org.apache.ambari.server.security.authorization.AuthorizationHelper.isAuthorized : if r3 == null goto return 1
+org.apache.ambari.server.security.authorization.AuthorizationHelper.isAuthorized : $r17 = virtualinvoke r8.<org.apache.ambari.server.orm.entities.ResourceEntity: org.apache.ambari.server.orm.entities.ResourceTypeEntity getResourceType()>()
+org.apache.ambari.server.security.authorization.AuthorizationHelper.isAuthorized : if r10 != null goto $r21 = virtualinvoke r10.<org.apache.ambari.server.orm.entities.PermissionEntity: java.util.Collection getAuthorizations()>()
+org.apache.ambari.server.security.authorization.AuthorizationHelper.isAuthorized : if z0 == 0 goto (branch)
+org.apache.ambari.server.security.authorization.AuthorizationHelper.isAuthorized : r12 = interfaceinvoke r11.<java.util.Collection: java.util.Iterator iterator()>()
+org.apache.ambari.server.controller.AmbariManagementControllerImpl.getCredentialStoreServiceProperties : return r2
+org.apache.ambari.server.controller.AmbariManagementControllerImpl.getCredentialStoreServiceProperties : $r1 = new java.util.HashMap
+org.apache.ambari.server.controller.AmbariManagementControllerImpl.getCredentialStoreServiceProperties : $r4 = r0.<org.apache.ambari.server.controller.AmbariManagementControllerImpl: org.apache.ambari.server.security.encryption.CredentialStoreService credentialStoreService>
+org.apache.ambari.server.controller.AmbariManagementControllerImpl.getCredentialStoreServiceProperties : $r7 = r0.<org.apache.ambari.server.controller.AmbariManagementControllerImpl: org.apache.ambari.server.security.encryption.CredentialStoreService credentialStoreService>
+org.apache.ambari.server.security.authorization.RoleAuthorization.valueOf : $r1 = staticinvoke <java.lang.Enum: java.lang.Enum valueOf(java.lang.Class,java.lang.String)>(class "org/apache/ambari/server/security/authorization/RoleAuthorization", r0)
+org.apache.ambari.server.orm.entities.PrivilegeEntity.getResource : $r1 = virtualinvoke r0.<org.apache.ambari.server.orm.entities.PrivilegeEntity: org.apache.ambari.server.orm.entities.ResourceEntity _persistence_get_resource()>()

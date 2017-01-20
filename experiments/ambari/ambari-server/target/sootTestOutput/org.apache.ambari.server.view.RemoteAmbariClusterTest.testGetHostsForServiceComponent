@@ -1,0 +1,19 @@
+org.apache.ambari.server.view.RemoteAmbariCluster.access$000 : $r2 = specialinvoke r0.<org.apache.ambari.server.view.RemoteAmbariCluster: com.google.gson.JsonElement readFromUrlJSON(java.lang.String)>(r1)
+org.apache.ambari.server.view.RemoteAmbariCluster$1.load : $r2 = (java.lang.String) r1
+org.apache.ambari.server.view.RemoteAmbariCluster$1.load : $r2 = r0.<org.apache.ambari.server.view.RemoteAmbariCluster$1: org.apache.ambari.server.view.RemoteAmbariCluster this$0>
+org.apache.ambari.server.view.RemoteAmbariCluster.readFromUrlJSON : r3 = staticinvoke <org.apache.commons.io.IOUtils: java.lang.String toString(java.io.InputStream)>(r2)
+org.apache.ambari.server.view.RemoteAmbariCluster.readFromUrlJSON : $r6 = new com.google.gson.JsonParser
+org.apache.ambari.server.view.RemoteAmbariCluster.readFromUrlJSON : $r4 = r0.<org.apache.ambari.server.view.RemoteAmbariCluster: org.apache.ambari.view.AmbariStreamProvider streamProvider>
+org.apache.ambari.server.view.RemoteAmbariCluster.getHostsForServiceComponent : goto [?= return r4]
+org.apache.ambari.server.view.RemoteAmbariCluster.getHostsForServiceComponent : $r17 = virtualinvoke r5.<com.google.gson.JsonElement: com.google.gson.JsonObject getAsJsonObject()>()
+org.apache.ambari.server.view.RemoteAmbariCluster.getHostsForServiceComponent : $r13 = new java.util.ArrayList
+org.apache.ambari.server.view.RemoteAmbariCluster.getHostsForServiceComponent : if r5 == null goto return r4
+org.apache.ambari.server.view.RemoteAmbariCluster.getHostsForServiceComponent : $r14 = r0.<org.apache.ambari.server.view.RemoteAmbariCluster: com.google.common.cache.LoadingCache configurationCache>
+org.apache.ambari.server.view.RemoteAmbariCluster.getHostsForServiceComponent : if r6 == null goto return r4
+org.apache.ambari.server.view.RemoteAmbariCluster.getHostsForServiceComponent : goto [?= $z2 = interfaceinvoke r7.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.view.RemoteAmbariCluster.getHostsForServiceComponent : $r22 = virtualinvoke r9.<com.google.gson.JsonElement: com.google.gson.JsonObject getAsJsonObject()>()
+org.apache.ambari.server.view.RemoteAmbariCluster.getHostsForServiceComponent : interfaceinvoke r4.<java.util.List: boolean add(java.lang.Object)>(r10)
+org.apache.ambari.server.view.RemoteAmbariCluster.getHostsForServiceComponent : return r4
+org.apache.ambari.server.view.RemoteAmbariCluster.getHostsForServiceComponent : $r19 = virtualinvoke r6.<com.google.gson.JsonElement: com.google.gson.JsonArray getAsJsonArray()>()
+org.apache.ambari.server.view.RemoteAmbariCluster.getHostsForServiceComponent : $r21 = virtualinvoke r8.<com.google.gson.JsonElement: com.google.gson.JsonObject getAsJsonObject()>()
+org.apache.ambari.server.view.RemoteAmbariCluster.getHostsForServiceComponent : $r11 = newarray (java.lang.Object)[3]

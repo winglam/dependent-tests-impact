@@ -1,0 +1,57 @@
+org.apache.ambari.server.upgrade.UpgradeCatalog250.updateKafkaConfigs : goto [?= $z1 = interfaceinvoke r4.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.upgrade.UpgradeCatalog250.updateKafkaConfigs : if r7 == null goto (branch)
+org.apache.ambari.server.upgrade.UpgradeCatalog250.updateKafkaConfigs : $r13 = staticinvoke <java.util.Collections: java.util.Set singleton(java.lang.Object)>("kafka.timeline.metrics.host")
+org.apache.ambari.server.upgrade.UpgradeCatalog250.updateKafkaConfigs : $r8 = r0.<org.apache.ambari.server.upgrade.UpgradeCatalog250: com.google.inject.Injector injector>
+org.apache.ambari.server.upgrade.UpgradeCatalog250.updateKafkaConfigs : if r3 == null goto return
+org.apache.ambari.server.upgrade.UpgradeCatalog250.updateKafkaConfigs : r6 = interfaceinvoke r5.<org.apache.ambari.server.state.Cluster: org.apache.ambari.server.state.Config getDesiredConfigByType(java.lang.String)>("kafka-broker")
+org.apache.ambari.server.upgrade.UpgradeCatalog250.updateKafkaConfigs : $r10 = interfaceinvoke r3.<java.util.Map: java.util.Collection values()>()
+org.apache.ambari.server.upgrade.UpgradeCatalog250.updateKafkaConfigs : if r2 == null goto return
+org.apache.ambari.server.upgrade.UpgradeCatalog250.updateKafkaConfigs : r2 = interfaceinvoke r1.<org.apache.ambari.server.controller.AmbariManagementController: org.apache.ambari.server.state.Clusters getClusters()>()
+org.apache.ambari.server.upgrade.UpgradeCatalog250.updateKafkaConfigs : $r12 = <org.apache.ambari.server.upgrade.UpgradeCatalog250: org.slf4j.Logger LOG>
+org.apache.ambari.server.upgrade.UpgradeCatalog250.updateKafkaConfigs : if r6 == null goto (branch)
+org.apache.ambari.server.upgrade.UpgradeCatalog250.updateKafkaConfigs : r3 = interfaceinvoke r2.<org.apache.ambari.server.state.Clusters: java.util.Map getClusters()>()
+org.apache.ambari.server.upgrade.UpgradeCatalog250.updateKafkaConfigs : r7 = interfaceinvoke r6.<org.apache.ambari.server.state.Config: java.util.Map getProperties()>()
+org.apache.ambari.server.upgrade.AbstractUpgradeCatalog.updateConfigurationPropertiesForCluster : r12 = specialinvoke r0.<org.apache.ambari.server.upgrade.AbstractUpgradeCatalog: java.util.Map mergeProperties(java.util.Map,java.util.Map,boolean,com.google.common.collect.Multimap)>(r9, r3, z0, r10)
+org.apache.ambari.server.upgrade.AbstractUpgradeCatalog.updateConfigurationPropertiesForCluster : interfaceinvoke r5.<org.apache.ambari.server.controller.AmbariManagementController: org.apache.ambari.server.state.Config createConfig(org.apache.ambari.server.state.Cluster,java.lang.String,java.util.Map,java.lang.String,java.util.Map)>(r1, r2, r12, r6, r39)
+org.apache.ambari.server.upgrade.AbstractUpgradeCatalog.updateConfigurationPropertiesForCluster : r7 = interfaceinvoke r1.<org.apache.ambari.server.state.Cluster: java.util.Map getConfigsByType(java.lang.String)>(r2)
+org.apache.ambari.server.upgrade.AbstractUpgradeCatalog.updateConfigurationPropertiesForCluster : $i2 = interfaceinvoke r10.<com.google.common.collect.Multimap: int size()>()
+org.apache.ambari.server.upgrade.AbstractUpgradeCatalog.updateConfigurationPropertiesForCluster : $r31 = r0.<org.apache.ambari.server.upgrade.AbstractUpgradeCatalog: org.apache.ambari.server.configuration.Configuration configuration>
+org.apache.ambari.server.upgrade.AbstractUpgradeCatalog.updateConfigurationPropertiesForCluster : if r7 == null goto r8 = interfaceinvoke r1.<org.apache.ambari.server.state.Cluster: org.apache.ambari.server.state.Config getDesiredConfigByType(java.lang.String)>(r2)
+org.apache.ambari.server.upgrade.AbstractUpgradeCatalog.updateConfigurationPropertiesForCluster : r39 = staticinvoke <java.util.Collections: java.util.Map emptyMap()>()
+org.apache.ambari.server.upgrade.AbstractUpgradeCatalog.updateConfigurationPropertiesForCluster : r39 = interfaceinvoke r8.<org.apache.ambari.server.state.Config: java.util.Map getPropertiesAttributes()>()
+org.apache.ambari.server.upgrade.AbstractUpgradeCatalog.updateConfigurationPropertiesForCluster : r11 = interfaceinvoke r1.<org.apache.ambari.server.state.Cluster: java.lang.String getServiceByConfigType(java.lang.String)>(r2)
+org.apache.ambari.server.upgrade.AbstractUpgradeCatalog.updateConfigurationPropertiesForCluster : r12 = specialinvoke r0.<org.apache.ambari.server.upgrade.AbstractUpgradeCatalog: java.util.Map removeProperties(java.util.Map,java.util.Set,com.google.common.collect.Multimap)>(r12, r4, r10)
+org.apache.ambari.server.upgrade.AbstractUpgradeCatalog.updateConfigurationPropertiesForCluster : if r8 != null goto (branch)
+org.apache.ambari.server.upgrade.AbstractUpgradeCatalog.updateConfigurationPropertiesForCluster : r39 = null
+org.apache.ambari.server.upgrade.AbstractUpgradeCatalog.updateConfigurationPropertiesForCluster : if null != r39 goto interfaceinvoke r5.<org.apache.ambari.server.controller.AmbariManagementController: org.apache.ambari.server.state.Config createConfig(org.apache.ambari.server.state.Cluster,java.lang.String,java.util.Map,java.lang.String,java.util.Map)>(r1, r2, r12, r6, r39)
+org.apache.ambari.server.upgrade.AbstractUpgradeCatalog.updateConfigurationPropertiesForCluster : $r20 = new java.lang.StringBuilder
+org.apache.ambari.server.upgrade.AbstractUpgradeCatalog.updateConfigurationPropertiesForCluster : r13 = $r33
+org.apache.ambari.server.upgrade.AbstractUpgradeCatalog.updateConfigurationPropertiesForCluster : $r35 = staticinvoke <com.google.common.collect.Maps: com.google.common.collect.MapDifference difference(java.util.Map,java.util.Map)>(r9, r12)
+org.apache.ambari.server.upgrade.AbstractUpgradeCatalog.updateConfigurationPropertiesForCluster : r8 = interfaceinvoke r1.<org.apache.ambari.server.state.Cluster: org.apache.ambari.server.state.Config getDesiredConfigByType(java.lang.String)>(r2)
+org.apache.ambari.server.upgrade.AbstractUpgradeCatalog.updateConfigurationPropertiesForCluster : r9 = interfaceinvoke r8.<org.apache.ambari.server.state.Config: java.util.Map getProperties()>()
+org.apache.ambari.server.upgrade.AbstractUpgradeCatalog.updateConfigurationPropertiesForCluster : if r8 != null goto r9 = interfaceinvoke r8.<org.apache.ambari.server.state.Config: java.util.Map getProperties()>()
+org.apache.ambari.server.upgrade.AbstractUpgradeCatalog.updateConfigurationPropertiesForCluster : if r3 == null goto return
+org.apache.ambari.server.upgrade.AbstractUpgradeCatalog.updateConfigurationPropertiesForCluster : goto [?= return]
+org.apache.ambari.server.upgrade.AbstractUpgradeCatalog.updateConfigurationPropertiesForCluster : r14 = interfaceinvoke r1.<org.apache.ambari.server.state.Cluster: org.apache.ambari.server.state.Config getConfig(java.lang.String,java.lang.String)>(r2, r6)
+org.apache.ambari.server.upgrade.AbstractUpgradeCatalog.updateConfigurationPropertiesForCluster : if r4 == null goto $i2 = interfaceinvoke r10.<com.google.common.collect.Multimap: int size()>()
+org.apache.ambari.server.upgrade.AbstractUpgradeCatalog.updateConfigurationPropertiesForCluster : if r8 == null goto (branch)
+org.apache.ambari.server.upgrade.AbstractUpgradeCatalog.updateConfigurationPropertiesForCluster : $r36 = <org.apache.ambari.server.upgrade.AbstractUpgradeCatalog: org.slf4j.Logger LOG>
+org.apache.ambari.server.upgrade.AbstractUpgradeCatalog.updateConfigurationPropertiesForCluster : $r18 = r0.<org.apache.ambari.server.upgrade.AbstractUpgradeCatalog: com.google.inject.Injector injector>
+org.apache.ambari.server.upgrade.AbstractUpgradeCatalog.updateConfigurationPropertiesForCluster : $r34 = <org.apache.ambari.server.upgrade.AbstractUpgradeCatalog: org.slf4j.Logger LOG>
+org.apache.ambari.server.upgrade.AbstractUpgradeCatalog.updateConfigurationPropertiesForCluster : r10 = staticinvoke <com.google.common.collect.ArrayListMultimap: com.google.common.collect.ArrayListMultimap create()>()
+org.apache.ambari.server.upgrade.AbstractUpgradeCatalog.updateConfigurationPropertiesForCluster : if r14 == null goto (branch)
+org.apache.ambari.server.upgrade.UpgradeCatalog250Test.access$400 : $r1 = r0.<org.apache.ambari.server.upgrade.UpgradeCatalog250Test: org.apache.ambari.server.state.Cluster cluster>
+org.apache.ambari.server.upgrade.UpgradeCatalog250.getTargetVersion : return "2.5.0"
+org.apache.ambari.server.upgrade.AbstractUpgradeCatalog.registerCatalog : $r2 = <org.apache.ambari.server.upgrade.AbstractUpgradeCatalog: java.util.Map upgradeCatalogMap>
+org.apache.ambari.server.upgrade.AbstractUpgradeCatalog.removeConfigurationPropertiesFromCluster : $r4 = new java.util.HashMap
+org.apache.ambari.server.upgrade.AbstractUpgradeCatalog.mergeProperties : return r5
+org.apache.ambari.server.upgrade.AbstractUpgradeCatalog.mergeProperties : $r8 = interfaceinvoke r2.<java.util.Map: java.util.Set entrySet()>()
+org.apache.ambari.server.upgrade.AbstractUpgradeCatalog.mergeProperties : $r4 = new java.util.HashMap
+org.apache.ambari.server.upgrade.AbstractUpgradeCatalog.removeProperties : return r5
+org.apache.ambari.server.upgrade.AbstractUpgradeCatalog.removeProperties : r6 = interfaceinvoke r2.<java.util.Set: java.util.Iterator iterator()>()
+org.apache.ambari.server.upgrade.AbstractUpgradeCatalog.removeProperties : interfaceinvoke r5.<java.util.Map: void putAll(java.util.Map)>(r1)
+org.apache.ambari.server.upgrade.AbstractUpgradeCatalog.removeProperties : $z1 = interfaceinvoke r1.<java.util.Map: boolean containsKey(java.lang.Object)>(r7)
+org.apache.ambari.server.upgrade.AbstractUpgradeCatalog.removeProperties : interfaceinvoke r5.<java.util.Map: java.lang.Object remove(java.lang.Object)>(r7)
+org.apache.ambari.server.upgrade.AbstractUpgradeCatalog.removeProperties : goto [?= $z0 = interfaceinvoke r6.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.upgrade.AbstractUpgradeCatalog.removeProperties : $r11 = <org.apache.ambari.server.upgrade.AbstractUpgradeCatalog$ConfigUpdateType: org.apache.ambari.server.upgrade.AbstractUpgradeCatalog$ConfigUpdateType REMOVED>
+org.apache.ambari.server.upgrade.AbstractUpgradeCatalog.removeProperties : $r4 = new java.util.HashMap

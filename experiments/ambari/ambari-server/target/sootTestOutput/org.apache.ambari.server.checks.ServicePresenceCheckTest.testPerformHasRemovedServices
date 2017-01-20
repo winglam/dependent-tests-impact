@@ -1,0 +1,61 @@
+org.apache.ambari.server.controller.PrereqCheckRequest.setPrerequisiteCheckConfig : r0.<org.apache.ambari.server.controller.PrereqCheckRequest: org.apache.ambari.server.state.stack.UpgradePack$PrerequisiteCheckConfig m_prereqCheckConfig> = r1
+org.apache.ambari.server.checks.ServicePresenceCheck.getNoUpgradeSupportServices : r4 = specialinvoke r0.<org.apache.ambari.server.checks.ServicePresenceCheck: java.lang.String getPropertyValue(org.apache.ambari.server.controller.PrereqCheckRequest,java.lang.String)>(r1, "no-upgrade-support-service-names")
+org.apache.ambari.server.checks.ServicePresenceCheck.getNoUpgradeSupportServices : return r3
+org.apache.ambari.server.checks.ServicePresenceCheck.getNoUpgradeSupportServices : if null == r4 goto return r3
+org.apache.ambari.server.checks.ServicePresenceCheck.getNoUpgradeSupportServices : $r2 = new java.util.ArrayList
+org.apache.ambari.server.state.stack.PrerequisiteCheck.getFailedOn : $r1 = r0.<org.apache.ambari.server.state.stack.PrerequisiteCheck: java.util.LinkedHashSet m_failedOn>
+org.apache.ambari.server.checks.CheckDescription.getFail : $r2 = r0.<org.apache.ambari.server.checks.CheckDescription: java.util.Map m_fails>
+org.apache.ambari.server.state.stack.PrerequisiteCheck.setFailReason : r0.<org.apache.ambari.server.state.stack.PrerequisiteCheck: java.lang.String m_failReason> = r1
+org.apache.ambari.server.checks.ServicePresenceCheckTest.access$000 : $r1 = r0.<org.apache.ambari.server.checks.ServicePresenceCheckTest: org.apache.ambari.server.state.Clusters m_clusters>
+org.apache.ambari.server.checks.ServicePresenceCheck.perform : $z8 = interfaceinvoke r7.<java.util.List: boolean isEmpty()>()
+org.apache.ambari.server.checks.ServicePresenceCheck.perform : $r19 = new java.util.ArrayList
+org.apache.ambari.server.checks.ServicePresenceCheck.perform : $r29 = interfaceinvoke r28.<java.util.Map$Entry: java.lang.Object getKey()>()
+org.apache.ambari.server.checks.ServicePresenceCheck.perform : r24 = virtualinvoke r0.<org.apache.ambari.server.checks.ServicePresenceCheck: java.lang.String getFailReason(java.lang.String,org.apache.ambari.server.state.stack.PrerequisiteCheck,org.apache.ambari.server.controller.PrereqCheckRequest)>("service_removed", r1, r2)
+org.apache.ambari.server.checks.ServicePresenceCheck.perform : r8 = virtualinvoke r0.<org.apache.ambari.server.checks.ServicePresenceCheck: java.lang.String getFailReason(org.apache.ambari.server.state.stack.PrerequisiteCheck,org.apache.ambari.server.controller.PrereqCheckRequest)>(r1, r2)
+org.apache.ambari.server.checks.ServicePresenceCheck.perform : $r25 = interfaceinvoke r6.<java.util.Map: java.util.Set entrySet()>()
+org.apache.ambari.server.checks.ServicePresenceCheck.perform : $r35 = <org.apache.ambari.server.state.stack.PrereqCheckStatus: org.apache.ambari.server.state.stack.PrereqCheckStatus FAIL>
+org.apache.ambari.server.checks.ServicePresenceCheck.perform : $r31 = virtualinvoke r30.<java.lang.String: java.lang.String toUpperCase()>()
+org.apache.ambari.server.checks.ServicePresenceCheck.perform : $r34 = newarray (java.lang.Object)[2]
+org.apache.ambari.server.checks.ServicePresenceCheck.perform : $r32 = virtualinvoke r1.<org.apache.ambari.server.state.stack.PrerequisiteCheck: java.util.LinkedHashSet getFailedOn()>()
+org.apache.ambari.server.checks.ServicePresenceCheck.perform : r5 = specialinvoke r0.<org.apache.ambari.server.checks.ServicePresenceCheck: java.util.List getNoUpgradeSupportServices(org.apache.ambari.server.controller.PrereqCheckRequest)>(r2)
+org.apache.ambari.server.checks.ServicePresenceCheck.perform : $r33 = interfaceinvoke r28.<java.util.Map$Entry: java.lang.Object getValue()>()
+org.apache.ambari.server.checks.ServicePresenceCheck.perform : $r18 = interfaceinvoke r3.<org.apache.ambari.server.state.Cluster: java.util.Map getServices()>()
+org.apache.ambari.server.checks.ServicePresenceCheck.perform : r9 = interfaceinvoke r5.<java.util.List: java.util.Iterator iterator()>()
+org.apache.ambari.server.checks.ServicePresenceCheck.perform : r6 = specialinvoke r0.<org.apache.ambari.server.checks.ServicePresenceCheck: java.util.Map getRemovedServices(org.apache.ambari.server.controller.PrereqCheckRequest)>(r2)
+org.apache.ambari.server.checks.ServicePresenceCheck.perform : goto [?= $z4 = interfaceinvoke r26.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.checks.ServicePresenceCheck.perform : $r36 = staticinvoke <org.apache.commons.lang.StringUtils: java.lang.String join(java.util.Collection,char)>(r7, 10)
+org.apache.ambari.server.checks.ServicePresenceCheck.perform : $r14 = r0.<org.apache.ambari.server.checks.ServicePresenceCheck: com.google.inject.Provider clustersProvider>
+org.apache.ambari.server.checks.ServicePresenceCheck.perform : interfaceinvoke r7.<java.util.List: boolean add(java.lang.Object)>(r13)
+org.apache.ambari.server.state.stack.PrerequisiteCheck.getStatus : $r1 = r0.<org.apache.ambari.server.state.stack.PrerequisiteCheck: org.apache.ambari.server.state.stack.PrereqCheckStatus m_status>
+org.apache.ambari.server.controller.PrereqCheckRequest.getPrerequisiteCheckConfig : $r1 = r0.<org.apache.ambari.server.controller.PrereqCheckRequest: org.apache.ambari.server.state.stack.UpgradePack$PrerequisiteCheckConfig m_prereqCheckConfig>
+org.apache.ambari.server.checks.ServicePresenceCheck.getPropertyValue : r4 = virtualinvoke r1.<org.apache.ambari.server.controller.PrereqCheckRequest: org.apache.ambari.server.state.stack.UpgradePack$PrerequisiteCheckConfig getPrerequisiteCheckConfig()>()
+org.apache.ambari.server.checks.ServicePresenceCheck.getPropertyValue : r3 = null
+org.apache.ambari.server.checks.ServicePresenceCheck.getPropertyValue : if r4 == null goto (branch)
+org.apache.ambari.server.checks.ServicePresenceCheck.getPropertyValue : return r3
+org.apache.ambari.server.checks.ServicePresenceCheck.getPropertyValue : $r8 = interfaceinvoke r5.<java.util.Map: java.lang.Object get(java.lang.Object)>(r2)
+org.apache.ambari.server.checks.ServicePresenceCheck.getPropertyValue : $r6 = virtualinvoke r0.<java.lang.Object: java.lang.Class getClass()>()
+org.apache.ambari.server.checks.ServicePresenceCheck.getPropertyValue : if r5 == null goto return r3
+org.apache.ambari.server.checks.ServicePresenceCheck.getPropertyValue : r5 = null
+org.apache.ambari.server.checks.ServicePresenceCheck.getRemovedServices : $r14 = virtualinvoke r5.<java.lang.String: java.lang.String[] split(java.lang.String)>(",")
+org.apache.ambari.server.checks.ServicePresenceCheck.getRemovedServices : r4 = specialinvoke r0.<org.apache.ambari.server.checks.ServicePresenceCheck: java.lang.String getPropertyValue(org.apache.ambari.server.controller.PrereqCheckRequest,java.lang.String)>(r1, "removed-service-names")
+org.apache.ambari.server.checks.ServicePresenceCheck.getRemovedServices : if r4 == null goto $r10 = new org.apache.ambari.server.AmbariException
+org.apache.ambari.server.checks.ServicePresenceCheck.getRemovedServices : r5 = specialinvoke r0.<org.apache.ambari.server.checks.ServicePresenceCheck: java.lang.String getPropertyValue(org.apache.ambari.server.controller.PrereqCheckRequest,java.lang.String)>(r1, "new-service-names")
+org.apache.ambari.server.checks.ServicePresenceCheck.getRemovedServices : interfaceinvoke r3.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>(r8, r9)
+org.apache.ambari.server.checks.ServicePresenceCheck.getRemovedServices : $r18 = interfaceinvoke r6.<java.util.List: java.lang.Object get(int)>(i0)
+org.apache.ambari.server.checks.ServicePresenceCheck.getRemovedServices : $r2 = new java.util.LinkedHashMap
+org.apache.ambari.server.checks.ServicePresenceCheck.getRemovedServices : $i1 = interfaceinvoke r6.<java.util.List: int size()>()
+org.apache.ambari.server.checks.ServicePresenceCheck.getRemovedServices : if r4 != null goto (branch)
+org.apache.ambari.server.checks.ServicePresenceCheck.getRemovedServices : $r20 = interfaceinvoke r7.<java.util.List: java.lang.Object get(int)>(i0)
+org.apache.ambari.server.checks.ServicePresenceCheck.getRemovedServices : return r3
+org.apache.ambari.server.checks.ServicePresenceCheck.getRemovedServices : i0 = 0
+org.apache.ambari.server.checks.ServicePresenceCheck.getRemovedServices : $z0 = virtualinvoke r8.<java.lang.String: boolean isEmpty()>()
+org.apache.ambari.server.checks.ServicePresenceCheck.getRemovedServices : $r13 = virtualinvoke r4.<java.lang.String: java.lang.String[] split(java.lang.String)>(",")
+org.apache.ambari.server.checks.AbstractCheckDescriptor.getFailReason : return r4
+org.apache.ambari.server.checks.AbstractCheckDescriptor.getFailReason : $r3 = virtualinvoke r0.<org.apache.ambari.server.checks.AbstractCheckDescriptor: java.lang.String getFailReason(java.lang.String,org.apache.ambari.server.state.stack.PrerequisiteCheck,org.apache.ambari.server.controller.PrereqCheckRequest)>("default", r1, r2)
+org.apache.ambari.server.checks.AbstractCheckDescriptor.getFailReason : $r13 = r0.<org.apache.ambari.server.checks.AbstractCheckDescriptor: org.apache.ambari.server.checks.CheckDescription m_description>
+org.apache.ambari.server.checks.AbstractCheckDescriptor.getFailReason : $z1 = virtualinvoke r4.<java.lang.String: boolean contains(java.lang.CharSequence)>("{{fails}}")
+org.apache.ambari.server.checks.AbstractCheckDescriptor.getFailReason : $z0 = virtualinvoke r4.<java.lang.String: boolean contains(java.lang.CharSequence)>("{{version}}")
+org.apache.ambari.server.checks.ServicePresenceCheckTest$1.get : $r1 = virtualinvoke r0.<org.apache.ambari.server.checks.ServicePresenceCheckTest$1: org.apache.ambari.server.state.Clusters get()>()
+org.apache.ambari.server.checks.ServicePresenceCheckTest$1.get : $r1 = r0.<org.apache.ambari.server.checks.ServicePresenceCheckTest$1: org.apache.ambari.server.checks.ServicePresenceCheckTest this$0>
+org.apache.ambari.server.state.stack.PrerequisiteCheck.setStatus : r0.<org.apache.ambari.server.state.stack.PrerequisiteCheck: org.apache.ambari.server.state.stack.PrereqCheckStatus m_status> = r1
+org.apache.ambari.server.controller.PrereqCheckRequest.getClusterName : $r1 = r0.<org.apache.ambari.server.controller.PrereqCheckRequest: java.lang.String m_clusterName>

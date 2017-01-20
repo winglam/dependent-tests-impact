@@ -1,0 +1,8 @@
+org.apache.ambari.server.collections.functors.ContextTransformer.transform : $z1 = interfaceinvoke r4.<java.util.Map: boolean containsKey(java.lang.Object)>(r1)
+org.apache.ambari.server.collections.functors.ContextTransformer.transform : r3 = null
+org.apache.ambari.server.collections.functors.ContextTransformer.transform : if r1 == null goto return r3
+org.apache.ambari.server.collections.functors.ContextTransformer.transform : $z0 = r2 instanceof java.util.Map
+org.apache.ambari.server.collections.functors.ContextTransformer.transform : return r3
+org.apache.ambari.server.collections.functors.ContextTransformer.transform : $r2 = r0.<org.apache.ambari.server.collections.functors.ContextTransformer: java.lang.String key>
+org.apache.ambari.server.collections.functors.ContextTransformer.transform : r3 = interfaceinvoke r4.<java.util.Map: java.lang.Object get(java.lang.Object)>(r1)
+org.apache.ambari.server.collections.functors.ContextTransformer.transform : r4 = (java.util.Map) r2

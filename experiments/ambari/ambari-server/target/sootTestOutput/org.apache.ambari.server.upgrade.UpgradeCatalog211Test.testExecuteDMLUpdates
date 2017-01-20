@@ -1,0 +1,16 @@
+org.apache.ambari.server.upgrade.UpgradeCatalog211Test$2.configure : $r1 = virtualinvoke r0.<org.apache.ambari.server.upgrade.UpgradeCatalog211Test$2: com.google.inject.binder.AnnotatedBindingBuilder bind(java.lang.Class)>(class "org/apache/ambari/server/controller/AmbariManagementController")
+org.apache.ambari.server.upgrade.UpgradeCatalog211Test$2.configure : $r5 = virtualinvoke r0.<org.apache.ambari.server.upgrade.UpgradeCatalog211Test$2: com.google.inject.binder.AnnotatedBindingBuilder bind(java.lang.Class)>(class "org/apache/ambari/server/state/stack/OsFamily")
+org.apache.ambari.server.upgrade.UpgradeCatalog211Test$2.configure : $r3 = virtualinvoke r0.<org.apache.ambari.server.upgrade.UpgradeCatalog211Test$2: com.google.inject.binder.AnnotatedBindingBuilder bind(java.lang.Class)>(class "org/apache/ambari/server/orm/DBAccessor")
+org.apache.ambari.server.upgrade.UpgradeCatalog211.executeDMLUpdates : virtualinvoke r0.<org.apache.ambari.server.upgrade.UpgradeCatalog211: void addNewConfigurationsFromXml()>()
+org.apache.ambari.server.upgrade.UpgradeCatalog211.executeDMLUpdates : virtualinvoke r0.<org.apache.ambari.server.upgrade.UpgradeCatalog211: void updateExistingConfigurations()>()
+org.apache.ambari.server.upgrade.UpgradeCatalog211Test.setInjector : $r3 = class "org/apache/ambari/server/upgrade/AbstractUpgradeCatalog"
+org.apache.ambari.server.upgrade.UpgradeCatalog211Test.setInjector : if r4 == null goto return
+org.apache.ambari.server.upgrade.UpgradeCatalog211Test.setInjector : virtualinvoke r4.<java.lang.reflect.Field: void set(java.lang.Object,java.lang.Object)>(r1, r2)
+org.apache.ambari.server.upgrade.UpgradeCatalog211.updateExistingConfigurations : r2 = interfaceinvoke r1.<org.apache.ambari.server.controller.AmbariManagementController: org.apache.ambari.server.state.Clusters getClusters()>()
+org.apache.ambari.server.upgrade.UpgradeCatalog211.updateExistingConfigurations : $r8 = interfaceinvoke r3.<java.util.Map: java.util.Collection values()>()
+org.apache.ambari.server.upgrade.UpgradeCatalog211.updateExistingConfigurations : goto [?= $z1 = interfaceinvoke r4.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.upgrade.UpgradeCatalog211.updateExistingConfigurations : virtualinvoke r0.<org.apache.ambari.server.upgrade.UpgradeCatalog211: void updateKerberosConfigurations(org.apache.ambari.server.state.Cluster)>(r5)
+org.apache.ambari.server.upgrade.UpgradeCatalog211.updateExistingConfigurations : $r6 = r0.<org.apache.ambari.server.upgrade.UpgradeCatalog211: com.google.inject.Injector injector>
+org.apache.ambari.server.upgrade.UpgradeCatalog211.updateExistingConfigurations : r3 = interfaceinvoke r2.<org.apache.ambari.server.state.Clusters: java.util.Map getClusters()>()
+org.apache.ambari.server.upgrade.UpgradeCatalog211.updateExistingConfigurations : if r3 == null goto return
+org.apache.ambari.server.upgrade.UpgradeCatalog211.updateExistingConfigurations : if r2 == null goto return

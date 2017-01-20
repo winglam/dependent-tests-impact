@@ -1,0 +1,33 @@
+org.apache.ambari.server.api.services.ResultImpl.getStatus : $r1 = r0.<org.apache.ambari.server.api.services.ResultImpl: org.apache.ambari.server.api.services.ResultStatus m_status>
+org.apache.ambari.server.api.services.BaseRequest.parseRenderer : $z0 = specialinvoke r0.<org.apache.ambari.server.api.services.BaseRequest: boolean isMinimal()>()
+org.apache.ambari.server.api.services.BaseRequest.parseRenderer : $r6 = r0.<org.apache.ambari.server.api.services.BaseRequest: org.apache.ambari.server.api.resources.ResourceInstance m_resource>
+org.apache.ambari.server.api.services.PostRequestTest.getTestRequest : $r8 = new org.apache.ambari.server.api.services.PostRequestTest$1
+org.apache.ambari.server.utils.RequestUtils.getRemoteAddress : $z0 = staticinvoke <org.apache.ambari.server.utils.RequestUtils: boolean hasValidRequest()>()
+org.apache.ambari.server.utils.RequestUtils.getRemoteAddress : return null
+org.apache.ambari.server.api.services.BaseRequest.process : $r19 = <org.apache.ambari.server.api.services.BaseRequest: org.slf4j.Logger LOG>
+org.apache.ambari.server.api.services.BaseRequest.process : return r3
+org.apache.ambari.server.api.services.BaseRequest.process : $r20 = new org.apache.ambari.server.api.services.ResultImpl
+org.apache.ambari.server.api.services.BaseRequest.process : specialinvoke r0.<org.apache.ambari.server.api.services.BaseRequest: void parseQueryPredicate()>()
+org.apache.ambari.server.api.services.BaseRequest.process : r4 = $r14
+org.apache.ambari.server.api.services.BaseRequest.process : $r1 = <org.apache.ambari.server.api.services.BaseRequest: org.slf4j.Logger LOG>
+org.apache.ambari.server.api.services.BaseRequest.process : $r33 = interfaceinvoke r3.<org.apache.ambari.server.api.services.Result: org.apache.ambari.server.api.services.ResultStatus getStatus()>()
+org.apache.ambari.server.api.services.BaseRequest.process : $r15 = new java.lang.StringBuilder
+org.apache.ambari.server.api.services.BaseRequest.process : specialinvoke r0.<org.apache.ambari.server.api.services.BaseRequest: void parseRenderer()>()
+org.apache.ambari.server.api.services.ResultStatus.isErrorState : $r1 = r0.<org.apache.ambari.server.api.services.ResultStatus: org.apache.ambari.server.api.services.ResultStatus$STATUS m_status>
+org.apache.ambari.server.api.services.PostRequestTest$1.getPredicateCompiler : $r1 = r0.<org.apache.ambari.server.api.services.PostRequestTest$1: org.apache.ambari.server.api.predicate.PredicateCompiler val$compiler>
+org.apache.ambari.server.api.services.PostRequest.getRequestType : $r1 = <org.apache.ambari.server.api.services.Request$Type: org.apache.ambari.server.api.services.Request$Type POST>
+org.apache.ambari.server.api.services.ResultStatus.getStatusCode : $r1 = r0.<org.apache.ambari.server.api.services.ResultStatus: org.apache.ambari.server.api.services.ResultStatus$STATUS m_status>
+org.apache.ambari.server.api.services.ResultStatus$STATUS.isErrorState : $z0 = r0.<org.apache.ambari.server.api.services.ResultStatus$STATUS: boolean m_isErrorState>
+org.apache.ambari.server.utils.RequestUtils.hasValidRequest : $r0 = staticinvoke <org.springframework.web.context.request.RequestContextHolder: org.springframework.web.context.request.RequestAttributes getRequestAttributes()>()
+org.apache.ambari.server.api.services.ResultStatus.getMessage : $r1 = r0.<org.apache.ambari.server.api.services.ResultStatus: java.lang.String m_msg>
+org.apache.ambari.server.api.services.BaseRequest.isMinimal : $r2 = r0.<org.apache.ambari.server.api.services.BaseRequest: javax.ws.rs.core.UriInfo m_uriInfo>
+org.apache.ambari.server.api.services.BaseRequest.isMinimal : if r1 == null goto $z1 = 0
+org.apache.ambari.server.api.services.ResultStatus$STATUS.getStatus : $i0 = r0.<org.apache.ambari.server.api.services.ResultStatus$STATUS: int m_code>
+org.apache.ambari.server.api.services.BaseRequest.parseQueryPredicate : $r3 = r0.<org.apache.ambari.server.api.services.BaseRequest: org.apache.ambari.server.api.services.RequestBody m_body>
+org.apache.ambari.server.api.services.BaseRequest.parseQueryPredicate : $r6 = <org.apache.ambari.server.api.services.BaseRequest$1: int[] $SwitchMap$org$apache$ambari$server$api$services$Request$Type>
+org.apache.ambari.server.api.services.BaseRequest.parseQueryPredicate : if r1 != null goto (branch)
+org.apache.ambari.server.api.services.BaseRequest.parseQueryPredicate : $r10 = r0.<org.apache.ambari.server.api.services.BaseRequest: org.apache.ambari.server.api.resources.ResourceInstance m_resource>
+org.apache.ambari.server.api.services.BaseRequest.parseQueryPredicate : if r1 == null goto return
+org.apache.ambari.server.api.services.BaseRequest.parseQueryPredicate : goto [?= (branch)]
+org.apache.ambari.server.api.services.BaseRequest.parseQueryPredicate : r5 = null
+org.apache.ambari.server.api.services.BaseRequest.parseQueryPredicate : if r5 != null goto $r20 = virtualinvoke r0.<org.apache.ambari.server.api.services.BaseRequest: org.apache.ambari.server.api.predicate.PredicateCompiler getPredicateCompiler()>()

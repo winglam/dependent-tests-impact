@@ -1,0 +1,25 @@
+org.apache.ambari.server.controller.AmbariManagementControllerImpl.getClusters : interfaceinvoke r3.<java.util.Set: boolean add(java.lang.Object)>(r32)
+org.apache.ambari.server.controller.AmbariManagementControllerImpl.getClusters : $r22 = virtualinvoke r1.<org.apache.ambari.server.controller.ClusterRequest: java.lang.String getClusterName()>()
+org.apache.ambari.server.controller.AmbariManagementControllerImpl.getClusters : goto [?= $z0 = interfaceinvoke r4.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.controller.AmbariManagementControllerImpl.getClusters : $r8 = specialinvoke r0.<org.apache.ambari.server.controller.AmbariManagementControllerImpl: java.util.Set getClusters(org.apache.ambari.server.controller.ClusterRequest)>(r5)
+org.apache.ambari.server.controller.AmbariManagementControllerImpl.getClusters : r4 = null
+org.apache.ambari.server.controller.AmbariManagementControllerImpl.getClusters : $r9 = <org.apache.ambari.server.controller.AmbariManagementControllerImpl: org.slf4j.Logger LOG>
+org.apache.ambari.server.controller.AmbariManagementControllerImpl.getClusters : goto [?= (branch)]
+org.apache.ambari.server.controller.AmbariManagementControllerImpl.getClusters : $r34 = interfaceinvoke r4.<org.apache.ambari.server.state.Cluster: java.util.Map getActiveServiceConfigVersions()>()
+org.apache.ambari.server.controller.AmbariManagementControllerImpl.getClusters : $r2 = new java.util.HashSet
+org.apache.ambari.server.controller.AmbariManagementControllerImpl.getClusters : $r23 = r0.<org.apache.ambari.server.controller.AmbariManagementControllerImpl: org.apache.ambari.server.state.Clusters clusters>
+org.apache.ambari.server.controller.AmbariManagementControllerImpl.getClusters : if r4 == null goto $r36 = r0.<org.apache.ambari.server.controller.AmbariManagementControllerImpl: org.apache.ambari.server.state.Clusters clusters>
+org.apache.ambari.server.controller.AmbariManagementControllerImpl.getClusters : r32 = interfaceinvoke r4.<org.apache.ambari.server.state.Cluster: org.apache.ambari.server.controller.ClusterResponse convertToResponse()>()
+org.apache.ambari.server.controller.AmbariManagementControllerImpl.getClusters : $r33 = interfaceinvoke r4.<org.apache.ambari.server.state.Cluster: java.util.Map getDesiredConfigs()>()
+org.apache.ambari.server.controller.AmbariManagementControllerImpl.getClusters : return r3
+org.apache.ambari.server.controller.AmbariManagementControllerImpl.getClusters : r4 = interfaceinvoke r1.<java.util.Set: java.util.Iterator iterator()>()
+org.apache.ambari.server.controller.AmbariManagementControllerImpl.getClusters : $r35 = virtualinvoke r0.<org.apache.ambari.server.controller.AmbariManagementControllerImpl: java.util.Map getCredentialStoreServiceProperties()>()
+org.apache.ambari.server.security.authorization.internal.InternalAuthenticationToken.setAuthenticated : r0.<org.apache.ambari.server.security.authorization.internal.InternalAuthenticationToken: boolean authenticated> = z0
+org.apache.ambari.server.controller.ClusterRequest.getClusterName : $r1 = r0.<org.apache.ambari.server.controller.ClusterRequest: java.lang.String clusterName>
+org.apache.ambari.server.controller.AmbariManagementControllerImplTest.setupAuthentication : virtualinvoke r1.<org.apache.ambari.server.security.authorization.internal.InternalAuthenticationToken: void setAuthenticated(boolean)>(1)
+org.apache.ambari.server.controller.AmbariManagementControllerImplTest.setupAuthentication : $r2 = staticinvoke <org.springframework.security.core.context.SecurityContextHolder: org.springframework.security.core.context.SecurityContext getContext()>()
+org.apache.ambari.server.controller.AmbariManagementControllerImplTest.setupAuthentication : $r0 = new org.apache.ambari.server.security.authorization.internal.InternalAuthenticationToken
+org.apache.ambari.server.controller.AmbariManagementControllerImpl.getCredentialStoreServiceProperties : return r2
+org.apache.ambari.server.controller.AmbariManagementControllerImpl.getCredentialStoreServiceProperties : $r1 = new java.util.HashMap
+org.apache.ambari.server.controller.AmbariManagementControllerImpl.getCredentialStoreServiceProperties : $r4 = r0.<org.apache.ambari.server.controller.AmbariManagementControllerImpl: org.apache.ambari.server.security.encryption.CredentialStoreService credentialStoreService>
+org.apache.ambari.server.controller.AmbariManagementControllerImpl.getCredentialStoreServiceProperties : $r7 = r0.<org.apache.ambari.server.controller.AmbariManagementControllerImpl: org.apache.ambari.server.security.encryption.CredentialStoreService credentialStoreService>

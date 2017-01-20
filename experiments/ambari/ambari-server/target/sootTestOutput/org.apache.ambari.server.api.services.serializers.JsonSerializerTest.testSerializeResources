@@ -1,0 +1,92 @@
+org.apache.ambari.server.api.services.ResultImpl.setResultStatus : r0.<org.apache.ambari.server.api.services.ResultImpl: org.apache.ambari.server.api.services.ResultStatus m_status> = r1
+org.apache.ambari.server.api.services.ResultImpl.getStatus : $r1 = r0.<org.apache.ambari.server.api.services.ResultImpl: org.apache.ambari.server.api.services.ResultStatus m_status>
+org.apache.ambari.server.api.util.TreeNodeImpl.getStringProperty : if r2 != null goto $r3 = virtualinvoke r2.<java.lang.Object: java.lang.String toString()>()
+org.apache.ambari.server.api.util.TreeNodeImpl.getStringProperty : r2 = virtualinvoke r0.<org.apache.ambari.server.api.util.TreeNodeImpl: java.lang.Object getProperty(java.lang.String)>(r1)
+org.apache.ambari.server.api.services.serializers.JsonSerializer.processResultMetadata : if r1 != null goto $r2 = virtualinvoke r1.<java.lang.Object: java.lang.Class getClass()>()
+org.apache.ambari.server.api.util.TreeNodeImpl.getObject : $r1 = r0.<org.apache.ambari.server.api.util.TreeNodeImpl: java.lang.Object m_object>
+org.apache.ambari.server.api.util.TreeNodeImpl.getProperty : $r2 = r0.<org.apache.ambari.server.api.util.TreeNodeImpl: java.util.Map m_mapNodeProps>
+org.apache.ambari.server.api.util.TreeNodeImpl.getChild : if r1 == null goto $r8 = r0.<org.apache.ambari.server.api.util.TreeNodeImpl: java.util.Map m_mapChildren>
+org.apache.ambari.server.api.util.TreeNodeImpl.getChild : $r8 = r0.<org.apache.ambari.server.api.util.TreeNodeImpl: java.util.Map m_mapChildren>
+org.apache.ambari.server.api.services.serializers.JsonSerializer.createJsonGenerator : return r3
+org.apache.ambari.server.api.services.serializers.JsonSerializer.createJsonGenerator : $r5 = r0.<org.apache.ambari.server.api.services.serializers.JsonSerializer: org.codehaus.jackson.JsonFactory m_factory>
+org.apache.ambari.server.api.services.serializers.JsonSerializer.createJsonGenerator : virtualinvoke r3.<org.codehaus.jackson.JsonGenerator: org.codehaus.jackson.JsonGenerator setPrettyPrinter(org.codehaus.jackson.PrettyPrinter)>(r4)
+org.apache.ambari.server.api.services.serializers.JsonSerializer.createJsonGenerator : $r8 = new org.codehaus.jackson.util.DefaultPrettyPrinter
+org.apache.ambari.server.api.services.serializers.JsonSerializer.createJsonGenerator : $r9 = new org.codehaus.jackson.util.DefaultPrettyPrinter$Lf2SpacesIndenter
+org.apache.ambari.server.api.services.serializers.JsonSerializer.getTreeProperties : goto [?= $z2 = interfaceinvoke r20.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.api.services.serializers.JsonSerializer.getTreeProperties : r10 = r9
+org.apache.ambari.server.api.services.serializers.JsonSerializer.getTreeProperties : r8 = r4
+org.apache.ambari.server.api.services.serializers.JsonSerializer.getTreeProperties : r12 = interfaceinvoke r8.<org.apache.ambari.server.api.util.TreeNode: org.apache.ambari.server.api.util.TreeNode getChild(java.lang.String)>(r11)
+org.apache.ambari.server.api.services.serializers.JsonSerializer.getTreeProperties : goto [?= $z0 = interfaceinvoke r5.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.api.services.serializers.JsonSerializer.getTreeProperties : return r4
+org.apache.ambari.server.api.services.serializers.JsonSerializer.getTreeProperties : $r17 = interfaceinvoke r6.<java.util.Map$Entry: java.lang.Object getValue()>()
+org.apache.ambari.server.api.services.serializers.JsonSerializer.getTreeProperties : $r15 = interfaceinvoke r6.<java.util.Map$Entry: java.lang.Object getKey()>()
+org.apache.ambari.server.api.services.serializers.JsonSerializer.getTreeProperties : $r19 = interfaceinvoke r18.<java.util.Map: java.util.Set entrySet()>()
+org.apache.ambari.server.api.services.serializers.JsonSerializer.getTreeProperties : $r2 = new org.apache.ambari.server.api.util.TreeNodeImpl
+org.apache.ambari.server.api.services.serializers.JsonSerializer.getTreeProperties : if r7 == null goto r8 = r4
+org.apache.ambari.server.api.services.serializers.JsonSerializer.getTreeProperties : $r13 = interfaceinvoke r1.<java.util.Map: java.util.Set entrySet()>()
+org.apache.ambari.server.api.services.serializers.JsonSerializer.getTreeProperties : $r16 = new java.util.LinkedHashMap
+org.apache.ambari.server.api.services.serializers.JsonSerializer.getTreeProperties : $r23 = interfaceinvoke r8.<org.apache.ambari.server.api.util.TreeNode: java.lang.Object getObject()>()
+org.apache.ambari.server.api.services.serializers.JsonSerializer.getTreeProperties : r8 = interfaceinvoke r4.<org.apache.ambari.server.api.util.TreeNode: org.apache.ambari.server.api.util.TreeNode getChild(java.lang.String)>(r7)
+org.apache.ambari.server.api.services.serializers.JsonSerializer.getTreeProperties : r9 = virtualinvoke r7.<java.lang.String: java.lang.String[] split(java.lang.String)>("/")
+org.apache.ambari.server.api.services.serializers.JsonSerializer.getTreeProperties : if r8 != null goto $r17 = interfaceinvoke r6.<java.util.Map$Entry: java.lang.Object getValue()>()
+org.apache.ambari.server.api.services.serializers.JsonSerializer.getTreeProperties : if r12 != null goto r8 = r12
+org.apache.ambari.server.api.services.serializers.JsonSerializer.getTreeProperties : r8 = r12
+org.apache.ambari.server.api.services.ResultStatus.isErrorState : $r1 = r0.<org.apache.ambari.server.api.services.ResultStatus: org.apache.ambari.server.api.services.ResultStatus$STATUS m_status>
+org.apache.ambari.server.api.services.serializers.JsonSerializer.processNode : specialinvoke r0.<org.apache.ambari.server.api.services.serializers.JsonSerializer: void writeHref(org.apache.ambari.server.api.util.TreeNode)>(r1)
+org.apache.ambari.server.api.services.serializers.JsonSerializer.processNode : specialinvoke r0.<org.apache.ambari.server.api.services.serializers.JsonSerializer: void processNode(org.apache.ambari.server.api.util.TreeNode)>(r3)
+org.apache.ambari.server.api.services.serializers.JsonSerializer.processNode : $z3 = specialinvoke r0.<org.apache.ambari.server.api.services.serializers.JsonSerializer: boolean isArray(org.apache.ambari.server.api.util.TreeNode)>(r1)
+org.apache.ambari.server.api.services.serializers.JsonSerializer.processNode : $z0 = specialinvoke r0.<org.apache.ambari.server.api.services.serializers.JsonSerializer: boolean isObject(org.apache.ambari.server.api.util.TreeNode)>(r1)
+org.apache.ambari.server.api.services.serializers.JsonSerializer.processNode : $r12 = interfaceinvoke r1.<org.apache.ambari.server.api.util.TreeNode: java.util.Collection getChildren()>()
+org.apache.ambari.server.api.services.serializers.JsonSerializer.processNode : $r5 = interfaceinvoke r1.<org.apache.ambari.server.api.util.TreeNode: java.lang.Object getObject()>()
+org.apache.ambari.server.api.services.serializers.JsonSerializer.processNode : $r8 = interfaceinvoke r1.<org.apache.ambari.server.api.util.TreeNode: java.lang.String getName()>()
+org.apache.ambari.server.api.services.serializers.JsonSerializer.processNode : $r6 = interfaceinvoke r2.<org.apache.ambari.server.controller.spi.Resource: java.util.Map getPropertiesMap()>()
+org.apache.ambari.server.api.services.serializers.JsonSerializer.processNode : $r9 = r0.<org.apache.ambari.server.api.services.serializers.JsonSerializer: org.codehaus.jackson.JsonGenerator m_generator>
+org.apache.ambari.server.api.services.serializers.JsonSerializer.processNode : $z4 = specialinvoke r0.<org.apache.ambari.server.api.services.serializers.JsonSerializer: boolean isObject(org.apache.ambari.server.api.util.TreeNode)>(r1)
+org.apache.ambari.server.api.services.serializers.JsonSerializer.processNode : $r16 = r0.<org.apache.ambari.server.api.services.serializers.JsonSerializer: org.codehaus.jackson.JsonGenerator m_generator>
+org.apache.ambari.server.api.services.serializers.JsonSerializer.processNode : $z1 = specialinvoke r0.<org.apache.ambari.server.api.services.serializers.JsonSerializer: boolean isArray(org.apache.ambari.server.api.util.TreeNode)>(r1)
+org.apache.ambari.server.api.services.serializers.JsonSerializer.processNode : $r4 = r0.<org.apache.ambari.server.api.services.serializers.JsonSerializer: org.codehaus.jackson.JsonGenerator m_generator>
+org.apache.ambari.server.api.services.serializers.JsonSerializer.processNode : goto [?= $z2 = interfaceinvoke r13.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.api.services.serializers.JsonSerializer.processNode : $r15 = r0.<org.apache.ambari.server.api.services.serializers.JsonSerializer: org.codehaus.jackson.JsonGenerator m_generator>
+org.apache.ambari.server.api.services.serializers.JsonSerializer.processNode : specialinvoke r0.<org.apache.ambari.server.api.services.serializers.JsonSerializer: void writeItemCount(org.apache.ambari.server.api.util.TreeNode)>(r1)
+org.apache.ambari.server.api.services.serializers.JsonSerializer.processNode : if r2 == null goto $z1 = specialinvoke r0.<org.apache.ambari.server.api.services.serializers.JsonSerializer: boolean isArray(org.apache.ambari.server.api.util.TreeNode)>(r1)
+org.apache.ambari.server.api.util.TreeNodeImpl.getName : $r1 = r0.<org.apache.ambari.server.api.util.TreeNodeImpl: java.lang.String m_name>
+org.apache.ambari.server.api.services.serializers.JsonSerializer.handleResourceProperties : $r7 = interfaceinvoke r1.<org.apache.ambari.server.api.util.TreeNode: java.lang.Object getObject()>()
+org.apache.ambari.server.api.services.serializers.JsonSerializer.handleResourceProperties : $r5 = r0.<org.apache.ambari.server.api.services.serializers.JsonSerializer: org.codehaus.jackson.JsonGenerator m_generator>
+org.apache.ambari.server.api.services.serializers.JsonSerializer.handleResourceProperties : goto [?= $z1 = interfaceinvoke r18.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.api.services.serializers.JsonSerializer.handleResourceProperties : r2 = interfaceinvoke r1.<org.apache.ambari.server.api.util.TreeNode: java.lang.String getName()>()
+org.apache.ambari.server.api.services.serializers.JsonSerializer.handleResourceProperties : if r2 == null goto $r7 = interfaceinvoke r1.<org.apache.ambari.server.api.util.TreeNode: java.lang.Object getObject()>()
+org.apache.ambari.server.api.services.serializers.JsonSerializer.handleResourceProperties : $r11 = r0.<org.apache.ambari.server.api.services.serializers.JsonSerializer: org.codehaus.jackson.JsonGenerator m_generator>
+org.apache.ambari.server.api.services.serializers.JsonSerializer.handleResourceProperties : $r14 = r0.<org.apache.ambari.server.api.services.serializers.JsonSerializer: org.codehaus.jackson.map.ObjectMapper m_mapper>
+org.apache.ambari.server.api.services.serializers.JsonSerializer.handleResourceProperties : if r2 == null goto return
+org.apache.ambari.server.api.services.serializers.JsonSerializer.handleResourceProperties : $r21 = r0.<org.apache.ambari.server.api.services.serializers.JsonSerializer: org.codehaus.jackson.JsonGenerator m_generator>
+org.apache.ambari.server.api.services.serializers.JsonSerializer.handleResourceProperties : $r6 = r0.<org.apache.ambari.server.api.services.serializers.JsonSerializer: org.codehaus.jackson.JsonGenerator m_generator>
+org.apache.ambari.server.api.services.serializers.JsonSerializer.handleResourceProperties : $r17 = interfaceinvoke r1.<org.apache.ambari.server.api.util.TreeNode: java.util.Collection getChildren()>()
+org.apache.ambari.server.api.services.serializers.JsonSerializer.handleResourceProperties : specialinvoke r0.<org.apache.ambari.server.api.services.serializers.JsonSerializer: void handleResourceProperties(org.apache.ambari.server.api.util.TreeNode)>(r20)
+org.apache.ambari.server.api.services.serializers.JsonSerializer.handleResourceProperties : goto [?= $z0 = interfaceinvoke r3.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.api.services.ResultImpl.getResultTree : $r1 = r0.<org.apache.ambari.server.api.services.ResultImpl: org.apache.ambari.server.api.util.TreeNode m_tree>
+org.apache.ambari.server.api.util.TreeNodeImpl.getParent : $r1 = r0.<org.apache.ambari.server.api.util.TreeNodeImpl: org.apache.ambari.server.api.util.TreeNode m_parent>
+org.apache.ambari.server.api.services.ResultStatus$STATUS.isErrorState : $z0 = r0.<org.apache.ambari.server.api.services.ResultStatus$STATUS: boolean m_isErrorState>
+org.apache.ambari.server.api.util.TreeNodeImpl.addChild : $r3 = new org.apache.ambari.server.api.util.TreeNodeImpl
+org.apache.ambari.server.api.util.TreeNodeImpl.addChild : return r4
+org.apache.ambari.server.api.util.TreeNodeImpl.addChild : $r5 = r0.<org.apache.ambari.server.api.util.TreeNodeImpl: java.util.Map m_mapChildren>
+org.apache.ambari.server.api.util.TreeNodeImpl.getChildren : $r1 = r0.<org.apache.ambari.server.api.util.TreeNodeImpl: java.util.Map m_mapChildren>
+org.apache.ambari.server.api.services.serializers.JsonSerializer.writeHref : r2 = interfaceinvoke r1.<org.apache.ambari.server.api.util.TreeNode: java.lang.String getStringProperty(java.lang.String)>("href")
+org.apache.ambari.server.api.services.serializers.JsonSerializer.writeHref : if r2 == null goto return
+org.apache.ambari.server.api.services.serializers.JsonSerializer.init : $r6 = new org.codehaus.jackson.util.DefaultPrettyPrinter$Lf2SpacesIndenter
+org.apache.ambari.server.api.services.serializers.JsonSerializer.init : return r2
+org.apache.ambari.server.api.services.serializers.JsonSerializer.init : $r5 = new org.codehaus.jackson.util.DefaultPrettyPrinter
+org.apache.ambari.server.api.services.serializers.JsonSerializer.init : $r4 = specialinvoke r0.<org.apache.ambari.server.api.services.serializers.JsonSerializer: org.codehaus.jackson.JsonGenerator createJsonGenerator(java.io.ByteArrayOutputStream)>(r2)
+org.apache.ambari.server.api.services.serializers.JsonSerializer.init : $r1 = new java.io.ByteArrayOutputStream
+org.apache.ambari.server.api.services.serializers.JsonSerializer.init : $r7 = r0.<org.apache.ambari.server.api.services.serializers.JsonSerializer: org.codehaus.jackson.JsonGenerator m_generator>
+org.apache.ambari.server.api.services.ResultImpl.getResultMetadata : $r1 = r0.<org.apache.ambari.server.api.services.ResultImpl: org.apache.ambari.server.api.services.ResultMetadata m_resultMetadata>
+org.apache.ambari.server.api.services.serializers.JsonSerializer.writeItemCount : r2 = interfaceinvoke r1.<org.apache.ambari.server.api.util.TreeNode: java.lang.String getStringProperty(java.lang.String)>("count")
+org.apache.ambari.server.api.services.serializers.JsonSerializer.writeItemCount : if r2 == null goto return
+org.apache.ambari.server.api.services.serializers.JsonSerializer.isObject : $r2 = interfaceinvoke r1.<org.apache.ambari.server.api.util.TreeNode: java.lang.Object getObject()>()
+org.apache.ambari.server.api.services.serializers.JsonSerializer.serialize : $r9 = r0.<org.apache.ambari.server.api.services.serializers.JsonSerializer: org.codehaus.jackson.JsonGenerator m_generator>
+org.apache.ambari.server.api.services.serializers.JsonSerializer.serialize : r2 = specialinvoke r0.<org.apache.ambari.server.api.services.serializers.JsonSerializer: java.io.ByteArrayOutputStream init()>()
+org.apache.ambari.server.api.services.serializers.JsonSerializer.serialize : r3 = interfaceinvoke r1.<org.apache.ambari.server.api.services.Result: org.apache.ambari.server.api.util.TreeNode getResultTree()>()
+org.apache.ambari.server.api.services.serializers.JsonSerializer.serialize : $r8 = interfaceinvoke r1.<org.apache.ambari.server.api.services.Result: org.apache.ambari.server.api.services.ResultMetadata getResultMetadata()>()
+org.apache.ambari.server.api.services.serializers.JsonSerializer.serialize : specialinvoke r0.<org.apache.ambari.server.api.services.serializers.JsonSerializer: void processNode(org.apache.ambari.server.api.util.TreeNode)>(r3)
+org.apache.ambari.server.api.services.serializers.JsonSerializer.serialize : $r10 = virtualinvoke r2.<java.io.ByteArrayOutputStream: java.lang.String toString(java.lang.String)>("UTF-8")
+org.apache.ambari.server.api.services.serializers.JsonSerializer.serialize : $r5 = interfaceinvoke r1.<org.apache.ambari.server.api.services.Result: org.apache.ambari.server.api.services.ResultStatus getStatus()>()
+org.apache.ambari.server.api.services.serializers.JsonSerializer.isArray : $r2 = interfaceinvoke r1.<org.apache.ambari.server.api.util.TreeNode: java.lang.Object getObject()>()

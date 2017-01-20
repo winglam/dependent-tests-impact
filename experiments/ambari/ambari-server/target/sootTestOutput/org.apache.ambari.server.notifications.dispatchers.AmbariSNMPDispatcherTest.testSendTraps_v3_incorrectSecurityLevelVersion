@@ -1,0 +1,31 @@
+org.apache.ambari.server.notifications.dispatchers.SNMPDispatcher.getSecurityLevel : r2 = staticinvoke <org.apache.ambari.server.notifications.dispatchers.SNMPDispatcher: java.lang.String getDispatchProperty(java.util.Map,java.lang.String)>(r1, "ambari.dispatch.snmp.security.level")
+org.apache.ambari.server.notifications.dispatchers.SNMPDispatcher.getSecurityLevel : $r5 = staticinvoke <org.apache.ambari.server.notifications.dispatchers.SNMPDispatcher$TrapSecurity: org.apache.ambari.server.notifications.dispatchers.SNMPDispatcher$TrapSecurity valueOf(java.lang.String)>(r2)
+org.apache.ambari.server.notifications.dispatchers.SNMPDispatcher.getSecurityLevel : $r10 = new org.apache.ambari.server.notifications.dispatchers.SNMPDispatcher$InvalidSnmpConfigurationException
+org.apache.ambari.server.notifications.dispatchers.SNMPDispatcher.getSecurityLevel : $r7 = newarray (java.lang.Object)[3]
+org.apache.ambari.server.notifications.dispatchers.SNMPDispatcher.getSecurityLevel : r3 = $r6
+org.apache.ambari.server.notifications.dispatchers.SNMPDispatcher$SnmpVersion.isCommunityTargetRequired : $z0 = r0.<org.apache.ambari.server.notifications.dispatchers.SNMPDispatcher$SnmpVersion: boolean communityTargetRequired>
+org.apache.ambari.server.notifications.dispatchers.SNMPDispatcher.createTrapTarget : $r15 = new org.snmp4j.smi.OctetString
+org.apache.ambari.server.notifications.dispatchers.SNMPDispatcher.createTrapTarget : if r6 == null goto $r29 = null
+org.apache.ambari.server.notifications.dispatchers.SNMPDispatcher.createTrapTarget : $r31 = new org.snmp4j.security.UsmUser
+org.apache.ambari.server.notifications.dispatchers.SNMPDispatcher.createTrapTarget : $z0 = virtualinvoke r2.<org.apache.ambari.server.notifications.dispatchers.SNMPDispatcher$SnmpVersion: boolean isCommunityTargetRequired()>()
+org.apache.ambari.server.notifications.dispatchers.SNMPDispatcher.createTrapTarget : $r37 = r1.<org.apache.ambari.server.notifications.Notification: java.util.Map DispatchProperties>
+org.apache.ambari.server.notifications.dispatchers.SNMPDispatcher.createTrapTarget : $r25 = r1.<org.apache.ambari.server.notifications.Notification: java.util.Map DispatchProperties>
+org.apache.ambari.server.notifications.dispatchers.SNMPDispatcher.createTrapTarget : $r21 = new org.snmp4j.security.USM
+org.apache.ambari.server.notifications.dispatchers.SNMPDispatcher.createTrapTarget : $r19 = r0.<org.apache.ambari.server.notifications.dispatchers.SNMPDispatcher: org.snmp4j.Snmp snmp>
+org.apache.ambari.server.notifications.dispatchers.SNMPDispatcher.createTrapTarget : $r27 = r1.<org.apache.ambari.server.notifications.Notification: java.util.Map DispatchProperties>
+org.apache.ambari.server.notifications.dispatchers.SNMPDispatcher.createTrapTarget : if r7 == null goto $r30 = null
+org.apache.ambari.server.notifications.dispatchers.SNMPDispatcher.createTrapTarget : $r34 = staticinvoke <org.snmp4j.security.SecurityModels: org.snmp4j.security.SecurityModels getInstance()>()
+org.apache.ambari.server.notifications.dispatchers.SNMPDispatcher.createTrapTarget : $r35 = new org.snmp4j.UserTarget
+org.apache.ambari.server.notifications.dispatchers.SNMPDispatcher.createTrapTarget : virtualinvoke r24.<org.snmp4j.security.USM: void addUser(org.snmp4j.smi.OctetString,org.snmp4j.security.UsmUser)>(r18, r10)
+org.apache.ambari.server.notifications.dispatchers.SNMPDispatcher.createTrapTarget : virtualinvoke r36.<org.snmp4j.UserTarget: void setSecurityName(org.snmp4j.smi.OctetString)>(r18)
+org.apache.ambari.server.notifications.dispatchers.SNMPDispatcher$TrapSecurity.valueOf : $r1 = staticinvoke <java.lang.Enum: java.lang.Enum valueOf(java.lang.Class,java.lang.String)>(class "org/apache/ambari/server/notifications/dispatchers/SNMPDispatcher$TrapSecurity", r0)
+org.apache.ambari.server.notifications.dispatchers.SNMPDispatcher.getNotificationRecipients : $r2 = r1.<org.apache.ambari.server.notifications.Notification: java.util.List Recipients>
+org.apache.ambari.server.notifications.dispatchers.SNMPDispatcher.getNotificationRecipients : $r5 = r1.<org.apache.ambari.server.notifications.Notification: java.util.List Recipients>
+org.apache.ambari.server.notifications.dispatchers.SNMPDispatcher.getDispatchProperty : if r0 == null goto $r2 = new org.apache.ambari.server.notifications.dispatchers.SNMPDispatcher$InvalidSnmpConfigurationException
+org.apache.ambari.server.notifications.dispatchers.SNMPDispatcher.getDispatchProperty : $r5 = interfaceinvoke r0.<java.util.Map: java.lang.Object get(java.lang.Object)>(r1)
+org.apache.ambari.server.notifications.dispatchers.SNMPDispatcher$TrapSecurity.values : $r0 = <org.apache.ambari.server.notifications.dispatchers.SNMPDispatcher$TrapSecurity: org.apache.ambari.server.notifications.dispatchers.SNMPDispatcher$TrapSecurity[] $VALUES>
+org.apache.ambari.server.notifications.dispatchers.SNMPDispatcher.sendTraps : $r11 = specialinvoke r0.<org.apache.ambari.server.notifications.dispatchers.SNMPDispatcher: java.util.List getNotificationRecipients(org.apache.ambari.server.notifications.Notification)>(r1)
+org.apache.ambari.server.notifications.dispatchers.SNMPDispatcher.sendTraps : $r10 = r1.<org.apache.ambari.server.notifications.Notification: java.util.Map DispatchProperties>
+org.apache.ambari.server.notifications.dispatchers.SNMPDispatcher.sendTraps : r8 = virtualinvoke r0.<org.apache.ambari.server.notifications.dispatchers.SNMPDispatcher: org.snmp4j.Target createTrapTarget(org.apache.ambari.server.notifications.Notification,org.apache.ambari.server.notifications.dispatchers.SNMPDispatcher$SnmpVersion)>(r1, r2)
+org.apache.ambari.server.notifications.dispatchers.SNMPDispatcher.sendTraps : r7 = r6.<org.apache.ambari.server.notifications.Recipient: java.lang.String Identifier>
+org.apache.ambari.server.notifications.dispatchers.SNMPDispatcher.sendTraps : r3 = virtualinvoke r0.<org.apache.ambari.server.notifications.dispatchers.SNMPDispatcher: org.snmp4j.PDU prepareTrap(org.apache.ambari.server.notifications.Notification,org.apache.ambari.server.notifications.dispatchers.SNMPDispatcher$SnmpVersion)>(r1, r2)

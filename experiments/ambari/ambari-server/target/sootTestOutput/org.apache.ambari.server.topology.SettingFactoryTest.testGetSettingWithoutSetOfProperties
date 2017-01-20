@@ -1,0 +1,39 @@
+org.apache.ambari.server.topology.SettingFactory.getSetting : $r24 = r8[0]
+org.apache.ambari.server.topology.SettingFactory.getSetting : $r26 = new java.util.HashSet
+org.apache.ambari.server.topology.SettingFactory.getSetting : $r1 = new java.util.HashMap
+org.apache.ambari.server.topology.SettingFactory.getSetting : goto [?= $z0 = interfaceinvoke r4.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.topology.SettingFactory.getSetting : $r11 = new org.apache.ambari.server.topology.Setting
+org.apache.ambari.server.topology.SettingFactory.getSetting : goto [?= $r34 = r8[0]]
+org.apache.ambari.server.topology.SettingFactory.getSetting : $r13 = interfaceinvoke r5.<java.util.Map: java.util.Set entrySet()>()
+org.apache.ambari.server.topology.SettingFactory.getSetting : if r0 == null goto return r3
+org.apache.ambari.server.topology.SettingFactory.getSetting : $r15 = interfaceinvoke r7.<java.util.Map$Entry: java.lang.Object getKey()>()
+org.apache.ambari.server.topology.SettingFactory.getSetting : r4 = interfaceinvoke r0.<java.util.Collection: java.util.Iterator iterator()>()
+org.apache.ambari.server.topology.SettingFactory.getSetting : return r3
+org.apache.ambari.server.topology.SettingFactory.getSetting : $r17 = interfaceinvoke r7.<java.util.Map$Entry: java.lang.Object getValue()>()
+org.apache.ambari.server.topology.SettingFactory.getSetting : $r20 = r8[1]
+org.apache.ambari.server.topology.SettingFactory.getSetting : $r34 = r8[0]
+org.apache.ambari.server.topology.SettingFactory.getSetting : $r18 = interfaceinvoke r7.<java.util.Map$Entry: java.lang.Object getValue()>()
+org.apache.ambari.server.topology.SettingFactory.getSetting : $r19 = new java.util.HashMap
+org.apache.ambari.server.topology.SettingFactory.getSetting : interfaceinvoke r9.<java.util.Set: boolean add(java.lang.Object)>(r10)
+org.apache.ambari.server.topology.SettingFactory.getSetting : $i0 = lengthof r8
+org.apache.ambari.server.topology.SettingFactory.getSetting : goto [?= $z1 = interfaceinvoke r6.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.topology.SettingFactory.getSetting : if r9 != null goto interfaceinvoke r9.<java.util.Set: boolean add(java.lang.Object)>(r10)
+org.apache.ambari.server.topology.Setting.getSettingValue : $r3 = r0.<org.apache.ambari.server.topology.Setting: java.util.Map properties>
+org.apache.ambari.server.topology.Setting.getSettingValue : $r2 = r0.<org.apache.ambari.server.topology.Setting: java.util.Map properties>
+org.apache.ambari.server.topology.SettingFactoryTest.createSettingWithoutSetOfProperties : interfaceinvoke r17.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>("service_settings", r4)
+org.apache.ambari.server.topology.SettingFactoryTest.createSettingWithoutSetOfProperties : $r1 = new java.util.HashMap
+org.apache.ambari.server.topology.SettingFactoryTest.createSettingWithoutSetOfProperties : virtualinvoke r3.<java.util.HashMap: java.lang.Object put(java.lang.Object,java.lang.Object)>("name", "TEZ")
+org.apache.ambari.server.topology.SettingFactoryTest.createSettingWithoutSetOfProperties : $r9 = new java.util.HashMap
+org.apache.ambari.server.topology.SettingFactoryTest.createSettingWithoutSetOfProperties : $r13 = new java.util.ArrayList
+org.apache.ambari.server.topology.SettingFactoryTest.createSettingWithoutSetOfProperties : interfaceinvoke r6.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>("recovery_settings/recovery_enabled", "true")
+org.apache.ambari.server.topology.SettingFactoryTest.createSettingWithoutSetOfProperties : virtualinvoke r3.<java.util.HashMap: java.lang.Object put(java.lang.Object,java.lang.Object)>("recovery_enabled", "false")
+org.apache.ambari.server.topology.SettingFactoryTest.createSettingWithoutSetOfProperties : $r12 = new java.util.HashSet
+org.apache.ambari.server.topology.SettingFactoryTest.createSettingWithoutSetOfProperties : return r5
+org.apache.ambari.server.topology.SettingFactoryTest.createSettingWithoutSetOfProperties : interfaceinvoke r5.<java.util.Collection: boolean add(java.lang.Object)>(r6)
+org.apache.ambari.server.topology.SettingFactoryTest.createSettingWithoutSetOfProperties : $r14 = new java.util.HashMap
+org.apache.ambari.server.topology.SettingFactoryTest.createSettingWithoutSetOfProperties : interfaceinvoke r4.<java.util.Set: boolean add(java.lang.Object)>(r2)
+org.apache.ambari.server.topology.SettingFactoryTest.createSettingWithoutSetOfProperties : interfaceinvoke r4.<java.util.Set: boolean add(java.lang.Object)>(r3)
+org.apache.ambari.server.topology.SettingFactoryTest.createSettingWithoutSetOfProperties : $r16 = new java.util.HashMap
+org.apache.ambari.server.topology.SettingFactoryTest.createSettingWithoutSetOfProperties : virtualinvoke r2.<java.util.HashMap: java.lang.Object put(java.lang.Object,java.lang.Object)>("name", "HDFS")
+org.apache.ambari.server.topology.SettingFactoryTest.createSettingWithoutSetOfProperties : interfaceinvoke r5.<java.util.Collection: boolean add(java.lang.Object)>(r17)
+org.apache.ambari.server.topology.SettingFactoryTest.createSettingWithoutSetOfProperties : virtualinvoke r2.<java.util.HashMap: java.lang.Object put(java.lang.Object,java.lang.Object)>("recovery_enabled", "false")

@@ -1,0 +1,13 @@
+org.apache.ambari.server.state.kerberos.KerberosServiceDescriptorFactory.createInstances : if r1 == null goto $i0 = virtualinvoke r3.<java.util.ArrayList: int size()>()
+org.apache.ambari.server.state.kerberos.KerberosServiceDescriptorFactory.createInstances : $r3 = virtualinvoke r0.<org.apache.ambari.server.state.kerberos.KerberosServiceDescriptorFactory: java.util.Map parseFile(java.io.File)>(r1)
+org.apache.ambari.server.state.kerberos.KerberosServiceDescriptorFactory.createInstances : $r6 = new org.apache.ambari.server.AmbariException
+org.apache.ambari.server.state.kerberos.KerberosServiceDescriptorFactory.createInstances : r2 = $r5
+org.apache.ambari.server.state.kerberos.KerberosServiceDescriptorFactory.createInstances : r4 = interfaceinvoke r1.<java.util.Map: java.lang.Object get(java.lang.Object)>("services")
+org.apache.ambari.server.state.kerberos.KerberosServiceDescriptorFactory.createInstances : if r4 != null goto $z0 = r4 instanceof java.util.Collection
+org.apache.ambari.server.state.kerberos.KerberosServiceDescriptorFactory.createInstances : $r2 = new java.util.ArrayList
+org.apache.ambari.server.state.kerberos.KerberosServiceDescriptorFactory.createInstances : $r7 = new org.apache.ambari.server.AmbariException
+org.apache.ambari.server.state.kerberos.AbstractKerberosDescriptorFactory.parseFile : if r1 != null goto $z0 = virtualinvoke r1.<java.io.File: boolean isFile()>()
+org.apache.ambari.server.state.kerberos.AbstractKerberosDescriptorFactory.parseFile : $r3 = staticinvoke <java.util.Collections: java.util.Map emptyMap()>()
+org.apache.ambari.server.state.kerberos.KerberosServiceDescriptorTest.createFromFile : $r3 = virtualinvoke r0.<java.lang.Object: java.lang.Class getClass()>()
+org.apache.ambari.server.state.kerberos.KerberosServiceDescriptorTest.createFromFile : if r1 != null goto $r5 = new java.io.File
+org.apache.ambari.server.state.kerberos.KerberosServiceDescriptorTest.createFromFile : $r7 = <org.apache.ambari.server.state.kerberos.KerberosServiceDescriptorTest: org.apache.ambari.server.state.kerberos.KerberosServiceDescriptorFactory KERBEROS_SERVICE_DESCRIPTOR_FACTORY>

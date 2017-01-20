@@ -1,0 +1,5 @@
+org.apache.ambari.server.collections.functors.OperationPredicate.getContextKey : $r1 = r0.<org.apache.ambari.server.collections.functors.OperationPredicate: org.apache.ambari.server.collections.functors.ContextTransformer transformer>
+org.apache.ambari.server.collections.functors.EqualsPredicate.getContextKey : $r1 = specialinvoke r0.<org.apache.ambari.server.collections.functors.OperationPredicate: java.lang.String getContextKey()>()
+org.apache.ambari.server.collections.functors.EqualsPredicate.toMap : $r1 = new java.util.ArrayList
+org.apache.ambari.server.collections.Predicate.toJSON : if r1 != null goto $r3 = new com.google.gson.Gson
+org.apache.ambari.server.collections.Predicate.toJSON : r1 = virtualinvoke r0.<org.apache.ambari.server.collections.Predicate: java.util.Map toMap()>()

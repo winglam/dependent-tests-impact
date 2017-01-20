@@ -1,0 +1,30 @@
+org.apache.ambari.server.api.services.RequestFactory.applyDirectives : $r15 = interfaceinvoke r10.<java.util.Map$Entry: java.lang.Object getKey()>()
+org.apache.ambari.server.api.services.RequestFactory.applyDirectives : return z0
+org.apache.ambari.server.api.services.RequestFactory.applyDirectives : goto [?= $z2 = interfaceinvoke r9.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.api.services.RequestFactory.applyDirectives : z0 = 1
+org.apache.ambari.server.api.services.RequestFactory.applyDirectives : $z1 = interfaceinvoke r5.<java.util.Map: boolean isEmpty()>()
+org.apache.ambari.server.api.services.RequestFactory.applyDirectives : r7 = interfaceinvoke r6.<org.apache.ambari.server.api.resources.ResourceDefinition: java.util.Collection getReadDirectives()>()
+org.apache.ambari.server.api.services.RequestFactory.applyDirectives : goto [?= r8 = virtualinvoke r2.<org.apache.ambari.server.api.services.RequestBody: java.util.Map getRequestInfoProperties()>()]
+org.apache.ambari.server.api.services.RequestFactory.applyDirectives : r5 = specialinvoke r0.<org.apache.ambari.server.api.services.RequestFactory: java.util.Map getQueryParameters(javax.ws.rs.core.UriInfo,org.apache.ambari.server.api.services.RequestBody)>(r3, r2)
+org.apache.ambari.server.api.services.RequestFactory.applyDirectives : $r11 = <org.apache.ambari.server.api.services.RequestFactory$1: int[] $SwitchMap$org$apache$ambari$server$api$services$Request$Type>
+org.apache.ambari.server.api.services.RequestFactory.applyDirectives : r6 = interfaceinvoke r4.<org.apache.ambari.server.api.resources.ResourceInstance: org.apache.ambari.server.api.resources.ResourceDefinition getResourceDefinition()>()
+org.apache.ambari.server.api.services.RequestFactory.applyDirectives : r8 = virtualinvoke r2.<org.apache.ambari.server.api.services.RequestBody: java.util.Map getRequestInfoProperties()>()
+org.apache.ambari.server.api.services.RequestFactory.applyDirectives : $r12 = interfaceinvoke r5.<java.util.Map: java.util.Set entrySet()>()
+org.apache.ambari.server.api.services.RequestFactory.applyDirectives : $r14 = interfaceinvoke r10.<java.util.Map$Entry: java.lang.Object getKey()>()
+org.apache.ambari.server.api.services.BaseRequest.getBody : $r1 = r0.<org.apache.ambari.server.api.services.BaseRequest: org.apache.ambari.server.api.services.RequestBody m_body>
+org.apache.ambari.server.api.services.BaseRequest.getResource : $r1 = r0.<org.apache.ambari.server.api.services.BaseRequest: org.apache.ambari.server.api.resources.ResourceInstance m_resource>
+org.apache.ambari.server.api.services.GetRequest.getRequestType : $r1 = <org.apache.ambari.server.api.services.Request$Type: org.apache.ambari.server.api.services.Request$Type GET>
+org.apache.ambari.server.utils.RequestUtils.getRemoteAddress : $z0 = staticinvoke <org.apache.ambari.server.utils.RequestUtils: boolean hasValidRequest()>()
+org.apache.ambari.server.utils.RequestUtils.getRemoteAddress : return null
+org.apache.ambari.server.api.services.RequestFactory.createGetRequest : $r6 = new org.apache.ambari.server.api.services.GetRequest
+org.apache.ambari.server.api.services.RequestFactory.createGetRequest : $r5 = <org.apache.ambari.server.api.services.Request$Type: org.apache.ambari.server.api.services.Request$Type GET>
+org.apache.ambari.server.utils.RequestUtils.hasValidRequest : $r0 = staticinvoke <org.springframework.web.context.request.RequestContextHolder: org.springframework.web.context.request.RequestAttributes getRequestAttributes()>()
+org.apache.ambari.server.api.services.RequestFactory.getQueryParameters : goto [?= $z0 = interfaceinvoke r5.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.api.services.RequestFactory.getQueryParameters : return r4
+org.apache.ambari.server.api.services.RequestFactory.getQueryParameters : if r18 == null goto return r4
+org.apache.ambari.server.api.services.RequestFactory.getQueryParameters : $r10 = interfaceinvoke r1.<javax.ws.rs.core.UriInfo: javax.ws.rs.core.MultivaluedMap getQueryParameters()>()
+org.apache.ambari.server.api.services.RequestFactory.getQueryParameters : r18 = virtualinvoke r2.<org.apache.ambari.server.api.services.RequestBody: java.lang.String getQueryString()>()
+org.apache.ambari.server.api.services.RequestFactory.getQueryParameters : $r3 = new java.util.HashMap
+org.apache.ambari.server.api.services.RequestFactory.getQueryParameters : $r13 = interfaceinvoke r6.<java.util.Map$Entry: java.lang.Object getKey()>()
+org.apache.ambari.server.api.services.RequestFactory.createRequest : $r6 = <org.apache.ambari.server.api.services.RequestFactory$1: int[] $SwitchMap$org$apache$ambari$server$api$services$Request$Type>
+org.apache.ambari.server.api.services.RequestFactory.createRequest : $r7 = specialinvoke r0.<org.apache.ambari.server.api.services.RequestFactory: org.apache.ambari.server.api.services.Request createGetRequest(javax.ws.rs.core.HttpHeaders,org.apache.ambari.server.api.services.RequestBody,javax.ws.rs.core.UriInfo,org.apache.ambari.server.api.resources.ResourceInstance)>(r1, r2, r3, r5)

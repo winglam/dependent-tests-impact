@@ -1,0 +1,14 @@
+org.apache.ambari.server.state.CheckHelper.getApplicablePrerequisiteChecks : $r3 = new java.util.LinkedList
+org.apache.ambari.server.state.CheckHelper.getApplicablePrerequisiteChecks : r5 = virtualinvoke r1.<org.apache.ambari.server.controller.PrereqCheckRequest: java.lang.String getClusterName()>()
+org.apache.ambari.server.state.CheckHelper.getApplicablePrerequisiteChecks : return r4
+org.apache.ambari.server.state.CheckHelper.getApplicablePrerequisiteChecks : $r11 = new org.apache.ambari.server.state.stack.PrerequisiteCheck
+org.apache.ambari.server.state.CheckHelper.getApplicablePrerequisiteChecks : $z1 = virtualinvoke r7.<org.apache.ambari.server.checks.AbstractCheckDescriptor: boolean isApplicable(org.apache.ambari.server.controller.PrereqCheckRequest)>(r1)
+org.apache.ambari.server.state.CheckHelper.getApplicablePrerequisiteChecks : goto [?= (branch)]
+org.apache.ambari.server.state.CheckHelper.getApplicablePrerequisiteChecks : r6 = interfaceinvoke r2.<java.util.List: java.util.Iterator iterator()>()
+org.apache.ambari.server.state.CheckHelper.getApplicablePrerequisiteChecks : goto [?= $z0 = interfaceinvoke r6.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.state.CheckHelper.performChecks : return r4
+org.apache.ambari.server.state.CheckHelper.performChecks : r3 = virtualinvoke r1.<org.apache.ambari.server.controller.PrereqCheckRequest: java.lang.String getClusterName()>()
+org.apache.ambari.server.state.CheckHelper.performChecks : r6 = interfaceinvoke r5.<java.util.List: java.util.Iterator iterator()>()
+org.apache.ambari.server.state.CheckHelper.performChecks : r5 = virtualinvoke r0.<org.apache.ambari.server.state.CheckHelper: java.util.List getApplicablePrerequisiteChecks(org.apache.ambari.server.controller.PrereqCheckRequest,java.util.List)>(r1, r2)
+org.apache.ambari.server.state.CheckHelper.performChecks : $r10 = new java.util.ArrayList
+org.apache.ambari.server.controller.PrereqCheckRequest.getClusterName : $r1 = r0.<org.apache.ambari.server.controller.PrereqCheckRequest: java.lang.String m_clusterName>

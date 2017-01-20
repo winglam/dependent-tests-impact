@@ -1,0 +1,11 @@
+org.apache.ambari.server.controller.utilities.KerberosChecker.checkJaasConfiguration : r50 = $r49
+org.apache.ambari.server.controller.utilities.KerberosChecker.checkJaasConfiguration : $r9 = <org.apache.ambari.server.controller.utilities.KerberosChecker: org.slf4j.Logger LOG>
+org.apache.ambari.server.controller.utilities.KerberosChecker.checkJaasConfiguration : r3 = virtualinvoke r2.<javax.security.auth.login.Configuration: javax.security.auth.login.AppConfigurationEntry[] getAppConfigurationEntry(java.lang.String)>("com.sun.security.jgss.krb5.initiate")
+org.apache.ambari.server.controller.utilities.KerberosChecker.checkJaasConfiguration : $r47 = <org.apache.ambari.server.controller.utilities.KerberosChecker: org.apache.ambari.server.controller.utilities.LoginContextHelper loginContextHelper>
+org.apache.ambari.server.controller.utilities.KerberosChecker.checkJaasConfiguration : $r51 = <org.apache.ambari.server.controller.utilities.KerberosChecker: org.slf4j.Logger LOG>
+org.apache.ambari.server.controller.utilities.KerberosChecker.checkJaasConfiguration : $r53 = new org.apache.ambari.server.AmbariException
+org.apache.ambari.server.controller.utilities.KerberosChecker.checkJaasConfiguration : r2 = staticinvoke <javax.security.auth.login.Configuration: javax.security.auth.login.Configuration getConfiguration()>()
+org.apache.ambari.server.controller.utilities.KerberosChecker.checkJaasConfiguration : if r3 != null goto z0 = 0
+org.apache.ambari.server.controller.utilities.KerberosChecker.checkJaasConfiguration : r1 = staticinvoke <java.lang.System: java.lang.String getProperty(java.lang.String)>("java.security.auth.login.config")
+org.apache.ambari.server.controller.utilities.KerberosChecker.checkJaasConfiguration : $r0 = <org.apache.ambari.server.controller.utilities.KerberosChecker: org.apache.ambari.server.configuration.Configuration config>
+org.apache.ambari.server.controller.utilities.KerberosChecker.checkJaasConfiguration : $r10 = <org.apache.ambari.server.controller.utilities.KerberosChecker: org.slf4j.Logger LOG>

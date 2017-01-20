@@ -1,0 +1,182 @@
+org.apache.ambari.server.api.predicate.expressions.NotLogicalExpression.toPredicate : $r1 = new org.apache.ambari.server.controller.predicate.NotPredicate
+org.apache.ambari.server.api.predicate.QueryParser$ParseContext.setTokenType : r0.<org.apache.ambari.server.api.predicate.QueryParser$ParseContext: org.apache.ambari.server.api.predicate.Token$TYPE m_previousTokenType> = r1
+org.apache.ambari.server.api.predicate.expressions.RelationalExpression.toPredicate : $r1 = virtualinvoke r0.<org.apache.ambari.server.api.predicate.expressions.RelationalExpression: org.apache.ambari.server.api.predicate.operators.Operator getOperator()>()
+org.apache.ambari.server.api.predicate.operators.OrOperator.getBasePrecedence : return 1
+org.apache.ambari.server.api.predicate.operators.NotEqualsOperator.toPredicate : $r3 = new org.apache.ambari.server.controller.predicate.NotPredicate
+org.apache.ambari.server.api.predicate.QueryParser$PropertyOperandTokenHandler._handleToken : $r4 = virtualinvoke r1.<org.apache.ambari.server.api.predicate.QueryParser$ParseContext: org.apache.ambari.server.api.predicate.expressions.Expression getPrecedingExpression()>()
+org.apache.ambari.server.api.predicate.QueryParser$PropertyOperandTokenHandler._handleToken : return 1
+org.apache.ambari.server.api.predicate.QueryParser$PropertyOperandTokenHandler._handleToken : $r3 = virtualinvoke r1.<org.apache.ambari.server.api.predicate.QueryParser$ParseContext: org.apache.ambari.server.api.predicate.Token[] getTokens()>()
+org.apache.ambari.server.api.predicate.operators.NotOperator.getType : $r1 = <org.apache.ambari.server.api.predicate.operators.Operator$TYPE: org.apache.ambari.server.api.predicate.operators.Operator$TYPE NOT>
+org.apache.ambari.server.controller.predicate.ArrayPredicate.hashCode : $i2 = 31 * i0
+org.apache.ambari.server.controller.predicate.ArrayPredicate.hashCode : return i4
+org.apache.ambari.server.controller.predicate.ArrayPredicate.hashCode : $r1 = r0.<org.apache.ambari.server.controller.predicate.ArrayPredicate: org.apache.ambari.server.controller.spi.Predicate[] predicates>
+org.apache.ambari.server.api.predicate.QueryParser$ParseContext.getExpressions : $r1 = r0.<org.apache.ambari.server.api.predicate.QueryParser$ParseContext: java.util.List m_listExpressions>
+org.apache.ambari.server.api.predicate.operators.OrOperator.getType : $r1 = <org.apache.ambari.server.api.predicate.operators.Operator$TYPE: org.apache.ambari.server.api.predicate.operators.Operator$TYPE OR>
+org.apache.ambari.server.api.predicate.QueryParser$BracketOpenTokenHandler._handleToken : return 1
+org.apache.ambari.server.api.predicate.QueryParser$BracketOpenTokenHandler._handleToken : virtualinvoke r1.<org.apache.ambari.server.api.predicate.QueryParser$ParseContext: void incPrecedenceLevel(int)>(3)
+org.apache.ambari.server.controller.predicate.UnaryPredicate.getPropertyIds : $r1 = r0.<org.apache.ambari.server.controller.predicate.UnaryPredicate: org.apache.ambari.server.controller.spi.Predicate predicate>
+org.apache.ambari.server.api.predicate.operators.GreaterOperator.toPredicate : $r3 = new org.apache.ambari.server.controller.predicate.GreaterPredicate
+org.apache.ambari.server.api.predicate.QueryParser$ValueOperandTokenHandler._handleToken : $r4 = virtualinvoke r1.<org.apache.ambari.server.api.predicate.QueryParser$ParseContext: org.apache.ambari.server.api.predicate.expressions.Expression getPrecedingExpression()>()
+org.apache.ambari.server.api.predicate.QueryParser$ValueOperandTokenHandler._handleToken : $r5 = virtualinvoke r1.<org.apache.ambari.server.api.predicate.QueryParser$ParseContext: org.apache.ambari.server.api.predicate.expressions.Expression getPrecedingExpression()>()
+org.apache.ambari.server.api.predicate.QueryParser$ValueOperandTokenHandler._handleToken : return 1
+org.apache.ambari.server.api.predicate.QueryParser$ValueOperandTokenHandler._handleToken : $r3 = virtualinvoke r1.<org.apache.ambari.server.api.predicate.QueryParser$ParseContext: org.apache.ambari.server.api.predicate.Token[] getTokens()>()
+org.apache.ambari.server.api.predicate.QueryParser$LogicalUnaryOperatorTokenHandler.validate : if r1 == null goto $z0 = 1
+org.apache.ambari.server.api.predicate.QueryParser.parseExpressions : $r2 = new org.apache.ambari.server.api.predicate.QueryParser$ParseContext
+org.apache.ambari.server.api.predicate.QueryParser.parseExpressions : return r3
+org.apache.ambari.server.api.predicate.QueryParser.parseExpressions : $i3 = virtualinvoke r3.<org.apache.ambari.server.api.predicate.QueryParser$ParseContext: int getPrecedenceLevel()>()
+org.apache.ambari.server.api.predicate.QueryParser.parseExpressions : $i0 = virtualinvoke r3.<org.apache.ambari.server.api.predicate.QueryParser$ParseContext: int getCurrentTokensIndex()>()
+org.apache.ambari.server.api.predicate.QueryParser.parseExpressions : $r4 = <org.apache.ambari.server.api.predicate.QueryParser: java.util.Map TOKEN_HANDLERS>
+org.apache.ambari.server.api.predicate.operators.Operator$TYPE.values : $r0 = <org.apache.ambari.server.api.predicate.operators.Operator$TYPE: org.apache.ambari.server.api.predicate.operators.Operator$TYPE[] $VALUES>
+org.apache.ambari.server.api.predicate.expressions.AbstractExpression.getRightOperand : $r1 = r0.<org.apache.ambari.server.api.predicate.expressions.AbstractExpression: java.lang.Object m_right>
+org.apache.ambari.server.controller.predicate.ComparisonPredicate.hashCode : i0 = specialinvoke r0.<org.apache.ambari.server.controller.predicate.PropertyPredicate: int hashCode()>()
+org.apache.ambari.server.controller.predicate.ComparisonPredicate.hashCode : return i3
+org.apache.ambari.server.controller.predicate.ComparisonPredicate.hashCode : $i1 = 31 * i0
+org.apache.ambari.server.api.predicate.operators.LessOperator.toPredicate : $r3 = new org.apache.ambari.server.controller.predicate.LessPredicate
+org.apache.ambari.server.api.predicate.expressions.AbstractExpression.setLeftOperand : r0.<org.apache.ambari.server.api.predicate.expressions.AbstractExpression: java.lang.Object m_left> = r1
+org.apache.ambari.server.api.predicate.QueryParser$ParseContext.getTokens : $r1 = r0.<org.apache.ambari.server.api.predicate.QueryParser$ParseContext: org.apache.ambari.server.api.predicate.Token[] m_tokens>
+org.apache.ambari.server.controller.utilities.PredicateHelper.getPropertyIds : $r1 = (org.apache.ambari.server.controller.predicate.BasePredicate) r0
+org.apache.ambari.server.controller.utilities.PredicateHelper.getPropertyIds : $z0 = r0 instanceof org.apache.ambari.server.controller.predicate.BasePredicate
+org.apache.ambari.server.api.predicate.operators.GreaterEqualsOperator.toPredicate : $r3 = new org.apache.ambari.server.controller.predicate.GreaterEqualsPredicate
+org.apache.ambari.server.api.predicate.expressions.LogicalExpression.toPredicate : $r1 = virtualinvoke r0.<org.apache.ambari.server.api.predicate.expressions.LogicalExpression: org.apache.ambari.server.api.predicate.operators.Operator getOperator()>()
+org.apache.ambari.server.controller.predicate.ComparisonPredicate.equals : $z0 = r1 instanceof org.apache.ambari.server.controller.predicate.ComparisonPredicate
+org.apache.ambari.server.controller.predicate.ComparisonPredicate.equals : $z1 = specialinvoke r0.<org.apache.ambari.server.controller.predicate.PropertyPredicate: boolean equals(java.lang.Object)>(r1)
+org.apache.ambari.server.controller.predicate.ComparisonPredicate.equals : r2 = (org.apache.ambari.server.controller.predicate.ComparisonPredicate) r1
+org.apache.ambari.server.controller.predicate.ComparisonPredicate.equals : if r0 != r1 goto $z0 = r1 instanceof org.apache.ambari.server.controller.predicate.ComparisonPredicate
+org.apache.ambari.server.controller.predicate.ComparisonPredicate.equals : $r3 = r0.<org.apache.ambari.server.controller.predicate.ComparisonPredicate: java.lang.Comparable value>
+org.apache.ambari.server.controller.predicate.PropertyPredicate.equals : if r0 != r1 goto $z0 = r1 instanceof org.apache.ambari.server.controller.predicate.PropertyPredicate
+org.apache.ambari.server.controller.predicate.PropertyPredicate.equals : r2 = (org.apache.ambari.server.controller.predicate.PropertyPredicate) r1
+org.apache.ambari.server.controller.predicate.PropertyPredicate.equals : $z0 = r1 instanceof org.apache.ambari.server.controller.predicate.PropertyPredicate
+org.apache.ambari.server.controller.predicate.PropertyPredicate.equals : $r3 = r0.<org.apache.ambari.server.controller.predicate.PropertyPredicate: java.lang.String propertyId>
+org.apache.ambari.server.api.predicate.expressions.AbstractExpression.getLeftOperand : $r1 = r0.<org.apache.ambari.server.api.predicate.expressions.AbstractExpression: java.lang.Object m_left>
+org.apache.ambari.server.api.predicate.operators.AndOperator.toPredicate : $r3 = new org.apache.ambari.server.controller.predicate.AndPredicate
+org.apache.ambari.server.api.predicate.QueryParser$TokenHandler.handleToken : $i2 = virtualinvoke r1.<org.apache.ambari.server.api.predicate.QueryParser$ParseContext: int getCurrentTokensIndex()>()
+org.apache.ambari.server.api.predicate.QueryParser$TokenHandler.handleToken : $r18 = virtualinvoke r2.<org.apache.ambari.server.api.predicate.Token: org.apache.ambari.server.api.predicate.Token$TYPE getType()>()
+org.apache.ambari.server.api.predicate.QueryParser$TokenHandler.handleToken : i0 = virtualinvoke r0.<org.apache.ambari.server.api.predicate.QueryParser$TokenHandler: int _handleToken(org.apache.ambari.server.api.predicate.QueryParser$ParseContext)>(r1)
+org.apache.ambari.server.api.predicate.QueryParser$TokenHandler.handleToken : $r4 = virtualinvoke r1.<org.apache.ambari.server.api.predicate.QueryParser$ParseContext: org.apache.ambari.server.api.predicate.Token[] getTokens()>()
+org.apache.ambari.server.api.predicate.QueryParser$TokenHandler.handleToken : $r5 = virtualinvoke r1.<org.apache.ambari.server.api.predicate.QueryParser$ParseContext: org.apache.ambari.server.api.predicate.Token$TYPE getPreviousTokenType()>()
+org.apache.ambari.server.api.predicate.QueryParser$LogicalOperatorTokenHandler.validate : $r2 = <org.apache.ambari.server.api.predicate.Token$TYPE: org.apache.ambari.server.api.predicate.Token$TYPE VALUE_OPERAND>
+org.apache.ambari.server.api.predicate.QueryParser.parse : r3 = virtualinvoke r2.<org.apache.ambari.server.api.predicate.QueryParser$ParseContext: java.util.List getExpressions()>()
+org.apache.ambari.server.api.predicate.QueryParser.parse : specialinvoke r0.<org.apache.ambari.server.api.predicate.QueryParser: void changeHostNameToLowerCase(java.util.List)>(r3)
+org.apache.ambari.server.api.predicate.QueryParser.parse : $i0 = virtualinvoke r2.<org.apache.ambari.server.api.predicate.QueryParser$ParseContext: int getMaxPrecedence()>()
+org.apache.ambari.server.api.predicate.QueryParser.parse : $z0 = interfaceinvoke r4.<java.util.List: boolean isEmpty()>()
+org.apache.ambari.server.api.predicate.QueryParser.parse : r2 = specialinvoke r0.<org.apache.ambari.server.api.predicate.QueryParser: org.apache.ambari.server.api.predicate.QueryParser$ParseContext parseExpressions(org.apache.ambari.server.api.predicate.Token[])>(r1)
+org.apache.ambari.server.api.predicate.QueryParser$LogicalOperatorTokenHandler._handleToken : return 1
+org.apache.ambari.server.api.predicate.QueryParser$LogicalOperatorTokenHandler._handleToken : $i2 = interfaceinvoke r3.<org.apache.ambari.server.api.predicate.operators.LogicalOperator: int getPrecedence()>()
+org.apache.ambari.server.api.predicate.QueryParser$LogicalOperatorTokenHandler._handleToken : $r4 = virtualinvoke r1.<org.apache.ambari.server.api.predicate.QueryParser$ParseContext: org.apache.ambari.server.api.predicate.Token[] getTokens()>()
+org.apache.ambari.server.api.predicate.QueryParser$LogicalOperatorTokenHandler._handleToken : $r6 = staticinvoke <org.apache.ambari.server.api.predicate.expressions.LogicalExpressionFactory: org.apache.ambari.server.api.predicate.expressions.LogicalExpression createLogicalExpression(org.apache.ambari.server.api.predicate.operators.LogicalOperator)>(r3)
+org.apache.ambari.server.api.predicate.QueryParser$LogicalOperatorTokenHandler._handleToken : $r5 = virtualinvoke r2.<org.apache.ambari.server.api.predicate.Token: java.lang.String getValue()>()
+org.apache.ambari.server.api.predicate.QueryParser$ParseContext.getPrecedenceLevel : $i0 = r0.<org.apache.ambari.server.api.predicate.QueryParser$ParseContext: int m_precedence>
+org.apache.ambari.server.api.predicate.operators.EqualsOperator.toPredicate : $r3 = new org.apache.ambari.server.controller.predicate.EqualsPredicate
+org.apache.ambari.server.api.predicate.QueryParser$ParseContext.addExpression : $r2 = r0.<org.apache.ambari.server.api.predicate.QueryParser$ParseContext: java.util.List m_listExpressions>
+org.apache.ambari.server.api.predicate.Token.getValue : $r1 = r0.<org.apache.ambari.server.api.predicate.Token: java.lang.String m_value>
+org.apache.ambari.server.api.predicate.expressions.AbstractExpression.merge : $r3 = virtualinvoke r0.<org.apache.ambari.server.api.predicate.expressions.AbstractExpression: java.util.List defaultMerge(org.apache.ambari.server.api.predicate.expressions.Expression,org.apache.ambari.server.api.predicate.expressions.Expression)>(r1, r2)
+org.apache.ambari.server.api.predicate.QueryParser$RelationalOperatorTokenHandler.validate : if r1 == null goto $z0 = 1
+org.apache.ambari.server.api.predicate.QueryParser$ParseContext.incPrecedenceLevel : $i1 = r0.<org.apache.ambari.server.api.predicate.QueryParser$ParseContext: int m_precedence>
+org.apache.ambari.server.api.predicate.QueryParser.changeHostNameToLowerCase : r5 = virtualinvoke r4.<java.lang.Object: java.lang.String toString()>()
+org.apache.ambari.server.api.predicate.QueryParser.changeHostNameToLowerCase : if r4 == null goto (branch)
+org.apache.ambari.server.api.predicate.QueryParser.changeHostNameToLowerCase : goto [?= $z0 = interfaceinvoke r2.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.api.predicate.QueryParser.changeHostNameToLowerCase : goto [?= return]
+org.apache.ambari.server.api.predicate.QueryParser.changeHostNameToLowerCase : r4 = interfaceinvoke r3.<org.apache.ambari.server.api.predicate.expressions.Expression: java.lang.Object getLeftOperand()>()
+org.apache.ambari.server.api.predicate.QueryParser.changeHostNameToLowerCase : $z1 = virtualinvoke r5.<java.lang.String: boolean endsWith(java.lang.String)>("/host_name")
+org.apache.ambari.server.api.predicate.QueryParser.changeHostNameToLowerCase : r2 = interfaceinvoke r1.<java.util.List: java.util.Iterator iterator()>()
+org.apache.ambari.server.controller.predicate.UnaryPredicate.hashCode : $r1 = r0.<org.apache.ambari.server.controller.predicate.UnaryPredicate: org.apache.ambari.server.controller.spi.Predicate predicate>
+org.apache.ambari.server.api.predicate.QueryParser$ParseContext.getPreviousTokenType : $r1 = r0.<org.apache.ambari.server.api.predicate.QueryParser$ParseContext: org.apache.ambari.server.api.predicate.Token$TYPE m_previousTokenType>
+org.apache.ambari.server.api.predicate.expressions.AbstractExpression.setRightOperand : r0.<org.apache.ambari.server.api.predicate.expressions.AbstractExpression: java.lang.Object m_right> = r1
+org.apache.ambari.server.api.predicate.operators.AndOperator.getBasePrecedence : return 2
+org.apache.ambari.server.api.predicate.QueryParser$BracketCloseTokenHandler.validate : $r2 = <org.apache.ambari.server.api.predicate.Token$TYPE: org.apache.ambari.server.api.predicate.Token$TYPE VALUE_OPERAND>
+org.apache.ambari.server.api.predicate.QueryParser$BracketCloseTokenHandler._handleToken : return 1
+org.apache.ambari.server.api.predicate.QueryParser$BracketCloseTokenHandler._handleToken : virtualinvoke r1.<org.apache.ambari.server.api.predicate.QueryParser$ParseContext: void decPrecedenceLevel(int)>(3)
+org.apache.ambari.server.api.predicate.QueryParser$ParseContext.getPrecedingExpression : $r1 = r0.<org.apache.ambari.server.api.predicate.QueryParser$ParseContext: java.util.List m_listExpressions>
+org.apache.ambari.server.api.predicate.operators.NotOperator.getBasePrecedence : return 3
+org.apache.ambari.server.api.predicate.expressions.AbstractExpression.getOperator : $r1 = r0.<org.apache.ambari.server.api.predicate.expressions.AbstractExpression: org.apache.ambari.server.api.predicate.operators.Operator m_op>
+org.apache.ambari.server.api.predicate.QueryParser$ParseContext.access$800 : specialinvoke r0.<org.apache.ambari.server.api.predicate.QueryParser$ParseContext: void setTokenType(org.apache.ambari.server.api.predicate.Token$TYPE)>(r1)
+org.apache.ambari.server.api.predicate.QueryParser$ParseContext.setCurrentTokensIndex : r0.<org.apache.ambari.server.api.predicate.QueryParser$ParseContext: int m_tokensIdx> = i0
+org.apache.ambari.server.api.predicate.expressions.LogicalExpression.merge : virtualinvoke r0.<org.apache.ambari.server.api.predicate.expressions.LogicalExpression: void setLeftOperand(java.lang.Object)>(r1)
+org.apache.ambari.server.api.predicate.expressions.LogicalExpression.merge : $r6 = virtualinvoke r0.<org.apache.ambari.server.api.predicate.expressions.LogicalExpression: java.util.List defaultMerge(org.apache.ambari.server.api.predicate.expressions.Expression,org.apache.ambari.server.api.predicate.expressions.Expression)>(r1, r2)
+org.apache.ambari.server.api.predicate.expressions.LogicalExpression.merge : $r3 = virtualinvoke r0.<org.apache.ambari.server.api.predicate.expressions.LogicalExpression: org.apache.ambari.server.api.predicate.operators.Operator getOperator()>()
+org.apache.ambari.server.api.predicate.expressions.LogicalExpression.merge : virtualinvoke r0.<org.apache.ambari.server.api.predicate.expressions.LogicalExpression: void setRightOperand(java.lang.Object)>(r2)
+org.apache.ambari.server.api.predicate.expressions.LogicalExpression.merge : $r5 = staticinvoke <java.util.Collections: java.util.List singletonList(java.lang.Object)>(r0)
+org.apache.ambari.server.controller.predicate.ArrayPredicate.equals : if r0 != r1 goto $z0 = r1 instanceof org.apache.ambari.server.controller.predicate.ArrayPredicate
+org.apache.ambari.server.controller.predicate.ArrayPredicate.equals : $r12 = new java.util.HashSet
+org.apache.ambari.server.controller.predicate.ArrayPredicate.equals : $z0 = r1 instanceof org.apache.ambari.server.controller.predicate.ArrayPredicate
+org.apache.ambari.server.controller.predicate.ArrayPredicate.equals : r2 = (org.apache.ambari.server.controller.predicate.ArrayPredicate) r1
+org.apache.ambari.server.controller.predicate.ArrayPredicate.equals : $r5 = r0.<org.apache.ambari.server.controller.predicate.ArrayPredicate: java.util.Set propertyIds>
+org.apache.ambari.server.controller.predicate.ArrayPredicate.equals : $z2 = interfaceinvoke r3.<java.util.Set: boolean equals(java.lang.Object)>(r4)
+org.apache.ambari.server.controller.predicate.ArrayPredicate.equals : $r9 = new java.util.HashSet
+org.apache.ambari.server.api.predicate.QueryParser.mergeExpressions : $r12 = interfaceinvoke r1.<java.util.List: java.lang.Object remove(int)>(0)
+org.apache.ambari.server.api.predicate.QueryParser.mergeExpressions : goto [?= staticinvoke <edu.washington.cs.dt.impact.util.Tracer: void trace(java.lang.String,java.lang.String)>("$z0 = interfaceinvoke r1.<java.util.List: boolean isEmpty()>()", "org.apache.ambari.server.api.predicate.QueryParser.mergeExpressions")]
+org.apache.ambari.server.api.predicate.QueryParser.mergeExpressions : $z1 = virtualinvoke r2.<java.util.Stack: boolean empty()>()
+org.apache.ambari.server.api.predicate.QueryParser.mergeExpressions : $i1 = interfaceinvoke r1.<java.util.List: int size()>()
+org.apache.ambari.server.api.predicate.QueryParser.mergeExpressions : $r7 = interfaceinvoke r1.<java.util.List: java.lang.Object remove(int)>(0)
+org.apache.ambari.server.api.predicate.QueryParser.mergeExpressions : $r14 = new java.util.ArrayList
+org.apache.ambari.server.api.predicate.QueryParser.mergeExpressions : $z0 = interfaceinvoke r1.<java.util.List: boolean isEmpty()>()
+org.apache.ambari.server.api.predicate.QueryParser.mergeExpressions : $r13 = interfaceinvoke r3.<org.apache.ambari.server.api.predicate.expressions.Expression: java.util.List merge(org.apache.ambari.server.api.predicate.expressions.Expression,org.apache.ambari.server.api.predicate.expressions.Expression,int)>(r4, r5, i0)
+org.apache.ambari.server.api.predicate.QueryParser.mergeExpressions : return r1
+org.apache.ambari.server.api.predicate.QueryParser.mergeExpressions : $r6 = new java.util.Stack
+org.apache.ambari.server.api.predicate.QueryParser.mergeExpressions : $r9 = virtualinvoke r2.<java.util.Stack: java.lang.Object pop()>()
+org.apache.ambari.server.api.predicate.expressions.LogicalExpressionFactory.createLogicalExpression : $r3 = new org.apache.ambari.server.api.predicate.expressions.LogicalExpression
+org.apache.ambari.server.api.predicate.expressions.LogicalExpressionFactory.createLogicalExpression : $r1 = <org.apache.ambari.server.api.predicate.expressions.LogicalExpressionFactory$1: int[] $SwitchMap$org$apache$ambari$server$api$predicate$operators$Operator$TYPE>
+org.apache.ambari.server.api.predicate.expressions.LogicalExpressionFactory.createLogicalExpression : $r4 = new org.apache.ambari.server.api.predicate.expressions.NotLogicalExpression
+org.apache.ambari.server.api.predicate.expressions.NotLogicalExpression.merge : return r3
+org.apache.ambari.server.api.predicate.expressions.NotLogicalExpression.merge : $r6 = new java.util.ArrayList
+org.apache.ambari.server.api.predicate.expressions.NotLogicalExpression.merge : $r4 = virtualinvoke r0.<org.apache.ambari.server.api.predicate.expressions.NotLogicalExpression: org.apache.ambari.server.api.predicate.operators.Operator getOperator()>()
+org.apache.ambari.server.api.predicate.expressions.NotLogicalExpression.merge : virtualinvoke r0.<org.apache.ambari.server.api.predicate.expressions.NotLogicalExpression: void setRightOperand(java.lang.Object)>(r2)
+org.apache.ambari.server.api.predicate.expressions.NotLogicalExpression.merge : interfaceinvoke r3.<java.util.List: boolean add(java.lang.Object)>(r0)
+org.apache.ambari.server.api.predicate.expressions.NotLogicalExpression.merge : if r1 == null goto virtualinvoke r0.<org.apache.ambari.server.api.predicate.expressions.NotLogicalExpression: void setRightOperand(java.lang.Object)>(r2)
+org.apache.ambari.server.api.predicate.expressions.NotLogicalExpression.merge : $r7 = virtualinvoke r0.<org.apache.ambari.server.api.predicate.expressions.NotLogicalExpression: java.util.List defaultMerge(org.apache.ambari.server.api.predicate.expressions.Expression,org.apache.ambari.server.api.predicate.expressions.Expression)>(r1, r2)
+org.apache.ambari.server.api.predicate.expressions.NotLogicalExpression.merge : interfaceinvoke r3.<java.util.List: boolean add(java.lang.Object)>(r1)
+org.apache.ambari.server.api.predicate.expressions.AbstractExpression.defaultMerge : return r4
+org.apache.ambari.server.api.predicate.expressions.AbstractExpression.defaultMerge : if r1 == null goto interfaceinvoke r4.<java.util.List: boolean add(java.lang.Object)>(r0)
+org.apache.ambari.server.api.predicate.expressions.AbstractExpression.defaultMerge : interfaceinvoke r4.<java.util.List: boolean add(java.lang.Object)>(r0)
+org.apache.ambari.server.api.predicate.expressions.AbstractExpression.defaultMerge : if r2 == null goto return r4
+org.apache.ambari.server.api.predicate.expressions.AbstractExpression.defaultMerge : interfaceinvoke r4.<java.util.List: boolean add(java.lang.Object)>(r1)
+org.apache.ambari.server.api.predicate.expressions.AbstractExpression.defaultMerge : interfaceinvoke r4.<java.util.List: boolean add(java.lang.Object)>(r2)
+org.apache.ambari.server.api.predicate.expressions.AbstractExpression.defaultMerge : $r3 = new java.util.ArrayList
+org.apache.ambari.server.api.predicate.QueryParser$PropertyOperandTokenHandler.validate : $r2 = <org.apache.ambari.server.api.predicate.Token$TYPE: org.apache.ambari.server.api.predicate.Token$TYPE RELATIONAL_OPERATOR>
+org.apache.ambari.server.controller.predicate.PropertyPredicate.getPropertyIds : $r1 = r0.<org.apache.ambari.server.controller.predicate.PropertyPredicate: java.lang.String propertyId>
+org.apache.ambari.server.controller.predicate.UnaryPredicate.equals : r2 = (org.apache.ambari.server.controller.predicate.UnaryPredicate) r1
+org.apache.ambari.server.controller.predicate.UnaryPredicate.equals : if r0 != r1 goto $z0 = r1 instanceof org.apache.ambari.server.controller.predicate.UnaryPredicate
+org.apache.ambari.server.controller.predicate.UnaryPredicate.equals : $z0 = r1 instanceof org.apache.ambari.server.controller.predicate.UnaryPredicate
+org.apache.ambari.server.controller.predicate.UnaryPredicate.equals : $r3 = r0.<org.apache.ambari.server.controller.predicate.UnaryPredicate: org.apache.ambari.server.controller.spi.Predicate predicate>
+org.apache.ambari.server.api.predicate.Token.getType : $r1 = r0.<org.apache.ambari.server.api.predicate.Token: org.apache.ambari.server.api.predicate.Token$TYPE m_type>
+org.apache.ambari.server.controller.predicate.ComparisonPredicate.stringToDouble : $i0 = virtualinvoke r2.<java.text.ParsePosition: int getIndex()>()
+org.apache.ambari.server.controller.predicate.ComparisonPredicate.stringToDouble : $r5 = new java.text.ParsePosition
+org.apache.ambari.server.controller.predicate.ComparisonPredicate.stringToDouble : r4 = virtualinvoke r3.<java.text.NumberFormat: java.lang.Number parse(java.lang.String,java.text.ParsePosition)>(r1, r2)
+org.apache.ambari.server.controller.predicate.ComparisonPredicate.stringToDouble : if r1 == null goto return null
+org.apache.ambari.server.controller.predicate.ComparisonPredicate.stringToDouble : r3 = staticinvoke <java.text.NumberFormat: java.text.NumberFormat getInstance()>()
+org.apache.ambari.server.api.predicate.QueryParser$ParseContext.getMaxPrecedence : $i0 = r0.<org.apache.ambari.server.api.predicate.QueryParser$ParseContext: int m_maxPrecedence>
+org.apache.ambari.server.api.predicate.operators.LessEqualsOperator.toPredicate : $r3 = new org.apache.ambari.server.controller.predicate.LessEqualsPredicate
+org.apache.ambari.server.api.predicate.QueryParser$BracketOpenTokenHandler.validate : if r1 == null goto $z0 = 1
+org.apache.ambari.server.api.predicate.operators.OrOperator.toPredicate : $r3 = new org.apache.ambari.server.controller.predicate.OrPredicate
+org.apache.ambari.server.api.predicate.operators.LogicalOperatorFactory.createOperator : $r2 = new org.apache.ambari.server.api.predicate.operators.AndOperator
+org.apache.ambari.server.api.predicate.operators.LogicalOperatorFactory.createOperator : $r4 = new org.apache.ambari.server.api.predicate.operators.OrOperator
+org.apache.ambari.server.api.predicate.operators.LogicalOperatorFactory.createOperator : $r1 = "&"
+org.apache.ambari.server.api.predicate.operators.LogicalOperatorFactory.createOperator : $r5 = "!"
+org.apache.ambari.server.api.predicate.operators.LogicalOperatorFactory.createOperator : $r3 = "|"
+org.apache.ambari.server.api.predicate.operators.LogicalOperatorFactory.createOperator : $r6 = new org.apache.ambari.server.api.predicate.operators.NotOperator
+org.apache.ambari.server.api.predicate.QueryParser$RelationalOperatorTokenHandler._handleToken : return 1
+org.apache.ambari.server.api.predicate.QueryParser$RelationalOperatorTokenHandler._handleToken : $r6 = new org.apache.ambari.server.api.predicate.expressions.RelationalExpression
+org.apache.ambari.server.api.predicate.QueryParser$RelationalOperatorTokenHandler._handleToken : $r4 = virtualinvoke r1.<org.apache.ambari.server.api.predicate.QueryParser$ParseContext: org.apache.ambari.server.api.predicate.Token[] getTokens()>()
+org.apache.ambari.server.api.predicate.QueryParser$RelationalOperatorTokenHandler._handleToken : $r5 = virtualinvoke r2.<org.apache.ambari.server.api.predicate.Token: java.lang.String getValue()>()
+org.apache.ambari.server.api.predicate.QueryParser$ParseContext.updateMaxPrecedence : $i1 = r0.<org.apache.ambari.server.api.predicate.QueryParser$ParseContext: int m_maxPrecedence>
+org.apache.ambari.server.api.predicate.QueryParser$ParseContext.updateMaxPrecedence : r0.<org.apache.ambari.server.api.predicate.QueryParser$ParseContext: int m_maxPrecedence> = i0
+org.apache.ambari.server.controller.predicate.ArrayPredicate.getPropertyIds : $r1 = r0.<org.apache.ambari.server.controller.predicate.ArrayPredicate: java.util.Set propertyIds>
+org.apache.ambari.server.api.predicate.operators.AbstractOperator.getPrecedence : $i0 = virtualinvoke r0.<org.apache.ambari.server.api.predicate.operators.AbstractOperator: int getBasePrecedence()>()
+org.apache.ambari.server.controller.predicate.PropertyPredicate.hashCode : $r1 = r0.<org.apache.ambari.server.controller.predicate.PropertyPredicate: java.lang.String propertyId>
+org.apache.ambari.server.api.predicate.operators.RelationalOperatorFactory.createOperator : $r3 = new org.apache.ambari.server.api.predicate.operators.NotEqualsOperator
+org.apache.ambari.server.api.predicate.operators.RelationalOperatorFactory.createOperator : $r5 = new org.apache.ambari.server.api.predicate.operators.EqualsOperator
+org.apache.ambari.server.api.predicate.operators.RelationalOperatorFactory.createOperator : $r4 = "="
+org.apache.ambari.server.api.predicate.operators.RelationalOperatorFactory.createOperator : $r6 = "<="
+org.apache.ambari.server.api.predicate.operators.RelationalOperatorFactory.createOperator : $r13 = new org.apache.ambari.server.api.predicate.operators.GreaterOperator
+org.apache.ambari.server.api.predicate.operators.RelationalOperatorFactory.createOperator : $r11 = new org.apache.ambari.server.api.predicate.operators.GreaterEqualsOperator
+org.apache.ambari.server.api.predicate.operators.RelationalOperatorFactory.createOperator : $r7 = new org.apache.ambari.server.api.predicate.operators.LessEqualsOperator
+org.apache.ambari.server.api.predicate.operators.RelationalOperatorFactory.createOperator : $r10 = ">="
+org.apache.ambari.server.api.predicate.operators.RelationalOperatorFactory.createOperator : $r12 = ">"
+org.apache.ambari.server.api.predicate.operators.RelationalOperatorFactory.createOperator : $r8 = "<"
+org.apache.ambari.server.api.predicate.operators.RelationalOperatorFactory.createOperator : $r1 = "!="
+org.apache.ambari.server.api.predicate.operators.RelationalOperatorFactory.createOperator : $r9 = new org.apache.ambari.server.api.predicate.operators.LessOperator
+org.apache.ambari.server.api.predicate.QueryParser$ParseContext.getCurrentTokensIndex : $i0 = r0.<org.apache.ambari.server.api.predicate.QueryParser$ParseContext: int m_tokensIdx>
+org.apache.ambari.server.api.predicate.operators.AndOperator.getType : $r1 = <org.apache.ambari.server.api.predicate.operators.Operator$TYPE: org.apache.ambari.server.api.predicate.operators.Operator$TYPE AND>
+org.apache.ambari.server.api.predicate.QueryParser$ParseContext.decPrecedenceLevel : $i1 = r0.<org.apache.ambari.server.api.predicate.QueryParser$ParseContext: int m_precedence>
+org.apache.ambari.server.api.predicate.QueryParser$ParseContext.decPrecedenceLevel : $i3 = r0.<org.apache.ambari.server.api.predicate.QueryParser$ParseContext: int m_precedence>
+org.apache.ambari.server.api.predicate.QueryParser$ValueOperandTokenHandler.validate : $r2 = <org.apache.ambari.server.api.predicate.Token$TYPE: org.apache.ambari.server.api.predicate.Token$TYPE PROPERTY_OPERAND>

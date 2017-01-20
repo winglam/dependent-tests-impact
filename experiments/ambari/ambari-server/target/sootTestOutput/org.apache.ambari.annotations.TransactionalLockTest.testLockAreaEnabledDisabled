@@ -1,0 +1,26 @@
+org.apache.ambari.server.configuration.Configuration$ConfigurationProperty.getKey : $r1 = r0.<org.apache.ambari.server.configuration.Configuration$ConfigurationProperty: java.lang.String m_key>
+org.apache.ambari.annotations.TransactionalLock$LockArea.isEnabled : $r12 = <org.apache.ambari.annotations.TransactionalLock$LockArea: org.slf4j.Logger LOG>
+org.apache.ambari.annotations.TransactionalLock$LockArea.isEnabled : $r17 = r0.<org.apache.ambari.annotations.TransactionalLock$LockArea: java.lang.Boolean m_enabled>
+org.apache.ambari.annotations.TransactionalLock$LockArea.isEnabled : $r8 = staticinvoke <java.lang.Boolean: java.lang.Boolean valueOf(java.lang.String)>(r2)
+org.apache.ambari.annotations.TransactionalLock$LockArea.isEnabled : $r6 = <java.lang.Boolean: java.lang.Boolean TRUE>
+org.apache.ambari.annotations.TransactionalLock$LockArea.isEnabled : $r4 = r0.<org.apache.ambari.annotations.TransactionalLock$LockArea: java.lang.Boolean m_enabled>
+org.apache.ambari.annotations.TransactionalLock$LockArea.isEnabled : $r7 = r0.<org.apache.ambari.annotations.TransactionalLock$LockArea: java.lang.String m_configurationProperty>
+org.apache.ambari.annotations.TransactionalLock$LockArea.isEnabled : if null == r2 goto $r12 = <org.apache.ambari.annotations.TransactionalLock$LockArea: org.slf4j.Logger LOG>
+org.apache.ambari.annotations.TransactionalLock$LockArea.isEnabled : goto [?= $r12 = <org.apache.ambari.annotations.TransactionalLock$LockArea: org.slf4j.Logger LOG>]
+org.apache.ambari.annotations.TransactionalLock$LockArea.clearEnabled : r0.<org.apache.ambari.annotations.TransactionalLock$LockArea: java.lang.Boolean m_enabled> = null
+org.apache.ambari.server.configuration.Configuration.getProperty : r2 = null
+org.apache.ambari.server.configuration.Configuration.getProperty : $r4 = virtualinvoke r1.<org.apache.ambari.server.configuration.Configuration$ConfigurationProperty: java.lang.Object getDefaultValue()>()
+org.apache.ambari.server.configuration.Configuration.getProperty : $r5 = r0.<org.apache.ambari.server.configuration.Configuration: java.util.Properties properties>
+org.apache.ambari.server.configuration.Configuration.getProperty : $r2 = r0.<org.apache.ambari.server.configuration.Configuration: java.util.Properties properties>
+org.apache.ambari.server.configuration.Configuration.getProperty : $r3 = virtualinvoke r1.<org.apache.ambari.server.configuration.Configuration$ConfigurationProperty: java.lang.Object getDefaultValue()>()
+org.apache.ambari.server.configuration.Configuration.loadSSLParams : $r15 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty SSL_TRUSTSTORE_TYPE>
+org.apache.ambari.server.configuration.Configuration.loadSSLParams : $r1 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty SSL_TRUSTSTORE_PATH>
+org.apache.ambari.server.configuration.Configuration.loadSSLParams : $r7 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty SSL_TRUSTSTORE_PASSWORD>
+org.apache.ambari.server.configuration.Configuration$ConfigurationProperty.getDefaultValue : $r1 = r0.<org.apache.ambari.server.configuration.Configuration$ConfigurationProperty: java.lang.Object m_defaultValue>
+org.apache.ambari.server.configuration.Configuration.getApiSSLAuthentication : $r1 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty API_USE_SSL>
+org.apache.ambari.server.security.authentication.kerberos.AmbariKerberosAuthenticationProperties.isKerberosAuthenticationEnabled : $z0 = r0.<org.apache.ambari.server.security.authentication.kerberos.AmbariKerberosAuthenticationProperties: boolean kerberosAuthenticationEnabled>
+org.apache.ambari.server.security.authentication.kerberos.AmbariKerberosAuthenticationProperties.setKerberosAuthenticationEnabled : r0.<org.apache.ambari.server.security.authentication.kerberos.AmbariKerberosAuthenticationProperties: boolean kerberosAuthenticationEnabled> = z0
+org.apache.ambari.server.configuration.Configuration.createKerberosAuthenticationProperties : $r3 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty KERBEROS_AUTH_ENABLED>
+org.apache.ambari.server.configuration.Configuration.createKerberosAuthenticationProperties : return r2
+org.apache.ambari.server.configuration.Configuration.createKerberosAuthenticationProperties : $z1 = virtualinvoke r2.<org.apache.ambari.server.security.authentication.kerberos.AmbariKerberosAuthenticationProperties: boolean isKerberosAuthenticationEnabled()>()
+org.apache.ambari.server.configuration.Configuration.createKerberosAuthenticationProperties : $r1 = new org.apache.ambari.server.security.authentication.kerberos.AmbariKerberosAuthenticationProperties

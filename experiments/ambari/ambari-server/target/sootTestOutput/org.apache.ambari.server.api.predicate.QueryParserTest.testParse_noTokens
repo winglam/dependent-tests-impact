@@ -1,0 +1,17 @@
+org.apache.ambari.server.api.predicate.QueryParser$ParseContext.getExpressions : $r1 = r0.<org.apache.ambari.server.api.predicate.QueryParser$ParseContext: java.util.List m_listExpressions>
+org.apache.ambari.server.api.predicate.QueryParser.parseExpressions : $r2 = new org.apache.ambari.server.api.predicate.QueryParser$ParseContext
+org.apache.ambari.server.api.predicate.QueryParser.parseExpressions : return r3
+org.apache.ambari.server.api.predicate.QueryParser.parseExpressions : $i3 = virtualinvoke r3.<org.apache.ambari.server.api.predicate.QueryParser$ParseContext: int getPrecedenceLevel()>()
+org.apache.ambari.server.api.predicate.QueryParser.parseExpressions : $i0 = virtualinvoke r3.<org.apache.ambari.server.api.predicate.QueryParser$ParseContext: int getCurrentTokensIndex()>()
+org.apache.ambari.server.api.predicate.QueryParser.parse : r3 = virtualinvoke r2.<org.apache.ambari.server.api.predicate.QueryParser$ParseContext: java.util.List getExpressions()>()
+org.apache.ambari.server.api.predicate.QueryParser.parse : specialinvoke r0.<org.apache.ambari.server.api.predicate.QueryParser: void changeHostNameToLowerCase(java.util.List)>(r3)
+org.apache.ambari.server.api.predicate.QueryParser.parse : $i0 = virtualinvoke r2.<org.apache.ambari.server.api.predicate.QueryParser$ParseContext: int getMaxPrecedence()>()
+org.apache.ambari.server.api.predicate.QueryParser.parse : $z0 = interfaceinvoke r4.<java.util.List: boolean isEmpty()>()
+org.apache.ambari.server.api.predicate.QueryParser.parse : r2 = specialinvoke r0.<org.apache.ambari.server.api.predicate.QueryParser: org.apache.ambari.server.api.predicate.QueryParser$ParseContext parseExpressions(org.apache.ambari.server.api.predicate.Token[])>(r1)
+org.apache.ambari.server.api.predicate.QueryParser$ParseContext.getPrecedenceLevel : $i0 = r0.<org.apache.ambari.server.api.predicate.QueryParser$ParseContext: int m_precedence>
+org.apache.ambari.server.api.predicate.QueryParser.changeHostNameToLowerCase : goto [?= return]
+org.apache.ambari.server.api.predicate.QueryParser.changeHostNameToLowerCase : r2 = interfaceinvoke r1.<java.util.List: java.util.Iterator iterator()>()
+org.apache.ambari.server.api.predicate.QueryParser.mergeExpressions : $i1 = interfaceinvoke r1.<java.util.List: int size()>()
+org.apache.ambari.server.api.predicate.QueryParser.mergeExpressions : return r1
+org.apache.ambari.server.api.predicate.QueryParser$ParseContext.getMaxPrecedence : $i0 = r0.<org.apache.ambari.server.api.predicate.QueryParser$ParseContext: int m_maxPrecedence>
+org.apache.ambari.server.api.predicate.QueryParser$ParseContext.getCurrentTokensIndex : $i0 = r0.<org.apache.ambari.server.api.predicate.QueryParser$ParseContext: int m_tokensIdx>

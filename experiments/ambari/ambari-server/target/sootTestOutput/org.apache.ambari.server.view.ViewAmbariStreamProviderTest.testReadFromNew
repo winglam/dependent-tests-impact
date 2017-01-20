@@ -1,0 +1,18 @@
+org.apache.ambari.server.view.ViewAmbariStreamProvider.getInputStream : $r17 = interfaceinvoke r3.<java.util.Map: java.lang.Object get(java.lang.Object)>("Cookie")
+org.apache.ambari.server.view.ViewAmbariStreamProvider.getInputStream : $r18 = staticinvoke <org.apache.ambari.server.controller.internal.URLStreamProvider: java.lang.String appendCookie(java.lang.String,java.lang.String)>(r7, r6)
+org.apache.ambari.server.view.ViewAmbariStreamProvider.getInputStream : $i1 = <org.apache.ambari.server.proxy.ProxyService: int HTTP_ERROR_RANGE_START>
+org.apache.ambari.server.view.ViewAmbariStreamProvider.getInputStream : $r30 = r0.<org.apache.ambari.server.view.ViewAmbariStreamProvider: org.apache.ambari.server.controller.internal.URLStreamProvider streamProvider>
+org.apache.ambari.server.view.ViewAmbariStreamProvider.getInputStream : if r3 == null goto r3 = staticinvoke <java.util.Collections: java.util.Map singletonMap(java.lang.Object,java.lang.Object)>("Cookie", r6)
+org.apache.ambari.server.view.ViewAmbariStreamProvider.getInputStream : $r10 = new java.lang.StringBuilder
+org.apache.ambari.server.view.ViewAmbariStreamProvider.getInputStream : goto [?= $z1 = interfaceinvoke r23.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.view.ViewAmbariStreamProvider.getInputStream : i0 = virtualinvoke r1.<java.net.HttpURLConnection: int getResponseCode()>()
+org.apache.ambari.server.view.ViewAmbariStreamProvider.getInputStream : if r5 == null goto $r20 = new java.util.HashMap
+org.apache.ambari.server.view.ViewAmbariStreamProvider.getInputStream : $r9 = r0.<org.apache.ambari.server.view.ViewAmbariStreamProvider: org.apache.ambari.server.controller.AmbariSessionManager ambariSessionManager>
+org.apache.ambari.server.view.ViewAmbariStreamProvider.getInputStream : $r10 = virtualinvoke r1.<java.net.HttpURLConnection: java.io.InputStream getInputStream()>()
+org.apache.ambari.server.view.ViewAmbariStreamProvider.getInputStream : $r25 = interfaceinvoke r8.<java.util.Map$Entry: java.lang.Object getKey()>()
+org.apache.ambari.server.view.ViewAmbariStreamProvider.getInputStream : $r16 = new java.util.HashMap
+org.apache.ambari.server.view.ViewAmbariStreamProvider.getInputStream : $r20 = new java.util.HashMap
+org.apache.ambari.server.view.ViewAmbariStreamProvider.getInputStream : $r22 = interfaceinvoke r3.<java.util.Map: java.util.Set entrySet()>()
+org.apache.ambari.server.view.ViewAmbariStreamProvider.readFrom : if r3 != null goto $r9 = staticinvoke <org.apache.commons.io.IOUtils: byte[] toByteArray(java.io.InputStream)>(r3)
+org.apache.ambari.server.controller.internal.URLStreamProvider.appendCookie : $r2 = new java.lang.StringBuilder
+org.apache.ambari.server.controller.internal.URLStreamProvider.appendCookie : if r0 == null goto return r1

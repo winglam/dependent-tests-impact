@@ -1,0 +1,10 @@
+org.apache.ambari.server.controller.internal.URLStreamProvider.processURL : $r5 = <org.apache.ambari.server.controller.internal.URLStreamProvider: org.apache.commons.logging.Log LOG>
+org.apache.ambari.server.controller.internal.URLStreamProvider.processURL : $z1 = virtualinvoke r1.<java.lang.String: boolean startsWith(java.lang.String)>("https")
+org.apache.ambari.server.controller.internal.URLStreamProvider.processURL : if r3 != null goto $r8 = virtualinvoke r3.<java.lang.String: byte[] getBytes()>()
+org.apache.ambari.server.controller.internal.URLStreamProvider.getSSLConnection : $r12 = r0.<org.apache.ambari.server.controller.internal.URLStreamProvider: java.lang.String trustStorePath>
+org.apache.ambari.server.controller.internal.URLStreamProvider.getSSLConnection : $r16 = new java.lang.IllegalStateException
+org.apache.ambari.server.controller.internal.URLStreamProvider.getSSLConnection : r2 = r0
+org.apache.ambari.server.controller.internal.URLStreamProvider.getSSLConnection : $r11 = r0.<org.apache.ambari.server.controller.internal.URLStreamProvider: javax.net.ssl.SSLSocketFactory sslSocketFactory>
+org.apache.ambari.server.controller.internal.URLStreamProvider.getSSLConnection : $r15 = <org.apache.ambari.server.controller.internal.URLStreamProvider: org.apache.commons.logging.Log LOG>
+org.apache.ambari.server.controller.internal.URLStreamProvider.getSSLConnection : $r9 = r0.<org.apache.ambari.server.controller.internal.URLStreamProvider: javax.net.ssl.SSLSocketFactory sslSocketFactory>
+org.apache.ambari.server.controller.internal.URLStreamProvider.getSSLConnection : $r14 = newarray (java.lang.Object)[1]

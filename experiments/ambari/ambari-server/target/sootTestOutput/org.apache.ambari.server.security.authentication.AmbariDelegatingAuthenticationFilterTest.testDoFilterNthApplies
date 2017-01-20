@@ -1,0 +1,12 @@
+org.apache.ambari.server.security.authentication.AmbariDelegatingAuthenticationFilter.doFilter : z0 = 0
+org.apache.ambari.server.security.authentication.AmbariDelegatingAuthenticationFilter.doFilter : $r9 = <org.apache.ambari.server.security.authentication.AmbariDelegatingAuthenticationFilter: org.slf4j.Logger LOG>
+org.apache.ambari.server.security.authentication.AmbariDelegatingAuthenticationFilter.doFilter : interfaceinvoke r6.<org.apache.ambari.server.security.authentication.AmbariAuthenticationFilter: void doFilter(javax.servlet.ServletRequest,javax.servlet.ServletResponse,javax.servlet.FilterChain)>(r1, r2, r3)
+org.apache.ambari.server.security.authentication.AmbariDelegatingAuthenticationFilter.doFilter : $r7 = r0.<org.apache.ambari.server.security.authentication.AmbariDelegatingAuthenticationFilter: java.util.Collection filters>
+org.apache.ambari.server.security.authentication.AmbariDelegatingAuthenticationFilter.doFilter : $z3 = interfaceinvoke r6.<org.apache.ambari.server.security.authentication.AmbariAuthenticationFilter: boolean shouldApply(javax.servlet.http.HttpServletRequest)>(r4)
+org.apache.ambari.server.security.authentication.AmbariDelegatingAuthenticationFilter.doFilter : r4 = (javax.servlet.http.HttpServletRequest) r1
+org.apache.ambari.server.security.authentication.AmbariDelegatingAuthenticationFilter.doFilter : $r17 = <org.apache.ambari.server.security.authentication.AmbariDelegatingAuthenticationFilter: org.slf4j.Logger LOG>
+org.apache.ambari.server.security.authentication.AmbariDelegatingAuthenticationFilter.doFilter : goto [?= $z1 = interfaceinvoke r5.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.security.authentication.AmbariDelegatingAuthenticationFilter.doFilter : z0 = 1
+org.apache.ambari.server.security.authentication.AmbariDelegatingAuthenticationFilter.doFilter : goto [?= (branch)]
+org.apache.ambari.server.security.authentication.AmbariDelegatingAuthenticationFilter.doFilter : if z0 != 0 goto return
+org.apache.ambari.server.security.authentication.AmbariDelegatingAuthenticationFilter.doFilter : $r13 = <org.apache.ambari.server.security.authentication.AmbariDelegatingAuthenticationFilter: org.slf4j.Logger LOG>

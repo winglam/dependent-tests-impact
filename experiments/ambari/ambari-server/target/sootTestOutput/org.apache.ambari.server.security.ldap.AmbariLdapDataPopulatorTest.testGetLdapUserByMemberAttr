@@ -1,0 +1,44 @@
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.isMemberAttributeBaseDn : $r9 = virtualinvoke r2.<java.util.regex.Pattern: java.util.regex.Matcher matcher(java.lang.CharSequence)>(r1)
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.isMemberAttributeBaseDn : $r3 = newarray (java.lang.Object)[2]
+org.apache.ambari.server.security.ldap.LdapUserDto.equals : if r0 != r1 goto (branch)
+org.apache.ambari.server.utils.AmbariPath.getPath : $r3 = <org.apache.ambari.server.utils.AmbariPath: org.slf4j.Logger LOG>
+org.apache.ambari.server.utils.AmbariPath.getPath : $r1 = <org.apache.ambari.server.utils.AmbariPath: java.lang.String rootDirectory>
+org.apache.ambari.server.utils.AmbariPath.getPath : return r0
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulatorTest$TestAmbariLdapDataPopulator.setProcessor : r0.<org.apache.ambari.server.security.ldap.AmbariLdapDataPopulatorTest$TestAmbariLdapDataPopulator: org.springframework.ldap.control.PagedResultsDirContextProcessor processor> = r1
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulatorTest$AmbariLdapDataPopulatorTestInstance.loadLdapTemplate : $r1 = r0.<org.apache.ambari.server.security.ldap.AmbariLdapDataPopulatorTest$AmbariLdapDataPopulatorTestInstance: org.springframework.ldap.core.LdapTemplate ldapTemplate>
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.getFilteredLdapUsers : goto [?= $z1 = interfaceinvoke r11.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.getFilteredLdapUsers : r5 = virtualinvoke r0.<org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator: org.springframework.ldap.core.LdapTemplate loadLdapTemplate()>()
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.getFilteredLdapUsers : r6 = virtualinvoke r0.<org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator: org.springframework.ldap.control.PagedResultsDirContextProcessor createPagingProcessor()>()
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.getFilteredLdapUsers : r11 = interfaceinvoke r10.<java.util.List: java.util.Iterator iterator()>()
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.getFilteredLdapUsers : $r16 = <org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator: org.slf4j.Logger LOG>
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.getFilteredLdapUsers : $r20 = (org.apache.ambari.server.security.ldap.LdapUserDto) r12
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.getFilteredLdapUsers : virtualinvoke r7.<javax.naming.directory.SearchControls: void setReturningObjFlag(boolean)>(1)
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.getFilteredLdapUsers : $r14 = new org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator$LdapUserContextMapper
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.getFilteredLdapUsers : return r4
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.getFilteredLdapUsers : $r21 = r0.<org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator: org.apache.ambari.server.configuration.Configuration configuration>
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.getFilteredLdapUsers : virtualinvoke r7.<javax.naming.directory.SearchControls: void setSearchScope(int)>(2)
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.getFilteredLdapUsers : if r12 == null goto (branch)
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.getFilteredLdapUsers : $r3 = new java.util.HashSet
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.getFilteredLdapUsers : $r17 = r0.<org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator: org.apache.ambari.server.configuration.Configuration configuration>
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.getFilteredLdapUsers : $r13 = new javax.naming.directory.SearchControls
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.getFilteredLdapUsers : r9 = interfaceinvoke r2.<org.springframework.ldap.filter.Filter: java.lang.String encode()>()
+org.apache.ambari.server.configuration.Configuration$ConfigurationProperty.getDefaultValue : $r1 = r0.<org.apache.ambari.server.configuration.Configuration$ConfigurationProperty: java.lang.Object m_defaultValue>
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.getUniqueIdByMemberPattern : $z0 = staticinvoke <org.apache.commons.lang.StringUtils: boolean isNotEmpty(java.lang.String)>(r1)
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.getUniqueIdByMemberPattern : return r1
+org.apache.ambari.server.security.ldap.LdapUserDto.hashCode : return i0
+org.apache.ambari.server.security.ldap.LdapUserDto.hashCode : $r1 = r0.<org.apache.ambari.server.security.ldap.LdapUserDto: java.lang.String userName>
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulatorTest$TestAmbariLdapDataPopulator.setLdapTemplate : r0.<org.apache.ambari.server.security.ldap.AmbariLdapDataPopulatorTest$TestAmbariLdapDataPopulator: org.springframework.ldap.core.LdapTemplate ldapTemplate> = r1
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulatorTest$TestAmbariLdapDataPopulator.createPagingProcessor : $r1 = r0.<org.apache.ambari.server.security.ldap.AmbariLdapDataPopulatorTest$TestAmbariLdapDataPopulator: org.springframework.ldap.control.PagedResultsDirContextProcessor processor>
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.getLdapUserByMemberAttr : $r22 = <org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator: org.slf4j.Logger LOG>
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.getLdapUserByMemberAttr : $r32 = r0.<org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator: org.apache.ambari.server.security.authorization.LdapServerProperties ldapServerProperties>
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.getLdapUserByMemberAttr : if r8 == null goto $r22 = <org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator: org.slf4j.Logger LOG>
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.getLdapUserByMemberAttr : $r23 = new org.springframework.ldap.filter.AndFilter
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.getLdapUserByMemberAttr : $r6 = r0.<org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator: org.apache.ambari.server.security.authorization.LdapServerProperties ldapServerProperties>
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.getLdapUserByMemberAttr : $r9 = r0.<org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator: org.apache.ambari.server.security.authorization.LdapServerProperties ldapServerProperties>
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.getLdapUserByMemberAttr : $r2 = new java.util.HashSet
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.getLdapUserByMemberAttr : if r8 == null goto (branch)
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.getLdapUserByMemberAttr : $z1 = interfaceinvoke r17.<java.util.Set: boolean isEmpty()>()
+org.apache.ambari.server.configuration.Configuration$ConnectionPoolType.getName : $r1 = r0.<org.apache.ambari.server.configuration.Configuration$ConnectionPoolType: java.lang.String m_name>
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.createCustomMemberFilter : r3 = null
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.createCustomMemberFilter : return r3
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.createCustomMemberFilter : $z0 = staticinvoke <org.apache.commons.lang.StringUtils: boolean isNotEmpty(java.lang.String)>(r2)

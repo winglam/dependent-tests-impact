@@ -1,0 +1,16 @@
+org.apache.ambari.server.security.authorization.AmbariLdapAuthoritiesPopulator.getGrantedAuthorities : $r7 = <org.apache.ambari.server.security.authorization.AmbariLdapAuthoritiesPopulator: org.slf4j.Logger log>
+org.apache.ambari.server.security.authorization.AmbariLdapAuthoritiesPopulator.getGrantedAuthorities : $r20 = virtualinvoke r4.<org.apache.ambari.server.orm.entities.UserEntity: java.lang.Boolean getActive()>()
+org.apache.ambari.server.security.authorization.AmbariLdapAuthoritiesPopulator.getGrantedAuthorities : if r4 != null goto $r20 = virtualinvoke r4.<org.apache.ambari.server.orm.entities.UserEntity: java.lang.Boolean getActive()>()
+org.apache.ambari.server.security.authorization.AmbariLdapAuthoritiesPopulator.getGrantedAuthorities : $r22 = r0.<org.apache.ambari.server.security.authorization.AmbariLdapAuthoritiesPopulator: org.apache.ambari.server.security.authorization.Users users>
+org.apache.ambari.server.security.authorization.AmbariLdapAuthoritiesPopulator.getGrantedAuthorities : $r23 = r0.<org.apache.ambari.server.security.authorization.AmbariLdapAuthoritiesPopulator: org.apache.ambari.server.security.authorization.AuthorizationHelper authorizationHelper>
+org.apache.ambari.server.security.authorization.AmbariLdapAuthoritiesPopulator.getGrantedAuthorities : $r12 = r0.<org.apache.ambari.server.security.authorization.AmbariLdapAuthoritiesPopulator: org.apache.ambari.server.orm.dao.UserDAO userDAO>
+org.apache.ambari.server.security.authorization.AmbariLdapAuthoritiesPopulator.getGrantedAuthorities : r6 = staticinvoke <org.apache.ambari.server.security.authorization.AuthorizationHelper: java.lang.String resolveLoginAliasToUserName(java.lang.String)>(r2)
+org.apache.ambari.server.security.authorization.AmbariGrantedAuthority.hashCode : $r1 = r0.<org.apache.ambari.server.security.authorization.AmbariGrantedAuthority: org.apache.ambari.server.orm.entities.PrivilegeEntity privilegeEntity>
+org.apache.ambari.server.security.authorization.AuthorizationHelper.resolveLoginAliasToUserName : return r0
+org.apache.ambari.server.security.authorization.AuthorizationHelper.resolveLoginAliasToUserName : $r1 = staticinvoke <org.springframework.web.context.request.RequestContextHolder: org.springframework.web.context.request.RequestAttributes getRequestAttributes()>()
+org.apache.ambari.server.security.authorization.AuthorizationHelper.resolveLoginAliasToUserName : if r2 == null goto return r0
+org.apache.ambari.server.security.authorization.AuthorizationHelper.convertPrivilegesToAuthorities : goto [?= $z0 = interfaceinvoke r4.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.security.authorization.AuthorizationHelper.convertPrivilegesToAuthorities : return r3
+org.apache.ambari.server.security.authorization.AuthorizationHelper.convertPrivilegesToAuthorities : $r7 = new org.apache.ambari.server.security.authorization.AmbariGrantedAuthority
+org.apache.ambari.server.security.authorization.AuthorizationHelper.convertPrivilegesToAuthorities : r4 = interfaceinvoke r1.<java.util.Collection: java.util.Iterator iterator()>()
+org.apache.ambari.server.security.authorization.AuthorizationHelper.convertPrivilegesToAuthorities : $r2 = new java.util.HashSet

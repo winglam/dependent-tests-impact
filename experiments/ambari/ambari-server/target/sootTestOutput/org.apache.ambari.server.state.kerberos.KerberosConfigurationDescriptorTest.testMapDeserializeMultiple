@@ -1,0 +1,11 @@
+org.apache.ambari.server.state.kerberos.KerberosConfigurationDescriptor.putProperty : if r1 != null goto $r4 = r0.<org.apache.ambari.server.state.kerberos.KerberosConfigurationDescriptor: java.util.Map properties>
+org.apache.ambari.server.state.kerberos.KerberosConfigurationDescriptor.putProperty : $r5 = new java.util.TreeMap
+org.apache.ambari.server.state.kerberos.KerberosConfigurationDescriptor.putProperty : $r6 = r0.<org.apache.ambari.server.state.kerberos.KerberosConfigurationDescriptor: java.util.Map properties>
+org.apache.ambari.server.state.kerberos.KerberosConfigurationDescriptor.putProperty : $r4 = r0.<org.apache.ambari.server.state.kerberos.KerberosConfigurationDescriptor: java.util.Map properties>
+org.apache.ambari.server.state.kerberos.KerberosConfigurationDescriptor.getProperties : $r1 = r0.<org.apache.ambari.server.state.kerberos.KerberosConfigurationDescriptor: java.util.Map properties>
+org.apache.ambari.server.state.kerberos.KerberosConfigurationDescriptor.getType : $r1 = virtualinvoke r0.<org.apache.ambari.server.state.kerberos.KerberosConfigurationDescriptor: java.lang.String getName()>()
+org.apache.ambari.server.state.kerberos.KerberosConfigurationDescriptor.getProperty : if r1 == null goto $r3 = null
+org.apache.ambari.server.state.kerberos.AbstractKerberosDescriptor.getName : $r1 = r0.<org.apache.ambari.server.state.kerberos.AbstractKerberosDescriptor: java.lang.String name>
+org.apache.ambari.server.state.kerberos.KerberosConfigurationDescriptor.setType : virtualinvoke r0.<org.apache.ambari.server.state.kerberos.KerberosConfigurationDescriptor: void setName(java.lang.String)>(r1)
+org.apache.ambari.server.state.kerberos.AbstractKerberosDescriptor.setName : r0.<org.apache.ambari.server.state.kerberos.AbstractKerberosDescriptor: java.lang.String name> = r1
+org.apache.ambari.server.state.kerberos.AbstractKerberosDescriptor.isContainer : return 0

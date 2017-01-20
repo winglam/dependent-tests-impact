@@ -1,0 +1,71 @@
+org.apache.ambari.server.api.predicate.QueryLexer$CloseBracketTokenHandler._handleToken : $r3 = new org.apache.ambari.server.api.predicate.Token
+org.apache.ambari.server.api.predicate.QueryLexer.tokens : $r2 = staticinvoke <java.util.Collections: java.util.Set emptySet()>()
+org.apache.ambari.server.api.predicate.QueryLexer.tokens : virtualinvoke r4.<org.apache.ambari.server.api.predicate.QueryLexer$ScanContext: void addPropertiesToIgnore(java.util.Collection)>(r2)
+org.apache.ambari.server.api.predicate.QueryLexer.tokens : z0 = 0
+org.apache.ambari.server.api.predicate.QueryLexer.tokens : virtualinvoke r4.<org.apache.ambari.server.api.predicate.QueryLexer$ScanContext: void validateEndState()>()
+org.apache.ambari.server.api.predicate.QueryLexer.tokens : $r24 = virtualinvoke r4.<org.apache.ambari.server.api.predicate.QueryLexer$ScanContext: java.util.List getTokenList()>()
+org.apache.ambari.server.api.predicate.QueryLexer.tokens : $r11 = <org.apache.ambari.server.api.predicate.QueryLexer: java.util.Map TOKEN_HANDLERS>
+org.apache.ambari.server.api.predicate.QueryLexer.tokens : $r9 = specialinvoke r0.<org.apache.ambari.server.api.predicate.QueryLexer: java.util.List parseStringTokens(java.lang.String)>(r1)
+org.apache.ambari.server.api.predicate.QueryLexer.tokens : $r3 = new org.apache.ambari.server.api.predicate.QueryLexer$ScanContext
+org.apache.ambari.server.api.predicate.QueryLexer.tokens : i0 = 0
+org.apache.ambari.server.api.predicate.QueryLexer.tokens : $i2 = i0
+org.apache.ambari.server.api.predicate.QueryLexer.tokens : goto [?= $z1 = interfaceinvoke r5.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.api.predicate.QueryLexer.tokens : if z0 != 0 goto (branch)
+org.apache.ambari.server.api.predicate.QueryLexer.tokens : $r8 = <org.apache.ambari.server.api.predicate.QueryLexer: java.util.Set SET_IGNORE>
+org.apache.ambari.server.api.predicate.QueryLexer$PropertyOperandTokenHandler.getType : $r1 = <org.apache.ambari.server.api.predicate.Token$TYPE: org.apache.ambari.server.api.predicate.Token$TYPE PROPERTY_OPERAND>
+org.apache.ambari.server.api.predicate.QueryLexer$ScanContext.addPropertiesToIgnore : if r1 == null goto return
+org.apache.ambari.server.api.predicate.QueryLexer$ScanContext.addPropertiesToIgnore : $r2 = r0.<org.apache.ambari.server.api.predicate.QueryLexer$ScanContext: java.util.Set m_propertiesToIgnore>
+org.apache.ambari.server.api.predicate.QueryLexer$ScanContext.getLastTokenType : $r1 = r0.<org.apache.ambari.server.api.predicate.QueryLexer$ScanContext: org.apache.ambari.server.api.predicate.Token$TYPE m_lastType>
+org.apache.ambari.server.api.predicate.QueryLexer$ScanContext.addToken : $r2 = r0.<org.apache.ambari.server.api.predicate.QueryLexer$ScanContext: org.apache.ambari.server.api.predicate.Token$TYPE m_ignoreSegmentEndToken>
+org.apache.ambari.server.api.predicate.QueryLexer$ScanContext.addToken : $r3 = r0.<org.apache.ambari.server.api.predicate.QueryLexer$ScanContext: java.util.List m_listTokens>
+org.apache.ambari.server.api.predicate.QueryLexer$PropertyOperandTokenHandler.handles : $z0 = virtualinvoke r1.<java.lang.String: boolean matches(java.lang.String)>("[^!&\\|<=|>=|!=|=|<|>\\(\\)]+")
+org.apache.ambari.server.api.predicate.QueryLexer$RelationalOperatorFuncTokenHandler.handles : $z0 = virtualinvoke r1.<java.lang.String: boolean matches(java.lang.String)>("\\.[a-zA-Z]+\\(")
+org.apache.ambari.server.api.predicate.QueryLexer$ScanContext.getIntermediateTokens : $r1 = r0.<org.apache.ambari.server.api.predicate.QueryLexer$ScanContext: java.util.Deque m_intermediateTokens>
+org.apache.ambari.server.api.predicate.QueryLexer$LogicalUnaryOperatorTokenHandler.handles : $r3 = "!"
+org.apache.ambari.server.api.predicate.QueryLexer.generatePattern : virtualinvoke r2.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(41)
+org.apache.ambari.server.api.predicate.QueryLexer.generatePattern : virtualinvoke r2.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(40)
+org.apache.ambari.server.api.predicate.QueryLexer.generatePattern : $r1 = new java.lang.StringBuilder
+org.apache.ambari.server.api.predicate.QueryLexer.generatePattern : virtualinvoke r2.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(92)
+org.apache.ambari.server.api.predicate.QueryLexer.generatePattern : $i2 = virtualinvoke r2.<java.lang.StringBuilder: int length()>()
+org.apache.ambari.server.api.predicate.QueryLexer.generatePattern : r3 = <org.apache.ambari.server.api.predicate.QueryLexer: java.lang.String[] ALL_DELIMS>
+org.apache.ambari.server.api.predicate.QueryLexer.generatePattern : virtualinvoke r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r4)
+org.apache.ambari.server.api.predicate.QueryLexer.generatePattern : $r10 = virtualinvoke r2.<java.lang.StringBuilder: java.lang.String toString()>()
+org.apache.ambari.server.api.predicate.QueryLexer.access$1000 : $r0 = <org.apache.ambari.server.api.predicate.QueryLexer: java.util.Map TOKEN_HANDLERS>
+org.apache.ambari.server.api.predicate.QueryLexer.parseStringTokens : return r4
+org.apache.ambari.server.api.predicate.QueryLexer.parseStringTokens : $i2 = virtualinvoke r3.<java.util.regex.Matcher: int start()>()
+org.apache.ambari.server.api.predicate.QueryLexer.parseStringTokens : $r5 = new java.util.ArrayList
+org.apache.ambari.server.api.predicate.QueryLexer.parseStringTokens : i0 = 0
+org.apache.ambari.server.api.predicate.QueryLexer.parseStringTokens : $r7 = virtualinvoke r3.<java.util.regex.Matcher: java.lang.String group()>()
+org.apache.ambari.server.api.predicate.QueryLexer.parseStringTokens : r3 = virtualinvoke r2.<java.util.regex.Pattern: java.util.regex.Matcher matcher(java.lang.CharSequence)>(r1)
+org.apache.ambari.server.api.predicate.QueryLexer.parseStringTokens : $i3 = virtualinvoke r1.<java.lang.String: int length()>()
+org.apache.ambari.server.api.predicate.QueryLexer.parseStringTokens : $i1 = virtualinvoke r3.<java.util.regex.Matcher: int start()>()
+org.apache.ambari.server.api.predicate.QueryLexer.parseStringTokens : r2 = specialinvoke r0.<org.apache.ambari.server.api.predicate.QueryLexer: java.util.regex.Pattern generatePattern()>()
+org.apache.ambari.server.api.predicate.QueryLexer.parseStringTokens : $z0 = virtualinvoke r3.<java.util.regex.Matcher: boolean find()>()
+org.apache.ambari.server.api.predicate.QueryLexer.parseStringTokens : i0 = virtualinvoke r3.<java.util.regex.Matcher: int end()>()
+org.apache.ambari.server.api.predicate.QueryLexer$RelationalOperatorFuncTokenHandler._handleToken : $r3 = new org.apache.ambari.server.api.predicate.Token
+org.apache.ambari.server.api.predicate.QueryLexer$RelationalOperatorFuncTokenHandler._handleToken : $r5 = new org.apache.ambari.server.api.predicate.Token
+org.apache.ambari.server.api.predicate.QueryLexer$ScanContext.validateEndState : virtualinvoke r3.<org.apache.ambari.server.api.predicate.QueryLexer$TokenHandler: void validateEndState(org.apache.ambari.server.api.predicate.QueryLexer$ScanContext)>(r0)
+org.apache.ambari.server.api.predicate.QueryLexer$ScanContext.validateEndState : goto [?= $z0 = interfaceinvoke r2.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.api.predicate.QueryLexer$ScanContext.validateEndState : $r1 = staticinvoke <org.apache.ambari.server.api.predicate.QueryLexer: java.util.Map access$1000()>()
+org.apache.ambari.server.api.predicate.QueryLexer$ScanContext.getPropertyOperand : $r1 = r0.<org.apache.ambari.server.api.predicate.QueryLexer$ScanContext: java.lang.String m_propertyName>
+org.apache.ambari.server.api.predicate.QueryLexer$TokenHandler.validateEndState : $r2 = virtualinvoke r1.<org.apache.ambari.server.api.predicate.QueryLexer$ScanContext: java.util.Deque getIntermediateTokens()>()
+org.apache.ambari.server.api.predicate.QueryLexer$ScanContext.setPropertyOperand : r0.<org.apache.ambari.server.api.predicate.QueryLexer$ScanContext: java.lang.String m_propertyName> = r1
+org.apache.ambari.server.api.predicate.QueryLexer$PropertyOperandTokenHandler._handleToken : $r3 = virtualinvoke r2.<org.apache.ambari.server.api.predicate.QueryLexer$ScanContext: java.util.Set getPropertiesToIgnore()>()
+org.apache.ambari.server.api.predicate.QueryLexer$PropertyOperandTokenHandler._handleToken : virtualinvoke r2.<org.apache.ambari.server.api.predicate.QueryLexer$ScanContext: void setPropertyOperand(java.lang.String)>(r1)
+org.apache.ambari.server.api.predicate.QueryLexer$ScanContext.getPropertiesToIgnore : $r1 = r0.<org.apache.ambari.server.api.predicate.QueryLexer$ScanContext: java.util.Set m_propertiesToIgnore>
+org.apache.ambari.server.api.predicate.QueryLexer$ScanContext.setLastTokenType : r0.<org.apache.ambari.server.api.predicate.QueryLexer$ScanContext: org.apache.ambari.server.api.predicate.Token$TYPE m_lastType> = r1
+org.apache.ambari.server.api.predicate.QueryLexer$CloseBracketTokenHandler.handles : $z0 = virtualinvoke r1.<java.lang.String: boolean matches(java.lang.String)>("\\)")
+org.apache.ambari.server.api.predicate.QueryLexer$ScanContext.getTokenList : $r1 = r0.<org.apache.ambari.server.api.predicate.QueryLexer$ScanContext: java.util.List m_listTokens>
+org.apache.ambari.server.api.predicate.QueryLexer$RelationalOperatorTokenHandler.handles : $z0 = virtualinvoke r1.<java.lang.String: boolean matches(java.lang.String)>("<=|>=|!=|=|<|>")
+org.apache.ambari.server.api.predicate.Token.equals : if r1 == null goto return 0
+org.apache.ambari.server.api.predicate.Token.equals : if r0 != r1 goto (branch)
+org.apache.ambari.server.api.predicate.Token.equals : $r5 = r0.<org.apache.ambari.server.api.predicate.Token: org.apache.ambari.server.api.predicate.Token$TYPE m_type>
+org.apache.ambari.server.api.predicate.Token.equals : r2 = (org.apache.ambari.server.api.predicate.Token) r1
+org.apache.ambari.server.api.predicate.QueryLexer$CloseBracketTokenHandler.getType : $r1 = <org.apache.ambari.server.api.predicate.Token$TYPE: org.apache.ambari.server.api.predicate.Token$TYPE BRACKET_CLOSE>
+org.apache.ambari.server.api.predicate.QueryLexer$TokenHandler.handleToken : $z0 = virtualinvoke r0.<org.apache.ambari.server.api.predicate.QueryLexer$TokenHandler: boolean handles(java.lang.String,org.apache.ambari.server.api.predicate.QueryLexer$ScanContext)>(r1, r2)
+org.apache.ambari.server.api.predicate.QueryLexer$TokenHandler.handleToken : return 1
+org.apache.ambari.server.api.predicate.QueryLexer$TokenHandler.handleToken : return 0
+org.apache.ambari.server.api.predicate.QueryLexer$TokenHandler.handleToken : virtualinvoke r0.<org.apache.ambari.server.api.predicate.QueryLexer$TokenHandler: void _handleToken(java.lang.String,org.apache.ambari.server.api.predicate.QueryLexer$ScanContext)>(r1, r2)
+org.apache.ambari.server.api.predicate.QueryLexer$TokenHandler.handleToken : $r3 = virtualinvoke r0.<org.apache.ambari.server.api.predicate.QueryLexer$TokenHandler: org.apache.ambari.server.api.predicate.Token$TYPE getType()>()
+org.apache.ambari.server.api.predicate.QueryLexer$RelationalOperatorFuncTokenHandler.getType : $r1 = <org.apache.ambari.server.api.predicate.Token$TYPE: org.apache.ambari.server.api.predicate.Token$TYPE RELATIONAL_OPERATOR_FUNC>
+org.apache.ambari.server.api.predicate.QueryLexer$OpenBracketTokenHandler.handles : $z0 = virtualinvoke r1.<java.lang.String: boolean matches(java.lang.String)>("\\(")

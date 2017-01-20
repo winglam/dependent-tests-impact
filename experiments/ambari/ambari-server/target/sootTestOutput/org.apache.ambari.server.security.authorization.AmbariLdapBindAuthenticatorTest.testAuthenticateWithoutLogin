@@ -1,0 +1,268 @@
+org.apache.ambari.server.security.authorization.LdapServerProperties.setManagerDn : r0.<org.apache.ambari.server.security.authorization.LdapServerProperties: java.lang.String managerDn> = r1
+org.apache.ambari.server.configuration.Configuration$ConfigurationProperty.getKey : $r1 = r0.<org.apache.ambari.server.configuration.Configuration$ConfigurationProperty: java.lang.String m_key>
+org.apache.ambari.server.security.authorization.LdapServerProperties.setGroupBase : r0.<org.apache.ambari.server.security.authorization.LdapServerProperties: java.lang.String groupBase> = r1
+org.apache.ambari.server.security.authorization.LdapServerProperties.setPaginationEnabled : r0.<org.apache.ambari.server.security.authorization.LdapServerProperties: boolean paginationEnabled> = z0
+org.apache.ambari.server.security.authorization.LdapServerProperties.setBaseDN : r0.<org.apache.ambari.server.security.authorization.LdapServerProperties: java.lang.String baseDN> = r1
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticator.authenticate : $r24 = <org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticator: org.slf4j.Logger LOG>
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticator.authenticate : $z2 = staticinvoke <org.apache.commons.lang.StringUtils: boolean isEmpty(java.lang.String)>(r5)
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticator.authenticate : specialinvoke r0.<org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticator: org.springframework.ldap.core.DirContextOperations setAmbariAdminAttr(org.springframework.ldap.core.DirContextOperations,org.apache.ambari.server.security.authorization.LdapServerProperties)>(r2, r3)
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticator.authenticate : $r12 = r0.<org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticator: org.apache.ambari.server.configuration.Configuration configuration>
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticator.authenticate : $z2 = virtualinvoke r4.<java.lang.String: boolean isEmpty()>()
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticator.authenticate : r5 = interfaceinvoke r1.<org.springframework.security.core.Authentication: java.lang.String getName()>()
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticator.authenticate : if r7 != null goto $r24 = <org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticator: org.slf4j.Logger LOG>
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticator.authenticate : $r13 = virtualinvoke r3.<org.apache.ambari.server.security.authorization.LdapServerProperties: java.lang.String getAdminGroupMappingRules()>()
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticator.authenticate : r2 = specialinvoke r0.<org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticator: org.springframework.ldap.core.DirContextOperations bind(org.springframework.ldap.core.DirContextOperations,java.lang.String)>(r7, r5)
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticator.authenticate : r3 = virtualinvoke r1.<org.springframework.security.authentication.UsernamePasswordAuthenticationToken: java.lang.String getName()>()
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticator.authenticate : r4 = virtualinvoke r1.<org.springframework.security.authentication.UsernamePasswordAuthenticationToken: java.lang.Object getCredentials()>()
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticator.authenticate : $r11 = (org.springframework.security.authentication.UsernamePasswordAuthenticationToken) r1
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticator.authenticate : r2 = null
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticator.authenticate : $r15 = <org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticator: org.slf4j.Logger LOG>
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticator.authenticate : r7 = interfaceinvoke r6.<org.springframework.security.ldap.search.LdapUserSearch: org.springframework.ldap.core.DirContextOperations searchForUser(java.lang.String)>(r3)
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticator.authenticate : $r38 = <org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticator: org.slf4j.Logger LOG>
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticator.authenticate : $z0 = r1 instanceof org.springframework.security.authentication.UsernamePasswordAuthenticationToken
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticator.authenticate : if r4 != null goto $z2 = virtualinvoke r4.<java.lang.String: boolean isEmpty()>()
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticator.authenticate : $r20 = <org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticator: org.slf4j.Logger LOG>
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticator.authenticate : r6 = virtualinvoke r0.<org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticator: org.springframework.security.ldap.search.LdapUserSearch getUserSearch()>()
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticator.authenticate : if r6 != null goto $r20 = <org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticator: org.slf4j.Logger LOG>
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticator.authenticate : $z1 = staticinvoke <org.apache.commons.lang.StringUtils: boolean isEmpty(java.lang.String)>(r3)
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticator.authenticate : $r15 = virtualinvoke r3.<org.apache.ambari.server.security.authorization.LdapServerProperties: java.lang.String getUsernameAttribute()>()
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticator.authenticate : if r2 != null goto $r38 = <org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticator: org.slf4j.Logger LOG>
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticator.authenticate : return r2
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticator.authenticate : $z3 = virtualinvoke r4.<java.lang.String: boolean equals(java.lang.Object)>(r5)
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticator.authenticate : $z0 = r4 instanceof java.lang.String
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticator.authenticate : $r26 = <org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticator: org.slf4j.Logger LOG>
+org.apache.ambari.server.security.authorization.LdapServerProperties.setDnAttribute : r0.<org.apache.ambari.server.security.authorization.LdapServerProperties: java.lang.String dnAttribute> = r1
+org.apache.ambari.server.state.stack.OsFamily.init : r2 = null
+org.apache.ambari.server.state.stack.OsFamily.init : $r24 = new java.lang.RuntimeException
+org.apache.ambari.server.state.stack.OsFamily.init : $r8 = new java.io.File
+org.apache.ambari.server.state.stack.OsFamily.init : $r9 = new java.lang.Exception
+org.apache.ambari.server.state.stack.OsFamily.init : r19 = $r18
+org.apache.ambari.server.state.stack.OsFamily.init : $z0 = virtualinvoke r3.<java.io.File: boolean exists()>()
+org.apache.ambari.server.state.stack.OsFamily.init : $r20 = r0.<org.apache.ambari.server.state.stack.OsFamily: org.slf4j.Logger LOG>
+org.apache.ambari.server.controller.HostsMap.setupMap : $r11 = r0.<org.apache.ambari.server.controller.HostsMap: java.lang.String hostsMapFile>
+org.apache.ambari.server.controller.HostsMap.setupMap : r1 = null
+org.apache.ambari.server.controller.HostsMap.setupMap : if r1 == null goto return
+org.apache.ambari.server.controller.HostsMap.setupMap : $r6 = <org.apache.ambari.server.controller.HostsMap: org.slf4j.Logger LOG>
+org.apache.ambari.server.security.authorization.LdapServerProperties.getGroupNamingAttr : $r1 = r0.<org.apache.ambari.server.security.authorization.LdapServerProperties: java.lang.String groupNamingAttr>
+org.apache.ambari.server.audit.AuditLoggerModule.getSelectors : return r2
+org.apache.ambari.server.audit.AuditLoggerModule.getSelectors : $r1 = new java.util.ArrayList
+org.apache.ambari.server.audit.AuditLoggerModule.getSelectors : interfaceinvoke r2.<java.util.List: boolean add(java.lang.Object)>(class "org/apache/ambari/server/audit/request/eventcreator/RequestAuditEventCreator")
+org.apache.ambari.server.security.authorization.AuthorizationTestModule.configure : $r25 = new org.apache.ambari.server.controller.ControllerModule
+org.apache.ambari.server.security.authorization.AuthorizationTestModule.configure : $r16 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty OS_VERSION>
+org.apache.ambari.server.security.authorization.AuthorizationTestModule.configure : $r22 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty LDAP_GROUP_BASE>
+org.apache.ambari.server.security.authorization.AuthorizationTestModule.configure : $r19 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty SHARED_RESOURCES_DIR>
+org.apache.ambari.server.security.authorization.AuthorizationTestModule.configure : $r27 = new java.lang.RuntimeException
+org.apache.ambari.server.security.authorization.AuthorizationTestModule.configure : $r10 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty METADATA_DIR_PATH>
+org.apache.ambari.server.security.authorization.AuthorizationTestModule.configure : $r1 = new java.util.Properties
+org.apache.ambari.server.security.authorization.AuthorizationTestModule.configure : $r4 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty CLIENT_SECURITY>
+org.apache.ambari.server.security.authorization.AuthorizationTestModule.configure : $r13 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty SERVER_VERSION_FILE>
+org.apache.ambari.server.security.authorization.AuthorizationTestModule.configure : r3 = $r26
+org.apache.ambari.server.security.authorization.AuthorizationTestModule.configure : $r7 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty SERVER_PERSISTENCE_TYPE>
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticatorTest.testAuthenticate : staticinvoke <org.springframework.web.context.request.RequestContextHolder: void setRequestAttributes(org.springframework.web.context.request.RequestAttributes)>(r15)
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticatorTest.testAuthenticate : $r75 = interfaceinvoke r12.<javax.naming.directory.Attributes: javax.naming.directory.Attribute get(java.lang.String)>("uid")
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticatorTest.testAuthenticate : $r105 = new org.apache.ambari.server.configuration.Configuration
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticatorTest.testAuthenticate : $r25 = virtualinvoke r0.<org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticatorTest: java.lang.Object createMock(java.lang.Class)>(class "javax/naming/NamingEnumeration")
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticatorTest.testAuthenticate : $r22 = new javax.naming.ldap.LdapName
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticatorTest.testAuthenticate : $z1 = interfaceinvoke r8.<javax.naming.NamingEnumeration: boolean hasMore()>()
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticatorTest.testAuthenticate : $r31 = staticinvoke <org.easymock.EasyMock: org.easymock.IExpectationSetters expectLastCall()>()
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticatorTest.testAuthenticate : $i0 = interfaceinvoke r11.<javax.naming.directory.Attribute: int size()>()
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticatorTest.testAuthenticate : virtualinvoke r18.<org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticator: void setUserSearch(org.springframework.security.ldap.search.LdapUserSearch)>(r14)
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticatorTest.testAuthenticate : r3 = "dc=apache,dc=org"
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticatorTest.testAuthenticate : $r70 = interfaceinvoke r11.<javax.naming.directory.Attribute: java.lang.Object get()>()
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticatorTest.testAuthenticate : $r108 = virtualinvoke r17.<org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.security.authorization.LdapServerProperties getLdapServerProperties()>()
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticatorTest.testAuthenticate : $r93 = virtualinvoke r0.<org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticatorTest: java.lang.Object createMock(java.lang.Class)>(class "org/springframework/web/context/request/ServletRequestAttributes")
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticatorTest.testAuthenticate : $r80 = interfaceinvoke r13.<org.springframework.ldap.core.DirContextOperations: javax.naming.Name getDn()>()
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticatorTest.testAuthenticate : $r33 = virtualinvoke r0.<org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticatorTest: java.lang.Object createMock(java.lang.Class)>(class "org/springframework/ldap/core/DirContextOperations")
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticatorTest.testAuthenticate : $r88 = virtualinvoke r0.<org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticatorTest: java.lang.Object createMock(java.lang.Class)>(class "org/springframework/security/ldap/search/FilterBasedLdapUserSearch")
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticatorTest.testAuthenticate : $r89 = virtualinvoke r14.<org.springframework.security.ldap.search.FilterBasedLdapUserSearch: org.springframework.ldap.core.DirContextOperations searchForUser(java.lang.String)>(r1)
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticatorTest.testAuthenticate : $r60 = virtualinvoke r10.<org.springframework.ldap.core.support.LdapContextSource: javax.naming.directory.DirContext getReadOnlyContext()>()
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticatorTest.testAuthenticate : $r74 = virtualinvoke r0.<org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticatorTest: java.lang.Object createMock(java.lang.Class)>(class "javax/naming/directory/Attributes")
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticatorTest.testAuthenticate : $r49 = staticinvoke <org.easymock.EasyMock: org.easymock.IExpectationSetters expectLastCall()>()
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticatorTest.testAuthenticate : $r21 = newarray (java.lang.Object)[1]
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticatorTest.testAuthenticate : virtualinvoke r0.<org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticatorTest: void verifyAll()>()
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticatorTest.testAuthenticate : $r51 = virtualinvoke r0.<org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticatorTest: java.lang.Object createMock(java.lang.Class)>(class "org/springframework/ldap/core/support/LdapContextSource")
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticatorTest.testAuthenticate : $r52 = virtualinvoke r10.<org.springframework.ldap.core.support.LdapContextSource: org.springframework.ldap.core.DistinguishedName getBaseLdapPath()>()
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticatorTest.testAuthenticate : interfaceinvoke r8.<javax.naming.NamingEnumeration: void close()>()
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticatorTest.testAuthenticate : $r56 = virtualinvoke r10.<org.springframework.ldap.core.support.LdapContextSource: javax.naming.directory.DirContext getContext(java.lang.String,java.lang.String)>(r6, "password")
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticatorTest.testAuthenticate : $r107 = new org.springframework.security.authentication.UsernamePasswordAuthenticationToken
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticatorTest.testAuthenticate : interfaceinvoke r9.<org.springframework.ldap.core.DirContextOperations: void close()>()
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticatorTest.testAuthenticate : $r109 = interfaceinvoke r19.<org.springframework.ldap.core.DirContextOperations: java.lang.String getStringAttribute(java.lang.String)>(r20)
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticatorTest.testAuthenticate : virtualinvoke r0.<org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticatorTest: void replayAll()>()
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticatorTest.testAuthenticate : $r64 = virtualinvoke r0.<org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticatorTest: java.lang.Object createMock(java.lang.Class)>(class "javax/naming/directory/Attribute")
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticatorTest.testAuthenticate : $r101 = new java.util.Properties
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticatorTest.testAuthenticate : $r34 = staticinvoke <org.easymock.EasyMock: java.lang.Object eq(java.lang.Object)>("ou=groups")
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticatorTest.testAuthenticate : $r24 = new org.springframework.ldap.core.DistinguishedName
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticatorTest.testAuthenticate : $r23 = newarray (java.lang.Object)[2]
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticatorTest.testAuthenticate : $r79 = virtualinvoke r0.<org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticatorTest: java.lang.Object createMock(java.lang.Class)>(class "org/springframework/ldap/core/DirContextOperations")
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticatorTest.testAuthenticate : $r84 = interfaceinvoke r13.<org.springframework.ldap.core.DirContextOperations: javax.naming.directory.Attributes getAttributes()>()
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticatorTest.testAuthenticate : if z0 == 0 goto $r105 = new org.apache.ambari.server.configuration.Configuration
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticatorTest.testAuthenticate : $z2 = staticinvoke <org.apache.commons.lang.StringUtils: boolean isEmpty(java.lang.String)>(r2)
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticatorTest.testAuthenticate : $r106 = new org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticator
+org.apache.ambari.server.security.authorization.LdapServerProperties.getBaseDN : $r1 = r0.<org.apache.ambari.server.security.authorization.LdapServerProperties: java.lang.String baseDN>
+org.apache.ambari.server.security.authorization.LdapServerProperties.getAdminGroupMappingRules : $r1 = r0.<org.apache.ambari.server.security.authorization.LdapServerProperties: java.lang.String adminGroupMappingRules>
+org.apache.ambari.server.configuration.Configuration.getSharedResourcesDirPath : $r1 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty SHARED_RESOURCES_DIR>
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticator.bind : $r24 = <org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticator: org.slf4j.Logger LOG>
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticator.bind : if r3 != null goto $z0 = r3 instanceof org.springframework.ldap.core.support.BaseLdapPathContextSource
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticator.bind : $r23 = interfaceinvoke r19.<org.springframework.ldap.core.support.BaseLdapPathContextSource: org.springframework.ldap.core.DistinguishedName getBaseLdapPath()>()
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticator.bind : $r20 = new org.springframework.ldap.core.DistinguishedName
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticator.bind : $r26 = new org.springframework.ldap.core.DirContextAdapter
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticator.bind : $z0 = r3 instanceof org.springframework.ldap.core.support.BaseLdapPathContextSource
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticator.bind : $r22 = new org.springframework.ldap.core.DistinguishedName
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticator.bind : r7 = null
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticator.bind : r19 = (org.springframework.ldap.core.support.BaseLdapPathContextSource) r3
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticator.bind : staticinvoke <org.springframework.ldap.support.LdapUtils: void closeContext(javax.naming.directory.DirContext)>(r7)
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticator.bind : r3 = virtualinvoke r0.<org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticator: org.springframework.ldap.core.ContextSource getContextSource()>()
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticator.bind : $r25 = virtualinvoke r6.<org.springframework.ldap.core.DistinguishedName: java.lang.String toString()>()
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticator.setAmbariAdminAttr : $r19 = new org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticator$1
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticator.setAmbariAdminAttr : $z0 = staticinvoke <org.apache.commons.lang.StringUtils: boolean isNotEmpty(java.lang.String)>(r6)
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticator.setAmbariAdminAttr : i0 = virtualinvoke r4.<java.lang.String: int indexOf(java.lang.String)>(r3)
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticator.setAmbariAdminAttr : r6 = virtualinvoke r2.<org.apache.ambari.server.security.authorization.LdapServerProperties: java.lang.String getAdminGroupMappingMemberAttr()>()
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticator.setAmbariAdminAttr : virtualinvoke r10.<org.springframework.ldap.core.LdapTemplate: void setIgnorePartialResultException(boolean)>(1)
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticator.setAmbariAdminAttr : $r20 = new org.springframework.ldap.core.LdapTemplate
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticator.setAmbariAdminAttr : return r1
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticator.setAmbariAdminAttr : $i2 = interfaceinvoke r11.<java.util.List: int size()>()
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticator.setAmbariAdminAttr : if i0 > 0 goto $i1 = i0 - 1
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticator.setAmbariAdminAttr : $r18 = <org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticator: org.slf4j.Logger LOG>
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticator.setAmbariAdminAttr : r11 = virtualinvoke r10.<org.springframework.ldap.core.LdapTemplate: java.util.List search(java.lang.String,java.lang.String,org.springframework.ldap.core.AttributesMapper)>(r15, r8, r9)
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticator.setAmbariAdminAttr : $r17 = <org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticator: org.slf4j.Logger LOG>
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticator.setAmbariAdminAttr : $r13 = virtualinvoke r2.<org.apache.ambari.server.security.authorization.LdapServerProperties: java.lang.String getGroupBase()>()
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticator.setAmbariAdminAttr : r5 = virtualinvoke r2.<org.apache.ambari.server.security.authorization.LdapServerProperties: java.lang.String getGroupNamingAttr()>()
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticator.setAmbariAdminAttr : $r12 = virtualinvoke r2.<org.apache.ambari.server.security.authorization.LdapServerProperties: java.lang.String getBaseDN()>()
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticator.setAmbariAdminAttr : r8 = specialinvoke r0.<org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticator: java.lang.String resolveAmbariAdminAttrFilter(org.apache.ambari.server.security.authorization.LdapServerProperties,java.lang.String)>(r2, r7)
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticator.setAmbariAdminAttr : virtualinvoke r10.<org.springframework.ldap.core.LdapTemplate: void setIgnoreNameNotFoundException(boolean)>(1)
+org.apache.ambari.server.security.authorization.LdapServerProperties.setSyncUserMemberReplacePattern : r0.<org.apache.ambari.server.security.authorization.LdapServerProperties: java.lang.String syncUserMemberReplacePattern> = r1
+org.apache.ambari.server.audit.AuditLoggerModule.getPackageToScan : $r1 = class "org/apache/ambari/server/audit/request/eventcreator/RequestAuditEventCreator"
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticator.resolveAmbariAdminAttrFilter : r6 = virtualinvoke r1.<org.apache.ambari.server.security.authorization.LdapServerProperties: java.lang.String getGroupNamingAttr()>()
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticator.resolveAmbariAdminAttrFilter : r3 = virtualinvoke r1.<org.apache.ambari.server.security.authorization.LdapServerProperties: java.lang.String getGroupMembershipAttr()>()
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticator.resolveAmbariAdminAttrFilter : goto [?= return r9]
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticator.resolveAmbariAdminAttrFilter : return r9
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticator.resolveAmbariAdminAttrFilter : r5 = virtualinvoke r1.<org.apache.ambari.server.security.authorization.LdapServerProperties: java.lang.String getAdminGroupMappingRules()>()
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticator.resolveAmbariAdminAttrFilter : r4 = virtualinvoke r1.<org.apache.ambari.server.security.authorization.LdapServerProperties: java.lang.String getGroupObjectClass()>()
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticator.resolveAmbariAdminAttrFilter : r7 = virtualinvoke r1.<org.apache.ambari.server.security.authorization.LdapServerProperties: java.lang.String getGroupSearchFilter()>()
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticator.resolveAmbariAdminAttrFilter : $z0 = staticinvoke <org.apache.commons.lang.StringUtils: boolean isEmpty(java.lang.String)>(r7)
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticator.resolveAmbariAdminAttrFilter : r8 = specialinvoke r0.<org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticator: java.lang.String createAdminGroupMappingRegex(java.lang.String,java.lang.String)>(r5, r6)
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticator.resolveAmbariAdminAttrFilter : $r10 = newarray (java.lang.Object)[4]
+org.apache.ambari.server.security.authorization.LdapServerProperties.getGroupSearchFilter : $r1 = r0.<org.apache.ambari.server.security.authorization.LdapServerProperties: java.lang.String groupSearchFilter>
+org.apache.ambari.server.security.authorization.LdapServerProperties.setReferralMethod : r0.<org.apache.ambari.server.security.authorization.LdapServerProperties: java.lang.String referralMethod> = r1
+org.apache.ambari.server.security.authorization.LdapServerProperties.getGroupMembershipAttr : $r1 = r0.<org.apache.ambari.server.security.authorization.LdapServerProperties: java.lang.String groupMembershipAttr>
+org.apache.ambari.server.security.authorization.LdapServerProperties.getGroupBase : $r1 = r0.<org.apache.ambari.server.security.authorization.LdapServerProperties: java.lang.String groupBase>
+org.apache.ambari.server.security.authorization.LdapServerProperties.setSyncGroupMemberFilter : r0.<org.apache.ambari.server.security.authorization.LdapServerProperties: java.lang.String syncGroupMemberFilter> = r1
+org.apache.ambari.server.security.authorization.LdapServerProperties.setGroupNamingAttr : r0.<org.apache.ambari.server.security.authorization.LdapServerProperties: java.lang.String groupNamingAttr> = r1
+org.apache.ambari.server.configuration.Configuration.getProperty : r2 = null
+org.apache.ambari.server.configuration.Configuration.getProperty : $r4 = virtualinvoke r1.<org.apache.ambari.server.configuration.Configuration$ConfigurationProperty: java.lang.Object getDefaultValue()>()
+org.apache.ambari.server.configuration.Configuration.getProperty : $r5 = r0.<org.apache.ambari.server.configuration.Configuration: java.util.Properties properties>
+org.apache.ambari.server.configuration.Configuration.getProperty : $r2 = r0.<org.apache.ambari.server.configuration.Configuration: java.util.Properties properties>
+org.apache.ambari.server.configuration.Configuration.getProperty : $r3 = virtualinvoke r1.<org.apache.ambari.server.configuration.Configuration$ConfigurationProperty: java.lang.Object getDefaultValue()>()
+org.apache.ambari.server.security.authorization.LdapServerProperties.setPrimaryUrl : r0.<org.apache.ambari.server.security.authorization.LdapServerProperties: java.lang.String primaryUrl> = r1
+org.apache.ambari.server.configuration.Configuration.loadSSLParams : $r15 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty SSL_TRUSTSTORE_TYPE>
+org.apache.ambari.server.configuration.Configuration.loadSSLParams : $r1 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty SSL_TRUSTSTORE_PATH>
+org.apache.ambari.server.configuration.Configuration.loadSSLParams : $r7 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty SSL_TRUSTSTORE_PASSWORD>
+org.apache.ambari.server.configuration.Configuration.getLdapServerProperties : $r41 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty LDAP_USER_SEARCH_FILTER>
+org.apache.ambari.server.configuration.Configuration.getLdapServerProperties : if r5 == null goto (branch)
+org.apache.ambari.server.configuration.Configuration.getLdapServerProperties : $r51 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty LDAP_SYCN_GROUP_MEMBER_REPLACE_PATTERN>
+org.apache.ambari.server.configuration.Configuration.getLdapServerProperties : $z2 = staticinvoke <org.apache.ambari.server.security.encryption.CredentialProvider: boolean isAliasString(java.lang.String)>(r4)
+org.apache.ambari.server.configuration.Configuration.getLdapServerProperties : $r15 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty LDAP_MANAGER_PASSWORD>
+org.apache.ambari.server.configuration.Configuration.getLdapServerProperties : $r38 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty LDAP_ADMIN_GROUP_MAPPING_RULES>
+org.apache.ambari.server.configuration.Configuration.getLdapServerProperties : $r3 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty LDAP_PRIMARY_URL>
+org.apache.ambari.server.configuration.Configuration.getLdapServerProperties : $r49 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty LDAP_SYNC_USER_MEMBER_REPLACE_PATTERN>
+org.apache.ambari.server.configuration.Configuration.getLdapServerProperties : $r7 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty LDAP_SECONDARY_URL>
+org.apache.ambari.server.configuration.Configuration.getLdapServerProperties : $r45 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty LDAP_GROUP_SEARCH_FILTER>
+org.apache.ambari.server.configuration.Configuration.getLdapServerProperties : $r43 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty LDAP_ALT_USER_SEARCH_FILTER>
+org.apache.ambari.server.configuration.Configuration.getLdapServerProperties : $r9 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty LDAP_USE_SSL>
+org.apache.ambari.server.configuration.Configuration.getLdapServerProperties : $r30 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty LDAP_GROUP_BASE>
+org.apache.ambari.server.configuration.Configuration.getLdapServerProperties : $r28 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty LDAP_DN_ATTRIBUTE>
+org.apache.ambari.server.configuration.Configuration.getLdapServerProperties : $r11 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty LDAP_BIND_ANONYMOUSLY>
+org.apache.ambari.server.configuration.Configuration.getLdapServerProperties : $r32 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty LDAP_GROUP_OBJECT_CLASS>
+org.apache.ambari.server.configuration.Configuration.getLdapServerProperties : $r47 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty LDAP_REFERRAL>
+org.apache.ambari.server.configuration.Configuration.getLdapServerProperties : $r18 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty LDAP_BASE_DN>
+org.apache.ambari.server.configuration.Configuration.getLdapServerProperties : $r34 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty LDAP_GROUP_MEMBERSHIP_ATTR>
+org.apache.ambari.server.configuration.Configuration.getLdapServerProperties : $r1 = new org.apache.ambari.server.security.authorization.LdapServerProperties
+org.apache.ambari.server.configuration.Configuration.getLdapServerProperties : $r13 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty LDAP_MANAGER_DN>
+org.apache.ambari.server.configuration.Configuration.getLdapServerProperties : $r24 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty LDAP_USER_BASE>
+org.apache.ambari.server.configuration.Configuration.getLdapServerProperties : $r26 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty LDAP_USER_OBJECT_CLASS>
+org.apache.ambari.server.configuration.Configuration.getLdapServerProperties : $r55 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty LDAP_SYNC_GROUP_MEMBER_FILTER>
+org.apache.ambari.server.configuration.Configuration.getLdapServerProperties : r5 = null
+org.apache.ambari.server.configuration.Configuration.getLdapServerProperties : $r53 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty LDAP_SYNC_USER_MEMBER_FILTER>
+org.apache.ambari.server.configuration.Configuration.getLdapServerProperties : $r57 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty LDAP_PAGINATION_ENABLED>
+org.apache.ambari.server.configuration.Configuration.getLdapServerProperties : return r2
+org.apache.ambari.server.configuration.Configuration.getLdapServerProperties : if r4 == null goto $r18 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty LDAP_BASE_DN>
+org.apache.ambari.server.configuration.Configuration.getLdapServerProperties : $r36 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty LDAP_GROUP_NAMING_ATTR>
+org.apache.ambari.server.configuration.Configuration.getLdapServerProperties : $r40 = virtualinvoke r0.<org.apache.ambari.server.configuration.Configuration: java.lang.String getProperty(java.lang.String)>("")
+org.apache.ambari.server.configuration.Configuration.getLdapServerProperties : $r20 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty LDAP_USERNAME_ATTRIBUTE>
+org.apache.ambari.server.configuration.Configuration.getLdapServerProperties : $r22 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty LDAP_USERNAME_FORCE_LOWERCASE>
+org.apache.ambari.server.configuration.Configuration.getLdapServerProperties : $r59 = r0.<org.apache.ambari.server.configuration.Configuration: java.util.Properties properties>
+org.apache.ambari.server.cleanup.ClasspathScannerUtils.checkAnnotations : z0 = 0
+org.apache.ambari.server.cleanup.ClasspathScannerUtils.checkAnnotations : $r2 = <org.apache.ambari.server.cleanup.ClasspathScannerUtils: org.slf4j.Logger LOGGER>
+org.apache.ambari.server.cleanup.ClasspathScannerUtils.checkAnnotations : return z0
+org.apache.ambari.server.cleanup.ClasspathScannerUtils.checkAnnotations : r3 = virtualinvoke r0.<java.lang.Class: java.lang.annotation.Annotation[] getDeclaredAnnotations()>()
+org.apache.ambari.server.security.authorization.LdapServerProperties.setGroupObjectClass : r0.<org.apache.ambari.server.security.authorization.LdapServerProperties: java.lang.String groupObjectClass> = r1
+org.apache.ambari.server.security.authorization.LdapServerProperties.setSyncGroupMemberReplacePattern : r0.<org.apache.ambari.server.security.authorization.LdapServerProperties: java.lang.String syncGroupMemberReplacePattern> = r1
+org.apache.ambari.server.configuration.Configuration$ConfigurationProperty.getDefaultValue : $r1 = r0.<org.apache.ambari.server.configuration.Configuration$ConfigurationProperty: java.lang.Object m_defaultValue>
+org.apache.ambari.server.security.authorization.LdapServerProperties.setAdminGroupMappingRules : r0.<org.apache.ambari.server.security.authorization.LdapServerProperties: java.lang.String adminGroupMappingRules> = r1
+org.apache.ambari.server.security.authorization.LdapServerProperties.setSyncUserMemberFilter : r0.<org.apache.ambari.server.security.authorization.LdapServerProperties: java.lang.String syncUserMemberFilter> = r1
+org.apache.ambari.server.security.authorization.LdapServerProperties.getGroupObjectClass : $r1 = r0.<org.apache.ambari.server.security.authorization.LdapServerProperties: java.lang.String groupObjectClass>
+org.apache.ambari.server.security.authorization.LdapServerProperties.setForceUsernameToLowercase : r0.<org.apache.ambari.server.security.authorization.LdapServerProperties: boolean forceUsernameToLowercase> = z0
+org.apache.ambari.server.security.authorization.LdapServerProperties.setAdminGroupMappingMemberAttr : r0.<org.apache.ambari.server.security.authorization.LdapServerProperties: java.lang.String adminGroupMappingMemberAttr> = r1
+org.apache.ambari.server.security.authorization.LdapServerProperties.setUserSearchFilter : r0.<org.apache.ambari.server.security.authorization.LdapServerProperties: java.lang.String userSearchFilter> = r1
+org.apache.ambari.server.security.authorization.LdapServerProperties.setSecondaryUrl : r0.<org.apache.ambari.server.security.authorization.LdapServerProperties: java.lang.String secondaryUrl> = r1
+org.apache.ambari.server.security.authorization.LdapServerProperties.setGroupSearchFilter : r0.<org.apache.ambari.server.security.authorization.LdapServerProperties: java.lang.String groupSearchFilter> = r1
+org.apache.ambari.server.audit.AuditLoggerModule.getExclusions : $r1 = staticinvoke <java.util.Collections: java.util.List emptyList()>()
+org.apache.ambari.server.configuration.Configuration.getApiSSLAuthentication : $r1 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty API_USE_SSL>
+org.apache.ambari.server.security.authorization.LdapServerProperties.setGroupMembershipAttr : r0.<org.apache.ambari.server.security.authorization.LdapServerProperties: java.lang.String groupMembershipAttr> = r1
+org.apache.ambari.server.security.authorization.LdapServerProperties.setUserBase : r0.<org.apache.ambari.server.security.authorization.LdapServerProperties: java.lang.String userBase> = r1
+org.apache.ambari.server.security.encryption.CredentialProvider.isAliasString : return 0
+org.apache.ambari.server.security.encryption.CredentialProvider.isAliasString : if r0 == null goto return 0
+org.apache.ambari.server.cleanup.ClasspathScannerUtils.checkSubClasses : z0 = 0
+org.apache.ambari.server.cleanup.ClasspathScannerUtils.checkSubClasses : $r5 = <org.apache.ambari.server.cleanup.ClasspathScannerUtils: org.slf4j.Logger LOGGER>
+org.apache.ambari.server.cleanup.ClasspathScannerUtils.checkSubClasses : goto [?= return z0]
+org.apache.ambari.server.cleanup.ClasspathScannerUtils.checkSubClasses : return z0
+org.apache.ambari.server.cleanup.ClasspathScannerUtils.checkSubClasses : $r8 = virtualinvoke r4.<java.lang.Object: java.lang.Class getClass()>()
+org.apache.ambari.server.cleanup.ClasspathScannerUtils.checkSubClasses : z0 = 1
+org.apache.ambari.server.cleanup.ClasspathScannerUtils.checkSubClasses : r3 = interfaceinvoke r1.<java.util.List: java.util.Iterator iterator()>()
+org.apache.ambari.server.cleanup.ClasspathScannerUtils.checkSubClasses : goto [?= $z1 = interfaceinvoke r3.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.cleanup.ClasspathScannerUtils.checkSubClasses : $r7 = <org.apache.ambari.server.cleanup.ClasspathScannerUtils: org.slf4j.Logger LOGGER>
+org.apache.ambari.server.cleanup.ClasspathScannerUtils.checkSubClasses : r2 = staticinvoke <org.apache.commons.lang.ClassUtils: java.util.List getAllInterfaces(java.lang.Class)>(r0)
+org.apache.ambari.server.cleanup.ClasspathScannerUtils.checkSubClasses : $z2 = interfaceinvoke r2.<java.util.List: boolean contains(java.lang.Object)>(r4)
+org.apache.ambari.server.security.authorization.LdapServerProperties.setUsernameAttribute : r0.<org.apache.ambari.server.security.authorization.LdapServerProperties: java.lang.String usernameAttribute> = r1
+org.apache.ambari.server.security.authentication.kerberos.AmbariKerberosAuthenticationProperties.isKerberosAuthenticationEnabled : $z0 = r0.<org.apache.ambari.server.security.authentication.kerberos.AmbariKerberosAuthenticationProperties: boolean kerberosAuthenticationEnabled>
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticator.createAdminGroupMappingRegex : $r7 = new java.lang.StringBuilder
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticator.createAdminGroupMappingRegex : r5 = r3
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticator.createAdminGroupMappingRegex : $r11 = virtualinvoke r4.<java.lang.StringBuilder: java.lang.String toString()>()
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticator.createAdminGroupMappingRegex : $r8 = newarray (java.lang.Object)[2]
+org.apache.ambari.server.security.authorization.AmbariLdapBindAuthenticator.createAdminGroupMappingRegex : r3 = virtualinvoke r1.<java.lang.String: java.lang.String[] split(java.lang.String)>(",")
+org.apache.ambari.server.cleanup.ClasspathScannerUtils.findOnClassPath : goto [?= return r4]
+org.apache.ambari.server.cleanup.ClasspathScannerUtils.findOnClassPath : $z2 = staticinvoke <org.apache.ambari.server.cleanup.ClasspathScannerUtils: boolean isEligible(java.lang.Class,java.util.List)>(r8, r2)
+org.apache.ambari.server.cleanup.ClasspathScannerUtils.findOnClassPath : $z1 = interfaceinvoke r1.<java.util.List: boolean contains(java.lang.Object)>(r8)
+org.apache.ambari.server.cleanup.ClasspathScannerUtils.findOnClassPath : $r15 = <org.apache.ambari.server.cleanup.ClasspathScannerUtils: org.slf4j.Logger LOGGER>
+org.apache.ambari.server.cleanup.ClasspathScannerUtils.findOnClassPath : r8 = virtualinvoke r7.<com.google.common.reflect.ClassPath$ClassInfo: java.lang.Class load()>()
+org.apache.ambari.server.cleanup.ClasspathScannerUtils.findOnClassPath : interfaceinvoke r4.<java.util.Set: boolean add(java.lang.Object)>(r8)
+org.apache.ambari.server.cleanup.ClasspathScannerUtils.findOnClassPath : return r4
+org.apache.ambari.server.cleanup.ClasspathScannerUtils.findOnClassPath : $r12 = virtualinvoke r5.<com.google.common.reflect.ClassPath: com.google.common.collect.ImmutableSet getTopLevelClassesRecursive(java.lang.String)>(r0)
+org.apache.ambari.server.cleanup.ClasspathScannerUtils.findOnClassPath : $r3 = new java.util.HashSet
+org.apache.ambari.server.cleanup.ClasspathScannerUtils.findOnClassPath : $r11 = <org.apache.ambari.server.cleanup.ClasspathScannerUtils: org.slf4j.Logger LOGGER>
+org.apache.ambari.server.cleanup.ClasspathScannerUtils.findOnClassPath : goto [?= $z0 = interfaceinvoke r6.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.cleanup.ClasspathScannerUtils.findOnClassPath : $r9 = class "org/apache/ambari/server/cleanup/ClasspathScannerUtils"
+org.apache.ambari.server.cleanup.ClasspathScannerUtils.findOnClassPath : $r16 = <org.apache.ambari.server.cleanup.ClasspathScannerUtils: org.slf4j.Logger LOGGER>
+org.apache.ambari.server.security.authorization.LdapServerProperties.setAnonymousBind : r0.<org.apache.ambari.server.security.authorization.LdapServerProperties: boolean anonymousBind> = z0
+org.apache.ambari.server.security.authorization.LdapServerProperties.setAlternateUserSearchFilter : r0.<org.apache.ambari.server.security.authorization.LdapServerProperties: java.lang.String alternateUserSearchFilter> = r1
+org.apache.ambari.server.configuration.Configuration.getHostsMapFile : $r1 = <org.apache.ambari.server.configuration.Configuration: org.slf4j.Logger LOG>
+org.apache.ambari.server.configuration.Configuration.getHostsMapFile : $r8 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty SRVR_HOSTS_MAPPING>
+org.apache.ambari.server.audit.AuditLoggerModule.configure : $r11 = virtualinvoke r0.<org.apache.ambari.server.audit.AuditLoggerModule: com.google.inject.Binder binder()>()
+org.apache.ambari.server.audit.AuditLoggerModule.configure : r3 = interfaceinvoke r2.<java.util.Set: java.util.Iterator iterator()>()
+org.apache.ambari.server.audit.AuditLoggerModule.configure : $r5 = virtualinvoke r0.<org.apache.ambari.server.audit.AuditLoggerModule: com.google.inject.binder.AnnotatedBindingBuilder bind(java.lang.Class)>(class "org/apache/ambari/server/audit/AuditLogger")
+org.apache.ambari.server.audit.AuditLoggerModule.configure : $r12 = virtualinvoke r0.<org.apache.ambari.server.audit.AuditLoggerModule: java.lang.String getPackageToScan()>()
+org.apache.ambari.server.audit.AuditLoggerModule.configure : $r19 = virtualinvoke r0.<org.apache.ambari.server.audit.AuditLoggerModule: com.google.inject.binder.AnnotatedBindingBuilder bind(java.lang.Class)>(class "org/apache/ambari/server/audit/request/RequestAuditLogger")
+org.apache.ambari.server.audit.AuditLoggerModule.configure : $r16 = virtualinvoke r1.<com.google.inject.multibindings.Multibinder: com.google.inject.binder.LinkedBindingBuilder addBinding()>()
+org.apache.ambari.server.audit.AuditLoggerModule.configure : $r7 = virtualinvoke r0.<org.apache.ambari.server.audit.AuditLoggerModule: com.google.inject.binder.AnnotatedBindingBuilder bind(java.lang.Class)>(class "org/apache/ambari/server/audit/AuditLogger")
+org.apache.ambari.server.audit.AuditLoggerModule.configure : goto [?= $z0 = interfaceinvoke r3.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.security.authorization.LdapServerProperties.setUseSsl : r0.<org.apache.ambari.server.security.authorization.LdapServerProperties: boolean useSsl> = z0
+org.apache.ambari.server.security.authorization.LdapServerProperties.setUserObjectClass : r0.<org.apache.ambari.server.security.authorization.LdapServerProperties: java.lang.String userObjectClass> = r1
+org.apache.ambari.server.security.authentication.kerberos.AmbariKerberosAuthenticationProperties.setKerberosAuthenticationEnabled : r0.<org.apache.ambari.server.security.authentication.kerberos.AmbariKerberosAuthenticationProperties: boolean kerberosAuthenticationEnabled> = z0
+org.apache.ambari.server.security.authorization.LdapServerProperties.getAdminGroupMappingMemberAttr : $r1 = r0.<org.apache.ambari.server.security.authorization.LdapServerProperties: java.lang.String adminGroupMappingMemberAttr>
+org.apache.ambari.server.security.authorization.LdapServerProperties.getUsernameAttribute : $r1 = r0.<org.apache.ambari.server.security.authorization.LdapServerProperties: java.lang.String usernameAttribute>
+org.apache.ambari.server.configuration.Configuration$ConfigurationProperty.hashCode : $r1 = r0.<org.apache.ambari.server.configuration.Configuration$ConfigurationProperty: java.lang.String m_key>
+org.apache.ambari.server.configuration.Configuration.createKerberosAuthenticationProperties : $r3 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty KERBEROS_AUTH_ENABLED>
+org.apache.ambari.server.configuration.Configuration.createKerberosAuthenticationProperties : return r2
+org.apache.ambari.server.configuration.Configuration.createKerberosAuthenticationProperties : $z1 = virtualinvoke r2.<org.apache.ambari.server.security.authentication.kerberos.AmbariKerberosAuthenticationProperties: boolean isKerberosAuthenticationEnabled()>()
+org.apache.ambari.server.configuration.Configuration.createKerberosAuthenticationProperties : $r1 = new org.apache.ambari.server.security.authentication.kerberos.AmbariKerberosAuthenticationProperties
+org.apache.ambari.server.cleanup.ClasspathScannerUtils.isEligible : $z0 = staticinvoke <org.apache.ambari.server.cleanup.ClasspathScannerUtils: boolean checkSubClasses(java.lang.Class,java.util.List)>(r0, r1)

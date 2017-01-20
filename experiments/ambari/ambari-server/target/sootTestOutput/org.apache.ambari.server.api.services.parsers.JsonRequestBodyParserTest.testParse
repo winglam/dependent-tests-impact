@@ -1,0 +1,30 @@
+org.apache.ambari.server.api.services.parsers.JsonRequestBodyParser.ensureArrayFormat : $z0 = virtualinvoke r1.<java.lang.String: boolean startsWith(java.lang.String)>("[")
+org.apache.ambari.server.api.services.NamedPropertySet.getProperties : $r1 = r0.<org.apache.ambari.server.api.services.NamedPropertySet: java.util.Map m_mapProperties>
+org.apache.ambari.server.api.services.RequestBody.setBody : $r2 = r0.<org.apache.ambari.server.api.services.RequestBody: java.util.Map m_requestInfoProps>
+org.apache.ambari.server.api.services.RequestBody.setBody : if r1 == null goto return
+org.apache.ambari.server.api.services.RequestBody.setBody : r0.<org.apache.ambari.server.api.services.RequestBody: java.lang.String m_body> = r1
+org.apache.ambari.server.api.services.parsers.JsonRequestBodyParser.parse : virtualinvoke r4.<org.apache.ambari.server.api.services.RequestBody: void setBody(java.lang.String)>(r1)
+org.apache.ambari.server.api.services.parsers.JsonRequestBodyParser.parse : specialinvoke r0.<org.apache.ambari.server.api.services.parsers.JsonRequestBodyParser: void processNode(org.codehaus.jackson.JsonNode,java.lang.String,org.apache.ambari.server.api.services.NamedPropertySet,java.util.Map)>(r8, "", r11, r10)
+org.apache.ambari.server.api.services.parsers.JsonRequestBodyParser.parse : $r21 = new java.util.HashMap
+org.apache.ambari.server.api.services.parsers.JsonRequestBodyParser.parse : $r18 = new org.codehaus.jackson.map.ObjectMapper
+org.apache.ambari.server.api.services.parsers.JsonRequestBodyParser.parse : $r2 = new java.util.HashSet
+org.apache.ambari.server.api.services.parsers.JsonRequestBodyParser.parse : if r1 == null goto $z9 = interfaceinvoke r3.<java.util.Set: boolean isEmpty()>()
+org.apache.ambari.server.api.services.parsers.JsonRequestBodyParser.parse : r7 = virtualinvoke r6.<org.codehaus.jackson.JsonNode: java.util.Iterator getElements()>()
+org.apache.ambari.server.api.services.parsers.JsonRequestBodyParser.parse : $r23 = new org.apache.ambari.server.api.services.NamedPropertySet
+org.apache.ambari.server.api.services.parsers.JsonRequestBodyParser.parse : $z0 = interfaceinvoke r7.<java.util.Iterator: boolean hasNext()>()
+org.apache.ambari.server.api.services.parsers.JsonRequestBodyParser.parse : $r17 = new org.apache.ambari.server.api.services.RequestBody
+org.apache.ambari.server.api.services.parsers.JsonRequestBodyParser.parse : $r22 = new java.util.HashMap
+org.apache.ambari.server.api.services.parsers.JsonRequestBodyParser.parse : $r20 = interfaceinvoke r7.<java.util.Iterator: java.lang.Object next()>()
+org.apache.ambari.server.api.services.parsers.JsonRequestBodyParser.parse : $r19 = specialinvoke r0.<org.apache.ambari.server.api.services.parsers.JsonRequestBodyParser: java.lang.String ensureArrayFormat(java.lang.String)>(r1)
+org.apache.ambari.server.api.services.parsers.JsonRequestBodyParser.processNode : $z8 = virtualinvoke r6.<java.lang.String: boolean equals(java.lang.Object)>("Body")
+org.apache.ambari.server.api.services.parsers.JsonRequestBodyParser.processNode : $z1 = virtualinvoke r7.<org.codehaus.jackson.JsonNode: boolean isArray()>()
+org.apache.ambari.server.api.services.parsers.JsonRequestBodyParser.processNode : r5 = virtualinvoke r1.<org.codehaus.jackson.JsonNode: java.util.Iterator getFieldNames()>()
+org.apache.ambari.server.api.services.parsers.JsonRequestBodyParser.processNode : r7 = virtualinvoke r1.<org.codehaus.jackson.JsonNode: org.codehaus.jackson.JsonNode get(java.lang.String)>(r6)
+org.apache.ambari.server.api.services.parsers.JsonRequestBodyParser.processNode : $r14 = interfaceinvoke r5.<java.util.Iterator: java.lang.Object next()>()
+org.apache.ambari.server.api.services.parsers.JsonRequestBodyParser.processNode : $z12 = virtualinvoke r2.<java.lang.String: boolean equals(java.lang.Object)>("RequestInfo")
+org.apache.ambari.server.api.services.parsers.JsonRequestBodyParser.processNode : $r46 = virtualinvoke r3.<org.apache.ambari.server.api.services.NamedPropertySet: java.util.Map getProperties()>()
+org.apache.ambari.server.api.services.parsers.JsonRequestBodyParser.processNode : $z10 = virtualinvoke r2.<java.lang.String: boolean isEmpty()>()
+org.apache.ambari.server.api.services.parsers.JsonRequestBodyParser.processNode : $z13 = virtualinvoke r2.<java.lang.String: boolean startsWith(java.lang.String)>("RequestInfo")
+org.apache.ambari.server.api.services.parsers.JsonRequestBodyParser.processNode : $z0 = interfaceinvoke r5.<java.util.Iterator: boolean hasNext()>()
+org.apache.ambari.server.api.services.parsers.JsonRequestBodyParser.processNode : $z11 = virtualinvoke r7.<org.codehaus.jackson.JsonNode: boolean isNull()>()
+org.apache.ambari.server.api.services.parsers.JsonRequestBodyParser.processNode : $z9 = virtualinvoke r6.<java.lang.String: boolean equals(java.lang.Object)>("RequestBodyInfo")

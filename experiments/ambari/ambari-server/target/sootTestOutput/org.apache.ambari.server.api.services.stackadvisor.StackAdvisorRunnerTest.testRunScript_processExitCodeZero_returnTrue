@@ -1,0 +1,16 @@
+org.apache.ambari.server.api.services.stackadvisor.StackAdvisorRunner.runScript : r7 = virtualinvoke r0.<org.apache.ambari.server.api.services.stackadvisor.StackAdvisorRunner: java.lang.ProcessBuilder prepareShellCommand(java.lang.String,org.apache.ambari.server.api.services.stackadvisor.commands.StackAdvisorCommandType,java.io.File,java.lang.String,java.lang.String)>(r1, r2, r3, r5, r6)
+org.apache.ambari.server.api.services.stackadvisor.StackAdvisorRunner.runScript : r11 = $r33
+org.apache.ambari.server.api.services.stackadvisor.StackAdvisorRunner.runScript : $r25 = <org.apache.ambari.server.api.services.stackadvisor.StackAdvisorRunner: org.slf4j.Logger LOG>
+org.apache.ambari.server.api.services.stackadvisor.StackAdvisorRunner.runScript : i0 = virtualinvoke r8.<java.lang.Process: int waitFor()>()
+org.apache.ambari.server.api.services.stackadvisor.StackAdvisorRunner.runScript : if i0 <= 0 goto virtualinvoke r8.<java.lang.Process: void destroy()>()
+org.apache.ambari.server.api.services.stackadvisor.StackAdvisorRunner.runScript : goto [?= (branch)]
+org.apache.ambari.server.api.services.stackadvisor.StackAdvisorRunner.runScript : goto [?= return]
+org.apache.ambari.server.api.services.stackadvisor.StackAdvisorRunner.runScript : $r26 = new java.io.File
+org.apache.ambari.server.api.services.stackadvisor.StackAdvisorRunner.runScript : $r4 = <org.apache.ambari.server.api.services.stackadvisor.StackAdvisorRunner: org.slf4j.Logger LOG>
+org.apache.ambari.server.api.services.stackadvisor.StackAdvisorRunner.runScript : r8 = virtualinvoke r7.<java.lang.ProcessBuilder: java.lang.Process start()>()
+org.apache.ambari.server.api.services.stackadvisor.StackAdvisorRunner.runScript : virtualinvoke r8.<java.lang.Process: void destroy()>()
+org.apache.ambari.server.api.services.stackadvisor.StackAdvisorRunner.runScript : r9 = null
+org.apache.ambari.server.api.services.stackadvisor.StackAdvisorRunner.runScript : $r15 = new java.lang.StringBuilder
+org.apache.ambari.server.api.services.stackadvisor.StackAdvisorRunner.runScript : $r20 = new java.lang.StringBuilder
+org.apache.ambari.server.api.services.stackadvisor.StackAdvisorRunner.runScript : $r34 = <org.apache.ambari.server.api.services.stackadvisor.StackAdvisorRunner: org.slf4j.Logger LOG>
+org.apache.ambari.server.api.services.stackadvisor.commands.StackAdvisorCommandType.toString : $r1 = r0.<org.apache.ambari.server.api.services.stackadvisor.commands.StackAdvisorCommandType: java.lang.String name>

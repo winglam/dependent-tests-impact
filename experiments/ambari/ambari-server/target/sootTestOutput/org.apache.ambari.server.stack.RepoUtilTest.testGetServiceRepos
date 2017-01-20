@@ -1,0 +1,29 @@
+org.apache.ambari.server.state.RepositoryInfo.access$000 : $r1 = r0.<org.apache.ambari.server.state.RepositoryInfo: java.lang.String repoName>
+org.apache.ambari.server.state.RepositoryInfo.setRepoName : r0.<org.apache.ambari.server.state.RepositoryInfo: java.lang.String repoName> = r1
+org.apache.ambari.server.state.RepositoryInfo.setRepoId : r0.<org.apache.ambari.server.state.RepositoryInfo: java.lang.String repoId> = r1
+org.apache.ambari.server.state.RepositoryInfo$1.apply : $r2 = staticinvoke <org.apache.ambari.server.state.RepositoryInfo: java.lang.String access$000(org.apache.ambari.server.state.RepositoryInfo)>(r1)
+org.apache.ambari.server.state.RepositoryInfo$1.apply : $r2 = (org.apache.ambari.server.state.RepositoryInfo) r1
+org.apache.ambari.server.state.RepositoryInfo.getRepoName : $r1 = r0.<org.apache.ambari.server.state.RepositoryInfo: java.lang.String repoName>
+org.apache.ambari.server.stack.RepoUtilTest.repoInfo : return r4
+org.apache.ambari.server.stack.RepoUtilTest.repoInfo : virtualinvoke r4.<org.apache.ambari.server.state.RepositoryInfo: void setRepoId(java.lang.String)>(r1)
+org.apache.ambari.server.stack.RepoUtilTest.repoInfo : virtualinvoke r4.<org.apache.ambari.server.state.RepositoryInfo: void setOsType(java.lang.String)>(r2)
+org.apache.ambari.server.stack.RepoUtilTest.repoInfo : virtualinvoke r4.<org.apache.ambari.server.state.RepositoryInfo: void setRepoName(java.lang.String)>(r0)
+org.apache.ambari.server.stack.RepoUtilTest.repoInfo : $r3 = new org.apache.ambari.server.state.RepositoryInfo
+org.apache.ambari.server.state.RepositoryInfo.access$300 : $r1 = r0.<org.apache.ambari.server.state.RepositoryInfo: java.lang.String osType>
+org.apache.ambari.server.state.RepositoryInfo.getRepoId : $r1 = r0.<org.apache.ambari.server.state.RepositoryInfo: java.lang.String repoId>
+org.apache.ambari.server.stack.RepoUtil.getServiceRepos : $r12 = <org.apache.ambari.server.state.RepositoryInfo: com.google.common.base.Function GET_OSTYPE_FUNCTION>
+org.apache.ambari.server.stack.RepoUtil.getServiceRepos : $r11 = new java.util.ArrayList
+org.apache.ambari.server.stack.RepoUtil.getServiceRepos : goto [?= $z1 = interfaceinvoke r9.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.stack.RepoUtil.getServiceRepos : $r2 = new java.util.HashSet
+org.apache.ambari.server.stack.RepoUtil.getServiceRepos : interfaceinvoke r4.<java.util.List: boolean add(java.lang.Object)>(r10)
+org.apache.ambari.server.stack.RepoUtil.getServiceRepos : $r22 = <org.apache.ambari.server.stack.RepoUtil: org.slf4j.Logger LOG>
+org.apache.ambari.server.stack.RepoUtil.getServiceRepos : return r4
+org.apache.ambari.server.stack.RepoUtil.getServiceRepos : $r21 = virtualinvoke r10.<org.apache.ambari.server.state.RepositoryInfo: java.lang.String getRepoId()>()
+org.apache.ambari.server.stack.RepoUtil.getServiceRepos : $r13 = interfaceinvoke r5.<com.google.common.collect.ListMultimap: java.util.Set keySet()>()
+org.apache.ambari.server.stack.RepoUtil.getServiceRepos : $r20 = virtualinvoke r10.<org.apache.ambari.server.state.RepositoryInfo: java.lang.String getRepoName()>()
+org.apache.ambari.server.stack.RepoUtil.getServiceRepos : $r15 = interfaceinvoke r5.<com.google.common.collect.ListMultimap: java.util.List get(java.lang.Object)>(r7)
+org.apache.ambari.server.stack.RepoUtil.getServiceRepos : $r18 = interfaceinvoke r1.<com.google.common.collect.ListMultimap: java.util.List get(java.lang.Object)>(r7)
+org.apache.ambari.server.stack.RepoUtil.getServiceRepos : goto [?= $z0 = interfaceinvoke r6.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.state.RepositoryInfo.setOsType : r0.<org.apache.ambari.server.state.RepositoryInfo: java.lang.String osType> = r1
+org.apache.ambari.server.state.RepositoryInfo$4.apply : $r2 = staticinvoke <org.apache.ambari.server.state.RepositoryInfo: java.lang.String access$300(org.apache.ambari.server.state.RepositoryInfo)>(r1)
+org.apache.ambari.server.state.RepositoryInfo$4.apply : $r2 = (org.apache.ambari.server.state.RepositoryInfo) r1

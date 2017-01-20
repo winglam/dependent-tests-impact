@@ -1,0 +1,33 @@
+org.apache.ambari.server.orm.entities.RoleAuthorizationEntity.equals : $r5 = virtualinvoke r0.<org.apache.ambari.server.orm.entities.RoleAuthorizationEntity: java.lang.String _persistence_get_authorizationId()>()
+org.apache.ambari.server.orm.entities.RoleAuthorizationEntity.equals : return 1
+org.apache.ambari.server.orm.entities.RoleAuthorizationEntity.equals : if r1 == null goto return 0
+org.apache.ambari.server.orm.entities.RoleAuthorizationEntity.equals : r2 = (org.apache.ambari.server.orm.entities.RoleAuthorizationEntity) r1
+org.apache.ambari.server.orm.entities.RoleAuthorizationEntity.equals : if r0 != r1 goto (branch)
+org.apache.ambari.server.orm.entities.RoleAuthorizationEntity.setAuthorizationName : virtualinvoke r0.<org.apache.ambari.server.orm.entities.RoleAuthorizationEntity: void _persistence_set_authorizationName(java.lang.String)>(r1)
+org.apache.ambari.server.orm.entities.RoleAuthorizationEntity.getAuthorizationId : $r1 = virtualinvoke r0.<org.apache.ambari.server.orm.entities.RoleAuthorizationEntity: java.lang.String _persistence_get_authorizationId()>()
+org.apache.ambari.server.upgrade.AbstractUpgradeCatalog.addAuthorizationToRole : $r11 = virtualinvoke r5.<org.apache.ambari.server.orm.dao.ResourceTypeDAO: org.apache.ambari.server.orm.entities.ResourceTypeEntity findByName(java.lang.String)>(r2)
+org.apache.ambari.server.upgrade.AbstractUpgradeCatalog.addAuthorizationToRole : virtualinvoke r4.<org.apache.ambari.server.orm.dao.PermissionDAO: org.apache.ambari.server.orm.entities.PermissionEntity merge(org.apache.ambari.server.orm.entities.PermissionEntity)>(r6)
+org.apache.ambari.server.upgrade.AbstractUpgradeCatalog.addAuthorizationToRole : if r6 == null goto return
+org.apache.ambari.server.upgrade.AbstractUpgradeCatalog.addAuthorizationToRole : $r9 = r0.<org.apache.ambari.server.upgrade.AbstractUpgradeCatalog: com.google.inject.Injector injector>
+org.apache.ambari.server.upgrade.AbstractUpgradeCatalog.addAuthorizationToRole : $r12 = virtualinvoke r6.<org.apache.ambari.server.orm.entities.PermissionEntity: java.util.Collection getAuthorizations()>()
+org.apache.ambari.server.upgrade.AbstractUpgradeCatalog.addAuthorizationToRole : if r3 == null goto return
+org.apache.ambari.server.upgrade.AbstractUpgradeCatalog.addAuthorizationToRole : $r7 = r0.<org.apache.ambari.server.upgrade.AbstractUpgradeCatalog: com.google.inject.Injector injector>
+org.apache.ambari.server.orm.entities.RoleAuthorizationEntity.setAuthorizationId : virtualinvoke r0.<org.apache.ambari.server.orm.entities.RoleAuthorizationEntity: void _persistence_set_authorizationId(java.lang.String)>(r1)
+org.apache.ambari.server.upgrade.AbstractUpgradeCatalog.addRoleAuthorization : $r11 = new org.apache.ambari.server.orm.entities.RoleAuthorizationEntity
+org.apache.ambari.server.upgrade.AbstractUpgradeCatalog.addRoleAuthorization : $z0 = staticinvoke <org.apache.commons.lang.StringUtils: boolean isEmpty(java.lang.String)>(r1)
+org.apache.ambari.server.upgrade.AbstractUpgradeCatalog.addRoleAuthorization : virtualinvoke r5.<org.apache.ambari.server.orm.entities.RoleAuthorizationEntity: void setAuthorizationId(java.lang.String)>(r1)
+org.apache.ambari.server.upgrade.AbstractUpgradeCatalog.addRoleAuthorization : r8 = virtualinvoke r7.<java.lang.String: java.lang.String[] split(java.lang.String)>("\\:")
+org.apache.ambari.server.upgrade.AbstractUpgradeCatalog.addRoleAuthorization : if r3 == null goto return
+org.apache.ambari.server.upgrade.AbstractUpgradeCatalog.addRoleAuthorization : virtualinvoke r4.<org.apache.ambari.server.orm.dao.RoleAuthorizationDAO: void create(org.apache.ambari.server.orm.entities.RoleAuthorizationEntity)>(r5)
+org.apache.ambari.server.upgrade.AbstractUpgradeCatalog.addRoleAuthorization : $r13 = r8[0]
+org.apache.ambari.server.upgrade.AbstractUpgradeCatalog.addRoleAuthorization : r6 = interfaceinvoke r3.<java.util.Collection: java.util.Iterator iterator()>()
+org.apache.ambari.server.upgrade.AbstractUpgradeCatalog.addRoleAuthorization : r5 = virtualinvoke r4.<org.apache.ambari.server.orm.dao.RoleAuthorizationDAO: org.apache.ambari.server.orm.entities.RoleAuthorizationEntity findById(java.lang.String)>(r1)
+org.apache.ambari.server.upgrade.AbstractUpgradeCatalog.addRoleAuthorization : $r9 = r0.<org.apache.ambari.server.upgrade.AbstractUpgradeCatalog: com.google.inject.Injector injector>
+org.apache.ambari.server.upgrade.AbstractUpgradeCatalog.addRoleAuthorization : virtualinvoke r5.<org.apache.ambari.server.orm.entities.RoleAuthorizationEntity: void setAuthorizationName(java.lang.String)>(r2)
+org.apache.ambari.server.upgrade.AbstractUpgradeCatalog.addRoleAuthorization : goto [?= $z2 = interfaceinvoke r6.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.upgrade.AbstractUpgradeCatalog.addRoleAuthorization : if r5 != null goto (branch)
+org.apache.ambari.server.upgrade.UpgradeCatalog242.getTargetVersion : return "2.4.2"
+org.apache.ambari.server.upgrade.UpgradeCatalog242.createRoleAuthorizations : $r3 = staticinvoke <java.util.Collections: java.util.List singletonList(java.lang.Object)>("AMBARI.ADMINISTRATOR:AMBARI")
+org.apache.ambari.server.upgrade.UpgradeCatalog242.createRoleAuthorizations : $r1 = newarray (java.lang.String)[2]
+org.apache.ambari.server.upgrade.AbstractUpgradeCatalog.registerCatalog : $r2 = <org.apache.ambari.server.upgrade.AbstractUpgradeCatalog: java.util.Map upgradeCatalogMap>
+org.apache.ambari.server.orm.entities.RoleAuthorizationEntity.getAuthorizationName : $r1 = virtualinvoke r0.<org.apache.ambari.server.orm.entities.RoleAuthorizationEntity: java.lang.String _persistence_get_authorizationName()>()

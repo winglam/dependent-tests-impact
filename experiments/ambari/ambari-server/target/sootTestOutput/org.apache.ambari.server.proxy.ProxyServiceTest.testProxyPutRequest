@@ -1,0 +1,26 @@
+org.apache.ambari.server.api.services.BaseServiceTest.getHttpHeaders : $r1 = r0.<org.apache.ambari.server.api.services.BaseServiceTest: javax.ws.rs.core.HttpHeaders httpHeaders>
+org.apache.ambari.server.proxy.ProxyService.processPutRequestForwarding : $r4 = specialinvoke r0.<org.apache.ambari.server.proxy.ProxyService: javax.ws.rs.core.Response handleRequest(java.lang.String,javax.ws.rs.core.UriInfo,java.io.InputStream,javax.ws.rs.core.HttpHeaders)>("PUT", r3, r1, r2)
+org.apache.ambari.server.api.services.BaseServiceTest.getUriInfo : $r1 = r0.<org.apache.ambari.server.api.services.BaseServiceTest: javax.ws.rs.core.UriInfo uriInfo>
+org.apache.ambari.server.proxy.ProxyService.handleRequest : $r5 = new org.apache.ambari.server.controller.internal.URLStreamProvider
+org.apache.ambari.server.proxy.ProxyService.handleRequest : $r13 = interfaceinvoke r2.<javax.ws.rs.core.UriInfo: java.net.URI getRequestUri()>()
+org.apache.ambari.server.proxy.ProxyService.handleRequest : i0 = virtualinvoke r10.<java.net.HttpURLConnection: int getResponseCode()>()
+org.apache.ambari.server.proxy.ProxyService.handleRequest : virtualinvoke r12.<javax.ws.rs.core.Response$ResponseBuilder: javax.ws.rs.core.Response$ResponseBuilder entity(java.lang.Object)>(r25)
+org.apache.ambari.server.proxy.ProxyService.handleRequest : $r24 = specialinvoke r0.<org.apache.ambari.server.proxy.ProxyService: java.util.Map getHeaderParamsToForward(javax.ws.rs.core.HttpHeaders)>(r4)
+org.apache.ambari.server.proxy.ProxyService.handleRequest : $z0 = interfaceinvoke r9.<javax.ws.rs.core.MultivaluedMap: boolean containsKey(java.lang.Object)>("doAs")
+org.apache.ambari.server.proxy.ProxyService.handleRequest : if r7 == null goto return null
+org.apache.ambari.server.proxy.ProxyService.handleRequest : $i4 = virtualinvoke r11.<java.lang.String: int indexOf(java.lang.String)>("application/json")
+org.apache.ambari.server.proxy.ProxyService.handleRequest : r12 = staticinvoke <javax.ws.rs.core.Response: javax.ws.rs.core.Response$ResponseBuilder status(int)>(i0)
+org.apache.ambari.server.proxy.ProxyService.handleRequest : $r31 = virtualinvoke r12.<javax.ws.rs.core.Response$ResponseBuilder: javax.ws.rs.core.Response$ResponseBuilder type(java.lang.String)>(r11)
+org.apache.ambari.server.proxy.ProxyService.handleRequest : r8 = virtualinvoke r7.<java.lang.String: java.lang.String replaceFirst(java.lang.String,java.lang.String)>("url=", "")
+org.apache.ambari.server.proxy.ProxyService.handleRequest : $i3 = <org.apache.ambari.server.proxy.ProxyService: int HTTP_ERROR_RANGE_START>
+org.apache.ambari.server.proxy.ProxyService.handleRequest : r9 = interfaceinvoke r2.<javax.ws.rs.core.UriInfo: javax.ws.rs.core.MultivaluedMap getQueryParameters()>()
+org.apache.ambari.server.proxy.ProxyService.handleRequest : r25 = virtualinvoke r10.<java.net.HttpURLConnection: java.io.InputStream getInputStream()>()
+org.apache.ambari.server.proxy.ProxyService.handleRequest : r11 = virtualinvoke r10.<java.net.HttpURLConnection: java.lang.String getContentType()>()
+org.apache.ambari.server.proxy.ProxyService.handleRequest : n0 = null
+org.apache.ambari.server.proxy.ProxyService.getHeaderParamsToForward : $r2 = new java.util.HashMap
+org.apache.ambari.server.proxy.ProxyService.getHeaderParamsToForward : goto [?= $z0 = interfaceinvoke r4.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.proxy.ProxyService.getHeaderParamsToForward : return r3
+org.apache.ambari.server.proxy.ProxyService.getHeaderParamsToForward : $r6 = interfaceinvoke r1.<javax.ws.rs.core.HttpHeaders: javax.ws.rs.core.MultivaluedMap getRequestHeaders()>()
+org.apache.ambari.server.proxy.ProxyService.getHeaderParamsToForward : $r9 = virtualinvoke r5.<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>("AmbariProxy-", "")
+org.apache.ambari.server.proxy.ProxyService.getHeaderParamsToForward : $z1 = virtualinvoke r5.<java.lang.String: boolean startsWith(java.lang.String)>("AmbariProxy-")
+org.apache.ambari.server.api.services.BaseService.init : <org.apache.ambari.server.api.services.BaseService: org.apache.ambari.server.audit.request.RequestAuditLogger requestAuditLogger> = r0

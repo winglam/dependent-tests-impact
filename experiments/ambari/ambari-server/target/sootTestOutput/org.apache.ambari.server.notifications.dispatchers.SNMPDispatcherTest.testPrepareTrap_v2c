@@ -1,0 +1,10 @@
+org.apache.ambari.server.notifications.dispatchers.SNMPDispatcher$SnmpVersion.getTrapType : $i0 = r0.<org.apache.ambari.server.notifications.dispatchers.SNMPDispatcher$SnmpVersion: int trapType>
+org.apache.ambari.server.notifications.dispatchers.SNMPDispatcher.prepareTrap : $r9 = new org.snmp4j.smi.VariableBinding
+org.apache.ambari.server.notifications.dispatchers.SNMPDispatcher.prepareTrap : $i1 = virtualinvoke r2.<org.apache.ambari.server.notifications.dispatchers.SNMPDispatcher$SnmpVersion: int getTrapType()>()
+org.apache.ambari.server.notifications.dispatchers.SNMPDispatcher.prepareTrap : return r3
+org.apache.ambari.server.notifications.dispatchers.SNMPDispatcher.prepareTrap : $r15 = new org.snmp4j.smi.VariableBinding
+org.apache.ambari.server.notifications.dispatchers.SNMPDispatcher.prepareTrap : $i0 = virtualinvoke r2.<org.apache.ambari.server.notifications.dispatchers.SNMPDispatcher$SnmpVersion: int getTargetVersion()>()
+org.apache.ambari.server.notifications.dispatchers.SNMPDispatcher.prepareTrap : $r6 = new org.snmp4j.smi.VariableBinding
+org.apache.ambari.server.notifications.dispatchers.SNMPDispatcher.getDispatchProperty : if r0 == null goto $r2 = new org.apache.ambari.server.notifications.dispatchers.SNMPDispatcher$InvalidSnmpConfigurationException
+org.apache.ambari.server.notifications.dispatchers.SNMPDispatcher.getDispatchProperty : $r5 = interfaceinvoke r0.<java.util.Map: java.lang.Object get(java.lang.Object)>(r1)
+org.apache.ambari.server.notifications.dispatchers.SNMPDispatcher$SnmpVersion.getTargetVersion : $i0 = r0.<org.apache.ambari.server.notifications.dispatchers.SNMPDispatcher$SnmpVersion: int targetVersion>

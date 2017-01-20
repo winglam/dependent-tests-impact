@@ -1,0 +1,4 @@
+org.apache.ambari.server.state.kerberos.KerberosServiceDescriptorFactory.createInstances : $r3 = virtualinvoke r0.<org.apache.ambari.server.state.kerberos.KerberosServiceDescriptorFactory: java.util.Map parseJSON(java.lang.String)>(r1)
+org.apache.ambari.server.state.kerberos.KerberosServiceDescriptorTest.createMultipleFromJSON : $r1 = <org.apache.ambari.server.state.kerberos.KerberosServiceDescriptorTest: org.apache.ambari.server.state.kerberos.KerberosServiceDescriptorFactory KERBEROS_SERVICE_DESCRIPTOR_FACTORY>
+org.apache.ambari.server.state.kerberos.AbstractKerberosDescriptorFactory.parseJSON : if r1 == null goto $r4 = staticinvoke <java.util.Collections: java.util.Map emptyMap()>()
+org.apache.ambari.server.state.kerberos.AbstractKerberosDescriptorFactory.parseJSON : $r5 = new com.google.gson.Gson

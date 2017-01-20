@@ -1,0 +1,31 @@
+org.apache.ambari.server.state.ServiceInfo.getExcludedConfigTypes : $r1 = r0.<org.apache.ambari.server.state.ServiceInfo: java.util.Set excludedConfigTypes>
+org.apache.ambari.server.state.ServiceInfo.getSelection : $r2 = <org.apache.ambari.server.state.ServiceInfo$Selection: org.apache.ambari.server.state.ServiceInfo$Selection DEFAULT>
+org.apache.ambari.server.state.ServiceInfo.getSelection : $r1 = r0.<org.apache.ambari.server.state.ServiceInfo: org.apache.ambari.server.state.ServiceInfo$Selection selection>
+org.apache.ambari.server.state.ServiceInfo.getDisplayName : $r1 = r0.<org.apache.ambari.server.state.ServiceInfo: java.lang.String displayName>
+org.apache.ambari.server.state.ServiceInfo.ensureMandatoryServiceProperties : $r2 = specialinvoke r0.<org.apache.ambari.server.state.ServiceInfo: java.util.Map ensureVisibilityServiceProperties(java.util.Map)>(r1)
+org.apache.ambari.server.state.ServiceInfo.getVersion : $r1 = r0.<org.apache.ambari.server.state.ServiceInfo: java.lang.String version>
+org.apache.ambari.server.state.ServiceInfo.isCredentialStoreSupported : return 0
+org.apache.ambari.server.state.ServiceInfo.isCredentialStoreSupported : $r1 = r0.<org.apache.ambari.server.state.ServiceInfo: org.apache.ambari.server.state.CredentialStoreInfo credentialStoreInfo>
+org.apache.ambari.server.state.ServiceInfo.getKerberosDescriptorFile : $r1 = r0.<org.apache.ambari.server.state.ServiceInfo: java.io.File kerberosDescriptorFile>
+org.apache.ambari.server.state.ServiceInfo.getCommandScript : $r1 = r0.<org.apache.ambari.server.state.ServiceInfo: org.apache.ambari.server.state.CommandScriptDefinition commandScript>
+org.apache.ambari.server.controller.StackServiceResponse.getServiceProperties : $r1 = r0.<org.apache.ambari.server.controller.StackServiceResponse: java.util.Map serviceProperties>
+org.apache.ambari.server.state.ServiceInfo.getServiceType : $r1 = r0.<org.apache.ambari.server.state.ServiceInfo: java.lang.String serviceType>
+org.apache.ambari.server.state.ServiceInfo.getServiceProperties : $r1 = r0.<org.apache.ambari.server.state.ServiceInfo: java.util.Map servicePropertyMap>
+org.apache.ambari.server.state.ServiceInfo.ensureVisibilityServiceProperties : $r2 = <org.apache.ambari.server.state.ServiceInfo: java.util.AbstractMap$SimpleEntry DEFAULT_SERVICE_INSTALLABLE_PROPERTY>
+org.apache.ambari.server.state.ServiceInfo.ensureVisibilityServiceProperties : $r9 = <org.apache.ambari.server.state.ServiceInfo: java.util.AbstractMap$SimpleEntry DEFAULT_SERVICE_MANAGED_PROPERTY>
+org.apache.ambari.server.state.ServiceInfo.ensureVisibilityServiceProperties : $r16 = <org.apache.ambari.server.state.ServiceInfo: java.util.AbstractMap$SimpleEntry DEFAULT_SERVICE_MONITORED_PROPERTY>
+org.apache.ambari.server.state.ServiceInfo.ensureVisibilityServiceProperties : $r18 = <org.apache.ambari.server.state.ServiceInfo: java.util.AbstractMap$SimpleEntry DEFAULT_SERVICE_MONITORED_PROPERTY>
+org.apache.ambari.server.state.ServiceInfo.ensureVisibilityServiceProperties : $r11 = <org.apache.ambari.server.state.ServiceInfo: java.util.AbstractMap$SimpleEntry DEFAULT_SERVICE_MANAGED_PROPERTY>
+org.apache.ambari.server.state.ServiceInfo.ensureVisibilityServiceProperties : return r1
+org.apache.ambari.server.state.ServiceInfo.ensureVisibilityServiceProperties : $r5 = <org.apache.ambari.server.state.ServiceInfo: java.util.AbstractMap$SimpleEntry DEFAULT_SERVICE_INSTALLABLE_PROPERTY>
+org.apache.ambari.server.state.ServiceInfo.getRequiredServices : $r1 = r0.<org.apache.ambari.server.state.ServiceInfo: java.util.List requiredServices>
+org.apache.ambari.server.state.ServiceInfo.getCustomCommands : $r3 = r0.<org.apache.ambari.server.state.ServiceInfo: java.util.List customCommands>
+org.apache.ambari.server.state.ServiceInfo.getCustomCommands : $r1 = new java.util.ArrayList
+org.apache.ambari.server.state.ServiceInfo.getCustomCommands : $r2 = r0.<org.apache.ambari.server.state.ServiceInfo: java.util.List customCommands>
+org.apache.ambari.server.state.ServiceInfo.isCredentialStoreEnabled : return 0
+org.apache.ambari.server.state.ServiceInfo.isCredentialStoreEnabled : $r1 = r0.<org.apache.ambari.server.state.ServiceInfo: org.apache.ambari.server.state.CredentialStoreInfo credentialStoreInfo>
+org.apache.ambari.server.state.ServiceInfo.getComment : $r1 = r0.<org.apache.ambari.server.state.ServiceInfo: java.lang.String comment>
+org.apache.ambari.server.state.ServiceInfo.getConfigTypeAttributes : $r9 = staticinvoke <java.util.Collections: java.util.Map unmodifiableMap(java.util.Map)>(r1)
+org.apache.ambari.server.state.ServiceInfo.getConfigTypeAttributes : $r4 = r0.<org.apache.ambari.server.state.ServiceInfo: java.util.Map configTypes>
+org.apache.ambari.server.state.ServiceInfo.getConfigTypeAttributes : $r6 = r0.<org.apache.ambari.server.state.ServiceInfo: java.util.Set excludedConfigTypes>
+org.apache.ambari.server.state.ServiceInfo.getName : $r1 = r0.<org.apache.ambari.server.state.ServiceInfo: java.lang.String name>

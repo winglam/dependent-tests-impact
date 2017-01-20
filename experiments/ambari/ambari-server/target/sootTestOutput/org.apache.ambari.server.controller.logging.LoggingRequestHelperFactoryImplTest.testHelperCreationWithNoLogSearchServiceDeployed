@@ -1,0 +1,8 @@
+org.apache.ambari.server.controller.logging.LoggingRequestHelperFactoryImpl.getHelper : $r12 = r0.<org.apache.ambari.server.controller.logging.LoggingRequestHelperFactoryImpl: org.apache.ambari.server.configuration.Configuration ambariServerConfiguration>
+org.apache.ambari.server.controller.logging.LoggingRequestHelperFactoryImpl.getHelper : if r4 == null goto (branch)
+org.apache.ambari.server.controller.logging.LoggingRequestHelperFactoryImpl.getHelper : $r14 = interfaceinvoke r4.<org.apache.ambari.server.state.Cluster: java.util.Map getServices()>()
+org.apache.ambari.server.controller.logging.LoggingRequestHelperFactoryImpl.getHelper : if z0 != 0 goto r5 = interfaceinvoke r4.<org.apache.ambari.server.state.Cluster: org.apache.ambari.server.state.Config getDesiredConfigByType(java.lang.String)>("logsearch-env")
+org.apache.ambari.server.controller.logging.LoggingRequestHelperFactoryImpl.getHelper : r4 = interfaceinvoke r3.<org.apache.ambari.server.state.Clusters: org.apache.ambari.server.state.Cluster getCluster(java.lang.String)>(r2)
+org.apache.ambari.server.controller.logging.LoggingRequestHelperFactoryImpl.getHelper : r3 = interfaceinvoke r1.<org.apache.ambari.server.controller.AmbariManagementController: org.apache.ambari.server.state.Clusters getClusters()>()
+org.apache.ambari.server.controller.logging.LoggingRequestHelperFactoryImpl.getHelper : $n0 = null
+org.apache.ambari.server.controller.logging.LoggingRequestHelperFactoryImpl.setAmbariServerConfiguration : r0.<org.apache.ambari.server.controller.logging.LoggingRequestHelperFactoryImpl: org.apache.ambari.server.configuration.Configuration ambariServerConfiguration> = r1

@@ -1,0 +1,17 @@
+org.apache.ambari.server.controller.spi.Resource$Type.equals : if r1 == null goto return 0
+org.apache.ambari.server.controller.spi.Resource$Type.equals : $i0 = r0.<org.apache.ambari.server.controller.spi.Resource$Type: int ordinal>
+org.apache.ambari.server.controller.spi.Resource$Type.equals : return 1
+org.apache.ambari.server.controller.spi.Resource$Type.equals : if r0 != r1 goto (branch)
+org.apache.ambari.server.controller.spi.Resource$Type.equals : r2 = (org.apache.ambari.server.controller.spi.Resource$Type) r1
+org.apache.ambari.server.controller.spi.Resource$Type.getNextOrdinal : $i0 = <org.apache.ambari.server.controller.spi.Resource$Type: int nextOrdinal>
+org.apache.ambari.server.controller.spi.Resource$Type.getInternalType : $r4 = new java.lang.UnsupportedOperationException
+org.apache.ambari.server.controller.spi.Resource$Type.getInternalType : $z0 = virtualinvoke r0.<org.apache.ambari.server.controller.spi.Resource$Type: boolean isInternalType()>()
+org.apache.ambari.server.controller.spi.Resource$Type.ordinal : $i0 = r0.<org.apache.ambari.server.controller.spi.Resource$Type: int ordinal>
+org.apache.ambari.server.controller.spi.Resource$Type.name : $r1 = r0.<org.apache.ambari.server.controller.spi.Resource$Type: java.lang.String name>
+org.apache.ambari.server.controller.spi.Resource$Type.isInternalType : $i0 = r0.<org.apache.ambari.server.controller.spi.Resource$Type: int ordinal>
+org.apache.ambari.server.controller.spi.Resource$InternalType.values : $r0 = <org.apache.ambari.server.controller.spi.Resource$InternalType: org.apache.ambari.server.controller.spi.Resource$InternalType[] $VALUES>
+org.apache.ambari.server.controller.spi.Resource$Type.valueOf : return r2
+org.apache.ambari.server.controller.spi.Resource$Type.valueOf : $r1 = <org.apache.ambari.server.controller.spi.Resource$Type: java.util.Map types>
+org.apache.ambari.server.controller.spi.Resource$Type.valueOf : $r5 = new java.lang.IllegalArgumentException
+org.apache.ambari.server.controller.spi.Resource$Type.valueOf : if r2 != null goto return r2
+org.apache.ambari.server.controller.spi.Resource$Type.setType : $r2 = <org.apache.ambari.server.controller.spi.Resource$Type: java.util.Map types>

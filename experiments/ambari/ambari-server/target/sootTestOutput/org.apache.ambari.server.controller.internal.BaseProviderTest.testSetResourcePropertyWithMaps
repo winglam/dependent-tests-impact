@@ -1,0 +1,17 @@
+org.apache.ambari.server.controller.internal.ResourceImpl.getPropertiesMap : $r1 = r0.<org.apache.ambari.server.controller.internal.ResourceImpl: java.util.Map propertiesMap>
+org.apache.ambari.server.controller.internal.BaseProvider.setResourceProperty : $z5 = staticinvoke <org.apache.ambari.server.controller.internal.BaseProvider: boolean setResourceMapProperty(org.apache.ambari.server.controller.spi.Resource,java.lang.String,java.lang.Object)>(r0, r1, r2)
+org.apache.ambari.server.controller.internal.BaseProvider.setResourceProperty : return z0
+org.apache.ambari.server.controller.internal.BaseProvider.setResourceProperty : $r9 = <org.apache.ambari.server.controller.internal.BaseProvider: org.slf4j.Logger LOG>
+org.apache.ambari.server.controller.internal.BaseProvider.setResourceProperty : $z1 = interfaceinvoke r3.<java.util.Set: boolean contains(java.lang.Object)>(r1)
+org.apache.ambari.server.controller.internal.BaseProvider.setResourceProperty : if z0 == 0 goto $z6 = r2 instanceof java.util.Map
+org.apache.ambari.server.controller.internal.ResourceImpl.getCategoryKey : if r1 != null goto $r2 = r1
+org.apache.ambari.server.controller.internal.ResourceImpl.addCategory : r2 = specialinvoke r0.<org.apache.ambari.server.controller.internal.ResourceImpl: java.lang.String getCategoryKey(java.lang.String)>(r1)
+org.apache.ambari.server.controller.internal.ResourceImpl.addCategory : $r4 = r0.<org.apache.ambari.server.controller.internal.ResourceImpl: java.util.Map propertiesMap>
+org.apache.ambari.server.controller.internal.ResourceImpl.addCategory : $r5 = r0.<org.apache.ambari.server.controller.internal.ResourceImpl: java.util.Map propertiesMap>
+org.apache.ambari.server.controller.internal.BaseProvider.setResourceMapProperty : $z1 = interfaceinvoke r3.<java.util.Map: boolean isEmpty()>()
+org.apache.ambari.server.controller.internal.BaseProvider.setResourceMapProperty : r3 = (java.util.Map) r2
+org.apache.ambari.server.controller.internal.BaseProvider.setResourceMapProperty : return 1
+org.apache.ambari.server.controller.internal.BaseProvider.setResourceMapProperty : $z0 = r2 instanceof java.util.Map
+org.apache.ambari.server.controller.internal.BaseProvider.setResourceMapProperty : interfaceinvoke r0.<org.apache.ambari.server.controller.spi.Resource: void addCategory(java.lang.String)>(r1)
+org.apache.ambari.server.controller.internal.BaseProvider.setResourceMapProperty : $r10 = interfaceinvoke r5.<java.util.Map$Entry: java.lang.Object getKey()>()
+org.apache.ambari.server.controller.internal.BaseProvider.setResourceMapProperty : $r8 = interfaceinvoke r3.<java.util.Map: java.util.Set entrySet()>()

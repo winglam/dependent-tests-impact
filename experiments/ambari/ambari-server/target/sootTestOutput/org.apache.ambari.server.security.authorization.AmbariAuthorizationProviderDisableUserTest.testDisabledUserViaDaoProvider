@@ -1,0 +1,43 @@
+org.apache.ambari.server.orm.entities.UserEntity.getPrincipal : $r1 = virtualinvoke r0.<org.apache.ambari.server.orm.entities.UserEntity: org.apache.ambari.server.orm.entities.PrincipalEntity _persistence_get_principal()>()
+org.apache.ambari.server.orm.entities.UserEntity.getUserType : $r1 = virtualinvoke r0.<org.apache.ambari.server.orm.entities.UserEntity: org.apache.ambari.server.security.authorization.UserType _persistence_get_userType()>()
+org.apache.ambari.server.security.authorization.AmbariUserAuthentication.isAuthenticated : $z0 = r0.<org.apache.ambari.server.security.authorization.AmbariUserAuthentication: boolean authenticated>
+org.apache.ambari.server.orm.entities.UserEntity.getMemberEntities : $r1 = virtualinvoke r0.<org.apache.ambari.server.orm.entities.UserEntity: java.util.Set _persistence_get_memberEntities()>()
+org.apache.ambari.server.orm.entities.UserEntity.getLdapUser : $r1 = virtualinvoke r0.<org.apache.ambari.server.orm.entities.UserEntity: java.lang.Integer _persistence_get_ldapUser()>()
+org.apache.ambari.server.orm.entities.UserEntity.setUserPassword : virtualinvoke r0.<org.apache.ambari.server.orm.entities.UserEntity: void _persistence_set_userPassword(java.lang.String)>(r1)
+org.apache.ambari.server.orm.entities.UserEntity.setPrincipal : virtualinvoke r0.<org.apache.ambari.server.orm.entities.UserEntity: void _persistence_set_principal(org.apache.ambari.server.orm.entities.PrincipalEntity)>(r1)
+org.apache.ambari.server.orm.entities.UserEntity.setUserName : virtualinvoke r0.<org.apache.ambari.server.orm.entities.UserEntity: void _persistence_set_userName(java.lang.String)>(r1)
+org.apache.ambari.server.security.authorization.AmbariLocalUserProvider.authenticate : $r25 = r0.<org.apache.ambari.server.security.authorization.AmbariLocalUserProvider: org.springframework.security.crypto.password.PasswordEncoder passwordEncoder>
+org.apache.ambari.server.security.authorization.AmbariLocalUserProvider.authenticate : $r19 = r0.<org.apache.ambari.server.security.authorization.AmbariLocalUserProvider: org.apache.commons.logging.Log logger>
+org.apache.ambari.server.security.authorization.AmbariLocalUserProvider.authenticate : $r21 = interfaceinvoke r1.<org.springframework.security.core.Authentication: java.lang.Object getCredentials()>()
+org.apache.ambari.server.security.authorization.AmbariLocalUserProvider.authenticate : interfaceinvoke r9.<org.springframework.security.core.Authentication: void setAuthenticated(boolean)>(1)
+org.apache.ambari.server.security.authorization.AmbariLocalUserProvider.authenticate : if r4 != null goto $r18 = virtualinvoke r4.<org.apache.ambari.server.orm.entities.UserEntity: java.lang.Boolean getActive()>()
+org.apache.ambari.server.security.authorization.AmbariLocalUserProvider.authenticate : $r18 = virtualinvoke r4.<org.apache.ambari.server.orm.entities.UserEntity: java.lang.Boolean getActive()>()
+org.apache.ambari.server.security.authorization.AmbariLocalUserProvider.authenticate : return r9
+org.apache.ambari.server.security.authorization.AmbariLocalUserProvider.authenticate : $r20 = new org.apache.ambari.server.security.authorization.InvalidUsernamePasswordCombinationException
+org.apache.ambari.server.security.authorization.AmbariLocalUserProvider.authenticate : r5 = virtualinvoke r4.<org.apache.ambari.server.orm.entities.UserEntity: java.lang.String getUserPassword()>()
+org.apache.ambari.server.security.authorization.AmbariLocalUserProvider.authenticate : $r31 = new org.apache.ambari.server.security.authorization.User
+org.apache.ambari.server.security.authorization.AmbariLocalUserProvider.authenticate : $r11 = <org.apache.ambari.server.security.authorization.AmbariLocalUserProvider: org.slf4j.Logger LOG>
+org.apache.ambari.server.security.authorization.AmbariLocalUserProvider.authenticate : $r10 = interfaceinvoke r1.<org.springframework.security.core.Authentication: java.lang.String getName()>()
+org.apache.ambari.server.security.authorization.AmbariLocalUserProvider.authenticate : $r15 = r0.<org.apache.ambari.server.security.authorization.AmbariLocalUserProvider: org.apache.ambari.server.orm.dao.UserDAO userDAO>
+org.apache.ambari.server.security.authorization.AmbariLocalUserProvider.authenticate : $r24 = interfaceinvoke r1.<org.springframework.security.core.Authentication: java.lang.Object getCredentials()>()
+org.apache.ambari.server.security.authorization.AmbariLocalUserProvider.authenticate : $r28 = r0.<org.apache.ambari.server.security.authorization.AmbariLocalUserProvider: org.apache.ambari.server.security.authorization.Users users>
+org.apache.ambari.server.security.authorization.AmbariLocalUserProvider.authenticate : $r32 = new org.apache.ambari.server.security.authorization.AmbariUserAuthentication
+org.apache.ambari.server.security.authorization.AmbariUserAuthentication.setAuthenticated : r0.<org.apache.ambari.server.security.authorization.AmbariUserAuthentication: boolean authenticated> = z0
+org.apache.ambari.server.orm.entities.UserEntity.getActive : $r1 = virtualinvoke r0.<org.apache.ambari.server.orm.entities.UserEntity: java.lang.Integer _persistence_get_active()>()
+org.apache.ambari.server.orm.entities.PrincipalEntity.getPrivileges : $r1 = virtualinvoke r0.<org.apache.ambari.server.orm.entities.PrincipalEntity: java.util.Set _persistence_get_privileges()>()
+org.apache.ambari.server.orm.entities.UserEntity.getCreateTime : $r1 = virtualinvoke r0.<org.apache.ambari.server.orm.entities.UserEntity: java.util.Date _persistence_get_createTime()>()
+org.apache.ambari.server.orm.entities.UserEntity.setUserId : virtualinvoke r0.<org.apache.ambari.server.orm.entities.UserEntity: void _persistence_set_userId(java.lang.Integer)>(r1)
+org.apache.ambari.server.orm.entities.UserEntity.getUserName : $r1 = virtualinvoke r0.<org.apache.ambari.server.orm.entities.UserEntity: java.lang.String _persistence_get_userName()>()
+org.apache.ambari.server.orm.entities.UserEntity.getUserId : $r1 = virtualinvoke r0.<org.apache.ambari.server.orm.entities.UserEntity: java.lang.Integer _persistence_get_userId()>()
+org.apache.ambari.server.orm.entities.UserEntity.setActive : $z0 = virtualinvoke r1.<java.lang.Boolean: boolean booleanValue()>()
+org.apache.ambari.server.orm.entities.UserEntity.setActive : if r1 != null goto $z0 = virtualinvoke r1.<java.lang.Boolean: boolean booleanValue()>()
+org.apache.ambari.server.security.authorization.AmbariAuthorizationProviderDisableUserTest.createUser : $r8 = r0.<org.apache.ambari.server.security.authorization.AmbariAuthorizationProviderDisableUserTest: org.springframework.security.crypto.password.PasswordEncoder encoder>
+org.apache.ambari.server.security.authorization.AmbariAuthorizationProviderDisableUserTest.createUser : $r5 = new org.apache.ambari.server.orm.entities.UserEntity
+org.apache.ambari.server.security.authorization.AmbariAuthorizationProviderDisableUserTest.createUser : $r2 = new org.apache.ambari.server.orm.entities.PrincipalEntity
+org.apache.ambari.server.security.authorization.AmbariAuthorizationProviderDisableUserTest.createUser : virtualinvoke r4.<org.apache.ambari.server.orm.entities.UserEntity: void setPrincipal(org.apache.ambari.server.orm.entities.PrincipalEntity)>(r3)
+org.apache.ambari.server.security.authorization.AmbariAuthorizationProviderDisableUserTest.createUser : $r14 = r0.<org.apache.ambari.server.security.authorization.AmbariAuthorizationProviderDisableUserTest: org.apache.ambari.server.orm.dao.UserDAO userDAO>
+org.apache.ambari.server.security.authorization.AmbariAuthorizationProviderDisableUserTest.createUser : $r7 = staticinvoke <java.lang.Boolean: java.lang.Boolean valueOf(boolean)>(z0)
+org.apache.ambari.server.security.authorization.AmbariAuthorizationProviderDisableUserTest.createUser : $r6 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(1)
+org.apache.ambari.server.security.authorization.AmbariAuthorizationProviderDisableUserTest.createUser : virtualinvoke r4.<org.apache.ambari.server.orm.entities.UserEntity: void setUserName(java.lang.String)>(r1)
+org.apache.ambari.server.security.authorization.AmbariAuthorizationProviderDisableUserTest.createUser : $r10 = r0.<org.apache.ambari.server.security.authorization.AmbariAuthorizationProviderDisableUserTest: org.apache.ambari.server.orm.dao.UserDAO userDAO>
+org.apache.ambari.server.orm.entities.UserEntity.getUserPassword : $r1 = virtualinvoke r0.<org.apache.ambari.server.orm.entities.UserEntity: java.lang.String _persistence_get_userPassword()>()

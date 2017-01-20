@@ -1,0 +1,33 @@
+org.apache.ambari.server.state.stack.PrerequisiteCheck.getFailedOn : $r1 = r0.<org.apache.ambari.server.state.stack.PrerequisiteCheck: java.util.LinkedHashSet m_failedOn>
+org.apache.ambari.server.checks.HostsHeartbeatCheckTest$1.get : $r1 = r0.<org.apache.ambari.server.checks.HostsHeartbeatCheckTest$1: org.apache.ambari.server.checks.HostsHeartbeatCheckTest this$0>
+org.apache.ambari.server.checks.HostsHeartbeatCheckTest$1.get : $r1 = virtualinvoke r0.<org.apache.ambari.server.checks.HostsHeartbeatCheckTest$1: org.apache.ambari.server.state.Clusters get()>()
+org.apache.ambari.server.state.StackId.parseStackIdHelper : if r2 == null goto r1.<org.apache.ambari.server.state.StackId: java.lang.String stackName> = ""
+org.apache.ambari.server.state.StackId.parseStackIdHelper : $r8 = virtualinvoke r2.<java.lang.String: java.lang.String substring(int,int)>(0, i0)
+org.apache.ambari.server.state.StackId.parseStackIdHelper : i0 = virtualinvoke r2.<java.lang.String: int indexOf(int)>(45)
+org.apache.ambari.server.state.StackId.parseStackIdHelper : if i0 == -1 goto $r3 = new java.lang.RuntimeException
+org.apache.ambari.server.state.StackId.parseStackIdHelper : $i3 = i0 + 1
+org.apache.ambari.server.checks.CheckDescription.getFail : $r2 = r0.<org.apache.ambari.server.checks.CheckDescription: java.util.Map m_fails>
+org.apache.ambari.server.state.stack.PrerequisiteCheck.setFailReason : r0.<org.apache.ambari.server.state.stack.PrerequisiteCheck: java.lang.String m_failReason> = r1
+org.apache.ambari.server.state.stack.PrerequisiteCheck.getStatus : $r1 = r0.<org.apache.ambari.server.state.stack.PrerequisiteCheck: org.apache.ambari.server.state.stack.PrereqCheckStatus m_status>
+org.apache.ambari.server.checks.HostsHeartbeatCheck.perform : r3 = virtualinvoke r2.<org.apache.ambari.server.controller.PrereqCheckRequest: java.lang.String getClusterName()>()
+org.apache.ambari.server.checks.HostsHeartbeatCheck.perform : $r10 = r0.<org.apache.ambari.server.checks.HostsHeartbeatCheck: com.google.inject.Provider clustersProvider>
+org.apache.ambari.server.checks.HostsHeartbeatCheck.perform : $r19 = virtualinvoke r1.<org.apache.ambari.server.state.stack.PrerequisiteCheck: java.util.LinkedHashSet getFailedOn()>()
+org.apache.ambari.server.checks.HostsHeartbeatCheck.perform : $r15 = <org.apache.ambari.server.checks.HostsHeartbeatCheck$1: int[] $SwitchMap$org$apache$ambari$server$state$HostHealthStatus$HealthStatus>
+org.apache.ambari.server.checks.HostsHeartbeatCheck.perform : $r20 = <org.apache.ambari.server.state.stack.PrereqCheckStatus: org.apache.ambari.server.state.stack.PrereqCheckStatus FAIL>
+org.apache.ambari.server.checks.HostsHeartbeatCheck.perform : r5 = interfaceinvoke r4.<org.apache.ambari.server.state.Cluster: java.util.Collection getHosts()>()
+org.apache.ambari.server.checks.HostsHeartbeatCheck.perform : $r17 = virtualinvoke r1.<org.apache.ambari.server.state.stack.PrerequisiteCheck: java.util.LinkedHashSet getFailedOn()>()
+org.apache.ambari.server.checks.HostsHeartbeatCheck.perform : r6 = interfaceinvoke r5.<java.util.Collection: java.util.Iterator iterator()>()
+org.apache.ambari.server.checks.HostsHeartbeatCheck.perform : $r16 = <org.apache.ambari.server.state.MaintenanceState: org.apache.ambari.server.state.MaintenanceState OFF>
+org.apache.ambari.server.checks.HostsHeartbeatCheck.perform : $r14 = interfaceinvoke r7.<org.apache.ambari.server.state.Host: org.apache.ambari.server.state.HostHealthStatus getHealthStatus()>()
+org.apache.ambari.server.checks.HostsHeartbeatCheck.perform : goto [?= $z0 = interfaceinvoke r6.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.checks.HostsHeartbeatCheck.perform : $l0 = interfaceinvoke r4.<org.apache.ambari.server.state.Cluster: long getClusterId()>()
+org.apache.ambari.server.checks.HostsHeartbeatCheck.perform : $r21 = virtualinvoke r0.<org.apache.ambari.server.checks.HostsHeartbeatCheck: java.lang.String getFailReason(org.apache.ambari.server.state.stack.PrerequisiteCheck,org.apache.ambari.server.controller.PrereqCheckRequest)>(r1, r2)
+org.apache.ambari.server.state.HostHealthStatus$HealthStatus.values : $r0 = <org.apache.ambari.server.state.HostHealthStatus$HealthStatus: org.apache.ambari.server.state.HostHealthStatus$HealthStatus[] $VALUES>
+org.apache.ambari.server.checks.HostsHeartbeatCheckTest.access$000 : $r1 = r0.<org.apache.ambari.server.checks.HostsHeartbeatCheckTest: org.apache.ambari.server.state.Clusters clusters>
+org.apache.ambari.server.checks.AbstractCheckDescriptor.getFailReason : return r4
+org.apache.ambari.server.checks.AbstractCheckDescriptor.getFailReason : $r3 = virtualinvoke r0.<org.apache.ambari.server.checks.AbstractCheckDescriptor: java.lang.String getFailReason(java.lang.String,org.apache.ambari.server.state.stack.PrerequisiteCheck,org.apache.ambari.server.controller.PrereqCheckRequest)>("default", r1, r2)
+org.apache.ambari.server.checks.AbstractCheckDescriptor.getFailReason : $r13 = r0.<org.apache.ambari.server.checks.AbstractCheckDescriptor: org.apache.ambari.server.checks.CheckDescription m_description>
+org.apache.ambari.server.checks.AbstractCheckDescriptor.getFailReason : $z1 = virtualinvoke r4.<java.lang.String: boolean contains(java.lang.CharSequence)>("{{fails}}")
+org.apache.ambari.server.checks.AbstractCheckDescriptor.getFailReason : $z0 = virtualinvoke r4.<java.lang.String: boolean contains(java.lang.CharSequence)>("{{version}}")
+org.apache.ambari.server.state.stack.PrerequisiteCheck.setStatus : r0.<org.apache.ambari.server.state.stack.PrerequisiteCheck: org.apache.ambari.server.state.stack.PrereqCheckStatus m_status> = r1
+org.apache.ambari.server.controller.PrereqCheckRequest.getClusterName : $r1 = r0.<org.apache.ambari.server.controller.PrereqCheckRequest: java.lang.String m_clusterName>

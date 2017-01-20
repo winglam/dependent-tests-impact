@@ -1,0 +1,12 @@
+org.apache.ambari.server.api.services.ViewDataMigrationService.setViewDataMigrationUtility : r0.<org.apache.ambari.server.api.services.ViewDataMigrationService: org.apache.ambari.server.view.ViewDataMigrationUtility viewDataMigrationUtility> = r1
+org.apache.ambari.server.api.services.ViewDataMigrationService.getViewDataMigrationUtility : $r4 = r0.<org.apache.ambari.server.api.services.ViewDataMigrationService: org.apache.ambari.server.view.ViewDataMigrationUtility viewDataMigrationUtility>
+org.apache.ambari.server.api.services.ViewDataMigrationService.getViewDataMigrationUtility : $r2 = r0.<org.apache.ambari.server.api.services.ViewDataMigrationService: org.apache.ambari.server.view.ViewDataMigrationUtility viewDataMigrationUtility>
+org.apache.ambari.server.view.ViewRegistry.getInstance : $r0 = <org.apache.ambari.server.view.ViewRegistry: org.apache.ambari.server.view.ViewRegistry singleton>
+org.apache.ambari.server.view.ViewRegistry.initInstance : <org.apache.ambari.server.view.ViewRegistry: org.apache.ambari.server.view.ViewRegistry singleton> = r0
+org.apache.ambari.server.api.services.ViewDataMigrationService.migrateData : $r32 = r0.<org.apache.ambari.server.api.services.ViewDataMigrationService: org.apache.ambari.server.view.ViewRegistry viewRegistry>
+org.apache.ambari.server.api.services.ViewDataMigrationService.migrateData : $r28 = r0.<org.apache.ambari.server.api.services.ViewDataMigrationService: org.apache.ambari.server.view.ViewRegistry viewRegistry>
+org.apache.ambari.server.api.services.ViewDataMigrationService.migrateData : $r34 = virtualinvoke r0.<org.apache.ambari.server.api.services.ViewDataMigrationService: org.apache.ambari.server.view.ViewDataMigrationUtility getViewDataMigrationUtility()>()
+org.apache.ambari.server.api.services.ViewDataMigrationService.migrateData : $r7 = r0.<org.apache.ambari.server.api.services.ViewDataMigrationService: org.apache.ambari.server.view.ViewRegistry viewRegistry>
+org.apache.ambari.server.api.services.ViewDataMigrationService.migrateData : $r35 = <javax.ws.rs.core.Response$Status: javax.ws.rs.core.Response$Status OK>
+org.apache.ambari.server.api.services.ViewDataMigrationService.migrateData : $r9 = <org.apache.ambari.server.api.services.ViewDataMigrationService: org.apache.commons.logging.Log LOG>
+org.apache.ambari.server.api.services.ViewDataMigrationService.migrateData : $r36 = virtualinvoke r6.<javax.ws.rs.core.Response$ResponseBuilder: javax.ws.rs.core.Response build()>()

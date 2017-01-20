@@ -1,0 +1,22 @@
+org.apache.ambari.server.agent.ActionQueue.dequeue : return r4
+org.apache.ambari.server.agent.ActionQueue.dequeue : if null == r1 goto $r7 = staticinvoke <java.util.Collections: java.util.List emptyList()>()
+org.apache.ambari.server.agent.ActionQueue.dequeue : r3 = specialinvoke r0.<org.apache.ambari.server.agent.ActionQueue: java.util.Queue getQueue(java.lang.String)>(r1)
+org.apache.ambari.server.agent.ActionQueue.dequeue : if null != r3 goto $r8 = new java.util.ArrayList
+org.apache.ambari.server.agent.ActionQueue.dequeue : $r9 = interfaceinvoke r5.<java.util.Iterator: java.lang.Object next()>()
+org.apache.ambari.server.agent.ActionQueue.dequeue : $r8 = new java.util.ArrayList
+org.apache.ambari.server.agent.ActionQueue.dequeue : interfaceinvoke r4.<java.util.List: boolean add(java.lang.Object)>(r6)
+org.apache.ambari.server.agent.ActionQueue.dequeue : $r10 = virtualinvoke r6.<org.apache.ambari.server.agent.AgentCommand: org.apache.ambari.server.agent.AgentCommand$AgentCommandType getCommandType()>()
+org.apache.ambari.server.agent.ActionQueue.dequeue : $z0 = interfaceinvoke r5.<java.util.Iterator: boolean hasNext()>()
+org.apache.ambari.server.agent.ActionQueue.dequeue : r5 = interfaceinvoke r3.<java.util.Queue: java.util.Iterator iterator()>()
+org.apache.ambari.server.agent.ActionQueue.dequeue : goto [?= staticinvoke <edu.washington.cs.dt.impact.util.Tracer: void trace(java.lang.String,java.lang.String)>("$z0 = interfaceinvoke r5.<java.util.Iterator: boolean hasNext()>()", "org.apache.ambari.server.agent.ActionQueue.dequeue")]
+org.apache.ambari.server.agent.ActionQueue.dequeue : interfaceinvoke r5.<java.util.Iterator: void remove()>()
+org.apache.ambari.server.agent.ActionQueue.size : $i0 = interfaceinvoke r2.<java.util.Queue: int size()>()
+org.apache.ambari.server.agent.ActionQueue.size : r2 = specialinvoke r0.<org.apache.ambari.server.agent.ActionQueue: java.util.Queue getQueue(java.lang.String)>(r1)
+org.apache.ambari.server.agent.ActionQueue.size : if r2 != null goto $i0 = interfaceinvoke r2.<java.util.Queue: int size()>()
+org.apache.ambari.server.agent.AlertDefinitionCommand.getCommandType : $r1 = <org.apache.ambari.server.agent.AgentCommand$AgentCommandType: org.apache.ambari.server.agent.AgentCommand$AgentCommandType ALERT_DEFINITION_COMMAND>
+org.apache.ambari.server.agent.AgentCommand.getCommandType : $r1 = r0.<org.apache.ambari.server.agent.AgentCommand: org.apache.ambari.server.agent.AgentCommand$AgentCommandType commandType>
+org.apache.ambari.server.agent.ActionQueue.enqueue : r3 = specialinvoke r0.<org.apache.ambari.server.agent.ActionQueue: java.util.Queue getQueue(java.lang.String)>(r1)
+org.apache.ambari.server.agent.ActionQueue.enqueue : $r5 = r0.<org.apache.ambari.server.agent.ActionQueue: java.util.concurrent.ConcurrentMap hostQueues>
+org.apache.ambari.server.agent.ActionQueue.enqueue : interfaceinvoke r3.<java.util.Queue: boolean add(java.lang.Object)>(r2)
+org.apache.ambari.server.agent.ActionQueue.enqueue : if r3 != null goto interfaceinvoke r3.<java.util.Queue: boolean add(java.lang.Object)>(r2)
+org.apache.ambari.server.agent.ActionQueue.getQueue : $r2 = r0.<org.apache.ambari.server.agent.ActionQueue: java.util.concurrent.ConcurrentMap hostQueues>

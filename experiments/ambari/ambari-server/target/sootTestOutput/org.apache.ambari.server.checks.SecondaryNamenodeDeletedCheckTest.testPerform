@@ -1,0 +1,32 @@
+org.apache.ambari.server.checks.SecondaryNamenodeDeletedCheckTest.access$000 : $r1 = r0.<org.apache.ambari.server.checks.SecondaryNamenodeDeletedCheckTest: org.apache.ambari.server.state.Clusters clusters>
+org.apache.ambari.server.state.stack.PrerequisiteCheck.getFailedOn : $r1 = r0.<org.apache.ambari.server.state.stack.PrerequisiteCheck: java.util.LinkedHashSet m_failedOn>
+org.apache.ambari.server.checks.SecondaryNamenodeDeletedCheck.perform : r6 = virtualinvoke r2.<org.apache.ambari.server.controller.PrereqCheckRequest: java.lang.String getClusterName()>()
+org.apache.ambari.server.checks.SecondaryNamenodeDeletedCheck.perform : $r30 = virtualinvoke r1.<org.apache.ambari.server.state.stack.PrerequisiteCheck: java.util.LinkedHashSet getFailedOn()>()
+org.apache.ambari.server.checks.SecondaryNamenodeDeletedCheck.perform : $r19 = r0.<org.apache.ambari.server.checks.SecondaryNamenodeDeletedCheck: org.apache.ambari.server.orm.dao.HostComponentStateDAO hostComponentStateDao>
+org.apache.ambari.server.checks.SecondaryNamenodeDeletedCheck.perform : $i0 = interfaceinvoke r4.<java.util.Set: int size()>()
+org.apache.ambari.server.checks.SecondaryNamenodeDeletedCheck.perform : if r8 == null goto (branch)
+org.apache.ambari.server.checks.SecondaryNamenodeDeletedCheck.perform : $r34 = newarray (java.lang.Object)[1]
+org.apache.ambari.server.checks.SecondaryNamenodeDeletedCheck.perform : $z5 = interfaceinvoke r4.<java.util.Set: boolean isEmpty()>()
+org.apache.ambari.server.checks.SecondaryNamenodeDeletedCheck.perform : r9 = interfaceinvoke r20.<java.util.List: java.util.Iterator iterator()>()
+org.apache.ambari.server.checks.SecondaryNamenodeDeletedCheck.perform : $r14 = <org.apache.ambari.server.checks.SecondaryNamenodeDeletedCheck: java.lang.String HDFS_SERVICE_NAME>
+org.apache.ambari.server.checks.SecondaryNamenodeDeletedCheck.perform : $r32 = <org.apache.ambari.server.state.stack.PrereqCheckStatus: org.apache.ambari.server.state.stack.PrereqCheckStatus FAIL>
+org.apache.ambari.server.checks.SecondaryNamenodeDeletedCheck.perform : $r16 = interfaceinvoke r8.<org.apache.ambari.server.state.ServiceComponent: java.util.Map getServiceComponentHosts()>()
+org.apache.ambari.server.checks.SecondaryNamenodeDeletedCheck.perform : $r3 = new java.util.HashSet
+org.apache.ambari.server.checks.SecondaryNamenodeDeletedCheck.perform : $r11 = r0.<org.apache.ambari.server.checks.SecondaryNamenodeDeletedCheck: com.google.inject.Provider clustersProvider>
+org.apache.ambari.server.checks.SecondaryNamenodeDeletedCheck.perform : $z0 = interfaceinvoke r4.<java.util.Set: boolean isEmpty()>()
+org.apache.ambari.server.checks.SecondaryNamenodeDeletedCheck.perform : r5 = "SECONDARY_NAMENODE"
+org.apache.ambari.server.checks.SecondaryNamenodeDeletedCheck.perform : goto [?= $z0 = interfaceinvoke r4.<java.util.Set: boolean isEmpty()>()]
+org.apache.ambari.server.checks.SecondaryNamenodeDeletedCheck.perform : r33 = virtualinvoke r0.<org.apache.ambari.server.checks.SecondaryNamenodeDeletedCheck: java.lang.String getFailReason(org.apache.ambari.server.state.stack.PrerequisiteCheck,org.apache.ambari.server.controller.PrereqCheckRequest)>(r1, r2)
+org.apache.ambari.server.checks.CheckDescription.getFail : $r2 = r0.<org.apache.ambari.server.checks.CheckDescription: java.util.Map m_fails>
+org.apache.ambari.server.state.stack.PrerequisiteCheck.setFailReason : r0.<org.apache.ambari.server.state.stack.PrerequisiteCheck: java.lang.String m_failReason> = r1
+org.apache.ambari.server.state.stack.PrerequisiteCheck.getStatus : $r1 = r0.<org.apache.ambari.server.state.stack.PrerequisiteCheck: org.apache.ambari.server.state.stack.PrereqCheckStatus m_status>
+org.apache.ambari.server.checks.SecondaryNamenodeDeletedCheckTest$1.get : $r1 = virtualinvoke r0.<org.apache.ambari.server.checks.SecondaryNamenodeDeletedCheckTest$1: org.apache.ambari.server.state.Clusters get()>()
+org.apache.ambari.server.checks.SecondaryNamenodeDeletedCheckTest$1.get : $r1 = r0.<org.apache.ambari.server.checks.SecondaryNamenodeDeletedCheckTest$1: org.apache.ambari.server.checks.SecondaryNamenodeDeletedCheckTest this$0>
+org.apache.ambari.server.state.stack.PrerequisiteCheck.getFailReason : $r1 = r0.<org.apache.ambari.server.state.stack.PrerequisiteCheck: java.lang.String m_failReason>
+org.apache.ambari.server.checks.AbstractCheckDescriptor.getFailReason : return r4
+org.apache.ambari.server.checks.AbstractCheckDescriptor.getFailReason : $r3 = virtualinvoke r0.<org.apache.ambari.server.checks.AbstractCheckDescriptor: java.lang.String getFailReason(java.lang.String,org.apache.ambari.server.state.stack.PrerequisiteCheck,org.apache.ambari.server.controller.PrereqCheckRequest)>("default", r1, r2)
+org.apache.ambari.server.checks.AbstractCheckDescriptor.getFailReason : $r13 = r0.<org.apache.ambari.server.checks.AbstractCheckDescriptor: org.apache.ambari.server.checks.CheckDescription m_description>
+org.apache.ambari.server.checks.AbstractCheckDescriptor.getFailReason : $z1 = virtualinvoke r4.<java.lang.String: boolean contains(java.lang.CharSequence)>("{{fails}}")
+org.apache.ambari.server.checks.AbstractCheckDescriptor.getFailReason : $z0 = virtualinvoke r4.<java.lang.String: boolean contains(java.lang.CharSequence)>("{{version}}")
+org.apache.ambari.server.state.stack.PrerequisiteCheck.setStatus : r0.<org.apache.ambari.server.state.stack.PrerequisiteCheck: org.apache.ambari.server.state.stack.PrereqCheckStatus m_status> = r1
+org.apache.ambari.server.controller.PrereqCheckRequest.getClusterName : $r1 = r0.<org.apache.ambari.server.controller.PrereqCheckRequest: java.lang.String m_clusterName>

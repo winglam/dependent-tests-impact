@@ -1,0 +1,73 @@
+org.apache.ambari.server.api.services.ResultImpl.setResultStatus : r0.<org.apache.ambari.server.api.services.ResultImpl: org.apache.ambari.server.api.services.ResultStatus m_status> = r1
+org.apache.ambari.server.api.services.ResultImpl.getStatus : $r1 = r0.<org.apache.ambari.server.api.services.ResultImpl: org.apache.ambari.server.api.services.ResultStatus m_status>
+org.apache.ambari.server.api.services.DeleteResultMetadata.addDeletedKey : $r2 = r0.<org.apache.ambari.server.api.services.DeleteResultMetadata: java.util.Set deletedKeys>
+org.apache.ambari.server.api.services.DeleteResultMetadata.addDeletedKey : staticinvoke <org.apache.commons.lang.Validate: void notNull(java.lang.Object)>(r1)
+org.apache.ambari.server.api.services.serializers.JsonSerializer.processResultMetadata : $r2 = virtualinvoke r1.<java.lang.Object: java.lang.Class getClass()>()
+org.apache.ambari.server.api.services.serializers.JsonSerializer.processResultMetadata : $r7 = virtualinvoke r1.<org.apache.ambari.server.api.services.DeleteResultMetadata: java.util.Set getDeletedKeys()>()
+org.apache.ambari.server.api.services.serializers.JsonSerializer.processResultMetadata : if r1 != null goto $r2 = virtualinvoke r1.<java.lang.Object: java.lang.Class getClass()>()
+org.apache.ambari.server.api.services.serializers.JsonSerializer.processResultMetadata : $r30 = r0.<org.apache.ambari.server.api.services.serializers.JsonSerializer: org.codehaus.jackson.JsonGenerator m_generator>
+org.apache.ambari.server.api.services.serializers.JsonSerializer.processResultMetadata : $r5 = r0.<org.apache.ambari.server.api.services.serializers.JsonSerializer: org.codehaus.jackson.JsonGenerator m_generator>
+org.apache.ambari.server.api.services.serializers.JsonSerializer.processResultMetadata : $r12 = r0.<org.apache.ambari.server.api.services.serializers.JsonSerializer: org.codehaus.jackson.JsonGenerator m_generator>
+org.apache.ambari.server.api.services.serializers.JsonSerializer.processResultMetadata : $r14 = virtualinvoke r1.<org.apache.ambari.server.api.services.DeleteResultMetadata: java.util.Map getExcptions()>()
+org.apache.ambari.server.api.services.serializers.JsonSerializer.processResultMetadata : goto [?= $z0 = interfaceinvoke r2.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.api.services.serializers.JsonSerializer.processResultMetadata : $r29 = r0.<org.apache.ambari.server.api.services.serializers.JsonSerializer: org.codehaus.jackson.JsonGenerator m_generator>
+org.apache.ambari.server.api.services.serializers.JsonSerializer.processResultMetadata : $r31 = r0.<org.apache.ambari.server.api.services.serializers.JsonSerializer: org.codehaus.jackson.JsonGenerator m_generator>
+org.apache.ambari.server.api.services.serializers.JsonSerializer.processResultMetadata : $r11 = r0.<org.apache.ambari.server.api.services.serializers.JsonSerializer: org.codehaus.jackson.JsonGenerator m_generator>
+org.apache.ambari.server.api.services.serializers.JsonSerializer.processResultMetadata : $r26 = r0.<org.apache.ambari.server.api.services.serializers.JsonSerializer: org.codehaus.jackson.JsonGenerator m_generator>
+org.apache.ambari.server.api.services.serializers.JsonSerializer.processResultMetadata : $r21 = r0.<org.apache.ambari.server.api.services.serializers.JsonSerializer: org.codehaus.jackson.JsonGenerator m_generator>
+org.apache.ambari.server.api.services.serializers.JsonSerializer.processResultMetadata : goto [?= $z1 = interfaceinvoke r16.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.api.services.serializers.JsonSerializer.processResultMetadata : $r9 = r0.<org.apache.ambari.server.api.services.serializers.JsonSerializer: org.codehaus.jackson.JsonGenerator m_generator>
+org.apache.ambari.server.api.services.serializers.JsonSerializer.processResultMetadata : $r6 = r0.<org.apache.ambari.server.api.services.serializers.JsonSerializer: org.codehaus.jackson.JsonGenerator m_generator>
+org.apache.ambari.server.api.services.serializers.JsonSerializer.processResultMetadata : $r13 = r0.<org.apache.ambari.server.api.services.serializers.JsonSerializer: org.codehaus.jackson.JsonGenerator m_generator>
+org.apache.ambari.server.api.services.serializers.JsonSerializer.processResultMetadata : $r3 = (org.apache.ambari.server.api.services.DeleteResultMetadata) r1
+org.apache.ambari.server.api.services.serializers.JsonSerializer.processResultMetadata : $r19 = interfaceinvoke r18.<java.util.Map$Entry: java.lang.Object getValue()>()
+org.apache.ambari.server.api.services.serializers.JsonSerializer.processResultMetadata : $r28 = r0.<org.apache.ambari.server.api.services.serializers.JsonSerializer: org.codehaus.jackson.JsonGenerator m_generator>
+org.apache.ambari.server.api.services.serializers.JsonSerializer.processResultMetadata : $r20 = r0.<org.apache.ambari.server.api.services.serializers.JsonSerializer: org.codehaus.jackson.JsonGenerator m_generator>
+org.apache.ambari.server.api.services.serializers.JsonSerializer.processResultMetadata : $r22 = r0.<org.apache.ambari.server.api.services.serializers.JsonSerializer: org.codehaus.jackson.JsonGenerator m_generator>
+org.apache.ambari.server.api.services.serializers.JsonSerializer.processResultMetadata : $r25 = r0.<org.apache.ambari.server.api.services.serializers.JsonSerializer: org.codehaus.jackson.JsonGenerator m_generator>
+org.apache.ambari.server.api.services.serializers.JsonSerializer.processResultMetadata : $r10 = r0.<org.apache.ambari.server.api.services.serializers.JsonSerializer: org.codehaus.jackson.JsonGenerator m_generator>
+org.apache.ambari.server.api.util.TreeNodeImpl.getObject : $r1 = r0.<org.apache.ambari.server.api.util.TreeNodeImpl: java.lang.Object m_object>
+org.apache.ambari.server.api.services.DeleteResultMetadata.getExcptions : $r1 = r0.<org.apache.ambari.server.api.services.DeleteResultMetadata: java.util.Map excptions>
+org.apache.ambari.server.api.services.DeleteResultMetadata.addException : $r4 = r0.<org.apache.ambari.server.api.services.DeleteResultMetadata: java.util.Map excptions>
+org.apache.ambari.server.api.services.DeleteResultMetadata.addException : staticinvoke <org.apache.commons.lang.Validate: void notNull(java.lang.Object)>(r2)
+org.apache.ambari.server.api.services.DeleteResultMetadata.addException : staticinvoke <org.apache.commons.lang.Validate: void notNull(java.lang.Object)>(r1)
+org.apache.ambari.server.api.services.DeleteResultMetadata.addException : r3 = specialinvoke r0.<org.apache.ambari.server.api.services.DeleteResultMetadata: org.apache.ambari.server.api.services.ResultStatus getResultStatusForException(java.lang.Exception)>(r2)
+org.apache.ambari.server.api.services.serializers.JsonSerializer.createJsonGenerator : return r3
+org.apache.ambari.server.api.services.serializers.JsonSerializer.createJsonGenerator : $r5 = r0.<org.apache.ambari.server.api.services.serializers.JsonSerializer: org.codehaus.jackson.JsonFactory m_factory>
+org.apache.ambari.server.api.services.serializers.JsonSerializer.createJsonGenerator : virtualinvoke r3.<org.codehaus.jackson.JsonGenerator: org.codehaus.jackson.JsonGenerator setPrettyPrinter(org.codehaus.jackson.PrettyPrinter)>(r4)
+org.apache.ambari.server.api.services.serializers.JsonSerializer.createJsonGenerator : $r8 = new org.codehaus.jackson.util.DefaultPrettyPrinter
+org.apache.ambari.server.api.services.serializers.JsonSerializer.createJsonGenerator : $r9 = new org.codehaus.jackson.util.DefaultPrettyPrinter$Lf2SpacesIndenter
+org.apache.ambari.server.api.services.ResultStatus.isErrorState : $r1 = r0.<org.apache.ambari.server.api.services.ResultStatus: org.apache.ambari.server.api.services.ResultStatus$STATUS m_status>
+org.apache.ambari.server.api.services.serializers.JsonSerializer.processNode : $z4 = specialinvoke r0.<org.apache.ambari.server.api.services.serializers.JsonSerializer: boolean isObject(org.apache.ambari.server.api.util.TreeNode)>(r1)
+org.apache.ambari.server.api.services.serializers.JsonSerializer.processNode : $z3 = specialinvoke r0.<org.apache.ambari.server.api.services.serializers.JsonSerializer: boolean isArray(org.apache.ambari.server.api.util.TreeNode)>(r1)
+org.apache.ambari.server.api.services.serializers.JsonSerializer.processNode : $z0 = specialinvoke r0.<org.apache.ambari.server.api.services.serializers.JsonSerializer: boolean isObject(org.apache.ambari.server.api.util.TreeNode)>(r1)
+org.apache.ambari.server.api.services.serializers.JsonSerializer.processNode : $r12 = interfaceinvoke r1.<org.apache.ambari.server.api.util.TreeNode: java.util.Collection getChildren()>()
+org.apache.ambari.server.api.services.serializers.JsonSerializer.processNode : $z1 = specialinvoke r0.<org.apache.ambari.server.api.services.serializers.JsonSerializer: boolean isArray(org.apache.ambari.server.api.util.TreeNode)>(r1)
+org.apache.ambari.server.api.util.TreeNodeImpl.getName : $r1 = r0.<org.apache.ambari.server.api.util.TreeNodeImpl: java.lang.String m_name>
+org.apache.ambari.server.api.services.ResultImpl.getResultTree : $r1 = r0.<org.apache.ambari.server.api.services.ResultImpl: org.apache.ambari.server.api.util.TreeNode m_tree>
+org.apache.ambari.server.api.services.ResultStatus.getStatusCode : $r1 = r0.<org.apache.ambari.server.api.services.ResultStatus: org.apache.ambari.server.api.services.ResultStatus$STATUS m_status>
+org.apache.ambari.server.api.services.ResultImpl.setResultMetadata : r0.<org.apache.ambari.server.api.services.ResultImpl: org.apache.ambari.server.api.services.ResultMetadata m_resultMetadata> = r1
+org.apache.ambari.server.api.services.ResultStatus$STATUS.isErrorState : $z0 = r0.<org.apache.ambari.server.api.services.ResultStatus$STATUS: boolean m_isErrorState>
+org.apache.ambari.server.api.services.ResultStatus.getMessage : $r1 = r0.<org.apache.ambari.server.api.services.ResultStatus: java.lang.String m_msg>
+org.apache.ambari.server.api.services.ResultStatus$STATUS.getStatus : $i0 = r0.<org.apache.ambari.server.api.services.ResultStatus$STATUS: int m_code>
+org.apache.ambari.server.api.util.TreeNodeImpl.getChildren : $r1 = r0.<org.apache.ambari.server.api.util.TreeNodeImpl: java.util.Map m_mapChildren>
+org.apache.ambari.server.api.services.serializers.JsonSerializer.init : $r6 = new org.codehaus.jackson.util.DefaultPrettyPrinter$Lf2SpacesIndenter
+org.apache.ambari.server.api.services.serializers.JsonSerializer.init : return r2
+org.apache.ambari.server.api.services.serializers.JsonSerializer.init : $r5 = new org.codehaus.jackson.util.DefaultPrettyPrinter
+org.apache.ambari.server.api.services.serializers.JsonSerializer.init : $r4 = specialinvoke r0.<org.apache.ambari.server.api.services.serializers.JsonSerializer: org.codehaus.jackson.JsonGenerator createJsonGenerator(java.io.ByteArrayOutputStream)>(r2)
+org.apache.ambari.server.api.services.serializers.JsonSerializer.init : $r1 = new java.io.ByteArrayOutputStream
+org.apache.ambari.server.api.services.serializers.JsonSerializer.init : $r7 = r0.<org.apache.ambari.server.api.services.serializers.JsonSerializer: org.codehaus.jackson.JsonGenerator m_generator>
+org.apache.ambari.server.api.services.ResultImpl.getResultMetadata : $r1 = r0.<org.apache.ambari.server.api.services.ResultImpl: org.apache.ambari.server.api.services.ResultMetadata m_resultMetadata>
+org.apache.ambari.server.api.services.DeleteResultMetadata.getDeletedKeys : $r1 = r0.<org.apache.ambari.server.api.services.DeleteResultMetadata: java.util.Set deletedKeys>
+org.apache.ambari.server.api.services.serializers.JsonSerializer.isObject : $r2 = interfaceinvoke r1.<org.apache.ambari.server.api.util.TreeNode: java.lang.Object getObject()>()
+org.apache.ambari.server.api.services.serializers.JsonSerializer.serialize : $r9 = r0.<org.apache.ambari.server.api.services.serializers.JsonSerializer: org.codehaus.jackson.JsonGenerator m_generator>
+org.apache.ambari.server.api.services.serializers.JsonSerializer.serialize : r2 = specialinvoke r0.<org.apache.ambari.server.api.services.serializers.JsonSerializer: java.io.ByteArrayOutputStream init()>()
+org.apache.ambari.server.api.services.serializers.JsonSerializer.serialize : r3 = interfaceinvoke r1.<org.apache.ambari.server.api.services.Result: org.apache.ambari.server.api.util.TreeNode getResultTree()>()
+org.apache.ambari.server.api.services.serializers.JsonSerializer.serialize : $r8 = interfaceinvoke r1.<org.apache.ambari.server.api.services.Result: org.apache.ambari.server.api.services.ResultMetadata getResultMetadata()>()
+org.apache.ambari.server.api.services.serializers.JsonSerializer.serialize : specialinvoke r0.<org.apache.ambari.server.api.services.serializers.JsonSerializer: void processNode(org.apache.ambari.server.api.util.TreeNode)>(r3)
+org.apache.ambari.server.api.services.serializers.JsonSerializer.serialize : $r10 = virtualinvoke r2.<java.io.ByteArrayOutputStream: java.lang.String toString(java.lang.String)>("UTF-8")
+org.apache.ambari.server.api.services.serializers.JsonSerializer.serialize : $r5 = interfaceinvoke r1.<org.apache.ambari.server.api.services.Result: org.apache.ambari.server.api.services.ResultStatus getStatus()>()
+org.apache.ambari.server.api.services.serializers.JsonSerializer.isArray : $r2 = interfaceinvoke r1.<org.apache.ambari.server.api.util.TreeNode: java.lang.Object getObject()>()
+org.apache.ambari.server.api.services.DeleteResultMetadata.getResultStatusForException : $r3 = virtualinvoke r1.<java.lang.Object: java.lang.Class getClass()>()
+org.apache.ambari.server.api.services.DeleteResultMetadata.getResultStatusForException : $r4 = new org.apache.ambari.server.api.services.ResultStatus
+org.apache.ambari.server.api.services.DeleteResultMetadata.getResultStatusForException : staticinvoke <org.apache.commons.lang.Validate: void notNull(java.lang.Object)>(r1)

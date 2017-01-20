@@ -1,0 +1,12 @@
+org.apache.ambari.server.orm.entities.AlertDefinitionEntity.equals : if r1 == null goto return 0
+org.apache.ambari.server.orm.entities.AlertDefinitionEntity.equals : if r0 != r1 goto (branch)
+org.apache.ambari.server.orm.entities.AlertDefinitionEntity.equals : $r5 = virtualinvoke r0.<org.apache.ambari.server.orm.entities.AlertDefinitionEntity: java.lang.Long _persistence_get_definitionId()>()
+org.apache.ambari.server.orm.entities.AlertDefinitionEntity.equals : $r8 = virtualinvoke r0.<org.apache.ambari.server.orm.entities.AlertDefinitionEntity: java.lang.Long _persistence_get_definitionId()>()
+org.apache.ambari.server.orm.entities.AlertDefinitionEntity.equals : r2 = (org.apache.ambari.server.orm.entities.AlertDefinitionEntity) r1
+org.apache.ambari.server.orm.entities.AlertDefinitionEntity.equals : $r6 = virtualinvoke r0.<org.apache.ambari.server.orm.entities.AlertDefinitionEntity: java.lang.Long _persistence_get_definitionId()>()
+org.apache.ambari.server.orm.entities.AlertDefinitionEntity.hashCode : $r1 = virtualinvoke r0.<org.apache.ambari.server.orm.entities.AlertDefinitionEntity: java.lang.Long _persistence_get_definitionId()>()
+org.apache.ambari.server.orm.entities.AlertDefinitionEntity.hashCode : $r2 = virtualinvoke r0.<org.apache.ambari.server.orm.entities.AlertDefinitionEntity: java.lang.Long _persistence_get_definitionId()>()
+org.apache.ambari.server.orm.entities.AlertDefinitionEntity.hashCode : $r3 = newarray (java.lang.Object)[3]
+org.apache.ambari.server.orm.entities.AlertDefinitionEntity.setClusterId : virtualinvoke r0.<org.apache.ambari.server.orm.entities.AlertDefinitionEntity: void _persistence_set_clusterId(java.lang.Long)>(r1)
+org.apache.ambari.server.orm.entities.AlertDefinitionEntity.setDefinitionId : virtualinvoke r0.<org.apache.ambari.server.orm.entities.AlertDefinitionEntity: void _persistence_set_definitionId(java.lang.Long)>(r1)
+org.apache.ambari.server.orm.entities.AlertDefinitionEntity.setDefinitionName : virtualinvoke r0.<org.apache.ambari.server.orm.entities.AlertDefinitionEntity: void _persistence_set_definitionName(java.lang.String)>(r1)

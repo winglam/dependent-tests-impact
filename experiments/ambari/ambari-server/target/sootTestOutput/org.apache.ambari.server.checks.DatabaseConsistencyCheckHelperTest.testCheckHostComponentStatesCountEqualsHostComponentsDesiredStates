@@ -1,0 +1,47 @@
+org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper.closeConnection : $r2 = <org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper: java.sql.Connection connection>
+org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper.closeConnection : $r0 = <org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper: java.sql.Connection connection>
+org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper.closeConnection : goto [?= return]
+org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper.setConnection : <org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper: java.sql.Connection connection> = r0
+org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper.setInjector : <org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper: org.apache.ambari.server.api.services.AmbariMetaInfo ambariMetaInfo> = null
+org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper.setInjector : <org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper: java.sql.Connection connection> = null
+org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper.setInjector : <org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper: com.google.inject.Injector injector> = r0
+org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper.setInjector : staticinvoke <org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper: void closeConnection()>()
+org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper.setInjector : <org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper: org.apache.ambari.server.orm.DBAccessor dbAccessor> = null
+org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper.setInjector : <org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper: org.apache.ambari.server.orm.dao.MetainfoDAO metainfoDAO> = null
+org.apache.ambari.server.checks.DatabaseConsistencyCheckHelperTest$4.configure : $r1 = virtualinvoke r0.<org.apache.ambari.server.checks.DatabaseConsistencyCheckHelperTest$4: com.google.inject.binder.AnnotatedBindingBuilder bind(java.lang.Class)>(class "org/apache/ambari/server/stack/StackManagerFactory")
+org.apache.ambari.server.checks.DatabaseConsistencyCheckHelperTest$4.configure : $r3 = virtualinvoke r0.<org.apache.ambari.server.checks.DatabaseConsistencyCheckHelperTest$4: com.google.inject.binder.AnnotatedBindingBuilder bind(java.lang.Class)>(class "javax/persistence/EntityManager")
+org.apache.ambari.server.checks.DatabaseConsistencyCheckHelperTest$4.configure : $r5 = virtualinvoke r0.<org.apache.ambari.server.checks.DatabaseConsistencyCheckHelperTest$4: com.google.inject.binder.AnnotatedBindingBuilder bind(java.lang.Class)>(class "org/apache/ambari/server/orm/DBAccessor")
+org.apache.ambari.server.checks.DatabaseConsistencyCheckHelperTest$4.configure : $r7 = virtualinvoke r0.<org.apache.ambari.server.checks.DatabaseConsistencyCheckHelperTest$4: com.google.inject.binder.AnnotatedBindingBuilder bind(java.lang.Class)>(class "org/apache/ambari/server/state/Clusters")
+org.apache.ambari.server.checks.DatabaseConsistencyCheckHelperTest$4.configure : $r9 = virtualinvoke r0.<org.apache.ambari.server.checks.DatabaseConsistencyCheckHelperTest$4: com.google.inject.binder.AnnotatedBindingBuilder bind(java.lang.Class)>(class "org/apache/ambari/server/state/stack/OsFamily")
+org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper.checkHostComponentStates : $z1 = interfaceinvoke r6.<java.sql.ResultSet: boolean next()>()
+org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper.checkHostComponentStates : r3 = "select count(*) FROM hostcomponentstate hcs JOIN hostcomponentdesiredstate hcds ON hcs.service_name=hcds.service_name AND hcs.component_name=hcds.component_name AND hcs.host_id=hcds.host_id"
+org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper.checkHostComponentStates : goto [?= (branch)]
+org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper.checkHostComponentStates : if r7 == null goto return
+org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper.checkHostComponentStates : interfaceinvoke r6.<java.sql.ResultSet: void close()>()
+org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper.checkHostComponentStates : r6 = interfaceinvoke r7.<java.sql.Statement: java.sql.ResultSet executeQuery(java.lang.String)>(r1)
+org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper.checkHostComponentStates : if r6 == null goto r6 = interfaceinvoke r7.<java.sql.Statement: java.sql.ResultSet executeQuery(java.lang.String)>(r2)
+org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper.checkHostComponentStates : r6 = interfaceinvoke r7.<java.sql.Statement: java.sql.ResultSet executeQuery(java.lang.String)>(r3)
+org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper.checkHostComponentStates : $z0 = interfaceinvoke r6.<java.sql.ResultSet: boolean next()>()
+org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper.checkHostComponentStates : if r6 == null goto $r25 = interfaceinvoke r5.<java.util.Map: java.util.Set entrySet()>()
+org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper.checkHostComponentStates : $r13 = <org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper: java.sql.Connection connection>
+org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper.checkHostComponentStates : r2 = "select count(*) from hostcomponentdesiredstate"
+org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper.checkHostComponentStates : $r20 = <org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper: java.sql.Connection connection>
+org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper.checkHostComponentStates : r1 = "select count(*) from hostcomponentstate"
+org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper.checkHostComponentStates : r6 = null
+org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper.checkHostComponentStates : if i0 != i1 goto $r21 = <org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper: org.slf4j.Logger LOG>
+org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper.checkHostComponentStates : $r25 = interfaceinvoke r5.<java.util.Map: java.util.Set entrySet()>()
+org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper.checkHostComponentStates : i2 = 0
+org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper.checkHostComponentStates : r7 = null
+org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper.checkHostComponentStates : goto [?= return]
+org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper.checkHostComponentStates : $r12 = new java.util.HashMap
+org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper.checkHostComponentStates : $z2 = interfaceinvoke r6.<java.sql.ResultSet: boolean next()>()
+org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper.checkHostComponentStates : i0 = 0
+org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper.checkHostComponentStates : r6 = interfaceinvoke r7.<java.sql.Statement: java.sql.ResultSet executeQuery(java.lang.String)>(r2)
+org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper.checkHostComponentStates : r6 = interfaceinvoke r7.<java.sql.Statement: java.sql.ResultSet executeQuery(java.lang.String)>(r4)
+org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper.checkHostComponentStates : if r6 == null goto (branch)
+org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper.checkHostComponentStates : interfaceinvoke r7.<java.sql.Statement: void close()>()
+org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper.checkHostComponentStates : $r0 = <org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper: org.slf4j.Logger LOG>
+org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper.checkHostComponentStates : i1 = 0
+org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper.checkHostComponentStates : if r6 == null goto r6 = interfaceinvoke r7.<java.sql.Statement: java.sql.ResultSet executeQuery(java.lang.String)>(r3)
+org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper.checkHostComponentStates : r4 = "select component_name, host_id from hostcomponentstate group by component_name, host_id having count(component_name) > 1"
+org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper.checkHostComponentStates : $z3 = interfaceinvoke r6.<java.sql.ResultSet: boolean next()>()

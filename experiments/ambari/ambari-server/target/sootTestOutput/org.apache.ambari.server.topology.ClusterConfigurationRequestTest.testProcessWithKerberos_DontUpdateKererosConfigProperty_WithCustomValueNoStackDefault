@@ -1,0 +1,26 @@
+org.apache.ambari.server.topology.Configuration.setProperty : return r4
+org.apache.ambari.server.topology.Configuration.setProperty : interfaceinvoke r5.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>(r2, r3)
+org.apache.ambari.server.topology.Configuration.setProperty : if r5 != null goto interfaceinvoke r5.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>(r2, r3)
+org.apache.ambari.server.topology.Configuration.setProperty : $r8 = new java.util.HashMap
+org.apache.ambari.server.topology.Configuration.setProperty : $r6 = r0.<org.apache.ambari.server.topology.Configuration: java.util.Map properties>
+org.apache.ambari.server.topology.Configuration.setProperty : $r9 = r0.<org.apache.ambari.server.topology.Configuration: java.util.Map properties>
+org.apache.ambari.server.topology.Configuration.setProperty : r4 = virtualinvoke r0.<org.apache.ambari.server.topology.Configuration: java.lang.String getPropertyValue(java.lang.String,java.lang.String)>(r1, r2)
+org.apache.ambari.server.topology.Configuration.getPropertyValue : r3 = null
+org.apache.ambari.server.topology.Configuration.getPropertyValue : $r4 = r0.<org.apache.ambari.server.topology.Configuration: java.util.Map properties>
+org.apache.ambari.server.topology.Configuration.getPropertyValue : return r3
+org.apache.ambari.server.topology.Configuration.getPropertyValue : $r12 = r0.<org.apache.ambari.server.topology.Configuration: org.apache.ambari.server.topology.Configuration parentConfiguration>
+org.apache.ambari.server.topology.ClusterConfigurationRequestTest.testProcessWithKerberos : $r18 = new org.apache.ambari.server.topology.Configuration
+org.apache.ambari.server.topology.ClusterConfigurationRequestTest.testProcessWithKerberos : virtualinvoke r8.<org.apache.ambari.server.topology.Configuration: java.lang.String setProperty(java.lang.String,java.lang.String,java.lang.String)>("testConfigType", "testProperty", r1)
+org.apache.ambari.server.topology.ClusterConfigurationRequestTest.testProcessWithKerberos : if r1 == null goto staticinvoke <org.powermock.api.easymock.PowerMock: void mockStatic(java.lang.Class)>(class "org/apache/ambari/server/topology/AmbariContext")
+org.apache.ambari.server.topology.ClusterConfigurationRequestTest.testProcessWithKerberos : $r29 = r0.<org.apache.ambari.server.topology.ClusterConfigurationRequestTest: org.apache.ambari.server.controller.AmbariManagementController controller>
+org.apache.ambari.server.topology.ClusterConfigurationRequestTest.testProcessWithKerberos : $r20 = new org.apache.ambari.server.topology.Configuration
+org.apache.ambari.server.topology.ClusterConfigurationRequestTest.testProcessWithKerberos : staticinvoke <org.powermock.api.easymock.PowerMock: void mockStatic(java.lang.Class)>(class "org/apache/ambari/server/topology/AmbariContext")
+org.apache.ambari.server.topology.ClusterConfigurationRequestTest.testProcessWithKerberos : staticinvoke <org.apache.ambari.server.topology.AmbariContext: org.apache.ambari.server.controller.AmbariManagementController getController()>()
+org.apache.ambari.server.topology.ClusterConfigurationRequestTest.testProcessWithKerberos : $r25 = staticinvoke <org.easymock.EasyMock: org.easymock.IExpectationSetters expectLastCall()>()
+org.apache.ambari.server.topology.ClusterConfigurationRequestTest.testProcessWithKerberos : if r2 == null goto $r20 = new org.apache.ambari.server.topology.Configuration
+org.apache.ambari.server.topology.ClusterConfigurationRequestTest.testProcessWithKerberos : $r4 = new java.util.HashMap
+org.apache.ambari.server.topology.Configuration.getFullProperties : if i0 != 0 goto $r15 = r0.<org.apache.ambari.server.topology.Configuration: org.apache.ambari.server.topology.Configuration parentConfiguration>
+org.apache.ambari.server.topology.Configuration.getFullProperties : return r19
+org.apache.ambari.server.topology.Configuration.getFullProperties : $r20 = r0.<org.apache.ambari.server.topology.Configuration: java.util.Map properties>
+org.apache.ambari.server.topology.Configuration.getFullProperties : $r1 = virtualinvoke r0.<org.apache.ambari.server.topology.Configuration: java.util.Map getFullProperties(int)>(2147483647)
+org.apache.ambari.server.topology.Configuration.getFullProperties : $r15 = r0.<org.apache.ambari.server.topology.Configuration: org.apache.ambari.server.topology.Configuration parentConfiguration>

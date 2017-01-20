@@ -1,0 +1,106 @@
+org.apache.ambari.server.state.ComponentInfo.setVersionAdvertised : r0.<org.apache.ambari.server.state.ComponentInfo: boolean versionAdvertisedInternal> = z0
+org.apache.ambari.server.state.ComponentInfo.setBulkCommands : r0.<org.apache.ambari.server.state.ComponentInfo: org.apache.ambari.server.state.BulkCommandDefinition bulkCommandDefinition> = r1
+org.apache.ambari.server.stack.ComponentModule.resolve : $r27 = r0.<org.apache.ambari.server.stack.ComponentModule: org.apache.ambari.server.state.ComponentInfo componentInfo>
+org.apache.ambari.server.stack.ComponentModule.resolve : $r43 = r0.<org.apache.ambari.server.stack.ComponentModule: org.apache.ambari.server.state.ComponentInfo componentInfo>
+org.apache.ambari.server.stack.ComponentModule.resolve : $r61 = virtualinvoke r5.<org.apache.ambari.server.state.ComponentInfo: java.util.List getCustomCommands()>()
+org.apache.ambari.server.stack.ComponentModule.resolve : $r19 = r0.<org.apache.ambari.server.stack.ComponentModule: org.apache.ambari.server.state.ComponentInfo componentInfo>
+org.apache.ambari.server.stack.ComponentModule.resolve : $r50 = r0.<org.apache.ambari.server.stack.ComponentModule: org.apache.ambari.server.state.ComponentInfo componentInfo>
+org.apache.ambari.server.stack.ComponentModule.resolve : $r29 = r0.<org.apache.ambari.server.stack.ComponentModule: org.apache.ambari.server.state.ComponentInfo componentInfo>
+org.apache.ambari.server.stack.ComponentModule.resolve : $r37 = r0.<org.apache.ambari.server.stack.ComponentModule: org.apache.ambari.server.state.ComponentInfo componentInfo>
+org.apache.ambari.server.stack.ComponentModule.resolve : $r33 = r0.<org.apache.ambari.server.stack.ComponentModule: org.apache.ambari.server.state.ComponentInfo componentInfo>
+org.apache.ambari.server.stack.ComponentModule.resolve : $r41 = r0.<org.apache.ambari.server.stack.ComponentModule: org.apache.ambari.server.state.ComponentInfo componentInfo>
+org.apache.ambari.server.stack.ComponentModule.resolve : $r35 = r0.<org.apache.ambari.server.stack.ComponentModule: org.apache.ambari.server.state.ComponentInfo componentInfo>
+org.apache.ambari.server.stack.ComponentModule.resolve : $r15 = r0.<org.apache.ambari.server.stack.ComponentModule: org.apache.ambari.server.state.ComponentInfo componentInfo>
+org.apache.ambari.server.stack.ComponentModule.resolve : $r31 = r0.<org.apache.ambari.server.stack.ComponentModule: org.apache.ambari.server.state.ComponentInfo componentInfo>
+org.apache.ambari.server.stack.ComponentModule.resolve : $z0 = virtualinvoke r1.<org.apache.ambari.server.stack.ComponentModule: boolean isValid()>()
+org.apache.ambari.server.stack.ComponentModule.resolve : $r25 = r0.<org.apache.ambari.server.stack.ComponentModule: org.apache.ambari.server.state.ComponentInfo componentInfo>
+org.apache.ambari.server.stack.ComponentModule.resolve : $r21 = r0.<org.apache.ambari.server.stack.ComponentModule: org.apache.ambari.server.state.ComponentInfo componentInfo>
+org.apache.ambari.server.stack.ComponentModule.resolve : $r9 = r0.<org.apache.ambari.server.stack.ComponentModule: org.apache.ambari.server.state.ComponentInfo componentInfo>
+org.apache.ambari.server.stack.ComponentModule.resolve : $r17 = r0.<org.apache.ambari.server.stack.ComponentModule: org.apache.ambari.server.state.ComponentInfo componentInfo>
+org.apache.ambari.server.stack.ComponentModule.resolve : $r23 = r0.<org.apache.ambari.server.stack.ComponentModule: org.apache.ambari.server.state.ComponentInfo componentInfo>
+org.apache.ambari.server.stack.ComponentModule.resolve : r5 = virtualinvoke r1.<org.apache.ambari.server.stack.ComponentModule: org.apache.ambari.server.state.ComponentInfo getModuleInfo()>()
+org.apache.ambari.server.stack.ComponentModule.resolve : $r13 = r0.<org.apache.ambari.server.stack.ComponentModule: org.apache.ambari.server.state.ComponentInfo componentInfo>
+org.apache.ambari.server.stack.ComponentModule.resolve : $r64 = virtualinvoke r5.<org.apache.ambari.server.state.ComponentInfo: java.util.List getLogs()>()
+org.apache.ambari.server.stack.ComponentModule.resolve : $r7 = r0.<org.apache.ambari.server.stack.ComponentModule: org.apache.ambari.server.state.ComponentInfo componentInfo>
+org.apache.ambari.server.stack.ComponentModule.resolve : goto [?= return]
+org.apache.ambari.server.stack.ComponentModule.resolve : $r11 = r0.<org.apache.ambari.server.stack.ComponentModule: org.apache.ambari.server.state.ComponentInfo componentInfo>
+org.apache.ambari.server.stack.ComponentModule.resolve : $r54 = r0.<org.apache.ambari.server.stack.ComponentModule: org.apache.ambari.server.state.ComponentInfo componentInfo>
+org.apache.ambari.server.stack.ComponentModule.resolve : if r1 == null goto $r67 = r0.<org.apache.ambari.server.stack.ComponentModule: org.apache.ambari.server.state.ComponentInfo componentInfo>
+org.apache.ambari.server.stack.ComponentModule.resolve : $r56 = r0.<org.apache.ambari.server.stack.ComponentModule: org.apache.ambari.server.state.ComponentInfo componentInfo>
+org.apache.ambari.server.stack.ComponentModule.resolve : $r45 = r0.<org.apache.ambari.server.stack.ComponentModule: org.apache.ambari.server.state.ComponentInfo componentInfo>
+org.apache.ambari.server.stack.ComponentModule.resolve : $r49 = r0.<org.apache.ambari.server.stack.ComponentModule: org.apache.ambari.server.state.ComponentInfo componentInfo>
+org.apache.ambari.server.stack.ComponentModule.resolve : $r52 = r0.<org.apache.ambari.server.stack.ComponentModule: org.apache.ambari.server.state.ComponentInfo componentInfo>
+org.apache.ambari.server.stack.ComponentModule.resolve : $r47 = r0.<org.apache.ambari.server.stack.ComponentModule: org.apache.ambari.server.state.ComponentInfo componentInfo>
+org.apache.ambari.server.stack.ComponentModule.resolve : $r58 = virtualinvoke r5.<org.apache.ambari.server.state.ComponentInfo: java.util.List getDependencies()>()
+org.apache.ambari.server.state.ComponentInfo.setConfigDependencies : r0.<org.apache.ambari.server.state.ComponentInfo: java.util.List configDependencies> = r1
+org.apache.ambari.server.state.ComponentInfo.setClientConfigFiles : r0.<org.apache.ambari.server.state.ComponentInfo: java.util.List clientConfigFiles> = r1
+org.apache.ambari.server.stack.ComponentModuleTest.resolveComponent : return r3
+org.apache.ambari.server.stack.ComponentModuleTest.resolveComponent : r4 = null
+org.apache.ambari.server.stack.ComponentModuleTest.resolveComponent : $r7 = new org.apache.ambari.server.stack.ComponentModule
+org.apache.ambari.server.stack.ComponentModuleTest.resolveComponent : $r9 = staticinvoke <java.util.Collections: java.util.Map emptyMap()>()
+org.apache.ambari.server.stack.ComponentModuleTest.resolveComponent : virtualinvoke r1.<org.apache.ambari.server.state.ComponentInfo: void setName(java.lang.String)>("FOO")
+org.apache.ambari.server.stack.ComponentModuleTest.resolveComponent : virtualinvoke r2.<org.apache.ambari.server.state.ComponentInfo: void setName(java.lang.String)>("FOO")
+org.apache.ambari.server.stack.ComponentModuleTest.resolveComponent : if r2 == null goto $r9 = staticinvoke <java.util.Collections: java.util.Map emptyMap()>()
+org.apache.ambari.server.stack.ComponentModuleTest.resolveComponent : $r8 = new org.apache.ambari.server.stack.ComponentModule
+org.apache.ambari.server.state.ComponentInfo.setClientsToUpdateConfigs : r0.<org.apache.ambari.server.state.ComponentInfo: java.util.List clientsToUpdateConfigs> = r1
+org.apache.ambari.server.state.ComponentInfo.setDecommissionAllowed : r0.<org.apache.ambari.server.state.ComponentInfo: java.lang.String decommissionAllowed> = r1
+org.apache.ambari.server.state.ComponentInfo.setCardinality : r0.<org.apache.ambari.server.state.ComponentInfo: java.lang.String cardinality> = r1
+org.apache.ambari.server.stack.ComponentModule.isValid : $z0 = r0.<org.apache.ambari.server.stack.ComponentModule: boolean valid>
+org.apache.ambari.server.state.ComponentInfo.setCommandScript : r0.<org.apache.ambari.server.state.ComponentInfo: org.apache.ambari.server.state.CommandScriptDefinition commandScript> = r1
+org.apache.ambari.server.stack.ComponentModule.mergeComponentDependencies : goto [?= $z0 = interfaceinvoke r5.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.stack.ComponentModule.mergeComponentDependencies : $r8 = virtualinvoke r6.<org.apache.ambari.server.state.DependencyInfo: java.lang.String getName()>()
+org.apache.ambari.server.stack.ComponentModule.mergeComponentDependencies : r9 = interfaceinvoke r1.<java.util.List: java.util.Iterator iterator()>()
+org.apache.ambari.server.stack.ComponentModule.mergeComponentDependencies : $r12 = virtualinvoke r11.<org.apache.ambari.server.state.DependencyInfo: java.lang.String getName()>()
+org.apache.ambari.server.stack.ComponentModule.mergeComponentDependencies : interfaceinvoke r2.<java.util.List: boolean add(java.lang.Object)>(r11)
+org.apache.ambari.server.stack.ComponentModule.mergeComponentDependencies : goto [?= $z2 = interfaceinvoke r9.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.stack.ComponentModule.mergeComponentDependencies : r5 = interfaceinvoke r2.<java.util.List: java.util.Iterator iterator()>()
+org.apache.ambari.server.stack.ComponentModule.mergeComponentDependencies : if r1 == null goto return
+org.apache.ambari.server.stack.ComponentModule.mergeComponentDependencies : $r3 = new java.util.HashSet
+org.apache.ambari.server.state.ComponentInfo.getLogs : $r1 = new java.util.ArrayList
+org.apache.ambari.server.state.ComponentInfo.getLogs : $r3 = r0.<org.apache.ambari.server.state.ComponentInfo: java.util.List logs>
+org.apache.ambari.server.state.ComponentInfo.getLogs : $r2 = r0.<org.apache.ambari.server.state.ComponentInfo: java.util.List logs>
+org.apache.ambari.server.state.ComponentInfo.getCardinality : $r1 = r0.<org.apache.ambari.server.state.ComponentInfo: java.lang.String cardinality>
+org.apache.ambari.server.state.ComponentInfo.getReassignAllowed : $r1 = r0.<org.apache.ambari.server.state.ComponentInfo: java.lang.String reassignAllowed>
+org.apache.ambari.server.state.ComponentInfo.getConfigDependencies : $r1 = r0.<org.apache.ambari.server.state.ComponentInfo: java.util.List configDependencies>
+org.apache.ambari.server.state.ComponentInfo.setAutoDeploy : r0.<org.apache.ambari.server.state.ComponentInfo: org.apache.ambari.server.state.AutoDeployInfo autoDeploy> = r1
+org.apache.ambari.server.state.DependencyInfo.setName : i0 = virtualinvoke r1.<java.lang.String: int indexOf(int)>(47)
+org.apache.ambari.server.state.DependencyInfo.setName : r0.<org.apache.ambari.server.state.DependencyInfo: java.lang.String name> = r1
+org.apache.ambari.server.state.DependencyInfo.setName : $z0 = virtualinvoke r1.<java.lang.String: boolean contains(java.lang.CharSequence)>("/")
+org.apache.ambari.server.state.DependencyInfo.setName : $r3 = virtualinvoke r1.<java.lang.String: java.lang.String substring(int,int)>(0, i0)
+org.apache.ambari.server.state.DependencyInfo.setName : $i1 = i0 + 1
+org.apache.ambari.server.state.ComponentInfo.getClientsToUpdateConfigs : $r1 = r0.<org.apache.ambari.server.state.ComponentInfo: java.util.List clientsToUpdateConfigs>
+org.apache.ambari.server.state.ComponentInfo.isVersionAdvertised : $z1 = r0.<org.apache.ambari.server.state.ComponentInfo: boolean versionAdvertisedInternal>
+org.apache.ambari.server.state.ComponentInfo.isVersionAdvertised : $r1 = r0.<org.apache.ambari.server.state.ComponentInfo: java.lang.Boolean versionAdvertisedField>
+org.apache.ambari.server.state.ComponentInfo.getDecommissionAllowed : $r1 = r0.<org.apache.ambari.server.state.ComponentInfo: java.lang.String decommissionAllowed>
+org.apache.ambari.server.state.DependencyInfo.equals : if r1 == null goto return 0
+org.apache.ambari.server.state.DependencyInfo.equals : r2 = (org.apache.ambari.server.state.DependencyInfo) r1
+org.apache.ambari.server.state.DependencyInfo.equals : if r0 != r1 goto (branch)
+org.apache.ambari.server.state.DependencyInfo.equals : $r5 = r0.<org.apache.ambari.server.state.DependencyInfo: java.lang.String componentName>
+org.apache.ambari.server.state.ComponentInfo.getAutoDeploy : $r1 = r0.<org.apache.ambari.server.state.ComponentInfo: org.apache.ambari.server.state.AutoDeployInfo autoDeploy>
+org.apache.ambari.server.state.ComponentInfo.isRecoveryEnabled : $z0 = r0.<org.apache.ambari.server.state.ComponentInfo: boolean recoveryEnabled>
+org.apache.ambari.server.state.ComponentInfo.getCommandScript : $r1 = r0.<org.apache.ambari.server.state.ComponentInfo: org.apache.ambari.server.state.CommandScriptDefinition commandScript>
+org.apache.ambari.server.state.ComponentInfo.setDependencies : r0.<org.apache.ambari.server.state.ComponentInfo: java.util.List dependencies> = r1
+org.apache.ambari.server.state.ComponentInfo.getBulkCommandDefinition : $r1 = r0.<org.apache.ambari.server.state.ComponentInfo: org.apache.ambari.server.state.BulkCommandDefinition bulkCommandDefinition>
+org.apache.ambari.server.state.ComponentInfo.setReassignAllowed : r0.<org.apache.ambari.server.state.ComponentInfo: java.lang.String reassignAllowed> = r1
+org.apache.ambari.server.state.ComponentInfo.setCategory : r0.<org.apache.ambari.server.state.ComponentInfo: java.lang.String category> = r1
+org.apache.ambari.server.state.ComponentInfo.getClientConfigFiles : $r1 = r0.<org.apache.ambari.server.state.ComponentInfo: java.util.List clientConfigFiles>
+org.apache.ambari.server.state.ComponentInfo.getCustomCommands : $r2 = r0.<org.apache.ambari.server.state.ComponentInfo: java.util.List customCommands>
+org.apache.ambari.server.state.ComponentInfo.getCustomCommands : $r1 = new java.util.ArrayList
+org.apache.ambari.server.state.ComponentInfo.getCustomCommands : $r3 = r0.<org.apache.ambari.server.state.ComponentInfo: java.util.List customCommands>
+org.apache.ambari.server.state.ComponentInfo.setName : r0.<org.apache.ambari.server.state.ComponentInfo: java.lang.String name> = r1
+org.apache.ambari.server.state.DependencyInfo.getName : $r1 = r0.<org.apache.ambari.server.state.DependencyInfo: java.lang.String name>
+org.apache.ambari.server.stack.ComponentModule.mergeCustomCommands : r9 = interfaceinvoke r1.<java.util.List: java.util.Iterator iterator()>()
+org.apache.ambari.server.stack.ComponentModule.mergeCustomCommands : r5 = interfaceinvoke r2.<java.util.List: java.util.Iterator iterator()>()
+org.apache.ambari.server.stack.ComponentModule.mergeCustomCommands : if r1 == null goto return
+org.apache.ambari.server.stack.ComponentModule.mergeCustomCommands : $r3 = new java.util.HashSet
+org.apache.ambari.server.state.ComponentInfo.getVersionAdvertisedField : $r1 = r0.<org.apache.ambari.server.state.ComponentInfo: java.lang.Boolean versionAdvertisedField>
+org.apache.ambari.server.state.ComponentInfo.getDependencies : $r1 = r0.<org.apache.ambari.server.state.ComponentInfo: java.util.List dependencies>
+org.apache.ambari.server.stack.ComponentModule.mergeLogs : r9 = interfaceinvoke r1.<java.util.List: java.util.Iterator iterator()>()
+org.apache.ambari.server.stack.ComponentModule.mergeLogs : r5 = interfaceinvoke r2.<java.util.List: java.util.Iterator iterator()>()
+org.apache.ambari.server.stack.ComponentModule.mergeLogs : if r1 == null goto return
+org.apache.ambari.server.stack.ComponentModule.mergeLogs : $r3 = new java.util.HashSet
+org.apache.ambari.server.stack.ComponentModule.getModuleInfo : $r1 = r0.<org.apache.ambari.server.stack.ComponentModule: org.apache.ambari.server.state.ComponentInfo componentInfo>
+org.apache.ambari.server.state.ComponentInfo.getDisplayName : $r1 = r0.<org.apache.ambari.server.state.ComponentInfo: java.lang.String displayName>
+org.apache.ambari.server.state.ComponentInfo.setRecoveryEnabled : r0.<org.apache.ambari.server.state.ComponentInfo: boolean recoveryEnabled> = z0
+org.apache.ambari.server.state.ComponentInfo.getCategory : $r1 = r0.<org.apache.ambari.server.state.ComponentInfo: java.lang.String category>
+org.apache.ambari.server.state.ComponentInfo.setDisplayName : r0.<org.apache.ambari.server.state.ComponentInfo: java.lang.String displayName> = r1

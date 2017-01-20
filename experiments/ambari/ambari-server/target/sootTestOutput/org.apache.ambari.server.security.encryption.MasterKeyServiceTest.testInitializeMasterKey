@@ -1,0 +1,51 @@
+org.apache.ambari.server.security.encryption.MasterKeyServiceImpl.initializeMasterKeyFile : r3 = null
+org.apache.ambari.server.security.encryption.MasterKeyServiceImpl.initializeMasterKeyFile : $r11 = <org.apache.ambari.server.security.encryption.MasterKeyServiceImpl: org.apache.ambari.server.security.encryption.AESEncryptor aes>
+org.apache.ambari.server.security.encryption.MasterKeyServiceImpl.initializeMasterKeyFile : $r51 = new java.lang.StringBuilder
+org.apache.ambari.server.security.encryption.MasterKeyServiceImpl.initializeMasterKeyFile : virtualinvoke r50.<java.util.ArrayList: boolean add(java.lang.Object)>(r71)
+org.apache.ambari.server.security.encryption.MasterKeyServiceImpl.initializeMasterKeyFile : staticinvoke <org.apache.commons.io.FileUtils: void writeLines(java.io.File,java.lang.String,java.util.Collection)>(r0, "UTF8", r50)
+org.apache.ambari.server.security.encryption.MasterKeyServiceImpl.initializeMasterKeyFile : if r1 == null goto $z0 = virtualinvoke r0.<java.io.File: boolean exists()>()
+org.apache.ambari.server.security.encryption.MasterKeyServiceImpl.initializeMasterKeyFile : goto [?= $z0 = virtualinvoke r0.<java.io.File: boolean exists()>()]
+org.apache.ambari.server.security.encryption.MasterKeyServiceImpl.initializeMasterKeyFile : $r57 = new java.lang.StringBuilder
+org.apache.ambari.server.security.encryption.MasterKeyServiceImpl.initializeMasterKeyFile : goto [?= return 1]
+org.apache.ambari.server.security.encryption.MasterKeyServiceImpl.initializeMasterKeyFile : if r3 == null goto return 1
+org.apache.ambari.server.security.encryption.MasterKeyServiceImpl.initializeMasterKeyFile : staticinvoke <org.apache.ambari.server.security.encryption.MasterKeyServiceImpl: void protectAccess(java.io.File)>(r0)
+org.apache.ambari.server.security.encryption.MasterKeyServiceImpl.initializeMasterKeyFile : return 1
+org.apache.ambari.server.security.encryption.MasterKeyServiceImpl.initializeMasterKeyFile : $z0 = virtualinvoke r0.<java.io.File: boolean exists()>()
+org.apache.ambari.server.security.encryption.MasterKeyServiceImpl.initializeMasterKeyFile : $r2 = <org.apache.ambari.server.security.encryption.MasterKeyServiceImpl: org.apache.commons.logging.Log LOG>
+org.apache.ambari.server.security.encryption.MasterKeyServiceImpl.initializeMasterKeyFile : $r49 = new java.util.ArrayList
+org.apache.ambari.server.security.encryption.AESEncryptor.encrypt : return r3
+org.apache.ambari.server.security.encryption.AESEncryptor.encrypt : r2 = virtualinvoke r1.<java.lang.String: byte[] getBytes(java.lang.String)>("UTF8")
+org.apache.ambari.server.security.encryption.AESEncryptor.encrypt : $r2 = new org.apache.ambari.server.security.encryption.EncryptionResult
+org.apache.ambari.server.security.encryption.AESEncryptor.encrypt : r3 = virtualinvoke r0.<org.apache.ambari.server.security.encryption.AESEncryptor: org.apache.ambari.server.security.encryption.EncryptionResult encrypt(byte[])>(r2)
+org.apache.ambari.server.security.encryption.MasterKeyServiceImpl.initializeFromFile : r5 = virtualinvoke r4.<java.lang.String: java.lang.String[] split(java.lang.String)>("::")
+org.apache.ambari.server.security.encryption.MasterKeyServiceImpl.initializeFromFile : $r16 = new java.lang.String
+org.apache.ambari.server.security.encryption.MasterKeyServiceImpl.initializeFromFile : goto [?= return]
+org.apache.ambari.server.security.encryption.MasterKeyServiceImpl.initializeFromFile : r2 = staticinvoke <org.apache.commons.io.FileUtils: java.util.List readLines(java.io.File,java.lang.String)>(r1, "UTF8")
+org.apache.ambari.server.security.encryption.MasterKeyServiceImpl.initializeFromFile : $r6 = interfaceinvoke r2.<java.util.List: java.lang.Object get(int)>(0)
+org.apache.ambari.server.security.encryption.MasterKeyServiceImpl.initializeFromFile : $r7 = <org.apache.ambari.server.security.encryption.MasterKeyServiceImpl: org.apache.commons.logging.Log LOG>
+org.apache.ambari.server.security.encryption.MasterKeyServiceImpl.initializeFromFile : $r12 = new java.lang.String
+org.apache.ambari.server.security.encryption.MasterKeyServiceImpl.isMasterKeyInitialized : $r1 = r0.<org.apache.ambari.server.security.encryption.MasterKeyServiceImpl: char[] master>
+org.apache.ambari.server.security.encryption.MasterKeyServiceImpl.protectAccess : $z5 = virtualinvoke r0.<java.io.File: boolean isDirectory()>()
+org.apache.ambari.server.security.encryption.MasterKeyServiceImpl.protectAccess : $z1 = virtualinvoke r0.<java.io.File: boolean setReadable(boolean,boolean)>(0, 0)
+org.apache.ambari.server.security.encryption.MasterKeyServiceImpl.protectAccess : $z8 = virtualinvoke r0.<java.io.File: boolean setExecutable(boolean,boolean)>(0, 0)
+org.apache.ambari.server.security.encryption.MasterKeyServiceImpl.protectAccess : $z0 = virtualinvoke r0.<java.io.File: boolean exists()>()
+org.apache.ambari.server.security.encryption.MasterKeyServiceImpl.protectAccess : $z3 = virtualinvoke r0.<java.io.File: boolean setWritable(boolean,boolean)>(0, 0)
+org.apache.ambari.server.security.encryption.MasterKeyServiceImpl.getMasterSecret : $r1 = r0.<org.apache.ambari.server.security.encryption.MasterKeyServiceImpl: char[] master>
+org.apache.ambari.server.security.encryption.MasterKeyServiceImpl.isMasterKeyFile : $r6 = new java.io.FileReader
+org.apache.ambari.server.security.encryption.MasterKeyServiceImpl.isMasterKeyFile : r1 = null
+org.apache.ambari.server.security.encryption.MasterKeyServiceImpl.isMasterKeyFile : $i1 = virtualinvoke r1.<java.io.FileReader: int read(char[])>(r2)
+org.apache.ambari.server.security.encryption.MasterKeyServiceImpl.isMasterKeyFile : goto [?= return z0]
+org.apache.ambari.server.security.encryption.MasterKeyServiceImpl.isMasterKeyFile : if r1 == null goto return z0
+org.apache.ambari.server.security.encryption.MasterKeyServiceImpl.isMasterKeyFile : virtualinvoke r1.<java.io.FileReader: void close()>()
+org.apache.ambari.server.security.encryption.MasterKeyServiceImpl.isMasterKeyFile : $r7 = "#1.0# "
+org.apache.ambari.server.security.encryption.AESEncryptor.decrypt : $r12 = r0.<org.apache.ambari.server.security.encryption.AESEncryptor: javax.crypto.Cipher dcipher>
+org.apache.ambari.server.security.encryption.AESEncryptor.decrypt : $r9 = r0.<org.apache.ambari.server.security.encryption.AESEncryptor: javax.crypto.Cipher dcipher>
+org.apache.ambari.server.security.encryption.AESEncryptor.decrypt : $r7 = new javax.crypto.spec.SecretKeySpec
+org.apache.ambari.server.security.encryption.AESEncryptor.decrypt : $r4 = new java.lang.String
+org.apache.ambari.server.security.encryption.AESEncryptor.getKeyFromPassword : r3 = null
+org.apache.ambari.server.security.encryption.AESEncryptor.getKeyFromPassword : return r3
+org.apache.ambari.server.security.encryption.AESEncryptor.getKeyFromPassword : $r6 = new javax.crypto.spec.PBEKeySpec
+org.apache.ambari.server.security.encryption.AESEncryptor.getKeyFromPassword : $r2 = r0.<org.apache.ambari.server.security.encryption.AESEncryptor: byte[] salt>
+org.apache.ambari.server.security.encryption.AESEncryptor.getKeyFromPassword : r4 = staticinvoke <javax.crypto.SecretKeyFactory: javax.crypto.SecretKeyFactory getInstance(java.lang.String)>("PBKDF2WithHmacSHA1")
+org.apache.ambari.server.security.encryption.AESEncryptor.getKeyFromPassword : r3 = virtualinvoke r4.<javax.crypto.SecretKeyFactory: javax.crypto.SecretKey generateSecret(java.security.spec.KeySpec)>(r5)
+org.apache.ambari.server.security.encryption.AESEncryptor.getKeyFromPassword : goto [?= return r3]

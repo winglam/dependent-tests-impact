@@ -1,0 +1,109 @@
+org.apache.ambari.server.orm.entities.RoleAuthorizationEntity.setAuthorizationName : virtualinvoke r0.<org.apache.ambari.server.orm.entities.RoleAuthorizationEntity: void _persistence_set_authorizationName(java.lang.String)>(r1)
+org.apache.ambari.server.security.TestAuthenticationFactory.createRoleAuthorizationEntity : $r1 = new org.apache.ambari.server.orm.entities.RoleAuthorizationEntity
+org.apache.ambari.server.security.TestAuthenticationFactory.createRoleAuthorizationEntity : return r2
+org.apache.ambari.server.security.TestAuthenticationFactory.createRoleAuthorizationEntity : $r3 = virtualinvoke r0.<org.apache.ambari.server.security.authorization.RoleAuthorization: java.lang.String getId()>()
+org.apache.ambari.server.security.TestAuthenticationFactory.createRoleAuthorizationEntity : $r4 = virtualinvoke r0.<org.apache.ambari.server.security.authorization.RoleAuthorization: java.lang.String name()>()
+org.apache.ambari.server.security.authorization.AuthorizationHelperInitializer.viewInstanceDAOReturningNull : $r4 = interfaceinvoke r0.<com.google.inject.Provider: java.lang.Object get()>()
+org.apache.ambari.server.security.authorization.AuthorizationHelperInitializer.viewInstanceDAOReturningNull : $r2 = staticinvoke <org.easymock.EasyMock: java.lang.Object createNiceMock(java.lang.Class)>(class "com/google/inject/Provider")
+org.apache.ambari.server.security.authorization.AuthorizationHelperInitializer.viewInstanceDAOReturningNull : $r3 = staticinvoke <org.easymock.EasyMock: java.lang.Object createNiceMock(java.lang.Class)>(class "org/apache/ambari/server/orm/dao/ViewInstanceDAO")
+org.apache.ambari.server.security.authorization.AuthorizationHelperInitializer.viewInstanceDAOReturningNull : $l0 = staticinvoke <org.easymock.EasyMock: long anyLong()>()
+org.apache.ambari.server.security.authorization.AuthorizationHelperInitializer.viewInstanceDAOReturningNull : $r12 = newarray (java.lang.Object)[2]
+org.apache.ambari.server.security.authorization.AuthorizationHelperInitializer.viewInstanceDAOReturningNull : <org.apache.ambari.server.security.authorization.AuthorizationHelper: com.google.inject.Provider viewInstanceDAOProvider> = r0
+org.apache.ambari.server.orm.entities.ResourceEntity.setId : virtualinvoke r0.<org.apache.ambari.server.orm.entities.ResourceEntity: void _persistence_set_id(java.lang.Long)>(r1)
+org.apache.ambari.server.orm.entities.ResourceTypeEntity.setId : virtualinvoke r0.<org.apache.ambari.server.orm.entities.ResourceTypeEntity: void _persistence_set_id(java.lang.Integer)>(r1)
+org.apache.ambari.server.security.TestAuthenticationFactory.createAdministratorGrantedAuthority : $r0 = new org.apache.ambari.server.security.authorization.AmbariGrantedAuthority
+org.apache.ambari.server.orm.entities.PermissionEntity.setAuthorizations : virtualinvoke r0.<org.apache.ambari.server.orm.entities.PermissionEntity: void _persistence_set_authorizations(java.util.Collection)>(r1)
+org.apache.ambari.server.security.TestAuthenticationFactory.createResourceTypeEntity : return r3
+org.apache.ambari.server.security.TestAuthenticationFactory.createResourceTypeEntity : virtualinvoke r3.<org.apache.ambari.server.orm.entities.ResourceTypeEntity: void setName(java.lang.String)>(r0)
+org.apache.ambari.server.security.TestAuthenticationFactory.createResourceTypeEntity : $r1 = virtualinvoke r0.<org.apache.ambari.server.security.authorization.ResourceType: java.lang.String name()>()
+org.apache.ambari.server.security.TestAuthenticationFactory.createResourceTypeEntity : $r2 = new org.apache.ambari.server.orm.entities.ResourceTypeEntity
+org.apache.ambari.server.security.TestAuthenticationFactory.createResourceTypeEntity : $i0 = virtualinvoke r1.<java.lang.Integer: int intValue()>()
+org.apache.ambari.server.controller.internal.ComponentResourceProviderTest.testUpdateAutoStart : $r42 = new java.util.HashMap
+org.apache.ambari.server.controller.internal.ComponentResourceProviderTest.testUpdateAutoStart : $r150 = interfaceinvoke r10.<org.apache.ambari.server.state.ServiceComponent: java.util.Map getServiceComponentHosts()>()
+org.apache.ambari.server.controller.internal.ComponentResourceProviderTest.testUpdateAutoStart : $r43 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(0)
+org.apache.ambari.server.controller.internal.ComponentResourceProviderTest.testUpdateAutoStart : r17 = staticinvoke <org.easymock.EasyMock: org.easymock.Capture newCapture()>()
+org.apache.ambari.server.controller.internal.ComponentResourceProviderTest.testUpdateAutoStart : $r29 = staticinvoke <org.easymock.EasyMock: java.lang.Object createMock(java.lang.Class)>(class "org/apache/ambari/server/controller/MaintenanceStateHelper")
+org.apache.ambari.server.controller.internal.ComponentResourceProviderTest.testUpdateAutoStart : $r128 = virtualinvoke r7.<org.apache.ambari.server.api.services.AmbariMetaInfo: org.apache.ambari.server.state.ComponentInfo getComponent(java.lang.String,java.lang.String,java.lang.String,java.lang.String)>("stackName", "1", "Service100", "Component101")
+org.apache.ambari.server.controller.internal.ComponentResourceProviderTest.testUpdateAutoStart : $r49 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(0)
+org.apache.ambari.server.controller.internal.ComponentResourceProviderTest.testUpdateAutoStart : r22 = staticinvoke <org.easymock.EasyMock: org.easymock.Capture newCapture()>()
+org.apache.ambari.server.controller.internal.ComponentResourceProviderTest.testUpdateAutoStart : $r105 = interfaceinvoke r8.<org.apache.ambari.server.state.Service: java.lang.String getName()>()
+org.apache.ambari.server.controller.internal.ComponentResourceProviderTest.testUpdateAutoStart : $r51 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(0)
+org.apache.ambari.server.controller.internal.ComponentResourceProviderTest.testUpdateAutoStart : $r101 = interfaceinvoke r6.<org.apache.ambari.server.state.Cluster: org.apache.ambari.server.state.Service getService(java.lang.String)>("Service100")
+org.apache.ambari.server.controller.internal.ComponentResourceProviderTest.testUpdateAutoStart : $r109 = interfaceinvoke r8.<org.apache.ambari.server.state.Service: org.apache.ambari.server.state.ServiceComponent getServiceComponent(java.lang.String)>("Component101")
+org.apache.ambari.server.controller.internal.ComponentResourceProviderTest.testUpdateAutoStart : $l0 = interfaceinvoke r6.<org.apache.ambari.server.state.Cluster: long getClusterId()>()
+org.apache.ambari.server.controller.internal.ComponentResourceProviderTest.testUpdateAutoStart : $r32 = staticinvoke <org.easymock.EasyMock: java.lang.Object createMock(java.lang.Class)>(class "org/apache/ambari/server/state/Cluster")
+org.apache.ambari.server.controller.internal.ComponentResourceProviderTest.testUpdateAutoStart : interfaceinvoke r14.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>("Component101", r10)
+org.apache.ambari.server.controller.internal.ComponentResourceProviderTest.testUpdateAutoStart : $r132 = virtualinvoke r9.<org.apache.ambari.server.state.ComponentInfo: java.lang.String getCategory()>()
+org.apache.ambari.server.controller.internal.ComponentResourceProviderTest.testUpdateAutoStart : $r71 = virtualinvoke r13.<org.apache.ambari.server.state.StackId: java.lang.String getStackName()>()
+org.apache.ambari.server.controller.internal.ComponentResourceProviderTest.testUpdateAutoStart : $r37 = staticinvoke <org.easymock.EasyMock: java.lang.Object createMock(java.lang.Class)>(class "org/apache/ambari/server/state/ServiceComponentHost")
+org.apache.ambari.server.controller.internal.ComponentResourceProviderTest.testUpdateAutoStart : $r140 = interfaceinvoke r10.<org.apache.ambari.server.state.ServiceComponent: org.apache.ambari.server.state.State getDesiredState()>()
+org.apache.ambari.server.controller.internal.ComponentResourceProviderTest.testUpdateAutoStart : r18 = staticinvoke <org.easymock.EasyMock: org.easymock.Capture newCapture()>()
+org.apache.ambari.server.controller.internal.ComponentResourceProviderTest.testUpdateAutoStart : $r36 = staticinvoke <org.easymock.EasyMock: java.lang.Object createMock(java.lang.Class)>(class "org/apache/ambari/server/state/ServiceComponent")
+org.apache.ambari.server.controller.internal.ComponentResourceProviderTest.testUpdateAutoStart : $r63 = staticinvoke <org.easymock.EasyMock: org.easymock.Capture newCapture()>()
+org.apache.ambari.server.controller.internal.ComponentResourceProviderTest.testUpdateAutoStart : $r39 = staticinvoke <org.easymock.EasyMock: java.lang.Object createMock(java.lang.Class)>(class "org/apache/ambari/server/state/StackId")
+org.apache.ambari.server.controller.internal.ComponentResourceProviderTest.testUpdateAutoStart : $r79 = interfaceinvoke r5.<org.apache.ambari.server.state.Clusters: org.apache.ambari.server.state.Cluster getCluster(java.lang.String)>("Cluster100")
+org.apache.ambari.server.controller.internal.ComponentResourceProviderTest.testUpdateAutoStart : $r154 = staticinvoke <org.easymock.EasyMock: java.lang.Object anyObject(java.lang.Class)>(class "org/apache/ambari/server/controller/spi/Resource$Type")
+org.apache.ambari.server.controller.internal.ComponentResourceProviderTest.testUpdateAutoStart : r20 = staticinvoke <org.easymock.EasyMock: org.easymock.Capture newCapture()>()
+org.apache.ambari.server.controller.internal.ComponentResourceProviderTest.testUpdateAutoStart : $r184 = new org.apache.ambari.server.controller.internal.ComponentResourceProvider
+org.apache.ambari.server.controller.internal.ComponentResourceProviderTest.testUpdateAutoStart : $r135 = interfaceinvoke r10.<org.apache.ambari.server.state.ServiceComponent: org.apache.ambari.server.controller.ServiceComponentResponse convertToResponse()>()
+org.apache.ambari.server.controller.internal.ComponentResourceProviderTest.testUpdateAutoStart : $r38 = staticinvoke <org.easymock.EasyMock: java.lang.Object createNiceMock(java.lang.Class)>(class "org/apache/ambari/server/controller/RequestStatusResponse")
+org.apache.ambari.server.controller.internal.ComponentResourceProviderTest.testUpdateAutoStart : $r33 = staticinvoke <org.easymock.EasyMock: java.lang.Object createMock(java.lang.Class)>(class "org/apache/ambari/server/api/services/AmbariMetaInfo")
+org.apache.ambari.server.controller.internal.ComponentResourceProviderTest.testUpdateAutoStart : r2 = <org.apache.ambari.server.controller.spi.Resource$Type: org.apache.ambari.server.controller.spi.Resource$Type Component>
+org.apache.ambari.server.controller.internal.ComponentResourceProviderTest.testUpdateAutoStart : $r31 = staticinvoke <org.easymock.EasyMock: java.lang.Object createMock(java.lang.Class)>(class "org/apache/ambari/server/state/Clusters")
+org.apache.ambari.server.controller.internal.ComponentResourceProviderTest.testUpdateAutoStart : $r47 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(0)
+org.apache.ambari.server.controller.internal.ComponentResourceProviderTest.testUpdateAutoStart : $r183 = staticinvoke <org.springframework.security.core.context.SecurityContextHolder: org.springframework.security.core.context.SecurityContext getContext()>()
+org.apache.ambari.server.controller.internal.ComponentResourceProviderTest.testUpdateAutoStart : $r53 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(1)
+org.apache.ambari.server.controller.internal.ComponentResourceProviderTest.testUpdateAutoStart : interfaceinvoke r10.<org.apache.ambari.server.state.ServiceComponent: void setRecoveryEnabled(boolean)>(1)
+org.apache.ambari.server.controller.internal.ComponentResourceProviderTest.testUpdateAutoStart : r23 = staticinvoke <org.easymock.EasyMock: org.easymock.Capture newCapture()>()
+org.apache.ambari.server.controller.internal.ComponentResourceProviderTest.testUpdateAutoStart : $r35 = staticinvoke <org.easymock.EasyMock: java.lang.Object createMock(java.lang.Class)>(class "org/apache/ambari/server/state/ComponentInfo")
+org.apache.ambari.server.controller.internal.ComponentResourceProviderTest.testUpdateAutoStart : $r180 = new java.util.HashMap
+org.apache.ambari.server.controller.internal.ComponentResourceProviderTest.testUpdateAutoStart : $r182 = newarray (java.lang.Object)[11]
+org.apache.ambari.server.controller.internal.ComponentResourceProviderTest.testUpdateAutoStart : $r124 = interfaceinvoke r8.<org.apache.ambari.server.state.Service: java.util.Map getServiceComponents()>()
+org.apache.ambari.server.controller.internal.ComponentResourceProviderTest.testUpdateAutoStart : $r145 = interfaceinvoke r11.<org.apache.ambari.server.state.ServiceComponentHost: org.apache.ambari.server.state.State getState()>()
+org.apache.ambari.server.controller.internal.ComponentResourceProviderTest.testUpdateAutoStart : $r83 = interfaceinvoke r6.<org.apache.ambari.server.state.Cluster: org.apache.ambari.server.state.StackId getDesiredStackVersion()>()
+org.apache.ambari.server.controller.internal.ComponentResourceProviderTest.testUpdateAutoStart : interfaceinvoke r24.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>("context", "Called from a test")
+org.apache.ambari.server.controller.internal.ComponentResourceProviderTest.testUpdateAutoStart : r16 = staticinvoke <java.util.Collections: java.util.Map singletonMap(java.lang.Object,java.lang.Object)>("Host100", r11)
+org.apache.ambari.server.controller.internal.ComponentResourceProviderTest.testUpdateAutoStart : $r59 = interfaceinvoke r4.<org.apache.ambari.server.controller.AmbariManagementController: org.apache.ambari.server.api.services.AmbariMetaInfo getAmbariMetaInfo()>()
+org.apache.ambari.server.controller.internal.ComponentResourceProviderTest.testUpdateAutoStart : $r75 = virtualinvoke r13.<org.apache.ambari.server.state.StackId: java.lang.String getStackVersion()>()
+org.apache.ambari.server.controller.internal.ComponentResourceProviderTest.testUpdateAutoStart : r21 = staticinvoke <org.easymock.EasyMock: org.easymock.Capture newCapture()>()
+org.apache.ambari.server.controller.internal.ComponentResourceProviderTest.testUpdateAutoStart : $r40 = new java.util.HashMap
+org.apache.ambari.server.controller.internal.ComponentResourceProviderTest.testUpdateAutoStart : $r55 = interfaceinvoke r4.<org.apache.ambari.server.controller.AmbariManagementController: org.apache.ambari.server.state.Clusters getClusters()>()
+org.apache.ambari.server.controller.internal.ComponentResourceProviderTest.testUpdateAutoStart : r19 = staticinvoke <org.easymock.EasyMock: org.easymock.Capture newCapture()>()
+org.apache.ambari.server.controller.internal.ComponentResourceProviderTest.testUpdateAutoStart : $r30 = staticinvoke <org.easymock.EasyMock: java.lang.Object createMock(java.lang.Class)>(class "org/apache/ambari/server/controller/AmbariManagementController")
+org.apache.ambari.server.controller.internal.ComponentResourceProviderTest.testUpdateAutoStart : $r86 = interfaceinvoke r6.<org.apache.ambari.server.state.Cluster: java.lang.Long getResourceId()>()
+org.apache.ambari.server.controller.internal.ComponentResourceProviderTest.testUpdateAutoStart : $r113 = interfaceinvoke r10.<org.apache.ambari.server.state.ServiceComponent: java.lang.String getName()>()
+org.apache.ambari.server.controller.internal.ComponentResourceProviderTest.testUpdateAutoStart : $z0 = interfaceinvoke r10.<org.apache.ambari.server.state.ServiceComponent: boolean isRecoveryEnabled()>()
+org.apache.ambari.server.controller.internal.ComponentResourceProviderTest.testUpdateAutoStart : $r122 = staticinvoke <org.easymock.EasyMock: org.easymock.IExpectationSetters expectLastCall()>()
+org.apache.ambari.server.controller.internal.ComponentResourceProviderTest.testUpdateAutoStart : $r34 = staticinvoke <org.easymock.EasyMock: java.lang.Object createMock(java.lang.Class)>(class "org/apache/ambari/server/state/Service")
+org.apache.ambari.server.controller.internal.ComponentResourceProviderTest.testUpdateAutoStart : $r45 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(1)
+org.apache.ambari.server.controller.internal.ComponentResourceProviderTest.testUpdateAutoStart : $r163 = staticinvoke <org.easymock.EasyMock: java.lang.Object capture(org.easymock.Capture)>(r23)
+org.apache.ambari.server.controller.internal.ComponentResourceProviderTest.testUpdateAutoStart : $r91 = interfaceinvoke r6.<org.apache.ambari.server.state.Cluster: java.util.Map getServices()>()
+org.apache.ambari.server.security.TestAuthenticationFactory.createAdministratorPrivilegeEntity : $r3 = staticinvoke <org.apache.ambari.server.security.TestAuthenticationFactory: org.apache.ambari.server.orm.entities.PermissionEntity createAdministratorPermission()>()
+org.apache.ambari.server.security.TestAuthenticationFactory.createAdministratorPrivilegeEntity : $r0 = new org.apache.ambari.server.orm.entities.PrivilegeEntity
+org.apache.ambari.server.security.TestAuthenticationFactory.createAdministratorPrivilegeEntity : $r2 = staticinvoke <org.apache.ambari.server.security.TestAuthenticationFactory: org.apache.ambari.server.orm.entities.ResourceEntity createAmbariResourceEntity()>()
+org.apache.ambari.server.security.TestAuthenticationFactory.createAdministratorPrivilegeEntity : return r1
+org.apache.ambari.server.orm.entities.RoleAuthorizationEntity.setAuthorizationId : virtualinvoke r0.<org.apache.ambari.server.orm.entities.RoleAuthorizationEntity: void _persistence_set_authorizationId(java.lang.String)>(r1)
+org.apache.ambari.server.orm.entities.ResourceEntity.setResourceType : virtualinvoke r0.<org.apache.ambari.server.orm.entities.ResourceEntity: void _persistence_set_resourceType(org.apache.ambari.server.orm.entities.ResourceTypeEntity)>(r1)
+org.apache.ambari.server.orm.entities.ResourceTypeEntity.setName : virtualinvoke r0.<org.apache.ambari.server.orm.entities.ResourceTypeEntity: void _persistence_set_name(java.lang.String)>(r1)
+org.apache.ambari.server.security.TestAuthenticationFactory.createAmbariResourceEntity : $r2 = <org.apache.ambari.server.security.authorization.ResourceType: org.apache.ambari.server.security.authorization.ResourceType AMBARI>
+org.apache.ambari.server.security.TestAuthenticationFactory.createAmbariResourceEntity : virtualinvoke r1.<org.apache.ambari.server.orm.entities.ResourceEntity: void setId(java.lang.Long)>(null)
+org.apache.ambari.server.security.TestAuthenticationFactory.createAmbariResourceEntity : return r1
+org.apache.ambari.server.security.TestAuthenticationFactory.createAmbariResourceEntity : $r0 = new org.apache.ambari.server.orm.entities.ResourceEntity
+org.apache.ambari.server.security.TestAuthenticationFactory.createAdministratorPermission : $r5 = staticinvoke <java.util.EnumSet: java.util.EnumSet allOf(java.lang.Class)>(class "org/apache/ambari/server/security/authorization/RoleAuthorization")
+org.apache.ambari.server.security.TestAuthenticationFactory.createAdministratorPermission : $r3 = <org.apache.ambari.server.security.authorization.ResourceType: org.apache.ambari.server.security.authorization.ResourceType AMBARI>
+org.apache.ambari.server.security.TestAuthenticationFactory.createAdministratorPermission : $r0 = new org.apache.ambari.server.orm.entities.PermissionEntity
+org.apache.ambari.server.security.TestAuthenticationFactory.createAdministratorPermission : $r2 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(1)
+org.apache.ambari.server.security.TestAuthenticationFactory.createAdministratorPermission : return r1
+org.apache.ambari.server.orm.entities.PrivilegeEntity.setResource : virtualinvoke r0.<org.apache.ambari.server.orm.entities.PrivilegeEntity: void _persistence_set_resource(org.apache.ambari.server.orm.entities.ResourceEntity)>(r1)
+org.apache.ambari.server.orm.entities.PermissionEntity.setResourceType : virtualinvoke r0.<org.apache.ambari.server.orm.entities.PermissionEntity: void _persistence_set_resourceType(org.apache.ambari.server.orm.entities.ResourceTypeEntity)>(r1)
+org.apache.ambari.server.security.TestAuthenticationFactory.createAuthorizations : return r2
+org.apache.ambari.server.security.TestAuthenticationFactory.createAuthorizations : $r1 = new java.util.ArrayList
+org.apache.ambari.server.security.TestAuthenticationFactory.createAuthorizations : $r6 = staticinvoke <org.apache.ambari.server.security.TestAuthenticationFactory: org.apache.ambari.server.orm.entities.RoleAuthorizationEntity createRoleAuthorizationEntity(org.apache.ambari.server.security.authorization.RoleAuthorization)>(r4)
+org.apache.ambari.server.security.TestAuthenticationFactory.createAuthorizations : r3 = interfaceinvoke r0.<java.util.Set: java.util.Iterator iterator()>()
+org.apache.ambari.server.security.TestAuthenticationFactory.createAuthorizations : goto [?= $z0 = interfaceinvoke r3.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.orm.entities.PermissionEntity.setId : virtualinvoke r0.<org.apache.ambari.server.orm.entities.PermissionEntity: void _persistence_set_id(java.lang.Integer)>(r1)
+org.apache.ambari.server.security.authorization.ResourceType.getId : $i0 = r0.<org.apache.ambari.server.security.authorization.ResourceType: int id>
+org.apache.ambari.server.security.authorization.RoleAuthorization.getId : $r1 = r0.<org.apache.ambari.server.security.authorization.RoleAuthorization: java.lang.String id>
+org.apache.ambari.server.orm.entities.PrivilegeEntity.setPermission : virtualinvoke r0.<org.apache.ambari.server.orm.entities.PrivilegeEntity: void _persistence_set_permission(org.apache.ambari.server.orm.entities.PermissionEntity)>(r1)
+org.apache.ambari.server.security.TestAuthenticationFactory.createAdministrator : $r0 = staticinvoke <org.apache.ambari.server.security.TestAuthenticationFactory: org.springframework.security.core.Authentication createAdministrator(java.lang.String)>("admin")
+org.apache.ambari.server.security.TestAuthenticationFactory.createAdministrator : $r1 = new org.apache.ambari.server.security.TestAuthenticationFactory$TestAuthorization

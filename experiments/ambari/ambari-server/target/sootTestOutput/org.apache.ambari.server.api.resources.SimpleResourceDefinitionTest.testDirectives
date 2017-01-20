@@ -1,0 +1,15 @@
+org.apache.ambari.server.api.resources.BaseResourceDefinition.initializeDirectives : $r3 = new java.util.HashSet
+org.apache.ambari.server.api.resources.BaseResourceDefinition.initializeDirectives : $r8 = r0.<org.apache.ambari.server.api.resources.BaseResourceDefinition: java.util.Map directives>
+org.apache.ambari.server.api.resources.BaseResourceDefinition.initializeDirectives : $r6 = interfaceinvoke r2.<java.util.Map: java.lang.Object get(java.lang.Object)>(r1)
+org.apache.ambari.server.api.resources.BaseResourceDefinition.initializeDirectives : if r2 == null goto $r8 = r0.<org.apache.ambari.server.api.resources.BaseResourceDefinition: java.util.Map directives>
+org.apache.ambari.server.api.resources.BaseResourceDefinition.getReadDirectives : $r2 = r0.<org.apache.ambari.server.api.resources.BaseResourceDefinition: java.util.Map directives>
+org.apache.ambari.server.api.resources.SimpleResourceDefinitionTest.validateDirectives : i0 = interfaceinvoke r2.<java.util.Collection: int size()>()
+org.apache.ambari.server.api.resources.SimpleResourceDefinitionTest.validateDirectives : r3 = interfaceinvoke r2.<java.util.Collection: java.util.Iterator iterator()>()
+org.apache.ambari.server.api.resources.SimpleResourceDefinitionTest.validateDirectives : $i5 = i0 + 1
+org.apache.ambari.server.api.resources.SimpleResourceDefinitionTest.validateDirectives : $z1 = interfaceinvoke r1.<java.util.Collection: boolean contains(java.lang.Object)>(r4)
+org.apache.ambari.server.api.resources.SimpleResourceDefinitionTest.validateDirectives : $z2 = interfaceinvoke r2.<java.util.Collection: boolean add(java.lang.Object)>("DIRECTIVE")
+org.apache.ambari.server.api.resources.SimpleResourceDefinitionTest.validateDirectives : $i1 = interfaceinvoke r1.<java.util.Collection: int size()>()
+org.apache.ambari.server.api.resources.SimpleResourceDefinitionTest.validateDirectives : goto [?= $z0 = interfaceinvoke r3.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.api.resources.BaseResourceDefinition.getDeleteDirectives : $r2 = r0.<org.apache.ambari.server.api.resources.BaseResourceDefinition: java.util.Map directives>
+org.apache.ambari.server.api.resources.BaseResourceDefinition.getCreateDirectives : $r2 = r0.<org.apache.ambari.server.api.resources.BaseResourceDefinition: java.util.Map directives>
+org.apache.ambari.server.api.resources.BaseResourceDefinition.getUpdateDirectives : $r2 = r0.<org.apache.ambari.server.api.resources.BaseResourceDefinition: java.util.Map directives>

@@ -1,0 +1,32 @@
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.getInternalUsers : return r2
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.getInternalUsers : $r9 = virtualinvoke r4.<org.apache.ambari.server.security.authorization.User: java.lang.String getUserName()>()
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.getInternalUsers : r3 = interfaceinvoke r1.<java.util.List: java.util.Iterator iterator()>()
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.getInternalUsers : $r6 = new java.util.HashMap
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.getInternalUsers : $r7 = <org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator: org.slf4j.Logger LOG>
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.getInternalUsers : $r5 = r0.<org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator: org.apache.ambari.server.security.authorization.Users users>
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.getInternalUsers : goto [?= $z0 = interfaceinvoke r3.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.utils.AmbariPath.getPath : $r3 = <org.apache.ambari.server.utils.AmbariPath: org.slf4j.Logger LOG>
+org.apache.ambari.server.utils.AmbariPath.getPath : $r1 = <org.apache.ambari.server.utils.AmbariPath: java.lang.String rootDirectory>
+org.apache.ambari.server.utils.AmbariPath.getPath : return r0
+org.apache.ambari.server.security.ldap.LdapBatchDto.getUsersToBeCreated : $r1 = r0.<org.apache.ambari.server.security.ldap.LdapBatchDto: java.util.Set usersToBeCreated>
+org.apache.ambari.server.security.ldap.LdapBatchDto.getUsersToBecomeLdap : $r1 = r0.<org.apache.ambari.server.security.ldap.LdapBatchDto: java.util.Set usersToBecomeLdap>
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulatorTest$AmbariLdapDataPopulatorTestInstance.loadLdapTemplate : $r1 = r0.<org.apache.ambari.server.security.ldap.AmbariLdapDataPopulatorTest$AmbariLdapDataPopulatorTestInstance: org.springframework.ldap.core.LdapTemplate ldapTemplate>
+org.apache.ambari.server.security.ldap.LdapBatchDto.getGroupsToBeRemoved : $r1 = r0.<org.apache.ambari.server.security.ldap.LdapBatchDto: java.util.Set groupsToBeRemoved>
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulatorTest$TestAmbariLdapDataPopulator.setLdapServerProperties : r0.<org.apache.ambari.server.security.ldap.AmbariLdapDataPopulatorTest$TestAmbariLdapDataPopulator: org.apache.ambari.server.security.authorization.LdapServerProperties ldapServerProperties> = r1
+org.apache.ambari.server.configuration.Configuration$ConfigurationProperty.getDefaultValue : $r1 = r0.<org.apache.ambari.server.configuration.Configuration$ConfigurationProperty: java.lang.Object m_defaultValue>
+org.apache.ambari.server.security.ldap.LdapBatchDto.getGroupsToBeCreated : $r1 = r0.<org.apache.ambari.server.security.ldap.LdapBatchDto: java.util.Set groupsToBeCreated>
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.synchronizeExistingLdapUsers : $z1 = virtualinvoke r5.<org.apache.ambari.server.security.authorization.User: boolean isLdapUser()>()
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.synchronizeExistingLdapUsers : goto [?= $z0 = interfaceinvoke r4.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.synchronizeExistingLdapUsers : r3 = virtualinvoke r0.<org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator: java.util.Map getInternalUsers()>()
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.synchronizeExistingLdapUsers : $r9 = virtualinvoke r5.<org.apache.ambari.server.security.authorization.User: java.lang.String getUserName()>()
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.synchronizeExistingLdapUsers : $z2 = interfaceinvoke r6.<java.util.Set: boolean isEmpty()>()
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.synchronizeExistingLdapUsers : $r2 = <org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator: org.slf4j.Logger LOG>
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.synchronizeExistingLdapUsers : return r1
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.synchronizeExistingLdapUsers : $r7 = interfaceinvoke r3.<java.util.Map: java.util.Collection values()>()
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.synchronizeExistingLdapUsers : $r10 = virtualinvoke r1.<org.apache.ambari.server.security.ldap.LdapBatchDto: java.util.Set getUsersToBeRemoved()>()
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulatorTest$TestAmbariLdapDataPopulator.setLdapTemplate : r0.<org.apache.ambari.server.security.ldap.AmbariLdapDataPopulatorTest$TestAmbariLdapDataPopulator: org.springframework.ldap.core.LdapTemplate ldapTemplate> = r1
+org.apache.ambari.server.security.ldap.LdapBatchDto.getGroupsToBecomeLdap : $r1 = r0.<org.apache.ambari.server.security.ldap.LdapBatchDto: java.util.Set groupsToBecomeLdap>
+org.apache.ambari.server.security.ldap.LdapBatchDto.getUsersToBeRemoved : $r1 = r0.<org.apache.ambari.server.security.ldap.LdapBatchDto: java.util.Set usersToBeRemoved>
+org.apache.ambari.server.configuration.Configuration$ConnectionPoolType.getName : $r1 = r0.<org.apache.ambari.server.configuration.Configuration$ConnectionPoolType: java.lang.String m_name>
+org.apache.ambari.server.security.ldap.LdapBatchDto.getMembershipToAdd : $r1 = r0.<org.apache.ambari.server.security.ldap.LdapBatchDto: java.util.Set membershipToAdd>
+org.apache.ambari.server.security.ldap.LdapBatchDto.getMembershipToRemove : $r1 = r0.<org.apache.ambari.server.security.ldap.LdapBatchDto: java.util.Set membershipToRemove>

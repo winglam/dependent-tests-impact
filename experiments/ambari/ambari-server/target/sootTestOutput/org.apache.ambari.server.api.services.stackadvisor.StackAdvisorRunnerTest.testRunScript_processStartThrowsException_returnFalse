@@ -1,0 +1,10 @@
+org.apache.ambari.server.api.services.stackadvisor.StackAdvisorRunner.runScript : r7 = virtualinvoke r0.<org.apache.ambari.server.api.services.stackadvisor.StackAdvisorRunner: java.lang.ProcessBuilder prepareShellCommand(java.lang.String,org.apache.ambari.server.api.services.stackadvisor.commands.StackAdvisorCommandType,java.io.File,java.lang.String,java.lang.String)>(r1, r2, r3, r5, r6)
+org.apache.ambari.server.api.services.stackadvisor.StackAdvisorRunner.runScript : $r59 = <org.apache.ambari.server.api.services.stackadvisor.StackAdvisorRunner: org.slf4j.Logger LOG>
+org.apache.ambari.server.api.services.stackadvisor.StackAdvisorRunner.runScript : r58 = "Error executing stack advisor: "
+org.apache.ambari.server.api.services.stackadvisor.StackAdvisorRunner.runScript : r57 = $r56
+org.apache.ambari.server.api.services.stackadvisor.StackAdvisorRunner.runScript : $r60 = new org.apache.ambari.server.api.services.stackadvisor.StackAdvisorException
+org.apache.ambari.server.api.services.stackadvisor.StackAdvisorRunner.runScript : $r4 = <org.apache.ambari.server.api.services.stackadvisor.StackAdvisorRunner: org.slf4j.Logger LOG>
+org.apache.ambari.server.api.services.stackadvisor.StackAdvisorRunner.runScript : $r15 = new java.lang.StringBuilder
+org.apache.ambari.server.api.services.stackadvisor.StackAdvisorRunner.runScript : r8 = virtualinvoke r7.<java.lang.ProcessBuilder: java.lang.Process start()>()
+org.apache.ambari.server.api.services.stackadvisor.StackAdvisorRunner.runScript : $r20 = new java.lang.StringBuilder
+org.apache.ambari.server.api.services.stackadvisor.commands.StackAdvisorCommandType.toString : $r1 = r0.<org.apache.ambari.server.api.services.stackadvisor.commands.StackAdvisorCommandType: java.lang.String name>

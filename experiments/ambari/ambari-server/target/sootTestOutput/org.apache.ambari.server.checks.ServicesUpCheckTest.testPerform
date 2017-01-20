@@ -1,0 +1,80 @@
+org.apache.ambari.server.checks.ServicesUpCheckTest$1.get : $r1 = r0.<org.apache.ambari.server.checks.ServicesUpCheckTest$1: org.apache.ambari.server.checks.ServicesUpCheckTest this$0>
+org.apache.ambari.server.checks.ServicesUpCheckTest$1.get : $r1 = virtualinvoke r0.<org.apache.ambari.server.checks.ServicesUpCheckTest$1: org.apache.ambari.server.state.Clusters get()>()
+org.apache.ambari.server.checks.ServicesUpCheckTest.access$100 : $r1 = r0.<org.apache.ambari.server.checks.ServicesUpCheckTest: org.apache.ambari.server.api.services.AmbariMetaInfo ambariMetaInfo>
+org.apache.ambari.server.checks.ServicesUpCheckTest.access$000 : $r1 = r0.<org.apache.ambari.server.checks.ServicesUpCheckTest: org.apache.ambari.server.state.Clusters clusters>
+org.apache.ambari.server.state.stack.PrerequisiteCheck.setFailedOn : r0.<org.apache.ambari.server.state.stack.PrerequisiteCheck: java.util.LinkedHashSet m_failedOn> = r1
+org.apache.ambari.server.state.stack.PrerequisiteCheck.setFailReason : r0.<org.apache.ambari.server.state.stack.PrerequisiteCheck: java.lang.String m_failReason> = r1
+org.apache.ambari.server.state.StackId.getStackName : $r1 = r0.<org.apache.ambari.server.state.StackId: java.lang.String stackName>
+org.apache.ambari.server.checks.ServicesUpCheckTest$2.get : $r1 = virtualinvoke r0.<org.apache.ambari.server.checks.ServicesUpCheckTest$2: org.apache.ambari.server.api.services.AmbariMetaInfo get()>()
+org.apache.ambari.server.checks.ServicesUpCheckTest$2.get : $r1 = r0.<org.apache.ambari.server.checks.ServicesUpCheckTest$2: org.apache.ambari.server.checks.ServicesUpCheckTest this$0>
+org.apache.ambari.server.state.stack.PrerequisiteCheck.getStatus : $r1 = r0.<org.apache.ambari.server.state.stack.PrerequisiteCheck: org.apache.ambari.server.state.stack.PrereqCheckStatus m_status>
+org.apache.ambari.server.state.StackId.getStackVersion : $r1 = r0.<org.apache.ambari.server.state.StackId: java.lang.String stackVersion>
+org.apache.ambari.server.state.stack.PrerequisiteCheck.setStatus : r0.<org.apache.ambari.server.state.stack.PrerequisiteCheck: org.apache.ambari.server.state.stack.PrereqCheckStatus m_status> = r1
+org.apache.ambari.server.checks.ServicesUpCheck.isConsideredDown : $l1 = interfaceinvoke r1.<org.apache.ambari.server.state.Cluster: long getClusterId()>()
+org.apache.ambari.server.checks.ServicesUpCheck.isConsideredDown : r6 = virtualinvoke r3.<org.apache.ambari.server.orm.models.HostComponentSummary: org.apache.ambari.server.state.State getDesiredState()>()
+org.apache.ambari.server.checks.ServicesUpCheck.isConsideredDown : $r12 = <org.apache.ambari.server.state.MaintenanceState: org.apache.ambari.server.state.MaintenanceState ON>
+org.apache.ambari.server.checks.ServicesUpCheck.isConsideredDown : return 0
+org.apache.ambari.server.checks.ServicesUpCheck.isConsideredDown : $r8 = r0.<org.apache.ambari.server.checks.ServicesUpCheck: com.google.inject.Provider clustersProvider>
+org.apache.ambari.server.checks.ServicesUpCheck.isConsideredDown : r7 = virtualinvoke r3.<org.apache.ambari.server.orm.models.HostComponentSummary: org.apache.ambari.server.state.State getCurrentState()>()
+org.apache.ambari.server.checks.ServicesUpCheck.isConsideredDown : $r14 = <org.apache.ambari.server.state.State: org.apache.ambari.server.state.State STARTED>
+org.apache.ambari.server.checks.ServicesUpCheck.isConsideredDown : $r13 = <org.apache.ambari.server.checks.ServicesUpCheck$1: int[] $SwitchMap$org$apache$ambari$server$state$State>
+org.apache.ambari.server.state.State.values : $r0 = <org.apache.ambari.server.state.State: org.apache.ambari.server.state.State[] $VALUES>
+org.apache.ambari.server.checks.ServicesUpCheckTest$3.answer : $r4 = interfaceinvoke r1.<org.mockito.invocation.InvocationOnMock: java.lang.Object[] getArguments()>()
+org.apache.ambari.server.checks.ServicesUpCheckTest$3.answer : $r3 = staticinvoke <org.mockito.Mockito: java.lang.Object mock(java.lang.Class)>(class "org/apache/ambari/server/state/ComponentInfo")
+org.apache.ambari.server.checks.ServicesUpCheckTest$3.answer : $r8 = virtualinvoke r2.<org.apache.ambari.server.state.ComponentInfo: java.lang.String getCardinality()>()
+org.apache.ambari.server.checks.ServicesUpCheckTest$3.answer : return r2
+org.apache.ambari.server.checks.ServicesUpCheckTest$3.answer : $r2 = virtualinvoke r0.<org.apache.ambari.server.checks.ServicesUpCheckTest$3: org.apache.ambari.server.state.ComponentInfo answer(org.mockito.invocation.InvocationOnMock)>(r1)
+org.apache.ambari.server.checks.ServicesUpCheck.perform : z0 = 0
+org.apache.ambari.server.checks.ServicesUpCheck.perform : r17 = virtualinvoke r16.<org.apache.ambari.server.state.ComponentInfo: java.lang.String getCardinality()>()
+org.apache.ambari.server.checks.ServicesUpCheck.perform : i2 = i2 + 1
+org.apache.ambari.server.checks.ServicesUpCheck.perform : $r43 = newarray (java.lang.Object)[5]
+org.apache.ambari.server.checks.ServicesUpCheck.perform : r3 = virtualinvoke r2.<org.apache.ambari.server.controller.PrereqCheckRequest: java.lang.String getClusterName()>()
+org.apache.ambari.server.checks.ServicesUpCheck.perform : if z0 == 0 goto r50 = interfaceinvoke r15.<java.util.List: java.util.Iterator iterator()>()
+org.apache.ambari.server.checks.ServicesUpCheck.perform : $r31 = interfaceinvoke r13.<java.util.Map$Entry: java.lang.Object getValue()>()
+org.apache.ambari.server.checks.ServicesUpCheck.perform : $r29 = interfaceinvoke r11.<java.util.Map: java.util.Set entrySet()>()
+org.apache.ambari.server.checks.ServicesUpCheck.perform : $z5 = interfaceinvoke r14.<org.apache.ambari.server.state.ServiceComponent: boolean isVersionAdvertised()>()
+org.apache.ambari.server.checks.ServicesUpCheck.perform : $r61 = <org.apache.ambari.server.state.stack.PrereqCheckStatus: org.apache.ambari.server.state.stack.PrereqCheckStatus FAIL>
+org.apache.ambari.server.checks.ServicesUpCheck.perform : z0 = 1
+org.apache.ambari.server.checks.ServicesUpCheck.perform : interfaceinvoke r5.<java.util.List: boolean add(java.lang.Object)>(r59)
+org.apache.ambari.server.checks.ServicesUpCheck.perform : $z7 = interfaceinvoke r14.<org.apache.ambari.server.state.ServiceComponent: boolean isMasterComponent()>()
+org.apache.ambari.server.checks.ServicesUpCheck.perform : goto [?= (branch)]
+org.apache.ambari.server.checks.ServicesUpCheck.perform : $z4 = interfaceinvoke r14.<org.apache.ambari.server.state.ServiceComponent: boolean isClientComponent()>()
+org.apache.ambari.server.checks.ServicesUpCheck.perform : i1 = interfaceinvoke r15.<java.util.List: int size()>()
+org.apache.ambari.server.checks.ServicesUpCheck.perform : $r28 = interfaceinvoke r9.<java.util.Map$Entry: java.lang.Object getValue()>()
+org.apache.ambari.server.checks.ServicesUpCheck.perform : $r32 = interfaceinvoke r10.<org.apache.ambari.server.state.Service: java.lang.String getName()>()
+org.apache.ambari.server.checks.ServicesUpCheck.perform : $r62 = new java.lang.StringBuilder
+org.apache.ambari.server.checks.ServicesUpCheck.perform : $r23 = new java.util.ArrayList
+org.apache.ambari.server.checks.ServicesUpCheck.perform : $r53 = interfaceinvoke r10.<org.apache.ambari.server.state.Service: java.lang.String getName()>()
+org.apache.ambari.server.checks.ServicesUpCheck.perform : $z11 = specialinvoke r0.<org.apache.ambari.server.checks.ServicesUpCheck: boolean isConsideredDown(org.apache.ambari.server.state.Cluster,org.apache.ambari.server.state.ServiceComponent,org.apache.ambari.server.orm.models.HostComponentSummary)>(r4, r14, r19)
+org.apache.ambari.server.checks.ServicesUpCheck.perform : interfaceinvoke r5.<java.util.List: boolean add(java.lang.Object)>(r49)
+org.apache.ambari.server.checks.ServicesUpCheck.perform : goto [?= $z1 = interfaceinvoke r8.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.checks.ServicesUpCheck.perform : goto [?= $z10 = interfaceinvoke r18.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.checks.ServicesUpCheck.perform : $r20 = r0.<org.apache.ambari.server.checks.ServicesUpCheck: com.google.inject.Provider clustersProvider>
+org.apache.ambari.server.checks.ServicesUpCheck.perform : r50 = interfaceinvoke r15.<java.util.List: java.util.Iterator iterator()>()
+org.apache.ambari.server.checks.ServicesUpCheck.perform : $r24 = new java.util.HashSet
+org.apache.ambari.server.checks.ServicesUpCheck.perform : $z15 = specialinvoke r0.<org.apache.ambari.server.checks.ServicesUpCheck: boolean isConsideredDown(org.apache.ambari.server.state.Cluster,org.apache.ambari.server.state.ServiceComponent,org.apache.ambari.server.orm.models.HostComponentSummary)>(r4, r14, r52)
+org.apache.ambari.server.checks.ServicesUpCheck.perform : $z6 = interfaceinvoke r15.<java.util.List: boolean isEmpty()>()
+org.apache.ambari.server.checks.ServicesUpCheck.perform : i2 = 0
+org.apache.ambari.server.checks.ServicesUpCheck.perform : $z18 = interfaceinvoke r5.<java.util.List: boolean isEmpty()>()
+org.apache.ambari.server.checks.ServicesUpCheck.perform : $r25 = interfaceinvoke r4.<org.apache.ambari.server.state.Cluster: java.util.Map getServices()>()
+org.apache.ambari.server.checks.ServicesUpCheck.perform : i0 = i0 + 1
+org.apache.ambari.server.checks.ServicesUpCheck.perform : $r34 = r0.<org.apache.ambari.server.checks.ServicesUpCheck: com.google.inject.Provider ambariMetaInfo>
+org.apache.ambari.server.checks.ServicesUpCheck.perform : goto [?= $z14 = interfaceinvoke r50.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.checks.ServicesUpCheck.perform : i0 = 0
+org.apache.ambari.server.checks.ServicesUpCheck.perform : r18 = interfaceinvoke r15.<java.util.List: java.util.Iterator iterator()>()
+org.apache.ambari.server.checks.ServicesUpCheck.perform : $r42 = interfaceinvoke r10.<org.apache.ambari.server.state.Service: java.lang.String getName()>()
+org.apache.ambari.server.checks.ServicesUpCheck.perform : if null == r17 goto (branch)
+org.apache.ambari.server.checks.ServicesUpCheck.perform : $r54 = newarray (java.lang.Object)[4]
+org.apache.ambari.server.checks.ServicesUpCheck.perform : $r60 = new java.util.LinkedHashSet
+org.apache.ambari.server.checks.ServicesUpCheck.perform : r11 = interfaceinvoke r10.<org.apache.ambari.server.state.Service: java.util.Map getServiceComponents()>()
+org.apache.ambari.server.checks.ServicesUpCheck.perform : $f0 = (float) i0
+org.apache.ambari.server.checks.ServicesUpCheck.perform : $z2 = interfaceinvoke r10.<org.apache.ambari.server.state.Service: boolean isClientOnlyService()>()
+org.apache.ambari.server.checks.ServicesUpCheck.perform : r7 = interfaceinvoke r4.<org.apache.ambari.server.state.Cluster: org.apache.ambari.server.state.StackId getCurrentStackVersion()>()
+org.apache.ambari.server.checks.ServicesUpCheck.perform : goto [?= $z3 = interfaceinvoke r12.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.state.StackId.parseStackIdHelper : if r2 == null goto r1.<org.apache.ambari.server.state.StackId: java.lang.String stackName> = ""
+org.apache.ambari.server.state.StackId.parseStackIdHelper : $r8 = virtualinvoke r2.<java.lang.String: java.lang.String substring(int,int)>(0, i0)
+org.apache.ambari.server.state.StackId.parseStackIdHelper : i0 = virtualinvoke r2.<java.lang.String: int indexOf(int)>(45)
+org.apache.ambari.server.state.StackId.parseStackIdHelper : if i0 == -1 goto $r3 = new java.lang.RuntimeException
+org.apache.ambari.server.state.StackId.parseStackIdHelper : $i3 = i0 + 1
+org.apache.ambari.server.controller.PrereqCheckRequest.getClusterName : $r1 = r0.<org.apache.ambari.server.controller.PrereqCheckRequest: java.lang.String m_clusterName>
+org.apache.ambari.server.state.stack.PrerequisiteCheck.getFailReason : $r1 = r0.<org.apache.ambari.server.state.stack.PrerequisiteCheck: java.lang.String m_failReason>

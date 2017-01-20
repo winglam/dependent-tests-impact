@@ -1,0 +1,127 @@
+org.apache.ambari.server.utils.StageUtils.getActionId : $r0 = new java.lang.StringBuilder
+org.apache.ambari.server.agent.CommandReport.setClusterName : r0.<org.apache.ambari.server.agent.CommandReport: java.lang.String clusterName> = r1
+org.apache.ambari.server.agent.CommandReport.setRoleCommand : r0.<org.apache.ambari.server.agent.CommandReport: java.lang.String roleCommand> = r1
+org.apache.ambari.server.agent.CommandReport.setStructuredOut : r0.<org.apache.ambari.server.agent.CommandReport: java.lang.String structuredOut> = r1
+org.apache.ambari.server.configuration.Configuration$ConfigurationProperty.getKey : $r1 = r0.<org.apache.ambari.server.configuration.Configuration$ConfigurationProperty: java.lang.String m_key>
+org.apache.ambari.server.agent.ExecutionCommand.getServiceName : $r1 = r0.<org.apache.ambari.server.agent.ExecutionCommand: java.lang.String serviceName>
+org.apache.ambari.server.agent.CommandReport.setStdErr : r0.<org.apache.ambari.server.agent.CommandReport: java.lang.String stderr> = r1
+org.apache.ambari.server.serveraction.upgrades.AutoSkipFailedSummaryActionTest$MockModule.configure : $r1 = virtualinvoke r0.<org.apache.ambari.server.serveraction.upgrades.AutoSkipFailedSummaryActionTest$MockModule: com.google.inject.binder.AnnotatedBindingBuilder bind(java.lang.Class)>(class "org/apache/ambari/server/orm/dao/UpgradeDAO")
+org.apache.ambari.server.serveraction.upgrades.AutoSkipFailedSummaryActionTest$MockModule.configure : $r7 = virtualinvoke r0.<org.apache.ambari.server.serveraction.upgrades.AutoSkipFailedSummaryActionTest$MockModule: com.google.inject.binder.AnnotatedBindingBuilder bind(java.lang.Class)>(class "org/apache/ambari/server/state/Clusters")
+org.apache.ambari.server.serveraction.upgrades.AutoSkipFailedSummaryActionTest$MockModule.configure : $r4 = virtualinvoke r0.<org.apache.ambari.server.serveraction.upgrades.AutoSkipFailedSummaryActionTest$MockModule: com.google.inject.binder.AnnotatedBindingBuilder bind(java.lang.Class)>(class "org/apache/ambari/server/orm/dao/HostRoleCommandDAO")
+org.apache.ambari.server.serveraction.AbstractServerAction.setExecutionCommand : r0.<org.apache.ambari.server.serveraction.AbstractServerAction: org.apache.ambari.server.agent.ExecutionCommand executionCommand> = r1
+org.apache.ambari.server.agent.ExecutionCommand.getConfigurationTags : $r1 = r0.<org.apache.ambari.server.agent.ExecutionCommand: java.util.Map configurationTags>
+org.apache.ambari.server.agent.ExecutionCommand.setCommandParams : r0.<org.apache.ambari.server.agent.ExecutionCommand: java.util.Map commandParams> = r1
+org.apache.ambari.server.serveraction.upgrades.AutoSkipFailedSummaryActionTest.access$100 : $r1 = r0.<org.apache.ambari.server.serveraction.upgrades.AutoSkipFailedSummaryActionTest: org.apache.ambari.server.orm.dao.UpgradeDAO upgradeDAOMock>
+org.apache.ambari.server.agent.CommandReport.setStdOut : r0.<org.apache.ambari.server.agent.CommandReport: java.lang.String stdout> = r1
+org.apache.ambari.server.state.stack.OsFamily.init : r2 = null
+org.apache.ambari.server.state.stack.OsFamily.init : $r24 = new java.lang.RuntimeException
+org.apache.ambari.server.state.stack.OsFamily.init : $r8 = new java.io.File
+org.apache.ambari.server.state.stack.OsFamily.init : $r9 = new java.lang.Exception
+org.apache.ambari.server.state.stack.OsFamily.init : r19 = $r18
+org.apache.ambari.server.state.stack.OsFamily.init : $z0 = virtualinvoke r3.<java.io.File: boolean exists()>()
+org.apache.ambari.server.state.stack.OsFamily.init : $r20 = r0.<org.apache.ambari.server.state.stack.OsFamily: org.slf4j.Logger LOG>
+org.apache.ambari.server.controller.HostsMap.setupMap : $r11 = r0.<org.apache.ambari.server.controller.HostsMap: java.lang.String hostsMapFile>
+org.apache.ambari.server.controller.HostsMap.setupMap : r1 = null
+org.apache.ambari.server.controller.HostsMap.setupMap : if r1 == null goto return
+org.apache.ambari.server.controller.HostsMap.setupMap : $r6 = <org.apache.ambari.server.controller.HostsMap: org.slf4j.Logger LOG>
+org.apache.ambari.server.agent.ExecutionCommand.getRole : $r1 = r0.<org.apache.ambari.server.agent.ExecutionCommand: java.lang.String role>
+org.apache.ambari.server.configuration.Configuration.getSharedResourcesDirPath : $r1 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty SHARED_RESOURCES_DIR>
+org.apache.ambari.server.agent.ExecutionCommand.getRoleCommand : $r1 = r0.<org.apache.ambari.server.agent.ExecutionCommand: org.apache.ambari.server.RoleCommand roleCommand>
+org.apache.ambari.server.serveraction.AbstractServerAction.getExecutionCommand : $r1 = r0.<org.apache.ambari.server.serveraction.AbstractServerAction: org.apache.ambari.server.agent.ExecutionCommand executionCommand>
+org.apache.ambari.server.agent.CommandReport.setExitCode : r0.<org.apache.ambari.server.agent.CommandReport: int exitCode> = i0
+org.apache.ambari.server.serveraction.AbstractServerAction.createCommandReport : $r14 = new org.apache.ambari.server.agent.CommandReport
+org.apache.ambari.server.serveraction.AbstractServerAction.createCommandReport : $r22 = r0.<org.apache.ambari.server.serveraction.AbstractServerAction: org.apache.ambari.server.agent.ExecutionCommand executionCommand>
+org.apache.ambari.server.serveraction.AbstractServerAction.createCommandReport : $r15 = r0.<org.apache.ambari.server.serveraction.AbstractServerAction: org.apache.ambari.server.actionmanager.HostRoleCommand hostRoleCommand>
+org.apache.ambari.server.serveraction.AbstractServerAction.createCommandReport : $r11 = r0.<org.apache.ambari.server.serveraction.AbstractServerAction: org.apache.ambari.server.agent.ExecutionCommand executionCommand>
+org.apache.ambari.server.serveraction.AbstractServerAction.createCommandReport : $r12 = r0.<org.apache.ambari.server.serveraction.AbstractServerAction: org.apache.ambari.server.agent.ExecutionCommand executionCommand>
+org.apache.ambari.server.serveraction.AbstractServerAction.createCommandReport : r5 = null
+org.apache.ambari.server.serveraction.AbstractServerAction.createCommandReport : $r20 = r0.<org.apache.ambari.server.serveraction.AbstractServerAction: org.apache.ambari.server.agent.ExecutionCommand executionCommand>
+org.apache.ambari.server.serveraction.AbstractServerAction.createCommandReport : $r26 = r0.<org.apache.ambari.server.serveraction.AbstractServerAction: org.apache.ambari.server.agent.ExecutionCommand executionCommand>
+org.apache.ambari.server.serveraction.AbstractServerAction.createCommandReport : $r24 = r5
+org.apache.ambari.server.serveraction.AbstractServerAction.createCommandReport : virtualinvoke r5.<org.apache.ambari.server.agent.CommandReport: void setExitCode(int)>(i0)
+org.apache.ambari.server.serveraction.AbstractServerAction.createCommandReport : $r18 = r0.<org.apache.ambari.server.serveraction.AbstractServerAction: org.apache.ambari.server.agent.ExecutionCommand executionCommand>
+org.apache.ambari.server.serveraction.AbstractServerAction.createCommandReport : $r29 = r5
+org.apache.ambari.server.serveraction.AbstractServerAction.createCommandReport : $r33 = r5
+org.apache.ambari.server.serveraction.AbstractServerAction.createCommandReport : return r5
+org.apache.ambari.server.serveraction.AbstractServerAction.createCommandReport : $r8 = r0.<org.apache.ambari.server.serveraction.AbstractServerAction: org.apache.ambari.server.agent.ExecutionCommand executionCommand>
+org.apache.ambari.server.serveraction.AbstractServerAction.createCommandReport : $r31 = r5
+org.apache.ambari.server.serveraction.AbstractServerAction.createCommandReport : $r28 = r0.<org.apache.ambari.server.serveraction.AbstractServerAction: org.apache.ambari.server.agent.ExecutionCommand executionCommand>
+org.apache.ambari.server.serveraction.AbstractServerAction.createCommandReport : $r7 = r0.<org.apache.ambari.server.serveraction.AbstractServerAction: org.apache.ambari.server.actionmanager.HostRoleCommand hostRoleCommand>
+org.apache.ambari.server.serveraction.AbstractServerAction.createCommandReport : virtualinvoke r5.<org.apache.ambari.server.agent.CommandReport: void setStructuredOut(java.lang.String)>(r2)
+org.apache.ambari.server.serveraction.upgrades.AutoSkipFailedSummaryActionTest.access$200 : $r1 = r0.<org.apache.ambari.server.serveraction.upgrades.AutoSkipFailedSummaryActionTest: org.apache.ambari.server.orm.dao.HostRoleCommandDAO hostRoleCommandDAOMock>
+org.apache.ambari.server.configuration.Configuration.getProperty : r2 = null
+org.apache.ambari.server.configuration.Configuration.getProperty : $r4 = virtualinvoke r1.<org.apache.ambari.server.configuration.Configuration$ConfigurationProperty: java.lang.Object getDefaultValue()>()
+org.apache.ambari.server.configuration.Configuration.getProperty : $r5 = r0.<org.apache.ambari.server.configuration.Configuration: java.util.Properties properties>
+org.apache.ambari.server.configuration.Configuration.getProperty : $r3 = virtualinvoke r1.<org.apache.ambari.server.configuration.Configuration$ConfigurationProperty: java.lang.Object getDefaultValue()>()
+org.apache.ambari.server.agent.CommandReport.setRole : r0.<org.apache.ambari.server.agent.CommandReport: java.lang.String role> = r1
+org.apache.ambari.server.configuration.Configuration.loadSSLParams : $r15 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty SSL_TRUSTSTORE_TYPE>
+org.apache.ambari.server.configuration.Configuration.loadSSLParams : $r1 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty SSL_TRUSTSTORE_PATH>
+org.apache.ambari.server.configuration.Configuration.loadSSLParams : $r7 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty SSL_TRUSTSTORE_PASSWORD>
+org.apache.ambari.server.configuration.Configuration$ConfigurationProperty.getDefaultValue : $r1 = r0.<org.apache.ambari.server.configuration.Configuration$ConfigurationProperty: java.lang.Object m_defaultValue>
+org.apache.ambari.server.serveraction.upgrades.RangerKmsProxyConfig.execute : r4 = ""
+org.apache.ambari.server.serveraction.upgrades.RangerKmsProxyConfig.execute : interfaceinvoke r9.<org.apache.ambari.server.state.Config: void setProperties(java.util.Map)>(r10)
+org.apache.ambari.server.serveraction.upgrades.RangerKmsProxyConfig.execute : interfaceinvoke r9.<org.apache.ambari.server.state.Config: void save()>()
+org.apache.ambari.server.serveraction.upgrades.RangerKmsProxyConfig.execute : $r29 = interfaceinvoke r3.<org.apache.ambari.server.state.Cluster: org.apache.ambari.server.state.SecurityType getSecurityType()>()
+org.apache.ambari.server.serveraction.upgrades.RangerKmsProxyConfig.execute : interfaceinvoke r10.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>(r13, "*")
+org.apache.ambari.server.serveraction.upgrades.RangerKmsProxyConfig.execute : r7 = "ranger_user"
+org.apache.ambari.server.serveraction.upgrades.RangerKmsProxyConfig.execute : $r15 = r0.<org.apache.ambari.server.serveraction.upgrades.RangerKmsProxyConfig: org.apache.ambari.server.state.Clusters m_clusters>
+org.apache.ambari.server.serveraction.upgrades.RangerKmsProxyConfig.execute : $r31 = new java.lang.StringBuilder
+org.apache.ambari.server.serveraction.upgrades.RangerKmsProxyConfig.execute : $r57 = <org.apache.ambari.server.actionmanager.HostRoleStatus: org.apache.ambari.server.actionmanager.HostRoleStatus COMPLETED>
+org.apache.ambari.server.serveraction.upgrades.RangerKmsProxyConfig.execute : if null != r9 goto r10 = interfaceinvoke r9.<org.apache.ambari.server.state.Config: java.util.Map getProperties()>()
+org.apache.ambari.server.serveraction.upgrades.RangerKmsProxyConfig.execute : $r19 = interfaceinvoke r5.<org.apache.ambari.server.state.Config: java.util.Map getProperties()>()
+org.apache.ambari.server.serveraction.upgrades.RangerKmsProxyConfig.execute : interfaceinvoke r10.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>(r12, "*")
+org.apache.ambari.server.serveraction.upgrades.RangerKmsProxyConfig.execute : r5 = interfaceinvoke r3.<org.apache.ambari.server.state.Cluster: org.apache.ambari.server.state.Config getDesiredConfigByType(java.lang.String)>("ranger-env")
+org.apache.ambari.server.serveraction.upgrades.RangerKmsProxyConfig.execute : r10 = interfaceinvoke r9.<org.apache.ambari.server.state.Config: java.util.Map getProperties()>()
+org.apache.ambari.server.serveraction.upgrades.RangerKmsProxyConfig.execute : interfaceinvoke r10.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>(r11, "*")
+org.apache.ambari.server.serveraction.upgrades.RangerKmsProxyConfig.execute : r9 = interfaceinvoke r3.<org.apache.ambari.server.state.Cluster: org.apache.ambari.server.state.Config getDesiredConfigByType(java.lang.String)>("kms-site")
+org.apache.ambari.server.serveraction.upgrades.RangerKmsProxyConfig.execute : $r46 = new java.lang.StringBuilder
+org.apache.ambari.server.serveraction.upgrades.RangerKmsProxyConfig.execute : $r14 = virtualinvoke r0.<org.apache.ambari.server.serveraction.upgrades.RangerKmsProxyConfig: org.apache.ambari.server.agent.ExecutionCommand getExecutionCommand()>()
+org.apache.ambari.server.serveraction.upgrades.RangerKmsProxyConfig.execute : $r39 = new java.lang.StringBuilder
+org.apache.ambari.server.serveraction.upgrades.RangerKmsProxyConfig.execute : if null != r5 goto r7 = "ranger_user"
+org.apache.ambari.server.serveraction.upgrades.RangerKmsProxyConfig.execute : goto [?= $r57 = <org.apache.ambari.server.actionmanager.HostRoleStatus: org.apache.ambari.server.actionmanager.HostRoleStatus COMPLETED>]
+org.apache.ambari.server.serveraction.upgrades.RangerKmsProxyConfig.execute : if null != r8 goto r9 = interfaceinvoke r3.<org.apache.ambari.server.state.Cluster: org.apache.ambari.server.state.Config getDesiredConfigByType(java.lang.String)>("kms-site")
+org.apache.ambari.server.serveraction.upgrades.RangerKmsProxyConfig.execute : $r35 = new java.lang.StringBuilder
+org.apache.ambari.server.state.StackId.parseStackIdHelper : if r2 == null goto r1.<org.apache.ambari.server.state.StackId: java.lang.String stackName> = ""
+org.apache.ambari.server.state.StackId.parseStackIdHelper : $r8 = virtualinvoke r2.<java.lang.String: java.lang.String substring(int,int)>(0, i0)
+org.apache.ambari.server.state.StackId.parseStackIdHelper : i0 = virtualinvoke r2.<java.lang.String: int indexOf(int)>(45)
+org.apache.ambari.server.state.StackId.parseStackIdHelper : if i0 == -1 goto $r3 = new java.lang.RuntimeException
+org.apache.ambari.server.state.StackId.parseStackIdHelper : $i3 = i0 + 1
+org.apache.ambari.server.agent.CommandReport.setTaskId : r0.<org.apache.ambari.server.agent.CommandReport: long taskId> = l0
+org.apache.ambari.server.serveraction.upgrades.AutoSkipFailedSummaryActionTest.access$300 : $r1 = r0.<org.apache.ambari.server.serveraction.upgrades.AutoSkipFailedSummaryActionTest: org.apache.ambari.server.state.Clusters clustersMock>
+org.apache.ambari.server.configuration.Configuration.getApiSSLAuthentication : $r1 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty API_USE_SSL>
+org.apache.ambari.server.agent.CommandReport.setActionId : r0.<org.apache.ambari.server.agent.CommandReport: java.lang.String actionId> = r1
+org.apache.ambari.server.serveraction.AbstractServerAction.setHostRoleCommand : r0.<org.apache.ambari.server.serveraction.AbstractServerAction: org.apache.ambari.server.actionmanager.HostRoleCommand hostRoleCommand> = r1
+org.apache.ambari.server.security.authentication.kerberos.AmbariKerberosAuthenticationProperties.isKerberosAuthenticationEnabled : $z0 = r0.<org.apache.ambari.server.security.authentication.kerberos.AmbariKerberosAuthenticationProperties: boolean kerberosAuthenticationEnabled>
+org.apache.ambari.server.agent.ExecutionCommand.getTaskId : $l0 = r0.<org.apache.ambari.server.agent.ExecutionCommand: long taskId>
+org.apache.ambari.server.orm.InMemoryDefaultTestModule.configure : $r52 = r0.<org.apache.ambari.server.orm.InMemoryDefaultTestModule: java.util.Properties properties>
+org.apache.ambari.server.orm.InMemoryDefaultTestModule.configure : $r34 = r0.<org.apache.ambari.server.orm.InMemoryDefaultTestModule: java.util.Properties properties>
+org.apache.ambari.server.orm.InMemoryDefaultTestModule.configure : $r59 = newarray (com.google.inject.Module)[1]
+org.apache.ambari.server.orm.InMemoryDefaultTestModule.configure : $r20 = r0.<org.apache.ambari.server.orm.InMemoryDefaultTestModule: java.util.Properties properties>
+org.apache.ambari.server.orm.InMemoryDefaultTestModule.configure : $r38 = r0.<org.apache.ambari.server.orm.InMemoryDefaultTestModule: java.util.Properties properties>
+org.apache.ambari.server.orm.InMemoryDefaultTestModule.configure : r74 = $r73
+org.apache.ambari.server.orm.InMemoryDefaultTestModule.configure : $r17 = r0.<org.apache.ambari.server.orm.InMemoryDefaultTestModule: java.util.Properties properties>
+org.apache.ambari.server.orm.InMemoryDefaultTestModule.configure : $r24 = r0.<org.apache.ambari.server.orm.InMemoryDefaultTestModule: java.util.Properties properties>
+org.apache.ambari.server.orm.InMemoryDefaultTestModule.configure : r4 = "src/test/resources/"
+org.apache.ambari.server.orm.InMemoryDefaultTestModule.configure : $r8 = staticinvoke <java.lang.System: java.lang.String getProperty(java.lang.String)>("os.name")
+org.apache.ambari.server.orm.InMemoryDefaultTestModule.configure : $r27 = r0.<org.apache.ambari.server.orm.InMemoryDefaultTestModule: java.util.Properties properties>
+org.apache.ambari.server.orm.InMemoryDefaultTestModule.configure : r1 = "src/test/resources/stacks"
+org.apache.ambari.server.orm.InMemoryDefaultTestModule.configure : $r55 = r0.<org.apache.ambari.server.orm.InMemoryDefaultTestModule: java.util.Properties properties>
+org.apache.ambari.server.orm.InMemoryDefaultTestModule.configure : $r41 = r0.<org.apache.ambari.server.orm.InMemoryDefaultTestModule: java.util.Properties properties>
+org.apache.ambari.server.orm.InMemoryDefaultTestModule.configure : $r75 = new java.lang.RuntimeException
+org.apache.ambari.server.orm.InMemoryDefaultTestModule.configure : $r31 = r0.<org.apache.ambari.server.orm.InMemoryDefaultTestModule: java.util.Properties properties>
+org.apache.ambari.server.orm.InMemoryDefaultTestModule.configure : r3 = "src/test/resources/"
+org.apache.ambari.server.orm.InMemoryDefaultTestModule.configure : $r45 = r0.<org.apache.ambari.server.orm.InMemoryDefaultTestModule: java.util.Properties properties>
+org.apache.ambari.server.orm.InMemoryDefaultTestModule.configure : $r48 = r0.<org.apache.ambari.server.orm.InMemoryDefaultTestModule: java.util.Properties properties>
+org.apache.ambari.server.orm.InMemoryDefaultTestModule.configure : r2 = "src/test/resources/version"
+org.apache.ambari.server.configuration.Configuration.getHostsMapFile : $r1 = <org.apache.ambari.server.configuration.Configuration: org.slf4j.Logger LOG>
+org.apache.ambari.server.configuration.Configuration.getHostsMapFile : $r8 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty SRVR_HOSTS_MAPPING>
+org.apache.ambari.server.agent.ExecutionCommand.setClusterName : r0.<org.apache.ambari.server.agent.ExecutionCommand: java.lang.String clusterName> = r1
+org.apache.ambari.server.agent.CommandReport.setServiceName : r0.<org.apache.ambari.server.agent.CommandReport: java.lang.String serviceName> = r1
+org.apache.ambari.server.security.authentication.kerberos.AmbariKerberosAuthenticationProperties.setKerberosAuthenticationEnabled : r0.<org.apache.ambari.server.security.authentication.kerberos.AmbariKerberosAuthenticationProperties: boolean kerberosAuthenticationEnabled> = z0
+org.apache.ambari.server.agent.ExecutionCommand.getClusterName : $r1 = r0.<org.apache.ambari.server.agent.ExecutionCommand: java.lang.String clusterName>
+org.apache.ambari.server.agent.CommandReport.setStatus : r0.<org.apache.ambari.server.agent.CommandReport: java.lang.String status> = r1
+org.apache.ambari.server.configuration.Configuration.createKerberosAuthenticationProperties : $r3 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty KERBEROS_AUTH_ENABLED>
+org.apache.ambari.server.configuration.Configuration.createKerberosAuthenticationProperties : return r2
+org.apache.ambari.server.configuration.Configuration.createKerberosAuthenticationProperties : $z1 = virtualinvoke r2.<org.apache.ambari.server.security.authentication.kerberos.AmbariKerberosAuthenticationProperties: boolean isKerberosAuthenticationEnabled()>()
+org.apache.ambari.server.configuration.Configuration.createKerberosAuthenticationProperties : $r1 = new org.apache.ambari.server.security.authentication.kerberos.AmbariKerberosAuthenticationProperties
+org.apache.ambari.server.agent.CommandReport.setConfigurationTags : r0.<org.apache.ambari.server.agent.CommandReport: java.util.Map configurationTags> = r1

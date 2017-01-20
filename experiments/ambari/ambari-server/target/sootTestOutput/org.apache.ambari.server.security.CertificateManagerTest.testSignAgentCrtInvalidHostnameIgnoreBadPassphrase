@@ -1,0 +1,21 @@
+org.apache.ambari.server.configuration.Configuration$ConfigurationProperty.getKey : $r1 = r0.<org.apache.ambari.server.configuration.Configuration$ConfigurationProperty: java.lang.String m_key>
+org.apache.ambari.server.security.CertificateManagerTest.getInjector : $r2 = newarray (com.google.inject.Module)[1]
+org.apache.ambari.server.security.SignCertResponse.getResult : $r1 = r0.<org.apache.ambari.server.security.SignCertResponse: java.lang.String result>
+org.apache.ambari.server.security.SignCertResponse.setResult : r0.<org.apache.ambari.server.security.SignCertResponse: java.lang.String result> = r1
+org.apache.ambari.server.security.CertificateManagerTest$2.configure : $r1 = virtualinvoke r0.<org.apache.ambari.server.security.CertificateManagerTest$2: com.google.inject.binder.AnnotatedBindingBuilder bind(java.lang.Class)>(class "org/apache/ambari/server/state/stack/OsFamily")
+org.apache.ambari.server.security.CertificateManagerTest$2.configure : $r4 = virtualinvoke r0.<org.apache.ambari.server.security.CertificateManagerTest$2: com.google.inject.binder.AnnotatedBindingBuilder bind(java.lang.Class)>(class "org/apache/ambari/server/configuration/Configuration")
+org.apache.ambari.server.security.SignCertResponse.setMessage : r0.<org.apache.ambari.server.security.SignCertResponse: java.lang.String message> = r1
+org.apache.ambari.server.security.SignCertResponse.getMessage : $r1 = r0.<org.apache.ambari.server.security.SignCertResponse: java.lang.String message>
+org.apache.ambari.server.security.CertificateManager.signAgentCrt : $r19 = <org.apache.ambari.server.security.CertificateManager: org.slf4j.Logger LOG>
+org.apache.ambari.server.security.CertificateManager.signAgentCrt : $r26 = <org.apache.ambari.server.security.CertificateManager: org.slf4j.Logger LOG>
+org.apache.ambari.server.security.CertificateManager.signAgentCrt : $r25 = <org.apache.ambari.server.security.CertificateManager: org.slf4j.Logger LOG>
+org.apache.ambari.server.security.CertificateManager.signAgentCrt : $r4 = new org.apache.ambari.server.security.SignCertResponse
+org.apache.ambari.server.security.CertificateManager.signAgentCrt : $z0 = staticinvoke <org.apache.commons.lang.StringUtils: boolean isEmpty(java.lang.String)>(r20)
+org.apache.ambari.server.security.CertificateManager.signAgentCrt : $r22 = r0.<org.apache.ambari.server.security.CertificateManager: org.apache.ambari.server.configuration.Configuration configs>
+org.apache.ambari.server.security.CertificateManager.signAgentCrt : return r5
+org.apache.ambari.server.security.CertificateManager.signAgentCrt : $r33 = virtualinvoke r3.<java.lang.String: java.lang.String trim()>()
+org.apache.ambari.server.security.CertificateManager.signAgentCrt : virtualinvoke r5.<org.apache.ambari.server.security.SignCertResponse: void setMessage(java.lang.String)>("Incorrect passphrase from the agent")
+org.apache.ambari.server.security.CertificateManager.signAgentCrt : r20 = staticinvoke <org.apache.commons.lang.StringUtils: java.lang.String trim(java.lang.String)>(r1)
+org.apache.ambari.server.security.CertificateManager.signAgentCrt : $r27 = r0.<org.apache.ambari.server.security.CertificateManager: org.apache.ambari.server.configuration.Configuration configs>
+org.apache.ambari.server.security.CertificateManager.signAgentCrt : virtualinvoke r5.<org.apache.ambari.server.security.SignCertResponse: void setResult(java.lang.String)>("ERROR")
+org.apache.ambari.server.security.CertificateManager.signAgentCrt : $r34 = <org.apache.ambari.server.security.CertificateManager: org.slf4j.Logger LOG>

@@ -1,0 +1,9 @@
+org.apache.ambari.server.orm.db.DDLTests.verifyDDL : $r2 = <org.apache.ambari.server.orm.db.DDLTests: org.slf4j.Logger LOG>
+org.apache.ambari.server.orm.db.DDLTests.verifyDDL : r3 = staticinvoke <org.apache.ambari.server.orm.db.DDLTestUtils: org.apache.ambari.server.orm.db.DDL getDdl(java.lang.String)>(r1)
+org.apache.ambari.server.orm.db.DDLTestUtils.getDdlUrl : $r1 = new java.lang.StringBuilder
+org.apache.ambari.server.orm.db.DDLTestUtils.loadDdl : r1 = staticinvoke <org.apache.ambari.server.orm.db.DDLTestUtils: java.util.List loadFile(java.lang.String)>(r0)
+org.apache.ambari.server.orm.db.DDLTestUtils.loadFile : $r6 = staticinvoke <org.apache.ambari.server.orm.db.DDLTestUtils: java.net.URL getDdlUrl(java.lang.String)>(r0)
+org.apache.ambari.server.orm.db.DDLTestUtils.access$000 : $r1 = staticinvoke <org.apache.ambari.server.orm.db.DDLTestUtils: org.apache.ambari.server.orm.db.DDL loadDdl(java.lang.String)>(r0)
+org.apache.ambari.server.orm.db.DDLTestUtils$1.load : $r2 = staticinvoke <org.apache.ambari.server.orm.db.DDLTestUtils: org.apache.ambari.server.orm.db.DDL access$000(java.lang.String)>(r1)
+org.apache.ambari.server.orm.db.DDLTestUtils$1.load : $r2 = (java.lang.String) r1
+org.apache.ambari.server.orm.db.DDLTestUtils.getDdl : $r1 = <org.apache.ambari.server.orm.db.DDLTestUtils: com.google.common.cache.LoadingCache ddlCache>

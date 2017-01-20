@@ -1,0 +1,14 @@
+org.apache.ambari.server.orm.entities.ViewEntityEntity.setViewInstanceName : virtualinvoke r0.<org.apache.ambari.server.orm.entities.ViewEntityEntity: void _persistence_set_viewInstanceName(java.lang.String)>(r1)
+org.apache.ambari.server.orm.entities.ViewEntityEntity.equals : if r1 == null goto return 0
+org.apache.ambari.server.orm.entities.ViewEntityEntity.equals : $r11 = virtualinvoke r0.<org.apache.ambari.server.orm.entities.ViewEntityEntity: java.lang.String _persistence_get_idProperty()>()
+org.apache.ambari.server.orm.entities.ViewEntityEntity.equals : return 1
+org.apache.ambari.server.orm.entities.ViewEntityEntity.equals : if r0 != r1 goto (branch)
+org.apache.ambari.server.orm.entities.ViewEntityEntity.equals : $r5 = virtualinvoke r0.<org.apache.ambari.server.orm.entities.ViewEntityEntity: java.lang.String _persistence_get_className()>()
+org.apache.ambari.server.orm.entities.ViewEntityEntity.equals : $r7 = virtualinvoke r0.<org.apache.ambari.server.orm.entities.ViewEntityEntity: java.lang.Long _persistence_get_id()>()
+org.apache.ambari.server.orm.entities.ViewEntityEntity.equals : r2 = (org.apache.ambari.server.orm.entities.ViewEntityEntity) r1
+org.apache.ambari.server.orm.entities.ViewEntityEntity.equals : $r15 = virtualinvoke r0.<org.apache.ambari.server.orm.entities.ViewEntityEntity: java.lang.String _persistence_get_viewInstanceName()>()
+org.apache.ambari.server.orm.entities.ViewEntityEntity.equals : $r17 = virtualinvoke r0.<org.apache.ambari.server.orm.entities.ViewEntityEntity: java.lang.String _persistence_get_viewName()>()
+org.apache.ambari.server.orm.entities.ViewEntityEntity.setId : virtualinvoke r0.<org.apache.ambari.server.orm.entities.ViewEntityEntity: void _persistence_set_id(java.lang.Long)>(r1)
+org.apache.ambari.server.orm.entities.ViewEntityEntity.setViewName : virtualinvoke r0.<org.apache.ambari.server.orm.entities.ViewEntityEntity: void _persistence_set_viewName(java.lang.String)>(r1)
+org.apache.ambari.server.orm.entities.ViewEntityEntity.setClassName : virtualinvoke r0.<org.apache.ambari.server.orm.entities.ViewEntityEntity: void _persistence_set_className(java.lang.String)>(r1)
+org.apache.ambari.server.orm.entities.ViewEntityEntity.setIdProperty : virtualinvoke r0.<org.apache.ambari.server.orm.entities.ViewEntityEntity: void _persistence_set_idProperty(java.lang.String)>(r1)

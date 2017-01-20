@@ -1,0 +1,61 @@
+org.apache.ambari.server.controller.spi.Resource$Type.hashCode : return i3
+org.apache.ambari.server.controller.spi.Resource$Type.hashCode : $r1 = r0.<org.apache.ambari.server.controller.spi.Resource$Type: java.lang.String name>
+org.apache.ambari.server.controller.spi.Resource$Type.hashCode : $i1 = 31 * i0
+org.apache.ambari.server.api.services.ResultImpl.getStatus : $r1 = r0.<org.apache.ambari.server.api.services.ResultImpl: org.apache.ambari.server.api.services.ResultStatus m_status>
+org.apache.ambari.server.controller.spi.Resource$Type.equals : return 1
+org.apache.ambari.server.controller.spi.Resource$Type.equals : if r1 == null goto return 0
+org.apache.ambari.server.controller.spi.Resource$Type.equals : $i0 = r0.<org.apache.ambari.server.controller.spi.Resource$Type: int ordinal>
+org.apache.ambari.server.controller.spi.Resource$Type.equals : if r0 != r1 goto (branch)
+org.apache.ambari.server.controller.spi.Resource$Type.equals : r2 = (org.apache.ambari.server.controller.spi.Resource$Type) r1
+org.apache.ambari.server.api.handlers.QueryCreateHandler.buildCreateSet : $r25 = interfaceinvoke r1.<org.apache.ambari.server.api.services.Request: org.apache.ambari.server.api.services.RequestBody getBody()>()
+org.apache.ambari.server.api.handlers.QueryCreateHandler.buildCreateSet : goto [?= $z2 = interfaceinvoke r17.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.api.handlers.QueryCreateHandler.buildCreateSet : r20 = interfaceinvoke r19.<java.util.Set: java.util.Iterator iterator()>()
+org.apache.ambari.server.api.handlers.QueryCreateHandler.buildCreateSet : $r40 = interfaceinvoke r7.<org.apache.ambari.server.controller.spi.ClusterController: org.apache.ambari.server.controller.spi.Schema getSchema(org.apache.ambari.server.controller.spi.Resource$Type)>(r23)
+org.apache.ambari.server.api.handlers.QueryCreateHandler.buildCreateSet : r5 = interfaceinvoke r1.<org.apache.ambari.server.api.services.Request: org.apache.ambari.server.api.resources.ResourceInstance getResource()>()
+org.apache.ambari.server.api.handlers.QueryCreateHandler.buildCreateSet : interfaceinvoke r24.<java.util.Set: boolean add(java.lang.Object)>(r22)
+org.apache.ambari.server.api.handlers.QueryCreateHandler.buildCreateSet : $r35 = interfaceinvoke r18.<java.util.Map$Entry: java.lang.Object getValue()>()
+org.apache.ambari.server.api.handlers.QueryCreateHandler.buildCreateSet : r15 = interfaceinvoke r3.<java.util.Set: java.util.Iterator iterator()>()
+org.apache.ambari.server.api.handlers.QueryCreateHandler.buildCreateSet : r7 = virtualinvoke r0.<org.apache.ambari.server.api.handlers.QueryCreateHandler: org.apache.ambari.server.controller.spi.ClusterController getClusterController()>()
+org.apache.ambari.server.api.handlers.QueryCreateHandler.buildCreateSet : $r37 = new java.util.HashMap
+org.apache.ambari.server.api.handlers.QueryCreateHandler.buildCreateSet : $r27 = interfaceinvoke r5.<org.apache.ambari.server.api.resources.ResourceInstance: org.apache.ambari.server.api.resources.ResourceDefinition getResourceDefinition()>()
+org.apache.ambari.server.api.handlers.QueryCreateHandler.buildCreateSet : $r45 = virtualinvoke r4.<java.util.HashMap: java.lang.Object get(java.lang.Object)>(r23)
+org.apache.ambari.server.api.handlers.QueryCreateHandler.buildCreateSet : r11 = interfaceinvoke r10.<java.util.Collection: java.util.Iterator iterator()>()
+org.apache.ambari.server.api.handlers.QueryCreateHandler.buildCreateSet : r14 = interfaceinvoke r13.<org.apache.ambari.server.controller.spi.Resource: java.lang.Object getPropertyValue(java.lang.String)>(r8)
+org.apache.ambari.server.api.handlers.QueryCreateHandler.buildCreateSet : $r38 = interfaceinvoke r18.<java.util.Map$Entry: java.lang.Object getKey()>()
+org.apache.ambari.server.api.handlers.QueryCreateHandler.buildCreateSet : r9 = interfaceinvoke r2.<org.apache.ambari.server.api.services.Result: org.apache.ambari.server.api.util.TreeNode getResultTree()>()
+org.apache.ambari.server.api.handlers.QueryCreateHandler.buildCreateSet : if r24 != null goto interfaceinvoke r24.<java.util.Set: boolean add(java.lang.Object)>(r22)
+org.apache.ambari.server.api.handlers.QueryCreateHandler.buildCreateSet : $r28 = interfaceinvoke r7.<org.apache.ambari.server.controller.spi.ClusterController: org.apache.ambari.server.controller.spi.Schema getSchema(org.apache.ambari.server.controller.spi.Resource$Type)>(r6)
+org.apache.ambari.server.api.handlers.QueryCreateHandler.buildCreateSet : $r30 = interfaceinvoke r12.<org.apache.ambari.server.api.util.TreeNode: java.lang.Object getObject()>()
+org.apache.ambari.server.api.handlers.QueryCreateHandler.buildCreateSet : virtualinvoke r4.<java.util.HashMap: java.lang.Object put(java.lang.Object,java.lang.Object)>(r23, r24)
+org.apache.ambari.server.api.handlers.QueryCreateHandler.buildCreateSet : r10 = interfaceinvoke r9.<org.apache.ambari.server.api.util.TreeNode: java.util.Collection getChildren()>()
+org.apache.ambari.server.api.handlers.QueryCreateHandler.buildCreateSet : goto [?= $z0 = interfaceinvoke r11.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.api.handlers.QueryCreateHandler.buildCreateSet : return r4
+org.apache.ambari.server.api.handlers.QueryCreateHandler.buildCreateSet : $r46 = new java.util.HashSet
+org.apache.ambari.server.api.handlers.QueryCreateHandler.buildCreateSet : goto [?= $z3 = interfaceinvoke r20.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.api.handlers.QueryCreateHandler.buildCreateSet : $r32 = virtualinvoke r16.<org.apache.ambari.server.api.services.NamedPropertySet: java.util.Map getProperties()>()
+org.apache.ambari.server.api.handlers.QueryCreateHandler.buildCreateSet : goto [?= $z1 = interfaceinvoke r15.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.api.handlers.QueryCreateHandler.buildCreateSet : $r26 = new java.util.HashMap
+org.apache.ambari.server.api.services.ResultStatus.getStatus : $r1 = r0.<org.apache.ambari.server.api.services.ResultStatus: org.apache.ambari.server.api.services.ResultStatus$STATUS m_status>
+org.apache.ambari.server.api.util.TreeNodeImpl.getObject : $r1 = r0.<org.apache.ambari.server.api.util.TreeNodeImpl: java.lang.Object m_object>
+org.apache.ambari.server.api.handlers.QueryCreateHandlerTest$TestQueryCreateHandler.getReadHandler : $r1 = r0.<org.apache.ambari.server.api.handlers.QueryCreateHandlerTest$TestQueryCreateHandler: org.apache.ambari.server.api.handlers.RequestHandler m_testReadHandler>
+org.apache.ambari.server.api.handlers.QueryCreateHandlerTest$TestQueryCreateHandler.getClusterController : $r1 = r0.<org.apache.ambari.server.api.handlers.QueryCreateHandlerTest$TestQueryCreateHandler: org.apache.ambari.server.controller.spi.ClusterController m_controller>
+org.apache.ambari.server.api.services.NamedPropertySet.hashCode : $r1 = r0.<org.apache.ambari.server.api.services.NamedPropertySet: java.lang.String m_name>
+org.apache.ambari.server.api.services.NamedPropertySet.hashCode : $i2 = 31 * i0
+org.apache.ambari.server.api.services.NamedPropertySet.hashCode : return i4
+org.apache.ambari.server.api.handlers.QueryCreateHandler.handleRequest : $i0 = interfaceinvoke r3.<java.util.Map: int size()>()
+org.apache.ambari.server.api.handlers.QueryCreateHandler.handleRequest : $i1 = interfaceinvoke r3.<java.util.Map: int size()>()
+org.apache.ambari.server.api.handlers.QueryCreateHandler.handleRequest : $r9 = virtualinvoke r0.<org.apache.ambari.server.api.handlers.QueryCreateHandler: org.apache.ambari.server.api.handlers.RequestHandler getReadHandler()>()
+org.apache.ambari.server.api.handlers.QueryCreateHandler.handleRequest : goto [?= $i0 = interfaceinvoke r3.<java.util.Map: int size()>()]
+org.apache.ambari.server.api.handlers.QueryCreateHandler.handleRequest : $r10 = interfaceinvoke r2.<org.apache.ambari.server.api.services.Result: org.apache.ambari.server.api.services.ResultStatus getStatus()>()
+org.apache.ambari.server.api.handlers.QueryCreateHandler.handleRequest : r3 = specialinvoke r0.<org.apache.ambari.server.api.handlers.QueryCreateHandler: java.util.Map buildCreateSet(org.apache.ambari.server.api.services.Request,org.apache.ambari.server.api.services.Result)>(r1, r2)
+org.apache.ambari.server.api.handlers.QueryCreateHandler.createInvalidRequestResult : $r2 = new org.apache.ambari.server.api.services.ResultImpl
+org.apache.ambari.server.api.services.NamedPropertySet.getProperties : $r1 = r0.<org.apache.ambari.server.api.services.NamedPropertySet: java.util.Map m_mapProperties>
+org.apache.ambari.server.api.services.ResultStatus.getMessage : $r1 = r0.<org.apache.ambari.server.api.services.ResultStatus: java.lang.String m_msg>
+org.apache.ambari.server.api.handlers.QueryCreateHandler.getCreateType : $r13 = interfaceinvoke r3.<org.apache.ambari.server.api.resources.ResourceInstance: org.apache.ambari.server.api.resources.ResourceDefinition getResourceDefinition()>()
+org.apache.ambari.server.api.handlers.QueryCreateHandler.getCreateType : $r5 = interfaceinvoke r1.<org.apache.ambari.server.api.resources.ResourceInstance: java.util.Map getSubResources()>()
+org.apache.ambari.server.api.handlers.QueryCreateHandler.getCreateType : if r3 != null goto $r13 = interfaceinvoke r3.<org.apache.ambari.server.api.resources.ResourceInstance: org.apache.ambari.server.api.resources.ResourceDefinition getResourceDefinition()>()
+org.apache.ambari.server.api.handlers.QueryCreateHandler.getCreateType : if r2 == null goto $r4 = new java.lang.IllegalArgumentException
+org.apache.ambari.server.api.util.TreeNodeImpl.addChild : $r3 = new org.apache.ambari.server.api.util.TreeNodeImpl
+org.apache.ambari.server.api.util.TreeNodeImpl.addChild : return r4
+org.apache.ambari.server.api.util.TreeNodeImpl.addChild : $r5 = r0.<org.apache.ambari.server.api.util.TreeNodeImpl: java.util.Map m_mapChildren>
+org.apache.ambari.server.api.util.TreeNodeImpl.getChildren : $r1 = r0.<org.apache.ambari.server.api.util.TreeNodeImpl: java.util.Map m_mapChildren>

@@ -1,0 +1,7 @@
+org.apache.ambari.server.serveraction.upgrades.OozieConfigCalculation.processPropertyValue : $r5 = virtualinvoke r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\n")
+org.apache.ambari.server.serveraction.upgrades.OozieConfigCalculation.processPropertyValue : $r4 = new java.lang.StringBuilder
+org.apache.ambari.server.serveraction.upgrades.OozieConfigCalculation.processPropertyValue : $r7 = virtualinvoke r3.<java.lang.StringBuilder: java.lang.String toString()>()
+org.apache.ambari.server.serveraction.upgrades.OozieConfigCalculation.processPropertyValue : r1 = staticinvoke <java.util.regex.Pattern: java.util.regex.Pattern compile(java.lang.String,int)>("^export HADOOP_OPTS=.*-Dhdp.version=.*$", 8)
+org.apache.ambari.server.serveraction.upgrades.OozieConfigCalculation.processPropertyValue : return r0
+org.apache.ambari.server.serveraction.upgrades.OozieConfigCalculation.processPropertyValue : $z0 = virtualinvoke r2.<java.util.regex.Matcher: boolean find()>()
+org.apache.ambari.server.serveraction.upgrades.OozieConfigCalculation.processPropertyValue : r2 = virtualinvoke r1.<java.util.regex.Pattern: java.util.regex.Matcher matcher(java.lang.CharSequence)>(r0)

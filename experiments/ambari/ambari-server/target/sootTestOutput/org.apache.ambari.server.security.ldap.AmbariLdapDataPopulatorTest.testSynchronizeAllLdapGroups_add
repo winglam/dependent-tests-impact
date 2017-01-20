@@ -1,0 +1,45 @@
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.getInternalUsers : return r2
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.getInternalUsers : r3 = interfaceinvoke r1.<java.util.List: java.util.Iterator iterator()>()
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.getInternalUsers : $r6 = new java.util.HashMap
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.getInternalUsers : $r7 = <org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator: org.slf4j.Logger LOG>
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.getInternalUsers : $r5 = r0.<org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator: org.apache.ambari.server.security.authorization.Users users>
+org.apache.ambari.server.utils.AmbariPath.getPath : $r3 = <org.apache.ambari.server.utils.AmbariPath: org.slf4j.Logger LOG>
+org.apache.ambari.server.utils.AmbariPath.getPath : $r1 = <org.apache.ambari.server.utils.AmbariPath: java.lang.String rootDirectory>
+org.apache.ambari.server.utils.AmbariPath.getPath : return r0
+org.apache.ambari.server.security.ldap.LdapBatchDto.getUsersToBeCreated : $r1 = r0.<org.apache.ambari.server.security.ldap.LdapBatchDto: java.util.Set usersToBeCreated>
+org.apache.ambari.server.security.ldap.LdapBatchDto.getUsersToBecomeLdap : $r1 = r0.<org.apache.ambari.server.security.ldap.LdapBatchDto: java.util.Set usersToBecomeLdap>
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulatorTest$AmbariLdapDataPopulatorTestInstance.loadLdapTemplate : $r1 = r0.<org.apache.ambari.server.security.ldap.AmbariLdapDataPopulatorTest$AmbariLdapDataPopulatorTestInstance: org.springframework.ldap.core.LdapTemplate ldapTemplate>
+org.apache.ambari.server.security.ldap.LdapBatchDto.getGroupsToBeRemoved : $r1 = r0.<org.apache.ambari.server.security.ldap.LdapBatchDto: java.util.Set groupsToBeRemoved>
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.addLdapGroup : $z0 = interfaceinvoke r2.<java.util.Map: boolean containsKey(java.lang.Object)>(r3)
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.addLdapGroup : $r10 = virtualinvoke r1.<org.apache.ambari.server.security.ldap.LdapBatchDto: java.util.Set getGroupsProcessedInternal()>()
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.addLdapGroup : $r11 = virtualinvoke r1.<org.apache.ambari.server.security.ldap.LdapBatchDto: java.util.Set getGroupsToBeCreated()>()
+org.apache.ambari.server.security.ldap.LdapBatchDto.getGroupsProcessedInternal : $r1 = r0.<org.apache.ambari.server.security.ldap.LdapBatchDto: java.util.Set groupsProcessedInternal>
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulatorTest$TestAmbariLdapDataPopulator.setLdapServerProperties : r0.<org.apache.ambari.server.security.ldap.AmbariLdapDataPopulatorTest$TestAmbariLdapDataPopulator: org.apache.ambari.server.security.authorization.LdapServerProperties ldapServerProperties> = r1
+org.apache.ambari.server.configuration.Configuration$ConfigurationProperty.getDefaultValue : $r1 = r0.<org.apache.ambari.server.configuration.Configuration$ConfigurationProperty: java.lang.Object m_defaultValue>
+org.apache.ambari.server.security.ldap.LdapBatchDto.getGroupsToBeCreated : $r1 = r0.<org.apache.ambari.server.security.ldap.LdapBatchDto: java.util.Set groupsToBeCreated>
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.getInternalGroups : return r2
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.getInternalGroups : r3 = interfaceinvoke r1.<java.util.List: java.util.Iterator iterator()>()
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.getInternalGroups : $r6 = new java.util.HashMap
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.getInternalGroups : $r8 = virtualinvoke r4.<org.apache.ambari.server.security.authorization.Group: java.lang.String getGroupName()>()
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.getInternalGroups : $r5 = r0.<org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator: org.apache.ambari.server.security.authorization.Users users>
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.getInternalGroups : goto [?= $z0 = interfaceinvoke r3.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulatorTest.createSet : $r2 = new java.util.HashSet
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulatorTest$TestAmbariLdapDataPopulator.setLdapTemplate : r0.<org.apache.ambari.server.security.ldap.AmbariLdapDataPopulatorTest$TestAmbariLdapDataPopulator: org.springframework.ldap.core.LdapTemplate ldapTemplate> = r1
+org.apache.ambari.server.security.ldap.LdapBatchDto.getGroupsToBecomeLdap : $r1 = r0.<org.apache.ambari.server.security.ldap.LdapBatchDto: java.util.Set groupsToBecomeLdap>
+org.apache.ambari.server.security.ldap.LdapBatchDto.getUsersToBeRemoved : $r1 = r0.<org.apache.ambari.server.security.ldap.LdapBatchDto: java.util.Set usersToBeRemoved>
+org.apache.ambari.server.configuration.Configuration$ConnectionPoolType.getName : $r1 = r0.<org.apache.ambari.server.configuration.Configuration$ConnectionPoolType: java.lang.String m_name>
+org.apache.ambari.server.security.ldap.LdapBatchDto.getMembershipToAdd : $r1 = r0.<org.apache.ambari.server.security.ldap.LdapBatchDto: java.util.Set membershipToAdd>
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.synchronizeAllLdapGroups : virtualinvoke r0.<org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator: void addLdapGroup(org.apache.ambari.server.security.ldap.LdapBatchDto,java.util.Map,java.lang.String)>(r1, r4, r8)
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.synchronizeAllLdapGroups : goto [?= $z1 = interfaceinvoke r11.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.synchronizeAllLdapGroups : r5 = virtualinvoke r0.<org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator: java.util.Map getInternalUsers()>()
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.synchronizeAllLdapGroups : r6 = interfaceinvoke r3.<java.util.Set: java.util.Iterator iterator()>()
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.synchronizeAllLdapGroups : $r2 = <org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator: org.slf4j.Logger LOG>
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.synchronizeAllLdapGroups : return r1
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.synchronizeAllLdapGroups : virtualinvoke r0.<org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator: void refreshGroupMembers(org.apache.ambari.server.security.ldap.LdapBatchDto,org.apache.ambari.server.security.ldap.LdapGroupDto,java.util.Map,java.util.Map,java.util.Set,boolean)>(r1, r7, r5, r4, null, 0)
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.synchronizeAllLdapGroups : r4 = virtualinvoke r0.<org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator: java.util.Map getInternalGroups()>()
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.synchronizeAllLdapGroups : r8 = virtualinvoke r7.<org.apache.ambari.server.security.ldap.LdapGroupDto: java.lang.String getGroupName()>()
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.synchronizeAllLdapGroups : r3 = virtualinvoke r0.<org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator: java.util.Set getExternalLdapGroupInfo()>()
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.synchronizeAllLdapGroups : $r14 = interfaceinvoke r13.<java.util.Map$Entry: java.lang.Object getValue()>()
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.synchronizeAllLdapGroups : $r10 = interfaceinvoke r4.<java.util.Map: java.util.Set entrySet()>()
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.synchronizeAllLdapGroups : goto [?= $z0 = interfaceinvoke r6.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.security.ldap.LdapBatchDto.getMembershipToRemove : $r1 = r0.<org.apache.ambari.server.security.ldap.LdapBatchDto: java.util.Set membershipToRemove>

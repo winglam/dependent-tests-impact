@@ -1,0 +1,8 @@
+org.apache.ambari.server.view.configuration.ViewConfigTest.getConfig : $r7 = interfaceinvoke r4.<javax.xml.bind.Unmarshaller: java.lang.Object unmarshal(java.io.InputStream)>(r2)
+org.apache.ambari.server.view.configuration.ViewConfigTest.getConfig : $r6 = newarray (java.lang.Class)[1]
+org.apache.ambari.server.view.configuration.ViewConfigTest.getConfig : r4 = virtualinvoke r3.<javax.xml.bind.JAXBContext: javax.xml.bind.Unmarshaller createUnmarshaller()>()
+org.apache.ambari.server.view.configuration.ViewConfigTest.getConfig : $r1 = new java.io.ByteArrayInputStream
+org.apache.ambari.server.view.configuration.ViewConfig.getAutoInstance : $r1 = r0.<org.apache.ambari.server.view.configuration.ViewConfig: org.apache.ambari.server.view.configuration.AutoInstanceConfig autoInstance>
+org.apache.ambari.server.view.configuration.AutoInstanceConfigTest.getAutoInstanceConfigs : $r2 = virtualinvoke r1.<org.apache.ambari.server.view.configuration.ViewConfig: org.apache.ambari.server.view.configuration.AutoInstanceConfig getAutoInstance()>()
+org.apache.ambari.server.view.configuration.AutoInstanceConfigTest.getAutoInstanceConfigs : r1 = staticinvoke <org.apache.ambari.server.view.configuration.ViewConfigTest: org.apache.ambari.server.view.configuration.ViewConfig getConfig(java.lang.String)>(r0)
+org.apache.ambari.server.view.configuration.AutoInstanceConfig.getStackId : $r1 = r0.<org.apache.ambari.server.view.configuration.AutoInstanceConfig: java.lang.String stackId>

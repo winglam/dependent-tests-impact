@@ -1,0 +1,59 @@
+org.apache.ambari.server.controller.spi.Resource$Type.access$000 : $r1 = staticinvoke <org.apache.ambari.server.controller.spi.Resource$Type: org.apache.ambari.server.controller.spi.Resource$Type getType(java.lang.String)>(r0)
+org.apache.ambari.server.utils.AmbariPath.getPath : $r3 = <org.apache.ambari.server.utils.AmbariPath: org.slf4j.Logger LOG>
+org.apache.ambari.server.utils.AmbariPath.getPath : $r1 = <org.apache.ambari.server.utils.AmbariPath: java.lang.String rootDirectory>
+org.apache.ambari.server.utils.AmbariPath.getPath : return r0
+org.apache.ambari.server.api.util.TreeNodeImpl.getChildren : $r1 = r0.<org.apache.ambari.server.api.util.TreeNodeImpl: java.util.Map m_mapChildren>
+org.apache.ambari.server.api.util.TreeNodeImpl.getObject : $r1 = r0.<org.apache.ambari.server.api.util.TreeNodeImpl: java.lang.Object m_object>
+org.apache.ambari.server.api.query.render.BaseRenderer.copyPropertiesToResult : $r6 = interfaceinvoke r1.<org.apache.ambari.server.api.util.TreeNode: java.util.Collection getChildren()>()
+org.apache.ambari.server.api.query.render.BaseRenderer.copyPropertiesToResult : virtualinvoke r0.<org.apache.ambari.server.api.query.render.BaseRenderer: void copyPropertiesToResult(org.apache.ambari.server.api.util.TreeNode,org.apache.ambari.server.api.util.TreeNode)>(r4, r5)
+org.apache.ambari.server.api.query.render.BaseRenderer.copyPropertiesToResult : $r8 = interfaceinvoke r4.<org.apache.ambari.server.api.util.TreeNode: java.lang.Object getObject()>()
+org.apache.ambari.server.api.query.render.BaseRenderer.copyPropertiesToResult : goto [?= $z0 = interfaceinvoke r3.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.controller.spi.Resource$Type.name : $r1 = r0.<org.apache.ambari.server.controller.spi.Resource$Type: java.lang.String name>
+org.apache.ambari.server.topology.HostGroupInfo.setConfiguration : r0.<org.apache.ambari.server.topology.HostGroupInfo: org.apache.ambari.server.topology.Configuration configuration> = r1
+org.apache.ambari.server.api.query.render.ClusterBlueprintRenderer.finalizeProperties : $r24 = <org.apache.ambari.server.controller.spi.Resource$Type: org.apache.ambari.server.controller.spi.Resource$Type Host>
+org.apache.ambari.server.api.query.render.ClusterBlueprintRenderer.finalizeProperties : $r20 = <org.apache.ambari.server.controller.spi.Resource$Type: org.apache.ambari.server.controller.spi.Resource$Type Service>
+org.apache.ambari.server.api.query.render.ClusterBlueprintRenderer.finalizeProperties : if r9 != null goto $r33 = interfaceinvoke r4.<org.apache.ambari.server.api.util.TreeNode: org.apache.ambari.server.api.util.TreeNode getChild(java.lang.String)>(r5)
+org.apache.ambari.server.api.query.render.ClusterBlueprintRenderer.finalizeProperties : $r21 = interfaceinvoke r4.<org.apache.ambari.server.api.util.TreeNode: org.apache.ambari.server.api.util.TreeNode getChild(java.lang.String)>(r6)
+org.apache.ambari.server.api.query.render.ClusterBlueprintRenderer.finalizeProperties : $r33 = interfaceinvoke r4.<org.apache.ambari.server.api.util.TreeNode: org.apache.ambari.server.api.util.TreeNode getChild(java.lang.String)>(r5)
+org.apache.ambari.server.api.query.render.ClusterBlueprintRenderer.finalizeProperties : $r2 = new java.util.HashSet
+org.apache.ambari.server.api.query.render.ClusterBlueprintRenderer.finalizeProperties : $r16 = <org.apache.ambari.server.controller.spi.Resource$Type: org.apache.ambari.server.controller.spi.Resource$Type Configuration>
+org.apache.ambari.server.api.query.render.ClusterBlueprintRenderer.finalizeProperties : $r17 = interfaceinvoke r4.<org.apache.ambari.server.api.util.TreeNode: org.apache.ambari.server.api.util.TreeNode getChild(java.lang.String)>(r5)
+org.apache.ambari.server.api.query.render.ClusterBlueprintRenderer.finalizeProperties : $r18 = new java.util.HashSet
+org.apache.ambari.server.api.query.render.ClusterBlueprintRenderer.finalizeProperties : return r4
+org.apache.ambari.server.api.query.render.ClusterBlueprintRenderer.finalizeProperties : $r26 = new java.lang.StringBuilder
+org.apache.ambari.server.api.query.render.ClusterBlueprintRenderer.finalizeProperties : $r14 = new org.apache.ambari.server.api.util.TreeNodeImpl
+org.apache.ambari.server.api.query.render.ClusterBlueprintRenderer.finalizeProperties : $r25 = <org.apache.ambari.server.controller.spi.Resource$Type: org.apache.ambari.server.controller.spi.Resource$Type HostComponent>
+org.apache.ambari.server.api.query.render.ClusterBlueprintRenderer.finalizeProperties : $r36 = interfaceinvoke r9.<org.apache.ambari.server.api.util.TreeNode: java.lang.Object getObject()>()
+org.apache.ambari.server.api.query.render.ClusterBlueprintRenderer.finalizeProperties : virtualinvoke r0.<org.apache.ambari.server.api.query.render.ClusterBlueprintRenderer: void copyPropertiesToResult(org.apache.ambari.server.api.util.TreeNode,org.apache.ambari.server.api.util.TreeNode)>(r1, r4)
+org.apache.ambari.server.api.query.render.ClusterBlueprintRenderer.finalizeProperties : $r22 = new java.util.HashSet
+org.apache.ambari.server.api.util.TreeNodeImpl.addChild : $r3 = new org.apache.ambari.server.api.util.TreeNodeImpl
+org.apache.ambari.server.api.util.TreeNodeImpl.addChild : return r4
+org.apache.ambari.server.api.util.TreeNodeImpl.addChild : $r5 = r0.<org.apache.ambari.server.api.util.TreeNodeImpl: java.util.Map m_mapChildren>
+org.apache.ambari.server.topology.HostGroupInfo.addHost : $r5 = r0.<org.apache.ambari.server.topology.HostGroupInfo: java.util.Collection hostNames>
+org.apache.ambari.server.topology.HostGroupInfo.addHost : $z0 = virtualinvoke r1.<java.lang.String: boolean equals(java.lang.Object)>(r3)
+org.apache.ambari.server.topology.HostGroupInfo.addHost : exitmonitor r2
+org.apache.ambari.server.topology.HostGroupInfo.addHost : $r7 = r0.<org.apache.ambari.server.topology.HostGroupInfo: java.util.Collection hostNames>
+org.apache.ambari.server.topology.HostGroupInfo.addHost : r3 = virtualinvoke r1.<java.lang.String: java.lang.String toLowerCase()>()
+org.apache.ambari.server.controller.spi.Resource$Type.setType : $r2 = <org.apache.ambari.server.controller.spi.Resource$Type: java.util.Map types>
+org.apache.ambari.server.controller.spi.Resource$InternalType.getType : r2 = staticinvoke <org.apache.ambari.server.controller.spi.Resource$Type: org.apache.ambari.server.controller.spi.Resource$Type access$000(java.lang.String)>(r1)
+org.apache.ambari.server.controller.spi.Resource$InternalType.getType : if r2 != null goto $r3 = r2
+org.apache.ambari.server.controller.spi.Resource$InternalType.getType : r1 = virtualinvoke r0.<org.apache.ambari.server.controller.spi.Resource$InternalType: java.lang.String name()>()
+org.apache.ambari.server.controller.AmbariServer.getController : $r0 = <org.apache.ambari.server.controller.AmbariServer: org.apache.ambari.server.controller.AmbariManagementController clusterController>
+org.apache.ambari.server.controller.spi.Resource$Type.getType : $r1 = <org.apache.ambari.server.controller.spi.Resource$Type: java.util.Map types>
+org.apache.ambari.server.api.util.TreeNodeImpl.getChild : r2 = virtualinvoke r1.<java.lang.String: java.lang.String substring(int,int)>(0, i0)
+org.apache.ambari.server.api.util.TreeNodeImpl.getChild : i0 = virtualinvoke r1.<java.lang.String: int indexOf(int)>(47)
+org.apache.ambari.server.api.util.TreeNodeImpl.getChild : if r1 == null goto $r8 = r0.<org.apache.ambari.server.api.util.TreeNodeImpl: java.util.Map m_mapChildren>
+org.apache.ambari.server.api.util.TreeNodeImpl.getChild : $r8 = r0.<org.apache.ambari.server.api.util.TreeNodeImpl: java.util.Map m_mapChildren>
+org.apache.ambari.server.api.util.TreeNodeImpl.getChild : $r4 = r0.<org.apache.ambari.server.api.util.TreeNodeImpl: java.util.Map m_mapChildren>
+org.apache.ambari.server.api.util.TreeNodeImpl.getChild : if r3 != null goto $i1 = i0 + 1
+org.apache.ambari.server.api.resources.BaseResourceDefinition.initializeDirectives : $r3 = new java.util.HashSet
+org.apache.ambari.server.api.resources.BaseResourceDefinition.initializeDirectives : $r8 = r0.<org.apache.ambari.server.api.resources.BaseResourceDefinition: java.util.Map directives>
+org.apache.ambari.server.api.resources.BaseResourceDefinition.initializeDirectives : if r2 == null goto $r8 = r0.<org.apache.ambari.server.api.resources.BaseResourceDefinition: java.util.Map directives>
+org.apache.ambari.server.controller.spi.Resource$InternalType.access$200 : $r1 = specialinvoke r0.<org.apache.ambari.server.controller.spi.Resource$InternalType: org.apache.ambari.server.controller.spi.Resource$Type getType()>()
+org.apache.ambari.server.api.util.TreeNodeImpl.getName : $r1 = r0.<org.apache.ambari.server.api.util.TreeNodeImpl: java.lang.String m_name>
+org.apache.ambari.server.topology.HostGroupInfo.addHosts : r3 = interfaceinvoke r1.<java.util.Collection: java.util.Iterator iterator()>()
+org.apache.ambari.server.topology.HostGroupInfo.addHosts : $r6 = r0.<org.apache.ambari.server.topology.HostGroupInfo: java.util.Collection hostNames>
+org.apache.ambari.server.topology.HostGroupInfo.addHosts : exitmonitor r2
+org.apache.ambari.server.topology.HostGroupInfo.addHosts : virtualinvoke r0.<org.apache.ambari.server.topology.HostGroupInfo: void addHost(java.lang.String)>(r4)
+org.apache.ambari.server.topology.HostGroupInfo.addHosts : goto [?= $z0 = interfaceinvoke r3.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.api.query.QueryInfo.getProperties : $r1 = r0.<org.apache.ambari.server.api.query.QueryInfo: java.util.Set m_properties>

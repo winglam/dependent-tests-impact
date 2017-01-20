@@ -1,0 +1,12 @@
+org.apache.ambari.server.security.authorization.AuthorizationHelper.resolveLoginAliasToUserName : return r0
+org.apache.ambari.server.security.authorization.AuthorizationHelper.resolveLoginAliasToUserName : $r1 = staticinvoke <org.springframework.web.context.request.RequestContextHolder: org.springframework.web.context.request.RequestAttributes getRequestAttributes()>()
+org.apache.ambari.server.security.authorization.AuthorizationHelper.resolveLoginAliasToUserName : if r2 == null goto return r0
+org.apache.ambari.server.security.authorization.AmbariAuthentication.getName : $r2 = r0.<org.apache.ambari.server.security.authorization.AmbariAuthentication: java.lang.Object principalOverride>
+org.apache.ambari.server.security.authorization.AmbariAuthentication.getName : $r6 = r0.<org.apache.ambari.server.security.authorization.AmbariAuthentication: java.lang.Object principalOverride>
+org.apache.ambari.server.security.authorization.AmbariAuthentication.getName : $r1 = r0.<org.apache.ambari.server.security.authorization.AmbariAuthentication: java.lang.Object principalOverride>
+org.apache.ambari.server.security.authorization.AmbariAuthentication.getPrincipalOverride : $r6 = r0.<org.apache.ambari.server.security.authorization.AmbariAuthentication: org.springframework.security.core.Authentication authentication>
+org.apache.ambari.server.security.authorization.AmbariAuthentication.getPrincipalOverride : r12 = virtualinvoke r1.<java.lang.Object: java.lang.String toString()>()
+org.apache.ambari.server.security.authorization.AmbariAuthentication.getPrincipalOverride : r11 = staticinvoke <org.apache.ambari.server.security.authorization.AuthorizationHelper: java.lang.String resolveLoginAliasToUserName(java.lang.String)>(r12)
+org.apache.ambari.server.security.authorization.AmbariAuthentication.getPrincipalOverride : goto [?= return r11]
+org.apache.ambari.server.security.authorization.AmbariAuthentication.getPrincipalOverride : return r11
+org.apache.ambari.server.security.authorization.AmbariAuthentication.getPrincipalOverride : $z0 = r1 instanceof org.springframework.security.core.userdetails.UserDetails

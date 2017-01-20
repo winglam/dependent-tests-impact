@@ -1,0 +1,6 @@
+org.apache.ambari.server.metric.system.impl.MetricsSourceTest$LessThanVersionMatcher.matches : $r2 = (java.lang.String) r1
+org.apache.ambari.server.metric.system.impl.MetricsSourceTest$VersionMatcher.parseVersion : $r4 = virtualinvoke r3.<java.util.regex.Matcher: java.lang.String group(int)>(1)
+org.apache.ambari.server.metric.system.impl.MetricsSourceTest$VersionMatcher.parseVersion : r2 = staticinvoke <java.util.regex.Pattern: java.util.regex.Pattern compile(java.lang.String)>("(\\d+(?:\\.\\d+)).*")
+org.apache.ambari.server.metric.system.impl.MetricsSourceTest$VersionMatcher.parseVersion : r3 = virtualinvoke r2.<java.util.regex.Pattern: java.util.regex.Matcher matcher(java.lang.CharSequence)>(r1)
+org.apache.ambari.server.metric.system.impl.MetricsSourceTest$VersionMatcher.parseVersion : $z0 = virtualinvoke r3.<java.util.regex.Matcher: boolean matches()>()
+org.apache.ambari.server.metric.system.impl.MetricsSourceTest$VersionMatcher.getVersion : $f0 = r0.<org.apache.ambari.server.metric.system.impl.MetricsSourceTest$VersionMatcher: float version>

@@ -1,0 +1,11 @@
+org.apache.ambari.server.upgrade.UpgradeCatalog210Test$33.configure : $r4 = interfaceinvoke r1.<com.google.inject.Binder: com.google.inject.binder.AnnotatedBindingBuilder bind(java.lang.Class)>(class "javax/persistence/EntityManager")
+org.apache.ambari.server.upgrade.UpgradeCatalog210Test$33.configure : $r7 = interfaceinvoke r1.<com.google.inject.Binder: com.google.inject.binder.AnnotatedBindingBuilder bind(java.lang.Class)>(class "org/apache/ambari/server/state/stack/OsFamily")
+org.apache.ambari.server.upgrade.UpgradeCatalog210Test$33.configure : $r2 = interfaceinvoke r1.<com.google.inject.Binder: com.google.inject.binder.AnnotatedBindingBuilder bind(java.lang.Class)>(class "org/apache/ambari/server/orm/DBAccessor")
+org.apache.ambari.server.upgrade.UpgradeCatalog210Test.getUpgradeCatalog : $r5 = newarray (com.google.inject.Module)[1]
+org.apache.ambari.server.upgrade.UpgradeCatalog210Test.getUpgradeCatalog : $r2 = new org.apache.ambari.server.upgrade.UpgradeCatalog210Test$33
+org.apache.ambari.server.upgrade.UpgradeCatalog210Test.getUpgradeCatalog : $r6 = interfaceinvoke r4.<com.google.inject.Injector: java.lang.Object getInstance(java.lang.Class)>(class "org/apache/ambari/server/upgrade/UpgradeCatalog210")
+org.apache.ambari.server.upgrade.UpgradeCatalog210Test.access$000 : $r1 = r0.<org.apache.ambari.server.upgrade.UpgradeCatalog210Test: javax.persistence.EntityManager entityManager>
+org.apache.ambari.server.configuration.Configuration.readConfigFile : $r0 = new java.util.Properties
+org.apache.ambari.server.configuration.Configuration.readConfigFile : if r2 != null goto virtualinvoke r1.<java.util.Properties: void load(java.io.InputStream)>(r2)
+org.apache.ambari.server.configuration.Configuration.readConfigFile : $r6 = new java.lang.RuntimeException
+org.apache.ambari.server.configuration.Configuration.readConfigFile : $r4 = class "org/apache/ambari/server/configuration/Configuration"

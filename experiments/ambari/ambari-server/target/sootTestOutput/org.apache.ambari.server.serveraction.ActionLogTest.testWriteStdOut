@@ -1,0 +1,9 @@
+org.apache.ambari.server.serveraction.ActionLog.getStdErr : $r1 = r0.<org.apache.ambari.server.serveraction.ActionLog: java.lang.StringBuffer stdErr>
+org.apache.ambari.server.serveraction.ActionLog.write : $r5 = r0.<org.apache.ambari.server.serveraction.ActionLog: org.apache.commons.lang.time.FastDateFormat dateFormat>
+org.apache.ambari.server.serveraction.ActionLog.write : virtualinvoke r1.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>(" - ")
+org.apache.ambari.server.serveraction.ActionLog.write : $r4 = new java.util.Date
+org.apache.ambari.server.serveraction.ActionLog.write : virtualinvoke r1.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("\n")
+org.apache.ambari.server.serveraction.ActionLog.write : virtualinvoke r1.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>(r2)
+org.apache.ambari.server.serveraction.ActionLog.write : if r2 == null goto return
+org.apache.ambari.server.serveraction.ActionLog.getStdOut : $r1 = r0.<org.apache.ambari.server.serveraction.ActionLog: java.lang.StringBuffer stdOut>
+org.apache.ambari.server.serveraction.ActionLog.writeStdOut : $r2 = r0.<org.apache.ambari.server.serveraction.ActionLog: java.lang.StringBuffer stdOut>

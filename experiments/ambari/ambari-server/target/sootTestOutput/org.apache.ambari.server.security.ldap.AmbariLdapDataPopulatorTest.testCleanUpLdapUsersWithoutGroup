@@ -1,0 +1,87 @@
+org.apache.ambari.server.orm.entities.UserEntity.getPrincipal : $r1 = virtualinvoke r0.<org.apache.ambari.server.orm.entities.UserEntity: org.apache.ambari.server.orm.entities.PrincipalEntity _persistence_get_principal()>()
+org.apache.ambari.server.orm.entities.UserEntity.getUserType : $r1 = virtualinvoke r0.<org.apache.ambari.server.orm.entities.UserEntity: org.apache.ambari.server.security.authorization.UserType _persistence_get_userType()>()
+org.apache.ambari.server.orm.entities.UserEntity.getUserId : $r1 = virtualinvoke r0.<org.apache.ambari.server.orm.entities.UserEntity: java.lang.Integer _persistence_get_userId()>()
+org.apache.ambari.server.security.authorization.User.getGroups : $r1 = r0.<org.apache.ambari.server.security.authorization.User: java.util.Collection groups>
+org.apache.ambari.server.orm.entities.UserEntity.getActive : $r1 = virtualinvoke r0.<org.apache.ambari.server.orm.entities.UserEntity: java.lang.Integer _persistence_get_active()>()
+org.apache.ambari.server.orm.entities.UserEntity.getLdapUser : $r1 = virtualinvoke r0.<org.apache.ambari.server.orm.entities.UserEntity: java.lang.Integer _persistence_get_ldapUser()>()
+org.apache.ambari.server.orm.entities.PrincipalEntity.getPrivileges : $r1 = virtualinvoke r0.<org.apache.ambari.server.orm.entities.PrincipalEntity: java.util.Set _persistence_get_privileges()>()
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulatorTest.createLocalUserWithoutGroup : $r1 = specialinvoke r0.<org.apache.ambari.server.security.ldap.AmbariLdapDataPopulatorTest: org.apache.ambari.server.security.authorization.User createUser(java.lang.String,boolean,org.apache.ambari.server.orm.entities.GroupEntity)>("LocalUserWithoutGroup", 0, null)
+org.apache.ambari.server.orm.entities.UserEntity.getCreateTime : $r1 = virtualinvoke r0.<org.apache.ambari.server.orm.entities.UserEntity: java.util.Date _persistence_get_createTime()>()
+org.apache.ambari.server.orm.entities.GroupEntity.setGroupType : $r2 = <org.apache.ambari.server.security.authorization.GroupType: org.apache.ambari.server.security.authorization.GroupType LDAP>
+org.apache.ambari.server.orm.entities.GroupEntity.setGroupType : virtualinvoke r0.<org.apache.ambari.server.orm.entities.GroupEntity: void _persistence_set_groupType(org.apache.ambari.server.security.authorization.GroupType)>(r1)
+org.apache.ambari.server.security.authorization.User.isLdapUser : $z0 = r0.<org.apache.ambari.server.security.authorization.User: boolean ldapUser>
+org.apache.ambari.server.orm.entities.MemberEntity.setGroup : virtualinvoke r0.<org.apache.ambari.server.orm.entities.MemberEntity: void _persistence_set_group(org.apache.ambari.server.orm.entities.GroupEntity)>(r1)
+org.apache.ambari.server.configuration.Configuration$ConfigurationProperty.getDefaultValue : $r1 = r0.<org.apache.ambari.server.configuration.Configuration$ConfigurationProperty: java.lang.Object m_defaultValue>
+org.apache.ambari.server.orm.entities.UserEntity.setActive : $z0 = virtualinvoke r1.<java.lang.Boolean: boolean booleanValue()>()
+org.apache.ambari.server.orm.entities.UserEntity.setActive : if r1 != null goto $z0 = virtualinvoke r1.<java.lang.Boolean: boolean booleanValue()>()
+org.apache.ambari.server.orm.entities.UserEntity.setUserId : virtualinvoke r0.<org.apache.ambari.server.orm.entities.UserEntity: void _persistence_set_userId(java.lang.Integer)>(r1)
+org.apache.ambari.server.orm.entities.GroupEntity.getMemberEntities : $r1 = virtualinvoke r0.<org.apache.ambari.server.orm.entities.GroupEntity: java.util.Set _persistence_get_memberEntities()>()
+org.apache.ambari.server.orm.entities.MemberEntity.getGroup : $r1 = virtualinvoke r0.<org.apache.ambari.server.orm.entities.MemberEntity: org.apache.ambari.server.orm.entities.GroupEntity _persistence_get_group()>()
+org.apache.ambari.server.configuration.Configuration$ConnectionPoolType.getName : $r1 = r0.<org.apache.ambari.server.configuration.Configuration$ConnectionPoolType: java.lang.String m_name>
+org.apache.ambari.server.orm.entities.GroupEntity.setLdapGroup : $z0 = virtualinvoke r1.<java.lang.Boolean: boolean booleanValue()>()
+org.apache.ambari.server.orm.entities.GroupEntity.setLdapGroup : if r1 != null goto $z0 = virtualinvoke r1.<java.lang.Boolean: boolean booleanValue()>()
+org.apache.ambari.server.orm.entities.UserEntity.setCreateTime : virtualinvoke r0.<org.apache.ambari.server.orm.entities.UserEntity: void _persistence_set_createTime(java.util.Date)>(r1)
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulatorTest.createLdapUserWithGroup : $r2 = specialinvoke r0.<org.apache.ambari.server.security.ldap.AmbariLdapDataPopulatorTest: org.apache.ambari.server.security.authorization.User createUser(java.lang.String,boolean,org.apache.ambari.server.orm.entities.GroupEntity)>("LdapUserWithGroup", 1, r1)
+org.apache.ambari.server.orm.entities.GroupEntity.setMemberEntities : virtualinvoke r0.<org.apache.ambari.server.orm.entities.GroupEntity: void _persistence_set_memberEntities(java.util.Set)>(r1)
+org.apache.ambari.server.orm.entities.UserEntity.setPrincipal : virtualinvoke r0.<org.apache.ambari.server.orm.entities.UserEntity: void _persistence_set_principal(org.apache.ambari.server.orm.entities.PrincipalEntity)>(r1)
+org.apache.ambari.server.orm.entities.PrincipalEntity.setPrivileges : virtualinvoke r0.<org.apache.ambari.server.orm.entities.PrincipalEntity: void _persistence_set_privileges(java.util.Set)>(r1)
+org.apache.ambari.server.utils.AmbariPath.getPath : $r3 = <org.apache.ambari.server.utils.AmbariPath: org.slf4j.Logger LOG>
+org.apache.ambari.server.utils.AmbariPath.getPath : $r1 = <org.apache.ambari.server.utils.AmbariPath: java.lang.String rootDirectory>
+org.apache.ambari.server.utils.AmbariPath.getPath : return r0
+org.apache.ambari.server.orm.entities.UserEntity.setMemberEntities : virtualinvoke r0.<org.apache.ambari.server.orm.entities.UserEntity: void _persistence_set_memberEntities(java.util.Set)>(r1)
+org.apache.ambari.server.orm.entities.UserEntity.setLdapUser : $z0 = virtualinvoke r1.<java.lang.Boolean: boolean booleanValue()>()
+org.apache.ambari.server.orm.entities.UserEntity.setLdapUser : $z1 = virtualinvoke r1.<java.lang.Boolean: boolean booleanValue()>()
+org.apache.ambari.server.orm.entities.UserEntity.setLdapUser : if r1 != null goto $z0 = virtualinvoke r1.<java.lang.Boolean: boolean booleanValue()>()
+org.apache.ambari.server.orm.entities.UserEntity.getUserName : $r1 = virtualinvoke r0.<org.apache.ambari.server.orm.entities.UserEntity: java.lang.String _persistence_get_userName()>()
+org.apache.ambari.server.orm.entities.GroupEntity.setGroupId : virtualinvoke r0.<org.apache.ambari.server.orm.entities.GroupEntity: void _persistence_set_groupId(java.lang.Integer)>(r1)
+org.apache.ambari.server.orm.entities.UserEntity.setUserName : virtualinvoke r0.<org.apache.ambari.server.orm.entities.UserEntity: void _persistence_set_userName(java.lang.String)>(r1)
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulatorTest$TestAmbariLdapDataPopulator.setLdapServerProperties : r0.<org.apache.ambari.server.security.ldap.AmbariLdapDataPopulatorTest$TestAmbariLdapDataPopulator: org.apache.ambari.server.security.authorization.LdapServerProperties ldapServerProperties> = r1
+org.apache.ambari.server.orm.entities.UserEntity.hashCode : $i2 = 31 * i0
+org.apache.ambari.server.orm.entities.UserEntity.hashCode : $i8 = 31 * i7
+org.apache.ambari.server.orm.entities.UserEntity.hashCode : $i17 = 31 * i16
+org.apache.ambari.server.orm.entities.UserEntity.hashCode : $i5 = 31 * i4
+org.apache.ambari.server.orm.entities.UserEntity.hashCode : $i14 = 31 * i13
+org.apache.ambari.server.orm.entities.UserEntity.hashCode : $r1 = virtualinvoke r0.<org.apache.ambari.server.orm.entities.UserEntity: java.lang.Integer _persistence_get_userId()>()
+org.apache.ambari.server.orm.entities.UserEntity.hashCode : $i11 = 31 * i10
+org.apache.ambari.server.orm.entities.UserEntity.hashCode : return i19
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulatorTest$2.answer : $r1 = virtualinvoke r0.<org.apache.ambari.server.security.ldap.AmbariLdapDataPopulatorTest$2: java.lang.Void answer()>()
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulatorTest$2.answer : $r4 = r0.<org.apache.ambari.server.security.ldap.AmbariLdapDataPopulatorTest$2: java.util.List val$allUsers>
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulatorTest$2.answer : return null
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulatorTest$2.answer : $r1 = r0.<org.apache.ambari.server.security.ldap.AmbariLdapDataPopulatorTest$2: java.util.List val$removedUsers>
+org.apache.ambari.server.orm.entities.MemberEntity.hashCode : $i2 = 31 * i0
+org.apache.ambari.server.orm.entities.MemberEntity.hashCode : $r1 = virtualinvoke r0.<org.apache.ambari.server.orm.entities.MemberEntity: java.lang.Integer _persistence_get_memberId()>()
+org.apache.ambari.server.orm.entities.MemberEntity.hashCode : $i5 = 31 * i4
+org.apache.ambari.server.orm.entities.MemberEntity.hashCode : return i7
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulatorTest.createLdapUserWithoutGroup : $r1 = specialinvoke r0.<org.apache.ambari.server.security.ldap.AmbariLdapDataPopulatorTest: org.apache.ambari.server.security.authorization.User createUser(java.lang.String,boolean,org.apache.ambari.server.orm.entities.GroupEntity)>("LdapUserWithoutGroup", 1, null)
+org.apache.ambari.server.orm.entities.GroupEntity.hashCode : $i2 = 31 * i0
+org.apache.ambari.server.orm.entities.GroupEntity.hashCode : $i5 = 31 * i4
+org.apache.ambari.server.orm.entities.GroupEntity.hashCode : $r1 = virtualinvoke r0.<org.apache.ambari.server.orm.entities.GroupEntity: java.lang.Integer _persistence_get_groupId()>()
+org.apache.ambari.server.orm.entities.GroupEntity.hashCode : return i7
+org.apache.ambari.server.orm.entities.GroupEntity.getGroupName : $r1 = virtualinvoke r0.<org.apache.ambari.server.orm.entities.GroupEntity: java.lang.String _persistence_get_groupName()>()
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulatorTest.createLocalUserWithGroup : $r2 = specialinvoke r0.<org.apache.ambari.server.security.ldap.AmbariLdapDataPopulatorTest: org.apache.ambari.server.security.authorization.User createUser(java.lang.String,boolean,org.apache.ambari.server.orm.entities.GroupEntity)>("LocalUserWithGroup", 0, r1)
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulatorTest$TestAmbariLdapDataPopulator.setLdapTemplate : r0.<org.apache.ambari.server.security.ldap.AmbariLdapDataPopulatorTest$TestAmbariLdapDataPopulator: org.springframework.ldap.core.LdapTemplate ldapTemplate> = r1
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulatorTest.createUser : $r3 = new org.apache.ambari.server.orm.entities.UserEntity
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulatorTest.createUser : $i0 = <org.apache.ambari.server.security.ldap.AmbariLdapDataPopulatorTest: int userIdCounter>
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulatorTest.createUser : $r8 = new java.util.Date
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulatorTest.createUser : $r14 = new org.apache.ambari.server.orm.entities.MemberEntity
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulatorTest.createUser : $r11 = new java.util.HashSet
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulatorTest.createUser : if r2 == null goto $r17 = new org.apache.ambari.server.security.authorization.User
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulatorTest.createUser : $r9 = staticinvoke <java.lang.Boolean: java.lang.Boolean valueOf(boolean)>(z0)
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulatorTest.createUser : virtualinvoke r4.<org.apache.ambari.server.orm.entities.UserEntity: void setPrincipal(org.apache.ambari.server.orm.entities.PrincipalEntity)>(r5)
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulatorTest.createUser : virtualinvoke r6.<org.apache.ambari.server.orm.entities.MemberEntity: void setGroup(org.apache.ambari.server.orm.entities.GroupEntity)>(r2)
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulatorTest.createUser : virtualinvoke r4.<org.apache.ambari.server.orm.entities.UserEntity: void setUserName(java.lang.String)>(r1)
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulatorTest.createUser : $r10 = staticinvoke <java.lang.Boolean: java.lang.Boolean valueOf(boolean)>(1)
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulatorTest.createUser : $r12 = new org.apache.ambari.server.orm.entities.PrincipalEntity
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulatorTest.createUser : $r16 = virtualinvoke r4.<org.apache.ambari.server.orm.entities.UserEntity: java.util.Set getMemberEntities()>()
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulatorTest.createUser : $r13 = new java.util.HashSet
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulatorTest.createUser : virtualinvoke r6.<org.apache.ambari.server.orm.entities.MemberEntity: void setUser(org.apache.ambari.server.orm.entities.UserEntity)>(r4)
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulatorTest.createUser : $r17 = new org.apache.ambari.server.security.authorization.User
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulatorTest.createUser : $r15 = virtualinvoke r2.<org.apache.ambari.server.orm.entities.GroupEntity: java.util.Set getMemberEntities()>()
+org.apache.ambari.server.orm.entities.UserEntity.getMemberEntities : $r1 = virtualinvoke r0.<org.apache.ambari.server.orm.entities.UserEntity: java.util.Set _persistence_get_memberEntities()>()
+org.apache.ambari.server.orm.entities.GroupEntity.setGroupName : virtualinvoke r0.<org.apache.ambari.server.orm.entities.GroupEntity: void _persistence_set_groupName(java.lang.String)>(r1)
+org.apache.ambari.server.orm.entities.MemberEntity.setUser : virtualinvoke r0.<org.apache.ambari.server.orm.entities.MemberEntity: void _persistence_set_user(org.apache.ambari.server.orm.entities.UserEntity)>(r1)
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.cleanUpLdapUsersWithoutGroup : $r4 = r0.<org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator: org.apache.ambari.server.security.authorization.Users users>
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.cleanUpLdapUsersWithoutGroup : $z1 = virtualinvoke r3.<org.apache.ambari.server.security.authorization.User: boolean isLdapUser()>()
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.cleanUpLdapUsersWithoutGroup : goto [?= $z0 = interfaceinvoke r2.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.cleanUpLdapUsersWithoutGroup : $r7 = r0.<org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator: org.apache.ambari.server.security.authorization.Users users>
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.cleanUpLdapUsersWithoutGroup : r2 = interfaceinvoke r1.<java.util.List: java.util.Iterator iterator()>()

@@ -1,0 +1,68 @@
+org.apache.ambari.server.utils.StageUtils.getActionId : $r0 = new java.lang.StringBuilder
+org.apache.ambari.server.agent.CommandReport.setClusterName : r0.<org.apache.ambari.server.agent.CommandReport: java.lang.String clusterName> = r1
+org.apache.ambari.server.agent.CommandReport.setRoleCommand : r0.<org.apache.ambari.server.agent.CommandReport: java.lang.String roleCommand> = r1
+org.apache.ambari.server.agent.CommandReport.setStructuredOut : r0.<org.apache.ambari.server.agent.CommandReport: java.lang.String structuredOut> = r1
+org.apache.ambari.server.agent.ExecutionCommand.getServiceName : $r1 = r0.<org.apache.ambari.server.agent.ExecutionCommand: java.lang.String serviceName>
+org.apache.ambari.server.agent.CommandReport.setStdErr : r0.<org.apache.ambari.server.agent.CommandReport: java.lang.String stderr> = r1
+org.apache.ambari.server.serveraction.AbstractServerAction.setExecutionCommand : r0.<org.apache.ambari.server.serveraction.AbstractServerAction: org.apache.ambari.server.agent.ExecutionCommand executionCommand> = r1
+org.apache.ambari.server.agent.ExecutionCommand.getConfigurationTags : $r1 = r0.<org.apache.ambari.server.agent.ExecutionCommand: java.util.Map configurationTags>
+org.apache.ambari.server.agent.ExecutionCommand.setCommandParams : r0.<org.apache.ambari.server.agent.ExecutionCommand: java.util.Map commandParams> = r1
+org.apache.ambari.server.agent.CommandReport.setStdOut : r0.<org.apache.ambari.server.agent.CommandReport: java.lang.String stdout> = r1
+org.apache.ambari.server.agent.ExecutionCommand.getRole : $r1 = r0.<org.apache.ambari.server.agent.ExecutionCommand: java.lang.String role>
+org.apache.ambari.server.agent.ExecutionCommand.getRoleCommand : $r1 = r0.<org.apache.ambari.server.agent.ExecutionCommand: org.apache.ambari.server.RoleCommand roleCommand>
+org.apache.ambari.server.serveraction.upgrades.HiveEnvClasspathAction.execute : z0 = 0
+org.apache.ambari.server.serveraction.upgrades.HiveEnvClasspathAction.execute : $z2 = virtualinvoke r9.<java.util.regex.Matcher: boolean find()>()
+org.apache.ambari.server.serveraction.upgrades.HiveEnvClasspathAction.execute : r11 = virtualinvoke r21.<java.lang.StringBuilder: java.lang.String toString()>()
+org.apache.ambari.server.serveraction.upgrades.HiveEnvClasspathAction.execute : $r31 = <org.apache.ambari.server.actionmanager.HostRoleStatus: org.apache.ambari.server.actionmanager.HostRoleStatus COMPLETED>
+org.apache.ambari.server.serveraction.upgrades.HiveEnvClasspathAction.execute : interfaceinvoke r4.<org.apache.ambari.server.state.Config: void save()>()
+org.apache.ambari.server.serveraction.upgrades.HiveEnvClasspathAction.execute : $z5 = virtualinvoke r11.<java.lang.String: boolean equals(java.lang.Object)>(r8)
+org.apache.ambari.server.serveraction.upgrades.HiveEnvClasspathAction.execute : z1 = 1
+org.apache.ambari.server.serveraction.upgrades.HiveEnvClasspathAction.execute : z1 = 0
+org.apache.ambari.server.serveraction.upgrades.HiveEnvClasspathAction.execute : interfaceinvoke r4.<org.apache.ambari.server.state.Config: void setProperties(java.util.Map)>(r7)
+org.apache.ambari.server.serveraction.upgrades.HiveEnvClasspathAction.execute : $r17 = newarray (java.lang.Object)[2]
+org.apache.ambari.server.serveraction.upgrades.HiveEnvClasspathAction.execute : r9 = virtualinvoke r6.<java.util.regex.Pattern: java.util.regex.Matcher matcher(java.lang.CharSequence)>(r8)
+org.apache.ambari.server.serveraction.upgrades.HiveEnvClasspathAction.execute : $z3 = virtualinvoke r10.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("HIVE_CONF_DIR")
+org.apache.ambari.server.serveraction.upgrades.HiveEnvClasspathAction.execute : goto [?= staticinvoke <edu.washington.cs.dt.impact.util.Tracer: void trace(java.lang.String,java.lang.String)>("$z2 = virtualinvoke r9.<java.util.regex.Matcher: boolean find()>()", "org.apache.ambari.server.serveraction.upgrades.HiveEnvClasspathAction.execute")]
+org.apache.ambari.server.serveraction.upgrades.HiveEnvClasspathAction.execute : interfaceinvoke r7.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>("content", r11)
+org.apache.ambari.server.serveraction.upgrades.HiveEnvClasspathAction.execute : $r20 = new java.lang.StringBuilder
+org.apache.ambari.server.serveraction.upgrades.HiveEnvClasspathAction.execute : $r13 = r0.<org.apache.ambari.server.serveraction.upgrades.HiveEnvClasspathAction: org.apache.ambari.server.state.Clusters clusters>
+org.apache.ambari.server.serveraction.upgrades.HiveEnvClasspathAction.execute : $r24 = virtualinvoke r21.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\n")
+org.apache.ambari.server.serveraction.upgrades.HiveEnvClasspathAction.execute : if z0 != 0 goto r11 = virtualinvoke r21.<java.lang.StringBuilder: java.lang.String toString()>()
+org.apache.ambari.server.serveraction.upgrades.HiveEnvClasspathAction.execute : r7 = interfaceinvoke r4.<org.apache.ambari.server.state.Config: java.util.Map getProperties()>()
+org.apache.ambari.server.serveraction.upgrades.HiveEnvClasspathAction.execute : $r19 = interfaceinvoke r7.<java.util.Map: java.lang.Object get(java.lang.Object)>("content")
+org.apache.ambari.server.serveraction.upgrades.HiveEnvClasspathAction.execute : if r4 != null goto $r17 = newarray (java.lang.Object)[2]
+org.apache.ambari.server.serveraction.upgrades.HiveEnvClasspathAction.execute : r10 = virtualinvoke r9.<java.util.regex.Matcher: java.lang.String group(java.lang.String)>("property")
+org.apache.ambari.server.serveraction.upgrades.HiveEnvClasspathAction.execute : r4 = interfaceinvoke r3.<org.apache.ambari.server.state.Cluster: org.apache.ambari.server.state.Config getDesiredConfigByType(java.lang.String)>("hive-env")
+org.apache.ambari.server.serveraction.upgrades.HiveEnvClasspathAction.execute : if z1 != 0 goto (branch)
+org.apache.ambari.server.serveraction.upgrades.HiveEnvClasspathAction.execute : $r12 = virtualinvoke r0.<org.apache.ambari.server.serveraction.upgrades.HiveEnvClasspathAction: org.apache.ambari.server.agent.ExecutionCommand getExecutionCommand()>()
+org.apache.ambari.server.serveraction.AbstractServerAction.getExecutionCommand : $r1 = r0.<org.apache.ambari.server.serveraction.AbstractServerAction: org.apache.ambari.server.agent.ExecutionCommand executionCommand>
+org.apache.ambari.server.agent.CommandReport.setExitCode : r0.<org.apache.ambari.server.agent.CommandReport: int exitCode> = i0
+org.apache.ambari.server.serveraction.AbstractServerAction.createCommandReport : $r14 = new org.apache.ambari.server.agent.CommandReport
+org.apache.ambari.server.serveraction.AbstractServerAction.createCommandReport : $r22 = r0.<org.apache.ambari.server.serveraction.AbstractServerAction: org.apache.ambari.server.agent.ExecutionCommand executionCommand>
+org.apache.ambari.server.serveraction.AbstractServerAction.createCommandReport : $r15 = r0.<org.apache.ambari.server.serveraction.AbstractServerAction: org.apache.ambari.server.actionmanager.HostRoleCommand hostRoleCommand>
+org.apache.ambari.server.serveraction.AbstractServerAction.createCommandReport : $r11 = r0.<org.apache.ambari.server.serveraction.AbstractServerAction: org.apache.ambari.server.agent.ExecutionCommand executionCommand>
+org.apache.ambari.server.serveraction.AbstractServerAction.createCommandReport : $r12 = r0.<org.apache.ambari.server.serveraction.AbstractServerAction: org.apache.ambari.server.agent.ExecutionCommand executionCommand>
+org.apache.ambari.server.serveraction.AbstractServerAction.createCommandReport : r5 = null
+org.apache.ambari.server.serveraction.AbstractServerAction.createCommandReport : $r20 = r0.<org.apache.ambari.server.serveraction.AbstractServerAction: org.apache.ambari.server.agent.ExecutionCommand executionCommand>
+org.apache.ambari.server.serveraction.AbstractServerAction.createCommandReport : $r26 = r0.<org.apache.ambari.server.serveraction.AbstractServerAction: org.apache.ambari.server.agent.ExecutionCommand executionCommand>
+org.apache.ambari.server.serveraction.AbstractServerAction.createCommandReport : $r24 = r5
+org.apache.ambari.server.serveraction.AbstractServerAction.createCommandReport : virtualinvoke r5.<org.apache.ambari.server.agent.CommandReport: void setExitCode(int)>(i0)
+org.apache.ambari.server.serveraction.AbstractServerAction.createCommandReport : $r18 = r0.<org.apache.ambari.server.serveraction.AbstractServerAction: org.apache.ambari.server.agent.ExecutionCommand executionCommand>
+org.apache.ambari.server.serveraction.AbstractServerAction.createCommandReport : $r29 = r5
+org.apache.ambari.server.serveraction.AbstractServerAction.createCommandReport : $r33 = r5
+org.apache.ambari.server.serveraction.AbstractServerAction.createCommandReport : return r5
+org.apache.ambari.server.serveraction.AbstractServerAction.createCommandReport : $r8 = r0.<org.apache.ambari.server.serveraction.AbstractServerAction: org.apache.ambari.server.agent.ExecutionCommand executionCommand>
+org.apache.ambari.server.serveraction.AbstractServerAction.createCommandReport : $r31 = r5
+org.apache.ambari.server.serveraction.AbstractServerAction.createCommandReport : $r28 = r0.<org.apache.ambari.server.serveraction.AbstractServerAction: org.apache.ambari.server.agent.ExecutionCommand executionCommand>
+org.apache.ambari.server.serveraction.AbstractServerAction.createCommandReport : $r7 = r0.<org.apache.ambari.server.serveraction.AbstractServerAction: org.apache.ambari.server.actionmanager.HostRoleCommand hostRoleCommand>
+org.apache.ambari.server.serveraction.AbstractServerAction.createCommandReport : virtualinvoke r5.<org.apache.ambari.server.agent.CommandReport: void setStructuredOut(java.lang.String)>(r2)
+org.apache.ambari.server.agent.CommandReport.setRole : r0.<org.apache.ambari.server.agent.CommandReport: java.lang.String role> = r1
+org.apache.ambari.server.agent.CommandReport.setTaskId : r0.<org.apache.ambari.server.agent.CommandReport: long taskId> = l0
+org.apache.ambari.server.agent.CommandReport.setActionId : r0.<org.apache.ambari.server.agent.CommandReport: java.lang.String actionId> = r1
+org.apache.ambari.server.serveraction.AbstractServerAction.setHostRoleCommand : r0.<org.apache.ambari.server.serveraction.AbstractServerAction: org.apache.ambari.server.actionmanager.HostRoleCommand hostRoleCommand> = r1
+org.apache.ambari.server.agent.ExecutionCommand.getTaskId : $l0 = r0.<org.apache.ambari.server.agent.ExecutionCommand: long taskId>
+org.apache.ambari.server.agent.ExecutionCommand.setClusterName : r0.<org.apache.ambari.server.agent.ExecutionCommand: java.lang.String clusterName> = r1
+org.apache.ambari.server.agent.CommandReport.setServiceName : r0.<org.apache.ambari.server.agent.CommandReport: java.lang.String serviceName> = r1
+org.apache.ambari.server.agent.ExecutionCommand.getClusterName : $r1 = r0.<org.apache.ambari.server.agent.ExecutionCommand: java.lang.String clusterName>
+org.apache.ambari.server.agent.CommandReport.setStatus : r0.<org.apache.ambari.server.agent.CommandReport: java.lang.String status> = r1
+org.apache.ambari.server.agent.CommandReport.setConfigurationTags : r0.<org.apache.ambari.server.agent.CommandReport: java.util.Map configurationTags> = r1

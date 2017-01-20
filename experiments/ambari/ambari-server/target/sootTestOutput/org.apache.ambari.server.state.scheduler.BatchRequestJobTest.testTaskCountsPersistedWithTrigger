@@ -1,0 +1,17 @@
+org.apache.ambari.server.scheduler.AbstractLinearExecutionJob.execute : z0 = 0
+org.apache.ambari.server.scheduler.AbstractLinearExecutionJob.execute : virtualinvoke r0.<org.apache.ambari.server.scheduler.AbstractLinearExecutionJob: void doWork(java.util.Map)>(r5)
+org.apache.ambari.server.scheduler.AbstractLinearExecutionJob.execute : i0 = virtualinvoke r4.<org.quartz.JobDataMap: int getIntValue(java.lang.String)>("ExecutionJob.SeparationMinutes")
+org.apache.ambari.server.scheduler.AbstractLinearExecutionJob.execute : r9 = interfaceinvoke r5.<java.util.Map: java.lang.Object get(java.lang.Object)>("BatchRequestJob.FailedTaskCount")
+org.apache.ambari.server.scheduler.AbstractLinearExecutionJob.execute : $r57 = <org.apache.ambari.server.scheduler.AbstractLinearExecutionJob: org.slf4j.Logger LOG>
+org.apache.ambari.server.scheduler.AbstractLinearExecutionJob.execute : r4 = interfaceinvoke r1.<org.quartz.JobExecutionContext: org.quartz.JobDataMap getMergedJobDataMap()>()
+org.apache.ambari.server.scheduler.AbstractLinearExecutionJob.execute : r5 = virtualinvoke r4.<org.quartz.JobDataMap: java.util.Map getWrappedMap()>()
+org.apache.ambari.server.scheduler.AbstractLinearExecutionJob.execute : $r93 = r0.<org.apache.ambari.server.scheduler.AbstractLinearExecutionJob: org.apache.ambari.server.scheduler.ExecutionScheduleManager executionScheduleManager>
+org.apache.ambari.server.scheduler.AbstractLinearExecutionJob.execute : $r13 = <org.apache.ambari.server.scheduler.AbstractLinearExecutionJob: org.slf4j.Logger LOG>
+org.apache.ambari.server.scheduler.AbstractLinearExecutionJob.execute : r10 = interfaceinvoke r5.<java.util.Map: java.lang.Object get(java.lang.Object)>("BatchRequestJob.TotalTaskCount")
+org.apache.ambari.server.scheduler.AbstractLinearExecutionJob.execute : $r72 = staticinvoke <org.quartz.TriggerBuilder: org.quartz.TriggerBuilder newTrigger()>()
+org.apache.ambari.server.scheduler.AbstractLinearExecutionJob.execute : r63 = virtualinvoke r4.<org.quartz.JobDataMap: java.lang.String getString(java.lang.String)>("ExecutionJob.Group")
+org.apache.ambari.server.scheduler.AbstractLinearExecutionJob.execute : if z0 == 0 goto $r57 = <org.apache.ambari.server.scheduler.AbstractLinearExecutionJob: org.slf4j.Logger LOG>
+org.apache.ambari.server.scheduler.AbstractLinearExecutionJob.execute : if r62 == null goto $r64 = <org.apache.ambari.server.scheduler.AbstractLinearExecutionJob: org.slf4j.Logger LOG>
+org.apache.ambari.server.scheduler.AbstractLinearExecutionJob.execute : $r12 = interfaceinvoke r1.<org.quartz.JobExecutionContext: org.quartz.JobDetail getJobDetail()>()
+org.apache.ambari.server.scheduler.AbstractLinearExecutionJob.execute : r62 = virtualinvoke r4.<org.quartz.JobDataMap: java.lang.String getString(java.lang.String)>("ExecutionJob.Name")
+org.apache.ambari.server.scheduler.AbstractLinearExecutionJob.execute : $r17 = r0.<org.apache.ambari.server.scheduler.AbstractLinearExecutionJob: org.apache.ambari.server.scheduler.ExecutionScheduleManager executionScheduleManager>

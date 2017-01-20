@@ -1,0 +1,13 @@
+org.apache.ambari.server.events.listeners.upgrade.StackUpgradeFinishListener.onAmbariEvent : goto [?= $z0 = interfaceinvoke r4.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.events.listeners.upgrade.StackUpgradeFinishListener.onAmbariEvent : $r12 = interfaceinvoke r5.<org.apache.ambari.server.state.Service: java.util.Map getServiceComponents()>()
+org.apache.ambari.server.events.listeners.upgrade.StackUpgradeFinishListener.onAmbariEvent : interfaceinvoke r7.<org.apache.ambari.server.state.ServiceComponent: void updateComponentInfo()>()
+org.apache.ambari.server.events.listeners.upgrade.StackUpgradeFinishListener.onAmbariEvent : goto [?= (branch)]
+org.apache.ambari.server.events.listeners.upgrade.StackUpgradeFinishListener.onAmbariEvent : $r9 = interfaceinvoke r3.<org.apache.ambari.server.state.Cluster: java.util.Map getServices()>()
+org.apache.ambari.server.events.listeners.upgrade.StackUpgradeFinishListener.onAmbariEvent : r3 = virtualinvoke r1.<org.apache.ambari.server.events.StackUpgradeFinishEvent: org.apache.ambari.server.state.Cluster getCluster()>()
+org.apache.ambari.server.events.listeners.upgrade.StackUpgradeFinishListener.onAmbariEvent : goto [?= $z1 = interfaceinvoke r6.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.events.listeners.upgrade.StackUpgradeFinishListener.onAmbariEvent : $r2 = <org.apache.ambari.server.events.listeners.upgrade.StackUpgradeFinishListener: org.slf4j.Logger LOG>
+org.apache.ambari.server.events.StackUpgradeFinishEvent.getCluster : $r1 = r0.<org.apache.ambari.server.events.StackUpgradeFinishEvent: org.apache.ambari.server.state.Cluster cluster>
+org.apache.ambari.server.events.listeners.upgrade.StackUpgradeFinishListenerTest.sendEventAndVerify : virtualinvoke r0.<org.apache.ambari.server.events.listeners.upgrade.StackUpgradeFinishListenerTest: void verifyAll()>()
+org.apache.ambari.server.events.listeners.upgrade.StackUpgradeFinishListenerTest.sendEventAndVerify : $r1 = new org.apache.ambari.server.events.StackUpgradeFinishEvent
+org.apache.ambari.server.events.listeners.upgrade.StackUpgradeFinishListenerTest.sendEventAndVerify : $r4 = r0.<org.apache.ambari.server.events.listeners.upgrade.StackUpgradeFinishListenerTest: org.apache.ambari.server.events.listeners.upgrade.StackUpgradeFinishListener listener>
+org.apache.ambari.server.events.publishers.VersionEventPublisher.register : $r2 = r0.<org.apache.ambari.server.events.publishers.VersionEventPublisher: com.google.common.eventbus.EventBus m_eventBus>

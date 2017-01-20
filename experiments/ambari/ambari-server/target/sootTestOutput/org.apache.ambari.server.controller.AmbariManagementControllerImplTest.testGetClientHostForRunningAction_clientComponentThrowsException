@@ -1,0 +1,20 @@
+org.apache.ambari.server.controller.AmbariManagementControllerImplTest.setAmbariMetaInfo : virtualinvoke r4.<java.lang.reflect.Field: void set(java.lang.Object,java.lang.Object)>(r2, r1)
+org.apache.ambari.server.controller.AmbariManagementControllerImplTest.setAmbariMetaInfo : r4 = virtualinvoke r3.<java.lang.Class: java.lang.reflect.Field getDeclaredField(java.lang.String)>("ambariMetaInfo")
+org.apache.ambari.server.controller.AmbariManagementControllerImplTest.setAmbariMetaInfo : virtualinvoke r4.<java.lang.reflect.Field: void setAccessible(boolean)>(1)
+org.apache.ambari.server.controller.AmbariManagementControllerImplTest.setAmbariMetaInfo : r3 = virtualinvoke r2.<java.lang.Object: java.lang.Class getClass()>()
+org.apache.ambari.server.security.authorization.internal.InternalAuthenticationToken.setAuthenticated : r0.<org.apache.ambari.server.security.authorization.internal.InternalAuthenticationToken: boolean authenticated> = z0
+org.apache.ambari.server.controller.AmbariManagementControllerImpl.getClientComponentForRunningAction : r3 = interfaceinvoke r2.<org.apache.ambari.server.state.Service: org.apache.ambari.server.state.StackId getDesiredStackVersion()>()
+org.apache.ambari.server.controller.AmbariManagementControllerImpl.getClientComponentForRunningAction : $r31 = interfaceinvoke r30.<java.util.Map: java.util.Collection values()>()
+org.apache.ambari.server.controller.AmbariManagementControllerImpl.getClientComponentForRunningAction : $r18 = <org.apache.ambari.server.controller.AmbariManagementControllerImpl: org.slf4j.Logger LOG>
+org.apache.ambari.server.controller.AmbariManagementControllerImpl.getClientComponentForRunningAction : $r13 = virtualinvoke r4.<org.apache.ambari.server.state.ComponentInfo: java.lang.String getName()>()
+org.apache.ambari.server.controller.AmbariManagementControllerImpl.getClientComponentForRunningAction : return r7
+org.apache.ambari.server.controller.AmbariManagementControllerImpl.getClientComponentForRunningAction : if r4 == null goto r30 = interfaceinvoke r2.<org.apache.ambari.server.state.Service: java.util.Map getServiceComponents()>()
+org.apache.ambari.server.controller.AmbariManagementControllerImpl.getClientComponentForRunningAction : r30 = interfaceinvoke r2.<org.apache.ambari.server.state.Service: java.util.Map getServiceComponents()>()
+org.apache.ambari.server.controller.AmbariManagementControllerImpl.getClientComponentForRunningAction : goto [?= $z2 = interfaceinvoke r6.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.controller.AmbariManagementControllerImpl.getClientComponentForRunningAction : $z1 = interfaceinvoke r30.<java.util.Map: boolean isEmpty()>()
+org.apache.ambari.server.controller.AmbariManagementControllerImpl.getClientComponentForRunningAction : r17 = $r16
+org.apache.ambari.server.controller.AmbariManagementControllerImpl.getClientComponentForRunningAction : $r33 = interfaceinvoke r7.<org.apache.ambari.server.state.ServiceComponent: java.util.Map getServiceComponentHosts()>()
+org.apache.ambari.server.controller.AmbariManagementControllerImpl.getClientComponentForRunningAction : $r8 = r0.<org.apache.ambari.server.controller.AmbariManagementControllerImpl: org.apache.ambari.server.api.services.AmbariMetaInfo ambariMetaInfo>
+org.apache.ambari.server.controller.AmbariManagementControllerImplTest.setupAuthentication : virtualinvoke r1.<org.apache.ambari.server.security.authorization.internal.InternalAuthenticationToken: void setAuthenticated(boolean)>(1)
+org.apache.ambari.server.controller.AmbariManagementControllerImplTest.setupAuthentication : $r2 = staticinvoke <org.springframework.security.core.context.SecurityContextHolder: org.springframework.security.core.context.SecurityContext getContext()>()
+org.apache.ambari.server.controller.AmbariManagementControllerImplTest.setupAuthentication : $r0 = new org.apache.ambari.server.security.authorization.internal.InternalAuthenticationToken

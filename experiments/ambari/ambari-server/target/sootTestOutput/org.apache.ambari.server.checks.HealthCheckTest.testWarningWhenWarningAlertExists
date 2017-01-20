@@ -1,0 +1,70 @@
+org.apache.ambari.server.checks.HealthCheckTest.expectWarning : $r2 = new org.apache.ambari.server.orm.entities.AlertCurrentEntity
+org.apache.ambari.server.checks.HealthCheckTest.expectWarning : $r7 = new org.apache.ambari.server.orm.entities.AlertHistoryEntity
+org.apache.ambari.server.checks.HealthCheckTest.expectWarning : virtualinvoke r4.<org.apache.ambari.server.orm.entities.AlertHistoryEntity: void setHostName(java.lang.String)>("some hostname 1")
+org.apache.ambari.server.checks.HealthCheckTest.expectWarning : $r9 = r0.<org.apache.ambari.server.checks.HealthCheckTest: org.apache.ambari.server.orm.dao.AlertsDAO alertsDAO>
+org.apache.ambari.server.checks.HealthCheckTest.expectWarning : $r15 = new org.apache.ambari.server.state.stack.PrerequisiteCheck
+org.apache.ambari.server.checks.HealthCheckTest.expectWarning : $r18 = <org.apache.ambari.server.state.stack.PrereqCheckStatus: org.apache.ambari.server.state.stack.PrereqCheckStatus WARNING>
+org.apache.ambari.server.checks.HealthCheckTest.expectWarning : virtualinvoke r3.<org.apache.ambari.server.orm.entities.AlertCurrentEntity: void setAlertHistory(org.apache.ambari.server.orm.entities.AlertHistoryEntity)>(r4)
+org.apache.ambari.server.checks.HealthCheckTest.expectWarning : virtualinvoke r4.<org.apache.ambari.server.orm.entities.AlertHistoryEntity: void setAlertState(org.apache.ambari.server.state.AlertState)>(r1)
+org.apache.ambari.server.checks.HealthCheckTest.expectWarning : $r8 = new org.apache.ambari.server.orm.entities.AlertDefinitionEntity
+org.apache.ambari.server.checks.HealthCheckTest.expectWarning : virtualinvoke r4.<org.apache.ambari.server.orm.entities.AlertHistoryEntity: void setAlertDefinition(org.apache.ambari.server.orm.entities.AlertDefinitionEntity)>(r5)
+org.apache.ambari.server.checks.HealthCheckTest.expectWarning : virtualinvoke r5.<org.apache.ambari.server.orm.entities.AlertDefinitionEntity: void setLabel(java.lang.String)>("label 1")
+org.apache.ambari.server.checks.HealthCheckTest.expectWarning : $r16 = r0.<org.apache.ambari.server.checks.HealthCheckTest: org.apache.ambari.server.checks.HealthCheck healthCheck>
+org.apache.ambari.server.orm.entities.AlertDefinitionEntity.getLabel : $r1 = virtualinvoke r0.<org.apache.ambari.server.orm.entities.AlertDefinitionEntity: java.lang.String _persistence_get_label()>()
+org.apache.ambari.server.state.stack.PrerequisiteCheck.getFailedOn : $r1 = r0.<org.apache.ambari.server.state.stack.PrerequisiteCheck: java.util.LinkedHashSet m_failedOn>
+org.apache.ambari.server.orm.entities.AlertDefinitionEntity.setLabel : virtualinvoke r0.<org.apache.ambari.server.orm.entities.AlertDefinitionEntity: void _persistence_set_label(java.lang.String)>(r1)
+org.apache.ambari.server.orm.entities.AlertHistoryEntity.setHostName : virtualinvoke r0.<org.apache.ambari.server.orm.entities.AlertHistoryEntity: void _persistence_set_hostName(java.lang.String)>(r1)
+org.apache.ambari.server.orm.entities.AlertHistoryEntity.getAlertDefinitionId : $r1 = virtualinvoke r0.<org.apache.ambari.server.orm.entities.AlertHistoryEntity: java.lang.Long _persistence_get_alertDefinitionId()>()
+org.apache.ambari.server.checks.CheckDescription.getFail : $r2 = r0.<org.apache.ambari.server.checks.CheckDescription: java.util.Map m_fails>
+org.apache.ambari.server.state.stack.PrerequisiteCheck.setFailReason : r0.<org.apache.ambari.server.state.stack.PrerequisiteCheck: java.lang.String m_failReason> = r1
+org.apache.ambari.server.orm.entities.AlertHistoryEntity.getAlertState : $r1 = virtualinvoke r0.<org.apache.ambari.server.orm.entities.AlertHistoryEntity: org.apache.ambari.server.state.AlertState _persistence_get_alertState()>()
+org.apache.ambari.server.state.stack.PrerequisiteCheck.getStatus : $r1 = r0.<org.apache.ambari.server.state.stack.PrerequisiteCheck: org.apache.ambari.server.state.stack.PrereqCheckStatus m_status>
+org.apache.ambari.server.orm.entities.AlertHistoryEntity.setAlertDefinition : virtualinvoke r0.<org.apache.ambari.server.orm.entities.AlertHistoryEntity: void _persistence_set_alertDefinition(org.apache.ambari.server.orm.entities.AlertDefinitionEntity)>(r1)
+org.apache.ambari.server.orm.entities.AlertHistoryEntity.setAlertDefinition : $r2 = virtualinvoke r1.<org.apache.ambari.server.orm.entities.AlertDefinitionEntity: java.lang.Long getDefinitionId()>()
+org.apache.ambari.server.orm.entities.AlertCurrentEntity.setAlertHistory : $r3 = virtualinvoke r1.<org.apache.ambari.server.orm.entities.AlertHistoryEntity: org.apache.ambari.server.orm.entities.AlertDefinitionEntity getAlertDefinition()>()
+org.apache.ambari.server.orm.entities.AlertCurrentEntity.setAlertHistory : $r5 = virtualinvoke r1.<org.apache.ambari.server.orm.entities.AlertHistoryEntity: java.lang.String getAlertText()>()
+org.apache.ambari.server.orm.entities.AlertCurrentEntity.setAlertHistory : virtualinvoke r0.<org.apache.ambari.server.orm.entities.AlertCurrentEntity: void _persistence_set_alertHistory(org.apache.ambari.server.orm.entities.AlertHistoryEntity)>(r1)
+org.apache.ambari.server.orm.entities.AlertCurrentEntity.setAlertHistory : $r2 = virtualinvoke r1.<org.apache.ambari.server.orm.entities.AlertHistoryEntity: java.lang.Long getAlertId()>()
+org.apache.ambari.server.orm.entities.AlertCurrentEntity.setAlertHistory : $r4 = virtualinvoke r1.<org.apache.ambari.server.orm.entities.AlertHistoryEntity: java.lang.Long getAlertDefinitionId()>()
+org.apache.ambari.server.orm.entities.AlertCurrentEntity.getAlertHistory : $r1 = virtualinvoke r0.<org.apache.ambari.server.orm.entities.AlertCurrentEntity: org.apache.ambari.server.orm.entities.AlertHistoryEntity _persistence_get_alertHistory()>()
+org.apache.ambari.server.orm.entities.AlertHistoryEntity.getAlertDefinition : $r1 = virtualinvoke r0.<org.apache.ambari.server.orm.entities.AlertHistoryEntity: org.apache.ambari.server.orm.entities.AlertDefinitionEntity _persistence_get_alertDefinition()>()
+org.apache.ambari.server.checks.HealthCheck.perform : $r20 = new java.util.ArrayList
+org.apache.ambari.server.checks.HealthCheck.perform : $r41 = <org.apache.ambari.server.state.stack.PrereqCheckStatus: org.apache.ambari.server.state.stack.PrereqCheckStatus WARNING>
+org.apache.ambari.server.checks.HealthCheck.perform : $r17 = r0.<org.apache.ambari.server.checks.HealthCheck: com.google.inject.Provider clustersProvider>
+org.apache.ambari.server.checks.HealthCheck.perform : $r25 = virtualinvoke r10.<org.apache.ambari.server.orm.entities.AlertHistoryEntity: org.apache.ambari.server.orm.entities.AlertDefinitionEntity getAlertDefinition()>()
+org.apache.ambari.server.checks.HealthCheck.perform : r8 = interfaceinvoke r6.<java.util.List: java.util.Iterator iterator()>()
+org.apache.ambari.server.checks.HealthCheck.perform : if r14 != null goto $r31 = new java.lang.StringBuilder
+org.apache.ambari.server.checks.HealthCheck.perform : $r31 = new java.lang.StringBuilder
+org.apache.ambari.server.checks.HealthCheck.perform : $z6 = interfaceinvoke r7.<java.util.List: boolean isEmpty()>()
+org.apache.ambari.server.checks.HealthCheck.perform : r12 = virtualinvoke r11.<org.apache.ambari.server.state.AlertState: java.lang.String name()>()
+org.apache.ambari.server.checks.HealthCheck.perform : $r43 = newarray (java.lang.Object)[1]
+org.apache.ambari.server.checks.HealthCheck.perform : r11 = virtualinvoke r10.<org.apache.ambari.server.orm.entities.AlertHistoryEntity: org.apache.ambari.server.state.AlertState getAlertState()>()
+org.apache.ambari.server.checks.HealthCheck.perform : $r22 = <org.apache.ambari.server.checks.HealthCheck: java.util.List ALERT_STATES>
+org.apache.ambari.server.checks.HealthCheck.perform : $r40 = virtualinvoke r1.<org.apache.ambari.server.state.stack.PrerequisiteCheck: java.util.LinkedHashSet getFailedOn()>()
+org.apache.ambari.server.checks.HealthCheck.perform : $r15 = r0.<org.apache.ambari.server.checks.HealthCheck: com.google.inject.Provider alertsDAOProvider>
+org.apache.ambari.server.checks.HealthCheck.perform : r42 = virtualinvoke r0.<org.apache.ambari.server.checks.HealthCheck: java.lang.String getFailReason(org.apache.ambari.server.state.stack.PrerequisiteCheck,org.apache.ambari.server.controller.PrereqCheckRequest)>(r1, r2)
+org.apache.ambari.server.checks.HealthCheck.perform : r14 = virtualinvoke r10.<org.apache.ambari.server.orm.entities.AlertHistoryEntity: java.lang.String getHostName()>()
+org.apache.ambari.server.checks.HealthCheck.perform : r4 = virtualinvoke r2.<org.apache.ambari.server.controller.PrereqCheckRequest: java.lang.String getClusterName()>()
+org.apache.ambari.server.checks.HealthCheck.perform : r10 = virtualinvoke r9.<org.apache.ambari.server.orm.entities.AlertCurrentEntity: org.apache.ambari.server.orm.entities.AlertHistoryEntity getAlertHistory()>()
+org.apache.ambari.server.checks.HealthCheck.perform : goto [?= $z0 = interfaceinvoke r8.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.checks.HealthCheck.perform : $r38 = virtualinvoke r1.<org.apache.ambari.server.state.stack.PrerequisiteCheck: java.util.List getFailedDetail()>()
+org.apache.ambari.server.checks.HealthCheck.perform : $l0 = interfaceinvoke r5.<org.apache.ambari.server.state.Cluster: long getClusterId()>()
+org.apache.ambari.server.orm.entities.AlertDefinitionEntity.getDefinitionId : $r1 = virtualinvoke r0.<org.apache.ambari.server.orm.entities.AlertDefinitionEntity: java.lang.Long _persistence_get_definitionId()>()
+org.apache.ambari.server.state.stack.PrerequisiteCheck.getFailedDetail : $r1 = r0.<org.apache.ambari.server.state.stack.PrerequisiteCheck: java.util.List m_failedDetail>
+org.apache.ambari.server.orm.entities.AlertHistoryEntity.getHostName : $r1 = virtualinvoke r0.<org.apache.ambari.server.orm.entities.AlertHistoryEntity: java.lang.String _persistence_get_hostName()>()
+org.apache.ambari.server.checks.HealthCheckTest.access$000 : $r1 = r0.<org.apache.ambari.server.checks.HealthCheckTest: org.apache.ambari.server.orm.dao.AlertsDAO alertsDAO>
+org.apache.ambari.server.orm.entities.AlertHistoryEntity.getAlertText : $r1 = virtualinvoke r0.<org.apache.ambari.server.orm.entities.AlertHistoryEntity: java.lang.String _persistence_get_alertText()>()
+org.apache.ambari.server.orm.entities.AlertHistoryEntity.getAlertId : $r1 = virtualinvoke r0.<org.apache.ambari.server.orm.entities.AlertHistoryEntity: java.lang.Long _persistence_get_alertId()>()
+org.apache.ambari.server.checks.HealthCheckTest$1.get : $r1 = virtualinvoke r0.<org.apache.ambari.server.checks.HealthCheckTest$1: org.apache.ambari.server.orm.dao.AlertsDAO get()>()
+org.apache.ambari.server.checks.HealthCheckTest$1.get : $r1 = r0.<org.apache.ambari.server.checks.HealthCheckTest$1: org.apache.ambari.server.checks.HealthCheckTest this$0>
+org.apache.ambari.server.checks.AbstractCheckDescriptor.getFailReason : return r4
+org.apache.ambari.server.checks.AbstractCheckDescriptor.getFailReason : $r3 = virtualinvoke r0.<org.apache.ambari.server.checks.AbstractCheckDescriptor: java.lang.String getFailReason(java.lang.String,org.apache.ambari.server.state.stack.PrerequisiteCheck,org.apache.ambari.server.controller.PrereqCheckRequest)>("default", r1, r2)
+org.apache.ambari.server.checks.AbstractCheckDescriptor.getFailReason : $r13 = r0.<org.apache.ambari.server.checks.AbstractCheckDescriptor: org.apache.ambari.server.checks.CheckDescription m_description>
+org.apache.ambari.server.checks.AbstractCheckDescriptor.getFailReason : $z1 = virtualinvoke r4.<java.lang.String: boolean contains(java.lang.CharSequence)>("{{fails}}")
+org.apache.ambari.server.checks.AbstractCheckDescriptor.getFailReason : $z0 = virtualinvoke r4.<java.lang.String: boolean contains(java.lang.CharSequence)>("{{version}}")
+org.apache.ambari.server.state.stack.PrerequisiteCheck.setStatus : r0.<org.apache.ambari.server.state.stack.PrerequisiteCheck: org.apache.ambari.server.state.stack.PrereqCheckStatus m_status> = r1
+org.apache.ambari.server.orm.entities.AlertHistoryEntity.setAlertState : virtualinvoke r0.<org.apache.ambari.server.orm.entities.AlertHistoryEntity: void _persistence_set_alertState(org.apache.ambari.server.state.AlertState)>(r1)
+org.apache.ambari.server.checks.HealthCheckTest$2.get : $r1 = r0.<org.apache.ambari.server.checks.HealthCheckTest$2: org.apache.ambari.server.state.Clusters val$clusters>
+org.apache.ambari.server.checks.HealthCheckTest$2.get : $r1 = virtualinvoke r0.<org.apache.ambari.server.checks.HealthCheckTest$2: org.apache.ambari.server.state.Clusters get()>()
+org.apache.ambari.server.orm.entities.AlertCurrentEntity.getMaintenanceState : $r1 = virtualinvoke r0.<org.apache.ambari.server.orm.entities.AlertCurrentEntity: org.apache.ambari.server.state.MaintenanceState _persistence_get_maintenanceState()>()
+org.apache.ambari.server.controller.PrereqCheckRequest.getClusterName : $r1 = r0.<org.apache.ambari.server.controller.PrereqCheckRequest: java.lang.String m_clusterName>

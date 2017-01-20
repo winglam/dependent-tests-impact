@@ -1,0 +1,61 @@
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.synchronizeExistingLdapGroups : $z2 = interfaceinvoke r8.<java.util.Set: boolean isEmpty()>()
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.synchronizeExistingLdapGroups : r6 = interfaceinvoke r5.<java.util.Set: java.util.Iterator iterator()>()
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.synchronizeExistingLdapGroups : r4 = virtualinvoke r0.<org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator: java.util.Map getInternalUsers()>()
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.synchronizeExistingLdapGroups : $r12 = virtualinvoke r7.<org.apache.ambari.server.security.authorization.Group: java.lang.String getGroupName()>()
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.synchronizeExistingLdapGroups : virtualinvoke r0.<org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator: void refreshGroupMembers(org.apache.ambari.server.security.ldap.LdapBatchDto,org.apache.ambari.server.security.ldap.LdapGroupDto,java.util.Map,java.util.Map,java.util.Set,boolean)>(r1, r9, r4, r3, null, 1)
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.synchronizeExistingLdapGroups : $r2 = <org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator: org.slf4j.Logger LOG>
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.synchronizeExistingLdapGroups : $r10 = interfaceinvoke r3.<java.util.Map: java.util.Collection values()>()
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.synchronizeExistingLdapGroups : $r15 = interfaceinvoke r8.<java.util.Set: java.util.Iterator iterator()>()
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.synchronizeExistingLdapGroups : goto [?= $z0 = interfaceinvoke r6.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.synchronizeExistingLdapGroups : return r1
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.synchronizeExistingLdapGroups : r3 = virtualinvoke r0.<org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator: java.util.Map getInternalGroups()>()
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.synchronizeExistingLdapGroups : $z1 = virtualinvoke r7.<org.apache.ambari.server.security.authorization.Group: boolean isLdapGroup()>()
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.refreshGroupMembers : $r6 = new java.util.HashSet
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.refreshGroupMembers : if r11 == null goto (branch)
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.refreshGroupMembers : if r5 != null goto $r14 = virtualinvoke r2.<org.apache.ambari.server.security.ldap.LdapGroupDto: java.util.Set getMemberAttributes()>()
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.refreshGroupMembers : r18 = virtualinvoke r2.<org.apache.ambari.server.security.ldap.LdapGroupDto: java.lang.String getGroupName()>()
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.refreshGroupMembers : interfaceinvoke r5.<java.util.Set: boolean add(java.lang.Object)>(r9)
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.refreshGroupMembers : r19 = virtualinvoke r0.<org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator: java.util.Map getInternalMembers(java.lang.String)>(r18)
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.refreshGroupMembers : r11 = virtualinvoke r0.<org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator: org.apache.ambari.server.security.ldap.LdapGroupDto getLdapGroupByMemberAttr(java.lang.String)>(r9)
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.refreshGroupMembers : $r38 = interfaceinvoke r19.<java.util.Map: java.util.Set entrySet()>()
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.refreshGroupMembers : r10 = virtualinvoke r0.<org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator: org.apache.ambari.server.security.ldap.LdapUserDto getLdapUserByMemberAttr(java.lang.String)>(r9)
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.refreshGroupMembers : if r10 == null goto (branch)
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.refreshGroupMembers : r20 = interfaceinvoke r7.<java.util.Set: java.util.Iterator iterator()>()
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.refreshGroupMembers : if z0 == 0 goto (branch)
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.refreshGroupMembers : $r17 = virtualinvoke r11.<org.apache.ambari.server.security.ldap.LdapGroupDto: java.lang.String getGroupName()>()
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.refreshGroupMembers : $r13 = new java.util.HashSet
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.refreshGroupMembers : goto [?= $z1 = interfaceinvoke r8.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.refreshGroupMembers : $r14 = virtualinvoke r2.<org.apache.ambari.server.security.ldap.LdapGroupDto: java.util.Set getMemberAttributes()>()
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.refreshGroupMembers : virtualinvoke r0.<org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator: void refreshGroupMembers(org.apache.ambari.server.security.ldap.LdapBatchDto,org.apache.ambari.server.security.ldap.LdapGroupDto,java.util.Map,java.util.Map,java.util.Set,boolean)>(r1, r11, r3, r4, r5, 1)
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.getInternalUsers : return r2
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.getInternalUsers : r3 = interfaceinvoke r1.<java.util.List: java.util.Iterator iterator()>()
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.getInternalUsers : $r6 = new java.util.HashMap
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.getInternalUsers : $r7 = <org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator: org.slf4j.Logger LOG>
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.getInternalUsers : $r5 = r0.<org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator: org.apache.ambari.server.security.authorization.Users users>
+org.apache.ambari.server.utils.AmbariPath.getPath : $r3 = <org.apache.ambari.server.utils.AmbariPath: org.slf4j.Logger LOG>
+org.apache.ambari.server.utils.AmbariPath.getPath : $r1 = <org.apache.ambari.server.utils.AmbariPath: java.lang.String rootDirectory>
+org.apache.ambari.server.utils.AmbariPath.getPath : return r0
+org.apache.ambari.server.security.ldap.LdapGroupDto.getGroupName : $r1 = r0.<org.apache.ambari.server.security.ldap.LdapGroupDto: java.lang.String groupName>
+org.apache.ambari.server.security.ldap.LdapGroupDto.setMemberAttributes : r0.<org.apache.ambari.server.security.ldap.LdapGroupDto: java.util.Set memberAttributes> = r1
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.addLdapGroup : $z0 = interfaceinvoke r2.<java.util.Map: boolean containsKey(java.lang.Object)>(r3)
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.addLdapGroup : interfaceinvoke r2.<java.util.Map: java.lang.Object remove(java.lang.Object)>(r3)
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.addLdapGroup : $r9 = virtualinvoke r1.<org.apache.ambari.server.security.ldap.LdapBatchDto: java.util.Set getGroupsProcessedInternal()>()
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.addLdapGroup : goto [?= return]
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.addLdapGroup : $r5 = interfaceinvoke r2.<java.util.Map: java.lang.Object get(java.lang.Object)>(r3)
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.addLdapGroup : $z1 = virtualinvoke r4.<org.apache.ambari.server.security.authorization.Group: boolean isLdapGroup()>()
+org.apache.ambari.server.security.ldap.LdapBatchDto.getGroupsProcessedInternal : $r1 = r0.<org.apache.ambari.server.security.ldap.LdapBatchDto: java.util.Set groupsProcessedInternal>
+org.apache.ambari.server.configuration.Configuration$ConfigurationProperty.getDefaultValue : $r1 = r0.<org.apache.ambari.server.configuration.Configuration$ConfigurationProperty: java.lang.Object m_defaultValue>
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.getInternalGroups : return r2
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.getInternalGroups : r3 = interfaceinvoke r1.<java.util.List: java.util.Iterator iterator()>()
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.getInternalGroups : $r6 = new java.util.HashMap
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.getInternalGroups : $r8 = virtualinvoke r4.<org.apache.ambari.server.security.authorization.Group: java.lang.String getGroupName()>()
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.getInternalGroups : $r5 = r0.<org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator: org.apache.ambari.server.security.authorization.Users users>
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.getInternalGroups : goto [?= $z0 = interfaceinvoke r3.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.security.ldap.LdapGroupDto.setGroupName : r0.<org.apache.ambari.server.security.ldap.LdapGroupDto: java.lang.String groupName> = r1
+org.apache.ambari.server.security.ldap.LdapGroupDto.hashCode : return i0
+org.apache.ambari.server.security.ldap.LdapGroupDto.hashCode : $r1 = r0.<org.apache.ambari.server.security.ldap.LdapGroupDto: java.lang.String groupName>
+org.apache.ambari.server.security.ldap.LdapGroupDto.getMemberAttributes : $r1 = r0.<org.apache.ambari.server.security.ldap.LdapGroupDto: java.util.Set memberAttributes>
+org.apache.ambari.server.configuration.Configuration$ConnectionPoolType.getName : $r1 = r0.<org.apache.ambari.server.configuration.Configuration$ConnectionPoolType: java.lang.String m_name>
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.getInternalMembers : $r6 = r0.<org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator: org.apache.ambari.server.security.authorization.Users users>
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.getInternalMembers : if r2 != null goto $r8 = new java.util.HashMap
+org.apache.ambari.server.security.ldap.AmbariLdapDataPopulator.getInternalMembers : $r7 = staticinvoke <java.util.Collections: java.util.Map emptyMap()>()

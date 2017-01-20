@@ -1,0 +1,145 @@
+org.apache.ambari.server.state.ConfigHelper.fileNameToConfigType : $r1 = virtualinvoke r0.<java.lang.String: java.lang.String substring(int,int)>(0, i0)
+org.apache.ambari.server.state.ConfigHelper.fileNameToConfigType : i0 = virtualinvoke r0.<java.lang.String: int indexOf(java.lang.String)>(".xml")
+org.apache.ambari.server.controller.PrereqCheckRequest.getTargetStackId : $r1 = r0.<org.apache.ambari.server.controller.PrereqCheckRequest: org.apache.ambari.server.state.StackId m_targetStackId>
+org.apache.ambari.server.checks.ConfigurationMergeCheckTest$2.get : $r1 = virtualinvoke r0.<org.apache.ambari.server.checks.ConfigurationMergeCheckTest$2: org.apache.ambari.server.orm.dao.RepositoryVersionDAO get()>()
+org.apache.ambari.server.checks.ConfigurationMergeCheckTest$2.get : $r1 = r0.<org.apache.ambari.server.checks.ConfigurationMergeCheckTest$2: org.apache.ambari.server.orm.dao.RepositoryVersionDAO val$repositoryVersionDAO>
+org.apache.ambari.server.state.stack.PrerequisiteCheck.getFailedOn : $r1 = r0.<org.apache.ambari.server.state.stack.PrerequisiteCheck: java.util.LinkedHashSet m_failedOn>
+org.apache.ambari.server.state.StackId.parseStackIdHelper : if r2 == null goto r1.<org.apache.ambari.server.state.StackId: java.lang.String stackName> = ""
+org.apache.ambari.server.state.StackId.parseStackIdHelper : $r8 = virtualinvoke r2.<java.lang.String: java.lang.String substring(int,int)>(0, i0)
+org.apache.ambari.server.state.StackId.parseStackIdHelper : i0 = virtualinvoke r2.<java.lang.String: int indexOf(int)>(45)
+org.apache.ambari.server.state.StackId.parseStackIdHelper : if i0 == -1 goto $r3 = new java.lang.RuntimeException
+org.apache.ambari.server.state.StackId.parseStackIdHelper : $i3 = i0 + 1
+org.apache.ambari.server.checks.ConfigurationMergeCheckTest$3.get : $r1 = virtualinvoke r0.<org.apache.ambari.server.checks.ConfigurationMergeCheckTest$3: org.apache.ambari.server.state.Clusters get()>()
+org.apache.ambari.server.checks.ConfigurationMergeCheckTest$3.get : $r1 = r0.<org.apache.ambari.server.checks.ConfigurationMergeCheckTest$3: org.apache.ambari.server.checks.ConfigurationMergeCheckTest this$0>
+org.apache.ambari.server.checks.ConfigurationMergeCheck.perform : $r66 = new org.apache.ambari.server.checks.ConfigurationMergeCheck$MergeDetail
+org.apache.ambari.server.checks.ConfigurationMergeCheck.perform : goto [?= $z1 = interfaceinvoke r9.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.checks.ConfigurationMergeCheck.perform : $r13 = virtualinvoke r2.<org.apache.ambari.server.controller.PrereqCheckRequest: org.apache.ambari.server.state.StackId getTargetStackId()>()
+org.apache.ambari.server.checks.ConfigurationMergeCheck.perform : $r79 = newarray (java.lang.Object)[1]
+org.apache.ambari.server.checks.ConfigurationMergeCheck.perform : goto [?= (branch)]
+org.apache.ambari.server.checks.ConfigurationMergeCheck.perform : $r46 = r11.<org.apache.ambari.server.state.ConfigMergeHelper$ThreeWayValue: java.lang.String savedValue>
+org.apache.ambari.server.checks.ConfigurationMergeCheck.perform : $r42 = interfaceinvoke r8.<java.util.Map$Entry: java.lang.Object getKey()>()
+org.apache.ambari.server.checks.ConfigurationMergeCheck.perform : $r28 = interfaceinvoke r10.<java.util.Map$Entry: java.lang.Object getValue()>()
+org.apache.ambari.server.checks.ConfigurationMergeCheck.perform : r78 = virtualinvoke r0.<org.apache.ambari.server.checks.ConfigurationMergeCheck: java.lang.String getFailReason(org.apache.ambari.server.state.stack.PrerequisiteCheck,org.apache.ambari.server.controller.PrereqCheckRequest)>(r1, r2)
+org.apache.ambari.server.checks.ConfigurationMergeCheck.perform : $r76 = virtualinvoke r1.<org.apache.ambari.server.state.stack.PrerequisiteCheck: java.util.LinkedHashSet getFailedOn()>()
+org.apache.ambari.server.checks.ConfigurationMergeCheck.perform : $r31 = virtualinvoke r1.<org.apache.ambari.server.state.stack.PrerequisiteCheck: java.util.LinkedHashSet getFailedOn()>()
+org.apache.ambari.server.checks.ConfigurationMergeCheck.perform : $r18 = r0.<org.apache.ambari.server.checks.ConfigurationMergeCheck: org.apache.ambari.server.state.ConfigMergeHelper m_mergeHelper>
+org.apache.ambari.server.checks.ConfigurationMergeCheck.perform : $r70 = interfaceinvoke r10.<java.util.Map$Entry: java.lang.Object getKey()>()
+org.apache.ambari.server.checks.ConfigurationMergeCheck.perform : $r47 = r11.<org.apache.ambari.server.state.ConfigMergeHelper$ThreeWayValue: java.lang.String newStackValue>
+org.apache.ambari.server.checks.ConfigurationMergeCheck.perform : $r68 = interfaceinvoke r8.<java.util.Map$Entry: java.lang.Object getKey()>()
+org.apache.ambari.server.checks.ConfigurationMergeCheck.perform : $r73 = r11.<org.apache.ambari.server.state.ConfigMergeHelper$ThreeWayValue: java.lang.String newStackValue>
+org.apache.ambari.server.checks.ConfigurationMergeCheck.perform : $r52 = r11.<org.apache.ambari.server.state.ConfigMergeHelper$ThreeWayValue: java.lang.String newStackValue>
+org.apache.ambari.server.checks.ConfigurationMergeCheck.perform : $r56 = virtualinvoke r1.<org.apache.ambari.server.state.stack.PrerequisiteCheck: java.util.LinkedHashSet getFailedOn()>()
+org.apache.ambari.server.checks.ConfigurationMergeCheck.perform : $r49 = virtualinvoke r1.<org.apache.ambari.server.state.stack.PrerequisiteCheck: java.util.List getFailedDetail()>()
+org.apache.ambari.server.checks.ConfigurationMergeCheck.perform : $r55 = interfaceinvoke r8.<java.util.Map$Entry: java.lang.Object getKey()>()
+org.apache.ambari.server.checks.ConfigurationMergeCheck.perform : goto [?= return]
+org.apache.ambari.server.checks.ConfigurationMergeCheck.perform : $r75 = virtualinvoke r1.<org.apache.ambari.server.state.stack.PrerequisiteCheck: java.util.List getFailedDetail()>()
+org.apache.ambari.server.checks.ConfigurationMergeCheck.perform : $r44 = interfaceinvoke r10.<java.util.Map$Entry: java.lang.Object getKey()>()
+org.apache.ambari.server.checks.ConfigurationMergeCheck.perform : $r48 = r12.<org.apache.ambari.server.checks.ConfigurationMergeCheck$MergeDetail: java.lang.String current>
+org.apache.ambari.server.checks.ConfigurationMergeCheck.perform : goto [?= $z0 = interfaceinvoke r7.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.checks.ConfigurationMergeCheck.perform : $r21 = new java.util.HashSet
+org.apache.ambari.server.checks.ConfigurationMergeCheck.perform : $r82 = <org.apache.ambari.server.state.stack.PrereqCheckStatus: org.apache.ambari.server.state.stack.PrereqCheckStatus PASS>
+org.apache.ambari.server.checks.ConfigurationMergeCheck.perform : $r77 = <org.apache.ambari.server.state.stack.PrereqCheckStatus: org.apache.ambari.server.state.stack.PrereqCheckStatus WARNING>
+org.apache.ambari.server.checks.ConfigurationMergeCheck.perform : $r29 = r11.<org.apache.ambari.server.state.ConfigMergeHelper$ThreeWayValue: java.lang.String oldStackValue>
+org.apache.ambari.server.checks.ConfigurationMergeCheck.perform : $r41 = new org.apache.ambari.server.checks.ConfigurationMergeCheck$MergeDetail
+org.apache.ambari.server.checks.ConfigurationMergeCheck.perform : $r72 = r11.<org.apache.ambari.server.state.ConfigMergeHelper$ThreeWayValue: java.lang.String savedValue>
+org.apache.ambari.server.checks.ConfigurationMergeCheck.perform : $r30 = interfaceinvoke r8.<java.util.Map$Entry: java.lang.Object getKey()>()
+org.apache.ambari.server.checks.ConfigurationMergeCheck.perform : $r74 = r67.<org.apache.ambari.server.checks.ConfigurationMergeCheck$MergeDetail: java.lang.String current>
+org.apache.ambari.server.checks.ConfigurationMergeCheck.perform : $r22 = interfaceinvoke r5.<java.util.Map: java.util.Set entrySet()>()
+org.apache.ambari.server.checks.ConfigurationMergeCheck.perform : $r24 = interfaceinvoke r8.<java.util.Map$Entry: java.lang.Object getValue()>()
+org.apache.ambari.server.checks.ConfigurationMergeCheck.perform : $r14 = r0.<org.apache.ambari.server.checks.ConfigurationMergeCheck: com.google.inject.Provider repositoryVersionDaoProvider>
+org.apache.ambari.server.state.PropertyInfo.setName : r0.<org.apache.ambari.server.state.PropertyInfo: java.lang.String name> = r1
+org.apache.ambari.server.checks.CheckDescription.getFail : $r2 = r0.<org.apache.ambari.server.checks.CheckDescription: java.util.Map m_fails>
+org.apache.ambari.server.state.stack.PrerequisiteCheck.setFailReason : r0.<org.apache.ambari.server.state.stack.PrerequisiteCheck: java.lang.String m_failReason> = r1
+org.apache.ambari.server.state.PropertyInfo.getValue : $r1 = r0.<org.apache.ambari.server.state.PropertyInfo: java.lang.String value>
+org.apache.ambari.server.state.StackId.getStackName : $r1 = r0.<org.apache.ambari.server.state.StackId: java.lang.String stackName>
+org.apache.ambari.server.controller.PrereqCheckRequest.setRepositoryVersion : r0.<org.apache.ambari.server.controller.PrereqCheckRequest: java.lang.String m_repositoryVersion> = r1
+org.apache.ambari.server.state.ConfigMergeHelper.normalizeValue : if null != r0 goto $r3 = <org.apache.ambari.server.state.ConfigMergeHelper: java.util.regex.Pattern HEAP_PATTERN>
+org.apache.ambari.server.state.ConfigMergeHelper.normalizeValue : $r3 = <org.apache.ambari.server.state.ConfigMergeHelper: java.util.regex.Pattern HEAP_PATTERN>
+org.apache.ambari.server.state.ConfigMergeHelper.normalizeValue : $z0 = virtualinvoke r2.<java.util.regex.Matcher: boolean matches()>()
+org.apache.ambari.server.state.ConfigMergeHelper.normalizeValue : $r4 = new java.lang.StringBuilder
+org.apache.ambari.server.state.PropertyInfo.getFilename : $r1 = r0.<org.apache.ambari.server.state.PropertyInfo: java.lang.String filename>
+org.apache.ambari.server.state.PropertyInfo.setValue : r0.<org.apache.ambari.server.state.PropertyInfo: java.lang.String value> = r1
+org.apache.ambari.server.state.ConfigMergeHelper.addToMap : r3 = interfaceinvoke r2.<java.util.Set: java.util.Iterator iterator()>()
+org.apache.ambari.server.state.ConfigMergeHelper.addToMap : $r10 = interfaceinvoke r1.<java.util.Map: java.lang.Object get(java.lang.Object)>(r5)
+org.apache.ambari.server.state.ConfigMergeHelper.addToMap : $r8 = virtualinvoke r4.<org.apache.ambari.server.state.PropertyInfo: java.lang.String getFilename()>()
+org.apache.ambari.server.state.ConfigMergeHelper.addToMap : $r6 = new java.util.HashMap
+org.apache.ambari.server.state.ConfigMergeHelper.addToMap : $z1 = interfaceinvoke r1.<java.util.Map: boolean containsKey(java.lang.Object)>(r5)
+org.apache.ambari.server.state.ConfigMergeHelper.addToMap : goto [?= $z0 = interfaceinvoke r3.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.controller.PrereqCheckRequest.getRepositoryVersion : $r1 = r0.<org.apache.ambari.server.controller.PrereqCheckRequest: java.lang.String m_repositoryVersion>
+org.apache.ambari.server.state.stack.PrerequisiteCheck.getFailedDetail : $r1 = r0.<org.apache.ambari.server.state.stack.PrerequisiteCheck: java.util.List m_failedDetail>
+org.apache.ambari.server.checks.ConfigurationMergeCheckTest.createFor : $r2 = new org.apache.ambari.server.orm.entities.RepositoryVersionEntity
+org.apache.ambari.server.checks.ConfigurationMergeCheckTest.createFor : return r3
+org.apache.ambari.server.checks.ConfigurationMergeCheckTest.createFor : $r4 = new org.apache.ambari.server.checks.ConfigurationMergeCheckTest$5
+org.apache.ambari.server.checks.ConfigurationMergeCheckTest$5.getStackVersion : $r1 = r0.<org.apache.ambari.server.checks.ConfigurationMergeCheckTest$5: java.lang.String val$stackVersion>
+org.apache.ambari.server.state.StackId.getStackVersion : $r1 = r0.<org.apache.ambari.server.state.StackId: java.lang.String stackVersion>
+org.apache.ambari.server.controller.PrereqCheckRequest.setTargetStackId : r0.<org.apache.ambari.server.controller.PrereqCheckRequest: org.apache.ambari.server.state.StackId m_targetStackId> = r1
+org.apache.ambari.server.orm.entities.RepositoryVersionEntity.setStack : virtualinvoke r0.<org.apache.ambari.server.orm.entities.RepositoryVersionEntity: void _persistence_set_stack(org.apache.ambari.server.orm.entities.StackEntity)>(r1)
+org.apache.ambari.server.checks.AbstractCheckDescriptor.getFailReason : return r4
+org.apache.ambari.server.checks.AbstractCheckDescriptor.getFailReason : $r3 = virtualinvoke r0.<org.apache.ambari.server.checks.AbstractCheckDescriptor: java.lang.String getFailReason(java.lang.String,org.apache.ambari.server.state.stack.PrerequisiteCheck,org.apache.ambari.server.controller.PrereqCheckRequest)>("default", r1, r2)
+org.apache.ambari.server.checks.AbstractCheckDescriptor.getFailReason : $r13 = r0.<org.apache.ambari.server.checks.AbstractCheckDescriptor: org.apache.ambari.server.checks.CheckDescription m_description>
+org.apache.ambari.server.checks.AbstractCheckDescriptor.getFailReason : $z1 = virtualinvoke r4.<java.lang.String: boolean contains(java.lang.CharSequence)>("{{fails}}")
+org.apache.ambari.server.checks.AbstractCheckDescriptor.getFailReason : $z0 = virtualinvoke r4.<java.lang.String: boolean contains(java.lang.CharSequence)>("{{version}}")
+org.apache.ambari.server.checks.ConfigurationMergeCheckTest.access$000 : $r1 = r0.<org.apache.ambari.server.checks.ConfigurationMergeCheckTest: org.apache.ambari.server.state.Clusters clusters>
+org.apache.ambari.server.checks.ConfigurationMergeCheckTest$4.get : $r1 = virtualinvoke r0.<org.apache.ambari.server.checks.ConfigurationMergeCheckTest$4: org.apache.ambari.server.api.services.AmbariMetaInfo get()>()
+org.apache.ambari.server.checks.ConfigurationMergeCheckTest$4.get : $r1 = r0.<org.apache.ambari.server.checks.ConfigurationMergeCheckTest$4: org.apache.ambari.server.api.services.AmbariMetaInfo val$ami>
+org.apache.ambari.server.orm.entities.RepositoryVersionEntity.getStackId : $r1 = virtualinvoke r0.<org.apache.ambari.server.orm.entities.RepositoryVersionEntity: org.apache.ambari.server.orm.entities.StackEntity _persistence_get_stack()>()
+org.apache.ambari.server.orm.entities.RepositoryVersionEntity.getStackId : $r2 = new org.apache.ambari.server.state.StackId
+org.apache.ambari.server.state.ConfigMergeHelper.getConflicts : $r107 = interfaceinvoke r57.<java.util.Map$Entry: java.lang.Object getKey()>()
+org.apache.ambari.server.state.ConfigMergeHelper.getConflicts : $r79 = virtualinvoke r18.<java.lang.String: java.lang.String trim()>()
+org.apache.ambari.server.state.ConfigMergeHelper.getConflicts : $r111 = interfaceinvoke r57.<java.util.Map$Entry: java.lang.Object getKey()>()
+org.apache.ambari.server.state.ConfigMergeHelper.getConflicts : $r94 = interfaceinvoke r11.<java.util.Map: java.lang.Object get(java.lang.Object)>(r93)
+org.apache.ambari.server.state.ConfigMergeHelper.getConflicts : r19.<org.apache.ambari.server.state.ConfigMergeHelper$ThreeWayValue: java.lang.String oldStackValue> = null
+org.apache.ambari.server.state.ConfigMergeHelper.getConflicts : $r35 = r0.<org.apache.ambari.server.state.ConfigMergeHelper: com.google.inject.Provider m_ambariMetaInfo>
+org.apache.ambari.server.state.ConfigMergeHelper.getConflicts : if r97 == null goto (branch)
+org.apache.ambari.server.state.ConfigMergeHelper.getConflicts : $r40 = r0.<org.apache.ambari.server.state.ConfigMergeHelper: com.google.inject.Provider m_ambariMetaInfo>
+org.apache.ambari.server.state.ConfigMergeHelper.getConflicts : if null != r20 goto $r106 = virtualinvoke r20.<java.lang.String: java.lang.String trim()>()
+org.apache.ambari.server.state.ConfigMergeHelper.getConflicts : $r46 = r0.<org.apache.ambari.server.state.ConfigMergeHelper: com.google.inject.Provider m_ambariMetaInfo>
+org.apache.ambari.server.state.ConfigMergeHelper.getConflicts : $r88 = interfaceinvoke r12.<java.util.Map: java.util.Set keySet()>()
+org.apache.ambari.server.state.ConfigMergeHelper.getConflicts : goto [?= $z1 = interfaceinvoke r55.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.state.ConfigMergeHelper.getConflicts : if null == r14 goto (branch)
+org.apache.ambari.server.state.ConfigMergeHelper.getConflicts : $r73 = interfaceinvoke r12.<java.util.Map: java.lang.Object get(java.lang.Object)>(r16)
+org.apache.ambari.server.state.ConfigMergeHelper.getConflicts : $r108 = interfaceinvoke r57.<java.util.Map$Entry: java.lang.Object getKey()>()
+org.apache.ambari.server.state.ConfigMergeHelper.getConflicts : r4 = interfaceinvoke r3.<org.apache.ambari.server.state.Cluster: org.apache.ambari.server.state.StackId getCurrentStackVersion()>()
+org.apache.ambari.server.state.ConfigMergeHelper.getConflicts : r71 = interfaceinvoke r13.<java.util.Collection: java.util.Iterator iterator()>()
+org.apache.ambari.server.state.ConfigMergeHelper.getConflicts : return r53
+org.apache.ambari.server.state.ConfigMergeHelper.getConflicts : $r26 = new java.util.HashMap
+org.apache.ambari.server.state.ConfigMergeHelper.getConflicts : $r84 = interfaceinvoke r57.<java.util.Map$Entry: java.lang.Object getKey()>()
+org.apache.ambari.server.state.ConfigMergeHelper.getConflicts : goto [?= $z3 = interfaceinvoke r71.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.state.ConfigMergeHelper.getConflicts : $r101 = virtualinvoke r95.<java.lang.String: java.lang.String trim()>()
+org.apache.ambari.server.state.ConfigMergeHelper.getConflicts : $r77 = virtualinvoke r17.<java.lang.String: java.lang.String trim()>()
+org.apache.ambari.server.state.ConfigMergeHelper.getConflicts : $r30 = r0.<org.apache.ambari.server.state.ConfigMergeHelper: com.google.inject.Provider m_ambariMetaInfo>
+org.apache.ambari.server.state.ConfigMergeHelper.getConflicts : $r69 = interfaceinvoke r14.<org.apache.ambari.server.state.Config: java.util.Map getProperties()>()
+org.apache.ambari.server.state.ConfigMergeHelper.getConflicts : $r58 = interfaceinvoke r57.<java.util.Map$Entry: java.lang.Object getKey()>()
+org.apache.ambari.server.state.ConfigMergeHelper.getConflicts : $r65 = interfaceinvoke r57.<java.util.Map$Entry: java.lang.Object getKey()>()
+org.apache.ambari.server.state.ConfigMergeHelper.getConflicts : $r81 = interfaceinvoke r57.<java.util.Map$Entry: java.lang.Object getKey()>()
+org.apache.ambari.server.state.ConfigMergeHelper.getConflicts : $r64 = interfaceinvoke r57.<java.util.Map$Entry: java.lang.Object getValue()>()
+org.apache.ambari.server.state.ConfigMergeHelper.getConflicts : goto [?= $z6 = interfaceinvoke r91.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.state.ConfigMergeHelper.getConflicts : $r22 = r0.<org.apache.ambari.server.state.ConfigMergeHelper: com.google.inject.Provider m_clusters>
+org.apache.ambari.server.state.ConfigMergeHelper.getConflicts : $r103 = virtualinvoke r97.<java.lang.String: java.lang.String trim()>()
+org.apache.ambari.server.state.ConfigMergeHelper.getConflicts : $r96 = interfaceinvoke r12.<java.util.Map: java.lang.Object get(java.lang.Object)>(r93)
+org.apache.ambari.server.state.ConfigMergeHelper.getConflicts : $r54 = interfaceinvoke r5.<java.util.Map: java.util.Set entrySet()>()
+org.apache.ambari.server.state.ConfigMergeHelper.getConflicts : $r52 = new java.util.HashMap
+org.apache.ambari.server.state.ConfigMergeHelper.getConflicts : $r27 = interfaceinvoke r3.<org.apache.ambari.server.state.Cluster: java.util.Map getServices()>()
+org.apache.ambari.server.state.ConfigMergeHelper.getConflicts : specialinvoke r0.<org.apache.ambari.server.state.ConfigMergeHelper: void addToMap(java.util.Map,java.util.Set)>(r6, r10)
+org.apache.ambari.server.state.ConfigMergeHelper.getConflicts : $r76 = new org.apache.ambari.server.state.ConfigMergeHelper$ThreeWayValue
+org.apache.ambari.server.state.ConfigMergeHelper.getConflicts : specialinvoke r0.<org.apache.ambari.server.state.ConfigMergeHelper: void addToMap(java.util.Map,java.util.Set)>(r5, r45)
+org.apache.ambari.server.state.ConfigMergeHelper.getConflicts : r13 = null
+org.apache.ambari.server.state.ConfigMergeHelper.getConflicts : r91 = interfaceinvoke r90.<java.util.Collection: java.util.Iterator iterator()>()
+org.apache.ambari.server.state.ConfigMergeHelper.getConflicts : goto [?= $z0 = interfaceinvoke r7.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.state.ConfigMergeHelper.getConflicts : $r25 = new java.util.HashMap
+org.apache.ambari.server.state.ConfigMergeHelper.getConflicts : $r67 = interfaceinvoke r57.<java.util.Map$Entry: java.lang.Object getKey()>()
+org.apache.ambari.server.state.ConfigMergeHelper.getConflicts : if null == r13 goto $r88 = interfaceinvoke r12.<java.util.Map: java.util.Set keySet()>()
+org.apache.ambari.server.state.ConfigMergeHelper.getConflicts : $r100 = new org.apache.ambari.server.state.ConfigMergeHelper$ThreeWayValue
+org.apache.ambari.server.state.ConfigMergeHelper.getConflicts : $r98 = interfaceinvoke r14.<org.apache.ambari.server.state.Config: java.util.Map getProperties()>()
+org.apache.ambari.server.state.ConfigMergeHelper.getConflicts : $r70 = interfaceinvoke r11.<java.util.Map: java.util.Set keySet()>()
+org.apache.ambari.server.state.ConfigMergeHelper.getConflicts : r20 = ""
+org.apache.ambari.server.state.ConfigMergeHelper.getConflicts : if null == r17 goto (branch)
+org.apache.ambari.server.state.ConfigMergeHelper.getConflicts : $r74 = interfaceinvoke r14.<org.apache.ambari.server.state.Config: java.util.Map getProperties()>()
+org.apache.ambari.server.state.ConfigMergeHelper.getConflicts : specialinvoke r0.<org.apache.ambari.server.state.ConfigMergeHelper: void addToMap(java.util.Map,java.util.Set)>(r5, r9)
+org.apache.ambari.server.state.ConfigMergeHelper.getConflicts : specialinvoke r0.<org.apache.ambari.server.state.ConfigMergeHelper: void addToMap(java.util.Map,java.util.Set)>(r6, r51)
+org.apache.ambari.server.state.ConfigMergeHelper.getConflicts : $r80 = interfaceinvoke r57.<java.util.Map$Entry: java.lang.Object getKey()>()
+org.apache.ambari.server.checks.ConfigurationMergeCheckTest$5.getStackName : return "HDP"
+org.apache.ambari.server.state.stack.PrerequisiteCheck.setStatus : r0.<org.apache.ambari.server.state.stack.PrerequisiteCheck: org.apache.ambari.server.state.stack.PrereqCheckStatus m_status> = r1
+org.apache.ambari.server.state.PropertyInfo.getName : $r1 = r0.<org.apache.ambari.server.state.PropertyInfo: java.lang.String name>
+org.apache.ambari.server.state.PropertyInfo.setFilename : r0.<org.apache.ambari.server.state.PropertyInfo: java.lang.String filename> = r1
+org.apache.ambari.server.controller.PrereqCheckRequest.getClusterName : $r1 = r0.<org.apache.ambari.server.controller.PrereqCheckRequest: java.lang.String m_clusterName>

@@ -1,0 +1,110 @@
+org.apache.ambari.server.configuration.Configuration.loadSSLParams : $r15 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty SSL_TRUSTSTORE_TYPE>
+org.apache.ambari.server.configuration.Configuration.loadSSLParams : $r1 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty SSL_TRUSTSTORE_PATH>
+org.apache.ambari.server.configuration.Configuration.loadSSLParams : $r7 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty SSL_TRUSTSTORE_PASSWORD>
+org.apache.ambari.server.orm.entities.RoleAuthorizationEntity.setAuthorizationName : virtualinvoke r0.<org.apache.ambari.server.orm.entities.RoleAuthorizationEntity: void _persistence_set_authorizationName(java.lang.String)>(r1)
+org.apache.ambari.server.security.authentication.kerberos.AmbariKerberosAuthenticationProperties.isKerberosAuthenticationEnabled : $z0 = r0.<org.apache.ambari.server.security.authentication.kerberos.AmbariKerberosAuthenticationProperties: boolean kerberosAuthenticationEnabled>
+org.apache.ambari.server.orm.entities.PermissionEntity.setResourceType : virtualinvoke r0.<org.apache.ambari.server.orm.entities.PermissionEntity: void _persistence_set_resourceType(org.apache.ambari.server.orm.entities.ResourceTypeEntity)>(r1)
+org.apache.ambari.server.configuration.Configuration.getSharedResourcesDirPath : $r1 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty SHARED_RESOURCES_DIR>
+org.apache.ambari.server.security.authorization.RoleAuthorization.values : $r0 = <org.apache.ambari.server.security.authorization.RoleAuthorization: org.apache.ambari.server.security.authorization.RoleAuthorization[] $VALUES>
+org.apache.ambari.server.configuration.Configuration$ConfigurationProperty.getKey : $r1 = r0.<org.apache.ambari.server.configuration.Configuration$ConfigurationProperty: java.lang.String m_key>
+org.apache.ambari.server.orm.InMemoryDefaultTestModule.configure : $r52 = r0.<org.apache.ambari.server.orm.InMemoryDefaultTestModule: java.util.Properties properties>
+org.apache.ambari.server.orm.InMemoryDefaultTestModule.configure : $r34 = r0.<org.apache.ambari.server.orm.InMemoryDefaultTestModule: java.util.Properties properties>
+org.apache.ambari.server.orm.InMemoryDefaultTestModule.configure : $r59 = newarray (com.google.inject.Module)[1]
+org.apache.ambari.server.orm.InMemoryDefaultTestModule.configure : $r20 = r0.<org.apache.ambari.server.orm.InMemoryDefaultTestModule: java.util.Properties properties>
+org.apache.ambari.server.orm.InMemoryDefaultTestModule.configure : $r38 = r0.<org.apache.ambari.server.orm.InMemoryDefaultTestModule: java.util.Properties properties>
+org.apache.ambari.server.orm.InMemoryDefaultTestModule.configure : r74 = $r73
+org.apache.ambari.server.orm.InMemoryDefaultTestModule.configure : $r17 = r0.<org.apache.ambari.server.orm.InMemoryDefaultTestModule: java.util.Properties properties>
+org.apache.ambari.server.orm.InMemoryDefaultTestModule.configure : $r24 = r0.<org.apache.ambari.server.orm.InMemoryDefaultTestModule: java.util.Properties properties>
+org.apache.ambari.server.orm.InMemoryDefaultTestModule.configure : r4 = "src/test/resources/"
+org.apache.ambari.server.orm.InMemoryDefaultTestModule.configure : $r8 = staticinvoke <java.lang.System: java.lang.String getProperty(java.lang.String)>("os.name")
+org.apache.ambari.server.orm.InMemoryDefaultTestModule.configure : $r27 = r0.<org.apache.ambari.server.orm.InMemoryDefaultTestModule: java.util.Properties properties>
+org.apache.ambari.server.orm.InMemoryDefaultTestModule.configure : r1 = "src/test/resources/stacks"
+org.apache.ambari.server.orm.InMemoryDefaultTestModule.configure : $r55 = r0.<org.apache.ambari.server.orm.InMemoryDefaultTestModule: java.util.Properties properties>
+org.apache.ambari.server.orm.InMemoryDefaultTestModule.configure : $r41 = r0.<org.apache.ambari.server.orm.InMemoryDefaultTestModule: java.util.Properties properties>
+org.apache.ambari.server.orm.InMemoryDefaultTestModule.configure : $r75 = new java.lang.RuntimeException
+org.apache.ambari.server.orm.InMemoryDefaultTestModule.configure : $r31 = r0.<org.apache.ambari.server.orm.InMemoryDefaultTestModule: java.util.Properties properties>
+org.apache.ambari.server.orm.InMemoryDefaultTestModule.configure : r3 = "src/test/resources/"
+org.apache.ambari.server.orm.InMemoryDefaultTestModule.configure : $r45 = r0.<org.apache.ambari.server.orm.InMemoryDefaultTestModule: java.util.Properties properties>
+org.apache.ambari.server.orm.InMemoryDefaultTestModule.configure : $r48 = r0.<org.apache.ambari.server.orm.InMemoryDefaultTestModule: java.util.Properties properties>
+org.apache.ambari.server.orm.InMemoryDefaultTestModule.configure : r2 = "src/test/resources/version"
+org.apache.ambari.server.configuration.Configuration$ConfigurationProperty.getDefaultValue : $r1 = r0.<org.apache.ambari.server.configuration.Configuration$ConfigurationProperty: java.lang.Object m_defaultValue>
+org.apache.ambari.server.security.TestAuthenticationFactory.createAdministratorPrivilegeEntity : $r3 = staticinvoke <org.apache.ambari.server.security.TestAuthenticationFactory: org.apache.ambari.server.orm.entities.PermissionEntity createAdministratorPermission()>()
+org.apache.ambari.server.security.TestAuthenticationFactory.createAdministratorPrivilegeEntity : $r0 = new org.apache.ambari.server.orm.entities.PrivilegeEntity
+org.apache.ambari.server.security.TestAuthenticationFactory.createAdministratorPrivilegeEntity : $r2 = staticinvoke <org.apache.ambari.server.security.TestAuthenticationFactory: org.apache.ambari.server.orm.entities.ResourceEntity createAmbariResourceEntity()>()
+org.apache.ambari.server.security.TestAuthenticationFactory.createAdministratorPrivilegeEntity : return r1
+org.apache.ambari.server.state.ConfigMergeHelperTest$1.configure : specialinvoke r0.<org.apache.ambari.server.orm.InMemoryDefaultTestModule: void configure()>()
+org.apache.ambari.server.orm.entities.ResourceEntity.setId : virtualinvoke r0.<org.apache.ambari.server.orm.entities.ResourceEntity: void _persistence_set_id(java.lang.Long)>(r1)
+org.apache.ambari.server.orm.entities.ResourceTypeEntity.setId : virtualinvoke r0.<org.apache.ambari.server.orm.entities.ResourceTypeEntity: void _persistence_set_id(java.lang.Integer)>(r1)
+org.apache.ambari.server.security.TestAuthenticationFactory.createAdministratorGrantedAuthority : $r0 = new org.apache.ambari.server.security.authorization.AmbariGrantedAuthority
+org.apache.ambari.server.configuration.Configuration.getHostsMapFile : $r1 = <org.apache.ambari.server.configuration.Configuration: org.slf4j.Logger LOG>
+org.apache.ambari.server.configuration.Configuration.getHostsMapFile : $r8 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty SRVR_HOSTS_MAPPING>
+org.apache.ambari.server.state.ConfigHelperTest$RunWithInMemoryDefaultTestModule.tearDown : $r0 = <org.apache.ambari.server.state.ConfigHelperTest$RunWithInMemoryDefaultTestModule: com.google.inject.Injector injector>
+org.apache.ambari.server.state.ConfigHelperTest$RunWithInMemoryDefaultTestModule.setup : $r0 = staticinvoke <org.springframework.security.core.context.SecurityContextHolder: org.springframework.security.core.context.SecurityContext getContext()>()
+org.apache.ambari.server.state.ConfigHelperTest$RunWithInMemoryDefaultTestModule.setup : $r12 = newarray (com.google.inject.Module)[1]
+org.apache.ambari.server.configuration.Configuration$ConnectionPoolType.getName : $r1 = r0.<org.apache.ambari.server.configuration.Configuration$ConnectionPoolType: java.lang.String m_name>
+org.apache.ambari.server.state.StackId.parseStackIdHelper : if r2 == null goto r1.<org.apache.ambari.server.state.StackId: java.lang.String stackName> = ""
+org.apache.ambari.server.state.StackId.parseStackIdHelper : $r8 = virtualinvoke r2.<java.lang.String: java.lang.String substring(int,int)>(0, i0)
+org.apache.ambari.server.state.StackId.parseStackIdHelper : i0 = virtualinvoke r2.<java.lang.String: int indexOf(int)>(45)
+org.apache.ambari.server.state.StackId.parseStackIdHelper : if i0 == -1 goto $r3 = new java.lang.RuntimeException
+org.apache.ambari.server.state.StackId.parseStackIdHelper : $i3 = i0 + 1
+org.apache.ambari.server.orm.entities.RoleAuthorizationEntity.setAuthorizationId : virtualinvoke r0.<org.apache.ambari.server.orm.entities.RoleAuthorizationEntity: void _persistence_set_authorizationId(java.lang.String)>(r1)
+org.apache.ambari.server.orm.entities.ResourceEntity.setResourceType : virtualinvoke r0.<org.apache.ambari.server.orm.entities.ResourceEntity: void _persistence_set_resourceType(org.apache.ambari.server.orm.entities.ResourceTypeEntity)>(r1)
+org.apache.ambari.server.security.TestAuthenticationFactory.createAuthorizations : return r2
+org.apache.ambari.server.security.TestAuthenticationFactory.createAuthorizations : $r1 = new java.util.ArrayList
+org.apache.ambari.server.security.TestAuthenticationFactory.createAuthorizations : $r6 = staticinvoke <org.apache.ambari.server.security.TestAuthenticationFactory: org.apache.ambari.server.orm.entities.RoleAuthorizationEntity createRoleAuthorizationEntity(org.apache.ambari.server.security.authorization.RoleAuthorization)>(r4)
+org.apache.ambari.server.security.TestAuthenticationFactory.createAuthorizations : r3 = interfaceinvoke r0.<java.util.Set: java.util.Iterator iterator()>()
+org.apache.ambari.server.security.TestAuthenticationFactory.createAuthorizations : goto [?= $z0 = interfaceinvoke r3.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.utils.AmbariPath.getPath : $r3 = <org.apache.ambari.server.utils.AmbariPath: org.slf4j.Logger LOG>
+org.apache.ambari.server.utils.AmbariPath.getPath : $r1 = <org.apache.ambari.server.utils.AmbariPath: java.lang.String rootDirectory>
+org.apache.ambari.server.utils.AmbariPath.getPath : return r0
+org.apache.ambari.server.orm.entities.ResourceTypeEntity.setName : virtualinvoke r0.<org.apache.ambari.server.orm.entities.ResourceTypeEntity: void _persistence_set_name(java.lang.String)>(r1)
+org.apache.ambari.server.security.TestAuthenticationFactory.createAmbariResourceEntity : $r2 = <org.apache.ambari.server.security.authorization.ResourceType: org.apache.ambari.server.security.authorization.ResourceType AMBARI>
+org.apache.ambari.server.security.TestAuthenticationFactory.createAmbariResourceEntity : virtualinvoke r1.<org.apache.ambari.server.orm.entities.ResourceEntity: void setId(java.lang.Long)>(null)
+org.apache.ambari.server.security.TestAuthenticationFactory.createAmbariResourceEntity : return r1
+org.apache.ambari.server.security.TestAuthenticationFactory.createAmbariResourceEntity : $r0 = new org.apache.ambari.server.orm.entities.ResourceEntity
+org.apache.ambari.server.orm.entities.PermissionEntity.setId : virtualinvoke r0.<org.apache.ambari.server.orm.entities.PermissionEntity: void _persistence_set_id(java.lang.Integer)>(r1)
+org.apache.ambari.server.security.authentication.kerberos.AmbariKerberosAuthenticationProperties.setKerberosAuthenticationEnabled : r0.<org.apache.ambari.server.security.authentication.kerberos.AmbariKerberosAuthenticationProperties: boolean kerberosAuthenticationEnabled> = z0
+org.apache.ambari.server.state.ConfigMergeHelperTest.access$200 : $r1 = r0.<org.apache.ambari.server.state.ConfigMergeHelperTest: org.apache.ambari.server.state.Clusters clustersMock>
+org.apache.ambari.server.state.ConfigMergeHelperTest.access$300 : $r1 = r0.<org.apache.ambari.server.state.ConfigMergeHelperTest: org.apache.ambari.server.api.services.AmbariMetaInfo ambariMetaInfoMock>
+org.apache.ambari.server.orm.entities.PermissionEntity.setAuthorizations : virtualinvoke r0.<org.apache.ambari.server.orm.entities.PermissionEntity: void _persistence_set_authorizations(java.util.Collection)>(r1)
+org.apache.ambari.server.security.authorization.ResourceType.getId : $i0 = r0.<org.apache.ambari.server.security.authorization.ResourceType: int id>
+org.apache.ambari.server.security.authorization.RoleAuthorization.getId : $r1 = r0.<org.apache.ambari.server.security.authorization.RoleAuthorization: java.lang.String id>
+org.apache.ambari.server.orm.entities.PrivilegeEntity.setPermission : virtualinvoke r0.<org.apache.ambari.server.orm.entities.PrivilegeEntity: void _persistence_set_permission(org.apache.ambari.server.orm.entities.PermissionEntity)>(r1)
+org.apache.ambari.server.security.TestAuthenticationFactory.createAdministratorPermission : $r5 = staticinvoke <java.util.EnumSet: java.util.EnumSet allOf(java.lang.Class)>(class "org/apache/ambari/server/security/authorization/RoleAuthorization")
+org.apache.ambari.server.security.TestAuthenticationFactory.createAdministratorPermission : $r3 = <org.apache.ambari.server.security.authorization.ResourceType: org.apache.ambari.server.security.authorization.ResourceType AMBARI>
+org.apache.ambari.server.security.TestAuthenticationFactory.createAdministratorPermission : $r0 = new org.apache.ambari.server.orm.entities.PermissionEntity
+org.apache.ambari.server.security.TestAuthenticationFactory.createAdministratorPermission : $r2 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(1)
+org.apache.ambari.server.security.TestAuthenticationFactory.createAdministratorPermission : return r1
+org.apache.ambari.server.configuration.Configuration.getApiSSLAuthentication : $r1 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty API_USE_SSL>
+org.apache.ambari.server.configuration.Configuration.createKerberosAuthenticationProperties : $r3 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty KERBEROS_AUTH_ENABLED>
+org.apache.ambari.server.configuration.Configuration.createKerberosAuthenticationProperties : return r2
+org.apache.ambari.server.configuration.Configuration.createKerberosAuthenticationProperties : $z1 = virtualinvoke r2.<org.apache.ambari.server.security.authentication.kerberos.AmbariKerberosAuthenticationProperties: boolean isKerberosAuthenticationEnabled()>()
+org.apache.ambari.server.configuration.Configuration.createKerberosAuthenticationProperties : $r1 = new org.apache.ambari.server.security.authentication.kerberos.AmbariKerberosAuthenticationProperties
+org.apache.ambari.server.configuration.Configuration.getProperty : r2 = null
+org.apache.ambari.server.configuration.Configuration.getProperty : $r4 = virtualinvoke r1.<org.apache.ambari.server.configuration.Configuration$ConfigurationProperty: java.lang.Object getDefaultValue()>()
+org.apache.ambari.server.configuration.Configuration.getProperty : $r5 = r0.<org.apache.ambari.server.configuration.Configuration: java.util.Properties properties>
+org.apache.ambari.server.configuration.Configuration.getProperty : $r3 = virtualinvoke r1.<org.apache.ambari.server.configuration.Configuration$ConfigurationProperty: java.lang.Object getDefaultValue()>()
+org.apache.ambari.server.state.stack.OsFamily.init : r2 = null
+org.apache.ambari.server.state.stack.OsFamily.init : $r24 = new java.lang.RuntimeException
+org.apache.ambari.server.state.stack.OsFamily.init : $r8 = new java.io.File
+org.apache.ambari.server.state.stack.OsFamily.init : $r9 = new java.lang.Exception
+org.apache.ambari.server.state.stack.OsFamily.init : r19 = $r18
+org.apache.ambari.server.state.stack.OsFamily.init : $z0 = virtualinvoke r3.<java.io.File: boolean exists()>()
+org.apache.ambari.server.state.stack.OsFamily.init : $r20 = r0.<org.apache.ambari.server.state.stack.OsFamily: org.slf4j.Logger LOG>
+org.apache.ambari.server.controller.HostsMap.setupMap : $r11 = r0.<org.apache.ambari.server.controller.HostsMap: java.lang.String hostsMapFile>
+org.apache.ambari.server.controller.HostsMap.setupMap : r1 = null
+org.apache.ambari.server.controller.HostsMap.setupMap : if r1 == null goto return
+org.apache.ambari.server.controller.HostsMap.setupMap : $r6 = <org.apache.ambari.server.controller.HostsMap: org.slf4j.Logger LOG>
+org.apache.ambari.server.orm.entities.PrivilegeEntity.setResource : virtualinvoke r0.<org.apache.ambari.server.orm.entities.PrivilegeEntity: void _persistence_set_resource(org.apache.ambari.server.orm.entities.ResourceEntity)>(r1)
+org.apache.ambari.server.security.TestAuthenticationFactory.createResourceTypeEntity : return r3
+org.apache.ambari.server.security.TestAuthenticationFactory.createResourceTypeEntity : virtualinvoke r3.<org.apache.ambari.server.orm.entities.ResourceTypeEntity: void setName(java.lang.String)>(r0)
+org.apache.ambari.server.security.TestAuthenticationFactory.createResourceTypeEntity : $r1 = virtualinvoke r0.<org.apache.ambari.server.security.authorization.ResourceType: java.lang.String name()>()
+org.apache.ambari.server.security.TestAuthenticationFactory.createResourceTypeEntity : $r2 = new org.apache.ambari.server.orm.entities.ResourceTypeEntity
+org.apache.ambari.server.security.TestAuthenticationFactory.createResourceTypeEntity : $i0 = virtualinvoke r1.<java.lang.Integer: int intValue()>()
+org.apache.ambari.server.state.ConfigMergeHelperTest$MockModule.configure : $r2 = interfaceinvoke r1.<com.google.inject.Binder: com.google.inject.binder.AnnotatedBindingBuilder bind(java.lang.Class)>(class "org/apache/ambari/server/state/Clusters")
+org.apache.ambari.server.state.ConfigMergeHelperTest$MockModule.configure : $r5 = interfaceinvoke r1.<com.google.inject.Binder: com.google.inject.binder.AnnotatedBindingBuilder bind(java.lang.Class)>(class "org/apache/ambari/server/api/services/AmbariMetaInfo")
+org.apache.ambari.server.security.TestAuthenticationFactory.createAdministrator : $r1 = new org.apache.ambari.server.security.TestAuthenticationFactory$TestAuthorization
+org.apache.ambari.server.security.TestAuthenticationFactory.createRoleAuthorizationEntity : $r1 = new org.apache.ambari.server.orm.entities.RoleAuthorizationEntity
+org.apache.ambari.server.security.TestAuthenticationFactory.createRoleAuthorizationEntity : return r2
+org.apache.ambari.server.security.TestAuthenticationFactory.createRoleAuthorizationEntity : $r3 = virtualinvoke r0.<org.apache.ambari.server.security.authorization.RoleAuthorization: java.lang.String getId()>()
+org.apache.ambari.server.security.TestAuthenticationFactory.createRoleAuthorizationEntity : $r4 = virtualinvoke r0.<org.apache.ambari.server.security.authorization.RoleAuthorization: java.lang.String name()>()

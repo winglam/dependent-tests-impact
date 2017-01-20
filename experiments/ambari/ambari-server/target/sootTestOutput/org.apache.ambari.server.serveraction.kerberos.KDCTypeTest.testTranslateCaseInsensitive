@@ -1,0 +1,3 @@
+org.apache.ambari.server.serveraction.kerberos.KDCType.translate : if r0 == null goto $r1 = <org.apache.ambari.server.serveraction.kerberos.KDCType: org.apache.ambari.server.serveraction.kerberos.KDCType NONE>
+org.apache.ambari.server.serveraction.kerberos.KDCType.translate : $r2 = virtualinvoke r0.<java.lang.String: java.lang.String replace(java.lang.CharSequence,java.lang.CharSequence)>("-", "_")
+org.apache.ambari.server.serveraction.kerberos.KDCType.valueOf : $r1 = staticinvoke <java.lang.Enum: java.lang.Enum valueOf(java.lang.Class,java.lang.String)>(class "org/apache/ambari/server/serveraction/kerberos/KDCType", r0)

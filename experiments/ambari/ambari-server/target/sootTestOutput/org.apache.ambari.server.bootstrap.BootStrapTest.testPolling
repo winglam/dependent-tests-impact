@@ -1,0 +1,52 @@
+org.apache.ambari.server.bootstrap.BSHostStatusCollector.updateStatus : virtualinvoke r1.<org.apache.ambari.server.bootstrap.BSHostStatus: void setStatusCode(java.lang.String)>(r2)
+org.apache.ambari.server.bootstrap.BSHostStatusCollector.updateStatus : i0 = staticinvoke <java.lang.Integer: int parseInt(java.lang.String)>(r2)
+org.apache.ambari.server.bootstrap.BSHostStatusCollector.updateStatus : lookupswitch(i0) {     case 2: goto virtualinvoke r1.<org.apache.ambari.server.bootstrap.BSHostStatus: void setStatusAction(java.lang.String)>("Processing could not continue because the file was not found.");     case 255: goto $r5 = virtualinvoke r1.<org.apache.ambari.server.bootstrap.BSHostStatus: java.lang.String getLog()>();     default: goto $r5 = virtualinvoke r1.<org.apache.ambari.server.bootstrap.BSHostStatus: java.lang.String getLog()>(); }
+org.apache.ambari.server.bootstrap.BSHostStatusCollector.updateStatus : $r5 = virtualinvoke r1.<org.apache.ambari.server.bootstrap.BSHostStatus: java.lang.String getLog()>()
+org.apache.ambari.server.bootstrap.BSHostStatusCollector.updateStatus : i0 = -1
+org.apache.ambari.server.bootstrap.BSHostStatusCollector.updateStatus : goto [?= (branch)]
+org.apache.ambari.server.bootstrap.BSHostStatus.setStatusCode : r0.<org.apache.ambari.server.bootstrap.BSHostStatus: java.lang.String statusCode> = r1
+org.apache.ambari.server.bootstrap.BSHostStatus.setLog : r0.<org.apache.ambari.server.bootstrap.BSHostStatus: java.lang.String log> = r1
+org.apache.ambari.server.bootstrap.BSHostStatusCollector.getHostStatus : $r1 = r0.<org.apache.ambari.server.bootstrap.BSHostStatusCollector: java.util.List hostStatus>
+org.apache.ambari.server.bootstrap.BSHostStatus.getLog : $r1 = r0.<org.apache.ambari.server.bootstrap.BSHostStatus: java.lang.String log>
+org.apache.ambari.server.bootstrap.BSHostStatus.setHostName : r0.<org.apache.ambari.server.bootstrap.BSHostStatus: java.lang.String hostName> = r1
+org.apache.ambari.server.utils.Closeables.closeSilently : staticinvoke <org.apache.ambari.server.utils.Closeables: void close(java.io.Closeable,org.slf4j.Logger)>(r0, null)
+org.apache.ambari.server.bootstrap.BSHostStatus.setStatus : r0.<org.apache.ambari.server.bootstrap.BSHostStatus: java.lang.String status> = r1
+org.apache.ambari.server.utils.Closeables.close : if r0 == null goto return
+org.apache.ambari.server.utils.Closeables.close : interfaceinvoke r0.<java.io.Closeable: void close()>()
+org.apache.ambari.server.utils.Closeables.close : goto [?= return]
+org.apache.ambari.server.bootstrap.BSHostStatus.getStatus : $r1 = r0.<org.apache.ambari.server.bootstrap.BSHostStatus: java.lang.String status>
+org.apache.ambari.server.bootstrap.BSHostStatus.getHostName : $r1 = r0.<org.apache.ambari.server.bootstrap.BSHostStatus: java.lang.String hostName>
+org.apache.ambari.server.bootstrap.BSHostStatusCollector.run : virtualinvoke r5.<org.apache.ambari.server.bootstrap.BSHostStatus: void setHostName(java.lang.String)>(r4)
+org.apache.ambari.server.bootstrap.BSHostStatusCollector.run : $r39 = <org.apache.ambari.server.bootstrap.BSHostStatusCollector: org.apache.commons.logging.Log LOG>
+org.apache.ambari.server.bootstrap.BSHostStatusCollector.run : virtualinvoke r11.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r65)
+org.apache.ambari.server.bootstrap.BSHostStatusCollector.run : staticinvoke <org.apache.ambari.server.utils.Closeables: void closeSilently(java.io.Closeable)>(r10)
+org.apache.ambari.server.bootstrap.BSHostStatusCollector.run : goto [?= $z6 = virtualinvoke r8.<java.io.File: boolean exists()>()]
+org.apache.ambari.server.bootstrap.BSHostStatusCollector.run : $z7 = virtualinvoke r65.<java.lang.String: boolean startsWith(java.lang.String)>("tcgetattr:")
+org.apache.ambari.server.bootstrap.BSHostStatusCollector.run : $r25 = r0.<org.apache.ambari.server.bootstrap.BSHostStatusCollector: java.util.List hosts>
+org.apache.ambari.server.bootstrap.BSHostStatusCollector.run : $z5 = virtualinvoke r9.<java.lang.String: boolean equals(java.lang.Object)>("0")
+org.apache.ambari.server.bootstrap.BSHostStatusCollector.run : $i0 = virtualinvoke r11.<java.lang.StringBuilder: int length()>()
+org.apache.ambari.server.bootstrap.BSHostStatusCollector.run : $r64 = virtualinvoke r10.<java.io.BufferedReader: java.lang.String readLine()>()
+org.apache.ambari.server.bootstrap.BSHostStatusCollector.run : $r1 = <org.apache.ambari.server.bootstrap.BSHostStatusCollector: org.apache.commons.logging.Log LOG>
+org.apache.ambari.server.bootstrap.BSHostStatusCollector.run : $r27 = new org.apache.ambari.server.bootstrap.BSHostStatus
+org.apache.ambari.server.bootstrap.BSHostStatusCollector.run : $z6 = virtualinvoke r8.<java.io.File: boolean exists()>()
+org.apache.ambari.server.bootstrap.BSHostStatusCollector.run : specialinvoke r0.<org.apache.ambari.server.bootstrap.BSHostStatusCollector: void updateStatus(org.apache.ambari.server.bootstrap.BSHostStatus,java.lang.String)>(r5, r9)
+org.apache.ambari.server.bootstrap.BSHostStatusCollector.run : n0 = null
+org.apache.ambari.server.bootstrap.BSHostStatusCollector.run : goto [?= $z0 = interfaceinvoke r3.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.bootstrap.BSHostStatusCollector.run : $r18 = r0.<org.apache.ambari.server.bootstrap.BSHostStatusCollector: java.util.List hosts>
+org.apache.ambari.server.bootstrap.BSHostStatusCollector.run : $r28 = new java.io.File
+org.apache.ambari.server.bootstrap.BSHostStatusCollector.run : $r62 = new java.io.BufferedReader
+org.apache.ambari.server.bootstrap.BSHostStatusCollector.run : virtualinvoke r5.<org.apache.ambari.server.bootstrap.BSHostStatus: void setLog(java.lang.String)>(r60)
+org.apache.ambari.server.bootstrap.BSHostStatusCollector.run : r10 = null
+org.apache.ambari.server.bootstrap.BSHostStatusCollector.run : r60 = ""
+org.apache.ambari.server.bootstrap.BSHostStatusCollector.run : $r79 = r0.<org.apache.ambari.server.bootstrap.BSHostStatusCollector: java.util.List hostStatus>
+org.apache.ambari.server.bootstrap.BSHostStatusCollector.run : $z4 = virtualinvoke r7.<java.io.File: boolean exists()>()
+org.apache.ambari.server.bootstrap.BSHostStatusCollector.run : $r17 = new java.util.ArrayList
+org.apache.ambari.server.bootstrap.BSHostStatusCollector.run : $r19 = <org.apache.ambari.server.bootstrap.BSHostStatusCollector: org.apache.commons.logging.Log LOG>
+org.apache.ambari.server.bootstrap.BSHostStatusCollector.run : $r61 = new java.lang.StringBuilder
+org.apache.ambari.server.bootstrap.BSHostStatusCollector.run : virtualinvoke r5.<org.apache.ambari.server.bootstrap.BSHostStatus: void setStatus(java.lang.String)>("DONE")
+org.apache.ambari.server.bootstrap.BSHostStatusCollector.run : r60 = virtualinvoke r11.<java.lang.StringBuilder: java.lang.String toString()>()
+org.apache.ambari.server.bootstrap.BSHostStatusCollector.run : virtualinvoke r5.<org.apache.ambari.server.bootstrap.BSHostStatus: void setStatus(java.lang.String)>("FAILED")
+org.apache.ambari.server.bootstrap.BSHostStatusCollector.run : $r52 = staticinvoke <org.apache.commons.io.FileUtils: java.lang.String readFileToString(java.io.File)>(r7)
+org.apache.ambari.server.bootstrap.BSHostStatusCollector.run : goto [?= virtualinvoke r5.<org.apache.ambari.server.bootstrap.BSHostStatus: void setLog(java.lang.String)>(r60)]
+org.apache.ambari.server.bootstrap.BSHostStatusCollector.run : $r33 = new java.io.File
+org.apache.ambari.server.bootstrap.BSHostStatusCollector.run : $i2 = virtualinvoke r65.<java.lang.String: int indexOf(java.lang.String)>("\\n")

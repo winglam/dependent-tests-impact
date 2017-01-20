@@ -1,0 +1,102 @@
+org.apache.ambari.server.orm.dao.AlertsDAOCachedTest.mock : $r12 = virtualinvoke r2.<org.apache.ambari.server.orm.entities.AlertHistoryEntity: java.lang.String getHostName()>()
+org.apache.ambari.server.orm.dao.AlertsDAOCachedTest.mock : $r30 = virtualinvoke r2.<org.apache.ambari.server.orm.entities.AlertHistoryEntity: java.lang.String getAlertText()>()
+org.apache.ambari.server.orm.dao.AlertsDAOCachedTest.mock : $r20 = virtualinvoke r2.<org.apache.ambari.server.orm.entities.AlertHistoryEntity: java.lang.Long getAlertDefinitionId()>()
+org.apache.ambari.server.orm.dao.AlertsDAOCachedTest.mock : $r7 = virtualinvoke r2.<org.apache.ambari.server.orm.entities.AlertHistoryEntity: java.lang.Long getClusterId()>()
+org.apache.ambari.server.orm.dao.AlertsDAOCachedTest.mock : $r3 = virtualinvoke r1.<org.apache.ambari.server.orm.entities.AlertDefinitionEntity: java.lang.String getDefinitionName()>()
+org.apache.ambari.server.orm.dao.AlertsDAOCachedTest.mock : $r25 = virtualinvoke r2.<org.apache.ambari.server.orm.entities.AlertHistoryEntity: java.lang.Long getAlertId()>()
+org.apache.ambari.server.orm.dao.AlertsDAOCachedTest.mock : $r34 = newarray (java.lang.Object)[2]
+org.apache.ambari.server.orm.dao.AlertsDAOCachedTest.mock : $r16 = virtualinvoke r2.<org.apache.ambari.server.orm.entities.AlertHistoryEntity: org.apache.ambari.server.orm.entities.AlertDefinitionEntity getAlertDefinition()>()
+org.apache.ambari.server.orm.dao.AlertsDAO.supplementWithCachedAlerts : interfaceinvoke r3.<java.util.List: boolean add(java.lang.Object)>(r5)
+org.apache.ambari.server.orm.dao.AlertsDAO.supplementWithCachedAlerts : if null == r7 goto interfaceinvoke r3.<java.util.List: boolean add(java.lang.Object)>(r5)
+org.apache.ambari.server.orm.dao.AlertsDAO.supplementWithCachedAlerts : r5 = r7
+org.apache.ambari.server.orm.dao.AlertsDAO.supplementWithCachedAlerts : goto [?= $z0 = interfaceinvoke r4.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.orm.dao.AlertsDAO.supplementWithCachedAlerts : return r3
+org.apache.ambari.server.orm.dao.AlertsDAO.supplementWithCachedAlerts : $r9 = r0.<org.apache.ambari.server.orm.dao.AlertsDAO: com.google.common.cache.LoadingCache m_currentAlertCache>
+org.apache.ambari.server.orm.dao.AlertsDAO.supplementWithCachedAlerts : r6 = staticinvoke <org.apache.ambari.server.orm.dao.AlertsDAO$AlertCacheKey: org.apache.ambari.server.orm.dao.AlertsDAO$AlertCacheKey build(org.apache.ambari.server.orm.entities.AlertCurrentEntity)>(r5)
+org.apache.ambari.server.orm.dao.AlertsDAO.supplementWithCachedAlerts : $r2 = new java.util.ArrayList
+org.apache.ambari.server.orm.dao.AlertsDAO.supplementWithCachedAlerts : r4 = interfaceinvoke r1.<java.util.List: java.util.Iterator iterator()>()
+org.apache.ambari.server.orm.entities.AlertCurrentEntity.setAlertHistory : $r3 = virtualinvoke r1.<org.apache.ambari.server.orm.entities.AlertHistoryEntity: org.apache.ambari.server.orm.entities.AlertDefinitionEntity getAlertDefinition()>()
+org.apache.ambari.server.orm.entities.AlertCurrentEntity.setAlertHistory : $r5 = virtualinvoke r1.<org.apache.ambari.server.orm.entities.AlertHistoryEntity: java.lang.String getAlertText()>()
+org.apache.ambari.server.orm.entities.AlertCurrentEntity.setAlertHistory : virtualinvoke r0.<org.apache.ambari.server.orm.entities.AlertCurrentEntity: void _persistence_set_alertHistory(org.apache.ambari.server.orm.entities.AlertHistoryEntity)>(r1)
+org.apache.ambari.server.orm.entities.AlertCurrentEntity.setAlertHistory : $r2 = virtualinvoke r1.<org.apache.ambari.server.orm.entities.AlertHistoryEntity: java.lang.Long getAlertId()>()
+org.apache.ambari.server.orm.entities.AlertCurrentEntity.setAlertHistory : $r4 = virtualinvoke r1.<org.apache.ambari.server.orm.entities.AlertHistoryEntity: java.lang.Long getAlertDefinitionId()>()
+org.apache.ambari.server.orm.dao.AlertsDAOCachedTest$CachedAlertTestArea$4.execute : $r2 = virtualinvoke r1.<org.apache.ambari.server.orm.dao.AlertsDAO: java.util.List findCurrentByService(long,java.lang.String)>(0L, "c6401.ambari.apache.org")
+org.apache.ambari.server.orm.entities.AlertCurrentEntity.getAlertHistory : $r1 = virtualinvoke r0.<org.apache.ambari.server.orm.entities.AlertCurrentEntity: org.apache.ambari.server.orm.entities.AlertHistoryEntity _persistence_get_alertHistory()>()
+org.apache.ambari.server.state.alert.Scope.values : $r0 = <org.apache.ambari.server.state.alert.Scope: org.apache.ambari.server.state.alert.Scope[] $VALUES>
+org.apache.ambari.server.orm.dao.AlertsDAOCachedTest.testFindUsesCache : $i0 = interfaceinvoke r11.<java.util.List: int size()>()
+org.apache.ambari.server.orm.dao.AlertsDAOCachedTest.testFindUsesCache : $r28 = staticinvoke <org.easymock.EasyMock: java.lang.Object createNiceMock(java.lang.Class)>(class "javax/persistence/TypedQuery")
+org.apache.ambari.server.orm.dao.AlertsDAOCachedTest.testFindUsesCache : $r41 = r0.<org.apache.ambari.server.orm.dao.AlertsDAOCachedTest: com.google.inject.Injector m_injector>
+org.apache.ambari.server.orm.dao.AlertsDAOCachedTest.testFindUsesCache : $r44 = staticinvoke <java.lang.Long: java.lang.Long valueOf(long)>(3L)
+org.apache.ambari.server.orm.dao.AlertsDAOCachedTest.testFindUsesCache : $r12 = r0.<org.apache.ambari.server.orm.dao.AlertsDAOCachedTest: com.google.inject.Injector m_injector>
+org.apache.ambari.server.orm.dao.AlertsDAOCachedTest.testFindUsesCache : $r40 = newarray (java.lang.Object)[3]
+org.apache.ambari.server.orm.dao.AlertsDAOCachedTest.testFindUsesCache : $r35 = newarray (java.lang.Object)[0]
+org.apache.ambari.server.orm.dao.AlertsDAOCachedTest.testFindUsesCache : $r19 = staticinvoke <java.lang.Long: java.lang.Long valueOf(long)>(1L)
+org.apache.ambari.server.orm.dao.AlertsDAOCachedTest.testFindUsesCache : $r17 = staticinvoke <org.easymock.EasyMock: java.lang.Object createNiceMock(java.lang.Class)>(class "org/apache/ambari/server/orm/entities/AlertDefinitionEntity")
+org.apache.ambari.server.orm.dao.AlertsDAOCachedTest.testFindUsesCache : $r14 = r0.<org.apache.ambari.server.orm.dao.AlertsDAOCachedTest: com.google.inject.Injector m_injector>
+org.apache.ambari.server.orm.dao.AlertsDAOCachedTest.testFindUsesCache : $r34 = newarray (org.apache.ambari.server.orm.entities.AlertCurrentEntity)[1]
+org.apache.ambari.server.orm.dao.AlertsDAOCachedTest.testFindUsesCache : virtualinvoke r7.<org.apache.ambari.server.orm.entities.AlertCurrentEntity: void setAlertHistory(org.apache.ambari.server.orm.entities.AlertHistoryEntity)>(r4)
+org.apache.ambari.server.orm.dao.AlertsDAOCachedTest.testFindUsesCache : $r22 = staticinvoke <java.lang.Long: java.lang.Long valueOf(long)>(1L)
+org.apache.ambari.server.orm.dao.AlertsDAOCachedTest.testFindUsesCache : $r48 = newarray (java.lang.Object)[4]
+org.apache.ambari.server.orm.dao.AlertsDAOCachedTest.testFindUsesCache : $r23 = staticinvoke <java.lang.Long: java.lang.Long valueOf(long)>(3L)
+org.apache.ambari.server.orm.dao.AlertsDAOCachedTest.testFindUsesCache : virtualinvoke r6.<org.apache.ambari.server.orm.entities.AlertCurrentEntity: void setAlertHistory(org.apache.ambari.server.orm.entities.AlertHistoryEntity)>(r4)
+org.apache.ambari.server.orm.dao.AlertsDAOCachedTest.testFindUsesCache : specialinvoke r0.<org.apache.ambari.server.orm.dao.AlertsDAOCachedTest: void mock(org.apache.ambari.server.orm.entities.AlertDefinitionEntity,org.apache.ambari.server.orm.entities.AlertHistoryEntity)>(r5, r4)
+org.apache.ambari.server.orm.dao.AlertsDAOCachedTest.testFindUsesCache : $r16 = staticinvoke <org.easymock.EasyMock: java.lang.Object createNiceMock(java.lang.Class)>(class "org/apache/ambari/server/orm/entities/AlertHistoryEntity")
+org.apache.ambari.server.orm.dao.AlertsDAOCachedTest.testFindUsesCache : $r20 = staticinvoke <java.lang.Long: java.lang.Long valueOf(long)>(2L)
+org.apache.ambari.server.orm.dao.AlertsDAOCachedTest.testFindUsesCache : $r29 = virtualinvoke r1.<org.apache.ambari.server.orm.dao.AlertsDAOCachedTest$CachedAlertTestArea: java.lang.String getNamedQuery()>()
+org.apache.ambari.server.orm.dao.AlertsDAOCachedTest.testFindUsesCache : virtualinvoke r10.<org.apache.ambari.server.orm.dao.AlertsDAO: org.apache.ambari.server.orm.entities.AlertCurrentEntity merge(org.apache.ambari.server.orm.entities.AlertCurrentEntity)>(r7)
+org.apache.ambari.server.orm.dao.AlertsDAOCachedTest.testFindUsesCache : r11 = virtualinvoke r1.<org.apache.ambari.server.orm.dao.AlertsDAOCachedTest$CachedAlertTestArea: java.util.List execute(org.apache.ambari.server.orm.dao.AlertsDAO)>(r10)
+org.apache.ambari.server.orm.dao.AlertsDAOCachedTest.testFindUsesCache : $r18 = new org.apache.ambari.server.orm.entities.AlertCurrentEntity
+org.apache.ambari.server.orm.dao.AlertsDAOCachedTest.testFindUsesCache : $r21 = new org.apache.ambari.server.orm.entities.AlertCurrentEntity
+org.apache.ambari.server.orm.dao.AlertsDAOCachedTest.testFindUsesCache : $r24 = interfaceinvoke r2.<javax.persistence.EntityManager: java.lang.Object merge(java.lang.Object)>(r7)
+org.apache.ambari.server.orm.dao.AlertsDAOCachedTest$MockModule.configure : $r27 = interfaceinvoke r1.<com.google.inject.Binder: com.google.inject.binder.AnnotatedBindingBuilder bind(java.lang.Class)>(class "org/apache/ambari/server/orm/DBAccessor")
+org.apache.ambari.server.orm.dao.AlertsDAOCachedTest$MockModule.configure : $r29 = interfaceinvoke r1.<com.google.inject.Binder: com.google.inject.binder.AnnotatedBindingBuilder bind(java.lang.Class)>(class "org/apache/ambari/server/state/Cluster")
+org.apache.ambari.server.orm.dao.AlertsDAOCachedTest$MockModule.configure : $r32 = interfaceinvoke r1.<com.google.inject.Binder: com.google.inject.binder.AnnotatedBindingBuilder bind(java.lang.Class)>(class "javax/persistence/EntityManager")
+org.apache.ambari.server.orm.dao.AlertsDAOCachedTest$MockModule.configure : $z0 = virtualinvoke r3.<org.apache.ambari.server.configuration.Configuration: boolean isAlertCacheEnabled()>()
+org.apache.ambari.server.orm.dao.AlertsDAOCachedTest$MockModule.configure : $r5 = staticinvoke <org.easymock.EasyMock: java.lang.Object createNiceMock(java.lang.Class)>(class "org/apache/ambari/server/configuration/Configuration")
+org.apache.ambari.server.orm.dao.AlertsDAOCachedTest$MockModule.configure : $i0 = virtualinvoke r3.<org.apache.ambari.server.configuration.Configuration: int getAlertEventPublisherPoolSize()>()
+org.apache.ambari.server.orm.dao.AlertsDAOCachedTest$MockModule.configure : $r22 = interfaceinvoke r1.<com.google.inject.Binder: com.google.inject.binder.AnnotatedBindingBuilder bind(java.lang.Class)>(class "org/apache/ambari/server/configuration/Configuration")
+org.apache.ambari.server.orm.dao.AlertsDAOCachedTest$MockModule.configure : $r23 = interfaceinvoke r1.<com.google.inject.Binder: com.google.inject.binder.AnnotatedBindingBuilder bind(java.lang.Class)>(class "org/apache/ambari/server/state/Clusters")
+org.apache.ambari.server.orm.dao.AlertsDAOCachedTest$MockModule.configure : $r25 = interfaceinvoke r1.<com.google.inject.Binder: com.google.inject.binder.AnnotatedBindingBuilder bind(java.lang.Class)>(class "org/apache/ambari/server/state/stack/OsFamily")
+org.apache.ambari.server.orm.dao.AlertsDAOCachedTest$MockModule.configure : $r30 = interfaceinvoke r1.<com.google.inject.Binder: com.google.inject.binder.AnnotatedBindingBuilder bind(java.lang.Class)>(class "org/apache/ambari/server/orm/dao/AlertDefinitionDAO")
+org.apache.ambari.server.orm.dao.AlertsDAOCachedTest$MockModule.configure : $r4 = staticinvoke <org.easymock.EasyMock: java.lang.Object createNiceMock(java.lang.Class)>(class "org/apache/ambari/server/state/Cluster")
+org.apache.ambari.server.orm.dao.AlertsDAOCachedTest$MockModule.configure : $r21 = newarray (java.lang.Object)[1]
+org.apache.ambari.server.orm.dao.AlertsDAOCachedTest$MockModule.configure : $r34 = interfaceinvoke r1.<com.google.inject.Binder: com.google.inject.binder.AnnotatedBindingBuilder bind(java.lang.Class)>(class "org/apache/ambari/server/orm/dao/DaoUtils")
+org.apache.ambari.server.orm.dao.AlertsDAOCachedTest$MockModule.configure : $i1 = virtualinvoke r3.<org.apache.ambari.server.configuration.Configuration: int getAlertCacheSize()>()
+org.apache.ambari.server.orm.dao.AlertsDAO.findCurrentByService : interfaceinvoke r2.<javax.persistence.TypedQuery: javax.persistence.TypedQuery setParameter(java.lang.String,java.lang.Object)>("serviceName", r1)
+org.apache.ambari.server.orm.dao.AlertsDAO.findCurrentByService : $r11 = <org.apache.ambari.server.state.alert.Scope: org.apache.ambari.server.state.alert.Scope ANY>
+org.apache.ambari.server.orm.dao.AlertsDAO.findCurrentByService : return r4
+org.apache.ambari.server.orm.dao.AlertsDAO.findCurrentByService : $r5 = r0.<org.apache.ambari.server.orm.dao.AlertsDAO: com.google.inject.Provider m_entityManagerProvider>
+org.apache.ambari.server.orm.dao.AlertsDAO.findCurrentByService : $r16 = r0.<org.apache.ambari.server.orm.dao.AlertsDAO: org.apache.ambari.server.configuration.Configuration m_configuration>
+org.apache.ambari.server.orm.dao.AlertsDAO.findCurrentByService : $r8 = staticinvoke <java.lang.Long: java.lang.Long valueOf(long)>(l0)
+org.apache.ambari.server.orm.dao.AlertsDAO.findCurrentByService : r4 = specialinvoke r0.<org.apache.ambari.server.orm.dao.AlertsDAO: java.util.List supplementWithCachedAlerts(java.util.List)>(r4)
+org.apache.ambari.server.orm.dao.AlertsDAO.findCurrentByService : $r14 = r0.<org.apache.ambari.server.orm.dao.AlertsDAO: org.apache.ambari.server.orm.dao.DaoUtils m_daoUtils>
+org.apache.ambari.server.orm.entities.AlertCurrentEntity.getLatestTimestamp : $r1 = virtualinvoke r0.<org.apache.ambari.server.orm.entities.AlertCurrentEntity: java.lang.Long _persistence_get_latestTimestamp()>()
+org.apache.ambari.server.orm.dao.AlertsDAOCachedTest$CachedAlertTestArea$4.getNamedQuery : return "AlertCurrentEntity.findByService"
+org.apache.ambari.server.orm.dao.AlertsDAO$AlertCacheKey.hashCode : return i14
+org.apache.ambari.server.orm.dao.AlertsDAO$AlertCacheKey.hashCode : b1 = 1
+org.apache.ambari.server.orm.dao.AlertsDAO$AlertCacheKey.hashCode : $i5 = 31 * i4
+org.apache.ambari.server.orm.dao.AlertsDAO$AlertCacheKey.hashCode : b0 = 31
+org.apache.ambari.server.orm.dao.AlertsDAO$AlertCacheKey.hashCode : $i2 = 31 * b1
+org.apache.ambari.server.orm.dao.AlertsDAO$AlertCacheKey.hashCode : $i12 = 31 * i11
+org.apache.ambari.server.orm.dao.AlertsDAO.merge : $r3 = r0.<org.apache.ambari.server.orm.dao.AlertsDAO: com.google.inject.Provider m_entityManagerProvider>
+org.apache.ambari.server.orm.dao.AlertsDAO.merge : $r9 = r0.<org.apache.ambari.server.orm.dao.AlertsDAO: com.google.common.cache.LoadingCache m_currentAlertCache>
+org.apache.ambari.server.orm.dao.AlertsDAO.merge : return r7
+org.apache.ambari.server.orm.dao.AlertsDAO.merge : r2 = staticinvoke <org.apache.ambari.server.orm.dao.AlertsDAO$AlertCacheKey: org.apache.ambari.server.orm.dao.AlertsDAO$AlertCacheKey build(org.apache.ambari.server.orm.entities.AlertCurrentEntity)>(r7)
+org.apache.ambari.server.orm.dao.AlertsDAO.merge : $r8 = r0.<org.apache.ambari.server.orm.dao.AlertsDAO: org.apache.ambari.server.configuration.Configuration m_configuration>
+org.apache.ambari.server.orm.entities.AlertCurrentEntity.equals : return 1
+org.apache.ambari.server.orm.entities.AlertCurrentEntity.equals : if r0 != r1 goto (branch)
+org.apache.ambari.server.orm.dao.AlertsDAO$AlertCacheKey.build : return r2
+org.apache.ambari.server.orm.dao.AlertsDAO$AlertCacheKey.build : r1 = virtualinvoke r0.<org.apache.ambari.server.orm.entities.AlertCurrentEntity: org.apache.ambari.server.orm.entities.AlertHistoryEntity getAlertHistory()>()
+org.apache.ambari.server.orm.dao.AlertsDAO$AlertCacheKey.build : $r3 = new org.apache.ambari.server.orm.dao.AlertsDAO$AlertCacheKey
+org.apache.ambari.server.orm.entities.AlertCurrentEntity.setLatestTimestamp : virtualinvoke r0.<org.apache.ambari.server.orm.entities.AlertCurrentEntity: void _persistence_set_latestTimestamp(java.lang.Long)>(r1)
+org.apache.ambari.server.orm.dao.AlertsDAO$AlertCacheKey.equals : r2 = (org.apache.ambari.server.orm.dao.AlertsDAO$AlertCacheKey) r1
+org.apache.ambari.server.orm.dao.AlertsDAO$AlertCacheKey.equals : return 1
+org.apache.ambari.server.orm.dao.AlertsDAO$AlertCacheKey.equals : if r0 != r1 goto (branch)
+org.apache.ambari.server.orm.dao.AlertsDAO$AlertCacheKey.equals : $r11 = r0.<org.apache.ambari.server.orm.dao.AlertsDAO$AlertCacheKey: java.lang.String m_hostName>
+org.apache.ambari.server.orm.dao.AlertsDAO$AlertCacheKey.equals : $r3 = virtualinvoke r0.<java.lang.Object: java.lang.Class getClass()>()
+org.apache.ambari.server.orm.dao.AlertsDAO$AlertCacheKey.equals : if r1 != null goto $r3 = virtualinvoke r0.<java.lang.Object: java.lang.Class getClass()>()
+org.apache.ambari.server.orm.dao.AlertsDAO$AlertCacheKey.equals : $r7 = r0.<org.apache.ambari.server.orm.dao.AlertsDAO$AlertCacheKey: java.lang.String m_alertDefinitionName>
+org.apache.ambari.server.orm.dao.AlertsDAO$AlertCacheKey.equals : $l0 = r0.<org.apache.ambari.server.orm.dao.AlertsDAO$AlertCacheKey: long m_clusterId>
+org.apache.ambari.server.orm.dao.AlertsDAO$AlertCacheKey.equals : $r5 = r0.<org.apache.ambari.server.orm.dao.AlertsDAO$AlertCacheKey: java.lang.String m_alertDefinitionName>
+org.apache.ambari.server.orm.dao.AlertsDAO$AlertCacheKey.equals : $r9 = r0.<org.apache.ambari.server.orm.dao.AlertsDAO$AlertCacheKey: java.lang.String m_hostName>
+org.apache.ambari.server.orm.entities.AlertCurrentEntity.setOriginalTimestamp : virtualinvoke r0.<org.apache.ambari.server.orm.entities.AlertCurrentEntity: void _persistence_set_originalTimestamp(java.lang.Long)>(r1)

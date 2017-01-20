@@ -1,0 +1,38 @@
+org.apache.ambari.server.state.ServiceInfo.setVersion : r0.<org.apache.ambari.server.state.ServiceInfo: java.lang.String version> = r1
+org.apache.ambari.server.state.ServiceInfo.setServicePropertyList : r0.<org.apache.ambari.server.state.ServiceInfo: java.util.List servicePropertyList> = r1
+org.apache.ambari.server.state.ServiceInfo.setServicePropertyList : specialinvoke r0.<org.apache.ambari.server.state.ServiceInfo: void afterServicePropertyListSet()>()
+org.apache.ambari.server.state.ServicePropertyInfo.getValue : $r1 = r0.<org.apache.ambari.server.state.ServicePropertyInfo: java.lang.String value>
+org.apache.ambari.server.state.ServiceInfo.setName : r0.<org.apache.ambari.server.state.ServiceInfo: java.lang.String name> = r1
+org.apache.ambari.server.state.ServicePropertyInfo.setName : r0.<org.apache.ambari.server.state.ServicePropertyInfo: java.lang.String name> = r1
+org.apache.ambari.server.state.ServiceInfo.getComponents : $r2 = r0.<org.apache.ambari.server.state.ServiceInfo: java.util.List components>
+org.apache.ambari.server.state.ServiceInfo.getComponents : $r3 = r0.<org.apache.ambari.server.state.ServiceInfo: java.util.List components>
+org.apache.ambari.server.state.ServiceInfo.afterServicePropertyListSet : specialinvoke r0.<org.apache.ambari.server.state.ServiceInfo: void validateServiceProperties()>()
+org.apache.ambari.server.state.ServiceInfo.afterServicePropertyListSet : specialinvoke r0.<org.apache.ambari.server.state.ServiceInfo: void buildServiceProperties()>()
+org.apache.ambari.server.state.ServicePropertyInfo.setValue : r0.<org.apache.ambari.server.state.ServicePropertyInfo: java.lang.String value> = r1
+org.apache.ambari.server.state.ServiceInfo.ensureMandatoryServiceProperties : $r2 = specialinvoke r0.<org.apache.ambari.server.state.ServiceInfo: java.util.Map ensureVisibilityServiceProperties(java.util.Map)>(r1)
+org.apache.ambari.server.state.ServiceInfo.getServiceProperties : $r1 = r0.<org.apache.ambari.server.state.ServiceInfo: java.util.Map servicePropertyMap>
+org.apache.ambari.server.state.ServiceInfo.ensureVisibilityServiceProperties : $r2 = <org.apache.ambari.server.state.ServiceInfo: java.util.AbstractMap$SimpleEntry DEFAULT_SERVICE_INSTALLABLE_PROPERTY>
+org.apache.ambari.server.state.ServiceInfo.ensureVisibilityServiceProperties : $r9 = <org.apache.ambari.server.state.ServiceInfo: java.util.AbstractMap$SimpleEntry DEFAULT_SERVICE_MANAGED_PROPERTY>
+org.apache.ambari.server.state.ServiceInfo.ensureVisibilityServiceProperties : $r16 = <org.apache.ambari.server.state.ServiceInfo: java.util.AbstractMap$SimpleEntry DEFAULT_SERVICE_MONITORED_PROPERTY>
+org.apache.ambari.server.state.ServiceInfo.ensureVisibilityServiceProperties : $r18 = <org.apache.ambari.server.state.ServiceInfo: java.util.AbstractMap$SimpleEntry DEFAULT_SERVICE_MONITORED_PROPERTY>
+org.apache.ambari.server.state.ServiceInfo.ensureVisibilityServiceProperties : $r11 = <org.apache.ambari.server.state.ServiceInfo: java.util.AbstractMap$SimpleEntry DEFAULT_SERVICE_MANAGED_PROPERTY>
+org.apache.ambari.server.state.ServiceInfo.ensureVisibilityServiceProperties : return r1
+org.apache.ambari.server.state.ServiceInfo.ensureVisibilityServiceProperties : $r5 = <org.apache.ambari.server.state.ServiceInfo: java.util.AbstractMap$SimpleEntry DEFAULT_SERVICE_INSTALLABLE_PROPERTY>
+org.apache.ambari.server.state.ServiceInfo.validateServiceProperties : $r8 = interfaceinvoke r2.<com.google.common.collect.Multimap: java.util.Set keySet()>()
+org.apache.ambari.server.state.ServiceInfo.validateServiceProperties : $r10 = interfaceinvoke r2.<com.google.common.collect.Multimap: java.util.Collection get(java.lang.Object)>(r4)
+org.apache.ambari.server.state.ServiceInfo.validateServiceProperties : $r7 = virtualinvoke r0.<org.apache.ambari.server.state.ServiceInfo: java.util.List getServicePropertyList()>()
+org.apache.ambari.server.state.ServiceInfo.validateServiceProperties : $r33 = r0.<org.apache.ambari.server.state.ServiceInfo: org.apache.ambari.server.state.CredentialStoreInfo credentialStoreInfo>
+org.apache.ambari.server.state.ServiceInfo.validateServiceProperties : $r22 = virtualinvoke r0.<org.apache.ambari.server.state.ServiceInfo: java.util.List getComponents()>()
+org.apache.ambari.server.state.ServiceInfo.validateServiceProperties : goto [?= $z0 = interfaceinvoke r3.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.state.ServiceInfo.buildServiceProperties : goto [?= $z1 = interfaceinvoke r2.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.state.ServiceInfo.buildServiceProperties : goto [?= return]
+org.apache.ambari.server.state.ServiceInfo.buildServiceProperties : $r6 = virtualinvoke r3.<org.apache.ambari.server.state.ServicePropertyInfo: java.lang.String getName()>()
+org.apache.ambari.server.state.ServiceInfo.buildServiceProperties : $r9 = specialinvoke r0.<org.apache.ambari.server.state.ServiceInfo: java.util.Map ensureMandatoryServiceProperties(java.util.Map)>(r1)
+org.apache.ambari.server.state.ServiceInfo.buildServiceProperties : r1 = staticinvoke <com.google.common.collect.Maps: java.util.HashMap newHashMap()>()
+org.apache.ambari.server.state.ServiceInfo.buildServiceProperties : $z0 = virtualinvoke r0.<org.apache.ambari.server.state.ServiceInfo: boolean isValid()>()
+org.apache.ambari.server.state.ServiceInfo.buildServiceProperties : $r4 = virtualinvoke r0.<org.apache.ambari.server.state.ServiceInfo: java.util.List getServicePropertyList()>()
+org.apache.ambari.server.state.ServicePropertyInfo.getName : $r1 = r0.<org.apache.ambari.server.state.ServicePropertyInfo: java.lang.String name>
+org.apache.ambari.server.state.ServiceInfo.getServicePropertyList : $r1 = r0.<org.apache.ambari.server.state.ServiceInfo: java.util.List servicePropertyList>
+org.apache.ambari.server.state.ServiceInfo$1.apply : $r2 = virtualinvoke r1.<org.apache.ambari.server.state.ServicePropertyInfo: java.lang.String getName()>()
+org.apache.ambari.server.state.ServiceInfo$1.apply : $r2 = (org.apache.ambari.server.state.ServicePropertyInfo) r1
+org.apache.ambari.server.state.ServiceInfo.isValid : $z0 = r0.<org.apache.ambari.server.state.ServiceInfo: boolean valid>

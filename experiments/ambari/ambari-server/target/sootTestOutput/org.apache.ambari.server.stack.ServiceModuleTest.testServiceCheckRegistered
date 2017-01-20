@@ -1,0 +1,19 @@
+org.apache.ambari.server.stack.ServiceModuleTest.createStackContext : $r3 = staticinvoke <org.easymock.EasyMock: java.lang.Object createStrictMock(java.lang.Class)>(class "org/apache/ambari/server/stack/StackContext")
+org.apache.ambari.server.stack.ServiceModuleTest.createStackContext : if z0 == 0 goto $r4 = newarray (java.lang.Object)[1]
+org.apache.ambari.server.stack.ServiceModuleTest.createStackContext : return r2
+org.apache.ambari.server.stack.ServiceModuleTest.createStackContext : $r4 = newarray (java.lang.Object)[1]
+org.apache.ambari.server.stack.ServiceModuleTest.createStackContext : virtualinvoke r2.<org.apache.ambari.server.stack.StackContext: void registerServiceCheck(java.lang.String)>(r1)
+org.apache.ambari.server.state.ServiceInfo.setName : r0.<org.apache.ambari.server.state.ServiceInfo: java.lang.String name> = r1
+org.apache.ambari.server.stack.ServiceModuleTest.createConfigurationDirectory : $r3 = staticinvoke <org.easymock.EasyMock: java.lang.Object createNiceMock(java.lang.Class)>(class "org/apache/ambari/server/stack/ConfigurationDirectory")
+org.apache.ambari.server.state.ServiceInfo.ensureMandatoryServiceProperties : $r2 = specialinvoke r0.<org.apache.ambari.server.state.ServiceInfo: java.util.Map ensureVisibilityServiceProperties(java.util.Map)>(r1)
+org.apache.ambari.server.stack.ServiceModuleTest.createServiceModule : r4 = specialinvoke r0.<org.apache.ambari.server.stack.ServiceModuleTest: org.apache.ambari.server.stack.ConfigurationDirectory createConfigurationDirectory(java.util.Collection)>(r2)
+org.apache.ambari.server.stack.ServiceModuleTest.createServiceModule : $r6 = virtualinvoke r1.<org.apache.ambari.server.state.ServiceInfo: java.lang.String getName()>()
+org.apache.ambari.server.state.ServiceInfo.setCommandScript : r0.<org.apache.ambari.server.state.ServiceInfo: org.apache.ambari.server.state.CommandScriptDefinition commandScript> = r1
+org.apache.ambari.server.state.ServiceInfo.ensureVisibilityServiceProperties : $r2 = <org.apache.ambari.server.state.ServiceInfo: java.util.AbstractMap$SimpleEntry DEFAULT_SERVICE_INSTALLABLE_PROPERTY>
+org.apache.ambari.server.state.ServiceInfo.ensureVisibilityServiceProperties : $r9 = <org.apache.ambari.server.state.ServiceInfo: java.util.AbstractMap$SimpleEntry DEFAULT_SERVICE_MANAGED_PROPERTY>
+org.apache.ambari.server.state.ServiceInfo.ensureVisibilityServiceProperties : $r16 = <org.apache.ambari.server.state.ServiceInfo: java.util.AbstractMap$SimpleEntry DEFAULT_SERVICE_MONITORED_PROPERTY>
+org.apache.ambari.server.state.ServiceInfo.ensureVisibilityServiceProperties : $r18 = <org.apache.ambari.server.state.ServiceInfo: java.util.AbstractMap$SimpleEntry DEFAULT_SERVICE_MONITORED_PROPERTY>
+org.apache.ambari.server.state.ServiceInfo.ensureVisibilityServiceProperties : $r11 = <org.apache.ambari.server.state.ServiceInfo: java.util.AbstractMap$SimpleEntry DEFAULT_SERVICE_MANAGED_PROPERTY>
+org.apache.ambari.server.state.ServiceInfo.ensureVisibilityServiceProperties : return r1
+org.apache.ambari.server.state.ServiceInfo.ensureVisibilityServiceProperties : $r5 = <org.apache.ambari.server.state.ServiceInfo: java.util.AbstractMap$SimpleEntry DEFAULT_SERVICE_INSTALLABLE_PROPERTY>
+org.apache.ambari.server.state.ServiceInfo.getName : $r1 = r0.<org.apache.ambari.server.state.ServiceInfo: java.lang.String name>
