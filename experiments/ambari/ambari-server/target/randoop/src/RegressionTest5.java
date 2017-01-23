@@ -3174,7 +3174,7 @@ public class RegressionTest5 {
 
   }
 
-  @Test
+    /*  @Test
   public void test142() throws Throwable {
 
     if (debug) { System.out.format("%n%s%n","RegressionTest5.test142"); }
@@ -3204,7 +3204,7 @@ public class RegressionTest5 {
     // Regression assertion (captures the current behavior of the code)
     org.junit.Assert.assertNotNull(list_descriptorPreCheck11);
 
-  }
+    }*/
 
   @Test
   public void test143() throws Throwable {

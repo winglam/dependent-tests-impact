@@ -1679,7 +1679,7 @@ public class RegressionTest4 {
 
   }
 
-  @Test
+    /**  @Test
   public void test079() throws Throwable {
 
     if (debug) { System.out.format("%n%s%n","RegressionTest4.test079"); }
@@ -1688,7 +1688,7 @@ public class RegressionTest4 {
     java.util.Map<java.lang.String,org.apache.ambari.server.state.stack.JsonOsFamilyEntry> map_str_jsonOsFamilyEntry1 = null;
     jsonOsFamilyRoot0.setMapping(map_str_jsonOsFamilyEntry1);
 
-  }
+    }*/
 
   @Test
   public void test080() throws Throwable {
