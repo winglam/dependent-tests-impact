@@ -1,0 +1,7 @@
+org.apache.ambari.server.api.services.BaseRequest.getResource : $r1 = r0.<org.apache.ambari.server.api.services.BaseRequest: org.apache.ambari.server.api.resources.ResourceInstance m_resource>
+org.apache.ambari.server.controller.AmbariServer.getController : $r0 = <org.apache.ambari.server.controller.AmbariServer: org.apache.ambari.server.controller.AmbariManagementController clusterController>
+org.apache.ambari.server.api.query.render.ClusterBlueprintRenderer.getResultPostProcessor : $r2 = new org.apache.ambari.server.api.query.render.ClusterBlueprintRenderer$BlueprintPostProcessor
+org.apache.ambari.server.utils.RequestUtils.getRemoteAddress : $z0 = staticinvoke <org.apache.ambari.server.utils.RequestUtils: boolean hasValidRequest()>()
+org.apache.ambari.server.utils.RequestUtils.getRemoteAddress : return null
+org.apache.ambari.server.utils.RequestUtils.hasValidRequest : $r0 = staticinvoke <org.springframework.web.context.request.RequestContextHolder: org.springframework.web.context.request.RequestAttributes getRequestAttributes()>()
+org.apache.ambari.server.api.services.ResultPostProcessorImpl.registerResourceProcessors : $r6 = interfaceinvoke r1.<org.apache.ambari.server.api.resources.ResourceInstance: org.apache.ambari.server.api.resources.ResourceDefinition getResourceDefinition()>()

@@ -1,0 +1,20 @@
+org.apache.ambari.server.state.Alert.toString : $r4 = virtualinvoke r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("cluster=")
+org.apache.ambari.server.state.Alert.toString : $r32 = virtualinvoke r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("text=\'")
+org.apache.ambari.server.state.Alert.toString : $r37 = virtualinvoke r2.<java.lang.StringBuilder: java.lang.String toString()>()
+org.apache.ambari.server.state.Alert.toString : $r1 = new java.lang.StringBuilder
+org.apache.ambari.server.state.Alert.toString : $r20 = virtualinvoke r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("component=")
+org.apache.ambari.server.state.Alert.toString : virtualinvoke r2.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(125)
+org.apache.ambari.server.state.Alert.toString : $r24 = virtualinvoke r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("host=")
+org.apache.ambari.server.state.Alert.toString : $r8 = virtualinvoke r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("state=")
+org.apache.ambari.server.state.Alert.toString : $r28 = virtualinvoke r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("instance=")
+org.apache.ambari.server.state.Alert.toString : virtualinvoke r2.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(123)
+org.apache.ambari.server.state.Alert.toString : $r12 = virtualinvoke r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("name=")
+org.apache.ambari.server.state.Alert.toString : $r16 = virtualinvoke r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("service=")
+org.apache.ambari.server.events.AlertReceivedEvent.toString : $r5 = virtualinvoke r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(", alerts=")
+org.apache.ambari.server.events.AlertReceivedEvent.toString : $r1 = new java.lang.StringBuilder
+org.apache.ambari.server.events.AlertReceivedEvent.toString : virtualinvoke r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("}")
+org.apache.ambari.server.events.AlertReceivedEvent.toString : $r9 = virtualinvoke r2.<java.lang.StringBuilder: java.lang.String toString()>()
+org.apache.ambari.server.events.AlertReceivedEvent.toString : $r3 = virtualinvoke r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("cluserId=")
+org.apache.ambari.server.events.AlertEvent.getAlert : $r1 = r0.<org.apache.ambari.server.events.AlertEvent: org.apache.ambari.server.state.Alert m_alert>
+org.apache.ambari.server.events.AlertEvent.getAlerts : $r1 = r0.<org.apache.ambari.server.events.AlertEvent: java.util.List m_alerts>
+org.apache.ambari.server.events.AlertEvent.getAlerts : $r3 = r0.<org.apache.ambari.server.events.AlertEvent: org.apache.ambari.server.state.Alert m_alert>

@@ -1,0 +1,28 @@
+org.apache.ambari.server.serveraction.ActionLog.getStdErr : $r1 = r0.<org.apache.ambari.server.serveraction.ActionLog: java.lang.StringBuffer stdErr>
+org.apache.ambari.server.serveraction.kerberos.KerberosOperationHandler.setOpen : r0.<org.apache.ambari.server.serveraction.kerberos.KerberosOperationHandler: boolean open> = z0
+org.apache.ambari.server.serveraction.ActionLog.getStdOut : $r1 = r0.<org.apache.ambari.server.serveraction.ActionLog: java.lang.StringBuffer stdOut>
+org.apache.ambari.server.serveraction.kerberos.KerberosOperationHandler.createKeytab : $r22 = new org.apache.directory.server.kerberos.shared.keytab.KeytabEntry
+org.apache.ambari.server.serveraction.kerberos.KerberosOperationHandler.createKeytab : $z0 = staticinvoke <org.apache.commons.lang.StringUtils: boolean isEmpty(java.lang.String)>(r1)
+org.apache.ambari.server.serveraction.kerberos.KerberosOperationHandler.createKeytab : goto [?= $z2 = interfaceinvoke r9.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.serveraction.kerberos.KerberosOperationHandler.createKeytab : $r19 = new org.apache.directory.shared.kerberos.KerberosTime
+org.apache.ambari.server.serveraction.kerberos.KerberosOperationHandler.createKeytab : $r18 = new org.apache.directory.server.kerberos.shared.keytab.Keytab
+org.apache.ambari.server.serveraction.kerberos.KerberosOperationHandler.createKeytab : $r17 = new java.util.ArrayList
+org.apache.ambari.server.serveraction.kerberos.KerberosOperationHandler.createKeytab : virtualinvoke r6.<org.apache.directory.server.kerberos.shared.keytab.Keytab: void setEntries(java.util.List)>(r5)
+org.apache.ambari.server.serveraction.kerberos.KerberosOperationHandler.createKeytab : if r2 != null goto $r15 = new java.util.HashSet
+org.apache.ambari.server.serveraction.kerberos.KerberosOperationHandler.createKeytab : $z1 = interfaceinvoke r4.<java.util.Set: boolean isEmpty()>()
+org.apache.ambari.server.serveraction.kerberos.KerberosOperationHandler.createKeytab : $r20 = interfaceinvoke r7.<java.util.Map: java.util.Collection values()>()
+org.apache.ambari.server.serveraction.kerberos.KerberosOperationHandler.createKeytab : return r6
+org.apache.ambari.server.serveraction.kerberos.KerberosOperationHandler.createKeytab : r7 = staticinvoke <org.apache.directory.server.kerberos.shared.crypto.encryption.KerberosKeyFactory: java.util.Map getKerberosKeys(java.lang.String,java.lang.String,java.util.Set)>(r1, r2, r4)
+org.apache.ambari.server.serveraction.kerberos.KerberosOperationHandler.createKeytab : if r7 == null goto return r6
+org.apache.ambari.server.serveraction.kerberos.KerberosOperationHandler.createKeytab : $r15 = new java.util.HashSet
+org.apache.ambari.server.serveraction.kerberos.KerberosOperationHandler.createKeytab : if r3 != null goto $b1 = virtualinvoke r3.<java.lang.Integer: byte byteValue()>()
+org.apache.ambari.server.serveraction.kerberos.ADKerberosOperationHandler.close : r0.<org.apache.ambari.server.serveraction.kerberos.ADKerberosOperationHandler: javax.naming.directory.SearchControls searchControls> = null
+org.apache.ambari.server.serveraction.kerberos.ADKerberosOperationHandler.close : r0.<org.apache.ambari.server.serveraction.kerberos.ADKerberosOperationHandler: com.google.gson.Gson gson> = null
+org.apache.ambari.server.serveraction.kerberos.ADKerberosOperationHandler.close : $r3 = r0.<org.apache.ambari.server.serveraction.kerberos.ADKerberosOperationHandler: javax.naming.ldap.LdapContext ldapContext>
+org.apache.ambari.server.serveraction.kerberos.ADKerberosOperationHandler.close : virtualinvoke r0.<org.apache.ambari.server.serveraction.kerberos.ADKerberosOperationHandler: void setOpen(boolean)>(0)
+org.apache.ambari.server.serveraction.kerberos.CreateKeytabFilesServerAction.createKeytab : $r6 = <org.apache.ambari.server.serveraction.kerberos.CreateKeytabFilesServerAction: org.slf4j.Logger LOG>
+org.apache.ambari.server.serveraction.kerberos.CreateKeytabFilesServerAction.createKeytab : r8 = null
+org.apache.ambari.server.serveraction.kerberos.CreateKeytabFilesServerAction.createKeytab : if z0 == 0 goto (branch)
+org.apache.ambari.server.serveraction.kerberos.CreateKeytabFilesServerAction.createKeytab : if r8 != null goto return r8
+org.apache.ambari.server.serveraction.kerberos.CreateKeytabFilesServerAction.createKeytab : $r27 = r0.<org.apache.ambari.server.serveraction.kerberos.CreateKeytabFilesServerAction: org.apache.ambari.server.orm.dao.KerberosPrincipalDAO kerberosPrincipalDAO>
+org.apache.ambari.server.serveraction.kerberos.CreateKeytabFilesServerAction.createKeytab : r8 = virtualinvoke r4.<org.apache.ambari.server.serveraction.kerberos.KerberosOperationHandler: org.apache.directory.server.kerberos.shared.keytab.Keytab createKeytab(java.lang.String,java.lang.String,java.lang.Integer)>(r1, r2, r3)

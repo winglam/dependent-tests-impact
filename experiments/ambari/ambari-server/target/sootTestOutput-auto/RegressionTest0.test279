@@ -1,0 +1,7 @@
+org.apache.ambari.server.utils.ShellCommandUtil.runCommand : if r1 == null goto $z1 = <org.apache.ambari.server.utils.ShellCommandUtil: boolean WINDOWS>
+org.apache.ambari.server.utils.ShellCommandUtil.runCommand : r14 = virtualinvoke r4.<java.lang.ProcessBuilder: java.lang.Process start()>()
+org.apache.ambari.server.utils.ShellCommandUtil.runCommand : if z0 == 0 goto r3 = r0
+org.apache.ambari.server.utils.ShellCommandUtil.runCommand : r3 = r0
+org.apache.ambari.server.utils.ShellCommandUtil.runCommand : $r12 = new java.lang.ProcessBuilder
+org.apache.ambari.server.utils.ShellCommandUtil.runCommand : $z1 = <org.apache.ambari.server.utils.ShellCommandUtil: boolean WINDOWS>
+org.apache.ambari.server.utils.ShellCommandUtil.runCommand : $r2 = staticinvoke <org.apache.ambari.server.utils.ShellCommandUtil: org.apache.ambari.server.utils.ShellCommandUtil$Result runCommand(java.lang.String[],java.util.Map,org.apache.ambari.server.utils.ShellCommandUtil$InteractiveHandler,boolean)>(r0, r1, null, 0)

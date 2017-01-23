@@ -1,0 +1,15 @@
+org.apache.ambari.server.state.services.AlertNoticeDispatchService.startUp : r1 = null
+org.apache.ambari.server.state.services.AlertNoticeDispatchService.startUp : r2 = null
+org.apache.ambari.server.state.services.AlertNoticeDispatchService.startUp : $r6 = r0.<org.apache.ambari.server.state.services.AlertNoticeDispatchService: org.apache.ambari.server.configuration.Configuration m_configuration>
+org.apache.ambari.server.state.services.AlertNoticeDispatchService.startUp : $r11 = <org.apache.ambari.server.state.services.AlertNoticeDispatchService: org.slf4j.Logger LOG>
+org.apache.ambari.server.state.services.AlertNoticeDispatchService.startUp : $r12 = newarray (java.lang.Class)[1]
+org.apache.ambari.server.state.services.AlertNoticeDispatchService.startUp : r1 = staticinvoke <java.lang.ClassLoader: java.io.InputStream getSystemResourceAsStream(java.lang.String)>("alert-templates.xml")
+org.apache.ambari.server.state.services.AlertNoticeDispatchService.startUp : $r18 = <org.apache.ambari.server.state.services.AlertNoticeDispatchService: org.slf4j.Logger LOG>
+org.apache.ambari.server.state.services.AlertNoticeDispatchService.startUp : r10 = $r9
+org.apache.ambari.server.state.services.AlertNoticeDispatchService.startUp : r4 = virtualinvoke r13.<javax.xml.bind.JAXBContext: javax.xml.bind.Unmarshaller createUnmarshaller()>()
+org.apache.ambari.server.state.services.AlertNoticeDispatchService.startUp : if null != r1 goto $r14 = interfaceinvoke r4.<javax.xml.bind.Unmarshaller: java.lang.Object unmarshal(java.io.InputStream)>(r1)
+org.apache.ambari.server.state.services.AlertNoticeDispatchService.startUp : r17 = $r16
+org.apache.ambari.server.state.services.AlertNoticeDispatchService.startUp : $r14 = interfaceinvoke r4.<javax.xml.bind.Unmarshaller: java.lang.Object unmarshal(java.io.InputStream)>(r1)
+org.apache.ambari.server.state.services.AlertNoticeDispatchService.startUp : specialinvoke r0.<com.google.common.util.concurrent.AbstractScheduledService: void startUp()>()
+org.apache.ambari.server.state.services.AlertNoticeDispatchService.scheduler : $r1 = <java.util.concurrent.TimeUnit: java.util.concurrent.TimeUnit MINUTES>
+org.apache.ambari.server.orm.entities.ServiceDesiredStateEntityPK.setClusterId : r0.<org.apache.ambari.server.orm.entities.ServiceDesiredStateEntityPK: java.lang.Long clusterId> = r1

@@ -1,0 +1,4 @@
+org.apache.ambari.server.state.services.AlertNoticeDispatchService.startUp : r1 = staticinvoke <java.lang.ClassLoader: java.io.InputStream getSystemResourceAsStream(java.lang.String)>("alert-templates.xml")
+org.apache.ambari.server.state.services.AlertNoticeDispatchService.startUp : if null != r1 goto $r14 = interfaceinvoke r4.<javax.xml.bind.Unmarshaller: java.lang.Object unmarshal(java.io.InputStream)>(r1)
+org.apache.ambari.server.state.services.AlertNoticeDispatchService.startUp : $r14 = interfaceinvoke r4.<javax.xml.bind.Unmarshaller: java.lang.Object unmarshal(java.io.InputStream)>(r1)
+org.apache.ambari.server.orm.entities.RepositoryEntity.isUnique : $z0 = r0.<org.apache.ambari.server.orm.entities.RepositoryEntity: boolean unique>

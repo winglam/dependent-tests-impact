@@ -1,0 +1,8 @@
+org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper.checkForConfigsSelectedMoreThanOnce : r3 = null
+org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper.checkForConfigsSelectedMoreThanOnce : $r9 = <org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper: java.sql.Connection connection>
+org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper.checkForConfigsSelectedMoreThanOnce : r1 = "select c.cluster_name, ccm.type_name from clusterconfigmapping ccm join clusters c on ccm.cluster_id=c.cluster_id group by c.cluster_name, ccm.type_name having sum(selected) > 1"
+org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper.checkForConfigsSelectedMoreThanOnce : r4 = null
+org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper.checkForConfigsSelectedMoreThanOnce : $r11 = <org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper: com.google.inject.Injector injector>
+org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper.checkForConfigsSelectedMoreThanOnce : $r10 = <org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper: org.apache.ambari.server.orm.DBAccessor dbAccessor>
+org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper.checkForConfigsSelectedMoreThanOnce : $r0 = <org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper: org.slf4j.Logger LOG>
+org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper.checkForConfigsSelectedMoreThanOnce : r2 = staticinvoke <com.google.common.collect.HashMultimap: com.google.common.collect.HashMultimap create()>()

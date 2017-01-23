@@ -1,0 +1,20 @@
+org.apache.ambari.server.state.fsm.StateMachineFactory$ApplicableSingleOrMultipleTransition.apply : if r2 != null goto $r10 = r0.<org.apache.ambari.server.state.fsm.StateMachineFactory$ApplicableSingleOrMultipleTransition: java.lang.Enum eventType>
+org.apache.ambari.server.state.fsm.StateMachineFactory$ApplicableSingleOrMultipleTransition.apply : $r3 = staticinvoke <org.apache.ambari.server.state.fsm.StateMachineFactory: java.util.Map access$000(org.apache.ambari.server.state.fsm.StateMachineFactory)>(r1)
+org.apache.ambari.server.state.fsm.StateMachineFactory$ApplicableSingleOrMultipleTransition.apply : $r7 = staticinvoke <org.apache.ambari.server.state.fsm.StateMachineFactory: java.util.Map access$000(org.apache.ambari.server.state.fsm.StateMachineFactory)>(r1)
+org.apache.ambari.server.state.fsm.StateMachineFactory$ApplicableSingleOrMultipleTransition.apply : $r10 = r0.<org.apache.ambari.server.state.fsm.StateMachineFactory$ApplicableSingleOrMultipleTransition: java.lang.Enum eventType>
+org.apache.ambari.server.state.fsm.StateMachineFactory$ApplicableSingleOrMultipleTransition.apply : $r6 = new java.util.HashMap
+org.apache.ambari.server.state.State.values : $r0 = <org.apache.ambari.server.state.State: org.apache.ambari.server.state.State[] $VALUES>
+org.apache.ambari.server.state.fsm.StateMachineFactory.addTransition : $r5 = new org.apache.ambari.server.state.fsm.StateMachineFactory
+org.apache.ambari.server.state.fsm.StateMachineFactory.installTopology : $r1 = new org.apache.ambari.server.state.fsm.StateMachineFactory
+org.apache.ambari.server.state.fsm.StateMachineFactory.makeStateMachineTable : $r9 = r4.<org.apache.ambari.server.state.fsm.StateMachineFactory$TransitionsListNode: org.apache.ambari.server.state.fsm.StateMachineFactory$ApplicableTransition transition>
+org.apache.ambari.server.state.fsm.StateMachineFactory.makeStateMachineTable : $r11 = virtualinvoke r2.<java.util.Stack: java.lang.Object pop()>()
+org.apache.ambari.server.state.fsm.StateMachineFactory.makeStateMachineTable : $r1 = new java.util.Stack
+org.apache.ambari.server.state.fsm.StateMachineFactory.makeStateMachineTable : if r4 == null goto $z0 = virtualinvoke r2.<java.util.Stack: boolean isEmpty()>()
+org.apache.ambari.server.state.fsm.StateMachineFactory.makeStateMachineTable : $r8 = new java.util.EnumMap
+org.apache.ambari.server.state.fsm.StateMachineFactory.makeStateMachineTable : r4 = r4.<org.apache.ambari.server.state.fsm.StateMachineFactory$TransitionsListNode: org.apache.ambari.server.state.fsm.StateMachineFactory$TransitionsListNode next>
+org.apache.ambari.server.state.fsm.StateMachineFactory.makeStateMachineTable : $r5 = new java.util.HashMap
+org.apache.ambari.server.state.fsm.StateMachineFactory.makeStateMachineTable : r4 = r0.<org.apache.ambari.server.state.fsm.StateMachineFactory: org.apache.ambari.server.state.fsm.StateMachineFactory$TransitionsListNode transitionsListNode>
+org.apache.ambari.server.state.fsm.StateMachineFactory.makeStateMachineTable : $r6 = r0.<org.apache.ambari.server.state.fsm.StateMachineFactory: java.lang.Enum defaultInitialState>
+org.apache.ambari.server.state.fsm.StateMachineFactory.makeStateMachineTable : $z0 = virtualinvoke r2.<java.util.Stack: boolean isEmpty()>()
+org.apache.ambari.server.events.publishers.AmbariEventPublisher.register : $r2 = r0.<org.apache.ambari.server.events.publishers.AmbariEventPublisher: com.google.common.eventbus.EventBus m_eventBus>
+org.apache.ambari.server.state.fsm.StateMachineFactory.access$000 : $r1 = r0.<org.apache.ambari.server.state.fsm.StateMachineFactory: java.util.Map stateMachineTable>

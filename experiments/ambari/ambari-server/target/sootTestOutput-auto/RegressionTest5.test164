@@ -1,0 +1,6 @@
+org.apache.ambari.server.controller.internal.Extension.getServiceForComponent : $r2 = r0.<org.apache.ambari.server.controller.internal.Extension: java.util.Map componentService>
+org.apache.ambari.server.controller.internal.Extension.getExternalComponentConfig : $r2 = r0.<org.apache.ambari.server.controller.internal.Extension: java.util.Map dbDependencyInfo>
+org.apache.ambari.server.controller.internal.Extension.getComponentInfo : return r2
+org.apache.ambari.server.controller.internal.Extension.getComponentInfo : r2 = null
+org.apache.ambari.server.controller.internal.Extension.getComponentInfo : if r3 == null goto return r2
+org.apache.ambari.server.controller.internal.Extension.getComponentInfo : r3 = virtualinvoke r0.<org.apache.ambari.server.controller.internal.Extension: java.lang.String getServiceForComponent(java.lang.String)>(r1)

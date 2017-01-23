@@ -1,0 +1,31 @@
+org.apache.ambari.server.utils.VersionUtils.compareVersions : r21 = $r20
+org.apache.ambari.server.utils.VersionUtils.compareVersions : $i0 = staticinvoke <org.apache.ambari.server.utils.VersionUtils: int compareVersions(java.lang.String,java.lang.String,int)>(r0, r1, 0)
+org.apache.ambari.server.utils.VersionUtils.compareVersions : $i21 = virtualinvoke r29.<java.lang.Integer: int intValue()>()
+org.apache.ambari.server.utils.VersionUtils.compareVersions : $i17 = interfaceinvoke r4.<java.util.List: int size()>()
+org.apache.ambari.server.utils.VersionUtils.compareVersions : $r27 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(0)
+org.apache.ambari.server.utils.VersionUtils.compareVersions : $r22 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(0)
+org.apache.ambari.server.utils.VersionUtils.compareVersions : $i12 = lengthof r2
+org.apache.ambari.server.utils.VersionUtils.compareVersions : $i6 = virtualinvoke r10.<java.lang.String: int indexOf(int)>(45)
+org.apache.ambari.server.utils.VersionUtils.compareVersions : $r16 = new java.util.ArrayList
+org.apache.ambari.server.utils.VersionUtils.compareVersions : $r30 = interfaceinvoke r5.<java.util.List: java.lang.Object get(int)>(i20)
+org.apache.ambari.server.utils.VersionUtils.compareVersions : $r28 = interfaceinvoke r4.<java.util.List: java.lang.Object get(int)>(i20)
+org.apache.ambari.server.utils.VersionUtils.compareVersions : if r1 != null goto r9 = staticinvoke <org.apache.commons.lang.StringUtils: java.lang.String trim(java.lang.String)>(r0)
+org.apache.ambari.server.utils.VersionUtils.compareVersions : r9 = staticinvoke <org.apache.commons.lang.StringUtils: java.lang.String trim(java.lang.String)>(r0)
+org.apache.ambari.server.utils.VersionUtils.compareVersions : $r14 = "${ambariVersion}"
+org.apache.ambari.server.utils.VersionUtils.compareVersions : $i4 = virtualinvoke r9.<java.lang.String: int indexOf(int)>(45)
+org.apache.ambari.server.utils.VersionUtils.compareVersions : i20 = 0
+org.apache.ambari.server.utils.VersionUtils.compareVersions : r10 = staticinvoke <org.apache.commons.lang.StringUtils: java.lang.String trim(java.lang.String)>(r1)
+org.apache.ambari.server.utils.VersionUtils.compareVersions : i2 = 0
+org.apache.ambari.server.utils.VersionUtils.compareVersions : $z1 = virtualinvoke r10.<java.lang.String: boolean isEmpty()>()
+org.apache.ambari.server.utils.VersionUtils.compareVersions : if i0 >= 0 goto $r14 = "${ambariVersion}"
+org.apache.ambari.server.utils.VersionUtils.compareVersions : $r17 = new java.util.ArrayList
+org.apache.ambari.server.utils.VersionUtils.compareVersions : if r0 != null goto (branch)
+org.apache.ambari.server.utils.VersionUtils.compareVersions : $i23 = virtualinvoke r29.<java.lang.Integer: int intValue()>()
+org.apache.ambari.server.utils.VersionUtils.compareVersions : r2 = virtualinvoke r9.<java.lang.String: java.lang.String[] split(java.lang.String)>("\\.")
+org.apache.ambari.server.utils.VersionUtils.compareVersions : return 0
+org.apache.ambari.server.utils.VersionUtils.compareVersions : $z0 = virtualinvoke r9.<java.lang.String: boolean isEmpty()>()
+org.apache.ambari.server.utils.VersionUtils.compareVersions : r3 = virtualinvoke r10.<java.lang.String: java.lang.String[] split(java.lang.String)>("\\.")
+org.apache.ambari.server.utils.VersionUtils.compareVersions : $i14 = lengthof r3
+org.apache.ambari.server.utils.VersionUtils.compareVersions : $i8 = lengthof r2
+org.apache.ambari.server.utils.VersionUtils.compareVersions : r26 = $r25
+org.apache.ambari.server.utils.VersionUtils.compareVersions : if i0 == 0 goto $i10 = i1

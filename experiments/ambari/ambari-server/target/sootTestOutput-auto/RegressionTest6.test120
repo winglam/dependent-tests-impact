@@ -1,0 +1,17 @@
+org.apache.ambari.server.orm.entities.HostGroupConfigEntityPK.equals : if r1 == null goto return 0
+org.apache.ambari.server.orm.entities.HostGroupConfigEntityPK.equals : if r0 != r1 goto (branch)
+org.apache.ambari.server.orm.entities.HostGroupConfigEntityPK.setType : r0.<org.apache.ambari.server.orm.entities.HostGroupConfigEntityPK: java.lang.String type> = r1
+org.apache.ambari.server.security.encryption.InMemoryCredentialStore.getCredential : interfaceinvoke r3.<java.util.concurrent.locks.Lock: void unlock()>()
+org.apache.ambari.server.security.encryption.InMemoryCredentialStore.getCredential : if r1 == null goto return r2
+org.apache.ambari.server.security.encryption.InMemoryCredentialStore.getCredential : return r2
+org.apache.ambari.server.security.encryption.InMemoryCredentialStore.getCredential : r2 = null
+org.apache.ambari.server.security.encryption.InMemoryCredentialStore.getCredential : interfaceinvoke r3.<java.util.concurrent.locks.Lock: void lock()>()
+org.apache.ambari.server.security.encryption.InMemoryCredentialStore.getCredential : if r4 == null goto interfaceinvoke r3.<java.util.concurrent.locks.Lock: void unlock()>()
+org.apache.ambari.server.security.encryption.InMemoryCredentialStore.getCredential : r3 = virtualinvoke r0.<org.apache.ambari.server.security.encryption.InMemoryCredentialStore: java.util.concurrent.locks.Lock getLock()>()
+org.apache.ambari.server.security.encryption.InMemoryCredentialStore.getCredential : $r6 = r0.<org.apache.ambari.server.security.encryption.InMemoryCredentialStore: com.google.common.cache.Cache cache>
+org.apache.ambari.server.security.encryption.InMemoryCredentialStore.getCredential : goto [?= return r2]
+org.apache.ambari.server.security.encryption.InMemoryCredentialStore.containsCredential : r2 = virtualinvoke r0.<org.apache.ambari.server.security.encryption.InMemoryCredentialStore: java.util.concurrent.locks.Lock getLock()>()
+org.apache.ambari.server.security.encryption.InMemoryCredentialStore.containsCredential : interfaceinvoke r2.<java.util.concurrent.locks.Lock: void unlock()>()
+org.apache.ambari.server.security.encryption.InMemoryCredentialStore.containsCredential : interfaceinvoke r2.<java.util.concurrent.locks.Lock: void lock()>()
+org.apache.ambari.server.security.encryption.InMemoryCredentialStore.containsCredential : if r1 == null goto $z2 = 0
+org.apache.ambari.server.security.encryption.AbstractCredentialStore.getLock : $r1 = r0.<org.apache.ambari.server.security.encryption.AbstractCredentialStore: java.util.concurrent.locks.Lock lock>

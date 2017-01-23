@@ -1,0 +1,12 @@
+org.apache.ambari.server.controller.internal.HostStatusHelper.isHostComponentLive : if r1 != null goto $r8 = new org.apache.ambari.server.controller.ServiceComponentHostRequest
+org.apache.ambari.server.controller.internal.HostStatusHelper.isHostComponentLive : $r8 = new org.apache.ambari.server.controller.ServiceComponentHostRequest
+org.apache.ambari.server.controller.internal.HostStatusHelper.isHostComponentLive : $r9 = staticinvoke <java.util.Collections: java.util.Set singleton(java.lang.Object)>(r5)
+org.apache.ambari.server.controller.metrics.MetricsCollectorHAManager.isEmpty : $r1 = r0.<org.apache.ambari.server.controller.metrics.MetricsCollectorHAManager: java.util.Map clusterCollectorHAState>
+org.apache.ambari.server.controller.AmbariServer.getController : $r0 = <org.apache.ambari.server.controller.AmbariServer: org.apache.ambari.server.controller.AmbariManagementController clusterController>
+org.apache.ambari.server.controller.metrics.MetricsCollectorHAClusterState.addMetricsCollectorHost : $r3 = r0.<org.apache.ambari.server.controller.metrics.MetricsCollectorHAClusterState: org.apache.ambari.server.controller.AmbariManagementController managementController>
+org.apache.ambari.server.Role.name : $r1 = r0.<org.apache.ambari.server.Role: java.lang.String name>
+org.apache.ambari.server.controller.metrics.MetricsCollectorHAManager.addCollectorHost : $r3 = <org.apache.ambari.server.controller.metrics.MetricsCollectorHAManager: org.slf4j.Logger LOG>
+org.apache.ambari.server.controller.metrics.MetricsCollectorHAManager.addCollectorHost : virtualinvoke r5.<org.apache.ambari.server.controller.metrics.MetricsCollectorHAClusterState: void addMetricsCollectorHost(java.lang.String)>(r2)
+org.apache.ambari.server.controller.metrics.MetricsCollectorHAManager.addCollectorHost : $r12 = r0.<org.apache.ambari.server.controller.metrics.MetricsCollectorHAManager: java.util.Map clusterCollectorHAState>
+org.apache.ambari.server.controller.metrics.MetricsCollectorHAManager.addCollectorHost : $r11 = r0.<org.apache.ambari.server.controller.metrics.MetricsCollectorHAManager: java.util.Map clusterCollectorHAState>
+org.apache.ambari.server.controller.metrics.MetricsCollectorHAManager.addCollectorHost : $r15 = r0.<org.apache.ambari.server.controller.metrics.MetricsCollectorHAManager: java.util.Map clusterCollectorHAState>

@@ -1,0 +1,13 @@
+org.apache.ambari.server.state.alert.AlertDefinitionHash.getHash : if null != r3 goto $r10 = interfaceinvoke r3.<java.util.concurrent.ConcurrentMap: java.lang.Object get(java.lang.Object)>(r2)
+org.apache.ambari.server.state.alert.AlertDefinitionHash.getHash : if r4 == null goto $r10 = interfaceinvoke r3.<java.util.concurrent.ConcurrentMap: java.lang.Object get(java.lang.Object)>(r2)
+org.apache.ambari.server.state.alert.AlertDefinitionHash.getHash : $r8 = r0.<org.apache.ambari.server.state.alert.AlertDefinitionHash: java.util.concurrent.ConcurrentMap m_hashes>
+org.apache.ambari.server.state.alert.AlertDefinitionHash.getHash : if null == r11 goto r12 = specialinvoke r0.<org.apache.ambari.server.state.alert.AlertDefinitionHash: java.lang.String hash(java.lang.String,java.lang.String)>(r1, r2)
+org.apache.ambari.server.state.alert.AlertDefinitionHash.getHash : $r7 = new java.util.concurrent.ConcurrentHashMap
+org.apache.ambari.server.state.alert.AlertDefinitionHash.getHash : $r10 = interfaceinvoke r3.<java.util.concurrent.ConcurrentMap: java.lang.Object get(java.lang.Object)>(r2)
+org.apache.ambari.server.state.alert.AlertDefinitionHash.getHash : $r5 = r0.<org.apache.ambari.server.state.alert.AlertDefinitionHash: java.util.concurrent.ConcurrentMap m_hashes>
+org.apache.ambari.server.state.alert.AlertDefinitionHash.getHash : r12 = specialinvoke r0.<org.apache.ambari.server.state.alert.AlertDefinitionHash: java.lang.String hash(java.lang.String,java.lang.String)>(r1, r2)
+org.apache.ambari.server.state.alert.AlertDefinitionHash.hash : r3 = specialinvoke r0.<org.apache.ambari.server.state.alert.AlertDefinitionHash: java.util.Set getAlertDefinitionEntities(java.lang.String,java.lang.String)>(r1, r2)
+org.apache.ambari.server.state.alert.AlertDefinitionHash.getAlertDefinitionEntities : $r15 = r0.<org.apache.ambari.server.state.alert.AlertDefinitionHash: com.google.inject.Provider m_clusters>
+org.apache.ambari.server.state.alert.AlertDefinitionHash.getAlertDefinitionEntities : $r3 = new java.util.HashSet
+org.apache.ambari.server.state.alert.AlertDefinitionHash.invalidate : $r4 = r0.<org.apache.ambari.server.state.alert.AlertDefinitionHash: java.util.concurrent.ConcurrentMap m_hashes>
+org.apache.ambari.server.state.alert.AlertDefinitionHash.invalidate : if null == r3 goto return

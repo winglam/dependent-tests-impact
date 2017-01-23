@@ -1,0 +1,7 @@
+org.apache.ambari.server.orm.helpers.dbms.GenericDbmsHelper.getAlterColumnStatement : virtualinvoke r0.<org.apache.ambari.server.orm.helpers.dbms.GenericDbmsHelper: java.lang.StringBuilder writeAlterTableClause(java.lang.StringBuilder,java.lang.String)>(r4, r1)
+org.apache.ambari.server.orm.helpers.dbms.GenericDbmsHelper.getAlterColumnStatement : virtualinvoke r0.<org.apache.ambari.server.orm.helpers.dbms.GenericDbmsHelper: java.lang.StringBuilder writeColumnModifyString(java.lang.StringBuilder,org.apache.ambari.server.orm.DBAccessor$DBColumnInfo)>(r4, r2)
+org.apache.ambari.server.orm.helpers.dbms.GenericDbmsHelper.getAlterColumnStatement : $r3 = new java.lang.StringBuilder
+org.apache.ambari.server.orm.helpers.dbms.GenericDbmsHelper.writeAlterTableClause : $r3 = virtualinvoke r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("ALTER TABLE ")
+org.apache.ambari.server.orm.helpers.dbms.GenericDbmsHelper.writeAlterTableClause : return r1
+org.apache.ambari.server.orm.helpers.dbms.MySqlHelper.writeColumnModifyString : $r3 = virtualinvoke r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" MODIFY ")
+org.apache.ambari.server.orm.helpers.dbms.GenericDbmsHelper.createStubAbstractSessionFromPlatform : $r2 = new org.apache.ambari.server.orm.helpers.dbms.GenericDbmsHelper$1

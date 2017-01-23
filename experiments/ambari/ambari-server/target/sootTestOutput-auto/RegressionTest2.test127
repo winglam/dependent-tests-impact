@@ -1,0 +1,17 @@
+org.apache.ambari.server.controller.ClusterRequest.getServiceConfigVersionRequest : $r1 = r0.<org.apache.ambari.server.controller.ClusterRequest: org.apache.ambari.server.controller.ServiceConfigVersionRequest serviceConfigVersionRequest>
+org.apache.ambari.server.utils.StageUtils.getRangedItem : return r3
+org.apache.ambari.server.utils.StageUtils.getRangedItem : $i0 = virtualinvoke r1.<java.lang.Integer: int intValue()>()
+org.apache.ambari.server.utils.StageUtils.getRangedItem : $z0 = virtualinvoke r1.<java.lang.Integer: boolean equals(java.lang.Object)>(r0)
+org.apache.ambari.server.utils.StageUtils.replaceRanges : r4 = interfaceinvoke r0.<java.util.SortedSet: java.util.Iterator iterator()>()
+org.apache.ambari.server.utils.StageUtils.replaceRanges : r2 = null
+org.apache.ambari.server.utils.StageUtils.replaceRanges : goto [?= $z0 = interfaceinvoke r4.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.utils.StageUtils.replaceRanges : r3 = r5
+org.apache.ambari.server.utils.StageUtils.replaceRanges : r6 = staticinvoke <org.apache.ambari.server.utils.StageUtils: java.lang.String getRangedItem(java.lang.Integer,java.lang.Integer)>(r3, r2)
+org.apache.ambari.server.utils.StageUtils.replaceRanges : interfaceinvoke r1.<java.util.Set: boolean add(java.lang.Object)>(r6)
+org.apache.ambari.server.utils.StageUtils.replaceRanges : return r1
+org.apache.ambari.server.utils.StageUtils.replaceRanges : $r8 = interfaceinvoke r0.<java.util.SortedSet: java.lang.Object first()>()
+org.apache.ambari.server.utils.StageUtils.replaceRanges : r2 = r5
+org.apache.ambari.server.utils.StageUtils.replaceRanges : if r2 == null goto r2 = r5
+org.apache.ambari.server.utils.StageUtils.replaceRanges : $r7 = new java.util.HashSet
+org.apache.ambari.server.utils.StageUtils.replaceRanges : $r10 = staticinvoke <org.apache.ambari.server.utils.StageUtils: java.lang.String getRangedItem(java.lang.Integer,java.lang.Integer)>(r3, r2)
+org.apache.ambari.server.utils.StageUtils.replaceRanges : if r0 != null goto $r7 = new java.util.HashSet

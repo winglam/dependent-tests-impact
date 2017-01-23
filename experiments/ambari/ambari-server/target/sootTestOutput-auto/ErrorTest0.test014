@@ -1,0 +1,14 @@
+org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper.checkHostComponentStates : $r13 = <org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper: java.sql.Connection connection>
+org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper.checkHostComponentStates : r2 = "select count(*) from hostcomponentdesiredstate"
+org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper.checkHostComponentStates : r1 = "select count(*) from hostcomponentstate"
+org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper.checkHostComponentStates : r3 = "select count(*) FROM hostcomponentstate hcs JOIN hostcomponentdesiredstate hcds ON hcs.service_name=hcds.service_name AND hcs.component_name=hcds.component_name AND hcs.host_id=hcds.host_id"
+org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper.checkHostComponentStates : r6 = null
+org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper.checkHostComponentStates : $r15 = <org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper: com.google.inject.Injector injector>
+org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper.checkHostComponentStates : i2 = 0
+org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper.checkHostComponentStates : r7 = null
+org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper.checkHostComponentStates : $r12 = new java.util.HashMap
+org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper.checkHostComponentStates : $r14 = <org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper: org.apache.ambari.server.orm.DBAccessor dbAccessor>
+org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper.checkHostComponentStates : i0 = 0
+org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper.checkHostComponentStates : $r0 = <org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper: org.slf4j.Logger LOG>
+org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper.checkHostComponentStates : i1 = 0
+org.apache.ambari.server.checks.DatabaseConsistencyCheckHelper.checkHostComponentStates : r4 = "select component_name, host_id from hostcomponentstate group by component_name, host_id having count(component_name) > 1"

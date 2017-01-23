@@ -1,0 +1,7 @@
+org.apache.ambari.server.orm.helpers.dbms.GenericDbmsHelper.writeAlterTableClause : $r3 = virtualinvoke r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("ALTER TABLE ")
+org.apache.ambari.server.orm.helpers.dbms.GenericDbmsHelper.writeAlterTableClause : return r1
+org.apache.ambari.server.orm.helpers.dbms.MySqlHelper.quoteObjectName : $r2 = new java.lang.StringBuilder
+org.apache.ambari.server.orm.helpers.dbms.GenericDbmsHelper.getDropTableColumnStatement : $r5 = virtualinvoke r0.<org.apache.ambari.server.orm.helpers.dbms.GenericDbmsHelper: java.lang.StringBuilder writeDropTableColumnStatement(java.lang.StringBuilder,java.lang.String)>(r4, r2)
+org.apache.ambari.server.orm.helpers.dbms.GenericDbmsHelper.getDropTableColumnStatement : $r3 = new java.lang.StringBuilder
+org.apache.ambari.server.orm.helpers.dbms.GenericDbmsHelper.writeDropTableColumnStatement : $r3 = virtualinvoke r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("DROP COLUMN ")
+org.apache.ambari.server.orm.helpers.dbms.GenericDbmsHelper.writeDropTableColumnStatement : return r1

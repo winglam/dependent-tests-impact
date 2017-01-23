@@ -1,0 +1,14 @@
+org.apache.ambari.server.state.cluster.ClustersImpl.findCluster : return r2
+org.apache.ambari.server.state.cluster.ClustersImpl.findCluster : r2 = null
+org.apache.ambari.server.state.cluster.ClustersImpl.findCluster : if r1 != null goto $r4 = virtualinvoke r0.<org.apache.ambari.server.state.cluster.ClustersImpl: org.apache.ambari.server.state.Cluster getCluster(java.lang.String)>(r1)
+org.apache.ambari.server.state.cluster.ClustersImpl.findCluster : r3 = $r5
+org.apache.ambari.server.state.cluster.ClustersImpl.getCluster : if r1 == null goto (branch)
+org.apache.ambari.server.state.cluster.ClustersImpl.getCluster : $r5 = new org.apache.ambari.server.ClusterNotFoundException
+org.apache.ambari.server.state.cluster.ClustersImpl.getCluster : $r3 = r0.<org.apache.ambari.server.state.cluster.ClustersImpl: java.util.concurrent.ConcurrentHashMap clusters>
+org.apache.ambari.server.state.cluster.ClustersImpl.getCluster : r2 = null
+org.apache.ambari.server.state.cluster.ClustersImpl.getCluster : if null != r2 goto staticinvoke <org.apache.ambari.server.utils.RetryHelper: void addAffectedCluster(org.apache.ambari.server.state.Cluster)>(r2)
+org.apache.ambari.server.utils.RetryHelper.init : <org.apache.ambari.server.utils.RetryHelper: org.apache.ambari.server.state.Clusters s_clusters> = r0
+org.apache.ambari.server.utils.RetryHelper.init : <org.apache.ambari.server.utils.RetryHelper: int operationsRetryAttempts> = i0
+org.apache.ambari.server.state.cluster.ClustersImpl.checkPermission : $r7 = r0.<org.apache.ambari.server.state.cluster.ClustersImpl: org.apache.ambari.server.security.SecurityHelper securityHelper>
+org.apache.ambari.server.state.cluster.ClustersImpl.checkPermission : if r2 != null goto $z1 = specialinvoke r0.<org.apache.ambari.server.state.cluster.ClustersImpl: boolean checkPermission(org.apache.ambari.server.state.Cluster,boolean)>(r2, z0)
+org.apache.ambari.server.state.cluster.ClustersImpl.checkPermission : r2 = virtualinvoke r0.<org.apache.ambari.server.state.cluster.ClustersImpl: org.apache.ambari.server.state.Cluster findCluster(java.lang.String)>(r1)

@@ -1,0 +1,20 @@
+org.apache.ambari.server.controller.internal.ScaleClusterRequest.getClusterId : $r1 = r0.<org.apache.ambari.server.controller.internal.ScaleClusterRequest: java.lang.Long clusterId>
+org.apache.ambari.server.api.services.RequestBody.getPropertySets : return r2
+org.apache.ambari.server.api.services.RequestBody.getPropertySets : r3 = interfaceinvoke r1.<java.util.Set: java.util.Iterator iterator()>()
+org.apache.ambari.server.api.services.RequestBody.getPropertySets : $r5 = new java.util.HashSet
+org.apache.ambari.server.api.services.RequestBody.getPropertySets : r1 = virtualinvoke r0.<org.apache.ambari.server.api.services.RequestBody: java.util.Set getNamedPropertySets()>()
+org.apache.ambari.server.topology.ClusterTopologyImpl.registerHostGroupInfo : $r11 = interfaceinvoke r1.<java.util.Map: java.util.Collection values()>()
+org.apache.ambari.server.topology.ClusterTopologyImpl.registerHostGroupInfo : $r2 = <org.apache.ambari.server.topology.ClusterTopologyImpl: org.slf4j.Logger LOG>
+org.apache.ambari.server.topology.ClusterTopologyImpl.registerHostGroupInfo : specialinvoke r0.<org.apache.ambari.server.topology.ClusterTopologyImpl: void checkForDuplicateHosts(java.util.Map)>(r1)
+org.apache.ambari.server.topology.ClusterTopologyImpl.validateTopology : $z1 = virtualinvoke r0.<org.apache.ambari.server.topology.ClusterTopologyImpl: boolean isNameNodeHAEnabled()>()
+org.apache.ambari.server.topology.ClusterTopologyImpl.validateTopology : r2 = interfaceinvoke r1.<java.util.List: java.util.Iterator iterator()>()
+org.apache.ambari.server.controller.internal.BaseClusterRequest.getBlueprint : $r1 = r0.<org.apache.ambari.server.controller.internal.BaseClusterRequest: org.apache.ambari.server.topology.Blueprint blueprint>
+org.apache.ambari.server.controller.internal.BaseClusterRequest.getConfiguration : $r1 = r0.<org.apache.ambari.server.controller.internal.BaseClusterRequest: org.apache.ambari.server.topology.Configuration configuration>
+org.apache.ambari.server.topology.ClusterTopologyImpl.isNameNodeHAEnabled : $r1 = r0.<org.apache.ambari.server.topology.ClusterTopologyImpl: org.apache.ambari.server.topology.Configuration configuration>
+org.apache.ambari.server.controller.internal.BaseClusterRequest.getHostGroupInfo : $r1 = r0.<org.apache.ambari.server.controller.internal.BaseClusterRequest: java.util.Map hostGroupInfoMap>
+org.apache.ambari.server.topology.ClusterTopologyImpl.checkForDuplicateHosts : $r12 = interfaceinvoke r1.<java.util.Map: java.util.Collection values()>()
+org.apache.ambari.server.topology.ClusterTopologyImpl.checkForDuplicateHosts : $z6 = interfaceinvoke r4.<java.util.Set: boolean isEmpty()>()
+org.apache.ambari.server.topology.ClusterTopologyImpl.checkForDuplicateHosts : $r11 = new java.util.HashSet
+org.apache.ambari.server.topology.ClusterTopologyImpl.checkForDuplicateHosts : $r2 = new java.util.HashSet
+org.apache.ambari.server.controller.internal.ScaleClusterRequest.getTopologyValidators : $r1 = staticinvoke <java.util.Collections: java.util.List emptyList()>()
+org.apache.ambari.server.api.services.RequestBody.getNamedPropertySets : $r1 = r0.<org.apache.ambari.server.api.services.RequestBody: java.util.Set m_propertySets>

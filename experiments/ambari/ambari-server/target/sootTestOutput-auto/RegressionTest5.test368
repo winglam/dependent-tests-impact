@@ -1,0 +1,7 @@
+org.apache.ambari.server.controller.predicate.ComparisonPredicate.stringToDouble : $i0 = virtualinvoke r2.<java.text.ParsePosition: int getIndex()>()
+org.apache.ambari.server.controller.predicate.ComparisonPredicate.stringToDouble : $r5 = new java.text.ParsePosition
+org.apache.ambari.server.controller.predicate.ComparisonPredicate.stringToDouble : r4 = virtualinvoke r3.<java.text.NumberFormat: java.lang.Number parse(java.lang.String,java.text.ParsePosition)>(r1, r2)
+org.apache.ambari.server.controller.predicate.ComparisonPredicate.stringToDouble : if r1 == null goto return null
+org.apache.ambari.server.controller.predicate.ComparisonPredicate.stringToDouble : r3 = staticinvoke <java.text.NumberFormat: java.text.NumberFormat getInstance()>()
+org.apache.ambari.server.api.predicate.operators.FilterOperator.toPredicate : $r4 = new org.apache.ambari.server.controller.predicate.FilterPredicate
+org.apache.ambari.server.api.predicate.operators.FilterOperator.toPredicate : if r2 != null goto $r4 = new org.apache.ambari.server.controller.predicate.FilterPredicate

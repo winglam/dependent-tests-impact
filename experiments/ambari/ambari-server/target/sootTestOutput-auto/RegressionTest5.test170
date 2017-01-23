@@ -1,0 +1,16 @@
+org.apache.ambari.server.state.StackId.getStackId : $r1 = r0.<org.apache.ambari.server.state.StackId: java.lang.String stackName>
+org.apache.ambari.server.state.StackId.getStackId : $r3 = new java.lang.StringBuilder
+org.apache.ambari.server.controller.PrereqCheckRequest.getUpgradeType : $r1 = r0.<org.apache.ambari.server.controller.PrereqCheckRequest: org.apache.ambari.server.state.stack.upgrade.UpgradeType m_upgradeType>
+org.apache.ambari.server.state.StackId.parseStackIdHelper : if r2 == null goto r1.<org.apache.ambari.server.state.StackId: java.lang.String stackName> = ""
+org.apache.ambari.server.state.StackId.parseStackIdHelper : $r8 = virtualinvoke r2.<java.lang.String: java.lang.String substring(int,int)>(0, i0)
+org.apache.ambari.server.state.StackId.parseStackIdHelper : i0 = virtualinvoke r2.<java.lang.String: int indexOf(int)>(45)
+org.apache.ambari.server.state.StackId.parseStackIdHelper : if i0 == -1 goto $r3 = new java.lang.RuntimeException
+org.apache.ambari.server.state.StackId.parseStackIdHelper : $i3 = i0 + 1
+org.apache.ambari.server.state.StackId.toString : $r1 = virtualinvoke r0.<org.apache.ambari.server.state.StackId: java.lang.String getStackId()>()
+org.apache.ambari.server.controller.PrereqCheckRequest.setTargetStackId : r0.<org.apache.ambari.server.controller.PrereqCheckRequest: org.apache.ambari.server.state.StackId m_targetStackId> = r1
+org.apache.ambari.server.utils.RetryHelper.init : <org.apache.ambari.server.utils.RetryHelper: org.apache.ambari.server.state.Clusters s_clusters> = r0
+org.apache.ambari.server.utils.RetryHelper.init : <org.apache.ambari.server.utils.RetryHelper: int operationsRetryAttempts> = i0
+org.apache.ambari.server.state.cluster.ClustersImpl.setCurrentStackVersion : $r16 = r0.<org.apache.ambari.server.state.cluster.ClustersImpl: java.util.concurrent.ConcurrentHashMap clusters>
+org.apache.ambari.server.state.cluster.ClustersImpl.setCurrentStackVersion : $r18 = new org.apache.ambari.server.ClusterNotFoundException
+org.apache.ambari.server.state.cluster.ClustersImpl.setCurrentStackVersion : if r2 == null goto $r5 = <org.apache.ambari.server.state.cluster.ClustersImpl: org.slf4j.Logger LOG>
+org.apache.ambari.server.state.cluster.ClustersImpl.setCurrentStackVersion : if null != r4 goto interfaceinvoke r4.<org.apache.ambari.server.state.Cluster: void setCurrentStackVersion(org.apache.ambari.server.state.StackId)>(r2)

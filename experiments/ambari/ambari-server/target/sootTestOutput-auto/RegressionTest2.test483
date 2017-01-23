@@ -1,0 +1,7 @@
+org.apache.ambari.server.api.services.BaseRequest.getAPIVersion : return 1
+org.apache.ambari.server.utils.RequestUtils.getRemoteAddress : $z0 = staticinvoke <org.apache.ambari.server.utils.RequestUtils: boolean hasValidRequest()>()
+org.apache.ambari.server.utils.RequestUtils.getRemoteAddress : return null
+org.apache.ambari.server.utils.RequestUtils.hasValidRequest : $r0 = staticinvoke <org.springframework.web.context.request.RequestContextHolder: org.springframework.web.context.request.RequestAttributes getRequestAttributes()>()
+org.apache.ambari.server.api.services.BaseRequest.getBody : $r1 = r0.<org.apache.ambari.server.api.services.BaseRequest: org.apache.ambari.server.api.services.RequestBody m_body>
+org.apache.ambari.server.audit.request.eventcreator.RequestAuditEventCreatorHelper.getPropertyList : $r2 = new java.util.LinkedList
+org.apache.ambari.server.audit.request.eventcreator.RequestAuditEventCreatorHelper.getPropertyList : $r6 = interfaceinvoke r0.<org.apache.ambari.server.api.services.Request: org.apache.ambari.server.api.services.RequestBody getBody()>()

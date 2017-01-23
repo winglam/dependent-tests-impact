@@ -1,0 +1,28 @@
+org.apache.ambari.server.controller.spi.Resource$Type.hashCode : return i3
+org.apache.ambari.server.controller.spi.Resource$Type.hashCode : $r1 = r0.<org.apache.ambari.server.controller.spi.Resource$Type: java.lang.String name>
+org.apache.ambari.server.controller.spi.Resource$Type.hashCode : $i1 = 31 * i0
+org.apache.ambari.server.api.services.ExtensionsService.createExtensionResource : $r2 = <org.apache.ambari.server.controller.spi.Resource$Type: org.apache.ambari.server.controller.spi.Resource$Type Extension>
+org.apache.ambari.server.controller.spi.Resource$Type.equals : if r1 == null goto return 0
+org.apache.ambari.server.controller.spi.Resource$Type.equals : $i0 = r0.<org.apache.ambari.server.controller.spi.Resource$Type: int ordinal>
+org.apache.ambari.server.controller.spi.Resource$Type.equals : if r0 != r1 goto (branch)
+org.apache.ambari.server.controller.spi.Resource$Type.equals : r2 = (org.apache.ambari.server.controller.spi.Resource$Type) r1
+org.apache.ambari.server.controller.spi.Resource$Type.getInternalType : $z0 = virtualinvoke r0.<org.apache.ambari.server.controller.spi.Resource$Type: boolean isInternalType()>()
+org.apache.ambari.server.controller.spi.Resource$Type.getInternalType : $r2 = staticinvoke <org.apache.ambari.server.controller.spi.Resource$InternalType: org.apache.ambari.server.controller.spi.Resource$InternalType[] values()>()
+org.apache.ambari.server.api.resources.ResourceInstanceFactoryImpl.createResource : $r3 = <org.apache.ambari.server.controller.spi.Resource$Type: org.apache.ambari.server.controller.spi.Resource$Type Host>
+org.apache.ambari.server.api.resources.ResourceInstanceFactoryImpl.createResource : goto [?= r18 = staticinvoke <org.apache.ambari.server.api.resources.ResourceInstanceFactoryImpl: org.apache.ambari.server.api.resources.ResourceDefinition getResourceDefinition(org.apache.ambari.server.controller.spi.Resource$Type,java.util.Map)>(r1, r2)]
+org.apache.ambari.server.api.resources.ResourceInstanceFactoryImpl.createResource : r18 = staticinvoke <org.apache.ambari.server.api.resources.ResourceInstanceFactoryImpl: org.apache.ambari.server.api.resources.ResourceDefinition getResourceDefinition(org.apache.ambari.server.controller.spi.Resource$Type,java.util.Map)>(r1, r2)
+org.apache.ambari.server.api.resources.ResourceInstanceFactoryImpl.createResource : $r19 = new org.apache.ambari.server.api.query.QueryImpl
+org.apache.ambari.server.api.services.BaseService.createResource : $r3 = r0.<org.apache.ambari.server.api.services.BaseService: org.apache.ambari.server.api.resources.ResourceInstanceFactory m_resourceFactory>
+org.apache.ambari.server.api.resources.BaseResourceDefinition.initializeDirectives : $r3 = new java.util.HashSet
+org.apache.ambari.server.api.resources.BaseResourceDefinition.initializeDirectives : $r8 = r0.<org.apache.ambari.server.api.resources.BaseResourceDefinition: java.util.Map directives>
+org.apache.ambari.server.api.resources.BaseResourceDefinition.initializeDirectives : if r2 == null goto $r8 = r0.<org.apache.ambari.server.api.resources.BaseResourceDefinition: java.util.Map directives>
+org.apache.ambari.server.api.services.ExtensionsService.getExtension : $r5 = <org.apache.ambari.server.api.services.Request$Type: org.apache.ambari.server.api.services.Request$Type GET>
+org.apache.ambari.server.controller.utilities.ClusterControllerHelper.getClusterController : $r0 = <org.apache.ambari.server.controller.utilities.ClusterControllerHelper: org.apache.ambari.server.controller.spi.ClusterController controller>
+org.apache.ambari.server.controller.utilities.ClusterControllerHelper.getClusterController : $r3 = <org.apache.ambari.server.controller.utilities.ClusterControllerHelper: java.lang.String PROVIDER_MODULE_CLASS>
+org.apache.ambari.server.controller.spi.Resource$Type.isInternalType : $i0 = r0.<org.apache.ambari.server.controller.spi.Resource$Type: int ordinal>
+org.apache.ambari.server.controller.spi.Resource$InternalType.values : $r0 = <org.apache.ambari.server.controller.spi.Resource$InternalType: org.apache.ambari.server.controller.spi.Resource$InternalType[] $VALUES>
+org.apache.ambari.server.api.resources.ResourceInstanceFactoryImpl.getResourceDefinition : return r3
+org.apache.ambari.server.api.resources.ResourceInstanceFactoryImpl.getResourceDefinition : r177 = new org.apache.ambari.server.api.resources.ExtensionResourceDefinition
+org.apache.ambari.server.api.resources.ResourceInstanceFactoryImpl.getResourceDefinition : $r2 = <org.apache.ambari.server.api.resources.ResourceInstanceFactoryImpl: java.util.Map resourceDefinitions>
+org.apache.ambari.server.api.resources.ResourceInstanceFactoryImpl.getResourceDefinition : $r11 = <org.apache.ambari.server.api.resources.ResourceInstanceFactoryImpl$1: int[] $SwitchMap$org$apache$ambari$server$controller$spi$Resource$InternalType>
+org.apache.ambari.server.api.resources.ResourceInstanceFactoryImpl.getResourceDefinition : goto [?= return r3]

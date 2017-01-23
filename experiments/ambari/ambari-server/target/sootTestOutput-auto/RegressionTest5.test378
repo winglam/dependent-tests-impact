@@ -1,0 +1,7 @@
+org.apache.ambari.server.api.services.PersistKeyValueService.update : $r2 = <org.apache.ambari.server.api.services.PersistKeyValueService: org.apache.commons.logging.Log LOG>
+org.apache.ambari.server.api.services.PersistKeyValueService.update : $r10 = staticinvoke <org.apache.ambari.server.utils.StageUtils: java.lang.Object fromJson(java.lang.String,java.lang.Class)>(r1, class "java/util/Map")
+org.apache.ambari.server.utils.StageUtils.fromJson : $r12 = virtualinvoke r3.<org.codehaus.jackson.map.ObjectMapper: java.lang.Object readValue(java.io.InputStream,java.lang.Class)>(r4, r1)
+org.apache.ambari.server.utils.StageUtils.fromJson : $r7 = <org.codehaus.jackson.map.SerializationConfig$Feature: org.codehaus.jackson.map.SerializationConfig$Feature USE_ANNOTATIONS>
+org.apache.ambari.server.utils.StageUtils.fromJson : $r2 = new org.codehaus.jackson.map.ObjectMapper
+org.apache.ambari.server.utils.StageUtils.fromJson : $r9 = new java.io.ByteArrayInputStream
+org.apache.ambari.server.utils.StageUtils.fromJson : $r5 = <org.codehaus.jackson.map.SerializationConfig$Feature: org.codehaus.jackson.map.SerializationConfig$Feature INDENT_OUTPUT>

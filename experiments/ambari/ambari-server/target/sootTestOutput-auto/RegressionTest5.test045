@@ -1,0 +1,34 @@
+org.apache.ambari.server.audit.request.RequestAuditEvent$RequestAuditEventBuilder.withOperation : r0.<org.apache.ambari.server.audit.request.RequestAuditEvent$RequestAuditEventBuilder: java.lang.String operation> = r1
+org.apache.ambari.server.audit.request.RequestAuditEvent$RequestAuditEventBuilder.withOperation : $r2 = virtualinvoke r0.<org.apache.ambari.server.audit.request.RequestAuditEvent$RequestAuditEventBuilder: org.apache.ambari.server.audit.event.AbstractAuditEvent$AbstractAuditEventBuilder self()>()
+org.apache.ambari.server.Role.toString : $r1 = r0.<org.apache.ambari.server.Role: java.lang.String name>
+org.apache.ambari.server.metadata.ActionMetadata.getActions : $r3 = r0.<org.apache.ambari.server.metadata.ActionMetadata: java.util.Map serviceActions>
+org.apache.ambari.server.metadata.ActionMetadata.getActions : $r6 = staticinvoke <java.util.Collections: java.util.List emptyList()>()
+org.apache.ambari.server.metadata.ActionMetadata.getActions : if r2 == null goto $r6 = staticinvoke <java.util.Collections: java.util.List emptyList()>()
+org.apache.ambari.server.metadata.ActionMetadata.fillHostComponentCommands : $r3 = r0.<org.apache.ambari.server.metadata.ActionMetadata: java.util.List defaultHostComponentCommands>
+org.apache.ambari.server.metadata.ActionMetadata.fillHostComponentCommands : $r6 = r0.<org.apache.ambari.server.metadata.ActionMetadata: java.util.List defaultHostComponentCommands>
+org.apache.ambari.server.metadata.ActionMetadata.fillHostComponentCommands : $r4 = r0.<org.apache.ambari.server.metadata.ActionMetadata: java.util.List defaultHostComponentCommands>
+org.apache.ambari.server.metadata.ActionMetadata.fillHostComponentCommands : $r7 = r0.<org.apache.ambari.server.metadata.ActionMetadata: java.util.List defaultHostComponentCommands>
+org.apache.ambari.server.metadata.ActionMetadata.fillHostComponentCommands : $r2 = r0.<org.apache.ambari.server.metadata.ActionMetadata: java.util.List defaultHostComponentCommands>
+org.apache.ambari.server.metadata.ActionMetadata.fillHostComponentCommands : $r5 = r0.<org.apache.ambari.server.metadata.ActionMetadata: java.util.List defaultHostComponentCommands>
+org.apache.ambari.server.metadata.ActionMetadata.fillHostComponentCommands : $r1 = r0.<org.apache.ambari.server.metadata.ActionMetadata: java.util.List defaultHostComponentCommands>
+org.apache.ambari.server.metadata.ActionMetadata.fillServiceClients : $r17 = r0.<org.apache.ambari.server.metadata.ActionMetadata: java.util.Map serviceClients>
+org.apache.ambari.server.metadata.ActionMetadata.fillServiceClients : $r33 = r0.<org.apache.ambari.server.metadata.ActionMetadata: java.util.Map serviceClients>
+org.apache.ambari.server.metadata.ActionMetadata.fillServiceClients : $r49 = r0.<org.apache.ambari.server.metadata.ActionMetadata: java.util.Map serviceClients>
+org.apache.ambari.server.metadata.ActionMetadata.fillServiceClients : $r5 = r0.<org.apache.ambari.server.metadata.ActionMetadata: java.util.Map serviceClients>
+org.apache.ambari.server.metadata.ActionMetadata.fillServiceClients : $r9 = r0.<org.apache.ambari.server.metadata.ActionMetadata: java.util.Map serviceClients>
+org.apache.ambari.server.metadata.ActionMetadata.fillServiceClients : $r29 = r0.<org.apache.ambari.server.metadata.ActionMetadata: java.util.Map serviceClients>
+org.apache.ambari.server.metadata.ActionMetadata.fillServiceClients : $r53 = r0.<org.apache.ambari.server.metadata.ActionMetadata: java.util.Map serviceClients>
+org.apache.ambari.server.metadata.ActionMetadata.fillServiceClients : $r13 = r0.<org.apache.ambari.server.metadata.ActionMetadata: java.util.Map serviceClients>
+org.apache.ambari.server.metadata.ActionMetadata.fillServiceClients : $r45 = r0.<org.apache.ambari.server.metadata.ActionMetadata: java.util.Map serviceClients>
+org.apache.ambari.server.metadata.ActionMetadata.fillServiceClients : $r2 = r0.<org.apache.ambari.server.metadata.ActionMetadata: java.util.Map serviceClients>
+org.apache.ambari.server.metadata.ActionMetadata.fillServiceClients : $r41 = r0.<org.apache.ambari.server.metadata.ActionMetadata: java.util.Map serviceClients>
+org.apache.ambari.server.metadata.ActionMetadata.fillServiceClients : $r21 = r0.<org.apache.ambari.server.metadata.ActionMetadata: java.util.Map serviceClients>
+org.apache.ambari.server.metadata.ActionMetadata.fillServiceClients : $r25 = r0.<org.apache.ambari.server.metadata.ActionMetadata: java.util.Map serviceClients>
+org.apache.ambari.server.metadata.ActionMetadata.fillServiceClients : $r37 = r0.<org.apache.ambari.server.metadata.ActionMetadata: java.util.Map serviceClients>
+org.apache.ambari.server.audit.event.request.MembershipChangeRequestAuditEvent$AddUserToGroupRequestAuditEventBuilder.withUserNameList : r0.<org.apache.ambari.server.audit.event.request.MembershipChangeRequestAuditEvent$AddUserToGroupRequestAuditEventBuilder: java.util.List userNameList> = r1
+org.apache.ambari.server.audit.event.request.MembershipChangeRequestAuditEvent$AddUserToGroupRequestAuditEventBuilder.withUserNameList : return r0
+org.apache.ambari.server.security.authorization.AuthorizationHelper.getAuthenticatedName : $r0 = staticinvoke <org.apache.ambari.server.security.authorization.AuthorizationHelper: java.lang.String getAuthenticatedName(java.lang.String)>(null)
+org.apache.ambari.server.security.authorization.AuthorizationHelper.getAuthenticatedName : r2 = interfaceinvoke r1.<org.springframework.security.core.context.SecurityContext: org.springframework.security.core.Authentication getAuthentication()>()
+org.apache.ambari.server.security.authorization.AuthorizationHelper.getAuthenticatedName : r1 = staticinvoke <org.springframework.security.core.context.SecurityContextHolder: org.springframework.security.core.context.SecurityContext getContext()>()
+org.apache.ambari.server.security.authorization.AuthorizationHelper.getAuthenticatedName : if null != r2 goto $r3 = interfaceinvoke r2.<org.springframework.security.core.Authentication: java.lang.String getName()>()
+org.apache.ambari.server.audit.event.AbstractAuditEvent$AbstractAuditEventBuilder.self : $r1 = r0.<org.apache.ambari.server.audit.event.AbstractAuditEvent$AbstractAuditEventBuilder: java.lang.Class builderClass>

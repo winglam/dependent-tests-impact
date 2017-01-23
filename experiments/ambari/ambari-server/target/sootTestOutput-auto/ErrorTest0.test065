@@ -1,0 +1,5 @@
+org.apache.ambari.server.events.listeners.alerts.AlertHostListener.onAmbariEvent : $r2 = <org.apache.ambari.server.events.listeners.alerts.AlertHostListener: org.slf4j.Logger LOG>
+org.apache.ambari.server.events.listeners.alerts.AlertHostListener.onAmbariEvent : $r11 = r0.<org.apache.ambari.server.events.listeners.alerts.AlertHostListener: org.apache.ambari.server.metadata.AmbariServiceAlertDefinitions m_ambariServiceAlertDefinitions>
+org.apache.ambari.server.events.listeners.alerts.AlertHostListener.onAmbariEvent : l0 = virtualinvoke r1.<org.apache.ambari.server.events.HostsAddedEvent: long getClusterId()>()
+org.apache.ambari.server.events.ClusterEvent.getClusterId : $l0 = r0.<org.apache.ambari.server.events.ClusterEvent: long m_clusterId>
+org.apache.ambari.server.events.publishers.AmbariEventPublisher.register : $r2 = r0.<org.apache.ambari.server.events.publishers.AmbariEventPublisher: com.google.common.eventbus.EventBus m_eventBus>

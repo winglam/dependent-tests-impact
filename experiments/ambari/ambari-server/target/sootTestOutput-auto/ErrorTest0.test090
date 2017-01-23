@@ -1,0 +1,9 @@
+org.apache.ambari.server.state.stack.UpgradePack.getTarget : $r1 = r0.<org.apache.ambari.server.state.stack.UpgradePack: java.lang.String target>
+org.apache.ambari.server.state.stack.UpgradePack.getGroups : r5 = interfaceinvoke r7.<java.util.List: java.util.Iterator iterator()>()
+org.apache.ambari.server.state.stack.UpgradePack.getGroups : $z0 = virtualinvoke r1.<org.apache.ambari.server.state.stack.upgrade.Direction: boolean isUpgrade()>()
+org.apache.ambari.server.state.stack.UpgradePack.getGroups : r7 = r0.<org.apache.ambari.server.state.stack.UpgradePack: java.util.List groups>
+org.apache.ambari.server.state.stack.UpgradePack.getGroups : $r2 = new java.util.ArrayList
+org.apache.ambari.server.state.stack.UpgradePack.getGroups : $r10 = new java.util.ArrayList
+org.apache.ambari.server.state.stack.upgrade.Direction.isUpgrade : $r1 = <org.apache.ambari.server.state.stack.upgrade.Direction: org.apache.ambari.server.state.stack.upgrade.Direction UPGRADE>
+org.apache.ambari.server.state.stack.UpgradePack.mergeProcessing : if r2 != null goto $r3 = r0.<org.apache.ambari.server.state.stack.UpgradePack: java.util.List processing>
+org.apache.ambari.server.state.stack.UpgradePack.mergeProcessing : r2 = r1.<org.apache.ambari.server.state.stack.UpgradePack: java.util.List processing>

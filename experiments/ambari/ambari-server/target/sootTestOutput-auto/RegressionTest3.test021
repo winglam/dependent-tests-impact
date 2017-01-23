@@ -1,0 +1,5 @@
+org.apache.ambari.server.security.authorization.AuthorizationHelper.verifyAuthorization : $z0 = staticinvoke <org.apache.ambari.server.security.authorization.AuthorizationHelper: boolean isAuthorized(org.springframework.security.core.Authentication,org.apache.ambari.server.security.authorization.ResourceType,java.lang.Long,java.util.Set)>(r0, r1, r2, r3)
+org.apache.ambari.server.security.authorization.AuthorizationHelper.verifyAuthorization : $r4 = new org.apache.ambari.server.security.authorization.AuthorizationException
+org.apache.ambari.server.security.authorization.AuthorizationHelper.isAuthorized : if r3 == null goto return 1
+org.apache.ambari.server.security.authorization.AuthorizationHelper.isAuthorized : return 0
+org.apache.ambari.server.security.authorization.AuthorizationHelper.isAuthorized : if r0 != null goto $r15 = interfaceinvoke r0.<org.springframework.security.core.Authentication: java.util.Collection getAuthorities()>()

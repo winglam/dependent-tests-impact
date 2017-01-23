@@ -1,0 +1,8 @@
+org.apache.ambari.server.state.cluster.ClustersImpl.getClusterSize : i0 = 0
+org.apache.ambari.server.state.cluster.ClustersImpl.getClusterSize : $r3 = r0.<org.apache.ambari.server.state.cluster.ClustersImpl: java.util.concurrent.ConcurrentHashMap clusterHostMap>
+org.apache.ambari.server.state.cluster.ClustersImpl.getClusterSize : return i0
+org.apache.ambari.server.state.cluster.ClustersImpl.getClusterSize : if null == r2 goto return i0
+org.apache.ambari.server.state.cluster.ClustersImpl.getClusters : $r1 = r0.<org.apache.ambari.server.state.cluster.ClustersImpl: java.util.concurrent.ConcurrentHashMap clusters>
+org.apache.ambari.server.utils.RetryHelper.init : <org.apache.ambari.server.utils.RetryHelper: org.apache.ambari.server.state.Clusters s_clusters> = r0
+org.apache.ambari.server.utils.RetryHelper.init : <org.apache.ambari.server.utils.RetryHelper: int operationsRetryAttempts> = i0
+org.apache.ambari.server.events.publishers.AmbariEventPublisher.register : $r2 = r0.<org.apache.ambari.server.events.publishers.AmbariEventPublisher: com.google.common.eventbus.EventBus m_eventBus>

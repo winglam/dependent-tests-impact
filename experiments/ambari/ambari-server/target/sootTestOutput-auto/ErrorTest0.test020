@@ -1,0 +1,2 @@
+org.apache.ambari.server.security.authorization.Users.modifyPassword : r4 = staticinvoke <org.springframework.security.core.context.SecurityContextHolder: org.springframework.security.core.context.SecurityContext getContext()>()
+org.apache.ambari.server.security.authorization.Users.modifyPassword : $r10 = interfaceinvoke r4.<org.springframework.security.core.context.SecurityContext: org.springframework.security.core.Authentication getAuthentication()>()

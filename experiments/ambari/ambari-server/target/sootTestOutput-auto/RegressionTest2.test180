@@ -1,0 +1,10 @@
+org.apache.ambari.server.utils.StageUtils.getGson : $r0 = <org.apache.ambari.server.utils.StageUtils: com.google.gson.Gson gson>
+org.apache.ambari.server.utils.StageUtils.getGson : $r4 = <org.apache.ambari.server.utils.StageUtils: org.apache.commons.logging.Log LOG>
+org.apache.ambari.server.utils.StageUtils.getGson : $r5 = <org.apache.ambari.server.utils.StageUtils: com.google.gson.Gson gson>
+org.apache.ambari.server.utils.StageUtils.getGson : $r7 = <org.apache.ambari.server.utils.StageUtils: com.google.gson.Gson gson>
+org.apache.ambari.server.utils.StageUtils.getGson : $r6 = new com.google.gson.Gson
+org.apache.ambari.server.utils.StageUtils.jaxbToString : $r1 = staticinvoke <org.apache.ambari.server.utils.StageUtils: com.google.gson.Gson getGson()>()
+org.apache.ambari.server.state.ChangedConfigInfo.setType : r0.<org.apache.ambari.server.state.ChangedConfigInfo: java.lang.String type> = r1
+org.apache.ambari.server.state.ChangedConfigInfo.getType : $r1 = r0.<org.apache.ambari.server.state.ChangedConfigInfo: java.lang.String type>
+org.apache.ambari.server.state.ChangedConfigInfo.equals : if r1 == null goto return 0
+org.apache.ambari.server.state.ChangedConfigInfo.equals : if r0 != r1 goto (branch)

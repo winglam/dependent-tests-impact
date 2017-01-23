@@ -1,0 +1,6 @@
+org.apache.ambari.server.checks.HostsRepositoryVersionCheck.isApplicable : $z0 = specialinvoke r0.<org.apache.ambari.server.checks.AbstractCheckDescriptor: boolean isApplicable(org.apache.ambari.server.controller.PrereqCheckRequest)>(r1)
+org.apache.ambari.server.checks.AbstractCheckDescriptor.getDescription : $r1 = r0.<org.apache.ambari.server.checks.AbstractCheckDescriptor: org.apache.ambari.server.checks.CheckDescription m_description>
+org.apache.ambari.server.checks.AbstractCheckDescriptor.isApplicable : return 1
+org.apache.ambari.server.checks.AbstractCheckDescriptor.isApplicable : $r7 = r0.<org.apache.ambari.server.checks.AbstractCheckDescriptor: com.google.inject.Provider clustersProvider>
+org.apache.ambari.server.checks.ServicesTezDistributedCacheCheck.isApplicable : $r3 = newarray (java.lang.String)[1]
+org.apache.ambari.server.controller.PrereqCheckRequest.getRepositoryVersion : $r1 = r0.<org.apache.ambari.server.controller.PrereqCheckRequest: java.lang.String m_repositoryVersion>

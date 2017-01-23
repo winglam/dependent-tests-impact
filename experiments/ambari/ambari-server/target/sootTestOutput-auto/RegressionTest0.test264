@@ -1,0 +1,17 @@
+org.apache.ambari.server.controller.internal.URLStreamProvider.getConnection : $r2 = new java.net.URL
+org.apache.ambari.server.utils.HTTPUtils.requestURL : virtualinvoke r19.<java.io.IOException: void printStackTrace()>()
+org.apache.ambari.server.utils.HTTPUtils.requestURL : $r10 = (java.lang.String) null
+org.apache.ambari.server.utils.HTTPUtils.requestURL : r2 = r0
+org.apache.ambari.server.utils.HTTPUtils.requestURL : $r9 = new java.util.HashMap
+org.apache.ambari.server.utils.HTTPUtils.requestURL : r1 = ""
+org.apache.ambari.server.utils.HTTPUtils.requestURL : r19 = $r18
+org.apache.ambari.server.utils.HTTPUtils.requestURL : $r8 = new org.apache.ambari.server.controller.internal.URLStreamProvider
+org.apache.ambari.server.utils.HTTPUtils.requestURL : n0 = null
+org.apache.ambari.server.utils.HTTPUtils.requestURL : return r1
+org.apache.ambari.server.configuration.ComponentSSLConfiguration.getTruststoreType : $r1 = r0.<org.apache.ambari.server.configuration.ComponentSSLConfiguration: java.lang.String truststoreType>
+org.apache.ambari.server.configuration.ComponentSSLConfiguration.getTruststorePassword : $r1 = r0.<org.apache.ambari.server.configuration.ComponentSSLConfiguration: java.lang.String truststorePassword>
+org.apache.ambari.server.controller.internal.URLStreamProvider.processURL : $r5 = <org.apache.ambari.server.controller.internal.URLStreamProvider: org.apache.commons.logging.Log LOG>
+org.apache.ambari.server.controller.internal.URLStreamProvider.processURL : $z1 = virtualinvoke r1.<java.lang.String: boolean startsWith(java.lang.String)>("https")
+org.apache.ambari.server.controller.internal.URLStreamProvider.processURL : if r3 != null goto $r8 = virtualinvoke r3.<java.lang.String: byte[] getBytes()>()
+org.apache.ambari.server.configuration.ComponentSSLConfiguration.getTruststorePath : $r1 = r0.<org.apache.ambari.server.configuration.ComponentSSLConfiguration: java.lang.String truststorePath>
+org.apache.ambari.server.configuration.ComponentSSLConfiguration.instance : $r0 = <org.apache.ambari.server.configuration.ComponentSSLConfiguration: org.apache.ambari.server.configuration.ComponentSSLConfiguration singleton>

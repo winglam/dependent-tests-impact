@@ -1,0 +1,8 @@
+org.apache.ambari.server.checks.MpackInstallChecker.checkClusters : r3 = null
+org.apache.ambari.server.checks.MpackInstallChecker.checkClusters : r2 = null
+org.apache.ambari.server.checks.MpackInstallChecker.checkClusters : r5 = "select c.cluster_name, s.stack_name, s.stack_version from clusters c join stack s on c.desired_stack_id = s.stack_id"
+org.apache.ambari.server.checks.MpackInstallChecker.checkClusters : r6 = virtualinvoke r0.<org.apache.ambari.server.checks.MpackInstallChecker: java.sql.Connection getConnection()>()
+org.apache.ambari.server.checks.MpackInstallChecker.checkClusters : $r16 = new java.util.HashMap
+org.apache.ambari.server.checks.MpackInstallChecker.getConnection : $r2 = r0.<org.apache.ambari.server.checks.MpackInstallChecker: org.apache.ambari.server.orm.DBAccessor dbAccessor>
+org.apache.ambari.server.checks.MpackInstallChecker.getConnection : $r3 = r0.<org.apache.ambari.server.checks.MpackInstallChecker: com.google.inject.Injector injector>
+org.apache.ambari.server.checks.MpackInstallChecker.getConnection : $r1 = r0.<org.apache.ambari.server.checks.MpackInstallChecker: java.sql.Connection connection>

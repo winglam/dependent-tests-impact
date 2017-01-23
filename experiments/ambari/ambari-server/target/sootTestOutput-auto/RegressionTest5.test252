@@ -1,0 +1,13 @@
+org.apache.ambari.server.state.alert.Source.equals : if r0 != r1 goto (branch)
+org.apache.ambari.server.state.alert.Source.equals : return 0
+org.apache.ambari.server.state.alert.Source.equals : $r3 = virtualinvoke r0.<java.lang.Object: java.lang.Class getClass()>()
+org.apache.ambari.server.state.alert.Source.equals : if r1 != null goto $r3 = virtualinvoke r0.<java.lang.Object: java.lang.Class getClass()>()
+org.apache.ambari.server.topology.SettingFactory.getSetting : $r1 = new java.util.HashMap
+org.apache.ambari.server.topology.SettingFactory.getSetting : return r3
+org.apache.ambari.server.topology.SettingFactory.getSetting : $r11 = new org.apache.ambari.server.topology.Setting
+org.apache.ambari.server.topology.SettingFactory.getSetting : if r0 == null goto return r3
+org.apache.ambari.server.topology.Setting.getSettingValue : $r6 = staticinvoke <java.util.Collections: java.util.Set emptySet()>()
+org.apache.ambari.server.topology.Setting.getSettingValue : $r2 = r0.<org.apache.ambari.server.topology.Setting: java.util.Map properties>
+org.apache.ambari.server.state.alert.PortSource.equals : return 0
+org.apache.ambari.server.state.alert.PortSource.equals : $z0 = specialinvoke r0.<org.apache.ambari.server.state.alert.ParameterizedSource: boolean equals(java.lang.Object)>(r1)
+org.apache.ambari.server.state.alert.PortSource.equals : if r0 != r1 goto $z0 = specialinvoke r0.<org.apache.ambari.server.state.alert.ParameterizedSource: boolean equals(java.lang.Object)>(r1)

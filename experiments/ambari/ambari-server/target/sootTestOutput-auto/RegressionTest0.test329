@@ -1,0 +1,5 @@
+org.apache.ambari.server.security.authorization.RoleAuthorization.valueOf : $r1 = staticinvoke <java.lang.Enum: java.lang.Enum valueOf(java.lang.Class,java.lang.String)>(class "org/apache/ambari/server/security/authorization/RoleAuthorization", r0)
+org.apache.ambari.server.security.authorization.RoleAuthorization.translate : if r0 != null goto r1 = virtualinvoke r0.<java.lang.String: java.lang.String trim()>()
+org.apache.ambari.server.security.authorization.RoleAuthorization.translate : $r2 = virtualinvoke r1.<java.lang.String: java.lang.String replace(java.lang.CharSequence,java.lang.CharSequence)>(".", "_")
+org.apache.ambari.server.security.authorization.RoleAuthorization.translate : r1 = virtualinvoke r0.<java.lang.String: java.lang.String trim()>()
+org.apache.ambari.server.security.authorization.RoleAuthorization.translate : $z0 = virtualinvoke r1.<java.lang.String: boolean isEmpty()>()

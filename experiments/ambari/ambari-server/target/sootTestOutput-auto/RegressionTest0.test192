@@ -1,0 +1,7 @@
+org.apache.ambari.server.utils.RequestUtils.getRemoteAddress : $z0 = staticinvoke <org.apache.ambari.server.utils.RequestUtils: boolean hasValidRequest()>()
+org.apache.ambari.server.utils.RequestUtils.getRemoteAddress : return null
+org.apache.ambari.server.utils.RequestUtils.hasValidRequest : $r0 = staticinvoke <org.springframework.web.context.request.RequestContextHolder: org.springframework.web.context.request.RequestAttributes getRequestAttributes()>()
+org.apache.ambari.server.api.services.BaseRequest.parseRenderer : $z0 = specialinvoke r0.<org.apache.ambari.server.api.services.BaseRequest: boolean isMinimal()>()
+org.apache.ambari.server.api.services.BaseRequest.isMinimal : $r2 = r0.<org.apache.ambari.server.api.services.BaseRequest: javax.ws.rs.core.UriInfo m_uriInfo>
+org.apache.ambari.server.api.services.BaseRequest.process : $r1 = <org.apache.ambari.server.api.services.BaseRequest: org.slf4j.Logger LOG>
+org.apache.ambari.server.api.services.BaseRequest.process : specialinvoke r0.<org.apache.ambari.server.api.services.BaseRequest: void parseRenderer()>()

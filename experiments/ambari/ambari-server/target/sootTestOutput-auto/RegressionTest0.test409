@@ -1,0 +1,9 @@
+org.apache.ambari.server.utils.XmlUtils.isValidXml : z0 = 0
+org.apache.ambari.server.utils.XmlUtils.isValidXml : virtualinvoke r1.<javax.xml.parsers.DocumentBuilderFactory: void setFeature(java.lang.String,boolean)>("http://apache.org/xml/features/nonvalidating/load-external-dtd", 0)
+org.apache.ambari.server.utils.XmlUtils.isValidXml : $z1 = staticinvoke <org.apache.commons.lang.StringUtils: boolean isBlank(java.lang.String)>(r0)
+org.apache.ambari.server.utils.XmlUtils.isValidXml : return z0
+org.apache.ambari.server.utils.XmlUtils.isValidXml : z0 = 1
+org.apache.ambari.server.utils.XmlUtils.isValidXml : r7 = $r6
+org.apache.ambari.server.utils.XmlUtils.isValidXml : r1 = staticinvoke <javax.xml.parsers.DocumentBuilderFactory: javax.xml.parsers.DocumentBuilderFactory newInstance()>()
+org.apache.ambari.server.utils.XmlUtils.isValidXml : r2 = virtualinvoke r1.<javax.xml.parsers.DocumentBuilderFactory: javax.xml.parsers.DocumentBuilder newDocumentBuilder()>()
+org.apache.ambari.server.utils.XmlUtils.isValidXml : $r3 = new java.io.ByteArrayInputStream

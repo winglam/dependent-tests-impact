@@ -1,0 +1,4 @@
+org.apache.ambari.server.api.services.PersistKeyValueImpl.put : virtualinvoke r0.<org.apache.ambari.server.api.services.PersistKeyValueImpl: void put(java.lang.String,java.lang.String)>(r2, r1)
+org.apache.ambari.server.api.services.PersistKeyValueImpl.put : r2 = virtualinvoke r0.<org.apache.ambari.server.api.services.PersistKeyValueImpl: java.lang.String generateKey()>()
+org.apache.ambari.server.api.services.PersistKeyValueImpl.put : $r4 = r0.<org.apache.ambari.server.api.services.PersistKeyValueImpl: org.apache.ambari.server.orm.dao.KeyValueDAO keyValueDAO>
+org.apache.ambari.server.api.services.PersistKeyValueImpl.generateKey : $r1 = staticinvoke <java.util.UUID: java.util.UUID randomUUID()>()

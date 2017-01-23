@@ -1,0 +1,10 @@
+org.apache.ambari.server.state.cluster.ClustersImpl.addCluster : $r15 = r0.<org.apache.ambari.server.state.cluster.ClustersImpl: org.apache.ambari.server.orm.dao.ResourceTypeDAO resourceTypeDAO>
+org.apache.ambari.server.state.cluster.ClustersImpl.addCluster : virtualinvoke r0.<org.apache.ambari.server.state.cluster.ClustersImpl: void addCluster(java.lang.String,org.apache.ambari.server.state.StackId,org.apache.ambari.server.state.SecurityType)>(r1, r2, null)
+org.apache.ambari.server.state.cluster.ClustersImpl.addCluster : n0 = null
+org.apache.ambari.server.state.cluster.ClustersImpl.addCluster : $r10 = r0.<org.apache.ambari.server.state.cluster.ClustersImpl: java.util.concurrent.ConcurrentHashMap clusters>
+org.apache.ambari.server.state.StackId.parseStackIdHelper : if r2 == null goto r1.<org.apache.ambari.server.state.StackId: java.lang.String stackName> = ""
+org.apache.ambari.server.state.StackId.parseStackIdHelper : $r8 = virtualinvoke r2.<java.lang.String: java.lang.String substring(int,int)>(0, i0)
+org.apache.ambari.server.state.StackId.parseStackIdHelper : i0 = virtualinvoke r2.<java.lang.String: int indexOf(int)>(45)
+org.apache.ambari.server.state.StackId.parseStackIdHelper : if i0 == -1 goto $r3 = new java.lang.RuntimeException
+org.apache.ambari.server.state.StackId.parseStackIdHelper : $i3 = i0 + 1
+org.apache.ambari.server.security.authorization.ResourceType.getId : $i0 = r0.<org.apache.ambari.server.security.authorization.ResourceType: int id>

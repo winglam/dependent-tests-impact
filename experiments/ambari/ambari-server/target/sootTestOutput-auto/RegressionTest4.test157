@@ -1,0 +1,24 @@
+org.apache.ambari.server.controller.ClusterRequest.setSecurityType : r0.<org.apache.ambari.server.controller.ClusterRequest: org.apache.ambari.server.state.SecurityType securityType> = r1
+org.apache.ambari.server.controller.ServiceConfigVersionRequest.getVersion : $r1 = r0.<org.apache.ambari.server.controller.ServiceConfigVersionRequest: java.lang.Long version>
+org.apache.ambari.server.controller.ClusterRequest.setDesiredConfig : r0.<org.apache.ambari.server.controller.ClusterRequest: java.util.List configs> = r1
+org.apache.ambari.server.controller.ServiceConfigVersionRequest.setCreateTime : r0.<org.apache.ambari.server.controller.ServiceConfigVersionRequest: java.lang.Long createTime> = r1
+org.apache.ambari.server.controller.ClusterRequest.setServiceConfigVersionRequest : r0.<org.apache.ambari.server.controller.ClusterRequest: org.apache.ambari.server.controller.ServiceConfigVersionRequest serviceConfigVersionRequest> = r1
+org.apache.ambari.server.controller.ClusterRequest.getClusterName : $r1 = r0.<org.apache.ambari.server.controller.ClusterRequest: java.lang.String clusterName>
+org.apache.ambari.server.controller.ClusterRequest.getStackVersion : $r1 = r0.<org.apache.ambari.server.controller.ClusterRequest: java.lang.String stackVersion>
+org.apache.ambari.server.controller.ClusterRequest.getClusterId : $r1 = r0.<org.apache.ambari.server.controller.ClusterRequest: java.lang.Long clusterId>
+org.apache.ambari.server.utils.StageUtils.getRangedItem : return r3
+org.apache.ambari.server.utils.StageUtils.getRangedItem : $i0 = virtualinvoke r1.<java.lang.Integer: int intValue()>()
+org.apache.ambari.server.utils.StageUtils.getRangedItem : $z0 = virtualinvoke r1.<java.lang.Integer: boolean equals(java.lang.Object)>(r0)
+org.apache.ambari.server.utils.StageUtils.replaceRanges : r4 = interfaceinvoke r0.<java.util.SortedSet: java.util.Iterator iterator()>()
+org.apache.ambari.server.utils.StageUtils.replaceRanges : r2 = null
+org.apache.ambari.server.utils.StageUtils.replaceRanges : goto [?= $z0 = interfaceinvoke r4.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.utils.StageUtils.replaceRanges : r3 = r5
+org.apache.ambari.server.utils.StageUtils.replaceRanges : r6 = staticinvoke <org.apache.ambari.server.utils.StageUtils: java.lang.String getRangedItem(java.lang.Integer,java.lang.Integer)>(r3, r2)
+org.apache.ambari.server.utils.StageUtils.replaceRanges : interfaceinvoke r1.<java.util.Set: boolean add(java.lang.Object)>(r6)
+org.apache.ambari.server.utils.StageUtils.replaceRanges : return r1
+org.apache.ambari.server.utils.StageUtils.replaceRanges : $r8 = interfaceinvoke r0.<java.util.SortedSet: java.lang.Object first()>()
+org.apache.ambari.server.utils.StageUtils.replaceRanges : r2 = r5
+org.apache.ambari.server.utils.StageUtils.replaceRanges : if r2 == null goto r2 = r5
+org.apache.ambari.server.utils.StageUtils.replaceRanges : $r7 = new java.util.HashSet
+org.apache.ambari.server.utils.StageUtils.replaceRanges : $r10 = staticinvoke <org.apache.ambari.server.utils.StageUtils: java.lang.String getRangedItem(java.lang.Integer,java.lang.Integer)>(r3, r2)
+org.apache.ambari.server.utils.StageUtils.replaceRanges : if r0 != null goto $r7 = new java.util.HashSet

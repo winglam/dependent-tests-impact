@@ -1,0 +1,9 @@
+org.apache.ambari.server.controller.predicate.ComparisonPredicate.stringToDouble : $i0 = virtualinvoke r2.<java.text.ParsePosition: int getIndex()>()
+org.apache.ambari.server.controller.predicate.ComparisonPredicate.stringToDouble : $r5 = new java.text.ParsePosition
+org.apache.ambari.server.controller.predicate.ComparisonPredicate.stringToDouble : r4 = virtualinvoke r3.<java.text.NumberFormat: java.lang.Number parse(java.lang.String,java.text.ParsePosition)>(r1, r2)
+org.apache.ambari.server.controller.predicate.ComparisonPredicate.stringToDouble : if r1 == null goto return null
+org.apache.ambari.server.controller.predicate.ComparisonPredicate.stringToDouble : r3 = staticinvoke <java.text.NumberFormat: java.text.NumberFormat getInstance()>()
+org.apache.ambari.server.controller.predicate.FilterPredicate.evaluate : $r3 = virtualinvoke r0.<org.apache.ambari.server.controller.predicate.FilterPredicate: java.lang.String getPropertyId()>()
+org.apache.ambari.server.controller.predicate.PropertyPredicate.getPropertyId : $r1 = r0.<org.apache.ambari.server.controller.predicate.PropertyPredicate: java.lang.String propertyId>
+org.apache.ambari.server.controller.internal.DefaultResourcePredicateEvaluator.evaluate : $z0 = interfaceinvoke r1.<org.apache.ambari.server.controller.spi.Predicate: boolean evaluate(org.apache.ambari.server.controller.spi.Resource)>(r2)
+org.apache.ambari.server.controller.predicate.FilterPredicate.getOperator : return ".FILTER"

@@ -1,0 +1,4 @@
+org.apache.ambari.server.orm.dao.UserDAO.findUserByPrincipal : if r1 != null goto $r3 = r0.<org.apache.ambari.server.orm.dao.UserDAO: com.google.inject.Provider entityManagerProvider>
+org.apache.ambari.server.orm.dao.UserDAO.findUserByPrincipal : return null
+org.apache.ambari.server.orm.dao.UserDAO.findByPK : $r2 = r0.<org.apache.ambari.server.orm.dao.UserDAO: com.google.inject.Provider entityManagerProvider>
+org.apache.ambari.server.orm.dao.UserDAO.removeByPK : $r2 = virtualinvoke r0.<org.apache.ambari.server.orm.dao.UserDAO: org.apache.ambari.server.orm.entities.UserEntity findByPK(java.lang.Integer)>(r1)

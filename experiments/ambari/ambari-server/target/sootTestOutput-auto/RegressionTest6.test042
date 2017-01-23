@@ -1,0 +1,10 @@
+org.apache.ambari.server.configuration.Configuration$ConfigurationProperty.getKey : $r1 = r0.<org.apache.ambari.server.configuration.Configuration$ConfigurationProperty: java.lang.String m_key>
+org.apache.ambari.server.security.encryption.MasterKeyServiceImpl.getMasterSecret : $r1 = r0.<org.apache.ambari.server.security.encryption.MasterKeyServiceImpl: char[] master>
+org.apache.ambari.server.security.encryption.MasterKeyServiceImpl.readMasterKey : if r2 == null goto return r1
+org.apache.ambari.server.security.encryption.MasterKeyServiceImpl.readMasterKey : r1 = null
+org.apache.ambari.server.security.encryption.MasterKeyServiceImpl.readMasterKey : if r1 == null goto $r7 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty MASTER_KEY_LOCATION>
+org.apache.ambari.server.security.encryption.MasterKeyServiceImpl.readMasterKey : $r7 = <org.apache.ambari.server.configuration.Configuration: org.apache.ambari.server.configuration.Configuration$ConfigurationProperty MASTER_KEY_LOCATION>
+org.apache.ambari.server.security.encryption.MasterKeyServiceImpl.readMasterKey : $r6 = interfaceinvoke r2.<java.util.Map: java.lang.Object get(java.lang.Object)>("AMBARI_SECURITY_MASTER_KEY")
+org.apache.ambari.server.security.encryption.MasterKeyServiceImpl.readMasterKey : if r3 == null goto return r1
+org.apache.ambari.server.security.encryption.MasterKeyServiceImpl.readMasterKey : return r1
+org.apache.ambari.server.security.encryption.MasterKeyServiceImpl.readMasterKey : r2 = staticinvoke <java.lang.System: java.util.Map getenv()>()

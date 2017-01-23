@@ -1,0 +1,5 @@
+org.apache.ambari.server.api.services.BaseRequest.getAPIVersion : return 1
+org.apache.ambari.server.utils.RequestUtils.getRemoteAddress : $z0 = staticinvoke <org.apache.ambari.server.utils.RequestUtils: boolean hasValidRequest()>()
+org.apache.ambari.server.utils.RequestUtils.getRemoteAddress : return null
+org.apache.ambari.server.utils.RequestUtils.hasValidRequest : $r0 = staticinvoke <org.springframework.web.context.request.RequestContextHolder: org.springframework.web.context.request.RequestAttributes getRequestAttributes()>()
+org.apache.ambari.server.api.services.BaseRequest.getFields : $r9 = r0.<org.apache.ambari.server.api.services.BaseRequest: javax.ws.rs.core.UriInfo m_uriInfo>

@@ -1,0 +1,15 @@
+org.apache.ambari.server.api.predicate.expressions.AbstractExpression.setLeftOperand : r0.<org.apache.ambari.server.api.predicate.expressions.AbstractExpression: java.lang.Object m_left> = r1
+org.apache.ambari.server.api.predicate.expressions.AbstractExpression.defaultMerge : return r4
+org.apache.ambari.server.api.predicate.expressions.AbstractExpression.defaultMerge : if r1 == null goto interfaceinvoke r4.<java.util.List: boolean add(java.lang.Object)>(r0)
+org.apache.ambari.server.api.predicate.expressions.AbstractExpression.defaultMerge : interfaceinvoke r4.<java.util.List: boolean add(java.lang.Object)>(r0)
+org.apache.ambari.server.api.predicate.expressions.AbstractExpression.defaultMerge : if r2 == null goto return r4
+org.apache.ambari.server.api.predicate.expressions.AbstractExpression.defaultMerge : interfaceinvoke r4.<java.util.List: boolean add(java.lang.Object)>(r1)
+org.apache.ambari.server.api.predicate.expressions.AbstractExpression.defaultMerge : interfaceinvoke r4.<java.util.List: boolean add(java.lang.Object)>(r2)
+org.apache.ambari.server.api.predicate.expressions.AbstractExpression.defaultMerge : $r3 = new java.util.ArrayList
+org.apache.ambari.server.api.predicate.operators.AbstractOperator.toString : $r1 = virtualinvoke r0.<org.apache.ambari.server.api.predicate.operators.AbstractOperator: java.lang.String getName()>()
+org.apache.ambari.server.api.predicate.expressions.AbstractExpression.getLeftOperand : $r1 = r0.<org.apache.ambari.server.api.predicate.expressions.AbstractExpression: java.lang.Object m_left>
+org.apache.ambari.server.api.predicate.expressions.RelationalExpression.toString : $r1 = new java.lang.StringBuilder
+org.apache.ambari.server.api.predicate.expressions.AbstractExpression.getOperator : $r1 = r0.<org.apache.ambari.server.api.predicate.expressions.AbstractExpression: org.apache.ambari.server.api.predicate.operators.Operator m_op>
+org.apache.ambari.server.api.predicate.expressions.AbstractExpression.merge : $r3 = virtualinvoke r0.<org.apache.ambari.server.api.predicate.expressions.AbstractExpression: java.util.List defaultMerge(org.apache.ambari.server.api.predicate.expressions.Expression,org.apache.ambari.server.api.predicate.expressions.Expression)>(r1, r2)
+org.apache.ambari.server.api.predicate.operators.IsEmptyOperator.getName : return "IsEmptyOperator"
+org.apache.ambari.server.api.predicate.expressions.AbstractExpression.getRightOperand : $r1 = r0.<org.apache.ambari.server.api.predicate.expressions.AbstractExpression: java.lang.Object m_right>

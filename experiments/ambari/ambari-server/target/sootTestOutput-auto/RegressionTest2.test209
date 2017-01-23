@@ -1,0 +1,10 @@
+org.apache.ambari.server.api.resources.BaseResourceDefinition.initializeDirectives : $r3 = new java.util.HashSet
+org.apache.ambari.server.api.resources.BaseResourceDefinition.initializeDirectives : $r8 = r0.<org.apache.ambari.server.api.resources.BaseResourceDefinition: java.util.Map directives>
+org.apache.ambari.server.api.resources.BaseResourceDefinition.initializeDirectives : if r2 == null goto $r8 = r0.<org.apache.ambari.server.api.resources.BaseResourceDefinition: java.util.Map directives>
+org.apache.ambari.server.api.resources.ClusterResourceDefinition.getSingularName : return "cluster"
+org.apache.ambari.server.api.resources.BaseResourceDefinition.getUpdateDirectives : $r2 = r0.<org.apache.ambari.server.api.resources.BaseResourceDefinition: java.util.Map directives>
+org.apache.ambari.server.api.resources.ClusterResourceDefinition.getUpdateDirectives : r1 = specialinvoke r0.<org.apache.ambari.server.api.resources.BaseResourceDefinition: java.util.Collection getUpdateDirectives()>()
+org.apache.ambari.server.api.resources.ClusterResourceDefinition.getUpdateDirectives : interfaceinvoke r1.<java.util.Collection: boolean add(java.lang.Object)>("manage_kerberos_identities")
+org.apache.ambari.server.api.resources.ClusterResourceDefinition.getUpdateDirectives : interfaceinvoke r1.<java.util.Collection: boolean add(java.lang.Object)>("force_toggle_kerberos")
+org.apache.ambari.server.api.resources.ClusterResourceDefinition.getUpdateDirectives : interfaceinvoke r1.<java.util.Collection: boolean add(java.lang.Object)>("regenerate_keytabs")
+org.apache.ambari.server.api.resources.ClusterResourceDefinition.getUpdateDirectives : return r1

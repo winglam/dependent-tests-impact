@@ -1,0 +1,6 @@
+org.apache.ambari.server.state.kerberos.KerberosPrincipalType.valueOf : $r1 = staticinvoke <java.lang.Enum: java.lang.Enum valueOf(java.lang.Class,java.lang.String)>(class "org/apache/ambari/server/state/kerberos/KerberosPrincipalType", r0)
+org.apache.ambari.server.state.kerberos.KerberosPrincipalType.translate : if r0 != null goto r1 = virtualinvoke r0.<java.lang.String: java.lang.String trim()>()
+org.apache.ambari.server.state.kerberos.KerberosPrincipalType.translate : $r2 = virtualinvoke r1.<java.lang.String: java.lang.String toUpperCase()>()
+org.apache.ambari.server.state.kerberos.KerberosPrincipalType.translate : r1 = virtualinvoke r0.<java.lang.String: java.lang.String trim()>()
+org.apache.ambari.server.state.kerberos.KerberosPrincipalType.translate : $z0 = virtualinvoke r1.<java.lang.String: boolean isEmpty()>()
+org.apache.ambari.server.state.kerberos.KerberosPrincipalType.values : $r0 = <org.apache.ambari.server.state.kerberos.KerberosPrincipalType: org.apache.ambari.server.state.kerberos.KerberosPrincipalType[] $VALUES>
