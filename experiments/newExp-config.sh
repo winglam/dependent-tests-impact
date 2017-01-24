@@ -5,11 +5,11 @@ newExpTestTypes=(orig auto)
 
 newExpDirectories=(ambari/ambari-server/target)
 newExpCompileDirectories=(ambari)
-newExpCP=(../../../impact-tools/*:classes/:test-classes/:dependency/*:randoop/bin/)
-newExpSootCP=(../../../impact-tools/*:sootOutput/:dependency/*)
+newExpCP=(../../../impact-tools/*:classes/:test-classes/:dependency/*:randoop/bin/:/usr/lib/jvm/java-1.7.0-openjdk-1.7.0.121-2.6.8.0.el7_3.x86_64/jre/lib/*:)
+newExpSootCP=(../../../impact-tools/*:sootOutput/:dependency/*:/usr/lib/jvm/java-1.7.0-openjdk-1.7.0.121-2.6.8.0.el7_3.x86_64/jre/lib/*:)
 
 nextExpDirectories=(ambari-new/ambari-server/target)
-nextExpCP=(../../../impact-tools/*:classes/:test-classes/:dependency/*:randoop/bin/)
+nextExpCP=(../../../impact-tools/*:classes/:test-classes/:dependency/*:randoop/bin/:/usr/lib/jvm/java-1.7.0-openjdk-1.7.0.121-2.6.8.0.el7_3.x86_64/jre/lib/*:)
 
 newExperimentsName=("Ambari-Server")
 
