@@ -53,7 +53,6 @@ class TestZeppelinMaster(RMFTestCase):
         mode = 0755,
         cd_access = 'a',
     )
-    self.assertResourceCalled('Execute', ('chown', '-R', u'zeppelin:zeppelin', '/var/run/zeppelin'), sudo = True)
     self.assertResourceCalled('XmlConfig', 'zeppelin-site.xml',
         owner = 'zeppelin',
         group = 'zeppelin',
@@ -67,20 +66,20 @@ class TestZeppelinMaster(RMFTestCase):
     )
     self.assertResourceCalled('File', '/etc/zeppelin/conf/shiro.ini',
         owner = 'zeppelin',
-        content = InlineTemplate(self.getConfig()['configurations']['zeppelin-shiro-ini']['shiro_ini_content']),
+        content = InlineTemplate(self.getConfig()['configurations']['zeppelin-env']['shiro_ini_content']),
         group = 'zeppelin',
     )
     self.assertResourceCalled('File', '/etc/zeppelin/conf/log4j.properties',
-        owner = u'zeppelin',
-        content = u'log4j.rootLogger = INFO, dailyfile',
-        group = u'zeppelin',
+        owner = 'zeppelin',
+        content = '\nlog4j.rootLogger = INFO, dailyfile\nlog4j.appender.stdout = org.apache.log4j.ConsoleAppender\nlog4j.appender.stdout.layout = org.apache.log4j.PatternLayout\nlog4j.appender.stdout.layout.ConversionPattern=%5p [%d] ({%t} %F[%M]:%L) - %m%n\nlog4j.appender.dailyfile.DatePattern=.yyyy-MM-dd\nlog4j.appender.dailyfile.Threshold = INFO\nlog4j.appender.dailyfile = org.apache.log4j.DailyRollingFileAppender\nlog4j.appender.dailyfile.File = ${zeppelin.log.file}\nlog4j.appender.dailyfile.layout = org.apache.log4j.PatternLayout\nlog4j.appender.dailyfile.layout.ConversionPattern=%5p [%d] ({%t} %F[%M]:%L) - %m%n',
+        group = 'zeppelin',
     )
     self.assertResourceCalled('File', '/etc/zeppelin/conf/hive-site.xml',
         owner = 'zeppelin',
         content = StaticFile('/etc/spark/conf/hive-site.xml'),
         group = 'zeppelin',
     )
-
+ 
   def assert_configure_secured(self):
     self.assertResourceCalled('Directory', '/var/log/zeppelin',
         owner = 'zeppelin',
@@ -103,7 +102,6 @@ class TestZeppelinMaster(RMFTestCase):
         mode = 0755,
         cd_access = 'a',
     )
-    self.assertResourceCalled('Execute', ('chown', '-R', u'zeppelin:zeppelin', '/var/run/zeppelin'), sudo = True)
     self.assertResourceCalled('XmlConfig', 'zeppelin-site.xml',
         owner = 'zeppelin',
         group = 'zeppelin',
@@ -117,13 +115,13 @@ class TestZeppelinMaster(RMFTestCase):
     )
     self.assertResourceCalled('File', '/etc/zeppelin/conf/shiro.ini',
         owner = 'zeppelin',
-        content = InlineTemplate(self.getConfig()['configurations']['zeppelin-shiro-ini']['shiro_ini_content']),
+        content = InlineTemplate(self.getConfig()['configurations']['zeppelin-env']['shiro_ini_content']),
         group = 'zeppelin',
     )
     self.assertResourceCalled('File', '/etc/zeppelin/conf/log4j.properties',
-        owner = u'zeppelin',
-        content = u'log4j.rootLogger = INFO, dailyfile',
-        group = u'zeppelin',
+        owner = 'zeppelin',
+        content = '\nlog4j.rootLogger = INFO, dailyfile\nlog4j.appender.stdout = org.apache.log4j.ConsoleAppender\nlog4j.appender.stdout.layout = org.apache.log4j.PatternLayout\nlog4j.appender.stdout.layout.ConversionPattern=%5p [%d] ({%t} %F[%M]:%L) - %m%n\nlog4j.appender.dailyfile.DatePattern=.yyyy-MM-dd\nlog4j.appender.dailyfile.Threshold = INFO\nlog4j.appender.dailyfile = org.apache.log4j.DailyRollingFileAppender\nlog4j.appender.dailyfile.File = ${zeppelin.log.file}\nlog4j.appender.dailyfile.layout = org.apache.log4j.PatternLayout\nlog4j.appender.dailyfile.layout.ConversionPattern=%5p [%d] ({%t} %F[%M]:%L) - %m%n',
+        group = 'zeppelin',
     )
     self.assertResourceCalled('File', '/etc/zeppelin/conf/hive-site.xml',
         owner = 'zeppelin',
@@ -131,9 +129,7 @@ class TestZeppelinMaster(RMFTestCase):
         group = 'zeppelin',
     )
 
-  @patch('os.path.exists')
-  def test_configure_default(self, os_path_exists_mock):
-    os_path_exists_mock.side_effect = lambda path: path == '/etc/spark/conf/hive-site.xml'
+  def test_configure_default(self):
     self.executeScript(self.COMMON_SERVICES_PACKAGE_DIR + "/scripts/master.py",
                        classname = "Master",
                        command = "configure",
@@ -144,9 +140,7 @@ class TestZeppelinMaster(RMFTestCase):
     self.assert_configure_default()
     self.assertNoMoreResources()
 
-  @patch('os.path.exists')
-  def test_configure_secured(self, os_path_exists_mock):
-    os_path_exists_mock.side_effect = lambda path: path == '/etc/spark/conf/hive-site.xml'
+  def test_configure_secured(self):
     self.executeScript(self.COMMON_SERVICES_PACKAGE_DIR + "/scripts/master.py",
                        classname = "Master",
                        command = "configure",
@@ -172,9 +166,6 @@ class TestZeppelinMaster(RMFTestCase):
         mode = 0755,
         cd_access = 'a',
     )
-    self.assertResourceCalled('Execute', ('chown', '-R', u'zeppelin:zeppelin', '/var/run/zeppelin'),
-        sudo = True,
-    )
     self.assertResourceCalled('Execute', '/usr/hdp/current/zeppelin-server/bin/zeppelin-daemon.sh stop >> /var/log/zeppelin/zeppelin-setup.log',
         user = 'zeppelin',
     )
@@ -195,17 +186,121 @@ class TestZeppelinMaster(RMFTestCase):
         mode = 0755,
         cd_access = 'a',
     )
-    self.assertResourceCalled('Execute', ('chown', '-R', u'zeppelin:zeppelin', '/var/run/zeppelin'),
-        sudo = True,
-    )
     self.assertResourceCalled('Execute', '/usr/hdp/current/zeppelin-server/bin/zeppelin-daemon.sh stop >> /var/log/zeppelin/zeppelin-setup.log',
         user = 'zeppelin',
     )
     self.assertNoMoreResources()
     
-  @patch('os.path.exists')
-  def test_start_default(self, os_path_exists_mock):
-    os_path_exists_mock.side_effect = lambda path: path == '/etc/spark/conf/hive-site.xml'
+
+  def test_start_secured(self):
+    self.executeScript(self.COMMON_SERVICES_PACKAGE_DIR + "/scripts/master.py",
+                       classname = "Master",
+                       command = "start",
+                       config_file = "secured.json",
+                       stack_version = self.STACK_VERSION,
+                       target = RMFTestCase.TARGET_COMMON_SERVICES
+    )
+    self.assert_configure_secured()
+    self.assertResourceCalled('Execute', ('chown', '-R', u'zeppelin:zeppelin', '/etc/zeppelin'),
+        sudo = True,
+    )
+    self.assertResourceCalled('Execute', '/usr/bin/kinit -kt /etc/security/keytabs/zeppelin.server.kerberos.keytab zeppelin@EXAMPLE.COM; ',
+        user = 'zeppelin',
+    )
+    self.assertResourceCalled('HdfsResource', '/user/zeppelin',
+        security_enabled = True,
+        hadoop_bin_dir = '/usr/hdp/current/hadoop-client/bin',
+        keytab = UnknownConfigurationMock(),
+        default_fs = 'hdfs://c6401.ambari.apache.org:8020',
+        hdfs_resource_ignore_file = '/var/lib/ambari-agent/data/.hdfs_resource_ignore',
+        hdfs_site = {u'a': u'b'},
+        kinit_path_local = '/usr/bin/kinit',
+        principal_name = UnknownConfigurationMock(),
+        user = 'hdfs',
+        owner = 'zeppelin',
+        recursive_chown = True,
+        hadoop_conf_dir = '/usr/hdp/current/hadoop-client/conf',
+        type = 'directory',
+        action = ['create_on_execute'],
+        recursive_chmod = True,
+    )
+    self.assertResourceCalled('HdfsResource', '/user/zeppelin/test',
+        security_enabled = True,
+        hadoop_bin_dir = '/usr/hdp/current/hadoop-client/bin',
+        keytab = UnknownConfigurationMock(),
+        default_fs = 'hdfs://c6401.ambari.apache.org:8020',
+        hdfs_resource_ignore_file = '/var/lib/ambari-agent/data/.hdfs_resource_ignore',
+        hdfs_site = {u'a': u'b'},
+        kinit_path_local = '/usr/bin/kinit',
+        principal_name = UnknownConfigurationMock(),
+        user = 'hdfs',
+        owner = 'zeppelin',
+        recursive_chown = True,
+        hadoop_conf_dir = '/usr/hdp/current/hadoop-client/conf',
+        type = 'directory',
+        action = ['create_on_execute'],
+        recursive_chmod = True,
+    )
+    self.assertResourceCalled('HdfsResource', '/apps/zeppelin',
+        security_enabled = True,
+        hadoop_bin_dir = '/usr/hdp/current/hadoop-client/bin',
+        keytab = UnknownConfigurationMock(),
+        default_fs = 'hdfs://c6401.ambari.apache.org:8020',
+        hdfs_resource_ignore_file = '/var/lib/ambari-agent/data/.hdfs_resource_ignore',
+        hdfs_site = {u'a': u'b'},
+        kinit_path_local = '/usr/bin/kinit',
+        principal_name = UnknownConfigurationMock(),
+        user = 'hdfs',
+        owner = 'zeppelin',
+        recursive_chown = True,
+        hadoop_conf_dir = '/usr/hdp/current/hadoop-client/conf',
+        type = 'directory',
+        action = ['create_on_execute'],
+        recursive_chmod = True,
+    )
+    self.assertResourceCalled('HdfsResource', '/apps/zeppelin/tmp',
+        security_enabled = True,
+        hadoop_bin_dir = '/usr/hdp/current/hadoop-client/bin',
+        keytab = UnknownConfigurationMock(),
+        source = '/tmp',
+        default_fs = 'hdfs://c6401.ambari.apache.org:8020',
+        replace_existing_files = True,
+        hdfs_resource_ignore_file = '/var/lib/ambari-agent/data/.hdfs_resource_ignore',
+        hdfs_site = {u'a': u'b'},
+        kinit_path_local = '/usr/bin/kinit',
+        principal_name = UnknownConfigurationMock(),
+        user = 'hdfs',
+        owner = 'zeppelin',
+        group = 'zeppelin',
+        hadoop_conf_dir = '/usr/hdp/current/hadoop-client/conf',
+        type = 'file',
+        action = ['create_on_execute'],
+        mode = 0444,
+    )
+    self.assertResourceCalled('HdfsResource', None,
+        security_enabled = True,
+        hadoop_bin_dir = '/usr/hdp/current/hadoop-client/bin',
+        keytab = UnknownConfigurationMock(),
+        default_fs = 'hdfs://c6401.ambari.apache.org:8020',
+        hdfs_resource_ignore_file = '/var/lib/ambari-agent/data/.hdfs_resource_ignore',
+        hdfs_site = {u'a': u'b'},
+        kinit_path_local = '/usr/bin/kinit',
+        principal_name = UnknownConfigurationMock(),
+        user = 'hdfs',
+        action = ['execute'],
+        hadoop_conf_dir = '/usr/hdp/current/hadoop-client/conf',
+    )
+    self.assertResourceCalled('File', '/etc/zeppelin/conf/interpreter.json',
+        content = '{\n  "interpreterSettings": []\n}',
+        owner = 'zeppelin',
+        group = 'zeppelin',
+    )
+    self.assertResourceCalled('Execute', '/usr/hdp/current/zeppelin-server/bin/zeppelin-daemon.sh restart >> /var/log/zeppelin/zeppelin-setup.log',
+        user = 'zeppelin',
+    )
+    self.assertNoMoreResources()
+ 
+  def test_start_default(self):
     self.executeScript(self.COMMON_SERVICES_PACKAGE_DIR + "/scripts/master.py",
                        classname = "Master",
                        command = "start",
@@ -217,9 +312,7 @@ class TestZeppelinMaster(RMFTestCase):
     self.assertResourceCalled('Execute', ('chown', '-R', u'zeppelin:zeppelin', '/etc/zeppelin'),
         sudo = True,
     )
-
-  @patch('os.path.exists', return_value = True)
-  def test_start_secured(self, os_path_exists_mock):
+  def test_start_secured(self):
     self.executeScript(self.COMMON_SERVICES_PACKAGE_DIR + "/scripts/master.py",
                        classname = "Master",
                        command = "start",
@@ -329,4 +422,6 @@ class TestZeppelinMaster(RMFTestCase):
         user = 'zeppelin',
     )
     self.assertNoMoreResources()
-
+    
+    
+    
