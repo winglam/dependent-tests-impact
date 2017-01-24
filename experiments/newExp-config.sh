@@ -9,7 +9,7 @@ newExpCP=(${initialDir}/impact-tools/*:classes/:test-classes/:dependency/*:rando
 newExpSootCP=(${initialDir}/impact-tools/*:sootOutput/:dependency/*:/usr/lib/jvm/java-1.7.0-openjdk-1.7.0.121-2.6.8.0.el7_3.x86_64/jre/lib/*:)
 
 nextExpDirectories=(ambari-new/ambari-server/target)
-nextExpCP=(${initialDir}/impact-tools/*:${nextExpDirectories[$index]}/classes/:${nextExpDirectories[$index]}/test-classes/:${nextExpDirectories[$index]}/dependency/*:${nextExpDirectories[$index]}/randoop/bin/:/usr/lib/jvm/java-1.7.0-openjdk-1.7.0.121-2.6.8.0.el7_3.x86_64/jre/lib/*:)
+nextExpCP=(${initialDir}/impact-tools/*:${initialDir}/${nextExpDirectories[$index]}/classes/:${initialDir}/${nextExpDirectories[$index]}/test-classes/:${initialDir}/${nextExpDirectories[$index]}/dependency/*:${initialDir}/${nextExpDirectories[$index]}/randoop/bin/:/usr/lib/jvm/java-1.7.0-openjdk-1.7.0.121-2.6.8.0.el7_3.x86_64/jre/lib/*:)
 
 newExperimentsName=("Ambari-Server")
 
