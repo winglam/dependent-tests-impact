@@ -19,9 +19,11 @@ while [ "$index" -lt "$count" ]; do
     for i in "${coverages[@]}"; do
       for j in "${priorOrders[@]}"; do
         #echo 'Running prioritization without resolveDependences and with dependentTestFile'
-        #java -cp ${newExpCP[$index]} edu.washington.cs.dt.impact.Main.OneConfigurationRunner -technique prioritization -coverage $i -order $j -origOrder ${newExperiments[$index]}-$k-order -testInputDir sootTestOutput-$k -filesToDelete ${newExperiments[$index]}-env-files -getCoverage -project ${newExperiments[$index]} -testType $k -outputDir ${initialDir}/${priorDir} -dependentTestFile ${initialDir}/ -timesToRun ${medianTimes}
-        echo 'Running prioritization without resolveDependences and without dependentTestFile'
-        java -cp ${newExpCP[$index]} edu.washington.cs.dt.impact.Main.OneConfigurationRunner -technique prioritization -coverage $i -order $j -origOrder ${newExperiments[$index]}-$k-order -testInputDir sootTestOutput-$k -filesToDelete ${newExperiments[$index]}-env-files -getCoverage -project ${newExperiments[$index]} -testType $k -outputDir ${initialDir}/${priorDir} -timesToRun ${medianTimes}
+        #java -cp ${newExpCP[$index]} edu.washington.cs.dt.impact.Main.OneConfigurationRunner -technique prioritization -coverage $i -order $j -origOrder ${newExperiments[$index]}-$k-order -testInputDir sootTestOutput-$k -filesToDelete ${newExperiments[$index]}-env-files -getCoverage -project ${newExperimentsName[$index]} -testType $k -outputDir ${initialDir}/${priorDir} -dependentTestFile ${initialDir}/ -timesToRun ${medianTimes}
+        #echo 'Running prioritization without resolveDependences and without dependentTestFile'
+        #java -cp ${newExpCP[$index]} edu.washington.cs.dt.impact.Main.OneConfigurationRunner -technique prioritization -coverage $i -order $j -origOrder ${newExperiments[$index]}-$k-order -testInputDir sootTestOutput-$k -filesToDelete ${newExperiments[$index]}-env-files -getCoverage -project ${newExperimentsName[$index]} -testType $k -outputDir ${initialDir}/${priorDir} -timesToRun ${medianTimes}
+        echo 'Running prioritization with resolveDependences and without dependentTestFile'
+        java -cp ${newExpCP[$index]} edu.washington.cs.dt.impact.Main.OneConfigurationRunner -technique prioritization -coverage $i -order $j -origOrder ${newExperiments[$index]}-$k-order -testInputDir sootTestOutput-$k -filesToDelete ${newExperiments[$index]}-env-files -getCoverage -project "${newExperimentsName[$index]}" -testType $k -outputDir ${initialDir}/${priorDir} -timesToRun ${medianTimes} -resolveDependences
       done
     done
     clearTemp ${newExperiments[$index]} $k
