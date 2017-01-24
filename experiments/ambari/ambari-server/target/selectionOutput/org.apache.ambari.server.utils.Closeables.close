@@ -1,0 +1,10 @@
+org.apache.ambari.server.utils.Closeables.close : if r0 == null >>>>>>>> org.apache.ambari.server.utils.Closeables.close : interfaceinvoke r0.<java.io.Closeable: void close()>()
+org.apache.ambari.server.utils.Closeables.close : if r0 == null >>>>>>>> org.apache.ambari.server.utils.Closeables.close : return
+org.apache.ambari.server.utils.Closeables.close : if r0 == null >>>>>>>> org.apache.ambari.server.utils.Closeables.close : $r3 := @caughtexception
+org.apache.ambari.server.utils.Closeables.close : r2 = $r3 >>>>>>>> org.apache.ambari.server.utils.Closeables.close : if r1 == null
+org.apache.ambari.server.utils.Closeables.close : if r1 == null >>>>>>>> org.apache.ambari.server.utils.Closeables.close : interfaceinvoke r1.<org.slf4j.Logger: void warn(java.lang.String,java.lang.Throwable)>("IOException while closing Closeable", r2)
+org.apache.ambari.server.utils.Closeables.close : if r1 == null >>>>>>>> org.apache.ambari.server.utils.Closeables.close : return
+org.apache.ambari.server.utils.Closeables.close : interfaceinvoke r1.<org.slf4j.Logger: void warn(java.lang.String,java.lang.Throwable)>("IOException while closing Closeable", r2) >>>>>>>> org.apache.ambari.server.utils.Closeables.close : return
+org.apache.ambari.server.utils.Closeables.close : interfaceinvoke r0.<java.io.Closeable: void close()>() >>>>>>>> org.apache.ambari.server.utils.Closeables.close : goto [?= return]
+org.apache.ambari.server.utils.Closeables.close : interfaceinvoke r0.<java.io.Closeable: void close()>() >>>>>>>> org.apache.ambari.server.utils.Closeables.close : $r3 := @caughtexception
+org.apache.ambari.server.utils.Closeables.close : goto [?= return] >>>>>>>> org.apache.ambari.server.utils.Closeables.close : return

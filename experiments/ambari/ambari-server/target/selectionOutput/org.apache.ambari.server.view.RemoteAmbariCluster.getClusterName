@@ -1,0 +1,5 @@
+org.apache.ambari.server.view.RemoteAmbariCluster.getClusterName : $r3 = virtualinvoke r1.<org.apache.ambari.server.orm.entities.RemoteAmbariClusterEntity: java.lang.String getUrl()>() >>>>>>>> org.apache.ambari.server.view.RemoteAmbariCluster.getClusterName : r2 = virtualinvoke $r3.<java.lang.String: java.lang.String[] split(java.lang.String)>("/")
+org.apache.ambari.server.view.RemoteAmbariCluster.getClusterName : r2 = virtualinvoke $r3.<java.lang.String: java.lang.String[] split(java.lang.String)>("/") >>>>>>>> org.apache.ambari.server.view.RemoteAmbariCluster.getClusterName : $i0 = lengthof r2
+org.apache.ambari.server.view.RemoteAmbariCluster.getClusterName : $i0 = lengthof r2 >>>>>>>> org.apache.ambari.server.view.RemoteAmbariCluster.getClusterName : $i1 = $i0 - 1
+org.apache.ambari.server.view.RemoteAmbariCluster.getClusterName : $i1 = $i0 - 1 >>>>>>>> org.apache.ambari.server.view.RemoteAmbariCluster.getClusterName : $r4 = r2[$i1]
+org.apache.ambari.server.view.RemoteAmbariCluster.getClusterName : $r4 = r2[$i1] >>>>>>>> org.apache.ambari.server.view.RemoteAmbariCluster.getClusterName : return $r4

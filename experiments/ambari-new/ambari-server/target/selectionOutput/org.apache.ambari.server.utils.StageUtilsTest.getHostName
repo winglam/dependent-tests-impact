@@ -1,0 +1,7 @@
+org.apache.ambari.server.utils.StageUtilsTest.getHostName : r3 = $r4 >>>>>>>> org.apache.ambari.server.utils.StageUtilsTest.getHostName : r2 = "host-dummy"
+org.apache.ambari.server.utils.StageUtilsTest.getHostName : r2 = "host-dummy" >>>>>>>> org.apache.ambari.server.utils.StageUtilsTest.getHostName : return r2
+org.apache.ambari.server.utils.StageUtilsTest.getHostName : $r1 = staticinvoke <java.net.InetAddress: java.net.InetAddress getLocalHost()>() >>>>>>>> org.apache.ambari.server.utils.StageUtilsTest.getHostName : r2 = virtualinvoke $r1.<java.net.InetAddress: java.lang.String getHostName()>()
+org.apache.ambari.server.utils.StageUtilsTest.getHostName : $r1 = staticinvoke <java.net.InetAddress: java.net.InetAddress getLocalHost()>() >>>>>>>> org.apache.ambari.server.utils.StageUtilsTest.getHostName : $r4 := @caughtexception
+org.apache.ambari.server.utils.StageUtilsTest.getHostName : r2 = virtualinvoke $r1.<java.net.InetAddress: java.lang.String getHostName()>() >>>>>>>> org.apache.ambari.server.utils.StageUtilsTest.getHostName : goto [?= return r2]
+org.apache.ambari.server.utils.StageUtilsTest.getHostName : r2 = virtualinvoke $r1.<java.net.InetAddress: java.lang.String getHostName()>() >>>>>>>> org.apache.ambari.server.utils.StageUtilsTest.getHostName : $r4 := @caughtexception
+org.apache.ambari.server.utils.StageUtilsTest.getHostName : goto [?= return r2] >>>>>>>> org.apache.ambari.server.utils.StageUtilsTest.getHostName : return r2

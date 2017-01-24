@@ -1,0 +1,13 @@
+org.apache.ambari.server.api.query.QueryImpl.createPredicate : r3 = specialinvoke r0.<org.apache.ambari.server.api.query.QueryImpl: org.apache.ambari.server.controller.spi.Predicate createInternalPredicate(java.util.Map)>(r1) >>>>>>>> org.apache.ambari.server.api.query.QueryImpl.createPredicate : if r3 != null
+org.apache.ambari.server.api.query.QueryImpl.createPredicate : if r3 != null >>>>>>>> org.apache.ambari.server.api.query.QueryImpl.createPredicate : return r2
+org.apache.ambari.server.api.query.QueryImpl.createPredicate : if r3 != null >>>>>>>> org.apache.ambari.server.api.query.QueryImpl.createPredicate : if r2 != null
+org.apache.ambari.server.api.query.QueryImpl.createPredicate : if r2 != null >>>>>>>> org.apache.ambari.server.api.query.QueryImpl.createPredicate : $r4 = r3
+org.apache.ambari.server.api.query.QueryImpl.createPredicate : if r2 != null >>>>>>>> org.apache.ambari.server.api.query.QueryImpl.createPredicate : r6 = new org.apache.ambari.server.controller.predicate.AndPredicate
+org.apache.ambari.server.api.query.QueryImpl.createPredicate : r6 = new org.apache.ambari.server.controller.predicate.AndPredicate >>>>>>>> org.apache.ambari.server.api.query.QueryImpl.createPredicate : $r4 = r6
+org.apache.ambari.server.api.query.QueryImpl.createPredicate : $r4 = r6 >>>>>>>> org.apache.ambari.server.api.query.QueryImpl.createPredicate : $r5 = newarray (org.apache.ambari.server.controller.spi.Predicate)[2]
+org.apache.ambari.server.api.query.QueryImpl.createPredicate : $r5 = newarray (org.apache.ambari.server.controller.spi.Predicate)[2] >>>>>>>> org.apache.ambari.server.api.query.QueryImpl.createPredicate : $r5[0] = r2
+org.apache.ambari.server.api.query.QueryImpl.createPredicate : $r5[0] = r2 >>>>>>>> org.apache.ambari.server.api.query.QueryImpl.createPredicate : $r5[1] = r3
+org.apache.ambari.server.api.query.QueryImpl.createPredicate : $r5[1] = r3 >>>>>>>> org.apache.ambari.server.api.query.QueryImpl.createPredicate : specialinvoke r6.<org.apache.ambari.server.controller.predicate.AndPredicate: void <init>(org.apache.ambari.server.controller.spi.Predicate[])>($r5)
+org.apache.ambari.server.api.query.QueryImpl.createPredicate : specialinvoke r6.<org.apache.ambari.server.controller.predicate.AndPredicate: void <init>(org.apache.ambari.server.controller.spi.Predicate[])>($r5) >>>>>>>> org.apache.ambari.server.api.query.QueryImpl.createPredicate : return $r4
+org.apache.ambari.server.api.query.QueryImpl.createPredicate : $r4 = r3 >>>>>>>> org.apache.ambari.server.api.query.QueryImpl.createPredicate : goto [?= return $r4]
+org.apache.ambari.server.api.query.QueryImpl.createPredicate : goto [?= return $r4] >>>>>>>> org.apache.ambari.server.api.query.QueryImpl.createPredicate : return $r4

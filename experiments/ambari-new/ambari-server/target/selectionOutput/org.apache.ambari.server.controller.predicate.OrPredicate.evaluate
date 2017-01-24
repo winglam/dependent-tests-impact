@@ -1,0 +1,12 @@
+org.apache.ambari.server.controller.predicate.OrPredicate.evaluate : r2 = virtualinvoke r0.<org.apache.ambari.server.controller.predicate.OrPredicate: org.apache.ambari.server.controller.spi.Predicate[] getPredicates()>() >>>>>>>> org.apache.ambari.server.controller.predicate.OrPredicate.evaluate : r3 = r2
+org.apache.ambari.server.controller.predicate.OrPredicate.evaluate : r3 = r2 >>>>>>>> org.apache.ambari.server.controller.predicate.OrPredicate.evaluate : i0 = lengthof r3
+org.apache.ambari.server.controller.predicate.OrPredicate.evaluate : i0 = lengthof r3 >>>>>>>> org.apache.ambari.server.controller.predicate.OrPredicate.evaluate : i1 = 0
+org.apache.ambari.server.controller.predicate.OrPredicate.evaluate : i1 = 0 >>>>>>>> org.apache.ambari.server.controller.predicate.OrPredicate.evaluate : if i1 >= i0
+org.apache.ambari.server.controller.predicate.OrPredicate.evaluate : if i1 >= i0 >>>>>>>> org.apache.ambari.server.controller.predicate.OrPredicate.evaluate : r4 = r3[i1]
+org.apache.ambari.server.controller.predicate.OrPredicate.evaluate : if i1 >= i0 >>>>>>>> org.apache.ambari.server.controller.predicate.OrPredicate.evaluate : return 0
+org.apache.ambari.server.controller.predicate.OrPredicate.evaluate : r4 = r3[i1] >>>>>>>> org.apache.ambari.server.controller.predicate.OrPredicate.evaluate : $z0 = interfaceinvoke r4.<org.apache.ambari.server.controller.spi.Predicate: boolean evaluate(org.apache.ambari.server.controller.spi.Resource)>(r1)
+org.apache.ambari.server.controller.predicate.OrPredicate.evaluate : $z0 = interfaceinvoke r4.<org.apache.ambari.server.controller.spi.Predicate: boolean evaluate(org.apache.ambari.server.controller.spi.Resource)>(r1) >>>>>>>> org.apache.ambari.server.controller.predicate.OrPredicate.evaluate : if $z0 == 0
+org.apache.ambari.server.controller.predicate.OrPredicate.evaluate : if $z0 == 0 >>>>>>>> org.apache.ambari.server.controller.predicate.OrPredicate.evaluate : return 1
+org.apache.ambari.server.controller.predicate.OrPredicate.evaluate : if $z0 == 0 >>>>>>>> org.apache.ambari.server.controller.predicate.OrPredicate.evaluate : i1 = i1 + 1
+org.apache.ambari.server.controller.predicate.OrPredicate.evaluate : i1 = i1 + 1 >>>>>>>> org.apache.ambari.server.controller.predicate.OrPredicate.evaluate : goto [?= (branch)]
+org.apache.ambari.server.controller.predicate.OrPredicate.evaluate : goto [?= (branch)] >>>>>>>> org.apache.ambari.server.controller.predicate.OrPredicate.evaluate : if i1 >= i0

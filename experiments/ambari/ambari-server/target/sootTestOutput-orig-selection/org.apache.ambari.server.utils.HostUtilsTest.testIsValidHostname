@@ -1,0 +1,8 @@
+org.apache.ambari.server.utils.HostUtils.isValidHostname : if r0 == null >>>>>>>> org.apache.ambari.server.utils.HostUtils.isValidHostname : $r1 = <org.apache.ambari.server.utils.HostUtils: java.util.regex.Pattern REGEX_VALID_HOSTNAME>
+org.apache.ambari.server.utils.HostUtils.isValidHostname : $r1 = <org.apache.ambari.server.utils.HostUtils: java.util.regex.Pattern REGEX_VALID_HOSTNAME> >>>>>>>> org.apache.ambari.server.utils.HostUtils.isValidHostname : $r2 = virtualinvoke $r1.<java.util.regex.Pattern: java.util.regex.Matcher matcher(java.lang.CharSequence)>(r0)
+org.apache.ambari.server.utils.HostUtils.isValidHostname : $r2 = virtualinvoke $r1.<java.util.regex.Pattern: java.util.regex.Matcher matcher(java.lang.CharSequence)>(r0) >>>>>>>> org.apache.ambari.server.utils.HostUtils.isValidHostname : $z0 = virtualinvoke $r2.<java.util.regex.Matcher: boolean matches()>()
+org.apache.ambari.server.utils.HostUtils.isValidHostname : $z0 = virtualinvoke $r2.<java.util.regex.Matcher: boolean matches()>() >>>>>>>> org.apache.ambari.server.utils.HostUtils.isValidHostname : if $z0 == 0
+org.apache.ambari.server.utils.HostUtils.isValidHostname : if $z0 == 0 >>>>>>>> org.apache.ambari.server.utils.HostUtils.isValidHostname : $z1 = 1
+org.apache.ambari.server.utils.HostUtils.isValidHostname : $z1 = 1 >>>>>>>> org.apache.ambari.server.utils.HostUtils.isValidHostname : goto [?= return $z1]
+org.apache.ambari.server.utils.HostUtils.isValidHostname : goto [?= return $z1] >>>>>>>> org.apache.ambari.server.utils.HostUtils.isValidHostname : return $z1
+org.apache.ambari.server.utils.HostUtils.isValidHostname : return $z1 >>>>>>>> org.apache.ambari.server.utils.HostUtils.isValidHostname : $z1 = 0

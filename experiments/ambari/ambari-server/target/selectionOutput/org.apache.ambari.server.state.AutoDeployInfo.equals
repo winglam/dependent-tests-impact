@@ -1,0 +1,25 @@
+org.apache.ambari.server.state.AutoDeployInfo.equals : if r0 != r1 >>>>>>>> org.apache.ambari.server.state.AutoDeployInfo.equals : return 1
+org.apache.ambari.server.state.AutoDeployInfo.equals : if r0 != r1 >>>>>>>> org.apache.ambari.server.state.AutoDeployInfo.equals : if r1 == null
+org.apache.ambari.server.state.AutoDeployInfo.equals : if r1 == null >>>>>>>> org.apache.ambari.server.state.AutoDeployInfo.equals : $r3 = virtualinvoke r0.<java.lang.Object: java.lang.Class getClass()>()
+org.apache.ambari.server.state.AutoDeployInfo.equals : if r1 == null >>>>>>>> org.apache.ambari.server.state.AutoDeployInfo.equals : return 0
+org.apache.ambari.server.state.AutoDeployInfo.equals : $r3 = virtualinvoke r0.<java.lang.Object: java.lang.Class getClass()>() >>>>>>>> org.apache.ambari.server.state.AutoDeployInfo.equals : $r4 = virtualinvoke r1.<java.lang.Object: java.lang.Class getClass()>()
+org.apache.ambari.server.state.AutoDeployInfo.equals : $r4 = virtualinvoke r1.<java.lang.Object: java.lang.Class getClass()>() >>>>>>>> org.apache.ambari.server.state.AutoDeployInfo.equals : if $r3 == $r4
+org.apache.ambari.server.state.AutoDeployInfo.equals : if $r3 == $r4 >>>>>>>> org.apache.ambari.server.state.AutoDeployInfo.equals : return 0
+org.apache.ambari.server.state.AutoDeployInfo.equals : if $r3 == $r4 >>>>>>>> org.apache.ambari.server.state.AutoDeployInfo.equals : r2 = (org.apache.ambari.server.state.AutoDeployInfo) r1
+org.apache.ambari.server.state.AutoDeployInfo.equals : r2 = (org.apache.ambari.server.state.AutoDeployInfo) r1 >>>>>>>> org.apache.ambari.server.state.AutoDeployInfo.equals : $z0 = r0.<org.apache.ambari.server.state.AutoDeployInfo: boolean m_enabled>
+org.apache.ambari.server.state.AutoDeployInfo.equals : $z0 = r0.<org.apache.ambari.server.state.AutoDeployInfo: boolean m_enabled> >>>>>>>> org.apache.ambari.server.state.AutoDeployInfo.equals : $z1 = r2.<org.apache.ambari.server.state.AutoDeployInfo: boolean m_enabled>
+org.apache.ambari.server.state.AutoDeployInfo.equals : $z1 = r2.<org.apache.ambari.server.state.AutoDeployInfo: boolean m_enabled> >>>>>>>> org.apache.ambari.server.state.AutoDeployInfo.equals : if $z0 == $z1
+org.apache.ambari.server.state.AutoDeployInfo.equals : if $z0 == $z1 >>>>>>>> org.apache.ambari.server.state.AutoDeployInfo.equals : return 0
+org.apache.ambari.server.state.AutoDeployInfo.equals : if $z0 == $z1 >>>>>>>> org.apache.ambari.server.state.AutoDeployInfo.equals : $r5 = r0.<org.apache.ambari.server.state.AutoDeployInfo: java.lang.String m_coLocate>
+org.apache.ambari.server.state.AutoDeployInfo.equals : $r5 = r0.<org.apache.ambari.server.state.AutoDeployInfo: java.lang.String m_coLocate> >>>>>>>> org.apache.ambari.server.state.AutoDeployInfo.equals : if $r5 == null
+org.apache.ambari.server.state.AutoDeployInfo.equals : if $r5 == null >>>>>>>> org.apache.ambari.server.state.AutoDeployInfo.equals : $r6 = r0.<org.apache.ambari.server.state.AutoDeployInfo: java.lang.String m_coLocate>
+org.apache.ambari.server.state.AutoDeployInfo.equals : if $r5 == null >>>>>>>> org.apache.ambari.server.state.AutoDeployInfo.equals : $r8 = r2.<org.apache.ambari.server.state.AutoDeployInfo: java.lang.String m_coLocate>
+org.apache.ambari.server.state.AutoDeployInfo.equals : $r8 = r2.<org.apache.ambari.server.state.AutoDeployInfo: java.lang.String m_coLocate> >>>>>>>> org.apache.ambari.server.state.AutoDeployInfo.equals : if $r8 == null
+org.apache.ambari.server.state.AutoDeployInfo.equals : if $r8 == null >>>>>>>> org.apache.ambari.server.state.AutoDeployInfo.equals : return 0
+org.apache.ambari.server.state.AutoDeployInfo.equals : if $r8 == null >>>>>>>> org.apache.ambari.server.state.AutoDeployInfo.equals : return 1
+org.apache.ambari.server.state.AutoDeployInfo.equals : $r6 = r0.<org.apache.ambari.server.state.AutoDeployInfo: java.lang.String m_coLocate> >>>>>>>> org.apache.ambari.server.state.AutoDeployInfo.equals : $r7 = r2.<org.apache.ambari.server.state.AutoDeployInfo: java.lang.String m_coLocate>
+org.apache.ambari.server.state.AutoDeployInfo.equals : $r7 = r2.<org.apache.ambari.server.state.AutoDeployInfo: java.lang.String m_coLocate> >>>>>>>> org.apache.ambari.server.state.AutoDeployInfo.equals : $z2 = virtualinvoke $r6.<java.lang.String: boolean equals(java.lang.Object)>($r7)
+org.apache.ambari.server.state.AutoDeployInfo.equals : $z2 = virtualinvoke $r6.<java.lang.String: boolean equals(java.lang.Object)>($r7) >>>>>>>> org.apache.ambari.server.state.AutoDeployInfo.equals : if $z2 != 0
+org.apache.ambari.server.state.AutoDeployInfo.equals : if $z2 != 0 >>>>>>>> org.apache.ambari.server.state.AutoDeployInfo.equals : goto [?= return 0]
+org.apache.ambari.server.state.AutoDeployInfo.equals : if $z2 != 0 >>>>>>>> org.apache.ambari.server.state.AutoDeployInfo.equals : return 1
+org.apache.ambari.server.state.AutoDeployInfo.equals : goto [?= return 0] >>>>>>>> org.apache.ambari.server.state.AutoDeployInfo.equals : return 0

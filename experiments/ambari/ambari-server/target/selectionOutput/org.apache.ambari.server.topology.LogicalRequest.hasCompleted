@@ -1,0 +1,11 @@
+org.apache.ambari.server.topology.LogicalRequest.hasCompleted : $r1 = r0.<org.apache.ambari.server.topology.LogicalRequest: java.util.Map requestsWithReservedHosts> >>>>>>>> org.apache.ambari.server.topology.LogicalRequest.hasCompleted : $z0 = interfaceinvoke $r1.<java.util.Map: boolean isEmpty()>()
+org.apache.ambari.server.topology.LogicalRequest.hasCompleted : $z0 = interfaceinvoke $r1.<java.util.Map: boolean isEmpty()>() >>>>>>>> org.apache.ambari.server.topology.LogicalRequest.hasCompleted : if $z0 == 0
+org.apache.ambari.server.topology.LogicalRequest.hasCompleted : if $z0 == 0 >>>>>>>> org.apache.ambari.server.topology.LogicalRequest.hasCompleted : $r2 = r0.<org.apache.ambari.server.topology.LogicalRequest: java.util.Collection outstandingHostRequests>
+org.apache.ambari.server.topology.LogicalRequest.hasCompleted : if $z0 == 0 >>>>>>>> org.apache.ambari.server.topology.LogicalRequest.hasCompleted : $z2 = 0
+org.apache.ambari.server.topology.LogicalRequest.hasCompleted : $z2 = 0 >>>>>>>> org.apache.ambari.server.topology.LogicalRequest.hasCompleted : return $z2
+org.apache.ambari.server.topology.LogicalRequest.hasCompleted : $r2 = r0.<org.apache.ambari.server.topology.LogicalRequest: java.util.Collection outstandingHostRequests> >>>>>>>> org.apache.ambari.server.topology.LogicalRequest.hasCompleted : $z1 = interfaceinvoke $r2.<java.util.Collection: boolean isEmpty()>()
+org.apache.ambari.server.topology.LogicalRequest.hasCompleted : $z1 = interfaceinvoke $r2.<java.util.Collection: boolean isEmpty()>() >>>>>>>> org.apache.ambari.server.topology.LogicalRequest.hasCompleted : if $z1 == 0
+org.apache.ambari.server.topology.LogicalRequest.hasCompleted : if $z1 == 0 >>>>>>>> org.apache.ambari.server.topology.LogicalRequest.hasCompleted : $z2 = 1
+org.apache.ambari.server.topology.LogicalRequest.hasCompleted : if $z1 == 0 >>>>>>>> org.apache.ambari.server.topology.LogicalRequest.hasCompleted : $z2 = 0
+org.apache.ambari.server.topology.LogicalRequest.hasCompleted : $z2 = 1 >>>>>>>> org.apache.ambari.server.topology.LogicalRequest.hasCompleted : goto [?= return $z2]
+org.apache.ambari.server.topology.LogicalRequest.hasCompleted : goto [?= return $z2] >>>>>>>> org.apache.ambari.server.topology.LogicalRequest.hasCompleted : return $z2

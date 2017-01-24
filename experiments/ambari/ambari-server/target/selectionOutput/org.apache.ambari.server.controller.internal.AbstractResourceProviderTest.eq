@@ -1,0 +1,16 @@
+org.apache.ambari.server.controller.internal.AbstractResourceProviderTest.eq : if r0 != null >>>>>>>> org.apache.ambari.server.controller.internal.AbstractResourceProviderTest.eq : if r1 != null
+org.apache.ambari.server.controller.internal.AbstractResourceProviderTest.eq : if r0 != null >>>>>>>> org.apache.ambari.server.controller.internal.AbstractResourceProviderTest.eq : if r1 == null
+org.apache.ambari.server.controller.internal.AbstractResourceProviderTest.eq : if r1 == null >>>>>>>> org.apache.ambari.server.controller.internal.AbstractResourceProviderTest.eq : $z1 = virtualinvoke r0.<java.lang.Object: boolean equals(java.lang.Object)>(r1)
+org.apache.ambari.server.controller.internal.AbstractResourceProviderTest.eq : if r1 == null >>>>>>>> org.apache.ambari.server.controller.internal.AbstractResourceProviderTest.eq : $z0 = 0
+org.apache.ambari.server.controller.internal.AbstractResourceProviderTest.eq : $z0 = 0 >>>>>>>> org.apache.ambari.server.controller.internal.AbstractResourceProviderTest.eq : return $z0
+org.apache.ambari.server.controller.internal.AbstractResourceProviderTest.eq : $z1 = virtualinvoke r0.<java.lang.Object: boolean equals(java.lang.Object)>(r1) >>>>>>>> org.apache.ambari.server.controller.internal.AbstractResourceProviderTest.eq : if $z1 == 0
+org.apache.ambari.server.controller.internal.AbstractResourceProviderTest.eq : if $z1 == 0 >>>>>>>> org.apache.ambari.server.controller.internal.AbstractResourceProviderTest.eq : $z0 = 1
+org.apache.ambari.server.controller.internal.AbstractResourceProviderTest.eq : if $z1 == 0 >>>>>>>> org.apache.ambari.server.controller.internal.AbstractResourceProviderTest.eq : $z0 = 0
+org.apache.ambari.server.controller.internal.AbstractResourceProviderTest.eq : $z0 = 1 >>>>>>>> org.apache.ambari.server.controller.internal.AbstractResourceProviderTest.eq : goto [?= return $z0]
+org.apache.ambari.server.controller.internal.AbstractResourceProviderTest.eq : goto [?= return $z0] >>>>>>>> org.apache.ambari.server.controller.internal.AbstractResourceProviderTest.eq : return $z0
+org.apache.ambari.server.controller.internal.AbstractResourceProviderTest.eq : if r1 != null >>>>>>>> org.apache.ambari.server.controller.internal.AbstractResourceProviderTest.eq : $z0 = 1
+org.apache.ambari.server.controller.internal.AbstractResourceProviderTest.eq : if r1 != null >>>>>>>> org.apache.ambari.server.controller.internal.AbstractResourceProviderTest.eq : $z0 = 0
+org.apache.ambari.server.controller.internal.AbstractResourceProviderTest.eq : $z0 = 0 >>>>>>>> org.apache.ambari.server.controller.internal.AbstractResourceProviderTest.eq : goto [?= return $z0]
+org.apache.ambari.server.controller.internal.AbstractResourceProviderTest.eq : goto [?= return $z0] >>>>>>>> org.apache.ambari.server.controller.internal.AbstractResourceProviderTest.eq : return $z0
+org.apache.ambari.server.controller.internal.AbstractResourceProviderTest.eq : $z0 = 1 >>>>>>>> org.apache.ambari.server.controller.internal.AbstractResourceProviderTest.eq : goto [?= return $z0]
+org.apache.ambari.server.controller.internal.AbstractResourceProviderTest.eq : goto [?= return $z0] >>>>>>>> org.apache.ambari.server.controller.internal.AbstractResourceProviderTest.eq : return $z0

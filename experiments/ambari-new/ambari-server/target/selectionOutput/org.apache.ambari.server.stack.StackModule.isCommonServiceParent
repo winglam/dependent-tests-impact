@@ -1,0 +1,14 @@
+org.apache.ambari.server.stack.StackModule.isCommonServiceParent : if r1 == null >>>>>>>> org.apache.ambari.server.stack.StackModule.isCommonServiceParent : $z0 = virtualinvoke r1.<java.lang.String: boolean isEmpty()>()
+org.apache.ambari.server.stack.StackModule.isCommonServiceParent : if r1 == null >>>>>>>> org.apache.ambari.server.stack.StackModule.isCommonServiceParent : $z2 = 0
+org.apache.ambari.server.stack.StackModule.isCommonServiceParent : $z2 = 0 >>>>>>>> org.apache.ambari.server.stack.StackModule.isCommonServiceParent : return $z2
+org.apache.ambari.server.stack.StackModule.isCommonServiceParent : $z0 = virtualinvoke r1.<java.lang.String: boolean isEmpty()>() >>>>>>>> org.apache.ambari.server.stack.StackModule.isCommonServiceParent : if $z0 != 0
+org.apache.ambari.server.stack.StackModule.isCommonServiceParent : if $z0 != 0 >>>>>>>> org.apache.ambari.server.stack.StackModule.isCommonServiceParent : $r2 = <org.apache.ambari.server.stack.StackManager: java.lang.String PATH_DELIMITER>
+org.apache.ambari.server.stack.StackModule.isCommonServiceParent : if $z0 != 0 >>>>>>>> org.apache.ambari.server.stack.StackModule.isCommonServiceParent : $z2 = 0
+org.apache.ambari.server.stack.StackModule.isCommonServiceParent : $r2 = <org.apache.ambari.server.stack.StackManager: java.lang.String PATH_DELIMITER> >>>>>>>> org.apache.ambari.server.stack.StackModule.isCommonServiceParent : $r3 = virtualinvoke r1.<java.lang.String: java.lang.String[] split(java.lang.String)>($r2)
+org.apache.ambari.server.stack.StackModule.isCommonServiceParent : $r3 = virtualinvoke r1.<java.lang.String: java.lang.String[] split(java.lang.String)>($r2) >>>>>>>> org.apache.ambari.server.stack.StackModule.isCommonServiceParent : $r4 = $r3[0]
+org.apache.ambari.server.stack.StackModule.isCommonServiceParent : $r4 = $r3[0] >>>>>>>> org.apache.ambari.server.stack.StackModule.isCommonServiceParent : $z1 = virtualinvoke $r4.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("common-services")
+org.apache.ambari.server.stack.StackModule.isCommonServiceParent : $z1 = virtualinvoke $r4.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>("common-services") >>>>>>>> org.apache.ambari.server.stack.StackModule.isCommonServiceParent : if $z1 == 0
+org.apache.ambari.server.stack.StackModule.isCommonServiceParent : if $z1 == 0 >>>>>>>> org.apache.ambari.server.stack.StackModule.isCommonServiceParent : $z2 = 1
+org.apache.ambari.server.stack.StackModule.isCommonServiceParent : if $z1 == 0 >>>>>>>> org.apache.ambari.server.stack.StackModule.isCommonServiceParent : $z2 = 0
+org.apache.ambari.server.stack.StackModule.isCommonServiceParent : $z2 = 1 >>>>>>>> org.apache.ambari.server.stack.StackModule.isCommonServiceParent : goto [?= return $z2]
+org.apache.ambari.server.stack.StackModule.isCommonServiceParent : goto [?= return $z2] >>>>>>>> org.apache.ambari.server.stack.StackModule.isCommonServiceParent : return $z2
