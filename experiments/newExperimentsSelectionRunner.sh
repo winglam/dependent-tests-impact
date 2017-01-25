@@ -25,14 +25,14 @@ count=${#newExperiments[@]}
 while [ "$index" -lt "$count" ]; do
   echo -e "Starting experiment: ${newExperiments[$index]}"
 
-  instrumentNewSelectionFiles ${nextExpDirectories[$index]} ${nextExpCP[$index]} ${newExpDirectories[$index]} ${newExpCP[$index]} ${newExpSootCP[$index]} ${newExperiments[$index]}-$k-order $k
+  #instrumentNewSelectionFiles ${nextExpDirectories[$index]} ${nextExpCP[$index]} ${newExpDirectories[$index]} ${newExpCP[$index]} ${newExpSootCP[$index]} ${newExperiments[$index]}-$k-order $k
 
   for k in "${newExpTestTypes[@]}"; do
 
     cd ${initialDir}/${newExpDirectories[$index]}
-    echo 'Generating sootTestOutput on old subject'
-    java -cp ${newExpSootCP[$index]} edu.washington.cs.dt.main.ImpactMain -inputTests ${initialDir}/${nextExpDirectories[$index]}/${newExperiments[$index]}-$k-order
-    mv sootTestOutput sootTestOutput-$k-selection
+    #echo 'Generating sootTestOutput on old subject'
+    #java -cp ${newExpSootCP[$index]} edu.washington.cs.dt.main.ImpactMain -inputTests ${initialDir}/${nextExpDirectories[$index]}/${newExperiments[$index]}-$k-order
+    #mv sootTestOutput sootTestOutput-$k-selection
     cd ${initialDir}
 
     echo 'Running prioritization for original order'
