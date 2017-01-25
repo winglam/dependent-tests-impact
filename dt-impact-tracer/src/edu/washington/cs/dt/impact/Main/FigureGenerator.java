@@ -169,11 +169,24 @@ public class FigureGenerator {
     }
 
     protected static String formatPercent(double num) {
+    	StringBuilder sb = new StringBuilder();
+    	
         String diffStringFormat = timeFormat.format(num);
         if (diffStringFormat.equals("-0\\%")) {
             diffStringFormat = "0\\%";
         }
-        return diffStringFormat;
+        
+        if (num < 1.0) {
+        	sb.append("\\z");
+        }
+        
+        if (num < 0.10) {
+        	sb.append("\\z");
+        }
+        
+        sb.append(diffStringFormat);
+        
+        return sb.toString();
     }
 
     /*
