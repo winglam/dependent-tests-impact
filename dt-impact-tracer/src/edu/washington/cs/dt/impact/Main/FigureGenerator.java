@@ -168,20 +168,22 @@ public class FigureGenerator {
         return null; // none of the lines contained the keyword
     }
 
-    protected static String formatPercent(double num) {
+    protected static String formatPercent(double num, boolean addPhantomZeros) {
     	StringBuilder sb = new StringBuilder();
-    	
+
         String diffStringFormat = timeFormat.format(num);
         if (diffStringFormat.equals("-0\\%")) {
             diffStringFormat = "0\\%";
         }
         
-        if (num < 1.0) {
-        	sb.append("\\z");
-        }
-        
-        if (num < 0.10) {
-        	sb.append("\\z");
+        if (addPhantomZeros) {
+            if (num < 1.0) {
+            	sb.append("\\z");
+            }
+            
+            if (num < 0.10) {
+            	sb.append("\\z");
+            }
         }
         
         sb.append(diffStringFormat);
