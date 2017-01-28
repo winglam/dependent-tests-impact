@@ -15,7 +15,7 @@ initialDir=`pwd`
 # cannot run JFreechart and Jodatime. You can run Crystal, JFreechart
 # and Jodatime but cannot run Crystal and Jodatime.
 experiments=(crystal jfreechart jodatime synoptic xml_security)
-testTypes=(orig auto)
+testTypes=(auto)
 coverages=(statement function)
 machines=(2 4 8 16)
 
