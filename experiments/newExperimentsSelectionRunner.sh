@@ -25,18 +25,18 @@ count=${#newExperiments[@]}
 while [ "$index" -lt "$count" ]; do
   echo -e "Starting experiment: ${newExperiments[$index]}"
 
-  instrumentNewSelectionFiles ${nextExpDirectories[$index]} ${nextExpCP[$index]} ${newExpDirectories[$index]} ${newExpCP[$index]} ${newExpSootCP[$index]} ${newExperiments[$index]}-$k-order $k
+  #instrumentNewSelectionFiles ${nextExpDirectories[$index]} ${nextExpCP[$index]} ${newExpDirectories[$index]} ${newExpCP[$index]} ${newExpSootCP[$index]} ${newExperiments[$index]}-$k-order $k
 
   for k in "${newExpTestTypes[@]}"; do
 
     cd ${initialDir}/${newExpDirectories[$index]}
-    echo 'Generating sootTestOutput on old subject'
-    java -cp ${newExpSootCP[$index]} edu.washington.cs.dt.main.ImpactMain -inputTests ${initialDir}/${nextExpDirectories[$index]}/${newExperiments[$index]}-$k-order
-    mv sootTestOutput sootTestOutput-$k-selection
+    #echo 'Generating sootTestOutput on old subject'
+    #java -cp ${newExpSootCP[$index]} edu.washington.cs.dt.main.ImpactMain -inputTests ${initialDir}/${nextExpDirectories[$index]}/${newExperiments[$index]}-$k-order
+    #mv sootTestOutput sootTestOutput-$k-selection
     cd ${initialDir}
 
     echo 'Running prioritization for original order'
-    java -Xms1g -Xmx2g -cp ${nextExpCP[$index]} edu.washington.cs.dt.impact.Main.OneConfigurationRunner -technique prioritization -coverage statement -order original -origOrder ${nextExpDirectories[$index]}/${newExperiments[$index]}-$k-order -testInputDir ${newExpDirectories[$index]}/sootTestOutput-$k-selection -filesToDelete ${nextExpDirectories[$index]}/${newExperiments[$index]}-env-files -project ${newExperimentsName[$index]} -testType $k -outputDir ${initialDir}/${seleDir} -timesToRun ${medianTimes} -getCoverage
+    java -Xms1g -Xmx2g -cp ${nextExpCP[$index]} edu.washington.cs.dt.impact.Main.OneConfigurationRunner -technique prioritization -coverage statement -order original -origOrder ${nextExpDirectories[$index]}/${newExperiments[$index]}-$k-order -testInputDir ${newExpDirectories[$index]}/sootTestOutput-$k-selection -filesToDelete ${nextExpDirectories[$index]}/${newExperiments[$index]}-env-files -project "${newExperimentsName[$index]}" -testType $k -outputDir ${initialDir}/${seleDir} -timesToRun ${medianTimes} -getCoverage
 
     for i in "${coverages[@]}"; do
       for j in "${seleOrders[@]}"; do

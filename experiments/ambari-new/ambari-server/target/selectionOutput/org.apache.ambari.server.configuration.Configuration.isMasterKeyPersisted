@@ -1,0 +1,9 @@
+org.apache.ambari.server.configuration.Configuration.isMasterKeyPersisted : r1 = virtualinvoke r0.<org.apache.ambari.server.configuration.Configuration: java.io.File getMasterKeyLocation()>() >>>>>>>> org.apache.ambari.server.configuration.Configuration.isMasterKeyPersisted : if r1 == null
+org.apache.ambari.server.configuration.Configuration.isMasterKeyPersisted : if r1 == null >>>>>>>> org.apache.ambari.server.configuration.Configuration.isMasterKeyPersisted : $z0 = virtualinvoke r1.<java.io.File: boolean exists()>()
+org.apache.ambari.server.configuration.Configuration.isMasterKeyPersisted : if r1 == null >>>>>>>> org.apache.ambari.server.configuration.Configuration.isMasterKeyPersisted : $z1 = 0
+org.apache.ambari.server.configuration.Configuration.isMasterKeyPersisted : $z1 = 0 >>>>>>>> org.apache.ambari.server.configuration.Configuration.isMasterKeyPersisted : return $z1
+org.apache.ambari.server.configuration.Configuration.isMasterKeyPersisted : $z0 = virtualinvoke r1.<java.io.File: boolean exists()>() >>>>>>>> org.apache.ambari.server.configuration.Configuration.isMasterKeyPersisted : if $z0 == 0
+org.apache.ambari.server.configuration.Configuration.isMasterKeyPersisted : if $z0 == 0 >>>>>>>> org.apache.ambari.server.configuration.Configuration.isMasterKeyPersisted : $z1 = 1
+org.apache.ambari.server.configuration.Configuration.isMasterKeyPersisted : if $z0 == 0 >>>>>>>> org.apache.ambari.server.configuration.Configuration.isMasterKeyPersisted : $z1 = 0
+org.apache.ambari.server.configuration.Configuration.isMasterKeyPersisted : $z1 = 1 >>>>>>>> org.apache.ambari.server.configuration.Configuration.isMasterKeyPersisted : goto [?= return $z1]
+org.apache.ambari.server.configuration.Configuration.isMasterKeyPersisted : goto [?= return $z1] >>>>>>>> org.apache.ambari.server.configuration.Configuration.isMasterKeyPersisted : return $z1

@@ -484,7 +484,7 @@ public abstract class Runner {
                     outputArr.add(testList.getNotFixedDT() + "\n");
                 }
                 if (testList.getDtList() != null) {
-                    outputArr.add("\nDependent test list:\n");
+                    outputArr.add("\n" + Constants.DT_LIST + "\n");
                     outputArr.add(testList.getDtList() + "\n");
                 }
                 if (getCoverage) {

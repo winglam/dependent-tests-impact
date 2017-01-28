@@ -1,0 +1,13 @@
+org.apache.ambari.server.agent.ActionQueue.dequeueAll : r2 = specialinvoke r0.<org.apache.ambari.server.agent.ActionQueue: java.util.Queue getQueue(java.lang.String)>(r1) >>>>>>>> org.apache.ambari.server.agent.ActionQueue.dequeueAll : if r2 != null
+org.apache.ambari.server.agent.ActionQueue.dequeueAll : if r2 != null >>>>>>>> org.apache.ambari.server.agent.ActionQueue.dequeueAll : return null
+org.apache.ambari.server.agent.ActionQueue.dequeueAll : if r2 != null >>>>>>>> org.apache.ambari.server.agent.ActionQueue.dequeueAll : $r5 = new java.util.ArrayList
+org.apache.ambari.server.agent.ActionQueue.dequeueAll : $r5 = new java.util.ArrayList >>>>>>>> org.apache.ambari.server.agent.ActionQueue.dequeueAll : specialinvoke $r5.<java.util.ArrayList: void <init>()>()
+org.apache.ambari.server.agent.ActionQueue.dequeueAll : specialinvoke $r5.<java.util.ArrayList: void <init>()>() >>>>>>>> org.apache.ambari.server.agent.ActionQueue.dequeueAll : r3 = $r5
+org.apache.ambari.server.agent.ActionQueue.dequeueAll : r3 = $r5 >>>>>>>> org.apache.ambari.server.agent.ActionQueue.dequeueAll : $r6 = interfaceinvoke r2.<java.util.Queue: java.lang.Object poll()>()
+org.apache.ambari.server.agent.ActionQueue.dequeueAll : $r6 = interfaceinvoke r2.<java.util.Queue: java.lang.Object poll()>() >>>>>>>> org.apache.ambari.server.agent.ActionQueue.dequeueAll : r4 = (org.apache.ambari.server.agent.AgentCommand) $r6
+org.apache.ambari.server.agent.ActionQueue.dequeueAll : r4 = (org.apache.ambari.server.agent.AgentCommand) $r6 >>>>>>>> org.apache.ambari.server.agent.ActionQueue.dequeueAll : if r4 == null
+org.apache.ambari.server.agent.ActionQueue.dequeueAll : if r4 == null >>>>>>>> org.apache.ambari.server.agent.ActionQueue.dequeueAll : interfaceinvoke r3.<java.util.List: boolean add(java.lang.Object)>(r4)
+org.apache.ambari.server.agent.ActionQueue.dequeueAll : if r4 == null >>>>>>>> org.apache.ambari.server.agent.ActionQueue.dequeueAll : if r4 != null
+org.apache.ambari.server.agent.ActionQueue.dequeueAll : if r4 != null >>>>>>>> org.apache.ambari.server.agent.ActionQueue.dequeueAll : return r3
+org.apache.ambari.server.agent.ActionQueue.dequeueAll : if r4 != null >>>>>>>> org.apache.ambari.server.agent.ActionQueue.dequeueAll : $r6 = interfaceinvoke r2.<java.util.Queue: java.lang.Object poll()>()
+org.apache.ambari.server.agent.ActionQueue.dequeueAll : interfaceinvoke r3.<java.util.List: boolean add(java.lang.Object)>(r4) >>>>>>>> org.apache.ambari.server.agent.ActionQueue.dequeueAll : if r4 != null

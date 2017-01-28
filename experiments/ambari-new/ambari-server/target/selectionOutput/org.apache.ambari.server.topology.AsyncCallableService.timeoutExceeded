@@ -1,0 +1,10 @@
+org.apache.ambari.server.topology.AsyncCallableService.timeoutExceeded : $l1 = r0.<org.apache.ambari.server.topology.AsyncCallableService: long timeout> >>>>>>>> org.apache.ambari.server.topology.AsyncCallableService.timeoutExceeded : $r1 = staticinvoke <java.util.Calendar: java.util.Calendar getInstance()>()
+org.apache.ambari.server.topology.AsyncCallableService.timeoutExceeded : $r1 = staticinvoke <java.util.Calendar: java.util.Calendar getInstance()>() >>>>>>>> org.apache.ambari.server.topology.AsyncCallableService.timeoutExceeded : $l2 = virtualinvoke $r1.<java.util.Calendar: long getTimeInMillis()>()
+org.apache.ambari.server.topology.AsyncCallableService.timeoutExceeded : $l2 = virtualinvoke $r1.<java.util.Calendar: long getTimeInMillis()>() >>>>>>>> org.apache.ambari.server.topology.AsyncCallableService.timeoutExceeded : $l3 = $l2 - l0
+org.apache.ambari.server.topology.AsyncCallableService.timeoutExceeded : $l3 = $l2 - l0 >>>>>>>> org.apache.ambari.server.topology.AsyncCallableService.timeoutExceeded : $b4 = $l1 cmp $l3
+org.apache.ambari.server.topology.AsyncCallableService.timeoutExceeded : $b4 = $l1 cmp $l3 >>>>>>>> org.apache.ambari.server.topology.AsyncCallableService.timeoutExceeded : if $b4 >= 0
+org.apache.ambari.server.topology.AsyncCallableService.timeoutExceeded : if $b4 >= 0 >>>>>>>> org.apache.ambari.server.topology.AsyncCallableService.timeoutExceeded : $z0 = 1
+org.apache.ambari.server.topology.AsyncCallableService.timeoutExceeded : if $b4 >= 0 >>>>>>>> org.apache.ambari.server.topology.AsyncCallableService.timeoutExceeded : $z0 = 0
+org.apache.ambari.server.topology.AsyncCallableService.timeoutExceeded : $z0 = 0 >>>>>>>> org.apache.ambari.server.topology.AsyncCallableService.timeoutExceeded : return $z0
+org.apache.ambari.server.topology.AsyncCallableService.timeoutExceeded : $z0 = 1 >>>>>>>> org.apache.ambari.server.topology.AsyncCallableService.timeoutExceeded : goto [?= return $z0]
+org.apache.ambari.server.topology.AsyncCallableService.timeoutExceeded : goto [?= return $z0] >>>>>>>> org.apache.ambari.server.topology.AsyncCallableService.timeoutExceeded : return $z0

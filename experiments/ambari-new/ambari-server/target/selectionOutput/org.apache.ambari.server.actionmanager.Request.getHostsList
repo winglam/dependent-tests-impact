@@ -1,0 +1,22 @@
+org.apache.ambari.server.actionmanager.Request.getHostsList : $r1 = new java.util.ArrayList >>>>>>>> org.apache.ambari.server.actionmanager.Request.getHostsList : specialinvoke $r1.<java.util.ArrayList: void <init>()>()
+org.apache.ambari.server.actionmanager.Request.getHostsList : specialinvoke $r1.<java.util.ArrayList: void <init>()>() >>>>>>>> org.apache.ambari.server.actionmanager.Request.getHostsList : r2 = $r1
+org.apache.ambari.server.actionmanager.Request.getHostsList : r2 = $r1 >>>>>>>> org.apache.ambari.server.actionmanager.Request.getHostsList : if r0 == null
+org.apache.ambari.server.actionmanager.Request.getHostsList : if r0 == null >>>>>>>> org.apache.ambari.server.actionmanager.Request.getHostsList : $z0 = virtualinvoke r0.<java.lang.String: boolean isEmpty()>()
+org.apache.ambari.server.actionmanager.Request.getHostsList : if r0 == null >>>>>>>> org.apache.ambari.server.actionmanager.Request.getHostsList : return r2
+org.apache.ambari.server.actionmanager.Request.getHostsList : $z0 = virtualinvoke r0.<java.lang.String: boolean isEmpty()>() >>>>>>>> org.apache.ambari.server.actionmanager.Request.getHostsList : if $z0 != 0
+org.apache.ambari.server.actionmanager.Request.getHostsList : if $z0 != 0 >>>>>>>> org.apache.ambari.server.actionmanager.Request.getHostsList : r3 = virtualinvoke r0.<java.lang.String: java.lang.String[] split(java.lang.String)>(",")
+org.apache.ambari.server.actionmanager.Request.getHostsList : if $z0 != 0 >>>>>>>> org.apache.ambari.server.actionmanager.Request.getHostsList : return r2
+org.apache.ambari.server.actionmanager.Request.getHostsList : r3 = virtualinvoke r0.<java.lang.String: java.lang.String[] split(java.lang.String)>(",") >>>>>>>> org.apache.ambari.server.actionmanager.Request.getHostsList : i0 = lengthof r3
+org.apache.ambari.server.actionmanager.Request.getHostsList : i0 = lengthof r3 >>>>>>>> org.apache.ambari.server.actionmanager.Request.getHostsList : i1 = 0
+org.apache.ambari.server.actionmanager.Request.getHostsList : i1 = 0 >>>>>>>> org.apache.ambari.server.actionmanager.Request.getHostsList : if i1 >= i0
+org.apache.ambari.server.actionmanager.Request.getHostsList : if i1 >= i0 >>>>>>>> org.apache.ambari.server.actionmanager.Request.getHostsList : r4 = r3[i1]
+org.apache.ambari.server.actionmanager.Request.getHostsList : if i1 >= i0 >>>>>>>> org.apache.ambari.server.actionmanager.Request.getHostsList : return r2
+org.apache.ambari.server.actionmanager.Request.getHostsList : r4 = r3[i1] >>>>>>>> org.apache.ambari.server.actionmanager.Request.getHostsList : $r5 = virtualinvoke r4.<java.lang.String: java.lang.String trim()>()
+org.apache.ambari.server.actionmanager.Request.getHostsList : $r5 = virtualinvoke r4.<java.lang.String: java.lang.String trim()>() >>>>>>>> org.apache.ambari.server.actionmanager.Request.getHostsList : $z1 = virtualinvoke $r5.<java.lang.String: boolean isEmpty()>()
+org.apache.ambari.server.actionmanager.Request.getHostsList : $z1 = virtualinvoke $r5.<java.lang.String: boolean isEmpty()>() >>>>>>>> org.apache.ambari.server.actionmanager.Request.getHostsList : if $z1 != 0
+org.apache.ambari.server.actionmanager.Request.getHostsList : if $z1 != 0 >>>>>>>> org.apache.ambari.server.actionmanager.Request.getHostsList : $r6 = virtualinvoke r4.<java.lang.String: java.lang.String trim()>()
+org.apache.ambari.server.actionmanager.Request.getHostsList : if $z1 != 0 >>>>>>>> org.apache.ambari.server.actionmanager.Request.getHostsList : i1 = i1 + 1
+org.apache.ambari.server.actionmanager.Request.getHostsList : i1 = i1 + 1 >>>>>>>> org.apache.ambari.server.actionmanager.Request.getHostsList : goto [?= (branch)]
+org.apache.ambari.server.actionmanager.Request.getHostsList : goto [?= (branch)] >>>>>>>> org.apache.ambari.server.actionmanager.Request.getHostsList : if i1 >= i0
+org.apache.ambari.server.actionmanager.Request.getHostsList : $r6 = virtualinvoke r4.<java.lang.String: java.lang.String trim()>() >>>>>>>> org.apache.ambari.server.actionmanager.Request.getHostsList : interfaceinvoke r2.<java.util.List: boolean add(java.lang.Object)>($r6)
+org.apache.ambari.server.actionmanager.Request.getHostsList : interfaceinvoke r2.<java.util.List: boolean add(java.lang.Object)>($r6) >>>>>>>> org.apache.ambari.server.actionmanager.Request.getHostsList : i1 = i1 + 1

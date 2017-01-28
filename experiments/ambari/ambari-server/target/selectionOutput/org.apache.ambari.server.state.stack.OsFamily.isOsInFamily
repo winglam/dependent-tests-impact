@@ -1,0 +1,9 @@
+org.apache.ambari.server.state.stack.OsFamily.isOsInFamily : r3 = virtualinvoke r0.<org.apache.ambari.server.state.stack.OsFamily: java.lang.String find_family(java.lang.String)>(r1) >>>>>>>> org.apache.ambari.server.state.stack.OsFamily.isOsInFamily : if r3 == null
+org.apache.ambari.server.state.stack.OsFamily.isOsInFamily : if r3 == null >>>>>>>> org.apache.ambari.server.state.stack.OsFamily.isOsInFamily : $z0 = specialinvoke r0.<org.apache.ambari.server.state.stack.OsFamily: boolean isFamilyExtendedByFamily(java.lang.String,java.lang.String)>(r3, r2)
+org.apache.ambari.server.state.stack.OsFamily.isOsInFamily : if r3 == null >>>>>>>> org.apache.ambari.server.state.stack.OsFamily.isOsInFamily : $z1 = 0
+org.apache.ambari.server.state.stack.OsFamily.isOsInFamily : $z1 = 0 >>>>>>>> org.apache.ambari.server.state.stack.OsFamily.isOsInFamily : return $z1
+org.apache.ambari.server.state.stack.OsFamily.isOsInFamily : $z0 = specialinvoke r0.<org.apache.ambari.server.state.stack.OsFamily: boolean isFamilyExtendedByFamily(java.lang.String,java.lang.String)>(r3, r2) >>>>>>>> org.apache.ambari.server.state.stack.OsFamily.isOsInFamily : if $z0 == 0
+org.apache.ambari.server.state.stack.OsFamily.isOsInFamily : if $z0 == 0 >>>>>>>> org.apache.ambari.server.state.stack.OsFamily.isOsInFamily : $z1 = 1
+org.apache.ambari.server.state.stack.OsFamily.isOsInFamily : if $z0 == 0 >>>>>>>> org.apache.ambari.server.state.stack.OsFamily.isOsInFamily : $z1 = 0
+org.apache.ambari.server.state.stack.OsFamily.isOsInFamily : $z1 = 1 >>>>>>>> org.apache.ambari.server.state.stack.OsFamily.isOsInFamily : goto [?= return $z1]
+org.apache.ambari.server.state.stack.OsFamily.isOsInFamily : goto [?= return $z1] >>>>>>>> org.apache.ambari.server.state.stack.OsFamily.isOsInFamily : return $z1

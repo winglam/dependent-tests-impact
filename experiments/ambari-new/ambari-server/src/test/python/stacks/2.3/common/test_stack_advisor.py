@@ -212,9 +212,6 @@ class TestHDP23StackAdvisor(TestCase):
       ]
     }
     services = {
-      "context" : {
-        "call_type" : "recommendConfigurations"
-      },
       "services" : [ {
         "StackServices":{
           "service_name": "YARN",
@@ -1557,8 +1554,7 @@ class TestHDP23StackAdvisor(TestCase):
         'properties': {
           'ranger-storm-plugin-enabled': 'No',
         }
-      },
-      'ranger-knox-security': {'properties': {}}
+      }
     }
 
     recommendedConfigurations = {}

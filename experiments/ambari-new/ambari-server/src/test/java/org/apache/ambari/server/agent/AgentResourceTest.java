@@ -36,15 +36,12 @@ import org.apache.ambari.server.actionmanager.StageFactory;
 import org.apache.ambari.server.agent.rest.AgentResource;
 import org.apache.ambari.server.api.services.AmbariMetaInfo;
 import org.apache.ambari.server.events.publishers.AmbariEventPublisher;
-import org.apache.ambari.server.metadata.CachedRoleCommandOrderProvider;
-import org.apache.ambari.server.metadata.RoleCommandOrderProvider;
 import org.apache.ambari.server.orm.DBAccessor;
 import org.apache.ambari.server.orm.dao.HostDAO;
 import org.apache.ambari.server.orm.dao.HostRoleCommandDAO;
 import org.apache.ambari.server.security.SecurityHelper;
 import org.apache.ambari.server.security.SecurityHelperImpl;
 import org.apache.ambari.server.stack.StackManagerFactory;
-import org.apache.ambari.server.stageplanner.RoleGraphFactory;
 import org.apache.ambari.server.state.Cluster;
 import org.apache.ambari.server.state.Clusters;
 import org.apache.ambari.server.state.Config;
@@ -59,7 +56,6 @@ import org.apache.ambari.server.state.ServiceComponentHostFactory;
 import org.apache.ambari.server.state.ServiceComponentImpl;
 import org.apache.ambari.server.state.ServiceFactory;
 import org.apache.ambari.server.state.ServiceImpl;
-import org.apache.ambari.server.state.UpgradeContextFactory;
 import org.apache.ambari.server.state.cluster.ClusterFactory;
 import org.apache.ambari.server.state.cluster.ClusterImpl;
 import org.apache.ambari.server.state.configgroup.ConfigGroup;
@@ -320,12 +316,9 @@ public class AgentResourceTest extends RandomPortJerseyTest {
       bind(HostDAO.class).toInstance(createNiceMock(HostDAO.class));
       bind(Clusters.class).toInstance(createNiceMock(Clusters.class));
       bind(PersistedState.class).toInstance(createNiceMock(PersistedState.class));
-      bind(RoleCommandOrderProvider.class).to(CachedRoleCommandOrderProvider.class);
     }
 
     private void installDependencies() {
-      install(new FactoryModuleBuilder().build(UpgradeContextFactory.class));
-      install(new FactoryModuleBuilder().build(RoleGraphFactory.class));
       install(new FactoryModuleBuilder().implement(
           Cluster.class, ClusterImpl.class).build(ClusterFactory.class));
       install(new FactoryModuleBuilder().implement(

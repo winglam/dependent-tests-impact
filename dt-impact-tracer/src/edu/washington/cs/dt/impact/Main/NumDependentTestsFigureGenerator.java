@@ -2,6 +2,7 @@
 package edu.washington.cs.dt.impact.Main;
 
 import java.io.File;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -17,7 +18,8 @@ import edu.washington.cs.dt.impact.tools.FileTools;
 import edu.washington.cs.dt.impact.util.Constants;
 
 public class NumDependentTestsFigureGenerator extends FigureGenerator {
-	private static final int NUM_PROJECTS = 5;
+	private static final int NUM_PROJECTS = 6;
+	private static final String FIGURE_GENERATOR_COMMAND_FILE = "figureGeneratorCommands.tex";
 
 	/*
 	 * a private method to generate a line of LaTeX needed for figure 7
@@ -86,10 +88,18 @@ public class NumDependentTestsFigureGenerator extends FigureGenerator {
 	private static class IntegerWrapper {
 		public int numConfigWithDT;
 		public int numConfig;
+		public double origTotalNumDTsInAllAlgorithms;
+		public double autoTotalNumDTsInAllAlgorithms;
+		public double[] origParaTotalNumDTInAllAlgorithms;
+		public double[] autoParaTotalNumDTInAllAlgorithms;
 
 		public IntegerWrapper() {
 			numConfigWithDT = 0;
 			numConfig = 0;
+			origTotalNumDTsInAllAlgorithms = 0.0;
+			autoTotalNumDTsInAllAlgorithms = 0.0;
+			origParaTotalNumDTInAllAlgorithms = new double[4];
+			autoParaTotalNumDTInAllAlgorithms = new double[4];
 		}
 	}
 
@@ -111,9 +121,11 @@ public class NumDependentTestsFigureGenerator extends FigureGenerator {
 			total = new int[NUM_PRIOR_TECHNIQUES];
 		}
 
+		boolean isFig9 = false;
 		for (Project temp2 : projList) {
 			ProjectNumDependentTests temp = (ProjectNumDependentTests) temp2;
 			if (temp.isFig9()) {
+				isFig9 = true;
 				if (type.equals("orig")) {
 					latexString += generate9(temp.getName(), temp.get_fig9_human_orig(), temp.get_fig9_human_time(),
 							total, numConfigWithDT);
@@ -143,9 +155,11 @@ public class NumDependentTestsFigureGenerator extends FigureGenerator {
 		latexString += "\\hline";
 		latexString += "\r\n";
 		latexString += "\\textbf{Total}";
+		int sum = 0;
 		for (int i = 0; i < total.length; i++) {
 			latexString += " & ";
 			latexString += total[i];
+			sum += total[i];
 		}
 		latexString += "\\\\";
 
@@ -153,6 +167,25 @@ public class NumDependentTestsFigureGenerator extends FigureGenerator {
 		latexString += "\\hline";
 
 		numConfigWithDT.numConfig += total.length * projList.size();
+		if (type.equals("orig")) {
+			numConfigWithDT.origTotalNumDTsInAllAlgorithms = ((double) sum) / total.length;
+		} else {
+			numConfigWithDT.autoTotalNumDTsInAllAlgorithms = ((double) sum) / total.length;
+		}
+
+		if (isFig9) {
+			for (int i = 0; i < total.length; i++) {
+				int index = i;
+				if (index > 3) {
+					index -= 4;
+				}
+				if (type.equals("orig")) {
+					numConfigWithDT.origParaTotalNumDTInAllAlgorithms[index] += total[i];
+				} else {
+					numConfigWithDT.autoParaTotalNumDTInAllAlgorithms[index] += total[i];
+				}
+			}
+		}
 
 		// take off the "\r\n" from the last line
 		return latexString;
@@ -176,18 +209,25 @@ public class NumDependentTestsFigureGenerator extends FigureGenerator {
 		String minBoundAutoDTFile = getArgName(argsList, "-minBoundAutoDTFile");
 		Map<String, Integer> autoProjectToDT = parseDTFile(minBoundAutoDTFile);
 
+		int maxOrigDT = sumProjectToDT(origProjectToDT);
+		int maxAutoDT = sumProjectToDT(autoProjectToDT);
+
 		boolean outputPrecomputedDependencesTime = argsList.contains("-getPrecomputedDependencesTime");
+		boolean getDTLists = argsList.contains("-getDTLists");
 
 		List<List<Project>> proj_orig_arrayList = new ArrayList<List<Project>>();
 		List<List<Project>> proj_auto_arrayList = new ArrayList<List<Project>>();
+
+		// delete existing figureGeneratorCommand.tex
+		writeToLatexFile("", FIGURE_GENERATOR_COMMAND_FILE, false);
 
 		if (priorDirectoryName != null) {
 			// create a list of project Objects that each have a diff project
 			// name
 			List<Project> prior_proj_orig_arrayList = new ArrayList<Project>(NUM_PROJECTS);
 			List<Project> prior_proj_auto_arrayList = new ArrayList<Project>(NUM_PROJECTS);
-			setProjectLists(argsList, priorDirectoryName, prior_proj_orig_arrayList, prior_proj_auto_arrayList);
-			generateLatexFile(outputDirectoryName, prior_proj_orig_arrayList, prior_proj_auto_arrayList);
+			setProjectLists(argsList, priorDirectoryName, prior_proj_orig_arrayList, prior_proj_auto_arrayList, getDTLists);
+			generateLatexFile(outputDirectoryName, prior_proj_orig_arrayList, prior_proj_auto_arrayList, maxOrigDT, maxAutoDT);
 			proj_orig_arrayList.add(prior_proj_orig_arrayList);
 			proj_auto_arrayList.add(prior_proj_auto_arrayList);
 		}
@@ -197,8 +237,8 @@ public class NumDependentTestsFigureGenerator extends FigureGenerator {
 			// name
 			List<Project> sele_proj_orig_arrayList = new ArrayList<Project>(NUM_PROJECTS);
 			List<Project> sele_proj_auto_arrayList = new ArrayList<Project>(NUM_PROJECTS);
-			setProjectLists(argsList, seleDirectoryName, sele_proj_orig_arrayList, sele_proj_auto_arrayList);
-			generateLatexFile(outputDirectoryName, sele_proj_orig_arrayList, sele_proj_auto_arrayList);
+			setProjectLists(argsList, seleDirectoryName, sele_proj_orig_arrayList, sele_proj_auto_arrayList, getDTLists);
+			generateLatexFile(outputDirectoryName, sele_proj_orig_arrayList, sele_proj_auto_arrayList, maxOrigDT, maxAutoDT);
 			proj_orig_arrayList.add(sele_proj_orig_arrayList);
 			proj_auto_arrayList.add(sele_proj_auto_arrayList);
 		}
@@ -208,8 +248,8 @@ public class NumDependentTestsFigureGenerator extends FigureGenerator {
 			// name
 			List<Project> para_proj_orig_arrayList = new ArrayList<Project>(NUM_PROJECTS);
 			List<Project> para_proj_auto_arrayList = new ArrayList<Project>(NUM_PROJECTS);
-			setProjectLists(argsList, paraDirectoryName, para_proj_orig_arrayList, para_proj_auto_arrayList);
-			generateLatexFile(outputDirectoryName, para_proj_orig_arrayList, para_proj_auto_arrayList);
+			setProjectLists(argsList, paraDirectoryName, para_proj_orig_arrayList, para_proj_auto_arrayList, getDTLists);
+			generateLatexFile(outputDirectoryName, para_proj_orig_arrayList, para_proj_auto_arrayList, maxOrigDT, maxAutoDT);
 			proj_orig_arrayList.add(para_proj_orig_arrayList);
 			proj_auto_arrayList.add(para_proj_auto_arrayList);
 		}
@@ -222,8 +262,8 @@ public class NumDependentTestsFigureGenerator extends FigureGenerator {
 					"Auto and Orig number of techniques and test suites given is not the same (prior-orig, prior-auto, ...)");
 		}
 
-		Map<String, StringBuilder> projectToStr = new TreeMap<String, StringBuilder>();
-		Map<String, StringBuilder> projectToPrecomputedDepStr = new TreeMap<String, StringBuilder>();
+		Map<String, List<String>> projectToStr = new TreeMap<String, List<String>>();
+		Map<String, List<String>> projectToPrecomputedDepValues = new TreeMap<String, List<String>>();
 
 		Map<String, List<List<Set<String>>>> typeToTechnique = new HashMap<String, List<List<Set<String>>>>();
 		typeToTechnique.put("orig", initDTsExposedPerAlgoArray());
@@ -244,17 +284,15 @@ public class NumDependentTestsFigureGenerator extends FigureGenerator {
 					throw new RuntimeException("Orig and Auto project names do not match.");
 				}
 
-				StringBuilder preDepSb = projectToPrecomputedDepStr.get(origProj.getName());
+				List<String> preDepSb = projectToPrecomputedDepValues.get(origProj.getName());
 				if (preDepSb == null) {
-					preDepSb = new StringBuilder();
-					preDepSb.append(origProj.getName());
-					projectToPrecomputedDepStr.put(origProj.getName(), preDepSb);
+					preDepSb = new ArrayList<String>();
+					projectToPrecomputedDepValues.put(origProj.getName(), preDepSb);
 				}
 
-				StringBuilder sb = projectToStr.get(origProj.getName());
+				List<String> sb = projectToStr.get(origProj.getName());
 				if (sb == null) {
-					sb = new StringBuilder();
-					sb.append(origProj.getName());
+					sb = new ArrayList<String>();
 					projectToStr.put(origProj.getName(), sb);
 				}
 
@@ -285,6 +323,20 @@ public class NumDependentTestsFigureGenerator extends FigureGenerator {
 						autoDTs.addAll(DTs);
 						typeToTechnique.get("auto").get(2).get(1).addAll(DTs);
 					}
+
+					// If we want parallelization information for just k=16
+					//					origDTs.addAll(origProj.get_fig9_human_orig()[3]);
+					//					typeToTechnique.get("orig").get(2).get(0).addAll(origProj.get_fig9_human_orig()[3]);
+					//
+					//					origDTs.addAll(origProj.get_fig9_human_time()[3]);
+					//					typeToTechnique.get("orig").get(2).get(1).addAll(origProj.get_fig9_human_time()[3]);
+					//
+					//					autoDTs.addAll(autoProj.get_fig9_auto_orig()[3]);
+					//					typeToTechnique.get("auto").get(2).get(0).addAll(autoProj.get_fig9_auto_orig()[3]);
+					//
+					//					autoDTs.addAll(autoProj.get_fig9_auto_time()[3]);
+					//					typeToTechnique.get("auto").get(2).get(1).addAll(autoProj.get_fig9_auto_time()[3]);
+
 					avgPreDepOrigTime = computeAverageTimeInArray(origProj.getFig9_human_fixed_time());
 					avgPreDepAutoTime = computeAverageTimeInArray(autoProj.getFig9_auto_fixed_time());
 				} else if (origProj.isFig8()) {
@@ -310,64 +362,74 @@ public class NumDependentTestsFigureGenerator extends FigureGenerator {
 					avgPreDepOrigTime = computeAverageTimeInArray(origProj.getFig7_human_fixed_time());
 					avgPreDepAutoTime = computeAverageTimeInArray(autoProj.getFig7_auto_fixed_time());
 				}
-				sb.append(" & ");
 				double origPercent = (double) origDTs.size() / origProjectToDT.get(origProj.getName());
-				sb.append(formatPercent(origPercent));
-				sb.append(" & ");
+				sb.add(formatPercent(origPercent, false));
 				double autoPercent = (double) autoDTs.size() / autoProjectToDT.get(autoProj.getName());
-				sb.append(formatPercent(autoPercent));
+				sb.add(formatPercent(autoPercent, false));
 
-				preDepSb.append(" & ");
-				preDepSb.append(formatTimeToString(avgPreDepOrigTime));
-				preDepSb.append(" & ");
-				preDepSb.append(formatTimeToString(avgPreDepAutoTime));
+				preDepSb.add(formatTimeToString(avgPreDepOrigTime));
+				preDepSb.add(formatTimeToString(avgPreDepAutoTime));
 			}
 		}
 
 		if (outputPrecomputedDependencesTime) {
 			String precomputedDepTimeOutputFilename = outputDirectoryName + System.getProperty("file.separator")
 				+ "precomputed-dependences-time-per-program.tex";
-			StringBuilder precomputedDepTimeString = new StringBuilder();
-			for (String key : projectToPrecomputedDepStr.keySet()) {
-				precomputedDepTimeString.append(projectToPrecomputedDepStr.get(key));
-				precomputedDepTimeString.append(" \\\\\r\n");
-			}
-			writeToLatexFile(precomputedDepTimeString.toString(), precomputedDepTimeOutputFilename, false);
+			writeToLatexFile(addPhantomZerosToString(projectToPrecomputedDepValues), precomputedDepTimeOutputFilename, false);
 		}
 
 		String perProgramOutputFilename = outputDirectoryName + System.getProperty("file.separator")
 				+ "dts-per-program.tex";
-		StringBuilder perProgramString = new StringBuilder();
-		for (String key : projectToStr.keySet()) {
-			perProgramString.append(projectToStr.get(key));
-			perProgramString.append(" \\\\\r\n");
-		}
-		writeToLatexFile(perProgramString.toString(), perProgramOutputFilename, false);
+		writeToLatexFile(addPhantomZerosToString(projectToStr), perProgramOutputFilename, false);
 
-		// Get total number of minimum lower bound of DTs
-		int origLowerBoundSum = 0, autoLowerBoundSum = 0;
-		for (String key : origProjectToDT.keySet()) {
-			origLowerBoundSum += origProjectToDT.get(key);
-		}
-		for (String key : autoProjectToDT.keySet()) {
-			autoLowerBoundSum += autoProjectToDT.get(key);
-		}
+		Map<String, List<String>> perAlgoMap = new HashMap<String, List<String>>();
+		List<String> perAlgoProgList = new ArrayList<String>();
+		List<String> perAlgoAutoList = new ArrayList<String>();
+		perAlgoMap.put("Prog", perAlgoProgList);
+		perAlgoMap.put("Auto", perAlgoAutoList);
+
+		buildPerAlgoString(perAlgoProgList, typeToTechnique, maxOrigDT, "orig");
+		buildPerAlgoString(perAlgoAutoList, typeToTechnique, maxAutoDT, "auto");
 
 		String perAlgoOutputFilename = outputDirectoryName + System.getProperty("file.separator")
-				+ "dts-per-algorithm.tex";
-		StringBuilder perAlgoString = new StringBuilder();
-		perAlgoString.append("Prog");
-		buildPerAlgoString(perAlgoString, typeToTechnique, origLowerBoundSum, "orig");
-		perAlgoString.append(" \\\\\r\n");
-		perAlgoString.append("Auto");
-		buildPerAlgoString(perAlgoString, typeToTechnique, autoLowerBoundSum, "auto");
-		perAlgoString.append(" \\\\\r\n");
-		writeToLatexFile(perAlgoString.toString(), perAlgoOutputFilename, false);
+		+ "dts-per-algorithm.tex";
+		writeToLatexFile(addPhantomZerosToString(perAlgoMap), perAlgoOutputFilename, false);
+	}
+
+	private static String addPhantomZerosToString(Map<String, List<String>> projectToStr) {
+		StringBuilder perProgramString = new StringBuilder();
+
+		int size = projectToStr.values().iterator().next().size();
+		int[] maxSizes = new int[size];
+		for (int k = 0; k < size; k++) {
+			for (String key : projectToStr.keySet()) {
+				List<String> values = projectToStr.get(key);
+				int valueSize = values.get(k).length();
+				if (maxSizes[k] < valueSize) {
+					maxSizes[k] = valueSize;
+				}
+			}
+		}
+
+		for (String key : projectToStr.keySet()) {
+			List<String> values = projectToStr.get(key);
+			perProgramString.append(key);
+			for (int k = 0; k < values.size(); k++) {
+				perProgramString.append(" & ");
+				int valueSize = values.get(k).length();
+				while (valueSize < maxSizes[k]) {
+					perProgramString.append("\\z");
+					valueSize += 1;
+				}
+				perProgramString.append(values.get(k));
+			}
+			perProgramString.append(" \\\\\r\n");
+		}
+		return perProgramString.toString();
 	}
 
 	private static String formatTimeToString(double time) {
 		int intTime = (int) time;
-		StringBuilder sb = new StringBuilder();
 
 	    final int MINUTES_IN_AN_HOUR = 60;
 	    final int SECONDS_IN_A_MINUTE = 60;
@@ -377,27 +439,21 @@ public class NumDependentTestsFigureGenerator extends FigureGenerator {
 
 	    int hours = minutes / MINUTES_IN_AN_HOUR;
 	    minutes -= hours * MINUTES_IN_AN_HOUR;
-
-		if (hours != 0) {
-//			if (hours < 10) {
-//				sb.append("\\z");
-//			}
-			sb.append(hours);
-			sb.append("h ");
+		
+		double retTime = hours * 60.0;
+		retTime += minutes;
+		retTime += intTime / 60.0;
+		
+		DecimalFormat f = new DecimalFormat("#0.0");
+		return f.format(retTime);
+	}
+	
+	private static int sumProjectToDT(Map<String, Integer> projectToDT) {
+		int sum = 0;
+		for (String key : projectToDT.keySet()) {
+			sum += projectToDT.get(key);
 		}
-		if (minutes != 0) {
-			if (minutes < 10) {
-				sb.append("\\z");
-			}
-			sb.append(minutes);
-			sb.append("m ");
-		}
-		if (intTime < 10) {
-			sb.append("\\z");
-		}
-		sb.append(intTime);
-		sb.append("s");
-		return sb.toString();
+		return sum;
 	}
 
 	private static double computeAverageTimeInArray(double[] timeArr) {
@@ -412,13 +468,12 @@ public class NumDependentTestsFigureGenerator extends FigureGenerator {
 		return sum / count;
 	}
 
-	private static void buildPerAlgoString(StringBuilder perAlgoString,
+	private static void buildPerAlgoString(List<String> perAlgoString,
 			Map<String, List<List<Set<String>>>> typeToTechnique, int lowerBound, String testType) {
 		for (int i = 0; i < typeToTechnique.get(testType).size(); i++) {
 			for (int j = 0; j < typeToTechnique.get(testType).get(i).size(); j++) {
 				double origPercent = (double) typeToTechnique.get(testType).get(i).get(j).size() / lowerBound;
-				perAlgoString.append(" & ");
-				perAlgoString.append(formatPercent(origPercent));
+				perAlgoString.add(formatPercent(origPercent, false));
 			}
 		}
 	}
@@ -474,9 +529,23 @@ public class NumDependentTestsFigureGenerator extends FigureGenerator {
 		}
 	}
 
+	private static String convertIToK(int i) {
+		if (i == 0) {
+			return "Two";
+		} else if (i == 1) {
+			return "Four";
+		} else if (i == 2) {
+			return "Eight";
+		} else if (i == 3) {
+			return "Sixteen";
+		}
+		return "Zero";
+	}
+
 	public static void generateLatexFile(String outputDirectoryName, List<Project> proj_orig_arrayList,
-			List<Project> proj_auto_arrayList) {
+			List<Project> proj_auto_arrayList, int maxOrigDT, int maxAutoDT) {
 		IntegerWrapper numConfigWithDT = new IntegerWrapper();
+		StringBuilder sb = new StringBuilder();
 
 		// generate LaTeX for the human-written and automatic test suites
 		String origLatexString = generateLatexString(proj_orig_arrayList, "orig", numConfigWithDT);
@@ -488,6 +557,9 @@ public class NumDependentTestsFigureGenerator extends FigureGenerator {
 				+ numConfigWithDT.numConfigWithDT;
 		autoLatexString += "\n%Number of configurations (including orig and auto): " + numConfigWithDT.numConfig;
 
+		String avgOrigTests = formatPercent(numConfigWithDT.origTotalNumDTsInAllAlgorithms / maxOrigDT, false) + "\\xspace}";
+		String avgAutoTests = formatPercent(numConfigWithDT.autoTotalNumDTsInAllAlgorithms / maxAutoDT, false) + "\\xspace}";
+
 		String origOutputFilename = outputDirectoryName + System.getProperty("file.separator");
 		String autoOutputFilename = outputDirectoryName + System.getProperty("file.separator");
 		if ((!proj_orig_arrayList.isEmpty() && ((ProjectNumDependentTests) proj_orig_arrayList.get(0)).isFig9())
@@ -495,22 +567,41 @@ public class NumDependentTestsFigureGenerator extends FigureGenerator {
 						&& ((ProjectNumDependentTests) proj_auto_arrayList.get(0)).isFig9())) {
 			origOutputFilename += "figure9-orig-results.tex";
 			autoOutputFilename += "figure9-auto-results.tex";
+
+			sb.append("\\newcommand{\\avgOrigParaTestsAllK}{" + avgOrigTests + "\n");
+			sb.append("\\newcommand{\\avgAutoParaTestsAllK}{" + avgAutoTests + "\n");
+
+			for (int i = 0; i < numConfigWithDT.origParaTotalNumDTInAllAlgorithms.length; i++) {
+				String avgParaTests = formatPercent((numConfigWithDT.origParaTotalNumDTInAllAlgorithms[i] / 2) / maxOrigDT, false) + "\\xspace}";
+				sb.append("\\newcommand{\\avgOrigParaTestsK" + convertIToK(i) +"}{" + avgParaTests + "\n");
+			}
+
+			for (int i = 0; i < numConfigWithDT.autoParaTotalNumDTInAllAlgorithms.length; i++) {
+				String avgParaTests = formatPercent((numConfigWithDT.autoParaTotalNumDTInAllAlgorithms[i] / 2) / maxAutoDT, false) + "\\xspace}";
+				sb.append("\\newcommand{\\avgAutoParaTestsK" + convertIToK(i) +"}{" + avgParaTests + "\n");
+			}
 		} else if ((!proj_orig_arrayList.isEmpty() && ((ProjectNumDependentTests) proj_orig_arrayList.get(0)).isFig8())
 				|| (!proj_auto_arrayList.isEmpty()
 						&& ((ProjectNumDependentTests) proj_auto_arrayList.get(0)).isFig8())) {
 			origOutputFilename += "figure8-orig-results.tex";
 			autoOutputFilename += "figure8-auto-results.tex";
+
+			sb.append("\\newcommand{\\avgOrigSeleTests}{" + avgOrigTests + "\n");
+			sb.append("\\newcommand{\\avgAutoSeleTests}{" + avgAutoTests + "\n");
 		} else { // fig 7
 			origOutputFilename += "figure7-orig-results.tex";
 			autoOutputFilename += "figure7-auto-results.tex";
+			sb.append("\\newcommand{\\avgOrigPriorTests}{" + avgOrigTests + "\n");
+			sb.append("\\newcommand{\\avgAutoPriorTests}{" + avgAutoTests + "\n");
 		}
 
 		writeToLatexFile(origLatexString, origOutputFilename, false);
 		writeToLatexFile(autoLatexString, autoOutputFilename, false);
+		writeToLatexFile(sb.toString(), FIGURE_GENERATOR_COMMAND_FILE, true);
 	}
 
 	public static void setProjectLists(List<String> argsList, String directoryName, List<Project> proj_orig_arrayList,
-			List<Project> proj_auto_arrayList) {
+			List<Project> proj_auto_arrayList, boolean getDTLists) {
 
 		// String minBoundDependencesOrig = getArgName(argsList,
 		// "-minBoundDependencesOrig");
@@ -586,6 +677,39 @@ public class NumDependentTestsFigureGenerator extends FigureGenerator {
 
 				// get the number of dts
 				List<String> numTotal = parseFileForDTs(file, Constants.NOT_FIXED_DTS);
+
+				if (getDTLists) {
+					StringBuilder fileName = new StringBuilder();
+					fileName.append(techniqueName);
+					fileName.append("-");
+					fileName.append(projectName);
+					fileName.append("-");
+					fileName.append(testType);
+					fileName.append("-");
+					if (techniqueName.equals("parallelization")) {
+						index = flagsList.indexOf("-numOfMachines");
+						String numMachines_string = flagsList.get(index + 1);
+						int numMachines = Integer.parseInt(numMachines_string);
+						fileName.append(numMachines);
+					} else {
+						fileName.append(coverageName);
+					}
+					fileName.append("-");
+					fileName.append(orderName);
+					fileName.append(".txt");
+
+					StringBuilder fileContents = new StringBuilder();
+					List<String> dtList = parseFileForDTs(file, Constants.DT_LIST);
+	                for (int j = 0; j < dtList.size();) {
+	                    for (int i = 0; i < 5; j++) {
+	                    	fileContents.append(dtList.get(j) + "\n");
+	                        i++;
+	                    }
+	                    fileContents.append("\n");
+	                }
+
+	                writeToLatexFile(fileContents.toString(), fileName.toString(), false);
+				}
 
 				int numOfFixedDTs = parseFileForNumOfDTs(file, Constants.FIXED_DTS);
 				double timeInFile = parseFileForMaxTime(file, Constants.TIME_INCL_DTF);

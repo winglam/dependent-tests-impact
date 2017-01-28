@@ -1,0 +1,25 @@
+org.apache.ambari.server.agent.ActionQueue.dequeue : r3 = specialinvoke r0.<org.apache.ambari.server.agent.ActionQueue: java.util.Queue getQueue(java.lang.String)>(r1) >>>>>>>> org.apache.ambari.server.agent.ActionQueue.dequeue : if r3 != null
+org.apache.ambari.server.agent.ActionQueue.dequeue : if r3 != null >>>>>>>> org.apache.ambari.server.agent.ActionQueue.dequeue : return null
+org.apache.ambari.server.agent.ActionQueue.dequeue : if r3 != null >>>>>>>> org.apache.ambari.server.agent.ActionQueue.dequeue : $z0 = interfaceinvoke r3.<java.util.Queue: boolean isEmpty()>()
+org.apache.ambari.server.agent.ActionQueue.dequeue : $z0 = interfaceinvoke r3.<java.util.Queue: boolean isEmpty()>() >>>>>>>> org.apache.ambari.server.agent.ActionQueue.dequeue : if $z0 == 0
+org.apache.ambari.server.agent.ActionQueue.dequeue : if $z0 == 0 >>>>>>>> org.apache.ambari.server.agent.ActionQueue.dequeue : return null
+org.apache.ambari.server.agent.ActionQueue.dequeue : if $z0 == 0 >>>>>>>> org.apache.ambari.server.agent.ActionQueue.dequeue : r4 = null
+org.apache.ambari.server.agent.ActionQueue.dequeue : r4 = null >>>>>>>> org.apache.ambari.server.agent.ActionQueue.dequeue : r5 = interfaceinvoke r3.<java.util.Queue: java.util.Iterator iterator()>()
+org.apache.ambari.server.agent.ActionQueue.dequeue : r5 = interfaceinvoke r3.<java.util.Queue: java.util.Iterator iterator()>() >>>>>>>> org.apache.ambari.server.agent.ActionQueue.dequeue : $z1 = interfaceinvoke r5.<java.util.Iterator: boolean hasNext()>()
+org.apache.ambari.server.agent.ActionQueue.dequeue : $z1 = interfaceinvoke r5.<java.util.Iterator: boolean hasNext()>() >>>>>>>> org.apache.ambari.server.agent.ActionQueue.dequeue : if $z1 == 0
+org.apache.ambari.server.agent.ActionQueue.dequeue : if $z1 == 0 >>>>>>>> org.apache.ambari.server.agent.ActionQueue.dequeue : $r7 = interfaceinvoke r5.<java.util.Iterator: java.lang.Object next()>()
+org.apache.ambari.server.agent.ActionQueue.dequeue : if $z1 == 0 >>>>>>>> org.apache.ambari.server.agent.ActionQueue.dequeue : return r4
+org.apache.ambari.server.agent.ActionQueue.dequeue : $r7 = interfaceinvoke r5.<java.util.Iterator: java.lang.Object next()>() >>>>>>>> org.apache.ambari.server.agent.ActionQueue.dequeue : r6 = (org.apache.ambari.server.agent.AgentCommand) $r7
+org.apache.ambari.server.agent.ActionQueue.dequeue : r6 = (org.apache.ambari.server.agent.AgentCommand) $r7 >>>>>>>> org.apache.ambari.server.agent.ActionQueue.dequeue : $z2 = r6 instanceof org.apache.ambari.server.agent.ExecutionCommand
+org.apache.ambari.server.agent.ActionQueue.dequeue : $z2 = r6 instanceof org.apache.ambari.server.agent.ExecutionCommand >>>>>>>> org.apache.ambari.server.agent.ActionQueue.dequeue : if $z2 == 0
+org.apache.ambari.server.agent.ActionQueue.dequeue : if $z2 == 0 >>>>>>>> org.apache.ambari.server.agent.ActionQueue.dequeue : $r8 = (org.apache.ambari.server.agent.ExecutionCommand) r6
+org.apache.ambari.server.agent.ActionQueue.dequeue : if $z2 == 0 >>>>>>>> org.apache.ambari.server.agent.ActionQueue.dequeue : goto [?= $z1 = interfaceinvoke r5.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.agent.ActionQueue.dequeue : goto [?= $z1 = interfaceinvoke r5.<java.util.Iterator: boolean hasNext()>()] >>>>>>>> org.apache.ambari.server.agent.ActionQueue.dequeue : $z1 = interfaceinvoke r5.<java.util.Iterator: boolean hasNext()>()
+org.apache.ambari.server.agent.ActionQueue.dequeue : $r8 = (org.apache.ambari.server.agent.ExecutionCommand) r6 >>>>>>>> org.apache.ambari.server.agent.ActionQueue.dequeue : $r9 = virtualinvoke $r8.<org.apache.ambari.server.agent.ExecutionCommand: java.lang.String getCommandId()>()
+org.apache.ambari.server.agent.ActionQueue.dequeue : $r9 = virtualinvoke $r8.<org.apache.ambari.server.agent.ExecutionCommand: java.lang.String getCommandId()>() >>>>>>>> org.apache.ambari.server.agent.ActionQueue.dequeue : $z3 = virtualinvoke $r9.<java.lang.String: boolean equals(java.lang.Object)>(r2)
+org.apache.ambari.server.agent.ActionQueue.dequeue : $z3 = virtualinvoke $r9.<java.lang.String: boolean equals(java.lang.Object)>(r2) >>>>>>>> org.apache.ambari.server.agent.ActionQueue.dequeue : if $z3 == 0
+org.apache.ambari.server.agent.ActionQueue.dequeue : if $z3 == 0 >>>>>>>> org.apache.ambari.server.agent.ActionQueue.dequeue : r4 = r6
+org.apache.ambari.server.agent.ActionQueue.dequeue : if $z3 == 0 >>>>>>>> org.apache.ambari.server.agent.ActionQueue.dequeue : goto [?= $z1 = interfaceinvoke r5.<java.util.Iterator: boolean hasNext()>()]
+org.apache.ambari.server.agent.ActionQueue.dequeue : r4 = r6 >>>>>>>> org.apache.ambari.server.agent.ActionQueue.dequeue : interfaceinvoke r5.<java.util.Iterator: void remove()>()
+org.apache.ambari.server.agent.ActionQueue.dequeue : interfaceinvoke r5.<java.util.Iterator: void remove()>() >>>>>>>> org.apache.ambari.server.agent.ActionQueue.dequeue : goto [?= return r4]
+org.apache.ambari.server.agent.ActionQueue.dequeue : goto [?= return r4] >>>>>>>> org.apache.ambari.server.agent.ActionQueue.dequeue : return r4

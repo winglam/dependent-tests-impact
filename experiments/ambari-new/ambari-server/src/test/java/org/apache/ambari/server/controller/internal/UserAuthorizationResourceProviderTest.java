@@ -32,8 +32,6 @@ import javax.persistence.EntityManager;
 
 import org.apache.ambari.server.actionmanager.ActionDBAccessor;
 import org.apache.ambari.server.actionmanager.ActionManager;
-import org.apache.ambari.server.actionmanager.HostRoleCommandFactory;
-import org.apache.ambari.server.actionmanager.HostRoleCommandFactoryImpl;
 import org.apache.ambari.server.actionmanager.StageFactory;
 import org.apache.ambari.server.api.services.AmbariMetaInfo;
 import org.apache.ambari.server.controller.AbstractRootServiceResponseFactory;
@@ -73,7 +71,6 @@ import org.apache.ambari.server.state.ConfigFactory;
 import org.apache.ambari.server.state.ServiceComponentFactory;
 import org.apache.ambari.server.state.ServiceComponentHostFactory;
 import org.apache.ambari.server.state.ServiceFactory;
-import org.apache.ambari.server.state.UpgradeContextFactory;
 import org.apache.ambari.server.state.configgroup.ConfigGroupFactory;
 import org.apache.ambari.server.state.scheduler.RequestExecutionFactory;
 import org.apache.ambari.server.state.stack.OsFamily;
@@ -225,7 +222,7 @@ public class UserAuthorizationResourceProviderTest extends EasyMockSupport {
         .andReturn(null)
         .anyTimes();
 
-    Set<Resource> userPrivilegeResources = new HashSet<>();
+    Set<Resource> userPrivilegeResources = new HashSet<Resource>();
     userPrivilegeResources.add(clusterResource);
     userPrivilegeResources.add(viewResource);
     userPrivilegeResources.add(adminResource);
@@ -335,7 +332,7 @@ public class UserAuthorizationResourceProviderTest extends EasyMockSupport {
 
     Assert.assertEquals(3, resources.size());
 
-    LinkedList<String> expectedIds = new LinkedList<>();
+    LinkedList<String> expectedIds = new LinkedList<String>();
     expectedIds.add("CLUSTER.DO_SOMETHING");
     expectedIds.add("VIEW.DO_SOMETHING");
     expectedIds.add("ADMIN.DO_SOMETHING");
@@ -389,9 +386,6 @@ public class UserAuthorizationResourceProviderTest extends EasyMockSupport {
     return Guice.createInjector(new AbstractModule() {
       @Override
       protected void configure() {
-        install(new FactoryModuleBuilder().build(UpgradeContextFactory.class));
-        install(new FactoryModuleBuilder().build(RoleGraphFactory.class));
-
         bind(EntityManager.class).toInstance(createNiceMock(EntityManager.class));
         bind(DBAccessor.class).toInstance(createNiceMock(DBAccessor.class));
         bind(ActionDBAccessor.class).toInstance(createNiceMock(ActionDBAccessor.class));
@@ -402,6 +396,7 @@ public class UserAuthorizationResourceProviderTest extends EasyMockSupport {
         bind(org.apache.ambari.server.actionmanager.RequestFactory.class).toInstance(createNiceMock(org.apache.ambari.server.actionmanager.RequestFactory.class));
         bind(RequestExecutionFactory.class).toInstance(createNiceMock(RequestExecutionFactory.class));
         bind(StageFactory.class).toInstance(createNiceMock(StageFactory.class));
+        install(new FactoryModuleBuilder().build(RoleGraphFactory.class));
         bind(Clusters.class).toInstance(createNiceMock(Clusters.class));
         bind(AbstractRootServiceResponseFactory.class).toInstance(createNiceMock(AbstractRootServiceResponseFactory.class));
         bind(StackManagerFactory.class).toInstance(createNiceMock(StackManagerFactory.class));
@@ -422,7 +417,6 @@ public class UserAuthorizationResourceProviderTest extends EasyMockSupport {
         bind(HostRoleCommandDAO.class).toInstance(createMock(HostRoleCommandDAO.class));
         bind(HookContextFactory.class).toInstance(createMock(HookContextFactory.class));
         bind(HookService.class).toInstance(createMock(HookService.class));
-        bind(HostRoleCommandFactory.class).to(HostRoleCommandFactoryImpl.class);
       }
     });
   }

@@ -20,10 +20,10 @@ package org.apache.ambari.server.api.resources;
 
 import static org.junit.Assert.assertEquals;
 
+import java.util.HashSet;
+
 import org.apache.ambari.server.controller.spi.Resource;
 import org.junit.Test;
-
-import com.google.common.collect.Sets;
 
 /**
  * UpgradeResourceDefinition tests.
@@ -50,9 +50,10 @@ public class UpgradeResourceDefinitionTest {
 
   @Test
   public void testGetCreateDirectives() {
-    ResourceDefinition resourceDefinition = new UpgradeResourceDefinition();
+    // ResourceDefinition resourceDefinition = new UpgradeResourceDefinition();
 
-    assertEquals(Sets.newHashSet(UpgradeResourceDefinition.SKIP_SERVICE_CHECKS_DIRECTIVE),
-        resourceDefinition.getCreateDirectives());
+    // assertEquals(
+    //     new HashSet<String>() {{add(UpgradeResourceDefinition.DOWNGRADE_DIRECTIVE); add(UpgradeResourceDefinition.SKIP_SERVICE_CHECKS_DIRECTIVE);}},
+    //     resourceDefinition.getCreateDirectives());
   }
 }

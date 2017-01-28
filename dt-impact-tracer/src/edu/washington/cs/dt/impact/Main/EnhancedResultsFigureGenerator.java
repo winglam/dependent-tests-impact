@@ -608,7 +608,7 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
         double origGeoMean = 1.0 - (Math.pow(diffOfOrig, (1.0 / origCounter)) - 1.0);
         String data;
         if (isPercent) {
-            data = formatPercent(origGeoMean);
+            data = formatPercent(origGeoMean, false);
         } else {
             data = formatAPFD(origGeoMean);
         }
@@ -1035,10 +1035,10 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
         String autoLatexString = generateLatexString(proj_auto_arrayList, proj_orig_arrayList, "auto", percentRuntime);
 
         origLatexString += "\n%Percent increase compared to unenhanced (including orig and auto): "
-                + formatPercent(percentRuntime.percent);
+                + formatPercent(percentRuntime.percent, false);
         origLatexString += "\n%Number of comparisons (including orig and auto): " + percentRuntime.numPercents;
         autoLatexString += "\n%Percent increase compared to unenhanced (including orig and auto): "
-                + formatPercent(percentRuntime.percent);
+                + formatPercent(percentRuntime.percent, false);
         autoLatexString += "\n%Number of comparisons (including orig and auto): " + percentRuntime.numPercents;
 
         String origOutputFilename = outputDirectoryName + System.getProperty("file.separator");

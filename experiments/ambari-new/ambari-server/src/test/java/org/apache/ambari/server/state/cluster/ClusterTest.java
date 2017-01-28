@@ -2034,8 +2034,7 @@ public class ClusterTest {
     Assert.assertNotNull(cv2);
     Assert.assertEquals(cv2.getState(), RepositoryVersionState.INSTALLED);
 
-    // Add one more Host, with only Ganglia on it. It should have a HostVersion in NOT_REQUIRED for v2,
-    // as Ganglia isn't versionable
+    // Add one more Host, with only Ganglia on it. It should have a HostVersion in OUT_OF_SYNC for v2
     addHost("h-5", hostAttributes);
     clusters.mapAndPublishHostsToCluster(Collections.singleton("h-5"), clusterName);
     ServiceComponentHost schHost5Serv3CompB = serviceComponentHostFactory.createNew(sc3CompB, "h-5");
@@ -2044,7 +2043,7 @@ public class ClusterTest {
     // Host 5 will be in OUT_OF_SYNC, so redistribute bits to it so that it reaches a state of INSTALLED
     HostVersionEntity h5Version2 = hostVersionDAO.findByClusterStackVersionAndHost(clusterName, stackId, v2, "h-5");
     Assert.assertNotNull(h5Version2);
-    Assert.assertEquals(RepositoryVersionState.NOT_REQUIRED, h5Version2.getState());
+    Assert.assertEquals(h5Version2.getState(), RepositoryVersionState.OUT_OF_SYNC);
 
     h5Version2.setState(RepositoryVersionState.INSTALLED);
     hostVersionDAO.merge(h5Version2);

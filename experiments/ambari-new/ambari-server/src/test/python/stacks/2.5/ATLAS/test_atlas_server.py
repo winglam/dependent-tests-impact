@@ -140,7 +140,8 @@ class TestAtlasServer(RMFTestCase):
                               mode=0755
     )
     self.assertResourceCalled('File', '/usr/lib/ambari-infra-solr-client/log4j.properties',
-                              content=self.getConfig()['configurations']['infra-solr-client-log4j']['content'],
+                              content=InlineTemplate(self.getConfig()['configurations'][
+                                                       'infra-solr-client-log4j']['content']),
                               mode=0644,
     )
     self.assertResourceCalled('File', '/var/log/ambari-infra-solr-client/solr-client.log',
@@ -180,8 +181,6 @@ class TestAtlasServer(RMFTestCase):
                               owner = "hbase",
                               group = "hadoop",
                               content=Template("atlas_hbase_setup.rb.j2"))
-
-    self.assertResourceCalled('File', '/etc/atlas/conf/hdfs-site.xml',action = ['delete'],)
 
     self.assertNoMoreResources()
 

@@ -44,6 +44,6 @@ runSelection
 echo "Running paralleization-runner script"
 runParallelization
 
-#java -cp ${impactJarCP} edu.washington.cs.dt.impact.Main.NumDependentTestsFigureGenerator -priorDirectory ${priorDir} -seleDirectory ${seleDir} -paraDirectory ${paraDir} -outputDirectory ./ -minBoundOrigDTFile ORIG_MIN_DTs.txt -minBoundAutoDTFile AUTO_MIN_DTs.txt
+java -cp ${impactJarCP} edu.washington.cs.dt.impact.Main.NumDependentTestsFigureGenerator -priorDirectory ${priorDir} -seleDirectory ${seleDir} -paraDirectory ${paraDir} -outputDirectory ./ -minBoundOrigDTFile ORIG_MIN_DTs.txt -minBoundAutoDTFile AUTO_MIN_DTs.txt
 
 echo "Script has finished running."

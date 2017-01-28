@@ -374,8 +374,7 @@ class TestHDP25StackAdvisor(TestCase):
     clusterData = {
       "cpu": 4,
       "containers": 5,
-      "ramPerContainer": 256,
-      "yarnMinContainerSize": 256
+      "ramPerContainer": 256
     }
     expected = {
       "spark2-defaults": {
@@ -802,8 +801,7 @@ class TestHDP25StackAdvisor(TestCase):
       "ramPerContainer": 512,
       "referenceNodeManagerHost" : {
         "total_mem" : 10240 * 1024
-      },
-      "yarnMinContainerSize": 512
+      }
     }
 
 
@@ -971,8 +969,7 @@ class TestHDP25StackAdvisor(TestCase):
       "ramPerContainer": 512,
       "referenceNodeManagerHost" : {
         "total_mem" : 10240 * 1024
-      },
-      "yarnMinContainerSize": 512
+      }
     }
 
     configurations = {
@@ -1152,8 +1149,7 @@ class TestHDP25StackAdvisor(TestCase):
       "ramPerContainer": 512,
       "referenceNodeManagerHost" : {
         "total_mem" : 10240 * 1024
-      },
-      "yarnMinContainerSize": 512
+      }
     }
 
 
@@ -1165,7 +1161,7 @@ class TestHDP25StackAdvisor(TestCase):
     self.assertEqual(configurations['hive-interactive-site']['properties']['hive.server2.tez.sessions.per.default.queue'], '1')
     self.assertEquals(configurations['hive-interactive-site']['property_attributes']['hive.server2.tez.sessions.per.default.queue'], {'minimum': '1', 'maximum': '1'})
 
-    self.assertTrue(configurations['hive-interactive-env']['properties']['num_llap_nodes'], 3)
+    self.assertTrue('num_llap_nodes' not in configurations['hive-interactive-env']['properties'])
 
 
     self.assertEqual(configurations['hive-interactive-site']['properties']['hive.llap.daemon.yarn.container.mb'], '9216')
@@ -1352,8 +1348,7 @@ class TestHDP25StackAdvisor(TestCase):
       "ramPerContainer": 512,
       "referenceNodeManagerHost" : {
         "total_mem" : 10240 * 2048
-      },
-      "yarnMinContainerSize": 512
+      }
     }
 
 
@@ -1364,7 +1359,9 @@ class TestHDP25StackAdvisor(TestCase):
 
     self.assertEquals(configurations['hive-interactive-site']['property_attributes']['hive.server2.tez.sessions.per.default.queue'], {'maximum': '1'})
 
-    self.assertTrue(configurations['hive-interactive-env']['properties']['num_llap_nodes'], 3)
+    self.assertTrue('num_llap_nodes' not in configurations['hive-interactive-env']['properties'])
+
+
     self.assertEqual(configurations['hive-interactive-site']['properties']['hive.llap.daemon.yarn.container.mb'], '9548')
 
     self.assertEqual(configurations['hive-interactive-site']['properties']['hive.llap.daemon.num.executors'], '1')
@@ -1545,8 +1542,7 @@ class TestHDP25StackAdvisor(TestCase):
       "ramPerContainer": 1024,
       "referenceNodeManagerHost" : {
         "total_mem" : 51200 * 1024
-      },
-      "yarnMinContainerSize": 1024
+      }
     }
 
     configurations = {
@@ -1557,7 +1553,9 @@ class TestHDP25StackAdvisor(TestCase):
 
     self.assertEquals(configurations['hive-interactive-site']['property_attributes']['hive.server2.tez.sessions.per.default.queue'], {'maximum': '1'})
 
-    self.assertTrue(configurations['hive-interactive-env']['properties']['num_llap_nodes'], 3)
+    self.assertTrue('num_llap_nodes' not in configurations['hive-interactive-env']['properties'])
+
+
     self.assertEqual(configurations['hive-interactive-site']['properties']['hive.llap.daemon.yarn.container.mb'], '48128')
 
     self.assertEqual(configurations['hive-interactive-site']['properties']['hive.llap.daemon.num.executors'], '1')
@@ -1746,8 +1744,7 @@ class TestHDP25StackAdvisor(TestCase):
       "ramPerContainer": 2048,
       "referenceNodeManagerHost" : {
         "total_mem" : 40960 * 1024
-      },
-      "yarnMinContainerSize": 1024
+      }
     }
 
     configurations = {
@@ -1758,7 +1755,9 @@ class TestHDP25StackAdvisor(TestCase):
     self.assertEqual(configurations['hive-interactive-site']['properties']['hive.server2.tez.sessions.per.default.queue'], '1')
     self.assertEquals(configurations['hive-interactive-site']['property_attributes']['hive.server2.tez.sessions.per.default.queue'], {'maximum': '1.0', 'minimum': '1'})
 
-    self.assertTrue(configurations['hive-interactive-env']['properties']['num_llap_nodes'], 3)
+    self.assertTrue('num_llap_nodes' not in configurations['hive-interactive-env']['properties'])
+
+
     self.assertEqual(configurations['hive-interactive-site']['properties']['hive.llap.daemon.yarn.container.mb'], '38912')
 
     self.assertEqual(configurations['hive-interactive-site']['properties']['hive.llap.daemon.num.executors'], '4')
@@ -1941,8 +1940,7 @@ class TestHDP25StackAdvisor(TestCase):
       "ramPerContainer": 341,
       "referenceNodeManagerHost" : {
         "total_mem" : 12288 * 1024
-      },
-      "yarnMinContainerSize": 341
+      }
     }
 
 
@@ -1955,8 +1953,9 @@ class TestHDP25StackAdvisor(TestCase):
     self.assertEqual(configurations['hive-interactive-site']['properties']['hive.server2.tez.sessions.per.default.queue'], '1')
     self.assertEquals(configurations['hive-interactive-site']['property_attributes']['hive.server2.tez.sessions.per.default.queue'], {'minimum': '1', 'maximum': '1'})
     self.assertEqual(configurations['capacity-scheduler']['properties'], {'capacity-scheduler': 'yarn.scheduler.capacity.root.accessible-node-labels=*\nyarn.scheduler.capacity.maximum-am-resource-percent=1\nyarn.scheduler.capacity.node-locality-delay=40\nyarn.scheduler.capacity.root.capacity=100\nyarn.scheduler.capacity.root.default.state=RUNNING\nyarn.scheduler.capacity.root.default.maximum-capacity=0.0\nyarn.scheduler.capacity.root.queues=default,llap\nyarn.scheduler.capacity.maximum-applications=10000\nyarn.scheduler.capacity.root.default.user-limit-factor=1\nyarn.scheduler.capacity.root.acl_administer_queue=*\nyarn.scheduler.capacity.root.default.acl_submit_applications=*\nyarn.scheduler.capacity.root.default.capacity=0.0\nyarn.scheduler.capacity.queue-mappings-override.enable=false\nyarn.scheduler.capacity.root.llap.user-limit-factor=1\nyarn.scheduler.capacity.root.llap.state=RUNNING\nyarn.scheduler.capacity.root.llap.ordering-policy=fifo\nyarn.scheduler.capacity.root.llap.minimum-user-limit-percent=100\nyarn.scheduler.capacity.root.llap.maximum-capacity=100.0\nyarn.scheduler.capacity.root.llap.capacity=100.0\nyarn.scheduler.capacity.root.llap.acl_submit_applications=hive\nyarn.scheduler.capacity.root.llap.acl_administer_queue=hive\nyarn.scheduler.capacity.root.llap.maximum-am-resource-percent=1'})
+    self.assertTrue('num_llap_nodes' not in configurations['hive-interactive-env']['properties'])
 
-    self.assertTrue(configurations['hive-interactive-env']['properties']['num_llap_nodes'], 3)
+
     self.assertEqual(configurations['hive-interactive-site']['properties']['hive.llap.daemon.yarn.container.mb'], '11594')
 
     self.assertEqual(configurations['hive-interactive-site']['properties']['hive.llap.daemon.num.executors'], '3')
@@ -2139,8 +2138,7 @@ class TestHDP25StackAdvisor(TestCase):
       "ramPerContainer": 2048,
       "referenceNodeManagerHost" : {
         "total_mem" : 204800 * 1024
-      },
-      "yarnMinContainerSize": 1024
+      }
     }
 
     configurations = {
@@ -2152,7 +2150,9 @@ class TestHDP25StackAdvisor(TestCase):
     self.assertEqual(configurations['capacity-scheduler']['properties'], {'capacity-scheduler': 'yarn.scheduler.capacity.root.accessible-node-labels=*\nyarn.scheduler.capacity.maximum-am-resource-percent=1\nyarn.scheduler.capacity.node-locality-delay=40\nyarn.scheduler.capacity.root.capacity=100\nyarn.scheduler.capacity.root.default.state=RUNNING\nyarn.scheduler.capacity.root.default.maximum-capacity=0.0\nyarn.scheduler.capacity.root.queues=default,llap\nyarn.scheduler.capacity.maximum-applications=10000\nyarn.scheduler.capacity.root.default.user-limit-factor=1\nyarn.scheduler.capacity.root.acl_administer_queue=*\nyarn.scheduler.capacity.root.default.acl_submit_applications=*\nyarn.scheduler.capacity.root.default.capacity=0.0\nyarn.scheduler.capacity.queue-mappings-override.enable=false\nyarn.scheduler.capacity.root.llap.user-limit-factor=1\nyarn.scheduler.capacity.root.llap.state=RUNNING\nyarn.scheduler.capacity.root.llap.ordering-policy=fifo\nyarn.scheduler.capacity.root.llap.minimum-user-limit-percent=100\nyarn.scheduler.capacity.root.llap.maximum-capacity=100.0\nyarn.scheduler.capacity.root.llap.capacity=100.0\nyarn.scheduler.capacity.root.llap.acl_submit_applications=hive\nyarn.scheduler.capacity.root.llap.acl_administer_queue=hive\nyarn.scheduler.capacity.root.llap.maximum-am-resource-percent=1'})
     self.assertEquals(configurations['hive-interactive-site']['property_attributes']['hive.server2.tez.sessions.per.default.queue'], {'maximum': '1'})
 
-    self.assertTrue(configurations['hive-interactive-env']['properties']['num_llap_nodes'], 3)
+    self.assertTrue('num_llap_nodes' not in configurations['hive-interactive-env']['properties'])
+
+
     self.assertEqual(configurations['hive-interactive-site']['properties']['hive.llap.daemon.yarn.container.mb'], '202752')
 
     self.assertEqual(configurations['hive-interactive-site']['properties']['hive.llap.daemon.num.executors'], '3')
@@ -2340,8 +2340,7 @@ class TestHDP25StackAdvisor(TestCase):
       "ramPerContainer": 3072,
       "referenceNodeManagerHost" : {
         "total_mem" : 40960 * 1024
-      },
-      "yarnMinContainerSize": 1024
+      }
     }
 
 
@@ -2355,7 +2354,9 @@ class TestHDP25StackAdvisor(TestCase):
     self.assertEqual(configurations['hive-interactive-site']['properties']['hive.server2.tez.sessions.per.default.queue'], '1.0')
     self.assertEquals(configurations['hive-interactive-site']['property_attributes']['hive.server2.tez.sessions.per.default.queue'], {'maximum': '2.0', 'minimum': '1'})
 
-    self.assertTrue(configurations['hive-interactive-env']['properties']['num_llap_nodes'], 5)
+    self.assertTrue('num_llap_nodes' not in configurations['hive-interactive-env']['properties'])
+
+
     self.assertEqual(configurations['hive-interactive-site']['properties']['hive.llap.daemon.yarn.container.mb'], '36864')
 
     self.assertEqual(configurations['hive-interactive-site']['properties']['hive.llap.daemon.num.executors'], '4')
@@ -2537,8 +2538,7 @@ class TestHDP25StackAdvisor(TestCase):
       "ramPerContainer": 341,
       "referenceNodeManagerHost" : {
         "total_mem" : 204800 * 1024
-      },
-      "yarnMinContainerSize": 341
+      }
     }
 
 
@@ -2552,7 +2552,9 @@ class TestHDP25StackAdvisor(TestCase):
     self.assertEqual(configurations['hive-interactive-site']['properties']['hive.server2.tez.sessions.per.default.queue'], '2.0')
     self.assertEquals(configurations['hive-interactive-site']['property_attributes']['hive.server2.tez.sessions.per.default.queue'], {'maximum': '5.0', 'minimum': '1'})
 
-    self.assertTrue(configurations['hive-interactive-env']['properties']['num_llap_nodes'], 3)
+    self.assertTrue('num_llap_nodes' not in configurations['hive-interactive-env']['properties'])
+
+
     self.assertEqual(configurations['hive-interactive-site']['properties']['hive.llap.daemon.yarn.container.mb'], '204259')
 
     self.assertEqual(configurations['hive-interactive-site']['properties']['hive.llap.daemon.num.executors'], '10')
@@ -2733,8 +2735,7 @@ class TestHDP25StackAdvisor(TestCase):
       "ramPerContainer": 82240,
       "referenceNodeManagerHost" : {
         "total_mem" : 204800 * 1024
-      },
-      "yarnMinContainerSize": 1024
+      }
     }
 
     configurations = {
@@ -2745,7 +2746,9 @@ class TestHDP25StackAdvisor(TestCase):
     self.assertEqual(configurations['capacity-scheduler']['properties'], {'capacity-scheduler': 'yarn.scheduler.capacity.root.accessible-node-labels=*\nyarn.scheduler.capacity.maximum-am-resource-percent=1\nyarn.scheduler.capacity.node-locality-delay=40\nyarn.scheduler.capacity.root.capacity=100\nyarn.scheduler.capacity.root.default.state=RUNNING\nyarn.scheduler.capacity.root.default.maximum-capacity=0.0\nyarn.scheduler.capacity.root.queues=default,llap\nyarn.scheduler.capacity.maximum-applications=10000\nyarn.scheduler.capacity.root.default.user-limit-factor=1\nyarn.scheduler.capacity.root.acl_administer_queue=*\nyarn.scheduler.capacity.root.default.acl_submit_applications=*\nyarn.scheduler.capacity.root.default.capacity=0.0\nyarn.scheduler.capacity.queue-mappings-override.enable=false\nyarn.scheduler.capacity.root.llap.user-limit-factor=1\nyarn.scheduler.capacity.root.llap.state=RUNNING\nyarn.scheduler.capacity.root.llap.ordering-policy=fifo\nyarn.scheduler.capacity.root.llap.minimum-user-limit-percent=100\nyarn.scheduler.capacity.root.llap.maximum-capacity=100.0\nyarn.scheduler.capacity.root.llap.capacity=100.0\nyarn.scheduler.capacity.root.llap.acl_submit_applications=hive\nyarn.scheduler.capacity.root.llap.acl_administer_queue=hive\nyarn.scheduler.capacity.root.llap.maximum-am-resource-percent=1'})
     self.assertEquals(configurations['hive-interactive-site']['property_attributes']['hive.server2.tez.sessions.per.default.queue'], {'maximum': '1.0'})
 
-    self.assertTrue(configurations['hive-interactive-env']['properties']['num_llap_nodes'], 3)
+    self.assertTrue('num_llap_nodes' not in configurations['hive-interactive-env']['properties'])
+
+
     self.assertEqual(configurations['hive-interactive-site']['properties']['hive.llap.daemon.yarn.container.mb'], '202752')
 
     self.assertEqual(configurations['hive-interactive-site']['properties']['hive.llap.daemon.num.executors'], '3')
@@ -2924,8 +2927,7 @@ class TestHDP25StackAdvisor(TestCase):
       "ramPerContainer": 82240,
       "referenceNodeManagerHost" : {
         "total_mem" : 328960 * 1024
-      },
-      "yarnMinContainerSize": 1024
+      }
     }
 
 
@@ -2936,7 +2938,9 @@ class TestHDP25StackAdvisor(TestCase):
     self.assertTrue('capacity-scheduler' not in configurations)
     self.assertEquals(configurations['hive-interactive-site']['property_attributes']['hive.server2.tez.sessions.per.default.queue'], {'maximum': '1.0'})
 
-    self.assertTrue(configurations['hive-interactive-env']['properties']['num_llap_nodes'], 3)
+    self.assertTrue('num_llap_nodes' not in configurations['hive-interactive-env']['properties'])
+
+
     self.assertEqual(configurations['hive-interactive-site']['properties']['hive.llap.daemon.yarn.container.mb'], '202752')
 
     self.assertEqual(configurations['hive-interactive-site']['properties']['hive.llap.daemon.num.executors'], '3')
@@ -3144,8 +3148,7 @@ class TestHDP25StackAdvisor(TestCase):
       "ramPerContainer": 512,
       "referenceNodeManagerHost" : {
         "total_mem" : 10240 * 1024
-      },
-      "yarnMinContainerSize": 512
+      }
     }
 
     configurations = {
@@ -3158,13 +3161,15 @@ class TestHDP25StackAdvisor(TestCase):
     self.assertEqual(configurations['hive-interactive-site']['properties']['hive.server2.tez.sessions.per.default.queue'], '1')
     self.assertEquals(configurations['hive-interactive-site']['property_attributes']['hive.server2.tez.sessions.per.default.queue'], {'maximum': '1.0', 'minimum': '1'})
 
-    self.assertTrue(configurations['hive-interactive-env']['properties']['num_llap_nodes'], 3)
-    self.assertEqual(configurations['hive-interactive-site']['properties']['hive.llap.daemon.yarn.container.mb'], '204288')
+    self.assertTrue('num_llap_nodes' not in configurations['hive-interactive-env']['properties'])
+
+
+    self.assertEqual(configurations['hive-interactive-site']['properties']['hive.llap.daemon.yarn.container.mb'], '9728')
 
     self.assertEqual(configurations['hive-interactive-site']['properties']['hive.llap.daemon.num.executors'], '3')
     self.assertEqual(configurations['hive-interactive-site']['properties']['hive.llap.io.threadpool.size'], '3')
 
-    self.assertEqual(configurations['hive-interactive-site']['properties']['hive.llap.io.memory.size'], '198144')
+    self.assertEqual(configurations['hive-interactive-site']['properties']['hive.llap.io.memory.size'], '3584')
     self.assertEqual(configurations['hive-interactive-site']['properties']['hive.llap.io.enabled'], 'true')
 
     self.assertEqual(configurations['hive-interactive-env']['properties']['llap_heap_size'], '4915')
@@ -3369,8 +3374,7 @@ class TestHDP25StackAdvisor(TestCase):
       "ramPerContainer": 512,
       "referenceNodeManagerHost" : {
         "total_mem" : 10240 * 1024
-      },
-      "yarnMinContainerSize": 512
+      }
     }
 
     configurations = {
@@ -3562,8 +3566,7 @@ class TestHDP25StackAdvisor(TestCase):
       "ramPerContainer": 82240,
       "referenceNodeManagerHost" : {
         "total_mem" : 328960 * 1024
-      },
-      "yarnMinContainerSize": 1024
+      }
     }
 
     configurations = {
@@ -3745,8 +3748,7 @@ class TestHDP25StackAdvisor(TestCase):
       "ramPerContainer": 82240,
       "referenceNodeManagerHost" : {
         "total_mem" : 328960 * 1024
-      },
-      "yarnMinContainerSize": 1024
+      }
     }
 
     configurations = {
@@ -3758,7 +3760,9 @@ class TestHDP25StackAdvisor(TestCase):
     self.assertEqual(configurations['hive-interactive-site']['properties']['hive.server2.tez.sessions.per.default.queue'], '1')
     self.assertEquals(configurations['hive-interactive-site']['property_attributes']['hive.server2.tez.sessions.per.default.queue'], {'maximum': '1', 'minimum': '1'})
 
-    self.assertTrue(configurations['hive-interactive-env']['properties']['num_llap_nodes'], 1)
+    self.assertTrue('num_llap_nodes' not in configurations['hive-interactive-env']['properties'])
+
+
     self.assertEqual(configurations['hive-interactive-site']['properties']['hive.llap.daemon.yarn.container.mb'], '200704')
 
     self.assertEqual(configurations['hive-interactive-site']['properties']['hive.llap.daemon.num.executors'], '3')
@@ -3876,8 +3880,7 @@ class TestHDP25StackAdvisor(TestCase):
       "ramPerContainer": 512,
       "referenceNodeManagerHost" : {
         "total_mem" : 10240 * 1024
-      },
-      "yarnMinContainerSize": 512
+      }
     }
 
     configurations = {
@@ -3922,8 +3925,7 @@ class TestHDP25StackAdvisor(TestCase):
       "amMemory": 2000,
       "reduceMemory": 2056,
       "containers": 3,
-      "ramPerContainer": 256,
-      "yarnMinContainerSize": 256
+      "ramPerContainer": 256
     }
     expected = {
       'application-properties': {
@@ -4658,8 +4660,7 @@ class TestHDP25StackAdvisor(TestCase):
       "cpu": 4,
       "referenceNodeManagerHost" : {
         "total_mem" : 328960 * 1024
-      },
-      "yarnMinContainerSize": 256
+      }
     }
     hosts = {
       "items" : [

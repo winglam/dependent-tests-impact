@@ -34,8 +34,6 @@ import javax.persistence.EntityManager;
 
 import org.apache.ambari.server.actionmanager.ActionDBAccessor;
 import org.apache.ambari.server.actionmanager.ActionManager;
-import org.apache.ambari.server.actionmanager.HostRoleCommandFactory;
-import org.apache.ambari.server.actionmanager.HostRoleCommandFactoryImpl;
 import org.apache.ambari.server.actionmanager.RequestFactory;
 import org.apache.ambari.server.actionmanager.StageFactory;
 import org.apache.ambari.server.api.services.AmbariMetaInfo;
@@ -70,7 +68,6 @@ import org.apache.ambari.server.state.ConfigFactory;
 import org.apache.ambari.server.state.ServiceComponentFactory;
 import org.apache.ambari.server.state.ServiceComponentHostFactory;
 import org.apache.ambari.server.state.ServiceFactory;
-import org.apache.ambari.server.state.UpgradeContextFactory;
 import org.apache.ambari.server.state.configgroup.ConfigGroupFactory;
 import org.apache.ambari.server.state.scheduler.RequestExecutionFactory;
 import org.apache.ambari.server.state.stack.OsFamily;
@@ -227,9 +224,6 @@ public class UserResourceProviderTest extends EasyMockSupport {
     return Guice.createInjector(new AbstractModule() {
       @Override
       protected void configure() {
-        install(new FactoryModuleBuilder().build(UpgradeContextFactory.class));
-        install(new FactoryModuleBuilder().build(RoleGraphFactory.class));
-
         bind(EntityManager.class).toInstance(createNiceMock(EntityManager.class));
         bind(DBAccessor.class).toInstance(createNiceMock(DBAccessor.class));
         bind(ActionDBAccessor.class).toInstance(createNiceMock(ActionDBAccessor.class));
@@ -240,6 +234,7 @@ public class UserResourceProviderTest extends EasyMockSupport {
         bind(RequestFactory.class).toInstance(createNiceMock(RequestFactory.class));
         bind(RequestExecutionFactory.class).toInstance(createNiceMock(RequestExecutionFactory.class));
         bind(StageFactory.class).toInstance(createNiceMock(StageFactory.class));
+        install(new FactoryModuleBuilder().build(RoleGraphFactory.class));
         bind(Clusters.class).toInstance(createNiceMock(Clusters.class));
         bind(AbstractRootServiceResponseFactory.class).toInstance(createNiceMock(AbstractRootServiceResponseFactory.class));
         bind(StackManagerFactory.class).toInstance(createNiceMock(StackManagerFactory.class));
@@ -257,7 +252,6 @@ public class UserResourceProviderTest extends EasyMockSupport {
         bind(HostRoleCommandDAO.class).toInstance(createMock(HostRoleCommandDAO.class));
         bind(HookService.class).toInstance(createMock(HookService.class));
         bind(HookContextFactory.class).toInstance(createMock(HookContextFactory.class));
-        bind(HostRoleCommandFactory.class).to(HostRoleCommandFactoryImpl.class);
       }
     });
   }
@@ -283,9 +277,9 @@ public class UserResourceProviderTest extends EasyMockSupport {
     ResourceProvider provider = getResourceProvider(managementController);
 
     // add the property map to a set for the request.  add more maps for multiple creates
-    Set<Map<String, Object>> propertySet = new LinkedHashSet<>();
+    Set<Map<String, Object>> propertySet = new LinkedHashSet<Map<String, Object>>();
 
-    Map<String, Object> properties = new LinkedHashMap<>();
+    Map<String, Object> properties = new LinkedHashMap<String, Object>();
 
     // add properties to the request map
     properties.put(UserResourceProvider.USER_USERNAME_PROPERTY_ID, "User100");
@@ -330,7 +324,7 @@ public class UserResourceProviderTest extends EasyMockSupport {
 
     ResourceProvider provider = getResourceProvider(managementController);
 
-    Set<String> propertyIds = new HashSet<>();
+    Set<String> propertyIds = new HashSet<String>();
     propertyIds.add(UserResourceProvider.USER_USERNAME_PROPERTY_ID);
     propertyIds.add(UserResourceProvider.USER_PASSWORD_PROPERTY_ID);
 
@@ -372,7 +366,7 @@ public class UserResourceProviderTest extends EasyMockSupport {
 
     ResourceProvider provider = getResourceProvider(managementController);
 
-    Set<String> propertyIds = new HashSet<>();
+    Set<String> propertyIds = new HashSet<String>();
     propertyIds.add(UserResourceProvider.USER_USERNAME_PROPERTY_ID);
     propertyIds.add(UserResourceProvider.USER_PASSWORD_PROPERTY_ID);
 
@@ -412,7 +406,7 @@ public class UserResourceProviderTest extends EasyMockSupport {
     ResourceProvider provider = getResourceProvider(managementController);
 
     // add the property map to a set for the request.
-    Map<String, Object> properties = new LinkedHashMap<>();
+    Map<String, Object> properties = new LinkedHashMap<String, Object>();
     properties.put(UserResourceProvider.USER_ADMIN_PROPERTY_ID, "true");
 
     // create the request
@@ -446,7 +440,7 @@ public class UserResourceProviderTest extends EasyMockSupport {
     ResourceProvider provider = getResourceProvider(managementController);
 
     // add the property map to a set for the request.
-    Map<String, Object> properties = new LinkedHashMap<>();
+    Map<String, Object> properties = new LinkedHashMap<String, Object>();
     properties.put(UserResourceProvider.USER_ACTIVE_PROPERTY_ID, "true");
 
     Request request = PropertyHelper.getUpdateRequest(properties, null);
@@ -476,7 +470,7 @@ public class UserResourceProviderTest extends EasyMockSupport {
     ResourceProvider provider = getResourceProvider(managementController);
 
     // add the property map to a set for the request.
-    Map<String, Object> properties = new LinkedHashMap<>();
+    Map<String, Object> properties = new LinkedHashMap<String, Object>();
     properties.put(UserResourceProvider.USER_OLD_PASSWORD_PROPERTY_ID, "old_password");
     properties.put(UserResourceProvider.USER_PASSWORD_PROPERTY_ID, "new_password");
 
