@@ -1,6 +1,6 @@
-testType=orig
+testType=auto
 experiment=ambari
-experimentCP=../../../impact-tools/*:classes/:test-classes/:dependency/*:
+experimentCP=../../../impact-tools/*:classes/:test-classes/:dependency/*:randoop/bin/
 numTimesToRun=9999
 crossReferenceClass=edu.washington.cs.dt.impact.tools.CrossReferencer
 
