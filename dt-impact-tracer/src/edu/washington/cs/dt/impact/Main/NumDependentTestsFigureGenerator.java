@@ -213,6 +213,7 @@ public class NumDependentTestsFigureGenerator extends FigureGenerator {
 		int maxAutoDT = sumProjectToDT(autoProjectToDT);
 
 		boolean outputPrecomputedDependencesTime = argsList.contains("-getPrecomputedDependencesTime");
+		boolean getDTLists = argsList.contains("-getDTLists");
 
 		List<List<Project>> proj_orig_arrayList = new ArrayList<List<Project>>();
 		List<List<Project>> proj_auto_arrayList = new ArrayList<List<Project>>();
@@ -225,7 +226,7 @@ public class NumDependentTestsFigureGenerator extends FigureGenerator {
 			// name
 			List<Project> prior_proj_orig_arrayList = new ArrayList<Project>(NUM_PROJECTS);
 			List<Project> prior_proj_auto_arrayList = new ArrayList<Project>(NUM_PROJECTS);
-			setProjectLists(argsList, priorDirectoryName, prior_proj_orig_arrayList, prior_proj_auto_arrayList);
+			setProjectLists(argsList, priorDirectoryName, prior_proj_orig_arrayList, prior_proj_auto_arrayList, getDTLists);
 			generateLatexFile(outputDirectoryName, prior_proj_orig_arrayList, prior_proj_auto_arrayList, maxOrigDT, maxAutoDT);
 			proj_orig_arrayList.add(prior_proj_orig_arrayList);
 			proj_auto_arrayList.add(prior_proj_auto_arrayList);
@@ -236,7 +237,7 @@ public class NumDependentTestsFigureGenerator extends FigureGenerator {
 			// name
 			List<Project> sele_proj_orig_arrayList = new ArrayList<Project>(NUM_PROJECTS);
 			List<Project> sele_proj_auto_arrayList = new ArrayList<Project>(NUM_PROJECTS);
-			setProjectLists(argsList, seleDirectoryName, sele_proj_orig_arrayList, sele_proj_auto_arrayList);
+			setProjectLists(argsList, seleDirectoryName, sele_proj_orig_arrayList, sele_proj_auto_arrayList, getDTLists);
 			generateLatexFile(outputDirectoryName, sele_proj_orig_arrayList, sele_proj_auto_arrayList, maxOrigDT, maxAutoDT);
 			proj_orig_arrayList.add(sele_proj_orig_arrayList);
 			proj_auto_arrayList.add(sele_proj_auto_arrayList);
@@ -247,7 +248,7 @@ public class NumDependentTestsFigureGenerator extends FigureGenerator {
 			// name
 			List<Project> para_proj_orig_arrayList = new ArrayList<Project>(NUM_PROJECTS);
 			List<Project> para_proj_auto_arrayList = new ArrayList<Project>(NUM_PROJECTS);
-			setProjectLists(argsList, paraDirectoryName, para_proj_orig_arrayList, para_proj_auto_arrayList);
+			setProjectLists(argsList, paraDirectoryName, para_proj_orig_arrayList, para_proj_auto_arrayList, getDTLists);
 			generateLatexFile(outputDirectoryName, para_proj_orig_arrayList, para_proj_auto_arrayList, maxOrigDT, maxAutoDT);
 			proj_orig_arrayList.add(para_proj_orig_arrayList);
 			proj_auto_arrayList.add(para_proj_auto_arrayList);
@@ -600,7 +601,7 @@ public class NumDependentTestsFigureGenerator extends FigureGenerator {
 	}
 
 	public static void setProjectLists(List<String> argsList, String directoryName, List<Project> proj_orig_arrayList,
-			List<Project> proj_auto_arrayList) {
+			List<Project> proj_auto_arrayList, boolean getDTLists) {
 
 		// String minBoundDependencesOrig = getArgName(argsList,
 		// "-minBoundDependencesOrig");
@@ -676,6 +677,39 @@ public class NumDependentTestsFigureGenerator extends FigureGenerator {
 
 				// get the number of dts
 				List<String> numTotal = parseFileForDTs(file, Constants.NOT_FIXED_DTS);
+
+				if (getDTLists) {
+					StringBuilder fileName = new StringBuilder();
+					fileName.append(techniqueName);
+					fileName.append("-");
+					fileName.append(projectName);
+					fileName.append("-");
+					fileName.append(testType);
+					fileName.append("-");
+					if (techniqueName.equals("parallelization")) {
+						index = flagsList.indexOf("-numOfMachines");
+						String numMachines_string = flagsList.get(index + 1);
+						int numMachines = Integer.parseInt(numMachines_string);
+						fileName.append(numMachines);
+					} else {
+						fileName.append(coverageName);
+					}
+					fileName.append("-");
+					fileName.append(orderName);
+					fileName.append(".txt");
+
+					StringBuilder fileContents = new StringBuilder();
+					List<String> dtList = parseFileForDTs(file, Constants.DT_LIST);
+	                for (int j = 0; j < dtList.size();) {
+	                    for (int i = 0; i < 5; j++) {
+	                    	fileContents.append(dtList.get(j) + "\n");
+	                        i++;
+	                    }
+	                    fileContents.append("\n");
+	                }
+
+	                writeToLatexFile(fileContents.toString(), fileName.toString(), false);
+				}
 
 				int numOfFixedDTs = parseFileForNumOfDTs(file, Constants.FIXED_DTS);
 				double timeInFile = parseFileForMaxTime(file, Constants.TIME_INCL_DTF);
