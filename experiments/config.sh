@@ -54,6 +54,8 @@ newExperimentsCP=(crystal/impact-tools/*:crystal/bin/:crystal/libs/lib/* jfreech
 instrumentNewExperimentsCP=(impact-tools/*:bin/:libs/lib/* impact-tools/*:bin/:lib/* impact-tools/*:bin/:resources/:lib/* impact-tools/*:bin/:../synoptic/lib/*:../synoptic-ea407ba0a750/bin/:../daikonizer-ea407ba0a750/bin/ impact-tools/*:bin/:../xml-security-commons/bin/:data/:../xml-security-commons/libs/*)
 fixerNewExperimentsCP=(impact-tools/*:libs/lib/* impact-tools/*:lib/* impact-tools/*:resources/:lib/* impact-tools/*:../synoptic/lib/*:../synoptic-ea407ba0a750/bin/:../daikonizer-ea407ba0a750/bin/ impact-tools/*:../xml-security-commons/bin/:data/:../xml-security-commons/libs/*)
 
+newExperimentsCPNoDir=(impact-tools/*:bin/:libs/lib/* impact-tools/*:bin/:lib/* impact-tools/*:bin/:resources/:lib/* impact-tools/*:bin/:../synoptic/lib/*:../synoptic-ea407ba0a750/bin/:../daikonizer-ea407ba0a750/bin/ impact-tools/*:bin/:../xml-security-commons/bin/:data/:../xml-security-commons/libs/*)
+
 compileCP=(bin/:lib/* impact-tools/*:bin/:lib/* bin/:resources/:lib/* bin/:../synoptic/lib/*:../synoptic/bin/:../daikonizer/bin/ bin/:../xml-security-commons/bin/:data/:../xml-security-commons/libs/*)
 newCompileCP=(bin/:lib/* impact-tools/*:bin/:lib/* bin/:resources/:lib/* bin/:../synoptic/lib/*:../synoptic/bin/:../daikonizer/bin/ bin/:../xml-security-commons/bin/:data/:../xml-security-commons/libs/*)
 
