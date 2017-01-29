@@ -14,7 +14,7 @@ initialDir=`pwd`
 # leave any gaps. Ex. You can run only Crystal and JFreechart but
 # cannot run JFreechart and Jodatime. You can run Crystal, JFreechart
 # and Jodatime but cannot run Crystal and Jodatime.
-experiments=(crystal jfreechart jodatime synoptic xml_security)
+experiments=(crystal)
 testTypes=(auto)
 coverages=(statement function)
 machines=(2 4 8 16)
@@ -160,9 +160,9 @@ function runParallelizationOneConfigurationRunner() {
     #echo 'Running parallelization without resolveDependences and with dependentTestFile for original order'
     #java -cp $2 edu.washington.cs.dt.impact.Main.OneConfigurationRunner -technique parallelization -order original -origOrder $1-$3-order -testInputDir sootTestOutput-$3 -filesToDelete $1-env-files -project "$4" -testType $3 -numOfMachines $k -outputDir ${initialDir}/${paraDir} -timesToRun ${medianTimes} -dependentTestFile ${initialDir}/parallelization-dt-list/"parallelization-$4-$3-$k-original.txt"
 
-    #echo 'Running parallelization with resolveDependences and with dependentTestFile for time order'
-    #java -cp $2 edu.washington.cs.dt.impact.Main.OneConfigurationRunner -technique parallelization -order time -timeOrder $1-$3-time.txt -origOrder $1-$3-order -testInputDir sootTestOutput-$3 -filesToDelete $1-env-files -numOfMachines $k -project "$4" -testType $3 -timesToRun ${medianTimes} -outputDir ${initialDir}/${paraDir} -dependentTestFile ${initialDir}/parallelization-dt-list/"parallelization-$4-$3-$k-time.txt" -resolveDependences
-    echo 'Running parallelization with resolveDependences and with dependentTestFile for original order'
-    java -cp $2 edu.washington.cs.dt.impact.Main.OneConfigurationRunner -technique parallelization -order original -origOrder $1-$3-order -testInputDir sootTestOutput-$3 -filesToDelete $1-env-files -project "$4" -testType $3 -numOfMachines $k -outputDir ${initialDir}/${paraDir} -timesToRun ${medianTimes} -dependentTestFile ${initialDir}/parallelization-dt-list/"parallelization-$4-$3-$k-original.txt" -resolveDependences
+    echo 'Running parallelization with resolveDependences and with dependentTestFile for time order'
+    java -cp $2 edu.washington.cs.dt.impact.Main.OneConfigurationRunner -technique parallelization -order time -timeOrder $1-$3-time.txt -origOrder $1-$3-order -testInputDir sootTestOutput-$3 -filesToDelete $1-env-files -numOfMachines $k -project "$4" -testType $3 -timesToRun ${medianTimes} -outputDir ${initialDir}/${paraDir} -dependentTestFile ${initialDir}/parallelization-dt-list/"parallelization-$4-$3-$k-time.txt" -resolveDependences
+    #echo 'Running parallelization with resolveDependences and with dependentTestFile for original order'
+    #java -cp $2 edu.washington.cs.dt.impact.Main.OneConfigurationRunner -technique parallelization -order original -origOrder $1-$3-order -testInputDir sootTestOutput-$3 -filesToDelete $1-env-files -project "$4" -testType $3 -numOfMachines $k -outputDir ${initialDir}/${paraDir} -timesToRun ${medianTimes} -dependentTestFile ${initialDir}/parallelization-dt-list/"parallelization-$4-$3-$k-original.txt" -resolveDependences
   done
 }
