@@ -738,7 +738,11 @@ public class DependentTestFinder {
             if (independentTestIndex == -1) {
                 break;
             }
-            newIndependentTest = ALL_DT_LIST.get(independentTestIndex - 2).substring(Constants.TEST_LINE.length());
+            String newTest = ALL_DT_LIST.get(independentTestIndex - 2).substring(Constants.TEST_LINE.length());
+            if (newTest.equals(newIndependentTest)) {
+            	throw new RuntimeException(newIndependentTest + " appears numerous times in DT file!");
+            }
+            newIndependentTest = newTest;
         }
 
         // if dependentTestName isn't already in the ALL_DT_LIST, add it
