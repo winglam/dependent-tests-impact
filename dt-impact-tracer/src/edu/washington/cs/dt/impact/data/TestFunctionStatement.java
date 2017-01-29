@@ -133,6 +133,21 @@ public class TestFunctionStatement extends Observable implements Comparable<Test
     }
 
     @Override
+    public boolean equals(Object obj) {
+	   if (obj == null) {
+	        return false;
+	    }
+	    if (!TestFunctionStatement.class.isAssignableFrom(obj.getClass())) {
+	        return false;
+	    }
+	    final TestFunctionStatement other = (TestFunctionStatement) obj;
+	    if ((this.getName() == null) ? (other.getName() != null) : !this.getName().equals(other.getName())) {
+	        return false;
+	    }
+	    return true;
+    }
+
+    @Override
     public String toString() {
         return getName() + " : " + getLineCount();
     }

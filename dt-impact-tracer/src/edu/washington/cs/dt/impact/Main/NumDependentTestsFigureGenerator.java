@@ -648,9 +648,9 @@ public class NumDependentTestsFigureGenerator extends FigureGenerator {
 				String testType = flagsList.get(index + 1);
 
 				index = flagsList.indexOf("-dependentTestFile");
-				if (index != -1) { // only count files without dependentTestFile
-					continue;
-				}
+//				if (index != -1) { // only count files without dependentTestFile
+//					continue;
+//				}
 				// see if List needs to orig or auto generated one
 				List<Project> currProjList = null;
 				if (testType.equals("auto")) {
@@ -676,7 +676,7 @@ public class NumDependentTestsFigureGenerator extends FigureGenerator {
 				ProjectNumDependentTests currProj = (ProjectNumDependentTests) currProj2;
 
 				// get the number of dts
-				List<String> numTotal = parseFileForDTs(file, Constants.NOT_FIXED_DTS);
+				List<String> numTotal = parseFileForDTs(file, Constants.NOT_FIXED_DTS, false);
 
 				if (getDTLists) {
 					StringBuilder fileName = new StringBuilder();
@@ -699,7 +699,7 @@ public class NumDependentTestsFigureGenerator extends FigureGenerator {
 					fileName.append(".txt");
 
 					StringBuilder fileContents = new StringBuilder();
-					List<String> dtList = parseFileForDTs(file, Constants.DT_LIST);
+					List<String> dtList = parseFileForDTs(file, Constants.DT_LIST, true);
 	                for (int j = 0; j < dtList.size();) {
 	                    for (int i = 0; i < 5; j++) {
 	                    	fileContents.append(dtList.get(j) + "\n");
