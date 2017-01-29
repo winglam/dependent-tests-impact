@@ -90,7 +90,7 @@ public class FigureGenerator {
         return numDTs; // none of the lines contained the keyword
     }
     
-    public static List<String> parseFileForDTs(File file, String keyword) {
+    public static List<String> parseFileForDTs(File file, String keyword, boolean findLast) {
         List<String> DTs = new ArrayList<String>();
         Scanner scanner = null;
         try {
@@ -101,6 +101,9 @@ public class FigureGenerator {
                 	// Ex. [randoop.jfreechart.RandoopTest1.test300, randoop.jfreechart.RandoopTest4.test270, randoop.jfreechart.RandoopTest0.test79]
                 	currLine = scanner.nextLine();
                 	currLine = currLine.substring(1, currLine.length() - 1);
+                	if (findLast) {
+                		DTs.clear();
+                	}
                 	DTs.addAll(Arrays.asList(currLine.split(", ")));
                 }
             }
