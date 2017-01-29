@@ -284,8 +284,11 @@ public class DependentTestFinder {
             String currentKey = botTests.get(0);
             Map<String, List<String>> testToChunk = new HashMap<String, List<String>>();
             for (int j = 1; j < botTests.size(); j++) {
-                int fromIndex = fullTests.indexOf(currentKey);
                 int toIndex = fullTests.indexOf(botTests.get(j));
+                if (toIndex == -1) {
+                	continue;
+                }
+                int fromIndex = fullTests.indexOf(currentKey);
                 testToChunk.put(currentKey, new ArrayList<String>(fullTests.subList(fromIndex, toIndex)));
                 currentKey = botTests.get(j);
             }
