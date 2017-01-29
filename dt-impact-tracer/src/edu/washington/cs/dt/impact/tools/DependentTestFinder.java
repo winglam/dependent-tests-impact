@@ -304,7 +304,9 @@ public class DependentTestFinder {
             // tests to pin down the tests in each section that is relevant to the dependent test.
             for (; chainIndex >= 0; chainIndex--) {
                 fullChainTests.addAll(botTests.subList(0, chainIndex));
-                fullChainTests.addAll(testToChunk.get(botTests.get(chainIndex)));
+                if (testToChunk.get(botTests.get(chainIndex)) != null) {
+                    fullChainTests.addAll(testToChunk.get(botTests.get(chainIndex)));                	
+                }
                 fullChainTests.addAll(botTests.subList(chainIndex + 1, botTests.size()));
 
                 boolean fullChainResult = isTestResultDifferent(dependentTestName, fullChainTests);
