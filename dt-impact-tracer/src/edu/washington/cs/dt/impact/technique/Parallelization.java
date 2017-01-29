@@ -92,6 +92,15 @@ public class Parallelization extends Test {
                         currTTD.addDependentTest(nameToTimeData.get(tmd.getName()), false);
                     }
                 }
+                
+                List<TestFunctionStatement> filteredMethodList = new ArrayList<TestFunctionStatement>();
+                for (TestFunctionStatement tfs : methodList) {
+                	if (origList.contains(tfs.getName())) {
+                		filteredMethodList.add(tfs);
+                	}
+                }
+                
+                methodList = filteredMethodList;
                 Collections.sort(methodList);
             }
 
