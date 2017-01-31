@@ -440,11 +440,12 @@ public class NumDependentTestsFigureGenerator extends FigureGenerator {
 	    int hours = minutes / MINUTES_IN_AN_HOUR;
 	    minutes -= hours * MINUTES_IN_AN_HOUR;
 		
-		double retTime = hours * 60.0;
-		retTime += minutes;
-		retTime += intTime / 60.0;
+	    // return in seconds
+		double retTime = hours * 60.0 * 60.0;
+		retTime += minutes * 60.0;
+		retTime += intTime;
 		
-		DecimalFormat f = new DecimalFormat("#0.0");
+		DecimalFormat f = new DecimalFormat("#0");
 		return f.format(retTime);
 	}
 	
