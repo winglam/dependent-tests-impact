@@ -7,8 +7,9 @@ function runPrioritization() {
     mkdir ${priorDir}
 
     #./prioritization-runner.sh
+    #./enhanced-prioritization-runner.sh
     #./newExperimentsPrioritizationRunner.sh
-    ./enhanced-prioritization-runner.sh
+    ./enhancedNewExpPriorRunner.sh
     java -cp ${impactJarCP} edu.washington.cs.dt.impact.Main.EnhancedResultsFigureGenerator -directory ${priorDir} -outputDirectory ${priorDir} -allowNegatives
     #java -cp ${impactJarCP} edu.washington.cs.dt.impact.Main.NumDependentTestsFigureGenerator -directory ${priorDir} -outputDirectory ${priorDir}
 }
@@ -17,8 +18,8 @@ function runSelection() {
     rm -rf ${seleDir}
     mkdir ${seleDir}
 
-    ./selection-runner.sh
-    #./newExperimentsSelectionRunner.sh
+    #./selection-runner.sh
+    ./newExperimentsSelectionRunner.sh
     java -cp ${impactJarCP} edu.washington.cs.dt.impact.Main.EnhancedResultsFigureGenerator -directory ${seleDir} -outputDirectory ${seleDir} -allowNegatives
     #java -cp ${impactJarCP} edu.washington.cs.dt.impact.Main.NumDependentTestsFigureGenerator -directory ${seleDir} -outputDirectory ${seleDir}
 }
@@ -28,8 +29,9 @@ function runParallelization() {
     mkdir ${paraDir}
 
     #./parallelization-runner.sh
+    #./enhanced-parallelization-runner.sh
     #./newExperimentsParallelizationRunner.sh
-    ./enhanced-parallelization-runner.sh
+    ./enhancedNewExpParaRunner.sh
     java -cp ${impactJarCP} edu.washington.cs.dt.impact.Main.EnhancedResultsFigureGenerator -directory ${paraDir} -outputDirectory ${paraDir} -allowNegatives
     #java -cp ${impactJarCP} edu.washington.cs.dt.impact.Main.NumDependentTestsFigureGenerator -directory ${paraDir} -outputDirectory ${paraDir}
 }
