@@ -14,7 +14,7 @@ while [ "$index" -lt "$count" ]; do
     #echo 'Generating sootTestOutput'
     #java -cp ${nextExpCP[$index]} edu.washington.cs.dt.main.ImpactMain -inputTests ${newExperiments[$index]}-$k-order
     #mv sootTestOutput sootTestOutput-$k
-    java -cp ${nextExpCP[$index]} edu.washington.cs.dt.impact.Main.OneConfigurationRunner -technique prioritization -coverage statement -order original -origOrder ${newExperiments[$index]}-$k-order -testInputDir sootTestOutput-$k -filesToDelete ${newExperiments[$index]}-env-files -project "${newExperimentsName[$index]}" -testType $k -outputDir ${initialDir}/${priorDir} -timesToRun ${medianTimes} -getCoverage
+    java -cp ${nextExpCP[$index]} edu.washington.cs.dt.impact.Main.OneConfigurationRunner -technique prioritization -coverage statement -order original -origOrder ${newExperiments[$index]}-$k-order -testInputDir ${initialDir}/${newExpDirectories[$index]}/sootTestOutput-$k -filesToDelete ${newExperiments[$index]}-env-files -project "${newExperimentsName[$index]}" -testType $k -outputDir ${initialDir}/${priorDir} -timesToRun ${medianTimes} -getCoverage
 
     for i in "${coverages[@]}"; do
       for j in "${priorOrders[@]}"; do
