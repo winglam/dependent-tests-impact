@@ -56,7 +56,7 @@ The pre-computed test dependences should be the same, but you can re-generate th
  [154](https://github.com/winglam/dependent-tests-impact/blob/master/experiments/config.sh#L154)
  and 
  [156](https://github.com/winglam/dependent-tests-impact/blob/master/experiments/config.sh#L156)
- in `config.sh` (`#java -cp...` -> `java -cp...`)
+ in `config.sh` (`#java ...` -> `java ...`)
 
 However, note that doing so may take 200 hours.
 Our results for these pre-computed dependences can be found in
