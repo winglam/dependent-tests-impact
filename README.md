@@ -35,23 +35,25 @@ the results may not be identical to those in the submitted paper.
 While the numerical results differ, they still support the
 paper's claims.
 The results used to generate figure 5 in our paper can be found in
-`/home/user/dependent-tests-impact/results/issta17/figure5` while 
-the results used to generate figures 10, 11, and 12 can be found in
-`/home/user/dependent-tests-impact/results/issta17/enhanced-figures/results-in-paper`.
+[`/home/user/dependent-tests-impact/results/issta17/figure5`](https://github.com/winglam/dependent-tests-impact/tree/master/results/issta17/figure5)
+while the results used to generate figures 10, 11, and 12 can be found in
+[`/home/user/dependent-tests-impact/results/issta17/enhanced-figures/results-in-paper`](https://github.com/winglam/dependent-tests-impact/tree/master/results/issta17/enhanced-figures/results-in-paper).
 
-The files inside `/home/user/dependent-tests-impact/experiments/prioritization-dt-list`,
-`/home/user/dependent-tests-impact/experiments/selection-dt-list`, and
-`/home/user/dependent-tests-impact/experiments/parallelization-dt-list` contains
-the pre-computed test dependences for prioritization, selection and parallelziation (respectively).
+The files inside 
+[`/home/user/dependent-tests-impact/experiments/prioritization-dt-list`](https://github.com/winglam/dependent-tests-impact/tree/master/experiments/prioritization-dt-list),
+[`/home/user/dependent-tests-impact/experiments/selection-dt-list`](https://github.com/winglam/dependent-tests-impact/tree/master/experiments/selection-dt-list)
+, and
+[`/home/user/dependent-tests-impact/experiments/parallelization-dt-list`](https://github.com/winglam/dependent-tests-impact/tree/master/experiments/parallelization-dt-list)
+contains the pre-computed test dependences for prioritization, selection and parallelziation (respectively).
 
 The pre-computed test dependences should be the same, but you can re-generate them if you would like to do so:
  * delete the files in the directories listed above, and
  * uncomment line 32 in `prioritization-runner.sh`, line 69 in `selection-runner.sh`,
    and lines 154 and 156 in `config.sh` (`#java -cp...` -> `java -cp...`)
 
-However, note that doing so may take approximately 200 hours.
+However, note that doing so may take 200 hours.
 Our results for these pre-computed dependences can be found in
-`/home/user/dependent-tests-impact/results/issta17/fixed-dt-results/results-in-paper`.
+[`/home/user/dependent-tests-impact/results/issta17/fixed-dt-results/results-in-paper`](https://github.com/winglam/dependent-tests-impact/tree/master/results/issta17/fixed-dt-results/results-in-paper).
 These results were also used to generate Figure 9 in our paper.
 
 Figure 4 is generated from running [cloc](https://github.com/AlDanial/cloc) on the
