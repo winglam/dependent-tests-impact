@@ -10,21 +10,18 @@ You must use Java 7; the version of Soot that we use does not work with Java 8.
 We ran our experiments on a machine with Java version "1.7.0_91".
 Ant and Maven is also required in order to build the subject programs.
 
-We have tested the scripts on multiple machines and operating systems, and
-it worked on all but one.  In case you have trouble running the experiments
+In case you have trouble running the experiments
 on your machine, we have also provided the artifact pre-installed in a
 virtual machine that runs Ubuntu version 14.04 with Java 7, Ant and Maven installed.
 The dependent-tests-impact folder is under `/home/user/dependent-tests-impact`.
 - Username for the VM: user
 - Password for the VM: asdf
-- Download link: https://drive.google.com/folderview?id=0B66sUcs7lhDVUWh2NVFrSTNjY28
+- Download link: https://drive.google.com/drive/folders/0B7jf_fJmMJFpQUpXNV9iREMxQTQ
 
-The `figureGenerator.sh` script takes 9 hours to complete on a
-machine with the following configuration:
-Intel(R) Core(TM) i5-4590T CPU @ 2.00GHz 8GB RAM
+The `figureGenerator.sh` script takes about 2 hours to complete in the VM.
 
 The subject programs does print some error messages to the console;
-this is expected and normal.
+this is expected and normal as some tests do fail or get errors.
 
 Once the script finishes running, the results for prioritization,
 selection and parallelization can be found in .tex files in directories:
@@ -33,36 +30,43 @@ selection and parallelization can be found in .tex files in directories:
     dependent-tests-impact/experiments/selection-results/
     dependent-tests-impact/experiments/parallelization-results/
 
-The results are not identical with those in the submitted paper.  For the
-submitted paper, some of the data was computed on a loaded machine that was
-running other jobs, though we don't know exactly which data.  (That was a
-methodological error.)  You should run your computation on an unloaded
-machine; using the median of at least three runs further mitigates run-time
-variance. While the numerical results differ, they still support the
+Since figures 10, 11, and 12 depends on the execution time of the tests, 
+the results may not be identical to those in the submitted paper. 
+#For the
+#submitted paper, some of the data was computed on a loaded machine that was
+#running other jobs, though we don't know exactly which data.  (That was a
+#methodological error.)  You should run your computation on an unloaded
+#machine; using the median of at least three runs further mitigates run-time
+#variance. 
+While the numerical results differ, they still support the
 paper's claims.
+The results used to generate figure 5 in our paper can be found in
+`/home/user/dependent-tests-impact/results/issta17/figure5` while 
+the results used to generate figures 10, 11, and 12 can be found in
+`/home/user/dependent-tests-impact/results/issta17/enhanced-figures/results-in-paper`.
 
-The following files contain the results of pre-computed test dependences:
-- CRYSTAL-AUTO-DT_LIST.txt
-- CRYSTAL-ORIG-DT_LIST.txt
-- JFREECHART-AUTO-DT_LIST.txt
-- JFREECHART-ORIG-DT_LIST.txt
-- JODATIME-AUTO-DT_LIST.txt
-- JODATIME-ORIG-DT_LIST.txt
-- SYNOPTIC-AUTO-DT_LIST.txt
-- SYNOPTIC-ORIG-DT_LIST.txt
-- XML_SECURITY-AUTO-DT_LIST.txt
-- XML_SECURITY-ORIG-DT_LIST.txt
+The files inside `/home/user/dependent-tests-impact/experiments/prioritization-dt-list`,
+`/home/user/dependent-tests-impact/experiments/selection-dt-list`, and
+`/home/user/dependent-tests-impact/experiments/parallelization-dt-list` contains
+the pre-computed test dependences for prioritization, selection and parallelziation (respectively).
 
-You can re-generate these pre-computed test dependences instead of using
-the provided ones:
- * delete the files listed above, and
- * uncomment line 30 (`#./random-runner.sh` -> `./random-runner.sh`) in
-   dependent-tests-impact/experiments/figureGenerator.sh.
-However, note that doing so will require even more run time.
+The pre-computed test dependences should be the same, but you can re-generate them if you would like to do so:
+ * delete the files in the directories listed above, and
+ * uncomment line 32 in `prioritization-runner.sh`, line 69 in `selection-runner.sh`,
+   and lines 154 and 156 in `config.sh` (`#java -cp...` -> `java -cp...`)
+However, note that doing so may take approximately 200 hours.
+Our results for these pre-computed dependences can be found in
+`/home/user/dependent-tests-impact/results/issta17/fixed-dt-results/results-in-paper`.
+These results were also used to generate Figure 9 in our paper.
 
-Another way to significantly affect run time is with two variables
-in `dependent-tests-impact/experiments/config.sh`:
- * `medianTimes=3` represents the number of times to run the test order before
-   taking the median.
- * `randomTimes=100` represents the number of times to randomize the test
-   order when calculating the precomputed dependences.
+Figure 4 is generated from running [cloc](https://github.com/AlDanial/cloc) on the
+subjects' source and test directories and 
+[ExamDiff Pro](http://www.prestosoft.com/edp_examdiffpro.asp) between the two 
+revisions of our subjects.
+
+#Another way to significantly affect run time is with two variables
+#in `dependent-tests-impact/experiments/config.sh`:
+# * `medianTimes=3` represents the number of times to run the test order before
+#   taking the median.
+# * `randomTimes=100` represents the number of times to randomize the test
+#   order when calculating the precomputed dependences.
