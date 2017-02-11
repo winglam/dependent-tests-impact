@@ -32,12 +32,6 @@ selection and parallelization can be found in .tex files in directories:
 
 Since figures 10, 11, and 12 depends on the execution time of the tests, 
 the results may not be identical to those in the submitted paper. 
-#For the
-#submitted paper, some of the data was computed on a loaded machine that was
-#running other jobs, though we don't know exactly which data.  (That was a
-#methodological error.)  You should run your computation on an unloaded
-#machine; using the median of at least three runs further mitigates run-time
-#variance. 
 While the numerical results differ, they still support the
 paper's claims.
 The results used to generate figure 5 in our paper can be found in
@@ -64,9 +58,3 @@ subjects' source and test directories and
 [ExamDiff Pro](http://www.prestosoft.com/edp_examdiffpro.asp) between the two 
 revisions of our subjects.
 
-#Another way to significantly affect run time is with two variables
-#in `dependent-tests-impact/experiments/config.sh`:
-# * `medianTimes=3` represents the number of times to run the test order before
-#   taking the median.
-# * `randomTimes=100` represents the number of times to randomize the test
-#   order when calculating the precomputed dependences.
