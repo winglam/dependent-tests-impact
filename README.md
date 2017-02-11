@@ -1,4 +1,4 @@
-To reproduce figures 7, 8, 9, 18, 19, and 20 in our paper do the following:
+To reproduce figures 5, 10, 11, and 12 in our paper do the following:
 
 ```
 git clone https://github.com/winglam/dependent-tests-impact.git
@@ -8,12 +8,12 @@ cd dependent-tests-impact/experiments
 
 You must use Java 7; the version of Soot that we use does not work with Java 8.
 We ran our experiments on a machine with Java version "1.7.0_91".
-Ant is also required in order to build the subject programs.
+Ant and Maven is also required in order to build the subject programs.
 
 We have tested the scripts on multiple machines and operating systems, and
 it worked on all but one.  In case you have trouble running the experiments
 on your machine, we have also provided the artifact pre-installed in a
-virtual machine that runs Ubuntu version 14.04 with Java 7 and ant installed.
+virtual machine that runs Ubuntu version 14.04 with Java 7, Ant and Maven installed.
 The dependent-tests-impact folder is under `/home/user/dependent-tests-impact`.
 - Username for the VM: user
 - Password for the VM: asdf
