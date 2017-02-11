@@ -48,6 +48,7 @@ The pre-computed test dependences should be the same, but you can re-generate th
  * delete the files in the directories listed above, and
  * uncomment line 32 in `prioritization-runner.sh`, line 69 in `selection-runner.sh`,
    and lines 154 and 156 in `config.sh` (`#java -cp...` -> `java -cp...`)
+
 However, note that doing so may take approximately 200 hours.
 Our results for these pre-computed dependences can be found in
 `/home/user/dependent-tests-impact/results/issta17/fixed-dt-results/results-in-paper`.
