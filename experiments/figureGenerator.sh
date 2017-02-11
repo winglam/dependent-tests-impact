@@ -7,10 +7,10 @@ function runPrioritization() {
     mkdir ${priorDir}
 
     ./prioritization-runner.sh
-    #./enhanced-prioritization-runner.sh
+    ./enhanced-prioritization-runner.sh
     #./newExperimentsPrioritizationRunner.sh
     #./enhancedNewExpPriorRunner.sh
-    #java -cp ${impactJarCP} edu.washington.cs.dt.impact.Main.EnhancedResultsFigureGenerator -directory ${priorDir} -outputDirectory ${priorDir} -allowNegatives
+    java -cp ${impactJarCP} edu.washington.cs.dt.impact.Main.EnhancedResultsFigureGenerator -directory ${priorDir} -outputDirectory ${priorDir} -allowNegatives
     #java -cp ${impactJarCP} edu.washington.cs.dt.impact.Main.NumDependentTestsFigureGenerator -directory ${priorDir} -outputDirectory ${priorDir}
 }
 
@@ -20,7 +20,7 @@ function runSelection() {
 
     ./selection-runner.sh
     #./newExperimentsSelectionRunner.sh
-    #java -cp ${impactJarCP} edu.washington.cs.dt.impact.Main.EnhancedResultsFigureGenerator -directory ${seleDir} -outputDirectory ${seleDir} -allowNegatives
+    java -cp ${impactJarCP} edu.washington.cs.dt.impact.Main.EnhancedResultsFigureGenerator -directory ${seleDir} -outputDirectory ${seleDir} -allowNegatives
     #java -cp ${impactJarCP} edu.washington.cs.dt.impact.Main.NumDependentTestsFigureGenerator -directory ${seleDir} -outputDirectory ${seleDir}
 }
 
@@ -29,10 +29,10 @@ function runParallelization() {
     mkdir ${paraDir}
 
     ./parallelization-runner.sh
-    #./enhanced-parallelization-runner.sh
+    ./enhanced-parallelization-runner.sh
     #./newExperimentsParallelizationRunner.sh
     #./enhancedNewExpParaRunner.sh
-    #java -cp ${impactJarCP} edu.washington.cs.dt.impact.Main.EnhancedResultsFigureGenerator -directory ${paraDir} -outputDirectory ${paraDir} -allowNegatives
+    java -cp ${impactJarCP} edu.washington.cs.dt.impact.Main.EnhancedResultsFigureGenerator -directory ${paraDir} -outputDirectory ${paraDir} -allowNegatives
     #java -cp ${impactJarCP} edu.washington.cs.dt.impact.Main.NumDependentTestsFigureGenerator -directory ${paraDir} -outputDirectory ${paraDir}
 }
 
