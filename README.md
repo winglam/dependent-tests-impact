@@ -48,8 +48,15 @@ contains the pre-computed test dependences for prioritization, selection and par
 
 The pre-computed test dependences should be the same, but you can re-generate them if you would like to do so:
  * delete the files in the directories listed above, and
- * uncomment line 32 in `prioritization-runner.sh`, line 69 in `selection-runner.sh`,
-   and lines 154 and 156 in `config.sh` (`#java -cp...` -> `java -cp...`)
+ * uncomment line
+ [32](https://github.com/winglam/dependent-tests-impact/blob/master/experiments/prioritization-runner.sh#L32)
+ in `prioritization-runner.sh`, line 
+ [69](https://github.com/winglam/dependent-tests-impact/blob/master/experiments/selection-runner.sh#L69) 
+ in `selection-runner.sh`, and lines 
+ [154](https://github.com/winglam/dependent-tests-impact/blob/master/experiments/config.sh#L154)
+ and 
+ [156](https://github.com/winglam/dependent-tests-impact/blob/master/experiments/config.sh#L156)
+ in `config.sh` (`#java -cp...` -> `java -cp...`)
 
 However, note that doing so may take 200 hours.
 Our results for these pre-computed dependences can be found in
