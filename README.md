@@ -42,6 +42,7 @@ this is expected and normal as some tests do fail and/or get errors.
 Once the script finishes running, the results for prioritization,
 selection and parallelization can be found in .tex files in directories:
 
+    dependent-tests-impact/experiments/
     dependent-tests-impact/experiments/prioritization-results/
     dependent-tests-impact/experiments/selection-results/
     dependent-tests-impact/experiments/parallelization-results/
