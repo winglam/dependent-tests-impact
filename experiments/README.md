@@ -1,10 +1,14 @@
+ambari                  - 96aaf1d
+
+ambari-new              - f4a3dbc
+
 crystal                 - trunk-2013-12-12
 
 crystalvc               - version 1.0.20111015
 
-daikonizer-ea407ba0a750 - library for ea407ba0a750
+daikonizer-ea407ba0a750 - library for dynoptic ea407ba0a750
 
-daikonizer              - library for d5ea6fb3157e
+daikonizer              - library for dynoptic d5ea6fb3157e
 
 dynoptic-ea407ba0a750   - ea407ba0a750
 
@@ -20,9 +24,9 @@ jodatime-b609d7d66d     - b609d7d66d
 
 jodatime-d6791cb5f9     - d6791cb5f9
 
-synoptic-ea407ba0a750   - library for ea407ba0a750
+synoptic-ea407ba0a750   - library for dynoptic ea407ba0a750
 
-synoptic                - library for d5ea6fb3157e
+synoptic                - library for dynoptic d5ea6fb3157e
 
 xml-security-1_2_0      - version 1.2.0
 
