@@ -1,20 +1,22 @@
-To reproduce figures 5, 10, 11, and 12 in our paper we **highly** recommend you to use the 
-the version of our artifact that is pre-installed in a
-virtual machine that runs Ubuntu version 14.04 with Java 7, Ant and Maven installed.
-The dependent-tests-impact folder is under `/home/user/dependent-tests-impact`.
+This file explains how to reproduce figures 5, 10, 11, and 12 in our paper.
+
+You need:
+ * Java 7 (the version of Soot that we use does not work with Java 8).
+   We ran our experiments on a machine with Java version "1.7.0_91".
+ * Ant
+ * Maven
+
+For simplicity, we **highly** recommend you use the version of our artifact
+that is pre-installed in this: virtual machine.
+- Download link: https://drive.google.com/drive/folders/0B7jf_fJmMJFpQUpXNV9iREMxQTQ
 - Username for the VM: user
 - Password for the VM: asdf
-- Download link: https://drive.google.com/drive/folders/0B7jf_fJmMJFpQUpXNV9iREMxQTQ
 
-You must use Java 7; the version of Soot that we use does not work with Java 8.
-We ran our experiments on a machine with Java version "1.7.0_91".
-Ant and Maven is also required in order to build the subject programs.
+The dependent-tests-impact folder is under `/home/user/dependent-tests-impact`.
 
-If your machine matches the above specifications, you may be able to 
-reproduce figures 5, 10, 11, and 12 in our paper without the VM but we 
-cannot guarantee that it will work. 
 
-If you are running the `figureGenerator.sh` script with the VM you can skip the following steps.
+Run the following steps to set up the Ambari project.
+(If you are on the VM, you can skip these steps, because they have already been performed.)
 
 ```
 cd dependent-tests-impact/experiments/ambari
@@ -27,6 +29,8 @@ mvn test-compile
 mvn install -fn -DskipTests dependency:copy-dependencies
 ```
 
+[[Give an indication of the time required for the above steps.  It takes a long time!]]
+
 To reproduce figures 5, 10, 11, and 12 perform the following:
 
 ```
@@ -34,10 +38,10 @@ cd dependent-tests-impact/experiments
 ./figureGenerator.sh
 ```
 
-The `figureGenerator.sh` script takes about 4 hours to complete in the VM. 
+The `figureGenerator.sh` script takes about 4 hours to complete.
 
-The subject programs does print some error messages to the console;
-this is expected and normal as some tests do fail and/or get errors.
+The subject program print some error messages to the console.
+This is expected and normal as some tests do fail and/or produce errors.
 
 Once the script finishes running, the results for prioritization,
 selection and parallelization can be found in .tex files in directories:
@@ -47,23 +51,26 @@ selection and parallelization can be found in .tex files in directories:
     dependent-tests-impact/experiments/selection-results/
     dependent-tests-impact/experiments/parallelization-results/
 
-Since figures 10, 11, and 12 depends on the execution time of the tests, 
+Since figures 10, 11, and 12 depend on the execution time of the tests, 
 the results may not be identical to those in the submitted paper. 
 While the numerical results differ, they still support the
 paper's claims.
-The results used to generate figure 5 in our paper can be found in
-[`/home/user/dependent-tests-impact/results/issta17/figure5`](https://github.com/winglam/dependent-tests-impact/tree/master/results/issta17/figure5)
-while the results used to generate figures 10, 11, and 12 can be found in
-[`/home/user/dependent-tests-impact/results/issta17/enhanced-figures/results-in-paper`](https://github.com/winglam/dependent-tests-impact/tree/master/results/issta17/enhanced-figures/results-in-paper).
+The results used to generate figure 5 in our paper can be found in the
+`dependent-tests-impact/results/` directory.
+The results used to generate figures 10, 11, and 12 can be found in the
+`dependent-tests-impact/results/issta17/enhanced-figures/results-in-paper/` directory.
 
-The files inside 
-[`/home/user/dependent-tests-impact/experiments/prioritization-dt-list`](https://github.com/winglam/dependent-tests-impact/tree/master/experiments/prioritization-dt-list),
-[`/home/user/dependent-tests-impact/experiments/selection-dt-list`](https://github.com/winglam/dependent-tests-impact/tree/master/experiments/selection-dt-list)
-, and
-[`/home/user/dependent-tests-impact/experiments/parallelization-dt-list`](https://github.com/winglam/dependent-tests-impact/tree/master/experiments/parallelization-dt-list)
-contains the pre-computed test dependences for prioritization, selection and parallelziation (respectively).
+The precomputed dependences can be found in directories
+`dependent-tests-impact/experiments/prioritization-dt-list`,
+`dependent-tests-impact/experiments/parallelization-dt-list`, and
+`dependent-tests-impact/experiments/selection-dt-list`, respectively.
+You can re-generate them if you want, but it may take up to 200 hours.
+To re-generate them:
 
-The pre-computed test dependences should be the same, but you can re-generate them if you would like to do so:
+[[Turn the instructions into a script or Maven target, rather than requiring a reader to follow complex, error-prone instructions.]]
+
+
+The pre-computed test dependences should be the same [[What does that mean?]], but you can re-generate them if you would like to do so:
  * delete the files in the directories listed above, and
  * uncomment line
  [32](https://github.com/winglam/dependent-tests-impact/blob/master/experiments/prioritization-runner.sh#L32)
@@ -84,7 +91,8 @@ The pre-computed test dependences should be the same, but you can re-generate th
  in `newExp-config.sh` (`#java ...` -> `java ...`)
 
 However, note that doing so may take 200 hours.
-Our results for these pre-computed dependences can be found in
+
+Our results for [[Does this mean "using"?]] these pre-computed dependences can be found in
 [`/home/user/dependent-tests-impact/results/issta17/fixed-dt-results/results-in-paper`](https://github.com/winglam/dependent-tests-impact/tree/master/results/issta17/fixed-dt-results/results-in-paper).
 These results were also used to generate Figure 9 in our paper.
 
