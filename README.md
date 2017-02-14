@@ -29,7 +29,10 @@ mvn test-compile
 mvn install -fn -DskipTests dependency:copy-dependencies
 ```
 
-[[Give an indication of the time required for the above steps.  It takes a long time!]]
+[[Give an indication of the time required for the above steps: about an hour.]]
+
+[[The `mvn install -fn -DskipTests dependency:copy-dependencies` step failed for me.]]
+
 
 To reproduce figures 5, 10, 11, and 12 perform the following:
 
