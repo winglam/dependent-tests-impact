@@ -1,0 +1,129 @@
+The following arguments were used to generate this output.
+[-technique, parallelization, -order, original, -origOrder, crystal-orig-order, -testInputDir, /home/user/dependent-tests-impact/experiments/crystalvc//sootTestOutput-orig, -filesToDelete, crystal-env-files, -project, Crystal, -testType, orig, -numOfMachines, 8, -outputDir, /home/user/dependent-tests-impact/experiments/parallelization-results, -timesToRun, 1, -dependentTestFile, /home/user/dependent-tests-impact/experiments/parallelization-dt-list/parallelization-Crystal-orig-8-original.txt]
+
+Execution time of TLG and its time to find/nullify any DTs for 1 machine (does not include the time to run the tests in the new order): 0.519
+Number of tests selected out of total in original order: 8 / 63
+Number of DTs not fixed: 0
+Number of DTs fixed: 0
+Execution time for executing the following testing order: 0.037
+
+Test order list:
+[crystal.client.ClientPreferencesTest.testNullInputConstructor, crystal.client.ClientPreferencesTest.testClientPreferences, crystal.client.ClientPreferencesTest.testDefaultSetting, crystal.client.ClientPreferencesTest.testDuplicateAddProjectPreferences, crystal.client.ClientPreferencesTest.testAddProjectPreferences, crystal.client.ClientPreferencesTest.testDuplicateProject, crystal.client.ClientPreferencesTest.testRemoveProjectPreferences, crystal.client.ClientPreferencesTest.testRemoveProjectPreferencesAtIndex]
+
+Time each test takes to run in the new order:
+[27426288, 3572428, 687774, 1778834, 2259845, 554501, 557053, 550667]
+
+Dependent test list:
+[Test: crystal.model.DataSourceTest.testSetHistory, Intended behavior: FAILURE, when executed after: [crystal.model.DataSourceTest.testToString], The revealed different behavior: PASS, when executed after: [], Test: crystal.model.DataSourceTest.testToString, Intended behavior: FAILURE, when executed after: [crystal.model.DataSourceTest.testSetField], The revealed different behavior: PASS, when executed after: []]
+--------------------------
+Execution time of TLG and its time to find/nullify any DTs for 1 machine (does not include the time to run the tests in the new order): 0.494
+Number of tests selected out of total in original order: 8 / 63
+Number of DTs not fixed: 0
+Number of DTs fixed: 0
+Execution time for executing the following testing order: 0.092
+
+Test order list:
+[crystal.client.ClientPreferencesTest.testClone, crystal.client.ConflictDaemonTest.testAddListener, crystal.client.ConflictDaemonTest.testGetInstance, crystal.client.ConflictDaemonTest.testLocalState, crystal.client.ConflictDaemonTest.testRelationship, crystal.client.ProjectPreferencesTest.testClone, crystal.client.ProjectPreferencesTest.testProjectPreferences, crystal.client.ProjectPreferencesTest.testDuplicateAddDataSource]
+
+Time each test takes to run in the new order:
+[34003964, 8841910, 646701, 29867639, 14342577, 286414, 202159, 3562096]
+
+Dependent test list:
+[Test: crystal.model.DataSourceTest.testSetHistory, Intended behavior: FAILURE, when executed after: [crystal.model.DataSourceTest.testToString], The revealed different behavior: PASS, when executed after: [], Test: crystal.model.DataSourceTest.testToString, Intended behavior: FAILURE, when executed after: [crystal.model.DataSourceTest.testSetField], The revealed different behavior: PASS, when executed after: []]
+--------------------------
+Execution time of TLG and its time to find/nullify any DTs for 1 machine (does not include the time to run the tests in the new order): 0.899
+Number of tests selected out of total in original order: 9 / 63
+Number of DTs not fixed: 0
+Number of DTs fixed: 0
+Execution time for executing the following testing order: 0.589
+
+Test order list:
+[crystal.client.ProjectPreferencesTest.testAddDataSource, crystal.client.ProjectPreferencesTest.testGetNumOfVisibleSources, crystal.client.ProjectPreferencesTest.testRemoveDataSource, crystal.client.ProjectPreferencesTest.testGetProjectCheckoutLocation, crystal.model.DataSourceTest.testClone, crystal.model.DataSourceTest.testSetField, crystal.model.DataSourceTest.testToString, crystal.model.DataSourceTest.testSetHistory, crystal.model.DataSourceTest.testSetRemoteCmd]
+
+Time each test takes to run in the new order:
+[23126014, 626452, 549523, 8926449, 592048, 481660, 483349, 553839658, 482146]
+
+Dependent test list:
+[Test: crystal.model.DataSourceTest.testSetHistory, Intended behavior: FAILURE, when executed after: [crystal.model.DataSourceTest.testToString], The revealed different behavior: PASS, when executed after: [], Test: crystal.model.DataSourceTest.testToString, Intended behavior: FAILURE, when executed after: [crystal.model.DataSourceTest.testSetField], The revealed different behavior: PASS, when executed after: []]
+--------------------------
+Execution time of TLG and its time to find/nullify any DTs for 1 machine (does not include the time to run the tests in the new order): 0.497
+Number of tests selected out of total in original order: 9 / 63
+Number of DTs not fixed: 6
+Number of DTs fixed: 0
+Execution time for executing the following testing order: 0.034
+
+Test order list:
+[crystal.model.DataSourceTest.testSetCompileCommand, crystal.model.DataSourceTest.testSetEnabled, crystal.model.DataSourceTest.testIsHidden, crystal.model.DataSourceTest.testSetParent, crystal.model.DataSourceTest.testSetKind, crystal.model.DataSourceTest.testSetCloneString, crystal.model.DataSourceTest.testSetField, crystal.model.DataSourceTest.testToString, crystal.model.LocalStateResultTest.testStrangeActionName]
+
+Time each test takes to run in the new order:
+[10762586, 7930136, 1430046, 1340219, 1821972, 1887517, 1222152, 1587638, 6080266]
+
+DTs not fixed are:
+[crystal.model.DataSourceTest.testIsHidden, crystal.model.DataSourceTest.testSetKind, crystal.model.DataSourceTest.testSetEnabled, crystal.model.DataSourceTest.testSetCloneString, crystal.model.DataSourceTest.testSetParent, crystal.model.DataSourceTest.testSetCompileCommand]
+
+Dependent test list:
+[Test: crystal.model.DataSourceTest.testSetHistory, Intended behavior: FAILURE, when executed after: [crystal.model.DataSourceTest.testToString], The revealed different behavior: PASS, when executed after: [], Test: crystal.model.DataSourceTest.testToString, Intended behavior: FAILURE, when executed after: [crystal.model.DataSourceTest.testSetField], The revealed different behavior: PASS, when executed after: []]
+--------------------------
+Execution time of TLG and its time to find/nullify any DTs for 1 machine (does not include the time to run the tests in the new order): 0.517
+Number of tests selected out of total in original order: 8 / 63
+Number of DTs not fixed: 0
+Number of DTs fixed: 0
+Execution time for executing the following testing order: 0.025
+
+Test order list:
+[crystal.model.LocalStateResultTest.testErrorActionNameConstructor, crystal.model.LocalStateResultTest.testGetAction, crystal.model.LocalStateResultTest.testGetLastAction, crystal.model.LocalStateResultTest.testGetName, crystal.model.LocalStateResultTest.testGetNoErrorMessage, crystal.model.LocalStateResultTest.testGetLastErrorMessage, crystal.model.LocalStateResultTest.testGetLocalState, crystal.model.LocalStateResultTest.testGetLastLocalState]
+
+Time each test takes to run in the new order:
+[8805776, 2567512, 7448997, 1160890, 1121826, 1162624, 1190759, 1283947]
+
+Dependent test list:
+[Test: crystal.model.DataSourceTest.testSetHistory, Intended behavior: FAILURE, when executed after: [crystal.model.DataSourceTest.testToString], The revealed different behavior: PASS, when executed after: [], Test: crystal.model.DataSourceTest.testToString, Intended behavior: FAILURE, when executed after: [crystal.model.DataSourceTest.testSetField], The revealed different behavior: PASS, when executed after: []]
+--------------------------
+Execution time of TLG and its time to find/nullify any DTs for 1 machine (does not include the time to run the tests in the new order): 0.884
+Number of tests selected out of total in original order: 8 / 63
+Number of DTs not fixed: 0
+Number of DTs fixed: 0
+Execution time for executing the following testing order: 0.552
+
+Test order list:
+[crystal.model.LocalStateResultTest.testToString, crystal.model.RelationshipTest.testStrangeNameConstructor, crystal.model.RelationshipTest.testConstructor, crystal.model.RelationshipTest.testCalculateAction, crystal.model.RelationshipTest.testGetActionRepoKind, crystal.model.RelationshipTest.testGetDominant, crystal.model.RelationshipTest.testEqualsObject, crystal.model.RevisionHistoryTest.testEqualsObject]
+
+Time each test takes to run in the new order:
+[13891520, 2289665, 13700703, 1389441, 1454301, 1024354, 5804951, 512570795]
+
+Dependent test list:
+[Test: crystal.model.DataSourceTest.testSetHistory, Intended behavior: FAILURE, when executed after: [crystal.model.DataSourceTest.testToString], The revealed different behavior: PASS, when executed after: [], Test: crystal.model.DataSourceTest.testToString, Intended behavior: FAILURE, when executed after: [crystal.model.DataSourceTest.testSetField], The revealed different behavior: PASS, when executed after: []]
+--------------------------
+Execution time of TLG and its time to find/nullify any DTs for 1 machine (does not include the time to run the tests in the new order): 1.393
+Number of tests selected out of total in original order: 8 / 63
+Number of DTs not fixed: 0
+Number of DTs fixed: 0
+Execution time for executing the following testing order: 1.067
+
+Test order list:
+[crystal.model.RevisionHistoryTest.testSuperSubHistory, crystal.model.RevisionHistoryTest.testGetCommitters, crystal.server.GuidanceCheckerTest.testGetCommitters, crystal.server.GuidanceCheckerTest.testGetWhen, crystal.server.HgLogParserTest.testParseNullLog, crystal.server.HgLogParserTest.testParseLog, crystal.server.HgLogParserTest.testSingleLog, crystal.server.HgLogParserTest.testTwoLogs]
+
+Time each test takes to run in the new order:
+[621740832, 366243047, 10684417, 51761184, 2070697, 10340800, 2996045, 897112]
+
+Dependent test list:
+[Test: crystal.model.DataSourceTest.testSetHistory, Intended behavior: FAILURE, when executed after: [crystal.model.DataSourceTest.testToString], The revealed different behavior: PASS, when executed after: [], Test: crystal.model.DataSourceTest.testToString, Intended behavior: FAILURE, when executed after: [crystal.model.DataSourceTest.testSetField], The revealed different behavior: PASS, when executed after: []]
+--------------------------
+Execution time of TLG and its time to find/nullify any DTs for 1 machine (does not include the time to run the tests in the new order): 0.279
+Number of tests selected out of total in original order: 7 / 63
+Number of DTs not fixed: 0
+Number of DTs fixed: 0
+Execution time for executing the following testing order: 0.046
+
+Test order list:
+[crystal.util.SetOperationsTest.testNullIntersection, crystal.util.SetOperationsTest.testIntersection, crystal.util.SetOperationsTest.testNullUnion, crystal.util.SetOperationsTest.testUnion, crystal.util.SetOperationsTest.testSetDifference, crystal.util.SetOperationsTest.testXor, crystal.util.SpringLayoutUtilityTest.testInvalidPanelParameter]
+
+Time each test takes to run in the new order:
+[11116227, 1340924, 5021839, 1961559, 648228, 2435029, 23907272]
+
+Dependent test list:
+[Test: crystal.model.DataSourceTest.testSetHistory, Intended behavior: FAILURE, when executed after: [crystal.model.DataSourceTest.testToString], The revealed different behavior: PASS, when executed after: [], Test: crystal.model.DataSourceTest.testToString, Intended behavior: FAILURE, when executed after: [crystal.model.DataSourceTest.testSetField], The revealed different behavior: PASS, when executed after: []]
+--------------------------
+Total time (of all machines and iterations plus initial TestListGenerator): 2.459
+New order time: 1.067
+Total number of tests executed in all machines out of total in original order: 65 / 63
