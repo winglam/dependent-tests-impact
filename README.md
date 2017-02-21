@@ -15,7 +15,7 @@ that is pre-installed in this: virtual machine.
 The dependent-tests-impact folder is under `/home/user/dependent-tests-impact`.
 
 
-Run the following steps to set up the Ambari project.
+Run the following steps to set up the Ambari project. Running the following steps takes about an hour.
 (If you are on the VM, you can skip these steps, because they have already been performed.)
 
 ```
@@ -29,32 +29,7 @@ mvn test-compile
 mvn install -fn -DskipTests dependency:copy-dependencies
 ```
 
-[[Give an indication of the time required for the above steps: about an hour.]]
-
 [[The `mvn install -fn -DskipTests dependency:copy-dependencies` step failed for me.  See email for details.]]
-
-[[Running the first three steps resulted in a `git status` reporting:
-
-```
-Changes not staged for commit:
-  (use "git add <file>..." to update what will be committed)
-  (use "git checkout -- <file>..." to discard changes in working directory)
-
-	modified:   experiments/ambari/ambari-server/target/DBConnectionVerification.jar
-	modified:   experiments/ambari/ambari-server/target/ambari-server
-	modified:   experiments/ambari/ambari-server/target/ambari-server-2.0.0.0-SNAPSHOT.jar
-	modified:   experiments/ambari/ambari-server/target/antrun/build-main.xml
-	modified:   experiments/ambari/ambari-server/target/checkstyle-result.xml
-	modified:   experiments/ambari/ambari-server/target/rat.txt
-
-Untracked files:
-  (use "git add <file>..." to include in what will be committed)
-
-	experiments/ambari/target/
-```
-
-Files that change from run to run should not be committed to the repository, or users should be told not to run the commands.]]]
-
 
 
 To reproduce figures 5, 10, 11, and 12 perform the following:
@@ -91,12 +66,10 @@ The precomputed dependences can be found in directories
 `dependent-tests-impact/experiments/parallelization-dt-list`, and
 `dependent-tests-impact/experiments/selection-dt-list`, respectively.
 You can re-generate them if you want, but it may take up to 200 hours.
-To re-generate them:
 
 [[Turn the instructions into a script or Maven target, rather than requiring a reader to follow complex, error-prone instructions.]]
 
-
-The pre-computed test dependences should be the same [[What does that mean?]], but you can re-generate them if you would like to do so:
+To re-generate them:
  * delete the files in the directories listed above, and
  * uncomment line
  [32](https://github.com/winglam/dependent-tests-impact/blob/master/experiments/prioritization-runner.sh#L32)
@@ -118,12 +91,11 @@ The pre-computed test dependences should be the same [[What does that mean?]], b
 
 However, note that doing so may take 200 hours.
 
-Our results for [[Does this mean "using"?]] these pre-computed dependences can be found in
+The detailed results for these pre-computed dependences can be found in
 [`/home/user/dependent-tests-impact/results/issta17/fixed-dt-results/results-in-paper`](https://github.com/winglam/dependent-tests-impact/tree/master/results/issta17/fixed-dt-results/results-in-paper).
-These results were also used to generate Figure 9 in our paper.
+The detailed results include the pre-computed dependences that were generated, the time it took to generate such dependency information, etc. These detailed results were also used to generate Figure 9 in our paper.
 
 Figure 4 is generated from running [cloc](https://github.com/AlDanial/cloc) on the
 subjects' source and test directories and 
 [ExamDiff Pro](http://www.prestosoft.com/edp_examdiffpro.asp) between the two 
 revisions of our subjects.
-
