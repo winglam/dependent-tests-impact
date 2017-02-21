@@ -38,9 +38,9 @@ function runNewExpParallelizationOneConfigurationRunner() {
   #java -cp $2 edu.washington.cs.dt.main.ImpactMain -inputTests $1-$3-order -getTime > $1-$3-time.txt
   for k in "${machines[@]}"; do
     echo 'Running parallelization without resolveDependences and without dependentTestFile for time order'
-    java -cp $2 edu.washington.cs.dt.impact.Main.OneConfigurationRunner -technique parallelization -order time -timeOrder $5/$1-$3-time.txt -origOrder $1-$3-order -testInputDir $5/sootTestOutput-$3 -filesToDelete $1-env-files -numOfMachines $k -project "$4" -testType $3 -timesToRun ${medianTimes} -outputDir ${initialDir}/${paraDir}
+    java -Xms1g -Xmx2g -cp $2 edu.washington.cs.dt.impact.Main.OneConfigurationRunner -technique parallelization -order time -timeOrder $5/$1-$3-time.txt -origOrder $1-$3-order -testInputDir $5/sootTestOutput-$3 -filesToDelete $1-env-files -numOfMachines $k -project "$4" -testType $3 -timesToRun ${medianTimes} -outputDir ${initialDir}/${paraDir}
     echo 'Running parallelization without resolveDependences and without dependentTestFile for original order'
-    java -cp $2 edu.washington.cs.dt.impact.Main.OneConfigurationRunner -technique parallelization -order original -origOrder $1-$3-order -testInputDir $5/sootTestOutput-$3 -filesToDelete $1-env-files -project "$4" -testType $3 -numOfMachines $k -outputDir ${initialDir}/${paraDir} -timesToRun ${medianTimes}
+    java -Xms1g -Xmx2g -cp $2 edu.washington.cs.dt.impact.Main.OneConfigurationRunner -technique parallelization -order original -origOrder $1-$3-order -testInputDir $5/sootTestOutput-$3 -filesToDelete $1-env-files -project "$4" -testType $3 -numOfMachines $k -outputDir ${initialDir}/${paraDir} -timesToRun ${medianTimes}
 
     #echo 'Running parallelization with resolveDependences and without dependentTestFile for original order'
     #java -cp $2 edu.washington.cs.dt.impact.Main.OneConfigurationRunner -technique parallelization -order original -origOrder $1-$3-order -testInputDir $5/sootTestOutput-$3 -filesToDelete $1-env-files -project "$4" -testType $3 -numOfMachines $k -outputDir ${initialDir}/${paraDir} -timesToRun ${medianTimes} -resolveDependences
@@ -52,8 +52,8 @@ function runNewExpParallelizationOneConfigurationRunner() {
 function runEnhancedNewExpParallelizationOneConfigurationRunner() {
   for k in "${machines[@]}"; do
     echo 'Running parallelization without resolveDependences and with dependentTestFile for time order'
-    java -cp $2 edu.washington.cs.dt.impact.Main.OneConfigurationRunner -technique parallelization -order time -timeOrder $5/$1-$3-time.txt -origOrder $1-$3-order -testInputDir $5/sootTestOutput-$3 -filesToDelete $1-env-files -numOfMachines $k -project "$4" -testType $3 -timesToRun ${medianTimes} -outputDir ${initialDir}/${paraDir} -dependentTestFile ${initialDir}/parallelization-dt-list/"parallelization-$4-$3-$k-time.txt"
+    java -Xms1g -Xmx2g -cp $2 edu.washington.cs.dt.impact.Main.OneConfigurationRunner -technique parallelization -order time -timeOrder $5/$1-$3-time.txt -origOrder $1-$3-order -testInputDir $5/sootTestOutput-$3 -filesToDelete $1-env-files -numOfMachines $k -project "$4" -testType $3 -timesToRun ${medianTimes} -outputDir ${initialDir}/${paraDir} -dependentTestFile ${initialDir}/parallelization-dt-list/"parallelization-$4-$3-$k-time.txt"
     echo 'Running parallelization without resolveDependences and with dependentTestFile for original order'
-    java -cp $2 edu.washington.cs.dt.impact.Main.OneConfigurationRunner -technique parallelization -order original -origOrder $1-$3-order -testInputDir $5/sootTestOutput-$3 -filesToDelete $1-env-files -project "$4" -testType $3 -numOfMachines $k -outputDir ${initialDir}/${paraDir} -timesToRun ${medianTimes} -dependentTestFile ${initialDir}/parallelization-dt-list/"parallelization-$4-$3-$k-original.txt"
+    java -Xms1g -Xmx2g -cp $2 edu.washington.cs.dt.impact.Main.OneConfigurationRunner -technique parallelization -order original -origOrder $1-$3-order -testInputDir $5/sootTestOutput-$3 -filesToDelete $1-env-files -project "$4" -testType $3 -numOfMachines $k -outputDir ${initialDir}/${paraDir} -timesToRun ${medianTimes} -dependentTestFile ${initialDir}/parallelization-dt-list/"parallelization-$4-$3-$k-original.txt"
   done
 }
