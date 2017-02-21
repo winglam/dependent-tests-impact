@@ -649,9 +649,9 @@ public class NumDependentTestsFigureGenerator extends FigureGenerator {
 				String testType = flagsList.get(index + 1);
 
 				index = flagsList.indexOf("-dependentTestFile");
-//				if (index != -1) { // only count files without dependentTestFile
-//					continue;
-//				}
+				if (index != -1) { // only count files without dependentTestFile
+					continue;
+				}
 				// see if List needs to orig or auto generated one
 				List<Project> currProjList = null;
 				if (testType.equals("auto")) {
