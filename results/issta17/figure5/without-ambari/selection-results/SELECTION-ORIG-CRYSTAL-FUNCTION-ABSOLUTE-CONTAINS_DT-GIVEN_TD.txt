@@ -1,0 +1,23 @@
+The following arguments were used to generate this output.
+[-technique, selection, -coverage, function, -order, absolute, -origOrder, crystal/crystal-orig-order, -testInputDir, crystalvc/sootTestOutput-orig-selection, -filesToDelete, crystal/crystal-env-files, -project, Crystal, -testType, orig, -oldVersCFG, crystalvc/selectionOutput, -newVersCFG, crystal/selectionOutput, -getCoverage, -outputDir, /home/user/dependent-tests-impact/experiments/selection-results, -timesToRun, 1, -dependentTestFile, /home/user/dependent-tests-impact/experiments/selection-dt-list/selection-Crystal-orig-function-absolute.txt]
+
+Execution time of TLG and its time to find/nullify any DTs for 1 machine (does not include the time to run the tests in the new order): 0.506
+Number of tests selected out of total in original order: 22 / 63
+Number of DTs not fixed: 0
+Number of DTs fixed: 0
+APFD value: 0.3224831037542478
+Execution time for executing the following testing order: 0.104
+
+Test order list:
+[crystal.client.ConflictDaemonTest.testLocalState, crystal.client.ClientPreferencesTest.testAddProjectPreferences, crystal.client.ClientPreferencesTest.testDuplicateProject, crystal.client.ClientPreferencesTest.testRemoveProjectPreferences, crystal.client.ClientPreferencesTest.testRemoveProjectPreferencesAtIndex, crystal.model.DataSourceTest.testSetField, crystal.model.DataSourceTest.testSetCloneString, crystal.model.DataSourceTest.testSetHistory, crystal.util.SetOperationsTest.testNullIntersection, crystal.client.ClientPreferencesTest.testClone, crystal.client.ClientPreferencesTest.testDuplicateAddProjectPreferences, crystal.client.ClientPreferencesTest.testNullInputConstructor, crystal.client.ProjectPreferencesTest.testGetProjectCheckoutLocation, crystal.model.RelationshipTest.testGetDominant, crystal.model.RevisionHistoryTest.testEqualsObject, crystal.model.RevisionHistoryTest.testGetCommitters, crystal.model.RevisionHistoryTest.testSuperSubHistory, crystal.server.GuidanceCheckerTest.testGetCommitters, crystal.server.HgLogParserTest.testParseLog, crystal.server.HgLogParserTest.testParseNullLog, crystal.server.HgLogParserTest.testSingleLog, crystal.server.HgLogParserTest.testTwoLogs]
+
+Time each test takes to run in the new order:
+[59960272, 650985, 524419, 532023, 533583, 544876, 468960, 10801798, 2109061, 3768327, 1212065, 1098280, 2368722, 1606934, 1277719, 6479461, 1261018, 1848063, 2840127, 1280141, 1443258, 1082582]
+
+Dependent test list:
+[Test: crystal.model.DataSourceTest.testSetHistory, Intended behavior: FAILURE, when executed after: [crystal.model.DataSourceTest.testSetCloneString], The revealed different behavior: PASS, when executed after: [], Test: crystal.model.DataSourceTest.testSetCloneString, Intended behavior: FAILURE, when executed after: [crystal.model.DataSourceTest.testSetField], The revealed different behavior: PASS, when executed after: []]
+
+Coverage test list:
+[3522, 340, 113, 227, 113, 340, 113, 909, 568, 454, 0, 113, 0, 113, 0, 681, 227, 0, 113, 0, 227, 0]
+--------------------------
+Total time (of all machines and iterations plus initial TestListGenerator): 0.323

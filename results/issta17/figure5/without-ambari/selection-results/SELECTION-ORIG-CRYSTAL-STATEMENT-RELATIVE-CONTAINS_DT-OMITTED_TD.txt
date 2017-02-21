@@ -1,0 +1,23 @@
+The following arguments were used to generate this output.
+[-technique, selection, -coverage, statement, -order, relative, -origOrder, crystal/crystal-orig-order, -testInputDir, crystalvc/sootTestOutput-orig-selection, -filesToDelete, crystal/crystal-env-files, -project, Crystal, -testType, orig, -oldVersCFG, crystalvc/selectionOutput, -newVersCFG, crystal/selectionOutput, -getCoverage, -outputDir, /home/user/dependent-tests-impact/experiments/selection-results, -timesToRun, 1]
+
+Execution time of TLG and its time to find/nullify any DTs for 1 machine (does not include the time to run the tests in the new order): 0.501
+Number of tests selected out of total in original order: 17 / 63
+Number of DTs not fixed: 1
+Number of DTs fixed: 0
+APFD value: 0.6333141098542858
+Execution time for executing the following testing order: 0.100
+
+Test order list:
+[crystal.model.DataSourceTest.testSetHistory, crystal.client.ConflictDaemonTest.testLocalState, crystal.client.ClientPreferencesTest.testRemoveProjectPreferences, crystal.client.ClientPreferencesTest.testDuplicateAddProjectPreferences, crystal.model.RevisionHistoryTest.testGetCommitters, crystal.client.ClientPreferencesTest.testNullInputConstructor, crystal.client.ClientPreferencesTest.testClone, crystal.server.GuidanceCheckerTest.testGetCommitters, crystal.client.ProjectPreferencesTest.testGetProjectCheckoutLocation, crystal.client.ClientPreferencesTest.testRemoveProjectPreferencesAtIndex, crystal.model.RevisionHistoryTest.testEqualsObject, crystal.model.RevisionHistoryTest.testSuperSubHistory, crystal.server.HgLogParserTest.testSingleLog, crystal.client.ClientPreferencesTest.testDuplicateProject, crystal.client.ClientPreferencesTest.testAddProjectPreferences, crystal.server.HgLogParserTest.testParseLog, crystal.server.HgLogParserTest.testTwoLogs]
+
+Time each test takes to run in the new order:
+[22080458, 40770861, 3144633, 1202860, 2639976, 3147762, 5653826, 2110496, 4546359, 568306, 4725749, 1197846, 1858749, 492653, 2346098, 2791464, 1132512]
+
+DTs not fixed are:
+[crystal.model.DataSourceTest.testSetHistory]
+
+Coverage test list:
+[6505, 2096, 913, 483, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+--------------------------
+Total time (of all machines and iterations plus initial TestListGenerator): 0.256
