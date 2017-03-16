@@ -36,6 +36,8 @@ public class TestRunnerWrapperFileInputs {
         /*create the StringBuilder to output results*/
         StringBuilder sb = new StringBuilder();
         for(String fullTestName : tests) {
+        	System.out.println("Test being executed: " + fullTestName);
+
             /*check the results*/
             String result = null;
             //			String stackTrace = TestExecUtils.noStackTrace;
