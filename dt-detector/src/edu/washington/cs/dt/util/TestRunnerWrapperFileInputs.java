@@ -75,5 +75,6 @@ public class TestRunnerWrapperFileInputs {
             }
         }
         Files.writeToFile(sb.toString(), outputFile);
+        Files.writeToFile("", TestExecUtils.lockFile);
     }
 }

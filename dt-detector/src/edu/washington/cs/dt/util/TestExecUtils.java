@@ -3,6 +3,7 @@
  */
 package edu.washington.cs.dt.util;
 
+import java.io.File;
 import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -32,6 +33,7 @@ public class TestExecUtils {
 
     @Option("The min number of tests when using ./tmptestfiles")
     public static int threshhold = 120;
+    public static String lockFile = "LOCK_FILE";
 
     /*
      * Executes a list of tests in order by launching a fresh JVM, and
@@ -63,7 +65,31 @@ public class TestExecUtils {
 
         String[] args = commandList.toArray(new String[0]);
 
-        Command.exec(args);
+
+		File file = new File(lockFile);
+    	try{
+    		file.delete();
+    	}catch(Exception e){
+    		e.printStackTrace();
+    	}
+
+        Process proc = Command.execProc(args, System.out, "", false);
+        
+        while (!file.exists()) {
+        	try {
+        	    Thread.sleep(1000);
+        	} catch(InterruptedException ex) {
+        	    Thread.currentThread().interrupt();
+        	}
+        }
+        
+        proc.destroy();
+        
+    	try{
+    		file.delete();
+    	}catch(Exception e){
+    		e.printStackTrace();
+    	}
 
         Map<String, OneTestExecResult> testResults = parseTestResults(outputFile);
 
