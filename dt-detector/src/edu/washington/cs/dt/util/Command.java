@@ -217,6 +217,29 @@ public class Command {
     }
     return exitVal;
   }
+  
+  public static Process execProc(String[] cmd, PrintStream out, String prompt, boolean gobbleChars) {
+	    Process proc;
+	    try {
+	      Runtime rt = Runtime.getRuntime();
+	      proc = rt.exec(cmd);
 
+	      // any error message?
+	      StreamGobbler errorGobbler =
+	        new StreamGobbler(proc.getErrorStream(), prompt, out, gobbleChars);
 
+	      // any output?
+	      StreamGobbler outputGobbler =
+	        new StreamGobbler(proc.getInputStream(), prompt, out, gobbleChars);
+
+	      // kick them off
+	      errorGobbler.start();
+	      outputGobbler.start();
+
+	    } catch (Throwable t) {
+	      t.printStackTrace();
+	      throw new RuntimeException(); // CP improve
+	    }
+	    return proc;
+	  }
 }
