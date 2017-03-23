@@ -109,6 +109,7 @@ public class TestRunnerWrapper {
             }
         }
         Files.writeToFile(sb.toString(), outputFile);
+        Files.writeToFile("", TestExecUtils.lockFile);
     }
 
 }
