@@ -188,4 +188,43 @@
         <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
         <antcall target="build"/>
     </target>
+    <target name="test" depends="build">
+	  <junit>
+	    <classpath>
+	        <pathelement location="bin"/>
+	        <path refid="JUnit 4.libraryclasspath"/>
+	        <path refid="synoptic-ea407ba0a750.classpath"/>
+	        <pathelement location="${synoptic.location}/lib/automaton.jar"/>
+	        <pathelement location="${synoptic.location}/lib/plume.jar"/>
+	    </classpath>    
+	    <batchtest>
+	       <fileset dir="tests">
+	            <include name="**/*Test*" />
+	       </fileset>
+	    </batchtest>
+	    <formatter type="brief" />
+	  </junit>
+	</target>
+    <target name="vmtest" depends="build">
+	  <junit forkMode="once">
+	    <classpath>
+	        <pathelement location="bin"/>
+	        <path refid="synoptic-ea407ba0a750.classpath"/>
+	        <pathelement location="${synoptic.location}/lib/automaton.jar"/>
+	        <pathelement location="${synoptic.location}/lib/plume.jar"/>
+	        <pathelement location="../impact-tools/junit.jar"/>
+	        <pathelement location="../impact-tools/org.hamcrest.core_1.3.0.v201303031735.jar"/>
+		    <pathelement path="../impact-tools/ant-mvn-formatter.jar" />
+		    <pathelement location="../impact-tools/vmvm.jar"/>
+	    </classpath>    
+	    <batchtest>
+	       <fileset dir="tests">
+	            <include name="**/*Test*" />
+	       </fileset>
+	    </batchtest>
+	    <formatter type="brief" />
+		<jvmarg value="-Xbootclasspath/a:../impact-tools/vmvm.jar"/>
+		<jvmarg value="-javaagent:../impact-tools/vmvm.jar"/>
+	  </junit>
+	</target> 
 </project>

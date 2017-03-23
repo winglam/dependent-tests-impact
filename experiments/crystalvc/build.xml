@@ -60,4 +60,27 @@
         <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
         <antcall target="build"/>
     </target>
+	<target name="test" depends="build">
+	  <junit forkMode="once">
+	    <classpath>
+	        <pathelement location="bin"/>
+	        <pathelement location="lib/commons-io-1.4.jar"/>
+	        <pathelement location="lib/jdom-1.1.jar"/>
+	        <pathelement location="lib/log4j-1.2.15.jar"/>
+	        <pathelement location="lib/hgKit-279.jar"/>
+	        <pathelement location="../impact-tools/junit.jar"/>
+	        <pathelement location="../impact-tools/org.hamcrest.core_1.3.0.v201303031735.jar"/>
+		    <pathelement path="ant-mvn-formatter.jar" />
+		    <pathelement location="vmvm.jar"/>
+	    </classpath>    
+	    <batchtest>
+	       <fileset dir="tests">
+	            <include name="**/*Test*" />
+	       </fileset>
+	    </batchtest>
+	    <formatter type="brief" />
+		<jvmarg value="-Xbootclasspath/a:vmvm.jar"/>
+		<jvmarg value="-javaagent:vmvm.jar"/>
+	  </junit>
+	</target> 
 </project>
