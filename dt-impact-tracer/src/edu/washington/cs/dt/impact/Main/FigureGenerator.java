@@ -54,7 +54,7 @@ public class FigureGenerator {
         return null; // none of the lines contained the keyword
     }
 
-    protected static void exitWithError(String message) {
+    public static void exitWithError(String message) {
         System.err.println(message);
         Thread.dumpStack();
         System.exit(0);
@@ -198,14 +198,16 @@ public class FigureGenerator {
      * a public method that gets the line with all the flags in the file
      * that line starts with "-technique"
      */
-    public static String getFlagsLine(File file, String keyword) {
+    public static String getFlagsLine(File file, String keyword, boolean getSameLine) {
         Scanner scanner = null;
         try {
             scanner = new Scanner(file);
             while (scanner.hasNextLine()) {
                 String currLine = scanner.nextLine();
                 if (currLine.contains(keyword)) {
-                    currLine = scanner.nextLine();
+                	if (!getSameLine) {
+                        currLine = scanner.nextLine();                		
+                	}
                     scanner.close(); // close Scanner before returning
                     return currLine;
                 }

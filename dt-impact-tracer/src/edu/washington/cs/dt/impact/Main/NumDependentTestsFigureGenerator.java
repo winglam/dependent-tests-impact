@@ -620,7 +620,7 @@ public class NumDependentTestsFigureGenerator extends FigureGenerator {
 			if (file.isFile()) {
 
 				// String containing all the flags
-				String flagsInFile = getFlagsLine(file, Constants.ARGUMENT_STRING);
+				String flagsInFile = getFlagsLine(file, Constants.ARGUMENT_STRING, false);
 				if (flagsInFile == null) {
 					continue;
 				}
@@ -650,7 +650,7 @@ public class NumDependentTestsFigureGenerator extends FigureGenerator {
 
 				index = flagsList.indexOf("-dependentTestFile");
 				if (index != -1) { // only count files without dependentTestFile
-					continue;
+					//continue;
 				}
 				// see if List needs to orig or auto generated one
 				List<Project> currProjList = null;
