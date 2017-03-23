@@ -648,13 +648,13 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
             if (file.isFile()) {
 
                 // String containing all the flags
-                String flagsInFile = getFlagsLine(file, Constants.ARGUMENT_STRING);
+                String flagsInFile = getFlagsLine(file, Constants.ARGUMENT_STRING, false);
                 if (flagsInFile == null) {
                     continue;
                 }
 
-                String timeInFile = getFlagsLine(file, Constants.TIME_STRING);
-                String coverageInFile = getFlagsLine(file, Constants.COVERAGE_STRING);
+                String timeInFile = getFlagsLine(file, Constants.TIME_STRING, false);
+                String coverageInFile = getFlagsLine(file, Constants.COVERAGE_STRING, false);
 
                 // get rid of square brackets
                 List<String> flagsList = getRidSquareBrackets(flagsInFile);
