@@ -191,6 +191,7 @@ public class NumDependentTestsFigureGenerator extends FigureGenerator {
 		return latexString;
 	}
 
+	private static boolean ignoreDTFFlag = false;
 	/**
 	 * @param args
 	 */
@@ -214,6 +215,7 @@ public class NumDependentTestsFigureGenerator extends FigureGenerator {
 
 		boolean outputPrecomputedDependencesTime = argsList.contains("-getPrecomputedDependencesTime");
 		boolean getDTLists = argsList.contains("-getDTLists");
+		ignoreDTFFlag = argsList.contains("-ignoreDTFFlag");
 
 		List<List<Project>> proj_orig_arrayList = new ArrayList<List<Project>>();
 		List<List<Project>> proj_auto_arrayList = new ArrayList<List<Project>>();
@@ -649,8 +651,8 @@ public class NumDependentTestsFigureGenerator extends FigureGenerator {
 				String testType = flagsList.get(index + 1);
 
 				index = flagsList.indexOf("-dependentTestFile");
-				if (index != -1) { // only count files without dependentTestFile
-					//continue;
+				if (index != -1 && !ignoreDTFFlag) { // only count files without dependentTestFile
+					continue;
 				}
 				// see if List needs to orig or auto generated one
 				List<Project> currProjList = null;
