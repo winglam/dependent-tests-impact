@@ -39,7 +39,7 @@ cd dependent-tests-impact/experiments
 ./figureGenerator.sh
 ```
 
-The `figureGenerator.sh` script takes about 4 hours to complete.
+The `figureGenerator.sh` script takes about 14 hours to complete.
 
 The subject program print some error messages to the console.
 This is expected and normal as some tests do fail and/or produce errors.
