@@ -155,7 +155,7 @@
 			<sysproperty key="jacoco-agent.destfile" file="./jacoco.exec"/>
 			<arg value="-inputTests"/>
 			<!-- Change below this line -->
-			<arg value="xml_security-auto-order"/>
+			<arg value="xml_security-orig-order-no-dt"/>
 		</java>
 	</target>
 	<target name="report" depends="jtest">
