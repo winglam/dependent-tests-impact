@@ -3,7 +3,7 @@
               Any modifications will be overwritten.
               To include a user specific buildfile here, simply create one in the same
               directory with the processing instruction <?eclipse.ant.import?>
-              as the first entry and export the buildfile again. --><project basedir="." default="build" name="xml-security-orig-v1">
+              as the first entry and export the buildfile again. --><project xmlns:jacoco="antlib:org.jacoco.ant" basedir="." default="build" name="xml-security-orig-v1">
     <property environment="env"/>
     <property name="xml-security-commons.location" value="../xml-security-commons"/>
     <property name="debuglevel" value="source,lines,vars"/>
@@ -67,4 +67,119 @@
         <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
         <antcall target="build"/>
     </target>
+
+<!-- Jacoco stuff -->
+	<taskdef uri="antlib:org.jacoco.ant" resource="org/jacoco/ant/antlib.xml">
+		<classpath path="../impact-tools/jacocoant.jar"/>
+	</taskdef>
+
+	<!-- Change below this line -->
+    <path id="j.classpath">
+        <pathelement location="${xml-security-commons.location}/libs/bc-jce-jdk13-114.jar"/>
+        <pathelement location="${xml-security-commons.location}/libs/commons-logging-api.jar"/>
+        <pathelement location="${xml-security-commons.location}/libs/commons-logging.jar"/>
+        <pathelement location="${xml-security-commons.location}/libs/log4j-1.2.8.jar"/>
+        <pathelement location="${xml-security-commons.location}/libs/style-apachexml.jar"/>
+        <pathelement location="${xml-security-commons.location}/libs/stylebook-1.0-b3_xalan-2.jar"/>
+        <pathelement location="${xml-security-commons.location}/libs/xalan.jar"/>
+        <pathelement location="${xml-security-commons.location}/libs/xercesImpl.jar"/>
+        <pathelement location="${xml-security-commons.location}/libs/xml-apis.jar"/>
+        <pathelement location="${xml-security-commons.location}/libs/xmlParserAPIs.jar"/>
+        <pathelement location="${xml-security-commons.location}/libs/junit3.8.1.jar"/>
+        <pathelement location="${xml-security-commons.location}/libs/ant.jar"/>
+    </path>
+
+	<property name="src.dir" location="./src"/>
+	<property name="tests.dir" location="./tests"/>
+	<property name="result.dir" location="./target"/>
+	<property name="result.classes.dir" location="${result.dir}/classes"/>
+	<property name="result.tests.dir" location="${result.dir}/test-classes"/>
+	<property name="result.classes.instr.dir" location="${result.dir}/classes-instr"/>
+	<property name="result.report.dir" location="${result.dir}/site/jacoco"/>
+	<property name="result.exec.file" location="${result.dir}/jacoco.exec"/>
+
+	<target name="jclean">
+		<delete file="jacoco.exec"/>
+		<delete file="tmpfile.txt"/>
+		<delete file="tmptestfiles.txt"/>
+
+		<!-- Change below this line -->
+		<delete file="4444444444  4 444444444444 444444444444444444444"/>
+	</target>
+
+	<target name="compile">
+		<mkdir dir="${result.classes.dir}"/>
+		<javac debug="true" debuglevel="${debuglevel}" includeantruntime="false" source="${source}" target="${target}" destdir="${result.classes.dir}">
+		    <src path="src"/>
+		    <src path="tests"/>
+		    <classpath refid="j.classpath"/>
+		</javac>
+	</target>
+
+	<target name="instrument" depends="compile">
+		<!--  Step 2: Instrument class files  -->
+		<jacoco:instrument destdir="${result.classes.instr.dir}">
+			<fileset dir="${result.classes.dir}"/>
+		</jacoco:instrument>
+	</target>
+	<target name="jtest" depends="instrument">
+		<!--  Step 3: Run tests with instrumented classes  -->
+		<java classname="edu.washington.cs.dt.main.ImpactMain" fork="true">
+			<classpath>
+				<pathelement location="${result.classes.instr.dir}"/>
+				<!-- Duplicate JUnit in XML's classpath causes the tests to hang-->
+				<pathelement location="${xml-security-commons.location}/libs/bc-jce-jdk13-114.jar"/>
+				<pathelement location="${xml-security-commons.location}/libs/commons-logging-api.jar"/>
+				<pathelement location="${xml-security-commons.location}/libs/commons-logging.jar"/>
+				<pathelement location="${xml-security-commons.location}/libs/log4j-1.2.8.jar"/>
+				<pathelement location="${xml-security-commons.location}/libs/style-apachexml.jar"/>
+				<pathelement location="${xml-security-commons.location}/libs/stylebook-1.0-b3_xalan-2.jar"/>
+				<pathelement location="${xml-security-commons.location}/libs/xalan.jar"/>
+				<pathelement location="${xml-security-commons.location}/libs/xercesImpl.jar"/>
+				<pathelement location="${xml-security-commons.location}/libs/xml-apis.jar"/>
+				<pathelement location="${xml-security-commons.location}/libs/xmlParserAPIs.jar"/>
+				<pathelement location="${xml-security-commons.location}/libs/ant.jar"/>
+
+				<pathelement location="./data"/>
+				<pathelement location="../impact-tools/jacocoagent.jar"/>
+				<pathelement location="../impact-tools/impact.jar"/>
+				<pathelement location="../impact-tools/dt-detector.jar"/>
+				<pathelement location="../impact-tools/sootclasses-2.5.0.jar"/>
+				<pathelement location="../impact-tools/plume.jar"/>
+				<pathelement location="../impact-tools/guava-14.0.1.jar"/>
+				<pathelement location="../impact-tools/asm-all-3.1.jar"/>
+				<pathelement location="../impact-tools/junit.jar"/>
+				<pathelement location="../impact-tools/org.hamcrest.core_1.3.0.v201303031735.jar"/>
+			</classpath>
+			<!--  Agent is configured with system properties  -->
+			<sysproperty key="jacoco-agent.destfile" file="./jacoco.exec"/>
+			<arg value="-inputTests"/>
+			<!-- Change below this line -->
+			<arg value="xml_security-auto-order"/>
+		</java>
+	</target>
+	<target name="report" depends="jtest">
+		<!--  Step 4: Create coverage report  -->
+		<jacoco:report>
+			<!--
+			 This task needs the collected execution data and ... 
+			-->
+			<executiondata>
+				<file file="./jacoco.exec"/>
+			</executiondata>
+			<!--  the class files and optional source files ...  -->
+			<structure name="JaCoCo Ant Example">
+				<classfiles>
+					<fileset dir="${result.classes.dir}"/>
+				</classfiles>
+				<sourcefiles encoding="UTF-8">
+					<fileset dir="${src.dir}"/>
+				</sourcefiles>
+			</structure>
+			<!--  to produce reports in different formats.  -->
+			<html destdir="${result.report.dir}"/>
+			<csv destfile="${result.report.dir}/report.csv"/>
+			<xml destfile="${result.report.dir}/report.xml"/>
+		</jacoco:report>
+	</target>
 </project>
