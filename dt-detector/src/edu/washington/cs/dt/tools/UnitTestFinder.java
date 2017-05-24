@@ -36,7 +36,7 @@ public class UnitTestFinder {
 	public static boolean junit4 = false;
 	
 	@Option("Find both Junit 3.x and 4.x tests")
-	public static boolean junit3and4 = false;
+	public static boolean junit3and4 = true;
 	
 	@Option("Log file")
 	public static String log = null;

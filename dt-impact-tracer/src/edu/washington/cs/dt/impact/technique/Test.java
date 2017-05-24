@@ -28,8 +28,6 @@ import edu.washington.cs.dt.impact.util.Constants;
 import edu.washington.cs.dt.impact.util.Constants.COVERAGE;
 
 public class Test {
-    private final String EXECUTE_AFTER = "when executed after: ";
-    private final String TEST_SEP = ", ";
 
     // all lines specific to the type of COVERAGE specified
     protected Set<String> allCoverageLines;
@@ -131,20 +129,20 @@ public class Test {
 
             // tests reveal dependence when executed after testName
             line = allDTList.get(j);
-            String afterTestsStr = line.split(EXECUTE_AFTER)[1];
+            String afterTestsStr = line.split(Constants.EXECUTE_AFTER)[1];
             if (afterTestsStr.length() > 2) {
                 afterTestsStr = afterTestsStr.substring(1, afterTestsStr.length() - 1);
-                execAfter.put(testName, Arrays.asList(afterTestsStr.split(TEST_SEP)));
+                execAfter.put(testName, Arrays.asList(afterTestsStr.split(Constants.TEST_SEP)));
             }
             // revealed behavior line
             j += 2;
 
             // tests reveal dependence when executed before testName
             line = allDTList.get(j);
-            String beforeTestsStr = line.split(EXECUTE_AFTER)[1];
+            String beforeTestsStr = line.split(Constants.EXECUTE_AFTER)[1];
             if (beforeTestsStr.length() > 2) {
                 beforeTestsStr = beforeTestsStr.substring(1, beforeTestsStr.length() - 1);
-                execBefore.put(testName, Arrays.asList(beforeTestsStr.split(TEST_SEP)));
+                execBefore.put(testName, Arrays.asList(beforeTestsStr.split(Constants.TEST_SEP)));
             }
             j += 1;
         }
@@ -168,10 +166,10 @@ public class Test {
 
                 // tests reveal dependence when executed after testName
                 line = br.readLine();
-                String afterTestsStr = line.split(EXECUTE_AFTER)[1];
+                String afterTestsStr = line.split(Constants.EXECUTE_AFTER)[1];
                 if (afterTestsStr.length() > 2) {
                     afterTestsStr = afterTestsStr.substring(1, afterTestsStr.length() - 1);
-                    execAfter.put(testName, Arrays.asList(afterTestsStr.split(TEST_SEP)));
+                    execAfter.put(testName, Arrays.asList(afterTestsStr.split(Constants.TEST_SEP)));
                 }
 
                 // revealed behavior line
@@ -179,10 +177,10 @@ public class Test {
 
                 // tests reveal dependence when executed before testName
                 line = br.readLine();
-                String beforeTestsStr = line.split(EXECUTE_AFTER)[1];
+                String beforeTestsStr = line.split(Constants.EXECUTE_AFTER)[1];
                 if (beforeTestsStr.length() > 2) {
                     beforeTestsStr = beforeTestsStr.substring(1, beforeTestsStr.length() - 1);
-                    execBefore.put(testName, Arrays.asList(beforeTestsStr.split(TEST_SEP)));
+                    execBefore.put(testName, Arrays.asList(beforeTestsStr.split(Constants.TEST_SEP)));
                 }
             }
             br.close();

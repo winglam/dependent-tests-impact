@@ -99,7 +99,7 @@ public class UndeterministicTestFinder {
                 if (shouldRandomizeDeterministicTests) {
                     List<String> currentTests = parseFileToList(deterministicTestFile);
                     Collections.shuffle(currentTests);
-                    printListToFile(currentTests, deterministicTestFile);
+                    FileTools.printListToFile(currentTests, deterministicTestFile);
                 }
             } else {
                 int i = 0;
@@ -151,7 +151,7 @@ public class UndeterministicTestFinder {
                     nextLine = br.readLine();
                 }
 
-                printListToFile(currentTests, deterministicTestFile);
+                FileTools.printListToFile(currentTests, deterministicTestFile);
                 System.out.println("Total undeterministic tests found for this round: " + i);
             }
             br.close();
@@ -187,30 +187,4 @@ public class UndeterministicTestFinder {
         }
         return tests;
     }
-
-    private static void printListToFile(List<String> listToPrint, File outputFile) {
-        FileWriter output = null;
-        BufferedWriter writer = null;
-        try {
-            output = new FileWriter(outputFile, false);
-            writer = new BufferedWriter(output);
-
-            for (int j = 0; j < listToPrint.size(); j++) {
-                writer.write(listToPrint.get(j) + "\n");
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                if (writer != null) {
-                    writer.close();
-                }
-                if (output != null) {
-                    output.close();
-                }
-            } catch (IOException e) {
-            }
-        }
-    }
-
 }

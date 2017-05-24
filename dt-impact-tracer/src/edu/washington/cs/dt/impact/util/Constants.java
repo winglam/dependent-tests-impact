@@ -11,6 +11,8 @@ public class Constants {
     public static final TECHNIQUE DEFAULT_TECHNIQUE = TECHNIQUE.PRIORITIZATION;
     public static final String DEFAULT_TEST_DIR = "sootTestOutput";
     public static final String TEST_LINE = "Test: ";
+    public static final String EXECUTE_AFTER = "when executed after: ";
+    public static final String TEST_SEP = ", ";
 
     // For Figures 7,8,9
     public static final String FIXED_DTS = "Number of DTs fixed:";

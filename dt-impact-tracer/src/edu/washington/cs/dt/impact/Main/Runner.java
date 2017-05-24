@@ -603,7 +603,7 @@ public abstract class Runner {
     public static double getAPFD(List<Double> cumulTime, List<Double> cumulCoverage) {
         if (cumulTime.size() < 2 || cumulCoverage.size() < 1) {
             throw new IllegalArgumentException("cumulTime or cumulCoverage is too small to get APFD.\ncumulTime is: "
-                    + cumulTime + "\ncumulCoverage is: " + cumulCoverage);
+                    + cumulTime + "\ncumulCoverage is: " + cumulCoverage + ". Your configuration seems to have only selected one test.");
         }
 
         List<Double> testAPFD = new ArrayList<>();
@@ -632,7 +632,8 @@ public abstract class Runner {
 
     public static List<Double> getCumulList(List<String> list) {
         if (list == null || list.size() < 1) {
-            throw new IllegalArgumentException("getCumulList received argument: " + list);
+            throw new IllegalArgumentException("getCumulList received argument: " + list + ". Are you using test selection?"
+            		+ " If so, are you sure the subjects you are selected have enough differences for tests to be selected?");
         }
         List<Double> cumulList = new ArrayList<>();
         cumulList.add(Double.valueOf(list.get(0)));
