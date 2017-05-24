@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. --><project xmlns:jacoco="antlib:org.jacoco.ant" basedir="." default="build" name="jodatime-b609d7d66d">
+    <property environment="env"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.7"/>
+    <property name="source" value="1.7"/>
+    <path id="jodatime-b609d7d66d.classpath">
+        <pathelement location="bin"/>
+        <pathelement location="resources"/>
+        <pathelement location="lib/joda-convert-1.1.jar"/>
+        <pathelement location="lib/junit-3.8.2.jar"/>
+    </path>
+    <target name="init">
+        <mkdir dir="bin"/>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="src">
+                <exclude name="**/*.launch"/>
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="tests">
+                <exclude name="**/*.launch"/>
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete dir="bin"/>
+    </target>
+    <target depends="clean" name="cleanall"/>
+    <target depends="build-subprojects,build-project" name="build"/>
+    <target name="build-subprojects"/>
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
+            <src path="src"/>
+            <src path="tests"/>
+            <classpath refid="jodatime-b609d7d66d.classpath"/>
+        </javac>
+    </target>
+    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
+    <target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
+        <copy todir="${ant.library.dir}">
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </copy>
+        <unzip dest="${ant.library.dir}">
+            <patternset includes="jdtCompilerAdapter.jar"/>
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </unzip>
+    </target>
+    <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
+        <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
+        <antcall target="build"/>
+    </target>
+
+<!-- Jacoco stuff -->
+	<taskdef uri="antlib:org.jacoco.ant" resource="org/jacoco/ant/antlib.xml">
+		<classpath path="../../../impact-tools/jacocoant.jar"/>
+	</taskdef>
+
+	<!-- Change below this line -->
+    <path id="j.classpath">
+        <pathelement location="dependency/activation-1.1.jar"/>
+        <pathelement location="dependency/ambari-metrics-common-2.0.0.0-SNAPSHOT.jar"/>
+        <pathelement location="dependency/ambari-views-2.0.0.0-SNAPSHOT.jar"/>
+        <pathelement location="dependency/ant-1.6.5.jar"/>
+        <pathelement location="dependency/ant-launcher-1.7.1.jar"/>
+        <pathelement location="dependency/antlr-2.7.7.jar"/>
+        <pathelement location="dependency/antlr4-runtime-4.5.3.jar"/>
+        <pathelement location="dependency/aopalliance-1.0.jar"/>
+        <pathelement location="dependency/apacheds-core-2.0.0-M19.jar"/>
+        <pathelement location="dependency/apacheds-core-annotations-2.0.0-M19.jar"/>
+        <pathelement location="dependency/apacheds-core-api-2.0.0-M19.jar"/>
+        <pathelement location="dependency/apacheds-core-avl-2.0.0-M19.jar"/>
+        <pathelement location="dependency/apacheds-core-constants-2.0.0-M19.jar"/>
+        <pathelement location="dependency/apacheds-core-integ-2.0.0-M19.jar"/>
+        <pathelement location="dependency/apacheds-core-jndi-2.0.0-M19.jar"/>
+        <pathelement location="dependency/apacheds-core-shared-2.0.0-M19.jar"/>
+        <pathelement location="dependency/apacheds-i18n-2.0.0-M19.jar"/>
+        <pathelement location="dependency/apacheds-interceptor-kerberos-2.0.0-M19.jar"/>
+        <pathelement location="dependency/apacheds-interceptors-admin-2.0.0-M19.jar"/>
+        <pathelement location="dependency/apacheds-interceptors-authn-2.0.0-M19.jar"/>
+        <pathelement location="dependency/apacheds-interceptors-authz-2.0.0-M19.jar"/>
+        <pathelement location="dependency/apacheds-interceptors-changelog-2.0.0-M19.jar"/>
+        <pathelement location="dependency/apacheds-interceptors-collective-2.0.0-M19.jar"/>
+        <pathelement location="dependency/apacheds-interceptors-event-2.0.0-M19.jar"/>
+        <pathelement location="dependency/apacheds-interceptors-exception-2.0.0-M19.jar"/>
+        <pathelement location="dependency/apacheds-interceptors-hash-2.0.0-M19.jar"/>
+        <pathelement location="dependency/apacheds-interceptors-journal-2.0.0-M19.jar"/>
+        <pathelement location="dependency/apacheds-interceptors-normalization-2.0.0-M19.jar"/>
+        <pathelement location="dependency/apacheds-interceptors-number-2.0.0-M19.jar"/>
+        <pathelement location="dependency/apacheds-interceptors-operational-2.0.0-M19.jar"/>
+        <pathelement location="dependency/apacheds-interceptors-referral-2.0.0-M19.jar"/>
+        <pathelement location="dependency/apacheds-interceptors-schema-2.0.0-M19.jar"/>
+        <pathelement location="dependency/apacheds-interceptors-subtree-2.0.0-M19.jar"/>
+        <pathelement location="dependency/apacheds-interceptors-trigger-2.0.0-M19.jar"/>
+        <pathelement location="dependency/apacheds-jdbm-2.0.0-M5.jar"/>
+        <pathelement location="dependency/apacheds-jdbm-partition-2.0.0-M19.jar"/>
+        <pathelement location="dependency/apacheds-kerberos-codec-2.0.0-M19.jar"/>
+        <pathelement location="dependency/apacheds-ldif-partition-2.0.0-M19.jar"/>
+        <pathelement location="dependency/apacheds-mavibot-partition-2.0.0-M19.jar"/>
+        <pathelement location="dependency/apacheds-protocol-kerberos-2.0.0-M19.jar"/>
+        <pathelement location="dependency/apacheds-protocol-ldap-2.0.0-M19.jar"/>
+        <pathelement location="dependency/apacheds-protocol-shared-2.0.0-M19.jar"/>
+        <pathelement location="dependency/apacheds-server-annotations-2.0.0-M19.jar"/>
+        <pathelement location="dependency/apacheds-server-integ-2.0.0-M19.jar"/>
+        <pathelement location="dependency/apacheds-test-framework-2.0.0-M19.jar"/>
+        <pathelement location="dependency/apacheds-xdbm-partition-2.0.0-M19.jar"/>
+        <pathelement location="dependency/apache-log4j-extras-1.2.17.jar"/>
+        <pathelement location="dependency/api-asn1-api-1.0.0-M26.jar"/>
+        <pathelement location="dependency/api-asn1-ber-1.0.0-M26.jar"/>
+        <pathelement location="dependency/api-dsml-engine-1.0.0-M26.jar"/>
+        <pathelement location="dependency/api-dsml-parser-1.0.0-M26.jar"/>
+        <pathelement location="dependency/api-i18n-1.0.0-M26.jar"/>
+        <pathelement location="dependency/api-ldap-client-api-1.0.0-M26.jar"/>
+        <pathelement location="dependency/api-ldap-codec-core-1.0.0-M26.jar"/>
+        <pathelement location="dependency/api-ldap-codec-standalone-1.0.0-M26.jar"/>
+        <pathelement location="dependency/api-ldap-extras-aci-1.0.0-M26.jar"/>
+        <pathelement location="dependency/api-ldap-extras-codec-1.0.0-M26.jar"/>
+        <pathelement location="dependency/api-ldap-extras-codec-api-1.0.0-M26.jar"/>
+        <pathelement location="dependency/api-ldap-extras-sp-1.0.0-M26.jar"/>
+        <pathelement location="dependency/api-ldap-extras-trigger-1.0.0-M26.jar"/>
+        <pathelement location="dependency/api-ldap-extras-util-1.0.0-M26.jar"/>
+        <pathelement location="dependency/api-ldap-model-1.0.0-M26.jar"/>
+        <pathelement location="dependency/api-ldap-net-mina-1.0.0-M26.jar"/>
+        <pathelement location="dependency/api-ldap-schema-data-1.0.0-M26.jar"/>
+        <pathelement location="dependency/api-util-1.0.0-M26.jar"/>
+        <pathelement location="dependency/asm-3.3.1.jar"/>
+        <pathelement location="dependency/bcprov-jdk15-140.jar"/>
+        <pathelement location="dependency/c3p0-0.9.5.2.jar"/>
+        <pathelement location="dependency/cglib-2.2.2.jar"/>
+        <pathelement location="dependency/cglib-nodep-2.2.2.jar"/>
+        <pathelement location="dependency/checkstyle-6.19.jar"/>
+        <pathelement location="dependency/cloning-1.9.2.jar"/>
+        <pathelement location="dependency/commonj.sdo-2.1.1.jar"/>
+        <pathelement location="dependency/commons-beanutils-1.9.2.jar"/>
+        <pathelement location="dependency/commons-cli-1.3.1.jar"/>
+        <pathelement location="dependency/commons-codec-1.8.jar"/>
+        <pathelement location="dependency/commons-collections-3.2.1.jar"/>
+        <pathelement location="dependency/commons-compress-1.5.jar"/>
+        <pathelement location="dependency/commons-csv-1.1.jar"/>
+        <pathelement location="dependency/commons-io-1.4.jar"/>
+        <pathelement location="dependency/commons-lang-2.5.jar"/>
+        <pathelement location="dependency/commons-logging-1.1.1.jar"/>
+        <pathelement location="dependency/commons-math3-3.1.1.jar"/>
+        <pathelement location="dependency/commons-net-1.4.1.jar"/>
+        <pathelement location="dependency/commons-pool-1.6.jar"/>
+        <pathelement location="dependency/curator-client-2.7.1.jar"/>
+        <pathelement location="dependency/curator-framework-2.7.1.jar"/>
+        <pathelement location="dependency/derby-10.12.1.1.jar"/>
+        <pathelement location="dependency/derbytools-10.11.1.1.jar"/>
+        <pathelement location="dependency/dom4j-1.6.1.jar"/>
+        <pathelement location="dependency/easymock-3.4.jar"/>
+        <pathelement location="dependency/ecj-3.5.1.jar"/>
+        <pathelement location="dependency/eclipselink-2.6.2.jar"/>
+        <pathelement location="dependency/ehcache-2.10.0.jar"/>
+        <pathelement location="dependency/equalsverifier-1.7.4.jar"/>
+        <pathelement location="dependency/grizzly-framework-2.2.16.jar"/>
+        <pathelement location="dependency/grizzly-http-2.2.16.jar"/>
+        <pathelement location="dependency/grizzly-http-server-2.2.16.jar"/>
+        <pathelement location="dependency/grizzly-http-servlet-2.2.16.jar"/>
+        <pathelement location="dependency/grizzly-rcm-2.2.16.jar"/>
+        <pathelement location="dependency/gson-2.2.2.jar"/>
+        <pathelement location="dependency/guava-16.0.jar"/>
+        <pathelement location="dependency/guice-3.0.jar"/>
+        <pathelement location="dependency/guice-assistedinject-3.0.jar"/>
+        <pathelement location="dependency/guice-multibindings-3.0.jar"/>
+        <pathelement location="dependency/guice-persist-3.0.jar"/>
+        <pathelement location="dependency/guice-servlet-3.0.jar"/>
+        <pathelement location="dependency/hadoop-annotations-2.6.0.jar"/>
+        <pathelement location="dependency/hadoop-auth-2.7.2.jar"/>
+        <pathelement location="dependency/hamcrest-core-1.1.jar"/>
+        <pathelement location="dependency/httpclient-4.2.5.jar"/>
+        <pathelement location="dependency/httpcore-4.2.4.jar"/>
+        <pathelement location="dependency/jackson-annotations-2.1.4.jar"/>
+        <pathelement location="dependency/jackson-core-asl-1.9.9.jar"/>
+        <pathelement location="dependency/jackson-jaxrs-1.9.9.jar"/>
+        <pathelement location="dependency/jackson-mapper-asl-1.9.2.jar"/>
+        <pathelement location="dependency/jackson-xc-1.9.9.jar"/>
+        <pathelement location="dependency/javassist-3.20.0-GA.jar"/>
+        <pathelement location="dependency/javax.inject-1.jar"/>
+        <pathelement location="dependency/javax.json-1.0.4.jar"/>
+        <pathelement location="dependency/javax.persistence-2.1.1.jar"/>
+        <pathelement location="dependency/javax.servlet-3.0.0.v201112011016.jar"/>
+        <pathelement location="dependency/javax.servlet-api-3.1.0.jar"/>
+        <pathelement location="dependency/jaxb-api-2.2.2.jar"/>
+        <pathelement location="dependency/jaxb-impl-2.2.3-1.jar"/>
+        <pathelement location="dependency/jcip-annotations-1.0.jar"/>
+        <pathelement location="dependency/jersey-client-1.19.jar"/>
+        <pathelement location="dependency/jersey-core-1.19.jar"/>
+        <pathelement location="dependency/jersey-grizzly2-1.19.jar"/>
+        <pathelement location="dependency/jersey-grizzly2-servlet-1.19.jar"/>
+        <pathelement location="dependency/jersey-guice-1.19.jar"/>
+        <pathelement location="dependency/jersey-json-1.19.jar"/>
+        <pathelement location="dependency/jersey-multipart-1.19.jar"/>
+        <pathelement location="dependency/jersey-server-1.19.jar"/>
+        <pathelement location="dependency/jersey-servlet-1.19.jar"/>
+        <pathelement location="dependency/jersey-test-framework-core-1.19.jar"/>
+        <pathelement location="dependency/jersey-test-framework-grizzly2-1.19.jar"/>
+        <pathelement location="dependency/jettison-1.1.jar"/>
+        <pathelement location="dependency/jetty-client-8.1.19.v20160209.jar"/>
+        <pathelement location="dependency/jetty-continuation-8.1.19.v20160209.jar"/>
+        <pathelement location="dependency/jetty-http-8.1.19.v20160209.jar"/>
+        <pathelement location="dependency/jetty-io-8.1.19.v20160209.jar"/>
+        <pathelement location="dependency/jetty-security-8.1.19.v20160209.jar"/>
+        <pathelement location="dependency/jetty-server-8.1.19.v20160209.jar"/>
+        <pathelement location="dependency/jetty-servlet-8.1.19.v20160209.jar"/>
+        <pathelement location="dependency/jetty-servlets-8.1.19.v20160209.jar"/>
+        <pathelement location="dependency/jetty-util-8.1.19.v20160209.jar"/>
+        <pathelement location="dependency/jetty-webapp-8.1.19.v20160209.jar"/>
+        <pathelement location="dependency/jetty-xml-8.1.19.v20160209.jar"/>
+        <pathelement location="dependency/jline-2.11.jar"/>
+        <pathelement location="dependency/jna-4.1.0.jar"/>
+        <pathelement location="dependency/json-smart-1.1.1.jar"/>
+        <pathelement location="dependency/jsp-2.1-glassfish-2.1.v20100127.jar"/>
+        <pathelement location="dependency/jsp-api-2.1-glassfish-2.1.v20100127.jar"/>
+        <pathelement location="dependency/jsr305-1.3.9.jar"/>
+        <pathelement location="dependency/jsr311-api-1.1.1.jar"/>
+        <pathelement location="dependency/jul-to-slf4j-1.7.2.jar"/>
+        <pathelement location="dependency/junit-4.10.jar"/>
+        <pathelement location="dependency/kerberos-client-2.0.0-M19.jar"/>
+        <pathelement location="dependency/ldapsdk-4.1.jar"/>
+        <pathelement location="dependency/libpam4j-1.8.jar"/>
+        <pathelement location="dependency/log4j-1.2.17.jar"/>
+        <pathelement location="dependency/mailapi-1.5.2.jar"/>
+        <pathelement location="dependency/mavibot-1.0.0-M6.jar"/>
+        <pathelement location="dependency/mchange-commons-java-0.2.11.jar"/>
+        <pathelement location="dependency/metrics-core-3.1.0.jar"/>
+        <pathelement location="dependency/metrics-jvm-3.1.0.jar"/>
+        <pathelement location="dependency/mimepull-1.9.3.jar"/>
+        <pathelement location="dependency/mina-core-2.0.9.jar"/>
+        <pathelement location="dependency/mockito-all-1.10.19.jar"/>
+        <pathelement location="dependency/mockito-core-1.10.19.jar"/>
+        <pathelement location="dependency/netty-3.7.0.Final.jar"/>
+        <pathelement location="dependency/nimbus-jose-jwt-3.9.jar"/>
+        <pathelement location="dependency/objenesis-2.1.jar"/>
+        <pathelement location="dependency/objenesis-tck-1.2.jar"/>
+        <pathelement location="dependency/oro-2.0.8.jar"/>
+        <pathelement location="dependency/postgresql-9.3-1101-jdbc4.jar"/>
+        <pathelement location="dependency/powermock-api-easymock-1.6.3.jar"/>
+        <pathelement location="dependency/powermock-api-mockito-1.6.3.jar"/>
+        <pathelement location="dependency/powermock-api-support-1.6.3.jar"/>
+        <pathelement location="dependency/powermock-core-1.6.3.jar"/>
+        <pathelement location="dependency/powermock-module-junit4-1.6.3.jar"/>
+        <pathelement location="dependency/powermock-module-junit4-common-1.6.3.jar"/>
+        <pathelement location="dependency/powermock-reflect-1.6.3.jar"/>
+        <pathelement location="dependency/quartz-2.2.1.jar"/>
+        <pathelement location="dependency/quartz-jobs-2.2.1.jar"/>
+        <pathelement location="dependency/shared-asn1-0.9.17.jar"/>
+        <pathelement location="dependency/shared-ldap-0.9.17.jar"/>
+        <pathelement location="dependency/shared-ldap-constants-0.9.17.jar"/>
+        <pathelement location="dependency/slf4j-api-1.7.2.jar"/>
+        <pathelement location="dependency/slf4j-log4j12-1.7.2.jar"/>
+        <pathelement location="dependency/smtp-1.5.2.jar"/>
+        <pathelement location="dependency/snmp4j-1.10.1.jar"/>
+        <pathelement location="dependency/spring-aop-3.0.7.RELEASE.jar"/>
+        <pathelement location="dependency/spring-asm-3.0.7.RELEASE.jar"/>
+        <pathelement location="dependency/spring-beans-3.0.7.RELEASE.jar"/>
+        <pathelement location="dependency/spring-context-3.0.7.RELEASE.jar"/>
+        <pathelement location="dependency/spring-core-3.0.7.RELEASE.jar"/>
+        <pathelement location="dependency/spring-expression-3.0.7.RELEASE.jar"/>
+        <pathelement location="dependency/spring-jdbc-3.0.7.RELEASE.jar"/>
+        <pathelement location="dependency/spring-ldap-core-1.3.1.RELEASE.jar"/>
+        <pathelement location="dependency/spring-mock-2.0.8.jar"/>
+        <pathelement location="dependency/spring-security-config-3.1.2.RELEASE.jar"/>
+        <pathelement location="dependency/spring-security-core-3.1.2.RELEASE.jar"/>
+        <pathelement location="dependency/spring-security-kerberos-core-1.0.1.RELEASE.jar"/>
+        <pathelement location="dependency/spring-security-kerberos-web-1.0.1.RELEASE.jar"/>
+        <pathelement location="dependency/spring-security-ldap-3.1.2.RELEASE.jar"/>
+        <pathelement location="dependency/spring-security-web-3.1.2.RELEASE.jar"/>
+        <pathelement location="dependency/spring-tx-3.0.7.RELEASE.jar"/>
+        <pathelement location="dependency/spring-web-3.0.7.RELEASE.jar"/>
+        <pathelement location="dependency/stax-api-1.0.1.jar"/>
+        <pathelement location="dependency/stax-api-1.0-2.jar"/>
+        <pathelement location="dependency/tools.jar"/>
+        <pathelement location="dependency/utility-1.0.0.0-SNAPSHOT.jar"/>
+        <pathelement location="dependency/validation-api-1.1.0.Final.jar"/>
+        <pathelement location="dependency/velocity-1.7.jar"/>
+        <pathelement location="dependency/xml-apis-1.0.b2.jar"/>
+        <pathelement location="dependency/xpp3-1.1.4c.jar"/>
+        <pathelement location="dependency/xz-1.2.jar"/>
+        <pathelement location="dependency/zookeeper-3.4.6.jar"/>
+    </path>
+
+	<property name="src.dir" location="../src"/>
+	<property name="tests.dir" location="./randoop/src"/>
+	<property name="result.dir" location="./coverage"/>
+	<property name="result.classes.dir" location="./classes"/>
+	<!-- 
+	<property name="result.tests.dir" location="./randoop/bin"/>
+	-->
+	<property name="result.tests.dir" location="./test-classes"/>	
+	<property name="result.classes.instr.dir" location="${result.dir}/classes-instr"/>
+	<property name="result.report.w.dt.dir" location="${result.dir}/site-w-dt/jacoco"/>
+	<property name="result.report.no.dt.dir" location="${result.dir}/site-no-dt/jacoco"/>
+
+
+	<target name="jclean">
+		<delete file="jacoco.exec"/>
+		<delete file="tmpfile.txt"/>
+		<delete file="tmptestfiles.txt"/>
+
+		<!-- Change below this line -->
+	</target>
+
+	<target name="instrument">
+		<!--  Step 2: Instrument class files  -->
+		<mkdir dir="${result.classes.dir}"/>
+		<jacoco:instrument destdir="${result.classes.instr.dir}">
+			<fileset dir="${result.classes.dir}"/>
+			<fileset dir="${result.tests.dir}"/>
+		</jacoco:instrument>
+	</target>
+
+	<target name="jtest-w-dt" depends="instrument">
+		<!--  Step 3: Run tests with instrumented classes  -->
+		<java classname="edu.washington.cs.dt.main.ImpactMain" fork="true">
+			<classpath>
+				<pathelement location="${result.classes.instr.dir}"/>
+				<path refid="j.classpath"/>
+				<pathelement location="../../../impact-tools/jacocoagent.jar"/>
+				<pathelement location="../../../impact-tools/impact.jar"/>
+				<pathelement location="../../../impact-tools/dt-detector.jar"/>
+				<pathelement location="../../../impact-tools/sootclasses-2.5.0.jar"/>
+				<pathelement location="../../../impact-tools/plume.jar"/>
+				<pathelement location="../../../impact-tools/guava-14.0.1.jar"/>
+				<pathelement location="../../../impact-tools/asm-all-3.1.jar"/>
+				<pathelement location="../../../impact-tools/junit.jar"/>
+				<pathelement location="../../../impact-tools/org.hamcrest.core_1.3.0.v201303031735.jar"/>
+			</classpath>
+			<!--  Agent is configured with system properties  -->
+			<sysproperty key="jacoco-agent.destfile" file="./jacoco.w.dt.exec"/>
+			<arg value="-inputTests"/>
+			<!-- Change below this line -->
+			<arg value="ambari-server-orig-order"/>
+		</java>
+	</target>
+	<target name="report-w-dt" depends="jtest-w-dt">
+		<!--  Step 4: Create coverage report  -->
+		<jacoco:report>
+			<!--
+			 This task needs the collected execution data and ... 
+			-->
+			<executiondata>
+				<file file="./jacoco.exec"/>
+			</executiondata>
+			<!--  the class files and optional source files ...  -->
+			<structure name="JaCoCo Ant Example">
+				<classfiles>
+					<fileset dir="${result.classes.dir}"/>
+				</classfiles>
+				<sourcefiles encoding="UTF-8">
+					<fileset dir="${src.dir}"/>
+				</sourcefiles>
+			</structure>
+			<!--  to produce reports in different formats.  -->
+			<html destdir="${result.report.w.dt.dir}"/>
+		</jacoco:report>
+		<antcall target="jclean"/>
+	</target>
+
+    <target name="jtest-no-dt" depends="instrument">
+        <!--  Step 3: Run tests with instrumented classes  -->
+        <java classname="edu.washington.cs.dt.main.ImpactMain" fork="true">
+            <classpath>
+				<pathelement location="${result.classes.instr.dir}"/>
+				<path refid="j.classpath"/>
+				<pathelement location="../../../impact-tools/jacocoagent.jar"/>
+				<pathelement location="../../../impact-tools/impact.jar"/>
+				<pathelement location="../../../impact-tools/dt-detector.jar"/>
+				<pathelement location="../../../impact-tools/sootclasses-2.5.0.jar"/>
+				<pathelement location="../../../impact-tools/plume.jar"/>
+				<pathelement location="../../../impact-tools/guava-14.0.1.jar"/>
+				<pathelement location="../../../impact-tools/asm-all-3.1.jar"/>
+				<pathelement location="../../../impact-tools/junit.jar"/>
+				<pathelement location="../../../impact-tools/org.hamcrest.core_1.3.0.v201303031735.jar"/>
+            </classpath>
+            <!--  Agent is configured with system properties  -->
+            <sysproperty key="jacoco-agent.destfile" file="./jacoco.no.dt.exec"/>
+            <arg value="-inputTests"/>
+            <!-- Change below this line -->
+            <arg value="ambari-server-orig-order-no-dt-w-pt"/>
+        </java>
+    </target>
+    <target name="report-no-dt" depends="jtest-no-dt">
+        <!--  Step 4: Create coverage report  -->
+        <jacoco:report>
+            <!--
+             This task needs the collected execution data and ... 
+            -->
+            <executiondata>
+                <file file="./jacoco.exec"/>
+            </executiondata>
+            <!--  the class files and optional source files ...  -->
+            <structure name="JaCoCo Ant Example">
+                <classfiles>
+                    <fileset dir="${result.classes.dir}"/>
+                </classfiles>
+                <sourcefiles encoding="UTF-8">
+                    <fileset dir="${src.dir}"/>
+                </sourcefiles>
+            </structure>
+            <!--  to produce reports in different formats.  -->
+            <html destdir="${result.report.no.dt.dir}"/>
+        </jacoco:report>
+      <antcall target="jclean"/>
+    </target>
+
+    <target name="getCoverage" depends="report-w-dt,report-no-dt">
+		<delete dir="${result.classes.instr.dir}"/>
+		<delete dir="${result.tests.dir}"/>
+		<delete dir="${result.classes.dir}"/>
+    </target>
+</project>
