@@ -7,11 +7,14 @@
 package edu.washington.cs.dt.impact.tools;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -101,6 +104,31 @@ public class FileTools {
         if (filesToDelete != null) {
             for (String s : filesToDelete) {
                 new File(s).delete();
+            }
+        }
+    }
+    
+    public static void printListToFile(Collection<String> listToPrint, File outputFile) {
+        FileWriter output = null;
+        BufferedWriter writer = null;
+        try {
+            output = new FileWriter(outputFile, false);
+            writer = new BufferedWriter(output);
+
+            for (String s : listToPrint) {
+                writer.write(s + "\n");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (writer != null) {
+                    writer.close();
+                }
+                if (output != null) {
+                    output.close();
+                }
+            } catch (IOException e) {
             }
         }
     }
