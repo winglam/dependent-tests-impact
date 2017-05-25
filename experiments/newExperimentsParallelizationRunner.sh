@@ -17,6 +17,6 @@ while [ "$index" -lt "$count" ]; do
     clearTemp ${newExperiments[$index]} $j
   done
 
-  cd ..
+  cd ${initialDir}
   let "index++"
 done
