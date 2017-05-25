@@ -6,9 +6,9 @@ function runPrioritization() {
     rm -rf ${priorDir}
     mkdir ${priorDir}
 
-    ./prioritization-runner.sh
+    #./prioritization-runner.sh
     ./enhanced-prioritization-runner.sh
-    ./newExperimentsPrioritizationRunner.sh
+    #./newExperimentsPrioritizationRunner.sh
     ./enhancedNewExpPriorRunner.sh
     java -cp ${impactJarCP} edu.washington.cs.dt.impact.Main.EnhancedResultsFigureGenerator -directory ${priorDir} -outputDirectory ${priorDir} -allowNegatives
 }
@@ -26,9 +26,9 @@ function runParallelization() {
     rm -rf ${paraDir}
     mkdir ${paraDir}
 
-    ./parallelization-runner.sh
+    #./parallelization-runner.sh
     ./enhanced-parallelization-runner.sh
-    ./newExperimentsParallelizationRunner.sh
+    #./newExperimentsParallelizationRunner.sh
     ./enhancedNewExpParaRunner.sh
     java -cp ${impactJarCP} edu.washington.cs.dt.impact.Main.EnhancedResultsFigureGenerator -directory ${paraDir} -outputDirectory ${paraDir} -allowNegatives
 }

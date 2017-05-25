@@ -2,7 +2,7 @@ source ./newExp-config.sh
 
 #compileNewExpSource
 
-index=0
+index=1
 count=${#newExperiments[@]}
 
 while [ "$index" -lt "$count" ]; do
@@ -17,6 +17,6 @@ while [ "$index" -lt "$count" ]; do
     clearTemp ${newExperiments[$index]} $j
   done
 
-  cd ..
+  cd ${initialDir}
   let "index++"
 done
