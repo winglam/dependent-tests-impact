@@ -16,6 +16,7 @@ import edu.washington.cs.dt.TestExecResults;
 import edu.washington.cs.dt.impact.data.TestFunctionStatement;
 import edu.washington.cs.dt.impact.data.WrapperTestList;
 import edu.washington.cs.dt.impact.technique.Test;
+import edu.washington.cs.dt.impact.tools.DependentTestFinder;
 import edu.washington.cs.dt.impact.tools.FileTools;
 import edu.washington.cs.dt.impact.util.Constants;
 import edu.washington.cs.dt.impact.util.Constants.COVERAGE;
@@ -43,7 +44,7 @@ public abstract class Runner {
     protected static Constants.TEST_TYPE testType = TEST_TYPE.ORIG;
     protected static List<String> allDTList;
     protected static File dependentTestFile = null;
-    protected static boolean resolveDependences = false;
+    protected static File resolveDependences = null;
     protected static String filesToDeleteStr = null;
     protected static boolean getCoverage = false;
     protected static List<String> filesToDelete = null;
@@ -393,7 +394,23 @@ public abstract class Runner {
             allDTList = null;
         }
 
-        resolveDependences = argsList.contains("-resolveDependences");
+        int resolveDependencesIndex = argsList.indexOf("-resolveDependences");
+        if (resolveDependencesIndex != -1) {
+        	int resolveDependencesFileIndex = resolveDependencesIndex + 1;
+        	if (resolveDependencesFileIndex >= argsList.size()) {
+        		FigureGenerator.exitWithError("resolveDependences file argument is specified but a file name is not."
+                        + " Please use the format: -resolveDependences aFileName");
+        	}
+        	resolveDependences = new File(argsList.get(resolveDependencesFileIndex));
+        	int counter = 1;
+        	while (resolveDependences.isFile()) {
+        		try {
+					resolveDependences = new File(resolveDependences.getCanonicalPath() + counter);
+				} catch (IOException e) {
+					FigureGenerator.exitWithError("Error creating unique resolveDependences file.");
+				}
+        	}
+        }
 
         // file containing list of files that should be deleted before the test suite is executed
         // again
@@ -419,7 +436,7 @@ public abstract class Runner {
 
         if (outputFileName == null) {
             outputFileName = Constants.getOutputFileName(coverage, techniqueName, order, project, testType,
-                    numOfMachines, resolveDependences ? DT_SETTING.FIXED_DT : DT_SETTING.CONTAINS_DT,
+                    numOfMachines, resolveDependences != null ? DT_SETTING.FIXED_DT : DT_SETTING.CONTAINS_DT,
                     allDTList == null ? TD_SETTING.OMITTED_TD : TD_SETTING.GIVEN_TD);
         }
 
@@ -519,6 +536,34 @@ public abstract class Runner {
                     + " / " + origOrderTestList.size());
         }
         writeToFile(outputArr, outputDTListSeparately);
+        
+        if (resolveDependences != null) {
+        	if (allDTList.isEmpty()) {
+                FileWriter output = null;
+                BufferedWriter writer = null;
+                try {
+                    output = new FileWriter(resolveDependences);
+                    writer = new BufferedWriter(output);
+                    writer.write("");
+                    writer.close();
+                    output.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                } finally {
+                    try {
+                        if (writer != null) {
+                            writer.close();
+                        }
+                        if (output != null) {
+                            output.close();
+                        }
+                    } catch (IOException e) {
+                    }
+                } 
+        	} else {
+            	DependentTestFinder.printDependenceHelper(allDTList, resolveDependences);        		
+        	}
+        }
     }
 
     private static void writeToFile(List<String> outputArr, boolean outputDTListSeparately) {

@@ -672,7 +672,7 @@ public class DependentTestFinder {
                     mergeChains(independentTest, dependentTest);
                 }
                 checkDependentTest(independentTest, tests);
-                printDependenceHelper();
+                printDependenceHelper(ALL_DT_LIST, DT_FILE);
             } else if (ORIGINAL_ORDER_TESTS.indexOf(tests) > ORIGINAL_ORDER_TESTS.indexOf(independentTest)) {
                 checkDependentTest(tests, independentTest);
             }
@@ -698,7 +698,7 @@ public class DependentTestFinder {
                 ALL_DT_LIST.add("when executed after: []");
             }
         }
-        printDependenceHelper();
+        printDependenceHelper(ALL_DT_LIST, DT_FILE);
     }
 
     // sorts tests based on the opposite order as they would appear on the original order list
@@ -799,17 +799,17 @@ public class DependentTestFinder {
     }
 
     // outputs the ALL_DT_LIST to DT_FILE. With every 5 lines, a line break is inserted
-    private static void printDependenceHelper() {
-        if (DT_FILE != null) {
+    public static void printDependenceHelper(List<String> allDTList, File outputFile) {
+        if (outputFile != null) {
             FileWriter output = null;
             BufferedWriter writer = null;
             try {
-                output = new FileWriter(DT_FILE);
+                output = new FileWriter(outputFile);
                 writer = new BufferedWriter(output);
 
-                for (int j = 0; j < ALL_DT_LIST.size();) {
+                for (int j = 0; j < allDTList.size();) {
                     for (int i = 0; i < 5; j++) {
-                        writer.write(ALL_DT_LIST.get(j) + "\n");
+                        writer.write(allDTList.get(j) + "\n");
                         i++;
                     }
                     writer.write("\n");
