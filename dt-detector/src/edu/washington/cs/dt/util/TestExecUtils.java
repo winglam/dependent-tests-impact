@@ -34,6 +34,7 @@ public class TestExecUtils {
     @Option("The min number of tests when using ./tmptestfiles")
     public static int threshhold = 120;
     public static String lockFile = "LOCK_FILE";
+    public static String exitFileName = "EXIT_FILE";
 
     /*
      * Executes a list of tests in order by launching a fresh JVM, and
@@ -65,17 +66,18 @@ public class TestExecUtils {
 
         String[] args = commandList.toArray(new String[0]);
 
-
+        File exitFile = new File(exitFileName);
 		File file = new File(lockFile);
     	try{
     		file.delete();
+    		exitFile.delete();
     	}catch(Exception e){
     		e.printStackTrace();
     	}
 
         Process proc = Command.execProc(args, System.out, "", false);
         
-        while (!file.exists()) {
+        while (!file.exists() || !exitFile.exists()) {
         	try {
         	    Thread.sleep(1000);
         	} catch(InterruptedException ex) {
@@ -84,13 +86,25 @@ public class TestExecUtils {
         }
         
         proc.destroy();
-        
-    	try{
-    		file.delete();
-    	}catch(Exception e){
-    		e.printStackTrace();
-    	}
-
+            	
+        if (exitFile.exists()) {
+        	try {
+        		file.delete();
+        		exitFile.delete();
+        	} catch(Exception e){
+        		e.printStackTrace();
+        	}
+        	System.err.println("Exit file detected.");
+        	System.exit(0);
+        } else {
+        	try {
+        		file.delete();
+        		exitFile.delete();
+        	} catch(Exception e){
+        		e.printStackTrace();
+        	}
+        }
+    	
         Map<String, OneTestExecResult> testResults = parseTestResults(outputFile);
 
         Utils.checkTrue(tests.size() == testResults.size(), "Test num not equal. Results is size " + testResults.size() + ". Tests is size " + tests.size() + ".");

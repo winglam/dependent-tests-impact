@@ -47,6 +47,7 @@ public class TestRunnerWrapperFileInputs {
         	try {
                 executor = new JUnitTestExecutor(fullTestName);
         	} catch (ClassNotFoundException e) {
+        		Files.writeToFile("", TestExecUtils.exitFileName);
         		e.printStackTrace();
         		System.exit(0);
         	}

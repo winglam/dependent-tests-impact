@@ -40,6 +40,7 @@ public class TestRunnerWrapper {
         	try {
                 useJUnit4 = CodeUtils.useJUnit4(fullTestName);
         	} catch (ClassNotFoundException e) {
+        		Files.writeToFile("", TestExecUtils.exitFileName);
         		e.printStackTrace();
         		System.exit(0);
         	}
@@ -52,6 +53,7 @@ public class TestRunnerWrapper {
             	try {
                     executor = new JUnitTestExecutor(fullTestName);
             	} catch (ClassNotFoundException e) {
+            		Files.writeToFile("", TestExecUtils.exitFileName);
             		e.printStackTrace();
             		System.exit(0);
             	}
