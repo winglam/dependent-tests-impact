@@ -85,7 +85,7 @@ public class CodeUtils {
 		return sb.toString();
 	}
 	
-	public static boolean useJUnit4(String fullTestName) {
+	public static boolean useJUnit4(String fullTestName) throws ClassNotFoundException {
 		String clzName = fullTestName.substring(0, fullTestName.lastIndexOf("."));
 		try {
 			Class<?> clz = Class.forName(clzName);

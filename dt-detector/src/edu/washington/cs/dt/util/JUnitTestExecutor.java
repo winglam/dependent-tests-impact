@@ -29,7 +29,7 @@ class JUnitTestExecutor {
 	public final String fullMethodName;
 	
 	//package.class.method
-	public JUnitTestExecutor(String fullMethodName) {
+	public JUnitTestExecutor(String fullMethodName) throws ClassNotFoundException {
 		this.fullMethodName = fullMethodName;
 		String className = this.fullMethodName.substring(0, this.fullMethodName.lastIndexOf("."));
 		try {

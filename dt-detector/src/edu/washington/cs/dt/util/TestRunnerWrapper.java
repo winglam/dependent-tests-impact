@@ -36,13 +36,25 @@ public class TestRunnerWrapper {
         long interval;
         for(String fullTestName : tests) {
         	System.out.println("Test being executed: " + fullTestName);
-            boolean useJUnit4 = CodeUtils.useJUnit4(fullTestName);
+        	boolean useJUnit4 = false;
+        	try {
+                useJUnit4 = CodeUtils.useJUnit4(fullTestName);
+        	} catch (ClassNotFoundException e) {
+        		e.printStackTrace();
+        		System.exit(0);
+        	}
             /*check the results*/
             String result = null;
             //String stackTrace = TestExecUtils.noStackTrace;
             String fullStackTrace = TestExecUtils.noStackTrace;
             if (useJUnit4) {
-                JUnitTestExecutor executor = new JUnitTestExecutor(fullTestName);
+                JUnitTestExecutor executor = null;
+            	try {
+                    executor = new JUnitTestExecutor(fullTestName);
+            	} catch (ClassNotFoundException e) {
+            		e.printStackTrace();
+            		System.exit(0);
+            	}
                 long start = System.nanoTime();
                 executor.executeWithJUnit4Runner();
                 interval = System.nanoTime() - start;
