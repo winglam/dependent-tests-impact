@@ -44,7 +44,7 @@ public class Selection extends Test {
      */
     public Selection(ORDER order, String outputFileName, File inputTestFolder, COVERAGE coverage, File selectionOutput1,
             File selectionOutput2, File origOrder, File dependentTestsFile, boolean getCoverage) {
-        super(inputTestFolder, coverage, dependentTestsFile);
+        super(inputTestFolder, coverage, dependentTestsFile, origOrder);
 
         Set<String> changedCoverage = findCoverage(selectionOutput1, selectionOutput2, coverage);
 
@@ -71,7 +71,7 @@ public class Selection extends Test {
                 methodList.retainAll(nameToMethodData.values());
                 Collections.shuffle(methodList);
             } else if (order == ORDER.ORIGINAL) {
-                parseOrigOrderToMethodList(origOrder, nameToMethodData);
+            	parseOrigOrderListToMethodList(origOrderList, nameToMethodData);
             } else {
                 System.err.println("Test selection is specified with an incompatible order."
                         + " Compatible orders are: absolute, relative, random and original.");

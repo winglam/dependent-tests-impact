@@ -38,7 +38,7 @@ public class Prioritization extends Test {
 
     public Prioritization(ORDER order, String outputFilename, File inputTestFolder, COVERAGE coverage,
             File dependentTestsFile, boolean getCoverage, File origOrder, int seed) {
-        super(inputTestFolder, coverage, dependentTestsFile);
+        super(inputTestFolder, coverage, dependentTestsFile, origOrder);
 
         if (order == ORDER.ABSOLUTE || order == ORDER.RELATIVE) {
             Collections.sort(methodList);
@@ -50,7 +50,7 @@ public class Prioritization extends Test {
             Collections.shuffle(methodList, new Random(seed));
             orderObj = new Standard(outputFilename, methodList);
         } else if (order == ORDER.ORIGINAL) {
-            parseOrigOrderToMethodList(origOrder, getNameToMethodData(methodList));
+        	parseOrigOrderListToMethodList(origOrderList, getNameToMethodData(methodList));
             orderObj = new Standard(outputFilename, methodList, getCoverage, allCoverageLines);
         } else {
             System.err.println("Test prioritization is specified with an incompatible order."
