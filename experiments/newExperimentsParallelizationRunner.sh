@@ -2,7 +2,7 @@ source ./newExp-config.sh
 
 #compileNewExpSource
 
-index=1
+index=0
 count=${#newExperiments[@]}
 
 while [ "$index" -lt "$count" ]; do

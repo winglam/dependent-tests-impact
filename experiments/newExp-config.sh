@@ -1,7 +1,7 @@
 source ./config.sh
 
 newExperiments=(ambari-server zeppelin-zengine zeppelin-interpreter zeppelin-server)
-newExpTestTypes=(orig)
+newExpTestTypes=(orig auto)
 
 newExpDirectories=(ambari/ambari-server/target zeppelin/zeppelin-zengine/target zeppelin/zeppelin-interpreter/target zeppelin/zeppelin-server/target)
 #newExpCompileDirectories=(ambari)

@@ -5,21 +5,21 @@ function instrumentNewSelectionFiles() {
   echo 'Enhanced instrumenting new subject'
   /usr/lib/jvm/java-7-oracle/jre/bin/java -cp $2 edu.washington.cs.dt.impact.Main.InstrumentationMain -inputDir classes -technique selection
   /usr/lib/jvm/java-7-oracle/jre/bin/java -cp $2 edu.washington.cs.dt.impact.Main.InstrumentationMain -inputDir test-classes -technique selection
-  #/usr/lib/jvm/java-7-oracle/jre/bin/java -cp $2 edu.washington.cs.dt.impact.Main.InstrumentationMain -inputDir randoop/bin/ -technique selection
+  /usr/lib/jvm/java-7-oracle/jre/bin/java -cp $2 edu.washington.cs.dt.impact.Main.InstrumentationMain -inputDir randoop/bin/ -technique selection
 
   cd ${initialDir}/$3
 
   echo 'Enhanced instrumenting old subject'
   /usr/lib/jvm/java-7-oracle/jre/bin/java -cp $4 edu.washington.cs.dt.impact.Main.InstrumentationMain -inputDir classes -technique selection
   /usr/lib/jvm/java-7-oracle/jre/bin/java -cp $4 edu.washington.cs.dt.impact.Main.InstrumentationMain -inputDir test-classes -technique selection
-  #/usr/lib/jvm/java-7-oracle/jre/bin/java -cp $4 edu.washington.cs.dt.impact.Main.InstrumentationMain -inputDir randoop/bin/ -technique selection
+  /usr/lib/jvm/java-7-oracle/jre/bin/java -cp $4 edu.washington.cs.dt.impact.Main.InstrumentationMain -inputDir randoop/bin/ -technique selection
   cd ${initialDir}
 }
 
 #compileSource
 #compileNewSource
 
-index=1
+index=0
 count=${#newExperiments[@]}
 
 while [ "$index" -lt "$count" ]; do
