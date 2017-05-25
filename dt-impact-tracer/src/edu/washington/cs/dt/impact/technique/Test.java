@@ -35,8 +35,10 @@ public class Test {
     protected List<TestFunctionStatement> allMethodList;
     protected Standard orderObj;
     private final Map<String, Set<String>> testToAllLines;
+    protected List<String> origOrderList = null;
 
-    public Test(File folder, COVERAGE coverage, File dependentTestsFile) {
+    public Test(File folder, COVERAGE coverage, File dependentTestsFile, File origOrder) {
+    	origOrderList = FileTools.parseFileToList(origOrder);
         allCoverageLines = new HashSet<String>();
         testToAllLines = new HashMap<String, Set<String>>();
         if (allMethodList == null) {
@@ -84,13 +86,13 @@ public class Test {
         }
 
         for (String testName : execBefore.keySet()) {
-            if (nameToMethodData.get(testName) == null) {
+            if (nameToMethodData.get(testName) == null && origOrderList.contains(testName)) {
                 TestFunctionStatement tmd = new TestFunctionStatement(testName);
                 nameToMethodData.put(testName, tmd);
             }
             for (String dtTest : execBefore.get(testName)) {
                 TestFunctionStatement tmd = nameToMethodData.get(dtTest);
-                if (tmd == null) {
+                if (tmd == null && origOrderList.contains(dtTest)) {
                     tmd = new TestFunctionStatement(dtTest);
                     nameToMethodData.put(dtTest, tmd);
                 }
@@ -100,13 +102,13 @@ public class Test {
         }
 
         for (String testName : execAfter.keySet()) {
-            if (nameToMethodData.get(testName) == null) {
+            if (nameToMethodData.get(testName) == null && origOrderList.contains(testName)) {
                 TestFunctionStatement tmd = new TestFunctionStatement(testName);
                 nameToMethodData.put(testName, tmd);
             }
             for (String dtTest : execAfter.get(testName)) {
                 TestFunctionStatement tmd = nameToMethodData.get(dtTest);
-                if (tmd == null) {
+                if (tmd == null && origOrderList.contains(dtTest)) {
                     tmd = new TestFunctionStatement(dtTest);
                     nameToMethodData.put(dtTest, tmd);
                 }
@@ -237,11 +239,6 @@ public class Test {
                 continue;
             }
         }
-    }
-
-    protected void parseOrigOrderToMethodList(File origOrder, Map<String, TestFunctionStatement> nameToMethodData) {
-        List<String> origOrderList = FileTools.parseFileToList(origOrder);
-        parseOrigOrderListToMethodList(origOrderList, nameToMethodData);
     }
 
     protected void parseOrigOrderListToMethodList(List<String> origOrder,

@@ -47,7 +47,7 @@ public class Parallelization extends Test {
      */
     public Parallelization(ORDER order, String outputFileName, File inputTestFolder, COVERAGE coverage,
             File dependentTestsFile, int k, File origOrder, File timeOrder, boolean getCoverage, List<String> origList) {
-        super(inputTestFolder, coverage, dependentTestsFile);
+        super(inputTestFolder, coverage, dependentTestsFile, origOrder);
 
         splitTests = new LinkedList<Standard>();
         if (outputFileName == null) {
@@ -134,7 +134,7 @@ public class Parallelization extends Test {
             if (order == ORDER.RANDOM) {
                 Collections.shuffle(methodList);
             } else if (order == ORDER.ORIGINAL) {
-                parseOrigOrderToMethodList(origOrder, getNameToMethodData(methodList));
+            	parseOrigOrderListToMethodList(origOrderList, getNameToMethodData(methodList));
             }
 
             // split the tests. if the tests can't be split by k perfectly,
