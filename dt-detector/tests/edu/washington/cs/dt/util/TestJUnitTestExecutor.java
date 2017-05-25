@@ -22,7 +22,12 @@ public class TestJUnitTestExecutor extends TestCase {
 		assertEquals(RESULT.PASS.name(), executor.getResult());
 		assertEquals(TestExecUtils.noStackTrace, executor.getStackTrace());
 		
-		executor = new JUnitTestExecutor("edu.washington.cs.dt.samples.SampleJUnit3Tests.testJUnit3_1");
+		try {
+			executor = new JUnitTestExecutor("edu.washington.cs.dt.samples.SampleJUnit3Tests.testJUnit3_1");
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		executor.executeWithJUnit4Runner();
 		assertEquals(RESULT.PASS.name(), executor.getResult());
 		assertTrue(TestExecUtils.noStackTrace.equals(executor.getStackTrace()));
@@ -39,7 +44,12 @@ public class TestJUnitTestExecutor extends TestCase {
 		assertEquals(RESULT.PASS.name(), executor.getResult());
 		assertEquals(TestExecUtils.noStackTrace, executor.getStackTrace());
 		
-		executor = new JUnitTestExecutor("edu.washington.cs.dt.samples.junit4x.ExampleJunit4xTest.testX");
+		try {
+			executor = new JUnitTestExecutor("edu.washington.cs.dt.samples.junit4x.ExampleJunit4xTest.testX");
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		executor.executeWithJUnit4Runner();
 		assertEquals(RESULT.PASS.name(), executor.getResult());
 		assertTrue(TestExecUtils.noStackTrace.equals(executor.getStackTrace()));
@@ -56,7 +66,12 @@ public class TestJUnitTestExecutor extends TestCase {
 		assertEquals(RESULT.ERROR.name(), executor.getResult());
 		assertTrue(!TestExecUtils.noStackTrace.equals(executor.getStackTrace()));
 		
-		executor = new JUnitTestExecutor("edu.washington.cs.dt.samples.SampleJUnit3Tests.testJUnit3_exception");
+		try {
+			executor = new JUnitTestExecutor("edu.washington.cs.dt.samples.SampleJUnit3Tests.testJUnit3_exception");
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		executor.executeWithJUnit4Runner();
 		assertEquals(RESULT.ERROR.name(), executor.getResult());
 		assertTrue(!TestExecUtils.noStackTrace.equals(executor.getStackTrace()));
@@ -73,7 +88,12 @@ public class TestJUnitTestExecutor extends TestCase {
 		assertEquals(RESULT.FAILURE.name(), executor.getResult());
 		assertTrue(!TestExecUtils.noStackTrace.equals(executor.getStackTrace()));
 		
-		executor = new JUnitTestExecutor("edu.washington.cs.dt.samples.junit4x.ExampleJunit4xTest.testE");
+		try {
+			executor = new JUnitTestExecutor("edu.washington.cs.dt.samples.junit4x.ExampleJunit4xTest.testE");
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		executor.executeWithJUnit4Runner();
 		assertEquals(RESULT.FAILURE.name(), executor.getResult());
 		assertTrue(!TestExecUtils.noStackTrace.equals(executor.getStackTrace()));
@@ -90,7 +110,12 @@ public class TestJUnitTestExecutor extends TestCase {
 		assertEquals(RESULT.FAILURE.name(), executor.getResult());
 		assertTrue(!TestExecUtils.noStackTrace.equals(executor.getStackTrace()));
 		
-		executor = new JUnitTestExecutor("edu.washington.cs.dt.samples.SampleJUnit3Tests.testJUnit3_fail");
+		try {
+			executor = new JUnitTestExecutor("edu.washington.cs.dt.samples.SampleJUnit3Tests.testJUnit3_fail");
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		executor.executeWithJUnit4Runner();
 		assertEquals(RESULT.FAILURE.name(), executor.getResult());
 		assertTrue(!TestExecUtils.noStackTrace.equals(executor.getStackTrace()));
@@ -107,7 +132,12 @@ public class TestJUnitTestExecutor extends TestCase {
 		assertEquals(RESULT.FAILURE.name(), executor.getResult());
 		assertTrue(!TestExecUtils.noStackTrace.equals(executor.getStackTrace()));
 		
-		executor = new JUnitTestExecutor("edu.washington.cs.dt.samples.junit4x.ExampleJunit4xTest.testF");
+		try {
+			executor = new JUnitTestExecutor("edu.washington.cs.dt.samples.junit4x.ExampleJunit4xTest.testF");
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		executor.executeWithJUnit4Runner();
 		assertEquals(RESULT.FAILURE.name(), executor.getResult());
 		assertTrue(!TestExecUtils.noStackTrace.equals(executor.getStackTrace()));
@@ -124,7 +154,12 @@ public class TestJUnitTestExecutor extends TestCase {
 		assertEquals(RESULT.ERROR.name(), executor.getResult());
 		assertTrue(!TestExecUtils.noStackTrace.equals(executor.getStackTrace()));
 		
-		executor = new JUnitTestExecutor("edu.washington.cs.dt.samples.junit4x.ExampleJunit4xTest.testZ");
+		try {
+			executor = new JUnitTestExecutor("edu.washington.cs.dt.samples.junit4x.ExampleJunit4xTest.testZ");
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		executor.executeWithJUnit4Runner();
 		assertEquals(RESULT.ERROR.name(), executor.getResult());
 		assertTrue(!TestExecUtils.noStackTrace.equals(executor.getStackTrace()));

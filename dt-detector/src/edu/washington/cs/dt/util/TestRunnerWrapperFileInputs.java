@@ -43,7 +43,13 @@ public class TestRunnerWrapperFileInputs {
             //			String stackTrace = TestExecUtils.noStackTrace;
             String fullStackTrace = TestExecUtils.noStackTrace;
 
-            JUnitTestExecutor executor = new JUnitTestExecutor(fullTestName);
+            JUnitTestExecutor executor = null;
+        	try {
+                executor = new JUnitTestExecutor(fullTestName);
+        	} catch (ClassNotFoundException e) {
+        		e.printStackTrace();
+        		System.exit(0);
+        	}
             long start = System.nanoTime();
             executor.executeWithJUnit4Runner();
             long interval = System.nanoTime() - start;

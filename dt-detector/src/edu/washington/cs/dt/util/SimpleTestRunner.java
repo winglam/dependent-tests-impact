@@ -14,9 +14,21 @@ public class SimpleTestRunner {
 		String fullTestName = args[0];
 		/*create a test runner*/
 		TestRunner aTestRunner= new TestRunner();
-			boolean useJUnit4 = CodeUtils.useJUnit4(fullTestName);
+			boolean useJUnit4 = false;
+			try {
+				useJUnit4 = CodeUtils.useJUnit4(fullTestName);
+			} catch (ClassNotFoundException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 			if (useJUnit4) {
-				JUnitTestExecutor executor = new JUnitTestExecutor(fullTestName);
+	            JUnitTestExecutor executor = null;
+	        	try {
+	                executor = new JUnitTestExecutor(fullTestName);
+	        	} catch (ClassNotFoundException e) {
+	        		e.printStackTrace();
+	        		System.exit(0);
+	        	}
 				executor.executeWithJUnit4Runner();
 				System.out.println("executing: ? " + fullTestName + ", successfully? " + executor.getResult());
 			} else {
