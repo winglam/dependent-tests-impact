@@ -1,0 +1,11 @@
+org.apache.zeppelin.utils.SecurityUtils.getPrincipal : $z0 = <org.apache.zeppelin.utils.SecurityUtils: boolean isEnabled> >>>>>>>> org.apache.zeppelin.utils.SecurityUtils.getPrincipal : if $z0 != 0
+org.apache.zeppelin.utils.SecurityUtils.getPrincipal : if $z0 != 0 >>>>>>>> org.apache.zeppelin.utils.SecurityUtils.getPrincipal : return "anonymous"
+org.apache.zeppelin.utils.SecurityUtils.getPrincipal : if $z0 != 0 >>>>>>>> org.apache.zeppelin.utils.SecurityUtils.getPrincipal : r0 = staticinvoke <org.apache.shiro.SecurityUtils: org.apache.shiro.subject.Subject getSubject()>()
+org.apache.zeppelin.utils.SecurityUtils.getPrincipal : r0 = staticinvoke <org.apache.shiro.SecurityUtils: org.apache.shiro.subject.Subject getSubject()>() >>>>>>>> org.apache.zeppelin.utils.SecurityUtils.getPrincipal : $z1 = interfaceinvoke r0.<org.apache.shiro.subject.Subject: boolean isAuthenticated()>()
+org.apache.zeppelin.utils.SecurityUtils.getPrincipal : $z1 = interfaceinvoke r0.<org.apache.shiro.subject.Subject: boolean isAuthenticated()>() >>>>>>>> org.apache.zeppelin.utils.SecurityUtils.getPrincipal : if $z1 == 0
+org.apache.zeppelin.utils.SecurityUtils.getPrincipal : if $z1 == 0 >>>>>>>> org.apache.zeppelin.utils.SecurityUtils.getPrincipal : $r2 = interfaceinvoke r0.<org.apache.shiro.subject.Subject: java.lang.Object getPrincipal()>()
+org.apache.zeppelin.utils.SecurityUtils.getPrincipal : if $z1 == 0 >>>>>>>> org.apache.zeppelin.utils.SecurityUtils.getPrincipal : r1 = "anonymous"
+org.apache.zeppelin.utils.SecurityUtils.getPrincipal : r1 = "anonymous" >>>>>>>> org.apache.zeppelin.utils.SecurityUtils.getPrincipal : return r1
+org.apache.zeppelin.utils.SecurityUtils.getPrincipal : $r2 = interfaceinvoke r0.<org.apache.shiro.subject.Subject: java.lang.Object getPrincipal()>() >>>>>>>> org.apache.zeppelin.utils.SecurityUtils.getPrincipal : r1 = virtualinvoke $r2.<java.lang.Object: java.lang.String toString()>()
+org.apache.zeppelin.utils.SecurityUtils.getPrincipal : r1 = virtualinvoke $r2.<java.lang.Object: java.lang.String toString()>() >>>>>>>> org.apache.zeppelin.utils.SecurityUtils.getPrincipal : goto [?= return r1]
+org.apache.zeppelin.utils.SecurityUtils.getPrincipal : goto [?= return r1] >>>>>>>> org.apache.zeppelin.utils.SecurityUtils.getPrincipal : return r1

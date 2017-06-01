@@ -1,0 +1,9 @@
+org.apache.zeppelin.server.ZeppelinServer.isBinaryPackage : $r1 = new java.io.File >>>>>>>> org.apache.zeppelin.server.ZeppelinServer.isBinaryPackage : $r2 = virtualinvoke r0.<org.apache.zeppelin.conf.ZeppelinConfiguration: java.lang.String getRelativeDir(java.lang.String)>("zeppelin-web")
+org.apache.zeppelin.server.ZeppelinServer.isBinaryPackage : $r2 = virtualinvoke r0.<org.apache.zeppelin.conf.ZeppelinConfiguration: java.lang.String getRelativeDir(java.lang.String)>("zeppelin-web") >>>>>>>> org.apache.zeppelin.server.ZeppelinServer.isBinaryPackage : specialinvoke $r1.<java.io.File: void <init>(java.lang.String)>($r2)
+org.apache.zeppelin.server.ZeppelinServer.isBinaryPackage : specialinvoke $r1.<java.io.File: void <init>(java.lang.String)>($r2) >>>>>>>> org.apache.zeppelin.server.ZeppelinServer.isBinaryPackage : $z0 = virtualinvoke $r1.<java.io.File: boolean isDirectory()>()
+org.apache.zeppelin.server.ZeppelinServer.isBinaryPackage : $z0 = virtualinvoke $r1.<java.io.File: boolean isDirectory()>() >>>>>>>> org.apache.zeppelin.server.ZeppelinServer.isBinaryPackage : if $z0 != 0
+org.apache.zeppelin.server.ZeppelinServer.isBinaryPackage : if $z0 != 0 >>>>>>>> org.apache.zeppelin.server.ZeppelinServer.isBinaryPackage : $z1 = 1
+org.apache.zeppelin.server.ZeppelinServer.isBinaryPackage : if $z0 != 0 >>>>>>>> org.apache.zeppelin.server.ZeppelinServer.isBinaryPackage : $z1 = 0
+org.apache.zeppelin.server.ZeppelinServer.isBinaryPackage : $z1 = 0 >>>>>>>> org.apache.zeppelin.server.ZeppelinServer.isBinaryPackage : return $z1
+org.apache.zeppelin.server.ZeppelinServer.isBinaryPackage : $z1 = 1 >>>>>>>> org.apache.zeppelin.server.ZeppelinServer.isBinaryPackage : goto [?= return $z1]
+org.apache.zeppelin.server.ZeppelinServer.isBinaryPackage : goto [?= return $z1] >>>>>>>> org.apache.zeppelin.server.ZeppelinServer.isBinaryPackage : return $z1

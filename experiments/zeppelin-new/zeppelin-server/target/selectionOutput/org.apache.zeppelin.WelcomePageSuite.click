@@ -1,0 +1,6 @@
+org.apache.zeppelin.WelcomePageSuite.click : $r1 = r0.<org.apache.zeppelin.WelcomePageSuite: org.scalatest.selenium.WebBrowser$click$ click$module> >>>>>>>> org.apache.zeppelin.WelcomePageSuite.click : if $r1 != null
+org.apache.zeppelin.WelcomePageSuite.click : if $r1 != null >>>>>>>> org.apache.zeppelin.WelcomePageSuite.click : $r2 = specialinvoke r0.<org.apache.zeppelin.WelcomePageSuite: org.scalatest.selenium.WebBrowser$click$ click$lzycompute()>()
+org.apache.zeppelin.WelcomePageSuite.click : if $r1 != null >>>>>>>> org.apache.zeppelin.WelcomePageSuite.click : $r2 = r0.<org.apache.zeppelin.WelcomePageSuite: org.scalatest.selenium.WebBrowser$click$ click$module>
+org.apache.zeppelin.WelcomePageSuite.click : $r2 = r0.<org.apache.zeppelin.WelcomePageSuite: org.scalatest.selenium.WebBrowser$click$ click$module> >>>>>>>> org.apache.zeppelin.WelcomePageSuite.click : return $r2
+org.apache.zeppelin.WelcomePageSuite.click : $r2 = specialinvoke r0.<org.apache.zeppelin.WelcomePageSuite: org.scalatest.selenium.WebBrowser$click$ click$lzycompute()>() >>>>>>>> org.apache.zeppelin.WelcomePageSuite.click : goto [?= return $r2]
+org.apache.zeppelin.WelcomePageSuite.click : goto [?= return $r2] >>>>>>>> org.apache.zeppelin.WelcomePageSuite.click : return $r2

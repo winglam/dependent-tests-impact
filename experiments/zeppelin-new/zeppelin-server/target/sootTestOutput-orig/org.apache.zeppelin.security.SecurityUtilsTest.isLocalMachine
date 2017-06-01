@@ -1,0 +1,7 @@
+org.apache.zeppelin.utils.SecurityUtils.isValidOrigin : if r5 != null goto $r6 = virtualinvoke r5.<java.lang.String: java.lang.String toLowerCase()>()
+org.apache.zeppelin.utils.SecurityUtils.isValidOrigin : if r0 == null goto r7 = virtualinvoke r2.<java.lang.String: java.lang.String toLowerCase()>()
+org.apache.zeppelin.utils.SecurityUtils.isValidOrigin : r7 = virtualinvoke r2.<java.lang.String: java.lang.String toLowerCase()>()
+org.apache.zeppelin.utils.SecurityUtils.isValidOrigin : $r4 = new java.net.URI
+org.apache.zeppelin.utils.SecurityUtils.isValidOrigin : $r8 = staticinvoke <java.net.InetAddress: java.net.InetAddress getLocalHost()>()
+org.apache.zeppelin.utils.SecurityUtils.isValidOrigin : $r10 = virtualinvoke r1.<org.apache.zeppelin.conf.ZeppelinConfiguration: java.util.List getAllowedOrigins()>()
+org.apache.zeppelin.utils.SecurityUtils.isValidOrigin : r2 = ""
