@@ -1,0 +1,724 @@
+org.apache.zeppelin.interpreter.InterpreterSetting.setErrorReason : r0.<org.apache.zeppelin.interpreter.InterpreterSetting: java.lang.String errorReason> = r1
+org.apache.zeppelin.notebook.Paragraph.noteHasInterpreters : $r1 = r0.<org.apache.zeppelin.notebook.Paragraph: org.apache.zeppelin.interpreter.InterpreterSettingManager interpreterSettingManager>
+org.apache.zeppelin.notebook.Paragraph.getInterpreterContext : $r21 = virtualinvoke r0.<org.apache.zeppelin.notebook.Paragraph: java.lang.String getUser()>()
+org.apache.zeppelin.notebook.Paragraph.getInterpreterContext : $r30 = new org.apache.zeppelin.notebook.Paragraph$ParagraphRunner
+org.apache.zeppelin.notebook.Paragraph.getInterpreterContext : $r41 = r0.<org.apache.zeppelin.notebook.Paragraph: org.apache.zeppelin.user.AuthenticationInfo authenticationInfo>
+org.apache.zeppelin.notebook.Paragraph.getInterpreterContext : $r42 = new org.apache.zeppelin.interpreter.InterpreterContext
+org.apache.zeppelin.notebook.Paragraph.getInterpreterContext : $r12 = r0.<org.apache.zeppelin.notebook.Paragraph: org.apache.zeppelin.interpreter.InterpreterSettingManager interpreterSettingManager>
+org.apache.zeppelin.notebook.Paragraph.getInterpreterContext : $r27 = r0.<org.apache.zeppelin.notebook.Paragraph: org.apache.zeppelin.notebook.Note note>
+org.apache.zeppelin.notebook.Paragraph.getInterpreterContext : $r39 = r0.<org.apache.zeppelin.notebook.Paragraph: org.apache.zeppelin.user.AuthenticationInfo authenticationInfo>
+org.apache.zeppelin.notebook.Paragraph.getInterpreterContext : goto [?= $z1 = interfaceinvoke r5.<java.util.Iterator: boolean hasNext()>()]
+org.apache.zeppelin.notebook.Paragraph.getInterpreterContext : $r38 = r0.<org.apache.zeppelin.notebook.Paragraph: org.apache.zeppelin.user.AuthenticationInfo authenticationInfo>
+org.apache.zeppelin.notebook.Paragraph.getInterpreterContext : $r2 = new org.apache.zeppelin.interpreter.InterpreterOutput
+org.apache.zeppelin.notebook.Paragraph.getInterpreterContext : r35 = r0
+org.apache.zeppelin.notebook.Paragraph.getInterpreterContext : r3 = null
+org.apache.zeppelin.notebook.Paragraph.getInterpreterContext : $r17 = virtualinvoke r0.<org.apache.zeppelin.notebook.Paragraph: java.lang.String getUser()>()
+org.apache.zeppelin.notebook.Paragraph.getInterpreterContext : return r52
+org.apache.zeppelin.notebook.Paragraph.getInterpreterContext : $r36 = r0.<org.apache.zeppelin.notebook.Paragraph: org.apache.zeppelin.notebook.Note note>
+org.apache.zeppelin.notebook.Paragraph.getInterpreterContext : r1 = r0
+org.apache.zeppelin.notebook.Paragraph.getInterpreterContext : $r25 = new java.util.LinkedList
+org.apache.zeppelin.notebook.Paragraph.getInterpreterContext : r2 = null
+org.apache.zeppelin.notebook.Paragraph.getInterpreterContext : $r8 = r0.<org.apache.zeppelin.notebook.Paragraph: org.apache.zeppelin.interpreter.InterpreterSettingManager interpreterSettingManager>
+org.apache.zeppelin.notebook.repo.VFSNotebookRepo.setNotebookDirectory : $r18 = staticinvoke <org.apache.commons.vfs2.VFS: org.apache.commons.vfs2.FileSystemManager getManager()>()
+org.apache.zeppelin.notebook.repo.VFSNotebookRepo.setNotebookDirectory : $r19 = r0.<org.apache.zeppelin.notebook.repo.VFSNotebookRepo: org.apache.commons.vfs2.FileSystemManager fsManager>
+org.apache.zeppelin.notebook.repo.VFSNotebookRepo.setNotebookDirectory : $r17 = virtualinvoke r16.<java.io.File: java.net.URI toURI()>()
+org.apache.zeppelin.notebook.repo.VFSNotebookRepo.setNotebookDirectory : $r9 = r0.<org.apache.zeppelin.notebook.repo.VFSNotebookRepo: java.net.URI filesystemRoot>
+org.apache.zeppelin.notebook.repo.VFSNotebookRepo.setNotebookDirectory : $r3 = r0.<org.apache.zeppelin.notebook.repo.VFSNotebookRepo: org.apache.zeppelin.conf.ZeppelinConfiguration conf>
+org.apache.zeppelin.notebook.repo.VFSNotebookRepo.setNotebookDirectory : $r11 = new java.io.File
+org.apache.zeppelin.notebook.repo.VFSNotebookRepo.setNotebookDirectory : $r6 = new java.net.URI
+org.apache.zeppelin.notebook.repo.VFSNotebookRepo.setNotebookDirectory : $z1 = interfaceinvoke r22.<org.apache.commons.vfs2.FileObject: boolean exists()>()
+org.apache.zeppelin.notebook.repo.VFSNotebookRepo.setNotebookDirectory : goto [?= $r9 = r0.<org.apache.zeppelin.notebook.repo.VFSNotebookRepo: java.net.URI filesystemRoot>]
+org.apache.zeppelin.interpreter.InterpreterSetting.getGroup : $r1 = r0.<org.apache.zeppelin.interpreter.InterpreterSetting: java.lang.String group>
+org.apache.zeppelin.notebook.Notebook.getNote : $r5 = r0.<org.apache.zeppelin.notebook.Notebook: java.util.Map notes>
+org.apache.zeppelin.notebook.Notebook.getNote : $r4 = r0.<org.apache.zeppelin.notebook.Notebook: java.util.Map notes>
+org.apache.zeppelin.interpreter.InterpreterSetting.getInterpreterSessionKey : return r4
+org.apache.zeppelin.interpreter.InterpreterSetting.getInterpreterSessionKey : $z4 = virtualinvoke r3.<org.apache.zeppelin.interpreter.InterpreterOption: boolean perNoteScoped()>()
+org.apache.zeppelin.interpreter.InterpreterSetting.getInterpreterSessionKey : r4 = r2
+org.apache.zeppelin.interpreter.InterpreterSetting.getInterpreterSessionKey : $z1 = virtualinvoke r3.<org.apache.zeppelin.interpreter.InterpreterOption: boolean perNoteScoped()>()
+org.apache.zeppelin.interpreter.InterpreterSetting.getInterpreterSessionKey : $z0 = virtualinvoke r3.<org.apache.zeppelin.interpreter.InterpreterOption: boolean isExistingProcess()>()
+org.apache.zeppelin.interpreter.InterpreterSetting.getInterpreterSessionKey : r3 = virtualinvoke r0.<org.apache.zeppelin.interpreter.InterpreterSetting: org.apache.zeppelin.interpreter.InterpreterOption getOption()>()
+org.apache.zeppelin.interpreter.InterpreterSetting.getInterpreterSessionKey : $r9 = <org.apache.zeppelin.interpreter.InterpreterSetting: org.slf4j.Logger logger>
+org.apache.zeppelin.interpreter.InterpreterSetting.getInterpreterSessionKey : $z3 = virtualinvoke r3.<org.apache.zeppelin.interpreter.InterpreterOption: boolean perUserScoped()>()
+org.apache.zeppelin.notebook.repo.VFSNotebookRepo.save : $r27 = <org.apache.commons.vfs2.NameScope: org.apache.commons.vfs2.NameScope CHILD>
+org.apache.zeppelin.notebook.repo.VFSNotebookRepo.save : virtualinvoke r4.<com.google.gson.GsonBuilder: com.google.gson.GsonBuilder setPrettyPrinting()>()
+org.apache.zeppelin.notebook.repo.VFSNotebookRepo.save : $r22 = interfaceinvoke r10.<org.apache.commons.vfs2.FileObject: org.apache.commons.vfs2.FileContent getContent()>()
+org.apache.zeppelin.notebook.repo.VFSNotebookRepo.save : $z0 = interfaceinvoke r9.<org.apache.commons.vfs2.FileObject: boolean exists()>()
+org.apache.zeppelin.notebook.repo.VFSNotebookRepo.save : virtualinvoke r11.<java.io.OutputStream: void close()>()
+org.apache.zeppelin.notebook.repo.VFSNotebookRepo.save : $r13 = virtualinvoke r1.<org.apache.zeppelin.notebook.Note: java.lang.String getId()>()
+org.apache.zeppelin.notebook.repo.VFSNotebookRepo.save : r5 = virtualinvoke r4.<com.google.gson.GsonBuilder: com.google.gson.Gson create()>()
+org.apache.zeppelin.notebook.repo.VFSNotebookRepo.save : interfaceinvoke r9.<org.apache.commons.vfs2.FileObject: void createFolder()>()
+org.apache.zeppelin.notebook.repo.VFSNotebookRepo.save : r6 = virtualinvoke r5.<com.google.gson.Gson: java.lang.String toJson(java.lang.Object)>(r1)
+org.apache.zeppelin.notebook.repo.VFSNotebookRepo.save : r7 = virtualinvoke r0.<org.apache.zeppelin.notebook.repo.VFSNotebookRepo: org.apache.commons.vfs2.FileObject getRootDir()>()
+org.apache.zeppelin.notebook.repo.VFSNotebookRepo.save : $r23 = r0.<org.apache.zeppelin.notebook.repo.VFSNotebookRepo: org.apache.zeppelin.conf.ZeppelinConfiguration conf>
+org.apache.zeppelin.notebook.repo.VFSNotebookRepo.save : $r3 = new com.google.gson.GsonBuilder
+org.apache.zeppelin.notebook.repo.VFSNotebookRepo.save : $z1 = specialinvoke r0.<org.apache.zeppelin.notebook.repo.VFSNotebookRepo: boolean isDirectory(org.apache.commons.vfs2.FileObject)>(r9)
+org.apache.zeppelin.notebook.repo.VFSNotebookRepo.save : $r21 = <org.apache.commons.vfs2.NameScope: org.apache.commons.vfs2.NameScope CHILD>
+org.apache.zeppelin.notebook.NotebookAuthorization.saveToFile : r19 = $r18
+org.apache.zeppelin.notebook.NotebookAuthorization.saveToFile : $z0 = virtualinvoke r12.<java.io.File: boolean exists()>()
+org.apache.zeppelin.notebook.NotebookAuthorization.saveToFile : $r1 = <org.apache.zeppelin.notebook.NotebookAuthorization: java.util.Map authInfo>
+org.apache.zeppelin.notebook.NotebookAuthorization.saveToFile : virtualinvoke r12.<java.io.File: boolean createNewFile()>()
+org.apache.zeppelin.notebook.NotebookAuthorization.saveToFile : exitmonitor r2
+org.apache.zeppelin.notebook.NotebookAuthorization.saveToFile : $r7 = new org.apache.zeppelin.notebook.NotebookAuthorizationInfoSaving
+org.apache.zeppelin.notebook.NotebookAuthorization.saveToFile : $r8 = <org.apache.zeppelin.notebook.NotebookAuthorization: java.util.Map authInfo>
+org.apache.zeppelin.notebook.NotebookAuthorization.saveToFile : $r11 = new java.io.File
+org.apache.zeppelin.notebook.NotebookAuthorization.saveToFile : $r20 = <org.apache.zeppelin.notebook.NotebookAuthorization: org.slf4j.Logger LOG>
+org.apache.zeppelin.notebook.NotebookAuthorization.saveToFile : $r9 = <org.apache.zeppelin.notebook.NotebookAuthorization: com.google.gson.Gson gson>
+org.apache.zeppelin.notebook.Note.createParagraph : $r2 = new org.apache.zeppelin.notebook.Paragraph
+org.apache.zeppelin.notebook.Note.createParagraph : specialinvoke r0.<org.apache.zeppelin.notebook.Note: void setParagraphMagic(org.apache.zeppelin.notebook.Paragraph,int)>(r3, i0)
+org.apache.zeppelin.notebook.Note.createParagraph : return r3
+org.apache.zeppelin.notebook.Note.createParagraph : virtualinvoke r3.<org.apache.zeppelin.notebook.Paragraph: void setAuthenticationInfo(org.apache.zeppelin.user.AuthenticationInfo)>(r1)
+org.apache.zeppelin.notebook.Note.createParagraph : $r6 = virtualinvoke r3.<org.apache.zeppelin.notebook.Paragraph: java.lang.String getUser()>()
+org.apache.zeppelin.interpreter.InterpreterSettingManager.access$000 : $r1 = r0.<org.apache.zeppelin.interpreter.InterpreterSettingManager: org.apache.zeppelin.conf.ZeppelinConfiguration zeppelinConfiguration>
+org.apache.zeppelin.interpreter.InterpreterSetting.appendDependencies : r2 = interfaceinvoke r1.<java.util.List: java.util.Iterator iterator()>()
+org.apache.zeppelin.interpreter.InterpreterSettingManager.getInterpreters : $r2 = specialinvoke r0.<org.apache.zeppelin.interpreter.InterpreterSettingManager: java.util.List getNoteInterpreterSettingBinding(java.lang.String)>(r1)
+org.apache.zeppelin.conf.ZeppelinConfiguration.credentialsPersist : $r1 = <org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars: org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars ZEPPELIN_CREDENTIALS_PERSIST>
+org.apache.zeppelin.interpreter.InterpreterSettingManager.init : $r54 = <org.apache.zeppelin.interpreter.Interpreter: java.util.Map registeredInterpreters>
+org.apache.zeppelin.interpreter.InterpreterSettingManager.init : $r12 = r0.<org.apache.zeppelin.interpreter.InterpreterSettingManager: org.apache.zeppelin.conf.ZeppelinConfiguration zeppelinConfiguration>
+org.apache.zeppelin.interpreter.InterpreterSettingManager.init : $r80 = r0.<org.apache.zeppelin.interpreter.InterpreterSettingManager: java.util.Map interpreterSettings>
+org.apache.zeppelin.interpreter.InterpreterSettingManager.init : $r70 = r0.<org.apache.zeppelin.interpreter.InterpreterSettingManager: java.util.Map interpreterSettingsRef>
+org.apache.zeppelin.interpreter.InterpreterSettingManager.init : $r14 = r0.<org.apache.zeppelin.interpreter.InterpreterSettingManager: java.nio.file.Path interpreterDirPath>
+org.apache.zeppelin.interpreter.InterpreterSettingManager.init : $r44 = <org.apache.zeppelin.interpreter.Interpreter: java.util.Map registeredInterpreters>
+org.apache.zeppelin.interpreter.InterpreterSettingManager.init : $r106 = r0.<org.apache.zeppelin.interpreter.InterpreterSettingManager: java.util.Map interpreterSettings>
+org.apache.zeppelin.interpreter.InterpreterSettingManager.init : virtualinvoke r0.<org.apache.zeppelin.interpreter.InterpreterSettingManager: void saveToFile()>()
+org.apache.zeppelin.interpreter.InterpreterSettingManager.init : r91 = r0.<org.apache.zeppelin.interpreter.InterpreterSettingManager: java.lang.String[] interpreterGroupOrderList>
+org.apache.zeppelin.interpreter.InterpreterSettingManager.init : $r99 = interfaceinvoke r82.<java.util.Map: java.util.Collection values()>()
+org.apache.zeppelin.interpreter.InterpreterSettingManager.init : specialinvoke r0.<org.apache.zeppelin.interpreter.InterpreterSettingManager: void loadFromFile()>()
+org.apache.zeppelin.interpreter.InterpreterSettingManager.init : $r81 = new java.util.HashMap
+org.apache.zeppelin.interpreter.InterpreterSettingManager.init : $r83 = r0.<org.apache.zeppelin.interpreter.InterpreterSettingManager: java.util.Map interpreterSettingsRef>
+org.apache.zeppelin.interpreter.InterpreterSettingManager.init : $r13 = staticinvoke <java.lang.Thread: java.lang.Thread currentThread()>()
+org.apache.zeppelin.interpreter.InterpreterSettingManager.init : $r93 = interfaceinvoke r82.<java.util.Map: java.lang.Object remove(java.lang.Object)>(r92)
+org.apache.zeppelin.interpreter.InterpreterSettingManager.removeNoteInterpreterSettingBinding : $r8 = r0.<org.apache.zeppelin.interpreter.InterpreterSettingManager: java.util.Map interpreterSettings>
+org.apache.zeppelin.interpreter.InterpreterSettingManager.removeNoteInterpreterSettingBinding : $r9 = r0.<org.apache.zeppelin.interpreter.InterpreterSettingManager: java.util.Map interpreterBindings>
+org.apache.zeppelin.interpreter.InterpreterSettingManager.removeNoteInterpreterSettingBinding : exitmonitor r3
+org.apache.zeppelin.interpreter.InterpreterSettingManager.removeNoteInterpreterSettingBinding : $r14 = virtualinvoke r0.<org.apache.zeppelin.interpreter.InterpreterSettingManager: org.apache.zeppelin.interpreter.InterpreterSetting get(java.lang.String)>(r6)
+org.apache.zeppelin.interpreter.InterpreterSettingManager.removeNoteInterpreterSettingBinding : r5 = interfaceinvoke r4.<java.util.List: java.util.Iterator iterator()>()
+org.apache.zeppelin.interpreter.InterpreterSettingManager.removeNoteInterpreterSettingBinding : goto [?= $z1 = interfaceinvoke r5.<java.util.Iterator: boolean hasNext()>()]
+org.apache.zeppelin.interpreter.InterpreterSettingManager.getInterpreterSessionKey : $z3 = virtualinvoke r4.<org.apache.zeppelin.interpreter.InterpreterOption: boolean perUserScoped()>()
+org.apache.zeppelin.interpreter.InterpreterSettingManager.getInterpreterSessionKey : return r5
+org.apache.zeppelin.interpreter.InterpreterSettingManager.getInterpreterSessionKey : $z1 = virtualinvoke r4.<org.apache.zeppelin.interpreter.InterpreterOption: boolean perNoteScoped()>()
+org.apache.zeppelin.interpreter.InterpreterSettingManager.getInterpreterSessionKey : $z0 = virtualinvoke r4.<org.apache.zeppelin.interpreter.InterpreterOption: boolean isExistingProcess()>()
+org.apache.zeppelin.interpreter.InterpreterSettingManager.getInterpreterSessionKey : r5 = r2
+org.apache.zeppelin.interpreter.InterpreterSettingManager.getInterpreterSessionKey : $r10 = <org.apache.zeppelin.interpreter.InterpreterSettingManager: org.slf4j.Logger logger>
+org.apache.zeppelin.interpreter.InterpreterSettingManager.getInterpreterSessionKey : r4 = virtualinvoke r3.<org.apache.zeppelin.interpreter.InterpreterSetting: org.apache.zeppelin.interpreter.InterpreterOption getOption()>()
+org.apache.zeppelin.interpreter.InterpreterSettingManager.getInterpreterSessionKey : $z4 = virtualinvoke r4.<org.apache.zeppelin.interpreter.InterpreterOption: boolean perNoteScoped()>()
+org.apache.zeppelin.interpreter.InterpreterSetting.getInterpreterProcessKey : return r4
+org.apache.zeppelin.interpreter.InterpreterSetting.getInterpreterProcessKey : $r6 = virtualinvoke r0.<org.apache.zeppelin.interpreter.InterpreterSetting: org.apache.zeppelin.interpreter.InterpreterOption getOption()>()
+org.apache.zeppelin.interpreter.InterpreterSetting.getInterpreterProcessKey : $r5 = virtualinvoke r0.<org.apache.zeppelin.interpreter.InterpreterSetting: org.apache.zeppelin.interpreter.InterpreterOption getOption()>()
+org.apache.zeppelin.interpreter.InterpreterSetting.getInterpreterProcessKey : r3 = virtualinvoke r0.<org.apache.zeppelin.interpreter.InterpreterSetting: org.apache.zeppelin.interpreter.InterpreterOption getOption()>()
+org.apache.zeppelin.interpreter.InterpreterSetting.getInterpreterProcessKey : r4 = "shared_process"
+org.apache.zeppelin.interpreter.InterpreterSettingManager.removeInterpretersForNote : virtualinvoke r1.<org.apache.zeppelin.interpreter.InterpreterSetting: void closeAndRemoveInterpreterGroup(java.lang.String,java.lang.String)>(r3, "")
+org.apache.zeppelin.interpreter.InterpreterSettingManager.removeInterpretersForNote : r4 = virtualinvoke r1.<org.apache.zeppelin.interpreter.InterpreterSetting: org.apache.zeppelin.interpreter.InterpreterOption getOption()>()
+org.apache.zeppelin.interpreter.InterpreterSettingManager.removeInterpretersForNote : $r5 = "shared"
+org.apache.zeppelin.interpreter.InterpreterFactory.getInterpreter : if r3 == null goto $r11 = r0.<org.apache.zeppelin.interpreter.InterpreterFactory: org.apache.zeppelin.interpreter.InterpreterSettingManager interpreterSettingManager>
+org.apache.zeppelin.interpreter.InterpreterFactory.getInterpreter : $r11 = r0.<org.apache.zeppelin.interpreter.InterpreterFactory: org.apache.zeppelin.interpreter.InterpreterSettingManager interpreterSettingManager>
+org.apache.zeppelin.interpreter.InterpreterFactory.getInterpreter : $r9 = r0.<org.apache.zeppelin.interpreter.InterpreterFactory: org.apache.zeppelin.interpreter.InterpreterSettingManager interpreterSettingManager>
+org.apache.zeppelin.interpreter.InterpreterFactory.getInterpreter : if r4 == null goto return null
+org.apache.zeppelin.interpreter.InterpreterFactory.getInterpreter : $r12 = specialinvoke r0.<org.apache.zeppelin.interpreter.InterpreterFactory: java.util.List createOrGetInterpreterList(java.lang.String,java.lang.String,org.apache.zeppelin.interpreter.InterpreterSetting)>(r1, r2, r5)
+org.apache.zeppelin.interpreter.InterpreterSetting.setGroup : r0.<org.apache.zeppelin.interpreter.InterpreterSetting: java.lang.String group> = r1
+org.apache.zeppelin.interpreter.InterpreterSetting.getProperties : $r1 = r0.<org.apache.zeppelin.interpreter.InterpreterSetting: java.lang.Object properties>
+org.apache.zeppelin.notebook.Paragraph.getAuthenticationInfo : $r1 = r0.<org.apache.zeppelin.notebook.Paragraph: org.apache.zeppelin.user.AuthenticationInfo authenticationInfo>
+org.apache.zeppelin.notebook.Paragraph.clearRuntimeInfo : r0.<org.apache.zeppelin.notebook.Paragraph: java.util.Map runtimeInfos> = null
+org.apache.zeppelin.notebook.Paragraph.clearRuntimeInfo : if r1 == null goto r0.<org.apache.zeppelin.notebook.Paragraph: java.util.Map runtimeInfos> = null
+org.apache.zeppelin.notebook.repo.VFSNotebookRepo.list : return r4
+org.apache.zeppelin.notebook.repo.VFSNotebookRepo.list : r5 = r3
+org.apache.zeppelin.notebook.repo.VFSNotebookRepo.list : r2 = virtualinvoke r0.<org.apache.zeppelin.notebook.repo.VFSNotebookRepo: org.apache.commons.vfs2.FileObject getRootDir()>()
+org.apache.zeppelin.notebook.repo.VFSNotebookRepo.list : $r9 = new java.util.LinkedList
+org.apache.zeppelin.notebook.repo.VFSNotebookRepo.list : r3 = interfaceinvoke r2.<org.apache.commons.vfs2.FileObject: org.apache.commons.vfs2.FileObject[] getChildren()>()
+org.apache.zeppelin.notebook.Paragraph.setResult : r0.<org.apache.zeppelin.notebook.Paragraph: java.lang.Object results> = r1
+org.apache.zeppelin.notebook.Note.getId : $r1 = r0.<org.apache.zeppelin.notebook.Note: java.lang.String id>
+org.apache.zeppelin.conf.ZeppelinConfiguration.create : $r4 = <org.apache.zeppelin.conf.ZeppelinConfiguration: org.apache.zeppelin.conf.ZeppelinConfiguration conf>
+org.apache.zeppelin.conf.ZeppelinConfiguration.create : $r0 = <org.apache.zeppelin.conf.ZeppelinConfiguration: org.apache.zeppelin.conf.ZeppelinConfiguration conf>
+org.apache.zeppelin.notebook.Paragraph.isBlankParagraph : $r1 = virtualinvoke r0.<org.apache.zeppelin.notebook.Paragraph: java.lang.String getText()>()
+org.apache.zeppelin.notebook.Paragraph.getResult : $r1 = virtualinvoke r0.<org.apache.zeppelin.notebook.Paragraph: java.lang.Object getReturn()>()
+org.apache.zeppelin.interpreter.InterpreterSettingManager.createNewSetting : virtualinvoke r6.<org.apache.zeppelin.interpreter.InterpreterSetting: void setName(java.lang.String)>(r1)
+org.apache.zeppelin.interpreter.InterpreterSettingManager.createNewSetting : return r6
+org.apache.zeppelin.interpreter.InterpreterSettingManager.createNewSetting : virtualinvoke r0.<org.apache.zeppelin.interpreter.InterpreterSettingManager: void saveToFile()>()
+org.apache.zeppelin.interpreter.InterpreterSettingManager.createNewSetting : virtualinvoke r6.<org.apache.zeppelin.interpreter.InterpreterSetting: void setGroup(java.lang.String)>(r2)
+org.apache.zeppelin.interpreter.InterpreterSettingManager.createNewSetting : $r8 = r0.<org.apache.zeppelin.interpreter.InterpreterSettingManager: org.apache.zeppelin.interpreter.InterpreterGroupFactory interpreterGroupFactory>
+org.apache.zeppelin.interpreter.InterpreterSettingManager.createNewSetting : virtualinvoke r6.<org.apache.zeppelin.interpreter.InterpreterSetting: void setInterpreterOption(org.apache.zeppelin.interpreter.InterpreterOption)>(r4)
+org.apache.zeppelin.interpreter.InterpreterSettingManager.createNewSetting : virtualinvoke r6.<org.apache.zeppelin.interpreter.InterpreterSetting: void appendDependencies(java.util.List)>(r3)
+org.apache.zeppelin.interpreter.InterpreterSettingManager.createNewSetting : $i0 = virtualinvoke r1.<java.lang.String: int indexOf(java.lang.String)>(".")
+org.apache.zeppelin.interpreter.InterpreterSettingManager.createNewSetting : specialinvoke r0.<org.apache.zeppelin.interpreter.InterpreterSettingManager: void loadInterpreterDependencies(org.apache.zeppelin.interpreter.InterpreterSetting)>(r6)
+org.apache.zeppelin.interpreter.InterpreterSettingManager.createNewSetting : $r9 = r0.<org.apache.zeppelin.interpreter.InterpreterSettingManager: java.util.Map interpreterSettings>
+org.apache.zeppelin.interpreter.InterpreterSettingManager.createNewSetting : virtualinvoke r6.<org.apache.zeppelin.interpreter.InterpreterSetting: void setProperties(java.util.Properties)>(r5)
+org.apache.zeppelin.interpreter.InterpreterSettingManager.createNewSetting : r6 = specialinvoke r0.<org.apache.zeppelin.interpreter.InterpreterSettingManager: org.apache.zeppelin.interpreter.InterpreterSetting createFromInterpreterSettingRef(java.lang.String)>(r2)
+org.apache.zeppelin.notebook.Note.insertParagraph : $r5 = r0.<org.apache.zeppelin.notebook.Note: java.util.List paragraphs>
+org.apache.zeppelin.notebook.Note.insertParagraph : $r8 = r0.<org.apache.zeppelin.notebook.Note: org.apache.zeppelin.notebook.NoteEventListener noteEventListener>
+org.apache.zeppelin.notebook.Note.insertParagraph : exitmonitor r2
+org.apache.zeppelin.notebook.Note.insertParagraph : $r7 = r0.<org.apache.zeppelin.notebook.Note: org.apache.zeppelin.notebook.NoteEventListener noteEventListener>
+org.apache.zeppelin.notebook.Note.insertParagraph : $r4 = r0.<org.apache.zeppelin.notebook.Note: java.util.List paragraphs>
+org.apache.zeppelin.conf.ZeppelinConfiguration.isWindowsPath : $z0 = virtualinvoke r1.<java.lang.String: boolean matches(java.lang.String)>("^[A-Za-z]:\\\\.*")
+org.apache.zeppelin.interpreter.InterpreterFactory.createInterpretersForNote : $r24 = <org.apache.zeppelin.interpreter.InterpreterFactory: org.slf4j.Logger logger>
+org.apache.zeppelin.interpreter.InterpreterFactory.createInterpretersForNote : $r41 = virtualinvoke r5.<org.apache.zeppelin.interpreter.InterpreterGroup: java.lang.Object get(java.lang.Object)>(r4)
+org.apache.zeppelin.interpreter.InterpreterFactory.createInterpretersForNote : exitmonitor r14
+org.apache.zeppelin.interpreter.InterpreterFactory.createInterpretersForNote : l1 = 10000000000L
+org.apache.zeppelin.interpreter.InterpreterFactory.createInterpretersForNote : $r18 = r0.<org.apache.zeppelin.interpreter.InterpreterFactory: org.apache.zeppelin.conf.ZeppelinConfiguration conf>
+org.apache.zeppelin.interpreter.InterpreterFactory.createInterpretersForNote : r6 = virtualinvoke r1.<org.apache.zeppelin.interpreter.InterpreterSetting: org.apache.zeppelin.interpreter.InterpreterOption getOption()>()
+org.apache.zeppelin.interpreter.InterpreterFactory.createInterpretersForNote : goto [?= $z1 = interfaceinvoke r13.<java.util.Iterator: boolean hasNext()>()]
+org.apache.zeppelin.interpreter.InterpreterFactory.createInterpretersForNote : $r38 = virtualinvoke r1.<org.apache.zeppelin.interpreter.InterpreterSetting: java.lang.String getPath()>()
+org.apache.zeppelin.interpreter.InterpreterFactory.createInterpretersForNote : virtualinvoke r34.<org.apache.zeppelin.interpreter.Interpreter: void setInterpreterGroup(org.apache.zeppelin.interpreter.InterpreterGroup)>(r5)
+org.apache.zeppelin.interpreter.InterpreterFactory.createInterpretersForNote : if null != r42 goto $z6 = virtualinvoke r29.<org.apache.zeppelin.interpreter.InterpreterInfo: boolean isDefaultInterpreter()>()
+org.apache.zeppelin.interpreter.InterpreterFactory.createInterpretersForNote : r27 = virtualinvoke r1.<org.apache.zeppelin.interpreter.InterpreterSetting: java.lang.String getPath()>()
+org.apache.zeppelin.interpreter.InterpreterFactory.createInterpretersForNote : $z2 = virtualinvoke r6.<org.apache.zeppelin.interpreter.InterpreterOption: boolean isRemote()>()
+org.apache.zeppelin.interpreter.InterpreterFactory.createInterpretersForNote : virtualinvoke r5.<org.apache.zeppelin.interpreter.InterpreterGroup: java.lang.Object put(java.lang.Object,java.lang.Object)>(r4, r42)
+org.apache.zeppelin.interpreter.InterpreterFactory.createInterpretersForNote : r26 = virtualinvoke r1.<org.apache.zeppelin.interpreter.InterpreterSetting: java.util.List getInterpreterInfos()>()
+org.apache.zeppelin.interpreter.InterpreterFactory.createInterpretersForNote : r12 = virtualinvoke r1.<org.apache.zeppelin.interpreter.InterpreterSetting: org.apache.zeppelin.interpreter.InterpreterRunner getInterpreterRunner()>()
+org.apache.zeppelin.interpreter.InterpreterFactory.createInterpretersForNote : exitmonitor r8
+org.apache.zeppelin.interpreter.InterpreterFactory.createInterpretersForNote : $r16 = virtualinvoke r1.<org.apache.zeppelin.interpreter.InterpreterSetting: java.lang.Object getProperties()>()
+org.apache.zeppelin.interpreter.InterpreterFactory.createInterpretersForNote : $r46 = <org.apache.zeppelin.interpreter.InterpreterFactory: org.slf4j.Logger logger>
+org.apache.zeppelin.interpreter.InterpreterFactory.createInterpretersForNote : r13 = interfaceinvoke r26.<java.util.List: java.util.Iterator iterator()>()
+org.apache.zeppelin.interpreter.InterpreterFactory.createInterpretersForNote : $z0 = virtualinvoke r5.<org.apache.zeppelin.interpreter.InterpreterGroup: boolean containsKey(java.lang.Object)>(r4)
+org.apache.zeppelin.interpreter.InterpreterFactory.createInterpretersForNote : r14 = r5
+org.apache.zeppelin.interpreter.InterpreterFactory.createInterpretersForNote : r8 = r5
+org.apache.zeppelin.interpreter.InterpreterFactory.createInterpretersForNote : l0 = staticinvoke <java.lang.System: long nanoTime()>()
+org.apache.zeppelin.interpreter.InterpreterFactory.createInterpretersForNote : $r43 = new java.util.ArrayList
+org.apache.zeppelin.interpreter.InterpreterFactory.createInterpretersForNote : $z6 = virtualinvoke r29.<org.apache.zeppelin.interpreter.InterpreterInfo: boolean isDefaultInterpreter()>()
+org.apache.zeppelin.interpreter.InterpreterFactory.createInterpretersForNote : r5 = virtualinvoke r1.<org.apache.zeppelin.interpreter.InterpreterSetting: org.apache.zeppelin.interpreter.InterpreterGroup getInterpreterGroup(java.lang.String,java.lang.String)>(r2, r3)
+org.apache.zeppelin.interpreter.InterpreterFactory.createInterpretersForNote : interfaceinvoke r42.<java.util.List: void add(int,java.lang.Object)>(0, r34)
+org.apache.zeppelin.interpreter.InterpreterSetting.setInfos : r0.<org.apache.zeppelin.interpreter.InterpreterSetting: java.util.Map infos> = r1
+org.apache.zeppelin.conf.ZeppelinConfiguration.getConfDir : $r1 = <org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars: org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars ZEPPELIN_CONF_DIR>
+org.apache.zeppelin.interpreter.InterpreterSettingManager.getDefaultInterpreterSettingList : return r2
+org.apache.zeppelin.interpreter.InterpreterSettingManager.getDefaultInterpreterSettingList : goto [?= $z0 = interfaceinvoke r5.<java.util.Iterator: boolean hasNext()>()]
+org.apache.zeppelin.interpreter.InterpreterSettingManager.getDefaultInterpreterSettingList : $r9 = virtualinvoke r6.<org.apache.zeppelin.interpreter.InterpreterSetting: java.lang.String getId()>()
+org.apache.zeppelin.interpreter.InterpreterSettingManager.getDefaultInterpreterSettingList : $r7 = new java.util.HashMap
+org.apache.zeppelin.interpreter.InterpreterSettingManager.getDefaultInterpreterSettingList : $r10 = virtualinvoke r6.<org.apache.zeppelin.interpreter.InterpreterSetting: java.lang.String getName()>()
+org.apache.zeppelin.interpreter.InterpreterSettingManager.getDefaultInterpreterSettingList : $r1 = new java.util.LinkedList
+org.apache.zeppelin.interpreter.InterpreterSettingManager.getDefaultInterpreterSettingList : r5 = interfaceinvoke r4.<java.util.List: java.util.Iterator iterator()>()
+org.apache.zeppelin.interpreter.InterpreterSettingManager.getDefaultInterpreterSettingList : r4 = virtualinvoke r0.<org.apache.zeppelin.interpreter.InterpreterSettingManager: java.util.List get()>()
+org.apache.zeppelin.interpreter.InterpreterSettingManager.getDefaultInterpreterSettingList : $r12 = virtualinvoke r6.<org.apache.zeppelin.interpreter.InterpreterSetting: java.lang.String getName()>()
+org.apache.zeppelin.interpreter.InterpreterSettingManager.getDefaultInterpreterSettingList : $r11 = virtualinvoke r6.<org.apache.zeppelin.interpreter.InterpreterSetting: java.lang.String getId()>()
+org.apache.zeppelin.interpreter.InterpreterFactory.createRepl : r23 = r6
+org.apache.zeppelin.interpreter.InterpreterFactory.createRepl : $r26 = newarray (java.lang.Object)[1]
+org.apache.zeppelin.interpreter.InterpreterFactory.createRepl : $r4 = <org.apache.zeppelin.interpreter.InterpreterFactory: org.slf4j.Logger logger>
+org.apache.zeppelin.interpreter.InterpreterFactory.createRepl : $r31 = staticinvoke <java.lang.Thread: java.lang.Thread currentThread()>()
+org.apache.zeppelin.interpreter.InterpreterFactory.createRepl : r12 = r11
+org.apache.zeppelin.interpreter.InterpreterFactory.createRepl : $r28 = virtualinvoke r6.<java.net.URLClassLoader: java.net.URL[] getURLs()>()
+org.apache.zeppelin.interpreter.InterpreterFactory.createRepl : $r17 = newarray (java.net.URL)[0]
+org.apache.zeppelin.interpreter.InterpreterFactory.createRepl : if z0 != 1 goto r23 = r6
+org.apache.zeppelin.interpreter.InterpreterFactory.createRepl : $r29 = new org.apache.zeppelin.interpreter.LazyOpenInterpreter
+org.apache.zeppelin.interpreter.InterpreterFactory.createRepl : virtualinvoke r0.<java.lang.Object: java.lang.Class getClass()>()
+org.apache.zeppelin.interpreter.InterpreterFactory.createRepl : if r6 != null goto z0 = 1
+org.apache.zeppelin.interpreter.InterpreterFactory.createRepl : if r7 == null goto (branch)
+org.apache.zeppelin.interpreter.InterpreterFactory.createRepl : z0 = 1
+org.apache.zeppelin.interpreter.InterpreterFactory.createRepl : z0 = 0
+org.apache.zeppelin.interpreter.InterpreterFactory.createRepl : $r15 = r0.<org.apache.zeppelin.interpreter.InterpreterFactory: java.util.Map cleanCl>
+org.apache.zeppelin.interpreter.InterpreterFactory.createRepl : r8 = virtualinvoke r23.<java.net.URLClassLoader: java.lang.Class loadClass(java.lang.String)>(r2)
+org.apache.zeppelin.interpreter.InterpreterFactory.createRepl : $r14 = staticinvoke <java.lang.Thread: java.lang.Thread currentThread()>()
+org.apache.zeppelin.interpreter.InterpreterFactory.createRepl : $r25 = newarray (java.lang.Class)[1]
+org.apache.zeppelin.interpreter.InterpreterFactory.createRepl : $r24 = staticinvoke <java.lang.Thread: java.lang.Thread currentThread()>()
+org.apache.zeppelin.interpreter.InterpreterFactory.createRepl : goto [?= (branch)]
+org.apache.zeppelin.notebook.Paragraph.getTitle : $r1 = r0.<org.apache.zeppelin.notebook.Paragraph: java.lang.String title>
+org.apache.zeppelin.notebook.Note.getParagraphs : $r4 = new java.util.LinkedList
+org.apache.zeppelin.notebook.Note.getParagraphs : $r3 = r0.<org.apache.zeppelin.notebook.Note: java.util.List paragraphs>
+org.apache.zeppelin.notebook.utility.IdHashes.generateId : $l0 = staticinvoke <java.lang.System: long currentTimeMillis()>()
+org.apache.zeppelin.interpreter.InterpreterSettingManager.add : $r36 = new org.apache.zeppelin.interpreter.InterpreterSetting
+org.apache.zeppelin.interpreter.InterpreterSettingManager.add : staticinvoke <com.google.common.base.Preconditions: java.lang.Object checkNotNull(java.lang.Object,java.lang.Object)>(r5, "properties should not be null")
+org.apache.zeppelin.interpreter.InterpreterSettingManager.add : return r9
+org.apache.zeppelin.interpreter.InterpreterSettingManager.add : $r40 = r0.<org.apache.zeppelin.interpreter.InterpreterSettingManager: org.apache.zeppelin.interpreter.InterpreterGroupFactory interpreterGroupFactory>
+org.apache.zeppelin.interpreter.InterpreterSettingManager.add : $i0 = interfaceinvoke r3.<java.util.List: int size()>()
+org.apache.zeppelin.interpreter.InterpreterSettingManager.add : $r22 = r0.<org.apache.zeppelin.interpreter.InterpreterSettingManager: java.util.Map interpreterSettingsRef>
+org.apache.zeppelin.interpreter.InterpreterSettingManager.add : $r21 = r0.<org.apache.zeppelin.interpreter.InterpreterSettingManager: java.util.Map interpreterSettingsRef>
+org.apache.zeppelin.interpreter.InterpreterSettingManager.add : staticinvoke <com.google.common.base.Preconditions: java.lang.Object checkNotNull(java.lang.Object,java.lang.Object)>(r2, "interpreterInfos should not be null")
+org.apache.zeppelin.interpreter.InterpreterSettingManager.add : staticinvoke <com.google.common.base.Preconditions: java.lang.Object checkNotNull(java.lang.Object,java.lang.Object)>(r3, "dependencies should not be null")
+org.apache.zeppelin.interpreter.InterpreterSettingManager.add : staticinvoke <com.google.common.base.Preconditions: java.lang.Object checkNotNull(java.lang.Object,java.lang.Object)>(r1, "name should not be null")
+org.apache.zeppelin.interpreter.InterpreterSettingManager.add : exitmonitor r8
+org.apache.zeppelin.interpreter.InterpreterSettingManager.add : $r37 = r0.<org.apache.zeppelin.interpreter.InterpreterSettingManager: java.util.Map interpreterSettingsRef>
+org.apache.zeppelin.interpreter.InterpreterSettingManager.add : staticinvoke <com.google.common.base.Preconditions: java.lang.Object checkNotNull(java.lang.Object,java.lang.Object)>(r4, "option should not be null")
+org.apache.zeppelin.interpreter.InterpreterSettingManager$3.run : $r44 = r0.<org.apache.zeppelin.interpreter.InterpreterSettingManager$3: org.apache.zeppelin.interpreter.InterpreterSetting val$setting>
+org.apache.zeppelin.interpreter.InterpreterSettingManager$3.run : if r21 == null goto $r44 = r0.<org.apache.zeppelin.interpreter.InterpreterSettingManager$3: org.apache.zeppelin.interpreter.InterpreterSetting val$setting>
+org.apache.zeppelin.interpreter.InterpreterSettingManager$3.run : $r46 = r0.<org.apache.zeppelin.interpreter.InterpreterSettingManager$3: org.apache.zeppelin.interpreter.InterpreterSetting val$setting>
+org.apache.zeppelin.interpreter.InterpreterSettingManager$3.run : r5 = interfaceinvoke r21.<java.util.List: java.util.Iterator iterator()>()
+org.apache.zeppelin.interpreter.InterpreterSettingManager$3.run : $z0 = virtualinvoke r3.<java.io.File: boolean exists()>()
+org.apache.zeppelin.interpreter.InterpreterSettingManager$3.run : $r20 = r0.<org.apache.zeppelin.interpreter.InterpreterSettingManager$3: org.apache.zeppelin.interpreter.InterpreterSetting val$setting>
+org.apache.zeppelin.interpreter.InterpreterSettingManager$3.run : goto [?= return]
+org.apache.zeppelin.interpreter.InterpreterSettingManager$3.run : $r1 = new java.io.File
+org.apache.zeppelin.interpreter.InterpreterSettingManager$3.run : $r47 = r0.<org.apache.zeppelin.interpreter.InterpreterSettingManager$3: org.apache.zeppelin.interpreter.InterpreterSettingManager this$0>
+org.apache.zeppelin.notebook.repo.VFSNotebookRepo.remove : $z0 = interfaceinvoke r4.<org.apache.commons.vfs2.FileObject: boolean exists()>()
+org.apache.zeppelin.notebook.repo.VFSNotebookRepo.remove : $r5 = r0.<org.apache.zeppelin.notebook.repo.VFSNotebookRepo: org.apache.commons.vfs2.FileSystemManager fsManager>
+org.apache.zeppelin.notebook.repo.VFSNotebookRepo.remove : $z1 = specialinvoke r0.<org.apache.zeppelin.notebook.repo.VFSNotebookRepo: boolean isDirectory(org.apache.commons.vfs2.FileObject)>(r4)
+org.apache.zeppelin.notebook.repo.VFSNotebookRepo.remove : $r7 = <org.apache.commons.vfs2.NameScope: org.apache.commons.vfs2.NameScope CHILD>
+org.apache.zeppelin.notebook.repo.VFSNotebookRepo.remove : $r15 = <org.apache.commons.vfs2.Selectors: org.apache.commons.vfs2.FileSelector SELECT_SELF_AND_CHILDREN>
+org.apache.zeppelin.interpreter.mock.MockInterpreter1.getFormType : $r1 = <org.apache.zeppelin.interpreter.Interpreter$FormType: org.apache.zeppelin.interpreter.Interpreter$FormType SIMPLE>
+org.apache.zeppelin.interpreter.InterpreterSetting.getPath : $r1 = r0.<org.apache.zeppelin.interpreter.InterpreterSetting: java.lang.String path>
+org.apache.zeppelin.notebook.Notebook.fireNoteRemoveEvent : $r4 = r0.<org.apache.zeppelin.notebook.Notebook: java.util.List notebookEventListeners>
+org.apache.zeppelin.notebook.Note.getParagraph : exitmonitor r2
+org.apache.zeppelin.notebook.Note.getParagraph : $r9 = virtualinvoke r4.<org.apache.zeppelin.notebook.Paragraph: java.lang.String getId()>()
+org.apache.zeppelin.notebook.Note.getParagraph : $r6 = r0.<org.apache.zeppelin.notebook.Note: java.util.List paragraphs>
+org.apache.zeppelin.notebook.Note.getParagraph : $r7 = r0.<org.apache.zeppelin.notebook.Note: java.util.List paragraphs>
+org.apache.zeppelin.notebook.Note.setParagraphMagic : $r3 = r0.<org.apache.zeppelin.notebook.Note: java.util.List paragraphs>
+org.apache.zeppelin.interpreter.InterpreterSetting.setInterpreterGroupFactory : r0.<org.apache.zeppelin.interpreter.InterpreterSetting: org.apache.zeppelin.interpreter.InterpreterGroupFactory interpreterGroupFactory> = r1
+org.apache.zeppelin.interpreter.mock.MockInterpreter1.close : r0.<org.apache.zeppelin.interpreter.mock.MockInterpreter1: boolean open> = 0
+org.apache.zeppelin.interpreter.mock.MockInterpreter1.open : r0.<org.apache.zeppelin.interpreter.mock.MockInterpreter1: boolean open> = 1
+org.apache.zeppelin.interpreter.InterpreterSetting.getName : $r1 = r0.<org.apache.zeppelin.interpreter.InterpreterSetting: java.lang.String name>
+org.apache.zeppelin.interpreter.InterpreterSetting.closeAndRemoveInterpreterGroup : goto [?= $z4 = interfaceinvoke r9.<java.util.Iterator: boolean hasNext()>()]
+org.apache.zeppelin.interpreter.InterpreterSetting.closeAndRemoveInterpreterGroup : interfaceinvoke r5.<java.util.List: void clear()>()
+org.apache.zeppelin.interpreter.InterpreterSetting.closeAndRemoveInterpreterGroup : $z0 = virtualinvoke r2.<java.lang.String: boolean equals(java.lang.Object)>("anonymous")
+org.apache.zeppelin.interpreter.InterpreterSetting.closeAndRemoveInterpreterGroup : $r16 = r0.<org.apache.zeppelin.interpreter.InterpreterSetting: java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock interpreterGroupWriteLock>
+org.apache.zeppelin.interpreter.InterpreterSetting.closeAndRemoveInterpreterGroup : r9 = interfaceinvoke r5.<java.util.List: java.util.Iterator iterator()>()
+org.apache.zeppelin.interpreter.InterpreterSetting.closeAndRemoveInterpreterGroup : $r11 = new java.util.LinkedList
+org.apache.zeppelin.interpreter.InterpreterSetting.closeAndRemoveInterpreterGroup : $r12 = new java.util.HashSet
+org.apache.zeppelin.interpreter.InterpreterSetting.closeAndRemoveInterpreterGroup : goto [?= $z1 = interfaceinvoke r6.<java.util.Iterator: boolean hasNext()>()]
+org.apache.zeppelin.interpreter.InterpreterSetting.closeAndRemoveInterpreterGroup : $r21 = r0.<org.apache.zeppelin.interpreter.InterpreterSetting: java.util.Map interpreterGroupRef>
+org.apache.zeppelin.interpreter.InterpreterSetting.closeAndRemoveInterpreterGroup : $z2 = specialinvoke r0.<org.apache.zeppelin.interpreter.InterpreterSetting: boolean isEqualInterpreterKeyProcessKey(java.lang.String,java.lang.String)>(r7, r3)
+org.apache.zeppelin.interpreter.InterpreterSetting.closeAndRemoveInterpreterGroup : $r19 = r0.<org.apache.zeppelin.interpreter.InterpreterSetting: java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock interpreterGroupWriteLock>
+org.apache.zeppelin.interpreter.InterpreterSetting.closeAndRemoveInterpreterGroup : r3 = specialinvoke r0.<org.apache.zeppelin.interpreter.InterpreterSetting: java.lang.String getInterpreterProcessKey(java.lang.String,java.lang.String)>(r2, r1)
+org.apache.zeppelin.interpreter.InterpreterSetting.closeAndRemoveInterpreterGroup : r4 = virtualinvoke r0.<org.apache.zeppelin.interpreter.InterpreterSetting: java.lang.String getInterpreterSessionKey(java.lang.String,java.lang.String)>(r2, r1)
+org.apache.zeppelin.interpreter.InterpreterSetting.closeAndRemoveInterpreterGroup : interfaceinvoke r5.<java.util.List: boolean add(java.lang.Object)>(r8)
+org.apache.zeppelin.interpreter.InterpreterSetting.closeAndRemoveInterpreterGroup : $r17 = r0.<org.apache.zeppelin.interpreter.InterpreterSetting: java.util.Map interpreterGroupRef>
+org.apache.zeppelin.conf.ZeppelinConfiguration.getBoolean : $r3 = staticinvoke <java.lang.System: java.lang.String getenv(java.lang.String)>(r1)
+org.apache.zeppelin.conf.ZeppelinConfiguration.getBoolean : $z3 = specialinvoke r0.<org.apache.zeppelin.conf.ZeppelinConfiguration: boolean getBooleanValue(java.lang.String,boolean)>(r2, z0)
+org.apache.zeppelin.conf.ZeppelinConfiguration.getBoolean : $r2 = virtualinvoke r1.<org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars: java.lang.String name()>()
+org.apache.zeppelin.conf.ZeppelinConfiguration.getBoolean : $r5 = staticinvoke <java.lang.System: java.lang.String getProperty(java.lang.String)>(r2)
+org.apache.zeppelin.notebook.Note.run : r2 = virtualinvoke r0.<org.apache.zeppelin.notebook.Note: org.apache.zeppelin.notebook.Paragraph getParagraph(java.lang.String)>(r1)
+org.apache.zeppelin.notebook.Note.run : $r13 = r0.<org.apache.zeppelin.notebook.Note: org.apache.zeppelin.interpreter.InterpreterFactory factory>
+org.apache.zeppelin.notebook.Note.run : $r27 = virtualinvoke r2.<org.apache.zeppelin.notebook.Paragraph: java.util.Map getConfig()>()
+org.apache.zeppelin.notebook.Note.run : if r4 != null goto $r27 = virtualinvoke r2.<org.apache.zeppelin.notebook.Paragraph: java.util.Map getConfig()>()
+org.apache.zeppelin.notebook.Note.run : virtualinvoke r2.<org.apache.zeppelin.notebook.Paragraph: void clearRuntimeInfo(java.lang.String)>(null)
+org.apache.zeppelin.notebook.Note.run : $z0 = virtualinvoke r2.<org.apache.zeppelin.notebook.Paragraph: boolean isBlankParagraph()>()
+org.apache.zeppelin.notebook.Note.run : $r33 = virtualinvoke r4.<org.apache.zeppelin.interpreter.Interpreter: org.apache.zeppelin.scheduler.Scheduler getScheduler()>()
+org.apache.zeppelin.notebook.Note.run : $r32 = virtualinvoke r2.<org.apache.zeppelin.notebook.Paragraph: org.apache.zeppelin.user.AuthenticationInfo getAuthenticationInfo()>()
+org.apache.zeppelin.notebook.Note.run : $r8 = r0.<org.apache.zeppelin.notebook.Note: org.apache.zeppelin.notebook.JobListenerFactory jobListenerFactory>
+org.apache.zeppelin.notebook.Note.run : r3 = virtualinvoke r2.<org.apache.zeppelin.notebook.Paragraph: java.lang.String getRequiredReplName()>()
+org.apache.zeppelin.notebook.utility.IdHashes.encode : $r22 = interfaceinvoke r2.<java.util.List: java.lang.Object get(int)>(i6)
+org.apache.zeppelin.notebook.utility.IdHashes.encode : r6 = virtualinvoke r4.<java.math.BigInteger: java.math.BigInteger pow(int)>(i0)
+org.apache.zeppelin.notebook.utility.IdHashes.encode : r7 = virtualinvoke r5.<java.math.BigInteger: java.math.BigInteger mod(java.math.BigInteger)>(r6)
+org.apache.zeppelin.notebook.utility.IdHashes.encode : $r20 = new java.lang.StringBuffer
+org.apache.zeppelin.notebook.utility.IdHashes.encode : goto [?= $r20 = new java.lang.StringBuffer]
+org.apache.zeppelin.notebook.utility.IdHashes.encode : $r1 = new java.util.ArrayList
+org.apache.zeppelin.notebook.utility.IdHashes.encode : $r19 = <java.math.BigInteger: java.math.BigInteger ZERO>
+org.apache.zeppelin.notebook.utility.IdHashes.encode : i0 = 1
+org.apache.zeppelin.notebook.utility.IdHashes.encode : $r15 = new java.math.BigInteger
+org.apache.zeppelin.notebook.utility.IdHashes.encode : $r17 = <org.apache.zeppelin.notebook.utility.IdHashes: char[] DICTIONARY>
+org.apache.zeppelin.notebook.utility.IdHashes.encode : i0 = i0 + 1
+org.apache.zeppelin.notebook.utility.IdHashes.encode : goto [?= staticinvoke <edu.washington.cs.dt.impact.util.Tracer: void trace(java.lang.String,java.lang.String)>("r6 = virtualinvoke r4.<java.math.BigInteger: java.math.BigInteger pow(int)>(i0)", "org.apache.zeppelin.notebook.utility.IdHashes.encode")]
+org.apache.zeppelin.notebook.utility.IdHashes.encode : r9 = virtualinvoke r7.<java.math.BigInteger: java.math.BigInteger divide(java.math.BigInteger)>(r8)
+org.apache.zeppelin.notebook.utility.IdHashes.encode : $i5 = interfaceinvoke r2.<java.util.List: int size()>()
+org.apache.zeppelin.notebook.utility.IdHashes.encode : r5 = virtualinvoke r5.<java.math.BigInteger: java.math.BigInteger subtract(java.math.BigInteger)>(r7)
+org.apache.zeppelin.notebook.utility.IdHashes.encode : $r24 = virtualinvoke r21.<java.lang.StringBuffer: java.lang.String toString()>()
+org.apache.zeppelin.notebook.utility.IdHashes.encode : $i2 = i0 - 1
+org.apache.zeppelin.notebook.utility.IdHashes.encode : $r10 = new java.math.BigInteger
+org.apache.zeppelin.interpreter.mock.MockInterpreter1.getScheduler : $r1 = staticinvoke <org.apache.zeppelin.scheduler.SchedulerFactory: org.apache.zeppelin.scheduler.SchedulerFactory singleton()>()
+org.apache.zeppelin.notebook.Paragraph.extractVariablesFromAngularRegistry : r7 = interfaceinvoke r6.<java.util.Set: java.util.Iterator iterator()>()
+org.apache.zeppelin.notebook.Paragraph.extractVariablesFromAngularRegistry : $r13 = virtualinvoke r0.<org.apache.zeppelin.notebook.Paragraph: org.apache.zeppelin.notebook.Note getNote()>()
+org.apache.zeppelin.notebook.Paragraph.extractVariablesFromAngularRegistry : r5 = virtualinvoke r0.<org.apache.zeppelin.notebook.Paragraph: java.lang.String getId()>()
+org.apache.zeppelin.notebook.Paragraph.extractVariablesFromAngularRegistry : $r14 = new java.util.HashSet
+org.apache.zeppelin.notebook.Paragraph.extractVariablesFromAngularRegistry : return r1
+org.apache.zeppelin.notebook.Paragraph.getInterpreterSettingById : goto [?= return r2]
+org.apache.zeppelin.notebook.Paragraph.getInterpreterSettingById : return r2
+org.apache.zeppelin.notebook.Paragraph.getInterpreterSettingById : r2 = r4
+org.apache.zeppelin.notebook.Paragraph.getInterpreterSettingById : $r10 = virtualinvoke r4.<org.apache.zeppelin.interpreter.InterpreterSetting: java.lang.String getId()>()
+org.apache.zeppelin.notebook.Paragraph.getInterpreterSettingById : $r5 = r0.<org.apache.zeppelin.notebook.Paragraph: org.apache.zeppelin.interpreter.InterpreterSettingManager interpreterSettingManager>
+org.apache.zeppelin.notebook.Paragraph.getInterpreterSettingById : r2 = null
+org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars.getBooleanValue : $z0 = r0.<org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars: boolean booleanValue>
+org.apache.zeppelin.notebook.Paragraph.setAuthenticationInfo : $r2 = virtualinvoke r1.<org.apache.zeppelin.user.AuthenticationInfo: java.lang.String getUser()>()
+org.apache.zeppelin.notebook.Paragraph.setAuthenticationInfo : r0.<org.apache.zeppelin.notebook.Paragraph: org.apache.zeppelin.user.AuthenticationInfo authenticationInfo> = r1
+org.apache.zeppelin.notebook.NotebookAuthorization.setNewNotePermissions : $z0 = staticinvoke <org.apache.zeppelin.user.AuthenticationInfo: boolean isAnonymous(org.apache.zeppelin.user.AuthenticationInfo)>(r2)
+org.apache.zeppelin.notebook.Note.addNewParagraph : $r2 = r0.<org.apache.zeppelin.notebook.Note: java.util.List paragraphs>
+org.apache.zeppelin.notebook.Paragraph.setReturn : virtualinvoke r0.<org.apache.zeppelin.notebook.Paragraph: void setException(java.lang.Throwable)>(r2)
+org.apache.zeppelin.notebook.Paragraph.setReturn : virtualinvoke r0.<org.apache.zeppelin.notebook.Paragraph: void setResult(java.lang.Object)>(r1)
+org.apache.zeppelin.notebook.Note.beforeStatusChange : interfaceinvoke r4.<org.apache.zeppelin.notebook.ParagraphJobListener: void beforeStatusChange(org.apache.zeppelin.scheduler.Job,org.apache.zeppelin.scheduler.Job$Status,org.apache.zeppelin.scheduler.Job$Status)>(r1, r2, r3)
+org.apache.zeppelin.notebook.Note.beforeStatusChange : if r4 == null goto return
+org.apache.zeppelin.notebook.Note.beforeStatusChange : $r5 = r0.<org.apache.zeppelin.notebook.Note: org.apache.zeppelin.notebook.JobListenerFactory jobListenerFactory>
+org.apache.zeppelin.notebook.Note.beforeStatusChange : $r6 = r0.<org.apache.zeppelin.notebook.Note: org.apache.zeppelin.notebook.JobListenerFactory jobListenerFactory>
+org.apache.zeppelin.interpreter.InterpreterSetting.setStatus : r0.<org.apache.zeppelin.interpreter.InterpreterSetting: org.apache.zeppelin.interpreter.InterpreterSetting$Status status> = r1
+org.apache.zeppelin.interpreter.InterpreterInfo.getClassName : $r1 = r0.<org.apache.zeppelin.interpreter.InterpreterInfo: java.lang.String className>
+org.apache.zeppelin.interpreter.InterpreterSetting.getAllInterpreterGroups : $r3 = r0.<org.apache.zeppelin.interpreter.InterpreterSetting: java.util.concurrent.locks.ReentrantReadWriteLock$ReadLock interpreterGroupReadLock>
+org.apache.zeppelin.interpreter.InterpreterSetting.getAllInterpreterGroups : $r4 = new java.util.LinkedList
+org.apache.zeppelin.interpreter.InterpreterSetting.getAllInterpreterGroups : $r7 = r0.<org.apache.zeppelin.interpreter.InterpreterSetting: java.util.concurrent.locks.ReentrantReadWriteLock$ReadLock interpreterGroupReadLock>
+org.apache.zeppelin.notebook.Note.generateId : $r1 = staticinvoke <org.apache.zeppelin.notebook.utility.IdHashes: java.lang.String generateId()>()
+org.apache.zeppelin.notebook.Paragraph$1.onUpdateAll : $r3 = r0.<org.apache.zeppelin.notebook.Paragraph$1: org.apache.zeppelin.notebook.Paragraph this$0>
+org.apache.zeppelin.notebook.Paragraph$1.onUpdateAll : specialinvoke r0.<org.apache.zeppelin.notebook.Paragraph$1: void updateParagraphResult(java.util.List)>(r2)
+org.apache.zeppelin.notebook.Paragraph$1.onUpdateAll : goto [?= return]
+org.apache.zeppelin.notebook.Paragraph$1.onUpdateAll : r2 = virtualinvoke r1.<org.apache.zeppelin.interpreter.InterpreterOutput: java.util.List toInterpreterResultMessage()>()
+org.apache.zeppelin.notebook.Paragraph.setText : r0.<org.apache.zeppelin.notebook.Paragraph: java.lang.String text> = r1
+org.apache.zeppelin.notebook.Paragraph.setText : $r2 = new java.util.Date
+org.apache.zeppelin.notebook.Note.afterStatusChange : if r4 == null goto $r7 = r0.<org.apache.zeppelin.notebook.Note: org.apache.zeppelin.notebook.NoteEventListener noteEventListener>
+org.apache.zeppelin.notebook.Note.afterStatusChange : $r8 = r0.<org.apache.zeppelin.notebook.Note: org.apache.zeppelin.notebook.NoteEventListener noteEventListener>
+org.apache.zeppelin.notebook.Note.afterStatusChange : interfaceinvoke r4.<org.apache.zeppelin.notebook.ParagraphJobListener: void afterStatusChange(org.apache.zeppelin.scheduler.Job,org.apache.zeppelin.scheduler.Job$Status,org.apache.zeppelin.scheduler.Job$Status)>(r1, r2, r3)
+org.apache.zeppelin.notebook.Note.afterStatusChange : $r5 = r0.<org.apache.zeppelin.notebook.Note: org.apache.zeppelin.notebook.JobListenerFactory jobListenerFactory>
+org.apache.zeppelin.notebook.Note.afterStatusChange : $r7 = r0.<org.apache.zeppelin.notebook.Note: org.apache.zeppelin.notebook.NoteEventListener noteEventListener>
+org.apache.zeppelin.notebook.Note.afterStatusChange : $r6 = r0.<org.apache.zeppelin.notebook.Note: org.apache.zeppelin.notebook.JobListenerFactory jobListenerFactory>
+org.apache.zeppelin.conf.ZeppelinConfiguration.getString : $r4 = staticinvoke <java.lang.System: java.lang.String getenv(java.lang.String)>(r1)
+org.apache.zeppelin.conf.ZeppelinConfiguration.getString : $r8 = specialinvoke r0.<org.apache.zeppelin.conf.ZeppelinConfiguration: java.lang.String getStringValue(java.lang.String,java.lang.String)>(r2, r3)
+org.apache.zeppelin.conf.ZeppelinConfiguration.getString : $r6 = staticinvoke <java.lang.System: java.lang.String getProperty(java.lang.String)>(r2)
+org.apache.zeppelin.conf.ZeppelinConfiguration.getString : $r7 = staticinvoke <java.lang.System: java.lang.String getProperty(java.lang.String)>(r2)
+org.apache.zeppelin.conf.ZeppelinConfiguration.getString : $r2 = virtualinvoke r1.<org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars: java.lang.String name()>()
+org.apache.zeppelin.conf.ZeppelinConfiguration.getNotebookDir : $r1 = <org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars: org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars ZEPPELIN_NOTEBOOK_DIR>
+org.apache.zeppelin.interpreter.InterpreterSetting.getId : $r1 = r0.<org.apache.zeppelin.interpreter.InterpreterSetting: java.lang.String id>
+org.apache.zeppelin.notebook.Note.unpersist : $r2 = r0.<org.apache.zeppelin.notebook.Note: org.apache.zeppelin.notebook.repo.NotebookRepo repo>
+org.apache.zeppelin.notebook.Notebook.fireUnbindInterpreter : $r5 = r0.<org.apache.zeppelin.notebook.Notebook: java.util.List notebookEventListeners>
+org.apache.zeppelin.notebook.repo.VFSNotebookRepo.getPath : $r5 = new java.lang.StringBuilder
+org.apache.zeppelin.notebook.repo.VFSNotebookRepo.getPath : if r1 == null goto $r3 = r0.<org.apache.zeppelin.notebook.repo.VFSNotebookRepo: java.net.URI filesystemRoot>
+org.apache.zeppelin.notebook.repo.VFSNotebookRepo.getPath : $z0 = virtualinvoke r1.<java.lang.String: boolean startsWith(java.lang.String)>("/")
+org.apache.zeppelin.notebook.NotebookAuthorization.init : $r1 = <org.apache.zeppelin.notebook.NotebookAuthorization: org.apache.zeppelin.notebook.NotebookAuthorization instance>
+org.apache.zeppelin.notebook.NotebookAuthorization.init : $r12 = <org.apache.zeppelin.notebook.NotebookAuthorization: org.apache.zeppelin.notebook.NotebookAuthorization instance>
+org.apache.zeppelin.notebook.Notebook.createNote : return r4
+org.apache.zeppelin.notebook.Notebook.createNote : return r2
+org.apache.zeppelin.notebook.Notebook.createNote : $r19 = virtualinvoke r2.<org.apache.zeppelin.user.AuthenticationInfo: java.lang.String getUser()>()
+org.apache.zeppelin.notebook.Notebook.createNote : if r1 == null goto $r21 = r0.<org.apache.zeppelin.notebook.Notebook: org.apache.zeppelin.notebook.NotebookAuthorization notebookAuthorization>
+org.apache.zeppelin.notebook.Notebook.createNote : specialinvoke r0.<org.apache.zeppelin.notebook.Notebook: void fireNoteCreateEvent(org.apache.zeppelin.notebook.Note)>(r4)
+org.apache.zeppelin.notebook.Notebook.createNote : $r23 = r0.<org.apache.zeppelin.notebook.Notebook: org.apache.zeppelin.search.SearchService noteSearchService>
+org.apache.zeppelin.notebook.Notebook.createNote : $r3 = new org.apache.zeppelin.notebook.Note
+org.apache.zeppelin.notebook.Notebook.createNote : $r13 = r0.<org.apache.zeppelin.notebook.Notebook: org.apache.zeppelin.notebook.FolderView folders>
+org.apache.zeppelin.notebook.Notebook.createNote : staticinvoke <com.google.common.base.Preconditions: java.lang.Object checkNotNull(java.lang.Object,java.lang.Object)>(r1, "AuthenticationInfo should not be null")
+org.apache.zeppelin.notebook.Notebook.createNote : $r4 = r0.<org.apache.zeppelin.notebook.Notebook: org.apache.zeppelin.conf.ZeppelinConfiguration conf>
+org.apache.zeppelin.notebook.Notebook.createNote : $r8 = r0.<org.apache.zeppelin.notebook.Notebook: org.apache.zeppelin.search.SearchService noteSearchService>
+org.apache.zeppelin.notebook.Notebook.createNote : exitmonitor r5
+org.apache.zeppelin.notebook.Notebook.createNote : $r15 = r0.<org.apache.zeppelin.notebook.Notebook: java.util.Map notes>
+org.apache.zeppelin.notebook.Notebook.createNote : virtualinvoke r4.<org.apache.zeppelin.notebook.Note: void persist(org.apache.zeppelin.user.AuthenticationInfo)>(r2)
+org.apache.zeppelin.notebook.Notebook.createNote : $r6 = r0.<org.apache.zeppelin.notebook.Notebook: org.apache.zeppelin.interpreter.InterpreterSettingManager interpreterSettingManager>
+org.apache.zeppelin.notebook.Notebook.createNote : $r21 = r0.<org.apache.zeppelin.notebook.Notebook: org.apache.zeppelin.notebook.NotebookAuthorization notebookAuthorization>
+org.apache.zeppelin.notebook.Notebook.createNote : $r14 = r0.<org.apache.zeppelin.notebook.Notebook: java.util.Map notes>
+org.apache.zeppelin.notebook.Paragraph.noteHasUser : $r1 = r0.<org.apache.zeppelin.notebook.Paragraph: java.lang.String user>
+org.apache.zeppelin.notebook.NotebookTest.getParagraphJobListener : $r2 = new org.apache.zeppelin.notebook.NotebookTest$3
+org.apache.zeppelin.conf.ZeppelinConfiguration.getInterpreterLocalRepoPath : $r1 = <org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars: org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars ZEPPELIN_INTERPRETER_LOCALREPO>
+org.apache.zeppelin.conf.ZeppelinConfiguration.getInterpreterSettingPath : $r1 = newarray (java.lang.Object)[1]
+org.apache.zeppelin.notebook.Paragraph.getConfig : $r1 = r0.<org.apache.zeppelin.notebook.Paragraph: java.util.Map config>
+org.apache.zeppelin.notebook.Notebook.onParagraphCreate : $r4 = r0.<org.apache.zeppelin.notebook.Notebook: java.util.List notebookEventListeners>
+org.apache.zeppelin.interpreter.InterpreterInfo.isDefaultInterpreter : $z0 = r0.<org.apache.zeppelin.interpreter.InterpreterInfo: boolean defaultInterpreter>
+org.apache.zeppelin.interpreter.InterpreterSetting.getInterpreterRunner : $r1 = r0.<org.apache.zeppelin.interpreter.InterpreterSetting: org.apache.zeppelin.interpreter.InterpreterRunner interpreterRunner>
+org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars.getIntValue : $i0 = r0.<org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars: int intValue>
+org.apache.zeppelin.interpreter.InterpreterSettingManager.createFromInterpreterSettingRef : staticinvoke <com.google.common.base.Preconditions: java.lang.Object checkNotNull(java.lang.Object,java.lang.Object)>(r1, "reference name should be not null")
+org.apache.zeppelin.interpreter.InterpreterSettingManager.createFromInterpreterSettingRef : $r7 = virtualinvoke r1.<org.apache.zeppelin.interpreter.InterpreterSetting: java.util.List getInterpreterInfos()>()
+org.apache.zeppelin.interpreter.InterpreterSettingManager.createFromInterpreterSettingRef : $r4 = r0.<org.apache.zeppelin.interpreter.InterpreterSettingManager: java.util.Map interpreterSettingsRef>
+org.apache.zeppelin.interpreter.InterpreterSettingManager.createFromInterpreterSettingRef : return r6
+org.apache.zeppelin.interpreter.InterpreterSettingManager.createFromInterpreterSettingRef : $r15 = virtualinvoke r1.<org.apache.zeppelin.interpreter.InterpreterSetting: org.apache.zeppelin.interpreter.InterpreterOption getOption()>()
+org.apache.zeppelin.interpreter.InterpreterSettingManager.createFromInterpreterSettingRef : $r13 = virtualinvoke r1.<org.apache.zeppelin.interpreter.InterpreterSetting: java.lang.Object getProperties()>()
+org.apache.zeppelin.interpreter.InterpreterSettingManager.createFromInterpreterSettingRef : $r16 = new org.apache.zeppelin.interpreter.InterpreterSetting
+org.apache.zeppelin.interpreter.InterpreterSettingManager.createFromInterpreterSettingRef : $r21 = r0.<org.apache.zeppelin.interpreter.InterpreterSettingManager: org.apache.zeppelin.interpreter.InterpreterGroupFactory interpreterGroupFactory>
+org.apache.zeppelin.interpreter.InterpreterSettingManager.createFromInterpreterSettingRef : $r10 = virtualinvoke r1.<org.apache.zeppelin.interpreter.InterpreterSetting: java.util.List getDependencies()>()
+org.apache.zeppelin.interpreter.InterpreterSettingManager.createFromInterpreterSettingRef : $r6 = specialinvoke r0.<org.apache.zeppelin.interpreter.InterpreterSettingManager: org.apache.zeppelin.interpreter.InterpreterSetting createFromInterpreterSettingRef(org.apache.zeppelin.interpreter.InterpreterSetting)>(r2)
+org.apache.zeppelin.interpreter.InterpreterSettingManager.getInterpreterSettings : $r8 = interfaceinvoke r4.<java.util.Iterator: java.lang.Object next()>()
+org.apache.zeppelin.interpreter.InterpreterSettingManager.getInterpreterSettings : r6 = virtualinvoke r0.<org.apache.zeppelin.interpreter.InterpreterSettingManager: org.apache.zeppelin.interpreter.InterpreterSetting get(java.lang.String)>(r5)
+org.apache.zeppelin.interpreter.InterpreterSettingManager.getInterpreterSettings : r4 = interfaceinvoke r2.<java.util.List: java.util.Iterator iterator()>()
+org.apache.zeppelin.interpreter.InterpreterSettingManager.getInterpreterSettings : return r3
+org.apache.zeppelin.interpreter.InterpreterSettingManager.getInterpreterSettings : if r6 != null goto virtualinvoke r3.<java.util.LinkedList: boolean add(java.lang.Object)>(r6)
+org.apache.zeppelin.interpreter.InterpreterSettingManager.getInterpreterSettings : $r7 = new java.util.LinkedList
+org.apache.zeppelin.interpreter.InterpreterSettingManager.getInterpreterSettings : r2 = specialinvoke r0.<org.apache.zeppelin.interpreter.InterpreterSettingManager: java.util.List getNoteInterpreterSettingBinding(java.lang.String)>(r1)
+org.apache.zeppelin.interpreter.InterpreterSettingManager.getInterpreterSettings : $z0 = interfaceinvoke r4.<java.util.Iterator: boolean hasNext()>()
+org.apache.zeppelin.interpreter.InterpreterSettingManager.getInterpreterSettings : virtualinvoke r3.<java.util.LinkedList: boolean add(java.lang.Object)>(r6)
+org.apache.zeppelin.interpreter.InterpreterSettingManager.getInterpreterSettings : goto [?= staticinvoke <edu.washington.cs.dt.impact.util.Tracer: void trace(java.lang.String,java.lang.String)>("$z0 = interfaceinvoke r4.<java.util.Iterator: boolean hasNext()>()", "org.apache.zeppelin.interpreter.InterpreterSettingManager.getInterpreterSettings")]
+org.apache.zeppelin.interpreter.InterpreterSetting.setProperties : r0.<org.apache.zeppelin.interpreter.InterpreterSetting: java.lang.Object properties> = r1
+org.apache.zeppelin.interpreter.InterpreterSettingManager.setInterpreters : specialinvoke r0.<org.apache.zeppelin.interpreter.InterpreterSettingManager: void putNoteInterpreterSettingBinding(java.lang.String,java.lang.String,java.util.List)>(r1, r2, r3)
+org.apache.zeppelin.interpreter.InterpreterSettingManager.saveToFile : $r5 = r0.<org.apache.zeppelin.interpreter.InterpreterSettingManager: java.util.Map interpreterSettings>
+org.apache.zeppelin.interpreter.InterpreterSettingManager.saveToFile : $r7 = r0.<org.apache.zeppelin.interpreter.InterpreterSettingManager: java.util.Map interpreterBindings>
+org.apache.zeppelin.interpreter.InterpreterSettingManager.saveToFile : $r8 = r0.<org.apache.zeppelin.interpreter.InterpreterSettingManager: java.util.Map interpreterSettings>
+org.apache.zeppelin.interpreter.InterpreterSettingManager.saveToFile : $r9 = r0.<org.apache.zeppelin.interpreter.InterpreterSettingManager: java.util.List interpreterRepositories>
+org.apache.zeppelin.interpreter.InterpreterSettingManager.saveToFile : virtualinvoke r27.<java.io.OutputStreamWriter: void close()>()
+org.apache.zeppelin.interpreter.InterpreterSettingManager.saveToFile : $r6 = new org.apache.zeppelin.interpreter.InterpreterInfoSaving
+org.apache.zeppelin.interpreter.InterpreterSettingManager.saveToFile : $r10 = r0.<org.apache.zeppelin.interpreter.InterpreterSettingManager: com.google.gson.Gson gson>
+org.apache.zeppelin.interpreter.InterpreterSettingManager.saveToFile : exitmonitor r1
+org.apache.zeppelin.interpreter.InterpreterSettingManager.saveToFile : $r17 = <java.nio.file.attribute.PosixFilePermission: java.nio.file.attribute.PosixFilePermission OWNER_READ>
+org.apache.zeppelin.interpreter.InterpreterSettingManager.saveToFile : virtualinvoke r25.<java.io.FileOutputStream: void close()>()
+org.apache.zeppelin.interpreter.InterpreterSettingManager.saveToFile : $r26 = new java.io.OutputStreamWriter
+org.apache.zeppelin.interpreter.InterpreterSettingManager.saveToFile : $r12 = r0.<org.apache.zeppelin.interpreter.InterpreterSettingManager: java.nio.file.Path interpreterBindingPath>
+org.apache.zeppelin.interpreter.InterpreterSettingManager.saveToFile : $r22 = new java.io.FileOutputStream
+org.apache.zeppelin.interpreter.InterpreterSettingManager.saveToFile : $r20 = r0.<org.apache.zeppelin.interpreter.InterpreterSettingManager: java.nio.file.Path interpreterBindingPath>
+org.apache.zeppelin.interpreter.InterpreterSettingManager.saveToFile : $r14 = r0.<org.apache.zeppelin.interpreter.InterpreterSettingManager: java.nio.file.Path interpreterBindingPath>
+org.apache.zeppelin.interpreter.InterpreterSettingManager.saveToFile : virtualinvoke r27.<java.io.OutputStreamWriter: java.io.Writer append(java.lang.CharSequence)>(r3)
+org.apache.zeppelin.notebook.Paragraph.getNote : $r1 = r0.<org.apache.zeppelin.notebook.Paragraph: org.apache.zeppelin.notebook.Note note>
+org.apache.zeppelin.notebook.Notebook.loadAllNotes : $r5 = r0.<org.apache.zeppelin.notebook.Notebook: org.apache.zeppelin.notebook.repo.NotebookRepo notebookRepo>
+org.apache.zeppelin.notebook.Notebook.loadAllNotes : r3 = interfaceinvoke r2.<java.util.List: java.util.Iterator iterator()>()
+org.apache.zeppelin.interpreter.InterpreterFactory.createInterpreterGroup : virtualinvoke r3.<org.apache.zeppelin.interpreter.InterpreterGroup: void setAngularObjectRegistry(org.apache.zeppelin.display.AngularObjectRegistry)>(r4)
+org.apache.zeppelin.interpreter.InterpreterFactory.createInterpreterGroup : $z0 = virtualinvoke r2.<org.apache.zeppelin.interpreter.InterpreterOption: boolean isRemote()>()
+org.apache.zeppelin.interpreter.InterpreterFactory.createInterpreterGroup : $r9 = new org.apache.zeppelin.display.AngularObjectRegistry
+org.apache.zeppelin.interpreter.InterpreterFactory.createInterpreterGroup : return r3
+org.apache.zeppelin.interpreter.InterpreterFactory.createInterpreterGroup : if r2 != null goto $r6 = new org.apache.zeppelin.interpreter.InterpreterGroup
+org.apache.zeppelin.interpreter.InterpreterFactory.createInterpreterGroup : $r6 = new org.apache.zeppelin.interpreter.InterpreterGroup
+org.apache.zeppelin.notebook.Notebook.bindInterpretersToNote : if r4 == null goto return
+org.apache.zeppelin.notebook.Notebook.bindInterpretersToNote : $r11 = r0.<org.apache.zeppelin.notebook.Notebook: org.apache.zeppelin.interpreter.InterpreterSettingManager interpreterSettingManager>
+org.apache.zeppelin.notebook.Notebook.bindInterpretersToNote : $r10 = virtualinvoke r7.<org.apache.zeppelin.interpreter.InterpreterSetting: java.lang.String getId()>()
+org.apache.zeppelin.notebook.Notebook.bindInterpretersToNote : r4 = virtualinvoke r0.<org.apache.zeppelin.notebook.Notebook: org.apache.zeppelin.notebook.Note getNote(java.lang.String)>(r2)
+org.apache.zeppelin.notebook.Notebook.bindInterpretersToNote : $r8 = r0.<org.apache.zeppelin.notebook.Notebook: org.apache.zeppelin.interpreter.InterpreterSettingManager interpreterSettingManager>
+org.apache.zeppelin.notebook.Notebook.bindInterpretersToNote : goto [?= $z0 = interfaceinvoke r6.<java.util.Iterator: boolean hasNext()>()]
+org.apache.zeppelin.notebook.Notebook.bindInterpretersToNote : r6 = interfaceinvoke r5.<java.util.List: java.util.Iterator iterator()>()
+org.apache.zeppelin.notebook.Notebook.bindInterpretersToNote : specialinvoke r0.<org.apache.zeppelin.notebook.Notebook: void fireUnbindInterpreter(org.apache.zeppelin.notebook.Note,org.apache.zeppelin.interpreter.InterpreterSetting)>(r4, r7)
+org.apache.zeppelin.notebook.Notebook.onParagraphStatusChange : $r5 = r0.<org.apache.zeppelin.notebook.Notebook: java.util.List notebookEventListeners>
+org.apache.zeppelin.conf.ZeppelinConfiguration.getInterpreterDir : $r1 = <org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars: org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars ZEPPELIN_INTERPRETER_DIR>
+org.apache.zeppelin.conf.ZeppelinConfiguration.getRelativeDir : $r3 = new java.lang.StringBuilder
+org.apache.zeppelin.conf.ZeppelinConfiguration.getRelativeDir : $r2 = virtualinvoke r0.<org.apache.zeppelin.conf.ZeppelinConfiguration: java.lang.String getString(org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars)>(r1)
+org.apache.zeppelin.conf.ZeppelinConfiguration.getRelativeDir : if r1 == null goto $z1 = virtualinvoke r0.<org.apache.zeppelin.conf.ZeppelinConfiguration: boolean isWindowsPath(java.lang.String)>(r1)
+org.apache.zeppelin.conf.ZeppelinConfiguration.getRelativeDir : return r1
+org.apache.zeppelin.notebook.Paragraph.getScriptBody : r1 = staticinvoke <org.apache.zeppelin.notebook.Paragraph: java.lang.String getRequiredReplName(java.lang.String)>(r0)
+org.apache.zeppelin.notebook.Paragraph.getScriptBody : $r1 = r0.<org.apache.zeppelin.notebook.Paragraph: java.lang.String text>
+org.apache.zeppelin.notebook.Paragraph.getScriptBody : if r0 != null goto r1 = staticinvoke <org.apache.zeppelin.notebook.Paragraph: java.lang.String getRequiredReplName(java.lang.String)>(r0)
+org.apache.zeppelin.notebook.Paragraph.getScriptBody : return r0
+org.apache.zeppelin.notebook.Paragraph.getScriptBody : if r1 != null goto r2 = virtualinvoke r0.<java.lang.String: java.lang.String trim()>()
+org.apache.zeppelin.interpreter.InterpreterSettingManager$4.run : if r1 == null goto $r21 = r0.<org.apache.zeppelin.interpreter.InterpreterSettingManager$4: org.apache.zeppelin.interpreter.InterpreterSetting val$setting>
+org.apache.zeppelin.interpreter.InterpreterSettingManager$4.run : $r21 = r0.<org.apache.zeppelin.interpreter.InterpreterSettingManager$4: org.apache.zeppelin.interpreter.InterpreterSetting val$setting>
+org.apache.zeppelin.interpreter.InterpreterSettingManager$4.run : $r7 = r0.<org.apache.zeppelin.interpreter.InterpreterSettingManager$4: org.apache.zeppelin.interpreter.InterpreterSetting val$setting>
+org.apache.zeppelin.interpreter.InterpreterSettingManager$4.run : $r23 = r0.<org.apache.zeppelin.interpreter.InterpreterSettingManager$4: org.apache.zeppelin.interpreter.InterpreterSettingManager this$0>
+org.apache.zeppelin.interpreter.InterpreterSettingManager$4.run : r2 = interfaceinvoke r1.<java.util.List: java.util.Iterator iterator()>()
+org.apache.zeppelin.interpreter.InterpreterSettingManager$4.run : goto [?= return]
+org.apache.zeppelin.notebook.Note.insertNewParagraph : return r2
+org.apache.zeppelin.notebook.Note.insertNewParagraph : r2 = specialinvoke r0.<org.apache.zeppelin.notebook.Note: org.apache.zeppelin.notebook.Paragraph createParagraph(int,org.apache.zeppelin.user.AuthenticationInfo)>(i0, r1)
+org.apache.zeppelin.notebook.Note.insertNewParagraph : virtualinvoke r0.<org.apache.zeppelin.notebook.Note: void insertParagraph(org.apache.zeppelin.notebook.Paragraph,int)>(r2, i0)
+org.apache.zeppelin.notebook.FolderView.removeNote : $r5 = r0.<org.apache.zeppelin.notebook.FolderView: java.util.Map index>
+org.apache.zeppelin.notebook.repo.VFSNotebookRepo.getRootDir : $r2 = r0.<org.apache.zeppelin.notebook.repo.VFSNotebookRepo: org.apache.commons.vfs2.FileSystemManager fsManager>
+org.apache.zeppelin.notebook.repo.VFSNotebookRepo.getRootDir : return r1
+org.apache.zeppelin.notebook.repo.VFSNotebookRepo.getRootDir : $z1 = specialinvoke r0.<org.apache.zeppelin.notebook.repo.VFSNotebookRepo: boolean isDirectory(org.apache.commons.vfs2.FileObject)>(r1)
+org.apache.zeppelin.notebook.repo.VFSNotebookRepo.getRootDir : $z0 = interfaceinvoke r1.<org.apache.commons.vfs2.FileObject: boolean exists()>()
+org.apache.zeppelin.conf.ZeppelinConfiguration.getIntValue : goto [?= $z1 = interfaceinvoke r3.<java.util.Iterator: boolean hasNext()>()]
+org.apache.zeppelin.conf.ZeppelinConfiguration.getIntValue : return i0
+org.apache.zeppelin.conf.ZeppelinConfiguration.getIntValue : r3 = interfaceinvoke r2.<java.util.List: java.util.Iterator iterator()>()
+org.apache.zeppelin.conf.ZeppelinConfiguration.getIntValue : if r2 == null goto return i0
+org.apache.zeppelin.conf.ZeppelinConfiguration.getIntValue : $r5 = virtualinvoke r0.<org.apache.zeppelin.conf.ZeppelinConfiguration: org.apache.commons.configuration.tree.ConfigurationNode getRootNode()>()
+org.apache.zeppelin.conf.ZeppelinConfiguration.getIntValue : $r7 = interfaceinvoke r4.<org.apache.commons.configuration.tree.ConfigurationNode: java.util.List getChildren(java.lang.String)>("name")
+org.apache.zeppelin.conf.ZeppelinConfiguration.getStringValue : return r2
+org.apache.zeppelin.conf.ZeppelinConfiguration.getStringValue : r4 = interfaceinvoke r3.<java.util.List: java.util.Iterator iterator()>()
+org.apache.zeppelin.conf.ZeppelinConfiguration.getStringValue : $r8 = interfaceinvoke r5.<org.apache.commons.configuration.tree.ConfigurationNode: java.util.List getChildren(java.lang.String)>("name")
+org.apache.zeppelin.conf.ZeppelinConfiguration.getStringValue : if r3 == null goto return r2
+org.apache.zeppelin.conf.ZeppelinConfiguration.getStringValue : goto [?= $z1 = interfaceinvoke r4.<java.util.Iterator: boolean hasNext()>()]
+org.apache.zeppelin.conf.ZeppelinConfiguration.getStringValue : $r6 = virtualinvoke r0.<org.apache.zeppelin.conf.ZeppelinConfiguration: org.apache.commons.configuration.tree.ConfigurationNode getRootNode()>()
+org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars.getVarName : $r1 = r0.<org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars: java.lang.String varName>
+org.apache.zeppelin.interpreter.InterpreterSetting.isEqualInterpreterKeyProcessKey : $z9 = virtualinvoke r1.<java.lang.String: boolean equals(java.lang.Object)>(r2)
+org.apache.zeppelin.interpreter.InterpreterSetting.isEqualInterpreterKeyProcessKey : $r6 = virtualinvoke r0.<org.apache.zeppelin.interpreter.InterpreterSetting: org.apache.zeppelin.interpreter.InterpreterOption getOption()>()
+org.apache.zeppelin.interpreter.InterpreterSetting.isEqualInterpreterKeyProcessKey : i0 = 0
+org.apache.zeppelin.interpreter.InterpreterSetting.isEqualInterpreterKeyProcessKey : r3 = virtualinvoke r0.<org.apache.zeppelin.interpreter.InterpreterSetting: org.apache.zeppelin.interpreter.InterpreterOption getOption()>()
+org.apache.zeppelin.notebook.Paragraph.getUserParagraph : $r4 = r0.<org.apache.zeppelin.notebook.Paragraph: java.util.Map userParagraphMap>
+org.apache.zeppelin.notebook.Paragraph.getUserParagraph : $r2 = r0.<org.apache.zeppelin.notebook.Paragraph: java.util.Map userParagraphMap>
+org.apache.zeppelin.interpreter.InterpreterSettingManager.putNoteInterpreterSettingBinding : r10 = virtualinvoke r0.<org.apache.zeppelin.interpreter.InterpreterSettingManager: org.apache.zeppelin.interpreter.InterpreterSetting get(java.lang.String)>(r20)
+org.apache.zeppelin.interpreter.InterpreterSettingManager.putNoteInterpreterSettingBinding : virtualinvoke r0.<org.apache.zeppelin.interpreter.InterpreterSettingManager: void removeInterpretersForNote(org.apache.zeppelin.interpreter.InterpreterSetting,java.lang.String,java.lang.String)>(r10, r1, r2)
+org.apache.zeppelin.interpreter.InterpreterSettingManager.putNoteInterpreterSettingBinding : r18 = interfaceinvoke r5.<java.util.List: java.util.Iterator iterator()>()
+org.apache.zeppelin.interpreter.InterpreterSettingManager.putNoteInterpreterSettingBinding : $r16 = r0.<org.apache.zeppelin.interpreter.InterpreterSettingManager: java.util.Map interpreterBindings>
+org.apache.zeppelin.interpreter.InterpreterSettingManager.putNoteInterpreterSettingBinding : if r7 == null goto $r16 = r0.<org.apache.zeppelin.interpreter.InterpreterSettingManager: java.util.Map interpreterBindings>
+org.apache.zeppelin.interpreter.InterpreterSettingManager.putNoteInterpreterSettingBinding : $z1 = interfaceinvoke r3.<java.util.List: boolean contains(java.lang.Object)>(r9)
+org.apache.zeppelin.interpreter.InterpreterSettingManager.putNoteInterpreterSettingBinding : r8 = interfaceinvoke r7.<java.util.List: java.util.Iterator iterator()>()
+org.apache.zeppelin.interpreter.InterpreterSettingManager.putNoteInterpreterSettingBinding : virtualinvoke r0.<org.apache.zeppelin.interpreter.InterpreterSettingManager: void saveToFile()>()
+org.apache.zeppelin.interpreter.InterpreterSettingManager.putNoteInterpreterSettingBinding : interfaceinvoke r5.<java.util.List: boolean add(java.lang.Object)>(r9)
+org.apache.zeppelin.interpreter.InterpreterSettingManager.putNoteInterpreterSettingBinding : $r4 = new java.util.LinkedList
+org.apache.zeppelin.interpreter.InterpreterSettingManager.putNoteInterpreterSettingBinding : $r13 = r0.<org.apache.zeppelin.interpreter.InterpreterSettingManager: java.util.Map interpreterBindings>
+org.apache.zeppelin.interpreter.InterpreterSettingManager.putNoteInterpreterSettingBinding : $r12 = r0.<org.apache.zeppelin.interpreter.InterpreterSettingManager: java.util.Map interpreterSettings>
+org.apache.zeppelin.interpreter.InterpreterSettingManager.putNoteInterpreterSettingBinding : exitmonitor r6
+org.apache.zeppelin.interpreter.InterpreterSettingManager.putNoteInterpreterSettingBinding : goto [?= $z3 = interfaceinvoke r18.<java.util.Iterator: boolean hasNext()>()]
+org.apache.zeppelin.interpreter.InterpreterSettingManager.putNoteInterpreterSettingBinding : goto [?= $z0 = interfaceinvoke r8.<java.util.Iterator: boolean hasNext()>()]
+org.apache.zeppelin.interpreter.InterpreterSetting.setInterpreterOption : r0.<org.apache.zeppelin.interpreter.InterpreterSetting: org.apache.zeppelin.interpreter.InterpreterOption option> = r1
+org.apache.zeppelin.interpreter.InterpreterSettingManager.convertInterpreterProperties : return r3
+org.apache.zeppelin.interpreter.InterpreterSettingManager.convertInterpreterProperties : $r2 = new java.util.Properties
+org.apache.zeppelin.interpreter.InterpreterSettingManager.convertInterpreterProperties : $r6 = interfaceinvoke r1.<java.util.Map: java.util.Set keySet()>()
+org.apache.zeppelin.interpreter.InterpreterSettingManager$5.compare : $r3 = virtualinvoke r1.<org.apache.zeppelin.interpreter.InterpreterSetting: java.lang.String getName()>()
+org.apache.zeppelin.interpreter.InterpreterSettingManager$5.compare : $r3 = (org.apache.zeppelin.interpreter.InterpreterSetting) r1
+org.apache.zeppelin.notebook.Note.stopDelayedPersistTimer : exitmonitor r2
+org.apache.zeppelin.notebook.Note.stopDelayedPersistTimer : r2 = r0
+org.apache.zeppelin.notebook.Note.stopDelayedPersistTimer : $r4 = r0.<org.apache.zeppelin.notebook.Note: java.util.concurrent.ScheduledFuture delayedPersist>
+org.apache.zeppelin.notebook.Paragraph.getReturn : $r1 = r0.<org.apache.zeppelin.notebook.Paragraph: java.lang.Object results>
+org.apache.zeppelin.notebook.Paragraph.getText : $r1 = r0.<org.apache.zeppelin.notebook.Paragraph: java.lang.String text>
+org.apache.zeppelin.notebook.Paragraph$1.updateParagraphResult : $r2 = new org.apache.zeppelin.interpreter.InterpreterResult
+org.apache.zeppelin.notebook.Paragraph$1.updateParagraphResult : $r5 = r0.<org.apache.zeppelin.notebook.Paragraph$1: org.apache.zeppelin.notebook.Paragraph this$0>
+org.apache.zeppelin.interpreter.InterpreterSetting.getOption : $r3 = r0.<org.apache.zeppelin.interpreter.InterpreterSetting: org.apache.zeppelin.interpreter.InterpreterOption option>
+org.apache.zeppelin.interpreter.InterpreterSetting.getOption : $r2 = r0.<org.apache.zeppelin.interpreter.InterpreterSetting: org.apache.zeppelin.interpreter.InterpreterOption option>
+org.apache.zeppelin.interpreter.InterpreterSetting.getInterpreterInfos : $r1 = r0.<org.apache.zeppelin.interpreter.InterpreterSetting: java.util.List interpreterInfos>
+org.apache.zeppelin.interpreter.InterpreterSetting.getStatus : $r1 = r0.<org.apache.zeppelin.interpreter.InterpreterSetting: org.apache.zeppelin.interpreter.InterpreterSetting$Status status>
+org.apache.zeppelin.interpreter.InterpreterSettingManager.restart : virtualinvoke r0.<org.apache.zeppelin.interpreter.InterpreterSettingManager: void restart(java.lang.String,java.lang.String,java.lang.String)>(r1, "", "anonymous")
+org.apache.zeppelin.interpreter.InterpreterSettingManager.restart : specialinvoke r0.<org.apache.zeppelin.interpreter.InterpreterSettingManager: void copyDependenciesFromLocalPath(org.apache.zeppelin.interpreter.InterpreterSetting)>(r13)
+org.apache.zeppelin.interpreter.InterpreterSettingManager.restart : staticinvoke <com.google.common.base.Preconditions: java.lang.Object checkNotNull(java.lang.Object)>(r4)
+org.apache.zeppelin.interpreter.InterpreterSettingManager.restart : exitmonitor r5
+org.apache.zeppelin.interpreter.InterpreterSettingManager.restart : virtualinvoke r13.<org.apache.zeppelin.interpreter.InterpreterSetting: void closeAndRemoveAllInterpreterGroups()>()
+org.apache.zeppelin.interpreter.InterpreterSettingManager.restart : $z0 = virtualinvoke r3.<java.lang.String: boolean equals(java.lang.Object)>("anonymous")
+org.apache.zeppelin.interpreter.InterpreterSettingManager.restart : specialinvoke r0.<org.apache.zeppelin.interpreter.InterpreterSettingManager: void stopJobAllInterpreter(org.apache.zeppelin.interpreter.InterpreterSetting)>(r13)
+org.apache.zeppelin.interpreter.InterpreterSettingManager.restart : if r13 == null goto $r14 = new org.apache.zeppelin.interpreter.InterpreterException
+org.apache.zeppelin.interpreter.InterpreterSettingManager.restart : $r11 = r0.<org.apache.zeppelin.interpreter.InterpreterSettingManager: java.util.Map interpreterSettings>
+org.apache.zeppelin.interpreter.InterpreterSettingManager.restart : $r10 = r0.<org.apache.zeppelin.interpreter.InterpreterSettingManager: java.util.Map interpreterSettings>
+org.apache.zeppelin.interpreter.InterpreterSettingManager.restart : $r7 = r0.<org.apache.zeppelin.interpreter.InterpreterSettingManager: java.util.Map interpreterSettings>
+org.apache.zeppelin.interpreter.InterpreterSettingManager.restart : virtualinvoke r13.<org.apache.zeppelin.interpreter.InterpreterSetting: void setInfos(java.util.Map)>(null)
+org.apache.zeppelin.notebook.NotebookTest$3.afterStatusChange : $r4 = r0.<org.apache.zeppelin.notebook.NotebookTest$3: org.apache.zeppelin.notebook.NotebookTest this$0>
+org.apache.zeppelin.notebook.NotebookTest.delete : r2 = virtualinvoke r1.<java.io.File: java.io.File[] listFiles()>()
+org.apache.zeppelin.notebook.NotebookTest.delete : $z2 = virtualinvoke r1.<java.io.File: boolean isDirectory()>()
+org.apache.zeppelin.notebook.NotebookTest.delete : if r2 == null goto virtualinvoke r1.<java.io.File: boolean delete()>()
+org.apache.zeppelin.notebook.NotebookTest.delete : virtualinvoke r1.<java.io.File: boolean delete()>()
+org.apache.zeppelin.notebook.NotebookTest.delete : specialinvoke r0.<org.apache.zeppelin.notebook.NotebookTest: void delete(java.io.File)>(r4)
+org.apache.zeppelin.notebook.NotebookTest.delete : r3 = r2
+org.apache.zeppelin.notebook.NotebookTest.delete : $z0 = virtualinvoke r1.<java.io.File: boolean isFile()>()
+org.apache.zeppelin.notebook.NotebookTest.access$000 : $r1 = r0.<org.apache.zeppelin.notebook.NotebookTest: org.apache.zeppelin.notebook.NotebookTest$StatusChangedListener afterStatusChangedListener>
+org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars.getStringValue : $r1 = r0.<org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars: java.lang.String stringValue>
+org.apache.zeppelin.conf.ZeppelinConfiguration.getInt : $r3 = staticinvoke <java.lang.System: java.lang.String getenv(java.lang.String)>(r1)
+org.apache.zeppelin.conf.ZeppelinConfiguration.getInt : $i3 = specialinvoke r0.<org.apache.zeppelin.conf.ZeppelinConfiguration: int getIntValue(java.lang.String,int)>(r2, i0)
+org.apache.zeppelin.conf.ZeppelinConfiguration.getInt : $r2 = virtualinvoke r1.<org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars: java.lang.String name()>()
+org.apache.zeppelin.conf.ZeppelinConfiguration.getInt : $r5 = staticinvoke <java.lang.System: java.lang.String getProperty(java.lang.String)>(r2)
+org.apache.zeppelin.notebook.Notebook.getInterpreterSettingManager : $r1 = r0.<org.apache.zeppelin.notebook.Notebook: org.apache.zeppelin.interpreter.InterpreterSettingManager interpreterSettingManager>
+org.apache.zeppelin.notebook.NotebookAuthorization.removeNote : $r2 = <org.apache.zeppelin.notebook.NotebookAuthorization: java.util.Map authInfo>
+org.apache.zeppelin.notebook.NotebookAuthorization.removeNote : specialinvoke r0.<org.apache.zeppelin.notebook.NotebookAuthorization: void saveToFile()>()
+org.apache.zeppelin.interpreter.InterpreterSetting.setName : r0.<org.apache.zeppelin.interpreter.InterpreterSetting: java.lang.String name> = r1
+org.apache.zeppelin.notebook.Notebook.removeNote : $r16 = r0.<org.apache.zeppelin.notebook.Notebook: org.apache.zeppelin.notebook.FolderView folders>
+org.apache.zeppelin.notebook.Notebook.removeNote : r43 = interfaceinvoke r42.<java.util.List: java.util.Iterator iterator()>()
+org.apache.zeppelin.notebook.Notebook.removeNote : goto [?= $z4 = interfaceinvoke r38.<java.util.Iterator: boolean hasNext()>()]
+org.apache.zeppelin.notebook.Notebook.removeNote : if r42 == null goto (branch)
+org.apache.zeppelin.notebook.Notebook.removeNote : $r18 = r0.<org.apache.zeppelin.notebook.Notebook: org.apache.zeppelin.interpreter.InterpreterSettingManager interpreterSettingManager>
+org.apache.zeppelin.notebook.Notebook.removeNote : $r27 = virtualinvoke r2.<org.apache.zeppelin.user.AuthenticationInfo: java.lang.String getUser()>()
+org.apache.zeppelin.notebook.Notebook.removeNote : staticinvoke <org.apache.zeppelin.resource.ResourcePoolUtils: void removeResourcesBelongsToNote(java.lang.String)>(r1)
+org.apache.zeppelin.notebook.Notebook.removeNote : r42 = virtualinvoke r40.<org.apache.zeppelin.notebook.Paragraph: java.util.List getAllApplicationStates()>()
+org.apache.zeppelin.notebook.Notebook.removeNote : $r13 = r0.<org.apache.zeppelin.notebook.Notebook: java.util.Map notes>
+org.apache.zeppelin.notebook.Notebook.removeNote : $r22 = r0.<org.apache.zeppelin.notebook.Notebook: org.apache.zeppelin.interpreter.InterpreterSettingManager interpreterSettingManager>
+org.apache.zeppelin.notebook.Notebook.removeNote : goto [?= $z0 = interfaceinvoke r24.<java.util.Iterator: boolean hasNext()>()]
+org.apache.zeppelin.notebook.Notebook.removeNote : virtualinvoke r6.<org.apache.zeppelin.display.AngularObjectRegistry: void removeAll(java.lang.String,java.lang.String)>(r1, null)
+org.apache.zeppelin.notebook.Notebook.removeNote : virtualinvoke r4.<org.apache.zeppelin.notebook.Note: void unpersist(org.apache.zeppelin.user.AuthenticationInfo)>(r2)
+org.apache.zeppelin.notebook.Notebook.removeNote : $r20 = r0.<org.apache.zeppelin.notebook.Notebook: org.apache.zeppelin.search.SearchService noteSearchService>
+org.apache.zeppelin.notebook.Notebook.removeNote : $r37 = virtualinvoke r4.<org.apache.zeppelin.notebook.Note: java.util.List getParagraphs()>()
+org.apache.zeppelin.notebook.Notebook.removeNote : exitmonitor r3
+org.apache.zeppelin.notebook.Notebook.removeNote : specialinvoke r0.<org.apache.zeppelin.notebook.Notebook: void fireNoteRemoveEvent(org.apache.zeppelin.notebook.Note)>(r4)
+org.apache.zeppelin.notebook.Notebook.removeNote : goto [?= return]
+org.apache.zeppelin.notebook.Notebook.removeNote : $r41 = virtualinvoke r40.<org.apache.zeppelin.notebook.Paragraph: java.lang.String getId()>()
+org.apache.zeppelin.notebook.Notebook.removeNote : staticinvoke <com.google.common.base.Preconditions: java.lang.Object checkNotNull(java.lang.Object,java.lang.Object)>(r2, "AuthenticationInfo should not be null")
+org.apache.zeppelin.notebook.Notebook.removeNote : $z1 = r6 instanceof org.apache.zeppelin.interpreter.remote.RemoteAngularObjectRegistry
+org.apache.zeppelin.notebook.Notebook.removeNote : $r21 = r0.<org.apache.zeppelin.notebook.Notebook: org.apache.zeppelin.notebook.NotebookAuthorization notebookAuthorization>
+org.apache.zeppelin.notebook.Notebook.removeNote : $r14 = r0.<org.apache.zeppelin.notebook.Notebook: java.util.Map notes>
+org.apache.zeppelin.notebook.Notebook.getBindedInterpreterSettingsIds : r2 = virtualinvoke r0.<org.apache.zeppelin.notebook.Notebook: org.apache.zeppelin.notebook.Note getNote(java.lang.String)>(r1)
+org.apache.zeppelin.notebook.Notebook.getBindedInterpreterSettingsIds : if r2 == null goto $r6 = new java.util.LinkedList
+org.apache.zeppelin.notebook.Notebook.getBindedInterpreterSettingsIds : $r3 = r0.<org.apache.zeppelin.notebook.Notebook: org.apache.zeppelin.interpreter.InterpreterSettingManager interpreterSettingManager>
+org.apache.zeppelin.notebook.Paragraph.getRepl : $r2 = r0.<org.apache.zeppelin.notebook.Paragraph: org.apache.zeppelin.interpreter.InterpreterFactory factory>
+org.apache.zeppelin.interpreter.InterpreterSettingManager.getDefaultInterpreterSetting : if r1 == null goto return null
+org.apache.zeppelin.interpreter.InterpreterSettingManager.getDefaultInterpreterSetting : $r2 = interfaceinvoke r1.<java.util.List: java.lang.Object get(int)>(0)
+org.apache.zeppelin.notebook.Paragraph.addUser : $r3 = r0.<org.apache.zeppelin.notebook.Paragraph: java.util.Map userParagraphMap>
+org.apache.zeppelin.notebook.Paragraph.getAllApplicationStates : $r4 = new java.util.LinkedList
+org.apache.zeppelin.notebook.Paragraph.getAllApplicationStates : $r3 = r0.<org.apache.zeppelin.notebook.Paragraph: java.util.List apps>
+org.apache.zeppelin.interpreter.InterpreterSettingManager.setInterpreterGroupFactory : r0.<org.apache.zeppelin.interpreter.InterpreterSettingManager: org.apache.zeppelin.interpreter.InterpreterGroupFactory interpreterGroupFactory> = r1
+org.apache.zeppelin.interpreter.InterpreterSettingManager.setInterpreterGroupFactory : $r4 = r0.<org.apache.zeppelin.interpreter.InterpreterSettingManager: java.util.Map interpreterSettings>
+org.apache.zeppelin.interpreter.InterpreterSettingManager.copyDependenciesFromLocalPath : $r2 = <org.apache.zeppelin.interpreter.InterpreterSetting$Status: org.apache.zeppelin.interpreter.InterpreterSetting$Status DOWNLOADING_DEPENDENCIES>
+org.apache.zeppelin.interpreter.InterpreterSettingManager.copyDependenciesFromLocalPath : exitmonitor r3
+org.apache.zeppelin.interpreter.InterpreterSettingManager.copyDependenciesFromLocalPath : virtualinvoke r4.<java.lang.Thread: void start()>()
+org.apache.zeppelin.interpreter.InterpreterSettingManager.copyDependenciesFromLocalPath : $r9 = r0.<org.apache.zeppelin.interpreter.InterpreterSettingManager: java.util.Map interpreterSettings>
+org.apache.zeppelin.interpreter.InterpreterSettingManager.copyDependenciesFromLocalPath : $r6 = r0.<org.apache.zeppelin.interpreter.InterpreterSettingManager: java.util.Map interpreterSettings>
+org.apache.zeppelin.interpreter.InterpreterSettingManager.copyDependenciesFromLocalPath : $r10 = new org.apache.zeppelin.interpreter.InterpreterSettingManager$4
+org.apache.zeppelin.notebook.Note.getCredentials : $r1 = r0.<org.apache.zeppelin.notebook.Note: org.apache.zeppelin.user.Credentials credentials>
+org.apache.zeppelin.interpreter.InterpreterSettingManager.access$300 : $r1 = r0.<org.apache.zeppelin.interpreter.InterpreterSettingManager: java.util.Map interpreterSettings>
+org.apache.zeppelin.interpreter.InterpreterSettingManager.stopJobAllInterpreter : goto [?= $z0 = interfaceinvoke r2.<java.util.Iterator: boolean hasNext()>()]
+org.apache.zeppelin.interpreter.InterpreterSettingManager.stopJobAllInterpreter : if r1 == null goto return
+org.apache.zeppelin.interpreter.InterpreterSettingManager.stopJobAllInterpreter : $r11 = virtualinvoke r1.<org.apache.zeppelin.interpreter.InterpreterSetting: java.util.Collection getAllInterpreterGroups()>()
+org.apache.zeppelin.interpreter.InterpreterSettingManager.stopJobAllInterpreter : $r13 = virtualinvoke r3.<org.apache.zeppelin.interpreter.InterpreterGroup: java.util.Collection values()>()
+org.apache.zeppelin.notebook.Notebook.fireNoteCreateEvent : $r4 = r0.<org.apache.zeppelin.notebook.Notebook: java.util.List notebookEventListeners>
+org.apache.zeppelin.notebook.Note.persist : staticinvoke <com.google.common.base.Preconditions: java.lang.Object checkNotNull(java.lang.Object,java.lang.Object)>(r1, "AuthenticationInfo should not be null")
+org.apache.zeppelin.notebook.Note.persist : $r5 = r0.<org.apache.zeppelin.notebook.Note: org.apache.zeppelin.notebook.repo.NotebookRepo repo>
+org.apache.zeppelin.notebook.Note.persist : $r4 = r0.<org.apache.zeppelin.notebook.Note: org.apache.zeppelin.search.SearchService index>
+org.apache.zeppelin.notebook.Note.persist : specialinvoke r0.<org.apache.zeppelin.notebook.Note: void stopDelayedPersistTimer()>()
+org.apache.zeppelin.notebook.Note.persist : $r3 = virtualinvoke r1.<org.apache.zeppelin.user.AuthenticationInfo: java.lang.String getUser()>()
+org.apache.zeppelin.notebook.Note.snapshotAngularObjectRegistry : $r11 = r0.<org.apache.zeppelin.notebook.Note: java.lang.String id>
+org.apache.zeppelin.notebook.Note.snapshotAngularObjectRegistry : $r12 = r0.<org.apache.zeppelin.notebook.Note: java.util.Map angularObjects>
+org.apache.zeppelin.notebook.Note.snapshotAngularObjectRegistry : r4 = interfaceinvoke r3.<java.util.List: java.util.Iterator iterator()>()
+org.apache.zeppelin.notebook.Note.snapshotAngularObjectRegistry : if r3 == null goto return
+org.apache.zeppelin.notebook.Note.snapshotAngularObjectRegistry : goto [?= $z0 = interfaceinvoke r4.<java.util.Iterator: boolean hasNext()>()]
+org.apache.zeppelin.notebook.Note.snapshotAngularObjectRegistry : $r8 = r0.<org.apache.zeppelin.notebook.Note: org.apache.zeppelin.interpreter.InterpreterSettingManager interpreterSettingManager>
+org.apache.zeppelin.notebook.Note.snapshotAngularObjectRegistry : $r2 = new java.util.HashMap
+org.apache.zeppelin.notebook.Note.snapshotAngularObjectRegistry : r7 = virtualinvoke r6.<org.apache.zeppelin.interpreter.InterpreterGroup: org.apache.zeppelin.display.AngularObjectRegistry getAngularObjectRegistry()>()
+org.apache.zeppelin.notebook.Note.setNoteNameListener : r0.<org.apache.zeppelin.notebook.Note: org.apache.zeppelin.notebook.NoteNameListener noteNameListener> = r1
+org.apache.zeppelin.notebook.Paragraph.generateId : $r0 = new java.lang.StringBuilder
+org.apache.zeppelin.interpreter.InterpreterSetting.getDependencies : $r3 = r0.<org.apache.zeppelin.interpreter.InterpreterSetting: java.util.List dependencies>
+org.apache.zeppelin.interpreter.InterpreterSetting.getDependencies : $r1 = r0.<org.apache.zeppelin.interpreter.InterpreterSetting: java.util.List dependencies>
+org.apache.zeppelin.conf.ZeppelinConfiguration.getInterpreterJson : $r1 = <org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars: org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars ZEPPELIN_INTERPRETER_JSON>
+org.apache.zeppelin.notebook.Paragraph.jobRun : r10 = r8
+org.apache.zeppelin.notebook.Paragraph.jobRun : r51 = virtualinvoke r0.<org.apache.zeppelin.notebook.Paragraph: java.lang.String getScriptBody()>()
+org.apache.zeppelin.notebook.Paragraph.jobRun : if r2 != null goto $r29 = virtualinvoke r2.<org.apache.zeppelin.interpreter.Interpreter: org.apache.zeppelin.interpreter.InterpreterGroup getInterpreterGroup()>()
+org.apache.zeppelin.notebook.Paragraph.jobRun : r2 = virtualinvoke r0.<org.apache.zeppelin.notebook.Paragraph: org.apache.zeppelin.interpreter.Interpreter getRepl(java.lang.String)>(r1)
+org.apache.zeppelin.notebook.Paragraph.jobRun : goto [?= $z5 = interfaceinvoke r4.<java.util.Iterator: boolean hasNext()>()]
+org.apache.zeppelin.notebook.Paragraph.jobRun : $r58 = virtualinvoke r2.<org.apache.zeppelin.interpreter.Interpreter: org.apache.zeppelin.interpreter.InterpreterGroup getInterpreterGroup()>()
+org.apache.zeppelin.notebook.Paragraph.jobRun : $r76 = virtualinvoke r69.<org.apache.zeppelin.interpreter.InterpreterResult: java.util.List message()>()
+org.apache.zeppelin.notebook.Paragraph.jobRun : $r61 = r0.<org.apache.zeppelin.notebook.Paragraph: org.apache.zeppelin.display.GUI settings>
+org.apache.zeppelin.notebook.Paragraph.jobRun : $r79 = virtualinvoke r0.<org.apache.zeppelin.notebook.Paragraph: java.lang.String getUser()>()
+org.apache.zeppelin.notebook.Paragraph.jobRun : $r77 = new org.apache.zeppelin.interpreter.InterpreterResult
+org.apache.zeppelin.notebook.Paragraph.jobRun : $r47 = r0.<org.apache.zeppelin.notebook.Paragraph: java.util.Map userParagraphMap>
+org.apache.zeppelin.notebook.Paragraph.jobRun : r6 = staticinvoke <org.apache.zeppelin.display.Input: java.util.LinkedHashMap extractSimpleQueryForm(java.lang.String)>(r57)
+org.apache.zeppelin.notebook.Paragraph.jobRun : $z1 = specialinvoke r0.<org.apache.zeppelin.notebook.Paragraph: boolean noteHasUser()>()
+org.apache.zeppelin.notebook.Paragraph.jobRun : $r80 = r9.<org.apache.zeppelin.notebook.Paragraph: org.apache.zeppelin.display.GUI settings>
+org.apache.zeppelin.notebook.Paragraph.jobRun : $r73 = r68.<org.apache.zeppelin.interpreter.InterpreterContext: org.apache.zeppelin.interpreter.InterpreterOutput out>
+org.apache.zeppelin.notebook.Paragraph.jobRun : $r70 = <org.apache.zeppelin.interpreter.InterpreterResult$Code: org.apache.zeppelin.interpreter.InterpreterResult$Code KEEP_PREVIOUS_RESULT>
+org.apache.zeppelin.notebook.Paragraph.jobRun : $r63 = <org.apache.zeppelin.notebook.Paragraph: org.slf4j.Logger logger>
+org.apache.zeppelin.notebook.Paragraph.jobRun : $r31 = virtualinvoke r3.<org.apache.zeppelin.interpreter.InterpreterSetting: org.apache.zeppelin.interpreter.InterpreterSetting$Status getStatus()>()
+org.apache.zeppelin.notebook.Paragraph.jobRun : virtualinvoke r9.<org.apache.zeppelin.notebook.Paragraph: void setResult(java.lang.Object)>(r8)
+org.apache.zeppelin.notebook.Paragraph.jobRun : r59 = virtualinvoke r0.<org.apache.zeppelin.notebook.Paragraph: java.lang.String extractVariablesFromAngularRegistry(java.lang.String,java.util.Map,org.apache.zeppelin.display.AngularObjectRegistry)>(r57, r6, r7)
+org.apache.zeppelin.notebook.Paragraph.jobRun : staticinvoke <org.apache.zeppelin.interpreter.InterpreterContext: void set(org.apache.zeppelin.interpreter.InterpreterContext)>(r68)
+org.apache.zeppelin.notebook.Paragraph.jobRun : r1 = virtualinvoke r0.<org.apache.zeppelin.notebook.Paragraph: java.lang.String getRequiredReplName()>()
+org.apache.zeppelin.notebook.Paragraph.jobRun : if r3 == null goto $r47 = r0.<org.apache.zeppelin.notebook.Paragraph: java.util.Map userParagraphMap>
+org.apache.zeppelin.notebook.Paragraph.jobRun : if null == r9 goto r10 = r8
+org.apache.zeppelin.notebook.Paragraph.jobRun : $r52 = virtualinvoke r2.<org.apache.zeppelin.interpreter.Interpreter: org.apache.zeppelin.interpreter.Interpreter$FormType getFormType()>()
+org.apache.zeppelin.notebook.Paragraph.jobRun : $r55 = virtualinvoke r2.<org.apache.zeppelin.interpreter.Interpreter: org.apache.zeppelin.interpreter.Interpreter$FormType getFormType()>()
+org.apache.zeppelin.notebook.Paragraph.jobRun : r69 = virtualinvoke r2.<org.apache.zeppelin.interpreter.Interpreter: org.apache.zeppelin.interpreter.InterpreterResult interpret(java.lang.String,org.apache.zeppelin.interpreter.InterpreterContext)>(r51, r68)
+org.apache.zeppelin.notebook.Paragraph.jobRun : $r50 = virtualinvoke r0.<org.apache.zeppelin.notebook.Paragraph: java.lang.String getText()>()
+org.apache.zeppelin.notebook.Paragraph.jobRun : $r60 = r0.<org.apache.zeppelin.notebook.Paragraph: org.apache.zeppelin.display.GUI settings>
+org.apache.zeppelin.notebook.Paragraph.jobRun : $r74 = r68.<org.apache.zeppelin.interpreter.InterpreterContext: org.apache.zeppelin.interpreter.InterpreterOutput out>
+org.apache.zeppelin.notebook.Paragraph.jobRun : r68 = specialinvoke r0.<org.apache.zeppelin.notebook.Paragraph: org.apache.zeppelin.interpreter.InterpreterContext getInterpreterContext()>()
+org.apache.zeppelin.notebook.Paragraph.jobRun : $r29 = virtualinvoke r2.<org.apache.zeppelin.interpreter.Interpreter: org.apache.zeppelin.interpreter.InterpreterGroup getInterpreterGroup()>()
+org.apache.zeppelin.notebook.Paragraph.jobRun : $r12 = <org.apache.zeppelin.notebook.Paragraph: org.slf4j.Logger logger>
+org.apache.zeppelin.notebook.Paragraph.jobRun : r57 = virtualinvoke r0.<org.apache.zeppelin.notebook.Paragraph: java.lang.String getScriptBody()>()
+org.apache.zeppelin.interpreter.InterpreterSetting.getInterpreterGroup : $r16 = <org.apache.zeppelin.interpreter.InterpreterSetting: org.slf4j.Logger logger>
+org.apache.zeppelin.interpreter.InterpreterSetting.getInterpreterGroup : $r21 = r0.<org.apache.zeppelin.interpreter.InterpreterSetting: java.util.Map interpreterGroupRef>
+org.apache.zeppelin.interpreter.InterpreterSetting.getInterpreterGroup : r3 = specialinvoke r0.<org.apache.zeppelin.interpreter.InterpreterSetting: java.lang.String getInterpreterProcessKey(java.lang.String,java.lang.String)>(r1, r2)
+org.apache.zeppelin.interpreter.InterpreterSetting.getInterpreterGroup : $r13 = r0.<org.apache.zeppelin.interpreter.InterpreterSetting: org.apache.zeppelin.interpreter.InterpreterGroupFactory interpreterGroupFactory>
+org.apache.zeppelin.interpreter.InterpreterSetting.getInterpreterGroup : $r24 = r0.<org.apache.zeppelin.interpreter.InterpreterSetting: java.util.concurrent.locks.ReentrantReadWriteLock$ReadLock interpreterGroupReadLock>
+org.apache.zeppelin.interpreter.InterpreterSetting.getInterpreterGroup : $r23 = r0.<org.apache.zeppelin.interpreter.InterpreterSetting: java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock interpreterGroupWriteLock>
+org.apache.zeppelin.interpreter.InterpreterSetting.getInterpreterGroup : $r8 = new java.lang.StringBuilder
+org.apache.zeppelin.interpreter.InterpreterSetting.getInterpreterGroup : $r25 = r0.<org.apache.zeppelin.interpreter.InterpreterSetting: java.util.Map interpreterGroupRef>
+org.apache.zeppelin.interpreter.InterpreterSetting.getInterpreterGroup : $r28 = r0.<org.apache.zeppelin.interpreter.InterpreterSetting: java.util.concurrent.locks.ReentrantReadWriteLock$ReadLock interpreterGroupReadLock>
+org.apache.zeppelin.interpreter.InterpreterSetting.getInterpreterGroup : $r7 = r0.<org.apache.zeppelin.interpreter.InterpreterSetting: java.util.Map interpreterGroupRef>
+org.apache.zeppelin.interpreter.InterpreterSetting.getInterpreterGroup : $r15 = r0.<org.apache.zeppelin.interpreter.InterpreterSetting: java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock interpreterGroupWriteLock>
+org.apache.zeppelin.interpreter.InterpreterSetting.closeAndRemoveAllInterpreterGroups : $r10 = r0.<org.apache.zeppelin.interpreter.InterpreterSetting: java.util.Map interpreterGroupRef>
+org.apache.zeppelin.interpreter.InterpreterSetting.closeAndRemoveAllInterpreterGroups : $r1 = new java.util.HashSet
+org.apache.zeppelin.interpreter.InterpreterSetting.closeAndRemoveAllInterpreterGroups : goto [?= $z0 = interfaceinvoke r2.<java.util.Iterator: boolean hasNext()>()]
+org.apache.zeppelin.interpreter.InterpreterSetting.closeAndRemoveAllInterpreterGroups : $r12 = new java.util.HashSet
+org.apache.zeppelin.notebook.Paragraph.getUser : $r1 = r0.<org.apache.zeppelin.notebook.Paragraph: java.lang.String user>
+org.apache.zeppelin.notebook.Paragraph.getMagic : if r2 == null goto return r1
+org.apache.zeppelin.notebook.Paragraph.getMagic : r2 = virtualinvoke r0.<org.apache.zeppelin.notebook.Paragraph: java.lang.String getText()>()
+org.apache.zeppelin.notebook.Paragraph.getMagic : r1 = ""
+org.apache.zeppelin.notebook.Paragraph.getMagic : return r1
+org.apache.zeppelin.notebook.repo.VFSNotebookRepo.isDirectory : if r1 != null goto $r3 = interfaceinvoke r1.<org.apache.commons.vfs2.FileObject: org.apache.commons.vfs2.FileType getType()>()
+org.apache.zeppelin.notebook.repo.VFSNotebookRepo.isDirectory : return 1
+org.apache.zeppelin.notebook.repo.VFSNotebookRepo.isDirectory : $r3 = interfaceinvoke r1.<org.apache.commons.vfs2.FileObject: org.apache.commons.vfs2.FileType getType()>()
+org.apache.zeppelin.interpreter.InterpreterSettingManager.loadFromFile : $r17 = r0.<org.apache.zeppelin.interpreter.InterpreterSettingManager: java.nio.file.Path interpreterBindingPath>
+org.apache.zeppelin.interpreter.InterpreterSettingManager.loadInterpreterDependencies : $r2 = <org.apache.zeppelin.interpreter.InterpreterSetting$Status: org.apache.zeppelin.interpreter.InterpreterSetting$Status DOWNLOADING_DEPENDENCIES>
+org.apache.zeppelin.interpreter.InterpreterSettingManager.loadInterpreterDependencies : exitmonitor r3
+org.apache.zeppelin.interpreter.InterpreterSettingManager.loadInterpreterDependencies : virtualinvoke r4.<java.lang.Thread: void start()>()
+org.apache.zeppelin.interpreter.InterpreterSettingManager.loadInterpreterDependencies : $r10 = new org.apache.zeppelin.interpreter.InterpreterSettingManager$3
+org.apache.zeppelin.interpreter.InterpreterSettingManager.loadInterpreterDependencies : $r9 = r0.<org.apache.zeppelin.interpreter.InterpreterSettingManager: java.util.Map interpreterSettings>
+org.apache.zeppelin.interpreter.InterpreterSettingManager.loadInterpreterDependencies : $r6 = r0.<org.apache.zeppelin.interpreter.InterpreterSettingManager: java.util.Map interpreterSettings>
+org.apache.zeppelin.interpreter.InterpreterSettingManager.loadInterpreterDependencies : virtualinvoke r1.<org.apache.zeppelin.interpreter.InterpreterSetting: void setErrorReason(java.lang.String)>(null)
+org.apache.zeppelin.conf.ZeppelinConfiguration.getCredentialsPath : $r1 = newarray (java.lang.Object)[1]
+org.apache.zeppelin.notebook.Paragraph.interpreterHasUser : $r2 = virtualinvoke r1.<org.apache.zeppelin.interpreter.InterpreterSetting: org.apache.zeppelin.interpreter.InterpreterOption getOption()>()
+org.apache.zeppelin.interpreter.InterpreterSettingManager.getNoteInterpreterSettingBinding : return r3
+org.apache.zeppelin.interpreter.InterpreterSettingManager.getNoteInterpreterSettingBinding : $r8 = r0.<org.apache.zeppelin.interpreter.InterpreterSettingManager: java.util.Map interpreterBindings>
+org.apache.zeppelin.interpreter.InterpreterSettingManager.getNoteInterpreterSettingBinding : exitmonitor r4
+org.apache.zeppelin.interpreter.InterpreterSettingManager.getNoteInterpreterSettingBinding : if r5 == null goto exitmonitor r4
+org.apache.zeppelin.interpreter.InterpreterSettingManager.getNoteInterpreterSettingBinding : virtualinvoke r3.<java.util.LinkedList: boolean addAll(java.util.Collection)>(r5)
+org.apache.zeppelin.interpreter.InterpreterSettingManager.getNoteInterpreterSettingBinding : $r2 = new java.util.LinkedList
+org.apache.zeppelin.interpreter.InterpreterSettingManager.getNoteInterpreterSettingBinding : $r7 = r0.<org.apache.zeppelin.interpreter.InterpreterSettingManager: java.util.Map interpreterSettings>
+org.apache.zeppelin.interpreter.InterpreterSettingManager.get : $r5 = r0.<org.apache.zeppelin.interpreter.InterpreterSettingManager: java.util.Map interpreterSettings>
+org.apache.zeppelin.interpreter.InterpreterSettingManager.get : $r13 = r0.<org.apache.zeppelin.interpreter.InterpreterSettingManager: java.util.Map interpreterSettings>
+org.apache.zeppelin.interpreter.InterpreterSettingManager.get : goto [?= $z5 = interfaceinvoke r28.<java.util.Iterator: boolean hasNext()>()]
+org.apache.zeppelin.interpreter.InterpreterSettingManager.get : interfaceinvoke r26.<java.util.List: boolean add(java.lang.Object)>(r33)
+org.apache.zeppelin.interpreter.InterpreterSettingManager.get : if null == r9 goto i1 = i1 + 1
+org.apache.zeppelin.interpreter.InterpreterSettingManager.get : $r23 = interfaceinvoke r3.<java.util.Map: java.lang.Object remove(java.lang.Object)>(r8)
+org.apache.zeppelin.interpreter.InterpreterSettingManager.get : $z1 = interfaceinvoke r3.<java.util.Map: boolean containsKey(java.lang.Object)>(r6)
+org.apache.zeppelin.interpreter.InterpreterSettingManager.get : goto [?= $z0 = interfaceinvoke r4.<java.util.Iterator: boolean hasNext()>()]
+org.apache.zeppelin.interpreter.InterpreterSettingManager.get : interfaceinvoke r2.<java.util.List: boolean addAll(java.util.Collection)>(r26)
+org.apache.zeppelin.interpreter.InterpreterSettingManager.get : $r25 = new java.util.ArrayList
+org.apache.zeppelin.interpreter.InterpreterSettingManager.get : $r20 = interfaceinvoke r3.<java.util.Map: java.lang.Object get(java.lang.Object)>(r6)
+org.apache.zeppelin.interpreter.InterpreterSettingManager.get : $r15 = new java.util.HashMap
+org.apache.zeppelin.interpreter.InterpreterSettingManager.get : $r14 = new java.util.LinkedList
+org.apache.zeppelin.interpreter.InterpreterSettingManager.get : $r7 = new java.util.ArrayList
+org.apache.zeppelin.interpreter.InterpreterSettingManager.get : exitmonitor r1
+org.apache.zeppelin.interpreter.InterpreterSettingManager.get : $r27 = interfaceinvoke r3.<java.util.Map: java.util.Collection values()>()
+org.apache.zeppelin.interpreter.InterpreterSettingManager.get : goto [?= $z6 = interfaceinvoke r31.<java.util.Iterator: boolean hasNext()>()]
+org.apache.zeppelin.interpreter.InterpreterSettingManager.get : $r16 = r0.<org.apache.zeppelin.interpreter.InterpreterSettingManager: java.util.Map interpreterSettings>
+org.apache.zeppelin.interpreter.InterpreterSettingManager.get : r22 = r0.<org.apache.zeppelin.interpreter.InterpreterSettingManager: java.lang.String[] interpreterGroupOrderList>
+org.apache.zeppelin.interpreter.InterpreterSettingManager.get : r31 = interfaceinvoke r30.<java.util.List: java.util.Iterator iterator()>()
+org.apache.zeppelin.interpreter.InterpreterSettingManager.get : r6 = virtualinvoke r5.<org.apache.zeppelin.interpreter.InterpreterSetting: java.lang.String getGroup()>()
+org.apache.zeppelin.interpreter.InterpreterSettingManager.get : $r4 = r0.<org.apache.zeppelin.interpreter.InterpreterSettingManager: java.util.Map interpreterSettings>
+org.apache.zeppelin.interpreter.InterpreterSettingManager.get : $r34 = new org.apache.zeppelin.interpreter.InterpreterSettingManager$5
+org.apache.zeppelin.conf.ZeppelinConfiguration.getBooleanValue : goto [?= $z2 = interfaceinvoke r3.<java.util.Iterator: boolean hasNext()>()]
+org.apache.zeppelin.conf.ZeppelinConfiguration.getBooleanValue : return z0
+org.apache.zeppelin.conf.ZeppelinConfiguration.getBooleanValue : r3 = interfaceinvoke r2.<java.util.List: java.util.Iterator iterator()>()
+org.apache.zeppelin.conf.ZeppelinConfiguration.getBooleanValue : if r2 == null goto return z0
+org.apache.zeppelin.conf.ZeppelinConfiguration.getBooleanValue : $r5 = virtualinvoke r0.<org.apache.zeppelin.conf.ZeppelinConfiguration: org.apache.commons.configuration.tree.ConfigurationNode getRootNode()>()
+org.apache.zeppelin.conf.ZeppelinConfiguration.getBooleanValue : $r7 = interfaceinvoke r4.<org.apache.commons.configuration.tree.ConfigurationNode: java.util.List getChildren(java.lang.String)>("name")
+org.apache.zeppelin.interpreter.InterpreterFactory.createOrGetInterpreterList : virtualinvoke r0.<org.apache.zeppelin.interpreter.InterpreterFactory: void createInterpretersForNote(org.apache.zeppelin.interpreter.InterpreterSetting,java.lang.String,java.lang.String,java.lang.String)>(r3, r1, r2, r6)
+org.apache.zeppelin.interpreter.InterpreterFactory.createOrGetInterpreterList : $z0 = virtualinvoke r4.<org.apache.zeppelin.interpreter.InterpreterGroup: boolean containsKey(java.lang.Object)>(r6)
+org.apache.zeppelin.interpreter.InterpreterFactory.createOrGetInterpreterList : r5 = r4
+org.apache.zeppelin.interpreter.InterpreterFactory.createOrGetInterpreterList : r4 = virtualinvoke r3.<org.apache.zeppelin.interpreter.InterpreterSetting: org.apache.zeppelin.interpreter.InterpreterGroup getInterpreterGroup(java.lang.String,java.lang.String)>(r1, r2)
+org.apache.zeppelin.interpreter.InterpreterFactory.createOrGetInterpreterList : $r9 = r0.<org.apache.zeppelin.interpreter.InterpreterFactory: org.apache.zeppelin.interpreter.InterpreterSettingManager interpreterSettingManager>
+org.apache.zeppelin.interpreter.InterpreterFactory.createOrGetInterpreterList : $r10 = virtualinvoke r4.<org.apache.zeppelin.interpreter.InterpreterGroup: java.lang.Object get(java.lang.Object)>(r6)
+org.apache.zeppelin.interpreter.mock.MockInterpreter1.interpret : $r3 = "getId"
+org.apache.zeppelin.interpreter.mock.MockInterpreter1.interpret : $r8 = new org.apache.zeppelin.interpreter.InterpreterResult
+org.apache.zeppelin.interpreter.mock.MockInterpreter1.interpret : return r6
+org.apache.zeppelin.interpreter.mock.MockInterpreter1.interpret : $r27 = virtualinvoke r2.<org.apache.zeppelin.interpreter.InterpreterContext: org.apache.zeppelin.resource.ResourcePool getResourcePool()>()
+org.apache.zeppelin.notebook.Paragraph.getRequiredReplName : return null
+org.apache.zeppelin.notebook.Paragraph.getRequiredReplName : $r1 = r0.<org.apache.zeppelin.notebook.Paragraph: java.lang.String text>
+org.apache.zeppelin.notebook.Paragraph.getRequiredReplName : if r0 != null goto r1 = virtualinvoke r0.<java.lang.String: java.lang.String trim()>()
+org.apache.zeppelin.notebook.Paragraph.getRequiredReplName : r1 = virtualinvoke r0.<java.lang.String: java.lang.String trim()>()
+org.apache.zeppelin.notebook.Paragraph.getRequiredReplName : $z0 = virtualinvoke r1.<java.lang.String: boolean startsWith(java.lang.String)>("%")

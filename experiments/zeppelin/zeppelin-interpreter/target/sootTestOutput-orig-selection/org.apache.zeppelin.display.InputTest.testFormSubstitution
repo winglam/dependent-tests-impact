@@ -1,0 +1,280 @@
+org.apache.zeppelin.display.Input.getSimpleQuery : r2 = r1 >>>>>>>> org.apache.zeppelin.display.Input.getSimpleQuery : $r15 = <org.apache.zeppelin.display.Input: java.util.regex.Pattern VAR_PTN>
+org.apache.zeppelin.display.Input.getSimpleQuery : $r15 = <org.apache.zeppelin.display.Input: java.util.regex.Pattern VAR_PTN> >>>>>>>> org.apache.zeppelin.display.Input.getSimpleQuery : r3 = virtualinvoke $r15.<java.util.regex.Pattern: java.util.regex.Matcher matcher(java.lang.CharSequence)>(r2)
+org.apache.zeppelin.display.Input.getSimpleQuery : r3 = virtualinvoke $r15.<java.util.regex.Pattern: java.util.regex.Matcher matcher(java.lang.CharSequence)>(r2) >>>>>>>> org.apache.zeppelin.display.Input.getSimpleQuery : $z0 = virtualinvoke r3.<java.util.regex.Matcher: boolean find()>()
+org.apache.zeppelin.display.Input.getSimpleQuery : $z0 = virtualinvoke r3.<java.util.regex.Matcher: boolean find()>() >>>>>>>> org.apache.zeppelin.display.Input.getSimpleQuery : if $z0 == 0
+org.apache.zeppelin.display.Input.getSimpleQuery : if $z0 == 0 >>>>>>>> org.apache.zeppelin.display.Input.getSimpleQuery : r4 = staticinvoke <org.apache.zeppelin.display.Input: org.apache.zeppelin.display.Input getInputForm(java.util.regex.Matcher)>(r3)
+org.apache.zeppelin.display.Input.getSimpleQuery : r4 = staticinvoke <org.apache.zeppelin.display.Input: org.apache.zeppelin.display.Input getInputForm(java.util.regex.Matcher)>(r3) >>>>>>>> org.apache.zeppelin.display.Input.getInputForm : r1 = virtualinvoke r0.<java.util.regex.Matcher: java.lang.String group(int)>(1)
+org.apache.zeppelin.display.Input.getInputForm : r1 = virtualinvoke r0.<java.util.regex.Matcher: java.lang.String group(int)>(1) >>>>>>>> org.apache.zeppelin.display.Input.getInputForm : z0 = 0
+org.apache.zeppelin.display.Input.getInputForm : z0 = 0 >>>>>>>> org.apache.zeppelin.display.Input.getInputForm : $r17 = "_"
+org.apache.zeppelin.display.Input.getInputForm : $r17 = "_" >>>>>>>> org.apache.zeppelin.display.Input.getInputForm : $z1 = virtualinvoke $r17.<java.lang.String: boolean equals(java.lang.Object)>(r1)
+org.apache.zeppelin.display.Input.getInputForm : $z1 = virtualinvoke $r17.<java.lang.String: boolean equals(java.lang.Object)>(r1) >>>>>>>> org.apache.zeppelin.display.Input.getInputForm : if $z1 == 0
+org.apache.zeppelin.display.Input.getInputForm : if $z1 == 0 >>>>>>>> org.apache.zeppelin.display.Input.getInputForm : r2 = virtualinvoke r0.<java.util.regex.Matcher: java.lang.String group(int)>(2)
+org.apache.zeppelin.display.Input.getInputForm : r2 = virtualinvoke r0.<java.util.regex.Matcher: java.lang.String group(int)>(2) >>>>>>>> org.apache.zeppelin.display.Input.getInputForm : i0 = virtualinvoke r2.<java.lang.String: int indexOf(int)>(61)
+org.apache.zeppelin.display.Input.getInputForm : i0 = virtualinvoke r2.<java.lang.String: int indexOf(int)>(61) >>>>>>>> org.apache.zeppelin.display.Input.getInputForm : if i0 <= 0
+org.apache.zeppelin.display.Input.getInputForm : if i0 <= 0 >>>>>>>> org.apache.zeppelin.display.Input.getInputForm : r3 = virtualinvoke r2.<java.lang.String: java.lang.String substring(int,int)>(0, i0)
+org.apache.zeppelin.display.Input.getInputForm : r3 = virtualinvoke r2.<java.lang.String: java.lang.String substring(int,int)>(0, i0) >>>>>>>> org.apache.zeppelin.display.Input.getInputForm : $i3 = i0 + 1
+org.apache.zeppelin.display.Input.getInputForm : $i3 = i0 + 1 >>>>>>>> org.apache.zeppelin.display.Input.getInputForm : r4 = virtualinvoke r2.<java.lang.String: java.lang.String substring(int)>($i3)
+org.apache.zeppelin.display.Input.getInputForm : r4 = virtualinvoke r2.<java.lang.String: java.lang.String substring(int)>($i3) >>>>>>>> org.apache.zeppelin.display.Input.getInputForm : goto [?= r5 = null]
+org.apache.zeppelin.display.Input.getInputForm : goto [?= r5 = null] >>>>>>>> org.apache.zeppelin.display.Input.getInputForm : r5 = null
+org.apache.zeppelin.display.Input.getInputForm : r5 = null >>>>>>>> org.apache.zeppelin.display.Input.getInputForm : r6 = null
+org.apache.zeppelin.display.Input.getInputForm : r6 = null >>>>>>>> org.apache.zeppelin.display.Input.getInputForm : r7 = null
+org.apache.zeppelin.display.Input.getInputForm : r7 = null >>>>>>>> org.apache.zeppelin.display.Input.getInputForm : r8 = ""
+org.apache.zeppelin.display.Input.getInputForm : r8 = "" >>>>>>>> org.apache.zeppelin.display.Input.getInputForm : r9 = null
+org.apache.zeppelin.display.Input.getInputForm : r9 = null >>>>>>>> org.apache.zeppelin.display.Input.getInputForm : r10 = staticinvoke <org.apache.zeppelin.display.Input: java.lang.String[] getType(java.lang.String)>(r3)
+org.apache.zeppelin.display.Input.getInputForm : r10 = staticinvoke <org.apache.zeppelin.display.Input: java.lang.String[] getType(java.lang.String)>(r3) >>>>>>>> org.apache.zeppelin.display.Input.getType : r1 = staticinvoke <java.util.regex.Pattern: java.util.regex.Pattern compile(java.lang.String)>("([^:()]*)\\s*([(][^()]*[)])?\\s*:(.*)")
+org.apache.zeppelin.display.Input.getType : r1 = staticinvoke <java.util.regex.Pattern: java.util.regex.Pattern compile(java.lang.String)>("([^:()]*)\\s*([(][^()]*[)])?\\s*:(.*)") >>>>>>>> org.apache.zeppelin.display.Input.getType : $r4 = virtualinvoke r0.<java.lang.String: java.lang.String trim()>()
+org.apache.zeppelin.display.Input.getType : $r4 = virtualinvoke r0.<java.lang.String: java.lang.String trim()>() >>>>>>>> org.apache.zeppelin.display.Input.getType : r2 = virtualinvoke r1.<java.util.regex.Pattern: java.util.regex.Matcher matcher(java.lang.CharSequence)>($r4)
+org.apache.zeppelin.display.Input.getType : r2 = virtualinvoke r1.<java.util.regex.Pattern: java.util.regex.Matcher matcher(java.lang.CharSequence)>($r4) >>>>>>>> org.apache.zeppelin.display.Input.getType : if r2 == null
+org.apache.zeppelin.display.Input.getType : if r2 == null >>>>>>>> org.apache.zeppelin.display.Input.getType : $z0 = virtualinvoke r2.<java.util.regex.Matcher: boolean find()>()
+org.apache.zeppelin.display.Input.getType : $z0 = virtualinvoke r2.<java.util.regex.Matcher: boolean find()>() >>>>>>>> org.apache.zeppelin.display.Input.getType : if $z0 != 0
+org.apache.zeppelin.display.Input.getType : if $z0 != 0 >>>>>>>> org.apache.zeppelin.display.Input.getType : return null
+org.apache.zeppelin.display.Input.getType : return null >>>>>>>> org.apache.zeppelin.display.Input.getInputForm : if r10 == null
+org.apache.zeppelin.display.Input.getInputForm : if r10 == null >>>>>>>> org.apache.zeppelin.display.Input.getInputForm : r11 = r3
+org.apache.zeppelin.display.Input.getInputForm : r11 = r3 >>>>>>>> org.apache.zeppelin.display.Input.getInputForm : r12 = staticinvoke <org.apache.zeppelin.display.Input: java.lang.String[] getNameAndDisplayName(java.lang.String)>(r11)
+org.apache.zeppelin.display.Input.getInputForm : r12 = staticinvoke <org.apache.zeppelin.display.Input: java.lang.String[] getNameAndDisplayName(java.lang.String)>(r11) >>>>>>>> org.apache.zeppelin.display.Input.getNameAndDisplayName : r1 = staticinvoke <java.util.regex.Pattern: java.util.regex.Pattern compile(java.lang.String)>("([^(]*)\\s*[(]([^)]*)[)]")
+org.apache.zeppelin.display.Input.getNameAndDisplayName : r1 = staticinvoke <java.util.regex.Pattern: java.util.regex.Pattern compile(java.lang.String)>("([^(]*)\\s*[(]([^)]*)[)]") >>>>>>>> org.apache.zeppelin.display.Input.getNameAndDisplayName : $r4 = virtualinvoke r0.<java.lang.String: java.lang.String trim()>()
+org.apache.zeppelin.display.Input.getNameAndDisplayName : $r4 = virtualinvoke r0.<java.lang.String: java.lang.String trim()>() >>>>>>>> org.apache.zeppelin.display.Input.getNameAndDisplayName : r2 = virtualinvoke r1.<java.util.regex.Pattern: java.util.regex.Matcher matcher(java.lang.CharSequence)>($r4)
+org.apache.zeppelin.display.Input.getNameAndDisplayName : r2 = virtualinvoke r1.<java.util.regex.Pattern: java.util.regex.Matcher matcher(java.lang.CharSequence)>($r4) >>>>>>>> org.apache.zeppelin.display.Input.getNameAndDisplayName : if r2 == null
+org.apache.zeppelin.display.Input.getNameAndDisplayName : if r2 == null >>>>>>>> org.apache.zeppelin.display.Input.getNameAndDisplayName : $z0 = virtualinvoke r2.<java.util.regex.Matcher: boolean find()>()
+org.apache.zeppelin.display.Input.getNameAndDisplayName : $z0 = virtualinvoke r2.<java.util.regex.Matcher: boolean find()>() >>>>>>>> org.apache.zeppelin.display.Input.getNameAndDisplayName : if $z0 != 0
+org.apache.zeppelin.display.Input.getNameAndDisplayName : if $z0 != 0 >>>>>>>> org.apache.zeppelin.display.Input.getNameAndDisplayName : return null
+org.apache.zeppelin.display.Input.getNameAndDisplayName : return null >>>>>>>> org.apache.zeppelin.display.Input.getInputForm : if r12 == null
+org.apache.zeppelin.display.Input.getInputForm : if r12 == null >>>>>>>> org.apache.zeppelin.display.Input.getInputForm : r13 = virtualinvoke r11.<java.lang.String: java.lang.String trim()>()
+org.apache.zeppelin.display.Input.getInputForm : r13 = virtualinvoke r11.<java.lang.String: java.lang.String trim()>() >>>>>>>> org.apache.zeppelin.display.Input.getInputForm : if r4 == null
+org.apache.zeppelin.display.Input.getInputForm : if r4 == null >>>>>>>> org.apache.zeppelin.display.Input.getInputForm : i1 = virtualinvoke r4.<java.lang.String: int indexOf(java.lang.String)>(",")
+org.apache.zeppelin.display.Input.getInputForm : i1 = virtualinvoke r4.<java.lang.String: int indexOf(java.lang.String)>(",") >>>>>>>> org.apache.zeppelin.display.Input.getInputForm : if i1 < 0
+org.apache.zeppelin.display.Input.getInputForm : if i1 < 0 >>>>>>>> org.apache.zeppelin.display.Input.getInputForm : r8 = r4
+org.apache.zeppelin.display.Input.getInputForm : r8 = r4 >>>>>>>> org.apache.zeppelin.display.Input.getInputForm : n0 = null
+org.apache.zeppelin.display.Input.getInputForm : n0 = null >>>>>>>> org.apache.zeppelin.display.Input.getInputForm : if r6 != null
+org.apache.zeppelin.display.Input.getInputForm : if r6 != null >>>>>>>> org.apache.zeppelin.display.Input.getInputForm : if r9 != null
+org.apache.zeppelin.display.Input.getInputForm : if r9 != null >>>>>>>> org.apache.zeppelin.display.Input.getInputForm : $r25 = new org.apache.zeppelin.display.ui.TextBox
+org.apache.zeppelin.display.Input.getInputForm : $r25 = new org.apache.zeppelin.display.ui.TextBox >>>>>>>> org.apache.zeppelin.display.Input.getInputForm : $r26 = (java.lang.String) r8
+org.apache.zeppelin.display.Input.getInputForm : $r26 = (java.lang.String) r8 >>>>>>>> org.apache.zeppelin.display.Input.getInputForm : specialinvoke $r25.<org.apache.zeppelin.display.ui.TextBox: void <init>(java.lang.String,java.lang.String)>(r13, $r26)
+org.apache.zeppelin.display.Input.getInputForm : specialinvoke $r25.<org.apache.zeppelin.display.ui.TextBox: void <init>(java.lang.String,java.lang.String)>(r13, $r26) >>>>>>>> org.apache.zeppelin.display.Input.getInputForm : r27 = $r25
+org.apache.zeppelin.display.Input.getInputForm : r27 = $r25 >>>>>>>> org.apache.zeppelin.display.Input.getInputForm : goto [?= virtualinvoke r27.<org.apache.zeppelin.display.Input: void setArgument(java.lang.String)>(r7)]
+org.apache.zeppelin.display.Input.getInputForm : goto [?= virtualinvoke r27.<org.apache.zeppelin.display.Input: void setArgument(java.lang.String)>(r7)] >>>>>>>> org.apache.zeppelin.display.Input.getInputForm : virtualinvoke r27.<org.apache.zeppelin.display.Input: void setArgument(java.lang.String)>(r7)
+org.apache.zeppelin.display.Input.getInputForm : virtualinvoke r27.<org.apache.zeppelin.display.Input: void setArgument(java.lang.String)>(r7) >>>>>>>> org.apache.zeppelin.display.Input.setArgument : r0.<org.apache.zeppelin.display.Input: java.lang.String argument> = r1
+org.apache.zeppelin.display.Input.setArgument : r0.<org.apache.zeppelin.display.Input: java.lang.String argument> = r1 >>>>>>>> org.apache.zeppelin.display.Input.getInputForm : virtualinvoke r27.<org.apache.zeppelin.display.Input: void setDisplayName(java.lang.String)>(r5)
+org.apache.zeppelin.display.Input.getInputForm : virtualinvoke r27.<org.apache.zeppelin.display.Input: void setDisplayName(java.lang.String)>(r5) >>>>>>>> org.apache.zeppelin.display.Input.setDisplayName : r0.<org.apache.zeppelin.display.Input: java.lang.String displayName> = r1
+org.apache.zeppelin.display.Input.setDisplayName : r0.<org.apache.zeppelin.display.Input: java.lang.String displayName> = r1 >>>>>>>> org.apache.zeppelin.display.Input.getInputForm : virtualinvoke r27.<org.apache.zeppelin.display.Input: void setHidden(boolean)>(z0)
+org.apache.zeppelin.display.Input.getInputForm : virtualinvoke r27.<org.apache.zeppelin.display.Input: void setHidden(boolean)>(z0) >>>>>>>> org.apache.zeppelin.display.Input.setHidden : r0.<org.apache.zeppelin.display.Input: boolean hidden> = z0
+org.apache.zeppelin.display.Input.setHidden : r0.<org.apache.zeppelin.display.Input: boolean hidden> = z0 >>>>>>>> org.apache.zeppelin.display.Input.getInputForm : return r27
+org.apache.zeppelin.display.Input.getInputForm : return r27 >>>>>>>> org.apache.zeppelin.display.Input.getSimpleQuery : $r16 = r4.<org.apache.zeppelin.display.Input: java.lang.String name>
+org.apache.zeppelin.display.Input.getSimpleQuery : $r16 = r4.<org.apache.zeppelin.display.Input: java.lang.String name> >>>>>>>> org.apache.zeppelin.display.Input.getSimpleQuery : $z1 = interfaceinvoke r0.<java.util.Map: boolean containsKey(java.lang.Object)>($r16)
+org.apache.zeppelin.display.Input.getSimpleQuery : $z1 = interfaceinvoke r0.<java.util.Map: boolean containsKey(java.lang.Object)>($r16) >>>>>>>> org.apache.zeppelin.display.Input.getSimpleQuery : if $z1 == 0
+org.apache.zeppelin.display.Input.getSimpleQuery : if $z1 == 0 >>>>>>>> org.apache.zeppelin.display.Input.getSimpleQuery : $r17 = r4.<org.apache.zeppelin.display.Input: java.lang.String name>
+org.apache.zeppelin.display.Input.getSimpleQuery : $r17 = r4.<org.apache.zeppelin.display.Input: java.lang.String name> >>>>>>>> org.apache.zeppelin.display.Input.getSimpleQuery : r5 = interfaceinvoke r0.<java.util.Map: java.lang.Object get(java.lang.Object)>($r17)
+org.apache.zeppelin.display.Input.getSimpleQuery : r5 = interfaceinvoke r0.<java.util.Map: java.lang.Object get(java.lang.Object)>($r17) >>>>>>>> org.apache.zeppelin.display.Input.getSimpleQuery : goto [?= $z2 = r5 instanceof java.lang.Object[]]
+org.apache.zeppelin.display.Input.getSimpleQuery : goto [?= $z2 = r5 instanceof java.lang.Object[]] >>>>>>>> org.apache.zeppelin.display.Input.getSimpleQuery : $z2 = r5 instanceof java.lang.Object[]
+org.apache.zeppelin.display.Input.getSimpleQuery : $z2 = r5 instanceof java.lang.Object[] >>>>>>>> org.apache.zeppelin.display.Input.getSimpleQuery : if $z2 != 0
+org.apache.zeppelin.display.Input.getSimpleQuery : if $z2 != 0 >>>>>>>> org.apache.zeppelin.display.Input.getSimpleQuery : $z3 = r5 instanceof java.util.Collection
+org.apache.zeppelin.display.Input.getSimpleQuery : $z3 = r5 instanceof java.util.Collection >>>>>>>> org.apache.zeppelin.display.Input.getSimpleQuery : if $z3 == 0
+org.apache.zeppelin.display.Input.getSimpleQuery : if $z3 == 0 >>>>>>>> org.apache.zeppelin.display.Input.getSimpleQuery : r14 = virtualinvoke r5.<java.lang.Object: java.lang.String toString()>()
+org.apache.zeppelin.display.Input.getSimpleQuery : r14 = virtualinvoke r5.<java.lang.Object: java.lang.String toString()>() >>>>>>>> org.apache.zeppelin.display.Input.getSimpleQuery : r2 = virtualinvoke r3.<java.util.regex.Matcher: java.lang.String replaceFirst(java.lang.String)>(r14)
+org.apache.zeppelin.display.Input.getSimpleQuery : r2 = virtualinvoke r3.<java.util.regex.Matcher: java.lang.String replaceFirst(java.lang.String)>(r14) >>>>>>>> org.apache.zeppelin.display.Input.getSimpleQuery : $r25 = <org.apache.zeppelin.display.Input: java.util.regex.Pattern VAR_PTN>
+org.apache.zeppelin.display.Input.getSimpleQuery : $r25 = <org.apache.zeppelin.display.Input: java.util.regex.Pattern VAR_PTN> >>>>>>>> org.apache.zeppelin.display.Input.getSimpleQuery : r3 = virtualinvoke $r25.<java.util.regex.Pattern: java.util.regex.Matcher matcher(java.lang.CharSequence)>(r2)
+org.apache.zeppelin.display.Input.getSimpleQuery : r3 = virtualinvoke $r25.<java.util.regex.Pattern: java.util.regex.Matcher matcher(java.lang.CharSequence)>(r2) >>>>>>>> org.apache.zeppelin.display.Input.getSimpleQuery : goto [?= $z0 = virtualinvoke r3.<java.util.regex.Matcher: boolean find()>()]
+org.apache.zeppelin.display.Input.getSimpleQuery : goto [?= $z0 = virtualinvoke r3.<java.util.regex.Matcher: boolean find()>()] >>>>>>>> org.apache.zeppelin.display.Input.getNameAndDisplayName : r3 = newarray (java.lang.String)[2]
+org.apache.zeppelin.display.Input.getNameAndDisplayName : r3 = newarray (java.lang.String)[2] >>>>>>>> org.apache.zeppelin.display.Input.getNameAndDisplayName : $r5 = virtualinvoke r2.<java.util.regex.Matcher: java.lang.String group(int)>(1)
+org.apache.zeppelin.display.Input.getNameAndDisplayName : $r5 = virtualinvoke r2.<java.util.regex.Matcher: java.lang.String group(int)>(1) >>>>>>>> org.apache.zeppelin.display.Input.getNameAndDisplayName : r3[0] = $r5
+org.apache.zeppelin.display.Input.getNameAndDisplayName : r3[0] = $r5 >>>>>>>> org.apache.zeppelin.display.Input.getNameAndDisplayName : $r6 = virtualinvoke r2.<java.util.regex.Matcher: java.lang.String group(int)>(2)
+org.apache.zeppelin.display.Input.getNameAndDisplayName : $r6 = virtualinvoke r2.<java.util.regex.Matcher: java.lang.String group(int)>(2) >>>>>>>> org.apache.zeppelin.display.Input.getNameAndDisplayName : r3[1] = $r6
+org.apache.zeppelin.display.Input.getNameAndDisplayName : r3[1] = $r6 >>>>>>>> org.apache.zeppelin.display.Input.getNameAndDisplayName : return r3
+org.apache.zeppelin.display.Input.getNameAndDisplayName : return r3 >>>>>>>> org.apache.zeppelin.display.Input.getInputForm : r13 = r12[0]
+org.apache.zeppelin.display.Input.getInputForm : r13 = r12[0] >>>>>>>> org.apache.zeppelin.display.Input.getInputForm : r5 = r12[1]
+org.apache.zeppelin.display.Input.getInputForm : r5 = r12[1] >>>>>>>> org.apache.zeppelin.display.Input.getInputForm : goto [?= (branch)]
+org.apache.zeppelin.display.Input.getInputForm : goto [?= (branch)] >>>>>>>> org.apache.zeppelin.display.Input.getInputForm : r8 = virtualinvoke r4.<java.lang.String: java.lang.String substring(int,int)>(0, i1)
+org.apache.zeppelin.display.Input.getInputForm : r8 = virtualinvoke r4.<java.lang.String: java.lang.String substring(int,int)>(0, i1) >>>>>>>> org.apache.zeppelin.display.Input.getInputForm : if r6 == null
+org.apache.zeppelin.display.Input.getInputForm : if r6 == null >>>>>>>> org.apache.zeppelin.display.Input.getInputForm : $i4 = i1 + 1
+org.apache.zeppelin.display.Input.getInputForm : $i4 = i1 + 1 >>>>>>>> org.apache.zeppelin.display.Input.getInputForm : r14 = virtualinvoke r4.<java.lang.String: java.lang.String substring(int)>($i4)
+org.apache.zeppelin.display.Input.getInputForm : r14 = virtualinvoke r4.<java.lang.String: java.lang.String substring(int)>($i4) >>>>>>>> org.apache.zeppelin.display.Input.getInputForm : r15 = staticinvoke <org.apache.zeppelin.display.Input: java.lang.String[] splitPipe(java.lang.String)>(r14)
+org.apache.zeppelin.display.Input.getInputForm : r15 = staticinvoke <org.apache.zeppelin.display.Input: java.lang.String[] splitPipe(java.lang.String)>(r14) >>>>>>>> org.apache.zeppelin.display.Input.splitPipe : $r1 = staticinvoke <org.apache.zeppelin.display.Input: java.lang.String[] split(java.lang.String,char)>(r0, 124)
+org.apache.zeppelin.display.Input.splitPipe : $r1 = staticinvoke <org.apache.zeppelin.display.Input: java.lang.String[] split(java.lang.String,char)>(r0, 124) >>>>>>>> org.apache.zeppelin.display.Input.split : $r1 = newarray (java.lang.String)[1]
+org.apache.zeppelin.display.Input.split : $r1 = newarray (java.lang.String)[1] >>>>>>>> org.apache.zeppelin.display.Input.split : $r2 = staticinvoke <java.lang.String: java.lang.String valueOf(char)>(c0)
+org.apache.zeppelin.display.Input.split : $r2 = staticinvoke <java.lang.String: java.lang.String valueOf(char)>(c0) >>>>>>>> org.apache.zeppelin.display.Input.split : $r1[0] = $r2
+org.apache.zeppelin.display.Input.split : $r1[0] = $r2 >>>>>>>> org.apache.zeppelin.display.Input.split : $r3 = staticinvoke <org.apache.zeppelin.display.Input: java.lang.String[] split(java.lang.String,java.lang.String[],boolean)>(r0, $r1, 0)
+org.apache.zeppelin.display.Input.split : $r3 = staticinvoke <org.apache.zeppelin.display.Input: java.lang.String[] split(java.lang.String,java.lang.String[],boolean)>(r0, $r1, 0) >>>>>>>> org.apache.zeppelin.display.Input.split : r2 = "\"\',;${}"
+org.apache.zeppelin.display.Input.split : r2 = "\"\',;${}" >>>>>>>> org.apache.zeppelin.display.Input.split : c0 = 92
+org.apache.zeppelin.display.Input.split : c0 = 92 >>>>>>>> org.apache.zeppelin.display.Input.split : $r5 = newarray (java.lang.String)[5]
+org.apache.zeppelin.display.Input.split : $r5 = newarray (java.lang.String)[5] >>>>>>>> org.apache.zeppelin.display.Input.split : $r5[0] = "\""
+org.apache.zeppelin.display.Input.split : $r5[0] = "\"" >>>>>>>> org.apache.zeppelin.display.Input.split : $r5[1] = "\'"
+org.apache.zeppelin.display.Input.split : $r5[1] = "\'" >>>>>>>> org.apache.zeppelin.display.Input.split : $r5[2] = "${"
+org.apache.zeppelin.display.Input.split : $r5[2] = "${" >>>>>>>> org.apache.zeppelin.display.Input.split : $r5[3] = "N_("
+org.apache.zeppelin.display.Input.split : $r5[3] = "N_(" >>>>>>>> org.apache.zeppelin.display.Input.split : $r5[4] = "N_<"
+org.apache.zeppelin.display.Input.split : $r5[4] = "N_<" >>>>>>>> org.apache.zeppelin.display.Input.split : r3 = $r5
+org.apache.zeppelin.display.Input.split : r3 = $r5 >>>>>>>> org.apache.zeppelin.display.Input.split : $r6 = newarray (java.lang.String)[5]
+org.apache.zeppelin.display.Input.split : $r6 = newarray (java.lang.String)[5] >>>>>>>> org.apache.zeppelin.display.Input.split : $r6[0] = "\""
+org.apache.zeppelin.display.Input.split : $r6[0] = "\"" >>>>>>>> org.apache.zeppelin.display.Input.split : $r6[1] = "\'"
+org.apache.zeppelin.display.Input.split : $r6[1] = "\'" >>>>>>>> org.apache.zeppelin.display.Input.split : $r6[2] = "}"
+org.apache.zeppelin.display.Input.split : $r6[2] = "}" >>>>>>>> org.apache.zeppelin.display.Input.split : $r6[3] = "N_)"
+org.apache.zeppelin.display.Input.split : $r6[3] = "N_)" >>>>>>>> org.apache.zeppelin.display.Input.split : $r6[4] = "N_>"
+org.apache.zeppelin.display.Input.split : $r6[4] = "N_>" >>>>>>>> org.apache.zeppelin.display.Input.split : r4 = $r6
+org.apache.zeppelin.display.Input.split : r4 = $r6 >>>>>>>> org.apache.zeppelin.display.Input.split : $r7 = staticinvoke <org.apache.zeppelin.display.Input: java.lang.String[] split(java.lang.String,java.lang.String,char,java.lang.String[],java.lang.String[],java.lang.String[],boolean)>(r0, r2, c0, r3, r4, r1, z0)
+org.apache.zeppelin.display.Input.split : $r7 = staticinvoke <org.apache.zeppelin.display.Input: java.lang.String[] split(java.lang.String,java.lang.String,char,java.lang.String[],java.lang.String[],java.lang.String[],boolean)>(r0, r2, c0, r3, r4, r1, z0) >>>>>>>> org.apache.zeppelin.display.Input.split : $r5 = new java.util.ArrayList
+org.apache.zeppelin.display.Input.split : $r5 = new java.util.ArrayList >>>>>>>> org.apache.zeppelin.display.Input.split : specialinvoke $r5.<java.util.ArrayList: void <init>()>()
+org.apache.zeppelin.display.Input.split : specialinvoke $r5.<java.util.ArrayList: void <init>()>() >>>>>>>> org.apache.zeppelin.display.Input.split : r6 = $r5
+org.apache.zeppelin.display.Input.split : r6 = $r5 >>>>>>>> org.apache.zeppelin.display.Input.split : $r10 = new java.lang.StringBuilder
+org.apache.zeppelin.display.Input.split : $r10 = new java.lang.StringBuilder >>>>>>>> org.apache.zeppelin.display.Input.split : specialinvoke $r10.<java.lang.StringBuilder: void <init>()>()
+org.apache.zeppelin.display.Input.split : specialinvoke $r10.<java.lang.StringBuilder: void <init>()>() >>>>>>>> org.apache.zeppelin.display.Input.split : r7 = $r10
+org.apache.zeppelin.display.Input.split : r7 = $r10 >>>>>>>> org.apache.zeppelin.display.Input.split : z1 = 0
+org.apache.zeppelin.display.Input.split : z1 = 0 >>>>>>>> org.apache.zeppelin.display.Input.split : i1 = -1
+org.apache.zeppelin.display.Input.split : i1 = -1 >>>>>>>> org.apache.zeppelin.display.Input.split : i2 = -1
+org.apache.zeppelin.display.Input.split : i2 = -1 >>>>>>>> org.apache.zeppelin.display.Input.split : $r11 = new java.util.LinkedList
+org.apache.zeppelin.display.Input.split : $r11 = new java.util.LinkedList >>>>>>>> org.apache.zeppelin.display.Input.split : specialinvoke $r11.<java.util.LinkedList: void <init>()>()
+org.apache.zeppelin.display.Input.split : specialinvoke $r11.<java.util.LinkedList: void <init>()>() >>>>>>>> org.apache.zeppelin.display.Input.split : r8 = $r11
+org.apache.zeppelin.display.Input.split : r8 = $r11 >>>>>>>> org.apache.zeppelin.display.Input.split : i3 = 0
+org.apache.zeppelin.display.Input.split : i3 = 0 >>>>>>>> org.apache.zeppelin.display.Input.split : $i9 = virtualinvoke r0.<java.lang.String: int length()>()
+org.apache.zeppelin.display.Input.split : $i9 = virtualinvoke r0.<java.lang.String: int length()>() >>>>>>>> org.apache.zeppelin.display.Input.split : if i3 >= $i9
+org.apache.zeppelin.display.Input.split : if i3 >= $i9 >>>>>>>> org.apache.zeppelin.display.Input.split : c4 = virtualinvoke r0.<java.lang.String: char charAt(int)>(i3)
+org.apache.zeppelin.display.Input.split : c4 = virtualinvoke r0.<java.lang.String: char charAt(int)>(i3) >>>>>>>> org.apache.zeppelin.display.Input.split : if c4 != c0
+org.apache.zeppelin.display.Input.split : if c4 != c0 >>>>>>>> org.apache.zeppelin.display.Input.split : if z1 != 1
+org.apache.zeppelin.display.Input.split : if z1 != 1 >>>>>>>> org.apache.zeppelin.display.Input.split : $i11 = interfaceinvoke r8.<java.util.List: int size()>()
+org.apache.zeppelin.display.Input.split : $i11 = interfaceinvoke r8.<java.util.List: int size()>() >>>>>>>> org.apache.zeppelin.display.Input.split : if $i11 <= 0
+org.apache.zeppelin.display.Input.split : if $i11 <= 0 >>>>>>>> org.apache.zeppelin.display.Input.split : z9 = 0
+org.apache.zeppelin.display.Input.split : z9 = 0 >>>>>>>> org.apache.zeppelin.display.Input.split : r44 = r4
+org.apache.zeppelin.display.Input.split : r44 = r4 >>>>>>>> org.apache.zeppelin.display.Input.split : i22 = lengthof r44
+org.apache.zeppelin.display.Input.split : i22 = lengthof r44 >>>>>>>> org.apache.zeppelin.display.Input.split : i23 = 0
+org.apache.zeppelin.display.Input.split : i23 = 0 >>>>>>>> org.apache.zeppelin.display.Input.split : if i23 >= i22
+org.apache.zeppelin.display.Input.split : if i23 >= i22 >>>>>>>> org.apache.zeppelin.display.Input.split : r45 = r44[i23]
+org.apache.zeppelin.display.Input.split : r45 = r44[i23] >>>>>>>> org.apache.zeppelin.display.Input.split : $i24 = virtualinvoke r45.<java.lang.String: int length()>()
+org.apache.zeppelin.display.Input.split : $i24 = virtualinvoke r45.<java.lang.String: int length()>() >>>>>>>> org.apache.zeppelin.display.Input.split : i8 = i3 + $i24
+org.apache.zeppelin.display.Input.split : i8 = i3 + $i24 >>>>>>>> org.apache.zeppelin.display.Input.split : $i25 = virtualinvoke r0.<java.lang.String: int length()>()
+org.apache.zeppelin.display.Input.split : $i25 = virtualinvoke r0.<java.lang.String: int length()>() >>>>>>>> org.apache.zeppelin.display.Input.split : $i26 = staticinvoke <java.lang.Math: int min(int,int)>(i8, $i25)
+org.apache.zeppelin.display.Input.split : $i26 = staticinvoke <java.lang.Math: int min(int,int)>(i8, $i25) >>>>>>>> org.apache.zeppelin.display.Input.split : $r46 = virtualinvoke r0.<java.lang.String: java.lang.String substring(int,int)>(i3, $i26)
+org.apache.zeppelin.display.Input.split : $r46 = virtualinvoke r0.<java.lang.String: java.lang.String substring(int,int)>(i3, $i26) >>>>>>>> org.apache.zeppelin.display.Input.split : $i27 = virtualinvoke r45.<java.lang.String: int compareTo(java.lang.String)>($r46)
+org.apache.zeppelin.display.Input.split : $i27 = virtualinvoke r45.<java.lang.String: int compareTo(java.lang.String)>($r46) >>>>>>>> org.apache.zeppelin.display.Input.split : if $i27 != 0
+org.apache.zeppelin.display.Input.split : if $i27 != 0 >>>>>>>> org.apache.zeppelin.display.Input.split : i23 = i23 + 1
+org.apache.zeppelin.display.Input.split : i23 = i23 + 1 >>>>>>>> org.apache.zeppelin.display.Input.split : goto [?= (branch)]
+org.apache.zeppelin.display.Input.split : goto [?= (branch)] >>>>>>>> org.apache.zeppelin.display.Input.split : if z9 != 1
+org.apache.zeppelin.display.Input.split : if z9 != 1 >>>>>>>> org.apache.zeppelin.display.Input.split : virtualinvoke r7.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(c4)
+org.apache.zeppelin.display.Input.split : virtualinvoke r7.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(c4) >>>>>>>> org.apache.zeppelin.display.Input.split : i30 = 0
+org.apache.zeppelin.display.Input.split : i30 = 0 >>>>>>>> org.apache.zeppelin.display.Input.split : $i31 = lengthof r2
+org.apache.zeppelin.display.Input.split : $i31 = lengthof r2 >>>>>>>> org.apache.zeppelin.display.Input.split : if i30 >= $i31
+org.apache.zeppelin.display.Input.split : if i30 >= $i31 >>>>>>>> org.apache.zeppelin.display.Input.split : $i32 = i1 + 1
+org.apache.zeppelin.display.Input.split : $i32 = i1 + 1 >>>>>>>> org.apache.zeppelin.display.Input.split : $r49 = virtualinvoke r7.<java.lang.StringBuilder: java.lang.String substring(int)>($i32)
+org.apache.zeppelin.display.Input.split : $r49 = virtualinvoke r7.<java.lang.StringBuilder: java.lang.String substring(int)>($i32) >>>>>>>> org.apache.zeppelin.display.Input.split : $r50 = r2[i30]
+org.apache.zeppelin.display.Input.split : $r50 = r2[i30] >>>>>>>> org.apache.zeppelin.display.Input.split : $r51 = staticinvoke <org.apache.zeppelin.display.Input: java.lang.String getBlockStr(java.lang.String)>($r50)
+org.apache.zeppelin.display.Input.split : $r51 = staticinvoke <org.apache.zeppelin.display.Input: java.lang.String getBlockStr(java.lang.String)>($r50) >>>>>>>> org.apache.zeppelin.display.Input.getBlockStr : $z0 = virtualinvoke r0.<java.lang.String: boolean startsWith(java.lang.String)>("N_")
+org.apache.zeppelin.display.Input.getBlockStr : $z0 = virtualinvoke r0.<java.lang.String: boolean startsWith(java.lang.String)>("N_") >>>>>>>> org.apache.zeppelin.display.Input.getBlockStr : if $z0 == 0
+org.apache.zeppelin.display.Input.getBlockStr : if $z0 == 0 >>>>>>>> org.apache.zeppelin.display.Input.getBlockStr : return r0
+org.apache.zeppelin.display.Input.getBlockStr : return r0 >>>>>>>> org.apache.zeppelin.display.Input.split : $z12 = virtualinvoke $r49.<java.lang.String: boolean endsWith(java.lang.String)>($r51)
+org.apache.zeppelin.display.Input.split : $z12 = virtualinvoke $r49.<java.lang.String: boolean endsWith(java.lang.String)>($r51) >>>>>>>> org.apache.zeppelin.display.Input.split : if $z12 != 1
+org.apache.zeppelin.display.Input.split : if $z12 != 1 >>>>>>>> org.apache.zeppelin.display.Input.split : i30 = i30 + 1
+org.apache.zeppelin.display.Input.split : i30 = i30 + 1 >>>>>>>> org.apache.zeppelin.display.Input.split : goto [?= $i31 = lengthof r2]
+org.apache.zeppelin.display.Input.split : goto [?= $i31 = lengthof r2] >>>>>>>> org.apache.zeppelin.display.Input.getBlockStr : $r1 = "N_"
+org.apache.zeppelin.display.Input.getBlockStr : $r1 = "N_" >>>>>>>> org.apache.zeppelin.display.Input.getBlockStr : $i0 = virtualinvoke $r1.<java.lang.String: int length()>()
+org.apache.zeppelin.display.Input.getBlockStr : $i0 = virtualinvoke $r1.<java.lang.String: int length()>() >>>>>>>> org.apache.zeppelin.display.Input.getBlockStr : $r2 = virtualinvoke r0.<java.lang.String: java.lang.String substring(int)>($i0)
+org.apache.zeppelin.display.Input.getBlockStr : $r2 = virtualinvoke r0.<java.lang.String: java.lang.String substring(int)>($i0) >>>>>>>> org.apache.zeppelin.display.Input.getBlockStr : return $r2
+org.apache.zeppelin.display.Input.getBlockStr : return $r2 >>>>>>>> org.apache.zeppelin.display.Input.split : i3 = i3 + 1
+org.apache.zeppelin.display.Input.split : i3 = i3 + 1 >>>>>>>> org.apache.zeppelin.display.Input.split : goto [?= $i9 = virtualinvoke r0.<java.lang.String: int length()>()]
+org.apache.zeppelin.display.Input.split : goto [?= $i9 = virtualinvoke r0.<java.lang.String: int length()>()] >>>>>>>> org.apache.zeppelin.display.Input.split : $r47 = virtualinvoke r7.<java.lang.StringBuilder: java.lang.String toString()>()
+org.apache.zeppelin.display.Input.split : $r47 = virtualinvoke r7.<java.lang.StringBuilder: java.lang.String toString()>() >>>>>>>> org.apache.zeppelin.display.Input.split : interfaceinvoke r6.<java.util.List: boolean add(java.lang.Object)>($r47)
+org.apache.zeppelin.display.Input.split : interfaceinvoke r6.<java.util.List: boolean add(java.lang.Object)>($r47) >>>>>>>> org.apache.zeppelin.display.Input.split : if z0 != 1
+org.apache.zeppelin.display.Input.split : if z0 != 1 >>>>>>>> org.apache.zeppelin.display.Input.split : virtualinvoke r7.<java.lang.StringBuilder: void setLength(int)>(0)
+org.apache.zeppelin.display.Input.split : virtualinvoke r7.<java.lang.StringBuilder: void setLength(int)>(0) >>>>>>>> org.apache.zeppelin.display.Input.split : $i28 = virtualinvoke r45.<java.lang.String: int length()>()
+org.apache.zeppelin.display.Input.split : $i28 = virtualinvoke r45.<java.lang.String: int length()>() >>>>>>>> org.apache.zeppelin.display.Input.split : $i29 = $i28 - 1
+org.apache.zeppelin.display.Input.split : $i29 = $i28 - 1 >>>>>>>> org.apache.zeppelin.display.Input.split : i3 = i3 + $i29
+org.apache.zeppelin.display.Input.split : i3 = i3 + $i29 >>>>>>>> org.apache.zeppelin.display.Input.split : z9 = 1
+org.apache.zeppelin.display.Input.split : z9 = 1 >>>>>>>> org.apache.zeppelin.display.Input.split : goto [?= i3 = i3 + 1]
+org.apache.zeppelin.display.Input.split : goto [?= i3 = i3 + 1] >>>>>>>> org.apache.zeppelin.display.Input.split : $i33 = virtualinvoke r7.<java.lang.StringBuilder: int length()>()
+org.apache.zeppelin.display.Input.split : $i33 = virtualinvoke r7.<java.lang.StringBuilder: int length()>() >>>>>>>> org.apache.zeppelin.display.Input.split : if $i33 <= 0
+org.apache.zeppelin.display.Input.split : if $i33 <= 0 >>>>>>>> org.apache.zeppelin.display.Input.split : $r53 = virtualinvoke r7.<java.lang.StringBuilder: java.lang.String toString()>()
+org.apache.zeppelin.display.Input.split : $r53 = virtualinvoke r7.<java.lang.StringBuilder: java.lang.String toString()>() >>>>>>>> org.apache.zeppelin.display.Input.split : $r54 = virtualinvoke $r53.<java.lang.String: java.lang.String trim()>()
+org.apache.zeppelin.display.Input.split : $r54 = virtualinvoke $r53.<java.lang.String: java.lang.String trim()>() >>>>>>>> org.apache.zeppelin.display.Input.split : interfaceinvoke r6.<java.util.List: boolean add(java.lang.Object)>($r54)
+org.apache.zeppelin.display.Input.split : interfaceinvoke r6.<java.util.List: boolean add(java.lang.Object)>($r54) >>>>>>>> org.apache.zeppelin.display.Input.split : $r55 = newarray (java.lang.String)[0]
+org.apache.zeppelin.display.Input.split : $r55 = newarray (java.lang.String)[0] >>>>>>>> org.apache.zeppelin.display.Input.split : $r56 = interfaceinvoke r6.<java.util.List: java.lang.Object[] toArray(java.lang.Object[])>($r55)
+org.apache.zeppelin.display.Input.split : $r56 = interfaceinvoke r6.<java.util.List: java.lang.Object[] toArray(java.lang.Object[])>($r55) >>>>>>>> org.apache.zeppelin.display.Input.split : $r57 = (java.lang.String[]) $r56
+org.apache.zeppelin.display.Input.split : $r57 = (java.lang.String[]) $r56 >>>>>>>> org.apache.zeppelin.display.Input.split : return $r57
+org.apache.zeppelin.display.Input.split : return $r57 >>>>>>>> org.apache.zeppelin.display.Input.split : return $r7
+org.apache.zeppelin.display.Input.split : return $r7 >>>>>>>> org.apache.zeppelin.display.Input.split : return $r3
+org.apache.zeppelin.display.Input.split : return $r3 >>>>>>>> org.apache.zeppelin.display.Input.splitPipe : return $r1
+org.apache.zeppelin.display.Input.splitPipe : return $r1 >>>>>>>> org.apache.zeppelin.display.Input.getInputForm : $i5 = lengthof r15
+org.apache.zeppelin.display.Input.getInputForm : $i5 = lengthof r15 >>>>>>>> org.apache.zeppelin.display.Input.getInputForm : r9 = newarray (org.apache.zeppelin.display.ui.OptionInput$ParamOption)[$i5]
+org.apache.zeppelin.display.Input.getInputForm : r9 = newarray (org.apache.zeppelin.display.ui.OptionInput$ParamOption)[$i5] >>>>>>>> org.apache.zeppelin.display.Input.getInputForm : i2 = 0
+org.apache.zeppelin.display.Input.getInputForm : i2 = 0 >>>>>>>> org.apache.zeppelin.display.Input.getInputForm : $i6 = lengthof r15
+org.apache.zeppelin.display.Input.getInputForm : $i6 = lengthof r15 >>>>>>>> org.apache.zeppelin.display.Input.getInputForm : if i2 >= $i6
+org.apache.zeppelin.display.Input.getInputForm : if i2 >= $i6 >>>>>>>> org.apache.zeppelin.display.Input.getInputForm : $r19 = r15[i2]
+org.apache.zeppelin.display.Input.getInputForm : $r19 = r15[i2] >>>>>>>> org.apache.zeppelin.display.Input.getInputForm : r16 = staticinvoke <org.apache.zeppelin.display.Input: java.lang.String[] getNameAndDisplayName(java.lang.String)>($r19)
+org.apache.zeppelin.display.Input.getInputForm : r16 = staticinvoke <org.apache.zeppelin.display.Input: java.lang.String[] getNameAndDisplayName(java.lang.String)>($r19) >>>>>>>> org.apache.zeppelin.display.Input.getInputForm : if r16 == null
+org.apache.zeppelin.display.Input.getInputForm : if r16 == null >>>>>>>> org.apache.zeppelin.display.Input.getInputForm : $r23 = new org.apache.zeppelin.display.ui.OptionInput$ParamOption
+org.apache.zeppelin.display.Input.getInputForm : $r23 = new org.apache.zeppelin.display.ui.OptionInput$ParamOption >>>>>>>> org.apache.zeppelin.display.Input.getInputForm : $r24 = r15[i2]
+org.apache.zeppelin.display.Input.getInputForm : $r24 = r15[i2] >>>>>>>> org.apache.zeppelin.display.Input.getInputForm : specialinvoke $r23.<org.apache.zeppelin.display.ui.OptionInput$ParamOption: void <init>(java.lang.Object,java.lang.String)>($r24, null)
+org.apache.zeppelin.display.Input.getInputForm : specialinvoke $r23.<org.apache.zeppelin.display.ui.OptionInput$ParamOption: void <init>(java.lang.Object,java.lang.String)>($r24, null) >>>>>>>> org.apache.zeppelin.display.Input.getInputForm : r9[i2] = $r23
+org.apache.zeppelin.display.Input.getInputForm : r9[i2] = $r23 >>>>>>>> org.apache.zeppelin.display.Input.getInputForm : i2 = i2 + 1
+org.apache.zeppelin.display.Input.getInputForm : i2 = i2 + 1 >>>>>>>> org.apache.zeppelin.display.Input.getInputForm : goto [?= $i6 = lengthof r15]
+org.apache.zeppelin.display.Input.getInputForm : goto [?= $i6 = lengthof r15] >>>>>>>> org.apache.zeppelin.display.Input.getInputForm : goto [?= n0 = null]
+org.apache.zeppelin.display.Input.getInputForm : goto [?= n0 = null] >>>>>>>> org.apache.zeppelin.display.Input.getInputForm : $r28 = new org.apache.zeppelin.display.ui.Select
+org.apache.zeppelin.display.Input.getInputForm : $r28 = new org.apache.zeppelin.display.ui.Select >>>>>>>> org.apache.zeppelin.display.Input.getInputForm : specialinvoke $r28.<org.apache.zeppelin.display.ui.Select: void <init>(java.lang.String,java.lang.Object,org.apache.zeppelin.display.ui.OptionInput$ParamOption[])>(r13, r8, r9)
+org.apache.zeppelin.display.Input.getInputForm : specialinvoke $r28.<org.apache.zeppelin.display.ui.Select: void <init>(java.lang.String,java.lang.Object,org.apache.zeppelin.display.ui.OptionInput$ParamOption[])>(r13, r8, r9) >>>>>>>> org.apache.zeppelin.display.Input.getInputForm : r27 = $r28
+org.apache.zeppelin.display.Input.getInputForm : r27 = $r28 >>>>>>>> org.apache.zeppelin.display.Input.getType : r3 = newarray (java.lang.String)[3]
+org.apache.zeppelin.display.Input.getType : r3 = newarray (java.lang.String)[3] >>>>>>>> org.apache.zeppelin.display.Input.getType : $r5 = virtualinvoke r2.<java.util.regex.Matcher: java.lang.String group(int)>(1)
+org.apache.zeppelin.display.Input.getType : $r5 = virtualinvoke r2.<java.util.regex.Matcher: java.lang.String group(int)>(1) >>>>>>>> org.apache.zeppelin.display.Input.getType : $r6 = virtualinvoke $r5.<java.lang.String: java.lang.String trim()>()
+org.apache.zeppelin.display.Input.getType : $r6 = virtualinvoke $r5.<java.lang.String: java.lang.String trim()>() >>>>>>>> org.apache.zeppelin.display.Input.getType : r3[0] = $r6
+org.apache.zeppelin.display.Input.getType : r3[0] = $r6 >>>>>>>> org.apache.zeppelin.display.Input.getType : $r7 = virtualinvoke r2.<java.util.regex.Matcher: java.lang.String group(int)>(2)
+org.apache.zeppelin.display.Input.getType : $r7 = virtualinvoke r2.<java.util.regex.Matcher: java.lang.String group(int)>(2) >>>>>>>> org.apache.zeppelin.display.Input.getType : if $r7 == null
+org.apache.zeppelin.display.Input.getType : if $r7 == null >>>>>>>> org.apache.zeppelin.display.Input.getType : $r11 = virtualinvoke r2.<java.util.regex.Matcher: java.lang.String group(int)>(3)
+org.apache.zeppelin.display.Input.getType : $r11 = virtualinvoke r2.<java.util.regex.Matcher: java.lang.String group(int)>(3) >>>>>>>> org.apache.zeppelin.display.Input.getType : $r12 = virtualinvoke $r11.<java.lang.String: java.lang.String trim()>()
+org.apache.zeppelin.display.Input.getType : $r12 = virtualinvoke $r11.<java.lang.String: java.lang.String trim()>() >>>>>>>> org.apache.zeppelin.display.Input.getType : r3[2] = $r12
+org.apache.zeppelin.display.Input.getType : r3[2] = $r12 >>>>>>>> org.apache.zeppelin.display.Input.getType : return r3
+org.apache.zeppelin.display.Input.getType : return r3 >>>>>>>> org.apache.zeppelin.display.Input.getInputForm : r6 = r10[0]
+org.apache.zeppelin.display.Input.getInputForm : r6 = r10[0] >>>>>>>> org.apache.zeppelin.display.Input.getInputForm : r7 = r10[1]
+org.apache.zeppelin.display.Input.getInputForm : r7 = r10[1] >>>>>>>> org.apache.zeppelin.display.Input.getInputForm : r11 = r10[2]
+org.apache.zeppelin.display.Input.getInputForm : r11 = r10[2] >>>>>>>> org.apache.zeppelin.display.Input.getInputForm : goto [?= r12 = staticinvoke <org.apache.zeppelin.display.Input: java.lang.String[] getNameAndDisplayName(java.lang.String)>(r11)]
+org.apache.zeppelin.display.Input.getInputForm : goto [?= r12 = staticinvoke <org.apache.zeppelin.display.Input: java.lang.String[] getNameAndDisplayName(java.lang.String)>(r11)] >>>>>>>> org.apache.zeppelin.display.Input.getInputForm : $z2 = virtualinvoke r6.<java.lang.String: boolean equals(java.lang.Object)>("checkbox")
+org.apache.zeppelin.display.Input.getInputForm : $z2 = virtualinvoke r6.<java.lang.String: boolean equals(java.lang.Object)>("checkbox") >>>>>>>> org.apache.zeppelin.display.Input.getInputForm : if $z2 == 0
+org.apache.zeppelin.display.Input.getInputForm : if $z2 == 0 >>>>>>>> org.apache.zeppelin.display.Input.getInputForm : $r18 = (java.lang.String) r8
+org.apache.zeppelin.display.Input.getInputForm : $r18 = (java.lang.String) r8 >>>>>>>> org.apache.zeppelin.display.Input.getInputForm : r8 = staticinvoke <org.apache.zeppelin.display.Input: java.lang.String[] splitPipe(java.lang.String)>($r18)
+org.apache.zeppelin.display.Input.getInputForm : r8 = staticinvoke <org.apache.zeppelin.display.Input: java.lang.String[] splitPipe(java.lang.String)>($r18) >>>>>>>> org.apache.zeppelin.display.Input.getInputForm : $z3 = virtualinvoke r6.<java.lang.String: boolean equals(java.lang.Object)>("checkbox")
+org.apache.zeppelin.display.Input.getInputForm : $z3 = virtualinvoke r6.<java.lang.String: boolean equals(java.lang.Object)>("checkbox") >>>>>>>> org.apache.zeppelin.display.Input.getInputForm : if $z3 == 0
+org.apache.zeppelin.display.Input.getInputForm : if $z3 == 0 >>>>>>>> org.apache.zeppelin.display.Input.getInputForm : $r29 = new org.apache.zeppelin.display.ui.CheckBox
+org.apache.zeppelin.display.Input.getInputForm : $r29 = new org.apache.zeppelin.display.ui.CheckBox >>>>>>>> org.apache.zeppelin.display.Input.getInputForm : $r30 = (java.lang.Object[]) r8
+org.apache.zeppelin.display.Input.getInputForm : $r30 = (java.lang.Object[]) r8 >>>>>>>> org.apache.zeppelin.display.Input.getInputForm : $r31 = (java.lang.Object[]) $r30
+org.apache.zeppelin.display.Input.getInputForm : $r31 = (java.lang.Object[]) $r30 >>>>>>>> org.apache.zeppelin.display.Input.getInputForm : specialinvoke $r29.<org.apache.zeppelin.display.ui.CheckBox: void <init>(java.lang.String,java.lang.Object[],org.apache.zeppelin.display.ui.OptionInput$ParamOption[])>(r13, $r31, r9)
+org.apache.zeppelin.display.Input.getInputForm : specialinvoke $r29.<org.apache.zeppelin.display.ui.CheckBox: void <init>(java.lang.String,java.lang.Object[],org.apache.zeppelin.display.ui.OptionInput$ParamOption[])>(r13, $r31, r9) >>>>>>>> org.apache.zeppelin.display.Input.getInputForm : r27 = $r29
+org.apache.zeppelin.display.Input.getInputForm : r27 = $r29 >>>>>>>> org.apache.zeppelin.display.Input.getSimpleQuery : r6 = (org.apache.zeppelin.display.ui.OptionInput) r4
+org.apache.zeppelin.display.Input.getSimpleQuery : r6 = (org.apache.zeppelin.display.ui.OptionInput) r4 >>>>>>>> org.apache.zeppelin.display.Input.getSimpleQuery : r7 = r4.<org.apache.zeppelin.display.Input: java.lang.String argument>
+org.apache.zeppelin.display.Input.getSimpleQuery : r7 = r4.<org.apache.zeppelin.display.Input: java.lang.String argument> >>>>>>>> org.apache.zeppelin.display.Input.getSimpleQuery : if r7 != null
+org.apache.zeppelin.display.Input.getSimpleQuery : if r7 != null >>>>>>>> org.apache.zeppelin.display.Input.getSimpleQuery : r7 = ","
+org.apache.zeppelin.display.Input.getSimpleQuery : r7 = "," >>>>>>>> org.apache.zeppelin.display.Input.getSimpleQuery : $z4 = r5 instanceof java.util.Collection
+org.apache.zeppelin.display.Input.getSimpleQuery : $z4 = r5 instanceof java.util.Collection >>>>>>>> org.apache.zeppelin.display.Input.getSimpleQuery : if $z4 == 0
+org.apache.zeppelin.display.Input.getSimpleQuery : if $z4 == 0 >>>>>>>> org.apache.zeppelin.display.Input.getSimpleQuery : $r19 = (java.lang.Object[]) r5
+org.apache.zeppelin.display.Input.getSimpleQuery : $r19 = (java.lang.Object[]) r5 >>>>>>>> org.apache.zeppelin.display.Input.getSimpleQuery : $r20 = (java.lang.Object[]) $r19
+org.apache.zeppelin.display.Input.getSimpleQuery : $r20 = (java.lang.Object[]) $r19 >>>>>>>> org.apache.zeppelin.display.Input.getSimpleQuery : $r18 = staticinvoke <java.util.Arrays: java.util.List asList(java.lang.Object[])>($r20)
+org.apache.zeppelin.display.Input.getSimpleQuery : $r18 = staticinvoke <java.util.Arrays: java.util.List asList(java.lang.Object[])>($r20) >>>>>>>> org.apache.zeppelin.display.Input.getSimpleQuery : r8 = $r18
+org.apache.zeppelin.display.Input.getSimpleQuery : r8 = $r18 >>>>>>>> org.apache.zeppelin.display.Input.getSimpleQuery : $r21 = new java.util.LinkedList
+org.apache.zeppelin.display.Input.getSimpleQuery : $r21 = new java.util.LinkedList >>>>>>>> org.apache.zeppelin.display.Input.getSimpleQuery : specialinvoke $r21.<java.util.LinkedList: void <init>()>()
+org.apache.zeppelin.display.Input.getSimpleQuery : specialinvoke $r21.<java.util.LinkedList: void <init>()>() >>>>>>>> org.apache.zeppelin.display.Input.getSimpleQuery : r9 = $r21
+org.apache.zeppelin.display.Input.getSimpleQuery : r9 = $r21 >>>>>>>> org.apache.zeppelin.display.Input.getSimpleQuery : r10 = interfaceinvoke r8.<java.util.Collection: java.util.Iterator iterator()>()
+org.apache.zeppelin.display.Input.getSimpleQuery : r10 = interfaceinvoke r8.<java.util.Collection: java.util.Iterator iterator()>() >>>>>>>> org.apache.zeppelin.display.Input.getSimpleQuery : $z5 = interfaceinvoke r10.<java.util.Iterator: boolean hasNext()>()
+org.apache.zeppelin.display.Input.getSimpleQuery : $z5 = interfaceinvoke r10.<java.util.Iterator: boolean hasNext()>() >>>>>>>> org.apache.zeppelin.display.Input.getSimpleQuery : if $z5 == 0
+org.apache.zeppelin.display.Input.getSimpleQuery : if $z5 == 0 >>>>>>>> org.apache.zeppelin.display.Input.getSimpleQuery : r11 = interfaceinvoke r10.<java.util.Iterator: java.lang.Object next()>()
+org.apache.zeppelin.display.Input.getSimpleQuery : r11 = interfaceinvoke r10.<java.util.Iterator: java.lang.Object next()>() >>>>>>>> org.apache.zeppelin.display.Input.getSimpleQuery : r12 = virtualinvoke r6.<org.apache.zeppelin.display.ui.OptionInput: org.apache.zeppelin.display.ui.OptionInput$ParamOption[] getOptions()>()
+org.apache.zeppelin.display.Input.getSimpleQuery : r12 = virtualinvoke r6.<org.apache.zeppelin.display.ui.OptionInput: org.apache.zeppelin.display.ui.OptionInput$ParamOption[] getOptions()>() >>>>>>>> org.apache.zeppelin.display.ui.OptionInput.getOptions : $r1 = r0.<org.apache.zeppelin.display.ui.OptionInput: org.apache.zeppelin.display.ui.OptionInput$ParamOption[] options>
+org.apache.zeppelin.display.ui.OptionInput.getOptions : $r1 = r0.<org.apache.zeppelin.display.ui.OptionInput: org.apache.zeppelin.display.ui.OptionInput$ParamOption[] options> >>>>>>>> org.apache.zeppelin.display.ui.OptionInput.getOptions : return $r1
+org.apache.zeppelin.display.ui.OptionInput.getOptions : return $r1 >>>>>>>> org.apache.zeppelin.display.Input.getSimpleQuery : i0 = lengthof r12
+org.apache.zeppelin.display.Input.getSimpleQuery : i0 = lengthof r12 >>>>>>>> org.apache.zeppelin.display.Input.getSimpleQuery : i1 = 0
+org.apache.zeppelin.display.Input.getSimpleQuery : i1 = 0 >>>>>>>> org.apache.zeppelin.display.Input.getSimpleQuery : if i1 >= i0
+org.apache.zeppelin.display.Input.getSimpleQuery : if i1 >= i0 >>>>>>>> org.apache.zeppelin.display.Input.getSimpleQuery : r13 = r12[i1]
+org.apache.zeppelin.display.Input.getSimpleQuery : r13 = r12[i1] >>>>>>>> org.apache.zeppelin.display.Input.getSimpleQuery : $r22 = virtualinvoke r13.<org.apache.zeppelin.display.ui.OptionInput$ParamOption: java.lang.Object getValue()>()
+org.apache.zeppelin.display.Input.getSimpleQuery : $r22 = virtualinvoke r13.<org.apache.zeppelin.display.ui.OptionInput$ParamOption: java.lang.Object getValue()>() >>>>>>>> org.apache.zeppelin.display.ui.OptionInput$ParamOption.getValue : $r1 = r0.<org.apache.zeppelin.display.ui.OptionInput$ParamOption: java.lang.Object value>
+org.apache.zeppelin.display.ui.OptionInput$ParamOption.getValue : $r1 = r0.<org.apache.zeppelin.display.ui.OptionInput$ParamOption: java.lang.Object value> >>>>>>>> org.apache.zeppelin.display.ui.OptionInput$ParamOption.getValue : return $r1
+org.apache.zeppelin.display.ui.OptionInput$ParamOption.getValue : return $r1 >>>>>>>> org.apache.zeppelin.display.Input.getSimpleQuery : $z6 = virtualinvoke $r22.<java.lang.Object: boolean equals(java.lang.Object)>(r11)
+org.apache.zeppelin.display.Input.getSimpleQuery : $z6 = virtualinvoke $r22.<java.lang.Object: boolean equals(java.lang.Object)>(r11) >>>>>>>> org.apache.zeppelin.display.Input.getSimpleQuery : if $z6 == 0
+org.apache.zeppelin.display.Input.getSimpleQuery : if $z6 == 0 >>>>>>>> org.apache.zeppelin.display.Input.getSimpleQuery : interfaceinvoke r9.<java.util.List: boolean add(java.lang.Object)>(r11)
+org.apache.zeppelin.display.Input.getSimpleQuery : interfaceinvoke r9.<java.util.List: boolean add(java.lang.Object)>(r11) >>>>>>>> org.apache.zeppelin.display.Input.getSimpleQuery : goto [?= (branch)]
+org.apache.zeppelin.display.Input.getSimpleQuery : goto [?= (branch)] >>>>>>>> org.apache.zeppelin.display.Input.getSimpleQuery : goto [?= $z5 = interfaceinvoke r10.<java.util.Iterator: boolean hasNext()>()]
+org.apache.zeppelin.display.Input.getSimpleQuery : goto [?= $z5 = interfaceinvoke r10.<java.util.Iterator: boolean hasNext()>()] >>>>>>>> org.apache.zeppelin.display.Input.getSimpleQuery : i1 = i1 + 1
+org.apache.zeppelin.display.Input.getSimpleQuery : i1 = i1 + 1 >>>>>>>> org.apache.zeppelin.display.Input.getSimpleQuery : $r23 = r4.<org.apache.zeppelin.display.Input: java.lang.String name>
+org.apache.zeppelin.display.Input.getSimpleQuery : $r23 = r4.<org.apache.zeppelin.display.Input: java.lang.String name> >>>>>>>> org.apache.zeppelin.display.Input.getSimpleQuery : interfaceinvoke r0.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>($r23, r9)
+org.apache.zeppelin.display.Input.getSimpleQuery : interfaceinvoke r0.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>($r23, r9) >>>>>>>> org.apache.zeppelin.display.Input.getSimpleQuery : r14 = staticinvoke <org.apache.commons.lang.StringUtils: java.lang.String join(java.util.Collection,java.lang.String)>(r9, r7)
+org.apache.zeppelin.display.Input.getSimpleQuery : r14 = staticinvoke <org.apache.commons.lang.StringUtils: java.lang.String join(java.util.Collection,java.lang.String)>(r9, r7) >>>>>>>> org.apache.zeppelin.display.Input.getSimpleQuery : goto [?= r2 = virtualinvoke r3.<java.util.regex.Matcher: java.lang.String replaceFirst(java.lang.String)>(r14)]
+org.apache.zeppelin.display.Input.getSimpleQuery : goto [?= r2 = virtualinvoke r3.<java.util.regex.Matcher: java.lang.String replaceFirst(java.lang.String)>(r14)] >>>>>>>> org.apache.zeppelin.display.Input.getSimpleQuery : return r2
+org.apache.zeppelin.display.Input.getSimpleQuery : return r2 >>>>>>>> org.apache.zeppelin.display.Input.getSimpleQuery : $r18 = (java.util.Collection) r5
+org.apache.zeppelin.display.Input.getSimpleQuery : $r18 = (java.util.Collection) r5 >>>>>>>> org.apache.zeppelin.display.Input.getSimpleQuery : goto [?= r8 = $r18]
+org.apache.zeppelin.display.Input.getSimpleQuery : goto [?= r8 = $r18] >>>>>>>> org.apache.zeppelin.display.Input.getType : $r8 = virtualinvoke r2.<java.util.regex.Matcher: java.lang.String group(int)>(2)
+org.apache.zeppelin.display.Input.getType : $r8 = virtualinvoke r2.<java.util.regex.Matcher: java.lang.String group(int)>(2) >>>>>>>> org.apache.zeppelin.display.Input.getType : $r9 = virtualinvoke $r8.<java.lang.String: java.lang.String trim()>()
+org.apache.zeppelin.display.Input.getType : $r9 = virtualinvoke $r8.<java.lang.String: java.lang.String trim()>() >>>>>>>> org.apache.zeppelin.display.Input.getType : $r10 = virtualinvoke $r9.<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>("[()]", "")
+org.apache.zeppelin.display.Input.getType : $r10 = virtualinvoke $r9.<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>("[()]", "") >>>>>>>> org.apache.zeppelin.display.Input.getType : r3[1] = $r10
+org.apache.zeppelin.display.Input.getType : r3[1] = $r10 >>>>>>>> org.apache.zeppelin.display.Input.getSimpleQuery : r5 = virtualinvoke r4.<org.apache.zeppelin.display.Input: java.lang.Object getDefaultValue()>()
+org.apache.zeppelin.display.Input.getSimpleQuery : r5 = virtualinvoke r4.<org.apache.zeppelin.display.Input: java.lang.Object getDefaultValue()>() >>>>>>>> org.apache.zeppelin.display.Input.getDefaultValue : $r1 = r0.<org.apache.zeppelin.display.Input: java.lang.Object defaultValue>
+org.apache.zeppelin.display.Input.getDefaultValue : $r1 = r0.<org.apache.zeppelin.display.Input: java.lang.Object defaultValue> >>>>>>>> org.apache.zeppelin.display.Input.getDefaultValue : return $r1

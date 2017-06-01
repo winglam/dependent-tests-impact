@@ -1,0 +1,16 @@
+org.apache.zeppelin.scheduler.SleepingJob.progress : $l0 = staticinvoke <java.lang.System: long currentTimeMillis()>() >>>>>>>> org.apache.zeppelin.scheduler.SleepingJob.progress : $l2 = r0.<org.apache.zeppelin.scheduler.SleepingJob: long start>
+org.apache.zeppelin.scheduler.SleepingJob.progress : $l2 = r0.<org.apache.zeppelin.scheduler.SleepingJob: long start> >>>>>>>> org.apache.zeppelin.scheduler.SleepingJob.progress : $l3 = $l0 - $l2
+org.apache.zeppelin.scheduler.SleepingJob.progress : $l3 = $l0 - $l2 >>>>>>>> org.apache.zeppelin.scheduler.SleepingJob.progress : $l4 = $l3 * 100L
+org.apache.zeppelin.scheduler.SleepingJob.progress : $l4 = $l3 * 100L >>>>>>>> org.apache.zeppelin.scheduler.SleepingJob.progress : $i5 = r0.<org.apache.zeppelin.scheduler.SleepingJob: int time>
+org.apache.zeppelin.scheduler.SleepingJob.progress : $i5 = r0.<org.apache.zeppelin.scheduler.SleepingJob: int time> >>>>>>>> org.apache.zeppelin.scheduler.SleepingJob.progress : $l6 = (long) $i5
+org.apache.zeppelin.scheduler.SleepingJob.progress : $l6 = (long) $i5 >>>>>>>> org.apache.zeppelin.scheduler.SleepingJob.progress : l1 = $l4 / $l6
+org.apache.zeppelin.scheduler.SleepingJob.progress : l1 = $l4 / $l6 >>>>>>>> org.apache.zeppelin.scheduler.SleepingJob.progress : $b7 = l1 cmp 0L
+org.apache.zeppelin.scheduler.SleepingJob.progress : $b7 = l1 cmp 0L >>>>>>>> org.apache.zeppelin.scheduler.SleepingJob.progress : if $b7 >= 0
+org.apache.zeppelin.scheduler.SleepingJob.progress : if $b7 >= 0 >>>>>>>> org.apache.zeppelin.scheduler.SleepingJob.progress : l1 = 0L
+org.apache.zeppelin.scheduler.SleepingJob.progress : if $b7 >= 0 >>>>>>>> org.apache.zeppelin.scheduler.SleepingJob.progress : $b8 = l1 cmp 100L
+org.apache.zeppelin.scheduler.SleepingJob.progress : $b8 = l1 cmp 100L >>>>>>>> org.apache.zeppelin.scheduler.SleepingJob.progress : if $b8 <= 0
+org.apache.zeppelin.scheduler.SleepingJob.progress : if $b8 <= 0 >>>>>>>> org.apache.zeppelin.scheduler.SleepingJob.progress : l1 = 100L
+org.apache.zeppelin.scheduler.SleepingJob.progress : if $b8 <= 0 >>>>>>>> org.apache.zeppelin.scheduler.SleepingJob.progress : $i9 = (int) l1
+org.apache.zeppelin.scheduler.SleepingJob.progress : $i9 = (int) l1 >>>>>>>> org.apache.zeppelin.scheduler.SleepingJob.progress : return $i9
+org.apache.zeppelin.scheduler.SleepingJob.progress : l1 = 100L >>>>>>>> org.apache.zeppelin.scheduler.SleepingJob.progress : $i9 = (int) l1
+org.apache.zeppelin.scheduler.SleepingJob.progress : l1 = 0L >>>>>>>> org.apache.zeppelin.scheduler.SleepingJob.progress : $b8 = l1 cmp 100L

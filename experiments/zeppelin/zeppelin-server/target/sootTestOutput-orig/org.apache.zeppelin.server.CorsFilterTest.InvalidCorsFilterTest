@@ -1,0 +1,22 @@
+org.apache.zeppelin.server.CorsFilter.doFilter : specialinvoke r0.<org.apache.zeppelin.server.CorsFilter: void addCorsHeaders(javax.servlet.http.HttpServletResponse,java.lang.String)>(r15, r5)
+org.apache.zeppelin.server.CorsFilter.doFilter : goto [?= $r12 = (javax.servlet.http.HttpServletRequest) r1]
+org.apache.zeppelin.server.CorsFilter.doFilter : $r7 = (javax.servlet.http.HttpServletRequest) r1
+org.apache.zeppelin.server.CorsFilter.doFilter : r5 = ""
+org.apache.zeppelin.server.CorsFilter.doFilter : r5 = r4
+org.apache.zeppelin.server.CorsFilter.doFilter : r15 = (javax.servlet.http.HttpServletResponse) r2
+org.apache.zeppelin.server.CorsFilter.doFilter : $r8 = staticinvoke <org.apache.zeppelin.conf.ZeppelinConfiguration: org.apache.zeppelin.conf.ZeppelinConfiguration create()>()
+org.apache.zeppelin.server.CorsFilter.doFilter : $z2 = r2 instanceof javax.servlet.http.HttpServletResponse
+org.apache.zeppelin.server.CorsFilter.doFilter : $r12 = (javax.servlet.http.HttpServletRequest) r1
+org.apache.zeppelin.server.CorsFilterTest$2.answer : return null
+org.apache.zeppelin.server.CorsFilterTest$2.answer : r4 = <org.apache.zeppelin.server.CorsFilterTest: java.lang.Integer count>
+org.apache.zeppelin.server.CorsFilterTest$2.answer : $r2 = <org.apache.zeppelin.server.CorsFilterTest: java.lang.String[] headers>
+org.apache.zeppelin.server.CorsFilter.addCorsHeaders : interfaceinvoke r1.<javax.servlet.http.HttpServletResponse: void addHeader(java.lang.String,java.lang.String)>("Access-Control-Allow-Headers", "authorization,Content-Type")
+org.apache.zeppelin.server.CorsFilter.addCorsHeaders : interfaceinvoke r1.<javax.servlet.http.HttpServletResponse: void addHeader(java.lang.String,java.lang.String)>("Access-Control-Allow-Origin", r2)
+org.apache.zeppelin.server.CorsFilter.addCorsHeaders : interfaceinvoke r1.<javax.servlet.http.HttpServletResponse: void addHeader(java.lang.String,java.lang.String)>("Access-Control-Allow-Credentials", "true")
+org.apache.zeppelin.server.CorsFilter.addCorsHeaders : interfaceinvoke r1.<javax.servlet.http.HttpServletResponse: void addHeader(java.lang.String,java.lang.String)>("Access-Control-Allow-Methods", "POST, GET, OPTIONS, PUT, HEAD, DELETE")
+org.apache.zeppelin.utils.SecurityUtils.isValidOrigin : if r0 == null goto $r4 = staticinvoke <java.lang.Boolean: java.lang.Boolean valueOf(boolean)>(0)
+org.apache.zeppelin.utils.SecurityUtils.isValidOrigin : $r9 = staticinvoke <java.net.InetAddress: java.net.InetAddress getLocalHost()>()
+org.apache.zeppelin.utils.SecurityUtils.isValidOrigin : $r11 = virtualinvoke r1.<org.apache.zeppelin.conf.ZeppelinConfiguration: java.util.List getAllowedOrigins()>()
+org.apache.zeppelin.utils.SecurityUtils.isValidOrigin : r8 = virtualinvoke r7.<java.lang.String: java.lang.String toLowerCase()>()
+org.apache.zeppelin.utils.SecurityUtils.isValidOrigin : $r5 = new java.net.URI
+org.apache.zeppelin.utils.SecurityUtils.isValidOrigin : if r2 != null goto $r6 = virtualinvoke r2.<java.lang.String: java.lang.String toLowerCase()>()

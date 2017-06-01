@@ -1,0 +1,96 @@
+org.apache.zeppelin.dep.DependencyResolver.load : $r5 = virtualinvoke r1.<java.lang.String: java.lang.String[] split(java.lang.String)>(":")
+org.apache.zeppelin.dep.DependencyResolver.load : return r5
+org.apache.zeppelin.dep.DependencyResolver.load : $r12 = r0.<org.apache.zeppelin.dep.DependencyResolver: org.slf4j.Logger logger>
+org.apache.zeppelin.dep.DependencyResolver.load : $r3 = new java.util.LinkedList
+org.apache.zeppelin.dep.DependencyResolver.load : $r6 = specialinvoke r0.<org.apache.zeppelin.dep.DependencyResolver: java.util.List loadFromMvn(java.lang.String,java.util.Collection)>(r1, r2)
+org.apache.zeppelin.dep.DependencyResolver.load : $z0 = staticinvoke <org.apache.commons.lang.StringUtils: boolean isBlank(java.lang.String)>(r1)
+org.apache.zeppelin.dep.DependencyResolver.load : $z2 = virtualinvoke r8.<java.io.File: boolean exists()>()
+org.apache.zeppelin.dep.DependencyResolver.load : r5 = virtualinvoke r0.<org.apache.zeppelin.dep.DependencyResolver: java.util.List load(java.lang.String,java.util.Collection)>(r1, r2)
+org.apache.zeppelin.dep.DependencyResolver.load : $r10 = new java.io.File
+org.apache.zeppelin.dep.DependencyResolver.load : goto [?= $z1 = interfaceinvoke r6.<java.util.Iterator: boolean hasNext()>()]
+org.apache.zeppelin.dep.DependencyResolver.load : if i0 < 3 goto $r7 = new java.util.LinkedList
+org.apache.zeppelin.dep.DependencyResolver.load : staticinvoke <org.apache.commons.io.FileUtils: void copyFile(java.io.File,java.io.File)>(r7, r8)
+org.apache.zeppelin.dep.DependencyResolver.load : $r4 = new java.util.LinkedList
+org.apache.zeppelin.dep.DependencyResolver.load : $z0 = staticinvoke <org.apache.commons.lang.StringUtils: boolean isNotBlank(java.lang.String)>(r1)
+org.apache.zeppelin.dep.DependencyResolver.load : r6 = interfaceinvoke r5.<java.util.List: java.util.Iterator iterator()>()
+org.apache.zeppelin.dep.AbstractDependencyResolver.addRepo : $r8 = new org.sonatype.aether.repository.RemoteRepository
+org.apache.zeppelin.dep.AbstractDependencyResolver.addRepo : exitmonitor r3
+org.apache.zeppelin.dep.AbstractDependencyResolver.addRepo : $r11 = r0.<org.apache.zeppelin.dep.AbstractDependencyResolver: java.util.List repos>
+org.apache.zeppelin.dep.AbstractDependencyResolver.addRepo : $r6 = r0.<org.apache.zeppelin.dep.AbstractDependencyResolver: java.util.List repos>
+org.apache.zeppelin.dep.AbstractDependencyResolver.addRepo : $r9 = new org.sonatype.aether.repository.RepositoryPolicy
+org.apache.zeppelin.dep.AbstractDependencyResolver.addRepo : virtualinvoke r0.<org.apache.zeppelin.dep.AbstractDependencyResolver: org.sonatype.aether.repository.RemoteRepository delRepo(java.lang.String)>(r1)
+org.apache.zeppelin.dep.DependencyResolver.getArtifactsWithDep : $r24 = staticinvoke <org.sonatype.aether.util.filter.DependencyFilterUtils: org.sonatype.aether.graph.DependencyFilter andFilter(org.sonatype.aether.graph.DependencyFilter[])>($r23)
+org.apache.zeppelin.dep.DependencyResolver.getArtifactsWithDep : $r12 = newarray (java.lang.String)[1]
+org.apache.zeppelin.dep.DependencyResolver.getArtifactsWithDep : goto [?= $z0 = interfaceinvoke r9.<java.util.Iterator: boolean hasNext()>()]
+org.apache.zeppelin.dep.DependencyResolver.getArtifactsWithDep : $r15 = new org.sonatype.aether.graph.Dependency
+org.apache.zeppelin.dep.DependencyResolver.getArtifactsWithDep : $r3 = new org.sonatype.aether.util.artifact.DefaultArtifact
+org.apache.zeppelin.dep.DependencyResolver.getArtifactsWithDep : $r14 = new org.sonatype.aether.collection.CollectRequest
+org.apache.zeppelin.dep.DependencyResolver.getArtifactsWithDep : $r17 = r0.<org.apache.zeppelin.dep.DependencyResolver: java.util.List repos>
+org.apache.zeppelin.dep.DependencyResolver.getArtifactsWithDep : $r13 = new org.sonatype.aether.util.filter.PatternExclusionsDependencyFilter
+org.apache.zeppelin.dep.DependencyResolver.getArtifactsWithDep : $r22 = new org.sonatype.aether.resolution.DependencyRequest
+org.apache.zeppelin.dep.DependencyResolver.getArtifactsWithDep : $r26 = r0.<org.apache.zeppelin.dep.DependencyResolver: org.sonatype.aether.RepositorySystem system>
+org.apache.zeppelin.dep.DependencyResolver.getArtifactsWithDep : exitmonitor r8
+org.apache.zeppelin.dep.DependencyResolver.getArtifactsWithDep : $r18 = r0.<org.apache.zeppelin.dep.DependencyResolver: java.util.List repos>
+org.apache.zeppelin.dep.DependencyResolver.getArtifactsWithDep : virtualinvoke r7.<org.sonatype.aether.collection.CollectRequest: org.sonatype.aether.collection.CollectRequest addRepository(org.sonatype.aether.repository.RemoteRepository)>(r10)
+org.apache.zeppelin.dep.DependencyResolver.loadFromMvn : $r3 = new java.util.LinkedList
+org.apache.zeppelin.dep.DependencyResolver.loadFromMvn : return r26
+org.apache.zeppelin.dep.DependencyResolver.loadFromMvn : r9 = interfaceinvoke r4.<java.util.Collection: java.util.Iterator iterator()>()
+org.apache.zeppelin.dep.DependencyResolver.loadFromMvn : goto [?= $z3 = interfaceinvoke r9.<java.util.Iterator: boolean hasNext()>()]
+org.apache.zeppelin.dep.DependencyResolver.loadFromMvn : $z2 = interfaceinvoke r6.<java.util.Iterator: boolean hasNext()>()
+org.apache.zeppelin.dep.DependencyResolver.loadFromMvn : goto [?= $z5 = interfaceinvoke r27.<java.util.Iterator: boolean hasNext()>()]
+org.apache.zeppelin.dep.DependencyResolver.loadFromMvn : $r30 = virtualinvoke r29.<org.sonatype.aether.resolution.ArtifactResult: org.sonatype.aether.artifact.Artifact getArtifact()>()
+org.apache.zeppelin.dep.DependencyResolver.loadFromMvn : interfaceinvoke r4.<java.util.Collection: boolean addAll(java.util.Collection)>(r2)
+org.apache.zeppelin.dep.DependencyResolver.loadFromMvn : goto [?= staticinvoke <edu.washington.cs.dt.impact.util.Tracer: void trace(java.lang.String,java.lang.String)>("$z2 = interfaceinvoke r6.<java.util.Iterator: boolean hasNext()>()", "org.apache.zeppelin.dep.DependencyResolver.loadFromMvn")]
+org.apache.zeppelin.dep.DependencyResolver.loadFromMvn : $r11 = r0.<org.apache.zeppelin.dep.DependencyResolver: java.lang.String[] exclusions>
+org.apache.zeppelin.dep.DependencyResolver.loadFromMvn : $z4 = virtualinvoke r8.<java.lang.String: boolean startsWith(java.lang.String)>(r10)
+org.apache.zeppelin.dep.DependencyResolver.loadFromMvn : $r15 = new java.lang.StringBuilder
+org.apache.zeppelin.dep.DependencyResolver.loadFromMvn : $r13 = interfaceinvoke r6.<java.util.Iterator: java.lang.Object next()>()
+org.apache.zeppelin.dep.DependencyResolver.loadFromMvn : $r32 = r0.<org.apache.zeppelin.dep.DependencyResolver: org.slf4j.Logger logger>
+org.apache.zeppelin.dep.DependencyResolver.loadFromMvn : r5 = virtualinvoke r0.<org.apache.zeppelin.dep.DependencyResolver: java.util.List getArtifactsWithDep(java.lang.String,java.util.Collection)>(r1, r4)
+org.apache.zeppelin.dep.DependencyResolver.loadFromMvn : $r25 = new java.util.LinkedList
+org.apache.zeppelin.dep.DependencyResolver.loadFromMvn : r27 = interfaceinvoke r5.<java.util.List: java.util.Iterator iterator()>()
+org.apache.zeppelin.dep.DependencyResolver.loadFromMvn : r6 = interfaceinvoke r5.<java.util.List: java.util.Iterator iterator()>()
+org.apache.zeppelin.interpreter.remote.AppendOutputRunnerTest$TestAppender.append : $r2 = r0.<org.apache.zeppelin.interpreter.remote.AppendOutputRunnerTest$TestAppender: java.util.List log>
+org.apache.zeppelin.dep.RepositorySystemFactory$ManualWagonProvider.lookup : $r5 = new org.apache.maven.wagon.providers.http.HttpWagon
+org.apache.zeppelin.dep.RepositorySystemFactory$ManualWagonProvider.lookup : $r4 = "https"
+org.apache.zeppelin.dep.RepositorySystemFactory$ManualWagonProvider.lookup : $r2 = "http"
+org.apache.zeppelin.dep.RepositorySystemFactory$ManualWagonProvider.lookup : $r3 = new org.apache.maven.wagon.providers.http.LightweightHttpWagon
+org.apache.zeppelin.dep.RepositorySystemFactory.newRepositorySystem : $r5 = newarray (org.sonatype.aether.connector.wagon.WagonProvider)[1]
+org.apache.zeppelin.dep.RepositorySystemFactory.newRepositorySystem : $r0 = new org.apache.maven.repository.internal.DefaultServiceLocator
+org.apache.zeppelin.dep.RepositorySystemFactory.newRepositorySystem : virtualinvoke r1.<org.apache.maven.repository.internal.DefaultServiceLocator: org.sonatype.aether.impl.internal.DefaultServiceLocator addService(java.lang.Class,java.lang.Class)>(class "org/sonatype/aether/spi/connector/RepositoryConnectorFactory", class "org/sonatype/aether/connector/file/FileRepositoryConnectorFactory")
+org.apache.zeppelin.dep.RepositorySystemFactory.newRepositorySystem : $r7 = virtualinvoke r1.<org.apache.maven.repository.internal.DefaultServiceLocator: java.lang.Object getService(java.lang.Class)>(class "org/sonatype/aether/RepositorySystem")
+org.apache.zeppelin.dep.RepositorySystemFactory.newRepositorySystem : virtualinvoke r1.<org.apache.maven.repository.internal.DefaultServiceLocator: org.sonatype.aether.impl.internal.DefaultServiceLocator addService(java.lang.Class,java.lang.Class)>(class "org/sonatype/aether/spi/connector/RepositoryConnectorFactory", class "org/sonatype/aether/connector/wagon/WagonRepositoryConnectorFactory")
+org.apache.zeppelin.dep.Booter.newCentralRepository : $r1 = new org.sonatype.aether.repository.RemoteRepository
+org.apache.zeppelin.dep.Booter.newCentralRepository : if r0 != null goto $r1 = new org.sonatype.aether.repository.RemoteRepository
+org.apache.zeppelin.dep.Booter.newCentralRepository : r0 = staticinvoke <java.lang.System: java.lang.String getProperty(java.lang.String)>("zeppelin.interpreter.dep.mvnRepo")
+org.apache.zeppelin.dep.Booter.newCentralRepository : r0 = "http://repo1.maven.org/maven2/"
+org.apache.zeppelin.dep.Booter.newCentralRepository : r0 = staticinvoke <java.lang.System: java.lang.String getenv(java.lang.String)>("ZEPPELIN_INTERPRETER_DEP_MVNREPO")
+org.apache.zeppelin.dep.Booter.newCentralRepository : if r0 != null goto (branch)
+org.apache.zeppelin.dep.AbstractDependencyResolver.delRepo : $r8 = interfaceinvoke r3.<java.util.Iterator: java.lang.Object next()>()
+org.apache.zeppelin.dep.AbstractDependencyResolver.delRepo : $z0 = interfaceinvoke r3.<java.util.Iterator: boolean hasNext()>()
+org.apache.zeppelin.dep.AbstractDependencyResolver.delRepo : $r7 = r0.<org.apache.zeppelin.dep.AbstractDependencyResolver: java.util.List repos>
+org.apache.zeppelin.dep.AbstractDependencyResolver.delRepo : return null
+org.apache.zeppelin.dep.AbstractDependencyResolver.delRepo : exitmonitor r2
+org.apache.zeppelin.dep.AbstractDependencyResolver.delRepo : $r6 = r0.<org.apache.zeppelin.dep.AbstractDependencyResolver: java.util.List repos>
+org.apache.zeppelin.dep.AbstractDependencyResolver.delRepo : goto [?= staticinvoke <edu.washington.cs.dt.impact.util.Tracer: void trace(java.lang.String,java.lang.String)>("$z0 = interfaceinvoke r3.<java.util.Iterator: boolean hasNext()>()", "org.apache.zeppelin.dep.AbstractDependencyResolver.delRepo")]
+org.apache.zeppelin.dep.AbstractDependencyResolver.delRepo : interfaceinvoke r3.<java.util.Iterator: void remove()>()
+org.apache.zeppelin.dep.AbstractDependencyResolver.delRepo : $r9 = virtualinvoke r4.<org.sonatype.aether.repository.RemoteRepository: java.lang.String getId()>()
+org.apache.zeppelin.dep.Booter.newRepositorySystemSession : $r7 = interfaceinvoke r0.<org.sonatype.aether.RepositorySystem: org.sonatype.aether.repository.LocalRepositoryManager newLocalRepositoryManager(org.sonatype.aether.repository.LocalRepository)>(r3)
+org.apache.zeppelin.dep.Booter.newRepositorySystemSession : return r2
+org.apache.zeppelin.dep.Booter.newRepositorySystemSession : staticinvoke <org.apache.commons.lang.Validate: void notNull(java.lang.Object,java.lang.String)>(r1, "localRepoPath should have a value")
+org.apache.zeppelin.dep.Booter.newRepositorySystemSession : $r5 = new org.sonatype.aether.repository.LocalRepository
+org.apache.zeppelin.dep.Booter.newRepositorySystemSession : $r4 = new org.apache.maven.repository.internal.MavenRepositorySystemSession
+org.apache.zeppelin.dep.DependencyResolverTest.setUp : $r13 = new java.io.File
+org.apache.zeppelin.dep.DependencyResolverTest.setUp : $r15 = new org.apache.zeppelin.dep.DependencyResolver
+org.apache.zeppelin.dep.DependencyResolverTest.setUp : $r0 = new java.io.File
+org.apache.zeppelin.dep.DependencyResolverTest.setUp : $r7 = new java.lang.StringBuilder
+org.apache.zeppelin.dep.Booter.resolveLocalRepoPath : r1 = staticinvoke <java.lang.System: java.lang.String getenv(java.lang.String)>("ZEPPELIN_HOME")
+org.apache.zeppelin.dep.Booter.resolveLocalRepoPath : r1 = staticinvoke <java.lang.System: java.lang.String getProperty(java.lang.String)>("zeppelin.home")
+org.apache.zeppelin.dep.Booter.resolveLocalRepoPath : $r2 = newarray (java.lang.String)[0]
+org.apache.zeppelin.dep.Booter.resolveLocalRepoPath : if r1 != null goto (branch)
+org.apache.zeppelin.dep.Booter.resolveLocalRepoPath : r1 = ".."
+org.apache.zeppelin.dep.Booter.resolveLocalRepoPath : if r1 != null goto $r2 = newarray (java.lang.String)[0]
+org.apache.zeppelin.dep.Booter.newRepositorySystem : $r0 = staticinvoke <org.apache.zeppelin.dep.RepositorySystemFactory: org.sonatype.aether.RepositorySystem newRepositorySystem()>()
+org.apache.zeppelin.dep.Booter.newLocalRepository : $r0 = new org.sonatype.aether.repository.RemoteRepository
+org.apache.zeppelin.dep.Booter.newLocalRepository : $r3 = staticinvoke <java.lang.System: java.lang.String getProperty(java.lang.String)>("user.home")
+org.apache.zeppelin.dep.DependencyResolverTest.tearDown : $r0 = <org.apache.zeppelin.dep.DependencyResolverTest: java.io.File tmpDir>

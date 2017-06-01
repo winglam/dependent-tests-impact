@@ -1,0 +1,24 @@
+org.apache.zeppelin.notebook.repo.NotebookRepoSyncTest.delete : $z0 = virtualinvoke r0.<java.io.File: boolean isFile()>() >>>>>>>> org.apache.zeppelin.notebook.repo.NotebookRepoSyncTest.delete : if $z0 == 0
+org.apache.zeppelin.notebook.repo.NotebookRepoSyncTest.delete : if $z0 == 0 >>>>>>>> org.apache.zeppelin.notebook.repo.NotebookRepoSyncTest.delete : virtualinvoke r0.<java.io.File: boolean delete()>()
+org.apache.zeppelin.notebook.repo.NotebookRepoSyncTest.delete : if $z0 == 0 >>>>>>>> org.apache.zeppelin.notebook.repo.NotebookRepoSyncTest.delete : $z2 = virtualinvoke r0.<java.io.File: boolean isDirectory()>()
+org.apache.zeppelin.notebook.repo.NotebookRepoSyncTest.delete : $z2 = virtualinvoke r0.<java.io.File: boolean isDirectory()>() >>>>>>>> org.apache.zeppelin.notebook.repo.NotebookRepoSyncTest.delete : if $z2 == 0
+org.apache.zeppelin.notebook.repo.NotebookRepoSyncTest.delete : if $z2 == 0 >>>>>>>> org.apache.zeppelin.notebook.repo.NotebookRepoSyncTest.delete : r1 = virtualinvoke r0.<java.io.File: java.io.File[] listFiles()>()
+org.apache.zeppelin.notebook.repo.NotebookRepoSyncTest.delete : if $z2 == 0 >>>>>>>> org.apache.zeppelin.notebook.repo.NotebookRepoSyncTest.delete : return
+org.apache.zeppelin.notebook.repo.NotebookRepoSyncTest.delete : r1 = virtualinvoke r0.<java.io.File: java.io.File[] listFiles()>() >>>>>>>> org.apache.zeppelin.notebook.repo.NotebookRepoSyncTest.delete : if r1 == null
+org.apache.zeppelin.notebook.repo.NotebookRepoSyncTest.delete : if r1 == null >>>>>>>> org.apache.zeppelin.notebook.repo.NotebookRepoSyncTest.delete : $i2 = lengthof r1
+org.apache.zeppelin.notebook.repo.NotebookRepoSyncTest.delete : if r1 == null >>>>>>>> org.apache.zeppelin.notebook.repo.NotebookRepoSyncTest.delete : virtualinvoke r0.<java.io.File: boolean delete()>()
+org.apache.zeppelin.notebook.repo.NotebookRepoSyncTest.delete : virtualinvoke r0.<java.io.File: boolean delete()>() >>>>>>>> org.apache.zeppelin.notebook.repo.NotebookRepoSyncTest.delete : return
+org.apache.zeppelin.notebook.repo.NotebookRepoSyncTest.delete : $i2 = lengthof r1 >>>>>>>> org.apache.zeppelin.notebook.repo.NotebookRepoSyncTest.delete : if $i2 <= 0
+org.apache.zeppelin.notebook.repo.NotebookRepoSyncTest.delete : if $i2 <= 0 >>>>>>>> org.apache.zeppelin.notebook.repo.NotebookRepoSyncTest.delete : r2 = r1
+org.apache.zeppelin.notebook.repo.NotebookRepoSyncTest.delete : if $i2 <= 0 >>>>>>>> org.apache.zeppelin.notebook.repo.NotebookRepoSyncTest.delete : virtualinvoke r0.<java.io.File: boolean delete()>()
+org.apache.zeppelin.notebook.repo.NotebookRepoSyncTest.delete : r2 = r1 >>>>>>>> org.apache.zeppelin.notebook.repo.NotebookRepoSyncTest.delete : i0 = lengthof r2
+org.apache.zeppelin.notebook.repo.NotebookRepoSyncTest.delete : i0 = lengthof r2 >>>>>>>> org.apache.zeppelin.notebook.repo.NotebookRepoSyncTest.delete : i1 = 0
+org.apache.zeppelin.notebook.repo.NotebookRepoSyncTest.delete : i1 = 0 >>>>>>>> org.apache.zeppelin.notebook.repo.NotebookRepoSyncTest.delete : if i1 >= i0
+org.apache.zeppelin.notebook.repo.NotebookRepoSyncTest.delete : if i1 >= i0 >>>>>>>> org.apache.zeppelin.notebook.repo.NotebookRepoSyncTest.delete : r3 = r2[i1]
+org.apache.zeppelin.notebook.repo.NotebookRepoSyncTest.delete : if i1 >= i0 >>>>>>>> org.apache.zeppelin.notebook.repo.NotebookRepoSyncTest.delete : virtualinvoke r0.<java.io.File: boolean delete()>()
+org.apache.zeppelin.notebook.repo.NotebookRepoSyncTest.delete : r3 = r2[i1] >>>>>>>> org.apache.zeppelin.notebook.repo.NotebookRepoSyncTest.delete : staticinvoke <org.apache.zeppelin.notebook.repo.NotebookRepoSyncTest: void delete(java.io.File)>(r3)
+org.apache.zeppelin.notebook.repo.NotebookRepoSyncTest.delete : staticinvoke <org.apache.zeppelin.notebook.repo.NotebookRepoSyncTest: void delete(java.io.File)>(r3) >>>>>>>> org.apache.zeppelin.notebook.repo.NotebookRepoSyncTest.delete : i1 = i1 + 1
+org.apache.zeppelin.notebook.repo.NotebookRepoSyncTest.delete : i1 = i1 + 1 >>>>>>>> org.apache.zeppelin.notebook.repo.NotebookRepoSyncTest.delete : goto [?= (branch)]
+org.apache.zeppelin.notebook.repo.NotebookRepoSyncTest.delete : goto [?= (branch)] >>>>>>>> org.apache.zeppelin.notebook.repo.NotebookRepoSyncTest.delete : if i1 >= i0
+org.apache.zeppelin.notebook.repo.NotebookRepoSyncTest.delete : virtualinvoke r0.<java.io.File: boolean delete()>() >>>>>>>> org.apache.zeppelin.notebook.repo.NotebookRepoSyncTest.delete : goto [?= return]
+org.apache.zeppelin.notebook.repo.NotebookRepoSyncTest.delete : goto [?= return] >>>>>>>> org.apache.zeppelin.notebook.repo.NotebookRepoSyncTest.delete : return

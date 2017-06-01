@@ -1,0 +1,67 @@
+org.apache.zeppelin.notebook.Note.setParagraphMagic : $r10 = new java.lang.StringBuilder
+org.apache.zeppelin.notebook.Note.setParagraphMagic : $z0 = staticinvoke <org.apache.commons.lang.StringUtils: boolean isNotEmpty(java.lang.String)>(r2)
+org.apache.zeppelin.notebook.Note.setParagraphMagic : if i0 != 0 goto $r7 = r0.<org.apache.zeppelin.notebook.Note: java.util.List paragraphs>
+org.apache.zeppelin.notebook.Note.setParagraphMagic : $r3 = r0.<org.apache.zeppelin.notebook.Note: java.util.List paragraphs>
+org.apache.zeppelin.notebook.Note.setParagraphMagic : $r7 = r0.<org.apache.zeppelin.notebook.Note: java.util.List paragraphs>
+org.apache.zeppelin.notebook.Paragraph.addUser : $r3 = r0.<org.apache.zeppelin.notebook.Paragraph: java.util.Map userParagraphMap>
+org.apache.zeppelin.notebook.Note.createParagraph : $r2 = new org.apache.zeppelin.notebook.Paragraph
+org.apache.zeppelin.notebook.Note.createParagraph : specialinvoke r0.<org.apache.zeppelin.notebook.Note: void setParagraphMagic(org.apache.zeppelin.notebook.Paragraph,int)>(r3, i0)
+org.apache.zeppelin.notebook.Note.createParagraph : return r3
+org.apache.zeppelin.notebook.Note.createParagraph : virtualinvoke r3.<org.apache.zeppelin.notebook.Paragraph: void setAuthenticationInfo(org.apache.zeppelin.user.AuthenticationInfo)>(r1)
+org.apache.zeppelin.notebook.Note.createParagraph : $r6 = virtualinvoke r3.<org.apache.zeppelin.notebook.Paragraph: java.lang.String getUser()>()
+org.apache.zeppelin.notebook.utility.IdHashes.encode : $r22 = interfaceinvoke r2.<java.util.List: java.lang.Object get(int)>(i6)
+org.apache.zeppelin.notebook.utility.IdHashes.encode : r6 = virtualinvoke r4.<java.math.BigInteger: java.math.BigInteger pow(int)>(i0)
+org.apache.zeppelin.notebook.utility.IdHashes.encode : r7 = virtualinvoke r5.<java.math.BigInteger: java.math.BigInteger mod(java.math.BigInteger)>(r6)
+org.apache.zeppelin.notebook.utility.IdHashes.encode : $r20 = new java.lang.StringBuffer
+org.apache.zeppelin.notebook.utility.IdHashes.encode : goto [?= $r20 = new java.lang.StringBuffer]
+org.apache.zeppelin.notebook.utility.IdHashes.encode : $r1 = new java.util.ArrayList
+org.apache.zeppelin.notebook.utility.IdHashes.encode : $r19 = <java.math.BigInteger: java.math.BigInteger ZERO>
+org.apache.zeppelin.notebook.utility.IdHashes.encode : i0 = 1
+org.apache.zeppelin.notebook.utility.IdHashes.encode : $r15 = new java.math.BigInteger
+org.apache.zeppelin.notebook.utility.IdHashes.encode : $r17 = <org.apache.zeppelin.notebook.utility.IdHashes: char[] DICTIONARY>
+org.apache.zeppelin.notebook.utility.IdHashes.encode : i0 = i0 + 1
+org.apache.zeppelin.notebook.utility.IdHashes.encode : goto [?= staticinvoke <edu.washington.cs.dt.impact.util.Tracer: void trace(java.lang.String,java.lang.String)>("r6 = virtualinvoke r4.<java.math.BigInteger: java.math.BigInteger pow(int)>(i0)", "org.apache.zeppelin.notebook.utility.IdHashes.encode")]
+org.apache.zeppelin.notebook.utility.IdHashes.encode : r9 = virtualinvoke r7.<java.math.BigInteger: java.math.BigInteger divide(java.math.BigInteger)>(r8)
+org.apache.zeppelin.notebook.utility.IdHashes.encode : $i5 = interfaceinvoke r2.<java.util.List: int size()>()
+org.apache.zeppelin.notebook.utility.IdHashes.encode : r5 = virtualinvoke r5.<java.math.BigInteger: java.math.BigInteger subtract(java.math.BigInteger)>(r7)
+org.apache.zeppelin.notebook.utility.IdHashes.encode : $r24 = virtualinvoke r21.<java.lang.StringBuffer: java.lang.String toString()>()
+org.apache.zeppelin.notebook.utility.IdHashes.encode : $i2 = i0 - 1
+org.apache.zeppelin.notebook.utility.IdHashes.encode : $r10 = new java.math.BigInteger
+org.apache.zeppelin.notebook.Paragraph.generateId : $r0 = new java.lang.StringBuilder
+org.apache.zeppelin.notebook.Paragraph.isValidInterpreter : $r3 = r0.<org.apache.zeppelin.notebook.Paragraph: org.apache.zeppelin.interpreter.InterpreterFactory factory>
+org.apache.zeppelin.notebook.Note.insertNewParagraph : return r2
+org.apache.zeppelin.notebook.Note.insertNewParagraph : r2 = specialinvoke r0.<org.apache.zeppelin.notebook.Note: org.apache.zeppelin.notebook.Paragraph createParagraph(int,org.apache.zeppelin.user.AuthenticationInfo)>(i0, r1)
+org.apache.zeppelin.notebook.Note.insertNewParagraph : virtualinvoke r0.<org.apache.zeppelin.notebook.Note: void insertParagraph(org.apache.zeppelin.notebook.Paragraph,int)>(r2, i0)
+org.apache.zeppelin.notebook.Paragraph.setAuthenticationInfo : $r2 = virtualinvoke r1.<org.apache.zeppelin.user.AuthenticationInfo: java.lang.String getUser()>()
+org.apache.zeppelin.notebook.Paragraph.setAuthenticationInfo : r0.<org.apache.zeppelin.notebook.Paragraph: org.apache.zeppelin.user.AuthenticationInfo authenticationInfo> = r1
+org.apache.zeppelin.notebook.Note.getId : $r1 = r0.<org.apache.zeppelin.notebook.Note: java.lang.String id>
+org.apache.zeppelin.notebook.Paragraph.getUser : $r1 = r0.<org.apache.zeppelin.notebook.Paragraph: java.lang.String user>
+org.apache.zeppelin.conf.ZeppelinConfiguration.create : $r4 = <org.apache.zeppelin.conf.ZeppelinConfiguration: org.apache.zeppelin.conf.ZeppelinConfiguration conf>
+org.apache.zeppelin.conf.ZeppelinConfiguration.create : $r0 = <org.apache.zeppelin.conf.ZeppelinConfiguration: org.apache.zeppelin.conf.ZeppelinConfiguration conf>
+org.apache.zeppelin.notebook.Paragraph.getMagic : return r4
+org.apache.zeppelin.notebook.Paragraph.getMagic : $r5 = virtualinvoke r4.<java.lang.String: java.lang.String substring(int)>(1)
+org.apache.zeppelin.notebook.Paragraph.getMagic : if r2 == null goto return r1
+org.apache.zeppelin.notebook.Paragraph.getMagic : r2 = virtualinvoke r0.<org.apache.zeppelin.notebook.Paragraph: java.lang.String getText()>()
+org.apache.zeppelin.notebook.Paragraph.getMagic : r1 = ""
+org.apache.zeppelin.notebook.Paragraph.getMagic : $r3 = virtualinvoke r2.<java.lang.String: java.lang.String[] split(java.lang.String)>("\\s+")
+org.apache.zeppelin.notebook.Note.addNewParagraph : $r2 = r0.<org.apache.zeppelin.notebook.Note: java.util.List paragraphs>
+org.apache.zeppelin.notebook.Note.insertParagraph : $r5 = r0.<org.apache.zeppelin.notebook.Note: java.util.List paragraphs>
+org.apache.zeppelin.notebook.Note.insertParagraph : $r8 = r0.<org.apache.zeppelin.notebook.Note: org.apache.zeppelin.notebook.NoteEventListener noteEventListener>
+org.apache.zeppelin.notebook.Note.insertParagraph : exitmonitor r2
+org.apache.zeppelin.notebook.Note.insertParagraph : $r7 = r0.<org.apache.zeppelin.notebook.Note: org.apache.zeppelin.notebook.NoteEventListener noteEventListener>
+org.apache.zeppelin.notebook.Note.insertParagraph : $r4 = r0.<org.apache.zeppelin.notebook.Note: java.util.List paragraphs>
+org.apache.zeppelin.notebook.Note.beforeStatusChange : if r4 == null goto return
+org.apache.zeppelin.notebook.Note.beforeStatusChange : $r5 = r0.<org.apache.zeppelin.notebook.Note: org.apache.zeppelin.notebook.JobListenerFactory jobListenerFactory>
+org.apache.zeppelin.notebook.Note.beforeStatusChange : $r6 = r0.<org.apache.zeppelin.notebook.Note: org.apache.zeppelin.notebook.JobListenerFactory jobListenerFactory>
+org.apache.zeppelin.notebook.Paragraph.getText : $r1 = r0.<org.apache.zeppelin.notebook.Paragraph: java.lang.String text>
+org.apache.zeppelin.notebook.Note.generateId : $r1 = staticinvoke <org.apache.zeppelin.notebook.utility.IdHashes: java.lang.String generateId()>()
+org.apache.zeppelin.notebook.Paragraph.setText : r0.<org.apache.zeppelin.notebook.Paragraph: java.lang.String text> = r1
+org.apache.zeppelin.notebook.Paragraph.setText : $r2 = new java.util.Date
+org.apache.zeppelin.notebook.Note.afterStatusChange : if r4 == null goto $r7 = r0.<org.apache.zeppelin.notebook.Note: org.apache.zeppelin.notebook.NoteEventListener noteEventListener>
+org.apache.zeppelin.notebook.Note.afterStatusChange : $r8 = r0.<org.apache.zeppelin.notebook.Note: org.apache.zeppelin.notebook.NoteEventListener noteEventListener>
+org.apache.zeppelin.notebook.Note.afterStatusChange : $r5 = r0.<org.apache.zeppelin.notebook.Note: org.apache.zeppelin.notebook.JobListenerFactory jobListenerFactory>
+org.apache.zeppelin.notebook.Note.afterStatusChange : $r7 = r0.<org.apache.zeppelin.notebook.Note: org.apache.zeppelin.notebook.NoteEventListener noteEventListener>
+org.apache.zeppelin.notebook.Note.afterStatusChange : $r6 = r0.<org.apache.zeppelin.notebook.Note: org.apache.zeppelin.notebook.JobListenerFactory jobListenerFactory>
+org.apache.zeppelin.notebook.Note.getParagraphs : $r4 = new java.util.LinkedList
+org.apache.zeppelin.notebook.Note.getParagraphs : $r3 = r0.<org.apache.zeppelin.notebook.Note: java.util.List paragraphs>
+org.apache.zeppelin.notebook.utility.IdHashes.generateId : $l0 = staticinvoke <java.lang.System: long currentTimeMillis()>()

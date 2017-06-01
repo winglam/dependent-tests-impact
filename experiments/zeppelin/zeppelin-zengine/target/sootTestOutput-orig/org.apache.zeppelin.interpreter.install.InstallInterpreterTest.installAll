@@ -1,0 +1,29 @@
+org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars.getVarName : $r1 = r0.<org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars: java.lang.String varName>
+org.apache.zeppelin.interpreter.install.InstallInterpreter.installAll : $r5 = r2.<org.apache.zeppelin.interpreter.install.InstallInterpreter$AvailableInterpreterInfo: java.lang.String name>
+org.apache.zeppelin.interpreter.install.InstallInterpreter.installAll : $r3 = r0.<org.apache.zeppelin.interpreter.install.InstallInterpreter: java.util.List availableInterpreters>
+org.apache.zeppelin.interpreter.install.InstallInterpreter.installAll : goto [?= $z0 = interfaceinvoke r1.<java.util.Iterator: boolean hasNext()>()]
+org.apache.zeppelin.interpreter.install.InstallInterpreter.readAvailableInterpreters : r10 = virtualinvoke r7.<java.util.regex.Matcher: java.lang.String group(int)>(3)
+org.apache.zeppelin.interpreter.install.InstallInterpreter.readAvailableInterpreters : r4 = staticinvoke <java.util.regex.Pattern: java.util.regex.Pattern compile(java.lang.String)>("(\\S+)\\s+(\\S+)\\s+(.*)")
+org.apache.zeppelin.interpreter.install.InstallInterpreter.readAvailableInterpreters : if r6 == null goto i2 = i2 + 1
+org.apache.zeppelin.interpreter.install.InstallInterpreter.readAvailableInterpreters : $r26 = r0.<org.apache.zeppelin.interpreter.install.InstallInterpreter: java.util.List availableInterpreters>
+org.apache.zeppelin.interpreter.install.InstallInterpreter.readAvailableInterpreters : r5 = r3
+org.apache.zeppelin.interpreter.install.InstallInterpreter.readAvailableInterpreters : $r18 = r0.<org.apache.zeppelin.interpreter.install.InstallInterpreter: java.io.File interpreterListFile>
+org.apache.zeppelin.interpreter.install.InstallInterpreter.readAvailableInterpreters : virtualinvoke r7.<java.util.regex.Matcher: boolean find()>()
+org.apache.zeppelin.interpreter.install.InstallInterpreter.readAvailableInterpreters : $r11 = r0.<org.apache.zeppelin.interpreter.install.InstallInterpreter: java.io.File interpreterListFile>
+org.apache.zeppelin.interpreter.install.InstallInterpreter.readAvailableInterpreters : r8 = virtualinvoke r7.<java.util.regex.Matcher: java.lang.String group(int)>(1)
+org.apache.zeppelin.interpreter.install.InstallInterpreter.readAvailableInterpreters : r3 = virtualinvoke r2.<java.lang.String: java.lang.String[] split(java.lang.String)>("\n")
+org.apache.zeppelin.interpreter.install.InstallInterpreter.readAvailableInterpreters : i0 = 0
+org.apache.zeppelin.interpreter.install.InstallInterpreter.readAvailableInterpreters : i0 = i0 + 1
+org.apache.zeppelin.interpreter.install.InstallInterpreter.readAvailableInterpreters : r9 = virtualinvoke r7.<java.util.regex.Matcher: java.lang.String group(int)>(2)
+org.apache.zeppelin.interpreter.install.InstallInterpreter.readAvailableInterpreters : $i4 = virtualinvoke r7.<java.util.regex.Matcher: int groupCount()>()
+org.apache.zeppelin.interpreter.install.InstallInterpreter.readAvailableInterpreters : r7 = virtualinvoke r4.<java.util.regex.Pattern: java.util.regex.Matcher matcher(java.lang.CharSequence)>(r6)
+org.apache.zeppelin.interpreter.install.InstallInterpreter.startTip : $r0 = <java.lang.System: java.io.PrintStream out>
+org.apache.zeppelin.interpreter.install.InstallInterpreter.install : staticinvoke <org.apache.zeppelin.interpreter.install.InstallInterpreter: void startTip()>()
+org.apache.zeppelin.interpreter.install.InstallInterpreter.install : $r12 = new java.io.File
+org.apache.zeppelin.interpreter.install.InstallInterpreter.install : $r8 = r0.<org.apache.zeppelin.interpreter.install.InstallInterpreter: java.net.URL proxyUrl>
+org.apache.zeppelin.interpreter.install.InstallInterpreter.install : $r22 = <java.lang.System: java.io.PrintStream out>
+org.apache.zeppelin.interpreter.install.InstallInterpreter.install : $r34 = <java.lang.System: java.io.PrintStream out>
+org.apache.zeppelin.interpreter.install.InstallInterpreter.install : virtualinvoke r4.<org.apache.zeppelin.dep.DependencyResolver: java.util.List load(java.lang.String,java.io.File)>(r2, r5)
+org.apache.zeppelin.interpreter.install.InstallInterpreter.install : goto [?= return]
+org.apache.zeppelin.interpreter.install.InstallInterpreter.install : $z0 = virtualinvoke r5.<java.io.File: boolean exists()>()
+org.apache.zeppelin.interpreter.install.InstallInterpreter.install : $r3 = new org.apache.zeppelin.dep.DependencyResolver

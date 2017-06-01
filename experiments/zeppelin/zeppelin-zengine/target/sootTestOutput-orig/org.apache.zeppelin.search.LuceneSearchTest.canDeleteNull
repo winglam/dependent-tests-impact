@@ -1,0 +1,8 @@
+org.apache.zeppelin.search.LuceneSearchTest.beforeStartUp : $r2 = staticinvoke <org.mockito.Mockito: java.lang.Object mock(java.lang.Class)>(class "org/apache/zeppelin/interpreter/InterpreterFactory")
+org.apache.zeppelin.search.LuceneSearchTest.beforeStartUp : $r4 = staticinvoke <org.mockito.Mockito: java.lang.Object mock(java.lang.Class)>(class "org/apache/zeppelin/interpreter/InterpreterSettingManager")
+org.apache.zeppelin.search.LuceneSearchTest.beforeStartUp : $r0 = staticinvoke <org.mockito.Mockito: java.lang.Object mock(java.lang.Class)>(class "org/apache/zeppelin/notebook/repo/NotebookRepo")
+org.apache.zeppelin.search.LuceneSearch.deleteDoc : $r7 = <org.apache.zeppelin.search.LuceneSearch: org.slf4j.Logger LOG>
+org.apache.zeppelin.search.LuceneSearch.deleteDoc : if null != r1 goto $r8 = virtualinvoke r1.<org.apache.zeppelin.notebook.Note: java.lang.String getId()>()
+org.apache.zeppelin.search.LuceneSearch.close : $r2 = r0.<org.apache.zeppelin.search.LuceneSearch: org.apache.lucene.index.IndexWriter writer>
+org.apache.zeppelin.search.LuceneSearch.close : goto [?= return]
+org.apache.zeppelin.search.LuceneSearch.deleteIndexDocs : specialinvoke r0.<org.apache.zeppelin.search.LuceneSearch: void deleteDoc(org.apache.zeppelin.notebook.Note,org.apache.zeppelin.notebook.Paragraph)>(r1, null)

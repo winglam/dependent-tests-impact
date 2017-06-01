@@ -1,0 +1,13 @@
+org.apache.zeppelin.notebook.Paragraph.getMagic : r1 = "" >>>>>>>> org.apache.zeppelin.notebook.Paragraph.getMagic : r2 = virtualinvoke r0.<org.apache.zeppelin.notebook.Paragraph: java.lang.String getText()>()
+org.apache.zeppelin.notebook.Paragraph.getMagic : r2 = virtualinvoke r0.<org.apache.zeppelin.notebook.Paragraph: java.lang.String getText()>() >>>>>>>> org.apache.zeppelin.notebook.Paragraph.getMagic : if r2 == null
+org.apache.zeppelin.notebook.Paragraph.getMagic : if r2 == null >>>>>>>> org.apache.zeppelin.notebook.Paragraph.getMagic : $z0 = virtualinvoke r2.<java.lang.String: boolean startsWith(java.lang.String)>("%")
+org.apache.zeppelin.notebook.Paragraph.getMagic : if r2 == null >>>>>>>> org.apache.zeppelin.notebook.Paragraph.getMagic : return r1
+org.apache.zeppelin.notebook.Paragraph.getMagic : $z0 = virtualinvoke r2.<java.lang.String: boolean startsWith(java.lang.String)>("%") >>>>>>>> org.apache.zeppelin.notebook.Paragraph.getMagic : if $z0 == 0
+org.apache.zeppelin.notebook.Paragraph.getMagic : if $z0 == 0 >>>>>>>> org.apache.zeppelin.notebook.Paragraph.getMagic : $r3 = virtualinvoke r2.<java.lang.String: java.lang.String[] split(java.lang.String)>("\\s+")
+org.apache.zeppelin.notebook.Paragraph.getMagic : if $z0 == 0 >>>>>>>> org.apache.zeppelin.notebook.Paragraph.getMagic : return r1
+org.apache.zeppelin.notebook.Paragraph.getMagic : $r3 = virtualinvoke r2.<java.lang.String: java.lang.String[] split(java.lang.String)>("\\s+") >>>>>>>> org.apache.zeppelin.notebook.Paragraph.getMagic : r4 = $r3[0]
+org.apache.zeppelin.notebook.Paragraph.getMagic : r4 = $r3[0] >>>>>>>> org.apache.zeppelin.notebook.Paragraph.getMagic : $r5 = virtualinvoke r4.<java.lang.String: java.lang.String substring(int)>(1)
+org.apache.zeppelin.notebook.Paragraph.getMagic : $r5 = virtualinvoke r4.<java.lang.String: java.lang.String substring(int)>(1) >>>>>>>> org.apache.zeppelin.notebook.Paragraph.getMagic : $z1 = specialinvoke r0.<org.apache.zeppelin.notebook.Paragraph: boolean isValidInterpreter(java.lang.String)>($r5)
+org.apache.zeppelin.notebook.Paragraph.getMagic : $z1 = specialinvoke r0.<org.apache.zeppelin.notebook.Paragraph: boolean isValidInterpreter(java.lang.String)>($r5) >>>>>>>> org.apache.zeppelin.notebook.Paragraph.getMagic : if $z1 == 0
+org.apache.zeppelin.notebook.Paragraph.getMagic : if $z1 == 0 >>>>>>>> org.apache.zeppelin.notebook.Paragraph.getMagic : return r4
+org.apache.zeppelin.notebook.Paragraph.getMagic : if $z1 == 0 >>>>>>>> org.apache.zeppelin.notebook.Paragraph.getMagic : return ""

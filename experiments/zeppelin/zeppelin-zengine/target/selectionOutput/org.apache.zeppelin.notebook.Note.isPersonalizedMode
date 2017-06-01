@@ -1,0 +1,11 @@
+org.apache.zeppelin.notebook.Note.isPersonalizedMode : $r2 = virtualinvoke r0.<org.apache.zeppelin.notebook.Note: java.util.Map getConfig()>() >>>>>>>> org.apache.zeppelin.notebook.Note.isPersonalizedMode : r1 = interfaceinvoke $r2.<java.util.Map: java.lang.Object get(java.lang.Object)>("personalizedMode")
+org.apache.zeppelin.notebook.Note.isPersonalizedMode : r1 = interfaceinvoke $r2.<java.util.Map: java.lang.Object get(java.lang.Object)>("personalizedMode") >>>>>>>> org.apache.zeppelin.notebook.Note.isPersonalizedMode : if null == r1
+org.apache.zeppelin.notebook.Note.isPersonalizedMode : if null == r1 >>>>>>>> org.apache.zeppelin.notebook.Note.isPersonalizedMode : $r3 = "true"
+org.apache.zeppelin.notebook.Note.isPersonalizedMode : if null == r1 >>>>>>>> org.apache.zeppelin.notebook.Note.isPersonalizedMode : $z1 = 0
+org.apache.zeppelin.notebook.Note.isPersonalizedMode : $z1 = 0 >>>>>>>> org.apache.zeppelin.notebook.Note.isPersonalizedMode : return $z1
+org.apache.zeppelin.notebook.Note.isPersonalizedMode : $r3 = "true" >>>>>>>> org.apache.zeppelin.notebook.Note.isPersonalizedMode : $z0 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>(r1)
+org.apache.zeppelin.notebook.Note.isPersonalizedMode : $z0 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>(r1) >>>>>>>> org.apache.zeppelin.notebook.Note.isPersonalizedMode : if $z0 == 0
+org.apache.zeppelin.notebook.Note.isPersonalizedMode : if $z0 == 0 >>>>>>>> org.apache.zeppelin.notebook.Note.isPersonalizedMode : $z1 = 1
+org.apache.zeppelin.notebook.Note.isPersonalizedMode : if $z0 == 0 >>>>>>>> org.apache.zeppelin.notebook.Note.isPersonalizedMode : $z1 = 0
+org.apache.zeppelin.notebook.Note.isPersonalizedMode : $z1 = 1 >>>>>>>> org.apache.zeppelin.notebook.Note.isPersonalizedMode : goto [?= return $z1]
+org.apache.zeppelin.notebook.Note.isPersonalizedMode : goto [?= return $z1] >>>>>>>> org.apache.zeppelin.notebook.Note.isPersonalizedMode : return $z1

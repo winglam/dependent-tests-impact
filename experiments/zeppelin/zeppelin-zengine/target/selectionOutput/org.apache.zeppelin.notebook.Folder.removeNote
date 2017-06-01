@@ -1,0 +1,21 @@
+org.apache.zeppelin.notebook.Folder.removeNote : $r2 = <org.apache.zeppelin.notebook.Folder: org.slf4j.Logger logger> >>>>>>>> org.apache.zeppelin.notebook.Folder.removeNote : $r5 = virtualinvoke r1.<org.apache.zeppelin.notebook.Note: java.lang.String getId()>()
+org.apache.zeppelin.notebook.Folder.removeNote : $r5 = virtualinvoke r1.<org.apache.zeppelin.notebook.Note: java.lang.String getId()>() >>>>>>>> org.apache.zeppelin.notebook.Folder.removeNote : $r6 = virtualinvoke r0.<org.apache.zeppelin.notebook.Folder: java.lang.String getId()>()
+org.apache.zeppelin.notebook.Folder.removeNote : $r6 = virtualinvoke r0.<org.apache.zeppelin.notebook.Folder: java.lang.String getId()>() >>>>>>>> org.apache.zeppelin.notebook.Folder.removeNote : interfaceinvoke $r2.<org.slf4j.Logger: void info(java.lang.String,java.lang.Object,java.lang.Object)>("Remove note {} from folder {}", $r5, $r6)
+org.apache.zeppelin.notebook.Folder.removeNote : interfaceinvoke $r2.<org.slf4j.Logger: void info(java.lang.String,java.lang.Object,java.lang.Object)>("Remove note {} from folder {}", $r5, $r6) >>>>>>>> org.apache.zeppelin.notebook.Folder.removeNote : $r7 = r0.<org.apache.zeppelin.notebook.Folder: java.util.Map notes>
+org.apache.zeppelin.notebook.Folder.removeNote : $r7 = r0.<org.apache.zeppelin.notebook.Folder: java.util.Map notes> >>>>>>>> org.apache.zeppelin.notebook.Folder.removeNote : r3 = $r7
+org.apache.zeppelin.notebook.Folder.removeNote : r3 = $r7 >>>>>>>> org.apache.zeppelin.notebook.Folder.removeNote : entermonitor $r7
+org.apache.zeppelin.notebook.Folder.removeNote : entermonitor $r7 >>>>>>>> org.apache.zeppelin.notebook.Folder.removeNote : $r8 = r0.<org.apache.zeppelin.notebook.Folder: java.util.Map notes>
+org.apache.zeppelin.notebook.Folder.removeNote : entermonitor $r7 >>>>>>>> org.apache.zeppelin.notebook.Folder.removeNote : $r11 := @caughtexception
+org.apache.zeppelin.notebook.Folder.removeNote : r4 = $r11 >>>>>>>> org.apache.zeppelin.notebook.Folder.removeNote : exitmonitor r3
+org.apache.zeppelin.notebook.Folder.removeNote : r4 = $r11 >>>>>>>> org.apache.zeppelin.notebook.Folder.removeNote : $r11 := @caughtexception
+org.apache.zeppelin.notebook.Folder.removeNote : exitmonitor r3 >>>>>>>> org.apache.zeppelin.notebook.Folder.removeNote : throw r4
+org.apache.zeppelin.notebook.Folder.removeNote : exitmonitor r3 >>>>>>>> org.apache.zeppelin.notebook.Folder.removeNote : $r11 := @caughtexception
+org.apache.zeppelin.notebook.Folder.removeNote : $r8 = r0.<org.apache.zeppelin.notebook.Folder: java.util.Map notes> >>>>>>>> org.apache.zeppelin.notebook.Folder.removeNote : $r9 = virtualinvoke r1.<org.apache.zeppelin.notebook.Note: java.lang.String getId()>()
+org.apache.zeppelin.notebook.Folder.removeNote : $r8 = r0.<org.apache.zeppelin.notebook.Folder: java.util.Map notes> >>>>>>>> org.apache.zeppelin.notebook.Folder.removeNote : $r11 := @caughtexception
+org.apache.zeppelin.notebook.Folder.removeNote : $r9 = virtualinvoke r1.<org.apache.zeppelin.notebook.Note: java.lang.String getId()>() >>>>>>>> org.apache.zeppelin.notebook.Folder.removeNote : interfaceinvoke $r8.<java.util.Map: java.lang.Object remove(java.lang.Object)>($r9)
+org.apache.zeppelin.notebook.Folder.removeNote : $r9 = virtualinvoke r1.<org.apache.zeppelin.notebook.Note: java.lang.String getId()>() >>>>>>>> org.apache.zeppelin.notebook.Folder.removeNote : $r11 := @caughtexception
+org.apache.zeppelin.notebook.Folder.removeNote : interfaceinvoke $r8.<java.util.Map: java.lang.Object remove(java.lang.Object)>($r9) >>>>>>>> org.apache.zeppelin.notebook.Folder.removeNote : exitmonitor r3
+org.apache.zeppelin.notebook.Folder.removeNote : interfaceinvoke $r8.<java.util.Map: java.lang.Object remove(java.lang.Object)>($r9) >>>>>>>> org.apache.zeppelin.notebook.Folder.removeNote : $r11 := @caughtexception
+org.apache.zeppelin.notebook.Folder.removeNote : exitmonitor r3 >>>>>>>> org.apache.zeppelin.notebook.Folder.removeNote : goto [?= return]
+org.apache.zeppelin.notebook.Folder.removeNote : exitmonitor r3 >>>>>>>> org.apache.zeppelin.notebook.Folder.removeNote : $r11 := @caughtexception
+org.apache.zeppelin.notebook.Folder.removeNote : goto [?= return] >>>>>>>> org.apache.zeppelin.notebook.Folder.removeNote : return

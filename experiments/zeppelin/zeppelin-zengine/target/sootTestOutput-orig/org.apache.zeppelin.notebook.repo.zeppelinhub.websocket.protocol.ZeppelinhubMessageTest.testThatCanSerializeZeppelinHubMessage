@@ -1,0 +1,144 @@
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinhubClient.initialize : $r4 = <org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinhubClient: org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinhubClient instance>
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinhubClient.initialize : $r2 = <org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinhubClient: org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinhubClient instance>
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinhubClient.initialize : $r3 = new org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinhubClient
+org.apache.zeppelin.notebook.repo.zeppelinhub.security.Authentication.getLoginEndpoint : return r3
+org.apache.zeppelin.notebook.repo.zeppelinhub.security.Authentication.getLoginEndpoint : if i0 > 0 goto r2 = "http"
+org.apache.zeppelin.notebook.repo.zeppelinhub.security.Authentication.getLoginEndpoint : r2 = "http"
+org.apache.zeppelin.notebook.repo.zeppelinhub.security.Authentication.getLoginEndpoint : i0 = virtualinvoke r1.<org.apache.zeppelin.conf.ZeppelinConfiguration: int getInt(java.lang.String,java.lang.String,int)>("ZEPPELIN_PORT", "zeppelin.server.port", 8080)
+org.apache.zeppelin.notebook.repo.zeppelinhub.security.Authentication.getLoginEndpoint : $z0 = virtualinvoke r1.<org.apache.zeppelin.conf.ZeppelinConfiguration: boolean useSsl()>()
+org.apache.zeppelin.notebook.repo.zeppelinhub.security.Authentication.getLoginEndpoint : $r4 = new java.lang.StringBuilder
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.protocol.ZeppelinhubMessage.serialize : $r1 = <org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.protocol.ZeppelinhubMessage: com.google.gson.Gson gson>
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.scheduler.ZeppelinHubHeartbeat.newInstance : $r1 = new org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.scheduler.ZeppelinHubHeartbeat
+org.apache.zeppelin.notebook.repo.zeppelinhub.ZeppelinHubRepo.getZeppelinHubUrl : return r4
+org.apache.zeppelin.notebook.repo.zeppelinhub.ZeppelinHubRepo.getZeppelinHubUrl : $i0 = virtualinvoke r3.<java.net.URI: int getPort()>()
+org.apache.zeppelin.notebook.repo.zeppelinhub.ZeppelinHubRepo.getZeppelinHubUrl : goto [?= r10 = virtualinvoke r3.<java.net.URI: java.lang.String getScheme()>()]
+org.apache.zeppelin.notebook.repo.zeppelinhub.ZeppelinHubRepo.getZeppelinHubUrl : if r1 != null goto r2 = virtualinvoke r1.<org.apache.zeppelin.conf.ZeppelinConfiguration: java.lang.String getString(java.lang.String,java.lang.String,java.lang.String)>("ZEPPELINHUB_API_ADDRESS", "zeppelinhub.api.address", "https://www.zeppelinhub.com")
+org.apache.zeppelin.notebook.repo.zeppelinhub.ZeppelinHubRepo.getZeppelinHubUrl : if r10 != null goto $r12 = new java.lang.StringBuilder
+org.apache.zeppelin.notebook.repo.zeppelinhub.ZeppelinHubRepo.getZeppelinHubUrl : $r12 = new java.lang.StringBuilder
+org.apache.zeppelin.notebook.repo.zeppelinhub.ZeppelinHubRepo.getZeppelinHubUrl : r10 = virtualinvoke r3.<java.net.URI: java.lang.String getScheme()>()
+org.apache.zeppelin.notebook.repo.zeppelinhub.ZeppelinHubRepo.getZeppelinHubUrl : $r6 = new java.net.URI
+org.apache.zeppelin.notebook.repo.zeppelinhub.ZeppelinHubRepo.getZeppelinHubUrl : r2 = virtualinvoke r1.<org.apache.zeppelin.conf.ZeppelinConfiguration: java.lang.String getString(java.lang.String,java.lang.String,java.lang.String)>("ZEPPELINHUB_API_ADDRESS", "zeppelinhub.api.address", "https://www.zeppelinhub.com")
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient.initialize : $r5 = <org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient: org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient instance>
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient.initialize : $r4 = new org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient.initialize : $r3 = <org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient: org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient instance>
+org.apache.zeppelin.conf.ZeppelinConfiguration.create : $r4 = <org.apache.zeppelin.conf.ZeppelinConfiguration: org.apache.zeppelin.conf.ZeppelinConfiguration conf>
+org.apache.zeppelin.conf.ZeppelinConfiguration.create : $r0 = <org.apache.zeppelin.conf.ZeppelinConfiguration: org.apache.zeppelin.conf.ZeppelinConfiguration conf>
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinhubClient.addRoutines : $r1 = r0.<org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinhubClient: org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.scheduler.SchedulerService schedulerService>
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.Client.getMaxNoteSize : return 67108864
+org.apache.zeppelin.notebook.repo.zeppelinhub.ZeppelinHubRepoTest.getMockedZeppelinHandler : $r5 = r0.<org.apache.zeppelin.notebook.repo.zeppelinhub.ZeppelinHubRepoTest: java.io.File pathOfNotebooks>
+org.apache.zeppelin.notebook.repo.zeppelinhub.ZeppelinHubRepoTest.getMockedZeppelinHandler : $r4 = staticinvoke <org.mockito.Mockito: java.lang.Object mock(java.lang.Class)>(class "org/apache/zeppelin/notebook/repo/zeppelinhub/rest/ZeppelinhubRestApiHandler")
+org.apache.zeppelin.notebook.repo.zeppelinhub.ZeppelinHubRepo.getZeppelinHubWsUri : if i0 > 0 goto (branch)
+org.apache.zeppelin.notebook.repo.zeppelinhub.ZeppelinHubRepo.getZeppelinHubWsUri : r2 = r1
+org.apache.zeppelin.notebook.repo.zeppelinhub.ZeppelinHubRepo.getZeppelinHubWsUri : $z2 = virtualinvoke r3.<java.lang.String: boolean equals(java.lang.Object)>("https")
+org.apache.zeppelin.notebook.repo.zeppelinhub.ZeppelinHubRepo.getZeppelinHubWsUri : if r3 == null goto $s1 = 80
+org.apache.zeppelin.notebook.repo.zeppelinhub.ZeppelinHubRepo.getZeppelinHubWsUri : i0 = virtualinvoke r2.<java.net.URI: int getPort()>()
+org.apache.zeppelin.notebook.repo.zeppelinhub.ZeppelinHubRepo.getZeppelinHubWsUri : r3 = virtualinvoke r2.<java.net.URI: java.lang.String getScheme()>()
+org.apache.zeppelin.notebook.repo.zeppelinhub.ZeppelinHubRepo.getZeppelinHubWsUri : $r8 = new java.lang.StringBuilder
+org.apache.zeppelin.notebook.repo.zeppelinhub.ZeppelinHubRepo.getZeppelinHubWsUri : if r3 != null goto $z2 = virtualinvoke r3.<java.lang.String: boolean equals(java.lang.Object)>("https")
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.Client.start : $r2 = r0.<org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.Client: org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinhubClient zeppelinhubClient>
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.Client.start : $r1 = r0.<org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.Client: org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinhubClient zeppelinhubClient>
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.Client.start : $r3 = r0.<org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.Client: org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient zeppelinClient>
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.Client.start : $r4 = r0.<org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.Client: org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient zeppelinClient>
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.scheduler.ZeppelinHeartbeat.newInstance : $r1 = new org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.scheduler.ZeppelinHeartbeat
+org.apache.zeppelin.conf.ZeppelinConfiguration.getBoolean : $r3 = staticinvoke <java.lang.System: java.lang.String getenv(java.lang.String)>(r1)
+org.apache.zeppelin.conf.ZeppelinConfiguration.getBoolean : $z3 = specialinvoke r0.<org.apache.zeppelin.conf.ZeppelinConfiguration: boolean getBooleanValue(java.lang.String,boolean)>(r2, z0)
+org.apache.zeppelin.conf.ZeppelinConfiguration.getBoolean : $r2 = virtualinvoke r1.<org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars: java.lang.String name()>()
+org.apache.zeppelin.conf.ZeppelinConfiguration.getBoolean : $r5 = staticinvoke <java.lang.System: java.lang.String getProperty(java.lang.String)>(r2)
+org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars.getType : $r1 = r0.<org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars: org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars$VarType type>
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient.addRoutines : $r3 = new java.util.Timer
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient.addRoutines : $r1 = r0.<org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient: org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.scheduler.SchedulerService schedulerService>
+org.apache.zeppelin.notebook.repo.zeppelinhub.model.UserTokenContainer.init : $r4 = <org.apache.zeppelin.notebook.repo.zeppelinhub.model.UserTokenContainer: org.apache.zeppelin.notebook.repo.zeppelinhub.model.UserTokenContainer instance>
+org.apache.zeppelin.notebook.repo.zeppelinhub.model.UserTokenContainer.init : $r2 = <org.apache.zeppelin.notebook.repo.zeppelinhub.model.UserTokenContainer: org.apache.zeppelin.notebook.repo.zeppelinhub.model.UserTokenContainer instance>
+org.apache.zeppelin.notebook.repo.zeppelinhub.model.UserTokenContainer.init : $r3 = new org.apache.zeppelin.notebook.repo.zeppelinhub.model.UserTokenContainer
+org.apache.zeppelin.notebook.repo.zeppelinhub.ZeppelinHubRepo.getZeppelinhubWebsocketUri : goto [?= return r2]
+org.apache.zeppelin.notebook.repo.zeppelinhub.ZeppelinHubRepo.getZeppelinhubWebsocketUri : return r2
+org.apache.zeppelin.notebook.repo.zeppelinhub.ZeppelinHubRepo.getZeppelinhubWebsocketUri : $r3 = new java.net.URI
+org.apache.zeppelin.notebook.repo.zeppelinhub.ZeppelinHubRepo.getZeppelinhubWebsocketUri : r2 = ""
+org.apache.zeppelin.conf.ZeppelinConfiguration.useSsl : $r1 = <org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars: org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars ZEPPELIN_SSL>
+org.apache.zeppelin.notebook.repo.zeppelinhub.rest.ZeppelinhubRestApiHandler.readProxyConf : $r4 = staticinvoke <java.lang.System: java.lang.String getenv(java.lang.String)>("https_proxy")
+org.apache.zeppelin.notebook.repo.zeppelinhub.rest.ZeppelinhubRestApiHandler.readProxyConf : $z3 = staticinvoke <org.apache.commons.lang.StringUtils: boolean isBlank(java.lang.String)>(r1)
+org.apache.zeppelin.notebook.repo.zeppelinhub.rest.ZeppelinhubRestApiHandler.readProxyConf : $z1 = staticinvoke <org.apache.commons.lang.StringUtils: boolean isBlank(java.lang.String)>(r1)
+org.apache.zeppelin.notebook.repo.zeppelinhub.rest.ZeppelinhubRestApiHandler.readProxyConf : $r6 = staticinvoke <java.lang.System: java.lang.String getenv(java.lang.String)>("http_proxy")
+org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars.getBooleanValue : $z0 = r0.<org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars: boolean booleanValue>
+org.apache.zeppelin.notebook.repo.zeppelinhub.ZeppelinHubRepo.getZeppelinWebsocketUri : if i0 > 0 goto $z0 = virtualinvoke r1.<org.apache.zeppelin.conf.ZeppelinConfiguration: boolean useSsl()>()
+org.apache.zeppelin.notebook.repo.zeppelinhub.ZeppelinHubRepo.getZeppelinWebsocketUri : $z0 = virtualinvoke r1.<org.apache.zeppelin.conf.ZeppelinConfiguration: boolean useSsl()>()
+org.apache.zeppelin.notebook.repo.zeppelinhub.ZeppelinHubRepo.getZeppelinWebsocketUri : i0 = virtualinvoke r1.<org.apache.zeppelin.conf.ZeppelinConfiguration: int getServerPort()>()
+org.apache.zeppelin.notebook.repo.zeppelinhub.ZeppelinHubRepo.getZeppelinWebsocketUri : $r4 = new java.lang.StringBuilder
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient.start : specialinvoke r0.<org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient: void addRoutines()>()
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient.start : $r3 = r0.<org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient: org.eclipse.jetty.websocket.client.WebSocketClient wsClient>
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient.start : $r2 = r0.<org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient: org.eclipse.jetty.websocket.client.WebSocketClient wsClient>
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient.start : goto [?= return]
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient.createNewWebsocketClient : virtualinvoke r3.<org.eclipse.jetty.websocket.client.WebSocketClient: void setMaxIdleTimeout(long)>(300000L)
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient.createNewWebsocketClient : return r3
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient.createNewWebsocketClient : $r4 = new org.eclipse.jetty.websocket.client.WebSocketClient
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient.createNewWebsocketClient : $i0 = staticinvoke <org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.Client: int getMaxNoteSize()>()
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient.createNewWebsocketClient : $r5 = virtualinvoke r3.<org.eclipse.jetty.websocket.client.WebSocketClient: org.eclipse.jetty.websocket.api.WebSocketPolicy getPolicy()>()
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient.createNewWebsocketClient : $r1 = new org.eclipse.jetty.util.ssl.SslContextFactory
+org.apache.zeppelin.notebook.repo.zeppelinhub.rest.ZeppelinhubRestApiHandler.getAsyncClient : return r3
+org.apache.zeppelin.notebook.repo.zeppelinhub.rest.ZeppelinhubRestApiHandler.getAsyncClient : $r4 = new org.eclipse.jetty.client.HttpClient
+org.apache.zeppelin.notebook.repo.zeppelinhub.rest.ZeppelinhubRestApiHandler.getAsyncClient : $r1 = new org.eclipse.jetty.util.ssl.SslContextFactory
+org.apache.zeppelin.notebook.repo.zeppelinhub.rest.ZeppelinhubRestApiHandler.getAsyncClient : virtualinvoke r3.<org.eclipse.jetty.client.HttpClient: void setMaxConnectionsPerDestination(int)>(100)
+org.apache.zeppelin.notebook.repo.zeppelinhub.rest.ZeppelinhubRestApiHandler.getAsyncClient : virtualinvoke r3.<org.eclipse.jetty.client.HttpClient: void setFollowRedirects(boolean)>(0)
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.protocol.ZeppelinhubMessage.newMessage : $r3 = new org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.protocol.ZeppelinhubMessage
+org.apache.zeppelin.conf.ZeppelinConfiguration.getString : $r4 = staticinvoke <java.lang.System: java.lang.String getenv(java.lang.String)>(r1)
+org.apache.zeppelin.conf.ZeppelinConfiguration.getString : $r8 = specialinvoke r0.<org.apache.zeppelin.conf.ZeppelinConfiguration: java.lang.String getStringValue(java.lang.String,java.lang.String)>(r2, r3)
+org.apache.zeppelin.conf.ZeppelinConfiguration.getString : $r6 = staticinvoke <java.lang.System: java.lang.String getProperty(java.lang.String)>(r2)
+org.apache.zeppelin.conf.ZeppelinConfiguration.getString : $r7 = staticinvoke <java.lang.System: java.lang.String getProperty(java.lang.String)>(r2)
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.scheduler.SchedulerService.add : $r3 = r0.<org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.scheduler.SchedulerService: java.util.concurrent.ScheduledExecutorService pool>
+org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars.getIntValue : $i0 = r0.<org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars: int intValue>
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.scheduler.SchedulerService.getInstance : $r0 = <org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.scheduler.SchedulerService: org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.scheduler.SchedulerService instance>
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.scheduler.SchedulerService.getInstance : $r2 = <org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.scheduler.SchedulerService: org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.scheduler.SchedulerService instance>
+org.apache.zeppelin.conf.ZeppelinConfiguration.getIntValue : goto [?= $z1 = interfaceinvoke r3.<java.util.Iterator: boolean hasNext()>()]
+org.apache.zeppelin.conf.ZeppelinConfiguration.getIntValue : return i0
+org.apache.zeppelin.conf.ZeppelinConfiguration.getIntValue : r3 = interfaceinvoke r2.<java.util.List: java.util.Iterator iterator()>()
+org.apache.zeppelin.conf.ZeppelinConfiguration.getIntValue : if r2 == null goto return i0
+org.apache.zeppelin.conf.ZeppelinConfiguration.getIntValue : $r5 = virtualinvoke r0.<org.apache.zeppelin.conf.ZeppelinConfiguration: org.apache.commons.configuration.tree.ConfigurationNode getRootNode()>()
+org.apache.zeppelin.conf.ZeppelinConfiguration.getIntValue : $r7 = interfaceinvoke r4.<org.apache.commons.configuration.tree.ConfigurationNode: java.util.List getChildren(java.lang.String)>("name")
+org.apache.zeppelin.conf.ZeppelinConfiguration.getStringValue : return r2
+org.apache.zeppelin.conf.ZeppelinConfiguration.getStringValue : r4 = interfaceinvoke r3.<java.util.List: java.util.Iterator iterator()>()
+org.apache.zeppelin.conf.ZeppelinConfiguration.getStringValue : $r8 = interfaceinvoke r5.<org.apache.commons.configuration.tree.ConfigurationNode: java.util.List getChildren(java.lang.String)>("name")
+org.apache.zeppelin.conf.ZeppelinConfiguration.getStringValue : if r3 == null goto return r2
+org.apache.zeppelin.conf.ZeppelinConfiguration.getStringValue : goto [?= $z1 = interfaceinvoke r4.<java.util.Iterator: boolean hasNext()>()]
+org.apache.zeppelin.conf.ZeppelinConfiguration.getStringValue : $r6 = virtualinvoke r0.<org.apache.zeppelin.conf.ZeppelinConfiguration: org.apache.commons.configuration.tree.ConfigurationNode getRootNode()>()
+org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars.getVarName : $r1 = r0.<org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars: java.lang.String varName>
+org.apache.zeppelin.notebook.repo.zeppelinhub.security.Authentication.initialize : $r3 = new org.apache.zeppelin.notebook.repo.zeppelinhub.security.Authentication
+org.apache.zeppelin.notebook.repo.zeppelinhub.security.Authentication.initialize : $r2 = <org.apache.zeppelin.notebook.repo.zeppelinhub.security.Authentication: org.apache.zeppelin.notebook.repo.zeppelinhub.security.Authentication instance>
+org.apache.zeppelin.notebook.repo.zeppelinhub.security.Authentication.initialize : $r4 = <org.apache.zeppelin.notebook.repo.zeppelinhub.security.Authentication: org.apache.zeppelin.notebook.repo.zeppelinhub.security.Authentication instance>
+org.apache.zeppelin.conf.ZeppelinConfiguration.getServerPort : $r1 = <org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars: org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars ZEPPELIN_PORT>
+org.apache.zeppelin.notebook.repo.zeppelinhub.rest.ZeppelinhubRestApiHandler.newInstance : $r1 = new org.apache.zeppelin.notebook.repo.zeppelinhub.rest.ZeppelinhubRestApiHandler
+org.apache.zeppelin.notebook.NotebookTest.delete : r2 = virtualinvoke r1.<java.io.File: java.io.File[] listFiles()>()
+org.apache.zeppelin.notebook.NotebookTest.delete : $z2 = virtualinvoke r1.<java.io.File: boolean isDirectory()>()
+org.apache.zeppelin.notebook.NotebookTest.delete : if r2 == null goto virtualinvoke r1.<java.io.File: boolean delete()>()
+org.apache.zeppelin.notebook.NotebookTest.delete : virtualinvoke r1.<java.io.File: boolean delete()>()
+org.apache.zeppelin.notebook.NotebookTest.delete : specialinvoke r0.<org.apache.zeppelin.notebook.NotebookTest: void delete(java.io.File)>(r4)
+org.apache.zeppelin.notebook.NotebookTest.delete : r3 = r2
+org.apache.zeppelin.notebook.NotebookTest.delete : $z0 = virtualinvoke r1.<java.io.File: boolean isFile()>()
+org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars.getStringValue : $r1 = r0.<org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars: java.lang.String stringValue>
+org.apache.zeppelin.conf.ZeppelinConfiguration.getInt : $r3 = staticinvoke <java.lang.System: java.lang.String getenv(java.lang.String)>(r1)
+org.apache.zeppelin.conf.ZeppelinConfiguration.getInt : $i3 = specialinvoke r0.<org.apache.zeppelin.conf.ZeppelinConfiguration: int getIntValue(java.lang.String,int)>(r2, i0)
+org.apache.zeppelin.conf.ZeppelinConfiguration.getInt : $r2 = virtualinvoke r1.<org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars: java.lang.String name()>()
+org.apache.zeppelin.conf.ZeppelinConfiguration.getInt : $r5 = staticinvoke <java.lang.System: java.lang.String getProperty(java.lang.String)>(r2)
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.Client.initialize : $r5 = new org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.Client
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.Client.initialize : $r4 = <org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.Client: org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.Client instance>
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.Client.initialize : $r6 = <org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.Client: org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.Client instance>
+org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars.values : $r0 = <org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars: org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars[] $VALUES>
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinhubClient.createNewWebsocketClient : return r3
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinhubClient.createNewWebsocketClient : $l2 = <org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinhubClient: long CONNECTION_IDLE_TIME>
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinhubClient.createNewWebsocketClient : $r4 = new org.eclipse.jetty.websocket.client.WebSocketClient
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinhubClient.createNewWebsocketClient : $i0 = staticinvoke <org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.Client: int getMaxNoteSize()>()
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinhubClient.createNewWebsocketClient : $r5 = virtualinvoke r3.<org.eclipse.jetty.websocket.client.WebSocketClient: org.eclipse.jetty.websocket.api.WebSocketPolicy getPolicy()>()
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinhubClient.createNewWebsocketClient : $r1 = new org.eclipse.jetty.util.ssl.SslContextFactory
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.scheduler.SchedulerService.create : $r1 = new org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.scheduler.SchedulerService
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.scheduler.SchedulerService.create : $r0 = <org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.scheduler.SchedulerService: org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.scheduler.SchedulerService instance>
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.scheduler.SchedulerService.create : $r2 = <org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.scheduler.SchedulerService: org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.scheduler.SchedulerService instance>
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.scheduler.SchedulerService.addOnce : $r3 = r0.<org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.scheduler.SchedulerService: java.util.concurrent.ScheduledExecutorService pool>
+org.apache.zeppelin.notebook.socket.Message$OP.values : $r0 = <org.apache.zeppelin.notebook.socket.Message$OP: org.apache.zeppelin.notebook.socket.Message$OP[] $VALUES>
+org.apache.zeppelin.conf.ZeppelinConfiguration.getBooleanValue : goto [?= $z2 = interfaceinvoke r3.<java.util.Iterator: boolean hasNext()>()]
+org.apache.zeppelin.conf.ZeppelinConfiguration.getBooleanValue : return z0
+org.apache.zeppelin.conf.ZeppelinConfiguration.getBooleanValue : r3 = interfaceinvoke r2.<java.util.List: java.util.Iterator iterator()>()
+org.apache.zeppelin.conf.ZeppelinConfiguration.getBooleanValue : if r2 == null goto return z0
+org.apache.zeppelin.conf.ZeppelinConfiguration.getBooleanValue : $r5 = virtualinvoke r0.<org.apache.zeppelin.conf.ZeppelinConfiguration: org.apache.commons.configuration.tree.ConfigurationNode getRootNode()>()
+org.apache.zeppelin.conf.ZeppelinConfiguration.getBooleanValue : $r7 = interfaceinvoke r4.<org.apache.commons.configuration.tree.ConfigurationNode: java.util.List getChildren(java.lang.String)>("name")
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinhubClient.start : specialinvoke r0.<org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinhubClient: void addRoutines()>()
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinhubClient.start : goto [?= return]
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinhubClient.start : $r2 = r0.<org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinhubClient: org.eclipse.jetty.websocket.client.WebSocketClient client>

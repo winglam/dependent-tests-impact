@@ -1,0 +1,8 @@
+org.apache.zeppelin.dep.TransferListener.pad : r2 = "                                        " >>>>>>>> org.apache.zeppelin.dep.TransferListener.pad : if i0 <= 0
+org.apache.zeppelin.dep.TransferListener.pad : if i0 <= 0 >>>>>>>> org.apache.zeppelin.dep.TransferListener.pad : $i2 = virtualinvoke r2.<java.lang.String: int length()>()
+org.apache.zeppelin.dep.TransferListener.pad : if i0 <= 0 >>>>>>>> org.apache.zeppelin.dep.TransferListener.pad : return
+org.apache.zeppelin.dep.TransferListener.pad : $i2 = virtualinvoke r2.<java.lang.String: int length()>() >>>>>>>> org.apache.zeppelin.dep.TransferListener.pad : i1 = staticinvoke <java.lang.Math: int min(int,int)>(i0, $i2)
+org.apache.zeppelin.dep.TransferListener.pad : i1 = staticinvoke <java.lang.Math: int min(int,int)>(i0, $i2) >>>>>>>> org.apache.zeppelin.dep.TransferListener.pad : virtualinvoke r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.CharSequence,int,int)>(r2, 0, i1)
+org.apache.zeppelin.dep.TransferListener.pad : virtualinvoke r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.CharSequence,int,int)>(r2, 0, i1) >>>>>>>> org.apache.zeppelin.dep.TransferListener.pad : i0 = i0 - i1
+org.apache.zeppelin.dep.TransferListener.pad : i0 = i0 - i1 >>>>>>>> org.apache.zeppelin.dep.TransferListener.pad : goto [?= (branch)]
+org.apache.zeppelin.dep.TransferListener.pad : goto [?= (branch)] >>>>>>>> org.apache.zeppelin.dep.TransferListener.pad : if i0 <= 0

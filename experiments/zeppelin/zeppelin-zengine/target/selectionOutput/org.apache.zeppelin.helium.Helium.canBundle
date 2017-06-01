@@ -1,0 +1,11 @@
+org.apache.zeppelin.helium.Helium.canBundle : $z0 = virtualinvoke r1.<org.apache.zeppelin.helium.HeliumPackageSearchResult: boolean isEnabled()>() >>>>>>>> org.apache.zeppelin.helium.Helium.canBundle : if $z0 == 0
+org.apache.zeppelin.helium.Helium.canBundle : if $z0 == 0 >>>>>>>> org.apache.zeppelin.helium.Helium.canBundle : $r2 = virtualinvoke r1.<org.apache.zeppelin.helium.HeliumPackageSearchResult: org.apache.zeppelin.helium.HeliumPackage getPkg()>()
+org.apache.zeppelin.helium.Helium.canBundle : if $z0 == 0 >>>>>>>> org.apache.zeppelin.helium.Helium.canBundle : $z2 = 0
+org.apache.zeppelin.helium.Helium.canBundle : $z2 = 0 >>>>>>>> org.apache.zeppelin.helium.Helium.canBundle : return $z2
+org.apache.zeppelin.helium.Helium.canBundle : $r2 = virtualinvoke r1.<org.apache.zeppelin.helium.HeliumPackageSearchResult: org.apache.zeppelin.helium.HeliumPackage getPkg()>() >>>>>>>> org.apache.zeppelin.helium.Helium.canBundle : $r3 = virtualinvoke $r2.<org.apache.zeppelin.helium.HeliumPackage: org.apache.zeppelin.helium.HeliumType getType()>()
+org.apache.zeppelin.helium.Helium.canBundle : $r3 = virtualinvoke $r2.<org.apache.zeppelin.helium.HeliumPackage: org.apache.zeppelin.helium.HeliumType getType()>() >>>>>>>> org.apache.zeppelin.helium.Helium.canBundle : $z1 = staticinvoke <org.apache.zeppelin.helium.HeliumPackage: boolean isBundleType(org.apache.zeppelin.helium.HeliumType)>($r3)
+org.apache.zeppelin.helium.Helium.canBundle : $z1 = staticinvoke <org.apache.zeppelin.helium.HeliumPackage: boolean isBundleType(org.apache.zeppelin.helium.HeliumType)>($r3) >>>>>>>> org.apache.zeppelin.helium.Helium.canBundle : if $z1 == 0
+org.apache.zeppelin.helium.Helium.canBundle : if $z1 == 0 >>>>>>>> org.apache.zeppelin.helium.Helium.canBundle : $z2 = 1
+org.apache.zeppelin.helium.Helium.canBundle : if $z1 == 0 >>>>>>>> org.apache.zeppelin.helium.Helium.canBundle : $z2 = 0
+org.apache.zeppelin.helium.Helium.canBundle : $z2 = 1 >>>>>>>> org.apache.zeppelin.helium.Helium.canBundle : goto [?= return $z2]
+org.apache.zeppelin.helium.Helium.canBundle : goto [?= return $z2] >>>>>>>> org.apache.zeppelin.helium.Helium.canBundle : return $z2

@@ -1,0 +1,82 @@
+org.apache.zeppelin.notebook.repo.VFSNotebookRepo.setNotebookDirectory : $r18 = staticinvoke <org.apache.commons.vfs2.VFS: org.apache.commons.vfs2.FileSystemManager getManager()>()
+org.apache.zeppelin.notebook.repo.VFSNotebookRepo.setNotebookDirectory : $r19 = r0.<org.apache.zeppelin.notebook.repo.VFSNotebookRepo: org.apache.commons.vfs2.FileSystemManager fsManager>
+org.apache.zeppelin.notebook.repo.VFSNotebookRepo.setNotebookDirectory : interfaceinvoke r22.<org.apache.commons.vfs2.FileObject: void createFolder()>()
+org.apache.zeppelin.notebook.repo.VFSNotebookRepo.setNotebookDirectory : $r17 = virtualinvoke r16.<java.io.File: java.net.URI toURI()>()
+org.apache.zeppelin.notebook.repo.VFSNotebookRepo.setNotebookDirectory : $r9 = r0.<org.apache.zeppelin.notebook.repo.VFSNotebookRepo: java.net.URI filesystemRoot>
+org.apache.zeppelin.notebook.repo.VFSNotebookRepo.setNotebookDirectory : $r3 = r0.<org.apache.zeppelin.notebook.repo.VFSNotebookRepo: org.apache.zeppelin.conf.ZeppelinConfiguration conf>
+org.apache.zeppelin.notebook.repo.VFSNotebookRepo.setNotebookDirectory : $r11 = new java.io.File
+org.apache.zeppelin.notebook.repo.VFSNotebookRepo.setNotebookDirectory : $r6 = new java.net.URI
+org.apache.zeppelin.notebook.repo.VFSNotebookRepo.setNotebookDirectory : $z1 = interfaceinvoke r22.<org.apache.commons.vfs2.FileObject: boolean exists()>()
+org.apache.zeppelin.notebook.repo.VFSNotebookRepo.setNotebookDirectory : goto [?= $r9 = r0.<org.apache.zeppelin.notebook.repo.VFSNotebookRepo: java.net.URI filesystemRoot>]
+org.apache.zeppelin.notebook.repo.VFSNotebookRepo.setNotebookDirectory : $r23 = <org.apache.zeppelin.notebook.repo.VFSNotebookRepo: org.slf4j.Logger LOG>
+org.apache.zeppelin.notebook.repo.NotebookRepoSyncTest.delete : r2 = r1
+org.apache.zeppelin.notebook.repo.NotebookRepoSyncTest.delete : if r1 == null goto virtualinvoke r0.<java.io.File: boolean delete()>()
+org.apache.zeppelin.notebook.repo.NotebookRepoSyncTest.delete : $z0 = virtualinvoke r0.<java.io.File: boolean isFile()>()
+org.apache.zeppelin.notebook.repo.NotebookRepoSyncTest.delete : virtualinvoke r0.<java.io.File: boolean delete()>()
+org.apache.zeppelin.notebook.repo.NotebookRepoSyncTest.delete : staticinvoke <org.apache.zeppelin.notebook.repo.NotebookRepoSyncTest: void delete(java.io.File)>(r3)
+org.apache.zeppelin.notebook.repo.NotebookRepoSyncTest.delete : r1 = virtualinvoke r0.<java.io.File: java.io.File[] listFiles()>()
+org.apache.zeppelin.notebook.repo.NotebookRepoSyncTest.delete : $z2 = virtualinvoke r0.<java.io.File: boolean isDirectory()>()
+org.apache.zeppelin.interpreter.InterpreterSettingManager.init : $r54 = <org.apache.zeppelin.interpreter.Interpreter: java.util.Map registeredInterpreters>
+org.apache.zeppelin.interpreter.InterpreterSettingManager.init : $r12 = r0.<org.apache.zeppelin.interpreter.InterpreterSettingManager: org.apache.zeppelin.conf.ZeppelinConfiguration zeppelinConfiguration>
+org.apache.zeppelin.interpreter.InterpreterSettingManager.init : $r80 = r0.<org.apache.zeppelin.interpreter.InterpreterSettingManager: java.util.Map interpreterSettings>
+org.apache.zeppelin.interpreter.InterpreterSettingManager.init : $r70 = r0.<org.apache.zeppelin.interpreter.InterpreterSettingManager: java.util.Map interpreterSettingsRef>
+org.apache.zeppelin.interpreter.InterpreterSettingManager.init : $r14 = r0.<org.apache.zeppelin.interpreter.InterpreterSettingManager: java.nio.file.Path interpreterDirPath>
+org.apache.zeppelin.interpreter.InterpreterSettingManager.init : $r44 = <org.apache.zeppelin.interpreter.Interpreter: java.util.Map registeredInterpreters>
+org.apache.zeppelin.interpreter.InterpreterSettingManager.init : virtualinvoke r0.<org.apache.zeppelin.interpreter.InterpreterSettingManager: void saveToFile()>()
+org.apache.zeppelin.interpreter.InterpreterSettingManager.init : r91 = r0.<org.apache.zeppelin.interpreter.InterpreterSettingManager: java.lang.String[] interpreterGroupOrderList>
+org.apache.zeppelin.interpreter.InterpreterSettingManager.init : $r99 = interfaceinvoke r82.<java.util.Map: java.util.Collection values()>()
+org.apache.zeppelin.interpreter.InterpreterSettingManager.init : specialinvoke r0.<org.apache.zeppelin.interpreter.InterpreterSettingManager: void loadFromFile()>()
+org.apache.zeppelin.interpreter.InterpreterSettingManager.init : $r81 = new java.util.HashMap
+org.apache.zeppelin.interpreter.InterpreterSettingManager.init : $r83 = r0.<org.apache.zeppelin.interpreter.InterpreterSettingManager: java.util.Map interpreterSettingsRef>
+org.apache.zeppelin.interpreter.InterpreterSettingManager.init : $r13 = staticinvoke <java.lang.Thread: java.lang.Thread currentThread()>()
+org.apache.zeppelin.interpreter.InterpreterSettingManager.init : $r93 = interfaceinvoke r82.<java.util.Map: java.lang.Object remove(java.lang.Object)>(r92)
+org.apache.zeppelin.conf.ZeppelinConfiguration.create : $r4 = <org.apache.zeppelin.conf.ZeppelinConfiguration: org.apache.zeppelin.conf.ZeppelinConfiguration conf>
+org.apache.zeppelin.conf.ZeppelinConfiguration.create : $r0 = <org.apache.zeppelin.conf.ZeppelinConfiguration: org.apache.zeppelin.conf.ZeppelinConfiguration conf>
+org.apache.zeppelin.conf.ZeppelinConfiguration.isWindowsPath : $z0 = virtualinvoke r1.<java.lang.String: boolean matches(java.lang.String)>("^[A-Za-z]:\\\\.*")
+org.apache.zeppelin.conf.ZeppelinConfiguration.getConfDir : $r1 = <org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars: org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars ZEPPELIN_CONF_DIR>
+org.apache.zeppelin.conf.ZeppelinConfiguration.getBoolean : $r3 = staticinvoke <java.lang.System: java.lang.String getenv(java.lang.String)>(r1)
+org.apache.zeppelin.conf.ZeppelinConfiguration.getBoolean : $r6 = staticinvoke <java.lang.System: java.lang.String getProperty(java.lang.String)>(r2)
+org.apache.zeppelin.conf.ZeppelinConfiguration.getBoolean : $r2 = virtualinvoke r1.<org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars: java.lang.String name()>()
+org.apache.zeppelin.conf.ZeppelinConfiguration.getBoolean : $r5 = staticinvoke <java.lang.System: java.lang.String getProperty(java.lang.String)>(r2)
+org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars.getBooleanValue : $z0 = r0.<org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars: boolean booleanValue>
+org.apache.zeppelin.notebook.repo.NotebookRepoSync.getRepo : if i0 < 0 goto $r2 = new java.io.IOException
+org.apache.zeppelin.notebook.repo.NotebookRepoSync.getRepo : $r9 = r0.<org.apache.zeppelin.notebook.repo.NotebookRepoSync: java.util.List repos>
+org.apache.zeppelin.conf.ZeppelinConfiguration.getString : $r4 = staticinvoke <java.lang.System: java.lang.String getenv(java.lang.String)>(r1)
+org.apache.zeppelin.conf.ZeppelinConfiguration.getString : $r8 = specialinvoke r0.<org.apache.zeppelin.conf.ZeppelinConfiguration: java.lang.String getStringValue(java.lang.String,java.lang.String)>(r2, r3)
+org.apache.zeppelin.conf.ZeppelinConfiguration.getString : $r6 = staticinvoke <java.lang.System: java.lang.String getProperty(java.lang.String)>(r2)
+org.apache.zeppelin.conf.ZeppelinConfiguration.getString : $r7 = staticinvoke <java.lang.System: java.lang.String getProperty(java.lang.String)>(r2)
+org.apache.zeppelin.conf.ZeppelinConfiguration.getString : $r2 = virtualinvoke r1.<org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars: java.lang.String name()>()
+org.apache.zeppelin.conf.ZeppelinConfiguration.getNotebookDir : $r1 = <org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars: org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars ZEPPELIN_NOTEBOOK_DIR>
+org.apache.zeppelin.conf.ZeppelinConfiguration.getInterpreterSettingPath : $r1 = newarray (java.lang.Object)[1]
+org.apache.zeppelin.interpreter.InterpreterSettingManager.saveToFile : $r5 = r0.<org.apache.zeppelin.interpreter.InterpreterSettingManager: java.util.Map interpreterSettings>
+org.apache.zeppelin.interpreter.InterpreterSettingManager.saveToFile : exitmonitor r1
+org.apache.zeppelin.interpreter.InterpreterSettingManager.saveToFile : $r9 = r0.<org.apache.zeppelin.interpreter.InterpreterSettingManager: java.util.List interpreterRepositories>
+org.apache.zeppelin.interpreter.InterpreterSettingManager.saveToFile : $r8 = r0.<org.apache.zeppelin.interpreter.InterpreterSettingManager: java.util.Map interpreterSettings>
+org.apache.zeppelin.interpreter.InterpreterSettingManager.saveToFile : $r7 = r0.<org.apache.zeppelin.interpreter.InterpreterSettingManager: java.util.Map interpreterBindings>
+org.apache.zeppelin.interpreter.InterpreterSettingManager.saveToFile : $r12 = r0.<org.apache.zeppelin.interpreter.InterpreterSettingManager: java.nio.file.Path interpreterBindingPath>
+org.apache.zeppelin.interpreter.InterpreterSettingManager.saveToFile : $r6 = new org.apache.zeppelin.interpreter.InterpreterInfoSaving
+org.apache.zeppelin.interpreter.InterpreterSettingManager.saveToFile : $r10 = r0.<org.apache.zeppelin.interpreter.InterpreterSettingManager: com.google.gson.Gson gson>
+org.apache.zeppelin.interpreter.InterpreterSettingManager.saveToFile : $r14 = r0.<org.apache.zeppelin.interpreter.InterpreterSettingManager: java.nio.file.Path interpreterBindingPath>
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.mock.MockEchoWebsocketServer.start : $r3 = r0.<org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.mock.MockEchoWebsocketServer: org.eclipse.jetty.server.Server server>
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.mock.MockEchoWebsocketServer.start : $r2 = r0.<org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.mock.MockEchoWebsocketServer: org.eclipse.jetty.server.Server server>
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.mock.MockEchoWebsocketServer.start : $r1 = <org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.mock.MockEchoWebsocketServer: org.slf4j.Logger LOG>
+org.apache.zeppelin.conf.ZeppelinConfiguration.getInterpreterDir : $r1 = <org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars: org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars ZEPPELIN_INTERPRETER_DIR>
+org.apache.zeppelin.conf.ZeppelinConfiguration.getRelativeDir : $r3 = new java.lang.StringBuilder
+org.apache.zeppelin.conf.ZeppelinConfiguration.getRelativeDir : $r2 = virtualinvoke r0.<org.apache.zeppelin.conf.ZeppelinConfiguration: java.lang.String getString(org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars)>(r1)
+org.apache.zeppelin.conf.ZeppelinConfiguration.getRelativeDir : if r1 == null goto $z1 = virtualinvoke r0.<org.apache.zeppelin.conf.ZeppelinConfiguration: boolean isWindowsPath(java.lang.String)>(r1)
+org.apache.zeppelin.conf.ZeppelinConfiguration.getRelativeDir : return r1
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.mock.MockEchoWebsocketServer.run : virtualinvoke r0.<org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.mock.MockEchoWebsocketServer: void start()>()
+org.apache.zeppelin.conf.ZeppelinConfiguration.getStringValue : return r2
+org.apache.zeppelin.conf.ZeppelinConfiguration.getStringValue : r4 = interfaceinvoke r3.<java.util.List: java.util.Iterator iterator()>()
+org.apache.zeppelin.conf.ZeppelinConfiguration.getStringValue : $r8 = interfaceinvoke r5.<org.apache.commons.configuration.tree.ConfigurationNode: java.util.List getChildren(java.lang.String)>("name")
+org.apache.zeppelin.conf.ZeppelinConfiguration.getStringValue : if r3 == null goto return r2
+org.apache.zeppelin.conf.ZeppelinConfiguration.getStringValue : goto [?= $z1 = interfaceinvoke r4.<java.util.Iterator: boolean hasNext()>()]
+org.apache.zeppelin.conf.ZeppelinConfiguration.getStringValue : $r6 = virtualinvoke r0.<org.apache.zeppelin.conf.ZeppelinConfiguration: org.apache.commons.configuration.tree.ConfigurationNode getRootNode()>()
+org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars.getVarName : $r1 = r0.<org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars: java.lang.String varName>
+org.apache.zeppelin.notebook.repo.NotebookRepoSync.getMaxRepoNum : return 2
+org.apache.zeppelin.notebook.repo.NotebookRepoSync.getRepoCount : $r1 = r0.<org.apache.zeppelin.notebook.repo.NotebookRepoSync: java.util.List repos>
+org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars.getStringValue : $r1 = r0.<org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars: java.lang.String stringValue>
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.mock.MockEchoWebsocketServer.stop : $r2 = r0.<org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.mock.MockEchoWebsocketServer: org.eclipse.jetty.server.Server server>
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.mock.MockEchoWebsocketServer.stop : $r1 = <org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.mock.MockEchoWebsocketServer: org.slf4j.Logger LOG>
+org.apache.zeppelin.conf.ZeppelinConfiguration.getInterpreterJson : $r1 = <org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars: org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars ZEPPELIN_INTERPRETER_JSON>
+org.apache.zeppelin.interpreter.InterpreterSettingManager.loadFromFile : $r17 = r0.<org.apache.zeppelin.interpreter.InterpreterSettingManager: java.nio.file.Path interpreterBindingPath>

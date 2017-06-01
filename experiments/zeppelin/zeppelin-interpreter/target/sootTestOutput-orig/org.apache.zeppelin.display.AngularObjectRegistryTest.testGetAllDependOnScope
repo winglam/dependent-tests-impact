@@ -1,0 +1,37 @@
+org.apache.zeppelin.display.AngularObjectRegistry.getRegistryForKey : $r8 = r0.<org.apache.zeppelin.display.AngularObjectRegistry: java.util.Map registry>
+org.apache.zeppelin.display.AngularObjectRegistry.getRegistryForKey : $r7 = r0.<org.apache.zeppelin.display.AngularObjectRegistry: java.util.Map registry>
+org.apache.zeppelin.display.AngularObjectRegistry.getRegistryForKey : $r11 = r0.<org.apache.zeppelin.display.AngularObjectRegistry: java.util.Map registry>
+org.apache.zeppelin.display.AngularObjectRegistry.getRegistryForKey : r4 = specialinvoke r0.<org.apache.zeppelin.display.AngularObjectRegistry: java.lang.String getRegistryKey(java.lang.String,java.lang.String)>(r1, r2)
+org.apache.zeppelin.display.AngularObjectRegistry.getRegistryForKey : $r6 = r0.<org.apache.zeppelin.display.AngularObjectRegistry: java.util.Map registry>
+org.apache.zeppelin.display.AngularObjectRegistry.getAll : return r4
+org.apache.zeppelin.display.AngularObjectRegistry.getAll : r6 = specialinvoke r0.<org.apache.zeppelin.display.AngularObjectRegistry: java.util.Map getRegistryForKey(java.lang.String,java.lang.String)>(r1, r2)
+org.apache.zeppelin.display.AngularObjectRegistry.getAll : $r3 = new java.util.LinkedList
+org.apache.zeppelin.display.AngularObjectRegistry.getAll : $r8 = r0.<org.apache.zeppelin.display.AngularObjectRegistry: java.util.Map registry>
+org.apache.zeppelin.display.AngularObjectRegistry.getAll : exitmonitor r5
+org.apache.zeppelin.display.AngularObjectRegistry.getAll : if r6 == null goto exitmonitor r5
+org.apache.zeppelin.display.AngularObjectRegistry.getAll : $r9 = interfaceinvoke r6.<java.util.Map: java.util.Collection values()>()
+org.apache.zeppelin.display.AngularObjectRegistry.getAllWithGlobal : goto [?= $z1 = interfaceinvoke r6.<java.util.Iterator: boolean hasNext()>()]
+org.apache.zeppelin.display.AngularObjectRegistry.getAllWithGlobal : return r3
+org.apache.zeppelin.display.AngularObjectRegistry.getAllWithGlobal : $z2 = virtualinvoke r7.<java.lang.String: boolean startsWith(java.lang.String)>(r1)
+org.apache.zeppelin.display.AngularObjectRegistry.getAllWithGlobal : $r11 = r0.<org.apache.zeppelin.display.AngularObjectRegistry: java.util.Map registry>
+org.apache.zeppelin.display.AngularObjectRegistry.getAllWithGlobal : r5 = specialinvoke r0.<org.apache.zeppelin.display.AngularObjectRegistry: java.util.Map getRegistryForKey(java.lang.String,java.lang.String)>(null, null)
+org.apache.zeppelin.display.AngularObjectRegistry.getAllWithGlobal : if r5 == null goto $r11 = r0.<org.apache.zeppelin.display.AngularObjectRegistry: java.util.Map registry>
+org.apache.zeppelin.display.AngularObjectRegistry.getAllWithGlobal : exitmonitor r4
+org.apache.zeppelin.display.AngularObjectRegistry.getAllWithGlobal : $r14 = r0.<org.apache.zeppelin.display.AngularObjectRegistry: java.util.Map registry>
+org.apache.zeppelin.display.AngularObjectRegistry.getAllWithGlobal : $r2 = new java.util.LinkedList
+org.apache.zeppelin.display.AngularObjectRegistry.getAllWithGlobal : $r9 = r0.<org.apache.zeppelin.display.AngularObjectRegistry: java.util.Map registry>
+org.apache.zeppelin.display.AngularObjectRegistry.getAllWithGlobal : $r10 = interfaceinvoke r5.<java.util.Map: java.util.Collection values()>()
+org.apache.zeppelin.display.AngularObjectRegistry.getRegistryKey : $r3 = new java.lang.StringBuilder
+org.apache.zeppelin.display.AngularObjectRegistry.getRegistryKey : return "_GLOBAL_"
+org.apache.zeppelin.display.AngularObjectRegistry.getRegistryKey : if r1 != null goto (branch)
+org.apache.zeppelin.display.AngularObjectRegistry.getRegistryKey : return r1
+org.apache.zeppelin.display.AngularObjectRegistry.getRegistryKey : if r2 != null goto $r3 = new java.lang.StringBuilder
+org.apache.zeppelin.display.AngularObjectRegistry.add : $r11 = r0.<org.apache.zeppelin.display.AngularObjectRegistry: org.apache.zeppelin.display.AngularObjectRegistryListener listener>
+org.apache.zeppelin.display.AngularObjectRegistry.add : return r5
+org.apache.zeppelin.display.AngularObjectRegistry.add : interfaceinvoke r7.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>(r1, r5)
+org.apache.zeppelin.display.AngularObjectRegistry.add : $r5 = virtualinvoke r0.<org.apache.zeppelin.display.AngularObjectRegistry: org.apache.zeppelin.display.AngularObject add(java.lang.String,java.lang.Object,java.lang.String,java.lang.String,boolean)>(r1, r2, r3, r4, 1)
+org.apache.zeppelin.display.AngularObjectRegistry.add : exitmonitor r6
+org.apache.zeppelin.display.AngularObjectRegistry.add : r5 = virtualinvoke r0.<org.apache.zeppelin.display.AngularObjectRegistry: org.apache.zeppelin.display.AngularObject createNewAngularObject(java.lang.String,java.lang.Object,java.lang.String,java.lang.String)>(r1, r2, r3, r4)
+org.apache.zeppelin.display.AngularObjectRegistry.add : $r9 = r0.<org.apache.zeppelin.display.AngularObjectRegistry: java.util.Map registry>
+org.apache.zeppelin.display.AngularObjectRegistry.add : r7 = specialinvoke r0.<org.apache.zeppelin.display.AngularObjectRegistry: java.util.Map getRegistryForKey(java.lang.String,java.lang.String)>(r3, r4)
+org.apache.zeppelin.display.AngularObjectRegistry.createNewAngularObject : $r5 = new org.apache.zeppelin.display.AngularObject

@@ -1,0 +1,165 @@
+org.apache.zeppelin.search.LuceneSearchTest.newNote : return r6
+org.apache.zeppelin.search.LuceneSearchTest.newNote : virtualinvoke r6.<org.apache.zeppelin.notebook.Note: void setName(java.lang.String)>(r1)
+org.apache.zeppelin.search.LuceneSearchTest.newNote : $r2 = new org.apache.zeppelin.notebook.Note
+org.apache.zeppelin.notebook.Note.insertNewParagraph : return r2
+org.apache.zeppelin.notebook.Note.insertNewParagraph : r2 = specialinvoke r0.<org.apache.zeppelin.notebook.Note: org.apache.zeppelin.notebook.Paragraph createParagraph(int,org.apache.zeppelin.user.AuthenticationInfo)>(i0, r1)
+org.apache.zeppelin.notebook.Note.insertNewParagraph : virtualinvoke r0.<org.apache.zeppelin.notebook.Note: void insertParagraph(org.apache.zeppelin.notebook.Paragraph,int)>(r2, i0)
+org.apache.zeppelin.search.LuceneSearchTest.newNoteWithParagraph : return r3
+org.apache.zeppelin.search.LuceneSearchTest.newNoteWithParagraph : specialinvoke r0.<org.apache.zeppelin.search.LuceneSearchTest: org.apache.zeppelin.notebook.Paragraph addParagraphWithText(org.apache.zeppelin.notebook.Note,java.lang.String)>(r3, r2)
+org.apache.zeppelin.search.LuceneSearchTest.newNoteWithParagraph : r3 = specialinvoke r0.<org.apache.zeppelin.search.LuceneSearchTest: org.apache.zeppelin.notebook.Note newNote(java.lang.String)>(r1)
+org.apache.zeppelin.notebook.Paragraph.setAuthenticationInfo : $r2 = virtualinvoke r1.<org.apache.zeppelin.user.AuthenticationInfo: java.lang.String getUser()>()
+org.apache.zeppelin.notebook.Paragraph.setAuthenticationInfo : r0.<org.apache.zeppelin.notebook.Paragraph: org.apache.zeppelin.user.AuthenticationInfo authenticationInfo> = r1
+org.apache.zeppelin.search.LuceneSearchTest.addParagraphWithText : return r4
+org.apache.zeppelin.search.LuceneSearchTest.addParagraphWithText : virtualinvoke r4.<org.apache.zeppelin.notebook.Paragraph: void setText(java.lang.String)>(r2)
+org.apache.zeppelin.search.LuceneSearchTest.addParagraphWithText : $r3 = <org.apache.zeppelin.user.AuthenticationInfo: org.apache.zeppelin.user.AuthenticationInfo ANONYMOUS>
+org.apache.zeppelin.notebook.Note.setParagraphMagic : $z0 = staticinvoke <org.apache.commons.lang.StringUtils: boolean isNotEmpty(java.lang.String)>(r2)
+org.apache.zeppelin.notebook.Note.setParagraphMagic : if i0 != 0 goto $r7 = r0.<org.apache.zeppelin.notebook.Note: java.util.List paragraphs>
+org.apache.zeppelin.notebook.Note.setParagraphMagic : $r3 = r0.<org.apache.zeppelin.notebook.Note: java.util.List paragraphs>
+org.apache.zeppelin.notebook.Note.setParagraphMagic : $r7 = r0.<org.apache.zeppelin.notebook.Note: java.util.List paragraphs>
+org.apache.zeppelin.notebook.Note.getId : $r1 = r0.<org.apache.zeppelin.notebook.Note: java.lang.String id>
+org.apache.zeppelin.notebook.Paragraph.getUser : $r1 = r0.<org.apache.zeppelin.notebook.Paragraph: java.lang.String user>
+org.apache.zeppelin.conf.ZeppelinConfiguration.create : $r4 = <org.apache.zeppelin.conf.ZeppelinConfiguration: org.apache.zeppelin.conf.ZeppelinConfiguration conf>
+org.apache.zeppelin.conf.ZeppelinConfiguration.create : $r0 = <org.apache.zeppelin.conf.ZeppelinConfiguration: org.apache.zeppelin.conf.ZeppelinConfiguration conf>
+org.apache.zeppelin.notebook.Paragraph.getMagic : if r2 == null goto return r1
+org.apache.zeppelin.notebook.Paragraph.getMagic : r2 = virtualinvoke r0.<org.apache.zeppelin.notebook.Paragraph: java.lang.String getText()>()
+org.apache.zeppelin.notebook.Paragraph.getMagic : r1 = ""
+org.apache.zeppelin.notebook.Paragraph.getMagic : return r1
+org.apache.zeppelin.notebook.Note.addNewParagraph : $r2 = r0.<org.apache.zeppelin.notebook.Note: java.util.List paragraphs>
+org.apache.zeppelin.search.LuceneSearch.newDocument : $r20 = virtualinvoke r3.<org.apache.zeppelin.notebook.Paragraph: java.util.Date getDateStarted()>()
+org.apache.zeppelin.search.LuceneSearch.newDocument : return r5
+org.apache.zeppelin.search.LuceneSearch.newDocument : $r23 = new org.apache.lucene.document.TextField
+org.apache.zeppelin.search.LuceneSearch.newDocument : if null == r3 goto $r23 = new org.apache.lucene.document.TextField
+org.apache.zeppelin.search.LuceneSearch.newDocument : goto [?= return r5]
+org.apache.zeppelin.search.LuceneSearch.newDocument : $r11 = new org.apache.lucene.document.StringField
+org.apache.zeppelin.search.LuceneSearch.newDocument : $r13 = new org.apache.lucene.document.TextField
+org.apache.zeppelin.search.LuceneSearch.newDocument : $r16 = virtualinvoke r3.<org.apache.zeppelin.notebook.Paragraph: java.lang.String getTitle()>()
+org.apache.zeppelin.search.LuceneSearch.newDocument : $r12 = new org.apache.lucene.document.StringField
+org.apache.zeppelin.search.LuceneSearch.newDocument : $r22 = new org.apache.lucene.document.LongField
+org.apache.zeppelin.search.LuceneSearch.newDocument : virtualinvoke r5.<org.apache.lucene.document.Document: void add(org.apache.lucene.index.IndexableField)>(r7)
+org.apache.zeppelin.search.LuceneSearch.newDocument : $r4 = new org.apache.lucene.document.Document
+org.apache.zeppelin.search.LuceneSearchTest.beforeStartUp : $r2 = staticinvoke <org.mockito.Mockito: java.lang.Object mock(java.lang.Class)>(class "org/apache/zeppelin/interpreter/InterpreterFactory")
+org.apache.zeppelin.search.LuceneSearchTest.beforeStartUp : $r4 = staticinvoke <org.mockito.Mockito: java.lang.Object mock(java.lang.Class)>(class "org/apache/zeppelin/interpreter/InterpreterSettingManager")
+org.apache.zeppelin.search.LuceneSearchTest.beforeStartUp : $r0 = staticinvoke <org.mockito.Mockito: java.lang.Object mock(java.lang.Class)>(class "org/apache/zeppelin/notebook/repo/NotebookRepo")
+org.apache.zeppelin.notebook.Note.insertParagraph : $r5 = r0.<org.apache.zeppelin.notebook.Note: java.util.List paragraphs>
+org.apache.zeppelin.notebook.Note.insertParagraph : exitmonitor r2
+org.apache.zeppelin.notebook.Note.insertParagraph : $r7 = r0.<org.apache.zeppelin.notebook.Note: org.apache.zeppelin.notebook.NoteEventListener noteEventListener>
+org.apache.zeppelin.notebook.Note.insertParagraph : $r4 = r0.<org.apache.zeppelin.notebook.Note: java.util.List paragraphs>
+org.apache.zeppelin.notebook.Note.beforeStatusChange : $r5 = r0.<org.apache.zeppelin.notebook.Note: org.apache.zeppelin.notebook.JobListenerFactory jobListenerFactory>
+org.apache.zeppelin.notebook.Paragraph.addUser : $r3 = r0.<org.apache.zeppelin.notebook.Paragraph: java.util.Map userParagraphMap>
+org.apache.zeppelin.notebook.Note.createParagraph : $r2 = new org.apache.zeppelin.notebook.Paragraph
+org.apache.zeppelin.notebook.Note.createParagraph : specialinvoke r0.<org.apache.zeppelin.notebook.Note: void setParagraphMagic(org.apache.zeppelin.notebook.Paragraph,int)>(r3, i0)
+org.apache.zeppelin.notebook.Note.createParagraph : return r3
+org.apache.zeppelin.notebook.Note.createParagraph : virtualinvoke r3.<org.apache.zeppelin.notebook.Paragraph: void setAuthenticationInfo(org.apache.zeppelin.user.AuthenticationInfo)>(r1)
+org.apache.zeppelin.notebook.Note.createParagraph : $r6 = virtualinvoke r3.<org.apache.zeppelin.notebook.Paragraph: java.lang.String getUser()>()
+org.apache.zeppelin.search.LuceneSearch.indexDoc : r6 = specialinvoke r0.<org.apache.zeppelin.search.LuceneSearch: org.apache.lucene.document.Document newDocument(java.lang.String,java.lang.String,org.apache.zeppelin.notebook.Paragraph)>(r5, r3, r4)
+org.apache.zeppelin.search.LuceneSearch.indexDoc : virtualinvoke r1.<org.apache.lucene.index.IndexWriter: void addDocument(java.lang.Iterable)>(r6)
+org.apache.zeppelin.search.LuceneSearch.indexDoc : r5 = staticinvoke <org.apache.zeppelin.search.LuceneSearch: java.lang.String formatId(java.lang.String,org.apache.zeppelin.notebook.Paragraph)>(r2, r4)
+org.apache.zeppelin.notebook.Note.isNameEmpty : $r1 = r0.<org.apache.zeppelin.notebook.Note: java.lang.String name>
+org.apache.zeppelin.notebook.Paragraph.getText : $r1 = r0.<org.apache.zeppelin.notebook.Paragraph: java.lang.String text>
+org.apache.zeppelin.search.LuceneSearchTest.newNoteWithParagraphs : specialinvoke r0.<org.apache.zeppelin.search.LuceneSearchTest: org.apache.zeppelin.notebook.Paragraph addParagraphWithText(org.apache.zeppelin.notebook.Note,java.lang.String)>(r3, r5)
+org.apache.zeppelin.search.LuceneSearchTest.newNoteWithParagraphs : r4 = r2
+org.apache.zeppelin.search.LuceneSearchTest.newNoteWithParagraphs : return r3
+org.apache.zeppelin.search.LuceneSearchTest.newNoteWithParagraphs : r3 = specialinvoke r0.<org.apache.zeppelin.search.LuceneSearchTest: org.apache.zeppelin.notebook.Note newNote(java.lang.String)>(r1)
+org.apache.zeppelin.search.LuceneSearch.formatId : return r2
+org.apache.zeppelin.search.LuceneSearch.formatId : r2 = r0
+org.apache.zeppelin.search.LuceneSearch.formatId : $r3 = staticinvoke <com.google.common.base.Joiner: com.google.common.base.Joiner on(char)>(47)
+org.apache.zeppelin.search.LuceneSearch.formatId : if null == r1 goto return r2
+org.apache.zeppelin.search.LuceneSearch.indexNoteName : $r4 = <org.apache.zeppelin.search.LuceneSearch: org.slf4j.Logger LOG>
+org.apache.zeppelin.search.LuceneSearch.indexNoteName : if null == r3 goto $r5 = <org.apache.zeppelin.search.LuceneSearch: org.slf4j.Logger LOG>
+org.apache.zeppelin.search.LuceneSearch.indexNoteName : specialinvoke r0.<org.apache.zeppelin.search.LuceneSearch: void indexDoc(org.apache.lucene.index.IndexWriter,java.lang.String,java.lang.String,org.apache.zeppelin.notebook.Paragraph)>(r1, r2, r3, null)
+org.apache.zeppelin.search.LuceneSearch.doSearch : return r5
+org.apache.zeppelin.search.LuceneSearch.doSearch : r45 = ""
+org.apache.zeppelin.search.LuceneSearch.doSearch : r7 = virtualinvoke r1.<org.apache.lucene.search.IndexSearcher: org.apache.lucene.document.Document doc(int)>(i1)
+org.apache.zeppelin.search.LuceneSearch.doSearch : r11 = virtualinvoke r7.<org.apache.lucene.document.Document: java.lang.String get(java.lang.String)>("header")
+org.apache.zeppelin.search.LuceneSearch.doSearch : if r8 == null goto $r47 = <org.apache.zeppelin.search.LuceneSearch: org.slf4j.Logger LOG>
+org.apache.zeppelin.search.LuceneSearch.doSearch : $r30 = virtualinvoke r1.<org.apache.lucene.search.IndexSearcher: org.apache.lucene.index.IndexReader getIndexReader()>()
+org.apache.zeppelin.search.LuceneSearch.doSearch : r8 = virtualinvoke r7.<org.apache.lucene.document.Document: java.lang.String get(java.lang.String)>("id")
+org.apache.zeppelin.search.LuceneSearch.doSearch : if r10 == null goto (branch)
+org.apache.zeppelin.search.LuceneSearch.doSearch : r10 = virtualinvoke r7.<org.apache.lucene.document.Document: java.lang.String get(java.lang.String)>("contents")
+org.apache.zeppelin.search.LuceneSearch.doSearch : $r33 = r14[i2]
+org.apache.zeppelin.search.LuceneSearch.doSearch : $r21 = r6[i0]
+org.apache.zeppelin.search.LuceneSearch.doSearch : $r31 = <org.apache.zeppelin.search.LuceneSearch: org.slf4j.Logger LOG>
+org.apache.zeppelin.search.LuceneSearch.doSearch : $r46 = staticinvoke <com.google.common.collect.ImmutableMap: com.google.common.collect.ImmutableMap of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("id", r8, "name", r9, "snippet", r12, "text", r10, "header", r45)
+org.apache.zeppelin.search.LuceneSearch.doSearch : r5 = staticinvoke <com.google.common.collect.Lists: java.util.ArrayList newArrayList()>()
+org.apache.zeppelin.search.LuceneSearch.doSearch : goto [?= return r5]
+org.apache.zeppelin.search.LuceneSearch.doSearch : if r9 == null goto r10 = virtualinvoke r7.<org.apache.lucene.document.Document: java.lang.String get(java.lang.String)>("contents")
+org.apache.zeppelin.search.LuceneSearch.doSearch : if r14 == null goto $r39 = ""
+org.apache.zeppelin.search.LuceneSearch.doSearch : goto [?= i0 = i0 + 1]
+org.apache.zeppelin.search.LuceneSearch.doSearch : $r28 = <org.apache.zeppelin.search.LuceneSearch: org.slf4j.Logger LOG>
+org.apache.zeppelin.search.LuceneSearch.doSearch : r12 = ""
+org.apache.zeppelin.search.LuceneSearch.doSearch : $r16 = <org.apache.zeppelin.search.LuceneSearch: org.slf4j.Logger LOG>
+org.apache.zeppelin.search.LuceneSearch.doSearch : r14 = virtualinvoke r4.<org.apache.lucene.search.highlight.Highlighter: org.apache.lucene.search.highlight.TextFragment[] getBestTextFragments(org.apache.lucene.analysis.TokenStream,java.lang.String,boolean,int)>(r13, r10, 1, 3)
+org.apache.zeppelin.search.LuceneSearch.doSearch : $r22 = <org.apache.zeppelin.search.LuceneSearch: org.slf4j.Logger LOG>
+org.apache.zeppelin.search.LuceneSearch.doSearch : i0 = 0
+org.apache.zeppelin.search.LuceneSearch.doSearch : i2 = 0
+org.apache.zeppelin.search.LuceneSearch.doSearch : r9 = virtualinvoke r7.<org.apache.lucene.document.Document: java.lang.String get(java.lang.String)>("title")
+org.apache.zeppelin.search.LuceneSearch.doSearch : $r35 = <org.apache.zeppelin.search.LuceneSearch: org.slf4j.Logger LOG>
+org.apache.zeppelin.search.LuceneSearch.doSearch : $r15 = virtualinvoke r1.<org.apache.lucene.search.IndexSearcher: org.apache.lucene.search.TopDocs search(org.apache.lucene.search.Query,int)>(r2, 20)
+org.apache.zeppelin.search.LuceneSearch.doSearch : if r11 == null goto r45 = ""
+org.apache.zeppelin.search.LuceneSearch.query : goto [?= return r2]
+org.apache.zeppelin.search.LuceneSearch.query : $r20 = <org.apache.zeppelin.search.LuceneSearch: org.slf4j.Logger LOG>
+org.apache.zeppelin.search.LuceneSearch.query : return r2
+org.apache.zeppelin.search.LuceneSearch.query : if r3 == null goto (branch)
+org.apache.zeppelin.search.LuceneSearch.query : $r17 = new org.apache.lucene.analysis.standard.StandardAnalyzer
+org.apache.zeppelin.search.LuceneSearch.query : $r18 = new org.apache.lucene.queryparser.classic.MultiFieldQueryParser
+org.apache.zeppelin.search.LuceneSearch.query : r2 = staticinvoke <java.util.Collections: java.util.List emptyList()>()
+org.apache.zeppelin.search.LuceneSearch.query : $r15 = r0.<org.apache.zeppelin.search.LuceneSearch: org.apache.lucene.store.Directory ramDirectory>
+org.apache.zeppelin.search.LuceneSearch.query : r2 = specialinvoke r0.<org.apache.zeppelin.search.LuceneSearch: java.util.List doSearch(org.apache.lucene.search.IndexSearcher,org.apache.lucene.search.Query,org.apache.lucene.analysis.Analyzer,org.apache.lucene.search.highlight.Highlighter)>(r5, r8, r6, r10)
+org.apache.zeppelin.search.LuceneSearch.query : r8 = virtualinvoke r7.<org.apache.lucene.queryparser.classic.MultiFieldQueryParser: org.apache.lucene.search.Query parse(java.lang.String)>(r1)
+org.apache.zeppelin.search.LuceneSearch.query : $r13 = r0.<org.apache.zeppelin.search.LuceneSearch: org.apache.lucene.store.Directory ramDirectory>
+org.apache.zeppelin.search.LuceneSearch.query : virtualinvoke r3.<org.apache.lucene.index.IndexReader: void close()>()
+org.apache.zeppelin.search.LuceneSearch.query : $r27 = new org.apache.lucene.search.highlight.Highlighter
+org.apache.zeppelin.search.LuceneSearch.query : $r26 = new org.apache.lucene.search.highlight.SimpleHTMLFormatter
+org.apache.zeppelin.search.LuceneSearch.query : $r16 = new org.apache.lucene.search.IndexSearcher
+org.apache.zeppelin.search.LuceneSearch.addIndexDocs : r2 = interfaceinvoke r1.<java.util.Collection: java.util.Iterator iterator()>()
+org.apache.zeppelin.search.LuceneSearch.addIndexDocs : $r8 = r0.<org.apache.zeppelin.search.LuceneSearch: org.apache.lucene.index.IndexWriter writer>
+org.apache.zeppelin.search.LuceneSearch.addIndexDocs : $r12 = <org.apache.zeppelin.search.LuceneSearch: org.slf4j.Logger LOG>
+org.apache.zeppelin.search.LuceneSearch.addIndexDocs : i0 = i0 + 1
+org.apache.zeppelin.search.LuceneSearch.addIndexDocs : i0 = 0
+org.apache.zeppelin.search.LuceneSearch.addIndexDocs : goto [?= $z0 = interfaceinvoke r2.<java.util.Iterator: boolean hasNext()>()]
+org.apache.zeppelin.search.LuceneSearch.addIndexDocs : goto [?= return]
+org.apache.zeppelin.search.LuceneSearch.addIndexDocs : l2 = staticinvoke <java.lang.System: long nanoTime()>()
+org.apache.zeppelin.search.LuceneSearch.addIndexDocs : specialinvoke r0.<org.apache.zeppelin.search.LuceneSearch: void addIndexDocAsync(org.apache.zeppelin.notebook.Note)>(r3)
+org.apache.zeppelin.search.LuceneSearch.addIndexDocs : goto [?= l2 = staticinvoke <java.lang.System: long nanoTime()>()]
+org.apache.zeppelin.search.LuceneSearch.addIndexDocs : l1 = staticinvoke <java.lang.System: long nanoTime()>()
+org.apache.zeppelin.notebook.Note.setName : r2 = r0.<org.apache.zeppelin.notebook.Note: java.lang.String name>
+org.apache.zeppelin.notebook.Note.setName : r0.<org.apache.zeppelin.notebook.Note: java.lang.String name> = r1
+org.apache.zeppelin.notebook.Note.setName : $r3 = r0.<org.apache.zeppelin.notebook.Note: org.apache.zeppelin.notebook.NoteNameListener noteNameListener>
+org.apache.zeppelin.notebook.Note.setName : $i0 = virtualinvoke r1.<java.lang.String: int indexOf(int)>(47)
+org.apache.zeppelin.search.LuceneSearch.close : $r2 = r0.<org.apache.zeppelin.search.LuceneSearch: org.apache.lucene.index.IndexWriter writer>
+org.apache.zeppelin.search.LuceneSearch.close : goto [?= return]
+org.apache.zeppelin.notebook.Note.generateId : $r1 = staticinvoke <org.apache.zeppelin.notebook.utility.IdHashes: java.lang.String generateId()>()
+org.apache.zeppelin.search.LuceneSearch.addIndexDocAsync : $r9 = virtualinvoke r3.<org.apache.zeppelin.notebook.Paragraph: java.lang.String getText()>()
+org.apache.zeppelin.search.LuceneSearch.addIndexDocAsync : goto [?= $z0 = interfaceinvoke r2.<java.util.Iterator: boolean hasNext()>()]
+org.apache.zeppelin.search.LuceneSearch.addIndexDocAsync : $r7 = virtualinvoke r1.<org.apache.zeppelin.notebook.Note: java.util.List getParagraphs()>()
+org.apache.zeppelin.search.LuceneSearch.addIndexDocAsync : $r11 = r0.<org.apache.zeppelin.search.LuceneSearch: org.apache.lucene.index.IndexWriter writer>
+org.apache.zeppelin.search.LuceneSearch.addIndexDocAsync : $r4 = r0.<org.apache.zeppelin.search.LuceneSearch: org.apache.lucene.index.IndexWriter writer>
+org.apache.zeppelin.notebook.Paragraph.setText : r0.<org.apache.zeppelin.notebook.Paragraph: java.lang.String text> = r1
+org.apache.zeppelin.notebook.Paragraph.setText : $r2 = new java.util.Date
+org.apache.zeppelin.notebook.Paragraph.getTitle : $r1 = r0.<org.apache.zeppelin.notebook.Paragraph: java.lang.String title>
+org.apache.zeppelin.notebook.Note.afterStatusChange : $r5 = r0.<org.apache.zeppelin.notebook.Note: org.apache.zeppelin.notebook.JobListenerFactory jobListenerFactory>
+org.apache.zeppelin.notebook.Note.afterStatusChange : $r7 = r0.<org.apache.zeppelin.notebook.Note: org.apache.zeppelin.notebook.NoteEventListener noteEventListener>
+org.apache.zeppelin.notebook.Note.getParagraphs : $r4 = new java.util.LinkedList
+org.apache.zeppelin.notebook.Note.getParagraphs : $r3 = r0.<org.apache.zeppelin.notebook.Note: java.util.List paragraphs>
+org.apache.zeppelin.notebook.Note.getName : $r2 = r0.<org.apache.zeppelin.notebook.Note: java.lang.String name>
+org.apache.zeppelin.notebook.Note.getName : $z0 = virtualinvoke r0.<org.apache.zeppelin.notebook.Note: boolean isNameEmpty()>()
+org.apache.zeppelin.notebook.utility.IdHashes.encode : $r22 = interfaceinvoke r2.<java.util.List: java.lang.Object get(int)>(i6)
+org.apache.zeppelin.notebook.utility.IdHashes.encode : r6 = virtualinvoke r4.<java.math.BigInteger: java.math.BigInteger pow(int)>(i0)
+org.apache.zeppelin.notebook.utility.IdHashes.encode : r7 = virtualinvoke r5.<java.math.BigInteger: java.math.BigInteger mod(java.math.BigInteger)>(r6)
+org.apache.zeppelin.notebook.utility.IdHashes.encode : $r20 = new java.lang.StringBuffer
+org.apache.zeppelin.notebook.utility.IdHashes.encode : goto [?= $r20 = new java.lang.StringBuffer]
+org.apache.zeppelin.notebook.utility.IdHashes.encode : $r1 = new java.util.ArrayList
+org.apache.zeppelin.notebook.utility.IdHashes.encode : $r19 = <java.math.BigInteger: java.math.BigInteger ZERO>
+org.apache.zeppelin.notebook.utility.IdHashes.encode : i0 = 1
+org.apache.zeppelin.notebook.utility.IdHashes.encode : $r15 = new java.math.BigInteger
+org.apache.zeppelin.notebook.utility.IdHashes.encode : $r17 = <org.apache.zeppelin.notebook.utility.IdHashes: char[] DICTIONARY>
+org.apache.zeppelin.notebook.utility.IdHashes.encode : i0 = i0 + 1
+org.apache.zeppelin.notebook.utility.IdHashes.encode : goto [?= staticinvoke <edu.washington.cs.dt.impact.util.Tracer: void trace(java.lang.String,java.lang.String)>("r6 = virtualinvoke r4.<java.math.BigInteger: java.math.BigInteger pow(int)>(i0)", "org.apache.zeppelin.notebook.utility.IdHashes.encode")]
+org.apache.zeppelin.notebook.utility.IdHashes.encode : r9 = virtualinvoke r7.<java.math.BigInteger: java.math.BigInteger divide(java.math.BigInteger)>(r8)
+org.apache.zeppelin.notebook.utility.IdHashes.encode : $i5 = interfaceinvoke r2.<java.util.List: int size()>()
+org.apache.zeppelin.notebook.utility.IdHashes.encode : r5 = virtualinvoke r5.<java.math.BigInteger: java.math.BigInteger subtract(java.math.BigInteger)>(r7)
+org.apache.zeppelin.notebook.utility.IdHashes.encode : $r24 = virtualinvoke r21.<java.lang.StringBuffer: java.lang.String toString()>()
+org.apache.zeppelin.notebook.utility.IdHashes.encode : $i2 = i0 - 1
+org.apache.zeppelin.notebook.utility.IdHashes.encode : $r10 = new java.math.BigInteger
+org.apache.zeppelin.notebook.utility.IdHashes.generateId : $l0 = staticinvoke <java.lang.System: long currentTimeMillis()>()
+org.apache.zeppelin.notebook.Paragraph.generateId : $r0 = new java.lang.StringBuilder

@@ -1,0 +1,18 @@
+org.apache.zeppelin.notebook.repo.zeppelinhub.security.Authentication.isAuthenticated : $z0 = r0.<org.apache.zeppelin.notebook.repo.zeppelinhub.security.Authentication: boolean authenticated>
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient.initialize : $r5 = <org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient: org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient instance>
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient.initialize : $r3 = <org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient: org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient instance>
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient.credentialsAvailable : $r1 = staticinvoke <org.apache.zeppelin.notebook.repo.zeppelinhub.security.Authentication: org.apache.zeppelin.notebook.repo.zeppelinhub.security.Authentication getInstance()>()
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClientTest.startWebsocketServer : $r2 = new org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.mock.MockEchoWebsocketServer
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClientTest.startWebsocketServer : $r1 = staticinvoke <java.util.concurrent.Executors: java.util.concurrent.ExecutorService newFixedThreadPool(int)>(1)
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClientTest.startWebsocketServer : $r3 = r0.<org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClientTest: java.util.concurrent.ExecutorService executor>
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient.serialize : return r2
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient.serialize : $r9 = <org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient: com.google.gson.Gson gson>
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient.serialize : $z0 = specialinvoke r0.<org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient: boolean credentialsAvailable()>()
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient.deserialize : goto [?= return r2]
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient.deserialize : return r2
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient.deserialize : r3 = $r6
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient.deserialize : $z0 = staticinvoke <org.apache.commons.lang3.StringUtils: boolean isBlank(java.lang.CharSequence)>(r1)
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient.deserialize : r2 = null
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient.deserialize : $r7 = <org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient: org.slf4j.Logger LOG>
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient.deserialize : $r4 = <org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient: com.google.gson.Gson gson>
+org.apache.zeppelin.notebook.repo.zeppelinhub.security.Authentication.getInstance : $r0 = <org.apache.zeppelin.notebook.repo.zeppelinhub.security.Authentication: org.apache.zeppelin.notebook.repo.zeppelinhub.security.Authentication instance>
