@@ -1,0 +1,8 @@
+org.apache.zeppelin.search.LuceneSearch.close : r1 = $r3 >>>>>>>> org.apache.zeppelin.search.LuceneSearch.close : $r4 = <org.apache.zeppelin.search.LuceneSearch: org.slf4j.Logger LOG>
+org.apache.zeppelin.search.LuceneSearch.close : $r4 = <org.apache.zeppelin.search.LuceneSearch: org.slf4j.Logger LOG> >>>>>>>> org.apache.zeppelin.search.LuceneSearch.close : interfaceinvoke $r4.<org.slf4j.Logger: void error(java.lang.String,java.lang.Throwable)>("Failed to .close() the notebook index", r1)
+org.apache.zeppelin.search.LuceneSearch.close : interfaceinvoke $r4.<org.slf4j.Logger: void error(java.lang.String,java.lang.Throwable)>("Failed to .close() the notebook index", r1) >>>>>>>> org.apache.zeppelin.search.LuceneSearch.close : return
+org.apache.zeppelin.search.LuceneSearch.close : $r2 = r0.<org.apache.zeppelin.search.LuceneSearch: org.apache.lucene.index.IndexWriter writer> >>>>>>>> org.apache.zeppelin.search.LuceneSearch.close : virtualinvoke $r2.<org.apache.lucene.index.IndexWriter: void close()>()
+org.apache.zeppelin.search.LuceneSearch.close : $r2 = r0.<org.apache.zeppelin.search.LuceneSearch: org.apache.lucene.index.IndexWriter writer> >>>>>>>> org.apache.zeppelin.search.LuceneSearch.close : $r3 := @caughtexception
+org.apache.zeppelin.search.LuceneSearch.close : virtualinvoke $r2.<org.apache.lucene.index.IndexWriter: void close()>() >>>>>>>> org.apache.zeppelin.search.LuceneSearch.close : goto [?= return]
+org.apache.zeppelin.search.LuceneSearch.close : virtualinvoke $r2.<org.apache.lucene.index.IndexWriter: void close()>() >>>>>>>> org.apache.zeppelin.search.LuceneSearch.close : $r3 := @caughtexception
+org.apache.zeppelin.search.LuceneSearch.close : goto [?= return] >>>>>>>> org.apache.zeppelin.search.LuceneSearch.close : return

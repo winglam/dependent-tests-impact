@@ -1,0 +1,16 @@
+org.apache.zeppelin.notebook.Paragraph.extractVariablesFromAngularRegistry : $r19 = new java.lang.StringBuilder
+org.apache.zeppelin.notebook.Paragraph.extractVariablesFromAngularRegistry : $r13 = virtualinvoke r0.<org.apache.zeppelin.notebook.Paragraph: org.apache.zeppelin.notebook.Note getNote()>()
+org.apache.zeppelin.notebook.Paragraph.extractVariablesFromAngularRegistry : if r11 == null goto (branch)
+org.apache.zeppelin.notebook.Paragraph.extractVariablesFromAngularRegistry : goto [?= $z0 = interfaceinvoke r7.<java.util.Iterator: boolean hasNext()>()]
+org.apache.zeppelin.notebook.Paragraph.extractVariablesFromAngularRegistry : r7 = interfaceinvoke r6.<java.util.Set: java.util.Iterator iterator()>()
+org.apache.zeppelin.notebook.Paragraph.extractVariablesFromAngularRegistry : r5 = virtualinvoke r0.<org.apache.zeppelin.notebook.Paragraph: java.lang.String getId()>()
+org.apache.zeppelin.notebook.Paragraph.extractVariablesFromAngularRegistry : if r9 == null goto $r17 = r10
+org.apache.zeppelin.notebook.Paragraph.extractVariablesFromAngularRegistry : r10 = virtualinvoke r3.<org.apache.zeppelin.display.AngularObjectRegistry: org.apache.zeppelin.display.AngularObject get(java.lang.String,java.lang.String,java.lang.String)>(r8, r4, null)
+org.apache.zeppelin.notebook.Paragraph.extractVariablesFromAngularRegistry : interfaceinvoke r2.<java.util.Map: java.lang.Object remove(java.lang.Object)>(r8)
+org.apache.zeppelin.notebook.Paragraph.extractVariablesFromAngularRegistry : $r14 = new java.util.HashSet
+org.apache.zeppelin.notebook.Paragraph.extractVariablesFromAngularRegistry : return r1
+org.apache.zeppelin.notebook.Paragraph.extractVariablesFromAngularRegistry : r9 = virtualinvoke r3.<org.apache.zeppelin.display.AngularObjectRegistry: org.apache.zeppelin.display.AngularObject get(java.lang.String,java.lang.String,java.lang.String)>(r8, r4, r5)
+org.apache.zeppelin.notebook.Paragraph.extractVariablesFromAngularRegistry : $r23 = virtualinvoke r11.<org.apache.zeppelin.display.AngularObject: java.lang.Object get()>()
+org.apache.zeppelin.notebook.Paragraph.getNote : $r1 = r0.<org.apache.zeppelin.notebook.Paragraph: org.apache.zeppelin.notebook.Note note>
+org.apache.zeppelin.display.AngularObjectBuilder.build : $r4 = new org.apache.zeppelin.display.AngularObject
+org.apache.zeppelin.notebook.Paragraph.generateId : $r0 = new java.lang.StringBuilder

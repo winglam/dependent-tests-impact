@@ -1,0 +1,15 @@
+org.apache.zeppelin.notebook.Paragraph.hasPermission : $i0 = interfaceinvoke r2.<java.util.List: int size()>() >>>>>>>> org.apache.zeppelin.notebook.Paragraph.hasPermission : if 1 <= $i0
+org.apache.zeppelin.notebook.Paragraph.hasPermission : if 1 <= $i0 >>>>>>>> org.apache.zeppelin.notebook.Paragraph.hasPermission : return 1
+org.apache.zeppelin.notebook.Paragraph.hasPermission : if 1 <= $i0 >>>>>>>> org.apache.zeppelin.notebook.Paragraph.hasPermission : r3 = interfaceinvoke r2.<java.util.List: java.util.Iterator iterator()>()
+org.apache.zeppelin.notebook.Paragraph.hasPermission : r3 = interfaceinvoke r2.<java.util.List: java.util.Iterator iterator()>() >>>>>>>> org.apache.zeppelin.notebook.Paragraph.hasPermission : $z0 = interfaceinvoke r3.<java.util.Iterator: boolean hasNext()>()
+org.apache.zeppelin.notebook.Paragraph.hasPermission : $z0 = interfaceinvoke r3.<java.util.Iterator: boolean hasNext()>() >>>>>>>> org.apache.zeppelin.notebook.Paragraph.hasPermission : if $z0 == 0
+org.apache.zeppelin.notebook.Paragraph.hasPermission : if $z0 == 0 >>>>>>>> org.apache.zeppelin.notebook.Paragraph.hasPermission : $r5 = interfaceinvoke r3.<java.util.Iterator: java.lang.Object next()>()
+org.apache.zeppelin.notebook.Paragraph.hasPermission : if $z0 == 0 >>>>>>>> org.apache.zeppelin.notebook.Paragraph.hasPermission : return 0
+org.apache.zeppelin.notebook.Paragraph.hasPermission : $r5 = interfaceinvoke r3.<java.util.Iterator: java.lang.Object next()>() >>>>>>>> org.apache.zeppelin.notebook.Paragraph.hasPermission : r4 = (java.lang.String) $r5
+org.apache.zeppelin.notebook.Paragraph.hasPermission : r4 = (java.lang.String) $r5 >>>>>>>> org.apache.zeppelin.notebook.Paragraph.hasPermission : $r6 = virtualinvoke r1.<java.lang.String: java.lang.String trim()>()
+org.apache.zeppelin.notebook.Paragraph.hasPermission : $r6 = virtualinvoke r1.<java.lang.String: java.lang.String trim()>() >>>>>>>> org.apache.zeppelin.notebook.Paragraph.hasPermission : $r7 = virtualinvoke r4.<java.lang.String: java.lang.String trim()>()
+org.apache.zeppelin.notebook.Paragraph.hasPermission : $r7 = virtualinvoke r4.<java.lang.String: java.lang.String trim()>() >>>>>>>> org.apache.zeppelin.notebook.Paragraph.hasPermission : $z1 = virtualinvoke $r6.<java.lang.String: boolean equals(java.lang.Object)>($r7)
+org.apache.zeppelin.notebook.Paragraph.hasPermission : $z1 = virtualinvoke $r6.<java.lang.String: boolean equals(java.lang.Object)>($r7) >>>>>>>> org.apache.zeppelin.notebook.Paragraph.hasPermission : if $z1 == 0
+org.apache.zeppelin.notebook.Paragraph.hasPermission : if $z1 == 0 >>>>>>>> org.apache.zeppelin.notebook.Paragraph.hasPermission : return 1
+org.apache.zeppelin.notebook.Paragraph.hasPermission : if $z1 == 0 >>>>>>>> org.apache.zeppelin.notebook.Paragraph.hasPermission : goto [?= $z0 = interfaceinvoke r3.<java.util.Iterator: boolean hasNext()>()]
+org.apache.zeppelin.notebook.Paragraph.hasPermission : goto [?= $z0 = interfaceinvoke r3.<java.util.Iterator: boolean hasNext()>()] >>>>>>>> org.apache.zeppelin.notebook.Paragraph.hasPermission : $z0 = interfaceinvoke r3.<java.util.Iterator: boolean hasNext()>()

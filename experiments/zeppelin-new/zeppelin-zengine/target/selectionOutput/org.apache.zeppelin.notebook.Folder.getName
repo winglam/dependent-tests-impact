@@ -1,0 +1,9 @@
+org.apache.zeppelin.notebook.Folder.getName : $z0 = virtualinvoke r0.<org.apache.zeppelin.notebook.Folder: boolean isRoot()>() >>>>>>>> org.apache.zeppelin.notebook.Folder.getName : if $z0 == 0
+org.apache.zeppelin.notebook.Folder.getName : if $z0 == 0 >>>>>>>> org.apache.zeppelin.notebook.Folder.getName : return "/"
+org.apache.zeppelin.notebook.Folder.getName : if $z0 == 0 >>>>>>>> org.apache.zeppelin.notebook.Folder.getName : r1 = virtualinvoke r0.<org.apache.zeppelin.notebook.Folder: java.lang.String getId()>()
+org.apache.zeppelin.notebook.Folder.getName : r1 = virtualinvoke r0.<org.apache.zeppelin.notebook.Folder: java.lang.String getId()>() >>>>>>>> org.apache.zeppelin.notebook.Folder.getName : i0 = virtualinvoke r1.<java.lang.String: int lastIndexOf(java.lang.String)>("/")
+org.apache.zeppelin.notebook.Folder.getName : i0 = virtualinvoke r1.<java.lang.String: int lastIndexOf(java.lang.String)>("/") >>>>>>>> org.apache.zeppelin.notebook.Folder.getName : if i0 >= 0
+org.apache.zeppelin.notebook.Folder.getName : if i0 >= 0 >>>>>>>> org.apache.zeppelin.notebook.Folder.getName : return r1
+org.apache.zeppelin.notebook.Folder.getName : if i0 >= 0 >>>>>>>> org.apache.zeppelin.notebook.Folder.getName : $i1 = i0 + 1
+org.apache.zeppelin.notebook.Folder.getName : $i1 = i0 + 1 >>>>>>>> org.apache.zeppelin.notebook.Folder.getName : $r2 = virtualinvoke r1.<java.lang.String: java.lang.String substring(int)>($i1)
+org.apache.zeppelin.notebook.Folder.getName : $r2 = virtualinvoke r1.<java.lang.String: java.lang.String substring(int)>($i1) >>>>>>>> org.apache.zeppelin.notebook.Folder.getName : return $r2

@@ -1,0 +1,51 @@
+org.apache.zeppelin.helium.HeliumConf.getEnabledPackages : $r1 = new java.util.HashMap
+org.apache.zeppelin.helium.HeliumConf.getBundleDisplayOrder : $r3 = r0.<org.apache.zeppelin.helium.HeliumConf: java.util.List bundleDisplayOrder>
+org.apache.zeppelin.helium.HeliumConf.getBundleDisplayOrder : $r1 = r0.<org.apache.zeppelin.helium.HeliumConf: java.util.List bundleDisplayOrder>
+org.apache.zeppelin.helium.HeliumRegistry.uri : $r1 = r0.<org.apache.zeppelin.helium.HeliumRegistry: java.lang.String uri>
+org.apache.zeppelin.helium.Helium.save : exitmonitor r1
+org.apache.zeppelin.helium.Helium.save : $r8 = new java.io.File
+org.apache.zeppelin.helium.Helium.save : specialinvoke r0.<org.apache.zeppelin.helium.Helium: void clearNotExistsPackages()>()
+org.apache.zeppelin.helium.Helium.save : virtualinvoke r10.<java.io.File: boolean createNewFile()>()
+org.apache.zeppelin.helium.Helium.save : $z0 = virtualinvoke r10.<java.io.File: boolean exists()>()
+org.apache.zeppelin.helium.Helium.save : $r5 = r0.<org.apache.zeppelin.helium.Helium: com.google.gson.Gson gson>
+org.apache.zeppelin.helium.Helium.save : $r4 = r0.<org.apache.zeppelin.helium.Helium: java.util.List registry>
+org.apache.zeppelin.helium.Helium.save : staticinvoke <org.apache.commons.io.FileUtils: void writeStringToFile(java.io.File,java.lang.String)>(r10, r2)
+org.apache.zeppelin.helium.Helium.loadConf : r20 = staticinvoke <org.apache.commons.io.FileUtils: java.lang.String readFileToString(java.io.File)>(r16)
+org.apache.zeppelin.helium.Helium.loadConf : $z5 = virtualinvoke r16.<java.io.File: boolean isFile()>()
+org.apache.zeppelin.helium.Helium.loadConf : $r17 = r0.<org.apache.zeppelin.helium.Helium: org.slf4j.Logger logger>
+org.apache.zeppelin.helium.Helium.loadConf : $r13 = r0.<org.apache.zeppelin.helium.Helium: java.util.List registry>
+org.apache.zeppelin.helium.Helium.loadConf : $z1 = virtualinvoke r4.<java.lang.String: boolean startsWith(java.lang.String)>("http://")
+org.apache.zeppelin.helium.Helium.loadConf : $r7 = r0.<org.apache.zeppelin.helium.Helium: java.lang.String registryPaths>
+org.apache.zeppelin.helium.Helium.loadConf : return r23
+org.apache.zeppelin.helium.Helium.loadConf : return r19
+org.apache.zeppelin.helium.Helium.loadConf : $r12 = r0.<org.apache.zeppelin.helium.Helium: org.slf4j.Logger logger>
+org.apache.zeppelin.helium.Helium.loadConf : r3 = r2
+org.apache.zeppelin.helium.Helium.loadConf : $r18 = new org.apache.zeppelin.helium.HeliumConf
+org.apache.zeppelin.helium.Helium.loadConf : $r15 = new java.io.File
+org.apache.zeppelin.helium.Helium.loadConf : $r5 = r0.<org.apache.zeppelin.helium.Helium: java.lang.String registryPaths>
+org.apache.zeppelin.helium.Helium.loadConf : $r21 = r0.<org.apache.zeppelin.helium.Helium: com.google.gson.Gson gson>
+org.apache.zeppelin.helium.HeliumConf.setBundleDisplayOrder : r0.<org.apache.zeppelin.helium.HeliumConf: java.util.List bundleDisplayOrder> = r1
+org.apache.zeppelin.helium.HeliumLocalRegistry.getAll : return r2
+org.apache.zeppelin.helium.HeliumLocalRegistry.getAll : $r8 = new java.io.File
+org.apache.zeppelin.helium.HeliumLocalRegistry.getAll : r5 = r4
+org.apache.zeppelin.helium.HeliumLocalRegistry.getAll : if r4 != null goto r5 = r4
+org.apache.zeppelin.helium.HeliumLocalRegistry.getAll : $r1 = new java.util.LinkedList
+org.apache.zeppelin.helium.HeliumLocalRegistry.getAll : r4 = virtualinvoke r3.<java.io.File: java.io.File[] listFiles()>()
+org.apache.zeppelin.helium.Helium.getAllPackageInfo : $r12 = r0.<org.apache.zeppelin.helium.Helium: java.util.List registry>
+org.apache.zeppelin.helium.Helium.getAllPackageInfo : $r14 = new java.util.HashMap
+org.apache.zeppelin.helium.Helium.getAllPackageInfo : if z0 != 0 goto $r14 = new java.util.HashMap
+org.apache.zeppelin.helium.Helium.getAllPackageInfo : $r15 = r0.<org.apache.zeppelin.helium.Helium: java.util.List registry>
+org.apache.zeppelin.helium.Helium.getAllPackageInfo : $r17 = virtualinvoke r5.<org.apache.zeppelin.helium.HeliumRegistry: java.util.List getAll()>()
+org.apache.zeppelin.helium.Helium.getAllPackageInfo : $r11 = r0.<org.apache.zeppelin.helium.Helium: org.apache.zeppelin.helium.HeliumConf heliumConf>
+org.apache.zeppelin.helium.Helium.getAllPackageInfo : $r56 = r0.<org.apache.zeppelin.helium.Helium: java.util.Map allPackages>
+org.apache.zeppelin.helium.Helium.getAllPackageInfo : goto [?= $z3 = interfaceinvoke r4.<java.util.Iterator: boolean hasNext()>()]
+org.apache.zeppelin.helium.Helium.getAllPackageInfo : goto [?= (branch)]
+org.apache.zeppelin.helium.Helium.getAllPackageInfo : $r65 = r0.<org.apache.zeppelin.helium.Helium: java.util.Map allPackages>
+org.apache.zeppelin.helium.Helium.clearNotExistsPackages : r4 = interfaceinvoke r2.<java.util.List: java.util.Iterator iterator()>()
+org.apache.zeppelin.helium.Helium.clearNotExistsPackages : $r11 = r0.<org.apache.zeppelin.helium.Helium: org.apache.zeppelin.helium.HeliumConf heliumConf>
+org.apache.zeppelin.helium.Helium.clearNotExistsPackages : $r7 = r0.<org.apache.zeppelin.helium.Helium: org.apache.zeppelin.helium.HeliumConf heliumConf>
+org.apache.zeppelin.helium.Helium.clearNotExistsPackages : $r8 = new java.util.LinkedList
+org.apache.zeppelin.helium.Helium.clearNotExistsPackages : $r13 = interfaceinvoke r12.<java.util.Map: java.util.Set keySet()>()
+org.apache.zeppelin.helium.Helium.clearNotExistsPackages : r1 = virtualinvoke r0.<org.apache.zeppelin.helium.Helium: java.util.Map getAllPackageInfoWithoutRefresh()>()
+org.apache.zeppelin.helium.Helium.clearNotExistsPackages : $r10 = r0.<org.apache.zeppelin.helium.Helium: org.apache.zeppelin.helium.HeliumConf heliumConf>
+org.apache.zeppelin.helium.Helium.getAllPackageInfoWithoutRefresh : $r1 = virtualinvoke r0.<org.apache.zeppelin.helium.Helium: java.util.Map getAllPackageInfo(boolean,java.lang.String)>(0, null)

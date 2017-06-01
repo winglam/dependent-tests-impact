@@ -1,0 +1,58 @@
+org.apache.zeppelin.interpreter.InterpreterSetting.getInterpreterGroup : $r16 = <org.apache.zeppelin.interpreter.InterpreterSetting: org.slf4j.Logger logger>
+org.apache.zeppelin.interpreter.InterpreterSetting.getInterpreterGroup : $r21 = r0.<org.apache.zeppelin.interpreter.InterpreterSetting: java.util.Map interpreterGroupRef>
+org.apache.zeppelin.interpreter.InterpreterSetting.getInterpreterGroup : r3 = specialinvoke r0.<org.apache.zeppelin.interpreter.InterpreterSetting: java.lang.String getInterpreterProcessKey(java.lang.String,java.lang.String)>(r1, r2)
+org.apache.zeppelin.interpreter.InterpreterSetting.getInterpreterGroup : $r13 = r0.<org.apache.zeppelin.interpreter.InterpreterSetting: org.apache.zeppelin.interpreter.InterpreterGroupFactory interpreterGroupFactory>
+org.apache.zeppelin.interpreter.InterpreterSetting.getInterpreterGroup : $r24 = r0.<org.apache.zeppelin.interpreter.InterpreterSetting: java.util.concurrent.locks.ReentrantReadWriteLock$ReadLock interpreterGroupReadLock>
+org.apache.zeppelin.interpreter.InterpreterSetting.getInterpreterGroup : $r23 = r0.<org.apache.zeppelin.interpreter.InterpreterSetting: java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock interpreterGroupWriteLock>
+org.apache.zeppelin.interpreter.InterpreterSetting.getInterpreterGroup : $r8 = new java.lang.StringBuilder
+org.apache.zeppelin.interpreter.InterpreterSetting.getInterpreterGroup : $r25 = r0.<org.apache.zeppelin.interpreter.InterpreterSetting: java.util.Map interpreterGroupRef>
+org.apache.zeppelin.interpreter.InterpreterSetting.getInterpreterGroup : $r28 = r0.<org.apache.zeppelin.interpreter.InterpreterSetting: java.util.concurrent.locks.ReentrantReadWriteLock$ReadLock interpreterGroupReadLock>
+org.apache.zeppelin.interpreter.InterpreterSetting.getInterpreterGroup : $r7 = r0.<org.apache.zeppelin.interpreter.InterpreterSetting: java.util.Map interpreterGroupRef>
+org.apache.zeppelin.interpreter.InterpreterSetting.getInterpreterGroup : $r15 = r0.<org.apache.zeppelin.interpreter.InterpreterSetting: java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock interpreterGroupWriteLock>
+org.apache.zeppelin.interpreter.InterpreterSetting.getInterpreterSessionKey : return r4
+org.apache.zeppelin.interpreter.InterpreterSetting.getInterpreterSessionKey : $z4 = virtualinvoke r3.<org.apache.zeppelin.interpreter.InterpreterOption: boolean perNoteScoped()>()
+org.apache.zeppelin.interpreter.InterpreterSetting.getInterpreterSessionKey : $z1 = virtualinvoke r3.<org.apache.zeppelin.interpreter.InterpreterOption: boolean perNoteScoped()>()
+org.apache.zeppelin.interpreter.InterpreterSetting.getInterpreterSessionKey : $z0 = virtualinvoke r3.<org.apache.zeppelin.interpreter.InterpreterOption: boolean isExistingProcess()>()
+org.apache.zeppelin.interpreter.InterpreterSetting.getInterpreterSessionKey : r3 = virtualinvoke r0.<org.apache.zeppelin.interpreter.InterpreterSetting: org.apache.zeppelin.interpreter.InterpreterOption getOption()>()
+org.apache.zeppelin.interpreter.InterpreterSetting.getInterpreterSessionKey : $r9 = <org.apache.zeppelin.interpreter.InterpreterSetting: org.slf4j.Logger logger>
+org.apache.zeppelin.interpreter.InterpreterSetting.getInterpreterSessionKey : r4 = "shared_session"
+org.apache.zeppelin.interpreter.InterpreterSetting.getInterpreterSessionKey : $z3 = virtualinvoke r3.<org.apache.zeppelin.interpreter.InterpreterOption: boolean perUserScoped()>()
+org.apache.zeppelin.interpreter.InterpreterSetting.setInterpreterGroupFactory : r0.<org.apache.zeppelin.interpreter.InterpreterSetting: org.apache.zeppelin.interpreter.InterpreterGroupFactory interpreterGroupFactory> = r1
+org.apache.zeppelin.interpreter.InterpreterSetting.isEqualInterpreterKeyProcessKey : $r7 = virtualinvoke r2.<java.lang.String: java.lang.String[] split(java.lang.String)>(":")
+org.apache.zeppelin.interpreter.InterpreterSetting.isEqualInterpreterKeyProcessKey : $r9 = interfaceinvoke r4.<java.util.List: java.lang.Object get(int)>(0)
+org.apache.zeppelin.interpreter.InterpreterSetting.isEqualInterpreterKeyProcessKey : $r6 = virtualinvoke r0.<org.apache.zeppelin.interpreter.InterpreterSetting: org.apache.zeppelin.interpreter.InterpreterOption getOption()>()
+org.apache.zeppelin.interpreter.InterpreterSetting.isEqualInterpreterKeyProcessKey : $r14 = interfaceinvoke r4.<java.util.List: java.lang.Object get(int)>(1)
+org.apache.zeppelin.interpreter.InterpreterSetting.isEqualInterpreterKeyProcessKey : i0 = i0 + 1
+org.apache.zeppelin.interpreter.InterpreterSetting.isEqualInterpreterKeyProcessKey : i0 = 0
+org.apache.zeppelin.interpreter.InterpreterSetting.isEqualInterpreterKeyProcessKey : r3 = virtualinvoke r0.<org.apache.zeppelin.interpreter.InterpreterSetting: org.apache.zeppelin.interpreter.InterpreterOption getOption()>()
+org.apache.zeppelin.interpreter.InterpreterSetting.isEqualInterpreterKeyProcessKey : $r8 = virtualinvoke r1.<java.lang.String: java.lang.String[] split(java.lang.String)>(":")
+org.apache.zeppelin.interpreter.InterpreterSetting.isEqualInterpreterKeyProcessKey : if i0 < 2 goto $z8 = 0
+org.apache.zeppelin.interpreter.InterpreterSetting.isEqualInterpreterKeyProcessKey : $i1 = interfaceinvoke r5.<java.util.List: int size()>()
+org.apache.zeppelin.interpreter.InterpreterSettingTest$5.createInterpreterGroup : $r3 = new org.apache.zeppelin.interpreter.InterpreterGroup
+org.apache.zeppelin.interpreter.InterpreterSetting.getName : $r1 = r0.<org.apache.zeppelin.interpreter.InterpreterSetting: java.lang.String name>
+org.apache.zeppelin.interpreter.InterpreterSetting.closeAndRemoveInterpreterGroup : goto [?= $z4 = interfaceinvoke r9.<java.util.Iterator: boolean hasNext()>()]
+org.apache.zeppelin.interpreter.InterpreterSetting.closeAndRemoveInterpreterGroup : interfaceinvoke r5.<java.util.List: void clear()>()
+org.apache.zeppelin.interpreter.InterpreterSetting.closeAndRemoveInterpreterGroup : $z0 = virtualinvoke r2.<java.lang.String: boolean equals(java.lang.Object)>("anonymous")
+org.apache.zeppelin.interpreter.InterpreterSetting.closeAndRemoveInterpreterGroup : $r16 = r0.<org.apache.zeppelin.interpreter.InterpreterSetting: java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock interpreterGroupWriteLock>
+org.apache.zeppelin.interpreter.InterpreterSetting.closeAndRemoveInterpreterGroup : r9 = interfaceinvoke r5.<java.util.List: java.util.Iterator iterator()>()
+org.apache.zeppelin.interpreter.InterpreterSetting.closeAndRemoveInterpreterGroup : $r11 = new java.util.LinkedList
+org.apache.zeppelin.interpreter.InterpreterSetting.closeAndRemoveInterpreterGroup : $r12 = new java.util.HashSet
+org.apache.zeppelin.interpreter.InterpreterSetting.closeAndRemoveInterpreterGroup : goto [?= $z1 = interfaceinvoke r6.<java.util.Iterator: boolean hasNext()>()]
+org.apache.zeppelin.interpreter.InterpreterSetting.closeAndRemoveInterpreterGroup : $r21 = r0.<org.apache.zeppelin.interpreter.InterpreterSetting: java.util.Map interpreterGroupRef>
+org.apache.zeppelin.interpreter.InterpreterSetting.closeAndRemoveInterpreterGroup : $z2 = specialinvoke r0.<org.apache.zeppelin.interpreter.InterpreterSetting: boolean isEqualInterpreterKeyProcessKey(java.lang.String,java.lang.String)>(r7, r3)
+org.apache.zeppelin.interpreter.InterpreterSetting.closeAndRemoveInterpreterGroup : $r19 = r0.<org.apache.zeppelin.interpreter.InterpreterSetting: java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock interpreterGroupWriteLock>
+org.apache.zeppelin.interpreter.InterpreterSetting.closeAndRemoveInterpreterGroup : r3 = specialinvoke r0.<org.apache.zeppelin.interpreter.InterpreterSetting: java.lang.String getInterpreterProcessKey(java.lang.String,java.lang.String)>(r2, r1)
+org.apache.zeppelin.interpreter.InterpreterSetting.closeAndRemoveInterpreterGroup : r4 = virtualinvoke r0.<org.apache.zeppelin.interpreter.InterpreterSetting: java.lang.String getInterpreterSessionKey(java.lang.String,java.lang.String)>(r2, r1)
+org.apache.zeppelin.interpreter.InterpreterSetting.closeAndRemoveInterpreterGroup : interfaceinvoke r5.<java.util.List: boolean add(java.lang.Object)>(r8)
+org.apache.zeppelin.interpreter.InterpreterSetting.closeAndRemoveInterpreterGroup : $r17 = r0.<org.apache.zeppelin.interpreter.InterpreterSetting: java.util.Map interpreterGroupRef>
+org.apache.zeppelin.interpreter.InterpreterSetting.getInterpreterProcessKey : return r4
+org.apache.zeppelin.interpreter.InterpreterSetting.getInterpreterProcessKey : $r6 = virtualinvoke r0.<org.apache.zeppelin.interpreter.InterpreterSetting: org.apache.zeppelin.interpreter.InterpreterOption getOption()>()
+org.apache.zeppelin.interpreter.InterpreterSetting.getInterpreterProcessKey : $r5 = virtualinvoke r0.<org.apache.zeppelin.interpreter.InterpreterSetting: org.apache.zeppelin.interpreter.InterpreterOption getOption()>()
+org.apache.zeppelin.interpreter.InterpreterSetting.getInterpreterProcessKey : r3 = virtualinvoke r0.<org.apache.zeppelin.interpreter.InterpreterSetting: org.apache.zeppelin.interpreter.InterpreterOption getOption()>()
+org.apache.zeppelin.interpreter.InterpreterSetting.getInterpreterProcessKey : $r7 = new java.lang.StringBuilder
+org.apache.zeppelin.interpreter.InterpreterSetting.getAllInterpreterGroups : $r3 = r0.<org.apache.zeppelin.interpreter.InterpreterSetting: java.util.concurrent.locks.ReentrantReadWriteLock$ReadLock interpreterGroupReadLock>
+org.apache.zeppelin.interpreter.InterpreterSetting.getAllInterpreterGroups : $r4 = new java.util.LinkedList
+org.apache.zeppelin.interpreter.InterpreterSetting.getAllInterpreterGroups : $r7 = r0.<org.apache.zeppelin.interpreter.InterpreterSetting: java.util.concurrent.locks.ReentrantReadWriteLock$ReadLock interpreterGroupReadLock>
+org.apache.zeppelin.interpreter.InterpreterSetting.getOption : $r3 = r0.<org.apache.zeppelin.interpreter.InterpreterSetting: org.apache.zeppelin.interpreter.InterpreterOption option>
+org.apache.zeppelin.interpreter.InterpreterSetting.getOption : $r2 = r0.<org.apache.zeppelin.interpreter.InterpreterSetting: org.apache.zeppelin.interpreter.InterpreterOption option>
+org.apache.zeppelin.interpreter.InterpreterSetting.getId : $r1 = r0.<org.apache.zeppelin.interpreter.InterpreterSetting: java.lang.String id>

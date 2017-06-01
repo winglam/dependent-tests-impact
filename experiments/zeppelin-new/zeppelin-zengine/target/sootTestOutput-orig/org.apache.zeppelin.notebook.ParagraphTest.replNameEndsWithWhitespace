@@ -1,0 +1,11 @@
+org.apache.zeppelin.notebook.Paragraph.getRequiredReplName : $i4 = i0 + 1
+org.apache.zeppelin.notebook.Paragraph.getRequiredReplName : i1 = 0
+org.apache.zeppelin.notebook.Paragraph.getRequiredReplName : return r2
+org.apache.zeppelin.notebook.Paragraph.getRequiredReplName : i0 = i1
+org.apache.zeppelin.notebook.Paragraph.getRequiredReplName : c2 = virtualinvoke r1.<java.lang.String: char charAt(int)>(i1)
+org.apache.zeppelin.notebook.Paragraph.getRequiredReplName : if r0 != null goto r1 = virtualinvoke r0.<java.lang.String: java.lang.String trim()>()
+org.apache.zeppelin.notebook.Paragraph.getRequiredReplName : i0 = 0
+org.apache.zeppelin.notebook.Paragraph.getRequiredReplName : r1 = virtualinvoke r0.<java.lang.String: java.lang.String trim()>()
+org.apache.zeppelin.notebook.Paragraph.getRequiredReplName : $z0 = virtualinvoke r1.<java.lang.String: boolean startsWith(java.lang.String)>("%")
+org.apache.zeppelin.notebook.Paragraph.getRequiredReplName : if i0 >= 1 goto $i4 = i0 + 1
+org.apache.zeppelin.notebook.Paragraph.getRequiredReplName : $z1 = staticinvoke <java.lang.Character: boolean isWhitespace(char)>(c2)

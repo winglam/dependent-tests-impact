@@ -1,0 +1,24 @@
+org.apache.zeppelin.notebook.NotebookTest.delete : $z0 = virtualinvoke r1.<java.io.File: boolean isFile()>() >>>>>>>> org.apache.zeppelin.notebook.NotebookTest.delete : if $z0 == 0
+org.apache.zeppelin.notebook.NotebookTest.delete : if $z0 == 0 >>>>>>>> org.apache.zeppelin.notebook.NotebookTest.delete : virtualinvoke r1.<java.io.File: boolean delete()>()
+org.apache.zeppelin.notebook.NotebookTest.delete : if $z0 == 0 >>>>>>>> org.apache.zeppelin.notebook.NotebookTest.delete : $z2 = virtualinvoke r1.<java.io.File: boolean isDirectory()>()
+org.apache.zeppelin.notebook.NotebookTest.delete : $z2 = virtualinvoke r1.<java.io.File: boolean isDirectory()>() >>>>>>>> org.apache.zeppelin.notebook.NotebookTest.delete : if $z2 == 0
+org.apache.zeppelin.notebook.NotebookTest.delete : if $z2 == 0 >>>>>>>> org.apache.zeppelin.notebook.NotebookTest.delete : r2 = virtualinvoke r1.<java.io.File: java.io.File[] listFiles()>()
+org.apache.zeppelin.notebook.NotebookTest.delete : if $z2 == 0 >>>>>>>> org.apache.zeppelin.notebook.NotebookTest.delete : return
+org.apache.zeppelin.notebook.NotebookTest.delete : r2 = virtualinvoke r1.<java.io.File: java.io.File[] listFiles()>() >>>>>>>> org.apache.zeppelin.notebook.NotebookTest.delete : if r2 == null
+org.apache.zeppelin.notebook.NotebookTest.delete : if r2 == null >>>>>>>> org.apache.zeppelin.notebook.NotebookTest.delete : $i2 = lengthof r2
+org.apache.zeppelin.notebook.NotebookTest.delete : if r2 == null >>>>>>>> org.apache.zeppelin.notebook.NotebookTest.delete : virtualinvoke r1.<java.io.File: boolean delete()>()
+org.apache.zeppelin.notebook.NotebookTest.delete : virtualinvoke r1.<java.io.File: boolean delete()>() >>>>>>>> org.apache.zeppelin.notebook.NotebookTest.delete : return
+org.apache.zeppelin.notebook.NotebookTest.delete : $i2 = lengthof r2 >>>>>>>> org.apache.zeppelin.notebook.NotebookTest.delete : if $i2 <= 0
+org.apache.zeppelin.notebook.NotebookTest.delete : if $i2 <= 0 >>>>>>>> org.apache.zeppelin.notebook.NotebookTest.delete : r3 = r2
+org.apache.zeppelin.notebook.NotebookTest.delete : if $i2 <= 0 >>>>>>>> org.apache.zeppelin.notebook.NotebookTest.delete : virtualinvoke r1.<java.io.File: boolean delete()>()
+org.apache.zeppelin.notebook.NotebookTest.delete : r3 = r2 >>>>>>>> org.apache.zeppelin.notebook.NotebookTest.delete : i0 = lengthof r3
+org.apache.zeppelin.notebook.NotebookTest.delete : i0 = lengthof r3 >>>>>>>> org.apache.zeppelin.notebook.NotebookTest.delete : i1 = 0
+org.apache.zeppelin.notebook.NotebookTest.delete : i1 = 0 >>>>>>>> org.apache.zeppelin.notebook.NotebookTest.delete : if i1 >= i0
+org.apache.zeppelin.notebook.NotebookTest.delete : if i1 >= i0 >>>>>>>> org.apache.zeppelin.notebook.NotebookTest.delete : r4 = r3[i1]
+org.apache.zeppelin.notebook.NotebookTest.delete : if i1 >= i0 >>>>>>>> org.apache.zeppelin.notebook.NotebookTest.delete : virtualinvoke r1.<java.io.File: boolean delete()>()
+org.apache.zeppelin.notebook.NotebookTest.delete : r4 = r3[i1] >>>>>>>> org.apache.zeppelin.notebook.NotebookTest.delete : specialinvoke r0.<org.apache.zeppelin.notebook.NotebookTest: void delete(java.io.File)>(r4)
+org.apache.zeppelin.notebook.NotebookTest.delete : specialinvoke r0.<org.apache.zeppelin.notebook.NotebookTest: void delete(java.io.File)>(r4) >>>>>>>> org.apache.zeppelin.notebook.NotebookTest.delete : i1 = i1 + 1
+org.apache.zeppelin.notebook.NotebookTest.delete : i1 = i1 + 1 >>>>>>>> org.apache.zeppelin.notebook.NotebookTest.delete : goto [?= (branch)]
+org.apache.zeppelin.notebook.NotebookTest.delete : goto [?= (branch)] >>>>>>>> org.apache.zeppelin.notebook.NotebookTest.delete : if i1 >= i0
+org.apache.zeppelin.notebook.NotebookTest.delete : virtualinvoke r1.<java.io.File: boolean delete()>() >>>>>>>> org.apache.zeppelin.notebook.NotebookTest.delete : goto [?= return]
+org.apache.zeppelin.notebook.NotebookTest.delete : goto [?= return] >>>>>>>> org.apache.zeppelin.notebook.NotebookTest.delete : return

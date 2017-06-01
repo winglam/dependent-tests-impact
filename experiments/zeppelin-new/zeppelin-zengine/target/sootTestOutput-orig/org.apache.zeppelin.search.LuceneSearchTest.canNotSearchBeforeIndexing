@@ -1,0 +1,10 @@
+org.apache.zeppelin.search.LuceneSearchTest.beforeStartUp : $r2 = staticinvoke <org.mockito.Mockito: java.lang.Object mock(java.lang.Class)>(class "org/apache/zeppelin/interpreter/InterpreterFactory")
+org.apache.zeppelin.search.LuceneSearchTest.beforeStartUp : $r4 = staticinvoke <org.mockito.Mockito: java.lang.Object mock(java.lang.Class)>(class "org/apache/zeppelin/interpreter/InterpreterSettingManager")
+org.apache.zeppelin.search.LuceneSearchTest.beforeStartUp : $r0 = staticinvoke <org.mockito.Mockito: java.lang.Object mock(java.lang.Class)>(class "org/apache/zeppelin/notebook/repo/NotebookRepo")
+org.apache.zeppelin.search.LuceneSearch.query : return r2
+org.apache.zeppelin.search.LuceneSearch.query : r2 = staticinvoke <java.util.Collections: java.util.List emptyList()>()
+org.apache.zeppelin.search.LuceneSearch.query : $r15 = r0.<org.apache.zeppelin.search.LuceneSearch: org.apache.lucene.store.Directory ramDirectory>
+org.apache.zeppelin.search.LuceneSearch.query : $r13 = r0.<org.apache.zeppelin.search.LuceneSearch: org.apache.lucene.store.Directory ramDirectory>
+org.apache.zeppelin.search.LuceneSearch.query : $r37 = <org.apache.zeppelin.search.LuceneSearch: org.slf4j.Logger LOG>
+org.apache.zeppelin.search.LuceneSearch.close : $r2 = r0.<org.apache.zeppelin.search.LuceneSearch: org.apache.lucene.index.IndexWriter writer>
+org.apache.zeppelin.search.LuceneSearch.close : goto [?= return]

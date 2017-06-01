@@ -1,0 +1,24 @@
+org.apache.zeppelin.notebook.NoteInterpreterLoaderTest.delete : $z0 = virtualinvoke r1.<java.io.File: boolean isFile()>() >>>>>>>> org.apache.zeppelin.notebook.NoteInterpreterLoaderTest.delete : if $z0 == 0
+org.apache.zeppelin.notebook.NoteInterpreterLoaderTest.delete : if $z0 == 0 >>>>>>>> org.apache.zeppelin.notebook.NoteInterpreterLoaderTest.delete : virtualinvoke r1.<java.io.File: boolean delete()>()
+org.apache.zeppelin.notebook.NoteInterpreterLoaderTest.delete : if $z0 == 0 >>>>>>>> org.apache.zeppelin.notebook.NoteInterpreterLoaderTest.delete : $z2 = virtualinvoke r1.<java.io.File: boolean isDirectory()>()
+org.apache.zeppelin.notebook.NoteInterpreterLoaderTest.delete : $z2 = virtualinvoke r1.<java.io.File: boolean isDirectory()>() >>>>>>>> org.apache.zeppelin.notebook.NoteInterpreterLoaderTest.delete : if $z2 == 0
+org.apache.zeppelin.notebook.NoteInterpreterLoaderTest.delete : if $z2 == 0 >>>>>>>> org.apache.zeppelin.notebook.NoteInterpreterLoaderTest.delete : r2 = virtualinvoke r1.<java.io.File: java.io.File[] listFiles()>()
+org.apache.zeppelin.notebook.NoteInterpreterLoaderTest.delete : if $z2 == 0 >>>>>>>> org.apache.zeppelin.notebook.NoteInterpreterLoaderTest.delete : return
+org.apache.zeppelin.notebook.NoteInterpreterLoaderTest.delete : r2 = virtualinvoke r1.<java.io.File: java.io.File[] listFiles()>() >>>>>>>> org.apache.zeppelin.notebook.NoteInterpreterLoaderTest.delete : if r2 == null
+org.apache.zeppelin.notebook.NoteInterpreterLoaderTest.delete : if r2 == null >>>>>>>> org.apache.zeppelin.notebook.NoteInterpreterLoaderTest.delete : $i2 = lengthof r2
+org.apache.zeppelin.notebook.NoteInterpreterLoaderTest.delete : if r2 == null >>>>>>>> org.apache.zeppelin.notebook.NoteInterpreterLoaderTest.delete : virtualinvoke r1.<java.io.File: boolean delete()>()
+org.apache.zeppelin.notebook.NoteInterpreterLoaderTest.delete : virtualinvoke r1.<java.io.File: boolean delete()>() >>>>>>>> org.apache.zeppelin.notebook.NoteInterpreterLoaderTest.delete : return
+org.apache.zeppelin.notebook.NoteInterpreterLoaderTest.delete : $i2 = lengthof r2 >>>>>>>> org.apache.zeppelin.notebook.NoteInterpreterLoaderTest.delete : if $i2 <= 0
+org.apache.zeppelin.notebook.NoteInterpreterLoaderTest.delete : if $i2 <= 0 >>>>>>>> org.apache.zeppelin.notebook.NoteInterpreterLoaderTest.delete : r3 = r2
+org.apache.zeppelin.notebook.NoteInterpreterLoaderTest.delete : if $i2 <= 0 >>>>>>>> org.apache.zeppelin.notebook.NoteInterpreterLoaderTest.delete : virtualinvoke r1.<java.io.File: boolean delete()>()
+org.apache.zeppelin.notebook.NoteInterpreterLoaderTest.delete : r3 = r2 >>>>>>>> org.apache.zeppelin.notebook.NoteInterpreterLoaderTest.delete : i0 = lengthof r3
+org.apache.zeppelin.notebook.NoteInterpreterLoaderTest.delete : i0 = lengthof r3 >>>>>>>> org.apache.zeppelin.notebook.NoteInterpreterLoaderTest.delete : i1 = 0
+org.apache.zeppelin.notebook.NoteInterpreterLoaderTest.delete : i1 = 0 >>>>>>>> org.apache.zeppelin.notebook.NoteInterpreterLoaderTest.delete : if i1 >= i0
+org.apache.zeppelin.notebook.NoteInterpreterLoaderTest.delete : if i1 >= i0 >>>>>>>> org.apache.zeppelin.notebook.NoteInterpreterLoaderTest.delete : r4 = r3[i1]
+org.apache.zeppelin.notebook.NoteInterpreterLoaderTest.delete : if i1 >= i0 >>>>>>>> org.apache.zeppelin.notebook.NoteInterpreterLoaderTest.delete : virtualinvoke r1.<java.io.File: boolean delete()>()
+org.apache.zeppelin.notebook.NoteInterpreterLoaderTest.delete : r4 = r3[i1] >>>>>>>> org.apache.zeppelin.notebook.NoteInterpreterLoaderTest.delete : specialinvoke r0.<org.apache.zeppelin.notebook.NoteInterpreterLoaderTest: void delete(java.io.File)>(r4)
+org.apache.zeppelin.notebook.NoteInterpreterLoaderTest.delete : specialinvoke r0.<org.apache.zeppelin.notebook.NoteInterpreterLoaderTest: void delete(java.io.File)>(r4) >>>>>>>> org.apache.zeppelin.notebook.NoteInterpreterLoaderTest.delete : i1 = i1 + 1
+org.apache.zeppelin.notebook.NoteInterpreterLoaderTest.delete : i1 = i1 + 1 >>>>>>>> org.apache.zeppelin.notebook.NoteInterpreterLoaderTest.delete : goto [?= (branch)]
+org.apache.zeppelin.notebook.NoteInterpreterLoaderTest.delete : goto [?= (branch)] >>>>>>>> org.apache.zeppelin.notebook.NoteInterpreterLoaderTest.delete : if i1 >= i0
+org.apache.zeppelin.notebook.NoteInterpreterLoaderTest.delete : virtualinvoke r1.<java.io.File: boolean delete()>() >>>>>>>> org.apache.zeppelin.notebook.NoteInterpreterLoaderTest.delete : goto [?= return]
+org.apache.zeppelin.notebook.NoteInterpreterLoaderTest.delete : goto [?= return] >>>>>>>> org.apache.zeppelin.notebook.NoteInterpreterLoaderTest.delete : return

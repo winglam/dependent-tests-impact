@@ -1,0 +1,133 @@
+org.apache.zeppelin.notebook.Paragraph.noteHasInterpreters : $r1 = r0.<org.apache.zeppelin.notebook.Paragraph: org.apache.zeppelin.interpreter.InterpreterSettingManager interpreterSettingManager>
+org.apache.zeppelin.notebook.Paragraph.getInterpreterContext : $r21 = virtualinvoke r0.<org.apache.zeppelin.notebook.Paragraph: java.lang.String getUser()>()
+org.apache.zeppelin.notebook.Paragraph.getInterpreterContext : $r41 = r0.<org.apache.zeppelin.notebook.Paragraph: org.apache.zeppelin.user.AuthenticationInfo authenticationInfo>
+org.apache.zeppelin.notebook.Paragraph.getInterpreterContext : $r42 = new org.apache.zeppelin.interpreter.InterpreterContext
+org.apache.zeppelin.notebook.Paragraph.getInterpreterContext : $r12 = r0.<org.apache.zeppelin.notebook.Paragraph: org.apache.zeppelin.interpreter.InterpreterSettingManager interpreterSettingManager>
+org.apache.zeppelin.notebook.Paragraph.getInterpreterContext : $r27 = r0.<org.apache.zeppelin.notebook.Paragraph: org.apache.zeppelin.notebook.Note note>
+org.apache.zeppelin.notebook.Paragraph.getInterpreterContext : $r39 = r0.<org.apache.zeppelin.notebook.Paragraph: org.apache.zeppelin.user.AuthenticationInfo authenticationInfo>
+org.apache.zeppelin.notebook.Paragraph.getInterpreterContext : $r38 = r0.<org.apache.zeppelin.notebook.Paragraph: org.apache.zeppelin.user.AuthenticationInfo authenticationInfo>
+org.apache.zeppelin.notebook.Paragraph.getInterpreterContext : $r2 = new org.apache.zeppelin.interpreter.InterpreterOutput
+org.apache.zeppelin.notebook.Paragraph.getInterpreterContext : r3 = null
+org.apache.zeppelin.notebook.Paragraph.getInterpreterContext : r35 = r0
+org.apache.zeppelin.notebook.Paragraph.getInterpreterContext : $r17 = virtualinvoke r0.<org.apache.zeppelin.notebook.Paragraph: java.lang.String getUser()>()
+org.apache.zeppelin.notebook.Paragraph.getInterpreterContext : return r52
+org.apache.zeppelin.notebook.Paragraph.getInterpreterContext : $r36 = r0.<org.apache.zeppelin.notebook.Paragraph: org.apache.zeppelin.notebook.Note note>
+org.apache.zeppelin.notebook.Paragraph.getInterpreterContext : r1 = r0
+org.apache.zeppelin.notebook.Paragraph.getInterpreterContext : $r25 = new java.util.LinkedList
+org.apache.zeppelin.notebook.Paragraph.getInterpreterContext : r2 = null
+org.apache.zeppelin.notebook.Paragraph.getInterpreterContext : $r8 = r0.<org.apache.zeppelin.notebook.Paragraph: org.apache.zeppelin.interpreter.InterpreterSettingManager interpreterSettingManager>
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient.access$100 : $r1 = specialinvoke r0.<org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient: org.eclipse.jetty.websocket.api.Session openWatcherSession()>()
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient.access$000 : $r0 = <org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient: org.eclipse.jetty.websocket.api.Session watcherSession>
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient.access$002 : <org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient: org.eclipse.jetty.websocket.api.Session watcherSession> = r0
+org.apache.zeppelin.notebook.Paragraph.getAuthenticationInfo : $r1 = r0.<org.apache.zeppelin.notebook.Paragraph: org.apache.zeppelin.user.AuthenticationInfo authenticationInfo>
+org.apache.zeppelin.notebook.Paragraph.setConfig : r0.<org.apache.zeppelin.notebook.Paragraph: java.util.Map config> = r1
+org.apache.zeppelin.notebook.Paragraph.setResult : r0.<org.apache.zeppelin.notebook.Paragraph: java.lang.Object results> = r1
+org.apache.zeppelin.notebook.Paragraph.setTitle : r0.<org.apache.zeppelin.notebook.Paragraph: java.lang.String title> = r1
+org.apache.zeppelin.notebook.Paragraph.getTitle : $r1 = r0.<org.apache.zeppelin.notebook.Paragraph: java.lang.String title>
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.listener.WatcherWebsocket.createInstace : $r0 = new org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.listener.WatcherWebsocket
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.mock.MockEventSocket.onWebSocketConnect : $r2 = <org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.mock.MockEventSocket: org.slf4j.Logger LOG>
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.mock.MockEventSocket.onWebSocketConnect : r0.<org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.mock.MockEventSocket: org.eclipse.jetty.websocket.api.Session session> = r1
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.mock.MockEventSocket.onWebSocketConnect : specialinvoke r0.<org.eclipse.jetty.websocket.api.WebSocketAdapter: void onWebSocketConnect(org.eclipse.jetty.websocket.api.Session)>(r1)
+org.apache.zeppelin.notebook.Paragraph.getInterpreterSettingById : goto [?= return r2]
+org.apache.zeppelin.notebook.Paragraph.getInterpreterSettingById : return r2
+org.apache.zeppelin.notebook.Paragraph.getInterpreterSettingById : r2 = r4
+org.apache.zeppelin.notebook.Paragraph.getInterpreterSettingById : $r10 = virtualinvoke r4.<org.apache.zeppelin.interpreter.InterpreterSetting: java.lang.String getId()>()
+org.apache.zeppelin.notebook.Paragraph.getInterpreterSettingById : $r5 = r0.<org.apache.zeppelin.notebook.Paragraph: org.apache.zeppelin.interpreter.InterpreterSettingManager interpreterSettingManager>
+org.apache.zeppelin.notebook.Paragraph.getInterpreterSettingById : r2 = null
+org.apache.zeppelin.notebook.Paragraph.setAuthenticationInfo : $r2 = virtualinvoke r1.<org.apache.zeppelin.user.AuthenticationInfo: java.lang.String getUser()>()
+org.apache.zeppelin.notebook.Paragraph.setAuthenticationInfo : r0.<org.apache.zeppelin.notebook.Paragraph: org.apache.zeppelin.user.AuthenticationInfo authenticationInfo> = r1
+org.apache.zeppelin.notebook.Paragraph.setReturn : virtualinvoke r0.<org.apache.zeppelin.notebook.Paragraph: void setException(java.lang.Throwable)>(r2)
+org.apache.zeppelin.notebook.Paragraph.setReturn : virtualinvoke r0.<org.apache.zeppelin.notebook.Paragraph: void setResult(java.lang.Object)>(r1)
+org.apache.zeppelin.util.WatcherSecurityKey.getKey : $r0 = <org.apache.zeppelin.util.WatcherSecurityKey: java.lang.String KEY>
+org.apache.zeppelin.notebook.Paragraph$1.onUpdateAll : $r3 = r0.<org.apache.zeppelin.notebook.Paragraph$1: org.apache.zeppelin.notebook.Paragraph this$0>
+org.apache.zeppelin.notebook.Paragraph$1.onUpdateAll : specialinvoke r0.<org.apache.zeppelin.notebook.Paragraph$1: void updateParagraphResult(java.util.List)>(r2)
+org.apache.zeppelin.notebook.Paragraph$1.onUpdateAll : goto [?= return]
+org.apache.zeppelin.notebook.Paragraph$1.onUpdateAll : r2 = virtualinvoke r1.<org.apache.zeppelin.interpreter.InterpreterOutput: java.util.List toInterpreterResultMessage()>()
+org.apache.zeppelin.notebook.Paragraph.setText : r0.<org.apache.zeppelin.notebook.Paragraph: java.lang.String text> = r1
+org.apache.zeppelin.notebook.Paragraph.setText : $r2 = new java.util.Date
+org.apache.zeppelin.notebook.Paragraph.noteHasUser : $r1 = r0.<org.apache.zeppelin.notebook.Paragraph: java.lang.String user>
+org.apache.zeppelin.notebook.Paragraph.getConfig : $r1 = r0.<org.apache.zeppelin.notebook.Paragraph: java.util.Map config>
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient.openWatcherSession : return r5
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient.openWatcherSession : goto [?= return r5]
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient.openWatcherSession : $r7 = r0.<org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient: org.eclipse.jetty.websocket.client.WebSocketClient wsClient>
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient.openWatcherSession : n0 = null
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient.openWatcherSession : r4 = staticinvoke <org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.listener.WatcherWebsocket: org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.listener.WatcherWebsocket createInstace()>()
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient.openWatcherSession : $r3 = staticinvoke <org.apache.zeppelin.util.WatcherSecurityKey: java.lang.String getKey()>()
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient.openWatcherSession : virtualinvoke r2.<org.eclipse.jetty.websocket.client.ClientUpgradeRequest: void setHeader(java.lang.String,java.lang.String)>("Origin", "*")
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient.openWatcherSession : r5 = null
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient.openWatcherSession : $r1 = new org.eclipse.jetty.websocket.client.ClientUpgradeRequest
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient.openWatcherSession : $r10 = interfaceinvoke r9.<java.util.concurrent.Future: java.lang.Object get()>()
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.listener.WatcherWebsocket.onWebSocketConnect : $r6 = <org.apache.zeppelin.ticket.TicketContainer: org.apache.zeppelin.ticket.TicketContainer instance>
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.listener.WatcherWebsocket.onWebSocketConnect : r4.<org.apache.zeppelin.notebook.socket.Message: java.lang.String principal> = "watcher"
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.listener.WatcherWebsocket.onWebSocketConnect : $r8 = interfaceinvoke r1.<org.eclipse.jetty.websocket.api.Session: org.eclipse.jetty.websocket.api.RemoteEndpoint getRemote()>()
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.listener.WatcherWebsocket.onWebSocketConnect : $r5 = new org.apache.zeppelin.notebook.socket.Message
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.listener.WatcherWebsocket.onWebSocketConnect : r0.<org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.listener.WatcherWebsocket: org.eclipse.jetty.websocket.api.Session connection> = r1
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.listener.WatcherWebsocket.onWebSocketConnect : $r2 = <org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.listener.WatcherWebsocket: org.slf4j.Logger LOG>
+org.apache.zeppelin.notebook.Paragraph.getUserParagraph : $r4 = r0.<org.apache.zeppelin.notebook.Paragraph: java.util.Map userParagraphMap>
+org.apache.zeppelin.notebook.Paragraph.getUserParagraph : virtualinvoke r0.<org.apache.zeppelin.notebook.Paragraph: org.apache.zeppelin.notebook.Paragraph cloneParagraphForUser(java.lang.String)>(r1)
+org.apache.zeppelin.notebook.Paragraph.getUserParagraph : $r2 = r0.<org.apache.zeppelin.notebook.Paragraph: java.util.Map userParagraphMap>
+org.apache.zeppelin.notebook.Paragraph.getReturn : $r1 = r0.<org.apache.zeppelin.notebook.Paragraph: java.lang.Object results>
+org.apache.zeppelin.notebook.Paragraph.getText : $r1 = r0.<org.apache.zeppelin.notebook.Paragraph: java.lang.String text>
+org.apache.zeppelin.notebook.Paragraph$1.updateParagraphResult : $r2 = new org.apache.zeppelin.interpreter.InterpreterResult
+org.apache.zeppelin.notebook.Paragraph$1.updateParagraphResult : $r5 = r0.<org.apache.zeppelin.notebook.Paragraph$1: org.apache.zeppelin.notebook.Paragraph this$0>
+org.apache.zeppelin.notebook.Paragraph.addUser : $r3 = r0.<org.apache.zeppelin.notebook.Paragraph: java.util.Map userParagraphMap>
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.mock.MockEventSocket.onWebSocketText : $r2 = r0.<org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.mock.MockEventSocket: org.eclipse.jetty.websocket.api.Session session>
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.mock.MockEventSocket.onWebSocketText : $r5 = <org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.mock.MockEventSocket: org.slf4j.Logger LOG>
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.mock.MockEventSocket.onWebSocketText : specialinvoke r0.<org.eclipse.jetty.websocket.api.WebSocketAdapter: void onWebSocketText(java.lang.String)>(r1)
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient$1.run : if i0 >= 300 goto return
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient$1.run : $r5 = staticinvoke <org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient: org.eclipse.jetty.websocket.api.Session access$000()>()
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient$1.run : i0 = 0
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient$1.run : $r2 = r0.<org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient$1: org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient this$0>
+org.apache.zeppelin.notebook.Paragraph.generateId : $r0 = new java.lang.StringBuilder
+org.apache.zeppelin.notebook.Paragraph.jobRun : r10 = r8
+org.apache.zeppelin.notebook.Paragraph.jobRun : r51 = virtualinvoke r0.<org.apache.zeppelin.notebook.Paragraph: java.lang.String getScriptBody()>()
+org.apache.zeppelin.notebook.Paragraph.jobRun : if r2 != null goto $r29 = virtualinvoke r2.<org.apache.zeppelin.interpreter.Interpreter: org.apache.zeppelin.interpreter.InterpreterGroup getInterpreterGroup()>()
+org.apache.zeppelin.notebook.Paragraph.jobRun : r2 = virtualinvoke r0.<org.apache.zeppelin.notebook.Paragraph: org.apache.zeppelin.interpreter.Interpreter getRepl(java.lang.String)>(r1)
+org.apache.zeppelin.notebook.Paragraph.jobRun : goto [?= $z5 = interfaceinvoke r4.<java.util.Iterator: boolean hasNext()>()]
+org.apache.zeppelin.notebook.Paragraph.jobRun : $r76 = virtualinvoke r69.<org.apache.zeppelin.interpreter.InterpreterResult: java.util.List message()>()
+org.apache.zeppelin.notebook.Paragraph.jobRun : $r79 = virtualinvoke r0.<org.apache.zeppelin.notebook.Paragraph: java.lang.String getUser()>()
+org.apache.zeppelin.notebook.Paragraph.jobRun : $r77 = new org.apache.zeppelin.interpreter.InterpreterResult
+org.apache.zeppelin.notebook.Paragraph.jobRun : $r47 = r0.<org.apache.zeppelin.notebook.Paragraph: java.util.Map userParagraphMap>
+org.apache.zeppelin.notebook.Paragraph.jobRun : $z1 = specialinvoke r0.<org.apache.zeppelin.notebook.Paragraph: boolean noteHasUser()>()
+org.apache.zeppelin.notebook.Paragraph.jobRun : $r80 = r9.<org.apache.zeppelin.notebook.Paragraph: org.apache.zeppelin.display.GUI settings>
+org.apache.zeppelin.notebook.Paragraph.jobRun : $r73 = r68.<org.apache.zeppelin.interpreter.InterpreterContext: org.apache.zeppelin.interpreter.InterpreterOutput out>
+org.apache.zeppelin.notebook.Paragraph.jobRun : $r70 = <org.apache.zeppelin.interpreter.InterpreterResult$Code: org.apache.zeppelin.interpreter.InterpreterResult$Code KEEP_PREVIOUS_RESULT>
+org.apache.zeppelin.notebook.Paragraph.jobRun : $r63 = <org.apache.zeppelin.notebook.Paragraph: org.slf4j.Logger logger>
+org.apache.zeppelin.notebook.Paragraph.jobRun : $r31 = virtualinvoke r3.<org.apache.zeppelin.interpreter.InterpreterSetting: org.apache.zeppelin.interpreter.InterpreterSetting$Status getStatus()>()
+org.apache.zeppelin.notebook.Paragraph.jobRun : virtualinvoke r9.<org.apache.zeppelin.notebook.Paragraph: void setResult(java.lang.Object)>(r8)
+org.apache.zeppelin.notebook.Paragraph.jobRun : staticinvoke <org.apache.zeppelin.interpreter.InterpreterContext: void set(org.apache.zeppelin.interpreter.InterpreterContext)>(r68)
+org.apache.zeppelin.notebook.Paragraph.jobRun : r1 = virtualinvoke r0.<org.apache.zeppelin.notebook.Paragraph: java.lang.String getRequiredReplName()>()
+org.apache.zeppelin.notebook.Paragraph.jobRun : if r3 == null goto $r47 = r0.<org.apache.zeppelin.notebook.Paragraph: java.util.Map userParagraphMap>
+org.apache.zeppelin.notebook.Paragraph.jobRun : if null == r9 goto r10 = r8
+org.apache.zeppelin.notebook.Paragraph.jobRun : $r52 = virtualinvoke r2.<org.apache.zeppelin.interpreter.Interpreter: org.apache.zeppelin.interpreter.Interpreter$FormType getFormType()>()
+org.apache.zeppelin.notebook.Paragraph.jobRun : $r55 = virtualinvoke r2.<org.apache.zeppelin.interpreter.Interpreter: org.apache.zeppelin.interpreter.Interpreter$FormType getFormType()>()
+org.apache.zeppelin.notebook.Paragraph.jobRun : r69 = virtualinvoke r2.<org.apache.zeppelin.interpreter.Interpreter: org.apache.zeppelin.interpreter.InterpreterResult interpret(java.lang.String,org.apache.zeppelin.interpreter.InterpreterContext)>(r51, r68)
+org.apache.zeppelin.notebook.Paragraph.jobRun : $r50 = virtualinvoke r0.<org.apache.zeppelin.notebook.Paragraph: java.lang.String getText()>()
+org.apache.zeppelin.notebook.Paragraph.jobRun : r68 = specialinvoke r0.<org.apache.zeppelin.notebook.Paragraph: org.apache.zeppelin.interpreter.InterpreterContext getInterpreterContext()>()
+org.apache.zeppelin.notebook.Paragraph.jobRun : $r74 = r68.<org.apache.zeppelin.interpreter.InterpreterContext: org.apache.zeppelin.interpreter.InterpreterOutput out>
+org.apache.zeppelin.notebook.Paragraph.jobRun : $r29 = virtualinvoke r2.<org.apache.zeppelin.interpreter.Interpreter: org.apache.zeppelin.interpreter.InterpreterGroup getInterpreterGroup()>()
+org.apache.zeppelin.notebook.Paragraph.jobRun : $r12 = <org.apache.zeppelin.notebook.Paragraph: org.slf4j.Logger logger>
+org.apache.zeppelin.notebook.Paragraph.cloneParagraphForUser : $r17 = <org.apache.zeppelin.scheduler.Job$Status: org.apache.zeppelin.scheduler.Job$Status READY>
+org.apache.zeppelin.notebook.Paragraph.cloneParagraphForUser : $r2 = new org.apache.zeppelin.notebook.Paragraph
+org.apache.zeppelin.notebook.Paragraph.cloneParagraphForUser : return r3
+org.apache.zeppelin.notebook.Paragraph.cloneParagraphForUser : $r16 = virtualinvoke r0.<org.apache.zeppelin.notebook.Paragraph: java.lang.Object getReturn()>()
+org.apache.zeppelin.notebook.Paragraph.cloneParagraphForUser : $r14 = virtualinvoke r0.<org.apache.zeppelin.notebook.Paragraph: java.lang.String getTitle()>()
+org.apache.zeppelin.notebook.Paragraph.cloneParagraphForUser : $r12 = r0.<org.apache.zeppelin.notebook.Paragraph: java.util.Map config>
+org.apache.zeppelin.notebook.Paragraph.cloneParagraphForUser : $r4 = r3.<org.apache.zeppelin.notebook.Paragraph: org.apache.zeppelin.display.GUI settings>
+org.apache.zeppelin.notebook.Paragraph.cloneParagraphForUser : virtualinvoke r0.<org.apache.zeppelin.notebook.Paragraph: void addUser(org.apache.zeppelin.notebook.Paragraph,java.lang.String)>(r3, r1)
+org.apache.zeppelin.notebook.Paragraph.cloneParagraphForUser : $r18 = virtualinvoke r0.<org.apache.zeppelin.notebook.Paragraph: java.lang.String getId()>()
+org.apache.zeppelin.notebook.Paragraph.cloneParagraphForUser : $r15 = virtualinvoke r0.<org.apache.zeppelin.notebook.Paragraph: java.lang.String getText()>()
+org.apache.zeppelin.notebook.Paragraph.cloneParagraphForUser : $r8 = r3.<org.apache.zeppelin.notebook.Paragraph: org.apache.zeppelin.display.GUI settings>
+org.apache.zeppelin.ticket.TicketContainer.getTicket : $r9 = r0.<org.apache.zeppelin.ticket.TicketContainer: java.util.Map sessions>
+org.apache.zeppelin.ticket.TicketContainer.getTicket : return r3
+org.apache.zeppelin.ticket.TicketContainer.getTicket : $r4 = r0.<org.apache.zeppelin.ticket.TicketContainer: java.util.Map sessions>
+org.apache.zeppelin.ticket.TicketContainer.getTicket : $r6 = staticinvoke <java.util.UUID: java.util.UUID randomUUID()>()
+org.apache.zeppelin.ticket.TicketContainer.getTicket : $z0 = virtualinvoke r1.<java.lang.String: boolean equals(java.lang.Object)>("anonymous")
+org.apache.zeppelin.ticket.TicketContainer.getTicket : $r7 = new org.apache.zeppelin.ticket.TicketContainer$Entry
+org.apache.zeppelin.ticket.TicketContainer.getTicket : if r2 != null goto r3 = r2.<org.apache.zeppelin.ticket.TicketContainer$Entry: java.lang.String ticket>
+org.apache.zeppelin.ticket.TicketContainer.getTicket : r3 = r2.<org.apache.zeppelin.ticket.TicketContainer$Entry: java.lang.String ticket>
+org.apache.zeppelin.notebook.Paragraph.getUser : $r1 = r0.<org.apache.zeppelin.notebook.Paragraph: java.lang.String user>
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.listener.WatcherWebsocket.onWebSocketText : $r2 = <org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.listener.WatcherWebsocket: com.google.gson.Gson GSON>
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.listener.WatcherWebsocket.onWebSocketText : $r6 = r3.<org.apache.zeppelin.notebook.socket.WatcherMessage: java.lang.String noteId>
+org.apache.zeppelin.interpreter.remote.AppendOutputRunnerTest$TestAppender.append : $r2 = r0.<org.apache.zeppelin.interpreter.remote.AppendOutputRunnerTest$TestAppender: java.util.List log>
+org.apache.zeppelin.notebook.Paragraph.interpreterHasUser : $r2 = virtualinvoke r1.<org.apache.zeppelin.interpreter.InterpreterSetting: org.apache.zeppelin.interpreter.InterpreterOption getOption()>()

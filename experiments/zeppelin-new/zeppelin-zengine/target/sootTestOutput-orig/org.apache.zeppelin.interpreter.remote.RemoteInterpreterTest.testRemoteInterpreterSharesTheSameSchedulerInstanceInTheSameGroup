@@ -1,0 +1,86 @@
+org.apache.zeppelin.interpreter.remote.RemoteInterpreterManagedProcess$ProcessLogOutputStream.setOutputStream : exitmonitor r3
+org.apache.zeppelin.interpreter.remote.RemoteInterpreterManagedProcess$ProcessLogOutputStream.setOutputStream : r3 = r0
+org.apache.zeppelin.interpreter.remote.RemoteInterpreterManagedProcess$ProcessLogOutputStream.setOutputStream : r0.<org.apache.zeppelin.interpreter.remote.RemoteInterpreterManagedProcess$ProcessLogOutputStream: java.io.OutputStream out> = r1
+org.apache.zeppelin.interpreter.remote.RemoteInterpreter.connectToExistingProcess : $r1 = r0.<org.apache.zeppelin.interpreter.remote.RemoteInterpreter: java.lang.String host>
+org.apache.zeppelin.interpreter.remote.RemoteInterpreter.getInterpreterProcess : $r19 = virtualinvoke r1.<org.apache.zeppelin.interpreter.InterpreterGroup: org.apache.zeppelin.interpreter.remote.RemoteInterpreterProcess getRemoteInterpreterProcess()>()
+org.apache.zeppelin.interpreter.remote.RemoteInterpreter.getInterpreterProcess : r1 = virtualinvoke r0.<org.apache.zeppelin.interpreter.remote.RemoteInterpreter: org.apache.zeppelin.interpreter.InterpreterGroup getInterpreterGroup()>()
+org.apache.zeppelin.interpreter.remote.RemoteInterpreter.getInterpreterProcess : r2 = r1
+org.apache.zeppelin.interpreter.remote.RemoteInterpreter.getInterpreterProcess : $z0 = specialinvoke r0.<org.apache.zeppelin.interpreter.remote.RemoteInterpreter: boolean connectToExistingProcess()>()
+org.apache.zeppelin.interpreter.remote.RemoteInterpreter.getInterpreterProcess : if r1 != null goto r2 = r1
+org.apache.zeppelin.interpreter.remote.RemoteInterpreter.getInterpreterProcess : virtualinvoke r1.<org.apache.zeppelin.interpreter.InterpreterGroup: void setRemoteInterpreterProcess(org.apache.zeppelin.interpreter.remote.RemoteInterpreterProcess)>(r3)
+org.apache.zeppelin.interpreter.remote.RemoteInterpreter.getInterpreterProcess : $r11 = new org.apache.zeppelin.interpreter.remote.RemoteInterpreterManagedProcess
+org.apache.zeppelin.interpreter.remote.RemoteInterpreter.getInterpreterProcess : $r6 = virtualinvoke r1.<org.apache.zeppelin.interpreter.InterpreterGroup: org.apache.zeppelin.interpreter.remote.RemoteInterpreterProcess getRemoteInterpreterProcess()>()
+org.apache.zeppelin.interpreter.remote.RemoteInterpreter.getScheduler : $r3 = staticinvoke <org.apache.zeppelin.scheduler.SchedulerFactory: org.apache.zeppelin.scheduler.SchedulerFactory singleton()>()
+org.apache.zeppelin.interpreter.remote.RemoteInterpreter.getScheduler : if r1 != null goto $r3 = staticinvoke <org.apache.zeppelin.scheduler.SchedulerFactory: org.apache.zeppelin.scheduler.SchedulerFactory singleton()>()
+org.apache.zeppelin.interpreter.remote.RemoteInterpreter.getScheduler : r1 = virtualinvoke r0.<org.apache.zeppelin.interpreter.remote.RemoteInterpreter: org.apache.zeppelin.interpreter.remote.RemoteInterpreterProcess getInterpreterProcess()>()
+org.apache.zeppelin.interpreter.remote.RemoteInterpreter.getScheduler : i0 = r0.<org.apache.zeppelin.interpreter.remote.RemoteInterpreter: int maxPoolSize>
+org.apache.zeppelin.interpreter.remote.AppendOutputRunnerTest$TestAppender.append : $r2 = r0.<org.apache.zeppelin.interpreter.remote.AppendOutputRunnerTest$TestAppender: java.util.List log>
+org.apache.zeppelin.interpreter.remote.RemoteInterpreterManagedProcess.isRunning : $z0 = r0.<org.apache.zeppelin.interpreter.remote.RemoteInterpreterManagedProcess: boolean running>
+org.apache.zeppelin.interpreter.remote.RemoteInterpreter.closeInterpreter : $z1 = r0.<org.apache.zeppelin.interpreter.remote.RemoteInterpreter: boolean initialized>
+org.apache.zeppelin.interpreter.remote.RemoteInterpreter.getEnvFromInterpreterProperty : return r3
+org.apache.zeppelin.interpreter.remote.RemoteInterpreter.getEnvFromInterpreterProperty : $r2 = new java.util.HashMap
+org.apache.zeppelin.interpreter.remote.RemoteInterpreter.getEnvFromInterpreterProperty : $r6 = virtualinvoke r1.<java.util.Properties: java.util.Set keySet()>()
+org.apache.zeppelin.interpreter.remote.RemoteInterpreterTest.createMockInterpreterA : $r8 = virtualinvoke $r5.<java.io.File: java.lang.String getAbsolutePath()>()
+org.apache.zeppelin.interpreter.remote.RemoteInterpreterTest.createMockInterpreterA : $r7 = virtualinvoke $r4.<java.lang.Class: java.lang.String getName()>()
+org.apache.zeppelin.interpreter.remote.RemoteInterpreterTest.createMockInterpreterA : $r2 = specialinvoke r0.<org.apache.zeppelin.interpreter.remote.RemoteInterpreterTest: org.apache.zeppelin.interpreter.remote.RemoteInterpreter createMockInterpreterA(java.util.Properties,java.lang.String)>(r1, "note")
+org.apache.zeppelin.interpreter.remote.RemoteInterpreterTest.createMockInterpreterA : $r10 = staticinvoke <java.lang.Boolean: java.lang.Boolean valueOf(boolean)>(0)
+org.apache.zeppelin.interpreter.remote.RemoteInterpreterTest.createMockInterpreterA : $r3 = new org.apache.zeppelin.interpreter.remote.RemoteInterpreter
+org.apache.zeppelin.interpreter.remote.RemoteInterpreterTest.createMockInterpreterB : $r8 = virtualinvoke $r5.<java.io.File: java.lang.String getAbsolutePath()>()
+org.apache.zeppelin.interpreter.remote.RemoteInterpreterTest.createMockInterpreterB : $r7 = virtualinvoke $r4.<java.lang.Class: java.lang.String getName()>()
+org.apache.zeppelin.interpreter.remote.RemoteInterpreterTest.createMockInterpreterB : $r10 = staticinvoke <java.lang.Boolean: java.lang.Boolean valueOf(boolean)>(0)
+org.apache.zeppelin.interpreter.remote.RemoteInterpreterTest.createMockInterpreterB : $r3 = new org.apache.zeppelin.interpreter.remote.RemoteInterpreter
+org.apache.zeppelin.interpreter.remote.RemoteInterpreterTest.createMockInterpreterB : $r2 = specialinvoke r0.<org.apache.zeppelin.interpreter.remote.RemoteInterpreterTest: org.apache.zeppelin.interpreter.remote.RemoteInterpreter createMockInterpreterB(java.util.Properties,java.lang.String)>(r1, "note")
+org.apache.zeppelin.interpreter.remote.RemoteInterpreterManagedProcess.onProcessFailed : r0.<org.apache.zeppelin.interpreter.remote.RemoteInterpreterManagedProcess: boolean running> = 0
+org.apache.zeppelin.interpreter.remote.RemoteInterpreterManagedProcess.onProcessFailed : $r2 = <org.apache.zeppelin.interpreter.remote.RemoteInterpreterManagedProcess: org.slf4j.Logger logger>
+org.apache.zeppelin.interpreter.remote.RemoteInterpreterManagedProcess.start : $r13 = r0.<org.apache.zeppelin.interpreter.remote.RemoteInterpreterManagedProcess: java.lang.String interpreterDir>
+org.apache.zeppelin.interpreter.remote.RemoteInterpreterManagedProcess.start : goto [?= l2 = staticinvoke <java.lang.System: long currentTimeMillis()>()]
+org.apache.zeppelin.interpreter.remote.RemoteInterpreterManagedProcess.start : $r27 = new java.io.ByteArrayOutputStream
+org.apache.zeppelin.interpreter.remote.RemoteInterpreterManagedProcess.start : l2 = staticinvoke <java.lang.System: long currentTimeMillis()>()
+org.apache.zeppelin.interpreter.remote.RemoteInterpreterManagedProcess.start : $i1 = r0.<org.apache.zeppelin.interpreter.remote.RemoteInterpreterManagedProcess: int port>
+org.apache.zeppelin.interpreter.remote.RemoteInterpreterManagedProcess.start : virtualinvoke r11.<org.apache.commons.exec.CommandLine: org.apache.commons.exec.CommandLine addArgument(java.lang.String,boolean)>("-d", 0)
+org.apache.zeppelin.interpreter.remote.RemoteInterpreterManagedProcess.start : goto [?= $r42 = new org.apache.zeppelin.interpreter.InterpreterException]
+org.apache.zeppelin.interpreter.remote.RemoteInterpreterManagedProcess.start : $r33 = r0.<org.apache.zeppelin.interpreter.remote.RemoteInterpreterManagedProcess: org.apache.commons.exec.DefaultExecutor executor>
+org.apache.zeppelin.interpreter.remote.RemoteInterpreterManagedProcess.start : $r24 = r0.<org.apache.zeppelin.interpreter.remote.RemoteInterpreterManagedProcess: java.lang.String interpreterGroupName>
+org.apache.zeppelin.interpreter.remote.RemoteInterpreterManagedProcess.start : virtualinvoke r11.<org.apache.commons.exec.CommandLine: org.apache.commons.exec.CommandLine addArgument(java.lang.String,boolean)>("-g", 0)
+org.apache.zeppelin.interpreter.remote.RemoteInterpreterManagedProcess.start : r6 = staticinvoke <org.apache.commons.exec.environment.EnvironmentUtils: java.util.Map getProcEnvironment()>()
+org.apache.zeppelin.interpreter.remote.RemoteInterpreterManagedProcess.start : $r30 = r0.<org.apache.zeppelin.interpreter.remote.RemoteInterpreterManagedProcess: org.apache.commons.exec.DefaultExecutor executor>
+org.apache.zeppelin.interpreter.remote.RemoteInterpreterManagedProcess.start : $r26 = new org.apache.commons.exec.DefaultExecutor
+org.apache.zeppelin.interpreter.remote.RemoteInterpreterManagedProcess.start : $r21 = r0.<org.apache.zeppelin.interpreter.remote.RemoteInterpreterManagedProcess: java.lang.String localRepoDir>
+org.apache.zeppelin.interpreter.remote.RemoteInterpreterManagedProcess.start : goto [?= (branch)]
+org.apache.zeppelin.interpreter.remote.RemoteInterpreterManagedProcess.start : $r32 = new org.apache.commons.exec.ExecuteWatchdog
+org.apache.zeppelin.interpreter.remote.RemoteInterpreterManagedProcess.start : $z0 = virtualinvoke r2.<java.lang.Boolean: boolean booleanValue()>()
+org.apache.zeppelin.interpreter.remote.RemoteInterpreterManagedProcess.start : $l3 = staticinvoke <java.lang.System: long currentTimeMillis()>()
+org.apache.zeppelin.interpreter.remote.RemoteInterpreterManagedProcess.start : $r10 = r0.<org.apache.zeppelin.interpreter.remote.RemoteInterpreterManagedProcess: java.lang.String interpreterRunner>
+org.apache.zeppelin.interpreter.remote.RemoteInterpreterManagedProcess.start : $r42 = new org.apache.zeppelin.interpreter.InterpreterException
+org.apache.zeppelin.interpreter.remote.RemoteInterpreterManagedProcess.start : staticinvoke <java.lang.Thread: void sleep(long)>(500L)
+org.apache.zeppelin.interpreter.remote.RemoteInterpreterManagedProcess.start : virtualinvoke r4.<java.io.ByteArrayOutputStream: void flush()>()
+org.apache.zeppelin.interpreter.remote.RemoteInterpreterManagedProcess.start : $z2 = r0.<org.apache.zeppelin.interpreter.remote.RemoteInterpreterManagedProcess: boolean running>
+org.apache.zeppelin.interpreter.remote.RemoteInterpreterManagedProcess.start : goto [?= $r10 = r0.<org.apache.zeppelin.interpreter.remote.RemoteInterpreterManagedProcess: java.lang.String interpreterRunner>]
+org.apache.zeppelin.interpreter.remote.RemoteInterpreterManagedProcess.start : $i0 = staticinvoke <org.apache.zeppelin.interpreter.remote.RemoteInterpreterUtils: int findRandomAvailablePortOnAllLocalInterfaces()>()
+org.apache.zeppelin.interpreter.remote.RemoteInterpreterManagedProcess.start : r0.<org.apache.zeppelin.interpreter.remote.RemoteInterpreterManagedProcess: boolean running> = 1
+org.apache.zeppelin.interpreter.remote.RemoteInterpreterManagedProcess.start : goto [?= staticinvoke <edu.washington.cs.dt.impact.util.Tracer: void trace(java.lang.String,java.lang.String)>("$l3 = staticinvoke <java.lang.System: long currentTimeMillis()>()", "org.apache.zeppelin.interpreter.remote.RemoteInterpreterManagedProcess.start")]
+org.apache.zeppelin.interpreter.remote.RemoteInterpreterManagedProcess.start : $r35 = r0.<org.apache.zeppelin.interpreter.remote.RemoteInterpreterManagedProcess: java.util.Map env>
+org.apache.zeppelin.interpreter.remote.RemoteInterpreterManagedProcess.start : $i8 = r0.<org.apache.zeppelin.interpreter.remote.RemoteInterpreterManagedProcess: int port>
+org.apache.zeppelin.interpreter.remote.RemoteInterpreterManagedProcess.start : virtualinvoke r11.<org.apache.commons.exec.CommandLine: org.apache.commons.exec.CommandLine addArgument(java.lang.String,boolean)>("-p", 0)
+org.apache.zeppelin.interpreter.remote.RemoteInterpreterManagedProcess.start : $r36 = <org.apache.zeppelin.interpreter.remote.RemoteInterpreterManagedProcess: org.slf4j.Logger logger>
+org.apache.zeppelin.interpreter.remote.RemoteInterpreterManagedProcess.start : virtualinvoke r11.<org.apache.commons.exec.CommandLine: org.apache.commons.exec.CommandLine addArgument(java.lang.String,boolean)>("-l", 0)
+org.apache.zeppelin.interpreter.remote.RemoteInterpreterManagedProcess.start : $r28 = new org.apache.zeppelin.interpreter.remote.RemoteInterpreterManagedProcess$ProcessLogOutputStream
+org.apache.zeppelin.interpreter.remote.RemoteInterpreterManagedProcess.start : virtualinvoke r5.<org.apache.zeppelin.interpreter.remote.RemoteInterpreterManagedProcess$ProcessLogOutputStream: void setOutputStream(java.io.OutputStream)>(r4)
+org.apache.zeppelin.interpreter.remote.RemoteInterpreterManagedProcess.start : $r37 = r0.<org.apache.zeppelin.interpreter.remote.RemoteInterpreterManagedProcess: org.apache.commons.exec.DefaultExecutor executor>
+org.apache.zeppelin.interpreter.remote.RemoteInterpreter.open : $z0 = r0.<org.apache.zeppelin.interpreter.remote.RemoteInterpreter: boolean initialized>
+org.apache.zeppelin.interpreter.remote.RemoteInterpreter.open : r4 = virtualinvoke r0.<org.apache.zeppelin.interpreter.remote.RemoteInterpreter: org.apache.zeppelin.interpreter.remote.RemoteInterpreterProcess getInterpreterProcess()>()
+org.apache.zeppelin.interpreter.remote.RemoteInterpreter.open : r1 = virtualinvoke r0.<org.apache.zeppelin.interpreter.remote.RemoteInterpreter: org.apache.zeppelin.interpreter.InterpreterGroup getInterpreterGroup()>()
+org.apache.zeppelin.interpreter.remote.RemoteInterpreter.open : r2 = r1
+org.apache.zeppelin.interpreter.remote.RemoteInterpreter.open : $r13 = r0.<org.apache.zeppelin.interpreter.remote.RemoteInterpreter: java.lang.String userName>
+org.apache.zeppelin.interpreter.remote.RemoteInterpreter.open : $r11 = r0.<org.apache.zeppelin.interpreter.remote.RemoteInterpreter: java.lang.String sessionKey>
+org.apache.zeppelin.interpreter.remote.RemoteInterpreter.close : $r16 = (org.apache.zeppelin.interpreter.remote.RemoteInterpreter) r6
+org.apache.zeppelin.interpreter.remote.RemoteInterpreter.close : $z0 = r0.<org.apache.zeppelin.interpreter.remote.RemoteInterpreter: boolean initialized>
+org.apache.zeppelin.interpreter.remote.RemoteInterpreter.close : r1 = virtualinvoke r0.<org.apache.zeppelin.interpreter.remote.RemoteInterpreter: org.apache.zeppelin.interpreter.InterpreterGroup getInterpreterGroup()>()
+org.apache.zeppelin.interpreter.remote.RemoteInterpreter.close : r2 = r1
+org.apache.zeppelin.interpreter.remote.RemoteInterpreter.close : exitmonitor r2
+org.apache.zeppelin.interpreter.remote.RemoteInterpreter.close : $r10 = r0.<org.apache.zeppelin.interpreter.remote.RemoteInterpreter: java.lang.String sessionKey>
+org.apache.zeppelin.interpreter.remote.RemoteInterpreter.close : $z2 = r6 instanceof org.apache.zeppelin.interpreter.WrappedInterpreter
+org.apache.zeppelin.interpreter.remote.RemoteInterpreter.close : r6 = r5
+org.apache.zeppelin.interpreter.remote.RemoteInterpreter.close : $r13 = new java.util.ArrayList
+org.apache.zeppelin.interpreter.remote.RemoteInterpreter.close : goto [?= $z1 = interfaceinvoke r4.<java.util.Iterator: boolean hasNext()>()]
+org.apache.zeppelin.interpreter.remote.RemoteInterpreter.close : goto [?= (branch)]
