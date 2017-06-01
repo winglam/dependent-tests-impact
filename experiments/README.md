@@ -33,3 +33,7 @@ xml-security-1_2_0      - version 1.2.0
 xml-security-commons    - library for version 1.0.4 and 1.2.0
 
 xml-security-orig-v1    - version 1.0.4
+
+zeppelin 		- 09e8f7f0cd84efd9c67fff44119f7953881d91ab
+
+zeppelin-new            - c3b7087463822a2ed96d377413f47370391e17c1
