@@ -1,0 +1,30 @@
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.close : $r1 = r0.<org.apache.zeppelin.interpreter.InterpreterResultMessageOutput: org.apache.zeppelin.interpreter.InterpreterOutputChangeWatcher watcher>
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.close : virtualinvoke r0.<org.apache.zeppelin.interpreter.InterpreterResultMessageOutput: void flush()>()
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.flush : exitmonitor r1
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.flush : $r5 = r0.<org.apache.zeppelin.interpreter.InterpreterResultMessageOutput: java.io.ByteArrayOutputStream buffer>
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.flush : $r12 = r0.<org.apache.zeppelin.interpreter.InterpreterResultMessageOutput: java.io.ByteArrayOutputStream buffer>
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.flush : if r2 == null goto $r12 = r0.<org.apache.zeppelin.interpreter.InterpreterResultMessageOutput: java.io.ByteArrayOutputStream buffer>
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.flush : $z0 = virtualinvoke r0.<org.apache.zeppelin.interpreter.InterpreterResultMessageOutput: boolean isAppendSupported()>()
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.flush : $r4 = r0.<org.apache.zeppelin.interpreter.InterpreterResultMessageOutput: java.util.List outList>
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.flush : $r6 = r0.<org.apache.zeppelin.interpreter.InterpreterResultMessageOutput: java.io.ByteArrayOutputStream buffer>
+org.apache.zeppelin.interpreter.Interpreter.findRegisteredInterpreterByClassName : return null
+org.apache.zeppelin.interpreter.Interpreter.findRegisteredInterpreterByClassName : $r1 = <org.apache.zeppelin.interpreter.Interpreter: java.util.Map registeredInterpreters>
+org.apache.zeppelin.interpreter.Interpreter.getClassName : $r1 = virtualinvoke r0.<java.lang.Object: java.lang.Class getClass()>()
+org.apache.zeppelin.interpreter.Interpreter.getProperty : return r2
+org.apache.zeppelin.interpreter.Interpreter.getProperty : specialinvoke r0.<org.apache.zeppelin.interpreter.Interpreter: void replaceContextParameters(java.util.Properties)>(r2)
+org.apache.zeppelin.interpreter.Interpreter.getProperty : $r8 = r0.<org.apache.zeppelin.interpreter.Interpreter: java.util.Properties property>
+org.apache.zeppelin.interpreter.Interpreter.getProperty : r3 = staticinvoke <org.apache.zeppelin.interpreter.Interpreter: org.apache.zeppelin.interpreter.Interpreter$RegisteredInterpreter findRegisteredInterpreterByClassName(java.lang.String)>($r9)
+org.apache.zeppelin.interpreter.Interpreter.getProperty : $r9 = virtualinvoke r0.<org.apache.zeppelin.interpreter.Interpreter: java.lang.String getClassName()>()
+org.apache.zeppelin.interpreter.Interpreter.getProperty : $r5 = virtualinvoke r0.<org.apache.zeppelin.interpreter.Interpreter: java.util.Properties getProperty()>()
+org.apache.zeppelin.interpreter.Interpreter.getProperty : $r2 = <org.apache.zeppelin.interpreter.Interpreter: org.slf4j.Logger logger>
+org.apache.zeppelin.interpreter.Interpreter.getProperty : $r1 = new java.util.Properties
+org.apache.zeppelin.interpreter.Interpreter.getProperty : if null == r3 goto specialinvoke r0.<org.apache.zeppelin.interpreter.Interpreter: void replaceContextParameters(java.util.Properties)>(r2)
+org.apache.zeppelin.interpreter.InterpreterOutput.close : exitmonitor r1
+org.apache.zeppelin.interpreter.InterpreterOutput.close : $r5 = r0.<org.apache.zeppelin.interpreter.InterpreterOutput: java.util.List resultMessageOutputs>
+org.apache.zeppelin.interpreter.InterpreterOutput.close : goto [?= $z0 = interfaceinvoke r2.<java.util.Iterator: boolean hasNext()>()]
+org.apache.zeppelin.interpreter.InterpreterOutput.close : virtualinvoke r3.<org.apache.zeppelin.interpreter.InterpreterResultMessageOutput: void close()>()
+org.apache.zeppelin.interpreter.InterpreterOutput.close : $r6 = r0.<org.apache.zeppelin.interpreter.InterpreterOutput: java.util.List resultMessageOutputs>
+org.apache.zeppelin.interpreter.Interpreter.replaceContextParameters : if r2 == null goto return
+org.apache.zeppelin.interpreter.Interpreter.replaceContextParameters : r2 = staticinvoke <org.apache.zeppelin.interpreter.InterpreterContext: org.apache.zeppelin.interpreter.InterpreterContext get()>()
+org.apache.zeppelin.interpreter.InterpreterContext.get : $r0 = <org.apache.zeppelin.interpreter.InterpreterContext: java.lang.ThreadLocal threadIC>
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.isAppendSupported : $r2 = r0.<org.apache.zeppelin.interpreter.InterpreterResultMessageOutput: org.apache.zeppelin.interpreter.InterpreterResult$Type type>

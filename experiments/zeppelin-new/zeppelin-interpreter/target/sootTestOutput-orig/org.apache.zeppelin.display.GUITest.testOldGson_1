@@ -1,0 +1,56 @@
+org.apache.zeppelin.display.Input.isHidden : $z0 = r0.<org.apache.zeppelin.display.Input: boolean hidden>
+org.apache.zeppelin.display.RuntimeTypeAdapterFactory.access$000 : $r1 = r0.<org.apache.zeppelin.display.RuntimeTypeAdapterFactory: java.lang.String typeFieldName>
+org.apache.zeppelin.display.Input.setHidden : r0.<org.apache.zeppelin.display.Input: boolean hidden> = z0
+org.apache.zeppelin.display.ui.OptionInput$ParamOption.equals : $r9 = r0.<org.apache.zeppelin.display.ui.OptionInput$ParamOption: java.lang.String displayName>
+org.apache.zeppelin.display.ui.OptionInput$ParamOption.equals : if r0 != r1 goto (branch)
+org.apache.zeppelin.display.ui.OptionInput$ParamOption.equals : $r5 = r0.<org.apache.zeppelin.display.ui.OptionInput$ParamOption: java.lang.Object value>
+org.apache.zeppelin.display.ui.OptionInput$ParamOption.equals : r2 = (org.apache.zeppelin.display.ui.OptionInput$ParamOption) r1
+org.apache.zeppelin.display.ui.OptionInput$ParamOption.equals : if r1 == null goto return 0
+org.apache.zeppelin.display.RuntimeTypeAdapterFactory.access$200 : $r1 = r0.<org.apache.zeppelin.display.RuntimeTypeAdapterFactory: java.util.Map subtypeToLabel>
+org.apache.zeppelin.display.RuntimeTypeAdapterFactory.create : return null
+org.apache.zeppelin.display.RuntimeTypeAdapterFactory.create : $r8 = virtualinvoke r2.<com.google.gson.reflect.TypeToken: java.lang.Class getRawType()>()
+org.apache.zeppelin.display.RuntimeTypeAdapterFactory$1.write : $r43 = interfaceinvoke r10.<java.util.Map$Entry: java.lang.Object getKey()>()
+org.apache.zeppelin.display.RuntimeTypeAdapterFactory$1.write : $r14 = r0.<org.apache.zeppelin.display.RuntimeTypeAdapterFactory$1: java.util.Map val$subtypeToDelegate>
+org.apache.zeppelin.display.RuntimeTypeAdapterFactory$1.write : $r36 = new com.google.gson.JsonObject
+org.apache.zeppelin.display.RuntimeTypeAdapterFactory$1.write : $r11 = r0.<org.apache.zeppelin.display.RuntimeTypeAdapterFactory$1: org.apache.zeppelin.display.RuntimeTypeAdapterFactory this$0>
+org.apache.zeppelin.display.RuntimeTypeAdapterFactory$1.write : staticinvoke <com.google.gson.internal.Streams: void write(com.google.gson.JsonElement,com.google.gson.stream.JsonWriter)>(r8, r1)
+org.apache.zeppelin.display.RuntimeTypeAdapterFactory$1.write : $r38 = r0.<org.apache.zeppelin.display.RuntimeTypeAdapterFactory$1: org.apache.zeppelin.display.RuntimeTypeAdapterFactory this$0>
+org.apache.zeppelin.display.RuntimeTypeAdapterFactory$1.write : goto [?= $z3 = interfaceinvoke r9.<java.util.Iterator: boolean hasNext()>()]
+org.apache.zeppelin.display.RuntimeTypeAdapterFactory$1.write : $r23 = r0.<org.apache.zeppelin.display.RuntimeTypeAdapterFactory$1: org.apache.zeppelin.display.RuntimeTypeAdapterFactory this$0>
+org.apache.zeppelin.display.RuntimeTypeAdapterFactory$1.write : if r5 != null goto $r22 = virtualinvoke r5.<com.google.gson.TypeAdapter: com.google.gson.JsonElement toJsonTree(java.lang.Object)>(r2)
+org.apache.zeppelin.display.RuntimeTypeAdapterFactory$1.write : r3 = virtualinvoke r2.<java.lang.Object: java.lang.Class getClass()>()
+org.apache.zeppelin.display.RuntimeTypeAdapterFactory$1.write : $r37 = virtualinvoke r3.<java.lang.Class: java.lang.String getSimpleName()>()
+org.apache.zeppelin.display.RuntimeTypeAdapterFactory$1.write : $r22 = virtualinvoke r5.<com.google.gson.TypeAdapter: com.google.gson.JsonElement toJsonTree(java.lang.Object)>(r2)
+org.apache.zeppelin.display.RuntimeTypeAdapterFactory$1.write : $r41 = virtualinvoke r7.<com.google.gson.JsonObject: java.util.Set entrySet()>()
+org.apache.zeppelin.display.Input.getArgument : $r1 = r0.<org.apache.zeppelin.display.Input: java.lang.String argument>
+org.apache.zeppelin.display.GUI.toJson : $r1 = <org.apache.zeppelin.display.GUI: com.google.gson.Gson gson>
+org.apache.zeppelin.display.GUI.convertFromOldInput : $r19 = virtualinvoke r1.<org.apache.zeppelin.display.OldInput: java.lang.String getDisplayName()>()
+org.apache.zeppelin.display.GUI.convertFromOldInput : $r14 = new org.apache.zeppelin.display.ui.Select
+org.apache.zeppelin.display.GUI.convertFromOldInput : return r7
+org.apache.zeppelin.display.GUI.convertFromOldInput : $r2 = r1.<org.apache.zeppelin.display.OldInput: org.apache.zeppelin.display.ui.OptionInput$ParamOption[] options>
+org.apache.zeppelin.display.GUI.convertFromOldInput : $z3 = virtualinvoke r1.<org.apache.zeppelin.display.OldInput: boolean isHidden()>()
+org.apache.zeppelin.display.GUI.convertFromOldInput : n0 = null
+org.apache.zeppelin.display.GUI.convertFromOldInput : $z2 = r1 instanceof org.apache.zeppelin.display.OldInput
+org.apache.zeppelin.display.GUI.convertFromOldInput : $r8 = new org.apache.zeppelin.display.ui.CheckBox
+org.apache.zeppelin.display.GUI.convertFromOldInput : $z1 = r1 instanceof org.apache.zeppelin.display.OldInput$OldCheckBox
+org.apache.zeppelin.display.GUI.convertFromOldInput : $r20 = virtualinvoke r1.<org.apache.zeppelin.display.OldInput: java.lang.String getArgument()>()
+org.apache.zeppelin.display.GUI.convertFromOldInput : $r3 = new org.apache.zeppelin.display.ui.TextBox
+org.apache.zeppelin.display.Input.setArgument : r0.<org.apache.zeppelin.display.Input: java.lang.String argument> = r1
+org.apache.zeppelin.display.GUI.fromJson : return r2
+org.apache.zeppelin.display.GUI.fromJson : $r1 = <org.apache.zeppelin.display.GUI: com.google.gson.Gson gson>
+org.apache.zeppelin.display.GUI.fromJson : virtualinvoke r2.<org.apache.zeppelin.display.GUI: void convertOldInput()>()
+org.apache.zeppelin.display.GUI.convertOldInput : $r8 = interfaceinvoke r2.<java.util.Map$Entry: java.lang.Object getValue()>()
+org.apache.zeppelin.display.GUI.convertOldInput : goto [?= $z0 = interfaceinvoke r1.<java.util.Iterator: boolean hasNext()>()]
+org.apache.zeppelin.display.GUI.convertOldInput : $r10 = r0.<org.apache.zeppelin.display.GUI: java.util.LinkedHashMap forms>
+org.apache.zeppelin.display.GUI.convertOldInput : $r4 = r0.<org.apache.zeppelin.display.GUI: java.util.LinkedHashMap forms>
+org.apache.zeppelin.display.GUI.convertOldInput : $r7 = interfaceinvoke r2.<java.util.Map$Entry: java.lang.Object getValue()>()
+org.apache.zeppelin.display.Input.getDefaultValue : $r1 = r0.<org.apache.zeppelin.display.Input: java.lang.Object defaultValue>
+org.apache.zeppelin.display.Input.getDisplayName : $r1 = r0.<org.apache.zeppelin.display.Input: java.lang.String displayName>
+org.apache.zeppelin.display.Input.setDisplayName : r0.<org.apache.zeppelin.display.Input: java.lang.String displayName> = r1
+org.apache.zeppelin.display.RuntimeTypeAdapterFactory$1.read : $r22 = virtualinvoke r5.<com.google.gson.TypeAdapter: java.lang.Object fromJsonTree(com.google.gson.JsonElement)>(r2)
+org.apache.zeppelin.display.RuntimeTypeAdapterFactory$1.read : if r5 != null goto $r22 = virtualinvoke r5.<com.google.gson.TypeAdapter: java.lang.Object fromJsonTree(com.google.gson.JsonElement)>(r2)
+org.apache.zeppelin.display.RuntimeTypeAdapterFactory$1.read : $r11 = r0.<org.apache.zeppelin.display.RuntimeTypeAdapterFactory$1: java.util.Map val$labelToDelegate>
+org.apache.zeppelin.display.RuntimeTypeAdapterFactory$1.read : $r7 = virtualinvoke r2.<com.google.gson.JsonElement: com.google.gson.JsonObject getAsJsonObject()>()
+org.apache.zeppelin.display.RuntimeTypeAdapterFactory$1.read : r2 = staticinvoke <com.google.gson.internal.Streams: com.google.gson.JsonElement parse(com.google.gson.stream.JsonReader)>(r1)
+org.apache.zeppelin.display.RuntimeTypeAdapterFactory$1.read : if r3 != null goto $r10 = virtualinvoke r3.<com.google.gson.JsonElement: java.lang.String getAsString()>()
+org.apache.zeppelin.display.ui.OptionInput.getOptions : $r1 = r0.<org.apache.zeppelin.display.ui.OptionInput: org.apache.zeppelin.display.ui.OptionInput$ParamOption[] options>

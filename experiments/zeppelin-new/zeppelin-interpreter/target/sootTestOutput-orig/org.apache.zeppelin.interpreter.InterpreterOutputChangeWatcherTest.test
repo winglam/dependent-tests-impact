@@ -1,0 +1,39 @@
+org.apache.zeppelin.interpreter.InterpreterOutputChangeWatcher.run : $r12 = r0.<org.apache.zeppelin.interpreter.InterpreterOutputChangeWatcher: java.nio.file.WatchService watcher>
+org.apache.zeppelin.interpreter.InterpreterOutputChangeWatcher.run : if z4 != 0 goto (branch)
+org.apache.zeppelin.interpreter.InterpreterOutputChangeWatcher.run : goto [?= $z1 = interfaceinvoke r16.<java.util.Iterator: boolean hasNext()>()]
+org.apache.zeppelin.interpreter.InterpreterOutputChangeWatcher.run : $r23 = virtualinvoke r9.<java.io.File: java.lang.String getName()>()
+org.apache.zeppelin.interpreter.InterpreterOutputChangeWatcher.run : r5 = r3
+org.apache.zeppelin.interpreter.InterpreterOutputChangeWatcher.run : goto [?= staticinvoke <edu.washington.cs.dt.impact.util.Tracer: void trace(java.lang.String,java.lang.String)>("$z0 = r0.<org.apache.zeppelin.interpreter.InterpreterOutputChangeWatcher: boolean stop>", "org.apache.zeppelin.interpreter.InterpreterOutputChangeWatcher.run")]
+org.apache.zeppelin.interpreter.InterpreterOutputChangeWatcher.run : $r27 = new java.io.File
+org.apache.zeppelin.interpreter.InterpreterOutputChangeWatcher.run : $r20 = r0.<org.apache.zeppelin.interpreter.InterpreterOutputChangeWatcher: java.util.Map watchKeys>
+org.apache.zeppelin.interpreter.InterpreterOutputChangeWatcher.run : $r38 = r0.<org.apache.zeppelin.interpreter.InterpreterOutputChangeWatcher: org.apache.zeppelin.interpreter.InterpreterOutputChangeListener listener>
+org.apache.zeppelin.interpreter.InterpreterOutputChangeWatcher.run : n0 = null
+org.apache.zeppelin.interpreter.InterpreterOutputChangeWatcher.run : $r32 = r0.<org.apache.zeppelin.interpreter.InterpreterOutputChangeWatcher: org.slf4j.Logger logger>
+org.apache.zeppelin.interpreter.InterpreterOutputChangeWatcher.run : goto [?= $z2 = interfaceinvoke r8.<java.util.Iterator: boolean hasNext()>()]
+org.apache.zeppelin.interpreter.InterpreterOutputChangeWatcher.run : $z3 = interfaceinvoke r6.<java.nio.file.Path: boolean isAbsolute()>()
+org.apache.zeppelin.interpreter.InterpreterOutputChangeWatcher.run : $r18 = <java.nio.file.StandardWatchEventKinds: java.nio.file.WatchEvent$Kind OVERFLOW>
+org.apache.zeppelin.interpreter.InterpreterOutputChangeWatcher.run : if r13 != null goto $r15 = interfaceinvoke r13.<java.nio.file.WatchKey: java.util.List pollEvents()>()
+org.apache.zeppelin.interpreter.InterpreterOutputChangeWatcher.run : r4 = interfaceinvoke r3.<java.nio.file.WatchEvent: java.nio.file.WatchEvent$Kind kind()>()
+org.apache.zeppelin.interpreter.InterpreterOutputChangeWatcher.run : exitmonitor r7
+org.apache.zeppelin.interpreter.InterpreterOutputChangeWatcher.run : $r21 = r0.<org.apache.zeppelin.interpreter.InterpreterOutputChangeWatcher: java.util.List watchFiles>
+org.apache.zeppelin.interpreter.InterpreterOutputChangeWatcher.run : $z0 = r0.<org.apache.zeppelin.interpreter.InterpreterOutputChangeWatcher: boolean stop>
+org.apache.zeppelin.interpreter.InterpreterOutputChangeWatcher.run : $r15 = interfaceinvoke r13.<java.nio.file.WatchKey: java.util.List pollEvents()>()
+org.apache.zeppelin.interpreter.InterpreterOutputChangeWatcher.run : $r39 = r0.<org.apache.zeppelin.interpreter.InterpreterOutputChangeWatcher: org.apache.zeppelin.interpreter.InterpreterOutputChangeListener listener>
+org.apache.zeppelin.interpreter.InterpreterOutputChangeWatcher.run : goto [?= (branch)]
+org.apache.zeppelin.interpreter.InterpreterOutputChangeWatcher.run : z4 = interfaceinvoke r13.<java.nio.file.WatchKey: boolean reset()>()
+org.apache.zeppelin.interpreter.InterpreterOutputChangeWatcher.run : $r19 = interfaceinvoke r5.<java.nio.file.WatchEvent: java.lang.Object context()>()
+org.apache.zeppelin.interpreter.InterpreterOutputChangeWatcher.watch : $r22 = r0.<org.apache.zeppelin.interpreter.InterpreterOutputChangeWatcher: java.nio.file.WatchService watcher>
+org.apache.zeppelin.interpreter.InterpreterOutputChangeWatcher.watch : $r27 = r0.<org.apache.zeppelin.interpreter.InterpreterOutputChangeWatcher: java.util.Map watchKeys>
+org.apache.zeppelin.interpreter.InterpreterOutputChangeWatcher.watch : $r17 = r0.<org.apache.zeppelin.interpreter.InterpreterOutputChangeWatcher: org.slf4j.Logger logger>
+org.apache.zeppelin.interpreter.InterpreterOutputChangeWatcher.watch : if r2 != null goto $r15 = staticinvoke <java.nio.file.FileSystems: java.nio.file.FileSystem getDefault()>()
+org.apache.zeppelin.interpreter.InterpreterOutputChangeWatcher.watch : exitmonitor r7
+org.apache.zeppelin.interpreter.InterpreterOutputChangeWatcher.watch : $r9 = virtualinvoke r1.<java.io.File: java.io.File getParentFile()>()
+org.apache.zeppelin.interpreter.InterpreterOutputChangeWatcher.watch : $r30 = r0.<org.apache.zeppelin.interpreter.InterpreterOutputChangeWatcher: java.util.List watchFiles>
+org.apache.zeppelin.interpreter.InterpreterOutputChangeWatcher.watch : $r15 = staticinvoke <java.nio.file.FileSystems: java.nio.file.FileSystem getDefault()>()
+org.apache.zeppelin.interpreter.InterpreterOutputChangeWatcher.watch : $r26 = r0.<org.apache.zeppelin.interpreter.InterpreterOutputChangeWatcher: java.util.Map watchKeys>
+org.apache.zeppelin.interpreter.InterpreterOutputChangeWatcher.watch : $z0 = virtualinvoke r1.<java.io.File: boolean isFile()>()
+org.apache.zeppelin.interpreter.InterpreterOutputChangeWatcherTest.fileChanged : $i0 = r0.<org.apache.zeppelin.interpreter.InterpreterOutputChangeWatcherTest: int numChanged>
+org.apache.zeppelin.interpreter.InterpreterOutputChangeWatcherTest.fileChanged : exitmonitor r2
+org.apache.zeppelin.interpreter.InterpreterOutputChangeWatcherTest.fileChanged : r2 = r0
+org.apache.zeppelin.interpreter.InterpreterOutputChangeWatcherTest.fileChanged : virtualinvoke r0.<java.lang.Object: void notify()>()
+org.apache.zeppelin.interpreter.InterpreterOutputChangeWatcherTest.fileChanged : r0.<org.apache.zeppelin.interpreter.InterpreterOutputChangeWatcherTest: java.io.File fileChanged> = r1

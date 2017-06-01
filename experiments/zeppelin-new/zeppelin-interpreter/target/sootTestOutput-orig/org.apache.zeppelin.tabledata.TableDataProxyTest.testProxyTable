@@ -1,0 +1,50 @@
+org.apache.zeppelin.tabledata.Row.get : $r1 = r0.<org.apache.zeppelin.tabledata.Row: java.lang.Object[] data>
+org.apache.zeppelin.resource.ResourceId.hashCode : $r1 = new java.lang.StringBuilder
+org.apache.zeppelin.tabledata.ColumnDef.name : $r1 = r0.<org.apache.zeppelin.tabledata.ColumnDef: java.lang.String name>
+org.apache.zeppelin.tabledata.InterpreterResultTableData.columns : $r1 = r0.<org.apache.zeppelin.tabledata.InterpreterResultTableData: org.apache.zeppelin.tabledata.ColumnDef[] columnDef>
+org.apache.zeppelin.resource.Resource.getResourceId : $r1 = r0.<org.apache.zeppelin.resource.Resource: org.apache.zeppelin.resource.ResourceId resourceId>
+org.apache.zeppelin.resource.ResourceId.getName : $r1 = r0.<org.apache.zeppelin.resource.ResourceId: java.lang.String name>
+org.apache.zeppelin.resource.ResourceId.getParagraphId : $r1 = r0.<org.apache.zeppelin.resource.ResourceId: java.lang.String paragraphId>
+org.apache.zeppelin.tabledata.ProxyRowIterator.next : $r1 = r0.<org.apache.zeppelin.tabledata.ProxyRowIterator: org.apache.zeppelin.resource.Resource rows>
+org.apache.zeppelin.tabledata.ProxyRowIterator.next : $r1 = virtualinvoke r0.<org.apache.zeppelin.tabledata.ProxyRowIterator: org.apache.zeppelin.tabledata.Row next()>()
+org.apache.zeppelin.resource.LocalResourcePool.put : $r9 = new org.apache.zeppelin.resource.Resource
+org.apache.zeppelin.resource.LocalResourcePool.put : $r7 = new org.apache.zeppelin.resource.Resource
+org.apache.zeppelin.resource.LocalResourcePool.put : $r5 = new org.apache.zeppelin.resource.ResourceId
+org.apache.zeppelin.resource.LocalResourcePool.put : $r10 = r0.<org.apache.zeppelin.resource.LocalResourcePool: java.util.Map resources>
+org.apache.zeppelin.resource.LocalResourcePool.put : $r8 = r0.<org.apache.zeppelin.resource.LocalResourcePool: java.util.Map resources>
+org.apache.zeppelin.resource.LocalResourcePool.put : $r3 = new org.apache.zeppelin.resource.ResourceId
+org.apache.zeppelin.resource.ResourceId.equals : $r3 = r2.<org.apache.zeppelin.resource.ResourceId: java.lang.String name>
+org.apache.zeppelin.resource.ResourceId.equals : $z0 = virtualinvoke r1.<java.lang.String: boolean equals(java.lang.Object)>(r2)
+org.apache.zeppelin.resource.ResourceId.equals : $z0 = r1 instanceof org.apache.zeppelin.resource.ResourceId
+org.apache.zeppelin.resource.ResourceId.equals : r2 = (org.apache.zeppelin.resource.ResourceId) r1
+org.apache.zeppelin.resource.ResourceId.equals : $z3 = specialinvoke r0.<org.apache.zeppelin.resource.ResourceId: boolean equals(java.lang.String,java.lang.String)>($r7, $r8)
+org.apache.zeppelin.resource.ResourceId.equals : return 1
+org.apache.zeppelin.resource.ResourceId.equals : if r1 != null goto (branch)
+org.apache.zeppelin.resource.ResourceId.equals : if r1 == null goto return 0
+org.apache.zeppelin.tabledata.TableDataProxy.columns : $r1 = r0.<org.apache.zeppelin.tabledata.TableDataProxy: org.apache.zeppelin.resource.Resource resource>
+org.apache.zeppelin.tabledata.TableDataProxy.rows : return r4
+org.apache.zeppelin.tabledata.TableDataProxy.rows : $r10 = r0.<org.apache.zeppelin.tabledata.TableDataProxy: org.apache.zeppelin.resource.Resource resource>
+org.apache.zeppelin.tabledata.TableDataProxy.rows : $r11 = new org.apache.zeppelin.tabledata.ProxyRowIterator
+org.apache.zeppelin.tabledata.TableDataProxy.rows : $r1 = new java.lang.StringBuilder
+org.apache.zeppelin.resource.LocalResourcePool.get : $r7 = r0.<org.apache.zeppelin.resource.LocalResourcePool: java.util.Map resources>
+org.apache.zeppelin.resource.LocalResourcePool.get : $r5 = r0.<org.apache.zeppelin.resource.LocalResourcePool: java.util.Map resources>
+org.apache.zeppelin.resource.LocalResourcePool.get : $r2 = new org.apache.zeppelin.resource.ResourceId
+org.apache.zeppelin.resource.LocalResourcePool.get : $r4 = new org.apache.zeppelin.resource.ResourceId
+org.apache.zeppelin.tabledata.InterpreterResultTableData.rows : $r1 = r0.<org.apache.zeppelin.tabledata.InterpreterResultTableData: java.util.List rows>
+org.apache.zeppelin.tabledata.ProxyRowIterator.hasNext : $r1 = r0.<org.apache.zeppelin.tabledata.ProxyRowIterator: org.apache.zeppelin.resource.Resource rows>
+org.apache.zeppelin.tabledata.ProxyRowIterator.hasNext : return 0
+org.apache.zeppelin.interpreter.InterpreterResultMessage.getData : $r1 = r0.<org.apache.zeppelin.interpreter.InterpreterResultMessage: java.lang.String data>
+org.apache.zeppelin.resource.Resource.invokeMethod : $r20 = virtualinvoke $r19.<org.apache.zeppelin.resource.ResourceId: java.lang.String getParagraphId()>()
+org.apache.zeppelin.resource.Resource.invokeMethod : return r5
+org.apache.zeppelin.resource.Resource.invokeMethod : $r8 = r0.<org.apache.zeppelin.resource.Resource: java.lang.Object r>
+org.apache.zeppelin.resource.Resource.invokeMethod : $r11 = r0.<org.apache.zeppelin.resource.Resource: org.apache.zeppelin.resource.LocalResourcePool pool>
+org.apache.zeppelin.resource.Resource.invokeMethod : $r16 = r0.<org.apache.zeppelin.resource.Resource: org.apache.zeppelin.resource.LocalResourcePool pool>
+org.apache.zeppelin.resource.Resource.invokeMethod : $r7 = r0.<org.apache.zeppelin.resource.Resource: java.lang.Object r>
+org.apache.zeppelin.resource.Resource.invokeMethod : virtualinvoke r4.<java.lang.reflect.Method: void setAccessible(boolean)>(1)
+org.apache.zeppelin.resource.Resource.invokeMethod : $r6 = r0.<org.apache.zeppelin.resource.Resource: java.lang.Object r>
+org.apache.zeppelin.resource.Resource.invokeMethod : $r9 = r0.<org.apache.zeppelin.resource.Resource: java.lang.Object r>
+org.apache.zeppelin.resource.Resource.invokeMethod : $r13 = virtualinvoke $r12.<org.apache.zeppelin.resource.ResourceId: java.lang.String getNoteId()>()
+org.apache.zeppelin.resource.Resource.invokeMethod : $r10 = r0.<org.apache.zeppelin.resource.Resource: java.lang.Object r>
+org.apache.zeppelin.resource.Resource.invokeMethod : $r18 = virtualinvoke $r17.<org.apache.zeppelin.resource.ResourceId: java.lang.String getNoteId()>()
+org.apache.zeppelin.resource.Resource.invokeMethod : $r15 = virtualinvoke $r14.<org.apache.zeppelin.resource.ResourceId: java.lang.String getParagraphId()>()
+org.apache.zeppelin.resource.ResourceId.getNoteId : $r1 = r0.<org.apache.zeppelin.resource.ResourceId: java.lang.String noteId>
