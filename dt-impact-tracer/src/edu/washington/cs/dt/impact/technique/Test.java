@@ -96,9 +96,13 @@ public class Test {
                     tmd = new TestFunctionStatement(dtTest);
                     nameToMethodData.put(dtTest, tmd);
                 }
-                nameToMethodData.get(testName).addDependentTest(tmd, true);
+                if (nameToMethodData.get(testName) != null && tmd != null) {
+                    nameToMethodData.get(testName).addDependentTest(tmd, true);                	
+                }
             }
-            nameToMethodData.get(testName).reset();
+            if (nameToMethodData.get(testName) != null) {
+                nameToMethodData.get(testName).reset();            	
+            }
         }
 
         for (String testName : execAfter.keySet()) {
@@ -112,9 +116,13 @@ public class Test {
                     tmd = new TestFunctionStatement(dtTest);
                     nameToMethodData.put(dtTest, tmd);
                 }
-                nameToMethodData.get(testName).addDependentTest(tmd, false);
+                if (nameToMethodData.get(testName) != null && tmd != null) {
+                    nameToMethodData.get(testName).addDependentTest(tmd, false);                	
+                }
             }
-            nameToMethodData.get(testName).reset();
+            if (nameToMethodData.get(testName) != null) {
+                nameToMethodData.get(testName).reset();            	
+            }
         }
     }
 
@@ -221,15 +229,17 @@ public class Test {
             if (fileEntry.isFile() && !fileEntry.getName().startsWith(".") && !fileEntry.isHidden()) {
                 BufferedReader br;
                 try {
-                    br = new BufferedReader(new FileReader(fileEntry));
-                    Set<String> lines = new HashSet<String>();
+                    if (origOrderList.contains(fileEntry.getName())) {
+                        br = new BufferedReader(new FileReader(fileEntry));
+                        Set<String> lines = new HashSet<String>();
 
-                    String line;
-                    while ((line = br.readLine()) != null) {
-                        lines.add(line);
+                        String line;
+                        while ((line = br.readLine()) != null) {
+                            lines.add(line);
+                        }
+                        testToAllLines.put(fileEntry.getName(), lines);                    	
+                        br.close();
                     }
-                    testToAllLines.put(fileEntry.getName(), lines);
-                    br.close();
                 } catch (FileNotFoundException e) {
                     e.printStackTrace();
                 } catch (IOException e) {
