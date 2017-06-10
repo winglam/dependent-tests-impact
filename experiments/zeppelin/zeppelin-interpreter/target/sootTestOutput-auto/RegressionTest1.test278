@@ -1,0 +1,7 @@
+org.apache.zeppelin.resource.LocalResourcePool.get : $r7 = r0.<org.apache.zeppelin.resource.LocalResourcePool: java.util.Map resources>
+org.apache.zeppelin.resource.LocalResourcePool.get : $r4 = new org.apache.zeppelin.resource.ResourceId
+org.apache.zeppelin.resource.DistributedResourcePool.get : $r4 = virtualinvoke r0.<org.apache.zeppelin.resource.DistributedResourcePool: org.apache.zeppelin.resource.Resource get(java.lang.String,java.lang.String,java.lang.String,boolean)>(r1, r2, r3, 1)
+org.apache.zeppelin.resource.DistributedResourcePool.get : r4 = specialinvoke r0.<org.apache.zeppelin.resource.LocalResourcePool: org.apache.zeppelin.resource.Resource get(java.lang.String,java.lang.String,java.lang.String)>(r1, r2, r3)
+org.apache.zeppelin.resource.DistributedResourcePool.get : if r4 == null goto (branch)
+org.apache.zeppelin.resource.DistributedResourcePool.get : if z0 == 0 goto return null
+org.apache.zeppelin.resource.DistributedResourcePool.get : $r6 = r0.<org.apache.zeppelin.resource.DistributedResourcePool: org.apache.zeppelin.resource.ResourcePoolConnector connector>

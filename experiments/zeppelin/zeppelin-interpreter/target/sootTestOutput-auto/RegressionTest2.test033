@@ -1,0 +1,13 @@
+org.apache.zeppelin.interpreter.InterpreterGroup.getId : $r5 = staticinvoke <org.apache.zeppelin.interpreter.InterpreterGroup: java.lang.String generateId()>()
+org.apache.zeppelin.interpreter.InterpreterGroup.getId : $r4 = r0.<org.apache.zeppelin.interpreter.InterpreterGroup: java.lang.String id>
+org.apache.zeppelin.interpreter.InterpreterGroup.getId : r2 = r0
+org.apache.zeppelin.interpreter.InterpreterGroup.getId : $r6 = r0.<org.apache.zeppelin.interpreter.InterpreterGroup: java.lang.String id>
+org.apache.zeppelin.interpreter.InterpreterGroup.getInterpreterHookRegistry : $r1 = r0.<org.apache.zeppelin.interpreter.InterpreterGroup: org.apache.zeppelin.interpreter.InterpreterHookRegistry hookRegistry>
+org.apache.zeppelin.interpreter.InterpreterGroup.getProperty : return r2
+org.apache.zeppelin.interpreter.InterpreterGroup.getProperty : $r7 = virtualinvoke r0.<org.apache.zeppelin.interpreter.InterpreterGroup: java.util.Collection values()>()
+org.apache.zeppelin.interpreter.InterpreterGroup.getProperty : $r1 = new java.util.Properties
+org.apache.zeppelin.interpreter.remote.RemoteInterpreter.getEnvFromInterpreterProperty : return r3
+org.apache.zeppelin.interpreter.remote.RemoteInterpreter.getEnvFromInterpreterProperty : $r2 = new java.util.HashMap
+org.apache.zeppelin.interpreter.remote.RemoteInterpreter.getEnvFromInterpreterProperty : $r6 = virtualinvoke r1.<java.util.Properties: java.util.Set keySet()>()
+org.apache.zeppelin.interpreter.InterpreterGroup.generateId : $i1 = virtualinvoke $r4.<java.util.Random: int nextInt()>()
+org.apache.zeppelin.interpreter.InterpreterGroup.generateId : $r0 = new java.lang.StringBuilder

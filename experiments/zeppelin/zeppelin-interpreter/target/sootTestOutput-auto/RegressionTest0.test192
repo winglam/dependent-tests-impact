@@ -1,0 +1,9 @@
+org.apache.zeppelin.display.GUI.convertOldInput : goto [?= $z0 = interfaceinvoke r1.<java.util.Iterator: boolean hasNext()>()]
+org.apache.zeppelin.display.GUI.convertOldInput : $r4 = r0.<org.apache.zeppelin.display.GUI: java.util.LinkedHashMap forms>
+org.apache.zeppelin.display.GUI.convertOldInput : $r7 = interfaceinvoke r2.<java.util.Map$Entry: java.lang.Object getValue()>()
+org.apache.zeppelin.display.GUI.textbox : return r3
+org.apache.zeppelin.display.GUI.textbox : $r5 = r0.<org.apache.zeppelin.display.GUI: java.util.Map params>
+org.apache.zeppelin.display.GUI.textbox : r3 = r2
+org.apache.zeppelin.display.GUI.textbox : $r6 = r0.<org.apache.zeppelin.display.GUI: java.util.LinkedHashMap forms>
+org.apache.zeppelin.display.GUI.textbox : if r3 != null goto $r6 = r0.<org.apache.zeppelin.display.GUI: java.util.LinkedHashMap forms>
+org.apache.zeppelin.display.GUI.input : $r2 = virtualinvoke r0.<org.apache.zeppelin.display.GUI: java.lang.Object textbox(java.lang.String,java.lang.String)>(r1, "")

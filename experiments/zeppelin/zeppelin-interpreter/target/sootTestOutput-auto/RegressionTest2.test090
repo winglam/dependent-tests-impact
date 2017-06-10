@@ -1,0 +1,55 @@
+org.apache.zeppelin.scheduler.ExecutorFactory.createOrGet : $r9 = r0.<org.apache.zeppelin.scheduler.ExecutorFactory: java.util.Map executor>
+org.apache.zeppelin.scheduler.ExecutorFactory.createOrGet : $r6 = r0.<org.apache.zeppelin.scheduler.ExecutorFactory: java.util.Map executor>
+org.apache.zeppelin.scheduler.ExecutorFactory.createOrGet : $r2 = virtualinvoke r0.<org.apache.zeppelin.scheduler.ExecutorFactory: java.util.concurrent.ExecutorService createOrGet(java.lang.String,int)>(r1, 100)
+org.apache.zeppelin.scheduler.ExecutorFactory.createOrGet : $r5 = r0.<org.apache.zeppelin.scheduler.ExecutorFactory: java.util.Map executor>
+org.apache.zeppelin.scheduler.ExecutorFactory.createOrGet : $r4 = r0.<org.apache.zeppelin.scheduler.ExecutorFactory: java.util.Map executor>
+org.apache.zeppelin.resource.ResourceSet.filterByNameRegex : return r3
+org.apache.zeppelin.resource.ResourceSet.filterByNameRegex : r4 = virtualinvoke r0.<org.apache.zeppelin.resource.ResourceSet: java.util.Iterator iterator()>()
+org.apache.zeppelin.resource.ResourceSet.filterByNameRegex : $r2 = new org.apache.zeppelin.resource.ResourceSet
+org.apache.zeppelin.interpreter.remote.RemoteInterpreterProcess.updateRemoteAngularObject : goto [?= z0 = 0]
+org.apache.zeppelin.interpreter.remote.RemoteInterpreterProcess.updateRemoteAngularObject : $r14 = new com.google.gson.Gson
+org.apache.zeppelin.interpreter.remote.RemoteInterpreterProcess.updateRemoteAngularObject : $r15 = virtualinvoke r7.<com.google.gson.Gson: java.lang.String toJson(java.lang.Object)>(r4)
+org.apache.zeppelin.interpreter.remote.RemoteInterpreterProcess.updateRemoteAngularObject : z0 = 0
+org.apache.zeppelin.interpreter.remote.RemoteInterpreterProcess.updateRemoteAngularObject : r20 = $r19
+org.apache.zeppelin.interpreter.remote.RemoteInterpreterProcess.updateRemoteAngularObject : r5 = virtualinvoke r0.<org.apache.zeppelin.interpreter.remote.RemoteInterpreterProcess: org.apache.zeppelin.interpreter.thrift.RemoteInterpreterService$Client getClient()>()
+org.apache.zeppelin.interpreter.remote.RemoteInterpreterProcess.updateRemoteAngularObject : $r21 = <org.apache.zeppelin.interpreter.remote.RemoteInterpreterProcess: org.slf4j.Logger logger>
+org.apache.zeppelin.interpreter.remote.RemoteInterpreterProcess.updateRemoteAngularObject : r5 = null
+org.apache.zeppelin.scheduler.ExecutorFactory.singleton : $r0 = <org.apache.zeppelin.scheduler.ExecutorFactory: org.apache.zeppelin.scheduler.ExecutorFactory _executor>
+org.apache.zeppelin.scheduler.ExecutorFactory.singleton : $r7 = <org.apache.zeppelin.scheduler.ExecutorFactory: org.apache.zeppelin.scheduler.ExecutorFactory _executor>
+org.apache.zeppelin.interpreter.remote.RemoteInterpreterManagedProcess.isRunning : $z0 = r0.<org.apache.zeppelin.interpreter.remote.RemoteInterpreterManagedProcess: boolean running>
+org.apache.zeppelin.resource.ResourcePoolUtils.getAllResourcesExcept : goto [?= $z1 = interfaceinvoke r3.<java.util.Iterator: boolean hasNext()>()]
+org.apache.zeppelin.resource.ResourcePoolUtils.getAllResourcesExcept : return r2
+org.apache.zeppelin.resource.ResourcePoolUtils.getAllResourcesExcept : if r5 != null goto $z4 = virtualinvoke r5.<org.apache.zeppelin.interpreter.remote.RemoteInterpreterProcess: boolean isRunning()>()
+org.apache.zeppelin.resource.ResourcePoolUtils.getAllResourcesExcept : r6 = virtualinvoke r4.<org.apache.zeppelin.interpreter.InterpreterGroup: org.apache.zeppelin.resource.ResourcePool getResourcePool()>()
+org.apache.zeppelin.resource.ResourcePoolUtils.getAllResourcesExcept : $r1 = new org.apache.zeppelin.resource.ResourceSet
+org.apache.zeppelin.resource.ResourcePoolUtils.getAllResourcesExcept : r5 = virtualinvoke r4.<org.apache.zeppelin.interpreter.InterpreterGroup: org.apache.zeppelin.interpreter.remote.RemoteInterpreterProcess getRemoteInterpreterProcess()>()
+org.apache.zeppelin.resource.ResourcePoolUtils.getAllResourcesExcept : $r12 = staticinvoke <org.apache.zeppelin.interpreter.InterpreterGroup: java.util.Collection getAll()>()
+org.apache.zeppelin.resource.ResourcePoolUtils.getAllResourcesExcept : $r15 = interfaceinvoke r6.<org.apache.zeppelin.resource.ResourcePool: org.apache.zeppelin.resource.ResourceSet getAll()>()
+org.apache.zeppelin.resource.ResourcePoolUtils.getAllResourcesExcept : goto [?= (branch)]
+org.apache.zeppelin.resource.ResourcePoolUtils.getAllResourcesExcept : if r6 == null goto (branch)
+org.apache.zeppelin.resource.ResourcePoolUtils.getAllResourcesExcept : if r0 == null goto r5 = virtualinvoke r4.<org.apache.zeppelin.interpreter.InterpreterGroup: org.apache.zeppelin.interpreter.remote.RemoteInterpreterProcess getRemoteInterpreterProcess()>()
+org.apache.zeppelin.resource.ResourceSet.filterByClassname : return r3
+org.apache.zeppelin.resource.ResourceSet.filterByClassname : r4 = virtualinvoke r0.<org.apache.zeppelin.resource.ResourceSet: java.util.Iterator iterator()>()
+org.apache.zeppelin.resource.ResourceSet.filterByClassname : $r2 = new org.apache.zeppelin.resource.ResourceSet
+org.apache.zeppelin.interpreter.remote.RemoteInterpreterProcess.getClient : return null
+org.apache.zeppelin.interpreter.remote.RemoteInterpreterProcess.getClient : $r1 = r0.<org.apache.zeppelin.interpreter.remote.RemoteInterpreterProcess: org.apache.commons.pool2.impl.GenericObjectPool clientPool>
+org.apache.zeppelin.interpreter.InterpreterGroup.getAll : $r0 = new java.util.LinkedList
+org.apache.zeppelin.scheduler.SchedulerFactory.singleton : $r11 = <org.apache.zeppelin.scheduler.SchedulerFactory: org.apache.zeppelin.scheduler.SchedulerFactory singleton>
+org.apache.zeppelin.scheduler.SchedulerFactory.singleton : $r0 = <org.apache.zeppelin.scheduler.SchedulerFactory: org.apache.zeppelin.scheduler.SchedulerFactory singleton>
+org.apache.zeppelin.scheduler.RemoteScheduler.run : $r6 = r0.<org.apache.zeppelin.scheduler.RemoteScheduler: java.util.List queue>
+org.apache.zeppelin.scheduler.RemoteScheduler.run : $r7 = r0.<org.apache.zeppelin.scheduler.RemoteScheduler: java.util.List running>
+org.apache.zeppelin.scheduler.RemoteScheduler.run : n0 = null
+org.apache.zeppelin.scheduler.RemoteScheduler.run : $r9 = r0.<org.apache.zeppelin.scheduler.RemoteScheduler: java.util.List queue>
+org.apache.zeppelin.scheduler.RemoteScheduler.run : $z0 = r0.<org.apache.zeppelin.scheduler.RemoteScheduler: boolean terminate>
+org.apache.zeppelin.resource.ResourcePoolUtils.getAllResources : $r0 = staticinvoke <org.apache.zeppelin.resource.ResourcePoolUtils: org.apache.zeppelin.resource.ResourceSet getAllResourcesExcept(java.lang.String)>(null)
+org.apache.zeppelin.interpreter.remote.RemoteInterpreterProcess.getNumActiveClient : $r1 = r0.<org.apache.zeppelin.interpreter.remote.RemoteInterpreterProcess: org.apache.commons.pool2.impl.GenericObjectPool clientPool>
+org.apache.zeppelin.interpreter.remote.RemoteInterpreterProcess.getNumActiveClient : return 0
+org.apache.zeppelin.interpreter.InterpreterGroup.getResourcePool : $r1 = r0.<org.apache.zeppelin.interpreter.InterpreterGroup: org.apache.zeppelin.resource.ResourcePool resourcePool>
+org.apache.zeppelin.interpreter.InterpreterGroup.getRemoteInterpreterProcess : $r1 = r0.<org.apache.zeppelin.interpreter.InterpreterGroup: org.apache.zeppelin.interpreter.remote.RemoteInterpreterProcess remoteInterpreterProcess>
+org.apache.zeppelin.resource.LocalResourcePool.getAll : $r1 = new org.apache.zeppelin.resource.ResourceSet
+org.apache.zeppelin.scheduler.SchedulerFactory.createOrGetRemoteScheduler : $r13 = r0.<org.apache.zeppelin.scheduler.SchedulerFactory: java.util.concurrent.ExecutorService executor>
+org.apache.zeppelin.scheduler.SchedulerFactory.createOrGetRemoteScheduler : $r11 = r0.<org.apache.zeppelin.scheduler.SchedulerFactory: java.util.Map schedulers>
+org.apache.zeppelin.scheduler.SchedulerFactory.createOrGetRemoteScheduler : $r8 = r0.<org.apache.zeppelin.scheduler.SchedulerFactory: java.util.Map schedulers>
+org.apache.zeppelin.scheduler.SchedulerFactory.createOrGetRemoteScheduler : $r14 = r0.<org.apache.zeppelin.scheduler.SchedulerFactory: java.util.Map schedulers>
+org.apache.zeppelin.scheduler.SchedulerFactory.createOrGetRemoteScheduler : $r9 = new org.apache.zeppelin.scheduler.RemoteScheduler
+org.apache.zeppelin.scheduler.SchedulerFactory.createOrGetRemoteScheduler : $r7 = r0.<org.apache.zeppelin.scheduler.SchedulerFactory: java.util.Map schedulers>

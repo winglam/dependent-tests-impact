@@ -1,0 +1,15 @@
+org.apache.zeppelin.scheduler.RemoteScheduler.stop : exitmonitor r1
+org.apache.zeppelin.scheduler.RemoteScheduler.stop : r0.<org.apache.zeppelin.scheduler.RemoteScheduler: boolean terminate> = 1
+org.apache.zeppelin.scheduler.RemoteScheduler.stop : $r3 = r0.<org.apache.zeppelin.scheduler.RemoteScheduler: java.util.List queue>
+org.apache.zeppelin.scheduler.RemoteScheduler.stop : $r4 = r0.<org.apache.zeppelin.scheduler.RemoteScheduler: java.util.List queue>
+org.apache.zeppelin.scheduler.ExecutorFactory.createOrGet : $r9 = r0.<org.apache.zeppelin.scheduler.ExecutorFactory: java.util.Map executor>
+org.apache.zeppelin.scheduler.ExecutorFactory.createOrGet : $r5 = r0.<org.apache.zeppelin.scheduler.ExecutorFactory: java.util.Map executor>
+org.apache.zeppelin.scheduler.ExecutorFactory.createOrGet : $r4 = r0.<org.apache.zeppelin.scheduler.ExecutorFactory: java.util.Map executor>
+org.apache.zeppelin.scheduler.RemoteScheduler.getName : $r1 = r0.<org.apache.zeppelin.scheduler.RemoteScheduler: java.lang.String name>
+org.apache.zeppelin.scheduler.ExecutorFactory.singleton : $r0 = <org.apache.zeppelin.scheduler.ExecutorFactory: org.apache.zeppelin.scheduler.ExecutorFactory _executor>
+org.apache.zeppelin.scheduler.ExecutorFactory.singleton : $r7 = <org.apache.zeppelin.scheduler.ExecutorFactory: org.apache.zeppelin.scheduler.ExecutorFactory _executor>
+org.apache.zeppelin.scheduler.RemoteScheduler.getJobsRunning : $r7 = r0.<org.apache.zeppelin.scheduler.RemoteScheduler: java.util.List queue>
+org.apache.zeppelin.scheduler.RemoteScheduler.getJobsRunning : return r2
+org.apache.zeppelin.scheduler.RemoteScheduler.getJobsRunning : exitmonitor r3
+org.apache.zeppelin.scheduler.RemoteScheduler.getJobsRunning : $r1 = new java.util.LinkedList
+org.apache.zeppelin.scheduler.RemoteScheduler.getJobsRunning : $r8 = r0.<org.apache.zeppelin.scheduler.RemoteScheduler: java.util.List running>

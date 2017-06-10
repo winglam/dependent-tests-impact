@@ -1,0 +1,35 @@
+org.apache.zeppelin.resource.ResourceSet.filterByClassnameRegex : return r3
+org.apache.zeppelin.resource.ResourceSet.filterByClassnameRegex : r4 = virtualinvoke r0.<org.apache.zeppelin.resource.ResourceSet: java.util.Iterator iterator()>()
+org.apache.zeppelin.resource.ResourceSet.filterByClassnameRegex : $r2 = new org.apache.zeppelin.resource.ResourceSet
+org.apache.zeppelin.completer.StringsCompleter.getStrings : $r1 = r0.<org.apache.zeppelin.completer.StringsCompleter: java.util.SortedSet strings>
+org.apache.zeppelin.interpreter.remote.RemoteInterpreterManagedProcess.isRunning : $z0 = r0.<org.apache.zeppelin.interpreter.remote.RemoteInterpreterManagedProcess: boolean running>
+org.apache.zeppelin.resource.ResourcePoolUtils.getAllResourcesExcept : goto [?= $z1 = interfaceinvoke r3.<java.util.Iterator: boolean hasNext()>()]
+org.apache.zeppelin.resource.ResourcePoolUtils.getAllResourcesExcept : return r2
+org.apache.zeppelin.resource.ResourcePoolUtils.getAllResourcesExcept : if r5 != null goto $z4 = virtualinvoke r5.<org.apache.zeppelin.interpreter.remote.RemoteInterpreterProcess: boolean isRunning()>()
+org.apache.zeppelin.resource.ResourcePoolUtils.getAllResourcesExcept : r6 = virtualinvoke r4.<org.apache.zeppelin.interpreter.InterpreterGroup: org.apache.zeppelin.resource.ResourcePool getResourcePool()>()
+org.apache.zeppelin.resource.ResourcePoolUtils.getAllResourcesExcept : $r1 = new org.apache.zeppelin.resource.ResourceSet
+org.apache.zeppelin.resource.ResourcePoolUtils.getAllResourcesExcept : r5 = virtualinvoke r4.<org.apache.zeppelin.interpreter.InterpreterGroup: org.apache.zeppelin.interpreter.remote.RemoteInterpreterProcess getRemoteInterpreterProcess()>()
+org.apache.zeppelin.resource.ResourcePoolUtils.getAllResourcesExcept : $r12 = staticinvoke <org.apache.zeppelin.interpreter.InterpreterGroup: java.util.Collection getAll()>()
+org.apache.zeppelin.resource.ResourcePoolUtils.getAllResourcesExcept : $r15 = interfaceinvoke r6.<org.apache.zeppelin.resource.ResourcePool: org.apache.zeppelin.resource.ResourceSet getAll()>()
+org.apache.zeppelin.resource.ResourcePoolUtils.getAllResourcesExcept : goto [?= (branch)]
+org.apache.zeppelin.resource.ResourcePoolUtils.getAllResourcesExcept : if r6 == null goto (branch)
+org.apache.zeppelin.resource.ResourcePoolUtils.getAllResourcesExcept : if r0 == null goto r5 = virtualinvoke r4.<org.apache.zeppelin.interpreter.InterpreterGroup: org.apache.zeppelin.interpreter.remote.RemoteInterpreterProcess getRemoteInterpreterProcess()>()
+org.apache.zeppelin.resource.ResourceSet.filterByClassname : return r3
+org.apache.zeppelin.resource.ResourceSet.filterByClassname : r4 = virtualinvoke r0.<org.apache.zeppelin.resource.ResourceSet: java.util.Iterator iterator()>()
+org.apache.zeppelin.resource.ResourceSet.filterByClassname : $r2 = new org.apache.zeppelin.resource.ResourceSet
+org.apache.zeppelin.interpreter.InterpreterGroup.getAll : $r0 = new java.util.LinkedList
+org.apache.zeppelin.completer.StringsCompleter$1.compare : $r3 = (java.lang.String) r1
+org.apache.zeppelin.completer.StringsCompleter$1.compare : $i0 = virtualinvoke r1.<java.lang.String: int compareToIgnoreCase(java.lang.String)>(r2)
+org.apache.zeppelin.resource.ResourcePoolUtils.getAllResources : $r0 = staticinvoke <org.apache.zeppelin.resource.ResourcePoolUtils: org.apache.zeppelin.resource.ResourceSet getAllResourcesExcept(java.lang.String)>(null)
+org.apache.zeppelin.interpreter.InterpreterGroup.getResourcePool : $r1 = r0.<org.apache.zeppelin.interpreter.InterpreterGroup: org.apache.zeppelin.resource.ResourcePool resourcePool>
+org.apache.zeppelin.interpreter.InterpreterGroup.getRemoteInterpreterProcess : $r1 = r0.<org.apache.zeppelin.interpreter.InterpreterGroup: org.apache.zeppelin.interpreter.remote.RemoteInterpreterProcess remoteInterpreterProcess>
+org.apache.zeppelin.completer.StringsCompleter.complete : $i1 = specialinvoke r0.<org.apache.zeppelin.completer.StringsCompleter: int completeCollection(java.lang.String,int,java.util.Collection)>(r1, i0, r2)
+org.apache.zeppelin.resource.LocalResourcePool.getAll : $r1 = new org.apache.zeppelin.resource.ResourceSet
+org.apache.zeppelin.completer.StringsCompleter.completeCollection : $z2 = virtualinvoke r6.<java.lang.String: boolean startsWith(java.lang.String)>(r3)
+org.apache.zeppelin.completer.StringsCompleter.completeCollection : $r9 = r0.<org.apache.zeppelin.completer.StringsCompleter: java.util.SortedSet strings>
+org.apache.zeppelin.completer.StringsCompleter.completeCollection : r3 = virtualinvoke r1.<java.lang.String: java.lang.String toUpperCase()>()
+org.apache.zeppelin.completer.StringsCompleter.completeCollection : $z4 = interfaceinvoke r2.<java.util.Collection: boolean isEmpty()>()
+org.apache.zeppelin.completer.StringsCompleter.completeCollection : goto [?= $z4 = interfaceinvoke r2.<java.util.Collection: boolean isEmpty()>()]
+org.apache.zeppelin.completer.StringsCompleter.completeCollection : if r1 != null goto r3 = virtualinvoke r1.<java.lang.String: java.lang.String toUpperCase()>()
+org.apache.zeppelin.completer.StringsCompleter.completeCollection : r6 = virtualinvoke r5.<java.lang.String: java.lang.String toUpperCase()>()
+org.apache.zeppelin.completer.StringsCompleter.completeCollection : staticinvoke <jline.internal.Preconditions: java.lang.Object checkNotNull(java.lang.Object)>(r2)

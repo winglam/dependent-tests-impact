@@ -1,0 +1,31 @@
+org.apache.zeppelin.user.Credentials.loadFromFile : $r16 = new java.lang.StringBuilder
+org.apache.zeppelin.user.Credentials.loadFromFile : $r21 = r8.<org.apache.zeppelin.user.CredentialsInfoSaving: java.util.Map credentialsMap>
+org.apache.zeppelin.user.Credentials.loadFromFile : $r14 = new java.io.InputStreamReader
+org.apache.zeppelin.user.Credentials.loadFromFile : $r11 = r0.<org.apache.zeppelin.user.Credentials: java.io.File credentialsFile>
+org.apache.zeppelin.user.Credentials.loadFromFile : $r17 = virtualinvoke r4.<java.io.BufferedReader: java.lang.String readLine()>()
+org.apache.zeppelin.user.Credentials.loadFromFile : r7 = virtualinvoke r5.<java.lang.StringBuilder: java.lang.String toString()>()
+org.apache.zeppelin.user.Credentials.loadFromFile : $r15 = new java.io.BufferedReader
+org.apache.zeppelin.user.Credentials.loadFromFile : $r19 = r0.<org.apache.zeppelin.user.Credentials: com.google.gson.Gson gson>
+org.apache.zeppelin.user.Credentials.loadFromFile : $r12 = new java.io.FileInputStream
+org.apache.zeppelin.user.Credentials.loadFromFile : virtualinvoke r2.<java.io.FileInputStream: void close()>()
+org.apache.zeppelin.user.Credentials.loadFromFile : $r1 = <org.apache.zeppelin.user.Credentials: org.slf4j.Logger LOG>
+org.apache.zeppelin.user.Credentials.loadFromFile : goto [?= return]
+org.apache.zeppelin.user.Credentials.loadFromFile : virtualinvoke r3.<java.io.InputStreamReader: void close()>()
+org.apache.zeppelin.user.Credentials.loadFromFile : virtualinvoke r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r6)
+org.apache.zeppelin.user.Credentials.saveToFile : virtualinvoke r22.<java.io.OutputStreamWriter: void close()>()
+org.apache.zeppelin.user.Credentials.saveToFile : virtualinvoke r22.<java.io.OutputStreamWriter: java.io.Writer append(java.lang.CharSequence)>(r3)
+org.apache.zeppelin.user.Credentials.saveToFile : exitmonitor r1
+org.apache.zeppelin.user.Credentials.saveToFile : $r5 = r0.<org.apache.zeppelin.user.Credentials: java.util.Map credentialsMap>
+org.apache.zeppelin.user.Credentials.saveToFile : $r21 = new java.io.OutputStreamWriter
+org.apache.zeppelin.user.Credentials.saveToFile : $r18 = new java.io.FileOutputStream
+org.apache.zeppelin.user.Credentials.saveToFile : virtualinvoke r20.<java.io.FileOutputStream: void close()>()
+org.apache.zeppelin.user.Credentials.saveToFile : goto [?= return]
+org.apache.zeppelin.user.Credentials.saveToFile : $r10 = r0.<org.apache.zeppelin.user.Credentials: java.io.File credentialsFile>
+org.apache.zeppelin.user.Credentials.saveToFile : $r8 = r0.<org.apache.zeppelin.user.Credentials: com.google.gson.Gson gson>
+org.apache.zeppelin.user.Credentials.saveToFile : $r7 = r0.<org.apache.zeppelin.user.Credentials: java.util.Map credentialsMap>
+org.apache.zeppelin.user.Credentials.saveToFile : $r6 = new org.apache.zeppelin.user.CredentialsInfoSaving
+org.apache.zeppelin.user.Credentials.removeUserCredentials : return r2
+org.apache.zeppelin.user.Credentials.removeUserCredentials : $r3 = r0.<org.apache.zeppelin.user.Credentials: java.util.Map credentialsMap>
+org.apache.zeppelin.user.Credentials.removeUserCredentials : virtualinvoke r0.<org.apache.zeppelin.user.Credentials: void saveCredentials()>()
+org.apache.zeppelin.user.Credentials.saveCredentials : specialinvoke r0.<org.apache.zeppelin.user.Credentials: void saveToFile()>()
+org.apache.zeppelin.user.Credentials.saveCredentials : $r1 = r0.<org.apache.zeppelin.user.Credentials: java.lang.Boolean credentialsPersist>

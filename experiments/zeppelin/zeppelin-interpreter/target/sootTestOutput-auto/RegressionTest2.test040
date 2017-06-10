@@ -1,0 +1,11 @@
+org.apache.zeppelin.interpreter.InterpreterResult.toString : $r11 = virtualinvoke r5.<org.apache.zeppelin.interpreter.InterpreterResultMessage: java.lang.String toString()>()
+org.apache.zeppelin.interpreter.InterpreterResult.toString : r3 = null
+org.apache.zeppelin.interpreter.InterpreterResult.toString : $r13 = virtualinvoke r2.<java.lang.StringBuilder: java.lang.String toString()>()
+org.apache.zeppelin.interpreter.InterpreterResult.toString : $r6 = r0.<org.apache.zeppelin.interpreter.InterpreterResult: java.util.List msg>
+org.apache.zeppelin.interpreter.InterpreterResult.toString : goto [?= $z0 = interfaceinvoke r4.<java.util.Iterator: boolean hasNext()>()]
+org.apache.zeppelin.interpreter.InterpreterResult.toString : $r1 = new java.lang.StringBuilder
+org.apache.zeppelin.interpreter.InterpreterResult.toString : r3 = virtualinvoke r5.<org.apache.zeppelin.interpreter.InterpreterResultMessage: org.apache.zeppelin.interpreter.InterpreterResult$Type getType()>()
+org.apache.zeppelin.interpreter.InterpreterResult.toString : if r3 == null goto $r11 = virtualinvoke r5.<org.apache.zeppelin.interpreter.InterpreterResultMessage: java.lang.String toString()>()
+org.apache.zeppelin.interpreter.InterpreterResult.add : $r4 = r0.<org.apache.zeppelin.interpreter.InterpreterResult: java.util.List msg>
+org.apache.zeppelin.interpreter.InterpreterResultMessage.toString : $r1 = new java.lang.StringBuilder
+org.apache.zeppelin.interpreter.InterpreterResultMessage.getType : $r1 = r0.<org.apache.zeppelin.interpreter.InterpreterResultMessage: org.apache.zeppelin.interpreter.InterpreterResult$Type type>

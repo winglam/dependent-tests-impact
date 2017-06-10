@@ -1,0 +1,55 @@
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.close : $r1 = r0.<org.apache.zeppelin.interpreter.InterpreterResultMessageOutput: org.apache.zeppelin.interpreter.InterpreterOutputChangeWatcher watcher>
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.close : virtualinvoke r0.<org.apache.zeppelin.interpreter.InterpreterResultMessageOutput: void flush()>()
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.flush : exitmonitor r1
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.flush : $r5 = r0.<org.apache.zeppelin.interpreter.InterpreterResultMessageOutput: java.io.ByteArrayOutputStream buffer>
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.flush : $r12 = r0.<org.apache.zeppelin.interpreter.InterpreterResultMessageOutput: java.io.ByteArrayOutputStream buffer>
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.flush : if r2 == null goto $r12 = r0.<org.apache.zeppelin.interpreter.InterpreterResultMessageOutput: java.io.ByteArrayOutputStream buffer>
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.flush : $z0 = virtualinvoke r0.<org.apache.zeppelin.interpreter.InterpreterResultMessageOutput: boolean isAppendSupported()>()
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.flush : $r4 = r0.<org.apache.zeppelin.interpreter.InterpreterResultMessageOutput: java.util.List outList>
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.flush : $r6 = r0.<org.apache.zeppelin.interpreter.InterpreterResultMessageOutput: java.io.ByteArrayOutputStream buffer>
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.setResourceSearchPaths : r0.<org.apache.zeppelin.interpreter.InterpreterResultMessageOutput: java.util.List resourceSearchPaths> = r1
+org.apache.zeppelin.interpreter.InterpreterOutput.createInterpreterResultMessageOutputListener : $r1 = new org.apache.zeppelin.interpreter.InterpreterOutput$1
+org.apache.zeppelin.interpreter.InterpreterOutput.flush : if r1 == null goto return
+org.apache.zeppelin.interpreter.InterpreterOutput.flush : r1 = virtualinvoke r0.<org.apache.zeppelin.interpreter.InterpreterOutput: org.apache.zeppelin.interpreter.InterpreterResultMessageOutput getCurrentOutput()>()
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.setType : $r2 = r0.<org.apache.zeppelin.interpreter.InterpreterResultMessageOutput: org.apache.zeppelin.interpreter.InterpreterResult$Type type>
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.setType : r0.<org.apache.zeppelin.interpreter.InterpreterResultMessageOutput: org.apache.zeppelin.interpreter.InterpreterResult$Type type> = r1
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.setType : virtualinvoke r0.<org.apache.zeppelin.interpreter.InterpreterResultMessageOutput: void clear()>()
+org.apache.zeppelin.interpreter.InterpreterOutput.setType : $r14 = r0.<org.apache.zeppelin.interpreter.InterpreterOutput: org.apache.zeppelin.interpreter.InterpreterResultMessageOutput currentOut>
+org.apache.zeppelin.interpreter.InterpreterOutput.setType : $r13 = r0.<org.apache.zeppelin.interpreter.InterpreterOutput: java.io.ByteArrayOutputStream buffer>
+org.apache.zeppelin.interpreter.InterpreterOutput.setType : $r5 = r0.<org.apache.zeppelin.interpreter.InterpreterOutput: java.util.List resultMessageOutputs>
+org.apache.zeppelin.interpreter.InterpreterOutput.setType : exitmonitor r2
+org.apache.zeppelin.interpreter.InterpreterOutput.setType : r3 = virtualinvoke r0.<org.apache.zeppelin.interpreter.InterpreterOutput: org.apache.zeppelin.interpreter.InterpreterResultMessageOutputListener createInterpreterResultMessageOutputListener(int)>(i0)
+org.apache.zeppelin.interpreter.InterpreterOutput.setType : $r7 = r0.<org.apache.zeppelin.interpreter.InterpreterOutput: org.apache.zeppelin.interpreter.InterpreterOutputChangeListener changeListener>
+org.apache.zeppelin.interpreter.InterpreterOutput.setType : n0 = null
+org.apache.zeppelin.interpreter.InterpreterOutput.setType : r0.<org.apache.zeppelin.interpreter.InterpreterOutput: int size> = 0
+org.apache.zeppelin.interpreter.InterpreterOutput.setType : $r12 = r0.<org.apache.zeppelin.interpreter.InterpreterOutput: java.util.List resourceSearchPaths>
+org.apache.zeppelin.interpreter.InterpreterOutput.setType : $r8 = new org.apache.zeppelin.interpreter.InterpreterResultMessageOutput
+org.apache.zeppelin.interpreter.InterpreterOutput.setType : $r16 = r0.<org.apache.zeppelin.interpreter.InterpreterOutput: java.util.List resultMessageOutputs>
+org.apache.zeppelin.interpreter.InterpreterOutput.setType : $r6 = r0.<org.apache.zeppelin.interpreter.InterpreterOutput: java.util.List resultMessageOutputs>
+org.apache.zeppelin.interpreter.InterpreterOutput.setType : r0.<org.apache.zeppelin.interpreter.InterpreterOutput: org.apache.zeppelin.interpreter.InterpreterResultMessageOutput currentOut> = r9
+org.apache.zeppelin.interpreter.InterpreterOutput.clear : $r8 = r0.<org.apache.zeppelin.interpreter.InterpreterOutput: java.util.List resultMessageOutputs>
+org.apache.zeppelin.interpreter.InterpreterOutput.clear : exitmonitor r1
+org.apache.zeppelin.interpreter.InterpreterOutput.clear : specialinvoke r0.<org.apache.zeppelin.interpreter.InterpreterOutput: void updateAllResultMessages()>()
+org.apache.zeppelin.interpreter.InterpreterOutput.clear : r0.<org.apache.zeppelin.interpreter.InterpreterOutput: boolean firstCharIsPercentSign> = 0
+org.apache.zeppelin.interpreter.InterpreterOutput.clear : $r13 = r0.<org.apache.zeppelin.interpreter.InterpreterOutput: java.util.List resultMessageOutputs>
+org.apache.zeppelin.interpreter.InterpreterOutput.clear : $r6 = r0.<org.apache.zeppelin.interpreter.InterpreterOutput: java.io.ByteArrayOutputStream buffer>
+org.apache.zeppelin.interpreter.InterpreterOutput.clear : $r7 = r0.<org.apache.zeppelin.interpreter.InterpreterOutput: java.util.List resultMessageOutputs>
+org.apache.zeppelin.interpreter.InterpreterOutput.clear : r0.<org.apache.zeppelin.interpreter.InterpreterOutput: int size> = 0
+org.apache.zeppelin.interpreter.InterpreterOutput.clear : r0.<org.apache.zeppelin.interpreter.InterpreterOutput: boolean truncated> = 0
+org.apache.zeppelin.interpreter.InterpreterOutput.clear : r0.<org.apache.zeppelin.interpreter.InterpreterOutput: boolean startOfTheNewLine> = 1
+org.apache.zeppelin.interpreter.InterpreterOutput.clear : r0.<org.apache.zeppelin.interpreter.InterpreterOutput: org.apache.zeppelin.interpreter.InterpreterResultMessageOutput currentOut> = null
+org.apache.zeppelin.interpreter.InterpreterOutput.close : exitmonitor r1
+org.apache.zeppelin.interpreter.InterpreterOutput.close : $r5 = r0.<org.apache.zeppelin.interpreter.InterpreterOutput: java.util.List resultMessageOutputs>
+org.apache.zeppelin.interpreter.InterpreterOutput.close : goto [?= $z0 = interfaceinvoke r2.<java.util.Iterator: boolean hasNext()>()]
+org.apache.zeppelin.interpreter.InterpreterOutput.close : virtualinvoke r3.<org.apache.zeppelin.interpreter.InterpreterResultMessageOutput: void close()>()
+org.apache.zeppelin.interpreter.InterpreterOutput.close : $r6 = r0.<org.apache.zeppelin.interpreter.InterpreterOutput: java.util.List resultMessageOutputs>
+org.apache.zeppelin.interpreter.InterpreterOutput.updateAllResultMessages : $r1 = r0.<org.apache.zeppelin.interpreter.InterpreterOutput: org.apache.zeppelin.interpreter.InterpreterOutputListener flushListener>
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.isAppendSupported : $r2 = r0.<org.apache.zeppelin.interpreter.InterpreterResultMessageOutput: org.apache.zeppelin.interpreter.InterpreterResult$Type type>
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.clear : $r6 = r0.<org.apache.zeppelin.interpreter.InterpreterResultMessageOutput: org.apache.zeppelin.interpreter.InterpreterOutputChangeWatcher watcher>
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.clear : exitmonitor r1
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.clear : $r5 = r0.<org.apache.zeppelin.interpreter.InterpreterResultMessageOutput: java.util.List outList>
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.clear : $r3 = r0.<org.apache.zeppelin.interpreter.InterpreterResultMessageOutput: java.util.List outList>
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.clear : $r4 = r0.<org.apache.zeppelin.interpreter.InterpreterResultMessageOutput: java.io.ByteArrayOutputStream buffer>
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.clear : $r8 = r0.<org.apache.zeppelin.interpreter.InterpreterResultMessageOutput: org.apache.zeppelin.interpreter.InterpreterResultMessageOutputListener flushListener>
+org.apache.zeppelin.interpreter.InterpreterOutput.getCurrentOutput : $r4 = r0.<org.apache.zeppelin.interpreter.InterpreterOutput: org.apache.zeppelin.interpreter.InterpreterResultMessageOutput currentOut>
+org.apache.zeppelin.interpreter.InterpreterOutput.getCurrentOutput : $r3 = r0.<org.apache.zeppelin.interpreter.InterpreterOutput: java.util.List resultMessageOutputs>

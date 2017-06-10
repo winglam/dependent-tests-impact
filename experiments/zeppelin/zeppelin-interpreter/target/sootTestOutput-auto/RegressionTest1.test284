@@ -1,0 +1,38 @@
+org.apache.zeppelin.dep.DependencyContext.getFiles : $r1 = r0.<org.apache.zeppelin.dep.DependencyContext: java.util.List files>
+org.apache.zeppelin.dep.Dependency.getExclusions : $r1 = r0.<org.apache.zeppelin.dep.Dependency: java.util.List exclusions>
+org.apache.zeppelin.dep.DependencyContext.load : $r6 = r0.<org.apache.zeppelin.dep.DependencyContext: java.util.List dependencies>
+org.apache.zeppelin.dep.DependencyContext.load : return r3
+org.apache.zeppelin.dep.DependencyContext.load : $r2 = new org.apache.zeppelin.dep.Dependency
+org.apache.zeppelin.dep.DependencyContext.load : $r4 = r0.<org.apache.zeppelin.dep.DependencyContext: java.util.List dependencies>
+org.apache.zeppelin.dep.Dependency.exclude : $r4 = r0.<org.apache.zeppelin.dep.Dependency: java.util.List exclusions>
+org.apache.zeppelin.dep.Dependency.exclude : r2 = virtualinvoke r1.<java.lang.String: java.lang.String[] split(java.lang.String)>(",|\n")
+org.apache.zeppelin.dep.Dependency.exclude : return r0
+org.apache.zeppelin.dep.RepositorySystemFactory.newRepositorySystem : $r5 = newarray (org.sonatype.aether.connector.wagon.WagonProvider)[1]
+org.apache.zeppelin.dep.RepositorySystemFactory.newRepositorySystem : $r0 = new org.apache.maven.repository.internal.DefaultServiceLocator
+org.apache.zeppelin.dep.RepositorySystemFactory.newRepositorySystem : virtualinvoke r1.<org.apache.maven.repository.internal.DefaultServiceLocator: org.sonatype.aether.impl.internal.DefaultServiceLocator addService(java.lang.Class,java.lang.Class)>(class "org/sonatype/aether/spi/connector/RepositoryConnectorFactory", class "org/sonatype/aether/connector/file/FileRepositoryConnectorFactory")
+org.apache.zeppelin.dep.RepositorySystemFactory.newRepositorySystem : $r7 = virtualinvoke r1.<org.apache.maven.repository.internal.DefaultServiceLocator: java.lang.Object getService(java.lang.Class)>(class "org/sonatype/aether/RepositorySystem")
+org.apache.zeppelin.dep.RepositorySystemFactory.newRepositorySystem : virtualinvoke r1.<org.apache.maven.repository.internal.DefaultServiceLocator: org.sonatype.aether.impl.internal.DefaultServiceLocator addService(java.lang.Class,java.lang.Class)>(class "org/sonatype/aether/spi/connector/RepositoryConnectorFactory", class "org/sonatype/aether/connector/wagon/WagonRepositoryConnectorFactory")
+org.apache.zeppelin.dep.Booter.newCentralRepository : $r1 = new org.sonatype.aether.repository.RemoteRepository
+org.apache.zeppelin.dep.Booter.newCentralRepository : if r0 != null goto $r1 = new org.sonatype.aether.repository.RemoteRepository
+org.apache.zeppelin.dep.Booter.newCentralRepository : r0 = staticinvoke <java.lang.System: java.lang.String getProperty(java.lang.String)>("zeppelin.interpreter.dep.mvnRepo")
+org.apache.zeppelin.dep.Booter.newCentralRepository : r0 = "http://repo1.maven.org/maven2/"
+org.apache.zeppelin.dep.Booter.newCentralRepository : r0 = staticinvoke <java.lang.System: java.lang.String getenv(java.lang.String)>("ZEPPELIN_INTERPRETER_DEP_MVNREPO")
+org.apache.zeppelin.dep.Booter.newCentralRepository : if r0 != null goto (branch)
+org.apache.zeppelin.dep.Dependency.excludeAll : virtualinvoke r0.<org.apache.zeppelin.dep.Dependency: org.apache.zeppelin.dep.Dependency exclude(java.lang.String)>("*")
+org.apache.zeppelin.dep.Dependency.excludeAll : return r0
+org.apache.zeppelin.dep.Booter.newRepositorySystemSession : $r7 = interfaceinvoke r0.<org.sonatype.aether.RepositorySystem: org.sonatype.aether.repository.LocalRepositoryManager newLocalRepositoryManager(org.sonatype.aether.repository.LocalRepository)>(r3)
+org.apache.zeppelin.dep.Booter.newRepositorySystemSession : return r2
+org.apache.zeppelin.dep.Booter.newRepositorySystemSession : staticinvoke <org.apache.commons.lang.Validate: void notNull(java.lang.Object,java.lang.String)>(r1, "localRepoPath should have a value")
+org.apache.zeppelin.dep.Booter.newRepositorySystemSession : $r5 = new org.sonatype.aether.repository.LocalRepository
+org.apache.zeppelin.dep.Booter.newRepositorySystemSession : $r4 = new org.apache.maven.repository.internal.MavenRepositorySystemSession
+org.apache.zeppelin.dep.Booter.resolveLocalRepoPath : r1 = staticinvoke <java.lang.System: java.lang.String getenv(java.lang.String)>("ZEPPELIN_HOME")
+org.apache.zeppelin.dep.Booter.resolveLocalRepoPath : r1 = staticinvoke <java.lang.System: java.lang.String getProperty(java.lang.String)>("zeppelin.home")
+org.apache.zeppelin.dep.Booter.resolveLocalRepoPath : $r2 = newarray (java.lang.String)[0]
+org.apache.zeppelin.dep.Booter.resolveLocalRepoPath : if r1 != null goto (branch)
+org.apache.zeppelin.dep.Booter.resolveLocalRepoPath : r1 = ".."
+org.apache.zeppelin.dep.Booter.resolveLocalRepoPath : if r1 != null goto $r2 = newarray (java.lang.String)[0]
+org.apache.zeppelin.dep.Booter.newRepositorySystem : $r0 = staticinvoke <org.apache.zeppelin.dep.RepositorySystemFactory: org.sonatype.aether.RepositorySystem newRepositorySystem()>()
+org.apache.zeppelin.dep.Booter.newLocalRepository : $r0 = new org.sonatype.aether.repository.RemoteRepository
+org.apache.zeppelin.dep.Booter.newLocalRepository : $r3 = staticinvoke <java.lang.System: java.lang.String getProperty(java.lang.String)>("user.home")
+org.apache.zeppelin.dep.Dependency.isLocalFsArtifact : $r1 = r0.<org.apache.zeppelin.dep.Dependency: java.lang.String groupArtifactVersion>
+org.apache.zeppelin.dep.Dependency.isLocalFsArtifact : if i0 < 3 goto $z0 = 1

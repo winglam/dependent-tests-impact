@@ -1,0 +1,28 @@
+org.apache.zeppelin.interpreter.InterpreterGroup.getId : $r5 = staticinvoke <org.apache.zeppelin.interpreter.InterpreterGroup: java.lang.String generateId()>()
+org.apache.zeppelin.interpreter.InterpreterGroup.getId : $r4 = r0.<org.apache.zeppelin.interpreter.InterpreterGroup: java.lang.String id>
+org.apache.zeppelin.interpreter.InterpreterGroup.getId : r2 = r0
+org.apache.zeppelin.interpreter.InterpreterGroup.getId : $r6 = r0.<org.apache.zeppelin.interpreter.InterpreterGroup: java.lang.String id>
+org.apache.zeppelin.interpreter.InterpreterGroup.getInterpreterHookRegistry : $r1 = r0.<org.apache.zeppelin.interpreter.InterpreterGroup: org.apache.zeppelin.interpreter.InterpreterHookRegistry hookRegistry>
+org.apache.zeppelin.interpreter.InterpreterContextRunner.getNoteId : $r1 = r0.<org.apache.zeppelin.interpreter.InterpreterContextRunner: java.lang.String noteId>
+org.apache.zeppelin.interpreter.InterpreterContextRunner.equals : $r3 = virtualinvoke r2.<org.apache.zeppelin.interpreter.InterpreterContextRunner: java.lang.String getParagraphId()>()
+org.apache.zeppelin.interpreter.InterpreterContextRunner.equals : return 1
+org.apache.zeppelin.interpreter.InterpreterContextRunner.equals : $r5 = virtualinvoke r2.<org.apache.zeppelin.interpreter.InterpreterContextRunner: java.lang.String getNoteId()>()
+org.apache.zeppelin.interpreter.InterpreterContextRunner.equals : r2 = (org.apache.zeppelin.interpreter.InterpreterContextRunner) r1
+org.apache.zeppelin.interpreter.InterpreterContextRunner.equals : $z0 = r1 instanceof org.apache.zeppelin.interpreter.InterpreterContextRunner
+org.apache.zeppelin.interpreter.InterpreterOutput.clear : $r8 = r0.<org.apache.zeppelin.interpreter.InterpreterOutput: java.util.List resultMessageOutputs>
+org.apache.zeppelin.interpreter.InterpreterOutput.clear : exitmonitor r1
+org.apache.zeppelin.interpreter.InterpreterOutput.clear : specialinvoke r0.<org.apache.zeppelin.interpreter.InterpreterOutput: void updateAllResultMessages()>()
+org.apache.zeppelin.interpreter.InterpreterOutput.clear : r0.<org.apache.zeppelin.interpreter.InterpreterOutput: boolean firstCharIsPercentSign> = 0
+org.apache.zeppelin.interpreter.InterpreterOutput.clear : $r13 = r0.<org.apache.zeppelin.interpreter.InterpreterOutput: java.util.List resultMessageOutputs>
+org.apache.zeppelin.interpreter.InterpreterOutput.clear : $r6 = r0.<org.apache.zeppelin.interpreter.InterpreterOutput: java.io.ByteArrayOutputStream buffer>
+org.apache.zeppelin.interpreter.InterpreterOutput.clear : $r7 = r0.<org.apache.zeppelin.interpreter.InterpreterOutput: java.util.List resultMessageOutputs>
+org.apache.zeppelin.interpreter.InterpreterOutput.clear : r0.<org.apache.zeppelin.interpreter.InterpreterOutput: int size> = 0
+org.apache.zeppelin.interpreter.InterpreterOutput.clear : r0.<org.apache.zeppelin.interpreter.InterpreterOutput: boolean truncated> = 0
+org.apache.zeppelin.interpreter.InterpreterOutput.clear : r0.<org.apache.zeppelin.interpreter.InterpreterOutput: boolean startOfTheNewLine> = 1
+org.apache.zeppelin.interpreter.InterpreterOutput.clear : r0.<org.apache.zeppelin.interpreter.InterpreterOutput: org.apache.zeppelin.interpreter.InterpreterResultMessageOutput currentOut> = null
+org.apache.zeppelin.interpreter.InterpreterContextRunner.getParagraphId : $r1 = r0.<org.apache.zeppelin.interpreter.InterpreterContextRunner: java.lang.String paragraphId>
+org.apache.zeppelin.resource.LocalResourcePool.get : $r7 = r0.<org.apache.zeppelin.resource.LocalResourcePool: java.util.Map resources>
+org.apache.zeppelin.resource.LocalResourcePool.get : $r4 = new org.apache.zeppelin.resource.ResourceId
+org.apache.zeppelin.interpreter.InterpreterOutput.updateAllResultMessages : $r1 = r0.<org.apache.zeppelin.interpreter.InterpreterOutput: org.apache.zeppelin.interpreter.InterpreterOutputListener flushListener>
+org.apache.zeppelin.interpreter.InterpreterGroup.generateId : $i1 = virtualinvoke $r4.<java.util.Random: int nextInt()>()
+org.apache.zeppelin.interpreter.InterpreterGroup.generateId : $r0 = new java.lang.StringBuilder

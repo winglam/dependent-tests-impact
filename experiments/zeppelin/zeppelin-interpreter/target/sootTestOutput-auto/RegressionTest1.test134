@@ -1,0 +1,8 @@
+org.apache.zeppelin.interpreter.InterpreterOption.getPort : $i0 = r0.<org.apache.zeppelin.interpreter.InterpreterOption: int port>
+org.apache.zeppelin.interpreter.InterpreterOption.setPerUser : r0.<org.apache.zeppelin.interpreter.InterpreterOption: java.lang.String perUser> = r1
+org.apache.zeppelin.scheduler.FIFOScheduler.run : goto [?= exitmonitor r2]
+org.apache.zeppelin.scheduler.FIFOScheduler.run : $r10 = r0.<org.apache.zeppelin.scheduler.FIFOScheduler: java.util.List queue>
+org.apache.zeppelin.scheduler.FIFOScheduler.run : $r8 = r0.<org.apache.zeppelin.scheduler.FIFOScheduler: org.apache.zeppelin.scheduler.Job runningJob>
+org.apache.zeppelin.scheduler.FIFOScheduler.run : $r7 = r0.<org.apache.zeppelin.scheduler.FIFOScheduler: java.util.List queue>
+org.apache.zeppelin.scheduler.FIFOScheduler.run : exitmonitor r2
+org.apache.zeppelin.scheduler.FIFOScheduler.run : $z0 = r0.<org.apache.zeppelin.scheduler.FIFOScheduler: boolean terminate>

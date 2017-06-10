@@ -1,0 +1,13 @@
+org.apache.zeppelin.scheduler.FIFOScheduler.removeFromWaitingQueue : $z0 = interfaceinvoke r3.<java.util.Iterator: boolean hasNext()>()
+org.apache.zeppelin.scheduler.FIFOScheduler.removeFromWaitingQueue : $r6 = r0.<org.apache.zeppelin.scheduler.FIFOScheduler: java.util.List queue>
+org.apache.zeppelin.scheduler.FIFOScheduler.removeFromWaitingQueue : return null
+org.apache.zeppelin.scheduler.FIFOScheduler.removeFromWaitingQueue : exitmonitor r2
+org.apache.zeppelin.scheduler.FIFOScheduler.removeFromWaitingQueue : $r7 = r0.<org.apache.zeppelin.scheduler.FIFOScheduler: java.util.List queue>
+org.apache.zeppelin.scheduler.FIFOScheduler.getJobsRunning : return r2
+org.apache.zeppelin.scheduler.FIFOScheduler.getJobsRunning : r3 = r0.<org.apache.zeppelin.scheduler.FIFOScheduler: org.apache.zeppelin.scheduler.Job runningJob>
+org.apache.zeppelin.scheduler.FIFOScheduler.getJobsRunning : $r1 = new java.util.LinkedList
+org.apache.zeppelin.scheduler.FIFOScheduler.getJobsRunning : if r3 == null goto return r2
+org.apache.zeppelin.scheduler.FIFOScheduler.stop : $r3 = r0.<org.apache.zeppelin.scheduler.FIFOScheduler: java.util.List queue>
+org.apache.zeppelin.scheduler.FIFOScheduler.stop : exitmonitor r1
+org.apache.zeppelin.scheduler.FIFOScheduler.stop : r0.<org.apache.zeppelin.scheduler.FIFOScheduler: boolean terminate> = 1
+org.apache.zeppelin.scheduler.FIFOScheduler.stop : $r4 = r0.<org.apache.zeppelin.scheduler.FIFOScheduler: java.util.List queue>

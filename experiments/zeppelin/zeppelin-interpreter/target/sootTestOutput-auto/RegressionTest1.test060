@@ -1,0 +1,10 @@
+org.apache.zeppelin.helium.HeliumPackage.getArtifact : $r1 = r0.<org.apache.zeppelin.helium.HeliumPackage: java.lang.String artifact>
+org.apache.zeppelin.helium.HeliumPackage.getResources : $r1 = r0.<org.apache.zeppelin.helium.HeliumPackage: java.lang.String[][] resources>
+org.apache.zeppelin.helium.HeliumPackage.getSpellInfo : $r1 = r0.<org.apache.zeppelin.helium.HeliumPackage: org.apache.zeppelin.helium.SpellPackageInfo spell>
+org.apache.zeppelin.helium.HeliumPackage.getPublishedDate : $r1 = r0.<org.apache.zeppelin.helium.HeliumPackage: java.lang.String published>
+org.apache.zeppelin.scheduler.FIFOScheduler.run : goto [?= exitmonitor r2]
+org.apache.zeppelin.scheduler.FIFOScheduler.run : $r10 = r0.<org.apache.zeppelin.scheduler.FIFOScheduler: java.util.List queue>
+org.apache.zeppelin.scheduler.FIFOScheduler.run : $r8 = r0.<org.apache.zeppelin.scheduler.FIFOScheduler: org.apache.zeppelin.scheduler.Job runningJob>
+org.apache.zeppelin.scheduler.FIFOScheduler.run : $r7 = r0.<org.apache.zeppelin.scheduler.FIFOScheduler: java.util.List queue>
+org.apache.zeppelin.scheduler.FIFOScheduler.run : exitmonitor r2
+org.apache.zeppelin.scheduler.FIFOScheduler.run : $z0 = r0.<org.apache.zeppelin.scheduler.FIFOScheduler: boolean terminate>

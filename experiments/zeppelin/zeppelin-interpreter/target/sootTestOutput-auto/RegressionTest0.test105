@@ -1,0 +1,32 @@
+org.apache.zeppelin.resource.ByteBufferInputStream.read : $r2 = r0.<org.apache.zeppelin.resource.ByteBufferInputStream: java.nio.ByteBuffer buf>
+org.apache.zeppelin.interpreter.InterpreterOutput.toByteArray : $r8 = r0.<org.apache.zeppelin.interpreter.InterpreterOutput: java.util.List resultMessageOutputs>
+org.apache.zeppelin.interpreter.InterpreterOutput.toByteArray : $r1 = new java.io.ByteArrayOutputStream
+org.apache.zeppelin.interpreter.InterpreterOutput.toByteArray : exitmonitor r3
+org.apache.zeppelin.interpreter.InterpreterOutput.toByteArray : $r7 = r0.<org.apache.zeppelin.interpreter.InterpreterOutput: java.util.List resultMessageOutputs>
+org.apache.zeppelin.interpreter.InterpreterOutput.toByteArray : $r12 = virtualinvoke r2.<java.io.ByteArrayOutputStream: byte[] toByteArray()>()
+org.apache.zeppelin.interpreter.InterpreterOutput.addResourceSearchPath : $r2 = r0.<org.apache.zeppelin.interpreter.InterpreterOutput: java.util.List resourceSearchPaths>
+org.apache.zeppelin.interpreter.InterpreterOutput.clear : $r8 = r0.<org.apache.zeppelin.interpreter.InterpreterOutput: java.util.List resultMessageOutputs>
+org.apache.zeppelin.interpreter.InterpreterOutput.clear : exitmonitor r1
+org.apache.zeppelin.interpreter.InterpreterOutput.clear : specialinvoke r0.<org.apache.zeppelin.interpreter.InterpreterOutput: void updateAllResultMessages()>()
+org.apache.zeppelin.interpreter.InterpreterOutput.clear : r0.<org.apache.zeppelin.interpreter.InterpreterOutput: boolean firstCharIsPercentSign> = 0
+org.apache.zeppelin.interpreter.InterpreterOutput.clear : $r13 = r0.<org.apache.zeppelin.interpreter.InterpreterOutput: java.util.List resultMessageOutputs>
+org.apache.zeppelin.interpreter.InterpreterOutput.clear : $r6 = r0.<org.apache.zeppelin.interpreter.InterpreterOutput: java.io.ByteArrayOutputStream buffer>
+org.apache.zeppelin.interpreter.InterpreterOutput.clear : $r7 = r0.<org.apache.zeppelin.interpreter.InterpreterOutput: java.util.List resultMessageOutputs>
+org.apache.zeppelin.interpreter.InterpreterOutput.clear : r0.<org.apache.zeppelin.interpreter.InterpreterOutput: int size> = 0
+org.apache.zeppelin.interpreter.InterpreterOutput.clear : r0.<org.apache.zeppelin.interpreter.InterpreterOutput: boolean truncated> = 0
+org.apache.zeppelin.interpreter.InterpreterOutput.clear : r0.<org.apache.zeppelin.interpreter.InterpreterOutput: boolean startOfTheNewLine> = 1
+org.apache.zeppelin.interpreter.InterpreterOutput.clear : r0.<org.apache.zeppelin.interpreter.InterpreterOutput: org.apache.zeppelin.interpreter.InterpreterResultMessageOutput currentOut> = null
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.toInterpreterResultMessage : $r1 = new org.apache.zeppelin.interpreter.InterpreterResultMessage
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.write : $i0 = lengthof r1
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.write : i2 = i0
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.write : exitmonitor r2
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.write : $r4 = r0.<org.apache.zeppelin.interpreter.InterpreterResultMessageOutput: java.util.List outList>
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.toByteArray : $r1 = new java.io.ByteArrayOutputStream
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.toByteArray : $r20 = virtualinvoke r2.<java.io.ByteArrayOutputStream: byte[] toByteArray()>()
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.toByteArray : virtualinvoke r2.<java.io.ByteArrayOutputStream: void close()>()
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.toByteArray : exitmonitor r4
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.toByteArray : r12 = interfaceinvoke r3.<java.util.List: java.util.Iterator iterator()>()
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.toByteArray : $r9 = r0.<org.apache.zeppelin.interpreter.InterpreterResultMessageOutput: java.util.List outList>
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.toByteArray : $r8 = new java.util.LinkedList
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.toByteArray : $r10 = r0.<org.apache.zeppelin.interpreter.InterpreterResultMessageOutput: java.util.List outList>
+org.apache.zeppelin.interpreter.InterpreterOutput.updateAllResultMessages : $r1 = r0.<org.apache.zeppelin.interpreter.InterpreterOutput: org.apache.zeppelin.interpreter.InterpreterOutputListener flushListener>

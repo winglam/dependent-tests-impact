@@ -1,0 +1,18 @@
+org.apache.zeppelin.interpreter.InterpreterGroup.getId : $r5 = staticinvoke <org.apache.zeppelin.interpreter.InterpreterGroup: java.lang.String generateId()>()
+org.apache.zeppelin.interpreter.InterpreterGroup.getId : $r4 = r0.<org.apache.zeppelin.interpreter.InterpreterGroup: java.lang.String id>
+org.apache.zeppelin.interpreter.InterpreterGroup.getId : r2 = r0
+org.apache.zeppelin.interpreter.InterpreterGroup.getId : $r6 = r0.<org.apache.zeppelin.interpreter.InterpreterGroup: java.lang.String id>
+org.apache.zeppelin.interpreter.InterpreterGroup.getInterpreterHookRegistry : $r1 = r0.<org.apache.zeppelin.interpreter.InterpreterGroup: org.apache.zeppelin.interpreter.InterpreterHookRegistry hookRegistry>
+org.apache.zeppelin.interpreter.InterpreterGroup.setRemoteInterpreterProcess : r0.<org.apache.zeppelin.interpreter.InterpreterGroup: org.apache.zeppelin.interpreter.remote.RemoteInterpreterProcess remoteInterpreterProcess> = r1
+org.apache.zeppelin.resource.LocalResourcePool.id : $r1 = r0.<org.apache.zeppelin.resource.LocalResourcePool: java.lang.String resourcePoolId>
+org.apache.zeppelin.interpreter.InterpreterGroup.close : if r4 != null goto $r7 = new org.apache.zeppelin.interpreter.InterpreterGroup$1
+org.apache.zeppelin.interpreter.InterpreterGroup.close : specialinvoke r0.<org.apache.zeppelin.interpreter.InterpreterGroup: void close(java.util.Collection)>(r4)
+org.apache.zeppelin.interpreter.InterpreterGroup.close : $r2 = <org.apache.zeppelin.interpreter.InterpreterGroup: org.slf4j.Logger LOGGER>
+org.apache.zeppelin.interpreter.InterpreterGroup.close : specialinvoke r0.<org.apache.zeppelin.interpreter.InterpreterGroup: void close(java.util.Map,java.lang.String,java.lang.String,java.util.Collection)>(null, null, null, r1)
+org.apache.zeppelin.interpreter.InterpreterGroup.close : $r11 = virtualinvoke r0.<org.apache.zeppelin.interpreter.InterpreterGroup: java.lang.Object get(java.lang.Object)>(r1)
+org.apache.zeppelin.resource.LocalResourcePool.remove : $r3 = r0.<org.apache.zeppelin.resource.LocalResourcePool: java.util.Map resources>
+org.apache.zeppelin.resource.LocalResourcePool.get : $r5 = r0.<org.apache.zeppelin.resource.LocalResourcePool: java.util.Map resources>
+org.apache.zeppelin.resource.LocalResourcePool.get : $r2 = new org.apache.zeppelin.resource.ResourceId
+org.apache.zeppelin.interpreter.InterpreterGroup.generateId : $i1 = virtualinvoke $r4.<java.util.Random: int nextInt()>()
+org.apache.zeppelin.interpreter.InterpreterGroup.generateId : $r0 = new java.lang.StringBuilder
+org.apache.zeppelin.interpreter.InterpreterGroup.setResourcePool : r0.<org.apache.zeppelin.interpreter.InterpreterGroup: org.apache.zeppelin.resource.ResourcePool resourcePool> = r1

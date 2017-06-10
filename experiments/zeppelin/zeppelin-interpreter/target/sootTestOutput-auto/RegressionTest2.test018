@@ -1,0 +1,24 @@
+org.apache.zeppelin.interpreter.InterpreterGroup.getId : $r5 = staticinvoke <org.apache.zeppelin.interpreter.InterpreterGroup: java.lang.String generateId()>()
+org.apache.zeppelin.interpreter.InterpreterGroup.getId : $r4 = r0.<org.apache.zeppelin.interpreter.InterpreterGroup: java.lang.String id>
+org.apache.zeppelin.interpreter.InterpreterGroup.getId : r2 = r0
+org.apache.zeppelin.interpreter.InterpreterGroup.getId : $r6 = r0.<org.apache.zeppelin.interpreter.InterpreterGroup: java.lang.String id>
+org.apache.zeppelin.interpreter.InterpreterGroup.getProperty : return r2
+org.apache.zeppelin.interpreter.InterpreterGroup.getProperty : $r7 = virtualinvoke r0.<org.apache.zeppelin.interpreter.InterpreterGroup: java.util.Collection values()>()
+org.apache.zeppelin.interpreter.InterpreterGroup.getProperty : $r1 = new java.util.Properties
+org.apache.zeppelin.interpreter.InterpreterGroup.setInterpreterHookRegistry : r0.<org.apache.zeppelin.interpreter.InterpreterGroup: org.apache.zeppelin.interpreter.InterpreterHookRegistry hookRegistry> = r1
+org.apache.zeppelin.interpreter.remote.RemoteInterpreter.getEnvFromInterpreterProperty : return r3
+org.apache.zeppelin.interpreter.remote.RemoteInterpreter.getEnvFromInterpreterProperty : $r2 = new java.util.HashMap
+org.apache.zeppelin.interpreter.remote.RemoteInterpreter.getEnvFromInterpreterProperty : $r6 = virtualinvoke r1.<java.util.Properties: java.util.Set keySet()>()
+org.apache.zeppelin.interpreter.InterpreterOption.fromInterpreterOption : $z2 = r0.<org.apache.zeppelin.interpreter.InterpreterOption: boolean setPermission>
+org.apache.zeppelin.interpreter.InterpreterOption.fromInterpreterOption : return r2
+org.apache.zeppelin.interpreter.InterpreterOption.fromInterpreterOption : $r7 = r0.<org.apache.zeppelin.interpreter.InterpreterOption: java.util.List users>
+org.apache.zeppelin.interpreter.InterpreterOption.fromInterpreterOption : $z1 = r0.<org.apache.zeppelin.interpreter.InterpreterOption: boolean isExistingProcess>
+org.apache.zeppelin.interpreter.InterpreterOption.fromInterpreterOption : $z0 = r0.<org.apache.zeppelin.interpreter.InterpreterOption: boolean remote>
+org.apache.zeppelin.interpreter.InterpreterOption.fromInterpreterOption : $r5 = r0.<org.apache.zeppelin.interpreter.InterpreterOption: java.lang.String perUser>
+org.apache.zeppelin.interpreter.InterpreterOption.fromInterpreterOption : $r3 = r0.<org.apache.zeppelin.interpreter.InterpreterOption: java.lang.String host>
+org.apache.zeppelin.interpreter.InterpreterOption.fromInterpreterOption : $r1 = new org.apache.zeppelin.interpreter.InterpreterOption
+org.apache.zeppelin.interpreter.InterpreterOption.fromInterpreterOption : $i0 = r0.<org.apache.zeppelin.interpreter.InterpreterOption: int port>
+org.apache.zeppelin.interpreter.InterpreterOption.fromInterpreterOption : $r4 = r0.<org.apache.zeppelin.interpreter.InterpreterOption: java.lang.String perNote>
+org.apache.zeppelin.interpreter.InterpreterGroup.getResourcePool : $r1 = r0.<org.apache.zeppelin.interpreter.InterpreterGroup: org.apache.zeppelin.resource.ResourcePool resourcePool>
+org.apache.zeppelin.interpreter.InterpreterGroup.generateId : $i1 = virtualinvoke $r4.<java.util.Random: int nextInt()>()
+org.apache.zeppelin.interpreter.InterpreterGroup.generateId : $r0 = new java.lang.StringBuilder

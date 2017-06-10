@@ -1,0 +1,25 @@
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.flush : exitmonitor r1
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.flush : $r5 = r0.<org.apache.zeppelin.interpreter.InterpreterResultMessageOutput: java.io.ByteArrayOutputStream buffer>
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.flush : $r12 = r0.<org.apache.zeppelin.interpreter.InterpreterResultMessageOutput: java.io.ByteArrayOutputStream buffer>
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.flush : if r2 == null goto $r12 = r0.<org.apache.zeppelin.interpreter.InterpreterResultMessageOutput: java.io.ByteArrayOutputStream buffer>
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.flush : $z0 = virtualinvoke r0.<org.apache.zeppelin.interpreter.InterpreterResultMessageOutput: boolean isAppendSupported()>()
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.flush : $r4 = r0.<org.apache.zeppelin.interpreter.InterpreterResultMessageOutput: java.util.List outList>
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.flush : $r6 = r0.<org.apache.zeppelin.interpreter.InterpreterResultMessageOutput: java.io.ByteArrayOutputStream buffer>
+org.apache.zeppelin.interpreter.InterpreterGroup.getId : $r5 = staticinvoke <org.apache.zeppelin.interpreter.InterpreterGroup: java.lang.String generateId()>()
+org.apache.zeppelin.interpreter.InterpreterGroup.getId : $r4 = r0.<org.apache.zeppelin.interpreter.InterpreterGroup: java.lang.String id>
+org.apache.zeppelin.interpreter.InterpreterGroup.getId : r2 = r0
+org.apache.zeppelin.interpreter.InterpreterGroup.getId : $r6 = r0.<org.apache.zeppelin.interpreter.InterpreterGroup: java.lang.String id>
+org.apache.zeppelin.interpreter.InterpreterResult.add : $r4 = r0.<org.apache.zeppelin.interpreter.InterpreterResult: java.util.List msg>
+org.apache.zeppelin.interpreter.InterpreterGroup.getInterpreterHookRegistry : $r1 = r0.<org.apache.zeppelin.interpreter.InterpreterGroup: org.apache.zeppelin.interpreter.InterpreterHookRegistry hookRegistry>
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.setType : $r2 = r0.<org.apache.zeppelin.interpreter.InterpreterResultMessageOutput: org.apache.zeppelin.interpreter.InterpreterResult$Type type>
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.setType : r0.<org.apache.zeppelin.interpreter.InterpreterResultMessageOutput: org.apache.zeppelin.interpreter.InterpreterResult$Type type> = r1
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.setType : virtualinvoke r0.<org.apache.zeppelin.interpreter.InterpreterResultMessageOutput: void clear()>()
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.isAppendSupported : $r2 = r0.<org.apache.zeppelin.interpreter.InterpreterResultMessageOutput: org.apache.zeppelin.interpreter.InterpreterResult$Type type>
+org.apache.zeppelin.interpreter.InterpreterGroup.generateId : $i1 = virtualinvoke $r4.<java.util.Random: int nextInt()>()
+org.apache.zeppelin.interpreter.InterpreterGroup.generateId : $r0 = new java.lang.StringBuilder
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.clear : $r6 = r0.<org.apache.zeppelin.interpreter.InterpreterResultMessageOutput: org.apache.zeppelin.interpreter.InterpreterOutputChangeWatcher watcher>
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.clear : exitmonitor r1
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.clear : $r5 = r0.<org.apache.zeppelin.interpreter.InterpreterResultMessageOutput: java.util.List outList>
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.clear : $r3 = r0.<org.apache.zeppelin.interpreter.InterpreterResultMessageOutput: java.util.List outList>
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.clear : $r4 = r0.<org.apache.zeppelin.interpreter.InterpreterResultMessageOutput: java.io.ByteArrayOutputStream buffer>
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.clear : $r8 = r0.<org.apache.zeppelin.interpreter.InterpreterResultMessageOutput: org.apache.zeppelin.interpreter.InterpreterResultMessageOutputListener flushListener>

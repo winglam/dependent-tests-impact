@@ -1,0 +1,16 @@
+org.apache.zeppelin.interpreter.InterpreterContext.getAngularObjectRegistry : $r1 = r0.<org.apache.zeppelin.interpreter.InterpreterContext: org.apache.zeppelin.display.AngularObjectRegistry angularObjectRegistry>
+org.apache.zeppelin.display.AngularObjectRegistry.remove : $r8 = r0.<org.apache.zeppelin.display.AngularObjectRegistry: java.util.Map registry>
+org.apache.zeppelin.display.AngularObjectRegistry.remove : $r9 = interfaceinvoke r5.<java.util.Map: java.lang.Object remove(java.lang.Object)>(r1)
+org.apache.zeppelin.display.AngularObjectRegistry.remove : exitmonitor r4
+org.apache.zeppelin.display.AngularObjectRegistry.remove : $r10 = r0.<org.apache.zeppelin.display.AngularObjectRegistry: org.apache.zeppelin.display.AngularObjectRegistryListener listener>
+org.apache.zeppelin.display.AngularObjectRegistry.remove : r5 = specialinvoke r0.<org.apache.zeppelin.display.AngularObjectRegistry: java.util.Map getRegistryForKey(java.lang.String,java.lang.String)>(r2, r3)
+org.apache.zeppelin.interpreter.InterpreterContext.getAuthenticationInfo : $r1 = r0.<org.apache.zeppelin.interpreter.InterpreterContext: org.apache.zeppelin.user.AuthenticationInfo authenticationInfo>
+org.apache.zeppelin.display.AngularObjectRegistry.getRegistryForKey : $r8 = r0.<org.apache.zeppelin.display.AngularObjectRegistry: java.util.Map registry>
+org.apache.zeppelin.display.AngularObjectRegistry.getRegistryForKey : $r7 = r0.<org.apache.zeppelin.display.AngularObjectRegistry: java.util.Map registry>
+org.apache.zeppelin.display.AngularObjectRegistry.getRegistryForKey : $r11 = r0.<org.apache.zeppelin.display.AngularObjectRegistry: java.util.Map registry>
+org.apache.zeppelin.display.AngularObjectRegistry.getRegistryForKey : r4 = specialinvoke r0.<org.apache.zeppelin.display.AngularObjectRegistry: java.lang.String getRegistryKey(java.lang.String,java.lang.String)>(r1, r2)
+org.apache.zeppelin.display.AngularObjectRegistry.getRegistryForKey : $r6 = r0.<org.apache.zeppelin.display.AngularObjectRegistry: java.util.Map registry>
+org.apache.zeppelin.interpreter.InterpreterContext.getParagraphTitle : $r1 = r0.<org.apache.zeppelin.interpreter.InterpreterContext: java.lang.String paragraphTitle>
+org.apache.zeppelin.display.AngularObjectRegistry.getRegistryKey : $r3 = new java.lang.StringBuilder
+org.apache.zeppelin.display.AngularObjectRegistry.getRegistryKey : if r1 != null goto (branch)
+org.apache.zeppelin.display.AngularObjectRegistry.getRegistryKey : if r2 != null goto $r3 = new java.lang.StringBuilder

@@ -1,0 +1,50 @@
+org.apache.zeppelin.interpreter.InterpreterResult.add : $r4 = r0.<org.apache.zeppelin.interpreter.InterpreterResult: java.util.List msg>
+org.apache.zeppelin.interpreter.InterpreterOutputChangeWatcher.run : $r12 = r0.<org.apache.zeppelin.interpreter.InterpreterOutputChangeWatcher: java.nio.file.WatchService watcher>
+org.apache.zeppelin.interpreter.InterpreterOutputChangeWatcher.run : goto [?= staticinvoke <edu.washington.cs.dt.impact.util.Tracer: void trace(java.lang.String,java.lang.String)>("$z0 = r0.<org.apache.zeppelin.interpreter.InterpreterOutputChangeWatcher: boolean stop>", "org.apache.zeppelin.interpreter.InterpreterOutputChangeWatcher.run")]
+org.apache.zeppelin.interpreter.InterpreterOutputChangeWatcher.run : if r13 != null goto $r15 = interfaceinvoke r13.<java.nio.file.WatchKey: java.util.List pollEvents()>()
+org.apache.zeppelin.interpreter.InterpreterOutputChangeWatcher.run : n0 = null
+org.apache.zeppelin.interpreter.InterpreterOutputChangeWatcher.run : $z0 = r0.<org.apache.zeppelin.interpreter.InterpreterOutputChangeWatcher: boolean stop>
+org.apache.zeppelin.interpreter.InterpreterOutputChangeWatcher.run : goto [?= (branch)]
+org.apache.zeppelin.interpreter.InterpreterOutput.createInterpreterResultMessageOutputListener : $r1 = new org.apache.zeppelin.interpreter.InterpreterOutput$1
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.setType : $r2 = r0.<org.apache.zeppelin.interpreter.InterpreterResultMessageOutput: org.apache.zeppelin.interpreter.InterpreterResult$Type type>
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.setType : r0.<org.apache.zeppelin.interpreter.InterpreterResultMessageOutput: org.apache.zeppelin.interpreter.InterpreterResult$Type type> = r1
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.setType : virtualinvoke r0.<org.apache.zeppelin.interpreter.InterpreterResultMessageOutput: void clear()>()
+org.apache.zeppelin.interpreter.InterpreterOutput.clear : $r8 = r0.<org.apache.zeppelin.interpreter.InterpreterOutput: java.util.List resultMessageOutputs>
+org.apache.zeppelin.interpreter.InterpreterOutput.clear : exitmonitor r1
+org.apache.zeppelin.interpreter.InterpreterOutput.clear : specialinvoke r0.<org.apache.zeppelin.interpreter.InterpreterOutput: void updateAllResultMessages()>()
+org.apache.zeppelin.interpreter.InterpreterOutput.clear : r0.<org.apache.zeppelin.interpreter.InterpreterOutput: boolean firstCharIsPercentSign> = 0
+org.apache.zeppelin.interpreter.InterpreterOutput.clear : $r13 = r0.<org.apache.zeppelin.interpreter.InterpreterOutput: java.util.List resultMessageOutputs>
+org.apache.zeppelin.interpreter.InterpreterOutput.clear : $r6 = r0.<org.apache.zeppelin.interpreter.InterpreterOutput: java.io.ByteArrayOutputStream buffer>
+org.apache.zeppelin.interpreter.InterpreterOutput.clear : $r7 = r0.<org.apache.zeppelin.interpreter.InterpreterOutput: java.util.List resultMessageOutputs>
+org.apache.zeppelin.interpreter.InterpreterOutput.clear : r0.<org.apache.zeppelin.interpreter.InterpreterOutput: int size> = 0
+org.apache.zeppelin.interpreter.InterpreterOutput.clear : r0.<org.apache.zeppelin.interpreter.InterpreterOutput: boolean truncated> = 0
+org.apache.zeppelin.interpreter.InterpreterOutput.clear : r0.<org.apache.zeppelin.interpreter.InterpreterOutput: boolean startOfTheNewLine> = 1
+org.apache.zeppelin.interpreter.InterpreterOutput.clear : r0.<org.apache.zeppelin.interpreter.InterpreterOutput: org.apache.zeppelin.interpreter.InterpreterResultMessageOutput currentOut> = null
+org.apache.zeppelin.scheduler.RemoteScheduler.run : $r6 = r0.<org.apache.zeppelin.scheduler.RemoteScheduler: java.util.List queue>
+org.apache.zeppelin.scheduler.RemoteScheduler.run : exitmonitor r1
+org.apache.zeppelin.scheduler.RemoteScheduler.run : goto [?= exitmonitor r1]
+org.apache.zeppelin.scheduler.RemoteScheduler.run : $r7 = r0.<org.apache.zeppelin.scheduler.RemoteScheduler: java.util.List running>
+org.apache.zeppelin.scheduler.RemoteScheduler.run : n0 = null
+org.apache.zeppelin.scheduler.RemoteScheduler.run : $r9 = r0.<org.apache.zeppelin.scheduler.RemoteScheduler: java.util.List queue>
+org.apache.zeppelin.scheduler.RemoteScheduler.run : $z0 = r0.<org.apache.zeppelin.scheduler.RemoteScheduler: boolean terminate>
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.toString : $r1 = new java.lang.StringBuilder
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.write : $r2 = r0.<org.apache.zeppelin.interpreter.InterpreterResultMessageOutput: java.util.List outList>
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.toByteArray : $z4 = r13 instanceof java.lang.Integer
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.toByteArray : $z2 = r13 instanceof java.io.File
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.toByteArray : $r1 = new java.io.ByteArrayOutputStream
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.toByteArray : $r20 = virtualinvoke r2.<java.io.ByteArrayOutputStream: byte[] toByteArray()>()
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.toByteArray : virtualinvoke r2.<java.io.ByteArrayOutputStream: void close()>()
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.toByteArray : exitmonitor r4
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.toByteArray : r12 = interfaceinvoke r3.<java.util.List: java.util.Iterator iterator()>()
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.toByteArray : $r9 = r0.<org.apache.zeppelin.interpreter.InterpreterResultMessageOutput: java.util.List outList>
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.toByteArray : $r8 = new java.util.LinkedList
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.toByteArray : $z5 = r13 instanceof java.net.URL
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.toByteArray : $r10 = r0.<org.apache.zeppelin.interpreter.InterpreterResultMessageOutput: java.util.List outList>
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.toByteArray : goto [?= $z1 = interfaceinvoke r12.<java.util.Iterator: boolean hasNext()>()]
+org.apache.zeppelin.interpreter.InterpreterOutput.updateAllResultMessages : $r1 = r0.<org.apache.zeppelin.interpreter.InterpreterOutput: org.apache.zeppelin.interpreter.InterpreterOutputListener flushListener>
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.clear : $r6 = r0.<org.apache.zeppelin.interpreter.InterpreterResultMessageOutput: org.apache.zeppelin.interpreter.InterpreterOutputChangeWatcher watcher>
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.clear : exitmonitor r1
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.clear : $r5 = r0.<org.apache.zeppelin.interpreter.InterpreterResultMessageOutput: java.util.List outList>
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.clear : $r3 = r0.<org.apache.zeppelin.interpreter.InterpreterResultMessageOutput: java.util.List outList>
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.clear : $r4 = r0.<org.apache.zeppelin.interpreter.InterpreterResultMessageOutput: java.io.ByteArrayOutputStream buffer>
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.clear : $r8 = r0.<org.apache.zeppelin.interpreter.InterpreterResultMessageOutput: org.apache.zeppelin.interpreter.InterpreterResultMessageOutputListener flushListener>

@@ -1,0 +1,9 @@
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.flush : exitmonitor r1
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.flush : $r5 = r0.<org.apache.zeppelin.interpreter.InterpreterResultMessageOutput: java.io.ByteArrayOutputStream buffer>
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.flush : $r12 = r0.<org.apache.zeppelin.interpreter.InterpreterResultMessageOutput: java.io.ByteArrayOutputStream buffer>
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.flush : if r2 == null goto $r12 = r0.<org.apache.zeppelin.interpreter.InterpreterResultMessageOutput: java.io.ByteArrayOutputStream buffer>
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.flush : $z0 = virtualinvoke r0.<org.apache.zeppelin.interpreter.InterpreterResultMessageOutput: boolean isAppendSupported()>()
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.flush : $r4 = r0.<org.apache.zeppelin.interpreter.InterpreterResultMessageOutput: java.util.List outList>
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.flush : $r6 = r0.<org.apache.zeppelin.interpreter.InterpreterResultMessageOutput: java.io.ByteArrayOutputStream buffer>
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.write : $r2 = r0.<org.apache.zeppelin.interpreter.InterpreterResultMessageOutput: java.util.List outList>
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.isAppendSupported : $r2 = r0.<org.apache.zeppelin.interpreter.InterpreterResultMessageOutput: org.apache.zeppelin.interpreter.InterpreterResult$Type type>

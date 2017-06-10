@@ -1,0 +1,71 @@
+org.apache.zeppelin.scheduler.ExecutorFactory.createOrGet : $r9 = r0.<org.apache.zeppelin.scheduler.ExecutorFactory: java.util.Map executor>
+org.apache.zeppelin.scheduler.ExecutorFactory.createOrGet : $r5 = r0.<org.apache.zeppelin.scheduler.ExecutorFactory: java.util.Map executor>
+org.apache.zeppelin.scheduler.ExecutorFactory.createOrGet : $r4 = r0.<org.apache.zeppelin.scheduler.ExecutorFactory: java.util.Map executor>
+org.apache.zeppelin.display.AngularObjectRegistry.getRegistryForKey : $r8 = r0.<org.apache.zeppelin.display.AngularObjectRegistry: java.util.Map registry>
+org.apache.zeppelin.display.AngularObjectRegistry.getRegistryForKey : $r7 = r0.<org.apache.zeppelin.display.AngularObjectRegistry: java.util.Map registry>
+org.apache.zeppelin.display.AngularObjectRegistry.getRegistryForKey : $r11 = r0.<org.apache.zeppelin.display.AngularObjectRegistry: java.util.Map registry>
+org.apache.zeppelin.display.AngularObjectRegistry.getRegistryForKey : r4 = specialinvoke r0.<org.apache.zeppelin.display.AngularObjectRegistry: java.lang.String getRegistryKey(java.lang.String,java.lang.String)>(r1, r2)
+org.apache.zeppelin.display.AngularObjectRegistry.getRegistryForKey : $r6 = r0.<org.apache.zeppelin.display.AngularObjectRegistry: java.util.Map registry>
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.setType : $r2 = r0.<org.apache.zeppelin.interpreter.InterpreterResultMessageOutput: org.apache.zeppelin.interpreter.InterpreterResult$Type type>
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.setType : r0.<org.apache.zeppelin.interpreter.InterpreterResultMessageOutput: org.apache.zeppelin.interpreter.InterpreterResult$Type type> = r1
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.setType : virtualinvoke r0.<org.apache.zeppelin.interpreter.InterpreterResultMessageOutput: void clear()>()
+org.apache.zeppelin.scheduler.ExecutorFactory.singleton : $r0 = <org.apache.zeppelin.scheduler.ExecutorFactory: org.apache.zeppelin.scheduler.ExecutorFactory _executor>
+org.apache.zeppelin.scheduler.ExecutorFactory.singleton : $r7 = <org.apache.zeppelin.scheduler.ExecutorFactory: org.apache.zeppelin.scheduler.ExecutorFactory _executor>
+org.apache.zeppelin.display.AngularObject.set : virtualinvoke r0.<org.apache.zeppelin.display.AngularObject: void set(java.lang.Object,boolean)>(r1, 1)
+org.apache.zeppelin.display.AngularObject.set : r3 = r1
+org.apache.zeppelin.display.AngularObject.set : virtualinvoke r0.<org.apache.zeppelin.display.AngularObject: void emit()>()
+org.apache.zeppelin.display.AngularObject.set : r4 = staticinvoke <org.slf4j.LoggerFactory: org.slf4j.Logger getLogger(java.lang.Class)>(class "org/apache/zeppelin/display/AngularObject")
+org.apache.zeppelin.display.AngularObject.set : r2 = r0.<org.apache.zeppelin.display.AngularObject: java.lang.Object object>
+org.apache.zeppelin.display.AngularObject.set : r23 = interfaceinvoke r5.<java.util.List: java.util.Iterator iterator()>()
+org.apache.zeppelin.display.AngularObject.set : $r17 = new java.util.LinkedList
+org.apache.zeppelin.display.AngularObject.set : exitmonitor r6
+org.apache.zeppelin.display.AngularObject.set : $r9 = <org.apache.zeppelin.display.AngularObject: org.slf4j.Logger LOGGER>
+org.apache.zeppelin.display.AngularObject.set : $r21 = staticinvoke <org.apache.zeppelin.scheduler.ExecutorFactory: org.apache.zeppelin.scheduler.ExecutorFactory singleton()>()
+org.apache.zeppelin.display.AngularObject.set : $r18 = r0.<org.apache.zeppelin.display.AngularObject: java.util.List watchers>
+org.apache.zeppelin.display.AngularObject.set : r0.<org.apache.zeppelin.display.AngularObject: java.lang.Object object> = r1
+org.apache.zeppelin.display.AngularObject.set : if z0 == 0 goto $r9 = <org.apache.zeppelin.display.AngularObject: org.slf4j.Logger LOGGER>
+org.apache.zeppelin.display.AngularObject.set : $r19 = r0.<org.apache.zeppelin.display.AngularObject: java.util.List watchers>
+org.apache.zeppelin.display.AngularObject.setListener : r0.<org.apache.zeppelin.display.AngularObject: org.apache.zeppelin.display.AngularObjectListener listener> = r1
+org.apache.zeppelin.display.AngularObject.getListener : $r1 = r0.<org.apache.zeppelin.display.AngularObject: org.apache.zeppelin.display.AngularObjectListener listener>
+org.apache.zeppelin.display.AngularObject.toString : $r3 = virtualinvoke r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("noteId=\'")
+org.apache.zeppelin.display.AngularObject.toString : virtualinvoke r2.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(125)
+org.apache.zeppelin.display.AngularObject.toString : $r19 = virtualinvoke r2.<java.lang.StringBuilder: java.lang.String toString()>()
+org.apache.zeppelin.display.AngularObject.toString : $r7 = virtualinvoke r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(", paragraphId=\'")
+org.apache.zeppelin.display.AngularObject.toString : $r1 = new java.lang.StringBuilder
+org.apache.zeppelin.display.AngularObject.toString : $r14 = virtualinvoke r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(", name=\'")
+org.apache.zeppelin.display.AngularObject.toString : $r11 = virtualinvoke r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(", object=")
+org.apache.zeppelin.display.AngularObject.getParagraphId : $r1 = r0.<org.apache.zeppelin.display.AngularObject: java.lang.String paragraphId>
+org.apache.zeppelin.display.AngularObject.removeWatcher : $r4 = r0.<org.apache.zeppelin.display.AngularObject: java.util.List watchers>
+org.apache.zeppelin.display.AngularObject.removeWatcher : exitmonitor r2
+org.apache.zeppelin.display.AngularObject.removeWatcher : $r5 = r0.<org.apache.zeppelin.display.AngularObject: java.util.List watchers>
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.toString : $r1 = new java.lang.StringBuilder
+org.apache.zeppelin.display.AngularObject.get : $r1 = r0.<org.apache.zeppelin.display.AngularObject: java.lang.Object object>
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.toByteArray : $r1 = new java.io.ByteArrayOutputStream
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.toByteArray : $r20 = virtualinvoke r2.<java.io.ByteArrayOutputStream: byte[] toByteArray()>()
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.toByteArray : virtualinvoke r2.<java.io.ByteArrayOutputStream: void close()>()
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.toByteArray : exitmonitor r4
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.toByteArray : r12 = interfaceinvoke r3.<java.util.List: java.util.Iterator iterator()>()
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.toByteArray : $r9 = r0.<org.apache.zeppelin.interpreter.InterpreterResultMessageOutput: java.util.List outList>
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.toByteArray : $r8 = new java.util.LinkedList
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.toByteArray : $r10 = r0.<org.apache.zeppelin.interpreter.InterpreterResultMessageOutput: java.util.List outList>
+org.apache.zeppelin.display.AngularObjectRegistry.getRegistryKey : $r3 = new java.lang.StringBuilder
+org.apache.zeppelin.display.AngularObjectRegistry.getRegistryKey : if r1 != null goto (branch)
+org.apache.zeppelin.display.AngularObjectRegistry.getRegistryKey : if r2 != null goto $r3 = new java.lang.StringBuilder
+org.apache.zeppelin.display.AngularObject.emit : $r1 = r0.<org.apache.zeppelin.display.AngularObject: org.apache.zeppelin.display.AngularObjectListener listener>
+org.apache.zeppelin.display.AngularObjectRegistry.add : $r11 = r0.<org.apache.zeppelin.display.AngularObjectRegistry: org.apache.zeppelin.display.AngularObjectRegistryListener listener>
+org.apache.zeppelin.display.AngularObjectRegistry.add : return r5
+org.apache.zeppelin.display.AngularObjectRegistry.add : interfaceinvoke r7.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>(r1, r5)
+org.apache.zeppelin.display.AngularObjectRegistry.add : exitmonitor r6
+org.apache.zeppelin.display.AngularObjectRegistry.add : r5 = virtualinvoke r0.<org.apache.zeppelin.display.AngularObjectRegistry: org.apache.zeppelin.display.AngularObject createNewAngularObject(java.lang.String,java.lang.Object,java.lang.String,java.lang.String)>(r1, r2, r3, r4)
+org.apache.zeppelin.display.AngularObjectRegistry.add : $r9 = r0.<org.apache.zeppelin.display.AngularObjectRegistry: java.util.Map registry>
+org.apache.zeppelin.display.AngularObjectRegistry.add : r7 = specialinvoke r0.<org.apache.zeppelin.display.AngularObjectRegistry: java.util.Map getRegistryForKey(java.lang.String,java.lang.String)>(r3, r4)
+org.apache.zeppelin.display.AngularObject.getNoteId : $r1 = r0.<org.apache.zeppelin.display.AngularObject: java.lang.String noteId>
+org.apache.zeppelin.display.AngularObject.equals : if r0 != r1 goto (branch)
+org.apache.zeppelin.display.AngularObject.equals : if r1 == null goto return 0
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.clear : $r6 = r0.<org.apache.zeppelin.interpreter.InterpreterResultMessageOutput: org.apache.zeppelin.interpreter.InterpreterOutputChangeWatcher watcher>
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.clear : exitmonitor r1
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.clear : $r5 = r0.<org.apache.zeppelin.interpreter.InterpreterResultMessageOutput: java.util.List outList>
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.clear : $r3 = r0.<org.apache.zeppelin.interpreter.InterpreterResultMessageOutput: java.util.List outList>
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.clear : $r4 = r0.<org.apache.zeppelin.interpreter.InterpreterResultMessageOutput: java.io.ByteArrayOutputStream buffer>
+org.apache.zeppelin.interpreter.InterpreterResultMessageOutput.clear : $r8 = r0.<org.apache.zeppelin.interpreter.InterpreterResultMessageOutput: org.apache.zeppelin.interpreter.InterpreterResultMessageOutputListener flushListener>
+org.apache.zeppelin.display.AngularObjectRegistry.createNewAngularObject : $r5 = new org.apache.zeppelin.display.AngularObject

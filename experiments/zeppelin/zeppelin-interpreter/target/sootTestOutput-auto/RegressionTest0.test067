@@ -1,0 +1,6 @@
+org.apache.zeppelin.dep.Booter.newCentralRepository : $r1 = new org.sonatype.aether.repository.RemoteRepository
+org.apache.zeppelin.dep.Booter.newCentralRepository : if r0 != null goto $r1 = new org.sonatype.aether.repository.RemoteRepository
+org.apache.zeppelin.dep.Booter.newCentralRepository : r0 = staticinvoke <java.lang.System: java.lang.String getProperty(java.lang.String)>("zeppelin.interpreter.dep.mvnRepo")
+org.apache.zeppelin.dep.Booter.newCentralRepository : r0 = "http://repo1.maven.org/maven2/"
+org.apache.zeppelin.dep.Booter.newCentralRepository : r0 = staticinvoke <java.lang.System: java.lang.String getenv(java.lang.String)>("ZEPPELIN_INTERPRETER_DEP_MVNREPO")
+org.apache.zeppelin.dep.Booter.newCentralRepository : if r0 != null goto (branch)
