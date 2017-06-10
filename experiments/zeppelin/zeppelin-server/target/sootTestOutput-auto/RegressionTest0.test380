@@ -1,0 +1,5 @@
+org.apache.zeppelin.realm.LdapRealm.setUserSearchAttributeName : r0.<org.apache.zeppelin.realm.LdapRealm: java.lang.String userSearchAttributeName> = r1
+org.apache.zeppelin.realm.LdapRealm.setUserSearchAttributeName : r1 = virtualinvoke r1.<java.lang.String: java.lang.String trim()>()
+org.apache.zeppelin.realm.LdapRealm.setUserSearchAttributeName : if r1 == null goto r0.<org.apache.zeppelin.realm.LdapRealm: java.lang.String userSearchAttributeName> = r1
+org.apache.zeppelin.realm.LdapRealm.getUserSearchScope : $r1 = r0.<org.apache.zeppelin.realm.LdapRealm: java.lang.String userSearchScope>
+org.apache.zeppelin.realm.LdapRealm.setUserSearchAttributeTemplate : if r1 != null goto $r3 = virtualinvoke r1.<java.lang.String: java.lang.String trim()>()

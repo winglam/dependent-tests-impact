@@ -1,0 +1,7 @@
+org.apache.zeppelin.utils.SecurityUtils.getPrincipal : $z0 = <org.apache.zeppelin.utils.SecurityUtils: boolean isEnabled>
+org.apache.zeppelin.utils.SecurityUtils.getPrincipal : return "anonymous"
+org.apache.zeppelin.rest.NotebookRestApi.createNote : $r13 = new org.apache.zeppelin.user.AuthenticationInfo
+org.apache.zeppelin.rest.NotebookRestApi.createNote : $r14 = r0.<org.apache.zeppelin.rest.NotebookRestApi: org.apache.zeppelin.notebook.Notebook notebook>
+org.apache.zeppelin.rest.NotebookRestApi.createNote : r2 = staticinvoke <org.apache.zeppelin.utils.SecurityUtils: java.lang.String getPrincipal()>()
+org.apache.zeppelin.rest.NotebookRestApi.createNote : $r11 = r0.<org.apache.zeppelin.rest.NotebookRestApi: com.google.gson.Gson gson>
+org.apache.zeppelin.rest.NotebookRestApi.createNote : $r10 = <org.apache.zeppelin.rest.NotebookRestApi: org.slf4j.Logger LOG>

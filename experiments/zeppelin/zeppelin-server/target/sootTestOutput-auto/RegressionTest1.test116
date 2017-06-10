@@ -1,0 +1,21 @@
+org.apache.zeppelin.socket.NotebookServer.broadcast : $r10 = r0.<org.apache.zeppelin.socket.NotebookServer: java.util.Map noteSocketMap>
+org.apache.zeppelin.socket.NotebookServer.broadcast : $r9 = r0.<org.apache.zeppelin.socket.NotebookServer: java.util.Map noteSocketMap>
+org.apache.zeppelin.socket.NotebookServer.broadcast : exitmonitor r3
+org.apache.zeppelin.socket.NotebookServer.broadcast : if r4 == null goto exitmonitor r3
+org.apache.zeppelin.socket.NotebookServer.broadcast : specialinvoke r0.<org.apache.zeppelin.socket.NotebookServer: void broadcastToWatchers(java.lang.String,java.lang.String,org.apache.zeppelin.notebook.socket.Message)>(r1, "", r2)
+org.apache.zeppelin.utils.SecurityUtils.isValidOrigin : if r0 == null goto $r4 = staticinvoke <java.lang.Boolean: java.lang.Boolean valueOf(boolean)>(0)
+org.apache.zeppelin.utils.SecurityUtils.isValidOrigin : $r9 = staticinvoke <java.net.InetAddress: java.net.InetAddress getLocalHost()>()
+org.apache.zeppelin.utils.SecurityUtils.isValidOrigin : $r11 = virtualinvoke r1.<org.apache.zeppelin.conf.ZeppelinConfiguration: java.util.List getAllowedOrigins()>()
+org.apache.zeppelin.utils.SecurityUtils.isValidOrigin : r8 = virtualinvoke r7.<java.lang.String: java.lang.String toLowerCase()>()
+org.apache.zeppelin.utils.SecurityUtils.isValidOrigin : $r5 = new java.net.URI
+org.apache.zeppelin.utils.SecurityUtils.isValidOrigin : if r2 != null goto $r6 = virtualinvoke r2.<java.lang.String: java.lang.String toLowerCase()>()
+org.apache.zeppelin.socket.NotebookServer.clearParagraphRuntimeInfo : r2 = virtualinvoke r1.<org.apache.zeppelin.interpreter.InterpreterSetting: java.util.Map getNoteIdAndParaMap()>()
+org.apache.zeppelin.socket.NotebookServer.broadcastParagraphs : if null == r1 goto return
+org.apache.zeppelin.socket.NotebookServer.checkOrigin : $r3 = staticinvoke <org.apache.zeppelin.conf.ZeppelinConfiguration: org.apache.zeppelin.conf.ZeppelinConfiguration create()>()
+org.apache.zeppelin.socket.NotebookServer.onStatusChange : $r8 = virtualinvoke $r5.<org.apache.zeppelin.notebook.socket.Message: org.apache.zeppelin.notebook.socket.Message put(java.lang.String,java.lang.Object)>("noteId", r1)
+org.apache.zeppelin.socket.NotebookServer.onStatusChange : specialinvoke r0.<org.apache.zeppelin.socket.NotebookServer: void broadcast(java.lang.String,org.apache.zeppelin.notebook.socket.Message)>(r1, r7)
+org.apache.zeppelin.socket.NotebookServer.onStatusChange : $r5 = new org.apache.zeppelin.notebook.socket.Message
+org.apache.zeppelin.socket.NotebookServer.onStatusChange : $r10 = virtualinvoke $r9.<org.apache.zeppelin.notebook.socket.Message: org.apache.zeppelin.notebook.socket.Message put(java.lang.String,java.lang.Object)>("appId", r3)
+org.apache.zeppelin.socket.NotebookServer.broadcastToWatchers : $r9 = r0.<org.apache.zeppelin.socket.NotebookServer: java.util.Queue watcherSockets>
+org.apache.zeppelin.socket.NotebookServer.broadcastToWatchers : exitmonitor r4
+org.apache.zeppelin.socket.NotebookServer.broadcastToWatchers : $r10 = r0.<org.apache.zeppelin.socket.NotebookServer: java.util.Queue watcherSockets>

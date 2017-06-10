@@ -1,0 +1,5 @@
+org.apache.zeppelin.realm.LdapRealm.getUserSearchAttributeTemplate : $r1 = r0.<org.apache.zeppelin.realm.LdapRealm: java.lang.String userSearchAttributeTemplate>
+org.apache.zeppelin.realm.LdapRealm.doGetAuthenticationInfo : $r3 = specialinvoke r0.<org.apache.shiro.realm.ldap.JndiLdapRealm: org.apache.shiro.authc.AuthenticationInfo doGetAuthenticationInfo(org.apache.shiro.authc.AuthenticationToken)>(r1)
+org.apache.zeppelin.realm.LdapRealm.isAuthorizationEnabled : $z0 = r0.<org.apache.zeppelin.realm.LdapRealm: boolean authorizationEnabled>
+org.apache.zeppelin.realm.LdapRealm.setUserObjectClass : r0.<org.apache.zeppelin.realm.LdapRealm: java.lang.String userObjectClass> = r1
+org.apache.zeppelin.realm.LdapRealm.setUserSearchAttributeTemplate : if r1 != null goto $r3 = virtualinvoke r1.<java.lang.String: java.lang.String trim()>()

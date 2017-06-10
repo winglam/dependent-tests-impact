@@ -1,0 +1,8 @@
+org.apache.zeppelin.realm.LdapRealm.getUserSearchAttributeTemplate : $r1 = r0.<org.apache.zeppelin.realm.LdapRealm: java.lang.String userSearchAttributeTemplate>
+org.apache.zeppelin.realm.LdapRealm.setPrincipalRegex : r3 = staticinvoke <java.util.regex.Pattern: java.util.regex.Pattern compile(java.lang.String)>(r7)
+org.apache.zeppelin.realm.LdapRealm.setPrincipalRegex : r7 = virtualinvoke r1.<java.lang.String: java.lang.String trim()>()
+org.apache.zeppelin.realm.LdapRealm.setPrincipalRegex : r0.<org.apache.zeppelin.realm.LdapRealm: java.lang.String principalRegex> = r7
+org.apache.zeppelin.realm.LdapRealm.setPrincipalRegex : r0.<org.apache.zeppelin.realm.LdapRealm: java.util.regex.Pattern principalPattern> = r3
+org.apache.zeppelin.realm.LdapRealm.setPrincipalRegex : if r1 == null goto $r2 = <org.apache.zeppelin.realm.LdapRealm: java.lang.String DEFAULT_PRINCIPAL_REGEX>
+org.apache.zeppelin.realm.LdapRealm.getUserSearchAttributeName : $r1 = r0.<org.apache.zeppelin.realm.LdapRealm: java.lang.String userSearchAttributeName>
+org.apache.zeppelin.realm.LdapRealm.setUserSearchAttributeTemplate : if r1 != null goto $r3 = virtualinvoke r1.<java.lang.String: java.lang.String trim()>()

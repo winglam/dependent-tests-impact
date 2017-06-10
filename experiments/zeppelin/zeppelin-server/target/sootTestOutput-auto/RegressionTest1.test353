@@ -1,0 +1,5 @@
+org.apache.zeppelin.realm.ZeppelinHubRealm.setZeppelinhubUrl : $z0 = staticinvoke <org.apache.commons.lang3.StringUtils: boolean isBlank(java.lang.CharSequence)>(r1)
+org.apache.zeppelin.realm.ZeppelinHubRealm.setZeppelinhubUrl : $r2 = <org.apache.zeppelin.realm.ZeppelinHubRealm: org.slf4j.Logger LOG>
+org.apache.zeppelin.realm.ZeppelinHubRealm.setZeppelinhubUrl : r0.<org.apache.zeppelin.realm.ZeppelinHubRealm: java.lang.String zeppelinhubUrl> = "https://www.zeppelinhub.com"
+org.apache.zeppelin.realm.ZeppelinHubRealm.setZeppelinhubUrl : $z1 = virtualinvoke r0.<org.apache.zeppelin.realm.ZeppelinHubRealm: boolean isZeppelinHubUrlValid(java.lang.String)>(r1)
+org.apache.zeppelin.realm.ZeppelinHubRealm.isZeppelinHubUrlValid : $r2 = new java.net.URI

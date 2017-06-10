@@ -1,0 +1,6 @@
+org.apache.zeppelin.realm.ActiveDirectoryGroupRealm.setGroupRolesMap : r0.<org.apache.zeppelin.realm.ActiveDirectoryGroupRealm: java.util.Map groupRolesMap> = r1
+org.apache.zeppelin.realm.LdapRealm.getListRoles : return r2
+org.apache.zeppelin.realm.LdapRealm.getListRoles : r1 = virtualinvoke r0.<org.apache.zeppelin.realm.LdapRealm: java.util.Map getRolesByGroup()>()
+org.apache.zeppelin.realm.LdapRealm.getListRoles : $r6 = interfaceinvoke r1.<java.util.Map: java.util.Set entrySet()>()
+org.apache.zeppelin.realm.LdapRealm.getListRoles : $r5 = new java.util.HashMap
+org.apache.zeppelin.realm.LdapRealm.getRolesByGroup : $r1 = r0.<org.apache.zeppelin.realm.LdapRealm: java.util.Map rolesByGroup>

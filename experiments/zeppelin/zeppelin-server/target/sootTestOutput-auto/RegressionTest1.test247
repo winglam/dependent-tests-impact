@@ -1,0 +1,15 @@
+org.apache.zeppelin.socket.NotebookServer.onUpdate : r3 = specialinvoke r0.<org.apache.zeppelin.socket.NotebookServer: org.apache.zeppelin.notebook.Notebook notebook()>()
+org.apache.zeppelin.socket.NotebookServer.onUpdate : if r3 != null goto r4 = virtualinvoke r3.<org.apache.zeppelin.notebook.Notebook: java.util.List getAllNotes()>()
+org.apache.zeppelin.socket.NotebookServer.unsubscribeNoteJobInfo : $r2 = <org.apache.zeppelin.socket.NotebookServer$JOB_MANAGER_SERVICE: org.apache.zeppelin.socket.NotebookServer$JOB_MANAGER_SERVICE JOB_MANAGER_PAGE>
+org.apache.zeppelin.socket.NotebookServer.generateNotesInfo : r3 = specialinvoke r0.<org.apache.zeppelin.socket.NotebookServer: org.apache.zeppelin.notebook.Notebook notebook()>()
+org.apache.zeppelin.socket.NotebookServer.generateNotesInfo : r4 = virtualinvoke r3.<org.apache.zeppelin.notebook.Notebook: org.apache.zeppelin.conf.ZeppelinConfiguration getConf()>()
+org.apache.zeppelin.utils.SecurityUtils.getRoles : $z0 = <org.apache.zeppelin.utils.SecurityUtils: boolean isEnabled>
+org.apache.zeppelin.utils.SecurityUtils.getRoles : $r7 = <org.apache.zeppelin.utils.SecurityUtils: java.util.HashSet EMPTY_HASHSET>
+org.apache.zeppelin.socket.NotebookServer.removeConnectionFromNote : $r6 = r0.<org.apache.zeppelin.socket.NotebookServer: java.util.Map noteSocketMap>
+org.apache.zeppelin.socket.NotebookServer.removeConnectionFromNote : exitmonitor r3
+org.apache.zeppelin.socket.NotebookServer.removeConnectionFromNote : if r4 == null goto exitmonitor r3
+org.apache.zeppelin.socket.NotebookServer.removeConnectionFromNote : $r7 = r0.<org.apache.zeppelin.socket.NotebookServer: java.util.Map noteSocketMap>
+org.apache.zeppelin.socket.NotebookServer.doWebSocketConnect : $r3 = new org.apache.zeppelin.socket.NotebookSocket
+org.apache.zeppelin.socket.NotebookServer.notebook : $r1 = <org.apache.zeppelin.server.ZeppelinServer: org.apache.zeppelin.notebook.Notebook notebook>
+org.apache.zeppelin.socket.NotebookServer.onAdd : virtualinvoke r0.<org.apache.zeppelin.socket.NotebookServer: void onUpdate(java.lang.String,org.apache.zeppelin.display.AngularObject)>(r1, r2)
+org.apache.zeppelin.socket.NotebookServer$JOB_MANAGER_SERVICE.getKey : $r1 = r0.<org.apache.zeppelin.socket.NotebookServer$JOB_MANAGER_SERVICE: java.lang.String serviceTypeKey>

@@ -1,0 +1,15 @@
+org.apache.zeppelin.json.NotebookTypeAdapterFactory.create : $r3 = virtualinvoke r2.<com.google.gson.reflect.TypeToken: java.lang.Class getRawType()>()
+org.apache.zeppelin.utils.SecurityUtils.getPrincipal : $z0 = <org.apache.zeppelin.utils.SecurityUtils: boolean isEnabled>
+org.apache.zeppelin.utils.SecurityUtils.getPrincipal : return "anonymous"
+org.apache.zeppelin.socket.NotebookServer.onUpdate : r3 = specialinvoke r0.<org.apache.zeppelin.socket.NotebookServer: org.apache.zeppelin.notebook.Notebook notebook()>()
+org.apache.zeppelin.socket.NotebookServer.onUpdate : if r3 != null goto r4 = virtualinvoke r3.<org.apache.zeppelin.notebook.Notebook: java.util.List getAllNotes()>()
+org.apache.zeppelin.rest.NotebookRepoRestApi.listRepoSettings : $r1 = new org.apache.zeppelin.user.AuthenticationInfo
+org.apache.zeppelin.rest.NotebookRepoRestApi.listRepoSettings : $r7 = r0.<org.apache.zeppelin.rest.NotebookRepoRestApi: org.apache.zeppelin.notebook.repo.NotebookRepoSync noteRepos>
+org.apache.zeppelin.rest.NotebookRepoRestApi.listRepoSettings : $r5 = <org.apache.zeppelin.rest.NotebookRepoRestApi: org.slf4j.Logger LOG>
+org.apache.zeppelin.socket.NotebookServer.onMessage : r3 = specialinvoke r0.<org.apache.zeppelin.socket.NotebookServer: org.apache.zeppelin.notebook.Notebook notebook()>()
+org.apache.zeppelin.socket.NotebookServer.onMessage : r4 = virtualinvoke r0.<org.apache.zeppelin.socket.NotebookServer: org.apache.zeppelin.notebook.socket.Message deserializeMessage(java.lang.String)>(r2)
+org.apache.zeppelin.socket.NotebookServer.onMessage : $r70 = <org.apache.zeppelin.socket.NotebookServer: org.slf4j.Logger LOG>
+org.apache.zeppelin.socket.NotebookServer.onMessage : r69 = $r68
+org.apache.zeppelin.socket.NotebookServer.deserializeMessage : $r2 = r0.<org.apache.zeppelin.socket.NotebookServer: com.google.gson.Gson gson>
+org.apache.zeppelin.socket.NotebookServer.notebook : $r1 = <org.apache.zeppelin.server.ZeppelinServer: org.apache.zeppelin.notebook.Notebook notebook>
+org.apache.zeppelin.socket.NotebookServer.onAdd : virtualinvoke r0.<org.apache.zeppelin.socket.NotebookServer: void onUpdate(java.lang.String,org.apache.zeppelin.display.AngularObject)>(r1, r2)

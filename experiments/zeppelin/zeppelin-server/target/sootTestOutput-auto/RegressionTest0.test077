@@ -1,0 +1,8 @@
+org.apache.zeppelin.socket.NotebookServer.onUpdate : r3 = specialinvoke r0.<org.apache.zeppelin.socket.NotebookServer: org.apache.zeppelin.notebook.Notebook notebook()>()
+org.apache.zeppelin.socket.NotebookServer.onUpdate : if r3 != null goto r4 = virtualinvoke r3.<org.apache.zeppelin.notebook.Notebook: java.util.List getAllNotes()>()
+org.apache.zeppelin.socket.NotebookServer.generateNotesInfo : r3 = specialinvoke r0.<org.apache.zeppelin.socket.NotebookServer: org.apache.zeppelin.notebook.Notebook notebook()>()
+org.apache.zeppelin.socket.NotebookServer.generateNotesInfo : r4 = virtualinvoke r3.<org.apache.zeppelin.notebook.Notebook: org.apache.zeppelin.conf.ZeppelinConfiguration getConf()>()
+org.apache.zeppelin.utils.SecurityUtils.getRoles : $z0 = <org.apache.zeppelin.utils.SecurityUtils: boolean isEnabled>
+org.apache.zeppelin.utils.SecurityUtils.getRoles : $r7 = <org.apache.zeppelin.utils.SecurityUtils: java.util.HashSet EMPTY_HASHSET>
+org.apache.zeppelin.socket.NotebookServer.notebook : $r1 = <org.apache.zeppelin.server.ZeppelinServer: org.apache.zeppelin.notebook.Notebook notebook>
+org.apache.zeppelin.socket.NotebookServer.onAdd : virtualinvoke r0.<org.apache.zeppelin.socket.NotebookServer: void onUpdate(java.lang.String,org.apache.zeppelin.display.AngularObject)>(r1, r2)

@@ -1,0 +1,11 @@
+org.apache.zeppelin.realm.LdapRealm.setGroupSearchScope : if r1 != null goto $r4 = virtualinvoke r1.<java.lang.String: java.lang.String trim()>()
+org.apache.zeppelin.realm.LdapRealm.parsePermissionByRoleString : $r12 = new java.util.StringTokenizer
+org.apache.zeppelin.realm.LdapRealm.parsePermissionByRoleString : $z0 = virtualinvoke r4.<java.util.StringTokenizer: boolean hasMoreTokens()>()
+org.apache.zeppelin.realm.LdapRealm.parsePermissionByRoleString : return r3
+org.apache.zeppelin.realm.LdapRealm.parsePermissionByRoleString : r5 = virtualinvoke r4.<java.util.StringTokenizer: java.lang.String nextToken()>()
+org.apache.zeppelin.realm.LdapRealm.parsePermissionByRoleString : $r11 = new java.util.StringTokenizer
+org.apache.zeppelin.realm.LdapRealm.parsePermissionByRoleString : $i0 = virtualinvoke r6.<java.util.StringTokenizer: int countTokens()>()
+org.apache.zeppelin.realm.LdapRealm.parsePermissionByRoleString : goto [?= staticinvoke <edu.washington.cs.dt.impact.util.Tracer: void trace(java.lang.String,java.lang.String)>("$z0 = virtualinvoke r4.<java.util.StringTokenizer: boolean hasMoreTokens()>()", "org.apache.zeppelin.realm.LdapRealm.parsePermissionByRoleString")]
+org.apache.zeppelin.realm.LdapRealm.parsePermissionByRoleString : $r2 = new java.util.HashMap
+org.apache.zeppelin.realm.LdapRealm.getPermissionsByRole : $r1 = r0.<org.apache.zeppelin.realm.LdapRealm: java.util.Map permissionsByRole>
+org.apache.zeppelin.realm.LdapRealm.setPermissionsByRole : $r2 = r0.<org.apache.zeppelin.realm.LdapRealm: java.util.Map permissionsByRole>

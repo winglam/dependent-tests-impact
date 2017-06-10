@@ -1,0 +1,26 @@
+org.apache.zeppelin.realm.LdapGroupRealm.queryForAuthorizationInfo : r4 = interfaceinvoke r2.<org.apache.shiro.realm.ldap.LdapContextFactory: javax.naming.ldap.LdapContext getSystemLdapContext()>()
+org.apache.zeppelin.realm.LdapGroupRealm.queryForAuthorizationInfo : $r6 = virtualinvoke r0.<org.apache.zeppelin.realm.LdapGroupRealm: java.lang.Object getAvailablePrincipal(org.apache.shiro.subject.PrincipalCollection)>(r1)
+org.apache.zeppelin.realm.ActiveDirectoryGroupRealm.getLdapContextFactory : $r2 = r0.<org.apache.zeppelin.realm.ActiveDirectoryGroupRealm: org.apache.shiro.realm.ldap.LdapContextFactory ldapContextFactory>
+org.apache.zeppelin.realm.ActiveDirectoryGroupRealm.getLdapContextFactory : $r11 = r0.<org.apache.zeppelin.realm.ActiveDirectoryGroupRealm: org.apache.shiro.realm.ldap.LdapContextFactory ldapContextFactory>
+org.apache.zeppelin.realm.ActiveDirectoryGroupRealm.getLdapContextFactory : $r4 = <org.apache.zeppelin.realm.ActiveDirectoryGroupRealm: org.slf4j.Logger log>
+org.apache.zeppelin.realm.ActiveDirectoryGroupRealm.getLdapContextFactory : r0.<org.apache.zeppelin.realm.ActiveDirectoryGroupRealm: org.apache.shiro.realm.ldap.LdapContextFactory ldapContextFactory> = r1
+org.apache.zeppelin.realm.ActiveDirectoryGroupRealm.getLdapContextFactory : $r6 = r0.<org.apache.zeppelin.realm.ActiveDirectoryGroupRealm: java.lang.String principalSuffix>
+org.apache.zeppelin.realm.ActiveDirectoryGroupRealm.getLdapContextFactory : $r3 = <org.apache.zeppelin.realm.ActiveDirectoryGroupRealm: org.slf4j.Logger log>
+org.apache.zeppelin.realm.ActiveDirectoryGroupRealm.getLdapContextFactory : $r10 = specialinvoke r0.<org.apache.zeppelin.realm.ActiveDirectoryGroupRealm: java.lang.String getSystemPassword()>()
+org.apache.zeppelin.realm.ActiveDirectoryGroupRealm.getLdapContextFactory : $r7 = r0.<org.apache.zeppelin.realm.ActiveDirectoryGroupRealm: java.lang.String searchBase>
+org.apache.zeppelin.realm.ActiveDirectoryGroupRealm.getLdapContextFactory : $r9 = r0.<org.apache.zeppelin.realm.ActiveDirectoryGroupRealm: java.lang.String systemUsername>
+org.apache.zeppelin.realm.ActiveDirectoryGroupRealm.getLdapContextFactory : $r8 = r0.<org.apache.zeppelin.realm.ActiveDirectoryGroupRealm: java.lang.String url>
+org.apache.zeppelin.realm.ActiveDirectoryGroupRealm.getLdapContextFactory : $r5 = new org.apache.shiro.realm.ldap.DefaultLdapContextFactory
+org.apache.zeppelin.realm.ActiveDirectoryGroupRealm.getSystemPassword : r1 = ""
+org.apache.zeppelin.realm.ActiveDirectoryGroupRealm.getSystemPassword : $r5 = r0.<org.apache.zeppelin.realm.ActiveDirectoryGroupRealm: java.lang.String hadoopSecurityCredentialPath>
+org.apache.zeppelin.realm.ActiveDirectoryGroupRealm.getSystemPassword : return r1
+org.apache.zeppelin.realm.ActiveDirectoryGroupRealm.getSystemPassword : r1 = r0.<org.apache.zeppelin.realm.ActiveDirectoryGroupRealm: java.lang.String systemPassword>
+org.apache.zeppelin.realm.LdapGroupRealm.getRoleNamesForUser : r30 = $r29
+org.apache.zeppelin.realm.LdapGroupRealm.getRoleNamesForUser : $r14 = new javax.naming.directory.SearchControls
+org.apache.zeppelin.realm.LdapGroupRealm.getRoleNamesForUser : $r15 = new java.lang.StringBuilder
+org.apache.zeppelin.realm.LdapGroupRealm.getRoleNamesForUser : $r32 = new java.util.HashSet
+org.apache.zeppelin.realm.LdapGroupRealm.getRoleNamesForUser : $r4 = new java.util.LinkedHashSet
+org.apache.zeppelin.realm.LdapGroupRealm.getRoleNamesForUser : $r31 = <org.apache.zeppelin.realm.LdapGroupRealm: org.slf4j.Logger LOG>
+org.apache.zeppelin.realm.LdapGroupRealm.getRoleNamesForUser : $r19 = newarray (java.lang.Object)[1]
+org.apache.zeppelin.realm.LdapGroupRealm.getRoleNamesForUser : $r20 = interfaceinvoke r2.<javax.naming.ldap.LdapContext: java.util.Hashtable getEnvironment()>()
+org.apache.zeppelin.realm.LdapGroupRealm.getRoleNamesForUser : virtualinvoke r6.<javax.naming.directory.SearchControls: void setSearchScope(int)>(2)

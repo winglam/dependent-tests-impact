@@ -1,0 +1,8 @@
+org.apache.zeppelin.socket.NotebookServer.generateNotesInfo : r3 = specialinvoke r0.<org.apache.zeppelin.socket.NotebookServer: org.apache.zeppelin.notebook.Notebook notebook()>()
+org.apache.zeppelin.socket.NotebookServer.generateNotesInfo : r4 = virtualinvoke r3.<org.apache.zeppelin.notebook.Notebook: org.apache.zeppelin.conf.ZeppelinConfiguration getConf()>()
+org.apache.zeppelin.utils.SecurityUtils.getRoles : $z0 = <org.apache.zeppelin.utils.SecurityUtils: boolean isEnabled>
+org.apache.zeppelin.utils.SecurityUtils.getRoles : $r7 = <org.apache.zeppelin.utils.SecurityUtils: java.util.HashSet EMPTY_HASHSET>
+org.apache.zeppelin.socket.NotebookServer.broadcastNoteList : $r5 = new org.apache.zeppelin.user.AuthenticationInfo
+org.apache.zeppelin.socket.NotebookServer.broadcastNoteList : if r1 != null goto r3 = virtualinvoke r0.<org.apache.zeppelin.socket.NotebookServer: java.util.List generateNotesInfo(boolean,org.apache.zeppelin.user.AuthenticationInfo,java.util.Set)>(0, r1, r2)
+org.apache.zeppelin.socket.NotebookServer.broadcastNoteList : r3 = virtualinvoke r0.<org.apache.zeppelin.socket.NotebookServer: java.util.List generateNotesInfo(boolean,org.apache.zeppelin.user.AuthenticationInfo,java.util.Set)>(0, r1, r2)
+org.apache.zeppelin.socket.NotebookServer.notebook : $r1 = <org.apache.zeppelin.server.ZeppelinServer: org.apache.zeppelin.notebook.Notebook notebook>

@@ -1,0 +1,25 @@
+org.apache.zeppelin.socket.NotebookServer.broadcast : $r10 = r0.<org.apache.zeppelin.socket.NotebookServer: java.util.Map noteSocketMap>
+org.apache.zeppelin.socket.NotebookServer.broadcast : $r9 = r0.<org.apache.zeppelin.socket.NotebookServer: java.util.Map noteSocketMap>
+org.apache.zeppelin.socket.NotebookServer.broadcast : exitmonitor r3
+org.apache.zeppelin.socket.NotebookServer.broadcast : if r4 == null goto exitmonitor r3
+org.apache.zeppelin.socket.NotebookServer.broadcast : specialinvoke r0.<org.apache.zeppelin.socket.NotebookServer: void broadcastToWatchers(java.lang.String,java.lang.String,org.apache.zeppelin.notebook.socket.Message)>(r1, "", r2)
+org.apache.zeppelin.realm.LdapRealm.getUserSearchAttributeTemplate : $r1 = r0.<org.apache.zeppelin.realm.LdapRealm: java.lang.String userSearchAttributeTemplate>
+org.apache.zeppelin.realm.LdapRealm.setUserObjectClass : r0.<org.apache.zeppelin.realm.LdapRealm: java.lang.String userObjectClass> = r1
+org.apache.zeppelin.socket.NotebookServer.broadcastParagraphs : if null == r1 goto return
+org.apache.zeppelin.socket.NotebookServer.getNotebookInformationListener : $r1 = new org.apache.zeppelin.socket.NotebookServer$NotebookInformationListener
+org.apache.zeppelin.realm.LdapRealm.getPagingSize : $i0 = r0.<org.apache.zeppelin.realm.LdapRealm: int pagingSize>
+org.apache.zeppelin.realm.LdapRealm.getListRoles : return r2
+org.apache.zeppelin.realm.LdapRealm.getListRoles : r1 = virtualinvoke r0.<org.apache.zeppelin.realm.LdapRealm: java.util.Map getRolesByGroup()>()
+org.apache.zeppelin.realm.LdapRealm.getListRoles : $r6 = interfaceinvoke r1.<java.util.Map: java.util.Set entrySet()>()
+org.apache.zeppelin.realm.LdapRealm.getListRoles : $r5 = new java.util.HashMap
+org.apache.zeppelin.socket.NotebookServer.onStatusChange : $r8 = virtualinvoke $r5.<org.apache.zeppelin.notebook.socket.Message: org.apache.zeppelin.notebook.socket.Message put(java.lang.String,java.lang.Object)>("noteId", r1)
+org.apache.zeppelin.socket.NotebookServer.onStatusChange : specialinvoke r0.<org.apache.zeppelin.socket.NotebookServer: void broadcast(java.lang.String,org.apache.zeppelin.notebook.socket.Message)>(r1, r7)
+org.apache.zeppelin.socket.NotebookServer.onStatusChange : $r5 = new org.apache.zeppelin.notebook.socket.Message
+org.apache.zeppelin.socket.NotebookServer.onStatusChange : $r10 = virtualinvoke $r9.<org.apache.zeppelin.notebook.socket.Message: org.apache.zeppelin.notebook.socket.Message put(java.lang.String,java.lang.Object)>("appId", r3)
+org.apache.zeppelin.socket.NotebookServer.notebook : $r1 = <org.apache.zeppelin.server.ZeppelinServer: org.apache.zeppelin.notebook.Notebook notebook>
+org.apache.zeppelin.socket.NotebookServer.onMetaInfosReceived : $r4 = specialinvoke r0.<org.apache.zeppelin.socket.NotebookServer: org.apache.zeppelin.notebook.Notebook notebook()>()
+org.apache.zeppelin.socket.NotebookServer.broadcastToWatchers : $r9 = r0.<org.apache.zeppelin.socket.NotebookServer: java.util.Queue watcherSockets>
+org.apache.zeppelin.socket.NotebookServer.broadcastToWatchers : exitmonitor r4
+org.apache.zeppelin.socket.NotebookServer.broadcastToWatchers : $r10 = r0.<org.apache.zeppelin.socket.NotebookServer: java.util.Queue watcherSockets>
+org.apache.zeppelin.realm.LdapRealm.getRolesByGroup : $r1 = r0.<org.apache.zeppelin.realm.LdapRealm: java.util.Map rolesByGroup>
+org.apache.zeppelin.realm.LdapRealm.setUserSearchAttributeTemplate : if r1 != null goto $r3 = virtualinvoke r1.<java.lang.String: java.lang.String trim()>()

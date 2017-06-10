@@ -1,0 +1,12 @@
+org.apache.zeppelin.socket.NotebookServer.generateNotesInfo : r3 = specialinvoke r0.<org.apache.zeppelin.socket.NotebookServer: org.apache.zeppelin.notebook.Notebook notebook()>()
+org.apache.zeppelin.socket.NotebookServer.generateNotesInfo : r4 = virtualinvoke r3.<org.apache.zeppelin.notebook.Notebook: org.apache.zeppelin.conf.ZeppelinConfiguration getConf()>()
+org.apache.zeppelin.socket.NotebookServer.notebook : $r1 = <org.apache.zeppelin.server.ZeppelinServer: org.apache.zeppelin.notebook.Notebook notebook>
+org.apache.zeppelin.realm.LdapGroupRealm.getRoleNamesForUser : r30 = $r29
+org.apache.zeppelin.realm.LdapGroupRealm.getRoleNamesForUser : $r14 = new javax.naming.directory.SearchControls
+org.apache.zeppelin.realm.LdapGroupRealm.getRoleNamesForUser : $r15 = new java.lang.StringBuilder
+org.apache.zeppelin.realm.LdapGroupRealm.getRoleNamesForUser : $r32 = new java.util.HashSet
+org.apache.zeppelin.realm.LdapGroupRealm.getRoleNamesForUser : $r4 = new java.util.LinkedHashSet
+org.apache.zeppelin.realm.LdapGroupRealm.getRoleNamesForUser : $r31 = <org.apache.zeppelin.realm.LdapGroupRealm: org.slf4j.Logger LOG>
+org.apache.zeppelin.realm.LdapGroupRealm.getRoleNamesForUser : $r19 = newarray (java.lang.Object)[1]
+org.apache.zeppelin.realm.LdapGroupRealm.getRoleNamesForUser : $r20 = interfaceinvoke r2.<javax.naming.ldap.LdapContext: java.util.Hashtable getEnvironment()>()
+org.apache.zeppelin.realm.LdapGroupRealm.getRoleNamesForUser : virtualinvoke r6.<javax.naming.directory.SearchControls: void setSearchScope(int)>(2)

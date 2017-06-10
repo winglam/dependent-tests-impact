@@ -1,0 +1,47 @@
+org.apache.zeppelin.utils.SecurityUtils.getPrincipal : $z0 = <org.apache.zeppelin.utils.SecurityUtils: boolean isEnabled>
+org.apache.zeppelin.utils.SecurityUtils.getPrincipal : return "anonymous"
+org.apache.zeppelin.rest.SecurityRestApi.ticket : r3 = staticinvoke <org.apache.zeppelin.utils.SecurityUtils: java.util.HashSet getRoles()>()
+org.apache.zeppelin.rest.SecurityRestApi.ticket : staticinvoke <org.apache.zeppelin.conf.ZeppelinConfiguration: org.apache.zeppelin.conf.ZeppelinConfiguration create()>()
+org.apache.zeppelin.rest.SecurityRestApi.ticket : interfaceinvoke r5.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>("principal", r2)
+org.apache.zeppelin.rest.SecurityRestApi.ticket : $r14 = new org.apache.zeppelin.server.JsonResponse
+org.apache.zeppelin.rest.SecurityRestApi.ticket : r2 = staticinvoke <org.apache.zeppelin.utils.SecurityUtils: java.lang.String getPrincipal()>()
+org.apache.zeppelin.rest.SecurityRestApi.ticket : $r7 = "anonymous"
+org.apache.zeppelin.rest.SecurityRestApi.ticket : $r18 = virtualinvoke r6.<org.apache.zeppelin.server.JsonResponse: javax.ws.rs.core.Response build()>()
+org.apache.zeppelin.rest.SecurityRestApi.ticket : r4 = "anonymous"
+org.apache.zeppelin.rest.SecurityRestApi.ticket : $r11 = virtualinvoke r3.<java.util.HashSet: java.lang.String toString()>()
+org.apache.zeppelin.rest.SecurityRestApi.ticket : $r16 = <org.apache.zeppelin.rest.SecurityRestApi: org.slf4j.Logger LOG>
+org.apache.zeppelin.rest.SecurityRestApi.ticket : $r9 = new java.util.HashMap
+org.apache.zeppelin.rest.SecurityRestApi.ticket : interfaceinvoke r5.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>("ticket", r4)
+org.apache.zeppelin.utils.SecurityUtils.getRoles : $z0 = <org.apache.zeppelin.utils.SecurityUtils: boolean isEnabled>
+org.apache.zeppelin.utils.SecurityUtils.getRoles : $r7 = <org.apache.zeppelin.utils.SecurityUtils: java.util.HashSet EMPTY_HASHSET>
+org.apache.zeppelin.utils.SecurityUtils.getRealmsList : $z0 = <org.apache.zeppelin.utils.SecurityUtils: boolean isEnabled>
+org.apache.zeppelin.utils.SecurityUtils.getRealmsList : $r3 = staticinvoke <java.util.Collections: java.util.List emptyList()>()
+org.apache.zeppelin.server.JsonExclusionStrategy.shouldSkipField : return 0
+org.apache.zeppelin.server.JsonResponse.build : $r7 = r0.<org.apache.zeppelin.server.JsonResponse: java.util.ArrayList cookies>
+org.apache.zeppelin.server.JsonResponse.build : $r4 = r0.<org.apache.zeppelin.server.JsonResponse: javax.ws.rs.core.Response$Status status>
+org.apache.zeppelin.server.JsonResponse.build : $r12 = virtualinvoke r1.<javax.ws.rs.core.Response$ResponseBuilder: javax.ws.rs.core.Response build()>()
+org.apache.zeppelin.server.JsonExclusionStrategy.shouldSkipClass : return 0
+org.apache.zeppelin.server.JsonResponse.toString : $z0 = r0.<org.apache.zeppelin.server.JsonResponse: boolean pretty>
+org.apache.zeppelin.server.JsonResponse.toString : $r6 = newarray (com.google.gson.ExclusionStrategy)[1]
+org.apache.zeppelin.server.JsonResponse.toString : r4 = virtualinvoke r2.<com.google.gson.GsonBuilder: com.google.gson.Gson create()>()
+org.apache.zeppelin.server.JsonResponse.toString : $r8 = virtualinvoke r4.<com.google.gson.Gson: java.lang.String toJson(java.lang.Object)>(r0)
+org.apache.zeppelin.server.JsonResponse.toString : $r1 = new com.google.gson.GsonBuilder
+org.apache.zeppelin.rest.SecurityRestApi.getUserList : $r52 = new org.apache.zeppelin.server.JsonResponse
+org.apache.zeppelin.rest.SecurityRestApi.getUserList : goto [?= $r37 = new java.util.ArrayList]
+org.apache.zeppelin.rest.SecurityRestApi.getUserList : staticinvoke <java.util.Collections: void sort(java.util.List)>(r3)
+org.apache.zeppelin.rest.SecurityRestApi.getUserList : interfaceinvoke r49.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>("roles", r40)
+org.apache.zeppelin.rest.SecurityRestApi.getUserList : $r11 = new org.apache.zeppelin.rest.GetUserList
+org.apache.zeppelin.rest.SecurityRestApi.getUserList : $r48 = new java.util.HashMap
+org.apache.zeppelin.rest.SecurityRestApi.getUserList : staticinvoke <java.util.Collections: void sort(java.util.List)>(r4)
+org.apache.zeppelin.rest.SecurityRestApi.getUserList : $r37 = new java.util.ArrayList
+org.apache.zeppelin.rest.SecurityRestApi.getUserList : r45 = interfaceinvoke r4.<java.util.List: java.util.Iterator iterator()>()
+org.apache.zeppelin.rest.SecurityRestApi.getUserList : if r6 == null goto (branch)
+org.apache.zeppelin.rest.SecurityRestApi.getUserList : r6 = staticinvoke <org.apache.zeppelin.utils.SecurityUtils: java.util.Collection getRealmsList()>()
+org.apache.zeppelin.rest.SecurityRestApi.getUserList : interfaceinvoke r49.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>("users", r38)
+org.apache.zeppelin.rest.SecurityRestApi.getUserList : $r41 = new org.apache.zeppelin.rest.SecurityRestApi$1
+org.apache.zeppelin.rest.SecurityRestApi.getUserList : i0 = 0
+org.apache.zeppelin.rest.SecurityRestApi.getUserList : r42 = interfaceinvoke r3.<java.util.List: java.util.Iterator iterator()>()
+org.apache.zeppelin.rest.SecurityRestApi.getUserList : $r39 = new java.util.ArrayList
+org.apache.zeppelin.rest.SecurityRestApi.getUserList : $r10 = new java.util.ArrayList
+org.apache.zeppelin.rest.SecurityRestApi.getUserList : $r2 = new java.util.ArrayList
+org.apache.zeppelin.rest.SecurityRestApi.getUserList : r7 = interfaceinvoke r6.<java.util.Collection: java.util.Iterator iterator()>()

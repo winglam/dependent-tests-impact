@@ -1,0 +1,5 @@
+org.apache.zeppelin.realm.LdapRealm.setUserSearchFilter : if r1 != null goto $r3 = virtualinvoke r1.<java.lang.String: java.lang.String trim()>()
+org.apache.zeppelin.realm.LdapRealm.setAuthorizationEnabled : r0.<org.apache.zeppelin.realm.LdapRealm: boolean authorizationEnabled> = z0
+org.apache.zeppelin.realm.LdapRealm.getGroupObjectClass : $r1 = r0.<org.apache.zeppelin.realm.LdapRealm: java.lang.String groupObjectClass>
+org.apache.zeppelin.realm.LdapRealm.setUserDnTemplate : r0.<org.apache.zeppelin.realm.LdapRealm: java.lang.String userDnTemplate> = r1
+org.apache.zeppelin.realm.LdapRealm.setUserSearchAttributeTemplate : if r1 != null goto $r3 = virtualinvoke r1.<java.lang.String: java.lang.String trim()>()
