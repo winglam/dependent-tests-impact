@@ -1,0 +1,8 @@
+org.apache.zeppelin.realm.LdapRealm.getUserSearchAttributeTemplate : $r1 = r0.<org.apache.zeppelin.realm.LdapRealm: java.lang.String userSearchAttributeTemplate>
+org.apache.zeppelin.realm.LdapRealm.isAuthorizationEnabled : $z0 = r0.<org.apache.zeppelin.realm.LdapRealm: boolean authorizationEnabled>
+org.apache.zeppelin.realm.LdapRealm.setUserSearchScope : if r1 != null goto $r4 = virtualinvoke r1.<java.lang.String: java.lang.String trim()>()
+org.apache.zeppelin.realm.LdapRealm.setUserObjectClass : r0.<org.apache.zeppelin.realm.LdapRealm: java.lang.String userObjectClass> = r1
+org.apache.zeppelin.realm.LdapRealm.getUserObjectClass : $r1 = r0.<org.apache.zeppelin.realm.LdapRealm: java.lang.String userObjectClass>
+org.apache.zeppelin.realm.LdapRealm.getGroupIdAttribute : $r1 = r0.<org.apache.zeppelin.realm.LdapRealm: java.lang.String groupIdAttribute>
+org.apache.zeppelin.realm.LdapRealm.setUserSearchBase : r0.<org.apache.zeppelin.realm.LdapRealm: java.lang.String userSearchBase> = r1
+org.apache.zeppelin.realm.LdapRealm.setUserSearchAttributeTemplate : if r1 != null goto $r3 = virtualinvoke r1.<java.lang.String: java.lang.String trim()>()

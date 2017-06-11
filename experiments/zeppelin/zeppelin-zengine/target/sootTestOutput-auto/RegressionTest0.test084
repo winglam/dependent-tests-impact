@@ -1,0 +1,8 @@
+org.apache.zeppelin.realm.LdapRealm.setPrincipalRegex : r3 = staticinvoke <java.util.regex.Pattern: java.util.regex.Pattern compile(java.lang.String)>(r7)
+org.apache.zeppelin.realm.LdapRealm.setPrincipalRegex : r7 = virtualinvoke r1.<java.lang.String: java.lang.String trim()>()
+org.apache.zeppelin.realm.LdapRealm.setPrincipalRegex : if r1 == null goto $r2 = <org.apache.zeppelin.realm.LdapRealm: java.lang.String DEFAULT_PRINCIPAL_REGEX>
+org.apache.zeppelin.realm.LdapRealm.getListRoles : return r2
+org.apache.zeppelin.realm.LdapRealm.getListRoles : r1 = virtualinvoke r0.<org.apache.zeppelin.realm.LdapRealm: java.util.Map getRolesByGroup()>()
+org.apache.zeppelin.realm.LdapRealm.getListRoles : $r6 = interfaceinvoke r1.<java.util.Map: java.util.Set entrySet()>()
+org.apache.zeppelin.realm.LdapRealm.getListRoles : $r5 = new java.util.HashMap
+org.apache.zeppelin.realm.LdapRealm.getRolesByGroup : $r1 = r0.<org.apache.zeppelin.realm.LdapRealm: java.util.Map rolesByGroup>

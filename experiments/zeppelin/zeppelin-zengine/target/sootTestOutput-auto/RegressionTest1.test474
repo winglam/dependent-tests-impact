@@ -1,0 +1,27 @@
+org.apache.zeppelin.realm.ActiveDirectoryGroupRealm.onInit : virtualinvoke r0.<org.apache.zeppelin.realm.ActiveDirectoryGroupRealm: org.apache.shiro.realm.ldap.LdapContextFactory getLdapContextFactory()>()
+org.apache.zeppelin.realm.ActiveDirectoryGroupRealm.onInit : specialinvoke r0.<org.apache.shiro.realm.ldap.AbstractLdapRealm: void onInit()>()
+org.apache.zeppelin.realm.ActiveDirectoryGroupRealm.setGroupRolesMap : r0.<org.apache.zeppelin.realm.ActiveDirectoryGroupRealm: java.util.Map groupRolesMap> = r1
+org.apache.zeppelin.realm.LdapRealm.getUserSearchAttributeTemplate : $r1 = r0.<org.apache.zeppelin.realm.LdapRealm: java.lang.String userSearchAttributeTemplate>
+org.apache.zeppelin.realm.LdapRealm.setRolesByGroup : $r2 = r0.<org.apache.zeppelin.realm.LdapRealm: java.util.Map rolesByGroup>
+org.apache.zeppelin.realm.ActiveDirectoryGroupRealm.getLdapContextFactory : $r2 = r0.<org.apache.zeppelin.realm.ActiveDirectoryGroupRealm: org.apache.shiro.realm.ldap.LdapContextFactory ldapContextFactory>
+org.apache.zeppelin.realm.ActiveDirectoryGroupRealm.getLdapContextFactory : $r11 = r0.<org.apache.zeppelin.realm.ActiveDirectoryGroupRealm: org.apache.shiro.realm.ldap.LdapContextFactory ldapContextFactory>
+org.apache.zeppelin.realm.ActiveDirectoryGroupRealm.getLdapContextFactory : $r4 = <org.apache.zeppelin.realm.ActiveDirectoryGroupRealm: org.slf4j.Logger log>
+org.apache.zeppelin.realm.ActiveDirectoryGroupRealm.getLdapContextFactory : r0.<org.apache.zeppelin.realm.ActiveDirectoryGroupRealm: org.apache.shiro.realm.ldap.LdapContextFactory ldapContextFactory> = r1
+org.apache.zeppelin.realm.ActiveDirectoryGroupRealm.getLdapContextFactory : $r6 = r0.<org.apache.zeppelin.realm.ActiveDirectoryGroupRealm: java.lang.String principalSuffix>
+org.apache.zeppelin.realm.ActiveDirectoryGroupRealm.getLdapContextFactory : $r3 = <org.apache.zeppelin.realm.ActiveDirectoryGroupRealm: org.slf4j.Logger log>
+org.apache.zeppelin.realm.ActiveDirectoryGroupRealm.getLdapContextFactory : $r10 = specialinvoke r0.<org.apache.zeppelin.realm.ActiveDirectoryGroupRealm: java.lang.String getSystemPassword()>()
+org.apache.zeppelin.realm.ActiveDirectoryGroupRealm.getLdapContextFactory : $r7 = r0.<org.apache.zeppelin.realm.ActiveDirectoryGroupRealm: java.lang.String searchBase>
+org.apache.zeppelin.realm.ActiveDirectoryGroupRealm.getLdapContextFactory : $r9 = r0.<org.apache.zeppelin.realm.ActiveDirectoryGroupRealm: java.lang.String systemUsername>
+org.apache.zeppelin.realm.ActiveDirectoryGroupRealm.getLdapContextFactory : $r8 = r0.<org.apache.zeppelin.realm.ActiveDirectoryGroupRealm: java.lang.String url>
+org.apache.zeppelin.realm.ActiveDirectoryGroupRealm.getLdapContextFactory : $r5 = new org.apache.shiro.realm.ldap.DefaultLdapContextFactory
+org.apache.zeppelin.realm.LdapRealm.getUserSearchAttributeName : $r1 = r0.<org.apache.zeppelin.realm.LdapRealm: java.lang.String userSearchAttributeName>
+org.apache.zeppelin.realm.ActiveDirectoryGroupRealm.getSystemPassword : r1 = ""
+org.apache.zeppelin.realm.ActiveDirectoryGroupRealm.getSystemPassword : $r5 = r0.<org.apache.zeppelin.realm.ActiveDirectoryGroupRealm: java.lang.String hadoopSecurityCredentialPath>
+org.apache.zeppelin.realm.ActiveDirectoryGroupRealm.getSystemPassword : return r1
+org.apache.zeppelin.realm.ActiveDirectoryGroupRealm.getSystemPassword : r1 = r0.<org.apache.zeppelin.realm.ActiveDirectoryGroupRealm: java.lang.String systemPassword>
+org.apache.zeppelin.realm.LdapRealm.getListRoles : return r2
+org.apache.zeppelin.realm.LdapRealm.getListRoles : r1 = virtualinvoke r0.<org.apache.zeppelin.realm.LdapRealm: java.util.Map getRolesByGroup()>()
+org.apache.zeppelin.realm.LdapRealm.getListRoles : $r6 = interfaceinvoke r1.<java.util.Map: java.util.Set entrySet()>()
+org.apache.zeppelin.realm.LdapRealm.getListRoles : $r5 = new java.util.HashMap
+org.apache.zeppelin.realm.LdapRealm.getRolesByGroup : $r1 = r0.<org.apache.zeppelin.realm.LdapRealm: java.util.Map rolesByGroup>
+org.apache.zeppelin.realm.LdapRealm.setUserSearchAttributeTemplate : if r1 != null goto $r3 = virtualinvoke r1.<java.lang.String: java.lang.String trim()>()

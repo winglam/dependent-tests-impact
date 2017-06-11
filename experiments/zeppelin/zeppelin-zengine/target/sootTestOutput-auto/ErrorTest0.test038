@@ -1,0 +1,8 @@
+org.apache.zeppelin.rest.NotebookRestApi.getNoteList : $r7 = r0.<org.apache.zeppelin.rest.NotebookRestApi: org.apache.zeppelin.socket.NotebookServer notebookServer>
+org.apache.zeppelin.rest.NotebookRestApi.getNoteList : $r1 = new org.apache.zeppelin.user.AuthenticationInfo
+org.apache.zeppelin.rest.NotebookRestApi.getNoteList : r4 = staticinvoke <org.apache.zeppelin.utils.SecurityUtils: java.util.HashSet getRoles()>()
+org.apache.zeppelin.rest.NotebookRestApi.getNoteList : $r6 = virtualinvoke r3.<org.apache.zeppelin.user.AuthenticationInfo: java.lang.String getUser()>()
+org.apache.zeppelin.utils.SecurityUtils.getPrincipal : $z0 = <org.apache.zeppelin.utils.SecurityUtils: boolean isEnabled>
+org.apache.zeppelin.utils.SecurityUtils.getPrincipal : return "anonymous"
+org.apache.zeppelin.utils.SecurityUtils.getRoles : $z0 = <org.apache.zeppelin.utils.SecurityUtils: boolean isEnabled>
+org.apache.zeppelin.utils.SecurityUtils.getRoles : $r7 = <org.apache.zeppelin.utils.SecurityUtils: java.util.HashSet EMPTY_HASHSET>

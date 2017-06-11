@@ -1,0 +1,8 @@
+org.apache.zeppelin.realm.LdapRealm.getUserSearchAttributeTemplate : $r1 = r0.<org.apache.zeppelin.realm.LdapRealm: java.lang.String userSearchAttributeTemplate>
+org.apache.zeppelin.server.JsonResponse.setMessage : r0.<org.apache.zeppelin.server.JsonResponse: java.lang.String message> = r1
+org.apache.zeppelin.server.JsonResponse.getBody : $r1 = r0.<org.apache.zeppelin.server.JsonResponse: java.lang.Object body>
+org.apache.zeppelin.utils.SecurityUtils.getRealmsList : $z0 = <org.apache.zeppelin.utils.SecurityUtils: boolean isEnabled>
+org.apache.zeppelin.utils.SecurityUtils.getRealmsList : $r3 = staticinvoke <java.util.Collections: java.util.List emptyList()>()
+org.apache.zeppelin.realm.LdapRealm.getGroupIdAttribute : $r1 = r0.<org.apache.zeppelin.realm.LdapRealm: java.lang.String groupIdAttribute>
+org.apache.zeppelin.realm.LdapRealm.getRolesByGroup : $r1 = r0.<org.apache.zeppelin.realm.LdapRealm: java.util.Map rolesByGroup>
+org.apache.zeppelin.realm.LdapRealm.setUserSearchAttributeTemplate : if r1 != null goto $r3 = virtualinvoke r1.<java.lang.String: java.lang.String trim()>()

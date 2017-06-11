@@ -1,0 +1,12 @@
+org.apache.zeppelin.server.JsonResponse.addCookie : $r4 = r0.<org.apache.zeppelin.server.JsonResponse: java.util.ArrayList cookies>
+org.apache.zeppelin.server.JsonResponse.addCookie : $r3 = r0.<org.apache.zeppelin.server.JsonResponse: java.util.ArrayList cookies>
+org.apache.zeppelin.server.JsonResponse.addCookie : return r0
+org.apache.zeppelin.server.JsonResponse.addCookie : $r2 = new java.util.ArrayList
+org.apache.zeppelin.server.JsonResponse.getCode : $r1 = r0.<org.apache.zeppelin.server.JsonResponse: javax.ws.rs.core.Response$Status status>
+org.apache.zeppelin.server.JsonExclusionStrategy.shouldSkipField : return 0
+org.apache.zeppelin.server.JsonExclusionStrategy.shouldSkipClass : return 0
+org.apache.zeppelin.server.JsonResponse.toString : $z0 = r0.<org.apache.zeppelin.server.JsonResponse: boolean pretty>
+org.apache.zeppelin.server.JsonResponse.toString : $r6 = newarray (com.google.gson.ExclusionStrategy)[1]
+org.apache.zeppelin.server.JsonResponse.toString : r4 = virtualinvoke r2.<com.google.gson.GsonBuilder: com.google.gson.Gson create()>()
+org.apache.zeppelin.server.JsonResponse.toString : $r8 = virtualinvoke r4.<com.google.gson.Gson: java.lang.String toJson(java.lang.Object)>(r0)
+org.apache.zeppelin.server.JsonResponse.toString : $r1 = new com.google.gson.GsonBuilder

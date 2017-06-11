@@ -1,0 +1,29 @@
+org.apache.zeppelin.rest.HeliumRestApi.getPackageConfig : r19 = $r18
+org.apache.zeppelin.rest.HeliumRestApi.getPackageConfig : $r20 = r0.<org.apache.zeppelin.rest.HeliumRestApi: org.slf4j.Logger logger>
+org.apache.zeppelin.rest.HeliumRestApi.getPackageConfig : $z0 = staticinvoke <org.apache.commons.lang3.StringUtils: boolean isEmpty(java.lang.CharSequence)>(r1)
+org.apache.zeppelin.rest.HeliumRestApi.getPackageConfig : $r22 = new org.apache.zeppelin.server.JsonResponse
+org.apache.zeppelin.rest.HeliumRestApi.getPackageConfig : r4 = virtualinvoke $r7.<org.apache.zeppelin.helium.Helium: java.util.Map getPackageConfig(java.lang.String,java.lang.String)>(r1, r2)
+org.apache.zeppelin.rest.HeliumRestApi.getPackageConfig : $r7 = r0.<org.apache.zeppelin.rest.HeliumRestApi: org.apache.zeppelin.helium.Helium helium>
+org.apache.zeppelin.rest.HeliumRestApi.getSpellConfigUsingMagic : $r21 = new org.apache.zeppelin.server.JsonResponse
+org.apache.zeppelin.rest.HeliumRestApi.getSpellConfigUsingMagic : r3 = virtualinvoke $r6.<org.apache.zeppelin.helium.Helium: java.util.Map getSpellConfig(java.lang.String)>(r1)
+org.apache.zeppelin.rest.HeliumRestApi.getSpellConfigUsingMagic : $r6 = r0.<org.apache.zeppelin.rest.HeliumRestApi: org.apache.zeppelin.helium.Helium helium>
+org.apache.zeppelin.rest.HeliumRestApi.getSpellConfigUsingMagic : r18 = $r17
+org.apache.zeppelin.rest.HeliumRestApi.getSpellConfigUsingMagic : $z0 = staticinvoke <org.apache.commons.lang3.StringUtils: boolean isEmpty(java.lang.CharSequence)>(r1)
+org.apache.zeppelin.rest.HeliumRestApi.getSpellConfigUsingMagic : $r19 = r0.<org.apache.zeppelin.rest.HeliumRestApi: org.slf4j.Logger logger>
+org.apache.zeppelin.rest.HeliumRestApi.bundleLoad : $z0 = staticinvoke <org.apache.commons.lang3.StringUtils: boolean isEmpty(java.lang.CharSequence)>(r2)
+org.apache.zeppelin.rest.HeliumRestApi.bundleLoad : r4 = null
+org.apache.zeppelin.rest.HeliumRestApi.bundleLoad : $r11 = r0.<org.apache.zeppelin.rest.HeliumRestApi: org.apache.zeppelin.helium.Helium helium>
+org.apache.zeppelin.rest.HeliumRestApi.getAllPackageConfigs : r7 = $r6
+org.apache.zeppelin.rest.HeliumRestApi.getAllPackageConfigs : $r8 = r0.<org.apache.zeppelin.rest.HeliumRestApi: org.slf4j.Logger logger>
+org.apache.zeppelin.rest.HeliumRestApi.getAllPackageConfigs : $r3 = r0.<org.apache.zeppelin.rest.HeliumRestApi: org.apache.zeppelin.helium.Helium helium>
+org.apache.zeppelin.rest.HeliumRestApi.getAllPackageConfigs : $r10 = new org.apache.zeppelin.server.JsonResponse
+org.apache.zeppelin.server.JsonExclusionStrategy.shouldSkipField : return 0
+org.apache.zeppelin.server.JsonResponse.build : $r7 = r0.<org.apache.zeppelin.server.JsonResponse: java.util.ArrayList cookies>
+org.apache.zeppelin.server.JsonResponse.build : $r4 = r0.<org.apache.zeppelin.server.JsonResponse: javax.ws.rs.core.Response$Status status>
+org.apache.zeppelin.server.JsonResponse.build : $r12 = virtualinvoke r1.<javax.ws.rs.core.Response$ResponseBuilder: javax.ws.rs.core.Response build()>()
+org.apache.zeppelin.server.JsonExclusionStrategy.shouldSkipClass : return 0
+org.apache.zeppelin.server.JsonResponse.toString : $z0 = r0.<org.apache.zeppelin.server.JsonResponse: boolean pretty>
+org.apache.zeppelin.server.JsonResponse.toString : $r6 = newarray (com.google.gson.ExclusionStrategy)[1]
+org.apache.zeppelin.server.JsonResponse.toString : r4 = virtualinvoke r2.<com.google.gson.GsonBuilder: com.google.gson.Gson create()>()
+org.apache.zeppelin.server.JsonResponse.toString : $r8 = virtualinvoke r4.<com.google.gson.Gson: java.lang.String toJson(java.lang.Object)>(r0)
+org.apache.zeppelin.server.JsonResponse.toString : $r1 = new com.google.gson.GsonBuilder

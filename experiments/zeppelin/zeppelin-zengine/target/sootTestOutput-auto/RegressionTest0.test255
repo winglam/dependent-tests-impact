@@ -1,0 +1,16 @@
+org.apache.zeppelin.socket.NotebookServer.broadcast : $r10 = r0.<org.apache.zeppelin.socket.NotebookServer: java.util.Map noteSocketMap>
+org.apache.zeppelin.socket.NotebookServer.broadcast : $r9 = r0.<org.apache.zeppelin.socket.NotebookServer: java.util.Map noteSocketMap>
+org.apache.zeppelin.socket.NotebookServer.broadcast : exitmonitor r3
+org.apache.zeppelin.socket.NotebookServer.broadcast : if r4 == null goto exitmonitor r3
+org.apache.zeppelin.socket.NotebookServer.broadcast : specialinvoke r0.<org.apache.zeppelin.socket.NotebookServer: void broadcastToWatchers(java.lang.String,java.lang.String,org.apache.zeppelin.notebook.socket.Message)>(r1, "", r2)
+org.apache.zeppelin.socket.NotebookServer.onUpdate : r3 = specialinvoke r0.<org.apache.zeppelin.socket.NotebookServer: org.apache.zeppelin.notebook.Notebook notebook()>()
+org.apache.zeppelin.socket.NotebookServer.onUpdate : if r3 != null goto r4 = virtualinvoke r3.<org.apache.zeppelin.notebook.Notebook: java.util.List getAllNotes()>()
+org.apache.zeppelin.socket.NotebookServer.broadcastNote : $r4 = virtualinvoke r1.<org.apache.zeppelin.notebook.Note: java.lang.String getId()>()
+org.apache.zeppelin.socket.NotebookServer.onLoad : specialinvoke r0.<org.apache.zeppelin.socket.NotebookServer: void broadcast(java.lang.String,org.apache.zeppelin.notebook.socket.Message)>(r1, r7)
+org.apache.zeppelin.socket.NotebookServer.onLoad : $r5 = new org.apache.zeppelin.notebook.socket.Message
+org.apache.zeppelin.socket.NotebookServer.onLoad : $r10 = virtualinvoke $r9.<org.apache.zeppelin.notebook.socket.Message: org.apache.zeppelin.notebook.socket.Message put(java.lang.String,java.lang.Object)>("appId", r3)
+org.apache.zeppelin.socket.NotebookServer.broadcastToWatchers : $r9 = r0.<org.apache.zeppelin.socket.NotebookServer: java.util.Queue watcherSockets>
+org.apache.zeppelin.socket.NotebookServer.broadcastToWatchers : exitmonitor r4
+org.apache.zeppelin.socket.NotebookServer.broadcastToWatchers : $r10 = r0.<org.apache.zeppelin.socket.NotebookServer: java.util.Queue watcherSockets>
+org.apache.zeppelin.socket.NotebookServer.notebook : $r1 = <org.apache.zeppelin.server.ZeppelinServer: org.apache.zeppelin.notebook.Notebook notebook>
+org.apache.zeppelin.socket.NotebookServer.onAdd : virtualinvoke r0.<org.apache.zeppelin.socket.NotebookServer: void onUpdate(java.lang.String,org.apache.zeppelin.display.AngularObject)>(r1, r2)

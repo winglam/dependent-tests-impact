@@ -1,0 +1,10 @@
+org.apache.zeppelin.utils.SecurityUtils.getPrincipal : $z0 = <org.apache.zeppelin.utils.SecurityUtils: boolean isEnabled>
+org.apache.zeppelin.utils.SecurityUtils.getPrincipal : return "anonymous"
+org.apache.zeppelin.rest.NotebookRestApi.checkIfUserIsOwner : r3 = staticinvoke <com.google.common.collect.Sets: java.util.HashSet newHashSet()>()
+org.apache.zeppelin.rest.NotebookRestApi.checkIfUserIsOwner : $r6 = r0.<org.apache.zeppelin.rest.NotebookRestApi: org.apache.zeppelin.notebook.NotebookAuthorization notebookAuthorization>
+org.apache.zeppelin.rest.NotebookRestApi.checkIfUserIsOwner : $r4 = staticinvoke <org.apache.zeppelin.utils.SecurityUtils: java.lang.String getPrincipal()>()
+org.apache.zeppelin.rest.NotebookRestApi.checkIfUserIsOwner : $r5 = staticinvoke <org.apache.zeppelin.utils.SecurityUtils: java.util.HashSet getRoles()>()
+org.apache.zeppelin.utils.SecurityUtils.getRoles : $z0 = <org.apache.zeppelin.utils.SecurityUtils: boolean isEnabled>
+org.apache.zeppelin.utils.SecurityUtils.getRoles : $r7 = <org.apache.zeppelin.utils.SecurityUtils: java.util.HashSet EMPTY_HASHSET>
+org.apache.zeppelin.rest.NotebookRestApi.deleteNote : specialinvoke r0.<org.apache.zeppelin.rest.NotebookRestApi: void checkIfUserIsOwner(java.lang.String,java.lang.String)>(r1, "Insufficient privileges you cannot delete this note")
+org.apache.zeppelin.rest.NotebookRestApi.deleteNote : $r2 = <org.apache.zeppelin.rest.NotebookRestApi: org.slf4j.Logger LOG>

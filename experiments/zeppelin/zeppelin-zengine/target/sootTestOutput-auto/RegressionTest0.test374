@@ -1,0 +1,16 @@
+org.apache.zeppelin.realm.LdapRealm.parsePermissionByRoleString : $r12 = new java.util.StringTokenizer
+org.apache.zeppelin.realm.LdapRealm.parsePermissionByRoleString : $z0 = virtualinvoke r4.<java.util.StringTokenizer: boolean hasMoreTokens()>()
+org.apache.zeppelin.realm.LdapRealm.parsePermissionByRoleString : return r3
+org.apache.zeppelin.realm.LdapRealm.parsePermissionByRoleString : r5 = virtualinvoke r4.<java.util.StringTokenizer: java.lang.String nextToken()>()
+org.apache.zeppelin.realm.LdapRealm.parsePermissionByRoleString : $r11 = new java.util.StringTokenizer
+org.apache.zeppelin.realm.LdapRealm.parsePermissionByRoleString : $i0 = virtualinvoke r6.<java.util.StringTokenizer: int countTokens()>()
+org.apache.zeppelin.realm.LdapRealm.parsePermissionByRoleString : goto [?= staticinvoke <edu.washington.cs.dt.impact.util.Tracer: void trace(java.lang.String,java.lang.String)>("$z0 = virtualinvoke r4.<java.util.StringTokenizer: boolean hasMoreTokens()>()", "org.apache.zeppelin.realm.LdapRealm.parsePermissionByRoleString")]
+org.apache.zeppelin.realm.LdapRealm.parsePermissionByRoleString : $r2 = new java.util.HashMap
+org.apache.zeppelin.realm.LdapRealm.setPagingSize : r0.<org.apache.zeppelin.realm.LdapRealm: int pagingSize> = i0
+org.apache.zeppelin.realm.LdapRealm.setPermissionsByRole : $r2 = r0.<org.apache.zeppelin.realm.LdapRealm: java.util.Map permissionsByRole>
+org.apache.zeppelin.realm.LdapRealm.setMemberAttributeValueTemplate : r3 = "Member attribute value template must contain the \'{0}\' replacement token to understand how to parse the group members."
+org.apache.zeppelin.realm.LdapRealm.setMemberAttributeValueTemplate : i0 = virtualinvoke r1.<java.lang.String: int indexOf(java.lang.String)>("{0}")
+org.apache.zeppelin.realm.LdapRealm.setMemberAttributeValueTemplate : $r6 = new java.lang.IllegalArgumentException
+org.apache.zeppelin.realm.LdapRealm.setMemberAttributeValueTemplate : $z0 = staticinvoke <org.apache.shiro.util.StringUtils: boolean hasText(java.lang.String)>(r1)
+org.apache.zeppelin.realm.LdapRealm.setMemberAttributeValueTemplate : if i0 >= 0 goto r7 = virtualinvoke r1.<java.lang.String: java.lang.String substring(int,int)>(0, i0)
+org.apache.zeppelin.realm.LdapRealm.setUserSearchAttributeTemplate : if r1 != null goto $r3 = virtualinvoke r1.<java.lang.String: java.lang.String trim()>()

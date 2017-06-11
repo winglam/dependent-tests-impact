@@ -1,0 +1,12 @@
+org.apache.zeppelin.realm.ZeppelinHubRealm.setZeppelinhubUrl : $z0 = staticinvoke <org.apache.commons.lang3.StringUtils: boolean isBlank(java.lang.CharSequence)>(r1)
+org.apache.zeppelin.realm.ZeppelinHubRealm.setZeppelinhubUrl : $r2 = <org.apache.zeppelin.realm.ZeppelinHubRealm: org.slf4j.Logger LOG>
+org.apache.zeppelin.realm.ZeppelinHubRealm.setZeppelinhubUrl : r0.<org.apache.zeppelin.realm.ZeppelinHubRealm: java.lang.String zeppelinhubUrl> = "https://www.zeppelinhub.com"
+org.apache.zeppelin.socket.NotebookServer.generateNotesInfo : r3 = specialinvoke r0.<org.apache.zeppelin.socket.NotebookServer: org.apache.zeppelin.notebook.Notebook notebook()>()
+org.apache.zeppelin.socket.NotebookServer.generateNotesInfo : r4 = virtualinvoke r3.<org.apache.zeppelin.notebook.Notebook: org.apache.zeppelin.conf.ZeppelinConfiguration getConf()>()
+org.apache.zeppelin.realm.ZeppelinHubRealm.onLoginSuccess : $r7 = <org.apache.zeppelin.server.ZeppelinServer: org.apache.zeppelin.socket.NotebookServer notebookWsServer>
+org.apache.zeppelin.realm.ZeppelinHubRealm.onLoginSuccess : virtualinvoke r4.<java.util.HashSet: boolean add(java.lang.Object)>(r1)
+org.apache.zeppelin.realm.ZeppelinHubRealm.onLoginSuccess : $r6 = new java.util.HashSet
+org.apache.zeppelin.realm.ZeppelinHubRealm.onLoginSuccess : $r3 = <org.apache.zeppelin.notebook.repo.zeppelinhub.model.UserSessionContainer: org.apache.zeppelin.notebook.repo.zeppelinhub.model.UserSessionContainer instance>
+org.apache.zeppelin.socket.NotebookServer.notebook : $r1 = <org.apache.zeppelin.server.ZeppelinServer: org.apache.zeppelin.notebook.Notebook notebook>
+org.apache.zeppelin.socket.NotebookServer.broadcastReloadedNoteList : if r1 != null goto r3 = virtualinvoke r0.<org.apache.zeppelin.socket.NotebookServer: java.util.List generateNotesInfo(boolean,org.apache.zeppelin.user.AuthenticationInfo,java.util.Set)>(1, r1, r2)
+org.apache.zeppelin.socket.NotebookServer.broadcastReloadedNoteList : r3 = virtualinvoke r0.<org.apache.zeppelin.socket.NotebookServer: java.util.List generateNotesInfo(boolean,org.apache.zeppelin.user.AuthenticationInfo,java.util.Set)>(1, r1, r2)

@@ -1,0 +1,7 @@
+org.apache.zeppelin.socket.NotebookServer.onUpdate : r3 = specialinvoke r0.<org.apache.zeppelin.socket.NotebookServer: org.apache.zeppelin.notebook.Notebook notebook()>()
+org.apache.zeppelin.socket.NotebookServer.onUpdate : if r3 != null goto r4 = virtualinvoke r3.<org.apache.zeppelin.notebook.Notebook: java.util.List getAllNotes()>()
+org.apache.zeppelin.socket.NotebookServer$NotebookInformationListener.onNoteCreate : $r7 = virtualinvoke r1.<org.apache.zeppelin.notebook.Note: java.lang.String getId()>()
+org.apache.zeppelin.socket.NotebookServer$NotebookInformationListener.onNoteCreate : $r6 = r0.<org.apache.zeppelin.socket.NotebookServer$NotebookInformationListener: org.apache.zeppelin.socket.NotebookServer notebookServer>
+org.apache.zeppelin.socket.NotebookServer.access$200 : $r1 = specialinvoke r0.<org.apache.zeppelin.socket.NotebookServer: org.apache.zeppelin.notebook.Notebook notebook()>()
+org.apache.zeppelin.socket.NotebookServer.notebook : $r1 = <org.apache.zeppelin.server.ZeppelinServer: org.apache.zeppelin.notebook.Notebook notebook>
+org.apache.zeppelin.socket.NotebookServer.onAdd : virtualinvoke r0.<org.apache.zeppelin.socket.NotebookServer: void onUpdate(java.lang.String,org.apache.zeppelin.display.AngularObject)>(r1, r2)

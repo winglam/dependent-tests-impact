@@ -1,0 +1,11 @@
+org.apache.zeppelin.json.NotebookTypeAdapterFactory.create : $r3 = virtualinvoke r2.<com.google.gson.reflect.TypeToken: java.lang.Class getRawType()>()
+org.apache.zeppelin.socket.NotebookSocket.getProtocol : $r1 = r0.<org.apache.zeppelin.socket.NotebookSocket: java.lang.String protocol>
+org.apache.zeppelin.socket.NotebookServer.getInterpreterBindings : $r7 = r2.<org.apache.zeppelin.notebook.socket.Message: java.util.Map data>
+org.apache.zeppelin.socket.NotebookSocket.onWebSocketText : $r2 = r0.<org.apache.zeppelin.socket.NotebookSocket: org.apache.zeppelin.socket.NotebookSocketListener listener>
+org.apache.zeppelin.socket.NotebookServer.onMessage : r3 = specialinvoke r0.<org.apache.zeppelin.socket.NotebookServer: org.apache.zeppelin.notebook.Notebook notebook()>()
+org.apache.zeppelin.socket.NotebookServer.onMessage : r4 = virtualinvoke r0.<org.apache.zeppelin.socket.NotebookServer: org.apache.zeppelin.notebook.socket.Message deserializeMessage(java.lang.String)>(r2)
+org.apache.zeppelin.socket.NotebookServer.onMessage : $r70 = <org.apache.zeppelin.socket.NotebookServer: org.slf4j.Logger LOG>
+org.apache.zeppelin.socket.NotebookServer.onMessage : r69 = $r68
+org.apache.zeppelin.socket.NotebookServer.deserializeMessage : $r2 = r0.<org.apache.zeppelin.socket.NotebookServer: com.google.gson.Gson gson>
+org.apache.zeppelin.socket.NotebookServer.broadcastParagraphs : if null == r1 goto return
+org.apache.zeppelin.socket.NotebookServer.notebook : $r1 = <org.apache.zeppelin.server.ZeppelinServer: org.apache.zeppelin.notebook.Notebook notebook>

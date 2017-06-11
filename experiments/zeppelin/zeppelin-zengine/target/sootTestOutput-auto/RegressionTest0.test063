@@ -1,0 +1,6 @@
+org.apache.zeppelin.socket.NotebookServer.onRemoteRunParagraph : if r3 != null goto r4 = virtualinvoke r3.<org.apache.zeppelin.notebook.Notebook: org.apache.zeppelin.notebook.Note getNote(java.lang.String)>(r1)
+org.apache.zeppelin.socket.NotebookServer.onRemoteRunParagraph : r3 = specialinvoke r0.<org.apache.zeppelin.socket.NotebookServer: org.apache.zeppelin.notebook.Notebook notebook()>()
+org.apache.zeppelin.socket.NotebookServer.onRemoteRunParagraph : $r8 = new java.lang.Exception
+org.apache.zeppelin.socket.NotebookServer.onRemoteRunParagraph : r24 = $r23
+org.apache.zeppelin.socket.NotebookServer.onRemoteRunParagraph : throw r24
+org.apache.zeppelin.socket.NotebookServer.notebook : $r1 = <org.apache.zeppelin.server.ZeppelinServer: org.apache.zeppelin.notebook.Notebook notebook>

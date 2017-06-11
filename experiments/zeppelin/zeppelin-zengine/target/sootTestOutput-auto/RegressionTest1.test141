@@ -1,0 +1,10 @@
+org.apache.zeppelin.socket.NotebookServer.onUpdate : r3 = specialinvoke r0.<org.apache.zeppelin.socket.NotebookServer: org.apache.zeppelin.notebook.Notebook notebook()>()
+org.apache.zeppelin.socket.NotebookServer.onUpdate : if r3 != null goto r4 = virtualinvoke r3.<org.apache.zeppelin.notebook.Notebook: java.util.List getAllNotes()>()
+org.apache.zeppelin.server.JsonResponse.addCookie : $r4 = r0.<org.apache.zeppelin.server.JsonResponse: java.util.ArrayList cookies>
+org.apache.zeppelin.server.JsonResponse.addCookie : $r3 = r0.<org.apache.zeppelin.server.JsonResponse: java.util.ArrayList cookies>
+org.apache.zeppelin.server.JsonResponse.addCookie : $r3 = new javax.ws.rs.core.NewCookie
+org.apache.zeppelin.server.JsonResponse.addCookie : return r0
+org.apache.zeppelin.server.JsonResponse.addCookie : $r2 = new java.util.ArrayList
+org.apache.zeppelin.server.JsonResponse.setCode : r0.<org.apache.zeppelin.server.JsonResponse: javax.ws.rs.core.Response$Status status> = r1
+org.apache.zeppelin.socket.NotebookServer.notebook : $r1 = <org.apache.zeppelin.server.ZeppelinServer: org.apache.zeppelin.notebook.Notebook notebook>
+org.apache.zeppelin.socket.NotebookServer.onAdd : virtualinvoke r0.<org.apache.zeppelin.socket.NotebookServer: void onUpdate(java.lang.String,org.apache.zeppelin.display.AngularObject)>(r1, r2)

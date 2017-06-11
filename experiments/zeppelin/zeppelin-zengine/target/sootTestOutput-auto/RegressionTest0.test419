@@ -1,0 +1,10 @@
+org.apache.zeppelin.realm.LdapRealm.isGroupSearchEnableMatchingRuleInChain : $z0 = r0.<org.apache.zeppelin.realm.LdapRealm: boolean groupSearchEnableMatchingRuleInChain>
+org.apache.zeppelin.realm.LdapRealm.setAuthorizationEnabled : r0.<org.apache.zeppelin.realm.LdapRealm: boolean authorizationEnabled> = z0
+org.apache.zeppelin.realm.LdapRealm.getUserSearchAttributeTemplate : $r1 = r0.<org.apache.zeppelin.realm.LdapRealm: java.lang.String userSearchAttributeTemplate>
+org.apache.zeppelin.realm.LdapRealm.getPermissionsByRole : $r1 = r0.<org.apache.zeppelin.realm.LdapRealm: java.util.Map permissionsByRole>
+org.apache.zeppelin.utils.SecurityUtils.getRealmsList : $z0 = <org.apache.zeppelin.utils.SecurityUtils: boolean isEnabled>
+org.apache.zeppelin.utils.SecurityUtils.getRealmsList : $r3 = staticinvoke <java.util.Collections: java.util.List emptyList()>()
+org.apache.zeppelin.realm.LdapRealm.getSearchBase : $r1 = r0.<org.apache.zeppelin.realm.LdapRealm: java.lang.String searchBase>
+org.apache.zeppelin.realm.LdapRealm.setUserSearchBase : r0.<org.apache.zeppelin.realm.LdapRealm: java.lang.String userSearchBase> = r1
+org.apache.zeppelin.realm.LdapRealm.setUserDnTemplate : r0.<org.apache.zeppelin.realm.LdapRealm: java.lang.String userDnTemplate> = r1
+org.apache.zeppelin.realm.LdapRealm.setUserSearchAttributeTemplate : if r1 != null goto $r3 = virtualinvoke r1.<java.lang.String: java.lang.String trim()>()

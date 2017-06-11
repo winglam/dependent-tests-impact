@@ -1,0 +1,5 @@
+org.apache.zeppelin.utils.SecurityUtils.getPrincipal : $z0 = <org.apache.zeppelin.utils.SecurityUtils: boolean isEnabled>
+org.apache.zeppelin.utils.SecurityUtils.getPrincipal : return "anonymous"
+org.apache.zeppelin.rest.CredentialRestApi.removeCredentialEntity : r2 = staticinvoke <org.apache.zeppelin.utils.SecurityUtils: java.lang.String getPrincipal()>()
+org.apache.zeppelin.rest.CredentialRestApi.removeCredentialEntity : $r4 = r0.<org.apache.zeppelin.rest.CredentialRestApi: org.apache.zeppelin.user.Credentials credentials>
+org.apache.zeppelin.rest.CredentialRestApi.removeCredentialEntity : $r3 = r0.<org.apache.zeppelin.rest.CredentialRestApi: org.slf4j.Logger logger>
