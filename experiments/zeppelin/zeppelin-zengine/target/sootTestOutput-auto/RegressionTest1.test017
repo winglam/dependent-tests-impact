@@ -1,1 +1,9 @@
-org.apache.zeppelin.socket.NotebookSocket.setUser : r0.<org.apache.zeppelin.socket.NotebookSocket: java.lang.String user> = r1
+org.apache.zeppelin.notebook.Note.persist : staticinvoke <com.google.common.base.Preconditions: java.lang.Object checkNotNull(java.lang.Object,java.lang.Object)>(r1, "AuthenticationInfo should not be null")
+org.apache.zeppelin.notebook.Note.onProgressUpdate : $r3 = r0.<org.apache.zeppelin.notebook.Note: org.apache.zeppelin.notebook.JobListenerFactory jobListenerFactory>
+org.apache.zeppelin.notebook.Note.addParagraph : $r2 = r0.<org.apache.zeppelin.notebook.Note: java.util.List paragraphs>
+org.apache.zeppelin.conf.ZeppelinConfiguration.create : $r4 = <org.apache.zeppelin.conf.ZeppelinConfiguration: org.apache.zeppelin.conf.ZeppelinConfiguration conf>
+org.apache.zeppelin.conf.ZeppelinConfiguration.create : $r0 = <org.apache.zeppelin.conf.ZeppelinConfiguration: org.apache.zeppelin.conf.ZeppelinConfiguration conf>
+org.apache.zeppelin.notebook.Note.insertParagraph : $r5 = r0.<org.apache.zeppelin.notebook.Note: java.util.List paragraphs>
+org.apache.zeppelin.notebook.Note.insertParagraph : exitmonitor r2
+org.apache.zeppelin.notebook.Note.insertParagraph : $r7 = r0.<org.apache.zeppelin.notebook.Note: org.apache.zeppelin.notebook.NoteEventListener noteEventListener>
+org.apache.zeppelin.notebook.Note.insertParagraph : $r4 = r0.<org.apache.zeppelin.notebook.Note: java.util.List paragraphs>

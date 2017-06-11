@@ -1,6 +1,9 @@
-org.apache.zeppelin.server.JsonResponse.setPretty : r0.<org.apache.zeppelin.server.JsonResponse: boolean pretty> = z0
-org.apache.zeppelin.server.JsonResponse.setPretty : return r0
-org.apache.zeppelin.realm.LdapRealm.getUserSearchAttributeTemplate : $r1 = r0.<org.apache.zeppelin.realm.LdapRealm: java.lang.String userSearchAttributeTemplate>
-org.apache.zeppelin.realm.LdapRealm.getUserSearchAttributeName : $r1 = r0.<org.apache.zeppelin.realm.LdapRealm: java.lang.String userSearchAttributeName>
-org.apache.zeppelin.server.JsonResponse.setCode : r0.<org.apache.zeppelin.server.JsonResponse: javax.ws.rs.core.Response$Status status> = r1
-org.apache.zeppelin.realm.LdapRealm.setUserSearchAttributeTemplate : if r1 != null goto $r3 = virtualinvoke r1.<java.lang.String: java.lang.String trim()>()
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinhubClient.getInstance : $r0 = <org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinhubClient: org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinhubClient instance>
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.protocol.ZeppelinhubMessage.serialize : $r1 = <org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.protocol.ZeppelinhubMessage: com.google.gson.Gson gson>
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.protocol.ZeppelinhubMessage.newMessage : $r3 = new org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.protocol.ZeppelinhubMessage
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.utils.ZeppelinhubUtils.deadMessage : $z0 = staticinvoke <org.apache.commons.lang.StringUtils: boolean isBlank(java.lang.String)>(r0)
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.utils.ZeppelinhubUtils.deadMessage : $r7 = <org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.protocol.ZeppelinHubOp: org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.protocol.ZeppelinHubOp DEAD>
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.utils.ZeppelinhubUtils.deadMessage : $r5 = new java.util.HashMap
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.utils.ZeppelinhubUtils.deadMessage : virtualinvoke r1.<java.util.HashMap: java.lang.Object put(java.lang.Object,java.lang.Object)>("token", r0)
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.utils.ZeppelinhubUtils.userSwitchTokenRoutine : $r5 = staticinvoke <org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinhubClient: org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinhubClient getInstance()>()
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.utils.ZeppelinhubUtils.userSwitchTokenRoutine : r3 = staticinvoke <org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.utils.ZeppelinhubUtils: java.lang.String deadMessage(java.lang.String)>(r1)

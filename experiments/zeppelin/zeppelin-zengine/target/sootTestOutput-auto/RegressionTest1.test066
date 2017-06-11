@@ -1,0 +1,40 @@
+org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars.getStringValue : $r1 = r0.<org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars: java.lang.String stringValue>
+org.apache.zeppelin.conf.ZeppelinConfiguration.getS3EncryptionMaterialsProviderClass : $r1 = <org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars: org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars ZEPPELIN_NOTEBOOK_S3_EMP>
+org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars.getIntValue : $i0 = r0.<org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars: int intValue>
+org.apache.zeppelin.conf.ZeppelinConfiguration.getBoolean : $r3 = staticinvoke <java.lang.System: java.lang.String getenv(java.lang.String)>(r1)
+org.apache.zeppelin.conf.ZeppelinConfiguration.getBoolean : $z3 = specialinvoke r0.<org.apache.zeppelin.conf.ZeppelinConfiguration: boolean getBooleanValue(java.lang.String,boolean)>(r2, z0)
+org.apache.zeppelin.conf.ZeppelinConfiguration.getBoolean : $r2 = virtualinvoke r1.<org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars: java.lang.String name()>()
+org.apache.zeppelin.conf.ZeppelinConfiguration.getBoolean : $r5 = staticinvoke <java.lang.System: java.lang.String getProperty(java.lang.String)>(r2)
+org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars.getType : $r1 = r0.<org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars: org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars$VarType type>
+org.apache.zeppelin.conf.ZeppelinConfiguration.credentialsPersist : $r1 = <org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars: org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars ZEPPELIN_CREDENTIALS_PERSIST>
+org.apache.zeppelin.conf.ZeppelinConfiguration.getBucketName : $r1 = <org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars: org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars ZEPPELIN_NOTEBOOK_S3_BUCKET>
+org.apache.zeppelin.conf.ZeppelinConfiguration.getEndpoint : $r1 = <org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars: org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars ZEPPELIN_NOTEBOOK_S3_ENDPOINT>
+org.apache.zeppelin.conf.ZeppelinConfiguration.getRelativeDir : $r3 = new java.lang.StringBuilder
+org.apache.zeppelin.conf.ZeppelinConfiguration.getRelativeDir : $r2 = virtualinvoke r0.<org.apache.zeppelin.conf.ZeppelinConfiguration: java.lang.String getString(org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars)>(r1)
+org.apache.zeppelin.conf.ZeppelinConfiguration.getRelativeDir : if r1 == null goto $z1 = virtualinvoke r0.<org.apache.zeppelin.conf.ZeppelinConfiguration: boolean isWindowsPath(java.lang.String)>(r1)
+org.apache.zeppelin.conf.ZeppelinConfiguration.getS3KMSKeyRegion : $r1 = <org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars: org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars ZEPPELIN_NOTEBOOK_S3_KMS_KEY_REGION>
+org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars.getBooleanValue : $z0 = r0.<org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars: boolean booleanValue>
+org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars.values : $r0 = <org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars: org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars[] $VALUES>
+org.apache.zeppelin.conf.ZeppelinConfiguration.getStringValue : return r2
+org.apache.zeppelin.conf.ZeppelinConfiguration.getStringValue : r4 = interfaceinvoke r3.<java.util.List: java.util.Iterator iterator()>()
+org.apache.zeppelin.conf.ZeppelinConfiguration.getStringValue : $r8 = interfaceinvoke r5.<org.apache.commons.configuration.tree.ConfigurationNode: java.util.List getChildren(java.lang.String)>("name")
+org.apache.zeppelin.conf.ZeppelinConfiguration.getStringValue : if r3 == null goto return r2
+org.apache.zeppelin.conf.ZeppelinConfiguration.getStringValue : goto [?= $z1 = interfaceinvoke r4.<java.util.Iterator: boolean hasNext()>()]
+org.apache.zeppelin.conf.ZeppelinConfiguration.getStringValue : $r6 = virtualinvoke r0.<org.apache.zeppelin.conf.ZeppelinConfiguration: org.apache.commons.configuration.tree.ConfigurationNode getRootNode()>()
+org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars.getVarName : $r1 = r0.<org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars: java.lang.String varName>
+org.apache.zeppelin.conf.ZeppelinConfiguration.getHeliumRegistry : $r1 = <org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars: org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars ZEPPELIN_HELIUM_REGISTRY>
+org.apache.zeppelin.conf.ZeppelinConfiguration.isWindowsPath : $z0 = virtualinvoke r1.<java.lang.String: boolean matches(java.lang.String)>("^[A-Za-z]:\\\\.*")
+org.apache.zeppelin.conf.ZeppelinConfiguration.getBooleanValue : goto [?= $z2 = interfaceinvoke r3.<java.util.Iterator: boolean hasNext()>()]
+org.apache.zeppelin.conf.ZeppelinConfiguration.getBooleanValue : r3 = interfaceinvoke r2.<java.util.List: java.util.Iterator iterator()>()
+org.apache.zeppelin.conf.ZeppelinConfiguration.getBooleanValue : return z0
+org.apache.zeppelin.conf.ZeppelinConfiguration.getBooleanValue : if r2 == null goto return z0
+org.apache.zeppelin.conf.ZeppelinConfiguration.getBooleanValue : $r5 = virtualinvoke r0.<org.apache.zeppelin.conf.ZeppelinConfiguration: org.apache.commons.configuration.tree.ConfigurationNode getRootNode()>()
+org.apache.zeppelin.conf.ZeppelinConfiguration.getBooleanValue : $r7 = interfaceinvoke r4.<org.apache.commons.configuration.tree.ConfigurationNode: java.util.List getChildren(java.lang.String)>("name")
+org.apache.zeppelin.conf.ZeppelinConfiguration.isS3ServerSideEncryption : $r1 = <org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars: org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars ZEPPELIN_NOTEBOOK_S3_SSE>
+org.apache.zeppelin.conf.ZeppelinConfiguration.getConfDir : $r1 = <org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars: org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars ZEPPELIN_CONF_DIR>
+org.apache.zeppelin.conf.ZeppelinConfiguration.getUser : $r1 = <org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars: org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars ZEPPELIN_NOTEBOOK_S3_USER>
+org.apache.zeppelin.conf.ZeppelinConfiguration.getString : $r4 = staticinvoke <java.lang.System: java.lang.String getenv(java.lang.String)>(r1)
+org.apache.zeppelin.conf.ZeppelinConfiguration.getString : $r8 = specialinvoke r0.<org.apache.zeppelin.conf.ZeppelinConfiguration: java.lang.String getStringValue(java.lang.String,java.lang.String)>(r2, r3)
+org.apache.zeppelin.conf.ZeppelinConfiguration.getString : $r6 = staticinvoke <java.lang.System: java.lang.String getProperty(java.lang.String)>(r2)
+org.apache.zeppelin.conf.ZeppelinConfiguration.getString : $r2 = virtualinvoke r1.<org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars: java.lang.String name()>()
+org.apache.zeppelin.conf.ZeppelinConfiguration.getS3KMSKeyID : $r1 = <org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars: org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars ZEPPELIN_NOTEBOOK_S3_KMS_KEY_ID>

@@ -1,7 +1,113 @@
-org.apache.zeppelin.realm.LdapRealm.setGroupSearchScope : if r1 != null goto $r4 = virtualinvoke r1.<java.lang.String: java.lang.String trim()>()
-org.apache.zeppelin.realm.LdapRealm.isGroupSearchEnableMatchingRuleInChain : $z0 = r0.<org.apache.zeppelin.realm.LdapRealm: boolean groupSearchEnableMatchingRuleInChain>
-org.apache.zeppelin.realm.LdapRealm.getUserSearchAttributeTemplate : $r1 = r0.<org.apache.zeppelin.realm.LdapRealm: java.lang.String userSearchAttributeTemplate>
-org.apache.zeppelin.realm.LdapRealm.getGroupObjectClass : $r1 = r0.<org.apache.zeppelin.realm.LdapRealm: java.lang.String groupObjectClass>
-org.apache.zeppelin.utils.SecurityUtils.getRealmsList : $z0 = <org.apache.zeppelin.utils.SecurityUtils: boolean isEnabled>
-org.apache.zeppelin.utils.SecurityUtils.getRealmsList : $r3 = staticinvoke <java.util.Collections: java.util.List emptyList()>()
-org.apache.zeppelin.realm.LdapRealm.setUserSearchAttributeTemplate : if r1 != null goto $r3 = virtualinvoke r1.<java.lang.String: java.lang.String trim()>()
+org.apache.zeppelin.interpreter.InterpreterSetting.getPath : $r1 = r0.<org.apache.zeppelin.interpreter.InterpreterSetting: java.lang.String path>
+org.apache.zeppelin.interpreter.InterpreterSetting.getGroup : $r1 = r0.<org.apache.zeppelin.interpreter.InterpreterSetting: java.lang.String group>
+org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars.getStringValue : $r1 = r0.<org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars: java.lang.String stringValue>
+org.apache.zeppelin.interpreter.InterpreterSetting.getInterpreterRunner : $r1 = r0.<org.apache.zeppelin.interpreter.InterpreterSetting: org.apache.zeppelin.interpreter.InterpreterRunner interpreterRunner>
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.protocol.ZeppelinhubMessage.serialize : $r1 = <org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.protocol.ZeppelinhubMessage: com.google.gson.Gson gson>
+org.apache.zeppelin.conf.ZeppelinConfiguration.getS3EncryptionMaterialsProviderClass : $r1 = <org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars: org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars ZEPPELIN_NOTEBOOK_S3_EMP>
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.protocol.ZeppelinhubMessage.deserialize : $z0 = staticinvoke <org.apache.commons.lang.StringUtils: boolean isBlank(java.lang.String)>(r0)
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.protocol.ZeppelinhubMessage.deserialize : $r7 = <org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.protocol.ZeppelinhubMessage: org.slf4j.Logger LOG>
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.protocol.ZeppelinhubMessage.deserialize : $r4 = <org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.protocol.ZeppelinhubMessage: com.google.gson.Gson gson>
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.protocol.ZeppelinhubMessage.deserialize : r2 = $r6
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.protocol.ZeppelinhubMessage.deserialize : return r1
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.protocol.ZeppelinhubMessage.deserialize : r1 = <org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.protocol.ZeppelinhubMessage: org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.protocol.ZeppelinhubMessage EMPTY>
+org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars.getIntValue : $i0 = r0.<org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars: int intValue>
+org.apache.zeppelin.interpreter.InterpreterSetting.getName : $r1 = r0.<org.apache.zeppelin.interpreter.InterpreterSetting: java.lang.String name>
+org.apache.zeppelin.conf.ZeppelinConfiguration.getBoolean : $r3 = staticinvoke <java.lang.System: java.lang.String getenv(java.lang.String)>(r1)
+org.apache.zeppelin.conf.ZeppelinConfiguration.getBoolean : $z3 = specialinvoke r0.<org.apache.zeppelin.conf.ZeppelinConfiguration: boolean getBooleanValue(java.lang.String,boolean)>(r2, z0)
+org.apache.zeppelin.conf.ZeppelinConfiguration.getBoolean : $r2 = virtualinvoke r1.<org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars: java.lang.String name()>()
+org.apache.zeppelin.conf.ZeppelinConfiguration.getBoolean : $r5 = staticinvoke <java.lang.System: java.lang.String getProperty(java.lang.String)>(r2)
+org.apache.zeppelin.conf.ZeppelinConfiguration.getMongoAutoimport : $r1 = <org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars: org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars ZEPPELIN_NOTEBOOK_MONGO_AUTOIMPORT>
+org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars.getType : $r1 = r0.<org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars: org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars$VarType type>
+org.apache.zeppelin.conf.ZeppelinConfiguration.credentialsPersist : $r1 = <org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars: org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars ZEPPELIN_CREDENTIALS_PERSIST>
+org.apache.zeppelin.notebook.repo.MongoNotebookRepo.updateSettings : $r3 = <org.apache.zeppelin.notebook.repo.MongoNotebookRepo: org.slf4j.Logger LOG>
+org.apache.zeppelin.notebook.repo.S3NotebookRepo.revisionHistory : $r3 = <org.apache.zeppelin.notebook.repo.S3NotebookRepo: org.slf4j.Logger LOG>
+org.apache.zeppelin.notebook.repo.S3NotebookRepo.revisionHistory : $r6 = staticinvoke <java.util.Collections: java.util.List emptyList()>()
+org.apache.zeppelin.conf.ZeppelinConfiguration.getBucketName : $r1 = <org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars: org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars ZEPPELIN_NOTEBOOK_S3_BUCKET>
+org.apache.zeppelin.notebook.Note.getName : $r2 = r0.<org.apache.zeppelin.notebook.Note: java.lang.String name>
+org.apache.zeppelin.notebook.Note.getName : $r1 = virtualinvoke r0.<org.apache.zeppelin.notebook.Note: java.lang.String getId()>()
+org.apache.zeppelin.notebook.Note.getName : $z0 = virtualinvoke r0.<org.apache.zeppelin.notebook.Note: boolean isNameEmpty()>()
+org.apache.zeppelin.notebook.repo.MongoNotebookRepo.getSettings : $r2 = <org.apache.zeppelin.notebook.repo.MongoNotebookRepo: org.slf4j.Logger LOG>
+org.apache.zeppelin.notebook.repo.MongoNotebookRepo.getSettings : $r3 = staticinvoke <java.util.Collections: java.util.List emptyList()>()
+org.apache.zeppelin.conf.ZeppelinConfiguration.getEndpoint : $r1 = <org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars: org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars ZEPPELIN_NOTEBOOK_S3_ENDPOINT>
+org.apache.zeppelin.notebook.utility.IdHashes.encode : $r22 = interfaceinvoke r2.<java.util.List: java.lang.Object get(int)>(i6)
+org.apache.zeppelin.notebook.utility.IdHashes.encode : r6 = virtualinvoke r4.<java.math.BigInteger: java.math.BigInteger pow(int)>(i0)
+org.apache.zeppelin.notebook.utility.IdHashes.encode : r7 = virtualinvoke r5.<java.math.BigInteger: java.math.BigInteger mod(java.math.BigInteger)>(r6)
+org.apache.zeppelin.notebook.utility.IdHashes.encode : $r20 = new java.lang.StringBuffer
+org.apache.zeppelin.notebook.utility.IdHashes.encode : goto [?= $r20 = new java.lang.StringBuffer]
+org.apache.zeppelin.notebook.utility.IdHashes.encode : $r1 = new java.util.ArrayList
+org.apache.zeppelin.notebook.utility.IdHashes.encode : $r19 = <java.math.BigInteger: java.math.BigInteger ZERO>
+org.apache.zeppelin.notebook.utility.IdHashes.encode : i0 = 1
+org.apache.zeppelin.notebook.utility.IdHashes.encode : $r15 = new java.math.BigInteger
+org.apache.zeppelin.notebook.utility.IdHashes.encode : $r17 = <org.apache.zeppelin.notebook.utility.IdHashes: char[] DICTIONARY>
+org.apache.zeppelin.notebook.utility.IdHashes.encode : i0 = i0 + 1
+org.apache.zeppelin.notebook.utility.IdHashes.encode : goto [?= staticinvoke <edu.washington.cs.dt.impact.util.Tracer: void trace(java.lang.String,java.lang.String)>("r6 = virtualinvoke r4.<java.math.BigInteger: java.math.BigInteger pow(int)>(i0)", "org.apache.zeppelin.notebook.utility.IdHashes.encode")]
+org.apache.zeppelin.notebook.utility.IdHashes.encode : r9 = virtualinvoke r7.<java.math.BigInteger: java.math.BigInteger divide(java.math.BigInteger)>(r8)
+org.apache.zeppelin.notebook.utility.IdHashes.encode : $i5 = interfaceinvoke r2.<java.util.List: int size()>()
+org.apache.zeppelin.notebook.utility.IdHashes.encode : r5 = virtualinvoke r5.<java.math.BigInteger: java.math.BigInteger subtract(java.math.BigInteger)>(r7)
+org.apache.zeppelin.notebook.utility.IdHashes.encode : $r24 = virtualinvoke r21.<java.lang.StringBuffer: java.lang.String toString()>()
+org.apache.zeppelin.notebook.utility.IdHashes.encode : $i2 = i0 - 1
+org.apache.zeppelin.notebook.utility.IdHashes.encode : $r10 = new java.math.BigInteger
+org.apache.zeppelin.interpreter.InterpreterSetting.getProperties : $r1 = r0.<org.apache.zeppelin.interpreter.InterpreterSetting: java.lang.Object properties>
+org.apache.zeppelin.interpreter.InterpreterSetting.getDependencies : $r3 = r0.<org.apache.zeppelin.interpreter.InterpreterSetting: java.util.List dependencies>
+org.apache.zeppelin.interpreter.InterpreterSetting.getDependencies : $r1 = r0.<org.apache.zeppelin.interpreter.InterpreterSetting: java.util.List dependencies>
+org.apache.zeppelin.conf.ZeppelinConfiguration.getRelativeDir : $r3 = new java.lang.StringBuilder
+org.apache.zeppelin.conf.ZeppelinConfiguration.getRelativeDir : $r2 = virtualinvoke r0.<org.apache.zeppelin.conf.ZeppelinConfiguration: java.lang.String getString(org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars)>(r1)
+org.apache.zeppelin.conf.ZeppelinConfiguration.getRelativeDir : if r1 == null goto $z1 = virtualinvoke r0.<org.apache.zeppelin.conf.ZeppelinConfiguration: boolean isWindowsPath(java.lang.String)>(r1)
+org.apache.zeppelin.conf.ZeppelinConfiguration.getS3KMSKeyRegion : $r1 = <org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars: org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars ZEPPELIN_NOTEBOOK_S3_KMS_KEY_REGION>
+org.apache.zeppelin.conf.ZeppelinConfiguration.getMongoUri : $r1 = <org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars: org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars ZEPPELIN_NOTEBOOK_MONGO_URI>
+org.apache.zeppelin.notebook.Note.getAngularObjects : $r1 = r0.<org.apache.zeppelin.notebook.Note: java.util.Map angularObjects>
+org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars.getBooleanValue : $z0 = r0.<org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars: boolean booleanValue>
+org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars.values : $r0 = <org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars: org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars[] $VALUES>
+org.apache.zeppelin.conf.ZeppelinConfiguration.getMongoCollection : $r1 = <org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars: org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars ZEPPELIN_NOTEBOOK_MONGO_COLLECTION>
+org.apache.zeppelin.notebook.Note.getId : $r1 = r0.<org.apache.zeppelin.notebook.Note: java.lang.String id>
+org.apache.zeppelin.conf.ZeppelinConfiguration.create : $r4 = <org.apache.zeppelin.conf.ZeppelinConfiguration: org.apache.zeppelin.conf.ZeppelinConfiguration conf>
+org.apache.zeppelin.conf.ZeppelinConfiguration.create : $r0 = <org.apache.zeppelin.conf.ZeppelinConfiguration: org.apache.zeppelin.conf.ZeppelinConfiguration conf>
+org.apache.zeppelin.conf.ZeppelinConfiguration.getMongoDatabase : $r1 = <org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars: org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars ZEPPELIN_NOTEBOOK_MONGO_DATABASE>
+org.apache.zeppelin.notebook.Note.getConfig : $r2 = r0.<org.apache.zeppelin.notebook.Note: java.util.Map config>
+org.apache.zeppelin.notebook.Note.getConfig : $r3 = r0.<org.apache.zeppelin.notebook.Note: java.util.Map config>
+org.apache.zeppelin.notebook.Note.getUserNote : $r11 = r0.<org.apache.zeppelin.notebook.Note: java.util.List paragraphs>
+org.apache.zeppelin.notebook.Note.getUserNote : return r3
+org.apache.zeppelin.notebook.Note.getUserNote : $r9 = virtualinvoke r0.<org.apache.zeppelin.notebook.Note: java.util.Map getConfig()>()
+org.apache.zeppelin.notebook.Note.getUserNote : $r8 = virtualinvoke r0.<org.apache.zeppelin.notebook.Note: java.lang.String getId()>()
+org.apache.zeppelin.notebook.Note.getUserNote : $r10 = virtualinvoke r0.<org.apache.zeppelin.notebook.Note: java.util.Map getAngularObjects()>()
+org.apache.zeppelin.notebook.Note.getUserNote : $r7 = virtualinvoke r0.<org.apache.zeppelin.notebook.Note: java.lang.String getName()>()
+org.apache.zeppelin.notebook.Note.getUserNote : $r2 = new org.apache.zeppelin.notebook.Note
+org.apache.zeppelin.notebook.Note.generateSingleParagraphInfo : $r11 = new java.util.HashMap
+org.apache.zeppelin.notebook.Note.generateSingleParagraphInfo : $r6 = r0.<org.apache.zeppelin.notebook.Note: java.util.List paragraphs>
+org.apache.zeppelin.notebook.Note.generateSingleParagraphInfo : $r7 = r0.<org.apache.zeppelin.notebook.Note: java.util.List paragraphs>
+org.apache.zeppelin.notebook.repo.S3NotebookRepo.updateSettings : $r3 = <org.apache.zeppelin.notebook.repo.S3NotebookRepo: org.slf4j.Logger LOG>
+org.apache.zeppelin.conf.ZeppelinConfiguration.getStringValue : return r2
+org.apache.zeppelin.conf.ZeppelinConfiguration.getStringValue : r4 = interfaceinvoke r3.<java.util.List: java.util.Iterator iterator()>()
+org.apache.zeppelin.conf.ZeppelinConfiguration.getStringValue : $r8 = interfaceinvoke r5.<org.apache.commons.configuration.tree.ConfigurationNode: java.util.List getChildren(java.lang.String)>("name")
+org.apache.zeppelin.conf.ZeppelinConfiguration.getStringValue : if r3 == null goto return r2
+org.apache.zeppelin.conf.ZeppelinConfiguration.getStringValue : goto [?= $z1 = interfaceinvoke r4.<java.util.Iterator: boolean hasNext()>()]
+org.apache.zeppelin.conf.ZeppelinConfiguration.getStringValue : $r6 = virtualinvoke r0.<org.apache.zeppelin.conf.ZeppelinConfiguration: org.apache.commons.configuration.tree.ConfigurationNode getRootNode()>()
+org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars.getVarName : $r1 = r0.<org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars: java.lang.String varName>
+org.apache.zeppelin.conf.ZeppelinConfiguration.getHeliumRegistry : $r1 = <org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars: org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars ZEPPELIN_HELIUM_REGISTRY>
+org.apache.zeppelin.conf.ZeppelinConfiguration.isWindowsPath : $z0 = virtualinvoke r1.<java.lang.String: boolean matches(java.lang.String)>("^[A-Za-z]:\\\\.*")
+org.apache.zeppelin.interpreter.InterpreterSetting.setInfos : r0.<org.apache.zeppelin.interpreter.InterpreterSetting: java.util.Map infos> = r1
+org.apache.zeppelin.notebook.Note.isNameEmpty : $r1 = r0.<org.apache.zeppelin.notebook.Note: java.lang.String name>
+org.apache.zeppelin.conf.ZeppelinConfiguration.getBooleanValue : goto [?= $z2 = interfaceinvoke r3.<java.util.Iterator: boolean hasNext()>()]
+org.apache.zeppelin.conf.ZeppelinConfiguration.getBooleanValue : return z0
+org.apache.zeppelin.conf.ZeppelinConfiguration.getBooleanValue : r3 = interfaceinvoke r2.<java.util.List: java.util.Iterator iterator()>()
+org.apache.zeppelin.conf.ZeppelinConfiguration.getBooleanValue : if r2 == null goto return z0
+org.apache.zeppelin.conf.ZeppelinConfiguration.getBooleanValue : $r5 = virtualinvoke r0.<org.apache.zeppelin.conf.ZeppelinConfiguration: org.apache.commons.configuration.tree.ConfigurationNode getRootNode()>()
+org.apache.zeppelin.conf.ZeppelinConfiguration.getBooleanValue : $r7 = interfaceinvoke r4.<org.apache.commons.configuration.tree.ConfigurationNode: java.util.List getChildren(java.lang.String)>("name")
+org.apache.zeppelin.conf.ZeppelinConfiguration.isS3ServerSideEncryption : $r1 = <org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars: org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars ZEPPELIN_NOTEBOOK_S3_SSE>
+org.apache.zeppelin.conf.ZeppelinConfiguration.getUser : $r1 = <org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars: org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars ZEPPELIN_NOTEBOOK_S3_USER>
+org.apache.zeppelin.interpreter.InterpreterSetting.getOption : $r3 = r0.<org.apache.zeppelin.interpreter.InterpreterSetting: org.apache.zeppelin.interpreter.InterpreterOption option>
+org.apache.zeppelin.interpreter.InterpreterSetting.getOption : $r1 = new org.apache.zeppelin.interpreter.InterpreterOption
+org.apache.zeppelin.interpreter.InterpreterSetting.getOption : $r2 = r0.<org.apache.zeppelin.interpreter.InterpreterSetting: org.apache.zeppelin.interpreter.InterpreterOption option>
+org.apache.zeppelin.interpreter.InterpreterSetting.getInfos : $r1 = r0.<org.apache.zeppelin.interpreter.InterpreterSetting: java.util.Map infos>
+org.apache.zeppelin.interpreter.InterpreterSetting.getInterpreterInfos : $r1 = r0.<org.apache.zeppelin.interpreter.InterpreterSetting: java.util.List interpreterInfos>
+org.apache.zeppelin.conf.ZeppelinConfiguration.getString : $r4 = staticinvoke <java.lang.System: java.lang.String getenv(java.lang.String)>(r1)
+org.apache.zeppelin.conf.ZeppelinConfiguration.getString : $r8 = specialinvoke r0.<org.apache.zeppelin.conf.ZeppelinConfiguration: java.lang.String getStringValue(java.lang.String,java.lang.String)>(r2, r3)
+org.apache.zeppelin.conf.ZeppelinConfiguration.getString : $r6 = staticinvoke <java.lang.System: java.lang.String getProperty(java.lang.String)>(r2)
+org.apache.zeppelin.conf.ZeppelinConfiguration.getString : $r2 = virtualinvoke r1.<org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars: java.lang.String name()>()
+org.apache.zeppelin.conf.ZeppelinConfiguration.getS3KMSKeyID : $r1 = <org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars: org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars ZEPPELIN_NOTEBOOK_S3_KMS_KEY_ID>
+org.apache.zeppelin.notebook.utility.IdHashes.generateId : $l0 = staticinvoke <java.lang.System: long currentTimeMillis()>()
+org.apache.zeppelin.notebook.Note.generateParagraphsInfo : $r8 = r0.<org.apache.zeppelin.notebook.Note: java.util.List paragraphs>
+org.apache.zeppelin.notebook.Note.generateParagraphsInfo : return r2
+org.apache.zeppelin.notebook.Note.generateParagraphsInfo : exitmonitor r3
+org.apache.zeppelin.notebook.Note.generateParagraphsInfo : $r1 = new java.util.LinkedList
+org.apache.zeppelin.notebook.Note.generateParagraphsInfo : $r9 = r0.<org.apache.zeppelin.notebook.Note: java.util.List paragraphs>

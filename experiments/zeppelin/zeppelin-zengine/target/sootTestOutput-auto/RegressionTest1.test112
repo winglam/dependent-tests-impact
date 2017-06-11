@@ -1,3 +1,19 @@
-org.apache.zeppelin.realm.LdapRealm.getUserSearchFilter : $r1 = r0.<org.apache.zeppelin.realm.LdapRealm: java.lang.String userSearchFilter>
-org.apache.zeppelin.realm.LdapRealm.getGroupIdAttribute : $r1 = r0.<org.apache.zeppelin.realm.LdapRealm: java.lang.String groupIdAttribute>
-org.apache.zeppelin.realm.LdapRealm.setUserSearchAttributeTemplate : if r1 != null goto $r3 = virtualinvoke r1.<java.lang.String: java.lang.String trim()>()
+org.apache.zeppelin.notebook.Note.getLastParagraph : r2 = $r8
+org.apache.zeppelin.notebook.Note.getLastParagraph : $r4 = r0.<org.apache.zeppelin.notebook.Note: java.util.List paragraphs>
+org.apache.zeppelin.notebook.Note.getLastParagraph : $r3 = r0.<org.apache.zeppelin.notebook.Note: java.util.List paragraphs>
+org.apache.zeppelin.conf.ZeppelinConfiguration.create : $r4 = <org.apache.zeppelin.conf.ZeppelinConfiguration: org.apache.zeppelin.conf.ZeppelinConfiguration conf>
+org.apache.zeppelin.conf.ZeppelinConfiguration.create : $r0 = <org.apache.zeppelin.conf.ZeppelinConfiguration: org.apache.zeppelin.conf.ZeppelinConfiguration conf>
+org.apache.zeppelin.notebook.Note.runAll : if null != r1 goto $r7 = virtualinvoke r0.<org.apache.zeppelin.notebook.Note: java.util.List getParagraphs()>()
+org.apache.zeppelin.notebook.Note.runAll : r1 = "anonymous"
+org.apache.zeppelin.notebook.Note.runAll : $r7 = virtualinvoke r0.<org.apache.zeppelin.notebook.Note: java.util.List getParagraphs()>()
+org.apache.zeppelin.notebook.Note.runAll : $r5 = virtualinvoke r0.<org.apache.zeppelin.notebook.Note: java.util.Map getConfig()>()
+org.apache.zeppelin.notebook.Note.getConfig : $r2 = r0.<org.apache.zeppelin.notebook.Note: java.util.Map config>
+org.apache.zeppelin.notebook.Note.getConfig : $r3 = r0.<org.apache.zeppelin.notebook.Note: java.util.Map config>
+org.apache.zeppelin.notebook.Note.getParagraphs : $r4 = new java.util.LinkedList
+org.apache.zeppelin.notebook.Note.getParagraphs : $r3 = r0.<org.apache.zeppelin.notebook.Note: java.util.List paragraphs>
+org.apache.zeppelin.notebook.Note.onOutputAppend : $r4 = r0.<org.apache.zeppelin.notebook.Note: org.apache.zeppelin.notebook.JobListenerFactory jobListenerFactory>
+org.apache.zeppelin.notebook.Note.generateParagraphsInfo : $r8 = r0.<org.apache.zeppelin.notebook.Note: java.util.List paragraphs>
+org.apache.zeppelin.notebook.Note.generateParagraphsInfo : return r2
+org.apache.zeppelin.notebook.Note.generateParagraphsInfo : exitmonitor r3
+org.apache.zeppelin.notebook.Note.generateParagraphsInfo : $r1 = new java.util.LinkedList
+org.apache.zeppelin.notebook.Note.generateParagraphsInfo : $r9 = r0.<org.apache.zeppelin.notebook.Note: java.util.List paragraphs>

@@ -1,13 +1,17 @@
-org.apache.zeppelin.utils.ExceptionUtils.jsonResponseContent : $r2 = new org.apache.zeppelin.server.JsonResponse
-org.apache.zeppelin.rest.exception.BadRequestException.badRequestJson : $r1 = <javax.ws.rs.core.Response$Status: javax.ws.rs.core.Response$Status BAD_REQUEST>
-org.apache.zeppelin.server.JsonExclusionStrategy.shouldSkipField : return 0
-org.apache.zeppelin.server.JsonResponse.build : $r7 = r0.<org.apache.zeppelin.server.JsonResponse: java.util.ArrayList cookies>
-org.apache.zeppelin.server.JsonResponse.build : $r4 = r0.<org.apache.zeppelin.server.JsonResponse: javax.ws.rs.core.Response$Status status>
-org.apache.zeppelin.server.JsonResponse.build : $r12 = virtualinvoke r1.<javax.ws.rs.core.Response$ResponseBuilder: javax.ws.rs.core.Response build()>()
-org.apache.zeppelin.server.JsonExclusionStrategy.shouldSkipClass : return 0
-org.apache.zeppelin.server.JsonResponse.toString : $z0 = r0.<org.apache.zeppelin.server.JsonResponse: boolean pretty>
-org.apache.zeppelin.server.JsonResponse.toString : $r6 = newarray (com.google.gson.ExclusionStrategy)[1]
-org.apache.zeppelin.server.JsonResponse.toString : r4 = virtualinvoke r2.<com.google.gson.GsonBuilder: com.google.gson.Gson create()>()
-org.apache.zeppelin.server.JsonResponse.toString : $r8 = virtualinvoke r4.<com.google.gson.Gson: java.lang.String toJson(java.lang.Object)>(r0)
-org.apache.zeppelin.server.JsonResponse.toString : $r1 = new com.google.gson.GsonBuilder
-org.apache.zeppelin.rest.exception.NotFoundException.notFoundJson : $r1 = <javax.ws.rs.core.Response$Status: javax.ws.rs.core.Response$Status NOT_FOUND>
+org.apache.zeppelin.notebook.Note.createParagraph : $r2 = new org.apache.zeppelin.notebook.Paragraph
+org.apache.zeppelin.notebook.Note.createParagraph : virtualinvoke r3.<org.apache.zeppelin.notebook.Paragraph: void setAuthenticationInfo(org.apache.zeppelin.user.AuthenticationInfo)>(r1)
+org.apache.zeppelin.notebook.Paragraph.generateId : $r0 = new java.lang.StringBuilder
+org.apache.zeppelin.notebook.Note.insertNewParagraph : r2 = specialinvoke r0.<org.apache.zeppelin.notebook.Note: org.apache.zeppelin.notebook.Paragraph createParagraph(int,org.apache.zeppelin.user.AuthenticationInfo)>(i0, r1)
+org.apache.zeppelin.notebook.Paragraph.setAuthenticationInfo : $r2 = virtualinvoke r1.<org.apache.zeppelin.user.AuthenticationInfo: java.lang.String getUser()>()
+org.apache.zeppelin.notebook.Paragraph.setAuthenticationInfo : r0.<org.apache.zeppelin.notebook.Paragraph: org.apache.zeppelin.user.AuthenticationInfo authenticationInfo> = r1
+org.apache.zeppelin.notebook.Note.addParagraph : $r2 = r0.<org.apache.zeppelin.notebook.Note: java.util.List paragraphs>
+org.apache.zeppelin.conf.ZeppelinConfiguration.create : $r4 = <org.apache.zeppelin.conf.ZeppelinConfiguration: org.apache.zeppelin.conf.ZeppelinConfiguration conf>
+org.apache.zeppelin.conf.ZeppelinConfiguration.create : $r0 = <org.apache.zeppelin.conf.ZeppelinConfiguration: org.apache.zeppelin.conf.ZeppelinConfiguration conf>
+org.apache.zeppelin.notebook.Note.addNewParagraph : $r2 = r0.<org.apache.zeppelin.notebook.Note: java.util.List paragraphs>
+org.apache.zeppelin.notebook.Note.insertParagraph : $r5 = r0.<org.apache.zeppelin.notebook.Note: java.util.List paragraphs>
+org.apache.zeppelin.notebook.Note.insertParagraph : exitmonitor r2
+org.apache.zeppelin.notebook.Note.insertParagraph : $r7 = r0.<org.apache.zeppelin.notebook.Note: org.apache.zeppelin.notebook.NoteEventListener noteEventListener>
+org.apache.zeppelin.notebook.Note.insertParagraph : $r4 = r0.<org.apache.zeppelin.notebook.Note: java.util.List paragraphs>
+org.apache.zeppelin.notebook.Note.beforeStatusChange : $r5 = r0.<org.apache.zeppelin.notebook.Note: org.apache.zeppelin.notebook.JobListenerFactory jobListenerFactory>
+org.apache.zeppelin.notebook.Note.afterStatusChange : $r5 = r0.<org.apache.zeppelin.notebook.Note: org.apache.zeppelin.notebook.JobListenerFactory jobListenerFactory>
+org.apache.zeppelin.notebook.Note.afterStatusChange : $r7 = r0.<org.apache.zeppelin.notebook.Note: org.apache.zeppelin.notebook.NoteEventListener noteEventListener>

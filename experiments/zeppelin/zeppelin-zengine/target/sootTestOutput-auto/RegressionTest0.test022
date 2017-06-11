@@ -1,0 +1,13 @@
+org.apache.zeppelin.notebook.repo.zeppelinhub.rest.HttpProxyClient.getAsyncConnectionManager : $r5 = new org.apache.http.impl.nio.reactor.DefaultConnectingIOReactor
+org.apache.zeppelin.notebook.repo.zeppelinhub.rest.HttpProxyClient.getAsyncConnectionManager : goto [?= return r13]
+org.apache.zeppelin.notebook.repo.zeppelinhub.rest.HttpProxyClient.getAsyncConnectionManager : $r8 = staticinvoke <org.apache.http.config.RegistryBuilder: org.apache.http.config.RegistryBuilder create()>()
+org.apache.zeppelin.notebook.repo.zeppelinhub.rest.HttpProxyClient.getAsyncConnectionManager : return r13
+org.apache.zeppelin.notebook.repo.zeppelinhub.rest.HttpProxyClient.getAsyncConnectionManager : $r12 = new org.apache.http.impl.nio.conn.PoolingNHttpClientConnectionManager
+org.apache.zeppelin.notebook.repo.zeppelinhub.rest.HttpProxyClient.getAsyncConnectionManager : $r7 = new org.apache.http.conn.ssl.BrowserCompatHostnameVerifier
+org.apache.zeppelin.notebook.repo.zeppelinhub.rest.HttpProxyClient.getAsyncConnectionManager : r1 = staticinvoke <org.apache.http.conn.ssl.SSLContexts: javax.net.ssl.SSLContext createSystemDefault()>()
+org.apache.zeppelin.notebook.repo.zeppelinhub.rest.HttpProxyClient.getAsyncConnectionManager : n1 = null
+org.apache.zeppelin.notebook.repo.zeppelinhub.rest.HttpProxyClient.getAsyncConnectionManager : n0 = null
+org.apache.zeppelin.notebook.repo.zeppelinhub.rest.HttpProxyClient.getAsyncProxyHttpClient : $r2 = <org.apache.zeppelin.notebook.repo.zeppelinhub.rest.HttpProxyClient: org.slf4j.Logger LOG>
+org.apache.zeppelin.notebook.repo.zeppelinhub.rest.HttpProxyClient.getAsyncProxyHttpClient : r3 = specialinvoke r0.<org.apache.zeppelin.notebook.repo.zeppelinhub.rest.HttpProxyClient: org.apache.http.impl.nio.conn.PoolingNHttpClientConnectionManager getAsyncConnectionManager()>()
+org.apache.zeppelin.notebook.repo.zeppelinhub.rest.HttpProxyClient.getAsyncProxyHttpClient : $r6 = new org.apache.http.HttpHost
+org.apache.zeppelin.notebook.repo.zeppelinhub.rest.HttpProxyClient.newInstance : $r1 = new org.apache.zeppelin.notebook.repo.zeppelinhub.rest.HttpProxyClient

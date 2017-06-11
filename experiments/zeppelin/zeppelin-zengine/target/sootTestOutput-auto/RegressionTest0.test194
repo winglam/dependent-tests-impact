@@ -1,6 +1,17 @@
-org.apache.zeppelin.socket.NotebookServer.onUpdate : r3 = specialinvoke r0.<org.apache.zeppelin.socket.NotebookServer: org.apache.zeppelin.notebook.Notebook notebook()>()
-org.apache.zeppelin.socket.NotebookServer.onUpdate : if r3 != null goto r4 = virtualinvoke r3.<org.apache.zeppelin.notebook.Notebook: java.util.List getAllNotes()>()
-org.apache.zeppelin.socket.NotebookServer.getInterpreterBindings : $r7 = r2.<org.apache.zeppelin.notebook.socket.Message: java.util.Map data>
-org.apache.zeppelin.socket.NotebookSocket.getRequest : $r1 = r0.<org.apache.zeppelin.socket.NotebookSocket: javax.servlet.http.HttpServletRequest request>
-org.apache.zeppelin.socket.NotebookServer.notebook : $r1 = <org.apache.zeppelin.server.ZeppelinServer: org.apache.zeppelin.notebook.Notebook notebook>
-org.apache.zeppelin.socket.NotebookServer.onAdd : virtualinvoke r0.<org.apache.zeppelin.socket.NotebookServer: void onUpdate(java.lang.String,org.apache.zeppelin.display.AngularObject)>(r1, r2)
+org.apache.zeppelin.helium.HeliumApplicationFactory.access$000 : $r1 = r0.<org.apache.zeppelin.helium.HeliumApplicationFactory: org.slf4j.Logger logger>
+org.apache.zeppelin.notebook.Note.getInfo : $r3 = r0.<org.apache.zeppelin.notebook.Note: java.util.Map info>
+org.apache.zeppelin.notebook.Note.getInfo : $r2 = r0.<org.apache.zeppelin.notebook.Note: java.util.Map info>
+org.apache.zeppelin.notebook.Note.addParagraph : $r2 = r0.<org.apache.zeppelin.notebook.Note: java.util.List paragraphs>
+org.apache.zeppelin.conf.ZeppelinConfiguration.create : $r4 = <org.apache.zeppelin.conf.ZeppelinConfiguration: org.apache.zeppelin.conf.ZeppelinConfiguration conf>
+org.apache.zeppelin.conf.ZeppelinConfiguration.create : $r0 = <org.apache.zeppelin.conf.ZeppelinConfiguration: org.apache.zeppelin.conf.ZeppelinConfiguration conf>
+org.apache.zeppelin.helium.HeliumApplicationFactory.unload : $r4 = r0.<org.apache.zeppelin.helium.HeliumApplicationFactory: java.util.concurrent.ExecutorService executor>
+org.apache.zeppelin.notebook.Note.insertParagraph : $r5 = r0.<org.apache.zeppelin.notebook.Note: java.util.List paragraphs>
+org.apache.zeppelin.notebook.Note.insertParagraph : exitmonitor r2
+org.apache.zeppelin.notebook.Note.insertParagraph : $r7 = r0.<org.apache.zeppelin.notebook.Note: org.apache.zeppelin.notebook.NoteEventListener noteEventListener>
+org.apache.zeppelin.notebook.Note.insertParagraph : $r4 = r0.<org.apache.zeppelin.notebook.Note: java.util.List paragraphs>
+org.apache.zeppelin.helium.HeliumApplicationFactory.setNotebook : r0.<org.apache.zeppelin.helium.HeliumApplicationFactory: org.apache.zeppelin.notebook.Notebook notebook> = r1
+org.apache.zeppelin.helium.HeliumApplicationFactory$UnloadApplication.run : r2 = $r12
+org.apache.zeppelin.helium.HeliumApplicationFactory$UnloadApplication.run : if r1 == null goto return
+org.apache.zeppelin.helium.HeliumApplicationFactory$UnloadApplication.run : $r3 = r0.<org.apache.zeppelin.helium.HeliumApplicationFactory$UnloadApplication: org.apache.zeppelin.notebook.Paragraph paragraph>
+org.apache.zeppelin.helium.HeliumApplicationFactory$UnloadApplication.run : r1 = null
+org.apache.zeppelin.helium.HeliumApplicationFactory$UnloadApplication.run : $r13 = r0.<org.apache.zeppelin.helium.HeliumApplicationFactory$UnloadApplication: org.apache.zeppelin.helium.HeliumApplicationFactory this$0>

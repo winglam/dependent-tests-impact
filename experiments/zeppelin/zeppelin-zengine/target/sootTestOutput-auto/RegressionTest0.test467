@@ -1,6 +1,8 @@
-org.apache.zeppelin.realm.LdapRealm.setUserLowerCase : r0.<org.apache.zeppelin.realm.LdapRealm: boolean userLowerCase> = z0
-org.apache.zeppelin.realm.LdapRealm.getUserSearchAttributeTemplate : $r1 = r0.<org.apache.zeppelin.realm.LdapRealm: java.lang.String userSearchAttributeTemplate>
-org.apache.zeppelin.realm.LdapRealm.setPagingSize : r0.<org.apache.zeppelin.realm.LdapRealm: int pagingSize> = i0
-org.apache.zeppelin.realm.LdapRealm.setUserObjectClass : r0.<org.apache.zeppelin.realm.LdapRealm: java.lang.String userObjectClass> = r1
-org.apache.zeppelin.realm.LdapRealm.getUserLowerCase : $z0 = r0.<org.apache.zeppelin.realm.LdapRealm: boolean userLowerCase>
-org.apache.zeppelin.realm.LdapRealm.setUserSearchAttributeTemplate : if r1 != null goto $r3 = virtualinvoke r1.<java.lang.String: java.lang.String trim()>()
+org.apache.zeppelin.notebook.NotebookAuthorization.getWriters : if r6 != null goto return r6
+org.apache.zeppelin.notebook.NotebookAuthorization.getWriters : return r6
+org.apache.zeppelin.notebook.NotebookAuthorization.getWriters : $r2 = <org.apache.zeppelin.notebook.NotebookAuthorization: java.util.Map authInfo>
+org.apache.zeppelin.notebook.NotebookAuthorization.getWriters : if r3 != null goto $r7 = interfaceinvoke r3.<java.util.Map: java.lang.Object get(java.lang.Object)>("writers")
+org.apache.zeppelin.notebook.NotebookAuthorization.getWriters : n0 = null
+org.apache.zeppelin.notebook.NotebookAuthorization.getWriters : $r7 = interfaceinvoke r3.<java.util.Map: java.lang.Object get(java.lang.Object)>("writers")
+org.apache.zeppelin.notebook.NotebookAuthorization.init : $r1 = <org.apache.zeppelin.notebook.NotebookAuthorization: org.apache.zeppelin.notebook.NotebookAuthorization instance>
+org.apache.zeppelin.notebook.NotebookAuthorization.init : $r12 = <org.apache.zeppelin.notebook.NotebookAuthorization: org.apache.zeppelin.notebook.NotebookAuthorization instance>

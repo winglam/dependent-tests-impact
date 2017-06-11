@@ -1,0 +1,20 @@
+org.apache.zeppelin.interpreter.InterpreterSetting.getInterpreterProcessKey : return r4
+org.apache.zeppelin.interpreter.InterpreterSetting.getInterpreterProcessKey : $r6 = virtualinvoke r0.<org.apache.zeppelin.interpreter.InterpreterSetting: org.apache.zeppelin.interpreter.InterpreterOption getOption()>()
+org.apache.zeppelin.interpreter.InterpreterSetting.getInterpreterProcessKey : $r5 = virtualinvoke r0.<org.apache.zeppelin.interpreter.InterpreterSetting: org.apache.zeppelin.interpreter.InterpreterOption getOption()>()
+org.apache.zeppelin.interpreter.InterpreterSetting.getInterpreterProcessKey : r3 = virtualinvoke r0.<org.apache.zeppelin.interpreter.InterpreterSetting: org.apache.zeppelin.interpreter.InterpreterOption getOption()>()
+org.apache.zeppelin.interpreter.InterpreterSetting.getInterpreterProcessKey : r4 = "shared_process"
+org.apache.zeppelin.interpreter.InterpreterSetting.getInterpreterGroup : r3 = specialinvoke r0.<org.apache.zeppelin.interpreter.InterpreterSetting: java.lang.String getInterpreterProcessKey(java.lang.String,java.lang.String)>(r1, r2)
+org.apache.zeppelin.interpreter.InterpreterSetting.getInterpreterGroup : $r13 = r0.<org.apache.zeppelin.interpreter.InterpreterSetting: org.apache.zeppelin.interpreter.InterpreterGroupFactory interpreterGroupFactory>
+org.apache.zeppelin.interpreter.InterpreterSetting.getInterpreterGroup : $r8 = new java.lang.StringBuilder
+org.apache.zeppelin.interpreter.InterpreterSetting.getInterpreterGroup : $r7 = r0.<org.apache.zeppelin.interpreter.InterpreterSetting: java.util.Map interpreterGroupRef>
+org.apache.zeppelin.interpreter.InterpreterSetting.addNoteToPara : $r6 = r0.<org.apache.zeppelin.interpreter.InterpreterSetting: java.util.Map runtimeInfosToBeCleared>
+org.apache.zeppelin.interpreter.InterpreterSetting.addNoteToPara : $r8 = new java.util.HashSet
+org.apache.zeppelin.interpreter.InterpreterSetting.addNoteToPara : $r5 = r0.<org.apache.zeppelin.interpreter.InterpreterSetting: java.util.Map runtimeInfosToBeCleared>
+org.apache.zeppelin.interpreter.InterpreterSetting.addNoteToPara : if r4 != null goto interfaceinvoke r4.<java.util.Set: boolean add(java.lang.Object)>(r2)
+org.apache.zeppelin.interpreter.InterpreterSetting.addNoteToPara : $r9 = r0.<org.apache.zeppelin.interpreter.InterpreterSetting: java.util.Map runtimeInfosToBeCleared>
+org.apache.zeppelin.interpreter.InterpreterSetting.addNoteToPara : interfaceinvoke r4.<java.util.Set: boolean add(java.lang.Object)>(r2)
+org.apache.zeppelin.interpreter.InterpreterSetting.addNoteToPara : $r3 = new java.util.HashMap
+org.apache.zeppelin.interpreter.InterpreterSetting.getOption : $r3 = r0.<org.apache.zeppelin.interpreter.InterpreterSetting: org.apache.zeppelin.interpreter.InterpreterOption option>
+org.apache.zeppelin.interpreter.InterpreterSetting.getOption : $r1 = new org.apache.zeppelin.interpreter.InterpreterOption
+org.apache.zeppelin.interpreter.InterpreterSetting.getOption : $r2 = r0.<org.apache.zeppelin.interpreter.InterpreterSetting: org.apache.zeppelin.interpreter.InterpreterOption option>
+org.apache.zeppelin.interpreter.InterpreterSetting.getId : $r1 = r0.<org.apache.zeppelin.interpreter.InterpreterSetting: java.lang.String id>

@@ -1,13 +1,31 @@
-org.apache.zeppelin.socket.NotebookServer.broadcast : $r10 = r0.<org.apache.zeppelin.socket.NotebookServer: java.util.Map noteSocketMap>
-org.apache.zeppelin.socket.NotebookServer.broadcast : $r9 = r0.<org.apache.zeppelin.socket.NotebookServer: java.util.Map noteSocketMap>
-org.apache.zeppelin.socket.NotebookServer.broadcast : exitmonitor r3
-org.apache.zeppelin.socket.NotebookServer.broadcast : if r4 == null goto exitmonitor r3
-org.apache.zeppelin.socket.NotebookServer.broadcast : specialinvoke r0.<org.apache.zeppelin.socket.NotebookServer: void broadcastToWatchers(java.lang.String,java.lang.String,org.apache.zeppelin.notebook.socket.Message)>(r1, "", r2)
-org.apache.zeppelin.socket.NotebookServer.saveInterpreterBindings : $r6 = r2.<org.apache.zeppelin.notebook.socket.Message: java.util.Map data>
-org.apache.zeppelin.socket.NotebookServer.onStatusChange : $r8 = virtualinvoke $r5.<org.apache.zeppelin.notebook.socket.Message: org.apache.zeppelin.notebook.socket.Message put(java.lang.String,java.lang.Object)>("noteId", r1)
-org.apache.zeppelin.socket.NotebookServer.onStatusChange : specialinvoke r0.<org.apache.zeppelin.socket.NotebookServer: void broadcast(java.lang.String,org.apache.zeppelin.notebook.socket.Message)>(r1, r7)
-org.apache.zeppelin.socket.NotebookServer.onStatusChange : $r5 = new org.apache.zeppelin.notebook.socket.Message
-org.apache.zeppelin.socket.NotebookServer.onStatusChange : $r10 = virtualinvoke $r9.<org.apache.zeppelin.notebook.socket.Message: org.apache.zeppelin.notebook.socket.Message put(java.lang.String,java.lang.Object)>("appId", r3)
-org.apache.zeppelin.socket.NotebookServer.broadcastToWatchers : $r9 = r0.<org.apache.zeppelin.socket.NotebookServer: java.util.Queue watcherSockets>
-org.apache.zeppelin.socket.NotebookServer.broadcastToWatchers : exitmonitor r4
-org.apache.zeppelin.socket.NotebookServer.broadcastToWatchers : $r10 = r0.<org.apache.zeppelin.socket.NotebookServer: java.util.Queue watcherSockets>
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.scheduler.SchedulerService.close : $r1 = r0.<org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.scheduler.SchedulerService: java.util.concurrent.ScheduledExecutorService pool>
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinhubClient.initialize : $r4 = <org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinhubClient: org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinhubClient instance>
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinhubClient.initialize : $r2 = <org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinhubClient: org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinhubClient instance>
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.listener.ZeppelinhubWebsocket.newInstance : $r1 = new org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.listener.ZeppelinhubWebsocket
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.scheduler.SchedulerService.add : $r3 = r0.<org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.scheduler.SchedulerService: java.util.concurrent.ScheduledExecutorService pool>
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinhubClient.send : r3 = specialinvoke r0.<org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinhubClient: org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.session.ZeppelinhubSession connect(java.lang.String)>(r2)
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinhubClient.send : $z0 = specialinvoke r0.<org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinhubClient: boolean isConnectedToZeppelinhub(org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.session.ZeppelinhubSession)>(r3)
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinhubClient.send : $r4 = <org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinhubClient: org.slf4j.Logger LOG>
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinhubClient.send : r3 = specialinvoke r0.<org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinhubClient: org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.session.ZeppelinhubSession getSession(java.lang.String)>(r2)
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinhubClient.removeSession : if r2 != null goto virtualinvoke r2.<org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.session.ZeppelinhubSession: void close()>()
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinhubClient.removeSession : r2 = specialinvoke r0.<org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinhubClient: org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.session.ZeppelinhubSession getSession(java.lang.String)>(r1)
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinhubClient.addRoutines : $r1 = r0.<org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinhubClient: org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.scheduler.SchedulerService schedulerService>
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinhubClient.isConnectedToZeppelinhub : if r1 == null goto $z1 = 0
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinhubClient.connect : $z0 = staticinvoke <org.apache.commons.lang.StringUtils: boolean isBlank(java.lang.String)>(r1)
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinhubClient.connect : $r9 = r0.<org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinhubClient: org.eclipse.jetty.websocket.client.WebSocketClient client>
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinhubClient.connect : r3 = specialinvoke r0.<org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinhubClient: org.eclipse.jetty.websocket.client.ClientUpgradeRequest getConnectionRequest(java.lang.String)>(r1)
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinhubClient.connect : r2 = staticinvoke <org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.listener.ZeppelinhubWebsocket: org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.listener.ZeppelinhubWebsocket newInstance(java.lang.String)>(r1)
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinhubClient.getToken : $r1 = r0.<org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinhubClient: java.lang.String zeppelinhubToken>
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinhubClient.getSession : $r2 = r0.<org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinhubClient: java.util.Map sessionMap>
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinhubClient.stop : $r4 = r0.<org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinhubClient: org.eclipse.jetty.websocket.client.WebSocketClient client>
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinhubClient.stop : $r1 = <org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinhubClient: org.slf4j.Logger LOG>
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinhubClient.stop : $r3 = r0.<org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinhubClient: org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.scheduler.SchedulerService schedulerService>
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinhubClient.stop : goto [?= return]
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinhubClient.getConnectionRequest : return r3
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinhubClient.getConnectionRequest : $r2 = new org.eclipse.jetty.websocket.client.ClientUpgradeRequest
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinhubClient.getConnectionRequest : $r5 = newarray (java.net.HttpCookie)[1]
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.scheduler.ZeppelinHubHeartbeat.newInstance : $r1 = new org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.scheduler.ZeppelinHubHeartbeat
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinhubClient.start : $r4 = <org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinhubClient: org.slf4j.Logger LOG>
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinhubClient.start : specialinvoke r0.<org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinhubClient: void addRoutines()>()
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinhubClient.start : r1 = $r3
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinhubClient.start : $r2 = r0.<org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinhubClient: org.eclipse.jetty.websocket.client.WebSocketClient client>

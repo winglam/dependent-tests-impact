@@ -1,5 +1,25 @@
-org.apache.zeppelin.utils.SecurityUtils.getPrincipal : $z0 = <org.apache.zeppelin.utils.SecurityUtils: boolean isEnabled>
-org.apache.zeppelin.utils.SecurityUtils.getPrincipal : return "anonymous"
-org.apache.zeppelin.rest.CredentialRestApi.getCredentials : $r5 = r0.<org.apache.zeppelin.rest.CredentialRestApi: org.apache.zeppelin.user.Credentials credentials>
-org.apache.zeppelin.rest.CredentialRestApi.getCredentials : r2 = staticinvoke <org.apache.zeppelin.utils.SecurityUtils: java.lang.String getPrincipal()>()
-org.apache.zeppelin.rest.CredentialRestApi.getCredentials : $r4 = r0.<org.apache.zeppelin.rest.CredentialRestApi: org.slf4j.Logger logger>
+org.apache.zeppelin.notebook.Note.getInfo : $r3 = r0.<org.apache.zeppelin.notebook.Note: java.util.Map info>
+org.apache.zeppelin.notebook.Note.getInfo : $r2 = r0.<org.apache.zeppelin.notebook.Note: java.util.Map info>
+org.apache.zeppelin.notebook.Note.onProgressUpdate : $r3 = r0.<org.apache.zeppelin.notebook.Note: org.apache.zeppelin.notebook.JobListenerFactory jobListenerFactory>
+org.apache.zeppelin.notebook.Note.addParagraph : $r2 = r0.<org.apache.zeppelin.notebook.Note: java.util.List paragraphs>
+org.apache.zeppelin.conf.ZeppelinConfiguration.create : $r4 = <org.apache.zeppelin.conf.ZeppelinConfiguration: org.apache.zeppelin.conf.ZeppelinConfiguration conf>
+org.apache.zeppelin.conf.ZeppelinConfiguration.create : $r0 = <org.apache.zeppelin.conf.ZeppelinConfiguration: org.apache.zeppelin.conf.ZeppelinConfiguration conf>
+org.apache.zeppelin.notebook.Note.getConfig : $r2 = r0.<org.apache.zeppelin.notebook.Note: java.util.Map config>
+org.apache.zeppelin.notebook.Note.getConfig : $r3 = r0.<org.apache.zeppelin.notebook.Note: java.util.Map config>
+org.apache.zeppelin.notebook.Note.generateSingleParagraphInfo : $r9 = virtualinvoke r4.<org.apache.zeppelin.notebook.Paragraph: java.lang.String getId()>()
+org.apache.zeppelin.notebook.Note.generateSingleParagraphInfo : $r6 = r0.<org.apache.zeppelin.notebook.Note: java.util.List paragraphs>
+org.apache.zeppelin.notebook.Note.generateSingleParagraphInfo : r5 = $r12
+org.apache.zeppelin.notebook.Note.generateSingleParagraphInfo : $r7 = r0.<org.apache.zeppelin.notebook.Note: java.util.List paragraphs>
+org.apache.zeppelin.notebook.Note.insertParagraph : $r5 = r0.<org.apache.zeppelin.notebook.Note: java.util.List paragraphs>
+org.apache.zeppelin.notebook.Note.insertParagraph : exitmonitor r2
+org.apache.zeppelin.notebook.Note.insertParagraph : $r7 = r0.<org.apache.zeppelin.notebook.Note: org.apache.zeppelin.notebook.NoteEventListener noteEventListener>
+org.apache.zeppelin.notebook.Note.insertParagraph : $r4 = r0.<org.apache.zeppelin.notebook.Note: java.util.List paragraphs>
+org.apache.zeppelin.notebook.Note.isPersonalizedMode : if null == r1 goto $z1 = 0
+org.apache.zeppelin.notebook.Note.isPersonalizedMode : $r2 = virtualinvoke r0.<org.apache.zeppelin.notebook.Note: java.util.Map getConfig()>()
+org.apache.zeppelin.notebook.Note.setConfig : r0.<org.apache.zeppelin.notebook.Note: java.util.Map config> = r1
+org.apache.zeppelin.notebook.Note.setInfo : r0.<org.apache.zeppelin.notebook.Note: java.util.Map info> = r1
+org.apache.zeppelin.notebook.Note.generateParagraphsInfo : $r8 = r0.<org.apache.zeppelin.notebook.Note: java.util.List paragraphs>
+org.apache.zeppelin.notebook.Note.generateParagraphsInfo : return r2
+org.apache.zeppelin.notebook.Note.generateParagraphsInfo : exitmonitor r3
+org.apache.zeppelin.notebook.Note.generateParagraphsInfo : $r1 = new java.util.LinkedList
+org.apache.zeppelin.notebook.Note.generateParagraphsInfo : $r9 = r0.<org.apache.zeppelin.notebook.Note: java.util.List paragraphs>

@@ -1,13 +1,21 @@
-org.apache.zeppelin.socket.NotebookServer.unicastParagraph : $z0 = virtualinvoke r1.<org.apache.zeppelin.notebook.Note: boolean isPersonalizedMode()>()
-org.apache.zeppelin.socket.NotebookServer.broadcast : $r10 = r0.<org.apache.zeppelin.socket.NotebookServer: java.util.Map noteSocketMap>
-org.apache.zeppelin.socket.NotebookServer.broadcast : $r9 = r0.<org.apache.zeppelin.socket.NotebookServer: java.util.Map noteSocketMap>
-org.apache.zeppelin.socket.NotebookServer.broadcast : exitmonitor r3
-org.apache.zeppelin.socket.NotebookServer.broadcast : if r4 == null goto exitmonitor r3
-org.apache.zeppelin.socket.NotebookServer.broadcast : specialinvoke r0.<org.apache.zeppelin.socket.NotebookServer: void broadcastToWatchers(java.lang.String,java.lang.String,org.apache.zeppelin.notebook.socket.Message)>(r1, "", r2)
-org.apache.zeppelin.socket.NotebookServer.onStatusChange : $r8 = virtualinvoke $r5.<org.apache.zeppelin.notebook.socket.Message: org.apache.zeppelin.notebook.socket.Message put(java.lang.String,java.lang.Object)>("noteId", r1)
-org.apache.zeppelin.socket.NotebookServer.onStatusChange : specialinvoke r0.<org.apache.zeppelin.socket.NotebookServer: void broadcast(java.lang.String,org.apache.zeppelin.notebook.socket.Message)>(r1, r7)
-org.apache.zeppelin.socket.NotebookServer.onStatusChange : $r5 = new org.apache.zeppelin.notebook.socket.Message
-org.apache.zeppelin.socket.NotebookServer.onStatusChange : $r10 = virtualinvoke $r9.<org.apache.zeppelin.notebook.socket.Message: org.apache.zeppelin.notebook.socket.Message put(java.lang.String,java.lang.Object)>("appId", r3)
-org.apache.zeppelin.socket.NotebookServer.broadcastToWatchers : $r9 = r0.<org.apache.zeppelin.socket.NotebookServer: java.util.Queue watcherSockets>
-org.apache.zeppelin.socket.NotebookServer.broadcastToWatchers : exitmonitor r4
-org.apache.zeppelin.socket.NotebookServer.broadcastToWatchers : $r10 = r0.<org.apache.zeppelin.socket.NotebookServer: java.util.Queue watcherSockets>
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient.getZeppelinConnection : $r5 = specialinvoke r0.<org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient: org.eclipse.jetty.websocket.api.Session getNoteSession(java.lang.String,java.lang.String,java.lang.String)>(r1, r2, r3)
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient.getZeppelinConnection : $z0 = staticinvoke <org.apache.commons.lang3.StringUtils: boolean isBlank(java.lang.CharSequence)>(r1)
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient.initialize : $r5 = <org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient: org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient instance>
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient.initialize : $r3 = <org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient: org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient instance>
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient.removeNoteConnection : $z0 = staticinvoke <org.apache.commons.lang3.StringUtils: boolean isBlank(java.lang.CharSequence)>(r1)
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient.removeNoteConnection : $r4 = r0.<org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient: java.util.concurrent.ConcurrentHashMap notesConnection>
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient.removeNoteConnection : $r9 = <org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient: org.slf4j.Logger LOG>
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.scheduler.ZeppelinHeartbeat.newInstance : $r1 = new org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.scheduler.ZeppelinHeartbeat
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient.getNoteSession : $r4 = <org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient: org.slf4j.Logger LOG>
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient.getNoteSession : $r9 = r0.<org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient: java.util.concurrent.ConcurrentHashMap notesConnection>
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient.getNoteSession : $r6 = r0.<org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient: java.util.concurrent.ConcurrentHashMap notesConnection>
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient.getNoteSession : $z0 = specialinvoke r0.<org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient: boolean isSessionOpen(org.eclipse.jetty.websocket.api.Session)>(r5)
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient.getNoteSession : r5 = specialinvoke r0.<org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient: org.eclipse.jetty.websocket.api.Session openNoteSession(java.lang.String,java.lang.String,java.lang.String)>(r1, r2, r3)
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient.getNoteSession : $r8 = <org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient: org.slf4j.Logger LOG>
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient.isSessionOpen : if r1 == null goto $z1 = 0
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient.openNoteSession : r7 = null
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient.openNoteSession : $r4 = new org.eclipse.jetty.websocket.client.ClientUpgradeRequest
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient.openNoteSession : n0 = null
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient.openNoteSession : $r10 = r0.<org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient: org.eclipse.jetty.websocket.client.WebSocketClient wsClient>
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient.openNoteSession : virtualinvoke r5.<org.eclipse.jetty.websocket.client.ClientUpgradeRequest: void setHeader(java.lang.String,java.lang.String)>("Origin", "*")
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinClient.openNoteSession : $r9 = new org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.listener.ZeppelinWebsocket

@@ -1,4 +1,16 @@
-org.apache.zeppelin.socket.NotebookServer.onUpdate : r3 = specialinvoke r0.<org.apache.zeppelin.socket.NotebookServer: org.apache.zeppelin.notebook.Notebook notebook()>()
-org.apache.zeppelin.socket.NotebookServer.onUpdate : if r3 != null goto r4 = virtualinvoke r3.<org.apache.zeppelin.notebook.Notebook: java.util.List getAllNotes()>()
-org.apache.zeppelin.socket.NotebookServer.notebook : $r1 = <org.apache.zeppelin.server.ZeppelinServer: org.apache.zeppelin.notebook.Notebook notebook>
-org.apache.zeppelin.socket.NotebookServer.onAdd : virtualinvoke r0.<org.apache.zeppelin.socket.NotebookServer: void onUpdate(java.lang.String,org.apache.zeppelin.display.AngularObject)>(r1, r2)
+org.apache.zeppelin.notebook.Note.getId : $r1 = r0.<org.apache.zeppelin.notebook.Note: java.lang.String id>
+org.apache.zeppelin.conf.ZeppelinConfiguration.create : $r4 = <org.apache.zeppelin.conf.ZeppelinConfiguration: org.apache.zeppelin.conf.ZeppelinConfiguration conf>
+org.apache.zeppelin.conf.ZeppelinConfiguration.create : $r0 = <org.apache.zeppelin.conf.ZeppelinConfiguration: org.apache.zeppelin.conf.ZeppelinConfiguration conf>
+org.apache.zeppelin.notebook.Note.runAll : if null != r1 goto $r7 = virtualinvoke r0.<org.apache.zeppelin.notebook.Note: java.util.List getParagraphs()>()
+org.apache.zeppelin.notebook.Note.runAll : r1 = "anonymous"
+org.apache.zeppelin.notebook.Note.runAll : $r7 = virtualinvoke r0.<org.apache.zeppelin.notebook.Note: java.util.List getParagraphs()>()
+org.apache.zeppelin.notebook.Note.runAll : $r5 = virtualinvoke r0.<org.apache.zeppelin.notebook.Note: java.util.Map getConfig()>()
+org.apache.zeppelin.notebook.Note.getConfig : $r2 = r0.<org.apache.zeppelin.notebook.Note: java.util.Map config>
+org.apache.zeppelin.notebook.Note.getConfig : $r3 = r0.<org.apache.zeppelin.notebook.Note: java.util.Map config>
+org.apache.zeppelin.notebook.Note.getParagraphs : $r4 = new java.util.LinkedList
+org.apache.zeppelin.notebook.Note.getParagraphs : $r3 = r0.<org.apache.zeppelin.notebook.Note: java.util.List paragraphs>
+org.apache.zeppelin.notebook.Note.generateParagraphsInfo : $r8 = r0.<org.apache.zeppelin.notebook.Note: java.util.List paragraphs>
+org.apache.zeppelin.notebook.Note.generateParagraphsInfo : return r2
+org.apache.zeppelin.notebook.Note.generateParagraphsInfo : exitmonitor r3
+org.apache.zeppelin.notebook.Note.generateParagraphsInfo : $r1 = new java.util.LinkedList
+org.apache.zeppelin.notebook.Note.generateParagraphsInfo : $r9 = r0.<org.apache.zeppelin.notebook.Note: java.util.List paragraphs>

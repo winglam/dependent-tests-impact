@@ -1,5 +1,8 @@
-org.apache.zeppelin.realm.LdapRealm.setUserSearchFilter : if r1 != null goto $r3 = virtualinvoke r1.<java.lang.String: java.lang.String trim()>()
-org.apache.zeppelin.realm.LdapRealm.getUserSearchAttributeTemplate : $r1 = r0.<org.apache.zeppelin.realm.LdapRealm: java.lang.String userSearchAttributeTemplate>
-org.apache.zeppelin.realm.LdapRealm.setGroupSearchEnableMatchingRuleInChain : r0.<org.apache.zeppelin.realm.LdapRealm: boolean groupSearchEnableMatchingRuleInChain> = z0
-org.apache.zeppelin.realm.LdapRealm.setUserDnTemplate : r0.<org.apache.zeppelin.realm.LdapRealm: java.lang.String userDnTemplate> = r1
-org.apache.zeppelin.realm.LdapRealm.setUserSearchAttributeTemplate : if r1 != null goto $r3 = virtualinvoke r1.<java.lang.String: java.lang.String trim()>()
+org.apache.zeppelin.helium.HeliumApplicationFactory.setNotebook : r0.<org.apache.zeppelin.helium.HeliumApplicationFactory: org.apache.zeppelin.notebook.Notebook notebook> = r1
+org.apache.zeppelin.helium.HeliumApplicationFactory$UnloadApplication.run : r2 = $r12
+org.apache.zeppelin.helium.HeliumApplicationFactory$UnloadApplication.run : if r1 == null goto return
+org.apache.zeppelin.helium.HeliumApplicationFactory$UnloadApplication.run : $r3 = r0.<org.apache.zeppelin.helium.HeliumApplicationFactory$UnloadApplication: org.apache.zeppelin.notebook.Paragraph paragraph>
+org.apache.zeppelin.helium.HeliumApplicationFactory$UnloadApplication.run : r1 = null
+org.apache.zeppelin.helium.HeliumApplicationFactory$UnloadApplication.run : $r13 = r0.<org.apache.zeppelin.helium.HeliumApplicationFactory$UnloadApplication: org.apache.zeppelin.helium.HeliumApplicationFactory this$0>
+org.apache.zeppelin.helium.HeliumApplicationFactory.access$000 : $r1 = r0.<org.apache.zeppelin.helium.HeliumApplicationFactory: org.slf4j.Logger logger>
+org.apache.zeppelin.helium.HeliumApplicationFactory.unload : $r4 = r0.<org.apache.zeppelin.helium.HeliumApplicationFactory: java.util.concurrent.ExecutorService executor>

@@ -1,0 +1,62 @@
+org.apache.zeppelin.notebook.repo.VFSNotebookRepo.setNotebookDirectory : $r18 = staticinvoke <org.apache.commons.vfs2.VFS: org.apache.commons.vfs2.FileSystemManager getManager()>()
+org.apache.zeppelin.notebook.repo.VFSNotebookRepo.setNotebookDirectory : $r19 = r0.<org.apache.zeppelin.notebook.repo.VFSNotebookRepo: org.apache.commons.vfs2.FileSystemManager fsManager>
+org.apache.zeppelin.notebook.repo.VFSNotebookRepo.setNotebookDirectory : $r17 = virtualinvoke r16.<java.io.File: java.net.URI toURI()>()
+org.apache.zeppelin.notebook.repo.VFSNotebookRepo.setNotebookDirectory : $r9 = r0.<org.apache.zeppelin.notebook.repo.VFSNotebookRepo: java.net.URI filesystemRoot>
+org.apache.zeppelin.notebook.repo.VFSNotebookRepo.setNotebookDirectory : $r3 = r0.<org.apache.zeppelin.notebook.repo.VFSNotebookRepo: org.apache.zeppelin.conf.ZeppelinConfiguration conf>
+org.apache.zeppelin.notebook.repo.VFSNotebookRepo.setNotebookDirectory : $r11 = new java.io.File
+org.apache.zeppelin.notebook.repo.VFSNotebookRepo.setNotebookDirectory : $r6 = new java.net.URI
+org.apache.zeppelin.notebook.repo.VFSNotebookRepo.setNotebookDirectory : $z1 = interfaceinvoke r22.<org.apache.commons.vfs2.FileObject: boolean exists()>()
+org.apache.zeppelin.notebook.repo.VFSNotebookRepo.setNotebookDirectory : goto [?= $r9 = r0.<org.apache.zeppelin.notebook.repo.VFSNotebookRepo: java.net.URI filesystemRoot>]
+org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars.getStringValue : $r1 = r0.<org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars: java.lang.String stringValue>
+org.apache.zeppelin.conf.ZeppelinConfiguration.getS3EncryptionMaterialsProviderClass : $r1 = <org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars: org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars ZEPPELIN_NOTEBOOK_S3_EMP>
+org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars.getIntValue : $i0 = r0.<org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars: int intValue>
+org.apache.zeppelin.conf.ZeppelinConfiguration.getBoolean : $r3 = staticinvoke <java.lang.System: java.lang.String getenv(java.lang.String)>(r1)
+org.apache.zeppelin.conf.ZeppelinConfiguration.getBoolean : $z3 = specialinvoke r0.<org.apache.zeppelin.conf.ZeppelinConfiguration: boolean getBooleanValue(java.lang.String,boolean)>(r2, z0)
+org.apache.zeppelin.conf.ZeppelinConfiguration.getBoolean : $r2 = virtualinvoke r1.<org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars: java.lang.String name()>()
+org.apache.zeppelin.conf.ZeppelinConfiguration.getBoolean : $r5 = staticinvoke <java.lang.System: java.lang.String getProperty(java.lang.String)>(r2)
+org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars.getType : $r1 = r0.<org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars: org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars$VarType type>
+org.apache.zeppelin.conf.ZeppelinConfiguration.getBucketName : $r1 = <org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars: org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars ZEPPELIN_NOTEBOOK_S3_BUCKET>
+org.apache.zeppelin.conf.ZeppelinConfiguration.getEndpoint : $r1 = <org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars: org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars ZEPPELIN_NOTEBOOK_S3_ENDPOINT>
+org.apache.zeppelin.conf.ZeppelinConfiguration.getRelativeDir : $r3 = new java.lang.StringBuilder
+org.apache.zeppelin.conf.ZeppelinConfiguration.getRelativeDir : if r1 == null goto $z1 = virtualinvoke r0.<org.apache.zeppelin.conf.ZeppelinConfiguration: boolean isWindowsPath(java.lang.String)>(r1)
+org.apache.zeppelin.conf.ZeppelinConfiguration.getS3KMSKeyRegion : $r1 = <org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars: org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars ZEPPELIN_NOTEBOOK_S3_KMS_KEY_REGION>
+org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars.getBooleanValue : $z0 = r0.<org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars: boolean booleanValue>
+org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars.values : $r0 = <org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars: org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars[] $VALUES>
+org.apache.zeppelin.notebook.repo.VFSNotebookRepo.getRootDir : $r2 = r0.<org.apache.zeppelin.notebook.repo.VFSNotebookRepo: org.apache.commons.vfs2.FileSystemManager fsManager>
+org.apache.zeppelin.notebook.repo.VFSNotebookRepo.getRootDir : return r1
+org.apache.zeppelin.notebook.repo.VFSNotebookRepo.getRootDir : $z1 = specialinvoke r0.<org.apache.zeppelin.notebook.repo.VFSNotebookRepo: boolean isDirectory(org.apache.commons.vfs2.FileObject)>(r1)
+org.apache.zeppelin.notebook.repo.VFSNotebookRepo.getRootDir : $z0 = interfaceinvoke r1.<org.apache.commons.vfs2.FileObject: boolean exists()>()
+org.apache.zeppelin.notebook.repo.VFSNotebookRepo.isDirectory : if r1 != null goto $r3 = interfaceinvoke r1.<org.apache.commons.vfs2.FileObject: org.apache.commons.vfs2.FileType getType()>()
+org.apache.zeppelin.notebook.repo.VFSNotebookRepo.isDirectory : return 1
+org.apache.zeppelin.notebook.repo.VFSNotebookRepo.isDirectory : return 0
+org.apache.zeppelin.notebook.repo.VFSNotebookRepo.isDirectory : $r3 = interfaceinvoke r1.<org.apache.commons.vfs2.FileObject: org.apache.commons.vfs2.FileType getType()>()
+org.apache.zeppelin.notebook.repo.GitNotebookRepo.revisionHistory : r3 = staticinvoke <com.google.common.collect.Lists: java.util.ArrayList newArrayList()>()
+org.apache.zeppelin.notebook.repo.GitNotebookRepo.revisionHistory : return r3
+org.apache.zeppelin.notebook.repo.GitNotebookRepo.revisionHistory : $r8 = r0.<org.apache.zeppelin.notebook.repo.GitNotebookRepo: org.eclipse.jgit.api.Git git>
+org.apache.zeppelin.notebook.repo.GitNotebookRepo.revisionHistory : $r7 = <org.apache.zeppelin.notebook.repo.GitNotebookRepo: org.slf4j.Logger LOG>
+org.apache.zeppelin.notebook.repo.GitNotebookRepo.revisionHistory : $r22 = <org.apache.zeppelin.notebook.repo.GitNotebookRepo: org.slf4j.Logger LOG>
+org.apache.zeppelin.notebook.repo.GitNotebookRepo.revisionHistory : r21 = $r20
+org.apache.zeppelin.conf.ZeppelinConfiguration.getStringValue : return r2
+org.apache.zeppelin.conf.ZeppelinConfiguration.getStringValue : if r3 == null goto return r2
+org.apache.zeppelin.conf.ZeppelinConfiguration.getStringValue : $r6 = virtualinvoke r0.<org.apache.zeppelin.conf.ZeppelinConfiguration: org.apache.commons.configuration.tree.ConfigurationNode getRootNode()>()
+org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars.getVarName : $r1 = r0.<org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars: java.lang.String varName>
+org.apache.zeppelin.conf.ZeppelinConfiguration.isWindowsPath : $z0 = virtualinvoke r1.<java.lang.String: boolean matches(java.lang.String)>("^[A-Za-z]:\\\\.*")
+org.apache.zeppelin.conf.ZeppelinConfiguration.getBooleanValue : return z0
+org.apache.zeppelin.conf.ZeppelinConfiguration.getBooleanValue : if r2 == null goto return z0
+org.apache.zeppelin.conf.ZeppelinConfiguration.getBooleanValue : $r5 = virtualinvoke r0.<org.apache.zeppelin.conf.ZeppelinConfiguration: org.apache.commons.configuration.tree.ConfigurationNode getRootNode()>()
+org.apache.zeppelin.conf.ZeppelinConfiguration.isS3ServerSideEncryption : $r1 = <org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars: org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars ZEPPELIN_NOTEBOOK_S3_SSE>
+org.apache.zeppelin.notebook.repo.VFSNotebookRepo.getNote : $z0 = specialinvoke r0.<org.apache.zeppelin.notebook.repo.VFSNotebookRepo: boolean isDirectory(org.apache.commons.vfs2.FileObject)>(r1)
+org.apache.zeppelin.notebook.repo.VFSNotebookRepo.getNote : $r15 = new java.io.IOException
+org.apache.zeppelin.conf.ZeppelinConfiguration.getUser : $r1 = <org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars: org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars ZEPPELIN_NOTEBOOK_S3_USER>
+org.apache.zeppelin.notebook.repo.VFSNotebookRepo.get : $r8 = specialinvoke r0.<org.apache.zeppelin.notebook.repo.VFSNotebookRepo: org.apache.zeppelin.notebook.Note getNote(org.apache.commons.vfs2.FileObject)>(r4)
+org.apache.zeppelin.notebook.repo.VFSNotebookRepo.get : $r5 = r0.<org.apache.zeppelin.notebook.repo.VFSNotebookRepo: org.apache.commons.vfs2.FileSystemManager fsManager>
+org.apache.zeppelin.notebook.repo.VFSNotebookRepo.get : $r7 = <org.apache.commons.vfs2.NameScope: org.apache.commons.vfs2.NameScope CHILD>
+org.apache.zeppelin.conf.ZeppelinConfiguration.getString : $r4 = staticinvoke <java.lang.System: java.lang.String getenv(java.lang.String)>(r1)
+org.apache.zeppelin.conf.ZeppelinConfiguration.getString : $r8 = specialinvoke r0.<org.apache.zeppelin.conf.ZeppelinConfiguration: java.lang.String getStringValue(java.lang.String,java.lang.String)>(r2, r3)
+org.apache.zeppelin.conf.ZeppelinConfiguration.getString : $r6 = staticinvoke <java.lang.System: java.lang.String getProperty(java.lang.String)>(r2)
+org.apache.zeppelin.conf.ZeppelinConfiguration.getString : $r2 = virtualinvoke r1.<org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars: java.lang.String name()>()
+org.apache.zeppelin.conf.ZeppelinConfiguration.getNotebookDir : $r1 = <org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars: org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars ZEPPELIN_NOTEBOOK_DIR>
+org.apache.zeppelin.conf.ZeppelinConfiguration.getS3KMSKeyID : $r1 = <org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars: org.apache.zeppelin.conf.ZeppelinConfiguration$ConfVars ZEPPELIN_NOTEBOOK_S3_KMS_KEY_ID>
+org.apache.zeppelin.notebook.repo.VFSNotebookRepo.getPath : $r5 = new java.lang.StringBuilder
+org.apache.zeppelin.notebook.repo.VFSNotebookRepo.getPath : if r1 == null goto $r3 = r0.<org.apache.zeppelin.notebook.repo.VFSNotebookRepo: java.net.URI filesystemRoot>
+org.apache.zeppelin.notebook.repo.VFSNotebookRepo.getPath : $z0 = virtualinvoke r1.<java.lang.String: boolean startsWith(java.lang.String)>("/")

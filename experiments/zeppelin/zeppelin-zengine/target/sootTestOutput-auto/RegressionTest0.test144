@@ -1,14 +1,12 @@
-org.apache.zeppelin.rest.InterpreterRestApi.removeSetting : $r3 = r0.<org.apache.zeppelin.rest.InterpreterRestApi: org.apache.zeppelin.interpreter.InterpreterSettingManager interpreterSettingManager>
-org.apache.zeppelin.rest.InterpreterRestApi.removeSetting : $r2 = <org.apache.zeppelin.rest.InterpreterRestApi: org.slf4j.Logger logger>
-org.apache.zeppelin.socket.NotebookServer.broadcast : $r10 = r0.<org.apache.zeppelin.socket.NotebookServer: java.util.Map noteSocketMap>
-org.apache.zeppelin.socket.NotebookServer.broadcast : $r9 = r0.<org.apache.zeppelin.socket.NotebookServer: java.util.Map noteSocketMap>
-org.apache.zeppelin.socket.NotebookServer.broadcast : exitmonitor r3
-org.apache.zeppelin.socket.NotebookServer.broadcast : if r4 == null goto exitmonitor r3
-org.apache.zeppelin.socket.NotebookServer.broadcast : specialinvoke r0.<org.apache.zeppelin.socket.NotebookServer: void broadcastToWatchers(java.lang.String,java.lang.String,org.apache.zeppelin.notebook.socket.Message)>(r1, "", r2)
-org.apache.zeppelin.socket.NotebookServer.onStatusChange : $r8 = virtualinvoke $r5.<org.apache.zeppelin.notebook.socket.Message: org.apache.zeppelin.notebook.socket.Message put(java.lang.String,java.lang.Object)>("noteId", r1)
-org.apache.zeppelin.socket.NotebookServer.onStatusChange : specialinvoke r0.<org.apache.zeppelin.socket.NotebookServer: void broadcast(java.lang.String,org.apache.zeppelin.notebook.socket.Message)>(r1, r7)
-org.apache.zeppelin.socket.NotebookServer.onStatusChange : $r5 = new org.apache.zeppelin.notebook.socket.Message
-org.apache.zeppelin.socket.NotebookServer.onStatusChange : $r10 = virtualinvoke $r9.<org.apache.zeppelin.notebook.socket.Message: org.apache.zeppelin.notebook.socket.Message put(java.lang.String,java.lang.Object)>("appId", r3)
-org.apache.zeppelin.socket.NotebookServer.broadcastToWatchers : $r9 = r0.<org.apache.zeppelin.socket.NotebookServer: java.util.Queue watcherSockets>
-org.apache.zeppelin.socket.NotebookServer.broadcastToWatchers : exitmonitor r4
-org.apache.zeppelin.socket.NotebookServer.broadcastToWatchers : $r10 = r0.<org.apache.zeppelin.socket.NotebookServer: java.util.Queue watcherSockets>
+org.apache.zeppelin.ticket.TicketContainer.getTicket : $r9 = r0.<org.apache.zeppelin.ticket.TicketContainer: java.util.Map sessions>
+org.apache.zeppelin.ticket.TicketContainer.getTicket : return r3
+org.apache.zeppelin.ticket.TicketContainer.getTicket : $r4 = r0.<org.apache.zeppelin.ticket.TicketContainer: java.util.Map sessions>
+org.apache.zeppelin.ticket.TicketContainer.getTicket : $r7 = new org.apache.zeppelin.ticket.TicketContainer$Entry
+org.apache.zeppelin.ticket.TicketContainer.getTicket : if r2 != null goto r3 = r2.<org.apache.zeppelin.ticket.TicketContainer$Entry: java.lang.String ticket>
+org.apache.zeppelin.ticket.TicketContainer.getTicket : r3 = r2.<org.apache.zeppelin.ticket.TicketContainer$Entry: java.lang.String ticket>
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.listener.WatcherWebsocket.onWebSocketConnect : $r6 = <org.apache.zeppelin.ticket.TicketContainer: org.apache.zeppelin.ticket.TicketContainer instance>
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.listener.WatcherWebsocket.onWebSocketConnect : r4.<org.apache.zeppelin.notebook.socket.Message: java.lang.String principal> = "watcher"
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.listener.WatcherWebsocket.onWebSocketConnect : $r8 = interfaceinvoke r1.<org.eclipse.jetty.websocket.api.Session: org.eclipse.jetty.websocket.api.RemoteEndpoint getRemote()>()
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.listener.WatcherWebsocket.onWebSocketConnect : $r5 = new org.apache.zeppelin.notebook.socket.Message
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.listener.WatcherWebsocket.onWebSocketConnect : r0.<org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.listener.WatcherWebsocket: org.eclipse.jetty.websocket.api.Session connection> = r1
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.listener.WatcherWebsocket.onWebSocketConnect : $r2 = <org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.listener.WatcherWebsocket: org.slf4j.Logger LOG>

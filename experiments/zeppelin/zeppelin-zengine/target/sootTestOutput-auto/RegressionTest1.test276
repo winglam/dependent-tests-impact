@@ -1,5 +1,14 @@
-org.apache.zeppelin.realm.LdapRealm.setAuthorizationEnabled : r0.<org.apache.zeppelin.realm.LdapRealm: boolean authorizationEnabled> = z0
-org.apache.zeppelin.realm.LdapRealm.setGroupObjectClass : r0.<org.apache.zeppelin.realm.LdapRealm: java.lang.String groupObjectClass> = r1
-org.apache.zeppelin.realm.LdapRealm.getSearchBase : $r1 = r0.<org.apache.zeppelin.realm.LdapRealm: java.lang.String searchBase>
-org.apache.zeppelin.realm.LdapRealm.setUserSearchBase : r0.<org.apache.zeppelin.realm.LdapRealm: java.lang.String userSearchBase> = r1
-org.apache.zeppelin.realm.LdapRealm.setUserSearchAttributeTemplate : if r1 != null goto $r3 = virtualinvoke r1.<java.lang.String: java.lang.String trim()>()
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinhubClient.initialize : $r4 = <org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinhubClient: org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinhubClient instance>
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinhubClient.initialize : $r2 = <org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinhubClient: org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinhubClient instance>
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.scheduler.SchedulerService.add : $r3 = r0.<org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.scheduler.SchedulerService: java.util.concurrent.ScheduledExecutorService pool>
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinhubClient.stop : $r4 = r0.<org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinhubClient: org.eclipse.jetty.websocket.client.WebSocketClient client>
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinhubClient.stop : $r1 = <org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinhubClient: org.slf4j.Logger LOG>
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinhubClient.stop : $r3 = r0.<org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinhubClient: org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.scheduler.SchedulerService schedulerService>
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinhubClient.stop : goto [?= return]
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.scheduler.ZeppelinHubHeartbeat.newInstance : $r1 = new org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.scheduler.ZeppelinHubHeartbeat
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.scheduler.SchedulerService.close : $r1 = r0.<org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.scheduler.SchedulerService: java.util.concurrent.ScheduledExecutorService pool>
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinhubClient.addRoutines : $r1 = r0.<org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinhubClient: org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.scheduler.SchedulerService schedulerService>
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinhubClient.start : $r4 = <org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinhubClient: org.slf4j.Logger LOG>
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinhubClient.start : specialinvoke r0.<org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinhubClient: void addRoutines()>()
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinhubClient.start : r1 = $r3
+org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinhubClient.start : $r2 = r0.<org.apache.zeppelin.notebook.repo.zeppelinhub.websocket.ZeppelinhubClient: org.eclipse.jetty.websocket.client.WebSocketClient client>

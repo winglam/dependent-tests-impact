@@ -1,8 +1,7 @@
-org.apache.zeppelin.realm.LdapRealm.setPrincipalRegex : r3 = staticinvoke <java.util.regex.Pattern: java.util.regex.Pattern compile(java.lang.String)>(r7)
-org.apache.zeppelin.realm.LdapRealm.setPrincipalRegex : r7 = virtualinvoke r1.<java.lang.String: java.lang.String trim()>()
-org.apache.zeppelin.realm.LdapRealm.setPrincipalRegex : r0.<org.apache.zeppelin.realm.LdapRealm: java.lang.String principalRegex> = r7
-org.apache.zeppelin.realm.LdapRealm.setPrincipalRegex : r0.<org.apache.zeppelin.realm.LdapRealm: java.util.regex.Pattern principalPattern> = r3
-org.apache.zeppelin.realm.LdapRealm.setPrincipalRegex : if r1 == null goto $r2 = <org.apache.zeppelin.realm.LdapRealm: java.lang.String DEFAULT_PRINCIPAL_REGEX>
-org.apache.zeppelin.realm.LdapRealm.setGroupIdAttribute : r0.<org.apache.zeppelin.realm.LdapRealm: java.lang.String groupIdAttribute> = r1
-org.apache.zeppelin.realm.LdapRealm.getGroupSearchBase : $r1 = r0.<org.apache.zeppelin.realm.LdapRealm: java.lang.String groupSearchBase>
-org.apache.zeppelin.realm.LdapRealm.setUserSearchAttributeTemplate : if r1 != null goto $r3 = virtualinvoke r1.<java.lang.String: java.lang.String trim()>()
+org.apache.zeppelin.notebook.socket.WatcherMessage$Builder.subject : r0.<org.apache.zeppelin.notebook.socket.WatcherMessage$Builder: java.lang.String subject> = r1
+org.apache.zeppelin.notebook.socket.WatcherMessage$Builder.subject : return r0
+org.apache.zeppelin.notebook.socket.WatcherMessage$Builder.access$200 : $r1 = r0.<org.apache.zeppelin.notebook.socket.WatcherMessage$Builder: java.lang.String subject>
+org.apache.zeppelin.notebook.socket.WatcherMessage.builder : $r1 = new org.apache.zeppelin.notebook.socket.WatcherMessage$Builder
+org.apache.zeppelin.notebook.socket.WatcherMessage$Builder.build : $r1 = new org.apache.zeppelin.notebook.socket.WatcherMessage
+org.apache.zeppelin.notebook.socket.WatcherMessage$Builder.access$000 : $r1 = r0.<org.apache.zeppelin.notebook.socket.WatcherMessage$Builder: java.lang.String noteId>
+org.apache.zeppelin.notebook.socket.WatcherMessage$Builder.access$100 : $r1 = r0.<org.apache.zeppelin.notebook.socket.WatcherMessage$Builder: java.lang.String message>

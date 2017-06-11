@@ -1,1 +1,20 @@
-org.apache.zeppelin.realm.ActiveDirectoryGroupRealm.setGroupRolesMap : r0.<org.apache.zeppelin.realm.ActiveDirectoryGroupRealm: java.util.Map groupRolesMap> = r1
+org.apache.zeppelin.notebook.Note.getParagraph : $r9 = virtualinvoke r4.<org.apache.zeppelin.notebook.Paragraph: java.lang.String getId()>()
+org.apache.zeppelin.notebook.Note.getParagraph : $r6 = r0.<org.apache.zeppelin.notebook.Note: java.util.List paragraphs>
+org.apache.zeppelin.notebook.Note.getParagraph : $r7 = r0.<org.apache.zeppelin.notebook.Note: java.util.List paragraphs>
+org.apache.zeppelin.notebook.Note.getInfo : $r3 = r0.<org.apache.zeppelin.notebook.Note: java.util.Map info>
+org.apache.zeppelin.notebook.Note.getInfo : $r2 = r0.<org.apache.zeppelin.notebook.Note: java.util.Map info>
+org.apache.zeppelin.notebook.Note.run : r2 = virtualinvoke r0.<org.apache.zeppelin.notebook.Note: org.apache.zeppelin.notebook.Paragraph getParagraph(java.lang.String)>(r1)
+org.apache.zeppelin.notebook.Note.onProgressUpdate : $r3 = r0.<org.apache.zeppelin.notebook.Note: org.apache.zeppelin.notebook.JobListenerFactory jobListenerFactory>
+org.apache.zeppelin.notebook.Note.addParagraph : $r2 = r0.<org.apache.zeppelin.notebook.Note: java.util.List paragraphs>
+org.apache.zeppelin.conf.ZeppelinConfiguration.create : $r4 = <org.apache.zeppelin.conf.ZeppelinConfiguration: org.apache.zeppelin.conf.ZeppelinConfiguration conf>
+org.apache.zeppelin.conf.ZeppelinConfiguration.create : $r0 = <org.apache.zeppelin.conf.ZeppelinConfiguration: org.apache.zeppelin.conf.ZeppelinConfiguration conf>
+org.apache.zeppelin.notebook.Note.getConfig : $r2 = r0.<org.apache.zeppelin.notebook.Note: java.util.Map config>
+org.apache.zeppelin.notebook.Note.getConfig : $r1 = new java.util.HashMap
+org.apache.zeppelin.notebook.Note.getConfig : $r3 = r0.<org.apache.zeppelin.notebook.Note: java.util.Map config>
+org.apache.zeppelin.notebook.Note.insertParagraph : $r5 = r0.<org.apache.zeppelin.notebook.Note: java.util.List paragraphs>
+org.apache.zeppelin.notebook.Note.insertParagraph : exitmonitor r2
+org.apache.zeppelin.notebook.Note.insertParagraph : $r7 = r0.<org.apache.zeppelin.notebook.Note: org.apache.zeppelin.notebook.NoteEventListener noteEventListener>
+org.apache.zeppelin.notebook.Note.insertParagraph : $r4 = r0.<org.apache.zeppelin.notebook.Note: java.util.List paragraphs>
+org.apache.zeppelin.notebook.Note.isPersonalizedMode : if null == r1 goto $z1 = 0
+org.apache.zeppelin.notebook.Note.isPersonalizedMode : $r2 = virtualinvoke r0.<org.apache.zeppelin.notebook.Note: java.util.Map getConfig()>()
+org.apache.zeppelin.notebook.Note.setConfig : r0.<org.apache.zeppelin.notebook.Note: java.util.Map config> = r1

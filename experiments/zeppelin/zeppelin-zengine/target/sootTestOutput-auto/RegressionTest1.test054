@@ -1,0 +1,14 @@
+org.apache.zeppelin.helium.HeliumApplicationFactory.run : $r4 = r0.<org.apache.zeppelin.helium.HeliumApplicationFactory: java.util.concurrent.ExecutorService executor>
+org.apache.zeppelin.helium.HeliumApplicationFactory$RunApplication.run : $r11 = r0.<org.apache.zeppelin.helium.HeliumApplicationFactory$RunApplication: org.apache.zeppelin.helium.HeliumApplicationFactory this$0>
+org.apache.zeppelin.helium.HeliumApplicationFactory$RunApplication.run : r2 = $r10
+org.apache.zeppelin.helium.HeliumApplicationFactory$RunApplication.run : if r1 == null goto return
+org.apache.zeppelin.helium.HeliumApplicationFactory$RunApplication.run : r1 = null
+org.apache.zeppelin.helium.HeliumApplicationFactory$RunApplication.run : $r3 = r0.<org.apache.zeppelin.helium.HeliumApplicationFactory$RunApplication: org.apache.zeppelin.notebook.Paragraph paragraph>
+org.apache.zeppelin.helium.HeliumApplicationFactory.onParagraphStatusChange : $r3 = <org.apache.zeppelin.scheduler.Job$Status: org.apache.zeppelin.scheduler.Job$Status FINISHED>
+org.apache.zeppelin.helium.HeliumApplicationFactory.getAppState : return null
+org.apache.zeppelin.helium.HeliumApplicationFactory.getAppState : $r7 = r0.<org.apache.zeppelin.helium.HeliumApplicationFactory: org.apache.zeppelin.notebook.Notebook notebook>
+org.apache.zeppelin.helium.HeliumApplicationFactory.access$000 : $r1 = r0.<org.apache.zeppelin.helium.HeliumApplicationFactory: org.slf4j.Logger logger>
+org.apache.zeppelin.helium.HeliumApplicationFactory.onOutputUpdated : r6 = specialinvoke r0.<org.apache.zeppelin.helium.HeliumApplicationFactory: org.apache.zeppelin.notebook.ApplicationState getAppState(java.lang.String,java.lang.String,java.lang.String)>(r1, r2, r3)
+org.apache.zeppelin.helium.HeliumApplicationFactory.onOutputUpdated : if r6 == null goto $r7 = r0.<org.apache.zeppelin.helium.HeliumApplicationFactory: org.slf4j.Logger logger>
+org.apache.zeppelin.helium.HeliumApplicationFactory.onOutputUpdated : $r8 = r0.<org.apache.zeppelin.helium.HeliumApplicationFactory: org.apache.zeppelin.helium.ApplicationEventListener applicationEventListener>
+org.apache.zeppelin.helium.HeliumApplicationFactory.onOutputUpdated : $r7 = r0.<org.apache.zeppelin.helium.HeliumApplicationFactory: org.slf4j.Logger logger>

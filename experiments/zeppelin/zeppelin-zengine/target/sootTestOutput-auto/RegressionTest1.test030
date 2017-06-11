@@ -1,15 +1,32 @@
-org.apache.zeppelin.rest.HeliumRestApi.getAllPackageConfigs : r7 = $r6
-org.apache.zeppelin.rest.HeliumRestApi.getAllPackageConfigs : $r8 = r0.<org.apache.zeppelin.rest.HeliumRestApi: org.slf4j.Logger logger>
-org.apache.zeppelin.rest.HeliumRestApi.getAllPackageConfigs : $r3 = r0.<org.apache.zeppelin.rest.HeliumRestApi: org.apache.zeppelin.helium.Helium helium>
-org.apache.zeppelin.rest.HeliumRestApi.getAllPackageConfigs : $r10 = new org.apache.zeppelin.server.JsonResponse
-org.apache.zeppelin.rest.HeliumRestApi.getVisualizationPackageOrder : $r5 = r0.<org.apache.zeppelin.rest.HeliumRestApi: com.google.gson.Gson gson>
-org.apache.zeppelin.server.JsonExclusionStrategy.shouldSkipField : return 0
-org.apache.zeppelin.server.JsonResponse.build : $r7 = r0.<org.apache.zeppelin.server.JsonResponse: java.util.ArrayList cookies>
-org.apache.zeppelin.server.JsonResponse.build : $r4 = r0.<org.apache.zeppelin.server.JsonResponse: javax.ws.rs.core.Response$Status status>
-org.apache.zeppelin.server.JsonResponse.build : $r12 = virtualinvoke r1.<javax.ws.rs.core.Response$ResponseBuilder: javax.ws.rs.core.Response build()>()
-org.apache.zeppelin.server.JsonExclusionStrategy.shouldSkipClass : return 0
-org.apache.zeppelin.server.JsonResponse.toString : $z0 = r0.<org.apache.zeppelin.server.JsonResponse: boolean pretty>
-org.apache.zeppelin.server.JsonResponse.toString : $r6 = newarray (com.google.gson.ExclusionStrategy)[1]
-org.apache.zeppelin.server.JsonResponse.toString : r4 = virtualinvoke r2.<com.google.gson.GsonBuilder: com.google.gson.Gson create()>()
-org.apache.zeppelin.server.JsonResponse.toString : $r8 = virtualinvoke r4.<com.google.gson.Gson: java.lang.String toJson(java.lang.Object)>(r0)
-org.apache.zeppelin.server.JsonResponse.toString : $r1 = new com.google.gson.GsonBuilder
+org.apache.zeppelin.notebook.Folder.getNotes : $r1 = new java.util.LinkedList
+org.apache.zeppelin.notebook.Folder.getParentFolderId : $z0 = virtualinvoke r0.<org.apache.zeppelin.notebook.Folder: boolean isRoot()>()
+org.apache.zeppelin.notebook.Folder.getParentFolderId : if i0 >= 0 goto $r2 = virtualinvoke r0.<org.apache.zeppelin.notebook.Folder: java.lang.String getId()>()
+org.apache.zeppelin.notebook.Folder.getParentFolderId : $r1 = virtualinvoke r0.<org.apache.zeppelin.notebook.Folder: java.lang.String getId()>()
+org.apache.zeppelin.notebook.Folder.getParentFolderId : $r2 = virtualinvoke r0.<org.apache.zeppelin.notebook.Folder: java.lang.String getId()>()
+org.apache.zeppelin.notebook.Folder.addNotes : exitmonitor r2
+org.apache.zeppelin.notebook.Folder.addNotes : r3 = interfaceinvoke r1.<java.util.List: java.util.Iterator iterator()>()
+org.apache.zeppelin.notebook.Folder.addNotes : $r6 = r0.<org.apache.zeppelin.notebook.Folder: java.util.Map notes>
+org.apache.zeppelin.notebook.Folder.rename : $r12 = r0.<org.apache.zeppelin.notebook.Folder: java.util.Map notes>
+org.apache.zeppelin.notebook.Folder.rename : $z0 = virtualinvoke r0.<org.apache.zeppelin.notebook.Folder: boolean isRoot()>()
+org.apache.zeppelin.notebook.Folder.rename : exitmonitor r3
+org.apache.zeppelin.notebook.Folder.rename : $r10 = <org.apache.zeppelin.notebook.Folder: org.slf4j.Logger logger>
+org.apache.zeppelin.notebook.Folder.rename : r2 = virtualinvoke r0.<org.apache.zeppelin.notebook.Folder: java.lang.String getId()>()
+org.apache.zeppelin.notebook.Folder.rename : virtualinvoke r0.<org.apache.zeppelin.notebook.Folder: void notifyRenamed(java.lang.String)>(r2)
+org.apache.zeppelin.notebook.Folder.rename : $r21 = r0.<org.apache.zeppelin.notebook.Folder: java.util.Map children>
+org.apache.zeppelin.notebook.Folder.rename : $r13 = r0.<org.apache.zeppelin.notebook.Folder: java.util.Map notes>
+org.apache.zeppelin.notebook.Folder.rename : $r9 = staticinvoke <org.apache.zeppelin.notebook.Folder: java.lang.String normalizeFolderId(java.lang.String)>(r1)
+org.apache.zeppelin.notebook.Folder.hasChild : $r1 = r0.<org.apache.zeppelin.notebook.Folder: java.util.Map children>
+org.apache.zeppelin.notebook.Folder.isRoot : $r1 = virtualinvoke r0.<org.apache.zeppelin.notebook.Folder: java.lang.String getId()>()
+org.apache.zeppelin.notebook.Folder.getNotesRecursively : r1 = virtualinvoke r0.<org.apache.zeppelin.notebook.Folder: java.util.List getNotes()>()
+org.apache.zeppelin.notebook.Folder.getNotesRecursively : $r4 = r0.<org.apache.zeppelin.notebook.Folder: java.util.Map children>
+org.apache.zeppelin.notebook.Folder.getNotesRecursively : return r1
+org.apache.zeppelin.notebook.Folder.normalizeFolderId : return r3
+org.apache.zeppelin.notebook.Folder.normalizeFolderId : r3 = virtualinvoke r2.<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>("//", "/")
+org.apache.zeppelin.notebook.Folder.normalizeFolderId : $i1 = virtualinvoke r3.<java.lang.String: int length()>()
+org.apache.zeppelin.notebook.Folder.normalizeFolderId : r1 = virtualinvoke r0.<java.lang.String: java.lang.String trim()>()
+org.apache.zeppelin.notebook.Folder.normalizeFolderId : $c0 = virtualinvoke r3.<java.lang.String: char charAt(int)>(0)
+org.apache.zeppelin.notebook.Folder.normalizeFolderId : $z1 = virtualinvoke r3.<java.lang.String: boolean equals(java.lang.Object)>("/")
+org.apache.zeppelin.notebook.Folder.normalizeFolderId : r2 = virtualinvoke r1.<java.lang.String: java.lang.String replace(java.lang.CharSequence,java.lang.CharSequence)>("\\", "/")
+org.apache.zeppelin.notebook.Folder.normalizeFolderId : $z0 = virtualinvoke r2.<java.lang.String: boolean contains(java.lang.CharSequence)>("///")
+org.apache.zeppelin.notebook.Folder.notifyRenamed : $r4 = r0.<org.apache.zeppelin.notebook.Folder: java.util.List listeners>
+org.apache.zeppelin.notebook.Folder.getId : $r1 = r0.<org.apache.zeppelin.notebook.Folder: java.lang.String id>
