@@ -1,0 +1,10 @@
+org.jfree.data.time.Month.getLastMillisecond : $i1 = r0.<org.jfree.data.time.Month: int month> >>>>>>>> org.jfree.data.time.Month.getLastMillisecond : $i2 = r0.<org.jfree.data.time.Month: int year>
+org.jfree.data.time.Month.getLastMillisecond : $i2 = r0.<org.jfree.data.time.Month: int year> >>>>>>>> org.jfree.data.time.Month.getLastMillisecond : i0 = staticinvoke <org.jfree.date.SerialDate: int lastDayOfMonth(int,int)>($i1, $i2)
+org.jfree.data.time.Month.getLastMillisecond : i0 = staticinvoke <org.jfree.date.SerialDate: int lastDayOfMonth(int,int)>($i1, $i2) >>>>>>>> org.jfree.data.time.Month.getLastMillisecond : $i3 = r0.<org.jfree.data.time.Month: int year>
+org.jfree.data.time.Month.getLastMillisecond : $i3 = r0.<org.jfree.data.time.Month: int year> >>>>>>>> org.jfree.data.time.Month.getLastMillisecond : $i4 = r0.<org.jfree.data.time.Month: int month>
+org.jfree.data.time.Month.getLastMillisecond : $i4 = r0.<org.jfree.data.time.Month: int month> >>>>>>>> org.jfree.data.time.Month.getLastMillisecond : $i5 = $i4 - 1
+org.jfree.data.time.Month.getLastMillisecond : $i5 = $i4 - 1 >>>>>>>> org.jfree.data.time.Month.getLastMillisecond : virtualinvoke r1.<java.util.Calendar: void set(int,int,int,int,int,int)>($i3, $i5, i0, 23, 59, 59)
+org.jfree.data.time.Month.getLastMillisecond : virtualinvoke r1.<java.util.Calendar: void set(int,int,int,int,int,int)>($i3, $i5, i0, 23, 59, 59) >>>>>>>> org.jfree.data.time.Month.getLastMillisecond : virtualinvoke r1.<java.util.Calendar: void set(int,int)>(14, 999)
+org.jfree.data.time.Month.getLastMillisecond : virtualinvoke r1.<java.util.Calendar: void set(int,int)>(14, 999) >>>>>>>> org.jfree.data.time.Month.getLastMillisecond : $r2 = virtualinvoke r1.<java.util.Calendar: java.util.Date getTime()>()
+org.jfree.data.time.Month.getLastMillisecond : $r2 = virtualinvoke r1.<java.util.Calendar: java.util.Date getTime()>() >>>>>>>> org.jfree.data.time.Month.getLastMillisecond : $l6 = virtualinvoke $r2.<java.util.Date: long getTime()>()
+org.jfree.data.time.Month.getLastMillisecond : $l6 = virtualinvoke $r2.<java.util.Date: long getTime()>() >>>>>>>> org.jfree.data.time.Month.getLastMillisecond : return $l6

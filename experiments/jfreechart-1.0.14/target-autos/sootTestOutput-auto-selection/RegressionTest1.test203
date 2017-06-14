@@ -1,0 +1,33 @@
+org.jfree.data.Range.shift : if r0 != null >>>>>>>> org.jfree.data.Range.shift : if z0 == 0
+org.jfree.data.Range.shift : if z0 == 0 >>>>>>>> org.jfree.data.Range.shift : $r2 = new org.jfree.data.Range
+org.jfree.data.Range.shift : $r2 = new org.jfree.data.Range >>>>>>>> org.jfree.data.Range.shift : $d1 = virtualinvoke r0.<org.jfree.data.Range: double getLowerBound()>()
+org.jfree.data.Range.shift : $d1 = virtualinvoke r0.<org.jfree.data.Range: double getLowerBound()>() >>>>>>>> org.jfree.data.Range.getLowerBound : $d0 = r0.<org.jfree.data.Range: double lower>
+org.jfree.data.Range.getLowerBound : $d0 = r0.<org.jfree.data.Range: double lower> >>>>>>>> org.jfree.data.Range.getLowerBound : return $d0
+org.jfree.data.Range.getLowerBound : return $d0 >>>>>>>> org.jfree.data.Range.shift : $d2 = $d1 + d0
+org.jfree.data.Range.shift : $d2 = $d1 + d0 >>>>>>>> org.jfree.data.Range.shift : $d3 = virtualinvoke r0.<org.jfree.data.Range: double getUpperBound()>()
+org.jfree.data.Range.shift : $d3 = virtualinvoke r0.<org.jfree.data.Range: double getUpperBound()>() >>>>>>>> org.jfree.data.Range.getUpperBound : $d0 = r0.<org.jfree.data.Range: double upper>
+org.jfree.data.Range.getUpperBound : $d0 = r0.<org.jfree.data.Range: double upper> >>>>>>>> org.jfree.data.Range.getUpperBound : return $d0
+org.jfree.data.Range.getUpperBound : return $d0 >>>>>>>> org.jfree.data.Range.shift : $d4 = $d3 + d0
+org.jfree.data.Range.shift : $d4 = $d3 + d0 >>>>>>>> org.jfree.data.Range.shift : specialinvoke $r2.<org.jfree.data.Range: void <init>(double,double)>($d2, $d4)
+org.jfree.data.Range.shift : specialinvoke $r2.<org.jfree.data.Range: void <init>(double,double)>($d2, $d4) >>>>>>>> org.jfree.data.Range.shift : return $r2
+org.jfree.data.Range.shift : return $r2 >>>>>>>> org.jfree.chart.block.LengthConstraintType.equals : if r0 != r1
+org.jfree.chart.block.LengthConstraintType.equals : if r0 != r1 >>>>>>>> org.jfree.chart.block.LengthConstraintType.equals : $z0 = r1 instanceof org.jfree.chart.block.LengthConstraintType
+org.jfree.chart.block.LengthConstraintType.equals : $z0 = r1 instanceof org.jfree.chart.block.LengthConstraintType >>>>>>>> org.jfree.chart.block.LengthConstraintType.equals : if $z0 != 0
+org.jfree.chart.block.LengthConstraintType.equals : if $z0 != 0 >>>>>>>> org.jfree.chart.block.LengthConstraintType.equals : return 0
+org.jfree.chart.block.LengthConstraintType.equals : return 0 >>>>>>>> org.jfree.data.Range.constrain : d1 = d0
+org.jfree.data.Range.constrain : d1 = d0 >>>>>>>> org.jfree.data.Range.constrain : $z0 = virtualinvoke r0.<org.jfree.data.Range: boolean contains(double)>(d0)
+org.jfree.data.Range.constrain : $z0 = virtualinvoke r0.<org.jfree.data.Range: boolean contains(double)>(d0) >>>>>>>> org.jfree.data.Range.contains : $d1 = r0.<org.jfree.data.Range: double lower>
+org.jfree.data.Range.contains : $d1 = r0.<org.jfree.data.Range: double lower> >>>>>>>> org.jfree.data.Range.contains : $b0 = d0 cmpl $d1
+org.jfree.data.Range.contains : $b0 = d0 cmpl $d1 >>>>>>>> org.jfree.data.Range.contains : if $b0 < 0
+org.jfree.data.Range.contains : if $b0 < 0 >>>>>>>> org.jfree.data.Range.contains : $d2 = r0.<org.jfree.data.Range: double upper>
+org.jfree.data.Range.contains : $d2 = r0.<org.jfree.data.Range: double upper> >>>>>>>> org.jfree.data.Range.contains : $b1 = d0 cmpg $d2
+org.jfree.data.Range.contains : $b1 = d0 cmpg $d2 >>>>>>>> org.jfree.data.Range.contains : if $b1 > 0
+org.jfree.data.Range.contains : if $b1 > 0 >>>>>>>> org.jfree.data.Range.contains : $z0 = 0
+org.jfree.data.Range.contains : $z0 = 0 >>>>>>>> org.jfree.data.Range.contains : return $z0
+org.jfree.data.Range.contains : return $z0 >>>>>>>> org.jfree.data.Range.constrain : if $z0 != 0
+org.jfree.data.Range.constrain : if $z0 != 0 >>>>>>>> org.jfree.data.Range.constrain : $d2 = r0.<org.jfree.data.Range: double upper>
+org.jfree.data.Range.constrain : $d2 = r0.<org.jfree.data.Range: double upper> >>>>>>>> org.jfree.data.Range.constrain : $b0 = d0 cmpl $d2
+org.jfree.data.Range.constrain : $b0 = d0 cmpl $d2 >>>>>>>> org.jfree.data.Range.constrain : if $b0 <= 0
+org.jfree.data.Range.constrain : if $b0 <= 0 >>>>>>>> org.jfree.data.Range.constrain : d1 = r0.<org.jfree.data.Range: double upper>
+org.jfree.data.Range.constrain : d1 = r0.<org.jfree.data.Range: double upper> >>>>>>>> org.jfree.data.Range.constrain : goto [?= return d1]
+org.jfree.data.Range.constrain : goto [?= return d1] >>>>>>>> org.jfree.data.Range.constrain : return d1

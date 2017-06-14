@@ -1,0 +1,255 @@
+org.jfree.chart.plot.CompassPlot.draw : z0 = 0 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : z1 = 0
+org.jfree.chart.plot.CompassPlot.draw : z1 = 0 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : if r5 == null
+org.jfree.chart.plot.CompassPlot.draw : if r5 == null >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : virtualinvoke r5.<org.jfree.chart.plot.PlotRenderingInfo: void setPlotArea(java.awt.geom.Rectangle2D)>(r2)
+org.jfree.chart.plot.CompassPlot.draw : if r5 == null >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : r6 = virtualinvoke r0.<org.jfree.chart.plot.CompassPlot: org.jfree.ui.RectangleInsets getInsets()>()
+org.jfree.chart.plot.CompassPlot.draw : r6 = virtualinvoke r0.<org.jfree.chart.plot.CompassPlot: org.jfree.ui.RectangleInsets getInsets()>() >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : virtualinvoke r6.<org.jfree.ui.RectangleInsets: void trim(java.awt.geom.Rectangle2D)>(r2)
+org.jfree.chart.plot.CompassPlot.draw : virtualinvoke r6.<org.jfree.ui.RectangleInsets: void trim(java.awt.geom.Rectangle2D)>(r2) >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $z3 = r0.<org.jfree.chart.plot.CompassPlot: boolean drawBorder>
+org.jfree.chart.plot.CompassPlot.draw : $z3 = r0.<org.jfree.chart.plot.CompassPlot: boolean drawBorder> >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : if $z3 == 0
+org.jfree.chart.plot.CompassPlot.draw : if $z3 == 0 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : virtualinvoke r0.<org.jfree.chart.plot.CompassPlot: void drawBackground(java.awt.Graphics2D,java.awt.geom.Rectangle2D)>(r1, r2)
+org.jfree.chart.plot.CompassPlot.draw : if $z3 == 0 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $d2 = virtualinvoke r2.<java.awt.geom.Rectangle2D: double getWidth()>()
+org.jfree.chart.plot.CompassPlot.draw : $d2 = virtualinvoke r2.<java.awt.geom.Rectangle2D: double getWidth()>() >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $d3 = $d2 / 2.0
+org.jfree.chart.plot.CompassPlot.draw : $d3 = $d2 / 2.0 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : i0 = (int) $d3
+org.jfree.chart.plot.CompassPlot.draw : i0 = (int) $d3 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $d4 = virtualinvoke r2.<java.awt.geom.Rectangle2D: double getHeight()>()
+org.jfree.chart.plot.CompassPlot.draw : $d4 = virtualinvoke r2.<java.awt.geom.Rectangle2D: double getHeight()>() >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $d5 = $d4 / 2.0
+org.jfree.chart.plot.CompassPlot.draw : $d5 = $d4 / 2.0 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : i1 = (int) $d5
+org.jfree.chart.plot.CompassPlot.draw : i1 = (int) $d5 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : i2 = i0
+org.jfree.chart.plot.CompassPlot.draw : i2 = i0 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : if i1 >= i0
+org.jfree.chart.plot.CompassPlot.draw : if i1 >= i0 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : i2 = i1
+org.jfree.chart.plot.CompassPlot.draw : if i1 >= i0 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : i11 = i2 + -1
+org.jfree.chart.plot.CompassPlot.draw : i11 = i2 + -1 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : i3 = 2 * i11
+org.jfree.chart.plot.CompassPlot.draw : i3 = 2 * i11 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $d6 = virtualinvoke r2.<java.awt.geom.Rectangle2D: double getMinX()>()
+org.jfree.chart.plot.CompassPlot.draw : $d6 = virtualinvoke r2.<java.awt.geom.Rectangle2D: double getMinX()>() >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $i12 = (int) $d6
+org.jfree.chart.plot.CompassPlot.draw : $i12 = (int) $d6 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : i13 = i0 + $i12
+org.jfree.chart.plot.CompassPlot.draw : i13 = i0 + $i12 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $d7 = virtualinvoke r2.<java.awt.geom.Rectangle2D: double getMinY()>()
+org.jfree.chart.plot.CompassPlot.draw : $d7 = virtualinvoke r2.<java.awt.geom.Rectangle2D: double getMinY()>() >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $i14 = (int) $d7
+org.jfree.chart.plot.CompassPlot.draw : $i14 = (int) $d7 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : i15 = i1 + $i14
+org.jfree.chart.plot.CompassPlot.draw : i15 = i1 + $i14 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $r9 = r0.<org.jfree.chart.plot.CompassPlot: java.awt.geom.Ellipse2D circle1>
+org.jfree.chart.plot.CompassPlot.draw : $r9 = r0.<org.jfree.chart.plot.CompassPlot: java.awt.geom.Ellipse2D circle1> >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $i16 = i13 - i11
+org.jfree.chart.plot.CompassPlot.draw : $i16 = i13 - i11 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $d8 = (double) $i16
+org.jfree.chart.plot.CompassPlot.draw : $d8 = (double) $i16 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $i17 = i15 - i11
+org.jfree.chart.plot.CompassPlot.draw : $i17 = i15 - i11 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $d9 = (double) $i17
+org.jfree.chart.plot.CompassPlot.draw : $d9 = (double) $i17 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $d10 = (double) i3
+org.jfree.chart.plot.CompassPlot.draw : $d10 = (double) i3 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $d11 = (double) i3
+org.jfree.chart.plot.CompassPlot.draw : $d11 = (double) i3 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : virtualinvoke $r9.<java.awt.geom.Ellipse2D: void setFrame(double,double,double,double)>($d8, $d9, $d10, $d11)
+org.jfree.chart.plot.CompassPlot.draw : virtualinvoke $r9.<java.awt.geom.Ellipse2D: void setFrame(double,double,double,double)>($d8, $d9, $d10, $d11) >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $r10 = r0.<org.jfree.chart.plot.CompassPlot: java.awt.geom.Ellipse2D circle2>
+org.jfree.chart.plot.CompassPlot.draw : $r10 = r0.<org.jfree.chart.plot.CompassPlot: java.awt.geom.Ellipse2D circle2> >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $i18 = i13 - i11
+org.jfree.chart.plot.CompassPlot.draw : $i18 = i13 - i11 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $i19 = $i18 + 15
+org.jfree.chart.plot.CompassPlot.draw : $i19 = $i18 + 15 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $d12 = (double) $i19
+org.jfree.chart.plot.CompassPlot.draw : $d12 = (double) $i19 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $i20 = i15 - i11
+org.jfree.chart.plot.CompassPlot.draw : $i20 = i15 - i11 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $i21 = $i20 + 15
+org.jfree.chart.plot.CompassPlot.draw : $i21 = $i20 + 15 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $d13 = (double) $i21
+org.jfree.chart.plot.CompassPlot.draw : $d13 = (double) $i21 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $i22 = i3 - 30
+org.jfree.chart.plot.CompassPlot.draw : $i22 = i3 - 30 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $d14 = (double) $i22
+org.jfree.chart.plot.CompassPlot.draw : $d14 = (double) $i22 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $i23 = i3 - 30
+org.jfree.chart.plot.CompassPlot.draw : $i23 = i3 - 30 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $d15 = (double) $i23
+org.jfree.chart.plot.CompassPlot.draw : $d15 = (double) $i23 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : virtualinvoke $r10.<java.awt.geom.Ellipse2D: void setFrame(double,double,double,double)>($d12, $d13, $d14, $d15)
+org.jfree.chart.plot.CompassPlot.draw : virtualinvoke $r10.<java.awt.geom.Ellipse2D: void setFrame(double,double,double,double)>($d12, $d13, $d14, $d15) >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $r11 = r0.<org.jfree.chart.plot.CompassPlot: java.awt.Paint rosePaint>
+org.jfree.chart.plot.CompassPlot.draw : $r11 = r0.<org.jfree.chart.plot.CompassPlot: java.awt.Paint rosePaint> >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : virtualinvoke r1.<java.awt.Graphics2D: void setPaint(java.awt.Paint)>($r11)
+org.jfree.chart.plot.CompassPlot.draw : virtualinvoke r1.<java.awt.Graphics2D: void setPaint(java.awt.Paint)>($r11) >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $r12 = new java.awt.geom.Area
+org.jfree.chart.plot.CompassPlot.draw : $r12 = new java.awt.geom.Area >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $r13 = r0.<org.jfree.chart.plot.CompassPlot: java.awt.geom.Ellipse2D circle1>
+org.jfree.chart.plot.CompassPlot.draw : $r13 = r0.<org.jfree.chart.plot.CompassPlot: java.awt.geom.Ellipse2D circle1> >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : specialinvoke $r12.<java.awt.geom.Area: void <init>(java.awt.Shape)>($r13)
+org.jfree.chart.plot.CompassPlot.draw : specialinvoke $r12.<java.awt.geom.Area: void <init>(java.awt.Shape)>($r13) >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : r0.<org.jfree.chart.plot.CompassPlot: java.awt.geom.Area a1> = $r12
+org.jfree.chart.plot.CompassPlot.draw : r0.<org.jfree.chart.plot.CompassPlot: java.awt.geom.Area a1> = $r12 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $r14 = new java.awt.geom.Area
+org.jfree.chart.plot.CompassPlot.draw : $r14 = new java.awt.geom.Area >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $r15 = r0.<org.jfree.chart.plot.CompassPlot: java.awt.geom.Ellipse2D circle2>
+org.jfree.chart.plot.CompassPlot.draw : $r15 = r0.<org.jfree.chart.plot.CompassPlot: java.awt.geom.Ellipse2D circle2> >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : specialinvoke $r14.<java.awt.geom.Area: void <init>(java.awt.Shape)>($r15)
+org.jfree.chart.plot.CompassPlot.draw : specialinvoke $r14.<java.awt.geom.Area: void <init>(java.awt.Shape)>($r15) >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : r0.<org.jfree.chart.plot.CompassPlot: java.awt.geom.Area a2> = $r14
+org.jfree.chart.plot.CompassPlot.draw : r0.<org.jfree.chart.plot.CompassPlot: java.awt.geom.Area a2> = $r14 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $r16 = r0.<org.jfree.chart.plot.CompassPlot: java.awt.geom.Area a1>
+org.jfree.chart.plot.CompassPlot.draw : $r16 = r0.<org.jfree.chart.plot.CompassPlot: java.awt.geom.Area a1> >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $r17 = r0.<org.jfree.chart.plot.CompassPlot: java.awt.geom.Area a2>
+org.jfree.chart.plot.CompassPlot.draw : $r17 = r0.<org.jfree.chart.plot.CompassPlot: java.awt.geom.Area a2> >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : virtualinvoke $r16.<java.awt.geom.Area: void subtract(java.awt.geom.Area)>($r17)
+org.jfree.chart.plot.CompassPlot.draw : virtualinvoke $r16.<java.awt.geom.Area: void subtract(java.awt.geom.Area)>($r17) >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $r18 = r0.<org.jfree.chart.plot.CompassPlot: java.awt.geom.Area a1>
+org.jfree.chart.plot.CompassPlot.draw : $r18 = r0.<org.jfree.chart.plot.CompassPlot: java.awt.geom.Area a1> >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : virtualinvoke r1.<java.awt.Graphics2D: void fill(java.awt.Shape)>($r18)
+org.jfree.chart.plot.CompassPlot.draw : virtualinvoke r1.<java.awt.Graphics2D: void fill(java.awt.Shape)>($r18) >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $r19 = r0.<org.jfree.chart.plot.CompassPlot: java.awt.Paint roseCenterPaint>
+org.jfree.chart.plot.CompassPlot.draw : $r19 = r0.<org.jfree.chart.plot.CompassPlot: java.awt.Paint roseCenterPaint> >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : virtualinvoke r1.<java.awt.Graphics2D: void setPaint(java.awt.Paint)>($r19)
+org.jfree.chart.plot.CompassPlot.draw : virtualinvoke r1.<java.awt.Graphics2D: void setPaint(java.awt.Paint)>($r19) >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : i4 = i3 - 30
+org.jfree.chart.plot.CompassPlot.draw : i4 = i3 - 30 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $i24 = i13 - i11
+org.jfree.chart.plot.CompassPlot.draw : $i24 = i13 - i11 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $i25 = $i24 + 15
+org.jfree.chart.plot.CompassPlot.draw : $i25 = $i24 + 15 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $i26 = i15 - i11
+org.jfree.chart.plot.CompassPlot.draw : $i26 = i15 - i11 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $i27 = $i26 + 15
+org.jfree.chart.plot.CompassPlot.draw : $i27 = $i26 + 15 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : virtualinvoke r1.<java.awt.Graphics2D: void fillOval(int,int,int,int)>($i25, $i27, i4, i4)
+org.jfree.chart.plot.CompassPlot.draw : virtualinvoke r1.<java.awt.Graphics2D: void fillOval(int,int,int,int)>($i25, $i27, i4, i4) >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $r20 = r0.<org.jfree.chart.plot.CompassPlot: java.awt.Paint roseHighlightPaint>
+org.jfree.chart.plot.CompassPlot.draw : $r20 = r0.<org.jfree.chart.plot.CompassPlot: java.awt.Paint roseHighlightPaint> >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : virtualinvoke r1.<java.awt.Graphics2D: void setPaint(java.awt.Paint)>($r20)
+org.jfree.chart.plot.CompassPlot.draw : virtualinvoke r1.<java.awt.Graphics2D: void setPaint(java.awt.Paint)>($r20) >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $i28 = i13 - i11
+org.jfree.chart.plot.CompassPlot.draw : $i28 = i13 - i11 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $i29 = i15 - i11
+org.jfree.chart.plot.CompassPlot.draw : $i29 = i15 - i11 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : virtualinvoke r1.<java.awt.Graphics2D: void drawOval(int,int,int,int)>($i28, $i29, i3, i3)
+org.jfree.chart.plot.CompassPlot.draw : virtualinvoke r1.<java.awt.Graphics2D: void drawOval(int,int,int,int)>($i28, $i29, i3, i3) >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : i30 = i3 - 20
+org.jfree.chart.plot.CompassPlot.draw : i30 = i3 - 20 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $i31 = i13 - i11
+org.jfree.chart.plot.CompassPlot.draw : $i31 = i13 - i11 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $i32 = $i31 + 10
+org.jfree.chart.plot.CompassPlot.draw : $i32 = $i31 + 10 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $i33 = i15 - i11
+org.jfree.chart.plot.CompassPlot.draw : $i33 = i15 - i11 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $i34 = $i33 + 10
+org.jfree.chart.plot.CompassPlot.draw : $i34 = $i33 + 10 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : virtualinvoke r1.<java.awt.Graphics2D: void drawOval(int,int,int,int)>($i32, $i34, i30, i30)
+org.jfree.chart.plot.CompassPlot.draw : virtualinvoke r1.<java.awt.Graphics2D: void drawOval(int,int,int,int)>($i32, $i34, i30, i30) >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : i35 = i3 - 30
+org.jfree.chart.plot.CompassPlot.draw : i35 = i3 - 30 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $i36 = i13 - i11
+org.jfree.chart.plot.CompassPlot.draw : $i36 = i13 - i11 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $i37 = $i36 + 15
+org.jfree.chart.plot.CompassPlot.draw : $i37 = $i36 + 15 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $i38 = i15 - i11
+org.jfree.chart.plot.CompassPlot.draw : $i38 = i15 - i11 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $i39 = $i38 + 15
+org.jfree.chart.plot.CompassPlot.draw : $i39 = $i38 + 15 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : virtualinvoke r1.<java.awt.Graphics2D: void drawOval(int,int,int,int)>($i37, $i39, i35, i35)
+org.jfree.chart.plot.CompassPlot.draw : virtualinvoke r1.<java.awt.Graphics2D: void drawOval(int,int,int,int)>($i37, $i39, i35, i35) >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : i40 = i3 - 80
+org.jfree.chart.plot.CompassPlot.draw : i40 = i3 - 80 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $i41 = i13 - i11
+org.jfree.chart.plot.CompassPlot.draw : $i41 = i13 - i11 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $i42 = $i41 + 40
+org.jfree.chart.plot.CompassPlot.draw : $i42 = $i41 + 40 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $i43 = i15 - i11
+org.jfree.chart.plot.CompassPlot.draw : $i43 = i15 - i11 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $i44 = $i43 + 40
+org.jfree.chart.plot.CompassPlot.draw : $i44 = $i43 + 40 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : virtualinvoke r1.<java.awt.Graphics2D: void drawOval(int,int,int,int)>($i42, $i44, i40, i40)
+org.jfree.chart.plot.CompassPlot.draw : virtualinvoke r1.<java.awt.Graphics2D: void drawOval(int,int,int,int)>($i42, $i44, i40, i40) >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : i45 = i11 - 20
+org.jfree.chart.plot.CompassPlot.draw : i45 = i11 - 20 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : i46 = i11 - 32
+org.jfree.chart.plot.CompassPlot.draw : i46 = i11 - 32 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : i5 = 0
+org.jfree.chart.plot.CompassPlot.draw : i5 = 0 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : if i5 >= 360
+org.jfree.chart.plot.CompassPlot.draw : if i5 >= 360 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $d16 = (double) i5
+org.jfree.chart.plot.CompassPlot.draw : if i5 >= 360 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $r21 = r0.<org.jfree.chart.plot.CompassPlot: java.awt.Paint roseHighlightPaint>
+org.jfree.chart.plot.CompassPlot.draw : $r21 = r0.<org.jfree.chart.plot.CompassPlot: java.awt.Paint roseHighlightPaint> >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : virtualinvoke r1.<java.awt.Graphics2D: void setPaint(java.awt.Paint)>($r21)
+org.jfree.chart.plot.CompassPlot.draw : virtualinvoke r1.<java.awt.Graphics2D: void setPaint(java.awt.Paint)>($r21) >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : i52 = i11 - 26
+org.jfree.chart.plot.CompassPlot.draw : i52 = i11 - 26 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : b53 = 7
+org.jfree.chart.plot.CompassPlot.draw : b53 = 7 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : i54 = 45
+org.jfree.chart.plot.CompassPlot.draw : i54 = 45 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : if i54 >= 360
+org.jfree.chart.plot.CompassPlot.draw : if i54 >= 360 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $d29 = (double) i54
+org.jfree.chart.plot.CompassPlot.draw : if i54 >= 360 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : i63 = 0
+org.jfree.chart.plot.CompassPlot.draw : i63 = 0 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : if i63 >= 360
+org.jfree.chart.plot.CompassPlot.draw : if i63 >= 360 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $d37 = (double) i63
+org.jfree.chart.plot.CompassPlot.draw : if i63 >= 360 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : i72 = i11 - 42
+org.jfree.chart.plot.CompassPlot.draw : i72 = i11 - 42 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : r23 = virtualinvoke r0.<org.jfree.chart.plot.CompassPlot: java.awt.Font getCompassFont(int)>(i11)
+org.jfree.chart.plot.CompassPlot.draw : r23 = virtualinvoke r0.<org.jfree.chart.plot.CompassPlot: java.awt.Font getCompassFont(int)>(i11) >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : virtualinvoke r1.<java.awt.Graphics2D: void setFont(java.awt.Font)>(r23)
+org.jfree.chart.plot.CompassPlot.draw : virtualinvoke r1.<java.awt.Graphics2D: void setFont(java.awt.Font)>(r23) >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $r24 = <org.jfree.chart.plot.CompassPlot: java.util.ResourceBundle localizationResources>
+org.jfree.chart.plot.CompassPlot.draw : $r24 = <org.jfree.chart.plot.CompassPlot: java.util.ResourceBundle localizationResources> >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $r25 = virtualinvoke $r24.<java.util.ResourceBundle: java.lang.String getString(java.lang.String)>("N")
+org.jfree.chart.plot.CompassPlot.draw : $r25 = virtualinvoke $r24.<java.util.ResourceBundle: java.lang.String getString(java.lang.String)>("N") >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $i73 = i13 - 5
+org.jfree.chart.plot.CompassPlot.draw : $i73 = i13 - 5 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $i74 = i15 - i72
+org.jfree.chart.plot.CompassPlot.draw : $i74 = i15 - i72 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $i75 = virtualinvoke r23.<java.awt.Font: int getSize()>()
+org.jfree.chart.plot.CompassPlot.draw : $i75 = virtualinvoke r23.<java.awt.Font: int getSize()>() >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $i76 = $i74 + $i75
+org.jfree.chart.plot.CompassPlot.draw : $i76 = $i74 + $i75 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : virtualinvoke r1.<java.awt.Graphics2D: void drawString(java.lang.String,int,int)>($r25, $i73, $i76)
+org.jfree.chart.plot.CompassPlot.draw : virtualinvoke r1.<java.awt.Graphics2D: void drawString(java.lang.String,int,int)>($r25, $i73, $i76) >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $r26 = <org.jfree.chart.plot.CompassPlot: java.util.ResourceBundle localizationResources>
+org.jfree.chart.plot.CompassPlot.draw : $r26 = <org.jfree.chart.plot.CompassPlot: java.util.ResourceBundle localizationResources> >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $r27 = virtualinvoke $r26.<java.util.ResourceBundle: java.lang.String getString(java.lang.String)>("S")
+org.jfree.chart.plot.CompassPlot.draw : $r27 = virtualinvoke $r26.<java.util.ResourceBundle: java.lang.String getString(java.lang.String)>("S") >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $i77 = i13 - 5
+org.jfree.chart.plot.CompassPlot.draw : $i77 = i13 - 5 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $i78 = i15 + i72
+org.jfree.chart.plot.CompassPlot.draw : $i78 = i15 + i72 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $i79 = $i78 - 5
+org.jfree.chart.plot.CompassPlot.draw : $i79 = $i78 - 5 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : virtualinvoke r1.<java.awt.Graphics2D: void drawString(java.lang.String,int,int)>($r27, $i77, $i79)
+org.jfree.chart.plot.CompassPlot.draw : virtualinvoke r1.<java.awt.Graphics2D: void drawString(java.lang.String,int,int)>($r27, $i77, $i79) >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $r28 = <org.jfree.chart.plot.CompassPlot: java.util.ResourceBundle localizationResources>
+org.jfree.chart.plot.CompassPlot.draw : $r28 = <org.jfree.chart.plot.CompassPlot: java.util.ResourceBundle localizationResources> >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $r29 = virtualinvoke $r28.<java.util.ResourceBundle: java.lang.String getString(java.lang.String)>("W")
+org.jfree.chart.plot.CompassPlot.draw : $r29 = virtualinvoke $r28.<java.util.ResourceBundle: java.lang.String getString(java.lang.String)>("W") >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $i80 = i13 - i72
+org.jfree.chart.plot.CompassPlot.draw : $i80 = i13 - i72 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $i81 = $i80 + 5
+org.jfree.chart.plot.CompassPlot.draw : $i81 = $i80 + 5 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $i82 = i15 + 5
+org.jfree.chart.plot.CompassPlot.draw : $i82 = i15 + 5 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : virtualinvoke r1.<java.awt.Graphics2D: void drawString(java.lang.String,int,int)>($r29, $i81, $i82)
+org.jfree.chart.plot.CompassPlot.draw : virtualinvoke r1.<java.awt.Graphics2D: void drawString(java.lang.String,int,int)>($r29, $i81, $i82) >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $r30 = <org.jfree.chart.plot.CompassPlot: java.util.ResourceBundle localizationResources>
+org.jfree.chart.plot.CompassPlot.draw : $r30 = <org.jfree.chart.plot.CompassPlot: java.util.ResourceBundle localizationResources> >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $r31 = virtualinvoke $r30.<java.util.ResourceBundle: java.lang.String getString(java.lang.String)>("E")
+org.jfree.chart.plot.CompassPlot.draw : $r31 = virtualinvoke $r30.<java.util.ResourceBundle: java.lang.String getString(java.lang.String)>("E") >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $i83 = i13 + i72
+org.jfree.chart.plot.CompassPlot.draw : $i83 = i13 + i72 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $i84 = virtualinvoke r23.<java.awt.Font: int getSize()>()
+org.jfree.chart.plot.CompassPlot.draw : $i84 = virtualinvoke r23.<java.awt.Font: int getSize()>() >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $i85 = $i83 - $i84
+org.jfree.chart.plot.CompassPlot.draw : $i85 = $i83 - $i84 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $i86 = i15 + 5
+org.jfree.chart.plot.CompassPlot.draw : $i86 = i15 + 5 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : virtualinvoke r1.<java.awt.Graphics2D: void drawString(java.lang.String,int,int)>($r31, $i85, $i86)
+org.jfree.chart.plot.CompassPlot.draw : virtualinvoke r1.<java.awt.Graphics2D: void drawString(java.lang.String,int,int)>($r31, $i85, $i86) >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : i87 = i11 / 2
+org.jfree.chart.plot.CompassPlot.draw : i87 = i11 / 2 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : i88 = i11 / 6
+org.jfree.chart.plot.CompassPlot.draw : i88 = i11 / 6 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $r32 = new java.awt.geom.Rectangle2D$Double
+org.jfree.chart.plot.CompassPlot.draw : $r32 = new java.awt.geom.Rectangle2D$Double >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $i89 = i13 - i88
+org.jfree.chart.plot.CompassPlot.draw : $i89 = i13 - i88 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $d45 = (double) $i89
+org.jfree.chart.plot.CompassPlot.draw : $d45 = (double) $i89 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $i90 = i15 - i87
+org.jfree.chart.plot.CompassPlot.draw : $i90 = i15 - i87 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $d46 = (double) $i90
+org.jfree.chart.plot.CompassPlot.draw : $d46 = (double) $i90 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $i91 = 2 * i88
+org.jfree.chart.plot.CompassPlot.draw : $i91 = 2 * i88 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $d47 = (double) $i91
+org.jfree.chart.plot.CompassPlot.draw : $d47 = (double) $i91 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $i92 = 2 * i87
+org.jfree.chart.plot.CompassPlot.draw : $i92 = 2 * i87 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $d48 = (double) $i92
+org.jfree.chart.plot.CompassPlot.draw : $d48 = (double) $i92 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : specialinvoke $r32.<java.awt.geom.Rectangle2D$Double: void <init>(double,double,double,double)>($d45, $d46, $d47, $d48)
+org.jfree.chart.plot.CompassPlot.draw : specialinvoke $r32.<java.awt.geom.Rectangle2D$Double: void <init>(double,double,double,double)>($d45, $d46, $d47, $d48) >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : r33 = $r32
+org.jfree.chart.plot.CompassPlot.draw : r33 = $r32 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $r34 = r0.<org.jfree.chart.plot.CompassPlot: org.jfree.chart.needle.MeterNeedle[] seriesNeedle>
+org.jfree.chart.plot.CompassPlot.draw : $r34 = r0.<org.jfree.chart.plot.CompassPlot: org.jfree.chart.needle.MeterNeedle[] seriesNeedle> >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : i9 = lengthof $r34
+org.jfree.chart.plot.CompassPlot.draw : i9 = lengthof $r34 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : z2 = 0
+org.jfree.chart.plot.CompassPlot.draw : z2 = 0 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : d1 = 0.0
+org.jfree.chart.plot.CompassPlot.draw : d1 = 0.0 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $r35 = r0.<org.jfree.chart.plot.CompassPlot: org.jfree.data.general.ValueDataset[] datasets>
+org.jfree.chart.plot.CompassPlot.draw : $r35 = r0.<org.jfree.chart.plot.CompassPlot: org.jfree.data.general.ValueDataset[] datasets> >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $i93 = lengthof $r35
+org.jfree.chart.plot.CompassPlot.draw : $i93 = lengthof $r35 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : i10 = $i93 - 1
+org.jfree.chart.plot.CompassPlot.draw : i10 = $i93 - 1 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : if i10 < 0
+org.jfree.chart.plot.CompassPlot.draw : if i10 < 0 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $r36 = r0.<org.jfree.chart.plot.CompassPlot: org.jfree.data.general.ValueDataset[] datasets>
+org.jfree.chart.plot.CompassPlot.draw : if i10 < 0 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $z4 = r0.<org.jfree.chart.plot.CompassPlot: boolean drawBorder>
+org.jfree.chart.plot.CompassPlot.draw : $z4 = r0.<org.jfree.chart.plot.CompassPlot: boolean drawBorder> >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : if $z4 == 0
+org.jfree.chart.plot.CompassPlot.draw : if $z4 == 0 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : virtualinvoke r0.<org.jfree.chart.plot.CompassPlot: void drawOutline(java.awt.Graphics2D,java.awt.geom.Rectangle2D)>(r1, r2)
+org.jfree.chart.plot.CompassPlot.draw : if $z4 == 0 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : return
+org.jfree.chart.plot.CompassPlot.draw : virtualinvoke r0.<org.jfree.chart.plot.CompassPlot: void drawOutline(java.awt.Graphics2D,java.awt.geom.Rectangle2D)>(r1, r2) >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : return
+org.jfree.chart.plot.CompassPlot.draw : $r36 = r0.<org.jfree.chart.plot.CompassPlot: org.jfree.data.general.ValueDataset[] datasets> >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : r8 = $r36[i10]
+org.jfree.chart.plot.CompassPlot.draw : r8 = $r36[i10] >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : if r8 == null
+org.jfree.chart.plot.CompassPlot.draw : if r8 == null >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $r37 = interfaceinvoke r8.<org.jfree.data.general.ValueDataset: java.lang.Number getValue()>()
+org.jfree.chart.plot.CompassPlot.draw : if r8 == null >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : i10 = i10 + -1
+org.jfree.chart.plot.CompassPlot.draw : i10 = i10 + -1 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : goto [?= (branch)]
+org.jfree.chart.plot.CompassPlot.draw : goto [?= (branch)] >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : if i10 < 0
+org.jfree.chart.plot.CompassPlot.draw : $r37 = interfaceinvoke r8.<org.jfree.data.general.ValueDataset: java.lang.Number getValue()>() >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : if $r37 == null
+org.jfree.chart.plot.CompassPlot.draw : if $r37 == null >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $r38 = interfaceinvoke r8.<org.jfree.data.general.ValueDataset: java.lang.Number getValue()>()
+org.jfree.chart.plot.CompassPlot.draw : if $r37 == null >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : i10 = i10 + -1
+org.jfree.chart.plot.CompassPlot.draw : $r38 = interfaceinvoke r8.<org.jfree.data.general.ValueDataset: java.lang.Number getValue()>() >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $d49 = virtualinvoke $r38.<java.lang.Number: double doubleValue()>()
+org.jfree.chart.plot.CompassPlot.draw : $d49 = virtualinvoke $r38.<java.lang.Number: double doubleValue()>() >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $d50 = r0.<org.jfree.chart.plot.CompassPlot: double revolutionDistance>
+org.jfree.chart.plot.CompassPlot.draw : $d50 = r0.<org.jfree.chart.plot.CompassPlot: double revolutionDistance> >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : d51 = $d49 % $d50
+org.jfree.chart.plot.CompassPlot.draw : d51 = $d49 % $d50 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $d52 = r0.<org.jfree.chart.plot.CompassPlot: double revolutionDistance>
+org.jfree.chart.plot.CompassPlot.draw : $d52 = r0.<org.jfree.chart.plot.CompassPlot: double revolutionDistance> >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $d53 = d51 / $d52
+org.jfree.chart.plot.CompassPlot.draw : $d53 = d51 / $d52 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : d54 = $d53 * 360.0
+org.jfree.chart.plot.CompassPlot.draw : d54 = $d53 * 360.0 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : i94 = i10 % i9
+org.jfree.chart.plot.CompassPlot.draw : i94 = i10 % i9 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $r39 = r0.<org.jfree.chart.plot.CompassPlot: org.jfree.chart.needle.MeterNeedle[] seriesNeedle>
+org.jfree.chart.plot.CompassPlot.draw : $r39 = r0.<org.jfree.chart.plot.CompassPlot: org.jfree.chart.needle.MeterNeedle[] seriesNeedle> >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $r40 = $r39[i94]
+org.jfree.chart.plot.CompassPlot.draw : $r40 = $r39[i94] >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : virtualinvoke $r40.<org.jfree.chart.needle.MeterNeedle: void draw(java.awt.Graphics2D,java.awt.geom.Rectangle2D,double)>(r1, r33, d54)
+org.jfree.chart.plot.CompassPlot.draw : virtualinvoke $r40.<org.jfree.chart.needle.MeterNeedle: void draw(java.awt.Graphics2D,java.awt.geom.Rectangle2D,double)>(r1, r33, d54) >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : i10 = i10 + -1
+org.jfree.chart.plot.CompassPlot.draw : $d37 = (double) i63 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : d38 = staticinvoke <java.lang.Math: double toRadians(double)>($d37)
+org.jfree.chart.plot.CompassPlot.draw : d38 = staticinvoke <java.lang.Math: double toRadians(double)>($d37) >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $d39 = staticinvoke <java.lang.Math: double sin(double)>(d38)
+org.jfree.chart.plot.CompassPlot.draw : $d39 = staticinvoke <java.lang.Math: double sin(double)>(d38) >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $d40 = (double) i52
+org.jfree.chart.plot.CompassPlot.draw : $d40 = (double) i52 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $d41 = $d39 * $d40
+org.jfree.chart.plot.CompassPlot.draw : $d41 = $d39 * $d40 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $i64 = (int) $d41
+org.jfree.chart.plot.CompassPlot.draw : $i64 = (int) $d41 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : i65 = i13 - $i64
+org.jfree.chart.plot.CompassPlot.draw : i65 = i13 - $i64 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $d42 = staticinvoke <java.lang.Math: double cos(double)>(d38)
+org.jfree.chart.plot.CompassPlot.draw : $d42 = staticinvoke <java.lang.Math: double cos(double)>(d38) >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $d43 = (double) i52
+org.jfree.chart.plot.CompassPlot.draw : $d43 = (double) i52 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $d44 = $d42 * $d43
+org.jfree.chart.plot.CompassPlot.draw : $d44 = $d42 * $d43 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $i66 = (int) $d44
+org.jfree.chart.plot.CompassPlot.draw : $i66 = (int) $d44 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : i67 = i15 - $i66
+org.jfree.chart.plot.CompassPlot.draw : i67 = i15 - $i66 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $r22 = new java.awt.Polygon
+org.jfree.chart.plot.CompassPlot.draw : $r22 = new java.awt.Polygon >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : specialinvoke $r22.<java.awt.Polygon: void <init>()>()
+org.jfree.chart.plot.CompassPlot.draw : specialinvoke $r22.<java.awt.Polygon: void <init>()>() >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : r7 = $r22
+org.jfree.chart.plot.CompassPlot.draw : r7 = $r22 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $i68 = i65 - b53
+org.jfree.chart.plot.CompassPlot.draw : $i68 = i65 - b53 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : virtualinvoke r7.<java.awt.Polygon: void addPoint(int,int)>($i68, i67)
+org.jfree.chart.plot.CompassPlot.draw : virtualinvoke r7.<java.awt.Polygon: void addPoint(int,int)>($i68, i67) >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $i69 = i67 + b53
+org.jfree.chart.plot.CompassPlot.draw : $i69 = i67 + b53 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : virtualinvoke r7.<java.awt.Polygon: void addPoint(int,int)>(i65, $i69)
+org.jfree.chart.plot.CompassPlot.draw : virtualinvoke r7.<java.awt.Polygon: void addPoint(int,int)>(i65, $i69) >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $i70 = i65 + b53
+org.jfree.chart.plot.CompassPlot.draw : $i70 = i65 + b53 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : virtualinvoke r7.<java.awt.Polygon: void addPoint(int,int)>($i70, i67)
+org.jfree.chart.plot.CompassPlot.draw : virtualinvoke r7.<java.awt.Polygon: void addPoint(int,int)>($i70, i67) >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $i71 = i67 - b53
+org.jfree.chart.plot.CompassPlot.draw : $i71 = i67 - b53 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : virtualinvoke r7.<java.awt.Polygon: void addPoint(int,int)>(i65, $i71)
+org.jfree.chart.plot.CompassPlot.draw : virtualinvoke r7.<java.awt.Polygon: void addPoint(int,int)>(i65, $i71) >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : virtualinvoke r1.<java.awt.Graphics2D: void fillPolygon(java.awt.Polygon)>(r7)
+org.jfree.chart.plot.CompassPlot.draw : virtualinvoke r1.<java.awt.Graphics2D: void fillPolygon(java.awt.Polygon)>(r7) >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : i63 = i63 + 90
+org.jfree.chart.plot.CompassPlot.draw : i63 = i63 + 90 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : goto [?= (branch)]
+org.jfree.chart.plot.CompassPlot.draw : goto [?= (branch)] >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : if i63 >= 360
+org.jfree.chart.plot.CompassPlot.draw : $d29 = (double) i54 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : d30 = staticinvoke <java.lang.Math: double toRadians(double)>($d29)
+org.jfree.chart.plot.CompassPlot.draw : d30 = staticinvoke <java.lang.Math: double toRadians(double)>($d29) >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $d31 = staticinvoke <java.lang.Math: double sin(double)>(d30)
+org.jfree.chart.plot.CompassPlot.draw : $d31 = staticinvoke <java.lang.Math: double sin(double)>(d30) >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $d32 = (double) i52
+org.jfree.chart.plot.CompassPlot.draw : $d32 = (double) i52 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $d33 = $d31 * $d32
+org.jfree.chart.plot.CompassPlot.draw : $d33 = $d31 * $d32 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $i55 = (int) $d33
+org.jfree.chart.plot.CompassPlot.draw : $i55 = (int) $d33 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : i56 = i13 - $i55
+org.jfree.chart.plot.CompassPlot.draw : i56 = i13 - $i55 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $d34 = staticinvoke <java.lang.Math: double cos(double)>(d30)
+org.jfree.chart.plot.CompassPlot.draw : $d34 = staticinvoke <java.lang.Math: double cos(double)>(d30) >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $d35 = (double) i52
+org.jfree.chart.plot.CompassPlot.draw : $d35 = (double) i52 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $d36 = $d34 * $d35
+org.jfree.chart.plot.CompassPlot.draw : $d36 = $d34 * $d35 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $i57 = (int) $d36
+org.jfree.chart.plot.CompassPlot.draw : $i57 = (int) $d36 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : i58 = i15 - $i57
+org.jfree.chart.plot.CompassPlot.draw : i58 = i15 - $i57 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $i59 = i56 - b53
+org.jfree.chart.plot.CompassPlot.draw : $i59 = i56 - b53 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $i60 = i58 - b53
+org.jfree.chart.plot.CompassPlot.draw : $i60 = i58 - b53 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $i61 = 2 * b53
+org.jfree.chart.plot.CompassPlot.draw : $i61 = 2 * b53 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $i62 = 2 * b53
+org.jfree.chart.plot.CompassPlot.draw : $i62 = 2 * b53 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : virtualinvoke r1.<java.awt.Graphics2D: void fillOval(int,int,int,int)>($i59, $i60, $i61, $i62)
+org.jfree.chart.plot.CompassPlot.draw : virtualinvoke r1.<java.awt.Graphics2D: void fillOval(int,int,int,int)>($i59, $i60, $i61, $i62) >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : i54 = i54 + 90
+org.jfree.chart.plot.CompassPlot.draw : i54 = i54 + 90 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : goto [?= (branch)]
+org.jfree.chart.plot.CompassPlot.draw : goto [?= (branch)] >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : if i54 >= 360
+org.jfree.chart.plot.CompassPlot.draw : $d16 = (double) i5 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : d0 = staticinvoke <java.lang.Math: double toRadians(double)>($d16)
+org.jfree.chart.plot.CompassPlot.draw : d0 = staticinvoke <java.lang.Math: double toRadians(double)>($d16) >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $d17 = staticinvoke <java.lang.Math: double sin(double)>(d0)
+org.jfree.chart.plot.CompassPlot.draw : $d17 = staticinvoke <java.lang.Math: double sin(double)>(d0) >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $d18 = (double) i46
+org.jfree.chart.plot.CompassPlot.draw : $d18 = (double) i46 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $d19 = $d17 * $d18
+org.jfree.chart.plot.CompassPlot.draw : $d19 = $d17 * $d18 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $i47 = (int) $d19
+org.jfree.chart.plot.CompassPlot.draw : $i47 = (int) $d19 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : i48 = i13 - $i47
+org.jfree.chart.plot.CompassPlot.draw : i48 = i13 - $i47 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $d20 = staticinvoke <java.lang.Math: double sin(double)>(d0)
+org.jfree.chart.plot.CompassPlot.draw : $d20 = staticinvoke <java.lang.Math: double sin(double)>(d0) >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $d21 = (double) i45
+org.jfree.chart.plot.CompassPlot.draw : $d21 = (double) i45 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $d22 = $d20 * $d21
+org.jfree.chart.plot.CompassPlot.draw : $d22 = $d20 * $d21 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $i49 = (int) $d22
+org.jfree.chart.plot.CompassPlot.draw : $i49 = (int) $d22 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : i6 = i13 - $i49
+org.jfree.chart.plot.CompassPlot.draw : i6 = i13 - $i49 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $d23 = staticinvoke <java.lang.Math: double cos(double)>(d0)
+org.jfree.chart.plot.CompassPlot.draw : $d23 = staticinvoke <java.lang.Math: double cos(double)>(d0) >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $d24 = (double) i46
+org.jfree.chart.plot.CompassPlot.draw : $d24 = (double) i46 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $d25 = $d23 * $d24
+org.jfree.chart.plot.CompassPlot.draw : $d25 = $d23 * $d24 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $i50 = (int) $d25
+org.jfree.chart.plot.CompassPlot.draw : $i50 = (int) $d25 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : i7 = i15 - $i50
+org.jfree.chart.plot.CompassPlot.draw : i7 = i15 - $i50 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $d26 = staticinvoke <java.lang.Math: double cos(double)>(d0)
+org.jfree.chart.plot.CompassPlot.draw : $d26 = staticinvoke <java.lang.Math: double cos(double)>(d0) >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $d27 = (double) i45
+org.jfree.chart.plot.CompassPlot.draw : $d27 = (double) i45 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $d28 = $d26 * $d27
+org.jfree.chart.plot.CompassPlot.draw : $d28 = $d26 * $d27 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $i51 = (int) $d28
+org.jfree.chart.plot.CompassPlot.draw : $i51 = (int) $d28 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : i8 = i15 - $i51
+org.jfree.chart.plot.CompassPlot.draw : i8 = i15 - $i51 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : virtualinvoke r1.<java.awt.Graphics2D: void drawLine(int,int,int,int)>(i48, i7, i6, i8)
+org.jfree.chart.plot.CompassPlot.draw : virtualinvoke r1.<java.awt.Graphics2D: void drawLine(int,int,int,int)>(i48, i7, i6, i8) >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : i5 = i5 + 15
+org.jfree.chart.plot.CompassPlot.draw : i5 = i5 + 15 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : goto [?= (branch)]
+org.jfree.chart.plot.CompassPlot.draw : goto [?= (branch)] >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : if i5 >= 360
+org.jfree.chart.plot.CompassPlot.draw : i2 = i1 >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : i11 = i2 + -1
+org.jfree.chart.plot.CompassPlot.draw : virtualinvoke r0.<org.jfree.chart.plot.CompassPlot: void drawBackground(java.awt.Graphics2D,java.awt.geom.Rectangle2D)>(r1, r2) >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : $d2 = virtualinvoke r2.<java.awt.geom.Rectangle2D: double getWidth()>()
+org.jfree.chart.plot.CompassPlot.draw : virtualinvoke r5.<org.jfree.chart.plot.PlotRenderingInfo: void setPlotArea(java.awt.geom.Rectangle2D)>(r2) >>>>>>>> org.jfree.chart.plot.CompassPlot.draw : r6 = virtualinvoke r0.<org.jfree.chart.plot.CompassPlot: org.jfree.ui.RectangleInsets getInsets()>()

@@ -1,0 +1,31 @@
+org.jfree.data.statistics.Statistics.calculateMean : if r0 != null >>>>>>>> org.jfree.data.statistics.Statistics.calculateMean : $r4 = new java.lang.IllegalArgumentException
+org.jfree.data.statistics.Statistics.calculateMean : if r0 != null >>>>>>>> org.jfree.data.statistics.Statistics.calculateMean : i0 = 0
+org.jfree.data.statistics.Statistics.calculateMean : i0 = 0 >>>>>>>> org.jfree.data.statistics.Statistics.calculateMean : d0 = 0.0
+org.jfree.data.statistics.Statistics.calculateMean : d0 = 0.0 >>>>>>>> org.jfree.data.statistics.Statistics.calculateMean : r1 = interfaceinvoke r0.<java.util.Collection: java.util.Iterator iterator()>()
+org.jfree.data.statistics.Statistics.calculateMean : r1 = interfaceinvoke r0.<java.util.Collection: java.util.Iterator iterator()>() >>>>>>>> org.jfree.data.statistics.Statistics.calculateMean : $z1 = interfaceinvoke r1.<java.util.Iterator: boolean hasNext()>()
+org.jfree.data.statistics.Statistics.calculateMean : $z1 = interfaceinvoke r1.<java.util.Iterator: boolean hasNext()>() >>>>>>>> org.jfree.data.statistics.Statistics.calculateMean : if $z1 == 0
+org.jfree.data.statistics.Statistics.calculateMean : if $z1 == 0 >>>>>>>> org.jfree.data.statistics.Statistics.calculateMean : r2 = interfaceinvoke r1.<java.util.Iterator: java.lang.Object next()>()
+org.jfree.data.statistics.Statistics.calculateMean : if $z1 == 0 >>>>>>>> org.jfree.data.statistics.Statistics.calculateMean : $d3 = (double) i0
+org.jfree.data.statistics.Statistics.calculateMean : $d3 = (double) i0 >>>>>>>> org.jfree.data.statistics.Statistics.calculateMean : $d4 = d0 / $d3
+org.jfree.data.statistics.Statistics.calculateMean : $d4 = d0 / $d3 >>>>>>>> org.jfree.data.statistics.Statistics.calculateMean : return $d4
+org.jfree.data.statistics.Statistics.calculateMean : r2 = interfaceinvoke r1.<java.util.Iterator: java.lang.Object next()>() >>>>>>>> org.jfree.data.statistics.Statistics.calculateMean : if r2 != null
+org.jfree.data.statistics.Statistics.calculateMean : if r2 != null >>>>>>>> org.jfree.data.statistics.Statistics.calculateMean : if z0 == 0
+org.jfree.data.statistics.Statistics.calculateMean : if r2 != null >>>>>>>> org.jfree.data.statistics.Statistics.calculateMean : $z2 = r2 instanceof java.lang.Number
+org.jfree.data.statistics.Statistics.calculateMean : $z2 = r2 instanceof java.lang.Number >>>>>>>> org.jfree.data.statistics.Statistics.calculateMean : if $z2 == 0
+org.jfree.data.statistics.Statistics.calculateMean : if $z2 == 0 >>>>>>>> org.jfree.data.statistics.Statistics.calculateMean : r3 = (java.lang.Number) r2
+org.jfree.data.statistics.Statistics.calculateMean : if $z2 == 0 >>>>>>>> org.jfree.data.statistics.Statistics.calculateMean : goto [?= $z1 = interfaceinvoke r1.<java.util.Iterator: boolean hasNext()>()]
+org.jfree.data.statistics.Statistics.calculateMean : goto [?= $z1 = interfaceinvoke r1.<java.util.Iterator: boolean hasNext()>()] >>>>>>>> org.jfree.data.statistics.Statistics.calculateMean : $z1 = interfaceinvoke r1.<java.util.Iterator: boolean hasNext()>()
+org.jfree.data.statistics.Statistics.calculateMean : r3 = (java.lang.Number) r2 >>>>>>>> org.jfree.data.statistics.Statistics.calculateMean : d1 = virtualinvoke r3.<java.lang.Number: double doubleValue()>()
+org.jfree.data.statistics.Statistics.calculateMean : d1 = virtualinvoke r3.<java.lang.Number: double doubleValue()>() >>>>>>>> org.jfree.data.statistics.Statistics.calculateMean : $z3 = staticinvoke <java.lang.Double: boolean isNaN(double)>(d1)
+org.jfree.data.statistics.Statistics.calculateMean : $z3 = staticinvoke <java.lang.Double: boolean isNaN(double)>(d1) >>>>>>>> org.jfree.data.statistics.Statistics.calculateMean : if $z3 == 0
+org.jfree.data.statistics.Statistics.calculateMean : if $z3 == 0 >>>>>>>> org.jfree.data.statistics.Statistics.calculateMean : if z0 == 0
+org.jfree.data.statistics.Statistics.calculateMean : if $z3 == 0 >>>>>>>> org.jfree.data.statistics.Statistics.calculateMean : $d2 = virtualinvoke r3.<java.lang.Number: double doubleValue()>()
+org.jfree.data.statistics.Statistics.calculateMean : $d2 = virtualinvoke r3.<java.lang.Number: double doubleValue()>() >>>>>>>> org.jfree.data.statistics.Statistics.calculateMean : d0 = d0 + $d2
+org.jfree.data.statistics.Statistics.calculateMean : d0 = d0 + $d2 >>>>>>>> org.jfree.data.statistics.Statistics.calculateMean : i0 = i0 + 1
+org.jfree.data.statistics.Statistics.calculateMean : i0 = i0 + 1 >>>>>>>> org.jfree.data.statistics.Statistics.calculateMean : goto [?= $z1 = interfaceinvoke r1.<java.util.Iterator: boolean hasNext()>()]
+org.jfree.data.statistics.Statistics.calculateMean : if z0 == 0 >>>>>>>> org.jfree.data.statistics.Statistics.calculateMean : return #NaN
+org.jfree.data.statistics.Statistics.calculateMean : if z0 == 0 >>>>>>>> org.jfree.data.statistics.Statistics.calculateMean : goto [?= $z1 = interfaceinvoke r1.<java.util.Iterator: boolean hasNext()>()]
+org.jfree.data.statistics.Statistics.calculateMean : if z0 == 0 >>>>>>>> org.jfree.data.statistics.Statistics.calculateMean : return #NaN
+org.jfree.data.statistics.Statistics.calculateMean : if z0 == 0 >>>>>>>> org.jfree.data.statistics.Statistics.calculateMean : goto [?= $z1 = interfaceinvoke r1.<java.util.Iterator: boolean hasNext()>()]
+org.jfree.data.statistics.Statistics.calculateMean : $r4 = new java.lang.IllegalArgumentException >>>>>>>> org.jfree.data.statistics.Statistics.calculateMean : specialinvoke $r4.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>("Null \'values\' argument.")
+org.jfree.data.statistics.Statistics.calculateMean : specialinvoke $r4.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>("Null \'values\' argument.") >>>>>>>> org.jfree.data.statistics.Statistics.calculateMean : throw $r4

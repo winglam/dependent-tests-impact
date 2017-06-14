@@ -1,0 +1,29 @@
+org.jfree.data.Range.contains : $d1 = r0.<org.jfree.data.Range: double lower> >>>>>>>> org.jfree.data.Range.contains : $b0 = d0 cmpl $d1
+org.jfree.data.Range.contains : $b0 = d0 cmpl $d1 >>>>>>>> org.jfree.data.Range.contains : if $b0 < 0
+org.jfree.data.Range.contains : if $b0 < 0 >>>>>>>> org.jfree.data.Range.contains : $d2 = r0.<org.jfree.data.Range: double upper>
+org.jfree.data.Range.contains : $d2 = r0.<org.jfree.data.Range: double upper> >>>>>>>> org.jfree.data.Range.contains : $b1 = d0 cmpg $d2
+org.jfree.data.Range.contains : $b1 = d0 cmpg $d2 >>>>>>>> org.jfree.data.Range.contains : if $b1 > 0
+org.jfree.data.Range.contains : if $b1 > 0 >>>>>>>> org.jfree.data.Range.contains : $z0 = 0
+org.jfree.data.Range.contains : $z0 = 0 >>>>>>>> org.jfree.data.Range.contains : return $z0
+org.jfree.data.Range.contains : return $z0 >>>>>>>> org.jfree.data.time.DateRange.getLowerDate : $r1 = new java.util.Date
+org.jfree.data.time.DateRange.getLowerDate : $r1 = new java.util.Date >>>>>>>> org.jfree.data.time.DateRange.getLowerDate : $l0 = r0.<org.jfree.data.time.DateRange: long lowerDate>
+org.jfree.data.time.DateRange.getLowerDate : $l0 = r0.<org.jfree.data.time.DateRange: long lowerDate> >>>>>>>> org.jfree.data.time.DateRange.getLowerDate : specialinvoke $r1.<java.util.Date: void <init>(long)>($l0)
+org.jfree.data.time.DateRange.getLowerDate : specialinvoke $r1.<java.util.Date: void <init>(long)>($l0) >>>>>>>> org.jfree.data.time.DateRange.getLowerDate : return $r1
+org.jfree.data.time.DateRange.getLowerDate : return $r1 >>>>>>>> org.jfree.chart.axis.SegmentedTimeline.getDate : $r2 = r0.<org.jfree.chart.axis.SegmentedTimeline: java.util.Calendar workingCalendarNoDST>
+org.jfree.chart.axis.SegmentedTimeline.getDate : $r2 = r0.<org.jfree.chart.axis.SegmentedTimeline: java.util.Calendar workingCalendarNoDST> >>>>>>>> org.jfree.chart.axis.SegmentedTimeline.getDate : $r1 = new java.util.Date
+org.jfree.chart.axis.SegmentedTimeline.getDate : $r1 = new java.util.Date >>>>>>>> org.jfree.chart.axis.SegmentedTimeline.getDate : specialinvoke $r1.<java.util.Date: void <init>(long)>(l0)
+org.jfree.chart.axis.SegmentedTimeline.getDate : specialinvoke $r1.<java.util.Date: void <init>(long)>(l0) >>>>>>>> org.jfree.chart.axis.SegmentedTimeline.getDate : virtualinvoke $r2.<java.util.Calendar: void setTime(java.util.Date)>($r1)
+org.jfree.chart.axis.SegmentedTimeline.getDate : virtualinvoke $r2.<java.util.Calendar: void setTime(java.util.Date)>($r1) >>>>>>>> org.jfree.chart.axis.SegmentedTimeline.getDate : $r3 = r0.<org.jfree.chart.axis.SegmentedTimeline: java.util.Calendar workingCalendarNoDST>
+org.jfree.chart.axis.SegmentedTimeline.getDate : $r3 = r0.<org.jfree.chart.axis.SegmentedTimeline: java.util.Calendar workingCalendarNoDST> >>>>>>>> org.jfree.chart.axis.SegmentedTimeline.getDate : $r4 = virtualinvoke $r3.<java.util.Calendar: java.util.Date getTime()>()
+org.jfree.chart.axis.SegmentedTimeline.getDate : $r4 = virtualinvoke $r3.<java.util.Calendar: java.util.Date getTime()>() >>>>>>>> org.jfree.chart.axis.SegmentedTimeline.getDate : return $r4
+org.jfree.chart.axis.SegmentedTimeline.getDate : return $r4 >>>>>>>> org.jfree.chart.axis.MonthDateFormat.format : $r4 = r0.<org.jfree.chart.axis.MonthDateFormat: java.util.Calendar calendar>
+org.jfree.chart.axis.MonthDateFormat.format : $r4 = r0.<org.jfree.chart.axis.MonthDateFormat: java.util.Calendar calendar> >>>>>>>> org.jfree.chart.axis.MonthDateFormat.format : virtualinvoke $r4.<java.util.Calendar: void setTime(java.util.Date)>(r1)
+org.jfree.chart.axis.MonthDateFormat.format : virtualinvoke $r4.<java.util.Calendar: void setTime(java.util.Date)>(r1) >>>>>>>> org.jfree.chart.axis.MonthDateFormat.format : $r5 = r0.<org.jfree.chart.axis.MonthDateFormat: java.util.Calendar calendar>
+org.jfree.chart.axis.MonthDateFormat.format : $r5 = r0.<org.jfree.chart.axis.MonthDateFormat: java.util.Calendar calendar> >>>>>>>> org.jfree.chart.axis.MonthDateFormat.format : i0 = virtualinvoke $r5.<java.util.Calendar: int get(int)>(2)
+org.jfree.chart.axis.MonthDateFormat.format : i0 = virtualinvoke $r5.<java.util.Calendar: int get(int)>(2) >>>>>>>> org.jfree.chart.axis.MonthDateFormat.format : $r6 = r0.<org.jfree.chart.axis.MonthDateFormat: java.lang.String[] months>
+org.jfree.chart.axis.MonthDateFormat.format : $r6 = r0.<org.jfree.chart.axis.MonthDateFormat: java.lang.String[] months> >>>>>>>> org.jfree.chart.axis.MonthDateFormat.format : $r7 = $r6[i0]
+org.jfree.chart.axis.MonthDateFormat.format : $r7 = $r6[i0] >>>>>>>> org.jfree.chart.axis.MonthDateFormat.format : virtualinvoke r2.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>($r7)
+org.jfree.chart.axis.MonthDateFormat.format : virtualinvoke r2.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>($r7) >>>>>>>> org.jfree.chart.axis.MonthDateFormat.format : $r9 = r0.<org.jfree.chart.axis.MonthDateFormat: boolean[] showYear>
+org.jfree.chart.axis.MonthDateFormat.format : $r9 = r0.<org.jfree.chart.axis.MonthDateFormat: boolean[] showYear> >>>>>>>> org.jfree.chart.axis.MonthDateFormat.format : $z0 = $r9[i0]
+org.jfree.chart.axis.MonthDateFormat.format : $z0 = $r9[i0] >>>>>>>> org.jfree.chart.axis.MonthDateFormat.format : if $z0 == 0
+org.jfree.chart.axis.MonthDateFormat.format : if $z0 == 0 >>>>>>>> org.jfree.chart.axis.MonthDateFormat.format : return r2

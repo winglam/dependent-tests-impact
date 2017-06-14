@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. --><project basedir="." default="build" name="jfreechart">
+    <property environment="env"/>
+    <property name="impacttools" value="../impact-tools"/>
+    <property name="ECLIPSE_HOME" value="../../../../../usr/lib/eclipse"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.5"/>
+    <property name="source" value="1.5"/>
+    <path id="Maven Dependencies.libraryclasspath">
+        <pathelement location="../../../.m2/repository/org/jfree/jcommon/1.0.17/jcommon-1.0.17.jar"/>
+        <pathelement location="../../../.m2/repository/junit/junit/3.8.2/junit-3.8.2.jar"/>
+        <pathelement location="../../../.m2/repository/xml-apis/xml-apis/1.3.04/xml-apis-1.3.04.jar"/>
+        <pathelement location="../../../.m2/repository/javax/servlet/servlet-api/2.5/servlet-api-2.5.jar"/>
+        <pathelement location="../../../.m2/repository/com/lowagie/itext/2.1.5/itext-2.1.5.jar"/>
+        <pathelement location="../../../.m2/repository/bouncycastle/bcmail-jdk14/138/bcmail-jdk14-138.jar"/>
+        <pathelement location="../../../.m2/repository/bouncycastle/bcprov-jdk14/138/bcprov-jdk14-138.jar"/>
+    </path>
+    <path id="jfreechart.classpath">
+        <pathelement location="target/classes"/>
+        <pathelement location="target/test-classes"/>
+        <path refid="Maven Dependencies.libraryclasspath"/>
+        <pathelement location="${impacttools}/ant-mvn-formatter.jar"/>
+        <pathelement location="${impacttools}/asm-all-3.1.jar"/>
+        <pathelement location="${impacttools}/dt-detector.jar"/>
+        <pathelement location="${impacttools}/dt-fixer.jar"/>
+        <pathelement location="${impacttools}/guava-14.0.1.jar"/>
+        <pathelement location="${impacttools}/impact.jar"/>
+        <pathelement location="${impacttools}/jacocoagent.jar"/>
+        <pathelement location="${impacttools}/jacocoant.jar"/>
+        <pathelement location="${impacttools}/jasminclasses-2.5.0.jar"/>
+        <pathelement location="${impacttools}/java_cup.jar"/>
+        <pathelement location="${impacttools}/junit.jar"/>
+        <pathelement location="${impacttools}/org.hamcrest.core_1.3.0.v201303031735.jar"/>
+        <pathelement location="${impacttools}/plume.jar"/>
+        <pathelement location="${impacttools}/polyglot.jar"/>
+        <pathelement location="${impacttools}/randoop-all-3.0.8.jar"/>
+        <pathelement location="${impacttools}/sootclasses-2.5.0.jar"/>
+        <pathelement location="${impacttools}/vmvm-ant-junit-formatter.jar"/>
+        <pathelement location="${impacttools}/vmvm.jar"/>
+        <pathelement location="lib/2junit.jar"/>
+        <pathelement location="lib/gnujaxp.jar"/>
+        <pathelement location="lib/iText-2.1.5.jar"/>
+        <pathelement location="lib/jcommon-1.0.17.jar"/>
+        <pathelement location="lib/jfreechart-1.0.14.jar"/>
+        <pathelement location="lib/jfreechart-1.0.14-experimental.jar"/>
+        <pathelement location="lib/jfreechart-1.0.14-swt.jar"/>
+        <pathelement location="lib/junit.jar"/>
+        <pathelement location="lib/servlet.jar"/>
+        <pathelement location="lib/swtgraphics2d.jar"/>
+    </path>
+    <target name="init">
+        <mkdir dir="target/classes"/>
+        <mkdir dir="target/test-classes"/>
+        <copy includeemptydirs="false" todir="target/classes">
+            <fileset dir="source">
+                <include name="**/*.java"/>
+                <exclude name="**/*.launch"/>
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+        <copy includeemptydirs="false" todir="target/test-classes">
+            <fileset dir="tests">
+                <exclude name="**/*.launch"/>
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete dir="target/classes"/>
+        <delete dir="target/test-classes"/>
+    </target>
+    <target depends="clean" name="cleanall"/>
+    <target depends="build-subprojects,build-project" name="build"/>
+    <target name="build-subprojects"/>
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="target/classes" includeantruntime="false" source="${source}" target="${target}">
+            <src path="source"/>
+            <include name="**/*.java"/>
+            <classpath refid="jfreechart.classpath"/>
+        </javac>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="target/test-classes" includeantruntime="false" source="${source}" target="${target}">
+            <src path="tests"/>
+            <classpath refid="jfreechart.classpath"/>
+        </javac>
+    </target>
+    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
+    <target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
+        <copy todir="${ant.library.dir}">
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </copy>
+        <unzip dest="${ant.library.dir}">
+            <patternset includes="jdtCompilerAdapter.jar"/>
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </unzip>
+    </target>
+    <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
+        <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
+        <antcall target="build"/>
+    </target>
+</project>

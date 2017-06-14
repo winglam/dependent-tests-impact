@@ -1,0 +1,8 @@
+org.jfree.data.xy.XIntervalDataItem.getYValue : $r2 = virtualinvoke r0.<org.jfree.data.xy.XIntervalDataItem: java.lang.Object getObject()>() >>>>>>>> org.jfree.data.ComparableObjectItem.getObject : $r1 = r0.<org.jfree.data.ComparableObjectItem: java.lang.Object obj>
+org.jfree.data.ComparableObjectItem.getObject : $r1 = r0.<org.jfree.data.ComparableObjectItem: java.lang.Object obj> >>>>>>>> org.jfree.data.ComparableObjectItem.getObject : return $r1
+org.jfree.data.ComparableObjectItem.getObject : return $r1 >>>>>>>> org.jfree.data.xy.XIntervalDataItem.getYValue : r1 = (org.jfree.data.xy.YWithXInterval) $r2
+org.jfree.data.xy.XIntervalDataItem.getYValue : r1 = (org.jfree.data.xy.YWithXInterval) $r2 >>>>>>>> org.jfree.data.xy.XIntervalDataItem.getYValue : if r1 == null
+org.jfree.data.xy.XIntervalDataItem.getYValue : if r1 == null >>>>>>>> org.jfree.data.xy.XIntervalDataItem.getYValue : $d0 = virtualinvoke r1.<org.jfree.data.xy.YWithXInterval: double getY()>()
+org.jfree.data.xy.XIntervalDataItem.getYValue : $d0 = virtualinvoke r1.<org.jfree.data.xy.YWithXInterval: double getY()>() >>>>>>>> org.jfree.data.xy.YWithXInterval.getY : $d0 = r0.<org.jfree.data.xy.YWithXInterval: double y>
+org.jfree.data.xy.YWithXInterval.getY : $d0 = r0.<org.jfree.data.xy.YWithXInterval: double y> >>>>>>>> org.jfree.data.xy.YWithXInterval.getY : return $d0
+org.jfree.data.xy.YWithXInterval.getY : return $d0 >>>>>>>> org.jfree.data.xy.XIntervalDataItem.getYValue : return $d0

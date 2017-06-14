@@ -1,0 +1,39 @@
+org.jfree.data.Range.expand : if r0 != null >>>>>>>> org.jfree.data.Range.expand : d2 = virtualinvoke r0.<org.jfree.data.Range: double getLength()>()
+org.jfree.data.Range.expand : d2 = virtualinvoke r0.<org.jfree.data.Range: double getLength()>() >>>>>>>> org.jfree.data.Range.getLength : $d0 = r0.<org.jfree.data.Range: double upper>
+org.jfree.data.Range.getLength : $d0 = r0.<org.jfree.data.Range: double upper> >>>>>>>> org.jfree.data.Range.getLength : $d1 = r0.<org.jfree.data.Range: double lower>
+org.jfree.data.Range.getLength : $d1 = r0.<org.jfree.data.Range: double lower> >>>>>>>> org.jfree.data.Range.getLength : $d2 = $d0 - $d1
+org.jfree.data.Range.getLength : $d2 = $d0 - $d1 >>>>>>>> org.jfree.data.Range.getLength : return $d2
+org.jfree.data.Range.getLength : return $d2 >>>>>>>> org.jfree.data.Range.expand : $d5 = virtualinvoke r0.<org.jfree.data.Range: double getLowerBound()>()
+org.jfree.data.Range.expand : $d5 = virtualinvoke r0.<org.jfree.data.Range: double getLowerBound()>() >>>>>>>> org.jfree.data.Range.getLowerBound : $d0 = r0.<org.jfree.data.Range: double lower>
+org.jfree.data.Range.getLowerBound : $d0 = r0.<org.jfree.data.Range: double lower> >>>>>>>> org.jfree.data.Range.getLowerBound : return $d0
+org.jfree.data.Range.getLowerBound : return $d0 >>>>>>>> org.jfree.data.Range.expand : $d6 = d2 * d0
+org.jfree.data.Range.expand : $d6 = d2 * d0 >>>>>>>> org.jfree.data.Range.expand : d3 = $d5 - $d6
+org.jfree.data.Range.expand : d3 = $d5 - $d6 >>>>>>>> org.jfree.data.Range.expand : $d7 = virtualinvoke r0.<org.jfree.data.Range: double getUpperBound()>()
+org.jfree.data.Range.expand : $d7 = virtualinvoke r0.<org.jfree.data.Range: double getUpperBound()>() >>>>>>>> org.jfree.data.Range.getUpperBound : $d0 = r0.<org.jfree.data.Range: double upper>
+org.jfree.data.Range.getUpperBound : $d0 = r0.<org.jfree.data.Range: double upper> >>>>>>>> org.jfree.data.Range.getUpperBound : return $d0
+org.jfree.data.Range.getUpperBound : return $d0 >>>>>>>> org.jfree.data.Range.expand : $d8 = d2 * d1
+org.jfree.data.Range.expand : $d8 = d2 * d1 >>>>>>>> org.jfree.data.Range.expand : d4 = $d7 + $d8
+org.jfree.data.Range.expand : d4 = $d7 + $d8 >>>>>>>> org.jfree.data.Range.expand : $b0 = d3 cmpl d4
+org.jfree.data.Range.expand : $b0 = d3 cmpl d4 >>>>>>>> org.jfree.data.Range.expand : if $b0 <= 0
+org.jfree.data.Range.expand : if $b0 <= 0 >>>>>>>> org.jfree.data.Range.expand : $r2 = new org.jfree.data.Range
+org.jfree.data.Range.expand : $r2 = new org.jfree.data.Range >>>>>>>> org.jfree.data.Range.expand : specialinvoke $r2.<org.jfree.data.Range: void <init>(double,double)>(d3, d4)
+org.jfree.data.Range.expand : specialinvoke $r2.<org.jfree.data.Range: void <init>(double,double)>(d3, d4) >>>>>>>> org.jfree.data.Range.expand : return $r2
+org.jfree.data.Range.expand : return $r2 >>>>>>>> org.jfree.data.Range.equals : $z0 = r1 instanceof org.jfree.data.Range
+org.jfree.data.Range.equals : $z0 = r1 instanceof org.jfree.data.Range >>>>>>>> org.jfree.data.Range.equals : if $z0 != 0
+org.jfree.data.Range.equals : if $z0 != 0 >>>>>>>> org.jfree.data.Range.equals : r2 = (org.jfree.data.Range) r1
+org.jfree.data.Range.equals : r2 = (org.jfree.data.Range) r1 >>>>>>>> org.jfree.data.Range.equals : $d0 = r0.<org.jfree.data.Range: double lower>
+org.jfree.data.Range.equals : $d0 = r0.<org.jfree.data.Range: double lower> >>>>>>>> org.jfree.data.Range.equals : $d1 = r2.<org.jfree.data.Range: double lower>
+org.jfree.data.Range.equals : $d1 = r2.<org.jfree.data.Range: double lower> >>>>>>>> org.jfree.data.Range.equals : $b0 = $d0 cmpl $d1
+org.jfree.data.Range.equals : $b0 = $d0 cmpl $d1 >>>>>>>> org.jfree.data.Range.equals : if $b0 == 0
+org.jfree.data.Range.equals : if $b0 == 0 >>>>>>>> org.jfree.data.Range.equals : $d2 = r0.<org.jfree.data.Range: double upper>
+org.jfree.data.Range.equals : $d2 = r0.<org.jfree.data.Range: double upper> >>>>>>>> org.jfree.data.Range.equals : $d3 = r2.<org.jfree.data.Range: double upper>
+org.jfree.data.Range.equals : $d3 = r2.<org.jfree.data.Range: double upper> >>>>>>>> org.jfree.data.Range.equals : $b1 = $d2 cmpl $d3
+org.jfree.data.Range.equals : $b1 = $d2 cmpl $d3 >>>>>>>> org.jfree.data.Range.equals : if $b1 == 0
+org.jfree.data.Range.equals : if $b1 == 0 >>>>>>>> org.jfree.data.Range.equals : return 1
+org.jfree.data.Range.equals : return 1 >>>>>>>> org.jfree.data.Range.expand : $r1 = new java.lang.IllegalArgumentException
+org.jfree.data.Range.expand : $r1 = new java.lang.IllegalArgumentException >>>>>>>> org.jfree.data.Range.expand : specialinvoke $r1.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>("Null \'range\' argument.")
+org.jfree.data.Range.expand : specialinvoke $r1.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>("Null \'range\' argument.") >>>>>>>> org.jfree.data.Range.expand : throw $r1
+org.jfree.data.Range.expand : throw $r1 >>>>>>>> org.jfree.data.Range.expand : $d9 = d3 / 2.0
+org.jfree.data.Range.expand : $d9 = d3 / 2.0 >>>>>>>> org.jfree.data.Range.expand : $d10 = d4 / 2.0
+org.jfree.data.Range.expand : $d10 = d4 / 2.0 >>>>>>>> org.jfree.data.Range.expand : d3 = $d9 + $d10
+org.jfree.data.Range.expand : d3 = $d9 + $d10 >>>>>>>> org.jfree.data.Range.expand : d4 = d3
