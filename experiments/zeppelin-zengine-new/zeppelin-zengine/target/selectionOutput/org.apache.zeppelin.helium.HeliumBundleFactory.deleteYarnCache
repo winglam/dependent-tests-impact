@@ -1,0 +1,16 @@
+org.apache.zeppelin.helium.HeliumBundleFactory.deleteYarnCache : $r1 = new org.apache.zeppelin.helium.HeliumBundleFactory$3 >>>>>>>> org.apache.zeppelin.helium.HeliumBundleFactory.deleteYarnCache : specialinvoke $r1.<org.apache.zeppelin.helium.HeliumBundleFactory$3: void <init>(org.apache.zeppelin.helium.HeliumBundleFactory)>(r0)
+org.apache.zeppelin.helium.HeliumBundleFactory.deleteYarnCache : specialinvoke $r1.<org.apache.zeppelin.helium.HeliumBundleFactory$3: void <init>(org.apache.zeppelin.helium.HeliumBundleFactory)>(r0) >>>>>>>> org.apache.zeppelin.helium.HeliumBundleFactory.deleteYarnCache : r2 = $r1
+org.apache.zeppelin.helium.HeliumBundleFactory.deleteYarnCache : r2 = $r1 >>>>>>>> org.apache.zeppelin.helium.HeliumBundleFactory.deleteYarnCache : $r6 = r0.<org.apache.zeppelin.helium.HeliumBundleFactory: java.io.File yarnCacheDir>
+org.apache.zeppelin.helium.HeliumBundleFactory.deleteYarnCache : $r6 = r0.<org.apache.zeppelin.helium.HeliumBundleFactory: java.io.File yarnCacheDir> >>>>>>>> org.apache.zeppelin.helium.HeliumBundleFactory.deleteYarnCache : r3 = virtualinvoke $r6.<java.io.File: java.io.File[] listFiles(java.io.FilenameFilter)>(r2)
+org.apache.zeppelin.helium.HeliumBundleFactory.deleteYarnCache : r3 = virtualinvoke $r6.<java.io.File: java.io.File[] listFiles(java.io.FilenameFilter)>(r2) >>>>>>>> org.apache.zeppelin.helium.HeliumBundleFactory.deleteYarnCache : if r3 == null
+org.apache.zeppelin.helium.HeliumBundleFactory.deleteYarnCache : if r3 == null >>>>>>>> org.apache.zeppelin.helium.HeliumBundleFactory.deleteYarnCache : r4 = r3
+org.apache.zeppelin.helium.HeliumBundleFactory.deleteYarnCache : if r3 == null >>>>>>>> org.apache.zeppelin.helium.HeliumBundleFactory.deleteYarnCache : return
+org.apache.zeppelin.helium.HeliumBundleFactory.deleteYarnCache : r4 = r3 >>>>>>>> org.apache.zeppelin.helium.HeliumBundleFactory.deleteYarnCache : i0 = lengthof r4
+org.apache.zeppelin.helium.HeliumBundleFactory.deleteYarnCache : i0 = lengthof r4 >>>>>>>> org.apache.zeppelin.helium.HeliumBundleFactory.deleteYarnCache : i1 = 0
+org.apache.zeppelin.helium.HeliumBundleFactory.deleteYarnCache : i1 = 0 >>>>>>>> org.apache.zeppelin.helium.HeliumBundleFactory.deleteYarnCache : if i1 >= i0
+org.apache.zeppelin.helium.HeliumBundleFactory.deleteYarnCache : if i1 >= i0 >>>>>>>> org.apache.zeppelin.helium.HeliumBundleFactory.deleteYarnCache : r5 = r4[i1]
+org.apache.zeppelin.helium.HeliumBundleFactory.deleteYarnCache : if i1 >= i0 >>>>>>>> org.apache.zeppelin.helium.HeliumBundleFactory.deleteYarnCache : return
+org.apache.zeppelin.helium.HeliumBundleFactory.deleteYarnCache : r5 = r4[i1] >>>>>>>> org.apache.zeppelin.helium.HeliumBundleFactory.deleteYarnCache : staticinvoke <org.apache.commons.io.FileUtils: boolean deleteQuietly(java.io.File)>(r5)
+org.apache.zeppelin.helium.HeliumBundleFactory.deleteYarnCache : staticinvoke <org.apache.commons.io.FileUtils: boolean deleteQuietly(java.io.File)>(r5) >>>>>>>> org.apache.zeppelin.helium.HeliumBundleFactory.deleteYarnCache : i1 = i1 + 1
+org.apache.zeppelin.helium.HeliumBundleFactory.deleteYarnCache : i1 = i1 + 1 >>>>>>>> org.apache.zeppelin.helium.HeliumBundleFactory.deleteYarnCache : goto [?= (branch)]
+org.apache.zeppelin.helium.HeliumBundleFactory.deleteYarnCache : goto [?= (branch)] >>>>>>>> org.apache.zeppelin.helium.HeliumBundleFactory.deleteYarnCache : if i1 >= i0

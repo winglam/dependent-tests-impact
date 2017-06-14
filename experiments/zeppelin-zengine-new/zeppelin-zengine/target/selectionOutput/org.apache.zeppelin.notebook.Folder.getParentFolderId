@@ -1,0 +1,9 @@
+org.apache.zeppelin.notebook.Folder.getParentFolderId : $z0 = virtualinvoke r0.<org.apache.zeppelin.notebook.Folder: boolean isRoot()>() >>>>>>>> org.apache.zeppelin.notebook.Folder.getParentFolderId : if $z0 == 0
+org.apache.zeppelin.notebook.Folder.getParentFolderId : if $z0 == 0 >>>>>>>> org.apache.zeppelin.notebook.Folder.getParentFolderId : return "/"
+org.apache.zeppelin.notebook.Folder.getParentFolderId : if $z0 == 0 >>>>>>>> org.apache.zeppelin.notebook.Folder.getParentFolderId : $r1 = virtualinvoke r0.<org.apache.zeppelin.notebook.Folder: java.lang.String getId()>()
+org.apache.zeppelin.notebook.Folder.getParentFolderId : $r1 = virtualinvoke r0.<org.apache.zeppelin.notebook.Folder: java.lang.String getId()>() >>>>>>>> org.apache.zeppelin.notebook.Folder.getParentFolderId : i0 = virtualinvoke $r1.<java.lang.String: int lastIndexOf(java.lang.String)>("/")
+org.apache.zeppelin.notebook.Folder.getParentFolderId : i0 = virtualinvoke $r1.<java.lang.String: int lastIndexOf(java.lang.String)>("/") >>>>>>>> org.apache.zeppelin.notebook.Folder.getParentFolderId : if i0 >= 0
+org.apache.zeppelin.notebook.Folder.getParentFolderId : if i0 >= 0 >>>>>>>> org.apache.zeppelin.notebook.Folder.getParentFolderId : return "/"
+org.apache.zeppelin.notebook.Folder.getParentFolderId : if i0 >= 0 >>>>>>>> org.apache.zeppelin.notebook.Folder.getParentFolderId : $r2 = virtualinvoke r0.<org.apache.zeppelin.notebook.Folder: java.lang.String getId()>()
+org.apache.zeppelin.notebook.Folder.getParentFolderId : $r2 = virtualinvoke r0.<org.apache.zeppelin.notebook.Folder: java.lang.String getId()>() >>>>>>>> org.apache.zeppelin.notebook.Folder.getParentFolderId : $r3 = virtualinvoke $r2.<java.lang.String: java.lang.String substring(int,int)>(0, i0)
+org.apache.zeppelin.notebook.Folder.getParentFolderId : $r3 = virtualinvoke $r2.<java.lang.String: java.lang.String substring(int,int)>(0, i0) >>>>>>>> org.apache.zeppelin.notebook.Folder.getParentFolderId : return $r3

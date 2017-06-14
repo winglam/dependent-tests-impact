@@ -1,0 +1,11 @@
+org.apache.zeppelin.helium.HeliumBundleFactory.isLocalPackage : $r2 = virtualinvoke r1.<org.apache.zeppelin.helium.HeliumPackage: java.lang.String getArtifact()>() >>>>>>>> org.apache.zeppelin.helium.HeliumBundleFactory.isLocalPackage : $z0 = virtualinvoke $r2.<java.lang.String: boolean startsWith(java.lang.String)>(".")
+org.apache.zeppelin.helium.HeliumBundleFactory.isLocalPackage : $z0 = virtualinvoke $r2.<java.lang.String: boolean startsWith(java.lang.String)>(".") >>>>>>>> org.apache.zeppelin.helium.HeliumBundleFactory.isLocalPackage : if $z0 != 0
+org.apache.zeppelin.helium.HeliumBundleFactory.isLocalPackage : if $z0 != 0 >>>>>>>> org.apache.zeppelin.helium.HeliumBundleFactory.isLocalPackage : $r3 = virtualinvoke r1.<org.apache.zeppelin.helium.HeliumPackage: java.lang.String getArtifact()>()
+org.apache.zeppelin.helium.HeliumBundleFactory.isLocalPackage : if $z0 != 0 >>>>>>>> org.apache.zeppelin.helium.HeliumBundleFactory.isLocalPackage : $z2 = 1
+org.apache.zeppelin.helium.HeliumBundleFactory.isLocalPackage : $z2 = 1 >>>>>>>> org.apache.zeppelin.helium.HeliumBundleFactory.isLocalPackage : goto [?= return $z2]
+org.apache.zeppelin.helium.HeliumBundleFactory.isLocalPackage : goto [?= return $z2] >>>>>>>> org.apache.zeppelin.helium.HeliumBundleFactory.isLocalPackage : return $z2
+org.apache.zeppelin.helium.HeliumBundleFactory.isLocalPackage : $r3 = virtualinvoke r1.<org.apache.zeppelin.helium.HeliumPackage: java.lang.String getArtifact()>() >>>>>>>> org.apache.zeppelin.helium.HeliumBundleFactory.isLocalPackage : $z1 = virtualinvoke $r3.<java.lang.String: boolean startsWith(java.lang.String)>("/")
+org.apache.zeppelin.helium.HeliumBundleFactory.isLocalPackage : $z1 = virtualinvoke $r3.<java.lang.String: boolean startsWith(java.lang.String)>("/") >>>>>>>> org.apache.zeppelin.helium.HeliumBundleFactory.isLocalPackage : if $z1 == 0
+org.apache.zeppelin.helium.HeliumBundleFactory.isLocalPackage : if $z1 == 0 >>>>>>>> org.apache.zeppelin.helium.HeliumBundleFactory.isLocalPackage : $z2 = 1
+org.apache.zeppelin.helium.HeliumBundleFactory.isLocalPackage : if $z1 == 0 >>>>>>>> org.apache.zeppelin.helium.HeliumBundleFactory.isLocalPackage : $z2 = 0
+org.apache.zeppelin.helium.HeliumBundleFactory.isLocalPackage : $z2 = 0 >>>>>>>> org.apache.zeppelin.helium.HeliumBundleFactory.isLocalPackage : return $z2

@@ -1,0 +1,27 @@
+org.apache.zeppelin.helium.HeliumLocalRegistry.getAll : $r1 = new java.util.LinkedList >>>>>>>> org.apache.zeppelin.helium.HeliumLocalRegistry.getAll : specialinvoke $r1.<java.util.LinkedList: void <init>()>()
+org.apache.zeppelin.helium.HeliumLocalRegistry.getAll : specialinvoke $r1.<java.util.LinkedList: void <init>()>() >>>>>>>> org.apache.zeppelin.helium.HeliumLocalRegistry.getAll : r2 = $r1
+org.apache.zeppelin.helium.HeliumLocalRegistry.getAll : r2 = $r1 >>>>>>>> org.apache.zeppelin.helium.HeliumLocalRegistry.getAll : $r8 = new java.io.File
+org.apache.zeppelin.helium.HeliumLocalRegistry.getAll : $r8 = new java.io.File >>>>>>>> org.apache.zeppelin.helium.HeliumLocalRegistry.getAll : $r9 = virtualinvoke r0.<org.apache.zeppelin.helium.HeliumLocalRegistry: java.lang.String uri()>()
+org.apache.zeppelin.helium.HeliumLocalRegistry.getAll : $r9 = virtualinvoke r0.<org.apache.zeppelin.helium.HeliumLocalRegistry: java.lang.String uri()>() >>>>>>>> org.apache.zeppelin.helium.HeliumLocalRegistry.getAll : specialinvoke $r8.<java.io.File: void <init>(java.lang.String)>($r9)
+org.apache.zeppelin.helium.HeliumLocalRegistry.getAll : specialinvoke $r8.<java.io.File: void <init>(java.lang.String)>($r9) >>>>>>>> org.apache.zeppelin.helium.HeliumLocalRegistry.getAll : r3 = $r8
+org.apache.zeppelin.helium.HeliumLocalRegistry.getAll : r3 = $r8 >>>>>>>> org.apache.zeppelin.helium.HeliumLocalRegistry.getAll : r4 = virtualinvoke r3.<java.io.File: java.io.File[] listFiles()>()
+org.apache.zeppelin.helium.HeliumLocalRegistry.getAll : r4 = virtualinvoke r3.<java.io.File: java.io.File[] listFiles()>() >>>>>>>> org.apache.zeppelin.helium.HeliumLocalRegistry.getAll : if r4 != null
+org.apache.zeppelin.helium.HeliumLocalRegistry.getAll : if r4 != null >>>>>>>> org.apache.zeppelin.helium.HeliumLocalRegistry.getAll : return r2
+org.apache.zeppelin.helium.HeliumLocalRegistry.getAll : if r4 != null >>>>>>>> org.apache.zeppelin.helium.HeliumLocalRegistry.getAll : r5 = r4
+org.apache.zeppelin.helium.HeliumLocalRegistry.getAll : r5 = r4 >>>>>>>> org.apache.zeppelin.helium.HeliumLocalRegistry.getAll : i0 = lengthof r5
+org.apache.zeppelin.helium.HeliumLocalRegistry.getAll : i0 = lengthof r5 >>>>>>>> org.apache.zeppelin.helium.HeliumLocalRegistry.getAll : i1 = 0
+org.apache.zeppelin.helium.HeliumLocalRegistry.getAll : i1 = 0 >>>>>>>> org.apache.zeppelin.helium.HeliumLocalRegistry.getAll : if i1 >= i0
+org.apache.zeppelin.helium.HeliumLocalRegistry.getAll : if i1 >= i0 >>>>>>>> org.apache.zeppelin.helium.HeliumLocalRegistry.getAll : r6 = r5[i1]
+org.apache.zeppelin.helium.HeliumLocalRegistry.getAll : if i1 >= i0 >>>>>>>> org.apache.zeppelin.helium.HeliumLocalRegistry.getAll : return r2
+org.apache.zeppelin.helium.HeliumLocalRegistry.getAll : r6 = r5[i1] >>>>>>>> org.apache.zeppelin.helium.HeliumLocalRegistry.getAll : $r10 = virtualinvoke r6.<java.io.File: java.lang.String getName()>()
+org.apache.zeppelin.helium.HeliumLocalRegistry.getAll : $r10 = virtualinvoke r6.<java.io.File: java.lang.String getName()>() >>>>>>>> org.apache.zeppelin.helium.HeliumLocalRegistry.getAll : $z0 = virtualinvoke $r10.<java.lang.String: boolean startsWith(java.lang.String)>(".")
+org.apache.zeppelin.helium.HeliumLocalRegistry.getAll : $z0 = virtualinvoke $r10.<java.lang.String: boolean startsWith(java.lang.String)>(".") >>>>>>>> org.apache.zeppelin.helium.HeliumLocalRegistry.getAll : if $z0 == 0
+org.apache.zeppelin.helium.HeliumLocalRegistry.getAll : if $z0 == 0 >>>>>>>> org.apache.zeppelin.helium.HeliumLocalRegistry.getAll : goto [?= i1 = i1 + 1]
+org.apache.zeppelin.helium.HeliumLocalRegistry.getAll : if $z0 == 0 >>>>>>>> org.apache.zeppelin.helium.HeliumLocalRegistry.getAll : r7 = specialinvoke r0.<org.apache.zeppelin.helium.HeliumLocalRegistry: org.apache.zeppelin.helium.HeliumPackage readPackageInfo(java.io.File)>(r6)
+org.apache.zeppelin.helium.HeliumLocalRegistry.getAll : r7 = specialinvoke r0.<org.apache.zeppelin.helium.HeliumLocalRegistry: org.apache.zeppelin.helium.HeliumPackage readPackageInfo(java.io.File)>(r6) >>>>>>>> org.apache.zeppelin.helium.HeliumLocalRegistry.getAll : if r7 == null
+org.apache.zeppelin.helium.HeliumLocalRegistry.getAll : if r7 == null >>>>>>>> org.apache.zeppelin.helium.HeliumLocalRegistry.getAll : interfaceinvoke r2.<java.util.List: boolean add(java.lang.Object)>(r7)
+org.apache.zeppelin.helium.HeliumLocalRegistry.getAll : if r7 == null >>>>>>>> org.apache.zeppelin.helium.HeliumLocalRegistry.getAll : i1 = i1 + 1
+org.apache.zeppelin.helium.HeliumLocalRegistry.getAll : i1 = i1 + 1 >>>>>>>> org.apache.zeppelin.helium.HeliumLocalRegistry.getAll : goto [?= (branch)]
+org.apache.zeppelin.helium.HeliumLocalRegistry.getAll : goto [?= (branch)] >>>>>>>> org.apache.zeppelin.helium.HeliumLocalRegistry.getAll : if i1 >= i0
+org.apache.zeppelin.helium.HeliumLocalRegistry.getAll : interfaceinvoke r2.<java.util.List: boolean add(java.lang.Object)>(r7) >>>>>>>> org.apache.zeppelin.helium.HeliumLocalRegistry.getAll : i1 = i1 + 1
+org.apache.zeppelin.helium.HeliumLocalRegistry.getAll : goto [?= i1 = i1 + 1] >>>>>>>> org.apache.zeppelin.helium.HeliumLocalRegistry.getAll : i1 = i1 + 1

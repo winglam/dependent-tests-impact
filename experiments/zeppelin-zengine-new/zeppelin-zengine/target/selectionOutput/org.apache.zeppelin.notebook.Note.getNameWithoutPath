@@ -1,0 +1,6 @@
+org.apache.zeppelin.notebook.Note.getNameWithoutPath : r1 = virtualinvoke r0.<org.apache.zeppelin.notebook.Note: java.lang.String getName()>() >>>>>>>> org.apache.zeppelin.notebook.Note.getNameWithoutPath : i0 = virtualinvoke r1.<java.lang.String: int lastIndexOf(java.lang.String)>("/")
+org.apache.zeppelin.notebook.Note.getNameWithoutPath : i0 = virtualinvoke r1.<java.lang.String: int lastIndexOf(java.lang.String)>("/") >>>>>>>> org.apache.zeppelin.notebook.Note.getNameWithoutPath : if i0 >= 0
+org.apache.zeppelin.notebook.Note.getNameWithoutPath : if i0 >= 0 >>>>>>>> org.apache.zeppelin.notebook.Note.getNameWithoutPath : return r1
+org.apache.zeppelin.notebook.Note.getNameWithoutPath : if i0 >= 0 >>>>>>>> org.apache.zeppelin.notebook.Note.getNameWithoutPath : $i1 = i0 + 1
+org.apache.zeppelin.notebook.Note.getNameWithoutPath : $i1 = i0 + 1 >>>>>>>> org.apache.zeppelin.notebook.Note.getNameWithoutPath : $r2 = virtualinvoke r1.<java.lang.String: java.lang.String substring(int)>($i1)
+org.apache.zeppelin.notebook.Note.getNameWithoutPath : $r2 = virtualinvoke r1.<java.lang.String: java.lang.String substring(int)>($i1) >>>>>>>> org.apache.zeppelin.notebook.Note.getNameWithoutPath : return $r2
