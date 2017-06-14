@@ -1,8 +1,0 @@
-org.apache.zeppelin.resource.Resource.getResourceId : $r1 = r0.<org.apache.zeppelin.resource.Resource: org.apache.zeppelin.resource.ResourceId resourceId>
-org.apache.zeppelin.resource.ResourceSet.filterByNameRegex : return r3
-org.apache.zeppelin.resource.ResourceSet.filterByNameRegex : r4 = virtualinvoke r0.<org.apache.zeppelin.resource.ResourceSet: java.util.Iterator iterator()>()
-org.apache.zeppelin.resource.ResourceSet.filterByNameRegex : goto [?= $z0 = interfaceinvoke r4.<java.util.Iterator: boolean hasNext()>()]
-org.apache.zeppelin.resource.ResourceSet.filterByNameRegex : $r7 = virtualinvoke r5.<org.apache.zeppelin.resource.Resource: org.apache.zeppelin.resource.ResourceId getResourceId()>()
-org.apache.zeppelin.resource.ResourceSet.filterByNameRegex : virtualinvoke r3.<org.apache.zeppelin.resource.ResourceSet: boolean add(java.lang.Object)>(r5)
-org.apache.zeppelin.resource.ResourceSet.filterByNameRegex : $r2 = new org.apache.zeppelin.resource.ResourceSet
-org.apache.zeppelin.resource.ResourceId.getName : $r1 = r0.<org.apache.zeppelin.resource.ResourceId: java.lang.String name>

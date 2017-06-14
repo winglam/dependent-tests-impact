@@ -1,7 +1,0 @@
-org.apache.zeppelin.resource.ResourceSet.filterByClassnameRegex : return r3
-org.apache.zeppelin.resource.ResourceSet.filterByClassnameRegex : r4 = virtualinvoke r0.<org.apache.zeppelin.resource.ResourceSet: java.util.Iterator iterator()>()
-org.apache.zeppelin.resource.ResourceSet.filterByClassnameRegex : goto [?= $z0 = interfaceinvoke r4.<java.util.Iterator: boolean hasNext()>()]
-org.apache.zeppelin.resource.ResourceSet.filterByClassnameRegex : virtualinvoke r3.<org.apache.zeppelin.resource.ResourceSet: boolean add(java.lang.Object)>(r5)
-org.apache.zeppelin.resource.ResourceSet.filterByClassnameRegex : $r7 = virtualinvoke r5.<org.apache.zeppelin.resource.Resource: java.lang.String getClassName()>()
-org.apache.zeppelin.resource.ResourceSet.filterByClassnameRegex : $r2 = new org.apache.zeppelin.resource.ResourceSet
-org.apache.zeppelin.resource.Resource.getClassName : $r1 = r0.<org.apache.zeppelin.resource.Resource: java.lang.String className>

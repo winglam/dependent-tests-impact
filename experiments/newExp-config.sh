@@ -1,17 +1,17 @@
 source ./config.sh
 
-newExperiments=(ambari-server zeppelin-zengine zeppelin-interpreter zeppelin-server)
+newExperiments=(ambari-server zeppelin-zengine zeppelin-server)
 newExpTestTypes=(orig auto)
 
-newExpDirectories=(ambari/ambari-server/target zeppelin/zeppelin-zengine/target zeppelin/zeppelin-interpreter/target zeppelin/zeppelin-server/target)
+newExpDirectories=(ambari/ambari-server/target zeppelin/zeppelin-zengine/target zeppelin/zeppelin-server/target)
 #newExpCompileDirectories=(ambari)
-newExpCP=(${initialDir}/impact-tools/*:classes/:test-classes/:dependency/*:randoop/bin/:/usr/lib/jvm/java-7-oracle/jre/lib/*: ${initialDir}/impact-tools/*:classes/:test-classes/:dependency/*:randoop/bin/:/usr/lib/jvm/java-7-oracle/jre/lib/*: ${initialDir}/impact-tools/*:classes/:test-classes/:dependency/*:randoop/bin/:/usr/lib/jvm/java-7-oracle/jre/lib/*: ${initialDir}/impact-tools/*:classes/:test-classes/:dependency/*:randoop/bin/:/usr/lib/jvm/java-7-oracle/jre/lib/*:)
+newExpCP=(${initialDir}/impact-tools/*:classes/:test-classes/:dependency/*:randoop/bin/:/usr/lib/jvm/java-7-oracle/jre/lib/*: ${initialDir}/impact-tools/*:classes/:test-classes/:dependency/*:randoop/bin/:/usr/lib/jvm/java-7-oracle/jre/lib/*: ${initialDir}/impact-tools/*:classes/:test-classes/:dependency/*:randoop/bin/:/usr/lib/jvm/java-7-oracle/jre/lib/*:)
 #newExpSootCP=(${initialDir}/impact-tools/*:sootOutput/:dependency/*:/usr/lib/jvm/java-1.7.0-openjdk-1.7.0.121-2.6.8.0.el7_3.x86_64/jre/lib/*:)
 
-newExperimentsName=("Ambari-Server" "Zeppelin-Zengine" "Zeppelin-Interpreter" "Zeppelin-Server")
+newExperimentsName=("Ambari-Server" "Zeppelin-Zengine" "Zeppelin-Server")
 
-nextExpDirectories=(ambari-new/ambari-server/target zeppelin-zengine-new/zeppelin-zengine/target zeppelin-new/zeppelin-interpreter/target zeppelin-new/zeppelin-server/target)
-nextExpCP=(${initialDir}/impact-tools/*:${initialDir}/ambari-new/ambari-server/target/classes/:${initialDir}/ambari-new/ambari-server/target/test-classes/:${initialDir}/ambari-new/ambari-server/target/dependency/*:${initialDir}/ambari-new/ambari-server/target/randoop/bin/:/usr/lib/jvm/java-7-oracle/jre/lib/*: ${initialDir}/impact-tools/*:${initialDir}/zeppelin-zengine-new/zeppelin-zengine/target/classes/:${initialDir}/zeppelin-zengine-new/zeppelin-zengine/target/test-classes/:${initialDir}/zeppelin-zengine-new/zeppelin-zengine/target/dependency/*:${initialDir}/zeppelin-zengine-new/zeppelin-zengine/target/randoop/bin/:/usr/lib/jvm/java-7-oracle/jre/lib/*: ${initialDir}/impact-tools/*:${initialDir}/zeppelin-new/zeppelin-interpreter/target/classes/:${initialDir}/zeppelin-new/zeppelin-interpreter/target/test-classes/:${initialDir}/zeppelin-new/zeppelin-interpreter/target/dependency/*:${initialDir}/zeppelin-new/zeppelin-interpreter/target/randoop/bin/:/usr/lib/jvm/java-7-oracle/jre/lib/*: ${initialDir}/impact-tools/*:${initialDir}/zeppelin-new/zeppelin-server/target/classes/:${initialDir}/zeppelin-new/zeppelin-server/target/test-classes/:${initialDir}/zeppelin-new/zeppelin-server/target/dependency/*:${initialDir}/zeppelin-new/zeppelin-server/target/randoop/bin/:/usr/lib/jvm/java-7-oracle/jre/lib/*:)
+nextExpDirectories=(ambari-new/ambari-server/target zeppelin-zengine-new/zeppelin-zengine/target zeppelin-new/zeppelin-server/target)
+nextExpCP=(${initialDir}/impact-tools/*:${initialDir}/ambari-new/ambari-server/target/classes/:${initialDir}/ambari-new/ambari-server/target/test-classes/:${initialDir}/ambari-new/ambari-server/target/dependency/*:${initialDir}/ambari-new/ambari-server/target/randoop/bin/:/usr/lib/jvm/java-7-oracle/jre/lib/*: ${initialDir}/impact-tools/*:${initialDir}/zeppelin-zengine-new/zeppelin-zengine/target/classes/:${initialDir}/zeppelin-zengine-new/zeppelin-zengine/target/test-classes/:${initialDir}/zeppelin-zengine-new/zeppelin-zengine/target/dependency/*:${initialDir}/zeppelin-zengine-new/zeppelin-zengine/target/randoop/bin/:/usr/lib/jvm/java-7-oracle/jre/lib/*: ${initialDir}/impact-tools/*:${initialDir}/zeppelin-new/zeppelin-server/target/classes/:${initialDir}/zeppelin-new/zeppelin-server/target/test-classes/:${initialDir}/zeppelin-new/zeppelin-server/target/dependency/*:${initialDir}/zeppelin-new/zeppelin-server/target/randoop/bin/:/usr/lib/jvm/java-7-oracle/jre/lib/*:)
 
 function compileNewExpSource() {
   index=0
