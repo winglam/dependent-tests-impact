@@ -37,3 +37,5 @@ xml-security-orig-v1    - version 1.0.4
 zeppelin 		- 09e8f7f0cd84efd9c67fff44119f7953881d91ab
 
 zeppelin-new            - c3b7087463822a2ed96d377413f47370391e17c1
+
+zeppelin-zengine-new    - 380cfbfe3cdef7e9281ad39b0b7e2cd3b161f72b
