@@ -1,0 +1,205 @@
+crystal.util.LSMRLogger.startLog4J : $r3 = staticinvoke <org.apache.log4j.Logger: org.apache.log4j.Logger getRootLogger()>() >>>>>>>> crystal.util.LSMRLogger.startLog4J : virtualinvoke $r3.<org.apache.log4j.Logger: void removeAllAppenders()>()
+crystal.util.LSMRLogger.startLog4J : virtualinvoke $r3.<org.apache.log4j.Logger: void removeAllAppenders()>() >>>>>>>> crystal.util.LSMRLogger.startLog4J : staticinvoke <org.apache.log4j.BasicConfigurator: void configure()>()
+crystal.util.LSMRLogger.startLog4J : staticinvoke <org.apache.log4j.BasicConfigurator: void configure()>() >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r9 = staticinvoke <org.apache.log4j.Logger: org.apache.log4j.Logger getRootLogger()>()
+crystal.util.LSMRLogger.startLog4J : $r9 = staticinvoke <org.apache.log4j.Logger: org.apache.log4j.Logger getRootLogger()>() >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r10 = virtualinvoke $r9.<org.apache.log4j.Logger: java.util.Enumeration getAllAppenders()>()
+crystal.util.LSMRLogger.startLog4J : $r10 = virtualinvoke $r9.<org.apache.log4j.Logger: java.util.Enumeration getAllAppenders()>() >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r11 = interfaceinvoke $r10.<java.util.Enumeration: java.lang.Object nextElement()>()
+crystal.util.LSMRLogger.startLog4J : $r11 = interfaceinvoke $r10.<java.util.Enumeration: java.lang.Object nextElement()>() >>>>>>>> crystal.util.LSMRLogger.startLog4J : r4 = (org.apache.log4j.ConsoleAppender) $r11
+crystal.util.LSMRLogger.startLog4J : r4 = (org.apache.log4j.ConsoleAppender) $r11 >>>>>>>> crystal.util.LSMRLogger.startLog4J : if z0 == 0
+crystal.util.LSMRLogger.startLog4J : if z0 == 0 >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r5 = <org.apache.log4j.Level: org.apache.log4j.Level ERROR>
+crystal.util.LSMRLogger.startLog4J : if z0 == 0 >>>>>>>> crystal.util.LSMRLogger.startLog4J : if r1 == null
+crystal.util.LSMRLogger.startLog4J : if r1 == null >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r12 = <java.io.File: java.lang.String separator>
+crystal.util.LSMRLogger.startLog4J : if r1 == null >>>>>>>> crystal.util.LSMRLogger.startLog4J : if r1 == null
+crystal.util.LSMRLogger.startLog4J : if r1 == null >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r17 = new java.io.File
+crystal.util.LSMRLogger.startLog4J : if r1 == null >>>>>>>> crystal.util.LSMRLogger.startLog4J : if r2 != null
+crystal.util.LSMRLogger.startLog4J : if r2 != null >>>>>>>> crystal.util.LSMRLogger.startLog4J : r2 = "lsmrLog"
+crystal.util.LSMRLogger.startLog4J : if r2 != null >>>>>>>> crystal.util.LSMRLogger.startLog4J : r23 = null
+crystal.util.LSMRLogger.startLog4J : r23 = null >>>>>>>> crystal.util.LSMRLogger.startLog4J : n0 = null
+crystal.util.LSMRLogger.startLog4J : n0 = null >>>>>>>> crystal.util.LSMRLogger.startLog4J : if z1 == 0
+crystal.util.LSMRLogger.startLog4J : if z1 == 0 >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r24 = new org.apache.log4j.xml.XMLLayout
+crystal.util.LSMRLogger.startLog4J : if z1 == 0 >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r26 = new org.apache.log4j.xml.XMLLayout
+crystal.util.LSMRLogger.startLog4J : $r26 = new org.apache.log4j.xml.XMLLayout >>>>>>>> crystal.util.LSMRLogger.startLog4J : specialinvoke $r26.<org.apache.log4j.xml.XMLLayout: void <init>()>()
+crystal.util.LSMRLogger.startLog4J : specialinvoke $r26.<org.apache.log4j.xml.XMLLayout: void <init>()>() >>>>>>>> crystal.util.LSMRLogger.startLog4J : r25 = $r26
+crystal.util.LSMRLogger.startLog4J : r25 = $r26 >>>>>>>> crystal.util.LSMRLogger.startLog4J : if r4 == null
+crystal.util.LSMRLogger.startLog4J : r25 = $r26 >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r63 := @caughtexception
+crystal.util.LSMRLogger.startLog4J : r64 = $r63 >>>>>>>> crystal.util.LSMRLogger.startLog4J : virtualinvoke r64.<java.io.IOException: void printStackTrace()>()
+crystal.util.LSMRLogger.startLog4J : virtualinvoke r64.<java.io.IOException: void printStackTrace()>() >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r65 = staticinvoke <org.apache.log4j.Logger: org.apache.log4j.Logger getRootLogger()>()
+crystal.util.LSMRLogger.startLog4J : $r65 = staticinvoke <org.apache.log4j.Logger: org.apache.log4j.Logger getRootLogger()>() >>>>>>>> crystal.util.LSMRLogger.startLog4J : virtualinvoke $r65.<org.apache.log4j.Logger: void setLevel(org.apache.log4j.Level)>(r0)
+crystal.util.LSMRLogger.startLog4J : virtualinvoke $r65.<org.apache.log4j.Logger: void setLevel(org.apache.log4j.Level)>(r0) >>>>>>>> crystal.util.LSMRLogger.startLog4J : return
+crystal.util.LSMRLogger.startLog4J : if r4 == null >>>>>>>> crystal.util.LSMRLogger.startLog4J : if z1 == 0
+crystal.util.LSMRLogger.startLog4J : if r4 == null >>>>>>>> crystal.util.LSMRLogger.startLog4J : if r1 == null
+crystal.util.LSMRLogger.startLog4J : if r4 == null >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r63 := @caughtexception
+crystal.util.LSMRLogger.startLog4J : if r1 == null >>>>>>>> crystal.util.LSMRLogger.startLog4J : virtualinvoke r23.<org.apache.log4j.RollingFileAppender: void setMaxBackupIndex(int)>(10)
+crystal.util.LSMRLogger.startLog4J : if r1 == null >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r65 = staticinvoke <org.apache.log4j.Logger: org.apache.log4j.Logger getRootLogger()>()
+crystal.util.LSMRLogger.startLog4J : if r1 == null >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r63 := @caughtexception
+crystal.util.LSMRLogger.startLog4J : virtualinvoke r23.<org.apache.log4j.RollingFileAppender: void setMaxBackupIndex(int)>(10) >>>>>>>> crystal.util.LSMRLogger.startLog4J : virtualinvoke r23.<org.apache.log4j.RollingFileAppender: void setMaxFileSize(java.lang.String)>("10MB")
+crystal.util.LSMRLogger.startLog4J : virtualinvoke r23.<org.apache.log4j.RollingFileAppender: void setMaxBackupIndex(int)>(10) >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r63 := @caughtexception
+crystal.util.LSMRLogger.startLog4J : virtualinvoke r23.<org.apache.log4j.RollingFileAppender: void setMaxFileSize(java.lang.String)>("10MB") >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r43 = staticinvoke <org.apache.log4j.Logger: org.apache.log4j.Logger getRootLogger()>()
+crystal.util.LSMRLogger.startLog4J : virtualinvoke r23.<org.apache.log4j.RollingFileAppender: void setMaxFileSize(java.lang.String)>("10MB") >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r63 := @caughtexception
+crystal.util.LSMRLogger.startLog4J : $r43 = staticinvoke <org.apache.log4j.Logger: org.apache.log4j.Logger getRootLogger()>() >>>>>>>> crystal.util.LSMRLogger.startLog4J : virtualinvoke $r43.<org.apache.log4j.Logger: void addAppender(org.apache.log4j.Appender)>(r23)
+crystal.util.LSMRLogger.startLog4J : $r43 = staticinvoke <org.apache.log4j.Logger: org.apache.log4j.Logger getRootLogger()>() >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r63 := @caughtexception
+crystal.util.LSMRLogger.startLog4J : virtualinvoke $r43.<org.apache.log4j.Logger: void addAppender(org.apache.log4j.Appender)>(r23) >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r44 = new org.apache.log4j.xml.XMLLayout
+crystal.util.LSMRLogger.startLog4J : virtualinvoke $r43.<org.apache.log4j.Logger: void addAppender(org.apache.log4j.Appender)>(r23) >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r63 := @caughtexception
+crystal.util.LSMRLogger.startLog4J : $r44 = new org.apache.log4j.xml.XMLLayout >>>>>>>> crystal.util.LSMRLogger.startLog4J : specialinvoke $r44.<org.apache.log4j.xml.XMLLayout: void <init>()>()
+crystal.util.LSMRLogger.startLog4J : $r44 = new org.apache.log4j.xml.XMLLayout >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r63 := @caughtexception
+crystal.util.LSMRLogger.startLog4J : specialinvoke $r44.<org.apache.log4j.xml.XMLLayout: void <init>()>() >>>>>>>> crystal.util.LSMRLogger.startLog4J : r7 = $r44
+crystal.util.LSMRLogger.startLog4J : specialinvoke $r44.<org.apache.log4j.xml.XMLLayout: void <init>()>() >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r63 := @caughtexception
+crystal.util.LSMRLogger.startLog4J : r7 = $r44 >>>>>>>> crystal.util.LSMRLogger.startLog4J : virtualinvoke r7.<org.apache.log4j.xml.XMLLayout: void setLocationInfo(boolean)>(1)
+crystal.util.LSMRLogger.startLog4J : r7 = $r44 >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r63 := @caughtexception
+crystal.util.LSMRLogger.startLog4J : virtualinvoke r7.<org.apache.log4j.xml.XMLLayout: void setLocationInfo(boolean)>(1) >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r45 = new org.apache.log4j.RollingFileAppender
+crystal.util.LSMRLogger.startLog4J : virtualinvoke r7.<org.apache.log4j.xml.XMLLayout: void setLocationInfo(boolean)>(1) >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r63 := @caughtexception
+crystal.util.LSMRLogger.startLog4J : $r45 = new org.apache.log4j.RollingFileAppender >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r46 = new java.lang.StringBuilder
+crystal.util.LSMRLogger.startLog4J : $r45 = new org.apache.log4j.RollingFileAppender >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r63 := @caughtexception
+crystal.util.LSMRLogger.startLog4J : $r46 = new java.lang.StringBuilder >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r47 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(r1)
+crystal.util.LSMRLogger.startLog4J : $r46 = new java.lang.StringBuilder >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r63 := @caughtexception
+crystal.util.LSMRLogger.startLog4J : $r47 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(r1) >>>>>>>> crystal.util.LSMRLogger.startLog4J : specialinvoke $r46.<java.lang.StringBuilder: void <init>(java.lang.String)>($r47)
+crystal.util.LSMRLogger.startLog4J : $r47 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(r1) >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r63 := @caughtexception
+crystal.util.LSMRLogger.startLog4J : specialinvoke $r46.<java.lang.StringBuilder: void <init>(java.lang.String)>($r47) >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r48 = virtualinvoke $r46.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r2)
+crystal.util.LSMRLogger.startLog4J : specialinvoke $r46.<java.lang.StringBuilder: void <init>(java.lang.String)>($r47) >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r63 := @caughtexception
+crystal.util.LSMRLogger.startLog4J : $r48 = virtualinvoke $r46.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r2) >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r49 = virtualinvoke $r48.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(".xml")
+crystal.util.LSMRLogger.startLog4J : $r48 = virtualinvoke $r46.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r2) >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r63 := @caughtexception
+crystal.util.LSMRLogger.startLog4J : $r49 = virtualinvoke $r48.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(".xml") >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r50 = virtualinvoke $r49.<java.lang.StringBuilder: java.lang.String toString()>()
+crystal.util.LSMRLogger.startLog4J : $r49 = virtualinvoke $r48.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(".xml") >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r63 := @caughtexception
+crystal.util.LSMRLogger.startLog4J : $r50 = virtualinvoke $r49.<java.lang.StringBuilder: java.lang.String toString()>() >>>>>>>> crystal.util.LSMRLogger.startLog4J : specialinvoke $r45.<org.apache.log4j.RollingFileAppender: void <init>(org.apache.log4j.Layout,java.lang.String)>(r7, $r50)
+crystal.util.LSMRLogger.startLog4J : $r50 = virtualinvoke $r49.<java.lang.StringBuilder: java.lang.String toString()>() >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r63 := @caughtexception
+crystal.util.LSMRLogger.startLog4J : specialinvoke $r45.<org.apache.log4j.RollingFileAppender: void <init>(org.apache.log4j.Layout,java.lang.String)>(r7, $r50) >>>>>>>> crystal.util.LSMRLogger.startLog4J : r51 = $r45
+crystal.util.LSMRLogger.startLog4J : specialinvoke $r45.<org.apache.log4j.RollingFileAppender: void <init>(org.apache.log4j.Layout,java.lang.String)>(r7, $r50) >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r63 := @caughtexception
+crystal.util.LSMRLogger.startLog4J : r51 = $r45 >>>>>>>> crystal.util.LSMRLogger.startLog4J : virtualinvoke r51.<org.apache.log4j.RollingFileAppender: void setMaxBackupIndex(int)>(10)
+crystal.util.LSMRLogger.startLog4J : r51 = $r45 >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r63 := @caughtexception
+crystal.util.LSMRLogger.startLog4J : virtualinvoke r51.<org.apache.log4j.RollingFileAppender: void setMaxBackupIndex(int)>(10) >>>>>>>> crystal.util.LSMRLogger.startLog4J : virtualinvoke r51.<org.apache.log4j.RollingFileAppender: void setMaxFileSize(java.lang.String)>("10MB")
+crystal.util.LSMRLogger.startLog4J : virtualinvoke r51.<org.apache.log4j.RollingFileAppender: void setMaxBackupIndex(int)>(10) >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r63 := @caughtexception
+crystal.util.LSMRLogger.startLog4J : virtualinvoke r51.<org.apache.log4j.RollingFileAppender: void setMaxFileSize(java.lang.String)>("10MB") >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r52 = staticinvoke <org.apache.log4j.Logger: org.apache.log4j.Logger getRootLogger()>()
+crystal.util.LSMRLogger.startLog4J : virtualinvoke r51.<org.apache.log4j.RollingFileAppender: void setMaxFileSize(java.lang.String)>("10MB") >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r63 := @caughtexception
+crystal.util.LSMRLogger.startLog4J : $r52 = staticinvoke <org.apache.log4j.Logger: org.apache.log4j.Logger getRootLogger()>() >>>>>>>> crystal.util.LSMRLogger.startLog4J : virtualinvoke $r52.<org.apache.log4j.Logger: void addAppender(org.apache.log4j.Appender)>(r51)
+crystal.util.LSMRLogger.startLog4J : $r52 = staticinvoke <org.apache.log4j.Logger: org.apache.log4j.Logger getRootLogger()>() >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r63 := @caughtexception
+crystal.util.LSMRLogger.startLog4J : virtualinvoke $r52.<org.apache.log4j.Logger: void addAppender(org.apache.log4j.Appender)>(r51) >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r53 = new org.apache.log4j.PatternLayout
+crystal.util.LSMRLogger.startLog4J : virtualinvoke $r52.<org.apache.log4j.Logger: void addAppender(org.apache.log4j.Appender)>(r51) >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r63 := @caughtexception
+crystal.util.LSMRLogger.startLog4J : $r53 = new org.apache.log4j.PatternLayout >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r54 = <crystal.util.LSMRLogger: java.lang.String LOG_PATTERN_VERBOSE>
+crystal.util.LSMRLogger.startLog4J : $r53 = new org.apache.log4j.PatternLayout >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r63 := @caughtexception
+crystal.util.LSMRLogger.startLog4J : $r54 = <crystal.util.LSMRLogger: java.lang.String LOG_PATTERN_VERBOSE> >>>>>>>> crystal.util.LSMRLogger.startLog4J : specialinvoke $r53.<org.apache.log4j.PatternLayout: void <init>(java.lang.String)>($r54)
+crystal.util.LSMRLogger.startLog4J : $r54 = <crystal.util.LSMRLogger: java.lang.String LOG_PATTERN_VERBOSE> >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r63 := @caughtexception
+crystal.util.LSMRLogger.startLog4J : specialinvoke $r53.<org.apache.log4j.PatternLayout: void <init>(java.lang.String)>($r54) >>>>>>>> crystal.util.LSMRLogger.startLog4J : r8 = $r53
+crystal.util.LSMRLogger.startLog4J : specialinvoke $r53.<org.apache.log4j.PatternLayout: void <init>(java.lang.String)>($r54) >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r63 := @caughtexception
+crystal.util.LSMRLogger.startLog4J : r8 = $r53 >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r55 = new org.apache.log4j.RollingFileAppender
+crystal.util.LSMRLogger.startLog4J : r8 = $r53 >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r63 := @caughtexception
+crystal.util.LSMRLogger.startLog4J : $r55 = new org.apache.log4j.RollingFileAppender >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r56 = new java.lang.StringBuilder
+crystal.util.LSMRLogger.startLog4J : $r55 = new org.apache.log4j.RollingFileAppender >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r63 := @caughtexception
+crystal.util.LSMRLogger.startLog4J : $r56 = new java.lang.StringBuilder >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r57 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(r1)
+crystal.util.LSMRLogger.startLog4J : $r56 = new java.lang.StringBuilder >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r63 := @caughtexception
+crystal.util.LSMRLogger.startLog4J : $r57 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(r1) >>>>>>>> crystal.util.LSMRLogger.startLog4J : specialinvoke $r56.<java.lang.StringBuilder: void <init>(java.lang.String)>($r57)
+crystal.util.LSMRLogger.startLog4J : $r57 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(r1) >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r63 := @caughtexception
+crystal.util.LSMRLogger.startLog4J : specialinvoke $r56.<java.lang.StringBuilder: void <init>(java.lang.String)>($r57) >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r58 = virtualinvoke $r56.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r2)
+crystal.util.LSMRLogger.startLog4J : specialinvoke $r56.<java.lang.StringBuilder: void <init>(java.lang.String)>($r57) >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r63 := @caughtexception
+crystal.util.LSMRLogger.startLog4J : $r58 = virtualinvoke $r56.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r2) >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r59 = virtualinvoke $r58.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(".log")
+crystal.util.LSMRLogger.startLog4J : $r58 = virtualinvoke $r56.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r2) >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r63 := @caughtexception
+crystal.util.LSMRLogger.startLog4J : $r59 = virtualinvoke $r58.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(".log") >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r60 = virtualinvoke $r59.<java.lang.StringBuilder: java.lang.String toString()>()
+crystal.util.LSMRLogger.startLog4J : $r59 = virtualinvoke $r58.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(".log") >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r63 := @caughtexception
+crystal.util.LSMRLogger.startLog4J : $r60 = virtualinvoke $r59.<java.lang.StringBuilder: java.lang.String toString()>() >>>>>>>> crystal.util.LSMRLogger.startLog4J : specialinvoke $r55.<org.apache.log4j.RollingFileAppender: void <init>(org.apache.log4j.Layout,java.lang.String)>(r8, $r60)
+crystal.util.LSMRLogger.startLog4J : $r60 = virtualinvoke $r59.<java.lang.StringBuilder: java.lang.String toString()>() >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r63 := @caughtexception
+crystal.util.LSMRLogger.startLog4J : specialinvoke $r55.<org.apache.log4j.RollingFileAppender: void <init>(org.apache.log4j.Layout,java.lang.String)>(r8, $r60) >>>>>>>> crystal.util.LSMRLogger.startLog4J : r61 = $r55
+crystal.util.LSMRLogger.startLog4J : specialinvoke $r55.<org.apache.log4j.RollingFileAppender: void <init>(org.apache.log4j.Layout,java.lang.String)>(r8, $r60) >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r63 := @caughtexception
+crystal.util.LSMRLogger.startLog4J : r61 = $r55 >>>>>>>> crystal.util.LSMRLogger.startLog4J : virtualinvoke r61.<org.apache.log4j.RollingFileAppender: void setMaxBackupIndex(int)>(10)
+crystal.util.LSMRLogger.startLog4J : r61 = $r55 >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r63 := @caughtexception
+crystal.util.LSMRLogger.startLog4J : virtualinvoke r61.<org.apache.log4j.RollingFileAppender: void setMaxBackupIndex(int)>(10) >>>>>>>> crystal.util.LSMRLogger.startLog4J : virtualinvoke r61.<org.apache.log4j.RollingFileAppender: void setMaxFileSize(java.lang.String)>("10MB")
+crystal.util.LSMRLogger.startLog4J : virtualinvoke r61.<org.apache.log4j.RollingFileAppender: void setMaxBackupIndex(int)>(10) >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r63 := @caughtexception
+crystal.util.LSMRLogger.startLog4J : virtualinvoke r61.<org.apache.log4j.RollingFileAppender: void setMaxFileSize(java.lang.String)>("10MB") >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r62 = staticinvoke <org.apache.log4j.Logger: org.apache.log4j.Logger getRootLogger()>()
+crystal.util.LSMRLogger.startLog4J : virtualinvoke r61.<org.apache.log4j.RollingFileAppender: void setMaxFileSize(java.lang.String)>("10MB") >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r63 := @caughtexception
+crystal.util.LSMRLogger.startLog4J : $r62 = staticinvoke <org.apache.log4j.Logger: org.apache.log4j.Logger getRootLogger()>() >>>>>>>> crystal.util.LSMRLogger.startLog4J : virtualinvoke $r62.<org.apache.log4j.Logger: void addAppender(org.apache.log4j.Appender)>(r61)
+crystal.util.LSMRLogger.startLog4J : $r62 = staticinvoke <org.apache.log4j.Logger: org.apache.log4j.Logger getRootLogger()>() >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r63 := @caughtexception
+crystal.util.LSMRLogger.startLog4J : virtualinvoke $r62.<org.apache.log4j.Logger: void addAppender(org.apache.log4j.Appender)>(r61) >>>>>>>> crystal.util.LSMRLogger.startLog4J : goto [?= $r65 = staticinvoke <org.apache.log4j.Logger: org.apache.log4j.Logger getRootLogger()>()]
+crystal.util.LSMRLogger.startLog4J : virtualinvoke $r62.<org.apache.log4j.Logger: void addAppender(org.apache.log4j.Appender)>(r61) >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r63 := @caughtexception
+crystal.util.LSMRLogger.startLog4J : goto [?= $r65 = staticinvoke <org.apache.log4j.Logger: org.apache.log4j.Logger getRootLogger()>()] >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r65 = staticinvoke <org.apache.log4j.Logger: org.apache.log4j.Logger getRootLogger()>()
+crystal.util.LSMRLogger.startLog4J : if z1 == 0 >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r27 = new org.apache.log4j.PatternLayout
+crystal.util.LSMRLogger.startLog4J : if z1 == 0 >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r35 = new org.apache.log4j.PatternLayout
+crystal.util.LSMRLogger.startLog4J : if z1 == 0 >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r63 := @caughtexception
+crystal.util.LSMRLogger.startLog4J : $r35 = new org.apache.log4j.PatternLayout >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r36 = <crystal.util.LSMRLogger: java.lang.String LOG_PATTERN_FAST>
+crystal.util.LSMRLogger.startLog4J : $r35 = new org.apache.log4j.PatternLayout >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r63 := @caughtexception
+crystal.util.LSMRLogger.startLog4J : $r36 = <crystal.util.LSMRLogger: java.lang.String LOG_PATTERN_FAST> >>>>>>>> crystal.util.LSMRLogger.startLog4J : specialinvoke $r35.<org.apache.log4j.PatternLayout: void <init>(java.lang.String)>($r36)
+crystal.util.LSMRLogger.startLog4J : $r36 = <crystal.util.LSMRLogger: java.lang.String LOG_PATTERN_FAST> >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r63 := @caughtexception
+crystal.util.LSMRLogger.startLog4J : specialinvoke $r35.<org.apache.log4j.PatternLayout: void <init>(java.lang.String)>($r36) >>>>>>>> crystal.util.LSMRLogger.startLog4J : virtualinvoke r4.<org.apache.log4j.ConsoleAppender: void setLayout(org.apache.log4j.Layout)>($r35)
+crystal.util.LSMRLogger.startLog4J : specialinvoke $r35.<org.apache.log4j.PatternLayout: void <init>(java.lang.String)>($r36) >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r63 := @caughtexception
+crystal.util.LSMRLogger.startLog4J : virtualinvoke r4.<org.apache.log4j.ConsoleAppender: void setLayout(org.apache.log4j.Layout)>($r35) >>>>>>>> crystal.util.LSMRLogger.startLog4J : if r1 == null
+crystal.util.LSMRLogger.startLog4J : virtualinvoke r4.<org.apache.log4j.ConsoleAppender: void setLayout(org.apache.log4j.Layout)>($r35) >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r63 := @caughtexception
+crystal.util.LSMRLogger.startLog4J : if r1 == null >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r37 = new org.apache.log4j.RollingFileAppender
+crystal.util.LSMRLogger.startLog4J : if r1 == null >>>>>>>> crystal.util.LSMRLogger.startLog4J : if r1 == null
+crystal.util.LSMRLogger.startLog4J : if r1 == null >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r63 := @caughtexception
+crystal.util.LSMRLogger.startLog4J : $r37 = new org.apache.log4j.RollingFileAppender >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r38 = new java.lang.StringBuilder
+crystal.util.LSMRLogger.startLog4J : $r37 = new org.apache.log4j.RollingFileAppender >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r63 := @caughtexception
+crystal.util.LSMRLogger.startLog4J : $r38 = new java.lang.StringBuilder >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r39 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(r1)
+crystal.util.LSMRLogger.startLog4J : $r38 = new java.lang.StringBuilder >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r63 := @caughtexception
+crystal.util.LSMRLogger.startLog4J : $r39 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(r1) >>>>>>>> crystal.util.LSMRLogger.startLog4J : specialinvoke $r38.<java.lang.StringBuilder: void <init>(java.lang.String)>($r39)
+crystal.util.LSMRLogger.startLog4J : $r39 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(r1) >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r63 := @caughtexception
+crystal.util.LSMRLogger.startLog4J : specialinvoke $r38.<java.lang.StringBuilder: void <init>(java.lang.String)>($r39) >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r40 = virtualinvoke $r38.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r2)
+crystal.util.LSMRLogger.startLog4J : specialinvoke $r38.<java.lang.StringBuilder: void <init>(java.lang.String)>($r39) >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r63 := @caughtexception
+crystal.util.LSMRLogger.startLog4J : $r40 = virtualinvoke $r38.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r2) >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r41 = virtualinvoke $r40.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(".xml")
+crystal.util.LSMRLogger.startLog4J : $r40 = virtualinvoke $r38.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r2) >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r63 := @caughtexception
+crystal.util.LSMRLogger.startLog4J : $r41 = virtualinvoke $r40.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(".xml") >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r42 = virtualinvoke $r41.<java.lang.StringBuilder: java.lang.String toString()>()
+crystal.util.LSMRLogger.startLog4J : $r41 = virtualinvoke $r40.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(".xml") >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r63 := @caughtexception
+crystal.util.LSMRLogger.startLog4J : $r42 = virtualinvoke $r41.<java.lang.StringBuilder: java.lang.String toString()>() >>>>>>>> crystal.util.LSMRLogger.startLog4J : specialinvoke $r37.<org.apache.log4j.RollingFileAppender: void <init>(org.apache.log4j.Layout,java.lang.String)>(r25, $r42)
+crystal.util.LSMRLogger.startLog4J : $r42 = virtualinvoke $r41.<java.lang.StringBuilder: java.lang.String toString()>() >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r63 := @caughtexception
+crystal.util.LSMRLogger.startLog4J : specialinvoke $r37.<org.apache.log4j.RollingFileAppender: void <init>(org.apache.log4j.Layout,java.lang.String)>(r25, $r42) >>>>>>>> crystal.util.LSMRLogger.startLog4J : r23 = $r37
+crystal.util.LSMRLogger.startLog4J : specialinvoke $r37.<org.apache.log4j.RollingFileAppender: void <init>(org.apache.log4j.Layout,java.lang.String)>(r25, $r42) >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r63 := @caughtexception
+crystal.util.LSMRLogger.startLog4J : r23 = $r37 >>>>>>>> crystal.util.LSMRLogger.startLog4J : if r1 == null
+crystal.util.LSMRLogger.startLog4J : r23 = $r37 >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r63 := @caughtexception
+crystal.util.LSMRLogger.startLog4J : $r27 = new org.apache.log4j.PatternLayout >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r28 = <crystal.util.LSMRLogger: java.lang.String LOG_PATTERN_VERBOSE>
+crystal.util.LSMRLogger.startLog4J : $r27 = new org.apache.log4j.PatternLayout >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r63 := @caughtexception
+crystal.util.LSMRLogger.startLog4J : $r28 = <crystal.util.LSMRLogger: java.lang.String LOG_PATTERN_VERBOSE> >>>>>>>> crystal.util.LSMRLogger.startLog4J : specialinvoke $r27.<org.apache.log4j.PatternLayout: void <init>(java.lang.String)>($r28)
+crystal.util.LSMRLogger.startLog4J : $r28 = <crystal.util.LSMRLogger: java.lang.String LOG_PATTERN_VERBOSE> >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r63 := @caughtexception
+crystal.util.LSMRLogger.startLog4J : specialinvoke $r27.<org.apache.log4j.PatternLayout: void <init>(java.lang.String)>($r28) >>>>>>>> crystal.util.LSMRLogger.startLog4J : virtualinvoke r4.<org.apache.log4j.ConsoleAppender: void setLayout(org.apache.log4j.Layout)>($r27)
+crystal.util.LSMRLogger.startLog4J : specialinvoke $r27.<org.apache.log4j.PatternLayout: void <init>(java.lang.String)>($r28) >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r63 := @caughtexception
+crystal.util.LSMRLogger.startLog4J : virtualinvoke r4.<org.apache.log4j.ConsoleAppender: void setLayout(org.apache.log4j.Layout)>($r27) >>>>>>>> crystal.util.LSMRLogger.startLog4J : if r1 == null
+crystal.util.LSMRLogger.startLog4J : virtualinvoke r4.<org.apache.log4j.ConsoleAppender: void setLayout(org.apache.log4j.Layout)>($r27) >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r63 := @caughtexception
+crystal.util.LSMRLogger.startLog4J : if r1 == null >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r29 = new org.apache.log4j.RollingFileAppender
+crystal.util.LSMRLogger.startLog4J : if r1 == null >>>>>>>> crystal.util.LSMRLogger.startLog4J : if r1 == null
+crystal.util.LSMRLogger.startLog4J : if r1 == null >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r63 := @caughtexception
+crystal.util.LSMRLogger.startLog4J : $r29 = new org.apache.log4j.RollingFileAppender >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r30 = new java.lang.StringBuilder
+crystal.util.LSMRLogger.startLog4J : $r29 = new org.apache.log4j.RollingFileAppender >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r63 := @caughtexception
+crystal.util.LSMRLogger.startLog4J : $r30 = new java.lang.StringBuilder >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r31 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(r1)
+crystal.util.LSMRLogger.startLog4J : $r30 = new java.lang.StringBuilder >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r63 := @caughtexception
+crystal.util.LSMRLogger.startLog4J : $r31 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(r1) >>>>>>>> crystal.util.LSMRLogger.startLog4J : specialinvoke $r30.<java.lang.StringBuilder: void <init>(java.lang.String)>($r31)
+crystal.util.LSMRLogger.startLog4J : $r31 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(r1) >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r63 := @caughtexception
+crystal.util.LSMRLogger.startLog4J : specialinvoke $r30.<java.lang.StringBuilder: void <init>(java.lang.String)>($r31) >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r32 = virtualinvoke $r30.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r2)
+crystal.util.LSMRLogger.startLog4J : specialinvoke $r30.<java.lang.StringBuilder: void <init>(java.lang.String)>($r31) >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r63 := @caughtexception
+crystal.util.LSMRLogger.startLog4J : $r32 = virtualinvoke $r30.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r2) >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r33 = virtualinvoke $r32.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(".xml")
+crystal.util.LSMRLogger.startLog4J : $r32 = virtualinvoke $r30.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r2) >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r63 := @caughtexception
+crystal.util.LSMRLogger.startLog4J : $r33 = virtualinvoke $r32.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(".xml") >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r34 = virtualinvoke $r33.<java.lang.StringBuilder: java.lang.String toString()>()
+crystal.util.LSMRLogger.startLog4J : $r33 = virtualinvoke $r32.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(".xml") >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r63 := @caughtexception
+crystal.util.LSMRLogger.startLog4J : $r34 = virtualinvoke $r33.<java.lang.StringBuilder: java.lang.String toString()>() >>>>>>>> crystal.util.LSMRLogger.startLog4J : specialinvoke $r29.<org.apache.log4j.RollingFileAppender: void <init>(org.apache.log4j.Layout,java.lang.String)>(r25, $r34)
+crystal.util.LSMRLogger.startLog4J : $r34 = virtualinvoke $r33.<java.lang.StringBuilder: java.lang.String toString()>() >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r63 := @caughtexception
+crystal.util.LSMRLogger.startLog4J : specialinvoke $r29.<org.apache.log4j.RollingFileAppender: void <init>(org.apache.log4j.Layout,java.lang.String)>(r25, $r34) >>>>>>>> crystal.util.LSMRLogger.startLog4J : r23 = $r29
+crystal.util.LSMRLogger.startLog4J : specialinvoke $r29.<org.apache.log4j.RollingFileAppender: void <init>(org.apache.log4j.Layout,java.lang.String)>(r25, $r34) >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r63 := @caughtexception
+crystal.util.LSMRLogger.startLog4J : r23 = $r29 >>>>>>>> crystal.util.LSMRLogger.startLog4J : goto [?= (branch)]
+crystal.util.LSMRLogger.startLog4J : r23 = $r29 >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r63 := @caughtexception
+crystal.util.LSMRLogger.startLog4J : goto [?= (branch)] >>>>>>>> crystal.util.LSMRLogger.startLog4J : if r1 == null
+crystal.util.LSMRLogger.startLog4J : goto [?= (branch)] >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r63 := @caughtexception
+crystal.util.LSMRLogger.startLog4J : $r24 = new org.apache.log4j.xml.XMLLayout >>>>>>>> crystal.util.LSMRLogger.startLog4J : specialinvoke $r24.<org.apache.log4j.xml.XMLLayout: void <init>()>()
+crystal.util.LSMRLogger.startLog4J : specialinvoke $r24.<org.apache.log4j.xml.XMLLayout: void <init>()>() >>>>>>>> crystal.util.LSMRLogger.startLog4J : r25 = $r24
+crystal.util.LSMRLogger.startLog4J : r25 = $r24 >>>>>>>> crystal.util.LSMRLogger.startLog4J : goto [?= (branch)]
+crystal.util.LSMRLogger.startLog4J : goto [?= (branch)] >>>>>>>> crystal.util.LSMRLogger.startLog4J : if r4 == null
+crystal.util.LSMRLogger.startLog4J : goto [?= (branch)] >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r63 := @caughtexception
+crystal.util.LSMRLogger.startLog4J : r2 = "lsmrLog" >>>>>>>> crystal.util.LSMRLogger.startLog4J : r23 = null
+crystal.util.LSMRLogger.startLog4J : $r17 = new java.io.File >>>>>>>> crystal.util.LSMRLogger.startLog4J : specialinvoke $r17.<java.io.File: void <init>(java.lang.String)>(r1)
+crystal.util.LSMRLogger.startLog4J : specialinvoke $r17.<java.io.File: void <init>(java.lang.String)>(r1) >>>>>>>> crystal.util.LSMRLogger.startLog4J : r6 = $r17
+crystal.util.LSMRLogger.startLog4J : r6 = $r17 >>>>>>>> crystal.util.LSMRLogger.startLog4J : $z3 = virtualinvoke r6.<java.io.File: boolean exists()>()
+crystal.util.LSMRLogger.startLog4J : $z3 = virtualinvoke r6.<java.io.File: boolean exists()>() >>>>>>>> crystal.util.LSMRLogger.startLog4J : if $z3 != 0
+crystal.util.LSMRLogger.startLog4J : if $z3 != 0 >>>>>>>> crystal.util.LSMRLogger.startLog4J : virtualinvoke r6.<java.io.File: boolean mkdirs()>()
+crystal.util.LSMRLogger.startLog4J : if $z3 != 0 >>>>>>>> crystal.util.LSMRLogger.startLog4J : if r2 != null
+crystal.util.LSMRLogger.startLog4J : virtualinvoke r6.<java.io.File: boolean mkdirs()>() >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r18 = staticinvoke <org.apache.log4j.Logger: org.apache.log4j.Logger getLogger(java.lang.Class)>(class "crystal/util/LSMRLogger")
+crystal.util.LSMRLogger.startLog4J : $r18 = staticinvoke <org.apache.log4j.Logger: org.apache.log4j.Logger getLogger(java.lang.Class)>(class "crystal/util/LSMRLogger") >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r19 = new java.lang.StringBuilder
+crystal.util.LSMRLogger.startLog4J : $r19 = new java.lang.StringBuilder >>>>>>>> crystal.util.LSMRLogger.startLog4J : specialinvoke $r19.<java.lang.StringBuilder: void <init>(java.lang.String)>("Log directory: ")
+crystal.util.LSMRLogger.startLog4J : specialinvoke $r19.<java.lang.StringBuilder: void <init>(java.lang.String)>("Log directory: ") >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r20 = virtualinvoke r6.<java.io.File: java.lang.String getAbsolutePath()>()
+crystal.util.LSMRLogger.startLog4J : $r20 = virtualinvoke r6.<java.io.File: java.lang.String getAbsolutePath()>() >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r21 = virtualinvoke $r19.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r20)
+crystal.util.LSMRLogger.startLog4J : $r21 = virtualinvoke $r19.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r20) >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r22 = virtualinvoke $r21.<java.lang.StringBuilder: java.lang.String toString()>()
+crystal.util.LSMRLogger.startLog4J : $r22 = virtualinvoke $r21.<java.lang.StringBuilder: java.lang.String toString()>() >>>>>>>> crystal.util.LSMRLogger.startLog4J : virtualinvoke $r18.<org.apache.log4j.Logger: void trace(java.lang.Object)>($r22)
+crystal.util.LSMRLogger.startLog4J : virtualinvoke $r18.<org.apache.log4j.Logger: void trace(java.lang.Object)>($r22) >>>>>>>> crystal.util.LSMRLogger.startLog4J : if r2 != null
+crystal.util.LSMRLogger.startLog4J : $r12 = <java.io.File: java.lang.String separator> >>>>>>>> crystal.util.LSMRLogger.startLog4J : $z2 = virtualinvoke r1.<java.lang.String: boolean endsWith(java.lang.String)>($r12)
+crystal.util.LSMRLogger.startLog4J : $z2 = virtualinvoke r1.<java.lang.String: boolean endsWith(java.lang.String)>($r12) >>>>>>>> crystal.util.LSMRLogger.startLog4J : if $z2 != 0
+crystal.util.LSMRLogger.startLog4J : if $z2 != 0 >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r13 = new java.lang.StringBuilder
+crystal.util.LSMRLogger.startLog4J : if $z2 != 0 >>>>>>>> crystal.util.LSMRLogger.startLog4J : if r1 == null
+crystal.util.LSMRLogger.startLog4J : $r13 = new java.lang.StringBuilder >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r14 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(r1)
+crystal.util.LSMRLogger.startLog4J : $r14 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(r1) >>>>>>>> crystal.util.LSMRLogger.startLog4J : specialinvoke $r13.<java.lang.StringBuilder: void <init>(java.lang.String)>($r14)
+crystal.util.LSMRLogger.startLog4J : specialinvoke $r13.<java.lang.StringBuilder: void <init>(java.lang.String)>($r14) >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r15 = <java.io.File: java.lang.String separator>
+crystal.util.LSMRLogger.startLog4J : $r15 = <java.io.File: java.lang.String separator> >>>>>>>> crystal.util.LSMRLogger.startLog4J : $r16 = virtualinvoke $r13.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r15)
+crystal.util.LSMRLogger.startLog4J : $r16 = virtualinvoke $r13.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r15) >>>>>>>> crystal.util.LSMRLogger.startLog4J : r1 = virtualinvoke $r16.<java.lang.StringBuilder: java.lang.String toString()>()
+crystal.util.LSMRLogger.startLog4J : r1 = virtualinvoke $r16.<java.lang.StringBuilder: java.lang.String toString()>() >>>>>>>> crystal.util.LSMRLogger.startLog4J : if r1 == null
+crystal.util.LSMRLogger.startLog4J : $r5 = <org.apache.log4j.Level: org.apache.log4j.Level ERROR> >>>>>>>> crystal.util.LSMRLogger.startLog4J : virtualinvoke r4.<org.apache.log4j.ConsoleAppender: void setThreshold(org.apache.log4j.Priority)>($r5)
+crystal.util.LSMRLogger.startLog4J : virtualinvoke r4.<org.apache.log4j.ConsoleAppender: void setThreshold(org.apache.log4j.Priority)>($r5) >>>>>>>> crystal.util.LSMRLogger.startLog4J : if r1 == null
