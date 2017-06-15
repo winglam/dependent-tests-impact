@@ -1,0 +1,46 @@
+org.joda.example.time.TimeZoneTable.main : r1 = staticinvoke <org.joda.time.DateTimeZone: java.util.Set getAvailableIDs()>() >>>>>>>> org.joda.example.time.TimeZoneTable.main : $i3 = interfaceinvoke r1.<java.util.Set: int size()>()
+org.joda.example.time.TimeZoneTable.main : $i3 = interfaceinvoke r1.<java.util.Set: int size()>() >>>>>>>> org.joda.example.time.TimeZoneTable.main : r2 = newarray (org.joda.example.time.TimeZoneTable$ZoneData)[$i3]
+org.joda.example.time.TimeZoneTable.main : r2 = newarray (org.joda.example.time.TimeZoneTable$ZoneData)[$i3] >>>>>>>> org.joda.example.time.TimeZoneTable.main : r3 = interfaceinvoke r1.<java.util.Set: java.util.Iterator iterator()>()
+org.joda.example.time.TimeZoneTable.main : r3 = interfaceinvoke r1.<java.util.Set: java.util.Iterator iterator()>() >>>>>>>> org.joda.example.time.TimeZoneTable.main : i0 = 0
+org.joda.example.time.TimeZoneTable.main : i0 = 0 >>>>>>>> org.joda.example.time.TimeZoneTable.main : $z0 = interfaceinvoke r3.<java.util.Iterator: boolean hasNext()>()
+org.joda.example.time.TimeZoneTable.main : $z0 = interfaceinvoke r3.<java.util.Iterator: boolean hasNext()>() >>>>>>>> org.joda.example.time.TimeZoneTable.main : if $z0 == 0
+org.joda.example.time.TimeZoneTable.main : if $z0 == 0 >>>>>>>> org.joda.example.time.TimeZoneTable.main : $r7 = interfaceinvoke r3.<java.util.Iterator: java.lang.Object next()>()
+org.joda.example.time.TimeZoneTable.main : if $z0 == 0 >>>>>>>> org.joda.example.time.TimeZoneTable.main : staticinvoke <java.util.Arrays: void sort(java.lang.Object[])>(r2)
+org.joda.example.time.TimeZoneTable.main : staticinvoke <java.util.Arrays: void sort(java.lang.Object[])>(r2) >>>>>>>> org.joda.example.time.TimeZoneTable.main : r9 = <java.lang.System: java.io.PrintStream out>
+org.joda.example.time.TimeZoneTable.main : r9 = <java.lang.System: java.io.PrintStream out> >>>>>>>> org.joda.example.time.TimeZoneTable.main : virtualinvoke r9.<java.io.PrintStream: void println(java.lang.String)>("<table>")
+org.joda.example.time.TimeZoneTable.main : virtualinvoke r9.<java.io.PrintStream: void println(java.lang.String)>("<table>") >>>>>>>> org.joda.example.time.TimeZoneTable.main : virtualinvoke r9.<java.io.PrintStream: void println(java.lang.String)>("<tr><th align=\"left\">Standard Offset</th><th align=\"left\">Canonical ID</th><th align=\"left\">Aliases</th></tr>")
+org.joda.example.time.TimeZoneTable.main : virtualinvoke r9.<java.io.PrintStream: void println(java.lang.String)>("<tr><th align=\"left\">Standard Offset</th><th align=\"left\">Canonical ID</th><th align=\"left\">Aliases</th></tr>") >>>>>>>> org.joda.example.time.TimeZoneTable.main : r10 = null
+org.joda.example.time.TimeZoneTable.main : r10 = null >>>>>>>> org.joda.example.time.TimeZoneTable.main : $r11 = new java.util.ArrayList
+org.joda.example.time.TimeZoneTable.main : $r11 = new java.util.ArrayList >>>>>>>> org.joda.example.time.TimeZoneTable.main : specialinvoke $r11.<java.util.ArrayList: void <init>()>()
+org.joda.example.time.TimeZoneTable.main : specialinvoke $r11.<java.util.ArrayList: void <init>()>() >>>>>>>> org.joda.example.time.TimeZoneTable.main : r12 = $r11
+org.joda.example.time.TimeZoneTable.main : r12 = $r11 >>>>>>>> org.joda.example.time.TimeZoneTable.main : i2 = 0
+org.joda.example.time.TimeZoneTable.main : i2 = 0 >>>>>>>> org.joda.example.time.TimeZoneTable.main : $i4 = lengthof r2
+org.joda.example.time.TimeZoneTable.main : $i4 = lengthof r2 >>>>>>>> org.joda.example.time.TimeZoneTable.main : if i2 >= $i4
+org.joda.example.time.TimeZoneTable.main : if i2 >= $i4 >>>>>>>> org.joda.example.time.TimeZoneTable.main : r6 = r2[i2]
+org.joda.example.time.TimeZoneTable.main : if i2 >= $i4 >>>>>>>> org.joda.example.time.TimeZoneTable.main : if r10 == null
+org.joda.example.time.TimeZoneTable.main : if r10 == null >>>>>>>> org.joda.example.time.TimeZoneTable.main : staticinvoke <org.joda.example.time.TimeZoneTable: void printRow(java.io.PrintStream,org.joda.example.time.TimeZoneTable$ZoneData,java.util.List)>(r9, r10, r12)
+org.joda.example.time.TimeZoneTable.main : if r10 == null >>>>>>>> org.joda.example.time.TimeZoneTable.main : virtualinvoke r9.<java.io.PrintStream: void println(java.lang.String)>("</table>")
+org.joda.example.time.TimeZoneTable.main : virtualinvoke r9.<java.io.PrintStream: void println(java.lang.String)>("</table>") >>>>>>>> org.joda.example.time.TimeZoneTable.main : return
+org.joda.example.time.TimeZoneTable.main : staticinvoke <org.joda.example.time.TimeZoneTable: void printRow(java.io.PrintStream,org.joda.example.time.TimeZoneTable$ZoneData,java.util.List)>(r9, r10, r12) >>>>>>>> org.joda.example.time.TimeZoneTable.main : virtualinvoke r9.<java.io.PrintStream: void println(java.lang.String)>("</table>")
+org.joda.example.time.TimeZoneTable.main : r6 = r2[i2] >>>>>>>> org.joda.example.time.TimeZoneTable.main : $z1 = virtualinvoke r6.<org.joda.example.time.TimeZoneTable$ZoneData: boolean isCanonical()>()
+org.joda.example.time.TimeZoneTable.main : $z1 = virtualinvoke r6.<org.joda.example.time.TimeZoneTable$ZoneData: boolean isCanonical()>() >>>>>>>> org.joda.example.time.TimeZoneTable.main : if $z1 != 0
+org.joda.example.time.TimeZoneTable.main : if $z1 != 0 >>>>>>>> org.joda.example.time.TimeZoneTable.main : interfaceinvoke r12.<java.util.List: boolean add(java.lang.Object)>(r6)
+org.joda.example.time.TimeZoneTable.main : if $z1 != 0 >>>>>>>> org.joda.example.time.TimeZoneTable.main : if r10 == null
+org.joda.example.time.TimeZoneTable.main : if r10 == null >>>>>>>> org.joda.example.time.TimeZoneTable.main : staticinvoke <org.joda.example.time.TimeZoneTable: void printRow(java.io.PrintStream,org.joda.example.time.TimeZoneTable$ZoneData,java.util.List)>(r9, r10, r12)
+org.joda.example.time.TimeZoneTable.main : if r10 == null >>>>>>>> org.joda.example.time.TimeZoneTable.main : r10 = r6
+org.joda.example.time.TimeZoneTable.main : r10 = r6 >>>>>>>> org.joda.example.time.TimeZoneTable.main : interfaceinvoke r12.<java.util.List: void clear()>()
+org.joda.example.time.TimeZoneTable.main : interfaceinvoke r12.<java.util.List: void clear()>() >>>>>>>> org.joda.example.time.TimeZoneTable.main : i2 = i2 + 1
+org.joda.example.time.TimeZoneTable.main : i2 = i2 + 1 >>>>>>>> org.joda.example.time.TimeZoneTable.main : goto [?= $i4 = lengthof r2]
+org.joda.example.time.TimeZoneTable.main : goto [?= $i4 = lengthof r2] >>>>>>>> org.joda.example.time.TimeZoneTable.main : $i4 = lengthof r2
+org.joda.example.time.TimeZoneTable.main : staticinvoke <org.joda.example.time.TimeZoneTable: void printRow(java.io.PrintStream,org.joda.example.time.TimeZoneTable$ZoneData,java.util.List)>(r9, r10, r12) >>>>>>>> org.joda.example.time.TimeZoneTable.main : r10 = r6
+org.joda.example.time.TimeZoneTable.main : interfaceinvoke r12.<java.util.List: boolean add(java.lang.Object)>(r6) >>>>>>>> org.joda.example.time.TimeZoneTable.main : goto [?= i2 = i2 + 1]
+org.joda.example.time.TimeZoneTable.main : goto [?= i2 = i2 + 1] >>>>>>>> org.joda.example.time.TimeZoneTable.main : i2 = i2 + 1
+org.joda.example.time.TimeZoneTable.main : $r7 = interfaceinvoke r3.<java.util.Iterator: java.lang.Object next()>() >>>>>>>> org.joda.example.time.TimeZoneTable.main : r4 = (java.lang.String) $r7
+org.joda.example.time.TimeZoneTable.main : r4 = (java.lang.String) $r7 >>>>>>>> org.joda.example.time.TimeZoneTable.main : $i1 = i0
+org.joda.example.time.TimeZoneTable.main : $i1 = i0 >>>>>>>> org.joda.example.time.TimeZoneTable.main : i0 = i0 + 1
+org.joda.example.time.TimeZoneTable.main : i0 = i0 + 1 >>>>>>>> org.joda.example.time.TimeZoneTable.main : $r5 = new org.joda.example.time.TimeZoneTable$ZoneData
+org.joda.example.time.TimeZoneTable.main : $r5 = new org.joda.example.time.TimeZoneTable$ZoneData >>>>>>>> org.joda.example.time.TimeZoneTable.main : $r8 = staticinvoke <org.joda.time.DateTimeZone: org.joda.time.DateTimeZone forID(java.lang.String)>(r4)
+org.joda.example.time.TimeZoneTable.main : $r8 = staticinvoke <org.joda.time.DateTimeZone: org.joda.time.DateTimeZone forID(java.lang.String)>(r4) >>>>>>>> org.joda.example.time.TimeZoneTable.main : specialinvoke $r5.<org.joda.example.time.TimeZoneTable$ZoneData: void <init>(java.lang.String,org.joda.time.DateTimeZone)>(r4, $r8)
+org.joda.example.time.TimeZoneTable.main : specialinvoke $r5.<org.joda.example.time.TimeZoneTable$ZoneData: void <init>(java.lang.String,org.joda.time.DateTimeZone)>(r4, $r8) >>>>>>>> org.joda.example.time.TimeZoneTable.main : r2[$i1] = $r5
+org.joda.example.time.TimeZoneTable.main : r2[$i1] = $r5 >>>>>>>> org.joda.example.time.TimeZoneTable.main : goto [?= $z0 = interfaceinvoke r3.<java.util.Iterator: boolean hasNext()>()]
+org.joda.example.time.TimeZoneTable.main : goto [?= $z0 = interfaceinvoke r3.<java.util.Iterator: boolean hasNext()>()] >>>>>>>> org.joda.example.time.TimeZoneTable.main : $z0 = interfaceinvoke r3.<java.util.Iterator: boolean hasNext()>()

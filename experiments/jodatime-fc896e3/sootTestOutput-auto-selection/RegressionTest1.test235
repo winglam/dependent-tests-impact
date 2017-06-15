@@ -1,0 +1,116 @@
+org.joda.time.DateTimeZone.getID : $r1 = r0.<org.joda.time.DateTimeZone: java.lang.String iID> >>>>>>>> org.joda.time.DateTimeZone.getID : return $r1
+org.joda.time.DateTimeZone.getID : return $r1 >>>>>>>> org.joda.time.DateTimeZone.getName : $r1 = virtualinvoke r0.<org.joda.time.DateTimeZone: java.lang.String getName(long,java.util.Locale)>(l0, null)
+org.joda.time.DateTimeZone.getName : $r1 = virtualinvoke r0.<org.joda.time.DateTimeZone: java.lang.String getName(long,java.util.Locale)>(l0, null) >>>>>>>> org.joda.time.DateTimeZone.getName : if r1 != null
+org.joda.time.DateTimeZone.getName : if r1 != null >>>>>>>> org.joda.time.DateTimeZone.getName : r1 = staticinvoke <java.util.Locale: java.util.Locale getDefault()>()
+org.joda.time.DateTimeZone.getName : r1 = staticinvoke <java.util.Locale: java.util.Locale getDefault()>() >>>>>>>> org.joda.time.DateTimeZone.getName : r2 = virtualinvoke r0.<org.joda.time.DateTimeZone: java.lang.String getNameKey(long)>(l0)
+org.joda.time.DateTimeZone.getName : r2 = virtualinvoke r0.<org.joda.time.DateTimeZone: java.lang.String getNameKey(long)>(l0) >>>>>>>> org.joda.time.tz.FixedDateTimeZone.getNameKey : $r1 = r0.<org.joda.time.tz.FixedDateTimeZone: java.lang.String iNameKey>
+org.joda.time.tz.FixedDateTimeZone.getNameKey : $r1 = r0.<org.joda.time.tz.FixedDateTimeZone: java.lang.String iNameKey> >>>>>>>> org.joda.time.tz.FixedDateTimeZone.getNameKey : return $r1
+org.joda.time.tz.FixedDateTimeZone.getNameKey : return $r1 >>>>>>>> org.joda.time.DateTimeZone.getName : if r2 != null
+org.joda.time.DateTimeZone.getName : if r2 != null >>>>>>>> org.joda.time.DateTimeZone.getName : $r5 = <org.joda.time.DateTimeZone: org.joda.time.tz.NameProvider cNameProvider>
+org.joda.time.DateTimeZone.getName : $r5 = <org.joda.time.DateTimeZone: org.joda.time.tz.NameProvider cNameProvider> >>>>>>>> org.joda.time.DateTimeZone.getName : $r6 = r0.<org.joda.time.DateTimeZone: java.lang.String iID>
+org.joda.time.DateTimeZone.getName : $r6 = r0.<org.joda.time.DateTimeZone: java.lang.String iID> >>>>>>>> org.joda.time.DateTimeZone.getName : r3 = interfaceinvoke $r5.<org.joda.time.tz.NameProvider: java.lang.String getName(java.util.Locale,java.lang.String,java.lang.String)>(r1, $r6, r2)
+org.joda.time.DateTimeZone.getName : r3 = interfaceinvoke $r5.<org.joda.time.tz.NameProvider: java.lang.String getName(java.util.Locale,java.lang.String,java.lang.String)>(r1, $r6, r2) >>>>>>>> org.joda.time.tz.DefaultNameProvider.getName : r4 = specialinvoke r0.<org.joda.time.tz.DefaultNameProvider: java.lang.String[] getNameSet(java.util.Locale,java.lang.String,java.lang.String)>(r1, r2, r3)
+org.joda.time.tz.DefaultNameProvider.getName : r4 = specialinvoke r0.<org.joda.time.tz.DefaultNameProvider: java.lang.String[] getNameSet(java.util.Locale,java.lang.String,java.lang.String)>(r1, r2, r3) >>>>>>>> org.joda.time.tz.DefaultNameProvider.getNameSet : if r1 == null
+org.joda.time.tz.DefaultNameProvider.getNameSet : if r1 == null >>>>>>>> org.joda.time.tz.DefaultNameProvider.getNameSet : if r2 == null
+org.joda.time.tz.DefaultNameProvider.getNameSet : if r2 == null >>>>>>>> org.joda.time.tz.DefaultNameProvider.getNameSet : if r3 != null
+org.joda.time.tz.DefaultNameProvider.getNameSet : if r3 != null >>>>>>>> org.joda.time.tz.DefaultNameProvider.getNameSet : $r8 = r0.<org.joda.time.tz.DefaultNameProvider: java.util.HashMap iByLocaleCache>
+org.joda.time.tz.DefaultNameProvider.getNameSet : $r8 = r0.<org.joda.time.tz.DefaultNameProvider: java.util.HashMap iByLocaleCache> >>>>>>>> org.joda.time.tz.DefaultNameProvider.getNameSet : $r9 = virtualinvoke $r8.<java.util.HashMap: java.lang.Object get(java.lang.Object)>(r1)
+org.joda.time.tz.DefaultNameProvider.getNameSet : $r9 = virtualinvoke $r8.<java.util.HashMap: java.lang.Object get(java.lang.Object)>(r1) >>>>>>>> org.joda.time.tz.DefaultNameProvider.getNameSet : r4 = (java.util.Map) $r9
+org.joda.time.tz.DefaultNameProvider.getNameSet : r4 = (java.util.Map) $r9 >>>>>>>> org.joda.time.tz.DefaultNameProvider.getNameSet : if r4 != null
+org.joda.time.tz.DefaultNameProvider.getNameSet : if r4 != null >>>>>>>> org.joda.time.tz.DefaultNameProvider.getNameSet : $r13 = interfaceinvoke r4.<java.util.Map: java.lang.Object get(java.lang.Object)>(r2)
+org.joda.time.tz.DefaultNameProvider.getNameSet : $r13 = interfaceinvoke r4.<java.util.Map: java.lang.Object get(java.lang.Object)>(r2) >>>>>>>> org.joda.time.tz.DefaultNameProvider.getNameSet : r5 = (java.util.Map) $r13
+org.joda.time.tz.DefaultNameProvider.getNameSet : r5 = (java.util.Map) $r13 >>>>>>>> org.joda.time.tz.DefaultNameProvider.getNameSet : if r5 != null
+org.joda.time.tz.DefaultNameProvider.getNameSet : if r5 != null >>>>>>>> org.joda.time.tz.DefaultNameProvider.getNameSet : $r14 = specialinvoke r0.<org.joda.time.tz.DefaultNameProvider: java.util.HashMap createCache()>()
+org.joda.time.tz.DefaultNameProvider.getNameSet : $r14 = specialinvoke r0.<org.joda.time.tz.DefaultNameProvider: java.util.HashMap createCache()>() >>>>>>>> org.joda.time.tz.DefaultNameProvider.createCache : $r1 = new java.util.HashMap
+org.joda.time.tz.DefaultNameProvider.createCache : $r1 = new java.util.HashMap >>>>>>>> org.joda.time.tz.DefaultNameProvider.createCache : specialinvoke $r1.<java.util.HashMap: void <init>(int)>(7)
+org.joda.time.tz.DefaultNameProvider.createCache : specialinvoke $r1.<java.util.HashMap: void <init>(int)>(7) >>>>>>>> org.joda.time.tz.DefaultNameProvider.createCache : return $r1
+org.joda.time.tz.DefaultNameProvider.createCache : return $r1 >>>>>>>> org.joda.time.tz.DefaultNameProvider.getNameSet : r5 = $r14
+org.joda.time.tz.DefaultNameProvider.getNameSet : r5 = $r14 >>>>>>>> org.joda.time.tz.DefaultNameProvider.getNameSet : interfaceinvoke r4.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>(r2, $r14)
+org.joda.time.tz.DefaultNameProvider.getNameSet : interfaceinvoke r4.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>(r2, $r14) >>>>>>>> org.joda.time.tz.DefaultNameProvider.getNameSet : $r16 = staticinvoke <org.joda.time.DateTimeUtils: java.text.DateFormatSymbols getDateFormatSymbols(java.util.Locale)>(r1)
+org.joda.time.tz.DefaultNameProvider.getNameSet : $r16 = staticinvoke <org.joda.time.DateTimeUtils: java.text.DateFormatSymbols getDateFormatSymbols(java.util.Locale)>(r1) >>>>>>>> org.joda.time.DateTimeUtils.getDateFormatSymbols : $r1 = class "java/text/DateFormatSymbols"
+org.joda.time.DateTimeUtils.getDateFormatSymbols : $r1 = class "java/text/DateFormatSymbols" >>>>>>>> org.joda.time.DateTimeUtils.getDateFormatSymbols : $r3 = newarray (java.lang.Class)[1]
+org.joda.time.DateTimeUtils.getDateFormatSymbols : $r3 = newarray (java.lang.Class)[1] >>>>>>>> org.joda.time.DateTimeUtils.getDateFormatSymbols : $r3[0] = class "java/util/Locale"
+org.joda.time.DateTimeUtils.getDateFormatSymbols : $r3[0] = class "java/util/Locale" >>>>>>>> org.joda.time.DateTimeUtils.getDateFormatSymbols : r2 = virtualinvoke $r1.<java.lang.Class: java.lang.reflect.Method getMethod(java.lang.String,java.lang.Class[])>("getInstance", $r3)
+org.joda.time.DateTimeUtils.getDateFormatSymbols : r2 = virtualinvoke $r1.<java.lang.Class: java.lang.reflect.Method getMethod(java.lang.String,java.lang.Class[])>("getInstance", $r3) >>>>>>>> org.joda.time.DateTimeUtils.getDateFormatSymbols : $r4 = newarray (java.lang.Object)[1]
+org.joda.time.DateTimeUtils.getDateFormatSymbols : $r4 = newarray (java.lang.Object)[1] >>>>>>>> org.joda.time.DateTimeUtils.getDateFormatSymbols : $r4[0] = r0
+org.joda.time.DateTimeUtils.getDateFormatSymbols : $r4[0] = r0 >>>>>>>> org.joda.time.DateTimeUtils.getDateFormatSymbols : $r5 = virtualinvoke r2.<java.lang.reflect.Method: java.lang.Object invoke(java.lang.Object,java.lang.Object[])>(null, $r4)
+org.joda.time.DateTimeUtils.getDateFormatSymbols : $r5 = virtualinvoke r2.<java.lang.reflect.Method: java.lang.Object invoke(java.lang.Object,java.lang.Object[])>(null, $r4) >>>>>>>> org.joda.time.DateTimeUtils.getDateFormatSymbols : $r6 = (java.text.DateFormatSymbols) $r5
+org.joda.time.DateTimeUtils.getDateFormatSymbols : $r6 = (java.text.DateFormatSymbols) $r5 >>>>>>>> org.joda.time.DateTimeUtils.getDateFormatSymbols : return $r6
+org.joda.time.DateTimeUtils.getDateFormatSymbols : return $r6 >>>>>>>> org.joda.time.tz.DefaultNameProvider.getNameSet : r6 = virtualinvoke $r16.<java.text.DateFormatSymbols: java.lang.String[][] getZoneStrings()>()
+org.joda.time.tz.DefaultNameProvider.getNameSet : r6 = virtualinvoke $r16.<java.text.DateFormatSymbols: java.lang.String[][] getZoneStrings()>() >>>>>>>> org.joda.time.tz.DefaultNameProvider.getNameSet : i0 = 0
+org.joda.time.tz.DefaultNameProvider.getNameSet : i0 = 0 >>>>>>>> org.joda.time.tz.DefaultNameProvider.getNameSet : $i1 = lengthof r6
+org.joda.time.tz.DefaultNameProvider.getNameSet : $i1 = lengthof r6 >>>>>>>> org.joda.time.tz.DefaultNameProvider.getNameSet : if i0 >= $i1
+org.joda.time.tz.DefaultNameProvider.getNameSet : if i0 >= $i1 >>>>>>>> org.joda.time.tz.DefaultNameProvider.getNameSet : r7 = r6[i0]
+org.joda.time.tz.DefaultNameProvider.getNameSet : r7 = r6[i0] >>>>>>>> org.joda.time.tz.DefaultNameProvider.getNameSet : if r7 == null
+org.joda.time.tz.DefaultNameProvider.getNameSet : if r7 == null >>>>>>>> org.joda.time.tz.DefaultNameProvider.getNameSet : $i2 = lengthof r7
+org.joda.time.tz.DefaultNameProvider.getNameSet : $i2 = lengthof r7 >>>>>>>> org.joda.time.tz.DefaultNameProvider.getNameSet : if $i2 != 5
+org.joda.time.tz.DefaultNameProvider.getNameSet : if $i2 != 5 >>>>>>>> org.joda.time.tz.DefaultNameProvider.getNameSet : $r17 = r7[0]
+org.joda.time.tz.DefaultNameProvider.getNameSet : $r17 = r7[0] >>>>>>>> org.joda.time.tz.DefaultNameProvider.getNameSet : $z0 = virtualinvoke r2.<java.lang.String: boolean equals(java.lang.Object)>($r17)
+org.joda.time.tz.DefaultNameProvider.getNameSet : $z0 = virtualinvoke r2.<java.lang.String: boolean equals(java.lang.Object)>($r17) >>>>>>>> org.joda.time.tz.DefaultNameProvider.getNameSet : if $z0 == 0
+org.joda.time.tz.DefaultNameProvider.getNameSet : if $z0 == 0 >>>>>>>> org.joda.time.tz.DefaultNameProvider.getNameSet : i0 = i0 + 1
+org.joda.time.tz.DefaultNameProvider.getNameSet : i0 = i0 + 1 >>>>>>>> org.joda.time.tz.DefaultNameProvider.getNameSet : goto [?= $i1 = lengthof r6]
+org.joda.time.tz.DefaultNameProvider.getNameSet : goto [?= $i1 = lengthof r6] >>>>>>>> org.joda.time.tz.DefaultNameProvider.getNameSet : $r39 = interfaceinvoke r5.<java.util.Map: java.lang.Object get(java.lang.Object)>(r3)
+org.joda.time.tz.DefaultNameProvider.getNameSet : $r39 = interfaceinvoke r5.<java.util.Map: java.lang.Object get(java.lang.Object)>(r3) >>>>>>>> org.joda.time.tz.DefaultNameProvider.getNameSet : $r40 = (java.lang.String[]) $r39
+org.joda.time.tz.DefaultNameProvider.getNameSet : $r40 = (java.lang.String[]) $r39 >>>>>>>> org.joda.time.tz.DefaultNameProvider.getNameSet : $r41 = (java.lang.String[]) $r40
+org.joda.time.tz.DefaultNameProvider.getNameSet : $r41 = (java.lang.String[]) $r40 >>>>>>>> org.joda.time.tz.DefaultNameProvider.getNameSet : return $r41
+org.joda.time.tz.DefaultNameProvider.getNameSet : return $r41 >>>>>>>> org.joda.time.tz.DefaultNameProvider.getName : if r4 != null
+org.joda.time.tz.DefaultNameProvider.getName : if r4 != null >>>>>>>> org.joda.time.tz.DefaultNameProvider.getName : $r5 = null
+org.joda.time.tz.DefaultNameProvider.getName : $r5 = null >>>>>>>> org.joda.time.tz.DefaultNameProvider.getName : goto [?= return $r5]
+org.joda.time.tz.DefaultNameProvider.getName : goto [?= return $r5] >>>>>>>> org.joda.time.tz.DefaultNameProvider.getName : return $r5
+org.joda.time.tz.DefaultNameProvider.getName : return $r5 >>>>>>>> org.joda.time.DateTimeZone.getName : if r3 == null
+org.joda.time.DateTimeZone.getName : if r3 == null >>>>>>>> org.joda.time.DateTimeZone.getName : $i1 = virtualinvoke r0.<org.joda.time.DateTimeZone: int getOffset(long)>(l0)
+org.joda.time.DateTimeZone.getName : $i1 = virtualinvoke r0.<org.joda.time.DateTimeZone: int getOffset(long)>(l0) >>>>>>>> org.joda.time.tz.FixedDateTimeZone.getOffset : $i1 = r0.<org.joda.time.tz.FixedDateTimeZone: int iWallOffset>
+org.joda.time.tz.FixedDateTimeZone.getOffset : $i1 = r0.<org.joda.time.tz.FixedDateTimeZone: int iWallOffset> >>>>>>>> org.joda.time.tz.FixedDateTimeZone.getOffset : return $i1
+org.joda.time.tz.FixedDateTimeZone.getOffset : return $i1 >>>>>>>> org.joda.time.DateTimeZone.getName : $r7 = staticinvoke <org.joda.time.DateTimeZone: java.lang.String printOffset(int)>($i1)
+org.joda.time.DateTimeZone.getName : $r7 = staticinvoke <org.joda.time.DateTimeZone: java.lang.String printOffset(int)>($i1) >>>>>>>> org.joda.time.DateTimeZone.printOffset : $r0 = new java.lang.StringBuffer
+org.joda.time.DateTimeZone.printOffset : $r0 = new java.lang.StringBuffer >>>>>>>> org.joda.time.DateTimeZone.printOffset : specialinvoke $r0.<java.lang.StringBuffer: void <init>()>()
+org.joda.time.DateTimeZone.printOffset : specialinvoke $r0.<java.lang.StringBuffer: void <init>()>() >>>>>>>> org.joda.time.DateTimeZone.printOffset : r1 = $r0
+org.joda.time.DateTimeZone.printOffset : r1 = $r0 >>>>>>>> org.joda.time.DateTimeZone.printOffset : if i0 < 0
+org.joda.time.DateTimeZone.printOffset : if i0 < 0 >>>>>>>> org.joda.time.DateTimeZone.printOffset : virtualinvoke r1.<java.lang.StringBuffer: java.lang.StringBuffer append(char)>(43)
+org.joda.time.DateTimeZone.printOffset : virtualinvoke r1.<java.lang.StringBuffer: java.lang.StringBuffer append(char)>(43) >>>>>>>> org.joda.time.DateTimeZone.printOffset : goto [?= i1 = i0 / 3600000]
+org.joda.time.DateTimeZone.printOffset : goto [?= i1 = i0 / 3600000] >>>>>>>> org.joda.time.DateTimeZone.printOffset : i1 = i0 / 3600000
+org.joda.time.DateTimeZone.printOffset : i1 = i0 / 3600000 >>>>>>>> org.joda.time.DateTimeZone.printOffset : staticinvoke <org.joda.time.format.FormatUtils: void appendPaddedInteger(java.lang.StringBuffer,int,int)>(r1, i1, 2)
+org.joda.time.DateTimeZone.printOffset : staticinvoke <org.joda.time.format.FormatUtils: void appendPaddedInteger(java.lang.StringBuffer,int,int)>(r1, i1, 2) >>>>>>>> org.joda.time.format.FormatUtils.appendPaddedInteger : if i0 >= 0
+org.joda.time.format.FormatUtils.appendPaddedInteger : if i0 >= 0 >>>>>>>> org.joda.time.format.FormatUtils.appendPaddedInteger : if i0 >= 10
+org.joda.time.format.FormatUtils.appendPaddedInteger : if i0 >= 10 >>>>>>>> org.joda.time.format.FormatUtils.appendPaddedInteger : if i1 <= 1
+org.joda.time.format.FormatUtils.appendPaddedInteger : if i1 <= 1 >>>>>>>> org.joda.time.format.FormatUtils.appendPaddedInteger : virtualinvoke r0.<java.lang.StringBuffer: java.lang.StringBuffer append(char)>(48)
+org.joda.time.format.FormatUtils.appendPaddedInteger : virtualinvoke r0.<java.lang.StringBuffer: java.lang.StringBuffer append(char)>(48) >>>>>>>> org.joda.time.format.FormatUtils.appendPaddedInteger : i1 = i1 + -1
+org.joda.time.format.FormatUtils.appendPaddedInteger : i1 = i1 + -1 >>>>>>>> org.joda.time.format.FormatUtils.appendPaddedInteger : goto [?= (branch)]
+org.joda.time.format.FormatUtils.appendPaddedInteger : goto [?= (branch)] >>>>>>>> org.joda.time.format.FormatUtils.appendPaddedInteger : $i3 = i0 + 48
+org.joda.time.format.FormatUtils.appendPaddedInteger : $i3 = i0 + 48 >>>>>>>> org.joda.time.format.FormatUtils.appendPaddedInteger : $c4 = (char) $i3
+org.joda.time.format.FormatUtils.appendPaddedInteger : $c4 = (char) $i3 >>>>>>>> org.joda.time.format.FormatUtils.appendPaddedInteger : virtualinvoke r0.<java.lang.StringBuffer: java.lang.StringBuffer append(char)>($c4)
+org.joda.time.format.FormatUtils.appendPaddedInteger : virtualinvoke r0.<java.lang.StringBuffer: java.lang.StringBuffer append(char)>($c4) >>>>>>>> org.joda.time.format.FormatUtils.appendPaddedInteger : goto [?= return]
+org.joda.time.format.FormatUtils.appendPaddedInteger : goto [?= return] >>>>>>>> org.joda.time.DateTimeZone.printOffset : $i4 = i1 * 3600000
+org.joda.time.DateTimeZone.printOffset : $i4 = i1 * 3600000 >>>>>>>> org.joda.time.DateTimeZone.printOffset : i5 = i0 - $i4
+org.joda.time.DateTimeZone.printOffset : i5 = i0 - $i4 >>>>>>>> org.joda.time.DateTimeZone.printOffset : i2 = i5 / 60000
+org.joda.time.DateTimeZone.printOffset : i2 = i5 / 60000 >>>>>>>> org.joda.time.DateTimeZone.printOffset : virtualinvoke r1.<java.lang.StringBuffer: java.lang.StringBuffer append(char)>(58)
+org.joda.time.DateTimeZone.printOffset : virtualinvoke r1.<java.lang.StringBuffer: java.lang.StringBuffer append(char)>(58) >>>>>>>> org.joda.time.DateTimeZone.printOffset : staticinvoke <org.joda.time.format.FormatUtils: void appendPaddedInteger(java.lang.StringBuffer,int,int)>(r1, i2, 2)
+org.joda.time.DateTimeZone.printOffset : staticinvoke <org.joda.time.format.FormatUtils: void appendPaddedInteger(java.lang.StringBuffer,int,int)>(r1, i2, 2) >>>>>>>> org.joda.time.DateTimeZone.printOffset : $i6 = i2 * 60000
+org.joda.time.DateTimeZone.printOffset : $i6 = i2 * 60000 >>>>>>>> org.joda.time.DateTimeZone.printOffset : i7 = i5 - $i6
+org.joda.time.DateTimeZone.printOffset : i7 = i5 - $i6 >>>>>>>> org.joda.time.DateTimeZone.printOffset : if i7 != 0
+org.joda.time.DateTimeZone.printOffset : if i7 != 0 >>>>>>>> org.joda.time.DateTimeZone.printOffset : i3 = i7 / 1000
+org.joda.time.DateTimeZone.printOffset : i3 = i7 / 1000 >>>>>>>> org.joda.time.DateTimeZone.printOffset : staticinvoke <org.joda.time.format.FormatUtils: void appendPaddedInteger(java.lang.StringBuffer,int,int)>(r1, i3, 2)
+org.joda.time.DateTimeZone.printOffset : staticinvoke <org.joda.time.format.FormatUtils: void appendPaddedInteger(java.lang.StringBuffer,int,int)>(r1, i3, 2) >>>>>>>> org.joda.time.DateTimeZone.printOffset : $i8 = i3 * 1000
+org.joda.time.DateTimeZone.printOffset : $i8 = i3 * 1000 >>>>>>>> org.joda.time.DateTimeZone.printOffset : i9 = i7 - $i8
+org.joda.time.DateTimeZone.printOffset : i9 = i7 - $i8 >>>>>>>> org.joda.time.DateTimeZone.printOffset : if i9 != 0
+org.joda.time.DateTimeZone.printOffset : if i9 != 0 >>>>>>>> org.joda.time.DateTimeZone.printOffset : virtualinvoke r1.<java.lang.StringBuffer: java.lang.StringBuffer append(char)>(46)
+org.joda.time.DateTimeZone.printOffset : virtualinvoke r1.<java.lang.StringBuffer: java.lang.StringBuffer append(char)>(46) >>>>>>>> org.joda.time.DateTimeZone.printOffset : staticinvoke <org.joda.time.format.FormatUtils: void appendPaddedInteger(java.lang.StringBuffer,int,int)>(r1, i9, 3)
+org.joda.time.DateTimeZone.printOffset : staticinvoke <org.joda.time.format.FormatUtils: void appendPaddedInteger(java.lang.StringBuffer,int,int)>(r1, i9, 3) >>>>>>>> org.joda.time.format.FormatUtils.appendPaddedInteger : if i0 >= 100
+org.joda.time.format.FormatUtils.appendPaddedInteger : if i0 >= 100 >>>>>>>> org.joda.time.format.FormatUtils.appendPaddedInteger : if i1 <= 2
+org.joda.time.format.FormatUtils.appendPaddedInteger : if i1 <= 2 >>>>>>>> org.joda.time.format.FormatUtils.appendPaddedInteger : $i5 = i0 + 1
+org.joda.time.format.FormatUtils.appendPaddedInteger : $i5 = i0 + 1 >>>>>>>> org.joda.time.format.FormatUtils.appendPaddedInteger : $i6 = $i5 * 13421772
+org.joda.time.format.FormatUtils.appendPaddedInteger : $i6 = $i5 * 13421772 >>>>>>>> org.joda.time.format.FormatUtils.appendPaddedInteger : i2 = $i6 >> 27
+org.joda.time.format.FormatUtils.appendPaddedInteger : i2 = $i6 >> 27 >>>>>>>> org.joda.time.format.FormatUtils.appendPaddedInteger : $i7 = i2 + 48
+org.joda.time.format.FormatUtils.appendPaddedInteger : $i7 = i2 + 48 >>>>>>>> org.joda.time.format.FormatUtils.appendPaddedInteger : $c8 = (char) $i7
+org.joda.time.format.FormatUtils.appendPaddedInteger : $c8 = (char) $i7 >>>>>>>> org.joda.time.format.FormatUtils.appendPaddedInteger : virtualinvoke r0.<java.lang.StringBuffer: java.lang.StringBuffer append(char)>($c8)
+org.joda.time.format.FormatUtils.appendPaddedInteger : virtualinvoke r0.<java.lang.StringBuffer: java.lang.StringBuffer append(char)>($c8) >>>>>>>> org.joda.time.format.FormatUtils.appendPaddedInteger : $i9 = i2 << 3
+org.joda.time.format.FormatUtils.appendPaddedInteger : $i9 = i2 << 3 >>>>>>>> org.joda.time.format.FormatUtils.appendPaddedInteger : $i10 = i0 - $i9
+org.joda.time.format.FormatUtils.appendPaddedInteger : $i10 = i0 - $i9 >>>>>>>> org.joda.time.format.FormatUtils.appendPaddedInteger : $i11 = i2 << 1
+org.joda.time.format.FormatUtils.appendPaddedInteger : $i11 = i2 << 1 >>>>>>>> org.joda.time.format.FormatUtils.appendPaddedInteger : $i12 = $i10 - $i11
+org.joda.time.format.FormatUtils.appendPaddedInteger : $i12 = $i10 - $i11 >>>>>>>> org.joda.time.format.FormatUtils.appendPaddedInteger : $i13 = $i12 + 48
+org.joda.time.format.FormatUtils.appendPaddedInteger : $i13 = $i12 + 48 >>>>>>>> org.joda.time.format.FormatUtils.appendPaddedInteger : $c14 = (char) $i13
+org.joda.time.format.FormatUtils.appendPaddedInteger : $c14 = (char) $i13 >>>>>>>> org.joda.time.format.FormatUtils.appendPaddedInteger : virtualinvoke r0.<java.lang.StringBuffer: java.lang.StringBuffer append(char)>($c14)
+org.joda.time.format.FormatUtils.appendPaddedInteger : virtualinvoke r0.<java.lang.StringBuffer: java.lang.StringBuffer append(char)>($c14) >>>>>>>> org.joda.time.DateTimeZone.printOffset : $r9 = virtualinvoke r1.<java.lang.StringBuffer: java.lang.String toString()>()
+org.joda.time.DateTimeZone.printOffset : $r9 = virtualinvoke r1.<java.lang.StringBuffer: java.lang.String toString()>() >>>>>>>> org.joda.time.DateTimeZone.printOffset : return $r9
+org.joda.time.DateTimeZone.printOffset : return $r9 >>>>>>>> org.joda.time.DateTimeZone.getName : return $r7
+org.joda.time.DateTimeZone.getName : return $r7 >>>>>>>> org.joda.time.DateTimeZone.getName : return $r1
