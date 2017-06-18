@@ -4,7 +4,11 @@ package edu.washington.cs.dt.impact.Main;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 import edu.washington.cs.dt.impact.data.GeometricMeanData;
 import edu.washington.cs.dt.impact.data.Project;
@@ -54,7 +58,16 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
             if (!allowNegatives && val < 0.0) {
                 val = 0.0;
             }
-            fig17Data.add(new GeometricMeanData(i, val, null, null));
+            if (i == 0) {
+                fig17Data.add(new GeometricMeanData(i, val, null, Constants.ORDER.ABSOLUTE, Constants.COVERAGE.STATEMENT));            	
+            } else if (i == 2) {
+                fig17Data.add(new GeometricMeanData(i, val, null, Constants.ORDER.RELATIVE, Constants.COVERAGE.STATEMENT));
+            } else if (i == 4) {
+                fig17Data.add(new GeometricMeanData(i, val, null, Constants.ORDER.ABSOLUTE, Constants.COVERAGE.FUNCTION));
+            } else if (i == 6) {
+                fig17Data.add(new GeometricMeanData(i, val, null, Constants.ORDER.RELATIVE, Constants.COVERAGE.FUNCTION));
+            }
+
             String output = apfdFormat.format(val);
             if (output.equals("-.00")) {
                 output = ".00";
@@ -161,7 +174,19 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
                         getHighestIndexInOrigTestList(project.getFig18_unen_test_list()[i], origTestList))));
                 percent = 1 - (time[i + 1] / (time[i] + unenOrigTimeVal));
             }
-            fig18percent.add(new GeometricMeanData(i, percent, null, null));
+            if (i == 0) {
+                fig18percent.add(new GeometricMeanData(i, percent, null, Constants.ORDER.ORIGINAL, Constants.COVERAGE.STATEMENT));
+            } else if (i == 2) {
+                fig18percent.add(new GeometricMeanData(i, percent, null, Constants.ORDER.ABSOLUTE, Constants.COVERAGE.STATEMENT));
+            } else if (i == 4) {
+                fig18percent.add(new GeometricMeanData(i, percent, null, Constants.ORDER.RELATIVE, Constants.COVERAGE.STATEMENT));
+            } else if (i == 6) {
+                fig18percent.add(new GeometricMeanData(i, percent, null, Constants.ORDER.ORIGINAL, Constants.COVERAGE.FUNCTION));
+            } else if (i == 8) {
+                fig18percent.add(new GeometricMeanData(i, percent, null, Constants.ORDER.ABSOLUTE, Constants.COVERAGE.FUNCTION));
+            } else if (i == 10) {
+                fig18percent.add(new GeometricMeanData(i, percent, null, Constants.ORDER.RELATIVE, Constants.COVERAGE.FUNCTION));
+            }
             percent *= 100;
 
             // Increase in runtime of enhanced compared to unenhanced
@@ -223,7 +248,21 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
             if (!allowNegatives && val < 0.0) {
                 val = 0.0;
             }
-            fig18apfd.add(new GeometricMeanData(i, val, null, null));
+
+            if (i == 0) {
+            	fig18apfd.add(new GeometricMeanData(i, val, null, Constants.ORDER.ORIGINAL, Constants.COVERAGE.STATEMENT));
+            } else if (i == 2) {
+            	fig18apfd.add(new GeometricMeanData(i, val, null, Constants.ORDER.ABSOLUTE, Constants.COVERAGE.STATEMENT));
+            } else if (i == 4) {
+            	fig18apfd.add(new GeometricMeanData(i, val, null, Constants.ORDER.RELATIVE, Constants.COVERAGE.STATEMENT));
+            } else if (i == 6) {
+            	fig18apfd.add(new GeometricMeanData(i, val, null, Constants.ORDER.ORIGINAL, Constants.COVERAGE.FUNCTION));
+            } else if (i == 8) {
+            	fig18apfd.add(new GeometricMeanData(i, val, null, Constants.ORDER.ABSOLUTE, Constants.COVERAGE.FUNCTION));
+            } else if (i == 10) {
+            	fig18apfd.add(new GeometricMeanData(i, val, null, Constants.ORDER.RELATIVE, Constants.COVERAGE.FUNCTION));
+            }
+            
             String output = apfdFormat.format(val);
             if (output.equals("-.00")) {
                 output = ".00";
@@ -321,10 +360,10 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
             // result += " & " + timeFormat.format(enhancedParaSpeedup) + " $\\rightarrow$ " +
             // timeFormat.format(unenhancedPara);
             fig19GeoData.add(new GeometricMeanData(getK(i), enhancedParaSpeedup, Constants.TD_SETTING.OMITTED_TD,
-                    Constants.ORDER.ORIGINAL));
+                    Constants.ORDER.ORIGINAL, null));
             fig19GeoData.add(new GeometricMeanData(getK(i), unenhancedPara, Constants.TD_SETTING.GIVEN_TD,
-                    Constants.ORDER.ORIGINAL));
-            fig19GeoData.add(new GeometricMeanData(i, diffBetweenEnhancedUnenhanced, null, Constants.ORDER.ORIGINAL));
+                    Constants.ORDER.ORIGINAL, null));
+            fig19GeoData.add(new GeometricMeanData(i, diffBetweenEnhancedUnenhanced, null, Constants.ORDER.ORIGINAL, null));
         }
         unenNumOfDTs = project.get_fig19_NumOfDTs_time_unen();
         enNumOfDTs = project.get_fig19_NumOfDTs_time_en();
@@ -383,10 +422,10 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
             // result += " & " + timeFormat.format(enhancedParaSpeedup) + " $\\rightarrow$ " +
             // timeFormat.format(unenhancedPara);
             fig19GeoData.add(new GeometricMeanData(getK(i), enhancedParaSpeedup, Constants.TD_SETTING.OMITTED_TD,
-                    Constants.ORDER.TIME));
+                    Constants.ORDER.TIME, null));
             fig19GeoData.add(new GeometricMeanData(getK(i), unenhancedPara, Constants.TD_SETTING.GIVEN_TD,
-                    Constants.ORDER.TIME));
-            fig19GeoData.add(new GeometricMeanData(i, diffBetweenEnhancedUnenhanced, null, Constants.ORDER.TIME));
+                    Constants.ORDER.TIME, null));
+            fig19GeoData.add(new GeometricMeanData(i, diffBetweenEnhancedUnenhanced, null, Constants.ORDER.TIME, null));
         }
         result += "\\\\";
         return result;
@@ -444,6 +483,35 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
         }
 
         if (!fig17GeoData.isEmpty()) {
+        	double[] geometricMeans = new double[4];
+        	Map<Set<String>, Set<Double>> covOrdToVals = getCovOrdToValues(fig17GeoData);
+        	
+        	if (covOrdToVals.keySet().size() != geometricMeans.length) {
+        		exitWithError("Coverage order combination in files is more than expected. Expected: 4. Found: " + covOrdToVals.keySet());
+        	}
+
+        	Set<String> statementAbs = new HashSet<>();
+        	statementAbs.add(Constants.ORDER.ABSOLUTE.toString());
+        	statementAbs.add(Constants.COVERAGE.STATEMENT.toString());
+        	addToGeoMean(covOrdToVals, statementAbs, geometricMeans, 0);
+
+        	Set<String> statementRel = new HashSet<>();
+        	statementRel.add(Constants.ORDER.RELATIVE.toString());
+        	statementRel.add(Constants.COVERAGE.STATEMENT.toString());
+        	addToGeoMean(covOrdToVals, statementRel, geometricMeans, 1);
+
+        	Set<String> functionAbs = new HashSet<>();
+        	functionAbs.add(Constants.ORDER.ABSOLUTE.toString());
+        	functionAbs.add(Constants.COVERAGE.FUNCTION.toString());
+        	addToGeoMean(covOrdToVals, functionAbs, geometricMeans, 2);
+
+        	Set<String> functionRel = new HashSet<>();
+        	functionRel.add(Constants.ORDER.RELATIVE.toString());
+        	functionRel.add(Constants.COVERAGE.FUNCTION.toString());
+        	addToGeoMean(covOrdToVals, functionRel, geometricMeans, 3);
+       	
+        	latexString += addGeoString(geometricMeans, null);
+        	
             if (type.equals("orig")) {
                 getMeanOfDiffs("priorHumanWritten", fig17GeoData, false);
             } else if (type.equals("auto")) {
@@ -454,6 +522,15 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
         }
 
         if (!fig18GeoDataPercent.isEmpty()) {
+        	
+        	double[] geometricMeansAPFD = new double[6];
+        	double[] geometricMeansTime = new double[6];
+
+        	selectionParseGeoMeans(fig18GeoDataAPFD, geometricMeansAPFD);
+        	selectionParseGeoMeans(fig18GeoDataPercent, geometricMeansTime);
+
+            latexString += addGeoString(geometricMeansAPFD, geometricMeansTime);
+        	
             if (type.equals("orig")) {
                 getMeanOfDiffs("seleHumanWrittenPercent", fig18GeoDataPercent, true);
                 getMeanOfDiffs("seleHumanWrittenAPFD", fig18GeoDataAPFD, false);
@@ -466,67 +543,7 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
         }
 
         if (!fig19GeoData.isEmpty()) {
-            // int columns = 16;
-            // double[] geometricMeans = new double[columns];
-            // for (int i = 0; i < columns; i++) {
-            // double value = 1.0;
-            // int counter = 0;
-            // for (GeometricMeanData data : fig19GeoData) {
-            // if (data.getOrder() == null || data.getTdSetting() == null) {
-            // continue;
-            // }
-            // if (i % 2 == 0 && !data.getTdSetting().equals(Constants.TD_SETTING.OMITTED_TD)) {
-            // continue;
-            // }
-            // if (i % 2 == 1 && !data.getTdSetting().equals(Constants.TD_SETTING.GIVEN_TD)) {
-            // continue;
-            // }
-            // if (i >= 0 && i < 8 && !data.getOrder().equals(Constants.ORDER.ORIGINAL)) {
-            // continue;
-            // }
-            // if (i >= 8 && i < 16 && !data.getOrder().equals(Constants.ORDER.TIME)) {
-            // continue;
-            // }
-            //
-            // if (i == 0 && data.getK() == 2) {
-            // value *= data.getValue();
-            // } else if (i == 1 && data.getK() == 2) {
-            // value *= data.getValue();
-            // } else if (i == 2 && data.getK() == 4) {
-            // value *= data.getValue();
-            // } else if (i == 3 && data.getK() == 4) {
-            // value *= data.getValue();
-            // } else if (i == 4 && data.getK() == 8) {
-            // value *= data.getValue();
-            // } else if (i == 5 && data.getK() == 8) {
-            // value *= data.getValue();
-            // } else if (i == 6 && data.getK() == 16) {
-            // value *= data.getValue();
-            // } else if (i == 7 && data.getK() == 16) {
-            // value *= data.getValue();
-            // } else if (i == 8 && data.getK() == 2) {
-            // value *= data.getValue();
-            // } else if (i == 9 && data.getK() == 2) {
-            // value *= data.getValue();
-            // } else if (i == 10 && data.getK() == 4) {
-            // value *= data.getValue();
-            // } else if (i == 11 && data.getK() == 4) {
-            // value *= data.getValue();
-            // } else if (i == 12 && data.getK() == 8) {
-            // value *= data.getValue();
-            // } else if (i == 13 && data.getK() == 8) {
-            // value *= data.getValue();
-            // } else if (i == 14 && data.getK() == 16) {
-            // value *= data.getValue();
-            // } else if (i == 15 && data.getK() == 16) {
-            // value *= data.getValue();
-            // } else {
-            // continue;
-            // }
-            // counter += 1;
-            // }
-            // geometricMeans[i] = Math.pow(value, (1.0 / counter));
-            // }
+
             double[] diffOfOrig = new double[4];
             for (int i = 0; i < 4; i++) {
                 diffOfOrig[i] = 1.0;
@@ -561,24 +578,7 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
                 }
             }
 
-            StringBuilder sb = new StringBuilder();
-            sb.append("\\hline\r\nGeometric mean");
-            for (int i = 0; i < geometricMeans.length; i++) {
-                // double diffOfGeometricMeans = geometricMeans[i + 1] - geometricMeans[i];
-                String diffStringFormat = timeFormat.format(geometricMeans[i]);
-                if (diffStringFormat.equals("-0\\%")) {
-                    diffStringFormat = "0\\%";
-                }
-                // if (diffOfGeometricMeans >= 0.0 || diffStringFormat.equals("0\\%")) {
-                // diffStringFormat = "\\pMinus" + diffStringFormat;
-                // }
-                // if (diffOfGeometricMeans * 100 < 10.0 && diffOfGeometricMeans * 100 > -10.0) {
-                // diffStringFormat = "\\z" + diffStringFormat;
-                // }
-                sb.append(" & " + diffStringFormat);
-            }
-            sb.append(" \\\\");
-            latexString += sb.toString();
+            latexString += addGeoString(null, geometricMeans);
 
             if (type.equals("orig")) {
                 getMeanOfDiffs("paraHumanWritten", fig19GeoData, true);
@@ -591,6 +591,113 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
 
         // take off the "\r\n" from the last line
         return latexString;
+    }
+    
+    private static void selectionParseGeoMeans(List<GeometricMeanData> geoData, double[] geometricMeans) {
+    	Map<Set<String>, Set<Double>> covOrdToVals = getCovOrdToValues(geoData);
+    	
+    	if (covOrdToVals.keySet().size() != geometricMeans.length) {
+    		exitWithError("Coverage order combination in files is more than expected. Expected: 6. Found: " + covOrdToVals.keySet());
+    	}
+
+    	Set<String> statementOrig = new HashSet<>();
+    	statementOrig.add(Constants.ORDER.ORIGINAL.toString());
+    	statementOrig.add(Constants.COVERAGE.STATEMENT.toString());
+    	addToGeoMean(covOrdToVals, statementOrig, geometricMeans, 0);
+    	
+    	Set<String> statementAbs = new HashSet<>();
+    	statementAbs.add(Constants.ORDER.ABSOLUTE.toString());
+    	statementAbs.add(Constants.COVERAGE.STATEMENT.toString());
+    	addToGeoMean(covOrdToVals, statementAbs, geometricMeans, 1);
+
+    	Set<String> statementRel = new HashSet<>();
+    	statementRel.add(Constants.ORDER.RELATIVE.toString());
+    	statementRel.add(Constants.COVERAGE.STATEMENT.toString());
+    	addToGeoMean(covOrdToVals, statementRel, geometricMeans, 2);
+
+    	Set<String> functionOrig = new HashSet<>();
+    	functionOrig.add(Constants.ORDER.ORIGINAL.toString());
+    	functionOrig.add(Constants.COVERAGE.FUNCTION.toString());
+    	addToGeoMean(covOrdToVals, functionOrig, geometricMeans, 3);
+
+    	Set<String> functionAbs = new HashSet<>();
+    	functionAbs.add(Constants.ORDER.ABSOLUTE.toString());
+    	functionAbs.add(Constants.COVERAGE.FUNCTION.toString());
+    	addToGeoMean(covOrdToVals, functionAbs, geometricMeans, 4);
+
+    	Set<String> functionRel = new HashSet<>();
+    	functionRel.add(Constants.ORDER.RELATIVE.toString());
+    	functionRel.add(Constants.COVERAGE.FUNCTION.toString());
+    	addToGeoMean(covOrdToVals, functionRel, geometricMeans, 5);
+    }
+    
+    private static String addGeoString(double[] geometricMeansAPFD, double[] geometricMeansTime) {
+        StringBuilder sb = new StringBuilder();
+        sb.append("\\hline\r\nGeometric mean");
+        if (geometricMeansTime != null) {        	
+        	for (int i = 0; i < geometricMeansTime.length; i++) {
+        		// double diffOfGeometricMeans = geometricMeans[i + 1] - geometricMeans[i];
+        		String diffStringFormat = timeFormat.format(geometricMeansTime[i]);
+        		if (diffStringFormat.equals("-0\\%")) {
+        			diffStringFormat = "0\\%";
+        		}
+        		// if (diffOfGeometricMeans >= 0.0 || diffStringFormat.equals("0\\%")) {
+        		// diffStringFormat = "\\pMinus" + diffStringFormat;
+        		// }
+        		// if (diffOfGeometricMeans * 100 < 10.0 && diffOfGeometricMeans * 100 > -10.0) {
+        		// diffStringFormat = "\\z" + diffStringFormat;
+        		// }
+        		sb.append(" & " + diffStringFormat);
+        	}
+        }
+        if (geometricMeansAPFD != null) {        	
+        	for (int i = 0; i < geometricMeansAPFD.length; i++) {
+        		// double diffOfGeometricMeans = geometricMeans[i + 1] - geometricMeans[i];
+        		String diffStringFormat = "";                
+        		String output = apfdFormat.format(geometricMeansAPFD[i]);
+        		if (output.equals("-.00")) {
+        			output = ".00";
+        		}
+        		if (geometricMeansAPFD[i] >= 0.0 || output.equals(".00")) {
+        			diffStringFormat += "\\pMinus";// + output;
+        		}
+        		diffStringFormat += output;
+        		sb.append(" & " + diffStringFormat);
+        	}
+        }
+        sb.append(" \\\\");
+        return sb.toString();
+    }
+    
+    private static void addToGeoMean(Map<Set<String>, Set<Double>> covOrdToVals, Set<String> key, double[] geoMeans, int index) {
+    	if (!covOrdToVals.containsKey(key)) {
+    		exitWithError("Geometric mean missing " + key + ". Only contains " + covOrdToVals.keySet());
+    	}
+    	
+    	Set<Double> values = covOrdToVals.get(key);
+    	double product = 1.0;
+    	for (Double val : values) {
+    		product *= val + 1.0;
+    	}
+    	
+    	geoMeans[index] = Math.pow(product, (1.0 / values.size())) - 1.0;
+    }
+    
+    private static Map<Set<String>, Set<Double>> getCovOrdToValues(List<GeometricMeanData> geoData) {
+    	Map<Set<String>, Set<Double>> covOrderToVals = new HashMap<>();
+    	for (GeometricMeanData data : geoData) {
+    		Set<String> key = new HashSet<String>();
+    		key.add(data.getCoverage().toString());
+    		key.add(data.getOrder().toString());
+    		
+    		Set<Double> currVals = covOrderToVals.get(key);
+    		if (currVals == null) {
+    			currVals = new HashSet<>();
+    			covOrderToVals.put(key, currVals);
+    		}
+    		currVals.add(data.getValue());
+    	}
+    	return covOrderToVals;
     }
 
     private static void getMeanOfDiffs(String name, List<GeometricMeanData> figData, boolean isPercent) {
@@ -749,7 +856,7 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
 
                     String testStr =
                             getNextLine(file, Constants.ORDER_TIME + " " + order_time, Constants.TEST_ORDER_LIST);
-                    testStr = testStr.substring(1, testStr.length() - 2);
+                    testStr = testStr.substring(1, testStr.length() - 1);
                     String[] test_list = testStr.split(", ");
                     if (resolveDependences == null) { // non-enhanced
                         if (numMachines == 2) {
@@ -811,7 +918,7 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
                     double[] fig18_time_array = currProj.get_fig18_time();
                     String testStr =
                             getNextLine(file, Constants.ORDER_TIME + " " + order_time, Constants.TEST_ORDER_LIST);
-                    testStr = testStr.substring(1, testStr.length() - 2);
+                    testStr = testStr.substring(1, testStr.length() - 1);
                     String[] test_list = testStr.split(", ");
 
                     // original values, index should be i=0, i+=2
@@ -933,7 +1040,7 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
                     double order_time = Double.parseDouble(order_time_string);
                     String testStr =
                             getNextLine(file, Constants.ORDER_TIME + " " + order_time, Constants.TEST_ORDER_LIST);
-                    testStr = testStr.substring(1, testStr.length() - 2);
+                    testStr = testStr.substring(1, testStr.length() - 1);
                     String[] test_list = testStr.split(", ");
 
                     if (orderName.equals("original")) {
