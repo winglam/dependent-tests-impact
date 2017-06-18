@@ -1,7 +1,0 @@
-org.apache.zeppelin.dep.Booter.resolveLocalRepoPath : r1 = staticinvoke <java.lang.System: java.lang.String getenv(java.lang.String)>("ZEPPELIN_HOME")
-org.apache.zeppelin.dep.Booter.resolveLocalRepoPath : r1 = staticinvoke <java.lang.System: java.lang.String getProperty(java.lang.String)>("zeppelin.home")
-org.apache.zeppelin.dep.Booter.resolveLocalRepoPath : $r2 = newarray (java.lang.String)[0]
-org.apache.zeppelin.dep.Booter.resolveLocalRepoPath : if r1 != null goto (branch)
-org.apache.zeppelin.dep.Booter.resolveLocalRepoPath : r1 = ".."
-org.apache.zeppelin.dep.Booter.resolveLocalRepoPath : if r1 != null goto $r2 = newarray (java.lang.String)[0]
-org.apache.zeppelin.dep.DependencyResolverTest.tearDown : $r0 = <org.apache.zeppelin.dep.DependencyResolverTest: java.io.File tmpDir>
