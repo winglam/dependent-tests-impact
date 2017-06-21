@@ -1,5 +1,0 @@
-mcscm.Os.isMac : $r0 = staticinvoke <mcscm.Os: java.lang.String getOsName()>() >>>>>>>> mcscm.Os.getOsName : $r0 = staticinvoke <java.lang.System: java.lang.String getProperty(java.lang.String,java.lang.String)>("os.name", "unknown")
-mcscm.Os.getOsName : $r0 = staticinvoke <java.lang.System: java.lang.String getProperty(java.lang.String,java.lang.String)>("os.name", "unknown") >>>>>>>> mcscm.Os.getOsName : return $r0
-mcscm.Os.getOsName : return $r0 >>>>>>>> mcscm.Os.isMac : r1 = virtualinvoke $r0.<java.lang.String: java.lang.String toLowerCase()>()
-mcscm.Os.isMac : r1 = virtualinvoke $r0.<java.lang.String: java.lang.String toLowerCase()>() >>>>>>>> mcscm.Os.isMac : $z0 = virtualinvoke r1.<java.lang.String: boolean startsWith(java.lang.String)>("mac")
-mcscm.Os.isMac : $z0 = virtualinvoke r1.<java.lang.String: boolean startsWith(java.lang.String)>("mac") >>>>>>>> mcscm.Os.isMac : return $z0
