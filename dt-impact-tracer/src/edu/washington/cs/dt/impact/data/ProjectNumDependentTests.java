@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ProjectNumDependentTests extends Project {
-    private String name;
-
     private List<String>[] fig7_human;
 
     private List<String>[] fig7_auto;
@@ -34,7 +32,7 @@ public class ProjectNumDependentTests extends Project {
     private boolean uses_fig9;
 
     public ProjectNumDependentTests(String projName) {
-        name = projName;
+        super(projName);
         fig7_human = initListArray(4);
         fig7_auto = initListArray(4);
         fig8_human = initListArray(6);

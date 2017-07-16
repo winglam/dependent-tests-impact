@@ -15,7 +15,6 @@ import java.util.TreeMap;
 import edu.washington.cs.dt.impact.data.Project;
 import edu.washington.cs.dt.impact.data.ProjectNumDependentTests;
 import edu.washington.cs.dt.impact.tools.FileTools;
-import edu.washington.cs.dt.impact.util.Constants;
 
 public class NumDependentTestsFigureGenerator extends FigureGenerator {
 	private static final int NUM_PROJECTS = 6;
@@ -214,7 +213,6 @@ public class NumDependentTestsFigureGenerator extends FigureGenerator {
 		int maxAutoDT = sumProjectToDT(autoProjectToDT);
 
 		boolean outputPrecomputedDependencesTime = argsList.contains("-getPrecomputedDependencesTime");
-		boolean getDTLists = argsList.contains("-getDTLists");
 		ignoreDTFFlag = argsList.contains("-ignoreDTFFlag");
 
 		List<List<Project>> proj_orig_arrayList = new ArrayList<List<Project>>();
@@ -228,7 +226,7 @@ public class NumDependentTestsFigureGenerator extends FigureGenerator {
 			// name
 			List<Project> prior_proj_orig_arrayList = new ArrayList<Project>(NUM_PROJECTS);
 			List<Project> prior_proj_auto_arrayList = new ArrayList<Project>(NUM_PROJECTS);
-			setProjectLists(argsList, priorDirectoryName, prior_proj_orig_arrayList, prior_proj_auto_arrayList, getDTLists);
+			setProjectLists(argsList, priorDirectoryName, prior_proj_orig_arrayList, prior_proj_auto_arrayList);
 			generateLatexFile(outputDirectoryName, prior_proj_orig_arrayList, prior_proj_auto_arrayList, maxOrigDT, maxAutoDT);
 			proj_orig_arrayList.add(prior_proj_orig_arrayList);
 			proj_auto_arrayList.add(prior_proj_auto_arrayList);
@@ -239,7 +237,7 @@ public class NumDependentTestsFigureGenerator extends FigureGenerator {
 			// name
 			List<Project> sele_proj_orig_arrayList = new ArrayList<Project>(NUM_PROJECTS);
 			List<Project> sele_proj_auto_arrayList = new ArrayList<Project>(NUM_PROJECTS);
-			setProjectLists(argsList, seleDirectoryName, sele_proj_orig_arrayList, sele_proj_auto_arrayList, getDTLists);
+			setProjectLists(argsList, seleDirectoryName, sele_proj_orig_arrayList, sele_proj_auto_arrayList);
 			generateLatexFile(outputDirectoryName, sele_proj_orig_arrayList, sele_proj_auto_arrayList, maxOrigDT, maxAutoDT);
 			proj_orig_arrayList.add(sele_proj_orig_arrayList);
 			proj_auto_arrayList.add(sele_proj_auto_arrayList);
@@ -250,7 +248,7 @@ public class NumDependentTestsFigureGenerator extends FigureGenerator {
 			// name
 			List<Project> para_proj_orig_arrayList = new ArrayList<Project>(NUM_PROJECTS);
 			List<Project> para_proj_auto_arrayList = new ArrayList<Project>(NUM_PROJECTS);
-			setProjectLists(argsList, paraDirectoryName, para_proj_orig_arrayList, para_proj_auto_arrayList, getDTLists);
+			setProjectLists(argsList, paraDirectoryName, para_proj_orig_arrayList, para_proj_auto_arrayList);
 			generateLatexFile(outputDirectoryName, para_proj_orig_arrayList, para_proj_auto_arrayList, maxOrigDT, maxAutoDT);
 			proj_orig_arrayList.add(para_proj_orig_arrayList);
 			proj_auto_arrayList.add(para_proj_auto_arrayList);
@@ -384,7 +382,7 @@ public class NumDependentTestsFigureGenerator extends FigureGenerator {
 				+ "dts-per-program.tex";
 		writeToLatexFile(addPhantomZerosToString(projectToStr), perProgramOutputFilename, false);
 
-		Map<String, List<String>> perAlgoMap = new HashMap<String, List<String>>();
+		Map<String, List<String>> perAlgoMap = new TreeMap<String, List<String>>();
 		List<String> perAlgoProgList = new ArrayList<String>();
 		List<String> perAlgoAutoList = new ArrayList<String>();
 		perAlgoMap.put("Prog", perAlgoProgList);
@@ -604,389 +602,288 @@ public class NumDependentTestsFigureGenerator extends FigureGenerator {
 	}
 
 	public static void setProjectLists(List<String> argsList, String directoryName, List<Project> proj_orig_arrayList,
-			List<Project> proj_auto_arrayList, boolean getDTLists) {
-
-		// String minBoundDependencesOrig = getArgName(argsList,
-		// "-minBoundDependencesOrig");
-		// String minBoundDependencesAuto = getArgName(argsList,
-		// "-minBoundDependencesAuto");
-
-		/*
-		 * 7: prioritization 8: selection 9: parallelizaiton
-		 */
+			List<Project> proj_auto_arrayList) {
 
 		File directory = new File(directoryName);
 		File[] fList = directory.listFiles();
 
-		for (File file : fList) {
-			if (file.isFile()) {
+        // Call super's parse file method and let it parse the files for information and
+        // then call doParaCalculations, doSeleCalculations, or doPrioCalculations for each file
+        parseFiles(fList, new NumDependentTestsFigureGenerator(), ignoreDTFFlag, proj_orig_arrayList, proj_auto_arrayList);
+	}
+	
+	@Override
+	public void doParaCalculations() {
+		ProjectNumDependentTests currProj = (ProjectNumDependentTests) FigureGenerator.currProj;
+		// order will be time or original
+		// k = 2, 4, 8, 16 is the number of machines
+		int index = flagsList.indexOf("-numOfMachines");
+		String numMachines_string = flagsList.get(index + 1);
+		int numMachines = Integer.parseInt(numMachines_string);
 
-				// String containing all the flags
-				String flagsInFile = getFlagsLine(file, Constants.ARGUMENT_STRING, false);
-				if (flagsInFile == null) {
-					continue;
+		currProj.useFig9();
+		// this array will correspond to P1 or P2
+		List<String>[] curr_fig9_human, curr_fig9_auto;
+		int timeFixedDTs = 0;
+		if (orderName.equals("original")) {
+			curr_fig9_human = currProj.get_fig9_human_orig();
+			curr_fig9_auto = currProj.get_fig9_auto_orig();
+		} else if (orderName.equals("time")) { // orderName == time
+			curr_fig9_human = currProj.get_fig9_human_time();
+			curr_fig9_auto = currProj.get_fig9_auto_time();
+			timeFixedDTs = 4;
+		} else {
+			exitWithError("Unexpected order: " + orderName);
+			curr_fig9_human = null;
+			curr_fig9_auto = null;
+		}
+
+		if (testType.equals("orig")) { // human
+			if (numMachines == 2) {
+				if (numOfFixedDTs != 0) {
+					currProj.getFig9_human_fixed_time()[timeFixedDTs] = maxTimeInFile;
 				}
-				// get rid of square brackets
-				flagsInFile = flagsInFile.substring(1, flagsInFile.length() - 1);
-				String[] flags = flagsInFile.split(",");
-				List<String> flagsList = Arrays.asList(flags);
-				// get rid of whitespaces
-				for (int i = 0; i < flagsList.size(); i++) {
-					flagsList.set(i, flagsList.get(i).trim());
+				curr_fig9_human[0] = totalDTs;
+			} else if (numMachines == 4) {
+				if (numOfFixedDTs != 0) {
+					currProj.getFig9_human_fixed_time()[timeFixedDTs + 1] = maxTimeInFile;
 				}
-				int index = flagsList.indexOf("-technique");
-				// index + 1 because want arg after the index of flag
-				String techniqueName = flagsList.get(index + 1);
-
-				index = flagsList.indexOf("-coverage");
-				String coverageName = flagsList.get(index + 1);
-
-				index = flagsList.indexOf("-order");
-				String orderName = flagsList.get(index + 1);
-
-				index = flagsList.indexOf("-project");
-				String projectName = flagsList.get(index + 1);
-
-				index = flagsList.indexOf("-testType");
-				String testType = flagsList.get(index + 1);
-
-				index = flagsList.indexOf("-dependentTestFile");
-				if (index != -1 && !ignoreDTFFlag) { // only count files without dependentTestFile
-					continue;
+				curr_fig9_human[1] = totalDTs;
+			} else if (numMachines == 8) {
+				if (numOfFixedDTs != 0) {
+					currProj.getFig9_human_fixed_time()[timeFixedDTs + 2] = maxTimeInFile;
 				}
-				// see if List needs to orig or auto generated one
-				List<Project> currProjList = null;
-				if (testType.equals("auto")) {
-					currProjList = proj_auto_arrayList;
-				} else if (testType.equals("orig")) {
-					currProjList = proj_orig_arrayList;
+				curr_fig9_human[2] = totalDTs;
+			} else if (numMachines == 16) {
+				if (numOfFixedDTs != 0) {
+					currProj.getFig9_human_fixed_time()[timeFixedDTs + 3] = maxTimeInFile;
 				}
-
-				// index of this project in the arrayList, might be -1 if not
-				// found
-				int indexOfProj = indexOfByName(currProjList, projectName);
-
-				// Project Object that corresponds to the current project name
-				// in this file
-				Project currProj2 = null;
-
-				if (indexOfProj != -1) {
-					currProj2 = currProjList.get(indexOfProj);
-				} else {// projectName not seen before
-					currProj2 = new ProjectNumDependentTests(projectName);
-					currProjList.add(currProj2);
+				curr_fig9_human[3] = totalDTs;
+			} else {
+				exitWithError("Unexpected numMachines: " + numMachines);
+			}
+		} else if (testType.equals("auto")) // auto
+		{
+			if (numMachines == 2) {
+				if (numOfFixedDTs != 0) {
+					currProj.getFig9_auto_fixed_time()[timeFixedDTs] = maxTimeInFile;
 				}
-				ProjectNumDependentTests currProj = (ProjectNumDependentTests) currProj2;
+				curr_fig9_auto[0] = totalDTs;
+			} else if (numMachines == 4) {
+				if (numOfFixedDTs != 0) {
+					currProj.getFig9_auto_fixed_time()[timeFixedDTs + 1] = maxTimeInFile;
+				}
+				curr_fig9_auto[1] = totalDTs;
+			} else if (numMachines == 8) {
+				if (numOfFixedDTs != 0) {
+					currProj.getFig9_auto_fixed_time()[timeFixedDTs + 2] = maxTimeInFile;
+				}
+				curr_fig9_auto[2] = totalDTs;
+			} else if (numMachines == 16) {
+				if (numOfFixedDTs != 0) {
+					currProj.getFig9_auto_fixed_time()[timeFixedDTs + 3] = maxTimeInFile;
+				}
+				curr_fig9_auto[3] = totalDTs;
+			} else {
+				exitWithError("Unexpected numMachines: " + numMachines);
+			}
+		} else {
+			exitWithError("Unexpected testType: " + testType);
+		}
+	}
 
-				// get the number of dts
-				List<String> numTotal = parseFileForDTs(file, Constants.NOT_FIXED_DTS, false);
-
-				if (getDTLists) {
-					StringBuilder fileName = new StringBuilder();
-					fileName.append(techniqueName);
-					fileName.append("-");
-					fileName.append(projectName);
-					fileName.append("-");
-					fileName.append(testType);
-					fileName.append("-");
-					if (techniqueName.equals("parallelization")) {
-						index = flagsList.indexOf("-numOfMachines");
-						String numMachines_string = flagsList.get(index + 1);
-						int numMachines = Integer.parseInt(numMachines_string);
-						fileName.append(numMachines);
-					} else {
-						fileName.append(coverageName);
+	@Override
+	public void doPrioCalculations() {
+		ProjectNumDependentTests currProj = (ProjectNumDependentTests) FigureGenerator.currProj;
+		currProj.useFig7();
+		if (orderName.equals("original")) {
+			return;
+		}
+		List<String>[] fig7_human = currProj.get_fig7_human();
+		List<String>[] fig7_auto = currProj.get_fig7_auto();
+		if (testType.equals("orig")) { // human
+			if (coverageName.equals("statement")) {
+				if (orderName.equals("absolute")) {
+					// T3
+					fig7_human[0] = totalDTs;
+					if (numOfFixedDTs != 0) {
+						currProj.getFig7_human_fixed_time()[0] = maxTimeInFile;
 					}
-					fileName.append("-");
-					fileName.append(orderName);
-					fileName.append(".txt");
-
-					StringBuilder fileContents = new StringBuilder();
-					List<String> dtList = parseFileForDTs(file, Constants.DT_LIST, true);
-	                for (int j = 0; j < dtList.size();) {
-	                    for (int i = 0; i < 5; j++) {
-	                    	fileContents.append(dtList.get(j) + "\n");
-	                        i++;
-	                    }
-	                    fileContents.append("\n");
-	                }
-
-	                writeToLatexFile(fileContents.toString(), fileName.toString(), false);
-				}
-
-				int numOfFixedDTs = parseFileForNumOfDTs(file, Constants.FIXED_DTS);
-				double timeInFile = parseFileForMaxTime(file, Constants.TIME_INCL_DTF);
-
-				// parallelization technique, figure 9
-				if (techniqueName.equals("parallelization")) {
-					// order will be time or original
-					// k = 2, 4, 8, 16 is the number of machines
-					index = flagsList.indexOf("-numOfMachines");
-					String numMachines_string = flagsList.get(index + 1);
-					int numMachines = Integer.parseInt(numMachines_string);
-
-					currProj.useFig9();
-					// this array will correspond to P1 or P2
-					List<String>[] curr_fig9_human, curr_fig9_auto;
-					int timeFixedDTs = 0;
-					if (orderName.equals("original")) {
-						curr_fig9_human = currProj.get_fig9_human_orig();
-						curr_fig9_auto = currProj.get_fig9_auto_orig();
-					} else if (orderName.equals("time")) { // orderName == time
-						curr_fig9_human = currProj.get_fig9_human_time();
-						curr_fig9_auto = currProj.get_fig9_auto_time();
-						timeFixedDTs = 4;
-					} else {
-						exitWithError("Unexpected order: " + orderName);
-						curr_fig9_human = null;
-						curr_fig9_auto = null;
-					}
-
-					if (testType.equals("orig")) { // human
-						if (numMachines == 2) {
-							if (numOfFixedDTs != 0) {
-								currProj.getFig9_human_fixed_time()[timeFixedDTs] = timeInFile;
-							}
-							curr_fig9_human[0] = numTotal;
-						} else if (numMachines == 4) {
-							if (numOfFixedDTs != 0) {
-								currProj.getFig9_human_fixed_time()[timeFixedDTs + 1] = timeInFile;
-							}
-							curr_fig9_human[1] = numTotal;
-						} else if (numMachines == 8) {
-							if (numOfFixedDTs != 0) {
-								currProj.getFig9_human_fixed_time()[timeFixedDTs + 2] = timeInFile;
-							}
-							curr_fig9_human[2] = numTotal;
-						} else if (numMachines == 16) {
-							if (numOfFixedDTs != 0) {
-								currProj.getFig9_human_fixed_time()[timeFixedDTs + 3] = timeInFile;
-							}
-							curr_fig9_human[3] = numTotal;
-						} else {
-							exitWithError("Unexpected numMachines: " + numMachines);
-						}
-					} else if (testType.equals("auto")) // auto
-					{
-						if (numMachines == 2) {
-							if (numOfFixedDTs != 0) {
-								currProj.getFig9_auto_fixed_time()[timeFixedDTs] = timeInFile;
-							}
-							curr_fig9_auto[0] = numTotal;
-						} else if (numMachines == 4) {
-							if (numOfFixedDTs != 0) {
-								currProj.getFig9_auto_fixed_time()[timeFixedDTs + 1] = timeInFile;
-							}
-							curr_fig9_auto[1] = numTotal;
-						} else if (numMachines == 8) {
-							if (numOfFixedDTs != 0) {
-								currProj.getFig9_auto_fixed_time()[timeFixedDTs + 2] = timeInFile;
-							}
-							curr_fig9_auto[2] = numTotal;
-						} else if (numMachines == 16) {
-							if (numOfFixedDTs != 0) {
-								currProj.getFig9_auto_fixed_time()[timeFixedDTs + 3] = timeInFile;
-							}
-							curr_fig9_auto[3] = numTotal;
-						} else {
-							exitWithError("Unexpected numMachines: " + numMachines);
-						}
-					} else {
-						exitWithError("Unexpected testType: " + testType);
-					}
-
-				} // selection technique, figure 8
-				else if (techniqueName.equals("selection")) {
-					currProj.useFig8();
-					List<String>[] fig8_human = currProj.get_fig8_human();
-					List<String>[] fig8_auto = currProj.get_fig8_auto();
-					if (testType.equals("orig")) { // human
-
-						if (coverageName.equals("statement")) {
-							if (orderName.equals("original")) {
-								// S1
-								fig8_human[0] = numTotal;
-								if (numOfFixedDTs != 0) {
-									currProj.getFig8_human_fixed_time()[0] = timeInFile;
-								}
-							} else if (orderName.equals("absolute")) {
-								// S2
-								fig8_human[1] = numTotal;
-								if (numOfFixedDTs != 0) {
-									currProj.getFig8_human_fixed_time()[1] = timeInFile;
-								}
-							} else if (orderName.equals("relative")) {
-								// S3
-								fig8_human[2] = numTotal;
-								if (numOfFixedDTs != 0) {
-									currProj.getFig8_human_fixed_time()[2] = timeInFile;
-								}
-							} else {
-								exitWithError("Unexpected order: " + orderName);
-							}
-						} else if (coverageName.equals("function")) {
-							if (orderName.equals("original")) {
-								// S4
-								fig8_human[3] = numTotal;
-								if (numOfFixedDTs != 0) {
-									currProj.getFig8_human_fixed_time()[3] = timeInFile;
-								}
-							} else if (orderName.equals("absolute")) {
-								// S5
-								fig8_human[4] = numTotal;
-								if (numOfFixedDTs != 0) {
-									currProj.getFig8_human_fixed_time()[4] = timeInFile;
-								}
-							} else if (orderName.equals("relative")) {
-								// S6
-								fig8_human[5] = numTotal;
-								if (numOfFixedDTs != 0) {
-									currProj.getFig8_human_fixed_time()[5] = timeInFile;
-								}
-							} else {
-								exitWithError("Unexpected order: " + orderName);
-							}
-						} else {
-							exitWithError("Unexpected coverageName: " + coverageName);
-						}
-					} else if (testType.equals("auto")) { // auto
-						if (coverageName.equals("statement")) {
-							if (orderName.equals("original")) {
-								// S1
-								fig8_auto[0] = numTotal;
-								if (numOfFixedDTs != 0) {
-									currProj.getFig8_auto_fixed_time()[0] = timeInFile;
-								}
-							} else if (orderName.equals("absolute")) {
-								// S2
-								fig8_auto[1] = numTotal;
-								if (numOfFixedDTs != 0) {
-									currProj.getFig8_auto_fixed_time()[1] = timeInFile;
-								}
-							} else if (orderName.equals("relative")) {
-								// S3
-								fig8_auto[2] = numTotal;
-								if (numOfFixedDTs != 0) {
-									currProj.getFig8_auto_fixed_time()[2] = timeInFile;
-								}
-							} else {
-								exitWithError("Unexpected order: " + orderName);
-							}
-						} else if (coverageName.equals("function")) {
-							if (orderName.equals("original")) {
-								// S4
-								fig8_auto[3] = numTotal;
-								if (numOfFixedDTs != 0) {
-									currProj.getFig8_auto_fixed_time()[3] = timeInFile;
-								}
-							} else if (orderName.equals("absolute")) {
-								// S5
-								fig8_auto[4] = numTotal;
-								if (numOfFixedDTs != 0) {
-									currProj.getFig8_auto_fixed_time()[4] = timeInFile;
-								}
-							} else if (orderName.equals("relative")) {
-								// S6
-								fig8_auto[5] = numTotal;
-								if (numOfFixedDTs != 0) {
-									currProj.getFig8_auto_fixed_time()[5] = timeInFile;
-								}
-							} else {
-								exitWithError("Unexpected order: " + orderName);
-							}
-						} else {
-							exitWithError("Unexpected coverageName: " + coverageName);
-						}
-					} else {
-						exitWithError("Unexpected testType: " + testType);
-					}
-				} // prioritization techinque, figure 7
-				else if (techniqueName.equals("prioritization")) {
-					currProj.useFig7();
-					if (orderName.equals("original")) {
-						continue;
-					}
-					List<String>[] fig7_human = currProj.get_fig7_human();
-					List<String>[] fig7_auto = currProj.get_fig7_auto();
-					if (testType.equals("orig")) { // human
-						if (coverageName.equals("statement")) {
-							if (orderName.equals("absolute")) {
-								// T3
-								fig7_human[0] = numTotal;
-								if (numOfFixedDTs != 0) {
-									currProj.getFig7_human_fixed_time()[0] = timeInFile;
-								}
-							} else if (orderName.equals("relative")) { // relative
-								// T4
-								fig7_human[1] = numTotal;
-								if (numOfFixedDTs != 0) {
-									currProj.getFig7_human_fixed_time()[1] = timeInFile;
-								}
-							} else {
-								exitWithError("Unexpected order: " + orderName);
-							}
-						} else if (coverageName.equals("function")) {
-							if (orderName.equals("absolute")) {
-								// T5
-								fig7_human[2] = numTotal;
-								if (numOfFixedDTs != 0) {
-									currProj.getFig7_human_fixed_time()[2] = timeInFile;
-								}
-							} else if (orderName.equals("relative")) { // relative
-								// T7
-								fig7_human[3] = numTotal;
-								if (numOfFixedDTs != 0) {
-									currProj.getFig7_human_fixed_time()[3] = timeInFile;
-								}
-							} else {
-								exitWithError("Unexpected order: " + orderName);
-							}
-						} else {
-							exitWithError("Unexpected coverageName: " + coverageName);
-						}
-					} else if (testType.equals("auto")) { // auto
-						if (coverageName.equals("statement")) {
-							if (orderName.equals("absolute")) {
-								// T3
-								fig7_auto[0] = numTotal;
-								if (numOfFixedDTs != 0) {
-									currProj.getFig7_auto_fixed_time()[0] = timeInFile;
-								}
-							} else if (orderName.equals("relative")) {
-								// T4
-								fig7_auto[1] = numTotal;
-								if (numOfFixedDTs != 0) {
-									currProj.getFig7_auto_fixed_time()[1] = timeInFile;
-								}
-							} else {
-								exitWithError("Unexpected order: " + orderName);
-							}
-						} else if (coverageName.equals("function")) {
-							if (orderName.equals("absolute")) {
-								// T5
-								fig7_auto[2] = numTotal;
-								if (numOfFixedDTs != 0) {
-									currProj.getFig7_auto_fixed_time()[2] = timeInFile;
-								}
-							} else if (orderName.equals("relative")) {
-								// T7
-								fig7_auto[3] = numTotal;
-								if (numOfFixedDTs != 0) {
-									currProj.getFig7_auto_fixed_time()[3] = timeInFile;
-								}
-							} else {
-								exitWithError("Unexpected order: " + orderName);
-							}
-						} else {
-							exitWithError("Unexpected coverageName: " + coverageName);
-						}
-					} else {
-						exitWithError("Unexpected testType: " + testType);
+				} else if (orderName.equals("relative")) { // relative
+					// T4
+					fig7_human[1] = totalDTs;
+					if (numOfFixedDTs != 0) {
+						currProj.getFig7_human_fixed_time()[1] = maxTimeInFile;
 					}
 				} else {
-					exitWithError("Unexpected techniqueName: " + techniqueName);
+					exitWithError("Unexpected order: " + orderName);
 				}
+			} else if (coverageName.equals("function")) {
+				if (orderName.equals("absolute")) {
+					// T5
+					fig7_human[2] = totalDTs;
+					if (numOfFixedDTs != 0) {
+						currProj.getFig7_human_fixed_time()[2] = maxTimeInFile;
+					}
+				} else if (orderName.equals("relative")) { // relative
+					// T7
+					fig7_human[3] = totalDTs;
+					if (numOfFixedDTs != 0) {
+						currProj.getFig7_human_fixed_time()[3] = maxTimeInFile;
+					}
+				} else {
+					exitWithError("Unexpected order: " + orderName);
+				}
+			} else {
+				exitWithError("Unexpected coverageName: " + coverageName);
 			}
+		} else if (testType.equals("auto")) { // auto
+			if (coverageName.equals("statement")) {
+				if (orderName.equals("absolute")) {
+					// T3
+					fig7_auto[0] = totalDTs;
+					if (numOfFixedDTs != 0) {
+						currProj.getFig7_auto_fixed_time()[0] = maxTimeInFile;
+					}
+				} else if (orderName.equals("relative")) {
+					// T4
+					fig7_auto[1] = totalDTs;
+					if (numOfFixedDTs != 0) {
+						currProj.getFig7_auto_fixed_time()[1] = maxTimeInFile;
+					}
+				} else {
+					exitWithError("Unexpected order: " + orderName);
+				}
+			} else if (coverageName.equals("function")) {
+				if (orderName.equals("absolute")) {
+					// T5
+					fig7_auto[2] = totalDTs;
+					if (numOfFixedDTs != 0) {
+						currProj.getFig7_auto_fixed_time()[2] = maxTimeInFile;
+					}
+				} else if (orderName.equals("relative")) {
+					// T7
+					fig7_auto[3] = totalDTs;
+					if (numOfFixedDTs != 0) {
+						currProj.getFig7_auto_fixed_time()[3] = maxTimeInFile;
+					}
+				} else {
+					exitWithError("Unexpected order: " + orderName);
+				}
+			} else {
+				exitWithError("Unexpected coverageName: " + coverageName);
+			}
+		} else {
+			exitWithError("Unexpected testType: " + testType);
+		}
+	}
+
+	@Override
+	public void doSeleCalculations() {
+		ProjectNumDependentTests currProj = (ProjectNumDependentTests) FigureGenerator.currProj;
+
+		currProj.useFig8();
+		List<String>[] fig8_human = currProj.get_fig8_human();
+		List<String>[] fig8_auto = currProj.get_fig8_auto();
+		if (testType.equals("orig")) { // human
+
+			if (coverageName.equals("statement")) {
+				if (orderName.equals("original")) {
+					// S1
+					fig8_human[0] = totalDTs;
+					if (numOfFixedDTs != 0) {
+						currProj.getFig8_human_fixed_time()[0] = maxTimeInFile;
+					}
+				} else if (orderName.equals("absolute")) {
+					// S2
+					fig8_human[1] = totalDTs;
+					if (numOfFixedDTs != 0) {
+						currProj.getFig8_human_fixed_time()[1] = maxTimeInFile;
+					}
+				} else if (orderName.equals("relative")) {
+					// S3
+					fig8_human[2] = totalDTs;
+					if (numOfFixedDTs != 0) {
+						currProj.getFig8_human_fixed_time()[2] = maxTimeInFile;
+					}
+				} else {
+					exitWithError("Unexpected order: " + orderName);
+				}
+			} else if (coverageName.equals("function")) {
+				if (orderName.equals("original")) {
+					// S4
+					fig8_human[3] = totalDTs;
+					if (numOfFixedDTs != 0) {
+						currProj.getFig8_human_fixed_time()[3] = maxTimeInFile;
+					}
+				} else if (orderName.equals("absolute")) {
+					// S5
+					fig8_human[4] = totalDTs;
+					if (numOfFixedDTs != 0) {
+						currProj.getFig8_human_fixed_time()[4] = maxTimeInFile;
+					}
+				} else if (orderName.equals("relative")) {
+					// S6
+					fig8_human[5] = totalDTs;
+					if (numOfFixedDTs != 0) {
+						currProj.getFig8_human_fixed_time()[5] = maxTimeInFile;
+					}
+				} else {
+					exitWithError("Unexpected order: " + orderName);
+				}
+			} else {
+				exitWithError("Unexpected coverageName: " + coverageName);
+			}
+		} else if (testType.equals("auto")) { // auto
+			if (coverageName.equals("statement")) {
+				if (orderName.equals("original")) {
+					// S1
+					fig8_auto[0] = totalDTs;
+					if (numOfFixedDTs != 0) {
+						currProj.getFig8_auto_fixed_time()[0] = maxTimeInFile;
+					}
+				} else if (orderName.equals("absolute")) {
+					// S2
+					fig8_auto[1] = totalDTs;
+					if (numOfFixedDTs != 0) {
+						currProj.getFig8_auto_fixed_time()[1] = maxTimeInFile;
+					}
+				} else if (orderName.equals("relative")) {
+					// S3
+					fig8_auto[2] = totalDTs;
+					if (numOfFixedDTs != 0) {
+						currProj.getFig8_auto_fixed_time()[2] = maxTimeInFile;
+					}
+				} else {
+					exitWithError("Unexpected order: " + orderName);
+				}
+			} else if (coverageName.equals("function")) {
+				if (orderName.equals("original")) {
+					// S4
+					fig8_auto[3] = totalDTs;
+					if (numOfFixedDTs != 0) {
+						currProj.getFig8_auto_fixed_time()[3] = maxTimeInFile;
+					}
+				} else if (orderName.equals("absolute")) {
+					// S5
+					fig8_auto[4] = totalDTs;
+					if (numOfFixedDTs != 0) {
+						currProj.getFig8_auto_fixed_time()[4] = maxTimeInFile;
+					}
+				} else if (orderName.equals("relative")) {
+					// S6
+					fig8_auto[5] = totalDTs;
+					if (numOfFixedDTs != 0) {
+						currProj.getFig8_auto_fixed_time()[5] = maxTimeInFile;
+					}
+				} else {
+					exitWithError("Unexpected order: " + orderName);
+				}
+			} else {
+				exitWithError("Unexpected coverageName: " + coverageName);
+			}
+		} else {
+			exitWithError("Unexpected testType: " + testType);
 		}
 	}
 }

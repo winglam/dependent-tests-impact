@@ -14,8 +14,11 @@ import java.util.List;
 import java.util.Scanner;
 
 import edu.washington.cs.dt.impact.data.Project;
+import edu.washington.cs.dt.impact.data.ProjectEnhancedResults;
+import edu.washington.cs.dt.impact.data.ProjectNumDependentTests;
+import edu.washington.cs.dt.impact.util.Constants;
 
-public class FigureGenerator {
+public abstract class FigureGenerator {
     protected static final DecimalFormat apfdFormat = new DecimalFormat(".00");
     protected static final DecimalFormat timeFormat = new DecimalFormat("#\\%");
     protected static final DecimalFormat percentFormat = new DecimalFormat("0");
@@ -304,6 +307,140 @@ public class FigureGenerator {
         }
     }
     
+	protected static String flagsInFile;
+	protected static String techniqueName;
+	protected static String coverageName;
+	protected static String orderName;
+	protected static String projectName;
+	protected static String testType;
+	protected static List<Project> currProjList;
+	protected static Project currProj;
+	protected static String timeInFile;
+	protected static double maxTimeInFile;
+	protected static int numOfFixedDTs;
+	protected static String resolveDependences;
+	protected static int numTotal;
+	protected static List<String> totalDTs;
+	protected static File file;
+	protected static String coverageInFile;
+	protected static List<String> flagsList;
+
+	/**
+	 * @param files
+	 * @param fg
+	 * @param ignoreDTFFlag false to ignore files that have the -dependentTestFile flag.
+	 * True to consider the file regardless of whether it has the -dependentTestFile or not,
+	 * @param proj_orig_arrayList
+	 * @param proj_auto_arrayList
+	 */
+	protected static void parseFiles(File[] files, FigureGenerator fg, boolean ignoreDTFFlag,
+			List<Project> proj_orig_arrayList, List<Project> proj_auto_arrayList) {
+        for (File file : files) {
+            if (file.isFile()) {
+            	FigureGenerator.file = file;
+				// String containing all the flags
+				flagsInFile = getFlagsLine(file, Constants.ARGUMENT_STRING, false);
+				if (flagsInFile == null) {
+					continue;
+				}
+				// get rid of square brackets
+				flagsInFile = flagsInFile.substring(1, flagsInFile.length() - 1);
+				String[] flags = flagsInFile.split(",");
+				flagsList = Arrays.asList(flags);
+				// get rid of whitespaces
+				for (int i = 0; i < flagsList.size(); i++) {
+					flagsList.set(i, flagsList.get(i).trim());
+				}
+				int index = flagsList.indexOf("-technique");
+				// index + 1 because want arg after the index of flag
+				techniqueName = flagsList.get(index + 1);
+
+				index = flagsList.indexOf("-coverage");
+				coverageName = flagsList.get(index + 1);
+
+				index = flagsList.indexOf("-order");
+				orderName = flagsList.get(index + 1);
+
+				index = flagsList.indexOf("-project");
+				projectName = flagsList.get(index + 1);
+
+				index = flagsList.indexOf("-testType");
+				testType = flagsList.get(index + 1);
+
+				index = flagsList.indexOf("-dependentTestFile");
+				if (index != -1 && !ignoreDTFFlag) { // only count files without dependentTestFile
+					continue;
+				}
+
+                resolveDependences = null;
+                // if index = -1, flag not present
+                if (index != -1) {
+                    resolveDependences = flagsList.get(index);
+                }
+
+                coverageInFile = getFlagsLine(file, Constants.COVERAGE_STRING, false);
+
+				// see if List needs to orig or auto generated one
+				currProjList = null;
+				if (testType.equals("auto")) {
+					currProjList = proj_auto_arrayList;
+				} else if (testType.equals("orig")) {
+					currProjList = proj_orig_arrayList;
+				} else {
+					exitWithError("Invalid test type. Test type is " + testType);
+				}
+
+				// index of this project in the arrayList, might be -1 if not
+				// found
+				int indexOfProj = indexOfByName(currProjList, projectName);
+
+				// Project Object that corresponds to the current project name
+				// in this file
+				Project currProj2 = null;
+
+				if (indexOfProj != -1) {
+					currProj2 = currProjList.get(indexOfProj);
+				} else {// projectName not seen before
+					if (fg.getClass().equals(NumDependentTestsFigureGenerator.class)) {
+						currProj2 = new ProjectNumDependentTests(projectName);
+					} else if (fg.getClass().equals(EnhancedResultsFigureGenerator.class)) {
+						currProj2 = new ProjectEnhancedResults(projectName);
+					} else {
+						// current figure generator doesn't care about the project type
+						currProj2 = new ProjectNumDependentTests(projectName);
+					}
+					currProjList.add(currProj2);
+				}
+				currProj = currProj2;
+
+				// get the number of dts
+				totalDTs = parseFileForDTs(file, Constants.NOT_FIXED_DTS, false);
+
+				numTotal = parseFileForNumOfDTs(file, Constants.NUM_NOT_FIXED_DTS);
+
+				timeInFile =  getFlagsLine(file, Constants.TIME_STRING, false);
+
+				numOfFixedDTs = parseFileForNumOfDTs(file, Constants.FIXED_DTS);
+				maxTimeInFile = parseFileForMaxTime(file, Constants.TIME_INCL_DTF);
+                if (techniqueName.equals("parallelization")) {
+                	fg.doParaCalculations();
+                } // selection technique, figure 18
+                else if (techniqueName.equals("selection")) {
+                	fg.doSeleCalculations();
+                } // prioritization techinque, figure 17
+                else if (techniqueName.equals("prioritization")) {
+                	fg.doPrioCalculations();
+                } else {
+                    exitWithError("Unexpected techniqueName: " + techniqueName);
+                }
+            }
+        }
+	}
+
+	public abstract void doParaCalculations();
+	public abstract void doPrioCalculations();
+	public abstract void doSeleCalculations();
+
     private static Comparator<Project> ALPHABETICAL_ORDER = new Comparator<Project>() {
         public int compare(Project str1, Project str2) {
             int res = String.CASE_INSENSITIVE_ORDER.compare(str1.getName(), str2.getName());

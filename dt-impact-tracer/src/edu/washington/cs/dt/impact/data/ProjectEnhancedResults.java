@@ -1,7 +1,6 @@
 package edu.washington.cs.dt.impact.data;
 
 public class ProjectEnhancedResults extends Project {
-    private String name;
     private double orig_time_value;
     private double orig_apfd_value;
 
@@ -134,7 +133,7 @@ public class ProjectEnhancedResults extends Project {
     }
 
     public ProjectEnhancedResults(String projName) {
-        name = projName;
+        super(projName);
         orig_time_value = 0;
         orig_apfd_value = 0;
         fig17_values = new double[4 * 2];
