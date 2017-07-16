@@ -1,3 +1,10 @@
+/** 
+ * Get list/number of unique DTs listed in ORIG_MIN_DTs.txt and 
+ * AUTO_MIN_DTs.txt. The input can be a folder containing the 
+ * precomputed dependences of a subject or it can be the results
+ * of that subject from the OneConfigurationRunner.
+*/ 
+
 package edu.washington.cs.dt.impact.tools;
 
 import java.io.BufferedReader;

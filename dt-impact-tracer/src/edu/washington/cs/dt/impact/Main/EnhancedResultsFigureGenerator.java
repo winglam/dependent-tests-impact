@@ -738,402 +738,15 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
         // name of directory where files should be outputted
         outputDirectoryName = mustGetArgName(argsList, "-outputDirectory");
 
-        /*
-         * 17: prioritization
-         * 18: selection
-         * 19: parallelizaiton
-         */
-
         File directory = new File(directoryName);
         File[] fList = directory.listFiles();
         // create a list of project Objects that each have a diff project name
-        int size = 5;
-        List<Project> proj_orig_arrayList = new ArrayList<Project>(size);
-        List<Project> proj_auto_arrayList = new ArrayList<Project>(size);
+        List<Project> proj_orig_arrayList = new ArrayList<Project>();
+        List<Project> proj_auto_arrayList = new ArrayList<Project>();
 
-        for (File file : fList) {
-            if (file.isFile()) {
-
-                // String containing all the flags
-                String flagsInFile = getFlagsLine(file, Constants.ARGUMENT_STRING, false);
-                if (flagsInFile == null) {
-                    continue;
-                }
-
-                String timeInFile = getFlagsLine(file, Constants.TIME_STRING, false);
-                String coverageInFile = getFlagsLine(file, Constants.COVERAGE_STRING, false);
-
-                // get rid of square brackets
-                List<String> flagsList = getRidSquareBrackets(flagsInFile);
-                // get rid of whitespaces
-                for (int i = 0; i < flagsList.size(); i++) {
-                    flagsList.set(i, flagsList.get(i).trim());
-                }
-                int index = flagsList.indexOf("-technique");
-                // index + 1 because want arg after the index of flag
-                String techniqueName = flagsList.get(index + 1);
-
-                index = flagsList.indexOf("-coverage");
-                String coverageName = flagsList.get(index + 1);
-
-                index = flagsList.indexOf("-order");
-                String orderName = flagsList.get(index + 1);
-
-                index = flagsList.indexOf("-project");
-                String projectName = flagsList.get(index + 1);
-
-                index = flagsList.indexOf("-testType");
-                String testType = flagsList.get(index + 1);
-
-                index = flagsList.indexOf("-dependentTestFile");
-                String resolveDependences = null;
-                // if index = -1, flag not present
-                if (index != -1) {
-                    resolveDependences = flagsList.get(index);
-                }
-
-                // see if List needs to orig or auto generated one
-                List<Project> currProjList = null;
-                if (testType.equals("auto")) {
-                    currProjList = proj_auto_arrayList;
-                } else if (testType.equals("orig")) {
-                    currProjList = proj_orig_arrayList;
-                }
-
-                // index of this project in the arrayList, might be -1 if not found
-                int indexOfProj = indexOfByName(currProjList, projectName);
-
-                // Project Object that corresponds to the current project name in this file
-                Project currProj2 = null;
-
-                if (indexOfProj != -1) {
-                    currProj2 = currProjList.get(indexOfProj);
-                } else {// projectName not seen before
-                    currProj2 = new ProjectEnhancedResults(projectName);
-                    currProjList.add(currProj2);
-                }
-                ProjectEnhancedResults currProj = (ProjectEnhancedResults) currProj2;
-
-                int numTotal = parseFileForNumOfDTs(file, Constants.NUM_NOT_FIXED_DTS);
-
-                /*
-                 * The method setNumTotalDependentTests sets the number of DTS for a specific file corresponding to a
-                 * project such as Crystal
-                 *
-                 * setNumTotalDependentTests(int figNum, int index, int numTotal)
-                 *
-                 * @param figNum represents the figure number in the paper (17, 18, or 19)
-                 *
-                 * @param index indicates which column in the figure it corresponds to (i.e. Figure 17 column 0
-                 * represents T3)
-                 *
-                 * @param numTotal is the total number of DTS for that file
-                 *
-                 */
-
-                // parallelization technique, figure 19
-                if (techniqueName.equals("parallelization")) {
-                    String order_time_string = parseFile(file, Constants.ORDER_TIME_PARA);
-                    double order_time = Double.parseDouble(order_time_string);
-                    timeInFile = getNextLine(file, Constants.ORDER_TIME + " " + order_time, Constants.TIME_STRING);
-
-                    // order will be time or original
-                    // k = 2, 4, 8, 16 is the number of machines
-                    index = flagsList.indexOf("-numOfMachines");
-                    String numMachines_string = flagsList.get(index + 1);
-                    int numMachines = Integer.parseInt(numMachines_string);
-
-                    currProj.useFig19();
-                    // this array will correspond to P1 or P2
-                    double[] curr_fig19_array = null;
-                    if (orderName.equals("original")) {
-                        curr_fig19_array = currProj.get_fig19_orig();
-                    } else if (orderName.equals("time")) { // orderName == time
-                        curr_fig19_array = currProj.get_fig19_time();
-                    } else {
-                        exitWithError("Unexpected order: " + orderName);
-                    }
-
-                    String testStr =
-                            getNextLine(file, Constants.ORDER_TIME + " " + order_time, Constants.TEST_ORDER_LIST);
-                    testStr = testStr.substring(1, testStr.length() - 1);
-                    String[] test_list = testStr.split(", ");
-                    if (resolveDependences == null) { // non-enhanced
-                        if (numMachines == 2) {
-                            curr_fig19_array[0] = order_time;
-                            currProj.setNumTotalDependentTestsPara(orderName.equals("original"), 0, numTotal, false);
-                            setTime(currProj, 19, timeInFile, 0, false);
-                            currProj.setTestList(19, 0, test_list, false);
-                        } else if (numMachines == 4) {
-                            curr_fig19_array[2] = order_time;
-                            currProj.setNumTotalDependentTestsPara(orderName.equals("original"), 2, numTotal, false);
-                            setTime(currProj, 19, timeInFile, 2, false);
-                            currProj.setTestList(19, 2, test_list, false);
-                        } else if (numMachines == 8) {
-                            curr_fig19_array[4] = order_time;
-                            currProj.setNumTotalDependentTestsPara(orderName.equals("original"), 4, numTotal, false);
-                            setTime(currProj, 19, timeInFile, 4, false);
-                            currProj.setTestList(19, 4, test_list, false);
-                        } else if (numMachines == 16) {
-                            curr_fig19_array[6] = order_time;
-                            currProj.setNumTotalDependentTestsPara(orderName.equals("original"), 6, numTotal, false);
-                            setTime(currProj, 19, timeInFile, 6, false);
-                            currProj.setTestList(19, 6, test_list, false);
-                        } else {
-                            exitWithError("Unexpected numMachines: " + numMachines);
-                        }
-                    } else { // enhanced
-                        if (numMachines == 2) {
-                            curr_fig19_array[1] = order_time;
-                            currProj.setNumTotalDependentTestsPara(orderName.equals("original"), 0, numTotal, true);
-                            setTime(currProj, 19, timeInFile, 0, true);
-                            currProj.setTestList(19, 0, test_list, true);
-                        } else if (numMachines == 4) {
-                            curr_fig19_array[3] = order_time;
-                            currProj.setNumTotalDependentTestsPara(orderName.equals("original"), 2, numTotal, true);
-                            setTime(currProj, 19, timeInFile, 2, true);
-                            currProj.setTestList(19, 2, test_list, true);
-                        } else if (numMachines == 8) {
-                            curr_fig19_array[5] = order_time;
-                            currProj.setNumTotalDependentTestsPara(orderName.equals("original"), 4, numTotal, true);
-                            setTime(currProj, 19, timeInFile, 4, true);
-                            currProj.setTestList(19, 4, test_list, true);
-                        } else if (numMachines == 16) {
-                            curr_fig19_array[7] = order_time;
-                            currProj.setNumTotalDependentTestsPara(orderName.equals("original"), 6, numTotal, true);
-                            setTime(currProj, 19, timeInFile, 6, true);
-                            currProj.setTestList(19, 6, test_list, true);
-                        } else {
-                            exitWithError("Unexpected numMachines: " + numMachines);
-                        }
-                    }
-                } // selection technique, figure 18
-                else if (techniqueName.equals("selection")) {
-                    String apfd_value_string = parseFile(file, Constants.APFD_VALUE);
-                    double apfd_value = Double.parseDouble(apfd_value_string);
-                    String order_time_string = parseFile(file, Constants.ORDER_TIME);
-                    double order_time = Double.parseDouble(order_time_string);
-                    currProj.useFig18();
-                    double[] fig18_values_array = currProj.get_fig18_values();
-                    double[] fig18_time_array = currProj.get_fig18_time();
-                    String testStr =
-                            getNextLine(file, Constants.ORDER_TIME + " " + order_time, Constants.TEST_ORDER_LIST);
-                    testStr = testStr.substring(1, testStr.length() - 1);
-                    String[] test_list = testStr.split(", ");
-
-                    // original values, index should be i=0, i+=2
-                    if (resolveDependences == null) { // unenhanced
-                        if (coverageName.equals("statement")) {
-                            if (orderName.equals("original")) {
-                                // S1
-                                fig18_values_array[0] = apfd_value;
-                                fig18_time_array[0] = order_time;
-                                currProj.setNumTotalDependentTests(18, 0, numTotal, false);
-                                setTime(currProj, 18, timeInFile, 0, false);
-                                currProj.setTestList(18, 0, test_list, false);
-                            } else if (orderName.equals("absolute")) {
-                                // S2
-                                fig18_values_array[2] = apfd_value;
-                                fig18_time_array[2] = order_time;
-                                currProj.setNumTotalDependentTests(18, 2, numTotal, false);
-                                setTime(currProj, 18, timeInFile, 2, false);
-                                currProj.setTestList(18, 2, test_list, false);
-                            } else if (orderName.equals("relative")) {
-                                // S3
-                                fig18_values_array[4] = apfd_value;
-                                fig18_time_array[4] = order_time;
-                                currProj.setNumTotalDependentTests(18, 4, numTotal, false);
-                                setTime(currProj, 18, timeInFile, 4, false);
-                                currProj.setTestList(18, 4, test_list, false);
-                            } else {
-                                exitWithError("Unexpected order: " + orderName);
-                            }
-                        } else if (coverageName.equals("function")) {
-                            if (orderName.equals("original")) {
-                                // S4
-                                fig18_values_array[6] = apfd_value;
-                                fig18_time_array[6] = order_time;
-                                currProj.setNumTotalDependentTests(18, 6, numTotal, false);
-                                setTime(currProj, 18, timeInFile, 6, false);
-                                currProj.setTestList(18, 6, test_list, false);
-                            } else if (orderName.equals("absolute")) {
-                                // S5
-                                fig18_values_array[8] = apfd_value;
-                                fig18_time_array[8] = order_time;
-                                currProj.setNumTotalDependentTests(18, 8, numTotal, false);
-                                setTime(currProj, 18, timeInFile, 8, false);
-                                currProj.setTestList(18, 8, test_list, false);
-                            } else if (orderName.equals("relative")) {
-                                // S6
-                                fig18_values_array[10] = apfd_value;
-                                fig18_time_array[10] = order_time;
-                                currProj.setNumTotalDependentTests(18, 10, numTotal, false);
-                                setTime(currProj, 18, timeInFile, 10, false);
-                                currProj.setTestList(18, 10, test_list, false);
-                            } else {
-                                exitWithError("Unexpected order: " + orderName);
-                            }
-                        } else {
-                            exitWithError("Unexpected coverageName: " + coverageName);
-                        }
-                    } else { // enhanced, index should be i = 1, i+=2
-                        if (coverageName.equals("statement")) {
-                            if (orderName.equals("original")) {
-                                // S1
-                                fig18_values_array[1] = apfd_value;
-                                fig18_time_array[1] = order_time;
-                                currProj.setNumTotalDependentTests(18, 0, numTotal, true);
-                                setTime(currProj, 18, timeInFile, 0, true);
-                                currProj.setTestList(18, 0, test_list, true);
-                            } else if (orderName.equals("absolute")) {
-                                // S2
-                                fig18_values_array[3] = apfd_value;
-                                fig18_time_array[3] = order_time;
-                                currProj.setNumTotalDependentTests(18, 2, numTotal, true);
-                                setTime(currProj, 18, timeInFile, 2, true);
-                                currProj.setTestList(18, 2, test_list, true);
-                            } else if (orderName.equals("relative")) {
-                                // S3
-                                fig18_values_array[5] = apfd_value;
-                                fig18_time_array[5] = order_time;
-                                currProj.setNumTotalDependentTests(18, 4, numTotal, true);
-                                setTime(currProj, 18, timeInFile, 4, true);
-                                currProj.setTestList(18, 4, test_list, true);
-                            } else {
-                                exitWithError("Unexpected order: " + orderName);
-                            }
-                        } else if (coverageName.equals("function")) {
-                            if (orderName.equals("original")) {
-                                // S4
-                                fig18_values_array[7] = apfd_value;
-                                fig18_time_array[7] = order_time;
-                                currProj.setNumTotalDependentTests(18, 6, numTotal, true);
-                                setTime(currProj, 18, timeInFile, 6, true);
-                                currProj.setTestList(18, 6, test_list, true);
-                            } else if (orderName.equals("absolute")) {
-                                // S5
-                                fig18_values_array[9] = apfd_value;
-                                fig18_time_array[9] = order_time;
-                                currProj.setNumTotalDependentTests(18, 8, numTotal, true);
-                                setTime(currProj, 18, timeInFile, 8, true);
-                                currProj.setTestList(18, 8, test_list, true);
-                            } else if (orderName.equals("relative")) {
-                                // S6
-                                fig18_values_array[11] = apfd_value;
-                                fig18_time_array[11] = order_time;
-                                currProj.setNumTotalDependentTests(18, 10, numTotal, true);
-                                setTime(currProj, 18, timeInFile, 10, true);
-                                currProj.setTestList(18, 10, test_list, true);
-                            } else {
-                                exitWithError("Unexpected order: " + orderName);
-                            }
-                        } else {
-                            exitWithError("Unexpected coverageName: " + coverageName);
-                        }
-                    }
-                } // prioritization techinque, figure 17
-                else if (techniqueName.equals("prioritization")) {
-                    // if orderName is original, run time for entire test suite
-                    String apfd_value_string = parseFile(file, Constants.APFD_VALUE);
-                    double apfd_value = Double.parseDouble(apfd_value_string);
-                    String order_time_string = parseFile(file, Constants.ORDER_TIME);
-                    double order_time = Double.parseDouble(order_time_string);
-                    String testStr =
-                            getNextLine(file, Constants.ORDER_TIME + " " + order_time, Constants.TEST_ORDER_LIST);
-                    testStr = testStr.substring(1, testStr.length() - 1);
-                    String[] test_list = testStr.split(", ");
-
-                    if (orderName.equals("original")) {
-                        currProj.setOrigTimeValue(order_time);
-                        currProj.setOrigAPFDValue(apfd_value);
-                        if (timeInFile != null && coverageInFile != null) {
-                            currProj.setOrig_time(strArrayToDoubleArray(getRidSquareBrackets(timeInFile)));
-                            currProj.setOrig_coverage(strArrayToDoubleArray(getRidSquareBrackets(coverageInFile)));
-                        }
-                        currProj.setOrig_tests(test_list);
-                        continue;
-                    }
-                    currProj.useFig17();
-                    double[] fig17_array = currProj.get_fig17_values();
-                    // original values, index should be i=0, i+=2
-                    if (resolveDependences == null) { // orig, unenhanced
-                        if (coverageName.equals("statement")) {
-                            if (orderName.equals("absolute")) {
-                                // T3
-                                fig17_array[0] = apfd_value;
-                                currProj.setNumTotalDependentTests(17, 0, numTotal, false);
-                                setTime(currProj, 17, timeInFile, 0, false);
-                                currProj.setTestList(17, 0, test_list, false);
-                            } else if (orderName.equals("relative")) { // relative
-                                // T4
-                                fig17_array[2] = apfd_value;
-                                currProj.setNumTotalDependentTests(17, 2, numTotal, false);
-                                setTime(currProj, 17, timeInFile, 2, false);
-                                currProj.setTestList(17, 2, test_list, false);
-                            } else {
-                                exitWithError("Unexpected order: " + orderName);
-                            }
-                        } else if (coverageName.equals("function")) {
-                            if (orderName.equals("absolute")) {
-                                // T5
-                                fig17_array[4] = apfd_value;
-                                currProj.setNumTotalDependentTests(17, 4, numTotal, false);
-                                setTime(currProj, 17, timeInFile, 4, false);
-                                currProj.setTestList(17, 4, test_list, false);
-                            } else if (orderName.equals("relative")) { // relative
-                                // T7
-                                fig17_array[6] = apfd_value;
-                                currProj.setNumTotalDependentTests(17, 6, numTotal, false);
-                                setTime(currProj, 17, timeInFile, 6, false);
-                                currProj.setTestList(17, 6, test_list, false);
-                            } else {
-                                exitWithError("Unexpected order: " + orderName);
-                            }
-                        } else {
-                            exitWithError("Unexpected coverageName: " + coverageName);
-                        }
-                    } else { // enhanced, index should be i = 1, i+=2
-                        if (coverageName.equals("statement")) {
-                            if (orderName.equals("absolute")) {
-                                // T3
-                                fig17_array[1] = apfd_value;
-                                currProj.setNumTotalDependentTests(17, 0, numTotal, true);
-                                setTime(currProj, 17, timeInFile, 0, true);
-                                currProj.setTestList(17, 0, test_list, true);
-                            } else if (orderName.equals("relative")) {
-                                // T4
-                                fig17_array[3] = apfd_value;
-                                currProj.setNumTotalDependentTests(17, 2, numTotal, true);
-                                setTime(currProj, 17, timeInFile, 2, true);
-                                currProj.setTestList(17, 2, test_list, true);
-                            } else {
-                                exitWithError("Unexpected order: " + orderName);
-                            }
-                        } else if (coverageName.equals("function")) {
-                            if (orderName.equals("absolute")) {
-                                // T5
-                                fig17_array[5] = apfd_value;
-                                currProj.setNumTotalDependentTests(17, 4, numTotal, true);
-                                setTime(currProj, 17, timeInFile, 4, true);
-                                currProj.setTestList(17, 4, test_list, true);
-                            } else if (orderName.equals("relative")) {
-                                // T7
-                                fig17_array[7] = apfd_value;
-                                currProj.setNumTotalDependentTests(17, 6, numTotal, true);
-                                setTime(currProj, 17, timeInFile, 6, true);
-                                currProj.setTestList(17, 6, test_list, true);
-                            } else {
-                                exitWithError("Unexpected order: " + orderName);
-                            }
-                        } else {
-                            exitWithError("Unexpected coverageName: " + coverageName);
-                        }
-                    }
-                } else {
-                    exitWithError("Unexpected techniqueName: " + techniqueName);
-                }
-            }
-        }
+        // Call super's parse file method and let it parse the files for information and
+        // then call doParaCalculations, doSeleCalculations, or doPrioCalculations for each file
+        parseFiles(fList, new EnhancedResultsFigureGenerator(), true, proj_orig_arrayList, proj_auto_arrayList);
 
         PercentWrapper percentRuntime = new PercentWrapper();
 
@@ -1171,6 +784,315 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
         writeToLatexFile(autoLatexString, autoOutputFilename, false);
     }
 
+	@Override
+	public void doParaCalculations() {
+		ProjectEnhancedResults currProj = (ProjectEnhancedResults) FigureGenerator.currProj;
+        String order_time_string = parseFile(file, Constants.ORDER_TIME_PARA);
+        double order_time = Double.parseDouble(order_time_string);
+        timeInFile = getNextLine(file, Constants.ORDER_TIME + " " + order_time, Constants.TIME_STRING);
+
+        // order will be time or original
+        // k = 2, 4, 8, 16 is the number of machines
+        int index = flagsList.indexOf("-numOfMachines");
+        String numMachines_string = flagsList.get(index + 1);
+        int numMachines = Integer.parseInt(numMachines_string);
+
+        currProj.useFig19();
+        // this array will correspond to P1 or P2
+        double[] curr_fig19_array = null;
+        if (orderName.equals("original")) {
+            curr_fig19_array = currProj.get_fig19_orig();
+        } else if (orderName.equals("time")) { // orderName == time
+            curr_fig19_array = currProj.get_fig19_time();
+        } else {
+            exitWithError("Unexpected order: " + orderName);
+        }
+
+        String testStr =
+                getNextLine(file, Constants.ORDER_TIME + " " + order_time, Constants.TEST_ORDER_LIST);
+        testStr = testStr.substring(1, testStr.length() - 1);
+        String[] test_list = testStr.split(", ");
+        if (resolveDependences == null) { // non-enhanced
+            if (numMachines == 2) {
+                curr_fig19_array[0] = order_time;
+                currProj.setNumTotalDependentTestsPara(orderName.equals("original"), 0, numTotal, false);
+                setTime(currProj, 19, timeInFile, 0, false);
+                currProj.setTestList(19, 0, test_list, false);
+            } else if (numMachines == 4) {
+                curr_fig19_array[2] = order_time;
+                currProj.setNumTotalDependentTestsPara(orderName.equals("original"), 2, numTotal, false);
+                setTime(currProj, 19, timeInFile, 2, false);
+                currProj.setTestList(19, 2, test_list, false);
+            } else if (numMachines == 8) {
+                curr_fig19_array[4] = order_time;
+                currProj.setNumTotalDependentTestsPara(orderName.equals("original"), 4, numTotal, false);
+                setTime(currProj, 19, timeInFile, 4, false);
+                currProj.setTestList(19, 4, test_list, false);
+            } else if (numMachines == 16) {
+                curr_fig19_array[6] = order_time;
+                currProj.setNumTotalDependentTestsPara(orderName.equals("original"), 6, numTotal, false);
+                setTime(currProj, 19, timeInFile, 6, false);
+                currProj.setTestList(19, 6, test_list, false);
+            } else {
+                exitWithError("Unexpected numMachines: " + numMachines);
+            }
+        } else { // enhanced
+            if (numMachines == 2) {
+                curr_fig19_array[1] = order_time;
+                currProj.setNumTotalDependentTestsPara(orderName.equals("original"), 0, numTotal, true);
+                setTime(currProj, 19, timeInFile, 0, true);
+                currProj.setTestList(19, 0, test_list, true);
+            } else if (numMachines == 4) {
+                curr_fig19_array[3] = order_time;
+                currProj.setNumTotalDependentTestsPara(orderName.equals("original"), 2, numTotal, true);
+                setTime(currProj, 19, timeInFile, 2, true);
+                currProj.setTestList(19, 2, test_list, true);
+            } else if (numMachines == 8) {
+                curr_fig19_array[5] = order_time;
+                currProj.setNumTotalDependentTestsPara(orderName.equals("original"), 4, numTotal, true);
+                setTime(currProj, 19, timeInFile, 4, true);
+                currProj.setTestList(19, 4, test_list, true);
+            } else if (numMachines == 16) {
+                curr_fig19_array[7] = order_time;
+                currProj.setNumTotalDependentTestsPara(orderName.equals("original"), 6, numTotal, true);
+                setTime(currProj, 19, timeInFile, 6, true);
+                currProj.setTestList(19, 6, test_list, true);
+            } else {
+                exitWithError("Unexpected numMachines: " + numMachines);
+            }
+        }
+	}
+
+	@Override
+	public void doSeleCalculations() {
+		ProjectEnhancedResults currProj = (ProjectEnhancedResults) FigureGenerator.currProj;
+
+		String apfd_value_string = parseFile(file, Constants.APFD_VALUE);
+        double apfd_value = Double.parseDouble(apfd_value_string);
+        String order_time_string = parseFile(file, Constants.ORDER_TIME);
+        double order_time = Double.parseDouble(order_time_string);
+        currProj.useFig18();
+        double[] fig18_values_array = currProj.get_fig18_values();
+        double[] fig18_time_array = currProj.get_fig18_time();
+        String testStr =
+                getNextLine(file, Constants.ORDER_TIME + " " + order_time, Constants.TEST_ORDER_LIST);
+        testStr = testStr.substring(1, testStr.length() - 1);
+        String[] test_list = testStr.split(", ");
+
+        // original values, index should be i=0, i+=2
+        if (resolveDependences == null) { // unenhanced
+            if (coverageName.equals("statement")) {
+                if (orderName.equals("original")) {
+                    // S1
+                    fig18_values_array[0] = apfd_value;
+                    fig18_time_array[0] = order_time;
+                    currProj.setNumTotalDependentTests(18, 0, numTotal, false);
+                    setTime(currProj, 18, timeInFile, 0, false);
+                    currProj.setTestList(18, 0, test_list, false);
+                } else if (orderName.equals("absolute")) {
+                    // S2
+                    fig18_values_array[2] = apfd_value;
+                    fig18_time_array[2] = order_time;
+                    currProj.setNumTotalDependentTests(18, 2, numTotal, false);
+                    setTime(currProj, 18, timeInFile, 2, false);
+                    currProj.setTestList(18, 2, test_list, false);
+                } else if (orderName.equals("relative")) {
+                    // S3
+                    fig18_values_array[4] = apfd_value;
+                    fig18_time_array[4] = order_time;
+                    currProj.setNumTotalDependentTests(18, 4, numTotal, false);
+                    setTime(currProj, 18, timeInFile, 4, false);
+                    currProj.setTestList(18, 4, test_list, false);
+                } else {
+                    exitWithError("Unexpected order: " + orderName);
+                }
+            } else if (coverageName.equals("function")) {
+                if (orderName.equals("original")) {
+                    // S4
+                    fig18_values_array[6] = apfd_value;
+                    fig18_time_array[6] = order_time;
+                    currProj.setNumTotalDependentTests(18, 6, numTotal, false);
+                    setTime(currProj, 18, timeInFile, 6, false);
+                    currProj.setTestList(18, 6, test_list, false);
+                } else if (orderName.equals("absolute")) {
+                    // S5
+                    fig18_values_array[8] = apfd_value;
+                    fig18_time_array[8] = order_time;
+                    currProj.setNumTotalDependentTests(18, 8, numTotal, false);
+                    setTime(currProj, 18, timeInFile, 8, false);
+                    currProj.setTestList(18, 8, test_list, false);
+                } else if (orderName.equals("relative")) {
+                    // S6
+                    fig18_values_array[10] = apfd_value;
+                    fig18_time_array[10] = order_time;
+                    currProj.setNumTotalDependentTests(18, 10, numTotal, false);
+                    setTime(currProj, 18, timeInFile, 10, false);
+                    currProj.setTestList(18, 10, test_list, false);
+                } else {
+                    exitWithError("Unexpected order: " + orderName);
+                }
+            } else {
+                exitWithError("Unexpected coverageName: " + coverageName);
+            }
+        } else { // enhanced, index should be i = 1, i+=2
+            if (coverageName.equals("statement")) {
+                if (orderName.equals("original")) {
+                    // S1
+                    fig18_values_array[1] = apfd_value;
+                    fig18_time_array[1] = order_time;
+                    currProj.setNumTotalDependentTests(18, 0, numTotal, true);
+                    setTime(currProj, 18, timeInFile, 0, true);
+                    currProj.setTestList(18, 0, test_list, true);
+                } else if (orderName.equals("absolute")) {
+                    // S2
+                    fig18_values_array[3] = apfd_value;
+                    fig18_time_array[3] = order_time;
+                    currProj.setNumTotalDependentTests(18, 2, numTotal, true);
+                    setTime(currProj, 18, timeInFile, 2, true);
+                    currProj.setTestList(18, 2, test_list, true);
+                } else if (orderName.equals("relative")) {
+                    // S3
+                    fig18_values_array[5] = apfd_value;
+                    fig18_time_array[5] = order_time;
+                    currProj.setNumTotalDependentTests(18, 4, numTotal, true);
+                    setTime(currProj, 18, timeInFile, 4, true);
+                    currProj.setTestList(18, 4, test_list, true);
+                } else {
+                    exitWithError("Unexpected order: " + orderName);
+                }
+            } else if (coverageName.equals("function")) {
+                if (orderName.equals("original")) {
+                    // S4
+                    fig18_values_array[7] = apfd_value;
+                    fig18_time_array[7] = order_time;
+                    currProj.setNumTotalDependentTests(18, 6, numTotal, true);
+                    setTime(currProj, 18, timeInFile, 6, true);
+                    currProj.setTestList(18, 6, test_list, true);
+                } else if (orderName.equals("absolute")) {
+                    // S5
+                    fig18_values_array[9] = apfd_value;
+                    fig18_time_array[9] = order_time;
+                    currProj.setNumTotalDependentTests(18, 8, numTotal, true);
+                    setTime(currProj, 18, timeInFile, 8, true);
+                    currProj.setTestList(18, 8, test_list, true);
+                } else if (orderName.equals("relative")) {
+                    // S6
+                    fig18_values_array[11] = apfd_value;
+                    fig18_time_array[11] = order_time;
+                    currProj.setNumTotalDependentTests(18, 10, numTotal, true);
+                    setTime(currProj, 18, timeInFile, 10, true);
+                    currProj.setTestList(18, 10, test_list, true);
+                } else {
+                    exitWithError("Unexpected order: " + orderName);
+                }
+            } else {
+                exitWithError("Unexpected coverageName: " + coverageName);
+            }
+        }
+	}
+
+    @Override
+    public void doPrioCalculations() {
+		ProjectEnhancedResults currProj = (ProjectEnhancedResults) FigureGenerator.currProj;
+
+        // if orderName is original, run time for entire test suite
+        String apfd_value_string = parseFile(file, Constants.APFD_VALUE);
+        double apfd_value = Double.parseDouble(apfd_value_string);
+        String order_time_string = parseFile(file, Constants.ORDER_TIME);
+        double order_time = Double.parseDouble(order_time_string);
+        String testStr =
+                getNextLine(file, Constants.ORDER_TIME + " " + order_time, Constants.TEST_ORDER_LIST);
+        testStr = testStr.substring(1, testStr.length() - 1);
+        String[] test_list = testStr.split(", ");
+
+        if (orderName.equals("original")) {
+            currProj.setOrigTimeValue(order_time);
+            currProj.setOrigAPFDValue(apfd_value);
+            if (timeInFile != null && coverageInFile != null) {
+                currProj.setOrig_time(strArrayToDoubleArray(getRidSquareBrackets(timeInFile)));
+                currProj.setOrig_coverage(strArrayToDoubleArray(getRidSquareBrackets(coverageInFile)));
+            }
+            currProj.setOrig_tests(test_list);
+            return;
+        }
+        currProj.useFig17();
+        double[] fig17_array = currProj.get_fig17_values();
+        // original values, index should be i=0, i+=2
+        if (resolveDependences == null) { // orig, unenhanced
+            if (coverageName.equals("statement")) {
+                if (orderName.equals("absolute")) {
+                    // T3
+                    fig17_array[0] = apfd_value;
+                    currProj.setNumTotalDependentTests(17, 0, numTotal, false);
+                    setTime(currProj, 17, timeInFile, 0, false);
+                    currProj.setTestList(17, 0, test_list, false);
+                } else if (orderName.equals("relative")) { // relative
+                    // T4
+                    fig17_array[2] = apfd_value;
+                    currProj.setNumTotalDependentTests(17, 2, numTotal, false);
+                    setTime(currProj, 17, timeInFile, 2, false);
+                    currProj.setTestList(17, 2, test_list, false);
+                } else {
+                    exitWithError("Unexpected order: " + orderName);
+                }
+            } else if (coverageName.equals("function")) {
+                if (orderName.equals("absolute")) {
+                    // T5
+                    fig17_array[4] = apfd_value;
+                    currProj.setNumTotalDependentTests(17, 4, numTotal, false);
+                    setTime(currProj, 17, timeInFile, 4, false);
+                    currProj.setTestList(17, 4, test_list, false);
+                } else if (orderName.equals("relative")) { // relative
+                    // T7
+                    fig17_array[6] = apfd_value;
+                    currProj.setNumTotalDependentTests(17, 6, numTotal, false);
+                    setTime(currProj, 17, timeInFile, 6, false);
+                    currProj.setTestList(17, 6, test_list, false);
+                } else {
+                    exitWithError("Unexpected order: " + orderName);
+                }
+            } else {
+                exitWithError("Unexpected coverageName: " + coverageName);
+            }
+        } else { // enhanced, index should be i = 1, i+=2
+            if (coverageName.equals("statement")) {
+                if (orderName.equals("absolute")) {
+                    // T3
+                    fig17_array[1] = apfd_value;
+                    currProj.setNumTotalDependentTests(17, 0, numTotal, true);
+                    setTime(currProj, 17, timeInFile, 0, true);
+                    currProj.setTestList(17, 0, test_list, true);
+                } else if (orderName.equals("relative")) {
+                    // T4
+                    fig17_array[3] = apfd_value;
+                    currProj.setNumTotalDependentTests(17, 2, numTotal, true);
+                    setTime(currProj, 17, timeInFile, 2, true);
+                    currProj.setTestList(17, 2, test_list, true);
+                } else {
+                    exitWithError("Unexpected order: " + orderName);
+                }
+            } else if (coverageName.equals("function")) {
+                if (orderName.equals("absolute")) {
+                    // T5
+                    fig17_array[5] = apfd_value;
+                    currProj.setNumTotalDependentTests(17, 4, numTotal, true);
+                    setTime(currProj, 17, timeInFile, 4, true);
+                    currProj.setTestList(17, 4, test_list, true);
+                } else if (orderName.equals("relative")) {
+                    // T7
+                    fig17_array[7] = apfd_value;
+                    currProj.setNumTotalDependentTests(17, 6, numTotal, true);
+                    setTime(currProj, 17, timeInFile, 6, true);
+                    currProj.setTestList(17, 6, test_list, true);
+                } else {
+                    exitWithError("Unexpected order: " + orderName);
+                }
+            } else {
+                exitWithError("Unexpected coverageName: " + coverageName);
+            }
+        }
+    }
+
     private static class PercentWrapper {
         public double percent;
         public int numPercents;
@@ -1195,7 +1117,7 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
         return doubleArr;
     }
 
-    private static void setTime(ProjectEnhancedResults currProj, int figNum, String timeInFile, int indexOfProj,
+    public static void setTime(ProjectEnhancedResults currProj, int figNum, String timeInFile, int indexOfProj,
             boolean isEnhanced) {
         // Get time and coverage information for this configuration
         if (timeInFile != null) {
