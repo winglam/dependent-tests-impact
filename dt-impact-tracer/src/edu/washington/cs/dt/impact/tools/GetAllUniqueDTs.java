@@ -52,11 +52,15 @@ public class GetAllUniqueDTs extends FigureGenerator {
         for (String key : origTestNames.keySet()) {
         	FileTools.printStringToFile(key + "|" + origTestNames.get(key).size(), new File(origMinDTFileName), true);
         	System.out.println(key + ": " + origTestNames.get(key));
+        	System.out.println();
         }
+
+        System.out.println("------------------------------------------------------");
 
         for (String key : autoTestNames.keySet()) {
         	FileTools.printStringToFile(key + "|" + autoTestNames.get(key).size(), new File(autoMinDTFileName), true);
         	System.out.println(key + ": " + autoTestNames.get(key));
+        	System.out.println();
         }
     }
 
