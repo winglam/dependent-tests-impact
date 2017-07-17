@@ -49,7 +49,5 @@ public class PrecomputedTimeFigureGenerator extends FigureGenerator {
 	@Override
 	public void doSeleCalculations() {
 		// TODO Auto-generated method stub
-		
 	}
-
 }
