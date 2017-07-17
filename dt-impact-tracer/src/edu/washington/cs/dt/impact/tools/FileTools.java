@@ -107,7 +107,29 @@ public class FileTools {
             }
         }
     }
-    
+
+    public static void printStringToFile(String strToPrint, File outputFile, boolean append) {
+        FileWriter output = null;
+        BufferedWriter writer = null;
+        try {
+            output = new FileWriter(outputFile, append);
+            writer = new BufferedWriter(output);
+            writer.write(strToPrint + "\n");
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (writer != null) {
+                    writer.close();
+                }
+                if (output != null) {
+                    output.close();
+                }
+            } catch (IOException e) {
+            }
+        }
+    }
+
     public static void printListToFile(Collection<String> listToPrint, File outputFile) {
         FileWriter output = null;
         BufferedWriter writer = null;
