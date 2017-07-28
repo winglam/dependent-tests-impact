@@ -16,6 +16,7 @@ import java.util.Scanner;
 import edu.washington.cs.dt.impact.data.Project;
 import edu.washington.cs.dt.impact.data.ProjectEnhancedResults;
 import edu.washington.cs.dt.impact.data.ProjectNumDependentTests;
+import edu.washington.cs.dt.impact.data.ProjectPrecomputedDependencesTime;
 import edu.washington.cs.dt.impact.util.Constants;
 
 public abstract class FigureGenerator {
@@ -243,7 +244,7 @@ public abstract class FigureGenerator {
             flagName = argsList.get(nameIndex);
         } else {
             System.err
-                    .println("No" + flag + " argument is specified." + " Please use the format: " + flag + " flagName");
+                    .println("No " + flag + " argument is specified." + " Please use the format: " + flag + " flagName");
             System.exit(0);
         }
         return flagName;
@@ -405,6 +406,8 @@ public abstract class FigureGenerator {
 						currProj2 = new ProjectNumDependentTests(projectName);
 					} else if (fg.getClass().equals(EnhancedResultsFigureGenerator.class)) {
 						currProj2 = new ProjectEnhancedResults(projectName);
+					} else if (fg.getClass().equals(PrecomputedTimeFigureGenerator.class)) {
+						currProj2 = new ProjectPrecomputedDependencesTime(projectName);
 					} else {
 						// current figure generator doesn't care about the project type
 						currProj2 = new ProjectNumDependentTests(projectName);
