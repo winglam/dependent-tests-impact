@@ -1,4 +1,4 @@
-package edu.washington.cs.dt.impact.Main;
+package edu.washington.cs.dt.impact.runner;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -15,6 +15,7 @@ import edu.washington.cs.dt.RESULT;
 import edu.washington.cs.dt.TestExecResults;
 import edu.washington.cs.dt.impact.data.TestFunctionStatement;
 import edu.washington.cs.dt.impact.data.WrapperTestList;
+import edu.washington.cs.dt.impact.figure.generator.FigureGenerator;
 import edu.washington.cs.dt.impact.technique.Test;
 import edu.washington.cs.dt.impact.tools.DependentTestFinder;
 import edu.washington.cs.dt.impact.tools.FileTools;

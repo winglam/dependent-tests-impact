@@ -1,5 +1,5 @@
 
-package edu.washington.cs.dt.impact.Main;
+package edu.washington.cs.dt.impact.figure.generator;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -13,6 +13,7 @@ import java.util.Set;
 import edu.washington.cs.dt.impact.data.GeometricMeanData;
 import edu.washington.cs.dt.impact.data.Project;
 import edu.washington.cs.dt.impact.data.ProjectEnhancedResults;
+import edu.washington.cs.dt.impact.runner.Runner;
 import edu.washington.cs.dt.impact.util.Constants;
 
 public class EnhancedResultsFigureGenerator extends FigureGenerator {
@@ -429,18 +430,6 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
         }
         result += "\\\\";
         return result;
-    }
-
-    private static String formatAPFD(double num) {
-        double val = num;
-        if (!allowNegatives && val < 0.0) {
-            val = 0.0;
-        }
-        String output = apfdFormat.format(val);
-        if (output.equals("-.00")) {
-            output = ".00";
-        }
-        return output;
     }
 
     /*

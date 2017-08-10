@@ -14,8 +14,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import edu.washington.cs.dt.impact.Main.FigureGenerator;
 import edu.washington.cs.dt.impact.data.Project;
+import edu.washington.cs.dt.impact.figure.generator.FigureGenerator;
 import edu.washington.cs.dt.impact.util.Constants;
 
 public class OutputPrecomputedDependences extends FigureGenerator {

@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import edu.washington.cs.dt.impact.Main.FigureGenerator;
+import edu.washington.cs.dt.impact.figure.generator.FigureGenerator;
 
 public class CompareAntTestResults {
 
