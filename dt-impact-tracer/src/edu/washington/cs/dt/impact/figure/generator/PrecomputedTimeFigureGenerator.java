@@ -1,4 +1,4 @@
-package edu.washington.cs.dt.impact.Main;
+package edu.washington.cs.dt.impact.figure.generator;
 
 import java.io.File;
 import java.util.ArrayList;

@@ -15,8 +15,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
-import edu.washington.cs.dt.impact.Main.FigureGenerator;
 import edu.washington.cs.dt.impact.data.Project;
+import edu.washington.cs.dt.impact.figure.generator.FigureGenerator;
 
 public class GetAllUniqueDTs extends FigureGenerator {
 	private static Map<String, HashSet<String>> autoTestNames;

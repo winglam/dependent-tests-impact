@@ -1,4 +1,4 @@
-package edu.washington.cs.dt.impact.Main;
+package edu.washington.cs.dt.impact.figure.generator;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -10,13 +10,16 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 
 import edu.washington.cs.dt.impact.data.Project;
 import edu.washington.cs.dt.impact.data.ProjectEnhancedResults;
 import edu.washington.cs.dt.impact.data.ProjectNumDependentTests;
 import edu.washington.cs.dt.impact.data.ProjectPrecomputedDependencesTime;
+import edu.washington.cs.dt.impact.tools.FileTools;
 import edu.washington.cs.dt.impact.util.Constants;
 
 public abstract class FigureGenerator {
@@ -64,7 +67,29 @@ public abstract class FigureGenerator {
         System.exit(0);
     }
 
-    /*
+    public static String formatAPFD(double num) {
+        double val = num;
+        if (!allowNegatives && val < 0.0) {
+            val = 0.0;
+        }
+        String output = apfdFormat.format(val);
+        if (output.equals("-.00")) {
+            output = ".00";
+        }
+        return output;
+    }
+
+	public static Map<String, Integer> parseDTFile(String fileName) {
+		List<String> dtFile = FileTools.parseFileToList(new File(fileName));
+		Map<String, Integer> projectToDT = new HashMap<String, Integer>();
+		for (String s : dtFile) {
+			String[] sArr = s.split("\\|");
+			projectToDT.put(sArr[0], Integer.parseInt(sArr[1]));
+		}
+		return projectToDT;
+	}
+
+	/*
      * A public method to search a file for a keyword and return the value that follows
      * that keyword
      *

@@ -24,7 +24,7 @@
  *         -help - display this message
  */
 
-package edu.washington.cs.dt.impact.Main;
+package edu.washington.cs.dt.impact.runner;
 
 import java.util.ArrayList;
 import java.util.HashSet;

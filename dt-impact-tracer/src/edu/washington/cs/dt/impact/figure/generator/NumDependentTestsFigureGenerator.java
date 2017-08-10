@@ -1,5 +1,5 @@
 
-package edu.washington.cs.dt.impact.Main;
+package edu.washington.cs.dt.impact.figure.generator;
 
 import java.io.File;
 import java.text.DecimalFormat;
@@ -14,7 +14,6 @@ import java.util.TreeMap;
 
 import edu.washington.cs.dt.impact.data.Project;
 import edu.washington.cs.dt.impact.data.ProjectNumDependentTests;
-import edu.washington.cs.dt.impact.tools.FileTools;
 
 public class NumDependentTestsFigureGenerator extends FigureGenerator {
 	private static final int NUM_PROJECTS = 6;
@@ -504,16 +503,6 @@ public class NumDependentTestsFigureGenerator extends FigureGenerator {
 		retArr.add(paraArr);
 
 		return retArr;
-	}
-
-	public static Map<String, Integer> parseDTFile(String fileName) {
-		List<String> dtFile = FileTools.parseFileToList(new File(fileName));
-		Map<String, Integer> projectToDT = new HashMap<String, Integer>();
-		for (String s : dtFile) {
-			String[] sArr = s.split("\\|");
-			projectToDT.put(sArr[0], Integer.parseInt(sArr[1]));
-		}
-		return projectToDT;
 	}
 
 	public static void checkProjectLists(List<List<Project>> proj_arrayList, boolean isOrig) {
