@@ -33,6 +33,8 @@ public class UpdateScriptSubjectInfo {
 		String expDirectories = FigureGenerator.mustGetArgName(argsList, "-expDirectories");
 		String expNameFormal = FigureGenerator.mustGetArgName(argsList, "-expNameFormal");
 		String expCP = FigureGenerator.mustGetArgName(argsList, "-expCP");
+		String newExpDirectories = FigureGenerator.mustGetArgName(argsList, "-newExpDirectories");
+		String newExpCP = FigureGenerator.mustGetArgName(argsList, "-newExpCP");
 
 		File subjConstFile = new File(subjConstFileName);
 		List<String> subjConsts = FileTools.parseFileToList(subjConstFile);
@@ -40,10 +42,23 @@ public class UpdateScriptSubjectInfo {
 		String errorStr = null;
 		for (String s : subjConsts) {
 			String noSpaceS = s.trim();
-			if (noSpaceS.startsWith("expNameFormal")) {
+
+			if (noSpaceS.startsWith("newExpDirectories")) {
+				s = updateString(noSpaceS, newExpDirectories, false, false);
+				if (s == null) {
+					errorStr = "Current: " + noSpaceS + "\nTrying to add: " + newExpDirectories;
+					break;
+				}
+			} else if (noSpaceS.startsWith("expNameFormal")) {
 				s = updateString(noSpaceS, expNameFormal, true, false);
 				if (s == null) {
 					errorStr = "Current: " + noSpaceS + "\nTrying to add: " + expNameFormal;
+					break;
+				}
+			} else if (noSpaceS.startsWith("newExpCP")) {
+				s = updateString(noSpaceS, newExpCP, false, true);
+				if (s == null) {
+					errorStr = "Current: " + noSpaceS + "\nTrying to add: " + newExpCP;
 					break;
 				}
 			} else if (noSpaceS.startsWith("expDirectories")) {
