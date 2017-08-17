@@ -16,9 +16,13 @@ priorOrders=(absolute relative)
 seleOrders=(original absolute relative)
 
 # Directory to output the results
-priorDir=prioritization-results
+prioDir=prioritization-results
 seleDir=selection-results
 paraDir=parallelization-results
+
+prioList=prioritization-dt-list
+seleList=selection-dt-list
+paraList=parallelization-dt-list
 
 function clearTemp() {
   rm -rf tmpfile.txt
