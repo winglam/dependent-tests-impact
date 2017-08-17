@@ -40,48 +40,78 @@ public class UpdateScriptSubjectInfo {
 		List<String> subjConsts = FileTools.parseFileToList(subjConstFile);
 		List<String> newSubjConsts = new ArrayList<>();
 		String errorStr = null;
-		for (String s : subjConsts) {
+		for (int i = 0; i < subjConsts.size(); i++) {
+			String s = subjConsts.get(i);
 			String noSpaceS = s.trim();
+			int closeIndex = getCloseIndex(i, subjConsts);
+			if (closeIndex == -1) {
+				errorStr = "Current: " + noSpaceS + "\nUnable to find closing parentheses.";
+				break;
+			}
 
-			if (noSpaceS.startsWith("newExpDirectories")) {
-				s = updateString(noSpaceS, newExpDirectories, false, false);
+			if (noSpaceS.startsWith("nextExpDirectories")) {
+				s = updateString(subjConsts.subList(i + 1, closeIndex), newExpDirectories, false, false);
 				if (s == null) {
 					errorStr = "Current: " + noSpaceS + "\nTrying to add: " + newExpDirectories;
 					break;
 				}
+				i = closeIndex;
+				newSubjConsts.add(noSpaceS);
+				newSubjConsts.add(s);
+				newSubjConsts.add(")");
 			} else if (noSpaceS.startsWith("expNameFormal")) {
-				s = updateString(noSpaceS, expNameFormal, true, false);
+				s = updateString(subjConsts.subList(i + 1, closeIndex), expNameFormal, true, false);
 				if (s == null) {
 					errorStr = "Current: " + noSpaceS + "\nTrying to add: " + expNameFormal;
 					break;
 				}
-			} else if (noSpaceS.startsWith("newExpCP")) {
-				s = updateString(noSpaceS, newExpCP, false, true);
+				i = closeIndex;
+				newSubjConsts.add(noSpaceS);
+				newSubjConsts.add(s);
+				newSubjConsts.add(")");
+			} else if (noSpaceS.startsWith("nextExpCP")) {
+				s = updateString(subjConsts.subList(i + 1, closeIndex), newExpCP, false, true);
 				if (s == null) {
 					errorStr = "Current: " + noSpaceS + "\nTrying to add: " + newExpCP;
 					break;
 				}
+				i = closeIndex;
+				newSubjConsts.add(noSpaceS);
+				newSubjConsts.add(s);
+				newSubjConsts.add(")");
 			} else if (noSpaceS.startsWith("expDirectories")) {
-				s = updateString(noSpaceS, expDirectories, false, false);
+				s = updateString(subjConsts.subList(i + 1, closeIndex), expDirectories, false, false);
 				if (s == null) {
 					errorStr = "Current: " + noSpaceS + "\nTrying to add: " + expDirectories;
 					break;
 				}
+				i = closeIndex;
+				newSubjConsts.add(noSpaceS);
+				newSubjConsts.add(s);
+				newSubjConsts.add(")");
 			} else if (noSpaceS.startsWith("expName")) {
-				s = updateString(noSpaceS, expName, false, false);
+				s = updateString(subjConsts.subList(i + 1, closeIndex), expName, false, false);
 				if (s == null) {
 					errorStr = "Current: " + noSpaceS + "\nTrying to add: " + expName;
 					break;
 				}
+				i = closeIndex;
+				newSubjConsts.add(noSpaceS);
+				newSubjConsts.add(s);
+				newSubjConsts.add(")");
 			} else if (noSpaceS.startsWith("expCP")) {
-				s = updateString(noSpaceS, expCP, false, true);
+				s = updateString(subjConsts.subList(i + 1, closeIndex), expCP, false, true);
 				if (s == null) {
 					errorStr = "Current: " + noSpaceS + "\nTrying to add: " + expCP;
 					break;
 				}
+				i = closeIndex;
+				newSubjConsts.add(noSpaceS);
+				newSubjConsts.add(s);
+				newSubjConsts.add(")");
+			} else {
+				newSubjConsts.add(s);
 			}
-
-			newSubjConsts.add(s);
 		}
 
 		if (errorStr != null) {
@@ -91,12 +121,18 @@ public class UpdateScriptSubjectInfo {
 		}
 	}
 
-	private static String updateString(String contents, String update, boolean addQuotes, boolean allowDuplicates) {
+	private static int getCloseIndex(int openIndex, List<String> subjContents) {
+		for (int i = openIndex; i < subjContents.size(); i++) {
+			if (subjContents.get(i).trim().equals(")")) {
+				return i;
+			}
+		}
+		return -1;
+	}
+
+	private static String updateString(List<String> contents, String update, boolean addQuotes, boolean allowDuplicates) {
 		//expName=(ambari-server zeppelin-zengine zeppelin-server)
-		String[] splitEqual = contents.split("=");
-		String listContents = splitEqual[1].substring(1, splitEqual[1].length() - 1);
-		String[] splitSpace = listContents.split(" ");
-		List<String> newContents = new ArrayList<String>(Arrays.asList(splitSpace));
+		List<String> newContents = new ArrayList<String>(contents);
 		String updateWithQuotes = update;
 		if (addQuotes) {
 			updateWithQuotes = "\"" + updateWithQuotes + "\"";
@@ -107,14 +143,12 @@ public class UpdateScriptSubjectInfo {
 			return null;
 		}
 		StringBuilder sb = new StringBuilder();
-		sb.append(splitEqual[0]);
-		sb.append("=(");
-		sb.append(newContents.get(0));
+		sb.append("  ");
+		sb.append(newContents.get(0).trim());
 		for (int i = 1; i < newContents.size(); i++) {
-			sb.append(" ");
-			sb.append(newContents.get(i));
+			sb.append("\n  ");
+			sb.append(newContents.get(i).trim());
 		}
-		sb.append(")");
 		return sb.toString();
 	}
 }
