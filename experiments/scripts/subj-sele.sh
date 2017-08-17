@@ -7,7 +7,7 @@ DT_SUBJ=$1
 DT_ROOT=$2
 SUBJ_NAME=$3
 SUBJ_NAME_FORMAL=$4
-NEW_DT_SUBJ= $5
+NEW_DT_SUBJ=$5
 
 PRESET_CP=$6
 if [ "$PRESET_CP" = "true" ]; then
@@ -24,8 +24,8 @@ fi
 
 for k in "${testTypes[@]}"; do
 
-  echo '[INFO] Running prioritization for ${testTypes[@]} test type'
-  java -cp $CLASSPATH edu.washington.cs.dt.impact.Main.OneConfigurationRunner \
+  echo "[INFO] Running prioritization for ${testTypes[@]} test type"
+  java -cp $CLASSPATH edu.washington.cs.dt.impact.runner.OneConfigurationRunner \
     -technique prioritization \
     -coverage statement \
     -order original \
@@ -40,10 +40,9 @@ for k in "${testTypes[@]}"; do
 
   for i in "${coverages[@]}"; do
     for j in "${seleOrders[@]}"; do
-      echo '[INFO] Running selection...'
 
       # [INFO] Running selection without resolveDependences and with dependentTestFile
-      java -cp $CLASSPATH edu.washington.cs.dt.impact.Main.OneConfigurationRunner \
+      java -cp $CLASSPATH edu.washington.cs.dt.impact.runner.OneConfigurationRunner \
         -technique selection \
         -coverage $i \
         -order $j \
@@ -60,7 +59,7 @@ for k in "${testTypes[@]}"; do
         -dependentTestFile $DT_ROOT/$seleList/"selection-$SUBJ_NAME-$k-$i-$j.txt"
 
       # [INFO] Running selection without resolveDependences and without dependentTestFile
-      java -cp $CLASSPATH edu.washington.cs.dt.impact.Main.OneConfigurationRunner \
+      java -cp $CLASSPATH edu.washington.cs.dt.impact.runner.OneConfigurationRunner \
         -technique selection \
         -coverage $i \
         -order $j \

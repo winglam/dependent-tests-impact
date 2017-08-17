@@ -26,7 +26,7 @@ while [ "$index" -lt "$count" ]; do
   CLASSPATH=${expCP[$index]}
 
   echo -e "[INFO] Starting experiment: $SUBJ_NAME"
-  ./subj-prio.sh $DT_SUBJ $DT_ROOT $SUBJ_NAME $SUBJ_NAME_FORMAL true true $CLASSPATH 
+  bash ./subj-prio.sh $DT_SUBJ $DT_ROOT $SUBJ_NAME $SUBJ_NAME_FORMAL $DT_SUBJ true true $CLASSPATH 
 
   let "index++"
 done
@@ -46,7 +46,7 @@ while [ "$index" -lt "$count" ]; do
   CLASSPATH=${expCP[$index]}
 
   echo -e "[INFO] Starting experiment: $SUBJ_NAME"
-  ./subj-para.sh $DT_SUBJ $DT_ROOT $SUBJ_NAME $SUBJ_NAME_FORMAL true true $CLASSPATH
+  bash ./subj-para.sh $DT_SUBJ $DT_ROOT $SUBJ_NAME $SUBJ_NAME_FORMAL $DT_SUBJ true true $CLASSPATH
 
   let "index++"
 done

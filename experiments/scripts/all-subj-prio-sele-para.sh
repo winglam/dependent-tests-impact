@@ -23,11 +23,12 @@ while [ "$index" -lt "$count" ]; do
   SUBJ_NAME=${expName[$index]}
   SUBJ_NAME_FORMAL=${expNameFormal[$index]}
 
-  DT_SUBJ=${nextExpDirectories[$index]}
+  DT_SUBJ=${expDirectories[$index]}
+  NEW_DT_SUBJ=${nextExpDirectories[$index]}
   CLASSPATH=${nextExpCP[$index]}
 
   echo -e "[INFO] Starting experiment: $DT_SUBJ"
-  ./subj-prio.sh $DT_SUBJ $DT_ROOT $SUBJ_NAME $SUBJ_NAME_FORMAL true false $CLASSPATH 
+  bash ./subj-prio.sh $DT_SUBJ $DT_ROOT $SUBJ_NAME $SUBJ_NAME_FORMAL $NEW_DT_SUBJ true false $CLASSPATH 
 
   let "index++"
 done
@@ -50,7 +51,7 @@ while [ "$index" -lt "$count" ]; do
   CLASSPATH=${nextExpCP[$index]}
 
   echo -e "[INFO] Starting experiment: $DT_SUBJ"
-  ./subj-sele.sh $DT_SUBJ $DT_ROOT $SUBJ_NAME $SUBJ_NAME_FORMAL $NEW_DT_SUBJ true $CLASSPATH 
+  bash ./subj-sele.sh $DT_SUBJ $DT_ROOT $SUBJ_NAME $SUBJ_NAME_FORMAL $NEW_DT_SUBJ true $CLASSPATH 
 
   let "index++"
 done
@@ -66,11 +67,12 @@ while [ "$index" -lt "$count" ]; do
   SUBJ_NAME=${expName[$index]}
   SUBJ_NAME_FORMAL=${expNameFormal[$index]}
 
-  DT_SUBJ=${nextExpDirectories[$index]}
+  DT_SUBJ=${expDirectories[$index]}
+  NEW_DT_SUBJ=${nextExpDirectories[$index]}
   CLASSPATH=${nextExpCP[$index]}
 
   echo -e "[INFO] Starting experiment: $DT_SUBJ"
-  ./subj-para.sh $DT_SUBJ $DT_ROOT $SUBJ_NAME $SUBJ_NAME_FORMAL true false $CLASSPATH
+  bash ./subj-para.sh $DT_SUBJ $DT_ROOT $SUBJ_NAME $SUBJ_NAME_FORMAL $NEW_DT_SUBJ true false $CLASSPATH
 
   let "index++"
 done
