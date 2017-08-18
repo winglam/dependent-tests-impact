@@ -29,6 +29,23 @@ if [ "$PRECOMPUTE_DEPENDENCES" = "true" ]; then
 fi
 
 for k in "${testTypes[@]}"; do
+
+  if [ "$PRECOMPUTE_DEPENDENCES" = "false" ]; then
+    echo "[INFO] Running prioritization for ${testTypes[@]} test type"
+    java -cp $CLASSPATH edu.washington.cs.dt.impact.runner.OneConfigurationRunner \
+      -technique prioritization \
+      -coverage statement \
+      -order original \
+      -origOrder $NEW_DT_SUBJ/$SUBJ_NAME-$k-order \
+      -testInputDir $DT_SUBJ/sootTestOutput-$k \
+      -filesToDelete $NEW_DT_SUBJ/$SUBJ_NAME-env-files \
+      -project "$SUBJ_NAME_FORMAL" \
+      -testType $k \
+      -outputDir $DT_ROOT/$prioDir \
+      -timesToRun $medianTimes \
+      -getCoverage
+  fi
+
   for i in "${coverages[@]}"; do
     for j in "${priorOrders[@]}"; do
 

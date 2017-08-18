@@ -29,6 +29,23 @@ if [ "$PRECOMPUTE_DEPENDENCES" = "true" ]; then
 fi
 
 for j in "${testTypes[@]}"; do
+
+  if [ "$PRECOMPUTE_DEPENDENCES" = "false" ]; then
+    echo "[INFO] Running prioritization for $j test type"
+    java -cp $CLASSPATH edu.washington.cs.dt.impact.runner.OneConfigurationRunner \
+      -technique prioritization \
+      -coverage statement \
+      -order original \
+      -origOrder $NEW_DT_SUBJ/$SUBJ_NAME-$j-order \
+      -testInputDir $DT_SUBJ/sootTestOutput-$j \
+      -filesToDelete $NEW_DT_SUBJ/$SUBJ_NAME-env-files \
+      -project "$SUBJ_NAME_FORMAL" \
+      -testType $j \
+      -outputDir $DT_ROOT/$paraDir \
+      -timesToRun $medianTimes \
+      -getCoverage
+  fi
+
   for k in "${machines[@]}"; do
 
     # [INFO] Running parallelization with resolveDependences and without dependentTestFile for original order
@@ -88,7 +105,7 @@ for j in "${testTypes[@]}"; do
     echo "[DEBUG] java -cp $CLASSPATH edu.washington.cs.dt.impact.runner.OneConfigurationRunner \
       -technique parallelization \
       -order time \
-      -timeOrder $NEW_DT_SUBJ/$SUBJ_NAME-$j-time.txt \
+      -timeOrder $DT_SUBJ/$SUBJ_NAME-$j-time.txt \
       -origOrder $NEW_DT_SUBJ/$SUBJ_NAME-$j-order \
       -testInputDir $DT_SUBJ/sootTestOutput-$j \
       -filesToDelete $NEW_DT_SUBJ/$SUBJ_NAME-env-files \
@@ -101,7 +118,7 @@ for j in "${testTypes[@]}"; do
     java -cp $CLASSPATH edu.washington.cs.dt.impact.runner.OneConfigurationRunner \
       -technique parallelization \
       -order time \
-      -timeOrder $NEW_DT_SUBJ/$SUBJ_NAME-$j-time.txt \
+      -timeOrder $DT_SUBJ/$SUBJ_NAME-$j-time.txt \
       -origOrder $NEW_DT_SUBJ/$SUBJ_NAME-$j-order \
       -testInputDir $DT_SUBJ/sootTestOutput-$j \
       -filesToDelete $NEW_DT_SUBJ/$SUBJ_NAME-env-files \
@@ -116,7 +133,7 @@ for j in "${testTypes[@]}"; do
       echo "[DEBUG] java -cp $CLASSPATH edu.washington.cs.dt.impact.runner.OneConfigurationRunner \
         -technique parallelization \
         -order time \
-        -timeOrder $NEW_DT_SUBJ/$SUBJ_NAME-$j-time.txt \
+        -timeOrder $DT_SUBJ/$SUBJ_NAME-$j-time.txt \
         -origOrder $NEW_DT_SUBJ/$SUBJ_NAME-$j-order \
         -testInputDir $DT_SUBJ/sootTestOutput-$j \
         -filesToDelete $NEW_DT_SUBJ/$SUBJ_NAME-env-files \
@@ -129,7 +146,7 @@ for j in "${testTypes[@]}"; do
       java -cp $CLASSPATH edu.washington.cs.dt.impact.runner.OneConfigurationRunner \
         -technique parallelization \
         -order time \
-        -timeOrder $NEW_DT_SUBJ/$SUBJ_NAME-$j-time.txt \
+        -timeOrder $DT_SUBJ/$SUBJ_NAME-$j-time.txt \
         -origOrder $NEW_DT_SUBJ/$SUBJ_NAME-$j-order \
         -testInputDir $DT_SUBJ/sootTestOutput-$j \
         -filesToDelete $NEW_DT_SUBJ/$SUBJ_NAME-env-files \

@@ -1,14 +1,18 @@
-# Usage: all-subj-prio-sele-para.sh $DT_ROOT
+# Usage: all-subj-prio-sele-para.sh $DT_ROOT "$DT_TOOLS" $ORIG_MIN_DTS $AUTO_MIN_DTS
 
 source ./constants.sh
 
 #!/bin/bash
 
 DT_ROOT=$1
+DT_TOOLS=$2
+ORIG_MIN_DTS=$3
+AUTO_MIN_DTS=$4
 
 source ./subj-constants.sh $DT_ROOT
 
 startTime=`date`
+count=${#expName[@]}
 
 # ======================================================
 
@@ -17,8 +21,6 @@ rm -rf $DT_ROOT/${prioDir}
 mkdir $DT_ROOT/${prioDir}
 
 index=0
-count=${#expName[@]}
-
 while [ "$index" -lt "$count" ]; do
   SUBJ_NAME=${expName[$index]}
   SUBJ_NAME_FORMAL=${expNameFormal[$index]}
@@ -33,6 +35,8 @@ while [ "$index" -lt "$count" ]; do
   let "index++"
 done
 
+java -cp $DT_TOOLS: edu.washington.cs.dt.impact.figure.generator.EnhancedResultsFigureGenerator -directory $DT_ROOT/$prioDir -outputDirectory $DT_ROOT/$prioDir -allowNegatives
+
 # ======================================================
 
 echo "[INFO] Running selection-runner script"
@@ -40,8 +44,6 @@ rm -rf $DT_ROOT/${seleDir}
 mkdir $DT_ROOT/${seleDir}
 
 index=0
-count=${#expName[@]}
-
 while [ "$index" -lt "$count" ]; do
   SUBJ_NAME=${expName[$index]}
   SUBJ_NAME_FORMAL=${expNameFormal[$index]}
@@ -55,6 +57,8 @@ while [ "$index" -lt "$count" ]; do
 
   let "index++"
 done
+
+java -cp $DT_TOOLS: edu.washington.cs.dt.impact.figure.generator.EnhancedResultsFigureGenerator -directory $DT_ROOT/$seleDir -outputDirectory $DT_ROOT/$seleDir -allowNegatives
 
 # ======================================================
 
@@ -77,7 +81,11 @@ while [ "$index" -lt "$count" ]; do
   let "index++"
 done
 
+java -cp $DT_TOOLS: edu.washington.cs.dt.impact.figure.generator.EnhancedResultsFigureGenerator -directory $DT_ROOT/$paraDir -outputDirectory $DT_ROOT/$paraDir -allowNegatives
+
 # ======================================================
+
+java -cp $DT_TOOLS: edu.washington.cs.dt.impact.figure.generator.NumDependentTestsFigureGenerator -priorDirectory $DT_ROOT/$prioDir -seleDirectory $DT_ROOT/$seleDir -paraDirectory $DT_ROOT/$paraDir -outputDirectory ./ -minBoundOrigDTFile $ORIG_MIN_DTS -minBoundAutoDTFile $AUTO_MIN_DTS
 
 echo "[INFO] Script has finished running."
 
