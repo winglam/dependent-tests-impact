@@ -35,6 +35,8 @@ public class UpdateScriptSubjectInfo {
 		String expCP = FigureGenerator.mustGetArgName(argsList, "-expCP");
 		String newExpDirectories = FigureGenerator.mustGetArgName(argsList, "-newExpDirectories");
 		String newExpCP = FigureGenerator.mustGetArgName(argsList, "-newExpCP");
+		String antMvnExp = FigureGenerator.mustGetArgName(argsList, "-antMvnExp");
+		String antMvnNextExp = FigureGenerator.mustGetArgName(argsList, "-antMvnNextExp");
 
 		File subjConstFile = new File(subjConstFileName);
 		List<String> subjConsts = FileTools.parseFileToList(subjConstFile);
@@ -49,7 +51,7 @@ public class UpdateScriptSubjectInfo {
 				break;
 			}
 
-			if (noSpaceS.startsWith("nextExpDirectories")) {
+			if (noSpaceS.startsWith("nextExpDirectories=")) {
 				s = updateString(subjConsts.subList(i + 1, closeIndex), newExpDirectories, false, false);
 				if (s == null) {
 					errorStr = "Current: " + noSpaceS + "\nTrying to add: " + newExpDirectories;
@@ -59,7 +61,7 @@ public class UpdateScriptSubjectInfo {
 				newSubjConsts.add(noSpaceS);
 				newSubjConsts.add(s);
 				newSubjConsts.add(")");
-			} else if (noSpaceS.startsWith("expNameFormal")) {
+			} else if (noSpaceS.startsWith("expNameFormal=")) {
 				s = updateString(subjConsts.subList(i + 1, closeIndex), expNameFormal, true, false);
 				if (s == null) {
 					errorStr = "Current: " + noSpaceS + "\nTrying to add: " + expNameFormal;
@@ -69,7 +71,7 @@ public class UpdateScriptSubjectInfo {
 				newSubjConsts.add(noSpaceS);
 				newSubjConsts.add(s);
 				newSubjConsts.add(")");
-			} else if (noSpaceS.startsWith("nextExpCP")) {
+			} else if (noSpaceS.startsWith("nextExpCP=")) {
 				s = updateString(subjConsts.subList(i + 1, closeIndex), newExpCP, false, true);
 				if (s == null) {
 					errorStr = "Current: " + noSpaceS + "\nTrying to add: " + newExpCP;
@@ -79,7 +81,7 @@ public class UpdateScriptSubjectInfo {
 				newSubjConsts.add(noSpaceS);
 				newSubjConsts.add(s);
 				newSubjConsts.add(")");
-			} else if (noSpaceS.startsWith("expDirectories")) {
+			} else if (noSpaceS.startsWith("expDirectories=")) {
 				s = updateString(subjConsts.subList(i + 1, closeIndex), expDirectories, false, false);
 				if (s == null) {
 					errorStr = "Current: " + noSpaceS + "\nTrying to add: " + expDirectories;
@@ -89,7 +91,7 @@ public class UpdateScriptSubjectInfo {
 				newSubjConsts.add(noSpaceS);
 				newSubjConsts.add(s);
 				newSubjConsts.add(")");
-			} else if (noSpaceS.startsWith("expName")) {
+			} else if (noSpaceS.startsWith("expName=")) {
 				s = updateString(subjConsts.subList(i + 1, closeIndex), expName, false, false);
 				if (s == null) {
 					errorStr = "Current: " + noSpaceS + "\nTrying to add: " + expName;
@@ -99,10 +101,30 @@ public class UpdateScriptSubjectInfo {
 				newSubjConsts.add(noSpaceS);
 				newSubjConsts.add(s);
 				newSubjConsts.add(")");
-			} else if (noSpaceS.startsWith("expCP")) {
+			} else if (noSpaceS.startsWith("expCP=")) {
 				s = updateString(subjConsts.subList(i + 1, closeIndex), expCP, false, true);
 				if (s == null) {
 					errorStr = "Current: " + noSpaceS + "\nTrying to add: " + expCP;
+					break;
+				}
+				i = closeIndex;
+				newSubjConsts.add(noSpaceS);
+				newSubjConsts.add(s);
+				newSubjConsts.add(")");
+			} else if (noSpaceS.startsWith("antMvnNextExp=")) {
+				s = updateString(subjConsts.subList(i + 1, closeIndex), antMvnNextExp, false, false);
+				if (s == null) {
+					errorStr = "Current: " + noSpaceS + "\nTrying to add: " + antMvnNextExp;
+					break;
+				}
+				i = closeIndex;
+				newSubjConsts.add(noSpaceS);
+				newSubjConsts.add(s);
+				newSubjConsts.add(")");
+			} else if (noSpaceS.startsWith("antMvnExp=")) {
+				s = updateString(subjConsts.subList(i + 1, closeIndex), antMvnExp, false, false);
+				if (s == null) {
+					errorStr = "Current: " + noSpaceS + "\nTrying to add: " + antMvnExp;
 					break;
 				}
 				i = closeIndex;
