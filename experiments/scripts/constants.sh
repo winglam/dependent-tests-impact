@@ -28,4 +28,5 @@ function clearTemp() {
   rm -rf tmpfile.txt
   rm -rf tmptestfiles.txt
   rm -rf dtFixerOutput
+  rm -rf local-repo/
 }
