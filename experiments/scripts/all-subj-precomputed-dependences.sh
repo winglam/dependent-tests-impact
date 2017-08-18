@@ -1,11 +1,11 @@
 # Usage: all-subj-precomputed-dependences.sh $DT_ROOT
 
 source ./constants.sh
-source ./subj-constants.sh
 
 #!/bin/bash
 
 DT_ROOT=$1
+source ./subj-constants.sh $DT_ROOT
 
 startTime=`date`
 
