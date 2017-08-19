@@ -1,4 +1,5 @@
 # Usage: one-subj.sh $DT_SUBJ $DT_ROOT $SUBJ_NAME $SUBJ_NAME_FORMAL $DT_TOOLS $DT_LIBS $DT_CLASS $DT_RANDOOP $DT_TESTS true $NEW_DT_SUBJ
+# Usage: one-subj.sh $DT_SUBJ $DT_ROOT $SUBJ_NAME $SUBJ_NAME_FORMAL $DT_TOOLS $DT_LIBS $DT_CLASS $DT_RANDOOP $DT_TESTS false $NEW_DT_SUBJ $ORIG_MIN_DTS $AUTO_MIN_DTS
 
 source ./constants.sh
 
@@ -16,6 +17,11 @@ DT_RANDOOP=$8
 DT_TESTS=$9
 PRECOMPUTE_DEPENDENCES=$10
 NEW_DT_SUBJ=$11
+
+if [ "$PRECOMPUTE_DEPENDENCES" = "false" ]; then
+  ORIG_MIN_DTS=$12
+  AUTO_MIN_DTS=$13
+fi
 
 startTime=`date`
 
@@ -46,6 +52,11 @@ mkdir $DT_ROOT/${paraDir}
 ./subj-para.sh $DT_SUBJ $DT_ROOT $SUBJ_NAME $SUBJ_NAME_FORMAL $NEW_DT_SUBJ false $PRECOMPUTE_DEPENDENCES $DT_TOOLS $DT_LIBS $DT_CLASS $DT_RANDOOP $DT_TESTS
 
 # ======================================================
+
+if [ "$PRECOMPUTE_DEPENDENCES" = "false" ]; then
+  java -cp $DT_TOOLS: edu.washington.cs.dt.impact.figure.generator.NumDependentTestsFigureGenerator -priorDirectory $DT_ROOT/$prioDir -seleDirectory $DT_ROOT/$seleDir -paraDirectory $DT_ROOT/$paraDir -outputDirectory ./ -minBoundOrigDTFile $ORIG_MIN_DTS -minBoundAutoDTFile $AUTO_MIN_DTS
+fi
+
 
 echo "[INFO] Script has finished running."
 
