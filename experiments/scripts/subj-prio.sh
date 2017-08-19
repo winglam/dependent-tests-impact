@@ -1,5 +1,5 @@
-# Usage: subj-prio.sh $DT_SUBJ $DT_ROOT $SUBJ_NAME $SUBJ_NAME_FORMAL $NEW_DT_SUBJ true false ...
-# Usage: subj-prio.sh $DT_SUBJ $DT_ROOT $SUBJ_NAME $SUBJ_NAME_FORMAL $NEW_DT_SUBJ false false $DT_TOOLS $DT_LIBS $DT_CLASS $DT_RANDOOP $DT_TESTS
+# Usage: subj-prio.sh $DT_SUBJ $DT_ROOT $SUBJ_NAME $SUBJ_NAME_FORMAL $NEW_DT_SUBJ true false true ...
+# Usage: subj-prio.sh $DT_SUBJ $DT_ROOT $SUBJ_NAME $SUBJ_NAME_FORMAL $NEW_DT_SUBJ false false true $DT_TOOLS $DT_LIBS $DT_CLASS $DT_RANDOOP $DT_TESTS
 
 source ./constants.sh
 
@@ -11,13 +11,13 @@ NEW_DT_SUBJ=$5
 
 PRESET_CP=$6
 if [ "$PRESET_CP" = "true" ]; then
-  CLASSPATH=$8
+  CLASSPATH=$9
 else
-  DT_TOOLS=$8
-  DT_LIBS=$9
-  DT_CLASS=$10
-  DT_RANDOOP=$11
-  DT_TESTS=$12
+  DT_TOOLS=$9
+  DT_LIBS=$10
+  DT_CLASS=$11
+  DT_RANDOOP=$12
+  DT_TESTS=$13
 
   CLASSPATH=$DT_TOOLS:$DT_LIBS:$DT_CLASS:$DT_RANDOOP:$DT_TESTS
 fi
@@ -28,9 +28,11 @@ if [ "$PRECOMPUTE_DEPENDENCES" = "true" ]; then
   PRECOMPUTE_FLAG="-resolveDependences $DT_ROOT/$prioList/prioritization-$SUBJ_NAME_FORMAL-$k-$i-$j.txt"
 fi
 
+GEN_ENHANCED_RESULTS=$8
+
 for k in "${testTypes[@]}"; do
 
-  if [ "$PRECOMPUTE_DEPENDENCES" = "false" ]; then
+  if [ "$GEN_ENHANCED_RESULTS" = "true" ]; then
     echo "[INFO] Running prioritization for ${testTypes[@]} test type"
     java -cp $CLASSPATH edu.washington.cs.dt.impact.runner.OneConfigurationRunner \
       -technique prioritization \
@@ -77,7 +79,7 @@ for k in "${testTypes[@]}"; do
         -timesToRun $medianTimes \
         $PRECOMPUTE_FLAG
 
-      if [ "$PRECOMPUTE_DEPENDENCES" = "false" ]; then
+      if [ "$GEN_ENHANCED_RESULTS" = "true" ]; then
         echo "[DEBUG] java -cp $CLASSPATH edu.washington.cs.dt.impact.runner.OneConfigurationRunner \
           -technique prioritization \
           -coverage $i \
@@ -103,7 +105,7 @@ for k in "${testTypes[@]}"; do
           -testType $k \
           -outputDir $DT_ROOT/$prioDir \
           -timesToRun $medianTimes \
-          -dependentTestFile $DT_ROOT/$prioList/"prioritization-$SUBJ_NAME_FORMAL-$k-$i-$j.txt" 
+          -dependentTestFile $DT_ROOT/$prioList/"prioritization-$SUBJ_NAME_FORMAL-$k-$i-$j.txt"
       fi
     done
   done
