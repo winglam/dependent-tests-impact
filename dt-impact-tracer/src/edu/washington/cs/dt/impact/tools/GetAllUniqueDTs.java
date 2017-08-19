@@ -1,8 +1,8 @@
 /** 
- * Get list/number of unique DTs listed in ORIG_MIN_DTs.txt and 
+* Get list/number of unique DTs listed in ORIG_MIN_DTs.txt and 
  * AUTO_MIN_DTs.txt. The input can be a folder containing the 
- * precomputed dependences of a subject or it can be the results
- * of that subject from the OneConfigurationRunner.
+ * results of that subject from the OneConfigurationRunner
+ * with DTs not given to it.
 */ 
 
 package edu.washington.cs.dt.impact.tools;
@@ -49,8 +49,33 @@ public class GetAllUniqueDTs extends FigureGenerator {
         parseFiles(seleDirList, new GetAllUniqueDTs(), false, proj_orig_arrayList, proj_auto_arrayList);
         parseFiles(paraDirList, new GetAllUniqueDTs(), false, proj_orig_arrayList, proj_auto_arrayList);
 
+        File origDTFile = new File(origMinDTFileName);
+        TreeMap<String, Integer> origExistingMap = parseExistingDTFile(FileTools.parseFileToList(origDTFile));
+        mergeMaps(origExistingMap, origTestNames);
+
+        StringBuilder sb = new StringBuilder();
+        for (String key : origExistingMap.keySet()) {
+        	sb.append(key);
+        	sb.append("|");
+        	sb.append(origExistingMap.get(key));
+        	sb.append("\n");
+        }
+        FileTools.printStringToFile(sb.toString(), origDTFile, false);
+
+        File autoDTFile = new File(autoMinDTFileName);
+        TreeMap<String, Integer> autoExistingMap = parseExistingDTFile(FileTools.parseFileToList(autoDTFile));
+        mergeMaps(autoExistingMap, autoTestNames);
+
+        StringBuilder autoSb = new StringBuilder();
+        for (String key : autoExistingMap.keySet()) {
+        	autoSb.append(key);
+        	autoSb.append("|");
+        	autoSb.append(autoExistingMap.get(key));
+        	autoSb.append("\n");
+        }
+        FileTools.printStringToFile(autoSb.toString(), autoDTFile, false);
+
         for (String key : origTestNames.keySet()) {
-        	FileTools.printStringToFile(key + "|" + origTestNames.get(key).size(), new File(origMinDTFileName), true);
         	System.out.println(key + ": " + origTestNames.get(key));
         	System.out.println();
         }
@@ -58,10 +83,42 @@ public class GetAllUniqueDTs extends FigureGenerator {
         System.out.println("------------------------------------------------------");
 
         for (String key : autoTestNames.keySet()) {
-        	FileTools.printStringToFile(key + "|" + autoTestNames.get(key).size(), new File(autoMinDTFileName), true);
         	System.out.println(key + ": " + autoTestNames.get(key));
         	System.out.println();
         }
+    }
+
+    private static void mergeMaps(TreeMap<String, Integer> existingMap, Map<String, HashSet<String>> newMap) {
+        for (String key : newMap.keySet()) {
+        	int value = newMap.get(key).size();
+        	if (existingMap.containsKey(key)) {
+    			System.out.println("Duplicate key detected in one of the files. Key: " + key);
+    			int currVal = existingMap.get(key);
+    			if (currVal > value) {
+    				value = currVal; 
+    			}
+        	}
+        	existingMap.put(key, value);
+        }
+    }
+
+    private static TreeMap<String, Integer> parseExistingDTFile(List<String> contents) {
+    	TreeMap<String, Integer> newMap = new TreeMap<>();
+    	for (String s : contents) {
+    		String noSpaceS = s.trim();
+    		String[] splitDash = noSpaceS.split("|");
+    		String key = splitDash[0];
+    		int value = Integer.parseInt(splitDash[1]);
+    		if (newMap.containsKey(key)) {
+    			System.out.println("Duplicate key detected in one of the files. Key: " + key);
+    			int currVal = newMap.get(key);
+    			if (currVal > value) {
+    				value = currVal; 
+    			}
+    		}
+    		newMap.put(key, value);
+    	}
+    	return newMap;
     }
 
 	@Override
