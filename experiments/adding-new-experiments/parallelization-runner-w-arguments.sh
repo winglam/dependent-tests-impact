@@ -5,10 +5,7 @@ function clearTemp() {
 }
 
 testTypes=(orig auto)
-coverages=(statement function)
 machines=(2 4 8 16)
-priorOrders=(absolute relative)
-seleOrders=(original absolute relative)
 
 echo -e "Starting experiment: $1"
 cd $2
@@ -16,10 +13,12 @@ cd $2
 for j in "${testTypes[@]}"; do
   for k in "${machines[@]}"; do
     echo 'Running parallelization without resolveDependences and without dependentTestFile for time order'
-    java -cp ${3}/*:${4}/*:$5:$6:$8 edu.washington.cs.dt.impact.Main.OneConfigurationRunner -technique parallelization -order time -timeOrder $2/$1-$j-time.txt -origOrder $1-$j-order -testInputDir $2/sootTestOutput-$j -filesToDelete $1-env-files -numOfMachines $k -project "$1" -testType $j -timesToRun 1 -outputDir $7
+    java -Xms1g -Xmx2g -cp ${3}/*:${4}/*:$5:$6:$8:/usr/lib/jvm/java-7-oracle/jre/lib/* edu.washington.cs.dt.impact.Main.OneConfigurationRunner -technique parallelization -order time -timeOrder $9/$1-$j-time.txt -origOrder $9/$1-$j-order -testInputDir $9/sootTestOutput-$j -filesToDelete $1-env-files -numOfMachines $k -project "$1" -testType $j -timesToRun 1 -outputDir $7
+
+    echo 'Running parallelization without resolveDependences and without dependentTestFile for original order'
+    java -Xms1g -Xmx2g -cp ${3}/*:${4}/*:$5:$6:$8:/usr/lib/jvm/java-7-oracle/jre/lib/* edu.washington.cs.dt.impact.Main.OneConfigurationRunner -technique parallelization -order original -origOrder $9/$1-$j-order -testInputDir $9/sootTestOutput-$j -filesToDelete $1-env-files -project "$1" -testType $j -numOfMachines $k -outputDir $7 -timesToRun 1
   done
- clearTemp $1 $j
+ clearTemp
 done
 
-cd /home/user/dependent-tests-impact/experiments
 
