@@ -1,0 +1,22 @@
+This folder contains the scripts to add a new subject and generate the data for figure 5
+
+Use githubcloner.sh to clone a github repository
+
+#example call for githubcloner.sh
+./githubcloner.sh github_link old_directory_name new_directory_name old_github_SHA new_github_SHA
+
+
+Use getFigure5Data.sh to generate files used in Figure 5
+NOTE: The following variables should be set before running getFigure5Data.sh
+
+DT_SUBJ_ROOT
+DT_SUBJ
+DT_SUBJ_SRC
+NEW_DT_SUBJ_ROOT
+NEW_DT_SUBJ
+NEW_DT_SUBJ_SRC
+SUBJ_NAME
+SUBJ_NAME_FORMAL
+
+#example call for getFigure5Data.sh (this script calls the w-arguments scripts)
+./getFigure5Data.sh
