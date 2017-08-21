@@ -106,7 +106,7 @@ public class GetAllUniqueDTs extends FigureGenerator {
     	TreeMap<String, Integer> newMap = new TreeMap<>();
     	for (String s : contents) {
     		String noSpaceS = s.trim();
-    		String[] splitDash = noSpaceS.split("|");
+    		String[] splitDash = noSpaceS.split("\\|");
     		String key = splitDash[0];
     		int value = Integer.parseInt(splitDash[1]);
     		if (newMap.containsKey(key)) {
