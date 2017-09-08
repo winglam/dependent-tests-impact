@@ -29,4 +29,8 @@ function clearTemp() {
   rm -rf tmptestfiles.txt
   rm -rf dtFixerOutput
   rm -rf local-repo/
+  rm -rf helium-bundle/
+  rm -rf notebook/
+  rm -rf target/
+  rm -rf ViewVersionInfo/
 }
