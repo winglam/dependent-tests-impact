@@ -15,13 +15,13 @@ DT_LIBS=$6
 DT_CLASS=$7
 DT_RANDOOP=$8
 DT_TESTS=$9
-PRECOMPUTE_DEPENDENCES=$10
-GEN_ENHANCED_RESULTS=$11
-NEW_DT_SUBJ=$12
+PRECOMPUTE_DEPENDENCES=${10}
+GEN_ENHANCED_RESULTS=${11}
+NEW_DT_SUBJ=${12}
 
 if [ "$PRECOMPUTE_DEPENDENCES" = "false" ]; then
-  ORIG_MIN_DTS=$13
-  AUTO_MIN_DTS=$14
+  ORIG_MIN_DTS=${13}
+  AUTO_MIN_DTS=${14}
 fi
 
 startTime=`date`
@@ -32,7 +32,7 @@ echo "[INFO] Running prioritization-runner script"
 rm -rf $DT_ROOT/${prioDir}
 mkdir $DT_ROOT/${prioDir}
 
-./subj-prio.sh $DT_SUBJ $DT_ROOT $SUBJ_NAME $SUBJ_NAME_FORMAL $NEW_DT_SUBJ false $PRECOMPUTE_DEPENDENCES $GEN_ENHANCED_RESULTS $DT_TOOLS $DT_LIBS $DT_CLASS $DT_RANDOOP $DT_TESTS
+./subj-prio.sh $DT_SUBJ $DT_ROOT $SUBJ_NAME "$SUBJ_NAME_FORMAL" $NEW_DT_SUBJ false $PRECOMPUTE_DEPENDENCES $GEN_ENHANCED_RESULTS "$DT_TOOLS" "$DT_LIBS" $DT_CLASS $DT_RANDOOP $DT_TESTS
 
 # ======================================================
 # Only run selection if we are not calculating precomputed dependences since the selection precomputed dependences are generated from priorization and parallelization 
@@ -41,7 +41,7 @@ if [ "$PRECOMPUTE_DEPENDENCES" = "false" ]; then
   rm -rf $DT_ROOT/${seleDir}
   mkdir $DT_ROOT/${seleDir}
 
-  ./subj-sele.sh $DT_SUBJ $DT_ROOT $SUBJ_NAME $SUBJ_NAME_FORMAL $NEW_DT_SUBJ false $GEN_ENHANCED_RESULTS $DT_TOOLS $DT_LIBS $DT_CLASS $DT_RANDOOP $DT_TESTS
+  ./subj-sele.sh $DT_SUBJ $DT_ROOT $SUBJ_NAME "$SUBJ_NAME_FORMAL" $NEW_DT_SUBJ false $GEN_ENHANCED_RESULTS "$DT_TOOLS" "$DT_LIBS" $DT_CLASS $DT_RANDOOP $DT_TESTS
 fi
 
 # ======================================================
@@ -50,7 +50,7 @@ echo "[INFO] Running parallelization-runner script"
 rm -rf $DT_ROOT/${paraDir}
 mkdir $DT_ROOT/${paraDir}
 
-./subj-para.sh $DT_SUBJ $DT_ROOT $SUBJ_NAME $SUBJ_NAME_FORMAL $NEW_DT_SUBJ false $PRECOMPUTE_DEPENDENCES $GEN_ENHANCED_RESULTS $DT_TOOLS $DT_LIBS $DT_CLASS $DT_RANDOOP $DT_TESTS
+./subj-para.sh $DT_SUBJ $DT_ROOT $SUBJ_NAME "$SUBJ_NAME_FORMAL" $NEW_DT_SUBJ false $PRECOMPUTE_DEPENDENCES $GEN_ENHANCED_RESULTS "$DT_TOOLS" "$DT_LIBS" $DT_CLASS $DT_RANDOOP $DT_TESTS
 
 # ======================================================
 

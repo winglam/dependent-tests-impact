@@ -15,9 +15,9 @@ if [ "$PRESET_CP" = "true" ]; then
 else
   DT_TOOLS=$8
   DT_LIBS=$9
-  DT_CLASS=$10
-  DT_RANDOOP=$11
-  DT_TESTS=$12
+  DT_CLASS=${10}
+  DT_RANDOOP=${11}
+  DT_TESTS=${12}
 
   CLASSPATH=$DT_TOOLS:$DT_LIBS:$DT_CLASS:$DT_RANDOOP:$DT_TESTS
 fi
