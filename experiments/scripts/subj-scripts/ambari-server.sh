@@ -13,6 +13,6 @@ export NEW_DT_SUBJ=$NEW_DT_SUBJ_ROOT/ambari-new/ambari-server/target
 export NEW_DT_SUBJ_SRC=$NEW_DT_SUBJ_ROOT/ambari-new/ambari-server
 
 # The name of the subject you wish to add (e.g., xml_security) 
-export SUBJ_NAME=ambari
+export SUBJ_NAME=ambari-server
 # The name of the subject you want to be displayed in the paper (e.g., XML Security) 
 export SUBJ_NAME_FORMAL=Ambari-Server
