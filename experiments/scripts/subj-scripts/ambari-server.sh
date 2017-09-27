@@ -8,9 +8,9 @@ export DT_SUBJ_SRC=$DT_SUBJ_ROOT/ambari-server
 # The root directory for the new subject
 export NEW_DT_SUBJ_ROOT=/home/user/dependent-tests-impact/experiments/ambari-new
 # Directory for where all of the new subject's information is stored.
-export NEW_DT_SUBJ=$NEW_DT_SUBJ_ROOT/ambari-new/ambari-server/target
+export NEW_DT_SUBJ=$NEW_DT_SUBJ_ROOT/ambari-server/target
 # Directory containing the new subject's src directory.
-export NEW_DT_SUBJ_SRC=$NEW_DT_SUBJ_ROOT/ambari-new/ambari-server
+export NEW_DT_SUBJ_SRC=$NEW_DT_SUBJ_ROOT/ambari-server
 
 # The name of the subject you wish to add (e.g., xml_security) 
 export SUBJ_NAME=ambari-server
