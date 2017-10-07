@@ -35,7 +35,7 @@ mkdir -p out
 # Only look for the ones with the numbers (the others files just reference the files with numbers after them), the rest will get compiled later
 for i in $(ls | grep -E "[0-9]+\.java$")
 do
-    java -cp $DT_TOOLS: FailedTestRemover $NEW_DT_LIBS:$NEW_DT_CLASS:$DT_TOOLS: $i
+    java -cp $DT_TOOLS: edu.washington.cs.dt.tools.FailedTestRemover $NEW_DT_LIBS:$NEW_DT_CLASS:$DT_TOOLS: $i
 done
 
 cd out
