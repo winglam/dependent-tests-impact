@@ -7,11 +7,11 @@ java -cp $DT_LIBS:$DT_TOOLS: edu.washington.cs.dt.util.PublicClassFinder $SUBJ_N
 # 2. In the old-subj, generate the randoop tests. For some of our subjects we noticed that randoop either exited unexpectedly or threw some exceptions and was unable to generate tests.  In those cases, we simply removed the class that is causing the problem from old-subj-classes. See our Experiments caveats page for more details on what we omitted.
 java -ea -cp $DT_LIBS:$DT_CLASS:$DT_TOOLS_DIR/randoop.jar: randoop.main.Main gentests --classlist=$SUBJ_NAME-classes --outputlimit=5000 --ignore-flaky-tests=true
 # 3. Compile the  randoop tests that were generated
-mkdir randoop/
+mkdir -p randoop/
 mv *.java randoop/
 cd randoop/
 
-#see if ErrorTest exists, then execute the appropriate compile line 
+#see if ErrorTest exists, then execute the appropriate compile line
 count=`ls -1 ErrorTest*.java 2>/dev/null | wc -l`
 if [ $count != 0 ];
 then
@@ -20,16 +20,29 @@ else
    javac -cp $DT_LIBS:$DT_CLASS:$DT_TOOLS: RegressionTest*.java
 fi
 
-mkdir bin
+mkdir -p bin
 mv *.class ./bin
 cd $DT_SUBJ
 
-#check if auto tests are can be compiled with new subject
+# 7. Move auto tests to new subject/comment out those that don't compile
 cp -R randoop/ $NEW_DT_SUBJ/randoop
 cd $NEW_DT_RANDOOP
 rm -rf *.class
 cd ..
-#execute the correct javac line depending on situation to compile auto tests with NEW_DT_CLASS 
+
+echo Trying to compile tests with new subject.
+mkdir -p out
+# Only look for the ones with the numbers (the others files just reference the files with numbers after them), the rest will get compiled later
+for i in $(ls | grep -E "[0-9]+\.java$")
+do
+    java -cp $DT_TOOLS: FailedTestRemover $NEW_DT_LIBS:$NEW_DT_CLASS:$DT_TOOLS: $i
+done
+
+cd out
+mv *.java ..
+cd ..
+
+#execute the correct javac line depending on situation to compile auto tests with NEW_DT_CLASS
 tcount=`ls -1 ErrorTest*.java 2>/dev/null | wc -l`
 if [ $tcount != 0 ];
 then
