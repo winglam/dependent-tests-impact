@@ -3,9 +3,11 @@ package edu.washington.cs.dt.impact.tools;
 import com.github.javaparser.JavaParser;
 import com.github.javaparser.ParseException;
 import com.github.javaparser.ast.CompilationUnit;
+import com.github.javaparser.ast.PackageDeclaration;
 import com.github.javaparser.ast.body.BodyDeclaration;
 import com.github.javaparser.ast.body.ClassOrInterfaceDeclaration;
 import com.github.javaparser.ast.body.MethodDeclaration;
+import com.github.javaparser.ast.body.Parameter;
 import com.github.javaparser.ast.body.TypeDeclaration;
 
 import javax.tools.*;
@@ -14,6 +16,46 @@ import java.util.*;
 
 public class FailedTestRemover {
     private final JavaFile javaFile;
+    private final List<RemovedMethod> removedMethods = new ArrayList<>();
+
+    private class RemovedMethod {
+        private final PackageDeclaration packageDeclaration;
+        private final ClassOrInterfaceDeclaration classDeclaration;
+        private final MethodDeclaration method;
+
+        private RemovedMethod(final PackageDeclaration packageDeclaration,
+                              final ClassOrInterfaceDeclaration classDeclaration,
+                              final MethodDeclaration method) {
+            this.packageDeclaration = packageDeclaration;
+            this.classDeclaration = classDeclaration;
+            this.method = method;
+        }
+
+        private String getParametersAsString() {
+            String result = "";
+
+            for (int i = 0; i < method.getParameters().size(); i++) {
+                final Parameter parameter = method.getParameters().get(i);
+
+                result += parameter.toString();
+
+                if (i != (method.getParameters().size() - 1)) {
+                    result += ", ";
+                }
+            }
+
+            return result;
+        }
+
+        private String getFullyQualifiedName() {
+            final String packageName = packageDeclaration != null ? packageDeclaration.getPackageName() + "." : "";
+
+            // Not using .getDeclarationAsString because it includes the return type, which wouldn't work with concatting below
+            final String methodName = method.getName() + "(" + getParametersAsString() + ")";
+
+            return packageName + classDeclaration.getName() + "." + methodName;
+        }
+    }
 
     /**
      * The basic Java file which supports compiling/removing methods.
@@ -72,25 +114,20 @@ public class FailedTestRemover {
         }
 
         /**
-         * Attempts to remove the method declaration from all classes in the file it may be defined in.
+         * Attempts to remove the method declaration.
          * @param method The method declaration to remove.
-         * @return True if successful, false if not.
+         * @return A RemovedMethod object for the method if found, null otherwise.
          */
-        private boolean removeMethod(final MethodDeclaration method) {
-            boolean success = false;
-
+        private RemovedMethod removeMethod(final MethodDeclaration method) {
             for (final ClassOrInterfaceDeclaration classDeclaration : classList) {
-                final boolean removalSuccess = classDeclaration.getMembers().remove(method);
+                final boolean success = classDeclaration.getMembers().remove(method);
 
-                // Doesn't seem to work on VM for some reason.
-                // classDeclaration.addOrphanComment(new BlockComment(method.toString()));
-
-                if (removalSuccess) {
-                    success = true;
+                if (success) {
+                    return new RemovedMethod(compilationUnit.getPackage(), classDeclaration, method);
                 }
             }
 
-            return success;
+            return null;
         }
 
         /**
@@ -172,12 +209,12 @@ public class FailedTestRemover {
 
     public static void main(final String[] args) throws Exception {
         if (args.length < 2) {
-            System.out.println("Usage: java FailedTestRemover <classpath> <filename> [<output-dir>]");
+            System.out.println("Usage: java FailedTestRemover <classpath> <filename>");
             System.out.println();
 
             System.out.print("Tries to compile the file specified by <filename> using the <classpath> ");
             System.out.print("(separated by " + System.getProperty("path.separator") + "), removing methods until it compiles. ");
-            System.out.print("Writes out the file to <output-dir>/<filename> (default <output-dir> is 'out/') ");
+            System.out.print("Writes out the file to out/<filename> ");
             System.out.print("after each attempted compilation/removal cycle.");
             System.out.println();
 
@@ -193,25 +230,14 @@ public class FailedTestRemover {
         final String classPath = buildClassPath(args[0].split(System.getProperty("path.separator")));
         final String filename = args[1];
 
-        String outputDir = "out/";
-
-        if (args.length > 2) {
-            outputDir = args[1];
-        }
-
-        if (!outputDir.endsWith("/")) {
-            outputDir += "/";
-        }
-
         final File file = new File(filename);
 
         System.out.println("Started running at: " + new Date().toString());
 
         System.out.println("Trying to compile " + filename);
         System.out.println("Classpath is: " + classPath);
-        System.out.println("Writing output to " + outputDir + file.getName());
 
-        FailedTestRemover failedTestRemover = new FailedTestRemover(filename, classPath, outputDir + file.getName());
+        FailedTestRemover failedTestRemover = new FailedTestRemover(filename, classPath, "out/" + file.getName());
         failedTestRemover.run();
     }
 
@@ -241,9 +267,11 @@ public class FailedTestRemover {
                     System.out.print(method.getName() + ", ");
                 }
 
-                boolean success = javaFile.removeMethod(method);
+                final RemovedMethod removedMethod = javaFile.removeMethod(method);
 
-                if (!success) {
+                if (removedMethod != null) {
+                    removedMethods.add(removedMethod);
+                } else {
                     throw new Exception("Failed to remove " + method.getName() + "!");
                 }
             }
@@ -253,7 +281,28 @@ public class FailedTestRemover {
             javaFile.writeAndReloadCompilationUnit();
         }
 
+        writeAutoRemovedMethodList();
+
         System.out.println("Successfully compiled at: " + new Date().toString());
+    }
+
+    private void writeAutoRemovedMethodList() throws IOException {
+        final StringBuilder builder = new StringBuilder();
+
+        builder.append("# This file contains the list of tests that were automatically removed to make the file compile with the new version of the subject.\n");
+
+        if (removedMethods.size() == 0) {
+            builder.append("# There were no tests that failed to compiled.");
+        } else {
+            for (final RemovedMethod method : removedMethods) {
+                builder.append(method.getFullyQualifiedName());
+            }
+        }
+
+        final FileOutputStream outputStream = new FileOutputStream("auto-removed-methods.txt");
+        outputStream.write(builder.toString().getBytes());
+        outputStream.flush();
+        outputStream.close();
     }
 
     private int getDiagnosticCount(final DiagnosticCollector<JavaFileObject> diagnostics,
