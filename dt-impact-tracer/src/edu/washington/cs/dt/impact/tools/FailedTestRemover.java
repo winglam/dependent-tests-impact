@@ -77,18 +77,20 @@ public class FailedTestRemover {
          * @return True if successful, false if not.
          */
         private boolean removeMethod(final MethodDeclaration method) {
+            boolean success = false;
+
             for (final ClassOrInterfaceDeclaration classDeclaration : classList) {
-                final boolean success = classDeclaration.getMembers().remove(method);
+                final boolean removalSuccess = classDeclaration.getMembers().remove(method);
 
                 // Doesn't seem to work on VM for some reason.
                 // classDeclaration.addOrphanComment(new BlockComment(method.toString()));
 
-                if (!success) {
-                    return false;
+                if (removalSuccess) {
+                    success = true;
                 }
             }
 
-            return true;
+            return success;
         }
 
         /**
