@@ -39,7 +39,7 @@ public class FailedTestRemover {
         private void loadClassList() {
             classList.clear();
 
-            for (TypeDeclaration typeDeclaration : compilationUnit.getTypes()) {
+            for (final TypeDeclaration typeDeclaration : compilationUnit.getTypes()) {
                 if (typeDeclaration instanceof ClassOrInterfaceDeclaration) {
                     classList.add((ClassOrInterfaceDeclaration) typeDeclaration);
                 }
@@ -78,7 +78,7 @@ public class FailedTestRemover {
          */
         private boolean removeMethod(final MethodDeclaration method) {
             for (final ClassOrInterfaceDeclaration classDeclaration : classList) {
-                boolean success = classDeclaration.getMembers().remove(method);
+                final boolean success = classDeclaration.getMembers().remove(method);
 
                 // Doesn't seem to work on VM for some reason.
                 // classDeclaration.addOrphanComment(new BlockComment(method.toString()));
@@ -171,6 +171,19 @@ public class FailedTestRemover {
     public static void main(final String[] args) throws Exception {
         if (args.length < 2) {
             System.out.println("Usage: java FailedTestRemover <classpath> <filename> [<output-dir>]");
+            System.out.println();
+
+            System.out.print("Tries to compile the file specified by <filename> using the <classpath> ");
+            System.out.print("(separated by " + System.getProperty("path.separator") + "), removing methods until it compiles. ");
+            System.out.print("Writes out the file to <output-dir>/<filename> (default <output-dir> is 'out/') ");
+            System.out.print("after each attempted compilation/removal cycle.");
+            System.out.println();
+
+            System.out.println();
+            System.out.println("Example ($DT_TOOLS should include the javaparser .jar and the .jar for the FailedTestRemover): ");
+            System.out.println();
+            System.out.println("    java -cp $DT_TOOLS: edu.washington.cs.dt.impact.tools.FailedTestRemover . Test.java");
+            System.out.println("    java -cp $DT_TOOLS: edu.washington.cs.dt.impact.tools.FailedTestRemover $NEW_DT_LIBS:$NEW_DT_CLASS:$DT_TOOLS: RegressionTest0.java");
             return;
         }
 
