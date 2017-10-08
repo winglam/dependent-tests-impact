@@ -15,9 +15,14 @@ import java.io.*;
 import java.util.*;
 
 public class FailedTestRemover {
+    private static final String AUTO_REMOVED_METHODS_FILEPATH = "auto-removed-methods.txt";
+
     private final JavaFile javaFile;
     private final List<RemovedMethod> removedMethods = new ArrayList<>();
 
+    /**
+     * A method that has been removed from the file because an error occurred in it.
+     */
     private class RemovedMethod {
         private final PackageDeclaration packageDeclaration;
         private final ClassOrInterfaceDeclaration classDeclaration;
@@ -31,6 +36,10 @@ public class FailedTestRemover {
             this.method = method;
         }
 
+        /**
+         * Ex: For int f(int a, int b), returns "int a, int b"
+         * @returns A string containing the parameters separated by commas.
+         */
         private String getParametersAsString() {
             String result = "";
 
@@ -47,6 +56,9 @@ public class FailedTestRemover {
             return result;
         }
 
+        /**
+         * @returns The fully qualified name of this method: packageName.className.methodName(paramNames)
+         */
         private String getFullyQualifiedName() {
             final String packageName = packageDeclaration != null ? packageDeclaration.getPackageName() + "." : "";
 
@@ -286,6 +298,9 @@ public class FailedTestRemover {
         System.out.println("Successfully compiled at: " + new Date().toString());
     }
 
+    /**
+     * Writes a list of tests that were removed from the file to auto-removed-methods.txt
+     */
     private void writeAutoRemovedMethodList() throws IOException {
         final StringBuilder builder = new StringBuilder();
 
@@ -295,11 +310,11 @@ public class FailedTestRemover {
             builder.append("# There were no tests that failed to compiled.");
         } else {
             for (final RemovedMethod method : removedMethods) {
-                builder.append(method.getFullyQualifiedName());
+                builder.append(method.getFullyQualifiedName() + "\n");
             }
         }
 
-        final FileOutputStream outputStream = new FileOutputStream("auto-removed-methods.txt");
+        final FileOutputStream outputStream = new FileOutputStream(AUTO_REMOVED_METHODS_FILEPATH);
         outputStream.write(builder.toString().getBytes());
         outputStream.flush();
         outputStream.close();
