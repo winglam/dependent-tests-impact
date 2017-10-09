@@ -16,8 +16,9 @@ import java.util.*;
 
 public class FailedTestRemover {
     private static final String AUTO_REMOVED_METHODS_FILEPATH = "auto-removed-methods.txt";
+    private static final String OUT_DIR = "out";
 
-    private final JavaFile javaFile;
+    private final List<JavaFile> javaFiles = new ArrayList<>();
     private final List<RemovedMethod> removedMethods = new ArrayList<>();
 
     /**
@@ -75,6 +76,7 @@ public class FailedTestRemover {
     private class JavaFile {
         private CompilationUnit compilationUnit;
         private List<ClassOrInterfaceDeclaration> classList = new ArrayList<>();
+        private final String filename;
         private final String classPath;
         private final String outfileName;
 
@@ -83,8 +85,13 @@ public class FailedTestRemover {
             final File sourceFile = new File(filename);
             compilationUnit = JavaParser.parse(sourceFile);
 
+            this.filename = filename;
             this.classPath = classPath;
             this.outfileName = outfileName;
+        }
+
+        private String getFilename() {
+            return filename;
         }
 
         /**
@@ -173,8 +180,6 @@ public class FailedTestRemover {
             final Iterable<? extends JavaFileObject> fileObjects =
                     fileManager.getJavaFileObjectsFromFiles(Arrays.asList(file));
 
-            System.out.println("Trying to compile.");
-
             final JavaCompiler.CompilationTask compilationTask =
                     javaCompiler.getTask(null, fileManager, diagnostics, compilerOptions, null, fileObjects);
             compilationTask.call();
@@ -214,19 +219,14 @@ public class FailedTestRemover {
         }
     }
 
-    private FailedTestRemover(final String filename, final String classPath, final String outfileName)
-            throws IOException, ParseException {
-        javaFile = new JavaFile(filename, classPath, outfileName);
-    }
-
     public static void main(final String[] args) throws Exception {
         if (args.length < 2) {
-            System.out.println("Usage: java FailedTestRemover <classpath> <filename>");
+            System.out.println("Usage: java FailedTestRemover <classpath> <filenames>");
             System.out.println();
 
-            System.out.print("Tries to compile the file specified by <filename> using the <classpath> ");
+            System.out.print("Tries to compile the files specified by <filenames> using the <classpath> ");
             System.out.print("(separated by " + System.getProperty("path.separator") + "), removing methods until it compiles. ");
-            System.out.print("Writes out the file to out/<filename> ");
+            System.out.print("Writes out each changed file to to out/<filename> ");
             System.out.print("after each attempted compilation/removal cycle.");
             System.out.println();
 
@@ -240,27 +240,44 @@ public class FailedTestRemover {
 
         // Necessary because the JavaCompiler class won't expand wildcards.
         final String classPath = buildClassPath(args[0].split(System.getProperty("path.separator")));
-        final String filename = args[1];
-
-        final File file = new File(filename);
+        // Everything but the first argument must be the filenames we want to compile
+        final List<String> filenames = new ArrayList<>(Arrays.asList(Arrays.copyOfRange(args, 1, args.length)));
 
         System.out.println("Started running at: " + new Date().toString());
-
-        System.out.println("Trying to compile " + filename);
+        System.out.println("Trying to compile " + filenames);
         System.out.println("Classpath is: " + classPath);
+        System.out.println();
 
-        FailedTestRemover failedTestRemover = new FailedTestRemover(filename, classPath, "out/" + file.getName());
+        FailedTestRemover failedTestRemover = new FailedTestRemover(filenames, classPath);
         failedTestRemover.run();
+    }
+
+    private FailedTestRemover(final List<String> filenames, final String classPath)
+            throws IOException, ParseException {
+        for (final String filename : filenames) {
+            final File file = new File(filename);
+            javaFiles.add(new JavaFile(filename, classPath, OUT_DIR + "/" + file.getName()));
+        }
+    }
+
+    /**
+     * Tries to repeatedly compile/fix errors for each file.
+     */
+    private void run() throws Exception {
+        for (final JavaFile javaFile : javaFiles) {
+            run(javaFile);
+        }
     }
 
     /**
      * Tries to repeatedly compile the file until there were no errors that occurred during compilation.
      * @throws Exception
      */
-    private void run() throws Exception {
+    private void run(final JavaFile javaFile) throws Exception {
         int errorCount = -1;
         while (errorCount != 0) {
-            DiagnosticCollector<JavaFileObject> diagnostics = javaFile.tryCompile();
+            System.out.println("Trying to compile: " + javaFile.getFilename());
+            final DiagnosticCollector<JavaFileObject> diagnostics = javaFile.tryCompile();
 
             errorCount = getDiagnosticCount(diagnostics, Diagnostic.Kind.ERROR);
 
@@ -269,26 +286,29 @@ public class FailedTestRemover {
 
             final List<MethodDeclaration> methodsWithErrors = javaFile.getMethodsWithErrors(diagnostics);
 
-            System.out.print("Removing: ");
-            for (int i = 0; i < methodsWithErrors.size(); i++) {
-                MethodDeclaration method = methodsWithErrors.get(i);
+            if (methodsWithErrors.size() > 0) {
+                System.out.print("Removing: ");
 
-                if (i + 1 == methodsWithErrors.size()) {
-                    System.out.print(method.getName());
-                } else {
-                    System.out.print(method.getName() + ", ");
+                for (int i = 0; i < methodsWithErrors.size(); i++) {
+                    MethodDeclaration method = methodsWithErrors.get(i);
+
+                    if (i + 1 == methodsWithErrors.size()) {
+                        System.out.print(method.getName());
+                    } else {
+                        System.out.print(method.getName() + ", ");
+                    }
+
+                    final RemovedMethod removedMethod = javaFile.removeMethod(method);
+
+                    if (removedMethod != null) {
+                        removedMethods.add(removedMethod);
+                    } else {
+                        throw new Exception("Failed to remove " + method.getName() + "!");
+                    }
                 }
 
-                final RemovedMethod removedMethod = javaFile.removeMethod(method);
-
-                if (removedMethod != null) {
-                    removedMethods.add(removedMethod);
-                } else {
-                    throw new Exception("Failed to remove " + method.getName() + "!");
-                }
+                System.out.println();
             }
-
-            System.out.println();
 
             javaFile.writeAndReloadCompilationUnit();
         }
@@ -296,6 +316,7 @@ public class FailedTestRemover {
         writeAutoRemovedMethodList();
 
         System.out.println("Successfully compiled at: " + new Date().toString());
+        System.out.println();
     }
 
     /**
@@ -346,6 +367,7 @@ public class FailedTestRemover {
             if (path.endsWith("*")) {
                 path = path.substring(0, path.length() - 1);
                 File pathFile = new File(path);
+                System.out.println(path);
                 for (File file : pathFile.listFiles()) {
                     if (file.isFile() && file.getName().endsWith(".jar")) {
                         sb.append(path);
