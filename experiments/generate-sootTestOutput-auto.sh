@@ -46,11 +46,9 @@ cd ..
 
 echo Trying to compile tests with new subject.
 mkdir -p out
-# Only look for the ones with the numbers (the others files just reference the files with numbers after them), the rest will get compiled later
-for i in $(ls | grep -E "[0-9]+\.java$")
-do
-    java -cp $DT_TOOLS: edu.washington.cs.dt.impact.tools.FailedTestRemover $NEW_DT_LIBS:$NEW_DT_CLASS:$DT_TOOLS: $i
-done
+# Only look for the ones with the numbers (the others just reference the files with numbers after them, which messes with everything)
+# ErrorTest.java and RegressionTest.java will get compiled later (in "execute the correct javac line..." below)
+java -cp $DT_TOOLS: edu.washington.cs.dt.impact.tools.FailedTestRemover $NEW_DT_LIBS:$NEW_DT_CLASS:$DT_TOOLS: $(ls | grep -E "[0-9]+\.java$")
 
 # Move the java files from the out dir to the randoop dir
 cd out
