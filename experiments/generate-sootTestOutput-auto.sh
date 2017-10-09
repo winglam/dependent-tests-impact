@@ -7,11 +7,11 @@ java -cp $DT_LIBS:$DT_TOOLS: edu.washington.cs.dt.util.PublicClassFinder $SUBJ_N
 # 2. In the old-subj, generate the randoop tests. For some of our subjects we noticed that randoop either exited unexpectedly or threw some exceptions and was unable to generate tests.  In those cases, we simply removed the class that is causing the problem from old-subj-classes. See our Experiments caveats page for more details on what we omitted.
 java -ea -cp $DT_LIBS:$DT_CLASS:$DT_TOOLS_DIR/randoop.jar: randoop.main.Main gentests --classlist=$SUBJ_NAME-classes --outputlimit=5000 --ignore-flaky-tests=true
 # 3. Compile the  randoop tests that were generated
-mkdir randoop/
+mkdir -p randoop/
 mv *.java randoop/
 cd randoop/
 
-#see if ErrorTest exists, then execute the appropriate compile line 
+#see if ErrorTest exists, then execute the appropriate compile line
 count=`ls -1 ErrorTest*.java 2>/dev/null | wc -l`
 if [ $count != 0 ];
 then
@@ -20,24 +20,8 @@ else
    javac -cp $DT_LIBS:$DT_CLASS:$DT_TOOLS: RegressionTest*.java
 fi
 
-mkdir bin
+mkdir -p bin
 mv *.class ./bin
-cd $DT_SUBJ
-
-#check if auto tests are can be compiled with new subject
-cp -R randoop/ $NEW_DT_SUBJ/randoop
-cd $NEW_DT_RANDOOP
-rm -rf *.class
-cd ..
-#execute the correct javac line depending on situation to compile auto tests with NEW_DT_CLASS 
-tcount=`ls -1 ErrorTest*.java 2>/dev/null | wc -l`
-if [ $tcount != 0 ];
-then
-   javac -cp $NEW_DT_LIBS:$NEW_DT_CLASS:$DT_TOOLS: ErrorTest*.java RegressionTest*.java
-else
-   javac -cp $NEW_DT_LIBS:$NEW_DT_CLASS:$DT_TOOLS: RegressionTest*.java
-fi
-mv *.class bin/
 
 #get sootTestOutput-auto
 cd $DT_SUBJ
@@ -51,4 +35,40 @@ java -cp $DT_TOOLS:$DT_LIBS:$DT_CLASS:$JAVA_HOME/jre/lib/*: edu.washington.cs.dt
 java -cp $DT_TOOLS:$DT_LIBS:$DT_SUBJ/sootOutput/: edu.washington.cs.dt.main.ImpactMain -inputTests $SUBJ_NAME-auto-order
 mv sootTestOutput/ sootTestOutput-auto
 rm -rf sootOutput/
+
+# 7. Move auto tests to new subject
+# Move auto tests to the new subject/remove the compiled files from the old version
+cd $DT_SUBJ
+cp -R randoop/ $NEW_DT_SUBJ/
+cd $NEW_DT_RANDOOP
+rm -rf *.class
+cd ..
+
+echo Trying to compile tests with new subject.
+mkdir -p out
+# Only look for the ones with the numbers (the others just reference the files with numbers after them, which messes with everything)
+# ErrorTest.java and RegressionTest.java will get compiled later (in "execute the correct javac line..." below)
+java -cp $DT_TOOLS: edu.washington.cs.dt.impact.tools.FailedTestRemover $NEW_DT_LIBS:$NEW_DT_CLASS:$DT_TOOLS: $(ls | grep -E "[0-9]+\.java$")
+
+# Move the java files from the out dir to the randoop dir
+cd out
+mv *.java ..
+cd ..
+rm -rf out/
+
+#execute the correct javac line depending on situation to compile auto tests with NEW_DT_CLASS
+tcount=`ls -1 ErrorTest*.java 2>/dev/null | wc -l`
+if [ $tcount != 0 ];
+then
+   javac -cp $NEW_DT_LIBS:$NEW_DT_CLASS:$DT_TOOLS: ErrorTest*.java RegressionTest*.java
+else
+   javac -cp $NEW_DT_LIBS:$NEW_DT_CLASS:$DT_TOOLS: RegressionTest*.java
+fi
+mv *.class bin/
+
+# Find the automatically generated tests in the subject.
+cd $NEW_DT_SUBJ
+java -cp $DT_TOOLS:$NEW_DT_CLASS:$NEW_DT_RANDOOP:$NEW_DT_LIBS: edu.washington.cs.dt.tools.UnitTestFinder --pathOrJarFile $NEW_DT_RANDOOP \
+  --junit3and4=true
+mv allunittests.txt $SUBJ_NAME-auto-order
 
