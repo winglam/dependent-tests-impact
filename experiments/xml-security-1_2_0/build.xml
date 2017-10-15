@@ -5,24 +5,23 @@
               directory with the processing instruction <?eclipse.ant.import?>
               as the first entry and export the buildfile again. --><project basedir="." default="build" name="xml-security-1_2_0">
     <property environment="env"/>
-    <property name="xml-security-commons.location" value="../xml-security-commons"/>
     <property name="debuglevel" value="source,lines,vars"/>
     <property name="target" value="1.7"/>
     <property name="source" value="1.7"/>
     <path id="xml-security-1_2_0.classpath">
         <pathelement location="bin"/>
-        <pathelement location="${xml-security-commons.location}/libs/bc-jce-jdk13-114.jar"/>
-        <pathelement location="${xml-security-commons.location}/libs/commons-logging-api.jar"/>
-        <pathelement location="${xml-security-commons.location}/libs/commons-logging.jar"/>
-        <pathelement location="${xml-security-commons.location}/libs/log4j-1.2.8.jar"/>
-        <pathelement location="${xml-security-commons.location}/libs/style-apachexml.jar"/>
-        <pathelement location="${xml-security-commons.location}/libs/stylebook-1.0-b3_xalan-2.jar"/>
-        <pathelement location="${xml-security-commons.location}/libs/xalan.jar"/>
-        <pathelement location="${xml-security-commons.location}/libs/xercesImpl.jar"/>
-        <pathelement location="${xml-security-commons.location}/libs/xml-apis.jar"/>
-        <pathelement location="${xml-security-commons.location}/libs/xmlParserAPIs.jar"/>
-        <pathelement location="${xml-security-commons.location}/libs/junit3.8.1.jar"/>
-        <pathelement location="${xml-security-commons.location}/libs/ant.jar"/>
+        <pathelement location="lib/bc-jce-jdk13-114.jar"/>
+        <pathelement location="lib/commons-logging-api.jar"/>
+        <pathelement location="lib/commons-logging.jar"/>
+        <pathelement location="lib/log4j-1.2.8.jar"/>
+        <pathelement location="lib/style-apachexml.jar"/>
+        <pathelement location="lib/stylebook-1.0-b3_xalan-2.jar"/>
+        <pathelement location="lib/xalan.jar"/>
+        <pathelement location="lib/xercesImpl.jar"/>
+        <pathelement location="lib/xml-apis.jar"/>
+        <pathelement location="lib/xmlParserAPIs.jar"/>
+        <pathelement location="lib/junit3.8.1.jar"/>
+        <pathelement location="lib/ant.jar"/>
     </path>
     <target name="init">
         <mkdir dir="bin"/>
@@ -71,23 +70,23 @@
 	  <junit forkMode="once">
 	    <classpath>
 	        <pathelement location="bin"/>
-	        <pathelement location="${xml-security-commons.location}/libs/bc-jce-jdk13-114.jar"/>
-	        <pathelement location="${xml-security-commons.location}/libs/commons-logging-api.jar"/>
-	        <pathelement location="${xml-security-commons.location}/libs/commons-logging.jar"/>
-	        <pathelement location="${xml-security-commons.location}/libs/log4j-1.2.8.jar"/>
-	        <pathelement location="${xml-security-commons.location}/libs/style-apachexml.jar"/>
-	        <pathelement location="${xml-security-commons.location}/libs/stylebook-1.0-b3_xalan-2.jar"/>
-	        <pathelement location="${xml-security-commons.location}/libs/xalan.jar"/>
-	        <pathelement location="${xml-security-commons.location}/libs/xercesImpl.jar"/>
-	        <pathelement location="${xml-security-commons.location}/libs/xml-apis.jar"/>
-	        <pathelement location="${xml-security-commons.location}/libs/xmlParserAPIs.jar"/>
-	        <pathelement location="${xml-security-commons.location}/libs/junit3.8.1.jar"/>
-	        <pathelement location="${xml-security-commons.location}/libs/ant.jar"/>
+	        <pathelement location="lib/bc-jce-jdk13-114.jar"/>
+	        <pathelement location="lib/commons-logging-api.jar"/>
+	        <pathelement location="lib/commons-logging.jar"/>
+	        <pathelement location="lib/log4j-1.2.8.jar"/>
+	        <pathelement location="lib/style-apachexml.jar"/>
+	        <pathelement location="lib/stylebook-1.0-b3_xalan-2.jar"/>
+	        <pathelement location="lib/xalan.jar"/>
+	        <pathelement location="lib/xercesImpl.jar"/>
+	        <pathelement location="lib/xml-apis.jar"/>
+	        <pathelement location="lib/xmlParserAPIs.jar"/>
+	        <pathelement location="lib/junit3.8.1.jar"/>
+	        <pathelement location="lib/ant.jar"/>
 	        <pathelement location="../impact-tools/junit.jar"/>
 	        <pathelement location="../impact-tools/org.hamcrest.core_1.3.0.v201303031735.jar"/>
 		    <pathelement path="../impact-tools/ant-mvn-formatter.jar" />
 		    <pathelement location="../impact-tools/vmvm.jar"/>
-	    </classpath>    
+	    </classpath>
 	    <batchtest>
 	       <fileset dir="tests">
 	            <include name="**/*Test*" />
@@ -97,27 +96,27 @@
 		<jvmarg value="-Xbootclasspath/a:../impact-tools/vmvm.jar"/>
 		<jvmarg value="-javaagent:../impact-tools/vmvm.jar"/>
 	  </junit>
-	</target> 
+	</target>
 
     <target name="test" depends="build">
 	  <junit>
 	    <classpath>
 	        <pathelement location="bin"/>
-	        <pathelement location="${xml-security-commons.location}/libs/bc-jce-jdk13-114.jar"/>
-	        <pathelement location="${xml-security-commons.location}/libs/commons-logging-api.jar"/>
-	        <pathelement location="${xml-security-commons.location}/libs/commons-logging.jar"/>
-	        <pathelement location="${xml-security-commons.location}/libs/log4j-1.2.8.jar"/>
-	        <pathelement location="${xml-security-commons.location}/libs/style-apachexml.jar"/>
-	        <pathelement location="${xml-security-commons.location}/libs/stylebook-1.0-b3_xalan-2.jar"/>
-	        <pathelement location="${xml-security-commons.location}/libs/xalan.jar"/>
-	        <pathelement location="${xml-security-commons.location}/libs/xercesImpl.jar"/>
-	        <pathelement location="${xml-security-commons.location}/libs/xml-apis.jar"/>
-	        <pathelement location="${xml-security-commons.location}/libs/xmlParserAPIs.jar"/>
-	        <pathelement location="${xml-security-commons.location}/libs/junit3.8.1.jar"/>
-	        <pathelement location="${xml-security-commons.location}/libs/ant.jar"/>
+	        <pathelement location="lib/bc-jce-jdk13-114.jar"/>
+	        <pathelement location="lib/commons-logging-api.jar"/>
+	        <pathelement location="lib/commons-logging.jar"/>
+	        <pathelement location="lib/log4j-1.2.8.jar"/>
+	        <pathelement location="lib/style-apachexml.jar"/>
+	        <pathelement location="lib/stylebook-1.0-b3_xalan-2.jar"/>
+	        <pathelement location="lib/xalan.jar"/>
+	        <pathelement location="lib/xercesImpl.jar"/>
+	        <pathelement location="lib/xml-apis.jar"/>
+	        <pathelement location="lib/xmlParserAPIs.jar"/>
+	        <pathelement location="lib/junit3.8.1.jar"/>
+	        <pathelement location="lib/ant.jar"/>
 	        <pathelement location="../impact-tools/junit.jar"/>
 	        <pathelement location="../impact-tools/org.hamcrest.core_1.3.0.v201303031735.jar"/>
-	    </classpath>    
+	    </classpath>
 	    <batchtest>
 	       <fileset dir="tests">
 	            <include name="**/*Test*" />
@@ -125,5 +124,5 @@
 	    </batchtest>
 	    <formatter type="brief" />
 	  </junit>
-	</target> 
+	</target>
 </project>
