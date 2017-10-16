@@ -1,3 +1,13 @@
+# Directory for where all of the old subject's information is stored.
+export DT_SUBJ=$DT_SUBJ_ROOT
+# Directory containing the old subject's src directory.
+export DT_SUBJ_SRC=$DT_SUBJ_ROOT
+
+# Directory for where all of the new subject's information is stored.
+export NEW_DT_SUBJ=$NEW_DT_SUBJ_ROOT
+# Directory containing the new subject's src directory.
+export NEW_DT_SUBJ_SRC=$NEW_DT_SUBJ_ROOT
+
 # Root directory for our tools and results
 export DT_ROOT=/home/user/dependent-tests-impact/experiments
 
