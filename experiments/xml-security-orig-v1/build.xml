@@ -5,23 +5,24 @@
               directory with the processing instruction <?eclipse.ant.import?>
               as the first entry and export the buildfile again. --><project xmlns:jacoco="antlib:org.jacoco.ant" basedir="." default="build" name="xml-security-orig-v1">
     <property environment="env"/>
+    <property name="xml-security-commons.location" value="../xml-security-commons"/>
     <property name="debuglevel" value="source,lines,vars"/>
     <property name="target" value="1.6"/>
     <property name="source" value="1.6"/>
     <path id="xml-security-orig-v1.classpath">
         <pathelement location="bin"/>
-        <pathelement location="lib/bc-jce-jdk13-114.jar"/>
-        <pathelement location="lib/commons-logging-api.jar"/>
-        <pathelement location="lib/commons-logging.jar"/>
-        <pathelement location="lib/log4j-1.2.8.jar"/>
-        <pathelement location="lib/style-apachexml.jar"/>
-        <pathelement location="lib/stylebook-1.0-b3_xalan-2.jar"/>
-        <pathelement location="lib/xalan.jar"/>
-        <pathelement location="lib/xercesImpl.jar"/>
-        <pathelement location="lib/xml-apis.jar"/>
-        <pathelement location="lib/xmlParserAPIs.jar"/>
-        <pathelement location="lib/junit3.8.1.jar"/>
-        <pathelement location="lib/ant.jar"/>
+        <pathelement location="${xml-security-commons.location}/libs/bc-jce-jdk13-114.jar"/>
+        <pathelement location="${xml-security-commons.location}/libs/commons-logging-api.jar"/>
+        <pathelement location="${xml-security-commons.location}/libs/commons-logging.jar"/>
+        <pathelement location="${xml-security-commons.location}/libs/log4j-1.2.8.jar"/>
+        <pathelement location="${xml-security-commons.location}/libs/style-apachexml.jar"/>
+        <pathelement location="${xml-security-commons.location}/libs/stylebook-1.0-b3_xalan-2.jar"/>
+        <pathelement location="${xml-security-commons.location}/libs/xalan.jar"/>
+        <pathelement location="${xml-security-commons.location}/libs/xercesImpl.jar"/>
+        <pathelement location="${xml-security-commons.location}/libs/xml-apis.jar"/>
+        <pathelement location="${xml-security-commons.location}/libs/xmlParserAPIs.jar"/>
+        <pathelement location="${xml-security-commons.location}/libs/junit3.8.1.jar"/>
+        <pathelement location="${xml-security-commons.location}/libs/ant.jar"/>
     </path>
     <target name="init">
         <mkdir dir="bin"/>
@@ -74,18 +75,18 @@
 
 	<!-- Change below this line -->
     <path id="j.classpath">
-        <pathelement location="lib/bc-jce-jdk13-114.jar"/>
-        <pathelement location="lib/commons-logging-api.jar"/>
-        <pathelement location="lib/commons-logging.jar"/>
-        <pathelement location="lib/log4j-1.2.8.jar"/>
-        <pathelement location="lib/style-apachexml.jar"/>
-        <pathelement location="lib/stylebook-1.0-b3_xalan-2.jar"/>
-        <pathelement location="lib/xalan.jar"/>
-        <pathelement location="lib/xercesImpl.jar"/>
-        <pathelement location="lib/xml-apis.jar"/>
-        <pathelement location="lib/xmlParserAPIs.jar"/>
-        <pathelement location="lib/junit3.8.1.jar"/>
-        <pathelement location="lib/ant.jar"/>
+        <pathelement location="${xml-security-commons.location}/libs/bc-jce-jdk13-114.jar"/>
+        <pathelement location="${xml-security-commons.location}/libs/commons-logging-api.jar"/>
+        <pathelement location="${xml-security-commons.location}/libs/commons-logging.jar"/>
+        <pathelement location="${xml-security-commons.location}/libs/log4j-1.2.8.jar"/>
+        <pathelement location="${xml-security-commons.location}/libs/style-apachexml.jar"/>
+        <pathelement location="${xml-security-commons.location}/libs/stylebook-1.0-b3_xalan-2.jar"/>
+        <pathelement location="${xml-security-commons.location}/libs/xalan.jar"/>
+        <pathelement location="${xml-security-commons.location}/libs/xercesImpl.jar"/>
+        <pathelement location="${xml-security-commons.location}/libs/xml-apis.jar"/>
+        <pathelement location="${xml-security-commons.location}/libs/xmlParserAPIs.jar"/>
+        <pathelement location="${xml-security-commons.location}/libs/junit3.8.1.jar"/>
+        <pathelement location="${xml-security-commons.location}/libs/ant.jar"/>
     </path>
 
 	<property name="src.dir" location="./src"/>
@@ -128,17 +129,17 @@
 			<classpath>
 				<pathelement location="${result.classes.instr.dir}"/>
 				<!-- Duplicate JUnit in XML's classpath causes the tests to hang-->
-				<pathelement location="lib/bc-jce-jdk13-114.jar"/>
-				<pathelement location="lib/commons-logging-api.jar"/>
-				<pathelement location="lib/commons-logging.jar"/>
-				<pathelement location="lib/log4j-1.2.8.jar"/>
-				<pathelement location="lib/style-apachexml.jar"/>
-				<pathelement location="lib/stylebook-1.0-b3_xalan-2.jar"/>
-				<pathelement location="lib/xalan.jar"/>
-				<pathelement location="lib/xercesImpl.jar"/>
-				<pathelement location="lib/xml-apis.jar"/>
-				<pathelement location="lib/xmlParserAPIs.jar"/>
-				<pathelement location="lib/ant.jar"/>
+				<pathelement location="${xml-security-commons.location}/libs/bc-jce-jdk13-114.jar"/>
+				<pathelement location="${xml-security-commons.location}/libs/commons-logging-api.jar"/>
+				<pathelement location="${xml-security-commons.location}/libs/commons-logging.jar"/>
+				<pathelement location="${xml-security-commons.location}/libs/log4j-1.2.8.jar"/>
+				<pathelement location="${xml-security-commons.location}/libs/style-apachexml.jar"/>
+				<pathelement location="${xml-security-commons.location}/libs/stylebook-1.0-b3_xalan-2.jar"/>
+				<pathelement location="${xml-security-commons.location}/libs/xalan.jar"/>
+				<pathelement location="${xml-security-commons.location}/libs/xercesImpl.jar"/>
+				<pathelement location="${xml-security-commons.location}/libs/xml-apis.jar"/>
+				<pathelement location="${xml-security-commons.location}/libs/xmlParserAPIs.jar"/>
+				<pathelement location="${xml-security-commons.location}/libs/ant.jar"/>
 
 				<pathelement location="./data"/>
 				<pathelement location="../impact-tools/jacocoagent.jar"/>
@@ -162,7 +163,7 @@
 		<!--  Step 4: Create coverage report  -->
 		<jacoco:report>
 			<!--
-			 This task needs the collected execution data and ...
+			 This task needs the collected execution data and ... 
 			-->
 			<executiondata>
 				<file file="./jacoco.exec"/>
@@ -188,17 +189,17 @@
             <classpath>
 				<pathelement location="${result.classes.instr.dir}"/>
 				<!-- Duplicate JUnit in XML's classpath causes the tests to hang-->
-				<pathelement location="lib/bc-jce-jdk13-114.jar"/>
-				<pathelement location="lib/commons-logging-api.jar"/>
-				<pathelement location="lib/commons-logging.jar"/>
-				<pathelement location="lib/log4j-1.2.8.jar"/>
-				<pathelement location="lib/style-apachexml.jar"/>
-				<pathelement location="lib/stylebook-1.0-b3_xalan-2.jar"/>
-				<pathelement location="lib/xalan.jar"/>
-				<pathelement location="lib/xercesImpl.jar"/>
-				<pathelement location="lib/xml-apis.jar"/>
-				<pathelement location="lib/xmlParserAPIs.jar"/>
-				<pathelement location="lib/ant.jar"/>
+				<pathelement location="${xml-security-commons.location}/libs/bc-jce-jdk13-114.jar"/>
+				<pathelement location="${xml-security-commons.location}/libs/commons-logging-api.jar"/>
+				<pathelement location="${xml-security-commons.location}/libs/commons-logging.jar"/>
+				<pathelement location="${xml-security-commons.location}/libs/log4j-1.2.8.jar"/>
+				<pathelement location="${xml-security-commons.location}/libs/style-apachexml.jar"/>
+				<pathelement location="${xml-security-commons.location}/libs/stylebook-1.0-b3_xalan-2.jar"/>
+				<pathelement location="${xml-security-commons.location}/libs/xalan.jar"/>
+				<pathelement location="${xml-security-commons.location}/libs/xercesImpl.jar"/>
+				<pathelement location="${xml-security-commons.location}/libs/xml-apis.jar"/>
+				<pathelement location="${xml-security-commons.location}/libs/xmlParserAPIs.jar"/>
+				<pathelement location="${xml-security-commons.location}/libs/ant.jar"/>
 
 				<pathelement location="./data"/>
 				<pathelement location="../impact-tools/jacocoagent.jar"/>
@@ -222,7 +223,7 @@
         <!--  Step 4: Create coverage report  -->
         <jacoco:report>
             <!--
-             This task needs the collected execution data and ...
+             This task needs the collected execution data and ... 
             -->
             <executiondata>
                 <file file="./jacoco.exec"/>

@@ -10,3 +10,7 @@ export SUBJ_NAME=xml_security
 export SUBJ_NAME_FORMAL="XML Security"
 
 source ../setup-vars-ant.sh
+
+# Override some of the variables we just set because xml security setup is a little different.
+export DT_LIBS=/home/user/dependent-tests-impact/experiments/xml-security-commons/libs/*
+export NEW_DT_LIBS=/home/user/dependent-tests-impact/experiments/xml-security-commons/libs/*
