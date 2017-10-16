@@ -10,10 +10,10 @@
     <property name="source" value="1.7"/>
     <path id="crystal.classpath">
         <pathelement location="bin"/>
-        <pathelement location="libs/lib/commons-io-1.4.jar"/>
-        <pathelement location="libs/lib/hgKit-279.jar"/>
-        <pathelement location="libs/lib/jdom-1.1.jar"/>
-        <pathelement location="libs/lib/log4j-1.2.15.jar"/>
+        <pathelement location="lib/lib/commons-io-1.4.jar"/>
+        <pathelement location="lib/lib/hgKit-279.jar"/>
+        <pathelement location="lib/lib/jdom-1.1.jar"/>
+        <pathelement location="lib/lib/log4j-1.2.15.jar"/>
         <pathelement location="../impact-tools/junit.jar"/>
         <pathelement location="../impact-tools/org.hamcrest.core_1.3.0.v201303031735.jar"/>
     </path>
@@ -60,18 +60,18 @@
         <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
         <antcall target="build"/>
     </target>
-    
+
     <target name="test" depends="build">
 	  <junit>
 	    <classpath>
 	        <pathelement location="bin"/>
-	        <pathelement location="libs/lib/commons-io-1.4.jar"/>
-	        <pathelement location="libs/lib/hgKit-279.jar"/>
-	        <pathelement location="libs/lib/jdom-1.1.jar"/>
-	        <pathelement location="libs/lib/log4j-1.2.15.jar"/>
+	        <pathelement location="lib/lib/commons-io-1.4.jar"/>
+	        <pathelement location="lib/lib/hgKit-279.jar"/>
+	        <pathelement location="lib/lib/jdom-1.1.jar"/>
+	        <pathelement location="lib/lib/log4j-1.2.15.jar"/>
 	        <pathelement location="../impact-tools/junit.jar"/>
 	        <pathelement location="../impact-tools/org.hamcrest.core_1.3.0.v201303031735.jar"/>
-	    </classpath>    
+	    </classpath>
 	    <batchtest>
 	       <fileset dir="tests">
 	            <include name="**/*Test*" />
@@ -79,5 +79,5 @@
 	    </batchtest>
 	    <formatter type="brief" />
 	  </junit>
-	</target> 
+	</target>
 </project>

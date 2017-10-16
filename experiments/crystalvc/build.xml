@@ -72,7 +72,7 @@
 	        <pathelement location="../impact-tools/org.hamcrest.core_1.3.0.v201303031735.jar"/>
 		    <pathelement path="ant-mvn-formatter.jar" />
 		    <pathelement location="vmvm.jar"/>
-	    </classpath>    
+	    </classpath>
 	    <batchtest>
 	       <fileset dir="tests">
 	            <include name="**/*Test*" />
@@ -82,7 +82,7 @@
 		<jvmarg value="-Xbootclasspath/a:vmvm.jar"/>
 		<jvmarg value="-javaagent:vmvm.jar"/>
 	  </junit>
-	</target> 
+	</target>
 
 <!-- Jacoco stuff -->
 	<taskdef uri="antlib:org.jacoco.ant" resource="org/jacoco/ant/antlib.xml">
@@ -167,7 +167,7 @@
 		<!--  Step 4: Create coverage report  -->
 		<jacoco:report>
 			<!--
-			 This task needs the collected execution data and ... 
+			 This task needs the collected execution data and ...
 			-->
 			<executiondata>
 				<file file="./jacoco.exec"/>
@@ -217,7 +217,7 @@
         <!--  Step 4: Create coverage report  -->
         <jacoco:report>
             <!--
-             This task needs the collected execution data and ... 
+             This task needs the collected execution data and ...
             -->
             <executiondata>
                 <file file="./jacoco.exec"/>
