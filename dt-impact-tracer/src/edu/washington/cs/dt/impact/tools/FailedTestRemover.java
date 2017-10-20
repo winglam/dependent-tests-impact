@@ -19,56 +19,7 @@ public class FailedTestRemover {
     private static final String OUT_DIR = "out";
 
     private final List<JavaFile> javaFiles = new ArrayList<>();
-    private final List<RemovedMethod> removedMethods = new ArrayList<>();
-
-    /**
-     * A method that has been removed from the file because an error occurred in it.
-     */
-    private class RemovedMethod {
-        private final PackageDeclaration packageDeclaration;
-        private final ClassOrInterfaceDeclaration classDeclaration;
-        private final MethodDeclaration method;
-
-        private RemovedMethod(final PackageDeclaration packageDeclaration,
-                              final ClassOrInterfaceDeclaration classDeclaration,
-                              final MethodDeclaration method) {
-            this.packageDeclaration = packageDeclaration;
-            this.classDeclaration = classDeclaration;
-            this.method = method;
-        }
-
-        /**
-         * Ex: For int f(int a, int b), returns "int a, int b"
-         * @returns A string containing the parameters separated by commas.
-         */
-        private String getParametersAsString() {
-            String result = "";
-
-            for (int i = 0; i < method.getParameters().size(); i++) {
-                final Parameter parameter = method.getParameters().get(i);
-
-                result += parameter.toString();
-
-                if (i != (method.getParameters().size() - 1)) {
-                    result += ", ";
-                }
-            }
-
-            return result;
-        }
-
-        /**
-         * @returns The fully qualified name of this method: packageName.className.methodName(paramNames)
-         */
-        private String getFullyQualifiedName() {
-            final String packageName = packageDeclaration != null ? packageDeclaration.getPackageName() + "." : "";
-
-            // Not using .getDeclarationAsString because it includes the return type, which wouldn't work with concatting below
-            final String methodName = method.getName() + "(" + getParametersAsString() + ")";
-
-            return packageName + classDeclaration.getName() + "." + methodName;
-        }
-    }
+    private final List<String> removedMethods = new ArrayList<>();
 
     /**
      * The basic Java file which supports compiling/removing methods.
@@ -135,14 +86,14 @@ public class FailedTestRemover {
         /**
          * Attempts to remove the method declaration.
          * @param method The method declaration to remove.
-         * @return A RemovedMethod object for the method if found, null otherwise.
+         * @return A String of the fully qualified name of the method removed if found, null otherwise.
          */
-        private RemovedMethod removeMethod(final MethodDeclaration method) {
+        private String removeMethod(final MethodDeclaration method) {
             for (final ClassOrInterfaceDeclaration classDeclaration : classList) {
                 final boolean success = classDeclaration.getMembers().remove(method);
 
                 if (success) {
-                    return new RemovedMethod(compilationUnit.getPackage(), classDeclaration, method);
+                    return createRemovedMethodString(compilationUnit.getPackage(), classDeclaration, method);
                 }
             }
 
@@ -262,6 +213,41 @@ public class FailedTestRemover {
     }
 
     /**
+     * Ex: For int f(int a, int b), returns "int a, int b"
+     * @returns A string containing the parameters separated by commas.
+     */
+    private static String getParametersAsString(final MethodDeclaration method) {
+        String result = "";
+
+        for (int i = 0; i < method.getParameters().size(); i++) {
+            final Parameter parameter = method.getParameters().get(i);
+
+            result += parameter.toString();
+
+            if (i != (method.getParameters().size() - 1)) {
+                result += ", ";
+            }
+        }
+
+        return result;
+    }
+
+    /**
+     * @returns The fully qualified name of this method: packageName.className.methodName(paramNames)
+     */
+    private static String createRemovedMethodString(final PackageDeclaration packageDeclaration,
+                                                    final ClassOrInterfaceDeclaration classDeclaration,
+                                                    final MethodDeclaration method) {
+        final String packageName = packageDeclaration != null ? packageDeclaration.getPackageName() + "." : "";
+
+        // Not using .getDeclarationAsString because it includes the return type, which wouldn't work with concatting below
+        final String methodName = method.getName() + "(" + getParametersAsString(method) + ")";
+
+        return packageName + classDeclaration.getName() + "." + methodName;
+    }
+
+
+    /**
      * Tries to repeatedly compile/fix errors for each file.
      */
     private void run() throws Exception {
@@ -299,7 +285,7 @@ public class FailedTestRemover {
                         System.out.print(method.getName() + ", ");
                     }
 
-                    final RemovedMethod removedMethod = javaFile.removeMethod(method);
+                    final String removedMethod = javaFile.removeMethod(method);
 
                     if (removedMethod != null) {
                         removedMethods.add(removedMethod);
@@ -331,8 +317,8 @@ public class FailedTestRemover {
         if (removedMethods.size() == 0) {
             builder.append("# There were no tests that failed to compiled.");
         } else {
-            for (final RemovedMethod method : removedMethods) {
-                builder.append(method.getFullyQualifiedName() + "\n");
+            for (final String methodName : removedMethods) {
+                builder.append(methodName + "\n");
             }
         }
 
