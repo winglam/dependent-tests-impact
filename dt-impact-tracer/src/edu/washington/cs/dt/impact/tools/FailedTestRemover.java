@@ -31,14 +31,15 @@ public class FailedTestRemover {
         private final String classPath;
         private final String outfileName;
 
-        private JavaFile(String filename, String classPath, String outfileName)
-                throws IOException, ParseException {
-            final File sourceFile = new File(filename);
-            compilationUnit = JavaParser.parse(sourceFile);
-
+        private JavaFile(String filename, String classPath, String outfileName) {
             this.filename = filename;
             this.classPath = classPath;
             this.outfileName = outfileName;
+        }
+
+        private void open() throws IOException, ParseException {
+            final File sourceFile = new File(filename);
+            compilationUnit = JavaParser.parse(sourceFile);
         }
 
         private String getFilename() {
@@ -251,7 +252,9 @@ public class FailedTestRemover {
      * Tries to repeatedly compile/fix errors for each file.
      */
     private void run() throws Exception {
-        for (final JavaFile javaFile : javaFiles) {
+        while (javaFiles.size() > 0) {
+            final JavaFile javaFile = javaFiles.remove(0);
+            javaFile.open();
             run(javaFile);
         }
     }
