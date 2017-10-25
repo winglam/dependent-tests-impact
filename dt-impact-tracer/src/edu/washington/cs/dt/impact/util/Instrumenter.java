@@ -60,6 +60,8 @@ public class Instrumenter extends BodyTransformer{
     private static TECHNIQUE technique = Constants.DEFAULT_TECHNIQUE;
 
     public Instrumenter() {
+	Scene.v().setSootClassPath(System.getProperty("java.class.path"));
+
         tracerClass = Scene.v().loadClassAndSupport("edu.washington.cs.dt.impact.util.Tracer");
         trace = tracerClass.getMethodByName("trace");
         selectionTrace = tracerClass.getMethodByName("selectionTrace");
