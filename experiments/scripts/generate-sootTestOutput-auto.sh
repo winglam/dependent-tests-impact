@@ -36,16 +36,6 @@ java -cp $DT_TOOLS:$DT_LIBS:$DT_SUBJ/sootOutput/: edu.washington.cs.dt.main.Impa
 mv sootTestOutput/ sootTestOutput-auto
 rm -rf sootOutput/
 
-# Need to compile new subject/gather dependencies before auto generating tests
-# as the step for copying auto generated tests to new subj requires new subject's classes.
-# 1. Compile the new subject.
-cd $NEW_DT_SUBJ_ROOT
-mvn compile
-mvn test-compile
-
-# 2. Gather the dependencies of the new subject.
-mvn install -fn -DskipTests dependency:copy-dependencies
-
 # 7. Move auto tests to new subject
 # Move auto tests to the new subject/remove the compiled files from the old version
 cd $DT_SUBJ
