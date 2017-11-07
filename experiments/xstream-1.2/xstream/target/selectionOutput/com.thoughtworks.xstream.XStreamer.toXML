@@ -1,0 +1,16 @@
+com.thoughtworks.xstream.XStreamer.toXML : $r4 = new com.thoughtworks.xstream.XStream >>>>>>>> com.thoughtworks.xstream.XStreamer.toXML : specialinvoke $r4.<com.thoughtworks.xstream.XStream: void <init>()>()
+com.thoughtworks.xstream.XStreamer.toXML : specialinvoke $r4.<com.thoughtworks.xstream.XStream: void <init>()>() >>>>>>>> com.thoughtworks.xstream.XStreamer.toXML : r5 = $r4
+com.thoughtworks.xstream.XStreamer.toXML : r5 = $r4 >>>>>>>> com.thoughtworks.xstream.XStreamer.toXML : r6 = virtualinvoke r5.<com.thoughtworks.xstream.XStream: java.io.ObjectOutputStream createObjectOutputStream(java.io.Writer)>(r3)
+com.thoughtworks.xstream.XStreamer.toXML : r6 = virtualinvoke r5.<com.thoughtworks.xstream.XStream: java.io.ObjectOutputStream createObjectOutputStream(java.io.Writer)>(r3) >>>>>>>> com.thoughtworks.xstream.XStreamer.toXML : virtualinvoke r6.<java.io.ObjectOutputStream: void writeObject(java.lang.Object)>(r1)
+com.thoughtworks.xstream.XStreamer.toXML : r6 = virtualinvoke r5.<com.thoughtworks.xstream.XStream: java.io.ObjectOutputStream createObjectOutputStream(java.io.Writer)>(r3) >>>>>>>> com.thoughtworks.xstream.XStreamer.toXML : $r8 := @caughtexception
+com.thoughtworks.xstream.XStreamer.toXML : r7 = $r8 >>>>>>>> com.thoughtworks.xstream.XStreamer.toXML : virtualinvoke r6.<java.io.ObjectOutputStream: void close()>()
+com.thoughtworks.xstream.XStreamer.toXML : r7 = $r8 >>>>>>>> com.thoughtworks.xstream.XStreamer.toXML : $r8 := @caughtexception
+com.thoughtworks.xstream.XStreamer.toXML : virtualinvoke r6.<java.io.ObjectOutputStream: void close()>() >>>>>>>> com.thoughtworks.xstream.XStreamer.toXML : throw r7
+com.thoughtworks.xstream.XStreamer.toXML : virtualinvoke r6.<java.io.ObjectOutputStream: void writeObject(java.lang.Object)>(r1) >>>>>>>> com.thoughtworks.xstream.XStreamer.toXML : virtualinvoke r6.<java.io.ObjectOutputStream: void flush()>()
+com.thoughtworks.xstream.XStreamer.toXML : virtualinvoke r6.<java.io.ObjectOutputStream: void writeObject(java.lang.Object)>(r1) >>>>>>>> com.thoughtworks.xstream.XStreamer.toXML : $r8 := @caughtexception
+com.thoughtworks.xstream.XStreamer.toXML : virtualinvoke r6.<java.io.ObjectOutputStream: void flush()>() >>>>>>>> com.thoughtworks.xstream.XStreamer.toXML : virtualinvoke r1.<com.thoughtworks.xstream.XStream: void toXML(java.lang.Object,java.io.Writer)>(r2, r3)
+com.thoughtworks.xstream.XStreamer.toXML : virtualinvoke r6.<java.io.ObjectOutputStream: void flush()>() >>>>>>>> com.thoughtworks.xstream.XStreamer.toXML : $r8 := @caughtexception
+com.thoughtworks.xstream.XStreamer.toXML : virtualinvoke r1.<com.thoughtworks.xstream.XStream: void toXML(java.lang.Object,java.io.Writer)>(r2, r3) >>>>>>>> com.thoughtworks.xstream.XStreamer.toXML : virtualinvoke r6.<java.io.ObjectOutputStream: void close()>()
+com.thoughtworks.xstream.XStreamer.toXML : virtualinvoke r1.<com.thoughtworks.xstream.XStream: void toXML(java.lang.Object,java.io.Writer)>(r2, r3) >>>>>>>> com.thoughtworks.xstream.XStreamer.toXML : $r8 := @caughtexception
+com.thoughtworks.xstream.XStreamer.toXML : virtualinvoke r6.<java.io.ObjectOutputStream: void close()>() >>>>>>>> com.thoughtworks.xstream.XStreamer.toXML : goto [?= return]
+com.thoughtworks.xstream.XStreamer.toXML : goto [?= return] >>>>>>>> com.thoughtworks.xstream.XStreamer.toXML : return

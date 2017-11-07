@@ -1,0 +1,20 @@
+com.thoughtworks.xstream.core.JVM.isBEAWithUnsafeSupport : $r2 = staticinvoke <java.lang.System: java.lang.String getProperty(java.lang.String)>("java.vm.vendor") >>>>>>>> com.thoughtworks.xstream.core.JVM.isBEAWithUnsafeSupport : $i0 = virtualinvoke $r2.<java.lang.String: int indexOf(java.lang.String)>("BEA")
+com.thoughtworks.xstream.core.JVM.isBEAWithUnsafeSupport : $i0 = virtualinvoke $r2.<java.lang.String: int indexOf(java.lang.String)>("BEA") >>>>>>>> com.thoughtworks.xstream.core.JVM.isBEAWithUnsafeSupport : if $i0 == -1
+com.thoughtworks.xstream.core.JVM.isBEAWithUnsafeSupport : if $i0 == -1 >>>>>>>> com.thoughtworks.xstream.core.JVM.isBEAWithUnsafeSupport : r0 = staticinvoke <java.lang.System: java.lang.String getProperty(java.lang.String)>("java.vm.version")
+com.thoughtworks.xstream.core.JVM.isBEAWithUnsafeSupport : if $i0 == -1 >>>>>>>> com.thoughtworks.xstream.core.JVM.isBEAWithUnsafeSupport : return 0
+com.thoughtworks.xstream.core.JVM.isBEAWithUnsafeSupport : r0 = staticinvoke <java.lang.System: java.lang.String getProperty(java.lang.String)>("java.vm.version") >>>>>>>> com.thoughtworks.xstream.core.JVM.isBEAWithUnsafeSupport : $z0 = virtualinvoke r0.<java.lang.String: boolean startsWith(java.lang.String)>("R")
+com.thoughtworks.xstream.core.JVM.isBEAWithUnsafeSupport : $z0 = virtualinvoke r0.<java.lang.String: boolean startsWith(java.lang.String)>("R") >>>>>>>> com.thoughtworks.xstream.core.JVM.isBEAWithUnsafeSupport : if $z0 == 0
+com.thoughtworks.xstream.core.JVM.isBEAWithUnsafeSupport : if $z0 == 0 >>>>>>>> com.thoughtworks.xstream.core.JVM.isBEAWithUnsafeSupport : return 1
+com.thoughtworks.xstream.core.JVM.isBEAWithUnsafeSupport : if $z0 == 0 >>>>>>>> com.thoughtworks.xstream.core.JVM.isBEAWithUnsafeSupport : r1 = staticinvoke <java.lang.System: java.lang.String getProperty(java.lang.String)>("java.vm.info")
+com.thoughtworks.xstream.core.JVM.isBEAWithUnsafeSupport : r1 = staticinvoke <java.lang.System: java.lang.String getProperty(java.lang.String)>("java.vm.info") >>>>>>>> com.thoughtworks.xstream.core.JVM.isBEAWithUnsafeSupport : if r1 == null
+com.thoughtworks.xstream.core.JVM.isBEAWithUnsafeSupport : if r1 == null >>>>>>>> com.thoughtworks.xstream.core.JVM.isBEAWithUnsafeSupport : $z1 = virtualinvoke r1.<java.lang.String: boolean startsWith(java.lang.String)>("R25.1")
+com.thoughtworks.xstream.core.JVM.isBEAWithUnsafeSupport : if r1 == null >>>>>>>> com.thoughtworks.xstream.core.JVM.isBEAWithUnsafeSupport : return 0
+com.thoughtworks.xstream.core.JVM.isBEAWithUnsafeSupport : $z1 = virtualinvoke r1.<java.lang.String: boolean startsWith(java.lang.String)>("R25.1") >>>>>>>> com.thoughtworks.xstream.core.JVM.isBEAWithUnsafeSupport : if $z1 != 0
+com.thoughtworks.xstream.core.JVM.isBEAWithUnsafeSupport : if $z1 != 0 >>>>>>>> com.thoughtworks.xstream.core.JVM.isBEAWithUnsafeSupport : $z2 = virtualinvoke r1.<java.lang.String: boolean startsWith(java.lang.String)>("R25.2")
+com.thoughtworks.xstream.core.JVM.isBEAWithUnsafeSupport : if $z1 != 0 >>>>>>>> com.thoughtworks.xstream.core.JVM.isBEAWithUnsafeSupport : $z3 = 1
+com.thoughtworks.xstream.core.JVM.isBEAWithUnsafeSupport : $z3 = 1 >>>>>>>> com.thoughtworks.xstream.core.JVM.isBEAWithUnsafeSupport : goto [?= return $z3]
+com.thoughtworks.xstream.core.JVM.isBEAWithUnsafeSupport : goto [?= return $z3] >>>>>>>> com.thoughtworks.xstream.core.JVM.isBEAWithUnsafeSupport : return $z3
+com.thoughtworks.xstream.core.JVM.isBEAWithUnsafeSupport : $z2 = virtualinvoke r1.<java.lang.String: boolean startsWith(java.lang.String)>("R25.2") >>>>>>>> com.thoughtworks.xstream.core.JVM.isBEAWithUnsafeSupport : if $z2 == 0
+com.thoughtworks.xstream.core.JVM.isBEAWithUnsafeSupport : if $z2 == 0 >>>>>>>> com.thoughtworks.xstream.core.JVM.isBEAWithUnsafeSupport : $z3 = 1
+com.thoughtworks.xstream.core.JVM.isBEAWithUnsafeSupport : if $z2 == 0 >>>>>>>> com.thoughtworks.xstream.core.JVM.isBEAWithUnsafeSupport : $z3 = 0
+com.thoughtworks.xstream.core.JVM.isBEAWithUnsafeSupport : $z3 = 0 >>>>>>>> com.thoughtworks.xstream.core.JVM.isBEAWithUnsafeSupport : return $z3

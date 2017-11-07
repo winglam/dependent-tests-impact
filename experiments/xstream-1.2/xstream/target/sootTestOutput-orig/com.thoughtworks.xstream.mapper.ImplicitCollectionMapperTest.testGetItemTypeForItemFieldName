@@ -1,0 +1,34 @@
+com.thoughtworks.xstream.mapper.ImplicitCollectionMapper$NamedItemType.hashCode : return i0
+com.thoughtworks.xstream.mapper.ImplicitCollectionMapper$NamedItemType.hashCode : $r2 = r0.<com.thoughtworks.xstream.mapper.ImplicitCollectionMapper$NamedItemType: java.lang.String itemFieldName>
+com.thoughtworks.xstream.mapper.ImplicitCollectionMapper$NamedItemType.hashCode : $r1 = r0.<com.thoughtworks.xstream.mapper.ImplicitCollectionMapper$NamedItemType: java.lang.Class itemType>
+com.thoughtworks.xstream.mapper.ImplicitCollectionMapper$NamedItemType.hashCode : $r3 = r0.<com.thoughtworks.xstream.mapper.ImplicitCollectionMapper$NamedItemType: java.lang.String itemFieldName>
+com.thoughtworks.xstream.mapper.ImplicitCollectionMapper$ImplicitCollectionMapperForClass.getItemTypeForItemFieldName : $r3 = virtualinvoke r2.<com.thoughtworks.xstream.mapper.ImplicitCollectionMapper$ImplicitCollectionMappingImpl: java.lang.Class getItemType()>()
+com.thoughtworks.xstream.mapper.ImplicitCollectionMapper$ImplicitCollectionMapperForClass.getItemTypeForItemFieldName : if r2 == null goto return null
+com.thoughtworks.xstream.mapper.ImplicitCollectionMapper$ImplicitCollectionMapperForClass.getItemTypeForItemFieldName : r2 = specialinvoke r0.<com.thoughtworks.xstream.mapper.ImplicitCollectionMapper$ImplicitCollectionMapperForClass: com.thoughtworks.xstream.mapper.ImplicitCollectionMapper$ImplicitCollectionMappingImpl getImplicitCollectionDefByItemFieldName(java.lang.String)>(r1)
+com.thoughtworks.xstream.mapper.ImplicitCollectionMapper.getMapper : if r2 == null goto r1 = virtualinvoke r1.<java.lang.Class: java.lang.Class getSuperclass()>()
+com.thoughtworks.xstream.mapper.ImplicitCollectionMapper.getMapper : return r2
+com.thoughtworks.xstream.mapper.ImplicitCollectionMapper.getMapper : return null
+com.thoughtworks.xstream.mapper.ImplicitCollectionMapper.getMapper : goto [?= staticinvoke <edu.washington.cs.dt.impact.util.Tracer: void trace(java.lang.String,java.lang.String)>("if r1 == null goto return null", "com.thoughtworks.xstream.mapper.ImplicitCollectionMapper.getMapper")]
+com.thoughtworks.xstream.mapper.ImplicitCollectionMapper.getMapper : if r1 == null goto return null
+com.thoughtworks.xstream.mapper.ImplicitCollectionMapper.getMapper : $r3 = r0.<com.thoughtworks.xstream.mapper.ImplicitCollectionMapper: java.util.Map classNameToMapper>
+com.thoughtworks.xstream.mapper.ImplicitCollectionMapper.getMapper : r1 = virtualinvoke r1.<java.lang.Class: java.lang.Class getSuperclass()>()
+com.thoughtworks.xstream.mapper.ImplicitCollectionMapper$ImplicitCollectionMapperForClass.getImplicitCollectionDefByItemFieldName : $r2 = r0.<com.thoughtworks.xstream.mapper.ImplicitCollectionMapper$ImplicitCollectionMapperForClass: java.util.Map itemFieldNameToDef>
+com.thoughtworks.xstream.mapper.ImplicitCollectionMapper$ImplicitCollectionMapperForClass.getImplicitCollectionDefByItemFieldName : if r1 != null goto $r2 = r0.<com.thoughtworks.xstream.mapper.ImplicitCollectionMapper$ImplicitCollectionMapperForClass: java.util.Map itemFieldNameToDef>
+com.thoughtworks.xstream.mapper.ImplicitCollectionMapper$ImplicitCollectionMappingImpl.getItemType : $r1 = r0.<com.thoughtworks.xstream.mapper.ImplicitCollectionMapper$ImplicitCollectionMappingImpl: java.lang.Class itemType>
+com.thoughtworks.xstream.mapper.ImplicitCollectionMapper.getItemTypeForItemFieldName : r3 = specialinvoke r0.<com.thoughtworks.xstream.mapper.ImplicitCollectionMapper: com.thoughtworks.xstream.mapper.ImplicitCollectionMapper$ImplicitCollectionMapperForClass getMapper(java.lang.Class)>(r1)
+com.thoughtworks.xstream.mapper.ImplicitCollectionMapper.getItemTypeForItemFieldName : $r4 = virtualinvoke r3.<com.thoughtworks.xstream.mapper.ImplicitCollectionMapper$ImplicitCollectionMapperForClass: java.lang.Class getItemTypeForItemFieldName(java.lang.String)>(r2)
+com.thoughtworks.xstream.mapper.ImplicitCollectionMapper.getItemTypeForItemFieldName : if r3 == null goto return null
+com.thoughtworks.xstream.mapper.ImplicitCollectionMapper$ImplicitCollectionMapperForClass.add : $r2 = r0.<com.thoughtworks.xstream.mapper.ImplicitCollectionMapper$ImplicitCollectionMapperForClass: java.util.Map fieldNameToDef>
+com.thoughtworks.xstream.mapper.ImplicitCollectionMapper$ImplicitCollectionMapperForClass.add : $r9 = r0.<com.thoughtworks.xstream.mapper.ImplicitCollectionMapper$ImplicitCollectionMapperForClass: java.util.Map itemFieldNameToDef>
+com.thoughtworks.xstream.mapper.ImplicitCollectionMapper$ImplicitCollectionMapperForClass.add : $r8 = virtualinvoke r1.<com.thoughtworks.xstream.mapper.ImplicitCollectionMapper$ImplicitCollectionMappingImpl: java.lang.String getItemFieldName()>()
+com.thoughtworks.xstream.mapper.ImplicitCollectionMapper$ImplicitCollectionMapperForClass.add : $r5 = r0.<com.thoughtworks.xstream.mapper.ImplicitCollectionMapper$ImplicitCollectionMapperForClass: java.util.Map namedItemTypeToDef>
+com.thoughtworks.xstream.mapper.ImplicitCollectionMapper$ImplicitCollectionMappingImpl.getFieldName : $r1 = r0.<com.thoughtworks.xstream.mapper.ImplicitCollectionMapper$ImplicitCollectionMappingImpl: java.lang.String fieldName>
+com.thoughtworks.xstream.mapper.ImplicitCollectionMapper.add : $r6 = new com.thoughtworks.xstream.mapper.ImplicitCollectionMapper$ImplicitCollectionMappingImpl
+com.thoughtworks.xstream.mapper.ImplicitCollectionMapper.add : r5 = specialinvoke r0.<com.thoughtworks.xstream.mapper.ImplicitCollectionMapper: com.thoughtworks.xstream.mapper.ImplicitCollectionMapper$ImplicitCollectionMapperForClass getOrCreateMapper(java.lang.Class)>(r1)
+com.thoughtworks.xstream.mapper.ImplicitCollectionMapper$ImplicitCollectionMappingImpl.getItemFieldName : $r1 = r0.<com.thoughtworks.xstream.mapper.ImplicitCollectionMapper$ImplicitCollectionMappingImpl: java.lang.String itemFieldName>
+com.thoughtworks.xstream.mapper.ImplicitCollectionMapper.getOrCreateMapper : return r2
+com.thoughtworks.xstream.mapper.ImplicitCollectionMapper.getOrCreateMapper : $r3 = new com.thoughtworks.xstream.mapper.ImplicitCollectionMapper$ImplicitCollectionMapperForClass
+com.thoughtworks.xstream.mapper.ImplicitCollectionMapper.getOrCreateMapper : r2 = specialinvoke r0.<com.thoughtworks.xstream.mapper.ImplicitCollectionMapper: com.thoughtworks.xstream.mapper.ImplicitCollectionMapper$ImplicitCollectionMapperForClass getMapper(java.lang.Class)>(r1)
+com.thoughtworks.xstream.mapper.ImplicitCollectionMapper.getOrCreateMapper : $r4 = r0.<com.thoughtworks.xstream.mapper.ImplicitCollectionMapper: java.util.Map classNameToMapper>
+com.thoughtworks.xstream.mapper.ImplicitCollectionMapper.getOrCreateMapper : if r2 != null goto return r2
+com.thoughtworks.xstream.mapper.ImplicitCollectionMapper$ImplicitCollectionMappingImpl.createNamedItemType : $r1 = new com.thoughtworks.xstream.mapper.ImplicitCollectionMapper$NamedItemType

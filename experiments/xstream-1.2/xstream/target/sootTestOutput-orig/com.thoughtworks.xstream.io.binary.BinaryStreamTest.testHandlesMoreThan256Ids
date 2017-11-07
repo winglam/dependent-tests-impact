@@ -1,0 +1,94 @@
+com.thoughtworks.xstream.io.binary.BinaryStreamReader$IdRegistry.get : return r2
+com.thoughtworks.xstream.io.binary.BinaryStreamReader$IdRegistry.get : $r3 = r0.<com.thoughtworks.xstream.io.binary.BinaryStreamReader$IdRegistry: java.util.Map map>
+com.thoughtworks.xstream.io.binary.BinaryStreamReader$IdRegistry.get : if r2 != null goto return r2
+com.thoughtworks.xstream.io.binary.BinaryStreamWriter$IdRegistry.getId : $r7 = r0.<com.thoughtworks.xstream.io.binary.BinaryStreamWriter$IdRegistry: java.util.Map ids>
+com.thoughtworks.xstream.io.binary.BinaryStreamWriter$IdRegistry.getId : if r2 != null goto $l3 = virtualinvoke r2.<java.lang.Long: long longValue()>()
+com.thoughtworks.xstream.io.binary.BinaryStreamWriter$IdRegistry.getId : $l3 = virtualinvoke r2.<java.lang.Long: long longValue()>()
+com.thoughtworks.xstream.io.binary.BinaryStreamWriter$IdRegistry.getId : $r6 = new java.lang.Long
+com.thoughtworks.xstream.io.binary.BinaryStreamWriter$IdRegistry.getId : $r9 = r0.<com.thoughtworks.xstream.io.binary.BinaryStreamWriter$IdRegistry: com.thoughtworks.xstream.io.binary.BinaryStreamWriter this$0>
+com.thoughtworks.xstream.io.binary.BinaryStreamWriter$IdRegistry.getId : $r4 = r0.<com.thoughtworks.xstream.io.binary.BinaryStreamWriter$IdRegistry: java.util.Map ids>
+com.thoughtworks.xstream.io.binary.BinaryStreamReader$IdRegistry.put : $r3 = r0.<com.thoughtworks.xstream.io.binary.BinaryStreamReader$IdRegistry: java.util.Map map>
+com.thoughtworks.xstream.io.binary.ReaderDepthState.setName : $r2 = r0.<com.thoughtworks.xstream.io.binary.ReaderDepthState: com.thoughtworks.xstream.io.binary.ReaderDepthState$State current>
+com.thoughtworks.xstream.io.binary.ReaderDepthState.push : $r1 = new com.thoughtworks.xstream.io.binary.ReaderDepthState$State
+com.thoughtworks.xstream.io.binary.ReaderDepthState.push : $r3 = r0.<com.thoughtworks.xstream.io.binary.ReaderDepthState: com.thoughtworks.xstream.io.binary.ReaderDepthState$State current>
+com.thoughtworks.xstream.io.binary.ReaderDepthState.push : r0.<com.thoughtworks.xstream.io.binary.ReaderDepthState: com.thoughtworks.xstream.io.binary.ReaderDepthState$State current> = r2
+com.thoughtworks.xstream.io.binary.BinaryStreamWriter.startNode : $r2 = new com.thoughtworks.xstream.io.binary.Token$StartNode
+com.thoughtworks.xstream.io.binary.Token.readString : $r2 = interfaceinvoke r1.<java.io.DataInput: java.lang.String readUTF()>()
+com.thoughtworks.xstream.io.binary.BinaryStreamWriter.access$100 : specialinvoke r0.<com.thoughtworks.xstream.io.binary.BinaryStreamWriter: void write(com.thoughtworks.xstream.io.binary.Token)>(r1)
+com.thoughtworks.xstream.io.binary.ReaderDepthState.hasMoreChildren : $r1 = r0.<com.thoughtworks.xstream.io.binary.ReaderDepthState: com.thoughtworks.xstream.io.binary.ReaderDepthState$State current>
+com.thoughtworks.xstream.io.binary.ReaderDepthState.setHasMoreChildren : $r1 = r0.<com.thoughtworks.xstream.io.binary.ReaderDepthState: com.thoughtworks.xstream.io.binary.ReaderDepthState$State current>
+com.thoughtworks.xstream.io.binary.BinaryStreamWriter.write : goto [?= return]
+com.thoughtworks.xstream.io.binary.BinaryStreamWriter.write : $r3 = r0.<com.thoughtworks.xstream.io.binary.BinaryStreamWriter: com.thoughtworks.xstream.io.binary.Token$Formatter tokenFormatter>
+com.thoughtworks.xstream.io.binary.Token$Formatter.contructToken : $r2 = new com.thoughtworks.xstream.io.binary.Token$MapIdToValue
+com.thoughtworks.xstream.io.binary.Token$Formatter.contructToken : $r4 = new com.thoughtworks.xstream.io.binary.Token$EndNode
+com.thoughtworks.xstream.io.binary.Token$Formatter.contructToken : tableswitch(b0) {     case 2: goto $r2 = new com.thoughtworks.xstream.io.binary.Token$MapIdToValue;     case 3: goto $r1 = new com.thoughtworks.xstream.io.binary.Token$StartNode;     case 4: goto $r4 = new com.thoughtworks.xstream.io.binary.Token$EndNode;     case 5: goto $r3 = new com.thoughtworks.xstream.io.binary.Token$Attribute;     case 6: goto $r5 = new com.thoughtworks.xstream.io.binary.Token$Value;     default: goto $r6 = new com.thoughtworks.xstream.io.StreamException; }
+com.thoughtworks.xstream.io.binary.Token$Formatter.contructToken : $r1 = new com.thoughtworks.xstream.io.binary.Token$StartNode
+com.thoughtworks.xstream.io.binary.ReaderDepthState.getName : $r1 = r0.<com.thoughtworks.xstream.io.binary.ReaderDepthState: com.thoughtworks.xstream.io.binary.ReaderDepthState$State current>
+com.thoughtworks.xstream.io.binary.Token$Formatter.read : return r2
+com.thoughtworks.xstream.io.binary.Token$Formatter.read : virtualinvoke r2.<com.thoughtworks.xstream.io.binary.Token: void readFrom(java.io.DataInput,byte)>(r1, b2)
+com.thoughtworks.xstream.io.binary.Token$Formatter.read : $b4 = b0 & 56
+com.thoughtworks.xstream.io.binary.Token$Formatter.read : r2 = specialinvoke r0.<com.thoughtworks.xstream.io.binary.Token$Formatter: com.thoughtworks.xstream.io.binary.Token contructToken(byte)>(b1)
+com.thoughtworks.xstream.io.binary.Token$Formatter.read : b0 = interfaceinvoke r1.<java.io.DataInput: byte readByte()>()
+com.thoughtworks.xstream.io.binary.Token$Formatter.read : $b3 = b0 & 7
+com.thoughtworks.xstream.io.binary.BinaryStreamReader.moveUp : $b1 = virtualinvoke r1.<com.thoughtworks.xstream.io.binary.Token: byte getType()>()
+com.thoughtworks.xstream.io.binary.BinaryStreamReader.moveUp : goto [?= virtualinvoke r0.<com.thoughtworks.xstream.io.binary.BinaryStreamReader: void pushBack(com.thoughtworks.xstream.io.binary.Token)>(r4)]
+com.thoughtworks.xstream.io.binary.BinaryStreamReader.moveUp : goto [?= r4 = specialinvoke r0.<com.thoughtworks.xstream.io.binary.BinaryStreamReader: com.thoughtworks.xstream.io.binary.Token readToken()>()]
+com.thoughtworks.xstream.io.binary.BinaryStreamReader.moveUp : $r5 = r0.<com.thoughtworks.xstream.io.binary.BinaryStreamReader: com.thoughtworks.xstream.io.binary.ReaderDepthState depthState>
+com.thoughtworks.xstream.io.binary.BinaryStreamReader.moveUp : $r3 = r0.<com.thoughtworks.xstream.io.binary.BinaryStreamReader: com.thoughtworks.xstream.io.binary.ReaderDepthState depthState>
+com.thoughtworks.xstream.io.binary.BinaryStreamReader.moveUp : r4 = specialinvoke r0.<com.thoughtworks.xstream.io.binary.BinaryStreamReader: com.thoughtworks.xstream.io.binary.Token readToken()>()
+com.thoughtworks.xstream.io.binary.BinaryStreamReader.moveUp : i0 = 0
+com.thoughtworks.xstream.io.binary.BinaryStreamReader.moveUp : $b2 = virtualinvoke r4.<com.thoughtworks.xstream.io.binary.Token: byte getType()>()
+com.thoughtworks.xstream.io.binary.BinaryStreamReader.moveUp : r1 = specialinvoke r0.<com.thoughtworks.xstream.io.binary.BinaryStreamReader: com.thoughtworks.xstream.io.binary.Token readToken()>()
+com.thoughtworks.xstream.io.binary.BinaryStreamReader.moveUp : $r6 = r0.<com.thoughtworks.xstream.io.binary.BinaryStreamReader: com.thoughtworks.xstream.io.binary.ReaderDepthState depthState>
+com.thoughtworks.xstream.io.binary.BinaryStreamReader.moveUp : virtualinvoke r0.<com.thoughtworks.xstream.io.binary.BinaryStreamReader: void pushBack(com.thoughtworks.xstream.io.binary.Token)>(r4)
+com.thoughtworks.xstream.io.binary.BinaryStreamReader.moveUp : if i0 != 0 goto i0 = i0 + -1
+com.thoughtworks.xstream.io.binary.Token$Formatter.write : $b5 = virtualinvoke r2.<com.thoughtworks.xstream.io.binary.Token: byte getType()>()
+com.thoughtworks.xstream.io.binary.Token$Formatter.write : b1 = 8
+com.thoughtworks.xstream.io.binary.Token$Formatter.write : b1 = 16
+com.thoughtworks.xstream.io.binary.Token$Formatter.write : $b2 = l0 cmp 255L
+com.thoughtworks.xstream.io.binary.Token$Formatter.write : l0 = virtualinvoke r2.<com.thoughtworks.xstream.io.binary.Token: long getId()>()
+com.thoughtworks.xstream.io.binary.Token$Formatter.write : $b3 = l0 cmp 65535L
+com.thoughtworks.xstream.io.binary.Token$Formatter.write : virtualinvoke r2.<com.thoughtworks.xstream.io.binary.Token: void writeTo(java.io.DataOutput,byte)>(r1, b1)
+com.thoughtworks.xstream.io.binary.BinaryStreamWriter.endNode : $r1 = new com.thoughtworks.xstream.io.binary.Token$EndNode
+com.thoughtworks.xstream.io.binary.Token.writeId : $i3 = (int) l0
+com.thoughtworks.xstream.io.binary.Token.writeId : goto [?= return]
+com.thoughtworks.xstream.io.binary.Token.writeId : lookupswitch(b1) {     case 8: goto $i3 = (int) l0;     case 16: goto $i6 = (int) l0;     case 24: goto $i9 = (int) l0;     case 32: goto $l11 = l0 + -9223372036854775808L;     default: goto $r7 = new java.lang.Error; }
+com.thoughtworks.xstream.io.binary.Token.writeId : $i6 = (int) l0
+com.thoughtworks.xstream.io.binary.Token.writeId : $b2 = l0 cmp 0L
+com.thoughtworks.xstream.io.binary.Token$MapIdToValue.readFrom : $r2 = virtualinvoke r0.<com.thoughtworks.xstream.io.binary.Token$MapIdToValue: java.lang.String readString(java.io.DataInput)>(r1)
+com.thoughtworks.xstream.io.binary.Token$MapIdToValue.readFrom : $l1 = virtualinvoke r0.<com.thoughtworks.xstream.io.binary.Token$MapIdToValue: long readId(java.io.DataInput,byte)>(r1, b0)
+com.thoughtworks.xstream.io.binary.Token.getId : $l0 = r0.<com.thoughtworks.xstream.io.binary.Token: long id>
+com.thoughtworks.xstream.io.binary.Token$MapIdToValue.writeTo : $r2 = r0.<com.thoughtworks.xstream.io.binary.Token$MapIdToValue: java.lang.String value>
+com.thoughtworks.xstream.io.binary.Token$MapIdToValue.writeTo : $l1 = r0.<com.thoughtworks.xstream.io.binary.Token$MapIdToValue: long id>
+com.thoughtworks.xstream.io.binary.BinaryStreamReader.pushBack : r0.<com.thoughtworks.xstream.io.binary.BinaryStreamReader: com.thoughtworks.xstream.io.binary.Token pushback> = r1
+com.thoughtworks.xstream.io.binary.BinaryStreamReader.pushBack : $r2 = r0.<com.thoughtworks.xstream.io.binary.BinaryStreamReader: com.thoughtworks.xstream.io.binary.Token pushback>
+com.thoughtworks.xstream.io.binary.Token.getValue : $r1 = r0.<com.thoughtworks.xstream.io.binary.Token: java.lang.String value>
+com.thoughtworks.xstream.io.binary.Token.getType : $b0 = r0.<com.thoughtworks.xstream.io.binary.Token: byte type>
+com.thoughtworks.xstream.io.binary.Token.writeString : interfaceinvoke r1.<java.io.DataOutput: void writeUTF(java.lang.String)>(r2)
+com.thoughtworks.xstream.io.binary.Token.readId : lookupswitch(b0) {     case 8: goto $b1 = interfaceinvoke r1.<java.io.DataInput: byte readByte()>();     case 16: goto $s4 = interfaceinvoke r1.<java.io.DataInput: short readShort()>();     case 24: goto $i7 = interfaceinvoke r1.<java.io.DataInput: int readInt()>();     case 32: goto $l10 = interfaceinvoke r1.<java.io.DataInput: long readLong()>();     default: goto $r2 = new java.lang.Error; }
+com.thoughtworks.xstream.io.binary.Token.readId : $b1 = interfaceinvoke r1.<java.io.DataInput: byte readByte()>()
+com.thoughtworks.xstream.io.binary.Token.readId : $s4 = interfaceinvoke r1.<java.io.DataInput: short readShort()>()
+com.thoughtworks.xstream.io.binary.Token$StartNode.writeTo : $l1 = r0.<com.thoughtworks.xstream.io.binary.Token$StartNode: long id>
+com.thoughtworks.xstream.io.binary.BinaryStreamReader.hasMoreChildren : $r1 = r0.<com.thoughtworks.xstream.io.binary.BinaryStreamReader: com.thoughtworks.xstream.io.binary.ReaderDepthState depthState>
+com.thoughtworks.xstream.io.binary.BinaryStreamReader.readToken : $r3 = r0.<com.thoughtworks.xstream.io.binary.BinaryStreamReader: com.thoughtworks.xstream.io.binary.Token$Formatter tokenFormatter>
+com.thoughtworks.xstream.io.binary.BinaryStreamReader.readToken : return r12
+com.thoughtworks.xstream.io.binary.BinaryStreamReader.readToken : $r5 = r0.<com.thoughtworks.xstream.io.binary.BinaryStreamReader: com.thoughtworks.xstream.io.binary.BinaryStreamReader$IdRegistry idRegistry>
+com.thoughtworks.xstream.io.binary.BinaryStreamReader.readToken : $r2 = r0.<com.thoughtworks.xstream.io.binary.BinaryStreamReader: com.thoughtworks.xstream.io.binary.Token pushback>
+com.thoughtworks.xstream.io.binary.BinaryStreamReader.readToken : r12 = r0.<com.thoughtworks.xstream.io.binary.BinaryStreamReader: com.thoughtworks.xstream.io.binary.Token pushback>
+com.thoughtworks.xstream.io.binary.BinaryStreamReader.readToken : $r7 = specialinvoke r0.<com.thoughtworks.xstream.io.binary.BinaryStreamReader: com.thoughtworks.xstream.io.binary.Token readToken()>()
+com.thoughtworks.xstream.io.binary.BinaryStreamReader.readToken : r0.<com.thoughtworks.xstream.io.binary.BinaryStreamReader: com.thoughtworks.xstream.io.binary.Token pushback> = null
+com.thoughtworks.xstream.io.binary.BinaryStreamReader.readToken : return r1
+com.thoughtworks.xstream.io.binary.BinaryStreamReader.readToken : $b0 = virtualinvoke r1.<com.thoughtworks.xstream.io.binary.Token: byte getType()>()
+com.thoughtworks.xstream.io.binary.ReaderDepthState.pop : $r1 = r0.<com.thoughtworks.xstream.io.binary.ReaderDepthState: com.thoughtworks.xstream.io.binary.ReaderDepthState$State current>
+com.thoughtworks.xstream.io.binary.BinaryStreamReader.moveDown : $r14 = r0.<com.thoughtworks.xstream.io.binary.BinaryStreamReader: com.thoughtworks.xstream.io.binary.ReaderDepthState depthState>
+com.thoughtworks.xstream.io.binary.BinaryStreamReader.moveDown : r2 = specialinvoke r0.<com.thoughtworks.xstream.io.binary.BinaryStreamReader: com.thoughtworks.xstream.io.binary.Token readToken()>()
+com.thoughtworks.xstream.io.binary.BinaryStreamReader.moveDown : $r3 = r0.<com.thoughtworks.xstream.io.binary.BinaryStreamReader: com.thoughtworks.xstream.io.binary.ReaderDepthState depthState>
+com.thoughtworks.xstream.io.binary.BinaryStreamReader.moveDown : virtualinvoke r0.<com.thoughtworks.xstream.io.binary.BinaryStreamReader: void pushBack(com.thoughtworks.xstream.io.binary.Token)>(r2)
+com.thoughtworks.xstream.io.binary.BinaryStreamReader.moveDown : $r4 = r0.<com.thoughtworks.xstream.io.binary.BinaryStreamReader: com.thoughtworks.xstream.io.binary.ReaderDepthState depthState>
+com.thoughtworks.xstream.io.binary.BinaryStreamReader.moveDown : $r15 = r0.<com.thoughtworks.xstream.io.binary.BinaryStreamReader: com.thoughtworks.xstream.io.binary.ReaderDepthState depthState>
+com.thoughtworks.xstream.io.binary.BinaryStreamReader.moveDown : $b2 = virtualinvoke r2.<com.thoughtworks.xstream.io.binary.Token: byte getType()>()
+com.thoughtworks.xstream.io.binary.BinaryStreamReader.moveDown : goto [?= r2 = specialinvoke r0.<com.thoughtworks.xstream.io.binary.BinaryStreamReader: com.thoughtworks.xstream.io.binary.Token readToken()>()]
+com.thoughtworks.xstream.io.binary.BinaryStreamReader.moveDown : $b0 = virtualinvoke r1.<com.thoughtworks.xstream.io.binary.Token: byte getType()>()
+com.thoughtworks.xstream.io.binary.BinaryStreamReader.moveDown : r1 = specialinvoke r0.<com.thoughtworks.xstream.io.binary.BinaryStreamReader: com.thoughtworks.xstream.io.binary.Token readToken()>()
+com.thoughtworks.xstream.io.binary.BinaryStreamReader.getNodeName : $r1 = r0.<com.thoughtworks.xstream.io.binary.BinaryStreamReader: com.thoughtworks.xstream.io.binary.ReaderDepthState depthState>
+com.thoughtworks.xstream.io.binary.Token$StartNode.readFrom : $l1 = virtualinvoke r0.<com.thoughtworks.xstream.io.binary.Token$StartNode: long readId(java.io.DataInput,byte)>(r1, b0)

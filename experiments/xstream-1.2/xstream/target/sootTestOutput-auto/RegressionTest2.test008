@@ -1,0 +1,15 @@
+com.thoughtworks.xstream.io.xml.AbstractXmlWriter.escapeXmlName : $r2 = r0.<com.thoughtworks.xstream.io.xml.AbstractXmlWriter: com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer replacer>
+com.thoughtworks.xstream.io.xml.SaxWriter.startNode : $i1 = r0.<com.thoughtworks.xstream.io.xml.SaxWriter: int depth>
+com.thoughtworks.xstream.io.xml.SaxWriter.startNode : $z0 = r0.<com.thoughtworks.xstream.io.xml.SaxWriter: boolean includeEnclosingDocument>
+com.thoughtworks.xstream.io.xml.SaxWriter.startNode : $r3 = r0.<com.thoughtworks.xstream.io.xml.SaxWriter: java.util.List elementStack>
+com.thoughtworks.xstream.io.xml.SaxWriter.startNode : r0.<com.thoughtworks.xstream.io.xml.SaxWriter: boolean startTagInProgress> = 1
+com.thoughtworks.xstream.io.xml.SaxWriter.startNode : $i0 = r0.<com.thoughtworks.xstream.io.xml.SaxWriter: int depth>
+com.thoughtworks.xstream.io.xml.SaxWriter.startNode : goto [?= return]
+com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer.escapeName : if c2 != 36 goto (branch)
+com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer.escapeName : i1 = 0
+com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer.escapeName : $r9 = virtualinvoke r3.<java.lang.StringBuffer: java.lang.String toString()>()
+com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer.escapeName : c2 = virtualinvoke r1.<java.lang.String: char charAt(int)>(i1)
+com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer.escapeName : i0 = virtualinvoke r1.<java.lang.String: int length()>()
+com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer.escapeName : virtualinvoke r3.<java.lang.StringBuffer: java.lang.StringBuffer append(char)>(c2)
+com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer.escapeName : $r2 = new java.lang.StringBuffer
+com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer.escapeName : if c2 != 95 goto virtualinvoke r3.<java.lang.StringBuffer: java.lang.StringBuffer append(char)>(c2)

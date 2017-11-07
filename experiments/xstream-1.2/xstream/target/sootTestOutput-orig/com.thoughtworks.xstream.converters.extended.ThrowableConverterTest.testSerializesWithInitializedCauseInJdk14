@@ -1,0 +1,906 @@
+com.thoughtworks.xstream.core.util.PrioritizedList$PrioritizedItemIterator.next : $r1 = r0.<com.thoughtworks.xstream.core.util.PrioritizedList$PrioritizedItemIterator: java.util.Iterator iterator>
+com.thoughtworks.xstream.converters.extended.StackTraceElementConverter.fromString : r6 = virtualinvoke r3.<java.util.regex.Matcher: java.lang.String group(int)>(3)
+com.thoughtworks.xstream.converters.extended.StackTraceElementConverter.fromString : $z1 = virtualinvoke r6.<java.lang.String: boolean equals(java.lang.Object)>("Unknown Source")
+com.thoughtworks.xstream.converters.extended.StackTraceElementConverter.fromString : r4 = virtualinvoke r3.<java.util.regex.Matcher: java.lang.String group(int)>(1)
+com.thoughtworks.xstream.converters.extended.StackTraceElementConverter.fromString : $r9 = <com.thoughtworks.xstream.converters.extended.StackTraceElementConverter: com.thoughtworks.xstream.converters.extended.StackTraceElementFactory FACTORY>
+com.thoughtworks.xstream.converters.extended.StackTraceElementConverter.fromString : $r12 = virtualinvoke r3.<java.util.regex.Matcher: java.lang.String group(int)>(5)
+com.thoughtworks.xstream.converters.extended.StackTraceElementConverter.fromString : $r11 = virtualinvoke r3.<java.util.regex.Matcher: java.lang.String group(int)>(4)
+com.thoughtworks.xstream.converters.extended.StackTraceElementConverter.fromString : $z2 = virtualinvoke r6.<java.lang.String: boolean equals(java.lang.Object)>("Native Method")
+com.thoughtworks.xstream.converters.extended.StackTraceElementConverter.fromString : r5 = virtualinvoke r3.<java.util.regex.Matcher: java.lang.String group(int)>(2)
+com.thoughtworks.xstream.converters.extended.StackTraceElementConverter.fromString : $r2 = <com.thoughtworks.xstream.converters.extended.StackTraceElementConverter: java.util.regex.Pattern PATTERN>
+com.thoughtworks.xstream.converters.extended.StackTraceElementConverter.fromString : $r13 = <com.thoughtworks.xstream.converters.extended.StackTraceElementConverter: com.thoughtworks.xstream.converters.extended.StackTraceElementFactory FACTORY>
+com.thoughtworks.xstream.converters.extended.StackTraceElementConverter.fromString : $z0 = virtualinvoke r3.<java.util.regex.Matcher: boolean matches()>()
+com.thoughtworks.xstream.core.JVM.isIBM : $r0 = staticinvoke <java.lang.System: java.lang.String getProperty(java.lang.String)>("java.vm.vendor")
+com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.visitSerializableFields : goto [?= $z0 = interfaceinvoke r3.<java.util.Iterator: boolean hasNext()>()]
+com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.visitSerializableFields : $r8 = interfaceinvoke r3.<java.util.Iterator: java.lang.Object next()>()
+com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.visitSerializableFields : r5 = virtualinvoke r4.<java.lang.reflect.Field: java.lang.Object get(java.lang.Object)>(r1)
+com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.visitSerializableFields : virtualinvoke r0.<com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider: void validateFieldAccess(java.lang.reflect.Field)>(r4)
+com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.visitSerializableFields : $r6 = r0.<com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider: com.thoughtworks.xstream.converters.reflection.FieldDictionary fieldDictionary>
+com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.visitSerializableFields : goto [?= (branch)]
+com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.visitSerializableFields : $z1 = virtualinvoke r0.<com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider: boolean fieldModifiersSupported(java.lang.reflect.Field)>(r4)
+com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.visitSerializableFields : $r9 = virtualinvoke r4.<java.lang.reflect.Field: java.lang.String getName()>()
+com.thoughtworks.xstream.converters.extended.ThrowableConverterTest$1.assertMoreSafely : $r9 = virtualinvoke r3.<java.lang.Throwable: java.lang.Throwable getCause()>()
+com.thoughtworks.xstream.converters.extended.ThrowableConverterTest$1.assertMoreSafely : r3 = (java.lang.Throwable) r1
+com.thoughtworks.xstream.converters.extended.ThrowableConverterTest$1.assertMoreSafely : $r11 = virtualinvoke r3.<java.lang.Throwable: java.lang.StackTraceElement[] getStackTrace()>()
+com.thoughtworks.xstream.converters.extended.ThrowableConverterTest$1.assertMoreSafely : $r7 = virtualinvoke r3.<java.lang.Throwable: java.lang.String getMessage()>()
+com.thoughtworks.xstream.converters.extended.ThrowableConverterTest$1.assertMoreSafely : $r5 = virtualinvoke r3.<java.lang.Object: java.lang.Class getClass()>()
+com.thoughtworks.xstream.core.util.OrderRetainingMap.put : $r4 = r0.<com.thoughtworks.xstream.core.util.OrderRetainingMap: java.util.List valueOrder>
+com.thoughtworks.xstream.core.util.OrderRetainingMap.put : $r5 = specialinvoke r0.<java.util.HashMap: java.lang.Object put(java.lang.Object,java.lang.Object)>(r1, r2)
+com.thoughtworks.xstream.core.util.OrderRetainingMap.put : $r3 = r0.<com.thoughtworks.xstream.core.util.OrderRetainingMap: java.util.Set keyOrder>
+com.thoughtworks.xstream.converters.collections.CollectionConverter.unmarshal : return r3
+com.thoughtworks.xstream.converters.collections.CollectionConverter.unmarshal : virtualinvoke r0.<com.thoughtworks.xstream.converters.collections.CollectionConverter: void populateCollection(com.thoughtworks.xstream.io.HierarchicalStreamReader,com.thoughtworks.xstream.converters.UnmarshallingContext,java.util.Collection)>(r1, r2, r3)
+com.thoughtworks.xstream.converters.collections.CollectionConverter.unmarshal : $r4 = interfaceinvoke r2.<com.thoughtworks.xstream.converters.UnmarshallingContext: java.lang.Class getRequiredType()>()
+com.thoughtworks.xstream.mapper.DefaultMapper.aliasForAttribute : return r1
+com.thoughtworks.xstream.mapper.DefaultMapper.serializedClass : $r2 = virtualinvoke r1.<java.lang.Class: java.lang.String getName()>()
+com.thoughtworks.xstream.converters.reflection.SerializationMethodInvoker.callWriteReplace : r3 = newarray (java.lang.Object)[0]
+com.thoughtworks.xstream.converters.reflection.SerializationMethodInvoker.callWriteReplace : if r2 == null goto return r1
+com.thoughtworks.xstream.converters.reflection.SerializationMethodInvoker.callWriteReplace : if r1 != null goto $r4 = virtualinvoke r1.<java.lang.Object: java.lang.Class getClass()>()
+com.thoughtworks.xstream.converters.reflection.SerializationMethodInvoker.callWriteReplace : $r4 = virtualinvoke r1.<java.lang.Object: java.lang.Class getClass()>()
+com.thoughtworks.xstream.converters.reflection.SerializationMethodInvoker.callWriteReplace : $r5 = virtualinvoke r2.<java.lang.reflect.Method: java.lang.Object invoke(java.lang.Object,java.lang.Object[])>(r1, r3)
+com.thoughtworks.xstream.converters.reflection.SerializationMethodInvoker.callWriteReplace : return r1
+com.thoughtworks.xstream.mapper.DefaultMapper.realMember : return r2
+com.thoughtworks.xstream.XStream.fromXML : $r2 = new java.io.StringReader
+com.thoughtworks.xstream.XStream.fromXML : $r2 = r0.<com.thoughtworks.xstream.XStream: com.thoughtworks.xstream.io.HierarchicalStreamDriver hierarchicalStreamDriver>
+com.thoughtworks.xstream.core.util.ObjectIdDictionary.associateId : $r4 = r0.<com.thoughtworks.xstream.core.util.ObjectIdDictionary: java.util.Map map>
+com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.getFieldType : $r4 = r0.<com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider: com.thoughtworks.xstream.converters.reflection.FieldDictionary fieldDictionary>
+com.thoughtworks.xstream.mapper.MapperWrapper.serializedClass : $r2 = r0.<com.thoughtworks.xstream.mapper.MapperWrapper: com.thoughtworks.xstream.mapper.Mapper wrapped>
+com.thoughtworks.xstream.converters.extended.JavaMethodConverter.canConvert : $z0 = virtualinvoke r1.<java.lang.Object: boolean equals(java.lang.Object)>(class "java/lang/reflect/Method")
+com.thoughtworks.xstream.converters.extended.ColorConverter.canConvert : $r2 = virtualinvoke r1.<java.lang.Class: java.lang.String getName()>()
+com.thoughtworks.xstream.converters.extended.StackTraceElementFactory.element : $r4 = specialinvoke r0.<com.thoughtworks.xstream.converters.extended.StackTraceElementFactory: java.lang.StackTraceElement create(java.lang.String,java.lang.String,java.lang.String,int)>(r1, r2, r3, i0)
+com.thoughtworks.xstream.io.xml.XppDriver.loadLibrary : $z0 = <com.thoughtworks.xstream.io.xml.XppDriver: boolean xppLibraryPresent>
+com.thoughtworks.xstream.converters.extended.SubjectConverter.canConvert : $z0 = virtualinvoke r1.<java.lang.Object: boolean equals(java.lang.Object)>(class "javax/security/auth/Subject")
+com.thoughtworks.xstream.converters.enums.EnumMapConverter.canConvert : if r1 != class "java/util/EnumMap" goto $z0 = 0
+com.thoughtworks.xstream.converters.SingleValueConverterWrapper.toString : $r2 = r0.<com.thoughtworks.xstream.converters.SingleValueConverterWrapper: com.thoughtworks.xstream.converters.SingleValueConverter wrapped>
+com.thoughtworks.xstream.core.JVM.isBEAWithUnsafeSupport : $r2 = staticinvoke <java.lang.System: java.lang.String getProperty(java.lang.String)>("java.vm.vendor")
+com.thoughtworks.xstream.core.JVM.isBEAWithUnsafeSupport : return 0
+com.thoughtworks.xstream.mapper.ClassAliasingMapper.addTypeAlias : $r3 = r0.<com.thoughtworks.xstream.mapper.ClassAliasingMapper: java.util.Map nameToType>
+com.thoughtworks.xstream.mapper.ClassAliasingMapper.addTypeAlias : $r6 = r0.<com.thoughtworks.xstream.mapper.ClassAliasingMapper: java.util.Map typeToName>
+com.thoughtworks.xstream.converters.basic.CharConverter.canConvert : $r2 = <java.lang.Character: java.lang.Class TYPE>
+com.thoughtworks.xstream.mapper.DynamicProxyMapper.realClass : $r3 = specialinvoke r0.<com.thoughtworks.xstream.mapper.MapperWrapper: java.lang.Class realClass(java.lang.String)>(r1)
+com.thoughtworks.xstream.mapper.DynamicProxyMapper.realClass : $r2 = r0.<com.thoughtworks.xstream.mapper.DynamicProxyMapper: java.lang.String alias>
+com.thoughtworks.xstream.mapper.CGLIBMapper.realClass : $r2 = r0.<com.thoughtworks.xstream.mapper.CGLIBMapper: java.lang.String alias>
+com.thoughtworks.xstream.io.xml.AbstractXmlDriver.xmlFriendlyReplacer : $r1 = r0.<com.thoughtworks.xstream.io.xml.AbstractXmlDriver: com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer replacer>
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.writeAttributeValue : specialinvoke r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: void writeText(java.lang.String)>(r2)
+com.thoughtworks.xstream.core.util.FastStack.push : $r4 = r0.<com.thoughtworks.xstream.core.util.FastStack: java.lang.Object[] stack>
+com.thoughtworks.xstream.core.util.FastStack.push : $i1 = r0.<com.thoughtworks.xstream.core.util.FastStack: int pointer>
+com.thoughtworks.xstream.core.util.FastStack.push : return r1
+com.thoughtworks.xstream.core.util.FastStack.size : $i0 = r0.<com.thoughtworks.xstream.core.util.FastStack: int pointer>
+com.thoughtworks.xstream.core.JVM.bestReflectionProvider : goto [?= $r16 = r0.<com.thoughtworks.xstream.core.JVM: com.thoughtworks.xstream.converters.reflection.ReflectionProvider reflectionProvider>]
+com.thoughtworks.xstream.core.JVM.bestReflectionProvider : $z0 = specialinvoke r0.<com.thoughtworks.xstream.core.JVM: boolean canUseSun14ReflectionProvider()>()
+com.thoughtworks.xstream.core.JVM.bestReflectionProvider : $r16 = r0.<com.thoughtworks.xstream.core.JVM: com.thoughtworks.xstream.converters.reflection.ReflectionProvider reflectionProvider>
+com.thoughtworks.xstream.core.JVM.bestReflectionProvider : $r6 = new com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider
+com.thoughtworks.xstream.core.JVM.bestReflectionProvider : $r2 = r0.<com.thoughtworks.xstream.core.JVM: com.thoughtworks.xstream.converters.reflection.ReflectionProvider reflectionProvider>
+com.thoughtworks.xstream.mapper.AttributeAliasingMapper.attributeForAlias : $r3 = r0.<com.thoughtworks.xstream.mapper.AttributeAliasingMapper: java.util.Map aliasToName>
+com.thoughtworks.xstream.mapper.AttributeAliasingMapper.attributeForAlias : if r2 != null goto $r5 = r2
+com.thoughtworks.xstream.converters.collections.ArrayConverter.unmarshal : $i2 = i0
+com.thoughtworks.xstream.converters.collections.ArrayConverter.unmarshal : $r7 = interfaceinvoke r2.<com.thoughtworks.xstream.converters.UnmarshallingContext: java.lang.Class getRequiredType()>()
+com.thoughtworks.xstream.converters.collections.ArrayConverter.unmarshal : interfaceinvoke r1.<com.thoughtworks.xstream.io.HierarchicalStreamReader: void moveDown()>()
+com.thoughtworks.xstream.converters.collections.ArrayConverter.unmarshal : goto [?= staticinvoke <edu.washington.cs.dt.impact.util.Tracer: void trace(java.lang.String,java.lang.String)>("$z0 = interfaceinvoke r1.<com.thoughtworks.xstream.io.HierarchicalStreamReader: boolean hasMoreChildren()>()", "com.thoughtworks.xstream.converters.collections.ArrayConverter.unmarshal")]
+com.thoughtworks.xstream.converters.collections.ArrayConverter.unmarshal : $z0 = interfaceinvoke r1.<com.thoughtworks.xstream.io.HierarchicalStreamReader: boolean hasMoreChildren()>()
+com.thoughtworks.xstream.converters.collections.ArrayConverter.unmarshal : return r9
+com.thoughtworks.xstream.converters.collections.ArrayConverter.unmarshal : r6 = interfaceinvoke r4.<java.util.List: java.util.Iterator iterator()>()
+com.thoughtworks.xstream.converters.collections.ArrayConverter.unmarshal : i0 = 0
+com.thoughtworks.xstream.converters.collections.ArrayConverter.unmarshal : interfaceinvoke r4.<java.util.List: boolean add(java.lang.Object)>(r5)
+com.thoughtworks.xstream.converters.collections.ArrayConverter.unmarshal : interfaceinvoke r1.<com.thoughtworks.xstream.io.HierarchicalStreamReader: void moveUp()>()
+com.thoughtworks.xstream.converters.collections.ArrayConverter.unmarshal : $r3 = new java.util.ArrayList
+com.thoughtworks.xstream.converters.collections.ArrayConverter.unmarshal : r5 = virtualinvoke r0.<com.thoughtworks.xstream.converters.collections.ArrayConverter: java.lang.Object readItem(com.thoughtworks.xstream.io.HierarchicalStreamReader,com.thoughtworks.xstream.converters.UnmarshallingContext,java.lang.Object)>(r1, r2, null)
+com.thoughtworks.xstream.core.JVM.isBlackdown : $r0 = staticinvoke <java.lang.System: java.lang.String getProperty(java.lang.String)>("java.vm.vendor")
+com.thoughtworks.xstream.mapper.EnumMapper.serializedClass : $r11 = specialinvoke r0.<com.thoughtworks.xstream.mapper.MapperWrapper: java.lang.String serializedClass(java.lang.Class)>(r1)
+com.thoughtworks.xstream.mapper.EnumMapper.serializedClass : $z0 = <com.thoughtworks.xstream.mapper.EnumMapper: boolean active>
+com.thoughtworks.xstream.mapper.EnumMapper.serializedClass : $r3 = <com.thoughtworks.xstream.mapper.EnumMapper: java.lang.Class enumClass>
+com.thoughtworks.xstream.mapper.EnumMapper.serializedClass : $r8 = <com.thoughtworks.xstream.mapper.EnumMapper: java.lang.Class enumSetClass>
+com.thoughtworks.xstream.converters.reflection.SerializationMethodInvoker.supportsReadObject : $r2 = newarray (java.lang.Class)[1]
+com.thoughtworks.xstream.io.xml.AbstractPullReader.getNodeName : $r1 = r0.<com.thoughtworks.xstream.io.xml.AbstractPullReader: com.thoughtworks.xstream.core.util.FastStack elementStack>
+com.thoughtworks.xstream.core.util.OrderRetainingMap.values : $r1 = r0.<com.thoughtworks.xstream.core.util.OrderRetainingMap: java.util.List valueOrder>
+com.thoughtworks.xstream.core.util.ClassLoaderReference.loadClass : $r2 = r0.<com.thoughtworks.xstream.core.util.ClassLoaderReference: java.lang.ClassLoader reference>
+com.thoughtworks.xstream.core.util.ObjectIdDictionary$IdWrapper.equals : $r2 = r0.<com.thoughtworks.xstream.core.util.ObjectIdDictionary$IdWrapper: java.lang.Object obj>
+com.thoughtworks.xstream.mapper.OuterClassMapper.serializedMember : $z0 = virtualinvoke r2.<java.lang.String: boolean equals(java.lang.Object)>("this$0")
+com.thoughtworks.xstream.mapper.OuterClassMapper.serializedMember : $r4 = specialinvoke r0.<com.thoughtworks.xstream.mapper.MapperWrapper: java.lang.String serializedMember(java.lang.Class,java.lang.String)>(r1, r2)
+com.thoughtworks.xstream.converters.reflection.ExternalizableConverter.canConvert : $r2 = class "java/io/Externalizable"
+com.thoughtworks.xstream.core.TreeUnmarshaller.convert : return r4
+com.thoughtworks.xstream.core.TreeUnmarshaller.convert : $r10 = r0.<com.thoughtworks.xstream.core.TreeUnmarshaller: com.thoughtworks.xstream.io.HierarchicalStreamReader reader>
+com.thoughtworks.xstream.core.TreeUnmarshaller.convert : $r6 = r0.<com.thoughtworks.xstream.core.TreeUnmarshaller: com.thoughtworks.xstream.core.util.FastStack types>
+com.thoughtworks.xstream.core.TreeUnmarshaller.convert : $r11 = r0.<com.thoughtworks.xstream.core.TreeUnmarshaller: com.thoughtworks.xstream.core.util.FastStack types>
+com.thoughtworks.xstream.converters.collections.CollectionConverter.marshal : r4 = (java.util.Collection) r1
+com.thoughtworks.xstream.converters.collections.CollectionConverter.marshal : r5 = interfaceinvoke r4.<java.util.Collection: java.util.Iterator iterator()>()
+com.thoughtworks.xstream.mapper.CachingMapper.realClass : return r2
+com.thoughtworks.xstream.mapper.CachingMapper.realClass : $r6 = r0.<com.thoughtworks.xstream.mapper.CachingMapper: java.util.Map cache>
+com.thoughtworks.xstream.mapper.CachingMapper.realClass : return r3
+com.thoughtworks.xstream.mapper.CachingMapper.realClass : r3 = specialinvoke r0.<com.thoughtworks.xstream.mapper.MapperWrapper: java.lang.Class realClass(java.lang.String)>(r1)
+com.thoughtworks.xstream.mapper.CachingMapper.realClass : if r2 == null goto r3 = specialinvoke r0.<com.thoughtworks.xstream.mapper.MapperWrapper: java.lang.Class realClass(java.lang.String)>(r1)
+com.thoughtworks.xstream.mapper.CachingMapper.realClass : $r4 = r0.<com.thoughtworks.xstream.mapper.CachingMapper: java.util.Map cache>
+com.thoughtworks.xstream.mapper.AttributeMapper.getConverterFromItemType : return null
+com.thoughtworks.xstream.mapper.AttributeMapper.getConverterFromItemType : $r3 = r0.<com.thoughtworks.xstream.mapper.AttributeMapper: java.util.Map fieldNameToTypeMap>
+com.thoughtworks.xstream.mapper.AttributeMapper.getConverterFromItemType : $r2 = r0.<com.thoughtworks.xstream.mapper.AttributeMapper: java.util.Set typeSet>
+com.thoughtworks.xstream.mapper.ImplicitCollectionMapper.getImplicitCollectionDefForFieldName : r3 = specialinvoke r0.<com.thoughtworks.xstream.mapper.ImplicitCollectionMapper: com.thoughtworks.xstream.mapper.ImplicitCollectionMapper$ImplicitCollectionMapperForClass getMapper(java.lang.Class)>(r1)
+com.thoughtworks.xstream.mapper.ImplicitCollectionMapper.getImplicitCollectionDefForFieldName : return null
+com.thoughtworks.xstream.mapper.ImplicitCollectionMapper.getImplicitCollectionDefForFieldName : if r3 == null goto return null
+com.thoughtworks.xstream.mapper.MapperWrapper.getConverterFromItemType : $r3 = r0.<com.thoughtworks.xstream.mapper.MapperWrapper: com.thoughtworks.xstream.mapper.Mapper wrapped>
+com.thoughtworks.xstream.mapper.MapperWrapper.getConverterFromItemType : $r2 = r0.<com.thoughtworks.xstream.mapper.MapperWrapper: com.thoughtworks.xstream.mapper.Mapper wrapped>
+com.thoughtworks.xstream.converters.reflection.SelfStreamingInstanceChecker.canConvert : $r2 = r0.<com.thoughtworks.xstream.converters.reflection.SelfStreamingInstanceChecker: java.lang.Object self>
+com.thoughtworks.xstream.mapper.FieldAliasingMapper.key : $r3 = new java.lang.StringBuilder
+com.thoughtworks.xstream.converters.SingleValueConverterWrapper.canConvert : $r2 = r0.<com.thoughtworks.xstream.converters.SingleValueConverterWrapper: com.thoughtworks.xstream.converters.SingleValueConverter wrapped>
+com.thoughtworks.xstream.XStream.wrapMapper : return r1
+com.thoughtworks.xstream.converters.collections.AbstractCollectionConverter.readItem : $r11 = interfaceinvoke r2.<com.thoughtworks.xstream.converters.UnmarshallingContext: java.lang.Object convertAnother(java.lang.Object,java.lang.Class)>(r3, r5)
+com.thoughtworks.xstream.converters.collections.AbstractCollectionConverter.readItem : $r8 = virtualinvoke r0.<com.thoughtworks.xstream.converters.collections.AbstractCollectionConverter: com.thoughtworks.xstream.mapper.Mapper mapper()>()
+com.thoughtworks.xstream.converters.collections.AbstractCollectionConverter.readItem : if r4 != null goto $r10 = virtualinvoke r0.<com.thoughtworks.xstream.converters.collections.AbstractCollectionConverter: com.thoughtworks.xstream.mapper.Mapper mapper()>()
+com.thoughtworks.xstream.converters.collections.AbstractCollectionConverter.readItem : $r6 = virtualinvoke r0.<com.thoughtworks.xstream.converters.collections.AbstractCollectionConverter: com.thoughtworks.xstream.mapper.Mapper mapper()>()
+com.thoughtworks.xstream.mapper.ImplicitCollectionMapper.getMapper : if r2 == null goto r1 = virtualinvoke r1.<java.lang.Class: java.lang.Class getSuperclass()>()
+com.thoughtworks.xstream.mapper.ImplicitCollectionMapper.getMapper : return null
+com.thoughtworks.xstream.mapper.ImplicitCollectionMapper.getMapper : goto [?= staticinvoke <edu.washington.cs.dt.impact.util.Tracer: void trace(java.lang.String,java.lang.String)>("if r1 == null goto return null", "com.thoughtworks.xstream.mapper.ImplicitCollectionMapper.getMapper")]
+com.thoughtworks.xstream.mapper.ImplicitCollectionMapper.getMapper : if r1 == null goto return null
+com.thoughtworks.xstream.mapper.ImplicitCollectionMapper.getMapper : $r3 = r0.<com.thoughtworks.xstream.mapper.ImplicitCollectionMapper: java.util.Map classNameToMapper>
+com.thoughtworks.xstream.mapper.ImplicitCollectionMapper.getMapper : r1 = virtualinvoke r1.<java.lang.Class: java.lang.Class getSuperclass()>()
+com.thoughtworks.xstream.converters.extended.TextAttributeConverter.canConvert : if r1 != class "java/awt/font/TextAttribute" goto $z0 = 0
+com.thoughtworks.xstream.converters.collections.MapConverter.canConvert : $z0 = virtualinvoke r1.<java.lang.Object: boolean equals(java.lang.Object)>(class "java/util/HashMap")
+com.thoughtworks.xstream.io.xml.AbstractPullReader.move : $r5 = r0.<com.thoughtworks.xstream.io.xml.AbstractPullReader: com.thoughtworks.xstream.core.util.FastStack elementStack>
+com.thoughtworks.xstream.io.xml.AbstractPullReader.move : $r2 = r0.<com.thoughtworks.xstream.io.xml.AbstractPullReader: com.thoughtworks.xstream.core.util.FastStack elementStack>
+com.thoughtworks.xstream.io.xml.AbstractPullReader.move : $r1 = specialinvoke r0.<com.thoughtworks.xstream.io.xml.AbstractPullReader: com.thoughtworks.xstream.io.xml.AbstractPullReader$Event readEvent()>()
+com.thoughtworks.xstream.io.xml.AbstractPullReader.move : goto [?= return]
+com.thoughtworks.xstream.converters.basic.IntConverter.canConvert : $r2 = <java.lang.Integer: java.lang.Class TYPE>
+com.thoughtworks.xstream.io.ExtendedHierarchicalStreamWriterHelper.startNode : $z0 = r0 instanceof com.thoughtworks.xstream.io.ExtendedHierarchicalStreamWriter
+com.thoughtworks.xstream.io.ExtendedHierarchicalStreamWriterHelper.startNode : $r3 = (com.thoughtworks.xstream.io.ExtendedHierarchicalStreamWriter) r0
+com.thoughtworks.xstream.io.xml.AbstractPullReader.moveDown : $r2 = r0.<com.thoughtworks.xstream.io.xml.AbstractPullReader: com.thoughtworks.xstream.core.util.FastStack elementStack>
+com.thoughtworks.xstream.io.xml.AbstractPullReader.moveDown : specialinvoke r0.<com.thoughtworks.xstream.io.xml.AbstractPullReader: void move()>()
+com.thoughtworks.xstream.io.xml.AbstractPullReader.moveDown : $r1 = r0.<com.thoughtworks.xstream.io.xml.AbstractPullReader: com.thoughtworks.xstream.core.util.FastStack elementStack>
+com.thoughtworks.xstream.io.xml.AbstractPullReader.moveDown : $r3 = r0.<com.thoughtworks.xstream.io.xml.AbstractPullReader: com.thoughtworks.xstream.core.util.FastStack elementStack>
+com.thoughtworks.xstream.converters.collections.AbstractCollectionConverter.writeItem : interfaceinvoke r2.<com.thoughtworks.xstream.converters.MarshallingContext: void convertAnother(java.lang.Object)>(r1)
+com.thoughtworks.xstream.converters.collections.AbstractCollectionConverter.writeItem : $r9 = virtualinvoke r1.<java.lang.Object: java.lang.Class getClass()>()
+com.thoughtworks.xstream.converters.collections.AbstractCollectionConverter.writeItem : $r6 = virtualinvoke r0.<com.thoughtworks.xstream.converters.collections.AbstractCollectionConverter: com.thoughtworks.xstream.mapper.Mapper mapper()>()
+com.thoughtworks.xstream.converters.collections.AbstractCollectionConverter.writeItem : interfaceinvoke r3.<com.thoughtworks.xstream.io.HierarchicalStreamWriter: void endNode()>()
+com.thoughtworks.xstream.converters.collections.AbstractCollectionConverter.writeItem : if r1 != null goto $r6 = virtualinvoke r0.<com.thoughtworks.xstream.converters.collections.AbstractCollectionConverter: com.thoughtworks.xstream.mapper.Mapper mapper()>()
+com.thoughtworks.xstream.io.xml.AbstractPullReader.readEvent : $r15 = specialinvoke r0.<com.thoughtworks.xstream.io.xml.AbstractPullReader: com.thoughtworks.xstream.io.xml.AbstractPullReader$Event readRealEvent()>()
+com.thoughtworks.xstream.io.xml.AbstractPullReader.readEvent : $z0 = r0.<com.thoughtworks.xstream.io.xml.AbstractPullReader: boolean marked>
+com.thoughtworks.xstream.io.xml.AbstractPullReader.readEvent : $r12 = r0.<com.thoughtworks.xstream.io.xml.AbstractPullReader: com.thoughtworks.xstream.core.util.FastStack lookback>
+com.thoughtworks.xstream.io.xml.AbstractPullReader.readEvent : $r11 = r0.<com.thoughtworks.xstream.io.xml.AbstractPullReader: com.thoughtworks.xstream.core.util.FastStack lookback>
+com.thoughtworks.xstream.io.xml.AbstractPullReader.readEvent : $r7 = r0.<com.thoughtworks.xstream.io.xml.AbstractPullReader: com.thoughtworks.xstream.core.util.FastStack lookahead>
+com.thoughtworks.xstream.io.xml.AbstractPullReader.readEvent : $r1 = r0.<com.thoughtworks.xstream.io.xml.AbstractPullReader: com.thoughtworks.xstream.core.util.FastStack lookback>
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.endOfLine : $r1 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: com.thoughtworks.xstream.core.util.QuickWriter writer>
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.endOfLine : i0 = 0
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.endOfLine : $r3 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: com.thoughtworks.xstream.core.util.QuickWriter writer>
+com.thoughtworks.xstream.mapper.DefaultMapper.defaultImplementationOf : return r1
+com.thoughtworks.xstream.converters.collections.ArrayConverter.canConvert : $z0 = virtualinvoke r1.<java.lang.Class: boolean isArray()>()
+com.thoughtworks.xstream.converters.extended.GregorianCalendarConverter.canConvert : $z0 = virtualinvoke r1.<java.lang.Object: boolean equals(java.lang.Object)>(class "java/util/GregorianCalendar")
+com.thoughtworks.xstream.XStream.registerConverter : $r3 = r0.<com.thoughtworks.xstream.XStream: com.thoughtworks.xstream.core.DefaultConverterLookup converterLookup>
+com.thoughtworks.xstream.XStream.registerConverter : $r2 = r0.<com.thoughtworks.xstream.XStream: com.thoughtworks.xstream.core.DefaultConverterLookup converterLookup>
+com.thoughtworks.xstream.core.TreeMarshaller.convertAnother : virtualinvoke r0.<com.thoughtworks.xstream.core.TreeMarshaller: void convert(java.lang.Object,com.thoughtworks.xstream.converters.Converter)>(r1, r2)
+com.thoughtworks.xstream.core.TreeMarshaller.convertAnother : $r3 = r0.<com.thoughtworks.xstream.core.TreeMarshaller: com.thoughtworks.xstream.converters.ConverterLookup converterLookup>
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.addAttribute : $r8 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: com.thoughtworks.xstream.core.util.QuickWriter writer>
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.addAttribute : $r6 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: com.thoughtworks.xstream.core.util.QuickWriter writer>
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.addAttribute : $r9 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: com.thoughtworks.xstream.core.util.QuickWriter writer>
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.addAttribute : $r3 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: com.thoughtworks.xstream.core.util.QuickWriter writer>
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.addAttribute : $r7 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: com.thoughtworks.xstream.core.util.QuickWriter writer>
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.addAttribute : $r4 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: com.thoughtworks.xstream.core.util.QuickWriter writer>
+com.thoughtworks.xstream.converters.extended.RegexPatternConverter.canConvert : $z0 = virtualinvoke r1.<java.lang.Object: boolean equals(java.lang.Object)>(class "java/util/regex/Pattern")
+com.thoughtworks.xstream.mapper.XStream11XmlFriendlyMapper.realMember : $r3 = specialinvoke r0.<com.thoughtworks.xstream.mapper.AbstractXmlFriendlyMapper: java.lang.String realMember(java.lang.Class,java.lang.String)>(r1, r2)
+com.thoughtworks.xstream.core.util.FastStack.pop : return r2
+com.thoughtworks.xstream.core.util.FastStack.pop : $r4 = r0.<com.thoughtworks.xstream.core.util.FastStack: java.lang.Object[] stack>
+com.thoughtworks.xstream.core.util.FastStack.pop : $r3 = r0.<com.thoughtworks.xstream.core.util.FastStack: java.lang.Object[] stack>
+com.thoughtworks.xstream.core.util.ObjectIdDictionary.containsId : $r3 = r0.<com.thoughtworks.xstream.core.util.ObjectIdDictionary: java.util.Map map>
+com.thoughtworks.xstream.mapper.MapperWrapper.defaultImplementationOf : $r2 = r0.<com.thoughtworks.xstream.mapper.MapperWrapper: com.thoughtworks.xstream.mapper.Mapper wrapped>
+com.thoughtworks.xstream.converters.reflection.SerializationMethodInvoker.getMethod : goto [?= staticinvoke <edu.washington.cs.dt.impact.util.Tracer: void trace(java.lang.String,java.lang.String)>("if r1 == null goto $r25 = r0.<com.thoughtworks.xstream.converters.reflection.SerializationMethodInvoker: java.util.Map cache>", "com.thoughtworks.xstream.converters.reflection.SerializationMethodInvoker.getMethod")]
+com.thoughtworks.xstream.converters.reflection.SerializationMethodInvoker.getMethod : virtualinvoke r19.<java.lang.reflect.Method: void setAccessible(boolean)>(1)
+com.thoughtworks.xstream.converters.reflection.SerializationMethodInvoker.getMethod : return r19
+com.thoughtworks.xstream.converters.reflection.SerializationMethodInvoker.getMethod : $r13 = r0.<com.thoughtworks.xstream.converters.reflection.SerializationMethodInvoker: java.util.Map cache>
+com.thoughtworks.xstream.converters.reflection.SerializationMethodInvoker.getMethod : r19 = virtualinvoke r1.<java.lang.Class: java.lang.reflect.Method getDeclaredMethod(java.lang.String,java.lang.Class[])>(r2, r3)
+com.thoughtworks.xstream.converters.reflection.SerializationMethodInvoker.getMethod : $r4 = new java.lang.StringBuilder
+com.thoughtworks.xstream.converters.reflection.SerializationMethodInvoker.getMethod : if r1 == null goto $r25 = r0.<com.thoughtworks.xstream.converters.reflection.SerializationMethodInvoker: java.util.Map cache>
+com.thoughtworks.xstream.converters.reflection.SerializationMethodInvoker.getMethod : if z0 == 0 goto r28 = virtualinvoke r1.<java.lang.Class: java.lang.reflect.Method getDeclaredMethod(java.lang.String,java.lang.Class[])>(r2, r3)
+com.thoughtworks.xstream.converters.reflection.SerializationMethodInvoker.getMethod : return null
+com.thoughtworks.xstream.converters.reflection.SerializationMethodInvoker.getMethod : $r25 = r0.<com.thoughtworks.xstream.converters.reflection.SerializationMethodInvoker: java.util.Map cache>
+com.thoughtworks.xstream.converters.reflection.SerializationMethodInvoker.getMethod : $r20 = r0.<com.thoughtworks.xstream.converters.reflection.SerializationMethodInvoker: java.util.Map cache>
+com.thoughtworks.xstream.converters.reflection.SerializationMethodInvoker.getMethod : r24 = $r23
+com.thoughtworks.xstream.converters.reflection.SerializationMethodInvoker.getMethod : r1 = virtualinvoke r1.<java.lang.Class: java.lang.Class getSuperclass()>()
+com.thoughtworks.xstream.io.xml.AbstractXmlWriter.escapeXmlName : $r2 = r0.<com.thoughtworks.xstream.io.xml.AbstractXmlWriter: com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer replacer>
+com.thoughtworks.xstream.converters.basic.StringConverter.canConvert : $z0 = virtualinvoke r1.<java.lang.Object: boolean equals(java.lang.Object)>(class "java/lang/String")
+com.thoughtworks.xstream.core.util.QuickWriter.write : $i1 = r0.<com.thoughtworks.xstream.core.util.QuickWriter: int pointer>
+com.thoughtworks.xstream.core.util.QuickWriter.write : virtualinvoke r0.<com.thoughtworks.xstream.core.util.QuickWriter: void flush()>()
+com.thoughtworks.xstream.core.util.QuickWriter.write : $r5 = r0.<com.thoughtworks.xstream.core.util.QuickWriter: char[] buffer>
+com.thoughtworks.xstream.core.util.QuickWriter.write : i0 = virtualinvoke r1.<java.lang.String: int length()>()
+com.thoughtworks.xstream.core.util.QuickWriter.write : i0 = lengthof r1
+com.thoughtworks.xstream.core.util.QuickWriter.write : $r4 = r0.<com.thoughtworks.xstream.core.util.QuickWriter: char[] buffer>
+com.thoughtworks.xstream.core.util.QuickWriter.write : $r2 = r0.<com.thoughtworks.xstream.core.util.QuickWriter: char[] buffer>
+com.thoughtworks.xstream.core.util.QuickWriter.write : $i2 = r0.<com.thoughtworks.xstream.core.util.QuickWriter: int pointer>
+com.thoughtworks.xstream.core.util.QuickWriter.write : $i6 = r0.<com.thoughtworks.xstream.core.util.QuickWriter: int pointer>
+com.thoughtworks.xstream.XStream.setMode : $r1 = new com.thoughtworks.xstream.core.TreeMarshallingStrategy
+com.thoughtworks.xstream.XStream.setMode : goto [?= return]
+com.thoughtworks.xstream.XStream.setMode : $r3 = new com.thoughtworks.xstream.core.ReferenceByXPathMarshallingStrategy
+com.thoughtworks.xstream.XStream.setMode : tableswitch(i0) {     case 1001: goto $r1 = new com.thoughtworks.xstream.core.TreeMarshallingStrategy;     case 1002: goto $r2 = new com.thoughtworks.xstream.core.ReferenceByIdMarshallingStrategy;     case 1003: goto $r3 = new com.thoughtworks.xstream.core.ReferenceByXPathMarshallingStrategy;     case 1004: goto $r4 = new com.thoughtworks.xstream.core.ReferenceByXPathMarshallingStrategy;     default: goto $r5 = new java.lang.IllegalArgumentException; }
+com.thoughtworks.xstream.converters.basic.StringConverter.fromString : $r2 = virtualinvoke r1.<java.lang.String: java.lang.String intern()>()
+com.thoughtworks.xstream.converters.collections.TreeMapConverter.canConvert : $z0 = virtualinvoke r1.<java.lang.Object: boolean equals(java.lang.Object)>(class "java/util/TreeMap")
+com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.writeField : virtualinvoke r5.<java.lang.reflect.Field: void set(java.lang.Object,java.lang.Object)>(r1, r3)
+com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.writeField : virtualinvoke r0.<com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider: void validateFieldAccess(java.lang.reflect.Field)>(r5)
+com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.writeField : $r7 = r0.<com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider: com.thoughtworks.xstream.converters.reflection.FieldDictionary fieldDictionary>
+com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.writeField : goto [?= return]
+com.thoughtworks.xstream.core.util.Fields.find : return r2
+com.thoughtworks.xstream.core.util.Fields.find : virtualinvoke r2.<java.lang.reflect.Field: void setAccessible(boolean)>(1)
+com.thoughtworks.xstream.core.util.Fields.find : r2 = virtualinvoke r0.<java.lang.Class: java.lang.reflect.Field getDeclaredField(java.lang.String)>(r1)
+com.thoughtworks.xstream.mapper.DefaultImplementationsMapper.addDefaults : $r7 = <java.lang.Byte: java.lang.Class TYPE>
+com.thoughtworks.xstream.mapper.DefaultImplementationsMapper.addDefaults : $r3 = <java.lang.Integer: java.lang.Class TYPE>
+com.thoughtworks.xstream.mapper.DefaultImplementationsMapper.addDefaults : $r6 = <java.lang.Short: java.lang.Class TYPE>
+com.thoughtworks.xstream.mapper.DefaultImplementationsMapper.addDefaults : $r5 = <java.lang.Double: java.lang.Class TYPE>
+com.thoughtworks.xstream.mapper.DefaultImplementationsMapper.addDefaults : $r1 = <java.lang.Boolean: java.lang.Class TYPE>
+com.thoughtworks.xstream.mapper.DefaultImplementationsMapper.addDefaults : $r8 = <java.lang.Long: java.lang.Class TYPE>
+com.thoughtworks.xstream.mapper.DefaultImplementationsMapper.addDefaults : $r4 = <java.lang.Float: java.lang.Class TYPE>
+com.thoughtworks.xstream.mapper.DefaultImplementationsMapper.addDefaults : $r2 = <java.lang.Character: java.lang.Class TYPE>
+com.thoughtworks.xstream.mapper.DefaultImplementationsMapper.addDefaults : virtualinvoke r0.<com.thoughtworks.xstream.mapper.DefaultImplementationsMapper: void addDefaultImplementation(java.lang.Class,java.lang.Class)>(null, class "com/thoughtworks/xstream/mapper/Mapper$Null")
+com.thoughtworks.xstream.converters.basic.BigIntegerConverter.canConvert : $z0 = virtualinvoke r1.<java.lang.Object: boolean equals(java.lang.Object)>(class "java/math/BigInteger")
+com.thoughtworks.xstream.converters.basic.BigDecimalConverter.canConvert : $z0 = virtualinvoke r1.<java.lang.Object: boolean equals(java.lang.Object)>(class "java/math/BigDecimal")
+com.thoughtworks.xstream.XStream.unmarshal : $r3 = virtualinvoke r0.<com.thoughtworks.xstream.XStream: java.lang.Object unmarshal(com.thoughtworks.xstream.io.HierarchicalStreamReader,java.lang.Object,com.thoughtworks.xstream.converters.DataHolder)>(r1, r2, null)
+com.thoughtworks.xstream.XStream.unmarshal : $r4 = r0.<com.thoughtworks.xstream.XStream: com.thoughtworks.xstream.MarshallingStrategy marshallingStrategy>
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.flush : $r1 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: com.thoughtworks.xstream.core.util.QuickWriter writer>
+com.thoughtworks.xstream.core.TreeUnmarshaller.currentObject : $r1 = r0.<com.thoughtworks.xstream.core.TreeUnmarshaller: com.thoughtworks.xstream.core.util.FastStack types>
+com.thoughtworks.xstream.core.JVM.isApple : $r0 = staticinvoke <java.lang.System: java.lang.String getProperty(java.lang.String)>("java.vm.vendor")
+com.thoughtworks.xstream.converters.basic.AbstractSingleValueConverter.toString : if r1 != null goto $r2 = virtualinvoke r1.<java.lang.Object: java.lang.String toString()>()
+com.thoughtworks.xstream.XStream.setupMappers : $r13 = r0.<com.thoughtworks.xstream.XStream: com.thoughtworks.xstream.mapper.Mapper mapper>
+com.thoughtworks.xstream.XStream.setupMappers : $r1 = r0.<com.thoughtworks.xstream.XStream: com.thoughtworks.xstream.mapper.Mapper mapper>
+com.thoughtworks.xstream.XStream.setupMappers : $r22 = r0.<com.thoughtworks.xstream.XStream: com.thoughtworks.xstream.mapper.AttributeMapper attributeMapper>
+com.thoughtworks.xstream.XStream.setupMappers : $r4 = r0.<com.thoughtworks.xstream.XStream: com.thoughtworks.xstream.mapper.Mapper mapper>
+com.thoughtworks.xstream.XStream.setupMappers : $r7 = r0.<com.thoughtworks.xstream.XStream: com.thoughtworks.xstream.mapper.Mapper mapper>
+com.thoughtworks.xstream.XStream.setupMappers : $r19 = r0.<com.thoughtworks.xstream.XStream: com.thoughtworks.xstream.mapper.Mapper mapper>
+com.thoughtworks.xstream.XStream.setupMappers : $r16 = r0.<com.thoughtworks.xstream.XStream: com.thoughtworks.xstream.mapper.Mapper mapper>
+com.thoughtworks.xstream.XStream.setupMappers : $r10 = r0.<com.thoughtworks.xstream.XStream: com.thoughtworks.xstream.mapper.Mapper mapper>
+com.thoughtworks.xstream.XStream.setupMappers : $r23 = r0.<com.thoughtworks.xstream.XStream: com.thoughtworks.xstream.mapper.AttributeMapper attributeMapper>
+com.thoughtworks.xstream.converters.extended.StackTraceElementConverter.toString : $r3 = virtualinvoke r2.<java.lang.String: java.lang.String replaceFirst(java.lang.String,java.lang.String)>(":\\?\\?\\?", "")
+com.thoughtworks.xstream.converters.extended.StackTraceElementConverter.toString : r2 = specialinvoke r0.<com.thoughtworks.xstream.converters.basic.AbstractSingleValueConverter: java.lang.String toString(java.lang.Object)>(r1)
+com.thoughtworks.xstream.io.xml.AbstractPullReader.readRealEvent : $r3 = virtualinvoke r0.<com.thoughtworks.xstream.io.xml.AbstractPullReader: java.lang.String pullText()>()
+com.thoughtworks.xstream.io.xml.AbstractPullReader.readRealEvent : return r2
+com.thoughtworks.xstream.io.xml.AbstractPullReader.readRealEvent : $r1 = new com.thoughtworks.xstream.io.xml.AbstractPullReader$Event
+com.thoughtworks.xstream.io.xml.AbstractPullReader.readRealEvent : $i2 = r2.<com.thoughtworks.xstream.io.xml.AbstractPullReader$Event: int type>
+com.thoughtworks.xstream.io.xml.AbstractPullReader.readRealEvent : $i1 = r2.<com.thoughtworks.xstream.io.xml.AbstractPullReader$Event: int type>
+com.thoughtworks.xstream.io.xml.AbstractPullReader.readRealEvent : $i0 = virtualinvoke r0.<com.thoughtworks.xstream.io.xml.AbstractPullReader: int pullNextEvent()>()
+com.thoughtworks.xstream.io.xml.AbstractPullReader.readRealEvent : $r4 = virtualinvoke r0.<com.thoughtworks.xstream.io.xml.AbstractPullReader: java.lang.String pullElementName()>()
+com.thoughtworks.xstream.converters.extended.JavaClassConverter.canConvert : $r2 = class "java/lang/Class"
+com.thoughtworks.xstream.converters.extended.SqlTimeConverter.canConvert : $z0 = virtualinvoke r1.<java.lang.Object: boolean equals(java.lang.Object)>(class "java/sql/Time")
+com.thoughtworks.xstream.annotations.AnnotationProvider.getAnnotation : $r3 = virtualinvoke r1.<java.lang.reflect.Field: java.lang.annotation.Annotation getAnnotation(java.lang.Class)>(r2)
+com.thoughtworks.xstream.core.util.CompositeClassLoader.add : $r2 = r0.<com.thoughtworks.xstream.core.util.CompositeClassLoader: java.util.List classLoaders>
+com.thoughtworks.xstream.core.util.CompositeClassLoader.add : if r1 == null goto return
+com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.instantiateUsingSerialization : $r5 = r0.<com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider: java.util.Map serializedDataCache>
+com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.instantiateUsingSerialization : virtualinvoke r4.<java.io.DataOutputStream: void writeShort(int)>(-21267)
+com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.instantiateUsingSerialization : virtualinvoke r4.<java.io.DataOutputStream: void writeByte(int)>(2)
+com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.instantiateUsingSerialization : $r13 = r0.<com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider: java.util.Map serializedDataCache>
+com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.instantiateUsingSerialization : virtualinvoke r4.<java.io.DataOutputStream: void writeShort(int)>(5)
+com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.instantiateUsingSerialization : $r12 = staticinvoke <java.io.ObjectStreamClass: java.io.ObjectStreamClass lookup(java.lang.Class)>(r1)
+com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.instantiateUsingSerialization : $r18 = virtualinvoke r17.<java.io.ObjectInputStream: java.lang.Object readObject()>()
+com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.instantiateUsingSerialization : virtualinvoke r4.<java.io.DataOutputStream: void writeByte(int)>(114)
+com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.instantiateUsingSerialization : virtualinvoke r4.<java.io.DataOutputStream: void writeByte(int)>(112)
+com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.instantiateUsingSerialization : virtualinvoke r4.<java.io.DataOutputStream: void writeShort(int)>(0)
+com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.instantiateUsingSerialization : virtualinvoke r4.<java.io.DataOutputStream: void writeByte(int)>(120)
+com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.instantiateUsingSerialization : $r15 = new java.io.ObjectInputStream
+com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.instantiateUsingSerialization : r2 = virtualinvoke r3.<java.io.ByteArrayOutputStream: byte[] toByteArray()>()
+com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.instantiateUsingSerialization : $r9 = new java.io.ByteArrayOutputStream
+com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.instantiateUsingSerialization : virtualinvoke r4.<java.io.DataOutputStream: void writeByte(int)>(115)
+com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.instantiateUsingSerialization : $r10 = new java.io.DataOutputStream
+com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.instantiateUsingSerialization : $r11 = virtualinvoke r1.<java.lang.Class: java.lang.String getName()>()
+com.thoughtworks.xstream.io.xml.AbstractXmlReader.unescapeXmlName : $r2 = r0.<com.thoughtworks.xstream.io.xml.AbstractXmlReader: com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer replacer>
+com.thoughtworks.xstream.mapper.OuterClassMapper.realMember : $r4 = specialinvoke r0.<com.thoughtworks.xstream.mapper.MapperWrapper: java.lang.String realMember(java.lang.Class,java.lang.String)>(r1, r2)
+com.thoughtworks.xstream.mapper.OuterClassMapper.realMember : $r3 = r0.<com.thoughtworks.xstream.mapper.OuterClassMapper: java.lang.String alias>
+com.thoughtworks.xstream.converters.reflection.SerializableConverter.isSerializable : $r2 = class "java/io/Serializable"
+com.thoughtworks.xstream.XStream.setupConverters : $r62 = new com.thoughtworks.xstream.converters.extended.TextAttributeConverter
+com.thoughtworks.xstream.XStream.setupConverters : $r24 = new com.thoughtworks.xstream.converters.basic.LongConverter
+com.thoughtworks.xstream.XStream.setupConverters : $r49 = new com.thoughtworks.xstream.converters.extended.FileConverter
+com.thoughtworks.xstream.XStream.setupConverters : $r74 = newarray (java.lang.Class)[1]
+com.thoughtworks.xstream.XStream.setupConverters : $r45 = new com.thoughtworks.xstream.converters.collections.TreeSetConverter
+com.thoughtworks.xstream.XStream.setupConverters : $r4 = newarray (java.lang.Class)[3]
+com.thoughtworks.xstream.XStream.setupConverters : $r41 = new com.thoughtworks.xstream.converters.collections.MapConverter
+com.thoughtworks.xstream.XStream.setupConverters : $r70 = newarray (java.lang.Class)[1]
+com.thoughtworks.xstream.XStream.setupConverters : $r34 = new com.thoughtworks.xstream.converters.basic.BigIntegerConverter
+com.thoughtworks.xstream.XStream.setupConverters : $r53 = new com.thoughtworks.xstream.converters.extended.DynamicProxyConverter
+com.thoughtworks.xstream.XStream.setupConverters : $r51 = new com.thoughtworks.xstream.converters.extended.SqlTimeConverter
+com.thoughtworks.xstream.XStream.setupConverters : $r32 = new com.thoughtworks.xstream.converters.collections.BitSetConverter
+com.thoughtworks.xstream.XStream.setupConverters : $r48 = new com.thoughtworks.xstream.converters.extended.EncodedByteArrayConverter
+com.thoughtworks.xstream.XStream.setupConverters : $r26 = new com.thoughtworks.xstream.converters.basic.CharConverter
+com.thoughtworks.xstream.XStream.setupConverters : $r39 = new com.thoughtworks.xstream.converters.collections.CollectionConverter
+com.thoughtworks.xstream.XStream.setupConverters : $r33 = new com.thoughtworks.xstream.converters.basic.URLConverter
+com.thoughtworks.xstream.XStream.setupConverters : goto [?= $r15 = new com.thoughtworks.xstream.converters.reflection.SerializableConverter]
+com.thoughtworks.xstream.XStream.setupConverters : specialinvoke r0.<com.thoughtworks.xstream.XStream: void dynamicallyRegisterConverter(java.lang.String,int,java.lang.Class[],java.lang.Object[])>("com.thoughtworks.xstream.converters.enums.EnumConverter", 0, null, null)
+com.thoughtworks.xstream.XStream.setupConverters : $r36 = new com.thoughtworks.xstream.converters.collections.ArrayConverter
+com.thoughtworks.xstream.XStream.setupConverters : specialinvoke r0.<com.thoughtworks.xstream.XStream: void dynamicallyRegisterConverter(java.lang.String,int,java.lang.Class[],java.lang.Object[])>("com.thoughtworks.xstream.converters.extended.StackTraceElementConverter", 0, null, null)
+com.thoughtworks.xstream.XStream.setupConverters : $r31 = new com.thoughtworks.xstream.converters.basic.DateConverter
+com.thoughtworks.xstream.XStream.setupConverters : $r30 = new com.thoughtworks.xstream.converters.basic.StringBufferConverter
+com.thoughtworks.xstream.XStream.setupConverters : $r23 = new com.thoughtworks.xstream.converters.basic.DoubleConverter
+com.thoughtworks.xstream.XStream.setupConverters : $r56 = new com.thoughtworks.xstream.converters.extended.JavaClassConverter
+com.thoughtworks.xstream.XStream.setupConverters : $r82 = newarray (java.lang.Class)[2]
+com.thoughtworks.xstream.XStream.setupConverters : $r58 = new com.thoughtworks.xstream.converters.extended.JavaMethodConverter
+com.thoughtworks.xstream.XStream.setupConverters : specialinvoke r0.<com.thoughtworks.xstream.XStream: void dynamicallyRegisterConverter(java.lang.String,int,java.lang.Class[],java.lang.Object[])>("com.thoughtworks.xstream.converters.extended.CurrencyConverter", 0, null, null)
+com.thoughtworks.xstream.XStream.setupConverters : $r52 = new com.thoughtworks.xstream.converters.extended.SqlDateConverter
+com.thoughtworks.xstream.XStream.setupConverters : $r67 = newarray (java.lang.Class)[1]
+com.thoughtworks.xstream.XStream.setupConverters : $r29 = new com.thoughtworks.xstream.converters.basic.StringConverter
+com.thoughtworks.xstream.XStream.setupConverters : $r64 = new com.thoughtworks.xstream.converters.extended.GregorianCalendarConverter
+com.thoughtworks.xstream.XStream.setupConverters : $r15 = new com.thoughtworks.xstream.converters.reflection.SerializableConverter
+com.thoughtworks.xstream.XStream.setupConverters : $r80 = r0.<com.thoughtworks.xstream.XStream: com.thoughtworks.xstream.core.JVM jvm>
+com.thoughtworks.xstream.XStream.setupConverters : $r38 = new com.thoughtworks.xstream.converters.collections.CharArrayConverter
+com.thoughtworks.xstream.XStream.setupConverters : $r28 = new com.thoughtworks.xstream.converters.basic.ByteConverter
+com.thoughtworks.xstream.XStream.setupConverters : $r25 = new com.thoughtworks.xstream.converters.basic.ShortConverter
+com.thoughtworks.xstream.XStream.setupConverters : $r72 = newarray (java.lang.Class)[1]
+com.thoughtworks.xstream.XStream.setupConverters : $r21 = new com.thoughtworks.xstream.converters.basic.IntConverter
+com.thoughtworks.xstream.XStream.setupConverters : $r43 = new com.thoughtworks.xstream.converters.collections.TreeMapConverter
+com.thoughtworks.xstream.XStream.setupConverters : $r20 = new com.thoughtworks.xstream.converters.basic.NullConverter
+com.thoughtworks.xstream.XStream.setupConverters : $r65 = r0.<com.thoughtworks.xstream.XStream: com.thoughtworks.xstream.core.JVM jvm>
+com.thoughtworks.xstream.XStream.setupConverters : specialinvoke r0.<com.thoughtworks.xstream.XStream: void dynamicallyRegisterConverter(java.lang.String,int,java.lang.Class[],java.lang.Object[])>("com.thoughtworks.xstream.converters.extended.CharsetConverter", 0, null, null)
+com.thoughtworks.xstream.XStream.setupConverters : $z2 = staticinvoke <com.thoughtworks.xstream.core.JVM: boolean is15()>()
+com.thoughtworks.xstream.XStream.setupConverters : $r27 = new com.thoughtworks.xstream.converters.basic.BooleanConverter
+com.thoughtworks.xstream.XStream.setupConverters : $z0 = staticinvoke <com.thoughtworks.xstream.core.JVM: boolean is15()>()
+com.thoughtworks.xstream.XStream.setupConverters : $r18 = new com.thoughtworks.xstream.converters.reflection.ExternalizableConverter
+com.thoughtworks.xstream.XStream.setupConverters : $r77 = newarray (java.lang.Class)[1]
+com.thoughtworks.xstream.XStream.setupConverters : $r61 = new com.thoughtworks.xstream.converters.extended.ColorConverter
+com.thoughtworks.xstream.XStream.setupConverters : $r60 = new com.thoughtworks.xstream.converters.extended.FontConverter
+com.thoughtworks.xstream.XStream.setupConverters : $z1 = staticinvoke <com.thoughtworks.xstream.core.JVM: boolean is14()>()
+com.thoughtworks.xstream.XStream.setupConverters : $r10 = r0.<com.thoughtworks.xstream.XStream: com.thoughtworks.xstream.core.DefaultConverterLookup converterLookup>
+com.thoughtworks.xstream.XStream.setupConverters : $r86 = new com.thoughtworks.xstream.converters.reflection.SelfStreamingInstanceChecker
+com.thoughtworks.xstream.XStream.setupConverters : $r3 = r0.<com.thoughtworks.xstream.XStream: com.thoughtworks.xstream.core.JVM jvm>
+com.thoughtworks.xstream.XStream.setupConverters : $r22 = new com.thoughtworks.xstream.converters.basic.FloatConverter
+com.thoughtworks.xstream.XStream.setupConverters : $r63 = new com.thoughtworks.xstream.converters.extended.LocaleConverter
+com.thoughtworks.xstream.XStream.setupConverters : $r47 = new com.thoughtworks.xstream.converters.collections.PropertiesConverter
+com.thoughtworks.xstream.XStream.setupConverters : $r50 = new com.thoughtworks.xstream.converters.extended.SqlTimestampConverter
+com.thoughtworks.xstream.XStream.setupConverters : $r35 = new com.thoughtworks.xstream.converters.basic.BigDecimalConverter
+com.thoughtworks.xstream.io.AttributeNameIterator.next : $r2 = r0.<com.thoughtworks.xstream.io.AttributeNameIterator: com.thoughtworks.xstream.io.HierarchicalStreamReader reader>
+com.thoughtworks.xstream.converters.extended.CharsetConverter.canConvert : $r2 = class "java/nio/charset/Charset"
+com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.marshal : virtualinvoke r0.<com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter: void doMarshal(java.lang.Object,com.thoughtworks.xstream.io.HierarchicalStreamWriter,com.thoughtworks.xstream.converters.MarshallingContext)>(r4, r2, r3)
+com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.marshal : $r6 = virtualinvoke r4.<java.lang.Object: java.lang.Class getClass()>()
+com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.marshal : $r5 = r0.<com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter: com.thoughtworks.xstream.converters.reflection.SerializationMethodInvoker serializationMethodInvoker>
+com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.marshal : $r8 = r0.<com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter: com.thoughtworks.xstream.mapper.Mapper mapper>
+com.thoughtworks.xstream.converters.reflection.CGLIBEnhancedConverter.canConvert : $z0 = staticinvoke <net.sf.cglib.proxy.Enhancer: boolean isEnhanced(java.lang.Class)>(r1)
+com.thoughtworks.xstream.XStream.aliasType : $r4 = r0.<com.thoughtworks.xstream.XStream: com.thoughtworks.xstream.mapper.ClassAliasingMapper classAliasingMapper>
+com.thoughtworks.xstream.XStream.aliasType : $r12 = r0.<com.thoughtworks.xstream.XStream: com.thoughtworks.xstream.mapper.ClassAliasingMapper classAliasingMapper>
+com.thoughtworks.xstream.core.JVM.isSun : $r0 = staticinvoke <java.lang.System: java.lang.String getProperty(java.lang.String)>("java.vm.vendor")
+com.thoughtworks.xstream.converters.extended.SqlTimestampConverter.canConvert : $z0 = virtualinvoke r1.<java.lang.Object: boolean equals(java.lang.Object)>(class "java/sql/Timestamp")
+com.thoughtworks.xstream.converters.SingleValueConverterWrapper.unmarshal : $r3 = interfaceinvoke r1.<com.thoughtworks.xstream.io.HierarchicalStreamReader: java.lang.String getValue()>()
+com.thoughtworks.xstream.XStream.marshal : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void marshal(java.lang.Object,com.thoughtworks.xstream.io.HierarchicalStreamWriter,com.thoughtworks.xstream.converters.DataHolder)>(r1, r2, null)
+com.thoughtworks.xstream.XStream.marshal : $r4 = r0.<com.thoughtworks.xstream.XStream: com.thoughtworks.xstream.MarshallingStrategy marshallingStrategy>
+com.thoughtworks.xstream.core.TreeUnmarshaller.getRequiredType : $r1 = r0.<com.thoughtworks.xstream.core.TreeUnmarshaller: com.thoughtworks.xstream.core.util.FastStack types>
+com.thoughtworks.xstream.mapper.DynamicProxyMapper.serializedClass : $r3 = specialinvoke r0.<com.thoughtworks.xstream.mapper.MapperWrapper: java.lang.String serializedClass(java.lang.Class)>(r1)
+com.thoughtworks.xstream.mapper.DynamicProxyMapper.serializedClass : $z0 = staticinvoke <java.lang.reflect.Proxy: boolean isProxyClass(java.lang.Class)>(r1)
+com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doUnmarshal : r33 = specialinvoke r0.<com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter: java.lang.Class determineWhichClassDefinesField(com.thoughtworks.xstream.io.HierarchicalStreamReader)>(r2)
+com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doUnmarshal : r9 = specialinvoke r0.<com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter: java.lang.Class determineWhichClassDefinesField(com.thoughtworks.xstream.io.HierarchicalStreamReader)>(r2)
+com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doUnmarshal : interfaceinvoke r2.<com.thoughtworks.xstream.io.HierarchicalStreamReader: void moveUp()>()
+com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doUnmarshal : r24 = null
+com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doUnmarshal : if z7 == 0 goto r24 = specialinvoke r0.<com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter: java.util.Map writeValueToImplicitCollection(com.thoughtworks.xstream.converters.UnmarshallingContext,java.lang.Object,java.util.Map,java.lang.Object,java.lang.String)>(r3, r13, r24, r1, r28)
+com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doUnmarshal : interfaceinvoke r2.<com.thoughtworks.xstream.io.HierarchicalStreamReader: void moveDown()>()
+com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doUnmarshal : $r25 = r0.<com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter: com.thoughtworks.xstream.mapper.Mapper mapper>
+com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doUnmarshal : $r15 = r0.<com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter: com.thoughtworks.xstream.mapper.Mapper mapper>
+com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doUnmarshal : $z1 = interfaceinvoke r6.<java.util.Iterator: boolean hasNext()>()
+com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doUnmarshal : $r4 = new com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$SeenFields
+com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doUnmarshal : virtualinvoke r5.<com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$SeenFields: void add(java.lang.Class,java.lang.String)>(r33, r28)
+com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doUnmarshal : return r1
+com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doUnmarshal : if z7 == 0 goto r13 = interfaceinvoke r3.<com.thoughtworks.xstream.converters.UnmarshallingContext: java.lang.Object convertAnother(java.lang.Object,java.lang.Class)>(r1, r36)
+com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doUnmarshal : goto [?= (branch)]
+com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doUnmarshal : if z4 != 0 goto $z6 = 0
+com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doUnmarshal : r6 = interfaceinvoke r2.<com.thoughtworks.xstream.io.HierarchicalStreamReader: java.util.Iterator getAttributeNames()>()
+com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doUnmarshal : $r16 = r0.<com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter: com.thoughtworks.xstream.converters.reflection.ReflectionProvider reflectionProvider>
+com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doUnmarshal : goto [?= staticinvoke <edu.washington.cs.dt.impact.util.Tracer: void trace(java.lang.String,java.lang.String)>("$z1 = interfaceinvoke r6.<java.util.Iterator: boolean hasNext()>()", "com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doUnmarshal")]
+com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doUnmarshal : r13 = virtualinvoke r0.<com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter: java.lang.Object unmarshallField(com.thoughtworks.xstream.converters.UnmarshallingContext,java.lang.Object,java.lang.Class,java.lang.reflect.Field)>(r3, r1, r36, r12)
+com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doUnmarshal : $r29 = r0.<com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter: com.thoughtworks.xstream.mapper.Mapper mapper>
+com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doUnmarshal : $z2 = interfaceinvoke r2.<com.thoughtworks.xstream.io.HierarchicalStreamReader: boolean hasMoreChildren()>()
+com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doUnmarshal : if z0 == 0 goto (branch)
+com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doUnmarshal : goto [?= staticinvoke <edu.washington.cs.dt.impact.util.Tracer: void trace(java.lang.String,java.lang.String)>("$z2 = interfaceinvoke r2.<com.thoughtworks.xstream.io.HierarchicalStreamReader: boolean hasMoreChildren()>()", "com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doUnmarshal")]
+com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doUnmarshal : if r13 == null goto (branch)
+com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doUnmarshal : $r37 = r0.<com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter: com.thoughtworks.xstream.converters.reflection.ReflectionProvider reflectionProvider>
+com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doUnmarshal : $r50 = r0.<com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter: com.thoughtworks.xstream.converters.reflection.ReflectionProvider reflectionProvider>
+com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doUnmarshal : $r14 = interfaceinvoke r6.<java.util.Iterator: java.lang.Object next()>()
+com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doUnmarshal : r36 = specialinvoke r0.<com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter: java.lang.Class determineType(com.thoughtworks.xstream.io.HierarchicalStreamReader,boolean,java.lang.Object,java.lang.String,java.lang.Class)>(r2, z7, r1, r28, r33)
+com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.fieldModifiersSupported : $i0 = virtualinvoke r1.<java.lang.reflect.Field: int getModifiers()>()
+com.thoughtworks.xstream.converters.extended.StackTraceElementConverter.canConvert : $r2 = class "java/lang/StackTraceElement"
+com.thoughtworks.xstream.mapper.MapperWrapper.attributeForAlias : $r2 = r0.<com.thoughtworks.xstream.mapper.MapperWrapper: com.thoughtworks.xstream.mapper.Mapper wrapped>
+com.thoughtworks.xstream.XStream.addDefaultImplementation : $r12 = r0.<com.thoughtworks.xstream.XStream: com.thoughtworks.xstream.mapper.DefaultImplementationsMapper defaultImplementationsMapper>
+com.thoughtworks.xstream.XStream.addDefaultImplementation : $r4 = r0.<com.thoughtworks.xstream.XStream: com.thoughtworks.xstream.mapper.DefaultImplementationsMapper defaultImplementationsMapper>
+com.thoughtworks.xstream.converters.collections.PropertiesConverter.canConvert : if class "java/util/Properties" != r1 goto $z0 = 0
+com.thoughtworks.xstream.converters.collections.CollectionConverter.populateCollection : $z0 = interfaceinvoke r1.<com.thoughtworks.xstream.io.HierarchicalStreamReader: boolean hasMoreChildren()>()
+com.thoughtworks.xstream.mapper.ArrayMapper.boxedTypeName : $r2 = <com.thoughtworks.xstream.mapper.ArrayMapper: java.util.Collection BOXED_TYPES>
+com.thoughtworks.xstream.core.util.PrioritizedList.add : r0.<com.thoughtworks.xstream.core.util.PrioritizedList: int lowestPriority> = i0
+com.thoughtworks.xstream.core.util.PrioritizedList.add : $i1 = r0.<com.thoughtworks.xstream.core.util.PrioritizedList: int lowestPriority>
+com.thoughtworks.xstream.core.util.PrioritizedList.add : $r3 = r0.<com.thoughtworks.xstream.core.util.PrioritizedList: java.util.Set set>
+com.thoughtworks.xstream.converters.extended.ThrowableConverter.unmarshal : $r3 = r0.<com.thoughtworks.xstream.converters.extended.ThrowableConverter: com.thoughtworks.xstream.converters.Converter defaultConverter>
+com.thoughtworks.xstream.core.util.FastStack.popSilently : $r2 = r0.<com.thoughtworks.xstream.core.util.FastStack: java.lang.Object[] stack>
+com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.writeField : $z1 = virtualinvoke r6.<java.lang.Object: boolean equals(java.lang.Object)>(r7)
+com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.writeField : r6 = virtualinvoke r5.<java.lang.Object: java.lang.Class getClass()>()
+com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.writeField : $r11 = r0.<com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2: com.thoughtworks.xstream.io.HierarchicalStreamWriter val$writer>
+com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.writeField : $r9 = r0.<com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2: com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter this$0>
+com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.writeField : $r17 = r0.<com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2: com.thoughtworks.xstream.io.HierarchicalStreamWriter val$writer>
+com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.writeField : $r32 = r0.<com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2: com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter this$0>
+com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.writeField : $r34 = r0.<com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2: com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter this$0>
+com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.writeField : $r15 = r0.<com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2: com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter this$0>
+com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.writeField : $r24 = r0.<com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2: java.util.Set val$seenFields>
+com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.writeField : $r36 = r0.<com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2: com.thoughtworks.xstream.io.HierarchicalStreamWriter val$writer>
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.finishTag : r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: boolean tagIsEmpty> = 0
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.finishTag : $z0 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: boolean tagInProgress>
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.finishTag : $r1 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: com.thoughtworks.xstream.core.util.QuickWriter writer>
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.finishTag : r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: boolean tagInProgress> = 0
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.finishTag : virtualinvoke r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: void endOfLine()>()
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.finishTag : r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: boolean readyForNewLine> = 0
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.finishTag : $z1 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: boolean readyForNewLine>
+com.thoughtworks.xstream.mapper.ArrayMapper.realClass : if i0 <= 0 goto $r13 = specialinvoke r0.<com.thoughtworks.xstream.mapper.MapperWrapper: java.lang.Class realClass(java.lang.String)>(r1)
+com.thoughtworks.xstream.mapper.ArrayMapper.realClass : i0 = 0
+com.thoughtworks.xstream.mapper.ArrayMapper.realClass : $r13 = specialinvoke r0.<com.thoughtworks.xstream.mapper.MapperWrapper: java.lang.Class realClass(java.lang.String)>(r1)
+com.thoughtworks.xstream.mapper.ArrayMapper.realClass : $z0 = virtualinvoke r1.<java.lang.String: boolean endsWith(java.lang.String)>("-array")
+com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$1.visit : if r5 != null goto (branch)
+com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$1.visit : if r5 == null goto return
+com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$1.visit : $r7 = r0.<com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$1: com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter this$0>
+com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$1.visit : $r9 = r0.<com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$1: com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter this$0>
+com.thoughtworks.xstream.converters.extended.FileConverter.canConvert : $z0 = virtualinvoke r1.<java.lang.Object: boolean equals(java.lang.Object)>(class "java/io/File")
+com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.newInstance : $r8 = r2[i0]
+com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.newInstance : $r6 = r2[i0]
+com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.newInstance : $r4 = r2[i0]
+com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.newInstance : $r12 = specialinvoke r0.<com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider: java.lang.Object instantiateUsingSerialization(java.lang.Class)>(r1)
+com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.newInstance : $r11 = class "java/io/Serializable"
+com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.newInstance : i0 = 0
+com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.newInstance : r2 = virtualinvoke r1.<java.lang.Class: java.lang.reflect.Constructor[] getDeclaredConstructors()>()
+com.thoughtworks.xstream.converters.enums.EnumConverter.canConvert : $z0 = virtualinvoke r1.<java.lang.Class: boolean isEnum()>()
+com.thoughtworks.xstream.core.TreeUnmarshaller.start : return r4
+com.thoughtworks.xstream.core.TreeUnmarshaller.start : $z0 = interfaceinvoke r5.<java.util.Iterator: boolean hasNext()>()
+com.thoughtworks.xstream.core.TreeUnmarshaller.start : $r7 = r0.<com.thoughtworks.xstream.core.TreeUnmarshaller: com.thoughtworks.xstream.io.HierarchicalStreamReader reader>
+com.thoughtworks.xstream.core.TreeUnmarshaller.start : r4 = virtualinvoke r0.<com.thoughtworks.xstream.core.TreeUnmarshaller: java.lang.Object convertAnother(java.lang.Object,java.lang.Class)>(null, r3)
+com.thoughtworks.xstream.core.TreeUnmarshaller.start : $r10 = r0.<com.thoughtworks.xstream.core.TreeUnmarshaller: com.thoughtworks.xstream.mapper.Mapper mapper>
+com.thoughtworks.xstream.core.TreeUnmarshaller.start : if r2 != null goto $r13 = r0.<com.thoughtworks.xstream.core.TreeUnmarshaller: com.thoughtworks.xstream.mapper.Mapper mapper>
+com.thoughtworks.xstream.core.TreeUnmarshaller.start : r0.<com.thoughtworks.xstream.core.TreeUnmarshaller: com.thoughtworks.xstream.converters.DataHolder dataHolder> = r1
+com.thoughtworks.xstream.core.TreeUnmarshaller.start : $r14 = r0.<com.thoughtworks.xstream.core.TreeUnmarshaller: com.thoughtworks.xstream.core.util.PrioritizedList validationList>
+com.thoughtworks.xstream.core.JVM.isHPUX : $r0 = staticinvoke <java.lang.System: java.lang.String getProperty(java.lang.String)>("java.vm.vendor")
+com.thoughtworks.xstream.io.xml.XppReader.getAttributeName : $r1 = r0.<com.thoughtworks.xstream.io.xml.XppReader: org.xmlpull.v1.XmlPullParser parser>
+com.thoughtworks.xstream.XStream.toXML : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void toXML(java.lang.Object,java.io.Writer)>(r1, r3)
+com.thoughtworks.xstream.XStream.toXML : $r4 = r0.<com.thoughtworks.xstream.XStream: com.thoughtworks.xstream.io.HierarchicalStreamDriver hierarchicalStreamDriver>
+com.thoughtworks.xstream.XStream.toXML : $r4 = virtualinvoke r3.<java.lang.Object: java.lang.String toString()>()
+com.thoughtworks.xstream.XStream.toXML : interfaceinvoke r3.<com.thoughtworks.xstream.io.HierarchicalStreamWriter: void flush()>()
+com.thoughtworks.xstream.XStream.toXML : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void marshal(java.lang.Object,com.thoughtworks.xstream.io.HierarchicalStreamWriter)>(r1, r3)
+com.thoughtworks.xstream.XStream.toXML : $r2 = new java.io.StringWriter
+com.thoughtworks.xstream.converters.extended.EncodedByteArrayConverter.canConvert : $z0 = virtualinvoke r1.<java.lang.Class: boolean isArray()>()
+com.thoughtworks.xstream.mapper.DefaultImplementationsMapper.addDefaultImplementation : $r5 = r0.<com.thoughtworks.xstream.mapper.DefaultImplementationsMapper: java.util.Map implToType>
+com.thoughtworks.xstream.mapper.DefaultImplementationsMapper.addDefaultImplementation : $r3 = r0.<com.thoughtworks.xstream.mapper.DefaultImplementationsMapper: java.util.Map typeToImpl>
+com.thoughtworks.xstream.io.xml.XppReader.pullNextEvent : $b2 = 2
+com.thoughtworks.xstream.io.xml.XppReader.pullNextEvent : $b3 = 3
+com.thoughtworks.xstream.io.xml.XppReader.pullNextEvent : $r2 = r0.<com.thoughtworks.xstream.io.xml.XppReader: org.xmlpull.v1.XmlPullParser parser>
+com.thoughtworks.xstream.io.xml.XppReader.pullNextEvent : $b1 = 1
+com.thoughtworks.xstream.converters.extended.LocaleConverter.canConvert : $z0 = virtualinvoke r1.<java.lang.Object: boolean equals(java.lang.Object)>(class "java/util/Locale")
+com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.determineType : $r9 = r0.<com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter: com.thoughtworks.xstream.mapper.Mapper mapper>
+com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.determineType : $r16 = r0.<com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter: com.thoughtworks.xstream.mapper.Mapper mapper>
+com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.determineType : if z0 != 0 goto $r16 = r0.<com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter: com.thoughtworks.xstream.mapper.Mapper mapper>
+com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.determineType : $r7 = r0.<com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter: com.thoughtworks.xstream.mapper.Mapper mapper>
+com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.determineType : if r5 == null goto (branch)
+com.thoughtworks.xstream.converters.basic.DoubleConverter.canConvert : $r2 = <java.lang.Double: java.lang.Class TYPE>
+com.thoughtworks.xstream.converters.collections.AbstractCollectionConverter.createCollection : $r6 = virtualinvoke r2.<java.lang.Class: java.lang.Object newInstance()>()
+com.thoughtworks.xstream.converters.collections.AbstractCollectionConverter.createCollection : $r5 = virtualinvoke r0.<com.thoughtworks.xstream.converters.collections.AbstractCollectionConverter: com.thoughtworks.xstream.mapper.Mapper mapper()>()
+com.thoughtworks.xstream.converters.reflection.FieldDictionary.serializableFieldsFor : $r2 = specialinvoke r0.<com.thoughtworks.xstream.converters.reflection.FieldDictionary: java.util.Map buildMap(java.lang.Class,boolean)>(r1, 1)
+com.thoughtworks.xstream.mapper.MapperWrapper.realMember : $r3 = r0.<com.thoughtworks.xstream.mapper.MapperWrapper: com.thoughtworks.xstream.mapper.Mapper wrapped>
+com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.visit : specialinvoke r0.<com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2: void writeField(java.lang.String,java.lang.String,java.lang.Class,java.lang.Class,java.lang.Object)>(r1, r1, r2, r3, r4)
+com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.visit : $r18 = r0.<com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2: java.util.Set val$seenFields>
+com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.visit : if r5 == null goto specialinvoke r0.<com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2: void writeField(java.lang.String,java.lang.String,java.lang.Class,java.lang.Class,java.lang.Object)>(r1, r1, r2, r3, r4)
+com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.visit : $r10 = r0.<com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2: com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter this$0>
+com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.visit : $r9 = r0.<com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2: java.util.Set val$seenAsAttributes>
+com.thoughtworks.xstream.converters.extended.ThrowableConverter.canConvert : $r2 = class "java/lang/Throwable"
+com.thoughtworks.xstream.io.xml.AbstractPullReader.hasMoreChildren : virtualinvoke r0.<com.thoughtworks.xstream.io.xml.AbstractPullReader: void mark()>()
+com.thoughtworks.xstream.io.xml.AbstractPullReader.hasMoreChildren : virtualinvoke r0.<com.thoughtworks.xstream.io.xml.AbstractPullReader: void reset()>()
+com.thoughtworks.xstream.io.xml.AbstractPullReader.hasMoreChildren : goto [?= staticinvoke <edu.washington.cs.dt.impact.util.Tracer: void trace(java.lang.String,java.lang.String)>("$r1 = specialinvoke r0.<com.thoughtworks.xstream.io.xml.AbstractPullReader: com.thoughtworks.xstream.io.xml.AbstractPullReader$Event readEvent()>()", "com.thoughtworks.xstream.io.xml.AbstractPullReader.hasMoreChildren")]
+com.thoughtworks.xstream.io.xml.AbstractPullReader.hasMoreChildren : $r1 = specialinvoke r0.<com.thoughtworks.xstream.io.xml.AbstractPullReader: com.thoughtworks.xstream.io.xml.AbstractPullReader$Event readEvent()>()
+com.thoughtworks.xstream.io.xml.AbstractPullReader.hasMoreChildren : return 1
+com.thoughtworks.xstream.io.xml.AbstractPullReader.hasMoreChildren : return 0
+com.thoughtworks.xstream.mapper.DefaultMapper.realClass : $r4 = r0.<com.thoughtworks.xstream.mapper.DefaultMapper: java.lang.ClassLoader classLoader>
+com.thoughtworks.xstream.converters.basic.ByteConverter.canConvert : $r2 = <java.lang.Byte: java.lang.Class TYPE>
+com.thoughtworks.xstream.XStream.buildMapperDynamically : r5 = virtualinvoke r4.<java.lang.Class: java.lang.reflect.Constructor getConstructor(java.lang.Class[])>(r2)
+com.thoughtworks.xstream.XStream.buildMapperDynamically : $r8 = virtualinvoke r5.<java.lang.reflect.Constructor: java.lang.Object newInstance(java.lang.Object[])>(r3)
+com.thoughtworks.xstream.XStream.buildMapperDynamically : $r6 = r0.<com.thoughtworks.xstream.XStream: com.thoughtworks.xstream.core.util.ClassLoaderReference classLoaderReference>
+com.thoughtworks.xstream.core.JVM.reverseFieldDefinition : $z0 = <com.thoughtworks.xstream.core.JVM: boolean reverseFieldOrder>
+com.thoughtworks.xstream.mapper.FieldAliasingMapper.shouldSerializeMember : $r3 = r0.<com.thoughtworks.xstream.mapper.FieldAliasingMapper: java.util.Set fieldsToOmit>
+com.thoughtworks.xstream.converters.extended.StackTraceElementFactory.setField : virtualinvoke r5.<java.lang.reflect.Field: void set(java.lang.Object,java.lang.Object)>(r1, r3)
+com.thoughtworks.xstream.converters.extended.StackTraceElementFactory.setField : virtualinvoke r5.<java.lang.reflect.Field: void setAccessible(boolean)>(1)
+com.thoughtworks.xstream.converters.extended.StackTraceElementFactory.setField : goto [?= return]
+com.thoughtworks.xstream.converters.extended.StackTraceElementFactory.setField : $r4 = class "java/lang/StackTraceElement"
+com.thoughtworks.xstream.core.util.FastStack.hasStuff : $i0 = r0.<com.thoughtworks.xstream.core.util.FastStack: int pointer>
+com.thoughtworks.xstream.XStream.setMarshallingStrategy : r0.<com.thoughtworks.xstream.XStream: com.thoughtworks.xstream.MarshallingStrategy marshallingStrategy> = r1
+com.thoughtworks.xstream.mapper.ClassAliasingMapper.addClassAlias : $r6 = r0.<com.thoughtworks.xstream.mapper.ClassAliasingMapper: java.util.Map classToName>
+com.thoughtworks.xstream.mapper.ClassAliasingMapper.addClassAlias : $r3 = r0.<com.thoughtworks.xstream.mapper.ClassAliasingMapper: java.util.Map nameToType>
+com.thoughtworks.xstream.core.TreeMarshallingStrategy.unmarshal : $r6 = new com.thoughtworks.xstream.core.TreeUnmarshaller
+com.thoughtworks.xstream.core.TreeMarshaller.convert : $r6 = r0.<com.thoughtworks.xstream.core.TreeMarshaller: com.thoughtworks.xstream.io.HierarchicalStreamWriter writer>
+com.thoughtworks.xstream.core.TreeMarshaller.convert : $r7 = r0.<com.thoughtworks.xstream.core.TreeMarshaller: com.thoughtworks.xstream.core.util.ObjectIdDictionary parentObjects>
+com.thoughtworks.xstream.core.TreeMarshaller.convert : $r3 = r0.<com.thoughtworks.xstream.core.TreeMarshaller: com.thoughtworks.xstream.core.util.ObjectIdDictionary parentObjects>
+com.thoughtworks.xstream.core.TreeMarshaller.convert : $r5 = r0.<com.thoughtworks.xstream.core.TreeMarshaller: com.thoughtworks.xstream.core.util.ObjectIdDictionary parentObjects>
+com.thoughtworks.xstream.io.xml.AbstractPullReader.reset : $r2 = r0.<com.thoughtworks.xstream.io.xml.AbstractPullReader: com.thoughtworks.xstream.core.util.FastStack lookback>
+com.thoughtworks.xstream.io.xml.AbstractPullReader.reset : r0.<com.thoughtworks.xstream.io.xml.AbstractPullReader: boolean marked> = 0
+com.thoughtworks.xstream.io.xml.AbstractPullReader.reset : $r1 = r0.<com.thoughtworks.xstream.io.xml.AbstractPullReader: com.thoughtworks.xstream.core.util.FastStack lookahead>
+com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer.stringFoundAt : $i1 = virtualinvoke r1.<java.lang.String: int length()>()
+com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer.stringFoundAt : return 0
+com.thoughtworks.xstream.mapper.AbstractXmlFriendlyMapper.stringFoundAt : $i1 = virtualinvoke r1.<java.lang.String: int length()>()
+com.thoughtworks.xstream.mapper.AbstractXmlFriendlyMapper.stringFoundAt : return 0
+com.thoughtworks.xstream.mapper.MapperWrapper.realClass : $r2 = r0.<com.thoughtworks.xstream.mapper.MapperWrapper: com.thoughtworks.xstream.mapper.Mapper wrapped>
+com.thoughtworks.xstream.XStream.addImmutableType : $r11 = r0.<com.thoughtworks.xstream.XStream: com.thoughtworks.xstream.mapper.ImmutableTypesMapper immutableTypesMapper>
+com.thoughtworks.xstream.XStream.addImmutableType : $r3 = r0.<com.thoughtworks.xstream.XStream: com.thoughtworks.xstream.mapper.ImmutableTypesMapper immutableTypesMapper>
+com.thoughtworks.xstream.converters.extended.ThrowableConverter.marshal : virtualinvoke r4.<java.lang.Throwable: java.lang.StackTraceElement[] getStackTrace()>()
+com.thoughtworks.xstream.converters.extended.ThrowableConverter.marshal : $r10 = r0.<com.thoughtworks.xstream.converters.extended.ThrowableConverter: com.thoughtworks.xstream.converters.Converter defaultConverter>
+com.thoughtworks.xstream.converters.extended.ThrowableConverter.marshal : r5 = $r8
+com.thoughtworks.xstream.converters.extended.ThrowableConverter.marshal : $r6 = virtualinvoke r4.<java.lang.Throwable: java.lang.Throwable getCause()>()
+com.thoughtworks.xstream.converters.extended.ThrowableConverter.marshal : virtualinvoke r4.<java.lang.Throwable: java.lang.Throwable initCause(java.lang.Throwable)>(null)
+com.thoughtworks.xstream.converters.extended.ThrowableConverter.marshal : r4 = (java.lang.Throwable) r1
+com.thoughtworks.xstream.core.util.ObjectIdDictionary$IdWrapper.hashCode : $r1 = r0.<com.thoughtworks.xstream.core.util.ObjectIdDictionary$IdWrapper: java.lang.Object obj>
+com.thoughtworks.xstream.io.xml.XppReader.createParser : $r1 = new org.xmlpull.mxp1.MXParser
+com.thoughtworks.xstream.converters.collections.CharArrayConverter.canConvert : $z0 = virtualinvoke r1.<java.lang.Class: boolean isArray()>()
+com.thoughtworks.xstream.annotations.AnnotationReflectionConverter.unmarshallField : $r6 = r0.<com.thoughtworks.xstream.annotations.AnnotationReflectionConverter: com.thoughtworks.xstream.annotations.AnnotationProvider annotationProvider>
+com.thoughtworks.xstream.annotations.AnnotationReflectionConverter.unmarshallField : $r13 = interfaceinvoke r1.<com.thoughtworks.xstream.converters.UnmarshallingContext: java.lang.Object convertAnother(java.lang.Object,java.lang.Class)>(r2, r3)
+com.thoughtworks.xstream.annotations.AnnotationReflectionConverter.unmarshallField : if r5 == null goto $r13 = interfaceinvoke r1.<com.thoughtworks.xstream.converters.UnmarshallingContext: java.lang.Object convertAnother(java.lang.Object,java.lang.Class)>(r2, r3)
+com.thoughtworks.xstream.mapper.AttributeAliasingMapper.aliasForAttribute : $r3 = r0.<com.thoughtworks.xstream.mapper.AttributeAliasingMapper: java.util.Map nameToAlias>
+com.thoughtworks.xstream.mapper.AttributeAliasingMapper.aliasForAttribute : if r2 != null goto $r5 = r2
+com.thoughtworks.xstream.mapper.AbstractXmlFriendlyMapper.unescapeFieldName : i1 = 0
+com.thoughtworks.xstream.mapper.AbstractXmlFriendlyMapper.unescapeFieldName : $r4 = r0.<com.thoughtworks.xstream.mapper.AbstractXmlFriendlyMapper: java.lang.String underscoreReplacementInField>
+com.thoughtworks.xstream.mapper.AbstractXmlFriendlyMapper.unescapeFieldName : c2 = virtualinvoke r1.<java.lang.String: char charAt(int)>(i1)
+com.thoughtworks.xstream.mapper.AbstractXmlFriendlyMapper.unescapeFieldName : i0 = virtualinvoke r1.<java.lang.String: int length()>()
+com.thoughtworks.xstream.mapper.AbstractXmlFriendlyMapper.unescapeFieldName : virtualinvoke r3.<java.lang.StringBuffer: java.lang.StringBuffer append(char)>(c2)
+com.thoughtworks.xstream.mapper.AbstractXmlFriendlyMapper.unescapeFieldName : $r2 = new java.lang.StringBuffer
+com.thoughtworks.xstream.mapper.AbstractXmlFriendlyMapper.unescapeFieldName : $r11 = virtualinvoke r3.<java.lang.StringBuffer: java.lang.String toString()>()
+com.thoughtworks.xstream.mapper.AbstractXmlFriendlyMapper.unescapeFieldName : $r7 = r0.<com.thoughtworks.xstream.mapper.AbstractXmlFriendlyMapper: java.lang.String dollarReplacementInField>
+com.thoughtworks.xstream.mapper.AbstractXmlFriendlyMapper.unescapeClassName : $c2 = r0.<com.thoughtworks.xstream.mapper.AbstractXmlFriendlyMapper: char dollarReplacementInClass>
+com.thoughtworks.xstream.mapper.AbstractXmlFriendlyMapper.unescapeClassName : return r8
+com.thoughtworks.xstream.mapper.AbstractXmlFriendlyMapper.unescapeClassName : $r2 = new java.lang.StringBuilder
+com.thoughtworks.xstream.io.xml.XppReader.pullElementName : $r1 = r0.<com.thoughtworks.xstream.io.xml.XppReader: org.xmlpull.v1.XmlPullParser parser>
+com.thoughtworks.xstream.converters.enums.EnumSetConverter.canConvert : $r2 = class "java/util/EnumSet"
+com.thoughtworks.xstream.converters.reflection.SerializationMethodInvoker.callReadResolve : if r2 == null goto return r1
+com.thoughtworks.xstream.converters.reflection.SerializationMethodInvoker.callReadResolve : if r1 != null goto $r4 = virtualinvoke r1.<java.lang.Object: java.lang.Class getClass()>()
+com.thoughtworks.xstream.converters.reflection.SerializationMethodInvoker.callReadResolve : $r4 = virtualinvoke r1.<java.lang.Object: java.lang.Class getClass()>()
+com.thoughtworks.xstream.converters.reflection.SerializationMethodInvoker.callReadResolve : return r1
+com.thoughtworks.xstream.converters.reflection.SerializationMethodInvoker.callReadResolve : $r5 = <com.thoughtworks.xstream.converters.reflection.SerializationMethodInvoker: java.lang.Object[] EMPTY_ARGS>
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.setValue : $r2 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: com.thoughtworks.xstream.core.util.QuickWriter writer>
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.setValue : r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: boolean tagIsEmpty> = 0
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.setValue : specialinvoke r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: void finishTag()>()
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.setValue : r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: boolean readyForNewLine> = 0
+com.thoughtworks.xstream.XStream.setupImmutableTypes : $r11 = r0.<com.thoughtworks.xstream.XStream: com.thoughtworks.xstream.core.JVM jvm>
+com.thoughtworks.xstream.XStream.setupImmutableTypes : $r10 = <java.lang.Short: java.lang.Class TYPE>
+com.thoughtworks.xstream.XStream.setupImmutableTypes : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void addImmutableType(java.lang.Class)>(class "java/io/File")
+com.thoughtworks.xstream.XStream.setupImmutableTypes : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void addImmutableType(java.lang.Class)>(class "java/lang/Short")
+com.thoughtworks.xstream.XStream.setupImmutableTypes : $r5 = <java.lang.Character: java.lang.Class TYPE>
+com.thoughtworks.xstream.XStream.setupImmutableTypes : $r1 = <java.lang.Boolean: java.lang.Class TYPE>
+com.thoughtworks.xstream.XStream.setupImmutableTypes : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void addImmutableType(java.lang.Class)>(class "java/net/URL")
+com.thoughtworks.xstream.XStream.setupImmutableTypes : $r8 = <java.lang.Integer: java.lang.Class TYPE>
+com.thoughtworks.xstream.XStream.setupImmutableTypes : $r9 = <java.lang.Long: java.lang.Class TYPE>
+com.thoughtworks.xstream.XStream.setupImmutableTypes : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void addImmutableType(java.lang.Class)>(class "java/lang/Byte")
+com.thoughtworks.xstream.XStream.setupImmutableTypes : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void addImmutableType(java.lang.Class)>(class "java/math/BigDecimal")
+com.thoughtworks.xstream.XStream.setupImmutableTypes : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void addImmutableType(java.lang.Class)>(r2)
+com.thoughtworks.xstream.XStream.setupImmutableTypes : $r3 = r0.<com.thoughtworks.xstream.XStream: com.thoughtworks.xstream.mapper.ImmutableTypesMapper immutableTypesMapper>
+com.thoughtworks.xstream.XStream.setupImmutableTypes : $r4 = <java.lang.Byte: java.lang.Class TYPE>
+com.thoughtworks.xstream.XStream.setupImmutableTypes : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void addImmutableType(java.lang.Class)>(class "java/lang/Integer")
+com.thoughtworks.xstream.XStream.setupImmutableTypes : $r6 = <java.lang.Double: java.lang.Class TYPE>
+com.thoughtworks.xstream.XStream.setupImmutableTypes : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void addImmutableType(java.lang.Class)>(class "java/lang/Character")
+com.thoughtworks.xstream.XStream.setupImmutableTypes : $r7 = <java.lang.Float: java.lang.Class TYPE>
+com.thoughtworks.xstream.XStream.setupImmutableTypes : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void addImmutableType(java.lang.Class)>(class "java/math/BigInteger")
+com.thoughtworks.xstream.XStream.setupImmutableTypes : $z0 = staticinvoke <com.thoughtworks.xstream.core.JVM: boolean is14()>()
+com.thoughtworks.xstream.XStream.setupImmutableTypes : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void addImmutableType(java.lang.Class)>(class "java/lang/Class")
+com.thoughtworks.xstream.XStream.setupImmutableTypes : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void addImmutableType(java.lang.Class)>(class "java/awt/font/TextAttribute")
+com.thoughtworks.xstream.XStream.setupImmutableTypes : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void addImmutableType(java.lang.Class)>(class "java/lang/Double")
+com.thoughtworks.xstream.XStream.setupImmutableTypes : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void addImmutableType(java.lang.Class)>(class "java/lang/Float")
+com.thoughtworks.xstream.XStream.setupImmutableTypes : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void addImmutableType(java.lang.Class)>(class "java/lang/String")
+com.thoughtworks.xstream.XStream.setupImmutableTypes : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void addImmutableType(java.lang.Class)>(class "java/lang/Boolean")
+com.thoughtworks.xstream.XStream.setupImmutableTypes : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void addImmutableType(java.lang.Class)>(class "java/lang/Long")
+com.thoughtworks.xstream.XStream.setupImmutableTypes : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void addImmutableType(java.lang.Class)>(class "com/thoughtworks/xstream/mapper/Mapper$Null")
+com.thoughtworks.xstream.core.util.PrioritizedList$PrioritizedItemIterator.hasNext : $r1 = r0.<com.thoughtworks.xstream.core.util.PrioritizedList$PrioritizedItemIterator: java.util.Iterator iterator>
+com.thoughtworks.xstream.core.util.ClassLoaderReference.getReference : $r1 = r0.<com.thoughtworks.xstream.core.util.ClassLoaderReference: java.lang.ClassLoader reference>
+com.thoughtworks.xstream.mapper.FieldAliasingMapper.realMember : $r7 = specialinvoke r0.<com.thoughtworks.xstream.mapper.MapperWrapper: java.lang.String realMember(java.lang.Class,java.lang.String)>(r1, r2)
+com.thoughtworks.xstream.mapper.FieldAliasingMapper.realMember : if r3 != null goto return r3
+com.thoughtworks.xstream.mapper.FieldAliasingMapper.realMember : $r4 = r0.<com.thoughtworks.xstream.mapper.FieldAliasingMapper: java.util.Map aliasToFieldMap>
+com.thoughtworks.xstream.converters.extended.FontConverter.canConvert : $r2 = virtualinvoke r1.<java.lang.Class: java.lang.String getName()>()
+com.thoughtworks.xstream.core.TreeMarshaller.start : $r7 = r0.<com.thoughtworks.xstream.core.TreeMarshaller: com.thoughtworks.xstream.io.HierarchicalStreamWriter writer>
+com.thoughtworks.xstream.core.TreeMarshaller.start : if r1 != null goto $r7 = r0.<com.thoughtworks.xstream.core.TreeMarshaller: com.thoughtworks.xstream.io.HierarchicalStreamWriter writer>
+com.thoughtworks.xstream.core.TreeMarshaller.start : $r12 = r0.<com.thoughtworks.xstream.core.TreeMarshaller: com.thoughtworks.xstream.io.HierarchicalStreamWriter writer>
+com.thoughtworks.xstream.core.TreeMarshaller.start : r0.<com.thoughtworks.xstream.core.TreeMarshaller: com.thoughtworks.xstream.converters.DataHolder dataHolder> = r2
+com.thoughtworks.xstream.core.TreeMarshaller.start : virtualinvoke r0.<com.thoughtworks.xstream.core.TreeMarshaller: void convertAnother(java.lang.Object)>(r1)
+com.thoughtworks.xstream.converters.reflection.FieldDictionary.field : if r3 == null goto $r9 = r2
+com.thoughtworks.xstream.converters.reflection.FieldDictionary.field : return r7
+com.thoughtworks.xstream.converters.reflection.FieldDictionary.field : if r3 == null goto $z0 = 0
+com.thoughtworks.xstream.converters.reflection.FieldDictionary.field : r21 = new com.thoughtworks.xstream.converters.reflection.ObjectAccessException
+com.thoughtworks.xstream.converters.reflection.FieldDictionary.field : if r7 != null goto return r7
+com.thoughtworks.xstream.converters.reflection.SerializableConverter.canConvert : $z0 = specialinvoke r0.<com.thoughtworks.xstream.converters.reflection.SerializableConverter: boolean isSerializable(java.lang.Class)>(r1)
+com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.determineWhichClassDefinesField : $r3 = r0.<com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter: com.thoughtworks.xstream.mapper.Mapper mapper>
+com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.determineWhichClassDefinesField : if r2 != null goto $r6 = r0.<com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter: com.thoughtworks.xstream.mapper.Mapper mapper>
+com.thoughtworks.xstream.core.util.FastStack.peek : $i0 = r0.<com.thoughtworks.xstream.core.util.FastStack: int pointer>
+com.thoughtworks.xstream.converters.extended.CurrencyConverter.canConvert : $z0 = virtualinvoke r1.<java.lang.Object: boolean equals(java.lang.Object)>(class "java/util/Currency")
+com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.getField : $r3 = r0.<com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider: com.thoughtworks.xstream.converters.reflection.FieldDictionary fieldDictionary>
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.writeText : i1 = 0
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.writeText : specialinvoke r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: void writeText(java.lang.String)>(r2)
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.writeText : $r16 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: com.thoughtworks.xstream.core.util.QuickWriter writer>
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.writeText : c2 = virtualinvoke r1.<java.lang.String: char charAt(int)>(i1)
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.writeText : i0 = virtualinvoke r1.<java.lang.String: int length()>()
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.writeText : lookupswitch(c2) {     case 0: goto $r2 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: com.thoughtworks.xstream.core.util.QuickWriter writer>;     case 13: goto $r14 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: com.thoughtworks.xstream.core.util.QuickWriter writer>;     case 34: goto $r10 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: com.thoughtworks.xstream.core.util.QuickWriter writer>;     case 38: goto $r4 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: com.thoughtworks.xstream.core.util.QuickWriter writer>;     case 39: goto $r12 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: com.thoughtworks.xstream.core.util.QuickWriter writer>;     case 60: goto $r6 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: com.thoughtworks.xstream.core.util.QuickWriter writer>;     case 62: goto $r8 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: com.thoughtworks.xstream.core.util.QuickWriter writer>;     default: goto $r16 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: com.thoughtworks.xstream.core.util.QuickWriter writer>; }
+com.thoughtworks.xstream.mapper.AttributeMapper.setConverterLookup : r0.<com.thoughtworks.xstream.mapper.AttributeMapper: com.thoughtworks.xstream.converters.ConverterLookup converterLookup> = r1
+com.thoughtworks.xstream.mapper.MapperWrapper.getImplicitCollectionDefForFieldName : $r3 = r0.<com.thoughtworks.xstream.mapper.MapperWrapper: com.thoughtworks.xstream.mapper.Mapper wrapped>
+com.thoughtworks.xstream.XStream.alias : $r4 = r0.<com.thoughtworks.xstream.XStream: com.thoughtworks.xstream.mapper.ClassAliasingMapper classAliasingMapper>
+com.thoughtworks.xstream.XStream.alias : $r12 = r0.<com.thoughtworks.xstream.XStream: com.thoughtworks.xstream.mapper.ClassAliasingMapper classAliasingMapper>
+com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother : $r5 = virtualinvoke r0.<com.thoughtworks.xstream.core.TreeUnmarshaller: java.lang.Object convert(java.lang.Object,java.lang.Class,com.thoughtworks.xstream.converters.Converter)>(r1, r2, r3)
+com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother : $r4 = r0.<com.thoughtworks.xstream.core.TreeUnmarshaller: com.thoughtworks.xstream.converters.ConverterLookup converterLookup>
+com.thoughtworks.xstream.core.TreeMarshallingStrategy.marshal : $r6 = new com.thoughtworks.xstream.core.TreeMarshaller
+com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.instantiateNewInstance : $r7 = r0.<com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter: com.thoughtworks.xstream.converters.reflection.ReflectionProvider reflectionProvider>
+com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.instantiateNewInstance : if r3 == null goto $r11 = r0.<com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter: com.thoughtworks.xstream.converters.reflection.ReflectionProvider reflectionProvider>
+com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.instantiateNewInstance : $r5 = r0.<com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter: com.thoughtworks.xstream.mapper.Mapper mapper>
+com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.instantiateNewInstance : $r11 = r0.<com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter: com.thoughtworks.xstream.converters.reflection.ReflectionProvider reflectionProvider>
+com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.instantiateNewInstance : if r4 == null goto (branch)
+com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.instantiateNewInstance : r4 = interfaceinvoke r2.<com.thoughtworks.xstream.converters.UnmarshallingContext: java.lang.Object currentObject()>()
+com.thoughtworks.xstream.io.xml.XppReader.getAttribute : $r2 = r0.<com.thoughtworks.xstream.io.xml.XppReader: org.xmlpull.v1.XmlPullParser parser>
+com.thoughtworks.xstream.converters.collections.AbstractCollectionConverter.mapper : $r1 = r0.<com.thoughtworks.xstream.converters.collections.AbstractCollectionConverter: com.thoughtworks.xstream.mapper.Mapper mapper>
+com.thoughtworks.xstream.XStream.setupDefaultImplementations : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void addDefaultImplementation(java.lang.Class,java.lang.Class)>(class "java/util/GregorianCalendar", class "java/util/Calendar")
+com.thoughtworks.xstream.XStream.setupDefaultImplementations : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void addDefaultImplementation(java.lang.Class,java.lang.Class)>(class "java/util/HashSet", class "java/util/Set")
+com.thoughtworks.xstream.XStream.setupDefaultImplementations : $r1 = r0.<com.thoughtworks.xstream.XStream: com.thoughtworks.xstream.mapper.DefaultImplementationsMapper defaultImplementationsMapper>
+com.thoughtworks.xstream.XStream.setupDefaultImplementations : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void addDefaultImplementation(java.lang.Class,java.lang.Class)>(class "java/util/ArrayList", class "java/util/List")
+com.thoughtworks.xstream.XStream.setupDefaultImplementations : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void addDefaultImplementation(java.lang.Class,java.lang.Class)>(class "java/util/HashMap", class "java/util/Map")
+com.thoughtworks.xstream.mapper.ArrayMapper.serializedClass : return r4
+com.thoughtworks.xstream.mapper.ArrayMapper.serializedClass : if r4 != null goto $i0 = virtualinvoke r3.<java.lang.StringBuffer: int length()>()
+com.thoughtworks.xstream.mapper.ArrayMapper.serializedClass : r4 = specialinvoke r0.<com.thoughtworks.xstream.mapper.MapperWrapper: java.lang.String serializedClass(java.lang.Class)>(r1)
+com.thoughtworks.xstream.mapper.ArrayMapper.serializedClass : r4 = specialinvoke r0.<com.thoughtworks.xstream.mapper.ArrayMapper: java.lang.String boxedTypeName(java.lang.Class)>(r1)
+com.thoughtworks.xstream.mapper.ArrayMapper.serializedClass : $z0 = virtualinvoke r1.<java.lang.Class: boolean isArray()>()
+com.thoughtworks.xstream.mapper.ArrayMapper.serializedClass : $r2 = new java.lang.StringBuffer
+com.thoughtworks.xstream.mapper.ArrayMapper.serializedClass : $i0 = virtualinvoke r3.<java.lang.StringBuffer: int length()>()
+com.thoughtworks.xstream.mapper.DefaultImplementationsMapper.serializedClass : $r3 = r0.<com.thoughtworks.xstream.mapper.DefaultImplementationsMapper: java.util.Map implToType>
+com.thoughtworks.xstream.mapper.DefaultImplementationsMapper.serializedClass : if r2 != null goto $r5 = specialinvoke r0.<com.thoughtworks.xstream.mapper.MapperWrapper: java.lang.String serializedClass(java.lang.Class)>(r2)
+com.thoughtworks.xstream.converters.basic.NullConverter.canConvert : if r1 == null goto $z1 = 1
+com.thoughtworks.xstream.converters.basic.StringBufferConverter.canConvert : $z0 = virtualinvoke r1.<java.lang.Object: boolean equals(java.lang.Object)>(class "java/lang/StringBuffer")
+com.thoughtworks.xstream.io.xml.AbstractPullReader.getAttributeNames : $r1 = new com.thoughtworks.xstream.io.AttributeNameIterator
+com.thoughtworks.xstream.converters.collections.TreeSetConverter.canConvert : $z0 = virtualinvoke r1.<java.lang.Object: boolean equals(java.lang.Object)>(class "java/util/TreeSet")
+com.thoughtworks.xstream.converters.collections.CollectionConverter.canConvert : $z0 = virtualinvoke r1.<java.lang.Object: boolean equals(java.lang.Object)>(class "java/util/ArrayList")
+com.thoughtworks.xstream.mapper.DefaultImplementationsMapper.defaultImplementationOf : $r6 = specialinvoke r0.<com.thoughtworks.xstream.mapper.MapperWrapper: java.lang.Class defaultImplementationOf(java.lang.Class)>(r1)
+com.thoughtworks.xstream.mapper.DefaultImplementationsMapper.defaultImplementationOf : $r2 = r0.<com.thoughtworks.xstream.mapper.DefaultImplementationsMapper: java.util.Map typeToImpl>
+com.thoughtworks.xstream.mapper.DefaultImplementationsMapper.defaultImplementationOf : $r3 = r0.<com.thoughtworks.xstream.mapper.DefaultImplementationsMapper: java.util.Map typeToImpl>
+com.thoughtworks.xstream.core.JVM.loadClass : return r2
+com.thoughtworks.xstream.core.JVM.loadClass : $r7 = r0.<com.thoughtworks.xstream.core.JVM: java.util.Map loaderCache>
+com.thoughtworks.xstream.core.JVM.loadClass : $r5 = virtualinvoke r0.<java.lang.Object: java.lang.Class getClass()>()
+com.thoughtworks.xstream.core.JVM.loadClass : if r2 != null goto return r2
+com.thoughtworks.xstream.core.JVM.loadClass : $r3 = r0.<com.thoughtworks.xstream.core.JVM: java.util.Map loaderCache>
+com.thoughtworks.xstream.core.util.PrioritizedList.iterator : $r1 = new com.thoughtworks.xstream.core.util.PrioritizedList$PrioritizedItemIterator
+com.thoughtworks.xstream.core.JVM.is14 : $f0 = <com.thoughtworks.xstream.core.JVM: float majorJavaVersion>
+com.thoughtworks.xstream.mapper.DefaultMapper.serializedMember : return r2
+com.thoughtworks.xstream.mapper.MapperWrapper.serializedMember : $r3 = r0.<com.thoughtworks.xstream.mapper.MapperWrapper: com.thoughtworks.xstream.mapper.Mapper wrapped>
+com.thoughtworks.xstream.converters.reflection.FieldDictionary.buildMap : $r11 = r0.<com.thoughtworks.xstream.converters.reflection.FieldDictionary: java.util.Map keyedByFieldNameCache>
+com.thoughtworks.xstream.converters.reflection.FieldDictionary.buildMap : r16 = r6[i6]
+com.thoughtworks.xstream.converters.reflection.FieldDictionary.buildMap : if z0 == 0 goto $r31 = r0.<com.thoughtworks.xstream.converters.reflection.FieldDictionary: java.util.Map keyedByFieldNameCache>
+com.thoughtworks.xstream.converters.reflection.FieldDictionary.buildMap : r6 = virtualinvoke r1.<java.lang.Class: java.lang.reflect.Field[] getDeclaredFields()>()
+com.thoughtworks.xstream.converters.reflection.FieldDictionary.buildMap : $r9 = r0.<com.thoughtworks.xstream.converters.reflection.FieldDictionary: java.util.Map keyedByFieldNameCache>
+com.thoughtworks.xstream.converters.reflection.FieldDictionary.buildMap : $r13 = new com.thoughtworks.xstream.core.util.OrderRetainingMap
+com.thoughtworks.xstream.converters.reflection.FieldDictionary.buildMap : $r10 = r0.<com.thoughtworks.xstream.converters.reflection.FieldDictionary: java.util.Map keyedByFieldKeyCache>
+com.thoughtworks.xstream.converters.reflection.FieldDictionary.buildMap : r2 = virtualinvoke r1.<java.lang.Class: java.lang.String getName()>()
+com.thoughtworks.xstream.converters.reflection.FieldDictionary.buildMap : $r18 = virtualinvoke r16.<java.lang.reflect.Field: java.lang.String getName()>()
+com.thoughtworks.xstream.converters.reflection.FieldDictionary.buildMap : $r24 = r0.<com.thoughtworks.xstream.converters.reflection.FieldDictionary: java.util.Map keyedByFieldNameCache>
+com.thoughtworks.xstream.converters.reflection.FieldDictionary.buildMap : $r14 = class "java/lang/Object"
+com.thoughtworks.xstream.converters.reflection.FieldDictionary.buildMap : i6 = 0
+com.thoughtworks.xstream.converters.reflection.FieldDictionary.buildMap : $r17 = virtualinvoke r16.<java.lang.reflect.Field: java.lang.String getName()>()
+com.thoughtworks.xstream.converters.reflection.FieldDictionary.buildMap : $r20 = new com.thoughtworks.xstream.converters.reflection.FieldDictionary$FieldKey
+com.thoughtworks.xstream.converters.reflection.FieldDictionary.buildMap : $z4 = staticinvoke <com.thoughtworks.xstream.core.JVM: boolean reverseFieldDefinition()>()
+com.thoughtworks.xstream.converters.reflection.FieldDictionary.buildMap : $r12 = new java.util.HashMap
+com.thoughtworks.xstream.converters.reflection.FieldDictionary.buildMap : exitmonitor r3
+com.thoughtworks.xstream.converters.reflection.FieldDictionary.buildMap : virtualinvoke r16.<java.lang.reflect.Field: void setAccessible(boolean)>(1)
+com.thoughtworks.xstream.converters.reflection.FieldDictionary.buildMap : goto [?= staticinvoke <edu.washington.cs.dt.impact.util.Tracer: void trace(java.lang.String,java.lang.String)>("$r14 = class \"java/lang/Object\"", "com.thoughtworks.xstream.converters.reflection.FieldDictionary.buildMap")]
+com.thoughtworks.xstream.converters.reflection.FieldDictionary.buildMap : $r26 = r0.<com.thoughtworks.xstream.converters.reflection.FieldDictionary: java.util.Map keyedByFieldKeyCache>
+com.thoughtworks.xstream.converters.reflection.FieldDictionary.buildMap : r1 = virtualinvoke r1.<java.lang.Class: java.lang.Class getSuperclass()>()
+com.thoughtworks.xstream.converters.extended.DynamicProxyConverter.canConvert : $z0 = virtualinvoke r1.<java.lang.Object: boolean equals(java.lang.Object)>(class "com/thoughtworks/xstream/mapper/DynamicProxyMapper$DynamicProxy")
+com.thoughtworks.xstream.core.JVM.is15 : $f0 = <com.thoughtworks.xstream.core.JVM: float majorJavaVersion>
+com.thoughtworks.xstream.converters.extended.SqlDateConverter.canConvert : $z0 = virtualinvoke r1.<java.lang.Object: boolean equals(java.lang.Object)>(class "java/sql/Date")
+com.thoughtworks.xstream.core.util.ObjectIdDictionary.removeId : $r3 = r0.<com.thoughtworks.xstream.core.util.ObjectIdDictionary: java.util.Map map>
+com.thoughtworks.xstream.converters.basic.LongConverter.canConvert : $r2 = <java.lang.Long: java.lang.Class TYPE>
+com.thoughtworks.xstream.io.xml.XppDriver.createReader : specialinvoke r0.<com.thoughtworks.xstream.io.xml.XppDriver: void loadLibrary()>()
+com.thoughtworks.xstream.io.xml.XppDriver.createReader : $r2 = new com.thoughtworks.xstream.io.xml.XppReader
+com.thoughtworks.xstream.XStream.dynamicallyRegisterConverter : $z0 = r6 instanceof com.thoughtworks.xstream.converters.Converter
+com.thoughtworks.xstream.XStream.dynamicallyRegisterConverter : $r10 = (com.thoughtworks.xstream.converters.SingleValueConverter) r6
+com.thoughtworks.xstream.XStream.dynamicallyRegisterConverter : $r7 = r0.<com.thoughtworks.xstream.XStream: com.thoughtworks.xstream.core.util.ClassLoaderReference classLoaderReference>
+com.thoughtworks.xstream.XStream.dynamicallyRegisterConverter : r6 = virtualinvoke r5.<java.lang.reflect.Constructor: java.lang.Object newInstance(java.lang.Object[])>(r3)
+com.thoughtworks.xstream.XStream.dynamicallyRegisterConverter : r5 = virtualinvoke r4.<java.lang.Class: java.lang.reflect.Constructor getConstructor(java.lang.Class[])>(r2)
+com.thoughtworks.xstream.XStream.dynamicallyRegisterConverter : goto [?= return]
+com.thoughtworks.xstream.XStream.dynamicallyRegisterConverter : $z1 = r6 instanceof com.thoughtworks.xstream.converters.SingleValueConverter
+com.thoughtworks.xstream.XStream.dynamicallyRegisterConverter : $r9 = (com.thoughtworks.xstream.converters.Converter) r6
+com.thoughtworks.xstream.converters.basic.BooleanConverter.canConvert : $r2 = <java.lang.Boolean: java.lang.Class TYPE>
+com.thoughtworks.xstream.converters.basic.URLConverter.canConvert : $z0 = virtualinvoke r1.<java.lang.Object: boolean equals(java.lang.Object)>(class "java/net/URL")
+com.thoughtworks.xstream.converters.basic.ShortConverter.canConvert : $r2 = <java.lang.Short: java.lang.Class TYPE>
+com.thoughtworks.xstream.mapper.MapperWrapper.aliasForAttribute : $r2 = r0.<com.thoughtworks.xstream.mapper.MapperWrapper: com.thoughtworks.xstream.mapper.Mapper wrapped>
+com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.unmarshal : r3 = virtualinvoke r0.<com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter: java.lang.Object instantiateNewInstance(com.thoughtworks.xstream.io.HierarchicalStreamReader,com.thoughtworks.xstream.converters.UnmarshallingContext)>(r1, r2)
+com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.unmarshal : $r5 = r0.<com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter: com.thoughtworks.xstream.converters.reflection.SerializationMethodInvoker serializationMethodInvoker>
+com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.unmarshal : r4 = virtualinvoke r0.<com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter: java.lang.Object doUnmarshal(java.lang.Object,com.thoughtworks.xstream.io.HierarchicalStreamReader,com.thoughtworks.xstream.converters.UnmarshallingContext)>(r3, r1, r2)
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.startNode : r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: boolean tagIsEmpty> = 0
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.startNode : virtualinvoke r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: void startNode(java.lang.String)>(r1)
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.startNode : r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: boolean tagInProgress> = 1
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.startNode : specialinvoke r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: void finishTag()>()
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.startNode : $r5 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: com.thoughtworks.xstream.core.util.FastStack elementStack>
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.startNode : $r3 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: com.thoughtworks.xstream.core.util.QuickWriter writer>
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.startNode : $i0 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: int depth>
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.startNode : r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: boolean readyForNewLine> = 1
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.startNode : $r4 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: com.thoughtworks.xstream.core.util.QuickWriter writer>
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.startNode : r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: boolean tagIsEmpty> = 1
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.startNode : r2 = virtualinvoke r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: java.lang.String escapeXmlName(java.lang.String)>(r1)
+com.thoughtworks.xstream.mapper.ImmutableTypesMapper.addImmutableType : $r2 = r0.<com.thoughtworks.xstream.mapper.ImmutableTypesMapper: java.util.Set immutableTypes>
+com.thoughtworks.xstream.converters.basic.DateConverter.canConvert : $z0 = virtualinvoke r1.<java.lang.Object: boolean equals(java.lang.Object)>(class "java/util/Date")
+com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doMarshal : $r9 = r0.<com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter: com.thoughtworks.xstream.converters.reflection.ReflectionProvider reflectionProvider>
+com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doMarshal : $r4 = new java.util.HashSet
+com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doMarshal : $r8 = new java.util.HashSet
+com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doMarshal : $r10 = r0.<com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter: com.thoughtworks.xstream.converters.reflection.ReflectionProvider reflectionProvider>
+com.thoughtworks.xstream.mapper.XStream11XmlFriendlyMapper.realClass : $r2 = virtualinvoke r0.<com.thoughtworks.xstream.mapper.XStream11XmlFriendlyMapper: java.lang.String unescapeClassName(java.lang.String)>(r1)
+com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.validateFieldAccess : $z1 = staticinvoke <com.thoughtworks.xstream.core.JVM: boolean is15()>()
+com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.validateFieldAccess : virtualinvoke r1.<java.lang.reflect.Field: void setAccessible(boolean)>(1)
+com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.validateFieldAccess : $i0 = virtualinvoke r1.<java.lang.reflect.Field: int getModifiers()>()
+com.thoughtworks.xstream.converters.extended.StackTraceElementFactory.nativeMethodElement : $r3 = specialinvoke r0.<com.thoughtworks.xstream.converters.extended.StackTraceElementFactory: java.lang.StackTraceElement create(java.lang.String,java.lang.String,java.lang.String,int)>(r1, r2, "Native Method", -2)
+com.thoughtworks.xstream.io.xml.XppDriver.createWriter : $r2 = new com.thoughtworks.xstream.io.xml.PrettyPrintWriter
+com.thoughtworks.xstream.mapper.DefaultMapper.attributeForAlias : return r1
+com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.fieldDefinedInClass : $z0 = virtualinvoke r0.<com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider: boolean fieldModifiersSupported(java.lang.reflect.Field)>(r3)
+com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.fieldDefinedInClass : return 0
+com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.fieldDefinedInClass : $r4 = r0.<com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider: com.thoughtworks.xstream.converters.reflection.FieldDictionary fieldDictionary>
+com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.fieldDefinedInClass : r6 = $r5
+com.thoughtworks.xstream.converters.collections.ArrayConverter.marshal : virtualinvoke r0.<com.thoughtworks.xstream.converters.collections.ArrayConverter: void writeItem(java.lang.Object,com.thoughtworks.xstream.converters.MarshallingContext,com.thoughtworks.xstream.io.HierarchicalStreamWriter)>(r4, r3, r2)
+com.thoughtworks.xstream.converters.collections.ArrayConverter.marshal : i1 = 0
+com.thoughtworks.xstream.converters.collections.ArrayConverter.marshal : i0 = staticinvoke <java.lang.reflect.Array: int getLength(java.lang.Object)>(r1)
+com.thoughtworks.xstream.converters.collections.ArrayConverter.marshal : r4 = staticinvoke <java.lang.reflect.Array: java.lang.Object get(java.lang.Object,int)>(r1, i1)
+com.thoughtworks.xstream.mapper.FieldAliasingMapper.serializedMember : $r7 = specialinvoke r0.<com.thoughtworks.xstream.mapper.MapperWrapper: java.lang.String serializedMember(java.lang.Class,java.lang.String)>(r1, r2)
+com.thoughtworks.xstream.mapper.FieldAliasingMapper.serializedMember : if r3 != null goto return r3
+com.thoughtworks.xstream.mapper.FieldAliasingMapper.serializedMember : $r4 = r0.<com.thoughtworks.xstream.mapper.FieldAliasingMapper: java.util.Map fieldToAliasMap>
+com.thoughtworks.xstream.core.JVM.canUseSun14ReflectionProvider : $z0 = staticinvoke <com.thoughtworks.xstream.core.JVM: boolean isSun()>()
+com.thoughtworks.xstream.annotations.AnnotationReflectionConverter.marshallField : if r4 == null goto interfaceinvoke r1.<com.thoughtworks.xstream.converters.MarshallingContext: void convertAnother(java.lang.Object)>(r2)
+com.thoughtworks.xstream.annotations.AnnotationReflectionConverter.marshallField : $r5 = r0.<com.thoughtworks.xstream.annotations.AnnotationReflectionConverter: com.thoughtworks.xstream.annotations.AnnotationProvider annotationProvider>
+com.thoughtworks.xstream.annotations.AnnotationReflectionConverter.marshallField : interfaceinvoke r1.<com.thoughtworks.xstream.converters.MarshallingContext: void convertAnother(java.lang.Object)>(r2)
+com.thoughtworks.xstream.converters.collections.BitSetConverter.canConvert : $z0 = virtualinvoke r1.<java.lang.Object: boolean equals(java.lang.Object)>(class "java/util/BitSet")
+com.thoughtworks.xstream.XStream.setupAliases : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void alias(java.lang.String,java.lang.Class)>("short", class "java/lang/Short")
+com.thoughtworks.xstream.XStream.setupAliases : $r5 = r0.<com.thoughtworks.xstream.XStream: com.thoughtworks.xstream.core.JVM jvm>
+com.thoughtworks.xstream.XStream.setupAliases : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void alias(java.lang.String,java.lang.Class)>("sql-date", class "java/sql/Date")
+com.thoughtworks.xstream.XStream.setupAliases : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void alias(java.lang.String,java.lang.Class)>("null", class "com/thoughtworks/xstream/mapper/Mapper$Null")
+com.thoughtworks.xstream.XStream.setupAliases : $r16 = r0.<com.thoughtworks.xstream.XStream: com.thoughtworks.xstream.core.JVM jvm>
+com.thoughtworks.xstream.XStream.setupAliases : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void alias(java.lang.String,java.lang.Class)>("object", class "java/lang/Object")
+com.thoughtworks.xstream.XStream.setupAliases : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void alias(java.lang.String,java.lang.Class)>("int", class "java/lang/Integer")
+com.thoughtworks.xstream.XStream.setupAliases : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void alias(java.lang.String,java.lang.Class)>("awt-text-attribute", class "java/awt/font/TextAttribute")
+com.thoughtworks.xstream.XStream.setupAliases : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void alias(java.lang.String,java.lang.Class)>("url", class "java/net/URL")
+com.thoughtworks.xstream.XStream.setupAliases : $r10 = r0.<com.thoughtworks.xstream.XStream: com.thoughtworks.xstream.core.JVM jvm>
+com.thoughtworks.xstream.XStream.setupAliases : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void alias(java.lang.String,java.lang.Class)>("list", class "java/util/List")
+com.thoughtworks.xstream.XStream.setupAliases : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void alias(java.lang.String,java.lang.Class)>("auth-subject", r1)
+com.thoughtworks.xstream.XStream.setupAliases : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void alias(java.lang.String,java.lang.Class)>("java-class", class "java/lang/Class")
+com.thoughtworks.xstream.XStream.setupAliases : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void alias(java.lang.String,java.lang.Class)>("sql-timestamp", class "java/sql/Timestamp")
+com.thoughtworks.xstream.XStream.setupAliases : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void alias(java.lang.String,java.lang.Class)>("string-buffer", class "java/lang/StringBuffer")
+com.thoughtworks.xstream.XStream.setupAliases : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void alias(java.lang.String,java.lang.Class)>("map", class "java/util/Map")
+com.thoughtworks.xstream.XStream.setupAliases : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void alias(java.lang.String,java.lang.Class)>("constructor", class "java/lang/reflect/Constructor")
+com.thoughtworks.xstream.XStream.setupAliases : $r7 = r0.<com.thoughtworks.xstream.XStream: com.thoughtworks.xstream.core.JVM jvm>
+com.thoughtworks.xstream.XStream.setupAliases : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void alias(java.lang.String,java.lang.Class)>("boolean", class "java/lang/Boolean")
+com.thoughtworks.xstream.XStream.setupAliases : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void alias(java.lang.String,java.lang.Class)>("hashtable", class "java/util/Hashtable")
+com.thoughtworks.xstream.XStream.setupAliases : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void alias(java.lang.String,java.lang.Class)>("number", class "java/lang/Number")
+com.thoughtworks.xstream.XStream.setupAliases : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void alias(java.lang.String,java.lang.Class)>("bit-set", class "java/util/BitSet")
+com.thoughtworks.xstream.XStream.setupAliases : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void alias(java.lang.String,java.lang.Class)>("set", class "java/util/Set")
+com.thoughtworks.xstream.XStream.setupAliases : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void alias(java.lang.String,java.lang.Class)>("method", class "java/lang/reflect/Method")
+com.thoughtworks.xstream.XStream.setupAliases : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void alias(java.lang.String,java.lang.Class)>("sql-time", class "java/sql/Time")
+com.thoughtworks.xstream.XStream.setupAliases : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void alias(java.lang.String,java.lang.Class)>("date", class "java/util/Date")
+com.thoughtworks.xstream.XStream.setupAliases : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void alias(java.lang.String,java.lang.Class)>("file", class "java/io/File")
+com.thoughtworks.xstream.XStream.setupAliases : if r1 == null goto $z0 = staticinvoke <com.thoughtworks.xstream.core.JVM: boolean is14()>()
+com.thoughtworks.xstream.XStream.setupAliases : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void alias(java.lang.String,java.lang.Class)>("tree-set", class "java/util/TreeSet")
+com.thoughtworks.xstream.XStream.setupAliases : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void alias(java.lang.String,java.lang.Class)>("long", class "java/lang/Long")
+com.thoughtworks.xstream.XStream.setupAliases : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void alias(java.lang.String,java.lang.Class)>("big-int", class "java/math/BigInteger")
+com.thoughtworks.xstream.XStream.setupAliases : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void alias(java.lang.String,java.lang.Class)>("float", class "java/lang/Float")
+com.thoughtworks.xstream.XStream.setupAliases : $r8 = r0.<com.thoughtworks.xstream.XStream: com.thoughtworks.xstream.core.JVM jvm>
+com.thoughtworks.xstream.XStream.setupAliases : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void alias(java.lang.String,java.lang.Class)>("entry", class "java/util/Map$Entry")
+com.thoughtworks.xstream.XStream.setupAliases : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void alias(java.lang.String,java.lang.Class)>("char", class "java/lang/Character")
+com.thoughtworks.xstream.XStream.setupAliases : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void alias(java.lang.String,java.lang.Class)>("properties", class "java/util/Properties")
+com.thoughtworks.xstream.XStream.setupAliases : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void alias(java.lang.String,java.lang.Class)>("double", class "java/lang/Double")
+com.thoughtworks.xstream.XStream.setupAliases : $r20 = r0.<com.thoughtworks.xstream.XStream: com.thoughtworks.xstream.core.JVM jvm>
+com.thoughtworks.xstream.XStream.setupAliases : $z1 = staticinvoke <com.thoughtworks.xstream.core.JVM: boolean is15()>()
+com.thoughtworks.xstream.XStream.setupAliases : $z0 = staticinvoke <com.thoughtworks.xstream.core.JVM: boolean is14()>()
+com.thoughtworks.xstream.XStream.setupAliases : $r18 = r0.<com.thoughtworks.xstream.XStream: com.thoughtworks.xstream.core.JVM jvm>
+com.thoughtworks.xstream.XStream.setupAliases : $r2 = r0.<com.thoughtworks.xstream.XStream: com.thoughtworks.xstream.mapper.ClassAliasingMapper classAliasingMapper>
+com.thoughtworks.xstream.XStream.setupAliases : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void alias(java.lang.String,java.lang.Class)>("gregorian-calendar", class "java/util/Calendar")
+com.thoughtworks.xstream.XStream.setupAliases : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void alias(java.lang.String,java.lang.Class)>("big-decimal", class "java/math/BigDecimal")
+com.thoughtworks.xstream.XStream.setupAliases : $r12 = r0.<com.thoughtworks.xstream.XStream: com.thoughtworks.xstream.core.JVM jvm>
+com.thoughtworks.xstream.XStream.setupAliases : $r3 = r0.<com.thoughtworks.xstream.XStream: com.thoughtworks.xstream.core.JVM jvm>
+com.thoughtworks.xstream.XStream.setupAliases : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void alias(java.lang.String,java.lang.Class)>("vector", class "java/util/Vector")
+com.thoughtworks.xstream.XStream.setupAliases : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void alias(java.lang.String,java.lang.Class)>("locale", class "java/util/Locale")
+com.thoughtworks.xstream.XStream.setupAliases : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void alias(java.lang.String,java.lang.Class)>("string", class "java/lang/String")
+com.thoughtworks.xstream.XStream.setupAliases : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void alias(java.lang.String,java.lang.Class)>("linked-list", class "java/util/LinkedList")
+com.thoughtworks.xstream.XStream.setupAliases : $r14 = r0.<com.thoughtworks.xstream.XStream: com.thoughtworks.xstream.core.JVM jvm>
+com.thoughtworks.xstream.XStream.setupAliases : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void alias(java.lang.String,java.lang.Class)>("tree-map", class "java/util/TreeMap")
+com.thoughtworks.xstream.XStream.setupAliases : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void alias(java.lang.String,java.lang.Class)>("byte", class "java/lang/Byte")
+com.thoughtworks.xstream.converters.SingleValueConverterWrapper.marshal : $r4 = virtualinvoke r0.<com.thoughtworks.xstream.converters.SingleValueConverterWrapper: java.lang.String toString(java.lang.Object)>(r1)
+com.thoughtworks.xstream.core.util.CompositeClassLoader.loadClass : $r5 = r0.<com.thoughtworks.xstream.core.util.CompositeClassLoader: java.util.List classLoaders>
+com.thoughtworks.xstream.core.util.CompositeClassLoader.loadClass : $r7 = virtualinvoke r3.<java.lang.ClassLoader: java.lang.Class loadClass(java.lang.String)>(r1)
+com.thoughtworks.xstream.core.util.CompositeClassLoader.loadClass : $r6 = interfaceinvoke r2.<java.util.Iterator: java.lang.Object next()>()
+com.thoughtworks.xstream.io.xml.AbstractPullReader.getValue : if r2 == null goto (branch)
+com.thoughtworks.xstream.io.xml.AbstractPullReader.getValue : r3 = specialinvoke r0.<com.thoughtworks.xstream.io.xml.AbstractPullReader: com.thoughtworks.xstream.io.xml.AbstractPullReader$Event readEvent()>()
+com.thoughtworks.xstream.io.xml.AbstractPullReader.getValue : r1 = null
+com.thoughtworks.xstream.io.xml.AbstractPullReader.getValue : if r4 == null goto (branch)
+com.thoughtworks.xstream.io.xml.AbstractPullReader.getValue : if r1 != null goto (branch)
+com.thoughtworks.xstream.io.xml.AbstractPullReader.getValue : $i0 = r3.<com.thoughtworks.xstream.io.xml.AbstractPullReader$Event: int type>
+com.thoughtworks.xstream.io.xml.AbstractPullReader.getValue : virtualinvoke r0.<com.thoughtworks.xstream.io.xml.AbstractPullReader: void mark()>()
+com.thoughtworks.xstream.io.xml.AbstractPullReader.getValue : virtualinvoke r0.<com.thoughtworks.xstream.io.xml.AbstractPullReader: void reset()>()
+com.thoughtworks.xstream.io.xml.AbstractPullReader.getValue : goto [?= virtualinvoke r0.<com.thoughtworks.xstream.io.xml.AbstractPullReader: void reset()>()]
+com.thoughtworks.xstream.io.xml.AbstractPullReader.getValue : if r1 != null goto $r8 = r1
+com.thoughtworks.xstream.io.xml.AbstractPullReader.getValue : r4 = r3.<com.thoughtworks.xstream.io.xml.AbstractPullReader$Event: java.lang.String value>
+com.thoughtworks.xstream.io.xml.AbstractPullReader.getValue : r2 = null
+com.thoughtworks.xstream.io.xml.AbstractPullReader.getValue : r1 = r4
+com.thoughtworks.xstream.io.xml.AbstractPullReader.getValue : goto [?= r3 = specialinvoke r0.<com.thoughtworks.xstream.io.xml.AbstractPullReader: com.thoughtworks.xstream.io.xml.AbstractPullReader$Event readEvent()>()]
+com.thoughtworks.xstream.converters.SingleValueConverterWrapper.fromString : $r2 = r0.<com.thoughtworks.xstream.converters.SingleValueConverterWrapper: com.thoughtworks.xstream.converters.SingleValueConverter wrapped>
+com.thoughtworks.xstream.converters.basic.FloatConverter.canConvert : $r2 = <java.lang.Float: java.lang.Class TYPE>
+com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$SeenFields.add : $r10 = r0.<com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$SeenFields: java.util.Set seen>
+com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$SeenFields.add : r3 = r2
+com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$SeenFields.add : $r12 = r0.<com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$SeenFields: java.util.Set seen>
+com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$SeenFields.add : if r1 == null goto $r10 = r0.<com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$SeenFields: java.util.Set seen>
+com.thoughtworks.xstream.io.xml.AbstractPullReader.mark : r0.<com.thoughtworks.xstream.io.xml.AbstractPullReader: boolean marked> = 1
+com.thoughtworks.xstream.mapper.ClassAliasingMapper.realClass : if r2 == null goto $r5 = specialinvoke r0.<com.thoughtworks.xstream.mapper.MapperWrapper: java.lang.Class realClass(java.lang.String)>(r1)
+com.thoughtworks.xstream.mapper.ClassAliasingMapper.realClass : $r3 = r0.<com.thoughtworks.xstream.mapper.ClassAliasingMapper: java.util.Map nameToType>
+com.thoughtworks.xstream.mapper.ClassAliasingMapper.realClass : $r5 = specialinvoke r0.<com.thoughtworks.xstream.mapper.MapperWrapper: java.lang.Class realClass(java.lang.String)>(r1)
+com.thoughtworks.xstream.mapper.ClassAliasingMapper.realClass : r1 = r2
+com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer.escapeName : if c2 != 36 goto (branch)
+com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer.escapeName : i1 = 0
+com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer.escapeName : $r9 = virtualinvoke r3.<java.lang.StringBuffer: java.lang.String toString()>()
+com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer.escapeName : c2 = virtualinvoke r1.<java.lang.String: char charAt(int)>(i1)
+com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer.escapeName : i0 = virtualinvoke r1.<java.lang.String: int length()>()
+com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer.escapeName : virtualinvoke r3.<java.lang.StringBuffer: java.lang.StringBuffer append(char)>(c2)
+com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer.escapeName : $r2 = new java.lang.StringBuffer
+com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer.escapeName : if c2 != 95 goto virtualinvoke r3.<java.lang.StringBuffer: java.lang.StringBuffer append(char)>(c2)
+com.thoughtworks.xstream.io.xml.XppReader.getAttributeCount : $r1 = r0.<com.thoughtworks.xstream.io.xml.XppReader: org.xmlpull.v1.XmlPullParser parser>
+com.thoughtworks.xstream.io.AttributeNameIterator.hasNext : $i0 = r0.<com.thoughtworks.xstream.io.AttributeNameIterator: int current>
+com.thoughtworks.xstream.XStream.buildMapper : $r28 = new com.thoughtworks.xstream.mapper.ImmutableTypesMapper
+com.thoughtworks.xstream.XStream.buildMapper : $z1 = staticinvoke <com.thoughtworks.xstream.core.JVM: boolean is15()>()
+com.thoughtworks.xstream.XStream.buildMapper : return r33
+com.thoughtworks.xstream.XStream.buildMapper : if z0 == 0 goto $r5 = new com.thoughtworks.xstream.mapper.ClassAliasingMapper
+com.thoughtworks.xstream.XStream.buildMapper : $r7 = new com.thoughtworks.xstream.mapper.FieldAliasingMapper
+com.thoughtworks.xstream.XStream.buildMapper : $r17 = newarray (java.lang.Class)[1]
+com.thoughtworks.xstream.XStream.buildMapper : $r21 = new com.thoughtworks.xstream.mapper.EnumMapper
+com.thoughtworks.xstream.XStream.buildMapper : $r13 = new com.thoughtworks.xstream.mapper.ImplicitCollectionMapper
+com.thoughtworks.xstream.XStream.buildMapper : $r26 = new com.thoughtworks.xstream.mapper.DefaultImplementationsMapper
+com.thoughtworks.xstream.XStream.buildMapper : $r11 = new com.thoughtworks.xstream.mapper.AttributeMapper
+com.thoughtworks.xstream.XStream.buildMapper : $r19 = new com.thoughtworks.xstream.mapper.DynamicProxyMapper
+com.thoughtworks.xstream.XStream.buildMapper : $r30 = (com.thoughtworks.xstream.mapper.MapperWrapper) r29
+com.thoughtworks.xstream.XStream.buildMapper : $r24 = new com.thoughtworks.xstream.mapper.ArrayMapper
+com.thoughtworks.xstream.XStream.buildMapper : $r15 = r0.<com.thoughtworks.xstream.XStream: com.thoughtworks.xstream.core.JVM jvm>
+com.thoughtworks.xstream.XStream.buildMapper : $r32 = new com.thoughtworks.xstream.mapper.CachingMapper
+com.thoughtworks.xstream.XStream.buildMapper : $r1 = new com.thoughtworks.xstream.mapper.DefaultMapper
+com.thoughtworks.xstream.XStream.buildMapper : $r9 = new com.thoughtworks.xstream.mapper.AttributeAliasingMapper
+com.thoughtworks.xstream.XStream.buildMapper : $r22 = new com.thoughtworks.xstream.mapper.OuterClassMapper
+com.thoughtworks.xstream.XStream.buildMapper : $r5 = new com.thoughtworks.xstream.mapper.ClassAliasingMapper
+com.thoughtworks.xstream.XStream.buildMapper : $r4 = new com.thoughtworks.xstream.mapper.XStream11XmlFriendlyMapper
+com.thoughtworks.xstream.core.util.PrioritizedList$PrioritizedItem.compareTo : $i5 = r2.<com.thoughtworks.xstream.core.util.PrioritizedList$PrioritizedItem: int id>
+com.thoughtworks.xstream.core.util.PrioritizedList$PrioritizedItem.compareTo : $i0 = r0.<com.thoughtworks.xstream.core.util.PrioritizedList$PrioritizedItem: int priority>
+com.thoughtworks.xstream.core.util.PrioritizedList$PrioritizedItem.compareTo : r2 = (com.thoughtworks.xstream.core.util.PrioritizedList$PrioritizedItem) r1
+com.thoughtworks.xstream.core.util.PrioritizedList$PrioritizedItem.compareTo : $i2 = r2.<com.thoughtworks.xstream.core.util.PrioritizedList$PrioritizedItem: int priority>
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.endNode : $r2 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: com.thoughtworks.xstream.core.util.QuickWriter writer>
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.endNode : $r3 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: com.thoughtworks.xstream.core.util.FastStack elementStack>
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.endNode : specialinvoke r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: void finishTag()>()
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.endNode : $r6 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: com.thoughtworks.xstream.core.util.QuickWriter writer>
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.endNode : $r10 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: com.thoughtworks.xstream.core.util.QuickWriter writer>
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.endNode : $r11 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: com.thoughtworks.xstream.core.util.QuickWriter writer>
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.endNode : $i2 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: int depth>
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.endNode : $z0 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: boolean tagIsEmpty>
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.endNode : $i0 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: int depth>
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.endNode : r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: boolean readyForNewLine> = 0
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.endNode : r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: boolean readyForNewLine> = 1
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.endNode : $r4 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: com.thoughtworks.xstream.core.util.QuickWriter writer>
+com.thoughtworks.xstream.io.xml.AbstractPullReader.moveUp : $r2 = r0.<com.thoughtworks.xstream.io.xml.AbstractPullReader: com.thoughtworks.xstream.core.util.FastStack elementStack>
+com.thoughtworks.xstream.io.xml.AbstractPullReader.moveUp : specialinvoke r0.<com.thoughtworks.xstream.io.xml.AbstractPullReader: void move()>()
+com.thoughtworks.xstream.io.xml.AbstractPullReader.moveUp : $r1 = r0.<com.thoughtworks.xstream.io.xml.AbstractPullReader: com.thoughtworks.xstream.core.util.FastStack elementStack>
+com.thoughtworks.xstream.mapper.ClassAliasingMapper.serializedClass : goto [?= $z0 = interfaceinvoke r3.<java.util.Iterator: boolean hasNext()>()]
+com.thoughtworks.xstream.mapper.ClassAliasingMapper.serializedClass : return r2
+com.thoughtworks.xstream.mapper.ClassAliasingMapper.serializedClass : $r8 = r0.<com.thoughtworks.xstream.mapper.ClassAliasingMapper: java.util.Map typeToName>
+com.thoughtworks.xstream.mapper.ClassAliasingMapper.serializedClass : $r14 = specialinvoke r0.<com.thoughtworks.xstream.mapper.MapperWrapper: java.lang.String serializedClass(java.lang.Class)>(r1)
+com.thoughtworks.xstream.mapper.ClassAliasingMapper.serializedClass : $r5 = r0.<com.thoughtworks.xstream.mapper.ClassAliasingMapper: java.util.Map classToName>
+com.thoughtworks.xstream.mapper.ClassAliasingMapper.serializedClass : $z1 = virtualinvoke r4.<java.lang.Class: boolean isAssignableFrom(java.lang.Class)>(r1)
+com.thoughtworks.xstream.mapper.ClassAliasingMapper.serializedClass : $r10 = interfaceinvoke r3.<java.util.Iterator: java.lang.Object next()>()
+com.thoughtworks.xstream.mapper.ClassAliasingMapper.serializedClass : if r2 == null goto $r8 = r0.<com.thoughtworks.xstream.mapper.ClassAliasingMapper: java.util.Map typeToName>
+com.thoughtworks.xstream.core.DefaultConverterLookup.lookupConverterForType : return r5
+com.thoughtworks.xstream.core.DefaultConverterLookup.lookupConverterForType : $r10 = interfaceinvoke r4.<java.util.Iterator: java.lang.Object next()>()
+com.thoughtworks.xstream.core.DefaultConverterLookup.lookupConverterForType : $r6 = r0.<com.thoughtworks.xstream.core.DefaultConverterLookup: java.util.Map typeToConverterMap>
+com.thoughtworks.xstream.core.DefaultConverterLookup.lookupConverterForType : $r8 = r0.<com.thoughtworks.xstream.core.DefaultConverterLookup: com.thoughtworks.xstream.mapper.Mapper mapper>
+com.thoughtworks.xstream.core.DefaultConverterLookup.lookupConverterForType : goto [?= staticinvoke <edu.washington.cs.dt.impact.util.Tracer: void trace(java.lang.String,java.lang.String)>("$z0 = interfaceinvoke r4.<java.util.Iterator: boolean hasNext()>()", "com.thoughtworks.xstream.core.DefaultConverterLookup.lookupConverterForType")]
+com.thoughtworks.xstream.core.DefaultConverterLookup.lookupConverterForType : $z0 = interfaceinvoke r4.<java.util.Iterator: boolean hasNext()>()
+com.thoughtworks.xstream.core.DefaultConverterLookup.lookupConverterForType : $z1 = interfaceinvoke r5.<com.thoughtworks.xstream.converters.Converter: boolean canConvert(java.lang.Class)>(r3)
+com.thoughtworks.xstream.core.DefaultConverterLookup.lookupConverterForType : $r11 = r0.<com.thoughtworks.xstream.core.DefaultConverterLookup: java.util.Map typeToConverterMap>
+com.thoughtworks.xstream.core.DefaultConverterLookup.lookupConverterForType : $r9 = r0.<com.thoughtworks.xstream.core.DefaultConverterLookup: com.thoughtworks.xstream.core.util.PrioritizedList converters>
+com.thoughtworks.xstream.core.DefaultConverterLookup.lookupConverterForType : if r2 == null goto $r8 = r0.<com.thoughtworks.xstream.core.DefaultConverterLookup: com.thoughtworks.xstream.mapper.Mapper mapper>
+com.thoughtworks.xstream.core.DefaultConverterLookup.registerConverter : goto [?= $z0 = interfaceinvoke r2.<java.util.Iterator: boolean hasNext()>()]
+com.thoughtworks.xstream.core.DefaultConverterLookup.registerConverter : $z1 = interfaceinvoke r1.<com.thoughtworks.xstream.converters.Converter: boolean canConvert(java.lang.Class)>(r3)
+com.thoughtworks.xstream.core.DefaultConverterLookup.registerConverter : $r5 = r0.<com.thoughtworks.xstream.core.DefaultConverterLookup: java.util.Map typeToConverterMap>
+com.thoughtworks.xstream.core.DefaultConverterLookup.registerConverter : $r7 = interfaceinvoke r2.<java.util.Iterator: java.lang.Object next()>()
+com.thoughtworks.xstream.core.DefaultConverterLookup.registerConverter : $r4 = r0.<com.thoughtworks.xstream.core.DefaultConverterLookup: com.thoughtworks.xstream.core.util.PrioritizedList converters>
+com.thoughtworks.xstream.mapper.MapperWrapper.shouldSerializeMember : $r3 = r0.<com.thoughtworks.xstream.mapper.MapperWrapper: com.thoughtworks.xstream.mapper.Mapper wrapped>
+com.thoughtworks.xstream.mapper.MapperWrapper.lookupMapperOfType : $r2 = virtualinvoke r0.<java.lang.Object: java.lang.Class getClass()>()
+com.thoughtworks.xstream.io.xml.XppReader.pullText : $r1 = r0.<com.thoughtworks.xstream.io.xml.XppReader: org.xmlpull.v1.XmlPullParser parser>
+com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer.unescapeName : $r4 = r0.<com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer: java.lang.String underscoreReplacement>
+com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer.unescapeName : i1 = 0
+com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer.unescapeName : $r7 = r0.<com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer: java.lang.String dollarReplacement>
+com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer.unescapeName : c2 = virtualinvoke r1.<java.lang.String: char charAt(int)>(i1)
+com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer.unescapeName : i0 = virtualinvoke r1.<java.lang.String: int length()>()
+com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer.unescapeName : virtualinvoke r3.<java.lang.StringBuffer: java.lang.StringBuffer append(char)>(c2)
+com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer.unescapeName : $r2 = new java.lang.StringBuffer
+com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer.unescapeName : $r11 = virtualinvoke r3.<java.lang.StringBuffer: java.lang.String toString()>()
+com.thoughtworks.xstream.converters.reflection.SerializationMethodInvoker.supportsWriteObject : $r2 = newarray (java.lang.Class)[1]
+com.thoughtworks.xstream.converters.reflection.FieldDictionary$FieldKey.hashCode : $i2 = 29 * i0
+com.thoughtworks.xstream.converters.reflection.FieldDictionary$FieldKey.hashCode : $r1 = r0.<com.thoughtworks.xstream.converters.reflection.FieldDictionary$FieldKey: java.lang.String fieldName>
+com.thoughtworks.xstream.converters.reflection.FieldDictionary$FieldKey.hashCode : return i4
+com.thoughtworks.xstream.converters.extended.StackTraceElementFactory.create : return r5
+com.thoughtworks.xstream.converters.extended.StackTraceElementFactory.create : $r4 = new java.lang.Throwable
+com.thoughtworks.xstream.converters.extended.StackTraceElementFactory.create : specialinvoke r0.<com.thoughtworks.xstream.converters.extended.StackTraceElementFactory: void setField(java.lang.StackTraceElement,java.lang.String,java.lang.Object)>(r5, "fileName", r3)
+com.thoughtworks.xstream.converters.extended.StackTraceElementFactory.create : specialinvoke r0.<com.thoughtworks.xstream.converters.extended.StackTraceElementFactory: void setField(java.lang.StackTraceElement,java.lang.String,java.lang.Object)>(r5, "declaringClass", r1)
+com.thoughtworks.xstream.converters.extended.StackTraceElementFactory.create : $r7 = new java.lang.Integer
+com.thoughtworks.xstream.converters.extended.StackTraceElementFactory.create : specialinvoke r0.<com.thoughtworks.xstream.converters.extended.StackTraceElementFactory: void setField(java.lang.StackTraceElement,java.lang.String,java.lang.Object)>(r5, "methodName", r2)
+com.thoughtworks.xstream.core.util.QuickWriter.flush : $r4 = r0.<com.thoughtworks.xstream.core.util.QuickWriter: java.io.Writer writer>
+com.thoughtworks.xstream.core.util.QuickWriter.flush : r0.<com.thoughtworks.xstream.core.util.QuickWriter: int pointer> = 0
+com.thoughtworks.xstream.core.util.QuickWriter.flush : $r2 = r0.<com.thoughtworks.xstream.core.util.QuickWriter: java.io.Writer writer>
+com.thoughtworks.xstream.core.util.QuickWriter.flush : goto [?= return]
+com.thoughtworks.xstream.converters.reflection.ReflectionConverter.canConvert : return 1
+com.thoughtworks.xstream.mapper.CGLIBMapper.serializedClass : $r3 = virtualinvoke r1.<java.lang.Class: java.lang.String getName()>()

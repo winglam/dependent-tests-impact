@@ -1,0 +1,39 @@
+com.thoughtworks.xstream.io.path.Path.equals : r2 = (com.thoughtworks.xstream.io.path.Path) r1
+com.thoughtworks.xstream.io.path.Path.equals : $r3 = r0.<com.thoughtworks.xstream.io.path.Path: java.lang.String[] chunks>
+com.thoughtworks.xstream.io.path.Path.equals : if r0 != r1 goto $z0 = r1 instanceof com.thoughtworks.xstream.io.path.Path
+com.thoughtworks.xstream.io.path.Path.equals : i0 = 0
+com.thoughtworks.xstream.io.path.Path.equals : return 1
+com.thoughtworks.xstream.io.path.Path.equals : $r6 = r0.<com.thoughtworks.xstream.io.path.Path: java.lang.String[] chunks>
+com.thoughtworks.xstream.io.path.Path.equals : $z0 = r1 instanceof com.thoughtworks.xstream.io.path.Path
+com.thoughtworks.xstream.io.path.PathTracker.getPath : r1[0] = ""
+com.thoughtworks.xstream.io.path.PathTracker.getPath : $i2 = r0.<com.thoughtworks.xstream.io.path.PathTracker: int pointer>
+com.thoughtworks.xstream.io.path.PathTracker.getPath : $r4 = r0.<com.thoughtworks.xstream.io.path.PathTracker: com.thoughtworks.xstream.io.path.Path currentPath>
+com.thoughtworks.xstream.io.path.PathTracker.getPath : i1 = virtualinvoke r2.<java.lang.Integer: int intValue()>()
+com.thoughtworks.xstream.io.path.PathTracker.getPath : $r22 = new com.thoughtworks.xstream.io.path.Path
+com.thoughtworks.xstream.io.path.PathTracker.getPath : if i1 <= 1 goto $i8 = i0 + 1
+com.thoughtworks.xstream.io.path.PathTracker.getPath : i0 = 0
+com.thoughtworks.xstream.io.path.PathTracker.getPath : $r23 = r0.<com.thoughtworks.xstream.io.path.PathTracker: com.thoughtworks.xstream.io.path.Path currentPath>
+com.thoughtworks.xstream.io.path.PathTracker.getPath : $i8 = i0 + 1
+com.thoughtworks.xstream.io.path.PathTracker.getPath : $r5 = r0.<com.thoughtworks.xstream.io.path.PathTracker: java.util.Map[] indexMapStack>
+com.thoughtworks.xstream.io.path.PathTracker.pushElement : $r6 = r0.<com.thoughtworks.xstream.io.path.PathTracker: java.util.Map[] indexMapStack>
+com.thoughtworks.xstream.io.path.PathTracker.pushElement : $i3 = r0.<com.thoughtworks.xstream.io.path.PathTracker: int capacity>
+com.thoughtworks.xstream.io.path.PathTracker.pushElement : $r3 = r0.<com.thoughtworks.xstream.io.path.PathTracker: java.lang.String[] pathStack>
+com.thoughtworks.xstream.io.path.PathTracker.pushElement : r0.<com.thoughtworks.xstream.io.path.PathTracker: com.thoughtworks.xstream.io.path.Path currentPath> = null
+com.thoughtworks.xstream.io.path.PathTracker.pushElement : $r4 = r0.<com.thoughtworks.xstream.io.path.PathTracker: java.util.Map[] indexMapStack>
+com.thoughtworks.xstream.io.path.PathTracker.pushElement : $z0 = interfaceinvoke r2.<java.util.Map: boolean containsKey(java.lang.Object)>(r1)
+com.thoughtworks.xstream.io.path.PathTracker.pushElement : $r5 = new java.util.HashMap
+com.thoughtworks.xstream.io.path.PathTracker.pushElement : $i10 = r0.<com.thoughtworks.xstream.io.path.PathTracker: int pointer>
+com.thoughtworks.xstream.io.path.PathTracker.pushElement : if r2 != null goto $z0 = interfaceinvoke r2.<java.util.Map: boolean containsKey(java.lang.Object)>(r1)
+com.thoughtworks.xstream.io.path.PathTracker.pushElement : $r11 = new java.lang.Integer
+com.thoughtworks.xstream.io.path.PathTracker.pushElement : $i0 = r0.<com.thoughtworks.xstream.io.path.PathTracker: int pointer>
+com.thoughtworks.xstream.io.path.PathTracker.popElement : r0.<com.thoughtworks.xstream.io.path.PathTracker: com.thoughtworks.xstream.io.path.Path currentPath> = null
+com.thoughtworks.xstream.io.path.PathTracker.popElement : $i1 = r0.<com.thoughtworks.xstream.io.path.PathTracker: int pointer>
+com.thoughtworks.xstream.io.path.PathTracker.popElement : $r1 = r0.<com.thoughtworks.xstream.io.path.PathTracker: java.util.Map[] indexMapStack>
+com.thoughtworks.xstream.io.path.PathTracker.resizeStacks : r1 = newarray (java.lang.String)[i0]
+com.thoughtworks.xstream.io.path.PathTracker.resizeStacks : $r3 = r0.<com.thoughtworks.xstream.io.path.PathTracker: java.lang.String[] pathStack>
+com.thoughtworks.xstream.io.path.PathTracker.resizeStacks : r2 = newarray (java.util.Map)[i0]
+com.thoughtworks.xstream.io.path.PathTracker.resizeStacks : $r4 = r0.<com.thoughtworks.xstream.io.path.PathTracker: java.util.Map[] indexMapStack>
+com.thoughtworks.xstream.io.path.PathTracker.resizeStacks : r0.<com.thoughtworks.xstream.io.path.PathTracker: int capacity> = i0
+com.thoughtworks.xstream.io.path.PathTracker.resizeStacks : r0.<com.thoughtworks.xstream.io.path.PathTracker: java.lang.String[] pathStack> = r1
+com.thoughtworks.xstream.io.path.PathTracker.resizeStacks : r0.<com.thoughtworks.xstream.io.path.PathTracker: java.util.Map[] indexMapStack> = r2
+com.thoughtworks.xstream.io.path.PathTracker.resizeStacks : $i2 = r0.<com.thoughtworks.xstream.io.path.PathTracker: int capacity>

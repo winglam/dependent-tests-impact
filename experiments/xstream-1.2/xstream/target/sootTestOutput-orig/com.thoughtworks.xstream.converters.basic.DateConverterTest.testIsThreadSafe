@@ -1,0 +1,33 @@
+com.thoughtworks.xstream.converters.basic.ThreadSafeSimpleDateFormat.parse : specialinvoke r0.<com.thoughtworks.xstream.converters.basic.ThreadSafeSimpleDateFormat: void putInPool(java.text.DateFormat)>(r2)
+com.thoughtworks.xstream.converters.basic.ThreadSafeSimpleDateFormat.parse : r2 = specialinvoke r0.<com.thoughtworks.xstream.converters.basic.ThreadSafeSimpleDateFormat: java.text.DateFormat fetchFromPool()>()
+com.thoughtworks.xstream.converters.basic.ThreadSafeSimpleDateFormat.parse : r3 = virtualinvoke r2.<java.text.DateFormat: java.util.Date parse(java.lang.String)>(r1)
+com.thoughtworks.xstream.converters.basic.ThreadSafeSimpleDateFormat.createNew : $r1 = new java.text.SimpleDateFormat
+com.thoughtworks.xstream.converters.basic.DateConverterTest$1.run : $r7 = r0.<com.thoughtworks.xstream.converters.basic.DateConverterTest$1: com.thoughtworks.xstream.converters.basic.DateConverter val$converter>
+com.thoughtworks.xstream.converters.basic.DateConverterTest$1.run : exitmonitor r1
+com.thoughtworks.xstream.converters.basic.DateConverterTest$1.run : $r10 = r0.<com.thoughtworks.xstream.converters.basic.DateConverterTest$1: java.lang.Object val$monitor>
+com.thoughtworks.xstream.converters.basic.DateConverterTest$1.run : $r9 = r0.<com.thoughtworks.xstream.converters.basic.DateConverterTest$1: java.util.List val$results>
+com.thoughtworks.xstream.converters.basic.DateConverterTest$1.run : i0 = 0
+com.thoughtworks.xstream.converters.basic.DateConverterTest$1.run : $r11 = r0.<com.thoughtworks.xstream.converters.basic.DateConverterTest$1: java.lang.Object val$monitor>
+com.thoughtworks.xstream.converters.basic.DateConverterTest$1.run : goto [?= i0 = i0 + 1]
+com.thoughtworks.xstream.converters.basic.ThreadSafeSimpleDateFormat.fetchFromPool : return r3
+com.thoughtworks.xstream.converters.basic.ThreadSafeSimpleDateFormat.fetchFromPool : $r8 = specialinvoke r0.<com.thoughtworks.xstream.converters.basic.ThreadSafeSimpleDateFormat: java.text.DateFormat createNew()>()
+com.thoughtworks.xstream.converters.basic.ThreadSafeSimpleDateFormat.fetchFromPool : $r17 = r0.<com.thoughtworks.xstream.converters.basic.ThreadSafeSimpleDateFormat: java.text.DateFormat[] pool>
+com.thoughtworks.xstream.converters.basic.ThreadSafeSimpleDateFormat.fetchFromPool : if r3 != null goto return r3
+com.thoughtworks.xstream.converters.basic.ThreadSafeSimpleDateFormat.fetchFromPool : goto [?= staticinvoke <edu.washington.cs.dt.impact.util.Tracer: void trace(java.lang.String,java.lang.String)>("$i3 = r0.<com.thoughtworks.xstream.converters.basic.ThreadSafeSimpleDateFormat: int nextAvailable>", "com.thoughtworks.xstream.converters.basic.ThreadSafeSimpleDateFormat.fetchFromPool")]
+com.thoughtworks.xstream.converters.basic.ThreadSafeSimpleDateFormat.fetchFromPool : $r5 = r0.<com.thoughtworks.xstream.converters.basic.ThreadSafeSimpleDateFormat: java.lang.Object mutex>
+com.thoughtworks.xstream.converters.basic.ThreadSafeSimpleDateFormat.fetchFromPool : $i3 = r0.<com.thoughtworks.xstream.converters.basic.ThreadSafeSimpleDateFormat: int nextAvailable>
+com.thoughtworks.xstream.converters.basic.ThreadSafeSimpleDateFormat.fetchFromPool : exitmonitor r1
+com.thoughtworks.xstream.converters.basic.ThreadSafeSimpleDateFormat.fetchFromPool : $r9 = r0.<com.thoughtworks.xstream.converters.basic.ThreadSafeSimpleDateFormat: java.lang.Object mutex>
+com.thoughtworks.xstream.converters.basic.ThreadSafeSimpleDateFormat.fetchFromPool : $i1 = r0.<com.thoughtworks.xstream.converters.basic.ThreadSafeSimpleDateFormat: int maxPoolSize>
+com.thoughtworks.xstream.converters.basic.ThreadSafeSimpleDateFormat.fetchFromPool : i0 = 0
+com.thoughtworks.xstream.converters.basic.ThreadSafeSimpleDateFormat.fetchFromPool : $i5 = r0.<com.thoughtworks.xstream.converters.basic.ThreadSafeSimpleDateFormat: int nextAvailable>
+com.thoughtworks.xstream.converters.basic.ThreadSafeSimpleDateFormat.fetchFromPool : r0.<com.thoughtworks.xstream.converters.basic.ThreadSafeSimpleDateFormat: int nextAvailable> = -1
+com.thoughtworks.xstream.converters.basic.ThreadSafeSimpleDateFormat.fetchFromPool : $r6 = r0.<com.thoughtworks.xstream.converters.basic.ThreadSafeSimpleDateFormat: java.text.DateFormat[] pool>
+com.thoughtworks.xstream.testutil.TimeZoneChanger.reset : $r0 = <com.thoughtworks.xstream.testutil.TimeZoneChanger: java.util.TimeZone originalTimeZone>
+com.thoughtworks.xstream.testutil.TimeZoneChanger.change : $r1 = staticinvoke <java.util.TimeZone: java.util.TimeZone getTimeZone(java.lang.String)>(r0)
+com.thoughtworks.xstream.converters.basic.ThreadSafeSimpleDateFormat.putInPool : $r4 = r0.<com.thoughtworks.xstream.converters.basic.ThreadSafeSimpleDateFormat: java.lang.Object mutex>
+com.thoughtworks.xstream.converters.basic.ThreadSafeSimpleDateFormat.putInPool : exitmonitor r2
+com.thoughtworks.xstream.converters.basic.ThreadSafeSimpleDateFormat.putInPool : $r6 = r0.<com.thoughtworks.xstream.converters.basic.ThreadSafeSimpleDateFormat: java.text.DateFormat[] pool>
+com.thoughtworks.xstream.converters.basic.ThreadSafeSimpleDateFormat.putInPool : $i0 = r0.<com.thoughtworks.xstream.converters.basic.ThreadSafeSimpleDateFormat: int nextAvailable>
+com.thoughtworks.xstream.converters.basic.ThreadSafeSimpleDateFormat.putInPool : $r7 = r0.<com.thoughtworks.xstream.converters.basic.ThreadSafeSimpleDateFormat: java.lang.Object mutex>
+com.thoughtworks.xstream.converters.basic.DateConverter.fromString : $r5 = r0.<com.thoughtworks.xstream.converters.basic.DateConverter: com.thoughtworks.xstream.converters.basic.ThreadSafeSimpleDateFormat defaultFormat>

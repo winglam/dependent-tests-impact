@@ -1,0 +1,8 @@
+com.thoughtworks.xstream.converters.basic.ThreadSafeSimpleDateFormat.createNew : $r1 = new java.text.SimpleDateFormat
+com.thoughtworks.xstream.converters.basic.ThreadSafeSimpleDateFormat.format : r2 = specialinvoke r0.<com.thoughtworks.xstream.converters.basic.ThreadSafeSimpleDateFormat: java.text.DateFormat fetchFromPool()>()
+com.thoughtworks.xstream.converters.basic.ThreadSafeSimpleDateFormat.fetchFromPool : $r5 = r0.<com.thoughtworks.xstream.converters.basic.ThreadSafeSimpleDateFormat: java.lang.Object mutex>
+com.thoughtworks.xstream.converters.basic.ThreadSafeSimpleDateFormat.fetchFromPool : $r8 = specialinvoke r0.<com.thoughtworks.xstream.converters.basic.ThreadSafeSimpleDateFormat: java.text.DateFormat createNew()>()
+com.thoughtworks.xstream.converters.basic.ThreadSafeSimpleDateFormat.fetchFromPool : $i1 = r0.<com.thoughtworks.xstream.converters.basic.ThreadSafeSimpleDateFormat: int maxPoolSize>
+com.thoughtworks.xstream.converters.basic.ThreadSafeSimpleDateFormat.fetchFromPool : i0 = 0
+com.thoughtworks.xstream.converters.basic.ThreadSafeSimpleDateFormat.fetchFromPool : r0.<com.thoughtworks.xstream.converters.basic.ThreadSafeSimpleDateFormat: int nextAvailable> = -1
+com.thoughtworks.xstream.converters.basic.ThreadSafeSimpleDateFormat.fetchFromPool : $r6 = r0.<com.thoughtworks.xstream.converters.basic.ThreadSafeSimpleDateFormat: java.text.DateFormat[] pool>

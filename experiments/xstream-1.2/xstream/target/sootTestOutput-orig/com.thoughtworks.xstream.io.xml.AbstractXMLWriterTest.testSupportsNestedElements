@@ -1,0 +1,31 @@
+com.thoughtworks.xstream.io.xml.StaxWriter.startNode : if z0 == 0 goto (branch)
+com.thoughtworks.xstream.io.xml.StaxWriter.startNode : if r4 == null goto $z4 = 0
+com.thoughtworks.xstream.io.xml.StaxWriter.startNode : if z1 == 0 goto $i2 = r0.<com.thoughtworks.xstream.io.xml.StaxWriter: int tagDepth>
+com.thoughtworks.xstream.io.xml.StaxWriter.startNode : $r15 = r0.<com.thoughtworks.xstream.io.xml.StaxWriter: javax.xml.stream.XMLStreamWriter out>
+com.thoughtworks.xstream.io.xml.StaxWriter.startNode : z2 = 0
+com.thoughtworks.xstream.io.xml.StaxWriter.startNode : $i2 = r0.<com.thoughtworks.xstream.io.xml.StaxWriter: int tagDepth>
+com.thoughtworks.xstream.io.xml.StaxWriter.startNode : if z1 == 0 goto $r15 = r0.<com.thoughtworks.xstream.io.xml.StaxWriter: javax.xml.stream.XMLStreamWriter out>
+com.thoughtworks.xstream.io.xml.StaxWriter.startNode : if z1 == 0 goto (branch)
+com.thoughtworks.xstream.io.xml.StaxWriter.startNode : goto [?= return]
+com.thoughtworks.xstream.io.xml.StaxWriter.startNode : r4 = virtualinvoke r2.<javax.xml.namespace.QName: java.lang.String getNamespaceURI()>()
+com.thoughtworks.xstream.io.xml.StaxWriter.startNode : r3 = virtualinvoke r2.<javax.xml.namespace.QName: java.lang.String getPrefix()>()
+com.thoughtworks.xstream.io.xml.StaxWriter.startNode : $r6 = r0.<com.thoughtworks.xstream.io.xml.StaxWriter: com.thoughtworks.xstream.io.xml.QNameMap qnameMap>
+com.thoughtworks.xstream.io.xml.StaxWriter.startNode : if r3 == null goto $z3 = 0
+com.thoughtworks.xstream.io.xml.StaxWriter.setValue : $r3 = r0.<com.thoughtworks.xstream.io.xml.StaxWriter: javax.xml.stream.XMLStreamWriter out>
+com.thoughtworks.xstream.io.xml.StaxWriter.setValue : goto [?= return]
+com.thoughtworks.xstream.io.xml.StaxWriter.endNode : $r3 = r0.<com.thoughtworks.xstream.io.xml.StaxWriter: javax.xml.stream.XMLStreamWriter out>
+com.thoughtworks.xstream.io.xml.StaxWriter.endNode : $r4 = r0.<com.thoughtworks.xstream.io.xml.StaxWriter: javax.xml.stream.XMLStreamWriter out>
+com.thoughtworks.xstream.io.xml.StaxWriter.endNode : $i2 = r0.<com.thoughtworks.xstream.io.xml.StaxWriter: int tagDepth>
+com.thoughtworks.xstream.io.xml.StaxWriter.endNode : goto [?= return]
+com.thoughtworks.xstream.io.xml.StaxWriter.endNode : $i0 = r0.<com.thoughtworks.xstream.io.xml.StaxWriter: int tagDepth>
+com.thoughtworks.xstream.io.xml.AbstractXmlWriter.escapeXmlName : $r2 = r0.<com.thoughtworks.xstream.io.xml.AbstractXmlWriter: com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer replacer>
+com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer.escapeName : if c2 != 36 goto (branch)
+com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer.escapeName : i1 = 0
+com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer.escapeName : $r9 = virtualinvoke r3.<java.lang.StringBuffer: java.lang.String toString()>()
+com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer.escapeName : c2 = virtualinvoke r1.<java.lang.String: char charAt(int)>(i1)
+com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer.escapeName : i0 = virtualinvoke r1.<java.lang.String: int length()>()
+com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer.escapeName : virtualinvoke r3.<java.lang.StringBuffer: java.lang.StringBuffer append(char)>(c2)
+com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer.escapeName : $r2 = new java.lang.StringBuffer
+com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer.escapeName : if c2 != 95 goto virtualinvoke r3.<java.lang.StringBuffer: java.lang.StringBuffer append(char)>(c2)
+com.thoughtworks.xstream.io.xml.QNameMap.getQName : $r6 = new javax.xml.namespace.QName
+com.thoughtworks.xstream.io.xml.QNameMap.getQName : $r3 = r0.<com.thoughtworks.xstream.io.xml.QNameMap: java.util.Map javaToQName>
