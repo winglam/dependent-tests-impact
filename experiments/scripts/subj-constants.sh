@@ -24,7 +24,7 @@ expDirectories=(
   #${rootDir}/zeppelin/zeppelin-zengine/target
   #${rootDir}/zeppelin/zeppelin-server/target
   #/home/user/dependent-tests-impact/experiments/activemq-old/activemq-camel/target
-  /home/user/dependent-tests-impact/experiments/xstream-1.2/xstream/target
+  ${rootDir}/xstream-1.2/xstream/target
 )
 # Classpath to run the old subject's automatically-generated and human-written tests.
 expCP=(
@@ -37,7 +37,7 @@ expCP=(
   #${rootDir}/impact-tools/*:${rootDir}/zeppelin/zeppelin-zengine/target/classes/:${rootDir}/zeppelin/zeppelin-zengine/target/test-classes/:${rootDir}/zeppelin/zeppelin-zengine/target/dependency/*:${rootDir}/zeppelin/zeppelin-zengine/target/randoop/bin/:/usr/lib/jvm/java-7-oracle/jre/lib/*:
   #${rootDir}/impact-tools/*:${rootDir}/zeppelin/zeppelin-server/target/classes/:${rootDir}/zeppelin/zeppelin-server/target/test-classes/:${rootDir}/zeppelin/zeppelin-server/target/dependency/*:${rootDir}/zeppelin/zeppelin-server/target/randoop/bin/:/usr/lib/jvm/java-7-oracle/jre/lib/*:
   #/home/user/dependent-tests-impact/experiments/impact-tools/*:/home/user/dependent-tests-impact/experiments/activemq-old/activemq-camel/target/dependency/*:/home/user/dependent-tests-impact/experiments/activemq-old/activemq-camel/target/classes:/home/user/dependent-tests-impact/experiments/activemq-old/activemq-camel/target/randoop/bin:/home/user/dependent-tests-impact/experiments/activemq-old/activemq-camel/target/test-classes:
-  /home/user/dependent-tests-impact/experiments/impact-tools/*:/home/user/dependent-tests-impact/experiments/xstream-1.2/xstream/target/dependency/*:/home/user/dependent-tests-impact/experiments/xstream-1.2/xstream/target/classes:/home/user/dependent-tests-impact/experiments/xstream-1.2/xstream/target/randoop/bin:/home/user/dependent-tests-impact/experiments/xstream-1.2/xstream/target/test-classes:
+  ${rootDir}/impact-tools/*:${rootDir}/xstream-1.2/xstream/target/dependency/*:${rootDir}/xstream-1.2/xstream/target/classes:${rootDir}/xstream-1.2/xstream/target/randoop/bin:${rootDir}/xstream-1.2/xstream/target/test-classes:
 )
 # The name of the subject you want to be displayed in the paper (e.g., XML Security).
 expNameFormal=(
@@ -76,9 +76,9 @@ nextExpCP=(
   #${rootDir}/impact-tools/*:${rootDir}/zeppelin-zengine-new/zeppelin-zengine/target/classes/:${rootDir}/zeppelin-zengine-new/zeppelin-zengine/target/test-classes/:${rootDir}/zeppelin-zengine-new/zeppelin-zengine/target/dependency/*:${rootDir}/zeppelin-zengine-new/zeppelin-zengine/target/randoop/bin/:/usr/lib/jvm/java-7-oracle/jre/lib/*:
   #${rootDir}/impact-tools/*:${rootDir}/zeppelin-new/zeppelin-server/target/classes/:${rootDir}/zeppelin-new/zeppelin-server/target/test-classes/:${rootDir}/zeppelin-new/zeppelin-server/target/dependency/*:${rootDir}/zeppelin-new/zeppelin-server/target/randoop/bin/:/usr/lib/jvm/java-7-oracle/jre/lib/*:
   #/home/user/dependent-tests-impact/experiments/impact-tools/*:/home/user/dependent-tests-impact/experiments/activemq-new/activemq-camel/target/dependency/*:/home/user/dependent-tests-impact/experiments/activemq-new/activemq-camel/target/classes:/home/user/dependent-tests-impact/experiments/activemq-new/activemq-camel/target/randoop/bin:/home/user/dependent-tests-impact/experiments/activemq-new/activemq-camel/target/test-classes:
-  /home/user/dependent-tests-impact/experiments/impact-tools/*:/home/user/dependent-tests-impact/experiments/xstream-1.2.1/xstream/target/dependency/*:/home/user/dependent-tests-impact/experiments/xstream-1.2.1/xstream/target/classes:/home/user/dependent-tests-impact/experiments/xstream-1.2.1/xstream/target/randoop/bin:/home/user/dependent-tests-impact/experiments/xstream-1.2.1/xstream/target/test-classes:
+  ${rootDir}/impact-tools/*:${rootDir}/xstream-1.2.1/xstream/target/dependency/*:${rootDir}/xstream-1.2.1/xstream/target/classes:${rootDir}/xstream-1.2.1/xstream/target/randoop/bin:${rootDir}/xstream-1.2.1/xstream/target/test-classes:
 )
-# Directory containing the old subject's src directory. These directories contain projects that were originally built with Ant. 
+# Directory containing the old subject's src directory. These directories contain projects that were originally built with Ant.
 antExp=(
   #${rootDir}/crystalvc
   #${rootDir}/jfreechart-1.0.15
@@ -86,7 +86,7 @@ antExp=(
   #${rootDir}/dynoptic
   #${rootDir}/xml-security-orig-v1
 )
-# Directory containing the new subject's src directory. These directories contain projects that were originally built with Ant. 
+# Directory containing the new subject's src directory. These directories contain projects that were originally built with Ant.
 antNextExp=(
   #${rootDir}/crystal
   #${rootDir}/jfreechart-1.0.16
@@ -94,19 +94,19 @@ antNextExp=(
   #${rootDir}/dynoptic-ea407ba0a750
   #${rootDir}/xml-security-1_2_0
 )
-# Directory containing the old subject's src directory. These directories contain projects that were originally built with Maven. 
+# Directory containing the old subject's src directory. These directories contain projects that were originally built with Maven.
 antMvnExp=(
   #${rootDir}/ambari/ambari-server
   #${rootDir}/zeppelin/zeppelin-zengine
   #${rootDir}/zeppelin/zeppelin-server
   #/home/user/dependent-tests-impact/experiments/activemq-old/activemq-camel/src
-  /home/user/dependent-tests-impact/experiments/xstream-1.2/xstream
+  ${rootDir}/xstream-1.2/xstream
 )
-# Directory containing the new subject's src directory. These directories contain projects that were originally built with Maven. 
+# Directory containing the new subject's src directory. These directories contain projects that were originally built with Maven.
 antMvnNextExp=(
   #${rootDir}/ambari-new/ambari-server
   #${rootDir}/zeppelin-zengine-new/zeppelin-zengine
   #${rootDir}/zeppelin-new/zeppelin-server
   #/home/user/dependent-tests-impact/experiments/activemq-new/activemq-camel/src
-  /home/user/dependent-tests-impact/experiments/xstream-1.2.1/xstream
+  ${rootDir}/xstream-1.2.1/xstream
 )
