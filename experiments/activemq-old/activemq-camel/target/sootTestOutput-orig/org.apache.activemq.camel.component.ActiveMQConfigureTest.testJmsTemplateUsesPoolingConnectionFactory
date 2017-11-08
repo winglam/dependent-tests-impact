@@ -1,0 +1,17 @@
+org.apache.activemq.camel.component.ActiveMQConfigureTest.resolveMandatoryEndpoint : r2 = specialinvoke r0.<org.apache.camel.test.junit4.CamelTestSupport: org.apache.camel.Endpoint resolveMandatoryEndpoint(java.lang.String)>(r1)
+org.apache.activemq.camel.component.ComplexRequestReplyTest.shutdownBrokerA : goto [?= return]
+org.apache.activemq.camel.component.ComplexRequestReplyTest.shutdownBrokerA : $r2 = r0.<org.apache.activemq.camel.component.ComplexRequestReplyTest: org.apache.camel.CamelContext brokerAContext>
+org.apache.activemq.camel.component.ComplexRequestReplyTest.shutdownBrokerB : r0.<org.apache.activemq.camel.component.ComplexRequestReplyTest: org.apache.activemq.broker.BrokerService brokerB> = null
+org.apache.activemq.camel.component.ComplexRequestReplyTest.shutdownBrokerB : $r3 = r0.<org.apache.activemq.camel.component.ComplexRequestReplyTest: org.apache.activemq.broker.BrokerService brokerB>
+org.apache.activemq.camel.component.ComplexRequestReplyTest.shutdownBrokerB : $r4 = r0.<org.apache.activemq.camel.component.ComplexRequestReplyTest: org.apache.activemq.broker.BrokerService brokerB>
+org.apache.activemq.camel.component.ComplexRequestReplyTest.shutdownBrokerB : $r2 = r0.<org.apache.activemq.camel.component.ComplexRequestReplyTest: org.apache.camel.CamelContext brokerBContext>
+org.apache.activemq.camel.component.ComplexRequestReplyTest.shutdownBrokerB : goto [?= return]
+org.apache.activemq.camel.component.ActiveMQComponent.doStop : $r3 = r0.<org.apache.activemq.camel.component.ActiveMQComponent: org.apache.activemq.advisory.DestinationSource source>
+org.apache.activemq.camel.component.ActiveMQComponent.doStop : $r7 = r0.<org.apache.activemq.camel.component.ActiveMQComponent: java.util.concurrent.CopyOnWriteArrayList pooledConnectionFactoryServiceList>
+org.apache.activemq.camel.component.ActiveMQComponent.doStop : specialinvoke r0.<org.apache.camel.component.jms.JmsComponent: void doStop()>()
+org.apache.activemq.camel.component.ActiveMQComponent.doStop : $r14 = r0.<org.apache.activemq.camel.component.ActiveMQComponent: java.util.concurrent.CopyOnWriteArrayList singleConnectionFactoryList>
+org.apache.activemq.camel.component.ActiveMQComponent.doStop : goto [?= $z0 = interfaceinvoke r1.<java.util.Iterator: boolean hasNext()>()]
+org.apache.activemq.camel.component.ActiveMQComponent.doStop : interfaceinvoke r2.<org.apache.activemq.Service: void stop()>()
+org.apache.activemq.camel.component.ActiveMQComponent.doStop : $r10 = r0.<org.apache.activemq.camel.component.ActiveMQComponent: java.util.concurrent.CopyOnWriteArrayList singleConnectionFactoryList>
+org.apache.activemq.camel.component.ActiveMQComponent.doStop : $r5 = r0.<org.apache.activemq.camel.component.ActiveMQComponent: org.apache.activemq.EnhancedConnection connection>
+org.apache.activemq.camel.component.ActiveMQComponent.doStop : $r9 = r0.<org.apache.activemq.camel.component.ActiveMQComponent: java.util.concurrent.CopyOnWriteArrayList pooledConnectionFactoryServiceList>

@@ -1,0 +1,17 @@
+org.apache.activemq.camel.component.broker.BrokerProducer.getMessage : specialinvoke r0.<org.apache.activemq.camel.component.broker.BrokerProducer: void checkOriginalMessage(org.apache.camel.Message)>(r2)
+org.apache.activemq.camel.component.broker.BrokerProducer.getMessage : r2 = specialinvoke r0.<org.apache.activemq.camel.component.broker.BrokerProducer: org.apache.camel.Message getMessageFromExchange(org.apache.camel.Exchange)>(r1)
+org.apache.activemq.camel.component.broker.BrokerProducer.processInOnly : interfaceinvoke r1.<org.apache.camel.Exchange: void setException(java.lang.Throwable)>(r10)
+org.apache.activemq.camel.component.broker.BrokerProducer.processInOnly : r3 = specialinvoke r0.<org.apache.activemq.camel.component.broker.BrokerProducer: org.apache.activemq.command.ActiveMQMessage getMessage(org.apache.camel.Exchange)>(r1)
+org.apache.activemq.camel.component.broker.BrokerProducer.processInOnly : interfaceinvoke r2.<org.apache.camel.AsyncCallback: void done(boolean)>(1)
+org.apache.activemq.camel.component.broker.BrokerProducer.processInOnly : r10 = $r9
+org.apache.activemq.camel.component.broker.BrokerProducer.checkOriginalMessage : $r4 = new java.lang.IllegalStateException
+org.apache.activemq.camel.component.broker.BrokerProducer.checkOriginalMessage : $z0 = r1 instanceof org.apache.camel.component.jms.JmsMessage
+org.apache.activemq.camel.component.broker.BrokerProducer.process : interfaceinvoke r1.<org.apache.camel.Exchange: void setException(java.lang.Throwable)>(r3)
+org.apache.activemq.camel.component.broker.BrokerProducer.process : r3 = $r4
+org.apache.activemq.camel.component.broker.BrokerProducer.process : $z0 = virtualinvoke r0.<org.apache.activemq.camel.component.broker.BrokerProducer: boolean processInOnly(org.apache.camel.Exchange,org.apache.camel.AsyncCallback)>(r1, r2)
+org.apache.activemq.camel.component.broker.BrokerProducer.process : interfaceinvoke r2.<org.apache.camel.AsyncCallback: void done(boolean)>(1)
+org.apache.activemq.camel.CamelDestination.getUri : $r1 = r0.<org.apache.activemq.camel.CamelDestination: java.lang.String uri>
+org.apache.activemq.camel.CamelDestination.getBinding : $r1 = r0.<org.apache.activemq.camel.CamelDestination: org.apache.camel.component.jms.JmsBinding binding>
+org.apache.activemq.camel.component.broker.BrokerProducer.getMessageFromExchange : $r3 = interfaceinvoke r1.<org.apache.camel.Exchange: org.apache.camel.Message getIn()>()
+org.apache.activemq.camel.component.broker.BrokerProducer.getMessageFromExchange : $z0 = interfaceinvoke r1.<org.apache.camel.Exchange: boolean hasOut()>()
+org.apache.activemq.camel.CamelQueue.getQueueName : $r1 = virtualinvoke r0.<org.apache.activemq.camel.CamelQueue: java.lang.String getUri()>()

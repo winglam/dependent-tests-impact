@@ -1,0 +1,10 @@
+org.apache.activemq.camel.DlqTest$1.isSatisified : $r1 = r0.<org.apache.activemq.camel.DlqTest$1: org.apache.activemq.camel.DlqTest this$0> >>>>>>>> org.apache.activemq.camel.DlqTest$1.isSatisified : $r2 = $r1.<org.apache.activemq.camel.DlqTest: org.apache.activemq.broker.BrokerService broker>
+org.apache.activemq.camel.DlqTest$1.isSatisified : $r2 = $r1.<org.apache.activemq.camel.DlqTest: org.apache.activemq.broker.BrokerService broker> >>>>>>>> org.apache.activemq.camel.DlqTest$1.isSatisified : $r3 = virtualinvoke $r2.<org.apache.activemq.broker.BrokerService: org.apache.activemq.broker.jmx.BrokerView getAdminView()>()
+org.apache.activemq.camel.DlqTest$1.isSatisified : $r3 = virtualinvoke $r2.<org.apache.activemq.broker.BrokerService: org.apache.activemq.broker.jmx.BrokerView getAdminView()>() >>>>>>>> org.apache.activemq.camel.DlqTest$1.isSatisified : $l0 = virtualinvoke $r3.<org.apache.activemq.broker.jmx.BrokerView: long getTotalEnqueueCount()>()
+org.apache.activemq.camel.DlqTest$1.isSatisified : $l0 = virtualinvoke $r3.<org.apache.activemq.broker.jmx.BrokerView: long getTotalEnqueueCount()>() >>>>>>>> org.apache.activemq.camel.DlqTest$1.isSatisified : $b1 = $l0 cmp 2L
+org.apache.activemq.camel.DlqTest$1.isSatisified : $b1 = $l0 cmp 2L >>>>>>>> org.apache.activemq.camel.DlqTest$1.isSatisified : if $b1 != 0
+org.apache.activemq.camel.DlqTest$1.isSatisified : if $b1 != 0 >>>>>>>> org.apache.activemq.camel.DlqTest$1.isSatisified : $z0 = 1
+org.apache.activemq.camel.DlqTest$1.isSatisified : if $b1 != 0 >>>>>>>> org.apache.activemq.camel.DlqTest$1.isSatisified : $z0 = 0
+org.apache.activemq.camel.DlqTest$1.isSatisified : $z0 = 0 >>>>>>>> org.apache.activemq.camel.DlqTest$1.isSatisified : return $z0
+org.apache.activemq.camel.DlqTest$1.isSatisified : $z0 = 1 >>>>>>>> org.apache.activemq.camel.DlqTest$1.isSatisified : goto [?= return $z0]
+org.apache.activemq.camel.DlqTest$1.isSatisified : goto [?= return $z0] >>>>>>>> org.apache.activemq.camel.DlqTest$1.isSatisified : return $z0

@@ -1,0 +1,47 @@
+org.apache.activemq.camel.component.ActiveMQConfiguration.setBrokerURL : r0.<org.apache.activemq.camel.component.ActiveMQConfiguration: java.lang.String brokerURL> = r1
+org.apache.activemq.camel.TransactedConsumeTest.createApplicationContext : $r5 = new java.lang.RuntimeException
+org.apache.activemq.camel.TransactedConsumeTest.createApplicationContext : $r1 = virtualinvoke r0.<org.apache.activemq.camel.TransactedConsumeTest: org.springframework.context.support.AbstractXmlApplicationContext createApplicationContext()>()
+org.apache.activemq.camel.TransactedConsumeTest.createApplicationContext : r1 = $r4
+org.apache.activemq.camel.TransactedConsumeTest.createApplicationContext : $r2 = specialinvoke r0.<org.apache.activemq.camel.TransactedConsumeTest: org.apache.activemq.broker.BrokerService createBroker(boolean)>(1)
+org.apache.activemq.camel.TransactedConsumeTest.createApplicationContext : staticinvoke <org.apache.activemq.camel.TransactedConsumeTest: boolean deleteDirectory(java.lang.String)>("target/data")
+org.apache.activemq.camel.component.ActiveMQComponent.activeMQComponent : $r1 = new org.apache.activemq.camel.component.ActiveMQComponent
+org.apache.activemq.camel.component.ActiveMQComponent.activeMQComponent : return r2
+org.apache.activemq.camel.component.ActiveMQComponent.activeMQComponent : $r3 = virtualinvoke r2.<org.apache.activemq.camel.component.ActiveMQComponent: org.apache.camel.component.jms.JmsConfiguration getConfiguration()>()
+org.apache.activemq.camel.component.ActiveMQComponent.activeMQComponent : $r4 = virtualinvoke r2.<org.apache.activemq.camel.component.ActiveMQComponent: org.apache.camel.component.jms.JmsConfiguration getConfiguration()>()
+org.apache.activemq.camel.component.ActiveMQConfiguration.getBrokerURL : $r1 = r0.<org.apache.activemq.camel.component.ActiveMQConfiguration: java.lang.String brokerURL>
+org.apache.activemq.camel.ActiveMQComponentFactoryUserNamePasswordTest.createApplicationContext : $r1 = new org.springframework.context.support.ClassPathXmlApplicationContext
+org.apache.activemq.camel.component.ActiveMQComponent.createConfiguration : virtualinvoke r2.<org.apache.activemq.camel.component.ActiveMQConfiguration: void setActiveMQComponent(org.apache.activemq.camel.component.ActiveMQComponent)>(r0)
+org.apache.activemq.camel.component.ActiveMQComponent.createConfiguration : return r2
+org.apache.activemq.camel.component.ActiveMQComponent.createConfiguration : $r1 = new org.apache.activemq.camel.component.ActiveMQConfiguration
+org.apache.activemq.camel.CamelJmsTest.createApplicationContext : $r1 = new org.springframework.context.support.ClassPathXmlApplicationContext
+org.apache.activemq.camel.CamelJmsTest.createApplicationContext : $r1 = virtualinvoke r0.<org.apache.activemq.camel.CamelJmsTest: org.springframework.context.support.ClassPathXmlApplicationContext createApplicationContext()>()
+org.apache.activemq.camel.camelplugin.CamelPluginConfigTest.createBroker : $r5 = interfaceinvoke r1.<org.springframework.core.io.Resource: java.net.URI getURI()>()
+org.apache.activemq.camel.camelplugin.CamelPluginConfigTest.createBroker : $r2 = new org.apache.activemq.xbean.XBeanBrokerFactory
+org.apache.activemq.camel.component.ActiveMQComponent.doStop : $r3 = r0.<org.apache.activemq.camel.component.ActiveMQComponent: org.apache.activemq.advisory.DestinationSource source>
+org.apache.activemq.camel.component.ActiveMQComponent.doStop : $r7 = r0.<org.apache.activemq.camel.component.ActiveMQComponent: java.util.concurrent.CopyOnWriteArrayList pooledConnectionFactoryServiceList>
+org.apache.activemq.camel.component.ActiveMQComponent.doStop : specialinvoke r0.<org.apache.camel.component.jms.JmsComponent: void doStop()>()
+org.apache.activemq.camel.component.ActiveMQComponent.doStop : $r14 = r0.<org.apache.activemq.camel.component.ActiveMQComponent: java.util.concurrent.CopyOnWriteArrayList singleConnectionFactoryList>
+org.apache.activemq.camel.component.ActiveMQComponent.doStop : goto [?= $z0 = interfaceinvoke r1.<java.util.Iterator: boolean hasNext()>()]
+org.apache.activemq.camel.component.ActiveMQComponent.doStop : interfaceinvoke r2.<org.apache.activemq.Service: void stop()>()
+org.apache.activemq.camel.component.ActiveMQComponent.doStop : $r10 = r0.<org.apache.activemq.camel.component.ActiveMQComponent: java.util.concurrent.CopyOnWriteArrayList singleConnectionFactoryList>
+org.apache.activemq.camel.component.ActiveMQComponent.doStop : $r5 = r0.<org.apache.activemq.camel.component.ActiveMQComponent: org.apache.activemq.EnhancedConnection connection>
+org.apache.activemq.camel.component.ActiveMQComponent.doStop : $r9 = r0.<org.apache.activemq.camel.component.ActiveMQComponent: java.util.concurrent.CopyOnWriteArrayList pooledConnectionFactoryServiceList>
+org.apache.activemq.camel.component.ActiveMQConfiguration.createConnectionFactory : virtualinvoke r2.<org.apache.activemq.spring.ActiveMQConnectionFactory: void setBeanName(java.lang.String)>("Camel")
+org.apache.activemq.camel.component.ActiveMQConfiguration.createConnectionFactory : $r8 = virtualinvoke r2.<org.apache.activemq.spring.ActiveMQConnectionFactory: java.lang.String getBeanName()>()
+org.apache.activemq.camel.component.ActiveMQConfiguration.createConnectionFactory : $r1 = new org.apache.activemq.spring.ActiveMQConnectionFactory
+org.apache.activemq.camel.component.ActiveMQConfiguration.createConnectionFactory : $r4 = r0.<org.apache.activemq.camel.component.ActiveMQConfiguration: java.lang.String userName>
+org.apache.activemq.camel.component.ActiveMQConfiguration.createConnectionFactory : $r6 = r0.<org.apache.activemq.camel.component.ActiveMQConfiguration: java.lang.String password>
+org.apache.activemq.camel.component.ActiveMQConfiguration.createConnectionFactory : $r9 = virtualinvoke r0.<org.apache.activemq.camel.component.ActiveMQConfiguration: java.lang.String getBrokerURL()>()
+org.apache.activemq.camel.component.ActiveMQConfiguration.setActiveMQComponent : r0.<org.apache.activemq.camel.component.ActiveMQConfiguration: org.apache.activemq.camel.component.ActiveMQComponent activeMQComponent> = r1
+org.apache.activemq.camel.TransactedConsumeTest.createBroker : $r8 = virtualinvoke r2.<org.apache.activemq.broker.BrokerService: org.apache.activemq.store.PersistenceAdapter getPersistenceAdapter()>()
+org.apache.activemq.camel.TransactedConsumeTest.createBroker : virtualinvoke r2.<org.apache.activemq.broker.BrokerService: void setDestinationPolicy(org.apache.activemq.broker.region.policy.PolicyMap)>(r3)
+org.apache.activemq.camel.TransactedConsumeTest.createBroker : $r6 = new org.apache.activemq.broker.region.policy.PolicyMap
+org.apache.activemq.camel.TransactedConsumeTest.createBroker : virtualinvoke r2.<org.apache.activemq.broker.BrokerService: void setBrokerName(java.lang.String)>("test")
+org.apache.activemq.camel.TransactedConsumeTest.createBroker : $r1 = new org.apache.activemq.broker.BrokerService
+org.apache.activemq.camel.TransactedConsumeTest.createBroker : virtualinvoke r3.<org.apache.activemq.broker.region.policy.PolicyMap: void setDefaultEntry(org.apache.activemq.broker.region.policy.PolicyEntry)>(r4)
+org.apache.activemq.camel.TransactedConsumeTest.createBroker : $r7 = new org.apache.activemq.broker.region.policy.PolicyEntry
+org.apache.activemq.camel.TransactedConsumeTest.createBroker : virtualinvoke r2.<org.apache.activemq.broker.BrokerService: void setAdvisorySupport(boolean)>(0)
+org.apache.activemq.camel.TransactedConsumeTest.createBroker : virtualinvoke r2.<org.apache.activemq.broker.BrokerService: void setDeleteAllMessagesOnStartup(boolean)>(z0)
+org.apache.activemq.camel.TransactedConsumeTest.createBroker : virtualinvoke r2.<org.apache.activemq.broker.BrokerService: org.apache.activemq.broker.TransportConnector addConnector(java.lang.String)>("tcp://localhost:61616")
+org.apache.activemq.camel.TransactedConsumeTest.createBroker : virtualinvoke r5.<org.apache.activemq.store.kahadb.KahaDBPersistenceAdapter: void setEnableJournalDiskSyncs(boolean)>(0)
+org.apache.activemq.camel.TransactedConsumeTest.createBroker : virtualinvoke r2.<org.apache.activemq.broker.BrokerService: void setDataDirectory(java.lang.String)>("target/data")

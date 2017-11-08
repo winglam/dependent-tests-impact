@@ -1,0 +1,7 @@
+org.apache.activemq.camel.component.broker.BrokerEndpoint.isMultipleConsumersSupported : return 1
+org.apache.activemq.camel.component.broker.BrokerEndpoint.createConsumer : return r3
+org.apache.activemq.camel.component.broker.BrokerEndpoint.createConsumer : $r2 = new org.apache.activemq.camel.component.broker.BrokerConsumer
+org.apache.activemq.camel.component.broker.BrokerEndpoint.createConsumer : virtualinvoke r0.<org.apache.activemq.camel.component.broker.BrokerEndpoint: void configureConsumer(org.apache.camel.Consumer)>(r3)
+org.apache.activemq.camel.component.broker.BrokerEndpoint.getDestinationName : $r1 = r0.<org.apache.activemq.camel.component.broker.BrokerEndpoint: java.lang.String destinationName>
+org.apache.activemq.camel.component.broker.BrokerEndpoint.getDestination : $r1 = r0.<org.apache.activemq.camel.component.broker.BrokerEndpoint: org.apache.activemq.command.ActiveMQDestination destination>
+org.apache.activemq.camel.converter.ActiveMQConverter.toDestination : $r1 = staticinvoke <org.apache.activemq.command.ActiveMQDestination: org.apache.activemq.command.ActiveMQDestination createDestination(java.lang.String,byte)>(r0, 1)

@@ -1,0 +1,1300 @@
+Executing fixed runner now.
+Test being executed: org.apache.activemq.camel.AMQ2611Test.testConnections
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/home/user/dependent-tests-impact/experiments/impact-tools/randoop.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/home/user/dependent-tests-impact/experiments/activemq-old/activemq-camel/target/dependency/slf4j-log4j12-1.7.13.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.SimpleLoggerFactory]
+330 [JMX connector] INFO org.apache.activemq.broker.jmx.ManagementContext - JMX consoles can connect to service:jmx:rmi:///jndi/rmi://localhost:1099/jmxrmi
+424 [main] INFO org.apache.activemq.store.kahadb.plist.PListStoreImpl - PListStore:[/home/user/dependent-tests-impact/experiments/activemq-old/activemq-camel/target/activemq-data/localhost/tmp_storage] started
+428 [main] INFO org.apache.activemq.broker.BrokerService - Using Persistence Adapter: KahaDBPersistenceAdapter[/home/user/dependent-tests-impact/experiments/activemq-old/activemq-camel/target/activemq-data/localhost/KahaDB]
+701 [main] INFO org.apache.activemq.store.kahadb.MessageDatabase - KahaDB is version 6
+750 [main] INFO org.apache.activemq.store.kahadb.MessageDatabase - Recovering from the journal @1:32356
+752 [main] INFO org.apache.activemq.store.kahadb.MessageDatabase - Recovery replayed 39 operations from the journal in 0.043 seconds.
+933 [main] INFO org.apache.activemq.broker.BrokerService - Apache ActiveMQ 5.13.0 (localhost, ID:ubuntu-49330-1505887920424-0:1) is starting
+1056 [main] INFO org.apache.activemq.transport.TransportServerThreadSupport - Listening for connections at: tcp://localhost:61616
+1057 [main] INFO org.apache.activemq.broker.TransportConnector - Connector tcp://localhost:61616 started
+1057 [main] INFO org.apache.activemq.broker.BrokerService - Apache ActiveMQ 5.13.0 (localhost, ID:ubuntu-49330-1505887920424-0:1) started
+1057 [main] INFO org.apache.activemq.broker.BrokerService - For help or more information please see: http://activemq.apache.org
+1057 [main] WARN org.apache.activemq.broker.BrokerService - Memory Usage for the Broker (1024 mb) is more than the maximum available for the JVM: 957 mb - resetting to 70% of maximum available: 669 mb
+1058 [main] WARN org.apache.activemq.broker.BrokerService - Store limit is 102400 mb (current store usage is 0 mb). The data directory: /home/user/dependent-tests-impact/experiments/activemq-old/activemq-camel/target/activemq-data/localhost/KahaDB only has 12894 mb of usable space - resetting to maximum available disk space: 12894 mb
+1058 [main] WARN org.apache.activemq.broker.BrokerService - Temporary Store limit is 51200 mb (current store usage is 0 mb). The data directory: /home/user/dependent-tests-impact/experiments/activemq-old/activemq-camel/target/activemq-data/localhost only has 12893 mb of usable space - resetting to maximum available disk space: 12893 mb
+1074 [main] INFO org.apache.activemq.camel.AMQ2611Test - creating context and sending message
+1358 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-1) is starting
+1359 [main] INFO org.apache.camel.management.ManagedManagementStrategy - JMX is enabled
+1630 [main] INFO org.apache.camel.impl.converter.DefaultTypeConverter - Loaded 186 type converters
+1718 [main] INFO org.apache.camel.impl.DefaultRuntimeEndpointRegistry - Runtime endpoint registry is in extended mode gathering usage statistics of all incoming and outgoing endpoints (cache limit: 1000)
+2010 [main] INFO org.apache.camel.impl.DefaultCamelContext - AllowUseOriginalMessage is enabled. If access to the original message is not needed, then its recommended to turn this option off as it may improve performance.
+2010 [main] INFO org.apache.camel.impl.DefaultCamelContext - StreamCaching is not in use. If using streams then its recommended to enable stream caching. See more details at http://camel.apache.org/stream-caching.html
+2288 [main] INFO org.apache.camel.impl.DefaultCamelContext - Route: route1 started and consuming from: Endpoint[activemq://queuetest.queue]
+2290 [main] INFO org.apache.camel.impl.DefaultCamelContext - Total 1 routes, of which 1 is started.
+2302 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-1) started in 0.938 seconds
+2426 [Camel (camel-1) thread #0 - JmsConsumer[queuetest.queue]] INFO org.apache.activemq.camel.AMQ2611Test - consume message = message
+3425 [main] INFO org.apache.activemq.camel.AMQ2611Test - destroying context
+3425 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-1) is shutting down
+3427 [main] INFO org.apache.camel.impl.DefaultShutdownStrategy - Starting to graceful shutdown 1 routes (timeout 300 seconds)
+3444 [Camel (camel-1) thread #1 - ShutdownTask] INFO org.apache.camel.impl.DefaultShutdownStrategy - Route: route1 shutdown complete, was consuming from: Endpoint[activemq://queuetest.queue]
+3444 [main] INFO org.apache.camel.impl.DefaultShutdownStrategy - Graceful shutdown of 1 routes completed in 0 seconds
+3463 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-1) uptime 2.111 seconds
+3464 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-1) is shutdown in 0.038 seconds
+4464 [main] INFO org.apache.activemq.camel.AMQ2611Test - creating context and sending message
+4473 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-2) is starting
+4474 [main] INFO org.apache.camel.management.ManagedManagementStrategy - JMX is enabled
+4544 [main] INFO org.apache.camel.impl.converter.DefaultTypeConverter - Loaded 186 type converters
+4567 [main] INFO org.apache.camel.impl.DefaultRuntimeEndpointRegistry - Runtime endpoint registry is in extended mode gathering usage statistics of all incoming and outgoing endpoints (cache limit: 1000)
+4623 [main] INFO org.apache.camel.impl.DefaultCamelContext - AllowUseOriginalMessage is enabled. If access to the original message is not needed, then its recommended to turn this option off as it may improve performance.
+4628 [main] INFO org.apache.camel.impl.DefaultCamelContext - StreamCaching is not in use. If using streams then its recommended to enable stream caching. See more details at http://camel.apache.org/stream-caching.html
+4718 [main] INFO org.apache.camel.impl.DefaultCamelContext - Route: route2 started and consuming from: Endpoint[activemq://queuetest.queue]
+4718 [main] INFO org.apache.camel.impl.DefaultCamelContext - Total 1 routes, of which 1 is started.
+4718 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-2) started in 0.252 seconds
+4740 [Camel (camel-2) thread #2 - JmsConsumer[queuetest.queue]] INFO org.apache.activemq.camel.AMQ2611Test - consume message = message
+5734 [main] INFO org.apache.activemq.camel.AMQ2611Test - destroying context
+5734 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-2) is shutting down
+5734 [main] INFO org.apache.camel.impl.DefaultShutdownStrategy - Starting to graceful shutdown 1 routes (timeout 300 seconds)
+5744 [Camel (camel-2) thread #3 - ShutdownTask] INFO org.apache.camel.impl.DefaultShutdownStrategy - Route: route2 shutdown complete, was consuming from: Endpoint[activemq://queuetest.queue]
+5744 [main] INFO org.apache.camel.impl.DefaultShutdownStrategy - Graceful shutdown of 1 routes completed in 0 seconds
+5757 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-2) uptime 1.291 seconds
+5758 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-2) is shutdown in 0.023 seconds
+6758 [main] INFO org.apache.activemq.camel.AMQ2611Test - creating context and sending message
+6766 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-3) is starting
+6769 [main] INFO org.apache.camel.management.ManagedManagementStrategy - JMX is enabled
+6843 [main] INFO org.apache.camel.impl.converter.DefaultTypeConverter - Loaded 186 type converters
+6883 [main] INFO org.apache.camel.impl.DefaultRuntimeEndpointRegistry - Runtime endpoint registry is in extended mode gathering usage statistics of all incoming and outgoing endpoints (cache limit: 1000)
+6929 [main] INFO org.apache.camel.impl.DefaultCamelContext - AllowUseOriginalMessage is enabled. If access to the original message is not needed, then its recommended to turn this option off as it may improve performance.
+6930 [main] INFO org.apache.camel.impl.DefaultCamelContext - StreamCaching is not in use. If using streams then its recommended to enable stream caching. See more details at http://camel.apache.org/stream-caching.html
+6977 [main] INFO org.apache.camel.impl.DefaultCamelContext - Route: route3 started and consuming from: Endpoint[activemq://queuetest.queue]
+6977 [main] INFO org.apache.camel.impl.DefaultCamelContext - Total 1 routes, of which 1 is started.
+6977 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-3) started in 0.211 seconds
+6994 [Camel (camel-3) thread #4 - JmsConsumer[queuetest.queue]] INFO org.apache.activemq.camel.AMQ2611Test - consume message = message
+7991 [main] INFO org.apache.activemq.camel.AMQ2611Test - destroying context
+7991 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-3) is shutting down
+7991 [main] INFO org.apache.camel.impl.DefaultShutdownStrategy - Starting to graceful shutdown 1 routes (timeout 300 seconds)
+7997 [Camel (camel-3) thread #5 - ShutdownTask] INFO org.apache.camel.impl.DefaultShutdownStrategy - Route: route3 shutdown complete, was consuming from: Endpoint[activemq://queuetest.queue]
+8005 [main] INFO org.apache.camel.impl.DefaultShutdownStrategy - Graceful shutdown of 1 routes completed in 0 seconds
+8025 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-3) uptime 1.259 seconds
+8026 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-3) is shutdown in 0.034 seconds
+9026 [main] INFO org.apache.activemq.camel.AMQ2611Test - creating context and sending message
+9028 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-4) is starting
+9028 [main] INFO org.apache.camel.management.ManagedManagementStrategy - JMX is enabled
+9080 [main] INFO org.apache.camel.impl.converter.DefaultTypeConverter - Loaded 186 type converters
+9098 [main] INFO org.apache.camel.impl.DefaultRuntimeEndpointRegistry - Runtime endpoint registry is in extended mode gathering usage statistics of all incoming and outgoing endpoints (cache limit: 1000)
+9148 [main] INFO org.apache.camel.impl.DefaultCamelContext - AllowUseOriginalMessage is enabled. If access to the original message is not needed, then its recommended to turn this option off as it may improve performance.
+9152 [main] INFO org.apache.camel.impl.DefaultCamelContext - StreamCaching is not in use. If using streams then its recommended to enable stream caching. See more details at http://camel.apache.org/stream-caching.html
+9220 [main] INFO org.apache.camel.impl.DefaultCamelContext - Route: route4 started and consuming from: Endpoint[activemq://queuetest.queue]
+9220 [main] INFO org.apache.camel.impl.DefaultCamelContext - Total 1 routes, of which 1 is started.
+9220 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-4) started in 0.193 seconds
+9241 [Camel (camel-4) thread #6 - JmsConsumer[queuetest.queue]] INFO org.apache.activemq.camel.AMQ2611Test - consume message = message
+10240 [main] INFO org.apache.activemq.camel.AMQ2611Test - destroying context
+10240 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-4) is shutting down
+10240 [main] INFO org.apache.camel.impl.DefaultShutdownStrategy - Starting to graceful shutdown 1 routes (timeout 300 seconds)
+10244 [Camel (camel-4) thread #7 - ShutdownTask] INFO org.apache.camel.impl.DefaultShutdownStrategy - Route: route4 shutdown complete, was consuming from: Endpoint[activemq://queuetest.queue]
+10245 [main] INFO org.apache.camel.impl.DefaultShutdownStrategy - Graceful shutdown of 1 routes completed in 0 seconds
+10259 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-4) uptime 1.232 seconds
+10260 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-4) is shutdown in 0.019 seconds
+11260 [main] INFO org.apache.activemq.camel.AMQ2611Test - creating context and sending message
+11262 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-5) is starting
+11262 [main] INFO org.apache.camel.management.ManagedManagementStrategy - JMX is enabled
+11320 [main] INFO org.apache.camel.impl.converter.DefaultTypeConverter - Loaded 186 type converters
+11344 [main] INFO org.apache.camel.impl.DefaultRuntimeEndpointRegistry - Runtime endpoint registry is in extended mode gathering usage statistics of all incoming and outgoing endpoints (cache limit: 1000)
+11371 [main] INFO org.apache.camel.impl.DefaultCamelContext - AllowUseOriginalMessage is enabled. If access to the original message is not needed, then its recommended to turn this option off as it may improve performance.
+11371 [main] INFO org.apache.camel.impl.DefaultCamelContext - StreamCaching is not in use. If using streams then its recommended to enable stream caching. See more details at http://camel.apache.org/stream-caching.html
+11399 [main] INFO org.apache.camel.impl.DefaultCamelContext - Route: route5 started and consuming from: Endpoint[activemq://queuetest.queue]
+11399 [main] INFO org.apache.camel.impl.DefaultCamelContext - Total 1 routes, of which 1 is started.
+11399 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-5) started in 0.138 seconds
+11410 [Camel (camel-5) thread #8 - JmsConsumer[queuetest.queue]] INFO org.apache.activemq.camel.AMQ2611Test - consume message = message
+12407 [main] INFO org.apache.activemq.camel.AMQ2611Test - destroying context
+12407 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-5) is shutting down
+12407 [main] INFO org.apache.camel.impl.DefaultShutdownStrategy - Starting to graceful shutdown 1 routes (timeout 300 seconds)
+12414 [Camel (camel-5) thread #9 - ShutdownTask] INFO org.apache.camel.impl.DefaultShutdownStrategy - Route: route5 shutdown complete, was consuming from: Endpoint[activemq://queuetest.queue]
+12415 [main] INFO org.apache.camel.impl.DefaultShutdownStrategy - Graceful shutdown of 1 routes completed in 0 seconds
+12428 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-5) uptime 1.167 seconds
+12429 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-5) is shutdown in 0.021 seconds
+.
+Time: 13.426
+
+OK (1 test)
+
+Test being executed: org.apache.activemq.camel.ActiveMQComponentUserNamePasswordTest.testActiveMQ
+13508 [main] INFO org.apache.activemq.camel.ActiveMQComponentUserNamePasswordTest - ********************************************************************************
+13508 [main] INFO org.apache.activemq.camel.ActiveMQComponentUserNamePasswordTest - Testing: testActiveMQ(org.apache.activemq.camel.ActiveMQComponentUserNamePasswordTest)
+13508 [main] INFO org.apache.activemq.camel.ActiveMQComponentUserNamePasswordTest - ********************************************************************************
+2017-09-19 23:12:13,189 [main           ] - INFO  ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@3ea30e59: startup date [Tue Sep 19 23:12:13 PDT 2017]; root of context hierarchy
+2017-09-19 23:12:13,224 [main           ] - INFO  XmlBeanDefinitionReader        - Loading XML bean definitions from class path resource [org/apache/activemq/camel/ActiveMQComponentUserNamePassword.xml]
+16192 [main] INFO org.apache.activemq.broker.BrokerService - Using Persistence Adapter: MemoryPersistenceAdapter
+16211 [main] INFO org.apache.activemq.broker.BrokerService - Apache ActiveMQ 5.13.0 (testBroker, ID:ubuntu-49330-1505887920424-0:2) is starting
+16213 [JMX connector] WARN org.apache.activemq.broker.jmx.ManagementContext - Failed to start JMX connector Cannot bind to URL [rmi://localhost:1099/jmxrmi]: javax.naming.NameAlreadyBoundException: jmxrmi [Root exception is java.rmi.AlreadyBoundException: jmxrmi]. Will restart management to re-create JMX connector, trying to remedy this issue.
+16237 [JMX connector] WARN org.apache.activemq.broker.jmx.ManagementContext - Failed to start JMX connector Cannot bind to URL [rmi://localhost:1099/jmxrmi]: javax.naming.NameAlreadyBoundException: jmxrmi [Root exception is java.rmi.AlreadyBoundException: jmxrmi]. Will restart management to re-create JMX connector, trying to remedy this issue.
+16240 [main] INFO org.apache.activemq.broker.TransportConnector - Connector vm://testBroker started
+16244 [main] INFO org.apache.activemq.broker.BrokerService - Apache ActiveMQ 5.13.0 (testBroker, ID:ubuntu-49330-1505887920424-0:2) started
+16245 [main] INFO org.apache.activemq.broker.BrokerService - For help or more information please see: http://activemq.apache.org
+16245 [main] WARN org.apache.activemq.broker.BrokerService - Memory Usage for the Broker (1024 mb) is more than the maximum available for the JVM: 957 mb - resetting to 70% of maximum available: 669 mb
+16246 [main] WARN org.apache.activemq.broker.BrokerService - Temporary Store limit is 51200 mb (current store usage is 0 mb). The data directory: /home/user/dependent-tests-impact/experiments/activemq-old/activemq-camel/target/activemq-data only has 12893 mb of usable space - resetting to maximum available disk space: 12893 mb
+16296 [main] INFO org.apache.camel.spring.SpringCamelContext - Apache Camel 2.16.1 (CamelContext: camel-6) is starting
+16301 [main] INFO org.apache.camel.management.ManagedManagementStrategy - JMX is enabled
+16367 [main] INFO org.apache.camel.impl.converter.DefaultTypeConverter - Loaded 186 type converters
+16402 [main] INFO org.apache.camel.impl.DefaultRuntimeEndpointRegistry - Runtime endpoint registry is in extended mode gathering usage statistics of all incoming and outgoing endpoints (cache limit: 1000)
+16494 [main] INFO org.apache.camel.spring.SpringCamelContext - AllowUseOriginalMessage is enabled. If access to the original message is not needed, then its recommended to turn this option off as it may improve performance.
+16494 [main] INFO org.apache.camel.spring.SpringCamelContext - StreamCaching is not in use. If using streams then its recommended to enable stream caching. See more details at http://camel.apache.org/stream-caching.html
+16589 [main] INFO org.apache.camel.spring.SpringCamelContext - Route: route6 started and consuming from: Endpoint[activemq://queue:foo]
+16589 [main] INFO org.apache.camel.spring.SpringCamelContext - Total 1 routes, of which 1 is started.
+16589 [main] INFO org.apache.camel.spring.SpringCamelContext - Apache Camel 2.16.1 (CamelContext: camel-6) started in 0.293 seconds
+16634 [main] INFO org.apache.camel.component.mock.MockEndpoint - Asserting: Endpoint[mock://result] is satisfied
+16644 [main] INFO org.apache.activemq.camel.ActiveMQComponentUserNamePasswordTest - ********************************************************************************
+16644 [main] INFO org.apache.activemq.camel.ActiveMQComponentUserNamePasswordTest - Testing done: testActiveMQ(org.apache.activemq.camel.ActiveMQComponentUserNamePasswordTest)
+16644 [main] INFO org.apache.activemq.camel.ActiveMQComponentUserNamePasswordTest - Took: 0.054 seconds (54 millis)
+16644 [main] INFO org.apache.activemq.camel.ActiveMQComponentUserNamePasswordTest - ********************************************************************************
+16644 [main] INFO org.apache.camel.spring.SpringCamelContext - Apache Camel 2.16.1 (CamelContext: camel-6) is shutting down
+16644 [main] INFO org.apache.camel.impl.DefaultShutdownStrategy - Starting to graceful shutdown 1 routes (timeout 10 seconds)
+16647 [Camel (camel-6) thread #11 - ShutdownTask] INFO org.apache.camel.impl.DefaultShutdownStrategy - Route: route6 shutdown complete, was consuming from: Endpoint[activemq://queue:foo]
+16647 [main] INFO org.apache.camel.impl.DefaultShutdownStrategy - Graceful shutdown of 1 routes completed in 0 seconds
+16651 [main] INFO org.apache.camel.spring.SpringCamelContext - Apache Camel 2.16.1 (CamelContext: camel-6) uptime 0.355 seconds
+16651 [main] INFO org.apache.camel.spring.SpringCamelContext - Apache Camel 2.16.1 (CamelContext: camel-6) is shutdown in 0.007 seconds
+2017-09-19 23:12:16,278 [main           ] - INFO  ClassPathXmlApplicationContext - Closing org.springframework.context.support.ClassPathXmlApplicationContext@3ea30e59: startup date [Tue Sep 19 23:12:13 PDT 2017]; root of context hierarchy
+16653 [main] INFO org.apache.activemq.broker.BrokerService - Apache ActiveMQ 5.13.0 (testBroker, ID:ubuntu-49330-1505887920424-0:2) is shutting down
+16653 [main] INFO org.apache.activemq.broker.TransportConnector - Connector vm://testBroker stopped
+16672 [main] INFO org.apache.activemq.broker.BrokerService - Apache ActiveMQ 5.13.0 (testBroker, ID:ubuntu-49330-1505887920424-0:2) uptime 0.493 seconds
+16672 [main] INFO org.apache.activemq.broker.BrokerService - Apache ActiveMQ 5.13.0 (testBroker, ID:ubuntu-49330-1505887920424-0:2) is shutdown
+Test being executed: org.apache.activemq.camel.DlqTest.testSendToDlq
+16690 [main] INFO org.apache.activemq.camel.DlqTest - ********************************************************************************
+16690 [main] INFO org.apache.activemq.camel.DlqTest - Testing: testSendToDlq(org.apache.activemq.camel.DlqTest)
+16690 [main] INFO org.apache.activemq.camel.DlqTest - ********************************************************************************
+16708 [main] INFO org.apache.activemq.store.kahadb.plist.PListStoreImpl - PListStore:[/home/user/dependent-tests-impact/experiments/activemq-old/activemq-camel/target/target/data/testDlq/tmp_storage] started
+16709 [main] INFO org.apache.activemq.broker.BrokerService - Using Persistence Adapter: KahaDBPersistenceAdapter[/home/user/dependent-tests-impact/experiments/activemq-old/activemq-camel/target/target/data/testDlq/KahaDB]
+16713 [main] INFO org.apache.activemq.store.kahadb.MessageDatabase - Persistence store purged.
+16722 [JMX connector] WARN org.apache.activemq.broker.jmx.ManagementContext - Failed to start JMX connector Cannot bind to URL [rmi://localhost:1099/jmxrmi]: javax.naming.NameAlreadyBoundException: jmxrmi [Root exception is java.rmi.AlreadyBoundException: jmxrmi]. Will restart management to re-create JMX connector, trying to remedy this issue.
+16731 [main] INFO org.apache.activemq.broker.BrokerService - Apache ActiveMQ 5.13.0 (testDlq, ID:ubuntu-49330-1505887920424-0:3) is starting
+16739 [main] INFO org.apache.activemq.broker.BrokerService - Apache ActiveMQ 5.13.0 (testDlq, ID:ubuntu-49330-1505887920424-0:3) started
+16740 [main] INFO org.apache.activemq.broker.BrokerService - For help or more information please see: http://activemq.apache.org
+16740 [main] WARN org.apache.activemq.broker.BrokerService - Memory Usage for the Broker (1024 mb) is more than the maximum available for the JVM: 957 mb - resetting to 70% of maximum available: 669 mb
+16740 [main] WARN org.apache.activemq.broker.BrokerService - Store limit is 102400 mb (current store usage is 0 mb). The data directory: /home/user/dependent-tests-impact/experiments/activemq-old/activemq-camel/target/target/data/testDlq/KahaDB only has 12893 mb of usable space - resetting to maximum available disk space: 12893 mb
+16742 [main] WARN org.apache.activemq.broker.BrokerService - Temporary Store limit is 51200 mb (current store usage is 0 mb). The data directory: /home/user/dependent-tests-impact/experiments/activemq-old/activemq-camel/target/target/data/testDlq only has 12893 mb of usable space - resetting to maximum available disk space: 12893 mb
+2017-09-19 23:12:16,369 [main           ] - INFO  ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@5497e581: startup date [Tue Sep 19 23:12:16 PDT 2017]; root of context hierarchy
+2017-09-19 23:12:16,373 [main           ] - INFO  XmlBeanDefinitionReader        - Loading XML bean definitions from class path resource [org/apache/activemq/camel/dlq.xml]
+16750 [JMX connector] WARN org.apache.activemq.broker.jmx.ManagementContext - Failed to start JMX connector Cannot bind to URL [rmi://localhost:1099/jmxrmi]: javax.naming.NameAlreadyBoundException: jmxrmi [Root exception is java.rmi.AlreadyBoundException: jmxrmi]. Will restart management to re-create JMX connector, trying to remedy this issue.
+18068 [main] INFO org.apache.camel.spring.SpringCamelContext - Apache Camel 2.16.1 (CamelContext: camel) is starting
+18076 [main] INFO org.apache.camel.management.DefaultManagementStrategy - JMX is disabled
+18082 [main] INFO org.apache.camel.impl.converter.DefaultTypeConverter - Loaded 186 type converters
+18134 [main] INFO org.apache.camel.spring.SpringCamelContext - AllowUseOriginalMessage is enabled. If access to the original message is not needed, then its recommended to turn this option off as it may improve performance.
+18140 [main] INFO org.apache.camel.spring.SpringCamelContext - StreamCaching is not in use. If using streams then its recommended to enable stream caching. See more details at http://camel.apache.org/stream-caching.html
+18141 [main] INFO org.apache.camel.spring.SpringCamelContext - Route: orders started and consuming from: Endpoint[localJMS://fidEtpOrders]
+18141 [main] INFO org.apache.camel.spring.SpringCamelContext - Total 1 routes, of which 1 is started.
+18141 [main] INFO org.apache.camel.spring.SpringCamelContext - Apache Camel 2.16.1 (CamelContext: camel) started in 0.073 seconds
+18142 [main] INFO org.apache.activemq.broker.TransportConnector - Connector vm://testDlq started
+18171 [Camel (camel) thread #12 - JmsConsumer[fidEtpOrders]] INFO org.apache.activemq.camel.DlqTest - Got body: Some Text, messageCount:0
+18174 [Camel (camel) thread #12 - JmsConsumer[fidEtpOrders]] ERROR org.apache.camel.processor.DefaultErrorHandler - Failed delivery for (MessageId: ID:ubuntu-49330-1505887920424-17:1:1:1:1 on ExchangeId: ID-ubuntu-55874-1505887920733-6-1). Exhausted after delivery attempt: 1 caught: java.lang.RuntimeException: won't enrich today!
+
+Message History
+---------------------------------------------------------------------------------------------------------------------------------------
+RouteId              ProcessorId          Processor                                                                        Elapsed (ms)
+[orders            ] [orders            ] [localJMS://fidEtpOrders                                                       ] [         4]
+[orders            ] [transacted1       ] [transacted[]                                                                  ] [         4]
+[orders            ] [bean6             ] [bean[ref:canError method: enrich]                                             ] [         2]
+
+Exchange
+---------------------------------------------------------------------------------------------------------------------------------------
+Exchange[
+	Id                  ID-ubuntu-55874-1505887920733-6-1
+	ExchangePattern     InOnly
+	Headers             {breadcrumbId=ID:ubuntu-49330-1505887920424-17:1:1:1:1, CamelRedelivered=false, CamelRedeliveryCounter=0, JMSCorrelationID=pleaseCorrelate, JMSCorrelationIDAsBytes=pleaseCorrelate, JMSDeliveryMode=2, JMSDestination=queue://fidEtpOrders, JMSExpiration=0, JMSMessageID=ID:ubuntu-49330-1505887920424-17:1:1:1:1, JMSPriority=4, JMSRedelivered=false, JMSReplyTo=null, JMSTimestamp=1505887937786, JMSType=null, JMSXGroupID=null, JMSXUserID=null}
+	BodyType            String
+	Body                Some Text, messageCount:0
+]
+
+Stacktrace
+---------------------------------------------------------------------------------------------------------------------------------------
+18178 [main] INFO org.apache.activemq.camel.DlqTest - Wait for dlq message...
+java.lang.RuntimeException: won't enrich today!
+	at org.apache.activemq.camel.DlqTest$CanError.enrich(DlqTest.java:95)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.camel.component.bean.MethodInfo.invoke(MethodInfo.java:408)
+	at org.apache.camel.component.bean.MethodInfo$1.doProceed(MethodInfo.java:279)
+	at org.apache.camel.component.bean.MethodInfo$1.proceed(MethodInfo.java:252)
+	at org.apache.camel.component.bean.BeanProcessor.process(BeanProcessor.java:177)
+	at org.apache.camel.processor.RedeliveryErrorHandler.process(RedeliveryErrorHandler.java:460)
+	at org.apache.camel.util.AsyncProcessorHelper.process(AsyncProcessorHelper.java:109)
+	at org.apache.camel.processor.RedeliveryErrorHandler.process(RedeliveryErrorHandler.java:337)
+	at org.apache.camel.processor.DefaultErrorHandler.process(DefaultErrorHandler.java:59)
+	at org.apache.camel.processor.CamelInternalProcessor.process(CamelInternalProcessor.java:165)
+	at org.apache.camel.processor.Pipeline.process(Pipeline.java:121)
+	at org.apache.camel.processor.Pipeline.process(Pipeline.java:83)
+	at org.apache.camel.processor.RedeliveryErrorHandler.process(RedeliveryErrorHandler.java:460)
+	at org.apache.camel.spring.spi.TransactionErrorHandler.processByErrorHandler(TransactionErrorHandler.java:218)
+	at org.apache.camel.spring.spi.TransactionErrorHandler.process(TransactionErrorHandler.java:99)
+	at org.apache.camel.spring.spi.TransactionErrorHandler.process(TransactionErrorHandler.java:112)
+	at org.apache.camel.processor.RedeliveryErrorHandler.process(RedeliveryErrorHandler.java:460)
+	at org.apache.camel.spring.spi.TransactionErrorHandler.processByErrorHandler(TransactionErrorHandler.java:218)
+	at org.apache.camel.spring.spi.TransactionErrorHandler$1.doInTransactionWithoutResult(TransactionErrorHandler.java:181)
+	at org.springframework.transaction.support.TransactionCallbackWithoutResult.doInTransaction(TransactionCallbackWithoutResult.java:34)
+	at org.springframework.transaction.support.TransactionTemplate.execute(TransactionTemplate.java:133)
+	at org.apache.camel.spring.spi.TransactionErrorHandler.doInTransactionTemplate(TransactionErrorHandler.java:174)
+	at org.apache.camel.spring.spi.TransactionErrorHandler.processInTransaction(TransactionErrorHandler.java:134)
+	at org.apache.camel.spring.spi.TransactionErrorHandler.process(TransactionErrorHandler.java:103)
+	at org.apache.camel.spring.spi.TransactionErrorHandler.process(TransactionErrorHandler.java:112)
+	at org.apache.camel.processor.CamelInternalProcessor.process(CamelInternalProcessor.java:190)
+	at org.apache.camel.processor.CamelInternalProcessor.process(CamelInternalProcessor.java:190)
+	at org.apache.camel.util.AsyncProcessorHelper.process(AsyncProcessorHelper.java:109)
+	at org.apache.camel.processor.DelegateAsyncProcessor.process(DelegateAsyncProcessor.java:87)
+	at org.apache.camel.component.jms.EndpointMessageListener.onMessage(EndpointMessageListener.java:112)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.doInvokeListener(AbstractMessageListenerContainer.java:689)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.invokeListener(AbstractMessageListenerContainer.java:649)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.doExecuteListener(AbstractMessageListenerContainer.java:619)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.doReceiveAndExecute(AbstractPollingMessageListenerContainer.java:307)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveAndExecute(AbstractPollingMessageListenerContainer.java:225)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.invokeListener(DefaultMessageListenerContainer.java:1144)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1136)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:1033)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+18184 [Camel (camel) thread #12 - JmsConsumer[fidEtpOrders]] WARN org.apache.camel.spring.spi.TransactionErrorHandler - Transaction rollback (0x11ef5089) redelivered(false) for (MessageId: ID:ubuntu-49330-1505887920424-17:1:1:1:1 on ExchangeId: ID-ubuntu-55874-1505887920733-6-1) caught: java.lang.RuntimeException: won't enrich today!
+18185 [Camel (camel) thread #12 - JmsConsumer[fidEtpOrders]] WARN org.apache.camel.component.jms.EndpointMessageListener - Execution of JMS message listener failed. Caused by: [org.apache.camel.RuntimeCamelException - java.lang.RuntimeException: won't enrich today!]
+org.apache.camel.RuntimeCamelException: java.lang.RuntimeException: won't enrich today!
+	at org.apache.camel.util.ObjectHelper.wrapRuntimeCamelException(ObjectHelper.java:1642)
+	at org.apache.camel.spring.spi.TransactionErrorHandler$1.doInTransactionWithoutResult(TransactionErrorHandler.java:188)
+	at org.springframework.transaction.support.TransactionCallbackWithoutResult.doInTransaction(TransactionCallbackWithoutResult.java:34)
+	at org.springframework.transaction.support.TransactionTemplate.execute(TransactionTemplate.java:133)
+	at org.apache.camel.spring.spi.TransactionErrorHandler.doInTransactionTemplate(TransactionErrorHandler.java:174)
+	at org.apache.camel.spring.spi.TransactionErrorHandler.processInTransaction(TransactionErrorHandler.java:134)
+	at org.apache.camel.spring.spi.TransactionErrorHandler.process(TransactionErrorHandler.java:103)
+	at org.apache.camel.spring.spi.TransactionErrorHandler.process(TransactionErrorHandler.java:112)
+	at org.apache.camel.processor.CamelInternalProcessor.process(CamelInternalProcessor.java:190)
+	at org.apache.camel.processor.CamelInternalProcessor.process(CamelInternalProcessor.java:190)
+	at org.apache.camel.util.AsyncProcessorHelper.process(AsyncProcessorHelper.java:109)
+	at org.apache.camel.processor.DelegateAsyncProcessor.process(DelegateAsyncProcessor.java:87)
+	at org.apache.camel.component.jms.EndpointMessageListener.onMessage(EndpointMessageListener.java:112)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.doInvokeListener(AbstractMessageListenerContainer.java:689)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.invokeListener(AbstractMessageListenerContainer.java:649)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.doExecuteListener(AbstractMessageListenerContainer.java:619)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.doReceiveAndExecute(AbstractPollingMessageListenerContainer.java:307)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveAndExecute(AbstractPollingMessageListenerContainer.java:225)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.invokeListener(DefaultMessageListenerContainer.java:1144)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1136)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:1033)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.RuntimeException: won't enrich today!
+	at org.apache.activemq.camel.DlqTest$CanError.enrich(DlqTest.java:95)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.camel.component.bean.MethodInfo.invoke(MethodInfo.java:408)
+	at org.apache.camel.component.bean.MethodInfo$1.doProceed(MethodInfo.java:279)
+	at org.apache.camel.component.bean.MethodInfo$1.proceed(MethodInfo.java:252)
+	at org.apache.camel.component.bean.BeanProcessor.process(BeanProcessor.java:177)
+	at org.apache.camel.processor.RedeliveryErrorHandler.process(RedeliveryErrorHandler.java:460)
+	at org.apache.camel.util.AsyncProcessorHelper.process(AsyncProcessorHelper.java:109)
+	at org.apache.camel.processor.RedeliveryErrorHandler.process(RedeliveryErrorHandler.java:337)
+	at org.apache.camel.processor.DefaultErrorHandler.process(DefaultErrorHandler.java:59)
+	at org.apache.camel.processor.CamelInternalProcessor.process(CamelInternalProcessor.java:165)
+	at org.apache.camel.processor.Pipeline.process(Pipeline.java:121)
+	at org.apache.camel.processor.Pipeline.process(Pipeline.java:83)
+	at org.apache.camel.processor.RedeliveryErrorHandler.process(RedeliveryErrorHandler.java:460)
+	at org.apache.camel.spring.spi.TransactionErrorHandler.processByErrorHandler(TransactionErrorHandler.java:218)
+	at org.apache.camel.spring.spi.TransactionErrorHandler.process(TransactionErrorHandler.java:99)
+	at org.apache.camel.spring.spi.TransactionErrorHandler.process(TransactionErrorHandler.java:112)
+	at org.apache.camel.processor.RedeliveryErrorHandler.process(RedeliveryErrorHandler.java:460)
+	at org.apache.camel.spring.spi.TransactionErrorHandler.processByErrorHandler(TransactionErrorHandler.java:218)
+	at org.apache.camel.spring.spi.TransactionErrorHandler$1.doInTransactionWithoutResult(TransactionErrorHandler.java:181)
+	... 22 more
+18208 [Camel (camel) thread #12 - JmsConsumer[fidEtpOrders]] INFO org.apache.activemq.camel.DlqTest - Got body: Some Text, messageCount:0
+18208 [Camel (camel) thread #12 - JmsConsumer[fidEtpOrders]] ERROR org.apache.camel.processor.DefaultErrorHandler - Failed delivery for (MessageId: ID:ubuntu-49330-1505887920424-17:1:1:1:1 on ExchangeId: ID-ubuntu-55874-1505887920733-6-2). Exhausted after delivery attempt: 1 caught: java.lang.RuntimeException: won't enrich today!
+
+Message History
+---------------------------------------------------------------------------------------------------------------------------------------
+RouteId              ProcessorId          Processor                                                                        Elapsed (ms)
+[orders            ] [orders            ] [localJMS://fidEtpOrders                                                       ] [         1]
+[orders            ] [transacted1       ] [transacted[]                                                                  ] [         1]
+[orders            ] [bean6             ] [bean[ref:canError method: enrich]                                             ] [         0]
+
+Exchange
+---------------------------------------------------------------------------------------------------------------------------------------
+Exchange[
+	Id                  ID-ubuntu-55874-1505887920733-6-2
+	ExchangePattern     InOnly
+	Headers             {breadcrumbId=ID:ubuntu-49330-1505887920424-17:1:1:1:1, CamelRedelivered=false, CamelRedeliveryCounter=0, JMSCorrelationID=pleaseCorrelate, JMSCorrelationIDAsBytes=pleaseCorrelate, JMSDeliveryMode=2, JMSDestination=queue://fidEtpOrders, JMSExpiration=0, JMSMessageID=ID:ubuntu-49330-1505887920424-17:1:1:1:1, JMSPriority=4, JMSRedelivered=true, JMSReplyTo=null, JMSTimestamp=1505887937786, JMSType=null, JMSXDeliveryCount=2, JMSXGroupID=null, JMSXUserID=null}
+	BodyType            String
+	Body                Some Text, messageCount:0
+]
+
+Stacktrace
+---------------------------------------------------------------------------------------------------------------------------------------
+java.lang.RuntimeException: won't enrich today!
+	at org.apache.activemq.camel.DlqTest$CanError.enrich(DlqTest.java:95)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.camel.component.bean.MethodInfo.invoke(MethodInfo.java:408)
+	at org.apache.camel.component.bean.MethodInfo$1.doProceed(MethodInfo.java:279)
+	at org.apache.camel.component.bean.MethodInfo$1.proceed(MethodInfo.java:252)
+	at org.apache.camel.component.bean.BeanProcessor.process(BeanProcessor.java:177)
+	at org.apache.camel.processor.RedeliveryErrorHandler.process(RedeliveryErrorHandler.java:460)
+	at org.apache.camel.util.AsyncProcessorHelper.process(AsyncProcessorHelper.java:109)
+	at org.apache.camel.processor.RedeliveryErrorHandler.process(RedeliveryErrorHandler.java:337)
+	at org.apache.camel.processor.DefaultErrorHandler.process(DefaultErrorHandler.java:59)
+	at org.apache.camel.processor.CamelInternalProcessor.process(CamelInternalProcessor.java:165)
+	at org.apache.camel.processor.Pipeline.process(Pipeline.java:121)
+	at org.apache.camel.processor.Pipeline.process(Pipeline.java:83)
+	at org.apache.camel.processor.RedeliveryErrorHandler.process(RedeliveryErrorHandler.java:460)
+	at org.apache.camel.spring.spi.TransactionErrorHandler.processByErrorHandler(TransactionErrorHandler.java:218)
+	at org.apache.camel.spring.spi.TransactionErrorHandler.process(TransactionErrorHandler.java:99)
+	at org.apache.camel.spring.spi.TransactionErrorHandler.process(TransactionErrorHandler.java:112)
+	at org.apache.camel.processor.RedeliveryErrorHandler.process(RedeliveryErrorHandler.java:460)
+	at org.apache.camel.spring.spi.TransactionErrorHandler.processByErrorHandler(TransactionErrorHandler.java:218)
+	at org.apache.camel.spring.spi.TransactionErrorHandler$1.doInTransactionWithoutResult(TransactionErrorHandler.java:181)
+	at org.springframework.transaction.support.TransactionCallbackWithoutResult.doInTransaction(TransactionCallbackWithoutResult.java:34)
+	at org.springframework.transaction.support.TransactionTemplate.execute(TransactionTemplate.java:133)
+	at org.apache.camel.spring.spi.TransactionErrorHandler.doInTransactionTemplate(TransactionErrorHandler.java:174)
+	at org.apache.camel.spring.spi.TransactionErrorHandler.processInTransaction(TransactionErrorHandler.java:134)
+	at org.apache.camel.spring.spi.TransactionErrorHandler.process(TransactionErrorHandler.java:103)
+	at org.apache.camel.spring.spi.TransactionErrorHandler.process(TransactionErrorHandler.java:112)
+	at org.apache.camel.processor.CamelInternalProcessor.process(CamelInternalProcessor.java:190)
+	at org.apache.camel.processor.CamelInternalProcessor.process(CamelInternalProcessor.java:190)
+	at org.apache.camel.util.AsyncProcessorHelper.process(AsyncProcessorHelper.java:109)
+	at org.apache.camel.processor.DelegateAsyncProcessor.process(DelegateAsyncProcessor.java:87)
+	at org.apache.camel.component.jms.EndpointMessageListener.onMessage(EndpointMessageListener.java:112)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.doInvokeListener(AbstractMessageListenerContainer.java:689)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.invokeListener(AbstractMessageListenerContainer.java:649)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.doExecuteListener(AbstractMessageListenerContainer.java:619)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.doReceiveAndExecute(AbstractPollingMessageListenerContainer.java:307)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveAndExecute(AbstractPollingMessageListenerContainer.java:225)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.invokeListener(DefaultMessageListenerContainer.java:1144)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1136)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:1033)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+18211 [Camel (camel) thread #12 - JmsConsumer[fidEtpOrders]] WARN org.apache.camel.spring.spi.TransactionErrorHandler - Transaction rollback (0x11ef5089) redelivered(true) for (MessageId: ID:ubuntu-49330-1505887920424-17:1:1:1:1 on ExchangeId: ID-ubuntu-55874-1505887920733-6-2) caught: java.lang.RuntimeException: won't enrich today!
+18211 [Camel (camel) thread #12 - JmsConsumer[fidEtpOrders]] WARN org.apache.camel.component.jms.EndpointMessageListener - Execution of JMS message listener failed. Caused by: [org.apache.camel.RuntimeCamelException - java.lang.RuntimeException: won't enrich today!]
+org.apache.camel.RuntimeCamelException: java.lang.RuntimeException: won't enrich today!
+	at org.apache.camel.util.ObjectHelper.wrapRuntimeCamelException(ObjectHelper.java:1642)
+	at org.apache.camel.spring.spi.TransactionErrorHandler$1.doInTransactionWithoutResult(TransactionErrorHandler.java:188)
+	at org.springframework.transaction.support.TransactionCallbackWithoutResult.doInTransaction(TransactionCallbackWithoutResult.java:34)
+	at org.springframework.transaction.support.TransactionTemplate.execute(TransactionTemplate.java:133)
+	at org.apache.camel.spring.spi.TransactionErrorHandler.doInTransactionTemplate(TransactionErrorHandler.java:174)
+	at org.apache.camel.spring.spi.TransactionErrorHandler.processInTransaction(TransactionErrorHandler.java:134)
+	at org.apache.camel.spring.spi.TransactionErrorHandler.process(TransactionErrorHandler.java:103)
+	at org.apache.camel.spring.spi.TransactionErrorHandler.process(TransactionErrorHandler.java:112)
+	at org.apache.camel.processor.CamelInternalProcessor.process(CamelInternalProcessor.java:190)
+	at org.apache.camel.processor.CamelInternalProcessor.process(CamelInternalProcessor.java:190)
+	at org.apache.camel.util.AsyncProcessorHelper.process(AsyncProcessorHelper.java:109)
+	at org.apache.camel.processor.DelegateAsyncProcessor.process(DelegateAsyncProcessor.java:87)
+	at org.apache.camel.component.jms.EndpointMessageListener.onMessage(EndpointMessageListener.java:112)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.doInvokeListener(AbstractMessageListenerContainer.java:689)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.invokeListener(AbstractMessageListenerContainer.java:649)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.doExecuteListener(AbstractMessageListenerContainer.java:619)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.doReceiveAndExecute(AbstractPollingMessageListenerContainer.java:307)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveAndExecute(AbstractPollingMessageListenerContainer.java:225)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.invokeListener(DefaultMessageListenerContainer.java:1144)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1136)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:1033)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.RuntimeException: won't enrich today!
+	at org.apache.activemq.camel.DlqTest$CanError.enrich(DlqTest.java:95)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.camel.component.bean.MethodInfo.invoke(MethodInfo.java:408)
+	at org.apache.camel.component.bean.MethodInfo$1.doProceed(MethodInfo.java:279)
+	at org.apache.camel.component.bean.MethodInfo$1.proceed(MethodInfo.java:252)
+	at org.apache.camel.component.bean.BeanProcessor.process(BeanProcessor.java:177)
+	at org.apache.camel.processor.RedeliveryErrorHandler.process(RedeliveryErrorHandler.java:460)
+	at org.apache.camel.util.AsyncProcessorHelper.process(AsyncProcessorHelper.java:109)
+	at org.apache.camel.processor.RedeliveryErrorHandler.process(RedeliveryErrorHandler.java:337)
+	at org.apache.camel.processor.DefaultErrorHandler.process(DefaultErrorHandler.java:59)
+	at org.apache.camel.processor.CamelInternalProcessor.process(CamelInternalProcessor.java:165)
+	at org.apache.camel.processor.Pipeline.process(Pipeline.java:121)
+	at org.apache.camel.processor.Pipeline.process(Pipeline.java:83)
+	at org.apache.camel.processor.RedeliveryErrorHandler.process(RedeliveryErrorHandler.java:460)
+	at org.apache.camel.spring.spi.TransactionErrorHandler.processByErrorHandler(TransactionErrorHandler.java:218)
+	at org.apache.camel.spring.spi.TransactionErrorHandler.process(TransactionErrorHandler.java:99)
+	at org.apache.camel.spring.spi.TransactionErrorHandler.process(TransactionErrorHandler.java:112)
+	at org.apache.camel.processor.RedeliveryErrorHandler.process(RedeliveryErrorHandler.java:460)
+	at org.apache.camel.spring.spi.TransactionErrorHandler.processByErrorHandler(TransactionErrorHandler.java:218)
+	at org.apache.camel.spring.spi.TransactionErrorHandler$1.doInTransactionWithoutResult(TransactionErrorHandler.java:181)
+	... 22 more
+19180 [main] INFO org.apache.activemq.camel.DlqTest - ********************************************************************************
+19180 [main] INFO org.apache.activemq.camel.DlqTest - Testing done: testSendToDlq(org.apache.activemq.camel.DlqTest)
+19180 [main] INFO org.apache.activemq.camel.DlqTest - Took: 1.038 seconds (1038 millis)
+19180 [main] INFO org.apache.activemq.camel.DlqTest - ********************************************************************************
+19181 [main] INFO org.apache.camel.spring.SpringCamelContext - Apache Camel 2.16.1 (CamelContext: camel) is shutting down
+19181 [main] INFO org.apache.camel.impl.DefaultShutdownStrategy - Starting to graceful shutdown 1 routes (timeout 10 seconds)
+19236 [Camel (camel) thread #13 - ShutdownTask] INFO org.apache.camel.impl.DefaultShutdownStrategy - Route: orders shutdown complete, was consuming from: Endpoint[localJMS://fidEtpOrders]
+19236 [main] INFO org.apache.camel.impl.DefaultShutdownStrategy - Graceful shutdown of 1 routes completed in 0 seconds
+19238 [main] INFO org.apache.camel.spring.SpringCamelContext - Apache Camel 2.16.1 (CamelContext: camel) uptime 1.170 seconds
+19239 [main] INFO org.apache.camel.spring.SpringCamelContext - Apache Camel 2.16.1 (CamelContext: camel) is shutdown in 0.057 seconds
+2017-09-19 23:12:18,866 [main           ] - INFO  ClassPathXmlApplicationContext - Closing org.springframework.context.support.ClassPathXmlApplicationContext@5497e581: startup date [Tue Sep 19 23:12:16 PDT 2017]; root of context hierarchy
+Test being executed: org.apache.activemq.camel.JmsJdbcXARollbackTest.testConsumeRollback
+19254 [main] INFO org.apache.activemq.camel.JmsJdbcXARollbackTest - ********************************************************************************
+19254 [main] INFO org.apache.activemq.camel.JmsJdbcXARollbackTest - Testing: testConsumeRollback(org.apache.activemq.camel.JmsJdbcXARollbackTest)
+19254 [main] INFO org.apache.activemq.camel.JmsJdbcXARollbackTest - ********************************************************************************
+19256 [main] INFO org.apache.activemq.camel.JmsJdbcXARollbackTest - ********************************************************************************
+19257 [main] INFO org.apache.activemq.camel.JmsJdbcXARollbackTest - Testing done: testConsumeRollback(org.apache.activemq.camel.JmsJdbcXARollbackTest)
+19257 [main] INFO org.apache.activemq.camel.JmsJdbcXARollbackTest - Took: 0.002 seconds (2 millis)
+19257 [main] INFO org.apache.activemq.camel.JmsJdbcXARollbackTest - ********************************************************************************
+Test being executed: org.apache.activemq.camel.converter.InvokeMessageListenerTest.testSendTextMessage
+19275 [main] INFO org.apache.activemq.camel.converter.InvokeMessageListenerTest - ********************************************************************************
+19275 [main] INFO org.apache.activemq.camel.converter.InvokeMessageListenerTest - Testing: testSendTextMessage(org.apache.activemq.camel.converter.InvokeMessageListenerTest)
+19275 [main] INFO org.apache.activemq.camel.converter.InvokeMessageListenerTest - ********************************************************************************
+19288 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-9) is starting
+19288 [main] INFO org.apache.camel.management.DefaultManagementStrategy - JMX is disabled
+19298 [main] INFO org.apache.camel.impl.converter.DefaultTypeConverter - Loaded 186 type converters
+19324 [main] INFO org.apache.camel.impl.DefaultCamelContext - AllowUseOriginalMessage is enabled. If access to the original message is not needed, then its recommended to turn this option off as it may improve performance.
+19324 [main] INFO org.apache.camel.impl.DefaultCamelContext - StreamCaching is not in use. If using streams then its recommended to enable stream caching. See more details at http://camel.apache.org/stream-caching.html
+19327 [main] INFO org.apache.activemq.broker.TransportConnector - Connector vm://localhost started
+19342 [main] INFO org.apache.camel.impl.DefaultCamelContext - Route: route7 started and consuming from: Endpoint[activemq://queue:test.a]
+19342 [main] INFO org.apache.camel.impl.DefaultCamelContext - Total 1 routes, of which 1 is started.
+19342 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-9) started in 0.054 seconds
+19355 [main] INFO org.apache.activemq.spring.ConsumerBean - Waiting for (1) message(s) to arrive
+19358 [main] INFO org.apache.activemq.spring.ConsumerBean - End of wait for 2 millis
+19359 [main] INFO org.apache.activemq.camel.converter.InvokeMessageListenerTest - ********************************************************************************
+19359 [main] INFO org.apache.activemq.camel.converter.InvokeMessageListenerTest - Testing done: testSendTextMessage(org.apache.activemq.camel.converter.InvokeMessageListenerTest)
+19359 [main] INFO org.apache.activemq.camel.converter.InvokeMessageListenerTest - Took: 0.017 seconds (17 millis)
+19359 [main] INFO org.apache.activemq.camel.converter.InvokeMessageListenerTest - ********************************************************************************
+19359 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-9) is shutting down
+19359 [main] INFO org.apache.camel.impl.DefaultShutdownStrategy - Starting to graceful shutdown 1 routes (timeout 10 seconds)
+20360 [Camel (camel-9) thread #15 - ShutdownTask] INFO org.apache.camel.impl.DefaultShutdownStrategy - Route: route7 shutdown complete, was consuming from: Endpoint[activemq://queue:test.a]
+20360 [main] INFO org.apache.camel.impl.DefaultShutdownStrategy - Graceful shutdown of 1 routes completed in 1 seconds
+20364 [main] INFO org.apache.activemq.broker.TransportConnector - Connector vm://localhost stopped
+20365 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-9) uptime 1.077 seconds
+20366 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-9) is shutdown in 1.006 seconds
+Test being executed: org.apache.activemq.camel.converter.InvokeJmsMessageListenerTest.testCamelInvokesMessageListener
+20373 [main] INFO org.apache.activemq.camel.converter.InvokeJmsMessageListenerTest - ********************************************************************************
+20373 [main] INFO org.apache.activemq.camel.converter.InvokeJmsMessageListenerTest - Testing: testCamelInvokesMessageListener(org.apache.activemq.camel.converter.InvokeJmsMessageListenerTest)
+20374 [main] INFO org.apache.activemq.camel.converter.InvokeJmsMessageListenerTest - ********************************************************************************
+20383 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-10) is starting
+20385 [main] INFO org.apache.camel.management.DefaultManagementStrategy - JMX is disabled
+20402 [main] INFO org.apache.camel.impl.converter.DefaultTypeConverter - Loaded 186 type converters
+20426 [main] INFO org.apache.camel.impl.DefaultCamelContext - AllowUseOriginalMessage is enabled. If access to the original message is not needed, then its recommended to turn this option off as it may improve performance.
+20428 [main] INFO org.apache.camel.impl.DefaultCamelContext - StreamCaching is not in use. If using streams then its recommended to enable stream caching. See more details at http://camel.apache.org/stream-caching.html
+20432 [main] INFO org.apache.camel.impl.DefaultCamelContext - Route: route8 started and consuming from: Endpoint[direct://start]
+20432 [main] INFO org.apache.camel.impl.DefaultCamelContext - Total 1 routes, of which 1 is started.
+20432 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-10) started in 0.049 seconds
+20435 [main] INFO org.apache.activemq.camel.converter.InvokeJmsMessageListenerTest - ********************************************************************************
+20436 [main] INFO org.apache.activemq.camel.converter.InvokeJmsMessageListenerTest - Testing done: testCamelInvokesMessageListener(org.apache.activemq.camel.converter.InvokeJmsMessageListenerTest)
+20441 [main] INFO org.apache.activemq.camel.converter.InvokeJmsMessageListenerTest - Took: 0.003 seconds (3 millis)
+20441 [main] INFO org.apache.activemq.camel.converter.InvokeJmsMessageListenerTest - ********************************************************************************
+20441 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-10) is shutting down
+20441 [main] INFO org.apache.camel.impl.DefaultShutdownStrategy - Starting to graceful shutdown 1 routes (timeout 10 seconds)
+20442 [Camel (camel-10) thread #16 - ShutdownTask] INFO org.apache.camel.impl.DefaultShutdownStrategy - Route: route8 shutdown complete, was consuming from: Endpoint[direct://start]
+20442 [main] INFO org.apache.camel.impl.DefaultShutdownStrategy - Graceful shutdown of 1 routes completed in 0 seconds
+20450 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-10) uptime 0.067 seconds
+20451 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-10) is shutdown in 0.009 seconds
+Test being executed: org.apache.activemq.camel.CamelVMTransportRoutingTest.testSendReceiveWithCamelRouteIntercepting
+20454 [main] INFO org.apache.activemq.broker.BrokerService - Using Persistence Adapter: MemoryPersistenceAdapter
+20457 [main] INFO org.apache.activemq.broker.BrokerService - Apache ActiveMQ 5.13.0 (localhost, ID:ubuntu-49330-1505887920424-0:4) is starting
+20461 [main] INFO org.apache.activemq.transport.TransportServerThreadSupport - Listening for connections at: tcp://localhost:51950
+20461 [main] INFO org.apache.activemq.broker.TransportConnector - Connector tcp://localhost:51950 started
+20462 [main] INFO org.apache.activemq.broker.BrokerService - Apache ActiveMQ 5.13.0 (localhost, ID:ubuntu-49330-1505887920424-0:4) started
+20462 [main] INFO org.apache.activemq.broker.BrokerService - For help or more information please see: http://activemq.apache.org
+20462 [main] WARN org.apache.activemq.broker.BrokerService - Memory Usage for the Broker (1024 mb) is more than the maximum available for the JVM: 957 mb - resetting to 70% of maximum available: 669 mb
+20462 [main] WARN org.apache.activemq.broker.BrokerService - Temporary Store limit is 51200 mb (current store usage is 0 mb). The data directory: /home/user/dependent-tests-impact/experiments/activemq-old/activemq-camel/target/activemq-data/localhost only has 12893 mb of usable space - resetting to maximum available disk space: 12893 mb
+21462 [main] INFO org.apache.activemq.camel.CamelVMTransportRoutingTest - creating context and sending message
+21464 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-11) is starting
+21464 [main] INFO org.apache.camel.management.DefaultManagementStrategy - JMX is disabled
+21486 [main] INFO org.apache.camel.impl.converter.DefaultTypeConverter - Loaded 186 type converters
+21487 [main] INFO org.apache.camel.impl.DefaultCamelContext - AllowUseOriginalMessage is enabled. If access to the original message is not needed, then its recommended to turn this option off as it may improve performance.
+21487 [main] INFO org.apache.camel.impl.DefaultCamelContext - StreamCaching is not in use. If using streams then its recommended to enable stream caching. See more details at http://camel.apache.org/stream-caching.html
+21489 [main] INFO org.apache.activemq.broker.TransportConnector - Connector vm://localhost started
+21494 [main] INFO org.apache.camel.impl.DefaultCamelContext - Route: route9 started and consuming from: Endpoint[activemq://topic:A]
+21494 [main] INFO org.apache.camel.impl.DefaultCamelContext - Total 1 routes, of which 1 is started.
+21494 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-11) started in 0.031 seconds
+25119 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-11) is shutting down
+25119 [main] INFO org.apache.camel.impl.DefaultShutdownStrategy - Starting to graceful shutdown 1 routes (timeout 300 seconds)
+26084 [Camel (camel-11) thread #18 - ShutdownTask] INFO org.apache.camel.impl.DefaultShutdownStrategy - Route: route9 shutdown complete, was consuming from: Endpoint[activemq://topic:A]
+26084 [main] INFO org.apache.camel.impl.DefaultShutdownStrategy - Graceful shutdown of 1 routes completed in 0 seconds
+26094 [main] INFO org.apache.activemq.broker.TransportConnector - Connector vm://localhost stopped
+26096 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-11) uptime 4.632 seconds
+26096 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-11) is shutdown in 0.976 seconds
+26096 [main] INFO org.apache.activemq.broker.BrokerService - Apache ActiveMQ 5.13.0 (localhost, ID:ubuntu-49330-1505887920424-0:4) is shutting down
+26102 [main] INFO org.apache.activemq.broker.TransportConnector - Connector tcp://localhost:51950 stopped
+26115 [main] INFO org.apache.activemq.broker.BrokerService - Apache ActiveMQ 5.13.0 (localhost, ID:ubuntu-49330-1505887920424-0:4) uptime 5.661 seconds
+26115 [main] INFO org.apache.activemq.broker.BrokerService - Apache ActiveMQ 5.13.0 (localhost, ID:ubuntu-49330-1505887920424-0:4) is shutdown
+.
+Time: 5.668
+
+OK (1 test)
+
+Test being executed: org.apache.activemq.camel.camelplugin.CamelPluginConfigTest.testReRouteAll
+2017-09-19 23:12:25,765 [main           ] - INFO  XBeanBrokerFactory$1           - Refreshing org.apache.activemq.xbean.XBeanBrokerFactory$1@33d81deb: startup date [Tue Sep 19 23:12:25 PDT 2017]; root of context hierarchy
+2017-09-19 23:12:25,782 [main           ] - INFO  XBeanXmlBeanDefinitionReader   - Loading XML bean definitions from class path resource [home/user/dependent-tests-impact/experiments/activemq-old/activemq-camel/target/src/test/resources/org/apache/activemq/camel/camelplugin/camel-routes-activemq.xml]
+26156 [main] ERROR org.apache.activemq.xbean.XBeanBrokerFactory - Failed to load: class path resource [home/user/dependent-tests-impact/experiments/activemq-old/activemq-camel/target/src/test/resources/org/apache/activemq/camel/camelplugin/camel-routes-activemq.xml], reason: IOException parsing XML document from class path resource [home/user/dependent-tests-impact/experiments/activemq-old/activemq-camel/target/src/test/resources/org/apache/activemq/camel/camelplugin/camel-routes-activemq.xml]; nested exception is java.io.FileNotFoundException: class path resource [home/user/dependent-tests-impact/experiments/activemq-old/activemq-camel/target/src/test/resources/org/apache/activemq/camel/camelplugin/camel-routes-activemq.xml] cannot be opened because it does not exist
+org.springframework.beans.factory.BeanDefinitionStoreException: IOException parsing XML document from class path resource [home/user/dependent-tests-impact/experiments/activemq-old/activemq-camel/target/src/test/resources/org/apache/activemq/camel/camelplugin/camel-routes-activemq.xml]; nested exception is java.io.FileNotFoundException: class path resource [home/user/dependent-tests-impact/experiments/activemq-old/activemq-camel/target/src/test/resources/org/apache/activemq/camel/camelplugin/camel-routes-activemq.xml] cannot be opened because it does not exist
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:344)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:304)
+	at org.apache.xbean.spring.context.ResourceXmlApplicationContext.loadBeanDefinitions(ResourceXmlApplicationContext.java:111)
+	at org.apache.xbean.spring.context.ResourceXmlApplicationContext.loadBeanDefinitions(ResourceXmlApplicationContext.java:104)
+	at org.springframework.context.support.AbstractRefreshableApplicationContext.refreshBeanFactory(AbstractRefreshableApplicationContext.java:129)
+	at org.springframework.context.support.AbstractApplicationContext.obtainFreshBeanFactory(AbstractApplicationContext.java:538)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:452)
+	at org.apache.xbean.spring.context.ResourceXmlApplicationContext.<init>(ResourceXmlApplicationContext.java:64)
+	at org.apache.xbean.spring.context.ResourceXmlApplicationContext.<init>(ResourceXmlApplicationContext.java:52)
+	at org.apache.activemq.xbean.XBeanBrokerFactory$1.<init>(XBeanBrokerFactory.java:104)
+	at org.apache.activemq.xbean.XBeanBrokerFactory.createApplicationContext(XBeanBrokerFactory.java:104)
+	at org.apache.activemq.xbean.XBeanBrokerFactory.createBroker(XBeanBrokerFactory.java:67)
+	at org.apache.activemq.camel.camelplugin.CamelPluginConfigTest.createBroker(CamelPluginConfigTest.java:80)
+	at org.apache.activemq.camel.camelplugin.CamelPluginConfigTest.setUp(CamelPluginConfigTest.java:61)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:160)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:138)
+	at edu.washington.cs.dt.util.JUnitTestExecutor.executeWithJUnit4Runner(JUnitTestExecutor.java:64)
+	at edu.washington.cs.dt.util.TestRunnerWrapper.main(TestRunnerWrapper.java:61)
+Caused by: java.io.FileNotFoundException: class path resource [home/user/dependent-tests-impact/experiments/activemq-old/activemq-camel/target/src/test/resources/org/apache/activemq/camel/camelplugin/camel-routes-activemq.xml] cannot be opened because it does not exist
+	at org.springframework.core.io.ClassPathResource.getInputStream(ClassPathResource.java:172)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:330)
+	... 35 more
+Test being executed: org.apache.activemq.camel.SetHeaderTest.testMocksAreValid
+2017-09-19 23:12:25,861 [main           ] - INFO  AbstractContextLoader          - Detected default resource location "classpath:org/apache/activemq/camel/SetHeaderTest-context.xml" for test class [org.apache.activemq.camel.SetHeaderTest]
+2017-09-19 23:12:25,862 [main           ] - INFO  ctDelegatingSmartContextLoader - GenericXmlContextLoader detected default locations for context configuration [ContextConfigurationAttributes@6479f067 declaringClass = 'org.apache.activemq.camel.SetHeaderTest', classes = '{}', locations = '{classpath:org/apache/activemq/camel/SetHeaderTest-context.xml}', inheritLocations = true, initializers = '{}', inheritInitializers = true, name = [null], contextLoaderClass = 'org.springframework.test.context.ContextLoader'].
+2017-09-19 23:12:25,862 [main           ] - INFO  tationConfigContextLoaderUtils - Could not detect default configuration classes for test class [org.apache.activemq.camel.SetHeaderTest]: SetHeaderTest does not declare any static, non-private, non-final, inner classes annotated with @Configuration.
+2017-09-19 23:12:25,874 [main           ] - INFO  DefaultTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2017-09-19 23:12:25,883 [main           ] - INFO  DefaultTestContextBootstrapper - Could not instantiate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [javax/servlet/ServletContext]
+2017-09-19 23:12:26,049 [main           ] - INFO  DefaultTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@1a81ed21, org.springframework.test.context.support.DirtiesContextTestExecutionListener@47f71f1f, org.springframework.test.context.transaction.TransactionalTestExecutionListener@311c5122, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@3a12a85e]
+2017-09-19 23:12:26,057 [main           ] - INFO  XmlBeanDefinitionReader        - Loading XML bean definitions from class path resource [org/apache/activemq/camel/SetHeaderTest-context.xml]
+2017-09-19 23:12:26,414 [main           ] - INFO  GenericApplicationContext      - Refreshing org.springframework.context.support.GenericApplicationContext@7fc23145: startup date [Tue Sep 19 23:12:26 PDT 2017]; root of context hierarchy
+27009 [main] INFO org.apache.camel.component.mock.MockEndpoint - Asserting: Endpoint[mock://results] is satisfied
+Test being executed: org.apache.activemq.camel.CamelJmsTest.testSendingViaJmsIsReceivedByCamel
+37024 [main] INFO org.apache.activemq.camel.CamelJmsTest - ********************************************************************************
+37028 [main] INFO org.apache.activemq.camel.CamelJmsTest - Testing: testSendingViaJmsIsReceivedByCamel(org.apache.activemq.camel.CamelJmsTest)
+37028 [main] INFO org.apache.activemq.camel.CamelJmsTest - ********************************************************************************
+2017-09-19 23:12:36,656 [main           ] - INFO  ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@6c757b1d: startup date [Tue Sep 19 23:12:36 PDT 2017]; root of context hierarchy
+2017-09-19 23:12:36,663 [main           ] - INFO  XmlBeanDefinitionReader        - Loading XML bean definitions from class path resource [org/apache/activemq/camel/spring.xml]
+37872 [main] INFO org.apache.camel.spring.SpringCamelContext - Apache Camel 2.16.1 (CamelContext: camel) is starting
+37881 [main] INFO org.apache.camel.management.DefaultManagementStrategy - JMX is disabled
+37885 [main] INFO org.apache.camel.impl.converter.DefaultTypeConverter - Loaded 186 type converters
+37889 [main] INFO org.apache.camel.spring.SpringCamelContext - AllowUseOriginalMessage is enabled. If access to the original message is not needed, then its recommended to turn this option off as it may improve performance.
+37889 [main] INFO org.apache.camel.spring.SpringCamelContext - StreamCaching is not in use. If using streams then its recommended to enable stream caching. See more details at http://camel.apache.org/stream-caching.html
+37890 [main] INFO org.apache.camel.spring.SpringCamelContext - Total 0 routes, of which 0 is started.
+37890 [main] INFO org.apache.camel.spring.SpringCamelContext - Apache Camel 2.16.1 (CamelContext: camel) started in 0.018 seconds
+37894 [main] WARN org.apache.activemq.broker.BrokerRegistry - Broker localhost not started so using testDlq instead
+37895 [main] INFO org.apache.activemq.broker.TransportConnector - Connector vm://localhost started
+37916 [main] INFO org.apache.camel.component.mock.MockEndpoint - Asserting: Endpoint[mock://result] is satisfied
+37917 [main] INFO org.apache.activemq.camel.CamelJmsTest - Received message: [Exchange[ID-ubuntu-55874-1505887920733-11-1][JmsMessage[JmsMessageID: null]]]
+37917 [main] INFO org.apache.activemq.camel.CamelJmsTest - ********************************************************************************
+37917 [main] INFO org.apache.activemq.camel.CamelJmsTest - Testing done: testSendingViaJmsIsReceivedByCamel(org.apache.activemq.camel.CamelJmsTest)
+37917 [main] INFO org.apache.activemq.camel.CamelJmsTest - Took: 0.027 seconds (27 millis)
+37917 [main] INFO org.apache.activemq.camel.CamelJmsTest - ********************************************************************************
+37918 [main] INFO org.apache.camel.spring.SpringCamelContext - Apache Camel 2.16.1 (CamelContext: camel) is shutting down
+37918 [main] INFO org.apache.camel.spring.SpringCamelContext - Apache Camel 2.16.1 (CamelContext: camel) uptime 0.046 seconds
+37919 [main] INFO org.apache.camel.spring.SpringCamelContext - Apache Camel 2.16.1 (CamelContext: camel) is shutdown in 0.000 seconds
+2017-09-19 23:12:37,547 [main           ] - INFO  ClassPathXmlApplicationContext - Closing org.springframework.context.support.ClassPathXmlApplicationContext@6c757b1d: startup date [Tue Sep 19 23:12:36 PDT 2017]; root of context hierarchy
+Test being executed: org.apache.activemq.camel.CamelJmsTest.testConsumingViaJMSReceivesMessageFromCamel
+37927 [main] INFO org.apache.activemq.camel.CamelJmsTest - ********************************************************************************
+37928 [main] INFO org.apache.activemq.camel.CamelJmsTest - Testing: testConsumingViaJMSReceivesMessageFromCamel(org.apache.activemq.camel.CamelJmsTest)
+37928 [main] INFO org.apache.activemq.camel.CamelJmsTest - ********************************************************************************
+2017-09-19 23:12:37,556 [main           ] - INFO  ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@19d0954e: startup date [Tue Sep 19 23:12:37 PDT 2017]; root of context hierarchy
+2017-09-19 23:12:37,561 [main           ] - INFO  XmlBeanDefinitionReader        - Loading XML bean definitions from class path resource [org/apache/activemq/camel/spring.xml]
+38750 [main] INFO org.apache.camel.spring.SpringCamelContext - Apache Camel 2.16.1 (CamelContext: camel) is starting
+38751 [main] INFO org.apache.camel.management.DefaultManagementStrategy - JMX is disabled
+38762 [main] INFO org.apache.camel.impl.converter.DefaultTypeConverter - Loaded 186 type converters
+38763 [main] INFO org.apache.camel.spring.SpringCamelContext - AllowUseOriginalMessage is enabled. If access to the original message is not needed, then its recommended to turn this option off as it may improve performance.
+38763 [main] INFO org.apache.camel.spring.SpringCamelContext - StreamCaching is not in use. If using streams then its recommended to enable stream caching. See more details at http://camel.apache.org/stream-caching.html
+38763 [main] INFO org.apache.camel.spring.SpringCamelContext - Total 0 routes, of which 0 is started.
+38763 [main] INFO org.apache.camel.spring.SpringCamelContext - Apache Camel 2.16.1 (CamelContext: camel) started in 0.013 seconds
+38763 [main] WARN org.apache.activemq.broker.BrokerRegistry - Broker localhost not started so using testDlq instead
+38782 [main] INFO org.apache.activemq.camel.CamelJmsTest - Consuming from: seda:consumer
+38811 [main] INFO org.apache.camel.component.seda.SedaEndpoint - Endpoint Endpoint[seda://consumer] is using shared queue: seda://consumer with size: 2147483647
+38816 [main] INFO org.apache.activemq.camel.CamelJmsTest - Received message: ActiveMQTextMessage {commandId = 0, responseRequired = false, messageId = null, originalDestination = null, originalTransactionId = null, producerId = null, destination = null, transactionId = null, expiration = 0, timestamp = 0, arrival = 0, brokerInTime = 0, brokerOutTime = 0, correlationId = null, replyTo = null, persistent = true, type = null, priority = 0, groupID = null, groupSequence = 0, targetConsumerId = null, compressed = false, userID = null, content = null, marshalledProperties = null, dataStructure = null, redeliveryCounter = 0, size = 0, properties = {breadcrumbId=ID-ubuntu-55874-1505887920733-12-1}, readOnlyProperties = false, readOnlyBody = false, droppable = false, jmsXGroupFirstForConsumer = false, text = <hello>world!</hello>}
+38821 [main] INFO org.apache.activemq.camel.CamelJmsTest - ********************************************************************************
+38821 [main] INFO org.apache.activemq.camel.CamelJmsTest - Testing done: testConsumingViaJMSReceivesMessageFromCamel(org.apache.activemq.camel.CamelJmsTest)
+38822 [main] INFO org.apache.activemq.camel.CamelJmsTest - Took: 0.058 seconds (58 millis)
+38822 [main] INFO org.apache.activemq.camel.CamelJmsTest - ********************************************************************************
+38822 [main] INFO org.apache.camel.spring.SpringCamelContext - Apache Camel 2.16.1 (CamelContext: camel) is shutting down
+38830 [main] INFO org.apache.camel.spring.SpringCamelContext - Apache Camel 2.16.1 (CamelContext: camel) uptime 0.080 seconds
+38837 [main] INFO org.apache.camel.spring.SpringCamelContext - Apache Camel 2.16.1 (CamelContext: camel) is shutdown in 0.008 seconds
+2017-09-19 23:12:38,465 [main           ] - INFO  ClassPathXmlApplicationContext - Closing org.springframework.context.support.ClassPathXmlApplicationContext@19d0954e: startup date [Tue Sep 19 23:12:37 PDT 2017]; root of context hierarchy
+Test being executed: org.apache.activemq.camel.CamelDestinationExclusiveConsumerTest.testMocksAreValid
+2017-09-19 23:12:38,467 [main           ] - INFO  AbstractContextLoader          - Detected default resource location "classpath:org/apache/activemq/camel/CamelDestinationExclusiveConsumerTest-context.xml" for test class [org.apache.activemq.camel.CamelDestinationExclusiveConsumerTest]
+2017-09-19 23:12:38,473 [main           ] - INFO  ctDelegatingSmartContextLoader - GenericXmlContextLoader detected default locations for context configuration [ContextConfigurationAttributes@3a04a6b9 declaringClass = 'org.apache.activemq.camel.CamelDestinationExclusiveConsumerTest', classes = '{}', locations = '{classpath:org/apache/activemq/camel/CamelDestinationExclusiveConsumerTest-context.xml}', inheritLocations = true, initializers = '{}', inheritInitializers = true, name = [null], contextLoaderClass = 'org.springframework.test.context.ContextLoader'].
+2017-09-19 23:12:38,473 [main           ] - INFO  tationConfigContextLoaderUtils - Could not detect default configuration classes for test class [org.apache.activemq.camel.CamelDestinationExclusiveConsumerTest]: CamelDestinationExclusiveConsumerTest does not declare any static, non-private, non-final, inner classes annotated with @Configuration.
+2017-09-19 23:12:38,474 [main           ] - INFO  DefaultTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2017-09-19 23:12:38,478 [main           ] - INFO  DefaultTestContextBootstrapper - Could not instantiate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [javax/servlet/ServletContext]
+2017-09-19 23:12:38,478 [main           ] - INFO  DefaultTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@22bf06d6, org.springframework.test.context.support.DirtiesContextTestExecutionListener@2b59dd6c, org.springframework.test.context.transaction.TransactionalTestExecutionListener@18d7f3b0, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@9bfb48e]
+2017-09-19 23:12:38,479 [main           ] - INFO  XmlBeanDefinitionReader        - Loading XML bean definitions from class path resource [org/apache/activemq/camel/CamelDestinationExclusiveConsumerTest-context.xml]
+2017-09-19 23:12:39,160 [main           ] - INFO  GenericApplicationContext      - Refreshing org.springframework.context.support.GenericApplicationContext@8e6dba2: startup date [Tue Sep 19 23:12:39 PDT 2017]; root of context hierarchy
+39661 [main] INFO org.apache.camel.spring.SpringCamelContext - Apache Camel 2.16.1 (CamelContext: camel-16) is starting
+39661 [main] INFO org.apache.camel.management.DefaultManagementStrategy - JMX is disabled
+39686 [main] INFO org.apache.camel.impl.converter.DefaultTypeConverter - Loaded 186 type converters
+39825 [main] INFO org.apache.camel.spring.SpringCamelContext - AllowUseOriginalMessage is enabled. If access to the original message is not needed, then its recommended to turn this option off as it may improve performance.
+39825 [main] INFO org.apache.camel.spring.SpringCamelContext - StreamCaching is not in use. If using streams then its recommended to enable stream caching. See more details at http://camel.apache.org/stream-caching.html
+39827 [main] INFO org.apache.camel.component.file.FileEndpoint - Endpoint is configured with noop=true so forcing endpoint to be idempotent as well
+39830 [main] INFO org.apache.camel.component.file.FileEndpoint - Using default memory based idempotent repository with cache max size: 1000
+39861 [main] INFO org.apache.camel.spring.SpringCamelContext - Route: route10 started and consuming from: Endpoint[file://src/test/data?noop=true]
+39862 [main] WARN org.apache.activemq.broker.BrokerRegistry - Broker localhost not started so using testDlq instead
+39892 [main] INFO org.apache.camel.spring.SpringCamelContext - Route: route11 started and consuming from: Endpoint[activemq://foo?destination.consumer.exclusive=true&destination.consumer.prefetchSize=50]
+39892 [main] INFO org.apache.camel.spring.SpringCamelContext - Total 2 routes, of which 2 is started.
+39892 [main] INFO org.apache.camel.spring.SpringCamelContext - Apache Camel 2.16.1 (CamelContext: camel-16) started in 0.239 seconds
+39898 [main] INFO org.apache.camel.component.mock.MockEndpoint - Asserting: Endpoint[mock://results] is satisfied
+Test being executed: org.apache.activemq.camel.ActiveMQComponentFactoryUserNamePasswordTest.testActiveMQ
+49916 [main] INFO org.apache.activemq.camel.ActiveMQComponentFactoryUserNamePasswordTest - ********************************************************************************
+49916 [main] INFO org.apache.activemq.camel.ActiveMQComponentFactoryUserNamePasswordTest - Testing: testActiveMQ(org.apache.activemq.camel.ActiveMQComponentFactoryUserNamePasswordTest)
+49916 [main] INFO org.apache.activemq.camel.ActiveMQComponentFactoryUserNamePasswordTest - ********************************************************************************
+2017-09-19 23:12:49,545 [main           ] - INFO  ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@41199ec2: startup date [Tue Sep 19 23:12:49 PDT 2017]; root of context hierarchy
+2017-09-19 23:12:49,562 [main           ] - INFO  XmlBeanDefinitionReader        - Loading XML bean definitions from class path resource [org/apache/activemq/camel/ActiveMQComponentFactoryUserNamePassword.xml]
+50943 [main] INFO org.apache.activemq.broker.BrokerService - Using Persistence Adapter: MemoryPersistenceAdapter
+50948 [main] INFO org.apache.activemq.broker.BrokerService - Apache ActiveMQ 5.13.0 (testBroker2, ID:ubuntu-49330-1505887920424-0:5) is starting
+50949 [main] INFO org.apache.activemq.broker.TransportConnector - Connector vm://testBroker2 started
+50949 [main] INFO org.apache.activemq.broker.BrokerService - Apache ActiveMQ 5.13.0 (testBroker2, ID:ubuntu-49330-1505887920424-0:5) started
+50949 [main] INFO org.apache.activemq.broker.BrokerService - For help or more information please see: http://activemq.apache.org
+50949 [main] WARN org.apache.activemq.broker.BrokerService - Memory Usage for the Broker (1024 mb) is more than the maximum available for the JVM: 957 mb - resetting to 70% of maximum available: 669 mb
+50949 [main] WARN org.apache.activemq.broker.BrokerService - Temporary Store limit is 51200 mb (current store usage is 0 mb). The data directory: /home/user/dependent-tests-impact/experiments/activemq-old/activemq-camel/target/activemq-data only has 12893 mb of usable space - resetting to maximum available disk space: 12893 mb
+50966 [JMX connector] WARN org.apache.activemq.broker.jmx.ManagementContext - Failed to start JMX connector Cannot bind to URL [rmi://localhost:1099/jmxrmi]: javax.naming.NameAlreadyBoundException: jmxrmi [Root exception is java.rmi.AlreadyBoundException: jmxrmi]. Will restart management to re-create JMX connector, trying to remedy this issue.
+50976 [main] INFO org.apache.camel.spring.SpringCamelContext - Apache Camel 2.16.1 (CamelContext: camel-18) is starting
+50981 [main] INFO org.apache.camel.management.DefaultManagementStrategy - JMX is disabled
+50986 [main] INFO org.apache.camel.impl.converter.DefaultTypeConverter - Loaded 186 type converters
+50999 [main] INFO org.apache.camel.spring.SpringCamelContext - AllowUseOriginalMessage is enabled. If access to the original message is not needed, then its recommended to turn this option off as it may improve performance.
+50999 [main] INFO org.apache.camel.spring.SpringCamelContext - StreamCaching is not in use. If using streams then its recommended to enable stream caching. See more details at http://camel.apache.org/stream-caching.html
+51027 [main] INFO org.apache.camel.spring.SpringCamelContext - Route: route12 started and consuming from: Endpoint[activemq://queue:bar]
+51030 [main] INFO org.apache.camel.spring.SpringCamelContext - Total 1 routes, of which 1 is started.
+51030 [main] INFO org.apache.camel.spring.SpringCamelContext - Apache Camel 2.16.1 (CamelContext: camel-18) started in 0.055 seconds
+51055 [main] INFO org.apache.camel.component.mock.MockEndpoint - Asserting: Endpoint[mock://result] is satisfied
+51065 [main] INFO org.apache.activemq.camel.ActiveMQComponentFactoryUserNamePasswordTest - ********************************************************************************
+51065 [main] INFO org.apache.activemq.camel.ActiveMQComponentFactoryUserNamePasswordTest - Testing done: testActiveMQ(org.apache.activemq.camel.ActiveMQComponentFactoryUserNamePasswordTest)
+51065 [main] INFO org.apache.activemq.camel.ActiveMQComponentFactoryUserNamePasswordTest - Took: 0.035 seconds (35 millis)
+51066 [main] INFO org.apache.activemq.camel.ActiveMQComponentFactoryUserNamePasswordTest - ********************************************************************************
+51066 [main] INFO org.apache.camel.spring.SpringCamelContext - Apache Camel 2.16.1 (CamelContext: camel-18) is shutting down
+51066 [main] INFO org.apache.camel.impl.DefaultShutdownStrategy - Starting to graceful shutdown 1 routes (timeout 10 seconds)
+52067 [Camel (camel-18) thread #22 - ShutdownTask] INFO org.apache.camel.impl.DefaultShutdownStrategy - Route: route12 shutdown complete, was consuming from: Endpoint[activemq://queue:bar]
+52068 [main] INFO org.apache.camel.impl.DefaultShutdownStrategy - Graceful shutdown of 1 routes completed in 1 seconds
+2017-09-19 23:12:51,697 [main           ] - INFO  ClassPathXmlApplicationContext - Closing org.springframework.context.support.ClassPathXmlApplicationContext@41199ec2: startup date [Tue Sep 19 23:12:49 PDT 2017]; root of context hierarchy
+52070 [main] INFO org.apache.camel.spring.SpringCamelContext - Apache Camel 2.16.1 (CamelContext: camel-18) uptime 1.095 seconds
+52070 [main] INFO org.apache.camel.spring.SpringCamelContext - Apache Camel 2.16.1 (CamelContext: camel-18) is shutdown in 1.004 seconds
+52071 [main] INFO org.apache.activemq.broker.BrokerService - Apache ActiveMQ 5.13.0 (testBroker2, ID:ubuntu-49330-1505887920424-0:5) is shutting down
+52071 [main] INFO org.apache.activemq.broker.TransportConnector - Connector vm://testBroker2 stopped
+52072 [main] INFO org.apache.activemq.broker.BrokerService - Apache ActiveMQ 5.13.0 (testBroker2, ID:ubuntu-49330-1505887920424-0:5) uptime 1.130 seconds
+52072 [main] INFO org.apache.activemq.broker.BrokerService - Apache ActiveMQ 5.13.0 (testBroker2, ID:ubuntu-49330-1505887920424-0:5) is shutdown
+Test being executed: org.apache.activemq.camel.TransactedConsumeTest.testConsume
+52075 [main] INFO org.apache.activemq.camel.TransactedConsumeTest - ********************************************************************************
+52076 [main] INFO org.apache.activemq.camel.TransactedConsumeTest - Testing: testConsume(org.apache.activemq.camel.TransactedConsumeTest)
+52076 [main] INFO org.apache.activemq.camel.TransactedConsumeTest - ********************************************************************************
+52078 [main] INFO org.apache.activemq.camel.TransactedConsumeTest - ********************************************************************************
+52078 [main] INFO org.apache.activemq.camel.TransactedConsumeTest - Testing done: testConsume(org.apache.activemq.camel.TransactedConsumeTest)
+52078 [main] INFO org.apache.activemq.camel.TransactedConsumeTest - Took: 0.003 seconds (3 millis)
+52078 [main] INFO org.apache.activemq.camel.TransactedConsumeTest - ********************************************************************************
+Test being executed: org.apache.activemq.camel.AMQ2240Test.testBadVMTransportOptionsJMSPrefix
+52080 [main] INFO org.apache.activemq.camel.AMQ2240Test - creating context with bad URI: vm://localhost?jms.redeliveryPolicy.maximumRedeliveries=0&jms.redeliveryPolicy.initialRedeliveryDelay=500&jms.useAsyncSend=false&jms.sendTimeout=ABC&jms.maxXXXXReconnectAttempts=1&jms.timeout=3000
+52080 [main] ERROR org.apache.activemq.util.IntrospectionSupport - Could not set property sendTimeout on org.apache.activemq.spring.ActiveMQConnectionFactory@39df773d
+java.lang.NumberFormatException: For input string: "ABC"
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.lang.Integer.parseInt(Integer.java:492)
+	at java.lang.Integer.valueOf(Integer.java:582)
+	at org.apache.activemq.util.TypeConversionSupport$6.convert(TypeConversionSupport.java:108)
+	at org.apache.activemq.util.IntrospectionSupport.convert(IntrospectionSupport.java:217)
+	at org.apache.activemq.util.IntrospectionSupport.setProperty(IntrospectionSupport.java:178)
+	at org.apache.activemq.util.IntrospectionSupport.setProperties(IntrospectionSupport.java:151)
+	at org.apache.activemq.ActiveMQConnectionFactory.buildFromMap(ActiveMQConnectionFactory.java:788)
+	at org.apache.activemq.ActiveMQConnectionFactory.setBrokerURL(ActiveMQConnectionFactory.java:463)
+	at org.apache.activemq.camel.component.ActiveMQConfiguration.createConnectionFactory(ActiveMQConfiguration.java:144)
+	at org.apache.camel.component.jms.JmsConfiguration.getConnectionFactory(JmsConfiguration.java:501)
+	at org.apache.activemq.camel.AMQ2240Test.testBadVMTransportOptionsJMSPrefix(AMQ2240Test.java:59)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:160)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:138)
+	at edu.washington.cs.dt.util.JUnitTestExecutor.executeWithJUnit4Runner(JUnitTestExecutor.java:64)
+	at edu.washington.cs.dt.util.TestRunnerWrapper.main(TestRunnerWrapper.java:61)
+Test being executed: org.apache.activemq.camel.AMQ2240Test.testBadVMTransportOptionsBrokerPrefix
+52085 [main] INFO org.apache.activemq.camel.AMQ2240Test - creating context with bad URI: vm://localhost?broker.XXX=foo&broker.persistent=XXX&broker.useJmx=false
+52087 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-20) is starting
+52087 [main] INFO org.apache.camel.management.DefaultManagementStrategy - JMX is disabled
+52098 [main] INFO org.apache.camel.impl.converter.DefaultTypeConverter - Loaded 186 type converters
+52100 [main] INFO org.apache.camel.impl.DefaultCamelContext - AllowUseOriginalMessage is enabled. If access to the original message is not needed, then its recommended to turn this option off as it may improve performance.
+52100 [main] INFO org.apache.camel.impl.DefaultCamelContext - StreamCaching is not in use. If using streams then its recommended to enable stream caching. See more details at http://camel.apache.org/stream-caching.html
+52106 [main] WARN org.apache.activemq.broker.BrokerRegistry - Broker localhost not started so using testDlq instead
+52125 [main] INFO org.apache.camel.impl.DefaultCamelContext - Route: route13 started and consuming from: Endpoint[activemq://queuetest.Queue]
+52126 [main] INFO org.apache.camel.impl.DefaultCamelContext - Total 1 routes, of which 1 is started.
+52126 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-20) started in 0.040 seconds
+52133 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-20) is shutting down
+52133 [main] INFO org.apache.camel.impl.DefaultShutdownStrategy - Starting to graceful shutdown 1 routes (timeout 300 seconds)
+2017-09-19 23:12:51,765 [ueuetest.Queue]] - WARN  ultJmsMessageListenerContainer - Rejecting received message because of the listener container having been stopped in the meantime: ActiveMQTextMessage {commandId = 5, responseRequired = true, messageId = ID:ubuntu-49330-1505887920424-39:1:1:1:1, originalDestination = null, originalTransactionId = null, producerId = ID:ubuntu-49330-1505887920424-39:1:1:1, destination = queue://queuetest.Queue, transactionId = null, expiration = 0, timestamp = 1505887971754, arrival = 0, brokerInTime = 1505887971755, brokerOutTime = 1505887971764, correlationId = null, replyTo = null, persistent = true, type = null, priority = 4, groupID = null, groupSequence = 0, targetConsumerId = null, compressed = false, userID = null, content = org.apache.activemq.util.ByteSequence@21e9753f, marshalledProperties = org.apache.activemq.util.ByteSequence@66108c7d, dataStructure = null, redeliveryCounter = 0, size = 1038, properties = {breadcrumbId=ID-ubuntu-55874-1505887920733-15-1}, readOnlyProperties = true, readOnlyBody = true, droppable = false, jmsXGroupFirstForConsumer = false, text = message}
+52139 [Camel (camel-20) thread #24 - ShutdownTask] INFO org.apache.camel.impl.DefaultShutdownStrategy - Route: route13 shutdown complete, was consuming from: Endpoint[activemq://queuetest.Queue]
+52139 [main] INFO org.apache.camel.impl.DefaultShutdownStrategy - Graceful shutdown of 1 routes completed in 0 seconds
+Test being executed: org.apache.activemq.camel.JmsConsumeSendTransacted.testTransactedRoute
+52140 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-20) uptime 0.054 seconds
+52140 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-20) is shutdown in 0.007 seconds
+52143 [main] INFO org.apache.activemq.camel.JmsConsumeSendTransacted - ********************************************************************************
+52143 [main] INFO org.apache.activemq.camel.JmsConsumeSendTransacted - Testing: testTransactedRoute(org.apache.activemq.camel.JmsConsumeSendTransacted)
+52143 [main] INFO org.apache.activemq.camel.JmsConsumeSendTransacted - ********************************************************************************
+52144 [main] INFO org.apache.activemq.camel.JmsConsumeSendTransacted - ********************************************************************************
+52144 [main] INFO org.apache.activemq.camel.JmsConsumeSendTransacted - Testing done: testTransactedRoute(org.apache.activemq.camel.JmsConsumeSendTransacted)
+52144 [main] INFO org.apache.activemq.camel.JmsConsumeSendTransacted - Took: 0.001 seconds (1 millis)
+52144 [main] INFO org.apache.activemq.camel.JmsConsumeSendTransacted - ********************************************************************************
+Test being executed: org.apache.activemq.camel.component.InvokeRequestReplyUsingJmsReplyToHeaderTest.testPerformRequestReplyOverJms
+52148 [main] INFO org.apache.activemq.camel.component.InvokeRequestReplyUsingJmsReplyToHeaderTest - ********************************************************************************
+52148 [main] INFO org.apache.activemq.camel.component.InvokeRequestReplyUsingJmsReplyToHeaderTest - Testing: testPerformRequestReplyOverJms(org.apache.activemq.camel.component.InvokeRequestReplyUsingJmsReplyToHeaderTest)
+52148 [main] INFO org.apache.activemq.camel.component.InvokeRequestReplyUsingJmsReplyToHeaderTest - ********************************************************************************
+52150 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-21) is starting
+52150 [main] INFO org.apache.camel.management.DefaultManagementStrategy - JMX is disabled
+52154 [main] INFO org.apache.camel.impl.converter.DefaultTypeConverter - Loaded 186 type converters
+52156 [main] INFO org.apache.camel.impl.DefaultCamelContext - AllowUseOriginalMessage is enabled. If access to the original message is not needed, then its recommended to turn this option off as it may improve performance.
+52156 [main] INFO org.apache.camel.impl.DefaultCamelContext - StreamCaching is not in use. If using streams then its recommended to enable stream caching. See more details at http://camel.apache.org/stream-caching.html
+52158 [main] WARN org.apache.activemq.broker.BrokerRegistry - Broker localhost not started so using testDlq instead
+52166 [main] INFO org.apache.camel.impl.DefaultCamelContext - Route: route14 started and consuming from: Endpoint[activemq://test.server]
+52166 [main] INFO org.apache.camel.impl.DefaultCamelContext - Total 1 routes, of which 1 is started.
+52166 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-21) started in 0.016 seconds
+52177 [main] WARN org.apache.camel.component.jms.reply.QueueReplyManager - Endpoint[activemq://test.server?replyTo=queue%3Atest.reply] is using a shared reply queue, which is not as fast as alternatives. See more detail at the section 'Request-reply over JMS' at http://camel.apache.org/jms
+52182 [main] WARN org.apache.activemq.broker.BrokerRegistry - Broker localhost not started so using testDlq instead
+52205 [Camel (camel-21) thread #25 - JmsConsumer[test.server]] INFO org.apache.activemq.camel.component.ActiveMQReplyToHeaderUsingConverterTest - process() invoked with headers: {breadcrumbId=ID-ubuntu-55874-1505887920733-16-1, cheese=123, JMSCorrelationID=ABC-123, JMSCorrelationIDAsBytes=ABC-123, JMSDeliveryMode=2, JMSDestination=queue://test.server, JMSExpiration=1505887991825, JMSMessageID=ID:ubuntu-49330-1505887920424-43:1:1:1:1, JMSPriority=4, JMSRedelivered=false, JMSReplyTo=queue://test.reply, JMSTimestamp=1505887971825, JMSType=null, JMSXGroupID=GROUP-XYZ, JMSXGroupSeq=0, JMSXUserID=null}
+53209 [main] INFO org.apache.activemq.camel.component.ActiveMQReplyToHeaderUsingConverterTest - Reply to is: queue://test.reply
+53209 [main] INFO org.apache.activemq.camel.component.ActiveMQReplyToHeaderUsingConverterTest - Received headers: {breadcrumbId=ID-ubuntu-55874-1505887920733-16-1, cheese=123, JMSCorrelationID=ABC-123, JMSReplyTo=queue://test.reply, JMSXGroupID=GROUP-XYZ}
+53209 [main] INFO org.apache.activemq.camel.component.ActiveMQReplyToHeaderUsingConverterTest - Received body: James
+53220 [main] INFO org.apache.activemq.camel.component.ActiveMQReplyToHeaderUsingConverterTest - Reply to is: queue://test.reply
+53225 [main] INFO org.apache.activemq.camel.component.InvokeRequestReplyUsingJmsReplyToHeaderTest - ********************************************************************************
+53226 [main] INFO org.apache.activemq.camel.component.InvokeRequestReplyUsingJmsReplyToHeaderTest - Testing done: testPerformRequestReplyOverJms(org.apache.activemq.camel.component.InvokeRequestReplyUsingJmsReplyToHeaderTest)
+53226 [main] INFO org.apache.activemq.camel.component.InvokeRequestReplyUsingJmsReplyToHeaderTest - Took: 1.059 seconds (1059 millis)
+53226 [main] INFO org.apache.activemq.camel.component.InvokeRequestReplyUsingJmsReplyToHeaderTest - ********************************************************************************
+54227 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-21) is shutting down
+54227 [main] INFO org.apache.camel.impl.DefaultShutdownStrategy - Starting to graceful shutdown 1 routes (timeout 10 seconds)
+55220 [Camel (camel-21) thread #28 - ShutdownTask] INFO org.apache.camel.impl.DefaultShutdownStrategy - Route: route14 shutdown complete, was consuming from: Endpoint[activemq://test.server]
+55221 [main] INFO org.apache.camel.impl.DefaultShutdownStrategy - Graceful shutdown of 1 routes completed in 0 seconds
+55226 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-21) uptime 3.076 seconds
+55227 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-21) is shutdown in 0.999 seconds
+Test being executed: org.apache.activemq.camel.component.broker.BrokerComponentXMLConfigTest.testReRouteAll
+2017-09-19 23:12:54,860 [main           ] - INFO  ResourceXmlApplicationContext  - Refreshing org.apache.xbean.spring.context.ResourceXmlApplicationContext@699bf6df: startup date [Tue Sep 19 23:12:54 PDT 2017]; root of context hierarchy
+2017-09-19 23:12:54,863 [main           ] - INFO  XBeanXmlBeanDefinitionReader   - Loading XML bean definitions from file [/home/user/dependent-tests-impact/experiments/activemq-old/activemq-camel/target/src/test/resources/org/apache/activemq/camel/component/broker/broker-camel.xml]
+Test being executed: org.apache.activemq.camel.component.broker.BrokerComponentXMLConfigTest.testRouteWithDestinationLimit
+2017-09-19 23:12:54,866 [main           ] - INFO  ResourceXmlApplicationContext  - Refreshing org.apache.xbean.spring.context.ResourceXmlApplicationContext@7e6ce0a3: startup date [Tue Sep 19 23:12:54 PDT 2017]; root of context hierarchy
+2017-09-19 23:12:54,868 [main           ] - INFO  XBeanXmlBeanDefinitionReader   - Loading XML bean definitions from file [/home/user/dependent-tests-impact/experiments/activemq-old/activemq-camel/target/src/test/resources/org/apache/activemq/camel/component/broker/broker-camel.xml]
+Test being executed: org.apache.activemq.camel.component.broker.BrokerComponentXMLConfigTest.testPreserveOriginalHeaders
+2017-09-19 23:12:54,871 [main           ] - INFO  ResourceXmlApplicationContext  - Refreshing org.apache.xbean.spring.context.ResourceXmlApplicationContext@1e102e2d: startup date [Tue Sep 19 23:12:54 PDT 2017]; root of context hierarchy
+2017-09-19 23:12:54,872 [main           ] - INFO  XBeanXmlBeanDefinitionReader   - Loading XML bean definitions from file [/home/user/dependent-tests-impact/experiments/activemq-old/activemq-camel/target/src/test/resources/org/apache/activemq/camel/component/broker/broker-camel.xml]
+Test being executed: org.apache.activemq.camel.component.ComplexRequestReplyTest.testSendThenFailoverThenSend
+55251 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-22) is starting
+55251 [main] INFO org.apache.camel.management.DefaultManagementStrategy - JMX is disabled
+55256 [main] INFO org.apache.camel.impl.converter.DefaultTypeConverter - Loaded 186 type converters
+55274 [main] INFO org.apache.camel.impl.DefaultCamelContext - AllowUseOriginalMessage is enabled. If access to the original message is not needed, then its recommended to turn this option off as it may improve performance.
+55274 [main] INFO org.apache.camel.impl.DefaultCamelContext - StreamCaching is not in use. If using streams then its recommended to enable stream caching. See more details at http://camel.apache.org/stream-caching.html
+65282 [main] INFO org.apache.camel.impl.DefaultCamelContext - Route: route15 started and consuming from: Endpoint[activemq://send]
+65282 [main] INFO org.apache.camel.impl.DefaultCamelContext - Total 1 routes, of which 1 is started.
+65282 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-22) started in 10.031 seconds
+65282 [main] INFO org.apache.activemq.broker.BrokerService - Using Persistence Adapter: MemoryPersistenceAdapter
+65284 [main] INFO org.apache.activemq.broker.BrokerService - Apache ActiveMQ 5.13.0 (brokerA, ID:ubuntu-49330-1505887920424-0:6) is starting
+65285 [main] INFO org.apache.activemq.transport.TransportServerThreadSupport - Listening for connections at: tcp://localhost:59272
+65285 [main] INFO org.apache.activemq.broker.TransportConnector - Connector tcp://localhost:59272 started
+65286 [main] INFO org.apache.activemq.broker.BrokerService - Apache ActiveMQ 5.13.0 (brokerA, ID:ubuntu-49330-1505887920424-0:6) started
+65286 [main] INFO org.apache.activemq.broker.BrokerService - For help or more information please see: http://activemq.apache.org
+65286 [main] WARN org.apache.activemq.broker.BrokerService - Memory Usage for the Broker (1024 mb) is more than the maximum available for the JVM: 957 mb - resetting to 70% of maximum available: 669 mb
+65286 [main] WARN org.apache.activemq.broker.BrokerService - Temporary Store limit is 51200 mb (current store usage is 0 mb). The data directory: /home/user/dependent-tests-impact/experiments/activemq-old/activemq-camel/target/activemq-data only has 12893 mb of usable space - resetting to maximum available disk space: 12893 mb
+65288 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-23) is starting
+65288 [main] INFO org.apache.camel.management.DefaultManagementStrategy - JMX is disabled
+65298 [main] INFO org.apache.camel.impl.converter.DefaultTypeConverter - Loaded 186 type converters
+65309 [main] INFO org.apache.camel.impl.DefaultCamelContext - AllowUseOriginalMessage is enabled. If access to the original message is not needed, then its recommended to turn this option off as it may improve performance.
+65309 [main] INFO org.apache.camel.impl.DefaultCamelContext - StreamCaching is not in use. If using streams then its recommended to enable stream caching. See more details at http://camel.apache.org/stream-caching.html
+2017-09-19 23:13:09,911 [sConsumer[send]] - INFO  ultJmsMessageListenerContainer - JMS message listener invoker needs to establish shared Connection
+70285 [Camel (camel-22) thread #29 - JmsConsumer[send]] INFO org.apache.activemq.broker.TransportConnector - Connector vm://brokerA started
+2017-09-19 23:13:09,922 [sConsumer[send]] - INFO  ultJmsMessageListenerContainer - Successfully refreshed JMS Connection
+75313 [main] INFO org.apache.camel.impl.DefaultCamelContext - Route: route16 started and consuming from: Endpoint[activemq://send]
+75313 [main] INFO org.apache.camel.impl.DefaultCamelContext - Total 1 routes, of which 1 is started.
+75313 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-23) started in 10.025 seconds
+75313 [main] INFO org.apache.activemq.broker.BrokerService - Using Persistence Adapter: MemoryPersistenceAdapter
+75315 [main] INFO org.apache.activemq.broker.BrokerService - Apache ActiveMQ 5.13.0 (brokerB, ID:ubuntu-49330-1505887920424-0:7) is starting
+75315 [main] INFO org.apache.activemq.transport.TransportServerThreadSupport - Listening for connections at: tcp://localhost:53880
+75316 [main] INFO org.apache.activemq.broker.TransportConnector - Connector tcp://localhost:53880 started
+75316 [main] INFO org.apache.activemq.broker.BrokerService - Apache ActiveMQ 5.13.0 (brokerB, ID:ubuntu-49330-1505887920424-0:7) started
+75316 [main] INFO org.apache.activemq.broker.BrokerService - For help or more information please see: http://activemq.apache.org
+75316 [main] WARN org.apache.activemq.broker.BrokerService - Memory Usage for the Broker (1024 mb) is more than the maximum available for the JVM: 957 mb - resetting to 70% of maximum available: 669 mb
+75317 [main] WARN org.apache.activemq.broker.BrokerService - Temporary Store limit is 51200 mb (current store usage is 0 mb). The data directory: /home/user/dependent-tests-impact/experiments/activemq-old/activemq-camel/target/activemq-data only has 12893 mb of usable space - resetting to maximum available disk space: 12893 mb
+75326 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-24) is starting
+75327 [main] INFO org.apache.camel.management.DefaultManagementStrategy - JMX is disabled
+75348 [main] INFO org.apache.camel.impl.converter.DefaultTypeConverter - Loaded 186 type converters
+75350 [main] INFO org.apache.camel.impl.DefaultCamelContext - AllowUseOriginalMessage is enabled. If access to the original message is not needed, then its recommended to turn this option off as it may improve performance.
+75351 [main] INFO org.apache.camel.impl.DefaultCamelContext - StreamCaching is not in use. If using streams then its recommended to enable stream caching. See more details at http://camel.apache.org/stream-caching.html
+75351 [main] INFO org.apache.camel.impl.DefaultCamelContext - Route: route17 started and consuming from: Endpoint[direct://test]
+75351 [main] INFO org.apache.camel.impl.DefaultCamelContext - Total 1 routes, of which 1 is started.
+75351 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-24) started in 0.025 seconds
+75352 [main] INFO org.apache.activemq.camel.component.ComplexRequestReplyTest - *** Sending Request 1
+75367 [ActiveMQ Task-1] INFO org.apache.activemq.transport.failover.FailoverTransport - Successfully connected to tcp://localhost:59272
+75383 [Camel (camel-22) thread #30 - JmsConsumer[send]] INFO route15 - ***Reply sent to temp-queue://ID:ubuntu-49330-1505887920424-49:1:1 CoorId = Camel-ID-ubuntu-55874-1505887920733-19-3
+75385 [main] INFO org.apache.activemq.camel.component.ComplexRequestReplyTest - Got response: Returning This is a request
+2017-09-19 23:13:19,941 [sConsumer[send]] - INFO  ultJmsMessageListenerContainer - JMS message listener invoker needs to establish shared Connection
+80316 [Camel (camel-23) thread #31 - JmsConsumer[send]] INFO org.apache.activemq.broker.TransportConnector - Connector vm://brokerB started
+2017-09-19 23:13:19,951 [sConsumer[send]] - INFO  ultJmsMessageListenerContainer - Successfully refreshed JMS Connection
+95385 [main] INFO org.apache.activemq.camel.component.ComplexRequestReplyTest - Restarting Broker A now.
+95385 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-22) is shutting down
+95385 [main] INFO org.apache.camel.impl.DefaultShutdownStrategy - Starting to graceful shutdown 1 routes (timeout 300 seconds)
+95391 [Camel (camel-22) thread #35 - ShutdownTask] INFO org.apache.camel.impl.DefaultShutdownStrategy - Route: route15 shutdown complete, was consuming from: Endpoint[activemq://send]
+95391 [main] INFO org.apache.camel.impl.DefaultShutdownStrategy - Graceful shutdown of 1 routes completed in 0 seconds
+95394 [main] INFO org.apache.activemq.broker.TransportConnector - Connector vm://brokerA stopped
+95395 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-22) uptime 40.144 seconds
+95395 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-22) is shutdown in 0.010 seconds
+95398 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-25) is starting
+95398 [main] INFO org.apache.camel.management.DefaultManagementStrategy - JMX is disabled
+95417 [main] INFO org.apache.camel.impl.converter.DefaultTypeConverter - Loaded 186 type converters
+95426 [main] INFO org.apache.camel.impl.DefaultCamelContext - AllowUseOriginalMessage is enabled. If access to the original message is not needed, then its recommended to turn this option off as it may improve performance.
+95426 [main] INFO org.apache.camel.impl.DefaultCamelContext - StreamCaching is not in use. If using streams then its recommended to enable stream caching. See more details at http://camel.apache.org/stream-caching.html
+95428 [main] INFO org.apache.activemq.broker.TransportConnector - Connector vm://brokerA started
+95443 [main] INFO org.apache.camel.impl.DefaultCamelContext - Route: route18 started and consuming from: Endpoint[activemq://send]
+95443 [main] INFO org.apache.camel.impl.DefaultCamelContext - Total 1 routes, of which 1 is started.
+95444 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-25) started in 0.046 seconds
+95444 [main] INFO org.apache.activemq.broker.BrokerService - Using Persistence Adapter: MemoryPersistenceAdapter
+95449 [main] INFO org.apache.activemq.broker.BrokerService - Apache ActiveMQ 5.13.0 (brokerA, ID:ubuntu-49330-1505887920424-0:8) is starting
+95450 [main] INFO org.apache.activemq.transport.TransportServerThreadSupport - Listening for connections at: tcp://localhost:53719
+95450 [main] INFO org.apache.activemq.broker.TransportConnector - Connector tcp://localhost:53719 started
+95453 [main] INFO org.apache.activemq.broker.BrokerService - Apache ActiveMQ 5.13.0 (brokerA, ID:ubuntu-49330-1505887920424-0:8) started
+95453 [main] INFO org.apache.activemq.broker.BrokerService - For help or more information please see: http://activemq.apache.org
+95453 [main] WARN org.apache.activemq.broker.BrokerService - Memory Usage for the Broker (1024 mb) is more than the maximum available for the JVM: 957 mb - resetting to 70% of maximum available: 669 mb
+95453 [main] WARN org.apache.activemq.broker.BrokerService - Temporary Store limit is 51200 mb (current store usage is 0 mb). The data directory: /home/user/dependent-tests-impact/experiments/activemq-old/activemq-camel/target/activemq-data only has 12893 mb of usable space - resetting to maximum available disk space: 12893 mb
+95469 [main] INFO org.apache.activemq.camel.component.ComplexRequestReplyTest - *** Sending Request 2
+95472 [Camel (camel-25) thread #36 - JmsConsumer[send]] INFO route18 - ***Reply sent to temp-queue://ID:ubuntu-49330-1505887920424-49:1:1 CoorId = Camel-ID-ubuntu-55874-1505887920733-19-6
+95475 [main] INFO org.apache.activemq.camel.component.ComplexRequestReplyTest - Got response: Returning This is a request
+95475 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-25) is shutting down
+95475 [main] INFO org.apache.camel.impl.DefaultShutdownStrategy - Starting to graceful shutdown 1 routes (timeout 300 seconds)
+96476 [Camel (camel-25) thread #37 - ShutdownTask] INFO org.apache.camel.impl.DefaultShutdownStrategy - Route: route18 shutdown complete, was consuming from: Endpoint[activemq://send]
+96476 [main] INFO org.apache.camel.impl.DefaultShutdownStrategy - Graceful shutdown of 1 routes completed in 1 seconds
+96479 [main] INFO org.apache.activemq.broker.TransportConnector - Connector vm://brokerA stopped
+96479 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-25) uptime 1.082 seconds
+96480 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-25) is shutdown in 1.004 seconds
+96480 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-23) is shutting down
+96480 [main] INFO org.apache.camel.impl.DefaultShutdownStrategy - Starting to graceful shutdown 1 routes (timeout 300 seconds)
+97339 [Camel (camel-23) thread #38 - ShutdownTask] INFO org.apache.camel.impl.DefaultShutdownStrategy - Route: route16 shutdown complete, was consuming from: Endpoint[activemq://send]
+97340 [main] INFO org.apache.camel.impl.DefaultShutdownStrategy - Graceful shutdown of 1 routes completed in 0 seconds
+97343 [main] INFO org.apache.activemq.broker.TransportConnector - Connector vm://brokerB stopped
+97344 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-23) uptime 32.056 seconds
+97344 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-23) is shutdown in 0.864 seconds
+97345 [main] INFO org.apache.activemq.broker.BrokerService - Apache ActiveMQ 5.13.0 (brokerB, ID:ubuntu-49330-1505887920424-0:7) is shutting down
+97346 [main] INFO org.apache.activemq.broker.TransportConnector - Connector tcp://localhost:53880 stopped
+97347 [main] INFO org.apache.activemq.broker.BrokerService - Apache ActiveMQ 5.13.0 (brokerB, ID:ubuntu-49330-1505887920424-0:7) uptime 22.034 seconds
+97347 [main] INFO org.apache.activemq.broker.BrokerService - Apache ActiveMQ 5.13.0 (brokerB, ID:ubuntu-49330-1505887920424-0:7) is shutdown
+Test being executed: org.apache.activemq.camel.component.ActiveMQConfigureTest.testJmsTemplateUsesPoolingConnectionFactory
+97356 [main] INFO org.apache.activemq.camel.component.ActiveMQConfigureTest - ********************************************************************************
+97360 [main] INFO org.apache.activemq.camel.component.ActiveMQConfigureTest - Testing: testJmsTemplateUsesPoolingConnectionFactory(org.apache.activemq.camel.component.ActiveMQConfigureTest)
+97360 [main] INFO org.apache.activemq.camel.component.ActiveMQConfigureTest - ********************************************************************************
+97369 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-26) is starting
+97374 [main] INFO org.apache.camel.management.DefaultManagementStrategy - JMX is disabled
+97377 [main] INFO org.apache.camel.impl.converter.DefaultTypeConverter - Loaded 186 type converters
+97381 [main] INFO org.apache.camel.impl.DefaultCamelContext - AllowUseOriginalMessage is enabled. If access to the original message is not needed, then its recommended to turn this option off as it may improve performance.
+97382 [main] INFO org.apache.camel.impl.DefaultCamelContext - StreamCaching is not in use. If using streams then its recommended to enable stream caching. See more details at http://camel.apache.org/stream-caching.html
+97382 [main] INFO org.apache.camel.impl.DefaultCamelContext - Total 0 routes, of which 0 is started.
+97382 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-26) started in 0.013 seconds
+97384 [main] INFO org.apache.activemq.camel.component.ActiveMQConfigureTest - ********************************************************************************
+97384 [main] INFO org.apache.activemq.camel.component.ActiveMQConfigureTest - Testing done: testJmsTemplateUsesPoolingConnectionFactory(org.apache.activemq.camel.component.ActiveMQConfigureTest)
+97385 [main] INFO org.apache.activemq.camel.component.ActiveMQConfigureTest - Took: 0.001 seconds (1 millis)
+97385 [main] INFO org.apache.activemq.camel.component.ActiveMQConfigureTest - ********************************************************************************
+97385 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-26) is shutting down
+97386 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-26) uptime 0.017 seconds
+97386 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-26) is shutdown in 0.001 seconds
+Test being executed: org.apache.activemq.camel.component.ActiveMQConfigureTest.testJmsTemplateUsesSingleConnectionFactory
+97388 [main] INFO org.apache.activemq.camel.component.ActiveMQConfigureTest - ********************************************************************************
+97392 [main] INFO org.apache.activemq.camel.component.ActiveMQConfigureTest - Testing: testJmsTemplateUsesSingleConnectionFactory(org.apache.activemq.camel.component.ActiveMQConfigureTest)
+97392 [main] INFO org.apache.activemq.camel.component.ActiveMQConfigureTest - ********************************************************************************
+97401 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-27) is starting
+97401 [main] INFO org.apache.camel.management.DefaultManagementStrategy - JMX is disabled
+97406 [main] INFO org.apache.camel.impl.converter.DefaultTypeConverter - Loaded 186 type converters
+97408 [main] INFO org.apache.camel.impl.DefaultCamelContext - AllowUseOriginalMessage is enabled. If access to the original message is not needed, then its recommended to turn this option off as it may improve performance.
+97408 [main] INFO org.apache.camel.impl.DefaultCamelContext - StreamCaching is not in use. If using streams then its recommended to enable stream caching. See more details at http://camel.apache.org/stream-caching.html
+97409 [main] INFO org.apache.camel.impl.DefaultCamelContext - Total 0 routes, of which 0 is started.
+97409 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-27) started in 0.008 seconds
+97412 [main] INFO org.apache.activemq.camel.component.ActiveMQConfigureTest - ********************************************************************************
+97413 [main] INFO org.apache.activemq.camel.component.ActiveMQConfigureTest - Testing done: testJmsTemplateUsesSingleConnectionFactory(org.apache.activemq.camel.component.ActiveMQConfigureTest)
+97414 [main] INFO org.apache.activemq.camel.component.ActiveMQConfigureTest - Took: 0.003 seconds (3 millis)
+97414 [main] INFO org.apache.activemq.camel.component.ActiveMQConfigureTest - ********************************************************************************
+97414 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-27) is shutting down
+97414 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-27) uptime 0.013 seconds
+97421 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-27) is shutdown in 0.000 seconds
+Test being executed: org.apache.activemq.camel.component.ActiveMQConfigureTest.testSessionTransactedWithoutTransactionManager
+97430 [main] INFO org.apache.activemq.camel.component.ActiveMQConfigureTest - ********************************************************************************
+97430 [main] INFO org.apache.activemq.camel.component.ActiveMQConfigureTest - Testing: testSessionTransactedWithoutTransactionManager(org.apache.activemq.camel.component.ActiveMQConfigureTest)
+97430 [main] INFO org.apache.activemq.camel.component.ActiveMQConfigureTest - ********************************************************************************
+97433 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-28) is starting
+97433 [main] INFO org.apache.camel.management.DefaultManagementStrategy - JMX is disabled
+97438 [main] INFO org.apache.camel.impl.converter.DefaultTypeConverter - Loaded 186 type converters
+97445 [main] INFO org.apache.camel.impl.DefaultCamelContext - AllowUseOriginalMessage is enabled. If access to the original message is not needed, then its recommended to turn this option off as it may improve performance.
+97445 [main] INFO org.apache.camel.impl.DefaultCamelContext - StreamCaching is not in use. If using streams then its recommended to enable stream caching. See more details at http://camel.apache.org/stream-caching.html
+97446 [main] INFO org.apache.camel.impl.DefaultCamelContext - Total 0 routes, of which 0 is started.
+97446 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-28) started in 0.014 seconds
+97448 [main] INFO org.apache.activemq.camel.component.ActiveMQConfigureTest - ********************************************************************************
+97449 [main] INFO org.apache.activemq.camel.component.ActiveMQConfigureTest - Testing done: testSessionTransactedWithoutTransactionManager(org.apache.activemq.camel.component.ActiveMQConfigureTest)
+97449 [main] INFO org.apache.activemq.camel.component.ActiveMQConfigureTest - Took: 0.002 seconds (2 millis)
+97449 [main] INFO org.apache.activemq.camel.component.ActiveMQConfigureTest - ********************************************************************************
+97450 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-28) is shutting down
+97450 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-28) uptime 0.018 seconds
+97450 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-28) is shutdown in 0.000 seconds
+Test being executed: org.apache.activemq.camel.component.ActiveMQConfigureTest.testJmsTemplateDoesNotUsePoolingConnectionFactory
+97452 [main] INFO org.apache.activemq.camel.component.ActiveMQConfigureTest - ********************************************************************************
+97461 [main] INFO org.apache.activemq.camel.component.ActiveMQConfigureTest - Testing: testJmsTemplateDoesNotUsePoolingConnectionFactory(org.apache.activemq.camel.component.ActiveMQConfigureTest)
+97461 [main] INFO org.apache.activemq.camel.component.ActiveMQConfigureTest - ********************************************************************************
+97463 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-29) is starting
+97464 [main] INFO org.apache.camel.management.DefaultManagementStrategy - JMX is disabled
+97474 [main] INFO org.apache.camel.impl.converter.DefaultTypeConverter - Loaded 186 type converters
+97474 [main] INFO org.apache.camel.impl.DefaultCamelContext - AllowUseOriginalMessage is enabled. If access to the original message is not needed, then its recommended to turn this option off as it may improve performance.
+97474 [main] INFO org.apache.camel.impl.DefaultCamelContext - StreamCaching is not in use. If using streams then its recommended to enable stream caching. See more details at http://camel.apache.org/stream-caching.html
+97474 [main] INFO org.apache.camel.impl.DefaultCamelContext - Total 0 routes, of which 0 is started.
+97475 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-29) started in 0.011 seconds
+97478 [main] INFO org.apache.activemq.camel.component.ActiveMQConfigureTest - ********************************************************************************
+97481 [main] INFO org.apache.activemq.camel.component.ActiveMQConfigureTest - Testing done: testJmsTemplateDoesNotUsePoolingConnectionFactory(org.apache.activemq.camel.component.ActiveMQConfigureTest)
+97482 [main] INFO org.apache.activemq.camel.component.ActiveMQConfigureTest - Took: 0.003 seconds (3 millis)
+97482 [main] INFO org.apache.activemq.camel.component.ActiveMQConfigureTest - ********************************************************************************
+97482 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-29) is shutting down
+97482 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-29) uptime 0.019 seconds
+97485 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-29) is shutdown in 0.000 seconds
+Test being executed: org.apache.activemq.camel.component.ActiveMQConfigureTest.testListenerContainerUsesSpringConnectionFactory
+97488 [main] INFO org.apache.activemq.camel.component.ActiveMQConfigureTest - ********************************************************************************
+97491 [main] INFO org.apache.activemq.camel.component.ActiveMQConfigureTest - Testing: testListenerContainerUsesSpringConnectionFactory(org.apache.activemq.camel.component.ActiveMQConfigureTest)
+97491 [main] INFO org.apache.activemq.camel.component.ActiveMQConfigureTest - ********************************************************************************
+97493 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-30) is starting
+97497 [main] INFO org.apache.camel.management.DefaultManagementStrategy - JMX is disabled
+97502 [main] INFO org.apache.camel.impl.converter.DefaultTypeConverter - Loaded 186 type converters
+97509 [main] INFO org.apache.camel.impl.DefaultCamelContext - AllowUseOriginalMessage is enabled. If access to the original message is not needed, then its recommended to turn this option off as it may improve performance.
+97509 [main] INFO org.apache.camel.impl.DefaultCamelContext - StreamCaching is not in use. If using streams then its recommended to enable stream caching. See more details at http://camel.apache.org/stream-caching.html
+97509 [main] INFO org.apache.camel.impl.DefaultCamelContext - Total 0 routes, of which 0 is started.
+97510 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-30) started in 0.016 seconds
+97512 [main] INFO org.apache.activemq.camel.component.ActiveMQConfigureTest - ********************************************************************************
+97513 [main] INFO org.apache.activemq.camel.component.ActiveMQConfigureTest - Testing done: testListenerContainerUsesSpringConnectionFactory(org.apache.activemq.camel.component.ActiveMQConfigureTest)
+97513 [main] INFO org.apache.activemq.camel.component.ActiveMQConfigureTest - Took: 0.002 seconds (2 millis)
+97513 [main] INFO org.apache.activemq.camel.component.ActiveMQConfigureTest - ********************************************************************************
+97514 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-30) is shutting down
+97514 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-30) uptime 0.021 seconds
+97517 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-30) is shutdown in 0.000 seconds
+Test being executed: org.apache.activemq.camel.component.ActiveMQJmsHeaderRouteForceTest.testForwardingAMessageAcrossJMSKeepingCustomJMSHeaders
+97533 [main] INFO org.apache.activemq.camel.component.ActiveMQJmsHeaderRouteForceTest - ********************************************************************************
+97537 [main] INFO org.apache.activemq.camel.component.ActiveMQJmsHeaderRouteForceTest - Testing: testForwardingAMessageAcrossJMSKeepingCustomJMSHeaders(org.apache.activemq.camel.component.ActiveMQJmsHeaderRouteForceTest)
+97537 [main] INFO org.apache.activemq.camel.component.ActiveMQJmsHeaderRouteForceTest - ********************************************************************************
+97541 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-31) is starting
+97542 [main] INFO org.apache.camel.impl.DefaultCamelContext - Tracing is enabled on CamelContext: camel-31
+97542 [main] INFO org.apache.camel.management.DefaultManagementStrategy - JMX is disabled
+97554 [main] INFO org.apache.camel.impl.converter.DefaultTypeConverter - Loaded 186 type converters
+97576 [main] INFO org.apache.camel.impl.DefaultCamelContext - AllowUseOriginalMessage is enabled. If access to the original message is not needed, then its recommended to turn this option off as it may improve performance.
+97579 [main] INFO org.apache.camel.impl.DefaultCamelContext - StreamCaching is not in use. If using streams then its recommended to enable stream caching. See more details at http://camel.apache.org/stream-caching.html
+97581 [main] WARN org.apache.activemq.broker.BrokerRegistry - Broker localhost not started so using testDlq instead
+97607 [main] INFO org.apache.camel.impl.DefaultCamelContext - Route: route19 started and consuming from: Endpoint[activemq://test.a?mapJmsMessage=false]
+97608 [main] WARN org.apache.activemq.broker.BrokerRegistry - Broker localhost not started so using testDlq instead
+97626 [main] INFO org.apache.camel.impl.DefaultCamelContext - Route: route20 started and consuming from: Endpoint[activemq://test.b]
+97626 [main] INFO org.apache.camel.impl.DefaultCamelContext - Total 2 routes, of which 2 is started.
+97626 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-31) started in 0.085 seconds
+97629 [main] WARN org.apache.activemq.broker.BrokerRegistry - Broker localhost not started so using testDlq instead
+97653 [Camel (camel-31) thread #39 - JmsConsumer[test.a]] INFO org.apache.camel.processor.interceptor.Tracer - ID-ubuntu-55874-1505887920733-26-3 >>> (route19) from(activemq://test.a?mapJmsMessage=false) --> Processor@0x1bae6216 <<< Pattern:InOnly, Headers:{breadcrumbId=ID-ubuntu-55874-1505887920733-26-1, cheese=123, JMSCorrelationID=null, JMSCorrelationIDAsBytes=null, JMSDeliveryMode=2, JMSDestination=queue://test.a, JMSExpiration=0, JMSMessageID=ID:ubuntu-49330-1505887920424-60:1:1:1:1, JMSPriority=4, JMSRedelivered=false, JMSReplyTo=null, JMSTimestamp=1505888017277, JMSType=null, JMSXGroupID=null, JMSXUserID=null}, BodyType:org.apache.activemq.command.ActiveMQTextMessage, Body:ActiveMQTextMessage {commandId = 5, responseRequired = true, messageId = ID:ubuntu-49330-1505887920424-60:1:1:1:1, originalDestination = null, originalTransactionId = null, producerId = ID:ubuntu-49330-1505887920424-60:1:1:1, destination = queue://test.a, transactionId = null, expiration = 0, timestamp = 1505888017277, arrival = 0, brokerInTime = 1505888017277, brokerOutTime = 1505888017278, correlationId = null, replyTo = null, persistent = true, type = null, priority = 4, groupID = null, groupSequence = 0, targetConsumerId = null, compressed = false, userID = null, content = org.apache.activemq.util.ByteSequence@764ede61, marshalledProperties = org.apache.activemq.util.ByteSequence@33e9eef5, dataStructure = null, redeliveryCounter = 0, size = 1106, properties = {breadcrumbId=ID-ubuntu-55874-1505887920733-26-1, cheese=123}, readOnlyProperties = true, readOnlyBody = true, droppable = false, jmsXGroupFirstForConsumer = false, text = <time>Tue Sep 19 23:13:37 PDT 2017</time>}
+97655 [Camel (camel-31) thread #39 - JmsConsumer[test.a]] INFO org.apache.camel.processor.interceptor.Tracer - ID-ubuntu-55874-1505887920733-26-3 >>> (route19) Processor@0x1bae6216 --> activemq://test.b?forceSendOriginalMessage=true&preserveMessageQos=true <<< Pattern:InOnly, Headers:{breadcrumbId=ID-ubuntu-55874-1505887920733-26-1, cheese=123, JMSCorrelationID=null, JMSCorrelationIDAsBytes=null, JMSDeliveryMode=2, JMSDestination=queue://test.a, JMSExpiration=0, JMSMessageID=ID:ubuntu-49330-1505887920424-60:1:1:1:1, JMSPriority=4, JMSRedelivered=false, JMSReplyTo=null, JMSTimestamp=1505888017277, JMSType=null, JMSXGroupID=null, JMSXUserID=null}, BodyType:org.apache.activemq.command.ActiveMQTextMessage, Body:ActiveMQTextMessage {commandId = 5, responseRequired = true, messageId = ID:ubuntu-49330-1505887920424-60:1:1:1:1, originalDestination = null, originalTransactionId = null, producerId = ID:ubuntu-49330-1505887920424-60:1:1:1, destination = queue://test.a, transactionId = null, expiration = 0, timestamp = 1505888017277, arrival = 0, brokerInTime = 1505888017277, brokerOutTime = 1505888017278, correlationId = ABC-123, replyTo = queue://test.reply.queue, persistent = true, type = org.apache.activemq.camel.component.ActiveMQJmsHeaderRouteForceTest, priority = 4, groupID = null, groupSequence = 0, targetConsumerId = null, compressed = false, userID = null, content = org.apache.activemq.util.ByteSequence@764ede61, marshalledProperties = org.apache.activemq.util.ByteSequence@33e9eef5, dataStructure = null, redeliveryCounter = 0, size = 1106, properties = {breadcrumbId=ID-ubuntu-55874-1505887920733-26-1, cheese=123}, readOnlyProperties = true, readOnlyBody = true, droppable = false, jmsXGroupF... [Body clipped after 1000 chars, total length is 1074]
+97656 [Camel (camel-31) thread #39 - JmsConsumer[test.a]] WARN org.apache.activemq.broker.BrokerRegistry - Broker localhost not started so using testDlq instead
+97656 [main] INFO org.apache.camel.component.mock.MockEndpoint - Asserting: Endpoint[mock://result] is satisfied
+97680 [Camel (camel-31) thread #40 - JmsConsumer[test.b]] INFO org.apache.camel.processor.interceptor.Tracer - ID-ubuntu-55874-1505887920733-26-4 >>> (route20) from(activemq://test.b) --> mock://result <<< Pattern:InOut, Headers:{breadcrumbId=ID-ubuntu-55874-1505887920733-26-1, cheese=123, JMSCorrelationID=ABC-123, JMSCorrelationIDAsBytes=ABC-123, JMSDeliveryMode=2, JMSDestination=queue://test.b, JMSExpiration=0, JMSMessageID=ID:ubuntu-49330-1505887920424-62:1:1:1:1, JMSPriority=4, JMSRedelivered=false, JMSReplyTo=queue://test.reply.queue, JMSTimestamp=1505888017304, JMSType=org.apache.activemq.camel.component.ActiveMQJmsHeaderRouteForceTest, JMSXGroupID=null, JMSXUserID=null}, BodyType:String, Body:<time>Tue Sep 19 23:13:37 PDT 2017</time>
+97680 [main] INFO org.apache.activemq.camel.component.ActiveMQJmsHeaderRouteTest - Reply to is: queue://test.reply.queue
+97680 [main] INFO org.apache.activemq.camel.component.ActiveMQJmsHeaderRouteForceTest - ********************************************************************************
+97680 [main] INFO org.apache.activemq.camel.component.ActiveMQJmsHeaderRouteForceTest - Testing done: testForwardingAMessageAcrossJMSKeepingCustomJMSHeaders(org.apache.activemq.camel.component.ActiveMQJmsHeaderRouteForceTest)
+97680 [main] INFO org.apache.activemq.camel.component.ActiveMQJmsHeaderRouteForceTest - Took: 0.054 seconds (54 millis)
+97680 [main] INFO org.apache.activemq.camel.component.ActiveMQJmsHeaderRouteForceTest - ********************************************************************************
+97681 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-31) is shutting down
+97681 [main] INFO org.apache.camel.impl.DefaultShutdownStrategy - Starting to graceful shutdown 2 routes (timeout 10 seconds)
+97689 [Camel (camel-31) thread #41 - ShutdownTask] INFO org.apache.camel.impl.DefaultShutdownStrategy - Route: route20 shutdown complete, was consuming from: Endpoint[activemq://test.b]
+97690 [Camel (camel-31) thread #41 - ShutdownTask] INFO org.apache.camel.impl.DefaultShutdownStrategy - Route: route19 shutdown complete, was consuming from: Endpoint[activemq://test.a?mapJmsMessage=false]
+97690 [main] INFO org.apache.camel.impl.DefaultShutdownStrategy - Graceful shutdown of 2 routes completed in 0 seconds
+97694 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-31) uptime 0.153 seconds
+97694 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-31) is shutdown in 0.013 seconds
+Test being executed: org.apache.activemq.camel.component.ActiveMQReplyToHeaderUsingConverterTest.testSendingAMessageFromCamelSetsCustomJmsHeaders
+97697 [main] INFO org.apache.activemq.camel.component.ActiveMQReplyToHeaderUsingConverterTest - ********************************************************************************
+97701 [main] INFO org.apache.activemq.camel.component.ActiveMQReplyToHeaderUsingConverterTest - Testing: testSendingAMessageFromCamelSetsCustomJmsHeaders(org.apache.activemq.camel.component.ActiveMQReplyToHeaderUsingConverterTest)
+97701 [main] INFO org.apache.activemq.camel.component.ActiveMQReplyToHeaderUsingConverterTest - ********************************************************************************
+97703 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-32) is starting
+97709 [main] INFO org.apache.camel.management.DefaultManagementStrategy - JMX is disabled
+97714 [main] INFO org.apache.camel.impl.converter.DefaultTypeConverter - Loaded 186 type converters
+97726 [main] INFO org.apache.camel.impl.DefaultCamelContext - AllowUseOriginalMessage is enabled. If access to the original message is not needed, then its recommended to turn this option off as it may improve performance.
+97726 [main] INFO org.apache.camel.impl.DefaultCamelContext - StreamCaching is not in use. If using streams then its recommended to enable stream caching. See more details at http://camel.apache.org/stream-caching.html
+97727 [main] WARN org.apache.activemq.broker.BrokerRegistry - Broker localhost not started so using testDlq instead
+97752 [main] INFO org.apache.camel.impl.DefaultCamelContext - Route: route21 started and consuming from: Endpoint[activemq://test.a]
+97753 [main] WARN org.apache.activemq.broker.BrokerRegistry - Broker localhost not started so using testDlq instead
+97765 [main] INFO org.apache.camel.impl.DefaultCamelContext - Route: route22 started and consuming from: Endpoint[activemq://test.b]
+97765 [main] INFO org.apache.camel.impl.DefaultCamelContext - Total 2 routes, of which 2 is started.
+97765 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-32) started in 0.062 seconds
+97772 [Camel (camel-32) thread #42 - JmsConsumer[test.a]] WARN org.apache.activemq.broker.BrokerRegistry - Broker localhost not started so using testDlq instead
+97782 [main] INFO org.apache.camel.component.mock.MockEndpoint - Asserting: Endpoint[mock://result] is satisfied
+97796 [main] INFO org.apache.activemq.camel.component.ActiveMQReplyToHeaderUsingConverterTest - Reply to is: null
+97796 [main] INFO org.apache.activemq.camel.component.ActiveMQReplyToHeaderUsingConverterTest - ********************************************************************************
+97796 [main] INFO org.apache.activemq.camel.component.ActiveMQReplyToHeaderUsingConverterTest - Testing done: testSendingAMessageFromCamelSetsCustomJmsHeaders(org.apache.activemq.camel.component.ActiveMQReplyToHeaderUsingConverterTest)
+97796 [main] INFO org.apache.activemq.camel.component.ActiveMQReplyToHeaderUsingConverterTest - Took: 0.030 seconds (30 millis)
+97796 [main] INFO org.apache.activemq.camel.component.ActiveMQReplyToHeaderUsingConverterTest - ********************************************************************************
+97796 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-32) is shutting down
+97796 [main] INFO org.apache.camel.impl.DefaultShutdownStrategy - Starting to graceful shutdown 2 routes (timeout 10 seconds)
+98797 [Camel (camel-32) thread #44 - ShutdownTask] INFO org.apache.camel.impl.DefaultShutdownStrategy - Route: route22 shutdown complete, was consuming from: Endpoint[activemq://test.b]
+98799 [Camel (camel-32) thread #44 - ShutdownTask] INFO org.apache.camel.impl.DefaultShutdownStrategy - Route: route21 shutdown complete, was consuming from: Endpoint[activemq://test.a]
+98800 [main] INFO org.apache.camel.impl.DefaultShutdownStrategy - Graceful shutdown of 2 routes completed in 1 seconds
+98808 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-32) uptime 1.104 seconds
+98808 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-32) is shutdown in 1.011 seconds
+Test being executed: org.apache.activemq.camel.component.ActiveMQRouteTest.testInvalidDestinationOptionOnProducer
+98819 [main] INFO org.apache.activemq.camel.component.ActiveMQRouteTest - ********************************************************************************
+98819 [main] INFO org.apache.activemq.camel.component.ActiveMQRouteTest - Testing: testInvalidDestinationOptionOnProducer(org.apache.activemq.camel.component.ActiveMQRouteTest)
+98820 [main] INFO org.apache.activemq.camel.component.ActiveMQRouteTest - ********************************************************************************
+98836 [main] INFO org.apache.camel.impl.converter.DefaultTypeConverter - Loaded 186 type converters
+98838 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-33) is starting
+98838 [main] INFO org.apache.camel.management.DefaultManagementStrategy - JMX is disabled
+98852 [main] INFO org.apache.camel.impl.DefaultCamelContext - AllowUseOriginalMessage is enabled. If access to the original message is not needed, then its recommended to turn this option off as it may improve performance.
+98852 [main] INFO org.apache.camel.impl.DefaultCamelContext - StreamCaching is not in use. If using streams then its recommended to enable stream caching. See more details at http://camel.apache.org/stream-caching.html
+98854 [main] WARN org.apache.activemq.broker.BrokerRegistry - Broker localhost not started so using testDlq instead
+98866 [main] INFO org.apache.camel.impl.DefaultCamelContext - Route: route23 started and consuming from: Endpoint[activemq://queue:test.a]
+98867 [main] WARN org.apache.activemq.broker.BrokerRegistry - Broker localhost not started so using testDlq instead
+98875 [main] INFO org.apache.camel.impl.DefaultCamelContext - Route: route24 started and consuming from: Endpoint[activemq://queue:test.b]
+98875 [main] INFO org.apache.camel.impl.DefaultCamelContext - Route: route25 started and consuming from: Endpoint[activemq://topic:quote.IONA]
+98876 [main] INFO org.apache.camel.impl.DefaultCamelContext - Route: route26 started and consuming from: Endpoint[activemq://topic:quote.IONA]
+98876 [main] INFO org.apache.camel.impl.DefaultCamelContext - Total 4 routes, of which 4 is started.
+98876 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-33) started in 0.039 seconds
+98877 [main] INFO org.apache.activemq.camel.component.ActiveMQRouteTest - ********************************************************************************
+98877 [main] INFO org.apache.activemq.camel.component.ActiveMQRouteTest - Testing done: testInvalidDestinationOptionOnProducer(org.apache.activemq.camel.component.ActiveMQRouteTest)
+98878 [main] INFO org.apache.activemq.camel.component.ActiveMQRouteTest - Took: 0.001 seconds (1 millis)
+98878 [main] INFO org.apache.activemq.camel.component.ActiveMQRouteTest - ********************************************************************************
+98878 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-33) is shutting down
+98878 [main] INFO org.apache.camel.impl.DefaultShutdownStrategy - Starting to graceful shutdown 4 routes (timeout 10 seconds)
+98884 [Camel (camel-33) thread #49 - ShutdownTask] INFO org.apache.camel.impl.DefaultShutdownStrategy - Route: route26 shutdown complete, was consuming from: Endpoint[activemq://topic:quote.IONA]
+2017-09-19 23:13:43,504 [mer[quote.IONA]] - WARN  ultJmsMessageListenerContainer - Setup of JMS message listener invoker failed for destination 'quote.IONA' - trying to recover. Cause: Resource must not be null
+103878 [Camel (camel-33) thread #49 - ShutdownTask] INFO org.apache.camel.impl.DefaultShutdownStrategy - Route: route25 shutdown complete, was consuming from: Endpoint[activemq://topic:quote.IONA]
+103879 [Camel (camel-33) thread #49 - ShutdownTask] INFO org.apache.camel.impl.DefaultShutdownStrategy - Route: route24 shutdown complete, was consuming from: Endpoint[activemq://queue:test.b]
+103892 [Camel (camel-33) thread #49 - ShutdownTask] INFO org.apache.camel.impl.DefaultShutdownStrategy - Route: route23 shutdown complete, was consuming from: Endpoint[activemq://queue:test.a]
+103893 [main] INFO org.apache.camel.impl.DefaultShutdownStrategy - Graceful shutdown of 4 routes completed in 5 seconds
+103903 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-33) uptime 5.066 seconds
+103904 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-33) is shutdown in 5.025 seconds
+Test being executed: org.apache.activemq.camel.component.ActiveMQRouteTest.testInvalidDestinationOptionOnConsumer
+103905 [main] INFO org.apache.activemq.camel.component.ActiveMQRouteTest - ********************************************************************************
+103912 [main] INFO org.apache.activemq.camel.component.ActiveMQRouteTest - Testing: testInvalidDestinationOptionOnConsumer(org.apache.activemq.camel.component.ActiveMQRouteTest)
+103912 [main] INFO org.apache.activemq.camel.component.ActiveMQRouteTest - ********************************************************************************
+103937 [main] INFO org.apache.camel.impl.converter.DefaultTypeConverter - Loaded 186 type converters
+103939 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-34) is starting
+103942 [main] INFO org.apache.camel.management.DefaultManagementStrategy - JMX is disabled
+103954 [main] INFO org.apache.camel.impl.DefaultCamelContext - AllowUseOriginalMessage is enabled. If access to the original message is not needed, then its recommended to turn this option off as it may improve performance.
+103955 [main] INFO org.apache.camel.impl.DefaultCamelContext - StreamCaching is not in use. If using streams then its recommended to enable stream caching. See more details at http://camel.apache.org/stream-caching.html
+103957 [main] WARN org.apache.activemq.broker.BrokerRegistry - Broker localhost not started so using testDlq instead
+103979 [main] INFO org.apache.camel.impl.DefaultCamelContext - Route: route27 started and consuming from: Endpoint[activemq://queue:test.a]
+103980 [main] WARN org.apache.activemq.broker.BrokerRegistry - Broker localhost not started so using testDlq instead
+104004 [main] INFO org.apache.camel.impl.DefaultCamelContext - Route: route28 started and consuming from: Endpoint[activemq://queue:test.b]
+104005 [main] INFO org.apache.camel.impl.DefaultCamelContext - Route: route29 started and consuming from: Endpoint[activemq://topic:quote.IONA]
+104005 [main] INFO org.apache.camel.impl.DefaultCamelContext - Route: route30 started and consuming from: Endpoint[activemq://topic:quote.IONA]
+104005 [main] INFO org.apache.camel.impl.DefaultCamelContext - Total 4 routes, of which 4 is started.
+104005 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-34) started in 0.067 seconds
+104006 [main] INFO org.apache.camel.component.mock.MockEndpoint - Asserting: Endpoint[mock://result] is satisfied
+104006 [main] INFO org.apache.camel.component.mock.MockEndpoint - Asserting: Endpoint[mock://transactedClient] is satisfied
+104006 [main] INFO org.apache.camel.component.mock.MockEndpoint - Asserting: Endpoint[mock://nonTrasnactedClient] is satisfied
+104009 [main] INFO org.apache.activemq.camel.component.ActiveMQRouteTest - ********************************************************************************
+104009 [main] INFO org.apache.activemq.camel.component.ActiveMQRouteTest - Testing done: testInvalidDestinationOptionOnConsumer(org.apache.activemq.camel.component.ActiveMQRouteTest)
+104010 [main] INFO org.apache.activemq.camel.component.ActiveMQRouteTest - Took: 0.003 seconds (3 millis)
+104010 [main] INFO org.apache.activemq.camel.component.ActiveMQRouteTest - ********************************************************************************
+104010 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-34) is shutting down
+104010 [main] INFO org.apache.camel.impl.DefaultShutdownStrategy - Starting to graceful shutdown 4 routes (timeout 10 seconds)
+104023 [Camel (camel-34) thread #54 - ShutdownTask] INFO org.apache.camel.impl.DefaultShutdownStrategy - Route: route30 shutdown complete, was consuming from: Endpoint[activemq://topic:quote.IONA]
+2017-09-19 23:13:48,632 [mer[quote.IONA]] - WARN  ultJmsMessageListenerContainer - Setup of JMS message listener invoker failed for destination 'quote.IONA' - trying to recover. Cause: Resource must not be null
+109006 [Camel (camel-34) thread #54 - ShutdownTask] INFO org.apache.camel.impl.DefaultShutdownStrategy - Route: route29 shutdown complete, was consuming from: Endpoint[activemq://topic:quote.IONA]
+109008 [Camel (camel-34) thread #54 - ShutdownTask] INFO org.apache.camel.impl.DefaultShutdownStrategy - Route: route28 shutdown complete, was consuming from: Endpoint[activemq://queue:test.b]
+109009 [Camel (camel-34) thread #54 - ShutdownTask] INFO org.apache.camel.impl.DefaultShutdownStrategy - Route: route27 shutdown complete, was consuming from: Endpoint[activemq://queue:test.a]
+109010 [main] INFO org.apache.camel.impl.DefaultShutdownStrategy - Graceful shutdown of 4 routes completed in 5 seconds
+109015 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-34) uptime 5.077 seconds
+109016 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-34) is shutdown in 5.005 seconds
+Test being executed: org.apache.activemq.camel.component.ActiveMQRouteTest.testJmsRouteWithTextMessage
+109019 [main] INFO org.apache.activemq.camel.component.ActiveMQRouteTest - ********************************************************************************
+109019 [main] INFO org.apache.activemq.camel.component.ActiveMQRouteTest - Testing: testJmsRouteWithTextMessage(org.apache.activemq.camel.component.ActiveMQRouteTest)
+109019 [main] INFO org.apache.activemq.camel.component.ActiveMQRouteTest - ********************************************************************************
+109042 [main] INFO org.apache.camel.impl.converter.DefaultTypeConverter - Loaded 186 type converters
+109046 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-35) is starting
+109049 [main] INFO org.apache.camel.management.DefaultManagementStrategy - JMX is disabled
+109056 [main] INFO org.apache.camel.impl.DefaultCamelContext - AllowUseOriginalMessage is enabled. If access to the original message is not needed, then its recommended to turn this option off as it may improve performance.
+109056 [main] INFO org.apache.camel.impl.DefaultCamelContext - StreamCaching is not in use. If using streams then its recommended to enable stream caching. See more details at http://camel.apache.org/stream-caching.html
+109058 [main] WARN org.apache.activemq.broker.BrokerRegistry - Broker localhost not started so using testDlq instead
+109068 [main] INFO org.apache.camel.impl.DefaultCamelContext - Route: route31 started and consuming from: Endpoint[activemq://queue:test.a]
+109068 [main] WARN org.apache.activemq.broker.BrokerRegistry - Broker localhost not started so using testDlq instead
+109078 [main] INFO org.apache.camel.impl.DefaultCamelContext - Route: route32 started and consuming from: Endpoint[activemq://queue:test.b]
+109078 [main] INFO org.apache.camel.impl.DefaultCamelContext - Route: route33 started and consuming from: Endpoint[activemq://topic:quote.IONA]
+109078 [main] INFO org.apache.camel.impl.DefaultCamelContext - Route: route34 started and consuming from: Endpoint[activemq://topic:quote.IONA]
+109079 [main] INFO org.apache.camel.impl.DefaultCamelContext - Total 4 routes, of which 4 is started.
+109079 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-35) started in 0.034 seconds
+109086 [main] INFO org.apache.camel.component.mock.MockEndpoint - Asserting: Endpoint[mock://result] is satisfied
+109093 [main] INFO org.apache.activemq.camel.component.ActiveMQRouteTest - ********************************************************************************
+109093 [main] INFO org.apache.activemq.camel.component.ActiveMQRouteTest - Testing done: testJmsRouteWithTextMessage(org.apache.activemq.camel.component.ActiveMQRouteTest)
+109093 [main] INFO org.apache.activemq.camel.component.ActiveMQRouteTest - Took: 0.014 seconds (14 millis)
+109093 [main] INFO org.apache.activemq.camel.component.ActiveMQRouteTest - ********************************************************************************
+109094 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-35) is shutting down
+109094 [main] INFO org.apache.camel.impl.DefaultShutdownStrategy - Starting to graceful shutdown 4 routes (timeout 10 seconds)
+2017-09-19 23:13:53,705 [mer[quote.IONA]] - WARN  ultJmsMessageListenerContainer - Setup of JMS message listener invoker failed for destination 'quote.IONA' - trying to recover. Cause: Resource must not be null
+2017-09-19 23:13:53,708 [mer[quote.IONA]] - WARN  ultJmsMessageListenerContainer - Setup of JMS message listener invoker failed for destination 'quote.IONA' - trying to recover. Cause: Resource must not be null
+114082 [Camel (camel-35) thread #59 - ShutdownTask] INFO org.apache.camel.impl.DefaultShutdownStrategy - Route: route34 shutdown complete, was consuming from: Endpoint[activemq://topic:quote.IONA]
+114082 [Camel (camel-35) thread #59 - ShutdownTask] INFO org.apache.camel.impl.DefaultShutdownStrategy - Route: route33 shutdown complete, was consuming from: Endpoint[activemq://topic:quote.IONA]
+114084 [Camel (camel-35) thread #59 - ShutdownTask] INFO org.apache.camel.impl.DefaultShutdownStrategy - Route: route32 shutdown complete, was consuming from: Endpoint[activemq://queue:test.b]
+114086 [Camel (camel-35) thread #59 - ShutdownTask] INFO org.apache.camel.impl.DefaultShutdownStrategy - Route: route31 shutdown complete, was consuming from: Endpoint[activemq://queue:test.a]
+114086 [main] INFO org.apache.camel.impl.DefaultShutdownStrategy - Graceful shutdown of 4 routes completed in 4 seconds
+114093 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-35) uptime 5.048 seconds
+114093 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-35) is shutdown in 4.999 seconds
+Test being executed: org.apache.activemq.camel.component.AdvisoryConsumerExample.testWorks
+114098 [main] INFO org.apache.activemq.camel.component.AdvisoryConsumerExample - ********************************************************************************
+114098 [main] INFO org.apache.activemq.camel.component.AdvisoryConsumerExample - Testing: testWorks(org.apache.activemq.camel.component.AdvisoryConsumerExample)
+114098 [main] INFO org.apache.activemq.camel.component.AdvisoryConsumerExample - ********************************************************************************
+114103 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-36) is starting
+114103 [main] INFO org.apache.camel.management.DefaultManagementStrategy - JMX is disabled
+114107 [main] INFO org.apache.camel.impl.converter.DefaultTypeConverter - Loaded 186 type converters
+114111 [main] INFO org.apache.camel.impl.DefaultCamelContext - AllowUseOriginalMessage is enabled. If access to the original message is not needed, then its recommended to turn this option off as it may improve performance.
+114111 [main] INFO org.apache.camel.impl.DefaultCamelContext - StreamCaching is not in use. If using streams then its recommended to enable stream caching. See more details at http://camel.apache.org/stream-caching.html
+114116 [ActiveMQ Task-1] INFO org.apache.activemq.transport.failover.FailoverTransport - Successfully connected to tcp://localhost:61616
+114124 [main] INFO org.apache.camel.impl.DefaultCamelContext - Route: route35 started and consuming from: Endpoint[activemq://InitialQueue]
+114139 [ActiveMQ Task-1] INFO org.apache.activemq.transport.failover.FailoverTransport - Successfully connected to tcp://localhost:61616
+114144 [main] INFO org.apache.camel.impl.DefaultCamelContext - Route: route36 started and consuming from: Endpoint[activemq://topic:ActiveMQ.Advisory.Queue?cacheLevelName=CACHE_CONSUMER]
+114144 [main] INFO org.apache.camel.impl.DefaultCamelContext - Total 2 routes, of which 2 is started.
+114144 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-36) started in 0.041 seconds
+114153 [ActiveMQ Task-1] INFO org.apache.activemq.transport.failover.FailoverTransport - Successfully connected to tcp://localhost:61616
+Received: DestinationInfo {commandId = 0, responseRequired = false, connectionId = null, destination = queue://queuetest.queue, operationType = 0, timeout = 0, brokerPath = null}
+Received: DestinationInfo {commandId = 0, responseRequired = false, connectionId = null, destination = queue://test.a, operationType = 0, timeout = 0, brokerPath = null}
+Received: DestinationInfo {commandId = 0, responseRequired = false, connectionId = ID:ubuntu-49330-1505887920424-82:1, destination = queue://InitialQueue, operationType = 0, timeout = 0, brokerPath = null}
+Received: DestinationInfo {commandId = 0, responseRequired = false, connectionId = ID:ubuntu-49330-1505887920424-86:1, destination = queue://NewQueue.1505888033772, operationType = 0, timeout = 0, brokerPath = null}
+124179 [main] INFO org.apache.activemq.camel.component.AdvisoryConsumerExample - ********************************************************************************
+124179 [main] INFO org.apache.activemq.camel.component.AdvisoryConsumerExample - Testing done: testWorks(org.apache.activemq.camel.component.AdvisoryConsumerExample)
+124180 [main] INFO org.apache.activemq.camel.component.AdvisoryConsumerExample - Took: 10.034 seconds (10034 millis)
+124180 [main] INFO org.apache.activemq.camel.component.AdvisoryConsumerExample - ********************************************************************************
+124180 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-36) is shutting down
+124180 [main] INFO org.apache.camel.impl.DefaultShutdownStrategy - Starting to graceful shutdown 2 routes (timeout 10 seconds)
+124192 [Camel (camel-36) thread #62 - ShutdownTask] INFO org.apache.camel.impl.DefaultShutdownStrategy - Route: route36 shutdown complete, was consuming from: Endpoint[activemq://topic:ActiveMQ.Advisory.Queue?cacheLevelName=CACHE_CONSUMER]
+125152 [Camel (camel-36) thread #62 - ShutdownTask] INFO org.apache.camel.impl.DefaultShutdownStrategy - Route: route35 shutdown complete, was consuming from: Endpoint[activemq://InitialQueue]
+125154 [main] INFO org.apache.camel.impl.DefaultShutdownStrategy - Graceful shutdown of 2 routes completed in 0 seconds
+125171 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-36) uptime 11.068 seconds
+125171 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-36) is shutdown in 0.991 seconds
+Test being executed: org.apache.activemq.camel.component.ActiveMQJmsHeaderRouteTest.testForwardingAMessageAcrossJMSKeepingCustomJMSHeaders
+125174 [main] INFO org.apache.activemq.camel.component.ActiveMQJmsHeaderRouteTest - ********************************************************************************
+125174 [main] INFO org.apache.activemq.camel.component.ActiveMQJmsHeaderRouteTest - Testing: testForwardingAMessageAcrossJMSKeepingCustomJMSHeaders(org.apache.activemq.camel.component.ActiveMQJmsHeaderRouteTest)
+125174 [main] INFO org.apache.activemq.camel.component.ActiveMQJmsHeaderRouteTest - ********************************************************************************
+125183 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-37) is starting
+125184 [main] INFO org.apache.camel.impl.DefaultCamelContext - Tracing is enabled on CamelContext: camel-37
+125184 [main] INFO org.apache.camel.management.DefaultManagementStrategy - JMX is disabled
+125188 [main] INFO org.apache.camel.impl.converter.DefaultTypeConverter - Loaded 186 type converters
+125191 [main] INFO org.apache.camel.impl.DefaultCamelContext - AllowUseOriginalMessage is enabled. If access to the original message is not needed, then its recommended to turn this option off as it may improve performance.
+125191 [main] INFO org.apache.camel.impl.DefaultCamelContext - StreamCaching is not in use. If using streams then its recommended to enable stream caching. See more details at http://camel.apache.org/stream-caching.html
+125193 [main] WARN org.apache.activemq.broker.BrokerRegistry - Broker localhost not started so using testDlq instead
+125202 [main] INFO org.apache.camel.impl.DefaultCamelContext - Route: route37 started and consuming from: Endpoint[activemq://test.a]
+125203 [main] WARN org.apache.activemq.broker.BrokerRegistry - Broker localhost not started so using testDlq instead
+125212 [main] INFO org.apache.camel.impl.DefaultCamelContext - Route: route38 started and consuming from: Endpoint[activemq://test.b]
+125212 [main] INFO org.apache.camel.impl.DefaultCamelContext - Total 2 routes, of which 2 is started.
+125212 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-37) started in 0.029 seconds
+125216 [main] INFO org.apache.camel.component.mock.MockEndpoint - Asserting: Endpoint[mock://result] is satisfied
+125218 [Camel (camel-37) thread #63 - JmsConsumer[test.a]] INFO org.apache.camel.processor.interceptor.Tracer - ID-ubuntu-55874-1505887920733-32-3 >>> (route37) from(activemq://test.a) --> Processor@0x2d7c3412 <<< Pattern:InOnly, Headers:{breadcrumbId=ID-ubuntu-55874-1505887920733-32-1, cheese=123, JMSCorrelationID=null, JMSCorrelationIDAsBytes=null, JMSDeliveryMode=2, JMSDestination=queue://test.a, JMSExpiration=0, JMSMessageID=ID:ubuntu-49330-1505887920424-88:1:2:1:1, JMSPriority=4, JMSRedelivered=false, JMSReplyTo=null, JMSTimestamp=1505888044842, JMSType=null, JMSXGroupID=null, JMSXUserID=null}, BodyType:String, Body:<time>Tue Sep 19 23:14:04 PDT 2017</time>
+125218 [Camel (camel-37) thread #63 - JmsConsumer[test.a]] INFO org.apache.camel.processor.interceptor.Tracer - ID-ubuntu-55874-1505887920733-32-3 >>> (route37) Processor@0x2d7c3412 --> activemq://test.b?preserveMessageQos=true <<< Pattern:InOnly, Headers:{breadcrumbId=ID-ubuntu-55874-1505887920733-32-1, cheese=123, JMSCorrelationID=ABC-123, JMSCorrelationIDAsBytes=null, JMSDeliveryMode=2, JMSDestination=queue://test.a, JMSExpiration=0, JMSMessageID=ID:ubuntu-49330-1505887920424-88:1:2:1:1, JMSPriority=4, JMSRedelivered=false, JMSReplyTo=queue://test.reply.queue, JMSTimestamp=1505888044842, JMSType=org.apache.activemq.camel.component.ActiveMQJmsHeaderRouteTest, JMSXGroupID=null, JMSXUserID=null}, BodyType:String, Body:<time>Tue Sep 19 23:14:04 PDT 2017</time>
+125219 [Camel (camel-37) thread #63 - JmsConsumer[test.a]] WARN org.apache.activemq.broker.BrokerRegistry - Broker localhost not started so using testDlq instead
+125237 [Camel (camel-37) thread #64 - JmsConsumer[test.b]] INFO org.apache.camel.processor.interceptor.Tracer - ID-ubuntu-55874-1505887920733-32-4 >>> (route38) from(activemq://test.b) --> mock://result <<< Pattern:InOut, Headers:{breadcrumbId=ID-ubuntu-55874-1505887920733-32-1, cheese=123, JMSCorrelationID=ABC-123, JMSCorrelationIDAsBytes=ABC-123, JMSDeliveryMode=2, JMSDestination=queue://test.b, JMSExpiration=0, JMSMessageID=ID:ubuntu-49330-1505887920424-92:1:1:1:1, JMSPriority=4, JMSRedelivered=false, JMSReplyTo=queue://test.reply.queue, JMSTimestamp=1505888044862, JMSType=org.apache.activemq.camel.component.ActiveMQJmsHeaderRouteTest, JMSXGroupID=null, JMSXUserID=null}, BodyType:String, Body:<time>Tue Sep 19 23:14:04 PDT 2017</time>
+125238 [main] INFO org.apache.activemq.camel.component.ActiveMQJmsHeaderRouteTest - Reply to is: queue://test.reply.queue
+125238 [main] INFO org.apache.activemq.camel.component.ActiveMQJmsHeaderRouteTest - ********************************************************************************
+125238 [main] INFO org.apache.activemq.camel.component.ActiveMQJmsHeaderRouteTest - Testing done: testForwardingAMessageAcrossJMSKeepingCustomJMSHeaders(org.apache.activemq.camel.component.ActiveMQJmsHeaderRouteTest)
+125238 [main] INFO org.apache.activemq.camel.component.ActiveMQJmsHeaderRouteTest - Took: 0.026 seconds (26 millis)
+125238 [main] INFO org.apache.activemq.camel.component.ActiveMQJmsHeaderRouteTest - ********************************************************************************
+125238 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-37) is shutting down
+125238 [main] INFO org.apache.camel.impl.DefaultShutdownStrategy - Starting to graceful shutdown 2 routes (timeout 10 seconds)
+125244 [Camel (camel-37) thread #65 - ShutdownTask] INFO org.apache.camel.impl.DefaultShutdownStrategy - Route: route38 shutdown complete, was consuming from: Endpoint[activemq://test.b]
+125245 [Camel (camel-37) thread #65 - ShutdownTask] INFO org.apache.camel.impl.DefaultShutdownStrategy - Route: route37 shutdown complete, was consuming from: Endpoint[activemq://test.a]
+125245 [main] INFO org.apache.camel.impl.DefaultShutdownStrategy - Graceful shutdown of 2 routes completed in 0 seconds
+125248 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-37) uptime 0.065 seconds
+125248 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-37) is shutdown in 0.010 seconds
+Test being executed: org.apache.activemq.camel.component.AutoExposeQueuesInCamelTest.testWorks
+.E
+Time: 0.001
+There was 1 error:
+1) testWorks(org.apache.activemq.camel.component.AutoExposeQueuesInCamelTest)java.io.IOException: VMTransportServer already bound at: vm://localhost
+	at org.apache.activemq.transport.vm.VMTransportFactory.bind(VMTransportFactory.java:237)
+	at org.apache.activemq.transport.vm.VMTransportFactory.doBind(VMTransportFactory.java:223)
+	at org.apache.activemq.transport.TransportFactorySupport.bind(TransportFactorySupport.java:40)
+	at org.apache.activemq.broker.BrokerService.createTransportConnector(BrokerService.java:2449)
+	at org.apache.activemq.broker.BrokerService.addConnector(BrokerService.java:334)
+	at org.apache.activemq.broker.BrokerService.addConnector(BrokerService.java:324)
+	at org.apache.activemq.EmbeddedBrokerTestSupport.createBroker(EmbeddedBrokerTestSupport.java:126)
+	at org.apache.activemq.camel.component.AutoExposeQueuesInCamelTest.createBroker(AutoExposeQueuesInCamelTest.java:126)
+	at org.apache.activemq.EmbeddedBrokerTestSupport.setUp(EmbeddedBrokerTestSupport.java:47)
+	at org.apache.activemq.camel.component.AutoExposeQueuesInCamelTest.setUp(AutoExposeQueuesInCamelTest.java:106)
+	at org.apache.activemq.CombinationTestSupport.runBare(CombinationTestSupport.java:107)
+	at org.apache.activemq.CombinationTestSupport.runBare(CombinationTestSupport.java:113)
+	at edu.washington.cs.dt.util.TestRunnerWrapper.main(TestRunnerWrapper.java:71)
+
+FAILURES!!!
+Tests run: 1,  Failures: 0,  Errors: 1
+
+Test being executed: org.apache.activemq.camel.component.AutoExposeQueuesInCamelTest.testCompleter
+.E
+Time: 0
+There was 1 error:
+1) testCompleter(org.apache.activemq.camel.component.AutoExposeQueuesInCamelTest)java.io.IOException: VMTransportServer already bound at: vm://localhost
+	at org.apache.activemq.transport.vm.VMTransportFactory.bind(VMTransportFactory.java:237)
+	at org.apache.activemq.transport.vm.VMTransportFactory.doBind(VMTransportFactory.java:223)
+	at org.apache.activemq.transport.TransportFactorySupport.bind(TransportFactorySupport.java:40)
+	at org.apache.activemq.broker.BrokerService.createTransportConnector(BrokerService.java:2449)
+	at org.apache.activemq.broker.BrokerService.addConnector(BrokerService.java:334)
+	at org.apache.activemq.broker.BrokerService.addConnector(BrokerService.java:324)
+	at org.apache.activemq.EmbeddedBrokerTestSupport.createBroker(EmbeddedBrokerTestSupport.java:126)
+	at org.apache.activemq.camel.component.AutoExposeQueuesInCamelTest.createBroker(AutoExposeQueuesInCamelTest.java:126)
+	at org.apache.activemq.EmbeddedBrokerTestSupport.setUp(EmbeddedBrokerTestSupport.java:47)
+	at org.apache.activemq.camel.component.AutoExposeQueuesInCamelTest.setUp(AutoExposeQueuesInCamelTest.java:106)
+	at org.apache.activemq.CombinationTestSupport.runBare(CombinationTestSupport.java:107)
+	at org.apache.activemq.CombinationTestSupport.runBare(CombinationTestSupport.java:113)
+	at edu.washington.cs.dt.util.TestRunnerWrapper.main(TestRunnerWrapper.java:71)
+
+FAILURES!!!
+Tests run: 1,  Failures: 0,  Errors: 1
+
+Test being executed: org.apache.activemq.camel.component.JmsSimpleRequestReplyTest.testRequestReply
+125258 [main] INFO org.apache.activemq.camel.component.JmsSimpleRequestReplyTest - ********************************************************************************
+125258 [main] INFO org.apache.activemq.camel.component.JmsSimpleRequestReplyTest - Testing: testRequestReply(org.apache.activemq.camel.component.JmsSimpleRequestReplyTest)
+125258 [main] INFO org.apache.activemq.camel.component.JmsSimpleRequestReplyTest - ********************************************************************************
+125261 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-40) is starting
+125261 [main] INFO org.apache.camel.management.DefaultManagementStrategy - JMX is disabled
+125264 [main] INFO org.apache.camel.impl.converter.DefaultTypeConverter - Loaded 186 type converters
+125266 [main] INFO org.apache.camel.impl.DefaultCamelContext - AllowUseOriginalMessage is enabled. If access to the original message is not needed, then its recommended to turn this option off as it may improve performance.
+125266 [main] INFO org.apache.camel.impl.DefaultCamelContext - StreamCaching is not in use. If using streams then its recommended to enable stream caching. See more details at http://camel.apache.org/stream-caching.html
+125268 [main] INFO org.apache.activemq.broker.BrokerService - Using Persistence Adapter: MemoryPersistenceAdapter
+125268 [main] INFO org.apache.activemq.broker.BrokerService - Apache ActiveMQ 5.13.0 (test-broker, ID:ubuntu-49330-1505887920424-0:9) is starting
+125268 [main] INFO org.apache.activemq.broker.BrokerService - Apache ActiveMQ 5.13.0 (test-broker, ID:ubuntu-49330-1505887920424-0:9) started
+125268 [main] INFO org.apache.activemq.broker.BrokerService - For help or more information please see: http://activemq.apache.org
+125268 [main] WARN org.apache.activemq.broker.BrokerService - Memory Usage for the Broker (1024 mb) is more than the maximum available for the JVM: 957 mb - resetting to 70% of maximum available: 669 mb
+125268 [main] WARN org.apache.activemq.broker.BrokerService - Temporary Store limit is 51200 mb (current store usage is 0 mb). The data directory: /home/user/dependent-tests-impact/experiments/activemq-old/activemq-camel/target/activemq-data only has 12893 mb of usable space - resetting to maximum available disk space: 12893 mb
+125269 [main] INFO org.apache.activemq.broker.TransportConnector - Connector vm://test-broker started
+125273 [main] INFO org.apache.camel.impl.DefaultCamelContext - Route: route39 started and consuming from: Endpoint[activemq://queue:hello]
+125273 [main] INFO org.apache.camel.impl.DefaultCamelContext - Total 1 routes, of which 1 is started.
+125273 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-40) started in 0.012 seconds
+125297 [main] INFO org.apache.camel.component.mock.MockEndpoint - Asserting: Endpoint[mock://result] is satisfied
+125297 [main] INFO org.apache.activemq.camel.component.JmsSimpleRequestReplyTest - ********************************************************************************
+125297 [main] INFO org.apache.activemq.camel.component.JmsSimpleRequestReplyTest - Testing done: testRequestReply(org.apache.activemq.camel.component.JmsSimpleRequestReplyTest)
+125297 [main] INFO org.apache.activemq.camel.component.JmsSimpleRequestReplyTest - Took: 0.023 seconds (23 millis)
+125297 [main] INFO org.apache.activemq.camel.component.JmsSimpleRequestReplyTest - ********************************************************************************
+126301 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-40) is shutting down
+126302 [main] INFO org.apache.camel.impl.DefaultShutdownStrategy - Starting to graceful shutdown 1 routes (timeout 10 seconds)
+127298 [Camel (camel-40) thread #69 - ShutdownTask] INFO org.apache.camel.impl.DefaultShutdownStrategy - Route: route39 shutdown complete, was consuming from: Endpoint[activemq://queue:hello]
+Test being executed: org.apache.activemq.camel.JmsJdbcXATest.testRecoveryCommit
+127299 [main] INFO org.apache.camel.impl.DefaultShutdownStrategy - Graceful shutdown of 1 routes completed in 0 seconds
+127299 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-40) uptime 2.038 seconds
+127299 [main] INFO org.apache.camel.impl.DefaultCamelContext - Apache Camel 2.16.1 (CamelContext: camel-40) is shutdown in 0.998 seconds
+127301 [main] INFO org.apache.activemq.camel.JmsJdbcXATest - ********************************************************************************
+127302 [main] INFO org.apache.activemq.camel.JmsJdbcXATest - Testing: testRecoveryCommit(org.apache.activemq.camel.JmsJdbcXATest)
+127302 [main] INFO org.apache.activemq.camel.JmsJdbcXATest - ********************************************************************************
+127302 [main] INFO org.apache.activemq.camel.JmsJdbcXATest - ********************************************************************************
+127302 [main] INFO org.apache.activemq.camel.JmsJdbcXATest - Testing done: testRecoveryCommit(org.apache.activemq.camel.JmsJdbcXATest)
+127303 [main] INFO org.apache.activemq.camel.JmsJdbcXATest - Took: 0.001 seconds (1 millis)
+127303 [main] INFO org.apache.activemq.camel.JmsJdbcXATest - ********************************************************************************
+Execution time: 128229951122
+0-th run
+Pass: 25, Fail: 0, Error: 13
+{org.apache.activemq.camel.AMQ2611Test.testConnections=13431411970, org.apache.activemq.camel.ActiveMQComponentUserNamePasswordTest.testActiveMQ=3212004444, org.apache.activemq.camel.DlqTest.testSendToDlq=2566291420, org.apache.activemq.camel.JmsJdbcXARollbackTest.testConsumeRollback=12563154, org.apache.activemq.camel.converter.InvokeMessageListenerTest.testSendTextMessage=1102598805, org.apache.activemq.camel.converter.InvokeJmsMessageListenerTest.testCamelInvokesMessageListener=82916900, org.apache.activemq.camel.CamelVMTransportRoutingTest.testSendReceiveWithCamelRouteIntercepting=5676137102, org.apache.activemq.camel.camelplugin.CamelPluginConfigTest.testReRouteAll=42203420, org.apache.activemq.camel.SetHeaderTest.testMocksAreValid=10842369102, org.apache.activemq.camel.CamelJmsTest.testSendingViaJmsIsReceivedByCamel=898424836, org.apache.activemq.camel.CamelJmsTest.testConsumingViaJMSReceivesMessageFromCamel=917911790, org.apache.activemq.camel.CamelDestinationExclusiveConsumerTest.testMocksAreValid=11071824123, org.apache.activemq.camel.ActiveMQComponentFactoryUserNamePasswordTest.testActiveMQ=2160521669, org.apache.activemq.camel.TransactedConsumeTest.testConsume=5031260, org.apache.activemq.camel.AMQ2240Test.testBadVMTransportOptionsJMSPrefix=5469937, org.apache.activemq.camel.AMQ2240Test.testBadVMTransportOptionsBrokerPrefix=55416670, org.apache.activemq.camel.JmsConsumeSendTransacted.testTransactedRoute=3753812, org.apache.activemq.camel.component.InvokeRequestReplyUsingJmsReplyToHeaderTest.testPerformRequestReplyOverJms=3080968626, org.apache.activemq.camel.component.broker.BrokerComponentXMLConfigTest.testReRouteAll=8080628, org.apache.activemq.camel.component.broker.BrokerComponentXMLConfigTest.testRouteWithDestinationLimit=4733068, org.apache.activemq.camel.component.broker.BrokerComponentXMLConfigTest.testPreserveOriginalHeaders=3089412, org.apache.activemq.camel.component.ComplexRequestReplyTest.testSendThenFailoverThenSend=42100652594, org.apache.activemq.camel.component.ActiveMQConfigureTest.testJmsTemplateUsesPoolingConnectionFactory=36913086, org.apache.activemq.camel.component.ActiveMQConfigureTest.testJmsTemplateUsesSingleConnectionFactory=35279300, org.apache.activemq.camel.component.ActiveMQConfigureTest.testSessionTransactedWithoutTransactionManager=28576525, org.apache.activemq.camel.component.ActiveMQConfigureTest.testJmsTemplateDoesNotUsePoolingConnectionFactory=35127420, org.apache.activemq.camel.component.ActiveMQConfigureTest.testListenerContainerUsesSpringConnectionFactory=32036846, org.apache.activemq.camel.component.ActiveMQJmsHeaderRouteForceTest.testForwardingAMessageAcrossJMSKeepingCustomJMSHeaders=166452603, org.apache.activemq.camel.component.ActiveMQReplyToHeaderUsingConverterTest.testSendingAMessageFromCamelSetsCustomJmsHeaders=1113436191, org.apache.activemq.camel.component.ActiveMQRouteTest.testInvalidDestinationOptionOnProducer=5093249927, org.apache.activemq.camel.component.ActiveMQRouteTest.testInvalidDestinationOptionOnConsumer=5112167448, org.apache.activemq.camel.component.ActiveMQRouteTest.testJmsRouteWithTextMessage=5077346644, org.apache.activemq.camel.component.AdvisoryConsumerExample.testWorks=11075648919, org.apache.activemq.camel.component.ActiveMQJmsHeaderRouteTest.testForwardingAMessageAcrossJMSKeepingCustomJMSHeaders=76743680, org.apache.activemq.camel.component.AutoExposeQueuesInCamelTest.testWorks=2934548, org.apache.activemq.camel.component.AutoExposeQueuesInCamelTest.testCompleter=1458587, org.apache.activemq.camel.component.JmsSimpleRequestReplyTest.testRequestReply=2042180118, org.apache.activemq.camel.JmsJdbcXATest.testRecoveryCommit=2962031}
+
