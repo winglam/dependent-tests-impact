@@ -58,7 +58,7 @@ nextExpDirectories=(
   #${rootDir}/ambari-new/ambari-server/target
   #${rootDir}/zeppelin-zengine-new/zeppelin-zengine/target
   #${rootDir}/zeppelin-new/zeppelin-server/target
-  /home/user/dependent-tests-impact/experiments/xstream-1.2.1/xstream/target
+  ${rootDir}/xstream-1.2.1/xstream/target
 )
 # Classpath to run the new subject's automatically-generated and human-written tests.
 nextExpCP=(
