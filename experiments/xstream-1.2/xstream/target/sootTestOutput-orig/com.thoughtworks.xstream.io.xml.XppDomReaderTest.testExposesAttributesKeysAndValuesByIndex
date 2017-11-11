@@ -1,0 +1,75 @@
+com.thoughtworks.xstream.io.xml.xppdom.Xpp3DomBuilder.build : return r4
+com.thoughtworks.xstream.io.xml.xppdom.Xpp3DomBuilder.build : if i1 <= 0 goto interfaceinvoke r2.<java.util.List: boolean add(java.lang.Object)>(r7)
+com.thoughtworks.xstream.io.xml.xppdom.Xpp3DomBuilder.build : r24 = null
+com.thoughtworks.xstream.io.xml.xppdom.Xpp3DomBuilder.build : interfaceinvoke r5.<org.xmlpull.v1.XmlPullParser: void setInput(java.io.Reader)>(r0)
+com.thoughtworks.xstream.io.xml.xppdom.Xpp3DomBuilder.build : virtualinvoke r0.<java.io.Reader: void close()>()
+com.thoughtworks.xstream.io.xml.xppdom.Xpp3DomBuilder.build : $r1 = new java.util.ArrayList
+com.thoughtworks.xstream.io.xml.xppdom.Xpp3DomBuilder.build : virtualinvoke r7.<com.thoughtworks.xstream.io.xml.xppdom.Xpp3Dom: void setAttribute(java.lang.String,java.lang.String)>(r9, r10)
+com.thoughtworks.xstream.io.xml.xppdom.Xpp3DomBuilder.build : $r11 = new java.util.ArrayList
+com.thoughtworks.xstream.io.xml.xppdom.Xpp3DomBuilder.build : virtualinvoke r21.<com.thoughtworks.xstream.io.xml.xppdom.Xpp3Dom: void setValue(java.lang.String)>(r24)
+com.thoughtworks.xstream.io.xml.xppdom.Xpp3DomBuilder.build : r10 = interfaceinvoke r5.<org.xmlpull.v1.XmlPullParser: java.lang.String getAttributeValue(int)>(i2)
+com.thoughtworks.xstream.io.xml.xppdom.Xpp3DomBuilder.build : i0 = interfaceinvoke r5.<org.xmlpull.v1.XmlPullParser: int getEventType()>()
+com.thoughtworks.xstream.io.xml.xppdom.Xpp3DomBuilder.build : if i0 == 1 goto virtualinvoke r0.<java.io.Reader: void close()>()
+com.thoughtworks.xstream.io.xml.xppdom.Xpp3DomBuilder.build : $r22 = interfaceinvoke r3.<java.util.List: java.lang.Object remove(int)>(i8)
+com.thoughtworks.xstream.io.xml.xppdom.Xpp3DomBuilder.build : $r15 = new java.lang.StringBuffer
+com.thoughtworks.xstream.io.xml.xppdom.Xpp3DomBuilder.build : $r20 = interfaceinvoke r2.<java.util.List: java.lang.Object remove(int)>(i8)
+com.thoughtworks.xstream.io.xml.xppdom.Xpp3DomBuilder.build : r9 = interfaceinvoke r5.<org.xmlpull.v1.XmlPullParser: java.lang.String getAttributeName(int)>(i2)
+com.thoughtworks.xstream.io.xml.xppdom.Xpp3DomBuilder.build : i1 = interfaceinvoke r2.<java.util.List: int size()>()
+com.thoughtworks.xstream.io.xml.xppdom.Xpp3DomBuilder.build : i4 = interfaceinvoke r5.<org.xmlpull.v1.XmlPullParser: int getAttributeCount()>()
+com.thoughtworks.xstream.io.xml.xppdom.Xpp3DomBuilder.build : goto [?= i0 = interfaceinvoke r5.<org.xmlpull.v1.XmlPullParser: int next()>()]
+com.thoughtworks.xstream.io.xml.xppdom.Xpp3DomBuilder.build : r4 = r21
+com.thoughtworks.xstream.io.xml.xppdom.Xpp3DomBuilder.build : if 0 != i8 goto i0 = interfaceinvoke r5.<org.xmlpull.v1.XmlPullParser: int next()>()
+com.thoughtworks.xstream.io.xml.xppdom.Xpp3DomBuilder.build : i0 = interfaceinvoke r5.<org.xmlpull.v1.XmlPullParser: int next()>()
+com.thoughtworks.xstream.io.xml.xppdom.Xpp3DomBuilder.build : $r12 = new org.xmlpull.mxp1.MXParser
+com.thoughtworks.xstream.io.xml.xppdom.Xpp3DomBuilder.build : r4 = null
+com.thoughtworks.xstream.io.xml.xppdom.Xpp3DomBuilder.build : $i3 = i1 - 1
+com.thoughtworks.xstream.io.xml.xppdom.Xpp3DomBuilder.build : $i7 = interfaceinvoke r2.<java.util.List: int size()>()
+com.thoughtworks.xstream.io.xml.xppdom.Xpp3DomBuilder.build : r6 = interfaceinvoke r5.<org.xmlpull.v1.XmlPullParser: java.lang.String getName()>()
+com.thoughtworks.xstream.io.xml.xppdom.Xpp3DomBuilder.build : if i0 != 2 goto (branch)
+com.thoughtworks.xstream.io.xml.xppdom.Xpp3DomBuilder.build : interfaceinvoke r2.<java.util.List: boolean add(java.lang.Object)>(r7)
+com.thoughtworks.xstream.io.xml.xppdom.Xpp3DomBuilder.build : $r13 = new com.thoughtworks.xstream.io.xml.xppdom.Xpp3Dom
+com.thoughtworks.xstream.io.xml.xppdom.Xpp3DomBuilder.build : virtualinvoke r8.<com.thoughtworks.xstream.io.xml.xppdom.Xpp3Dom: void addChild(com.thoughtworks.xstream.io.xml.xppdom.Xpp3Dom)>(r7)
+com.thoughtworks.xstream.io.xml.xppdom.Xpp3DomBuilder.build : $i9 = virtualinvoke r23.<java.lang.String: int length()>()
+com.thoughtworks.xstream.io.xml.xppdom.Xpp3DomBuilder.build : i2 = 0
+com.thoughtworks.xstream.io.xml.AbstractXmlDriver.xmlFriendlyReplacer : $r1 = r0.<com.thoughtworks.xstream.io.xml.AbstractXmlDriver: com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer replacer>
+com.thoughtworks.xstream.core.util.FastStack.push : $r4 = r0.<com.thoughtworks.xstream.core.util.FastStack: java.lang.Object[] stack>
+com.thoughtworks.xstream.core.util.FastStack.push : $i1 = r0.<com.thoughtworks.xstream.core.util.FastStack: int pointer>
+com.thoughtworks.xstream.core.util.FastStack.push : return r1
+com.thoughtworks.xstream.io.xml.xppdom.Xpp3Dom.setAttribute : $r3 = r0.<com.thoughtworks.xstream.io.xml.xppdom.Xpp3Dom: java.util.Map attributes>
+com.thoughtworks.xstream.io.xml.xppdom.Xpp3Dom.setAttribute : $r4 = new java.util.HashMap
+com.thoughtworks.xstream.io.xml.xppdom.Xpp3Dom.setAttribute : $r5 = r0.<com.thoughtworks.xstream.io.xml.xppdom.Xpp3Dom: java.util.Map attributes>
+com.thoughtworks.xstream.io.xml.XppDomDriver.createReader : $r2 = new com.thoughtworks.xstream.io.xml.XppDomReader
+com.thoughtworks.xstream.io.xml.xppdom.Xpp3Dom.setParent : r0.<com.thoughtworks.xstream.io.xml.xppdom.Xpp3Dom: com.thoughtworks.xstream.io.xml.xppdom.Xpp3Dom parent> = r1
+com.thoughtworks.xstream.io.xml.XppDomReader.getAttribute : $r1 = r0.<com.thoughtworks.xstream.io.xml.XppDomReader: com.thoughtworks.xstream.io.xml.xppdom.Xpp3Dom currentElement>
+com.thoughtworks.xstream.io.xml.AbstractXmlReader.unescapeXmlName : $r2 = r0.<com.thoughtworks.xstream.io.xml.AbstractXmlReader: com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer replacer>
+com.thoughtworks.xstream.io.xml.XppDomReader.getChild : $r1 = r0.<com.thoughtworks.xstream.io.xml.XppDomReader: com.thoughtworks.xstream.io.xml.xppdom.Xpp3Dom currentElement>
+com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer.stringFoundAt : $i1 = virtualinvoke r1.<java.lang.String: int length()>()
+com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer.stringFoundAt : return 0
+com.thoughtworks.xstream.io.xml.XppDomReader.reassignCurrentElement : $r2 = (com.thoughtworks.xstream.io.xml.xppdom.Xpp3Dom) r1
+com.thoughtworks.xstream.io.xml.xppdom.Xpp3Dom.addChild : $r2 = r0.<com.thoughtworks.xstream.io.xml.xppdom.Xpp3Dom: java.util.List childList>
+com.thoughtworks.xstream.io.xml.xppdom.Xpp3Dom.addChild : $r3 = r0.<com.thoughtworks.xstream.io.xml.xppdom.Xpp3Dom: java.util.Map childMap>
+com.thoughtworks.xstream.io.xml.xppdom.Xpp3Dom.addChild : virtualinvoke r1.<com.thoughtworks.xstream.io.xml.xppdom.Xpp3Dom: void setParent(com.thoughtworks.xstream.io.xml.xppdom.Xpp3Dom)>(r0)
+com.thoughtworks.xstream.io.xml.xppdom.Xpp3Dom.setValue : r0.<com.thoughtworks.xstream.io.xml.xppdom.Xpp3Dom: java.lang.String value> = r1
+com.thoughtworks.xstream.core.util.FastStack.peek : $i0 = r0.<com.thoughtworks.xstream.core.util.FastStack: int pointer>
+com.thoughtworks.xstream.io.xml.xppdom.Xpp3Dom.getAttribute : $r2 = r0.<com.thoughtworks.xstream.io.xml.xppdom.Xpp3Dom: java.util.Map attributes>
+com.thoughtworks.xstream.io.xml.AbstractDocumentReader.moveDown : $i0 = r1.<com.thoughtworks.xstream.io.xml.AbstractDocumentReader$Pointer: int v>
+com.thoughtworks.xstream.io.xml.AbstractDocumentReader.moveDown : $i1 = r1.<com.thoughtworks.xstream.io.xml.AbstractDocumentReader$Pointer: int v>
+com.thoughtworks.xstream.io.xml.AbstractDocumentReader.moveDown : $r5 = r0.<com.thoughtworks.xstream.io.xml.AbstractDocumentReader: com.thoughtworks.xstream.core.util.FastStack pointers>
+com.thoughtworks.xstream.io.xml.AbstractDocumentReader.moveDown : $r9 = r0.<com.thoughtworks.xstream.io.xml.AbstractDocumentReader: java.lang.Object current>
+com.thoughtworks.xstream.io.xml.AbstractDocumentReader.moveDown : $r3 = r0.<com.thoughtworks.xstream.io.xml.AbstractDocumentReader: com.thoughtworks.xstream.core.util.FastStack pointers>
+com.thoughtworks.xstream.io.xml.XppDomReader.getNodeName : $r1 = r0.<com.thoughtworks.xstream.io.xml.XppDomReader: com.thoughtworks.xstream.io.xml.xppdom.Xpp3Dom currentElement>
+com.thoughtworks.xstream.io.xml.xppdom.Xpp3Dom.getChild : $r1 = r0.<com.thoughtworks.xstream.io.xml.xppdom.Xpp3Dom: java.util.List childList>
+com.thoughtworks.xstream.io.xml.xppdom.Xpp3Dom.getName : $r1 = r0.<com.thoughtworks.xstream.io.xml.xppdom.Xpp3Dom: java.lang.String name>
+com.thoughtworks.xstream.io.xml.XppDomReader.getAttributeCount : $r1 = r0.<com.thoughtworks.xstream.io.xml.XppDomReader: com.thoughtworks.xstream.io.xml.xppdom.Xpp3Dom currentElement>
+com.thoughtworks.xstream.io.xml.XppDomReader.getAttributeName : $r1 = r0.<com.thoughtworks.xstream.io.xml.XppDomReader: com.thoughtworks.xstream.io.xml.xppdom.Xpp3Dom currentElement>
+com.thoughtworks.xstream.io.xml.xppdom.Xpp3Dom.getAttributeNames : $r1 = r0.<com.thoughtworks.xstream.io.xml.xppdom.Xpp3Dom: java.util.Map attributes>
+com.thoughtworks.xstream.io.xml.xppdom.Xpp3Dom.getAttributeNames : $r3 = r0.<com.thoughtworks.xstream.io.xml.xppdom.Xpp3Dom: java.util.Map attributes>
+com.thoughtworks.xstream.io.xml.xppdom.Xpp3Dom.getAttributeNames : $r2 = newarray (java.lang.String)[0]
+com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer.unescapeName : $r4 = r0.<com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer: java.lang.String underscoreReplacement>
+com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer.unescapeName : i1 = 0
+com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer.unescapeName : $r7 = r0.<com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer: java.lang.String dollarReplacement>
+com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer.unescapeName : c2 = virtualinvoke r1.<java.lang.String: char charAt(int)>(i1)
+com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer.unescapeName : i0 = virtualinvoke r1.<java.lang.String: int length()>()
+com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer.unescapeName : virtualinvoke r3.<java.lang.StringBuffer: java.lang.StringBuffer append(char)>(c2)
+com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer.unescapeName : $r2 = new java.lang.StringBuffer
+com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer.unescapeName : $r11 = virtualinvoke r3.<java.lang.StringBuffer: java.lang.String toString()>()

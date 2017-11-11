@@ -1,0 +1,13 @@
+com.thoughtworks.xstream.core.TreeMarshaller.getMapper : $r1 = r0.<com.thoughtworks.xstream.core.TreeMarshaller: com.thoughtworks.xstream.mapper.Mapper mapper>
+com.thoughtworks.xstream.mapper.XmlFriendlyMapper.mapNameToXML : $r2 = virtualinvoke r0.<com.thoughtworks.xstream.mapper.XmlFriendlyMapper: java.lang.String escapeFieldName(java.lang.String)>(r1)
+com.thoughtworks.xstream.mapper.AbstractXmlFriendlyMapper.escapeFieldName : if c2 != 36 goto (branch)
+com.thoughtworks.xstream.mapper.AbstractXmlFriendlyMapper.escapeFieldName : i1 = 0
+com.thoughtworks.xstream.mapper.AbstractXmlFriendlyMapper.escapeFieldName : $r9 = virtualinvoke r3.<java.lang.StringBuffer: java.lang.String toString()>()
+com.thoughtworks.xstream.mapper.AbstractXmlFriendlyMapper.escapeFieldName : c2 = virtualinvoke r1.<java.lang.String: char charAt(int)>(i1)
+com.thoughtworks.xstream.mapper.AbstractXmlFriendlyMapper.escapeFieldName : i0 = virtualinvoke r1.<java.lang.String: int length()>()
+com.thoughtworks.xstream.mapper.AbstractXmlFriendlyMapper.escapeFieldName : virtualinvoke r3.<java.lang.StringBuffer: java.lang.StringBuffer append(char)>(c2)
+com.thoughtworks.xstream.mapper.AbstractXmlFriendlyMapper.escapeFieldName : $r2 = new java.lang.StringBuffer
+com.thoughtworks.xstream.mapper.AbstractXmlFriendlyMapper.escapeFieldName : if c2 != 95 goto virtualinvoke r3.<java.lang.StringBuffer: java.lang.StringBuffer append(char)>(c2)
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.underlyingWriter : return r0
+com.thoughtworks.xstream.mapper.MapperWrapper.isImmutableValueType : $r2 = r0.<com.thoughtworks.xstream.mapper.MapperWrapper: com.thoughtworks.xstream.mapper.Mapper wrapped>
+com.thoughtworks.xstream.core.AbstractReferenceMarshaller.convert : $r6 = virtualinvoke r0.<com.thoughtworks.xstream.core.AbstractReferenceMarshaller: com.thoughtworks.xstream.mapper.Mapper getMapper()>()

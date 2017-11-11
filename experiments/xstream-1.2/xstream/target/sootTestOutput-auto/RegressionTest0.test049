@@ -1,0 +1,17 @@
+com.thoughtworks.xstream.core.JVM.isIBM : $r0 = staticinvoke <java.lang.System: java.lang.String getProperty(java.lang.String)>("java.vm.vendor")
+com.thoughtworks.xstream.core.JVM.isBEAWithUnsafeSupport : $r2 = staticinvoke <java.lang.System: java.lang.String getProperty(java.lang.String)>("java.vm.vendor")
+com.thoughtworks.xstream.core.JVM.isBEAWithUnsafeSupport : return 0
+com.thoughtworks.xstream.core.JVM.bestReflectionProvider : goto [?= $r16 = r0.<com.thoughtworks.xstream.core.JVM: com.thoughtworks.xstream.converters.reflection.ReflectionProvider reflectionProvider>]
+com.thoughtworks.xstream.core.JVM.bestReflectionProvider : $z0 = specialinvoke r0.<com.thoughtworks.xstream.core.JVM: boolean canUseSun14ReflectionProvider()>()
+com.thoughtworks.xstream.core.JVM.bestReflectionProvider : $r16 = r0.<com.thoughtworks.xstream.core.JVM: com.thoughtworks.xstream.converters.reflection.ReflectionProvider reflectionProvider>
+com.thoughtworks.xstream.core.JVM.bestReflectionProvider : $r6 = new com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider
+com.thoughtworks.xstream.core.JVM.bestReflectionProvider : $r2 = r0.<com.thoughtworks.xstream.core.JVM: com.thoughtworks.xstream.converters.reflection.ReflectionProvider reflectionProvider>
+com.thoughtworks.xstream.core.JVM.isBlackdown : $r0 = staticinvoke <java.lang.System: java.lang.String getProperty(java.lang.String)>("java.vm.vendor")
+com.thoughtworks.xstream.core.JVM.isApple : $r0 = staticinvoke <java.lang.System: java.lang.String getProperty(java.lang.String)>("java.vm.vendor")
+com.thoughtworks.xstream.XStream.setupMappers : $r1 = r0.<com.thoughtworks.xstream.XStream: com.thoughtworks.xstream.mapper.Mapper mapper>
+com.thoughtworks.xstream.core.util.CompositeClassLoader.add : $r2 = r0.<com.thoughtworks.xstream.core.util.CompositeClassLoader: java.util.List classLoaders>
+com.thoughtworks.xstream.core.util.CompositeClassLoader.add : if r1 == null goto return
+com.thoughtworks.xstream.core.JVM.isSun : $r0 = staticinvoke <java.lang.System: java.lang.String getProperty(java.lang.String)>("java.vm.vendor")
+com.thoughtworks.xstream.core.JVM.isHPUX : $r0 = staticinvoke <java.lang.System: java.lang.String getProperty(java.lang.String)>("java.vm.vendor")
+com.thoughtworks.xstream.core.JVM.canUseSun14ReflectionProvider : $z0 = staticinvoke <com.thoughtworks.xstream.core.JVM: boolean isSun()>()
+com.thoughtworks.xstream.mapper.MapperWrapper.lookupMapperOfType : $r2 = virtualinvoke r0.<java.lang.Object: java.lang.Class getClass()>()

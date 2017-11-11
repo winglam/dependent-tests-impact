@@ -1,0 +1,14 @@
+com.thoughtworks.xstream.io.xml.XomWriter.startNode : r0.<com.thoughtworks.xstream.io.xml.XomWriter: nu.xom.Element node> = r3
+com.thoughtworks.xstream.io.xml.XomWriter.startNode : $r5 = r0.<com.thoughtworks.xstream.io.xml.XomWriter: nu.xom.Element node>
+com.thoughtworks.xstream.io.xml.XomWriter.startNode : $r2 = new nu.xom.Element
+com.thoughtworks.xstream.io.xml.AbstractXmlWriter.escapeXmlName : $r2 = r0.<com.thoughtworks.xstream.io.xml.AbstractXmlWriter: com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer replacer>
+com.thoughtworks.xstream.io.xml.XomWriter.endNode : $r1 = r0.<com.thoughtworks.xstream.io.xml.XomWriter: nu.xom.Element node>
+com.thoughtworks.xstream.io.xml.XomWriter.setValue : $r2 = r0.<com.thoughtworks.xstream.io.xml.XomWriter: nu.xom.Element node>
+com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer.escapeName : if c2 != 36 goto (branch)
+com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer.escapeName : i1 = 0
+com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer.escapeName : $r9 = virtualinvoke r3.<java.lang.StringBuffer: java.lang.String toString()>()
+com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer.escapeName : c2 = virtualinvoke r1.<java.lang.String: char charAt(int)>(i1)
+com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer.escapeName : i0 = virtualinvoke r1.<java.lang.String: int length()>()
+com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer.escapeName : virtualinvoke r3.<java.lang.StringBuffer: java.lang.StringBuffer append(char)>(c2)
+com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer.escapeName : $r2 = new java.lang.StringBuffer
+com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer.escapeName : if c2 != 95 goto virtualinvoke r3.<java.lang.StringBuffer: java.lang.StringBuffer append(char)>(c2)

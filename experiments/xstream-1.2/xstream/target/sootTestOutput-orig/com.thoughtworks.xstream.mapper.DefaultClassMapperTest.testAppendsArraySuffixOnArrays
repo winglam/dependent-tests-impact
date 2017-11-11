@@ -1,0 +1,14 @@
+com.thoughtworks.xstream.mapper.DefaultMapper.serializedClass : $r2 = virtualinvoke r1.<java.lang.Class: java.lang.String getName()>()
+com.thoughtworks.xstream.mapper.MapperWrapper.serializedClass : $r2 = r0.<com.thoughtworks.xstream.mapper.MapperWrapper: com.thoughtworks.xstream.mapper.Mapper wrapped>
+com.thoughtworks.xstream.core.util.CompositeClassLoader.add : $r2 = r0.<com.thoughtworks.xstream.core.util.CompositeClassLoader: java.util.List classLoaders>
+com.thoughtworks.xstream.core.util.CompositeClassLoader.add : if r1 == null goto return
+com.thoughtworks.xstream.mapper.ArrayMapper.boxedTypeName : $r2 = <com.thoughtworks.xstream.mapper.ArrayMapper: java.util.Collection BOXED_TYPES>
+com.thoughtworks.xstream.mapper.ArrayMapper.serializedClass : if r4 != null goto $i0 = virtualinvoke r3.<java.lang.StringBuffer: int length()>()
+com.thoughtworks.xstream.mapper.ArrayMapper.serializedClass : r4 = specialinvoke r0.<com.thoughtworks.xstream.mapper.MapperWrapper: java.lang.String serializedClass(java.lang.Class)>(r1)
+com.thoughtworks.xstream.mapper.ArrayMapper.serializedClass : r4 = specialinvoke r0.<com.thoughtworks.xstream.mapper.ArrayMapper: java.lang.String boxedTypeName(java.lang.Class)>(r1)
+com.thoughtworks.xstream.mapper.ArrayMapper.serializedClass : virtualinvoke r3.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("-array")
+com.thoughtworks.xstream.mapper.ArrayMapper.serializedClass : $z0 = virtualinvoke r1.<java.lang.Class: boolean isArray()>()
+com.thoughtworks.xstream.mapper.ArrayMapper.serializedClass : r1 = virtualinvoke r1.<java.lang.Class: java.lang.Class getComponentType()>()
+com.thoughtworks.xstream.mapper.ArrayMapper.serializedClass : $r2 = new java.lang.StringBuffer
+com.thoughtworks.xstream.mapper.ArrayMapper.serializedClass : $i0 = virtualinvoke r3.<java.lang.StringBuffer: int length()>()
+com.thoughtworks.xstream.mapper.ArrayMapper.serializedClass : $r6 = new java.lang.StringBuilder

@@ -1,0 +1,93 @@
+com.thoughtworks.xstream.io.path.Path.equals : r2 = (com.thoughtworks.xstream.io.path.Path) r1
+com.thoughtworks.xstream.io.path.Path.equals : $r3 = r0.<com.thoughtworks.xstream.io.path.Path: java.lang.String[] chunks>
+com.thoughtworks.xstream.io.path.Path.equals : if r0 != r1 goto $z0 = r1 instanceof com.thoughtworks.xstream.io.path.Path
+com.thoughtworks.xstream.io.path.Path.equals : i0 = 0
+com.thoughtworks.xstream.io.path.Path.equals : return 1
+com.thoughtworks.xstream.io.path.Path.equals : $r6 = r0.<com.thoughtworks.xstream.io.path.Path: java.lang.String[] chunks>
+com.thoughtworks.xstream.io.path.Path.equals : $z0 = r1 instanceof com.thoughtworks.xstream.io.path.Path
+com.thoughtworks.xstream.core.util.FastStack.push : $r4 = r0.<com.thoughtworks.xstream.core.util.FastStack: java.lang.Object[] stack>
+com.thoughtworks.xstream.core.util.FastStack.push : $i1 = r0.<com.thoughtworks.xstream.core.util.FastStack: int pointer>
+com.thoughtworks.xstream.core.util.FastStack.push : return r1
+com.thoughtworks.xstream.io.path.PathTracker.getPath : r1[0] = ""
+com.thoughtworks.xstream.io.path.PathTracker.getPath : $i2 = r0.<com.thoughtworks.xstream.io.path.PathTracker: int pointer>
+com.thoughtworks.xstream.io.path.PathTracker.getPath : $r4 = r0.<com.thoughtworks.xstream.io.path.PathTracker: com.thoughtworks.xstream.io.path.Path currentPath>
+com.thoughtworks.xstream.io.path.PathTracker.getPath : i1 = virtualinvoke r2.<java.lang.Integer: int intValue()>()
+com.thoughtworks.xstream.io.path.PathTracker.getPath : $r22 = new com.thoughtworks.xstream.io.path.Path
+com.thoughtworks.xstream.io.path.PathTracker.getPath : if i1 <= 1 goto $i8 = i0 + 1
+com.thoughtworks.xstream.io.path.PathTracker.getPath : i0 = 0
+com.thoughtworks.xstream.io.path.PathTracker.getPath : $r23 = r0.<com.thoughtworks.xstream.io.path.PathTracker: com.thoughtworks.xstream.io.path.Path currentPath>
+com.thoughtworks.xstream.io.path.PathTracker.getPath : $i8 = i0 + 1
+com.thoughtworks.xstream.io.path.PathTracker.getPath : $r5 = r0.<com.thoughtworks.xstream.io.path.PathTracker: java.util.Map[] indexMapStack>
+com.thoughtworks.xstream.core.util.FastStack.pop : return r2
+com.thoughtworks.xstream.core.util.FastStack.pop : $r4 = r0.<com.thoughtworks.xstream.core.util.FastStack: java.lang.Object[] stack>
+com.thoughtworks.xstream.core.util.FastStack.pop : $r3 = r0.<com.thoughtworks.xstream.core.util.FastStack: java.lang.Object[] stack>
+com.thoughtworks.xstream.io.xml.AbstractXmlWriter.escapeXmlName : $r2 = r0.<com.thoughtworks.xstream.io.xml.AbstractXmlWriter: com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer replacer>
+com.thoughtworks.xstream.core.util.QuickWriter.write : $i1 = r0.<com.thoughtworks.xstream.core.util.QuickWriter: int pointer>
+com.thoughtworks.xstream.core.util.QuickWriter.write : $r5 = r0.<com.thoughtworks.xstream.core.util.QuickWriter: char[] buffer>
+com.thoughtworks.xstream.core.util.QuickWriter.write : i0 = virtualinvoke r1.<java.lang.String: int length()>()
+com.thoughtworks.xstream.core.util.QuickWriter.write : i0 = lengthof r1
+com.thoughtworks.xstream.core.util.QuickWriter.write : $r4 = r0.<com.thoughtworks.xstream.core.util.QuickWriter: char[] buffer>
+com.thoughtworks.xstream.core.util.QuickWriter.write : $r2 = r0.<com.thoughtworks.xstream.core.util.QuickWriter: char[] buffer>
+com.thoughtworks.xstream.core.util.QuickWriter.write : $i2 = r0.<com.thoughtworks.xstream.core.util.QuickWriter: int pointer>
+com.thoughtworks.xstream.core.util.QuickWriter.write : $i6 = r0.<com.thoughtworks.xstream.core.util.QuickWriter: int pointer>
+com.thoughtworks.xstream.io.path.PathTracker.pushElement : $r6 = r0.<com.thoughtworks.xstream.io.path.PathTracker: java.util.Map[] indexMapStack>
+com.thoughtworks.xstream.io.path.PathTracker.pushElement : $r3 = r0.<com.thoughtworks.xstream.io.path.PathTracker: java.lang.String[] pathStack>
+com.thoughtworks.xstream.io.path.PathTracker.pushElement : r0.<com.thoughtworks.xstream.io.path.PathTracker: com.thoughtworks.xstream.io.path.Path currentPath> = null
+com.thoughtworks.xstream.io.path.PathTracker.pushElement : $r4 = r0.<com.thoughtworks.xstream.io.path.PathTracker: java.util.Map[] indexMapStack>
+com.thoughtworks.xstream.io.path.PathTracker.pushElement : $z0 = interfaceinvoke r2.<java.util.Map: boolean containsKey(java.lang.Object)>(r1)
+com.thoughtworks.xstream.io.path.PathTracker.pushElement : $r5 = new java.util.HashMap
+com.thoughtworks.xstream.io.path.PathTracker.pushElement : $i10 = r0.<com.thoughtworks.xstream.io.path.PathTracker: int pointer>
+com.thoughtworks.xstream.io.path.PathTracker.pushElement : if r2 != null goto $z0 = interfaceinvoke r2.<java.util.Map: boolean containsKey(java.lang.Object)>(r1)
+com.thoughtworks.xstream.io.path.PathTracker.pushElement : $r11 = new java.lang.Integer
+com.thoughtworks.xstream.io.path.PathTracker.pushElement : $i0 = r0.<com.thoughtworks.xstream.io.path.PathTracker: int pointer>
+com.thoughtworks.xstream.core.util.FastStack.popSilently : $r2 = r0.<com.thoughtworks.xstream.core.util.FastStack: java.lang.Object[] stack>
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.finishTag : r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: boolean tagIsEmpty> = 0
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.finishTag : $z0 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: boolean tagInProgress>
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.finishTag : $r1 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: com.thoughtworks.xstream.core.util.QuickWriter writer>
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.finishTag : r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: boolean tagInProgress> = 0
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.finishTag : virtualinvoke r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: void endOfLine()>()
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.finishTag : r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: boolean readyForNewLine> = 0
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.finishTag : $z1 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: boolean readyForNewLine>
+com.thoughtworks.xstream.io.WriterWrapper.startNode : $r2 = r0.<com.thoughtworks.xstream.io.WriterWrapper: com.thoughtworks.xstream.io.HierarchicalStreamWriter wrapped>
+com.thoughtworks.xstream.io.path.PathTrackingWriter.startNode : $r2 = r0.<com.thoughtworks.xstream.io.path.PathTrackingWriter: com.thoughtworks.xstream.io.path.PathTracker pathTracker>
+com.thoughtworks.xstream.io.path.PathTrackingWriter.startNode : specialinvoke r0.<com.thoughtworks.xstream.io.WriterWrapper: void startNode(java.lang.String)>(r1)
+com.thoughtworks.xstream.io.path.PathTracker.popElement : r0.<com.thoughtworks.xstream.io.path.PathTracker: com.thoughtworks.xstream.io.path.Path currentPath> = null
+com.thoughtworks.xstream.io.path.PathTracker.popElement : $i1 = r0.<com.thoughtworks.xstream.io.path.PathTracker: int pointer>
+com.thoughtworks.xstream.io.path.PathTracker.popElement : $r1 = r0.<com.thoughtworks.xstream.io.path.PathTracker: java.util.Map[] indexMapStack>
+com.thoughtworks.xstream.io.WriterWrapper.endNode : $r1 = r0.<com.thoughtworks.xstream.io.WriterWrapper: com.thoughtworks.xstream.io.HierarchicalStreamWriter wrapped>
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.startNode : r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: boolean tagIsEmpty> = 0
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.startNode : r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: boolean tagInProgress> = 1
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.startNode : specialinvoke r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: void finishTag()>()
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.startNode : $r5 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: com.thoughtworks.xstream.core.util.FastStack elementStack>
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.startNode : $r3 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: com.thoughtworks.xstream.core.util.QuickWriter writer>
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.startNode : $i0 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: int depth>
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.startNode : r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: boolean readyForNewLine> = 1
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.startNode : $r4 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: com.thoughtworks.xstream.core.util.QuickWriter writer>
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.startNode : r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: boolean tagIsEmpty> = 1
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.startNode : r2 = virtualinvoke r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: java.lang.String escapeXmlName(java.lang.String)>(r1)
+com.thoughtworks.xstream.io.path.PathTrackingWriter.endNode : specialinvoke r0.<com.thoughtworks.xstream.io.WriterWrapper: void endNode()>()
+com.thoughtworks.xstream.io.path.PathTrackingWriter.endNode : $r1 = r0.<com.thoughtworks.xstream.io.path.PathTrackingWriter: com.thoughtworks.xstream.io.path.PathTracker pathTracker>
+com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer.escapeName : if c2 != 36 goto (branch)
+com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer.escapeName : i1 = 0
+com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer.escapeName : $r9 = virtualinvoke r3.<java.lang.StringBuffer: java.lang.String toString()>()
+com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer.escapeName : c2 = virtualinvoke r1.<java.lang.String: char charAt(int)>(i1)
+com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer.escapeName : i0 = virtualinvoke r1.<java.lang.String: int length()>()
+com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer.escapeName : virtualinvoke r3.<java.lang.StringBuffer: java.lang.StringBuffer append(char)>(c2)
+com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer.escapeName : $r2 = new java.lang.StringBuffer
+com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer.escapeName : if c2 != 95 goto virtualinvoke r3.<java.lang.StringBuffer: java.lang.StringBuffer append(char)>(c2)
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.endNode : $r2 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: com.thoughtworks.xstream.core.util.QuickWriter writer>
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.endNode : $r3 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: com.thoughtworks.xstream.core.util.FastStack elementStack>
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.endNode : specialinvoke r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: void finishTag()>()
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.endNode : $r6 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: com.thoughtworks.xstream.core.util.QuickWriter writer>
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.endNode : $r10 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: com.thoughtworks.xstream.core.util.QuickWriter writer>
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.endNode : $r11 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: com.thoughtworks.xstream.core.util.QuickWriter writer>
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.endNode : $i2 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: int depth>
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.endNode : $z0 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: boolean tagIsEmpty>
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.endNode : $i0 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: int depth>
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.endNode : r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: boolean readyForNewLine> = 0
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.endNode : r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: boolean readyForNewLine> = 1
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.endNode : $r4 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: com.thoughtworks.xstream.core.util.QuickWriter writer>
+com.thoughtworks.xstream.core.util.QuickWriter.flush : $r4 = r0.<com.thoughtworks.xstream.core.util.QuickWriter: java.io.Writer writer>
+com.thoughtworks.xstream.core.util.QuickWriter.flush : r0.<com.thoughtworks.xstream.core.util.QuickWriter: int pointer> = 0
+com.thoughtworks.xstream.core.util.QuickWriter.flush : $r2 = r0.<com.thoughtworks.xstream.core.util.QuickWriter: java.io.Writer writer>
+com.thoughtworks.xstream.core.util.QuickWriter.flush : goto [?= return]

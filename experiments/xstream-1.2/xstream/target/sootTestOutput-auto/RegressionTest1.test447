@@ -1,0 +1,46 @@
+com.thoughtworks.xstream.converters.javabean.BeanProperty.setGetterMethod : r0.<com.thoughtworks.xstream.converters.javabean.BeanProperty: java.lang.reflect.Method getter> = r1
+com.thoughtworks.xstream.io.json.JsonHierarchicalStreamDriver.createWriter : $r2 = new com.thoughtworks.xstream.io.json.JsonHierarchicalStreamWriter
+com.thoughtworks.xstream.converters.javabean.PropertyDictionary.property : r3 = specialinvoke r0.<com.thoughtworks.xstream.converters.javabean.PropertyDictionary: java.util.Map buildMap(java.lang.Class)>(r1)
+com.thoughtworks.xstream.converters.javabean.PropertyDictionary.property : $r6 = interfaceinvoke r3.<java.util.Map: java.lang.Object get(java.lang.Object)>(r2)
+com.thoughtworks.xstream.converters.javabean.PropertyDictionary.property : $r7 = new com.thoughtworks.xstream.converters.reflection.ObjectAccessException
+com.thoughtworks.xstream.converters.javabean.PropertyDictionary.property : if r4 != null goto return r4
+com.thoughtworks.xstream.converters.javabean.BeanProperty.isReadable : $r1 = r0.<com.thoughtworks.xstream.converters.javabean.BeanProperty: java.lang.reflect.Method getter>
+com.thoughtworks.xstream.converters.javabean.BeanProvider.writeProperty : $r6 = r0.<com.thoughtworks.xstream.converters.javabean.BeanProvider: com.thoughtworks.xstream.converters.javabean.PropertyDictionary propertyDictionary>
+com.thoughtworks.xstream.converters.javabean.PropertyDictionary.getBeanProperty : $r5 = new com.thoughtworks.xstream.converters.javabean.PropertyDictionary$PropertyKey
+com.thoughtworks.xstream.converters.javabean.PropertyDictionary.getBeanProperty : return r7
+com.thoughtworks.xstream.converters.javabean.PropertyDictionary.getBeanProperty : $r9 = new com.thoughtworks.xstream.converters.javabean.BeanProperty
+com.thoughtworks.xstream.converters.javabean.PropertyDictionary.getBeanProperty : interfaceinvoke r1.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>(r6, r7)
+com.thoughtworks.xstream.converters.javabean.PropertyDictionary.getBeanProperty : $r8 = interfaceinvoke r1.<java.util.Map: java.lang.Object get(java.lang.Object)>(r6)
+com.thoughtworks.xstream.converters.javabean.PropertyDictionary.getBeanProperty : if r7 != null goto return r7
+com.thoughtworks.xstream.converters.javabean.PropertyDictionary$PropertyKey.hashCode : $i2 = 29 * i0
+com.thoughtworks.xstream.converters.javabean.PropertyDictionary$PropertyKey.hashCode : $r1 = r0.<com.thoughtworks.xstream.converters.javabean.PropertyDictionary$PropertyKey: java.lang.String propertyName>
+com.thoughtworks.xstream.converters.javabean.PropertyDictionary$PropertyKey.hashCode : return i4
+com.thoughtworks.xstream.converters.javabean.PropertyDictionary.buildMap : $r16 = r5[i0]
+com.thoughtworks.xstream.converters.javabean.PropertyDictionary.buildMap : r2 = virtualinvoke r1.<java.lang.Class: java.lang.String getName()>()
+com.thoughtworks.xstream.converters.javabean.PropertyDictionary.buildMap : $r18 = r5[i0]
+com.thoughtworks.xstream.converters.javabean.PropertyDictionary.buildMap : $r24 = r5[i0]
+com.thoughtworks.xstream.converters.javabean.PropertyDictionary.buildMap : r40 = interfaceinvoke r32.<java.util.List: java.util.Iterator iterator()>()
+com.thoughtworks.xstream.converters.javabean.PropertyDictionary.buildMap : r5 = virtualinvoke r1.<java.lang.Class: java.lang.reflect.Method[] getMethods()>()
+com.thoughtworks.xstream.converters.javabean.PropertyDictionary.buildMap : $r35 = interfaceinvoke r34.<java.util.Iterator: java.lang.Object next()>()
+com.thoughtworks.xstream.converters.javabean.PropertyDictionary.buildMap : $r12 = r0.<com.thoughtworks.xstream.converters.javabean.PropertyDictionary: java.util.Map keyedByPropertyNameCache>
+com.thoughtworks.xstream.converters.javabean.PropertyDictionary.buildMap : $r22 = virtualinvoke r6.<java.lang.String: java.lang.String substring(int)>(3)
+com.thoughtworks.xstream.converters.javabean.PropertyDictionary.buildMap : goto [?= $z8 = interfaceinvoke r34.<java.util.Iterator: boolean hasNext()>()]
+com.thoughtworks.xstream.converters.javabean.PropertyDictionary.buildMap : exitmonitor r3
+com.thoughtworks.xstream.converters.javabean.PropertyDictionary.buildMap : r10 = specialinvoke r0.<com.thoughtworks.xstream.converters.javabean.PropertyDictionary: com.thoughtworks.xstream.converters.javabean.BeanProperty getBeanProperty(java.util.Map,java.lang.Class,java.lang.String,java.lang.Class)>(r4, r1, r9, r8)
+com.thoughtworks.xstream.converters.javabean.PropertyDictionary.buildMap : $r14 = r0.<com.thoughtworks.xstream.converters.javabean.PropertyDictionary: java.util.Map keyedByPropertyNameCache>
+com.thoughtworks.xstream.converters.javabean.PropertyDictionary.buildMap : $r13 = r0.<com.thoughtworks.xstream.converters.javabean.PropertyDictionary: java.util.Map keyedByPropertyNameCache>
+com.thoughtworks.xstream.converters.javabean.PropertyDictionary.buildMap : $r33 = interfaceinvoke r4.<java.util.Map: java.util.Collection values()>()
+com.thoughtworks.xstream.converters.javabean.PropertyDictionary.buildMap : $r38 = new com.thoughtworks.xstream.converters.javabean.PropertyDictionary$OrderRetainingMap
+com.thoughtworks.xstream.converters.javabean.PropertyDictionary.buildMap : $r31 = new java.util.ArrayList
+com.thoughtworks.xstream.converters.javabean.PropertyDictionary.buildMap : $r45 = r0.<com.thoughtworks.xstream.converters.javabean.PropertyDictionary: java.util.Map keyedByPropertyNameCache>
+com.thoughtworks.xstream.converters.javabean.PropertyDictionary.buildMap : $z4 = virtualinvoke r6.<java.lang.String: boolean startsWith(java.lang.String)>("get")
+com.thoughtworks.xstream.converters.javabean.PropertyDictionary.buildMap : $r20 = r5[i0]
+com.thoughtworks.xstream.converters.javabean.PropertyDictionary.buildMap : goto [?= i0 = i0 + 1]
+com.thoughtworks.xstream.converters.javabean.PropertyDictionary.buildMap : $r37 = new com.thoughtworks.xstream.converters.javabean.PropertyDictionary$BeanPropertyComparator
+com.thoughtworks.xstream.converters.javabean.PropertyDictionary.buildMap : $r15 = new java.util.HashMap
+com.thoughtworks.xstream.converters.javabean.PropertyDictionary.buildMap : $r19 = r5[i0]
+com.thoughtworks.xstream.converters.javabean.PropertyDictionary.buildMap : $z9 = virtualinvoke r36.<com.thoughtworks.xstream.converters.javabean.BeanProperty: boolean isReadable()>()
+com.thoughtworks.xstream.converters.javabean.PropertyDictionary.buildMap : $r48 = r0.<com.thoughtworks.xstream.converters.javabean.PropertyDictionary: java.util.Map keyedByPropertyNameCache>
+com.thoughtworks.xstream.converters.javabean.PropertyDictionary.buildMap : i0 = 0
+com.thoughtworks.xstream.converters.javabean.PropertyDictionary.buildMap : $z6 = virtualinvoke r6.<java.lang.String: boolean startsWith(java.lang.String)>("get")
+com.thoughtworks.xstream.converters.javabean.BeanProperty.isWritable : $r1 = r0.<com.thoughtworks.xstream.converters.javabean.BeanProperty: java.lang.reflect.Method setter>

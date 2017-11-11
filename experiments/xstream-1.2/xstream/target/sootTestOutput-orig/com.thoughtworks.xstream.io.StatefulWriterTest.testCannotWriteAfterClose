@@ -1,0 +1,18 @@
+com.thoughtworks.xstream.io.StatefulWriter.startNode : specialinvoke r0.<com.thoughtworks.xstream.io.StatefulWriter: void startNodeCommon()>()
+com.thoughtworks.xstream.io.StatefulWriter.close : $i4 = <com.thoughtworks.xstream.io.StatefulWriter: int STATE_CLOSED>
+com.thoughtworks.xstream.io.StatefulWriter.close : specialinvoke r0.<com.thoughtworks.xstream.io.WriterWrapper: void close()>()
+com.thoughtworks.xstream.io.StatefulWriter.close : $i1 = r0.<com.thoughtworks.xstream.io.StatefulWriter: int state>
+com.thoughtworks.xstream.core.BaseException.getCause : $r1 = r0.<com.thoughtworks.xstream.core.BaseException: java.lang.Throwable cause>
+com.thoughtworks.xstream.io.StatefulWriter.addAttribute : specialinvoke r0.<com.thoughtworks.xstream.io.StatefulWriter: void checkClosed()>()
+com.thoughtworks.xstream.io.StatefulWriter.checkClosed : $r2 = new com.thoughtworks.xstream.io.StreamException
+com.thoughtworks.xstream.io.StatefulWriter.checkClosed : $i1 = r0.<com.thoughtworks.xstream.io.StatefulWriter: int state>
+com.thoughtworks.xstream.core.util.QuickWriter.close : $r4 = r0.<com.thoughtworks.xstream.core.util.QuickWriter: java.io.Writer writer>
+com.thoughtworks.xstream.core.util.QuickWriter.close : r0.<com.thoughtworks.xstream.core.util.QuickWriter: int pointer> = 0
+com.thoughtworks.xstream.core.util.QuickWriter.close : $r2 = r0.<com.thoughtworks.xstream.core.util.QuickWriter: java.io.Writer writer>
+com.thoughtworks.xstream.core.util.QuickWriter.close : goto [?= return]
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.close : $r1 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: com.thoughtworks.xstream.core.util.QuickWriter writer>
+com.thoughtworks.xstream.io.StatefulWriter.startNodeCommon : specialinvoke r0.<com.thoughtworks.xstream.io.StatefulWriter: void checkClosed()>()
+com.thoughtworks.xstream.io.WriterWrapper.close : $r1 = r0.<com.thoughtworks.xstream.io.WriterWrapper: com.thoughtworks.xstream.io.HierarchicalStreamWriter wrapped>
+com.thoughtworks.xstream.io.StatefulWriter.flush : specialinvoke r0.<com.thoughtworks.xstream.io.StatefulWriter: void checkClosed()>()
+com.thoughtworks.xstream.io.StatefulWriter.endNode : specialinvoke r0.<com.thoughtworks.xstream.io.StatefulWriter: void checkClosed()>()
+com.thoughtworks.xstream.io.StatefulWriter.setValue : specialinvoke r0.<com.thoughtworks.xstream.io.StatefulWriter: void checkClosed()>()

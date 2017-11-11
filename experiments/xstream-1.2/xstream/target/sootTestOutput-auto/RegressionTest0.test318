@@ -1,0 +1,354 @@
+com.thoughtworks.xstream.core.util.PrioritizedList$PrioritizedItemIterator.next : $r1 = r0.<com.thoughtworks.xstream.core.util.PrioritizedList$PrioritizedItemIterator: java.util.Iterator iterator>
+com.thoughtworks.xstream.core.JVM.isIBM : $r0 = staticinvoke <java.lang.System: java.lang.String getProperty(java.lang.String)>("java.vm.vendor")
+com.thoughtworks.xstream.converters.extended.JavaMethodConverter.canConvert : $z0 = virtualinvoke r1.<java.lang.Object: boolean equals(java.lang.Object)>(class "java/lang/reflect/Method")
+com.thoughtworks.xstream.converters.extended.ColorConverter.canConvert : $r2 = virtualinvoke r1.<java.lang.Class: java.lang.String getName()>()
+com.thoughtworks.xstream.io.xml.XppDriver.loadLibrary : $z0 = <com.thoughtworks.xstream.io.xml.XppDriver: boolean xppLibraryPresent>
+com.thoughtworks.xstream.converters.extended.SubjectConverter.canConvert : $z0 = virtualinvoke r1.<java.lang.Object: boolean equals(java.lang.Object)>(class "javax/security/auth/Subject")
+com.thoughtworks.xstream.converters.enums.EnumMapConverter.canConvert : if r1 != class "java/util/EnumMap" goto $z0 = 0
+com.thoughtworks.xstream.core.JVM.isBEAWithUnsafeSupport : $r2 = staticinvoke <java.lang.System: java.lang.String getProperty(java.lang.String)>("java.vm.vendor")
+com.thoughtworks.xstream.core.JVM.isBEAWithUnsafeSupport : return 0
+com.thoughtworks.xstream.mapper.ClassAliasingMapper.addTypeAlias : $r3 = r0.<com.thoughtworks.xstream.mapper.ClassAliasingMapper: java.util.Map nameToType>
+com.thoughtworks.xstream.mapper.ClassAliasingMapper.addTypeAlias : $r6 = r0.<com.thoughtworks.xstream.mapper.ClassAliasingMapper: java.util.Map typeToName>
+com.thoughtworks.xstream.converters.basic.CharConverter.canConvert : $r2 = <java.lang.Character: java.lang.Class TYPE>
+com.thoughtworks.xstream.io.xml.AbstractXmlDriver.xmlFriendlyReplacer : $r1 = r0.<com.thoughtworks.xstream.io.xml.AbstractXmlDriver: com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer replacer>
+com.thoughtworks.xstream.core.util.FastStack.size : $i0 = r0.<com.thoughtworks.xstream.core.util.FastStack: int pointer>
+com.thoughtworks.xstream.core.JVM.bestReflectionProvider : goto [?= $r16 = r0.<com.thoughtworks.xstream.core.JVM: com.thoughtworks.xstream.converters.reflection.ReflectionProvider reflectionProvider>]
+com.thoughtworks.xstream.core.JVM.bestReflectionProvider : $z0 = specialinvoke r0.<com.thoughtworks.xstream.core.JVM: boolean canUseSun14ReflectionProvider()>()
+com.thoughtworks.xstream.core.JVM.bestReflectionProvider : $r16 = r0.<com.thoughtworks.xstream.core.JVM: com.thoughtworks.xstream.converters.reflection.ReflectionProvider reflectionProvider>
+com.thoughtworks.xstream.core.JVM.bestReflectionProvider : $r6 = new com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider
+com.thoughtworks.xstream.core.JVM.bestReflectionProvider : $r2 = r0.<com.thoughtworks.xstream.core.JVM: com.thoughtworks.xstream.converters.reflection.ReflectionProvider reflectionProvider>
+com.thoughtworks.xstream.core.JVM.isBlackdown : $r0 = staticinvoke <java.lang.System: java.lang.String getProperty(java.lang.String)>("java.vm.vendor")
+com.thoughtworks.xstream.XStreamer.fromXML : r5 = interfaceinvoke r1.<com.thoughtworks.xstream.io.HierarchicalStreamDriver: com.thoughtworks.xstream.io.HierarchicalStreamReader createReader(java.io.Reader)>(r2)
+com.thoughtworks.xstream.XStreamer.fromXML : $r2 = new java.io.StringReader
+com.thoughtworks.xstream.XStreamer.fromXML : $r3 = new com.thoughtworks.xstream.XStream
+com.thoughtworks.xstream.XStreamer.fromXML : $r2 = new com.thoughtworks.xstream.io.xml.XppDriver
+com.thoughtworks.xstream.converters.reflection.ExternalizableConverter.canConvert : $r2 = class "java/io/Externalizable"
+com.thoughtworks.xstream.converters.reflection.SelfStreamingInstanceChecker.canConvert : $r2 = r0.<com.thoughtworks.xstream.converters.reflection.SelfStreamingInstanceChecker: java.lang.Object self>
+com.thoughtworks.xstream.converters.SingleValueConverterWrapper.canConvert : $r2 = r0.<com.thoughtworks.xstream.converters.SingleValueConverterWrapper: com.thoughtworks.xstream.converters.SingleValueConverter wrapped>
+com.thoughtworks.xstream.XStream.wrapMapper : return r1
+com.thoughtworks.xstream.converters.extended.TextAttributeConverter.canConvert : if r1 != class "java/awt/font/TextAttribute" goto $z0 = 0
+com.thoughtworks.xstream.converters.collections.MapConverter.canConvert : $z0 = virtualinvoke r1.<java.lang.Object: boolean equals(java.lang.Object)>(class "java/util/HashMap")
+com.thoughtworks.xstream.io.xml.AbstractPullReader.move : $r1 = specialinvoke r0.<com.thoughtworks.xstream.io.xml.AbstractPullReader: com.thoughtworks.xstream.io.xml.AbstractPullReader$Event readEvent()>()
+com.thoughtworks.xstream.converters.basic.IntConverter.canConvert : $r2 = <java.lang.Integer: java.lang.Class TYPE>
+com.thoughtworks.xstream.io.xml.AbstractPullReader.moveDown : $r2 = r0.<com.thoughtworks.xstream.io.xml.AbstractPullReader: com.thoughtworks.xstream.core.util.FastStack elementStack>
+com.thoughtworks.xstream.io.xml.AbstractPullReader.moveDown : specialinvoke r0.<com.thoughtworks.xstream.io.xml.AbstractPullReader: void move()>()
+com.thoughtworks.xstream.io.xml.AbstractPullReader.moveDown : $r1 = r0.<com.thoughtworks.xstream.io.xml.AbstractPullReader: com.thoughtworks.xstream.core.util.FastStack elementStack>
+com.thoughtworks.xstream.io.xml.AbstractPullReader.readEvent : $r15 = specialinvoke r0.<com.thoughtworks.xstream.io.xml.AbstractPullReader: com.thoughtworks.xstream.io.xml.AbstractPullReader$Event readRealEvent()>()
+com.thoughtworks.xstream.io.xml.AbstractPullReader.readEvent : $z0 = r0.<com.thoughtworks.xstream.io.xml.AbstractPullReader: boolean marked>
+com.thoughtworks.xstream.io.xml.AbstractPullReader.readEvent : $r11 = r0.<com.thoughtworks.xstream.io.xml.AbstractPullReader: com.thoughtworks.xstream.core.util.FastStack lookback>
+com.thoughtworks.xstream.mapper.DefaultMapper.defaultImplementationOf : return r1
+com.thoughtworks.xstream.converters.collections.ArrayConverter.canConvert : $z0 = virtualinvoke r1.<java.lang.Class: boolean isArray()>()
+com.thoughtworks.xstream.converters.extended.GregorianCalendarConverter.canConvert : $z0 = virtualinvoke r1.<java.lang.Object: boolean equals(java.lang.Object)>(class "java/util/GregorianCalendar")
+com.thoughtworks.xstream.XStream.registerConverter : $r3 = r0.<com.thoughtworks.xstream.XStream: com.thoughtworks.xstream.core.DefaultConverterLookup converterLookup>
+com.thoughtworks.xstream.XStream.registerConverter : $r2 = r0.<com.thoughtworks.xstream.XStream: com.thoughtworks.xstream.core.DefaultConverterLookup converterLookup>
+com.thoughtworks.xstream.converters.extended.RegexPatternConverter.canConvert : $z0 = virtualinvoke r1.<java.lang.Object: boolean equals(java.lang.Object)>(class "java/util/regex/Pattern")
+com.thoughtworks.xstream.mapper.MapperWrapper.defaultImplementationOf : $r2 = r0.<com.thoughtworks.xstream.mapper.MapperWrapper: com.thoughtworks.xstream.mapper.Mapper wrapped>
+com.thoughtworks.xstream.converters.basic.StringConverter.canConvert : $z0 = virtualinvoke r1.<java.lang.Object: boolean equals(java.lang.Object)>(class "java/lang/String")
+com.thoughtworks.xstream.XStream.setMode : goto [?= return]
+com.thoughtworks.xstream.XStream.setMode : $r3 = new com.thoughtworks.xstream.core.ReferenceByXPathMarshallingStrategy
+com.thoughtworks.xstream.XStream.setMode : tableswitch(i0) {     case 1001: goto $r1 = new com.thoughtworks.xstream.core.TreeMarshallingStrategy;     case 1002: goto $r2 = new com.thoughtworks.xstream.core.ReferenceByIdMarshallingStrategy;     case 1003: goto $r3 = new com.thoughtworks.xstream.core.ReferenceByXPathMarshallingStrategy;     case 1004: goto $r4 = new com.thoughtworks.xstream.core.ReferenceByXPathMarshallingStrategy;     default: goto $r5 = new java.lang.IllegalArgumentException; }
+com.thoughtworks.xstream.converters.collections.TreeMapConverter.canConvert : $z0 = virtualinvoke r1.<java.lang.Object: boolean equals(java.lang.Object)>(class "java/util/TreeMap")
+com.thoughtworks.xstream.core.util.Fields.find : return r2
+com.thoughtworks.xstream.core.util.Fields.find : virtualinvoke r2.<java.lang.reflect.Field: void setAccessible(boolean)>(1)
+com.thoughtworks.xstream.core.util.Fields.find : r2 = virtualinvoke r0.<java.lang.Class: java.lang.reflect.Field getDeclaredField(java.lang.String)>(r1)
+com.thoughtworks.xstream.mapper.DefaultImplementationsMapper.addDefaults : $r7 = <java.lang.Byte: java.lang.Class TYPE>
+com.thoughtworks.xstream.mapper.DefaultImplementationsMapper.addDefaults : $r3 = <java.lang.Integer: java.lang.Class TYPE>
+com.thoughtworks.xstream.mapper.DefaultImplementationsMapper.addDefaults : $r6 = <java.lang.Short: java.lang.Class TYPE>
+com.thoughtworks.xstream.mapper.DefaultImplementationsMapper.addDefaults : $r5 = <java.lang.Double: java.lang.Class TYPE>
+com.thoughtworks.xstream.mapper.DefaultImplementationsMapper.addDefaults : $r1 = <java.lang.Boolean: java.lang.Class TYPE>
+com.thoughtworks.xstream.mapper.DefaultImplementationsMapper.addDefaults : $r8 = <java.lang.Long: java.lang.Class TYPE>
+com.thoughtworks.xstream.mapper.DefaultImplementationsMapper.addDefaults : $r4 = <java.lang.Float: java.lang.Class TYPE>
+com.thoughtworks.xstream.mapper.DefaultImplementationsMapper.addDefaults : $r2 = <java.lang.Character: java.lang.Class TYPE>
+com.thoughtworks.xstream.mapper.DefaultImplementationsMapper.addDefaults : virtualinvoke r0.<com.thoughtworks.xstream.mapper.DefaultImplementationsMapper: void addDefaultImplementation(java.lang.Class,java.lang.Class)>(null, class "com/thoughtworks/xstream/mapper/Mapper$Null")
+com.thoughtworks.xstream.converters.basic.BigIntegerConverter.canConvert : $z0 = virtualinvoke r1.<java.lang.Object: boolean equals(java.lang.Object)>(class "java/math/BigInteger")
+com.thoughtworks.xstream.converters.basic.BigDecimalConverter.canConvert : $z0 = virtualinvoke r1.<java.lang.Object: boolean equals(java.lang.Object)>(class "java/math/BigDecimal")
+com.thoughtworks.xstream.core.JVM.isApple : $r0 = staticinvoke <java.lang.System: java.lang.String getProperty(java.lang.String)>("java.vm.vendor")
+com.thoughtworks.xstream.XStream.setupMappers : $r13 = r0.<com.thoughtworks.xstream.XStream: com.thoughtworks.xstream.mapper.Mapper mapper>
+com.thoughtworks.xstream.XStream.setupMappers : $r1 = r0.<com.thoughtworks.xstream.XStream: com.thoughtworks.xstream.mapper.Mapper mapper>
+com.thoughtworks.xstream.XStream.setupMappers : $r22 = r0.<com.thoughtworks.xstream.XStream: com.thoughtworks.xstream.mapper.AttributeMapper attributeMapper>
+com.thoughtworks.xstream.XStream.setupMappers : $r4 = r0.<com.thoughtworks.xstream.XStream: com.thoughtworks.xstream.mapper.Mapper mapper>
+com.thoughtworks.xstream.XStream.setupMappers : $r7 = r0.<com.thoughtworks.xstream.XStream: com.thoughtworks.xstream.mapper.Mapper mapper>
+com.thoughtworks.xstream.XStream.setupMappers : $r19 = r0.<com.thoughtworks.xstream.XStream: com.thoughtworks.xstream.mapper.Mapper mapper>
+com.thoughtworks.xstream.XStream.setupMappers : $r16 = r0.<com.thoughtworks.xstream.XStream: com.thoughtworks.xstream.mapper.Mapper mapper>
+com.thoughtworks.xstream.XStream.setupMappers : $r10 = r0.<com.thoughtworks.xstream.XStream: com.thoughtworks.xstream.mapper.Mapper mapper>
+com.thoughtworks.xstream.XStream.setupMappers : $r23 = r0.<com.thoughtworks.xstream.XStream: com.thoughtworks.xstream.mapper.AttributeMapper attributeMapper>
+com.thoughtworks.xstream.io.xml.AbstractPullReader.readRealEvent : $r1 = new com.thoughtworks.xstream.io.xml.AbstractPullReader$Event
+com.thoughtworks.xstream.io.xml.AbstractPullReader.readRealEvent : $i0 = virtualinvoke r0.<com.thoughtworks.xstream.io.xml.AbstractPullReader: int pullNextEvent()>()
+com.thoughtworks.xstream.converters.extended.JavaClassConverter.canConvert : $r2 = class "java/lang/Class"
+com.thoughtworks.xstream.converters.extended.SqlTimeConverter.canConvert : $z0 = virtualinvoke r1.<java.lang.Object: boolean equals(java.lang.Object)>(class "java/sql/Time")
+com.thoughtworks.xstream.core.util.CompositeClassLoader.add : $r2 = r0.<com.thoughtworks.xstream.core.util.CompositeClassLoader: java.util.List classLoaders>
+com.thoughtworks.xstream.core.util.CompositeClassLoader.add : if r1 == null goto return
+com.thoughtworks.xstream.converters.reflection.SerializableConverter.isSerializable : $r2 = class "java/io/Serializable"
+com.thoughtworks.xstream.XStream.setupConverters : $r62 = new com.thoughtworks.xstream.converters.extended.TextAttributeConverter
+com.thoughtworks.xstream.XStream.setupConverters : $r24 = new com.thoughtworks.xstream.converters.basic.LongConverter
+com.thoughtworks.xstream.XStream.setupConverters : $r49 = new com.thoughtworks.xstream.converters.extended.FileConverter
+com.thoughtworks.xstream.XStream.setupConverters : $r74 = newarray (java.lang.Class)[1]
+com.thoughtworks.xstream.XStream.setupConverters : $r45 = new com.thoughtworks.xstream.converters.collections.TreeSetConverter
+com.thoughtworks.xstream.XStream.setupConverters : $r4 = newarray (java.lang.Class)[3]
+com.thoughtworks.xstream.XStream.setupConverters : $r41 = new com.thoughtworks.xstream.converters.collections.MapConverter
+com.thoughtworks.xstream.XStream.setupConverters : $r70 = newarray (java.lang.Class)[1]
+com.thoughtworks.xstream.XStream.setupConverters : $r34 = new com.thoughtworks.xstream.converters.basic.BigIntegerConverter
+com.thoughtworks.xstream.XStream.setupConverters : $r53 = new com.thoughtworks.xstream.converters.extended.DynamicProxyConverter
+com.thoughtworks.xstream.XStream.setupConverters : $r51 = new com.thoughtworks.xstream.converters.extended.SqlTimeConverter
+com.thoughtworks.xstream.XStream.setupConverters : $r32 = new com.thoughtworks.xstream.converters.collections.BitSetConverter
+com.thoughtworks.xstream.XStream.setupConverters : $r48 = new com.thoughtworks.xstream.converters.extended.EncodedByteArrayConverter
+com.thoughtworks.xstream.XStream.setupConverters : $r26 = new com.thoughtworks.xstream.converters.basic.CharConverter
+com.thoughtworks.xstream.XStream.setupConverters : $r39 = new com.thoughtworks.xstream.converters.collections.CollectionConverter
+com.thoughtworks.xstream.XStream.setupConverters : $r33 = new com.thoughtworks.xstream.converters.basic.URLConverter
+com.thoughtworks.xstream.XStream.setupConverters : goto [?= $r15 = new com.thoughtworks.xstream.converters.reflection.SerializableConverter]
+com.thoughtworks.xstream.XStream.setupConverters : specialinvoke r0.<com.thoughtworks.xstream.XStream: void dynamicallyRegisterConverter(java.lang.String,int,java.lang.Class[],java.lang.Object[])>("com.thoughtworks.xstream.converters.enums.EnumConverter", 0, null, null)
+com.thoughtworks.xstream.XStream.setupConverters : $r36 = new com.thoughtworks.xstream.converters.collections.ArrayConverter
+com.thoughtworks.xstream.XStream.setupConverters : specialinvoke r0.<com.thoughtworks.xstream.XStream: void dynamicallyRegisterConverter(java.lang.String,int,java.lang.Class[],java.lang.Object[])>("com.thoughtworks.xstream.converters.extended.StackTraceElementConverter", 0, null, null)
+com.thoughtworks.xstream.XStream.setupConverters : $r31 = new com.thoughtworks.xstream.converters.basic.DateConverter
+com.thoughtworks.xstream.XStream.setupConverters : $r30 = new com.thoughtworks.xstream.converters.basic.StringBufferConverter
+com.thoughtworks.xstream.XStream.setupConverters : $r23 = new com.thoughtworks.xstream.converters.basic.DoubleConverter
+com.thoughtworks.xstream.XStream.setupConverters : $r56 = new com.thoughtworks.xstream.converters.extended.JavaClassConverter
+com.thoughtworks.xstream.XStream.setupConverters : $r82 = newarray (java.lang.Class)[2]
+com.thoughtworks.xstream.XStream.setupConverters : $r58 = new com.thoughtworks.xstream.converters.extended.JavaMethodConverter
+com.thoughtworks.xstream.XStream.setupConverters : specialinvoke r0.<com.thoughtworks.xstream.XStream: void dynamicallyRegisterConverter(java.lang.String,int,java.lang.Class[],java.lang.Object[])>("com.thoughtworks.xstream.converters.extended.CurrencyConverter", 0, null, null)
+com.thoughtworks.xstream.XStream.setupConverters : $r52 = new com.thoughtworks.xstream.converters.extended.SqlDateConverter
+com.thoughtworks.xstream.XStream.setupConverters : $r67 = newarray (java.lang.Class)[1]
+com.thoughtworks.xstream.XStream.setupConverters : $r29 = new com.thoughtworks.xstream.converters.basic.StringConverter
+com.thoughtworks.xstream.XStream.setupConverters : $r64 = new com.thoughtworks.xstream.converters.extended.GregorianCalendarConverter
+com.thoughtworks.xstream.XStream.setupConverters : $r15 = new com.thoughtworks.xstream.converters.reflection.SerializableConverter
+com.thoughtworks.xstream.XStream.setupConverters : $r80 = r0.<com.thoughtworks.xstream.XStream: com.thoughtworks.xstream.core.JVM jvm>
+com.thoughtworks.xstream.XStream.setupConverters : $r38 = new com.thoughtworks.xstream.converters.collections.CharArrayConverter
+com.thoughtworks.xstream.XStream.setupConverters : $r28 = new com.thoughtworks.xstream.converters.basic.ByteConverter
+com.thoughtworks.xstream.XStream.setupConverters : $r25 = new com.thoughtworks.xstream.converters.basic.ShortConverter
+com.thoughtworks.xstream.XStream.setupConverters : $r72 = newarray (java.lang.Class)[1]
+com.thoughtworks.xstream.XStream.setupConverters : $r21 = new com.thoughtworks.xstream.converters.basic.IntConverter
+com.thoughtworks.xstream.XStream.setupConverters : $r43 = new com.thoughtworks.xstream.converters.collections.TreeMapConverter
+com.thoughtworks.xstream.XStream.setupConverters : $r20 = new com.thoughtworks.xstream.converters.basic.NullConverter
+com.thoughtworks.xstream.XStream.setupConverters : $r65 = r0.<com.thoughtworks.xstream.XStream: com.thoughtworks.xstream.core.JVM jvm>
+com.thoughtworks.xstream.XStream.setupConverters : specialinvoke r0.<com.thoughtworks.xstream.XStream: void dynamicallyRegisterConverter(java.lang.String,int,java.lang.Class[],java.lang.Object[])>("com.thoughtworks.xstream.converters.extended.CharsetConverter", 0, null, null)
+com.thoughtworks.xstream.XStream.setupConverters : $z2 = staticinvoke <com.thoughtworks.xstream.core.JVM: boolean is15()>()
+com.thoughtworks.xstream.XStream.setupConverters : $r27 = new com.thoughtworks.xstream.converters.basic.BooleanConverter
+com.thoughtworks.xstream.XStream.setupConverters : $z0 = staticinvoke <com.thoughtworks.xstream.core.JVM: boolean is15()>()
+com.thoughtworks.xstream.XStream.setupConverters : $r18 = new com.thoughtworks.xstream.converters.reflection.ExternalizableConverter
+com.thoughtworks.xstream.XStream.setupConverters : $r77 = newarray (java.lang.Class)[1]
+com.thoughtworks.xstream.XStream.setupConverters : $r61 = new com.thoughtworks.xstream.converters.extended.ColorConverter
+com.thoughtworks.xstream.XStream.setupConverters : $r60 = new com.thoughtworks.xstream.converters.extended.FontConverter
+com.thoughtworks.xstream.XStream.setupConverters : $z1 = staticinvoke <com.thoughtworks.xstream.core.JVM: boolean is14()>()
+com.thoughtworks.xstream.XStream.setupConverters : $r10 = r0.<com.thoughtworks.xstream.XStream: com.thoughtworks.xstream.core.DefaultConverterLookup converterLookup>
+com.thoughtworks.xstream.XStream.setupConverters : $r86 = new com.thoughtworks.xstream.converters.reflection.SelfStreamingInstanceChecker
+com.thoughtworks.xstream.XStream.setupConverters : $r3 = r0.<com.thoughtworks.xstream.XStream: com.thoughtworks.xstream.core.JVM jvm>
+com.thoughtworks.xstream.XStream.setupConverters : $r22 = new com.thoughtworks.xstream.converters.basic.FloatConverter
+com.thoughtworks.xstream.XStream.setupConverters : $r63 = new com.thoughtworks.xstream.converters.extended.LocaleConverter
+com.thoughtworks.xstream.XStream.setupConverters : $r47 = new com.thoughtworks.xstream.converters.collections.PropertiesConverter
+com.thoughtworks.xstream.XStream.setupConverters : $r50 = new com.thoughtworks.xstream.converters.extended.SqlTimestampConverter
+com.thoughtworks.xstream.XStream.setupConverters : $r35 = new com.thoughtworks.xstream.converters.basic.BigDecimalConverter
+com.thoughtworks.xstream.converters.extended.CharsetConverter.canConvert : $r2 = class "java/nio/charset/Charset"
+com.thoughtworks.xstream.converters.reflection.CGLIBEnhancedConverter.canConvert : $z0 = staticinvoke <net.sf.cglib.proxy.Enhancer: boolean isEnhanced(java.lang.Class)>(r1)
+com.thoughtworks.xstream.XStream.aliasType : $r4 = r0.<com.thoughtworks.xstream.XStream: com.thoughtworks.xstream.mapper.ClassAliasingMapper classAliasingMapper>
+com.thoughtworks.xstream.XStream.aliasType : $r12 = r0.<com.thoughtworks.xstream.XStream: com.thoughtworks.xstream.mapper.ClassAliasingMapper classAliasingMapper>
+com.thoughtworks.xstream.core.JVM.isSun : $r0 = staticinvoke <java.lang.System: java.lang.String getProperty(java.lang.String)>("java.vm.vendor")
+com.thoughtworks.xstream.converters.extended.SqlTimestampConverter.canConvert : $z0 = virtualinvoke r1.<java.lang.Object: boolean equals(java.lang.Object)>(class "java/sql/Timestamp")
+com.thoughtworks.xstream.converters.extended.StackTraceElementConverter.canConvert : $r2 = class "java/lang/StackTraceElement"
+com.thoughtworks.xstream.XStream.addDefaultImplementation : $r12 = r0.<com.thoughtworks.xstream.XStream: com.thoughtworks.xstream.mapper.DefaultImplementationsMapper defaultImplementationsMapper>
+com.thoughtworks.xstream.XStream.addDefaultImplementation : $r4 = r0.<com.thoughtworks.xstream.XStream: com.thoughtworks.xstream.mapper.DefaultImplementationsMapper defaultImplementationsMapper>
+com.thoughtworks.xstream.converters.collections.PropertiesConverter.canConvert : if class "java/util/Properties" != r1 goto $z0 = 0
+com.thoughtworks.xstream.core.util.PrioritizedList.add : r0.<com.thoughtworks.xstream.core.util.PrioritizedList: int lowestPriority> = i0
+com.thoughtworks.xstream.core.util.PrioritizedList.add : $i1 = r0.<com.thoughtworks.xstream.core.util.PrioritizedList: int lowestPriority>
+com.thoughtworks.xstream.core.util.PrioritizedList.add : $r3 = r0.<com.thoughtworks.xstream.core.util.PrioritizedList: java.util.Set set>
+com.thoughtworks.xstream.converters.extended.FileConverter.canConvert : $z0 = virtualinvoke r1.<java.lang.Object: boolean equals(java.lang.Object)>(class "java/io/File")
+com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.newInstance : $r8 = r2[i0]
+com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.newInstance : $r6 = r2[i0]
+com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.newInstance : $r4 = r2[i0]
+com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.newInstance : i0 = 0
+com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.newInstance : r2 = virtualinvoke r1.<java.lang.Class: java.lang.reflect.Constructor[] getDeclaredConstructors()>()
+com.thoughtworks.xstream.converters.enums.EnumConverter.canConvert : $z0 = virtualinvoke r1.<java.lang.Class: boolean isEnum()>()
+com.thoughtworks.xstream.core.JVM.isHPUX : $r0 = staticinvoke <java.lang.System: java.lang.String getProperty(java.lang.String)>("java.vm.vendor")
+com.thoughtworks.xstream.converters.extended.EncodedByteArrayConverter.canConvert : $z0 = virtualinvoke r1.<java.lang.Class: boolean isArray()>()
+com.thoughtworks.xstream.mapper.DefaultImplementationsMapper.addDefaultImplementation : $r5 = r0.<com.thoughtworks.xstream.mapper.DefaultImplementationsMapper: java.util.Map implToType>
+com.thoughtworks.xstream.mapper.DefaultImplementationsMapper.addDefaultImplementation : $r3 = r0.<com.thoughtworks.xstream.mapper.DefaultImplementationsMapper: java.util.Map typeToImpl>
+com.thoughtworks.xstream.io.xml.XppReader.pullNextEvent : $r4 = new com.thoughtworks.xstream.io.StreamException
+com.thoughtworks.xstream.io.xml.XppReader.pullNextEvent : r1 = $r3
+com.thoughtworks.xstream.io.xml.XppReader.pullNextEvent : $r2 = r0.<com.thoughtworks.xstream.io.xml.XppReader: org.xmlpull.v1.XmlPullParser parser>
+com.thoughtworks.xstream.converters.extended.LocaleConverter.canConvert : $z0 = virtualinvoke r1.<java.lang.Object: boolean equals(java.lang.Object)>(class "java/util/Locale")
+com.thoughtworks.xstream.converters.basic.DoubleConverter.canConvert : $r2 = <java.lang.Double: java.lang.Class TYPE>
+com.thoughtworks.xstream.converters.extended.ThrowableConverter.canConvert : $r2 = class "java/lang/Throwable"
+com.thoughtworks.xstream.converters.basic.ByteConverter.canConvert : $r2 = <java.lang.Byte: java.lang.Class TYPE>
+com.thoughtworks.xstream.XStream.buildMapperDynamically : r5 = virtualinvoke r4.<java.lang.Class: java.lang.reflect.Constructor getConstructor(java.lang.Class[])>(r2)
+com.thoughtworks.xstream.XStream.buildMapperDynamically : $r8 = virtualinvoke r5.<java.lang.reflect.Constructor: java.lang.Object newInstance(java.lang.Object[])>(r3)
+com.thoughtworks.xstream.XStream.buildMapperDynamically : $r6 = r0.<com.thoughtworks.xstream.XStream: com.thoughtworks.xstream.core.util.ClassLoaderReference classLoaderReference>
+com.thoughtworks.xstream.core.util.FastStack.hasStuff : $i0 = r0.<com.thoughtworks.xstream.core.util.FastStack: int pointer>
+com.thoughtworks.xstream.XStream.setMarshallingStrategy : r0.<com.thoughtworks.xstream.XStream: com.thoughtworks.xstream.MarshallingStrategy marshallingStrategy> = r1
+com.thoughtworks.xstream.mapper.ClassAliasingMapper.addClassAlias : $r6 = r0.<com.thoughtworks.xstream.mapper.ClassAliasingMapper: java.util.Map classToName>
+com.thoughtworks.xstream.mapper.ClassAliasingMapper.addClassAlias : $r3 = r0.<com.thoughtworks.xstream.mapper.ClassAliasingMapper: java.util.Map nameToType>
+com.thoughtworks.xstream.XStream.addImmutableType : $r11 = r0.<com.thoughtworks.xstream.XStream: com.thoughtworks.xstream.mapper.ImmutableTypesMapper immutableTypesMapper>
+com.thoughtworks.xstream.XStream.addImmutableType : $r3 = r0.<com.thoughtworks.xstream.XStream: com.thoughtworks.xstream.mapper.ImmutableTypesMapper immutableTypesMapper>
+com.thoughtworks.xstream.io.xml.XppReader.createParser : $r1 = new org.xmlpull.mxp1.MXParser
+com.thoughtworks.xstream.converters.collections.CharArrayConverter.canConvert : $z0 = virtualinvoke r1.<java.lang.Class: boolean isArray()>()
+com.thoughtworks.xstream.converters.enums.EnumSetConverter.canConvert : $r2 = class "java/util/EnumSet"
+com.thoughtworks.xstream.XStream.setupImmutableTypes : $r11 = r0.<com.thoughtworks.xstream.XStream: com.thoughtworks.xstream.core.JVM jvm>
+com.thoughtworks.xstream.XStream.setupImmutableTypes : $r10 = <java.lang.Short: java.lang.Class TYPE>
+com.thoughtworks.xstream.XStream.setupImmutableTypes : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void addImmutableType(java.lang.Class)>(class "java/io/File")
+com.thoughtworks.xstream.XStream.setupImmutableTypes : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void addImmutableType(java.lang.Class)>(class "java/lang/Short")
+com.thoughtworks.xstream.XStream.setupImmutableTypes : $r5 = <java.lang.Character: java.lang.Class TYPE>
+com.thoughtworks.xstream.XStream.setupImmutableTypes : $r1 = <java.lang.Boolean: java.lang.Class TYPE>
+com.thoughtworks.xstream.XStream.setupImmutableTypes : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void addImmutableType(java.lang.Class)>(class "java/net/URL")
+com.thoughtworks.xstream.XStream.setupImmutableTypes : $r8 = <java.lang.Integer: java.lang.Class TYPE>
+com.thoughtworks.xstream.XStream.setupImmutableTypes : $r9 = <java.lang.Long: java.lang.Class TYPE>
+com.thoughtworks.xstream.XStream.setupImmutableTypes : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void addImmutableType(java.lang.Class)>(class "java/lang/Byte")
+com.thoughtworks.xstream.XStream.setupImmutableTypes : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void addImmutableType(java.lang.Class)>(class "java/math/BigDecimal")
+com.thoughtworks.xstream.XStream.setupImmutableTypes : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void addImmutableType(java.lang.Class)>(r2)
+com.thoughtworks.xstream.XStream.setupImmutableTypes : $r3 = r0.<com.thoughtworks.xstream.XStream: com.thoughtworks.xstream.mapper.ImmutableTypesMapper immutableTypesMapper>
+com.thoughtworks.xstream.XStream.setupImmutableTypes : $r4 = <java.lang.Byte: java.lang.Class TYPE>
+com.thoughtworks.xstream.XStream.setupImmutableTypes : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void addImmutableType(java.lang.Class)>(class "java/lang/Integer")
+com.thoughtworks.xstream.XStream.setupImmutableTypes : $r6 = <java.lang.Double: java.lang.Class TYPE>
+com.thoughtworks.xstream.XStream.setupImmutableTypes : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void addImmutableType(java.lang.Class)>(class "java/lang/Character")
+com.thoughtworks.xstream.XStream.setupImmutableTypes : $r7 = <java.lang.Float: java.lang.Class TYPE>
+com.thoughtworks.xstream.XStream.setupImmutableTypes : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void addImmutableType(java.lang.Class)>(class "java/math/BigInteger")
+com.thoughtworks.xstream.XStream.setupImmutableTypes : $z0 = staticinvoke <com.thoughtworks.xstream.core.JVM: boolean is14()>()
+com.thoughtworks.xstream.XStream.setupImmutableTypes : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void addImmutableType(java.lang.Class)>(class "java/lang/Class")
+com.thoughtworks.xstream.XStream.setupImmutableTypes : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void addImmutableType(java.lang.Class)>(class "java/awt/font/TextAttribute")
+com.thoughtworks.xstream.XStream.setupImmutableTypes : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void addImmutableType(java.lang.Class)>(class "java/lang/Double")
+com.thoughtworks.xstream.XStream.setupImmutableTypes : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void addImmutableType(java.lang.Class)>(class "java/lang/Float")
+com.thoughtworks.xstream.XStream.setupImmutableTypes : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void addImmutableType(java.lang.Class)>(class "java/lang/String")
+com.thoughtworks.xstream.XStream.setupImmutableTypes : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void addImmutableType(java.lang.Class)>(class "java/lang/Boolean")
+com.thoughtworks.xstream.XStream.setupImmutableTypes : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void addImmutableType(java.lang.Class)>(class "java/lang/Long")
+com.thoughtworks.xstream.XStream.setupImmutableTypes : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void addImmutableType(java.lang.Class)>(class "com/thoughtworks/xstream/mapper/Mapper$Null")
+com.thoughtworks.xstream.core.util.PrioritizedList$PrioritizedItemIterator.hasNext : $r1 = r0.<com.thoughtworks.xstream.core.util.PrioritizedList$PrioritizedItemIterator: java.util.Iterator iterator>
+com.thoughtworks.xstream.core.util.ClassLoaderReference.getReference : $r1 = r0.<com.thoughtworks.xstream.core.util.ClassLoaderReference: java.lang.ClassLoader reference>
+com.thoughtworks.xstream.converters.extended.FontConverter.canConvert : $r2 = virtualinvoke r1.<java.lang.Class: java.lang.String getName()>()
+com.thoughtworks.xstream.converters.reflection.SerializableConverter.canConvert : $z0 = specialinvoke r0.<com.thoughtworks.xstream.converters.reflection.SerializableConverter: boolean isSerializable(java.lang.Class)>(r1)
+com.thoughtworks.xstream.converters.extended.CurrencyConverter.canConvert : $z0 = virtualinvoke r1.<java.lang.Object: boolean equals(java.lang.Object)>(class "java/util/Currency")
+com.thoughtworks.xstream.mapper.AttributeMapper.setConverterLookup : r0.<com.thoughtworks.xstream.mapper.AttributeMapper: com.thoughtworks.xstream.converters.ConverterLookup converterLookup> = r1
+com.thoughtworks.xstream.XStream.alias : $r4 = r0.<com.thoughtworks.xstream.XStream: com.thoughtworks.xstream.mapper.ClassAliasingMapper classAliasingMapper>
+com.thoughtworks.xstream.XStream.alias : $r12 = r0.<com.thoughtworks.xstream.XStream: com.thoughtworks.xstream.mapper.ClassAliasingMapper classAliasingMapper>
+com.thoughtworks.xstream.XStream.setupDefaultImplementations : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void addDefaultImplementation(java.lang.Class,java.lang.Class)>(class "java/util/GregorianCalendar", class "java/util/Calendar")
+com.thoughtworks.xstream.XStream.setupDefaultImplementations : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void addDefaultImplementation(java.lang.Class,java.lang.Class)>(class "java/util/HashSet", class "java/util/Set")
+com.thoughtworks.xstream.XStream.setupDefaultImplementations : $r1 = r0.<com.thoughtworks.xstream.XStream: com.thoughtworks.xstream.mapper.DefaultImplementationsMapper defaultImplementationsMapper>
+com.thoughtworks.xstream.XStream.setupDefaultImplementations : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void addDefaultImplementation(java.lang.Class,java.lang.Class)>(class "java/util/ArrayList", class "java/util/List")
+com.thoughtworks.xstream.XStream.setupDefaultImplementations : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void addDefaultImplementation(java.lang.Class,java.lang.Class)>(class "java/util/HashMap", class "java/util/Map")
+com.thoughtworks.xstream.converters.basic.NullConverter.canConvert : if r1 == null goto $z1 = 1
+com.thoughtworks.xstream.converters.basic.StringBufferConverter.canConvert : $z0 = virtualinvoke r1.<java.lang.Object: boolean equals(java.lang.Object)>(class "java/lang/StringBuffer")
+com.thoughtworks.xstream.converters.collections.TreeSetConverter.canConvert : $z0 = virtualinvoke r1.<java.lang.Object: boolean equals(java.lang.Object)>(class "java/util/TreeSet")
+com.thoughtworks.xstream.converters.collections.CollectionConverter.canConvert : $z0 = virtualinvoke r1.<java.lang.Object: boolean equals(java.lang.Object)>(class "java/util/ArrayList")
+com.thoughtworks.xstream.mapper.DefaultImplementationsMapper.defaultImplementationOf : $r6 = specialinvoke r0.<com.thoughtworks.xstream.mapper.MapperWrapper: java.lang.Class defaultImplementationOf(java.lang.Class)>(r1)
+com.thoughtworks.xstream.mapper.DefaultImplementationsMapper.defaultImplementationOf : $r2 = r0.<com.thoughtworks.xstream.mapper.DefaultImplementationsMapper: java.util.Map typeToImpl>
+com.thoughtworks.xstream.core.JVM.loadClass : return r2
+com.thoughtworks.xstream.core.JVM.loadClass : $r7 = r0.<com.thoughtworks.xstream.core.JVM: java.util.Map loaderCache>
+com.thoughtworks.xstream.core.JVM.loadClass : $r5 = virtualinvoke r0.<java.lang.Object: java.lang.Class getClass()>()
+com.thoughtworks.xstream.core.JVM.loadClass : if r2 != null goto return r2
+com.thoughtworks.xstream.core.JVM.loadClass : $r3 = r0.<com.thoughtworks.xstream.core.JVM: java.util.Map loaderCache>
+com.thoughtworks.xstream.core.util.PrioritizedList.iterator : $r1 = new com.thoughtworks.xstream.core.util.PrioritizedList$PrioritizedItemIterator
+com.thoughtworks.xstream.core.JVM.is14 : $f0 = <com.thoughtworks.xstream.core.JVM: float majorJavaVersion>
+com.thoughtworks.xstream.converters.extended.DynamicProxyConverter.canConvert : $z0 = virtualinvoke r1.<java.lang.Object: boolean equals(java.lang.Object)>(class "com/thoughtworks/xstream/mapper/DynamicProxyMapper$DynamicProxy")
+com.thoughtworks.xstream.core.JVM.is15 : $f0 = <com.thoughtworks.xstream.core.JVM: float majorJavaVersion>
+com.thoughtworks.xstream.converters.extended.SqlDateConverter.canConvert : $z0 = virtualinvoke r1.<java.lang.Object: boolean equals(java.lang.Object)>(class "java/sql/Date")
+com.thoughtworks.xstream.converters.basic.LongConverter.canConvert : $r2 = <java.lang.Long: java.lang.Class TYPE>
+com.thoughtworks.xstream.io.xml.XppDriver.createReader : specialinvoke r0.<com.thoughtworks.xstream.io.xml.XppDriver: void loadLibrary()>()
+com.thoughtworks.xstream.io.xml.XppDriver.createReader : $r2 = new com.thoughtworks.xstream.io.xml.XppReader
+com.thoughtworks.xstream.XStream.dynamicallyRegisterConverter : $z0 = r6 instanceof com.thoughtworks.xstream.converters.Converter
+com.thoughtworks.xstream.XStream.dynamicallyRegisterConverter : $r10 = (com.thoughtworks.xstream.converters.SingleValueConverter) r6
+com.thoughtworks.xstream.XStream.dynamicallyRegisterConverter : $r7 = r0.<com.thoughtworks.xstream.XStream: com.thoughtworks.xstream.core.util.ClassLoaderReference classLoaderReference>
+com.thoughtworks.xstream.XStream.dynamicallyRegisterConverter : r6 = virtualinvoke r5.<java.lang.reflect.Constructor: java.lang.Object newInstance(java.lang.Object[])>(r3)
+com.thoughtworks.xstream.XStream.dynamicallyRegisterConverter : r5 = virtualinvoke r4.<java.lang.Class: java.lang.reflect.Constructor getConstructor(java.lang.Class[])>(r2)
+com.thoughtworks.xstream.XStream.dynamicallyRegisterConverter : goto [?= return]
+com.thoughtworks.xstream.XStream.dynamicallyRegisterConverter : $z1 = r6 instanceof com.thoughtworks.xstream.converters.SingleValueConverter
+com.thoughtworks.xstream.XStream.dynamicallyRegisterConverter : $r9 = (com.thoughtworks.xstream.converters.Converter) r6
+com.thoughtworks.xstream.converters.basic.BooleanConverter.canConvert : $r2 = <java.lang.Boolean: java.lang.Class TYPE>
+com.thoughtworks.xstream.converters.basic.URLConverter.canConvert : $z0 = virtualinvoke r1.<java.lang.Object: boolean equals(java.lang.Object)>(class "java/net/URL")
+com.thoughtworks.xstream.converters.basic.ShortConverter.canConvert : $r2 = <java.lang.Short: java.lang.Class TYPE>
+com.thoughtworks.xstream.mapper.ImmutableTypesMapper.addImmutableType : $r2 = r0.<com.thoughtworks.xstream.mapper.ImmutableTypesMapper: java.util.Set immutableTypes>
+com.thoughtworks.xstream.converters.basic.DateConverter.canConvert : $z0 = virtualinvoke r1.<java.lang.Object: boolean equals(java.lang.Object)>(class "java/util/Date")
+com.thoughtworks.xstream.core.JVM.canUseSun14ReflectionProvider : $z0 = staticinvoke <com.thoughtworks.xstream.core.JVM: boolean isSun()>()
+com.thoughtworks.xstream.converters.collections.BitSetConverter.canConvert : $z0 = virtualinvoke r1.<java.lang.Object: boolean equals(java.lang.Object)>(class "java/util/BitSet")
+com.thoughtworks.xstream.XStream.setupAliases : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void alias(java.lang.String,java.lang.Class)>("short", class "java/lang/Short")
+com.thoughtworks.xstream.XStream.setupAliases : $r5 = r0.<com.thoughtworks.xstream.XStream: com.thoughtworks.xstream.core.JVM jvm>
+com.thoughtworks.xstream.XStream.setupAliases : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void alias(java.lang.String,java.lang.Class)>("sql-date", class "java/sql/Date")
+com.thoughtworks.xstream.XStream.setupAliases : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void alias(java.lang.String,java.lang.Class)>("null", class "com/thoughtworks/xstream/mapper/Mapper$Null")
+com.thoughtworks.xstream.XStream.setupAliases : $r16 = r0.<com.thoughtworks.xstream.XStream: com.thoughtworks.xstream.core.JVM jvm>
+com.thoughtworks.xstream.XStream.setupAliases : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void alias(java.lang.String,java.lang.Class)>("object", class "java/lang/Object")
+com.thoughtworks.xstream.XStream.setupAliases : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void alias(java.lang.String,java.lang.Class)>("int", class "java/lang/Integer")
+com.thoughtworks.xstream.XStream.setupAliases : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void alias(java.lang.String,java.lang.Class)>("awt-text-attribute", class "java/awt/font/TextAttribute")
+com.thoughtworks.xstream.XStream.setupAliases : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void alias(java.lang.String,java.lang.Class)>("url", class "java/net/URL")
+com.thoughtworks.xstream.XStream.setupAliases : $r10 = r0.<com.thoughtworks.xstream.XStream: com.thoughtworks.xstream.core.JVM jvm>
+com.thoughtworks.xstream.XStream.setupAliases : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void alias(java.lang.String,java.lang.Class)>("list", class "java/util/List")
+com.thoughtworks.xstream.XStream.setupAliases : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void alias(java.lang.String,java.lang.Class)>("auth-subject", r1)
+com.thoughtworks.xstream.XStream.setupAliases : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void alias(java.lang.String,java.lang.Class)>("java-class", class "java/lang/Class")
+com.thoughtworks.xstream.XStream.setupAliases : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void alias(java.lang.String,java.lang.Class)>("sql-timestamp", class "java/sql/Timestamp")
+com.thoughtworks.xstream.XStream.setupAliases : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void alias(java.lang.String,java.lang.Class)>("string-buffer", class "java/lang/StringBuffer")
+com.thoughtworks.xstream.XStream.setupAliases : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void alias(java.lang.String,java.lang.Class)>("map", class "java/util/Map")
+com.thoughtworks.xstream.XStream.setupAliases : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void alias(java.lang.String,java.lang.Class)>("constructor", class "java/lang/reflect/Constructor")
+com.thoughtworks.xstream.XStream.setupAliases : $r7 = r0.<com.thoughtworks.xstream.XStream: com.thoughtworks.xstream.core.JVM jvm>
+com.thoughtworks.xstream.XStream.setupAliases : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void alias(java.lang.String,java.lang.Class)>("boolean", class "java/lang/Boolean")
+com.thoughtworks.xstream.XStream.setupAliases : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void alias(java.lang.String,java.lang.Class)>("hashtable", class "java/util/Hashtable")
+com.thoughtworks.xstream.XStream.setupAliases : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void alias(java.lang.String,java.lang.Class)>("number", class "java/lang/Number")
+com.thoughtworks.xstream.XStream.setupAliases : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void alias(java.lang.String,java.lang.Class)>("bit-set", class "java/util/BitSet")
+com.thoughtworks.xstream.XStream.setupAliases : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void alias(java.lang.String,java.lang.Class)>("set", class "java/util/Set")
+com.thoughtworks.xstream.XStream.setupAliases : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void alias(java.lang.String,java.lang.Class)>("method", class "java/lang/reflect/Method")
+com.thoughtworks.xstream.XStream.setupAliases : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void alias(java.lang.String,java.lang.Class)>("sql-time", class "java/sql/Time")
+com.thoughtworks.xstream.XStream.setupAliases : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void alias(java.lang.String,java.lang.Class)>("date", class "java/util/Date")
+com.thoughtworks.xstream.XStream.setupAliases : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void alias(java.lang.String,java.lang.Class)>("file", class "java/io/File")
+com.thoughtworks.xstream.XStream.setupAliases : if r1 == null goto $z0 = staticinvoke <com.thoughtworks.xstream.core.JVM: boolean is14()>()
+com.thoughtworks.xstream.XStream.setupAliases : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void alias(java.lang.String,java.lang.Class)>("tree-set", class "java/util/TreeSet")
+com.thoughtworks.xstream.XStream.setupAliases : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void alias(java.lang.String,java.lang.Class)>("long", class "java/lang/Long")
+com.thoughtworks.xstream.XStream.setupAliases : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void alias(java.lang.String,java.lang.Class)>("big-int", class "java/math/BigInteger")
+com.thoughtworks.xstream.XStream.setupAliases : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void alias(java.lang.String,java.lang.Class)>("float", class "java/lang/Float")
+com.thoughtworks.xstream.XStream.setupAliases : $r8 = r0.<com.thoughtworks.xstream.XStream: com.thoughtworks.xstream.core.JVM jvm>
+com.thoughtworks.xstream.XStream.setupAliases : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void alias(java.lang.String,java.lang.Class)>("entry", class "java/util/Map$Entry")
+com.thoughtworks.xstream.XStream.setupAliases : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void alias(java.lang.String,java.lang.Class)>("char", class "java/lang/Character")
+com.thoughtworks.xstream.XStream.setupAliases : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void alias(java.lang.String,java.lang.Class)>("properties", class "java/util/Properties")
+com.thoughtworks.xstream.XStream.setupAliases : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void alias(java.lang.String,java.lang.Class)>("double", class "java/lang/Double")
+com.thoughtworks.xstream.XStream.setupAliases : $r20 = r0.<com.thoughtworks.xstream.XStream: com.thoughtworks.xstream.core.JVM jvm>
+com.thoughtworks.xstream.XStream.setupAliases : $z1 = staticinvoke <com.thoughtworks.xstream.core.JVM: boolean is15()>()
+com.thoughtworks.xstream.XStream.setupAliases : $z0 = staticinvoke <com.thoughtworks.xstream.core.JVM: boolean is14()>()
+com.thoughtworks.xstream.XStream.setupAliases : $r18 = r0.<com.thoughtworks.xstream.XStream: com.thoughtworks.xstream.core.JVM jvm>
+com.thoughtworks.xstream.XStream.setupAliases : $r2 = r0.<com.thoughtworks.xstream.XStream: com.thoughtworks.xstream.mapper.ClassAliasingMapper classAliasingMapper>
+com.thoughtworks.xstream.XStream.setupAliases : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void alias(java.lang.String,java.lang.Class)>("gregorian-calendar", class "java/util/Calendar")
+com.thoughtworks.xstream.XStream.setupAliases : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void alias(java.lang.String,java.lang.Class)>("big-decimal", class "java/math/BigDecimal")
+com.thoughtworks.xstream.XStream.setupAliases : $r12 = r0.<com.thoughtworks.xstream.XStream: com.thoughtworks.xstream.core.JVM jvm>
+com.thoughtworks.xstream.XStream.setupAliases : $r3 = r0.<com.thoughtworks.xstream.XStream: com.thoughtworks.xstream.core.JVM jvm>
+com.thoughtworks.xstream.XStream.setupAliases : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void alias(java.lang.String,java.lang.Class)>("vector", class "java/util/Vector")
+com.thoughtworks.xstream.XStream.setupAliases : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void alias(java.lang.String,java.lang.Class)>("locale", class "java/util/Locale")
+com.thoughtworks.xstream.XStream.setupAliases : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void alias(java.lang.String,java.lang.Class)>("string", class "java/lang/String")
+com.thoughtworks.xstream.XStream.setupAliases : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void alias(java.lang.String,java.lang.Class)>("linked-list", class "java/util/LinkedList")
+com.thoughtworks.xstream.XStream.setupAliases : $r14 = r0.<com.thoughtworks.xstream.XStream: com.thoughtworks.xstream.core.JVM jvm>
+com.thoughtworks.xstream.XStream.setupAliases : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void alias(java.lang.String,java.lang.Class)>("tree-map", class "java/util/TreeMap")
+com.thoughtworks.xstream.XStream.setupAliases : virtualinvoke r0.<com.thoughtworks.xstream.XStream: void alias(java.lang.String,java.lang.Class)>("byte", class "java/lang/Byte")
+com.thoughtworks.xstream.core.util.CompositeClassLoader.loadClass : $r5 = r0.<com.thoughtworks.xstream.core.util.CompositeClassLoader: java.util.List classLoaders>
+com.thoughtworks.xstream.core.util.CompositeClassLoader.loadClass : $r7 = virtualinvoke r3.<java.lang.ClassLoader: java.lang.Class loadClass(java.lang.String)>(r1)
+com.thoughtworks.xstream.core.util.CompositeClassLoader.loadClass : $r6 = interfaceinvoke r2.<java.util.Iterator: java.lang.Object next()>()
+com.thoughtworks.xstream.converters.basic.FloatConverter.canConvert : $r2 = <java.lang.Float: java.lang.Class TYPE>
+com.thoughtworks.xstream.XStream.buildMapper : $r28 = new com.thoughtworks.xstream.mapper.ImmutableTypesMapper
+com.thoughtworks.xstream.XStream.buildMapper : $z1 = staticinvoke <com.thoughtworks.xstream.core.JVM: boolean is15()>()
+com.thoughtworks.xstream.XStream.buildMapper : return r33
+com.thoughtworks.xstream.XStream.buildMapper : if z0 == 0 goto $r5 = new com.thoughtworks.xstream.mapper.ClassAliasingMapper
+com.thoughtworks.xstream.XStream.buildMapper : $r7 = new com.thoughtworks.xstream.mapper.FieldAliasingMapper
+com.thoughtworks.xstream.XStream.buildMapper : $r17 = newarray (java.lang.Class)[1]
+com.thoughtworks.xstream.XStream.buildMapper : $r21 = new com.thoughtworks.xstream.mapper.EnumMapper
+com.thoughtworks.xstream.XStream.buildMapper : $r13 = new com.thoughtworks.xstream.mapper.ImplicitCollectionMapper
+com.thoughtworks.xstream.XStream.buildMapper : $r26 = new com.thoughtworks.xstream.mapper.DefaultImplementationsMapper
+com.thoughtworks.xstream.XStream.buildMapper : $r11 = new com.thoughtworks.xstream.mapper.AttributeMapper
+com.thoughtworks.xstream.XStream.buildMapper : $r19 = new com.thoughtworks.xstream.mapper.DynamicProxyMapper
+com.thoughtworks.xstream.XStream.buildMapper : $r30 = (com.thoughtworks.xstream.mapper.MapperWrapper) r29
+com.thoughtworks.xstream.XStream.buildMapper : $r24 = new com.thoughtworks.xstream.mapper.ArrayMapper
+com.thoughtworks.xstream.XStream.buildMapper : $r15 = r0.<com.thoughtworks.xstream.XStream: com.thoughtworks.xstream.core.JVM jvm>
+com.thoughtworks.xstream.XStream.buildMapper : $r32 = new com.thoughtworks.xstream.mapper.CachingMapper
+com.thoughtworks.xstream.XStream.buildMapper : $r1 = new com.thoughtworks.xstream.mapper.DefaultMapper
+com.thoughtworks.xstream.XStream.buildMapper : $r9 = new com.thoughtworks.xstream.mapper.AttributeAliasingMapper
+com.thoughtworks.xstream.XStream.buildMapper : $r22 = new com.thoughtworks.xstream.mapper.OuterClassMapper
+com.thoughtworks.xstream.XStream.buildMapper : $r5 = new com.thoughtworks.xstream.mapper.ClassAliasingMapper
+com.thoughtworks.xstream.XStream.buildMapper : $r4 = new com.thoughtworks.xstream.mapper.XStream11XmlFriendlyMapper
+com.thoughtworks.xstream.core.util.PrioritizedList$PrioritizedItem.compareTo : $i5 = r2.<com.thoughtworks.xstream.core.util.PrioritizedList$PrioritizedItem: int id>
+com.thoughtworks.xstream.core.util.PrioritizedList$PrioritizedItem.compareTo : $i0 = r0.<com.thoughtworks.xstream.core.util.PrioritizedList$PrioritizedItem: int priority>
+com.thoughtworks.xstream.core.util.PrioritizedList$PrioritizedItem.compareTo : r2 = (com.thoughtworks.xstream.core.util.PrioritizedList$PrioritizedItem) r1
+com.thoughtworks.xstream.core.util.PrioritizedList$PrioritizedItem.compareTo : $i2 = r2.<com.thoughtworks.xstream.core.util.PrioritizedList$PrioritizedItem: int priority>
+com.thoughtworks.xstream.core.DefaultConverterLookup.lookupConverterForType : return r5
+com.thoughtworks.xstream.core.DefaultConverterLookup.lookupConverterForType : $r10 = interfaceinvoke r4.<java.util.Iterator: java.lang.Object next()>()
+com.thoughtworks.xstream.core.DefaultConverterLookup.lookupConverterForType : $r6 = r0.<com.thoughtworks.xstream.core.DefaultConverterLookup: java.util.Map typeToConverterMap>
+com.thoughtworks.xstream.core.DefaultConverterLookup.lookupConverterForType : $r8 = r0.<com.thoughtworks.xstream.core.DefaultConverterLookup: com.thoughtworks.xstream.mapper.Mapper mapper>
+com.thoughtworks.xstream.core.DefaultConverterLookup.lookupConverterForType : $z0 = interfaceinvoke r4.<java.util.Iterator: boolean hasNext()>()
+com.thoughtworks.xstream.core.DefaultConverterLookup.lookupConverterForType : $z1 = interfaceinvoke r5.<com.thoughtworks.xstream.converters.Converter: boolean canConvert(java.lang.Class)>(r3)
+com.thoughtworks.xstream.core.DefaultConverterLookup.lookupConverterForType : $r11 = r0.<com.thoughtworks.xstream.core.DefaultConverterLookup: java.util.Map typeToConverterMap>
+com.thoughtworks.xstream.core.DefaultConverterLookup.lookupConverterForType : $r9 = r0.<com.thoughtworks.xstream.core.DefaultConverterLookup: com.thoughtworks.xstream.core.util.PrioritizedList converters>
+com.thoughtworks.xstream.core.DefaultConverterLookup.lookupConverterForType : if r2 == null goto $r8 = r0.<com.thoughtworks.xstream.core.DefaultConverterLookup: com.thoughtworks.xstream.mapper.Mapper mapper>
+com.thoughtworks.xstream.core.DefaultConverterLookup.registerConverter : goto [?= $z0 = interfaceinvoke r2.<java.util.Iterator: boolean hasNext()>()]
+com.thoughtworks.xstream.core.DefaultConverterLookup.registerConverter : $z1 = interfaceinvoke r1.<com.thoughtworks.xstream.converters.Converter: boolean canConvert(java.lang.Class)>(r3)
+com.thoughtworks.xstream.core.DefaultConverterLookup.registerConverter : $r5 = r0.<com.thoughtworks.xstream.core.DefaultConverterLookup: java.util.Map typeToConverterMap>
+com.thoughtworks.xstream.core.DefaultConverterLookup.registerConverter : $r7 = interfaceinvoke r2.<java.util.Iterator: java.lang.Object next()>()
+com.thoughtworks.xstream.core.DefaultConverterLookup.registerConverter : $r4 = r0.<com.thoughtworks.xstream.core.DefaultConverterLookup: com.thoughtworks.xstream.core.util.PrioritizedList converters>
+com.thoughtworks.xstream.mapper.MapperWrapper.lookupMapperOfType : $r2 = virtualinvoke r0.<java.lang.Object: java.lang.Class getClass()>()
+com.thoughtworks.xstream.converters.reflection.ReflectionConverter.canConvert : return 1
