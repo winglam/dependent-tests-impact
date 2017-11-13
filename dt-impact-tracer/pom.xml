@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>edu.washington.cs.dt</groupId>
+        <artifactId>dt-impact</artifactId>
+        <version>1.0</version>
+    </parent>
+    <artifactId>dt-impact-tracer</artifactId>
+    <packaging>jar</packaging>
+
+    <name>dt-impact</name>
+
+    <dependencies>
+        <dependency>
+            <groupId>jasmin</groupId>
+            <artifactId>jasmin</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/lib/jasminclasses-2.5.0.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>polygot</groupId>
+            <artifactId>polyglot</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/lib/polyglot.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>soot</groupId>
+            <artifactId>soot</artifactId>
+            <version>3.0</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/lib/sootclasses-trunk-jar-with-dependencies.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest-all</artifactId>
+            <version>1.3</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.11</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>java_cup</groupId>
+            <artifactId>java_cup</artifactId>
+            <version>0.9e</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.javaparser</groupId>
+            <artifactId>javaparser-core</artifactId>
+            <version>2.4.0</version>
+        </dependency>
+        <dependency>
+            <groupId>edu.washington.cs.dt</groupId>
+            <artifactId>dtdetector</artifactId>
+            <version>1.0</version>
+        </dependency>
+    </dependencies>
+</project>
