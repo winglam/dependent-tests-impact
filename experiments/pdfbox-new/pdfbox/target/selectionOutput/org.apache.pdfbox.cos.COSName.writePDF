@@ -1,0 +1,45 @@
+org.apache.pdfbox.cos.COSName.writePDF : virtualinvoke r1.<java.io.OutputStream: void write(int)>(47) >>>>>>>> org.apache.pdfbox.cos.COSName.writePDF : $r4 = virtualinvoke r0.<org.apache.pdfbox.cos.COSName: java.lang.String getName()>()
+org.apache.pdfbox.cos.COSName.writePDF : $r4 = virtualinvoke r0.<org.apache.pdfbox.cos.COSName: java.lang.String getName()>() >>>>>>>> org.apache.pdfbox.cos.COSName.writePDF : $r5 = <org.apache.pdfbox.util.Charsets: java.nio.charset.Charset US_ASCII>
+org.apache.pdfbox.cos.COSName.writePDF : $r5 = <org.apache.pdfbox.util.Charsets: java.nio.charset.Charset US_ASCII> >>>>>>>> org.apache.pdfbox.cos.COSName.writePDF : r2 = virtualinvoke $r4.<java.lang.String: byte[] getBytes(java.nio.charset.Charset)>($r5)
+org.apache.pdfbox.cos.COSName.writePDF : r2 = virtualinvoke $r4.<java.lang.String: byte[] getBytes(java.nio.charset.Charset)>($r5) >>>>>>>> org.apache.pdfbox.cos.COSName.writePDF : r3 = r2
+org.apache.pdfbox.cos.COSName.writePDF : r3 = r2 >>>>>>>> org.apache.pdfbox.cos.COSName.writePDF : i0 = lengthof r3
+org.apache.pdfbox.cos.COSName.writePDF : i0 = lengthof r3 >>>>>>>> org.apache.pdfbox.cos.COSName.writePDF : i1 = 0
+org.apache.pdfbox.cos.COSName.writePDF : i1 = 0 >>>>>>>> org.apache.pdfbox.cos.COSName.writePDF : if i1 >= i0
+org.apache.pdfbox.cos.COSName.writePDF : if i1 >= i0 >>>>>>>> org.apache.pdfbox.cos.COSName.writePDF : b2 = r3[i1]
+org.apache.pdfbox.cos.COSName.writePDF : if i1 >= i0 >>>>>>>> org.apache.pdfbox.cos.COSName.writePDF : return
+org.apache.pdfbox.cos.COSName.writePDF : b2 = r3[i1] >>>>>>>> org.apache.pdfbox.cos.COSName.writePDF : s3 = b2 & 255
+org.apache.pdfbox.cos.COSName.writePDF : s3 = b2 & 255 >>>>>>>> org.apache.pdfbox.cos.COSName.writePDF : if s3 < 65
+org.apache.pdfbox.cos.COSName.writePDF : if s3 < 65 >>>>>>>> org.apache.pdfbox.cos.COSName.writePDF : if s3 <= 90
+org.apache.pdfbox.cos.COSName.writePDF : if s3 < 65 >>>>>>>> org.apache.pdfbox.cos.COSName.writePDF : if s3 < 97
+org.apache.pdfbox.cos.COSName.writePDF : if s3 < 97 >>>>>>>> org.apache.pdfbox.cos.COSName.writePDF : if s3 <= 122
+org.apache.pdfbox.cos.COSName.writePDF : if s3 < 97 >>>>>>>> org.apache.pdfbox.cos.COSName.writePDF : if s3 < 48
+org.apache.pdfbox.cos.COSName.writePDF : if s3 < 48 >>>>>>>> org.apache.pdfbox.cos.COSName.writePDF : if s3 <= 57
+org.apache.pdfbox.cos.COSName.writePDF : if s3 < 48 >>>>>>>> org.apache.pdfbox.cos.COSName.writePDF : if s3 == 43
+org.apache.pdfbox.cos.COSName.writePDF : if s3 == 43 >>>>>>>> org.apache.pdfbox.cos.COSName.writePDF : if s3 == 45
+org.apache.pdfbox.cos.COSName.writePDF : if s3 == 43 >>>>>>>> org.apache.pdfbox.cos.COSName.writePDF : virtualinvoke r1.<java.io.OutputStream: void write(int)>(s3)
+org.apache.pdfbox.cos.COSName.writePDF : virtualinvoke r1.<java.io.OutputStream: void write(int)>(s3) >>>>>>>> org.apache.pdfbox.cos.COSName.writePDF : goto [?= i1 = i1 + 1]
+org.apache.pdfbox.cos.COSName.writePDF : goto [?= i1 = i1 + 1] >>>>>>>> org.apache.pdfbox.cos.COSName.writePDF : i1 = i1 + 1
+org.apache.pdfbox.cos.COSName.writePDF : i1 = i1 + 1 >>>>>>>> org.apache.pdfbox.cos.COSName.writePDF : goto [?= (branch)]
+org.apache.pdfbox.cos.COSName.writePDF : goto [?= (branch)] >>>>>>>> org.apache.pdfbox.cos.COSName.writePDF : if i1 >= i0
+org.apache.pdfbox.cos.COSName.writePDF : if s3 == 45 >>>>>>>> org.apache.pdfbox.cos.COSName.writePDF : if s3 == 95
+org.apache.pdfbox.cos.COSName.writePDF : if s3 == 45 >>>>>>>> org.apache.pdfbox.cos.COSName.writePDF : virtualinvoke r1.<java.io.OutputStream: void write(int)>(s3)
+org.apache.pdfbox.cos.COSName.writePDF : if s3 == 95 >>>>>>>> org.apache.pdfbox.cos.COSName.writePDF : if s3 == 64
+org.apache.pdfbox.cos.COSName.writePDF : if s3 == 95 >>>>>>>> org.apache.pdfbox.cos.COSName.writePDF : virtualinvoke r1.<java.io.OutputStream: void write(int)>(s3)
+org.apache.pdfbox.cos.COSName.writePDF : if s3 == 64 >>>>>>>> org.apache.pdfbox.cos.COSName.writePDF : if s3 == 42
+org.apache.pdfbox.cos.COSName.writePDF : if s3 == 64 >>>>>>>> org.apache.pdfbox.cos.COSName.writePDF : virtualinvoke r1.<java.io.OutputStream: void write(int)>(s3)
+org.apache.pdfbox.cos.COSName.writePDF : if s3 == 42 >>>>>>>> org.apache.pdfbox.cos.COSName.writePDF : if s3 == 36
+org.apache.pdfbox.cos.COSName.writePDF : if s3 == 42 >>>>>>>> org.apache.pdfbox.cos.COSName.writePDF : virtualinvoke r1.<java.io.OutputStream: void write(int)>(s3)
+org.apache.pdfbox.cos.COSName.writePDF : if s3 == 36 >>>>>>>> org.apache.pdfbox.cos.COSName.writePDF : if s3 == 59
+org.apache.pdfbox.cos.COSName.writePDF : if s3 == 36 >>>>>>>> org.apache.pdfbox.cos.COSName.writePDF : virtualinvoke r1.<java.io.OutputStream: void write(int)>(s3)
+org.apache.pdfbox.cos.COSName.writePDF : if s3 == 59 >>>>>>>> org.apache.pdfbox.cos.COSName.writePDF : if s3 != 46
+org.apache.pdfbox.cos.COSName.writePDF : if s3 == 59 >>>>>>>> org.apache.pdfbox.cos.COSName.writePDF : virtualinvoke r1.<java.io.OutputStream: void write(int)>(s3)
+org.apache.pdfbox.cos.COSName.writePDF : if s3 != 46 >>>>>>>> org.apache.pdfbox.cos.COSName.writePDF : virtualinvoke r1.<java.io.OutputStream: void write(int)>(s3)
+org.apache.pdfbox.cos.COSName.writePDF : if s3 != 46 >>>>>>>> org.apache.pdfbox.cos.COSName.writePDF : virtualinvoke r1.<java.io.OutputStream: void write(int)>(35)
+org.apache.pdfbox.cos.COSName.writePDF : virtualinvoke r1.<java.io.OutputStream: void write(int)>(35) >>>>>>>> org.apache.pdfbox.cos.COSName.writePDF : staticinvoke <org.apache.pdfbox.util.Hex: void writeHexByte(byte,java.io.OutputStream)>(b2, r1)
+org.apache.pdfbox.cos.COSName.writePDF : staticinvoke <org.apache.pdfbox.util.Hex: void writeHexByte(byte,java.io.OutputStream)>(b2, r1) >>>>>>>> org.apache.pdfbox.cos.COSName.writePDF : i1 = i1 + 1
+org.apache.pdfbox.cos.COSName.writePDF : if s3 <= 57 >>>>>>>> org.apache.pdfbox.cos.COSName.writePDF : if s3 == 43
+org.apache.pdfbox.cos.COSName.writePDF : if s3 <= 57 >>>>>>>> org.apache.pdfbox.cos.COSName.writePDF : virtualinvoke r1.<java.io.OutputStream: void write(int)>(s3)
+org.apache.pdfbox.cos.COSName.writePDF : if s3 <= 122 >>>>>>>> org.apache.pdfbox.cos.COSName.writePDF : if s3 < 48
+org.apache.pdfbox.cos.COSName.writePDF : if s3 <= 122 >>>>>>>> org.apache.pdfbox.cos.COSName.writePDF : virtualinvoke r1.<java.io.OutputStream: void write(int)>(s3)
+org.apache.pdfbox.cos.COSName.writePDF : if s3 <= 90 >>>>>>>> org.apache.pdfbox.cos.COSName.writePDF : if s3 < 97
+org.apache.pdfbox.cos.COSName.writePDF : if s3 <= 90 >>>>>>>> org.apache.pdfbox.cos.COSName.writePDF : virtualinvoke r1.<java.io.OutputStream: void write(int)>(s3)

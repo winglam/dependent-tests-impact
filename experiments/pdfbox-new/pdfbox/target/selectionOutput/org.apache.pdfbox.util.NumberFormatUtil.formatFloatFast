@@ -1,0 +1,53 @@
+org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : $z0 = staticinvoke <java.lang.Float: boolean isNaN(float)>(f0) >>>>>>>> org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : if $z0 != 0
+org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : if $z0 != 0 >>>>>>>> org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : $z1 = staticinvoke <java.lang.Float: boolean isInfinite(float)>(f0)
+org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : if $z0 != 0 >>>>>>>> org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : return -1
+org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : $z1 = staticinvoke <java.lang.Float: boolean isInfinite(float)>(f0) >>>>>>>> org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : if $z1 != 0
+org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : if $z1 != 0 >>>>>>>> org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : $b4 = f0 cmpl 9.223372E18F
+org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : if $z1 != 0 >>>>>>>> org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : return -1
+org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : $b4 = f0 cmpl 9.223372E18F >>>>>>>> org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : if $b4 > 0
+org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : if $b4 > 0 >>>>>>>> org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : $b5 = f0 cmpg -9.223372E18F
+org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : if $b4 > 0 >>>>>>>> org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : return -1
+org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : $b5 = f0 cmpg -9.223372E18F >>>>>>>> org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : if $b5 <= 0
+org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : if $b5 <= 0 >>>>>>>> org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : if i0 <= 5
+org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : if $b5 <= 0 >>>>>>>> org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : return -1
+org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : if i0 <= 5 >>>>>>>> org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : return -1
+org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : if i0 <= 5 >>>>>>>> org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : i1 = 0
+org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : i1 = 0 >>>>>>>> org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : l2 = (long) f0
+org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : l2 = (long) f0 >>>>>>>> org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : $b6 = f0 cmpg 0.0F
+org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : $b6 = f0 cmpg 0.0F >>>>>>>> org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : if $b6 >= 0
+org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : if $b6 >= 0 >>>>>>>> org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : $i7 = i1
+org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : if $b6 >= 0 >>>>>>>> org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : $d0 = (double) f0
+org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : $d0 = (double) f0 >>>>>>>> org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : $d1 = staticinvoke <java.lang.Math: double abs(double)>($d0)
+org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : $d1 = staticinvoke <java.lang.Math: double abs(double)>($d0) >>>>>>>> org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : $d2 = (double) l2
+org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : $d2 = (double) l2 >>>>>>>> org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : $d3 = $d1 - $d2
+org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : $d3 = $d1 - $d2 >>>>>>>> org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : $r1 = <org.apache.pdfbox.util.NumberFormatUtil: long[] POWER_OF_TENS>
+org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : $r1 = <org.apache.pdfbox.util.NumberFormatUtil: long[] POWER_OF_TENS> >>>>>>>> org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : $l8 = $r1[i0]
+org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : $l8 = $r1[i0] >>>>>>>> org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : $d4 = (double) $l8
+org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : $d4 = (double) $l8 >>>>>>>> org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : $d5 = $d3 * $d4
+org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : $d5 = $d3 * $d4 >>>>>>>> org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : $d6 = $d5 + 0.5
+org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : $d6 = $d5 + 0.5 >>>>>>>> org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : l3 = (long) $d6
+org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : l3 = (long) $d6 >>>>>>>> org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : $r2 = <org.apache.pdfbox.util.NumberFormatUtil: long[] POWER_OF_TENS>
+org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : $r2 = <org.apache.pdfbox.util.NumberFormatUtil: long[] POWER_OF_TENS> >>>>>>>> org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : $l9 = $r2[i0]
+org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : $l9 = $r2[i0] >>>>>>>> org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : $b10 = l3 cmp $l9
+org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : $b10 = l3 cmp $l9 >>>>>>>> org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : if $b10 < 0
+org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : if $b10 < 0 >>>>>>>> org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : l2 = l2 + 1L
+org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : if $b10 < 0 >>>>>>>> org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : $i12 = staticinvoke <org.apache.pdfbox.util.NumberFormatUtil: int getExponent(long)>(l2)
+org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : $i12 = staticinvoke <org.apache.pdfbox.util.NumberFormatUtil: int getExponent(long)>(l2) >>>>>>>> org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : i13 = staticinvoke <org.apache.pdfbox.util.NumberFormatUtil: int formatPositiveNumber(long,int,boolean,byte[],int)>(l2, $i12, 0, r0, i1)
+org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : i13 = staticinvoke <org.apache.pdfbox.util.NumberFormatUtil: int formatPositiveNumber(long,int,boolean,byte[],int)>(l2, $i12, 0, r0, i1) >>>>>>>> org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : $b14 = l3 cmp 0L
+org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : $b14 = l3 cmp 0L >>>>>>>> org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : if $b14 <= 0
+org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : if $b14 <= 0 >>>>>>>> org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : if i0 <= 0
+org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : if $b14 <= 0 >>>>>>>> org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : return i13
+org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : if i0 <= 0 >>>>>>>> org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : i15 = i13 + 1
+org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : if i0 <= 0 >>>>>>>> org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : return i13
+org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : i15 = i13 + 1 >>>>>>>> org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : r0[i13] = 46
+org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : r0[i13] = 46 >>>>>>>> org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : $i16 = i0 - 1
+org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : $i16 = i0 - 1 >>>>>>>> org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : i13 = staticinvoke <org.apache.pdfbox.util.NumberFormatUtil: int formatPositiveNumber(long,int,boolean,byte[],int)>(l3, $i16, 1, r0, i15)
+org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : i13 = staticinvoke <org.apache.pdfbox.util.NumberFormatUtil: int formatPositiveNumber(long,int,boolean,byte[],int)>(l3, $i16, 1, r0, i15) >>>>>>>> org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : return i13
+org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : l2 = l2 + 1L >>>>>>>> org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : $r3 = <org.apache.pdfbox.util.NumberFormatUtil: long[] POWER_OF_TENS>
+org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : $r3 = <org.apache.pdfbox.util.NumberFormatUtil: long[] POWER_OF_TENS> >>>>>>>> org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : $l11 = $r3[i0]
+org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : $l11 = $r3[i0] >>>>>>>> org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : l3 = l3 - $l11
+org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : l3 = l3 - $l11 >>>>>>>> org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : $i12 = staticinvoke <org.apache.pdfbox.util.NumberFormatUtil: int getExponent(long)>(l2)
+org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : $i7 = i1 >>>>>>>> org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : i1 = i1 + 1
+org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : i1 = i1 + 1 >>>>>>>> org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : r0[$i7] = 45
+org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : r0[$i7] = 45 >>>>>>>> org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : l2 = neg l2
+org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : l2 = neg l2 >>>>>>>> org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : $d0 = (double) f0

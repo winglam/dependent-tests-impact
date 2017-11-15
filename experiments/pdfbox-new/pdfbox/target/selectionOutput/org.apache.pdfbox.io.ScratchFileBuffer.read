@@ -1,0 +1,41 @@
+org.apache.pdfbox.io.ScratchFileBuffer.read : specialinvoke r0.<org.apache.pdfbox.io.ScratchFileBuffer: void checkClosed()>() >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.read : $l6 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: long currentPageOffset>
+org.apache.pdfbox.io.ScratchFileBuffer.read : $l6 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: long currentPageOffset> >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.read : $i7 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: int positionInPage>
+org.apache.pdfbox.io.ScratchFileBuffer.read : $i7 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: int positionInPage> >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.read : $l8 = (long) $i7
+org.apache.pdfbox.io.ScratchFileBuffer.read : $l8 = (long) $i7 >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.read : $l9 = $l6 + $l8
+org.apache.pdfbox.io.ScratchFileBuffer.read : $l9 = $l6 + $l8 >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.read : $l10 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: long size>
+org.apache.pdfbox.io.ScratchFileBuffer.read : $l10 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: long size> >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.read : $b11 = $l9 cmp $l10
+org.apache.pdfbox.io.ScratchFileBuffer.read : $b11 = $l9 cmp $l10 >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.read : if $b11 < 0
+org.apache.pdfbox.io.ScratchFileBuffer.read : if $b11 < 0 >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.read : return -1
+org.apache.pdfbox.io.ScratchFileBuffer.read : if $b11 < 0 >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.read : $l12 = (long) i1
+org.apache.pdfbox.io.ScratchFileBuffer.read : $l12 = (long) i1 >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.read : $l13 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: long size>
+org.apache.pdfbox.io.ScratchFileBuffer.read : $l13 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: long size> >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.read : $l14 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: long currentPageOffset>
+org.apache.pdfbox.io.ScratchFileBuffer.read : $l14 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: long currentPageOffset> >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.read : $i15 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: int positionInPage>
+org.apache.pdfbox.io.ScratchFileBuffer.read : $i15 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: int positionInPage> >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.read : $l16 = (long) $i15
+org.apache.pdfbox.io.ScratchFileBuffer.read : $l16 = (long) $i15 >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.read : $l17 = $l14 + $l16
+org.apache.pdfbox.io.ScratchFileBuffer.read : $l17 = $l14 + $l16 >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.read : $l18 = $l13 - $l17
+org.apache.pdfbox.io.ScratchFileBuffer.read : $l18 = $l13 - $l17 >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.read : $l19 = staticinvoke <java.lang.Math: long min(long,long)>($l12, $l18)
+org.apache.pdfbox.io.ScratchFileBuffer.read : $l19 = staticinvoke <java.lang.Math: long min(long,long)>($l12, $l18) >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.read : i2 = (int) $l19
+org.apache.pdfbox.io.ScratchFileBuffer.read : i2 = (int) $l19 >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.read : i3 = 0
+org.apache.pdfbox.io.ScratchFileBuffer.read : i3 = 0 >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.read : i4 = i0
+org.apache.pdfbox.io.ScratchFileBuffer.read : i4 = i0 >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.read : if i2 <= 0
+org.apache.pdfbox.io.ScratchFileBuffer.read : if i2 <= 0 >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.read : $z0 = specialinvoke r0.<org.apache.pdfbox.io.ScratchFileBuffer: boolean ensureAvailableBytesInPage(boolean)>(0)
+org.apache.pdfbox.io.ScratchFileBuffer.read : if i2 <= 0 >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.read : return i3
+org.apache.pdfbox.io.ScratchFileBuffer.read : $z0 = specialinvoke r0.<org.apache.pdfbox.io.ScratchFileBuffer: boolean ensureAvailableBytesInPage(boolean)>(0) >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.read : if $z0 != 0
+org.apache.pdfbox.io.ScratchFileBuffer.read : if $z0 != 0 >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.read : $r2 = new java.io.IOException
+org.apache.pdfbox.io.ScratchFileBuffer.read : if $z0 != 0 >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.read : $i20 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: int pageSize>
+org.apache.pdfbox.io.ScratchFileBuffer.read : $i20 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: int pageSize> >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.read : $i21 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: int positionInPage>
+org.apache.pdfbox.io.ScratchFileBuffer.read : $i21 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: int positionInPage> >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.read : $i22 = $i20 - $i21
+org.apache.pdfbox.io.ScratchFileBuffer.read : $i22 = $i20 - $i21 >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.read : i5 = staticinvoke <java.lang.Math: int min(int,int)>(i2, $i22)
+org.apache.pdfbox.io.ScratchFileBuffer.read : i5 = staticinvoke <java.lang.Math: int min(int,int)>(i2, $i22) >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.read : $r3 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: byte[] currentPage>
+org.apache.pdfbox.io.ScratchFileBuffer.read : $r3 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: byte[] currentPage> >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.read : $i23 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: int positionInPage>
+org.apache.pdfbox.io.ScratchFileBuffer.read : $i23 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: int positionInPage> >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.read : staticinvoke <java.lang.System: void arraycopy(java.lang.Object,int,java.lang.Object,int,int)>($r3, $i23, r1, i4, i5)
+org.apache.pdfbox.io.ScratchFileBuffer.read : staticinvoke <java.lang.System: void arraycopy(java.lang.Object,int,java.lang.Object,int,int)>($r3, $i23, r1, i4, i5) >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.read : $i24 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: int positionInPage>
+org.apache.pdfbox.io.ScratchFileBuffer.read : $i24 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: int positionInPage> >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.read : $i25 = $i24 + i5
+org.apache.pdfbox.io.ScratchFileBuffer.read : $i25 = $i24 + i5 >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.read : r0.<org.apache.pdfbox.io.ScratchFileBuffer: int positionInPage> = $i25
+org.apache.pdfbox.io.ScratchFileBuffer.read : r0.<org.apache.pdfbox.io.ScratchFileBuffer: int positionInPage> = $i25 >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.read : i3 = i3 + i5
+org.apache.pdfbox.io.ScratchFileBuffer.read : i3 = i3 + i5 >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.read : i4 = i4 + i5
+org.apache.pdfbox.io.ScratchFileBuffer.read : i4 = i4 + i5 >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.read : i2 = i2 - i5
+org.apache.pdfbox.io.ScratchFileBuffer.read : i2 = i2 - i5 >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.read : goto [?= (branch)]
+org.apache.pdfbox.io.ScratchFileBuffer.read : goto [?= (branch)] >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.read : if i2 <= 0
+org.apache.pdfbox.io.ScratchFileBuffer.read : $r2 = new java.io.IOException >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.read : specialinvoke $r2.<java.io.IOException: void <init>(java.lang.String)>("Unexpectedly no bytes available for read in buffer.")
+org.apache.pdfbox.io.ScratchFileBuffer.read : specialinvoke $r2.<java.io.IOException: void <init>(java.lang.String)>("Unexpectedly no bytes available for read in buffer.") >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.read : throw $r2

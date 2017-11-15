@@ -1,0 +1,13 @@
+org.apache.pdfbox.text.TextPosition.getYDirAdj : f0 = virtualinvoke r0.<org.apache.pdfbox.text.TextPosition: float getDir()>() >>>>>>>> org.apache.pdfbox.text.TextPosition.getYDirAdj : $b0 = f0 cmpl 0.0F
+org.apache.pdfbox.text.TextPosition.getYDirAdj : $b0 = f0 cmpl 0.0F >>>>>>>> org.apache.pdfbox.text.TextPosition.getYDirAdj : if $b0 == 0
+org.apache.pdfbox.text.TextPosition.getYDirAdj : if $b0 == 0 >>>>>>>> org.apache.pdfbox.text.TextPosition.getYDirAdj : $b1 = f0 cmpl 180.0F
+org.apache.pdfbox.text.TextPosition.getYDirAdj : if $b0 == 0 >>>>>>>> org.apache.pdfbox.text.TextPosition.getYDirAdj : $f1 = r0.<org.apache.pdfbox.text.TextPosition: float pageHeight>
+org.apache.pdfbox.text.TextPosition.getYDirAdj : $f1 = r0.<org.apache.pdfbox.text.TextPosition: float pageHeight> >>>>>>>> org.apache.pdfbox.text.TextPosition.getYDirAdj : $f2 = specialinvoke r0.<org.apache.pdfbox.text.TextPosition: float getYLowerLeftRot(float)>(f0)
+org.apache.pdfbox.text.TextPosition.getYDirAdj : $f2 = specialinvoke r0.<org.apache.pdfbox.text.TextPosition: float getYLowerLeftRot(float)>(f0) >>>>>>>> org.apache.pdfbox.text.TextPosition.getYDirAdj : $f3 = $f1 - $f2
+org.apache.pdfbox.text.TextPosition.getYDirAdj : $f3 = $f1 - $f2 >>>>>>>> org.apache.pdfbox.text.TextPosition.getYDirAdj : return $f3
+org.apache.pdfbox.text.TextPosition.getYDirAdj : $b1 = f0 cmpl 180.0F >>>>>>>> org.apache.pdfbox.text.TextPosition.getYDirAdj : if $b1 != 0
+org.apache.pdfbox.text.TextPosition.getYDirAdj : if $b1 != 0 >>>>>>>> org.apache.pdfbox.text.TextPosition.getYDirAdj : $f1 = r0.<org.apache.pdfbox.text.TextPosition: float pageHeight>
+org.apache.pdfbox.text.TextPosition.getYDirAdj : if $b1 != 0 >>>>>>>> org.apache.pdfbox.text.TextPosition.getYDirAdj : $f4 = r0.<org.apache.pdfbox.text.TextPosition: float pageWidth>
+org.apache.pdfbox.text.TextPosition.getYDirAdj : $f4 = r0.<org.apache.pdfbox.text.TextPosition: float pageWidth> >>>>>>>> org.apache.pdfbox.text.TextPosition.getYDirAdj : $f5 = specialinvoke r0.<org.apache.pdfbox.text.TextPosition: float getYLowerLeftRot(float)>(f0)
+org.apache.pdfbox.text.TextPosition.getYDirAdj : $f5 = specialinvoke r0.<org.apache.pdfbox.text.TextPosition: float getYLowerLeftRot(float)>(f0) >>>>>>>> org.apache.pdfbox.text.TextPosition.getYDirAdj : $f6 = $f4 - $f5
+org.apache.pdfbox.text.TextPosition.getYDirAdj : $f6 = $f4 - $f5 >>>>>>>> org.apache.pdfbox.text.TextPosition.getYDirAdj : return $f6

@@ -1,0 +1,33 @@
+org.apache.pdfbox.io.ScratchFileBuffer.write : specialinvoke r0.<org.apache.pdfbox.io.ScratchFileBuffer: void checkClosed()>() >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.write : i2 = i1
+org.apache.pdfbox.io.ScratchFileBuffer.write : i2 = i1 >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.write : i3 = i0
+org.apache.pdfbox.io.ScratchFileBuffer.write : i3 = i0 >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.write : if i2 <= 0
+org.apache.pdfbox.io.ScratchFileBuffer.write : if i2 <= 0 >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.write : specialinvoke r0.<org.apache.pdfbox.io.ScratchFileBuffer: boolean ensureAvailableBytesInPage(boolean)>(1)
+org.apache.pdfbox.io.ScratchFileBuffer.write : if i2 <= 0 >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.write : $l11 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: long currentPageOffset>
+org.apache.pdfbox.io.ScratchFileBuffer.write : $l11 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: long currentPageOffset> >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.write : $i12 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: int positionInPage>
+org.apache.pdfbox.io.ScratchFileBuffer.write : $i12 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: int positionInPage> >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.write : $l13 = (long) $i12
+org.apache.pdfbox.io.ScratchFileBuffer.write : $l13 = (long) $i12 >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.write : $l14 = $l11 + $l13
+org.apache.pdfbox.io.ScratchFileBuffer.write : $l14 = $l11 + $l13 >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.write : $l15 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: long size>
+org.apache.pdfbox.io.ScratchFileBuffer.write : $l15 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: long size> >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.write : $b16 = $l14 cmp $l15
+org.apache.pdfbox.io.ScratchFileBuffer.write : $b16 = $l14 cmp $l15 >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.write : if $b16 <= 0
+org.apache.pdfbox.io.ScratchFileBuffer.write : if $b16 <= 0 >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.write : $l17 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: long currentPageOffset>
+org.apache.pdfbox.io.ScratchFileBuffer.write : if $b16 <= 0 >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.write : return
+org.apache.pdfbox.io.ScratchFileBuffer.write : $l17 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: long currentPageOffset> >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.write : $i18 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: int positionInPage>
+org.apache.pdfbox.io.ScratchFileBuffer.write : $i18 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: int positionInPage> >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.write : $l19 = (long) $i18
+org.apache.pdfbox.io.ScratchFileBuffer.write : $l19 = (long) $i18 >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.write : $l20 = $l17 + $l19
+org.apache.pdfbox.io.ScratchFileBuffer.write : $l20 = $l17 + $l19 >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.write : r0.<org.apache.pdfbox.io.ScratchFileBuffer: long size> = $l20
+org.apache.pdfbox.io.ScratchFileBuffer.write : r0.<org.apache.pdfbox.io.ScratchFileBuffer: long size> = $l20 >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.write : return
+org.apache.pdfbox.io.ScratchFileBuffer.write : specialinvoke r0.<org.apache.pdfbox.io.ScratchFileBuffer: boolean ensureAvailableBytesInPage(boolean)>(1) >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.write : $i5 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: int pageSize>
+org.apache.pdfbox.io.ScratchFileBuffer.write : $i5 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: int pageSize> >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.write : $i6 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: int positionInPage>
+org.apache.pdfbox.io.ScratchFileBuffer.write : $i6 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: int positionInPage> >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.write : $i7 = $i5 - $i6
+org.apache.pdfbox.io.ScratchFileBuffer.write : $i7 = $i5 - $i6 >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.write : i4 = staticinvoke <java.lang.Math: int min(int,int)>(i2, $i7)
+org.apache.pdfbox.io.ScratchFileBuffer.write : i4 = staticinvoke <java.lang.Math: int min(int,int)>(i2, $i7) >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.write : $r2 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: byte[] currentPage>
+org.apache.pdfbox.io.ScratchFileBuffer.write : $r2 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: byte[] currentPage> >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.write : $i8 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: int positionInPage>
+org.apache.pdfbox.io.ScratchFileBuffer.write : $i8 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: int positionInPage> >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.write : staticinvoke <java.lang.System: void arraycopy(java.lang.Object,int,java.lang.Object,int,int)>(r1, i3, $r2, $i8, i4)
+org.apache.pdfbox.io.ScratchFileBuffer.write : staticinvoke <java.lang.System: void arraycopy(java.lang.Object,int,java.lang.Object,int,int)>(r1, i3, $r2, $i8, i4) >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.write : $i9 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: int positionInPage>
+org.apache.pdfbox.io.ScratchFileBuffer.write : $i9 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: int positionInPage> >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.write : $i10 = $i9 + i4
+org.apache.pdfbox.io.ScratchFileBuffer.write : $i10 = $i9 + i4 >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.write : r0.<org.apache.pdfbox.io.ScratchFileBuffer: int positionInPage> = $i10
+org.apache.pdfbox.io.ScratchFileBuffer.write : r0.<org.apache.pdfbox.io.ScratchFileBuffer: int positionInPage> = $i10 >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.write : r0.<org.apache.pdfbox.io.ScratchFileBuffer: boolean currentPageContentChanged> = 1
+org.apache.pdfbox.io.ScratchFileBuffer.write : r0.<org.apache.pdfbox.io.ScratchFileBuffer: boolean currentPageContentChanged> = 1 >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.write : i3 = i3 + i4
+org.apache.pdfbox.io.ScratchFileBuffer.write : i3 = i3 + i4 >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.write : i2 = i2 - i4
+org.apache.pdfbox.io.ScratchFileBuffer.write : i2 = i2 - i4 >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.write : goto [?= (branch)]
+org.apache.pdfbox.io.ScratchFileBuffer.write : goto [?= (branch)] >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.write : if i2 <= 0

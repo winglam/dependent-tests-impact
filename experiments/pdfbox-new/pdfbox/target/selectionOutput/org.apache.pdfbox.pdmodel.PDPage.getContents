@@ -1,0 +1,44 @@
+org.apache.pdfbox.pdmodel.PDPage.getContents : $r8 = r0.<org.apache.pdfbox.pdmodel.PDPage: org.apache.pdfbox.cos.COSDictionary page> >>>>>>>> org.apache.pdfbox.pdmodel.PDPage.getContents : $r1 = <org.apache.pdfbox.cos.COSName: org.apache.pdfbox.cos.COSName CONTENTS>
+org.apache.pdfbox.pdmodel.PDPage.getContents : $r1 = <org.apache.pdfbox.cos.COSName: org.apache.pdfbox.cos.COSName CONTENTS> >>>>>>>> org.apache.pdfbox.pdmodel.PDPage.getContents : r2 = virtualinvoke $r8.<org.apache.pdfbox.cos.COSDictionary: org.apache.pdfbox.cos.COSBase getDictionaryObject(org.apache.pdfbox.cos.COSName)>($r1)
+org.apache.pdfbox.pdmodel.PDPage.getContents : r2 = virtualinvoke $r8.<org.apache.pdfbox.cos.COSDictionary: org.apache.pdfbox.cos.COSBase getDictionaryObject(org.apache.pdfbox.cos.COSName)>($r1) >>>>>>>> org.apache.pdfbox.pdmodel.PDPage.getContents : $z0 = r2 instanceof org.apache.pdfbox.cos.COSStream
+org.apache.pdfbox.pdmodel.PDPage.getContents : $z0 = r2 instanceof org.apache.pdfbox.cos.COSStream >>>>>>>> org.apache.pdfbox.pdmodel.PDPage.getContents : if $z0 == 0
+org.apache.pdfbox.pdmodel.PDPage.getContents : if $z0 == 0 >>>>>>>> org.apache.pdfbox.pdmodel.PDPage.getContents : $r9 = (org.apache.pdfbox.cos.COSStream) r2
+org.apache.pdfbox.pdmodel.PDPage.getContents : if $z0 == 0 >>>>>>>> org.apache.pdfbox.pdmodel.PDPage.getContents : $z1 = r2 instanceof org.apache.pdfbox.cos.COSArray
+org.apache.pdfbox.pdmodel.PDPage.getContents : $z1 = r2 instanceof org.apache.pdfbox.cos.COSArray >>>>>>>> org.apache.pdfbox.pdmodel.PDPage.getContents : if $z1 == 0
+org.apache.pdfbox.pdmodel.PDPage.getContents : if $z1 == 0 >>>>>>>> org.apache.pdfbox.pdmodel.PDPage.getContents : $r11 = (org.apache.pdfbox.cos.COSArray) r2
+org.apache.pdfbox.pdmodel.PDPage.getContents : if $z1 == 0 >>>>>>>> org.apache.pdfbox.pdmodel.PDPage.getContents : $r18 = new java.io.ByteArrayInputStream
+org.apache.pdfbox.pdmodel.PDPage.getContents : $r18 = new java.io.ByteArrayInputStream >>>>>>>> org.apache.pdfbox.pdmodel.PDPage.getContents : $r19 = newarray (byte)[0]
+org.apache.pdfbox.pdmodel.PDPage.getContents : $r19 = newarray (byte)[0] >>>>>>>> org.apache.pdfbox.pdmodel.PDPage.getContents : specialinvoke $r18.<java.io.ByteArrayInputStream: void <init>(byte[])>($r19)
+org.apache.pdfbox.pdmodel.PDPage.getContents : specialinvoke $r18.<java.io.ByteArrayInputStream: void <init>(byte[])>($r19) >>>>>>>> org.apache.pdfbox.pdmodel.PDPage.getContents : return $r18
+org.apache.pdfbox.pdmodel.PDPage.getContents : $r11 = (org.apache.pdfbox.cos.COSArray) r2 >>>>>>>> org.apache.pdfbox.pdmodel.PDPage.getContents : $i1 = virtualinvoke $r11.<org.apache.pdfbox.cos.COSArray: int size()>()
+org.apache.pdfbox.pdmodel.PDPage.getContents : $i1 = virtualinvoke $r11.<org.apache.pdfbox.cos.COSArray: int size()>() >>>>>>>> org.apache.pdfbox.pdmodel.PDPage.getContents : if $i1 <= 0
+org.apache.pdfbox.pdmodel.PDPage.getContents : if $i1 <= 0 >>>>>>>> org.apache.pdfbox.pdmodel.PDPage.getContents : r3 = (org.apache.pdfbox.cos.COSArray) r2
+org.apache.pdfbox.pdmodel.PDPage.getContents : if $i1 <= 0 >>>>>>>> org.apache.pdfbox.pdmodel.PDPage.getContents : $r18 = new java.io.ByteArrayInputStream
+org.apache.pdfbox.pdmodel.PDPage.getContents : r3 = (org.apache.pdfbox.cos.COSArray) r2 >>>>>>>> org.apache.pdfbox.pdmodel.PDPage.getContents : $r12 = newarray (byte)[1]
+org.apache.pdfbox.pdmodel.PDPage.getContents : $r12 = newarray (byte)[1] >>>>>>>> org.apache.pdfbox.pdmodel.PDPage.getContents : $r12[0] = 10
+org.apache.pdfbox.pdmodel.PDPage.getContents : $r12[0] = 10 >>>>>>>> org.apache.pdfbox.pdmodel.PDPage.getContents : r4 = $r12
+org.apache.pdfbox.pdmodel.PDPage.getContents : r4 = $r12 >>>>>>>> org.apache.pdfbox.pdmodel.PDPage.getContents : $r13 = new java.util.ArrayList
+org.apache.pdfbox.pdmodel.PDPage.getContents : $r13 = new java.util.ArrayList >>>>>>>> org.apache.pdfbox.pdmodel.PDPage.getContents : specialinvoke $r13.<java.util.ArrayList: void <init>()>()
+org.apache.pdfbox.pdmodel.PDPage.getContents : specialinvoke $r13.<java.util.ArrayList: void <init>()>() >>>>>>>> org.apache.pdfbox.pdmodel.PDPage.getContents : r5 = $r13
+org.apache.pdfbox.pdmodel.PDPage.getContents : r5 = $r13 >>>>>>>> org.apache.pdfbox.pdmodel.PDPage.getContents : i0 = 0
+org.apache.pdfbox.pdmodel.PDPage.getContents : i0 = 0 >>>>>>>> org.apache.pdfbox.pdmodel.PDPage.getContents : $i2 = virtualinvoke r3.<org.apache.pdfbox.cos.COSArray: int size()>()
+org.apache.pdfbox.pdmodel.PDPage.getContents : $i2 = virtualinvoke r3.<org.apache.pdfbox.cos.COSArray: int size()>() >>>>>>>> org.apache.pdfbox.pdmodel.PDPage.getContents : if i0 >= $i2
+org.apache.pdfbox.pdmodel.PDPage.getContents : if i0 >= $i2 >>>>>>>> org.apache.pdfbox.pdmodel.PDPage.getContents : r6 = virtualinvoke r3.<org.apache.pdfbox.cos.COSArray: org.apache.pdfbox.cos.COSBase getObject(int)>(i0)
+org.apache.pdfbox.pdmodel.PDPage.getContents : if i0 >= $i2 >>>>>>>> org.apache.pdfbox.pdmodel.PDPage.getContents : $r16 = new java.io.SequenceInputStream
+org.apache.pdfbox.pdmodel.PDPage.getContents : $r16 = new java.io.SequenceInputStream >>>>>>>> org.apache.pdfbox.pdmodel.PDPage.getContents : $r17 = staticinvoke <java.util.Collections: java.util.Enumeration enumeration(java.util.Collection)>(r5)
+org.apache.pdfbox.pdmodel.PDPage.getContents : $r17 = staticinvoke <java.util.Collections: java.util.Enumeration enumeration(java.util.Collection)>(r5) >>>>>>>> org.apache.pdfbox.pdmodel.PDPage.getContents : specialinvoke $r16.<java.io.SequenceInputStream: void <init>(java.util.Enumeration)>($r17)
+org.apache.pdfbox.pdmodel.PDPage.getContents : specialinvoke $r16.<java.io.SequenceInputStream: void <init>(java.util.Enumeration)>($r17) >>>>>>>> org.apache.pdfbox.pdmodel.PDPage.getContents : return $r16
+org.apache.pdfbox.pdmodel.PDPage.getContents : r6 = virtualinvoke r3.<org.apache.pdfbox.cos.COSArray: org.apache.pdfbox.cos.COSBase getObject(int)>(i0) >>>>>>>> org.apache.pdfbox.pdmodel.PDPage.getContents : $z2 = r6 instanceof org.apache.pdfbox.cos.COSStream
+org.apache.pdfbox.pdmodel.PDPage.getContents : $z2 = r6 instanceof org.apache.pdfbox.cos.COSStream >>>>>>>> org.apache.pdfbox.pdmodel.PDPage.getContents : if $z2 == 0
+org.apache.pdfbox.pdmodel.PDPage.getContents : if $z2 == 0 >>>>>>>> org.apache.pdfbox.pdmodel.PDPage.getContents : r7 = (org.apache.pdfbox.cos.COSStream) r6
+org.apache.pdfbox.pdmodel.PDPage.getContents : if $z2 == 0 >>>>>>>> org.apache.pdfbox.pdmodel.PDPage.getContents : i0 = i0 + 1
+org.apache.pdfbox.pdmodel.PDPage.getContents : i0 = i0 + 1 >>>>>>>> org.apache.pdfbox.pdmodel.PDPage.getContents : goto [?= $i2 = virtualinvoke r3.<org.apache.pdfbox.cos.COSArray: int size()>()]
+org.apache.pdfbox.pdmodel.PDPage.getContents : goto [?= $i2 = virtualinvoke r3.<org.apache.pdfbox.cos.COSArray: int size()>()] >>>>>>>> org.apache.pdfbox.pdmodel.PDPage.getContents : $i2 = virtualinvoke r3.<org.apache.pdfbox.cos.COSArray: int size()>()
+org.apache.pdfbox.pdmodel.PDPage.getContents : r7 = (org.apache.pdfbox.cos.COSStream) r6 >>>>>>>> org.apache.pdfbox.pdmodel.PDPage.getContents : $r14 = virtualinvoke r7.<org.apache.pdfbox.cos.COSStream: org.apache.pdfbox.cos.COSInputStream createInputStream()>()
+org.apache.pdfbox.pdmodel.PDPage.getContents : $r14 = virtualinvoke r7.<org.apache.pdfbox.cos.COSStream: org.apache.pdfbox.cos.COSInputStream createInputStream()>() >>>>>>>> org.apache.pdfbox.pdmodel.PDPage.getContents : interfaceinvoke r5.<java.util.List: boolean add(java.lang.Object)>($r14)
+org.apache.pdfbox.pdmodel.PDPage.getContents : interfaceinvoke r5.<java.util.List: boolean add(java.lang.Object)>($r14) >>>>>>>> org.apache.pdfbox.pdmodel.PDPage.getContents : $r15 = new java.io.ByteArrayInputStream
+org.apache.pdfbox.pdmodel.PDPage.getContents : $r15 = new java.io.ByteArrayInputStream >>>>>>>> org.apache.pdfbox.pdmodel.PDPage.getContents : specialinvoke $r15.<java.io.ByteArrayInputStream: void <init>(byte[])>(r4)
+org.apache.pdfbox.pdmodel.PDPage.getContents : specialinvoke $r15.<java.io.ByteArrayInputStream: void <init>(byte[])>(r4) >>>>>>>> org.apache.pdfbox.pdmodel.PDPage.getContents : interfaceinvoke r5.<java.util.List: boolean add(java.lang.Object)>($r15)
+org.apache.pdfbox.pdmodel.PDPage.getContents : interfaceinvoke r5.<java.util.List: boolean add(java.lang.Object)>($r15) >>>>>>>> org.apache.pdfbox.pdmodel.PDPage.getContents : i0 = i0 + 1
+org.apache.pdfbox.pdmodel.PDPage.getContents : $r9 = (org.apache.pdfbox.cos.COSStream) r2 >>>>>>>> org.apache.pdfbox.pdmodel.PDPage.getContents : $r10 = virtualinvoke $r9.<org.apache.pdfbox.cos.COSStream: org.apache.pdfbox.cos.COSInputStream createInputStream()>()
+org.apache.pdfbox.pdmodel.PDPage.getContents : $r10 = virtualinvoke $r9.<org.apache.pdfbox.cos.COSStream: org.apache.pdfbox.cos.COSInputStream createInputStream()>() >>>>>>>> org.apache.pdfbox.pdmodel.PDPage.getContents : return $r10

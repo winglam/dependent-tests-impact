@@ -1,0 +1,12 @@
+org.apache.pdfbox.util.DateConverter.toString : if r0 != null >>>>>>>> org.apache.pdfbox.util.DateConverter.toString : return null
+org.apache.pdfbox.util.DateConverter.toString : if r0 != null >>>>>>>> org.apache.pdfbox.util.DateConverter.toString : $i0 = virtualinvoke r0.<java.util.Calendar: int get(int)>(15)
+org.apache.pdfbox.util.DateConverter.toString : $i0 = virtualinvoke r0.<java.util.Calendar: int get(int)>(15) >>>>>>>> org.apache.pdfbox.util.DateConverter.toString : $i1 = virtualinvoke r0.<java.util.Calendar: int get(int)>(16)
+org.apache.pdfbox.util.DateConverter.toString : $i1 = virtualinvoke r0.<java.util.Calendar: int get(int)>(16) >>>>>>>> org.apache.pdfbox.util.DateConverter.toString : $i2 = $i0 + $i1
+org.apache.pdfbox.util.DateConverter.toString : $i2 = $i0 + $i1 >>>>>>>> org.apache.pdfbox.util.DateConverter.toString : $l3 = (long) $i2
+org.apache.pdfbox.util.DateConverter.toString : $l3 = (long) $i2 >>>>>>>> org.apache.pdfbox.util.DateConverter.toString : r1 = staticinvoke <org.apache.pdfbox.util.DateConverter: java.lang.String formatTZoffset(long,java.lang.String)>($l3, "\'")
+org.apache.pdfbox.util.DateConverter.toString : r1 = staticinvoke <org.apache.pdfbox.util.DateConverter: java.lang.String formatTZoffset(long,java.lang.String)>($l3, "\'") >>>>>>>> org.apache.pdfbox.util.DateConverter.toString : $r2 = <java.util.Locale: java.util.Locale US>
+org.apache.pdfbox.util.DateConverter.toString : $r2 = <java.util.Locale: java.util.Locale US> >>>>>>>> org.apache.pdfbox.util.DateConverter.toString : $r3 = newarray (java.lang.Object)[2]
+org.apache.pdfbox.util.DateConverter.toString : $r3 = newarray (java.lang.Object)[2] >>>>>>>> org.apache.pdfbox.util.DateConverter.toString : $r3[0] = r0
+org.apache.pdfbox.util.DateConverter.toString : $r3[0] = r0 >>>>>>>> org.apache.pdfbox.util.DateConverter.toString : $r3[1] = r1
+org.apache.pdfbox.util.DateConverter.toString : $r3[1] = r1 >>>>>>>> org.apache.pdfbox.util.DateConverter.toString : $r4 = staticinvoke <java.lang.String: java.lang.String format(java.util.Locale,java.lang.String,java.lang.Object[])>($r2, "D:%1$4tY%1$2tm%1$2td%1$2tH%1$2tM%1$2tS%2$s\'", $r3)
+org.apache.pdfbox.util.DateConverter.toString : $r4 = staticinvoke <java.lang.String: java.lang.String format(java.util.Locale,java.lang.String,java.lang.Object[])>($r2, "D:%1$4tY%1$2tm%1$2td%1$2tH%1$2tM%1$2tS%2$s\'", $r3) >>>>>>>> org.apache.pdfbox.util.DateConverter.toString : return $r4

@@ -1,0 +1,17 @@
+org.apache.pdfbox.pdmodel.fdf.FDFAnnotation.getColor : r1 = null >>>>>>>> org.apache.pdfbox.pdmodel.fdf.FDFAnnotation.getColor : $r5 = r0.<org.apache.pdfbox.pdmodel.fdf.FDFAnnotation: org.apache.pdfbox.cos.COSDictionary annot>
+org.apache.pdfbox.pdmodel.fdf.FDFAnnotation.getColor : $r5 = r0.<org.apache.pdfbox.pdmodel.fdf.FDFAnnotation: org.apache.pdfbox.cos.COSDictionary annot> >>>>>>>> org.apache.pdfbox.pdmodel.fdf.FDFAnnotation.getColor : $r2 = <org.apache.pdfbox.cos.COSName: org.apache.pdfbox.cos.COSName C>
+org.apache.pdfbox.pdmodel.fdf.FDFAnnotation.getColor : $r2 = <org.apache.pdfbox.cos.COSName: org.apache.pdfbox.cos.COSName C> >>>>>>>> org.apache.pdfbox.pdmodel.fdf.FDFAnnotation.getColor : $r6 = virtualinvoke $r5.<org.apache.pdfbox.cos.COSDictionary: org.apache.pdfbox.cos.COSBase getDictionaryObject(org.apache.pdfbox.cos.COSName)>($r2)
+org.apache.pdfbox.pdmodel.fdf.FDFAnnotation.getColor : $r6 = virtualinvoke $r5.<org.apache.pdfbox.cos.COSDictionary: org.apache.pdfbox.cos.COSBase getDictionaryObject(org.apache.pdfbox.cos.COSName)>($r2) >>>>>>>> org.apache.pdfbox.pdmodel.fdf.FDFAnnotation.getColor : r3 = (org.apache.pdfbox.cos.COSArray) $r6
+org.apache.pdfbox.pdmodel.fdf.FDFAnnotation.getColor : r3 = (org.apache.pdfbox.cos.COSArray) $r6 >>>>>>>> org.apache.pdfbox.pdmodel.fdf.FDFAnnotation.getColor : if r3 == null
+org.apache.pdfbox.pdmodel.fdf.FDFAnnotation.getColor : if r3 == null >>>>>>>> org.apache.pdfbox.pdmodel.fdf.FDFAnnotation.getColor : r4 = virtualinvoke r3.<org.apache.pdfbox.cos.COSArray: float[] toFloatArray()>()
+org.apache.pdfbox.pdmodel.fdf.FDFAnnotation.getColor : if r3 == null >>>>>>>> org.apache.pdfbox.pdmodel.fdf.FDFAnnotation.getColor : return r1
+org.apache.pdfbox.pdmodel.fdf.FDFAnnotation.getColor : r4 = virtualinvoke r3.<org.apache.pdfbox.cos.COSArray: float[] toFloatArray()>() >>>>>>>> org.apache.pdfbox.pdmodel.fdf.FDFAnnotation.getColor : $i0 = lengthof r4
+org.apache.pdfbox.pdmodel.fdf.FDFAnnotation.getColor : $i0 = lengthof r4 >>>>>>>> org.apache.pdfbox.pdmodel.fdf.FDFAnnotation.getColor : if $i0 < 3
+org.apache.pdfbox.pdmodel.fdf.FDFAnnotation.getColor : if $i0 < 3 >>>>>>>> org.apache.pdfbox.pdmodel.fdf.FDFAnnotation.getColor : $r7 = new java.awt.Color
+org.apache.pdfbox.pdmodel.fdf.FDFAnnotation.getColor : if $i0 < 3 >>>>>>>> org.apache.pdfbox.pdmodel.fdf.FDFAnnotation.getColor : return r1
+org.apache.pdfbox.pdmodel.fdf.FDFAnnotation.getColor : $r7 = new java.awt.Color >>>>>>>> org.apache.pdfbox.pdmodel.fdf.FDFAnnotation.getColor : $f0 = r4[0]
+org.apache.pdfbox.pdmodel.fdf.FDFAnnotation.getColor : $f0 = r4[0] >>>>>>>> org.apache.pdfbox.pdmodel.fdf.FDFAnnotation.getColor : $f1 = r4[1]
+org.apache.pdfbox.pdmodel.fdf.FDFAnnotation.getColor : $f1 = r4[1] >>>>>>>> org.apache.pdfbox.pdmodel.fdf.FDFAnnotation.getColor : $f2 = r4[2]
+org.apache.pdfbox.pdmodel.fdf.FDFAnnotation.getColor : $f2 = r4[2] >>>>>>>> org.apache.pdfbox.pdmodel.fdf.FDFAnnotation.getColor : specialinvoke $r7.<java.awt.Color: void <init>(float,float,float)>($f0, $f1, $f2)
+org.apache.pdfbox.pdmodel.fdf.FDFAnnotation.getColor : specialinvoke $r7.<java.awt.Color: void <init>(float,float,float)>($f0, $f1, $f2) >>>>>>>> org.apache.pdfbox.pdmodel.fdf.FDFAnnotation.getColor : r1 = $r7
+org.apache.pdfbox.pdmodel.fdf.FDFAnnotation.getColor : r1 = $r7 >>>>>>>> org.apache.pdfbox.pdmodel.fdf.FDFAnnotation.getColor : return r1

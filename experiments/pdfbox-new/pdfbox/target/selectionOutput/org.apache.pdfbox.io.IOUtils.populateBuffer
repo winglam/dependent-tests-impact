@@ -1,0 +1,14 @@
+org.apache.pdfbox.io.IOUtils.populateBuffer : i0 = lengthof r1 >>>>>>>> org.apache.pdfbox.io.IOUtils.populateBuffer : if i0 <= 0
+org.apache.pdfbox.io.IOUtils.populateBuffer : if i0 <= 0 >>>>>>>> org.apache.pdfbox.io.IOUtils.populateBuffer : $i3 = lengthof r1
+org.apache.pdfbox.io.IOUtils.populateBuffer : if i0 <= 0 >>>>>>>> org.apache.pdfbox.io.IOUtils.populateBuffer : $i4 = lengthof r1
+org.apache.pdfbox.io.IOUtils.populateBuffer : $i4 = lengthof r1 >>>>>>>> org.apache.pdfbox.io.IOUtils.populateBuffer : $i5 = $i4 - i0
+org.apache.pdfbox.io.IOUtils.populateBuffer : $i5 = $i4 - i0 >>>>>>>> org.apache.pdfbox.io.IOUtils.populateBuffer : $l6 = (long) $i5
+org.apache.pdfbox.io.IOUtils.populateBuffer : $l6 = (long) $i5 >>>>>>>> org.apache.pdfbox.io.IOUtils.populateBuffer : return $l6
+org.apache.pdfbox.io.IOUtils.populateBuffer : $i3 = lengthof r1 >>>>>>>> org.apache.pdfbox.io.IOUtils.populateBuffer : i1 = $i3 - i0
+org.apache.pdfbox.io.IOUtils.populateBuffer : i1 = $i3 - i0 >>>>>>>> org.apache.pdfbox.io.IOUtils.populateBuffer : i2 = virtualinvoke r0.<java.io.InputStream: int read(byte[],int,int)>(r1, i1, i0)
+org.apache.pdfbox.io.IOUtils.populateBuffer : i2 = virtualinvoke r0.<java.io.InputStream: int read(byte[],int,int)>(r1, i1, i0) >>>>>>>> org.apache.pdfbox.io.IOUtils.populateBuffer : if i2 >= 0
+org.apache.pdfbox.io.IOUtils.populateBuffer : if i2 >= 0 >>>>>>>> org.apache.pdfbox.io.IOUtils.populateBuffer : goto [?= $i4 = lengthof r1]
+org.apache.pdfbox.io.IOUtils.populateBuffer : if i2 >= 0 >>>>>>>> org.apache.pdfbox.io.IOUtils.populateBuffer : i0 = i0 - i2
+org.apache.pdfbox.io.IOUtils.populateBuffer : i0 = i0 - i2 >>>>>>>> org.apache.pdfbox.io.IOUtils.populateBuffer : goto [?= (branch)]
+org.apache.pdfbox.io.IOUtils.populateBuffer : goto [?= (branch)] >>>>>>>> org.apache.pdfbox.io.IOUtils.populateBuffer : if i0 <= 0
+org.apache.pdfbox.io.IOUtils.populateBuffer : goto [?= $i4 = lengthof r1] >>>>>>>> org.apache.pdfbox.io.IOUtils.populateBuffer : $i4 = lengthof r1

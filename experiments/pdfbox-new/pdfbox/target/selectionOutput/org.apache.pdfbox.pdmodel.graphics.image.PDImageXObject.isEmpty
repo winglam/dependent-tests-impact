@@ -1,0 +1,9 @@
+org.apache.pdfbox.pdmodel.graphics.image.PDImageXObject.isEmpty : $r1 = virtualinvoke r0.<org.apache.pdfbox.pdmodel.graphics.image.PDImageXObject: org.apache.pdfbox.pdmodel.common.PDStream getStream()>() >>>>>>>> org.apache.pdfbox.pdmodel.graphics.image.PDImageXObject.isEmpty : $r2 = virtualinvoke $r1.<org.apache.pdfbox.pdmodel.common.PDStream: org.apache.pdfbox.cos.COSStream getCOSObject()>()
+org.apache.pdfbox.pdmodel.graphics.image.PDImageXObject.isEmpty : $r2 = virtualinvoke $r1.<org.apache.pdfbox.pdmodel.common.PDStream: org.apache.pdfbox.cos.COSStream getCOSObject()>() >>>>>>>> org.apache.pdfbox.pdmodel.graphics.image.PDImageXObject.isEmpty : $l0 = virtualinvoke $r2.<org.apache.pdfbox.cos.COSStream: long getLength()>()
+org.apache.pdfbox.pdmodel.graphics.image.PDImageXObject.isEmpty : $l0 = virtualinvoke $r2.<org.apache.pdfbox.cos.COSStream: long getLength()>() >>>>>>>> org.apache.pdfbox.pdmodel.graphics.image.PDImageXObject.isEmpty : $b1 = $l0 cmp 0L
+org.apache.pdfbox.pdmodel.graphics.image.PDImageXObject.isEmpty : $b1 = $l0 cmp 0L >>>>>>>> org.apache.pdfbox.pdmodel.graphics.image.PDImageXObject.isEmpty : if $b1 != 0
+org.apache.pdfbox.pdmodel.graphics.image.PDImageXObject.isEmpty : if $b1 != 0 >>>>>>>> org.apache.pdfbox.pdmodel.graphics.image.PDImageXObject.isEmpty : $z0 = 1
+org.apache.pdfbox.pdmodel.graphics.image.PDImageXObject.isEmpty : if $b1 != 0 >>>>>>>> org.apache.pdfbox.pdmodel.graphics.image.PDImageXObject.isEmpty : $z0 = 0
+org.apache.pdfbox.pdmodel.graphics.image.PDImageXObject.isEmpty : $z0 = 0 >>>>>>>> org.apache.pdfbox.pdmodel.graphics.image.PDImageXObject.isEmpty : return $z0
+org.apache.pdfbox.pdmodel.graphics.image.PDImageXObject.isEmpty : $z0 = 1 >>>>>>>> org.apache.pdfbox.pdmodel.graphics.image.PDImageXObject.isEmpty : goto [?= return $z0]
+org.apache.pdfbox.pdmodel.graphics.image.PDImageXObject.isEmpty : goto [?= return $z0] >>>>>>>> org.apache.pdfbox.pdmodel.graphics.image.PDImageXObject.isEmpty : return $z0

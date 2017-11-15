@@ -1,0 +1,59 @@
+org.apache.pdfbox.rendering.PageDrawer.getStroke : r1 = virtualinvoke r0.<org.apache.pdfbox.rendering.PageDrawer: org.apache.pdfbox.pdmodel.graphics.state.PDGraphicsState getGraphicsState()>() >>>>>>>> org.apache.pdfbox.rendering.PageDrawer.getStroke : $f2 = virtualinvoke r1.<org.apache.pdfbox.pdmodel.graphics.state.PDGraphicsState: float getLineWidth()>()
+org.apache.pdfbox.rendering.PageDrawer.getStroke : $f2 = virtualinvoke r1.<org.apache.pdfbox.pdmodel.graphics.state.PDGraphicsState: float getLineWidth()>() >>>>>>>> org.apache.pdfbox.rendering.PageDrawer.getStroke : f0 = virtualinvoke r0.<org.apache.pdfbox.rendering.PageDrawer: float transformWidth(float)>($f2)
+org.apache.pdfbox.rendering.PageDrawer.getStroke : f0 = virtualinvoke r0.<org.apache.pdfbox.rendering.PageDrawer: float transformWidth(float)>($f2) >>>>>>>> org.apache.pdfbox.rendering.PageDrawer.getStroke : $d0 = (double) f0
+org.apache.pdfbox.rendering.PageDrawer.getStroke : $d0 = (double) f0 >>>>>>>> org.apache.pdfbox.rendering.PageDrawer.getStroke : $b2 = $d0 cmpg 0.25
+org.apache.pdfbox.rendering.PageDrawer.getStroke : $b2 = $d0 cmpg 0.25 >>>>>>>> org.apache.pdfbox.rendering.PageDrawer.getStroke : if $b2 >= 0
+org.apache.pdfbox.rendering.PageDrawer.getStroke : if $b2 >= 0 >>>>>>>> org.apache.pdfbox.rendering.PageDrawer.getStroke : f0 = 0.25F
+org.apache.pdfbox.rendering.PageDrawer.getStroke : if $b2 >= 0 >>>>>>>> org.apache.pdfbox.rendering.PageDrawer.getStroke : r2 = virtualinvoke r1.<org.apache.pdfbox.pdmodel.graphics.state.PDGraphicsState: org.apache.pdfbox.pdmodel.graphics.PDLineDashPattern getLineDashPattern()>()
+org.apache.pdfbox.rendering.PageDrawer.getStroke : r2 = virtualinvoke r1.<org.apache.pdfbox.pdmodel.graphics.state.PDGraphicsState: org.apache.pdfbox.pdmodel.graphics.PDLineDashPattern getLineDashPattern()>() >>>>>>>> org.apache.pdfbox.rendering.PageDrawer.getStroke : i0 = virtualinvoke r2.<org.apache.pdfbox.pdmodel.graphics.PDLineDashPattern: int getPhase()>()
+org.apache.pdfbox.rendering.PageDrawer.getStroke : i0 = virtualinvoke r2.<org.apache.pdfbox.pdmodel.graphics.PDLineDashPattern: int getPhase()>() >>>>>>>> org.apache.pdfbox.rendering.PageDrawer.getStroke : r3 = virtualinvoke r2.<org.apache.pdfbox.pdmodel.graphics.PDLineDashPattern: float[] getDashArray()>()
+org.apache.pdfbox.rendering.PageDrawer.getStroke : r3 = virtualinvoke r2.<org.apache.pdfbox.pdmodel.graphics.PDLineDashPattern: float[] getDashArray()>() >>>>>>>> org.apache.pdfbox.rendering.PageDrawer.getStroke : i1 = 0
+org.apache.pdfbox.rendering.PageDrawer.getStroke : i1 = 0 >>>>>>>> org.apache.pdfbox.rendering.PageDrawer.getStroke : $i3 = lengthof r3
+org.apache.pdfbox.rendering.PageDrawer.getStroke : $i3 = lengthof r3 >>>>>>>> org.apache.pdfbox.rendering.PageDrawer.getStroke : if i1 >= $i3
+org.apache.pdfbox.rendering.PageDrawer.getStroke : if i1 >= $i3 >>>>>>>> org.apache.pdfbox.rendering.PageDrawer.getStroke : $f3 = r3[i1]
+org.apache.pdfbox.rendering.PageDrawer.getStroke : if i1 >= $i3 >>>>>>>> org.apache.pdfbox.rendering.PageDrawer.getStroke : $f5 = (float) i0
+org.apache.pdfbox.rendering.PageDrawer.getStroke : $f5 = (float) i0 >>>>>>>> org.apache.pdfbox.rendering.PageDrawer.getStroke : $f6 = virtualinvoke r0.<org.apache.pdfbox.rendering.PageDrawer: float transformWidth(float)>($f5)
+org.apache.pdfbox.rendering.PageDrawer.getStroke : $f6 = virtualinvoke r0.<org.apache.pdfbox.rendering.PageDrawer: float transformWidth(float)>($f5) >>>>>>>> org.apache.pdfbox.rendering.PageDrawer.getStroke : i4 = (int) $f6
+org.apache.pdfbox.rendering.PageDrawer.getStroke : i4 = (int) $f6 >>>>>>>> org.apache.pdfbox.rendering.PageDrawer.getStroke : $i5 = lengthof r3
+org.apache.pdfbox.rendering.PageDrawer.getStroke : $i5 = lengthof r3 >>>>>>>> org.apache.pdfbox.rendering.PageDrawer.getStroke : if $i5 == 0
+org.apache.pdfbox.rendering.PageDrawer.getStroke : if $i5 == 0 >>>>>>>> org.apache.pdfbox.rendering.PageDrawer.getStroke : $f7 = (float) i4
+org.apache.pdfbox.rendering.PageDrawer.getStroke : if $i5 == 0 >>>>>>>> org.apache.pdfbox.rendering.PageDrawer.getStroke : r3 = null
+org.apache.pdfbox.rendering.PageDrawer.getStroke : r3 = null >>>>>>>> org.apache.pdfbox.rendering.PageDrawer.getStroke : goto [?= $r4 = new java.awt.BasicStroke]
+org.apache.pdfbox.rendering.PageDrawer.getStroke : goto [?= $r4 = new java.awt.BasicStroke] >>>>>>>> org.apache.pdfbox.rendering.PageDrawer.getStroke : $r4 = new java.awt.BasicStroke
+org.apache.pdfbox.rendering.PageDrawer.getStroke : $r4 = new java.awt.BasicStroke >>>>>>>> org.apache.pdfbox.rendering.PageDrawer.getStroke : $i8 = virtualinvoke r1.<org.apache.pdfbox.pdmodel.graphics.state.PDGraphicsState: int getLineCap()>()
+org.apache.pdfbox.rendering.PageDrawer.getStroke : $i8 = virtualinvoke r1.<org.apache.pdfbox.pdmodel.graphics.state.PDGraphicsState: int getLineCap()>() >>>>>>>> org.apache.pdfbox.rendering.PageDrawer.getStroke : $i9 = virtualinvoke r1.<org.apache.pdfbox.pdmodel.graphics.state.PDGraphicsState: int getLineJoin()>()
+org.apache.pdfbox.rendering.PageDrawer.getStroke : $i9 = virtualinvoke r1.<org.apache.pdfbox.pdmodel.graphics.state.PDGraphicsState: int getLineJoin()>() >>>>>>>> org.apache.pdfbox.rendering.PageDrawer.getStroke : $f11 = virtualinvoke r1.<org.apache.pdfbox.pdmodel.graphics.state.PDGraphicsState: float getMiterLimit()>()
+org.apache.pdfbox.rendering.PageDrawer.getStroke : $f11 = virtualinvoke r1.<org.apache.pdfbox.pdmodel.graphics.state.PDGraphicsState: float getMiterLimit()>() >>>>>>>> org.apache.pdfbox.rendering.PageDrawer.getStroke : $f12 = (float) i4
+org.apache.pdfbox.rendering.PageDrawer.getStroke : $f12 = (float) i4 >>>>>>>> org.apache.pdfbox.rendering.PageDrawer.getStroke : specialinvoke $r4.<java.awt.BasicStroke: void <init>(float,int,int,float,float[],float)>(f0, $i8, $i9, $f11, r3, $f12)
+org.apache.pdfbox.rendering.PageDrawer.getStroke : specialinvoke $r4.<java.awt.BasicStroke: void <init>(float,int,int,float,float[],float)>(f0, $i8, $i9, $f11, r3, $f12) >>>>>>>> org.apache.pdfbox.rendering.PageDrawer.getStroke : return $r4
+org.apache.pdfbox.rendering.PageDrawer.getStroke : $f7 = (float) i4 >>>>>>>> org.apache.pdfbox.rendering.PageDrawer.getStroke : $z0 = staticinvoke <java.lang.Float: boolean isInfinite(float)>($f7)
+org.apache.pdfbox.rendering.PageDrawer.getStroke : $z0 = staticinvoke <java.lang.Float: boolean isInfinite(float)>($f7) >>>>>>>> org.apache.pdfbox.rendering.PageDrawer.getStroke : if $z0 != 0
+org.apache.pdfbox.rendering.PageDrawer.getStroke : if $z0 != 0 >>>>>>>> org.apache.pdfbox.rendering.PageDrawer.getStroke : $f8 = (float) i4
+org.apache.pdfbox.rendering.PageDrawer.getStroke : if $z0 != 0 >>>>>>>> org.apache.pdfbox.rendering.PageDrawer.getStroke : r3 = null
+org.apache.pdfbox.rendering.PageDrawer.getStroke : $f8 = (float) i4 >>>>>>>> org.apache.pdfbox.rendering.PageDrawer.getStroke : $z1 = staticinvoke <java.lang.Float: boolean isNaN(float)>($f8)
+org.apache.pdfbox.rendering.PageDrawer.getStroke : $z1 = staticinvoke <java.lang.Float: boolean isNaN(float)>($f8) >>>>>>>> org.apache.pdfbox.rendering.PageDrawer.getStroke : if $z1 == 0
+org.apache.pdfbox.rendering.PageDrawer.getStroke : if $z1 == 0 >>>>>>>> org.apache.pdfbox.rendering.PageDrawer.getStroke : r3 = null
+org.apache.pdfbox.rendering.PageDrawer.getStroke : if $z1 == 0 >>>>>>>> org.apache.pdfbox.rendering.PageDrawer.getStroke : i6 = 0
+org.apache.pdfbox.rendering.PageDrawer.getStroke : i6 = 0 >>>>>>>> org.apache.pdfbox.rendering.PageDrawer.getStroke : $i7 = lengthof r3
+org.apache.pdfbox.rendering.PageDrawer.getStroke : $i7 = lengthof r3 >>>>>>>> org.apache.pdfbox.rendering.PageDrawer.getStroke : if i6 >= $i7
+org.apache.pdfbox.rendering.PageDrawer.getStroke : if i6 >= $i7 >>>>>>>> org.apache.pdfbox.rendering.PageDrawer.getStroke : $f9 = r3[i6]
+org.apache.pdfbox.rendering.PageDrawer.getStroke : if i6 >= $i7 >>>>>>>> org.apache.pdfbox.rendering.PageDrawer.getStroke : $r4 = new java.awt.BasicStroke
+org.apache.pdfbox.rendering.PageDrawer.getStroke : $f9 = r3[i6] >>>>>>>> org.apache.pdfbox.rendering.PageDrawer.getStroke : $z2 = staticinvoke <java.lang.Float: boolean isInfinite(float)>($f9)
+org.apache.pdfbox.rendering.PageDrawer.getStroke : $z2 = staticinvoke <java.lang.Float: boolean isInfinite(float)>($f9) >>>>>>>> org.apache.pdfbox.rendering.PageDrawer.getStroke : if $z2 != 0
+org.apache.pdfbox.rendering.PageDrawer.getStroke : if $z2 != 0 >>>>>>>> org.apache.pdfbox.rendering.PageDrawer.getStroke : $f10 = r3[i6]
+org.apache.pdfbox.rendering.PageDrawer.getStroke : if $z2 != 0 >>>>>>>> org.apache.pdfbox.rendering.PageDrawer.getStroke : r3 = null
+org.apache.pdfbox.rendering.PageDrawer.getStroke : r3 = null >>>>>>>> org.apache.pdfbox.rendering.PageDrawer.getStroke : goto [?= $r4 = new java.awt.BasicStroke]
+org.apache.pdfbox.rendering.PageDrawer.getStroke : goto [?= $r4 = new java.awt.BasicStroke] >>>>>>>> org.apache.pdfbox.rendering.PageDrawer.getStroke : $r4 = new java.awt.BasicStroke
+org.apache.pdfbox.rendering.PageDrawer.getStroke : $f10 = r3[i6] >>>>>>>> org.apache.pdfbox.rendering.PageDrawer.getStroke : $z3 = staticinvoke <java.lang.Float: boolean isNaN(float)>($f10)
+org.apache.pdfbox.rendering.PageDrawer.getStroke : $z3 = staticinvoke <java.lang.Float: boolean isNaN(float)>($f10) >>>>>>>> org.apache.pdfbox.rendering.PageDrawer.getStroke : if $z3 == 0
+org.apache.pdfbox.rendering.PageDrawer.getStroke : if $z3 == 0 >>>>>>>> org.apache.pdfbox.rendering.PageDrawer.getStroke : r3 = null
+org.apache.pdfbox.rendering.PageDrawer.getStroke : if $z3 == 0 >>>>>>>> org.apache.pdfbox.rendering.PageDrawer.getStroke : i6 = i6 + 1
+org.apache.pdfbox.rendering.PageDrawer.getStroke : i6 = i6 + 1 >>>>>>>> org.apache.pdfbox.rendering.PageDrawer.getStroke : goto [?= $i7 = lengthof r3]
+org.apache.pdfbox.rendering.PageDrawer.getStroke : goto [?= $i7 = lengthof r3] >>>>>>>> org.apache.pdfbox.rendering.PageDrawer.getStroke : $i7 = lengthof r3
+org.apache.pdfbox.rendering.PageDrawer.getStroke : $f3 = r3[i1] >>>>>>>> org.apache.pdfbox.rendering.PageDrawer.getStroke : f1 = virtualinvoke r0.<org.apache.pdfbox.rendering.PageDrawer: float transformWidth(float)>($f3)
+org.apache.pdfbox.rendering.PageDrawer.getStroke : f1 = virtualinvoke r0.<org.apache.pdfbox.rendering.PageDrawer: float transformWidth(float)>($f3) >>>>>>>> org.apache.pdfbox.rendering.PageDrawer.getStroke : $f4 = staticinvoke <java.lang.Math: float max(float,float)>(f1, 0.062F)
+org.apache.pdfbox.rendering.PageDrawer.getStroke : $f4 = staticinvoke <java.lang.Math: float max(float,float)>(f1, 0.062F) >>>>>>>> org.apache.pdfbox.rendering.PageDrawer.getStroke : r3[i1] = $f4
+org.apache.pdfbox.rendering.PageDrawer.getStroke : r3[i1] = $f4 >>>>>>>> org.apache.pdfbox.rendering.PageDrawer.getStroke : i1 = i1 + 1
+org.apache.pdfbox.rendering.PageDrawer.getStroke : i1 = i1 + 1 >>>>>>>> org.apache.pdfbox.rendering.PageDrawer.getStroke : goto [?= $i3 = lengthof r3]
+org.apache.pdfbox.rendering.PageDrawer.getStroke : goto [?= $i3 = lengthof r3] >>>>>>>> org.apache.pdfbox.rendering.PageDrawer.getStroke : $i3 = lengthof r3
+org.apache.pdfbox.rendering.PageDrawer.getStroke : f0 = 0.25F >>>>>>>> org.apache.pdfbox.rendering.PageDrawer.getStroke : r2 = virtualinvoke r1.<org.apache.pdfbox.pdmodel.graphics.state.PDGraphicsState: org.apache.pdfbox.pdmodel.graphics.PDLineDashPattern getLineDashPattern()>()

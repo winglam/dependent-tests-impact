@@ -1,0 +1,18 @@
+org.apache.pdfbox.util.SmallMap.entrySet : $z0 = virtualinvoke r0.<org.apache.pdfbox.util.SmallMap: boolean isEmpty()>() >>>>>>>> org.apache.pdfbox.util.SmallMap.entrySet : if $z0 == 0
+org.apache.pdfbox.util.SmallMap.entrySet : if $z0 == 0 >>>>>>>> org.apache.pdfbox.util.SmallMap.entrySet : $r2 = staticinvoke <java.util.Collections: java.util.Set emptySet()>()
+org.apache.pdfbox.util.SmallMap.entrySet : if $z0 == 0 >>>>>>>> org.apache.pdfbox.util.SmallMap.entrySet : $r3 = new java.util.LinkedHashSet
+org.apache.pdfbox.util.SmallMap.entrySet : $r3 = new java.util.LinkedHashSet >>>>>>>> org.apache.pdfbox.util.SmallMap.entrySet : specialinvoke $r3.<java.util.LinkedHashSet: void <init>()>()
+org.apache.pdfbox.util.SmallMap.entrySet : specialinvoke $r3.<java.util.LinkedHashSet: void <init>()>() >>>>>>>> org.apache.pdfbox.util.SmallMap.entrySet : r1 = $r3
+org.apache.pdfbox.util.SmallMap.entrySet : r1 = $r3 >>>>>>>> org.apache.pdfbox.util.SmallMap.entrySet : i0 = 0
+org.apache.pdfbox.util.SmallMap.entrySet : i0 = 0 >>>>>>>> org.apache.pdfbox.util.SmallMap.entrySet : $r4 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.util.SmallMap.entrySet : $r4 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr> >>>>>>>> org.apache.pdfbox.util.SmallMap.entrySet : $i1 = lengthof $r4
+org.apache.pdfbox.util.SmallMap.entrySet : $i1 = lengthof $r4 >>>>>>>> org.apache.pdfbox.util.SmallMap.entrySet : if i0 >= $i1
+org.apache.pdfbox.util.SmallMap.entrySet : if i0 >= $i1 >>>>>>>> org.apache.pdfbox.util.SmallMap.entrySet : $r5 = new org.apache.pdfbox.util.SmallMap$SmallMapEntry
+org.apache.pdfbox.util.SmallMap.entrySet : if i0 >= $i1 >>>>>>>> org.apache.pdfbox.util.SmallMap.entrySet : $r6 = staticinvoke <java.util.Collections: java.util.Set unmodifiableSet(java.util.Set)>(r1)
+org.apache.pdfbox.util.SmallMap.entrySet : $r6 = staticinvoke <java.util.Collections: java.util.Set unmodifiableSet(java.util.Set)>(r1) >>>>>>>> org.apache.pdfbox.util.SmallMap.entrySet : return $r6
+org.apache.pdfbox.util.SmallMap.entrySet : $r5 = new org.apache.pdfbox.util.SmallMap$SmallMapEntry >>>>>>>> org.apache.pdfbox.util.SmallMap.entrySet : specialinvoke $r5.<org.apache.pdfbox.util.SmallMap$SmallMapEntry: void <init>(org.apache.pdfbox.util.SmallMap,int)>(r0, i0)
+org.apache.pdfbox.util.SmallMap.entrySet : specialinvoke $r5.<org.apache.pdfbox.util.SmallMap$SmallMapEntry: void <init>(org.apache.pdfbox.util.SmallMap,int)>(r0, i0) >>>>>>>> org.apache.pdfbox.util.SmallMap.entrySet : interfaceinvoke r1.<java.util.Set: boolean add(java.lang.Object)>($r5)
+org.apache.pdfbox.util.SmallMap.entrySet : interfaceinvoke r1.<java.util.Set: boolean add(java.lang.Object)>($r5) >>>>>>>> org.apache.pdfbox.util.SmallMap.entrySet : i0 = i0 + 2
+org.apache.pdfbox.util.SmallMap.entrySet : i0 = i0 + 2 >>>>>>>> org.apache.pdfbox.util.SmallMap.entrySet : goto [?= $r4 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>]
+org.apache.pdfbox.util.SmallMap.entrySet : goto [?= $r4 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>] >>>>>>>> org.apache.pdfbox.util.SmallMap.entrySet : $r4 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.util.SmallMap.entrySet : $r2 = staticinvoke <java.util.Collections: java.util.Set emptySet()>() >>>>>>>> org.apache.pdfbox.util.SmallMap.entrySet : return $r2
