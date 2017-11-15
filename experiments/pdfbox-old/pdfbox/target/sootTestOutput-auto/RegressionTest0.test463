@@ -1,0 +1,13 @@
+org.apache.pdfbox.pdfwriter.COSWriter.setOutput : r0.<org.apache.pdfbox.pdfwriter.COSWriter: java.io.OutputStream output> = r1
+org.apache.pdfbox.pdfwriter.COSWriter.close : $r1 = virtualinvoke r0.<org.apache.pdfbox.pdfwriter.COSWriter: org.apache.pdfbox.pdfwriter.COSStandardOutputStream getStandardOutput()>()
+org.apache.pdfbox.pdfwriter.COSWriter.close : $r6 = virtualinvoke r0.<org.apache.pdfbox.pdfwriter.COSWriter: org.apache.pdfbox.pdfwriter.COSStandardOutputStream getStandardOutput()>()
+org.apache.pdfbox.pdfwriter.COSWriter.getStandardOutput : $r1 = r0.<org.apache.pdfbox.pdfwriter.COSWriter: org.apache.pdfbox.pdfwriter.COSStandardOutputStream standardOutput>
+org.apache.pdfbox.pdfwriter.COSWriter.setStandardOutput : r0.<org.apache.pdfbox.pdfwriter.COSWriter: org.apache.pdfbox.pdfwriter.COSStandardOutputStream standardOutput> = r1
+org.apache.pdfbox.pdmodel.fdf.FDFDocument.save : $r3 = new org.apache.pdfbox.pdfwriter.COSWriter
+org.apache.pdfbox.pdmodel.fdf.FDFDocument.save : r5 = null
+org.apache.pdfbox.pdmodel.fdf.FDFDocument.save : virtualinvoke $r3.<org.apache.pdfbox.pdfwriter.COSWriter: void write(org.apache.pdfbox.pdmodel.fdf.FDFDocument)>(r0)
+org.apache.pdfbox.pdmodel.fdf.FDFDocument.getDocument : $r1 = r0.<org.apache.pdfbox.pdmodel.fdf.FDFDocument: org.apache.pdfbox.cos.COSDocument document>
+org.apache.pdfbox.pdfwriter.COSWriter.write : r0.<org.apache.pdfbox.pdfwriter.COSWriter: org.apache.pdfbox.pdmodel.fdf.FDFDocument fdfDocument> = r1
+org.apache.pdfbox.pdfwriter.COSWriter.write : $r3 = r0.<org.apache.pdfbox.pdfwriter.COSWriter: org.apache.pdfbox.pdmodel.fdf.FDFDocument fdfDocument>
+org.apache.pdfbox.pdfwriter.COSWriter.write : r0.<org.apache.pdfbox.pdfwriter.COSWriter: boolean willEncrypt> = 0
+org.apache.pdfbox.pdfwriter.COSWriter.write : virtualinvoke r2.<org.apache.pdfbox.cos.COSDocument: java.lang.Object accept(org.apache.pdfbox.cos.ICOSVisitor)>(r0)

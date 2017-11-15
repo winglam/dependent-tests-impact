@@ -1,0 +1,63 @@
+org.apache.pdfbox.io.ScratchFileBuffer.seek : specialinvoke r0.<org.apache.pdfbox.io.ScratchFileBuffer: void checkClosed()>() >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.seek : $l2 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: long size>
+org.apache.pdfbox.io.ScratchFileBuffer.seek : $l2 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: long size> >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.seek : $b3 = l0 cmp $l2
+org.apache.pdfbox.io.ScratchFileBuffer.seek : $b3 = l0 cmp $l2 >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.seek : if $b3 <= 0
+org.apache.pdfbox.io.ScratchFileBuffer.seek : if $b3 <= 0 >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.seek : $r1 = new java.io.EOFException
+org.apache.pdfbox.io.ScratchFileBuffer.seek : if $b3 <= 0 >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.seek : $b4 = l0 cmp 0L
+org.apache.pdfbox.io.ScratchFileBuffer.seek : $b4 = l0 cmp 0L >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.seek : if $b4 >= 0
+org.apache.pdfbox.io.ScratchFileBuffer.seek : if $b4 >= 0 >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.seek : $r2 = new java.io.IOException
+org.apache.pdfbox.io.ScratchFileBuffer.seek : if $b4 >= 0 >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.seek : $l5 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: long currentPageOffset>
+org.apache.pdfbox.io.ScratchFileBuffer.seek : $l5 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: long currentPageOffset> >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.seek : $b6 = l0 cmp $l5
+org.apache.pdfbox.io.ScratchFileBuffer.seek : $b6 = l0 cmp $l5 >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.seek : if $b6 < 0
+org.apache.pdfbox.io.ScratchFileBuffer.seek : if $b6 < 0 >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.seek : $l7 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: long currentPageOffset>
+org.apache.pdfbox.io.ScratchFileBuffer.seek : if $b6 < 0 >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.seek : $z0 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: boolean currentPageContentChanged>
+org.apache.pdfbox.io.ScratchFileBuffer.seek : $z0 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: boolean currentPageContentChanged> >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.seek : if $z0 == 0
+org.apache.pdfbox.io.ScratchFileBuffer.seek : if $z0 == 0 >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.seek : $r7 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: org.apache.pdfbox.io.ScratchFile pageHandler>
+org.apache.pdfbox.io.ScratchFileBuffer.seek : if $z0 == 0 >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.seek : $i17 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: int pageSize>
+org.apache.pdfbox.io.ScratchFileBuffer.seek : $i17 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: int pageSize> >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.seek : $l18 = (long) $i17
+org.apache.pdfbox.io.ScratchFileBuffer.seek : $l18 = (long) $i17 >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.seek : $l19 = l0 / $l18
+org.apache.pdfbox.io.ScratchFileBuffer.seek : $l19 = l0 / $l18 >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.seek : i1 = (int) $l19
+org.apache.pdfbox.io.ScratchFileBuffer.seek : i1 = (int) $l19 >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.seek : $r10 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: org.apache.pdfbox.io.ScratchFile pageHandler>
+org.apache.pdfbox.io.ScratchFileBuffer.seek : $r10 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: org.apache.pdfbox.io.ScratchFile pageHandler> >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.seek : $r11 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: int[] pageIndexes>
+org.apache.pdfbox.io.ScratchFileBuffer.seek : $r11 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: int[] pageIndexes> >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.seek : $i20 = $r11[i1]
+org.apache.pdfbox.io.ScratchFileBuffer.seek : $i20 = $r11[i1] >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.seek : $r12 = virtualinvoke $r10.<org.apache.pdfbox.io.ScratchFile: byte[] readPage(int)>($i20)
+org.apache.pdfbox.io.ScratchFileBuffer.seek : $r12 = virtualinvoke $r10.<org.apache.pdfbox.io.ScratchFile: byte[] readPage(int)>($i20) >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.seek : r0.<org.apache.pdfbox.io.ScratchFileBuffer: byte[] currentPage> = $r12
+org.apache.pdfbox.io.ScratchFileBuffer.seek : r0.<org.apache.pdfbox.io.ScratchFileBuffer: byte[] currentPage> = $r12 >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.seek : r0.<org.apache.pdfbox.io.ScratchFileBuffer: int currentPagePositionInPageIndexes> = i1
+org.apache.pdfbox.io.ScratchFileBuffer.seek : r0.<org.apache.pdfbox.io.ScratchFileBuffer: int currentPagePositionInPageIndexes> = i1 >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.seek : $i21 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: int currentPagePositionInPageIndexes>
+org.apache.pdfbox.io.ScratchFileBuffer.seek : $i21 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: int currentPagePositionInPageIndexes> >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.seek : $l22 = (long) $i21
+org.apache.pdfbox.io.ScratchFileBuffer.seek : $l22 = (long) $i21 >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.seek : $i23 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: int pageSize>
+org.apache.pdfbox.io.ScratchFileBuffer.seek : $i23 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: int pageSize> >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.seek : $l24 = (long) $i23
+org.apache.pdfbox.io.ScratchFileBuffer.seek : $l24 = (long) $i23 >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.seek : $l25 = $l22 * $l24
+org.apache.pdfbox.io.ScratchFileBuffer.seek : $l25 = $l22 * $l24 >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.seek : r0.<org.apache.pdfbox.io.ScratchFileBuffer: long currentPageOffset> = $l25
+org.apache.pdfbox.io.ScratchFileBuffer.seek : r0.<org.apache.pdfbox.io.ScratchFileBuffer: long currentPageOffset> = $l25 >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.seek : $l26 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: long currentPageOffset>
+org.apache.pdfbox.io.ScratchFileBuffer.seek : $l26 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: long currentPageOffset> >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.seek : $l27 = l0 - $l26
+org.apache.pdfbox.io.ScratchFileBuffer.seek : $l27 = l0 - $l26 >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.seek : $i28 = (int) $l27
+org.apache.pdfbox.io.ScratchFileBuffer.seek : $i28 = (int) $l27 >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.seek : r0.<org.apache.pdfbox.io.ScratchFileBuffer: int positionInPage> = $i28
+org.apache.pdfbox.io.ScratchFileBuffer.seek : r0.<org.apache.pdfbox.io.ScratchFileBuffer: int positionInPage> = $i28 >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.seek : return
+org.apache.pdfbox.io.ScratchFileBuffer.seek : $r7 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: org.apache.pdfbox.io.ScratchFile pageHandler> >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.seek : $r8 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: int[] pageIndexes>
+org.apache.pdfbox.io.ScratchFileBuffer.seek : $r8 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: int[] pageIndexes> >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.seek : $i15 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: int currentPagePositionInPageIndexes>
+org.apache.pdfbox.io.ScratchFileBuffer.seek : $i15 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: int currentPagePositionInPageIndexes> >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.seek : $i16 = $r8[$i15]
+org.apache.pdfbox.io.ScratchFileBuffer.seek : $i16 = $r8[$i15] >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.seek : $r9 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: byte[] currentPage>
+org.apache.pdfbox.io.ScratchFileBuffer.seek : $r9 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: byte[] currentPage> >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.seek : virtualinvoke $r7.<org.apache.pdfbox.io.ScratchFile: void writePage(int,byte[])>($i16, $r9)
+org.apache.pdfbox.io.ScratchFileBuffer.seek : virtualinvoke $r7.<org.apache.pdfbox.io.ScratchFile: void writePage(int,byte[])>($i16, $r9) >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.seek : r0.<org.apache.pdfbox.io.ScratchFileBuffer: boolean currentPageContentChanged> = 0
+org.apache.pdfbox.io.ScratchFileBuffer.seek : r0.<org.apache.pdfbox.io.ScratchFileBuffer: boolean currentPageContentChanged> = 0 >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.seek : $i17 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: int pageSize>
+org.apache.pdfbox.io.ScratchFileBuffer.seek : $l7 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: long currentPageOffset> >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.seek : $i8 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: int pageSize>
+org.apache.pdfbox.io.ScratchFileBuffer.seek : $i8 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: int pageSize> >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.seek : $l9 = (long) $i8
+org.apache.pdfbox.io.ScratchFileBuffer.seek : $l9 = (long) $i8 >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.seek : $l10 = $l7 + $l9
+org.apache.pdfbox.io.ScratchFileBuffer.seek : $l10 = $l7 + $l9 >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.seek : $b11 = l0 cmp $l10
+org.apache.pdfbox.io.ScratchFileBuffer.seek : $b11 = l0 cmp $l10 >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.seek : if $b11 > 0
+org.apache.pdfbox.io.ScratchFileBuffer.seek : if $b11 > 0 >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.seek : $l12 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: long currentPageOffset>
+org.apache.pdfbox.io.ScratchFileBuffer.seek : if $b11 > 0 >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.seek : $z0 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: boolean currentPageContentChanged>
+org.apache.pdfbox.io.ScratchFileBuffer.seek : $l12 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: long currentPageOffset> >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.seek : $l13 = l0 - $l12
+org.apache.pdfbox.io.ScratchFileBuffer.seek : $l13 = l0 - $l12 >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.seek : $i14 = (int) $l13
+org.apache.pdfbox.io.ScratchFileBuffer.seek : $i14 = (int) $l13 >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.seek : r0.<org.apache.pdfbox.io.ScratchFileBuffer: int positionInPage> = $i14
+org.apache.pdfbox.io.ScratchFileBuffer.seek : r0.<org.apache.pdfbox.io.ScratchFileBuffer: int positionInPage> = $i14 >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.seek : goto [?= return]
+org.apache.pdfbox.io.ScratchFileBuffer.seek : goto [?= return] >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.seek : return
+org.apache.pdfbox.io.ScratchFileBuffer.seek : $r2 = new java.io.IOException >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.seek : $r3 = new java.lang.StringBuilder
+org.apache.pdfbox.io.ScratchFileBuffer.seek : $r3 = new java.lang.StringBuilder >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.seek : specialinvoke $r3.<java.lang.StringBuilder: void <init>()>()
+org.apache.pdfbox.io.ScratchFileBuffer.seek : specialinvoke $r3.<java.lang.StringBuilder: void <init>()>() >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.seek : $r4 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Negative seek offset: ")
+org.apache.pdfbox.io.ScratchFileBuffer.seek : $r4 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Negative seek offset: ") >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.seek : $r5 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(long)>(l0)
+org.apache.pdfbox.io.ScratchFileBuffer.seek : $r5 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(long)>(l0) >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.seek : $r6 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.String toString()>()
+org.apache.pdfbox.io.ScratchFileBuffer.seek : $r6 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.String toString()>() >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.seek : specialinvoke $r2.<java.io.IOException: void <init>(java.lang.String)>($r6)
+org.apache.pdfbox.io.ScratchFileBuffer.seek : specialinvoke $r2.<java.io.IOException: void <init>(java.lang.String)>($r6) >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.seek : throw $r2
+org.apache.pdfbox.io.ScratchFileBuffer.seek : $r1 = new java.io.EOFException >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.seek : specialinvoke $r1.<java.io.EOFException: void <init>()>()
+org.apache.pdfbox.io.ScratchFileBuffer.seek : specialinvoke $r1.<java.io.EOFException: void <init>()>() >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.seek : throw $r1

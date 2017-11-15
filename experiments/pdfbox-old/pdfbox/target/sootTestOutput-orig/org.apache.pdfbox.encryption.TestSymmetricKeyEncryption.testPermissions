@@ -1,0 +1,26 @@
+org.apache.pdfbox.pdmodel.encryption.AccessPermission.setCanPrintDegraded : $z1 = r0.<org.apache.pdfbox.pdmodel.encryption.AccessPermission: boolean readOnly>
+org.apache.pdfbox.pdmodel.encryption.AccessPermission.setCanPrintDegraded : specialinvoke r0.<org.apache.pdfbox.pdmodel.encryption.AccessPermission: boolean setPermissionBit(int,boolean)>(12, z0)
+org.apache.pdfbox.pdmodel.encryption.AccessPermission.setCanPrint : $z1 = r0.<org.apache.pdfbox.pdmodel.encryption.AccessPermission: boolean readOnly>
+org.apache.pdfbox.pdmodel.encryption.AccessPermission.setCanPrint : specialinvoke r0.<org.apache.pdfbox.pdmodel.encryption.AccessPermission: boolean setPermissionBit(int,boolean)>(3, z0)
+org.apache.pdfbox.pdmodel.encryption.AccessPermission.setCanModify : $z1 = r0.<org.apache.pdfbox.pdmodel.encryption.AccessPermission: boolean readOnly>
+org.apache.pdfbox.pdmodel.encryption.AccessPermission.setCanModify : specialinvoke r0.<org.apache.pdfbox.pdmodel.encryption.AccessPermission: boolean setPermissionBit(int,boolean)>(4, z0)
+org.apache.pdfbox.pdmodel.encryption.AccessPermission.setCanExtractContent : $z1 = r0.<org.apache.pdfbox.pdmodel.encryption.AccessPermission: boolean readOnly>
+org.apache.pdfbox.pdmodel.encryption.AccessPermission.setCanExtractContent : specialinvoke r0.<org.apache.pdfbox.pdmodel.encryption.AccessPermission: boolean setPermissionBit(int,boolean)>(5, z0)
+org.apache.pdfbox.pdmodel.encryption.AccessPermission.setCanAssembleDocument : $z1 = r0.<org.apache.pdfbox.pdmodel.encryption.AccessPermission: boolean readOnly>
+org.apache.pdfbox.pdmodel.encryption.AccessPermission.setCanAssembleDocument : specialinvoke r0.<org.apache.pdfbox.pdmodel.encryption.AccessPermission: boolean setPermissionBit(int,boolean)>(11, z0)
+org.apache.pdfbox.pdmodel.encryption.AccessPermission.setCanModifyAnnotations : $z1 = r0.<org.apache.pdfbox.pdmodel.encryption.AccessPermission: boolean readOnly>
+org.apache.pdfbox.pdmodel.encryption.AccessPermission.setCanModifyAnnotations : specialinvoke r0.<org.apache.pdfbox.pdmodel.encryption.AccessPermission: boolean setPermissionBit(int,boolean)>(6, z0)
+org.apache.pdfbox.pdmodel.encryption.AccessPermission.setReadOnly : r0.<org.apache.pdfbox.pdmodel.encryption.AccessPermission: boolean readOnly> = 1
+org.apache.pdfbox.pdmodel.encryption.AccessPermission.setCanExtractForAccessibility : $z1 = r0.<org.apache.pdfbox.pdmodel.encryption.AccessPermission: boolean readOnly>
+org.apache.pdfbox.pdmodel.encryption.AccessPermission.setCanExtractForAccessibility : specialinvoke r0.<org.apache.pdfbox.pdmodel.encryption.AccessPermission: boolean setPermissionBit(int,boolean)>(10, z0)
+org.apache.pdfbox.io.IOUtils.copy : l2 = 0L
+org.apache.pdfbox.io.IOUtils.copy : $i0 = virtualinvoke r0.<java.io.InputStream: int read(byte[])>(r2)
+org.apache.pdfbox.io.IOUtils.copy : r2 = newarray (byte)[4096]
+org.apache.pdfbox.pdmodel.encryption.AccessPermission.setPermissionBit : if z0 == 0 goto $i1 = i0 - 1
+org.apache.pdfbox.pdmodel.encryption.AccessPermission.setPermissionBit : $i8 = i0 - 1
+org.apache.pdfbox.pdmodel.encryption.AccessPermission.setPermissionBit : $i1 = i0 - 1
+org.apache.pdfbox.pdmodel.encryption.AccessPermission.setPermissionBit : r0.<org.apache.pdfbox.pdmodel.encryption.AccessPermission: int bytes> = i11
+org.apache.pdfbox.pdmodel.encryption.AccessPermission.setPermissionBit : i10 = r0.<org.apache.pdfbox.pdmodel.encryption.AccessPermission: int bytes>
+org.apache.pdfbox.pdmodel.encryption.AccessPermission.setPermissionBit : $i6 = r0.<org.apache.pdfbox.pdmodel.encryption.AccessPermission: int bytes>
+org.apache.pdfbox.pdmodel.encryption.AccessPermission.setCanFillInForm : specialinvoke r0.<org.apache.pdfbox.pdmodel.encryption.AccessPermission: boolean setPermissionBit(int,boolean)>(9, z0)
+org.apache.pdfbox.pdmodel.encryption.AccessPermission.setCanFillInForm : $z1 = r0.<org.apache.pdfbox.pdmodel.encryption.AccessPermission: boolean readOnly>

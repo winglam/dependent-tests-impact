@@ -1,0 +1,69 @@
+org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : if r1 == null >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : if r2 == null
+org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : if r1 == null >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : return 0
+org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : if r2 == null >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : $z1 = virtualinvoke r1.<java.io.File: boolean exists()>()
+org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : if r2 == null >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : return 0
+org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : $z1 = virtualinvoke r1.<java.io.File: boolean exists()>() >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : if $z1 == 0
+org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : if $z1 == 0 >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : $z2 = virtualinvoke r2.<java.io.File: boolean exists()>()
+org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : if $z1 == 0 >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : return 0
+org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : $z2 = virtualinvoke r2.<java.io.File: boolean exists()>() >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : if $z2 == 0
+org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : if $z2 == 0 >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : $l2 = virtualinvoke r1.<java.io.File: long length()>()
+org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : if $z2 == 0 >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : return 0
+org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : $l2 = virtualinvoke r1.<java.io.File: long length()>() >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : $l3 = virtualinvoke r2.<java.io.File: long length()>()
+org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : $l3 = virtualinvoke r2.<java.io.File: long length()>() >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : $b4 = $l2 cmp $l3
+org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : $b4 = $l2 cmp $l3 >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : if $b4 == 0
+org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : if $b4 == 0 >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : return 0
+org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : if $b4 == 0 >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : $r8 = new java.io.FileInputStream
+org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : $r8 = new java.io.FileInputStream >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : specialinvoke $r8.<java.io.FileInputStream: void <init>(java.io.File)>(r1)
+org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : specialinvoke $r8.<java.io.FileInputStream: void <init>(java.io.File)>(r1) >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : $r9 = new java.io.FileInputStream
+org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : $r9 = new java.io.FileInputStream >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : specialinvoke $r9.<java.io.FileInputStream: void <init>(java.io.File)>(r2)
+org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : specialinvoke $r9.<java.io.FileInputStream: void <init>(java.io.File)>(r2) >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : r5 = newarray (byte)[4096]
+org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : specialinvoke $r9.<java.io.FileInputStream: void <init>(java.io.File)>(r2) >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : $r10 := @caughtexception
+org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : virtualinvoke $r8.<java.io.FileInputStream: void close()>() >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : virtualinvoke $r9.<java.io.FileInputStream: void close()>()
+org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : virtualinvoke $r9.<java.io.FileInputStream: void close()>() >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : throw $r10
+org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : r5 = newarray (byte)[4096] >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : $i5 = lengthof r5
+org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : r5 = newarray (byte)[4096] >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : $r10 := @caughtexception
+org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : $i5 = lengthof r5 >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : r6 = newarray (byte)[$i5]
+org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : $i5 = lengthof r5 >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : $r10 := @caughtexception
+org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : r6 = newarray (byte)[$i5] >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : $i6 = virtualinvoke $r8.<java.io.FileInputStream: int read(byte[])>(r5)
+org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : r6 = newarray (byte)[$i5] >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : $r10 := @caughtexception
+org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : $i6 = virtualinvoke $r8.<java.io.FileInputStream: int read(byte[])>(r5) >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : if $i6 <= 0
+org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : $i6 = virtualinvoke $r8.<java.io.FileInputStream: int read(byte[])>(r5) >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : $r10 := @caughtexception
+org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : if $i6 <= 0 >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : i11 = 0
+org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : if $i6 <= 0 >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : virtualinvoke $r8.<java.io.FileInputStream: void close()>()
+org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : if $i6 <= 0 >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : $r10 := @caughtexception
+org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : virtualinvoke $r8.<java.io.FileInputStream: void close()>() >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : virtualinvoke $r9.<java.io.FileInputStream: void close()>()
+org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : virtualinvoke $r9.<java.io.FileInputStream: void close()>() >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : goto [?= return 1]
+org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : goto [?= return 1] >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : return 1
+org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : i11 = 0 >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : $i7 = $i6 - i11
+org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : i11 = 0 >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : $r10 := @caughtexception
+org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : $i7 = $i6 - i11 >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : $i8 = virtualinvoke $r9.<java.io.FileInputStream: int read(byte[],int,int)>(r6, i11, $i7)
+org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : $i7 = $i6 - i11 >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : $r10 := @caughtexception
+org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : $i8 = virtualinvoke $r9.<java.io.FileInputStream: int read(byte[],int,int)>(r6, i11, $i7) >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : if $i8 <= 0
+org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : $i8 = virtualinvoke $r9.<java.io.FileInputStream: int read(byte[],int,int)>(r6, i11, $i7) >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : $r10 := @caughtexception
+org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : if $i8 <= 0 >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : i11 = i11 + $i8
+org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : if $i8 <= 0 >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : i12 = 0
+org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : if $i8 <= 0 >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : $r10 := @caughtexception
+org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : i12 = 0 >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : if i12 >= $i6
+org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : i12 = 0 >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : $r10 := @caughtexception
+org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : if i12 >= $i6 >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : $b10 = r5[i12]
+org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : if i12 >= $i6 >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : goto [?= $i6 = virtualinvoke $r8.<java.io.FileInputStream: int read(byte[])>(r5)]
+org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : if i12 >= $i6 >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : $r10 := @caughtexception
+org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : goto [?= $i6 = virtualinvoke $r8.<java.io.FileInputStream: int read(byte[])>(r5)] >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : $i6 = virtualinvoke $r8.<java.io.FileInputStream: int read(byte[])>(r5)
+org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : goto [?= $i6 = virtualinvoke $r8.<java.io.FileInputStream: int read(byte[])>(r5)] >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : $r10 := @caughtexception
+org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : $b10 = r5[i12] >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : $b9 = r6[i12]
+org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : $b10 = r5[i12] >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : $r10 := @caughtexception
+org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : $b9 = r6[i12] >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : if $b10 == $b9
+org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : $b9 = r6[i12] >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : $r10 := @caughtexception
+org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : if $b10 == $b9 >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : virtualinvoke $r8.<java.io.FileInputStream: void close()>()
+org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : if $b10 == $b9 >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : i12 = i12 + 1
+org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : if $b10 == $b9 >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : $r10 := @caughtexception
+org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : i12 = i12 + 1 >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : goto [?= (branch)]
+org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : i12 = i12 + 1 >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : $r10 := @caughtexception
+org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : goto [?= (branch)] >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : if i12 >= $i6
+org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : goto [?= (branch)] >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : $r10 := @caughtexception
+org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : virtualinvoke $r8.<java.io.FileInputStream: void close()>() >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : virtualinvoke $r9.<java.io.FileInputStream: void close()>()
+org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : virtualinvoke $r9.<java.io.FileInputStream: void close()>() >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : return 0
+org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : i11 = i11 + $i8 >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : goto [?= $i7 = $i6 - i11]
+org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : i11 = i11 + $i8 >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : $r10 := @caughtexception
+org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : goto [?= $i7 = $i6 - i11] >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : $i7 = $i6 - i11
+org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : goto [?= $i7 = $i6 - i11] >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.filesAreIdentical : $r10 := @caughtexception

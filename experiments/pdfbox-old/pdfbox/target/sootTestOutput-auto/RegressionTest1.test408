@@ -1,0 +1,28 @@
+org.apache.pdfbox.pdmodel.graphics.color.PDCIEDictionaryBasedColorSpace.getWhitepoint : $r2 = r0.<org.apache.pdfbox.pdmodel.graphics.color.PDCIEDictionaryBasedColorSpace: org.apache.pdfbox.cos.COSDictionary dictionary>
+org.apache.pdfbox.pdmodel.graphics.color.PDCIEDictionaryBasedColorSpace.getWhitepoint : if r9 != null goto $r4 = new org.apache.pdfbox.pdmodel.graphics.color.PDTristimulus
+org.apache.pdfbox.pdmodel.graphics.color.PDCIEDictionaryBasedColorSpace.getWhitepoint : $r5 = new org.apache.pdfbox.cos.COSArray
+org.apache.pdfbox.pdmodel.graphics.color.PDCIEDictionaryBasedColorSpace.getWhitepoint : $r7 = new org.apache.pdfbox.cos.COSFloat
+org.apache.pdfbox.pdmodel.graphics.color.PDCIEDictionaryBasedColorSpace.getWhitepoint : $r4 = new org.apache.pdfbox.pdmodel.graphics.color.PDTristimulus
+org.apache.pdfbox.pdmodel.graphics.color.PDCIEDictionaryBasedColorSpace.getWhitepoint : $r8 = new org.apache.pdfbox.cos.COSFloat
+org.apache.pdfbox.pdmodel.graphics.color.PDCIEDictionaryBasedColorSpace.getWhitepoint : $r6 = new org.apache.pdfbox.cos.COSFloat
+org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : $z0 = r5 instanceof org.apache.pdfbox.cos.COSObject
+org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : return r5
+org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : $z1 = r5 instanceof org.apache.pdfbox.cos.COSNull
+org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : $r2 = r0.<org.apache.pdfbox.cos.COSDictionary: java.util.Map items>
+org.apache.pdfbox.cos.COSArray.add : $r2 = r0.<org.apache.pdfbox.cos.COSArray: java.util.List objects>
+org.apache.pdfbox.pdmodel.graphics.color.PDCIEDictionaryBasedColorSpace.fillWhitepointCache : $f0 = virtualinvoke r1.<org.apache.pdfbox.pdmodel.graphics.color.PDTristimulus: float getX()>()
+org.apache.pdfbox.pdmodel.graphics.color.PDCIEDictionaryBasedColorSpace.fillWhitepointCache : $f1 = virtualinvoke r1.<org.apache.pdfbox.pdmodel.graphics.color.PDTristimulus: float getY()>()
+org.apache.pdfbox.pdmodel.graphics.color.PDCIEDictionaryBasedColorSpace.fillWhitepointCache : $f2 = virtualinvoke r1.<org.apache.pdfbox.pdmodel.graphics.color.PDTristimulus: float getZ()>()
+org.apache.pdfbox.util.SmallMap.isEmpty : $r1 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.pdmodel.graphics.color.PDLab.getName : $r1 = <org.apache.pdfbox.cos.COSName: org.apache.pdfbox.cos.COSName LAB>
+org.apache.pdfbox.cos.COSFloat.removeNullDigits : $i0 = virtualinvoke r1.<java.lang.String: int indexOf(int)>(46)
+org.apache.pdfbox.cos.COSFloat.removeNullDigits : $z0 = virtualinvoke r1.<java.lang.String: boolean endsWith(java.lang.String)>(".0")
+org.apache.pdfbox.util.SmallMap.get : if i0 >= 0 goto $r2 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.util.SmallMap.get : i0 = specialinvoke r0.<org.apache.pdfbox.util.SmallMap: int findKey(java.lang.Object)>(r1)
+org.apache.pdfbox.pdmodel.graphics.color.PDTristimulus.getZ : $r1 = r0.<org.apache.pdfbox.pdmodel.graphics.color.PDTristimulus: org.apache.pdfbox.cos.COSArray values>
+org.apache.pdfbox.cos.COSArray.get : $r1 = r0.<org.apache.pdfbox.cos.COSArray: java.util.List objects>
+org.apache.pdfbox.pdmodel.graphics.color.PDTristimulus.getY : $r1 = r0.<org.apache.pdfbox.pdmodel.graphics.color.PDTristimulus: org.apache.pdfbox.cos.COSArray values>
+org.apache.pdfbox.pdmodel.graphics.color.PDTristimulus.getX : $r1 = r0.<org.apache.pdfbox.pdmodel.graphics.color.PDTristimulus: org.apache.pdfbox.cos.COSArray values>
+org.apache.pdfbox.util.SmallMap.findKey : $z0 = virtualinvoke r0.<org.apache.pdfbox.util.SmallMap: boolean isEmpty()>()
+org.apache.pdfbox.cos.COSFloat.floatValue : $r1 = r0.<org.apache.pdfbox.cos.COSFloat: java.math.BigDecimal value>
+org.apache.pdfbox.cos.COSName.getName : $r1 = r0.<org.apache.pdfbox.cos.COSName: java.lang.String name>

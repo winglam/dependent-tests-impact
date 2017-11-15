@@ -1,0 +1,33 @@
+org.apache.pdfbox.util.Hex.getCharsUTF16BE : $i1 = virtualinvoke r0.<java.lang.String: int length()>() >>>>>>>> org.apache.pdfbox.util.Hex.getCharsUTF16BE : $i2 = $i1 * 4
+org.apache.pdfbox.util.Hex.getCharsUTF16BE : $i2 = $i1 * 4 >>>>>>>> org.apache.pdfbox.util.Hex.getCharsUTF16BE : r1 = newarray (char)[$i2]
+org.apache.pdfbox.util.Hex.getCharsUTF16BE : r1 = newarray (char)[$i2] >>>>>>>> org.apache.pdfbox.util.Hex.getCharsUTF16BE : i15 = 0
+org.apache.pdfbox.util.Hex.getCharsUTF16BE : i15 = 0 >>>>>>>> org.apache.pdfbox.util.Hex.getCharsUTF16BE : i16 = 0
+org.apache.pdfbox.util.Hex.getCharsUTF16BE : i16 = 0 >>>>>>>> org.apache.pdfbox.util.Hex.getCharsUTF16BE : $i3 = virtualinvoke r0.<java.lang.String: int length()>()
+org.apache.pdfbox.util.Hex.getCharsUTF16BE : $i3 = virtualinvoke r0.<java.lang.String: int length()>() >>>>>>>> org.apache.pdfbox.util.Hex.getCharsUTF16BE : if i15 >= $i3
+org.apache.pdfbox.util.Hex.getCharsUTF16BE : if i15 >= $i3 >>>>>>>> org.apache.pdfbox.util.Hex.getCharsUTF16BE : c0 = virtualinvoke r0.<java.lang.String: char charAt(int)>(i15)
+org.apache.pdfbox.util.Hex.getCharsUTF16BE : c0 = virtualinvoke r0.<java.lang.String: char charAt(int)>(i15) >>>>>>>> org.apache.pdfbox.util.Hex.getCharsUTF16BE : i17 = i16 + 1
+org.apache.pdfbox.util.Hex.getCharsUTF16BE : i17 = i16 + 1 >>>>>>>> org.apache.pdfbox.util.Hex.getCharsUTF16BE : $r2 = <org.apache.pdfbox.util.Hex: char[] HEX_CHARS>
+org.apache.pdfbox.util.Hex.getCharsUTF16BE : $r2 = <org.apache.pdfbox.util.Hex: char[] HEX_CHARS> >>>>>>>> org.apache.pdfbox.util.Hex.getCharsUTF16BE : $c4 = c0 >> 12
+org.apache.pdfbox.util.Hex.getCharsUTF16BE : $c4 = c0 >> 12 >>>>>>>> org.apache.pdfbox.util.Hex.getCharsUTF16BE : $c5 = $c4 & 15
+org.apache.pdfbox.util.Hex.getCharsUTF16BE : $c5 = $c4 & 15 >>>>>>>> org.apache.pdfbox.util.Hex.getCharsUTF16BE : $c6 = $r2[$c5]
+org.apache.pdfbox.util.Hex.getCharsUTF16BE : $c6 = $r2[$c5] >>>>>>>> org.apache.pdfbox.util.Hex.getCharsUTF16BE : r1[i16] = $c6
+org.apache.pdfbox.util.Hex.getCharsUTF16BE : r1[i16] = $c6 >>>>>>>> org.apache.pdfbox.util.Hex.getCharsUTF16BE : i18 = i17 + 1
+org.apache.pdfbox.util.Hex.getCharsUTF16BE : i18 = i17 + 1 >>>>>>>> org.apache.pdfbox.util.Hex.getCharsUTF16BE : $r3 = <org.apache.pdfbox.util.Hex: char[] HEX_CHARS>
+org.apache.pdfbox.util.Hex.getCharsUTF16BE : $r3 = <org.apache.pdfbox.util.Hex: char[] HEX_CHARS> >>>>>>>> org.apache.pdfbox.util.Hex.getCharsUTF16BE : $c7 = c0 >> 8
+org.apache.pdfbox.util.Hex.getCharsUTF16BE : $c7 = c0 >> 8 >>>>>>>> org.apache.pdfbox.util.Hex.getCharsUTF16BE : $c8 = $c7 & 15
+org.apache.pdfbox.util.Hex.getCharsUTF16BE : $c8 = $c7 & 15 >>>>>>>> org.apache.pdfbox.util.Hex.getCharsUTF16BE : $c9 = $r3[$c8]
+org.apache.pdfbox.util.Hex.getCharsUTF16BE : $c9 = $r3[$c8] >>>>>>>> org.apache.pdfbox.util.Hex.getCharsUTF16BE : r1[i17] = $c9
+org.apache.pdfbox.util.Hex.getCharsUTF16BE : r1[i17] = $c9 >>>>>>>> org.apache.pdfbox.util.Hex.getCharsUTF16BE : i19 = i18 + 1
+org.apache.pdfbox.util.Hex.getCharsUTF16BE : i19 = i18 + 1 >>>>>>>> org.apache.pdfbox.util.Hex.getCharsUTF16BE : $r4 = <org.apache.pdfbox.util.Hex: char[] HEX_CHARS>
+org.apache.pdfbox.util.Hex.getCharsUTF16BE : $r4 = <org.apache.pdfbox.util.Hex: char[] HEX_CHARS> >>>>>>>> org.apache.pdfbox.util.Hex.getCharsUTF16BE : $c10 = c0 >> 4
+org.apache.pdfbox.util.Hex.getCharsUTF16BE : $c10 = c0 >> 4 >>>>>>>> org.apache.pdfbox.util.Hex.getCharsUTF16BE : $c11 = $c10 & 15
+org.apache.pdfbox.util.Hex.getCharsUTF16BE : $c11 = $c10 & 15 >>>>>>>> org.apache.pdfbox.util.Hex.getCharsUTF16BE : $c12 = $r4[$c11]
+org.apache.pdfbox.util.Hex.getCharsUTF16BE : $c12 = $r4[$c11] >>>>>>>> org.apache.pdfbox.util.Hex.getCharsUTF16BE : r1[i18] = $c12
+org.apache.pdfbox.util.Hex.getCharsUTF16BE : r1[i18] = $c12 >>>>>>>> org.apache.pdfbox.util.Hex.getCharsUTF16BE : i16 = i19 + 1
+org.apache.pdfbox.util.Hex.getCharsUTF16BE : i16 = i19 + 1 >>>>>>>> org.apache.pdfbox.util.Hex.getCharsUTF16BE : $r5 = <org.apache.pdfbox.util.Hex: char[] HEX_CHARS>
+org.apache.pdfbox.util.Hex.getCharsUTF16BE : $r5 = <org.apache.pdfbox.util.Hex: char[] HEX_CHARS> >>>>>>>> org.apache.pdfbox.util.Hex.getCharsUTF16BE : $c13 = c0 & 15
+org.apache.pdfbox.util.Hex.getCharsUTF16BE : $c13 = c0 & 15 >>>>>>>> org.apache.pdfbox.util.Hex.getCharsUTF16BE : $c14 = $r5[$c13]
+org.apache.pdfbox.util.Hex.getCharsUTF16BE : $c14 = $r5[$c13] >>>>>>>> org.apache.pdfbox.util.Hex.getCharsUTF16BE : r1[i19] = $c14
+org.apache.pdfbox.util.Hex.getCharsUTF16BE : r1[i19] = $c14 >>>>>>>> org.apache.pdfbox.util.Hex.getCharsUTF16BE : i15 = i15 + 1
+org.apache.pdfbox.util.Hex.getCharsUTF16BE : i15 = i15 + 1 >>>>>>>> org.apache.pdfbox.util.Hex.getCharsUTF16BE : goto [?= $i3 = virtualinvoke r0.<java.lang.String: int length()>()]
+org.apache.pdfbox.util.Hex.getCharsUTF16BE : goto [?= $i3 = virtualinvoke r0.<java.lang.String: int length()>()] >>>>>>>> org.apache.pdfbox.util.Hex.getCharsUTF16BE : return r1

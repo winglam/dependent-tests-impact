@@ -1,0 +1,17 @@
+org.apache.pdfbox.util.DateConverter.restrainTZoffset : $b1 = l0 cmp 50400000L >>>>>>>> org.apache.pdfbox.util.DateConverter.restrainTZoffset : if $b1 > 0
+org.apache.pdfbox.util.DateConverter.restrainTZoffset : if $b1 > 0 >>>>>>>> org.apache.pdfbox.util.DateConverter.restrainTZoffset : $b2 = l0 cmp -50400000L
+org.apache.pdfbox.util.DateConverter.restrainTZoffset : if $b1 > 0 >>>>>>>> org.apache.pdfbox.util.DateConverter.restrainTZoffset : $l4 = l0 + 43200000L
+org.apache.pdfbox.util.DateConverter.restrainTZoffset : $l4 = l0 + 43200000L >>>>>>>> org.apache.pdfbox.util.DateConverter.restrainTZoffset : $l5 = $l4 % 86400000L
+org.apache.pdfbox.util.DateConverter.restrainTZoffset : $l5 = $l4 % 86400000L >>>>>>>> org.apache.pdfbox.util.DateConverter.restrainTZoffset : $l6 = $l5 + 86400000L
+org.apache.pdfbox.util.DateConverter.restrainTZoffset : $l6 = $l5 + 86400000L >>>>>>>> org.apache.pdfbox.util.DateConverter.restrainTZoffset : l7 = $l6 % 86400000L
+org.apache.pdfbox.util.DateConverter.restrainTZoffset : l7 = $l6 % 86400000L >>>>>>>> org.apache.pdfbox.util.DateConverter.restrainTZoffset : $b8 = l7 cmp 0L
+org.apache.pdfbox.util.DateConverter.restrainTZoffset : $b8 = l7 cmp 0L >>>>>>>> org.apache.pdfbox.util.DateConverter.restrainTZoffset : if $b8 != 0
+org.apache.pdfbox.util.DateConverter.restrainTZoffset : if $b8 != 0 >>>>>>>> org.apache.pdfbox.util.DateConverter.restrainTZoffset : return 43200000
+org.apache.pdfbox.util.DateConverter.restrainTZoffset : if $b8 != 0 >>>>>>>> org.apache.pdfbox.util.DateConverter.restrainTZoffset : $l9 = l7 - 43200000L
+org.apache.pdfbox.util.DateConverter.restrainTZoffset : $l9 = l7 - 43200000L >>>>>>>> org.apache.pdfbox.util.DateConverter.restrainTZoffset : l10 = $l9 % 43200000L
+org.apache.pdfbox.util.DateConverter.restrainTZoffset : l10 = $l9 % 43200000L >>>>>>>> org.apache.pdfbox.util.DateConverter.restrainTZoffset : $i11 = (int) l10
+org.apache.pdfbox.util.DateConverter.restrainTZoffset : $i11 = (int) l10 >>>>>>>> org.apache.pdfbox.util.DateConverter.restrainTZoffset : return $i11
+org.apache.pdfbox.util.DateConverter.restrainTZoffset : $b2 = l0 cmp -50400000L >>>>>>>> org.apache.pdfbox.util.DateConverter.restrainTZoffset : if $b2 < 0
+org.apache.pdfbox.util.DateConverter.restrainTZoffset : if $b2 < 0 >>>>>>>> org.apache.pdfbox.util.DateConverter.restrainTZoffset : $i3 = (int) l0
+org.apache.pdfbox.util.DateConverter.restrainTZoffset : if $b2 < 0 >>>>>>>> org.apache.pdfbox.util.DateConverter.restrainTZoffset : $l4 = l0 + 43200000L
+org.apache.pdfbox.util.DateConverter.restrainTZoffset : $i3 = (int) l0 >>>>>>>> org.apache.pdfbox.util.DateConverter.restrainTZoffset : return $i3

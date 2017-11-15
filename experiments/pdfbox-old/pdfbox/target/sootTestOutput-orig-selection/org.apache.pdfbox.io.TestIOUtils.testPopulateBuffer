@@ -1,0 +1,26 @@
+org.apache.pdfbox.io.IOUtils.populateBuffer : i6 = lengthof r1 >>>>>>>> org.apache.pdfbox.io.IOUtils.populateBuffer : if i6 <= 0
+org.apache.pdfbox.io.IOUtils.populateBuffer : if i6 <= 0 >>>>>>>> org.apache.pdfbox.io.IOUtils.populateBuffer : $i5 = lengthof r1
+org.apache.pdfbox.io.IOUtils.populateBuffer : $i5 = lengthof r1 >>>>>>>> org.apache.pdfbox.io.IOUtils.populateBuffer : i0 = $i5 - i6
+org.apache.pdfbox.io.IOUtils.populateBuffer : i0 = $i5 - i6 >>>>>>>> org.apache.pdfbox.io.IOUtils.populateBuffer : i1 = virtualinvoke r0.<java.io.InputStream: int read(byte[],int,int)>(r1, i0, i6)
+org.apache.pdfbox.io.IOUtils.populateBuffer : i1 = virtualinvoke r0.<java.io.InputStream: int read(byte[],int,int)>(r1, i0, i6) >>>>>>>> org.apache.pdfbox.io.IOUtils.populateBuffer : if i1 >= 0
+org.apache.pdfbox.io.IOUtils.populateBuffer : if i1 >= 0 >>>>>>>> org.apache.pdfbox.io.IOUtils.populateBuffer : i6 = i6 - i1
+org.apache.pdfbox.io.IOUtils.populateBuffer : i6 = i6 - i1 >>>>>>>> org.apache.pdfbox.io.IOUtils.populateBuffer : goto [?= (branch)]
+org.apache.pdfbox.io.IOUtils.populateBuffer : goto [?= (branch)] >>>>>>>> org.apache.pdfbox.io.IOUtils.populateBuffer : $i2 = lengthof r1
+org.apache.pdfbox.io.IOUtils.populateBuffer : $i2 = lengthof r1 >>>>>>>> org.apache.pdfbox.io.IOUtils.populateBuffer : $i3 = $i2 - i6
+org.apache.pdfbox.io.IOUtils.populateBuffer : $i3 = $i2 - i6 >>>>>>>> org.apache.pdfbox.io.IOUtils.populateBuffer : $l4 = (long) $i3
+org.apache.pdfbox.io.IOUtils.populateBuffer : $l4 = (long) $i3 >>>>>>>> org.apache.pdfbox.io.IOUtils.populateBuffer : return $l4
+org.apache.pdfbox.io.IOUtils.populateBuffer : return $l4 >>>>>>>> org.apache.pdfbox.io.IOUtils.toByteArray : $r2 = new java.io.ByteArrayOutputStream
+org.apache.pdfbox.io.IOUtils.toByteArray : $r2 = new java.io.ByteArrayOutputStream >>>>>>>> org.apache.pdfbox.io.IOUtils.toByteArray : specialinvoke $r2.<java.io.ByteArrayOutputStream: void <init>()>()
+org.apache.pdfbox.io.IOUtils.toByteArray : specialinvoke $r2.<java.io.ByteArrayOutputStream: void <init>()>() >>>>>>>> org.apache.pdfbox.io.IOUtils.toByteArray : staticinvoke <org.apache.pdfbox.io.IOUtils: long copy(java.io.InputStream,java.io.OutputStream)>(r0, $r2)
+org.apache.pdfbox.io.IOUtils.toByteArray : staticinvoke <org.apache.pdfbox.io.IOUtils: long copy(java.io.InputStream,java.io.OutputStream)>(r0, $r2) >>>>>>>> org.apache.pdfbox.io.IOUtils.copy : r2 = newarray (byte)[4096]
+org.apache.pdfbox.io.IOUtils.copy : r2 = newarray (byte)[4096] >>>>>>>> org.apache.pdfbox.io.IOUtils.copy : l2 = 0L
+org.apache.pdfbox.io.IOUtils.copy : l2 = 0L >>>>>>>> org.apache.pdfbox.io.IOUtils.copy : $i0 = virtualinvoke r0.<java.io.InputStream: int read(byte[])>(r2)
+org.apache.pdfbox.io.IOUtils.copy : $i0 = virtualinvoke r0.<java.io.InputStream: int read(byte[])>(r2) >>>>>>>> org.apache.pdfbox.io.IOUtils.copy : if -1 == $i0
+org.apache.pdfbox.io.IOUtils.copy : if -1 == $i0 >>>>>>>> org.apache.pdfbox.io.IOUtils.copy : virtualinvoke r1.<java.io.OutputStream: void write(byte[],int,int)>(r2, 0, $i0)
+org.apache.pdfbox.io.IOUtils.copy : virtualinvoke r1.<java.io.OutputStream: void write(byte[],int,int)>(r2, 0, $i0) >>>>>>>> org.apache.pdfbox.io.IOUtils.copy : $l1 = (long) $i0
+org.apache.pdfbox.io.IOUtils.copy : $l1 = (long) $i0 >>>>>>>> org.apache.pdfbox.io.IOUtils.copy : l2 = l2 + $l1
+org.apache.pdfbox.io.IOUtils.copy : l2 = l2 + $l1 >>>>>>>> org.apache.pdfbox.io.IOUtils.copy : goto [?= $i0 = virtualinvoke r0.<java.io.InputStream: int read(byte[])>(r2)]
+org.apache.pdfbox.io.IOUtils.copy : goto [?= $i0 = virtualinvoke r0.<java.io.InputStream: int read(byte[])>(r2)] >>>>>>>> org.apache.pdfbox.io.IOUtils.copy : return l2
+org.apache.pdfbox.io.IOUtils.copy : return l2 >>>>>>>> org.apache.pdfbox.io.IOUtils.toByteArray : $r3 = virtualinvoke $r2.<java.io.ByteArrayOutputStream: byte[] toByteArray()>()
+org.apache.pdfbox.io.IOUtils.toByteArray : $r3 = virtualinvoke $r2.<java.io.ByteArrayOutputStream: byte[] toByteArray()>() >>>>>>>> org.apache.pdfbox.io.IOUtils.toByteArray : return $r3
+org.apache.pdfbox.io.IOUtils.toByteArray : return $r3 >>>>>>>> org.apache.pdfbox.io.IOUtils.populateBuffer : goto [?= $i2 = lengthof r1]

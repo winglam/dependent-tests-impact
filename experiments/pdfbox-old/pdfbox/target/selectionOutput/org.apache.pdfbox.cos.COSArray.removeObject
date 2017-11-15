@@ -1,0 +1,19 @@
+org.apache.pdfbox.cos.COSArray.removeObject : z0 = virtualinvoke r0.<org.apache.pdfbox.cos.COSArray: boolean remove(org.apache.pdfbox.cos.COSBase)>(r1) >>>>>>>> org.apache.pdfbox.cos.COSArray.removeObject : if z0 != 0
+org.apache.pdfbox.cos.COSArray.removeObject : if z0 != 0 >>>>>>>> org.apache.pdfbox.cos.COSArray.removeObject : i1 = 0
+org.apache.pdfbox.cos.COSArray.removeObject : if z0 != 0 >>>>>>>> org.apache.pdfbox.cos.COSArray.removeObject : return z0
+org.apache.pdfbox.cos.COSArray.removeObject : i1 = 0 >>>>>>>> org.apache.pdfbox.cos.COSArray.removeObject : $i0 = virtualinvoke r0.<org.apache.pdfbox.cos.COSArray: int size()>()
+org.apache.pdfbox.cos.COSArray.removeObject : $i0 = virtualinvoke r0.<org.apache.pdfbox.cos.COSArray: int size()>() >>>>>>>> org.apache.pdfbox.cos.COSArray.removeObject : if i1 >= $i0
+org.apache.pdfbox.cos.COSArray.removeObject : if i1 >= $i0 >>>>>>>> org.apache.pdfbox.cos.COSArray.removeObject : r2 = virtualinvoke r0.<org.apache.pdfbox.cos.COSArray: org.apache.pdfbox.cos.COSBase get(int)>(i1)
+org.apache.pdfbox.cos.COSArray.removeObject : if i1 >= $i0 >>>>>>>> org.apache.pdfbox.cos.COSArray.removeObject : return z0
+org.apache.pdfbox.cos.COSArray.removeObject : r2 = virtualinvoke r0.<org.apache.pdfbox.cos.COSArray: org.apache.pdfbox.cos.COSBase get(int)>(i1) >>>>>>>> org.apache.pdfbox.cos.COSArray.removeObject : $z1 = r2 instanceof org.apache.pdfbox.cos.COSObject
+org.apache.pdfbox.cos.COSArray.removeObject : $z1 = r2 instanceof org.apache.pdfbox.cos.COSObject >>>>>>>> org.apache.pdfbox.cos.COSArray.removeObject : if $z1 == 0
+org.apache.pdfbox.cos.COSArray.removeObject : if $z1 == 0 >>>>>>>> org.apache.pdfbox.cos.COSArray.removeObject : r3 = (org.apache.pdfbox.cos.COSObject) r2
+org.apache.pdfbox.cos.COSArray.removeObject : if $z1 == 0 >>>>>>>> org.apache.pdfbox.cos.COSArray.removeObject : i1 = i1 + 1
+org.apache.pdfbox.cos.COSArray.removeObject : i1 = i1 + 1 >>>>>>>> org.apache.pdfbox.cos.COSArray.removeObject : goto [?= $i0 = virtualinvoke r0.<org.apache.pdfbox.cos.COSArray: int size()>()]
+org.apache.pdfbox.cos.COSArray.removeObject : goto [?= $i0 = virtualinvoke r0.<org.apache.pdfbox.cos.COSArray: int size()>()] >>>>>>>> org.apache.pdfbox.cos.COSArray.removeObject : $i0 = virtualinvoke r0.<org.apache.pdfbox.cos.COSArray: int size()>()
+org.apache.pdfbox.cos.COSArray.removeObject : r3 = (org.apache.pdfbox.cos.COSObject) r2 >>>>>>>> org.apache.pdfbox.cos.COSArray.removeObject : $r4 = virtualinvoke r3.<org.apache.pdfbox.cos.COSObject: org.apache.pdfbox.cos.COSBase getObject()>()
+org.apache.pdfbox.cos.COSArray.removeObject : $r4 = virtualinvoke r3.<org.apache.pdfbox.cos.COSObject: org.apache.pdfbox.cos.COSBase getObject()>() >>>>>>>> org.apache.pdfbox.cos.COSArray.removeObject : $z2 = virtualinvoke $r4.<java.lang.Object: boolean equals(java.lang.Object)>(r1)
+org.apache.pdfbox.cos.COSArray.removeObject : $z2 = virtualinvoke $r4.<java.lang.Object: boolean equals(java.lang.Object)>(r1) >>>>>>>> org.apache.pdfbox.cos.COSArray.removeObject : if $z2 == 0
+org.apache.pdfbox.cos.COSArray.removeObject : if $z2 == 0 >>>>>>>> org.apache.pdfbox.cos.COSArray.removeObject : $z3 = virtualinvoke r0.<org.apache.pdfbox.cos.COSArray: boolean remove(org.apache.pdfbox.cos.COSBase)>(r2)
+org.apache.pdfbox.cos.COSArray.removeObject : if $z2 == 0 >>>>>>>> org.apache.pdfbox.cos.COSArray.removeObject : i1 = i1 + 1
+org.apache.pdfbox.cos.COSArray.removeObject : $z3 = virtualinvoke r0.<org.apache.pdfbox.cos.COSArray: boolean remove(org.apache.pdfbox.cos.COSBase)>(r2) >>>>>>>> org.apache.pdfbox.cos.COSArray.removeObject : return $z3

@@ -1,0 +1,40 @@
+org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : $z0 = r5 instanceof org.apache.pdfbox.cos.COSObject
+org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : return r5
+org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : $z1 = r5 instanceof org.apache.pdfbox.cos.COSNull
+org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : $r2 = r0.<org.apache.pdfbox.cos.COSDictionary: java.util.Map items>
+org.apache.pdfbox.cos.COSName.equals : $z0 = r1 instanceof org.apache.pdfbox.cos.COSName
+org.apache.pdfbox.pdmodel.interactive.form.PDField.getCOSObject : $r1 = r0.<org.apache.pdfbox.pdmodel.interactive.form.PDField: org.apache.pdfbox.cos.COSDictionary dictionary>
+org.apache.pdfbox.cos.COSDictionary.setItem : $r3 = r0.<org.apache.pdfbox.cos.COSDictionary: java.util.Map items>
+org.apache.pdfbox.cos.COSDictionary.setItem : if r2 != null goto $r3 = r0.<org.apache.pdfbox.cos.COSDictionary: java.util.Map items>
+org.apache.pdfbox.util.SmallMap.isEmpty : $r1 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.util.SmallMap.get : if i0 >= 0 goto $r2 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.util.SmallMap.get : i0 = specialinvoke r0.<org.apache.pdfbox.util.SmallMap: int findKey(java.lang.Object)>(r1)
+org.apache.pdfbox.pdmodel.documentinterchange.logicalstructure.PDAttributeObject.create : $r6 = "Table"
+org.apache.pdfbox.pdmodel.documentinterchange.logicalstructure.PDAttributeObject.create : $r11 = "OEB-1.00"
+org.apache.pdfbox.pdmodel.documentinterchange.logicalstructure.PDAttributeObject.create : $r12 = "RTF-1.05"
+org.apache.pdfbox.pdmodel.documentinterchange.logicalstructure.PDAttributeObject.create : $r9 = "HTML-3.2"
+org.apache.pdfbox.pdmodel.documentinterchange.logicalstructure.PDAttributeObject.create : $r3 = "UserProperties"
+org.apache.pdfbox.pdmodel.documentinterchange.logicalstructure.PDAttributeObject.create : $r7 = "Layout"
+org.apache.pdfbox.pdmodel.documentinterchange.logicalstructure.PDAttributeObject.create : $r14 = "CSS-2.00"
+org.apache.pdfbox.pdmodel.documentinterchange.logicalstructure.PDAttributeObject.create : $r15 = new org.apache.pdfbox.pdmodel.documentinterchange.logicalstructure.PDDefaultAttributeObject
+org.apache.pdfbox.pdmodel.documentinterchange.logicalstructure.PDAttributeObject.create : $r2 = <org.apache.pdfbox.cos.COSName: org.apache.pdfbox.cos.COSName O>
+org.apache.pdfbox.pdmodel.documentinterchange.logicalstructure.PDAttributeObject.create : $r8 = "XML-1.00"
+org.apache.pdfbox.pdmodel.documentinterchange.logicalstructure.PDAttributeObject.create : $r5 = "PrintField"
+org.apache.pdfbox.pdmodel.documentinterchange.logicalstructure.PDAttributeObject.create : $r13 = "CSS-1.00"
+org.apache.pdfbox.pdmodel.documentinterchange.logicalstructure.PDAttributeObject.create : $r10 = "HTML-4.01"
+org.apache.pdfbox.pdmodel.documentinterchange.logicalstructure.PDAttributeObject.create : $r4 = "List"
+org.apache.pdfbox.util.SmallMap.findKey : if r1 != null goto i1 = 0
+org.apache.pdfbox.util.SmallMap.findKey : return -1
+org.apache.pdfbox.util.SmallMap.findKey : $r3 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.util.SmallMap.findKey : i1 = 0
+org.apache.pdfbox.util.SmallMap.findKey : $z0 = virtualinvoke r0.<org.apache.pdfbox.util.SmallMap: boolean isEmpty()>()
+org.apache.pdfbox.cos.COSDictionary.getNameAsString : return r5
+org.apache.pdfbox.cos.COSDictionary.getNameAsString : r2 = virtualinvoke r0.<org.apache.pdfbox.cos.COSDictionary: org.apache.pdfbox.cos.COSBase getDictionaryObject(org.apache.pdfbox.cos.COSName)>(r1)
+org.apache.pdfbox.cos.COSDictionary.getNameAsString : r5 = null
+org.apache.pdfbox.cos.COSDictionary.getNameAsString : $z1 = r2 instanceof org.apache.pdfbox.cos.COSString
+org.apache.pdfbox.cos.COSDictionary.getNameAsString : $z0 = r2 instanceof org.apache.pdfbox.cos.COSName
+org.apache.pdfbox.util.SmallMap.put : $r5 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.util.SmallMap.put : if r1 == null goto $r4 = new java.lang.NullPointerException
+org.apache.pdfbox.util.SmallMap.put : return null
+org.apache.pdfbox.util.SmallMap.put : if r2 != null goto $r5 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.util.SmallMap.put : $r10 = newarray (java.lang.Object)[2]

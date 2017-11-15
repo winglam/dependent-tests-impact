@@ -1,0 +1,5 @@
+org.apache.pdfbox.io.RandomAccessFile.checkClosed : $z0 = r0.<org.apache.pdfbox.io.RandomAccessFile: boolean isClosed> >>>>>>>> org.apache.pdfbox.io.RandomAccessFile.checkClosed : if $z0 == 0
+org.apache.pdfbox.io.RandomAccessFile.checkClosed : if $z0 == 0 >>>>>>>> org.apache.pdfbox.io.RandomAccessFile.checkClosed : $r1 = new java.io.IOException
+org.apache.pdfbox.io.RandomAccessFile.checkClosed : if $z0 == 0 >>>>>>>> org.apache.pdfbox.io.RandomAccessFile.checkClosed : return
+org.apache.pdfbox.io.RandomAccessFile.checkClosed : $r1 = new java.io.IOException >>>>>>>> org.apache.pdfbox.io.RandomAccessFile.checkClosed : specialinvoke $r1.<java.io.IOException: void <init>(java.lang.String)>("RandomAccessFile already closed")
+org.apache.pdfbox.io.RandomAccessFile.checkClosed : specialinvoke $r1.<java.io.IOException: void <init>(java.lang.String)>("RandomAccessFile already closed") >>>>>>>> org.apache.pdfbox.io.RandomAccessFile.checkClosed : throw $r1

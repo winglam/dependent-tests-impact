@@ -1,0 +1,17 @@
+org.apache.pdfbox.pdmodel.graphics.shading.Patch.overlaps : $d0 = virtualinvoke r1.<java.awt.geom.Point2D: double getX()>() >>>>>>>> org.apache.pdfbox.pdmodel.graphics.shading.Patch.overlaps : $d1 = virtualinvoke r2.<java.awt.geom.Point2D: double getX()>()
+org.apache.pdfbox.pdmodel.graphics.shading.Patch.overlaps : $d1 = virtualinvoke r2.<java.awt.geom.Point2D: double getX()>() >>>>>>>> org.apache.pdfbox.pdmodel.graphics.shading.Patch.overlaps : $d2 = $d0 - $d1
+org.apache.pdfbox.pdmodel.graphics.shading.Patch.overlaps : $d2 = $d0 - $d1 >>>>>>>> org.apache.pdfbox.pdmodel.graphics.shading.Patch.overlaps : $d3 = staticinvoke <java.lang.Math: double abs(double)>($d2)
+org.apache.pdfbox.pdmodel.graphics.shading.Patch.overlaps : $d3 = staticinvoke <java.lang.Math: double abs(double)>($d2) >>>>>>>> org.apache.pdfbox.pdmodel.graphics.shading.Patch.overlaps : $b0 = $d3 cmpg 0.001
+org.apache.pdfbox.pdmodel.graphics.shading.Patch.overlaps : $b0 = $d3 cmpg 0.001 >>>>>>>> org.apache.pdfbox.pdmodel.graphics.shading.Patch.overlaps : if $b0 >= 0
+org.apache.pdfbox.pdmodel.graphics.shading.Patch.overlaps : if $b0 >= 0 >>>>>>>> org.apache.pdfbox.pdmodel.graphics.shading.Patch.overlaps : $d4 = virtualinvoke r1.<java.awt.geom.Point2D: double getY()>()
+org.apache.pdfbox.pdmodel.graphics.shading.Patch.overlaps : if $b0 >= 0 >>>>>>>> org.apache.pdfbox.pdmodel.graphics.shading.Patch.overlaps : $z0 = 0
+org.apache.pdfbox.pdmodel.graphics.shading.Patch.overlaps : $z0 = 0 >>>>>>>> org.apache.pdfbox.pdmodel.graphics.shading.Patch.overlaps : return $z0
+org.apache.pdfbox.pdmodel.graphics.shading.Patch.overlaps : $d4 = virtualinvoke r1.<java.awt.geom.Point2D: double getY()>() >>>>>>>> org.apache.pdfbox.pdmodel.graphics.shading.Patch.overlaps : $d5 = virtualinvoke r2.<java.awt.geom.Point2D: double getY()>()
+org.apache.pdfbox.pdmodel.graphics.shading.Patch.overlaps : $d5 = virtualinvoke r2.<java.awt.geom.Point2D: double getY()>() >>>>>>>> org.apache.pdfbox.pdmodel.graphics.shading.Patch.overlaps : $d6 = $d4 - $d5
+org.apache.pdfbox.pdmodel.graphics.shading.Patch.overlaps : $d6 = $d4 - $d5 >>>>>>>> org.apache.pdfbox.pdmodel.graphics.shading.Patch.overlaps : $d7 = staticinvoke <java.lang.Math: double abs(double)>($d6)
+org.apache.pdfbox.pdmodel.graphics.shading.Patch.overlaps : $d7 = staticinvoke <java.lang.Math: double abs(double)>($d6) >>>>>>>> org.apache.pdfbox.pdmodel.graphics.shading.Patch.overlaps : $b1 = $d7 cmpg 0.001
+org.apache.pdfbox.pdmodel.graphics.shading.Patch.overlaps : $b1 = $d7 cmpg 0.001 >>>>>>>> org.apache.pdfbox.pdmodel.graphics.shading.Patch.overlaps : if $b1 >= 0
+org.apache.pdfbox.pdmodel.graphics.shading.Patch.overlaps : if $b1 >= 0 >>>>>>>> org.apache.pdfbox.pdmodel.graphics.shading.Patch.overlaps : $z0 = 1
+org.apache.pdfbox.pdmodel.graphics.shading.Patch.overlaps : if $b1 >= 0 >>>>>>>> org.apache.pdfbox.pdmodel.graphics.shading.Patch.overlaps : $z0 = 0
+org.apache.pdfbox.pdmodel.graphics.shading.Patch.overlaps : $z0 = 1 >>>>>>>> org.apache.pdfbox.pdmodel.graphics.shading.Patch.overlaps : goto [?= return $z0]
+org.apache.pdfbox.pdmodel.graphics.shading.Patch.overlaps : goto [?= return $z0] >>>>>>>> org.apache.pdfbox.pdmodel.graphics.shading.Patch.overlaps : return $z0

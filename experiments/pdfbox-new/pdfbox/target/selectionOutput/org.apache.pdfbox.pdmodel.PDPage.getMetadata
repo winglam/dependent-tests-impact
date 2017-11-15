@@ -1,0 +1,10 @@
+org.apache.pdfbox.pdmodel.PDPage.getMetadata : r1 = null >>>>>>>> org.apache.pdfbox.pdmodel.PDPage.getMetadata : $r4 = r0.<org.apache.pdfbox.pdmodel.PDPage: org.apache.pdfbox.cos.COSDictionary page>
+org.apache.pdfbox.pdmodel.PDPage.getMetadata : $r4 = r0.<org.apache.pdfbox.pdmodel.PDPage: org.apache.pdfbox.cos.COSDictionary page> >>>>>>>> org.apache.pdfbox.pdmodel.PDPage.getMetadata : $r2 = <org.apache.pdfbox.cos.COSName: org.apache.pdfbox.cos.COSName METADATA>
+org.apache.pdfbox.pdmodel.PDPage.getMetadata : $r2 = <org.apache.pdfbox.cos.COSName: org.apache.pdfbox.cos.COSName METADATA> >>>>>>>> org.apache.pdfbox.pdmodel.PDPage.getMetadata : $r5 = virtualinvoke $r4.<org.apache.pdfbox.cos.COSDictionary: org.apache.pdfbox.cos.COSBase getDictionaryObject(org.apache.pdfbox.cos.COSName)>($r2)
+org.apache.pdfbox.pdmodel.PDPage.getMetadata : $r5 = virtualinvoke $r4.<org.apache.pdfbox.cos.COSDictionary: org.apache.pdfbox.cos.COSBase getDictionaryObject(org.apache.pdfbox.cos.COSName)>($r2) >>>>>>>> org.apache.pdfbox.pdmodel.PDPage.getMetadata : r3 = (org.apache.pdfbox.cos.COSStream) $r5
+org.apache.pdfbox.pdmodel.PDPage.getMetadata : r3 = (org.apache.pdfbox.cos.COSStream) $r5 >>>>>>>> org.apache.pdfbox.pdmodel.PDPage.getMetadata : if r3 == null
+org.apache.pdfbox.pdmodel.PDPage.getMetadata : if r3 == null >>>>>>>> org.apache.pdfbox.pdmodel.PDPage.getMetadata : $r6 = new org.apache.pdfbox.pdmodel.common.PDMetadata
+org.apache.pdfbox.pdmodel.PDPage.getMetadata : if r3 == null >>>>>>>> org.apache.pdfbox.pdmodel.PDPage.getMetadata : return r1
+org.apache.pdfbox.pdmodel.PDPage.getMetadata : $r6 = new org.apache.pdfbox.pdmodel.common.PDMetadata >>>>>>>> org.apache.pdfbox.pdmodel.PDPage.getMetadata : specialinvoke $r6.<org.apache.pdfbox.pdmodel.common.PDMetadata: void <init>(org.apache.pdfbox.cos.COSStream)>(r3)
+org.apache.pdfbox.pdmodel.PDPage.getMetadata : specialinvoke $r6.<org.apache.pdfbox.pdmodel.common.PDMetadata: void <init>(org.apache.pdfbox.cos.COSStream)>(r3) >>>>>>>> org.apache.pdfbox.pdmodel.PDPage.getMetadata : r1 = $r6
+org.apache.pdfbox.pdmodel.PDPage.getMetadata : r1 = $r6 >>>>>>>> org.apache.pdfbox.pdmodel.PDPage.getMetadata : return r1

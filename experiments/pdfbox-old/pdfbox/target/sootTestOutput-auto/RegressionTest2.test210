@@ -1,0 +1,172 @@
+org.apache.pdfbox.cos.COSDictionary.setEmbeddedInt : virtualinvoke r5.<org.apache.pdfbox.cos.COSDictionary: void setInt(org.apache.pdfbox.cos.COSName,int)>(r2, i0)
+org.apache.pdfbox.cos.COSDictionary.setEmbeddedInt : if r5 != null goto virtualinvoke r5.<org.apache.pdfbox.cos.COSDictionary: void setInt(org.apache.pdfbox.cos.COSName,int)>(r2, i0)
+org.apache.pdfbox.cos.COSDictionary.setEmbeddedInt : $r3 = virtualinvoke r0.<org.apache.pdfbox.cos.COSDictionary: org.apache.pdfbox.cos.COSBase getDictionaryObject(java.lang.String)>(r1)
+org.apache.pdfbox.cos.COSDictionary.setEmbeddedInt : $r4 = new org.apache.pdfbox.cos.COSDictionary
+org.apache.pdfbox.cos.COSDictionary.setEmbeddedInt : virtualinvoke r0.<org.apache.pdfbox.cos.COSDictionary: void setItem(java.lang.String,org.apache.pdfbox.cos.COSBase)>(r1, $r4)
+org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : $z0 = r5 instanceof org.apache.pdfbox.cos.COSObject
+org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : return r5
+org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : $z1 = r5 instanceof org.apache.pdfbox.cos.COSNull
+org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : $r2 = r0.<org.apache.pdfbox.cos.COSDictionary: java.util.Map items>
+org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : if r2 == null goto return r3
+org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : r3 = virtualinvoke r0.<org.apache.pdfbox.cos.COSDictionary: org.apache.pdfbox.cos.COSBase getDictionaryObject(org.apache.pdfbox.cos.COSName)>(r1)
+org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : r3 = virtualinvoke r0.<org.apache.pdfbox.cos.COSDictionary: org.apache.pdfbox.cos.COSBase getDictionaryObject(org.apache.pdfbox.cos.COSName)>(r2)
+org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : $r2 = staticinvoke <org.apache.pdfbox.cos.COSName: org.apache.pdfbox.cos.COSName getPDFName(java.lang.String)>(r1)
+org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : if r3 != null goto return r3
+org.apache.pdfbox.util.Hex.getString : b1 = r0[i8]
+org.apache.pdfbox.util.Hex.getString : $r5 = <org.apache.pdfbox.util.Hex: char[] HEX_CHARS>
+org.apache.pdfbox.util.Hex.getString : $r3 = new java.lang.StringBuilder
+org.apache.pdfbox.util.Hex.getString : i0 = lengthof r0
+org.apache.pdfbox.cos.COSArray.add : $r2 = r0.<org.apache.pdfbox.cos.COSArray: java.util.List objects>
+org.apache.pdfbox.pdmodel.common.COSArrayList.convertStringListToCOSStringCOSArray : $r4 = new org.apache.pdfbox.cos.COSArray
+org.apache.pdfbox.pdmodel.common.COSArrayList.convertStringListToCOSStringCOSArray : r2 = interfaceinvoke r0.<java.util.List: java.util.Iterator iterator()>()
+org.apache.pdfbox.pdmodel.common.COSArrayList.convertStringListToCOSStringCOSArray : $r5 = interfaceinvoke r2.<java.util.Iterator: java.lang.Object next()>()
+org.apache.pdfbox.pdmodel.common.COSArrayList.convertStringListToCOSStringCOSArray : goto [?= $z0 = interfaceinvoke r2.<java.util.Iterator: boolean hasNext()>()]
+org.apache.pdfbox.pdmodel.common.COSArrayList.convertStringListToCOSStringCOSArray : $r6 = new org.apache.pdfbox.cos.COSString
+org.apache.pdfbox.pdmodel.interactive.action.PDAction.setSubType : $r3 = r0.<org.apache.pdfbox.pdmodel.interactive.action.PDAction: org.apache.pdfbox.cos.COSDictionary action>
+org.apache.pdfbox.pdmodel.interactive.action.PDAction.getCOSObject : $r1 = virtualinvoke r0.<org.apache.pdfbox.pdmodel.interactive.action.PDAction: org.apache.pdfbox.cos.COSDictionary getCOSObject()>()
+org.apache.pdfbox.pdmodel.interactive.action.PDAction.getCOSObject : $r1 = r0.<org.apache.pdfbox.pdmodel.interactive.action.PDAction: org.apache.pdfbox.cos.COSDictionary action>
+org.apache.pdfbox.cos.COSDictionary.setInt : $l1 = (long) i0
+org.apache.pdfbox.cos.COSDictionary.getLong : return l1
+org.apache.pdfbox.cos.COSDictionary.getLong : r2 = virtualinvoke r0.<org.apache.pdfbox.cos.COSDictionary: org.apache.pdfbox.cos.COSBase getDictionaryObject(org.apache.pdfbox.cos.COSName)>(r1)
+org.apache.pdfbox.cos.COSDictionary.getLong : $z0 = r2 instanceof org.apache.pdfbox.cos.COSNumber
+org.apache.pdfbox.cos.COSDictionary.getLong : $r2 = staticinvoke <org.apache.pdfbox.cos.COSName: org.apache.pdfbox.cos.COSName getPDFName(java.lang.String)>(r1)
+org.apache.pdfbox.cos.COSDictionary.getLong : l1 = l0
+org.apache.pdfbox.io.ScratchFile.getMainMemoryOnlyInstance : $r1 = new org.apache.pdfbox.io.ScratchFile
+org.apache.pdfbox.util.SmallMap.access$000 : $r1 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.util.SmallMap$SmallMapEntry.getValue : $r1 = r0.<org.apache.pdfbox.util.SmallMap$SmallMapEntry: org.apache.pdfbox.util.SmallMap this$0>
+org.apache.pdfbox.pdmodel.interactive.action.PDAction.setNext : $r2 = r0.<org.apache.pdfbox.pdmodel.interactive.action.PDAction: org.apache.pdfbox.cos.COSDictionary action>
+org.apache.pdfbox.io.MemoryUsageSetting.isStorageRestricted : $l0 = r0.<org.apache.pdfbox.io.MemoryUsageSetting: long maxStorageBytes>
+org.apache.pdfbox.pdmodel.interactive.action.PDFormFieldAdditionalActions.setC : $r3 = r0.<org.apache.pdfbox.pdmodel.interactive.action.PDFormFieldAdditionalActions: org.apache.pdfbox.cos.COSDictionary actions>
+org.apache.pdfbox.pdmodel.graphics.image.PDInlineImage.setFilters : $r4 = r0.<org.apache.pdfbox.pdmodel.graphics.image.PDInlineImage: org.apache.pdfbox.cos.COSDictionary parameters>
+org.apache.pdfbox.pdmodel.graphics.image.PDInlineImage.setFilters : r2 = staticinvoke <org.apache.pdfbox.pdmodel.common.COSArrayList: org.apache.pdfbox.cos.COSArray convertStringListToCOSNameCOSArray(java.util.List)>(r1)
+org.apache.pdfbox.cos.COSDocument.getObjectFromPool : if r1 == null goto (branch)
+org.apache.pdfbox.cos.COSDocument.getObjectFromPool : if r7 != null goto return r7
+org.apache.pdfbox.cos.COSDocument.getObjectFromPool : $r2 = new org.apache.pdfbox.cos.COSObject
+org.apache.pdfbox.cos.COSDocument.getObjectFromPool : if r1 == null goto return r7
+org.apache.pdfbox.cos.COSDocument.getObjectFromPool : return r7
+org.apache.pdfbox.cos.COSDocument.getObjectFromPool : r7 = null
+org.apache.pdfbox.cos.COSName.equals : $z0 = r1 instanceof org.apache.pdfbox.cos.COSName
+org.apache.pdfbox.pdmodel.interactive.form.PDButton.setExportValues : if r1 == null goto $r3 = virtualinvoke r0.<org.apache.pdfbox.pdmodel.interactive.form.PDButton: org.apache.pdfbox.cos.COSDictionary getCOSObject()>()
+org.apache.pdfbox.pdmodel.interactive.form.PDButton.setExportValues : $r5 = virtualinvoke r0.<org.apache.pdfbox.pdmodel.interactive.form.PDButton: org.apache.pdfbox.cos.COSDictionary getCOSObject()>()
+org.apache.pdfbox.pdmodel.interactive.form.PDButton.setExportValues : $z0 = interfaceinvoke r1.<java.util.List: boolean isEmpty()>()
+org.apache.pdfbox.pdmodel.interactive.form.PDButton.setExportValues : r2 = staticinvoke <org.apache.pdfbox.pdmodel.common.COSArrayList: org.apache.pdfbox.cos.COSArray convertStringListToCOSStringCOSArray(java.util.List)>(r1)
+org.apache.pdfbox.cos.COSDictionary.setNeedToBeUpdated : r0.<org.apache.pdfbox.cos.COSDictionary: boolean needToBeUpdated> = z0
+org.apache.pdfbox.cos.COSName.hashCode : $i0 = r0.<org.apache.pdfbox.cos.COSName: int hashCode>
+org.apache.pdfbox.pdmodel.interactive.form.PDField.getCOSObject : $r1 = r0.<org.apache.pdfbox.pdmodel.interactive.form.PDField: org.apache.pdfbox.cos.COSDictionary dictionary>
+org.apache.pdfbox.pdmodel.common.COSArrayList.converterToCOSArray : $r4 = new org.apache.pdfbox.cos.COSArray
+org.apache.pdfbox.pdmodel.common.COSArrayList.converterToCOSArray : r2 = interfaceinvoke r1.<java.util.Iterator: java.lang.Object next()>()
+org.apache.pdfbox.pdmodel.common.COSArrayList.converterToCOSArray : $r19 = new org.apache.pdfbox.cos.COSString
+org.apache.pdfbox.pdmodel.common.COSArrayList.converterToCOSArray : $z2 = r2 instanceof java.lang.String
+org.apache.pdfbox.pdmodel.common.COSArrayList.converterToCOSArray : r1 = interfaceinvoke r0.<java.util.List: java.util.Iterator iterator()>()
+org.apache.pdfbox.pdmodel.common.COSArrayList.converterToCOSArray : r22 = null
+org.apache.pdfbox.pdmodel.common.COSArrayList.converterToCOSArray : $z0 = r0 instanceof org.apache.pdfbox.pdmodel.common.COSArrayList
+org.apache.pdfbox.pdmodel.common.COSArrayList.converterToCOSArray : if r0 == null goto return r22
+org.apache.pdfbox.cos.COSDictionary.setItem : r3 = interfaceinvoke r2.<org.apache.pdfbox.pdmodel.common.COSObjectable: org.apache.pdfbox.cos.COSBase getCOSObject()>()
+org.apache.pdfbox.cos.COSDictionary.setItem : $r3 = r0.<org.apache.pdfbox.cos.COSDictionary: java.util.Map items>
+org.apache.pdfbox.cos.COSDictionary.setItem : r3 = null
+org.apache.pdfbox.cos.COSDictionary.setItem : $r3 = staticinvoke <org.apache.pdfbox.cos.COSName: org.apache.pdfbox.cos.COSName getPDFName(java.lang.String)>(r1)
+org.apache.pdfbox.cos.COSDictionary.setItem : if r2 == null goto virtualinvoke r0.<org.apache.pdfbox.cos.COSDictionary: void setItem(org.apache.pdfbox.cos.COSName,org.apache.pdfbox.cos.COSBase)>(r1, r3)
+org.apache.pdfbox.cos.COSDictionary.setItem : if r2 != null goto $r3 = r0.<org.apache.pdfbox.cos.COSDictionary: java.util.Map items>
+org.apache.pdfbox.cos.COSDictionary.setItem : virtualinvoke r0.<org.apache.pdfbox.cos.COSDictionary: void setItem(org.apache.pdfbox.cos.COSName,org.apache.pdfbox.cos.COSBase)>(r1, r3)
+org.apache.pdfbox.util.SmallMap.isEmpty : $r1 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.cos.COSDictionary.setName : r3 = null
+org.apache.pdfbox.cos.COSDictionary.setName : if r2 == null goto virtualinvoke r0.<org.apache.pdfbox.cos.COSDictionary: void setItem(org.apache.pdfbox.cos.COSName,org.apache.pdfbox.cos.COSBase)>(r1, r3)
+org.apache.pdfbox.cos.COSDictionary.setName : r3 = staticinvoke <org.apache.pdfbox.cos.COSName: org.apache.pdfbox.cos.COSName getPDFName(java.lang.String)>(r2)
+org.apache.pdfbox.cos.COSDictionary.setName : virtualinvoke r0.<org.apache.pdfbox.cos.COSDictionary: void setItem(org.apache.pdfbox.cos.COSName,org.apache.pdfbox.cos.COSBase)>(r1, r3)
+org.apache.pdfbox.cos.COSFloat.removeNullDigits : $i0 = virtualinvoke r1.<java.lang.String: int indexOf(int)>(46)
+org.apache.pdfbox.cos.COSFloat.removeNullDigits : $z0 = virtualinvoke r1.<java.lang.String: boolean endsWith(java.lang.String)>(".0")
+org.apache.pdfbox.util.SmallMap.get : if i0 >= 0 goto $r2 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.util.SmallMap.get : i0 = specialinvoke r0.<org.apache.pdfbox.util.SmallMap: int findKey(java.lang.Object)>(r1)
+org.apache.pdfbox.cos.COSDocument.getObjectByType : $r7 = r0.<org.apache.pdfbox.cos.COSDocument: java.util.Map objectPool>
+org.apache.pdfbox.util.SmallMap$SmallMapEntry.getKey : $r1 = r0.<org.apache.pdfbox.util.SmallMap$SmallMapEntry: org.apache.pdfbox.util.SmallMap this$0>
+org.apache.pdfbox.util.Hex.getLowNibble : $b1 = b0 & 15
+org.apache.pdfbox.util.SmallMap.size : $r1 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.pdmodel.interactive.action.PDAction.setType : $r3 = r0.<org.apache.pdfbox.pdmodel.interactive.action.PDAction: org.apache.pdfbox.cos.COSDictionary action>
+org.apache.pdfbox.cos.PDFDocEncoding.containsChar : $r0 = <org.apache.pdfbox.cos.PDFDocEncoding: java.util.Map UNI_TO_CODE>
+org.apache.pdfbox.cos.COSDocument.setTrailer : r0.<org.apache.pdfbox.cos.COSDocument: org.apache.pdfbox.cos.COSDictionary trailer> = r1
+org.apache.pdfbox.cos.COSInteger.get : $r1 = <org.apache.pdfbox.cos.COSInteger: org.apache.pdfbox.cos.COSInteger[] STATIC>
+org.apache.pdfbox.cos.COSInteger.get : $b2 = -100L cmp l0
+org.apache.pdfbox.cos.COSInteger.get : $i4 = (int) l0
+org.apache.pdfbox.cos.COSInteger.get : $b3 = l0 cmp 256L
+org.apache.pdfbox.cos.COSInteger.get : $r3 = <org.apache.pdfbox.cos.COSInteger: org.apache.pdfbox.cos.COSInteger[] STATIC>
+org.apache.pdfbox.util.SmallMap.findKey : if r1 != null goto i1 = 0
+org.apache.pdfbox.util.SmallMap.findKey : return -1
+org.apache.pdfbox.util.SmallMap.findKey : $r3 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.util.SmallMap.findKey : i1 = 0
+org.apache.pdfbox.util.SmallMap.findKey : $z0 = virtualinvoke r0.<org.apache.pdfbox.util.SmallMap: boolean isEmpty()>()
+org.apache.pdfbox.io.MemoryUsageSetting.useMainMemory : $z0 = r0.<org.apache.pdfbox.io.MemoryUsageSetting: boolean useMainMemory>
+org.apache.pdfbox.pdmodel.common.COSArrayList.convertStringListToCOSNameCOSArray : $r4 = new org.apache.pdfbox.cos.COSArray
+org.apache.pdfbox.pdmodel.common.COSArrayList.convertStringListToCOSNameCOSArray : r2 = interfaceinvoke r0.<java.util.List: java.util.Iterator iterator()>()
+org.apache.pdfbox.pdmodel.common.COSArrayList.convertStringListToCOSNameCOSArray : $r5 = interfaceinvoke r2.<java.util.Iterator: java.lang.Object next()>()
+org.apache.pdfbox.pdmodel.common.COSArrayList.convertStringListToCOSNameCOSArray : $r6 = staticinvoke <org.apache.pdfbox.cos.COSName: org.apache.pdfbox.cos.COSName getPDFName(java.lang.String)>(r3)
+org.apache.pdfbox.pdmodel.common.COSArrayList.convertStringListToCOSNameCOSArray : goto [?= $z0 = interfaceinvoke r2.<java.util.Iterator: boolean hasNext()>()]
+org.apache.pdfbox.cos.COSObject.setObject : r0.<org.apache.pdfbox.cos.COSObject: org.apache.pdfbox.cos.COSBase baseObject> = r1
+org.apache.pdfbox.io.RandomAccessBuffer.isClosed : $r1 = r0.<org.apache.pdfbox.io.RandomAccessBuffer: byte[] currentBuffer>
+org.apache.pdfbox.util.Hex.getHighNibble : $s1 = b0 & 240
+org.apache.pdfbox.cos.COSDictionary.getEmbeddedString : $r5 = virtualinvoke r0.<org.apache.pdfbox.cos.COSDictionary: org.apache.pdfbox.cos.COSBase getDictionaryObject(java.lang.String)>(r1)
+org.apache.pdfbox.cos.COSDictionary.getEmbeddedString : $r3 = staticinvoke <org.apache.pdfbox.cos.COSName: org.apache.pdfbox.cos.COSName getPDFName(java.lang.String)>(r2)
+org.apache.pdfbox.cos.COSDictionary.getEmbeddedString : return r6
+org.apache.pdfbox.cos.COSDictionary.getEmbeddedString : if r4 == null goto return r6
+org.apache.pdfbox.cos.COSDictionary.getEmbeddedString : r6 = r3
+org.apache.pdfbox.util.SmallMap.entrySet : $r5 = new org.apache.pdfbox.util.SmallMap$SmallMapEntry
+org.apache.pdfbox.util.SmallMap.entrySet : $r2 = new java.util.LinkedHashSet
+org.apache.pdfbox.util.SmallMap.entrySet : i1 = 0
+org.apache.pdfbox.util.SmallMap.entrySet : $r4 = staticinvoke <java.util.Collections: java.util.Set unmodifiableSet(java.util.Set)>($r2)
+org.apache.pdfbox.util.SmallMap.entrySet : $z0 = virtualinvoke r0.<org.apache.pdfbox.util.SmallMap: boolean isEmpty()>()
+org.apache.pdfbox.io.MemoryUsageSetting.isMainMemoryRestricted : $l0 = r0.<org.apache.pdfbox.io.MemoryUsageSetting: long maxMainMemoryBytes>
+org.apache.pdfbox.util.QuickSort.sort : if i0 >= 2 goto staticinvoke <org.apache.pdfbox.util.QuickSort: void quicksort(java.util.List,java.util.Comparator)>(r0, r1)
+org.apache.pdfbox.util.QuickSort.sort : i0 = interfaceinvoke r0.<java.util.List: int size()>()
+org.apache.pdfbox.io.RandomAccessBuffer.read : return 0
+org.apache.pdfbox.io.RandomAccessBuffer.read : specialinvoke r0.<org.apache.pdfbox.io.RandomAccessBuffer: void checkClosed()>()
+org.apache.pdfbox.io.RandomAccessBuffer.read : $l3 = r0.<org.apache.pdfbox.io.RandomAccessBuffer: long pointer>
+org.apache.pdfbox.util.SmallMap$SmallMapEntry.hashCode : $r1 = virtualinvoke r0.<org.apache.pdfbox.util.SmallMap$SmallMapEntry: java.lang.Object getKey()>()
+org.apache.pdfbox.util.SmallMap.putAll : i9 = 0
+org.apache.pdfbox.util.SmallMap.putAll : $r12 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.util.SmallMap.putAll : $r10 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.util.SmallMap.putAll : $r3 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.util.SmallMap.putAll : $r6 = interfaceinvoke r26.<java.util.Iterator: java.lang.Object next()>()
+org.apache.pdfbox.util.SmallMap.putAll : $i1 = interfaceinvoke r1.<java.util.Map: int size()>()
+org.apache.pdfbox.util.SmallMap.putAll : goto [?= return]
+org.apache.pdfbox.util.SmallMap.putAll : $r5 = interfaceinvoke r1.<java.util.Map: java.util.Set entrySet()>()
+org.apache.pdfbox.util.SmallMap.putAll : $r7 = interfaceinvoke r27.<java.util.Map$Entry: java.lang.Object getKey()>()
+org.apache.pdfbox.util.SmallMap.putAll : goto [?= $z1 = interfaceinvoke r26.<java.util.Iterator: boolean hasNext()>()]
+org.apache.pdfbox.cos.COSBoolean.getBoolean : if z0 == 0 goto $r0 = <org.apache.pdfbox.cos.COSBoolean: org.apache.pdfbox.cos.COSBoolean FALSE>
+org.apache.pdfbox.cos.COSDictionary.setBoolean : $r2 = staticinvoke <org.apache.pdfbox.cos.COSBoolean: org.apache.pdfbox.cos.COSBoolean getBoolean(boolean)>(z0)
+org.apache.pdfbox.pdmodel.graphics.image.PDInlineImage.getFilters : r11 = null
+org.apache.pdfbox.pdmodel.graphics.image.PDInlineImage.getFilters : $z1 = r1 instanceof org.apache.pdfbox.cos.COSArray
+org.apache.pdfbox.pdmodel.graphics.image.PDInlineImage.getFilters : $z0 = r1 instanceof org.apache.pdfbox.cos.COSName
+org.apache.pdfbox.pdmodel.graphics.image.PDInlineImage.getFilters : $r5 = r0.<org.apache.pdfbox.pdmodel.graphics.image.PDInlineImage: org.apache.pdfbox.cos.COSDictionary parameters>
+org.apache.pdfbox.pdmodel.graphics.image.PDInlineImage.getFilters : return r11
+org.apache.pdfbox.io.MemoryUsageSetting.setupMainMemoryOnly : $r0 = new org.apache.pdfbox.io.MemoryUsageSetting
+org.apache.pdfbox.io.MemoryUsageSetting.setupMainMemoryOnly : $r0 = staticinvoke <org.apache.pdfbox.io.MemoryUsageSetting: org.apache.pdfbox.io.MemoryUsageSetting setupMainMemoryOnly(long)>(-1L)
+org.apache.pdfbox.cos.COSName.getPDFName : $r1 = <org.apache.pdfbox.cos.COSName: java.util.Map commonNameMap>
+org.apache.pdfbox.cos.COSName.getPDFName : return r6
+org.apache.pdfbox.cos.COSName.getPDFName : r6 = null
+org.apache.pdfbox.cos.COSName.getPDFName : $r3 = <org.apache.pdfbox.cos.COSName: java.util.Map nameMap>
+org.apache.pdfbox.cos.COSName.getPDFName : if r0 == null goto return r6
+org.apache.pdfbox.cos.COSName.getPDFName : if r6 != null goto return r6
+org.apache.pdfbox.pdmodel.interactive.action.PDActionSound.setVolume : $r3 = r0.<org.apache.pdfbox.pdmodel.interactive.action.PDActionSound: org.apache.pdfbox.cos.COSDictionary action>
+org.apache.pdfbox.pdmodel.interactive.action.PDActionSound.setVolume : $b0 = f0 cmpg -1.0F
+org.apache.pdfbox.pdmodel.interactive.action.PDActionSound.setVolume : $b1 = f0 cmpl 1.0F
+org.apache.pdfbox.io.RandomAccessBuffer.checkClosed : $r1 = r0.<org.apache.pdfbox.io.RandomAccessBuffer: byte[] currentBuffer>
+org.apache.pdfbox.util.SmallMap.put : $r5 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.util.SmallMap.put : $r8 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.util.SmallMap.put : $r9 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.util.SmallMap.put : if r2 != null goto $r5 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.util.SmallMap.put : $i4 = i5 + 1
+org.apache.pdfbox.util.SmallMap.put : r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr> = r3
+org.apache.pdfbox.util.SmallMap.put : r3[i5] = r1
+org.apache.pdfbox.util.SmallMap.put : $i3 = i5 + 2
+org.apache.pdfbox.util.SmallMap.put : if r1 == null goto $r4 = new java.lang.NullPointerException
+org.apache.pdfbox.util.SmallMap.put : return null
+org.apache.pdfbox.util.SmallMap.put : $r10 = newarray (java.lang.Object)[2]
+org.apache.pdfbox.util.SmallMap.put : i0 = specialinvoke r0.<org.apache.pdfbox.util.SmallMap: int findKey(java.lang.Object)>(r1)
+org.apache.pdfbox.util.SmallMap.put : if i0 >= 0 goto $r6 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.cos.COSDictionary.setFloat : virtualinvoke r0.<org.apache.pdfbox.cos.COSDictionary: void setItem(org.apache.pdfbox.cos.COSName,org.apache.pdfbox.cos.COSBase)>(r1, $r3)
+org.apache.pdfbox.cos.COSDictionary.setFloat : $r3 = new org.apache.pdfbox.cos.COSFloat
+org.apache.pdfbox.cos.PDFDocEncoding.getBytes : r2 = virtualinvoke r0.<java.lang.String: char[] toCharArray()>()
+org.apache.pdfbox.cos.PDFDocEncoding.getBytes : if r3 != null goto $i2 = virtualinvoke r3.<java.lang.Integer: int intValue()>()
+org.apache.pdfbox.cos.PDFDocEncoding.getBytes : $r4 = new java.io.ByteArrayOutputStream
+org.apache.pdfbox.cos.PDFDocEncoding.getBytes : $i2 = virtualinvoke r3.<java.lang.Integer: int intValue()>()
+org.apache.pdfbox.cos.PDFDocEncoding.getBytes : c1 = r2[i3]
+org.apache.pdfbox.cos.PDFDocEncoding.getBytes : $r6 = <org.apache.pdfbox.cos.PDFDocEncoding: java.util.Map UNI_TO_CODE>

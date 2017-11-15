@@ -1,0 +1,12 @@
+org.apache.pdfbox.pdfparser.COSParser.checkPages : $z0 = r0.<org.apache.pdfbox.pdfparser.COSParser: boolean trailerWasRebuild> >>>>>>>> org.apache.pdfbox.pdfparser.COSParser.checkPages : if $z0 == 0
+org.apache.pdfbox.pdfparser.COSParser.checkPages : if $z0 == 0 >>>>>>>> org.apache.pdfbox.pdfparser.COSParser.checkPages : if r1 == null
+org.apache.pdfbox.pdfparser.COSParser.checkPages : if $z0 == 0 >>>>>>>> org.apache.pdfbox.pdfparser.COSParser.checkPages : return
+org.apache.pdfbox.pdfparser.COSParser.checkPages : if r1 == null >>>>>>>> org.apache.pdfbox.pdfparser.COSParser.checkPages : $r2 = <org.apache.pdfbox.cos.COSName: org.apache.pdfbox.cos.COSName PAGES>
+org.apache.pdfbox.pdfparser.COSParser.checkPages : if r1 == null >>>>>>>> org.apache.pdfbox.pdfparser.COSParser.checkPages : return
+org.apache.pdfbox.pdfparser.COSParser.checkPages : $r2 = <org.apache.pdfbox.cos.COSName: org.apache.pdfbox.cos.COSName PAGES> >>>>>>>> org.apache.pdfbox.pdfparser.COSParser.checkPages : r3 = virtualinvoke r1.<org.apache.pdfbox.cos.COSDictionary: org.apache.pdfbox.cos.COSBase getDictionaryObject(org.apache.pdfbox.cos.COSName)>($r2)
+org.apache.pdfbox.pdfparser.COSParser.checkPages : r3 = virtualinvoke r1.<org.apache.pdfbox.cos.COSDictionary: org.apache.pdfbox.cos.COSBase getDictionaryObject(org.apache.pdfbox.cos.COSName)>($r2) >>>>>>>> org.apache.pdfbox.pdfparser.COSParser.checkPages : $z1 = r3 instanceof org.apache.pdfbox.cos.COSDictionary
+org.apache.pdfbox.pdfparser.COSParser.checkPages : $z1 = r3 instanceof org.apache.pdfbox.cos.COSDictionary >>>>>>>> org.apache.pdfbox.pdfparser.COSParser.checkPages : if $z1 == 0
+org.apache.pdfbox.pdfparser.COSParser.checkPages : if $z1 == 0 >>>>>>>> org.apache.pdfbox.pdfparser.COSParser.checkPages : $r4 = (org.apache.pdfbox.cos.COSDictionary) r3
+org.apache.pdfbox.pdfparser.COSParser.checkPages : if $z1 == 0 >>>>>>>> org.apache.pdfbox.pdfparser.COSParser.checkPages : return
+org.apache.pdfbox.pdfparser.COSParser.checkPages : $r4 = (org.apache.pdfbox.cos.COSDictionary) r3 >>>>>>>> org.apache.pdfbox.pdfparser.COSParser.checkPages : specialinvoke r0.<org.apache.pdfbox.pdfparser.COSParser: int checkPagesDictionary(org.apache.pdfbox.cos.COSDictionary)>($r4)
+org.apache.pdfbox.pdfparser.COSParser.checkPages : specialinvoke r0.<org.apache.pdfbox.pdfparser.COSParser: int checkPagesDictionary(org.apache.pdfbox.cos.COSDictionary)>($r4) >>>>>>>> org.apache.pdfbox.pdfparser.COSParser.checkPages : return

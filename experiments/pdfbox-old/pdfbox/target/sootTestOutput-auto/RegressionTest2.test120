@@ -1,0 +1,17 @@
+org.apache.pdfbox.cos.COSArray.add : $r2 = r0.<org.apache.pdfbox.cos.COSArray: java.util.List objects>
+org.apache.pdfbox.pdmodel.graphics.shading.PDShadingType4.setDecodeValues : specialinvoke r0.<org.apache.pdfbox.pdmodel.graphics.shading.PDTriangleBasedShadingType: void setDecodeValues(org.apache.pdfbox.cos.COSArray)>(r1)
+org.apache.pdfbox.pdmodel.graphics.shading.PDTriangleBasedShadingType.setDecodeValues : r0.<org.apache.pdfbox.pdmodel.graphics.shading.PDTriangleBasedShadingType: org.apache.pdfbox.cos.COSArray decode> = r1
+org.apache.pdfbox.pdmodel.graphics.shading.PDTriangleBasedShadingType.setDecodeValues : $r2 = virtualinvoke r0.<org.apache.pdfbox.pdmodel.graphics.shading.PDTriangleBasedShadingType: org.apache.pdfbox.cos.COSDictionary getCOSObject()>()
+org.apache.pdfbox.pdmodel.common.COSArrayList.convertStringListToCOSNameCOSArray : $r4 = new org.apache.pdfbox.cos.COSArray
+org.apache.pdfbox.pdmodel.common.COSArrayList.convertStringListToCOSNameCOSArray : r2 = interfaceinvoke r0.<java.util.List: java.util.Iterator iterator()>()
+org.apache.pdfbox.pdmodel.common.COSArrayList.convertStringListToCOSNameCOSArray : $r5 = interfaceinvoke r2.<java.util.Iterator: java.lang.Object next()>()
+org.apache.pdfbox.pdmodel.common.COSArrayList.convertStringListToCOSNameCOSArray : $r6 = staticinvoke <org.apache.pdfbox.cos.COSName: org.apache.pdfbox.cos.COSName getPDFName(java.lang.String)>(r3)
+org.apache.pdfbox.pdmodel.common.COSArrayList.convertStringListToCOSNameCOSArray : goto [?= $z0 = interfaceinvoke r2.<java.util.Iterator: boolean hasNext()>()]
+org.apache.pdfbox.pdmodel.graphics.shading.PDShading.getCOSObject : $r1 = r0.<org.apache.pdfbox.pdmodel.graphics.shading.PDShading: org.apache.pdfbox.cos.COSDictionary dictionary>
+org.apache.pdfbox.cos.COSName.getPDFName : $r5 = new org.apache.pdfbox.cos.COSName
+org.apache.pdfbox.cos.COSName.getPDFName : $r1 = <org.apache.pdfbox.cos.COSName: java.util.Map commonNameMap>
+org.apache.pdfbox.cos.COSName.getPDFName : return r6
+org.apache.pdfbox.cos.COSName.getPDFName : r6 = null
+org.apache.pdfbox.cos.COSName.getPDFName : $r3 = <org.apache.pdfbox.cos.COSName: java.util.Map nameMap>
+org.apache.pdfbox.cos.COSName.getPDFName : if r0 == null goto return r6
+org.apache.pdfbox.cos.COSName.getPDFName : if r6 != null goto return r6

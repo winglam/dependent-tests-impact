@@ -1,0 +1,114 @@
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $r3 = new java.util.ArrayList >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : specialinvoke $r3.<java.util.ArrayList: void <init>()>()
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : specialinvoke $r3.<java.util.ArrayList: void <init>()>() >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : r4 = $r3
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : r4 = $r3 >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : i1 = 9
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : i1 = 9 >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $r8 = new javax.imageio.stream.MemoryCacheImageInputStream
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $r8 = new javax.imageio.stream.MemoryCacheImageInputStream >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : specialinvoke $r8.<javax.imageio.stream.MemoryCacheImageInputStream: void <init>(java.io.InputStream)>(r1)
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : specialinvoke $r8.<javax.imageio.stream.MemoryCacheImageInputStream: void <init>(java.io.InputStream)>(r1) >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : r5 = $r8
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : r5 = $r8 >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : l2 = -1L
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : l2 = -1L >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $l5 = virtualinvoke r5.<javax.imageio.stream.MemoryCacheImageInputStream: long readBits(int)>(i1)
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : l2 = -1L >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $r15 := @caughtexception
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : r16 = $r15 >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $r17 = <org.apache.pdfbox.filter.LZWFilter: org.apache.commons.logging.Log LOG>
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $r17 = <org.apache.pdfbox.filter.LZWFilter: org.apache.commons.logging.Log LOG> >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : interfaceinvoke $r17.<org.apache.commons.logging.Log: void warn(java.lang.Object)>("Premature EOF in LZW stream, EOD code missing")
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : interfaceinvoke $r17.<org.apache.commons.logging.Log: void warn(java.lang.Object)>("Premature EOF in LZW stream, EOD code missing") >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : virtualinvoke r2.<java.io.OutputStream: void flush()>()
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : virtualinvoke r2.<java.io.OutputStream: void flush()>() >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : return
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $l5 = virtualinvoke r5.<javax.imageio.stream.MemoryCacheImageInputStream: long readBits(int)>(i1) >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : l3 = $l5
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $l5 = virtualinvoke r5.<javax.imageio.stream.MemoryCacheImageInputStream: long readBits(int)>(i1) >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $r15 := @caughtexception
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : l3 = $l5 >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $b6 = $l5 cmp 257L
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : l3 = $l5 >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $r15 := @caughtexception
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $b6 = $l5 cmp 257L >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : if $b6 == 0
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $b6 = $l5 cmp 257L >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $r15 := @caughtexception
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : if $b6 == 0 >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $b7 = l3 cmp 256L
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : if $b6 == 0 >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : goto [?= virtualinvoke r2.<java.io.OutputStream: void flush()>()]
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : if $b6 == 0 >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $r15 := @caughtexception
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : goto [?= virtualinvoke r2.<java.io.OutputStream: void flush()>()] >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : virtualinvoke r2.<java.io.OutputStream: void flush()>()
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $b7 = l3 cmp 256L >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : if $b7 != 0
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $b7 = l3 cmp 256L >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $r15 := @caughtexception
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : if $b7 != 0 >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : i1 = 9
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : if $b7 != 0 >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $i8 = interfaceinvoke r4.<java.util.List: int size()>()
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : if $b7 != 0 >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $r15 := @caughtexception
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $i8 = interfaceinvoke r4.<java.util.List: int size()>() >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $l9 = (long) $i8
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $i8 = interfaceinvoke r4.<java.util.List: int size()>() >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $r15 := @caughtexception
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $l9 = (long) $i8 >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $b10 = l3 cmp $l9
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $l9 = (long) $i8 >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $r15 := @caughtexception
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $b10 = l3 cmp $l9 >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : if $b10 >= 0
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $b10 = l3 cmp $l9 >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $r15 := @caughtexception
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : if $b10 >= 0 >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $i11 = (int) l3
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : if $b10 >= 0 >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : specialinvoke r0.<org.apache.pdfbox.filter.LZWFilter: void checkIndexBounds(java.util.List,long,javax.imageio.stream.MemoryCacheImageInputStream)>(r4, l2, r5)
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : if $b10 >= 0 >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $r15 := @caughtexception
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : specialinvoke r0.<org.apache.pdfbox.filter.LZWFilter: void checkIndexBounds(java.util.List,long,javax.imageio.stream.MemoryCacheImageInputStream)>(r4, l2, r5) >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $i17 = (int) l2
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : specialinvoke r0.<org.apache.pdfbox.filter.LZWFilter: void checkIndexBounds(java.util.List,long,javax.imageio.stream.MemoryCacheImageInputStream)>(r4, l2, r5) >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $r15 := @caughtexception
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $i17 = (int) l2 >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $r12 = interfaceinvoke r4.<java.util.List: java.lang.Object get(int)>($i17)
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $i17 = (int) l2 >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $r15 := @caughtexception
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $r12 = interfaceinvoke r4.<java.util.List: java.lang.Object get(int)>($i17) >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : r13 = (byte[]) $r12
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $r12 = interfaceinvoke r4.<java.util.List: java.lang.Object get(int)>($i17) >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $r15 := @caughtexception
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : r13 = (byte[]) $r12 >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $i18 = lengthof r13
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : r13 = (byte[]) $r12 >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $r15 := @caughtexception
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $i18 = lengthof r13 >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $i19 = $i18 + 1
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $i18 = lengthof r13 >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $r15 := @caughtexception
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $i19 = $i18 + 1 >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : r14 = staticinvoke <java.util.Arrays: byte[] copyOf(byte[],int)>(r13, $i19)
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $i19 = $i18 + 1 >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $r15 := @caughtexception
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : r14 = staticinvoke <java.util.Arrays: byte[] copyOf(byte[],int)>(r13, $i19) >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $i20 = lengthof r13
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : r14 = staticinvoke <java.util.Arrays: byte[] copyOf(byte[],int)>(r13, $i19) >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $r15 := @caughtexception
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $i20 = lengthof r13 >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $b21 = r13[0]
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $i20 = lengthof r13 >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $r15 := @caughtexception
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $b21 = r13[0] >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : r14[$i20] = $b21
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $b21 = r13[0] >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $r15 := @caughtexception
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : r14[$i20] = $b21 >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : virtualinvoke r2.<java.io.OutputStream: void write(byte[])>(r14)
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : r14[$i20] = $b21 >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $r15 := @caughtexception
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : virtualinvoke r2.<java.io.OutputStream: void write(byte[])>(r14) >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : interfaceinvoke r4.<java.util.List: boolean add(java.lang.Object)>(r14)
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : virtualinvoke r2.<java.io.OutputStream: void write(byte[])>(r14) >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $r15 := @caughtexception
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : interfaceinvoke r4.<java.util.List: boolean add(java.lang.Object)>(r14) >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $i22 = interfaceinvoke r4.<java.util.List: int size()>()
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : interfaceinvoke r4.<java.util.List: boolean add(java.lang.Object)>(r14) >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $r15 := @caughtexception
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $i22 = interfaceinvoke r4.<java.util.List: int size()>() >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : i1 = specialinvoke r0.<org.apache.pdfbox.filter.LZWFilter: int calculateChunk(int,int)>($i22, i0)
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $i22 = interfaceinvoke r4.<java.util.List: int size()>() >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $r15 := @caughtexception
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : i1 = specialinvoke r0.<org.apache.pdfbox.filter.LZWFilter: int calculateChunk(int,int)>($i22, i0) >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : l2 = l3
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : i1 = specialinvoke r0.<org.apache.pdfbox.filter.LZWFilter: int calculateChunk(int,int)>($i22, i0) >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $r15 := @caughtexception
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : l2 = l3 >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : goto [?= $l5 = virtualinvoke r5.<javax.imageio.stream.MemoryCacheImageInputStream: long readBits(int)>(i1)]
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : l2 = l3 >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $r15 := @caughtexception
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : goto [?= $l5 = virtualinvoke r5.<javax.imageio.stream.MemoryCacheImageInputStream: long readBits(int)>(i1)] >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $l5 = virtualinvoke r5.<javax.imageio.stream.MemoryCacheImageInputStream: long readBits(int)>(i1)
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : goto [?= $l5 = virtualinvoke r5.<javax.imageio.stream.MemoryCacheImageInputStream: long readBits(int)>(i1)] >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $r15 := @caughtexception
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $i11 = (int) l3 >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $r9 = interfaceinvoke r4.<java.util.List: java.lang.Object get(int)>($i11)
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $i11 = (int) l3 >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $r15 := @caughtexception
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $r9 = interfaceinvoke r4.<java.util.List: java.lang.Object get(int)>($i11) >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : r6 = (byte[]) $r9
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $r9 = interfaceinvoke r4.<java.util.List: java.lang.Object get(int)>($i11) >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $r15 := @caughtexception
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : r6 = (byte[]) $r9 >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : b4 = r6[0]
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : r6 = (byte[]) $r9 >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $r15 := @caughtexception
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : b4 = r6[0] >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : virtualinvoke r2.<java.io.OutputStream: void write(byte[])>(r6)
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : b4 = r6[0] >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $r15 := @caughtexception
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : virtualinvoke r2.<java.io.OutputStream: void write(byte[])>(r6) >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $b12 = l2 cmp -1L
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : virtualinvoke r2.<java.io.OutputStream: void write(byte[])>(r6) >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $r15 := @caughtexception
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $b12 = l2 cmp -1L >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : if $b12 == 0
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $b12 = l2 cmp -1L >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $r15 := @caughtexception
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : if $b12 == 0 >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : specialinvoke r0.<org.apache.pdfbox.filter.LZWFilter: void checkIndexBounds(java.util.List,long,javax.imageio.stream.MemoryCacheImageInputStream)>(r4, l2, r5)
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : if $b12 == 0 >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : goto [?= $i22 = interfaceinvoke r4.<java.util.List: int size()>()]
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : if $b12 == 0 >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $r15 := @caughtexception
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : goto [?= $i22 = interfaceinvoke r4.<java.util.List: int size()>()] >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $i22 = interfaceinvoke r4.<java.util.List: int size()>()
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : goto [?= $i22 = interfaceinvoke r4.<java.util.List: int size()>()] >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $r15 := @caughtexception
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : specialinvoke r0.<org.apache.pdfbox.filter.LZWFilter: void checkIndexBounds(java.util.List,long,javax.imageio.stream.MemoryCacheImageInputStream)>(r4, l2, r5) >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $i13 = (int) l2
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : specialinvoke r0.<org.apache.pdfbox.filter.LZWFilter: void checkIndexBounds(java.util.List,long,javax.imageio.stream.MemoryCacheImageInputStream)>(r4, l2, r5) >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $r15 := @caughtexception
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $i13 = (int) l2 >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $r10 = interfaceinvoke r4.<java.util.List: java.lang.Object get(int)>($i13)
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $i13 = (int) l2 >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $r15 := @caughtexception
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $r10 = interfaceinvoke r4.<java.util.List: java.lang.Object get(int)>($i13) >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : r11 = (byte[]) $r10
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $r10 = interfaceinvoke r4.<java.util.List: java.lang.Object get(int)>($i13) >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $r15 := @caughtexception
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : r11 = (byte[]) $r10 >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $i14 = lengthof r11
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : r11 = (byte[]) $r10 >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $r15 := @caughtexception
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $i14 = lengthof r11 >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $i15 = $i14 + 1
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $i14 = lengthof r11 >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $r15 := @caughtexception
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $i15 = $i14 + 1 >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : r7 = staticinvoke <java.util.Arrays: byte[] copyOf(byte[],int)>(r11, $i15)
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $i15 = $i14 + 1 >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $r15 := @caughtexception
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : r7 = staticinvoke <java.util.Arrays: byte[] copyOf(byte[],int)>(r11, $i15) >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $i16 = lengthof r11
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : r7 = staticinvoke <java.util.Arrays: byte[] copyOf(byte[],int)>(r11, $i15) >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $r15 := @caughtexception
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $i16 = lengthof r11 >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : r7[$i16] = b4
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $i16 = lengthof r11 >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $r15 := @caughtexception
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : r7[$i16] = b4 >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : interfaceinvoke r4.<java.util.List: boolean add(java.lang.Object)>(r7)
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : r7[$i16] = b4 >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $r15 := @caughtexception
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : interfaceinvoke r4.<java.util.List: boolean add(java.lang.Object)>(r7) >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : goto [?= $i22 = interfaceinvoke r4.<java.util.List: int size()>()]
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : interfaceinvoke r4.<java.util.List: boolean add(java.lang.Object)>(r7) >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $r15 := @caughtexception
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : i1 = 9 >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : r4 = specialinvoke r0.<org.apache.pdfbox.filter.LZWFilter: java.util.List createCodeTable()>()
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : i1 = 9 >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $r15 := @caughtexception
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : r4 = specialinvoke r0.<org.apache.pdfbox.filter.LZWFilter: java.util.List createCodeTable()>() >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : l2 = -1L
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : r4 = specialinvoke r0.<org.apache.pdfbox.filter.LZWFilter: java.util.List createCodeTable()>() >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $r15 := @caughtexception
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : l2 = -1L >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : goto [?= $l5 = virtualinvoke r5.<javax.imageio.stream.MemoryCacheImageInputStream: long readBits(int)>(i1)]
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : l2 = -1L >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $r15 := @caughtexception
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : goto [?= $l5 = virtualinvoke r5.<javax.imageio.stream.MemoryCacheImageInputStream: long readBits(int)>(i1)] >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $l5 = virtualinvoke r5.<javax.imageio.stream.MemoryCacheImageInputStream: long readBits(int)>(i1)
+org.apache.pdfbox.filter.LZWFilter.doLZWDecode : goto [?= $l5 = virtualinvoke r5.<javax.imageio.stream.MemoryCacheImageInputStream: long readBits(int)>(i1)] >>>>>>>> org.apache.pdfbox.filter.LZWFilter.doLZWDecode : $r15 := @caughtexception

@@ -1,0 +1,79 @@
+org.apache.pdfbox.rendering.TestPDFToImage.diffImages : $i9 = virtualinvoke r1.<java.awt.image.BufferedImage: int getWidth()>() >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.diffImages : $i10 = virtualinvoke r2.<java.awt.image.BufferedImage: int getWidth()>()
+org.apache.pdfbox.rendering.TestPDFToImage.diffImages : $i10 = virtualinvoke r2.<java.awt.image.BufferedImage: int getWidth()>() >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.diffImages : i0 = staticinvoke <java.lang.Math: int min(int,int)>($i9, $i10)
+org.apache.pdfbox.rendering.TestPDFToImage.diffImages : i0 = staticinvoke <java.lang.Math: int min(int,int)>($i9, $i10) >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.diffImages : $i11 = virtualinvoke r1.<java.awt.image.BufferedImage: int getHeight()>()
+org.apache.pdfbox.rendering.TestPDFToImage.diffImages : $i11 = virtualinvoke r1.<java.awt.image.BufferedImage: int getHeight()>() >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.diffImages : $i12 = virtualinvoke r2.<java.awt.image.BufferedImage: int getHeight()>()
+org.apache.pdfbox.rendering.TestPDFToImage.diffImages : $i12 = virtualinvoke r2.<java.awt.image.BufferedImage: int getHeight()>() >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.diffImages : i1 = staticinvoke <java.lang.Math: int min(int,int)>($i11, $i12)
+org.apache.pdfbox.rendering.TestPDFToImage.diffImages : i1 = staticinvoke <java.lang.Math: int min(int,int)>($i11, $i12) >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.diffImages : $i13 = virtualinvoke r1.<java.awt.image.BufferedImage: int getWidth()>()
+org.apache.pdfbox.rendering.TestPDFToImage.diffImages : $i13 = virtualinvoke r1.<java.awt.image.BufferedImage: int getWidth()>() >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.diffImages : $i14 = virtualinvoke r2.<java.awt.image.BufferedImage: int getWidth()>()
+org.apache.pdfbox.rendering.TestPDFToImage.diffImages : $i14 = virtualinvoke r2.<java.awt.image.BufferedImage: int getWidth()>() >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.diffImages : i2 = staticinvoke <java.lang.Math: int max(int,int)>($i13, $i14)
+org.apache.pdfbox.rendering.TestPDFToImage.diffImages : i2 = staticinvoke <java.lang.Math: int max(int,int)>($i13, $i14) >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.diffImages : $i15 = virtualinvoke r1.<java.awt.image.BufferedImage: int getHeight()>()
+org.apache.pdfbox.rendering.TestPDFToImage.diffImages : $i15 = virtualinvoke r1.<java.awt.image.BufferedImage: int getHeight()>() >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.diffImages : $i16 = virtualinvoke r2.<java.awt.image.BufferedImage: int getHeight()>()
+org.apache.pdfbox.rendering.TestPDFToImage.diffImages : $i16 = virtualinvoke r2.<java.awt.image.BufferedImage: int getHeight()>() >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.diffImages : i3 = staticinvoke <java.lang.Math: int max(int,int)>($i15, $i16)
+org.apache.pdfbox.rendering.TestPDFToImage.diffImages : i3 = staticinvoke <java.lang.Math: int max(int,int)>($i15, $i16) >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.diffImages : r4 = null
+org.apache.pdfbox.rendering.TestPDFToImage.diffImages : r4 = null >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.diffImages : if i0 != i2
+org.apache.pdfbox.rendering.TestPDFToImage.diffImages : if i0 != i2 >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.diffImages : if i1 == i3
+org.apache.pdfbox.rendering.TestPDFToImage.diffImages : if i0 != i2 >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.diffImages : r4 = specialinvoke r0.<org.apache.pdfbox.rendering.TestPDFToImage: java.awt.image.BufferedImage createEmptyDiffImage(int,int,int,int)>(i0, i1, i2, i3)
+org.apache.pdfbox.rendering.TestPDFToImage.diffImages : r4 = specialinvoke r0.<org.apache.pdfbox.rendering.TestPDFToImage: java.awt.image.BufferedImage createEmptyDiffImage(int,int,int,int)>(i0, i1, i2, i3) >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.diffImages : i46 = 0
+org.apache.pdfbox.rendering.TestPDFToImage.diffImages : i46 = 0 >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.diffImages : if i46 >= i0
+org.apache.pdfbox.rendering.TestPDFToImage.diffImages : if i46 >= i0 >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.diffImages : i47 = 0
+org.apache.pdfbox.rendering.TestPDFToImage.diffImages : if i46 >= i0 >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.diffImages : return r4
+org.apache.pdfbox.rendering.TestPDFToImage.diffImages : i47 = 0 >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.diffImages : if i47 >= i1
+org.apache.pdfbox.rendering.TestPDFToImage.diffImages : if i47 >= i1 >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.diffImages : i4 = virtualinvoke r1.<java.awt.image.BufferedImage: int getRGB(int,int)>(i46, i47)
+org.apache.pdfbox.rendering.TestPDFToImage.diffImages : if i47 >= i1 >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.diffImages : i46 = i46 + 1
+org.apache.pdfbox.rendering.TestPDFToImage.diffImages : i46 = i46 + 1 >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.diffImages : goto [?= (branch)]
+org.apache.pdfbox.rendering.TestPDFToImage.diffImages : goto [?= (branch)] >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.diffImages : if i46 >= i0
+org.apache.pdfbox.rendering.TestPDFToImage.diffImages : i4 = virtualinvoke r1.<java.awt.image.BufferedImage: int getRGB(int,int)>(i46, i47) >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.diffImages : i5 = virtualinvoke r2.<java.awt.image.BufferedImage: int getRGB(int,int)>(i46, i47)
+org.apache.pdfbox.rendering.TestPDFToImage.diffImages : i5 = virtualinvoke r2.<java.awt.image.BufferedImage: int getRGB(int,int)>(i46, i47) >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.diffImages : if i4 == i5
+org.apache.pdfbox.rendering.TestPDFToImage.diffImages : if i4 == i5 >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.diffImages : $i19 = i4 & 255
+org.apache.pdfbox.rendering.TestPDFToImage.diffImages : if i4 == i5 >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.diffImages : if r4 == null
+org.apache.pdfbox.rendering.TestPDFToImage.diffImages : if r4 == null >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.diffImages : $r3 = <java.awt.Color: java.awt.Color WHITE>
+org.apache.pdfbox.rendering.TestPDFToImage.diffImages : if r4 == null >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.diffImages : i47 = i47 + 1
+org.apache.pdfbox.rendering.TestPDFToImage.diffImages : i47 = i47 + 1 >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.diffImages : goto [?= (branch)]
+org.apache.pdfbox.rendering.TestPDFToImage.diffImages : goto [?= (branch)] >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.diffImages : if i47 >= i1
+org.apache.pdfbox.rendering.TestPDFToImage.diffImages : $r3 = <java.awt.Color: java.awt.Color WHITE> >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.diffImages : $i17 = virtualinvoke $r3.<java.awt.Color: int getRGB()>()
+org.apache.pdfbox.rendering.TestPDFToImage.diffImages : $i17 = virtualinvoke $r3.<java.awt.Color: int getRGB()>() >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.diffImages : virtualinvoke r4.<java.awt.image.BufferedImage: void setRGB(int,int,int)>(i46, i47, $i17)
+org.apache.pdfbox.rendering.TestPDFToImage.diffImages : virtualinvoke r4.<java.awt.image.BufferedImage: void setRGB(int,int,int)>(i46, i47, $i17) >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.diffImages : i47 = i47 + 1
+org.apache.pdfbox.rendering.TestPDFToImage.diffImages : $i19 = i4 & 255 >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.diffImages : $i18 = i5 & 255
+org.apache.pdfbox.rendering.TestPDFToImage.diffImages : $i18 = i5 & 255 >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.diffImages : $i20 = $i19 - $i18
+org.apache.pdfbox.rendering.TestPDFToImage.diffImages : $i20 = $i19 - $i18 >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.diffImages : $i21 = staticinvoke <java.lang.Math: int abs(int)>($i20)
+org.apache.pdfbox.rendering.TestPDFToImage.diffImages : $i21 = staticinvoke <java.lang.Math: int abs(int)>($i20) >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.diffImages : if $i21 > 1
+org.apache.pdfbox.rendering.TestPDFToImage.diffImages : if $i21 > 1 >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.diffImages : $i34 = i4 >> 8
+org.apache.pdfbox.rendering.TestPDFToImage.diffImages : if $i21 > 1 >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.diffImages : if r4 != null
+org.apache.pdfbox.rendering.TestPDFToImage.diffImages : if r4 != null >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.diffImages : r4 = specialinvoke r0.<org.apache.pdfbox.rendering.TestPDFToImage: java.awt.image.BufferedImage createEmptyDiffImage(int,int,int,int)>(i0, i1, i2, i3)
+org.apache.pdfbox.rendering.TestPDFToImage.diffImages : if r4 != null >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.diffImages : $i23 = i4 & 255
+org.apache.pdfbox.rendering.TestPDFToImage.diffImages : $i23 = i4 & 255 >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.diffImages : $i22 = i5 & 255
+org.apache.pdfbox.rendering.TestPDFToImage.diffImages : $i22 = i5 & 255 >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.diffImages : $i24 = $i23 - $i22
+org.apache.pdfbox.rendering.TestPDFToImage.diffImages : $i24 = $i23 - $i22 >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.diffImages : i6 = staticinvoke <java.lang.Math: int abs(int)>($i24)
+org.apache.pdfbox.rendering.TestPDFToImage.diffImages : i6 = staticinvoke <java.lang.Math: int abs(int)>($i24) >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.diffImages : $i26 = i4 & 65280
+org.apache.pdfbox.rendering.TestPDFToImage.diffImages : $i26 = i4 & 65280 >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.diffImages : $i25 = i5 & 65280
+org.apache.pdfbox.rendering.TestPDFToImage.diffImages : $i25 = i5 & 65280 >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.diffImages : $i27 = $i26 - $i25
+org.apache.pdfbox.rendering.TestPDFToImage.diffImages : $i27 = $i26 - $i25 >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.diffImages : i7 = staticinvoke <java.lang.Math: int abs(int)>($i27)
+org.apache.pdfbox.rendering.TestPDFToImage.diffImages : i7 = staticinvoke <java.lang.Math: int abs(int)>($i27) >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.diffImages : $i29 = i4 & 16711680
+org.apache.pdfbox.rendering.TestPDFToImage.diffImages : $i29 = i4 & 16711680 >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.diffImages : $i28 = i5 & 16711680
+org.apache.pdfbox.rendering.TestPDFToImage.diffImages : $i28 = i5 & 16711680 >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.diffImages : $i30 = $i29 - $i28
+org.apache.pdfbox.rendering.TestPDFToImage.diffImages : $i30 = $i29 - $i28 >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.diffImages : i8 = staticinvoke <java.lang.Math: int abs(int)>($i30)
+org.apache.pdfbox.rendering.TestPDFToImage.diffImages : i8 = staticinvoke <java.lang.Math: int abs(int)>($i30) >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.diffImages : $i31 = i6 | i7
+org.apache.pdfbox.rendering.TestPDFToImage.diffImages : $i31 = i6 | i7 >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.diffImages : $i32 = $i31 | i8
+org.apache.pdfbox.rendering.TestPDFToImage.diffImages : $i32 = $i31 | i8 >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.diffImages : $i33 = 16777215 - $i32
+org.apache.pdfbox.rendering.TestPDFToImage.diffImages : $i33 = 16777215 - $i32 >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.diffImages : virtualinvoke r4.<java.awt.image.BufferedImage: void setRGB(int,int,int)>(i46, i47, $i33)
+org.apache.pdfbox.rendering.TestPDFToImage.diffImages : virtualinvoke r4.<java.awt.image.BufferedImage: void setRGB(int,int,int)>(i46, i47, $i33) >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.diffImages : goto [?= i47 = i47 + 1]
+org.apache.pdfbox.rendering.TestPDFToImage.diffImages : goto [?= i47 = i47 + 1] >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.diffImages : i47 = i47 + 1
+org.apache.pdfbox.rendering.TestPDFToImage.diffImages : r4 = specialinvoke r0.<org.apache.pdfbox.rendering.TestPDFToImage: java.awt.image.BufferedImage createEmptyDiffImage(int,int,int,int)>(i0, i1, i2, i3) >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.diffImages : $i23 = i4 & 255
+org.apache.pdfbox.rendering.TestPDFToImage.diffImages : $i34 = i4 >> 8 >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.diffImages : $i37 = $i34 & 255
+org.apache.pdfbox.rendering.TestPDFToImage.diffImages : $i37 = $i34 & 255 >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.diffImages : $i35 = i5 >> 8
+org.apache.pdfbox.rendering.TestPDFToImage.diffImages : $i35 = i5 >> 8 >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.diffImages : $i36 = $i35 & 255
+org.apache.pdfbox.rendering.TestPDFToImage.diffImages : $i36 = $i35 & 255 >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.diffImages : $i38 = $i37 - $i36
+org.apache.pdfbox.rendering.TestPDFToImage.diffImages : $i38 = $i37 - $i36 >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.diffImages : $i39 = staticinvoke <java.lang.Math: int abs(int)>($i38)
+org.apache.pdfbox.rendering.TestPDFToImage.diffImages : $i39 = staticinvoke <java.lang.Math: int abs(int)>($i38) >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.diffImages : if $i39 > 1
+org.apache.pdfbox.rendering.TestPDFToImage.diffImages : if $i39 > 1 >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.diffImages : $i40 = i4 >> 16
+org.apache.pdfbox.rendering.TestPDFToImage.diffImages : if $i39 > 1 >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.diffImages : if r4 != null
+org.apache.pdfbox.rendering.TestPDFToImage.diffImages : $i40 = i4 >> 16 >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.diffImages : $i43 = $i40 & 255
+org.apache.pdfbox.rendering.TestPDFToImage.diffImages : $i43 = $i40 & 255 >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.diffImages : $i41 = i5 >> 16
+org.apache.pdfbox.rendering.TestPDFToImage.diffImages : $i41 = i5 >> 16 >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.diffImages : $i42 = $i41 & 255
+org.apache.pdfbox.rendering.TestPDFToImage.diffImages : $i42 = $i41 & 255 >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.diffImages : $i44 = $i43 - $i42
+org.apache.pdfbox.rendering.TestPDFToImage.diffImages : $i44 = $i43 - $i42 >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.diffImages : $i45 = staticinvoke <java.lang.Math: int abs(int)>($i44)
+org.apache.pdfbox.rendering.TestPDFToImage.diffImages : $i45 = staticinvoke <java.lang.Math: int abs(int)>($i44) >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.diffImages : if $i45 <= 1
+org.apache.pdfbox.rendering.TestPDFToImage.diffImages : if $i45 <= 1 >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.diffImages : if r4 != null
+org.apache.pdfbox.rendering.TestPDFToImage.diffImages : if $i45 <= 1 >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.diffImages : if r4 == null
+org.apache.pdfbox.rendering.TestPDFToImage.diffImages : if i1 == i3 >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.diffImages : r4 = specialinvoke r0.<org.apache.pdfbox.rendering.TestPDFToImage: java.awt.image.BufferedImage createEmptyDiffImage(int,int,int,int)>(i0, i1, i2, i3)
+org.apache.pdfbox.rendering.TestPDFToImage.diffImages : if i1 == i3 >>>>>>>> org.apache.pdfbox.rendering.TestPDFToImage.diffImages : i46 = 0

@@ -1,0 +1,12 @@
+org.apache.pdfbox.pdfparser.InputStreamSource.readFully : r1 = newarray (byte)[i0] >>>>>>>> org.apache.pdfbox.pdfparser.InputStreamSource.readFully : i1 = 0
+org.apache.pdfbox.pdfparser.InputStreamSource.readFully : i1 = 0 >>>>>>>> org.apache.pdfbox.pdfparser.InputStreamSource.readFully : i2 = i0
+org.apache.pdfbox.pdfparser.InputStreamSource.readFully : i2 = i0 >>>>>>>> org.apache.pdfbox.pdfparser.InputStreamSource.readFully : if i2 <= 0
+org.apache.pdfbox.pdfparser.InputStreamSource.readFully : if i2 <= 0 >>>>>>>> org.apache.pdfbox.pdfparser.InputStreamSource.readFully : i3 = virtualinvoke r0.<org.apache.pdfbox.pdfparser.InputStreamSource: int read(byte[],int,int)>(r1, i1, i2)
+org.apache.pdfbox.pdfparser.InputStreamSource.readFully : if i2 <= 0 >>>>>>>> org.apache.pdfbox.pdfparser.InputStreamSource.readFully : return r1
+org.apache.pdfbox.pdfparser.InputStreamSource.readFully : i3 = virtualinvoke r0.<org.apache.pdfbox.pdfparser.InputStreamSource: int read(byte[],int,int)>(r1, i1, i2) >>>>>>>> org.apache.pdfbox.pdfparser.InputStreamSource.readFully : i1 = i1 + i3
+org.apache.pdfbox.pdfparser.InputStreamSource.readFully : i1 = i1 + i3 >>>>>>>> org.apache.pdfbox.pdfparser.InputStreamSource.readFully : i2 = i2 - i3
+org.apache.pdfbox.pdfparser.InputStreamSource.readFully : i2 = i2 - i3 >>>>>>>> org.apache.pdfbox.pdfparser.InputStreamSource.readFully : $i4 = r0.<org.apache.pdfbox.pdfparser.InputStreamSource: int position>
+org.apache.pdfbox.pdfparser.InputStreamSource.readFully : $i4 = r0.<org.apache.pdfbox.pdfparser.InputStreamSource: int position> >>>>>>>> org.apache.pdfbox.pdfparser.InputStreamSource.readFully : $i5 = $i4 + i3
+org.apache.pdfbox.pdfparser.InputStreamSource.readFully : $i5 = $i4 + i3 >>>>>>>> org.apache.pdfbox.pdfparser.InputStreamSource.readFully : r0.<org.apache.pdfbox.pdfparser.InputStreamSource: int position> = $i5
+org.apache.pdfbox.pdfparser.InputStreamSource.readFully : r0.<org.apache.pdfbox.pdfparser.InputStreamSource: int position> = $i5 >>>>>>>> org.apache.pdfbox.pdfparser.InputStreamSource.readFully : goto [?= (branch)]
+org.apache.pdfbox.pdfparser.InputStreamSource.readFully : goto [?= (branch)] >>>>>>>> org.apache.pdfbox.pdfparser.InputStreamSource.readFully : if i2 <= 0

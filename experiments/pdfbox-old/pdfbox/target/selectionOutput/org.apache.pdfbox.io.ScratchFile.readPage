@@ -1,0 +1,84 @@
+org.apache.pdfbox.io.ScratchFile.readPage : if i0 < 0 >>>>>>>> org.apache.pdfbox.io.ScratchFile.readPage : $i3 = r0.<org.apache.pdfbox.io.ScratchFile: int pageCount>
+org.apache.pdfbox.io.ScratchFile.readPage : if i0 < 0 >>>>>>>> org.apache.pdfbox.io.ScratchFile.readPage : virtualinvoke r0.<org.apache.pdfbox.io.ScratchFile: void checkClosed()>()
+org.apache.pdfbox.io.ScratchFile.readPage : virtualinvoke r0.<org.apache.pdfbox.io.ScratchFile: void checkClosed()>() >>>>>>>> org.apache.pdfbox.io.ScratchFile.readPage : $r3 = new java.io.IOException
+org.apache.pdfbox.io.ScratchFile.readPage : $r3 = new java.io.IOException >>>>>>>> org.apache.pdfbox.io.ScratchFile.readPage : $r4 = new java.lang.StringBuilder
+org.apache.pdfbox.io.ScratchFile.readPage : $r4 = new java.lang.StringBuilder >>>>>>>> org.apache.pdfbox.io.ScratchFile.readPage : specialinvoke $r4.<java.lang.StringBuilder: void <init>()>()
+org.apache.pdfbox.io.ScratchFile.readPage : specialinvoke $r4.<java.lang.StringBuilder: void <init>()>() >>>>>>>> org.apache.pdfbox.io.ScratchFile.readPage : $r5 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Page index out of range: ")
+org.apache.pdfbox.io.ScratchFile.readPage : $r5 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Page index out of range: ") >>>>>>>> org.apache.pdfbox.io.ScratchFile.readPage : $r6 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>(i0)
+org.apache.pdfbox.io.ScratchFile.readPage : $r6 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>(i0) >>>>>>>> org.apache.pdfbox.io.ScratchFile.readPage : $r7 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(". Max value: ")
+org.apache.pdfbox.io.ScratchFile.readPage : $r7 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(". Max value: ") >>>>>>>> org.apache.pdfbox.io.ScratchFile.readPage : $i1 = r0.<org.apache.pdfbox.io.ScratchFile: int pageCount>
+org.apache.pdfbox.io.ScratchFile.readPage : $i1 = r0.<org.apache.pdfbox.io.ScratchFile: int pageCount> >>>>>>>> org.apache.pdfbox.io.ScratchFile.readPage : $i2 = $i1 - 1
+org.apache.pdfbox.io.ScratchFile.readPage : $i2 = $i1 - 1 >>>>>>>> org.apache.pdfbox.io.ScratchFile.readPage : $r8 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i2)
+org.apache.pdfbox.io.ScratchFile.readPage : $r8 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i2) >>>>>>>> org.apache.pdfbox.io.ScratchFile.readPage : $r9 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.String toString()>()
+org.apache.pdfbox.io.ScratchFile.readPage : $r9 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.String toString()>() >>>>>>>> org.apache.pdfbox.io.ScratchFile.readPage : specialinvoke $r3.<java.io.IOException: void <init>(java.lang.String)>($r9)
+org.apache.pdfbox.io.ScratchFile.readPage : specialinvoke $r3.<java.io.IOException: void <init>(java.lang.String)>($r9) >>>>>>>> org.apache.pdfbox.io.ScratchFile.readPage : throw $r3
+org.apache.pdfbox.io.ScratchFile.readPage : $i3 = r0.<org.apache.pdfbox.io.ScratchFile: int pageCount> >>>>>>>> org.apache.pdfbox.io.ScratchFile.readPage : if i0 < $i3
+org.apache.pdfbox.io.ScratchFile.readPage : if i0 < $i3 >>>>>>>> org.apache.pdfbox.io.ScratchFile.readPage : virtualinvoke r0.<org.apache.pdfbox.io.ScratchFile: void checkClosed()>()
+org.apache.pdfbox.io.ScratchFile.readPage : if i0 < $i3 >>>>>>>> org.apache.pdfbox.io.ScratchFile.readPage : $i4 = r0.<org.apache.pdfbox.io.ScratchFile: int inMemoryMaxPageCount>
+org.apache.pdfbox.io.ScratchFile.readPage : $i4 = r0.<org.apache.pdfbox.io.ScratchFile: int inMemoryMaxPageCount> >>>>>>>> org.apache.pdfbox.io.ScratchFile.readPage : if i0 >= $i4
+org.apache.pdfbox.io.ScratchFile.readPage : if i0 >= $i4 >>>>>>>> org.apache.pdfbox.io.ScratchFile.readPage : $r20 = r0.<org.apache.pdfbox.io.ScratchFile: byte[][] inMemoryPages>
+org.apache.pdfbox.io.ScratchFile.readPage : if i0 >= $i4 >>>>>>>> org.apache.pdfbox.io.ScratchFile.readPage : $r10 = r0.<org.apache.pdfbox.io.ScratchFile: java.lang.Object ioLock>
+org.apache.pdfbox.io.ScratchFile.readPage : $r10 = r0.<org.apache.pdfbox.io.ScratchFile: java.lang.Object ioLock> >>>>>>>> org.apache.pdfbox.io.ScratchFile.readPage : entermonitor $r10
+org.apache.pdfbox.io.ScratchFile.readPage : entermonitor $r10 >>>>>>>> org.apache.pdfbox.io.ScratchFile.readPage : $r11 = r0.<org.apache.pdfbox.io.ScratchFile: java.io.RandomAccessFile raf>
+org.apache.pdfbox.io.ScratchFile.readPage : entermonitor $r10 >>>>>>>> org.apache.pdfbox.io.ScratchFile.readPage : $r27 := @caughtexception
+org.apache.pdfbox.io.ScratchFile.readPage : exitmonitor $r10 >>>>>>>> org.apache.pdfbox.io.ScratchFile.readPage : throw $r27
+org.apache.pdfbox.io.ScratchFile.readPage : exitmonitor $r10 >>>>>>>> org.apache.pdfbox.io.ScratchFile.readPage : $r27 := @caughtexception
+org.apache.pdfbox.io.ScratchFile.readPage : $r11 = r0.<org.apache.pdfbox.io.ScratchFile: java.io.RandomAccessFile raf> >>>>>>>> org.apache.pdfbox.io.ScratchFile.readPage : if $r11 != null
+org.apache.pdfbox.io.ScratchFile.readPage : $r11 = r0.<org.apache.pdfbox.io.ScratchFile: java.io.RandomAccessFile raf> >>>>>>>> org.apache.pdfbox.io.ScratchFile.readPage : $r27 := @caughtexception
+org.apache.pdfbox.io.ScratchFile.readPage : if $r11 != null >>>>>>>> org.apache.pdfbox.io.ScratchFile.readPage : virtualinvoke r0.<org.apache.pdfbox.io.ScratchFile: void checkClosed()>()
+org.apache.pdfbox.io.ScratchFile.readPage : if $r11 != null >>>>>>>> org.apache.pdfbox.io.ScratchFile.readPage : r1 = newarray (byte)[4096]
+org.apache.pdfbox.io.ScratchFile.readPage : if $r11 != null >>>>>>>> org.apache.pdfbox.io.ScratchFile.readPage : $r27 := @caughtexception
+org.apache.pdfbox.io.ScratchFile.readPage : r1 = newarray (byte)[4096] >>>>>>>> org.apache.pdfbox.io.ScratchFile.readPage : $r12 = r0.<org.apache.pdfbox.io.ScratchFile: java.io.RandomAccessFile raf>
+org.apache.pdfbox.io.ScratchFile.readPage : r1 = newarray (byte)[4096] >>>>>>>> org.apache.pdfbox.io.ScratchFile.readPage : $r27 := @caughtexception
+org.apache.pdfbox.io.ScratchFile.readPage : $r12 = r0.<org.apache.pdfbox.io.ScratchFile: java.io.RandomAccessFile raf> >>>>>>>> org.apache.pdfbox.io.ScratchFile.readPage : $l7 = (long) i0
+org.apache.pdfbox.io.ScratchFile.readPage : $r12 = r0.<org.apache.pdfbox.io.ScratchFile: java.io.RandomAccessFile raf> >>>>>>>> org.apache.pdfbox.io.ScratchFile.readPage : $r27 := @caughtexception
+org.apache.pdfbox.io.ScratchFile.readPage : $l7 = (long) i0 >>>>>>>> org.apache.pdfbox.io.ScratchFile.readPage : $i5 = r0.<org.apache.pdfbox.io.ScratchFile: int inMemoryMaxPageCount>
+org.apache.pdfbox.io.ScratchFile.readPage : $l7 = (long) i0 >>>>>>>> org.apache.pdfbox.io.ScratchFile.readPage : $r27 := @caughtexception
+org.apache.pdfbox.io.ScratchFile.readPage : $i5 = r0.<org.apache.pdfbox.io.ScratchFile: int inMemoryMaxPageCount> >>>>>>>> org.apache.pdfbox.io.ScratchFile.readPage : $l6 = (long) $i5
+org.apache.pdfbox.io.ScratchFile.readPage : $i5 = r0.<org.apache.pdfbox.io.ScratchFile: int inMemoryMaxPageCount> >>>>>>>> org.apache.pdfbox.io.ScratchFile.readPage : $r27 := @caughtexception
+org.apache.pdfbox.io.ScratchFile.readPage : $l6 = (long) $i5 >>>>>>>> org.apache.pdfbox.io.ScratchFile.readPage : $l8 = $l7 - $l6
+org.apache.pdfbox.io.ScratchFile.readPage : $l6 = (long) $i5 >>>>>>>> org.apache.pdfbox.io.ScratchFile.readPage : $r27 := @caughtexception
+org.apache.pdfbox.io.ScratchFile.readPage : $l8 = $l7 - $l6 >>>>>>>> org.apache.pdfbox.io.ScratchFile.readPage : $l9 = $l8 * 4096L
+org.apache.pdfbox.io.ScratchFile.readPage : $l8 = $l7 - $l6 >>>>>>>> org.apache.pdfbox.io.ScratchFile.readPage : $r27 := @caughtexception
+org.apache.pdfbox.io.ScratchFile.readPage : $l9 = $l8 * 4096L >>>>>>>> org.apache.pdfbox.io.ScratchFile.readPage : virtualinvoke $r12.<java.io.RandomAccessFile: void seek(long)>($l9)
+org.apache.pdfbox.io.ScratchFile.readPage : $l9 = $l8 * 4096L >>>>>>>> org.apache.pdfbox.io.ScratchFile.readPage : $r27 := @caughtexception
+org.apache.pdfbox.io.ScratchFile.readPage : virtualinvoke $r12.<java.io.RandomAccessFile: void seek(long)>($l9) >>>>>>>> org.apache.pdfbox.io.ScratchFile.readPage : $r13 = r0.<org.apache.pdfbox.io.ScratchFile: java.io.RandomAccessFile raf>
+org.apache.pdfbox.io.ScratchFile.readPage : virtualinvoke $r12.<java.io.RandomAccessFile: void seek(long)>($l9) >>>>>>>> org.apache.pdfbox.io.ScratchFile.readPage : $r27 := @caughtexception
+org.apache.pdfbox.io.ScratchFile.readPage : $r13 = r0.<org.apache.pdfbox.io.ScratchFile: java.io.RandomAccessFile raf> >>>>>>>> org.apache.pdfbox.io.ScratchFile.readPage : virtualinvoke $r13.<java.io.RandomAccessFile: void readFully(byte[])>(r1)
+org.apache.pdfbox.io.ScratchFile.readPage : $r13 = r0.<org.apache.pdfbox.io.ScratchFile: java.io.RandomAccessFile raf> >>>>>>>> org.apache.pdfbox.io.ScratchFile.readPage : $r27 := @caughtexception
+org.apache.pdfbox.io.ScratchFile.readPage : virtualinvoke $r13.<java.io.RandomAccessFile: void readFully(byte[])>(r1) >>>>>>>> org.apache.pdfbox.io.ScratchFile.readPage : exitmonitor $r10
+org.apache.pdfbox.io.ScratchFile.readPage : virtualinvoke $r13.<java.io.RandomAccessFile: void readFully(byte[])>(r1) >>>>>>>> org.apache.pdfbox.io.ScratchFile.readPage : $r27 := @caughtexception
+org.apache.pdfbox.io.ScratchFile.readPage : exitmonitor $r10 >>>>>>>> org.apache.pdfbox.io.ScratchFile.readPage : return r1
+org.apache.pdfbox.io.ScratchFile.readPage : exitmonitor $r10 >>>>>>>> org.apache.pdfbox.io.ScratchFile.readPage : $r27 := @caughtexception
+org.apache.pdfbox.io.ScratchFile.readPage : virtualinvoke r0.<org.apache.pdfbox.io.ScratchFile: void checkClosed()>() >>>>>>>> org.apache.pdfbox.io.ScratchFile.readPage : $r14 = new java.io.IOException
+org.apache.pdfbox.io.ScratchFile.readPage : virtualinvoke r0.<org.apache.pdfbox.io.ScratchFile: void checkClosed()>() >>>>>>>> org.apache.pdfbox.io.ScratchFile.readPage : $r27 := @caughtexception
+org.apache.pdfbox.io.ScratchFile.readPage : $r14 = new java.io.IOException >>>>>>>> org.apache.pdfbox.io.ScratchFile.readPage : $r15 = new java.lang.StringBuilder
+org.apache.pdfbox.io.ScratchFile.readPage : $r14 = new java.io.IOException >>>>>>>> org.apache.pdfbox.io.ScratchFile.readPage : $r27 := @caughtexception
+org.apache.pdfbox.io.ScratchFile.readPage : $r15 = new java.lang.StringBuilder >>>>>>>> org.apache.pdfbox.io.ScratchFile.readPage : specialinvoke $r15.<java.lang.StringBuilder: void <init>()>()
+org.apache.pdfbox.io.ScratchFile.readPage : $r15 = new java.lang.StringBuilder >>>>>>>> org.apache.pdfbox.io.ScratchFile.readPage : $r27 := @caughtexception
+org.apache.pdfbox.io.ScratchFile.readPage : specialinvoke $r15.<java.lang.StringBuilder: void <init>()>() >>>>>>>> org.apache.pdfbox.io.ScratchFile.readPage : $r16 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Missing scratch file to read page with index ")
+org.apache.pdfbox.io.ScratchFile.readPage : specialinvoke $r15.<java.lang.StringBuilder: void <init>()>() >>>>>>>> org.apache.pdfbox.io.ScratchFile.readPage : $r27 := @caughtexception
+org.apache.pdfbox.io.ScratchFile.readPage : $r16 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Missing scratch file to read page with index ") >>>>>>>> org.apache.pdfbox.io.ScratchFile.readPage : $r17 = virtualinvoke $r16.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>(i0)
+org.apache.pdfbox.io.ScratchFile.readPage : $r16 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Missing scratch file to read page with index ") >>>>>>>> org.apache.pdfbox.io.ScratchFile.readPage : $r27 := @caughtexception
+org.apache.pdfbox.io.ScratchFile.readPage : $r17 = virtualinvoke $r16.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>(i0) >>>>>>>> org.apache.pdfbox.io.ScratchFile.readPage : $r18 = virtualinvoke $r17.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" from.")
+org.apache.pdfbox.io.ScratchFile.readPage : $r17 = virtualinvoke $r16.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>(i0) >>>>>>>> org.apache.pdfbox.io.ScratchFile.readPage : $r27 := @caughtexception
+org.apache.pdfbox.io.ScratchFile.readPage : $r18 = virtualinvoke $r17.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" from.") >>>>>>>> org.apache.pdfbox.io.ScratchFile.readPage : $r19 = virtualinvoke $r18.<java.lang.StringBuilder: java.lang.String toString()>()
+org.apache.pdfbox.io.ScratchFile.readPage : $r18 = virtualinvoke $r17.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" from.") >>>>>>>> org.apache.pdfbox.io.ScratchFile.readPage : $r27 := @caughtexception
+org.apache.pdfbox.io.ScratchFile.readPage : $r19 = virtualinvoke $r18.<java.lang.StringBuilder: java.lang.String toString()>() >>>>>>>> org.apache.pdfbox.io.ScratchFile.readPage : specialinvoke $r14.<java.io.IOException: void <init>(java.lang.String)>($r19)
+org.apache.pdfbox.io.ScratchFile.readPage : $r19 = virtualinvoke $r18.<java.lang.StringBuilder: java.lang.String toString()>() >>>>>>>> org.apache.pdfbox.io.ScratchFile.readPage : $r27 := @caughtexception
+org.apache.pdfbox.io.ScratchFile.readPage : specialinvoke $r14.<java.io.IOException: void <init>(java.lang.String)>($r19) >>>>>>>> org.apache.pdfbox.io.ScratchFile.readPage : throw $r14
+org.apache.pdfbox.io.ScratchFile.readPage : specialinvoke $r14.<java.io.IOException: void <init>(java.lang.String)>($r19) >>>>>>>> org.apache.pdfbox.io.ScratchFile.readPage : $r27 := @caughtexception
+org.apache.pdfbox.io.ScratchFile.readPage : throw $r14 >>>>>>>> org.apache.pdfbox.io.ScratchFile.readPage : $r27 := @caughtexception
+org.apache.pdfbox.io.ScratchFile.readPage : $r20 = r0.<org.apache.pdfbox.io.ScratchFile: byte[][] inMemoryPages> >>>>>>>> org.apache.pdfbox.io.ScratchFile.readPage : r28 = $r20[i0]
+org.apache.pdfbox.io.ScratchFile.readPage : r28 = $r20[i0] >>>>>>>> org.apache.pdfbox.io.ScratchFile.readPage : if r28 != null
+org.apache.pdfbox.io.ScratchFile.readPage : if r28 != null >>>>>>>> org.apache.pdfbox.io.ScratchFile.readPage : virtualinvoke r0.<org.apache.pdfbox.io.ScratchFile: void checkClosed()>()
+org.apache.pdfbox.io.ScratchFile.readPage : if r28 != null >>>>>>>> org.apache.pdfbox.io.ScratchFile.readPage : return r28
+org.apache.pdfbox.io.ScratchFile.readPage : virtualinvoke r0.<org.apache.pdfbox.io.ScratchFile: void checkClosed()>() >>>>>>>> org.apache.pdfbox.io.ScratchFile.readPage : $r21 = new java.io.IOException
+org.apache.pdfbox.io.ScratchFile.readPage : $r21 = new java.io.IOException >>>>>>>> org.apache.pdfbox.io.ScratchFile.readPage : $r22 = new java.lang.StringBuilder
+org.apache.pdfbox.io.ScratchFile.readPage : $r22 = new java.lang.StringBuilder >>>>>>>> org.apache.pdfbox.io.ScratchFile.readPage : specialinvoke $r22.<java.lang.StringBuilder: void <init>()>()
+org.apache.pdfbox.io.ScratchFile.readPage : specialinvoke $r22.<java.lang.StringBuilder: void <init>()>() >>>>>>>> org.apache.pdfbox.io.ScratchFile.readPage : $r23 = virtualinvoke $r22.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Requested page with index ")
+org.apache.pdfbox.io.ScratchFile.readPage : $r23 = virtualinvoke $r22.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Requested page with index ") >>>>>>>> org.apache.pdfbox.io.ScratchFile.readPage : $r24 = virtualinvoke $r23.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>(i0)
+org.apache.pdfbox.io.ScratchFile.readPage : $r24 = virtualinvoke $r23.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>(i0) >>>>>>>> org.apache.pdfbox.io.ScratchFile.readPage : $r25 = virtualinvoke $r24.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" was not written before.")
+org.apache.pdfbox.io.ScratchFile.readPage : $r25 = virtualinvoke $r24.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" was not written before.") >>>>>>>> org.apache.pdfbox.io.ScratchFile.readPage : $r26 = virtualinvoke $r25.<java.lang.StringBuilder: java.lang.String toString()>()
+org.apache.pdfbox.io.ScratchFile.readPage : $r26 = virtualinvoke $r25.<java.lang.StringBuilder: java.lang.String toString()>() >>>>>>>> org.apache.pdfbox.io.ScratchFile.readPage : specialinvoke $r21.<java.io.IOException: void <init>(java.lang.String)>($r26)
+org.apache.pdfbox.io.ScratchFile.readPage : specialinvoke $r21.<java.io.IOException: void <init>(java.lang.String)>($r26) >>>>>>>> org.apache.pdfbox.io.ScratchFile.readPage : throw $r21

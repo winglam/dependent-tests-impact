@@ -1,0 +1,22 @@
+org.apache.pdfbox.io.RandomAccessBuffer.clone : $i5 = r0.<org.apache.pdfbox.io.RandomAccessBuffer: int bufferListIndex>
+org.apache.pdfbox.io.RandomAccessBuffer.clone : $r15 = $r5.<org.apache.pdfbox.io.RandomAccessBuffer: java.util.List bufferList>
+org.apache.pdfbox.io.RandomAccessBuffer.clone : goto [?= $z0 = interfaceinvoke r2.<java.util.Iterator: boolean hasNext()>()]
+org.apache.pdfbox.io.RandomAccessBuffer.clone : $r5 = new org.apache.pdfbox.io.RandomAccessBuffer
+org.apache.pdfbox.io.RandomAccessBuffer.clone : $r9 = r0.<org.apache.pdfbox.io.RandomAccessBuffer: byte[] currentBuffer>
+org.apache.pdfbox.io.RandomAccessBuffer.clone : $i3 = r0.<org.apache.pdfbox.io.RandomAccessBuffer: int currentBufferPointer>
+org.apache.pdfbox.io.RandomAccessBuffer.clone : $l4 = r0.<org.apache.pdfbox.io.RandomAccessBuffer: long size>
+org.apache.pdfbox.io.RandomAccessBuffer.clone : $i6 = r0.<org.apache.pdfbox.io.RandomAccessBuffer: int bufferListMaxIndex>
+org.apache.pdfbox.io.RandomAccessBuffer.clone : $r11 = $r5.<org.apache.pdfbox.io.RandomAccessBuffer: java.util.List bufferList>
+org.apache.pdfbox.io.RandomAccessBuffer.clone : $r8 = r0.<org.apache.pdfbox.io.RandomAccessBuffer: java.util.List bufferList>
+org.apache.pdfbox.io.RandomAccessBuffer.clone : $i9 = lengthof r3
+org.apache.pdfbox.io.RandomAccessBuffer.clone : $i10 = lengthof r3
+org.apache.pdfbox.io.RandomAccessBuffer.clone : $r6 = new java.util.ArrayList
+org.apache.pdfbox.io.RandomAccessBuffer.clone : $r14 = interfaceinvoke r2.<java.util.Iterator: java.lang.Object next()>()
+org.apache.pdfbox.io.RandomAccessBuffer.clone : $l2 = r0.<org.apache.pdfbox.io.RandomAccessBuffer: long pointer>
+org.apache.pdfbox.io.RandomAccessBuffer.isEOF : specialinvoke r0.<org.apache.pdfbox.io.RandomAccessBuffer: void checkClosed()>()
+org.apache.pdfbox.io.RandomAccessBuffer.isEOF : $l1 = r0.<org.apache.pdfbox.io.RandomAccessBuffer: long pointer>
+org.apache.pdfbox.io.RandomAccessBuffer.isClosed : $r1 = r0.<org.apache.pdfbox.io.RandomAccessBuffer: byte[] currentBuffer>
+org.apache.pdfbox.io.RandomAccessBuffer.read : return 0
+org.apache.pdfbox.io.RandomAccessBuffer.read : specialinvoke r0.<org.apache.pdfbox.io.RandomAccessBuffer: void checkClosed()>()
+org.apache.pdfbox.io.RandomAccessBuffer.read : $l3 = r0.<org.apache.pdfbox.io.RandomAccessBuffer: long pointer>
+org.apache.pdfbox.io.RandomAccessBuffer.checkClosed : $r1 = r0.<org.apache.pdfbox.io.RandomAccessBuffer: byte[] currentBuffer>

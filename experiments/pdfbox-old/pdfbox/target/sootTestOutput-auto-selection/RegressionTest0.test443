@@ -1,0 +1,26 @@
+org.apache.pdfbox.contentstream.PDFStreamEngine.addOperator : virtualinvoke r1.<org.apache.pdfbox.contentstream.operator.OperatorProcessor: void setContext(org.apache.pdfbox.contentstream.PDFStreamEngine)>(r0) >>>>>>>> org.apache.pdfbox.contentstream.operator.OperatorProcessor.setContext : r0.<org.apache.pdfbox.contentstream.operator.OperatorProcessor: org.apache.pdfbox.contentstream.PDFStreamEngine context> = r1
+org.apache.pdfbox.contentstream.operator.OperatorProcessor.setContext : r0.<org.apache.pdfbox.contentstream.operator.OperatorProcessor: org.apache.pdfbox.contentstream.PDFStreamEngine context> = r1 >>>>>>>> org.apache.pdfbox.contentstream.PDFStreamEngine.addOperator : $r2 = r0.<org.apache.pdfbox.contentstream.PDFStreamEngine: java.util.Map operators>
+org.apache.pdfbox.contentstream.PDFStreamEngine.addOperator : $r2 = r0.<org.apache.pdfbox.contentstream.PDFStreamEngine: java.util.Map operators> >>>>>>>> org.apache.pdfbox.contentstream.PDFStreamEngine.addOperator : $r3 = virtualinvoke r1.<org.apache.pdfbox.contentstream.operator.OperatorProcessor: java.lang.String getName()>()
+org.apache.pdfbox.contentstream.PDFStreamEngine.addOperator : $r3 = virtualinvoke r1.<org.apache.pdfbox.contentstream.operator.OperatorProcessor: java.lang.String getName()>() >>>>>>>> org.apache.pdfbox.contentstream.operator.text.BeginText.getName : return "BT"
+org.apache.pdfbox.contentstream.operator.text.BeginText.getName : return "BT" >>>>>>>> org.apache.pdfbox.contentstream.PDFStreamEngine.addOperator : interfaceinvoke $r2.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>($r3, r1)
+org.apache.pdfbox.contentstream.PDFStreamEngine.addOperator : interfaceinvoke $r2.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>($r3, r1) >>>>>>>> org.apache.pdfbox.contentstream.operator.state.Concatenate.getName : return "cm"
+org.apache.pdfbox.contentstream.operator.state.Concatenate.getName : return "cm" >>>>>>>> org.apache.pdfbox.contentstream.operator.DrawObject.getName : return "Do"
+org.apache.pdfbox.contentstream.operator.DrawObject.getName : return "Do" >>>>>>>> org.apache.pdfbox.contentstream.operator.text.EndText.getName : return "ET"
+org.apache.pdfbox.contentstream.operator.text.EndText.getName : return "ET" >>>>>>>> org.apache.pdfbox.contentstream.operator.state.SetGraphicsStateParameters.getName : return "gs"
+org.apache.pdfbox.contentstream.operator.state.SetGraphicsStateParameters.getName : return "gs" >>>>>>>> org.apache.pdfbox.contentstream.operator.state.Save.getName : return "q"
+org.apache.pdfbox.contentstream.operator.state.Save.getName : return "q" >>>>>>>> org.apache.pdfbox.contentstream.operator.state.Restore.getName : return "Q"
+org.apache.pdfbox.contentstream.operator.state.Restore.getName : return "Q" >>>>>>>> org.apache.pdfbox.contentstream.operator.text.NextLine.getName : return "T*"
+org.apache.pdfbox.contentstream.operator.text.NextLine.getName : return "T*" >>>>>>>> org.apache.pdfbox.contentstream.operator.text.SetCharSpacing.getName : return "Tc"
+org.apache.pdfbox.contentstream.operator.text.SetCharSpacing.getName : return "Tc" >>>>>>>> org.apache.pdfbox.contentstream.operator.text.MoveText.getName : return "Td"
+org.apache.pdfbox.contentstream.operator.text.MoveText.getName : return "Td" >>>>>>>> org.apache.pdfbox.contentstream.operator.text.MoveTextSetLeading.getName : return "TD"
+org.apache.pdfbox.contentstream.operator.text.MoveTextSetLeading.getName : return "TD" >>>>>>>> org.apache.pdfbox.contentstream.operator.text.SetFontAndSize.getName : return "Tf"
+org.apache.pdfbox.contentstream.operator.text.SetFontAndSize.getName : return "Tf" >>>>>>>> org.apache.pdfbox.contentstream.operator.text.ShowText.getName : return "Tj"
+org.apache.pdfbox.contentstream.operator.text.ShowText.getName : return "Tj" >>>>>>>> org.apache.pdfbox.contentstream.operator.text.ShowTextAdjusted.getName : return "TJ"
+org.apache.pdfbox.contentstream.operator.text.ShowTextAdjusted.getName : return "TJ" >>>>>>>> org.apache.pdfbox.contentstream.operator.text.SetTextLeading.getName : return "TL"
+org.apache.pdfbox.contentstream.operator.text.SetTextLeading.getName : return "TL" >>>>>>>> org.apache.pdfbox.contentstream.operator.state.SetMatrix.getName : return "Tm"
+org.apache.pdfbox.contentstream.operator.state.SetMatrix.getName : return "Tm" >>>>>>>> org.apache.pdfbox.contentstream.operator.text.SetTextRenderingMode.getName : return "Tr"
+org.apache.pdfbox.contentstream.operator.text.SetTextRenderingMode.getName : return "Tr" >>>>>>>> org.apache.pdfbox.contentstream.operator.text.SetTextRise.getName : return "Ts"
+org.apache.pdfbox.contentstream.operator.text.SetTextRise.getName : return "Ts" >>>>>>>> org.apache.pdfbox.contentstream.operator.text.SetWordSpacing.getName : return "Tw"
+org.apache.pdfbox.contentstream.operator.text.SetWordSpacing.getName : return "Tw" >>>>>>>> org.apache.pdfbox.contentstream.operator.text.SetTextHorizontalScaling.getName : return "Tz"
+org.apache.pdfbox.contentstream.operator.text.SetTextHorizontalScaling.getName : return "Tz" >>>>>>>> org.apache.pdfbox.contentstream.operator.text.ShowTextLine.getName : return "\'"
+org.apache.pdfbox.contentstream.operator.text.ShowTextLine.getName : return "\'" >>>>>>>> org.apache.pdfbox.contentstream.operator.text.ShowTextLineAndSpace.getName : return "\""

@@ -1,0 +1,119 @@
+org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineNode.updateParentOpenCount : $z0 = virtualinvoke r1.<org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineNode: boolean isNodeOpen()>()
+org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineNode.updateParentOpenCount : $i1 = virtualinvoke r1.<org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineNode: int getOpenCount()>()
+org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineNode.updateParentOpenCount : r1 = virtualinvoke r0.<org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineNode: org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineNode getParent()>()
+org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineNode.updateParentOpenCount : if r1 == null goto return
+org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineNode.updateParentOpenCount : virtualinvoke r1.<org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineNode: void updateParentOpenCount(int)>(i0)
+org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineNode.updateParentOpenCount : $i3 = virtualinvoke r1.<org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineNode: int getOpenCount()>()
+org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineNode.openNode : $z0 = virtualinvoke r0.<org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineNode: boolean isNodeOpen()>()
+org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineNode.openNode : specialinvoke r0.<org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineNode: void switchNodeCount()>()
+org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineNode.append : virtualinvoke r0.<org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineNode: void setFirstChild(org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineNode)>(r1)
+org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineNode.append : r2 = virtualinvoke r0.<org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineNode: org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineItem getLastChild()>()
+org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineNode.append : virtualinvoke r1.<org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineItem: void setPreviousSibling(org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineNode)>(r2)
+org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineNode.append : virtualinvoke r0.<org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineNode: void setLastChild(org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineNode)>(r1)
+org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineNode.append : virtualinvoke r2.<org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineItem: void setNextSibling(org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineNode)>(r1)
+org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineNode.append : virtualinvoke r1.<org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineItem: void setParent(org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineNode)>(r0)
+org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineNode.append : $z0 = virtualinvoke r0.<org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineNode: boolean hasChildren()>()
+org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineNode.isNodeOpen : $i0 = virtualinvoke r0.<org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineNode: int getOpenCount()>()
+org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineNode.switchNodeCount : i0 = virtualinvoke r0.<org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineNode: int getOpenCount()>()
+org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineNode.switchNodeCount : $i1 = neg i0
+org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineNode.switchNodeCount : $i2 = neg i0
+org.apache.pdfbox.cos.COSInteger.get : $r1 = <org.apache.pdfbox.cos.COSInteger: org.apache.pdfbox.cos.COSInteger[] STATIC>
+org.apache.pdfbox.cos.COSInteger.get : $b2 = -100L cmp l0
+org.apache.pdfbox.cos.COSInteger.get : $i4 = (int) l0
+org.apache.pdfbox.cos.COSInteger.get : $b3 = l0 cmp 256L
+org.apache.pdfbox.cos.COSInteger.get : $r3 = <org.apache.pdfbox.cos.COSInteger: org.apache.pdfbox.cos.COSInteger[] STATIC>
+org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineNode.getOpenCount : $r1 = virtualinvoke r0.<org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineNode: org.apache.pdfbox.cos.COSDictionary getCOSObject()>()
+org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineNode.hasChildren : $r1 = virtualinvoke r0.<org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineNode: org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineItem getFirstChild()>()
+org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineNode.getParent : $r2 = virtualinvoke r0.<org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineNode: org.apache.pdfbox.cos.COSDictionary getCOSObject()>()
+org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineNode.getParent : $r8 = new org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineItem
+org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineNode.getParent : return null
+org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineNode.getParent : if r1 == null goto return null
+org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineNode.getParent : $r6 = <org.apache.pdfbox.cos.COSName: org.apache.pdfbox.cos.COSName OUTLINES>
+org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : $z0 = r5 instanceof org.apache.pdfbox.cos.COSObject
+org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : return r5
+org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : $z1 = r5 instanceof org.apache.pdfbox.cos.COSNull
+org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : $r2 = r0.<org.apache.pdfbox.cos.COSDictionary: java.util.Map items>
+org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : if r2 == null goto return r3
+org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : r3 = virtualinvoke r0.<org.apache.pdfbox.cos.COSDictionary: org.apache.pdfbox.cos.COSBase getDictionaryObject(org.apache.pdfbox.cos.COSName)>(r1)
+org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : if r3 != null goto return r3
+org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineNode.getFirstChild : $r1 = <org.apache.pdfbox.cos.COSName: org.apache.pdfbox.cos.COSName FIRST>
+org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineItem.setNextSibling : $r2 = virtualinvoke r0.<org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineItem: org.apache.pdfbox.cos.COSDictionary getCOSObject()>()
+org.apache.pdfbox.util.SmallMap.findKey : if r1 != null goto i1 = 0
+org.apache.pdfbox.util.SmallMap.findKey : return -1
+org.apache.pdfbox.util.SmallMap.findKey : $r3 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.util.SmallMap.findKey : return i1
+org.apache.pdfbox.util.SmallMap.findKey : i1 = 0
+org.apache.pdfbox.util.SmallMap.findKey : $z0 = virtualinvoke r0.<org.apache.pdfbox.util.SmallMap: boolean isEmpty()>()
+org.apache.pdfbox.cos.COSDictionary.getInt : $i1 = virtualinvoke r0.<org.apache.pdfbox.cos.COSDictionary: int getInt(org.apache.pdfbox.cos.COSName,org.apache.pdfbox.cos.COSName,int)>(r1, null, i0)
+org.apache.pdfbox.cos.COSDictionary.getInt : i1 = i0
+org.apache.pdfbox.cos.COSDictionary.getInt : r3 = virtualinvoke r0.<org.apache.pdfbox.cos.COSDictionary: org.apache.pdfbox.cos.COSBase getDictionaryObject(org.apache.pdfbox.cos.COSName,org.apache.pdfbox.cos.COSName)>(r1, r2)
+org.apache.pdfbox.cos.COSDictionary.getInt : return i1
+org.apache.pdfbox.cos.COSDictionary.getInt : $z0 = r3 instanceof org.apache.pdfbox.cos.COSNumber
+org.apache.pdfbox.cos.COSDictionary.getInt : $r4 = (org.apache.pdfbox.cos.COSNumber) r3
+org.apache.pdfbox.cos.COSDictionary.setInt : $l1 = (long) i0
+org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineNode.setOpenCount : $r1 = virtualinvoke r0.<org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineNode: org.apache.pdfbox.cos.COSDictionary getCOSObject()>()
+org.apache.pdfbox.util.SmallMap.get : if i0 >= 0 goto $r2 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.util.SmallMap.get : i0 = specialinvoke r0.<org.apache.pdfbox.util.SmallMap: int findKey(java.lang.Object)>(r1)
+org.apache.pdfbox.cos.COSDictionary.getCOSName : return null
+org.apache.pdfbox.cos.COSDictionary.getCOSName : r2 = virtualinvoke r0.<org.apache.pdfbox.cos.COSDictionary: org.apache.pdfbox.cos.COSBase getDictionaryObject(org.apache.pdfbox.cos.COSName)>(r1)
+org.apache.pdfbox.cos.COSDictionary.getCOSName : $z0 = r2 instanceof org.apache.pdfbox.cos.COSName
+org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineNode.requireSingleNode : $r4 = virtualinvoke r1.<org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineItem: org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineItem getPreviousSibling()>()
+org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineNode.requireSingleNode : $r2 = virtualinvoke r1.<org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineItem: org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineItem getNextSibling()>()
+org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineNode.setParent : $r2 = virtualinvoke r0.<org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineNode: org.apache.pdfbox.cos.COSDictionary getCOSObject()>()
+org.apache.pdfbox.util.SmallMap.put : $r5 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.util.SmallMap.put : $r7 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.util.SmallMap.put : $r8 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.util.SmallMap.put : $r9 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.util.SmallMap.put : if r2 != null goto $r5 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.util.SmallMap.put : $i4 = i5 + 1
+org.apache.pdfbox.util.SmallMap.put : r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr> = r3
+org.apache.pdfbox.util.SmallMap.put : r3[i5] = r1
+org.apache.pdfbox.util.SmallMap.put : $i3 = i5 + 2
+org.apache.pdfbox.util.SmallMap.put : if r1 == null goto $r4 = new java.lang.NullPointerException
+org.apache.pdfbox.util.SmallMap.put : return null
+org.apache.pdfbox.util.SmallMap.put : $r10 = newarray (java.lang.Object)[2]
+org.apache.pdfbox.util.SmallMap.put : i0 = specialinvoke r0.<org.apache.pdfbox.util.SmallMap: int findKey(java.lang.Object)>(r1)
+org.apache.pdfbox.util.SmallMap.put : if i0 >= 0 goto $r6 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.util.SmallMap.put : return r11
+org.apache.pdfbox.util.SmallMap.put : $r6 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.util.SmallMap.isEmpty : $r1 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineItem.getNextSibling : $r1 = <org.apache.pdfbox.cos.COSName: org.apache.pdfbox.cos.COSName NEXT>
+org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineNode.addLast : virtualinvoke r0.<org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineNode: void requireSingleNode(org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineItem)>(r1)
+org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineNode.addLast : specialinvoke r0.<org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineNode: void append(org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineItem)>(r1)
+org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineNode.addLast : virtualinvoke r0.<org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineNode: void updateParentOpenCountForAddedChild(org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineItem)>(r1)
+org.apache.pdfbox.cos.COSName.equals : $z0 = r1 instanceof org.apache.pdfbox.cos.COSName
+org.apache.pdfbox.cos.COSDictionary.setItem : r3 = interfaceinvoke r2.<org.apache.pdfbox.pdmodel.common.COSObjectable: org.apache.pdfbox.cos.COSBase getCOSObject()>()
+org.apache.pdfbox.cos.COSDictionary.setItem : r3 = null
+org.apache.pdfbox.cos.COSDictionary.setItem : $r3 = r0.<org.apache.pdfbox.cos.COSDictionary: java.util.Map items>
+org.apache.pdfbox.cos.COSDictionary.setItem : if r2 == null goto virtualinvoke r0.<org.apache.pdfbox.cos.COSDictionary: void setItem(org.apache.pdfbox.cos.COSName,org.apache.pdfbox.cos.COSBase)>(r1, r3)
+org.apache.pdfbox.cos.COSDictionary.setItem : if r2 != null goto $r3 = r0.<org.apache.pdfbox.cos.COSDictionary: java.util.Map items>
+org.apache.pdfbox.cos.COSDictionary.setItem : virtualinvoke r0.<org.apache.pdfbox.cos.COSDictionary: void setItem(org.apache.pdfbox.cos.COSName,org.apache.pdfbox.cos.COSBase)>(r1, r3)
+org.apache.pdfbox.pdmodel.common.PDDictionaryWrapper.equals : if r0 != r1 goto $z0 = r1 instanceof org.apache.pdfbox.pdmodel.common.PDDictionaryWrapper
+org.apache.pdfbox.pdmodel.common.PDDictionaryWrapper.equals : $z0 = r1 instanceof org.apache.pdfbox.pdmodel.common.PDDictionaryWrapper
+org.apache.pdfbox.pdmodel.common.PDDictionaryWrapper.equals : $r4 = r0.<org.apache.pdfbox.pdmodel.common.PDDictionaryWrapper: org.apache.pdfbox.cos.COSDictionary dictionary>
+org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineNode.updateParentOpenCountForAddedChild : $z0 = virtualinvoke r1.<org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineItem: boolean isNodeOpen()>()
+org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineNode.updateParentOpenCountForAddedChild : i1 = 1
+org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineNode.updateParentOpenCountForAddedChild : virtualinvoke r1.<org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineItem: void updateParentOpenCount(int)>(i1)
+org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineNode.updateParentOpenCountForAddedChild : $i0 = virtualinvoke r1.<org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineItem: int getOpenCount()>()
+org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineNode.setFirstChild : $r2 = virtualinvoke r0.<org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineNode: org.apache.pdfbox.cos.COSDictionary getCOSObject()>()
+org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineItem.setPreviousSibling : $r2 = virtualinvoke r0.<org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineItem: org.apache.pdfbox.cos.COSDictionary getCOSObject()>()
+org.apache.pdfbox.cos.COSInteger.intValue : $l0 = r0.<org.apache.pdfbox.cos.COSInteger: long value>
+org.apache.pdfbox.pdmodel.common.PDDictionaryWrapper.getCOSObject : $r1 = virtualinvoke r0.<org.apache.pdfbox.pdmodel.common.PDDictionaryWrapper: org.apache.pdfbox.cos.COSDictionary getCOSObject()>()
+org.apache.pdfbox.pdmodel.common.PDDictionaryWrapper.getCOSObject : $r1 = r0.<org.apache.pdfbox.pdmodel.common.PDDictionaryWrapper: org.apache.pdfbox.cos.COSDictionary dictionary>
+org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineNode.setLastChild : $r2 = virtualinvoke r0.<org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineNode: org.apache.pdfbox.cos.COSDictionary getCOSObject()>()
+org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineNode.getOutlineItem : if r2 == null goto return null
+org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineNode.getOutlineItem : $r3 = virtualinvoke r0.<org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineNode: org.apache.pdfbox.cos.COSDictionary getCOSObject()>()
+org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineNode.getOutlineItem : return null
+org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineNode.getOutlineItem : $r5 = new org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineItem
+org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineItem.insertSiblingBefore : virtualinvoke r0.<org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineItem: void requireSingleNode(org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineItem)>(r1)
+org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineItem.insertSiblingBefore : virtualinvoke r1.<org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineItem: void setNextSibling(org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineNode)>(r0)
+org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineItem.insertSiblingBefore : virtualinvoke r1.<org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineItem: void setPreviousSibling(org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineNode)>(r3)
+org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineItem.insertSiblingBefore : r3 = virtualinvoke r0.<org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineItem: org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineItem getPreviousSibling()>()
+org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineItem.insertSiblingBefore : virtualinvoke r0.<org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineItem: void updateParentOpenCountForAddedChild(org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineItem)>(r1)
+org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineItem.insertSiblingBefore : virtualinvoke r3.<org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineItem: void setNextSibling(org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineNode)>(r1)
+org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineItem.insertSiblingBefore : virtualinvoke r1.<org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineItem: void setParent(org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineNode)>(r2)
+org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineItem.insertSiblingBefore : r2 = virtualinvoke r0.<org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineItem: org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineNode getParent()>()
+org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineItem.insertSiblingBefore : virtualinvoke r0.<org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineItem: void setPreviousSibling(org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineNode)>(r1)
+org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineItem.insertSiblingBefore : if r3 == null goto (branch)
+org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineItem.getPreviousSibling : $r1 = <org.apache.pdfbox.cos.COSName: org.apache.pdfbox.cos.COSName PREV>
+org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineNode.getLastChild : $r1 = <org.apache.pdfbox.cos.COSName: org.apache.pdfbox.cos.COSName LAST>

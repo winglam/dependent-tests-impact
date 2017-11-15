@@ -1,0 +1,9 @@
+org.apache.pdfbox.cos.COSDocument.finalize : $z0 = r0.<org.apache.pdfbox.cos.COSDocument: boolean closed> >>>>>>>> org.apache.pdfbox.cos.COSDocument.finalize : if $z0 != 0
+org.apache.pdfbox.cos.COSDocument.finalize : if $z0 != 0 >>>>>>>> org.apache.pdfbox.cos.COSDocument.finalize : $z1 = r0.<org.apache.pdfbox.cos.COSDocument: boolean warnMissingClose>
+org.apache.pdfbox.cos.COSDocument.finalize : if $z0 != 0 >>>>>>>> org.apache.pdfbox.cos.COSDocument.finalize : return
+org.apache.pdfbox.cos.COSDocument.finalize : $z1 = r0.<org.apache.pdfbox.cos.COSDocument: boolean warnMissingClose> >>>>>>>> org.apache.pdfbox.cos.COSDocument.finalize : if $z1 == 0
+org.apache.pdfbox.cos.COSDocument.finalize : if $z1 == 0 >>>>>>>> org.apache.pdfbox.cos.COSDocument.finalize : $r1 = <org.apache.pdfbox.cos.COSDocument: org.apache.commons.logging.Log LOG>
+org.apache.pdfbox.cos.COSDocument.finalize : if $z1 == 0 >>>>>>>> org.apache.pdfbox.cos.COSDocument.finalize : virtualinvoke r0.<org.apache.pdfbox.cos.COSDocument: void close()>()
+org.apache.pdfbox.cos.COSDocument.finalize : virtualinvoke r0.<org.apache.pdfbox.cos.COSDocument: void close()>() >>>>>>>> org.apache.pdfbox.cos.COSDocument.finalize : return
+org.apache.pdfbox.cos.COSDocument.finalize : $r1 = <org.apache.pdfbox.cos.COSDocument: org.apache.commons.logging.Log LOG> >>>>>>>> org.apache.pdfbox.cos.COSDocument.finalize : interfaceinvoke $r1.<org.apache.commons.logging.Log: void warn(java.lang.Object)>("Warning: You did not close a PDF Document")
+org.apache.pdfbox.cos.COSDocument.finalize : interfaceinvoke $r1.<org.apache.commons.logging.Log: void warn(java.lang.Object)>("Warning: You did not close a PDF Document") >>>>>>>> org.apache.pdfbox.cos.COSDocument.finalize : virtualinvoke r0.<org.apache.pdfbox.cos.COSDocument: void close()>()

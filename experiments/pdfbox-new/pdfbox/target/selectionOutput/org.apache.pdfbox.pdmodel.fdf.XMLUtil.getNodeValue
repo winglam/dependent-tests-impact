@@ -1,0 +1,17 @@
+org.apache.pdfbox.pdmodel.fdf.XMLUtil.getNodeValue : $r1 = new java.lang.StringBuilder >>>>>>>> org.apache.pdfbox.pdmodel.fdf.XMLUtil.getNodeValue : specialinvoke $r1.<java.lang.StringBuilder: void <init>()>()
+org.apache.pdfbox.pdmodel.fdf.XMLUtil.getNodeValue : specialinvoke $r1.<java.lang.StringBuilder: void <init>()>() >>>>>>>> org.apache.pdfbox.pdmodel.fdf.XMLUtil.getNodeValue : r2 = $r1
+org.apache.pdfbox.pdmodel.fdf.XMLUtil.getNodeValue : r2 = $r1 >>>>>>>> org.apache.pdfbox.pdmodel.fdf.XMLUtil.getNodeValue : r3 = interfaceinvoke r0.<org.w3c.dom.Element: org.w3c.dom.NodeList getChildNodes()>()
+org.apache.pdfbox.pdmodel.fdf.XMLUtil.getNodeValue : r3 = interfaceinvoke r0.<org.w3c.dom.Element: org.w3c.dom.NodeList getChildNodes()>() >>>>>>>> org.apache.pdfbox.pdmodel.fdf.XMLUtil.getNodeValue : i0 = interfaceinvoke r3.<org.w3c.dom.NodeList: int getLength()>()
+org.apache.pdfbox.pdmodel.fdf.XMLUtil.getNodeValue : i0 = interfaceinvoke r3.<org.w3c.dom.NodeList: int getLength()>() >>>>>>>> org.apache.pdfbox.pdmodel.fdf.XMLUtil.getNodeValue : i1 = 0
+org.apache.pdfbox.pdmodel.fdf.XMLUtil.getNodeValue : i1 = 0 >>>>>>>> org.apache.pdfbox.pdmodel.fdf.XMLUtil.getNodeValue : if i1 >= i0
+org.apache.pdfbox.pdmodel.fdf.XMLUtil.getNodeValue : if i1 >= i0 >>>>>>>> org.apache.pdfbox.pdmodel.fdf.XMLUtil.getNodeValue : r4 = interfaceinvoke r3.<org.w3c.dom.NodeList: org.w3c.dom.Node item(int)>(i1)
+org.apache.pdfbox.pdmodel.fdf.XMLUtil.getNodeValue : if i1 >= i0 >>>>>>>> org.apache.pdfbox.pdmodel.fdf.XMLUtil.getNodeValue : $r7 = virtualinvoke r2.<java.lang.StringBuilder: java.lang.String toString()>()
+org.apache.pdfbox.pdmodel.fdf.XMLUtil.getNodeValue : $r7 = virtualinvoke r2.<java.lang.StringBuilder: java.lang.String toString()>() >>>>>>>> org.apache.pdfbox.pdmodel.fdf.XMLUtil.getNodeValue : return $r7
+org.apache.pdfbox.pdmodel.fdf.XMLUtil.getNodeValue : r4 = interfaceinvoke r3.<org.w3c.dom.NodeList: org.w3c.dom.Node item(int)>(i1) >>>>>>>> org.apache.pdfbox.pdmodel.fdf.XMLUtil.getNodeValue : $z0 = r4 instanceof org.w3c.dom.Text
+org.apache.pdfbox.pdmodel.fdf.XMLUtil.getNodeValue : $z0 = r4 instanceof org.w3c.dom.Text >>>>>>>> org.apache.pdfbox.pdmodel.fdf.XMLUtil.getNodeValue : if $z0 == 0
+org.apache.pdfbox.pdmodel.fdf.XMLUtil.getNodeValue : if $z0 == 0 >>>>>>>> org.apache.pdfbox.pdmodel.fdf.XMLUtil.getNodeValue : $r5 = interfaceinvoke r4.<org.w3c.dom.Node: java.lang.String getNodeValue()>()
+org.apache.pdfbox.pdmodel.fdf.XMLUtil.getNodeValue : if $z0 == 0 >>>>>>>> org.apache.pdfbox.pdmodel.fdf.XMLUtil.getNodeValue : i1 = i1 + 1
+org.apache.pdfbox.pdmodel.fdf.XMLUtil.getNodeValue : i1 = i1 + 1 >>>>>>>> org.apache.pdfbox.pdmodel.fdf.XMLUtil.getNodeValue : goto [?= (branch)]
+org.apache.pdfbox.pdmodel.fdf.XMLUtil.getNodeValue : goto [?= (branch)] >>>>>>>> org.apache.pdfbox.pdmodel.fdf.XMLUtil.getNodeValue : if i1 >= i0
+org.apache.pdfbox.pdmodel.fdf.XMLUtil.getNodeValue : $r5 = interfaceinvoke r4.<org.w3c.dom.Node: java.lang.String getNodeValue()>() >>>>>>>> org.apache.pdfbox.pdmodel.fdf.XMLUtil.getNodeValue : virtualinvoke r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r5)
+org.apache.pdfbox.pdmodel.fdf.XMLUtil.getNodeValue : virtualinvoke r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r5) >>>>>>>> org.apache.pdfbox.pdmodel.fdf.XMLUtil.getNodeValue : i1 = i1 + 1

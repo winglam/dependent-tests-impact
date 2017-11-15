@@ -1,0 +1,8 @@
+org.apache.pdfbox.io.RandomAccessBuffer.readFully : r1 = newarray (byte)[i0] >>>>>>>> org.apache.pdfbox.io.RandomAccessBuffer.readFully : i3 = virtualinvoke r0.<org.apache.pdfbox.io.RandomAccessBuffer: int read(byte[])>(r1)
+org.apache.pdfbox.io.RandomAccessBuffer.readFully : i3 = virtualinvoke r0.<org.apache.pdfbox.io.RandomAccessBuffer: int read(byte[])>(r1) >>>>>>>> org.apache.pdfbox.io.RandomAccessBuffer.readFully : if i3 >= i0
+org.apache.pdfbox.io.RandomAccessBuffer.readFully : if i3 >= i0 >>>>>>>> org.apache.pdfbox.io.RandomAccessBuffer.readFully : $i1 = i0 - i3
+org.apache.pdfbox.io.RandomAccessBuffer.readFully : if i3 >= i0 >>>>>>>> org.apache.pdfbox.io.RandomAccessBuffer.readFully : return r1
+org.apache.pdfbox.io.RandomAccessBuffer.readFully : $i1 = i0 - i3 >>>>>>>> org.apache.pdfbox.io.RandomAccessBuffer.readFully : $i2 = virtualinvoke r0.<org.apache.pdfbox.io.RandomAccessBuffer: int read(byte[],int,int)>(r1, i3, $i1)
+org.apache.pdfbox.io.RandomAccessBuffer.readFully : $i2 = virtualinvoke r0.<org.apache.pdfbox.io.RandomAccessBuffer: int read(byte[],int,int)>(r1, i3, $i1) >>>>>>>> org.apache.pdfbox.io.RandomAccessBuffer.readFully : i3 = i3 + $i2
+org.apache.pdfbox.io.RandomAccessBuffer.readFully : i3 = i3 + $i2 >>>>>>>> org.apache.pdfbox.io.RandomAccessBuffer.readFully : goto [?= (branch)]
+org.apache.pdfbox.io.RandomAccessBuffer.readFully : goto [?= (branch)] >>>>>>>> org.apache.pdfbox.io.RandomAccessBuffer.readFully : if i3 >= i0

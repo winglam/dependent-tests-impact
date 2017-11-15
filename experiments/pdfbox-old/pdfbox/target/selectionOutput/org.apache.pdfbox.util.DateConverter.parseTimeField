@@ -1,0 +1,25 @@
+org.apache.pdfbox.util.DateConverter.parseTimeField : if r0 != null >>>>>>>> org.apache.pdfbox.util.DateConverter.parseTimeField : return i1
+org.apache.pdfbox.util.DateConverter.parseTimeField : if r0 != null >>>>>>>> org.apache.pdfbox.util.DateConverter.parseTimeField : i9 = 0
+org.apache.pdfbox.util.DateConverter.parseTimeField : i9 = 0 >>>>>>>> org.apache.pdfbox.util.DateConverter.parseTimeField : i10 = virtualinvoke r1.<java.text.ParsePosition: int getIndex()>()
+org.apache.pdfbox.util.DateConverter.parseTimeField : i10 = virtualinvoke r1.<java.text.ParsePosition: int getIndex()>() >>>>>>>> org.apache.pdfbox.util.DateConverter.parseTimeField : $i4 = virtualinvoke r0.<java.lang.String: int length()>()
+org.apache.pdfbox.util.DateConverter.parseTimeField : $i4 = virtualinvoke r0.<java.lang.String: int length()>() >>>>>>>> org.apache.pdfbox.util.DateConverter.parseTimeField : $i5 = $i4 - i10
+org.apache.pdfbox.util.DateConverter.parseTimeField : $i5 = $i4 - i10 >>>>>>>> org.apache.pdfbox.util.DateConverter.parseTimeField : $i6 = staticinvoke <java.lang.Math: int min(int,int)>(i0, $i5)
+org.apache.pdfbox.util.DateConverter.parseTimeField : $i6 = staticinvoke <java.lang.Math: int min(int,int)>(i0, $i5) >>>>>>>> org.apache.pdfbox.util.DateConverter.parseTimeField : i2 = i10 + $i6
+org.apache.pdfbox.util.DateConverter.parseTimeField : i2 = i10 + $i6 >>>>>>>> org.apache.pdfbox.util.DateConverter.parseTimeField : if i10 >= i2
+org.apache.pdfbox.util.DateConverter.parseTimeField : if i10 >= i2 >>>>>>>> org.apache.pdfbox.util.DateConverter.parseTimeField : $c7 = virtualinvoke r0.<java.lang.String: char charAt(int)>(i10)
+org.apache.pdfbox.util.DateConverter.parseTimeField : if i10 >= i2 >>>>>>>> org.apache.pdfbox.util.DateConverter.parseTimeField : $i11 = virtualinvoke r1.<java.text.ParsePosition: int getIndex()>()
+org.apache.pdfbox.util.DateConverter.parseTimeField : $i11 = virtualinvoke r1.<java.text.ParsePosition: int getIndex()>() >>>>>>>> org.apache.pdfbox.util.DateConverter.parseTimeField : if i10 != $i11
+org.apache.pdfbox.util.DateConverter.parseTimeField : if i10 != $i11 >>>>>>>> org.apache.pdfbox.util.DateConverter.parseTimeField : return i1
+org.apache.pdfbox.util.DateConverter.parseTimeField : if i10 != $i11 >>>>>>>> org.apache.pdfbox.util.DateConverter.parseTimeField : virtualinvoke r1.<java.text.ParsePosition: void setIndex(int)>(i10)
+org.apache.pdfbox.util.DateConverter.parseTimeField : virtualinvoke r1.<java.text.ParsePosition: void setIndex(int)>(i10) >>>>>>>> org.apache.pdfbox.util.DateConverter.parseTimeField : return i9
+org.apache.pdfbox.util.DateConverter.parseTimeField : $c7 = virtualinvoke r0.<java.lang.String: char charAt(int)>(i10) >>>>>>>> org.apache.pdfbox.util.DateConverter.parseTimeField : i3 = $c7 - 48
+org.apache.pdfbox.util.DateConverter.parseTimeField : i3 = $c7 - 48 >>>>>>>> org.apache.pdfbox.util.DateConverter.parseTimeField : if i3 < 0
+org.apache.pdfbox.util.DateConverter.parseTimeField : if i3 < 0 >>>>>>>> org.apache.pdfbox.util.DateConverter.parseTimeField : if i3 <= 9
+org.apache.pdfbox.util.DateConverter.parseTimeField : if i3 < 0 >>>>>>>> org.apache.pdfbox.util.DateConverter.parseTimeField : $i11 = virtualinvoke r1.<java.text.ParsePosition: int getIndex()>()
+org.apache.pdfbox.util.DateConverter.parseTimeField : if i3 <= 9 >>>>>>>> org.apache.pdfbox.util.DateConverter.parseTimeField : goto [?= $i11 = virtualinvoke r1.<java.text.ParsePosition: int getIndex()>()]
+org.apache.pdfbox.util.DateConverter.parseTimeField : if i3 <= 9 >>>>>>>> org.apache.pdfbox.util.DateConverter.parseTimeField : $i8 = i9 * 10
+org.apache.pdfbox.util.DateConverter.parseTimeField : $i8 = i9 * 10 >>>>>>>> org.apache.pdfbox.util.DateConverter.parseTimeField : i9 = $i8 + i3
+org.apache.pdfbox.util.DateConverter.parseTimeField : i9 = $i8 + i3 >>>>>>>> org.apache.pdfbox.util.DateConverter.parseTimeField : i10 = i10 + 1
+org.apache.pdfbox.util.DateConverter.parseTimeField : i10 = i10 + 1 >>>>>>>> org.apache.pdfbox.util.DateConverter.parseTimeField : goto [?= (branch)]
+org.apache.pdfbox.util.DateConverter.parseTimeField : goto [?= (branch)] >>>>>>>> org.apache.pdfbox.util.DateConverter.parseTimeField : if i10 >= i2
+org.apache.pdfbox.util.DateConverter.parseTimeField : goto [?= $i11 = virtualinvoke r1.<java.text.ParsePosition: int getIndex()>()] >>>>>>>> org.apache.pdfbox.util.DateConverter.parseTimeField : $i11 = virtualinvoke r1.<java.text.ParsePosition: int getIndex()>()

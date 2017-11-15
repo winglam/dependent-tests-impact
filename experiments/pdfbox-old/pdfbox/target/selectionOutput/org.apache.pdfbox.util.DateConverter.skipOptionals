@@ -1,0 +1,22 @@
+org.apache.pdfbox.util.DateConverter.skipOptionals : c8 = 32 >>>>>>>> org.apache.pdfbox.util.DateConverter.skipOptionals : if r0 == null
+org.apache.pdfbox.util.DateConverter.skipOptionals : if r0 == null >>>>>>>> org.apache.pdfbox.util.DateConverter.skipOptionals : $i1 = virtualinvoke r1.<java.text.ParsePosition: int getIndex()>()
+org.apache.pdfbox.util.DateConverter.skipOptionals : if r0 == null >>>>>>>> org.apache.pdfbox.util.DateConverter.skipOptionals : return c8
+org.apache.pdfbox.util.DateConverter.skipOptionals : $i1 = virtualinvoke r1.<java.text.ParsePosition: int getIndex()>() >>>>>>>> org.apache.pdfbox.util.DateConverter.skipOptionals : $i2 = virtualinvoke r0.<java.lang.String: int length()>()
+org.apache.pdfbox.util.DateConverter.skipOptionals : $i2 = virtualinvoke r0.<java.lang.String: int length()>() >>>>>>>> org.apache.pdfbox.util.DateConverter.skipOptionals : if $i1 >= $i2
+org.apache.pdfbox.util.DateConverter.skipOptionals : if $i1 >= $i2 >>>>>>>> org.apache.pdfbox.util.DateConverter.skipOptionals : $i3 = virtualinvoke r1.<java.text.ParsePosition: int getIndex()>()
+org.apache.pdfbox.util.DateConverter.skipOptionals : if $i1 >= $i2 >>>>>>>> org.apache.pdfbox.util.DateConverter.skipOptionals : return c8
+org.apache.pdfbox.util.DateConverter.skipOptionals : $i3 = virtualinvoke r1.<java.text.ParsePosition: int getIndex()>() >>>>>>>> org.apache.pdfbox.util.DateConverter.skipOptionals : $c4 = virtualinvoke r0.<java.lang.String: char charAt(int)>($i3)
+org.apache.pdfbox.util.DateConverter.skipOptionals : $c4 = virtualinvoke r0.<java.lang.String: char charAt(int)>($i3) >>>>>>>> org.apache.pdfbox.util.DateConverter.skipOptionals : $i5 = virtualinvoke r2.<java.lang.String: int indexOf(int)>($c4)
+org.apache.pdfbox.util.DateConverter.skipOptionals : $i5 = virtualinvoke r2.<java.lang.String: int indexOf(int)>($c4) >>>>>>>> org.apache.pdfbox.util.DateConverter.skipOptionals : if $i5 < 0
+org.apache.pdfbox.util.DateConverter.skipOptionals : if $i5 < 0 >>>>>>>> org.apache.pdfbox.util.DateConverter.skipOptionals : if $c4 == 32
+org.apache.pdfbox.util.DateConverter.skipOptionals : if $i5 < 0 >>>>>>>> org.apache.pdfbox.util.DateConverter.skipOptionals : return c8
+org.apache.pdfbox.util.DateConverter.skipOptionals : if $c4 == 32 >>>>>>>> org.apache.pdfbox.util.DateConverter.skipOptionals : $c9 = $c4
+org.apache.pdfbox.util.DateConverter.skipOptionals : if $c4 == 32 >>>>>>>> org.apache.pdfbox.util.DateConverter.skipOptionals : $c9 = c8
+org.apache.pdfbox.util.DateConverter.skipOptionals : $c9 = c8 >>>>>>>> org.apache.pdfbox.util.DateConverter.skipOptionals : c8 = $c9
+org.apache.pdfbox.util.DateConverter.skipOptionals : c8 = $c9 >>>>>>>> org.apache.pdfbox.util.DateConverter.skipOptionals : $i6 = virtualinvoke r1.<java.text.ParsePosition: int getIndex()>()
+org.apache.pdfbox.util.DateConverter.skipOptionals : $i6 = virtualinvoke r1.<java.text.ParsePosition: int getIndex()>() >>>>>>>> org.apache.pdfbox.util.DateConverter.skipOptionals : $i7 = $i6 + 1
+org.apache.pdfbox.util.DateConverter.skipOptionals : $i7 = $i6 + 1 >>>>>>>> org.apache.pdfbox.util.DateConverter.skipOptionals : virtualinvoke r1.<java.text.ParsePosition: void setIndex(int)>($i7)
+org.apache.pdfbox.util.DateConverter.skipOptionals : virtualinvoke r1.<java.text.ParsePosition: void setIndex(int)>($i7) >>>>>>>> org.apache.pdfbox.util.DateConverter.skipOptionals : goto [?= (branch)]
+org.apache.pdfbox.util.DateConverter.skipOptionals : goto [?= (branch)] >>>>>>>> org.apache.pdfbox.util.DateConverter.skipOptionals : if r0 == null
+org.apache.pdfbox.util.DateConverter.skipOptionals : $c9 = $c4 >>>>>>>> org.apache.pdfbox.util.DateConverter.skipOptionals : goto [?= c8 = $c9]
+org.apache.pdfbox.util.DateConverter.skipOptionals : goto [?= c8 = $c9] >>>>>>>> org.apache.pdfbox.util.DateConverter.skipOptionals : c8 = $c9

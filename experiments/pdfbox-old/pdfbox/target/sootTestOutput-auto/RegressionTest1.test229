@@ -1,0 +1,18 @@
+org.apache.pdfbox.util.filetypedetector.FileTypeDetector.detectFileType : $z0 = virtualinvoke r0.<java.io.BufferedInputStream: boolean markSupported()>()
+org.apache.pdfbox.util.filetypedetector.ByteTrie$ByteTrieNode.access$000 : $r1 = r0.<org.apache.pdfbox.util.filetypedetector.ByteTrie$ByteTrieNode: java.util.Map children>
+org.apache.pdfbox.util.filetypedetector.ByteTrie.setDefaultValue : $r2 = r0.<org.apache.pdfbox.util.filetypedetector.ByteTrie: org.apache.pdfbox.util.filetypedetector.ByteTrie$ByteTrieNode root>
+org.apache.pdfbox.util.filetypedetector.ByteTrie$ByteTrieNode.setValue : r0.<org.apache.pdfbox.util.filetypedetector.ByteTrie$ByteTrieNode: java.lang.Object value> = r1
+org.apache.pdfbox.util.filetypedetector.ByteTrie$ByteTrieNode.setValue : $r2 = r0.<org.apache.pdfbox.util.filetypedetector.ByteTrie$ByteTrieNode: java.lang.Object value>
+org.apache.pdfbox.util.filetypedetector.ByteTrie.addPath : r4 = r2[i6]
+org.apache.pdfbox.util.filetypedetector.ByteTrie.addPath : $i3 = r0.<org.apache.pdfbox.util.filetypedetector.ByteTrie: int maxDepth>
+org.apache.pdfbox.util.filetypedetector.ByteTrie.addPath : r13 = r0.<org.apache.pdfbox.util.filetypedetector.ByteTrie: org.apache.pdfbox.util.filetypedetector.ByteTrie$ByteTrieNode root>
+org.apache.pdfbox.util.filetypedetector.ByteTrie.addPath : virtualinvoke r13.<org.apache.pdfbox.util.filetypedetector.ByteTrie$ByteTrieNode: void setValue(java.lang.Object)>(r1)
+org.apache.pdfbox.util.filetypedetector.ByteTrie.addPath : i0 = lengthof r2
+org.apache.pdfbox.util.filetypedetector.ByteTrie.addPath : if r14 != null goto r13 = r14
+org.apache.pdfbox.util.filetypedetector.ByteTrie.addPath : i1 = lengthof r4
+org.apache.pdfbox.util.filetypedetector.ByteTrie.addPath : r13 = r14
+org.apache.pdfbox.util.filetypedetector.ByteTrie.addPath : $r6 = staticinvoke <org.apache.pdfbox.util.filetypedetector.ByteTrie$ByteTrieNode: java.util.Map access$000(org.apache.pdfbox.util.filetypedetector.ByteTrie$ByteTrieNode)>(r13)
+org.apache.pdfbox.util.filetypedetector.ByteTrie.addPath : $r10 = staticinvoke <org.apache.pdfbox.util.filetypedetector.ByteTrie$ByteTrieNode: java.util.Map access$000(org.apache.pdfbox.util.filetypedetector.ByteTrie$ByteTrieNode)>(r13)
+org.apache.pdfbox.util.filetypedetector.ByteTrie.addPath : $r9 = new org.apache.pdfbox.util.filetypedetector.ByteTrie$ByteTrieNode
+org.apache.pdfbox.util.filetypedetector.ByteTrie.addPath : i5 = i5 + 1
+org.apache.pdfbox.util.filetypedetector.ByteTrie.addPath : i5 = 0

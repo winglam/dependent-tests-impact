@@ -1,0 +1,11 @@
+org.apache.pdfbox.pdmodel.interactive.digitalsignature.COSFilterInputStream.inRange : return 0
+org.apache.pdfbox.pdmodel.interactive.digitalsignature.COSFilterInputStream.inRange : l0 = r0.<org.apache.pdfbox.pdmodel.interactive.digitalsignature.COSFilterInputStream: long position>
+org.apache.pdfbox.pdmodel.interactive.digitalsignature.COSFilterInputStream.inRange : $r2 = r0.<org.apache.pdfbox.pdmodel.interactive.digitalsignature.COSFilterInputStream: int[] byteRange>
+org.apache.pdfbox.pdmodel.interactive.digitalsignature.COSFilterInputStream.inRange : i15 = 0
+org.apache.pdfbox.pdmodel.interactive.digitalsignature.COSFilterInputStream.nextAvailable : $z0 = specialinvoke r0.<org.apache.pdfbox.pdmodel.interactive.digitalsignature.COSFilterInputStream: boolean inRange()>()
+org.apache.pdfbox.pdmodel.interactive.digitalsignature.COSFilterInputStream.nextAvailable : $l0 = r0.<org.apache.pdfbox.pdmodel.interactive.digitalsignature.COSFilterInputStream: long position>
+org.apache.pdfbox.pdmodel.interactive.digitalsignature.COSFilterInputStream.nextAvailable : $i2 = specialinvoke r0.<java.io.FilterInputStream: int read()>()
+org.apache.pdfbox.pdmodel.interactive.digitalsignature.COSFilterInputStream.read : if i1 != 0 goto i5 = virtualinvoke r0.<org.apache.pdfbox.pdmodel.interactive.digitalsignature.COSFilterInputStream: int read()>()
+org.apache.pdfbox.pdmodel.interactive.digitalsignature.COSFilterInputStream.read : i5 = virtualinvoke r0.<org.apache.pdfbox.pdmodel.interactive.digitalsignature.COSFilterInputStream: int read()>()
+org.apache.pdfbox.pdmodel.interactive.digitalsignature.COSFilterInputStream.read : $i0 = lengthof r1
+org.apache.pdfbox.pdmodel.interactive.digitalsignature.COSFilterInputStream.read : specialinvoke r0.<org.apache.pdfbox.pdmodel.interactive.digitalsignature.COSFilterInputStream: void nextAvailable()>()

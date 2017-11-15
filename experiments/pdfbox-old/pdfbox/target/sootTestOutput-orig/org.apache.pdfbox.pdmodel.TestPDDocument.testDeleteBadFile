@@ -1,0 +1,102 @@
+org.apache.pdfbox.io.RandomAccessBufferedFileInputStream.length : $l0 = r0.<org.apache.pdfbox.io.RandomAccessBufferedFileInputStream: long fileLength>
+org.apache.pdfbox.pdmodel.PDDocument.load : staticinvoke <org.apache.pdfbox.io.IOUtils: void closeQuietly(java.io.Closeable)>($r7)
+org.apache.pdfbox.pdmodel.PDDocument.load : staticinvoke <org.apache.pdfbox.io.IOUtils: void closeQuietly(java.io.Closeable)>($r6)
+org.apache.pdfbox.pdmodel.PDDocument.load : throw $r10
+org.apache.pdfbox.pdmodel.PDDocument.load : virtualinvoke $r8.<org.apache.pdfbox.pdfparser.PDFParser: void parse()>()
+org.apache.pdfbox.pdmodel.PDDocument.load : $r1 = staticinvoke <org.apache.pdfbox.io.MemoryUsageSetting: org.apache.pdfbox.io.MemoryUsageSetting setupMainMemoryOnly()>()
+org.apache.pdfbox.pdmodel.PDDocument.load : $r7 = new org.apache.pdfbox.io.ScratchFile
+org.apache.pdfbox.pdmodel.PDDocument.load : throw $r11
+org.apache.pdfbox.pdmodel.PDDocument.load : $r3 = staticinvoke <org.apache.pdfbox.pdmodel.PDDocument: org.apache.pdfbox.pdmodel.PDDocument load(java.io.File,java.lang.String,java.io.InputStream,java.lang.String,org.apache.pdfbox.io.MemoryUsageSetting)>(r0, r1, null, null, r2)
+org.apache.pdfbox.pdmodel.PDDocument.load : $r6 = new org.apache.pdfbox.io.RandomAccessBufferedFileInputStream
+org.apache.pdfbox.pdmodel.PDDocument.load : $r8 = new org.apache.pdfbox.pdfparser.PDFParser
+org.apache.pdfbox.io.RandomAccessBufferedFileInputStream.deleteTempFile : $r1 = r0.<org.apache.pdfbox.io.RandomAccessBufferedFileInputStream: java.io.File tempFile>
+org.apache.pdfbox.io.RandomAccessBufferedFileInputStream$1.removeEldestEntry : $i0 = virtualinvoke r0.<org.apache.pdfbox.io.RandomAccessBufferedFileInputStream$1: int size()>()
+org.apache.pdfbox.io.RandomAccessBufferedFileInputStream$1.removeEldestEntry : if $z1 == 0 goto return z0
+org.apache.pdfbox.cos.COSDocument.getObjects : $r1 = new java.util.ArrayList
+org.apache.pdfbox.io.RandomAccessBufferedFileInputStream.rewind : $l1 = virtualinvoke r0.<org.apache.pdfbox.io.RandomAccessBufferedFileInputStream: long getPosition()>()
+org.apache.pdfbox.io.RandomAccessBufferedFileInputStream.access$000 : $i0 = r0.<org.apache.pdfbox.io.RandomAccessBufferedFileInputStream: int maxCachedPages>
+org.apache.pdfbox.cos.COSDocument.close : $z0 = r0.<org.apache.pdfbox.cos.COSDocument: boolean closed>
+org.apache.pdfbox.cos.COSDocument.close : $r5 = r0.<org.apache.pdfbox.cos.COSDocument: org.apache.pdfbox.io.ScratchFile scratchFile>
+org.apache.pdfbox.cos.COSDocument.close : r1 = virtualinvoke r0.<org.apache.pdfbox.cos.COSDocument: java.util.List getObjects()>()
+org.apache.pdfbox.cos.COSDocument.close : r10 = interfaceinvoke r1.<java.util.List: java.util.Iterator iterator()>()
+org.apache.pdfbox.cos.COSDocument.close : if r1 == null goto $r3 = r0.<org.apache.pdfbox.cos.COSDocument: java.util.List streams>
+org.apache.pdfbox.cos.COSDocument.close : r0.<org.apache.pdfbox.cos.COSDocument: boolean closed> = 1
+org.apache.pdfbox.cos.COSDocument.close : $r6 = r0.<org.apache.pdfbox.cos.COSDocument: java.util.List streams>
+org.apache.pdfbox.pdfparser.BaseParser.isLF : if 10 != i0 goto $z0 = 0
+org.apache.pdfbox.pdfparser.RandomAccessSource.isEOF : $r1 = r0.<org.apache.pdfbox.pdfparser.RandomAccessSource: org.apache.pdfbox.io.RandomAccessRead reader>
+org.apache.pdfbox.io.ScratchFile.close : $z0 = r0.<org.apache.pdfbox.io.ScratchFile: boolean isClosed>
+org.apache.pdfbox.io.ScratchFile.close : r0.<org.apache.pdfbox.io.ScratchFile: boolean isClosed> = 1
+org.apache.pdfbox.io.ScratchFile.close : exitmonitor $r4
+org.apache.pdfbox.io.ScratchFile.close : exitmonitor $r6
+org.apache.pdfbox.io.ScratchFile.close : $r6 = r0.<org.apache.pdfbox.io.ScratchFile: java.util.BitSet freePages>
+org.apache.pdfbox.io.ScratchFile.close : r21 = null
+org.apache.pdfbox.io.ScratchFile.close : $r7 = r0.<org.apache.pdfbox.io.ScratchFile: java.util.BitSet freePages>
+org.apache.pdfbox.io.ScratchFile.close : if r21 == null goto return
+org.apache.pdfbox.io.ScratchFile.close : $r4 = r0.<org.apache.pdfbox.io.ScratchFile: java.lang.Object ioLock>
+org.apache.pdfbox.io.ScratchFile.close : $r5 = r0.<org.apache.pdfbox.io.ScratchFile: java.io.RandomAccessFile raf>
+org.apache.pdfbox.io.ScratchFile.close : $r23 = r0.<org.apache.pdfbox.io.ScratchFile: java.io.File file>
+org.apache.pdfbox.io.ScratchFile.close : r0.<org.apache.pdfbox.io.ScratchFile: int pageCount> = 0
+org.apache.pdfbox.io.MemoryUsageSetting.isStorageRestricted : $l0 = r0.<org.apache.pdfbox.io.MemoryUsageSetting: long maxStorageBytes>
+org.apache.pdfbox.io.RandomAccessBufferedFileInputStream.getPosition : $l0 = r0.<org.apache.pdfbox.io.RandomAccessBufferedFileInputStream: long fileOffset>
+org.apache.pdfbox.pdfparser.BaseParser.readLine : $r2 = r0.<org.apache.pdfbox.pdfparser.BaseParser: org.apache.pdfbox.pdfparser.SequentialSource seqSource>
+org.apache.pdfbox.pdfparser.BaseParser.readLine : $z3 = virtualinvoke r0.<org.apache.pdfbox.pdfparser.BaseParser: boolean isEOL(int)>($i1)
+org.apache.pdfbox.pdfparser.BaseParser.readLine : $r4 = r0.<org.apache.pdfbox.pdfparser.BaseParser: org.apache.pdfbox.pdfparser.SequentialSource seqSource>
+org.apache.pdfbox.pdfparser.BaseParser.readLine : $c4 = (char) $i1
+org.apache.pdfbox.pdfparser.BaseParser.readLine : $z1 = specialinvoke r0.<org.apache.pdfbox.pdfparser.BaseParser: boolean isCR(int)>($i1)
+org.apache.pdfbox.pdfparser.BaseParser.readLine : $r8 = new java.io.IOException
+org.apache.pdfbox.pdfparser.BaseParser.readLine : $r3 = new java.lang.StringBuilder
+org.apache.pdfbox.io.MemoryUsageSetting.useMainMemory : $z0 = r0.<org.apache.pdfbox.io.MemoryUsageSetting: boolean useMainMemory>
+org.apache.pdfbox.io.IOUtils.closeQuietly : if r0 == null goto (branch)
+org.apache.pdfbox.io.IOUtils.closeQuietly : goto [?= return]
+org.apache.pdfbox.io.IOUtils.closeQuietly : interfaceinvoke r0.<java.io.Closeable: void close()>()
+org.apache.pdfbox.pdfparser.COSParser.parsePDFHeader : $z0 = specialinvoke r0.<org.apache.pdfbox.pdfparser.COSParser: boolean parseHeader(java.lang.String,java.lang.String)>("%PDF-", "1.4")
+org.apache.pdfbox.pdfparser.BaseParser.isCR : if 13 != i0 goto $z0 = 0
+org.apache.pdfbox.pdfparser.PDFParser.parse : r0.<org.apache.pdfbox.pdfparser.PDFParser: org.apache.pdfbox.cos.COSDocument document> = null
+org.apache.pdfbox.pdfparser.PDFParser.parse : $r9 = r0.<org.apache.pdfbox.pdfparser.PDFParser: org.apache.pdfbox.cos.COSDocument document>
+org.apache.pdfbox.pdfparser.PDFParser.parse : $z0 = virtualinvoke r0.<org.apache.pdfbox.pdfparser.PDFParser: boolean parsePDFHeader()>()
+org.apache.pdfbox.io.RandomAccessBufferedFileInputStream.peek : if i0 == -1 goto return i0
+org.apache.pdfbox.io.RandomAccessBufferedFileInputStream.peek : return i0
+org.apache.pdfbox.io.RandomAccessBufferedFileInputStream.peek : i0 = virtualinvoke r0.<org.apache.pdfbox.io.RandomAccessBufferedFileInputStream: int read()>()
+org.apache.pdfbox.io.RandomAccessBufferedFileInputStream.peek : virtualinvoke r0.<org.apache.pdfbox.io.RandomAccessBufferedFileInputStream: void rewind(int)>(1)
+org.apache.pdfbox.io.RandomAccessBufferedFileInputStream.close : specialinvoke r0.<org.apache.pdfbox.io.RandomAccessBufferedFileInputStream: void deleteTempFile()>()
+org.apache.pdfbox.io.RandomAccessBufferedFileInputStream.close : $r1 = r0.<org.apache.pdfbox.io.RandomAccessBufferedFileInputStream: java.io.RandomAccessFile raFile>
+org.apache.pdfbox.io.RandomAccessBufferedFileInputStream.close : $r2 = r0.<org.apache.pdfbox.io.RandomAccessBufferedFileInputStream: java.util.Map pageCache>
+org.apache.pdfbox.io.RandomAccessBufferedFileInputStream.close : r0.<org.apache.pdfbox.io.RandomAccessBufferedFileInputStream: boolean isClosed> = 1
+org.apache.pdfbox.pdfparser.COSParser.parseHeader : $z0 = virtualinvoke r34.<java.lang.String: boolean contains(java.lang.CharSequence)>(r1)
+org.apache.pdfbox.pdfparser.COSParser.parseHeader : r34 = virtualinvoke r0.<org.apache.pdfbox.pdfparser.COSParser: java.lang.String readLine()>()
+org.apache.pdfbox.pdfparser.BaseParser.isEOL : $z0 = specialinvoke r0.<org.apache.pdfbox.pdfparser.BaseParser: boolean isLF(int)>(i0)
+org.apache.pdfbox.io.RandomAccessBufferedFileInputStream.readPage : goto [?= staticinvoke <edu.washington.cs.dt.impact.util.Tracer: void trace(java.lang.String,java.lang.String)>("$i5 = r0.<org.apache.pdfbox.io.RandomAccessBufferedFileInputStream: int pageSize>", "org.apache.pdfbox.io.RandomAccessBufferedFileInputStream.readPage")]
+org.apache.pdfbox.io.RandomAccessBufferedFileInputStream.readPage : i4 = 0
+org.apache.pdfbox.io.RandomAccessBufferedFileInputStream.readPage : $r1 = r0.<org.apache.pdfbox.io.RandomAccessBufferedFileInputStream: byte[] lastRemovedCachePage>
+org.apache.pdfbox.io.RandomAccessBufferedFileInputStream.readPage : return r3
+org.apache.pdfbox.io.RandomAccessBufferedFileInputStream.readPage : $i1 = r0.<org.apache.pdfbox.io.RandomAccessBufferedFileInputStream: int pageSize>
+org.apache.pdfbox.io.RandomAccessBufferedFileInputStream.readPage : if i0 >= 0 goto i4 = i4 + i0
+org.apache.pdfbox.io.RandomAccessBufferedFileInputStream.readPage : $r2 = r0.<org.apache.pdfbox.io.RandomAccessBufferedFileInputStream: java.io.RandomAccessFile raFile>
+org.apache.pdfbox.io.RandomAccessBufferedFileInputStream.readPage : $i5 = r0.<org.apache.pdfbox.io.RandomAccessBufferedFileInputStream: int pageSize>
+org.apache.pdfbox.io.RandomAccessBufferedFileInputStream.readPage : i4 = i4 + i0
+org.apache.pdfbox.io.RandomAccessBufferedFileInputStream.readPage : goto [?= return r3]
+org.apache.pdfbox.pdfparser.PDFParser.init : r2 = staticinvoke <java.lang.System: java.lang.String getProperty(java.lang.String)>("org.apache.pdfbox.pdfparser.nonSequentialPDFParser.eofLookupRange")
+org.apache.pdfbox.pdfparser.PDFParser.init : $r11 = new org.apache.pdfbox.cos.COSDocument
+org.apache.pdfbox.pdfparser.PDFParser.init : if r2 == null goto $r11 = new org.apache.pdfbox.cos.COSDocument
+org.apache.pdfbox.io.RandomAccessBufferedFileInputStream.seek : $l3 = r0.<org.apache.pdfbox.io.RandomAccessBufferedFileInputStream: long curPageOffset>
+org.apache.pdfbox.io.RandomAccessBufferedFileInputStream.seek : $l2 = r0.<org.apache.pdfbox.io.RandomAccessBufferedFileInputStream: long pageOffsetMask>
+org.apache.pdfbox.io.RandomAccessBufferedFileInputStream.seek : r0.<org.apache.pdfbox.io.RandomAccessBufferedFileInputStream: byte[] curPage> = r8
+org.apache.pdfbox.io.RandomAccessBufferedFileInputStream.seek : r0.<org.apache.pdfbox.io.RandomAccessBufferedFileInputStream: long curPageOffset> = l1
+org.apache.pdfbox.io.RandomAccessBufferedFileInputStream.seek : $r1 = r0.<org.apache.pdfbox.io.RandomAccessBufferedFileInputStream: java.util.Map pageCache>
+org.apache.pdfbox.io.RandomAccessBufferedFileInputStream.seek : $l5 = r0.<org.apache.pdfbox.io.RandomAccessBufferedFileInputStream: long curPageOffset>
+org.apache.pdfbox.io.RandomAccessBufferedFileInputStream.seek : r0.<org.apache.pdfbox.io.RandomAccessBufferedFileInputStream: long fileOffset> = l0
+org.apache.pdfbox.io.RandomAccessBufferedFileInputStream.seek : r8 = specialinvoke r0.<org.apache.pdfbox.io.RandomAccessBufferedFileInputStream: byte[] readPage()>()
+org.apache.pdfbox.io.RandomAccessBufferedFileInputStream.seek : if r8 != null goto r0.<org.apache.pdfbox.io.RandomAccessBufferedFileInputStream: long curPageOffset> = l1
+org.apache.pdfbox.io.RandomAccessBufferedFileInputStream.seek : $r4 = r0.<org.apache.pdfbox.io.RandomAccessBufferedFileInputStream: java.io.RandomAccessFile raFile>
+org.apache.pdfbox.io.RandomAccessBufferedFileInputStream.seek : $r5 = r0.<org.apache.pdfbox.io.RandomAccessBufferedFileInputStream: java.util.Map pageCache>
+org.apache.pdfbox.io.RandomAccessBufferedFileInputStream.isEOF : if i0 != -1 goto $z0 = 0
+org.apache.pdfbox.io.RandomAccessBufferedFileInputStream.isEOF : i0 = virtualinvoke r0.<org.apache.pdfbox.io.RandomAccessBufferedFileInputStream: int peek()>()
+org.apache.pdfbox.io.RandomAccessBufferedFileInputStream.read : $l5 = r0.<org.apache.pdfbox.io.RandomAccessBufferedFileInputStream: long fileOffset>
+org.apache.pdfbox.io.RandomAccessBufferedFileInputStream.read : return -1
+org.apache.pdfbox.io.RandomAccessBufferedFileInputStream.read : $r1 = r0.<org.apache.pdfbox.io.RandomAccessBufferedFileInputStream: byte[] curPage>
+org.apache.pdfbox.io.RandomAccessBufferedFileInputStream.read : $l1 = r0.<org.apache.pdfbox.io.RandomAccessBufferedFileInputStream: long fileOffset>
+org.apache.pdfbox.io.RandomAccessBufferedFileInputStream.read : $i4 = r0.<org.apache.pdfbox.io.RandomAccessBufferedFileInputStream: int offsetWithinPage>
+org.apache.pdfbox.pdfparser.RandomAccessSource.read : $r1 = r0.<org.apache.pdfbox.pdfparser.RandomAccessSource: org.apache.pdfbox.io.RandomAccessRead reader>
+org.apache.pdfbox.io.MemoryUsageSetting.isMainMemoryRestricted : $l0 = r0.<org.apache.pdfbox.io.MemoryUsageSetting: long maxMainMemoryBytes>
+org.apache.pdfbox.io.MemoryUsageSetting.setupMainMemoryOnly : $r0 = new org.apache.pdfbox.io.MemoryUsageSetting
+org.apache.pdfbox.io.MemoryUsageSetting.setupMainMemoryOnly : $r0 = staticinvoke <org.apache.pdfbox.io.MemoryUsageSetting: org.apache.pdfbox.io.MemoryUsageSetting setupMainMemoryOnly(long)>(-1L)

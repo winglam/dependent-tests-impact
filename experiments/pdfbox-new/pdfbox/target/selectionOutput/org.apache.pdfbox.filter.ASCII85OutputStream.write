@@ -1,0 +1,35 @@
+org.apache.pdfbox.filter.ASCII85OutputStream.write : r0.<org.apache.pdfbox.filter.ASCII85OutputStream: boolean flushed> = 0 >>>>>>>> org.apache.pdfbox.filter.ASCII85OutputStream.write : $r1 = r0.<org.apache.pdfbox.filter.ASCII85OutputStream: byte[] indata>
+org.apache.pdfbox.filter.ASCII85OutputStream.write : $r1 = r0.<org.apache.pdfbox.filter.ASCII85OutputStream: byte[] indata> >>>>>>>> org.apache.pdfbox.filter.ASCII85OutputStream.write : $i1 = r0.<org.apache.pdfbox.filter.ASCII85OutputStream: int count>
+org.apache.pdfbox.filter.ASCII85OutputStream.write : $i1 = r0.<org.apache.pdfbox.filter.ASCII85OutputStream: int count> >>>>>>>> org.apache.pdfbox.filter.ASCII85OutputStream.write : $i3 = $i1 + 1
+org.apache.pdfbox.filter.ASCII85OutputStream.write : $i3 = $i1 + 1 >>>>>>>> org.apache.pdfbox.filter.ASCII85OutputStream.write : r0.<org.apache.pdfbox.filter.ASCII85OutputStream: int count> = $i3
+org.apache.pdfbox.filter.ASCII85OutputStream.write : r0.<org.apache.pdfbox.filter.ASCII85OutputStream: int count> = $i3 >>>>>>>> org.apache.pdfbox.filter.ASCII85OutputStream.write : $b4 = (byte) i0
+org.apache.pdfbox.filter.ASCII85OutputStream.write : $b4 = (byte) i0 >>>>>>>> org.apache.pdfbox.filter.ASCII85OutputStream.write : $r1[$i1] = $b4
+org.apache.pdfbox.filter.ASCII85OutputStream.write : $r1[$i1] = $b4 >>>>>>>> org.apache.pdfbox.filter.ASCII85OutputStream.write : $i5 = r0.<org.apache.pdfbox.filter.ASCII85OutputStream: int count>
+org.apache.pdfbox.filter.ASCII85OutputStream.write : $i5 = r0.<org.apache.pdfbox.filter.ASCII85OutputStream: int count> >>>>>>>> org.apache.pdfbox.filter.ASCII85OutputStream.write : if $i5 >= 4
+org.apache.pdfbox.filter.ASCII85OutputStream.write : if $i5 >= 4 >>>>>>>> org.apache.pdfbox.filter.ASCII85OutputStream.write : return
+org.apache.pdfbox.filter.ASCII85OutputStream.write : if $i5 >= 4 >>>>>>>> org.apache.pdfbox.filter.ASCII85OutputStream.write : specialinvoke r0.<org.apache.pdfbox.filter.ASCII85OutputStream: void transformASCII85()>()
+org.apache.pdfbox.filter.ASCII85OutputStream.write : specialinvoke r0.<org.apache.pdfbox.filter.ASCII85OutputStream: void transformASCII85()>() >>>>>>>> org.apache.pdfbox.filter.ASCII85OutputStream.write : i2 = 0
+org.apache.pdfbox.filter.ASCII85OutputStream.write : i2 = 0 >>>>>>>> org.apache.pdfbox.filter.ASCII85OutputStream.write : if i2 >= 5
+org.apache.pdfbox.filter.ASCII85OutputStream.write : if i2 >= 5 >>>>>>>> org.apache.pdfbox.filter.ASCII85OutputStream.write : $r3 = r0.<org.apache.pdfbox.filter.ASCII85OutputStream: byte[] outdata>
+org.apache.pdfbox.filter.ASCII85OutputStream.write : if i2 >= 5 >>>>>>>> org.apache.pdfbox.filter.ASCII85OutputStream.write : r0.<org.apache.pdfbox.filter.ASCII85OutputStream: int count> = 0
+org.apache.pdfbox.filter.ASCII85OutputStream.write : r0.<org.apache.pdfbox.filter.ASCII85OutputStream: int count> = 0 >>>>>>>> org.apache.pdfbox.filter.ASCII85OutputStream.write : return
+org.apache.pdfbox.filter.ASCII85OutputStream.write : $r3 = r0.<org.apache.pdfbox.filter.ASCII85OutputStream: byte[] outdata> >>>>>>>> org.apache.pdfbox.filter.ASCII85OutputStream.write : $b6 = $r3[i2]
+org.apache.pdfbox.filter.ASCII85OutputStream.write : $b6 = $r3[i2] >>>>>>>> org.apache.pdfbox.filter.ASCII85OutputStream.write : if $b6 != 0
+org.apache.pdfbox.filter.ASCII85OutputStream.write : if $b6 != 0 >>>>>>>> org.apache.pdfbox.filter.ASCII85OutputStream.write : goto [?= r0.<org.apache.pdfbox.filter.ASCII85OutputStream: int count> = 0]
+org.apache.pdfbox.filter.ASCII85OutputStream.write : if $b6 != 0 >>>>>>>> org.apache.pdfbox.filter.ASCII85OutputStream.write : $r4 = r0.<org.apache.pdfbox.filter.ASCII85OutputStream: java.io.OutputStream out>
+org.apache.pdfbox.filter.ASCII85OutputStream.write : $r4 = r0.<org.apache.pdfbox.filter.ASCII85OutputStream: java.io.OutputStream out> >>>>>>>> org.apache.pdfbox.filter.ASCII85OutputStream.write : $r5 = r0.<org.apache.pdfbox.filter.ASCII85OutputStream: byte[] outdata>
+org.apache.pdfbox.filter.ASCII85OutputStream.write : $r5 = r0.<org.apache.pdfbox.filter.ASCII85OutputStream: byte[] outdata> >>>>>>>> org.apache.pdfbox.filter.ASCII85OutputStream.write : $b7 = $r5[i2]
+org.apache.pdfbox.filter.ASCII85OutputStream.write : $b7 = $r5[i2] >>>>>>>> org.apache.pdfbox.filter.ASCII85OutputStream.write : virtualinvoke $r4.<java.io.OutputStream: void write(int)>($b7)
+org.apache.pdfbox.filter.ASCII85OutputStream.write : virtualinvoke $r4.<java.io.OutputStream: void write(int)>($b7) >>>>>>>> org.apache.pdfbox.filter.ASCII85OutputStream.write : $i8 = r0.<org.apache.pdfbox.filter.ASCII85OutputStream: int lineBreak>
+org.apache.pdfbox.filter.ASCII85OutputStream.write : $i8 = r0.<org.apache.pdfbox.filter.ASCII85OutputStream: int lineBreak> >>>>>>>> org.apache.pdfbox.filter.ASCII85OutputStream.write : $i9 = $i8 - 1
+org.apache.pdfbox.filter.ASCII85OutputStream.write : $i9 = $i8 - 1 >>>>>>>> org.apache.pdfbox.filter.ASCII85OutputStream.write : r0.<org.apache.pdfbox.filter.ASCII85OutputStream: int lineBreak> = $i9
+org.apache.pdfbox.filter.ASCII85OutputStream.write : r0.<org.apache.pdfbox.filter.ASCII85OutputStream: int lineBreak> = $i9 >>>>>>>> org.apache.pdfbox.filter.ASCII85OutputStream.write : if $i9 != 0
+org.apache.pdfbox.filter.ASCII85OutputStream.write : if $i9 != 0 >>>>>>>> org.apache.pdfbox.filter.ASCII85OutputStream.write : $r7 = r0.<org.apache.pdfbox.filter.ASCII85OutputStream: java.io.OutputStream out>
+org.apache.pdfbox.filter.ASCII85OutputStream.write : if $i9 != 0 >>>>>>>> org.apache.pdfbox.filter.ASCII85OutputStream.write : i2 = i2 + 1
+org.apache.pdfbox.filter.ASCII85OutputStream.write : i2 = i2 + 1 >>>>>>>> org.apache.pdfbox.filter.ASCII85OutputStream.write : goto [?= (branch)]
+org.apache.pdfbox.filter.ASCII85OutputStream.write : goto [?= (branch)] >>>>>>>> org.apache.pdfbox.filter.ASCII85OutputStream.write : if i2 >= 5
+org.apache.pdfbox.filter.ASCII85OutputStream.write : $r7 = r0.<org.apache.pdfbox.filter.ASCII85OutputStream: java.io.OutputStream out> >>>>>>>> org.apache.pdfbox.filter.ASCII85OutputStream.write : virtualinvoke $r7.<java.io.OutputStream: void write(int)>(10)
+org.apache.pdfbox.filter.ASCII85OutputStream.write : virtualinvoke $r7.<java.io.OutputStream: void write(int)>(10) >>>>>>>> org.apache.pdfbox.filter.ASCII85OutputStream.write : $i10 = r0.<org.apache.pdfbox.filter.ASCII85OutputStream: int maxline>
+org.apache.pdfbox.filter.ASCII85OutputStream.write : $i10 = r0.<org.apache.pdfbox.filter.ASCII85OutputStream: int maxline> >>>>>>>> org.apache.pdfbox.filter.ASCII85OutputStream.write : r0.<org.apache.pdfbox.filter.ASCII85OutputStream: int lineBreak> = $i10
+org.apache.pdfbox.filter.ASCII85OutputStream.write : r0.<org.apache.pdfbox.filter.ASCII85OutputStream: int lineBreak> = $i10 >>>>>>>> org.apache.pdfbox.filter.ASCII85OutputStream.write : i2 = i2 + 1
+org.apache.pdfbox.filter.ASCII85OutputStream.write : goto [?= r0.<org.apache.pdfbox.filter.ASCII85OutputStream: int count> = 0] >>>>>>>> org.apache.pdfbox.filter.ASCII85OutputStream.write : r0.<org.apache.pdfbox.filter.ASCII85OutputStream: int count> = 0

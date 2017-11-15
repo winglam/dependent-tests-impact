@@ -1,0 +1,99 @@
+org.apache.pdfbox.text.TextPosition.mergeDiacritic : $r2 = virtualinvoke r1.<org.apache.pdfbox.text.TextPosition: java.lang.String getUnicode()>() >>>>>>>> org.apache.pdfbox.text.TextPosition.mergeDiacritic : $i2 = virtualinvoke $r2.<java.lang.String: int length()>()
+org.apache.pdfbox.text.TextPosition.mergeDiacritic : $i2 = virtualinvoke $r2.<java.lang.String: int length()>() >>>>>>>> org.apache.pdfbox.text.TextPosition.mergeDiacritic : if $i2 <= 1
+org.apache.pdfbox.text.TextPosition.mergeDiacritic : if $i2 <= 1 >>>>>>>> org.apache.pdfbox.text.TextPosition.mergeDiacritic : return
+org.apache.pdfbox.text.TextPosition.mergeDiacritic : if $i2 <= 1 >>>>>>>> org.apache.pdfbox.text.TextPosition.mergeDiacritic : f0 = virtualinvoke r1.<org.apache.pdfbox.text.TextPosition: float getXDirAdj()>()
+org.apache.pdfbox.text.TextPosition.mergeDiacritic : f0 = virtualinvoke r1.<org.apache.pdfbox.text.TextPosition: float getXDirAdj()>() >>>>>>>> org.apache.pdfbox.text.TextPosition.mergeDiacritic : $r3 = r1.<org.apache.pdfbox.text.TextPosition: float[] widths>
+org.apache.pdfbox.text.TextPosition.mergeDiacritic : $r3 = r1.<org.apache.pdfbox.text.TextPosition: float[] widths> >>>>>>>> org.apache.pdfbox.text.TextPosition.mergeDiacritic : $f8 = $r3[0]
+org.apache.pdfbox.text.TextPosition.mergeDiacritic : $f8 = $r3[0] >>>>>>>> org.apache.pdfbox.text.TextPosition.mergeDiacritic : f1 = f0 + $f8
+org.apache.pdfbox.text.TextPosition.mergeDiacritic : f1 = f0 + $f8 >>>>>>>> org.apache.pdfbox.text.TextPosition.mergeDiacritic : f2 = virtualinvoke r0.<org.apache.pdfbox.text.TextPosition: float getXDirAdj()>()
+org.apache.pdfbox.text.TextPosition.mergeDiacritic : f2 = virtualinvoke r0.<org.apache.pdfbox.text.TextPosition: float getXDirAdj()>() >>>>>>>> org.apache.pdfbox.text.TextPosition.mergeDiacritic : $r4 = r0.<org.apache.pdfbox.text.TextPosition: java.lang.String unicode>
+org.apache.pdfbox.text.TextPosition.mergeDiacritic : $r4 = r0.<org.apache.pdfbox.text.TextPosition: java.lang.String unicode> >>>>>>>> org.apache.pdfbox.text.TextPosition.mergeDiacritic : i0 = virtualinvoke $r4.<java.lang.String: int length()>()
+org.apache.pdfbox.text.TextPosition.mergeDiacritic : i0 = virtualinvoke $r4.<java.lang.String: int length()>() >>>>>>>> org.apache.pdfbox.text.TextPosition.mergeDiacritic : z0 = 0
+org.apache.pdfbox.text.TextPosition.mergeDiacritic : z0 = 0 >>>>>>>> org.apache.pdfbox.text.TextPosition.mergeDiacritic : i1 = 0
+org.apache.pdfbox.text.TextPosition.mergeDiacritic : i1 = 0 >>>>>>>> org.apache.pdfbox.text.TextPosition.mergeDiacritic : if i1 >= i0
+org.apache.pdfbox.text.TextPosition.mergeDiacritic : if i1 >= i0 >>>>>>>> org.apache.pdfbox.text.TextPosition.mergeDiacritic : if z0 != 0
+org.apache.pdfbox.text.TextPosition.mergeDiacritic : if i1 >= i0 >>>>>>>> org.apache.pdfbox.text.TextPosition.mergeDiacritic : return
+org.apache.pdfbox.text.TextPosition.mergeDiacritic : if z0 != 0 >>>>>>>> org.apache.pdfbox.text.TextPosition.mergeDiacritic : $r5 = r0.<org.apache.pdfbox.text.TextPosition: float[] widths>
+org.apache.pdfbox.text.TextPosition.mergeDiacritic : if z0 != 0 >>>>>>>> org.apache.pdfbox.text.TextPosition.mergeDiacritic : return
+org.apache.pdfbox.text.TextPosition.mergeDiacritic : $r5 = r0.<org.apache.pdfbox.text.TextPosition: float[] widths> >>>>>>>> org.apache.pdfbox.text.TextPosition.mergeDiacritic : $i3 = lengthof $r5
+org.apache.pdfbox.text.TextPosition.mergeDiacritic : $i3 = lengthof $r5 >>>>>>>> org.apache.pdfbox.text.TextPosition.mergeDiacritic : if i1 < $i3
+org.apache.pdfbox.text.TextPosition.mergeDiacritic : if i1 < $i3 >>>>>>>> org.apache.pdfbox.text.TextPosition.mergeDiacritic : $r6 = <org.apache.pdfbox.text.TextPosition: org.apache.commons.logging.Log LOG>
+org.apache.pdfbox.text.TextPosition.mergeDiacritic : if i1 < $i3 >>>>>>>> org.apache.pdfbox.text.TextPosition.mergeDiacritic : $r16 = r0.<org.apache.pdfbox.text.TextPosition: float[] widths>
+org.apache.pdfbox.text.TextPosition.mergeDiacritic : $r16 = r0.<org.apache.pdfbox.text.TextPosition: float[] widths> >>>>>>>> org.apache.pdfbox.text.TextPosition.mergeDiacritic : $f9 = $r16[i1]
+org.apache.pdfbox.text.TextPosition.mergeDiacritic : $f9 = $r16[i1] >>>>>>>> org.apache.pdfbox.text.TextPosition.mergeDiacritic : f3 = f2 + $f9
+org.apache.pdfbox.text.TextPosition.mergeDiacritic : f3 = f2 + $f9 >>>>>>>> org.apache.pdfbox.text.TextPosition.mergeDiacritic : $b4 = f0 cmpg f2
+org.apache.pdfbox.text.TextPosition.mergeDiacritic : $b4 = f0 cmpg f2 >>>>>>>> org.apache.pdfbox.text.TextPosition.mergeDiacritic : if $b4 >= 0
+org.apache.pdfbox.text.TextPosition.mergeDiacritic : if $b4 >= 0 >>>>>>>> org.apache.pdfbox.text.TextPosition.mergeDiacritic : $b5 = f1 cmpg f3
+org.apache.pdfbox.text.TextPosition.mergeDiacritic : if $b4 >= 0 >>>>>>>> org.apache.pdfbox.text.TextPosition.mergeDiacritic : $b9 = f0 cmpg f2
+org.apache.pdfbox.text.TextPosition.mergeDiacritic : $b9 = f0 cmpg f2 >>>>>>>> org.apache.pdfbox.text.TextPosition.mergeDiacritic : if $b9 >= 0
+org.apache.pdfbox.text.TextPosition.mergeDiacritic : if $b9 >= 0 >>>>>>>> org.apache.pdfbox.text.TextPosition.mergeDiacritic : $b10 = f1 cmpl f3
+org.apache.pdfbox.text.TextPosition.mergeDiacritic : if $b9 >= 0 >>>>>>>> org.apache.pdfbox.text.TextPosition.mergeDiacritic : $b11 = f0 cmpl f2
+org.apache.pdfbox.text.TextPosition.mergeDiacritic : $b11 = f0 cmpl f2 >>>>>>>> org.apache.pdfbox.text.TextPosition.mergeDiacritic : if $b11 < 0
+org.apache.pdfbox.text.TextPosition.mergeDiacritic : if $b11 < 0 >>>>>>>> org.apache.pdfbox.text.TextPosition.mergeDiacritic : $b12 = f1 cmpg f3
+org.apache.pdfbox.text.TextPosition.mergeDiacritic : if $b11 < 0 >>>>>>>> org.apache.pdfbox.text.TextPosition.mergeDiacritic : $b13 = f0 cmpl f2
+org.apache.pdfbox.text.TextPosition.mergeDiacritic : $b13 = f0 cmpl f2 >>>>>>>> org.apache.pdfbox.text.TextPosition.mergeDiacritic : if $b13 < 0
+org.apache.pdfbox.text.TextPosition.mergeDiacritic : if $b13 < 0 >>>>>>>> org.apache.pdfbox.text.TextPosition.mergeDiacritic : $b14 = f1 cmpl f3
+org.apache.pdfbox.text.TextPosition.mergeDiacritic : if $b13 < 0 >>>>>>>> org.apache.pdfbox.text.TextPosition.mergeDiacritic : $r19 = r0.<org.apache.pdfbox.text.TextPosition: float[] widths>
+org.apache.pdfbox.text.TextPosition.mergeDiacritic : $r19 = r0.<org.apache.pdfbox.text.TextPosition: float[] widths> >>>>>>>> org.apache.pdfbox.text.TextPosition.mergeDiacritic : $f12 = $r19[i1]
+org.apache.pdfbox.text.TextPosition.mergeDiacritic : $f12 = $r19[i1] >>>>>>>> org.apache.pdfbox.text.TextPosition.mergeDiacritic : f2 = f2 + $f12
+org.apache.pdfbox.text.TextPosition.mergeDiacritic : f2 = f2 + $f12 >>>>>>>> org.apache.pdfbox.text.TextPosition.mergeDiacritic : i1 = i1 + 1
+org.apache.pdfbox.text.TextPosition.mergeDiacritic : i1 = i1 + 1 >>>>>>>> org.apache.pdfbox.text.TextPosition.mergeDiacritic : goto [?= (branch)]
+org.apache.pdfbox.text.TextPosition.mergeDiacritic : goto [?= (branch)] >>>>>>>> org.apache.pdfbox.text.TextPosition.mergeDiacritic : if i1 >= i0
+org.apache.pdfbox.text.TextPosition.mergeDiacritic : $b14 = f1 cmpl f3 >>>>>>>> org.apache.pdfbox.text.TextPosition.mergeDiacritic : if $b14 <= 0
+org.apache.pdfbox.text.TextPosition.mergeDiacritic : if $b14 <= 0 >>>>>>>> org.apache.pdfbox.text.TextPosition.mergeDiacritic : $i15 = i0 - 1
+org.apache.pdfbox.text.TextPosition.mergeDiacritic : if $b14 <= 0 >>>>>>>> org.apache.pdfbox.text.TextPosition.mergeDiacritic : $r19 = r0.<org.apache.pdfbox.text.TextPosition: float[] widths>
+org.apache.pdfbox.text.TextPosition.mergeDiacritic : $i15 = i0 - 1 >>>>>>>> org.apache.pdfbox.text.TextPosition.mergeDiacritic : if i1 != $i15
+org.apache.pdfbox.text.TextPosition.mergeDiacritic : if i1 != $i15 >>>>>>>> org.apache.pdfbox.text.TextPosition.mergeDiacritic : specialinvoke r0.<org.apache.pdfbox.text.TextPosition: void insertDiacritic(int,org.apache.pdfbox.text.TextPosition)>(i1, r1)
+org.apache.pdfbox.text.TextPosition.mergeDiacritic : if i1 != $i15 >>>>>>>> org.apache.pdfbox.text.TextPosition.mergeDiacritic : $r19 = r0.<org.apache.pdfbox.text.TextPosition: float[] widths>
+org.apache.pdfbox.text.TextPosition.mergeDiacritic : specialinvoke r0.<org.apache.pdfbox.text.TextPosition: void insertDiacritic(int,org.apache.pdfbox.text.TextPosition)>(i1, r1) >>>>>>>> org.apache.pdfbox.text.TextPosition.mergeDiacritic : z0 = 1
+org.apache.pdfbox.text.TextPosition.mergeDiacritic : z0 = 1 >>>>>>>> org.apache.pdfbox.text.TextPosition.mergeDiacritic : $r19 = r0.<org.apache.pdfbox.text.TextPosition: float[] widths>
+org.apache.pdfbox.text.TextPosition.mergeDiacritic : $b12 = f1 cmpg f3 >>>>>>>> org.apache.pdfbox.text.TextPosition.mergeDiacritic : if $b12 > 0
+org.apache.pdfbox.text.TextPosition.mergeDiacritic : if $b12 > 0 >>>>>>>> org.apache.pdfbox.text.TextPosition.mergeDiacritic : specialinvoke r0.<org.apache.pdfbox.text.TextPosition: void insertDiacritic(int,org.apache.pdfbox.text.TextPosition)>(i1, r1)
+org.apache.pdfbox.text.TextPosition.mergeDiacritic : if $b12 > 0 >>>>>>>> org.apache.pdfbox.text.TextPosition.mergeDiacritic : $b13 = f0 cmpl f2
+org.apache.pdfbox.text.TextPosition.mergeDiacritic : specialinvoke r0.<org.apache.pdfbox.text.TextPosition: void insertDiacritic(int,org.apache.pdfbox.text.TextPosition)>(i1, r1) >>>>>>>> org.apache.pdfbox.text.TextPosition.mergeDiacritic : z0 = 1
+org.apache.pdfbox.text.TextPosition.mergeDiacritic : z0 = 1 >>>>>>>> org.apache.pdfbox.text.TextPosition.mergeDiacritic : goto [?= $r19 = r0.<org.apache.pdfbox.text.TextPosition: float[] widths>]
+org.apache.pdfbox.text.TextPosition.mergeDiacritic : goto [?= $r19 = r0.<org.apache.pdfbox.text.TextPosition: float[] widths>] >>>>>>>> org.apache.pdfbox.text.TextPosition.mergeDiacritic : $r19 = r0.<org.apache.pdfbox.text.TextPosition: float[] widths>
+org.apache.pdfbox.text.TextPosition.mergeDiacritic : $b10 = f1 cmpl f3 >>>>>>>> org.apache.pdfbox.text.TextPosition.mergeDiacritic : if $b10 <= 0
+org.apache.pdfbox.text.TextPosition.mergeDiacritic : if $b10 <= 0 >>>>>>>> org.apache.pdfbox.text.TextPosition.mergeDiacritic : specialinvoke r0.<org.apache.pdfbox.text.TextPosition: void insertDiacritic(int,org.apache.pdfbox.text.TextPosition)>(i1, r1)
+org.apache.pdfbox.text.TextPosition.mergeDiacritic : if $b10 <= 0 >>>>>>>> org.apache.pdfbox.text.TextPosition.mergeDiacritic : $b11 = f0 cmpl f2
+org.apache.pdfbox.text.TextPosition.mergeDiacritic : specialinvoke r0.<org.apache.pdfbox.text.TextPosition: void insertDiacritic(int,org.apache.pdfbox.text.TextPosition)>(i1, r1) >>>>>>>> org.apache.pdfbox.text.TextPosition.mergeDiacritic : z0 = 1
+org.apache.pdfbox.text.TextPosition.mergeDiacritic : z0 = 1 >>>>>>>> org.apache.pdfbox.text.TextPosition.mergeDiacritic : goto [?= $r19 = r0.<org.apache.pdfbox.text.TextPosition: float[] widths>]
+org.apache.pdfbox.text.TextPosition.mergeDiacritic : goto [?= $r19 = r0.<org.apache.pdfbox.text.TextPosition: float[] widths>] >>>>>>>> org.apache.pdfbox.text.TextPosition.mergeDiacritic : $r19 = r0.<org.apache.pdfbox.text.TextPosition: float[] widths>
+org.apache.pdfbox.text.TextPosition.mergeDiacritic : $b5 = f1 cmpg f3 >>>>>>>> org.apache.pdfbox.text.TextPosition.mergeDiacritic : if $b5 > 0
+org.apache.pdfbox.text.TextPosition.mergeDiacritic : if $b5 > 0 >>>>>>>> org.apache.pdfbox.text.TextPosition.mergeDiacritic : if i1 != 0
+org.apache.pdfbox.text.TextPosition.mergeDiacritic : if $b5 > 0 >>>>>>>> org.apache.pdfbox.text.TextPosition.mergeDiacritic : $b9 = f0 cmpg f2
+org.apache.pdfbox.text.TextPosition.mergeDiacritic : if i1 != 0 >>>>>>>> org.apache.pdfbox.text.TextPosition.mergeDiacritic : specialinvoke r0.<org.apache.pdfbox.text.TextPosition: void insertDiacritic(int,org.apache.pdfbox.text.TextPosition)>(i1, r1)
+org.apache.pdfbox.text.TextPosition.mergeDiacritic : if i1 != 0 >>>>>>>> org.apache.pdfbox.text.TextPosition.mergeDiacritic : f4 = f1 - f2
+org.apache.pdfbox.text.TextPosition.mergeDiacritic : f4 = f1 - f2 >>>>>>>> org.apache.pdfbox.text.TextPosition.mergeDiacritic : $r17 = r0.<org.apache.pdfbox.text.TextPosition: float[] widths>
+org.apache.pdfbox.text.TextPosition.mergeDiacritic : $r17 = r0.<org.apache.pdfbox.text.TextPosition: float[] widths> >>>>>>>> org.apache.pdfbox.text.TextPosition.mergeDiacritic : $f10 = $r17[i1]
+org.apache.pdfbox.text.TextPosition.mergeDiacritic : $f10 = $r17[i1] >>>>>>>> org.apache.pdfbox.text.TextPosition.mergeDiacritic : f5 = f4 / $f10
+org.apache.pdfbox.text.TextPosition.mergeDiacritic : f5 = f4 / $f10 >>>>>>>> org.apache.pdfbox.text.TextPosition.mergeDiacritic : f6 = f2 - f0
+org.apache.pdfbox.text.TextPosition.mergeDiacritic : f6 = f2 - f0 >>>>>>>> org.apache.pdfbox.text.TextPosition.mergeDiacritic : $r18 = r0.<org.apache.pdfbox.text.TextPosition: float[] widths>
+org.apache.pdfbox.text.TextPosition.mergeDiacritic : $r18 = r0.<org.apache.pdfbox.text.TextPosition: float[] widths> >>>>>>>> org.apache.pdfbox.text.TextPosition.mergeDiacritic : $i6 = i1 - 1
+org.apache.pdfbox.text.TextPosition.mergeDiacritic : $i6 = i1 - 1 >>>>>>>> org.apache.pdfbox.text.TextPosition.mergeDiacritic : $f11 = $r18[$i6]
+org.apache.pdfbox.text.TextPosition.mergeDiacritic : $f11 = $r18[$i6] >>>>>>>> org.apache.pdfbox.text.TextPosition.mergeDiacritic : f7 = f6 / $f11
+org.apache.pdfbox.text.TextPosition.mergeDiacritic : f7 = f6 / $f11 >>>>>>>> org.apache.pdfbox.text.TextPosition.mergeDiacritic : $b7 = f5 cmpl f7
+org.apache.pdfbox.text.TextPosition.mergeDiacritic : $b7 = f5 cmpl f7 >>>>>>>> org.apache.pdfbox.text.TextPosition.mergeDiacritic : if $b7 < 0
+org.apache.pdfbox.text.TextPosition.mergeDiacritic : if $b7 < 0 >>>>>>>> org.apache.pdfbox.text.TextPosition.mergeDiacritic : specialinvoke r0.<org.apache.pdfbox.text.TextPosition: void insertDiacritic(int,org.apache.pdfbox.text.TextPosition)>(i1, r1)
+org.apache.pdfbox.text.TextPosition.mergeDiacritic : if $b7 < 0 >>>>>>>> org.apache.pdfbox.text.TextPosition.mergeDiacritic : $i8 = i1 - 1
+org.apache.pdfbox.text.TextPosition.mergeDiacritic : $i8 = i1 - 1 >>>>>>>> org.apache.pdfbox.text.TextPosition.mergeDiacritic : specialinvoke r0.<org.apache.pdfbox.text.TextPosition: void insertDiacritic(int,org.apache.pdfbox.text.TextPosition)>($i8, r1)
+org.apache.pdfbox.text.TextPosition.mergeDiacritic : specialinvoke r0.<org.apache.pdfbox.text.TextPosition: void insertDiacritic(int,org.apache.pdfbox.text.TextPosition)>($i8, r1) >>>>>>>> org.apache.pdfbox.text.TextPosition.mergeDiacritic : z0 = 1
+org.apache.pdfbox.text.TextPosition.mergeDiacritic : z0 = 1 >>>>>>>> org.apache.pdfbox.text.TextPosition.mergeDiacritic : goto [?= $r19 = r0.<org.apache.pdfbox.text.TextPosition: float[] widths>]
+org.apache.pdfbox.text.TextPosition.mergeDiacritic : goto [?= $r19 = r0.<org.apache.pdfbox.text.TextPosition: float[] widths>] >>>>>>>> org.apache.pdfbox.text.TextPosition.mergeDiacritic : $r19 = r0.<org.apache.pdfbox.text.TextPosition: float[] widths>
+org.apache.pdfbox.text.TextPosition.mergeDiacritic : specialinvoke r0.<org.apache.pdfbox.text.TextPosition: void insertDiacritic(int,org.apache.pdfbox.text.TextPosition)>(i1, r1) >>>>>>>> org.apache.pdfbox.text.TextPosition.mergeDiacritic : goto [?= z0 = 1]
+org.apache.pdfbox.text.TextPosition.mergeDiacritic : goto [?= z0 = 1] >>>>>>>> org.apache.pdfbox.text.TextPosition.mergeDiacritic : z0 = 1
+org.apache.pdfbox.text.TextPosition.mergeDiacritic : specialinvoke r0.<org.apache.pdfbox.text.TextPosition: void insertDiacritic(int,org.apache.pdfbox.text.TextPosition)>(i1, r1) >>>>>>>> org.apache.pdfbox.text.TextPosition.mergeDiacritic : goto [?= z0 = 1]
+org.apache.pdfbox.text.TextPosition.mergeDiacritic : goto [?= z0 = 1] >>>>>>>> org.apache.pdfbox.text.TextPosition.mergeDiacritic : z0 = 1
+org.apache.pdfbox.text.TextPosition.mergeDiacritic : $r6 = <org.apache.pdfbox.text.TextPosition: org.apache.commons.logging.Log LOG> >>>>>>>> org.apache.pdfbox.text.TextPosition.mergeDiacritic : $r7 = new java.lang.StringBuilder
+org.apache.pdfbox.text.TextPosition.mergeDiacritic : $r7 = new java.lang.StringBuilder >>>>>>>> org.apache.pdfbox.text.TextPosition.mergeDiacritic : specialinvoke $r7.<java.lang.StringBuilder: void <init>()>()
+org.apache.pdfbox.text.TextPosition.mergeDiacritic : specialinvoke $r7.<java.lang.StringBuilder: void <init>()>() >>>>>>>> org.apache.pdfbox.text.TextPosition.mergeDiacritic : $r8 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("diacritic ")
+org.apache.pdfbox.text.TextPosition.mergeDiacritic : $r8 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("diacritic ") >>>>>>>> org.apache.pdfbox.text.TextPosition.mergeDiacritic : $r9 = virtualinvoke r1.<org.apache.pdfbox.text.TextPosition: java.lang.String getUnicode()>()
+org.apache.pdfbox.text.TextPosition.mergeDiacritic : $r9 = virtualinvoke r1.<org.apache.pdfbox.text.TextPosition: java.lang.String getUnicode()>() >>>>>>>> org.apache.pdfbox.text.TextPosition.mergeDiacritic : $r10 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r9)
+org.apache.pdfbox.text.TextPosition.mergeDiacritic : $r10 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r9) >>>>>>>> org.apache.pdfbox.text.TextPosition.mergeDiacritic : $r11 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" on ligature ")
+org.apache.pdfbox.text.TextPosition.mergeDiacritic : $r11 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" on ligature ") >>>>>>>> org.apache.pdfbox.text.TextPosition.mergeDiacritic : $r12 = r0.<org.apache.pdfbox.text.TextPosition: java.lang.String unicode>
+org.apache.pdfbox.text.TextPosition.mergeDiacritic : $r12 = r0.<org.apache.pdfbox.text.TextPosition: java.lang.String unicode> >>>>>>>> org.apache.pdfbox.text.TextPosition.mergeDiacritic : $r13 = virtualinvoke $r11.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r12)
+org.apache.pdfbox.text.TextPosition.mergeDiacritic : $r13 = virtualinvoke $r11.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r12) >>>>>>>> org.apache.pdfbox.text.TextPosition.mergeDiacritic : $r14 = virtualinvoke $r13.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" is not supported yet and is ignored (PDFBOX-2831)")
+org.apache.pdfbox.text.TextPosition.mergeDiacritic : $r14 = virtualinvoke $r13.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" is not supported yet and is ignored (PDFBOX-2831)") >>>>>>>> org.apache.pdfbox.text.TextPosition.mergeDiacritic : $r15 = virtualinvoke $r14.<java.lang.StringBuilder: java.lang.String toString()>()
+org.apache.pdfbox.text.TextPosition.mergeDiacritic : $r15 = virtualinvoke $r14.<java.lang.StringBuilder: java.lang.String toString()>() >>>>>>>> org.apache.pdfbox.text.TextPosition.mergeDiacritic : interfaceinvoke $r6.<org.apache.commons.logging.Log: void info(java.lang.Object)>($r15)
+org.apache.pdfbox.text.TextPosition.mergeDiacritic : interfaceinvoke $r6.<org.apache.commons.logging.Log: void info(java.lang.Object)>($r15) >>>>>>>> org.apache.pdfbox.text.TextPosition.mergeDiacritic : goto [?= return]
+org.apache.pdfbox.text.TextPosition.mergeDiacritic : goto [?= return] >>>>>>>> org.apache.pdfbox.text.TextPosition.mergeDiacritic : return

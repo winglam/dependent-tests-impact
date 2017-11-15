@@ -1,0 +1,33 @@
+org.apache.pdfbox.pdfparser.COSParser.retrieveTrailer : r1 = null >>>>>>>> org.apache.pdfbox.pdfparser.COSParser.retrieveTrailer : z0 = 0
+org.apache.pdfbox.pdfparser.COSParser.retrieveTrailer : z0 = 0 >>>>>>>> org.apache.pdfbox.pdfparser.COSParser.retrieveTrailer : l0 = specialinvoke r0.<org.apache.pdfbox.pdfparser.COSParser: long getStartxrefOffset()>()
+org.apache.pdfbox.pdfparser.COSParser.retrieveTrailer : z0 = 0 >>>>>>>> org.apache.pdfbox.pdfparser.COSParser.retrieveTrailer : $r2 := @caughtexception
+org.apache.pdfbox.pdfparser.COSParser.retrieveTrailer : r3 = $r2 >>>>>>>> org.apache.pdfbox.pdfparser.COSParser.retrieveTrailer : $z1 = virtualinvoke r0.<org.apache.pdfbox.pdfparser.COSParser: boolean isLenient()>()
+org.apache.pdfbox.pdfparser.COSParser.retrieveTrailer : $z1 = virtualinvoke r0.<org.apache.pdfbox.pdfparser.COSParser: boolean isLenient()>() >>>>>>>> org.apache.pdfbox.pdfparser.COSParser.retrieveTrailer : if $z1 == 0
+org.apache.pdfbox.pdfparser.COSParser.retrieveTrailer : if $z1 == 0 >>>>>>>> org.apache.pdfbox.pdfparser.COSParser.retrieveTrailer : z0 = 1
+org.apache.pdfbox.pdfparser.COSParser.retrieveTrailer : if $z1 == 0 >>>>>>>> org.apache.pdfbox.pdfparser.COSParser.retrieveTrailer : throw r3
+org.apache.pdfbox.pdfparser.COSParser.retrieveTrailer : z0 = 1 >>>>>>>> org.apache.pdfbox.pdfparser.COSParser.retrieveTrailer : goto [?= (branch)]
+org.apache.pdfbox.pdfparser.COSParser.retrieveTrailer : goto [?= (branch)] >>>>>>>> org.apache.pdfbox.pdfparser.COSParser.retrieveTrailer : if r1 == null
+org.apache.pdfbox.pdfparser.COSParser.retrieveTrailer : if r1 == null >>>>>>>> org.apache.pdfbox.pdfparser.COSParser.retrieveTrailer : $r4 = <org.apache.pdfbox.cos.COSName: org.apache.pdfbox.cos.COSName ROOT>
+org.apache.pdfbox.pdfparser.COSParser.retrieveTrailer : if r1 == null >>>>>>>> org.apache.pdfbox.pdfparser.COSParser.retrieveTrailer : if z0 == 0
+org.apache.pdfbox.pdfparser.COSParser.retrieveTrailer : if z0 == 0 >>>>>>>> org.apache.pdfbox.pdfparser.COSParser.retrieveTrailer : r1 = specialinvoke r0.<org.apache.pdfbox.pdfparser.COSParser: org.apache.pdfbox.cos.COSDictionary rebuildTrailer()>()
+org.apache.pdfbox.pdfparser.COSParser.retrieveTrailer : if z0 == 0 >>>>>>>> org.apache.pdfbox.pdfparser.COSParser.retrieveTrailer : return r1
+org.apache.pdfbox.pdfparser.COSParser.retrieveTrailer : r1 = specialinvoke r0.<org.apache.pdfbox.pdfparser.COSParser: org.apache.pdfbox.cos.COSDictionary rebuildTrailer()>() >>>>>>>> org.apache.pdfbox.pdfparser.COSParser.retrieveTrailer : return r1
+org.apache.pdfbox.pdfparser.COSParser.retrieveTrailer : $r4 = <org.apache.pdfbox.cos.COSName: org.apache.pdfbox.cos.COSName ROOT> >>>>>>>> org.apache.pdfbox.pdfparser.COSParser.retrieveTrailer : $r5 = virtualinvoke r1.<org.apache.pdfbox.cos.COSDictionary: org.apache.pdfbox.cos.COSBase getItem(org.apache.pdfbox.cos.COSName)>($r4)
+org.apache.pdfbox.pdfparser.COSParser.retrieveTrailer : $r5 = virtualinvoke r1.<org.apache.pdfbox.cos.COSDictionary: org.apache.pdfbox.cos.COSBase getItem(org.apache.pdfbox.cos.COSName)>($r4) >>>>>>>> org.apache.pdfbox.pdfparser.COSParser.retrieveTrailer : if $r5 != null
+org.apache.pdfbox.pdfparser.COSParser.retrieveTrailer : if $r5 != null >>>>>>>> org.apache.pdfbox.pdfparser.COSParser.retrieveTrailer : z0 = virtualinvoke r0.<org.apache.pdfbox.pdfparser.COSParser: boolean isLenient()>()
+org.apache.pdfbox.pdfparser.COSParser.retrieveTrailer : if $r5 != null >>>>>>>> org.apache.pdfbox.pdfparser.COSParser.retrieveTrailer : if z0 == 0
+org.apache.pdfbox.pdfparser.COSParser.retrieveTrailer : z0 = virtualinvoke r0.<org.apache.pdfbox.pdfparser.COSParser: boolean isLenient()>() >>>>>>>> org.apache.pdfbox.pdfparser.COSParser.retrieveTrailer : if z0 == 0
+org.apache.pdfbox.pdfparser.COSParser.retrieveTrailer : l0 = specialinvoke r0.<org.apache.pdfbox.pdfparser.COSParser: long getStartxrefOffset()>() >>>>>>>> org.apache.pdfbox.pdfparser.COSParser.retrieveTrailer : $b1 = l0 cmp -1L
+org.apache.pdfbox.pdfparser.COSParser.retrieveTrailer : l0 = specialinvoke r0.<org.apache.pdfbox.pdfparser.COSParser: long getStartxrefOffset()>() >>>>>>>> org.apache.pdfbox.pdfparser.COSParser.retrieveTrailer : $r2 := @caughtexception
+org.apache.pdfbox.pdfparser.COSParser.retrieveTrailer : $b1 = l0 cmp -1L >>>>>>>> org.apache.pdfbox.pdfparser.COSParser.retrieveTrailer : if $b1 <= 0
+org.apache.pdfbox.pdfparser.COSParser.retrieveTrailer : $b1 = l0 cmp -1L >>>>>>>> org.apache.pdfbox.pdfparser.COSParser.retrieveTrailer : $r2 := @caughtexception
+org.apache.pdfbox.pdfparser.COSParser.retrieveTrailer : if $b1 <= 0 >>>>>>>> org.apache.pdfbox.pdfparser.COSParser.retrieveTrailer : r1 = specialinvoke r0.<org.apache.pdfbox.pdfparser.COSParser: org.apache.pdfbox.cos.COSDictionary parseXref(long)>(l0)
+org.apache.pdfbox.pdfparser.COSParser.retrieveTrailer : if $b1 <= 0 >>>>>>>> org.apache.pdfbox.pdfparser.COSParser.retrieveTrailer : z0 = virtualinvoke r0.<org.apache.pdfbox.pdfparser.COSParser: boolean isLenient()>()
+org.apache.pdfbox.pdfparser.COSParser.retrieveTrailer : if $b1 <= 0 >>>>>>>> org.apache.pdfbox.pdfparser.COSParser.retrieveTrailer : $r2 := @caughtexception
+org.apache.pdfbox.pdfparser.COSParser.retrieveTrailer : z0 = virtualinvoke r0.<org.apache.pdfbox.pdfparser.COSParser: boolean isLenient()>() >>>>>>>> org.apache.pdfbox.pdfparser.COSParser.retrieveTrailer : goto [?= (branch)]
+org.apache.pdfbox.pdfparser.COSParser.retrieveTrailer : z0 = virtualinvoke r0.<org.apache.pdfbox.pdfparser.COSParser: boolean isLenient()>() >>>>>>>> org.apache.pdfbox.pdfparser.COSParser.retrieveTrailer : $r2 := @caughtexception
+org.apache.pdfbox.pdfparser.COSParser.retrieveTrailer : goto [?= (branch)] >>>>>>>> org.apache.pdfbox.pdfparser.COSParser.retrieveTrailer : if r1 == null
+org.apache.pdfbox.pdfparser.COSParser.retrieveTrailer : r1 = specialinvoke r0.<org.apache.pdfbox.pdfparser.COSParser: org.apache.pdfbox.cos.COSDictionary parseXref(long)>(l0) >>>>>>>> org.apache.pdfbox.pdfparser.COSParser.retrieveTrailer : goto [?= (branch)]
+org.apache.pdfbox.pdfparser.COSParser.retrieveTrailer : r1 = specialinvoke r0.<org.apache.pdfbox.pdfparser.COSParser: org.apache.pdfbox.cos.COSDictionary parseXref(long)>(l0) >>>>>>>> org.apache.pdfbox.pdfparser.COSParser.retrieveTrailer : $r2 := @caughtexception
+org.apache.pdfbox.pdfparser.COSParser.retrieveTrailer : goto [?= (branch)] >>>>>>>> org.apache.pdfbox.pdfparser.COSParser.retrieveTrailer : goto [?= (branch)]
+org.apache.pdfbox.pdfparser.COSParser.retrieveTrailer : goto [?= (branch)] >>>>>>>> org.apache.pdfbox.pdfparser.COSParser.retrieveTrailer : $r2 := @caughtexception

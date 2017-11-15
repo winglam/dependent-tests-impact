@@ -1,0 +1,12 @@
+org.apache.pdfbox.pdmodel.fdf.FDFAnnotation.getStringOrStream : if r1 != null >>>>>>>> org.apache.pdfbox.pdmodel.fdf.FDFAnnotation.getStringOrStream : return ""
+org.apache.pdfbox.pdmodel.fdf.FDFAnnotation.getStringOrStream : if r1 != null >>>>>>>> org.apache.pdfbox.pdmodel.fdf.FDFAnnotation.getStringOrStream : $z0 = r1 instanceof org.apache.pdfbox.cos.COSString
+org.apache.pdfbox.pdmodel.fdf.FDFAnnotation.getStringOrStream : $z0 = r1 instanceof org.apache.pdfbox.cos.COSString >>>>>>>> org.apache.pdfbox.pdmodel.fdf.FDFAnnotation.getStringOrStream : if $z0 == 0
+org.apache.pdfbox.pdmodel.fdf.FDFAnnotation.getStringOrStream : if $z0 == 0 >>>>>>>> org.apache.pdfbox.pdmodel.fdf.FDFAnnotation.getStringOrStream : $r2 = (org.apache.pdfbox.cos.COSString) r1
+org.apache.pdfbox.pdmodel.fdf.FDFAnnotation.getStringOrStream : if $z0 == 0 >>>>>>>> org.apache.pdfbox.pdmodel.fdf.FDFAnnotation.getStringOrStream : $z1 = r1 instanceof org.apache.pdfbox.cos.COSStream
+org.apache.pdfbox.pdmodel.fdf.FDFAnnotation.getStringOrStream : $z1 = r1 instanceof org.apache.pdfbox.cos.COSStream >>>>>>>> org.apache.pdfbox.pdmodel.fdf.FDFAnnotation.getStringOrStream : if $z1 == 0
+org.apache.pdfbox.pdmodel.fdf.FDFAnnotation.getStringOrStream : if $z1 == 0 >>>>>>>> org.apache.pdfbox.pdmodel.fdf.FDFAnnotation.getStringOrStream : $r4 = (org.apache.pdfbox.cos.COSStream) r1
+org.apache.pdfbox.pdmodel.fdf.FDFAnnotation.getStringOrStream : if $z1 == 0 >>>>>>>> org.apache.pdfbox.pdmodel.fdf.FDFAnnotation.getStringOrStream : return ""
+org.apache.pdfbox.pdmodel.fdf.FDFAnnotation.getStringOrStream : $r4 = (org.apache.pdfbox.cos.COSStream) r1 >>>>>>>> org.apache.pdfbox.pdmodel.fdf.FDFAnnotation.getStringOrStream : $r5 = virtualinvoke $r4.<org.apache.pdfbox.cos.COSStream: java.lang.String toTextString()>()
+org.apache.pdfbox.pdmodel.fdf.FDFAnnotation.getStringOrStream : $r5 = virtualinvoke $r4.<org.apache.pdfbox.cos.COSStream: java.lang.String toTextString()>() >>>>>>>> org.apache.pdfbox.pdmodel.fdf.FDFAnnotation.getStringOrStream : return $r5
+org.apache.pdfbox.pdmodel.fdf.FDFAnnotation.getStringOrStream : $r2 = (org.apache.pdfbox.cos.COSString) r1 >>>>>>>> org.apache.pdfbox.pdmodel.fdf.FDFAnnotation.getStringOrStream : $r3 = virtualinvoke $r2.<org.apache.pdfbox.cos.COSString: java.lang.String getString()>()
+org.apache.pdfbox.pdmodel.fdf.FDFAnnotation.getStringOrStream : $r3 = virtualinvoke $r2.<org.apache.pdfbox.cos.COSString: java.lang.String getString()>() >>>>>>>> org.apache.pdfbox.pdmodel.fdf.FDFAnnotation.getStringOrStream : return $r3

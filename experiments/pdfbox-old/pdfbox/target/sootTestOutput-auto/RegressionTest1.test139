@@ -1,0 +1,13 @@
+org.apache.pdfbox.pdfparser.PDFParser.init : r2 = staticinvoke <java.lang.System: java.lang.String getProperty(java.lang.String)>("org.apache.pdfbox.pdfparser.nonSequentialPDFParser.eofLookupRange")
+org.apache.pdfbox.pdfparser.PDFParser.init : $r11 = new org.apache.pdfbox.cos.COSDocument
+org.apache.pdfbox.pdfparser.PDFParser.init : if r2 == null goto $r11 = new org.apache.pdfbox.cos.COSDocument
+org.apache.pdfbox.io.RandomAccessBuffer.seek : $i5 = r0.<org.apache.pdfbox.io.RandomAccessBuffer: int bufferListMaxIndex>
+org.apache.pdfbox.io.RandomAccessBuffer.seek : $r1 = r0.<org.apache.pdfbox.io.RandomAccessBuffer: java.util.List bufferList>
+org.apache.pdfbox.io.RandomAccessBuffer.seek : specialinvoke r0.<org.apache.pdfbox.io.RandomAccessBuffer: void checkClosed()>()
+org.apache.pdfbox.io.RandomAccessBuffer.seek : $b1 = l0 cmp 0L
+org.apache.pdfbox.io.RandomAccessBuffer.seek : $l3 = r0.<org.apache.pdfbox.io.RandomAccessBuffer: long pointer>
+org.apache.pdfbox.io.RandomAccessBuffer.seek : $l9 = r0.<org.apache.pdfbox.io.RandomAccessBuffer: long size>
+org.apache.pdfbox.io.RandomAccessBuffer.seek : r0.<org.apache.pdfbox.io.RandomAccessBuffer: long pointer> = l0
+org.apache.pdfbox.io.RandomAccessBuffer.length : $l0 = r0.<org.apache.pdfbox.io.RandomAccessBuffer: long size>
+org.apache.pdfbox.io.RandomAccessBuffer.length : specialinvoke r0.<org.apache.pdfbox.io.RandomAccessBuffer: void checkClosed()>()
+org.apache.pdfbox.io.RandomAccessBuffer.checkClosed : $r1 = r0.<org.apache.pdfbox.io.RandomAccessBuffer: byte[] currentBuffer>

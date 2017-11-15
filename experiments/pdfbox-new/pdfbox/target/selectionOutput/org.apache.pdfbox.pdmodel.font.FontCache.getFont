@@ -1,0 +1,9 @@
+org.apache.pdfbox.pdmodel.font.FontCache.getFont : $r3 = r0.<org.apache.pdfbox.pdmodel.font.FontCache: java.util.Map cache> >>>>>>>> org.apache.pdfbox.pdmodel.font.FontCache.getFont : $r4 = interfaceinvoke $r3.<java.util.Map: java.lang.Object get(java.lang.Object)>(r1)
+org.apache.pdfbox.pdmodel.font.FontCache.getFont : $r4 = interfaceinvoke $r3.<java.util.Map: java.lang.Object get(java.lang.Object)>(r1) >>>>>>>> org.apache.pdfbox.pdmodel.font.FontCache.getFont : r2 = (java.lang.ref.SoftReference) $r4
+org.apache.pdfbox.pdmodel.font.FontCache.getFont : r2 = (java.lang.ref.SoftReference) $r4 >>>>>>>> org.apache.pdfbox.pdmodel.font.FontCache.getFont : if r2 == null
+org.apache.pdfbox.pdmodel.font.FontCache.getFont : if r2 == null >>>>>>>> org.apache.pdfbox.pdmodel.font.FontCache.getFont : $r5 = virtualinvoke r2.<java.lang.ref.SoftReference: java.lang.Object get()>()
+org.apache.pdfbox.pdmodel.font.FontCache.getFont : if r2 == null >>>>>>>> org.apache.pdfbox.pdmodel.font.FontCache.getFont : $r6 = null
+org.apache.pdfbox.pdmodel.font.FontCache.getFont : $r6 = null >>>>>>>> org.apache.pdfbox.pdmodel.font.FontCache.getFont : return $r6
+org.apache.pdfbox.pdmodel.font.FontCache.getFont : $r5 = virtualinvoke r2.<java.lang.ref.SoftReference: java.lang.Object get()>() >>>>>>>> org.apache.pdfbox.pdmodel.font.FontCache.getFont : $r6 = (org.apache.fontbox.FontBoxFont) $r5
+org.apache.pdfbox.pdmodel.font.FontCache.getFont : $r6 = (org.apache.fontbox.FontBoxFont) $r5 >>>>>>>> org.apache.pdfbox.pdmodel.font.FontCache.getFont : goto [?= return $r6]
+org.apache.pdfbox.pdmodel.font.FontCache.getFont : goto [?= return $r6] >>>>>>>> org.apache.pdfbox.pdmodel.font.FontCache.getFont : return $r6

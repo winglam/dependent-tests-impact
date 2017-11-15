@@ -1,0 +1,5 @@
+org.apache.pdfbox.io.RandomAccessBuffer.available : $l0 = virtualinvoke r0.<org.apache.pdfbox.io.RandomAccessBuffer: long length()>() >>>>>>>> org.apache.pdfbox.io.RandomAccessBuffer.available : $l1 = virtualinvoke r0.<org.apache.pdfbox.io.RandomAccessBuffer: long getPosition()>()
+org.apache.pdfbox.io.RandomAccessBuffer.available : $l1 = virtualinvoke r0.<org.apache.pdfbox.io.RandomAccessBuffer: long getPosition()>() >>>>>>>> org.apache.pdfbox.io.RandomAccessBuffer.available : $l2 = $l0 - $l1
+org.apache.pdfbox.io.RandomAccessBuffer.available : $l2 = $l0 - $l1 >>>>>>>> org.apache.pdfbox.io.RandomAccessBuffer.available : $l3 = staticinvoke <java.lang.Math: long min(long,long)>($l2, 2147483647L)
+org.apache.pdfbox.io.RandomAccessBuffer.available : $l3 = staticinvoke <java.lang.Math: long min(long,long)>($l2, 2147483647L) >>>>>>>> org.apache.pdfbox.io.RandomAccessBuffer.available : $i4 = (int) $l3
+org.apache.pdfbox.io.RandomAccessBuffer.available : $i4 = (int) $l3 >>>>>>>> org.apache.pdfbox.io.RandomAccessBuffer.available : return $i4

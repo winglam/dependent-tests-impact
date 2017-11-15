@@ -1,0 +1,14 @@
+org.apache.pdfbox.util.Hex.getBytes : $r0 = newarray (byte)[2] >>>>>>>> org.apache.pdfbox.util.Hex.getBytes : $r1 = <org.apache.pdfbox.util.Hex: byte[] HEX_BYTES>
+org.apache.pdfbox.util.Hex.getBytes : $r1 = <org.apache.pdfbox.util.Hex: byte[] HEX_BYTES> >>>>>>>> org.apache.pdfbox.util.Hex.getBytes : $i1 = staticinvoke <org.apache.pdfbox.util.Hex: int getHighNibble(byte)>(b0)
+org.apache.pdfbox.util.Hex.getBytes : $i1 = staticinvoke <org.apache.pdfbox.util.Hex: int getHighNibble(byte)>(b0) >>>>>>>> org.apache.pdfbox.util.Hex.getHighNibble : $s1 = b0 & 240
+org.apache.pdfbox.util.Hex.getHighNibble : $s1 = b0 & 240 >>>>>>>> org.apache.pdfbox.util.Hex.getHighNibble : $s2 = $s1 >> 4
+org.apache.pdfbox.util.Hex.getHighNibble : $s2 = $s1 >> 4 >>>>>>>> org.apache.pdfbox.util.Hex.getHighNibble : return $s2
+org.apache.pdfbox.util.Hex.getHighNibble : return $s2 >>>>>>>> org.apache.pdfbox.util.Hex.getBytes : $b2 = $r1[$i1]
+org.apache.pdfbox.util.Hex.getBytes : $b2 = $r1[$i1] >>>>>>>> org.apache.pdfbox.util.Hex.getBytes : $r0[0] = $b2
+org.apache.pdfbox.util.Hex.getBytes : $r0[0] = $b2 >>>>>>>> org.apache.pdfbox.util.Hex.getBytes : $r2 = <org.apache.pdfbox.util.Hex: byte[] HEX_BYTES>
+org.apache.pdfbox.util.Hex.getBytes : $r2 = <org.apache.pdfbox.util.Hex: byte[] HEX_BYTES> >>>>>>>> org.apache.pdfbox.util.Hex.getBytes : $i3 = staticinvoke <org.apache.pdfbox.util.Hex: int getLowNibble(byte)>(b0)
+org.apache.pdfbox.util.Hex.getBytes : $i3 = staticinvoke <org.apache.pdfbox.util.Hex: int getLowNibble(byte)>(b0) >>>>>>>> org.apache.pdfbox.util.Hex.getLowNibble : $b1 = b0 & 15
+org.apache.pdfbox.util.Hex.getLowNibble : $b1 = b0 & 15 >>>>>>>> org.apache.pdfbox.util.Hex.getLowNibble : return $b1
+org.apache.pdfbox.util.Hex.getLowNibble : return $b1 >>>>>>>> org.apache.pdfbox.util.Hex.getBytes : $b4 = $r2[$i3]
+org.apache.pdfbox.util.Hex.getBytes : $b4 = $r2[$i3] >>>>>>>> org.apache.pdfbox.util.Hex.getBytes : $r0[1] = $b4
+org.apache.pdfbox.util.Hex.getBytes : $r0[1] = $b4 >>>>>>>> org.apache.pdfbox.util.Hex.getBytes : return $r0

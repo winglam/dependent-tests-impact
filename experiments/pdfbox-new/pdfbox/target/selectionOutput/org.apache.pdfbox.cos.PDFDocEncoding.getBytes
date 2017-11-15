@@ -1,0 +1,22 @@
+org.apache.pdfbox.cos.PDFDocEncoding.getBytes : $r1 = new java.io.ByteArrayOutputStream >>>>>>>> org.apache.pdfbox.cos.PDFDocEncoding.getBytes : specialinvoke $r1.<java.io.ByteArrayOutputStream: void <init>()>()
+org.apache.pdfbox.cos.PDFDocEncoding.getBytes : specialinvoke $r1.<java.io.ByteArrayOutputStream: void <init>()>() >>>>>>>> org.apache.pdfbox.cos.PDFDocEncoding.getBytes : r2 = $r1
+org.apache.pdfbox.cos.PDFDocEncoding.getBytes : r2 = $r1 >>>>>>>> org.apache.pdfbox.cos.PDFDocEncoding.getBytes : r3 = virtualinvoke r0.<java.lang.String: char[] toCharArray()>()
+org.apache.pdfbox.cos.PDFDocEncoding.getBytes : r3 = virtualinvoke r0.<java.lang.String: char[] toCharArray()>() >>>>>>>> org.apache.pdfbox.cos.PDFDocEncoding.getBytes : i0 = lengthof r3
+org.apache.pdfbox.cos.PDFDocEncoding.getBytes : i0 = lengthof r3 >>>>>>>> org.apache.pdfbox.cos.PDFDocEncoding.getBytes : i1 = 0
+org.apache.pdfbox.cos.PDFDocEncoding.getBytes : i1 = 0 >>>>>>>> org.apache.pdfbox.cos.PDFDocEncoding.getBytes : if i1 >= i0
+org.apache.pdfbox.cos.PDFDocEncoding.getBytes : if i1 >= i0 >>>>>>>> org.apache.pdfbox.cos.PDFDocEncoding.getBytes : c2 = r3[i1]
+org.apache.pdfbox.cos.PDFDocEncoding.getBytes : if i1 >= i0 >>>>>>>> org.apache.pdfbox.cos.PDFDocEncoding.getBytes : $r8 = virtualinvoke r2.<java.io.ByteArrayOutputStream: byte[] toByteArray()>()
+org.apache.pdfbox.cos.PDFDocEncoding.getBytes : $r8 = virtualinvoke r2.<java.io.ByteArrayOutputStream: byte[] toByteArray()>() >>>>>>>> org.apache.pdfbox.cos.PDFDocEncoding.getBytes : return $r8
+org.apache.pdfbox.cos.PDFDocEncoding.getBytes : c2 = r3[i1] >>>>>>>> org.apache.pdfbox.cos.PDFDocEncoding.getBytes : $r5 = <org.apache.pdfbox.cos.PDFDocEncoding: java.util.Map UNI_TO_CODE>
+org.apache.pdfbox.cos.PDFDocEncoding.getBytes : $r5 = <org.apache.pdfbox.cos.PDFDocEncoding: java.util.Map UNI_TO_CODE> >>>>>>>> org.apache.pdfbox.cos.PDFDocEncoding.getBytes : $r6 = staticinvoke <java.lang.Character: java.lang.Character valueOf(char)>(c2)
+org.apache.pdfbox.cos.PDFDocEncoding.getBytes : $r6 = staticinvoke <java.lang.Character: java.lang.Character valueOf(char)>(c2) >>>>>>>> org.apache.pdfbox.cos.PDFDocEncoding.getBytes : $r7 = interfaceinvoke $r5.<java.util.Map: java.lang.Object get(java.lang.Object)>($r6)
+org.apache.pdfbox.cos.PDFDocEncoding.getBytes : $r7 = interfaceinvoke $r5.<java.util.Map: java.lang.Object get(java.lang.Object)>($r6) >>>>>>>> org.apache.pdfbox.cos.PDFDocEncoding.getBytes : r4 = (java.lang.Integer) $r7
+org.apache.pdfbox.cos.PDFDocEncoding.getBytes : r4 = (java.lang.Integer) $r7 >>>>>>>> org.apache.pdfbox.cos.PDFDocEncoding.getBytes : if r4 != null
+org.apache.pdfbox.cos.PDFDocEncoding.getBytes : if r4 != null >>>>>>>> org.apache.pdfbox.cos.PDFDocEncoding.getBytes : virtualinvoke r2.<java.io.ByteArrayOutputStream: void write(int)>(0)
+org.apache.pdfbox.cos.PDFDocEncoding.getBytes : if r4 != null >>>>>>>> org.apache.pdfbox.cos.PDFDocEncoding.getBytes : $i3 = virtualinvoke r4.<java.lang.Integer: int intValue()>()
+org.apache.pdfbox.cos.PDFDocEncoding.getBytes : $i3 = virtualinvoke r4.<java.lang.Integer: int intValue()>() >>>>>>>> org.apache.pdfbox.cos.PDFDocEncoding.getBytes : virtualinvoke r2.<java.io.ByteArrayOutputStream: void write(int)>($i3)
+org.apache.pdfbox.cos.PDFDocEncoding.getBytes : virtualinvoke r2.<java.io.ByteArrayOutputStream: void write(int)>($i3) >>>>>>>> org.apache.pdfbox.cos.PDFDocEncoding.getBytes : i1 = i1 + 1
+org.apache.pdfbox.cos.PDFDocEncoding.getBytes : i1 = i1 + 1 >>>>>>>> org.apache.pdfbox.cos.PDFDocEncoding.getBytes : goto [?= (branch)]
+org.apache.pdfbox.cos.PDFDocEncoding.getBytes : goto [?= (branch)] >>>>>>>> org.apache.pdfbox.cos.PDFDocEncoding.getBytes : if i1 >= i0
+org.apache.pdfbox.cos.PDFDocEncoding.getBytes : virtualinvoke r2.<java.io.ByteArrayOutputStream: void write(int)>(0) >>>>>>>> org.apache.pdfbox.cos.PDFDocEncoding.getBytes : goto [?= i1 = i1 + 1]
+org.apache.pdfbox.cos.PDFDocEncoding.getBytes : goto [?= i1 = i1 + 1] >>>>>>>> org.apache.pdfbox.cos.PDFDocEncoding.getBytes : i1 = i1 + 1

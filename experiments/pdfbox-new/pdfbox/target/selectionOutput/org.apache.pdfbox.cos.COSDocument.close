@@ -1,0 +1,32 @@
+org.apache.pdfbox.cos.COSDocument.close : $z0 = r0.<org.apache.pdfbox.cos.COSDocument: boolean closed> >>>>>>>> org.apache.pdfbox.cos.COSDocument.close : if $z0 != 0
+org.apache.pdfbox.cos.COSDocument.close : if $z0 != 0 >>>>>>>> org.apache.pdfbox.cos.COSDocument.close : $r4 = virtualinvoke r0.<org.apache.pdfbox.cos.COSDocument: java.util.List getObjects()>()
+org.apache.pdfbox.cos.COSDocument.close : if $z0 != 0 >>>>>>>> org.apache.pdfbox.cos.COSDocument.close : return
+org.apache.pdfbox.cos.COSDocument.close : $r4 = virtualinvoke r0.<org.apache.pdfbox.cos.COSDocument: java.util.List getObjects()>() >>>>>>>> org.apache.pdfbox.cos.COSDocument.close : r1 = interfaceinvoke $r4.<java.util.List: java.util.Iterator iterator()>()
+org.apache.pdfbox.cos.COSDocument.close : r1 = interfaceinvoke $r4.<java.util.List: java.util.Iterator iterator()>() >>>>>>>> org.apache.pdfbox.cos.COSDocument.close : $z1 = interfaceinvoke r1.<java.util.Iterator: boolean hasNext()>()
+org.apache.pdfbox.cos.COSDocument.close : $z1 = interfaceinvoke r1.<java.util.Iterator: boolean hasNext()>() >>>>>>>> org.apache.pdfbox.cos.COSDocument.close : if $z1 == 0
+org.apache.pdfbox.cos.COSDocument.close : if $z1 == 0 >>>>>>>> org.apache.pdfbox.cos.COSDocument.close : $r5 = interfaceinvoke r1.<java.util.Iterator: java.lang.Object next()>()
+org.apache.pdfbox.cos.COSDocument.close : if $z1 == 0 >>>>>>>> org.apache.pdfbox.cos.COSDocument.close : $r7 = r0.<org.apache.pdfbox.cos.COSDocument: java.util.List streams>
+org.apache.pdfbox.cos.COSDocument.close : $r7 = r0.<org.apache.pdfbox.cos.COSDocument: java.util.List streams> >>>>>>>> org.apache.pdfbox.cos.COSDocument.close : r8 = interfaceinvoke $r7.<java.util.List: java.util.Iterator iterator()>()
+org.apache.pdfbox.cos.COSDocument.close : r8 = interfaceinvoke $r7.<java.util.List: java.util.Iterator iterator()>() >>>>>>>> org.apache.pdfbox.cos.COSDocument.close : $z3 = interfaceinvoke r8.<java.util.Iterator: boolean hasNext()>()
+org.apache.pdfbox.cos.COSDocument.close : $z3 = interfaceinvoke r8.<java.util.Iterator: boolean hasNext()>() >>>>>>>> org.apache.pdfbox.cos.COSDocument.close : if $z3 == 0
+org.apache.pdfbox.cos.COSDocument.close : if $z3 == 0 >>>>>>>> org.apache.pdfbox.cos.COSDocument.close : $r9 = interfaceinvoke r8.<java.util.Iterator: java.lang.Object next()>()
+org.apache.pdfbox.cos.COSDocument.close : if $z3 == 0 >>>>>>>> org.apache.pdfbox.cos.COSDocument.close : $r11 = r0.<org.apache.pdfbox.cos.COSDocument: org.apache.pdfbox.io.ScratchFile scratchFile>
+org.apache.pdfbox.cos.COSDocument.close : $r11 = r0.<org.apache.pdfbox.cos.COSDocument: org.apache.pdfbox.io.ScratchFile scratchFile> >>>>>>>> org.apache.pdfbox.cos.COSDocument.close : if $r11 == null
+org.apache.pdfbox.cos.COSDocument.close : if $r11 == null >>>>>>>> org.apache.pdfbox.cos.COSDocument.close : $r12 = r0.<org.apache.pdfbox.cos.COSDocument: org.apache.pdfbox.io.ScratchFile scratchFile>
+org.apache.pdfbox.cos.COSDocument.close : if $r11 == null >>>>>>>> org.apache.pdfbox.cos.COSDocument.close : r0.<org.apache.pdfbox.cos.COSDocument: boolean closed> = 1
+org.apache.pdfbox.cos.COSDocument.close : r0.<org.apache.pdfbox.cos.COSDocument: boolean closed> = 1 >>>>>>>> org.apache.pdfbox.cos.COSDocument.close : return
+org.apache.pdfbox.cos.COSDocument.close : $r12 = r0.<org.apache.pdfbox.cos.COSDocument: org.apache.pdfbox.io.ScratchFile scratchFile> >>>>>>>> org.apache.pdfbox.cos.COSDocument.close : virtualinvoke $r12.<org.apache.pdfbox.io.ScratchFile: void close()>()
+org.apache.pdfbox.cos.COSDocument.close : virtualinvoke $r12.<org.apache.pdfbox.io.ScratchFile: void close()>() >>>>>>>> org.apache.pdfbox.cos.COSDocument.close : r0.<org.apache.pdfbox.cos.COSDocument: boolean closed> = 1
+org.apache.pdfbox.cos.COSDocument.close : $r9 = interfaceinvoke r8.<java.util.Iterator: java.lang.Object next()>() >>>>>>>> org.apache.pdfbox.cos.COSDocument.close : r10 = (org.apache.pdfbox.cos.COSStream) $r9
+org.apache.pdfbox.cos.COSDocument.close : r10 = (org.apache.pdfbox.cos.COSStream) $r9 >>>>>>>> org.apache.pdfbox.cos.COSDocument.close : virtualinvoke r10.<org.apache.pdfbox.cos.COSStream: void close()>()
+org.apache.pdfbox.cos.COSDocument.close : virtualinvoke r10.<org.apache.pdfbox.cos.COSStream: void close()>() >>>>>>>> org.apache.pdfbox.cos.COSDocument.close : goto [?= $z3 = interfaceinvoke r8.<java.util.Iterator: boolean hasNext()>()]
+org.apache.pdfbox.cos.COSDocument.close : goto [?= $z3 = interfaceinvoke r8.<java.util.Iterator: boolean hasNext()>()] >>>>>>>> org.apache.pdfbox.cos.COSDocument.close : $z3 = interfaceinvoke r8.<java.util.Iterator: boolean hasNext()>()
+org.apache.pdfbox.cos.COSDocument.close : $r5 = interfaceinvoke r1.<java.util.Iterator: java.lang.Object next()>() >>>>>>>> org.apache.pdfbox.cos.COSDocument.close : r2 = (org.apache.pdfbox.cos.COSObject) $r5
+org.apache.pdfbox.cos.COSDocument.close : r2 = (org.apache.pdfbox.cos.COSObject) $r5 >>>>>>>> org.apache.pdfbox.cos.COSDocument.close : r3 = virtualinvoke r2.<org.apache.pdfbox.cos.COSObject: org.apache.pdfbox.cos.COSBase getObject()>()
+org.apache.pdfbox.cos.COSDocument.close : r3 = virtualinvoke r2.<org.apache.pdfbox.cos.COSObject: org.apache.pdfbox.cos.COSBase getObject()>() >>>>>>>> org.apache.pdfbox.cos.COSDocument.close : $z2 = r3 instanceof org.apache.pdfbox.cos.COSStream
+org.apache.pdfbox.cos.COSDocument.close : $z2 = r3 instanceof org.apache.pdfbox.cos.COSStream >>>>>>>> org.apache.pdfbox.cos.COSDocument.close : if $z2 == 0
+org.apache.pdfbox.cos.COSDocument.close : if $z2 == 0 >>>>>>>> org.apache.pdfbox.cos.COSDocument.close : $r6 = (org.apache.pdfbox.cos.COSStream) r3
+org.apache.pdfbox.cos.COSDocument.close : if $z2 == 0 >>>>>>>> org.apache.pdfbox.cos.COSDocument.close : goto [?= $z1 = interfaceinvoke r1.<java.util.Iterator: boolean hasNext()>()]
+org.apache.pdfbox.cos.COSDocument.close : goto [?= $z1 = interfaceinvoke r1.<java.util.Iterator: boolean hasNext()>()] >>>>>>>> org.apache.pdfbox.cos.COSDocument.close : $z1 = interfaceinvoke r1.<java.util.Iterator: boolean hasNext()>()
+org.apache.pdfbox.cos.COSDocument.close : $r6 = (org.apache.pdfbox.cos.COSStream) r3 >>>>>>>> org.apache.pdfbox.cos.COSDocument.close : virtualinvoke $r6.<org.apache.pdfbox.cos.COSStream: void close()>()
+org.apache.pdfbox.cos.COSDocument.close : virtualinvoke $r6.<org.apache.pdfbox.cos.COSStream: void close()>() >>>>>>>> org.apache.pdfbox.cos.COSDocument.close : goto [?= $z1 = interfaceinvoke r1.<java.util.Iterator: boolean hasNext()>()]

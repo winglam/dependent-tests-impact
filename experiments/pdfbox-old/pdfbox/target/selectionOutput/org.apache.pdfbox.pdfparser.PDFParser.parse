@@ -1,0 +1,33 @@
+org.apache.pdfbox.pdfparser.PDFParser.parse : $r7 = r0.<org.apache.pdfbox.pdfparser.PDFParser: java.io.InputStream keyStoreInputStream> >>>>>>>> org.apache.pdfbox.pdfparser.PDFParser.parse : staticinvoke <org.apache.pdfbox.io.IOUtils: void closeQuietly(java.io.Closeable)>($r7)
+org.apache.pdfbox.pdfparser.PDFParser.parse : staticinvoke <org.apache.pdfbox.io.IOUtils: void closeQuietly(java.io.Closeable)>($r7) >>>>>>>> org.apache.pdfbox.pdfparser.PDFParser.parse : $r8 = r0.<org.apache.pdfbox.pdfparser.PDFParser: org.apache.pdfbox.cos.COSDocument document>
+org.apache.pdfbox.pdfparser.PDFParser.parse : $r8 = r0.<org.apache.pdfbox.pdfparser.PDFParser: org.apache.pdfbox.cos.COSDocument document> >>>>>>>> org.apache.pdfbox.pdfparser.PDFParser.parse : if $r8 == null
+org.apache.pdfbox.pdfparser.PDFParser.parse : if $r8 == null >>>>>>>> org.apache.pdfbox.pdfparser.PDFParser.parse : $r9 = r0.<org.apache.pdfbox.pdfparser.PDFParser: org.apache.pdfbox.cos.COSDocument document>
+org.apache.pdfbox.pdfparser.PDFParser.parse : if $r8 == null >>>>>>>> org.apache.pdfbox.pdfparser.PDFParser.parse : throw $r6
+org.apache.pdfbox.pdfparser.PDFParser.parse : $r9 = r0.<org.apache.pdfbox.pdfparser.PDFParser: org.apache.pdfbox.cos.COSDocument document> >>>>>>>> org.apache.pdfbox.pdfparser.PDFParser.parse : staticinvoke <org.apache.pdfbox.io.IOUtils: void closeQuietly(java.io.Closeable)>($r9)
+org.apache.pdfbox.pdfparser.PDFParser.parse : staticinvoke <org.apache.pdfbox.io.IOUtils: void closeQuietly(java.io.Closeable)>($r9) >>>>>>>> org.apache.pdfbox.pdfparser.PDFParser.parse : r0.<org.apache.pdfbox.pdfparser.PDFParser: org.apache.pdfbox.cos.COSDocument document> = null
+org.apache.pdfbox.pdfparser.PDFParser.parse : r0.<org.apache.pdfbox.pdfparser.PDFParser: org.apache.pdfbox.cos.COSDocument document> = null >>>>>>>> org.apache.pdfbox.pdfparser.PDFParser.parse : throw $r6
+org.apache.pdfbox.pdfparser.PDFParser.parse : $z0 = virtualinvoke r0.<org.apache.pdfbox.pdfparser.PDFParser: boolean parsePDFHeader()>() >>>>>>>> org.apache.pdfbox.pdfparser.PDFParser.parse : if $z0 != 0
+org.apache.pdfbox.pdfparser.PDFParser.parse : $z0 = virtualinvoke r0.<org.apache.pdfbox.pdfparser.PDFParser: boolean parsePDFHeader()>() >>>>>>>> org.apache.pdfbox.pdfparser.PDFParser.parse : $r6 := @caughtexception
+org.apache.pdfbox.pdfparser.PDFParser.parse : if $z0 != 0 >>>>>>>> org.apache.pdfbox.pdfparser.PDFParser.parse : $z2 = virtualinvoke r0.<org.apache.pdfbox.pdfparser.PDFParser: boolean parseFDFHeader()>()
+org.apache.pdfbox.pdfparser.PDFParser.parse : if $z0 != 0 >>>>>>>> org.apache.pdfbox.pdfparser.PDFParser.parse : $z1 = r0.<org.apache.pdfbox.pdfparser.PDFParser: boolean initialParseDone>
+org.apache.pdfbox.pdfparser.PDFParser.parse : if $z0 != 0 >>>>>>>> org.apache.pdfbox.pdfparser.PDFParser.parse : $r6 := @caughtexception
+org.apache.pdfbox.pdfparser.PDFParser.parse : $z1 = r0.<org.apache.pdfbox.pdfparser.PDFParser: boolean initialParseDone> >>>>>>>> org.apache.pdfbox.pdfparser.PDFParser.parse : if $z1 != 0
+org.apache.pdfbox.pdfparser.PDFParser.parse : $z1 = r0.<org.apache.pdfbox.pdfparser.PDFParser: boolean initialParseDone> >>>>>>>> org.apache.pdfbox.pdfparser.PDFParser.parse : $r6 := @caughtexception
+org.apache.pdfbox.pdfparser.PDFParser.parse : if $z1 != 0 >>>>>>>> org.apache.pdfbox.pdfparser.PDFParser.parse : virtualinvoke r0.<org.apache.pdfbox.pdfparser.PDFParser: void initialParse()>()
+org.apache.pdfbox.pdfparser.PDFParser.parse : if $z1 != 0 >>>>>>>> org.apache.pdfbox.pdfparser.PDFParser.parse : $r2 = r0.<org.apache.pdfbox.pdfparser.PDFParser: java.io.InputStream keyStoreInputStream>
+org.apache.pdfbox.pdfparser.PDFParser.parse : if $z1 != 0 >>>>>>>> org.apache.pdfbox.pdfparser.PDFParser.parse : $r6 := @caughtexception
+org.apache.pdfbox.pdfparser.PDFParser.parse : $r2 = r0.<org.apache.pdfbox.pdfparser.PDFParser: java.io.InputStream keyStoreInputStream> >>>>>>>> org.apache.pdfbox.pdfparser.PDFParser.parse : staticinvoke <org.apache.pdfbox.io.IOUtils: void closeQuietly(java.io.Closeable)>($r2)
+org.apache.pdfbox.pdfparser.PDFParser.parse : staticinvoke <org.apache.pdfbox.io.IOUtils: void closeQuietly(java.io.Closeable)>($r2) >>>>>>>> org.apache.pdfbox.pdfparser.PDFParser.parse : goto [?= return]
+org.apache.pdfbox.pdfparser.PDFParser.parse : goto [?= return] >>>>>>>> org.apache.pdfbox.pdfparser.PDFParser.parse : return
+org.apache.pdfbox.pdfparser.PDFParser.parse : virtualinvoke r0.<org.apache.pdfbox.pdfparser.PDFParser: void initialParse()>() >>>>>>>> org.apache.pdfbox.pdfparser.PDFParser.parse : $r2 = r0.<org.apache.pdfbox.pdfparser.PDFParser: java.io.InputStream keyStoreInputStream>
+org.apache.pdfbox.pdfparser.PDFParser.parse : virtualinvoke r0.<org.apache.pdfbox.pdfparser.PDFParser: void initialParse()>() >>>>>>>> org.apache.pdfbox.pdfparser.PDFParser.parse : $r6 := @caughtexception
+org.apache.pdfbox.pdfparser.PDFParser.parse : $z2 = virtualinvoke r0.<org.apache.pdfbox.pdfparser.PDFParser: boolean parseFDFHeader()>() >>>>>>>> org.apache.pdfbox.pdfparser.PDFParser.parse : if $z2 != 0
+org.apache.pdfbox.pdfparser.PDFParser.parse : $z2 = virtualinvoke r0.<org.apache.pdfbox.pdfparser.PDFParser: boolean parseFDFHeader()>() >>>>>>>> org.apache.pdfbox.pdfparser.PDFParser.parse : $r6 := @caughtexception
+org.apache.pdfbox.pdfparser.PDFParser.parse : if $z2 != 0 >>>>>>>> org.apache.pdfbox.pdfparser.PDFParser.parse : $r5 = new java.io.IOException
+org.apache.pdfbox.pdfparser.PDFParser.parse : if $z2 != 0 >>>>>>>> org.apache.pdfbox.pdfparser.PDFParser.parse : $z1 = r0.<org.apache.pdfbox.pdfparser.PDFParser: boolean initialParseDone>
+org.apache.pdfbox.pdfparser.PDFParser.parse : if $z2 != 0 >>>>>>>> org.apache.pdfbox.pdfparser.PDFParser.parse : $r6 := @caughtexception
+org.apache.pdfbox.pdfparser.PDFParser.parse : $r5 = new java.io.IOException >>>>>>>> org.apache.pdfbox.pdfparser.PDFParser.parse : specialinvoke $r5.<java.io.IOException: void <init>(java.lang.String)>("Error: Header doesn\'t contain versioninfo")
+org.apache.pdfbox.pdfparser.PDFParser.parse : $r5 = new java.io.IOException >>>>>>>> org.apache.pdfbox.pdfparser.PDFParser.parse : $r6 := @caughtexception
+org.apache.pdfbox.pdfparser.PDFParser.parse : specialinvoke $r5.<java.io.IOException: void <init>(java.lang.String)>("Error: Header doesn\'t contain versioninfo") >>>>>>>> org.apache.pdfbox.pdfparser.PDFParser.parse : throw $r5
+org.apache.pdfbox.pdfparser.PDFParser.parse : specialinvoke $r5.<java.io.IOException: void <init>(java.lang.String)>("Error: Header doesn\'t contain versioninfo") >>>>>>>> org.apache.pdfbox.pdfparser.PDFParser.parse : $r6 := @caughtexception
+org.apache.pdfbox.pdfparser.PDFParser.parse : throw $r5 >>>>>>>> org.apache.pdfbox.pdfparser.PDFParser.parse : $r6 := @caughtexception

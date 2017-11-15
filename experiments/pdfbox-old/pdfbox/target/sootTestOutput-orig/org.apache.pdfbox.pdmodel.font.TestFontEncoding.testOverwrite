@@ -1,0 +1,78 @@
+org.apache.pdfbox.cos.COSArray.add : $r2 = r0.<org.apache.pdfbox.cos.COSArray: java.util.List objects>
+org.apache.pdfbox.cos.COSArray.getObject : $r1 = r0.<org.apache.pdfbox.cos.COSArray: java.util.List objects>
+org.apache.pdfbox.cos.COSArray.getObject : $z0 = r4 instanceof org.apache.pdfbox.cos.COSObject
+org.apache.pdfbox.cos.COSArray.getObject : $r2 = (org.apache.pdfbox.cos.COSBase) r4
+org.apache.pdfbox.cos.COSArray.getObject : $z1 = r4 instanceof org.apache.pdfbox.cos.COSNull
+org.apache.pdfbox.cos.COSInteger.get : $r1 = <org.apache.pdfbox.cos.COSInteger: org.apache.pdfbox.cos.COSInteger[] STATIC>
+org.apache.pdfbox.cos.COSInteger.get : $b2 = -100L cmp l0
+org.apache.pdfbox.cos.COSInteger.get : $i4 = (int) l0
+org.apache.pdfbox.cos.COSInteger.get : $b3 = l0 cmp 256L
+org.apache.pdfbox.cos.COSInteger.get : $r3 = <org.apache.pdfbox.cos.COSInteger: org.apache.pdfbox.cos.COSInteger[] STATIC>
+org.apache.pdfbox.pdmodel.font.encoding.Encoding.overwrite : $r11 = r0.<org.apache.pdfbox.pdmodel.font.encoding.Encoding: java.util.Map inverted>
+org.apache.pdfbox.pdmodel.font.encoding.Encoding.overwrite : $r9 = r0.<org.apache.pdfbox.pdmodel.font.encoding.Encoding: java.util.Map inverted>
+org.apache.pdfbox.pdmodel.font.encoding.Encoding.overwrite : if r3 == null goto $r13 = r0.<org.apache.pdfbox.pdmodel.font.encoding.Encoding: java.util.Map inverted>
+org.apache.pdfbox.pdmodel.font.encoding.Encoding.overwrite : $r4 = r0.<org.apache.pdfbox.pdmodel.font.encoding.Encoding: java.util.Map codeToName>
+org.apache.pdfbox.pdmodel.font.encoding.Encoding.overwrite : $i1 = virtualinvoke r3.<java.lang.Integer: int intValue()>()
+org.apache.pdfbox.pdmodel.font.encoding.Encoding.overwrite : $r15 = r0.<org.apache.pdfbox.pdmodel.font.encoding.Encoding: java.util.Map codeToName>
+org.apache.pdfbox.pdmodel.font.encoding.Encoding.overwrite : if r2 == null goto $r13 = r0.<org.apache.pdfbox.pdmodel.font.encoding.Encoding: java.util.Map inverted>
+org.apache.pdfbox.pdmodel.font.encoding.Encoding.overwrite : $r13 = r0.<org.apache.pdfbox.pdmodel.font.encoding.Encoding: java.util.Map inverted>
+org.apache.pdfbox.cos.COSName.getPDFName : $r1 = <org.apache.pdfbox.cos.COSName: java.util.Map commonNameMap>
+org.apache.pdfbox.cos.COSName.getPDFName : return r6
+org.apache.pdfbox.cos.COSName.getPDFName : r6 = null
+org.apache.pdfbox.cos.COSName.getPDFName : $r3 = <org.apache.pdfbox.cos.COSName: java.util.Map nameMap>
+org.apache.pdfbox.cos.COSName.getPDFName : if r0 == null goto return r6
+org.apache.pdfbox.cos.COSName.getPDFName : if r6 != null goto return r6
+org.apache.pdfbox.cos.COSArray.size : $r1 = r0.<org.apache.pdfbox.cos.COSArray: java.util.List objects>
+org.apache.pdfbox.cos.COSName.getName : $r1 = r0.<org.apache.pdfbox.cos.COSName: java.lang.String name>
+org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : $z0 = r5 instanceof org.apache.pdfbox.cos.COSObject
+org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : return r5
+org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : $z1 = r5 instanceof org.apache.pdfbox.cos.COSNull
+org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : $r2 = r0.<org.apache.pdfbox.cos.COSDictionary: java.util.Map items>
+org.apache.pdfbox.pdmodel.font.encoding.DictionaryEncoding.applyDifferences : r3 = virtualinvoke r2.<org.apache.pdfbox.cos.COSArray: org.apache.pdfbox.cos.COSBase getObject(int)>(i2)
+org.apache.pdfbox.pdmodel.font.encoding.DictionaryEncoding.applyDifferences : $z0 = r1 instanceof org.apache.pdfbox.cos.COSArray
+org.apache.pdfbox.pdmodel.font.encoding.DictionaryEncoding.applyDifferences : i2 = 0
+org.apache.pdfbox.pdmodel.font.encoding.DictionaryEncoding.applyDifferences : r4 = (org.apache.pdfbox.cos.COSName) r3
+org.apache.pdfbox.pdmodel.font.encoding.DictionaryEncoding.applyDifferences : $r8 = r0.<org.apache.pdfbox.pdmodel.font.encoding.DictionaryEncoding: java.util.Map differences>
+org.apache.pdfbox.pdmodel.font.encoding.DictionaryEncoding.applyDifferences : $r7 = virtualinvoke r4.<org.apache.pdfbox.cos.COSName: java.lang.String getName()>()
+org.apache.pdfbox.pdmodel.font.encoding.DictionaryEncoding.applyDifferences : $r6 = r0.<org.apache.pdfbox.pdmodel.font.encoding.DictionaryEncoding: org.apache.pdfbox.cos.COSDictionary encoding>
+org.apache.pdfbox.pdmodel.font.encoding.DictionaryEncoding.applyDifferences : $r12 = (org.apache.pdfbox.cos.COSNumber) r3
+org.apache.pdfbox.pdmodel.font.encoding.DictionaryEncoding.applyDifferences : i1 = -1
+org.apache.pdfbox.pdmodel.font.encoding.DictionaryEncoding.applyDifferences : r2 = (org.apache.pdfbox.cos.COSArray) r1
+org.apache.pdfbox.pdmodel.font.encoding.DictionaryEncoding.applyDifferences : $z1 = r3 instanceof org.apache.pdfbox.cos.COSNumber
+org.apache.pdfbox.pdmodel.font.encoding.DictionaryEncoding.applyDifferences : i1 = i1 + 1
+org.apache.pdfbox.pdmodel.font.encoding.DictionaryEncoding.applyDifferences : $z2 = r3 instanceof org.apache.pdfbox.cos.COSName
+org.apache.pdfbox.util.SmallMap.findKey : if r1 != null goto i1 = 0
+org.apache.pdfbox.util.SmallMap.findKey : return -1
+org.apache.pdfbox.util.SmallMap.findKey : $r3 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.util.SmallMap.findKey : return i1
+org.apache.pdfbox.util.SmallMap.findKey : i1 = 0
+org.apache.pdfbox.util.SmallMap.findKey : $z0 = virtualinvoke r0.<org.apache.pdfbox.util.SmallMap: boolean isEmpty()>()
+org.apache.pdfbox.util.SmallMap.get : if i0 >= 0 goto $r2 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.util.SmallMap.get : i0 = specialinvoke r0.<org.apache.pdfbox.util.SmallMap: int findKey(java.lang.Object)>(r1)
+org.apache.pdfbox.cos.COSDictionary.getCOSName : r2 = virtualinvoke r0.<org.apache.pdfbox.cos.COSDictionary: org.apache.pdfbox.cos.COSBase getDictionaryObject(org.apache.pdfbox.cos.COSName)>(r1)
+org.apache.pdfbox.cos.COSDictionary.getCOSName : $r3 = (org.apache.pdfbox.cos.COSName) r2
+org.apache.pdfbox.cos.COSDictionary.getCOSName : $z0 = r2 instanceof org.apache.pdfbox.cos.COSName
+org.apache.pdfbox.util.SmallMap.put : $r5 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.util.SmallMap.put : $r8 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.util.SmallMap.put : $r9 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.util.SmallMap.put : if r2 != null goto $r5 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.util.SmallMap.put : $i4 = i5 + 1
+org.apache.pdfbox.util.SmallMap.put : r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr> = r3
+org.apache.pdfbox.util.SmallMap.put : r3[i5] = r1
+org.apache.pdfbox.util.SmallMap.put : $i3 = i5 + 2
+org.apache.pdfbox.util.SmallMap.put : if r1 == null goto $r4 = new java.lang.NullPointerException
+org.apache.pdfbox.util.SmallMap.put : return null
+org.apache.pdfbox.util.SmallMap.put : $r10 = newarray (java.lang.Object)[2]
+org.apache.pdfbox.util.SmallMap.put : i0 = specialinvoke r0.<org.apache.pdfbox.util.SmallMap: int findKey(java.lang.Object)>(r1)
+org.apache.pdfbox.util.SmallMap.put : if i0 >= 0 goto $r6 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.pdmodel.font.encoding.Encoding.getInstance : $r7 = <org.apache.pdfbox.pdmodel.font.encoding.WinAnsiEncoding: org.apache.pdfbox.pdmodel.font.encoding.WinAnsiEncoding INSTANCE>
+org.apache.pdfbox.pdmodel.font.encoding.Encoding.getInstance : $r1 = <org.apache.pdfbox.cos.COSName: org.apache.pdfbox.cos.COSName STANDARD_ENCODING>
+org.apache.pdfbox.pdmodel.font.encoding.Encoding.getInstance : $r2 = <org.apache.pdfbox.cos.COSName: org.apache.pdfbox.cos.COSName WIN_ANSI_ENCODING>
+org.apache.pdfbox.util.SmallMap.isEmpty : $r1 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.util.SmallMap.containsKey : $i0 = specialinvoke r0.<org.apache.pdfbox.util.SmallMap: int findKey(java.lang.Object)>(r1)
+org.apache.pdfbox.cos.COSName.equals : $z0 = r1 instanceof org.apache.pdfbox.cos.COSName
+org.apache.pdfbox.cos.COSDictionary.setItem : $r3 = r0.<org.apache.pdfbox.cos.COSDictionary: java.util.Map items>
+org.apache.pdfbox.cos.COSDictionary.setItem : if r2 != null goto $r3 = r0.<org.apache.pdfbox.cos.COSDictionary: java.util.Map items>
+org.apache.pdfbox.cos.COSDictionary.containsKey : $r2 = r0.<org.apache.pdfbox.cos.COSDictionary: java.util.Map items>
+org.apache.pdfbox.cos.COSInteger.intValue : $l0 = r0.<org.apache.pdfbox.cos.COSInteger: long value>
+org.apache.pdfbox.pdmodel.font.encoding.Encoding.getNameToCodeMap : $r1 = r0.<org.apache.pdfbox.pdmodel.font.encoding.Encoding: java.util.Map inverted>

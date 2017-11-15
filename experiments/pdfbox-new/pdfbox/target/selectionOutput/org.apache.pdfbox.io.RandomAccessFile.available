@@ -1,0 +1,7 @@
+org.apache.pdfbox.io.RandomAccessFile.available : specialinvoke r0.<org.apache.pdfbox.io.RandomAccessFile: void checkClosed()>() >>>>>>>> org.apache.pdfbox.io.RandomAccessFile.available : $r1 = r0.<org.apache.pdfbox.io.RandomAccessFile: java.io.RandomAccessFile ras>
+org.apache.pdfbox.io.RandomAccessFile.available : $r1 = r0.<org.apache.pdfbox.io.RandomAccessFile: java.io.RandomAccessFile ras> >>>>>>>> org.apache.pdfbox.io.RandomAccessFile.available : $l0 = virtualinvoke $r1.<java.io.RandomAccessFile: long length()>()
+org.apache.pdfbox.io.RandomAccessFile.available : $l0 = virtualinvoke $r1.<java.io.RandomAccessFile: long length()>() >>>>>>>> org.apache.pdfbox.io.RandomAccessFile.available : $l1 = virtualinvoke r0.<org.apache.pdfbox.io.RandomAccessFile: long getPosition()>()
+org.apache.pdfbox.io.RandomAccessFile.available : $l1 = virtualinvoke r0.<org.apache.pdfbox.io.RandomAccessFile: long getPosition()>() >>>>>>>> org.apache.pdfbox.io.RandomAccessFile.available : $l2 = $l0 - $l1
+org.apache.pdfbox.io.RandomAccessFile.available : $l2 = $l0 - $l1 >>>>>>>> org.apache.pdfbox.io.RandomAccessFile.available : $l3 = staticinvoke <java.lang.Math: long min(long,long)>($l2, 2147483647L)
+org.apache.pdfbox.io.RandomAccessFile.available : $l3 = staticinvoke <java.lang.Math: long min(long,long)>($l2, 2147483647L) >>>>>>>> org.apache.pdfbox.io.RandomAccessFile.available : $i4 = (int) $l3
+org.apache.pdfbox.io.RandomAccessFile.available : $i4 = (int) $l3 >>>>>>>> org.apache.pdfbox.io.RandomAccessFile.available : return $i4

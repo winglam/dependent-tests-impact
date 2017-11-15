@@ -1,0 +1,166 @@
+org.apache.pdfbox.io.ScratchFileBuffer.isClosed : $r1 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: org.apache.pdfbox.io.ScratchFile pageHandler>
+org.apache.pdfbox.io.RandomAccessOutputStream.write : $r2 = r0.<org.apache.pdfbox.io.RandomAccessOutputStream: org.apache.pdfbox.io.RandomAccessWrite writer>
+org.apache.pdfbox.io.ScratchFileBuffer.checkClosed : $r2 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: org.apache.pdfbox.io.ScratchFile pageHandler>
+org.apache.pdfbox.io.ScratchFileBuffer.checkClosed : $r1 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: org.apache.pdfbox.io.ScratchFile pageHandler>
+org.apache.pdfbox.io.ScratchFile.markPagesAsFree : i5 = i0
+org.apache.pdfbox.io.ScratchFile.markPagesAsFree : exitmonitor $r4
+org.apache.pdfbox.io.ScratchFile.markPagesAsFree : $i4 = r0.<org.apache.pdfbox.io.ScratchFile: int inMemoryMaxPageCount>
+org.apache.pdfbox.io.ScratchFile.markPagesAsFree : i2 = r1[i5]
+org.apache.pdfbox.io.ScratchFile.markPagesAsFree : $r6 = r0.<org.apache.pdfbox.io.ScratchFile: java.util.BitSet freePages>
+org.apache.pdfbox.io.ScratchFile.markPagesAsFree : $r4 = r0.<org.apache.pdfbox.io.ScratchFile: java.util.BitSet freePages>
+org.apache.pdfbox.io.ScratchFile.markPagesAsFree : $r7 = r0.<org.apache.pdfbox.io.ScratchFile: byte[][] inMemoryPages>
+org.apache.pdfbox.io.ScratchFile.markPagesAsFree : if i2 < 0 goto i5 = i5 + 1
+org.apache.pdfbox.io.ScratchFile.createBuffer : $r1 = new org.apache.pdfbox.io.ScratchFileBuffer
+org.apache.pdfbox.io.ScratchFile.getMainMemoryOnlyInstance : $r1 = new org.apache.pdfbox.io.ScratchFile
+org.apache.pdfbox.cos.COSOutputStream.write : $r2 = r0.<org.apache.pdfbox.cos.COSOutputStream: java.io.ByteArrayOutputStream buffer>
+org.apache.pdfbox.io.RandomAccessInputStream.read : $r2 = r0.<org.apache.pdfbox.io.RandomAccessInputStream: org.apache.pdfbox.io.RandomAccessRead input>
+org.apache.pdfbox.io.RandomAccessInputStream.read : $r3 = r0.<org.apache.pdfbox.io.RandomAccessInputStream: org.apache.pdfbox.io.RandomAccessRead input>
+org.apache.pdfbox.io.RandomAccessInputStream.read : virtualinvoke r0.<org.apache.pdfbox.io.RandomAccessInputStream: void restorePosition()>()
+org.apache.pdfbox.io.RandomAccessInputStream.read : return -1
+org.apache.pdfbox.io.RandomAccessInputStream.read : return i2
+org.apache.pdfbox.io.RandomAccessInputStream.read : $l4 = r0.<org.apache.pdfbox.io.RandomAccessInputStream: long position>
+org.apache.pdfbox.cos.COSStream$1.close : specialinvoke r0.<java.io.FilterOutputStream: void close()>()
+org.apache.pdfbox.cos.COSStream$1.close : $r2 = r0.<org.apache.pdfbox.cos.COSStream$1: org.apache.pdfbox.cos.COSStream this$0>
+org.apache.pdfbox.cos.COSStream$1.close : $r5 = r0.<org.apache.pdfbox.cos.COSStream$1: org.apache.pdfbox.cos.COSStream this$0>
+org.apache.pdfbox.cos.COSStream.createOutputStream : $r8 = new org.apache.pdfbox.cos.COSOutputStream
+org.apache.pdfbox.cos.COSStream.createOutputStream : $r11 = new org.apache.pdfbox.cos.COSStream$1
+org.apache.pdfbox.cos.COSStream.createOutputStream : $z0 = r0.<org.apache.pdfbox.cos.COSStream: boolean isWriting>
+org.apache.pdfbox.cos.COSStream.createOutputStream : if r1 == null goto $r4 = r0.<org.apache.pdfbox.cos.COSStream: org.apache.pdfbox.io.ScratchFile scratchFile>
+org.apache.pdfbox.cos.COSStream.createOutputStream : r0.<org.apache.pdfbox.cos.COSStream: boolean isWriting> = 1
+org.apache.pdfbox.cos.COSStream.createOutputStream : specialinvoke r0.<org.apache.pdfbox.cos.COSStream: void checkClosed()>()
+org.apache.pdfbox.cos.COSStream.createOutputStream : $r4 = r0.<org.apache.pdfbox.cos.COSStream: org.apache.pdfbox.io.ScratchFile scratchFile>
+org.apache.pdfbox.cos.COSStream.createOutputStream : $r6 = new org.apache.pdfbox.io.RandomAccessOutputStream
+org.apache.pdfbox.cos.COSInteger.get : $r1 = <org.apache.pdfbox.cos.COSInteger: org.apache.pdfbox.cos.COSInteger[] STATIC>
+org.apache.pdfbox.cos.COSInteger.get : $b2 = -100L cmp l0
+org.apache.pdfbox.cos.COSInteger.get : $i4 = (int) l0
+org.apache.pdfbox.cos.COSInteger.get : $b3 = l0 cmp 256L
+org.apache.pdfbox.cos.COSInteger.get : $r3 = <org.apache.pdfbox.cos.COSInteger: org.apache.pdfbox.cos.COSInteger[] STATIC>
+org.apache.pdfbox.io.ScratchFileBuffer.length : $l0 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: long size>
+org.apache.pdfbox.io.ScratchFile.getNewPage : exitmonitor $r3
+org.apache.pdfbox.io.ScratchFile.getNewPage : $i0 = r0.<org.apache.pdfbox.io.ScratchFile: int pageCount>
+org.apache.pdfbox.io.ScratchFile.getNewPage : $i1 = i3 + 1
+org.apache.pdfbox.io.ScratchFile.getNewPage : if i3 >= 0 goto $r5 = r0.<org.apache.pdfbox.io.ScratchFile: java.util.BitSet freePages>
+org.apache.pdfbox.io.ScratchFile.getNewPage : $r3 = r0.<org.apache.pdfbox.io.ScratchFile: java.util.BitSet freePages>
+org.apache.pdfbox.io.ScratchFile.getNewPage : $r4 = r0.<org.apache.pdfbox.io.ScratchFile: java.util.BitSet freePages>
+org.apache.pdfbox.io.ScratchFile.getNewPage : $r5 = r0.<org.apache.pdfbox.io.ScratchFile: java.util.BitSet freePages>
+org.apache.pdfbox.io.IOUtils.toByteArray : $r3 = virtualinvoke $r2.<java.io.ByteArrayOutputStream: byte[] toByteArray()>()
+org.apache.pdfbox.io.IOUtils.toByteArray : $r2 = new java.io.ByteArrayOutputStream
+org.apache.pdfbox.io.IOUtils.toByteArray : staticinvoke <org.apache.pdfbox.io.IOUtils: long copy(java.io.InputStream,java.io.OutputStream)>(r0, $r2)
+org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : $z0 = r5 instanceof org.apache.pdfbox.cos.COSObject
+org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : return r5
+org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : $z1 = r5 instanceof org.apache.pdfbox.cos.COSNull
+org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : $r2 = r0.<org.apache.pdfbox.cos.COSDictionary: java.util.Map items>
+org.apache.pdfbox.io.MemoryUsageSetting.isStorageRestricted : $l0 = r0.<org.apache.pdfbox.io.MemoryUsageSetting: long maxStorageBytes>
+org.apache.pdfbox.cos.COSStream.access$000 : $r1 = r0.<org.apache.pdfbox.cos.COSStream: org.apache.pdfbox.io.RandomAccess randomAccess>
+org.apache.pdfbox.io.ScratchFileBuffer.close : r0.<org.apache.pdfbox.io.ScratchFileBuffer: byte[] currentPage> = null
+org.apache.pdfbox.io.ScratchFileBuffer.close : r0.<org.apache.pdfbox.io.ScratchFileBuffer: long size> = 0L
+org.apache.pdfbox.io.ScratchFileBuffer.close : r0.<org.apache.pdfbox.io.ScratchFileBuffer: int positionInPage> = 0
+org.apache.pdfbox.io.ScratchFileBuffer.close : r0.<org.apache.pdfbox.io.ScratchFileBuffer: org.apache.pdfbox.io.ScratchFile pageHandler> = null
+org.apache.pdfbox.io.ScratchFileBuffer.close : r0.<org.apache.pdfbox.io.ScratchFileBuffer: int currentPagePositionInPageIndexes> = -1
+org.apache.pdfbox.io.ScratchFileBuffer.close : r0.<org.apache.pdfbox.io.ScratchFileBuffer: int[] pageIndexes> = null
+org.apache.pdfbox.io.ScratchFileBuffer.close : r0.<org.apache.pdfbox.io.ScratchFileBuffer: long currentPageOffset> = 0L
+org.apache.pdfbox.io.ScratchFileBuffer.close : $r3 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: org.apache.pdfbox.io.ScratchFile pageHandler>
+org.apache.pdfbox.io.ScratchFileBuffer.close : $r1 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: org.apache.pdfbox.io.ScratchFile pageHandler>
+org.apache.pdfbox.cos.COSStream.getFilters : $r1 = <org.apache.pdfbox.cos.COSName: org.apache.pdfbox.cos.COSName FILTER>
+org.apache.pdfbox.io.ScratchFile.checkClosed : $z0 = r0.<org.apache.pdfbox.io.ScratchFile: boolean isClosed>
+org.apache.pdfbox.util.SmallMap.findKey : if r1 != null goto i1 = 0
+org.apache.pdfbox.util.SmallMap.findKey : return -1
+org.apache.pdfbox.util.SmallMap.findKey : $r3 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.util.SmallMap.findKey : i1 = 0
+org.apache.pdfbox.util.SmallMap.findKey : $z0 = virtualinvoke r0.<org.apache.pdfbox.util.SmallMap: boolean isEmpty()>()
+org.apache.pdfbox.cos.COSStream.access$102 : r0.<org.apache.pdfbox.cos.COSStream: boolean isWriting> = z0
+org.apache.pdfbox.io.ScratchFileBuffer.ensureAvailableBytesInPage : return 1
+org.apache.pdfbox.io.ScratchFileBuffer.ensureAvailableBytesInPage : $i1 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: int positionInPage>
+org.apache.pdfbox.cos.COSDictionary.setInt : $l1 = (long) i0
+org.apache.pdfbox.cos.COSStream$1.write : $r2 = r0.<org.apache.pdfbox.cos.COSStream$1: java.io.OutputStream out>
+org.apache.pdfbox.util.SmallMap.get : if i0 >= 0 goto $r2 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.util.SmallMap.get : i0 = specialinvoke r0.<org.apache.pdfbox.util.SmallMap: int findKey(java.lang.Object)>(r1)
+org.apache.pdfbox.io.MemoryUsageSetting.useMainMemory : $z0 = r0.<org.apache.pdfbox.io.MemoryUsageSetting: boolean useMainMemory>
+org.apache.pdfbox.util.SmallMap.put : $r5 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.util.SmallMap.put : if r1 == null goto $r4 = new java.lang.NullPointerException
+org.apache.pdfbox.util.SmallMap.put : return null
+org.apache.pdfbox.util.SmallMap.put : if r2 != null goto $r5 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.util.SmallMap.put : $r10 = newarray (java.lang.Object)[2]
+org.apache.pdfbox.io.ScratchFileBuffer.write : $r2 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: byte[] currentPage>
+org.apache.pdfbox.io.ScratchFileBuffer.write : if i19 <= 0 goto $l5 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: long currentPageOffset>
+org.apache.pdfbox.io.ScratchFileBuffer.write : $i0 = lengthof r1
+org.apache.pdfbox.io.ScratchFileBuffer.write : i20 = i20 + i2
+org.apache.pdfbox.io.ScratchFileBuffer.write : i19 = i1
+org.apache.pdfbox.io.ScratchFileBuffer.write : r0.<org.apache.pdfbox.io.ScratchFileBuffer: boolean currentPageContentChanged> = 1
+org.apache.pdfbox.io.ScratchFileBuffer.write : $l11 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: long currentPageOffset>
+org.apache.pdfbox.io.ScratchFileBuffer.write : $i14 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: int pageSize>
+org.apache.pdfbox.io.ScratchFileBuffer.write : specialinvoke r0.<org.apache.pdfbox.io.ScratchFileBuffer: boolean ensureAvailableBytesInPage(boolean)>(1)
+org.apache.pdfbox.io.ScratchFileBuffer.write : specialinvoke r0.<org.apache.pdfbox.io.ScratchFileBuffer: void checkClosed()>()
+org.apache.pdfbox.io.ScratchFileBuffer.write : $i17 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: int positionInPage>
+org.apache.pdfbox.io.ScratchFileBuffer.write : i20 = i0
+org.apache.pdfbox.io.ScratchFileBuffer.write : i19 = i19 - i2
+org.apache.pdfbox.io.ScratchFileBuffer.write : goto [?= staticinvoke <edu.washington.cs.dt.impact.util.Tracer: void trace(java.lang.String,java.lang.String)>("if i19 <= 0 goto $l5 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: long currentPageOffset>", "org.apache.pdfbox.io.ScratchFileBuffer.write")]
+org.apache.pdfbox.io.ScratchFileBuffer.write : $l5 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: long currentPageOffset>
+org.apache.pdfbox.cos.COSStream.close : $r1 = r0.<org.apache.pdfbox.cos.COSStream: org.apache.pdfbox.io.RandomAccess randomAccess>
+org.apache.pdfbox.cos.COSStream.close : $r2 = r0.<org.apache.pdfbox.cos.COSStream: org.apache.pdfbox.io.RandomAccess randomAccess>
+org.apache.pdfbox.cos.COSStream.ensureRandomAccessExists : $r1 = r0.<org.apache.pdfbox.cos.COSStream: org.apache.pdfbox.io.RandomAccess randomAccess>
+org.apache.pdfbox.util.SmallMap.isEmpty : $r1 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.cos.COSName.equals : $z0 = r1 instanceof org.apache.pdfbox.cos.COSName
+org.apache.pdfbox.cos.COSDictionary.setItem : $r3 = r0.<org.apache.pdfbox.cos.COSDictionary: java.util.Map items>
+org.apache.pdfbox.cos.COSDictionary.setItem : if r2 != null goto $r3 = r0.<org.apache.pdfbox.cos.COSDictionary: java.util.Map items>
+org.apache.pdfbox.io.RandomAccessInputStream.restorePosition : $r1 = r0.<org.apache.pdfbox.io.RandomAccessInputStream: org.apache.pdfbox.io.RandomAccessRead input>
+org.apache.pdfbox.io.ScratchFileBuffer.read : $r2 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: byte[] currentPage>
+org.apache.pdfbox.io.ScratchFileBuffer.read : i23 = i23 - i2
+org.apache.pdfbox.io.ScratchFileBuffer.read : i24 = i24 + i2
+org.apache.pdfbox.io.ScratchFileBuffer.read : return i24
+org.apache.pdfbox.io.ScratchFileBuffer.read : $i18 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: int pageSize>
+org.apache.pdfbox.io.ScratchFileBuffer.read : $l15 = (long) i1
+org.apache.pdfbox.io.ScratchFileBuffer.read : $z0 = specialinvoke r0.<org.apache.pdfbox.io.ScratchFileBuffer: boolean ensureAvailableBytesInPage(boolean)>(0)
+org.apache.pdfbox.io.ScratchFileBuffer.read : i24 = 0
+org.apache.pdfbox.io.ScratchFileBuffer.read : $i21 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: int positionInPage>
+org.apache.pdfbox.io.ScratchFileBuffer.read : specialinvoke r0.<org.apache.pdfbox.io.ScratchFileBuffer: void checkClosed()>()
+org.apache.pdfbox.io.ScratchFileBuffer.read : if i23 <= 0 goto return i24
+org.apache.pdfbox.io.ScratchFileBuffer.read : $l5 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: long currentPageOffset>
+org.apache.pdfbox.io.ScratchFileBuffer.read : i25 = i25 + i2
+org.apache.pdfbox.io.ScratchFileBuffer.read : i25 = i0
+org.apache.pdfbox.io.ScratchFileBuffer.read : goto [?= staticinvoke <edu.washington.cs.dt.impact.util.Tracer: void trace(java.lang.String,java.lang.String)>("if i23 <= 0 goto return i24", "org.apache.pdfbox.io.ScratchFileBuffer.read")]
+org.apache.pdfbox.io.ScratchFileBuffer.isEOF : $l2 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: long currentPageOffset>
+org.apache.pdfbox.io.ScratchFileBuffer.isEOF : specialinvoke r0.<org.apache.pdfbox.io.ScratchFileBuffer: void checkClosed()>()
+org.apache.pdfbox.cos.COSInputStream.create : r16 = r2
+org.apache.pdfbox.cos.COSInputStream.create : $r5 = new java.util.ArrayList
+org.apache.pdfbox.cos.COSInputStream.create : $z0 = interfaceinvoke r0.<java.util.List: boolean isEmpty()>()
+org.apache.pdfbox.cos.COSInputStream.create : $r6 = new org.apache.pdfbox.cos.COSInputStream
+org.apache.pdfbox.cos.COSStream.getFilterList : $r5 = new java.util.ArrayList
+org.apache.pdfbox.cos.COSStream.getFilterList : $z1 = r2 instanceof org.apache.pdfbox.cos.COSArray
+org.apache.pdfbox.cos.COSStream.getFilterList : return $r5
+org.apache.pdfbox.cos.COSStream.getFilterList : r2 = virtualinvoke r0.<org.apache.pdfbox.cos.COSStream: org.apache.pdfbox.cos.COSBase getFilters()>()
+org.apache.pdfbox.cos.COSStream.getFilterList : $z0 = r2 instanceof org.apache.pdfbox.cos.COSName
+org.apache.pdfbox.io.ScratchFileBuffer.seek : specialinvoke r0.<org.apache.pdfbox.io.ScratchFileBuffer: void checkClosed()>()
+org.apache.pdfbox.io.ScratchFileBuffer.seek : $b4 = l0 cmp 0L
+org.apache.pdfbox.io.ScratchFileBuffer.seek : $l23 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: long currentPageOffset>
+org.apache.pdfbox.io.ScratchFileBuffer.seek : $l26 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: long currentPageOffset>
+org.apache.pdfbox.io.ScratchFileBuffer.seek : $l2 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: long size>
+org.apache.pdfbox.io.ScratchFileBuffer.seek : $l5 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: long currentPageOffset>
+org.apache.pdfbox.io.ScratchFile.getPageSize : return 4096
+org.apache.pdfbox.cos.COSStream.createInputStream : $r4 = specialinvoke r0.<org.apache.pdfbox.cos.COSStream: java.util.List getFilterList()>()
+org.apache.pdfbox.cos.COSStream.createInputStream : $z0 = r0.<org.apache.pdfbox.cos.COSStream: boolean isWriting>
+org.apache.pdfbox.cos.COSStream.createInputStream : $r2 = new org.apache.pdfbox.io.RandomAccessInputStream
+org.apache.pdfbox.cos.COSStream.createInputStream : specialinvoke r0.<org.apache.pdfbox.cos.COSStream: void ensureRandomAccessExists(boolean)>(1)
+org.apache.pdfbox.cos.COSStream.createInputStream : specialinvoke r0.<org.apache.pdfbox.cos.COSStream: void checkClosed()>()
+org.apache.pdfbox.cos.COSOutputStream.close : $r2 = r0.<org.apache.pdfbox.cos.COSOutputStream: java.util.List filters>
+org.apache.pdfbox.cos.COSOutputStream.close : specialinvoke r0.<java.io.FilterOutputStream: void close()>()
+org.apache.pdfbox.cos.COSOutputStream.close : $r4 = r0.<org.apache.pdfbox.cos.COSOutputStream: java.io.OutputStream out>
+org.apache.pdfbox.io.IOUtils.copy : return l2
+org.apache.pdfbox.io.IOUtils.copy : $l1 = (long) $i0
+org.apache.pdfbox.io.IOUtils.copy : l2 = 0L
+org.apache.pdfbox.io.IOUtils.copy : $i0 = virtualinvoke r0.<java.io.InputStream: int read(byte[])>(r2)
+org.apache.pdfbox.io.IOUtils.copy : virtualinvoke r1.<java.io.OutputStream: void write(byte[],int,int)>(r2, 0, $i0)
+org.apache.pdfbox.io.IOUtils.copy : r2 = newarray (byte)[4096]
+org.apache.pdfbox.io.ScratchFileBuffer.addPage : $r8 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: org.apache.pdfbox.io.ScratchFile pageHandler>
+org.apache.pdfbox.io.ScratchFileBuffer.addPage : r0.<org.apache.pdfbox.io.ScratchFileBuffer: int positionInPage> = 0
+org.apache.pdfbox.io.ScratchFileBuffer.addPage : $i11 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: int pageCount>
+org.apache.pdfbox.io.ScratchFileBuffer.addPage : $i10 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: int pageCount>
+org.apache.pdfbox.io.ScratchFileBuffer.addPage : $i16 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: int pageCount>
+org.apache.pdfbox.io.ScratchFileBuffer.addPage : $i18 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: int pageSize>
+org.apache.pdfbox.io.ScratchFileBuffer.addPage : $r9 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: int[] pageIndexes>
+org.apache.pdfbox.io.ScratchFileBuffer.addPage : $i0 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: int pageCount>
+org.apache.pdfbox.io.MemoryUsageSetting.isMainMemoryRestricted : $l0 = r0.<org.apache.pdfbox.io.MemoryUsageSetting: long maxMainMemoryBytes>
+org.apache.pdfbox.io.MemoryUsageSetting.setupMainMemoryOnly : $r0 = new org.apache.pdfbox.io.MemoryUsageSetting
+org.apache.pdfbox.io.MemoryUsageSetting.setupMainMemoryOnly : $r0 = staticinvoke <org.apache.pdfbox.io.MemoryUsageSetting: org.apache.pdfbox.io.MemoryUsageSetting setupMainMemoryOnly(long)>(-1L)
+org.apache.pdfbox.cos.COSStream.checkClosed : $r1 = r0.<org.apache.pdfbox.cos.COSStream: org.apache.pdfbox.io.RandomAccess randomAccess>
+org.apache.pdfbox.cos.COSStream.checkClosed : $r2 = r0.<org.apache.pdfbox.cos.COSStream: org.apache.pdfbox.io.RandomAccess randomAccess>

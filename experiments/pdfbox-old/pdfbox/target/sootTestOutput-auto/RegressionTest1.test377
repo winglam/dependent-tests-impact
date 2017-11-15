@@ -1,0 +1,34 @@
+org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : $z0 = r5 instanceof org.apache.pdfbox.cos.COSObject
+org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : return r5
+org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : $z1 = r5 instanceof org.apache.pdfbox.cos.COSNull
+org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : $r2 = r0.<org.apache.pdfbox.cos.COSDictionary: java.util.Map items>
+org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : $r2 = staticinvoke <org.apache.pdfbox.cos.COSName: org.apache.pdfbox.cos.COSName getPDFName(java.lang.String)>(r1)
+org.apache.pdfbox.pdmodel.interactive.action.PDAnnotationAdditionalActions.setD : $r3 = r0.<org.apache.pdfbox.pdmodel.interactive.action.PDAnnotationAdditionalActions: org.apache.pdfbox.cos.COSDictionary actions>
+org.apache.pdfbox.cos.COSDictionary.removeItem : $r2 = r0.<org.apache.pdfbox.cos.COSDictionary: java.util.Map items>
+org.apache.pdfbox.util.SmallMap.isEmpty : $r1 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.cos.COSDictionary.setItem : virtualinvoke r0.<org.apache.pdfbox.cos.COSDictionary: void removeItem(org.apache.pdfbox.cos.COSName)>(r1)
+org.apache.pdfbox.cos.COSDictionary.setItem : r3 = null
+org.apache.pdfbox.cos.COSDictionary.setItem : if r2 == null goto virtualinvoke r0.<org.apache.pdfbox.cos.COSDictionary: void setItem(org.apache.pdfbox.cos.COSName,org.apache.pdfbox.cos.COSBase)>(r1, r3)
+org.apache.pdfbox.cos.COSDictionary.setItem : if r2 != null goto $r3 = r0.<org.apache.pdfbox.cos.COSDictionary: java.util.Map items>
+org.apache.pdfbox.cos.COSDictionary.setItem : virtualinvoke r0.<org.apache.pdfbox.cos.COSDictionary: void setItem(org.apache.pdfbox.cos.COSName,org.apache.pdfbox.cos.COSBase)>(r1, r3)
+org.apache.pdfbox.util.SmallMap.get : if i0 >= 0 goto $r2 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.util.SmallMap.get : i0 = specialinvoke r0.<org.apache.pdfbox.util.SmallMap: int findKey(java.lang.Object)>(r1)
+org.apache.pdfbox.pdmodel.interactive.action.PDAnnotationAdditionalActions.getU : return r4
+org.apache.pdfbox.pdmodel.interactive.action.PDAnnotationAdditionalActions.getU : r4 = null
+org.apache.pdfbox.pdmodel.interactive.action.PDAnnotationAdditionalActions.getU : if r1 == null goto return r4
+org.apache.pdfbox.pdmodel.interactive.action.PDAnnotationAdditionalActions.getU : $r2 = r0.<org.apache.pdfbox.pdmodel.interactive.action.PDAnnotationAdditionalActions: org.apache.pdfbox.cos.COSDictionary actions>
+org.apache.pdfbox.util.SmallMap.findKey : $z0 = virtualinvoke r0.<org.apache.pdfbox.util.SmallMap: boolean isEmpty()>()
+org.apache.pdfbox.util.SmallMap.remove : if i0 >= 0 goto $r4 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.util.SmallMap.remove : return null
+org.apache.pdfbox.util.SmallMap.remove : i0 = specialinvoke r0.<org.apache.pdfbox.util.SmallMap: int findKey(java.lang.Object)>(r1)
+org.apache.pdfbox.cos.COSName.getPDFName : $r5 = new org.apache.pdfbox.cos.COSName
+org.apache.pdfbox.cos.COSName.getPDFName : $r1 = <org.apache.pdfbox.cos.COSName: java.util.Map commonNameMap>
+org.apache.pdfbox.cos.COSName.getPDFName : return r6
+org.apache.pdfbox.cos.COSName.getPDFName : r6 = null
+org.apache.pdfbox.cos.COSName.getPDFName : $r3 = <org.apache.pdfbox.cos.COSName: java.util.Map nameMap>
+org.apache.pdfbox.cos.COSName.getPDFName : if r0 == null goto return r6
+org.apache.pdfbox.cos.COSName.getPDFName : if r6 != null goto return r6
+org.apache.pdfbox.pdmodel.interactive.action.PDAnnotationAdditionalActions.getPO : return r4
+org.apache.pdfbox.pdmodel.interactive.action.PDAnnotationAdditionalActions.getPO : r4 = null
+org.apache.pdfbox.pdmodel.interactive.action.PDAnnotationAdditionalActions.getPO : if r1 == null goto return r4
+org.apache.pdfbox.pdmodel.interactive.action.PDAnnotationAdditionalActions.getPO : $r2 = r0.<org.apache.pdfbox.pdmodel.interactive.action.PDAnnotationAdditionalActions: org.apache.pdfbox.cos.COSDictionary actions>
