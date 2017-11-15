@@ -1,0 +1,104 @@
+org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : $z0 = r5 instanceof org.apache.pdfbox.cos.COSObject
+org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : return r5
+org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : $z1 = r5 instanceof org.apache.pdfbox.cos.COSNull
+org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : $r2 = r0.<org.apache.pdfbox.cos.COSDictionary: java.util.Map items>
+org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : $r2 = staticinvoke <org.apache.pdfbox.cos.COSName: org.apache.pdfbox.cos.COSName getPDFName(java.lang.String)>(r1)
+org.apache.pdfbox.pdmodel.interactive.action.PDFormFieldAdditionalActions.getC : return r5
+org.apache.pdfbox.pdmodel.interactive.action.PDFormFieldAdditionalActions.getC : if r1 == null goto return r5
+org.apache.pdfbox.pdmodel.interactive.action.PDFormFieldAdditionalActions.getC : r5 = staticinvoke <org.apache.pdfbox.pdmodel.interactive.action.PDActionFactory: org.apache.pdfbox.pdmodel.interactive.action.PDAction createAction(org.apache.pdfbox.cos.COSDictionary)>(r1)
+org.apache.pdfbox.pdmodel.interactive.action.PDFormFieldAdditionalActions.getC : r5 = null
+org.apache.pdfbox.pdmodel.interactive.action.PDFormFieldAdditionalActions.getC : $r3 = r0.<org.apache.pdfbox.pdmodel.interactive.action.PDFormFieldAdditionalActions: org.apache.pdfbox.cos.COSDictionary actions>
+org.apache.pdfbox.pdmodel.interactive.action.PDAction.setSubType : $r3 = r0.<org.apache.pdfbox.pdmodel.interactive.action.PDAction: org.apache.pdfbox.cos.COSDictionary action>
+org.apache.pdfbox.pdmodel.interactive.action.PDAction.getCOSObject : $r1 = virtualinvoke r0.<org.apache.pdfbox.pdmodel.interactive.action.PDAction: org.apache.pdfbox.cos.COSDictionary getCOSObject()>()
+org.apache.pdfbox.pdmodel.interactive.action.PDAction.getCOSObject : $r1 = r0.<org.apache.pdfbox.pdmodel.interactive.action.PDAction: org.apache.pdfbox.cos.COSDictionary action>
+org.apache.pdfbox.pdmodel.interactive.action.PDFormFieldAdditionalActions.getK : return r5
+org.apache.pdfbox.pdmodel.interactive.action.PDFormFieldAdditionalActions.getK : if r1 == null goto return r5
+org.apache.pdfbox.pdmodel.interactive.action.PDFormFieldAdditionalActions.getK : r5 = null
+org.apache.pdfbox.pdmodel.interactive.action.PDFormFieldAdditionalActions.getK : $r3 = r0.<org.apache.pdfbox.pdmodel.interactive.action.PDFormFieldAdditionalActions: org.apache.pdfbox.cos.COSDictionary actions>
+org.apache.pdfbox.pdmodel.interactive.action.PDAnnotationAdditionalActions.getE : return r4
+org.apache.pdfbox.pdmodel.interactive.action.PDAnnotationAdditionalActions.getE : r4 = null
+org.apache.pdfbox.pdmodel.interactive.action.PDAnnotationAdditionalActions.getE : if r1 == null goto return r4
+org.apache.pdfbox.pdmodel.interactive.action.PDAnnotationAdditionalActions.getE : $r2 = r0.<org.apache.pdfbox.pdmodel.interactive.action.PDAnnotationAdditionalActions: org.apache.pdfbox.cos.COSDictionary actions>
+org.apache.pdfbox.pdmodel.interactive.action.PDFormFieldAdditionalActions.setC : $r3 = r0.<org.apache.pdfbox.pdmodel.interactive.action.PDFormFieldAdditionalActions: org.apache.pdfbox.cos.COSDictionary actions>
+org.apache.pdfbox.cos.COSName.equals : $z0 = r1 instanceof org.apache.pdfbox.cos.COSName
+org.apache.pdfbox.pdmodel.interactive.action.PDFormFieldAdditionalActions.setF : $r3 = r0.<org.apache.pdfbox.pdmodel.interactive.action.PDFormFieldAdditionalActions: org.apache.pdfbox.cos.COSDictionary actions>
+org.apache.pdfbox.pdmodel.interactive.action.PDActionSound.getVolume : return 1.0F
+org.apache.pdfbox.pdmodel.interactive.action.PDActionSound.getVolume : $r3 = r0.<org.apache.pdfbox.pdmodel.interactive.action.PDActionSound: org.apache.pdfbox.cos.COSDictionary action>
+org.apache.pdfbox.pdmodel.interactive.action.PDActionSound.getVolume : $z0 = r1 instanceof org.apache.pdfbox.cos.COSNumber
+org.apache.pdfbox.pdmodel.interactive.form.PDField.getCOSObject : $r1 = r0.<org.apache.pdfbox.pdmodel.interactive.form.PDField: org.apache.pdfbox.cos.COSDictionary dictionary>
+org.apache.pdfbox.util.SmallMap.isEmpty : $r1 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.cos.COSDictionary.setItem : r3 = interfaceinvoke r2.<org.apache.pdfbox.pdmodel.common.COSObjectable: org.apache.pdfbox.cos.COSBase getCOSObject()>()
+org.apache.pdfbox.cos.COSDictionary.setItem : $r3 = r0.<org.apache.pdfbox.cos.COSDictionary: java.util.Map items>
+org.apache.pdfbox.cos.COSDictionary.setItem : r3 = null
+org.apache.pdfbox.cos.COSDictionary.setItem : $r3 = staticinvoke <org.apache.pdfbox.cos.COSName: org.apache.pdfbox.cos.COSName getPDFName(java.lang.String)>(r1)
+org.apache.pdfbox.cos.COSDictionary.setItem : if r2 == null goto virtualinvoke r0.<org.apache.pdfbox.cos.COSDictionary: void setItem(org.apache.pdfbox.cos.COSName,org.apache.pdfbox.cos.COSBase)>(r1, r3)
+org.apache.pdfbox.cos.COSDictionary.setItem : if r2 != null goto $r3 = r0.<org.apache.pdfbox.cos.COSDictionary: java.util.Map items>
+org.apache.pdfbox.cos.COSDictionary.setItem : virtualinvoke r0.<org.apache.pdfbox.cos.COSDictionary: void setItem(org.apache.pdfbox.cos.COSName,org.apache.pdfbox.cos.COSBase)>(r1, r3)
+org.apache.pdfbox.pdmodel.interactive.action.PDActionFactory.createAction : $r3 = "JavaScript"
+org.apache.pdfbox.pdmodel.interactive.action.PDActionFactory.createAction : $r4 = "GoTo"
+org.apache.pdfbox.pdmodel.interactive.action.PDActionFactory.createAction : $r2 = <org.apache.pdfbox.cos.COSName: org.apache.pdfbox.cos.COSName S>
+org.apache.pdfbox.pdmodel.interactive.action.PDActionFactory.createAction : $r6 = "GoToR"
+org.apache.pdfbox.pdmodel.interactive.action.PDActionFactory.createAction : $r9 = "Sound"
+org.apache.pdfbox.pdmodel.interactive.action.PDActionFactory.createAction : $r22 = new org.apache.pdfbox.pdmodel.interactive.action.PDActionSound
+org.apache.pdfbox.pdmodel.interactive.action.PDActionFactory.createAction : return r29
+org.apache.pdfbox.pdmodel.interactive.action.PDActionFactory.createAction : if r0 == null goto return r29
+org.apache.pdfbox.pdmodel.interactive.action.PDActionFactory.createAction : $r5 = "Launch"
+org.apache.pdfbox.pdmodel.interactive.action.PDActionFactory.createAction : r29 = null
+org.apache.pdfbox.pdmodel.interactive.action.PDActionFactory.createAction : $r7 = "URI"
+org.apache.pdfbox.pdmodel.interactive.action.PDActionFactory.createAction : $r8 = "Named"
+org.apache.pdfbox.cos.COSDictionary.setName : r3 = null
+org.apache.pdfbox.cos.COSDictionary.setName : if r2 == null goto virtualinvoke r0.<org.apache.pdfbox.cos.COSDictionary: void setItem(org.apache.pdfbox.cos.COSName,org.apache.pdfbox.cos.COSBase)>(r1, r3)
+org.apache.pdfbox.cos.COSDictionary.setName : r3 = staticinvoke <org.apache.pdfbox.cos.COSName: org.apache.pdfbox.cos.COSName getPDFName(java.lang.String)>(r2)
+org.apache.pdfbox.cos.COSDictionary.setName : virtualinvoke r0.<org.apache.pdfbox.cos.COSDictionary: void setItem(org.apache.pdfbox.cos.COSName,org.apache.pdfbox.cos.COSBase)>(r1, r3)
+org.apache.pdfbox.cos.COSFloat.removeNullDigits : $i0 = virtualinvoke r1.<java.lang.String: int indexOf(int)>(46)
+org.apache.pdfbox.cos.COSFloat.removeNullDigits : $z0 = virtualinvoke r1.<java.lang.String: boolean endsWith(java.lang.String)>(".0")
+org.apache.pdfbox.util.SmallMap.get : if i0 >= 0 goto $r2 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.util.SmallMap.get : i0 = specialinvoke r0.<org.apache.pdfbox.util.SmallMap: int findKey(java.lang.Object)>(r1)
+org.apache.pdfbox.pdmodel.interactive.action.PDAnnotationAdditionalActions.setPV : $r2 = r0.<org.apache.pdfbox.pdmodel.interactive.action.PDAnnotationAdditionalActions: org.apache.pdfbox.cos.COSDictionary actions>
+org.apache.pdfbox.pdmodel.interactive.action.PDAction.setType : $r3 = r0.<org.apache.pdfbox.pdmodel.interactive.action.PDAction: org.apache.pdfbox.cos.COSDictionary action>
+org.apache.pdfbox.pdmodel.common.filespecification.PDSimpleFileSpecification.getCOSObject : $r1 = r0.<org.apache.pdfbox.pdmodel.common.filespecification.PDSimpleFileSpecification: org.apache.pdfbox.cos.COSString file>
+org.apache.pdfbox.util.SmallMap.findKey : if r1 != null goto i1 = 0
+org.apache.pdfbox.util.SmallMap.findKey : return -1
+org.apache.pdfbox.util.SmallMap.findKey : $r3 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.util.SmallMap.findKey : return i1
+org.apache.pdfbox.util.SmallMap.findKey : i1 = 0
+org.apache.pdfbox.util.SmallMap.findKey : $z0 = virtualinvoke r0.<org.apache.pdfbox.util.SmallMap: boolean isEmpty()>()
+org.apache.pdfbox.pdmodel.interactive.action.PDActionRemoteGoTo.setFile : $r3 = r0.<org.apache.pdfbox.pdmodel.interactive.action.PDActionRemoteGoTo: org.apache.pdfbox.cos.COSDictionary action>
+org.apache.pdfbox.cos.COSBoolean.getBoolean : if z0 == 0 goto $r0 = <org.apache.pdfbox.cos.COSBoolean: org.apache.pdfbox.cos.COSBoolean FALSE>
+org.apache.pdfbox.cos.COSDictionary.setBoolean : $r2 = staticinvoke <org.apache.pdfbox.cos.COSName: org.apache.pdfbox.cos.COSName getPDFName(java.lang.String)>(r1)
+org.apache.pdfbox.pdmodel.interactive.action.PDActionRemoteGoTo.setOpenInNewWindow : $r1 = r0.<org.apache.pdfbox.pdmodel.interactive.action.PDActionRemoteGoTo: org.apache.pdfbox.cos.COSDictionary action>
+org.apache.pdfbox.cos.COSDictionary.getNameAsString : return r5
+org.apache.pdfbox.cos.COSDictionary.getNameAsString : r2 = virtualinvoke r0.<org.apache.pdfbox.cos.COSDictionary: org.apache.pdfbox.cos.COSBase getDictionaryObject(org.apache.pdfbox.cos.COSName)>(r1)
+org.apache.pdfbox.cos.COSDictionary.getNameAsString : r5 = null
+org.apache.pdfbox.cos.COSDictionary.getNameAsString : $r4 = (org.apache.pdfbox.cos.COSName) r2
+org.apache.pdfbox.cos.COSDictionary.getNameAsString : $z0 = r2 instanceof org.apache.pdfbox.cos.COSName
+org.apache.pdfbox.cos.COSName.getPDFName : $r1 = <org.apache.pdfbox.cos.COSName: java.util.Map commonNameMap>
+org.apache.pdfbox.cos.COSName.getPDFName : return r6
+org.apache.pdfbox.cos.COSName.getPDFName : r6 = null
+org.apache.pdfbox.cos.COSName.getPDFName : $r3 = <org.apache.pdfbox.cos.COSName: java.util.Map nameMap>
+org.apache.pdfbox.cos.COSName.getPDFName : if r0 == null goto return r6
+org.apache.pdfbox.cos.COSName.getPDFName : if r6 != null goto return r6
+org.apache.pdfbox.pdmodel.interactive.action.PDActionSound.setVolume : $r3 = r0.<org.apache.pdfbox.pdmodel.interactive.action.PDActionSound: org.apache.pdfbox.cos.COSDictionary action>
+org.apache.pdfbox.pdmodel.interactive.action.PDActionSound.setVolume : $b0 = f0 cmpg -1.0F
+org.apache.pdfbox.pdmodel.interactive.action.PDActionSound.setVolume : $b1 = f0 cmpl 1.0F
+org.apache.pdfbox.util.SmallMap.put : $r5 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.util.SmallMap.put : $r7 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.util.SmallMap.put : $r8 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.util.SmallMap.put : $r9 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.util.SmallMap.put : if r2 != null goto $r5 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.util.SmallMap.put : $i4 = i5 + 1
+org.apache.pdfbox.util.SmallMap.put : r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr> = r3
+org.apache.pdfbox.util.SmallMap.put : r3[i5] = r1
+org.apache.pdfbox.util.SmallMap.put : $i3 = i5 + 2
+org.apache.pdfbox.util.SmallMap.put : if r1 == null goto $r4 = new java.lang.NullPointerException
+org.apache.pdfbox.util.SmallMap.put : return null
+org.apache.pdfbox.util.SmallMap.put : $r10 = newarray (java.lang.Object)[2]
+org.apache.pdfbox.util.SmallMap.put : i0 = specialinvoke r0.<org.apache.pdfbox.util.SmallMap: int findKey(java.lang.Object)>(r1)
+org.apache.pdfbox.util.SmallMap.put : if i0 >= 0 goto $r6 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.util.SmallMap.put : return r11
+org.apache.pdfbox.util.SmallMap.put : $r6 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.cos.COSDictionary.setFloat : virtualinvoke r0.<org.apache.pdfbox.cos.COSDictionary: void setItem(org.apache.pdfbox.cos.COSName,org.apache.pdfbox.cos.COSBase)>(r1, $r3)
+org.apache.pdfbox.cos.COSDictionary.setFloat : $r3 = new org.apache.pdfbox.cos.COSFloat
+org.apache.pdfbox.cos.COSName.getName : $r1 = r0.<org.apache.pdfbox.cos.COSName: java.lang.String name>
+org.apache.pdfbox.cos.PDFDocEncoding.getBytes : r2 = virtualinvoke r0.<java.lang.String: char[] toCharArray()>()
+org.apache.pdfbox.cos.PDFDocEncoding.getBytes : $r4 = new java.io.ByteArrayOutputStream

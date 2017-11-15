@@ -1,0 +1,11 @@
+org.apache.pdfbox.pdmodel.graphics.color.PDColorSpace.create : if r1 == null goto $r67 = <org.apache.pdfbox.cos.COSName: org.apache.pdfbox.cos.COSName DEVICECMYK>
+org.apache.pdfbox.pdmodel.graphics.color.PDColorSpace.create : $r37 = <org.apache.pdfbox.cos.COSName: org.apache.pdfbox.cos.COSName PATTERN>
+org.apache.pdfbox.pdmodel.graphics.color.PDColorSpace.create : $r38 = new org.apache.pdfbox.pdmodel.MissingResourceException
+org.apache.pdfbox.pdmodel.graphics.color.PDColorSpace.create : r65 = (org.apache.pdfbox.cos.COSName) r0
+org.apache.pdfbox.pdmodel.graphics.color.PDColorSpace.create : $r35 = <org.apache.pdfbox.cos.COSName: org.apache.pdfbox.cos.COSName DEVICERGB>
+org.apache.pdfbox.pdmodel.graphics.color.PDColorSpace.create : $z2 = r0 instanceof org.apache.pdfbox.cos.COSName
+org.apache.pdfbox.pdmodel.graphics.color.PDColorSpace.create : $z1 = r0 instanceof org.apache.pdfbox.cos.COSObject
+org.apache.pdfbox.pdmodel.graphics.color.PDColorSpace.create : $r2 = staticinvoke <org.apache.pdfbox.pdmodel.graphics.color.PDColorSpace: org.apache.pdfbox.pdmodel.graphics.color.PDColorSpace create(org.apache.pdfbox.cos.COSBase,org.apache.pdfbox.pdmodel.PDResources,boolean)>(r0, r1, 0)
+org.apache.pdfbox.pdmodel.graphics.color.PDColorSpace.create : if r1 == null goto $r38 = new org.apache.pdfbox.pdmodel.MissingResourceException
+org.apache.pdfbox.pdmodel.graphics.color.PDColorSpace.create : $r36 = <org.apache.pdfbox.cos.COSName: org.apache.pdfbox.cos.COSName DEVICEGRAY>
+org.apache.pdfbox.cos.COSName.getName : $r1 = r0.<org.apache.pdfbox.cos.COSName: java.lang.String name>

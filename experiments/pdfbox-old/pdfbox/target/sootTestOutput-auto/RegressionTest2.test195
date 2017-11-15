@@ -1,0 +1,11 @@
+org.apache.pdfbox.util.Hex.getString : b1 = r0[i8]
+org.apache.pdfbox.util.Hex.getString : $r5 = <org.apache.pdfbox.util.Hex: char[] HEX_CHARS>
+org.apache.pdfbox.util.Hex.getString : $r3 = new java.lang.StringBuilder
+org.apache.pdfbox.util.Hex.getString : i0 = lengthof r0
+org.apache.pdfbox.util.Hex.getLowNibble : $b1 = b0 & 15
+org.apache.pdfbox.io.RandomAccessBuffer.isClosed : $r1 = r0.<org.apache.pdfbox.io.RandomAccessBuffer: byte[] currentBuffer>
+org.apache.pdfbox.util.Hex.getHighNibble : $s1 = b0 & 240
+org.apache.pdfbox.io.RandomAccessBuffer.read : return 0
+org.apache.pdfbox.io.RandomAccessBuffer.read : specialinvoke r0.<org.apache.pdfbox.io.RandomAccessBuffer: void checkClosed()>()
+org.apache.pdfbox.io.RandomAccessBuffer.read : $l3 = r0.<org.apache.pdfbox.io.RandomAccessBuffer: long pointer>
+org.apache.pdfbox.io.RandomAccessBuffer.checkClosed : $r1 = r0.<org.apache.pdfbox.io.RandomAccessBuffer: byte[] currentBuffer>

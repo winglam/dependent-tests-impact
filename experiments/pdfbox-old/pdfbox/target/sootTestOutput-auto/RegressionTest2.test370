@@ -1,0 +1,36 @@
+org.apache.pdfbox.pdmodel.fdf.FDFAnnotationLine.getLeaderOffset : $r2 = r0.<org.apache.pdfbox.pdmodel.fdf.FDFAnnotationLine: org.apache.pdfbox.cos.COSDictionary annot>
+org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : $z0 = r5 instanceof org.apache.pdfbox.cos.COSObject
+org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : return r5
+org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : $z1 = r5 instanceof org.apache.pdfbox.cos.COSNull
+org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : $r2 = r0.<org.apache.pdfbox.cos.COSDictionary: java.util.Map items>
+org.apache.pdfbox.cos.COSDictionary.getFloat : $f0 = virtualinvoke r0.<org.apache.pdfbox.cos.COSDictionary: float getFloat(org.apache.pdfbox.cos.COSName,float)>(r1, -1.0F)
+org.apache.pdfbox.cos.COSDictionary.getFloat : r2 = virtualinvoke r0.<org.apache.pdfbox.cos.COSDictionary: org.apache.pdfbox.cos.COSBase getDictionaryObject(org.apache.pdfbox.cos.COSName)>(r1)
+org.apache.pdfbox.cos.COSDictionary.getFloat : $z0 = r2 instanceof org.apache.pdfbox.cos.COSNumber
+org.apache.pdfbox.cos.COSDictionary.getFloat : return f1
+org.apache.pdfbox.cos.COSDictionary.getFloat : f1 = f0
+org.apache.pdfbox.cos.COSArray.add : $r2 = r0.<org.apache.pdfbox.cos.COSArray: java.util.List objects>
+org.apache.pdfbox.pdmodel.fdf.FDFAnnotationTextMarkup.setCoords : $r3 = new org.apache.pdfbox.cos.COSArray
+org.apache.pdfbox.pdmodel.fdf.FDFAnnotationTextMarkup.setCoords : virtualinvoke $r3.<org.apache.pdfbox.cos.COSArray: void setFloatArray(float[])>(r1)
+org.apache.pdfbox.pdmodel.fdf.FDFAnnotationTextMarkup.setCoords : $r5 = r0.<org.apache.pdfbox.pdmodel.fdf.FDFAnnotationTextMarkup: org.apache.pdfbox.cos.COSDictionary annot>
+org.apache.pdfbox.cos.COSArray.clear : $r1 = r0.<org.apache.pdfbox.cos.COSArray: java.util.List objects>
+org.apache.pdfbox.util.SmallMap.access$000 : $r1 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.util.SmallMap$SmallMapEntry.getValue : $r1 = r0.<org.apache.pdfbox.util.SmallMap$SmallMapEntry: org.apache.pdfbox.util.SmallMap this$0>
+org.apache.pdfbox.cos.COSName.equals : $z0 = r1 instanceof org.apache.pdfbox.cos.COSName
+org.apache.pdfbox.cos.COSName.hashCode : $i0 = r0.<org.apache.pdfbox.cos.COSName: int hashCode>
+org.apache.pdfbox.pdmodel.interactive.form.PDField.getCOSObject : $r1 = r0.<org.apache.pdfbox.pdmodel.interactive.form.PDField: org.apache.pdfbox.cos.COSDictionary dictionary>
+org.apache.pdfbox.pdmodel.fdf.FDFAnnotationLine.setLine : $r3 = new org.apache.pdfbox.cos.COSArray
+org.apache.pdfbox.pdmodel.fdf.FDFAnnotationLine.setLine : virtualinvoke $r3.<org.apache.pdfbox.cos.COSArray: void setFloatArray(float[])>(r1)
+org.apache.pdfbox.pdmodel.fdf.FDFAnnotationLine.setLine : $r5 = r0.<org.apache.pdfbox.pdmodel.fdf.FDFAnnotationLine: org.apache.pdfbox.cos.COSDictionary annot>
+org.apache.pdfbox.cos.COSDictionary.setItem : $r3 = r0.<org.apache.pdfbox.cos.COSDictionary: java.util.Map items>
+org.apache.pdfbox.cos.COSDictionary.setItem : if r2 != null goto $r3 = r0.<org.apache.pdfbox.cos.COSDictionary: java.util.Map items>
+org.apache.pdfbox.util.SmallMap.isEmpty : $r1 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.cos.COSDictionary.setName : r3 = null
+org.apache.pdfbox.cos.COSDictionary.setName : if r2 == null goto virtualinvoke r0.<org.apache.pdfbox.cos.COSDictionary: void setItem(org.apache.pdfbox.cos.COSName,org.apache.pdfbox.cos.COSBase)>(r1, r3)
+org.apache.pdfbox.cos.COSDictionary.setName : r3 = staticinvoke <org.apache.pdfbox.cos.COSName: org.apache.pdfbox.cos.COSName getPDFName(java.lang.String)>(r2)
+org.apache.pdfbox.cos.COSDictionary.setName : virtualinvoke r0.<org.apache.pdfbox.cos.COSDictionary: void setItem(org.apache.pdfbox.cos.COSName,org.apache.pdfbox.cos.COSBase)>(r1, r3)
+org.apache.pdfbox.cos.COSFloat.removeNullDigits : $i0 = virtualinvoke r1.<java.lang.String: int indexOf(int)>(46)
+org.apache.pdfbox.cos.COSFloat.removeNullDigits : $z0 = virtualinvoke r1.<java.lang.String: boolean endsWith(java.lang.String)>(".0")
+org.apache.pdfbox.util.SmallMap.get : if i0 >= 0 goto $r2 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.util.SmallMap.get : i0 = specialinvoke r0.<org.apache.pdfbox.util.SmallMap: int findKey(java.lang.Object)>(r1)
+org.apache.pdfbox.util.SmallMap$SmallMapEntry.getKey : $r1 = r0.<org.apache.pdfbox.util.SmallMap$SmallMapEntry: org.apache.pdfbox.util.SmallMap this$0>
+org.apache.pdfbox.util.SmallMap.size : $r1 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>

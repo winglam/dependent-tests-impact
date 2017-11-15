@@ -1,0 +1,168 @@
+org.apache.pdfbox.cos.COSNumber.get : $i0 = virtualinvoke r0.<java.lang.String: int length()>() >>>>>>>> org.apache.pdfbox.cos.COSNumber.get : if $i0 != 1
+org.apache.pdfbox.cos.COSNumber.get : if $i0 != 1 >>>>>>>> org.apache.pdfbox.cos.COSNumber.get : $i1 = virtualinvoke r0.<java.lang.String: int indexOf(int)>(46)
+org.apache.pdfbox.cos.COSNumber.get : $i1 = virtualinvoke r0.<java.lang.String: int indexOf(int)>(46) >>>>>>>> org.apache.pdfbox.cos.COSNumber.get : if $i1 != -1
+org.apache.pdfbox.cos.COSNumber.get : if $i1 != -1 >>>>>>>> org.apache.pdfbox.cos.COSNumber.get : $r1 = new org.apache.pdfbox.cos.COSFloat
+org.apache.pdfbox.cos.COSNumber.get : $r1 = new org.apache.pdfbox.cos.COSFloat >>>>>>>> org.apache.pdfbox.cos.COSNumber.get : specialinvoke $r1.<org.apache.pdfbox.cos.COSFloat: void <init>(java.lang.String)>(r0)
+org.apache.pdfbox.cos.COSNumber.get : specialinvoke $r1.<org.apache.pdfbox.cos.COSFloat: void <init>(java.lang.String)>(r0) >>>>>>>> org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : $r1 = r0.<org.apache.pdfbox.cos.COSFloat: java.math.BigDecimal value>
+org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : $r1 = r0.<org.apache.pdfbox.cos.COSFloat: java.math.BigDecimal value> >>>>>>>> org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : f3 = virtualinvoke $r1.<java.math.BigDecimal: float floatValue()>()
+org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : f3 = virtualinvoke $r1.<java.math.BigDecimal: float floatValue()>() >>>>>>>> org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : $r2 = r0.<org.apache.pdfbox.cos.COSFloat: java.math.BigDecimal value>
+org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : $r2 = r0.<org.apache.pdfbox.cos.COSFloat: java.math.BigDecimal value> >>>>>>>> org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : d0 = virtualinvoke $r2.<java.math.BigDecimal: double doubleValue()>()
+org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : d0 = virtualinvoke $r2.<java.math.BigDecimal: double doubleValue()>() >>>>>>>> org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : z0 = 0
+org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : z0 = 0 >>>>>>>> org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : $b0 = f3 cmpl #-InfinityF
+org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : $b0 = f3 cmpl #-InfinityF >>>>>>>> org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : if $b0 == 0
+org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : if $b0 == 0 >>>>>>>> org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : $b3 = f3 cmpl #InfinityF
+org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : $b3 = f3 cmpl #InfinityF >>>>>>>> org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : if $b3 != 0
+org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : if $b3 != 0 >>>>>>>> org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : $b4 = f3 cmpl 0.0F
+org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : $b4 = f3 cmpl 0.0F >>>>>>>> org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : if $b4 != 0
+org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : if $b4 != 0 >>>>>>>> org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : if z0 == 0
+org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : if z0 == 0 >>>>>>>> org.apache.pdfbox.cos.COSNumber.get : return $r1
+org.apache.pdfbox.cos.COSNumber.get : return $r1 >>>>>>>> org.apache.pdfbox.cos.COSNumber.get : c8 = virtualinvoke r0.<java.lang.String: char charAt(int)>(0)
+org.apache.pdfbox.cos.COSNumber.get : c8 = virtualinvoke r0.<java.lang.String: char charAt(int)>(0) >>>>>>>> org.apache.pdfbox.cos.COSNumber.get : if 48 > c8
+org.apache.pdfbox.cos.COSNumber.get : if 48 > c8 >>>>>>>> org.apache.pdfbox.cos.COSNumber.get : if c8 > 57
+org.apache.pdfbox.cos.COSNumber.get : if c8 > 57 >>>>>>>> org.apache.pdfbox.cos.COSNumber.get : $i6 = c8 - 48
+org.apache.pdfbox.cos.COSNumber.get : $i6 = c8 - 48 >>>>>>>> org.apache.pdfbox.cos.COSNumber.get : $l7 = (long) $i6
+org.apache.pdfbox.cos.COSNumber.get : $l7 = (long) $i6 >>>>>>>> org.apache.pdfbox.cos.COSNumber.get : $r12 = staticinvoke <org.apache.pdfbox.cos.COSInteger: org.apache.pdfbox.cos.COSInteger get(long)>($l7)
+org.apache.pdfbox.cos.COSNumber.get : $r12 = staticinvoke <org.apache.pdfbox.cos.COSInteger: org.apache.pdfbox.cos.COSInteger get(long)>($l7) >>>>>>>> org.apache.pdfbox.cos.COSInteger.get : $b2 = -100L cmp l0
+org.apache.pdfbox.cos.COSInteger.get : $b2 = -100L cmp l0 >>>>>>>> org.apache.pdfbox.cos.COSInteger.get : if $b2 > 0
+org.apache.pdfbox.cos.COSInteger.get : if $b2 > 0 >>>>>>>> org.apache.pdfbox.cos.COSInteger.get : $b3 = l0 cmp 256L
+org.apache.pdfbox.cos.COSInteger.get : $b3 = l0 cmp 256L >>>>>>>> org.apache.pdfbox.cos.COSInteger.get : if $b3 > 0
+org.apache.pdfbox.cos.COSInteger.get : if $b3 > 0 >>>>>>>> org.apache.pdfbox.cos.COSInteger.get : $i4 = (int) l0
+org.apache.pdfbox.cos.COSInteger.get : $i4 = (int) l0 >>>>>>>> org.apache.pdfbox.cos.COSInteger.get : i1 = $i4 - -100
+org.apache.pdfbox.cos.COSInteger.get : i1 = $i4 - -100 >>>>>>>> org.apache.pdfbox.cos.COSInteger.get : $r1 = <org.apache.pdfbox.cos.COSInteger: org.apache.pdfbox.cos.COSInteger[] STATIC>
+org.apache.pdfbox.cos.COSInteger.get : $r1 = <org.apache.pdfbox.cos.COSInteger: org.apache.pdfbox.cos.COSInteger[] STATIC> >>>>>>>> org.apache.pdfbox.cos.COSInteger.get : $r2 = $r1[i1]
+org.apache.pdfbox.cos.COSInteger.get : $r2 = $r1[i1] >>>>>>>> org.apache.pdfbox.cos.COSInteger.get : if $r2 != null
+org.apache.pdfbox.cos.COSInteger.get : if $r2 != null >>>>>>>> org.apache.pdfbox.cos.COSInteger.get : $r3 = <org.apache.pdfbox.cos.COSInteger: org.apache.pdfbox.cos.COSInteger[] STATIC>
+org.apache.pdfbox.cos.COSInteger.get : $r3 = <org.apache.pdfbox.cos.COSInteger: org.apache.pdfbox.cos.COSInteger[] STATIC> >>>>>>>> org.apache.pdfbox.cos.COSInteger.get : $r4 = $r3[i1]
+org.apache.pdfbox.cos.COSInteger.get : $r4 = $r3[i1] >>>>>>>> org.apache.pdfbox.cos.COSInteger.get : return $r4
+org.apache.pdfbox.cos.COSInteger.get : return $r4 >>>>>>>> org.apache.pdfbox.cos.COSNumber.get : return $r12
+org.apache.pdfbox.cos.COSNumber.get : return $r12 >>>>>>>> org.apache.pdfbox.cos.COSInteger.equals : $z0 = r1 instanceof org.apache.pdfbox.cos.COSInteger
+org.apache.pdfbox.cos.COSInteger.equals : $z0 = r1 instanceof org.apache.pdfbox.cos.COSInteger >>>>>>>> org.apache.pdfbox.cos.COSInteger.equals : if $z0 == 0
+org.apache.pdfbox.cos.COSInteger.equals : if $z0 == 0 >>>>>>>> org.apache.pdfbox.cos.COSInteger.equals : $r2 = (org.apache.pdfbox.cos.COSInteger) r1
+org.apache.pdfbox.cos.COSInteger.equals : $r2 = (org.apache.pdfbox.cos.COSInteger) r1 >>>>>>>> org.apache.pdfbox.cos.COSInteger.equals : $i0 = virtualinvoke $r2.<org.apache.pdfbox.cos.COSInteger: int intValue()>()
+org.apache.pdfbox.cos.COSInteger.equals : $i0 = virtualinvoke $r2.<org.apache.pdfbox.cos.COSInteger: int intValue()>() >>>>>>>> org.apache.pdfbox.cos.COSInteger.intValue : $l0 = r0.<org.apache.pdfbox.cos.COSInteger: long value>
+org.apache.pdfbox.cos.COSInteger.intValue : $l0 = r0.<org.apache.pdfbox.cos.COSInteger: long value> >>>>>>>> org.apache.pdfbox.cos.COSInteger.intValue : $i1 = (int) $l0
+org.apache.pdfbox.cos.COSInteger.intValue : $i1 = (int) $l0 >>>>>>>> org.apache.pdfbox.cos.COSInteger.intValue : return $i1
+org.apache.pdfbox.cos.COSInteger.intValue : return $i1 >>>>>>>> org.apache.pdfbox.cos.COSInteger.equals : $i1 = virtualinvoke r0.<org.apache.pdfbox.cos.COSInteger: int intValue()>()
+org.apache.pdfbox.cos.COSInteger.equals : $i1 = virtualinvoke r0.<org.apache.pdfbox.cos.COSInteger: int intValue()>() >>>>>>>> org.apache.pdfbox.cos.COSInteger.equals : if $i0 != $i1
+org.apache.pdfbox.cos.COSInteger.equals : if $i0 != $i1 >>>>>>>> org.apache.pdfbox.cos.COSInteger.equals : $z1 = 1
+org.apache.pdfbox.cos.COSInteger.equals : $z1 = 1 >>>>>>>> org.apache.pdfbox.cos.COSInteger.equals : goto [?= return $z1]
+org.apache.pdfbox.cos.COSInteger.equals : goto [?= return $z1] >>>>>>>> org.apache.pdfbox.cos.COSInteger.equals : return $z1
+org.apache.pdfbox.cos.COSInteger.equals : return $z1 >>>>>>>> org.apache.pdfbox.cos.COSNumber.get : $r2 = virtualinvoke r0.<java.lang.String: java.lang.String toLowerCase()>()
+org.apache.pdfbox.cos.COSNumber.get : $r2 = virtualinvoke r0.<java.lang.String: java.lang.String toLowerCase()>() >>>>>>>> org.apache.pdfbox.cos.COSNumber.get : $i2 = virtualinvoke $r2.<java.lang.String: int indexOf(int)>(101)
+org.apache.pdfbox.cos.COSNumber.get : $i2 = virtualinvoke $r2.<java.lang.String: int indexOf(int)>(101) >>>>>>>> org.apache.pdfbox.cos.COSNumber.get : if $i2 != -1
+org.apache.pdfbox.cos.COSNumber.get : if $i2 != -1 >>>>>>>> org.apache.pdfbox.cos.COSNumber.get : $c3 = virtualinvoke r0.<java.lang.String: char charAt(int)>(0)
+org.apache.pdfbox.cos.COSNumber.get : $c3 = virtualinvoke r0.<java.lang.String: char charAt(int)>(0) >>>>>>>> org.apache.pdfbox.cos.COSNumber.get : if $c3 != 43
+org.apache.pdfbox.cos.COSNumber.get : if $c3 != 43 >>>>>>>> org.apache.pdfbox.cos.COSNumber.get : $l4 = staticinvoke <java.lang.Long: long parseLong(java.lang.String)>(r0)
+org.apache.pdfbox.cos.COSNumber.get : $l4 = staticinvoke <java.lang.Long: long parseLong(java.lang.String)>(r0) >>>>>>>> org.apache.pdfbox.cos.COSNumber.get : $r3 = staticinvoke <org.apache.pdfbox.cos.COSInteger: org.apache.pdfbox.cos.COSInteger get(long)>($l4)
+org.apache.pdfbox.cos.COSNumber.get : $r3 = staticinvoke <org.apache.pdfbox.cos.COSInteger: org.apache.pdfbox.cos.COSInteger get(long)>($l4) >>>>>>>> org.apache.pdfbox.cos.COSNumber.get : return $r3
+org.apache.pdfbox.cos.COSNumber.get : return $r3 >>>>>>>> org.apache.pdfbox.cos.COSInteger.get : $r0 = new org.apache.pdfbox.cos.COSInteger
+org.apache.pdfbox.cos.COSInteger.get : $r0 = new org.apache.pdfbox.cos.COSInteger >>>>>>>> org.apache.pdfbox.cos.COSInteger.get : specialinvoke $r0.<org.apache.pdfbox.cos.COSInteger: void <init>(long)>(l0)
+org.apache.pdfbox.cos.COSInteger.get : specialinvoke $r0.<org.apache.pdfbox.cos.COSInteger: void <init>(long)>(l0) >>>>>>>> org.apache.pdfbox.cos.COSInteger.get : return $r0
+org.apache.pdfbox.cos.COSInteger.get : return $r0 >>>>>>>> org.apache.pdfbox.cos.COSNumber.get : $r4 = virtualinvoke r0.<java.lang.String: java.lang.String substring(int)>(1)
+org.apache.pdfbox.cos.COSNumber.get : $r4 = virtualinvoke r0.<java.lang.String: java.lang.String substring(int)>(1) >>>>>>>> org.apache.pdfbox.cos.COSNumber.get : $l5 = staticinvoke <java.lang.Long: long parseLong(java.lang.String)>($r4)
+org.apache.pdfbox.cos.COSNumber.get : $l5 = staticinvoke <java.lang.Long: long parseLong(java.lang.String)>($r4) >>>>>>>> org.apache.pdfbox.cos.COSNumber.get : $r5 = staticinvoke <org.apache.pdfbox.cos.COSInteger: org.apache.pdfbox.cos.COSInteger get(long)>($l5)
+org.apache.pdfbox.cos.COSNumber.get : $r5 = staticinvoke <org.apache.pdfbox.cos.COSInteger: org.apache.pdfbox.cos.COSInteger get(long)>($l5) >>>>>>>> org.apache.pdfbox.cos.COSNumber.get : return $r5
+org.apache.pdfbox.cos.COSNumber.get : return $r5 >>>>>>>> org.apache.pdfbox.cos.COSFloat.removeNullDigits : $i0 = virtualinvoke r1.<java.lang.String: int indexOf(int)>(46)
+org.apache.pdfbox.cos.COSFloat.removeNullDigits : $i0 = virtualinvoke r1.<java.lang.String: int indexOf(int)>(46) >>>>>>>> org.apache.pdfbox.cos.COSFloat.removeNullDigits : if $i0 <= -1
+org.apache.pdfbox.cos.COSFloat.removeNullDigits : if $i0 <= -1 >>>>>>>> org.apache.pdfbox.cos.COSFloat.removeNullDigits : $z0 = virtualinvoke r1.<java.lang.String: boolean endsWith(java.lang.String)>(".0")
+org.apache.pdfbox.cos.COSFloat.removeNullDigits : $z0 = virtualinvoke r1.<java.lang.String: boolean endsWith(java.lang.String)>(".0") >>>>>>>> org.apache.pdfbox.cos.COSFloat.removeNullDigits : if $z0 != 0
+org.apache.pdfbox.cos.COSFloat.removeNullDigits : if $z0 != 0 >>>>>>>> org.apache.pdfbox.cos.COSFloat.removeNullDigits : $z1 = virtualinvoke r1.<java.lang.String: boolean endsWith(java.lang.String)>("0")
+org.apache.pdfbox.cos.COSFloat.removeNullDigits : $z1 = virtualinvoke r1.<java.lang.String: boolean endsWith(java.lang.String)>("0") >>>>>>>> org.apache.pdfbox.cos.COSFloat.removeNullDigits : if $z1 == 0
+org.apache.pdfbox.cos.COSFloat.removeNullDigits : if $z1 == 0 >>>>>>>> org.apache.pdfbox.cos.COSFloat.removeNullDigits : return r1
+org.apache.pdfbox.cos.COSFloat.removeNullDigits : return r1 >>>>>>>> org.apache.pdfbox.cos.COSFloat.equals : $z0 = r1 instanceof org.apache.pdfbox.cos.COSFloat
+org.apache.pdfbox.cos.COSFloat.equals : $z0 = r1 instanceof org.apache.pdfbox.cos.COSFloat >>>>>>>> org.apache.pdfbox.cos.COSFloat.equals : if $z0 == 0
+org.apache.pdfbox.cos.COSFloat.equals : if $z0 == 0 >>>>>>>> org.apache.pdfbox.cos.COSFloat.equals : $r2 = (org.apache.pdfbox.cos.COSFloat) r1
+org.apache.pdfbox.cos.COSFloat.equals : $r2 = (org.apache.pdfbox.cos.COSFloat) r1 >>>>>>>> org.apache.pdfbox.cos.COSFloat.equals : $r3 = $r2.<org.apache.pdfbox.cos.COSFloat: java.math.BigDecimal value>
+org.apache.pdfbox.cos.COSFloat.equals : $r3 = $r2.<org.apache.pdfbox.cos.COSFloat: java.math.BigDecimal value> >>>>>>>> org.apache.pdfbox.cos.COSFloat.equals : $f0 = virtualinvoke $r3.<java.math.BigDecimal: float floatValue()>()
+org.apache.pdfbox.cos.COSFloat.equals : $f0 = virtualinvoke $r3.<java.math.BigDecimal: float floatValue()>() >>>>>>>> org.apache.pdfbox.cos.COSFloat.equals : $i0 = staticinvoke <java.lang.Float: int floatToIntBits(float)>($f0)
+org.apache.pdfbox.cos.COSFloat.equals : $i0 = staticinvoke <java.lang.Float: int floatToIntBits(float)>($f0) >>>>>>>> org.apache.pdfbox.cos.COSFloat.equals : $r4 = r0.<org.apache.pdfbox.cos.COSFloat: java.math.BigDecimal value>
+org.apache.pdfbox.cos.COSFloat.equals : $r4 = r0.<org.apache.pdfbox.cos.COSFloat: java.math.BigDecimal value> >>>>>>>> org.apache.pdfbox.cos.COSFloat.equals : $f1 = virtualinvoke $r4.<java.math.BigDecimal: float floatValue()>()
+org.apache.pdfbox.cos.COSFloat.equals : $f1 = virtualinvoke $r4.<java.math.BigDecimal: float floatValue()>() >>>>>>>> org.apache.pdfbox.cos.COSFloat.equals : $i1 = staticinvoke <java.lang.Float: int floatToIntBits(float)>($f1)
+org.apache.pdfbox.cos.COSFloat.equals : $i1 = staticinvoke <java.lang.Float: int floatToIntBits(float)>($f1) >>>>>>>> org.apache.pdfbox.cos.COSFloat.equals : if $i0 != $i1
+org.apache.pdfbox.cos.COSFloat.equals : if $i0 != $i1 >>>>>>>> org.apache.pdfbox.cos.COSFloat.equals : $z1 = 1
+org.apache.pdfbox.cos.COSFloat.equals : $z1 = 1 >>>>>>>> org.apache.pdfbox.cos.COSFloat.equals : goto [?= return $z1]
+org.apache.pdfbox.cos.COSFloat.equals : goto [?= return $z1] >>>>>>>> org.apache.pdfbox.cos.COSFloat.equals : return $z1
+org.apache.pdfbox.cos.COSNumber.get : $i0 = virtualinvoke r0.<java.lang.String: int length()>() >>>>>>>> org.apache.pdfbox.cos.COSNumber.get : if $i0 != 1
+org.apache.pdfbox.cos.COSNumber.get : if $i0 != 1 >>>>>>>> org.apache.pdfbox.cos.COSNumber.get : c8 = virtualinvoke r0.<java.lang.String: char charAt(int)>(0)
+org.apache.pdfbox.cos.COSNumber.get : c8 = virtualinvoke r0.<java.lang.String: char charAt(int)>(0) >>>>>>>> org.apache.pdfbox.cos.COSNumber.get : if 48 > c8
+org.apache.pdfbox.cos.COSNumber.get : if 48 > c8 >>>>>>>> org.apache.pdfbox.cos.COSNumber.get : if c8 > 57
+org.apache.pdfbox.cos.COSNumber.get : if c8 > 57 >>>>>>>> org.apache.pdfbox.cos.COSNumber.get : $i6 = c8 - 48
+org.apache.pdfbox.cos.COSNumber.get : $i6 = c8 - 48 >>>>>>>> org.apache.pdfbox.cos.COSNumber.get : $l7 = (long) $i6
+org.apache.pdfbox.cos.COSNumber.get : $l7 = (long) $i6 >>>>>>>> org.apache.pdfbox.cos.COSNumber.get : $r12 = staticinvoke <org.apache.pdfbox.cos.COSInteger: org.apache.pdfbox.cos.COSInteger get(long)>($l7)
+org.apache.pdfbox.cos.COSNumber.get : $r12 = staticinvoke <org.apache.pdfbox.cos.COSInteger: org.apache.pdfbox.cos.COSInteger get(long)>($l7) >>>>>>>> org.apache.pdfbox.cos.COSInteger.get : $b2 = -100L cmp l0
+org.apache.pdfbox.cos.COSInteger.get : $b2 = -100L cmp l0 >>>>>>>> org.apache.pdfbox.cos.COSInteger.get : if $b2 > 0
+org.apache.pdfbox.cos.COSInteger.get : if $b2 > 0 >>>>>>>> org.apache.pdfbox.cos.COSInteger.get : $b3 = l0 cmp 256L
+org.apache.pdfbox.cos.COSInteger.get : $b3 = l0 cmp 256L >>>>>>>> org.apache.pdfbox.cos.COSInteger.get : if $b3 > 0
+org.apache.pdfbox.cos.COSInteger.get : if $b3 > 0 >>>>>>>> org.apache.pdfbox.cos.COSInteger.get : $i4 = (int) l0
+org.apache.pdfbox.cos.COSInteger.get : $i4 = (int) l0 >>>>>>>> org.apache.pdfbox.cos.COSInteger.get : i1 = $i4 - -100
+org.apache.pdfbox.cos.COSInteger.get : i1 = $i4 - -100 >>>>>>>> org.apache.pdfbox.cos.COSInteger.get : $r1 = <org.apache.pdfbox.cos.COSInteger: org.apache.pdfbox.cos.COSInteger[] STATIC>
+org.apache.pdfbox.cos.COSInteger.get : $r1 = <org.apache.pdfbox.cos.COSInteger: org.apache.pdfbox.cos.COSInteger[] STATIC> >>>>>>>> org.apache.pdfbox.cos.COSInteger.get : $r2 = $r1[i1]
+org.apache.pdfbox.cos.COSInteger.get : $r2 = $r1[i1] >>>>>>>> org.apache.pdfbox.cos.COSInteger.get : if $r2 != null
+org.apache.pdfbox.cos.COSInteger.get : if $r2 != null >>>>>>>> org.apache.pdfbox.cos.COSInteger.get : $r3 = <org.apache.pdfbox.cos.COSInteger: org.apache.pdfbox.cos.COSInteger[] STATIC>
+org.apache.pdfbox.cos.COSInteger.get : $r3 = <org.apache.pdfbox.cos.COSInteger: org.apache.pdfbox.cos.COSInteger[] STATIC> >>>>>>>> org.apache.pdfbox.cos.COSInteger.get : $r4 = $r3[i1]
+org.apache.pdfbox.cos.COSInteger.get : $r4 = $r3[i1] >>>>>>>> org.apache.pdfbox.cos.COSInteger.get : return $r4
+org.apache.pdfbox.cos.COSInteger.get : return $r4 >>>>>>>> org.apache.pdfbox.cos.COSNumber.get : return $r12
+org.apache.pdfbox.cos.COSNumber.get : return $r12 >>>>>>>> org.apache.pdfbox.cos.COSInteger.equals : $z0 = r1 instanceof org.apache.pdfbox.cos.COSInteger
+org.apache.pdfbox.cos.COSInteger.equals : $z0 = r1 instanceof org.apache.pdfbox.cos.COSInteger >>>>>>>> org.apache.pdfbox.cos.COSInteger.equals : if $z0 == 0
+org.apache.pdfbox.cos.COSInteger.equals : if $z0 == 0 >>>>>>>> org.apache.pdfbox.cos.COSInteger.equals : $r2 = (org.apache.pdfbox.cos.COSInteger) r1
+org.apache.pdfbox.cos.COSInteger.equals : $r2 = (org.apache.pdfbox.cos.COSInteger) r1 >>>>>>>> org.apache.pdfbox.cos.COSInteger.equals : $i0 = virtualinvoke $r2.<org.apache.pdfbox.cos.COSInteger: int intValue()>()
+org.apache.pdfbox.cos.COSInteger.equals : $i0 = virtualinvoke $r2.<org.apache.pdfbox.cos.COSInteger: int intValue()>() >>>>>>>> org.apache.pdfbox.cos.COSInteger.intValue : $l0 = r0.<org.apache.pdfbox.cos.COSInteger: long value>
+org.apache.pdfbox.cos.COSInteger.intValue : $l0 = r0.<org.apache.pdfbox.cos.COSInteger: long value> >>>>>>>> org.apache.pdfbox.cos.COSInteger.intValue : $i1 = (int) $l0
+org.apache.pdfbox.cos.COSInteger.intValue : $i1 = (int) $l0 >>>>>>>> org.apache.pdfbox.cos.COSInteger.intValue : return $i1
+org.apache.pdfbox.cos.COSInteger.intValue : return $i1 >>>>>>>> org.apache.pdfbox.cos.COSInteger.equals : $i1 = virtualinvoke r0.<org.apache.pdfbox.cos.COSInteger: int intValue()>()
+org.apache.pdfbox.cos.COSInteger.equals : $i1 = virtualinvoke r0.<org.apache.pdfbox.cos.COSInteger: int intValue()>() >>>>>>>> org.apache.pdfbox.cos.COSInteger.equals : if $i0 != $i1
+org.apache.pdfbox.cos.COSInteger.equals : if $i0 != $i1 >>>>>>>> org.apache.pdfbox.cos.COSInteger.equals : $z1 = 1
+org.apache.pdfbox.cos.COSInteger.equals : $z1 = 1 >>>>>>>> org.apache.pdfbox.cos.COSInteger.equals : goto [?= return $z1]
+org.apache.pdfbox.cos.COSInteger.equals : goto [?= return $z1] >>>>>>>> org.apache.pdfbox.cos.COSInteger.equals : return $z1
+org.apache.pdfbox.cos.COSInteger.equals : return $z1 >>>>>>>> org.apache.pdfbox.cos.COSNumber.get : $i1 = virtualinvoke r0.<java.lang.String: int indexOf(int)>(46)
+org.apache.pdfbox.cos.COSNumber.get : $i1 = virtualinvoke r0.<java.lang.String: int indexOf(int)>(46) >>>>>>>> org.apache.pdfbox.cos.COSNumber.get : if $i1 != -1
+org.apache.pdfbox.cos.COSNumber.get : if $i1 != -1 >>>>>>>> org.apache.pdfbox.cos.COSNumber.get : $r2 = virtualinvoke r0.<java.lang.String: java.lang.String toLowerCase()>()
+org.apache.pdfbox.cos.COSNumber.get : $r2 = virtualinvoke r0.<java.lang.String: java.lang.String toLowerCase()>() >>>>>>>> org.apache.pdfbox.cos.COSNumber.get : $i2 = virtualinvoke $r2.<java.lang.String: int indexOf(int)>(101)
+org.apache.pdfbox.cos.COSNumber.get : $i2 = virtualinvoke $r2.<java.lang.String: int indexOf(int)>(101) >>>>>>>> org.apache.pdfbox.cos.COSNumber.get : if $i2 != -1
+org.apache.pdfbox.cos.COSNumber.get : if $i2 != -1 >>>>>>>> org.apache.pdfbox.cos.COSNumber.get : $c3 = virtualinvoke r0.<java.lang.String: char charAt(int)>(0)
+org.apache.pdfbox.cos.COSNumber.get : $c3 = virtualinvoke r0.<java.lang.String: char charAt(int)>(0) >>>>>>>> org.apache.pdfbox.cos.COSNumber.get : if $c3 != 43
+org.apache.pdfbox.cos.COSNumber.get : if $c3 != 43 >>>>>>>> org.apache.pdfbox.cos.COSNumber.get : $l4 = staticinvoke <java.lang.Long: long parseLong(java.lang.String)>(r0)
+org.apache.pdfbox.cos.COSNumber.get : $l4 = staticinvoke <java.lang.Long: long parseLong(java.lang.String)>(r0) >>>>>>>> org.apache.pdfbox.cos.COSNumber.get : $r3 = staticinvoke <org.apache.pdfbox.cos.COSInteger: org.apache.pdfbox.cos.COSInteger get(long)>($l4)
+org.apache.pdfbox.cos.COSNumber.get : $r3 = staticinvoke <org.apache.pdfbox.cos.COSInteger: org.apache.pdfbox.cos.COSInteger get(long)>($l4) >>>>>>>> org.apache.pdfbox.cos.COSNumber.get : return $r3
+org.apache.pdfbox.cos.COSNumber.get : return $r3 >>>>>>>> org.apache.pdfbox.cos.COSInteger.get : $r0 = new org.apache.pdfbox.cos.COSInteger
+org.apache.pdfbox.cos.COSInteger.get : $r0 = new org.apache.pdfbox.cos.COSInteger >>>>>>>> org.apache.pdfbox.cos.COSInteger.get : specialinvoke $r0.<org.apache.pdfbox.cos.COSInteger: void <init>(long)>(l0)
+org.apache.pdfbox.cos.COSInteger.get : specialinvoke $r0.<org.apache.pdfbox.cos.COSInteger: void <init>(long)>(l0) >>>>>>>> org.apache.pdfbox.cos.COSInteger.get : return $r0
+org.apache.pdfbox.cos.COSInteger.get : return $r0 >>>>>>>> org.apache.pdfbox.cos.COSNumber.get : $r4 = virtualinvoke r0.<java.lang.String: java.lang.String substring(int)>(1)
+org.apache.pdfbox.cos.COSNumber.get : $r4 = virtualinvoke r0.<java.lang.String: java.lang.String substring(int)>(1) >>>>>>>> org.apache.pdfbox.cos.COSNumber.get : $l5 = staticinvoke <java.lang.Long: long parseLong(java.lang.String)>($r4)
+org.apache.pdfbox.cos.COSNumber.get : $l5 = staticinvoke <java.lang.Long: long parseLong(java.lang.String)>($r4) >>>>>>>> org.apache.pdfbox.cos.COSNumber.get : $r5 = staticinvoke <org.apache.pdfbox.cos.COSInteger: org.apache.pdfbox.cos.COSInteger get(long)>($l5)
+org.apache.pdfbox.cos.COSNumber.get : $r5 = staticinvoke <org.apache.pdfbox.cos.COSInteger: org.apache.pdfbox.cos.COSInteger get(long)>($l5) >>>>>>>> org.apache.pdfbox.cos.COSNumber.get : return $r5
+org.apache.pdfbox.cos.COSNumber.get : return $r5 >>>>>>>> org.apache.pdfbox.cos.COSFloat.removeNullDigits : $i0 = virtualinvoke r1.<java.lang.String: int indexOf(int)>(46)
+org.apache.pdfbox.cos.COSFloat.removeNullDigits : $i0 = virtualinvoke r1.<java.lang.String: int indexOf(int)>(46) >>>>>>>> org.apache.pdfbox.cos.COSFloat.removeNullDigits : if $i0 <= -1
+org.apache.pdfbox.cos.COSFloat.removeNullDigits : if $i0 <= -1 >>>>>>>> org.apache.pdfbox.cos.COSFloat.removeNullDigits : $z0 = virtualinvoke r1.<java.lang.String: boolean endsWith(java.lang.String)>(".0")
+org.apache.pdfbox.cos.COSFloat.removeNullDigits : $z0 = virtualinvoke r1.<java.lang.String: boolean endsWith(java.lang.String)>(".0") >>>>>>>> org.apache.pdfbox.cos.COSFloat.removeNullDigits : if $z0 != 0
+org.apache.pdfbox.cos.COSFloat.removeNullDigits : if $z0 != 0 >>>>>>>> org.apache.pdfbox.cos.COSFloat.removeNullDigits : $z1 = virtualinvoke r1.<java.lang.String: boolean endsWith(java.lang.String)>("0")
+org.apache.pdfbox.cos.COSFloat.removeNullDigits : $z1 = virtualinvoke r1.<java.lang.String: boolean endsWith(java.lang.String)>("0") >>>>>>>> org.apache.pdfbox.cos.COSFloat.removeNullDigits : if $z1 == 0
+org.apache.pdfbox.cos.COSFloat.removeNullDigits : if $z1 == 0 >>>>>>>> org.apache.pdfbox.cos.COSFloat.removeNullDigits : return r1
+org.apache.pdfbox.cos.COSFloat.removeNullDigits : return r1 >>>>>>>> org.apache.pdfbox.cos.COSNumber.get : $r1 = new org.apache.pdfbox.cos.COSFloat
+org.apache.pdfbox.cos.COSNumber.get : $r1 = new org.apache.pdfbox.cos.COSFloat >>>>>>>> org.apache.pdfbox.cos.COSNumber.get : specialinvoke $r1.<org.apache.pdfbox.cos.COSFloat: void <init>(java.lang.String)>(r0)
+org.apache.pdfbox.cos.COSNumber.get : specialinvoke $r1.<org.apache.pdfbox.cos.COSFloat: void <init>(java.lang.String)>(r0) >>>>>>>> org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : $r1 = r0.<org.apache.pdfbox.cos.COSFloat: java.math.BigDecimal value>
+org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : $r1 = r0.<org.apache.pdfbox.cos.COSFloat: java.math.BigDecimal value> >>>>>>>> org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : f3 = virtualinvoke $r1.<java.math.BigDecimal: float floatValue()>()
+org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : f3 = virtualinvoke $r1.<java.math.BigDecimal: float floatValue()>() >>>>>>>> org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : $r2 = r0.<org.apache.pdfbox.cos.COSFloat: java.math.BigDecimal value>
+org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : $r2 = r0.<org.apache.pdfbox.cos.COSFloat: java.math.BigDecimal value> >>>>>>>> org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : d0 = virtualinvoke $r2.<java.math.BigDecimal: double doubleValue()>()
+org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : d0 = virtualinvoke $r2.<java.math.BigDecimal: double doubleValue()>() >>>>>>>> org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : z0 = 0
+org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : z0 = 0 >>>>>>>> org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : $b0 = f3 cmpl #-InfinityF
+org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : $b0 = f3 cmpl #-InfinityF >>>>>>>> org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : if $b0 == 0
+org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : if $b0 == 0 >>>>>>>> org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : $b3 = f3 cmpl #InfinityF
+org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : $b3 = f3 cmpl #InfinityF >>>>>>>> org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : if $b3 != 0
+org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : if $b3 != 0 >>>>>>>> org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : $b4 = f3 cmpl 0.0F
+org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : $b4 = f3 cmpl 0.0F >>>>>>>> org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : if $b4 != 0
+org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : if $b4 != 0 >>>>>>>> org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : if z0 == 0
+org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : if z0 == 0 >>>>>>>> org.apache.pdfbox.cos.COSNumber.get : return $r1
+org.apache.pdfbox.cos.COSNumber.get : return $r1 >>>>>>>> org.apache.pdfbox.cos.COSFloat.equals : $z0 = r1 instanceof org.apache.pdfbox.cos.COSFloat
+org.apache.pdfbox.cos.COSFloat.equals : $z0 = r1 instanceof org.apache.pdfbox.cos.COSFloat >>>>>>>> org.apache.pdfbox.cos.COSFloat.equals : if $z0 == 0
+org.apache.pdfbox.cos.COSFloat.equals : if $z0 == 0 >>>>>>>> org.apache.pdfbox.cos.COSFloat.equals : $r2 = (org.apache.pdfbox.cos.COSFloat) r1
+org.apache.pdfbox.cos.COSFloat.equals : $r2 = (org.apache.pdfbox.cos.COSFloat) r1 >>>>>>>> org.apache.pdfbox.cos.COSFloat.equals : $r3 = $r2.<org.apache.pdfbox.cos.COSFloat: java.math.BigDecimal value>
+org.apache.pdfbox.cos.COSFloat.equals : $r3 = $r2.<org.apache.pdfbox.cos.COSFloat: java.math.BigDecimal value> >>>>>>>> org.apache.pdfbox.cos.COSFloat.equals : $f0 = virtualinvoke $r3.<java.math.BigDecimal: float floatValue()>()
+org.apache.pdfbox.cos.COSFloat.equals : $f0 = virtualinvoke $r3.<java.math.BigDecimal: float floatValue()>() >>>>>>>> org.apache.pdfbox.cos.COSFloat.equals : $i0 = staticinvoke <java.lang.Float: int floatToIntBits(float)>($f0)
+org.apache.pdfbox.cos.COSFloat.equals : $i0 = staticinvoke <java.lang.Float: int floatToIntBits(float)>($f0) >>>>>>>> org.apache.pdfbox.cos.COSFloat.equals : $r4 = r0.<org.apache.pdfbox.cos.COSFloat: java.math.BigDecimal value>
+org.apache.pdfbox.cos.COSFloat.equals : $r4 = r0.<org.apache.pdfbox.cos.COSFloat: java.math.BigDecimal value> >>>>>>>> org.apache.pdfbox.cos.COSFloat.equals : $f1 = virtualinvoke $r4.<java.math.BigDecimal: float floatValue()>()
+org.apache.pdfbox.cos.COSFloat.equals : $f1 = virtualinvoke $r4.<java.math.BigDecimal: float floatValue()>() >>>>>>>> org.apache.pdfbox.cos.COSFloat.equals : $i1 = staticinvoke <java.lang.Float: int floatToIntBits(float)>($f1)
+org.apache.pdfbox.cos.COSFloat.equals : $i1 = staticinvoke <java.lang.Float: int floatToIntBits(float)>($f1) >>>>>>>> org.apache.pdfbox.cos.COSFloat.equals : if $i0 != $i1
+org.apache.pdfbox.cos.COSFloat.equals : if $i0 != $i1 >>>>>>>> org.apache.pdfbox.cos.COSFloat.equals : $z1 = 1
+org.apache.pdfbox.cos.COSFloat.equals : $z1 = 1 >>>>>>>> org.apache.pdfbox.cos.COSFloat.equals : goto [?= return $z1]
+org.apache.pdfbox.cos.COSFloat.equals : goto [?= return $z1] >>>>>>>> org.apache.pdfbox.cos.COSFloat.equals : return $z1

@@ -1,0 +1,46 @@
+org.apache.pdfbox.filter.DCTFilter.fromYCCKtoCMYK : r2 = virtualinvoke r1.<java.awt.image.Raster: java.awt.image.WritableRaster createCompatibleWritableRaster()>() >>>>>>>> org.apache.pdfbox.filter.DCTFilter.fromYCCKtoCMYK : r3 = newarray (int)[4]
+org.apache.pdfbox.filter.DCTFilter.fromYCCKtoCMYK : r3 = newarray (int)[4] >>>>>>>> org.apache.pdfbox.filter.DCTFilter.fromYCCKtoCMYK : i13 = 0
+org.apache.pdfbox.filter.DCTFilter.fromYCCKtoCMYK : i13 = 0 >>>>>>>> org.apache.pdfbox.filter.DCTFilter.fromYCCKtoCMYK : i0 = virtualinvoke r1.<java.awt.image.Raster: int getHeight()>()
+org.apache.pdfbox.filter.DCTFilter.fromYCCKtoCMYK : i0 = virtualinvoke r1.<java.awt.image.Raster: int getHeight()>() >>>>>>>> org.apache.pdfbox.filter.DCTFilter.fromYCCKtoCMYK : if i13 >= i0
+org.apache.pdfbox.filter.DCTFilter.fromYCCKtoCMYK : if i13 >= i0 >>>>>>>> org.apache.pdfbox.filter.DCTFilter.fromYCCKtoCMYK : i14 = 0
+org.apache.pdfbox.filter.DCTFilter.fromYCCKtoCMYK : if i13 >= i0 >>>>>>>> org.apache.pdfbox.filter.DCTFilter.fromYCCKtoCMYK : return r2
+org.apache.pdfbox.filter.DCTFilter.fromYCCKtoCMYK : i14 = 0 >>>>>>>> org.apache.pdfbox.filter.DCTFilter.fromYCCKtoCMYK : i1 = virtualinvoke r1.<java.awt.image.Raster: int getWidth()>()
+org.apache.pdfbox.filter.DCTFilter.fromYCCKtoCMYK : i1 = virtualinvoke r1.<java.awt.image.Raster: int getWidth()>() >>>>>>>> org.apache.pdfbox.filter.DCTFilter.fromYCCKtoCMYK : if i14 >= i1
+org.apache.pdfbox.filter.DCTFilter.fromYCCKtoCMYK : if i14 >= i1 >>>>>>>> org.apache.pdfbox.filter.DCTFilter.fromYCCKtoCMYK : virtualinvoke r1.<java.awt.image.Raster: int[] getPixel(int,int,int[])>(i14, i13, r3)
+org.apache.pdfbox.filter.DCTFilter.fromYCCKtoCMYK : if i14 >= i1 >>>>>>>> org.apache.pdfbox.filter.DCTFilter.fromYCCKtoCMYK : i13 = i13 + 1
+org.apache.pdfbox.filter.DCTFilter.fromYCCKtoCMYK : i13 = i13 + 1 >>>>>>>> org.apache.pdfbox.filter.DCTFilter.fromYCCKtoCMYK : goto [?= (branch)]
+org.apache.pdfbox.filter.DCTFilter.fromYCCKtoCMYK : goto [?= (branch)] >>>>>>>> org.apache.pdfbox.filter.DCTFilter.fromYCCKtoCMYK : if i13 >= i0
+org.apache.pdfbox.filter.DCTFilter.fromYCCKtoCMYK : virtualinvoke r1.<java.awt.image.Raster: int[] getPixel(int,int,int[])>(i14, i13, r3) >>>>>>>> org.apache.pdfbox.filter.DCTFilter.fromYCCKtoCMYK : $i8 = r3[0]
+org.apache.pdfbox.filter.DCTFilter.fromYCCKtoCMYK : $i8 = r3[0] >>>>>>>> org.apache.pdfbox.filter.DCTFilter.fromYCCKtoCMYK : f0 = (float) $i8
+org.apache.pdfbox.filter.DCTFilter.fromYCCKtoCMYK : f0 = (float) $i8 >>>>>>>> org.apache.pdfbox.filter.DCTFilter.fromYCCKtoCMYK : $i9 = r3[1]
+org.apache.pdfbox.filter.DCTFilter.fromYCCKtoCMYK : $i9 = r3[1] >>>>>>>> org.apache.pdfbox.filter.DCTFilter.fromYCCKtoCMYK : f1 = (float) $i9
+org.apache.pdfbox.filter.DCTFilter.fromYCCKtoCMYK : f1 = (float) $i9 >>>>>>>> org.apache.pdfbox.filter.DCTFilter.fromYCCKtoCMYK : $i10 = r3[2]
+org.apache.pdfbox.filter.DCTFilter.fromYCCKtoCMYK : $i10 = r3[2] >>>>>>>> org.apache.pdfbox.filter.DCTFilter.fromYCCKtoCMYK : f2 = (float) $i10
+org.apache.pdfbox.filter.DCTFilter.fromYCCKtoCMYK : f2 = (float) $i10 >>>>>>>> org.apache.pdfbox.filter.DCTFilter.fromYCCKtoCMYK : $i11 = r3[3]
+org.apache.pdfbox.filter.DCTFilter.fromYCCKtoCMYK : $i11 = r3[3] >>>>>>>> org.apache.pdfbox.filter.DCTFilter.fromYCCKtoCMYK : f3 = (float) $i11
+org.apache.pdfbox.filter.DCTFilter.fromYCCKtoCMYK : f3 = (float) $i11 >>>>>>>> org.apache.pdfbox.filter.DCTFilter.fromYCCKtoCMYK : $f4 = 1.402F * f2
+org.apache.pdfbox.filter.DCTFilter.fromYCCKtoCMYK : $f4 = 1.402F * f2 >>>>>>>> org.apache.pdfbox.filter.DCTFilter.fromYCCKtoCMYK : $f5 = f0 + $f4
+org.apache.pdfbox.filter.DCTFilter.fromYCCKtoCMYK : $f5 = f0 + $f4 >>>>>>>> org.apache.pdfbox.filter.DCTFilter.fromYCCKtoCMYK : $f6 = $f5 - 179.456F
+org.apache.pdfbox.filter.DCTFilter.fromYCCKtoCMYK : $f6 = $f5 - 179.456F >>>>>>>> org.apache.pdfbox.filter.DCTFilter.fromYCCKtoCMYK : i2 = specialinvoke r0.<org.apache.pdfbox.filter.DCTFilter: int clamp(float)>($f6)
+org.apache.pdfbox.filter.DCTFilter.fromYCCKtoCMYK : i2 = specialinvoke r0.<org.apache.pdfbox.filter.DCTFilter: int clamp(float)>($f6) >>>>>>>> org.apache.pdfbox.filter.DCTFilter.fromYCCKtoCMYK : $f7 = 0.34414F * f1
+org.apache.pdfbox.filter.DCTFilter.fromYCCKtoCMYK : $f7 = 0.34414F * f1 >>>>>>>> org.apache.pdfbox.filter.DCTFilter.fromYCCKtoCMYK : $f9 = f0 - $f7
+org.apache.pdfbox.filter.DCTFilter.fromYCCKtoCMYK : $f9 = f0 - $f7 >>>>>>>> org.apache.pdfbox.filter.DCTFilter.fromYCCKtoCMYK : $f8 = 0.71414F * f2
+org.apache.pdfbox.filter.DCTFilter.fromYCCKtoCMYK : $f8 = 0.71414F * f2 >>>>>>>> org.apache.pdfbox.filter.DCTFilter.fromYCCKtoCMYK : $f10 = $f9 - $f8
+org.apache.pdfbox.filter.DCTFilter.fromYCCKtoCMYK : $f10 = $f9 - $f8 >>>>>>>> org.apache.pdfbox.filter.DCTFilter.fromYCCKtoCMYK : $f11 = $f10 + 135.45984F
+org.apache.pdfbox.filter.DCTFilter.fromYCCKtoCMYK : $f11 = $f10 + 135.45984F >>>>>>>> org.apache.pdfbox.filter.DCTFilter.fromYCCKtoCMYK : i3 = specialinvoke r0.<org.apache.pdfbox.filter.DCTFilter: int clamp(float)>($f11)
+org.apache.pdfbox.filter.DCTFilter.fromYCCKtoCMYK : i3 = specialinvoke r0.<org.apache.pdfbox.filter.DCTFilter: int clamp(float)>($f11) >>>>>>>> org.apache.pdfbox.filter.DCTFilter.fromYCCKtoCMYK : $f12 = 1.772F * f1
+org.apache.pdfbox.filter.DCTFilter.fromYCCKtoCMYK : $f12 = 1.772F * f1 >>>>>>>> org.apache.pdfbox.filter.DCTFilter.fromYCCKtoCMYK : $f13 = f0 + $f12
+org.apache.pdfbox.filter.DCTFilter.fromYCCKtoCMYK : $f13 = f0 + $f12 >>>>>>>> org.apache.pdfbox.filter.DCTFilter.fromYCCKtoCMYK : $f14 = $f13 - 226.816F
+org.apache.pdfbox.filter.DCTFilter.fromYCCKtoCMYK : $f14 = $f13 - 226.816F >>>>>>>> org.apache.pdfbox.filter.DCTFilter.fromYCCKtoCMYK : i4 = specialinvoke r0.<org.apache.pdfbox.filter.DCTFilter: int clamp(float)>($f14)
+org.apache.pdfbox.filter.DCTFilter.fromYCCKtoCMYK : i4 = specialinvoke r0.<org.apache.pdfbox.filter.DCTFilter: int clamp(float)>($f14) >>>>>>>> org.apache.pdfbox.filter.DCTFilter.fromYCCKtoCMYK : i5 = 255 - i2
+org.apache.pdfbox.filter.DCTFilter.fromYCCKtoCMYK : i5 = 255 - i2 >>>>>>>> org.apache.pdfbox.filter.DCTFilter.fromYCCKtoCMYK : i6 = 255 - i3
+org.apache.pdfbox.filter.DCTFilter.fromYCCKtoCMYK : i6 = 255 - i3 >>>>>>>> org.apache.pdfbox.filter.DCTFilter.fromYCCKtoCMYK : i7 = 255 - i4
+org.apache.pdfbox.filter.DCTFilter.fromYCCKtoCMYK : i7 = 255 - i4 >>>>>>>> org.apache.pdfbox.filter.DCTFilter.fromYCCKtoCMYK : r3[0] = i5
+org.apache.pdfbox.filter.DCTFilter.fromYCCKtoCMYK : r3[0] = i5 >>>>>>>> org.apache.pdfbox.filter.DCTFilter.fromYCCKtoCMYK : r3[1] = i6
+org.apache.pdfbox.filter.DCTFilter.fromYCCKtoCMYK : r3[1] = i6 >>>>>>>> org.apache.pdfbox.filter.DCTFilter.fromYCCKtoCMYK : r3[2] = i7
+org.apache.pdfbox.filter.DCTFilter.fromYCCKtoCMYK : r3[2] = i7 >>>>>>>> org.apache.pdfbox.filter.DCTFilter.fromYCCKtoCMYK : $i12 = (int) f3
+org.apache.pdfbox.filter.DCTFilter.fromYCCKtoCMYK : $i12 = (int) f3 >>>>>>>> org.apache.pdfbox.filter.DCTFilter.fromYCCKtoCMYK : r3[3] = $i12
+org.apache.pdfbox.filter.DCTFilter.fromYCCKtoCMYK : r3[3] = $i12 >>>>>>>> org.apache.pdfbox.filter.DCTFilter.fromYCCKtoCMYK : virtualinvoke r2.<java.awt.image.WritableRaster: void setPixel(int,int,int[])>(i14, i13, r3)
+org.apache.pdfbox.filter.DCTFilter.fromYCCKtoCMYK : virtualinvoke r2.<java.awt.image.WritableRaster: void setPixel(int,int,int[])>(i14, i13, r3) >>>>>>>> org.apache.pdfbox.filter.DCTFilter.fromYCCKtoCMYK : i14 = i14 + 1
+org.apache.pdfbox.filter.DCTFilter.fromYCCKtoCMYK : i14 = i14 + 1 >>>>>>>> org.apache.pdfbox.filter.DCTFilter.fromYCCKtoCMYK : goto [?= (branch)]
+org.apache.pdfbox.filter.DCTFilter.fromYCCKtoCMYK : goto [?= (branch)] >>>>>>>> org.apache.pdfbox.filter.DCTFilter.fromYCCKtoCMYK : if i14 >= i1

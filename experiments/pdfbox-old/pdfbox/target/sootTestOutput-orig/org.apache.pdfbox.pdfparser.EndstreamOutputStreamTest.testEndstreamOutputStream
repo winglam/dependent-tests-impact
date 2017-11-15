@@ -1,0 +1,25 @@
+org.apache.pdfbox.pdfparser.EndstreamOutputStream.write : r0.<org.apache.pdfbox.pdfparser.EndstreamOutputStream: boolean hasLF> = 0
+org.apache.pdfbox.pdfparser.EndstreamOutputStream.write : $i2 = i0 + i16
+org.apache.pdfbox.pdfparser.EndstreamOutputStream.write : r0.<org.apache.pdfbox.pdfparser.EndstreamOutputStream: boolean hasLF> = 1
+org.apache.pdfbox.pdfparser.EndstreamOutputStream.write : $z0 = r0.<org.apache.pdfbox.pdfparser.EndstreamOutputStream: boolean hasCR>
+org.apache.pdfbox.pdfparser.EndstreamOutputStream.write : specialinvoke r0.<java.io.BufferedOutputStream: void write(int)>(13)
+org.apache.pdfbox.pdfparser.EndstreamOutputStream.write : $i18 = r0.<org.apache.pdfbox.pdfparser.EndstreamOutputStream: int pos>
+org.apache.pdfbox.pdfparser.EndstreamOutputStream.write : specialinvoke r0.<java.io.BufferedOutputStream: void write(int)>(10)
+org.apache.pdfbox.pdfparser.EndstreamOutputStream.write : $i8 = i0 + i16
+org.apache.pdfbox.pdfparser.EndstreamOutputStream.write : if i16 <= 10 goto $z2 = r0.<org.apache.pdfbox.pdfparser.EndstreamOutputStream: boolean mustFilter>
+org.apache.pdfbox.pdfparser.EndstreamOutputStream.write : $i1 = r0.<org.apache.pdfbox.pdfparser.EndstreamOutputStream: int pos>
+org.apache.pdfbox.pdfparser.EndstreamOutputStream.write : specialinvoke r0.<java.io.BufferedOutputStream: void write(byte[],int,int)>(r1, i0, i16)
+org.apache.pdfbox.pdfparser.EndstreamOutputStream.write : $z1 = r0.<org.apache.pdfbox.pdfparser.EndstreamOutputStream: boolean hasLF>
+org.apache.pdfbox.pdfparser.EndstreamOutputStream.write : if i16 != 1 goto specialinvoke r0.<java.io.BufferedOutputStream: void write(int)>(13)
+org.apache.pdfbox.pdfparser.EndstreamOutputStream.write : i16 = i16 + -1
+org.apache.pdfbox.pdfparser.EndstreamOutputStream.write : if i16 <= 0 goto specialinvoke r0.<java.io.BufferedOutputStream: void write(byte[],int,int)>(r1, i0, i16)
+org.apache.pdfbox.pdfparser.EndstreamOutputStream.write : $i5 = i0 + i16
+org.apache.pdfbox.pdfparser.EndstreamOutputStream.write : r0.<org.apache.pdfbox.pdfparser.EndstreamOutputStream: boolean hasCR> = 1
+org.apache.pdfbox.pdfparser.EndstreamOutputStream.write : r0.<org.apache.pdfbox.pdfparser.EndstreamOutputStream: boolean hasCR> = 0
+org.apache.pdfbox.pdfparser.EndstreamOutputStream.flush : r0.<org.apache.pdfbox.pdfparser.EndstreamOutputStream: boolean hasLF> = 0
+org.apache.pdfbox.pdfparser.EndstreamOutputStream.flush : $z1 = r0.<org.apache.pdfbox.pdfparser.EndstreamOutputStream: boolean hasLF>
+org.apache.pdfbox.pdfparser.EndstreamOutputStream.flush : $i0 = r0.<org.apache.pdfbox.pdfparser.EndstreamOutputStream: int pos>
+org.apache.pdfbox.pdfparser.EndstreamOutputStream.flush : specialinvoke r0.<java.io.BufferedOutputStream: void flush()>()
+org.apache.pdfbox.pdfparser.EndstreamOutputStream.flush : $z0 = r0.<org.apache.pdfbox.pdfparser.EndstreamOutputStream: boolean hasCR>
+org.apache.pdfbox.pdfparser.EndstreamOutputStream.flush : specialinvoke r0.<java.io.BufferedOutputStream: void write(int)>(13)
+org.apache.pdfbox.pdfparser.EndstreamOutputStream.flush : r0.<org.apache.pdfbox.pdfparser.EndstreamOutputStream: boolean hasCR> = 0

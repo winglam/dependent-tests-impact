@@ -1,0 +1,21 @@
+org.apache.pdfbox.util.QuickSort.partition : i8 = i1
+org.apache.pdfbox.util.QuickSort.partition : if i8 >= i9 goto i10 = i9
+org.apache.pdfbox.util.QuickSort.partition : $r4 = interfaceinvoke r0.<java.util.List: java.lang.Object get(int)>(i8)
+org.apache.pdfbox.util.QuickSort.partition : r2 = interfaceinvoke r0.<java.util.List: java.lang.Object get(int)>(i0)
+org.apache.pdfbox.util.QuickSort.partition : i9 = i2 - 2
+org.apache.pdfbox.util.QuickSort.partition : $i3 = i2 - 1
+org.apache.pdfbox.util.QuickSort.sort : if i0 >= 2 goto staticinvoke <org.apache.pdfbox.util.QuickSort: void quicksort(java.util.List,java.util.Comparator)>(r0, r1)
+org.apache.pdfbox.util.QuickSort.sort : i0 = interfaceinvoke r0.<java.util.List: int size()>()
+org.apache.pdfbox.util.QuickSort.sort : staticinvoke <org.apache.pdfbox.util.QuickSort: void quicksort(java.util.List,java.util.Comparator)>(r0, r1)
+org.apache.pdfbox.util.QuickSort.quicksort : $r3 = new java.util.ArrayDeque
+org.apache.pdfbox.util.QuickSort.quicksort : $r8 = interfaceinvoke $r3.<java.util.Deque: java.lang.Object pop()>()
+org.apache.pdfbox.util.QuickSort.quicksort : i8 = staticinvoke <org.apache.pdfbox.util.QuickSort: int partition(java.util.List,java.util.Comparator,int,int,int)>(r0, r1, i7, i1, i0)
+org.apache.pdfbox.util.QuickSort.quicksort : $r4 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(0)
+org.apache.pdfbox.util.QuickSort.quicksort : $i3 = i0 - i1
+org.apache.pdfbox.util.QuickSort.quicksort : $r6 = interfaceinvoke $r3.<java.util.Deque: java.lang.Object pop()>()
+org.apache.pdfbox.util.QuickSort.quicksort : $z0 = interfaceinvoke $r3.<java.util.Deque: boolean isEmpty()>()
+org.apache.pdfbox.util.QuickSort.quicksort : $i2 = interfaceinvoke r0.<java.util.List: int size()>()
+org.apache.pdfbox.util.QuickSort.quicksort : $i4 = i0 - i1
+org.apache.pdfbox.util.QuickSort.swap : $r2 = interfaceinvoke r0.<java.util.List: java.lang.Object get(int)>(i1)
+org.apache.pdfbox.util.QuickSort.swap : interfaceinvoke r0.<java.util.List: java.lang.Object set(int,java.lang.Object)>(i1, r1)
+org.apache.pdfbox.util.QuickSort.swap : r1 = interfaceinvoke r0.<java.util.List: java.lang.Object get(int)>(i0)

@@ -1,0 +1,17 @@
+org.apache.pdfbox.contentstream.operator.Operator.getName : $r1 = r0.<org.apache.pdfbox.contentstream.operator.Operator: java.lang.String theOperator>
+org.apache.pdfbox.contentstream.operator.Operator.getOperator : $z1 = virtualinvoke r0.<java.lang.String: boolean equals(java.lang.Object)>("BI")
+org.apache.pdfbox.contentstream.operator.Operator.getOperator : if r9 != null goto return r9
+org.apache.pdfbox.contentstream.operator.Operator.getOperator : $z0 = virtualinvoke r0.<java.lang.String: boolean equals(java.lang.Object)>("ID")
+org.apache.pdfbox.contentstream.operator.Operator.getOperator : $r2 = <org.apache.pdfbox.contentstream.operator.Operator: java.util.concurrent.ConcurrentMap operators>
+org.apache.pdfbox.pdfwriter.ContentStreamWriter.writeToken : specialinvoke r0.<org.apache.pdfbox.pdfwriter.ContentStreamWriter: void writeObject(java.lang.Object)>(r1)
+org.apache.pdfbox.pdfwriter.ContentStreamWriter.writeObject : $z4 = r1 instanceof org.apache.pdfbox.cos.COSName
+org.apache.pdfbox.pdfwriter.ContentStreamWriter.writeObject : $r10 = r0.<org.apache.pdfbox.pdfwriter.ContentStreamWriter: java.io.OutputStream output>
+org.apache.pdfbox.pdfwriter.ContentStreamWriter.writeObject : $z6 = r1 instanceof org.apache.pdfbox.cos.COSDictionary
+org.apache.pdfbox.pdfwriter.ContentStreamWriter.writeObject : $z0 = r1 instanceof org.apache.pdfbox.cos.COSString
+org.apache.pdfbox.pdfwriter.ContentStreamWriter.writeObject : $z2 = r1 instanceof org.apache.pdfbox.cos.COSInteger
+org.apache.pdfbox.pdfwriter.ContentStreamWriter.writeObject : $z3 = r1 instanceof org.apache.pdfbox.cos.COSBoolean
+org.apache.pdfbox.pdfwriter.ContentStreamWriter.writeObject : $z7 = r1 instanceof org.apache.pdfbox.contentstream.operator.Operator
+org.apache.pdfbox.pdfwriter.ContentStreamWriter.writeObject : r89 = (org.apache.pdfbox.contentstream.operator.Operator) r1
+org.apache.pdfbox.pdfwriter.ContentStreamWriter.writeObject : $r9 = virtualinvoke r89.<org.apache.pdfbox.contentstream.operator.Operator: java.lang.String getName()>()
+org.apache.pdfbox.pdfwriter.ContentStreamWriter.writeObject : $z1 = r1 instanceof org.apache.pdfbox.cos.COSFloat
+org.apache.pdfbox.pdfwriter.ContentStreamWriter.writeObject : $z5 = r1 instanceof org.apache.pdfbox.cos.COSArray

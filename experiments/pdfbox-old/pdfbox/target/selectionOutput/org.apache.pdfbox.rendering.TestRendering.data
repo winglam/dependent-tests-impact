@@ -1,0 +1,18 @@
+org.apache.pdfbox.rendering.TestRendering.data : $r4 = new java.io.File >>>>>>>> org.apache.pdfbox.rendering.TestRendering.data : specialinvoke $r4.<java.io.File: void <init>(java.lang.String)>("src/test/resources/input/rendering")
+org.apache.pdfbox.rendering.TestRendering.data : specialinvoke $r4.<java.io.File: void <init>(java.lang.String)>("src/test/resources/input/rendering") >>>>>>>> org.apache.pdfbox.rendering.TestRendering.data : $r5 = new org.apache.pdfbox.rendering.TestRendering$1
+org.apache.pdfbox.rendering.TestRendering.data : $r5 = new org.apache.pdfbox.rendering.TestRendering$1 >>>>>>>> org.apache.pdfbox.rendering.TestRendering.data : specialinvoke $r5.<org.apache.pdfbox.rendering.TestRendering$1: void <init>()>()
+org.apache.pdfbox.rendering.TestRendering.data : specialinvoke $r5.<org.apache.pdfbox.rendering.TestRendering$1: void <init>()>() >>>>>>>> org.apache.pdfbox.rendering.TestRendering.data : r0 = virtualinvoke $r4.<java.io.File: java.io.File[] listFiles(java.io.FilenameFilter)>($r5)
+org.apache.pdfbox.rendering.TestRendering.data : r0 = virtualinvoke $r4.<java.io.File: java.io.File[] listFiles(java.io.FilenameFilter)>($r5) >>>>>>>> org.apache.pdfbox.rendering.TestRendering.data : $r6 = new java.util.ArrayList
+org.apache.pdfbox.rendering.TestRendering.data : $r6 = new java.util.ArrayList >>>>>>>> org.apache.pdfbox.rendering.TestRendering.data : specialinvoke $r6.<java.util.ArrayList: void <init>()>()
+org.apache.pdfbox.rendering.TestRendering.data : specialinvoke $r6.<java.util.ArrayList: void <init>()>() >>>>>>>> org.apache.pdfbox.rendering.TestRendering.data : i0 = lengthof r0
+org.apache.pdfbox.rendering.TestRendering.data : i0 = lengthof r0 >>>>>>>> org.apache.pdfbox.rendering.TestRendering.data : i1 = 0
+org.apache.pdfbox.rendering.TestRendering.data : i1 = 0 >>>>>>>> org.apache.pdfbox.rendering.TestRendering.data : if i1 >= i0
+org.apache.pdfbox.rendering.TestRendering.data : if i1 >= i0 >>>>>>>> org.apache.pdfbox.rendering.TestRendering.data : r3 = r0[i1]
+org.apache.pdfbox.rendering.TestRendering.data : if i1 >= i0 >>>>>>>> org.apache.pdfbox.rendering.TestRendering.data : return $r6
+org.apache.pdfbox.rendering.TestRendering.data : r3 = r0[i1] >>>>>>>> org.apache.pdfbox.rendering.TestRendering.data : $r7 = newarray (java.lang.Object)[1]
+org.apache.pdfbox.rendering.TestRendering.data : $r7 = newarray (java.lang.Object)[1] >>>>>>>> org.apache.pdfbox.rendering.TestRendering.data : $r8 = virtualinvoke r3.<java.io.File: java.lang.String getName()>()
+org.apache.pdfbox.rendering.TestRendering.data : $r8 = virtualinvoke r3.<java.io.File: java.lang.String getName()>() >>>>>>>> org.apache.pdfbox.rendering.TestRendering.data : $r7[0] = $r8
+org.apache.pdfbox.rendering.TestRendering.data : $r7[0] = $r8 >>>>>>>> org.apache.pdfbox.rendering.TestRendering.data : interfaceinvoke $r6.<java.util.List: boolean add(java.lang.Object)>($r7)
+org.apache.pdfbox.rendering.TestRendering.data : interfaceinvoke $r6.<java.util.List: boolean add(java.lang.Object)>($r7) >>>>>>>> org.apache.pdfbox.rendering.TestRendering.data : i1 = i1 + 1
+org.apache.pdfbox.rendering.TestRendering.data : i1 = i1 + 1 >>>>>>>> org.apache.pdfbox.rendering.TestRendering.data : goto [?= (branch)]
+org.apache.pdfbox.rendering.TestRendering.data : goto [?= (branch)] >>>>>>>> org.apache.pdfbox.rendering.TestRendering.data : if i1 >= i0

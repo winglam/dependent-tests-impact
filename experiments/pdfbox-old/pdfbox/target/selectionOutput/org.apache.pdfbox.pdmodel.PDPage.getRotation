@@ -1,0 +1,14 @@
+org.apache.pdfbox.pdmodel.PDPage.getRotation : $r3 = r0.<org.apache.pdfbox.pdmodel.PDPage: org.apache.pdfbox.cos.COSDictionary page> >>>>>>>> org.apache.pdfbox.pdmodel.PDPage.getRotation : $r2 = <org.apache.pdfbox.cos.COSName: org.apache.pdfbox.cos.COSName ROTATE>
+org.apache.pdfbox.pdmodel.PDPage.getRotation : $r2 = <org.apache.pdfbox.cos.COSName: org.apache.pdfbox.cos.COSName ROTATE> >>>>>>>> org.apache.pdfbox.pdmodel.PDPage.getRotation : r1 = staticinvoke <org.apache.pdfbox.pdmodel.PDPageTree: org.apache.pdfbox.cos.COSBase getInheritableAttribute(org.apache.pdfbox.cos.COSDictionary,org.apache.pdfbox.cos.COSName)>($r3, $r2)
+org.apache.pdfbox.pdmodel.PDPage.getRotation : r1 = staticinvoke <org.apache.pdfbox.pdmodel.PDPageTree: org.apache.pdfbox.cos.COSBase getInheritableAttribute(org.apache.pdfbox.cos.COSDictionary,org.apache.pdfbox.cos.COSName)>($r3, $r2) >>>>>>>> org.apache.pdfbox.pdmodel.PDPage.getRotation : $z0 = r1 instanceof org.apache.pdfbox.cos.COSNumber
+org.apache.pdfbox.pdmodel.PDPage.getRotation : $z0 = r1 instanceof org.apache.pdfbox.cos.COSNumber >>>>>>>> org.apache.pdfbox.pdmodel.PDPage.getRotation : if $z0 == 0
+org.apache.pdfbox.pdmodel.PDPage.getRotation : if $z0 == 0 >>>>>>>> org.apache.pdfbox.pdmodel.PDPage.getRotation : $r4 = (org.apache.pdfbox.cos.COSNumber) r1
+org.apache.pdfbox.pdmodel.PDPage.getRotation : if $z0 == 0 >>>>>>>> org.apache.pdfbox.pdmodel.PDPage.getRotation : return 0
+org.apache.pdfbox.pdmodel.PDPage.getRotation : $r4 = (org.apache.pdfbox.cos.COSNumber) r1 >>>>>>>> org.apache.pdfbox.pdmodel.PDPage.getRotation : i0 = virtualinvoke $r4.<org.apache.pdfbox.cos.COSNumber: int intValue()>()
+org.apache.pdfbox.pdmodel.PDPage.getRotation : i0 = virtualinvoke $r4.<org.apache.pdfbox.cos.COSNumber: int intValue()>() >>>>>>>> org.apache.pdfbox.pdmodel.PDPage.getRotation : $i1 = i0 % 90
+org.apache.pdfbox.pdmodel.PDPage.getRotation : $i1 = i0 % 90 >>>>>>>> org.apache.pdfbox.pdmodel.PDPage.getRotation : if $i1 != 0
+org.apache.pdfbox.pdmodel.PDPage.getRotation : if $i1 != 0 >>>>>>>> org.apache.pdfbox.pdmodel.PDPage.getRotation : $i2 = i0 % 360
+org.apache.pdfbox.pdmodel.PDPage.getRotation : if $i1 != 0 >>>>>>>> org.apache.pdfbox.pdmodel.PDPage.getRotation : return 0
+org.apache.pdfbox.pdmodel.PDPage.getRotation : $i2 = i0 % 360 >>>>>>>> org.apache.pdfbox.pdmodel.PDPage.getRotation : $i3 = $i2 + 360
+org.apache.pdfbox.pdmodel.PDPage.getRotation : $i3 = $i2 + 360 >>>>>>>> org.apache.pdfbox.pdmodel.PDPage.getRotation : $i4 = $i3 % 360
+org.apache.pdfbox.pdmodel.PDPage.getRotation : $i4 = $i3 % 360 >>>>>>>> org.apache.pdfbox.pdmodel.PDPage.getRotation : return $i4

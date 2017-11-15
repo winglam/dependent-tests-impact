@@ -1,0 +1,416 @@
+org.apache.pdfbox.cos.COSArray.add : $r2 = r0.<org.apache.pdfbox.cos.COSArray: java.util.List objects>
+org.apache.pdfbox.io.ScratchFileBuffer.isClosed : $r1 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: org.apache.pdfbox.io.ScratchFile pageHandler>
+org.apache.pdfbox.pdfparser.BaseParser.skipSpaces : if i0 != 37 goto (branch)
+org.apache.pdfbox.pdfparser.BaseParser.skipSpaces : $r5 = r0.<org.apache.pdfbox.pdfparser.BaseParser: org.apache.pdfbox.pdfparser.SequentialSource seqSource>
+org.apache.pdfbox.pdfparser.BaseParser.skipSpaces : $r2 = r0.<org.apache.pdfbox.pdfparser.BaseParser: org.apache.pdfbox.pdfparser.SequentialSource seqSource>
+org.apache.pdfbox.pdfparser.BaseParser.skipSpaces : if i0 == -1 goto return
+org.apache.pdfbox.pdfparser.BaseParser.skipSpaces : if i0 != 37 goto $r2 = r0.<org.apache.pdfbox.pdfparser.BaseParser: org.apache.pdfbox.pdfparser.SequentialSource seqSource>
+org.apache.pdfbox.pdfparser.BaseParser.skipSpaces : $r1 = r0.<org.apache.pdfbox.pdfparser.BaseParser: org.apache.pdfbox.pdfparser.SequentialSource seqSource>
+org.apache.pdfbox.pdfparser.BaseParser.skipSpaces : $z1 = virtualinvoke r0.<org.apache.pdfbox.pdfparser.BaseParser: boolean isWhitespace(int)>(i0)
+org.apache.pdfbox.contentstream.operator.Operator.getOperator : $z1 = virtualinvoke r0.<java.lang.String: boolean equals(java.lang.Object)>("BI")
+org.apache.pdfbox.contentstream.operator.Operator.getOperator : if r9 != null goto return r9
+org.apache.pdfbox.contentstream.operator.Operator.getOperator : $r5 = <org.apache.pdfbox.contentstream.operator.Operator: java.util.concurrent.ConcurrentMap operators>
+org.apache.pdfbox.contentstream.operator.Operator.getOperator : $z0 = virtualinvoke r0.<java.lang.String: boolean equals(java.lang.Object)>("ID")
+org.apache.pdfbox.contentstream.operator.Operator.getOperator : $r7 = <org.apache.pdfbox.contentstream.operator.Operator: java.util.concurrent.ConcurrentMap operators>
+org.apache.pdfbox.contentstream.operator.Operator.getOperator : $r2 = <org.apache.pdfbox.contentstream.operator.Operator: java.util.concurrent.ConcurrentMap operators>
+org.apache.pdfbox.io.RandomAccessOutputStream.write : $r2 = r0.<org.apache.pdfbox.io.RandomAccessOutputStream: org.apache.pdfbox.io.RandomAccessWrite writer>
+org.apache.pdfbox.pdfparser.PDFStreamParser.readOperator : if c0 != 100 goto (branch)
+org.apache.pdfbox.pdfparser.PDFStreamParser.readOperator : if i4 <= 57 goto $r10 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.String toString()>()
+org.apache.pdfbox.pdfparser.PDFStreamParser.readOperator : virtualinvoke r0.<org.apache.pdfbox.pdfparser.PDFStreamParser: void skipSpaces()>()
+org.apache.pdfbox.pdfparser.PDFStreamParser.readOperator : $z1 = virtualinvoke r0.<org.apache.pdfbox.pdfparser.PDFStreamParser: boolean isClosing(int)>(i4)
+org.apache.pdfbox.pdfparser.PDFStreamParser.readOperator : $r4 = r0.<org.apache.pdfbox.pdfparser.PDFStreamParser: org.apache.pdfbox.pdfparser.SequentialSource seqSource>
+org.apache.pdfbox.pdfparser.PDFStreamParser.readOperator : $r2 = new java.lang.StringBuilder
+org.apache.pdfbox.pdfparser.PDFStreamParser.readOperator : if i4 == -1 goto $r10 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.String toString()>()
+org.apache.pdfbox.pdfparser.PDFStreamParser.readOperator : virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(c0)
+org.apache.pdfbox.pdfparser.PDFStreamParser.readOperator : if i4 == 91 goto $r10 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.String toString()>()
+org.apache.pdfbox.pdfparser.PDFStreamParser.readOperator : $r5 = r0.<org.apache.pdfbox.pdfparser.PDFStreamParser: org.apache.pdfbox.pdfparser.SequentialSource seqSource>
+org.apache.pdfbox.pdfparser.PDFStreamParser.readOperator : $r3 = r0.<org.apache.pdfbox.pdfparser.PDFStreamParser: org.apache.pdfbox.pdfparser.SequentialSource seqSource>
+org.apache.pdfbox.pdfparser.PDFStreamParser.readOperator : $z0 = virtualinvoke r0.<org.apache.pdfbox.pdfparser.PDFStreamParser: boolean isWhitespace(int)>(i4)
+org.apache.pdfbox.pdmodel.PDDocument.getDocumentCatalog : $z0 = r2 instanceof org.apache.pdfbox.cos.COSDictionary
+org.apache.pdfbox.pdmodel.PDDocument.getDocumentCatalog : $r5 = <org.apache.pdfbox.cos.COSName: org.apache.pdfbox.cos.COSName ROOT>
+org.apache.pdfbox.pdmodel.PDDocument.getDocumentCatalog : $r7 = new org.apache.pdfbox.pdmodel.PDDocumentCatalog
+org.apache.pdfbox.pdmodel.PDDocument.getDocumentCatalog : $r9 = r0.<org.apache.pdfbox.pdmodel.PDDocument: org.apache.pdfbox.pdmodel.PDDocumentCatalog documentCatalog>
+org.apache.pdfbox.pdmodel.PDDocument.getDocumentCatalog : $r4 = r0.<org.apache.pdfbox.pdmodel.PDDocument: org.apache.pdfbox.cos.COSDocument document>
+org.apache.pdfbox.pdmodel.PDDocument.getDocumentCatalog : $r3 = r0.<org.apache.pdfbox.pdmodel.PDDocument: org.apache.pdfbox.pdmodel.PDDocumentCatalog documentCatalog>
+org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : if i0 <= 0 goto return i15
+org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : $z1 = staticinvoke <java.lang.Float: boolean isInfinite(float)>(f0)
+org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : $z0 = staticinvoke <java.lang.Float: boolean isNaN(float)>(f0)
+org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : l13 = (long) f0
+org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : i12 = 0
+org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : $b3 = f0 cmpg 0.0F
+org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : i16 = i15 + 1
+org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : $i9 = i0 - 1
+org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : $i7 = staticinvoke <org.apache.pdfbox.util.NumberFormatUtil: int getExponent(long)>(l13)
+org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : $d0 = (double) f0
+org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : $b1 = f0 cmpl 9.223372E18F
+org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : $b8 = l14 cmp 0L
+org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : $r2 = <org.apache.pdfbox.util.NumberFormatUtil: long[] POWER_OF_TENS>
+org.apache.pdfbox.io.ScratchFileBuffer.checkClosed : $r2 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: org.apache.pdfbox.io.ScratchFile pageHandler>
+org.apache.pdfbox.io.ScratchFileBuffer.checkClosed : $r1 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: org.apache.pdfbox.io.ScratchFile pageHandler>
+org.apache.pdfbox.filter.Filter.getDecodeParams : if r2 == null goto $r16 = new org.apache.pdfbox.cos.COSDictionary
+org.apache.pdfbox.filter.Filter.getDecodeParams : $z0 = r2 instanceof org.apache.pdfbox.cos.COSDictionary
+org.apache.pdfbox.filter.Filter.getDecodeParams : $r16 = new org.apache.pdfbox.cos.COSDictionary
+org.apache.pdfbox.filter.Filter.getDecodeParams : $r5 = <org.apache.pdfbox.cos.COSName: org.apache.pdfbox.cos.COSName DECODE_PARMS>
+org.apache.pdfbox.filter.Filter.getDecodeParams : $z1 = r2 instanceof org.apache.pdfbox.cos.COSArray
+org.apache.pdfbox.io.ScratchFile.createBuffer : $r1 = new org.apache.pdfbox.io.ScratchFileBuffer
+org.apache.pdfbox.contentstream.operator.Operator.getName : $r1 = r0.<org.apache.pdfbox.contentstream.operator.Operator: java.lang.String theOperator>
+org.apache.pdfbox.pdmodel.common.PDStream.getCOSObject : $r1 = r0.<org.apache.pdfbox.pdmodel.common.PDStream: org.apache.pdfbox.cos.COSStream stream>
+org.apache.pdfbox.pdmodel.common.PDStream.getCOSObject : $r1 = virtualinvoke r0.<org.apache.pdfbox.pdmodel.common.PDStream: org.apache.pdfbox.cos.COSStream getCOSObject()>()
+org.apache.pdfbox.cos.COSOutputStream.write : $r1 = r0.<org.apache.pdfbox.cos.COSOutputStream: java.io.ByteArrayOutputStream buffer>
+org.apache.pdfbox.cos.COSOutputStream.write : $r2 = r0.<org.apache.pdfbox.cos.COSOutputStream: java.io.ByteArrayOutputStream buffer>
+org.apache.pdfbox.io.RandomAccessInputStream.read : $r2 = r0.<org.apache.pdfbox.io.RandomAccessInputStream: org.apache.pdfbox.io.RandomAccessRead input>
+org.apache.pdfbox.io.RandomAccessInputStream.read : $r3 = r0.<org.apache.pdfbox.io.RandomAccessInputStream: org.apache.pdfbox.io.RandomAccessRead input>
+org.apache.pdfbox.io.RandomAccessInputStream.read : $r1 = r0.<org.apache.pdfbox.io.RandomAccessInputStream: org.apache.pdfbox.io.RandomAccessRead input>
+org.apache.pdfbox.io.RandomAccessInputStream.read : virtualinvoke r0.<org.apache.pdfbox.io.RandomAccessInputStream: void restorePosition()>()
+org.apache.pdfbox.io.RandomAccessInputStream.read : return i0
+org.apache.pdfbox.io.RandomAccessInputStream.read : return -1
+org.apache.pdfbox.io.RandomAccessInputStream.read : $l1 = r0.<org.apache.pdfbox.io.RandomAccessInputStream: long position>
+org.apache.pdfbox.io.RandomAccessInputStream.read : return i2
+org.apache.pdfbox.io.RandomAccessInputStream.read : $l4 = r0.<org.apache.pdfbox.io.RandomAccessInputStream: long position>
+org.apache.pdfbox.filter.FlateFilter.decode : $r7 = new org.apache.pdfbox.filter.DecodeResult
+org.apache.pdfbox.filter.FlateFilter.decode : if r4 == null goto (branch)
+org.apache.pdfbox.filter.FlateFilter.decode : goto [?= $r7 = new org.apache.pdfbox.filter.DecodeResult]
+org.apache.pdfbox.filter.FlateFilter.decode : if i4 <= 1 goto specialinvoke r0.<org.apache.pdfbox.filter.FlateFilter: void decompress(java.io.InputStream,java.io.OutputStream)>(r1, r2)
+org.apache.pdfbox.filter.FlateFilter.decode : specialinvoke r0.<org.apache.pdfbox.filter.FlateFilter: void decompress(java.io.InputStream,java.io.OutputStream)>(r1, r2)
+org.apache.pdfbox.filter.FlateFilter.decode : i4 = -1
+org.apache.pdfbox.filter.FlateFilter.decode : $r14 = <org.apache.pdfbox.cos.COSName: org.apache.pdfbox.cos.COSName PREDICTOR>
+org.apache.pdfbox.filter.FlateFilter.decode : r4 = virtualinvoke r0.<org.apache.pdfbox.filter.FlateFilter: org.apache.pdfbox.cos.COSDictionary getDecodeParams(org.apache.pdfbox.cos.COSDictionary,int)>(r3, i0)
+org.apache.pdfbox.cos.COSStream$1.close : specialinvoke r0.<java.io.FilterOutputStream: void close()>()
+org.apache.pdfbox.cos.COSStream$1.close : $r2 = r0.<org.apache.pdfbox.cos.COSStream$1: org.apache.pdfbox.cos.COSStream this$0>
+org.apache.pdfbox.cos.COSStream$1.close : $r5 = r0.<org.apache.pdfbox.cos.COSStream$1: org.apache.pdfbox.cos.COSStream this$0>
+org.apache.pdfbox.pdmodel.PDPageContentStream$AppendMode.isOverwrite : $r1 = <org.apache.pdfbox.pdmodel.PDPageContentStream$AppendMode: org.apache.pdfbox.pdmodel.PDPageContentStream$AppendMode OVERWRITE>
+org.apache.pdfbox.cos.COSStream.createOutputStream : $r8 = new org.apache.pdfbox.cos.COSOutputStream
+org.apache.pdfbox.cos.COSStream.createOutputStream : $r11 = new org.apache.pdfbox.cos.COSStream$1
+org.apache.pdfbox.cos.COSStream.createOutputStream : $z0 = r0.<org.apache.pdfbox.cos.COSStream: boolean isWriting>
+org.apache.pdfbox.cos.COSStream.createOutputStream : if r1 == null goto $r4 = r0.<org.apache.pdfbox.cos.COSStream: org.apache.pdfbox.io.ScratchFile scratchFile>
+org.apache.pdfbox.cos.COSStream.createOutputStream : $r12 = <org.apache.pdfbox.cos.COSName: org.apache.pdfbox.cos.COSName FILTER>
+org.apache.pdfbox.cos.COSStream.createOutputStream : r0.<org.apache.pdfbox.cos.COSStream: boolean isWriting> = 1
+org.apache.pdfbox.cos.COSStream.createOutputStream : specialinvoke r0.<org.apache.pdfbox.cos.COSStream: void checkClosed()>()
+org.apache.pdfbox.cos.COSStream.createOutputStream : $r4 = r0.<org.apache.pdfbox.cos.COSStream: org.apache.pdfbox.io.ScratchFile scratchFile>
+org.apache.pdfbox.cos.COSStream.createOutputStream : $r6 = new org.apache.pdfbox.io.RandomAccessOutputStream
+org.apache.pdfbox.cos.COSDocument.setTrailer : r0.<org.apache.pdfbox.cos.COSDocument: org.apache.pdfbox.cos.COSDictionary trailer> = r1
+org.apache.pdfbox.pdfparser.PDFStreamParser.parse : $r3 = r0.<org.apache.pdfbox.pdfparser.PDFStreamParser: java.util.List streamObjects>
+org.apache.pdfbox.pdfparser.PDFStreamParser.parse : $r2 = virtualinvoke r0.<org.apache.pdfbox.pdfparser.PDFStreamParser: java.lang.Object parseNextToken()>()
+org.apache.pdfbox.cos.COSInteger.get : $r1 = <org.apache.pdfbox.cos.COSInteger: org.apache.pdfbox.cos.COSInteger[] STATIC>
+org.apache.pdfbox.cos.COSInteger.get : $b2 = -100L cmp l0
+org.apache.pdfbox.cos.COSInteger.get : $i4 = (int) l0
+org.apache.pdfbox.cos.COSInteger.get : $b3 = l0 cmp 256L
+org.apache.pdfbox.cos.COSInteger.get : $r3 = <org.apache.pdfbox.cos.COSInteger: org.apache.pdfbox.cos.COSInteger[] STATIC>
+org.apache.pdfbox.pdmodel.PDResources.getCOSObject : $r1 = virtualinvoke r0.<org.apache.pdfbox.pdmodel.PDResources: org.apache.pdfbox.cos.COSDictionary getCOSObject()>()
+org.apache.pdfbox.pdmodel.PDResources.getCOSObject : $r1 = r0.<org.apache.pdfbox.pdmodel.PDResources: org.apache.pdfbox.cos.COSDictionary resources>
+org.apache.pdfbox.io.ScratchFileBuffer.length : $l0 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: long size>
+org.apache.pdfbox.pdmodel.PDDocument.getPages : $r1 = virtualinvoke r0.<org.apache.pdfbox.pdmodel.PDDocument: org.apache.pdfbox.pdmodel.PDDocumentCatalog getDocumentCatalog()>()
+org.apache.pdfbox.io.ScratchFile.getNewPage : exitmonitor $r3
+org.apache.pdfbox.io.ScratchFile.getNewPage : $i0 = r0.<org.apache.pdfbox.io.ScratchFile: int pageCount>
+org.apache.pdfbox.io.ScratchFile.getNewPage : $i1 = i3 + 1
+org.apache.pdfbox.io.ScratchFile.getNewPage : if i3 >= 0 goto $r5 = r0.<org.apache.pdfbox.io.ScratchFile: java.util.BitSet freePages>
+org.apache.pdfbox.io.ScratchFile.getNewPage : $r3 = r0.<org.apache.pdfbox.io.ScratchFile: java.util.BitSet freePages>
+org.apache.pdfbox.io.ScratchFile.getNewPage : $r4 = r0.<org.apache.pdfbox.io.ScratchFile: java.util.BitSet freePages>
+org.apache.pdfbox.io.ScratchFile.getNewPage : $r5 = r0.<org.apache.pdfbox.io.ScratchFile: java.util.BitSet freePages>
+org.apache.pdfbox.cos.COSName.getPDFName : $r1 = <org.apache.pdfbox.cos.COSName: java.util.Map commonNameMap>
+org.apache.pdfbox.cos.COSName.getPDFName : return r6
+org.apache.pdfbox.cos.COSName.getPDFName : r6 = null
+org.apache.pdfbox.cos.COSName.getPDFName : $r3 = <org.apache.pdfbox.cos.COSName: java.util.Map nameMap>
+org.apache.pdfbox.cos.COSName.getPDFName : if r0 == null goto return r6
+org.apache.pdfbox.cos.COSName.getPDFName : if r6 != null goto return r6
+org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : $z0 = r5 instanceof org.apache.pdfbox.cos.COSObject
+org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : return r5
+org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : $z1 = r5 instanceof org.apache.pdfbox.cos.COSNull
+org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : $r2 = r0.<org.apache.pdfbox.cos.COSDictionary: java.util.Map items>
+org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : if r2 == null goto return r3
+org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : r3 = virtualinvoke r0.<org.apache.pdfbox.cos.COSDictionary: org.apache.pdfbox.cos.COSBase getDictionaryObject(org.apache.pdfbox.cos.COSName)>(r1)
+org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : r3 = virtualinvoke r0.<org.apache.pdfbox.cos.COSDictionary: org.apache.pdfbox.cos.COSBase getDictionaryObject(org.apache.pdfbox.cos.COSName)>(r2)
+org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : if r3 != null goto return r3
+org.apache.pdfbox.pdmodel.PDDocument.addPage : $r2 = virtualinvoke r0.<org.apache.pdfbox.pdmodel.PDDocument: org.apache.pdfbox.pdmodel.PDPageTree getPages()>()
+org.apache.pdfbox.io.MemoryUsageSetting.isStorageRestricted : $l0 = r0.<org.apache.pdfbox.io.MemoryUsageSetting: long maxStorageBytes>
+org.apache.pdfbox.cos.COSStream.access$000 : $r1 = r0.<org.apache.pdfbox.cos.COSStream: org.apache.pdfbox.io.RandomAccess randomAccess>
+org.apache.pdfbox.pdmodel.PDPage.hasContents : $z0 = r1 instanceof org.apache.pdfbox.cos.COSStream
+org.apache.pdfbox.pdmodel.PDPage.hasContents : return 0
+org.apache.pdfbox.pdmodel.PDPage.hasContents : $z1 = r1 instanceof org.apache.pdfbox.cos.COSArray
+org.apache.pdfbox.pdmodel.PDPage.hasContents : $r3 = r0.<org.apache.pdfbox.pdmodel.PDPage: org.apache.pdfbox.cos.COSDictionary page>
+org.apache.pdfbox.pdmodel.PDDocument.getDocument : $r1 = r0.<org.apache.pdfbox.pdmodel.PDDocument: org.apache.pdfbox.cos.COSDocument document>
+org.apache.pdfbox.contentstream.PDAbstractContentStream.setStrokingColorSpaceStack : $r2 = r0.<org.apache.pdfbox.contentstream.PDAbstractContentStream: java.util.Stack strokingColorSpaceStack>
+org.apache.pdfbox.contentstream.PDAbstractContentStream.setStrokingColorSpaceStack : $r5 = r0.<org.apache.pdfbox.contentstream.PDAbstractContentStream: java.util.Stack strokingColorSpaceStack>
+org.apache.pdfbox.pdfparser.BaseParser.isClosing : if i0 != 93 goto $z0 = 0
+org.apache.pdfbox.cos.COSStream.getFilters : $r1 = <org.apache.pdfbox.cos.COSName: org.apache.pdfbox.cos.COSName FILTER>
+org.apache.pdfbox.util.SmallMap.findKey : if r1 != null goto i1 = 0
+org.apache.pdfbox.util.SmallMap.findKey : return -1
+org.apache.pdfbox.util.SmallMap.findKey : $r3 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.util.SmallMap.findKey : return i1
+org.apache.pdfbox.util.SmallMap.findKey : i1 = 0
+org.apache.pdfbox.util.SmallMap.findKey : $z0 = virtualinvoke r0.<org.apache.pdfbox.util.SmallMap: boolean isEmpty()>()
+org.apache.pdfbox.io.ScratchFile.checkClosed : $z0 = r0.<org.apache.pdfbox.io.ScratchFile: boolean isClosed>
+org.apache.pdfbox.cos.COSStream.access$102 : r0.<org.apache.pdfbox.cos.COSStream: boolean isWriting> = z0
+org.apache.pdfbox.pdmodel.PDPageTree.getInheritableAttribute : if r2 == null goto $r5 = <org.apache.pdfbox.cos.COSName: org.apache.pdfbox.cos.COSName PARENT>
+org.apache.pdfbox.pdmodel.PDPageTree.getInheritableAttribute : if r3 == null goto return null
+org.apache.pdfbox.pdmodel.PDPageTree.getInheritableAttribute : $r5 = <org.apache.pdfbox.cos.COSName: org.apache.pdfbox.cos.COSName PARENT>
+org.apache.pdfbox.pdmodel.PDPageTree.getInheritableAttribute : return null
+org.apache.pdfbox.pdmodel.PDPageTree.getInheritableAttribute : r2 = virtualinvoke r0.<org.apache.pdfbox.cos.COSDictionary: org.apache.pdfbox.cos.COSBase getDictionaryObject(org.apache.pdfbox.cos.COSName)>(r1)
+org.apache.pdfbox.pdmodel.PDPageTree.getInheritableAttribute : $r7 = staticinvoke <org.apache.pdfbox.pdmodel.PDPageTree: org.apache.pdfbox.cos.COSBase getInheritableAttribute(org.apache.pdfbox.cos.COSDictionary,org.apache.pdfbox.cos.COSName)>(r3, r1)
+org.apache.pdfbox.cos.COSFloat.floatValue : $r1 = r0.<org.apache.pdfbox.cos.COSFloat: java.math.BigDecimal value>
+org.apache.pdfbox.pdmodel.common.PDRectangle.getCOSObject : $r1 = r0.<org.apache.pdfbox.pdmodel.common.PDRectangle: org.apache.pdfbox.cos.COSArray rectArray>
+org.apache.pdfbox.io.ScratchFileBuffer.ensureAvailableBytesInPage : return 1
+org.apache.pdfbox.io.ScratchFileBuffer.ensureAvailableBytesInPage : $i1 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: int positionInPage>
+org.apache.pdfbox.cos.COSDictionary.getInt : $i1 = virtualinvoke r0.<org.apache.pdfbox.cos.COSDictionary: int getInt(org.apache.pdfbox.cos.COSName,org.apache.pdfbox.cos.COSName,int)>(r1, null, i0)
+org.apache.pdfbox.cos.COSDictionary.getInt : i1 = i0
+org.apache.pdfbox.cos.COSDictionary.getInt : r3 = virtualinvoke r0.<org.apache.pdfbox.cos.COSDictionary: org.apache.pdfbox.cos.COSBase getDictionaryObject(org.apache.pdfbox.cos.COSName,org.apache.pdfbox.cos.COSName)>(r1, r2)
+org.apache.pdfbox.cos.COSDictionary.getInt : return i1
+org.apache.pdfbox.cos.COSDictionary.getInt : $i0 = virtualinvoke r0.<org.apache.pdfbox.cos.COSDictionary: int getInt(org.apache.pdfbox.cos.COSName,int)>(r1, -1)
+org.apache.pdfbox.cos.COSDictionary.getInt : $z0 = r3 instanceof org.apache.pdfbox.cos.COSNumber
+org.apache.pdfbox.cos.COSDictionary.getInt : $r4 = (org.apache.pdfbox.cos.COSNumber) r3
+org.apache.pdfbox.contentstream.PDAbstractContentStream.setNonStrokingColorSpaceStack : $r5 = r0.<org.apache.pdfbox.contentstream.PDAbstractContentStream: java.util.Stack nonStrokingColorSpaceStack>
+org.apache.pdfbox.contentstream.PDAbstractContentStream.setNonStrokingColorSpaceStack : $r2 = r0.<org.apache.pdfbox.contentstream.PDAbstractContentStream: java.util.Stack nonStrokingColorSpaceStack>
+org.apache.pdfbox.cos.COSDictionary.setInt : $l1 = (long) i0
+org.apache.pdfbox.contentstream.PDAbstractContentStream.setStrokingColor : virtualinvoke r0.<org.apache.pdfbox.contentstream.PDAbstractContentStream: void writeOperand(float)>(f0)
+org.apache.pdfbox.contentstream.PDAbstractContentStream.setStrokingColor : virtualinvoke r0.<org.apache.pdfbox.contentstream.PDAbstractContentStream: void writeOperand(float)>(f1)
+org.apache.pdfbox.contentstream.PDAbstractContentStream.setStrokingColor : virtualinvoke r0.<org.apache.pdfbox.contentstream.PDAbstractContentStream: void writeOperand(float)>(f2)
+org.apache.pdfbox.contentstream.PDAbstractContentStream.setStrokingColor : virtualinvoke r0.<org.apache.pdfbox.contentstream.PDAbstractContentStream: void writeOperator(java.lang.String)>("K")
+org.apache.pdfbox.contentstream.PDAbstractContentStream.setStrokingColor : $d1 = (double) f1
+org.apache.pdfbox.contentstream.PDAbstractContentStream.setStrokingColor : virtualinvoke r0.<org.apache.pdfbox.contentstream.PDAbstractContentStream: void writeOperand(float)>(f3)
+org.apache.pdfbox.contentstream.PDAbstractContentStream.setStrokingColor : $d0 = (double) f0
+org.apache.pdfbox.contentstream.PDAbstractContentStream.setStrokingColor : $r1 = <org.apache.pdfbox.pdmodel.graphics.color.PDDeviceCMYK: org.apache.pdfbox.pdmodel.graphics.color.PDDeviceCMYK INSTANCE>
+org.apache.pdfbox.pdmodel.PDPage.getCOSObject : $r1 = r0.<org.apache.pdfbox.pdmodel.PDPage: org.apache.pdfbox.cos.COSDictionary page>
+org.apache.pdfbox.cos.COSStream$1.write : $r2 = r0.<org.apache.pdfbox.cos.COSStream$1: java.io.OutputStream out>
+org.apache.pdfbox.util.SmallMap.get : if i0 >= 0 goto $r2 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.util.SmallMap.get : i0 = specialinvoke r0.<org.apache.pdfbox.util.SmallMap: int findKey(java.lang.Object)>(r1)
+org.apache.pdfbox.cos.COSDocument.getTrailer : $r1 = r0.<org.apache.pdfbox.cos.COSDocument: org.apache.pdfbox.cos.COSDictionary trailer>
+org.apache.pdfbox.cos.COSDictionary.getCOSName : r2 = virtualinvoke r0.<org.apache.pdfbox.cos.COSDictionary: org.apache.pdfbox.cos.COSBase getDictionaryObject(org.apache.pdfbox.cos.COSName)>(r1)
+org.apache.pdfbox.cos.COSDictionary.getCOSName : $r3 = (org.apache.pdfbox.cos.COSName) r2
+org.apache.pdfbox.cos.COSDictionary.getCOSName : $z0 = r2 instanceof org.apache.pdfbox.cos.COSName
+org.apache.pdfbox.io.MemoryUsageSetting.useMainMemory : $z0 = r0.<org.apache.pdfbox.io.MemoryUsageSetting: boolean useMainMemory>
+org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : z0 = 0
+org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : $r1 = r0.<org.apache.pdfbox.cos.COSFloat: java.math.BigDecimal value>
+org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : $b3 = f3 cmpl #InfinityF
+org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : $b4 = f3 cmpl 0.0F
+org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : $b0 = f3 cmpl #-InfinityF
+org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : $r2 = r0.<org.apache.pdfbox.cos.COSFloat: java.math.BigDecimal value>
+org.apache.pdfbox.contentstream.PDAbstractContentStream.close : $r1 = r0.<org.apache.pdfbox.contentstream.PDAbstractContentStream: java.io.OutputStream output>
+org.apache.pdfbox.util.SmallMap.put : $r5 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.util.SmallMap.put : $r7 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.util.SmallMap.put : $r8 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.util.SmallMap.put : $r9 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.util.SmallMap.put : if r2 != null goto $r5 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.util.SmallMap.put : $i4 = i5 + 1
+org.apache.pdfbox.util.SmallMap.put : r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr> = r3
+org.apache.pdfbox.util.SmallMap.put : r3[i5] = r1
+org.apache.pdfbox.util.SmallMap.put : $i3 = i5 + 2
+org.apache.pdfbox.util.SmallMap.put : if r1 == null goto $r4 = new java.lang.NullPointerException
+org.apache.pdfbox.util.SmallMap.put : return null
+org.apache.pdfbox.util.SmallMap.put : $r10 = newarray (java.lang.Object)[2]
+org.apache.pdfbox.util.SmallMap.put : i0 = specialinvoke r0.<org.apache.pdfbox.util.SmallMap: int findKey(java.lang.Object)>(r1)
+org.apache.pdfbox.util.SmallMap.put : if i0 >= 0 goto $r6 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.util.SmallMap.put : return r11
+org.apache.pdfbox.util.SmallMap.put : $r6 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.io.ScratchFileBuffer.write : $r2 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: byte[] currentPage>
+org.apache.pdfbox.io.ScratchFileBuffer.write : if i19 <= 0 goto $l5 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: long currentPageOffset>
+org.apache.pdfbox.io.ScratchFileBuffer.write : $i0 = lengthof r1
+org.apache.pdfbox.io.ScratchFileBuffer.write : i20 = i20 + i2
+org.apache.pdfbox.io.ScratchFileBuffer.write : i19 = i1
+org.apache.pdfbox.io.ScratchFileBuffer.write : r0.<org.apache.pdfbox.io.ScratchFileBuffer: boolean currentPageContentChanged> = 1
+org.apache.pdfbox.io.ScratchFileBuffer.write : $l11 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: long currentPageOffset>
+org.apache.pdfbox.io.ScratchFileBuffer.write : $i14 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: int pageSize>
+org.apache.pdfbox.io.ScratchFileBuffer.write : specialinvoke r0.<org.apache.pdfbox.io.ScratchFileBuffer: boolean ensureAvailableBytesInPage(boolean)>(1)
+org.apache.pdfbox.io.ScratchFileBuffer.write : specialinvoke r0.<org.apache.pdfbox.io.ScratchFileBuffer: void checkClosed()>()
+org.apache.pdfbox.io.ScratchFileBuffer.write : $i17 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: int positionInPage>
+org.apache.pdfbox.io.ScratchFileBuffer.write : i20 = i0
+org.apache.pdfbox.io.ScratchFileBuffer.write : i19 = i19 - i2
+org.apache.pdfbox.io.ScratchFileBuffer.write : goto [?= staticinvoke <edu.washington.cs.dt.impact.util.Tracer: void trace(java.lang.String,java.lang.String)>("if i19 <= 0 goto $l5 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: long currentPageOffset>", "org.apache.pdfbox.io.ScratchFileBuffer.write")]
+org.apache.pdfbox.io.ScratchFileBuffer.write : $l5 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: long currentPageOffset>
+org.apache.pdfbox.contentstream.PDAbstractContentStream.setOutput : r0.<org.apache.pdfbox.contentstream.PDAbstractContentStream: java.io.OutputStream output> = r1
+org.apache.pdfbox.cos.COSStream.ensureRandomAccessExists : $r1 = r0.<org.apache.pdfbox.cos.COSStream: org.apache.pdfbox.io.RandomAccess randomAccess>
+org.apache.pdfbox.util.SmallMap.isEmpty : $r1 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.pdmodel.PDPage.getResources : $r8 = r0.<org.apache.pdfbox.pdmodel.PDPage: org.apache.pdfbox.pdmodel.PDResources pageResources>
+org.apache.pdfbox.pdmodel.PDPage.getResources : $r4 = r0.<org.apache.pdfbox.pdmodel.PDPage: org.apache.pdfbox.cos.COSDictionary page>
+org.apache.pdfbox.pdmodel.PDPage.getResources : if r1 == null goto $r8 = r0.<org.apache.pdfbox.pdmodel.PDPage: org.apache.pdfbox.pdmodel.PDResources pageResources>
+org.apache.pdfbox.pdmodel.PDPage.getResources : $r2 = r0.<org.apache.pdfbox.pdmodel.PDPage: org.apache.pdfbox.pdmodel.PDResources pageResources>
+org.apache.pdfbox.pdmodel.common.PDStream.createOutputStream : $r2 = r0.<org.apache.pdfbox.pdmodel.common.PDStream: org.apache.pdfbox.cos.COSStream stream>
+org.apache.pdfbox.cos.COSDocument.createCOSStream : $r2 = new org.apache.pdfbox.cos.COSStream
+org.apache.pdfbox.cos.COSDocument.createCOSStream : $r4 = r0.<org.apache.pdfbox.cos.COSDocument: java.util.List streams>
+org.apache.pdfbox.cos.COSDocument.createCOSStream : return $r2
+org.apache.pdfbox.pdmodel.PDPage.setResources : if r1 == null goto $r3 = r0.<org.apache.pdfbox.pdmodel.PDPage: org.apache.pdfbox.cos.COSDictionary page>
+org.apache.pdfbox.pdmodel.PDPage.setResources : $r5 = r0.<org.apache.pdfbox.pdmodel.PDPage: org.apache.pdfbox.cos.COSDictionary page>
+org.apache.pdfbox.pdmodel.PDPage.setResources : r0.<org.apache.pdfbox.pdmodel.PDPage: org.apache.pdfbox.pdmodel.PDResources pageResources> = r1
+org.apache.pdfbox.contentstream.PDAbstractContentStream.setResources : r0.<org.apache.pdfbox.contentstream.PDAbstractContentStream: org.apache.pdfbox.pdmodel.PDResources resources> = r1
+org.apache.pdfbox.cos.COSName.equals : $z0 = r1 instanceof org.apache.pdfbox.cos.COSName
+org.apache.pdfbox.cos.COSDictionary.asUnmodifiableDictionary : $r1 = new org.apache.pdfbox.cos.UnmodifiableCOSDictionary
+org.apache.pdfbox.pdmodel.PDPage.setContents : $r3 = r0.<org.apache.pdfbox.pdmodel.PDPage: org.apache.pdfbox.cos.COSDictionary page>
+org.apache.pdfbox.contentstream.PDAbstractContentStream.setNonStrokingColor : $f0 = (float) d0
+org.apache.pdfbox.contentstream.PDAbstractContentStream.setNonStrokingColor : $f2 = (float) d2
+org.apache.pdfbox.contentstream.PDAbstractContentStream.setNonStrokingColor : $f1 = (float) d1
+org.apache.pdfbox.contentstream.PDAbstractContentStream.setNonStrokingColor : $f3 = (float) d3
+org.apache.pdfbox.contentstream.PDAbstractContentStream.setNonStrokingColor : virtualinvoke r0.<org.apache.pdfbox.contentstream.PDAbstractContentStream: void writeOperator(java.lang.String)>("k")
+org.apache.pdfbox.contentstream.PDAbstractContentStream.setNonStrokingColor : $z1 = specialinvoke r0.<org.apache.pdfbox.contentstream.PDAbstractContentStream: boolean isOutsideOneInterval(double)>(d1)
+org.apache.pdfbox.contentstream.PDAbstractContentStream.setNonStrokingColor : $r1 = <org.apache.pdfbox.pdmodel.graphics.color.PDDeviceCMYK: org.apache.pdfbox.pdmodel.graphics.color.PDDeviceCMYK INSTANCE>
+org.apache.pdfbox.contentstream.PDAbstractContentStream.setNonStrokingColor : $z0 = specialinvoke r0.<org.apache.pdfbox.contentstream.PDAbstractContentStream: boolean isOutsideOneInterval(double)>(d0)
+org.apache.pdfbox.cos.COSNumber.get : $i0 = virtualinvoke r0.<java.lang.String: int length()>()
+org.apache.pdfbox.cos.COSNumber.get : $i1 = virtualinvoke r0.<java.lang.String: int indexOf(int)>(46)
+org.apache.pdfbox.contentstream.PDAbstractContentStream.writeOperand : if i0 != -1 goto $r4 = r0.<org.apache.pdfbox.contentstream.PDAbstractContentStream: java.io.OutputStream output>
+org.apache.pdfbox.contentstream.PDAbstractContentStream.writeOperand : $r4 = r0.<org.apache.pdfbox.contentstream.PDAbstractContentStream: java.io.OutputStream output>
+org.apache.pdfbox.contentstream.PDAbstractContentStream.writeOperand : $r5 = r0.<org.apache.pdfbox.contentstream.PDAbstractContentStream: java.io.OutputStream output>
+org.apache.pdfbox.contentstream.PDAbstractContentStream.writeOperand : $r1 = r0.<org.apache.pdfbox.contentstream.PDAbstractContentStream: java.text.NumberFormat formatDecimal>
+org.apache.pdfbox.util.NumberFormatUtil.formatPositiveNumber : if z0 == 0 goto $r1 = <org.apache.pdfbox.util.NumberFormatUtil: int[] POWER_OF_TENS_INT>
+org.apache.pdfbox.util.NumberFormatUtil.formatPositiveNumber : $r2 = <org.apache.pdfbox.util.NumberFormatUtil: int[] POWER_OF_TENS_INT>
+org.apache.pdfbox.util.NumberFormatUtil.formatPositiveNumber : l20 = l0
+org.apache.pdfbox.util.NumberFormatUtil.formatPositiveNumber : $r1 = <org.apache.pdfbox.util.NumberFormatUtil: int[] POWER_OF_TENS_INT>
+org.apache.pdfbox.util.NumberFormatUtil.formatPositiveNumber : i18 = i18 + -1
+org.apache.pdfbox.util.NumberFormatUtil.formatPositiveNumber : i22 = (int) l20
+org.apache.pdfbox.util.NumberFormatUtil.formatPositiveNumber : if i18 < 0 goto return i19
+org.apache.pdfbox.util.NumberFormatUtil.formatPositiveNumber : $i7 = i19
+org.apache.pdfbox.util.NumberFormatUtil.formatPositiveNumber : $b3 = l20 cmp 2147483647L
+org.apache.pdfbox.util.NumberFormatUtil.formatPositiveNumber : i19 = i1
+org.apache.pdfbox.cos.COSDictionary.setItem : r3 = interfaceinvoke r2.<org.apache.pdfbox.pdmodel.common.COSObjectable: org.apache.pdfbox.cos.COSBase getCOSObject()>()
+org.apache.pdfbox.cos.COSDictionary.setItem : $r3 = r0.<org.apache.pdfbox.cos.COSDictionary: java.util.Map items>
+org.apache.pdfbox.cos.COSDictionary.setItem : r3 = null
+org.apache.pdfbox.cos.COSDictionary.setItem : if r2 == null goto virtualinvoke r0.<org.apache.pdfbox.cos.COSDictionary: void setItem(org.apache.pdfbox.cos.COSName,org.apache.pdfbox.cos.COSBase)>(r1, r3)
+org.apache.pdfbox.cos.COSDictionary.setItem : if r2 != null goto $r3 = r0.<org.apache.pdfbox.cos.COSDictionary: java.util.Map items>
+org.apache.pdfbox.cos.COSDictionary.setItem : virtualinvoke r0.<org.apache.pdfbox.cos.COSDictionary: void setItem(org.apache.pdfbox.cos.COSName,org.apache.pdfbox.cos.COSBase)>(r1, r3)
+org.apache.pdfbox.io.RandomAccessInputStream.restorePosition : $r1 = r0.<org.apache.pdfbox.io.RandomAccessInputStream: org.apache.pdfbox.io.RandomAccessRead input>
+org.apache.pdfbox.io.ScratchFileBuffer.read : $r2 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: byte[] currentPage>
+org.apache.pdfbox.io.ScratchFileBuffer.read : $r1 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: byte[] currentPage>
+org.apache.pdfbox.io.ScratchFileBuffer.read : i23 = i23 - i2
+org.apache.pdfbox.io.ScratchFileBuffer.read : $l2 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: long currentPageOffset>
+org.apache.pdfbox.io.ScratchFileBuffer.read : i24 = i24 + i2
+org.apache.pdfbox.io.ScratchFileBuffer.read : return i24
+org.apache.pdfbox.io.ScratchFileBuffer.read : $i18 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: int pageSize>
+org.apache.pdfbox.io.ScratchFileBuffer.read : $l15 = (long) i1
+org.apache.pdfbox.io.ScratchFileBuffer.read : $z0 = specialinvoke r0.<org.apache.pdfbox.io.ScratchFileBuffer: boolean ensureAvailableBytesInPage(boolean)>(0)
+org.apache.pdfbox.io.ScratchFileBuffer.read : i24 = 0
+org.apache.pdfbox.io.ScratchFileBuffer.read : $i21 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: int positionInPage>
+org.apache.pdfbox.io.ScratchFileBuffer.read : specialinvoke r0.<org.apache.pdfbox.io.ScratchFileBuffer: void checkClosed()>()
+org.apache.pdfbox.io.ScratchFileBuffer.read : if i23 <= 0 goto return i24
+org.apache.pdfbox.io.ScratchFileBuffer.read : $l5 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: long currentPageOffset>
+org.apache.pdfbox.io.ScratchFileBuffer.read : i25 = i25 + i2
+org.apache.pdfbox.io.ScratchFileBuffer.read : i25 = i0
+org.apache.pdfbox.io.ScratchFileBuffer.read : goto [?= staticinvoke <edu.washington.cs.dt.impact.util.Tracer: void trace(java.lang.String,java.lang.String)>("if i23 <= 0 goto return i24", "org.apache.pdfbox.io.ScratchFileBuffer.read")]
+org.apache.pdfbox.contentstream.PDAbstractContentStream.setMaximumFractionDigits : $r1 = r0.<org.apache.pdfbox.contentstream.PDAbstractContentStream: java.text.NumberFormat formatDecimal>
+org.apache.pdfbox.pdfparser.InputStreamSource.peek : if i0 == -1 goto return i0
+org.apache.pdfbox.pdfparser.InputStreamSource.peek : $r2 = r0.<org.apache.pdfbox.pdfparser.InputStreamSource: java.io.PushbackInputStream input>
+org.apache.pdfbox.pdfparser.InputStreamSource.peek : return i0
+org.apache.pdfbox.pdfparser.InputStreamSource.peek : $r1 = r0.<org.apache.pdfbox.pdfparser.InputStreamSource: java.io.PushbackInputStream input>
+org.apache.pdfbox.io.ScratchFileBuffer.isEOF : $l2 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: long currentPageOffset>
+org.apache.pdfbox.io.ScratchFileBuffer.isEOF : specialinvoke r0.<org.apache.pdfbox.io.ScratchFileBuffer: void checkClosed()>()
+org.apache.pdfbox.pdfparser.InputStreamSource.read : $i1 = r0.<org.apache.pdfbox.pdfparser.InputStreamSource: int position>
+org.apache.pdfbox.pdfparser.InputStreamSource.read : return i0
+org.apache.pdfbox.pdfparser.InputStreamSource.read : $r1 = r0.<org.apache.pdfbox.pdfparser.InputStreamSource: java.io.PushbackInputStream input>
+org.apache.pdfbox.pdmodel.PDPageTree.add : $r4 = <org.apache.pdfbox.cos.COSName: org.apache.pdfbox.cos.COSName PARENT>
+org.apache.pdfbox.pdmodel.PDPageTree.add : virtualinvoke r2.<org.apache.pdfbox.cos.COSArray: void add(org.apache.pdfbox.cos.COSBase)>(r13)
+org.apache.pdfbox.pdmodel.PDPageTree.add : $r12 = <org.apache.pdfbox.cos.COSName: org.apache.pdfbox.cos.COSName COUNT>
+org.apache.pdfbox.pdmodel.PDPageTree.add : $r6 = r0.<org.apache.pdfbox.pdmodel.PDPageTree: org.apache.pdfbox.cos.COSDictionary root>
+org.apache.pdfbox.pdmodel.PDPageTree.add : $r9 = <org.apache.pdfbox.cos.COSName: org.apache.pdfbox.cos.COSName PARENT>
+org.apache.pdfbox.pdmodel.PDPageTree.add : if r13 != null goto staticinvoke <edu.washington.cs.dt.impact.util.Tracer: void trace(java.lang.String,java.lang.String)>("$r9 = <org.apache.pdfbox.cos.COSName: org.apache.pdfbox.cos.COSName PARENT>", "org.apache.pdfbox.pdmodel.PDPageTree.add")
+org.apache.pdfbox.pdmodel.PDPageTree.add : if r13 == null goto (branch)
+org.apache.pdfbox.pdmodel.PDPageTree.add : r13 = virtualinvoke r1.<org.apache.pdfbox.pdmodel.PDPage: org.apache.pdfbox.cos.COSDictionary getCOSObject()>()
+org.apache.pdfbox.filter.FlateFilter.decompress : $r7 = new java.util.zip.Inflater
+org.apache.pdfbox.filter.FlateFilter.decompress : r3 = newarray (byte)[2048]
+org.apache.pdfbox.filter.FlateFilter.decompress : i2 = virtualinvoke r1.<java.io.InputStream: int read(byte[])>(r3)
+org.apache.pdfbox.filter.FlateFilter.decompress : $z0 = virtualinvoke $r7.<java.util.zip.Inflater: boolean finished()>()
+org.apache.pdfbox.filter.FlateFilter.decompress : virtualinvoke $r7.<java.util.zip.Inflater: void end()>()
+org.apache.pdfbox.filter.FlateFilter.decompress : goto [?= (branch)]
+org.apache.pdfbox.filter.FlateFilter.decompress : virtualinvoke r2.<java.io.OutputStream: void flush()>()
+org.apache.pdfbox.filter.FlateFilter.decompress : i3 = virtualinvoke $r7.<java.util.zip.Inflater: int inflate(byte[])>(r5)
+org.apache.pdfbox.filter.FlateFilter.decompress : if i3 == 0 goto $z0 = virtualinvoke $r7.<java.util.zip.Inflater: boolean finished()>()
+org.apache.pdfbox.filter.FlateFilter.decompress : r5 = newarray (byte)[1024]
+org.apache.pdfbox.filter.FlateFilter.decompress : virtualinvoke r1.<java.io.InputStream: int read(byte[],int,int)>(r3, 0, 2)
+org.apache.pdfbox.filter.FlateFilter.decompress : virtualinvoke $r7.<java.util.zip.Inflater: void setInput(byte[],int,int)>(r3, 0, i2)
+org.apache.pdfbox.filter.FlateFilter.decompress : virtualinvoke r2.<java.io.OutputStream: void write(byte[],int,int)>(r5, 0, i3)
+org.apache.pdfbox.filter.FlateFilter.decompress : z2 = 1
+org.apache.pdfbox.filter.FlateFilter.decompress : goto [?= staticinvoke <edu.washington.cs.dt.impact.util.Tracer: void trace(java.lang.String,java.lang.String)>("i3 = virtualinvoke $r7.<java.util.zip.Inflater: int inflate(byte[])>(r5)", "org.apache.pdfbox.filter.FlateFilter.decompress")]
+org.apache.pdfbox.filter.FlateFilter.decompress : z2 = 0
+org.apache.pdfbox.filter.FlateFilter.decompress : if i2 <= 0 goto virtualinvoke r2.<java.io.OutputStream: void flush()>()
+org.apache.pdfbox.pdmodel.PDPage.getContents : $z0 = r1 instanceof org.apache.pdfbox.cos.COSStream
+org.apache.pdfbox.pdmodel.PDPage.getContents : $r7 = r0.<org.apache.pdfbox.pdmodel.PDPage: org.apache.pdfbox.cos.COSDictionary page>
+org.apache.pdfbox.pdmodel.PDPage.getContents : $r18 = (org.apache.pdfbox.cos.COSStream) r1
+org.apache.pdfbox.cos.COSInputStream.create : r16 = r2
+org.apache.pdfbox.cos.COSInputStream.create : $r12 = interfaceinvoke r0.<java.util.List: java.lang.Object get(int)>(i1)
+org.apache.pdfbox.cos.COSInputStream.create : goto [?= i1 = i1 + 1]
+org.apache.pdfbox.cos.COSInputStream.create : $r5 = new java.util.ArrayList
+org.apache.pdfbox.cos.COSInputStream.create : r17 = virtualinvoke r3.<org.apache.pdfbox.io.ScratchFile: org.apache.pdfbox.io.RandomAccess createBuffer()>()
+org.apache.pdfbox.cos.COSInputStream.create : interfaceinvoke $r5.<java.util.List: boolean add(java.lang.Object)>(r18)
+org.apache.pdfbox.cos.COSInputStream.create : i1 = 0
+org.apache.pdfbox.cos.COSInputStream.create : $r15 = new org.apache.pdfbox.cos.COSInputStream$1
+org.apache.pdfbox.cos.COSInputStream.create : $z0 = interfaceinvoke r0.<java.util.List: boolean isEmpty()>()
+org.apache.pdfbox.cos.COSInputStream.create : if r3 == null goto $r7 = new java.io.ByteArrayOutputStream
+org.apache.pdfbox.cos.COSInputStream.create : $r6 = new org.apache.pdfbox.cos.COSInputStream
+org.apache.pdfbox.cos.COSInteger.intValue : $l0 = r0.<org.apache.pdfbox.cos.COSInteger: long value>
+org.apache.pdfbox.cos.COSStream.getFilterList : $r5 = new java.util.ArrayList
+org.apache.pdfbox.cos.COSStream.getFilterList : $r10 = <org.apache.pdfbox.filter.FilterFactory: org.apache.pdfbox.filter.FilterFactory INSTANCE>
+org.apache.pdfbox.cos.COSStream.getFilterList : return $r5
+org.apache.pdfbox.cos.COSStream.getFilterList : $z1 = r2 instanceof org.apache.pdfbox.cos.COSArray
+org.apache.pdfbox.cos.COSStream.getFilterList : r2 = virtualinvoke r0.<org.apache.pdfbox.cos.COSStream: org.apache.pdfbox.cos.COSBase getFilters()>()
+org.apache.pdfbox.cos.COSStream.getFilterList : $z0 = r2 instanceof org.apache.pdfbox.cos.COSName
+org.apache.pdfbox.filter.FlateFilter.encode : if i1 <= 0 goto virtualinvoke $r6.<java.util.zip.DeflaterOutputStream: void close()>()
+org.apache.pdfbox.filter.FlateFilter.encode : $i3 = staticinvoke <java.lang.Math: int min(int,int)>(i1, 16348)
+org.apache.pdfbox.filter.FlateFilter.encode : $i2 = staticinvoke <java.lang.Math: int min(int,int)>(i1, 16348)
+org.apache.pdfbox.filter.FlateFilter.encode : virtualinvoke $r6.<java.util.zip.DeflaterOutputStream: void write(byte[],int,int)>(r5, 0, $i4)
+org.apache.pdfbox.filter.FlateFilter.encode : virtualinvoke r2.<java.io.OutputStream: void flush()>()
+org.apache.pdfbox.filter.FlateFilter.encode : $r6 = new java.util.zip.DeflaterOutputStream
+org.apache.pdfbox.filter.FlateFilter.encode : i1 = virtualinvoke r1.<java.io.InputStream: int available()>()
+org.apache.pdfbox.filter.FlateFilter.encode : virtualinvoke $r6.<java.util.zip.DeflaterOutputStream: void close()>()
+org.apache.pdfbox.filter.Filter.encode : $r4 = virtualinvoke r3.<org.apache.pdfbox.cos.COSDictionary: org.apache.pdfbox.cos.COSDictionary asUnmodifiableDictionary()>()
+org.apache.pdfbox.pdmodel.PDDocumentCatalog.getPages : $r1 = new org.apache.pdfbox.pdmodel.PDPageTree
+org.apache.pdfbox.contentstream.PDAbstractContentStream.isOutsideOneInterval : $b0 = d0 cmpg 0.0
+org.apache.pdfbox.io.ScratchFileBuffer.seek : specialinvoke r0.<org.apache.pdfbox.io.ScratchFileBuffer: void checkClosed()>()
+org.apache.pdfbox.io.ScratchFileBuffer.seek : $b4 = l0 cmp 0L
+org.apache.pdfbox.io.ScratchFileBuffer.seek : $l23 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: long currentPageOffset>
+org.apache.pdfbox.io.ScratchFileBuffer.seek : $l26 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: long currentPageOffset>
+org.apache.pdfbox.io.ScratchFileBuffer.seek : $l2 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: long size>
+org.apache.pdfbox.io.ScratchFileBuffer.seek : $l5 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: long currentPageOffset>
+org.apache.pdfbox.cos.COSName.hashCode : $i0 = r0.<org.apache.pdfbox.cos.COSName: int hashCode>
+org.apache.pdfbox.io.ScratchFile.getPageSize : return 4096
+org.apache.pdfbox.pdfparser.BaseParser.isWhitespace : if i0 == 0 goto $z0 = 1
+org.apache.pdfbox.util.NumberFormatUtil.getExponent : i8 = 0
+org.apache.pdfbox.util.NumberFormatUtil.getExponent : return i8
+org.apache.pdfbox.util.NumberFormatUtil.getExponent : $r2 = <org.apache.pdfbox.util.NumberFormatUtil: long[] POWER_OF_TENS>
+org.apache.pdfbox.cos.COSStream.createInputStream : $r4 = specialinvoke r0.<org.apache.pdfbox.cos.COSStream: java.util.List getFilterList()>()
+org.apache.pdfbox.cos.COSStream.createInputStream : $z0 = r0.<org.apache.pdfbox.cos.COSStream: boolean isWriting>
+org.apache.pdfbox.cos.COSStream.createInputStream : $r2 = new org.apache.pdfbox.io.RandomAccessInputStream
+org.apache.pdfbox.cos.COSStream.createInputStream : specialinvoke r0.<org.apache.pdfbox.cos.COSStream: void ensureRandomAccessExists(boolean)>(1)
+org.apache.pdfbox.cos.COSStream.createInputStream : specialinvoke r0.<org.apache.pdfbox.cos.COSStream: void checkClosed()>()
+org.apache.pdfbox.pdfparser.InputStreamSource.unread : $i1 = r0.<org.apache.pdfbox.pdfparser.InputStreamSource: int position>
+org.apache.pdfbox.pdfparser.InputStreamSource.unread : $r1 = r0.<org.apache.pdfbox.pdfparser.InputStreamSource: java.io.PushbackInputStream input>
+org.apache.pdfbox.cos.COSOutputStream.close : $r6 = new java.io.ByteArrayInputStream
+org.apache.pdfbox.cos.COSOutputStream.close : $r2 = r0.<org.apache.pdfbox.cos.COSOutputStream: java.util.List filters>
+org.apache.pdfbox.cos.COSOutputStream.close : $r9 = new java.io.ByteArrayOutputStream
+org.apache.pdfbox.cos.COSOutputStream.close : specialinvoke r0.<java.io.FilterOutputStream: void close()>()
+org.apache.pdfbox.cos.COSOutputStream.close : $r4 = r0.<org.apache.pdfbox.cos.COSOutputStream: java.io.OutputStream out>
+org.apache.pdfbox.cos.COSOutputStream.close : $r10 = r0.<org.apache.pdfbox.cos.COSOutputStream: java.util.List filters>
+org.apache.pdfbox.io.ScratchFileBuffer.addPage : $r8 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: org.apache.pdfbox.io.ScratchFile pageHandler>
+org.apache.pdfbox.io.ScratchFileBuffer.addPage : r0.<org.apache.pdfbox.io.ScratchFileBuffer: int positionInPage> = 0
+org.apache.pdfbox.io.ScratchFileBuffer.addPage : $i11 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: int pageCount>
+org.apache.pdfbox.io.ScratchFileBuffer.addPage : $i10 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: int pageCount>
+org.apache.pdfbox.io.ScratchFileBuffer.addPage : $i16 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: int pageCount>
+org.apache.pdfbox.io.ScratchFileBuffer.addPage : $i18 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: int pageSize>
+org.apache.pdfbox.io.ScratchFileBuffer.addPage : $r9 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: int[] pageIndexes>
+org.apache.pdfbox.io.ScratchFileBuffer.addPage : $i0 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: int pageCount>
+org.apache.pdfbox.pdfparser.PDFStreamParser.parseNextToken : $r1 = r0.<org.apache.pdfbox.pdfparser.PDFStreamParser: org.apache.pdfbox.pdfparser.SequentialSource seqSource>
+org.apache.pdfbox.pdfparser.PDFStreamParser.parseNextToken : $r32 = new java.lang.StringBuilder
+org.apache.pdfbox.pdfparser.PDFStreamParser.parseNextToken : virtualinvoke $r32.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>($c13)
+org.apache.pdfbox.pdfparser.PDFStreamParser.parseNextToken : virtualinvoke r0.<org.apache.pdfbox.pdfparser.PDFStreamParser: void skipSpaces()>()
+org.apache.pdfbox.pdfparser.PDFStreamParser.parseNextToken : virtualinvoke $r32.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(c9)
+org.apache.pdfbox.pdfparser.PDFStreamParser.parseNextToken : $r33 = r0.<org.apache.pdfbox.pdfparser.PDFStreamParser: org.apache.pdfbox.pdfparser.SequentialSource seqSource>
+org.apache.pdfbox.pdfparser.PDFStreamParser.parseNextToken : tableswitch(c9) {     case 40: goto r39 = virtualinvoke r0.<org.apache.pdfbox.pdfparser.PDFStreamParser: org.apache.pdfbox.cos.COSString parseCOSString()>();     case 41: goto r54 = virtualinvoke r0.<org.apache.pdfbox.pdfparser.PDFStreamParser: java.lang.String readOperator()>();     case 42: goto r54 = virtualinvoke r0.<org.apache.pdfbox.pdfparser.PDFStreamParser: java.lang.String readOperator()>();     case 43: goto $r32 = new java.lang.StringBuilder;     case 44: goto r54 = virtualinvoke r0.<org.apache.pdfbox.pdfparser.PDFStreamParser: java.lang.String readOperator()>();     case 45: goto $r32 = new java.lang.StringBuilder;     case 46: goto $r32 = new java.lang.StringBuilder;     case 47: goto r39 = virtualinvoke r0.<org.apache.pdfbox.pdfparser.PDFStreamParser: org.apache.pdfbox.cos.COSName parseCOSName()>();     case 48: goto $r32 = new java.lang.StringBuilder;     case 49: goto $r32 = new java.lang.StringBuilder;     case 50: goto $r32 = new java.lang.StringBuilder;     case 51: goto $r32 = new java.lang.StringBuilder;     case 52: goto $r32 = new java.lang.StringBuilder;     case 53: goto $r32 = new java.lang.StringBuilder;     case 54: goto $r32 = new java.lang.StringBuilder;     case 55: goto $r32 = new java.lang.StringBuilder;     case 56: goto $r32 = new java.lang.StringBuilder;     case 57: goto $r32 = new java.lang.StringBuilder;     case 58: goto r54 = virtualinvoke r0.<org.apache.pdfbox.pdfparser.PDFStreamParser: java.lang.String readOperator()>();     case 59: goto r54 = virtualinvoke r0.<org.apache.pdfbox.pdfparser.PDFStreamParser: java.lang.String readOperator()>();     case 60: goto $r2 = r0.<org.apache.pdfbox.pdfparser.PDFStreamParser: org.apache.pdfbox.pdfparser.SequentialSource seqSource>;     case 61: goto r54 = virtualinvoke r0.<org.apache.pdfbox.pdfparser.PDFStreamParser: java.lang.String readOperator()>();     case 62: goto r54 = virtualinvoke r0.<org.apache.pdfbox.pdfparser.PDFStreamParser: java.lang.String readOperator()>();     case 63: goto r54 = virtualinvoke r0.<org.apache.pdfbox.pdfparser.PDFStreamParser: java.lang.String readOperator()>();     case 64: goto r54 = virtualinvoke r0.<org.apache.pdfbox.pdfparser.PDFStreamParser: java.lang.String readOperator()>();     case 65: goto r54 = virtualinvoke r0.<org.apache.pdfbox.pdfparser.PDFStreamParser: java.lang.String readOperator()>();     case 66: goto r45 = virtualinvoke r0.<org.apache.pdfbox.pdfparser.PDFStreamParser: java.lang.String readString()>();     case 67: goto r54 = virtualinvoke r0.<org.apache.pdfbox.pdfparser.PDFStreamParser: java.lang.String readOperator()>();     case 68: goto r54 = virtualinvoke r0.<org.apache.pdfbox.pdfparser.PDFStreamParser: java.lang.String readOperator()>();     case 69: goto r54 = virtualinvoke r0.<org.apache.pdfbox.pdfparser.PDFStreamParser: java.lang.String readOperator()>();     case 70: goto r54 = virtualinvoke r0.<org.apache.pdfbox.pdfparser.PDFStreamParser: java.lang.String readOperator()>();     case 71: goto r54 = virtualinvoke r0.<org.apache.pdfbox.pdfparser.PDFStreamParser: java.lang.String readOperator()>();     case 72: goto r54 = virtualinvoke r0.<org.apache.pdfbox.pdfparser.PDFStreamParser: java.lang.String readOperator()>();     case 73: goto $r7 = new java.lang.StringBuilder;     case 74: goto r54 = virtualinvoke r0.<org.apache.pdfbox.pdfparser.PDFStreamParser: java.lang.String readOperator()>();     case 75: goto r54 = virtualinvoke r0.<org.apache.pdfbox.pdfparser.PDFStreamParser: java.lang.String readOperator()>();     case 76: goto r54 = virtualinvoke r0.<org.apache.pdfbox.pdfparser.PDFStreamParser: java.lang.String readOperator()>();     case 77: goto r54 = virtualinvoke r0.<org.apache.pdfbox.pdfparser.PDFStreamParser: java.lang.String readOperator()>();     case 78: goto r54 = virtualinvoke r0.<org.apache.pdfbox.pdfparser.PDFStreamParser: java.lang.String readOperator()>();     case 79: goto r54 = virtualinvoke r0.<org.apache.pdfbox.pdfparser.PDFStreamParser: java.lang.String readOperator()>();     case 80: goto r54 = virtualinvoke r0.<org.apache.pdfbox.pdfparser.PDFStreamParser: java.lang.String readOperator()>();     case 81: goto r54 = virtualinvoke r0.<org.apache.pdfbox.pdfparser.PDFStreamParser: java.lang.String readOperator()>();     case 82: goto r42 = virtualinvoke r0.<org.apache.pdfbox.pdfparser.PDFStreamParser: java.lang.String readString()>();     case 83: goto r54 = virtualinvoke r0.<org.apache.pdfbox.pdfparser.PDFStreamParser: java.lang.String readOperator()>();     case 84: goto r54 = virtualinvoke r0.<org.apache.pdfbox.pdfparser.PDFStreamParser: java.lang.String readOperator()>();     case 85: goto r54 = virtualinvoke r0.<org.apache.pdfbox.pdfparser.PDFStreamParser: java.lang.String readOperator()>();     case 86: goto r54 = virtualinvoke r0.<org.apache.pdfbox.pdfparser.PDFStreamParser: java.lang.String readOperator()>();     case 87: goto r54 = virtualinvoke r0.<org.apache.pdfbox.pdfparser.PDFStreamParser: java.lang.String readOperator()>();     case 88: goto r54 = virtualinvoke r0.<org.apache.pdfbox.pdfparser.PDFStreamParser: java.lang.String readOperator()>();     case 89: goto r54 = virtualinvoke r0.<org.apache.pdfbox.pdfparser.PDFStreamParser: java.lang.String readOperator()>();     case 90: goto r54 = virtualinvoke r0.<org.apache.pdfbox.pdfparser.PDFStreamParser: java.lang.String readOperator()>();     case 91: goto r39 = virtualinvoke r0.<org.apache.pdfbox.pdfparser.PDFStreamParser: org.apache.pdfbox.cos.COSArray parseCOSArray()>();     case 92: goto r54 = virtualinvoke r0.<org.apache.pdfbox.pdfparser.PDFStreamParser: java.lang.String readOperator()>();     case 93: goto $r5 = r0.<org.apache.pdfbox.pdfparser.PDFStreamParser: org.apache.pdfbox.pdfparser.SequentialSource seqSource>;     case 94: goto r54 = virtualinvoke r0.<org.apache.pdfbox.pdfparser.PDFStreamParser: java.lang.String readOperator()>();     case 95: goto r54 = virtualinvoke r0.<org.apache.pdfbox.pdfparser.PDFStreamParser: java.lang.String readOperator()>();     case 96: goto r54 = virtualinvoke r0.<org.apache.pdfbox.pdfparser.PDFStreamParser: java.lang.String readOperator()>();     case 97: goto r54 = virtualinvoke r0.<org.apache.pdfbox.pdfparser.PDFStreamParser: java.lang.String readOperator()>();     case 98: goto r54 = virtualinvoke r0.<org.apache.pdfbox.pdfparser.PDFStreamParser: java.lang.String readOperator()>();     case 99: goto r54 = virtualinvoke r0.<org.apache.pdfbox.pdfparser.PDFStreamParser: java.lang.String readOperator()>();     case 100: goto r54 = virtualinvoke r0.<org.apache.pdfbox.pdfparser.PDFStreamParser: java.lang.String readOperator()>();     case 101: goto r54 = virtualinvoke r0.<org.apache.pdfbox.pdfparser.PDFStreamParser: java.lang.String readOperator()>();     case 102: goto r41 = virtualinvoke r0.<org.apache.pdfbox.pdfparser.PDFStreamParser: java.lang.String readString()>();     case 103: goto r54 = virtualinvoke r0.<org.apache.pdfbox.pdfparser.PDFStreamParser: java.lang.String readOperator()>();     case 104: goto r54 = virtualinvoke r0.<org.apache.pdfbox.pdfparser.PDFStreamParser: java.lang.String readOperator()>();     case 105: goto r54 = virtualinvoke r0.<org.apache.pdfbox.pdfparser.PDFStreamParser: java.lang.String readOperator()>();     case 106: goto r54 = virtualinvoke r0.<org.apache.pdfbox.pdfparser.PDFStreamParser: java.lang.String readOperator()>();     case 107: goto r54 = virtualinvoke r0.<org.apache.pdfbox.pdfparser.PDFStreamParser: java.lang.String readOperator()>();     case 108: goto r54 = virtualinvoke r0.<org.apache.pdfbox.pdfparser.PDFStreamParser: java.lang.String readOperator()>();     case 109: goto r54 = virtualinvoke r0.<org.apache.pdfbox.pdfparser.PDFStreamParser: java.lang.String readOperator()>();     case 110: goto r40 = virtualinvoke r0.<org.apache.pdfbox.pdfparser.PDFStreamParser: java.lang.String readString()>();     case 111: goto r54 = virtualinvoke r0.<org.apache.pdfbox.pdfparser.PDFStreamParser: java.lang.String readOperator()>();     case 112: goto r54 = virtualinvoke r0.<org.apache.pdfbox.pdfparser.PDFStreamParser: java.lang.String readOperator()>();     case 113: goto r54 = virtualinvoke r0.<org.apache.pdfbox.pdfparser.PDFStreamParser: java.lang.String readOperator()>();     case 114: goto r54 = virtualinvoke r0.<org.apache.pdfbox.pdfparser.PDFStreamParser: java.lang.String readOperator()>();     case 115: goto r54 = virtualinvoke r0.<org.apache.pdfbox.pdfparser.PDFStreamParser: java.lang.String readOperator()>();     case 116: goto r41 = virtualinvoke r0.<org.apache.pdfbox.pdfparser.PDFStreamParser: java.lang.String readString()>();     default: goto r54 = virtualinvoke r0.<org.apache.pdfbox.pdfparser.PDFStreamParser: java.lang.String readOperator()>(); }
+org.apache.pdfbox.pdfparser.PDFStreamParser.parseNextToken : if c9 == 46 goto $z10 = 0
+org.apache.pdfbox.pdfparser.PDFStreamParser.parseNextToken : c9 = (char) i0
+org.apache.pdfbox.pdfparser.PDFStreamParser.parseNextToken : $z10 = 1
+org.apache.pdfbox.pdfparser.PDFStreamParser.parseNextToken : z11 = 0
+org.apache.pdfbox.pdfparser.PDFStreamParser.parseNextToken : if c9 != 45 goto (branch)
+org.apache.pdfbox.pdfparser.PDFStreamParser.parseNextToken : if $c13 != 46 goto $r35 = virtualinvoke $r32.<java.lang.StringBuilder: java.lang.String toString()>()
+org.apache.pdfbox.pdfparser.PDFStreamParser.parseNextToken : $r38 = virtualinvoke r54.<java.lang.String: java.lang.String trim()>()
+org.apache.pdfbox.pdfparser.PDFStreamParser.parseNextToken : $r35 = virtualinvoke $r32.<java.lang.StringBuilder: java.lang.String toString()>()
+org.apache.pdfbox.pdfparser.PDFStreamParser.parseNextToken : $r34 = r0.<org.apache.pdfbox.pdfparser.PDFStreamParser: org.apache.pdfbox.pdfparser.SequentialSource seqSource>
+org.apache.pdfbox.pdfparser.PDFStreamParser.parseNextToken : r39 = staticinvoke <org.apache.pdfbox.contentstream.operator.Operator: org.apache.pdfbox.contentstream.operator.Operator getOperator(java.lang.String)>(r54)
+org.apache.pdfbox.pdfparser.PDFStreamParser.parseNextToken : return null
+org.apache.pdfbox.pdfparser.PDFStreamParser.parseNextToken : goto [?= return r39]
+org.apache.pdfbox.pdfparser.PDFStreamParser.parseNextToken : $b1 = (byte) i0
+org.apache.pdfbox.pdfparser.PDFStreamParser.parseNextToken : r54 = virtualinvoke r0.<org.apache.pdfbox.pdfparser.PDFStreamParser: java.lang.String readOperator()>()
+org.apache.pdfbox.filter.FilterFactory.getFilter : return r2
+org.apache.pdfbox.filter.FilterFactory.getFilter : $r3 = r0.<org.apache.pdfbox.filter.FilterFactory: java.util.Map filters>
+org.apache.pdfbox.filter.FilterFactory.getFilter : if r2 != null goto return r2
+org.apache.pdfbox.pdfparser.PDFStreamParser.getTokens : $r1 = r0.<org.apache.pdfbox.pdfparser.PDFStreamParser: java.util.List streamObjects>
+org.apache.pdfbox.io.MemoryUsageSetting.isMainMemoryRestricted : $l0 = r0.<org.apache.pdfbox.io.MemoryUsageSetting: long maxMainMemoryBytes>
+org.apache.pdfbox.contentstream.PDAbstractContentStream.writeOperator : $r5 = r0.<org.apache.pdfbox.contentstream.PDAbstractContentStream: java.io.OutputStream output>
+org.apache.pdfbox.contentstream.PDAbstractContentStream.writeOperator : $r3 = r0.<org.apache.pdfbox.contentstream.PDAbstractContentStream: java.io.OutputStream output>
+org.apache.pdfbox.io.MemoryUsageSetting.setupMainMemoryOnly : $r0 = new org.apache.pdfbox.io.MemoryUsageSetting
+org.apache.pdfbox.io.MemoryUsageSetting.setupMainMemoryOnly : $r0 = staticinvoke <org.apache.pdfbox.io.MemoryUsageSetting: org.apache.pdfbox.io.MemoryUsageSetting setupMainMemoryOnly(long)>(-1L)
+org.apache.pdfbox.cos.COSStream.checkClosed : $r1 = r0.<org.apache.pdfbox.cos.COSStream: org.apache.pdfbox.io.RandomAccess randomAccess>
+org.apache.pdfbox.cos.COSStream.checkClosed : $r2 = r0.<org.apache.pdfbox.cos.COSStream: org.apache.pdfbox.io.RandomAccess randomAccess>

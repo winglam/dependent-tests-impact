@@ -1,0 +1,23 @@
+org.apache.pdfbox.io.ScratchFile.markPagesAsFree : i5 = i0
+org.apache.pdfbox.io.ScratchFile.markPagesAsFree : exitmonitor $r4
+org.apache.pdfbox.io.ScratchFile.markPagesAsFree : $i4 = r0.<org.apache.pdfbox.io.ScratchFile: int inMemoryMaxPageCount>
+org.apache.pdfbox.io.ScratchFile.markPagesAsFree : i2 = r1[i5]
+org.apache.pdfbox.io.ScratchFile.markPagesAsFree : $r6 = r0.<org.apache.pdfbox.io.ScratchFile: java.util.BitSet freePages>
+org.apache.pdfbox.io.ScratchFile.markPagesAsFree : $r4 = r0.<org.apache.pdfbox.io.ScratchFile: java.util.BitSet freePages>
+org.apache.pdfbox.io.ScratchFile.markPagesAsFree : if i2 < 0 goto i5 = i5 + 1
+org.apache.pdfbox.io.ScratchFileBuffer.close : r0.<org.apache.pdfbox.io.ScratchFileBuffer: byte[] currentPage> = null
+org.apache.pdfbox.io.ScratchFileBuffer.close : r0.<org.apache.pdfbox.io.ScratchFileBuffer: long size> = 0L
+org.apache.pdfbox.io.ScratchFileBuffer.close : r0.<org.apache.pdfbox.io.ScratchFileBuffer: int positionInPage> = 0
+org.apache.pdfbox.io.ScratchFileBuffer.close : r0.<org.apache.pdfbox.io.ScratchFileBuffer: org.apache.pdfbox.io.ScratchFile pageHandler> = null
+org.apache.pdfbox.io.ScratchFileBuffer.close : r0.<org.apache.pdfbox.io.ScratchFileBuffer: int currentPagePositionInPageIndexes> = -1
+org.apache.pdfbox.io.ScratchFileBuffer.close : r0.<org.apache.pdfbox.io.ScratchFileBuffer: int[] pageIndexes> = null
+org.apache.pdfbox.io.ScratchFileBuffer.close : r0.<org.apache.pdfbox.io.ScratchFileBuffer: long currentPageOffset> = 0L
+org.apache.pdfbox.io.ScratchFileBuffer.close : $r3 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: org.apache.pdfbox.io.ScratchFile pageHandler>
+org.apache.pdfbox.io.ScratchFileBuffer.close : $r1 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: org.apache.pdfbox.io.ScratchFile pageHandler>
+org.apache.pdfbox.pdmodel.interactive.measurement.PDRectlinearMeasureDictionary.getAreas : $r4 = virtualinvoke r0.<org.apache.pdfbox.pdmodel.interactive.measurement.PDRectlinearMeasureDictionary: org.apache.pdfbox.cos.COSDictionary getCOSObject()>()
+org.apache.pdfbox.io.ScratchFileBuffer.finalize : $r2 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: org.apache.pdfbox.io.ScratchFile pageHandler>
+org.apache.pdfbox.io.ScratchFileBuffer.finalize : $r3 = <org.apache.pdfbox.io.ScratchFileBuffer: org.apache.commons.logging.Log LOG>
+org.apache.pdfbox.io.ScratchFileBuffer.finalize : virtualinvoke r0.<org.apache.pdfbox.io.ScratchFileBuffer: void close()>()
+org.apache.pdfbox.io.ScratchFileBuffer.finalize : goto [?= return]
+org.apache.pdfbox.io.ScratchFileBuffer.finalize : specialinvoke r0.<java.lang.Object: void finalize()>()
+org.apache.pdfbox.pdmodel.interactive.measurement.PDMeasureDictionary.getCOSObject : $r1 = r0.<org.apache.pdfbox.pdmodel.interactive.measurement.PDMeasureDictionary: org.apache.pdfbox.cos.COSDictionary measureDictionary>

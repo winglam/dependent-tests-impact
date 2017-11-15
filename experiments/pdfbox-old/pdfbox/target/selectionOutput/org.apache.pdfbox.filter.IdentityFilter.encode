@@ -1,0 +1,7 @@
+org.apache.pdfbox.filter.IdentityFilter.encode : r4 = newarray (byte)[1024] >>>>>>>> org.apache.pdfbox.filter.IdentityFilter.encode : $i1 = virtualinvoke r1.<java.io.InputStream: int read(byte[],int,int)>(r4, 0, 1024)
+org.apache.pdfbox.filter.IdentityFilter.encode : $i1 = virtualinvoke r1.<java.io.InputStream: int read(byte[],int,int)>(r4, 0, 1024) >>>>>>>> org.apache.pdfbox.filter.IdentityFilter.encode : if $i1 == -1
+org.apache.pdfbox.filter.IdentityFilter.encode : if $i1 == -1 >>>>>>>> org.apache.pdfbox.filter.IdentityFilter.encode : virtualinvoke r2.<java.io.OutputStream: void write(byte[],int,int)>(r4, 0, $i1)
+org.apache.pdfbox.filter.IdentityFilter.encode : if $i1 == -1 >>>>>>>> org.apache.pdfbox.filter.IdentityFilter.encode : virtualinvoke r2.<java.io.OutputStream: void flush()>()
+org.apache.pdfbox.filter.IdentityFilter.encode : virtualinvoke r2.<java.io.OutputStream: void flush()>() >>>>>>>> org.apache.pdfbox.filter.IdentityFilter.encode : return
+org.apache.pdfbox.filter.IdentityFilter.encode : virtualinvoke r2.<java.io.OutputStream: void write(byte[],int,int)>(r4, 0, $i1) >>>>>>>> org.apache.pdfbox.filter.IdentityFilter.encode : goto [?= $i1 = virtualinvoke r1.<java.io.InputStream: int read(byte[],int,int)>(r4, 0, 1024)]
+org.apache.pdfbox.filter.IdentityFilter.encode : goto [?= $i1 = virtualinvoke r1.<java.io.InputStream: int read(byte[],int,int)>(r4, 0, 1024)] >>>>>>>> org.apache.pdfbox.filter.IdentityFilter.encode : $i1 = virtualinvoke r1.<java.io.InputStream: int read(byte[],int,int)>(r4, 0, 1024)

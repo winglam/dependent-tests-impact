@@ -1,0 +1,79 @@
+org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : r1 = newarray (long)[3] >>>>>>>> org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : $r2 = r0.<org.apache.pdfbox.pdfparser.PDFXRefStream: java.util.Map streamData>
+org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : $r2 = r0.<org.apache.pdfbox.pdfparser.PDFXRefStream: java.util.Map streamData> >>>>>>>> org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : $r3 = interfaceinvoke $r2.<java.util.Map: java.util.Collection values()>()
+org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : $r3 = interfaceinvoke $r2.<java.util.Map: java.util.Collection values()>() >>>>>>>> org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : r5 = interfaceinvoke $r3.<java.util.Collection: java.util.Iterator iterator()>()
+org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : r5 = interfaceinvoke $r3.<java.util.Collection: java.util.Iterator iterator()>() >>>>>>>> org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : $z0 = interfaceinvoke r5.<java.util.Iterator: boolean hasNext()>()
+org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : $z0 = interfaceinvoke r5.<java.util.Iterator: boolean hasNext()>() >>>>>>>> org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : if $z0 == 0
+org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : if $z0 == 0 >>>>>>>> org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : r6 = interfaceinvoke r5.<java.util.Iterator: java.lang.Object next()>()
+org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : if $z0 == 0 >>>>>>>> org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : r10 = newarray (int)[3]
+org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : r10 = newarray (int)[3] >>>>>>>> org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : i33 = 0
+org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : i33 = 0 >>>>>>>> org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : $i0 = lengthof r10
+org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : $i0 = lengthof r10 >>>>>>>> org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : if i33 >= $i0
+org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : if i33 >= $i0 >>>>>>>> org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : $l1 = r1[i33]
+org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : if i33 >= $i0 >>>>>>>> org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : return r10
+org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : $l1 = r1[i33] >>>>>>>> org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : $b2 = $l1 cmp 0L
+org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : $b2 = $l1 cmp 0L >>>>>>>> org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : if $b2 <= 0
+org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : if $b2 <= 0 >>>>>>>> org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : $i3 = r10[i33]
+org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : if $b2 <= 0 >>>>>>>> org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : i33 = i33 + 1
+org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : i33 = i33 + 1 >>>>>>>> org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : goto [?= $i0 = lengthof r10]
+org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : goto [?= $i0 = lengthof r10] >>>>>>>> org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : $i0 = lengthof r10
+org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : $i3 = r10[i33] >>>>>>>> org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : $i4 = $i3 + 1
+org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : $i4 = $i3 + 1 >>>>>>>> org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : r10[i33] = $i4
+org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : r10[i33] = $i4 >>>>>>>> org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : $l5 = r1[i33]
+org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : $l5 = r1[i33] >>>>>>>> org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : $l6 = $l5 >> 8
+org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : $l6 = $l5 >> 8 >>>>>>>> org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : r1[i33] = $l6
+org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : r1[i33] = $l6 >>>>>>>> org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : goto [?= $l1 = r1[i33]]
+org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : goto [?= $l1 = r1[i33]] >>>>>>>> org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : $l1 = r1[i33]
+org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : r6 = interfaceinvoke r5.<java.util.Iterator: java.lang.Object next()>() >>>>>>>> org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : $z1 = r6 instanceof org.apache.pdfbox.pdfparser.PDFXRefStream$FreeReference
+org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : $z1 = r6 instanceof org.apache.pdfbox.pdfparser.PDFXRefStream$FreeReference >>>>>>>> org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : if $z1 == 0
+org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : if $z1 == 0 >>>>>>>> org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : r7 = (org.apache.pdfbox.pdfparser.PDFXRefStream$FreeReference) r6
+org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : if $z1 == 0 >>>>>>>> org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : $z2 = r6 instanceof org.apache.pdfbox.pdfparser.PDFXRefStream$NormalReference
+org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : $z2 = r6 instanceof org.apache.pdfbox.pdfparser.PDFXRefStream$NormalReference >>>>>>>> org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : if $z2 == 0
+org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : if $z2 == 0 >>>>>>>> org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : r8 = (org.apache.pdfbox.pdfparser.PDFXRefStream$NormalReference) r6
+org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : if $z2 == 0 >>>>>>>> org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : $z3 = r6 instanceof org.apache.pdfbox.pdfparser.PDFXRefStream$ObjectStreamReference
+org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : $z3 = r6 instanceof org.apache.pdfbox.pdfparser.PDFXRefStream$ObjectStreamReference >>>>>>>> org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : if $z3 == 0
+org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : if $z3 == 0 >>>>>>>> org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : r9 = (org.apache.pdfbox.pdfparser.PDFXRefStream$ObjectStreamReference) r6
+org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : if $z3 == 0 >>>>>>>> org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : $r4 = new java.lang.RuntimeException
+org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : $r4 = new java.lang.RuntimeException >>>>>>>> org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : specialinvoke $r4.<java.lang.RuntimeException: void <init>(java.lang.String)>("unexpected reference type")
+org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : specialinvoke $r4.<java.lang.RuntimeException: void <init>(java.lang.String)>("unexpected reference type") >>>>>>>> org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : throw $r4
+org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : r9 = (org.apache.pdfbox.pdfparser.PDFXRefStream$ObjectStreamReference) r6 >>>>>>>> org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : $l7 = r1[0]
+org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : $l7 = r1[0] >>>>>>>> org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : $l8 = staticinvoke <java.lang.Math: long max(long,long)>($l7, 2L)
+org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : $l8 = staticinvoke <java.lang.Math: long max(long,long)>($l7, 2L) >>>>>>>> org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : r1[0] = $l8
+org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : r1[0] = $l8 >>>>>>>> org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : $l10 = r1[1]
+org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : $l10 = r1[1] >>>>>>>> org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : $l9 = r9.<org.apache.pdfbox.pdfparser.PDFXRefStream$ObjectStreamReference: long offset>
+org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : $l9 = r9.<org.apache.pdfbox.pdfparser.PDFXRefStream$ObjectStreamReference: long offset> >>>>>>>> org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : $l11 = staticinvoke <java.lang.Math: long max(long,long)>($l10, $l9)
+org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : $l11 = staticinvoke <java.lang.Math: long max(long,long)>($l10, $l9) >>>>>>>> org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : r1[1] = $l11
+org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : r1[1] = $l11 >>>>>>>> org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : $l13 = r1[2]
+org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : $l13 = r1[2] >>>>>>>> org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : $l12 = r9.<org.apache.pdfbox.pdfparser.PDFXRefStream$ObjectStreamReference: long objectNumberOfObjectStream>
+org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : $l12 = r9.<org.apache.pdfbox.pdfparser.PDFXRefStream$ObjectStreamReference: long objectNumberOfObjectStream> >>>>>>>> org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : $l14 = staticinvoke <java.lang.Math: long max(long,long)>($l13, $l12)
+org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : $l14 = staticinvoke <java.lang.Math: long max(long,long)>($l13, $l12) >>>>>>>> org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : r1[2] = $l14
+org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : r1[2] = $l14 >>>>>>>> org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : goto [?= (branch)]
+org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : goto [?= (branch)] >>>>>>>> org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : goto [?= $z0 = interfaceinvoke r5.<java.util.Iterator: boolean hasNext()>()]
+org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : goto [?= $z0 = interfaceinvoke r5.<java.util.Iterator: boolean hasNext()>()] >>>>>>>> org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : $z0 = interfaceinvoke r5.<java.util.Iterator: boolean hasNext()>()
+org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : r8 = (org.apache.pdfbox.pdfparser.PDFXRefStream$NormalReference) r6 >>>>>>>> org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : $l15 = r1[0]
+org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : $l15 = r1[0] >>>>>>>> org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : $l16 = staticinvoke <java.lang.Math: long max(long,long)>($l15, 1L)
+org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : $l16 = staticinvoke <java.lang.Math: long max(long,long)>($l15, 1L) >>>>>>>> org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : r1[0] = $l16
+org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : r1[0] = $l16 >>>>>>>> org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : $l18 = r1[1]
+org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : $l18 = r1[1] >>>>>>>> org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : $l17 = r8.<org.apache.pdfbox.pdfparser.PDFXRefStream$NormalReference: long offset>
+org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : $l17 = r8.<org.apache.pdfbox.pdfparser.PDFXRefStream$NormalReference: long offset> >>>>>>>> org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : $l19 = staticinvoke <java.lang.Math: long max(long,long)>($l18, $l17)
+org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : $l19 = staticinvoke <java.lang.Math: long max(long,long)>($l18, $l17) >>>>>>>> org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : r1[1] = $l19
+org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : r1[1] = $l19 >>>>>>>> org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : $l22 = r1[2]
+org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : $l22 = r1[2] >>>>>>>> org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : $i20 = r8.<org.apache.pdfbox.pdfparser.PDFXRefStream$NormalReference: int genNumber>
+org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : $i20 = r8.<org.apache.pdfbox.pdfparser.PDFXRefStream$NormalReference: int genNumber> >>>>>>>> org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : $l21 = (long) $i20
+org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : $l21 = (long) $i20 >>>>>>>> org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : $l23 = staticinvoke <java.lang.Math: long max(long,long)>($l22, $l21)
+org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : $l23 = staticinvoke <java.lang.Math: long max(long,long)>($l22, $l21) >>>>>>>> org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : r1[2] = $l23
+org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : r1[2] = $l23 >>>>>>>> org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : goto [?= (branch)]
+org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : goto [?= (branch)] >>>>>>>> org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : goto [?= $z0 = interfaceinvoke r5.<java.util.Iterator: boolean hasNext()>()]
+org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : r7 = (org.apache.pdfbox.pdfparser.PDFXRefStream$FreeReference) r6 >>>>>>>> org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : $l24 = r1[0]
+org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : $l24 = r1[0] >>>>>>>> org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : $l25 = staticinvoke <java.lang.Math: long max(long,long)>($l24, 0L)
+org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : $l25 = staticinvoke <java.lang.Math: long max(long,long)>($l24, 0L) >>>>>>>> org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : r1[0] = $l25
+org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : r1[0] = $l25 >>>>>>>> org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : $l27 = r1[1]
+org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : $l27 = r1[1] >>>>>>>> org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : $l26 = r7.<org.apache.pdfbox.pdfparser.PDFXRefStream$FreeReference: long nextFree>
+org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : $l26 = r7.<org.apache.pdfbox.pdfparser.PDFXRefStream$FreeReference: long nextFree> >>>>>>>> org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : $l28 = staticinvoke <java.lang.Math: long max(long,long)>($l27, $l26)
+org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : $l28 = staticinvoke <java.lang.Math: long max(long,long)>($l27, $l26) >>>>>>>> org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : r1[1] = $l28
+org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : r1[1] = $l28 >>>>>>>> org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : $l31 = r1[2]
+org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : $l31 = r1[2] >>>>>>>> org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : $i29 = r7.<org.apache.pdfbox.pdfparser.PDFXRefStream$FreeReference: int nextGenNumber>
+org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : $i29 = r7.<org.apache.pdfbox.pdfparser.PDFXRefStream$FreeReference: int nextGenNumber> >>>>>>>> org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : $l30 = (long) $i29
+org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : $l30 = (long) $i29 >>>>>>>> org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : $l32 = staticinvoke <java.lang.Math: long max(long,long)>($l31, $l30)
+org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : $l32 = staticinvoke <java.lang.Math: long max(long,long)>($l31, $l30) >>>>>>>> org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : r1[2] = $l32
+org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : r1[2] = $l32 >>>>>>>> org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : goto [?= (branch)]
+org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : goto [?= (branch)] >>>>>>>> org.apache.pdfbox.pdfparser.PDFXRefStream.getWEntry : goto [?= $z0 = interfaceinvoke r5.<java.util.Iterator: boolean hasNext()>()]

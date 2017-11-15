@@ -1,0 +1,17 @@
+org.apache.pdfbox.pdfparser.COSParser.addExcludedToList : if r1 == null >>>>>>>> org.apache.pdfbox.pdfparser.COSParser.addExcludedToList : i0 = lengthof r1
+org.apache.pdfbox.pdfparser.COSParser.addExcludedToList : if r1 == null >>>>>>>> org.apache.pdfbox.pdfparser.COSParser.addExcludedToList : return
+org.apache.pdfbox.pdfparser.COSParser.addExcludedToList : i0 = lengthof r1 >>>>>>>> org.apache.pdfbox.pdfparser.COSParser.addExcludedToList : i2 = 0
+org.apache.pdfbox.pdfparser.COSParser.addExcludedToList : i2 = 0 >>>>>>>> org.apache.pdfbox.pdfparser.COSParser.addExcludedToList : if i2 >= i0
+org.apache.pdfbox.pdfparser.COSParser.addExcludedToList : if i2 >= i0 >>>>>>>> org.apache.pdfbox.pdfparser.COSParser.addExcludedToList : r5 = r1[i2]
+org.apache.pdfbox.pdfparser.COSParser.addExcludedToList : if i2 >= i0 >>>>>>>> org.apache.pdfbox.pdfparser.COSParser.addExcludedToList : return
+org.apache.pdfbox.pdfparser.COSParser.addExcludedToList : r5 = r1[i2] >>>>>>>> org.apache.pdfbox.pdfparser.COSParser.addExcludedToList : r6 = virtualinvoke r2.<org.apache.pdfbox.cos.COSDictionary: org.apache.pdfbox.cos.COSBase getItem(org.apache.pdfbox.cos.COSName)>(r5)
+org.apache.pdfbox.pdfparser.COSParser.addExcludedToList : r6 = virtualinvoke r2.<org.apache.pdfbox.cos.COSDictionary: org.apache.pdfbox.cos.COSBase getItem(org.apache.pdfbox.cos.COSName)>(r5) >>>>>>>> org.apache.pdfbox.pdfparser.COSParser.addExcludedToList : $z0 = r6 instanceof org.apache.pdfbox.cos.COSObject
+org.apache.pdfbox.pdfparser.COSParser.addExcludedToList : $z0 = r6 instanceof org.apache.pdfbox.cos.COSObject >>>>>>>> org.apache.pdfbox.pdfparser.COSParser.addExcludedToList : if $z0 == 0
+org.apache.pdfbox.pdfparser.COSParser.addExcludedToList : if $z0 == 0 >>>>>>>> org.apache.pdfbox.pdfparser.COSParser.addExcludedToList : $r7 = (org.apache.pdfbox.cos.COSObject) r6
+org.apache.pdfbox.pdfparser.COSParser.addExcludedToList : if $z0 == 0 >>>>>>>> org.apache.pdfbox.pdfparser.COSParser.addExcludedToList : i2 = i2 + 1
+org.apache.pdfbox.pdfparser.COSParser.addExcludedToList : i2 = i2 + 1 >>>>>>>> org.apache.pdfbox.pdfparser.COSParser.addExcludedToList : goto [?= (branch)]
+org.apache.pdfbox.pdfparser.COSParser.addExcludedToList : goto [?= (branch)] >>>>>>>> org.apache.pdfbox.pdfparser.COSParser.addExcludedToList : if i2 >= i0
+org.apache.pdfbox.pdfparser.COSParser.addExcludedToList : $r7 = (org.apache.pdfbox.cos.COSObject) r6 >>>>>>>> org.apache.pdfbox.pdfparser.COSParser.addExcludedToList : $l1 = specialinvoke r0.<org.apache.pdfbox.pdfparser.COSParser: long getObjectId(org.apache.pdfbox.cos.COSObject)>($r7)
+org.apache.pdfbox.pdfparser.COSParser.addExcludedToList : $l1 = specialinvoke r0.<org.apache.pdfbox.pdfparser.COSParser: long getObjectId(org.apache.pdfbox.cos.COSObject)>($r7) >>>>>>>> org.apache.pdfbox.pdfparser.COSParser.addExcludedToList : $r8 = staticinvoke <java.lang.Long: java.lang.Long valueOf(long)>($l1)
+org.apache.pdfbox.pdfparser.COSParser.addExcludedToList : $r8 = staticinvoke <java.lang.Long: java.lang.Long valueOf(long)>($l1) >>>>>>>> org.apache.pdfbox.pdfparser.COSParser.addExcludedToList : interfaceinvoke r3.<java.util.Set: boolean add(java.lang.Object)>($r8)
+org.apache.pdfbox.pdfparser.COSParser.addExcludedToList : interfaceinvoke r3.<java.util.Set: boolean add(java.lang.Object)>($r8) >>>>>>>> org.apache.pdfbox.pdfparser.COSParser.addExcludedToList : i2 = i2 + 1

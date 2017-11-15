@@ -1,0 +1,11 @@
+org.apache.pdfbox.io.ScratchFile.getMainMemoryOnlyInstance : $r1 = new org.apache.pdfbox.io.ScratchFile
+org.apache.pdfbox.io.MemoryUsageSetting.isStorageRestricted : $l0 = r0.<org.apache.pdfbox.io.MemoryUsageSetting: long maxStorageBytes>
+org.apache.pdfbox.pdmodel.common.filespecification.PDFileSpecification.createFS : $z0 = r0 instanceof org.apache.pdfbox.cos.COSString
+org.apache.pdfbox.pdmodel.common.filespecification.PDFileSpecification.createFS : r10 = null
+org.apache.pdfbox.pdmodel.common.filespecification.PDFileSpecification.createFS : if r0 != null goto $z0 = r0 instanceof org.apache.pdfbox.cos.COSString
+org.apache.pdfbox.pdmodel.common.filespecification.PDFileSpecification.createFS : $z1 = r0 instanceof org.apache.pdfbox.cos.COSDictionary
+org.apache.pdfbox.pdmodel.common.filespecification.PDFileSpecification.createFS : $r6 = new org.apache.pdfbox.pdmodel.common.filespecification.PDComplexFileSpecification
+org.apache.pdfbox.io.MemoryUsageSetting.useMainMemory : $z0 = r0.<org.apache.pdfbox.io.MemoryUsageSetting: boolean useMainMemory>
+org.apache.pdfbox.io.MemoryUsageSetting.isMainMemoryRestricted : $l0 = r0.<org.apache.pdfbox.io.MemoryUsageSetting: long maxMainMemoryBytes>
+org.apache.pdfbox.io.MemoryUsageSetting.setupMainMemoryOnly : $r0 = new org.apache.pdfbox.io.MemoryUsageSetting
+org.apache.pdfbox.io.MemoryUsageSetting.setupMainMemoryOnly : $r0 = staticinvoke <org.apache.pdfbox.io.MemoryUsageSetting: org.apache.pdfbox.io.MemoryUsageSetting setupMainMemoryOnly(long)>(-1L)

@@ -1,0 +1,29 @@
+org.apache.pdfbox.pdmodel.common.PDNameTreeNode.getLowerLimit : r5 = null >>>>>>>> org.apache.pdfbox.pdmodel.common.PDNameTreeNode.getLowerLimit : $r3 = r0.<org.apache.pdfbox.pdmodel.common.PDNameTreeNode: org.apache.pdfbox.cos.COSDictionary node>
+org.apache.pdfbox.pdmodel.common.PDNameTreeNode.getLowerLimit : $r3 = r0.<org.apache.pdfbox.pdmodel.common.PDNameTreeNode: org.apache.pdfbox.cos.COSDictionary node> >>>>>>>> org.apache.pdfbox.pdmodel.common.PDNameTreeNode.getLowerLimit : $r2 = <org.apache.pdfbox.cos.COSName: org.apache.pdfbox.cos.COSName LIMITS>
+org.apache.pdfbox.pdmodel.common.PDNameTreeNode.getLowerLimit : $r2 = <org.apache.pdfbox.cos.COSName: org.apache.pdfbox.cos.COSName LIMITS> >>>>>>>> org.apache.pdfbox.pdmodel.common.PDNameTreeNode.getLowerLimit : $r4 = virtualinvoke $r3.<org.apache.pdfbox.cos.COSDictionary: org.apache.pdfbox.cos.COSBase getDictionaryObject(org.apache.pdfbox.cos.COSName)>($r2)
+org.apache.pdfbox.pdmodel.common.PDNameTreeNode.getLowerLimit : $r4 = virtualinvoke $r3.<org.apache.pdfbox.cos.COSDictionary: org.apache.pdfbox.cos.COSBase getDictionaryObject(org.apache.pdfbox.cos.COSName)>($r2) >>>>>>>> org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : $r2 = r0.<org.apache.pdfbox.cos.COSDictionary: java.util.Map items>
+org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : $r2 = r0.<org.apache.pdfbox.cos.COSDictionary: java.util.Map items> >>>>>>>> org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : $r3 = interfaceinvoke $r2.<java.util.Map: java.lang.Object get(java.lang.Object)>(r1)
+org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : $r3 = interfaceinvoke $r2.<java.util.Map: java.lang.Object get(java.lang.Object)>(r1) >>>>>>>> org.apache.pdfbox.util.SmallMap.get : i0 = specialinvoke r0.<org.apache.pdfbox.util.SmallMap: int findKey(java.lang.Object)>(r1)
+org.apache.pdfbox.util.SmallMap.get : i0 = specialinvoke r0.<org.apache.pdfbox.util.SmallMap: int findKey(java.lang.Object)>(r1) >>>>>>>> org.apache.pdfbox.util.SmallMap.findKey : $z0 = virtualinvoke r0.<org.apache.pdfbox.util.SmallMap: boolean isEmpty()>()
+org.apache.pdfbox.util.SmallMap.findKey : $z0 = virtualinvoke r0.<org.apache.pdfbox.util.SmallMap: boolean isEmpty()>() >>>>>>>> org.apache.pdfbox.util.SmallMap.isEmpty : $r1 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.util.SmallMap.isEmpty : $r1 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr> >>>>>>>> org.apache.pdfbox.util.SmallMap.isEmpty : if $r1 == null
+org.apache.pdfbox.util.SmallMap.isEmpty : if $r1 == null >>>>>>>> org.apache.pdfbox.util.SmallMap.isEmpty : $z0 = 1
+org.apache.pdfbox.util.SmallMap.isEmpty : $z0 = 1 >>>>>>>> org.apache.pdfbox.util.SmallMap.isEmpty : goto [?= return $z0]
+org.apache.pdfbox.util.SmallMap.isEmpty : goto [?= return $z0] >>>>>>>> org.apache.pdfbox.util.SmallMap.isEmpty : return $z0
+org.apache.pdfbox.util.SmallMap.isEmpty : return $z0 >>>>>>>> org.apache.pdfbox.util.SmallMap.findKey : if $z0 != 0
+org.apache.pdfbox.util.SmallMap.findKey : if $z0 != 0 >>>>>>>> org.apache.pdfbox.util.SmallMap.findKey : return -1
+org.apache.pdfbox.util.SmallMap.findKey : return -1 >>>>>>>> org.apache.pdfbox.util.SmallMap.get : if i0 >= 0
+org.apache.pdfbox.util.SmallMap.get : if i0 >= 0 >>>>>>>> org.apache.pdfbox.util.SmallMap.get : $r3 = null
+org.apache.pdfbox.util.SmallMap.get : $r3 = null >>>>>>>> org.apache.pdfbox.util.SmallMap.get : goto [?= return $r3]
+org.apache.pdfbox.util.SmallMap.get : goto [?= return $r3] >>>>>>>> org.apache.pdfbox.util.SmallMap.get : return $r3
+org.apache.pdfbox.util.SmallMap.get : return $r3 >>>>>>>> org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : r5 = (org.apache.pdfbox.cos.COSBase) $r3
+org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : r5 = (org.apache.pdfbox.cos.COSBase) $r3 >>>>>>>> org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : $z0 = r5 instanceof org.apache.pdfbox.cos.COSObject
+org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : $z0 = r5 instanceof org.apache.pdfbox.cos.COSObject >>>>>>>> org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : if $z0 == 0
+org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : if $z0 == 0 >>>>>>>> org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : $z1 = r5 instanceof org.apache.pdfbox.cos.COSNull
+org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : $z1 = r5 instanceof org.apache.pdfbox.cos.COSNull >>>>>>>> org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : if $z1 == 0
+org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : if $z1 == 0 >>>>>>>> org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : return r5
+org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : return r5 >>>>>>>> org.apache.pdfbox.pdmodel.common.PDNameTreeNode.getLowerLimit : r1 = (org.apache.pdfbox.cos.COSArray) $r4
+org.apache.pdfbox.pdmodel.common.PDNameTreeNode.getLowerLimit : r1 = (org.apache.pdfbox.cos.COSArray) $r4 >>>>>>>> org.apache.pdfbox.pdmodel.common.PDNameTreeNode.getLowerLimit : if r1 == null
+org.apache.pdfbox.pdmodel.common.PDNameTreeNode.getLowerLimit : if r1 == null >>>>>>>> org.apache.pdfbox.pdmodel.common.PDNameTreeNode.getLowerLimit : return r5
+org.apache.pdfbox.pdmodel.common.PDNameTreeNode.getLowerLimit : return r5 >>>>>>>> org.apache.pdfbox.pdmodel.common.PDNameTreeNode.getParent : $r1 = r0.<org.apache.pdfbox.pdmodel.common.PDNameTreeNode: org.apache.pdfbox.pdmodel.common.PDNameTreeNode parent>
+org.apache.pdfbox.pdmodel.common.PDNameTreeNode.getParent : $r1 = r0.<org.apache.pdfbox.pdmodel.common.PDNameTreeNode: org.apache.pdfbox.pdmodel.common.PDNameTreeNode parent> >>>>>>>> org.apache.pdfbox.pdmodel.common.PDNameTreeNode.getParent : return $r1

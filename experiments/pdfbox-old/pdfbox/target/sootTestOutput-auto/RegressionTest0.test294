@@ -1,0 +1,42 @@
+org.apache.pdfbox.cos.COSArray.add : $r2 = r0.<org.apache.pdfbox.cos.COSArray: java.util.List objects>
+org.apache.pdfbox.util.Matrix.concatenate : virtualinvoke r1.<org.apache.pdfbox.util.Matrix: org.apache.pdfbox.util.Matrix multiply(org.apache.pdfbox.util.Matrix,org.apache.pdfbox.util.Matrix)>(r0, r0)
+org.apache.pdfbox.util.Matrix.toCOSArray : $r13 = new org.apache.pdfbox.cos.COSFloat
+org.apache.pdfbox.util.Matrix.toCOSArray : $r7 = new org.apache.pdfbox.cos.COSFloat
+org.apache.pdfbox.util.Matrix.toCOSArray : $r9 = new org.apache.pdfbox.cos.COSFloat
+org.apache.pdfbox.util.Matrix.toCOSArray : $r11 = new org.apache.pdfbox.cos.COSFloat
+org.apache.pdfbox.util.Matrix.toCOSArray : $r2 = new org.apache.pdfbox.cos.COSArray
+org.apache.pdfbox.util.Matrix.toCOSArray : $r5 = new org.apache.pdfbox.cos.COSFloat
+org.apache.pdfbox.util.Matrix.toCOSArray : $r3 = new org.apache.pdfbox.cos.COSFloat
+org.apache.pdfbox.util.Matrix.toCOSArray : return $r2
+org.apache.pdfbox.util.Matrix.multiply : $r11 = r19.<org.apache.pdfbox.util.Matrix: float[] single>
+org.apache.pdfbox.util.Matrix.multiply : r21 = r1.<org.apache.pdfbox.util.Matrix: float[] single>
+org.apache.pdfbox.util.Matrix.multiply : $r4 = r19.<org.apache.pdfbox.util.Matrix: float[] single>
+org.apache.pdfbox.util.Matrix.multiply : r20 = r0.<org.apache.pdfbox.util.Matrix: float[] single>
+org.apache.pdfbox.util.Matrix.multiply : $r7 = r19.<org.apache.pdfbox.util.Matrix: float[] single>
+org.apache.pdfbox.util.Matrix.multiply : if r1 == null goto return r19
+org.apache.pdfbox.util.Matrix.multiply : if r0 != r19 goto (branch)
+org.apache.pdfbox.util.Matrix.multiply : $r2 = r1.<org.apache.pdfbox.util.Matrix: float[] single>
+org.apache.pdfbox.util.Matrix.multiply : r21 = r23
+org.apache.pdfbox.util.Matrix.multiply : $r10 = r19.<org.apache.pdfbox.util.Matrix: float[] single>
+org.apache.pdfbox.util.Matrix.multiply : $r5 = r19.<org.apache.pdfbox.util.Matrix: float[] single>
+org.apache.pdfbox.util.Matrix.multiply : $r14 = r1.<org.apache.pdfbox.util.Matrix: float[] single>
+org.apache.pdfbox.util.Matrix.multiply : $r12 = r1.<org.apache.pdfbox.util.Matrix: float[] single>
+org.apache.pdfbox.util.Matrix.multiply : $r8 = r19.<org.apache.pdfbox.util.Matrix: float[] single>
+org.apache.pdfbox.util.Matrix.multiply : if r19 != null goto (branch)
+org.apache.pdfbox.util.Matrix.multiply : if r1 != r19 goto $r3 = r19.<org.apache.pdfbox.util.Matrix: float[] single>
+org.apache.pdfbox.util.Matrix.multiply : $r3 = r19.<org.apache.pdfbox.util.Matrix: float[] single>
+org.apache.pdfbox.util.Matrix.multiply : $r6 = r19.<org.apache.pdfbox.util.Matrix: float[] single>
+org.apache.pdfbox.util.Matrix.multiply : $r9 = r19.<org.apache.pdfbox.util.Matrix: float[] single>
+org.apache.pdfbox.util.Matrix.translate : virtualinvoke r0.<org.apache.pdfbox.util.Matrix: void concatenate(org.apache.pdfbox.util.Matrix)>(r1)
+org.apache.pdfbox.util.Matrix.translate : r1 = staticinvoke <org.apache.pdfbox.util.Matrix: org.apache.pdfbox.util.Matrix getTranslateInstance(float,float)>(f0, f1)
+org.apache.pdfbox.cos.COSFloat.removeNullDigits : $i0 = virtualinvoke r1.<java.lang.String: int indexOf(int)>(46)
+org.apache.pdfbox.cos.COSFloat.removeNullDigits : $z0 = virtualinvoke r1.<java.lang.String: boolean endsWith(java.lang.String)>(".0")
+org.apache.pdfbox.util.Matrix.getTranslateInstance : $r1 = new org.apache.pdfbox.util.Matrix
+org.apache.pdfbox.util.Matrix.getTranslateInstance : $r2 = $r1.<org.apache.pdfbox.util.Matrix: float[] single>
+org.apache.pdfbox.util.Matrix.getTranslateInstance : return $r1
+org.apache.pdfbox.util.Matrix.getTranslateInstance : $r3 = $r1.<org.apache.pdfbox.util.Matrix: float[] single>
+org.apache.pdfbox.util.Matrix.setFromAffineTransform : $r2 = r0.<org.apache.pdfbox.util.Matrix: float[] single>
+org.apache.pdfbox.util.Matrix.extractScaling : $r4 = $r2.<org.apache.pdfbox.util.Matrix: float[] single>
+org.apache.pdfbox.util.Matrix.extractScaling : $r6 = $r2.<org.apache.pdfbox.util.Matrix: float[] single>
+org.apache.pdfbox.util.Matrix.extractScaling : $r2 = new org.apache.pdfbox.util.Matrix
+org.apache.pdfbox.util.Matrix.extractScaling : return $r2

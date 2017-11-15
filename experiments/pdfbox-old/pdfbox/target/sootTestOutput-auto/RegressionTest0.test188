@@ -1,0 +1,16 @@
+org.apache.pdfbox.cos.COSArray.add : $r2 = r0.<org.apache.pdfbox.cos.COSArray: java.util.List objects>
+org.apache.pdfbox.cos.COSArray.clear : $r1 = r0.<org.apache.pdfbox.cos.COSArray: java.util.List objects>
+org.apache.pdfbox.cos.COSArray.accept : $r2 = interfaceinvoke r1.<org.apache.pdfbox.cos.ICOSVisitor: java.lang.Object visitFromArray(org.apache.pdfbox.cos.COSArray)>(r0)
+org.apache.pdfbox.cos.COSFloat.removeNullDigits : $i0 = virtualinvoke r1.<java.lang.String: int indexOf(int)>(46)
+org.apache.pdfbox.cos.COSFloat.removeNullDigits : $z0 = virtualinvoke r1.<java.lang.String: boolean endsWith(java.lang.String)>(".0")
+org.apache.pdfbox.cos.COSBase.getCOSObject : return r0
+org.apache.pdfbox.pdmodel.graphics.color.PDColor.toCOSArray : $r4 = r0.<org.apache.pdfbox.pdmodel.graphics.color.PDColor: org.apache.pdfbox.cos.COSName patternName>
+org.apache.pdfbox.pdmodel.graphics.color.PDColor.toCOSArray : $r3 = r0.<org.apache.pdfbox.pdmodel.graphics.color.PDColor: float[] components>
+org.apache.pdfbox.pdmodel.graphics.color.PDColor.toCOSArray : $r5 = r0.<org.apache.pdfbox.pdmodel.graphics.color.PDColor: org.apache.pdfbox.cos.COSName patternName>
+org.apache.pdfbox.pdmodel.graphics.color.PDColor.toCOSArray : $r2 = new org.apache.pdfbox.cos.COSArray
+org.apache.pdfbox.pdmodel.graphics.color.PDColor.toCOSArray : return $r2
+org.apache.pdfbox.cos.COSArray.setFloatArray : virtualinvoke r0.<org.apache.pdfbox.cos.COSArray: void clear()>()
+org.apache.pdfbox.cos.COSArray.setFloatArray : f0 = r1[i1]
+org.apache.pdfbox.cos.COSArray.setFloatArray : i0 = lengthof r1
+org.apache.pdfbox.cos.COSArray.setFloatArray : $r3 = new org.apache.pdfbox.cos.COSFloat
+org.apache.pdfbox.pdmodel.graphics.color.PDDeviceGray.getNumberOfComponents : return 1

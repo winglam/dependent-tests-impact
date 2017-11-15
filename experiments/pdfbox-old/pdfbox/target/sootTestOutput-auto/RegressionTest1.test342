@@ -1,0 +1,9 @@
+org.apache.pdfbox.pdmodel.encryption.ProtectionPolicy.getEncryptionKeyLength : $i0 = r0.<org.apache.pdfbox.pdmodel.encryption.ProtectionPolicy: int encryptionKeyLength>
+org.apache.pdfbox.pdmodel.encryption.SecurityHandlerFactory.newSecurityHandler : r14 = virtualinvoke r1.<java.lang.Class: java.lang.reflect.Constructor getDeclaredConstructor(java.lang.Class[])>(r2)
+org.apache.pdfbox.pdmodel.encryption.SecurityHandlerFactory.newSecurityHandler : $r4 = virtualinvoke r14.<java.lang.reflect.Constructor: java.lang.Object newInstance(java.lang.Object[])>(r3)
+org.apache.pdfbox.pdmodel.encryption.StandardProtectionPolicy.getUserPassword : $r1 = r0.<org.apache.pdfbox.pdmodel.encryption.StandardProtectionPolicy: java.lang.String userPassword>
+org.apache.pdfbox.pdmodel.encryption.SecurityHandlerFactory.newSecurityHandlerForPolicy : $r11 = specialinvoke r0.<org.apache.pdfbox.pdmodel.encryption.SecurityHandlerFactory: org.apache.pdfbox.pdmodel.encryption.SecurityHandler newSecurityHandler(java.lang.Class,java.lang.Class[],java.lang.Object[])>(r2, $r8, $r10)
+org.apache.pdfbox.pdmodel.encryption.SecurityHandlerFactory.newSecurityHandlerForPolicy : $r10 = newarray (java.lang.Object)[1]
+org.apache.pdfbox.pdmodel.encryption.SecurityHandlerFactory.newSecurityHandlerForPolicy : if r2 != null goto $r8 = newarray (java.lang.Class)[1]
+org.apache.pdfbox.pdmodel.encryption.SecurityHandlerFactory.newSecurityHandlerForPolicy : $r5 = r0.<org.apache.pdfbox.pdmodel.encryption.SecurityHandlerFactory: java.util.Map policyToHandler>
+org.apache.pdfbox.pdmodel.encryption.SecurityHandlerFactory.newSecurityHandlerForPolicy : $r8 = newarray (java.lang.Class)[1]

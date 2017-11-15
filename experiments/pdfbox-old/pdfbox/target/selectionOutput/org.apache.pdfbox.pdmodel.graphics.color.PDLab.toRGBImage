@@ -1,0 +1,58 @@
+org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : i0 = virtualinvoke r1.<java.awt.image.WritableRaster: int getWidth()>() >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : i1 = virtualinvoke r1.<java.awt.image.WritableRaster: int getHeight()>()
+org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : i1 = virtualinvoke r1.<java.awt.image.WritableRaster: int getHeight()>() >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : $r6 = new java.awt.image.BufferedImage
+org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : $r6 = new java.awt.image.BufferedImage >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : specialinvoke $r6.<java.awt.image.BufferedImage: void <init>(int,int,int)>(i0, i1, 1)
+org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : specialinvoke $r6.<java.awt.image.BufferedImage: void <init>(int,int,int)>(i0, i1, 1) >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : r3 = virtualinvoke $r6.<java.awt.image.BufferedImage: java.awt.image.WritableRaster getRaster()>()
+org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : r3 = virtualinvoke $r6.<java.awt.image.BufferedImage: java.awt.image.WritableRaster getRaster()>() >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : $r7 = virtualinvoke r0.<org.apache.pdfbox.pdmodel.graphics.color.PDLab: org.apache.pdfbox.pdmodel.common.PDRange getARange()>()
+org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : $r7 = virtualinvoke r0.<org.apache.pdfbox.pdmodel.graphics.color.PDLab: org.apache.pdfbox.pdmodel.common.PDRange getARange()>() >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : f0 = virtualinvoke $r7.<org.apache.pdfbox.pdmodel.common.PDRange: float getMin()>()
+org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : f0 = virtualinvoke $r7.<org.apache.pdfbox.pdmodel.common.PDRange: float getMin()>() >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : $r8 = virtualinvoke r0.<org.apache.pdfbox.pdmodel.graphics.color.PDLab: org.apache.pdfbox.pdmodel.common.PDRange getARange()>()
+org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : $r8 = virtualinvoke r0.<org.apache.pdfbox.pdmodel.graphics.color.PDLab: org.apache.pdfbox.pdmodel.common.PDRange getARange()>() >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : f1 = virtualinvoke $r8.<org.apache.pdfbox.pdmodel.common.PDRange: float getMax()>()
+org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : f1 = virtualinvoke $r8.<org.apache.pdfbox.pdmodel.common.PDRange: float getMax()>() >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : $r9 = virtualinvoke r0.<org.apache.pdfbox.pdmodel.graphics.color.PDLab: org.apache.pdfbox.pdmodel.common.PDRange getBRange()>()
+org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : $r9 = virtualinvoke r0.<org.apache.pdfbox.pdmodel.graphics.color.PDLab: org.apache.pdfbox.pdmodel.common.PDRange getBRange()>() >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : f2 = virtualinvoke $r9.<org.apache.pdfbox.pdmodel.common.PDRange: float getMin()>()
+org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : f2 = virtualinvoke $r9.<org.apache.pdfbox.pdmodel.common.PDRange: float getMin()>() >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : $r10 = virtualinvoke r0.<org.apache.pdfbox.pdmodel.graphics.color.PDLab: org.apache.pdfbox.pdmodel.common.PDRange getBRange()>()
+org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : $r10 = virtualinvoke r0.<org.apache.pdfbox.pdmodel.graphics.color.PDLab: org.apache.pdfbox.pdmodel.common.PDRange getBRange()>() >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : f3 = virtualinvoke $r10.<org.apache.pdfbox.pdmodel.common.PDRange: float getMax()>()
+org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : f3 = virtualinvoke $r10.<org.apache.pdfbox.pdmodel.common.PDRange: float getMax()>() >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : r4 = newarray (float)[3]
+org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : r4 = newarray (float)[3] >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : i2 = 0
+org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : i2 = 0 >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : if i2 >= i1
+org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : if i2 >= i1 >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : i3 = 0
+org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : if i2 >= i1 >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : return $r6
+org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : i3 = 0 >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : if i3 >= i0
+org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : if i3 >= i0 >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : virtualinvoke r1.<java.awt.image.WritableRaster: float[] getPixel(int,int,float[])>(i3, i2, r4)
+org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : if i3 >= i0 >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : i2 = i2 + 1
+org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : i2 = i2 + 1 >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : goto [?= (branch)]
+org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : goto [?= (branch)] >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : if i2 >= i1
+org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : virtualinvoke r1.<java.awt.image.WritableRaster: float[] getPixel(int,int,float[])>(i3, i2, r4) >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : $f4 = r4[0]
+org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : $f4 = r4[0] >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : $f5 = $f4 / 255.0F
+org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : $f5 = $f4 / 255.0F >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : r4[0] = $f5
+org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : r4[0] = $f5 >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : $f6 = r4[1]
+org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : $f6 = r4[1] >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : $f7 = $f6 / 255.0F
+org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : $f7 = $f6 / 255.0F >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : r4[1] = $f7
+org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : r4[1] = $f7 >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : $f8 = r4[2]
+org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : $f8 = r4[2] >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : $f9 = $f8 / 255.0F
+org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : $f9 = $f8 / 255.0F >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : r4[2] = $f9
+org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : r4[2] = $f9 >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : $f10 = r4[0]
+org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : $f10 = r4[0] >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : $f11 = $f10 * 100.0F
+org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : $f11 = $f10 * 100.0F >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : r4[0] = $f11
+org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : r4[0] = $f11 >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : $f13 = r4[1]
+org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : $f13 = r4[1] >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : $f12 = f1 - f0
+org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : $f12 = f1 - f0 >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : $f14 = $f13 * $f12
+org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : $f14 = $f13 * $f12 >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : $f15 = f0 + $f14
+org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : $f15 = f0 + $f14 >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : r4[1] = $f15
+org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : r4[1] = $f15 >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : $f17 = r4[2]
+org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : $f17 = r4[2] >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : $f16 = f3 - f2
+org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : $f16 = f3 - f2 >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : $f18 = $f17 * $f16
+org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : $f18 = $f17 * $f16 >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : $f19 = f2 + $f18
+org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : $f19 = f2 + $f18 >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : r4[2] = $f19
+org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : r4[2] = $f19 >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : r5 = virtualinvoke r0.<org.apache.pdfbox.pdmodel.graphics.color.PDLab: float[] toRGB(float[])>(r4)
+org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : r5 = virtualinvoke r0.<org.apache.pdfbox.pdmodel.graphics.color.PDLab: float[] toRGB(float[])>(r4) >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : $f20 = r5[0]
+org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : $f20 = r5[0] >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : $f21 = $f20 * 255.0F
+org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : $f21 = $f20 * 255.0F >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : r5[0] = $f21
+org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : r5[0] = $f21 >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : $f22 = r5[1]
+org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : $f22 = r5[1] >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : $f23 = $f22 * 255.0F
+org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : $f23 = $f22 * 255.0F >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : r5[1] = $f23
+org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : r5[1] = $f23 >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : $f24 = r5[2]
+org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : $f24 = r5[2] >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : $f25 = $f24 * 255.0F
+org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : $f25 = $f24 * 255.0F >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : r5[2] = $f25
+org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : r5[2] = $f25 >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : virtualinvoke r3.<java.awt.image.WritableRaster: void setPixel(int,int,float[])>(i3, i2, r5)
+org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : virtualinvoke r3.<java.awt.image.WritableRaster: void setPixel(int,int,float[])>(i3, i2, r5) >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : i3 = i3 + 1
+org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : i3 = i3 + 1 >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : goto [?= (branch)]
+org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : goto [?= (branch)] >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGBImage : if i3 >= i0

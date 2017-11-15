@@ -1,0 +1,17 @@
+org.apache.pdfbox.io.RandomAccessOutputStream.write : $r1 = r0.<org.apache.pdfbox.io.RandomAccessOutputStream: org.apache.pdfbox.io.RandomAccessWrite writer>
+org.apache.pdfbox.io.RandomAccessOutputStream.write : $r2 = r0.<org.apache.pdfbox.io.RandomAccessOutputStream: org.apache.pdfbox.io.RandomAccessWrite writer>
+org.apache.pdfbox.io.RandomAccessFile.seek : specialinvoke r0.<org.apache.pdfbox.io.RandomAccessFile: void checkClosed()>()
+org.apache.pdfbox.io.RandomAccessFile.seek : $r1 = r0.<org.apache.pdfbox.io.RandomAccessFile: java.io.RandomAccessFile ras>
+org.apache.pdfbox.io.RandomAccessFile.write : $r2 = r0.<org.apache.pdfbox.io.RandomAccessFile: java.io.RandomAccessFile ras>
+org.apache.pdfbox.io.RandomAccessFile.write : specialinvoke r0.<org.apache.pdfbox.io.RandomAccessFile: void checkClosed()>()
+org.apache.pdfbox.io.RandomAccessFile.write : $i0 = lengthof r1
+org.apache.pdfbox.io.RandomAccessFile.write : $r1 = r0.<org.apache.pdfbox.io.RandomAccessFile: java.io.RandomAccessFile ras>
+org.apache.pdfbox.io.RandomAccessFile.getPosition : specialinvoke r0.<org.apache.pdfbox.io.RandomAccessFile: void checkClosed()>()
+org.apache.pdfbox.io.RandomAccessFile.getPosition : $r1 = r0.<org.apache.pdfbox.io.RandomAccessFile: java.io.RandomAccessFile ras>
+org.apache.pdfbox.io.RandomAccessFile.checkClosed : $z0 = r0.<org.apache.pdfbox.io.RandomAccessFile: boolean isClosed>
+org.apache.pdfbox.io.RandomAccessFile.length : specialinvoke r0.<org.apache.pdfbox.io.RandomAccessFile: void checkClosed()>()
+org.apache.pdfbox.io.RandomAccessFile.length : $r1 = r0.<org.apache.pdfbox.io.RandomAccessFile: java.io.RandomAccessFile ras>
+org.apache.pdfbox.io.RandomAccessFile.read : $r2 = r0.<org.apache.pdfbox.io.RandomAccessFile: java.io.RandomAccessFile ras>
+org.apache.pdfbox.io.RandomAccessFile.read : specialinvoke r0.<org.apache.pdfbox.io.RandomAccessFile: void checkClosed()>()
+org.apache.pdfbox.io.RandomAccessFile.close : r0.<org.apache.pdfbox.io.RandomAccessFile: boolean isClosed> = 1
+org.apache.pdfbox.io.RandomAccessFile.close : $r1 = r0.<org.apache.pdfbox.io.RandomAccessFile: java.io.RandomAccessFile ras>

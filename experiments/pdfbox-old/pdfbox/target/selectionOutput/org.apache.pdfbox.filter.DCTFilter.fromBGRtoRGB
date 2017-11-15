@@ -1,0 +1,23 @@
+org.apache.pdfbox.filter.DCTFilter.fromBGRtoRGB : r2 = virtualinvoke r1.<java.awt.image.Raster: java.awt.image.WritableRaster createCompatibleWritableRaster()>() >>>>>>>> org.apache.pdfbox.filter.DCTFilter.fromBGRtoRGB : i0 = virtualinvoke r1.<java.awt.image.Raster: int getWidth()>()
+org.apache.pdfbox.filter.DCTFilter.fromBGRtoRGB : i0 = virtualinvoke r1.<java.awt.image.Raster: int getWidth()>() >>>>>>>> org.apache.pdfbox.filter.DCTFilter.fromBGRtoRGB : i1 = virtualinvoke r1.<java.awt.image.Raster: int getHeight()>()
+org.apache.pdfbox.filter.DCTFilter.fromBGRtoRGB : i1 = virtualinvoke r1.<java.awt.image.Raster: int getHeight()>() >>>>>>>> org.apache.pdfbox.filter.DCTFilter.fromBGRtoRGB : i2 = i0 * 3
+org.apache.pdfbox.filter.DCTFilter.fromBGRtoRGB : i2 = i0 * 3 >>>>>>>> org.apache.pdfbox.filter.DCTFilter.fromBGRtoRGB : r3 = newarray (int)[i2]
+org.apache.pdfbox.filter.DCTFilter.fromBGRtoRGB : r3 = newarray (int)[i2] >>>>>>>> org.apache.pdfbox.filter.DCTFilter.fromBGRtoRGB : i7 = 0
+org.apache.pdfbox.filter.DCTFilter.fromBGRtoRGB : i7 = 0 >>>>>>>> org.apache.pdfbox.filter.DCTFilter.fromBGRtoRGB : if i7 >= i1
+org.apache.pdfbox.filter.DCTFilter.fromBGRtoRGB : if i7 >= i1 >>>>>>>> org.apache.pdfbox.filter.DCTFilter.fromBGRtoRGB : virtualinvoke r1.<java.awt.image.Raster: int[] getPixels(int,int,int,int,int[])>(0, i7, i0, 1, r3)
+org.apache.pdfbox.filter.DCTFilter.fromBGRtoRGB : if i7 >= i1 >>>>>>>> org.apache.pdfbox.filter.DCTFilter.fromBGRtoRGB : return r2
+org.apache.pdfbox.filter.DCTFilter.fromBGRtoRGB : virtualinvoke r1.<java.awt.image.Raster: int[] getPixels(int,int,int,int,int[])>(0, i7, i0, 1, r3) >>>>>>>> org.apache.pdfbox.filter.DCTFilter.fromBGRtoRGB : i8 = 0
+org.apache.pdfbox.filter.DCTFilter.fromBGRtoRGB : i8 = 0 >>>>>>>> org.apache.pdfbox.filter.DCTFilter.fromBGRtoRGB : if i8 >= i2
+org.apache.pdfbox.filter.DCTFilter.fromBGRtoRGB : if i8 >= i2 >>>>>>>> org.apache.pdfbox.filter.DCTFilter.fromBGRtoRGB : i3 = r3[i8]
+org.apache.pdfbox.filter.DCTFilter.fromBGRtoRGB : if i8 >= i2 >>>>>>>> org.apache.pdfbox.filter.DCTFilter.fromBGRtoRGB : virtualinvoke r2.<java.awt.image.WritableRaster: void setPixels(int,int,int,int,int[])>(0, i7, i0, 1, r3)
+org.apache.pdfbox.filter.DCTFilter.fromBGRtoRGB : virtualinvoke r2.<java.awt.image.WritableRaster: void setPixels(int,int,int,int,int[])>(0, i7, i0, 1, r3) >>>>>>>> org.apache.pdfbox.filter.DCTFilter.fromBGRtoRGB : i7 = i7 + 1
+org.apache.pdfbox.filter.DCTFilter.fromBGRtoRGB : i7 = i7 + 1 >>>>>>>> org.apache.pdfbox.filter.DCTFilter.fromBGRtoRGB : goto [?= (branch)]
+org.apache.pdfbox.filter.DCTFilter.fromBGRtoRGB : goto [?= (branch)] >>>>>>>> org.apache.pdfbox.filter.DCTFilter.fromBGRtoRGB : if i7 >= i1
+org.apache.pdfbox.filter.DCTFilter.fromBGRtoRGB : i3 = r3[i8] >>>>>>>> org.apache.pdfbox.filter.DCTFilter.fromBGRtoRGB : $i4 = i8 + 2
+org.apache.pdfbox.filter.DCTFilter.fromBGRtoRGB : $i4 = i8 + 2 >>>>>>>> org.apache.pdfbox.filter.DCTFilter.fromBGRtoRGB : $i5 = r3[$i4]
+org.apache.pdfbox.filter.DCTFilter.fromBGRtoRGB : $i5 = r3[$i4] >>>>>>>> org.apache.pdfbox.filter.DCTFilter.fromBGRtoRGB : r3[i8] = $i5
+org.apache.pdfbox.filter.DCTFilter.fromBGRtoRGB : r3[i8] = $i5 >>>>>>>> org.apache.pdfbox.filter.DCTFilter.fromBGRtoRGB : $i6 = i8 + 2
+org.apache.pdfbox.filter.DCTFilter.fromBGRtoRGB : $i6 = i8 + 2 >>>>>>>> org.apache.pdfbox.filter.DCTFilter.fromBGRtoRGB : r3[$i6] = i3
+org.apache.pdfbox.filter.DCTFilter.fromBGRtoRGB : r3[$i6] = i3 >>>>>>>> org.apache.pdfbox.filter.DCTFilter.fromBGRtoRGB : i8 = i8 + 3
+org.apache.pdfbox.filter.DCTFilter.fromBGRtoRGB : i8 = i8 + 3 >>>>>>>> org.apache.pdfbox.filter.DCTFilter.fromBGRtoRGB : goto [?= (branch)]
+org.apache.pdfbox.filter.DCTFilter.fromBGRtoRGB : goto [?= (branch)] >>>>>>>> org.apache.pdfbox.filter.DCTFilter.fromBGRtoRGB : if i8 >= i2

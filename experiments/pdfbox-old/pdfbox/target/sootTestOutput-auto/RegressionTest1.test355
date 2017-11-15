@@ -1,0 +1,20 @@
+org.apache.pdfbox.cos.COSArray.add : $r2 = r0.<org.apache.pdfbox.cos.COSArray: java.util.List objects>
+org.apache.pdfbox.cos.COSArray.setName : $r2 = staticinvoke <org.apache.pdfbox.cos.COSName: org.apache.pdfbox.cos.COSName getPDFName(java.lang.String)>(r1)
+org.apache.pdfbox.pdmodel.interactive.documentnavigation.destination.PDPageFitWidthDestination.getTop : $r1 = r0.<org.apache.pdfbox.pdmodel.interactive.documentnavigation.destination.PDPageFitWidthDestination: org.apache.pdfbox.cos.COSArray array>
+org.apache.pdfbox.cos.COSArray.getInt : $i2 = virtualinvoke r0.<org.apache.pdfbox.cos.COSArray: int size()>()
+org.apache.pdfbox.cos.COSArray.getInt : $r2 = r0.<org.apache.pdfbox.cos.COSArray: java.util.List objects>
+org.apache.pdfbox.cos.COSArray.getInt : i3 = i1
+org.apache.pdfbox.cos.COSArray.getInt : return i3
+org.apache.pdfbox.cos.COSArray.getInt : $z0 = r1 instanceof org.apache.pdfbox.cos.COSNumber
+org.apache.pdfbox.cos.COSArray.getInt : $i1 = virtualinvoke r0.<org.apache.pdfbox.cos.COSArray: int getInt(int,int)>(i0, -1)
+org.apache.pdfbox.cos.COSArray.growToSize : $i1 = virtualinvoke r0.<org.apache.pdfbox.cos.COSArray: int size()>()
+org.apache.pdfbox.cos.COSArray.growToSize : virtualinvoke r0.<org.apache.pdfbox.cos.COSArray: void growToSize(int,org.apache.pdfbox.cos.COSBase)>(i0, null)
+org.apache.pdfbox.cos.COSArray.growToSize : virtualinvoke r0.<org.apache.pdfbox.cos.COSArray: void add(org.apache.pdfbox.cos.COSBase)>(r1)
+org.apache.pdfbox.cos.COSArray.set : $r2 = r0.<org.apache.pdfbox.cos.COSArray: java.util.List objects>
+org.apache.pdfbox.cos.COSName.getPDFName : $r1 = <org.apache.pdfbox.cos.COSName: java.util.Map commonNameMap>
+org.apache.pdfbox.cos.COSName.getPDFName : return r6
+org.apache.pdfbox.cos.COSName.getPDFName : r6 = null
+org.apache.pdfbox.cos.COSName.getPDFName : $r3 = <org.apache.pdfbox.cos.COSName: java.util.Map nameMap>
+org.apache.pdfbox.cos.COSName.getPDFName : if r0 == null goto return r6
+org.apache.pdfbox.cos.COSName.getPDFName : if r6 != null goto return r6
+org.apache.pdfbox.cos.COSArray.size : $r1 = r0.<org.apache.pdfbox.cos.COSArray: java.util.List objects>

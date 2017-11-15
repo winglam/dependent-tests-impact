@@ -1,0 +1,19 @@
+org.apache.pdfbox.pdmodel.common.PDRectangle.contains : f2 = virtualinvoke r0.<org.apache.pdfbox.pdmodel.common.PDRectangle: float getLowerLeftX()>() >>>>>>>> org.apache.pdfbox.pdmodel.common.PDRectangle.contains : f3 = virtualinvoke r0.<org.apache.pdfbox.pdmodel.common.PDRectangle: float getUpperRightX()>()
+org.apache.pdfbox.pdmodel.common.PDRectangle.contains : f3 = virtualinvoke r0.<org.apache.pdfbox.pdmodel.common.PDRectangle: float getUpperRightX()>() >>>>>>>> org.apache.pdfbox.pdmodel.common.PDRectangle.contains : f4 = virtualinvoke r0.<org.apache.pdfbox.pdmodel.common.PDRectangle: float getLowerLeftY()>()
+org.apache.pdfbox.pdmodel.common.PDRectangle.contains : f4 = virtualinvoke r0.<org.apache.pdfbox.pdmodel.common.PDRectangle: float getLowerLeftY()>() >>>>>>>> org.apache.pdfbox.pdmodel.common.PDRectangle.contains : f5 = virtualinvoke r0.<org.apache.pdfbox.pdmodel.common.PDRectangle: float getUpperRightY()>()
+org.apache.pdfbox.pdmodel.common.PDRectangle.contains : f5 = virtualinvoke r0.<org.apache.pdfbox.pdmodel.common.PDRectangle: float getUpperRightY()>() >>>>>>>> org.apache.pdfbox.pdmodel.common.PDRectangle.contains : $b0 = f0 cmpl f2
+org.apache.pdfbox.pdmodel.common.PDRectangle.contains : $b0 = f0 cmpl f2 >>>>>>>> org.apache.pdfbox.pdmodel.common.PDRectangle.contains : if $b0 < 0
+org.apache.pdfbox.pdmodel.common.PDRectangle.contains : if $b0 < 0 >>>>>>>> org.apache.pdfbox.pdmodel.common.PDRectangle.contains : $b1 = f0 cmpg f3
+org.apache.pdfbox.pdmodel.common.PDRectangle.contains : if $b0 < 0 >>>>>>>> org.apache.pdfbox.pdmodel.common.PDRectangle.contains : $z0 = 0
+org.apache.pdfbox.pdmodel.common.PDRectangle.contains : $z0 = 0 >>>>>>>> org.apache.pdfbox.pdmodel.common.PDRectangle.contains : return $z0
+org.apache.pdfbox.pdmodel.common.PDRectangle.contains : $b1 = f0 cmpg f3 >>>>>>>> org.apache.pdfbox.pdmodel.common.PDRectangle.contains : if $b1 > 0
+org.apache.pdfbox.pdmodel.common.PDRectangle.contains : if $b1 > 0 >>>>>>>> org.apache.pdfbox.pdmodel.common.PDRectangle.contains : $b2 = f1 cmpl f4
+org.apache.pdfbox.pdmodel.common.PDRectangle.contains : if $b1 > 0 >>>>>>>> org.apache.pdfbox.pdmodel.common.PDRectangle.contains : $z0 = 0
+org.apache.pdfbox.pdmodel.common.PDRectangle.contains : $b2 = f1 cmpl f4 >>>>>>>> org.apache.pdfbox.pdmodel.common.PDRectangle.contains : if $b2 < 0
+org.apache.pdfbox.pdmodel.common.PDRectangle.contains : if $b2 < 0 >>>>>>>> org.apache.pdfbox.pdmodel.common.PDRectangle.contains : $b3 = f1 cmpg f5
+org.apache.pdfbox.pdmodel.common.PDRectangle.contains : if $b2 < 0 >>>>>>>> org.apache.pdfbox.pdmodel.common.PDRectangle.contains : $z0 = 0
+org.apache.pdfbox.pdmodel.common.PDRectangle.contains : $b3 = f1 cmpg f5 >>>>>>>> org.apache.pdfbox.pdmodel.common.PDRectangle.contains : if $b3 > 0
+org.apache.pdfbox.pdmodel.common.PDRectangle.contains : if $b3 > 0 >>>>>>>> org.apache.pdfbox.pdmodel.common.PDRectangle.contains : $z0 = 1
+org.apache.pdfbox.pdmodel.common.PDRectangle.contains : if $b3 > 0 >>>>>>>> org.apache.pdfbox.pdmodel.common.PDRectangle.contains : $z0 = 0
+org.apache.pdfbox.pdmodel.common.PDRectangle.contains : $z0 = 1 >>>>>>>> org.apache.pdfbox.pdmodel.common.PDRectangle.contains : goto [?= return $z0]
+org.apache.pdfbox.pdmodel.common.PDRectangle.contains : goto [?= return $z0] >>>>>>>> org.apache.pdfbox.pdmodel.common.PDRectangle.contains : return $z0

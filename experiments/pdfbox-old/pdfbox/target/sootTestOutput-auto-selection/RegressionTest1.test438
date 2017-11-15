@@ -1,0 +1,31 @@
+org.apache.pdfbox.util.Hex.getString : $r3 = new java.lang.StringBuilder >>>>>>>> org.apache.pdfbox.util.Hex.getString : $i2 = lengthof r0
+org.apache.pdfbox.util.Hex.getString : $i2 = lengthof r0 >>>>>>>> org.apache.pdfbox.util.Hex.getString : $i3 = $i2 * 2
+org.apache.pdfbox.util.Hex.getString : $i3 = $i2 * 2 >>>>>>>> org.apache.pdfbox.util.Hex.getString : specialinvoke $r3.<java.lang.StringBuilder: void <init>(int)>($i3)
+org.apache.pdfbox.util.Hex.getString : specialinvoke $r3.<java.lang.StringBuilder: void <init>(int)>($i3) >>>>>>>> org.apache.pdfbox.util.Hex.getString : i0 = lengthof r0
+org.apache.pdfbox.util.Hex.getString : i0 = lengthof r0 >>>>>>>> org.apache.pdfbox.util.Hex.getString : i8 = 0
+org.apache.pdfbox.util.Hex.getString : i8 = 0 >>>>>>>> org.apache.pdfbox.util.Hex.getString : if i8 >= i0
+org.apache.pdfbox.util.Hex.getString : if i8 >= i0 >>>>>>>> org.apache.pdfbox.util.Hex.getString : b1 = r0[i8]
+org.apache.pdfbox.util.Hex.getString : b1 = r0[i8] >>>>>>>> org.apache.pdfbox.util.Hex.getString : $r5 = <org.apache.pdfbox.util.Hex: char[] HEX_CHARS>
+org.apache.pdfbox.util.Hex.getString : $r5 = <org.apache.pdfbox.util.Hex: char[] HEX_CHARS> >>>>>>>> org.apache.pdfbox.util.Hex.getString : $i4 = staticinvoke <org.apache.pdfbox.util.Hex: int getHighNibble(byte)>(b1)
+org.apache.pdfbox.util.Hex.getString : $i4 = staticinvoke <org.apache.pdfbox.util.Hex: int getHighNibble(byte)>(b1) >>>>>>>> org.apache.pdfbox.util.Hex.getHighNibble : $s1 = b0 & 240
+org.apache.pdfbox.util.Hex.getHighNibble : $s1 = b0 & 240 >>>>>>>> org.apache.pdfbox.util.Hex.getHighNibble : $s2 = $s1 >> 4
+org.apache.pdfbox.util.Hex.getHighNibble : $s2 = $s1 >> 4 >>>>>>>> org.apache.pdfbox.util.Hex.getHighNibble : return $s2
+org.apache.pdfbox.util.Hex.getHighNibble : return $s2 >>>>>>>> org.apache.pdfbox.util.Hex.getString : $c5 = $r5[$i4]
+org.apache.pdfbox.util.Hex.getString : $c5 = $r5[$i4] >>>>>>>> org.apache.pdfbox.util.Hex.getString : $r6 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>($c5)
+org.apache.pdfbox.util.Hex.getString : $r6 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>($c5) >>>>>>>> org.apache.pdfbox.util.Hex.getString : $r7 = <org.apache.pdfbox.util.Hex: char[] HEX_CHARS>
+org.apache.pdfbox.util.Hex.getString : $r7 = <org.apache.pdfbox.util.Hex: char[] HEX_CHARS> >>>>>>>> org.apache.pdfbox.util.Hex.getString : $i6 = staticinvoke <org.apache.pdfbox.util.Hex: int getLowNibble(byte)>(b1)
+org.apache.pdfbox.util.Hex.getString : $i6 = staticinvoke <org.apache.pdfbox.util.Hex: int getLowNibble(byte)>(b1) >>>>>>>> org.apache.pdfbox.util.Hex.getLowNibble : $b1 = b0 & 15
+org.apache.pdfbox.util.Hex.getLowNibble : $b1 = b0 & 15 >>>>>>>> org.apache.pdfbox.util.Hex.getLowNibble : return $b1
+org.apache.pdfbox.util.Hex.getLowNibble : return $b1 >>>>>>>> org.apache.pdfbox.util.Hex.getString : $c7 = $r7[$i6]
+org.apache.pdfbox.util.Hex.getString : $c7 = $r7[$i6] >>>>>>>> org.apache.pdfbox.util.Hex.getString : virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>($c7)
+org.apache.pdfbox.util.Hex.getString : virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>($c7) >>>>>>>> org.apache.pdfbox.util.Hex.getString : i8 = i8 + 1
+org.apache.pdfbox.util.Hex.getString : i8 = i8 + 1 >>>>>>>> org.apache.pdfbox.util.Hex.getString : goto [?= (branch)]
+org.apache.pdfbox.util.Hex.getString : goto [?= (branch)] >>>>>>>> org.apache.pdfbox.util.Hex.getString : $r4 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>()
+org.apache.pdfbox.util.Hex.getString : $r4 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>() >>>>>>>> org.apache.pdfbox.util.Hex.getString : return $r4
+org.apache.pdfbox.util.Hex.getString : return $r4 >>>>>>>> org.apache.pdfbox.pdmodel.font.PDPanose.getFamilyClass : $r1 = r0.<org.apache.pdfbox.pdmodel.font.PDPanose: byte[] bytes>
+org.apache.pdfbox.pdmodel.font.PDPanose.getFamilyClass : $r1 = r0.<org.apache.pdfbox.pdmodel.font.PDPanose: byte[] bytes> >>>>>>>> org.apache.pdfbox.pdmodel.font.PDPanose.getFamilyClass : $b0 = $r1[0]
+org.apache.pdfbox.pdmodel.font.PDPanose.getFamilyClass : $b0 = $r1[0] >>>>>>>> org.apache.pdfbox.pdmodel.font.PDPanose.getFamilyClass : $i2 = $b0 << 8
+org.apache.pdfbox.pdmodel.font.PDPanose.getFamilyClass : $i2 = $b0 << 8 >>>>>>>> org.apache.pdfbox.pdmodel.font.PDPanose.getFamilyClass : $r2 = r0.<org.apache.pdfbox.pdmodel.font.PDPanose: byte[] bytes>
+org.apache.pdfbox.pdmodel.font.PDPanose.getFamilyClass : $r2 = r0.<org.apache.pdfbox.pdmodel.font.PDPanose: byte[] bytes> >>>>>>>> org.apache.pdfbox.pdmodel.font.PDPanose.getFamilyClass : $b1 = $r2[1]
+org.apache.pdfbox.pdmodel.font.PDPanose.getFamilyClass : $b1 = $r2[1] >>>>>>>> org.apache.pdfbox.pdmodel.font.PDPanose.getFamilyClass : $i3 = $i2 | $b1
+org.apache.pdfbox.pdmodel.font.PDPanose.getFamilyClass : $i3 = $i2 | $b1 >>>>>>>> org.apache.pdfbox.pdmodel.font.PDPanose.getFamilyClass : return $i3

@@ -1,0 +1,15 @@
+org.apache.pdfbox.filter.FlateFilter.encode : $r6 = new java.util.zip.DeflaterOutputStream >>>>>>>> org.apache.pdfbox.filter.FlateFilter.encode : specialinvoke $r6.<java.util.zip.DeflaterOutputStream: void <init>(java.io.OutputStream)>(r2)
+org.apache.pdfbox.filter.FlateFilter.encode : specialinvoke $r6.<java.util.zip.DeflaterOutputStream: void <init>(java.io.OutputStream)>(r2) >>>>>>>> org.apache.pdfbox.filter.FlateFilter.encode : i1 = virtualinvoke r1.<java.io.InputStream: int available()>()
+org.apache.pdfbox.filter.FlateFilter.encode : i1 = virtualinvoke r1.<java.io.InputStream: int available()>() >>>>>>>> org.apache.pdfbox.filter.FlateFilter.encode : if i1 <= 0
+org.apache.pdfbox.filter.FlateFilter.encode : if i1 <= 0 >>>>>>>> org.apache.pdfbox.filter.FlateFilter.encode : $i2 = staticinvoke <java.lang.Math: int min(int,int)>(i1, 16348)
+org.apache.pdfbox.filter.FlateFilter.encode : if i1 <= 0 >>>>>>>> org.apache.pdfbox.filter.FlateFilter.encode : virtualinvoke $r6.<java.util.zip.DeflaterOutputStream: void close()>()
+org.apache.pdfbox.filter.FlateFilter.encode : virtualinvoke $r6.<java.util.zip.DeflaterOutputStream: void close()>() >>>>>>>> org.apache.pdfbox.filter.FlateFilter.encode : virtualinvoke r2.<java.io.OutputStream: void flush()>()
+org.apache.pdfbox.filter.FlateFilter.encode : virtualinvoke r2.<java.io.OutputStream: void flush()>() >>>>>>>> org.apache.pdfbox.filter.FlateFilter.encode : return
+org.apache.pdfbox.filter.FlateFilter.encode : $i2 = staticinvoke <java.lang.Math: int min(int,int)>(i1, 16348) >>>>>>>> org.apache.pdfbox.filter.FlateFilter.encode : r5 = newarray (byte)[$i2]
+org.apache.pdfbox.filter.FlateFilter.encode : r5 = newarray (byte)[$i2] >>>>>>>> org.apache.pdfbox.filter.FlateFilter.encode : $i3 = staticinvoke <java.lang.Math: int min(int,int)>(i1, 16348)
+org.apache.pdfbox.filter.FlateFilter.encode : $i3 = staticinvoke <java.lang.Math: int min(int,int)>(i1, 16348) >>>>>>>> org.apache.pdfbox.filter.FlateFilter.encode : $i4 = virtualinvoke r1.<java.io.InputStream: int read(byte[],int,int)>(r5, 0, $i3)
+org.apache.pdfbox.filter.FlateFilter.encode : $i4 = virtualinvoke r1.<java.io.InputStream: int read(byte[],int,int)>(r5, 0, $i3) >>>>>>>> org.apache.pdfbox.filter.FlateFilter.encode : if $i4 == -1
+org.apache.pdfbox.filter.FlateFilter.encode : if $i4 == -1 >>>>>>>> org.apache.pdfbox.filter.FlateFilter.encode : virtualinvoke $r6.<java.util.zip.DeflaterOutputStream: void write(byte[],int,int)>(r5, 0, $i4)
+org.apache.pdfbox.filter.FlateFilter.encode : if $i4 == -1 >>>>>>>> org.apache.pdfbox.filter.FlateFilter.encode : virtualinvoke $r6.<java.util.zip.DeflaterOutputStream: void close()>()
+org.apache.pdfbox.filter.FlateFilter.encode : virtualinvoke $r6.<java.util.zip.DeflaterOutputStream: void write(byte[],int,int)>(r5, 0, $i4) >>>>>>>> org.apache.pdfbox.filter.FlateFilter.encode : goto [?= $i3 = staticinvoke <java.lang.Math: int min(int,int)>(i1, 16348)]
+org.apache.pdfbox.filter.FlateFilter.encode : goto [?= $i3 = staticinvoke <java.lang.Math: int min(int,int)>(i1, 16348)] >>>>>>>> org.apache.pdfbox.filter.FlateFilter.encode : $i3 = staticinvoke <java.lang.Math: int min(int,int)>(i1, 16348)

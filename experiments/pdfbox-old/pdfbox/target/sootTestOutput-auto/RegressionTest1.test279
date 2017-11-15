@@ -1,0 +1,119 @@
+org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : $z0 = r5 instanceof org.apache.pdfbox.cos.COSObject
+org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : return r5
+org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : $z1 = r5 instanceof org.apache.pdfbox.cos.COSNull
+org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : $r2 = r0.<org.apache.pdfbox.cos.COSDictionary: java.util.Map items>
+org.apache.pdfbox.pdmodel.interactive.annotation.PDAppearanceDictionary.setNormalAppearance : $r3 = r0.<org.apache.pdfbox.pdmodel.interactive.'annotation'.PDAppearanceDictionary: org.apache.pdfbox.cos.COSDictionary dictionary>
+org.apache.pdfbox.io.ScratchFile.createBuffer : $r1 = new org.apache.pdfbox.io.ScratchFileBuffer
+org.apache.pdfbox.contentstream.PDAbstractContentStream.setGraphicsStateParameters : $r2 = r0.<org.apache.pdfbox.contentstream.PDAbstractContentStream: org.apache.pdfbox.pdmodel.PDResources resources>
+org.apache.pdfbox.io.ScratchFile.getMainMemoryOnlyInstance : $r1 = new org.apache.pdfbox.io.ScratchFile
+org.apache.pdfbox.io.MemoryUsageSetting.isStorageRestricted : $l0 = r0.<org.apache.pdfbox.io.MemoryUsageSetting: long maxStorageBytes>
+org.apache.pdfbox.pdmodel.common.PDStream.getCOSObject : $r1 = r0.<org.apache.pdfbox.pdmodel.common.PDStream: org.apache.pdfbox.cos.COSStream stream>
+org.apache.pdfbox.cos.COSName.equals : $z0 = r1 instanceof org.apache.pdfbox.cos.COSName
+org.apache.pdfbox.pdmodel.graphics.PDXObject.getStream : $r1 = r0.<org.apache.pdfbox.pdmodel.graphics.PDXObject: org.apache.pdfbox.pdmodel.common.PDStream stream>
+org.apache.pdfbox.io.ScratchFile.getPageSize : return 4096
+org.apache.pdfbox.cos.COSDictionary.setItem : r3 = interfaceinvoke r2.<org.apache.pdfbox.pdmodel.common.COSObjectable: org.apache.pdfbox.cos.COSBase getCOSObject()>()
+org.apache.pdfbox.cos.COSDictionary.setItem : $r3 = r0.<org.apache.pdfbox.cos.COSDictionary: java.util.Map items>
+org.apache.pdfbox.cos.COSDictionary.setItem : r3 = null
+org.apache.pdfbox.cos.COSDictionary.setItem : if r2 == null goto virtualinvoke r0.<org.apache.pdfbox.cos.COSDictionary: void setItem(org.apache.pdfbox.cos.COSName,org.apache.pdfbox.cos.COSBase)>(r1, r3)
+org.apache.pdfbox.cos.COSDictionary.setItem : if r2 != null goto $r3 = r0.<org.apache.pdfbox.cos.COSDictionary: java.util.Map items>
+org.apache.pdfbox.cos.COSDictionary.setItem : virtualinvoke r0.<org.apache.pdfbox.cos.COSDictionary: void setItem(org.apache.pdfbox.cos.COSName,org.apache.pdfbox.cos.COSBase)>(r1, r3)
+org.apache.pdfbox.pdmodel.interactive.action.PDActionFactory.createAction : $r3 = "JavaScript"
+org.apache.pdfbox.pdmodel.interactive.action.PDActionFactory.createAction : $r4 = "GoTo"
+org.apache.pdfbox.pdmodel.interactive.action.PDActionFactory.createAction : $r2 = <org.apache.pdfbox.cos.COSName: org.apache.pdfbox.cos.COSName S>
+org.apache.pdfbox.pdmodel.interactive.action.PDActionFactory.createAction : $r9 = "Sound"
+org.apache.pdfbox.pdmodel.interactive.action.PDActionFactory.createAction : $r10 = "Movie"
+org.apache.pdfbox.pdmodel.interactive.action.PDActionFactory.createAction : $r12 = "ResetForm"
+org.apache.pdfbox.pdmodel.interactive.action.PDActionFactory.createAction : if r0 == null goto return r29
+org.apache.pdfbox.pdmodel.interactive.action.PDActionFactory.createAction : $r11 = "ImportData"
+org.apache.pdfbox.pdmodel.interactive.action.PDActionFactory.createAction : $r13 = "Hide"
+org.apache.pdfbox.pdmodel.interactive.action.PDActionFactory.createAction : $r5 = "Launch"
+org.apache.pdfbox.pdmodel.interactive.action.PDActionFactory.createAction : $r7 = "URI"
+org.apache.pdfbox.pdmodel.interactive.action.PDActionFactory.createAction : $r6 = "GoToR"
+org.apache.pdfbox.pdmodel.interactive.action.PDActionFactory.createAction : return r29
+org.apache.pdfbox.pdmodel.interactive.action.PDActionFactory.createAction : $r15 = "Thread"
+org.apache.pdfbox.pdmodel.interactive.action.PDActionFactory.createAction : r29 = null
+org.apache.pdfbox.pdmodel.interactive.action.PDActionFactory.createAction : $r8 = "Named"
+org.apache.pdfbox.pdmodel.interactive.action.PDActionFactory.createAction : $r14 = "SubmitForm"
+org.apache.pdfbox.util.SmallMap.isEmpty : $r1 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.cos.COSStream.createOutputStream : $r8 = new org.apache.pdfbox.cos.COSOutputStream
+org.apache.pdfbox.cos.COSStream.createOutputStream : $r11 = new org.apache.pdfbox.cos.COSStream$1
+org.apache.pdfbox.cos.COSStream.createOutputStream : $z0 = r0.<org.apache.pdfbox.cos.COSStream: boolean isWriting>
+org.apache.pdfbox.cos.COSStream.createOutputStream : if r1 == null goto $r4 = r0.<org.apache.pdfbox.cos.COSStream: org.apache.pdfbox.io.ScratchFile scratchFile>
+org.apache.pdfbox.cos.COSStream.createOutputStream : $r1 = virtualinvoke r0.<org.apache.pdfbox.cos.COSStream: java.io.OutputStream createOutputStream(org.apache.pdfbox.cos.COSBase)>(null)
+org.apache.pdfbox.cos.COSStream.createOutputStream : r0.<org.apache.pdfbox.cos.COSStream: boolean isWriting> = 1
+org.apache.pdfbox.cos.COSStream.createOutputStream : specialinvoke r0.<org.apache.pdfbox.cos.COSStream: void checkClosed()>()
+org.apache.pdfbox.cos.COSStream.createOutputStream : $r4 = r0.<org.apache.pdfbox.cos.COSStream: org.apache.pdfbox.io.ScratchFile scratchFile>
+org.apache.pdfbox.cos.COSStream.createOutputStream : $r6 = new org.apache.pdfbox.io.RandomAccessOutputStream
+org.apache.pdfbox.cos.COSDictionary.setName : r3 = null
+org.apache.pdfbox.cos.COSDictionary.setName : if r2 == null goto virtualinvoke r0.<org.apache.pdfbox.cos.COSDictionary: void setItem(org.apache.pdfbox.cos.COSName,org.apache.pdfbox.cos.COSBase)>(r1, r3)
+org.apache.pdfbox.cos.COSDictionary.setName : r3 = staticinvoke <org.apache.pdfbox.cos.COSName: org.apache.pdfbox.cos.COSName getPDFName(java.lang.String)>(r2)
+org.apache.pdfbox.cos.COSDictionary.setName : virtualinvoke r0.<org.apache.pdfbox.cos.COSDictionary: void setItem(org.apache.pdfbox.cos.COSName,org.apache.pdfbox.cos.COSBase)>(r1, r3)
+org.apache.pdfbox.util.SmallMap.get : if i0 >= 0 goto $r2 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.util.SmallMap.get : i0 = specialinvoke r0.<org.apache.pdfbox.util.SmallMap: int findKey(java.lang.Object)>(r1)
+org.apache.pdfbox.pdmodel.common.PDStream.createOutputStream : $r1 = r0.<org.apache.pdfbox.pdmodel.common.PDStream: org.apache.pdfbox.cos.COSStream stream>
+org.apache.pdfbox.pdmodel.graphics.PDXObject.getCOSObject : $r1 = virtualinvoke r0.<org.apache.pdfbox.pdmodel.graphics.PDXObject: org.apache.pdfbox.cos.COSStream getCOSObject()>()
+org.apache.pdfbox.pdmodel.graphics.PDXObject.getCOSObject : $r1 = r0.<org.apache.pdfbox.pdmodel.graphics.PDXObject: org.apache.pdfbox.pdmodel.common.PDStream stream>
+org.apache.pdfbox.cos.COSStream.getFilters : $r1 = <org.apache.pdfbox.cos.COSName: org.apache.pdfbox.cos.COSName FILTER>
+org.apache.pdfbox.cos.COSStream.getFilterList : $r5 = new java.util.ArrayList
+org.apache.pdfbox.cos.COSStream.getFilterList : $z1 = r2 instanceof org.apache.pdfbox.cos.COSArray
+org.apache.pdfbox.cos.COSStream.getFilterList : return $r5
+org.apache.pdfbox.cos.COSStream.getFilterList : r2 = virtualinvoke r0.<org.apache.pdfbox.cos.COSStream: org.apache.pdfbox.cos.COSBase getFilters()>()
+org.apache.pdfbox.cos.COSStream.getFilterList : $z0 = r2 instanceof org.apache.pdfbox.cos.COSName
+org.apache.pdfbox.util.SmallMap.findKey : if r1 != null goto i1 = 0
+org.apache.pdfbox.util.SmallMap.findKey : return -1
+org.apache.pdfbox.util.SmallMap.findKey : $r3 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.util.SmallMap.findKey : return i1
+org.apache.pdfbox.util.SmallMap.findKey : i1 = 0
+org.apache.pdfbox.util.SmallMap.findKey : $z0 = virtualinvoke r0.<org.apache.pdfbox.util.SmallMap: boolean isEmpty()>()
+org.apache.pdfbox.io.ScratchFile.checkClosed : $z0 = r0.<org.apache.pdfbox.io.ScratchFile: boolean isClosed>
+org.apache.pdfbox.io.MemoryUsageSetting.useMainMemory : $z0 = r0.<org.apache.pdfbox.io.MemoryUsageSetting: boolean useMainMemory>
+org.apache.pdfbox.io.ScratchFileBuffer.addPage : $r8 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: org.apache.pdfbox.io.ScratchFile pageHandler>
+org.apache.pdfbox.io.ScratchFileBuffer.addPage : r0.<org.apache.pdfbox.io.ScratchFileBuffer: int positionInPage> = 0
+org.apache.pdfbox.io.ScratchFileBuffer.addPage : $i11 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: int pageCount>
+org.apache.pdfbox.io.ScratchFileBuffer.addPage : $i10 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: int pageCount>
+org.apache.pdfbox.io.ScratchFileBuffer.addPage : $i16 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: int pageCount>
+org.apache.pdfbox.io.ScratchFileBuffer.addPage : $i18 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: int pageSize>
+org.apache.pdfbox.io.ScratchFileBuffer.addPage : $r9 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: int[] pageIndexes>
+org.apache.pdfbox.io.ScratchFileBuffer.addPage : $i0 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: int pageCount>
+org.apache.pdfbox.io.ScratchFile.getNewPage : exitmonitor $r3
+org.apache.pdfbox.io.ScratchFile.getNewPage : $i0 = r0.<org.apache.pdfbox.io.ScratchFile: int pageCount>
+org.apache.pdfbox.io.ScratchFile.getNewPage : $i1 = i3 + 1
+org.apache.pdfbox.io.ScratchFile.getNewPage : if i3 >= 0 goto $r5 = r0.<org.apache.pdfbox.io.ScratchFile: java.util.BitSet freePages>
+org.apache.pdfbox.io.ScratchFile.getNewPage : $r3 = r0.<org.apache.pdfbox.io.ScratchFile: java.util.BitSet freePages>
+org.apache.pdfbox.io.ScratchFile.getNewPage : $r4 = r0.<org.apache.pdfbox.io.ScratchFile: java.util.BitSet freePages>
+org.apache.pdfbox.io.ScratchFile.getNewPage : $r5 = r0.<org.apache.pdfbox.io.ScratchFile: java.util.BitSet freePages>
+org.apache.pdfbox.io.MemoryUsageSetting.isMainMemoryRestricted : $l0 = r0.<org.apache.pdfbox.io.MemoryUsageSetting: long maxMainMemoryBytes>
+org.apache.pdfbox.pdmodel.graphics.form.PDFormXObject.getResources : return null
+org.apache.pdfbox.pdmodel.graphics.form.PDFormXObject.getResources : if r1 == null goto return null
+org.apache.pdfbox.pdmodel.graphics.form.PDFormXObject.getResources : $r2 = virtualinvoke r0.<org.apache.pdfbox.pdmodel.graphics.form.PDFormXObject: org.apache.pdfbox.cos.COSStream getCOSObject()>()
+org.apache.pdfbox.contentstream.PDAbstractContentStream.setResources : r0.<org.apache.pdfbox.contentstream.PDAbstractContentStream: org.apache.pdfbox.pdmodel.PDResources resources> = r1
+org.apache.pdfbox.cos.COSDictionary.getNameAsString : return r5
+org.apache.pdfbox.cos.COSDictionary.getNameAsString : r2 = virtualinvoke r0.<org.apache.pdfbox.cos.COSDictionary: org.apache.pdfbox.cos.COSBase getDictionaryObject(org.apache.pdfbox.cos.COSName)>(r1)
+org.apache.pdfbox.cos.COSDictionary.getNameAsString : r5 = null
+org.apache.pdfbox.cos.COSDictionary.getNameAsString : $z1 = r2 instanceof org.apache.pdfbox.cos.COSString
+org.apache.pdfbox.cos.COSDictionary.getNameAsString : $z0 = r2 instanceof org.apache.pdfbox.cos.COSName
+org.apache.pdfbox.io.MemoryUsageSetting.setupMainMemoryOnly : $r0 = new org.apache.pdfbox.io.MemoryUsageSetting
+org.apache.pdfbox.io.MemoryUsageSetting.setupMainMemoryOnly : $r0 = staticinvoke <org.apache.pdfbox.io.MemoryUsageSetting: org.apache.pdfbox.io.MemoryUsageSetting setupMainMemoryOnly(long)>(-1L)
+org.apache.pdfbox.cos.COSName.getPDFName : $r1 = <org.apache.pdfbox.cos.COSName: java.util.Map commonNameMap>
+org.apache.pdfbox.cos.COSName.getPDFName : return r6
+org.apache.pdfbox.cos.COSName.getPDFName : r6 = null
+org.apache.pdfbox.cos.COSName.getPDFName : if r0 == null goto return r6
+org.apache.pdfbox.cos.COSName.getPDFName : if r6 != null goto return r6
+org.apache.pdfbox.cos.COSStream.checkClosed : $r1 = r0.<org.apache.pdfbox.cos.COSStream: org.apache.pdfbox.io.RandomAccess randomAccess>
+org.apache.pdfbox.util.SmallMap.put : $r5 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.util.SmallMap.put : $r7 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.util.SmallMap.put : $r8 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.util.SmallMap.put : $r9 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.util.SmallMap.put : if r2 != null goto $r5 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.util.SmallMap.put : $i4 = i5 + 1
+org.apache.pdfbox.util.SmallMap.put : r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr> = r3
+org.apache.pdfbox.util.SmallMap.put : r3[i5] = r1
+org.apache.pdfbox.util.SmallMap.put : $i3 = i5 + 2
+org.apache.pdfbox.util.SmallMap.put : if r1 == null goto $r4 = new java.lang.NullPointerException
+org.apache.pdfbox.util.SmallMap.put : return null
+org.apache.pdfbox.util.SmallMap.put : $r10 = newarray (java.lang.Object)[2]
+org.apache.pdfbox.util.SmallMap.put : i0 = specialinvoke r0.<org.apache.pdfbox.util.SmallMap: int findKey(java.lang.Object)>(r1)
+org.apache.pdfbox.util.SmallMap.put : if i0 >= 0 goto $r6 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.util.SmallMap.put : return r11
+org.apache.pdfbox.util.SmallMap.put : $r6 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.cos.COSName.getName : $r1 = r0.<org.apache.pdfbox.cos.COSName: java.lang.String name>

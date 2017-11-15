@@ -1,0 +1,27 @@
+org.apache.pdfbox.filter.RunLengthDecodeFilter.decode : r4 = newarray (byte)[128] >>>>>>>> org.apache.pdfbox.filter.RunLengthDecodeFilter.decode : $i3 = virtualinvoke r1.<java.io.InputStream: int read()>()
+org.apache.pdfbox.filter.RunLengthDecodeFilter.decode : $i3 = virtualinvoke r1.<java.io.InputStream: int read()>() >>>>>>>> org.apache.pdfbox.filter.RunLengthDecodeFilter.decode : if $i3 == -1
+org.apache.pdfbox.filter.RunLengthDecodeFilter.decode : if $i3 == -1 >>>>>>>> org.apache.pdfbox.filter.RunLengthDecodeFilter.decode : if $i3 == 128
+org.apache.pdfbox.filter.RunLengthDecodeFilter.decode : if $i3 == -1 >>>>>>>> org.apache.pdfbox.filter.RunLengthDecodeFilter.decode : $r5 = new org.apache.pdfbox.filter.DecodeResult
+org.apache.pdfbox.filter.RunLengthDecodeFilter.decode : $r5 = new org.apache.pdfbox.filter.DecodeResult >>>>>>>> org.apache.pdfbox.filter.RunLengthDecodeFilter.decode : specialinvoke $r5.<org.apache.pdfbox.filter.DecodeResult: void <init>(org.apache.pdfbox.cos.COSDictionary)>(r3)
+org.apache.pdfbox.filter.RunLengthDecodeFilter.decode : specialinvoke $r5.<org.apache.pdfbox.filter.DecodeResult: void <init>(org.apache.pdfbox.cos.COSDictionary)>(r3) >>>>>>>> org.apache.pdfbox.filter.RunLengthDecodeFilter.decode : return $r5
+org.apache.pdfbox.filter.RunLengthDecodeFilter.decode : if $i3 == 128 >>>>>>>> org.apache.pdfbox.filter.RunLengthDecodeFilter.decode : if $i3 > 127
+org.apache.pdfbox.filter.RunLengthDecodeFilter.decode : if $i3 == 128 >>>>>>>> org.apache.pdfbox.filter.RunLengthDecodeFilter.decode : $r5 = new org.apache.pdfbox.filter.DecodeResult
+org.apache.pdfbox.filter.RunLengthDecodeFilter.decode : if $i3 > 127 >>>>>>>> org.apache.pdfbox.filter.RunLengthDecodeFilter.decode : i4 = $i3 + 1
+org.apache.pdfbox.filter.RunLengthDecodeFilter.decode : if $i3 > 127 >>>>>>>> org.apache.pdfbox.filter.RunLengthDecodeFilter.decode : i6 = virtualinvoke r1.<java.io.InputStream: int read()>()
+org.apache.pdfbox.filter.RunLengthDecodeFilter.decode : i6 = virtualinvoke r1.<java.io.InputStream: int read()>() >>>>>>>> org.apache.pdfbox.filter.RunLengthDecodeFilter.decode : i7 = 0
+org.apache.pdfbox.filter.RunLengthDecodeFilter.decode : i7 = 0 >>>>>>>> org.apache.pdfbox.filter.RunLengthDecodeFilter.decode : $i2 = 257 - $i3
+org.apache.pdfbox.filter.RunLengthDecodeFilter.decode : $i2 = 257 - $i3 >>>>>>>> org.apache.pdfbox.filter.RunLengthDecodeFilter.decode : if i7 >= $i2
+org.apache.pdfbox.filter.RunLengthDecodeFilter.decode : if i7 >= $i2 >>>>>>>> org.apache.pdfbox.filter.RunLengthDecodeFilter.decode : virtualinvoke r2.<java.io.OutputStream: void write(int)>(i6)
+org.apache.pdfbox.filter.RunLengthDecodeFilter.decode : if i7 >= $i2 >>>>>>>> org.apache.pdfbox.filter.RunLengthDecodeFilter.decode : goto [?= $i3 = virtualinvoke r1.<java.io.InputStream: int read()>()]
+org.apache.pdfbox.filter.RunLengthDecodeFilter.decode : goto [?= $i3 = virtualinvoke r1.<java.io.InputStream: int read()>()] >>>>>>>> org.apache.pdfbox.filter.RunLengthDecodeFilter.decode : $i3 = virtualinvoke r1.<java.io.InputStream: int read()>()
+org.apache.pdfbox.filter.RunLengthDecodeFilter.decode : virtualinvoke r2.<java.io.OutputStream: void write(int)>(i6) >>>>>>>> org.apache.pdfbox.filter.RunLengthDecodeFilter.decode : i7 = i7 + 1
+org.apache.pdfbox.filter.RunLengthDecodeFilter.decode : i7 = i7 + 1 >>>>>>>> org.apache.pdfbox.filter.RunLengthDecodeFilter.decode : goto [?= $i2 = 257 - $i3]
+org.apache.pdfbox.filter.RunLengthDecodeFilter.decode : goto [?= $i2 = 257 - $i3] >>>>>>>> org.apache.pdfbox.filter.RunLengthDecodeFilter.decode : $i2 = 257 - $i3
+org.apache.pdfbox.filter.RunLengthDecodeFilter.decode : i4 = $i3 + 1 >>>>>>>> org.apache.pdfbox.filter.RunLengthDecodeFilter.decode : if i4 <= 0
+org.apache.pdfbox.filter.RunLengthDecodeFilter.decode : if i4 <= 0 >>>>>>>> org.apache.pdfbox.filter.RunLengthDecodeFilter.decode : i5 = virtualinvoke r1.<java.io.InputStream: int read(byte[],int,int)>(r4, 0, i4)
+org.apache.pdfbox.filter.RunLengthDecodeFilter.decode : if i4 <= 0 >>>>>>>> org.apache.pdfbox.filter.RunLengthDecodeFilter.decode : goto [?= $i3 = virtualinvoke r1.<java.io.InputStream: int read()>()]
+org.apache.pdfbox.filter.RunLengthDecodeFilter.decode : goto [?= $i3 = virtualinvoke r1.<java.io.InputStream: int read()>()] >>>>>>>> org.apache.pdfbox.filter.RunLengthDecodeFilter.decode : $i3 = virtualinvoke r1.<java.io.InputStream: int read()>()
+org.apache.pdfbox.filter.RunLengthDecodeFilter.decode : i5 = virtualinvoke r1.<java.io.InputStream: int read(byte[],int,int)>(r4, 0, i4) >>>>>>>> org.apache.pdfbox.filter.RunLengthDecodeFilter.decode : virtualinvoke r2.<java.io.OutputStream: void write(byte[],int,int)>(r4, 0, i5)
+org.apache.pdfbox.filter.RunLengthDecodeFilter.decode : virtualinvoke r2.<java.io.OutputStream: void write(byte[],int,int)>(r4, 0, i5) >>>>>>>> org.apache.pdfbox.filter.RunLengthDecodeFilter.decode : i4 = i4 - i5
+org.apache.pdfbox.filter.RunLengthDecodeFilter.decode : i4 = i4 - i5 >>>>>>>> org.apache.pdfbox.filter.RunLengthDecodeFilter.decode : goto [?= (branch)]
+org.apache.pdfbox.filter.RunLengthDecodeFilter.decode : goto [?= (branch)] >>>>>>>> org.apache.pdfbox.filter.RunLengthDecodeFilter.decode : if i4 <= 0

@@ -1,0 +1,60 @@
+org.apache.pdfbox.text.TextPosition.contains : $f0 = virtualinvoke r0.<org.apache.pdfbox.text.TextPosition: float getXDirAdj()>() >>>>>>>> org.apache.pdfbox.text.TextPosition.contains : d0 = (double) $f0
+org.apache.pdfbox.text.TextPosition.contains : d0 = (double) $f0 >>>>>>>> org.apache.pdfbox.text.TextPosition.contains : $f1 = virtualinvoke r0.<org.apache.pdfbox.text.TextPosition: float getWidthDirAdj()>()
+org.apache.pdfbox.text.TextPosition.contains : $f1 = virtualinvoke r0.<org.apache.pdfbox.text.TextPosition: float getWidthDirAdj()>() >>>>>>>> org.apache.pdfbox.text.TextPosition.contains : d1 = (double) $f1
+org.apache.pdfbox.text.TextPosition.contains : d1 = (double) $f1 >>>>>>>> org.apache.pdfbox.text.TextPosition.contains : d2 = d0 + d1
+org.apache.pdfbox.text.TextPosition.contains : d2 = d0 + d1 >>>>>>>> org.apache.pdfbox.text.TextPosition.contains : $f2 = virtualinvoke r1.<org.apache.pdfbox.text.TextPosition: float getXDirAdj()>()
+org.apache.pdfbox.text.TextPosition.contains : $f2 = virtualinvoke r1.<org.apache.pdfbox.text.TextPosition: float getXDirAdj()>() >>>>>>>> org.apache.pdfbox.text.TextPosition.contains : d3 = (double) $f2
+org.apache.pdfbox.text.TextPosition.contains : d3 = (double) $f2 >>>>>>>> org.apache.pdfbox.text.TextPosition.contains : $f3 = virtualinvoke r1.<org.apache.pdfbox.text.TextPosition: float getWidthDirAdj()>()
+org.apache.pdfbox.text.TextPosition.contains : $f3 = virtualinvoke r1.<org.apache.pdfbox.text.TextPosition: float getWidthDirAdj()>() >>>>>>>> org.apache.pdfbox.text.TextPosition.contains : $d7 = (double) $f3
+org.apache.pdfbox.text.TextPosition.contains : $d7 = (double) $f3 >>>>>>>> org.apache.pdfbox.text.TextPosition.contains : d4 = d3 + $d7
+org.apache.pdfbox.text.TextPosition.contains : d4 = d3 + $d7 >>>>>>>> org.apache.pdfbox.text.TextPosition.contains : $b0 = d4 cmpg d0
+org.apache.pdfbox.text.TextPosition.contains : $b0 = d4 cmpg d0 >>>>>>>> org.apache.pdfbox.text.TextPosition.contains : if $b0 <= 0
+org.apache.pdfbox.text.TextPosition.contains : if $b0 <= 0 >>>>>>>> org.apache.pdfbox.text.TextPosition.contains : $b1 = d3 cmpl d2
+org.apache.pdfbox.text.TextPosition.contains : if $b0 <= 0 >>>>>>>> org.apache.pdfbox.text.TextPosition.contains : return 0
+org.apache.pdfbox.text.TextPosition.contains : $b1 = d3 cmpl d2 >>>>>>>> org.apache.pdfbox.text.TextPosition.contains : if $b1 < 0
+org.apache.pdfbox.text.TextPosition.contains : if $b1 < 0 >>>>>>>> org.apache.pdfbox.text.TextPosition.contains : return 0
+org.apache.pdfbox.text.TextPosition.contains : if $b1 < 0 >>>>>>>> org.apache.pdfbox.text.TextPosition.contains : $f4 = virtualinvoke r0.<org.apache.pdfbox.text.TextPosition: float getYDirAdj()>()
+org.apache.pdfbox.text.TextPosition.contains : $f4 = virtualinvoke r0.<org.apache.pdfbox.text.TextPosition: float getYDirAdj()>() >>>>>>>> org.apache.pdfbox.text.TextPosition.contains : d5 = (double) $f4
+org.apache.pdfbox.text.TextPosition.contains : d5 = (double) $f4 >>>>>>>> org.apache.pdfbox.text.TextPosition.contains : $f5 = virtualinvoke r1.<org.apache.pdfbox.text.TextPosition: float getYDirAdj()>()
+org.apache.pdfbox.text.TextPosition.contains : $f5 = virtualinvoke r1.<org.apache.pdfbox.text.TextPosition: float getYDirAdj()>() >>>>>>>> org.apache.pdfbox.text.TextPosition.contains : d6 = (double) $f5
+org.apache.pdfbox.text.TextPosition.contains : d6 = (double) $f5 >>>>>>>> org.apache.pdfbox.text.TextPosition.contains : $f6 = virtualinvoke r1.<org.apache.pdfbox.text.TextPosition: float getHeightDir()>()
+org.apache.pdfbox.text.TextPosition.contains : $f6 = virtualinvoke r1.<org.apache.pdfbox.text.TextPosition: float getHeightDir()>() >>>>>>>> org.apache.pdfbox.text.TextPosition.contains : $d8 = (double) $f6
+org.apache.pdfbox.text.TextPosition.contains : $d8 = (double) $f6 >>>>>>>> org.apache.pdfbox.text.TextPosition.contains : $d9 = d6 + $d8
+org.apache.pdfbox.text.TextPosition.contains : $d9 = d6 + $d8 >>>>>>>> org.apache.pdfbox.text.TextPosition.contains : $b2 = $d9 cmpg d5
+org.apache.pdfbox.text.TextPosition.contains : $b2 = $d9 cmpg d5 >>>>>>>> org.apache.pdfbox.text.TextPosition.contains : if $b2 < 0
+org.apache.pdfbox.text.TextPosition.contains : if $b2 < 0 >>>>>>>> org.apache.pdfbox.text.TextPosition.contains : $f7 = virtualinvoke r0.<org.apache.pdfbox.text.TextPosition: float getHeightDir()>()
+org.apache.pdfbox.text.TextPosition.contains : if $b2 < 0 >>>>>>>> org.apache.pdfbox.text.TextPosition.contains : return 0
+org.apache.pdfbox.text.TextPosition.contains : $f7 = virtualinvoke r0.<org.apache.pdfbox.text.TextPosition: float getHeightDir()>() >>>>>>>> org.apache.pdfbox.text.TextPosition.contains : $d10 = (double) $f7
+org.apache.pdfbox.text.TextPosition.contains : $d10 = (double) $f7 >>>>>>>> org.apache.pdfbox.text.TextPosition.contains : $d11 = d5 + $d10
+org.apache.pdfbox.text.TextPosition.contains : $d11 = d5 + $d10 >>>>>>>> org.apache.pdfbox.text.TextPosition.contains : $b3 = d6 cmpl $d11
+org.apache.pdfbox.text.TextPosition.contains : $b3 = d6 cmpl $d11 >>>>>>>> org.apache.pdfbox.text.TextPosition.contains : if $b3 <= 0
+org.apache.pdfbox.text.TextPosition.contains : if $b3 <= 0 >>>>>>>> org.apache.pdfbox.text.TextPosition.contains : return 0
+org.apache.pdfbox.text.TextPosition.contains : if $b3 <= 0 >>>>>>>> org.apache.pdfbox.text.TextPosition.contains : $b4 = d3 cmpl d0
+org.apache.pdfbox.text.TextPosition.contains : $b4 = d3 cmpl d0 >>>>>>>> org.apache.pdfbox.text.TextPosition.contains : if $b4 <= 0
+org.apache.pdfbox.text.TextPosition.contains : if $b4 <= 0 >>>>>>>> org.apache.pdfbox.text.TextPosition.contains : $b8 = d4 cmpl d2
+org.apache.pdfbox.text.TextPosition.contains : if $b4 <= 0 >>>>>>>> org.apache.pdfbox.text.TextPosition.contains : $b5 = d3 cmpg d0
+org.apache.pdfbox.text.TextPosition.contains : $b5 = d3 cmpg d0 >>>>>>>> org.apache.pdfbox.text.TextPosition.contains : if $b5 >= 0
+org.apache.pdfbox.text.TextPosition.contains : if $b5 >= 0 >>>>>>>> org.apache.pdfbox.text.TextPosition.contains : $b6 = d4 cmpg d2
+org.apache.pdfbox.text.TextPosition.contains : if $b5 >= 0 >>>>>>>> org.apache.pdfbox.text.TextPosition.contains : return 1
+org.apache.pdfbox.text.TextPosition.contains : $b6 = d4 cmpg d2 >>>>>>>> org.apache.pdfbox.text.TextPosition.contains : if $b6 >= 0
+org.apache.pdfbox.text.TextPosition.contains : if $b6 >= 0 >>>>>>>> org.apache.pdfbox.text.TextPosition.contains : d14 = d4 - d0
+org.apache.pdfbox.text.TextPosition.contains : if $b6 >= 0 >>>>>>>> org.apache.pdfbox.text.TextPosition.contains : return 1
+org.apache.pdfbox.text.TextPosition.contains : d14 = d4 - d0 >>>>>>>> org.apache.pdfbox.text.TextPosition.contains : d15 = d14 / d1
+org.apache.pdfbox.text.TextPosition.contains : d15 = d14 / d1 >>>>>>>> org.apache.pdfbox.text.TextPosition.contains : $b7 = d15 cmpl 0.15
+org.apache.pdfbox.text.TextPosition.contains : $b7 = d15 cmpl 0.15 >>>>>>>> org.apache.pdfbox.text.TextPosition.contains : if $b7 <= 0
+org.apache.pdfbox.text.TextPosition.contains : if $b7 <= 0 >>>>>>>> org.apache.pdfbox.text.TextPosition.contains : $z1 = 1
+org.apache.pdfbox.text.TextPosition.contains : if $b7 <= 0 >>>>>>>> org.apache.pdfbox.text.TextPosition.contains : $z1 = 0
+org.apache.pdfbox.text.TextPosition.contains : $z1 = 0 >>>>>>>> org.apache.pdfbox.text.TextPosition.contains : return $z1
+org.apache.pdfbox.text.TextPosition.contains : $z1 = 1 >>>>>>>> org.apache.pdfbox.text.TextPosition.contains : goto [?= return $z1]
+org.apache.pdfbox.text.TextPosition.contains : goto [?= return $z1] >>>>>>>> org.apache.pdfbox.text.TextPosition.contains : return $z1
+org.apache.pdfbox.text.TextPosition.contains : $b8 = d4 cmpl d2 >>>>>>>> org.apache.pdfbox.text.TextPosition.contains : if $b8 <= 0
+org.apache.pdfbox.text.TextPosition.contains : if $b8 <= 0 >>>>>>>> org.apache.pdfbox.text.TextPosition.contains : d12 = d2 - d3
+org.apache.pdfbox.text.TextPosition.contains : if $b8 <= 0 >>>>>>>> org.apache.pdfbox.text.TextPosition.contains : $b5 = d3 cmpg d0
+org.apache.pdfbox.text.TextPosition.contains : d12 = d2 - d3 >>>>>>>> org.apache.pdfbox.text.TextPosition.contains : d13 = d12 / d1
+org.apache.pdfbox.text.TextPosition.contains : d13 = d12 / d1 >>>>>>>> org.apache.pdfbox.text.TextPosition.contains : $b9 = d13 cmpl 0.15
+org.apache.pdfbox.text.TextPosition.contains : $b9 = d13 cmpl 0.15 >>>>>>>> org.apache.pdfbox.text.TextPosition.contains : if $b9 <= 0
+org.apache.pdfbox.text.TextPosition.contains : if $b9 <= 0 >>>>>>>> org.apache.pdfbox.text.TextPosition.contains : $z0 = 1
+org.apache.pdfbox.text.TextPosition.contains : if $b9 <= 0 >>>>>>>> org.apache.pdfbox.text.TextPosition.contains : $z0 = 0
+org.apache.pdfbox.text.TextPosition.contains : $z0 = 0 >>>>>>>> org.apache.pdfbox.text.TextPosition.contains : return $z0
+org.apache.pdfbox.text.TextPosition.contains : $z0 = 1 >>>>>>>> org.apache.pdfbox.text.TextPosition.contains : goto [?= return $z0]
+org.apache.pdfbox.text.TextPosition.contains : goto [?= return $z0] >>>>>>>> org.apache.pdfbox.text.TextPosition.contains : return $z0

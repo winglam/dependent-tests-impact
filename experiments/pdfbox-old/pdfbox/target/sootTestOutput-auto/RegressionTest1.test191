@@ -1,0 +1,16 @@
+org.apache.pdfbox.cos.COSArray.add : $r2 = r0.<org.apache.pdfbox.cos.COSArray: java.util.List objects>
+org.apache.pdfbox.util.Matrix.equals : if r0 != r1 goto (branch)
+org.apache.pdfbox.util.Matrix.equals : return 0
+org.apache.pdfbox.util.Matrix.equals : if r1 != null goto $r2 = virtualinvoke r0.<java.lang.Object: java.lang.Class getClass()>()
+org.apache.pdfbox.util.Matrix.equals : $r2 = virtualinvoke r0.<java.lang.Object: java.lang.Class getClass()>()
+org.apache.pdfbox.util.Matrix.toCOSArray : $r13 = new org.apache.pdfbox.cos.COSFloat
+org.apache.pdfbox.util.Matrix.toCOSArray : $r7 = new org.apache.pdfbox.cos.COSFloat
+org.apache.pdfbox.util.Matrix.toCOSArray : $r9 = new org.apache.pdfbox.cos.COSFloat
+org.apache.pdfbox.util.Matrix.toCOSArray : $r11 = new org.apache.pdfbox.cos.COSFloat
+org.apache.pdfbox.util.Matrix.toCOSArray : $r2 = new org.apache.pdfbox.cos.COSArray
+org.apache.pdfbox.util.Matrix.toCOSArray : $r5 = new org.apache.pdfbox.cos.COSFloat
+org.apache.pdfbox.util.Matrix.toCOSArray : $r3 = new org.apache.pdfbox.cos.COSFloat
+org.apache.pdfbox.util.Matrix.toCOSArray : return $r2
+org.apache.pdfbox.util.Matrix.getScaleX : $r1 = r0.<org.apache.pdfbox.util.Matrix: float[] single>
+org.apache.pdfbox.cos.COSFloat.removeNullDigits : $i0 = virtualinvoke r1.<java.lang.String: int indexOf(int)>(46)
+org.apache.pdfbox.cos.COSFloat.removeNullDigits : $z0 = virtualinvoke r1.<java.lang.String: boolean endsWith(java.lang.String)>(".0")

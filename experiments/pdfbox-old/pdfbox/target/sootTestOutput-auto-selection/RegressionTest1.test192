@@ -1,0 +1,35 @@
+org.apache.pdfbox.util.QuickSort.sort : i0 = interfaceinvoke r0.<java.util.List: int size()>() >>>>>>>> org.apache.pdfbox.util.QuickSort.sort : if i0 >= 2
+org.apache.pdfbox.util.QuickSort.sort : if i0 >= 2 >>>>>>>> org.apache.pdfbox.util.QuickSort.sort : staticinvoke <org.apache.pdfbox.util.QuickSort: void quicksort(java.util.List,java.util.Comparator)>(r0, r1)
+org.apache.pdfbox.util.QuickSort.sort : staticinvoke <org.apache.pdfbox.util.QuickSort: void quicksort(java.util.List,java.util.Comparator)>(r0, r1) >>>>>>>> org.apache.pdfbox.util.QuickSort.quicksort : $r3 = new java.util.ArrayDeque
+org.apache.pdfbox.util.QuickSort.quicksort : $r3 = new java.util.ArrayDeque >>>>>>>> org.apache.pdfbox.util.QuickSort.quicksort : specialinvoke $r3.<java.util.ArrayDeque: void <init>()>()
+org.apache.pdfbox.util.QuickSort.quicksort : specialinvoke $r3.<java.util.ArrayDeque: void <init>()>() >>>>>>>> org.apache.pdfbox.util.QuickSort.quicksort : $r4 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(0)
+org.apache.pdfbox.util.QuickSort.quicksort : $r4 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(0) >>>>>>>> org.apache.pdfbox.util.QuickSort.quicksort : interfaceinvoke $r3.<java.util.Deque: void push(java.lang.Object)>($r4)
+org.apache.pdfbox.util.QuickSort.quicksort : interfaceinvoke $r3.<java.util.Deque: void push(java.lang.Object)>($r4) >>>>>>>> org.apache.pdfbox.util.QuickSort.quicksort : $i2 = interfaceinvoke r0.<java.util.List: int size()>()
+org.apache.pdfbox.util.QuickSort.quicksort : $i2 = interfaceinvoke r0.<java.util.List: int size()>() >>>>>>>> org.apache.pdfbox.util.QuickSort.quicksort : $r5 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>($i2)
+org.apache.pdfbox.util.QuickSort.quicksort : $r5 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>($i2) >>>>>>>> org.apache.pdfbox.util.QuickSort.quicksort : interfaceinvoke $r3.<java.util.Deque: void push(java.lang.Object)>($r5)
+org.apache.pdfbox.util.QuickSort.quicksort : interfaceinvoke $r3.<java.util.Deque: void push(java.lang.Object)>($r5) >>>>>>>> org.apache.pdfbox.util.QuickSort.quicksort : $z0 = interfaceinvoke $r3.<java.util.Deque: boolean isEmpty()>()
+org.apache.pdfbox.util.QuickSort.quicksort : $z0 = interfaceinvoke $r3.<java.util.Deque: boolean isEmpty()>() >>>>>>>> org.apache.pdfbox.util.QuickSort.quicksort : if $z0 != 0
+org.apache.pdfbox.util.QuickSort.quicksort : if $z0 != 0 >>>>>>>> org.apache.pdfbox.util.QuickSort.quicksort : $r6 = interfaceinvoke $r3.<java.util.Deque: java.lang.Object pop()>()
+org.apache.pdfbox.util.QuickSort.quicksort : $r6 = interfaceinvoke $r3.<java.util.Deque: java.lang.Object pop()>() >>>>>>>> org.apache.pdfbox.util.QuickSort.quicksort : $r7 = (java.lang.Integer) $r6
+org.apache.pdfbox.util.QuickSort.quicksort : $r7 = (java.lang.Integer) $r6 >>>>>>>> org.apache.pdfbox.util.QuickSort.quicksort : i0 = virtualinvoke $r7.<java.lang.Integer: int intValue()>()
+org.apache.pdfbox.util.QuickSort.quicksort : i0 = virtualinvoke $r7.<java.lang.Integer: int intValue()>() >>>>>>>> org.apache.pdfbox.util.QuickSort.quicksort : $r8 = interfaceinvoke $r3.<java.util.Deque: java.lang.Object pop()>()
+org.apache.pdfbox.util.QuickSort.quicksort : $r8 = interfaceinvoke $r3.<java.util.Deque: java.lang.Object pop()>() >>>>>>>> org.apache.pdfbox.util.QuickSort.quicksort : $r9 = (java.lang.Integer) $r8
+org.apache.pdfbox.util.QuickSort.quicksort : $r9 = (java.lang.Integer) $r8 >>>>>>>> org.apache.pdfbox.util.QuickSort.quicksort : i1 = virtualinvoke $r9.<java.lang.Integer: int intValue()>()
+org.apache.pdfbox.util.QuickSort.quicksort : i1 = virtualinvoke $r9.<java.lang.Integer: int intValue()>() >>>>>>>> org.apache.pdfbox.util.QuickSort.quicksort : $i3 = i0 - i1
+org.apache.pdfbox.util.QuickSort.quicksort : $i3 = i0 - i1 >>>>>>>> org.apache.pdfbox.util.QuickSort.quicksort : if $i3 >= 2
+org.apache.pdfbox.util.QuickSort.quicksort : if $i3 >= 2 >>>>>>>> org.apache.pdfbox.util.QuickSort.quicksort : $i4 = i0 - i1
+org.apache.pdfbox.util.QuickSort.quicksort : $i4 = i0 - i1 >>>>>>>> org.apache.pdfbox.util.QuickSort.quicksort : $i5 = $i4 / 2
+org.apache.pdfbox.util.QuickSort.quicksort : $i5 = $i4 / 2 >>>>>>>> org.apache.pdfbox.util.QuickSort.quicksort : i7 = i1 + $i5
+org.apache.pdfbox.util.QuickSort.quicksort : i7 = i1 + $i5 >>>>>>>> org.apache.pdfbox.util.QuickSort.quicksort : i8 = staticinvoke <org.apache.pdfbox.util.QuickSort: int partition(java.util.List,java.util.Comparator,int,int,int)>(r0, r1, i7, i1, i0)
+org.apache.pdfbox.util.QuickSort.quicksort : i8 = staticinvoke <org.apache.pdfbox.util.QuickSort: int partition(java.util.List,java.util.Comparator,int,int,int)>(r0, r1, i7, i1, i0) >>>>>>>> org.apache.pdfbox.util.QuickSort.partition : i8 = i1
+org.apache.pdfbox.util.QuickSort.partition : i8 = i1 >>>>>>>> org.apache.pdfbox.util.QuickSort.partition : i9 = i2 - 2
+org.apache.pdfbox.util.QuickSort.partition : i9 = i2 - 2 >>>>>>>> org.apache.pdfbox.util.QuickSort.partition : r2 = interfaceinvoke r0.<java.util.List: java.lang.Object get(int)>(i0)
+org.apache.pdfbox.util.QuickSort.partition : r2 = interfaceinvoke r0.<java.util.List: java.lang.Object get(int)>(i0) >>>>>>>> org.apache.pdfbox.util.QuickSort.partition : $i3 = i2 - 1
+org.apache.pdfbox.util.QuickSort.partition : $i3 = i2 - 1 >>>>>>>> org.apache.pdfbox.util.QuickSort.partition : staticinvoke <org.apache.pdfbox.util.QuickSort: void swap(java.util.List,int,int)>(r0, i0, $i3)
+org.apache.pdfbox.util.QuickSort.partition : staticinvoke <org.apache.pdfbox.util.QuickSort: void swap(java.util.List,int,int)>(r0, i0, $i3) >>>>>>>> org.apache.pdfbox.util.QuickSort.swap : r1 = interfaceinvoke r0.<java.util.List: java.lang.Object get(int)>(i0)
+org.apache.pdfbox.util.QuickSort.swap : r1 = interfaceinvoke r0.<java.util.List: java.lang.Object get(int)>(i0) >>>>>>>> org.apache.pdfbox.util.QuickSort.swap : $r2 = interfaceinvoke r0.<java.util.List: java.lang.Object get(int)>(i1)
+org.apache.pdfbox.util.QuickSort.swap : $r2 = interfaceinvoke r0.<java.util.List: java.lang.Object get(int)>(i1) >>>>>>>> org.apache.pdfbox.util.QuickSort.swap : interfaceinvoke r0.<java.util.List: java.lang.Object set(int,java.lang.Object)>(i0, $r2)
+org.apache.pdfbox.util.QuickSort.swap : interfaceinvoke r0.<java.util.List: java.lang.Object set(int,java.lang.Object)>(i0, $r2) >>>>>>>> org.apache.pdfbox.util.QuickSort.swap : interfaceinvoke r0.<java.util.List: java.lang.Object set(int,java.lang.Object)>(i1, r1)
+org.apache.pdfbox.util.QuickSort.swap : interfaceinvoke r0.<java.util.List: java.lang.Object set(int,java.lang.Object)>(i1, r1) >>>>>>>> org.apache.pdfbox.util.QuickSort.partition : if i8 >= i9
+org.apache.pdfbox.util.QuickSort.partition : if i8 >= i9 >>>>>>>> org.apache.pdfbox.util.QuickSort.partition : $r4 = interfaceinvoke r0.<java.util.List: java.lang.Object get(int)>(i8)
+org.apache.pdfbox.util.QuickSort.partition : $r4 = interfaceinvoke r0.<java.util.List: java.lang.Object get(int)>(i8) >>>>>>>> org.apache.pdfbox.util.QuickSort.partition : $i6 = interfaceinvoke r1.<java.util.Comparator: int compare(java.lang.Object,java.lang.Object)>($r4, r2)

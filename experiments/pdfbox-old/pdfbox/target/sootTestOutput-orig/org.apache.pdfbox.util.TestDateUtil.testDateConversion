@@ -1,0 +1,102 @@
+org.apache.pdfbox.util.DateConverter.newGreg : virtualinvoke $r1.<java.util.GregorianCalendar: void setLenient(boolean)>(0)
+org.apache.pdfbox.util.DateConverter.newGreg : return $r1
+org.apache.pdfbox.util.DateConverter.newGreg : virtualinvoke $r1.<java.util.GregorianCalendar: void set(int,int)>(14, 0)
+org.apache.pdfbox.util.DateConverter.newGreg : $r1 = new java.util.GregorianCalendar
+org.apache.pdfbox.util.DateConverter.newGreg : $r3 = new java.util.SimpleTimeZone
+org.apache.pdfbox.util.DateConverter.skipString : $i0 = virtualinvoke r2.<java.text.ParsePosition: int getIndex()>()
+org.apache.pdfbox.util.DateConverter.skipString : return 1
+org.apache.pdfbox.util.DateConverter.skipString : return 0
+org.apache.pdfbox.util.DateConverter.skipString : $i1 = virtualinvoke r2.<java.text.ParsePosition: int getIndex()>()
+org.apache.pdfbox.util.DateConverter.parseDate : if r0 == null goto return null
+org.apache.pdfbox.util.DateConverter.parseDate : $z2 = staticinvoke <org.apache.pdfbox.util.DateConverter: boolean parseTZoffset(java.lang.String,java.util.GregorianCalendar,java.text.ParsePosition)>(r0, r6, $r4)
+org.apache.pdfbox.util.DateConverter.parseDate : $r4 = new java.text.ParsePosition
+org.apache.pdfbox.util.DateConverter.parseDate : if r6 == null goto virtualinvoke $r4.<java.text.ParsePosition: void setIndex(int)>(i0)
+org.apache.pdfbox.util.DateConverter.parseDate : r5 = null
+org.apache.pdfbox.util.DateConverter.parseDate : virtualinvoke r1.<java.text.ParsePosition: void setIndex(int)>(i10)
+org.apache.pdfbox.util.DateConverter.parseDate : staticinvoke <org.apache.pdfbox.util.DateConverter: char skipOptionals(java.lang.String,java.text.ParsePosition,java.lang.String)>(r0, $r4, " ")
+org.apache.pdfbox.util.DateConverter.parseDate : $i8 = virtualinvoke r0.<java.lang.String: int length()>()
+org.apache.pdfbox.util.DateConverter.parseDate : i10 = virtualinvoke $r4.<java.text.ParsePosition: int getIndex()>()
+org.apache.pdfbox.util.DateConverter.parseDate : return r6
+org.apache.pdfbox.util.DateConverter.parseDate : r6 = staticinvoke <org.apache.pdfbox.util.DateConverter: java.util.GregorianCalendar parseBigEndianDate(java.lang.String,java.text.ParsePosition)>(r0, $r4)
+org.apache.pdfbox.util.DateConverter.parseDate : $i6 = virtualinvoke $r4.<java.text.ParsePosition: int getIndex()>()
+org.apache.pdfbox.util.DateConverter.parseDate : $z0 = virtualinvoke r0.<java.lang.String: boolean isEmpty()>()
+org.apache.pdfbox.util.DateConverter.parseDate : i9 = -999999
+org.apache.pdfbox.util.DateConverter.parseDate : i0 = virtualinvoke $r4.<java.text.ParsePosition: int getIndex()>()
+org.apache.pdfbox.util.DateConverter.restrainTZoffset : $b7 = l9 cmp -50400000L
+org.apache.pdfbox.util.DateConverter.restrainTZoffset : $b0 = l9 cmp 50400000L
+org.apache.pdfbox.util.DateConverter.restrainTZoffset : $i8 = (int) l9
+org.apache.pdfbox.util.DateConverter.toCalendar : if r0 == null goto return null
+org.apache.pdfbox.util.DateConverter.toCalendar : $i1 = virtualinvoke $r4.<java.text.ParsePosition: int getIndex()>()
+org.apache.pdfbox.util.DateConverter.toCalendar : r2 = staticinvoke <org.apache.pdfbox.util.DateConverter: java.util.Calendar parseDate(java.lang.String,java.text.ParsePosition)>(r0, $r4)
+org.apache.pdfbox.util.DateConverter.toCalendar : return r2
+org.apache.pdfbox.util.DateConverter.toCalendar : if r2 == null goto return null
+org.apache.pdfbox.util.DateConverter.toCalendar : staticinvoke <org.apache.pdfbox.util.DateConverter: boolean skipString(java.lang.String,java.lang.String,java.text.ParsePosition)>(r0, "D:", $r4)
+org.apache.pdfbox.util.DateConverter.toCalendar : $r4 = new java.text.ParsePosition
+org.apache.pdfbox.util.DateConverter.toCalendar : staticinvoke <org.apache.pdfbox.util.DateConverter: char skipOptionals(java.lang.String,java.text.ParsePosition,java.lang.String)>(r0, $r4, " ")
+org.apache.pdfbox.util.DateConverter.toCalendar : $r3 = virtualinvoke r0.<java.lang.String: java.lang.String trim()>()
+org.apache.pdfbox.util.DateConverter.parseBigEndianDate : c6 = staticinvoke <org.apache.pdfbox.util.DateConverter: char skipOptionals(java.lang.String,java.text.ParsePosition,java.lang.String)>(r0, $r5, ".")
+org.apache.pdfbox.util.DateConverter.parseBigEndianDate : goto [?= $i18 = virtualinvoke $r5.<java.text.ParsePosition: int getIndex()>()]
+org.apache.pdfbox.util.DateConverter.parseBigEndianDate : staticinvoke <org.apache.pdfbox.util.DateConverter: char skipOptionals(java.lang.String,java.text.ParsePosition,java.lang.String)>(r0, r1, " ")
+org.apache.pdfbox.util.DateConverter.parseBigEndianDate : r3 = staticinvoke <org.apache.pdfbox.util.DateConverter: java.util.GregorianCalendar newGreg()>()
+org.apache.pdfbox.util.DateConverter.parseBigEndianDate : $r5 = new java.text.ParsePosition
+org.apache.pdfbox.util.DateConverter.parseBigEndianDate : $i18 = virtualinvoke $r5.<java.text.ParsePosition: int getIndex()>()
+org.apache.pdfbox.util.DateConverter.parseBigEndianDate : i0 = staticinvoke <org.apache.pdfbox.util.DateConverter: int parseTimeField(java.lang.String,java.text.ParsePosition,int,int)>(r0, $r5, 4, 0)
+org.apache.pdfbox.util.DateConverter.parseBigEndianDate : i2 = staticinvoke <org.apache.pdfbox.util.DateConverter: int parseTimeField(java.lang.String,java.text.ParsePosition,int,int)>(r0, $r5, 2, 1)
+org.apache.pdfbox.util.DateConverter.parseBigEndianDate : i4 = staticinvoke <org.apache.pdfbox.util.DateConverter: int parseTimeField(java.lang.String,java.text.ParsePosition,int,int)>(r0, $r5, 2, 0)
+org.apache.pdfbox.util.DateConverter.parseBigEndianDate : virtualinvoke r3.<java.util.GregorianCalendar: long getTimeInMillis()>()
+org.apache.pdfbox.util.DateConverter.parseBigEndianDate : return r3
+org.apache.pdfbox.util.DateConverter.parseBigEndianDate : if c6 != 46 goto r3 = staticinvoke <org.apache.pdfbox.util.DateConverter: java.util.GregorianCalendar newGreg()>()
+org.apache.pdfbox.util.DateConverter.parseBigEndianDate : i3 = staticinvoke <org.apache.pdfbox.util.DateConverter: int parseTimeField(java.lang.String,java.text.ParsePosition,int,int)>(r0, $r5, 2, 0)
+org.apache.pdfbox.util.DateConverter.parseBigEndianDate : $i12 = staticinvoke <org.apache.pdfbox.util.DateConverter: int parseTimeField(java.lang.String,java.text.ParsePosition,int,int)>(r0, $r5, 2, 1)
+org.apache.pdfbox.util.DateConverter.parseBigEndianDate : staticinvoke <org.apache.pdfbox.util.DateConverter: char skipOptionals(java.lang.String,java.text.ParsePosition,java.lang.String)>(r0, $r5, ": ")
+org.apache.pdfbox.util.DateConverter.parseBigEndianDate : staticinvoke <org.apache.pdfbox.util.DateConverter: char skipOptionals(java.lang.String,java.text.ParsePosition,java.lang.String)>(r0, $r5, " T")
+org.apache.pdfbox.util.DateConverter.parseBigEndianDate : $i8 = virtualinvoke $r5.<java.text.ParsePosition: int getIndex()>()
+org.apache.pdfbox.util.DateConverter.parseBigEndianDate : staticinvoke <org.apache.pdfbox.util.DateConverter: char skipOptionals(java.lang.String,java.text.ParsePosition,java.lang.String)>(r0, $r5, "/- ")
+org.apache.pdfbox.util.DateConverter.parseBigEndianDate : i5 = staticinvoke <org.apache.pdfbox.util.DateConverter: int parseTimeField(java.lang.String,java.text.ParsePosition,int,int)>(r0, $r5, 2, 0)
+org.apache.pdfbox.util.DateConverter.parseBigEndianDate : virtualinvoke r3.<java.util.GregorianCalendar: void set(int,int,int,int,int,int)>(i0, i1, i2, i3, i4, i5)
+org.apache.pdfbox.util.DateConverter.parseTimeField : $c7 = virtualinvoke r0.<java.lang.String: char charAt(int)>(i10)
+org.apache.pdfbox.util.DateConverter.parseTimeField : i9 = 0
+org.apache.pdfbox.util.DateConverter.parseTimeField : return i9
+org.apache.pdfbox.util.DateConverter.parseTimeField : if r0 != null goto i9 = 0
+org.apache.pdfbox.util.DateConverter.parseTimeField : $i4 = virtualinvoke r0.<java.lang.String: int length()>()
+org.apache.pdfbox.util.DateConverter.parseTimeField : if i3 < 0 goto $i11 = virtualinvoke r1.<java.text.ParsePosition: int getIndex()>()
+org.apache.pdfbox.util.DateConverter.parseTimeField : if i3 <= 9 goto $i8 = i9 * 10
+org.apache.pdfbox.util.DateConverter.parseTimeField : $i8 = i9 * 10
+org.apache.pdfbox.util.DateConverter.parseTimeField : i10 = virtualinvoke r1.<java.text.ParsePosition: int getIndex()>()
+org.apache.pdfbox.util.DateConverter.parseTimeField : virtualinvoke r1.<java.text.ParsePosition: void setIndex(int)>(i10)
+org.apache.pdfbox.util.DateConverter.parseTimeField : if i10 >= i2 goto $i11 = virtualinvoke r1.<java.text.ParsePosition: int getIndex()>()
+org.apache.pdfbox.util.DateConverter.adjustTimeZoneNicely : $i1 = virtualinvoke r0.<java.util.GregorianCalendar: int get(int)>(15)
+org.apache.pdfbox.util.DateConverter.adjustTimeZoneNicely : virtualinvoke r0.<java.util.GregorianCalendar: void setTimeZone(java.util.TimeZone)>(r1)
+org.apache.pdfbox.util.DateConverter.adjustTimeZoneNicely : $i4 = neg i0
+org.apache.pdfbox.util.DateConverter.skipOptionals : $i1 = virtualinvoke r1.<java.text.ParsePosition: int getIndex()>()
+org.apache.pdfbox.util.DateConverter.skipOptionals : if r0 == null goto return c8
+org.apache.pdfbox.util.DateConverter.skipOptionals : c8 = 32
+org.apache.pdfbox.util.DateConverter.skipOptionals : $i3 = virtualinvoke r1.<java.text.ParsePosition: int getIndex()>()
+org.apache.pdfbox.util.DateConverter.skipOptionals : if $c4 == 32 goto $c9 = c8
+org.apache.pdfbox.util.DateConverter.skipOptionals : $i6 = virtualinvoke r1.<java.text.ParsePosition: int getIndex()>()
+org.apache.pdfbox.util.DateConverter.parseTZoffset : staticinvoke <org.apache.pdfbox.util.DateConverter: void adjustTimeZoneNicely(java.util.GregorianCalendar,java.util.TimeZone)>(r1, r9)
+org.apache.pdfbox.util.DateConverter.parseTZoffset : $i20 = virtualinvoke $r4.<java.text.ParsePosition: int getIndex()>()
+org.apache.pdfbox.util.DateConverter.parseTZoffset : $r4 = new java.text.ParsePosition
+org.apache.pdfbox.util.DateConverter.parseTZoffset : $l12 = (long) $b18
+org.apache.pdfbox.util.DateConverter.parseTZoffset : staticinvoke <org.apache.pdfbox.util.DateConverter: void updateZoneId(java.util.TimeZone)>($r5)
+org.apache.pdfbox.util.DateConverter.parseTZoffset : c15 = staticinvoke <org.apache.pdfbox.util.DateConverter: char skipOptionals(java.lang.String,java.text.ParsePosition,java.lang.String)>(r0, $r4, "Z+- ")
+org.apache.pdfbox.util.DateConverter.parseTZoffset : i1 = staticinvoke <org.apache.pdfbox.util.DateConverter: int parseTimeField(java.lang.String,java.text.ParsePosition,int,int)>(r0, $r4, 2, 0)
+org.apache.pdfbox.util.DateConverter.parseTZoffset : staticinvoke <org.apache.pdfbox.util.DateConverter: char skipOptionals(java.lang.String,java.text.ParsePosition,java.lang.String)>(r0, $r4, "\': ")
+org.apache.pdfbox.util.DateConverter.parseTZoffset : i0 = staticinvoke <org.apache.pdfbox.util.DateConverter: int parseTimeField(java.lang.String,java.text.ParsePosition,int,int)>(r0, $r4, 2, -999)
+org.apache.pdfbox.util.DateConverter.parseTZoffset : $z2 = staticinvoke <org.apache.pdfbox.util.DateConverter: boolean skipString(java.lang.String,java.lang.String,java.text.ParsePosition)>(r0, "GMT", $r4)
+org.apache.pdfbox.util.DateConverter.parseTZoffset : $r5 = new java.util.SimpleTimeZone
+org.apache.pdfbox.util.DateConverter.parseTZoffset : $z3 = staticinvoke <org.apache.pdfbox.util.DateConverter: boolean skipString(java.lang.String,java.lang.String,java.text.ParsePosition)>(r0, "UTC", $r4)
+org.apache.pdfbox.util.DateConverter.parseTZoffset : $c16 = c15
+org.apache.pdfbox.util.DateConverter.parseTZoffset : if $c16 != 45 goto $b18 = 1
+org.apache.pdfbox.util.DateConverter.parseTZoffset : if $z4 != 0 goto $c16 = staticinvoke <org.apache.pdfbox.util.DateConverter: char skipOptionals(java.lang.String,java.text.ParsePosition,java.lang.String)>(r0, $r4, "+- ")
+org.apache.pdfbox.util.DateConverter.parseTZoffset : staticinvoke <org.apache.pdfbox.util.DateConverter: char skipOptionals(java.lang.String,java.text.ParsePosition,java.lang.String)>(r0, $r4, "\' ")
+org.apache.pdfbox.util.DateConverter.parseTZoffset : if c15 == 90 goto $z4 = 1
+org.apache.pdfbox.util.DateConverter.updateZoneId : if i3 != 0 goto (branch)
+org.apache.pdfbox.util.DateConverter.updateZoneId : $i2 = i3 % 3600000
+org.apache.pdfbox.util.DateConverter.updateZoneId : $r7 = <java.util.Locale: java.util.Locale US>
+org.apache.pdfbox.util.DateConverter.updateZoneId : i3 = virtualinvoke r0.<java.util.TimeZone: int getRawOffset()>()
+org.apache.pdfbox.util.DateConverter.updateZoneId : i0 = i3 / 3600000
+org.apache.pdfbox.util.DateConverter.updateZoneId : if b4 != 43 goto (branch)
+org.apache.pdfbox.util.DateConverter.updateZoneId : b4 = 43
+org.apache.pdfbox.util.DateConverter.updateZoneId : if i0 > 12 goto (branch)
+org.apache.pdfbox.util.DateConverter.updateZoneId : if i3 >= 0 goto i0 = i3 / 3600000

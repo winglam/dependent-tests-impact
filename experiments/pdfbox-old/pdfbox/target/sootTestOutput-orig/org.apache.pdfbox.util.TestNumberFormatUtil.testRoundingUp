@@ -1,0 +1,30 @@
+org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : if i0 <= 0 goto return i15
+org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : $z1 = staticinvoke <java.lang.Float: boolean isInfinite(float)>(f0)
+org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : $z0 = staticinvoke <java.lang.Float: boolean isNaN(float)>(f0)
+org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : l13 = (long) f0
+org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : i12 = 0
+org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : l13 = l13 + 1L
+org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : $b3 = f0 cmpg 0.0F
+org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : i16 = i15 + 1
+org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : l13 = neg l13
+org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : $i9 = i0 - 1
+org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : $i7 = staticinvoke <org.apache.pdfbox.util.NumberFormatUtil: int getExponent(long)>(l13)
+org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : $r3 = <org.apache.pdfbox.util.NumberFormatUtil: long[] POWER_OF_TENS>
+org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : i12 = 0 + 1
+org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : $d0 = (double) f0
+org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : $b1 = f0 cmpl 9.223372E18F
+org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : $b8 = l14 cmp 0L
+org.apache.pdfbox.util.NumberFormatUtil.formatFloatFast : $r2 = <org.apache.pdfbox.util.NumberFormatUtil: long[] POWER_OF_TENS>
+org.apache.pdfbox.util.NumberFormatUtil.formatPositiveNumber : if z0 == 0 goto $r1 = <org.apache.pdfbox.util.NumberFormatUtil: int[] POWER_OF_TENS_INT>
+org.apache.pdfbox.util.NumberFormatUtil.formatPositiveNumber : $r2 = <org.apache.pdfbox.util.NumberFormatUtil: int[] POWER_OF_TENS_INT>
+org.apache.pdfbox.util.NumberFormatUtil.formatPositiveNumber : l20 = l0
+org.apache.pdfbox.util.NumberFormatUtil.formatPositiveNumber : $r1 = <org.apache.pdfbox.util.NumberFormatUtil: int[] POWER_OF_TENS_INT>
+org.apache.pdfbox.util.NumberFormatUtil.formatPositiveNumber : i18 = i18 + -1
+org.apache.pdfbox.util.NumberFormatUtil.formatPositiveNumber : i22 = (int) l20
+org.apache.pdfbox.util.NumberFormatUtil.formatPositiveNumber : if i18 < 0 goto return i19
+org.apache.pdfbox.util.NumberFormatUtil.formatPositiveNumber : $i7 = i19
+org.apache.pdfbox.util.NumberFormatUtil.formatPositiveNumber : $b3 = l20 cmp 2147483647L
+org.apache.pdfbox.util.NumberFormatUtil.formatPositiveNumber : i19 = i1
+org.apache.pdfbox.util.NumberFormatUtil.getExponent : i8 = 0
+org.apache.pdfbox.util.NumberFormatUtil.getExponent : return i8
+org.apache.pdfbox.util.NumberFormatUtil.getExponent : $r2 = <org.apache.pdfbox.util.NumberFormatUtil: long[] POWER_OF_TENS>
