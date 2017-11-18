@@ -1,0 +1,11 @@
+org.apache.pdfbox.io.IOUtils.copy : r2 = newarray (byte)[4096] >>>>>>>> org.apache.pdfbox.io.IOUtils.copy : l0 = 0L
+org.apache.pdfbox.io.IOUtils.copy : l0 = 0L >>>>>>>> org.apache.pdfbox.io.IOUtils.copy : z0 = 0
+org.apache.pdfbox.io.IOUtils.copy : z0 = 0 >>>>>>>> org.apache.pdfbox.io.IOUtils.copy : $i1 = virtualinvoke r0.<java.io.InputStream: int read(byte[])>(r2)
+org.apache.pdfbox.io.IOUtils.copy : $i1 = virtualinvoke r0.<java.io.InputStream: int read(byte[])>(r2) >>>>>>>> org.apache.pdfbox.io.IOUtils.copy : i2 = $i1
+org.apache.pdfbox.io.IOUtils.copy : i2 = $i1 >>>>>>>> org.apache.pdfbox.io.IOUtils.copy : if -1 == $i1
+org.apache.pdfbox.io.IOUtils.copy : if -1 == $i1 >>>>>>>> org.apache.pdfbox.io.IOUtils.copy : virtualinvoke r1.<java.io.OutputStream: void write(byte[],int,int)>(r2, 0, i2)
+org.apache.pdfbox.io.IOUtils.copy : if -1 == $i1 >>>>>>>> org.apache.pdfbox.io.IOUtils.copy : return l0
+org.apache.pdfbox.io.IOUtils.copy : virtualinvoke r1.<java.io.OutputStream: void write(byte[],int,int)>(r2, 0, i2) >>>>>>>> org.apache.pdfbox.io.IOUtils.copy : $l3 = (long) i2
+org.apache.pdfbox.io.IOUtils.copy : $l3 = (long) i2 >>>>>>>> org.apache.pdfbox.io.IOUtils.copy : l0 = l0 + $l3
+org.apache.pdfbox.io.IOUtils.copy : l0 = l0 + $l3 >>>>>>>> org.apache.pdfbox.io.IOUtils.copy : goto [?= $i1 = virtualinvoke r0.<java.io.InputStream: int read(byte[])>(r2)]
+org.apache.pdfbox.io.IOUtils.copy : goto [?= $i1 = virtualinvoke r0.<java.io.InputStream: int read(byte[])>(r2)] >>>>>>>> org.apache.pdfbox.io.IOUtils.copy : $i1 = virtualinvoke r0.<java.io.InputStream: int read(byte[])>(r2)

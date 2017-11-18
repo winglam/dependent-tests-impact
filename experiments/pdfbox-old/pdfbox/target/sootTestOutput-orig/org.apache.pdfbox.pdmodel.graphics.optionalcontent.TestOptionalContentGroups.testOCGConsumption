@@ -1,0 +1,5 @@
+org.apache.pdfbox.pdmodel.PDDocument.load : $r1 = staticinvoke <org.apache.pdfbox.io.MemoryUsageSetting: org.apache.pdfbox.io.MemoryUsageSetting setupMainMemoryOnly()>()
+org.apache.pdfbox.pdmodel.PDDocument.load : $r3 = staticinvoke <org.apache.pdfbox.pdmodel.PDDocument: org.apache.pdfbox.pdmodel.PDDocument load(java.io.File,java.lang.String,java.io.InputStream,java.lang.String,org.apache.pdfbox.io.MemoryUsageSetting)>(r0, r1, null, null, r2)
+org.apache.pdfbox.pdmodel.PDDocument.load : $r6 = new org.apache.pdfbox.io.RandomAccessBufferedFileInputStream
+org.apache.pdfbox.io.MemoryUsageSetting.setupMainMemoryOnly : $r0 = new org.apache.pdfbox.io.MemoryUsageSetting
+org.apache.pdfbox.io.MemoryUsageSetting.setupMainMemoryOnly : $r0 = staticinvoke <org.apache.pdfbox.io.MemoryUsageSetting: org.apache.pdfbox.io.MemoryUsageSetting setupMainMemoryOnly(long)>(-1L)

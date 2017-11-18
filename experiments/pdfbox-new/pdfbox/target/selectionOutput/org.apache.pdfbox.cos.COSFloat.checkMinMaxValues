@@ -1,0 +1,55 @@
+org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : $r1 = r0.<org.apache.pdfbox.cos.COSFloat: java.math.BigDecimal value> >>>>>>>> org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : f0 = virtualinvoke $r1.<java.math.BigDecimal: float floatValue()>()
+org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : f0 = virtualinvoke $r1.<java.math.BigDecimal: float floatValue()>() >>>>>>>> org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : $r2 = r0.<org.apache.pdfbox.cos.COSFloat: java.math.BigDecimal value>
+org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : $r2 = r0.<org.apache.pdfbox.cos.COSFloat: java.math.BigDecimal value> >>>>>>>> org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : d0 = virtualinvoke $r2.<java.math.BigDecimal: double doubleValue()>()
+org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : d0 = virtualinvoke $r2.<java.math.BigDecimal: double doubleValue()>() >>>>>>>> org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : z0 = 0
+org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : z0 = 0 >>>>>>>> org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : $b0 = f0 cmpl #-InfinityF
+org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : $b0 = f0 cmpl #-InfinityF >>>>>>>> org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : if $b0 == 0
+org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : if $b0 == 0 >>>>>>>> org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : $b1 = f0 cmpl #InfinityF
+org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : if $b0 == 0 >>>>>>>> org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : $d1 = staticinvoke <java.lang.Math: double abs(double)>(d0)
+org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : $d1 = staticinvoke <java.lang.Math: double abs(double)>(d0) >>>>>>>> org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : $b2 = $d1 cmpl 3.4028234663852886E38
+org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : $b2 = $d1 cmpl 3.4028234663852886E38 >>>>>>>> org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : if $b2 <= 0
+org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : if $b2 <= 0 >>>>>>>> org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : $f1 = 3.4028235E38F
+org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : if $b2 <= 0 >>>>>>>> org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : if z0 == 0
+org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : if z0 == 0 >>>>>>>> org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : $r3 = new java.math.BigDecimal
+org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : if z0 == 0 >>>>>>>> org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : return
+org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : $r3 = new java.math.BigDecimal >>>>>>>> org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : $d3 = (double) f0
+org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : $d3 = (double) f0 >>>>>>>> org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : specialinvoke $r3.<java.math.BigDecimal: void <init>(double)>($d3)
+org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : specialinvoke $r3.<java.math.BigDecimal: void <init>(double)>($d3) >>>>>>>> org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : r0.<org.apache.pdfbox.cos.COSFloat: java.math.BigDecimal value> = $r3
+org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : r0.<org.apache.pdfbox.cos.COSFloat: java.math.BigDecimal value> = $r3 >>>>>>>> org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : $r4 = r0.<org.apache.pdfbox.cos.COSFloat: java.math.BigDecimal value>
+org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : $r4 = r0.<org.apache.pdfbox.cos.COSFloat: java.math.BigDecimal value> >>>>>>>> org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : $r5 = virtualinvoke $r4.<java.math.BigDecimal: java.lang.String toPlainString()>()
+org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : $r5 = virtualinvoke $r4.<java.math.BigDecimal: java.lang.String toPlainString()>() >>>>>>>> org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : $r6 = specialinvoke r0.<org.apache.pdfbox.cos.COSFloat: java.lang.String removeNullDigits(java.lang.String)>($r5)
+org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : $r6 = specialinvoke r0.<org.apache.pdfbox.cos.COSFloat: java.lang.String removeNullDigits(java.lang.String)>($r5) >>>>>>>> org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : r0.<org.apache.pdfbox.cos.COSFloat: java.lang.String valueAsString> = $r6
+org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : r0.<org.apache.pdfbox.cos.COSFloat: java.lang.String valueAsString> = $r6 >>>>>>>> org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : return
+org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : $f1 = 3.4028235E38F >>>>>>>> org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : $b3 = f0 cmpl #InfinityF
+org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : $b3 = f0 cmpl #InfinityF >>>>>>>> org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : if $b3 != 0
+org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : if $b3 != 0 >>>>>>>> org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : $b4 = 1
+org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : if $b3 != 0 >>>>>>>> org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : $b4 = -1
+org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : $b4 = -1 >>>>>>>> org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : $f2 = (float) $b4
+org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : $f2 = (float) $b4 >>>>>>>> org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : f0 = $f1 * $f2
+org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : f0 = $f1 * $f2 >>>>>>>> org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : z0 = 1
+org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : z0 = 1 >>>>>>>> org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : goto [?= (branch)]
+org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : goto [?= (branch)] >>>>>>>> org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : if z0 == 0
+org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : $b4 = 1 >>>>>>>> org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : goto [?= $f2 = (float) $b4]
+org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : goto [?= $f2 = (float) $b4] >>>>>>>> org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : $f2 = (float) $b4
+org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : $b1 = f0 cmpl #InfinityF >>>>>>>> org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : if $b1 != 0
+org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : if $b1 != 0 >>>>>>>> org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : $d1 = staticinvoke <java.lang.Math: double abs(double)>(d0)
+org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : if $b1 != 0 >>>>>>>> org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : $b5 = f0 cmpl 0.0F
+org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : $b5 = f0 cmpl 0.0F >>>>>>>> org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : if $b5 != 0
+org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : if $b5 != 0 >>>>>>>> org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : $b6 = d0 cmpl 0.0
+org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : if $b5 != 0 >>>>>>>> org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : if z0 == 0
+org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : $b6 = d0 cmpl 0.0 >>>>>>>> org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : if $b6 == 0
+org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : if $b6 == 0 >>>>>>>> org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : $d2 = staticinvoke <java.lang.Math: double abs(double)>(d0)
+org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : if $b6 == 0 >>>>>>>> org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : if z0 == 0
+org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : $d2 = staticinvoke <java.lang.Math: double abs(double)>(d0) >>>>>>>> org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : $b7 = $d2 cmpg 1.1754943508222875E-38
+org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : $b7 = $d2 cmpg 1.1754943508222875E-38 >>>>>>>> org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : if $b7 >= 0
+org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : if $b7 >= 0 >>>>>>>> org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : f3 = 1.17549435E-38F
+org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : if $b7 >= 0 >>>>>>>> org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : if z0 == 0
+org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : f3 = 1.17549435E-38F >>>>>>>> org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : $b8 = d0 cmpl 0.0
+org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : $b8 = d0 cmpl 0.0 >>>>>>>> org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : if $b8 < 0
+org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : if $b8 < 0 >>>>>>>> org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : $f5 = 1.0F
+org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : if $b8 < 0 >>>>>>>> org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : $f5 = -1.0F
+org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : $f5 = -1.0F >>>>>>>> org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : f0 = f3 * $f5
+org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : f0 = f3 * $f5 >>>>>>>> org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : z0 = 1
+org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : z0 = 1 >>>>>>>> org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : if z0 == 0
+org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : $f5 = 1.0F >>>>>>>> org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : goto [?= f0 = f3 * $f5]
+org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : goto [?= f0 = f3 * $f5] >>>>>>>> org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : f0 = f3 * $f5

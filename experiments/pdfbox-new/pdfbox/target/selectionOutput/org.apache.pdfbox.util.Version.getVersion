@@ -1,0 +1,24 @@
+org.apache.pdfbox.util.Version.getVersion : $r0 = class "org/apache/pdfbox/util/Version" >>>>>>>> org.apache.pdfbox.util.Version.getVersion : $r3 = virtualinvoke $r0.<java.lang.Class: java.lang.ClassLoader getClassLoader()>()
+org.apache.pdfbox.util.Version.getVersion : $r0 = class "org/apache/pdfbox/util/Version" >>>>>>>> org.apache.pdfbox.util.Version.getVersion : $r7 := @caughtexception
+org.apache.pdfbox.util.Version.getVersion : r8 = $r7 >>>>>>>> org.apache.pdfbox.util.Version.getVersion : return null
+org.apache.pdfbox.util.Version.getVersion : $r3 = virtualinvoke $r0.<java.lang.Class: java.lang.ClassLoader getClassLoader()>() >>>>>>>> org.apache.pdfbox.util.Version.getVersion : r1 = virtualinvoke $r3.<java.lang.ClassLoader: java.net.URL getResource(java.lang.String)>("org/apache/pdfbox/resources/version.properties")
+org.apache.pdfbox.util.Version.getVersion : $r3 = virtualinvoke $r0.<java.lang.Class: java.lang.ClassLoader getClassLoader()>() >>>>>>>> org.apache.pdfbox.util.Version.getVersion : $r7 := @caughtexception
+org.apache.pdfbox.util.Version.getVersion : r1 = virtualinvoke $r3.<java.lang.ClassLoader: java.net.URL getResource(java.lang.String)>("org/apache/pdfbox/resources/version.properties") >>>>>>>> org.apache.pdfbox.util.Version.getVersion : if r1 != null
+org.apache.pdfbox.util.Version.getVersion : r1 = virtualinvoke $r3.<java.lang.ClassLoader: java.net.URL getResource(java.lang.String)>("org/apache/pdfbox/resources/version.properties") >>>>>>>> org.apache.pdfbox.util.Version.getVersion : $r7 := @caughtexception
+org.apache.pdfbox.util.Version.getVersion : if r1 != null >>>>>>>> org.apache.pdfbox.util.Version.getVersion : $n0 = null
+org.apache.pdfbox.util.Version.getVersion : if r1 != null >>>>>>>> org.apache.pdfbox.util.Version.getVersion : $r4 = new java.util.Properties
+org.apache.pdfbox.util.Version.getVersion : if r1 != null >>>>>>>> org.apache.pdfbox.util.Version.getVersion : $r7 := @caughtexception
+org.apache.pdfbox.util.Version.getVersion : $r4 = new java.util.Properties >>>>>>>> org.apache.pdfbox.util.Version.getVersion : specialinvoke $r4.<java.util.Properties: void <init>()>()
+org.apache.pdfbox.util.Version.getVersion : $r4 = new java.util.Properties >>>>>>>> org.apache.pdfbox.util.Version.getVersion : $r7 := @caughtexception
+org.apache.pdfbox.util.Version.getVersion : specialinvoke $r4.<java.util.Properties: void <init>()>() >>>>>>>> org.apache.pdfbox.util.Version.getVersion : r2 = $r4
+org.apache.pdfbox.util.Version.getVersion : specialinvoke $r4.<java.util.Properties: void <init>()>() >>>>>>>> org.apache.pdfbox.util.Version.getVersion : $r7 := @caughtexception
+org.apache.pdfbox.util.Version.getVersion : r2 = $r4 >>>>>>>> org.apache.pdfbox.util.Version.getVersion : $r5 = virtualinvoke r1.<java.net.URL: java.io.InputStream openStream()>()
+org.apache.pdfbox.util.Version.getVersion : r2 = $r4 >>>>>>>> org.apache.pdfbox.util.Version.getVersion : $r7 := @caughtexception
+org.apache.pdfbox.util.Version.getVersion : $r5 = virtualinvoke r1.<java.net.URL: java.io.InputStream openStream()>() >>>>>>>> org.apache.pdfbox.util.Version.getVersion : virtualinvoke r2.<java.util.Properties: void load(java.io.InputStream)>($r5)
+org.apache.pdfbox.util.Version.getVersion : $r5 = virtualinvoke r1.<java.net.URL: java.io.InputStream openStream()>() >>>>>>>> org.apache.pdfbox.util.Version.getVersion : $r7 := @caughtexception
+org.apache.pdfbox.util.Version.getVersion : virtualinvoke r2.<java.util.Properties: void load(java.io.InputStream)>($r5) >>>>>>>> org.apache.pdfbox.util.Version.getVersion : $r6 = virtualinvoke r2.<java.util.Properties: java.lang.String getProperty(java.lang.String,java.lang.String)>("pdfbox.version", null)
+org.apache.pdfbox.util.Version.getVersion : virtualinvoke r2.<java.util.Properties: void load(java.io.InputStream)>($r5) >>>>>>>> org.apache.pdfbox.util.Version.getVersion : $r7 := @caughtexception
+org.apache.pdfbox.util.Version.getVersion : $r6 = virtualinvoke r2.<java.util.Properties: java.lang.String getProperty(java.lang.String,java.lang.String)>("pdfbox.version", null) >>>>>>>> org.apache.pdfbox.util.Version.getVersion : return $r6
+org.apache.pdfbox.util.Version.getVersion : $r6 = virtualinvoke r2.<java.util.Properties: java.lang.String getProperty(java.lang.String,java.lang.String)>("pdfbox.version", null) >>>>>>>> org.apache.pdfbox.util.Version.getVersion : $r7 := @caughtexception
+org.apache.pdfbox.util.Version.getVersion : $n0 = null >>>>>>>> org.apache.pdfbox.util.Version.getVersion : return $n0
+org.apache.pdfbox.util.Version.getVersion : $n0 = null >>>>>>>> org.apache.pdfbox.util.Version.getVersion : $r7 := @caughtexception

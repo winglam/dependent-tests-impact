@@ -1,0 +1,13 @@
+org.apache.pdfbox.pdmodel.font.PDFont.encode : $r4 = new java.io.ByteArrayOutputStream >>>>>>>> org.apache.pdfbox.pdmodel.font.PDFont.encode : specialinvoke $r4.<java.io.ByteArrayOutputStream: void <init>()>()
+org.apache.pdfbox.pdmodel.font.PDFont.encode : specialinvoke $r4.<java.io.ByteArrayOutputStream: void <init>()>() >>>>>>>> org.apache.pdfbox.pdmodel.font.PDFont.encode : i3 = 0
+org.apache.pdfbox.pdmodel.font.PDFont.encode : i3 = 0 >>>>>>>> org.apache.pdfbox.pdmodel.font.PDFont.encode : $i1 = virtualinvoke r1.<java.lang.String: int length()>()
+org.apache.pdfbox.pdmodel.font.PDFont.encode : $i1 = virtualinvoke r1.<java.lang.String: int length()>() >>>>>>>> org.apache.pdfbox.pdmodel.font.PDFont.encode : if i3 >= $i1
+org.apache.pdfbox.pdmodel.font.PDFont.encode : if i3 >= $i1 >>>>>>>> org.apache.pdfbox.pdmodel.font.PDFont.encode : i0 = virtualinvoke r1.<java.lang.String: int codePointAt(int)>(i3)
+org.apache.pdfbox.pdmodel.font.PDFont.encode : if i3 >= $i1 >>>>>>>> org.apache.pdfbox.pdmodel.font.PDFont.encode : $r5 = virtualinvoke $r4.<java.io.ByteArrayOutputStream: byte[] toByteArray()>()
+org.apache.pdfbox.pdmodel.font.PDFont.encode : $r5 = virtualinvoke $r4.<java.io.ByteArrayOutputStream: byte[] toByteArray()>() >>>>>>>> org.apache.pdfbox.pdmodel.font.PDFont.encode : return $r5
+org.apache.pdfbox.pdmodel.font.PDFont.encode : i0 = virtualinvoke r1.<java.lang.String: int codePointAt(int)>(i3) >>>>>>>> org.apache.pdfbox.pdmodel.font.PDFont.encode : r3 = virtualinvoke r0.<org.apache.pdfbox.pdmodel.font.PDFont: byte[] encode(int)>(i0)
+org.apache.pdfbox.pdmodel.font.PDFont.encode : r3 = virtualinvoke r0.<org.apache.pdfbox.pdmodel.font.PDFont: byte[] encode(int)>(i0) >>>>>>>> org.apache.pdfbox.pdmodel.font.PDFont.encode : virtualinvoke $r4.<java.io.ByteArrayOutputStream: void write(byte[])>(r3)
+org.apache.pdfbox.pdmodel.font.PDFont.encode : virtualinvoke $r4.<java.io.ByteArrayOutputStream: void write(byte[])>(r3) >>>>>>>> org.apache.pdfbox.pdmodel.font.PDFont.encode : $i2 = staticinvoke <java.lang.Character: int charCount(int)>(i0)
+org.apache.pdfbox.pdmodel.font.PDFont.encode : $i2 = staticinvoke <java.lang.Character: int charCount(int)>(i0) >>>>>>>> org.apache.pdfbox.pdmodel.font.PDFont.encode : i3 = i3 + $i2
+org.apache.pdfbox.pdmodel.font.PDFont.encode : i3 = i3 + $i2 >>>>>>>> org.apache.pdfbox.pdmodel.font.PDFont.encode : goto [?= $i1 = virtualinvoke r1.<java.lang.String: int length()>()]
+org.apache.pdfbox.pdmodel.font.PDFont.encode : goto [?= $i1 = virtualinvoke r1.<java.lang.String: int length()>()] >>>>>>>> org.apache.pdfbox.pdmodel.font.PDFont.encode : $i1 = virtualinvoke r1.<java.lang.String: int length()>()

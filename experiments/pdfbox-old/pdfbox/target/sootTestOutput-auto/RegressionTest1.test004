@@ -1,0 +1,20 @@
+org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : $z0 = r5 instanceof org.apache.pdfbox.cos.COSObject
+org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : return r5
+org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : $z1 = r5 instanceof org.apache.pdfbox.cos.COSNull
+org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : $r2 = r0.<org.apache.pdfbox.cos.COSDictionary: java.util.Map items>
+org.apache.pdfbox.pdmodel.documentinterchange.logicalstructure.PDUserProperty.setName : $r2 = virtualinvoke r0.<org.apache.pdfbox.pdmodel.documentinterchange.logicalstructure.PDUserProperty: java.lang.String getName()>()
+org.apache.pdfbox.pdmodel.documentinterchange.logicalstructure.PDUserProperty.getName : $r1 = virtualinvoke r0.<org.apache.pdfbox.pdmodel.documentinterchange.logicalstructure.PDUserProperty: org.apache.pdfbox.cos.COSDictionary getCOSObject()>()
+org.apache.pdfbox.pdmodel.common.PDDictionaryWrapper.getCOSObject : $r1 = r0.<org.apache.pdfbox.pdmodel.common.PDDictionaryWrapper: org.apache.pdfbox.cos.COSDictionary dictionary>
+org.apache.pdfbox.util.SmallMap.isEmpty : $r1 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.util.SmallMap.get : if i0 >= 0 goto $r2 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.util.SmallMap.get : i0 = specialinvoke r0.<org.apache.pdfbox.util.SmallMap: int findKey(java.lang.Object)>(r1)
+org.apache.pdfbox.pdmodel.documentinterchange.logicalstructure.PDUserProperty.potentiallyNotifyChanged : $z0 = specialinvoke r0.<org.apache.pdfbox.pdmodel.documentinterchange.logicalstructure.PDUserProperty: boolean isEntryChanged(java.lang.Object,java.lang.Object)>(r1, r2)
+org.apache.pdfbox.pdmodel.documentinterchange.logicalstructure.PDUserProperty.potentiallyNotifyChanged : $r3 = r0.<org.apache.pdfbox.pdmodel.documentinterchange.logicalstructure.PDUserProperty: org.apache.pdfbox.pdmodel.documentinterchange.logicalstructure.PDUserAttributeObject userAttributeObject>
+org.apache.pdfbox.util.SmallMap.findKey : $z0 = virtualinvoke r0.<org.apache.pdfbox.util.SmallMap: boolean isEmpty()>()
+org.apache.pdfbox.cos.COSDictionary.getNameAsString : return r5
+org.apache.pdfbox.cos.COSDictionary.getNameAsString : r2 = virtualinvoke r0.<org.apache.pdfbox.cos.COSDictionary: org.apache.pdfbox.cos.COSBase getDictionaryObject(org.apache.pdfbox.cos.COSName)>(r1)
+org.apache.pdfbox.cos.COSDictionary.getNameAsString : r5 = null
+org.apache.pdfbox.cos.COSDictionary.getNameAsString : $z1 = r2 instanceof org.apache.pdfbox.cos.COSString
+org.apache.pdfbox.cos.COSDictionary.getNameAsString : $z0 = r2 instanceof org.apache.pdfbox.cos.COSName
+org.apache.pdfbox.pdmodel.documentinterchange.logicalstructure.PDUserProperty.isEntryChanged : if r2 == null goto $z1 = 0
+org.apache.pdfbox.pdmodel.documentinterchange.logicalstructure.PDUserProperty.isEntryChanged : if r1 != null goto $z0 = virtualinvoke r1.<java.lang.Object: boolean equals(java.lang.Object)>(r2)

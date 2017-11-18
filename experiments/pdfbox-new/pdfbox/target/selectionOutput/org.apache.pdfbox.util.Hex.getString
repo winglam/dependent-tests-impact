@@ -1,0 +1,22 @@
+org.apache.pdfbox.util.Hex.getString : $r1 = new java.lang.StringBuilder >>>>>>>> org.apache.pdfbox.util.Hex.getString : $i3 = lengthof r0
+org.apache.pdfbox.util.Hex.getString : $i3 = lengthof r0 >>>>>>>> org.apache.pdfbox.util.Hex.getString : $i4 = $i3 * 2
+org.apache.pdfbox.util.Hex.getString : $i4 = $i3 * 2 >>>>>>>> org.apache.pdfbox.util.Hex.getString : specialinvoke $r1.<java.lang.StringBuilder: void <init>(int)>($i4)
+org.apache.pdfbox.util.Hex.getString : specialinvoke $r1.<java.lang.StringBuilder: void <init>(int)>($i4) >>>>>>>> org.apache.pdfbox.util.Hex.getString : r2 = $r1
+org.apache.pdfbox.util.Hex.getString : r2 = $r1 >>>>>>>> org.apache.pdfbox.util.Hex.getString : r3 = r0
+org.apache.pdfbox.util.Hex.getString : r3 = r0 >>>>>>>> org.apache.pdfbox.util.Hex.getString : i0 = lengthof r3
+org.apache.pdfbox.util.Hex.getString : i0 = lengthof r3 >>>>>>>> org.apache.pdfbox.util.Hex.getString : i1 = 0
+org.apache.pdfbox.util.Hex.getString : i1 = 0 >>>>>>>> org.apache.pdfbox.util.Hex.getString : if i1 >= i0
+org.apache.pdfbox.util.Hex.getString : if i1 >= i0 >>>>>>>> org.apache.pdfbox.util.Hex.getString : b2 = r3[i1]
+org.apache.pdfbox.util.Hex.getString : if i1 >= i0 >>>>>>>> org.apache.pdfbox.util.Hex.getString : $r8 = virtualinvoke r2.<java.lang.StringBuilder: java.lang.String toString()>()
+org.apache.pdfbox.util.Hex.getString : $r8 = virtualinvoke r2.<java.lang.StringBuilder: java.lang.String toString()>() >>>>>>>> org.apache.pdfbox.util.Hex.getString : return $r8
+org.apache.pdfbox.util.Hex.getString : b2 = r3[i1] >>>>>>>> org.apache.pdfbox.util.Hex.getString : $r4 = <org.apache.pdfbox.util.Hex: char[] HEX_CHARS>
+org.apache.pdfbox.util.Hex.getString : $r4 = <org.apache.pdfbox.util.Hex: char[] HEX_CHARS> >>>>>>>> org.apache.pdfbox.util.Hex.getString : $i5 = staticinvoke <org.apache.pdfbox.util.Hex: int getHighNibble(byte)>(b2)
+org.apache.pdfbox.util.Hex.getString : $i5 = staticinvoke <org.apache.pdfbox.util.Hex: int getHighNibble(byte)>(b2) >>>>>>>> org.apache.pdfbox.util.Hex.getString : $c6 = $r4[$i5]
+org.apache.pdfbox.util.Hex.getString : $c6 = $r4[$i5] >>>>>>>> org.apache.pdfbox.util.Hex.getString : $r5 = virtualinvoke r2.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>($c6)
+org.apache.pdfbox.util.Hex.getString : $r5 = virtualinvoke r2.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>($c6) >>>>>>>> org.apache.pdfbox.util.Hex.getString : $r6 = <org.apache.pdfbox.util.Hex: char[] HEX_CHARS>
+org.apache.pdfbox.util.Hex.getString : $r6 = <org.apache.pdfbox.util.Hex: char[] HEX_CHARS> >>>>>>>> org.apache.pdfbox.util.Hex.getString : $i7 = staticinvoke <org.apache.pdfbox.util.Hex: int getLowNibble(byte)>(b2)
+org.apache.pdfbox.util.Hex.getString : $i7 = staticinvoke <org.apache.pdfbox.util.Hex: int getLowNibble(byte)>(b2) >>>>>>>> org.apache.pdfbox.util.Hex.getString : $c8 = $r6[$i7]
+org.apache.pdfbox.util.Hex.getString : $c8 = $r6[$i7] >>>>>>>> org.apache.pdfbox.util.Hex.getString : virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>($c8)
+org.apache.pdfbox.util.Hex.getString : virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>($c8) >>>>>>>> org.apache.pdfbox.util.Hex.getString : i1 = i1 + 1
+org.apache.pdfbox.util.Hex.getString : i1 = i1 + 1 >>>>>>>> org.apache.pdfbox.util.Hex.getString : goto [?= (branch)]
+org.apache.pdfbox.util.Hex.getString : goto [?= (branch)] >>>>>>>> org.apache.pdfbox.util.Hex.getString : if i1 >= i0

@@ -1,0 +1,38 @@
+com.thoughtworks.xstream.io.binary.BinaryStreamWriter$IdRegistry.getId : $r7 = r0.<com.thoughtworks.xstream.io.binary.BinaryStreamWriter$IdRegistry: java.util.Map ids>
+com.thoughtworks.xstream.io.binary.BinaryStreamWriter$IdRegistry.getId : if r2 != null goto $l3 = virtualinvoke r2.<java.lang.Long: long longValue()>()
+com.thoughtworks.xstream.io.binary.BinaryStreamWriter$IdRegistry.getId : $r6 = new java.lang.Long
+com.thoughtworks.xstream.io.binary.BinaryStreamWriter$IdRegistry.getId : $r9 = r0.<com.thoughtworks.xstream.io.binary.BinaryStreamWriter$IdRegistry: com.thoughtworks.xstream.io.binary.BinaryStreamWriter this$0>
+com.thoughtworks.xstream.io.binary.BinaryStreamWriter$IdRegistry.getId : $r4 = r0.<com.thoughtworks.xstream.io.binary.BinaryStreamWriter$IdRegistry: java.util.Map ids>
+com.thoughtworks.xstream.core.util.FastStack.push : $r4 = r0.<com.thoughtworks.xstream.core.util.FastStack: java.lang.Object[] stack>
+com.thoughtworks.xstream.core.util.FastStack.push : $i1 = r0.<com.thoughtworks.xstream.core.util.FastStack: int pointer>
+com.thoughtworks.xstream.core.util.FastStack.push : $r3 = r0.<com.thoughtworks.xstream.core.util.FastStack: java.lang.Object[] stack>
+com.thoughtworks.xstream.core.util.FastStack.push : return r1
+com.thoughtworks.xstream.io.binary.BinaryStreamWriter.access$100 : specialinvoke r0.<com.thoughtworks.xstream.io.binary.BinaryStreamWriter: void write(com.thoughtworks.xstream.io.binary.Token)>(r1)
+com.thoughtworks.xstream.core.MapBackedDataHolder.get : $r2 = r0.<com.thoughtworks.xstream.core.MapBackedDataHolder: java.util.Map map>
+com.thoughtworks.xstream.io.binary.BinaryStreamWriter.write : $r3 = r0.<com.thoughtworks.xstream.io.binary.BinaryStreamWriter: com.thoughtworks.xstream.io.binary.Token$Formatter tokenFormatter>
+com.thoughtworks.xstream.io.binary.Token$Formatter.write : $b5 = virtualinvoke r2.<com.thoughtworks.xstream.io.binary.Token: byte getType()>()
+com.thoughtworks.xstream.io.binary.Token$Formatter.write : b1 = 8
+com.thoughtworks.xstream.io.binary.Token$Formatter.write : $b2 = l0 cmp 255L
+com.thoughtworks.xstream.io.binary.Token$Formatter.write : l0 = virtualinvoke r2.<com.thoughtworks.xstream.io.binary.Token: long getId()>()
+com.thoughtworks.xstream.core.TreeMarshaller.put : specialinvoke r0.<com.thoughtworks.xstream.core.TreeMarshaller: void lazilyCreateDataHolder()>()
+com.thoughtworks.xstream.core.TreeMarshaller.put : $r3 = r0.<com.thoughtworks.xstream.core.TreeMarshaller: com.thoughtworks.xstream.converters.DataHolder dataHolder>
+com.thoughtworks.xstream.io.binary.Token.getId : $l0 = r0.<com.thoughtworks.xstream.io.binary.Token: long id>
+com.thoughtworks.xstream.core.TreeMarshaller.get : specialinvoke r0.<com.thoughtworks.xstream.core.TreeMarshaller: void lazilyCreateDataHolder()>()
+com.thoughtworks.xstream.core.TreeMarshaller.get : $r2 = r0.<com.thoughtworks.xstream.core.TreeMarshaller: com.thoughtworks.xstream.converters.DataHolder dataHolder>
+com.thoughtworks.xstream.io.binary.Token.getType : $b0 = r0.<com.thoughtworks.xstream.io.binary.Token: byte type>
+com.thoughtworks.xstream.core.util.FastStack.peek : $i0 = r0.<com.thoughtworks.xstream.core.util.FastStack: int pointer>
+com.thoughtworks.xstream.core.util.CustomObjectOutputStream.peekCallback : $r1 = r0.<com.thoughtworks.xstream.core.util.CustomObjectOutputStream: com.thoughtworks.xstream.core.util.FastStack callbacks>
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.underlyingWriter : return r0
+com.thoughtworks.xstream.core.MapBackedDataHolder.put : $r3 = r0.<com.thoughtworks.xstream.core.MapBackedDataHolder: java.util.Map map>
+com.thoughtworks.xstream.core.util.FastStack.resizeStack : r1 = newarray (java.lang.Object)[i0]
+com.thoughtworks.xstream.core.util.FastStack.resizeStack : r0.<com.thoughtworks.xstream.core.util.FastStack: java.lang.Object[] stack> = r1
+com.thoughtworks.xstream.core.util.FastStack.resizeStack : $r2 = r0.<com.thoughtworks.xstream.core.util.FastStack: java.lang.Object[] stack>
+com.thoughtworks.xstream.core.TreeMarshaller.lazilyCreateDataHolder : $r1 = new com.thoughtworks.xstream.core.MapBackedDataHolder
+com.thoughtworks.xstream.core.TreeMarshaller.lazilyCreateDataHolder : $r2 = r0.<com.thoughtworks.xstream.core.TreeMarshaller: com.thoughtworks.xstream.converters.DataHolder dataHolder>
+com.thoughtworks.xstream.io.binary.BinaryStreamWriter.addAttribute : $r3 = new com.thoughtworks.xstream.io.binary.Token$Attribute
+com.thoughtworks.xstream.core.util.CustomObjectOutputStream.getInstance : return r3
+com.thoughtworks.xstream.core.util.CustomObjectOutputStream.getInstance : if r3 != null goto virtualinvoke r3.<com.thoughtworks.xstream.core.util.CustomObjectOutputStream: void pushCallback(com.thoughtworks.xstream.core.util.CustomObjectOutputStream$StreamCallback)>(r1)
+com.thoughtworks.xstream.core.util.CustomObjectOutputStream.getInstance : $r2 = <com.thoughtworks.xstream.core.util.CustomObjectOutputStream: java.lang.String DATA_HOLDER_KEY>
+com.thoughtworks.xstream.core.util.CustomObjectOutputStream.getInstance : $r6 = <com.thoughtworks.xstream.core.util.CustomObjectOutputStream: java.lang.String DATA_HOLDER_KEY>
+com.thoughtworks.xstream.core.util.CustomObjectOutputStream.getInstance : $r5 = new com.thoughtworks.xstream.core.util.CustomObjectOutputStream
+com.thoughtworks.xstream.core.util.CustomObjectOutputStream.write : $r2 = virtualinvoke r0.<com.thoughtworks.xstream.core.util.CustomObjectOutputStream: com.thoughtworks.xstream.core.util.CustomObjectOutputStream$StreamCallback peekCallback()>()

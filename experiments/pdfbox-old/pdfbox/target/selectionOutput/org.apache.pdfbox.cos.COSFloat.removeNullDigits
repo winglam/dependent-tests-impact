@@ -1,0 +1,16 @@
+org.apache.pdfbox.cos.COSFloat.removeNullDigits : $i0 = virtualinvoke r1.<java.lang.String: int indexOf(int)>(46) >>>>>>>> org.apache.pdfbox.cos.COSFloat.removeNullDigits : if $i0 <= -1
+org.apache.pdfbox.cos.COSFloat.removeNullDigits : if $i0 <= -1 >>>>>>>> org.apache.pdfbox.cos.COSFloat.removeNullDigits : $z0 = virtualinvoke r1.<java.lang.String: boolean endsWith(java.lang.String)>(".0")
+org.apache.pdfbox.cos.COSFloat.removeNullDigits : if $i0 <= -1 >>>>>>>> org.apache.pdfbox.cos.COSFloat.removeNullDigits : return r1
+org.apache.pdfbox.cos.COSFloat.removeNullDigits : $z0 = virtualinvoke r1.<java.lang.String: boolean endsWith(java.lang.String)>(".0") >>>>>>>> org.apache.pdfbox.cos.COSFloat.removeNullDigits : if $z0 != 0
+org.apache.pdfbox.cos.COSFloat.removeNullDigits : if $z0 != 0 >>>>>>>> org.apache.pdfbox.cos.COSFloat.removeNullDigits : $z1 = virtualinvoke r1.<java.lang.String: boolean endsWith(java.lang.String)>("0")
+org.apache.pdfbox.cos.COSFloat.removeNullDigits : if $z0 != 0 >>>>>>>> org.apache.pdfbox.cos.COSFloat.removeNullDigits : return r1
+org.apache.pdfbox.cos.COSFloat.removeNullDigits : $z1 = virtualinvoke r1.<java.lang.String: boolean endsWith(java.lang.String)>("0") >>>>>>>> org.apache.pdfbox.cos.COSFloat.removeNullDigits : if $z1 == 0
+org.apache.pdfbox.cos.COSFloat.removeNullDigits : if $z1 == 0 >>>>>>>> org.apache.pdfbox.cos.COSFloat.removeNullDigits : $z2 = virtualinvoke r1.<java.lang.String: boolean endsWith(java.lang.String)>(".0")
+org.apache.pdfbox.cos.COSFloat.removeNullDigits : if $z1 == 0 >>>>>>>> org.apache.pdfbox.cos.COSFloat.removeNullDigits : return r1
+org.apache.pdfbox.cos.COSFloat.removeNullDigits : $z2 = virtualinvoke r1.<java.lang.String: boolean endsWith(java.lang.String)>(".0") >>>>>>>> org.apache.pdfbox.cos.COSFloat.removeNullDigits : if $z2 != 0
+org.apache.pdfbox.cos.COSFloat.removeNullDigits : if $z2 != 0 >>>>>>>> org.apache.pdfbox.cos.COSFloat.removeNullDigits : $i1 = virtualinvoke r1.<java.lang.String: int length()>()
+org.apache.pdfbox.cos.COSFloat.removeNullDigits : if $z2 != 0 >>>>>>>> org.apache.pdfbox.cos.COSFloat.removeNullDigits : return r1
+org.apache.pdfbox.cos.COSFloat.removeNullDigits : $i1 = virtualinvoke r1.<java.lang.String: int length()>() >>>>>>>> org.apache.pdfbox.cos.COSFloat.removeNullDigits : $i2 = $i1 - 1
+org.apache.pdfbox.cos.COSFloat.removeNullDigits : $i2 = $i1 - 1 >>>>>>>> org.apache.pdfbox.cos.COSFloat.removeNullDigits : r1 = virtualinvoke r1.<java.lang.String: java.lang.String substring(int,int)>(0, $i2)
+org.apache.pdfbox.cos.COSFloat.removeNullDigits : r1 = virtualinvoke r1.<java.lang.String: java.lang.String substring(int,int)>(0, $i2) >>>>>>>> org.apache.pdfbox.cos.COSFloat.removeNullDigits : goto [?= $z1 = virtualinvoke r1.<java.lang.String: boolean endsWith(java.lang.String)>("0")]
+org.apache.pdfbox.cos.COSFloat.removeNullDigits : goto [?= $z1 = virtualinvoke r1.<java.lang.String: boolean endsWith(java.lang.String)>("0")] >>>>>>>> org.apache.pdfbox.cos.COSFloat.removeNullDigits : $z1 = virtualinvoke r1.<java.lang.String: boolean endsWith(java.lang.String)>("0")

@@ -1,0 +1,7 @@
+org.apache.pdfbox.filter.ASCIIHexFilter.encode : $i1 = virtualinvoke r1.<java.io.InputStream: int read()>() >>>>>>>> org.apache.pdfbox.filter.ASCIIHexFilter.encode : if $i1 == -1
+org.apache.pdfbox.filter.ASCIIHexFilter.encode : if $i1 == -1 >>>>>>>> org.apache.pdfbox.filter.ASCIIHexFilter.encode : $b2 = (byte) $i1
+org.apache.pdfbox.filter.ASCIIHexFilter.encode : if $i1 == -1 >>>>>>>> org.apache.pdfbox.filter.ASCIIHexFilter.encode : virtualinvoke r2.<java.io.OutputStream: void flush()>()
+org.apache.pdfbox.filter.ASCIIHexFilter.encode : virtualinvoke r2.<java.io.OutputStream: void flush()>() >>>>>>>> org.apache.pdfbox.filter.ASCIIHexFilter.encode : return
+org.apache.pdfbox.filter.ASCIIHexFilter.encode : $b2 = (byte) $i1 >>>>>>>> org.apache.pdfbox.filter.ASCIIHexFilter.encode : staticinvoke <org.apache.pdfbox.util.Hex: void writeHexByte(byte,java.io.OutputStream)>($b2, r2)
+org.apache.pdfbox.filter.ASCIIHexFilter.encode : staticinvoke <org.apache.pdfbox.util.Hex: void writeHexByte(byte,java.io.OutputStream)>($b2, r2) >>>>>>>> org.apache.pdfbox.filter.ASCIIHexFilter.encode : goto [?= $i1 = virtualinvoke r1.<java.io.InputStream: int read()>()]
+org.apache.pdfbox.filter.ASCIIHexFilter.encode : goto [?= $i1 = virtualinvoke r1.<java.io.InputStream: int read()>()] >>>>>>>> org.apache.pdfbox.filter.ASCIIHexFilter.encode : $i1 = virtualinvoke r1.<java.io.InputStream: int read()>()

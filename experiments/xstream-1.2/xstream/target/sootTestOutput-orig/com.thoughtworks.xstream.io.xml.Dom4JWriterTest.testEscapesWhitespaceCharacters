@@ -1,0 +1,42 @@
+com.thoughtworks.xstream.io.xml.Dom4JWriter.startElement : $r6 = r0.<com.thoughtworks.xstream.io.xml.Dom4JWriter: org.xml.sax.helpers.AttributesImpl attributes>
+com.thoughtworks.xstream.io.xml.Dom4JWriter.startElement : $r1 = r0.<com.thoughtworks.xstream.io.xml.Dom4JWriter: org.dom4j.io.XMLWriter writer>
+com.thoughtworks.xstream.io.xml.Dom4JWriter.startElement : $z0 = r0.<com.thoughtworks.xstream.io.xml.Dom4JWriter: boolean started>
+com.thoughtworks.xstream.io.xml.Dom4JWriter.startElement : r0.<com.thoughtworks.xstream.io.xml.Dom4JWriter: boolean started> = 1
+com.thoughtworks.xstream.io.xml.Dom4JDriver.setOutputFormat : r0.<com.thoughtworks.xstream.io.xml.Dom4JDriver: org.dom4j.io.OutputFormat outputFormat> = r1
+com.thoughtworks.xstream.io.xml.AbstractXmlDriver.xmlFriendlyReplacer : $r1 = r0.<com.thoughtworks.xstream.io.xml.AbstractXmlDriver: com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer replacer>
+com.thoughtworks.xstream.core.util.FastStack.push : $r4 = r0.<com.thoughtworks.xstream.core.util.FastStack: java.lang.Object[] stack>
+com.thoughtworks.xstream.core.util.FastStack.push : $i1 = r0.<com.thoughtworks.xstream.core.util.FastStack: int pointer>
+com.thoughtworks.xstream.core.util.FastStack.push : return r1
+com.thoughtworks.xstream.core.util.FastStack.size : $i0 = r0.<com.thoughtworks.xstream.core.util.FastStack: int pointer>
+com.thoughtworks.xstream.io.xml.Dom4JWriter.setValue : $i0 = lengthof r2
+com.thoughtworks.xstream.io.xml.Dom4JWriter.setValue : specialinvoke r0.<com.thoughtworks.xstream.io.xml.Dom4JWriter: void startElement()>()
+com.thoughtworks.xstream.io.xml.Dom4JWriter.setValue : r2 = virtualinvoke r1.<java.lang.String: char[] toCharArray()>()
+com.thoughtworks.xstream.io.xml.Dom4JWriter.setValue : $r4 = r0.<com.thoughtworks.xstream.io.xml.Dom4JWriter: org.dom4j.io.XMLWriter writer>
+com.thoughtworks.xstream.io.xml.Dom4JWriter.setValue : goto [?= r0.<com.thoughtworks.xstream.io.xml.Dom4JWriter: boolean children> = 1]
+com.thoughtworks.xstream.io.xml.Dom4JWriter.setValue : r0.<com.thoughtworks.xstream.io.xml.Dom4JWriter: boolean children> = 1
+com.thoughtworks.xstream.core.util.FastStack.pop : return r2
+com.thoughtworks.xstream.core.util.FastStack.pop : $r4 = r0.<com.thoughtworks.xstream.core.util.FastStack: java.lang.Object[] stack>
+com.thoughtworks.xstream.core.util.FastStack.pop : $r3 = r0.<com.thoughtworks.xstream.core.util.FastStack: java.lang.Object[] stack>
+com.thoughtworks.xstream.io.xml.AbstractXmlWriter.escapeXmlName : $r2 = r0.<com.thoughtworks.xstream.io.xml.AbstractXmlWriter: com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer replacer>
+com.thoughtworks.xstream.io.xml.Dom4JWriter.close : $r2 = r0.<com.thoughtworks.xstream.io.xml.Dom4JWriter: org.dom4j.io.XMLWriter writer>
+com.thoughtworks.xstream.io.xml.Dom4JWriter.close : goto [?= return]
+com.thoughtworks.xstream.io.xml.Dom4JWriter.startNode : $r6 = r0.<com.thoughtworks.xstream.io.xml.Dom4JWriter: com.thoughtworks.xstream.core.util.FastStack elementStack>
+com.thoughtworks.xstream.io.xml.Dom4JWriter.startNode : $r3 = r0.<com.thoughtworks.xstream.io.xml.Dom4JWriter: com.thoughtworks.xstream.core.util.FastStack elementStack>
+com.thoughtworks.xstream.io.xml.Dom4JWriter.startNode : r0.<com.thoughtworks.xstream.io.xml.Dom4JWriter: boolean children> = 0
+com.thoughtworks.xstream.core.util.FastStack.peek : $i0 = r0.<com.thoughtworks.xstream.core.util.FastStack: int pointer>
+com.thoughtworks.xstream.io.xml.Dom4JDriver.createWriter : $r9 = r2[0]
+com.thoughtworks.xstream.io.xml.Dom4JDriver.createWriter : $r5 = new com.thoughtworks.xstream.io.xml.Dom4JWriter
+com.thoughtworks.xstream.io.xml.Dom4JDriver.createWriter : r2 = newarray (com.thoughtworks.xstream.io.HierarchicalStreamWriter)[1]
+com.thoughtworks.xstream.io.xml.Dom4JDriver.createWriter : $r4 = new com.thoughtworks.xstream.io.xml.Dom4JDriver$1
+com.thoughtworks.xstream.io.xml.Dom4JWriter.endNode : $z0 = r0.<com.thoughtworks.xstream.io.xml.Dom4JWriter: boolean children>
+com.thoughtworks.xstream.io.xml.Dom4JWriter.endNode : specialinvoke r0.<com.thoughtworks.xstream.io.xml.Dom4JWriter: void startElement()>()
+com.thoughtworks.xstream.io.xml.Dom4JWriter.endNode : goto [?= return]
+com.thoughtworks.xstream.io.xml.Dom4JWriter.endNode : $r13 = r0.<com.thoughtworks.xstream.io.xml.Dom4JWriter: org.dom4j.io.XMLWriter writer>
+com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer.escapeName : if c2 != 36 goto (branch)
+com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer.escapeName : i1 = 0
+com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer.escapeName : $r9 = virtualinvoke r3.<java.lang.StringBuffer: java.lang.String toString()>()
+com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer.escapeName : c2 = virtualinvoke r1.<java.lang.String: char charAt(int)>(i1)
+com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer.escapeName : i0 = virtualinvoke r1.<java.lang.String: int length()>()
+com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer.escapeName : virtualinvoke r3.<java.lang.StringBuffer: java.lang.StringBuffer append(char)>(c2)
+com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer.escapeName : $r2 = new java.lang.StringBuffer
+com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer.escapeName : if c2 != 95 goto virtualinvoke r3.<java.lang.StringBuffer: java.lang.StringBuffer append(char)>(c2)

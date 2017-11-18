@@ -1,0 +1,71 @@
+org.apache.pdfbox.io.RandomAccessBuffer.write : specialinvoke r0.<org.apache.pdfbox.io.RandomAccessBuffer: void checkClosed()>() >>>>>>>> org.apache.pdfbox.io.RandomAccessBuffer.write : $l8 = r0.<org.apache.pdfbox.io.RandomAccessBuffer: long pointer>
+org.apache.pdfbox.io.RandomAccessBuffer.write : $l8 = r0.<org.apache.pdfbox.io.RandomAccessBuffer: long pointer> >>>>>>>> org.apache.pdfbox.io.RandomAccessBuffer.write : $l9 = (long) i1
+org.apache.pdfbox.io.RandomAccessBuffer.write : $l9 = (long) i1 >>>>>>>> org.apache.pdfbox.io.RandomAccessBuffer.write : l2 = $l8 + $l9
+org.apache.pdfbox.io.RandomAccessBuffer.write : l2 = $l8 + $l9 >>>>>>>> org.apache.pdfbox.io.RandomAccessBuffer.write : $i10 = r0.<org.apache.pdfbox.io.RandomAccessBuffer: int chunkSize>
+org.apache.pdfbox.io.RandomAccessBuffer.write : $i10 = r0.<org.apache.pdfbox.io.RandomAccessBuffer: int chunkSize> >>>>>>>> org.apache.pdfbox.io.RandomAccessBuffer.write : $i11 = r0.<org.apache.pdfbox.io.RandomAccessBuffer: int currentBufferPointer>
+org.apache.pdfbox.io.RandomAccessBuffer.write : $i11 = r0.<org.apache.pdfbox.io.RandomAccessBuffer: int currentBufferPointer> >>>>>>>> org.apache.pdfbox.io.RandomAccessBuffer.write : i3 = $i10 - $i11
+org.apache.pdfbox.io.RandomAccessBuffer.write : i3 = $i10 - $i11 >>>>>>>> org.apache.pdfbox.io.RandomAccessBuffer.write : if i1 < i3
+org.apache.pdfbox.io.RandomAccessBuffer.write : if i1 < i3 >>>>>>>> org.apache.pdfbox.io.RandomAccessBuffer.write : $b12 = l2 cmp 2147483647L
+org.apache.pdfbox.io.RandomAccessBuffer.write : if i1 < i3 >>>>>>>> org.apache.pdfbox.io.RandomAccessBuffer.write : $r6 = r0.<org.apache.pdfbox.io.RandomAccessBuffer: byte[] currentBuffer>
+org.apache.pdfbox.io.RandomAccessBuffer.write : $r6 = r0.<org.apache.pdfbox.io.RandomAccessBuffer: byte[] currentBuffer> >>>>>>>> org.apache.pdfbox.io.RandomAccessBuffer.write : $i30 = r0.<org.apache.pdfbox.io.RandomAccessBuffer: int currentBufferPointer>
+org.apache.pdfbox.io.RandomAccessBuffer.write : $i30 = r0.<org.apache.pdfbox.io.RandomAccessBuffer: int currentBufferPointer> >>>>>>>> org.apache.pdfbox.io.RandomAccessBuffer.write : staticinvoke <java.lang.System: void arraycopy(java.lang.Object,int,java.lang.Object,int,int)>(r1, i0, $r6, $i30, i1)
+org.apache.pdfbox.io.RandomAccessBuffer.write : staticinvoke <java.lang.System: void arraycopy(java.lang.Object,int,java.lang.Object,int,int)>(r1, i0, $r6, $i30, i1) >>>>>>>> org.apache.pdfbox.io.RandomAccessBuffer.write : $i31 = r0.<org.apache.pdfbox.io.RandomAccessBuffer: int currentBufferPointer>
+org.apache.pdfbox.io.RandomAccessBuffer.write : $i31 = r0.<org.apache.pdfbox.io.RandomAccessBuffer: int currentBufferPointer> >>>>>>>> org.apache.pdfbox.io.RandomAccessBuffer.write : $i32 = $i31 + i1
+org.apache.pdfbox.io.RandomAccessBuffer.write : $i32 = $i31 + i1 >>>>>>>> org.apache.pdfbox.io.RandomAccessBuffer.write : r0.<org.apache.pdfbox.io.RandomAccessBuffer: int currentBufferPointer> = $i32
+org.apache.pdfbox.io.RandomAccessBuffer.write : r0.<org.apache.pdfbox.io.RandomAccessBuffer: int currentBufferPointer> = $i32 >>>>>>>> org.apache.pdfbox.io.RandomAccessBuffer.write : $l33 = r0.<org.apache.pdfbox.io.RandomAccessBuffer: long pointer>
+org.apache.pdfbox.io.RandomAccessBuffer.write : $l33 = r0.<org.apache.pdfbox.io.RandomAccessBuffer: long pointer> >>>>>>>> org.apache.pdfbox.io.RandomAccessBuffer.write : $l34 = (long) i1
+org.apache.pdfbox.io.RandomAccessBuffer.write : $l34 = (long) i1 >>>>>>>> org.apache.pdfbox.io.RandomAccessBuffer.write : $l35 = $l33 + $l34
+org.apache.pdfbox.io.RandomAccessBuffer.write : $l35 = $l33 + $l34 >>>>>>>> org.apache.pdfbox.io.RandomAccessBuffer.write : r0.<org.apache.pdfbox.io.RandomAccessBuffer: long pointer> = $l35
+org.apache.pdfbox.io.RandomAccessBuffer.write : r0.<org.apache.pdfbox.io.RandomAccessBuffer: long pointer> = $l35 >>>>>>>> org.apache.pdfbox.io.RandomAccessBuffer.write : $l36 = r0.<org.apache.pdfbox.io.RandomAccessBuffer: long pointer>
+org.apache.pdfbox.io.RandomAccessBuffer.write : $l36 = r0.<org.apache.pdfbox.io.RandomAccessBuffer: long pointer> >>>>>>>> org.apache.pdfbox.io.RandomAccessBuffer.write : $l37 = r0.<org.apache.pdfbox.io.RandomAccessBuffer: long size>
+org.apache.pdfbox.io.RandomAccessBuffer.write : $l37 = r0.<org.apache.pdfbox.io.RandomAccessBuffer: long size> >>>>>>>> org.apache.pdfbox.io.RandomAccessBuffer.write : $b38 = $l36 cmp $l37
+org.apache.pdfbox.io.RandomAccessBuffer.write : $b38 = $l36 cmp $l37 >>>>>>>> org.apache.pdfbox.io.RandomAccessBuffer.write : if $b38 <= 0
+org.apache.pdfbox.io.RandomAccessBuffer.write : if $b38 <= 0 >>>>>>>> org.apache.pdfbox.io.RandomAccessBuffer.write : $l39 = r0.<org.apache.pdfbox.io.RandomAccessBuffer: long pointer>
+org.apache.pdfbox.io.RandomAccessBuffer.write : if $b38 <= 0 >>>>>>>> org.apache.pdfbox.io.RandomAccessBuffer.write : return
+org.apache.pdfbox.io.RandomAccessBuffer.write : $l39 = r0.<org.apache.pdfbox.io.RandomAccessBuffer: long pointer> >>>>>>>> org.apache.pdfbox.io.RandomAccessBuffer.write : r0.<org.apache.pdfbox.io.RandomAccessBuffer: long size> = $l39
+org.apache.pdfbox.io.RandomAccessBuffer.write : r0.<org.apache.pdfbox.io.RandomAccessBuffer: long size> = $l39 >>>>>>>> org.apache.pdfbox.io.RandomAccessBuffer.write : return
+org.apache.pdfbox.io.RandomAccessBuffer.write : $b12 = l2 cmp 2147483647L >>>>>>>> org.apache.pdfbox.io.RandomAccessBuffer.write : if $b12 <= 0
+org.apache.pdfbox.io.RandomAccessBuffer.write : if $b12 <= 0 >>>>>>>> org.apache.pdfbox.io.RandomAccessBuffer.write : $r2 = new java.io.IOException
+org.apache.pdfbox.io.RandomAccessBuffer.write : if $b12 <= 0 >>>>>>>> org.apache.pdfbox.io.RandomAccessBuffer.write : $r3 = r0.<org.apache.pdfbox.io.RandomAccessBuffer: byte[] currentBuffer>
+org.apache.pdfbox.io.RandomAccessBuffer.write : $r3 = r0.<org.apache.pdfbox.io.RandomAccessBuffer: byte[] currentBuffer> >>>>>>>> org.apache.pdfbox.io.RandomAccessBuffer.write : $i13 = r0.<org.apache.pdfbox.io.RandomAccessBuffer: int currentBufferPointer>
+org.apache.pdfbox.io.RandomAccessBuffer.write : $i13 = r0.<org.apache.pdfbox.io.RandomAccessBuffer: int currentBufferPointer> >>>>>>>> org.apache.pdfbox.io.RandomAccessBuffer.write : staticinvoke <java.lang.System: void arraycopy(java.lang.Object,int,java.lang.Object,int,int)>(r1, i0, $r3, $i13, i3)
+org.apache.pdfbox.io.RandomAccessBuffer.write : staticinvoke <java.lang.System: void arraycopy(java.lang.Object,int,java.lang.Object,int,int)>(r1, i0, $r3, $i13, i3) >>>>>>>> org.apache.pdfbox.io.RandomAccessBuffer.write : i4 = i0 + i3
+org.apache.pdfbox.io.RandomAccessBuffer.write : i4 = i0 + i3 >>>>>>>> org.apache.pdfbox.io.RandomAccessBuffer.write : $i14 = i1 - i3
+org.apache.pdfbox.io.RandomAccessBuffer.write : $i14 = i1 - i3 >>>>>>>> org.apache.pdfbox.io.RandomAccessBuffer.write : l5 = (long) $i14
+org.apache.pdfbox.io.RandomAccessBuffer.write : l5 = (long) $i14 >>>>>>>> org.apache.pdfbox.io.RandomAccessBuffer.write : $i15 = (int) l5
+org.apache.pdfbox.io.RandomAccessBuffer.write : $i15 = (int) l5 >>>>>>>> org.apache.pdfbox.io.RandomAccessBuffer.write : $i16 = r0.<org.apache.pdfbox.io.RandomAccessBuffer: int chunkSize>
+org.apache.pdfbox.io.RandomAccessBuffer.write : $i16 = r0.<org.apache.pdfbox.io.RandomAccessBuffer: int chunkSize> >>>>>>>> org.apache.pdfbox.io.RandomAccessBuffer.write : i6 = $i15 / $i16
+org.apache.pdfbox.io.RandomAccessBuffer.write : i6 = $i15 / $i16 >>>>>>>> org.apache.pdfbox.io.RandomAccessBuffer.write : i7 = 0
+org.apache.pdfbox.io.RandomAccessBuffer.write : i7 = 0 >>>>>>>> org.apache.pdfbox.io.RandomAccessBuffer.write : if i7 >= i6
+org.apache.pdfbox.io.RandomAccessBuffer.write : if i7 >= i6 >>>>>>>> org.apache.pdfbox.io.RandomAccessBuffer.write : specialinvoke r0.<org.apache.pdfbox.io.RandomAccessBuffer: void expandBuffer()>()
+org.apache.pdfbox.io.RandomAccessBuffer.write : if i7 >= i6 >>>>>>>> org.apache.pdfbox.io.RandomAccessBuffer.write : $l20 = (long) i6
+org.apache.pdfbox.io.RandomAccessBuffer.write : $l20 = (long) i6 >>>>>>>> org.apache.pdfbox.io.RandomAccessBuffer.write : $i21 = r0.<org.apache.pdfbox.io.RandomAccessBuffer: int chunkSize>
+org.apache.pdfbox.io.RandomAccessBuffer.write : $i21 = r0.<org.apache.pdfbox.io.RandomAccessBuffer: int chunkSize> >>>>>>>> org.apache.pdfbox.io.RandomAccessBuffer.write : $l22 = (long) $i21
+org.apache.pdfbox.io.RandomAccessBuffer.write : $l22 = (long) $i21 >>>>>>>> org.apache.pdfbox.io.RandomAccessBuffer.write : $l23 = $l20 * $l22
+org.apache.pdfbox.io.RandomAccessBuffer.write : $l23 = $l20 * $l22 >>>>>>>> org.apache.pdfbox.io.RandomAccessBuffer.write : l24 = l5 - $l23
+org.apache.pdfbox.io.RandomAccessBuffer.write : l24 = l5 - $l23 >>>>>>>> org.apache.pdfbox.io.RandomAccessBuffer.write : $b25 = l24 cmp 0L
+org.apache.pdfbox.io.RandomAccessBuffer.write : $b25 = l24 cmp 0L >>>>>>>> org.apache.pdfbox.io.RandomAccessBuffer.write : if $b25 < 0
+org.apache.pdfbox.io.RandomAccessBuffer.write : if $b25 < 0 >>>>>>>> org.apache.pdfbox.io.RandomAccessBuffer.write : specialinvoke r0.<org.apache.pdfbox.io.RandomAccessBuffer: void expandBuffer()>()
+org.apache.pdfbox.io.RandomAccessBuffer.write : if $b25 < 0 >>>>>>>> org.apache.pdfbox.io.RandomAccessBuffer.write : goto [?= $l33 = r0.<org.apache.pdfbox.io.RandomAccessBuffer: long pointer>]
+org.apache.pdfbox.io.RandomAccessBuffer.write : goto [?= $l33 = r0.<org.apache.pdfbox.io.RandomAccessBuffer: long pointer>] >>>>>>>> org.apache.pdfbox.io.RandomAccessBuffer.write : $l33 = r0.<org.apache.pdfbox.io.RandomAccessBuffer: long pointer>
+org.apache.pdfbox.io.RandomAccessBuffer.write : specialinvoke r0.<org.apache.pdfbox.io.RandomAccessBuffer: void expandBuffer()>() >>>>>>>> org.apache.pdfbox.io.RandomAccessBuffer.write : $b26 = l24 cmp 0L
+org.apache.pdfbox.io.RandomAccessBuffer.write : $b26 = l24 cmp 0L >>>>>>>> org.apache.pdfbox.io.RandomAccessBuffer.write : if $b26 <= 0
+org.apache.pdfbox.io.RandomAccessBuffer.write : if $b26 <= 0 >>>>>>>> org.apache.pdfbox.io.RandomAccessBuffer.write : $r5 = r0.<org.apache.pdfbox.io.RandomAccessBuffer: byte[] currentBuffer>
+org.apache.pdfbox.io.RandomAccessBuffer.write : if $b26 <= 0 >>>>>>>> org.apache.pdfbox.io.RandomAccessBuffer.write : $i29 = (int) l24
+org.apache.pdfbox.io.RandomAccessBuffer.write : $i29 = (int) l24 >>>>>>>> org.apache.pdfbox.io.RandomAccessBuffer.write : r0.<org.apache.pdfbox.io.RandomAccessBuffer: int currentBufferPointer> = $i29
+org.apache.pdfbox.io.RandomAccessBuffer.write : r0.<org.apache.pdfbox.io.RandomAccessBuffer: int currentBufferPointer> = $i29 >>>>>>>> org.apache.pdfbox.io.RandomAccessBuffer.write : goto [?= $l33 = r0.<org.apache.pdfbox.io.RandomAccessBuffer: long pointer>]
+org.apache.pdfbox.io.RandomAccessBuffer.write : $r5 = r0.<org.apache.pdfbox.io.RandomAccessBuffer: byte[] currentBuffer> >>>>>>>> org.apache.pdfbox.io.RandomAccessBuffer.write : $i27 = r0.<org.apache.pdfbox.io.RandomAccessBuffer: int currentBufferPointer>
+org.apache.pdfbox.io.RandomAccessBuffer.write : $i27 = r0.<org.apache.pdfbox.io.RandomAccessBuffer: int currentBufferPointer> >>>>>>>> org.apache.pdfbox.io.RandomAccessBuffer.write : $i28 = (int) l24
+org.apache.pdfbox.io.RandomAccessBuffer.write : $i28 = (int) l24 >>>>>>>> org.apache.pdfbox.io.RandomAccessBuffer.write : staticinvoke <java.lang.System: void arraycopy(java.lang.Object,int,java.lang.Object,int,int)>(r1, i4, $r5, $i27, $i28)
+org.apache.pdfbox.io.RandomAccessBuffer.write : staticinvoke <java.lang.System: void arraycopy(java.lang.Object,int,java.lang.Object,int,int)>(r1, i4, $r5, $i27, $i28) >>>>>>>> org.apache.pdfbox.io.RandomAccessBuffer.write : $i29 = (int) l24
+org.apache.pdfbox.io.RandomAccessBuffer.write : specialinvoke r0.<org.apache.pdfbox.io.RandomAccessBuffer: void expandBuffer()>() >>>>>>>> org.apache.pdfbox.io.RandomAccessBuffer.write : $r4 = r0.<org.apache.pdfbox.io.RandomAccessBuffer: byte[] currentBuffer>
+org.apache.pdfbox.io.RandomAccessBuffer.write : $r4 = r0.<org.apache.pdfbox.io.RandomAccessBuffer: byte[] currentBuffer> >>>>>>>> org.apache.pdfbox.io.RandomAccessBuffer.write : $i17 = r0.<org.apache.pdfbox.io.RandomAccessBuffer: int currentBufferPointer>
+org.apache.pdfbox.io.RandomAccessBuffer.write : $i17 = r0.<org.apache.pdfbox.io.RandomAccessBuffer: int currentBufferPointer> >>>>>>>> org.apache.pdfbox.io.RandomAccessBuffer.write : $i18 = r0.<org.apache.pdfbox.io.RandomAccessBuffer: int chunkSize>
+org.apache.pdfbox.io.RandomAccessBuffer.write : $i18 = r0.<org.apache.pdfbox.io.RandomAccessBuffer: int chunkSize> >>>>>>>> org.apache.pdfbox.io.RandomAccessBuffer.write : staticinvoke <java.lang.System: void arraycopy(java.lang.Object,int,java.lang.Object,int,int)>(r1, i4, $r4, $i17, $i18)
+org.apache.pdfbox.io.RandomAccessBuffer.write : staticinvoke <java.lang.System: void arraycopy(java.lang.Object,int,java.lang.Object,int,int)>(r1, i4, $r4, $i17, $i18) >>>>>>>> org.apache.pdfbox.io.RandomAccessBuffer.write : $i19 = r0.<org.apache.pdfbox.io.RandomAccessBuffer: int chunkSize>
+org.apache.pdfbox.io.RandomAccessBuffer.write : $i19 = r0.<org.apache.pdfbox.io.RandomAccessBuffer: int chunkSize> >>>>>>>> org.apache.pdfbox.io.RandomAccessBuffer.write : i4 = i4 + $i19
+org.apache.pdfbox.io.RandomAccessBuffer.write : i4 = i4 + $i19 >>>>>>>> org.apache.pdfbox.io.RandomAccessBuffer.write : i7 = i7 + 1
+org.apache.pdfbox.io.RandomAccessBuffer.write : i7 = i7 + 1 >>>>>>>> org.apache.pdfbox.io.RandomAccessBuffer.write : goto [?= (branch)]
+org.apache.pdfbox.io.RandomAccessBuffer.write : goto [?= (branch)] >>>>>>>> org.apache.pdfbox.io.RandomAccessBuffer.write : if i7 >= i6
+org.apache.pdfbox.io.RandomAccessBuffer.write : $r2 = new java.io.IOException >>>>>>>> org.apache.pdfbox.io.RandomAccessBuffer.write : specialinvoke $r2.<java.io.IOException: void <init>(java.lang.String)>("RandomAccessBuffer overflow")
+org.apache.pdfbox.io.RandomAccessBuffer.write : specialinvoke $r2.<java.io.IOException: void <init>(java.lang.String)>("RandomAccessBuffer overflow") >>>>>>>> org.apache.pdfbox.io.RandomAccessBuffer.write : throw $r2

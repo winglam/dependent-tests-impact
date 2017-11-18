@@ -1,0 +1,10 @@
+com.thoughtworks.xstream.converters.extended.ISO8601GregorianCalendarConverter.toString : $r4 = <com.thoughtworks.xstream.converters.extended.ISO8601GregorianCalendarConverter: org.joda.time.format.DateTimeFormatter[] formattersUTC>
+com.thoughtworks.xstream.converters.extended.ISO8601GregorianCalendarConverter.toString : $r2 = new org.joda.time.DateTime
+com.thoughtworks.xstream.converters.extended.ISO8601GregorianCalendarConverter.fromString : return r5
+com.thoughtworks.xstream.converters.extended.ISO8601GregorianCalendarConverter.fromString : $r9 = staticinvoke <java.util.Locale: java.util.Locale getDefault()>()
+com.thoughtworks.xstream.converters.extended.ISO8601GregorianCalendarConverter.fromString : i0 = 0
+com.thoughtworks.xstream.converters.extended.ISO8601GregorianCalendarConverter.fromString : $r10 = staticinvoke <java.util.TimeZone: java.util.TimeZone getDefault()>()
+com.thoughtworks.xstream.converters.extended.ISO8601GregorianCalendarConverter.fromString : $r8 = <com.thoughtworks.xstream.converters.extended.ISO8601GregorianCalendarConverter: org.joda.time.format.DateTimeFormatter[] formattersUTC>
+com.thoughtworks.xstream.converters.extended.ISO8601GregorianCalendarConverter.fromString : r4 = virtualinvoke r3.<org.joda.time.format.DateTimeFormatter: org.joda.time.DateTime parseDateTime(java.lang.String)>(r1)
+com.thoughtworks.xstream.testutil.TimeZoneChanger.reset : $r0 = <com.thoughtworks.xstream.testutil.TimeZoneChanger: java.util.TimeZone originalTimeZone>
+com.thoughtworks.xstream.testutil.TimeZoneChanger.change : $r1 = staticinvoke <java.util.TimeZone: java.util.TimeZone getTimeZone(java.lang.String)>(r0)

@@ -1,0 +1,9 @@
+org.apache.pdfbox.pdmodel.graphics.color.PDDeviceCMYK.toRGBImage : virtualinvoke r0.<org.apache.pdfbox.pdmodel.graphics.color.PDDeviceCMYK: void init()>()
+org.apache.pdfbox.pdmodel.graphics.color.PDDeviceCMYK.init : entermonitor r0
+org.apache.pdfbox.pdmodel.graphics.color.PDDeviceCMYK.init : r2 = virtualinvoke r0.<org.apache.pdfbox.pdmodel.graphics.color.PDDeviceCMYK: java.awt.color.ICC_Profile getICCProfile()>()
+org.apache.pdfbox.pdmodel.graphics.color.PDDeviceCMYK.init : $r4 = r0.<org.apache.pdfbox.pdmodel.graphics.color.PDDeviceCMYK: java.awt.color.ICC_ColorSpace awtColorSpace>
+org.apache.pdfbox.pdmodel.graphics.color.PDDeviceCMYK.init : $r6 = r0.<org.apache.pdfbox.pdmodel.graphics.color.PDDeviceCMYK: java.awt.color.ICC_ColorSpace awtColorSpace>
+org.apache.pdfbox.pdmodel.graphics.color.PDDeviceCMYK.init : exitmonitor r0
+org.apache.pdfbox.pdmodel.graphics.color.PDDeviceCMYK.getICCProfile : if r2 != null goto r3 = virtualinvoke r2.<java.net.URL: java.io.InputStream openStream()>()
+org.apache.pdfbox.pdmodel.graphics.color.PDDeviceCMYK.getICCProfile : $r5 = class "Lorg/apache/pdfbox/pdmodel/graphics/color/PDDeviceCMYK;"
+org.apache.pdfbox.pdmodel.graphics.color.PDDeviceCMYK.getICCProfile : $r7 = new java.io.IOException

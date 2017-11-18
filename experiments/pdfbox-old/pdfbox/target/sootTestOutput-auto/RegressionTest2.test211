@@ -1,0 +1,14 @@
+org.apache.pdfbox.io.ScratchFile.getMainMemoryOnlyInstance : $r1 = new org.apache.pdfbox.io.ScratchFile
+org.apache.pdfbox.io.MemoryUsageSetting.isStorageRestricted : $l0 = r0.<org.apache.pdfbox.io.MemoryUsageSetting: long maxStorageBytes>
+org.apache.pdfbox.cos.COSDocument.getObjectFromPool : if r1 == null goto (branch)
+org.apache.pdfbox.cos.COSDocument.getObjectFromPool : if r7 != null goto return r7
+org.apache.pdfbox.cos.COSDocument.getObjectFromPool : $r2 = new org.apache.pdfbox.cos.COSObject
+org.apache.pdfbox.cos.COSDocument.getObjectFromPool : if r1 == null goto return r7
+org.apache.pdfbox.cos.COSDocument.getObjectFromPool : return r7
+org.apache.pdfbox.cos.COSDocument.getObjectFromPool : r7 = null
+org.apache.pdfbox.cos.COSObject.getObjectNumber : $l0 = r0.<org.apache.pdfbox.cos.COSObject: long objectNumber>
+org.apache.pdfbox.io.MemoryUsageSetting.useMainMemory : $z0 = r0.<org.apache.pdfbox.io.MemoryUsageSetting: boolean useMainMemory>
+org.apache.pdfbox.cos.COSObject.setObject : r0.<org.apache.pdfbox.cos.COSObject: org.apache.pdfbox.cos.COSBase baseObject> = r1
+org.apache.pdfbox.io.MemoryUsageSetting.isMainMemoryRestricted : $l0 = r0.<org.apache.pdfbox.io.MemoryUsageSetting: long maxMainMemoryBytes>
+org.apache.pdfbox.io.MemoryUsageSetting.setupMainMemoryOnly : $r0 = new org.apache.pdfbox.io.MemoryUsageSetting
+org.apache.pdfbox.io.MemoryUsageSetting.setupMainMemoryOnly : $r0 = staticinvoke <org.apache.pdfbox.io.MemoryUsageSetting: org.apache.pdfbox.io.MemoryUsageSetting setupMainMemoryOnly(long)>(-1L)

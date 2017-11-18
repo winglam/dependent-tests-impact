@@ -1,0 +1,23 @@
+org.apache.pdfbox.cos.PDFDocEncoding.getBytes : $r4 = new java.io.ByteArrayOutputStream >>>>>>>> org.apache.pdfbox.cos.PDFDocEncoding.getBytes : specialinvoke $r4.<java.io.ByteArrayOutputStream: void <init>()>()
+org.apache.pdfbox.cos.PDFDocEncoding.getBytes : specialinvoke $r4.<java.io.ByteArrayOutputStream: void <init>()>() >>>>>>>> org.apache.pdfbox.cos.PDFDocEncoding.getBytes : r2 = virtualinvoke r0.<java.lang.String: char[] toCharArray()>()
+org.apache.pdfbox.cos.PDFDocEncoding.getBytes : r2 = virtualinvoke r0.<java.lang.String: char[] toCharArray()>() >>>>>>>> org.apache.pdfbox.cos.PDFDocEncoding.getBytes : i0 = lengthof r2
+org.apache.pdfbox.cos.PDFDocEncoding.getBytes : i0 = lengthof r2 >>>>>>>> org.apache.pdfbox.cos.PDFDocEncoding.getBytes : i3 = 0
+org.apache.pdfbox.cos.PDFDocEncoding.getBytes : i3 = 0 >>>>>>>> org.apache.pdfbox.cos.PDFDocEncoding.getBytes : if i3 >= i0
+org.apache.pdfbox.cos.PDFDocEncoding.getBytes : if i3 >= i0 >>>>>>>> org.apache.pdfbox.cos.PDFDocEncoding.getBytes : $r5 = virtualinvoke $r4.<java.io.ByteArrayOutputStream: byte[] toByteArray()>()
+org.apache.pdfbox.cos.PDFDocEncoding.getBytes : $r5 = virtualinvoke $r4.<java.io.ByteArrayOutputStream: byte[] toByteArray()>() >>>>>>>> org.apache.pdfbox.cos.PDFDocEncoding.getBytes : return $r5
+org.apache.pdfbox.cos.PDFDocEncoding.getBytes : return $r5 >>>>>>>> org.apache.pdfbox.pdmodel.common.filespecification.PDSimpleFileSpecification.getFile : $r1 = r0.<org.apache.pdfbox.pdmodel.common.filespecification.PDSimpleFileSpecification: org.apache.pdfbox.cos.COSString file>
+org.apache.pdfbox.pdmodel.common.filespecification.PDSimpleFileSpecification.getFile : $r1 = r0.<org.apache.pdfbox.pdmodel.common.filespecification.PDSimpleFileSpecification: org.apache.pdfbox.cos.COSString file> >>>>>>>> org.apache.pdfbox.pdmodel.common.filespecification.PDSimpleFileSpecification.getFile : $r2 = virtualinvoke $r1.<org.apache.pdfbox.cos.COSString: java.lang.String getString()>()
+org.apache.pdfbox.pdmodel.common.filespecification.PDSimpleFileSpecification.getFile : $r2 = virtualinvoke $r1.<org.apache.pdfbox.cos.COSString: java.lang.String getString()>() >>>>>>>> org.apache.pdfbox.cos.COSString.getString : $r1 = r0.<org.apache.pdfbox.cos.COSString: byte[] bytes>
+org.apache.pdfbox.cos.COSString.getString : $r1 = r0.<org.apache.pdfbox.cos.COSString: byte[] bytes> >>>>>>>> org.apache.pdfbox.cos.COSString.getString : $i0 = lengthof $r1
+org.apache.pdfbox.cos.COSString.getString : $i0 = lengthof $r1 >>>>>>>> org.apache.pdfbox.cos.COSString.getString : if $i0 <= 2
+org.apache.pdfbox.cos.COSString.getString : if $i0 <= 2 >>>>>>>> org.apache.pdfbox.cos.COSString.getString : $r14 = r0.<org.apache.pdfbox.cos.COSString: byte[] bytes>
+org.apache.pdfbox.cos.COSString.getString : $r14 = r0.<org.apache.pdfbox.cos.COSString: byte[] bytes> >>>>>>>> org.apache.pdfbox.cos.COSString.getString : $r15 = staticinvoke <org.apache.pdfbox.cos.PDFDocEncoding: java.lang.String toString(byte[])>($r14)
+org.apache.pdfbox.cos.COSString.getString : $r15 = staticinvoke <org.apache.pdfbox.cos.PDFDocEncoding: java.lang.String toString(byte[])>($r14) >>>>>>>> org.apache.pdfbox.cos.PDFDocEncoding.toString : $r3 = new java.lang.StringBuilder
+org.apache.pdfbox.cos.PDFDocEncoding.toString : $r3 = new java.lang.StringBuilder >>>>>>>> org.apache.pdfbox.cos.PDFDocEncoding.toString : specialinvoke $r3.<java.lang.StringBuilder: void <init>()>()
+org.apache.pdfbox.cos.PDFDocEncoding.toString : specialinvoke $r3.<java.lang.StringBuilder: void <init>()>() >>>>>>>> org.apache.pdfbox.cos.PDFDocEncoding.toString : i0 = lengthof r0
+org.apache.pdfbox.cos.PDFDocEncoding.toString : i0 = lengthof r0 >>>>>>>> org.apache.pdfbox.cos.PDFDocEncoding.toString : i7 = 0
+org.apache.pdfbox.cos.PDFDocEncoding.toString : i7 = 0 >>>>>>>> org.apache.pdfbox.cos.PDFDocEncoding.toString : if i7 >= i0
+org.apache.pdfbox.cos.PDFDocEncoding.toString : if i7 >= i0 >>>>>>>> org.apache.pdfbox.cos.PDFDocEncoding.toString : $r4 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>()
+org.apache.pdfbox.cos.PDFDocEncoding.toString : $r4 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>() >>>>>>>> org.apache.pdfbox.cos.PDFDocEncoding.toString : return $r4
+org.apache.pdfbox.cos.PDFDocEncoding.toString : return $r4 >>>>>>>> org.apache.pdfbox.cos.COSString.getString : return $r15
+org.apache.pdfbox.cos.COSString.getString : return $r15 >>>>>>>> org.apache.pdfbox.pdmodel.common.filespecification.PDSimpleFileSpecification.getFile : return $r2

@@ -1,0 +1,46 @@
+org.apache.pdfbox.cos.COSString.parseHex : $r1 = new java.io.ByteArrayOutputStream >>>>>>>> org.apache.pdfbox.cos.COSString.parseHex : specialinvoke $r1.<java.io.ByteArrayOutputStream: void <init>()>()
+org.apache.pdfbox.cos.COSString.parseHex : specialinvoke $r1.<java.io.ByteArrayOutputStream: void <init>()>() >>>>>>>> org.apache.pdfbox.cos.COSString.parseHex : r2 = $r1
+org.apache.pdfbox.cos.COSString.parseHex : r2 = $r1 >>>>>>>> org.apache.pdfbox.cos.COSString.parseHex : $r5 = new java.lang.StringBuilder
+org.apache.pdfbox.cos.COSString.parseHex : $r5 = new java.lang.StringBuilder >>>>>>>> org.apache.pdfbox.cos.COSString.parseHex : $r6 = virtualinvoke r0.<java.lang.String: java.lang.String trim()>()
+org.apache.pdfbox.cos.COSString.parseHex : $r6 = virtualinvoke r0.<java.lang.String: java.lang.String trim()>() >>>>>>>> org.apache.pdfbox.cos.COSString.parseHex : specialinvoke $r5.<java.lang.StringBuilder: void <init>(java.lang.String)>($r6)
+org.apache.pdfbox.cos.COSString.parseHex : specialinvoke $r5.<java.lang.StringBuilder: void <init>(java.lang.String)>($r6) >>>>>>>> org.apache.pdfbox.cos.COSString.parseHex : r3 = $r5
+org.apache.pdfbox.cos.COSString.parseHex : r3 = $r5 >>>>>>>> org.apache.pdfbox.cos.COSString.parseHex : $i2 = virtualinvoke r3.<java.lang.StringBuilder: int length()>()
+org.apache.pdfbox.cos.COSString.parseHex : $i2 = virtualinvoke r3.<java.lang.StringBuilder: int length()>() >>>>>>>> org.apache.pdfbox.cos.COSString.parseHex : $i3 = $i2 % 2
+org.apache.pdfbox.cos.COSString.parseHex : $i3 = $i2 % 2 >>>>>>>> org.apache.pdfbox.cos.COSString.parseHex : if $i3 == 0
+org.apache.pdfbox.cos.COSString.parseHex : if $i3 == 0 >>>>>>>> org.apache.pdfbox.cos.COSString.parseHex : virtualinvoke r3.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(48)
+org.apache.pdfbox.cos.COSString.parseHex : if $i3 == 0 >>>>>>>> org.apache.pdfbox.cos.COSString.parseHex : i0 = virtualinvoke r3.<java.lang.StringBuilder: int length()>()
+org.apache.pdfbox.cos.COSString.parseHex : i0 = virtualinvoke r3.<java.lang.StringBuilder: int length()>() >>>>>>>> org.apache.pdfbox.cos.COSString.parseHex : i1 = 0
+org.apache.pdfbox.cos.COSString.parseHex : i1 = 0 >>>>>>>> org.apache.pdfbox.cos.COSString.parseHex : if i1 >= i0
+org.apache.pdfbox.cos.COSString.parseHex : if i1 >= i0 >>>>>>>> org.apache.pdfbox.cos.COSString.parseHex : $i4 = i1 + 2
+org.apache.pdfbox.cos.COSString.parseHex : if i1 >= i0 >>>>>>>> org.apache.pdfbox.cos.COSString.parseHex : $r16 = new org.apache.pdfbox.cos.COSString
+org.apache.pdfbox.cos.COSString.parseHex : if i1 >= i0 >>>>>>>> org.apache.pdfbox.cos.COSString.parseHex : $r9 := @caughtexception
+org.apache.pdfbox.cos.COSString.parseHex : r4 = $r9 >>>>>>>> org.apache.pdfbox.cos.COSString.parseHex : $z0 = <org.apache.pdfbox.cos.COSString: boolean FORCE_PARSING>
+org.apache.pdfbox.cos.COSString.parseHex : $z0 = <org.apache.pdfbox.cos.COSString: boolean FORCE_PARSING> >>>>>>>> org.apache.pdfbox.cos.COSString.parseHex : if $z0 == 0
+org.apache.pdfbox.cos.COSString.parseHex : if $z0 == 0 >>>>>>>> org.apache.pdfbox.cos.COSString.parseHex : $r10 = <org.apache.pdfbox.cos.COSString: org.apache.commons.logging.Log LOG>
+org.apache.pdfbox.cos.COSString.parseHex : if $z0 == 0 >>>>>>>> org.apache.pdfbox.cos.COSString.parseHex : $r11 = new java.io.IOException
+org.apache.pdfbox.cos.COSString.parseHex : $r11 = new java.io.IOException >>>>>>>> org.apache.pdfbox.cos.COSString.parseHex : $r12 = new java.lang.StringBuilder
+org.apache.pdfbox.cos.COSString.parseHex : $r12 = new java.lang.StringBuilder >>>>>>>> org.apache.pdfbox.cos.COSString.parseHex : specialinvoke $r12.<java.lang.StringBuilder: void <init>()>()
+org.apache.pdfbox.cos.COSString.parseHex : specialinvoke $r12.<java.lang.StringBuilder: void <init>()>() >>>>>>>> org.apache.pdfbox.cos.COSString.parseHex : $r13 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Invalid hex string: ")
+org.apache.pdfbox.cos.COSString.parseHex : $r13 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Invalid hex string: ") >>>>>>>> org.apache.pdfbox.cos.COSString.parseHex : $r14 = virtualinvoke $r13.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r0)
+org.apache.pdfbox.cos.COSString.parseHex : $r14 = virtualinvoke $r13.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r0) >>>>>>>> org.apache.pdfbox.cos.COSString.parseHex : $r15 = virtualinvoke $r14.<java.lang.StringBuilder: java.lang.String toString()>()
+org.apache.pdfbox.cos.COSString.parseHex : $r15 = virtualinvoke $r14.<java.lang.StringBuilder: java.lang.String toString()>() >>>>>>>> org.apache.pdfbox.cos.COSString.parseHex : specialinvoke $r11.<java.io.IOException: void <init>(java.lang.String,java.lang.Throwable)>($r15, r4)
+org.apache.pdfbox.cos.COSString.parseHex : specialinvoke $r11.<java.io.IOException: void <init>(java.lang.String,java.lang.Throwable)>($r15, r4) >>>>>>>> org.apache.pdfbox.cos.COSString.parseHex : throw $r11
+org.apache.pdfbox.cos.COSString.parseHex : $r10 = <org.apache.pdfbox.cos.COSString: org.apache.commons.logging.Log LOG> >>>>>>>> org.apache.pdfbox.cos.COSString.parseHex : interfaceinvoke $r10.<org.apache.commons.logging.Log: void warn(java.lang.Object)>("Encountered a malformed hex string")
+org.apache.pdfbox.cos.COSString.parseHex : interfaceinvoke $r10.<org.apache.commons.logging.Log: void warn(java.lang.Object)>("Encountered a malformed hex string") >>>>>>>> org.apache.pdfbox.cos.COSString.parseHex : virtualinvoke r2.<java.io.ByteArrayOutputStream: void write(int)>(63)
+org.apache.pdfbox.cos.COSString.parseHex : virtualinvoke r2.<java.io.ByteArrayOutputStream: void write(int)>(63) >>>>>>>> org.apache.pdfbox.cos.COSString.parseHex : goto [?= i1 = i1 + 2]
+org.apache.pdfbox.cos.COSString.parseHex : goto [?= i1 = i1 + 2] >>>>>>>> org.apache.pdfbox.cos.COSString.parseHex : i1 = i1 + 2
+org.apache.pdfbox.cos.COSString.parseHex : i1 = i1 + 2 >>>>>>>> org.apache.pdfbox.cos.COSString.parseHex : goto [?= (branch)]
+org.apache.pdfbox.cos.COSString.parseHex : goto [?= (branch)] >>>>>>>> org.apache.pdfbox.cos.COSString.parseHex : if i1 >= i0
+org.apache.pdfbox.cos.COSString.parseHex : $r16 = new org.apache.pdfbox.cos.COSString >>>>>>>> org.apache.pdfbox.cos.COSString.parseHex : $r17 = virtualinvoke r2.<java.io.ByteArrayOutputStream: byte[] toByteArray()>()
+org.apache.pdfbox.cos.COSString.parseHex : $r17 = virtualinvoke r2.<java.io.ByteArrayOutputStream: byte[] toByteArray()>() >>>>>>>> org.apache.pdfbox.cos.COSString.parseHex : specialinvoke $r16.<org.apache.pdfbox.cos.COSString: void <init>(byte[])>($r17)
+org.apache.pdfbox.cos.COSString.parseHex : specialinvoke $r16.<org.apache.pdfbox.cos.COSString: void <init>(byte[])>($r17) >>>>>>>> org.apache.pdfbox.cos.COSString.parseHex : return $r16
+org.apache.pdfbox.cos.COSString.parseHex : $i4 = i1 + 2 >>>>>>>> org.apache.pdfbox.cos.COSString.parseHex : $r8 = virtualinvoke r3.<java.lang.StringBuilder: java.lang.String substring(int,int)>(i1, $i4)
+org.apache.pdfbox.cos.COSString.parseHex : $i4 = i1 + 2 >>>>>>>> org.apache.pdfbox.cos.COSString.parseHex : $r9 := @caughtexception
+org.apache.pdfbox.cos.COSString.parseHex : $r8 = virtualinvoke r3.<java.lang.StringBuilder: java.lang.String substring(int,int)>(i1, $i4) >>>>>>>> org.apache.pdfbox.cos.COSString.parseHex : $i5 = staticinvoke <java.lang.Integer: int parseInt(java.lang.String,int)>($r8, 16)
+org.apache.pdfbox.cos.COSString.parseHex : $r8 = virtualinvoke r3.<java.lang.StringBuilder: java.lang.String substring(int,int)>(i1, $i4) >>>>>>>> org.apache.pdfbox.cos.COSString.parseHex : $r9 := @caughtexception
+org.apache.pdfbox.cos.COSString.parseHex : $i5 = staticinvoke <java.lang.Integer: int parseInt(java.lang.String,int)>($r8, 16) >>>>>>>> org.apache.pdfbox.cos.COSString.parseHex : virtualinvoke r2.<java.io.ByteArrayOutputStream: void write(int)>($i5)
+org.apache.pdfbox.cos.COSString.parseHex : $i5 = staticinvoke <java.lang.Integer: int parseInt(java.lang.String,int)>($r8, 16) >>>>>>>> org.apache.pdfbox.cos.COSString.parseHex : $r9 := @caughtexception
+org.apache.pdfbox.cos.COSString.parseHex : virtualinvoke r2.<java.io.ByteArrayOutputStream: void write(int)>($i5) >>>>>>>> org.apache.pdfbox.cos.COSString.parseHex : goto [?= i1 = i1 + 2]
+org.apache.pdfbox.cos.COSString.parseHex : virtualinvoke r2.<java.io.ByteArrayOutputStream: void write(int)>($i5) >>>>>>>> org.apache.pdfbox.cos.COSString.parseHex : $r9 := @caughtexception
+org.apache.pdfbox.cos.COSString.parseHex : goto [?= i1 = i1 + 2] >>>>>>>> org.apache.pdfbox.cos.COSString.parseHex : i1 = i1 + 2
+org.apache.pdfbox.cos.COSString.parseHex : virtualinvoke r3.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(48) >>>>>>>> org.apache.pdfbox.cos.COSString.parseHex : i0 = virtualinvoke r3.<java.lang.StringBuilder: int length()>()

@@ -1,0 +1,61 @@
+org.apache.pdfbox.pdmodel.interactive.digitalsignature.COSFilterInputStream.inRange : return 0
+org.apache.pdfbox.pdmodel.interactive.digitalsignature.COSFilterInputStream.inRange : l0 = r0.<org.apache.pdfbox.pdmodel.interactive.digitalsignature.COSFilterInputStream: long position>
+org.apache.pdfbox.pdmodel.interactive.digitalsignature.COSFilterInputStream.inRange : $r2 = r0.<org.apache.pdfbox.pdmodel.interactive.digitalsignature.COSFilterInputStream: int[] byteRange>
+org.apache.pdfbox.pdmodel.interactive.digitalsignature.COSFilterInputStream.inRange : i15 = 0
+org.apache.pdfbox.io.ScratchFile.createBuffer : $r4 = new org.apache.pdfbox.io.ScratchFileBuffer
+org.apache.pdfbox.io.ScratchFile.createBuffer : r3 = newarray (byte)[8192]
+org.apache.pdfbox.io.ScratchFile.createBuffer : $i0 = virtualinvoke r1.<java.io.InputStream: int read(byte[])>(r3)
+org.apache.pdfbox.io.MemoryUsageSetting.isStorageRestricted : $l0 = r0.<org.apache.pdfbox.io.MemoryUsageSetting: long maxStorageBytes>
+org.apache.pdfbox.io.ScratchFile.getPageSize : return 4096
+org.apache.pdfbox.pdmodel.interactive.digitalsignature.COSFilterInputStream.nextAvailable : $z0 = specialinvoke r0.<org.apache.pdfbox.pdmodel.interactive.digitalsignature.COSFilterInputStream: boolean inRange()>()
+org.apache.pdfbox.pdmodel.interactive.digitalsignature.COSFilterInputStream.nextAvailable : $l0 = r0.<org.apache.pdfbox.pdmodel.interactive.digitalsignature.COSFilterInputStream: long position>
+org.apache.pdfbox.pdmodel.interactive.digitalsignature.COSFilterInputStream.nextAvailable : $i2 = specialinvoke r0.<java.io.FilterInputStream: int read()>()
+org.apache.pdfbox.io.MemoryUsageSetting.getMaxMainMemoryBytes : $l0 = r0.<org.apache.pdfbox.io.MemoryUsageSetting: long maxMainMemoryBytes>
+org.apache.pdfbox.io.MemoryUsageSetting.getTempDir : $r1 = r0.<org.apache.pdfbox.io.MemoryUsageSetting: java.io.File tempDir>
+org.apache.pdfbox.pdmodel.PDDocument.load : $r2 = staticinvoke <org.apache.pdfbox.pdmodel.PDDocument: org.apache.pdfbox.pdmodel.PDDocument load(java.io.InputStream,java.lang.String,java.io.InputStream,java.lang.String,org.apache.pdfbox.io.MemoryUsageSetting)>(r0, "", null, null, r1)
+org.apache.pdfbox.pdmodel.PDDocument.load : r11 = virtualinvoke $r7.<org.apache.pdfbox.io.ScratchFile: org.apache.pdfbox.io.RandomAccess createBuffer(java.io.InputStream)>(r0)
+org.apache.pdfbox.pdmodel.PDDocument.load : $r7 = new org.apache.pdfbox.io.ScratchFile
+org.apache.pdfbox.io.ScratchFile.checkClosed : $z0 = r0.<org.apache.pdfbox.io.ScratchFile: boolean isClosed>
+org.apache.pdfbox.io.MemoryUsageSetting.useMainMemory : $z0 = r0.<org.apache.pdfbox.io.MemoryUsageSetting: boolean useMainMemory>
+org.apache.pdfbox.io.ScratchFileBuffer.addPage : $r8 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: org.apache.pdfbox.io.ScratchFile pageHandler>
+org.apache.pdfbox.io.ScratchFileBuffer.addPage : r0.<org.apache.pdfbox.io.ScratchFileBuffer: int positionInPage> = 0
+org.apache.pdfbox.io.ScratchFileBuffer.addPage : $i11 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: int pageCount>
+org.apache.pdfbox.io.ScratchFileBuffer.addPage : $i10 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: int pageCount>
+org.apache.pdfbox.io.ScratchFileBuffer.addPage : $i16 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: int pageCount>
+org.apache.pdfbox.io.ScratchFileBuffer.addPage : $i18 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: int pageSize>
+org.apache.pdfbox.io.ScratchFileBuffer.addPage : $r9 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: int[] pageIndexes>
+org.apache.pdfbox.io.ScratchFileBuffer.addPage : $i0 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: int pageCount>
+org.apache.pdfbox.io.ScratchFile.getNewPage : exitmonitor $r3
+org.apache.pdfbox.io.ScratchFile.getNewPage : $i0 = r0.<org.apache.pdfbox.io.ScratchFile: int pageCount>
+org.apache.pdfbox.io.ScratchFile.getNewPage : $i1 = i3 + 1
+org.apache.pdfbox.io.ScratchFile.getNewPage : if i3 >= 0 goto $r5 = r0.<org.apache.pdfbox.io.ScratchFile: java.util.BitSet freePages>
+org.apache.pdfbox.io.ScratchFile.getNewPage : $r6 = r0.<org.apache.pdfbox.io.ScratchFile: java.util.BitSet freePages>
+org.apache.pdfbox.io.ScratchFile.getNewPage : $r3 = r0.<org.apache.pdfbox.io.ScratchFile: java.util.BitSet freePages>
+org.apache.pdfbox.io.ScratchFile.getNewPage : $r4 = r0.<org.apache.pdfbox.io.ScratchFile: java.util.BitSet freePages>
+org.apache.pdfbox.io.ScratchFile.getNewPage : $r5 = r0.<org.apache.pdfbox.io.ScratchFile: java.util.BitSet freePages>
+org.apache.pdfbox.io.ScratchFile.getNewPage : specialinvoke r0.<org.apache.pdfbox.io.ScratchFile: void enlarge()>()
+org.apache.pdfbox.io.MemoryUsageSetting.isMainMemoryRestricted : $l0 = r0.<org.apache.pdfbox.io.MemoryUsageSetting: long maxMainMemoryBytes>
+org.apache.pdfbox.io.MemoryUsageSetting.setupMixed : $r0 = new org.apache.pdfbox.io.MemoryUsageSetting
+org.apache.pdfbox.io.MemoryUsageSetting.setupMixed : $r0 = staticinvoke <org.apache.pdfbox.io.MemoryUsageSetting: org.apache.pdfbox.io.MemoryUsageSetting setupMixed(long,long)>(l0, -1L)
+org.apache.pdfbox.pdmodel.interactive.digitalsignature.COSFilterInputStream.read : if i1 != 0 goto i5 = virtualinvoke r0.<org.apache.pdfbox.pdmodel.interactive.digitalsignature.COSFilterInputStream: int read()>()
+org.apache.pdfbox.pdmodel.interactive.digitalsignature.COSFilterInputStream.read : i5 = virtualinvoke r0.<org.apache.pdfbox.pdmodel.interactive.digitalsignature.COSFilterInputStream: int read()>()
+org.apache.pdfbox.pdmodel.interactive.digitalsignature.COSFilterInputStream.read : $i0 = lengthof r1
+org.apache.pdfbox.pdmodel.interactive.digitalsignature.COSFilterInputStream.read : specialinvoke r0.<org.apache.pdfbox.pdmodel.interactive.digitalsignature.COSFilterInputStream: void nextAvailable()>()
+org.apache.pdfbox.io.MemoryUsageSetting.useTempFile : $z0 = r0.<org.apache.pdfbox.io.MemoryUsageSetting: boolean useTempFile>
+org.apache.pdfbox.io.ScratchFile.enlarge : $z0 = r0.<org.apache.pdfbox.io.ScratchFile: boolean useScratchFile>
+org.apache.pdfbox.io.ScratchFile.enlarge : $r9 = r0.<org.apache.pdfbox.io.ScratchFile: java.io.RandomAccessFile raf>
+org.apache.pdfbox.io.ScratchFile.enlarge : $b11 = l19 cmp l18
+org.apache.pdfbox.io.ScratchFile.enlarge : $i12 = r0.<org.apache.pdfbox.io.ScratchFile: int pageCount>
+org.apache.pdfbox.io.ScratchFile.enlarge : goto [?= $r8 = r0.<org.apache.pdfbox.io.ScratchFile: java.io.RandomAccessFile raf>]
+org.apache.pdfbox.io.ScratchFile.enlarge : goto [?= exitmonitor $r3]
+org.apache.pdfbox.io.ScratchFile.enlarge : $i6 = r0.<org.apache.pdfbox.io.ScratchFile: int pageCount>
+org.apache.pdfbox.io.ScratchFile.enlarge : virtualinvoke r0.<org.apache.pdfbox.io.ScratchFile: void checkClosed()>()
+org.apache.pdfbox.io.ScratchFile.enlarge : $r18 = r0.<org.apache.pdfbox.io.ScratchFile: java.io.File scratchFileDirectory>
+org.apache.pdfbox.io.ScratchFile.enlarge : exitmonitor $r3
+org.apache.pdfbox.io.ScratchFile.enlarge : $r20 = new java.io.RandomAccessFile
+org.apache.pdfbox.io.ScratchFile.enlarge : $r8 = r0.<org.apache.pdfbox.io.ScratchFile: java.io.RandomAccessFile raf>
+org.apache.pdfbox.io.ScratchFile.enlarge : $i2 = r0.<org.apache.pdfbox.io.ScratchFile: int pageCount>
+org.apache.pdfbox.io.ScratchFile.enlarge : $r7 = r0.<org.apache.pdfbox.io.ScratchFile: java.io.RandomAccessFile raf>
+org.apache.pdfbox.io.ScratchFile.enlarge : $r10 = r0.<org.apache.pdfbox.io.ScratchFile: java.util.BitSet freePages>
+org.apache.pdfbox.io.ScratchFile.enlarge : l20 = l18 + 65536L
+org.apache.pdfbox.io.ScratchFile.enlarge : $r3 = r0.<org.apache.pdfbox.io.ScratchFile: java.lang.Object ioLock>

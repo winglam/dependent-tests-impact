@@ -1,0 +1,12 @@
+com.thoughtworks.xstream.io.xml.xppdom.Xpp3DomBuilder.build : $r11 = new java.util.ArrayList
+com.thoughtworks.xstream.io.xml.xppdom.Xpp3DomBuilder.build : i0 = interfaceinvoke r5.<org.xmlpull.v1.XmlPullParser: int getEventType()>()
+com.thoughtworks.xstream.io.xml.xppdom.Xpp3DomBuilder.build : interfaceinvoke r5.<org.xmlpull.v1.XmlPullParser: void setInput(java.io.Reader)>(r0)
+com.thoughtworks.xstream.io.xml.xppdom.Xpp3DomBuilder.build : i0 = interfaceinvoke r5.<org.xmlpull.v1.XmlPullParser: int next()>()
+com.thoughtworks.xstream.io.xml.xppdom.Xpp3DomBuilder.build : $r12 = new org.xmlpull.mxp1.MXParser
+com.thoughtworks.xstream.io.xml.xppdom.Xpp3DomBuilder.build : r4 = null
+com.thoughtworks.xstream.io.xml.xppdom.Xpp3DomBuilder.build : $r1 = new java.util.ArrayList
+com.thoughtworks.xstream.io.xml.xppdom.Xpp3DomBuilder.build : if i0 == 1 goto virtualinvoke r0.<java.io.Reader: void close()>()
+com.thoughtworks.xstream.io.xml.xppdom.Xpp3DomBuilder.build : if i0 != 2 goto (branch)
+com.thoughtworks.xstream.io.xml.XppDomDriver.createReader : r3 = $r6
+com.thoughtworks.xstream.io.xml.XppDomDriver.createReader : $r2 = new com.thoughtworks.xstream.io.xml.XppDomReader
+com.thoughtworks.xstream.io.xml.XppDomDriver.createReader : $r7 = new com.thoughtworks.xstream.io.StreamException

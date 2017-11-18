@@ -1,0 +1,229 @@
+org.apache.pdfbox.printing.PDFPrintable.print : if i0 < 0 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r7 = r0.<org.apache.pdfbox.printing.PDFPrintable: org.apache.pdfbox.pdmodel.PDDocument document>
+org.apache.pdfbox.printing.PDFPrintable.print : if i0 < 0 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : return 1
+org.apache.pdfbox.printing.PDFPrintable.print : $r7 = r0.<org.apache.pdfbox.printing.PDFPrintable: org.apache.pdfbox.pdmodel.PDDocument document> >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $i1 = virtualinvoke $r7.<org.apache.pdfbox.pdmodel.PDDocument: int getNumberOfPages()>()
+org.apache.pdfbox.printing.PDFPrintable.print : $i1 = virtualinvoke $r7.<org.apache.pdfbox.pdmodel.PDDocument: int getNumberOfPages()>() >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : if i0 < $i1
+org.apache.pdfbox.printing.PDFPrintable.print : if i0 < $i1 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : return 1
+org.apache.pdfbox.printing.PDFPrintable.print : if i0 < $i1 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : r3 = (java.awt.Graphics2D) r1
+org.apache.pdfbox.printing.PDFPrintable.print : if i0 < $i1 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : r26 = $r25 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r27 = new java.awt.print.PrinterIOException
+org.apache.pdfbox.printing.PDFPrintable.print : $r27 = new java.awt.print.PrinterIOException >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : specialinvoke $r27.<java.awt.print.PrinterIOException: void <init>(java.io.IOException)>(r26)
+org.apache.pdfbox.printing.PDFPrintable.print : specialinvoke $r27.<java.awt.print.PrinterIOException: void <init>(java.io.IOException)>(r26) >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : throw $r27
+org.apache.pdfbox.printing.PDFPrintable.print : r3 = (java.awt.Graphics2D) r1 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r8 = r0.<org.apache.pdfbox.printing.PDFPrintable: org.apache.pdfbox.pdmodel.PDDocument document>
+org.apache.pdfbox.printing.PDFPrintable.print : r3 = (java.awt.Graphics2D) r1 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : $r8 = r0.<org.apache.pdfbox.printing.PDFPrintable: org.apache.pdfbox.pdmodel.PDDocument document> >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : r4 = virtualinvoke $r8.<org.apache.pdfbox.pdmodel.PDDocument: org.apache.pdfbox.pdmodel.PDPage getPage(int)>(i0)
+org.apache.pdfbox.printing.PDFPrintable.print : $r8 = r0.<org.apache.pdfbox.printing.PDFPrintable: org.apache.pdfbox.pdmodel.PDDocument document> >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : r4 = virtualinvoke $r8.<org.apache.pdfbox.pdmodel.PDDocument: org.apache.pdfbox.pdmodel.PDPage getPage(int)>(i0) >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : r5 = staticinvoke <org.apache.pdfbox.printing.PDFPrintable: org.apache.pdfbox.pdmodel.common.PDRectangle getRotatedCropBox(org.apache.pdfbox.pdmodel.PDPage)>(r4)
+org.apache.pdfbox.printing.PDFPrintable.print : r4 = virtualinvoke $r8.<org.apache.pdfbox.pdmodel.PDDocument: org.apache.pdfbox.pdmodel.PDPage getPage(int)>(i0) >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : r5 = staticinvoke <org.apache.pdfbox.printing.PDFPrintable: org.apache.pdfbox.pdmodel.common.PDRectangle getRotatedCropBox(org.apache.pdfbox.pdmodel.PDPage)>(r4) >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : d0 = virtualinvoke r2.<java.awt.print.PageFormat: double getImageableWidth()>()
+org.apache.pdfbox.printing.PDFPrintable.print : r5 = staticinvoke <org.apache.pdfbox.printing.PDFPrintable: org.apache.pdfbox.pdmodel.common.PDRectangle getRotatedCropBox(org.apache.pdfbox.pdmodel.PDPage)>(r4) >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : d0 = virtualinvoke r2.<java.awt.print.PageFormat: double getImageableWidth()>() >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : d1 = virtualinvoke r2.<java.awt.print.PageFormat: double getImageableHeight()>()
+org.apache.pdfbox.printing.PDFPrintable.print : d0 = virtualinvoke r2.<java.awt.print.PageFormat: double getImageableWidth()>() >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : d1 = virtualinvoke r2.<java.awt.print.PageFormat: double getImageableHeight()>() >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : d2 = 1.0
+org.apache.pdfbox.printing.PDFPrintable.print : d1 = virtualinvoke r2.<java.awt.print.PageFormat: double getImageableHeight()>() >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : d2 = 1.0 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r9 = r0.<org.apache.pdfbox.printing.PDFPrintable: org.apache.pdfbox.printing.Scaling scaling>
+org.apache.pdfbox.printing.PDFPrintable.print : d2 = 1.0 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : $r9 = r0.<org.apache.pdfbox.printing.PDFPrintable: org.apache.pdfbox.printing.Scaling scaling> >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r10 = <org.apache.pdfbox.printing.Scaling: org.apache.pdfbox.printing.Scaling ACTUAL_SIZE>
+org.apache.pdfbox.printing.PDFPrintable.print : $r9 = r0.<org.apache.pdfbox.printing.PDFPrintable: org.apache.pdfbox.printing.Scaling scaling> >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : $r10 = <org.apache.pdfbox.printing.Scaling: org.apache.pdfbox.printing.Scaling ACTUAL_SIZE> >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : if $r9 == $r10
+org.apache.pdfbox.printing.PDFPrintable.print : $r10 = <org.apache.pdfbox.printing.Scaling: org.apache.pdfbox.printing.Scaling ACTUAL_SIZE> >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : if $r9 == $r10 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $f0 = virtualinvoke r5.<org.apache.pdfbox.pdmodel.common.PDRectangle: float getWidth()>()
+org.apache.pdfbox.printing.PDFPrintable.print : if $r9 == $r10 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $d7 = virtualinvoke r2.<java.awt.print.PageFormat: double getImageableX()>()
+org.apache.pdfbox.printing.PDFPrintable.print : if $r9 == $r10 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : $d7 = virtualinvoke r2.<java.awt.print.PageFormat: double getImageableX()>() >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $d8 = virtualinvoke r2.<java.awt.print.PageFormat: double getImageableY()>()
+org.apache.pdfbox.printing.PDFPrintable.print : $d7 = virtualinvoke r2.<java.awt.print.PageFormat: double getImageableX()>() >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : $d8 = virtualinvoke r2.<java.awt.print.PageFormat: double getImageableY()>() >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : virtualinvoke r3.<java.awt.Graphics2D: void translate(double,double)>($d7, $d8)
+org.apache.pdfbox.printing.PDFPrintable.print : $d8 = virtualinvoke r2.<java.awt.print.PageFormat: double getImageableY()>() >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : virtualinvoke r3.<java.awt.Graphics2D: void translate(double,double)>($d7, $d8) >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $z0 = r0.<org.apache.pdfbox.printing.PDFPrintable: boolean center>
+org.apache.pdfbox.printing.PDFPrintable.print : virtualinvoke r3.<java.awt.Graphics2D: void translate(double,double)>($d7, $d8) >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : $z0 = r0.<org.apache.pdfbox.printing.PDFPrintable: boolean center> >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : if $z0 == 0
+org.apache.pdfbox.printing.PDFPrintable.print : $z0 = r0.<org.apache.pdfbox.printing.PDFPrintable: boolean center> >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : if $z0 == 0 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $f2 = virtualinvoke r5.<org.apache.pdfbox.pdmodel.common.PDRectangle: float getWidth()>()
+org.apache.pdfbox.printing.PDFPrintable.print : if $z0 == 0 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : r15 = null
+org.apache.pdfbox.printing.PDFPrintable.print : if $z0 == 0 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : r15 = null >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : r6 = null
+org.apache.pdfbox.printing.PDFPrintable.print : r15 = null >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : r6 = null >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $f4 = r0.<org.apache.pdfbox.printing.PDFPrintable: float dpi>
+org.apache.pdfbox.printing.PDFPrintable.print : r6 = null >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : $f4 = r0.<org.apache.pdfbox.printing.PDFPrintable: float dpi> >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $b4 = $f4 cmpl 0.0F
+org.apache.pdfbox.printing.PDFPrintable.print : $f4 = r0.<org.apache.pdfbox.printing.PDFPrintable: float dpi> >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : $b4 = $f4 cmpl 0.0F >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : if $b4 <= 0
+org.apache.pdfbox.printing.PDFPrintable.print : $b4 = $f4 cmpl 0.0F >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : if $b4 <= 0 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $f5 = r0.<org.apache.pdfbox.printing.PDFPrintable: float dpi>
+org.apache.pdfbox.printing.PDFPrintable.print : if $b4 <= 0 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r17 = virtualinvoke r3.<java.awt.Graphics2D: java.awt.geom.AffineTransform getTransform()>()
+org.apache.pdfbox.printing.PDFPrintable.print : if $b4 <= 0 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : $r17 = virtualinvoke r3.<java.awt.Graphics2D: java.awt.geom.AffineTransform getTransform()>() >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r18 = virtualinvoke $r17.<java.awt.geom.AffineTransform: java.lang.Object clone()>()
+org.apache.pdfbox.printing.PDFPrintable.print : $r17 = virtualinvoke r3.<java.awt.Graphics2D: java.awt.geom.AffineTransform getTransform()>() >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : $r18 = virtualinvoke $r17.<java.awt.geom.AffineTransform: java.lang.Object clone()>() >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : r19 = (java.awt.geom.AffineTransform) $r18
+org.apache.pdfbox.printing.PDFPrintable.print : $r18 = virtualinvoke $r17.<java.awt.geom.AffineTransform: java.lang.Object clone()>() >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : r19 = (java.awt.geom.AffineTransform) $r18 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r20 = <java.awt.Color: java.awt.Color WHITE>
+org.apache.pdfbox.printing.PDFPrintable.print : r19 = (java.awt.geom.AffineTransform) $r18 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : $r20 = <java.awt.Color: java.awt.Color WHITE> >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : virtualinvoke r3.<java.awt.Graphics2D: void setBackground(java.awt.Color)>($r20)
+org.apache.pdfbox.printing.PDFPrintable.print : $r20 = <java.awt.Color: java.awt.Color WHITE> >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : virtualinvoke r3.<java.awt.Graphics2D: void setBackground(java.awt.Color)>($r20) >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r21 = r0.<org.apache.pdfbox.printing.PDFPrintable: org.apache.pdfbox.rendering.PDFRenderer renderer>
+org.apache.pdfbox.printing.PDFPrintable.print : virtualinvoke r3.<java.awt.Graphics2D: void setBackground(java.awt.Color)>($r20) >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : $r21 = r0.<org.apache.pdfbox.printing.PDFPrintable: org.apache.pdfbox.rendering.PDFRenderer renderer> >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $f7 = (float) d2
+org.apache.pdfbox.printing.PDFPrintable.print : $r21 = r0.<org.apache.pdfbox.printing.PDFPrintable: org.apache.pdfbox.rendering.PDFRenderer renderer> >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : $f7 = (float) d2 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : virtualinvoke $r21.<org.apache.pdfbox.rendering.PDFRenderer: void renderPageToGraphics(int,java.awt.Graphics2D,float)>(i0, r3, $f7)
+org.apache.pdfbox.printing.PDFPrintable.print : $f7 = (float) d2 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : virtualinvoke $r21.<org.apache.pdfbox.rendering.PDFRenderer: void renderPageToGraphics(int,java.awt.Graphics2D,float)>(i0, r3, $f7) >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $z1 = r0.<org.apache.pdfbox.printing.PDFPrintable: boolean showPageBorder>
+org.apache.pdfbox.printing.PDFPrintable.print : virtualinvoke $r21.<org.apache.pdfbox.rendering.PDFRenderer: void renderPageToGraphics(int,java.awt.Graphics2D,float)>(i0, r3, $f7) >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : $z1 = r0.<org.apache.pdfbox.printing.PDFPrintable: boolean showPageBorder> >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : if $z1 == 0
+org.apache.pdfbox.printing.PDFPrintable.print : $z1 = r0.<org.apache.pdfbox.printing.PDFPrintable: boolean showPageBorder> >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : if $z1 == 0 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : virtualinvoke r3.<java.awt.Graphics2D: void setTransform(java.awt.geom.AffineTransform)>(r19)
+org.apache.pdfbox.printing.PDFPrintable.print : if $z1 == 0 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : if r15 == null
+org.apache.pdfbox.printing.PDFPrintable.print : if $z1 == 0 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : if r15 == null >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r24 = <java.awt.Color: java.awt.Color WHITE>
+org.apache.pdfbox.printing.PDFPrintable.print : if r15 == null >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $b13 = 0
+org.apache.pdfbox.printing.PDFPrintable.print : if r15 == null >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : $b13 = 0 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : return $b13
+org.apache.pdfbox.printing.PDFPrintable.print : $b13 = 0 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : $r24 = <java.awt.Color: java.awt.Color WHITE> >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : virtualinvoke r15.<java.awt.Graphics2D: void setBackground(java.awt.Color)>($r24)
+org.apache.pdfbox.printing.PDFPrintable.print : $r24 = <java.awt.Color: java.awt.Color WHITE> >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : virtualinvoke r15.<java.awt.Graphics2D: void setBackground(java.awt.Color)>($r24) >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $i11 = virtualinvoke r6.<java.awt.image.BufferedImage: int getWidth()>()
+org.apache.pdfbox.printing.PDFPrintable.print : virtualinvoke r15.<java.awt.Graphics2D: void setBackground(java.awt.Color)>($r24) >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : $i11 = virtualinvoke r6.<java.awt.image.BufferedImage: int getWidth()>() >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $i12 = virtualinvoke r6.<java.awt.image.BufferedImage: int getHeight()>()
+org.apache.pdfbox.printing.PDFPrintable.print : $i11 = virtualinvoke r6.<java.awt.image.BufferedImage: int getWidth()>() >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : $i12 = virtualinvoke r6.<java.awt.image.BufferedImage: int getHeight()>() >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : virtualinvoke r15.<java.awt.Graphics2D: void clearRect(int,int,int,int)>(0, 0, $i11, $i12)
+org.apache.pdfbox.printing.PDFPrintable.print : $i12 = virtualinvoke r6.<java.awt.image.BufferedImage: int getHeight()>() >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : virtualinvoke r15.<java.awt.Graphics2D: void clearRect(int,int,int,int)>(0, 0, $i11, $i12) >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : virtualinvoke r15.<java.awt.Graphics2D: boolean drawImage(java.awt.Image,int,int,java.awt.image.ImageObserver)>(r6, 0, 0, null)
+org.apache.pdfbox.printing.PDFPrintable.print : virtualinvoke r15.<java.awt.Graphics2D: void clearRect(int,int,int,int)>(0, 0, $i11, $i12) >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : virtualinvoke r15.<java.awt.Graphics2D: boolean drawImage(java.awt.Image,int,int,java.awt.image.ImageObserver)>(r6, 0, 0, null) >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : virtualinvoke r3.<java.awt.Graphics2D: void dispose()>()
+org.apache.pdfbox.printing.PDFPrintable.print : virtualinvoke r15.<java.awt.Graphics2D: boolean drawImage(java.awt.Image,int,int,java.awt.image.ImageObserver)>(r6, 0, 0, null) >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : virtualinvoke r3.<java.awt.Graphics2D: void dispose()>() >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $b13 = 0
+org.apache.pdfbox.printing.PDFPrintable.print : virtualinvoke r3.<java.awt.Graphics2D: void dispose()>() >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : virtualinvoke r3.<java.awt.Graphics2D: void setTransform(java.awt.geom.AffineTransform)>(r19) >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $i7 = (int) d0
+org.apache.pdfbox.printing.PDFPrintable.print : virtualinvoke r3.<java.awt.Graphics2D: void setTransform(java.awt.geom.AffineTransform)>(r19) >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : $i7 = (int) d0 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $i8 = (int) d1
+org.apache.pdfbox.printing.PDFPrintable.print : $i7 = (int) d0 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : $i8 = (int) d1 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : virtualinvoke r3.<java.awt.Graphics2D: void setClip(int,int,int,int)>(0, 0, $i7, $i8)
+org.apache.pdfbox.printing.PDFPrintable.print : $i8 = (int) d1 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : virtualinvoke r3.<java.awt.Graphics2D: void setClip(int,int,int,int)>(0, 0, $i7, $i8) >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : virtualinvoke r3.<java.awt.Graphics2D: void scale(double,double)>(d2, d2)
+org.apache.pdfbox.printing.PDFPrintable.print : virtualinvoke r3.<java.awt.Graphics2D: void setClip(int,int,int,int)>(0, 0, $i7, $i8) >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : virtualinvoke r3.<java.awt.Graphics2D: void scale(double,double)>(d2, d2) >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r22 = <java.awt.Color: java.awt.Color GRAY>
+org.apache.pdfbox.printing.PDFPrintable.print : virtualinvoke r3.<java.awt.Graphics2D: void scale(double,double)>(d2, d2) >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : $r22 = <java.awt.Color: java.awt.Color GRAY> >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : virtualinvoke r3.<java.awt.Graphics2D: void setColor(java.awt.Color)>($r22)
+org.apache.pdfbox.printing.PDFPrintable.print : $r22 = <java.awt.Color: java.awt.Color GRAY> >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : virtualinvoke r3.<java.awt.Graphics2D: void setColor(java.awt.Color)>($r22) >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r23 = new java.awt.BasicStroke
+org.apache.pdfbox.printing.PDFPrintable.print : virtualinvoke r3.<java.awt.Graphics2D: void setColor(java.awt.Color)>($r22) >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : $r23 = new java.awt.BasicStroke >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : specialinvoke $r23.<java.awt.BasicStroke: void <init>(float)>(0.5F)
+org.apache.pdfbox.printing.PDFPrintable.print : $r23 = new java.awt.BasicStroke >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : specialinvoke $r23.<java.awt.BasicStroke: void <init>(float)>(0.5F) >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : virtualinvoke r3.<java.awt.Graphics2D: void setStroke(java.awt.Stroke)>($r23)
+org.apache.pdfbox.printing.PDFPrintable.print : specialinvoke $r23.<java.awt.BasicStroke: void <init>(float)>(0.5F) >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : virtualinvoke r3.<java.awt.Graphics2D: void setStroke(java.awt.Stroke)>($r23) >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $f8 = virtualinvoke r5.<org.apache.pdfbox.pdmodel.common.PDRectangle: float getWidth()>()
+org.apache.pdfbox.printing.PDFPrintable.print : virtualinvoke r3.<java.awt.Graphics2D: void setStroke(java.awt.Stroke)>($r23) >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : $f8 = virtualinvoke r5.<org.apache.pdfbox.pdmodel.common.PDRectangle: float getWidth()>() >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $i9 = (int) $f8
+org.apache.pdfbox.printing.PDFPrintable.print : $f8 = virtualinvoke r5.<org.apache.pdfbox.pdmodel.common.PDRectangle: float getWidth()>() >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : $i9 = (int) $f8 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $f9 = virtualinvoke r5.<org.apache.pdfbox.pdmodel.common.PDRectangle: float getHeight()>()
+org.apache.pdfbox.printing.PDFPrintable.print : $i9 = (int) $f8 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : $f9 = virtualinvoke r5.<org.apache.pdfbox.pdmodel.common.PDRectangle: float getHeight()>() >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $i10 = (int) $f9
+org.apache.pdfbox.printing.PDFPrintable.print : $f9 = virtualinvoke r5.<org.apache.pdfbox.pdmodel.common.PDRectangle: float getHeight()>() >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : $i10 = (int) $f9 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : virtualinvoke r1.<java.awt.Graphics: void drawRect(int,int,int,int)>(0, 0, $i9, $i10)
+org.apache.pdfbox.printing.PDFPrintable.print : $i10 = (int) $f9 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : virtualinvoke r1.<java.awt.Graphics: void drawRect(int,int,int,int)>(0, 0, $i9, $i10) >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : if r15 == null
+org.apache.pdfbox.printing.PDFPrintable.print : virtualinvoke r1.<java.awt.Graphics: void drawRect(int,int,int,int)>(0, 0, $i9, $i10) >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : $f5 = r0.<org.apache.pdfbox.printing.PDFPrintable: float dpi> >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : f6 = $f5 / 72.0F
+org.apache.pdfbox.printing.PDFPrintable.print : $f5 = r0.<org.apache.pdfbox.printing.PDFPrintable: float dpi> >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : f6 = $f5 / 72.0F >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r16 = new java.awt.image.BufferedImage
+org.apache.pdfbox.printing.PDFPrintable.print : f6 = $f5 / 72.0F >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : $r16 = new java.awt.image.BufferedImage >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $d17 = (double) f6
+org.apache.pdfbox.printing.PDFPrintable.print : $r16 = new java.awt.image.BufferedImage >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : $d17 = (double) f6 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $d18 = d0 * $d17
+org.apache.pdfbox.printing.PDFPrintable.print : $d17 = (double) f6 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : $d18 = d0 * $d17 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $d19 = $d18 / d2
+org.apache.pdfbox.printing.PDFPrintable.print : $d18 = d0 * $d17 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : $d19 = $d18 / d2 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $i5 = (int) $d19
+org.apache.pdfbox.printing.PDFPrintable.print : $d19 = $d18 / d2 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : $i5 = (int) $d19 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $d20 = (double) f6
+org.apache.pdfbox.printing.PDFPrintable.print : $i5 = (int) $d19 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : $d20 = (double) f6 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $d21 = d1 * $d20
+org.apache.pdfbox.printing.PDFPrintable.print : $d20 = (double) f6 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : $d21 = d1 * $d20 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $d22 = $d21 / d2
+org.apache.pdfbox.printing.PDFPrintable.print : $d21 = d1 * $d20 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : $d22 = $d21 / d2 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $i6 = (int) $d22
+org.apache.pdfbox.printing.PDFPrintable.print : $d22 = $d21 / d2 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : $i6 = (int) $d22 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : specialinvoke $r16.<java.awt.image.BufferedImage: void <init>(int,int,int)>($i5, $i6, 2)
+org.apache.pdfbox.printing.PDFPrintable.print : $i6 = (int) $d22 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : specialinvoke $r16.<java.awt.image.BufferedImage: void <init>(int,int,int)>($i5, $i6, 2) >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : r6 = $r16
+org.apache.pdfbox.printing.PDFPrintable.print : specialinvoke $r16.<java.awt.image.BufferedImage: void <init>(int,int,int)>($i5, $i6, 2) >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : r6 = $r16 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : r15 = r3
+org.apache.pdfbox.printing.PDFPrintable.print : r6 = $r16 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : r15 = r3 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : r3 = virtualinvoke r6.<java.awt.image.BufferedImage: java.awt.Graphics2D createGraphics()>()
+org.apache.pdfbox.printing.PDFPrintable.print : r15 = r3 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : r3 = virtualinvoke r6.<java.awt.image.BufferedImage: java.awt.Graphics2D createGraphics()>() >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $d23 = (double) f6
+org.apache.pdfbox.printing.PDFPrintable.print : r3 = virtualinvoke r6.<java.awt.image.BufferedImage: java.awt.Graphics2D createGraphics()>() >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : $d23 = (double) f6 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $d24 = d2 / $d23
+org.apache.pdfbox.printing.PDFPrintable.print : $d23 = (double) f6 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : $d24 = d2 / $d23 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $d25 = (double) f6
+org.apache.pdfbox.printing.PDFPrintable.print : $d24 = d2 / $d23 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : $d25 = (double) f6 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $d26 = d2 / $d25
+org.apache.pdfbox.printing.PDFPrintable.print : $d25 = (double) f6 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : $d26 = d2 / $d25 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : virtualinvoke r15.<java.awt.Graphics2D: void scale(double,double)>($d24, $d26)
+org.apache.pdfbox.printing.PDFPrintable.print : $d26 = d2 / $d25 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : virtualinvoke r15.<java.awt.Graphics2D: void scale(double,double)>($d24, $d26) >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : d2 = (double) f6
+org.apache.pdfbox.printing.PDFPrintable.print : virtualinvoke r15.<java.awt.Graphics2D: void scale(double,double)>($d24, $d26) >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : d2 = (double) f6 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r17 = virtualinvoke r3.<java.awt.Graphics2D: java.awt.geom.AffineTransform getTransform()>()
+org.apache.pdfbox.printing.PDFPrintable.print : d2 = (double) f6 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : $f2 = virtualinvoke r5.<org.apache.pdfbox.pdmodel.common.PDRectangle: float getWidth()>() >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $d9 = (double) $f2
+org.apache.pdfbox.printing.PDFPrintable.print : $f2 = virtualinvoke r5.<org.apache.pdfbox.pdmodel.common.PDRectangle: float getWidth()>() >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : $d9 = (double) $f2 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $d10 = $d9 * d2
+org.apache.pdfbox.printing.PDFPrintable.print : $d9 = (double) $f2 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : $d10 = $d9 * d2 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $d11 = d0 - $d10
+org.apache.pdfbox.printing.PDFPrintable.print : $d10 = $d9 * d2 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : $d11 = d0 - $d10 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $d12 = $d11 / 2.0
+org.apache.pdfbox.printing.PDFPrintable.print : $d11 = d0 - $d10 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : $d12 = $d11 / 2.0 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $f3 = virtualinvoke r5.<org.apache.pdfbox.pdmodel.common.PDRectangle: float getHeight()>()
+org.apache.pdfbox.printing.PDFPrintable.print : $d12 = $d11 / 2.0 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : $f3 = virtualinvoke r5.<org.apache.pdfbox.pdmodel.common.PDRectangle: float getHeight()>() >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $d13 = (double) $f3
+org.apache.pdfbox.printing.PDFPrintable.print : $f3 = virtualinvoke r5.<org.apache.pdfbox.pdmodel.common.PDRectangle: float getHeight()>() >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : $d13 = (double) $f3 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $d14 = $d13 * d2
+org.apache.pdfbox.printing.PDFPrintable.print : $d13 = (double) $f3 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : $d14 = $d13 * d2 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $d15 = d1 - $d14
+org.apache.pdfbox.printing.PDFPrintable.print : $d14 = $d13 * d2 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : $d15 = d1 - $d14 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $d16 = $d15 / 2.0
+org.apache.pdfbox.printing.PDFPrintable.print : $d15 = d1 - $d14 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : $d16 = $d15 / 2.0 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : virtualinvoke r3.<java.awt.Graphics2D: void translate(double,double)>($d12, $d16)
+org.apache.pdfbox.printing.PDFPrintable.print : $d16 = $d15 / 2.0 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : virtualinvoke r3.<java.awt.Graphics2D: void translate(double,double)>($d12, $d16) >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : r15 = null
+org.apache.pdfbox.printing.PDFPrintable.print : virtualinvoke r3.<java.awt.Graphics2D: void translate(double,double)>($d12, $d16) >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : $f0 = virtualinvoke r5.<org.apache.pdfbox.pdmodel.common.PDRectangle: float getWidth()>() >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $d5 = (double) $f0
+org.apache.pdfbox.printing.PDFPrintable.print : $f0 = virtualinvoke r5.<org.apache.pdfbox.pdmodel.common.PDRectangle: float getWidth()>() >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : $d5 = (double) $f0 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : d3 = d0 / $d5
+org.apache.pdfbox.printing.PDFPrintable.print : $d5 = (double) $f0 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : d3 = d0 / $d5 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $f1 = virtualinvoke r5.<org.apache.pdfbox.pdmodel.common.PDRectangle: float getHeight()>()
+org.apache.pdfbox.printing.PDFPrintable.print : d3 = d0 / $d5 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : $f1 = virtualinvoke r5.<org.apache.pdfbox.pdmodel.common.PDRectangle: float getHeight()>() >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $d6 = (double) $f1
+org.apache.pdfbox.printing.PDFPrintable.print : $f1 = virtualinvoke r5.<org.apache.pdfbox.pdmodel.common.PDRectangle: float getHeight()>() >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : $d6 = (double) $f1 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : d4 = d1 / $d6
+org.apache.pdfbox.printing.PDFPrintable.print : $d6 = (double) $f1 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : d4 = d1 / $d6 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : d2 = staticinvoke <java.lang.Math: double min(double,double)>(d3, d4)
+org.apache.pdfbox.printing.PDFPrintable.print : d4 = d1 / $d6 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : d2 = staticinvoke <java.lang.Math: double min(double,double)>(d3, d4) >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $b2 = d2 cmpl 1.0
+org.apache.pdfbox.printing.PDFPrintable.print : d2 = staticinvoke <java.lang.Math: double min(double,double)>(d3, d4) >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : $b2 = d2 cmpl 1.0 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : if $b2 <= 0
+org.apache.pdfbox.printing.PDFPrintable.print : $b2 = d2 cmpl 1.0 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : if $b2 <= 0 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r11 = r0.<org.apache.pdfbox.printing.PDFPrintable: org.apache.pdfbox.printing.Scaling scaling>
+org.apache.pdfbox.printing.PDFPrintable.print : if $b2 <= 0 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $b3 = d2 cmpg 1.0
+org.apache.pdfbox.printing.PDFPrintable.print : if $b2 <= 0 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : $b3 = d2 cmpg 1.0 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : if $b3 >= 0
+org.apache.pdfbox.printing.PDFPrintable.print : $b3 = d2 cmpg 1.0 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : if $b3 >= 0 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r13 = r0.<org.apache.pdfbox.printing.PDFPrintable: org.apache.pdfbox.printing.Scaling scaling>
+org.apache.pdfbox.printing.PDFPrintable.print : if $b3 >= 0 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $d7 = virtualinvoke r2.<java.awt.print.PageFormat: double getImageableX()>()
+org.apache.pdfbox.printing.PDFPrintable.print : if $b3 >= 0 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : $r13 = r0.<org.apache.pdfbox.printing.PDFPrintable: org.apache.pdfbox.printing.Scaling scaling> >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r14 = <org.apache.pdfbox.printing.Scaling: org.apache.pdfbox.printing.Scaling STRETCH_TO_FIT>
+org.apache.pdfbox.printing.PDFPrintable.print : $r13 = r0.<org.apache.pdfbox.printing.PDFPrintable: org.apache.pdfbox.printing.Scaling scaling> >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : $r14 = <org.apache.pdfbox.printing.Scaling: org.apache.pdfbox.printing.Scaling STRETCH_TO_FIT> >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : if $r13 != $r14
+org.apache.pdfbox.printing.PDFPrintable.print : $r14 = <org.apache.pdfbox.printing.Scaling: org.apache.pdfbox.printing.Scaling STRETCH_TO_FIT> >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : if $r13 != $r14 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : d2 = 1.0
+org.apache.pdfbox.printing.PDFPrintable.print : if $r13 != $r14 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $d7 = virtualinvoke r2.<java.awt.print.PageFormat: double getImageableX()>()
+org.apache.pdfbox.printing.PDFPrintable.print : if $r13 != $r14 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : d2 = 1.0 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $d7 = virtualinvoke r2.<java.awt.print.PageFormat: double getImageableX()>()
+org.apache.pdfbox.printing.PDFPrintable.print : d2 = 1.0 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : $r11 = r0.<org.apache.pdfbox.printing.PDFPrintable: org.apache.pdfbox.printing.Scaling scaling> >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r12 = <org.apache.pdfbox.printing.Scaling: org.apache.pdfbox.printing.Scaling SHRINK_TO_FIT>
+org.apache.pdfbox.printing.PDFPrintable.print : $r11 = r0.<org.apache.pdfbox.printing.PDFPrintable: org.apache.pdfbox.printing.Scaling scaling> >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : $r12 = <org.apache.pdfbox.printing.Scaling: org.apache.pdfbox.printing.Scaling SHRINK_TO_FIT> >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : if $r11 != $r12
+org.apache.pdfbox.printing.PDFPrintable.print : $r12 = <org.apache.pdfbox.printing.Scaling: org.apache.pdfbox.printing.Scaling SHRINK_TO_FIT> >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : if $r11 != $r12 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : d2 = 1.0
+org.apache.pdfbox.printing.PDFPrintable.print : if $r11 != $r12 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $b3 = d2 cmpg 1.0
+org.apache.pdfbox.printing.PDFPrintable.print : if $r11 != $r12 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception
+org.apache.pdfbox.printing.PDFPrintable.print : d2 = 1.0 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $b3 = d2 cmpg 1.0
+org.apache.pdfbox.printing.PDFPrintable.print : d2 = 1.0 >>>>>>>> org.apache.pdfbox.printing.PDFPrintable.print : $r25 := @caughtexception

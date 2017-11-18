@@ -1,0 +1,27 @@
+org.apache.pdfbox.pdmodel.PDPageContentStream.addPolygon : $z0 = virtualinvoke r0.<org.apache.pdfbox.pdmodel.PDPageContentStream: boolean isInTextMode()>() >>>>>>>> org.apache.pdfbox.pdmodel.PDPageContentStream.addPolygon : if $z0 == 0
+org.apache.pdfbox.pdmodel.PDPageContentStream.addPolygon : if $z0 == 0 >>>>>>>> org.apache.pdfbox.pdmodel.PDPageContentStream.addPolygon : $r3 = new java.lang.IllegalStateException
+org.apache.pdfbox.pdmodel.PDPageContentStream.addPolygon : if $z0 == 0 >>>>>>>> org.apache.pdfbox.pdmodel.PDPageContentStream.addPolygon : $i1 = lengthof r1
+org.apache.pdfbox.pdmodel.PDPageContentStream.addPolygon : $i1 = lengthof r1 >>>>>>>> org.apache.pdfbox.pdmodel.PDPageContentStream.addPolygon : $i2 = lengthof r2
+org.apache.pdfbox.pdmodel.PDPageContentStream.addPolygon : $i2 = lengthof r2 >>>>>>>> org.apache.pdfbox.pdmodel.PDPageContentStream.addPolygon : if $i1 == $i2
+org.apache.pdfbox.pdmodel.PDPageContentStream.addPolygon : if $i1 == $i2 >>>>>>>> org.apache.pdfbox.pdmodel.PDPageContentStream.addPolygon : $r4 = new java.lang.IllegalArgumentException
+org.apache.pdfbox.pdmodel.PDPageContentStream.addPolygon : if $i1 == $i2 >>>>>>>> org.apache.pdfbox.pdmodel.PDPageContentStream.addPolygon : i0 = 0
+org.apache.pdfbox.pdmodel.PDPageContentStream.addPolygon : i0 = 0 >>>>>>>> org.apache.pdfbox.pdmodel.PDPageContentStream.addPolygon : $i3 = lengthof r1
+org.apache.pdfbox.pdmodel.PDPageContentStream.addPolygon : $i3 = lengthof r1 >>>>>>>> org.apache.pdfbox.pdmodel.PDPageContentStream.addPolygon : if i0 >= $i3
+org.apache.pdfbox.pdmodel.PDPageContentStream.addPolygon : if i0 >= $i3 >>>>>>>> org.apache.pdfbox.pdmodel.PDPageContentStream.addPolygon : if i0 != 0
+org.apache.pdfbox.pdmodel.PDPageContentStream.addPolygon : if i0 >= $i3 >>>>>>>> org.apache.pdfbox.pdmodel.PDPageContentStream.addPolygon : virtualinvoke r0.<org.apache.pdfbox.pdmodel.PDPageContentStream: void closeSubPath()>()
+org.apache.pdfbox.pdmodel.PDPageContentStream.addPolygon : virtualinvoke r0.<org.apache.pdfbox.pdmodel.PDPageContentStream: void closeSubPath()>() >>>>>>>> org.apache.pdfbox.pdmodel.PDPageContentStream.addPolygon : return
+org.apache.pdfbox.pdmodel.PDPageContentStream.addPolygon : if i0 != 0 >>>>>>>> org.apache.pdfbox.pdmodel.PDPageContentStream.addPolygon : $f0 = r1[i0]
+org.apache.pdfbox.pdmodel.PDPageContentStream.addPolygon : if i0 != 0 >>>>>>>> org.apache.pdfbox.pdmodel.PDPageContentStream.addPolygon : $f2 = r1[i0]
+org.apache.pdfbox.pdmodel.PDPageContentStream.addPolygon : $f2 = r1[i0] >>>>>>>> org.apache.pdfbox.pdmodel.PDPageContentStream.addPolygon : $f3 = r2[i0]
+org.apache.pdfbox.pdmodel.PDPageContentStream.addPolygon : $f3 = r2[i0] >>>>>>>> org.apache.pdfbox.pdmodel.PDPageContentStream.addPolygon : virtualinvoke r0.<org.apache.pdfbox.pdmodel.PDPageContentStream: void lineTo(float,float)>($f2, $f3)
+org.apache.pdfbox.pdmodel.PDPageContentStream.addPolygon : virtualinvoke r0.<org.apache.pdfbox.pdmodel.PDPageContentStream: void lineTo(float,float)>($f2, $f3) >>>>>>>> org.apache.pdfbox.pdmodel.PDPageContentStream.addPolygon : i0 = i0 + 1
+org.apache.pdfbox.pdmodel.PDPageContentStream.addPolygon : i0 = i0 + 1 >>>>>>>> org.apache.pdfbox.pdmodel.PDPageContentStream.addPolygon : goto [?= $i3 = lengthof r1]
+org.apache.pdfbox.pdmodel.PDPageContentStream.addPolygon : goto [?= $i3 = lengthof r1] >>>>>>>> org.apache.pdfbox.pdmodel.PDPageContentStream.addPolygon : $i3 = lengthof r1
+org.apache.pdfbox.pdmodel.PDPageContentStream.addPolygon : $f0 = r1[i0] >>>>>>>> org.apache.pdfbox.pdmodel.PDPageContentStream.addPolygon : $f1 = r2[i0]
+org.apache.pdfbox.pdmodel.PDPageContentStream.addPolygon : $f1 = r2[i0] >>>>>>>> org.apache.pdfbox.pdmodel.PDPageContentStream.addPolygon : virtualinvoke r0.<org.apache.pdfbox.pdmodel.PDPageContentStream: void moveTo(float,float)>($f0, $f1)
+org.apache.pdfbox.pdmodel.PDPageContentStream.addPolygon : virtualinvoke r0.<org.apache.pdfbox.pdmodel.PDPageContentStream: void moveTo(float,float)>($f0, $f1) >>>>>>>> org.apache.pdfbox.pdmodel.PDPageContentStream.addPolygon : goto [?= i0 = i0 + 1]
+org.apache.pdfbox.pdmodel.PDPageContentStream.addPolygon : goto [?= i0 = i0 + 1] >>>>>>>> org.apache.pdfbox.pdmodel.PDPageContentStream.addPolygon : i0 = i0 + 1
+org.apache.pdfbox.pdmodel.PDPageContentStream.addPolygon : $r4 = new java.lang.IllegalArgumentException >>>>>>>> org.apache.pdfbox.pdmodel.PDPageContentStream.addPolygon : specialinvoke $r4.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>("Error: some points are missing coordinate")
+org.apache.pdfbox.pdmodel.PDPageContentStream.addPolygon : specialinvoke $r4.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>("Error: some points are missing coordinate") >>>>>>>> org.apache.pdfbox.pdmodel.PDPageContentStream.addPolygon : throw $r4
+org.apache.pdfbox.pdmodel.PDPageContentStream.addPolygon : $r3 = new java.lang.IllegalStateException >>>>>>>> org.apache.pdfbox.pdmodel.PDPageContentStream.addPolygon : specialinvoke $r3.<java.lang.IllegalStateException: void <init>(java.lang.String)>("Error: addPolygon is not allowed within a text block.")
+org.apache.pdfbox.pdmodel.PDPageContentStream.addPolygon : specialinvoke $r3.<java.lang.IllegalStateException: void <init>(java.lang.String)>("Error: addPolygon is not allowed within a text block.") >>>>>>>> org.apache.pdfbox.pdmodel.PDPageContentStream.addPolygon : throw $r3

@@ -1,0 +1,42 @@
+org.apache.pdfbox.filter.FlateFilter.decompress : r3 = newarray (byte)[2048] >>>>>>>> org.apache.pdfbox.filter.FlateFilter.decompress : virtualinvoke r1.<java.io.InputStream: int read(byte[],int,int)>(r3, 0, 2)
+org.apache.pdfbox.filter.FlateFilter.decompress : virtualinvoke r1.<java.io.InputStream: int read(byte[],int,int)>(r3, 0, 2) >>>>>>>> org.apache.pdfbox.filter.FlateFilter.decompress : i0 = virtualinvoke r1.<java.io.InputStream: int read(byte[])>(r3)
+org.apache.pdfbox.filter.FlateFilter.decompress : i0 = virtualinvoke r1.<java.io.InputStream: int read(byte[])>(r3) >>>>>>>> org.apache.pdfbox.filter.FlateFilter.decompress : if i0 <= 0
+org.apache.pdfbox.filter.FlateFilter.decompress : if i0 <= 0 >>>>>>>> org.apache.pdfbox.filter.FlateFilter.decompress : $r7 = new java.util.zip.Inflater
+org.apache.pdfbox.filter.FlateFilter.decompress : if i0 <= 0 >>>>>>>> org.apache.pdfbox.filter.FlateFilter.decompress : virtualinvoke r2.<java.io.OutputStream: void flush()>()
+org.apache.pdfbox.filter.FlateFilter.decompress : virtualinvoke r2.<java.io.OutputStream: void flush()>() >>>>>>>> org.apache.pdfbox.filter.FlateFilter.decompress : return
+org.apache.pdfbox.filter.FlateFilter.decompress : $r7 = new java.util.zip.Inflater >>>>>>>> org.apache.pdfbox.filter.FlateFilter.decompress : specialinvoke $r7.<java.util.zip.Inflater: void <init>(boolean)>(1)
+org.apache.pdfbox.filter.FlateFilter.decompress : specialinvoke $r7.<java.util.zip.Inflater: void <init>(boolean)>(1) >>>>>>>> org.apache.pdfbox.filter.FlateFilter.decompress : r4 = $r7
+org.apache.pdfbox.filter.FlateFilter.decompress : r4 = $r7 >>>>>>>> org.apache.pdfbox.filter.FlateFilter.decompress : virtualinvoke r4.<java.util.zip.Inflater: void setInput(byte[],int,int)>(r3, 0, i0)
+org.apache.pdfbox.filter.FlateFilter.decompress : virtualinvoke r4.<java.util.zip.Inflater: void setInput(byte[],int,int)>(r3, 0, i0) >>>>>>>> org.apache.pdfbox.filter.FlateFilter.decompress : r5 = newarray (byte)[1024]
+org.apache.pdfbox.filter.FlateFilter.decompress : r5 = newarray (byte)[1024] >>>>>>>> org.apache.pdfbox.filter.FlateFilter.decompress : z0 = 0
+org.apache.pdfbox.filter.FlateFilter.decompress : z0 = 0 >>>>>>>> org.apache.pdfbox.filter.FlateFilter.decompress : z1 = 0
+org.apache.pdfbox.filter.FlateFilter.decompress : z1 = 0 >>>>>>>> org.apache.pdfbox.filter.FlateFilter.decompress : i2 = virtualinvoke r4.<java.util.zip.Inflater: int inflate(byte[])>(r5)
+org.apache.pdfbox.filter.FlateFilter.decompress : z1 = 0 >>>>>>>> org.apache.pdfbox.filter.FlateFilter.decompress : $r8 := @caughtexception
+org.apache.pdfbox.filter.FlateFilter.decompress : r6 = $r8 >>>>>>>> org.apache.pdfbox.filter.FlateFilter.decompress : if z0 == 0
+org.apache.pdfbox.filter.FlateFilter.decompress : if z0 == 0 >>>>>>>> org.apache.pdfbox.filter.FlateFilter.decompress : $r9 = <org.apache.pdfbox.filter.FlateFilter: org.apache.commons.logging.Log LOG>
+org.apache.pdfbox.filter.FlateFilter.decompress : if z0 == 0 >>>>>>>> org.apache.pdfbox.filter.FlateFilter.decompress : throw r6
+org.apache.pdfbox.filter.FlateFilter.decompress : $r9 = <org.apache.pdfbox.filter.FlateFilter: org.apache.commons.logging.Log LOG> >>>>>>>> org.apache.pdfbox.filter.FlateFilter.decompress : interfaceinvoke $r9.<org.apache.commons.logging.Log: void warn(java.lang.Object)>("FlateFilter: premature end of stream due to a DataFormatException")
+org.apache.pdfbox.filter.FlateFilter.decompress : interfaceinvoke $r9.<org.apache.commons.logging.Log: void warn(java.lang.Object)>("FlateFilter: premature end of stream due to a DataFormatException") >>>>>>>> org.apache.pdfbox.filter.FlateFilter.decompress : goto [?= virtualinvoke r4.<java.util.zip.Inflater: void end()>()]
+org.apache.pdfbox.filter.FlateFilter.decompress : goto [?= virtualinvoke r4.<java.util.zip.Inflater: void end()>()] >>>>>>>> org.apache.pdfbox.filter.FlateFilter.decompress : virtualinvoke r4.<java.util.zip.Inflater: void end()>()
+org.apache.pdfbox.filter.FlateFilter.decompress : virtualinvoke r4.<java.util.zip.Inflater: void end()>() >>>>>>>> org.apache.pdfbox.filter.FlateFilter.decompress : virtualinvoke r2.<java.io.OutputStream: void flush()>()
+org.apache.pdfbox.filter.FlateFilter.decompress : i2 = virtualinvoke r4.<java.util.zip.Inflater: int inflate(byte[])>(r5) >>>>>>>> org.apache.pdfbox.filter.FlateFilter.decompress : goto [?= (branch)]
+org.apache.pdfbox.filter.FlateFilter.decompress : i2 = virtualinvoke r4.<java.util.zip.Inflater: int inflate(byte[])>(r5) >>>>>>>> org.apache.pdfbox.filter.FlateFilter.decompress : $r8 := @caughtexception
+org.apache.pdfbox.filter.FlateFilter.decompress : goto [?= (branch)] >>>>>>>> org.apache.pdfbox.filter.FlateFilter.decompress : if i2 == 0
+org.apache.pdfbox.filter.FlateFilter.decompress : if i2 == 0 >>>>>>>> org.apache.pdfbox.filter.FlateFilter.decompress : virtualinvoke r2.<java.io.OutputStream: void write(byte[],int,int)>(r5, 0, i2)
+org.apache.pdfbox.filter.FlateFilter.decompress : if i2 == 0 >>>>>>>> org.apache.pdfbox.filter.FlateFilter.decompress : $z2 = virtualinvoke r4.<java.util.zip.Inflater: boolean finished()>()
+org.apache.pdfbox.filter.FlateFilter.decompress : $z2 = virtualinvoke r4.<java.util.zip.Inflater: boolean finished()>() >>>>>>>> org.apache.pdfbox.filter.FlateFilter.decompress : if $z2 != 0
+org.apache.pdfbox.filter.FlateFilter.decompress : if $z2 != 0 >>>>>>>> org.apache.pdfbox.filter.FlateFilter.decompress : $z3 = virtualinvoke r4.<java.util.zip.Inflater: boolean needsDictionary()>()
+org.apache.pdfbox.filter.FlateFilter.decompress : if $z2 != 0 >>>>>>>> org.apache.pdfbox.filter.FlateFilter.decompress : virtualinvoke r4.<java.util.zip.Inflater: void end()>()
+org.apache.pdfbox.filter.FlateFilter.decompress : $z3 = virtualinvoke r4.<java.util.zip.Inflater: boolean needsDictionary()>() >>>>>>>> org.apache.pdfbox.filter.FlateFilter.decompress : if $z3 != 0
+org.apache.pdfbox.filter.FlateFilter.decompress : if $z3 != 0 >>>>>>>> org.apache.pdfbox.filter.FlateFilter.decompress : $i3 = virtualinvoke r1.<java.io.InputStream: int available()>()
+org.apache.pdfbox.filter.FlateFilter.decompress : if $z3 != 0 >>>>>>>> org.apache.pdfbox.filter.FlateFilter.decompress : virtualinvoke r4.<java.util.zip.Inflater: void end()>()
+org.apache.pdfbox.filter.FlateFilter.decompress : $i3 = virtualinvoke r1.<java.io.InputStream: int available()>() >>>>>>>> org.apache.pdfbox.filter.FlateFilter.decompress : if $i3 != 0
+org.apache.pdfbox.filter.FlateFilter.decompress : if $i3 != 0 >>>>>>>> org.apache.pdfbox.filter.FlateFilter.decompress : goto [?= virtualinvoke r4.<java.util.zip.Inflater: void end()>()]
+org.apache.pdfbox.filter.FlateFilter.decompress : if $i3 != 0 >>>>>>>> org.apache.pdfbox.filter.FlateFilter.decompress : i4 = virtualinvoke r1.<java.io.InputStream: int read(byte[])>(r3)
+org.apache.pdfbox.filter.FlateFilter.decompress : i4 = virtualinvoke r1.<java.io.InputStream: int read(byte[])>(r3) >>>>>>>> org.apache.pdfbox.filter.FlateFilter.decompress : virtualinvoke r4.<java.util.zip.Inflater: void setInput(byte[],int,int)>(r3, 0, i4)
+org.apache.pdfbox.filter.FlateFilter.decompress : virtualinvoke r4.<java.util.zip.Inflater: void setInput(byte[],int,int)>(r3, 0, i4) >>>>>>>> org.apache.pdfbox.filter.FlateFilter.decompress : goto [?= z1 = 0]
+org.apache.pdfbox.filter.FlateFilter.decompress : goto [?= z1 = 0] >>>>>>>> org.apache.pdfbox.filter.FlateFilter.decompress : z1 = 0
+org.apache.pdfbox.filter.FlateFilter.decompress : goto [?= virtualinvoke r4.<java.util.zip.Inflater: void end()>()] >>>>>>>> org.apache.pdfbox.filter.FlateFilter.decompress : virtualinvoke r4.<java.util.zip.Inflater: void end()>()
+org.apache.pdfbox.filter.FlateFilter.decompress : virtualinvoke r2.<java.io.OutputStream: void write(byte[],int,int)>(r5, 0, i2) >>>>>>>> org.apache.pdfbox.filter.FlateFilter.decompress : z0 = 1
+org.apache.pdfbox.filter.FlateFilter.decompress : z0 = 1 >>>>>>>> org.apache.pdfbox.filter.FlateFilter.decompress : goto [?= z1 = 0]
+org.apache.pdfbox.filter.FlateFilter.decompress : goto [?= z1 = 0] >>>>>>>> org.apache.pdfbox.filter.FlateFilter.decompress : z1 = 0

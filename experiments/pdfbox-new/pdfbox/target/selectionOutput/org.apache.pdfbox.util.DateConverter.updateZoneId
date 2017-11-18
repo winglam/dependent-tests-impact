@@ -1,0 +1,40 @@
+org.apache.pdfbox.util.DateConverter.updateZoneId : i0 = virtualinvoke r0.<java.util.TimeZone: int getRawOffset()>() >>>>>>>> org.apache.pdfbox.util.DateConverter.updateZoneId : b1 = 43
+org.apache.pdfbox.util.DateConverter.updateZoneId : b1 = 43 >>>>>>>> org.apache.pdfbox.util.DateConverter.updateZoneId : if i0 >= 0
+org.apache.pdfbox.util.DateConverter.updateZoneId : if i0 >= 0 >>>>>>>> org.apache.pdfbox.util.DateConverter.updateZoneId : b1 = 45
+org.apache.pdfbox.util.DateConverter.updateZoneId : if i0 >= 0 >>>>>>>> org.apache.pdfbox.util.DateConverter.updateZoneId : i2 = i0 / 3600000
+org.apache.pdfbox.util.DateConverter.updateZoneId : i2 = i0 / 3600000 >>>>>>>> org.apache.pdfbox.util.DateConverter.updateZoneId : $i4 = i0 % 3600000
+org.apache.pdfbox.util.DateConverter.updateZoneId : $i4 = i0 % 3600000 >>>>>>>> org.apache.pdfbox.util.DateConverter.updateZoneId : i3 = $i4 / 60000
+org.apache.pdfbox.util.DateConverter.updateZoneId : i3 = $i4 / 60000 >>>>>>>> org.apache.pdfbox.util.DateConverter.updateZoneId : if i0 != 0
+org.apache.pdfbox.util.DateConverter.updateZoneId : if i0 != 0 >>>>>>>> org.apache.pdfbox.util.DateConverter.updateZoneId : virtualinvoke r0.<java.util.TimeZone: void setID(java.lang.String)>("GMT")
+org.apache.pdfbox.util.DateConverter.updateZoneId : if i0 != 0 >>>>>>>> org.apache.pdfbox.util.DateConverter.updateZoneId : if b1 != 43
+org.apache.pdfbox.util.DateConverter.updateZoneId : if b1 != 43 >>>>>>>> org.apache.pdfbox.util.DateConverter.updateZoneId : if i2 > 12
+org.apache.pdfbox.util.DateConverter.updateZoneId : if b1 != 43 >>>>>>>> org.apache.pdfbox.util.DateConverter.updateZoneId : if b1 != 45
+org.apache.pdfbox.util.DateConverter.updateZoneId : if b1 != 45 >>>>>>>> org.apache.pdfbox.util.DateConverter.updateZoneId : if i2 > 14
+org.apache.pdfbox.util.DateConverter.updateZoneId : if b1 != 45 >>>>>>>> org.apache.pdfbox.util.DateConverter.updateZoneId : virtualinvoke r0.<java.util.TimeZone: void setID(java.lang.String)>("unknown")
+org.apache.pdfbox.util.DateConverter.updateZoneId : virtualinvoke r0.<java.util.TimeZone: void setID(java.lang.String)>("unknown") >>>>>>>> org.apache.pdfbox.util.DateConverter.updateZoneId : return
+org.apache.pdfbox.util.DateConverter.updateZoneId : if i2 > 14 >>>>>>>> org.apache.pdfbox.util.DateConverter.updateZoneId : $r6 = <java.util.Locale: java.util.Locale US>
+org.apache.pdfbox.util.DateConverter.updateZoneId : if i2 > 14 >>>>>>>> org.apache.pdfbox.util.DateConverter.updateZoneId : virtualinvoke r0.<java.util.TimeZone: void setID(java.lang.String)>("unknown")
+org.apache.pdfbox.util.DateConverter.updateZoneId : $r6 = <java.util.Locale: java.util.Locale US> >>>>>>>> org.apache.pdfbox.util.DateConverter.updateZoneId : $r7 = newarray (java.lang.Object)[2]
+org.apache.pdfbox.util.DateConverter.updateZoneId : $r7 = newarray (java.lang.Object)[2] >>>>>>>> org.apache.pdfbox.util.DateConverter.updateZoneId : $r8 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(i2)
+org.apache.pdfbox.util.DateConverter.updateZoneId : $r8 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(i2) >>>>>>>> org.apache.pdfbox.util.DateConverter.updateZoneId : $r7[0] = $r8
+org.apache.pdfbox.util.DateConverter.updateZoneId : $r7[0] = $r8 >>>>>>>> org.apache.pdfbox.util.DateConverter.updateZoneId : $r9 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(i3)
+org.apache.pdfbox.util.DateConverter.updateZoneId : $r9 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(i3) >>>>>>>> org.apache.pdfbox.util.DateConverter.updateZoneId : $r7[1] = $r9
+org.apache.pdfbox.util.DateConverter.updateZoneId : $r7[1] = $r9 >>>>>>>> org.apache.pdfbox.util.DateConverter.updateZoneId : $r10 = staticinvoke <java.lang.String: java.lang.String format(java.util.Locale,java.lang.String,java.lang.Object[])>($r6, "GMT-%02d:%02d", $r7)
+org.apache.pdfbox.util.DateConverter.updateZoneId : $r10 = staticinvoke <java.lang.String: java.lang.String format(java.util.Locale,java.lang.String,java.lang.Object[])>($r6, "GMT-%02d:%02d", $r7) >>>>>>>> org.apache.pdfbox.util.DateConverter.updateZoneId : virtualinvoke r0.<java.util.TimeZone: void setID(java.lang.String)>($r10)
+org.apache.pdfbox.util.DateConverter.updateZoneId : virtualinvoke r0.<java.util.TimeZone: void setID(java.lang.String)>($r10) >>>>>>>> org.apache.pdfbox.util.DateConverter.updateZoneId : goto [?= return]
+org.apache.pdfbox.util.DateConverter.updateZoneId : goto [?= return] >>>>>>>> org.apache.pdfbox.util.DateConverter.updateZoneId : return
+org.apache.pdfbox.util.DateConverter.updateZoneId : if i2 > 12 >>>>>>>> org.apache.pdfbox.util.DateConverter.updateZoneId : $r1 = <java.util.Locale: java.util.Locale US>
+org.apache.pdfbox.util.DateConverter.updateZoneId : if i2 > 12 >>>>>>>> org.apache.pdfbox.util.DateConverter.updateZoneId : if b1 != 45
+org.apache.pdfbox.util.DateConverter.updateZoneId : $r1 = <java.util.Locale: java.util.Locale US> >>>>>>>> org.apache.pdfbox.util.DateConverter.updateZoneId : $r2 = newarray (java.lang.Object)[2]
+org.apache.pdfbox.util.DateConverter.updateZoneId : $r2 = newarray (java.lang.Object)[2] >>>>>>>> org.apache.pdfbox.util.DateConverter.updateZoneId : $r3 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(i2)
+org.apache.pdfbox.util.DateConverter.updateZoneId : $r3 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(i2) >>>>>>>> org.apache.pdfbox.util.DateConverter.updateZoneId : $r2[0] = $r3
+org.apache.pdfbox.util.DateConverter.updateZoneId : $r2[0] = $r3 >>>>>>>> org.apache.pdfbox.util.DateConverter.updateZoneId : $r4 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(i3)
+org.apache.pdfbox.util.DateConverter.updateZoneId : $r4 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(i3) >>>>>>>> org.apache.pdfbox.util.DateConverter.updateZoneId : $r2[1] = $r4
+org.apache.pdfbox.util.DateConverter.updateZoneId : $r2[1] = $r4 >>>>>>>> org.apache.pdfbox.util.DateConverter.updateZoneId : $r5 = staticinvoke <java.lang.String: java.lang.String format(java.util.Locale,java.lang.String,java.lang.Object[])>($r1, "GMT+%02d:%02d", $r2)
+org.apache.pdfbox.util.DateConverter.updateZoneId : $r5 = staticinvoke <java.lang.String: java.lang.String format(java.util.Locale,java.lang.String,java.lang.Object[])>($r1, "GMT+%02d:%02d", $r2) >>>>>>>> org.apache.pdfbox.util.DateConverter.updateZoneId : virtualinvoke r0.<java.util.TimeZone: void setID(java.lang.String)>($r5)
+org.apache.pdfbox.util.DateConverter.updateZoneId : virtualinvoke r0.<java.util.TimeZone: void setID(java.lang.String)>($r5) >>>>>>>> org.apache.pdfbox.util.DateConverter.updateZoneId : goto [?= return]
+org.apache.pdfbox.util.DateConverter.updateZoneId : goto [?= return] >>>>>>>> org.apache.pdfbox.util.DateConverter.updateZoneId : return
+org.apache.pdfbox.util.DateConverter.updateZoneId : virtualinvoke r0.<java.util.TimeZone: void setID(java.lang.String)>("GMT") >>>>>>>> org.apache.pdfbox.util.DateConverter.updateZoneId : goto [?= return]
+org.apache.pdfbox.util.DateConverter.updateZoneId : goto [?= return] >>>>>>>> org.apache.pdfbox.util.DateConverter.updateZoneId : return
+org.apache.pdfbox.util.DateConverter.updateZoneId : b1 = 45 >>>>>>>> org.apache.pdfbox.util.DateConverter.updateZoneId : i0 = neg i0
+org.apache.pdfbox.util.DateConverter.updateZoneId : i0 = neg i0 >>>>>>>> org.apache.pdfbox.util.DateConverter.updateZoneId : i2 = i0 / 3600000

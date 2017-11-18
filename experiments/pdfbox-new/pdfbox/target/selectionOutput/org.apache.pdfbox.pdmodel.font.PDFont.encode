@@ -1,0 +1,14 @@
+org.apache.pdfbox.pdmodel.font.PDFont.encode : $r2 = new java.io.ByteArrayOutputStream >>>>>>>> org.apache.pdfbox.pdmodel.font.PDFont.encode : specialinvoke $r2.<java.io.ByteArrayOutputStream: void <init>()>()
+org.apache.pdfbox.pdmodel.font.PDFont.encode : specialinvoke $r2.<java.io.ByteArrayOutputStream: void <init>()>() >>>>>>>> org.apache.pdfbox.pdmodel.font.PDFont.encode : r3 = $r2
+org.apache.pdfbox.pdmodel.font.PDFont.encode : r3 = $r2 >>>>>>>> org.apache.pdfbox.pdmodel.font.PDFont.encode : i0 = 0
+org.apache.pdfbox.pdmodel.font.PDFont.encode : i0 = 0 >>>>>>>> org.apache.pdfbox.pdmodel.font.PDFont.encode : $i2 = virtualinvoke r1.<java.lang.String: int length()>()
+org.apache.pdfbox.pdmodel.font.PDFont.encode : $i2 = virtualinvoke r1.<java.lang.String: int length()>() >>>>>>>> org.apache.pdfbox.pdmodel.font.PDFont.encode : if i0 >= $i2
+org.apache.pdfbox.pdmodel.font.PDFont.encode : if i0 >= $i2 >>>>>>>> org.apache.pdfbox.pdmodel.font.PDFont.encode : i1 = virtualinvoke r1.<java.lang.String: int codePointAt(int)>(i0)
+org.apache.pdfbox.pdmodel.font.PDFont.encode : if i0 >= $i2 >>>>>>>> org.apache.pdfbox.pdmodel.font.PDFont.encode : $r5 = virtualinvoke r3.<java.io.ByteArrayOutputStream: byte[] toByteArray()>()
+org.apache.pdfbox.pdmodel.font.PDFont.encode : $r5 = virtualinvoke r3.<java.io.ByteArrayOutputStream: byte[] toByteArray()>() >>>>>>>> org.apache.pdfbox.pdmodel.font.PDFont.encode : return $r5
+org.apache.pdfbox.pdmodel.font.PDFont.encode : i1 = virtualinvoke r1.<java.lang.String: int codePointAt(int)>(i0) >>>>>>>> org.apache.pdfbox.pdmodel.font.PDFont.encode : r4 = virtualinvoke r0.<org.apache.pdfbox.pdmodel.font.PDFont: byte[] encode(int)>(i1)
+org.apache.pdfbox.pdmodel.font.PDFont.encode : r4 = virtualinvoke r0.<org.apache.pdfbox.pdmodel.font.PDFont: byte[] encode(int)>(i1) >>>>>>>> org.apache.pdfbox.pdmodel.font.PDFont.encode : virtualinvoke r3.<java.io.ByteArrayOutputStream: void write(byte[])>(r4)
+org.apache.pdfbox.pdmodel.font.PDFont.encode : virtualinvoke r3.<java.io.ByteArrayOutputStream: void write(byte[])>(r4) >>>>>>>> org.apache.pdfbox.pdmodel.font.PDFont.encode : $i3 = staticinvoke <java.lang.Character: int charCount(int)>(i1)
+org.apache.pdfbox.pdmodel.font.PDFont.encode : $i3 = staticinvoke <java.lang.Character: int charCount(int)>(i1) >>>>>>>> org.apache.pdfbox.pdmodel.font.PDFont.encode : i0 = i0 + $i3
+org.apache.pdfbox.pdmodel.font.PDFont.encode : i0 = i0 + $i3 >>>>>>>> org.apache.pdfbox.pdmodel.font.PDFont.encode : goto [?= $i2 = virtualinvoke r1.<java.lang.String: int length()>()]
+org.apache.pdfbox.pdmodel.font.PDFont.encode : goto [?= $i2 = virtualinvoke r1.<java.lang.String: int length()>()] >>>>>>>> org.apache.pdfbox.pdmodel.font.PDFont.encode : $i2 = virtualinvoke r1.<java.lang.String: int length()>()

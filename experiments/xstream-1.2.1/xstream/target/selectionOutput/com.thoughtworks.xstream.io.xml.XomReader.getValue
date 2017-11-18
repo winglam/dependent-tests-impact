@@ -1,0 +1,19 @@
+com.thoughtworks.xstream.io.xml.XomReader.getValue : $r1 = new java.lang.StringBuffer >>>>>>>> com.thoughtworks.xstream.io.xml.XomReader.getValue : specialinvoke $r1.<java.lang.StringBuffer: void <init>()>()
+com.thoughtworks.xstream.io.xml.XomReader.getValue : specialinvoke $r1.<java.lang.StringBuffer: void <init>()>() >>>>>>>> com.thoughtworks.xstream.io.xml.XomReader.getValue : r2 = $r1
+com.thoughtworks.xstream.io.xml.XomReader.getValue : r2 = $r1 >>>>>>>> com.thoughtworks.xstream.io.xml.XomReader.getValue : $r5 = r0.<com.thoughtworks.xstream.io.xml.XomReader: nu.xom.Element currentElement>
+com.thoughtworks.xstream.io.xml.XomReader.getValue : $r5 = r0.<com.thoughtworks.xstream.io.xml.XomReader: nu.xom.Element currentElement> >>>>>>>> com.thoughtworks.xstream.io.xml.XomReader.getValue : i0 = virtualinvoke $r5.<nu.xom.Element: int getChildCount()>()
+com.thoughtworks.xstream.io.xml.XomReader.getValue : i0 = virtualinvoke $r5.<nu.xom.Element: int getChildCount()>() >>>>>>>> com.thoughtworks.xstream.io.xml.XomReader.getValue : i1 = 0
+com.thoughtworks.xstream.io.xml.XomReader.getValue : i1 = 0 >>>>>>>> com.thoughtworks.xstream.io.xml.XomReader.getValue : if i1 >= i0
+com.thoughtworks.xstream.io.xml.XomReader.getValue : if i1 >= i0 >>>>>>>> com.thoughtworks.xstream.io.xml.XomReader.getValue : $r6 = r0.<com.thoughtworks.xstream.io.xml.XomReader: nu.xom.Element currentElement>
+com.thoughtworks.xstream.io.xml.XomReader.getValue : if i1 >= i0 >>>>>>>> com.thoughtworks.xstream.io.xml.XomReader.getValue : $r9 = virtualinvoke r2.<java.lang.StringBuffer: java.lang.String toString()>()
+com.thoughtworks.xstream.io.xml.XomReader.getValue : $r9 = virtualinvoke r2.<java.lang.StringBuffer: java.lang.String toString()>() >>>>>>>> com.thoughtworks.xstream.io.xml.XomReader.getValue : return $r9
+com.thoughtworks.xstream.io.xml.XomReader.getValue : $r6 = r0.<com.thoughtworks.xstream.io.xml.XomReader: nu.xom.Element currentElement> >>>>>>>> com.thoughtworks.xstream.io.xml.XomReader.getValue : r3 = virtualinvoke $r6.<nu.xom.Element: nu.xom.Node getChild(int)>(i1)
+com.thoughtworks.xstream.io.xml.XomReader.getValue : r3 = virtualinvoke $r6.<nu.xom.Element: nu.xom.Node getChild(int)>(i1) >>>>>>>> com.thoughtworks.xstream.io.xml.XomReader.getValue : $z0 = r3 instanceof nu.xom.Text
+com.thoughtworks.xstream.io.xml.XomReader.getValue : $z0 = r3 instanceof nu.xom.Text >>>>>>>> com.thoughtworks.xstream.io.xml.XomReader.getValue : if $z0 == 0
+com.thoughtworks.xstream.io.xml.XomReader.getValue : if $z0 == 0 >>>>>>>> com.thoughtworks.xstream.io.xml.XomReader.getValue : r4 = (nu.xom.Text) r3
+com.thoughtworks.xstream.io.xml.XomReader.getValue : if $z0 == 0 >>>>>>>> com.thoughtworks.xstream.io.xml.XomReader.getValue : i1 = i1 + 1
+com.thoughtworks.xstream.io.xml.XomReader.getValue : i1 = i1 + 1 >>>>>>>> com.thoughtworks.xstream.io.xml.XomReader.getValue : goto [?= (branch)]
+com.thoughtworks.xstream.io.xml.XomReader.getValue : goto [?= (branch)] >>>>>>>> com.thoughtworks.xstream.io.xml.XomReader.getValue : if i1 >= i0
+com.thoughtworks.xstream.io.xml.XomReader.getValue : r4 = (nu.xom.Text) r3 >>>>>>>> com.thoughtworks.xstream.io.xml.XomReader.getValue : $r7 = virtualinvoke r4.<nu.xom.Text: java.lang.String getValue()>()
+com.thoughtworks.xstream.io.xml.XomReader.getValue : $r7 = virtualinvoke r4.<nu.xom.Text: java.lang.String getValue()>() >>>>>>>> com.thoughtworks.xstream.io.xml.XomReader.getValue : virtualinvoke r2.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>($r7)
+com.thoughtworks.xstream.io.xml.XomReader.getValue : virtualinvoke r2.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>($r7) >>>>>>>> com.thoughtworks.xstream.io.xml.XomReader.getValue : i1 = i1 + 1

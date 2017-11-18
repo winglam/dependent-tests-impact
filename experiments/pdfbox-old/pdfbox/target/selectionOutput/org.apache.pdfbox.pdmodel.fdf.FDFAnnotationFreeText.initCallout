@@ -1,0 +1,19 @@
+org.apache.pdfbox.pdmodel.fdf.FDFAnnotationFreeText.initCallout : r2 = interfaceinvoke r1.<org.w3c.dom.Element: java.lang.String getAttribute(java.lang.String)>("callout") >>>>>>>> org.apache.pdfbox.pdmodel.fdf.FDFAnnotationFreeText.initCallout : if r2 == null
+org.apache.pdfbox.pdmodel.fdf.FDFAnnotationFreeText.initCallout : if r2 == null >>>>>>>> org.apache.pdfbox.pdmodel.fdf.FDFAnnotationFreeText.initCallout : $z0 = virtualinvoke r2.<java.lang.String: boolean isEmpty()>()
+org.apache.pdfbox.pdmodel.fdf.FDFAnnotationFreeText.initCallout : if r2 == null >>>>>>>> org.apache.pdfbox.pdmodel.fdf.FDFAnnotationFreeText.initCallout : return
+org.apache.pdfbox.pdmodel.fdf.FDFAnnotationFreeText.initCallout : $z0 = virtualinvoke r2.<java.lang.String: boolean isEmpty()>() >>>>>>>> org.apache.pdfbox.pdmodel.fdf.FDFAnnotationFreeText.initCallout : if $z0 != 0
+org.apache.pdfbox.pdmodel.fdf.FDFAnnotationFreeText.initCallout : if $z0 != 0 >>>>>>>> org.apache.pdfbox.pdmodel.fdf.FDFAnnotationFreeText.initCallout : r3 = virtualinvoke r2.<java.lang.String: java.lang.String[] split(java.lang.String)>(",")
+org.apache.pdfbox.pdmodel.fdf.FDFAnnotationFreeText.initCallout : if $z0 != 0 >>>>>>>> org.apache.pdfbox.pdmodel.fdf.FDFAnnotationFreeText.initCallout : return
+org.apache.pdfbox.pdmodel.fdf.FDFAnnotationFreeText.initCallout : r3 = virtualinvoke r2.<java.lang.String: java.lang.String[] split(java.lang.String)>(",") >>>>>>>> org.apache.pdfbox.pdmodel.fdf.FDFAnnotationFreeText.initCallout : $i0 = lengthof r3
+org.apache.pdfbox.pdmodel.fdf.FDFAnnotationFreeText.initCallout : $i0 = lengthof r3 >>>>>>>> org.apache.pdfbox.pdmodel.fdf.FDFAnnotationFreeText.initCallout : r4 = newarray (float)[$i0]
+org.apache.pdfbox.pdmodel.fdf.FDFAnnotationFreeText.initCallout : r4 = newarray (float)[$i0] >>>>>>>> org.apache.pdfbox.pdmodel.fdf.FDFAnnotationFreeText.initCallout : i2 = 0
+org.apache.pdfbox.pdmodel.fdf.FDFAnnotationFreeText.initCallout : i2 = 0 >>>>>>>> org.apache.pdfbox.pdmodel.fdf.FDFAnnotationFreeText.initCallout : $i1 = lengthof r3
+org.apache.pdfbox.pdmodel.fdf.FDFAnnotationFreeText.initCallout : $i1 = lengthof r3 >>>>>>>> org.apache.pdfbox.pdmodel.fdf.FDFAnnotationFreeText.initCallout : if i2 >= $i1
+org.apache.pdfbox.pdmodel.fdf.FDFAnnotationFreeText.initCallout : if i2 >= $i1 >>>>>>>> org.apache.pdfbox.pdmodel.fdf.FDFAnnotationFreeText.initCallout : $r5 = r3[i2]
+org.apache.pdfbox.pdmodel.fdf.FDFAnnotationFreeText.initCallout : if i2 >= $i1 >>>>>>>> org.apache.pdfbox.pdmodel.fdf.FDFAnnotationFreeText.initCallout : virtualinvoke r0.<org.apache.pdfbox.pdmodel.fdf.FDFAnnotationFreeText: void setCallout(float[])>(r4)
+org.apache.pdfbox.pdmodel.fdf.FDFAnnotationFreeText.initCallout : virtualinvoke r0.<org.apache.pdfbox.pdmodel.fdf.FDFAnnotationFreeText: void setCallout(float[])>(r4) >>>>>>>> org.apache.pdfbox.pdmodel.fdf.FDFAnnotationFreeText.initCallout : return
+org.apache.pdfbox.pdmodel.fdf.FDFAnnotationFreeText.initCallout : $r5 = r3[i2] >>>>>>>> org.apache.pdfbox.pdmodel.fdf.FDFAnnotationFreeText.initCallout : $f0 = staticinvoke <java.lang.Float: float parseFloat(java.lang.String)>($r5)
+org.apache.pdfbox.pdmodel.fdf.FDFAnnotationFreeText.initCallout : $f0 = staticinvoke <java.lang.Float: float parseFloat(java.lang.String)>($r5) >>>>>>>> org.apache.pdfbox.pdmodel.fdf.FDFAnnotationFreeText.initCallout : r4[i2] = $f0
+org.apache.pdfbox.pdmodel.fdf.FDFAnnotationFreeText.initCallout : r4[i2] = $f0 >>>>>>>> org.apache.pdfbox.pdmodel.fdf.FDFAnnotationFreeText.initCallout : i2 = i2 + 1
+org.apache.pdfbox.pdmodel.fdf.FDFAnnotationFreeText.initCallout : i2 = i2 + 1 >>>>>>>> org.apache.pdfbox.pdmodel.fdf.FDFAnnotationFreeText.initCallout : goto [?= $i1 = lengthof r3]
+org.apache.pdfbox.pdmodel.fdf.FDFAnnotationFreeText.initCallout : goto [?= $i1 = lengthof r3] >>>>>>>> org.apache.pdfbox.pdmodel.fdf.FDFAnnotationFreeText.initCallout : $i1 = lengthof r3

@@ -1,0 +1,42 @@
+org.apache.pdfbox.cos.COSDictionary.getBoolean : $z1 = r3 instanceof org.apache.pdfbox.cos.COSBoolean
+org.apache.pdfbox.cos.COSDictionary.getBoolean : z2 = z0
+org.apache.pdfbox.cos.COSDictionary.getBoolean : r3 = virtualinvoke r0.<org.apache.pdfbox.cos.COSDictionary: org.apache.pdfbox.cos.COSBase getDictionaryObject(org.apache.pdfbox.cos.COSName,org.apache.pdfbox.cos.COSName)>(r1, r2)
+org.apache.pdfbox.cos.COSDictionary.getBoolean : return z2
+org.apache.pdfbox.cos.COSDictionary.getBoolean : $z1 = virtualinvoke r0.<org.apache.pdfbox.cos.COSDictionary: boolean getBoolean(org.apache.pdfbox.cos.COSName,org.apache.pdfbox.cos.COSName,boolean)>(r1, null, z0)
+org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : $z0 = r5 instanceof org.apache.pdfbox.cos.COSObject
+org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : return r5
+org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : $z1 = r5 instanceof org.apache.pdfbox.cos.COSNull
+org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : $r2 = r0.<org.apache.pdfbox.cos.COSDictionary: java.util.Map items>
+org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : if r2 == null goto return r3
+org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : r3 = virtualinvoke r0.<org.apache.pdfbox.cos.COSDictionary: org.apache.pdfbox.cos.COSBase getDictionaryObject(org.apache.pdfbox.cos.COSName)>(r1)
+org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : if r3 != null goto return r3
+org.apache.pdfbox.util.SmallMap.findKey : $z0 = virtualinvoke r0.<org.apache.pdfbox.util.SmallMap: boolean isEmpty()>()
+org.apache.pdfbox.pdmodel.interactive.pagenavigation.PDTransition.isFlyAreaOpaque : $r1 = virtualinvoke r0.<org.apache.pdfbox.pdmodel.interactive.pagenavigation.PDTransition: org.apache.pdfbox.cos.COSDictionary getCOSObject()>()
+org.apache.pdfbox.pdmodel.interactive.pagenavigation.PDTransition.getStyle : $r1 = virtualinvoke r0.<org.apache.pdfbox.pdmodel.interactive.pagenavigation.PDTransition: org.apache.pdfbox.cos.COSDictionary getCOSObject()>()
+org.apache.pdfbox.util.SmallMap.get : if i0 >= 0 goto $r2 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.util.SmallMap.get : i0 = specialinvoke r0.<org.apache.pdfbox.util.SmallMap: int findKey(java.lang.Object)>(r1)
+org.apache.pdfbox.pdmodel.interactive.pagenavigation.PDTransition.getFlyScale : $r1 = virtualinvoke r0.<org.apache.pdfbox.pdmodel.interactive.pagenavigation.PDTransition: org.apache.pdfbox.cos.COSDictionary getCOSObject()>()
+org.apache.pdfbox.util.SmallMap.isEmpty : $r1 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.pdmodel.interactive.pagenavigation.PDTransition.getDuration : $r1 = virtualinvoke r0.<org.apache.pdfbox.pdmodel.interactive.pagenavigation.PDTransition: org.apache.pdfbox.cos.COSDictionary getCOSObject()>()
+org.apache.pdfbox.cos.COSDictionary.getFloat : r2 = virtualinvoke r0.<org.apache.pdfbox.cos.COSDictionary: org.apache.pdfbox.cos.COSBase getDictionaryObject(org.apache.pdfbox.cos.COSName)>(r1)
+org.apache.pdfbox.cos.COSDictionary.getFloat : $z0 = r2 instanceof org.apache.pdfbox.cos.COSNumber
+org.apache.pdfbox.cos.COSDictionary.getFloat : return f1
+org.apache.pdfbox.cos.COSDictionary.getFloat : f1 = f0
+org.apache.pdfbox.cos.COSInteger.equals : $z0 = r1 instanceof org.apache.pdfbox.cos.COSInteger
+org.apache.pdfbox.pdmodel.interactive.pagenavigation.PDTransition.getDimension : $r1 = virtualinvoke r0.<org.apache.pdfbox.pdmodel.interactive.pagenavigation.PDTransition: org.apache.pdfbox.cos.COSDictionary getCOSObject()>()
+org.apache.pdfbox.pdmodel.interactive.pagenavigation.PDTransition.getMotion : $r1 = virtualinvoke r0.<org.apache.pdfbox.pdmodel.interactive.pagenavigation.PDTransition: org.apache.pdfbox.cos.COSDictionary getCOSObject()>()
+org.apache.pdfbox.cos.COSDictionary.getNameAsString : return r5
+org.apache.pdfbox.cos.COSDictionary.getNameAsString : return r3
+org.apache.pdfbox.cos.COSDictionary.getNameAsString : r3 = virtualinvoke r0.<org.apache.pdfbox.cos.COSDictionary: java.lang.String getNameAsString(org.apache.pdfbox.cos.COSName)>(r1)
+org.apache.pdfbox.cos.COSDictionary.getNameAsString : r2 = virtualinvoke r0.<org.apache.pdfbox.cos.COSDictionary: org.apache.pdfbox.cos.COSBase getDictionaryObject(org.apache.pdfbox.cos.COSName)>(r1)
+org.apache.pdfbox.cos.COSDictionary.getNameAsString : r5 = null
+org.apache.pdfbox.cos.COSDictionary.getNameAsString : $z1 = r2 instanceof org.apache.pdfbox.cos.COSString
+org.apache.pdfbox.cos.COSDictionary.getNameAsString : r3 = r2
+org.apache.pdfbox.cos.COSDictionary.getNameAsString : $z0 = r2 instanceof org.apache.pdfbox.cos.COSName
+org.apache.pdfbox.cos.COSDictionary.getNameAsString : if r3 != null goto return r3
+org.apache.pdfbox.pdmodel.interactive.pagenavigation.PDTransition.getDirection : if r1 != null goto return r1
+org.apache.pdfbox.pdmodel.interactive.pagenavigation.PDTransition.getDirection : $r2 = virtualinvoke r0.<org.apache.pdfbox.pdmodel.interactive.pagenavigation.PDTransition: org.apache.pdfbox.cos.COSDictionary getCOSObject()>()
+org.apache.pdfbox.pdmodel.interactive.pagenavigation.PDTransition.getDirection : $r4 = <org.apache.pdfbox.cos.COSInteger: org.apache.pdfbox.cos.COSInteger ZERO>
+org.apache.pdfbox.cos.COSInteger.intValue : $l0 = r0.<org.apache.pdfbox.cos.COSInteger: long value>
+org.apache.pdfbox.pdmodel.common.PDDictionaryWrapper.getCOSObject : $r1 = r0.<org.apache.pdfbox.pdmodel.common.PDDictionaryWrapper: org.apache.pdfbox.cos.COSDictionary dictionary>
+org.apache.pdfbox.cos.COSDictionary.getItem : $r2 = r0.<org.apache.pdfbox.cos.COSDictionary: java.util.Map items>

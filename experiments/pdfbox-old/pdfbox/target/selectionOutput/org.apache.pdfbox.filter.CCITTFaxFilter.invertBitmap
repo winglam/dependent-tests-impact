@@ -1,0 +1,11 @@
+org.apache.pdfbox.filter.CCITTFaxFilter.invertBitmap : i5 = 0 >>>>>>>> org.apache.pdfbox.filter.CCITTFaxFilter.invertBitmap : i0 = lengthof r1
+org.apache.pdfbox.filter.CCITTFaxFilter.invertBitmap : i0 = lengthof r1 >>>>>>>> org.apache.pdfbox.filter.CCITTFaxFilter.invertBitmap : if i5 >= i0
+org.apache.pdfbox.filter.CCITTFaxFilter.invertBitmap : if i5 >= i0 >>>>>>>> org.apache.pdfbox.filter.CCITTFaxFilter.invertBitmap : $b1 = r1[i5]
+org.apache.pdfbox.filter.CCITTFaxFilter.invertBitmap : if i5 >= i0 >>>>>>>> org.apache.pdfbox.filter.CCITTFaxFilter.invertBitmap : return
+org.apache.pdfbox.filter.CCITTFaxFilter.invertBitmap : $b1 = r1[i5] >>>>>>>> org.apache.pdfbox.filter.CCITTFaxFilter.invertBitmap : $b2 = $b1 ^ -1
+org.apache.pdfbox.filter.CCITTFaxFilter.invertBitmap : $b2 = $b1 ^ -1 >>>>>>>> org.apache.pdfbox.filter.CCITTFaxFilter.invertBitmap : $s3 = $b2 & 255
+org.apache.pdfbox.filter.CCITTFaxFilter.invertBitmap : $s3 = $b2 & 255 >>>>>>>> org.apache.pdfbox.filter.CCITTFaxFilter.invertBitmap : $b4 = (byte) $s3
+org.apache.pdfbox.filter.CCITTFaxFilter.invertBitmap : $b4 = (byte) $s3 >>>>>>>> org.apache.pdfbox.filter.CCITTFaxFilter.invertBitmap : r1[i5] = $b4
+org.apache.pdfbox.filter.CCITTFaxFilter.invertBitmap : r1[i5] = $b4 >>>>>>>> org.apache.pdfbox.filter.CCITTFaxFilter.invertBitmap : i5 = i5 + 1
+org.apache.pdfbox.filter.CCITTFaxFilter.invertBitmap : i5 = i5 + 1 >>>>>>>> org.apache.pdfbox.filter.CCITTFaxFilter.invertBitmap : goto [?= (branch)]
+org.apache.pdfbox.filter.CCITTFaxFilter.invertBitmap : goto [?= (branch)] >>>>>>>> org.apache.pdfbox.filter.CCITTFaxFilter.invertBitmap : if i5 >= i0

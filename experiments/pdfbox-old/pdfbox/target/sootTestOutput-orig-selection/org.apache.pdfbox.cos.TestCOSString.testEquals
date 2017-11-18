@@ -1,0 +1,69 @@
+org.apache.pdfbox.cos.PDFDocEncoding.containsChar : $r0 = <org.apache.pdfbox.cos.PDFDocEncoding: java.util.Map UNI_TO_CODE> >>>>>>>> org.apache.pdfbox.cos.PDFDocEncoding.containsChar : $r1 = staticinvoke <java.lang.Character: java.lang.Character valueOf(char)>(c0)
+org.apache.pdfbox.cos.PDFDocEncoding.containsChar : $r1 = staticinvoke <java.lang.Character: java.lang.Character valueOf(char)>(c0) >>>>>>>> org.apache.pdfbox.cos.PDFDocEncoding.containsChar : $z0 = interfaceinvoke $r0.<java.util.Map: boolean containsKey(java.lang.Object)>($r1)
+org.apache.pdfbox.cos.PDFDocEncoding.containsChar : $z0 = interfaceinvoke $r0.<java.util.Map: boolean containsKey(java.lang.Object)>($r1) >>>>>>>> org.apache.pdfbox.cos.PDFDocEncoding.containsChar : return $z0
+org.apache.pdfbox.cos.PDFDocEncoding.containsChar : return $z0 >>>>>>>> org.apache.pdfbox.cos.PDFDocEncoding.getBytes : $r4 = new java.io.ByteArrayOutputStream
+org.apache.pdfbox.cos.PDFDocEncoding.getBytes : $r4 = new java.io.ByteArrayOutputStream >>>>>>>> org.apache.pdfbox.cos.PDFDocEncoding.getBytes : specialinvoke $r4.<java.io.ByteArrayOutputStream: void <init>()>()
+org.apache.pdfbox.cos.PDFDocEncoding.getBytes : specialinvoke $r4.<java.io.ByteArrayOutputStream: void <init>()>() >>>>>>>> org.apache.pdfbox.cos.PDFDocEncoding.getBytes : r2 = virtualinvoke r0.<java.lang.String: char[] toCharArray()>()
+org.apache.pdfbox.cos.PDFDocEncoding.getBytes : r2 = virtualinvoke r0.<java.lang.String: char[] toCharArray()>() >>>>>>>> org.apache.pdfbox.cos.PDFDocEncoding.getBytes : i0 = lengthof r2
+org.apache.pdfbox.cos.PDFDocEncoding.getBytes : i0 = lengthof r2 >>>>>>>> org.apache.pdfbox.cos.PDFDocEncoding.getBytes : i3 = 0
+org.apache.pdfbox.cos.PDFDocEncoding.getBytes : i3 = 0 >>>>>>>> org.apache.pdfbox.cos.PDFDocEncoding.getBytes : if i3 >= i0
+org.apache.pdfbox.cos.PDFDocEncoding.getBytes : if i3 >= i0 >>>>>>>> org.apache.pdfbox.cos.PDFDocEncoding.getBytes : c1 = r2[i3]
+org.apache.pdfbox.cos.PDFDocEncoding.getBytes : c1 = r2[i3] >>>>>>>> org.apache.pdfbox.cos.PDFDocEncoding.getBytes : $r6 = <org.apache.pdfbox.cos.PDFDocEncoding: java.util.Map UNI_TO_CODE>
+org.apache.pdfbox.cos.PDFDocEncoding.getBytes : $r6 = <org.apache.pdfbox.cos.PDFDocEncoding: java.util.Map UNI_TO_CODE> >>>>>>>> org.apache.pdfbox.cos.PDFDocEncoding.getBytes : $r7 = staticinvoke <java.lang.Character: java.lang.Character valueOf(char)>(c1)
+org.apache.pdfbox.cos.PDFDocEncoding.getBytes : $r7 = staticinvoke <java.lang.Character: java.lang.Character valueOf(char)>(c1) >>>>>>>> org.apache.pdfbox.cos.PDFDocEncoding.getBytes : $r8 = interfaceinvoke $r6.<java.util.Map: java.lang.Object get(java.lang.Object)>($r7)
+org.apache.pdfbox.cos.PDFDocEncoding.getBytes : $r8 = interfaceinvoke $r6.<java.util.Map: java.lang.Object get(java.lang.Object)>($r7) >>>>>>>> org.apache.pdfbox.cos.PDFDocEncoding.getBytes : r3 = (java.lang.Integer) $r8
+org.apache.pdfbox.cos.PDFDocEncoding.getBytes : r3 = (java.lang.Integer) $r8 >>>>>>>> org.apache.pdfbox.cos.PDFDocEncoding.getBytes : if r3 != null
+org.apache.pdfbox.cos.PDFDocEncoding.getBytes : if r3 != null >>>>>>>> org.apache.pdfbox.cos.PDFDocEncoding.getBytes : $i2 = virtualinvoke r3.<java.lang.Integer: int intValue()>()
+org.apache.pdfbox.cos.PDFDocEncoding.getBytes : $i2 = virtualinvoke r3.<java.lang.Integer: int intValue()>() >>>>>>>> org.apache.pdfbox.cos.PDFDocEncoding.getBytes : virtualinvoke $r4.<java.io.ByteArrayOutputStream: void write(int)>($i2)
+org.apache.pdfbox.cos.PDFDocEncoding.getBytes : virtualinvoke $r4.<java.io.ByteArrayOutputStream: void write(int)>($i2) >>>>>>>> org.apache.pdfbox.cos.PDFDocEncoding.getBytes : i3 = i3 + 1
+org.apache.pdfbox.cos.PDFDocEncoding.getBytes : i3 = i3 + 1 >>>>>>>> org.apache.pdfbox.cos.PDFDocEncoding.getBytes : goto [?= (branch)]
+org.apache.pdfbox.cos.PDFDocEncoding.getBytes : goto [?= (branch)] >>>>>>>> org.apache.pdfbox.cos.PDFDocEncoding.getBytes : $r5 = virtualinvoke $r4.<java.io.ByteArrayOutputStream: byte[] toByteArray()>()
+org.apache.pdfbox.cos.PDFDocEncoding.getBytes : $r5 = virtualinvoke $r4.<java.io.ByteArrayOutputStream: byte[] toByteArray()>() >>>>>>>> org.apache.pdfbox.cos.PDFDocEncoding.getBytes : return $r5
+org.apache.pdfbox.cos.PDFDocEncoding.getBytes : return $r5 >>>>>>>> org.apache.pdfbox.cos.COSString.equals : $z0 = r1 instanceof org.apache.pdfbox.cos.COSString
+org.apache.pdfbox.cos.COSString.equals : $z0 = r1 instanceof org.apache.pdfbox.cos.COSString >>>>>>>> org.apache.pdfbox.cos.COSString.equals : if $z0 == 0
+org.apache.pdfbox.cos.COSString.equals : if $z0 == 0 >>>>>>>> org.apache.pdfbox.cos.COSString.equals : r2 = (org.apache.pdfbox.cos.COSString) r1
+org.apache.pdfbox.cos.COSString.equals : r2 = (org.apache.pdfbox.cos.COSString) r1 >>>>>>>> org.apache.pdfbox.cos.COSString.equals : $r3 = virtualinvoke r0.<org.apache.pdfbox.cos.COSString: java.lang.String getString()>()
+org.apache.pdfbox.cos.COSString.equals : $r3 = virtualinvoke r0.<org.apache.pdfbox.cos.COSString: java.lang.String getString()>() >>>>>>>> org.apache.pdfbox.cos.COSString.getString : $r1 = r0.<org.apache.pdfbox.cos.COSString: byte[] bytes>
+org.apache.pdfbox.cos.COSString.getString : $r1 = r0.<org.apache.pdfbox.cos.COSString: byte[] bytes> >>>>>>>> org.apache.pdfbox.cos.COSString.getString : $i0 = lengthof $r1
+org.apache.pdfbox.cos.COSString.getString : $i0 = lengthof $r1 >>>>>>>> org.apache.pdfbox.cos.COSString.getString : if $i0 <= 2
+org.apache.pdfbox.cos.COSString.getString : if $i0 <= 2 >>>>>>>> org.apache.pdfbox.cos.COSString.getString : $r2 = r0.<org.apache.pdfbox.cos.COSString: byte[] bytes>
+org.apache.pdfbox.cos.COSString.getString : $r2 = r0.<org.apache.pdfbox.cos.COSString: byte[] bytes> >>>>>>>> org.apache.pdfbox.cos.COSString.getString : $b1 = $r2[0]
+org.apache.pdfbox.cos.COSString.getString : $b1 = $r2[0] >>>>>>>> org.apache.pdfbox.cos.COSString.getString : $s2 = $b1 & 255
+org.apache.pdfbox.cos.COSString.getString : $s2 = $b1 & 255 >>>>>>>> org.apache.pdfbox.cos.COSString.getString : if $s2 != 254
+org.apache.pdfbox.cos.COSString.getString : if $s2 != 254 >>>>>>>> org.apache.pdfbox.cos.COSString.getString : $r3 = r0.<org.apache.pdfbox.cos.COSString: byte[] bytes>
+org.apache.pdfbox.cos.COSString.getString : $r3 = r0.<org.apache.pdfbox.cos.COSString: byte[] bytes> >>>>>>>> org.apache.pdfbox.cos.COSString.getString : $b3 = $r3[0]
+org.apache.pdfbox.cos.COSString.getString : $b3 = $r3[0] >>>>>>>> org.apache.pdfbox.cos.COSString.getString : $s4 = $b3 & 255
+org.apache.pdfbox.cos.COSString.getString : $s4 = $b3 & 255 >>>>>>>> org.apache.pdfbox.cos.COSString.getString : if $s4 != 255
+org.apache.pdfbox.cos.COSString.getString : if $s4 != 255 >>>>>>>> org.apache.pdfbox.cos.COSString.getString : $r14 = r0.<org.apache.pdfbox.cos.COSString: byte[] bytes>
+org.apache.pdfbox.cos.COSString.getString : $r14 = r0.<org.apache.pdfbox.cos.COSString: byte[] bytes> >>>>>>>> org.apache.pdfbox.cos.COSString.getString : $r15 = staticinvoke <org.apache.pdfbox.cos.PDFDocEncoding: java.lang.String toString(byte[])>($r14)
+org.apache.pdfbox.cos.COSString.getString : $r15 = staticinvoke <org.apache.pdfbox.cos.PDFDocEncoding: java.lang.String toString(byte[])>($r14) >>>>>>>> org.apache.pdfbox.cos.PDFDocEncoding.toString : $r3 = new java.lang.StringBuilder
+org.apache.pdfbox.cos.PDFDocEncoding.toString : $r3 = new java.lang.StringBuilder >>>>>>>> org.apache.pdfbox.cos.PDFDocEncoding.toString : specialinvoke $r3.<java.lang.StringBuilder: void <init>()>()
+org.apache.pdfbox.cos.PDFDocEncoding.toString : specialinvoke $r3.<java.lang.StringBuilder: void <init>()>() >>>>>>>> org.apache.pdfbox.cos.PDFDocEncoding.toString : i0 = lengthof r0
+org.apache.pdfbox.cos.PDFDocEncoding.toString : i0 = lengthof r0 >>>>>>>> org.apache.pdfbox.cos.PDFDocEncoding.toString : i7 = 0
+org.apache.pdfbox.cos.PDFDocEncoding.toString : i7 = 0 >>>>>>>> org.apache.pdfbox.cos.PDFDocEncoding.toString : if i7 >= i0
+org.apache.pdfbox.cos.PDFDocEncoding.toString : if i7 >= i0 >>>>>>>> org.apache.pdfbox.cos.PDFDocEncoding.toString : b1 = r0[i7]
+org.apache.pdfbox.cos.PDFDocEncoding.toString : b1 = r0[i7] >>>>>>>> org.apache.pdfbox.cos.PDFDocEncoding.toString : $s3 = b1 & 255
+org.apache.pdfbox.cos.PDFDocEncoding.toString : $s3 = b1 & 255 >>>>>>>> org.apache.pdfbox.cos.PDFDocEncoding.toString : $r5 = <org.apache.pdfbox.cos.PDFDocEncoding: int[] CODE_TO_UNI>
+org.apache.pdfbox.cos.PDFDocEncoding.toString : $r5 = <org.apache.pdfbox.cos.PDFDocEncoding: int[] CODE_TO_UNI> >>>>>>>> org.apache.pdfbox.cos.PDFDocEncoding.toString : $i2 = lengthof $r5
+org.apache.pdfbox.cos.PDFDocEncoding.toString : $i2 = lengthof $r5 >>>>>>>> org.apache.pdfbox.cos.PDFDocEncoding.toString : if $s3 < $i2
+org.apache.pdfbox.cos.PDFDocEncoding.toString : if $s3 < $i2 >>>>>>>> org.apache.pdfbox.cos.PDFDocEncoding.toString : $r6 = <org.apache.pdfbox.cos.PDFDocEncoding: int[] CODE_TO_UNI>
+org.apache.pdfbox.cos.PDFDocEncoding.toString : $r6 = <org.apache.pdfbox.cos.PDFDocEncoding: int[] CODE_TO_UNI> >>>>>>>> org.apache.pdfbox.cos.PDFDocEncoding.toString : $s4 = b1 & 255
+org.apache.pdfbox.cos.PDFDocEncoding.toString : $s4 = b1 & 255 >>>>>>>> org.apache.pdfbox.cos.PDFDocEncoding.toString : $i5 = $r6[$s4]
+org.apache.pdfbox.cos.PDFDocEncoding.toString : $i5 = $r6[$s4] >>>>>>>> org.apache.pdfbox.cos.PDFDocEncoding.toString : $c6 = (char) $i5
+org.apache.pdfbox.cos.PDFDocEncoding.toString : $c6 = (char) $i5 >>>>>>>> org.apache.pdfbox.cos.PDFDocEncoding.toString : virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>($c6)
+org.apache.pdfbox.cos.PDFDocEncoding.toString : virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>($c6) >>>>>>>> org.apache.pdfbox.cos.PDFDocEncoding.toString : i7 = i7 + 1
+org.apache.pdfbox.cos.PDFDocEncoding.toString : i7 = i7 + 1 >>>>>>>> org.apache.pdfbox.cos.PDFDocEncoding.toString : goto [?= (branch)]
+org.apache.pdfbox.cos.PDFDocEncoding.toString : goto [?= (branch)] >>>>>>>> org.apache.pdfbox.cos.PDFDocEncoding.toString : $r4 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>()
+org.apache.pdfbox.cos.PDFDocEncoding.toString : $r4 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>() >>>>>>>> org.apache.pdfbox.cos.PDFDocEncoding.toString : return $r4
+org.apache.pdfbox.cos.PDFDocEncoding.toString : return $r4 >>>>>>>> org.apache.pdfbox.cos.COSString.getString : return $r15
+org.apache.pdfbox.cos.COSString.getString : return $r15 >>>>>>>> org.apache.pdfbox.cos.COSString.equals : $r4 = virtualinvoke r2.<org.apache.pdfbox.cos.COSString: java.lang.String getString()>()
+org.apache.pdfbox.cos.COSString.equals : $r4 = virtualinvoke r2.<org.apache.pdfbox.cos.COSString: java.lang.String getString()>() >>>>>>>> org.apache.pdfbox.cos.COSString.equals : $z1 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>($r4)
+org.apache.pdfbox.cos.COSString.equals : $z1 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>($r4) >>>>>>>> org.apache.pdfbox.cos.COSString.equals : if $z1 == 0
+org.apache.pdfbox.cos.COSString.equals : if $z1 == 0 >>>>>>>> org.apache.pdfbox.cos.COSString.equals : $z3 = r0.<org.apache.pdfbox.cos.COSString: boolean forceHexForm>
+org.apache.pdfbox.cos.COSString.equals : $z3 = r0.<org.apache.pdfbox.cos.COSString: boolean forceHexForm> >>>>>>>> org.apache.pdfbox.cos.COSString.equals : $z2 = r2.<org.apache.pdfbox.cos.COSString: boolean forceHexForm>
+org.apache.pdfbox.cos.COSString.equals : $z2 = r2.<org.apache.pdfbox.cos.COSString: boolean forceHexForm> >>>>>>>> org.apache.pdfbox.cos.COSString.equals : if $z3 != $z2
+org.apache.pdfbox.cos.COSString.equals : if $z3 != $z2 >>>>>>>> org.apache.pdfbox.cos.COSString.equals : $z4 = 1
+org.apache.pdfbox.cos.COSString.equals : $z4 = 1 >>>>>>>> org.apache.pdfbox.cos.COSString.equals : goto [?= return $z4]
+org.apache.pdfbox.cos.COSString.equals : goto [?= return $z4] >>>>>>>> org.apache.pdfbox.cos.COSString.equals : return $z4
+org.apache.pdfbox.cos.COSString.equals : return $z4 >>>>>>>> org.apache.pdfbox.cos.COSString.setForceHexForm : r0.<org.apache.pdfbox.cos.COSString: boolean forceHexForm> = z0
+org.apache.pdfbox.cos.COSString.setForceHexForm : r0.<org.apache.pdfbox.cos.COSString: boolean forceHexForm> = z0 >>>>>>>> org.apache.pdfbox.cos.COSString.equals : $z4 = 0

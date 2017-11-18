@@ -1,0 +1,17 @@
+org.apache.pdfbox.pdmodel.graphics.color.PDColor.toRGB : $r2 = r0.<org.apache.pdfbox.pdmodel.graphics.color.PDColor: org.apache.pdfbox.pdmodel.graphics.color.PDColorSpace colorSpace> >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDColor.toRGB : $r3 = r0.<org.apache.pdfbox.pdmodel.graphics.color.PDColor: float[] components>
+org.apache.pdfbox.pdmodel.graphics.color.PDColor.toRGB : $r3 = r0.<org.apache.pdfbox.pdmodel.graphics.color.PDColor: float[] components> >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDColor.toRGB : r1 = virtualinvoke $r2.<org.apache.pdfbox.pdmodel.graphics.color.PDColorSpace: float[] toRGB(float[])>($r3)
+org.apache.pdfbox.pdmodel.graphics.color.PDColor.toRGB : r1 = virtualinvoke $r2.<org.apache.pdfbox.pdmodel.graphics.color.PDColorSpace: float[] toRGB(float[])>($r3) >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDColor.toRGB : $f0 = r1[0]
+org.apache.pdfbox.pdmodel.graphics.color.PDColor.toRGB : $f0 = r1[0] >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDColor.toRGB : $f1 = $f0 * 255.0F
+org.apache.pdfbox.pdmodel.graphics.color.PDColor.toRGB : $f1 = $f0 * 255.0F >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDColor.toRGB : i0 = staticinvoke <java.lang.Math: int round(float)>($f1)
+org.apache.pdfbox.pdmodel.graphics.color.PDColor.toRGB : i0 = staticinvoke <java.lang.Math: int round(float)>($f1) >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDColor.toRGB : $f2 = r1[1]
+org.apache.pdfbox.pdmodel.graphics.color.PDColor.toRGB : $f2 = r1[1] >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDColor.toRGB : $f3 = $f2 * 255.0F
+org.apache.pdfbox.pdmodel.graphics.color.PDColor.toRGB : $f3 = $f2 * 255.0F >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDColor.toRGB : i1 = staticinvoke <java.lang.Math: int round(float)>($f3)
+org.apache.pdfbox.pdmodel.graphics.color.PDColor.toRGB : i1 = staticinvoke <java.lang.Math: int round(float)>($f3) >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDColor.toRGB : $f4 = r1[2]
+org.apache.pdfbox.pdmodel.graphics.color.PDColor.toRGB : $f4 = r1[2] >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDColor.toRGB : $f5 = $f4 * 255.0F
+org.apache.pdfbox.pdmodel.graphics.color.PDColor.toRGB : $f5 = $f4 * 255.0F >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDColor.toRGB : i2 = staticinvoke <java.lang.Math: int round(float)>($f5)
+org.apache.pdfbox.pdmodel.graphics.color.PDColor.toRGB : i2 = staticinvoke <java.lang.Math: int round(float)>($f5) >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDColor.toRGB : i3 = i0
+org.apache.pdfbox.pdmodel.graphics.color.PDColor.toRGB : i3 = i0 >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDColor.toRGB : $i4 = i3 << 8
+org.apache.pdfbox.pdmodel.graphics.color.PDColor.toRGB : $i4 = i3 << 8 >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDColor.toRGB : i5 = $i4 + i1
+org.apache.pdfbox.pdmodel.graphics.color.PDColor.toRGB : i5 = $i4 + i1 >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDColor.toRGB : $i6 = i5 << 8
+org.apache.pdfbox.pdmodel.graphics.color.PDColor.toRGB : $i6 = i5 << 8 >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDColor.toRGB : i7 = $i6 + i2
+org.apache.pdfbox.pdmodel.graphics.color.PDColor.toRGB : i7 = $i6 + i2 >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDColor.toRGB : return i7

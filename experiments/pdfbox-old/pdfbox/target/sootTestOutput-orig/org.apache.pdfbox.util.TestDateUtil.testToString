@@ -1,0 +1,17 @@
+org.apache.pdfbox.util.DateConverter.restrainTZoffset : $b7 = l9 cmp -50400000L
+org.apache.pdfbox.util.DateConverter.restrainTZoffset : $b0 = l9 cmp 50400000L
+org.apache.pdfbox.util.DateConverter.restrainTZoffset : $i8 = (int) l9
+org.apache.pdfbox.util.DateConverter.toCalendar : if r0 == null goto return null
+org.apache.pdfbox.util.DateConverter.toCalendar : if r0 != null goto $r1 = virtualinvoke r0.<org.apache.pdfbox.cos.COSString: java.lang.String getString()>()
+org.apache.pdfbox.util.DateConverter.toCalendar : return null
+org.apache.pdfbox.util.DateConverter.toString : $i0 = virtualinvoke r0.<java.util.Calendar: int get(int)>(15)
+org.apache.pdfbox.util.DateConverter.toString : $r3 = <java.util.Locale: java.util.Locale US>
+org.apache.pdfbox.util.DateConverter.toString : if r0 != null goto $i0 = virtualinvoke r0.<java.util.Calendar: int get(int)>(15)
+org.apache.pdfbox.util.DateConverter.toString : $i1 = virtualinvoke r0.<java.util.Calendar: int get(int)>(16)
+org.apache.pdfbox.util.DateConverter.formatTZoffset : $r5 = new java.util.Date
+org.apache.pdfbox.util.DateConverter.formatTZoffset : $r6 = new java.lang.StringBuilder
+org.apache.pdfbox.util.DateConverter.formatTZoffset : $r4 = new java.util.SimpleTimeZone
+org.apache.pdfbox.util.DateConverter.formatTZoffset : $r3 = new java.text.SimpleDateFormat
+org.apache.pdfbox.util.DateConverter.toISO8601 : $i0 = virtualinvoke r0.<java.util.Calendar: int get(int)>(15)
+org.apache.pdfbox.util.DateConverter.toISO8601 : $r3 = <java.util.Locale: java.util.Locale US>
+org.apache.pdfbox.util.DateConverter.toISO8601 : $i1 = virtualinvoke r0.<java.util.Calendar: int get(int)>(16)

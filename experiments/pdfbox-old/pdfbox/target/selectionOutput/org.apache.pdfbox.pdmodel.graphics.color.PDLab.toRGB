@@ -1,0 +1,19 @@
+org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGB : $f4 = r1[0] >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGB : $f5 = $f4 + 16.0F
+org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGB : $f5 = $f4 + 16.0F >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGB : f0 = $f5 * 0.00862069F
+org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGB : f0 = $f5 * 0.00862069F >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGB : $f9 = r0.<org.apache.pdfbox.pdmodel.graphics.color.PDLab: float wpX>
+org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGB : $f9 = r0.<org.apache.pdfbox.pdmodel.graphics.color.PDLab: float wpX> >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGB : $f6 = r1[1]
+org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGB : $f6 = r1[1] >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGB : $f7 = $f6 * 0.002F
+org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGB : $f7 = $f6 * 0.002F >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGB : $f8 = f0 + $f7
+org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGB : $f8 = f0 + $f7 >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGB : $f10 = specialinvoke r0.<org.apache.pdfbox.pdmodel.graphics.color.PDLab: float inverse(float)>($f8)
+org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGB : $f10 = specialinvoke r0.<org.apache.pdfbox.pdmodel.graphics.color.PDLab: float inverse(float)>($f8) >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGB : f1 = $f9 * $f10
+org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGB : f1 = $f9 * $f10 >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGB : $f11 = r0.<org.apache.pdfbox.pdmodel.graphics.color.PDLab: float wpY>
+org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGB : $f11 = r0.<org.apache.pdfbox.pdmodel.graphics.color.PDLab: float wpY> >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGB : $f12 = specialinvoke r0.<org.apache.pdfbox.pdmodel.graphics.color.PDLab: float inverse(float)>(f0)
+org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGB : $f12 = specialinvoke r0.<org.apache.pdfbox.pdmodel.graphics.color.PDLab: float inverse(float)>(f0) >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGB : f2 = $f11 * $f12
+org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGB : f2 = $f11 * $f12 >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGB : $f16 = r0.<org.apache.pdfbox.pdmodel.graphics.color.PDLab: float wpZ>
+org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGB : $f16 = r0.<org.apache.pdfbox.pdmodel.graphics.color.PDLab: float wpZ> >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGB : $f13 = r1[2]
+org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGB : $f13 = r1[2] >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGB : $f14 = $f13 * 0.005F
+org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGB : $f14 = $f13 * 0.005F >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGB : $f15 = f0 - $f14
+org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGB : $f15 = f0 - $f14 >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGB : $f17 = specialinvoke r0.<org.apache.pdfbox.pdmodel.graphics.color.PDLab: float inverse(float)>($f15)
+org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGB : $f17 = specialinvoke r0.<org.apache.pdfbox.pdmodel.graphics.color.PDLab: float inverse(float)>($f15) >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGB : f3 = $f16 * $f17
+org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGB : f3 = $f16 * $f17 >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGB : $r2 = virtualinvoke r0.<org.apache.pdfbox.pdmodel.graphics.color.PDLab: float[] convXYZtoRGB(float,float,float)>(f1, f2, f3)
+org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGB : $r2 = virtualinvoke r0.<org.apache.pdfbox.pdmodel.graphics.color.PDLab: float[] convXYZtoRGB(float,float,float)>(f1, f2, f3) >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDLab.toRGB : return $r2

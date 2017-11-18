@@ -1,0 +1,28 @@
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.writeAttributeValue : specialinvoke r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: void writeText(java.lang.String)>(r2)
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.addAttribute : $r8 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: com.thoughtworks.xstream.core.util.QuickWriter writer>
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.addAttribute : $r6 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: com.thoughtworks.xstream.core.util.QuickWriter writer>
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.addAttribute : $r9 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: com.thoughtworks.xstream.core.util.QuickWriter writer>
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.addAttribute : $r3 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: com.thoughtworks.xstream.core.util.QuickWriter writer>
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.addAttribute : $r7 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: com.thoughtworks.xstream.core.util.QuickWriter writer>
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.addAttribute : $r4 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: com.thoughtworks.xstream.core.util.QuickWriter writer>
+com.thoughtworks.xstream.io.xml.AbstractXmlWriter.escapeXmlName : $r2 = r0.<com.thoughtworks.xstream.io.xml.AbstractXmlWriter: com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer replacer>
+com.thoughtworks.xstream.core.util.QuickWriter.write : $i1 = r0.<com.thoughtworks.xstream.core.util.QuickWriter: int pointer>
+com.thoughtworks.xstream.core.util.QuickWriter.write : $r5 = r0.<com.thoughtworks.xstream.core.util.QuickWriter: char[] buffer>
+com.thoughtworks.xstream.core.util.QuickWriter.write : i0 = virtualinvoke r1.<java.lang.String: int length()>()
+com.thoughtworks.xstream.core.util.QuickWriter.write : $r2 = r0.<com.thoughtworks.xstream.core.util.QuickWriter: char[] buffer>
+com.thoughtworks.xstream.core.util.QuickWriter.write : $i2 = r0.<com.thoughtworks.xstream.core.util.QuickWriter: int pointer>
+com.thoughtworks.xstream.core.util.QuickWriter.write : $i6 = r0.<com.thoughtworks.xstream.core.util.QuickWriter: int pointer>
+com.thoughtworks.xstream.io.WriterWrapper.addAttribute : $r3 = r0.<com.thoughtworks.xstream.io.WriterWrapper: com.thoughtworks.xstream.io.HierarchicalStreamWriter wrapped>
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.writeText : i1 = 0
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.writeText : $r16 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: com.thoughtworks.xstream.core.util.QuickWriter writer>
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.writeText : c2 = virtualinvoke r1.<java.lang.String: char charAt(int)>(i1)
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.writeText : i0 = virtualinvoke r1.<java.lang.String: int length()>()
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.writeText : lookupswitch(c2) {     case 0: goto $r2 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: com.thoughtworks.xstream.core.util.QuickWriter writer>;     case 13: goto $r14 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: com.thoughtworks.xstream.core.util.QuickWriter writer>;     case 34: goto $r10 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: com.thoughtworks.xstream.core.util.QuickWriter writer>;     case 38: goto $r4 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: com.thoughtworks.xstream.core.util.QuickWriter writer>;     case 39: goto $r12 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: com.thoughtworks.xstream.core.util.QuickWriter writer>;     case 60: goto $r6 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: com.thoughtworks.xstream.core.util.QuickWriter writer>;     case 62: goto $r8 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: com.thoughtworks.xstream.core.util.QuickWriter writer>;     default: goto $r16 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: com.thoughtworks.xstream.core.util.QuickWriter writer>; }
+com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer.escapeName : if c2 != 36 goto (branch)
+com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer.escapeName : i1 = 0
+com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer.escapeName : $r9 = virtualinvoke r3.<java.lang.StringBuffer: java.lang.String toString()>()
+com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer.escapeName : c2 = virtualinvoke r1.<java.lang.String: char charAt(int)>(i1)
+com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer.escapeName : i0 = virtualinvoke r1.<java.lang.String: int length()>()
+com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer.escapeName : virtualinvoke r3.<java.lang.StringBuffer: java.lang.StringBuffer append(char)>(c2)
+com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer.escapeName : $r2 = new java.lang.StringBuffer
+com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer.escapeName : if c2 != 95 goto virtualinvoke r3.<java.lang.StringBuffer: java.lang.StringBuffer append(char)>(c2)

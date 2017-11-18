@@ -1,0 +1,49 @@
+com.thoughtworks.xstream.io.xml.AbstractXmlDriver.xmlFriendlyReplacer : $r1 = r0.<com.thoughtworks.xstream.io.xml.AbstractXmlDriver: com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer replacer>
+com.thoughtworks.xstream.core.util.FastStack.push : $r4 = r0.<com.thoughtworks.xstream.core.util.FastStack: java.lang.Object[] stack>
+com.thoughtworks.xstream.core.util.FastStack.push : $i1 = r0.<com.thoughtworks.xstream.core.util.FastStack: int pointer>
+com.thoughtworks.xstream.core.util.FastStack.push : $r3 = r0.<com.thoughtworks.xstream.core.util.FastStack: java.lang.Object[] stack>
+com.thoughtworks.xstream.core.util.FastStack.push : return r1
+com.thoughtworks.xstream.converters.basic.CharConverter.marshal : $r5 = virtualinvoke r1.<java.lang.Object: java.lang.String toString()>()
+com.thoughtworks.xstream.converters.basic.CharConverter.marshal : $r4 = virtualinvoke r1.<java.lang.Object: java.lang.String toString()>()
+com.thoughtworks.xstream.core.MapBackedDataHolder.get : $r2 = r0.<com.thoughtworks.xstream.core.MapBackedDataHolder: java.util.Map map>
+com.thoughtworks.xstream.core.util.QuickWriter.write : $r2 = r0.<com.thoughtworks.xstream.core.util.QuickWriter: char[] buffer>
+com.thoughtworks.xstream.core.util.QuickWriter.write : $i2 = r0.<com.thoughtworks.xstream.core.util.QuickWriter: int pointer>
+com.thoughtworks.xstream.converters.reflection.SelfStreamingInstanceChecker.marshal : $r6 = r0.<com.thoughtworks.xstream.converters.reflection.SelfStreamingInstanceChecker: com.thoughtworks.xstream.converters.Converter defaultConverter>
+com.thoughtworks.xstream.converters.reflection.SelfStreamingInstanceChecker.marshal : $r4 = r0.<com.thoughtworks.xstream.converters.reflection.SelfStreamingInstanceChecker: java.lang.Object self>
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.finishTag : r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: boolean tagIsEmpty> = 0
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.finishTag : $z0 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: boolean tagInProgress>
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.finishTag : r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: boolean tagInProgress> = 0
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.finishTag : r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: boolean readyForNewLine> = 0
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.finishTag : $z1 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: boolean readyForNewLine>
+com.thoughtworks.xstream.core.TreeMarshaller.put : specialinvoke r0.<com.thoughtworks.xstream.core.TreeMarshaller: void lazilyCreateDataHolder()>()
+com.thoughtworks.xstream.core.TreeMarshaller.put : $r3 = r0.<com.thoughtworks.xstream.core.TreeMarshaller: com.thoughtworks.xstream.converters.DataHolder dataHolder>
+com.thoughtworks.xstream.core.TreeMarshaller.get : specialinvoke r0.<com.thoughtworks.xstream.core.TreeMarshaller: void lazilyCreateDataHolder()>()
+com.thoughtworks.xstream.core.TreeMarshaller.get : $r2 = r0.<com.thoughtworks.xstream.core.TreeMarshaller: com.thoughtworks.xstream.converters.DataHolder dataHolder>
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.setValue : $r2 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: com.thoughtworks.xstream.core.util.QuickWriter writer>
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.setValue : r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: boolean tagIsEmpty> = 0
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.setValue : specialinvoke r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: void finishTag()>()
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.setValue : r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: boolean readyForNewLine> = 0
+com.thoughtworks.xstream.io.xml.XppDomDriver.createWriter : $r2 = new com.thoughtworks.xstream.io.xml.PrettyPrintWriter
+com.thoughtworks.xstream.io.xml.XppDomDriver.createWriter : $r2 = new java.io.OutputStreamWriter
+com.thoughtworks.xstream.io.xml.JDomDriver.createWriter : $r2 = new com.thoughtworks.xstream.io.xml.PrettyPrintWriter
+com.thoughtworks.xstream.core.util.CustomObjectOutputStream.putFields : $r1 = new com.thoughtworks.xstream.core.util.CustomObjectOutputStream$CustomPutField
+com.thoughtworks.xstream.core.util.CustomObjectOutputStream.putFields : return r2
+com.thoughtworks.xstream.core.util.CustomObjectOutputStream.putFields : $r3 = r0.<com.thoughtworks.xstream.core.util.CustomObjectOutputStream: com.thoughtworks.xstream.core.util.FastStack customFields>
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.writeText : i1 = 0
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.writeText : specialinvoke r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: void writeText(java.lang.String)>(r2)
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.writeText : $r16 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: com.thoughtworks.xstream.core.util.QuickWriter writer>
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.writeText : c2 = virtualinvoke r1.<java.lang.String: char charAt(int)>(i1)
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.writeText : i0 = virtualinvoke r1.<java.lang.String: int length()>()
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.writeText : lookupswitch(c2) {     case 0: goto $r2 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: com.thoughtworks.xstream.core.util.QuickWriter writer>;     case 13: goto $r14 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: com.thoughtworks.xstream.core.util.QuickWriter writer>;     case 34: goto $r10 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: com.thoughtworks.xstream.core.util.QuickWriter writer>;     case 38: goto $r4 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: com.thoughtworks.xstream.core.util.QuickWriter writer>;     case 39: goto $r12 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: com.thoughtworks.xstream.core.util.QuickWriter writer>;     case 60: goto $r6 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: com.thoughtworks.xstream.core.util.QuickWriter writer>;     case 62: goto $r8 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: com.thoughtworks.xstream.core.util.QuickWriter writer>;     default: goto $r16 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: com.thoughtworks.xstream.core.util.QuickWriter writer>; }
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.underlyingWriter : return r0
+com.thoughtworks.xstream.core.MapBackedDataHolder.put : $r3 = r0.<com.thoughtworks.xstream.core.MapBackedDataHolder: java.util.Map map>
+com.thoughtworks.xstream.core.util.FastStack.resizeStack : r1 = newarray (java.lang.Object)[i0]
+com.thoughtworks.xstream.core.util.FastStack.resizeStack : r0.<com.thoughtworks.xstream.core.util.FastStack: java.lang.Object[] stack> = r1
+com.thoughtworks.xstream.core.util.FastStack.resizeStack : $r2 = r0.<com.thoughtworks.xstream.core.util.FastStack: java.lang.Object[] stack>
+com.thoughtworks.xstream.core.TreeMarshaller.lazilyCreateDataHolder : $r1 = new com.thoughtworks.xstream.core.MapBackedDataHolder
+com.thoughtworks.xstream.core.TreeMarshaller.lazilyCreateDataHolder : $r2 = r0.<com.thoughtworks.xstream.core.TreeMarshaller: com.thoughtworks.xstream.converters.DataHolder dataHolder>
+com.thoughtworks.xstream.core.util.CustomObjectOutputStream.getInstance : return r3
+com.thoughtworks.xstream.core.util.CustomObjectOutputStream.getInstance : if r3 != null goto virtualinvoke r3.<com.thoughtworks.xstream.core.util.CustomObjectOutputStream: void pushCallback(com.thoughtworks.xstream.core.util.CustomObjectOutputStream$StreamCallback)>(r1)
+com.thoughtworks.xstream.core.util.CustomObjectOutputStream.getInstance : $r2 = <com.thoughtworks.xstream.core.util.CustomObjectOutputStream: java.lang.String DATA_HOLDER_KEY>
+com.thoughtworks.xstream.core.util.CustomObjectOutputStream.getInstance : $r6 = <com.thoughtworks.xstream.core.util.CustomObjectOutputStream: java.lang.String DATA_HOLDER_KEY>
+com.thoughtworks.xstream.core.util.CustomObjectOutputStream.getInstance : $r5 = new com.thoughtworks.xstream.core.util.CustomObjectOutputStream

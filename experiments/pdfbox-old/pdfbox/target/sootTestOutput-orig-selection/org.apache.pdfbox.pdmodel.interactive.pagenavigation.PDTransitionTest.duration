@@ -1,0 +1,109 @@
+org.apache.pdfbox.pdmodel.common.PDDictionaryWrapper.getCOSObject : $r1 = r0.<org.apache.pdfbox.pdmodel.common.PDDictionaryWrapper: org.apache.pdfbox.cos.COSDictionary dictionary> >>>>>>>> org.apache.pdfbox.pdmodel.common.PDDictionaryWrapper.getCOSObject : return $r1
+org.apache.pdfbox.pdmodel.common.PDDictionaryWrapper.getCOSObject : return $r1 >>>>>>>> org.apache.pdfbox.cos.COSName.getName : $r1 = r0.<org.apache.pdfbox.cos.COSName: java.lang.String name>
+org.apache.pdfbox.cos.COSName.getName : $r1 = r0.<org.apache.pdfbox.cos.COSName: java.lang.String name> >>>>>>>> org.apache.pdfbox.cos.COSName.getName : return $r1
+org.apache.pdfbox.cos.COSName.getName : return $r1 >>>>>>>> org.apache.pdfbox.cos.COSDictionary.setName : r3 = null
+org.apache.pdfbox.cos.COSDictionary.setName : r3 = null >>>>>>>> org.apache.pdfbox.cos.COSDictionary.setName : if r2 == null
+org.apache.pdfbox.cos.COSDictionary.setName : if r2 == null >>>>>>>> org.apache.pdfbox.cos.COSDictionary.setName : r3 = staticinvoke <org.apache.pdfbox.cos.COSName: org.apache.pdfbox.cos.COSName getPDFName(java.lang.String)>(r2)
+org.apache.pdfbox.cos.COSDictionary.setName : r3 = staticinvoke <org.apache.pdfbox.cos.COSName: org.apache.pdfbox.cos.COSName getPDFName(java.lang.String)>(r2) >>>>>>>> org.apache.pdfbox.cos.COSName.getPDFName : r6 = null
+org.apache.pdfbox.cos.COSName.getPDFName : r6 = null >>>>>>>> org.apache.pdfbox.cos.COSName.getPDFName : if r0 == null
+org.apache.pdfbox.cos.COSName.getPDFName : if r0 == null >>>>>>>> org.apache.pdfbox.cos.COSName.getPDFName : $r1 = <org.apache.pdfbox.cos.COSName: java.util.Map commonNameMap>
+org.apache.pdfbox.cos.COSName.getPDFName : $r1 = <org.apache.pdfbox.cos.COSName: java.util.Map commonNameMap> >>>>>>>> org.apache.pdfbox.cos.COSName.getPDFName : $r2 = interfaceinvoke $r1.<java.util.Map: java.lang.Object get(java.lang.Object)>(r0)
+org.apache.pdfbox.cos.COSName.getPDFName : $r2 = interfaceinvoke $r1.<java.util.Map: java.lang.Object get(java.lang.Object)>(r0) >>>>>>>> org.apache.pdfbox.cos.COSName.getPDFName : r6 = (org.apache.pdfbox.cos.COSName) $r2
+org.apache.pdfbox.cos.COSName.getPDFName : r6 = (org.apache.pdfbox.cos.COSName) $r2 >>>>>>>> org.apache.pdfbox.cos.COSName.getPDFName : if r6 != null
+org.apache.pdfbox.cos.COSName.getPDFName : if r6 != null >>>>>>>> org.apache.pdfbox.cos.COSName.getPDFName : return r6
+org.apache.pdfbox.cos.COSName.getPDFName : return r6 >>>>>>>> org.apache.pdfbox.cos.COSDictionary.setName : virtualinvoke r0.<org.apache.pdfbox.cos.COSDictionary: void setItem(org.apache.pdfbox.cos.COSName,org.apache.pdfbox.cos.COSBase)>(r1, r3)
+org.apache.pdfbox.cos.COSDictionary.setName : virtualinvoke r0.<org.apache.pdfbox.cos.COSDictionary: void setItem(org.apache.pdfbox.cos.COSName,org.apache.pdfbox.cos.COSBase)>(r1, r3) >>>>>>>> org.apache.pdfbox.cos.COSDictionary.setItem : if r2 != null
+org.apache.pdfbox.cos.COSDictionary.setItem : if r2 != null >>>>>>>> org.apache.pdfbox.cos.COSDictionary.setItem : $r3 = r0.<org.apache.pdfbox.cos.COSDictionary: java.util.Map items>
+org.apache.pdfbox.cos.COSDictionary.setItem : $r3 = r0.<org.apache.pdfbox.cos.COSDictionary: java.util.Map items> >>>>>>>> org.apache.pdfbox.cos.COSDictionary.setItem : interfaceinvoke $r3.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>(r1, r2)
+org.apache.pdfbox.cos.COSDictionary.setItem : interfaceinvoke $r3.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>(r1, r2) >>>>>>>> org.apache.pdfbox.util.SmallMap.put : if r1 == null
+org.apache.pdfbox.util.SmallMap.put : if r1 == null >>>>>>>> org.apache.pdfbox.util.SmallMap.put : if r2 != null
+org.apache.pdfbox.util.SmallMap.put : if r2 != null >>>>>>>> org.apache.pdfbox.util.SmallMap.put : $r5 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.util.SmallMap.put : $r5 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr> >>>>>>>> org.apache.pdfbox.util.SmallMap.put : if $r5 != null
+org.apache.pdfbox.util.SmallMap.put : if $r5 != null >>>>>>>> org.apache.pdfbox.util.SmallMap.put : $r10 = newarray (java.lang.Object)[2]
+org.apache.pdfbox.util.SmallMap.put : $r10 = newarray (java.lang.Object)[2] >>>>>>>> org.apache.pdfbox.util.SmallMap.put : $r10[0] = r1
+org.apache.pdfbox.util.SmallMap.put : $r10[0] = r1 >>>>>>>> org.apache.pdfbox.util.SmallMap.put : $r10[1] = r2
+org.apache.pdfbox.util.SmallMap.put : $r10[1] = r2 >>>>>>>> org.apache.pdfbox.util.SmallMap.put : r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr> = $r10
+org.apache.pdfbox.util.SmallMap.put : r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr> = $r10 >>>>>>>> org.apache.pdfbox.util.SmallMap.put : return null
+org.apache.pdfbox.util.SmallMap.put : return null >>>>>>>> org.apache.pdfbox.util.SmallMap.put : i0 = specialinvoke r0.<org.apache.pdfbox.util.SmallMap: int findKey(java.lang.Object)>(r1)
+org.apache.pdfbox.util.SmallMap.put : i0 = specialinvoke r0.<org.apache.pdfbox.util.SmallMap: int findKey(java.lang.Object)>(r1) >>>>>>>> org.apache.pdfbox.util.SmallMap.findKey : $z0 = virtualinvoke r0.<org.apache.pdfbox.util.SmallMap: boolean isEmpty()>()
+org.apache.pdfbox.util.SmallMap.findKey : $z0 = virtualinvoke r0.<org.apache.pdfbox.util.SmallMap: boolean isEmpty()>() >>>>>>>> org.apache.pdfbox.util.SmallMap.isEmpty : $r1 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.util.SmallMap.isEmpty : $r1 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr> >>>>>>>> org.apache.pdfbox.util.SmallMap.isEmpty : if $r1 == null
+org.apache.pdfbox.util.SmallMap.isEmpty : if $r1 == null >>>>>>>> org.apache.pdfbox.util.SmallMap.isEmpty : $r2 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.util.SmallMap.isEmpty : $r2 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr> >>>>>>>> org.apache.pdfbox.util.SmallMap.isEmpty : $i0 = lengthof $r2
+org.apache.pdfbox.util.SmallMap.isEmpty : $i0 = lengthof $r2 >>>>>>>> org.apache.pdfbox.util.SmallMap.isEmpty : if $i0 != 0
+org.apache.pdfbox.util.SmallMap.isEmpty : if $i0 != 0 >>>>>>>> org.apache.pdfbox.util.SmallMap.isEmpty : $z0 = 0
+org.apache.pdfbox.util.SmallMap.isEmpty : $z0 = 0 >>>>>>>> org.apache.pdfbox.util.SmallMap.isEmpty : return $z0
+org.apache.pdfbox.util.SmallMap.isEmpty : return $z0 >>>>>>>> org.apache.pdfbox.util.SmallMap.findKey : if $z0 != 0
+org.apache.pdfbox.util.SmallMap.findKey : if $z0 != 0 >>>>>>>> org.apache.pdfbox.util.SmallMap.findKey : if r1 != null
+org.apache.pdfbox.util.SmallMap.findKey : if r1 != null >>>>>>>> org.apache.pdfbox.util.SmallMap.findKey : i1 = 0
+org.apache.pdfbox.util.SmallMap.findKey : i1 = 0 >>>>>>>> org.apache.pdfbox.util.SmallMap.findKey : $r2 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.util.SmallMap.findKey : $r2 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr> >>>>>>>> org.apache.pdfbox.util.SmallMap.findKey : $i0 = lengthof $r2
+org.apache.pdfbox.util.SmallMap.findKey : $i0 = lengthof $r2 >>>>>>>> org.apache.pdfbox.util.SmallMap.findKey : if i1 >= $i0
+org.apache.pdfbox.util.SmallMap.findKey : if i1 >= $i0 >>>>>>>> org.apache.pdfbox.util.SmallMap.findKey : $r3 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.util.SmallMap.findKey : $r3 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr> >>>>>>>> org.apache.pdfbox.util.SmallMap.findKey : $r4 = $r3[i1]
+org.apache.pdfbox.util.SmallMap.findKey : $r4 = $r3[i1] >>>>>>>> org.apache.pdfbox.util.SmallMap.findKey : $z1 = virtualinvoke r1.<java.lang.Object: boolean equals(java.lang.Object)>($r4)
+org.apache.pdfbox.util.SmallMap.findKey : $z1 = virtualinvoke r1.<java.lang.Object: boolean equals(java.lang.Object)>($r4) >>>>>>>> org.apache.pdfbox.cos.COSName.equals : $z0 = r1 instanceof org.apache.pdfbox.cos.COSName
+org.apache.pdfbox.cos.COSName.equals : $z0 = r1 instanceof org.apache.pdfbox.cos.COSName >>>>>>>> org.apache.pdfbox.cos.COSName.equals : if $z0 == 0
+org.apache.pdfbox.cos.COSName.equals : if $z0 == 0 >>>>>>>> org.apache.pdfbox.cos.COSName.equals : $r4 = r0.<org.apache.pdfbox.cos.COSName: java.lang.String name>
+org.apache.pdfbox.cos.COSName.equals : $r4 = r0.<org.apache.pdfbox.cos.COSName: java.lang.String name> >>>>>>>> org.apache.pdfbox.cos.COSName.equals : $r2 = (org.apache.pdfbox.cos.COSName) r1
+org.apache.pdfbox.cos.COSName.equals : $r2 = (org.apache.pdfbox.cos.COSName) r1 >>>>>>>> org.apache.pdfbox.cos.COSName.equals : $r3 = $r2.<org.apache.pdfbox.cos.COSName: java.lang.String name>
+org.apache.pdfbox.cos.COSName.equals : $r3 = $r2.<org.apache.pdfbox.cos.COSName: java.lang.String name> >>>>>>>> org.apache.pdfbox.cos.COSName.equals : $z1 = virtualinvoke $r4.<java.lang.String: boolean equals(java.lang.Object)>($r3)
+org.apache.pdfbox.cos.COSName.equals : $z1 = virtualinvoke $r4.<java.lang.String: boolean equals(java.lang.Object)>($r3) >>>>>>>> org.apache.pdfbox.cos.COSName.equals : if $z1 == 0
+org.apache.pdfbox.cos.COSName.equals : if $z1 == 0 >>>>>>>> org.apache.pdfbox.cos.COSName.equals : $z2 = 0
+org.apache.pdfbox.cos.COSName.equals : $z2 = 0 >>>>>>>> org.apache.pdfbox.cos.COSName.equals : return $z2
+org.apache.pdfbox.cos.COSName.equals : return $z2 >>>>>>>> org.apache.pdfbox.util.SmallMap.findKey : if $z1 == 0
+org.apache.pdfbox.util.SmallMap.findKey : if $z1 == 0 >>>>>>>> org.apache.pdfbox.util.SmallMap.findKey : i1 = i1 + 2
+org.apache.pdfbox.util.SmallMap.findKey : i1 = i1 + 2 >>>>>>>> org.apache.pdfbox.util.SmallMap.findKey : goto [?= $r2 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>]
+org.apache.pdfbox.util.SmallMap.findKey : goto [?= $r2 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>] >>>>>>>> org.apache.pdfbox.util.SmallMap.findKey : return -1
+org.apache.pdfbox.util.SmallMap.findKey : return -1 >>>>>>>> org.apache.pdfbox.util.SmallMap.put : if i0 >= 0
+org.apache.pdfbox.util.SmallMap.put : if i0 >= 0 >>>>>>>> org.apache.pdfbox.util.SmallMap.put : $r8 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.util.SmallMap.put : $r8 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr> >>>>>>>> org.apache.pdfbox.util.SmallMap.put : i5 = lengthof $r8
+org.apache.pdfbox.util.SmallMap.put : i5 = lengthof $r8 >>>>>>>> org.apache.pdfbox.util.SmallMap.put : $i3 = i5 + 2
+org.apache.pdfbox.util.SmallMap.put : $i3 = i5 + 2 >>>>>>>> org.apache.pdfbox.util.SmallMap.put : r3 = newarray (java.lang.Object)[$i3]
+org.apache.pdfbox.util.SmallMap.put : r3 = newarray (java.lang.Object)[$i3] >>>>>>>> org.apache.pdfbox.util.SmallMap.put : $r9 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.util.SmallMap.put : $r9 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr> >>>>>>>> org.apache.pdfbox.util.SmallMap.put : staticinvoke <java.lang.System: void arraycopy(java.lang.Object,int,java.lang.Object,int,int)>($r9, 0, r3, 0, i5)
+org.apache.pdfbox.util.SmallMap.put : staticinvoke <java.lang.System: void arraycopy(java.lang.Object,int,java.lang.Object,int,int)>($r9, 0, r3, 0, i5) >>>>>>>> org.apache.pdfbox.util.SmallMap.put : r3[i5] = r1
+org.apache.pdfbox.util.SmallMap.put : r3[i5] = r1 >>>>>>>> org.apache.pdfbox.util.SmallMap.put : $i4 = i5 + 1
+org.apache.pdfbox.util.SmallMap.put : $i4 = i5 + 1 >>>>>>>> org.apache.pdfbox.util.SmallMap.put : r3[$i4] = r2
+org.apache.pdfbox.util.SmallMap.put : r3[$i4] = r2 >>>>>>>> org.apache.pdfbox.util.SmallMap.put : r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr> = r3
+org.apache.pdfbox.util.SmallMap.put : r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr> = r3 >>>>>>>> org.apache.pdfbox.pdmodel.interactive.pagenavigation.PDTransition.setDuration : $r1 = virtualinvoke r0.<org.apache.pdfbox.pdmodel.interactive.pagenavigation.PDTransition: org.apache.pdfbox.cos.COSDictionary getCOSObject()>()
+org.apache.pdfbox.pdmodel.interactive.pagenavigation.PDTransition.setDuration : $r1 = virtualinvoke r0.<org.apache.pdfbox.pdmodel.interactive.pagenavigation.PDTransition: org.apache.pdfbox.cos.COSDictionary getCOSObject()>() >>>>>>>> org.apache.pdfbox.pdmodel.interactive.pagenavigation.PDTransition.setDuration : $r3 = <org.apache.pdfbox.cos.COSName: org.apache.pdfbox.cos.COSName D>
+org.apache.pdfbox.pdmodel.interactive.pagenavigation.PDTransition.setDuration : $r3 = <org.apache.pdfbox.cos.COSName: org.apache.pdfbox.cos.COSName D> >>>>>>>> org.apache.pdfbox.pdmodel.interactive.pagenavigation.PDTransition.setDuration : $r2 = new org.apache.pdfbox.cos.COSFloat
+org.apache.pdfbox.pdmodel.interactive.pagenavigation.PDTransition.setDuration : $r2 = new org.apache.pdfbox.cos.COSFloat >>>>>>>> org.apache.pdfbox.pdmodel.interactive.pagenavigation.PDTransition.setDuration : specialinvoke $r2.<org.apache.pdfbox.cos.COSFloat: void <init>(float)>(f0)
+org.apache.pdfbox.pdmodel.interactive.pagenavigation.PDTransition.setDuration : specialinvoke $r2.<org.apache.pdfbox.cos.COSFloat: void <init>(float)>(f0) >>>>>>>> org.apache.pdfbox.cos.COSFloat.removeNullDigits : $i0 = virtualinvoke r1.<java.lang.String: int indexOf(int)>(46)
+org.apache.pdfbox.cos.COSFloat.removeNullDigits : $i0 = virtualinvoke r1.<java.lang.String: int indexOf(int)>(46) >>>>>>>> org.apache.pdfbox.cos.COSFloat.removeNullDigits : if $i0 <= -1
+org.apache.pdfbox.cos.COSFloat.removeNullDigits : if $i0 <= -1 >>>>>>>> org.apache.pdfbox.cos.COSFloat.removeNullDigits : $z0 = virtualinvoke r1.<java.lang.String: boolean endsWith(java.lang.String)>(".0")
+org.apache.pdfbox.cos.COSFloat.removeNullDigits : $z0 = virtualinvoke r1.<java.lang.String: boolean endsWith(java.lang.String)>(".0") >>>>>>>> org.apache.pdfbox.cos.COSFloat.removeNullDigits : if $z0 != 0
+org.apache.pdfbox.cos.COSFloat.removeNullDigits : if $z0 != 0 >>>>>>>> org.apache.pdfbox.cos.COSFloat.removeNullDigits : return r1
+org.apache.pdfbox.cos.COSFloat.removeNullDigits : return r1 >>>>>>>> org.apache.pdfbox.pdmodel.interactive.pagenavigation.PDTransition.setDuration : virtualinvoke $r1.<org.apache.pdfbox.cos.COSDictionary: void setItem(org.apache.pdfbox.cos.COSName,org.apache.pdfbox.cos.COSBase)>($r3, $r2)
+org.apache.pdfbox.pdmodel.interactive.pagenavigation.PDTransition.setDuration : virtualinvoke $r1.<org.apache.pdfbox.cos.COSDictionary: void setItem(org.apache.pdfbox.cos.COSName,org.apache.pdfbox.cos.COSBase)>($r3, $r2) >>>>>>>> org.apache.pdfbox.pdmodel.interactive.pagenavigation.PDTransition.getDuration : $r1 = virtualinvoke r0.<org.apache.pdfbox.pdmodel.interactive.pagenavigation.PDTransition: org.apache.pdfbox.cos.COSDictionary getCOSObject()>()
+org.apache.pdfbox.pdmodel.interactive.pagenavigation.PDTransition.getDuration : $r1 = virtualinvoke r0.<org.apache.pdfbox.pdmodel.interactive.pagenavigation.PDTransition: org.apache.pdfbox.cos.COSDictionary getCOSObject()>() >>>>>>>> org.apache.pdfbox.pdmodel.interactive.pagenavigation.PDTransition.getDuration : $r2 = <org.apache.pdfbox.cos.COSName: org.apache.pdfbox.cos.COSName D>
+org.apache.pdfbox.pdmodel.interactive.pagenavigation.PDTransition.getDuration : $r2 = <org.apache.pdfbox.cos.COSName: org.apache.pdfbox.cos.COSName D> >>>>>>>> org.apache.pdfbox.pdmodel.interactive.pagenavigation.PDTransition.getDuration : $f0 = virtualinvoke $r1.<org.apache.pdfbox.cos.COSDictionary: float getFloat(org.apache.pdfbox.cos.COSName,float)>($r2, 1.0F)
+org.apache.pdfbox.pdmodel.interactive.pagenavigation.PDTransition.getDuration : $f0 = virtualinvoke $r1.<org.apache.pdfbox.cos.COSDictionary: float getFloat(org.apache.pdfbox.cos.COSName,float)>($r2, 1.0F) >>>>>>>> org.apache.pdfbox.cos.COSDictionary.getFloat : f1 = f0
+org.apache.pdfbox.cos.COSDictionary.getFloat : f1 = f0 >>>>>>>> org.apache.pdfbox.cos.COSDictionary.getFloat : r2 = virtualinvoke r0.<org.apache.pdfbox.cos.COSDictionary: org.apache.pdfbox.cos.COSBase getDictionaryObject(org.apache.pdfbox.cos.COSName)>(r1)
+org.apache.pdfbox.cos.COSDictionary.getFloat : r2 = virtualinvoke r0.<org.apache.pdfbox.cos.COSDictionary: org.apache.pdfbox.cos.COSBase getDictionaryObject(org.apache.pdfbox.cos.COSName)>(r1) >>>>>>>> org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : $r2 = r0.<org.apache.pdfbox.cos.COSDictionary: java.util.Map items>
+org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : $r2 = r0.<org.apache.pdfbox.cos.COSDictionary: java.util.Map items> >>>>>>>> org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : $r3 = interfaceinvoke $r2.<java.util.Map: java.lang.Object get(java.lang.Object)>(r1)
+org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : $r3 = interfaceinvoke $r2.<java.util.Map: java.lang.Object get(java.lang.Object)>(r1) >>>>>>>> org.apache.pdfbox.util.SmallMap.get : i0 = specialinvoke r0.<org.apache.pdfbox.util.SmallMap: int findKey(java.lang.Object)>(r1)
+org.apache.pdfbox.util.SmallMap.get : i0 = specialinvoke r0.<org.apache.pdfbox.util.SmallMap: int findKey(java.lang.Object)>(r1) >>>>>>>> org.apache.pdfbox.cos.COSName.equals : $z2 = 1
+org.apache.pdfbox.cos.COSName.equals : $z2 = 1 >>>>>>>> org.apache.pdfbox.cos.COSName.equals : goto [?= return $z2]
+org.apache.pdfbox.cos.COSName.equals : goto [?= return $z2] >>>>>>>> org.apache.pdfbox.util.SmallMap.findKey : return i1
+org.apache.pdfbox.util.SmallMap.findKey : return i1 >>>>>>>> org.apache.pdfbox.util.SmallMap.get : if i0 >= 0
+org.apache.pdfbox.util.SmallMap.get : if i0 >= 0 >>>>>>>> org.apache.pdfbox.util.SmallMap.get : $r2 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.util.SmallMap.get : $r2 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr> >>>>>>>> org.apache.pdfbox.util.SmallMap.get : $i1 = i0 + 1
+org.apache.pdfbox.util.SmallMap.get : $i1 = i0 + 1 >>>>>>>> org.apache.pdfbox.util.SmallMap.get : $r3 = $r2[$i1]
+org.apache.pdfbox.util.SmallMap.get : $r3 = $r2[$i1] >>>>>>>> org.apache.pdfbox.util.SmallMap.get : return $r3
+org.apache.pdfbox.util.SmallMap.get : return $r3 >>>>>>>> org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : r5 = (org.apache.pdfbox.cos.COSBase) $r3
+org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : r5 = (org.apache.pdfbox.cos.COSBase) $r3 >>>>>>>> org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : $z0 = r5 instanceof org.apache.pdfbox.cos.COSObject
+org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : $z0 = r5 instanceof org.apache.pdfbox.cos.COSObject >>>>>>>> org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : if $z0 == 0
+org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : if $z0 == 0 >>>>>>>> org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : $z1 = r5 instanceof org.apache.pdfbox.cos.COSNull
+org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : $z1 = r5 instanceof org.apache.pdfbox.cos.COSNull >>>>>>>> org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : if $z1 == 0
+org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : if $z1 == 0 >>>>>>>> org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : return r5
+org.apache.pdfbox.cos.COSDictionary.getDictionaryObject : return r5 >>>>>>>> org.apache.pdfbox.cos.COSDictionary.getFloat : $z0 = r2 instanceof org.apache.pdfbox.cos.COSNumber
+org.apache.pdfbox.cos.COSDictionary.getFloat : $z0 = r2 instanceof org.apache.pdfbox.cos.COSNumber >>>>>>>> org.apache.pdfbox.cos.COSDictionary.getFloat : if $z0 == 0
+org.apache.pdfbox.cos.COSDictionary.getFloat : if $z0 == 0 >>>>>>>> org.apache.pdfbox.cos.COSDictionary.getFloat : $r3 = (org.apache.pdfbox.cos.COSNumber) r2
+org.apache.pdfbox.cos.COSDictionary.getFloat : $r3 = (org.apache.pdfbox.cos.COSNumber) r2 >>>>>>>> org.apache.pdfbox.cos.COSDictionary.getFloat : f1 = virtualinvoke $r3.<org.apache.pdfbox.cos.COSNumber: float floatValue()>()
+org.apache.pdfbox.cos.COSDictionary.getFloat : f1 = virtualinvoke $r3.<org.apache.pdfbox.cos.COSNumber: float floatValue()>() >>>>>>>> org.apache.pdfbox.cos.COSFloat.floatValue : $r1 = r0.<org.apache.pdfbox.cos.COSFloat: java.math.BigDecimal value>
+org.apache.pdfbox.cos.COSFloat.floatValue : $r1 = r0.<org.apache.pdfbox.cos.COSFloat: java.math.BigDecimal value> >>>>>>>> org.apache.pdfbox.cos.COSFloat.floatValue : $f0 = virtualinvoke $r1.<java.math.BigDecimal: float floatValue()>()
+org.apache.pdfbox.cos.COSFloat.floatValue : $f0 = virtualinvoke $r1.<java.math.BigDecimal: float floatValue()>() >>>>>>>> org.apache.pdfbox.cos.COSFloat.floatValue : return $f0
+org.apache.pdfbox.cos.COSFloat.floatValue : return $f0 >>>>>>>> org.apache.pdfbox.cos.COSDictionary.getFloat : return f1
+org.apache.pdfbox.cos.COSDictionary.getFloat : return f1 >>>>>>>> org.apache.pdfbox.pdmodel.interactive.pagenavigation.PDTransition.getDuration : return $f0

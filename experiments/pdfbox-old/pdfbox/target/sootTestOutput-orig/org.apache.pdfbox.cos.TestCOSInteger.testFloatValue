@@ -1,0 +1,11 @@
+org.apache.pdfbox.cos.COSInteger.get : $r1 = <org.apache.pdfbox.cos.COSInteger: org.apache.pdfbox.cos.COSInteger[] STATIC>
+org.apache.pdfbox.cos.COSInteger.get : $b2 = -100L cmp l0
+org.apache.pdfbox.cos.COSInteger.get : $i4 = (int) l0
+org.apache.pdfbox.cos.COSInteger.get : $b3 = l0 cmp 256L
+org.apache.pdfbox.cos.COSInteger.get : $r3 = <org.apache.pdfbox.cos.COSInteger: org.apache.pdfbox.cos.COSInteger[] STATIC>
+org.apache.pdfbox.cos.COSInteger.floatValue : $l0 = r0.<org.apache.pdfbox.cos.COSInteger: long value>
+org.apache.pdfbox.cos.COSNumber.get : $i0 = virtualinvoke r0.<java.lang.String: int length()>()
+org.apache.pdfbox.cos.COSNumber.get : c8 = virtualinvoke r0.<java.lang.String: char charAt(int)>(0)
+org.apache.pdfbox.cos.COSNumber.get : if 48 > c8 goto (branch)
+org.apache.pdfbox.cos.COSNumber.get : $i6 = c8 - 48
+org.apache.pdfbox.cos.COSNumber.get : if c8 > 57 goto (branch)

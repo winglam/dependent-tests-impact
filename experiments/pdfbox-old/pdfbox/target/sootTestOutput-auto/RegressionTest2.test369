@@ -1,0 +1,67 @@
+org.apache.pdfbox.pdmodel.common.PDRectangle.getLowerLeftY : $r1 = r0.<org.apache.pdfbox.pdmodel.common.PDRectangle: org.apache.pdfbox.cos.COSArray rectArray>
+org.apache.pdfbox.pdmodel.common.PDRectangle.getLowerLeftX : $r1 = r0.<org.apache.pdfbox.pdmodel.common.PDRectangle: org.apache.pdfbox.cos.COSArray rectArray>
+org.apache.pdfbox.pdmodel.graphics.state.PDGraphicsState.getNonStrokingJavaComposite : $r1 = r0.<org.apache.pdfbox.pdmodel.graphics.state.PDGraphicsState: org.apache.pdfbox.pdmodel.graphics.blend.BlendMode blendMode>
+org.apache.pdfbox.cos.COSDictionary.setDate : $r3 = staticinvoke <org.apache.pdfbox.util.DateConverter: java.lang.String toString(java.util.Calendar)>(r2)
+org.apache.pdfbox.cos.COSName.equals : $z0 = r1 instanceof org.apache.pdfbox.cos.COSName
+org.apache.pdfbox.pdmodel.interactive.annotation.PDAnnotation.getCOSObject : $r1 = r0.<org.apache.pdfbox.pdmodel.interactive.'annotation'.PDAnnotation: org.apache.pdfbox.cos.COSDictionary dictionary>
+org.apache.pdfbox.cos.COSDictionary.removeItem : $r2 = r0.<org.apache.pdfbox.cos.COSDictionary: java.util.Map items>
+org.apache.pdfbox.cos.COSDictionary.setItem : virtualinvoke r0.<org.apache.pdfbox.cos.COSDictionary: void removeItem(org.apache.pdfbox.cos.COSName)>(r1)
+org.apache.pdfbox.cos.COSDictionary.setItem : $r3 = r0.<org.apache.pdfbox.cos.COSDictionary: java.util.Map items>
+org.apache.pdfbox.cos.COSDictionary.setItem : if r2 != null goto $r3 = r0.<org.apache.pdfbox.cos.COSDictionary: java.util.Map items>
+org.apache.pdfbox.util.SmallMap.isEmpty : $r1 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.pdmodel.interactive.annotation.PDAnnotation.setModifiedDate : $r2 = virtualinvoke r0.<org.apache.pdfbox.pdmodel.interactive.'annotation'.PDAnnotation: org.apache.pdfbox.cos.COSDictionary getCOSObject()>()
+org.apache.pdfbox.pdmodel.graphics.state.PDGraphicsState.getLineCap : $i0 = r0.<org.apache.pdfbox.pdmodel.graphics.state.PDGraphicsState: int lineCap>
+org.apache.pdfbox.cos.COSDictionary.setString : r4 = null
+org.apache.pdfbox.cos.COSDictionary.setString : if r2 == null goto virtualinvoke r0.<org.apache.pdfbox.cos.COSDictionary: void setItem(org.apache.pdfbox.cos.COSName,org.apache.pdfbox.cos.COSBase)>(r1, r4)
+org.apache.pdfbox.cos.COSDictionary.setString : virtualinvoke r0.<org.apache.pdfbox.cos.COSDictionary: void setItem(org.apache.pdfbox.cos.COSName,org.apache.pdfbox.cos.COSBase)>(r1, r4)
+org.apache.pdfbox.pdmodel.graphics.blend.BlendComposite.getInstance : $r13 = <org.apache.pdfbox.pdmodel.graphics.blend.BlendMode: org.apache.pdfbox.pdmodel.graphics.blend.SeparableBlendMode NORMAL>
+org.apache.pdfbox.pdmodel.graphics.blend.BlendComposite.getInstance : $r2 = staticinvoke <java.awt.AlphaComposite: java.awt.AlphaComposite getInstance(int,float)>(3, f0)
+org.apache.pdfbox.pdmodel.graphics.blend.BlendComposite.getInstance : $b1 = f0 cmpl 1.0F
+org.apache.pdfbox.pdmodel.graphics.blend.BlendComposite.getInstance : $b0 = f0 cmpg 0.0F
+org.apache.pdfbox.pdmodel.graphics.color.PDDeviceGray.getInitialColor : $r1 = r0.<org.apache.pdfbox.pdmodel.graphics.color.PDDeviceGray: org.apache.pdfbox.pdmodel.graphics.color.PDColor initialColor>
+org.apache.pdfbox.cos.COSArray.get : $r1 = r0.<org.apache.pdfbox.cos.COSArray: java.util.List objects>
+org.apache.pdfbox.util.SmallMap.findKey : if r1 != null goto i1 = 0
+org.apache.pdfbox.util.SmallMap.findKey : return -1
+org.apache.pdfbox.util.SmallMap.findKey : $r3 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.util.SmallMap.findKey : i1 = 0
+org.apache.pdfbox.util.SmallMap.findKey : $z0 = virtualinvoke r0.<org.apache.pdfbox.util.SmallMap: boolean isEmpty()>()
+org.apache.pdfbox.util.DateConverter.toString : return null
+org.apache.pdfbox.util.DateConverter.toString : if r0 != null goto $i0 = virtualinvoke r0.<java.util.Calendar: int get(int)>(15)
+org.apache.pdfbox.pdmodel.common.PDRectangle.getCOSArray : $r1 = r0.<org.apache.pdfbox.pdmodel.common.PDRectangle: org.apache.pdfbox.cos.COSArray rectArray>
+org.apache.pdfbox.cos.COSFloat.floatValue : $r1 = r0.<org.apache.pdfbox.cos.COSFloat: java.math.BigDecimal value>
+org.apache.pdfbox.util.SmallMap.remove : if i0 >= 0 goto $r4 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.util.SmallMap.remove : return null
+org.apache.pdfbox.util.SmallMap.remove : i0 = specialinvoke r0.<org.apache.pdfbox.util.SmallMap: int findKey(java.lang.Object)>(r1)
+org.apache.pdfbox.pdmodel.common.PDRectangle.getUpperRightY : $r1 = r0.<org.apache.pdfbox.pdmodel.common.PDRectangle: org.apache.pdfbox.cos.COSArray rectArray>
+org.apache.pdfbox.pdmodel.common.PDRectangle.getUpperRightX : $r1 = r0.<org.apache.pdfbox.pdmodel.common.PDRectangle: org.apache.pdfbox.cos.COSArray rectArray>
+org.apache.pdfbox.cos.COSName.getPDFName : $r1 = <org.apache.pdfbox.cos.COSName: java.util.Map commonNameMap>
+org.apache.pdfbox.cos.COSName.getPDFName : return r6
+org.apache.pdfbox.cos.COSName.getPDFName : r6 = null
+org.apache.pdfbox.cos.COSName.getPDFName : $r3 = <org.apache.pdfbox.cos.COSName: java.util.Map nameMap>
+org.apache.pdfbox.cos.COSName.getPDFName : if r0 == null goto return r6
+org.apache.pdfbox.cos.COSName.getPDFName : if r6 != null goto return r6
+org.apache.pdfbox.util.SmallMap.put : $r5 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.util.SmallMap.put : $r8 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.util.SmallMap.put : $r9 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.util.SmallMap.put : if r2 != null goto $r5 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.util.SmallMap.put : $i4 = i5 + 1
+org.apache.pdfbox.util.SmallMap.put : r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr> = r3
+org.apache.pdfbox.util.SmallMap.put : r3[i5] = r1
+org.apache.pdfbox.util.SmallMap.put : $i3 = i5 + 2
+org.apache.pdfbox.util.SmallMap.put : if r1 == null goto $r4 = new java.lang.NullPointerException
+org.apache.pdfbox.util.SmallMap.put : return null
+org.apache.pdfbox.util.SmallMap.put : $r10 = newarray (java.lang.Object)[2]
+org.apache.pdfbox.util.SmallMap.put : i0 = specialinvoke r0.<org.apache.pdfbox.util.SmallMap: int findKey(java.lang.Object)>(r1)
+org.apache.pdfbox.util.SmallMap.put : if i0 >= 0 goto $r6 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.pdmodel.interactive.annotation.PDAnnotation.setRectangle : $r2 = r0.<org.apache.pdfbox.pdmodel.interactive.'annotation'.PDAnnotation: org.apache.pdfbox.cos.COSDictionary dictionary>
+org.apache.pdfbox.pdmodel.common.PDRectangle.toGeneralPath : virtualinvoke $r2.<java.awt.geom.GeneralPath: void lineTo(float,float)>(f0, f3)
+org.apache.pdfbox.pdmodel.common.PDRectangle.toGeneralPath : $r2 = new java.awt.geom.GeneralPath
+org.apache.pdfbox.pdmodel.common.PDRectangle.toGeneralPath : virtualinvoke $r2.<java.awt.geom.GeneralPath: void moveTo(float,float)>(f0, f1)
+org.apache.pdfbox.pdmodel.common.PDRectangle.toGeneralPath : f0 = virtualinvoke r0.<org.apache.pdfbox.pdmodel.common.PDRectangle: float getLowerLeftX()>()
+org.apache.pdfbox.pdmodel.common.PDRectangle.toGeneralPath : virtualinvoke $r2.<java.awt.geom.GeneralPath: void closePath()>()
+org.apache.pdfbox.pdmodel.common.PDRectangle.toGeneralPath : virtualinvoke $r2.<java.awt.geom.GeneralPath: void lineTo(float,float)>(f2, f3)
+org.apache.pdfbox.pdmodel.common.PDRectangle.toGeneralPath : f2 = virtualinvoke r0.<org.apache.pdfbox.pdmodel.common.PDRectangle: float getUpperRightX()>()
+org.apache.pdfbox.pdmodel.common.PDRectangle.toGeneralPath : f3 = virtualinvoke r0.<org.apache.pdfbox.pdmodel.common.PDRectangle: float getUpperRightY()>()
+org.apache.pdfbox.pdmodel.common.PDRectangle.toGeneralPath : virtualinvoke $r2.<java.awt.geom.GeneralPath: void lineTo(float,float)>(f2, f1)
+org.apache.pdfbox.pdmodel.common.PDRectangle.toGeneralPath : f1 = virtualinvoke r0.<org.apache.pdfbox.pdmodel.common.PDRectangle: float getLowerLeftY()>()
+org.apache.pdfbox.pdmodel.common.PDRectangle.toGeneralPath : return $r2

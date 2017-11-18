@@ -1,0 +1,23 @@
+org.apache.pdfbox.cos.COSDictionary.getObjectFromPath : r2 = virtualinvoke r1.<java.lang.String: java.lang.String[] split(java.lang.String)>("/") >>>>>>>> org.apache.pdfbox.cos.COSDictionary.getObjectFromPath : r9 = r0
+org.apache.pdfbox.cos.COSDictionary.getObjectFromPath : r9 = r0 >>>>>>>> org.apache.pdfbox.cos.COSDictionary.getObjectFromPath : i0 = lengthof r2
+org.apache.pdfbox.cos.COSDictionary.getObjectFromPath : i0 = lengthof r2 >>>>>>>> org.apache.pdfbox.cos.COSDictionary.getObjectFromPath : i2 = 0
+org.apache.pdfbox.cos.COSDictionary.getObjectFromPath : i2 = 0 >>>>>>>> org.apache.pdfbox.cos.COSDictionary.getObjectFromPath : if i2 >= i0
+org.apache.pdfbox.cos.COSDictionary.getObjectFromPath : if i2 >= i0 >>>>>>>> org.apache.pdfbox.cos.COSDictionary.getObjectFromPath : r4 = r2[i2]
+org.apache.pdfbox.cos.COSDictionary.getObjectFromPath : if i2 >= i0 >>>>>>>> org.apache.pdfbox.cos.COSDictionary.getObjectFromPath : return r9
+org.apache.pdfbox.cos.COSDictionary.getObjectFromPath : r4 = r2[i2] >>>>>>>> org.apache.pdfbox.cos.COSDictionary.getObjectFromPath : $z0 = r9 instanceof org.apache.pdfbox.cos.COSArray
+org.apache.pdfbox.cos.COSDictionary.getObjectFromPath : $z0 = r9 instanceof org.apache.pdfbox.cos.COSArray >>>>>>>> org.apache.pdfbox.cos.COSDictionary.getObjectFromPath : if $z0 == 0
+org.apache.pdfbox.cos.COSDictionary.getObjectFromPath : if $z0 == 0 >>>>>>>> org.apache.pdfbox.cos.COSDictionary.getObjectFromPath : $r6 = virtualinvoke r4.<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>("\\[", "")
+org.apache.pdfbox.cos.COSDictionary.getObjectFromPath : if $z0 == 0 >>>>>>>> org.apache.pdfbox.cos.COSDictionary.getObjectFromPath : $z1 = r9 instanceof org.apache.pdfbox.cos.COSDictionary
+org.apache.pdfbox.cos.COSDictionary.getObjectFromPath : $z1 = r9 instanceof org.apache.pdfbox.cos.COSDictionary >>>>>>>> org.apache.pdfbox.cos.COSDictionary.getObjectFromPath : if $z1 == 0
+org.apache.pdfbox.cos.COSDictionary.getObjectFromPath : if $z1 == 0 >>>>>>>> org.apache.pdfbox.cos.COSDictionary.getObjectFromPath : $r5 = (org.apache.pdfbox.cos.COSDictionary) r9
+org.apache.pdfbox.cos.COSDictionary.getObjectFromPath : if $z1 == 0 >>>>>>>> org.apache.pdfbox.cos.COSDictionary.getObjectFromPath : i2 = i2 + 1
+org.apache.pdfbox.cos.COSDictionary.getObjectFromPath : i2 = i2 + 1 >>>>>>>> org.apache.pdfbox.cos.COSDictionary.getObjectFromPath : goto [?= (branch)]
+org.apache.pdfbox.cos.COSDictionary.getObjectFromPath : goto [?= (branch)] >>>>>>>> org.apache.pdfbox.cos.COSDictionary.getObjectFromPath : if i2 >= i0
+org.apache.pdfbox.cos.COSDictionary.getObjectFromPath : $r5 = (org.apache.pdfbox.cos.COSDictionary) r9 >>>>>>>> org.apache.pdfbox.cos.COSDictionary.getObjectFromPath : r9 = virtualinvoke $r5.<org.apache.pdfbox.cos.COSDictionary: org.apache.pdfbox.cos.COSBase getDictionaryObject(java.lang.String)>(r4)
+org.apache.pdfbox.cos.COSDictionary.getObjectFromPath : r9 = virtualinvoke $r5.<org.apache.pdfbox.cos.COSDictionary: org.apache.pdfbox.cos.COSBase getDictionaryObject(java.lang.String)>(r4) >>>>>>>> org.apache.pdfbox.cos.COSDictionary.getObjectFromPath : i2 = i2 + 1
+org.apache.pdfbox.cos.COSDictionary.getObjectFromPath : $r6 = virtualinvoke r4.<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>("\\[", "") >>>>>>>> org.apache.pdfbox.cos.COSDictionary.getObjectFromPath : $r7 = virtualinvoke $r6.<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>("\\]", "")
+org.apache.pdfbox.cos.COSDictionary.getObjectFromPath : $r7 = virtualinvoke $r6.<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>("\\]", "") >>>>>>>> org.apache.pdfbox.cos.COSDictionary.getObjectFromPath : i1 = staticinvoke <java.lang.Integer: int parseInt(java.lang.String)>($r7)
+org.apache.pdfbox.cos.COSDictionary.getObjectFromPath : i1 = staticinvoke <java.lang.Integer: int parseInt(java.lang.String)>($r7) >>>>>>>> org.apache.pdfbox.cos.COSDictionary.getObjectFromPath : $r8 = (org.apache.pdfbox.cos.COSArray) r9
+org.apache.pdfbox.cos.COSDictionary.getObjectFromPath : $r8 = (org.apache.pdfbox.cos.COSArray) r9 >>>>>>>> org.apache.pdfbox.cos.COSDictionary.getObjectFromPath : r9 = virtualinvoke $r8.<org.apache.pdfbox.cos.COSArray: org.apache.pdfbox.cos.COSBase getObject(int)>(i1)
+org.apache.pdfbox.cos.COSDictionary.getObjectFromPath : r9 = virtualinvoke $r8.<org.apache.pdfbox.cos.COSArray: org.apache.pdfbox.cos.COSBase getObject(int)>(i1) >>>>>>>> org.apache.pdfbox.cos.COSDictionary.getObjectFromPath : goto [?= i2 = i2 + 1]
+org.apache.pdfbox.cos.COSDictionary.getObjectFromPath : goto [?= i2 = i2 + 1] >>>>>>>> org.apache.pdfbox.cos.COSDictionary.getObjectFromPath : i2 = i2 + 1

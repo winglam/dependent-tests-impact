@@ -1,0 +1,36 @@
+org.apache.pdfbox.pdfwriter.COSWriter.getStandardOutput : $r1 = r0.<org.apache.pdfbox.pdfwriter.COSWriter: org.apache.pdfbox.pdfwriter.COSStandardOutputStream standardOutput>
+org.apache.pdfbox.pdfwriter.COSWriter.setStandardOutput : r0.<org.apache.pdfbox.pdfwriter.COSWriter: org.apache.pdfbox.pdfwriter.COSStandardOutputStream standardOutput> = r1
+org.apache.pdfbox.cos.COSFloat.removeNullDigits : $i0 = virtualinvoke r1.<java.lang.String: int indexOf(int)>(46)
+org.apache.pdfbox.cos.COSFloat.removeNullDigits : $z1 = virtualinvoke r1.<java.lang.String: boolean endsWith(java.lang.String)>("0")
+org.apache.pdfbox.cos.COSFloat.removeNullDigits : $z0 = virtualinvoke r1.<java.lang.String: boolean endsWith(java.lang.String)>(".0")
+org.apache.pdfbox.pdfwriter.COSStandardOutputStream.setOnNewLine : r0.<org.apache.pdfbox.pdfwriter.COSStandardOutputStream: boolean onNewLine> = z0
+org.apache.pdfbox.cos.COSFloat.writePDF : $r2 = r0.<org.apache.pdfbox.cos.COSFloat: java.lang.String valueAsString>
+org.apache.pdfbox.cos.COSFloat.floatValue : $r1 = r0.<org.apache.pdfbox.cos.COSFloat: java.math.BigDecimal value>
+org.apache.pdfbox.cos.TestCOSFloat$AcceptTester.runTest : $r4 = r0.<org.apache.pdfbox.cos.TestCOSFloat$AcceptTester: org.apache.pdfbox.cos.TestCOSFloat this$0>
+org.apache.pdfbox.cos.TestCOSFloat$AcceptTester.runTest : $r9 = r0.<org.apache.pdfbox.cos.TestCOSFloat$AcceptTester: org.apache.pdfbox.cos.TestCOSFloat this$0>
+org.apache.pdfbox.cos.TestCOSFloat$AcceptTester.runTest : $r2 = r0.<org.apache.pdfbox.cos.TestCOSFloat$AcceptTester: org.apache.pdfbox.pdfwriter.COSWriter visitor>
+org.apache.pdfbox.cos.TestCOSFloat$AcceptTester.runTest : $r14 = r0.<org.apache.pdfbox.cos.TestCOSFloat$AcceptTester: java.io.ByteArrayOutputStream outStream>
+org.apache.pdfbox.cos.TestCOSFloat$AcceptTester.runTest : goto [?= return]
+org.apache.pdfbox.cos.TestCOSFloat$AcceptTester.runTest : $r1 = new org.apache.pdfbox.cos.COSFloat
+org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : z0 = 0
+org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : $r1 = r0.<org.apache.pdfbox.cos.COSFloat: java.math.BigDecimal value>
+org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : $b3 = f3 cmpl #InfinityF
+org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : $b4 = f3 cmpl 0.0F
+org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : $b0 = f3 cmpl #-InfinityF
+org.apache.pdfbox.cos.COSFloat.checkMinMaxValues : $r2 = r0.<org.apache.pdfbox.cos.COSFloat: java.math.BigDecimal value>
+org.apache.pdfbox.pdfwriter.COSWriter.visitFromFloat : $r2 = virtualinvoke r0.<org.apache.pdfbox.pdfwriter.COSWriter: org.apache.pdfbox.pdfwriter.COSStandardOutputStream getStandardOutput()>()
+org.apache.pdfbox.pdfwriter.COSWriter.visitFromFloat : return null
+org.apache.pdfbox.cos.COSFloat.accept : $r2 = interfaceinvoke r1.<org.apache.pdfbox.cos.ICOSVisitor: java.lang.Object visitFromFloat(org.apache.pdfbox.cos.COSFloat)>(r0)
+org.apache.pdfbox.pdfwriter.COSWriter.setOutput : r0.<org.apache.pdfbox.pdfwriter.COSWriter: java.io.OutputStream output> = r1
+org.apache.pdfbox.cos.COSNumber.get : $i0 = virtualinvoke r0.<java.lang.String: int length()>()
+org.apache.pdfbox.cos.COSNumber.get : $i1 = virtualinvoke r0.<java.lang.String: int indexOf(int)>(46)
+org.apache.pdfbox.cos.TestCOSFloat$BaseTester.loop : $f1 = (float) i3
+org.apache.pdfbox.cos.TestCOSFloat$BaseTester.loop : goto [?= $i2 = r0.<org.apache.pdfbox.cos.TestCOSFloat$BaseTester: int step>]
+org.apache.pdfbox.cos.TestCOSFloat$BaseTester.loop : $r3 = new java.util.Random
+org.apache.pdfbox.cos.TestCOSFloat$BaseTester.loop : i3 = r0.<org.apache.pdfbox.cos.TestCOSFloat$BaseTester: int low>
+org.apache.pdfbox.cos.TestCOSFloat$BaseTester.loop : virtualinvoke r0.<org.apache.pdfbox.cos.TestCOSFloat$BaseTester: void runTest(float)>(f0)
+org.apache.pdfbox.cos.TestCOSFloat$BaseTester.runTests : specialinvoke r0.<org.apache.pdfbox.cos.TestCOSFloat$BaseTester: void loop(long)>(123456L)
+org.apache.pdfbox.cos.TestCOSFloat$BaseTester.runTests : $l0 = staticinvoke <java.lang.System: long currentTimeMillis()>()
+org.apache.pdfbox.pdfwriter.COSStandardOutputStream.write : virtualinvoke r0.<org.apache.pdfbox.pdfwriter.COSStandardOutputStream: void setOnNewLine(boolean)>(0)
+org.apache.pdfbox.pdfwriter.COSStandardOutputStream.write : $l3 = r0.<org.apache.pdfbox.pdfwriter.COSStandardOutputStream: long position>
+org.apache.pdfbox.pdfwriter.COSStandardOutputStream.write : $r2 = r0.<org.apache.pdfbox.pdfwriter.COSStandardOutputStream: java.io.OutputStream out>

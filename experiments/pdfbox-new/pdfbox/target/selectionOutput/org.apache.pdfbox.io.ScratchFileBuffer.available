@@ -1,0 +1,9 @@
+org.apache.pdfbox.io.ScratchFileBuffer.available : specialinvoke r0.<org.apache.pdfbox.io.ScratchFileBuffer: void checkClosed()>() >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.available : $l0 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: long size>
+org.apache.pdfbox.io.ScratchFileBuffer.available : $l0 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: long size> >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.available : $l1 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: long currentPageOffset>
+org.apache.pdfbox.io.ScratchFileBuffer.available : $l1 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: long currentPageOffset> >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.available : $i2 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: int positionInPage>
+org.apache.pdfbox.io.ScratchFileBuffer.available : $i2 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: int positionInPage> >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.available : $l3 = (long) $i2
+org.apache.pdfbox.io.ScratchFileBuffer.available : $l3 = (long) $i2 >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.available : $l4 = $l1 + $l3
+org.apache.pdfbox.io.ScratchFileBuffer.available : $l4 = $l1 + $l3 >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.available : $l5 = $l0 - $l4
+org.apache.pdfbox.io.ScratchFileBuffer.available : $l5 = $l0 - $l4 >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.available : $l6 = staticinvoke <java.lang.Math: long min(long,long)>($l5, 2147483647L)
+org.apache.pdfbox.io.ScratchFileBuffer.available : $l6 = staticinvoke <java.lang.Math: long min(long,long)>($l5, 2147483647L) >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.available : $i7 = (int) $l6
+org.apache.pdfbox.io.ScratchFileBuffer.available : $i7 = (int) $l6 >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.available : return $i7

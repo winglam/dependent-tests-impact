@@ -1,0 +1,12 @@
+org.apache.pdfbox.filter.DCTFilter.clamp : $b0 = f0 cmpg 0.0F >>>>>>>> org.apache.pdfbox.filter.DCTFilter.clamp : if $b0 >= 0
+org.apache.pdfbox.filter.DCTFilter.clamp : if $b0 >= 0 >>>>>>>> org.apache.pdfbox.filter.DCTFilter.clamp : $f1 = 0.0F
+org.apache.pdfbox.filter.DCTFilter.clamp : if $b0 >= 0 >>>>>>>> org.apache.pdfbox.filter.DCTFilter.clamp : $b1 = f0 cmpl 255.0F
+org.apache.pdfbox.filter.DCTFilter.clamp : $b1 = f0 cmpl 255.0F >>>>>>>> org.apache.pdfbox.filter.DCTFilter.clamp : if $b1 <= 0
+org.apache.pdfbox.filter.DCTFilter.clamp : if $b1 <= 0 >>>>>>>> org.apache.pdfbox.filter.DCTFilter.clamp : $f1 = 255.0F
+org.apache.pdfbox.filter.DCTFilter.clamp : if $b1 <= 0 >>>>>>>> org.apache.pdfbox.filter.DCTFilter.clamp : $f1 = f0
+org.apache.pdfbox.filter.DCTFilter.clamp : $f1 = f0 >>>>>>>> org.apache.pdfbox.filter.DCTFilter.clamp : $i2 = (int) $f1
+org.apache.pdfbox.filter.DCTFilter.clamp : $i2 = (int) $f1 >>>>>>>> org.apache.pdfbox.filter.DCTFilter.clamp : return $i2
+org.apache.pdfbox.filter.DCTFilter.clamp : $f1 = 255.0F >>>>>>>> org.apache.pdfbox.filter.DCTFilter.clamp : goto [?= $i2 = (int) $f1]
+org.apache.pdfbox.filter.DCTFilter.clamp : goto [?= $i2 = (int) $f1] >>>>>>>> org.apache.pdfbox.filter.DCTFilter.clamp : $i2 = (int) $f1
+org.apache.pdfbox.filter.DCTFilter.clamp : $f1 = 0.0F >>>>>>>> org.apache.pdfbox.filter.DCTFilter.clamp : goto [?= $i2 = (int) $f1]
+org.apache.pdfbox.filter.DCTFilter.clamp : goto [?= $i2 = (int) $f1] >>>>>>>> org.apache.pdfbox.filter.DCTFilter.clamp : $i2 = (int) $f1

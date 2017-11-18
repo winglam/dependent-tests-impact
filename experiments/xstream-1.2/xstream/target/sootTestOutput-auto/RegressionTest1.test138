@@ -1,0 +1,20 @@
+com.thoughtworks.xstream.core.util.FastStack.push : $r4 = r0.<com.thoughtworks.xstream.core.util.FastStack: java.lang.Object[] stack>
+com.thoughtworks.xstream.core.util.FastStack.push : $i1 = r0.<com.thoughtworks.xstream.core.util.FastStack: int pointer>
+com.thoughtworks.xstream.core.util.FastStack.push : return r1
+com.thoughtworks.xstream.core.TreeMarshaller.getMapper : $r1 = r0.<com.thoughtworks.xstream.core.TreeMarshaller: com.thoughtworks.xstream.mapper.Mapper mapper>
+com.thoughtworks.xstream.mapper.XmlFriendlyMapper.mapNameToXML : $r2 = virtualinvoke r0.<com.thoughtworks.xstream.mapper.XmlFriendlyMapper: java.lang.String escapeFieldName(java.lang.String)>(r1)
+com.thoughtworks.xstream.core.MapBackedDataHolder.get : $r2 = r0.<com.thoughtworks.xstream.core.MapBackedDataHolder: java.util.Map map>
+com.thoughtworks.xstream.core.util.Fields.find : return r2
+com.thoughtworks.xstream.core.util.Fields.find : virtualinvoke r2.<java.lang.reflect.Field: void setAccessible(boolean)>(1)
+com.thoughtworks.xstream.core.util.Fields.find : r2 = virtualinvoke r0.<java.lang.Class: java.lang.reflect.Field getDeclaredField(java.lang.String)>(r1)
+com.thoughtworks.xstream.io.xml.JDomReader.reassignCurrentElement : $r2 = (org.jdom.Element) r1
+com.thoughtworks.xstream.core.TreeMarshaller.get : specialinvoke r0.<com.thoughtworks.xstream.core.TreeMarshaller: void lazilyCreateDataHolder()>()
+com.thoughtworks.xstream.core.TreeMarshaller.get : $r2 = r0.<com.thoughtworks.xstream.core.TreeMarshaller: com.thoughtworks.xstream.converters.DataHolder dataHolder>
+com.thoughtworks.xstream.mapper.AbstractXmlFriendlyMapper.escapeFieldName : i1 = 0
+com.thoughtworks.xstream.mapper.AbstractXmlFriendlyMapper.escapeFieldName : $r9 = virtualinvoke r3.<java.lang.StringBuffer: java.lang.String toString()>()
+com.thoughtworks.xstream.mapper.AbstractXmlFriendlyMapper.escapeFieldName : i0 = virtualinvoke r1.<java.lang.String: int length()>()
+com.thoughtworks.xstream.mapper.AbstractXmlFriendlyMapper.escapeFieldName : $r2 = new java.lang.StringBuffer
+com.thoughtworks.xstream.io.xml.XppDomWriter.underlyingWriter : return r0
+com.thoughtworks.xstream.core.TreeMarshaller.lazilyCreateDataHolder : $r1 = new com.thoughtworks.xstream.core.MapBackedDataHolder
+com.thoughtworks.xstream.core.TreeMarshaller.lazilyCreateDataHolder : $r2 = r0.<com.thoughtworks.xstream.core.TreeMarshaller: com.thoughtworks.xstream.converters.DataHolder dataHolder>
+com.thoughtworks.xstream.core.AbstractReferenceMarshaller.convert : $r6 = virtualinvoke r0.<com.thoughtworks.xstream.core.AbstractReferenceMarshaller: com.thoughtworks.xstream.mapper.Mapper getMapper()>()

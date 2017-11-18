@@ -1,0 +1,25 @@
+org.apache.pdfbox.pdmodel.graphics.color.PDIndexed.toRGB : $i1 = lengthof r1 >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDIndexed.toRGB : if $i1 <= 1
+org.apache.pdfbox.pdmodel.graphics.color.PDIndexed.toRGB : if $i1 <= 1 >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDIndexed.toRGB : $r3 = new java.lang.IllegalArgumentException
+org.apache.pdfbox.pdmodel.graphics.color.PDIndexed.toRGB : if $i1 <= 1 >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDIndexed.toRGB : $f0 = r1[0]
+org.apache.pdfbox.pdmodel.graphics.color.PDIndexed.toRGB : $f0 = r1[0] >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDIndexed.toRGB : i0 = staticinvoke <java.lang.Math: int round(float)>($f0)
+org.apache.pdfbox.pdmodel.graphics.color.PDIndexed.toRGB : i0 = staticinvoke <java.lang.Math: int round(float)>($f0) >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDIndexed.toRGB : i2 = staticinvoke <java.lang.Math: int max(int,int)>(i0, 0)
+org.apache.pdfbox.pdmodel.graphics.color.PDIndexed.toRGB : i2 = staticinvoke <java.lang.Math: int max(int,int)>(i0, 0) >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDIndexed.toRGB : $i3 = r0.<org.apache.pdfbox.pdmodel.graphics.color.PDIndexed: int actualMaxIndex>
+org.apache.pdfbox.pdmodel.graphics.color.PDIndexed.toRGB : $i3 = r0.<org.apache.pdfbox.pdmodel.graphics.color.PDIndexed: int actualMaxIndex> >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDIndexed.toRGB : i4 = staticinvoke <java.lang.Math: int min(int,int)>(i2, $i3)
+org.apache.pdfbox.pdmodel.graphics.color.PDIndexed.toRGB : i4 = staticinvoke <java.lang.Math: int min(int,int)>(i2, $i3) >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDIndexed.toRGB : $r4 = r0.<org.apache.pdfbox.pdmodel.graphics.color.PDIndexed: int[][] rgbColorTable>
+org.apache.pdfbox.pdmodel.graphics.color.PDIndexed.toRGB : $r4 = r0.<org.apache.pdfbox.pdmodel.graphics.color.PDIndexed: int[][] rgbColorTable> >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDIndexed.toRGB : r2 = $r4[i4]
+org.apache.pdfbox.pdmodel.graphics.color.PDIndexed.toRGB : r2 = $r4[i4] >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDIndexed.toRGB : $r5 = newarray (float)[3]
+org.apache.pdfbox.pdmodel.graphics.color.PDIndexed.toRGB : $r5 = newarray (float)[3] >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDIndexed.toRGB : $i5 = r2[0]
+org.apache.pdfbox.pdmodel.graphics.color.PDIndexed.toRGB : $i5 = r2[0] >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDIndexed.toRGB : $f1 = (float) $i5
+org.apache.pdfbox.pdmodel.graphics.color.PDIndexed.toRGB : $f1 = (float) $i5 >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDIndexed.toRGB : $f2 = $f1 / 255.0F
+org.apache.pdfbox.pdmodel.graphics.color.PDIndexed.toRGB : $f2 = $f1 / 255.0F >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDIndexed.toRGB : $r5[0] = $f2
+org.apache.pdfbox.pdmodel.graphics.color.PDIndexed.toRGB : $r5[0] = $f2 >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDIndexed.toRGB : $i6 = r2[1]
+org.apache.pdfbox.pdmodel.graphics.color.PDIndexed.toRGB : $i6 = r2[1] >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDIndexed.toRGB : $f3 = (float) $i6
+org.apache.pdfbox.pdmodel.graphics.color.PDIndexed.toRGB : $f3 = (float) $i6 >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDIndexed.toRGB : $f4 = $f3 / 255.0F
+org.apache.pdfbox.pdmodel.graphics.color.PDIndexed.toRGB : $f4 = $f3 / 255.0F >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDIndexed.toRGB : $r5[1] = $f4
+org.apache.pdfbox.pdmodel.graphics.color.PDIndexed.toRGB : $r5[1] = $f4 >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDIndexed.toRGB : $i7 = r2[2]
+org.apache.pdfbox.pdmodel.graphics.color.PDIndexed.toRGB : $i7 = r2[2] >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDIndexed.toRGB : $f5 = (float) $i7
+org.apache.pdfbox.pdmodel.graphics.color.PDIndexed.toRGB : $f5 = (float) $i7 >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDIndexed.toRGB : $f6 = $f5 / 255.0F
+org.apache.pdfbox.pdmodel.graphics.color.PDIndexed.toRGB : $f6 = $f5 / 255.0F >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDIndexed.toRGB : $r5[2] = $f6
+org.apache.pdfbox.pdmodel.graphics.color.PDIndexed.toRGB : $r5[2] = $f6 >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDIndexed.toRGB : return $r5
+org.apache.pdfbox.pdmodel.graphics.color.PDIndexed.toRGB : $r3 = new java.lang.IllegalArgumentException >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDIndexed.toRGB : specialinvoke $r3.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>("Indexed color spaces must have one color value")
+org.apache.pdfbox.pdmodel.graphics.color.PDIndexed.toRGB : specialinvoke $r3.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>("Indexed color spaces must have one color value") >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDIndexed.toRGB : throw $r3

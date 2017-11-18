@@ -1,0 +1,145 @@
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.writeAttributeValue : specialinvoke r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: void writeText(java.lang.String)>(r2)
+com.thoughtworks.xstream.core.util.FastStack.push : $r4 = r0.<com.thoughtworks.xstream.core.util.FastStack: java.lang.Object[] stack>
+com.thoughtworks.xstream.core.util.FastStack.push : $i1 = r0.<com.thoughtworks.xstream.core.util.FastStack: int pointer>
+com.thoughtworks.xstream.core.util.FastStack.push : return r1
+com.thoughtworks.xstream.core.util.FastStack.size : $i0 = r0.<com.thoughtworks.xstream.core.util.FastStack: int pointer>
+com.thoughtworks.xstream.io.copy.HierarchicalStreamCopier.copy : interfaceinvoke r1.<com.thoughtworks.xstream.io.HierarchicalStreamReader: void moveDown()>()
+com.thoughtworks.xstream.io.copy.HierarchicalStreamCopier.copy : i1 = 0
+com.thoughtworks.xstream.io.copy.HierarchicalStreamCopier.copy : $z0 = interfaceinvoke r1.<com.thoughtworks.xstream.io.HierarchicalStreamReader: boolean hasMoreChildren()>()
+com.thoughtworks.xstream.io.copy.HierarchicalStreamCopier.copy : i0 = interfaceinvoke r1.<com.thoughtworks.xstream.io.HierarchicalStreamReader: int getAttributeCount()>()
+com.thoughtworks.xstream.io.copy.HierarchicalStreamCopier.copy : if r6 == null goto $z0 = interfaceinvoke r1.<com.thoughtworks.xstream.io.HierarchicalStreamReader: boolean hasMoreChildren()>()
+com.thoughtworks.xstream.io.copy.HierarchicalStreamCopier.copy : interfaceinvoke r1.<com.thoughtworks.xstream.io.HierarchicalStreamReader: void moveUp()>()
+com.thoughtworks.xstream.io.copy.HierarchicalStreamCopier.copy : interfaceinvoke r2.<com.thoughtworks.xstream.io.HierarchicalStreamWriter: void endNode()>()
+com.thoughtworks.xstream.io.copy.HierarchicalStreamCopier.copy : $r4 = interfaceinvoke r1.<com.thoughtworks.xstream.io.HierarchicalStreamReader: java.lang.String getAttributeName(int)>(i1)
+com.thoughtworks.xstream.io.copy.HierarchicalStreamCopier.copy : $r3 = interfaceinvoke r1.<com.thoughtworks.xstream.io.HierarchicalStreamReader: java.lang.String getNodeName()>()
+com.thoughtworks.xstream.io.copy.HierarchicalStreamCopier.copy : r6 = interfaceinvoke r1.<com.thoughtworks.xstream.io.HierarchicalStreamReader: java.lang.String getValue()>()
+com.thoughtworks.xstream.io.copy.HierarchicalStreamCopier.copy : virtualinvoke r0.<com.thoughtworks.xstream.io.copy.HierarchicalStreamCopier: void copy(com.thoughtworks.xstream.io.HierarchicalStreamReader,com.thoughtworks.xstream.io.HierarchicalStreamWriter)>(r1, r2)
+com.thoughtworks.xstream.io.xml.AbstractPullReader.getNodeName : $r1 = r0.<com.thoughtworks.xstream.io.xml.AbstractPullReader: com.thoughtworks.xstream.core.util.FastStack elementStack>
+com.thoughtworks.xstream.io.xml.AbstractPullReader.move : $r5 = r0.<com.thoughtworks.xstream.io.xml.AbstractPullReader: com.thoughtworks.xstream.core.util.FastStack elementStack>
+com.thoughtworks.xstream.io.xml.AbstractPullReader.move : $r2 = r0.<com.thoughtworks.xstream.io.xml.AbstractPullReader: com.thoughtworks.xstream.core.util.FastStack elementStack>
+com.thoughtworks.xstream.io.xml.AbstractPullReader.move : $r1 = specialinvoke r0.<com.thoughtworks.xstream.io.xml.AbstractPullReader: com.thoughtworks.xstream.io.xml.AbstractPullReader$Event readEvent()>()
+com.thoughtworks.xstream.io.xml.AbstractPullReader.move : goto [?= return]
+com.thoughtworks.xstream.io.xml.AbstractPullReader.moveDown : $r2 = r0.<com.thoughtworks.xstream.io.xml.AbstractPullReader: com.thoughtworks.xstream.core.util.FastStack elementStack>
+com.thoughtworks.xstream.io.xml.AbstractPullReader.moveDown : specialinvoke r0.<com.thoughtworks.xstream.io.xml.AbstractPullReader: void move()>()
+com.thoughtworks.xstream.io.xml.AbstractPullReader.moveDown : $r1 = r0.<com.thoughtworks.xstream.io.xml.AbstractPullReader: com.thoughtworks.xstream.core.util.FastStack elementStack>
+com.thoughtworks.xstream.io.xml.AbstractPullReader.moveDown : $r3 = r0.<com.thoughtworks.xstream.io.xml.AbstractPullReader: com.thoughtworks.xstream.core.util.FastStack elementStack>
+com.thoughtworks.xstream.io.xml.AbstractPullReader.readEvent : $r15 = specialinvoke r0.<com.thoughtworks.xstream.io.xml.AbstractPullReader: com.thoughtworks.xstream.io.xml.AbstractPullReader$Event readRealEvent()>()
+com.thoughtworks.xstream.io.xml.AbstractPullReader.readEvent : $z0 = r0.<com.thoughtworks.xstream.io.xml.AbstractPullReader: boolean marked>
+com.thoughtworks.xstream.io.xml.AbstractPullReader.readEvent : $r12 = r0.<com.thoughtworks.xstream.io.xml.AbstractPullReader: com.thoughtworks.xstream.core.util.FastStack lookback>
+com.thoughtworks.xstream.io.xml.AbstractPullReader.readEvent : $r11 = r0.<com.thoughtworks.xstream.io.xml.AbstractPullReader: com.thoughtworks.xstream.core.util.FastStack lookback>
+com.thoughtworks.xstream.io.xml.AbstractPullReader.readEvent : $r2 = r0.<com.thoughtworks.xstream.io.xml.AbstractPullReader: com.thoughtworks.xstream.core.util.FastStack lookahead>
+com.thoughtworks.xstream.io.xml.AbstractPullReader.readEvent : $r7 = r0.<com.thoughtworks.xstream.io.xml.AbstractPullReader: com.thoughtworks.xstream.core.util.FastStack lookahead>
+com.thoughtworks.xstream.io.xml.AbstractPullReader.readEvent : $r1 = r0.<com.thoughtworks.xstream.io.xml.AbstractPullReader: com.thoughtworks.xstream.core.util.FastStack lookback>
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.addAttribute : $r8 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: com.thoughtworks.xstream.core.util.QuickWriter writer>
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.addAttribute : $r6 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: com.thoughtworks.xstream.core.util.QuickWriter writer>
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.addAttribute : $r9 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: com.thoughtworks.xstream.core.util.QuickWriter writer>
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.addAttribute : $r3 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: com.thoughtworks.xstream.core.util.QuickWriter writer>
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.addAttribute : $r7 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: com.thoughtworks.xstream.core.util.QuickWriter writer>
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.addAttribute : $r4 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: com.thoughtworks.xstream.core.util.QuickWriter writer>
+com.thoughtworks.xstream.core.util.FastStack.pop : return r2
+com.thoughtworks.xstream.core.util.FastStack.pop : $r4 = r0.<com.thoughtworks.xstream.core.util.FastStack: java.lang.Object[] stack>
+com.thoughtworks.xstream.core.util.FastStack.pop : $r3 = r0.<com.thoughtworks.xstream.core.util.FastStack: java.lang.Object[] stack>
+com.thoughtworks.xstream.io.xml.AbstractXmlWriter.escapeXmlName : $r2 = r0.<com.thoughtworks.xstream.io.xml.AbstractXmlWriter: com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer replacer>
+com.thoughtworks.xstream.core.util.QuickWriter.write : $i1 = r0.<com.thoughtworks.xstream.core.util.QuickWriter: int pointer>
+com.thoughtworks.xstream.core.util.QuickWriter.write : $r5 = r0.<com.thoughtworks.xstream.core.util.QuickWriter: char[] buffer>
+com.thoughtworks.xstream.core.util.QuickWriter.write : i0 = virtualinvoke r1.<java.lang.String: int length()>()
+com.thoughtworks.xstream.core.util.QuickWriter.write : i0 = lengthof r1
+com.thoughtworks.xstream.core.util.QuickWriter.write : $r4 = r0.<com.thoughtworks.xstream.core.util.QuickWriter: char[] buffer>
+com.thoughtworks.xstream.core.util.QuickWriter.write : $r2 = r0.<com.thoughtworks.xstream.core.util.QuickWriter: char[] buffer>
+com.thoughtworks.xstream.core.util.QuickWriter.write : $i2 = r0.<com.thoughtworks.xstream.core.util.QuickWriter: int pointer>
+com.thoughtworks.xstream.core.util.QuickWriter.write : $i6 = r0.<com.thoughtworks.xstream.core.util.QuickWriter: int pointer>
+com.thoughtworks.xstream.io.xml.AbstractPullReader.readRealEvent : return r2
+com.thoughtworks.xstream.io.xml.AbstractPullReader.readRealEvent : $r1 = new com.thoughtworks.xstream.io.xml.AbstractPullReader$Event
+com.thoughtworks.xstream.io.xml.AbstractPullReader.readRealEvent : $i2 = r2.<com.thoughtworks.xstream.io.xml.AbstractPullReader$Event: int type>
+com.thoughtworks.xstream.io.xml.AbstractPullReader.readRealEvent : $i1 = r2.<com.thoughtworks.xstream.io.xml.AbstractPullReader$Event: int type>
+com.thoughtworks.xstream.io.xml.AbstractPullReader.readRealEvent : $i0 = virtualinvoke r0.<com.thoughtworks.xstream.io.xml.AbstractPullReader: int pullNextEvent()>()
+com.thoughtworks.xstream.io.xml.AbstractPullReader.readRealEvent : $r4 = virtualinvoke r0.<com.thoughtworks.xstream.io.xml.AbstractPullReader: java.lang.String pullElementName()>()
+com.thoughtworks.xstream.io.xml.AbstractXmlReader.unescapeXmlName : $r2 = r0.<com.thoughtworks.xstream.io.xml.AbstractXmlReader: com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer replacer>
+com.thoughtworks.xstream.core.util.FastStack.popSilently : $r2 = r0.<com.thoughtworks.xstream.core.util.FastStack: java.lang.Object[] stack>
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.finishTag : r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: boolean tagIsEmpty> = 0
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.finishTag : $z0 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: boolean tagInProgress>
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.finishTag : $r1 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: com.thoughtworks.xstream.core.util.QuickWriter writer>
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.finishTag : r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: boolean tagInProgress> = 0
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.finishTag : virtualinvoke r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: void endOfLine()>()
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.finishTag : r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: boolean readyForNewLine> = 0
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.finishTag : $z1 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: boolean readyForNewLine>
+com.thoughtworks.xstream.io.xml.XppReader.getAttributeName : $r1 = r0.<com.thoughtworks.xstream.io.xml.XppReader: org.xmlpull.v1.XmlPullParser parser>
+com.thoughtworks.xstream.io.xml.XppReader.pullNextEvent : $b2 = 2
+com.thoughtworks.xstream.io.xml.XppReader.pullNextEvent : $r2 = r0.<com.thoughtworks.xstream.io.xml.XppReader: org.xmlpull.v1.XmlPullParser parser>
+com.thoughtworks.xstream.io.xml.XppReader.pullNextEvent : $b1 = 1
+com.thoughtworks.xstream.io.xml.AbstractPullReader.hasMoreChildren : virtualinvoke r0.<com.thoughtworks.xstream.io.xml.AbstractPullReader: void mark()>()
+com.thoughtworks.xstream.io.xml.AbstractPullReader.hasMoreChildren : virtualinvoke r0.<com.thoughtworks.xstream.io.xml.AbstractPullReader: void reset()>()
+com.thoughtworks.xstream.io.xml.AbstractPullReader.hasMoreChildren : $r1 = specialinvoke r0.<com.thoughtworks.xstream.io.xml.AbstractPullReader: com.thoughtworks.xstream.io.xml.AbstractPullReader$Event readEvent()>()
+com.thoughtworks.xstream.io.xml.AbstractPullReader.hasMoreChildren : return 1
+com.thoughtworks.xstream.io.xml.AbstractPullReader.hasMoreChildren : return 0
+com.thoughtworks.xstream.core.util.FastStack.hasStuff : $i0 = r0.<com.thoughtworks.xstream.core.util.FastStack: int pointer>
+com.thoughtworks.xstream.io.xml.AbstractPullReader.reset : $r2 = r0.<com.thoughtworks.xstream.io.xml.AbstractPullReader: com.thoughtworks.xstream.core.util.FastStack lookback>
+com.thoughtworks.xstream.io.xml.AbstractPullReader.reset : r0.<com.thoughtworks.xstream.io.xml.AbstractPullReader: boolean marked> = 0
+com.thoughtworks.xstream.io.xml.AbstractPullReader.reset : $r1 = r0.<com.thoughtworks.xstream.io.xml.AbstractPullReader: com.thoughtworks.xstream.core.util.FastStack lookahead>
+com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer.stringFoundAt : $i1 = virtualinvoke r1.<java.lang.String: int length()>()
+com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer.stringFoundAt : return 0
+com.thoughtworks.xstream.io.xml.XppReader.createParser : $r1 = new org.xmlpull.mxp1.MXParser
+com.thoughtworks.xstream.io.xml.XppReader.pullElementName : $r1 = r0.<com.thoughtworks.xstream.io.xml.XppReader: org.xmlpull.v1.XmlPullParser parser>
+com.thoughtworks.xstream.core.util.FastStack.peek : $i0 = r0.<com.thoughtworks.xstream.core.util.FastStack: int pointer>
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.writeText : i1 = 0
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.writeText : $r16 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: com.thoughtworks.xstream.core.util.QuickWriter writer>
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.writeText : c2 = virtualinvoke r1.<java.lang.String: char charAt(int)>(i1)
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.writeText : i0 = virtualinvoke r1.<java.lang.String: int length()>()
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.writeText : lookupswitch(c2) {     case 0: goto $r2 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: com.thoughtworks.xstream.core.util.QuickWriter writer>;     case 13: goto $r14 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: com.thoughtworks.xstream.core.util.QuickWriter writer>;     case 34: goto $r10 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: com.thoughtworks.xstream.core.util.QuickWriter writer>;     case 38: goto $r4 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: com.thoughtworks.xstream.core.util.QuickWriter writer>;     case 39: goto $r12 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: com.thoughtworks.xstream.core.util.QuickWriter writer>;     case 60: goto $r6 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: com.thoughtworks.xstream.core.util.QuickWriter writer>;     case 62: goto $r8 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: com.thoughtworks.xstream.core.util.QuickWriter writer>;     default: goto $r16 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: com.thoughtworks.xstream.core.util.QuickWriter writer>; }
+com.thoughtworks.xstream.io.xml.XppReader.getAttribute : $r1 = r0.<com.thoughtworks.xstream.io.xml.XppReader: org.xmlpull.v1.XmlPullParser parser>
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.startNode : r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: boolean tagIsEmpty> = 0
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.startNode : r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: boolean tagInProgress> = 1
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.startNode : specialinvoke r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: void finishTag()>()
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.startNode : $r5 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: com.thoughtworks.xstream.core.util.FastStack elementStack>
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.startNode : $r3 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: com.thoughtworks.xstream.core.util.QuickWriter writer>
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.startNode : $i0 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: int depth>
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.startNode : r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: boolean readyForNewLine> = 1
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.startNode : $r4 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: com.thoughtworks.xstream.core.util.QuickWriter writer>
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.startNode : r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: boolean tagIsEmpty> = 1
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.startNode : r2 = virtualinvoke r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: java.lang.String escapeXmlName(java.lang.String)>(r1)
+com.thoughtworks.xstream.io.xml.AbstractPullReader.getValue : virtualinvoke r0.<com.thoughtworks.xstream.io.xml.AbstractPullReader: void mark()>()
+com.thoughtworks.xstream.io.xml.AbstractPullReader.getValue : virtualinvoke r0.<com.thoughtworks.xstream.io.xml.AbstractPullReader: void reset()>()
+com.thoughtworks.xstream.io.xml.AbstractPullReader.getValue : if r2 == null goto (branch)
+com.thoughtworks.xstream.io.xml.AbstractPullReader.getValue : goto [?= virtualinvoke r0.<com.thoughtworks.xstream.io.xml.AbstractPullReader: void reset()>()]
+com.thoughtworks.xstream.io.xml.AbstractPullReader.getValue : r3 = specialinvoke r0.<com.thoughtworks.xstream.io.xml.AbstractPullReader: com.thoughtworks.xstream.io.xml.AbstractPullReader$Event readEvent()>()
+com.thoughtworks.xstream.io.xml.AbstractPullReader.getValue : if r1 != null goto $r8 = r1
+com.thoughtworks.xstream.io.xml.AbstractPullReader.getValue : r1 = null
+com.thoughtworks.xstream.io.xml.AbstractPullReader.getValue : r2 = null
+com.thoughtworks.xstream.io.xml.AbstractPullReader.getValue : $i0 = r3.<com.thoughtworks.xstream.io.xml.AbstractPullReader$Event: int type>
+com.thoughtworks.xstream.io.xml.AbstractPullReader.mark : r0.<com.thoughtworks.xstream.io.xml.AbstractPullReader: boolean marked> = 1
+com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer.escapeName : if c2 != 36 goto (branch)
+com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer.escapeName : i1 = 0
+com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer.escapeName : $r9 = virtualinvoke r3.<java.lang.StringBuffer: java.lang.String toString()>()
+com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer.escapeName : c2 = virtualinvoke r1.<java.lang.String: char charAt(int)>(i1)
+com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer.escapeName : i0 = virtualinvoke r1.<java.lang.String: int length()>()
+com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer.escapeName : virtualinvoke r3.<java.lang.StringBuffer: java.lang.StringBuffer append(char)>(c2)
+com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer.escapeName : $r2 = new java.lang.StringBuffer
+com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer.escapeName : if c2 != 95 goto virtualinvoke r3.<java.lang.StringBuffer: java.lang.StringBuffer append(char)>(c2)
+com.thoughtworks.xstream.io.xml.XppReader.getAttributeCount : $r1 = r0.<com.thoughtworks.xstream.io.xml.XppReader: org.xmlpull.v1.XmlPullParser parser>
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.endNode : $r2 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: com.thoughtworks.xstream.core.util.QuickWriter writer>
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.endNode : $r3 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: com.thoughtworks.xstream.core.util.FastStack elementStack>
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.endNode : specialinvoke r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: void finishTag()>()
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.endNode : $r6 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: com.thoughtworks.xstream.core.util.QuickWriter writer>
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.endNode : $r10 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: com.thoughtworks.xstream.core.util.QuickWriter writer>
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.endNode : $r11 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: com.thoughtworks.xstream.core.util.QuickWriter writer>
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.endNode : $i2 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: int depth>
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.endNode : $z0 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: boolean tagIsEmpty>
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.endNode : $i0 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: int depth>
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.endNode : r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: boolean readyForNewLine> = 0
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.endNode : r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: boolean readyForNewLine> = 1
+com.thoughtworks.xstream.io.xml.PrettyPrintWriter.endNode : $r4 = r0.<com.thoughtworks.xstream.io.xml.PrettyPrintWriter: com.thoughtworks.xstream.core.util.QuickWriter writer>
+com.thoughtworks.xstream.io.xml.AbstractPullReader.moveUp : $r2 = r0.<com.thoughtworks.xstream.io.xml.AbstractPullReader: com.thoughtworks.xstream.core.util.FastStack elementStack>
+com.thoughtworks.xstream.io.xml.AbstractPullReader.moveUp : specialinvoke r0.<com.thoughtworks.xstream.io.xml.AbstractPullReader: void move()>()
+com.thoughtworks.xstream.io.xml.AbstractPullReader.moveUp : $r1 = r0.<com.thoughtworks.xstream.io.xml.AbstractPullReader: com.thoughtworks.xstream.core.util.FastStack elementStack>
+com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer.unescapeName : $r4 = r0.<com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer: java.lang.String underscoreReplacement>
+com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer.unescapeName : i1 = 0
+com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer.unescapeName : $r7 = r0.<com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer: java.lang.String dollarReplacement>
+com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer.unescapeName : c2 = virtualinvoke r1.<java.lang.String: char charAt(int)>(i1)
+com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer.unescapeName : i0 = virtualinvoke r1.<java.lang.String: int length()>()
+com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer.unescapeName : virtualinvoke r3.<java.lang.StringBuffer: java.lang.StringBuffer append(char)>(c2)
+com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer.unescapeName : $r2 = new java.lang.StringBuffer
+com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer.unescapeName : $r11 = virtualinvoke r3.<java.lang.StringBuffer: java.lang.String toString()>()
+com.thoughtworks.xstream.core.util.QuickWriter.flush : $r4 = r0.<com.thoughtworks.xstream.core.util.QuickWriter: java.io.Writer writer>
+com.thoughtworks.xstream.core.util.QuickWriter.flush : r0.<com.thoughtworks.xstream.core.util.QuickWriter: int pointer> = 0
+com.thoughtworks.xstream.core.util.QuickWriter.flush : $r2 = r0.<com.thoughtworks.xstream.core.util.QuickWriter: java.io.Writer writer>
+com.thoughtworks.xstream.core.util.QuickWriter.flush : goto [?= return]

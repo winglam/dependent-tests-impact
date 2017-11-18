@@ -1,0 +1,32 @@
+org.apache.pdfbox.pdmodel.interactive.documentnavigation.destination.PDPageDestination.getPageNumber : $r2 = r0.<org.apache.pdfbox.pdmodel.interactive.documentnavigation.destination.PDPageDestination: org.apache.pdfbox.cos.COSArray array>
+org.apache.pdfbox.pdmodel.interactive.documentnavigation.destination.PDPageDestination.getPageNumber : i1 = -1
+org.apache.pdfbox.pdmodel.interactive.documentnavigation.destination.PDPageDestination.getPageNumber : $z0 = r1 instanceof org.apache.pdfbox.cos.COSNumber
+org.apache.pdfbox.pdmodel.interactive.documentnavigation.destination.PDPageDestination.getPageNumber : return i1
+org.apache.pdfbox.pdmodel.interactive.documentnavigation.destination.PDPageDestination.getPageNumber : $r3 = r0.<org.apache.pdfbox.pdmodel.interactive.documentnavigation.destination.PDPageDestination: org.apache.pdfbox.cos.COSArray array>
+org.apache.pdfbox.cos.COSArray.add : $r2 = r0.<org.apache.pdfbox.cos.COSArray: java.util.List objects>
+org.apache.pdfbox.cos.COSArray.setName : $r2 = staticinvoke <org.apache.pdfbox.cos.COSName: org.apache.pdfbox.cos.COSName getPDFName(java.lang.String)>(r1)
+org.apache.pdfbox.cos.COSArray.setInt : $l2 = (long) i1
+org.apache.pdfbox.cos.COSArray.getObject : $r1 = r0.<org.apache.pdfbox.cos.COSArray: java.util.List objects>
+org.apache.pdfbox.cos.COSArray.getObject : $z0 = r4 instanceof org.apache.pdfbox.cos.COSObject
+org.apache.pdfbox.cos.COSArray.getObject : $r2 = (org.apache.pdfbox.cos.COSBase) r4
+org.apache.pdfbox.cos.COSArray.getObject : $z1 = r4 instanceof org.apache.pdfbox.cos.COSNull
+org.apache.pdfbox.pdmodel.interactive.documentnavigation.destination.PDPageFitWidthDestination.setTop : $r1 = r0.<org.apache.pdfbox.pdmodel.interactive.documentnavigation.destination.PDPageFitWidthDestination: org.apache.pdfbox.cos.COSArray array>
+org.apache.pdfbox.pdmodel.interactive.documentnavigation.destination.PDPageFitWidthDestination.setTop : $r2 = r0.<org.apache.pdfbox.pdmodel.interactive.documentnavigation.destination.PDPageFitWidthDestination: org.apache.pdfbox.cos.COSArray array>
+org.apache.pdfbox.pdmodel.interactive.documentnavigation.destination.PDPageFitWidthDestination.setTop : if i0 != -1 goto $r2 = r0.<org.apache.pdfbox.pdmodel.interactive.documentnavigation.destination.PDPageFitWidthDestination: org.apache.pdfbox.cos.COSArray array>
+org.apache.pdfbox.cos.COSArray.growToSize : $i1 = virtualinvoke r0.<org.apache.pdfbox.cos.COSArray: int size()>()
+org.apache.pdfbox.cos.COSArray.growToSize : virtualinvoke r0.<org.apache.pdfbox.cos.COSArray: void growToSize(int,org.apache.pdfbox.cos.COSBase)>(i0, null)
+org.apache.pdfbox.cos.COSArray.growToSize : virtualinvoke r0.<org.apache.pdfbox.cos.COSArray: void add(org.apache.pdfbox.cos.COSBase)>(r1)
+org.apache.pdfbox.cos.COSArray.set : $r2 = r0.<org.apache.pdfbox.cos.COSArray: java.util.List objects>
+org.apache.pdfbox.cos.COSInteger.get : $r1 = <org.apache.pdfbox.cos.COSInteger: org.apache.pdfbox.cos.COSInteger[] STATIC>
+org.apache.pdfbox.cos.COSInteger.get : $b2 = -100L cmp l0
+org.apache.pdfbox.cos.COSInteger.get : $i4 = (int) l0
+org.apache.pdfbox.cos.COSInteger.get : $b3 = l0 cmp 256L
+org.apache.pdfbox.cos.COSInteger.get : $r3 = <org.apache.pdfbox.cos.COSInteger: org.apache.pdfbox.cos.COSInteger[] STATIC>
+org.apache.pdfbox.pdmodel.interactive.documentnavigation.destination.PDPageDestination.getCOSObject : $r1 = r0.<org.apache.pdfbox.pdmodel.interactive.documentnavigation.destination.PDPageDestination: org.apache.pdfbox.cos.COSArray array>
+org.apache.pdfbox.cos.COSName.getPDFName : $r1 = <org.apache.pdfbox.cos.COSName: java.util.Map commonNameMap>
+org.apache.pdfbox.cos.COSName.getPDFName : return r6
+org.apache.pdfbox.cos.COSName.getPDFName : r6 = null
+org.apache.pdfbox.cos.COSName.getPDFName : $r3 = <org.apache.pdfbox.cos.COSName: java.util.Map nameMap>
+org.apache.pdfbox.cos.COSName.getPDFName : if r0 == null goto return r6
+org.apache.pdfbox.cos.COSName.getPDFName : if r6 != null goto return r6
+org.apache.pdfbox.cos.COSArray.size : $r1 = r0.<org.apache.pdfbox.cos.COSArray: java.util.List objects>

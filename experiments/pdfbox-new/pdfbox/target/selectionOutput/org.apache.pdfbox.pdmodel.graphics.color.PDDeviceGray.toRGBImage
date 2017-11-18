@@ -1,0 +1,26 @@
+org.apache.pdfbox.pdmodel.graphics.color.PDDeviceGray.toRGBImage : i0 = virtualinvoke r1.<java.awt.image.WritableRaster: int getWidth()>() >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDDeviceGray.toRGBImage : i1 = virtualinvoke r1.<java.awt.image.WritableRaster: int getHeight()>()
+org.apache.pdfbox.pdmodel.graphics.color.PDDeviceGray.toRGBImage : i1 = virtualinvoke r1.<java.awt.image.WritableRaster: int getHeight()>() >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDDeviceGray.toRGBImage : $r5 = new java.awt.image.BufferedImage
+org.apache.pdfbox.pdmodel.graphics.color.PDDeviceGray.toRGBImage : $r5 = new java.awt.image.BufferedImage >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDDeviceGray.toRGBImage : specialinvoke $r5.<java.awt.image.BufferedImage: void <init>(int,int,int)>(i0, i1, 1)
+org.apache.pdfbox.pdmodel.graphics.color.PDDeviceGray.toRGBImage : specialinvoke $r5.<java.awt.image.BufferedImage: void <init>(int,int,int)>(i0, i1, 1) >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDDeviceGray.toRGBImage : r2 = $r5
+org.apache.pdfbox.pdmodel.graphics.color.PDDeviceGray.toRGBImage : r2 = $r5 >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDDeviceGray.toRGBImage : r3 = newarray (int)[1]
+org.apache.pdfbox.pdmodel.graphics.color.PDDeviceGray.toRGBImage : r3 = newarray (int)[1] >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDDeviceGray.toRGBImage : r4 = newarray (int)[3]
+org.apache.pdfbox.pdmodel.graphics.color.PDDeviceGray.toRGBImage : r4 = newarray (int)[3] >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDDeviceGray.toRGBImage : i2 = 0
+org.apache.pdfbox.pdmodel.graphics.color.PDDeviceGray.toRGBImage : i2 = 0 >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDDeviceGray.toRGBImage : if i2 >= i1
+org.apache.pdfbox.pdmodel.graphics.color.PDDeviceGray.toRGBImage : if i2 >= i1 >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDDeviceGray.toRGBImage : i3 = 0
+org.apache.pdfbox.pdmodel.graphics.color.PDDeviceGray.toRGBImage : if i2 >= i1 >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDDeviceGray.toRGBImage : return r2
+org.apache.pdfbox.pdmodel.graphics.color.PDDeviceGray.toRGBImage : i3 = 0 >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDDeviceGray.toRGBImage : if i3 >= i0
+org.apache.pdfbox.pdmodel.graphics.color.PDDeviceGray.toRGBImage : if i3 >= i0 >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDDeviceGray.toRGBImage : virtualinvoke r1.<java.awt.image.WritableRaster: int[] getPixel(int,int,int[])>(i3, i2, r3)
+org.apache.pdfbox.pdmodel.graphics.color.PDDeviceGray.toRGBImage : if i3 >= i0 >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDDeviceGray.toRGBImage : i2 = i2 + 1
+org.apache.pdfbox.pdmodel.graphics.color.PDDeviceGray.toRGBImage : i2 = i2 + 1 >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDDeviceGray.toRGBImage : goto [?= (branch)]
+org.apache.pdfbox.pdmodel.graphics.color.PDDeviceGray.toRGBImage : goto [?= (branch)] >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDDeviceGray.toRGBImage : if i2 >= i1
+org.apache.pdfbox.pdmodel.graphics.color.PDDeviceGray.toRGBImage : virtualinvoke r1.<java.awt.image.WritableRaster: int[] getPixel(int,int,int[])>(i3, i2, r3) >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDDeviceGray.toRGBImage : $i4 = r3[0]
+org.apache.pdfbox.pdmodel.graphics.color.PDDeviceGray.toRGBImage : $i4 = r3[0] >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDDeviceGray.toRGBImage : r4[0] = $i4
+org.apache.pdfbox.pdmodel.graphics.color.PDDeviceGray.toRGBImage : r4[0] = $i4 >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDDeviceGray.toRGBImage : $i5 = r3[0]
+org.apache.pdfbox.pdmodel.graphics.color.PDDeviceGray.toRGBImage : $i5 = r3[0] >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDDeviceGray.toRGBImage : r4[1] = $i5
+org.apache.pdfbox.pdmodel.graphics.color.PDDeviceGray.toRGBImage : r4[1] = $i5 >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDDeviceGray.toRGBImage : $i6 = r3[0]
+org.apache.pdfbox.pdmodel.graphics.color.PDDeviceGray.toRGBImage : $i6 = r3[0] >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDDeviceGray.toRGBImage : r4[2] = $i6
+org.apache.pdfbox.pdmodel.graphics.color.PDDeviceGray.toRGBImage : r4[2] = $i6 >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDDeviceGray.toRGBImage : $r7 = virtualinvoke r2.<java.awt.image.BufferedImage: java.awt.image.WritableRaster getRaster()>()
+org.apache.pdfbox.pdmodel.graphics.color.PDDeviceGray.toRGBImage : $r7 = virtualinvoke r2.<java.awt.image.BufferedImage: java.awt.image.WritableRaster getRaster()>() >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDDeviceGray.toRGBImage : virtualinvoke $r7.<java.awt.image.WritableRaster: void setPixel(int,int,int[])>(i3, i2, r4)
+org.apache.pdfbox.pdmodel.graphics.color.PDDeviceGray.toRGBImage : virtualinvoke $r7.<java.awt.image.WritableRaster: void setPixel(int,int,int[])>(i3, i2, r4) >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDDeviceGray.toRGBImage : i3 = i3 + 1
+org.apache.pdfbox.pdmodel.graphics.color.PDDeviceGray.toRGBImage : i3 = i3 + 1 >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDDeviceGray.toRGBImage : goto [?= (branch)]
+org.apache.pdfbox.pdmodel.graphics.color.PDDeviceGray.toRGBImage : goto [?= (branch)] >>>>>>>> org.apache.pdfbox.pdmodel.graphics.color.PDDeviceGray.toRGBImage : if i3 >= i0

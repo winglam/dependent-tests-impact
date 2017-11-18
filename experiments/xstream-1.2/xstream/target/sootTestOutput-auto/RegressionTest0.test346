@@ -1,0 +1,39 @@
+com.thoughtworks.xstream.converters.reflection.SerializationMethodInvoker.callWriteReplace : if r2 == null goto return r1
+com.thoughtworks.xstream.converters.reflection.SerializationMethodInvoker.callWriteReplace : if r1 != null goto $r4 = virtualinvoke r1.<java.lang.Object: java.lang.Class getClass()>()
+com.thoughtworks.xstream.converters.reflection.SerializationMethodInvoker.callWriteReplace : $r4 = virtualinvoke r1.<java.lang.Object: java.lang.Class getClass()>()
+com.thoughtworks.xstream.converters.reflection.SerializationMethodInvoker.callWriteReplace : return r1
+com.thoughtworks.xstream.core.util.FastStack.push : $r4 = r0.<com.thoughtworks.xstream.core.util.FastStack: java.lang.Object[] stack>
+com.thoughtworks.xstream.core.util.FastStack.push : $i1 = r0.<com.thoughtworks.xstream.core.util.FastStack: int pointer>
+com.thoughtworks.xstream.core.util.FastStack.push : $r3 = r0.<com.thoughtworks.xstream.core.util.FastStack: java.lang.Object[] stack>
+com.thoughtworks.xstream.core.util.FastStack.push : return r1
+com.thoughtworks.xstream.io.xml.SaxWriter.underlyingWriter : return r0
+com.thoughtworks.xstream.core.MapBackedDataHolder.get : $r2 = r0.<com.thoughtworks.xstream.core.MapBackedDataHolder: java.util.Map map>
+com.thoughtworks.xstream.converters.reflection.SerializationMethodInvoker.getMethod : return null
+com.thoughtworks.xstream.converters.reflection.SerializationMethodInvoker.getMethod : goto [?= staticinvoke <edu.washington.cs.dt.impact.util.Tracer: void trace(java.lang.String,java.lang.String)>("if r1 == null goto $r25 = r0.<com.thoughtworks.xstream.converters.reflection.SerializationMethodInvoker: java.util.Map cache>", "com.thoughtworks.xstream.converters.reflection.SerializationMethodInvoker.getMethod")]
+com.thoughtworks.xstream.converters.reflection.SerializationMethodInvoker.getMethod : $r25 = r0.<com.thoughtworks.xstream.converters.reflection.SerializationMethodInvoker: java.util.Map cache>
+com.thoughtworks.xstream.converters.reflection.SerializationMethodInvoker.getMethod : r19 = virtualinvoke r1.<java.lang.Class: java.lang.reflect.Method getDeclaredMethod(java.lang.String,java.lang.Class[])>(r2, r3)
+com.thoughtworks.xstream.converters.reflection.SerializationMethodInvoker.getMethod : $r13 = r0.<com.thoughtworks.xstream.converters.reflection.SerializationMethodInvoker: java.util.Map cache>
+com.thoughtworks.xstream.converters.reflection.SerializationMethodInvoker.getMethod : if r1 == null goto $r25 = r0.<com.thoughtworks.xstream.converters.reflection.SerializationMethodInvoker: java.util.Map cache>
+com.thoughtworks.xstream.converters.reflection.SerializationMethodInvoker.getMethod : $r4 = new java.lang.StringBuilder
+com.thoughtworks.xstream.converters.reflection.SerializationMethodInvoker.getMethod : r24 = $r23
+com.thoughtworks.xstream.converters.reflection.SerializationMethodInvoker.getMethod : r1 = virtualinvoke r1.<java.lang.Class: java.lang.Class getSuperclass()>()
+com.thoughtworks.xstream.converters.reflection.SerializationMethodInvoker.getMethod : if z0 == 0 goto r28 = virtualinvoke r1.<java.lang.Class: java.lang.reflect.Method getDeclaredMethod(java.lang.String,java.lang.Class[])>(r2, r3)
+com.thoughtworks.xstream.core.TreeMarshaller.put : specialinvoke r0.<com.thoughtworks.xstream.core.TreeMarshaller: void lazilyCreateDataHolder()>()
+com.thoughtworks.xstream.core.TreeMarshaller.put : $r3 = r0.<com.thoughtworks.xstream.core.TreeMarshaller: com.thoughtworks.xstream.converters.DataHolder dataHolder>
+com.thoughtworks.xstream.converters.extended.GregorianCalendarConverter.marshal : r4 = (java.util.GregorianCalendar) r1
+com.thoughtworks.xstream.core.TreeMarshaller.get : specialinvoke r0.<com.thoughtworks.xstream.core.TreeMarshaller: void lazilyCreateDataHolder()>()
+com.thoughtworks.xstream.core.TreeMarshaller.get : $r2 = r0.<com.thoughtworks.xstream.core.TreeMarshaller: com.thoughtworks.xstream.converters.DataHolder dataHolder>
+com.thoughtworks.xstream.core.util.CustomObjectOutputStream.putFields : $r1 = new com.thoughtworks.xstream.core.util.CustomObjectOutputStream$CustomPutField
+com.thoughtworks.xstream.core.util.CustomObjectOutputStream.putFields : return r2
+com.thoughtworks.xstream.core.util.CustomObjectOutputStream.putFields : $r3 = r0.<com.thoughtworks.xstream.core.util.CustomObjectOutputStream: com.thoughtworks.xstream.core.util.FastStack customFields>
+com.thoughtworks.xstream.core.MapBackedDataHolder.put : $r3 = r0.<com.thoughtworks.xstream.core.MapBackedDataHolder: java.util.Map map>
+com.thoughtworks.xstream.core.util.FastStack.resizeStack : r1 = newarray (java.lang.Object)[i0]
+com.thoughtworks.xstream.core.util.FastStack.resizeStack : r0.<com.thoughtworks.xstream.core.util.FastStack: java.lang.Object[] stack> = r1
+com.thoughtworks.xstream.core.util.FastStack.resizeStack : $r2 = r0.<com.thoughtworks.xstream.core.util.FastStack: java.lang.Object[] stack>
+com.thoughtworks.xstream.core.TreeMarshaller.lazilyCreateDataHolder : $r1 = new com.thoughtworks.xstream.core.MapBackedDataHolder
+com.thoughtworks.xstream.core.TreeMarshaller.lazilyCreateDataHolder : $r2 = r0.<com.thoughtworks.xstream.core.TreeMarshaller: com.thoughtworks.xstream.converters.DataHolder dataHolder>
+com.thoughtworks.xstream.core.util.CustomObjectOutputStream.getInstance : return r3
+com.thoughtworks.xstream.core.util.CustomObjectOutputStream.getInstance : if r3 != null goto virtualinvoke r3.<com.thoughtworks.xstream.core.util.CustomObjectOutputStream: void pushCallback(com.thoughtworks.xstream.core.util.CustomObjectOutputStream$StreamCallback)>(r1)
+com.thoughtworks.xstream.core.util.CustomObjectOutputStream.getInstance : $r2 = <com.thoughtworks.xstream.core.util.CustomObjectOutputStream: java.lang.String DATA_HOLDER_KEY>
+com.thoughtworks.xstream.core.util.CustomObjectOutputStream.getInstance : $r6 = <com.thoughtworks.xstream.core.util.CustomObjectOutputStream: java.lang.String DATA_HOLDER_KEY>
+com.thoughtworks.xstream.core.util.CustomObjectOutputStream.getInstance : $r5 = new com.thoughtworks.xstream.core.util.CustomObjectOutputStream

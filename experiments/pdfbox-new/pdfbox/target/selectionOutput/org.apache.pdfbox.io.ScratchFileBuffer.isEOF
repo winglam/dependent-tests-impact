@@ -1,0 +1,12 @@
+org.apache.pdfbox.io.ScratchFileBuffer.isEOF : specialinvoke r0.<org.apache.pdfbox.io.ScratchFileBuffer: void checkClosed()>() >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.isEOF : $l0 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: long currentPageOffset>
+org.apache.pdfbox.io.ScratchFileBuffer.isEOF : $l0 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: long currentPageOffset> >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.isEOF : $i1 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: int positionInPage>
+org.apache.pdfbox.io.ScratchFileBuffer.isEOF : $i1 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: int positionInPage> >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.isEOF : $l2 = (long) $i1
+org.apache.pdfbox.io.ScratchFileBuffer.isEOF : $l2 = (long) $i1 >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.isEOF : $l3 = $l0 + $l2
+org.apache.pdfbox.io.ScratchFileBuffer.isEOF : $l3 = $l0 + $l2 >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.isEOF : $l4 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: long size>
+org.apache.pdfbox.io.ScratchFileBuffer.isEOF : $l4 = r0.<org.apache.pdfbox.io.ScratchFileBuffer: long size> >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.isEOF : $b5 = $l3 cmp $l4
+org.apache.pdfbox.io.ScratchFileBuffer.isEOF : $b5 = $l3 cmp $l4 >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.isEOF : if $b5 < 0
+org.apache.pdfbox.io.ScratchFileBuffer.isEOF : if $b5 < 0 >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.isEOF : $z0 = 1
+org.apache.pdfbox.io.ScratchFileBuffer.isEOF : if $b5 < 0 >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.isEOF : $z0 = 0
+org.apache.pdfbox.io.ScratchFileBuffer.isEOF : $z0 = 0 >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.isEOF : return $z0
+org.apache.pdfbox.io.ScratchFileBuffer.isEOF : $z0 = 1 >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.isEOF : goto [?= return $z0]
+org.apache.pdfbox.io.ScratchFileBuffer.isEOF : goto [?= return $z0] >>>>>>>> org.apache.pdfbox.io.ScratchFileBuffer.isEOF : return $z0

@@ -1,0 +1,16 @@
+org.apache.pdfbox.text.TextPosition.getWidthRot : $b0 = f0 cmpl 90.0F >>>>>>>> org.apache.pdfbox.text.TextPosition.getWidthRot : if $b0 == 0
+org.apache.pdfbox.text.TextPosition.getWidthRot : if $b0 == 0 >>>>>>>> org.apache.pdfbox.text.TextPosition.getWidthRot : $b1 = f0 cmpl 270.0F
+org.apache.pdfbox.text.TextPosition.getWidthRot : if $b0 == 0 >>>>>>>> org.apache.pdfbox.text.TextPosition.getWidthRot : $f1 = r0.<org.apache.pdfbox.text.TextPosition: float endY>
+org.apache.pdfbox.text.TextPosition.getWidthRot : $f1 = r0.<org.apache.pdfbox.text.TextPosition: float endY> >>>>>>>> org.apache.pdfbox.text.TextPosition.getWidthRot : $r1 = r0.<org.apache.pdfbox.text.TextPosition: org.apache.pdfbox.util.Matrix textMatrix>
+org.apache.pdfbox.text.TextPosition.getWidthRot : $r1 = r0.<org.apache.pdfbox.text.TextPosition: org.apache.pdfbox.util.Matrix textMatrix> >>>>>>>> org.apache.pdfbox.text.TextPosition.getWidthRot : $f2 = virtualinvoke $r1.<org.apache.pdfbox.util.Matrix: float getTranslateY()>()
+org.apache.pdfbox.text.TextPosition.getWidthRot : $f2 = virtualinvoke $r1.<org.apache.pdfbox.util.Matrix: float getTranslateY()>() >>>>>>>> org.apache.pdfbox.text.TextPosition.getWidthRot : $f3 = $f1 - $f2
+org.apache.pdfbox.text.TextPosition.getWidthRot : $f3 = $f1 - $f2 >>>>>>>> org.apache.pdfbox.text.TextPosition.getWidthRot : $f4 = staticinvoke <java.lang.Math: float abs(float)>($f3)
+org.apache.pdfbox.text.TextPosition.getWidthRot : $f4 = staticinvoke <java.lang.Math: float abs(float)>($f3) >>>>>>>> org.apache.pdfbox.text.TextPosition.getWidthRot : return $f4
+org.apache.pdfbox.text.TextPosition.getWidthRot : $b1 = f0 cmpl 270.0F >>>>>>>> org.apache.pdfbox.text.TextPosition.getWidthRot : if $b1 != 0
+org.apache.pdfbox.text.TextPosition.getWidthRot : if $b1 != 0 >>>>>>>> org.apache.pdfbox.text.TextPosition.getWidthRot : $f1 = r0.<org.apache.pdfbox.text.TextPosition: float endY>
+org.apache.pdfbox.text.TextPosition.getWidthRot : if $b1 != 0 >>>>>>>> org.apache.pdfbox.text.TextPosition.getWidthRot : $f5 = r0.<org.apache.pdfbox.text.TextPosition: float endX>
+org.apache.pdfbox.text.TextPosition.getWidthRot : $f5 = r0.<org.apache.pdfbox.text.TextPosition: float endX> >>>>>>>> org.apache.pdfbox.text.TextPosition.getWidthRot : $r2 = r0.<org.apache.pdfbox.text.TextPosition: org.apache.pdfbox.util.Matrix textMatrix>
+org.apache.pdfbox.text.TextPosition.getWidthRot : $r2 = r0.<org.apache.pdfbox.text.TextPosition: org.apache.pdfbox.util.Matrix textMatrix> >>>>>>>> org.apache.pdfbox.text.TextPosition.getWidthRot : $f6 = virtualinvoke $r2.<org.apache.pdfbox.util.Matrix: float getTranslateX()>()
+org.apache.pdfbox.text.TextPosition.getWidthRot : $f6 = virtualinvoke $r2.<org.apache.pdfbox.util.Matrix: float getTranslateX()>() >>>>>>>> org.apache.pdfbox.text.TextPosition.getWidthRot : $f7 = $f5 - $f6
+org.apache.pdfbox.text.TextPosition.getWidthRot : $f7 = $f5 - $f6 >>>>>>>> org.apache.pdfbox.text.TextPosition.getWidthRot : $f8 = staticinvoke <java.lang.Math: float abs(float)>($f7)
+org.apache.pdfbox.text.TextPosition.getWidthRot : $f8 = staticinvoke <java.lang.Math: float abs(float)>($f7) >>>>>>>> org.apache.pdfbox.text.TextPosition.getWidthRot : return $f8

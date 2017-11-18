@@ -1,0 +1,19 @@
+org.apache.pdfbox.text.TextPosition.isDiacritic : r1 = virtualinvoke r0.<org.apache.pdfbox.text.TextPosition: java.lang.String getUnicode()>() >>>>>>>> org.apache.pdfbox.text.TextPosition.isDiacritic : $i1 = virtualinvoke r1.<java.lang.String: int length()>()
+org.apache.pdfbox.text.TextPosition.isDiacritic : $i1 = virtualinvoke r1.<java.lang.String: int length()>() >>>>>>>> org.apache.pdfbox.text.TextPosition.isDiacritic : if $i1 == 1
+org.apache.pdfbox.text.TextPosition.isDiacritic : if $i1 == 1 >>>>>>>> org.apache.pdfbox.text.TextPosition.isDiacritic : return 0
+org.apache.pdfbox.text.TextPosition.isDiacritic : if $i1 == 1 >>>>>>>> org.apache.pdfbox.text.TextPosition.isDiacritic : $r2 = "\u30fc"
+org.apache.pdfbox.text.TextPosition.isDiacritic : $r2 = "\u30fc" >>>>>>>> org.apache.pdfbox.text.TextPosition.isDiacritic : $z0 = virtualinvoke $r2.<java.lang.String: boolean equals(java.lang.Object)>(r1)
+org.apache.pdfbox.text.TextPosition.isDiacritic : $z0 = virtualinvoke $r2.<java.lang.String: boolean equals(java.lang.Object)>(r1) >>>>>>>> org.apache.pdfbox.text.TextPosition.isDiacritic : if $z0 == 0
+org.apache.pdfbox.text.TextPosition.isDiacritic : if $z0 == 0 >>>>>>>> org.apache.pdfbox.text.TextPosition.isDiacritic : return 0
+org.apache.pdfbox.text.TextPosition.isDiacritic : if $z0 == 0 >>>>>>>> org.apache.pdfbox.text.TextPosition.isDiacritic : $c2 = virtualinvoke r1.<java.lang.String: char charAt(int)>(0)
+org.apache.pdfbox.text.TextPosition.isDiacritic : $c2 = virtualinvoke r1.<java.lang.String: char charAt(int)>(0) >>>>>>>> org.apache.pdfbox.text.TextPosition.isDiacritic : i0 = staticinvoke <java.lang.Character: int getType(char)>($c2)
+org.apache.pdfbox.text.TextPosition.isDiacritic : i0 = staticinvoke <java.lang.Character: int getType(char)>($c2) >>>>>>>> org.apache.pdfbox.text.TextPosition.isDiacritic : if i0 == 6
+org.apache.pdfbox.text.TextPosition.isDiacritic : if i0 == 6 >>>>>>>> org.apache.pdfbox.text.TextPosition.isDiacritic : if i0 == 27
+org.apache.pdfbox.text.TextPosition.isDiacritic : if i0 == 6 >>>>>>>> org.apache.pdfbox.text.TextPosition.isDiacritic : $z1 = 1
+org.apache.pdfbox.text.TextPosition.isDiacritic : $z1 = 1 >>>>>>>> org.apache.pdfbox.text.TextPosition.isDiacritic : goto [?= return $z1]
+org.apache.pdfbox.text.TextPosition.isDiacritic : goto [?= return $z1] >>>>>>>> org.apache.pdfbox.text.TextPosition.isDiacritic : return $z1
+org.apache.pdfbox.text.TextPosition.isDiacritic : if i0 == 27 >>>>>>>> org.apache.pdfbox.text.TextPosition.isDiacritic : if i0 != 4
+org.apache.pdfbox.text.TextPosition.isDiacritic : if i0 == 27 >>>>>>>> org.apache.pdfbox.text.TextPosition.isDiacritic : $z1 = 1
+org.apache.pdfbox.text.TextPosition.isDiacritic : if i0 != 4 >>>>>>>> org.apache.pdfbox.text.TextPosition.isDiacritic : $z1 = 1
+org.apache.pdfbox.text.TextPosition.isDiacritic : if i0 != 4 >>>>>>>> org.apache.pdfbox.text.TextPosition.isDiacritic : $z1 = 0
+org.apache.pdfbox.text.TextPosition.isDiacritic : $z1 = 0 >>>>>>>> org.apache.pdfbox.text.TextPosition.isDiacritic : return $z1

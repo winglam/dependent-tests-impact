@@ -1,0 +1,7 @@
+org.apache.pdfbox.io.RandomAccessFile.rewind : specialinvoke r0.<org.apache.pdfbox.io.RandomAccessFile: void checkClosed()>() >>>>>>>> org.apache.pdfbox.io.RandomAccessFile.rewind : $r1 = r0.<org.apache.pdfbox.io.RandomAccessFile: java.io.RandomAccessFile ras>
+org.apache.pdfbox.io.RandomAccessFile.rewind : $r1 = r0.<org.apache.pdfbox.io.RandomAccessFile: java.io.RandomAccessFile ras> >>>>>>>> org.apache.pdfbox.io.RandomAccessFile.rewind : $r2 = r0.<org.apache.pdfbox.io.RandomAccessFile: java.io.RandomAccessFile ras>
+org.apache.pdfbox.io.RandomAccessFile.rewind : $r2 = r0.<org.apache.pdfbox.io.RandomAccessFile: java.io.RandomAccessFile ras> >>>>>>>> org.apache.pdfbox.io.RandomAccessFile.rewind : $l1 = virtualinvoke $r2.<java.io.RandomAccessFile: long getFilePointer()>()
+org.apache.pdfbox.io.RandomAccessFile.rewind : $l1 = virtualinvoke $r2.<java.io.RandomAccessFile: long getFilePointer()>() >>>>>>>> org.apache.pdfbox.io.RandomAccessFile.rewind : $l2 = (long) i0
+org.apache.pdfbox.io.RandomAccessFile.rewind : $l2 = (long) i0 >>>>>>>> org.apache.pdfbox.io.RandomAccessFile.rewind : $l3 = $l1 - $l2
+org.apache.pdfbox.io.RandomAccessFile.rewind : $l3 = $l1 - $l2 >>>>>>>> org.apache.pdfbox.io.RandomAccessFile.rewind : virtualinvoke $r1.<java.io.RandomAccessFile: void seek(long)>($l3)
+org.apache.pdfbox.io.RandomAccessFile.rewind : virtualinvoke $r1.<java.io.RandomAccessFile: void seek(long)>($l3) >>>>>>>> org.apache.pdfbox.io.RandomAccessFile.rewind : return

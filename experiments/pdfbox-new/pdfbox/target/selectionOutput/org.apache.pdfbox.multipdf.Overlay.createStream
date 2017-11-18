@@ -1,0 +1,48 @@
+org.apache.pdfbox.multipdf.Overlay.createStream : $r8 = r0.<org.apache.pdfbox.multipdf.Overlay: org.apache.pdfbox.pdmodel.PDDocument inputPDFDocument> >>>>>>>> org.apache.pdfbox.multipdf.Overlay.createStream : $r9 = virtualinvoke $r8.<org.apache.pdfbox.pdmodel.PDDocument: org.apache.pdfbox.cos.COSDocument getDocument()>()
+org.apache.pdfbox.multipdf.Overlay.createStream : $r9 = virtualinvoke $r8.<org.apache.pdfbox.pdmodel.PDDocument: org.apache.pdfbox.cos.COSDocument getDocument()>() >>>>>>>> org.apache.pdfbox.multipdf.Overlay.createStream : r2 = virtualinvoke $r9.<org.apache.pdfbox.cos.COSDocument: org.apache.pdfbox.cos.COSStream createCOSStream()>()
+org.apache.pdfbox.multipdf.Overlay.createStream : r2 = virtualinvoke $r9.<org.apache.pdfbox.cos.COSDocument: org.apache.pdfbox.cos.COSStream createCOSStream()>() >>>>>>>> org.apache.pdfbox.multipdf.Overlay.createStream : $i0 = virtualinvoke r1.<java.lang.String: int length()>()
+org.apache.pdfbox.multipdf.Overlay.createStream : $i0 = virtualinvoke r1.<java.lang.String: int length()>() >>>>>>>> org.apache.pdfbox.multipdf.Overlay.createStream : if $i0 <= 20
+org.apache.pdfbox.multipdf.Overlay.createStream : if $i0 <= 20 >>>>>>>> org.apache.pdfbox.multipdf.Overlay.createStream : $r11 = <org.apache.pdfbox.cos.COSName: org.apache.pdfbox.cos.COSName FLATE_DECODE>
+org.apache.pdfbox.multipdf.Overlay.createStream : if $i0 <= 20 >>>>>>>> org.apache.pdfbox.multipdf.Overlay.createStream : $r11 = null
+org.apache.pdfbox.multipdf.Overlay.createStream : $r11 = null >>>>>>>> org.apache.pdfbox.multipdf.Overlay.createStream : r3 = virtualinvoke r2.<org.apache.pdfbox.cos.COSStream: java.io.OutputStream createOutputStream(org.apache.pdfbox.cos.COSBase)>($r11)
+org.apache.pdfbox.multipdf.Overlay.createStream : r3 = virtualinvoke r2.<org.apache.pdfbox.cos.COSStream: java.io.OutputStream createOutputStream(org.apache.pdfbox.cos.COSBase)>($r11) >>>>>>>> org.apache.pdfbox.multipdf.Overlay.createStream : r4 = null
+org.apache.pdfbox.multipdf.Overlay.createStream : r4 = null >>>>>>>> org.apache.pdfbox.multipdf.Overlay.createStream : $r12 = virtualinvoke r1.<java.lang.String: byte[] getBytes(java.lang.String)>("ISO-8859-1")
+org.apache.pdfbox.multipdf.Overlay.createStream : r4 = null >>>>>>>> org.apache.pdfbox.multipdf.Overlay.createStream : $r14 := @caughtexception
+org.apache.pdfbox.multipdf.Overlay.createStream : r6 = $r16 >>>>>>>> org.apache.pdfbox.multipdf.Overlay.createStream : if r3 == null
+org.apache.pdfbox.multipdf.Overlay.createStream : r6 = $r16 >>>>>>>> org.apache.pdfbox.multipdf.Overlay.createStream : $r16 := @caughtexception
+org.apache.pdfbox.multipdf.Overlay.createStream : if r3 == null >>>>>>>> org.apache.pdfbox.multipdf.Overlay.createStream : if r4 == null
+org.apache.pdfbox.multipdf.Overlay.createStream : if r3 == null >>>>>>>> org.apache.pdfbox.multipdf.Overlay.createStream : throw r6
+org.apache.pdfbox.multipdf.Overlay.createStream : if r4 == null >>>>>>>> org.apache.pdfbox.multipdf.Overlay.createStream : virtualinvoke r3.<java.io.OutputStream: void close()>()
+org.apache.pdfbox.multipdf.Overlay.createStream : if r4 == null >>>>>>>> org.apache.pdfbox.multipdf.Overlay.createStream : virtualinvoke r3.<java.io.OutputStream: void close()>()
+org.apache.pdfbox.multipdf.Overlay.createStream : if r4 == null >>>>>>>> org.apache.pdfbox.multipdf.Overlay.createStream : $r17 := @caughtexception
+org.apache.pdfbox.multipdf.Overlay.createStream : r7 = $r17 >>>>>>>> org.apache.pdfbox.multipdf.Overlay.createStream : virtualinvoke r4.<java.lang.Throwable: void addSuppressed(java.lang.Throwable)>(r7)
+org.apache.pdfbox.multipdf.Overlay.createStream : virtualinvoke r4.<java.lang.Throwable: void addSuppressed(java.lang.Throwable)>(r7) >>>>>>>> org.apache.pdfbox.multipdf.Overlay.createStream : goto [?= throw r6]
+org.apache.pdfbox.multipdf.Overlay.createStream : goto [?= throw r6] >>>>>>>> org.apache.pdfbox.multipdf.Overlay.createStream : throw r6
+org.apache.pdfbox.multipdf.Overlay.createStream : virtualinvoke r3.<java.io.OutputStream: void close()>() >>>>>>>> org.apache.pdfbox.multipdf.Overlay.createStream : throw r6
+org.apache.pdfbox.multipdf.Overlay.createStream : virtualinvoke r3.<java.io.OutputStream: void close()>() >>>>>>>> org.apache.pdfbox.multipdf.Overlay.createStream : goto [?= throw r6]
+org.apache.pdfbox.multipdf.Overlay.createStream : virtualinvoke r3.<java.io.OutputStream: void close()>() >>>>>>>> org.apache.pdfbox.multipdf.Overlay.createStream : $r17 := @caughtexception
+org.apache.pdfbox.multipdf.Overlay.createStream : goto [?= throw r6] >>>>>>>> org.apache.pdfbox.multipdf.Overlay.createStream : throw r6
+org.apache.pdfbox.multipdf.Overlay.createStream : r15 = $r14 >>>>>>>> org.apache.pdfbox.multipdf.Overlay.createStream : r4 = r15
+org.apache.pdfbox.multipdf.Overlay.createStream : r15 = $r14 >>>>>>>> org.apache.pdfbox.multipdf.Overlay.createStream : $r16 := @caughtexception
+org.apache.pdfbox.multipdf.Overlay.createStream : r4 = r15 >>>>>>>> org.apache.pdfbox.multipdf.Overlay.createStream : throw r15
+org.apache.pdfbox.multipdf.Overlay.createStream : r4 = r15 >>>>>>>> org.apache.pdfbox.multipdf.Overlay.createStream : $r16 := @caughtexception
+org.apache.pdfbox.multipdf.Overlay.createStream : throw r15 >>>>>>>> org.apache.pdfbox.multipdf.Overlay.createStream : $r16 := @caughtexception
+org.apache.pdfbox.multipdf.Overlay.createStream : $r12 = virtualinvoke r1.<java.lang.String: byte[] getBytes(java.lang.String)>("ISO-8859-1") >>>>>>>> org.apache.pdfbox.multipdf.Overlay.createStream : virtualinvoke r3.<java.io.OutputStream: void write(byte[])>($r12)
+org.apache.pdfbox.multipdf.Overlay.createStream : $r12 = virtualinvoke r1.<java.lang.String: byte[] getBytes(java.lang.String)>("ISO-8859-1") >>>>>>>> org.apache.pdfbox.multipdf.Overlay.createStream : $r14 := @caughtexception
+org.apache.pdfbox.multipdf.Overlay.createStream : virtualinvoke r3.<java.io.OutputStream: void write(byte[])>($r12) >>>>>>>> org.apache.pdfbox.multipdf.Overlay.createStream : if r3 == null
+org.apache.pdfbox.multipdf.Overlay.createStream : virtualinvoke r3.<java.io.OutputStream: void write(byte[])>($r12) >>>>>>>> org.apache.pdfbox.multipdf.Overlay.createStream : $r14 := @caughtexception
+org.apache.pdfbox.multipdf.Overlay.createStream : if r3 == null >>>>>>>> org.apache.pdfbox.multipdf.Overlay.createStream : if r4 == null
+org.apache.pdfbox.multipdf.Overlay.createStream : if r3 == null >>>>>>>> org.apache.pdfbox.multipdf.Overlay.createStream : return r2
+org.apache.pdfbox.multipdf.Overlay.createStream : if r4 == null >>>>>>>> org.apache.pdfbox.multipdf.Overlay.createStream : virtualinvoke r3.<java.io.OutputStream: void close()>()
+org.apache.pdfbox.multipdf.Overlay.createStream : if r4 == null >>>>>>>> org.apache.pdfbox.multipdf.Overlay.createStream : virtualinvoke r3.<java.io.OutputStream: void close()>()
+org.apache.pdfbox.multipdf.Overlay.createStream : if r4 == null >>>>>>>> org.apache.pdfbox.multipdf.Overlay.createStream : $r13 := @caughtexception
+org.apache.pdfbox.multipdf.Overlay.createStream : r5 = $r13 >>>>>>>> org.apache.pdfbox.multipdf.Overlay.createStream : virtualinvoke r4.<java.lang.Throwable: void addSuppressed(java.lang.Throwable)>(r5)
+org.apache.pdfbox.multipdf.Overlay.createStream : virtualinvoke r4.<java.lang.Throwable: void addSuppressed(java.lang.Throwable)>(r5) >>>>>>>> org.apache.pdfbox.multipdf.Overlay.createStream : goto [?= return r2]
+org.apache.pdfbox.multipdf.Overlay.createStream : goto [?= return r2] >>>>>>>> org.apache.pdfbox.multipdf.Overlay.createStream : return r2
+org.apache.pdfbox.multipdf.Overlay.createStream : virtualinvoke r3.<java.io.OutputStream: void close()>() >>>>>>>> org.apache.pdfbox.multipdf.Overlay.createStream : goto [?= return r2]
+org.apache.pdfbox.multipdf.Overlay.createStream : goto [?= return r2] >>>>>>>> org.apache.pdfbox.multipdf.Overlay.createStream : return r2
+org.apache.pdfbox.multipdf.Overlay.createStream : virtualinvoke r3.<java.io.OutputStream: void close()>() >>>>>>>> org.apache.pdfbox.multipdf.Overlay.createStream : goto [?= return r2]
+org.apache.pdfbox.multipdf.Overlay.createStream : virtualinvoke r3.<java.io.OutputStream: void close()>() >>>>>>>> org.apache.pdfbox.multipdf.Overlay.createStream : $r13 := @caughtexception
+org.apache.pdfbox.multipdf.Overlay.createStream : goto [?= return r2] >>>>>>>> org.apache.pdfbox.multipdf.Overlay.createStream : return r2
+org.apache.pdfbox.multipdf.Overlay.createStream : $r11 = <org.apache.pdfbox.cos.COSName: org.apache.pdfbox.cos.COSName FLATE_DECODE> >>>>>>>> org.apache.pdfbox.multipdf.Overlay.createStream : goto [?= r3 = virtualinvoke r2.<org.apache.pdfbox.cos.COSStream: java.io.OutputStream createOutputStream(org.apache.pdfbox.cos.COSBase)>($r11)]
+org.apache.pdfbox.multipdf.Overlay.createStream : goto [?= r3 = virtualinvoke r2.<org.apache.pdfbox.cos.COSStream: java.io.OutputStream createOutputStream(org.apache.pdfbox.cos.COSBase)>($r11)] >>>>>>>> org.apache.pdfbox.multipdf.Overlay.createStream : r3 = virtualinvoke r2.<org.apache.pdfbox.cos.COSStream: java.io.OutputStream createOutputStream(org.apache.pdfbox.cos.COSBase)>($r11)

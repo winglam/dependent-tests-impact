@@ -1,0 +1,18 @@
+org.apache.pdfbox.util.SmallMap.keySet : $z0 = virtualinvoke r0.<org.apache.pdfbox.util.SmallMap: boolean isEmpty()>() >>>>>>>> org.apache.pdfbox.util.SmallMap.keySet : if $z0 == 0
+org.apache.pdfbox.util.SmallMap.keySet : if $z0 == 0 >>>>>>>> org.apache.pdfbox.util.SmallMap.keySet : $r2 = staticinvoke <java.util.Collections: java.util.Set emptySet()>()
+org.apache.pdfbox.util.SmallMap.keySet : if $z0 == 0 >>>>>>>> org.apache.pdfbox.util.SmallMap.keySet : $r3 = new java.util.LinkedHashSet
+org.apache.pdfbox.util.SmallMap.keySet : $r3 = new java.util.LinkedHashSet >>>>>>>> org.apache.pdfbox.util.SmallMap.keySet : specialinvoke $r3.<java.util.LinkedHashSet: void <init>()>()
+org.apache.pdfbox.util.SmallMap.keySet : specialinvoke $r3.<java.util.LinkedHashSet: void <init>()>() >>>>>>>> org.apache.pdfbox.util.SmallMap.keySet : r1 = $r3
+org.apache.pdfbox.util.SmallMap.keySet : r1 = $r3 >>>>>>>> org.apache.pdfbox.util.SmallMap.keySet : i0 = 0
+org.apache.pdfbox.util.SmallMap.keySet : i0 = 0 >>>>>>>> org.apache.pdfbox.util.SmallMap.keySet : $r4 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.util.SmallMap.keySet : $r4 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr> >>>>>>>> org.apache.pdfbox.util.SmallMap.keySet : $i1 = lengthof $r4
+org.apache.pdfbox.util.SmallMap.keySet : $i1 = lengthof $r4 >>>>>>>> org.apache.pdfbox.util.SmallMap.keySet : if i0 >= $i1
+org.apache.pdfbox.util.SmallMap.keySet : if i0 >= $i1 >>>>>>>> org.apache.pdfbox.util.SmallMap.keySet : $r5 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.util.SmallMap.keySet : if i0 >= $i1 >>>>>>>> org.apache.pdfbox.util.SmallMap.keySet : $r7 = staticinvoke <java.util.Collections: java.util.Set unmodifiableSet(java.util.Set)>(r1)
+org.apache.pdfbox.util.SmallMap.keySet : $r7 = staticinvoke <java.util.Collections: java.util.Set unmodifiableSet(java.util.Set)>(r1) >>>>>>>> org.apache.pdfbox.util.SmallMap.keySet : return $r7
+org.apache.pdfbox.util.SmallMap.keySet : $r5 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr> >>>>>>>> org.apache.pdfbox.util.SmallMap.keySet : $r6 = $r5[i0]
+org.apache.pdfbox.util.SmallMap.keySet : $r6 = $r5[i0] >>>>>>>> org.apache.pdfbox.util.SmallMap.keySet : interfaceinvoke r1.<java.util.Set: boolean add(java.lang.Object)>($r6)
+org.apache.pdfbox.util.SmallMap.keySet : interfaceinvoke r1.<java.util.Set: boolean add(java.lang.Object)>($r6) >>>>>>>> org.apache.pdfbox.util.SmallMap.keySet : i0 = i0 + 2
+org.apache.pdfbox.util.SmallMap.keySet : i0 = i0 + 2 >>>>>>>> org.apache.pdfbox.util.SmallMap.keySet : goto [?= $r4 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>]
+org.apache.pdfbox.util.SmallMap.keySet : goto [?= $r4 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>] >>>>>>>> org.apache.pdfbox.util.SmallMap.keySet : $r4 = r0.<org.apache.pdfbox.util.SmallMap: java.lang.Object[] mapArr>
+org.apache.pdfbox.util.SmallMap.keySet : $r2 = staticinvoke <java.util.Collections: java.util.Set emptySet()>() >>>>>>>> org.apache.pdfbox.util.SmallMap.keySet : return $r2

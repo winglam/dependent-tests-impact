@@ -1,0 +1,25 @@
+org.apache.pdfbox.cos.COSFloat.removeNullDigits : $i0 = virtualinvoke r1.<java.lang.String: int indexOf(int)>(46) >>>>>>>> org.apache.pdfbox.cos.COSFloat.removeNullDigits : if $i0 <= -1
+org.apache.pdfbox.cos.COSFloat.removeNullDigits : if $i0 <= -1 >>>>>>>> org.apache.pdfbox.cos.COSFloat.removeNullDigits : $z0 = virtualinvoke r1.<java.lang.String: boolean endsWith(java.lang.String)>(".0")
+org.apache.pdfbox.cos.COSFloat.removeNullDigits : $z0 = virtualinvoke r1.<java.lang.String: boolean endsWith(java.lang.String)>(".0") >>>>>>>> org.apache.pdfbox.cos.COSFloat.removeNullDigits : if $z0 != 0
+org.apache.pdfbox.cos.COSFloat.removeNullDigits : if $z0 != 0 >>>>>>>> org.apache.pdfbox.cos.COSFloat.removeNullDigits : return r1
+org.apache.pdfbox.cos.COSFloat.removeNullDigits : return r1 >>>>>>>> org.apache.pdfbox.cos.COSArray.add : $r2 = r0.<org.apache.pdfbox.cos.COSArray: java.util.List objects>
+org.apache.pdfbox.cos.COSArray.add : $r2 = r0.<org.apache.pdfbox.cos.COSArray: java.util.List objects> >>>>>>>> org.apache.pdfbox.cos.COSArray.add : interfaceinvoke $r2.<java.util.List: boolean add(java.lang.Object)>(r1)
+org.apache.pdfbox.cos.COSArray.add : interfaceinvoke $r2.<java.util.List: boolean add(java.lang.Object)>(r1) >>>>>>>> org.apache.pdfbox.pdmodel.common.PDRange.getMax : $r2 = r0.<org.apache.pdfbox.pdmodel.common.PDRange: org.apache.pdfbox.cos.COSArray rangeArray>
+org.apache.pdfbox.pdmodel.common.PDRange.getMax : $r2 = r0.<org.apache.pdfbox.pdmodel.common.PDRange: org.apache.pdfbox.cos.COSArray rangeArray> >>>>>>>> org.apache.pdfbox.pdmodel.common.PDRange.getMax : $i0 = r0.<org.apache.pdfbox.pdmodel.common.PDRange: int startingIndex>
+org.apache.pdfbox.pdmodel.common.PDRange.getMax : $i0 = r0.<org.apache.pdfbox.pdmodel.common.PDRange: int startingIndex> >>>>>>>> org.apache.pdfbox.pdmodel.common.PDRange.getMax : $i1 = $i0 * 2
+org.apache.pdfbox.pdmodel.common.PDRange.getMax : $i1 = $i0 * 2 >>>>>>>> org.apache.pdfbox.pdmodel.common.PDRange.getMax : $i2 = $i1 + 1
+org.apache.pdfbox.pdmodel.common.PDRange.getMax : $i2 = $i1 + 1 >>>>>>>> org.apache.pdfbox.pdmodel.common.PDRange.getMax : $r3 = virtualinvoke $r2.<org.apache.pdfbox.cos.COSArray: org.apache.pdfbox.cos.COSBase getObject(int)>($i2)
+org.apache.pdfbox.pdmodel.common.PDRange.getMax : $r3 = virtualinvoke $r2.<org.apache.pdfbox.cos.COSArray: org.apache.pdfbox.cos.COSBase getObject(int)>($i2) >>>>>>>> org.apache.pdfbox.cos.COSArray.getObject : $r1 = r0.<org.apache.pdfbox.cos.COSArray: java.util.List objects>
+org.apache.pdfbox.cos.COSArray.getObject : $r1 = r0.<org.apache.pdfbox.cos.COSArray: java.util.List objects> >>>>>>>> org.apache.pdfbox.cos.COSArray.getObject : r4 = interfaceinvoke $r1.<java.util.List: java.lang.Object get(int)>(i0)
+org.apache.pdfbox.cos.COSArray.getObject : r4 = interfaceinvoke $r1.<java.util.List: java.lang.Object get(int)>(i0) >>>>>>>> org.apache.pdfbox.cos.COSArray.getObject : $z0 = r4 instanceof org.apache.pdfbox.cos.COSObject
+org.apache.pdfbox.cos.COSArray.getObject : $z0 = r4 instanceof org.apache.pdfbox.cos.COSObject >>>>>>>> org.apache.pdfbox.cos.COSArray.getObject : if $z0 == 0
+org.apache.pdfbox.cos.COSArray.getObject : if $z0 == 0 >>>>>>>> org.apache.pdfbox.cos.COSArray.getObject : $z1 = r4 instanceof org.apache.pdfbox.cos.COSNull
+org.apache.pdfbox.cos.COSArray.getObject : $z1 = r4 instanceof org.apache.pdfbox.cos.COSNull >>>>>>>> org.apache.pdfbox.cos.COSArray.getObject : if $z1 == 0
+org.apache.pdfbox.cos.COSArray.getObject : if $z1 == 0 >>>>>>>> org.apache.pdfbox.cos.COSArray.getObject : $r2 = (org.apache.pdfbox.cos.COSBase) r4
+org.apache.pdfbox.cos.COSArray.getObject : $r2 = (org.apache.pdfbox.cos.COSBase) r4 >>>>>>>> org.apache.pdfbox.cos.COSArray.getObject : return $r2
+org.apache.pdfbox.cos.COSArray.getObject : return $r2 >>>>>>>> org.apache.pdfbox.pdmodel.common.PDRange.getMax : r1 = (org.apache.pdfbox.cos.COSNumber) $r3
+org.apache.pdfbox.pdmodel.common.PDRange.getMax : r1 = (org.apache.pdfbox.cos.COSNumber) $r3 >>>>>>>> org.apache.pdfbox.pdmodel.common.PDRange.getMax : $f0 = virtualinvoke r1.<org.apache.pdfbox.cos.COSNumber: float floatValue()>()
+org.apache.pdfbox.pdmodel.common.PDRange.getMax : $f0 = virtualinvoke r1.<org.apache.pdfbox.cos.COSNumber: float floatValue()>() >>>>>>>> org.apache.pdfbox.cos.COSFloat.floatValue : $r1 = r0.<org.apache.pdfbox.cos.COSFloat: java.math.BigDecimal value>
+org.apache.pdfbox.cos.COSFloat.floatValue : $r1 = r0.<org.apache.pdfbox.cos.COSFloat: java.math.BigDecimal value> >>>>>>>> org.apache.pdfbox.cos.COSFloat.floatValue : $f0 = virtualinvoke $r1.<java.math.BigDecimal: float floatValue()>()
+org.apache.pdfbox.cos.COSFloat.floatValue : $f0 = virtualinvoke $r1.<java.math.BigDecimal: float floatValue()>() >>>>>>>> org.apache.pdfbox.cos.COSFloat.floatValue : return $f0
+org.apache.pdfbox.cos.COSFloat.floatValue : return $f0 >>>>>>>> org.apache.pdfbox.pdmodel.common.PDRange.getMax : return $f0

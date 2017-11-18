@@ -9,8 +9,8 @@ function runPrioritization() {
     #./prioritization-runner.sh
     ./enhanced-prioritization-runner.sh
     #./newExperimentsPrioritizationRunner.sh
-    ./enhancedNewExpPriorRunner.sh
-    java -cp ${impactJarCP} edu.washington.cs.dt.impact.Main.EnhancedResultsFigureGenerator -directory ${priorDir} -outputDirectory ${priorDir} -allowNegatives
+    #./enhancedNewExpPriorRunner.sh
+    #java -cp ${impactJarCP} edu.washington.cs.dt.impact.Main.EnhancedResultsFigureGenerator -directory ${priorDir} -outputDirectory ${priorDir} -allowNegatives
 }
 
 function runSelection() {
@@ -18,8 +18,8 @@ function runSelection() {
     mkdir ${seleDir}
 
     ./selection-runner.sh
-    ./newExperimentsSelectionRunner.sh
-    java -cp ${impactJarCP} edu.washington.cs.dt.impact.Main.EnhancedResultsFigureGenerator -directory ${seleDir} -outputDirectory ${seleDir} -allowNegatives
+    #./newExperimentsSelectionRunner.sh
+    #java -cp ${impactJarCP} edu.washington.cs.dt.impact.Main.EnhancedResultsFigureGenerator -directory ${seleDir} -outputDirectory ${seleDir} -allowNegatives
 }
 
 function runParallelization() {
@@ -29,8 +29,8 @@ function runParallelization() {
     #./parallelization-runner.sh
     ./enhanced-parallelization-runner.sh
     #./newExperimentsParallelizationRunner.sh
-    ./enhancedNewExpParaRunner.sh
-    java -cp ${impactJarCP} edu.washington.cs.dt.impact.Main.EnhancedResultsFigureGenerator -directory ${paraDir} -outputDirectory ${paraDir} -allowNegatives
+    #./enhancedNewExpParaRunner.sh
+    #java -cp ${impactJarCP} edu.washington.cs.dt.impact.Main.EnhancedResultsFigureGenerator -directory ${paraDir} -outputDirectory ${paraDir} -allowNegatives
 }
 
 #echo "Running random-runner script"
@@ -38,15 +38,15 @@ function runParallelization() {
 startTime=`date`
 
 echo "Running prioritization-runner script"
-runPrioritization
+#runPrioritization
 
 echo "Running selection-runner script"
-runSelection
+#runSelection
 
 echo "Running paralleization-runner script"
-runParallelization
+#runParallelization
 
-java -cp ${impactJarCP} edu.washington.cs.dt.impact.Main.NumDependentTestsFigureGenerator -priorDirectory ${priorDir} -seleDirectory ${seleDir} -paraDirectory ${paraDir} -outputDirectory ./ -minBoundOrigDTFile ORIG_MIN_DTs.txt -minBoundAutoDTFile AUTO_MIN_DTs.txt
+java -cp ${impactJarCP} edu.washington.cs.dt.impact.figure.generator.NumDependentTestsFigureGenerator -priorDirectory ${priorDir} -seleDirectory ${seleDir} -paraDirectory ${paraDir} -outputDirectory ./ -minBoundOrigDTFile scripts/data/ORIG_MIN_DTs.txt -minBoundAutoDTFile scripts/data/AUTO_MIN_DTs.txt
 
 echo "Script has finished running."
 
