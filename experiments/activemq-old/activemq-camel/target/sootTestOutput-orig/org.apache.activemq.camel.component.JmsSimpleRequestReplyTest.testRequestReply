@@ -1,0 +1,23 @@
+org.apache.activemq.camel.component.JmsSimpleRequestReplyTest.createConnectionFactory : virtualinvoke r3.<org.apache.activemq.pool.PooledConnectionFactory: void setMaxConnections(int)>(8)
+org.apache.activemq.camel.component.JmsSimpleRequestReplyTest.createConnectionFactory : if r0 == null goto $r8 = new org.apache.activemq.ActiveMQConnectionFactory
+org.apache.activemq.camel.component.JmsSimpleRequestReplyTest.createConnectionFactory : return r3
+org.apache.activemq.camel.component.JmsSimpleRequestReplyTest.createConnectionFactory : $r9 = new org.apache.activemq.pool.PooledConnectionFactory
+org.apache.activemq.camel.component.JmsSimpleRequestReplyTest.createConnectionFactory : $r8 = new org.apache.activemq.ActiveMQConnectionFactory
+org.apache.activemq.camel.component.JmsSimpleRequestReplyTest.createConnectionFactory : r1 = "vm://test-broker?broker.persistent=false&broker.useJmx=false"
+org.apache.activemq.camel.component.JmsSimpleRequestReplyTest.createRouteBuilder : $r1 = new org.apache.activemq.camel.component.JmsSimpleRequestReplyTest$1
+org.apache.activemq.camel.component.JmsSimpleRequestReplyTest$1.configure : $r1 = virtualinvoke r0.<org.apache.activemq.camel.component.JmsSimpleRequestReplyTest$1: org.apache.camel.model.RouteDefinition 'from'(java.lang.String)>("activemq:queue:hello")
+org.apache.activemq.camel.component.JmsSimpleRequestReplyTest.createCamelContext : r1 = specialinvoke r0.<org.apache.camel.test.junit4.CamelTestSupport: org.apache.camel.CamelContext createCamelContext()>()
+org.apache.activemq.camel.component.JmsSimpleRequestReplyTest.createCamelContext : $r3 = staticinvoke <org.apache.camel.component.jms.JmsComponent: org.apache.camel.component.jms.JmsComponent jmsComponentAutoAcknowledge(javax.jms.ConnectionFactory)>(r2)
+org.apache.activemq.camel.component.JmsSimpleRequestReplyTest.createCamelContext : r2 = staticinvoke <org.apache.activemq.camel.component.JmsSimpleRequestReplyTest: javax.jms.ConnectionFactory createConnectionFactory(java.lang.String)>(null)
+org.apache.activemq.camel.component.JmsSimpleRequestReplyTest.createCamelContext : return r1
+org.apache.activemq.camel.component.JmsSimpleRequestReplyTest$1$1.process : $r3 = interfaceinvoke r1.<org.apache.camel.Exchange: org.apache.camel.Message getIn()>()
+org.apache.activemq.camel.component.JmsSimpleRequestReplyTest$1$1.process : $r2 = interfaceinvoke r1.<org.apache.camel.Exchange: org.apache.camel.Message getIn()>()
+org.apache.activemq.camel.component.ActiveMQComponent.doStop : $r3 = r0.<org.apache.activemq.camel.component.ActiveMQComponent: org.apache.activemq.advisory.DestinationSource source>
+org.apache.activemq.camel.component.ActiveMQComponent.doStop : $r7 = r0.<org.apache.activemq.camel.component.ActiveMQComponent: java.util.concurrent.CopyOnWriteArrayList pooledConnectionFactoryServiceList>
+org.apache.activemq.camel.component.ActiveMQComponent.doStop : specialinvoke r0.<org.apache.camel.component.jms.JmsComponent: void doStop()>()
+org.apache.activemq.camel.component.ActiveMQComponent.doStop : $r14 = r0.<org.apache.activemq.camel.component.ActiveMQComponent: java.util.concurrent.CopyOnWriteArrayList singleConnectionFactoryList>
+org.apache.activemq.camel.component.ActiveMQComponent.doStop : goto [?= $z0 = interfaceinvoke r1.<java.util.Iterator: boolean hasNext()>()]
+org.apache.activemq.camel.component.ActiveMQComponent.doStop : interfaceinvoke r2.<org.apache.activemq.Service: void stop()>()
+org.apache.activemq.camel.component.ActiveMQComponent.doStop : $r10 = r0.<org.apache.activemq.camel.component.ActiveMQComponent: java.util.concurrent.CopyOnWriteArrayList singleConnectionFactoryList>
+org.apache.activemq.camel.component.ActiveMQComponent.doStop : $r5 = r0.<org.apache.activemq.camel.component.ActiveMQComponent: org.apache.activemq.EnhancedConnection connection>
+org.apache.activemq.camel.component.ActiveMQComponent.doStop : $r9 = r0.<org.apache.activemq.camel.component.ActiveMQComponent: java.util.concurrent.CopyOnWriteArrayList pooledConnectionFactoryServiceList>

@@ -12,6 +12,7 @@ expName=(
   zeppelin-server
   xstream
   pdfbox
+  activemqCamel
 )
 # Directory for where all of the old subject's information is stored.
 expDirectories=(
@@ -25,6 +26,7 @@ expDirectories=(
   ${rootDir}/zeppelin/zeppelin-server/target
   ${rootDir}/xstream-1.2/xstream/target
   ${rootDir}/pdfbox-old/pdfbox/target
+  ${rootDir}/activemq-old/activemq-camel/target
 )
 # Classpath to run the old subject's automatically-generated and human-written tests.
 expCP=(
@@ -38,6 +40,7 @@ expCP=(
   ${rootDir}/impact-tools/*:${rootDir}/zeppelin/zeppelin-server/target/classes/:${rootDir}/zeppelin/zeppelin-server/target/test-classes/:${rootDir}/zeppelin/zeppelin-server/target/dependency/*:${rootDir}/zeppelin/zeppelin-server/target/randoop/bin/:/usr/lib/jvm/java-7-oracle/jre/lib/*:
   ${rootDir}/impact-tools/*:${rootDir}/xstream-1.2/xstream/target/dependency/*:${rootDir}/xstream-1.2/xstream/target/classes:${rootDir}/xstream-1.2/xstream/target/randoop/bin:${rootDir}/xstream-1.2/xstream/target/test-classes:
   ${rootDir}/impact-tools/*:${rootDir}/pdfbox-old/pdfbox/target/dependency/*:${rootDir}/pdfbox-old/pdfbox/target/classes:${rootDir}/pdfbox-old/pdfbox/target/randoop/bin:${rootDir}/pdfbox-old/pdfbox/target/test-classes:
+  ${rootDir}/impact-tools/*:${rootDir}/activemq-old/activemq-camel/target/dependency/*:${rootDir}/activemq-old/activemq-camel/target/classes:${rootDir}/activemq-old/activemq-camel/target/randoop/bin:${rootDir}/activemq-old/activemq-camel/target/test-classes:
 )
 # The name of the subject you want to be displayed in the paper (e.g., XML Security).
 expNameFormal=(
@@ -51,6 +54,7 @@ expNameFormal=(
   "Zeppelin-Server"
   "XStream"
   "PDFBox"
+  "ActivemqCamel"
 )
 # Directory for where all of the new subject's information is stored.
 nextExpDirectories=(
@@ -64,6 +68,7 @@ nextExpDirectories=(
   ${rootDir}/zeppelin-new/zeppelin-server/target
   ${rootDir}/xstream-1.2.1/xstream/target
   ${rootDir}/pdfbox-new/pdfbox/target
+  ${rootDir}/activemq-new/activemq-camel/target
 )
 # Classpath to run the new subject's automatically-generated and human-written tests.
 nextExpCP=(
@@ -77,6 +82,7 @@ nextExpCP=(
   ${rootDir}/impact-tools/*:${rootDir}/zeppelin-new/zeppelin-server/target/classes/:${rootDir}/zeppelin-new/zeppelin-server/target/test-classes/:${rootDir}/zeppelin-new/zeppelin-server/target/dependency/*:${rootDir}/zeppelin-new/zeppelin-server/target/randoop/bin/:/usr/lib/jvm/java-7-oracle/jre/lib/*:
   ${rootDir}/impact-tools/*:${rootDir}/xstream-1.2.1/xstream/target/dependency/*:${rootDir}/xstream-1.2.1/xstream/target/classes:${rootDir}/xstream-1.2.1/xstream/target/randoop/bin:${rootDir}/xstream-1.2.1/xstream/target/test-classes:
   ${rootDir}/impact-tools/*:${rootDir}/pdfbox-new/pdfbox/target/dependency/*:${rootDir}/pdfbox-new/pdfbox/target/classes:${rootDir}/pdfbox-new/pdfbox/target/randoop/bin:${rootDir}/pdfbox-new/pdfbox/target/test-classes:
+  ${rootDir}/impact-tools/*:${rootDir}/activemq-new/activemq-camel/target/dependency/*:${rootDir}/activemq-new/activemq-camel/target/classes:${rootDir}/activemq-new/activemq-camel/target/randoop/bin:${rootDir}/activemq-new/activemq-camel/target/test-classes:
 )
 # Directory containing the old subject's src directory. These directories contain projects that were originally built with Ant.
 antExp=(
@@ -101,6 +107,7 @@ antMvnExp=(
   ${rootDir}/zeppelin/zeppelin-server
   ${rootDir}/xstream-1.2/xstream
   ${rootDir}/pdfbox-old/pdfbox
+  ${rootDir}/activemq-old/activemq-camel
 )
 # Directory containing the new subject's src directory. These directories contain projects that were originally built with Maven.
 antMvnNextExp=(
@@ -109,4 +116,5 @@ antMvnNextExp=(
   ${rootDir}/zeppelin-new/zeppelin-server
   ${rootDir}/xstream-1.2.1/xstream
   ${rootDir}/pdfbox-new/pdfbox/
+  ${rootDir}/activemq-new/activemq-camel
 )

@@ -1,0 +1,86 @@
+org.apache.activemq.camel.component.ActiveMQConfiguration.setBrokerURL : r0.<org.apache.activemq.camel.component.ActiveMQConfiguration: java.lang.String brokerURL> = r1
+org.apache.activemq.camel.component.ActiveMQComponent.addPooledConnectionFactoryService : $r2 = r0.<org.apache.activemq.camel.component.ActiveMQComponent: java.util.concurrent.CopyOnWriteArrayList pooledConnectionFactoryServiceList>
+org.apache.activemq.camel.component.ActiveMQComponent.doStart : specialinvoke r0.<org.apache.camel.component.jms.JmsComponent: void doStart()>()
+org.apache.activemq.camel.component.ActiveMQComponent.doStart : $z0 = virtualinvoke r0.<org.apache.activemq.camel.component.ActiveMQComponent: boolean isExposeAllQueues()>()
+org.apache.activemq.camel.component.ActiveMQComponent.activeMQComponent : $r1 = new org.apache.activemq.camel.component.ActiveMQComponent
+org.apache.activemq.camel.component.ActiveMQComponent.activeMQComponent : return r2
+org.apache.activemq.camel.component.ActiveMQComponent.activeMQComponent : $r3 = virtualinvoke r2.<org.apache.activemq.camel.component.ActiveMQComponent: org.apache.camel.component.jms.JmsConfiguration getConfiguration()>()
+org.apache.activemq.camel.component.ActiveMQComponent.activeMQComponent : $r4 = virtualinvoke r2.<org.apache.activemq.camel.component.ActiveMQComponent: org.apache.camel.component.jms.JmsConfiguration getConfiguration()>()
+org.apache.activemq.camel.component.ComplexRequestReplyTest.createSenderContext : return r4
+org.apache.activemq.camel.component.ComplexRequestReplyTest.createSenderContext : interfaceinvoke r4.<org.apache.camel.CamelContext: void addComponent(java.lang.String,org.apache.camel.Component)>("activemq", r5)
+org.apache.activemq.camel.component.ComplexRequestReplyTest.createSenderContext : virtualinvoke r3.<org.apache.activemq.pool.PooledConnectionFactory: void setMaximumActiveSessionPerConnection(int)>(500)
+org.apache.activemq.camel.component.ComplexRequestReplyTest.createSenderContext : $r9 = new org.apache.activemq.camel.component.ActiveMQComponent
+org.apache.activemq.camel.component.ComplexRequestReplyTest.createSenderContext : virtualinvoke r3.<org.apache.activemq.pool.PooledConnectionFactory: void setIdleTimeout(int)>(0)
+org.apache.activemq.camel.component.ComplexRequestReplyTest.createSenderContext : $r7 = new org.apache.activemq.pool.PooledConnectionFactory
+org.apache.activemq.camel.component.ComplexRequestReplyTest.createSenderContext : interfaceinvoke r4.<org.apache.camel.CamelContext: void start()>()
+org.apache.activemq.camel.component.ComplexRequestReplyTest.createSenderContext : $r10 = new org.apache.activemq.camel.component.ComplexRequestReplyTest$1
+org.apache.activemq.camel.component.ComplexRequestReplyTest.createSenderContext : virtualinvoke r3.<org.apache.activemq.pool.PooledConnectionFactory: void setMaxConnections(int)>(1)
+org.apache.activemq.camel.component.ComplexRequestReplyTest.createSenderContext : $r8 = new org.apache.camel.impl.DefaultCamelContext
+org.apache.activemq.camel.component.ComplexRequestReplyTest.createSenderContext : $r1 = new org.apache.activemq.ActiveMQConnectionFactory
+org.apache.activemq.camel.component.ComplexRequestReplyTest.createSenderContext : virtualinvoke r5.<org.apache.activemq.camel.component.ActiveMQComponent: void setConnectionFactory(javax.jms.ConnectionFactory)>(r3)
+org.apache.activemq.camel.component.ComplexRequestReplyTest.createSenderContext : virtualinvoke r2.<org.apache.activemq.ActiveMQConnectionFactory: void setWatchTopicAdvisories(boolean)>(0)
+org.apache.activemq.camel.component.ComplexRequestReplyTest$2.configure : $r1 = virtualinvoke r0.<org.apache.activemq.camel.component.ComplexRequestReplyTest$2: org.apache.camel.model.RouteDefinition 'from'(java.lang.String)>("activemq:send")
+org.apache.activemq.camel.component.ComplexRequestReplyTest.createBrokerB : $r3 = r0.<org.apache.activemq.camel.component.ComplexRequestReplyTest: org.apache.activemq.broker.BrokerService brokerB>
+org.apache.activemq.camel.component.ComplexRequestReplyTest.createBrokerB : $r4 = r0.<org.apache.activemq.camel.component.ComplexRequestReplyTest: org.apache.activemq.broker.BrokerService brokerB>
+org.apache.activemq.camel.component.ComplexRequestReplyTest.createBrokerB : $r2 = specialinvoke r0.<org.apache.activemq.camel.component.ComplexRequestReplyTest: org.apache.camel.CamelContext createBrokerCamelContext(java.lang.String)>("brokerB")
+org.apache.activemq.camel.component.ComplexRequestReplyTest.createBrokerB : $r1 = specialinvoke r0.<org.apache.activemq.camel.component.ComplexRequestReplyTest: org.apache.activemq.broker.BrokerService createBroker(java.lang.String)>("brokerB")
+org.apache.activemq.camel.component.ComplexRequestReplyTest.createBrokerA : $r1 = specialinvoke r0.<org.apache.activemq.camel.component.ComplexRequestReplyTest: org.apache.activemq.broker.BrokerService createBroker(java.lang.String)>("brokerA")
+org.apache.activemq.camel.component.ComplexRequestReplyTest.createBrokerA : $r3 = r0.<org.apache.activemq.camel.component.ComplexRequestReplyTest: org.apache.activemq.broker.BrokerService brokerA>
+org.apache.activemq.camel.component.ComplexRequestReplyTest.createBrokerA : $r4 = r0.<org.apache.activemq.camel.component.ComplexRequestReplyTest: org.apache.activemq.broker.BrokerService brokerA>
+org.apache.activemq.camel.component.ComplexRequestReplyTest.createBrokerA : $r2 = specialinvoke r0.<org.apache.activemq.camel.component.ComplexRequestReplyTest: org.apache.camel.CamelContext createBrokerCamelContext(java.lang.String)>("brokerA")
+org.apache.activemq.camel.component.ComplexRequestReplyTest.createBroker : virtualinvoke r3.<org.apache.activemq.broker.BrokerService: org.apache.activemq.broker.TransportConnector addConnector(java.lang.String)>("tcp://localhost:0")
+org.apache.activemq.camel.component.ComplexRequestReplyTest.createBroker : return r3
+org.apache.activemq.camel.component.ComplexRequestReplyTest.createBroker : virtualinvoke r3.<org.apache.activemq.broker.BrokerService: void setPersistent(boolean)>(0)
+org.apache.activemq.camel.component.ComplexRequestReplyTest.createBroker : $r2 = new org.apache.activemq.broker.BrokerService
+org.apache.activemq.camel.component.ComplexRequestReplyTest.createBroker : virtualinvoke r3.<org.apache.activemq.broker.BrokerService: void setBrokerName(java.lang.String)>(r1)
+org.apache.activemq.camel.component.ComplexRequestReplyTest.createBroker : virtualinvoke r3.<org.apache.activemq.broker.BrokerService: void setUseJmx(boolean)>(0)
+org.apache.activemq.camel.component.ActiveMQConfiguration.getBrokerURL : $r1 = r0.<org.apache.activemq.camel.component.ActiveMQConfiguration: java.lang.String brokerURL>
+org.apache.activemq.camel.component.ComplexRequestReplyTest.shutdownBrokerA : goto [?= return]
+org.apache.activemq.camel.component.ComplexRequestReplyTest.shutdownBrokerA : $r2 = r0.<org.apache.activemq.camel.component.ComplexRequestReplyTest: org.apache.camel.CamelContext brokerAContext>
+org.apache.activemq.camel.component.ActiveMQConfiguration.loadClass : $r2 = staticinvoke <java.lang.Thread: java.lang.Thread currentThread()>()
+org.apache.activemq.camel.component.ActiveMQConfiguration.loadClass : if r3 == null goto $r10 = virtualinvoke r1.<java.lang.ClassLoader: java.lang.Class loadClass(java.lang.String)>(r0)
+org.apache.activemq.camel.component.ActiveMQConfiguration.loadClass : $r6 = virtualinvoke r3.<java.lang.ClassLoader: java.lang.Class loadClass(java.lang.String)>(r0)
+org.apache.activemq.camel.component.ActiveMQComponent.convertPathToActualDestination : r4 = staticinvoke <org.apache.camel.util.URISupport: java.lang.String createQueryString(java.util.Map)>(r3)
+org.apache.activemq.camel.component.ActiveMQComponent.convertPathToActualDestination : $z0 = staticinvoke <org.apache.camel.util.ObjectHelper: boolean isNotEmpty(java.lang.Object)>(r4)
+org.apache.activemq.camel.component.ActiveMQComponent.convertPathToActualDestination : goto [?= $z0 = staticinvoke <org.apache.camel.util.ObjectHelper: boolean isNotEmpty(java.lang.Object)>(r4)]
+org.apache.activemq.camel.component.ActiveMQComponent.convertPathToActualDestination : return r1
+org.apache.activemq.camel.component.ActiveMQComponent.convertPathToActualDestination : r3 = staticinvoke <org.apache.camel.util.IntrospectionSupport: java.util.Map extractProperties(java.util.Map,java.lang.String)>(r2, "destination.")
+org.apache.activemq.camel.component.ActiveMQComponent.isExposeAllQueues : $z0 = r0.<org.apache.activemq.camel.component.ActiveMQComponent: boolean exposeAllQueues>
+org.apache.activemq.camel.component.ActiveMQComponent.createConfiguration : virtualinvoke r2.<org.apache.activemq.camel.component.ActiveMQConfiguration: void setActiveMQComponent(org.apache.activemq.camel.component.ActiveMQComponent)>(r0)
+org.apache.activemq.camel.component.ActiveMQComponent.createConfiguration : return r2
+org.apache.activemq.camel.component.ActiveMQComponent.createConfiguration : $r1 = new org.apache.activemq.camel.component.ActiveMQConfiguration
+org.apache.activemq.camel.component.ComplexRequestReplyTest$1.configure : $r1 = virtualinvoke r0.<org.apache.activemq.camel.component.ComplexRequestReplyTest$1: org.apache.camel.model.RouteDefinition 'from'(java.lang.String)>("direct:test")
+org.apache.activemq.camel.component.ActiveMQConfiguration.createPooledConnectionFactory : $r4 = virtualinvoke r0.<java.lang.Object: java.lang.Class getClass()>()
+org.apache.activemq.camel.component.ActiveMQConfiguration.createPooledConnectionFactory : $r7 = newarray (java.lang.Object)[1]
+org.apache.activemq.camel.component.ActiveMQConfiguration.createPooledConnectionFactory : $r6 = newarray (java.lang.Class)[1]
+org.apache.activemq.camel.component.broker.BrokerComponentXMLConfigTest.createBroker : virtualinvoke r3.<org.apache.activemq.xbean.BrokerFactoryBean: void afterPropertiesSet()>()
+org.apache.activemq.camel.component.broker.BrokerComponentXMLConfigTest.createBroker : $r2 = new org.apache.activemq.xbean.BrokerFactoryBean
+org.apache.activemq.camel.component.ActiveMQConfiguration.isUsePooledConnection : $z0 = r0.<org.apache.activemq.camel.component.ActiveMQConfiguration: boolean usePooledConnection>
+org.apache.activemq.camel.component.ActiveMQConfiguration.isUseSingleConnection : $z0 = r0.<org.apache.activemq.camel.component.ActiveMQConfiguration: boolean useSingleConnection>
+org.apache.activemq.camel.component.ActiveMQComponent.doStop : $r3 = r0.<org.apache.activemq.camel.component.ActiveMQComponent: org.apache.activemq.advisory.DestinationSource source>
+org.apache.activemq.camel.component.ActiveMQComponent.doStop : $r7 = r0.<org.apache.activemq.camel.component.ActiveMQComponent: java.util.concurrent.CopyOnWriteArrayList pooledConnectionFactoryServiceList>
+org.apache.activemq.camel.component.ActiveMQComponent.doStop : specialinvoke r0.<org.apache.camel.component.jms.JmsComponent: void doStop()>()
+org.apache.activemq.camel.component.ActiveMQComponent.doStop : $r14 = r0.<org.apache.activemq.camel.component.ActiveMQComponent: java.util.concurrent.CopyOnWriteArrayList singleConnectionFactoryList>
+org.apache.activemq.camel.component.ActiveMQComponent.doStop : goto [?= $z0 = interfaceinvoke r1.<java.util.Iterator: boolean hasNext()>()]
+org.apache.activemq.camel.component.ActiveMQComponent.doStop : interfaceinvoke r2.<org.apache.activemq.Service: void stop()>()
+org.apache.activemq.camel.component.ActiveMQComponent.doStop : $r10 = r0.<org.apache.activemq.camel.component.ActiveMQComponent: java.util.concurrent.CopyOnWriteArrayList singleConnectionFactoryList>
+org.apache.activemq.camel.component.ActiveMQComponent.doStop : $r5 = r0.<org.apache.activemq.camel.component.ActiveMQComponent: org.apache.activemq.EnhancedConnection connection>
+org.apache.activemq.camel.component.ActiveMQComponent.doStop : $r9 = r0.<org.apache.activemq.camel.component.ActiveMQComponent: java.util.concurrent.CopyOnWriteArrayList pooledConnectionFactoryServiceList>
+org.apache.activemq.camel.component.ComplexRequestReplyTest.createBrokerCamelContext : $r2 = new org.apache.camel.impl.DefaultCamelContext
+org.apache.activemq.camel.component.ComplexRequestReplyTest.createBrokerCamelContext : return r3
+org.apache.activemq.camel.component.ComplexRequestReplyTest.createBrokerCamelContext : interfaceinvoke r3.<org.apache.camel.CamelContext: void start()>()
+org.apache.activemq.camel.component.ComplexRequestReplyTest.createBrokerCamelContext : $r10 = new org.apache.activemq.camel.component.ComplexRequestReplyTest$2
+org.apache.activemq.camel.component.ComplexRequestReplyTest.createBrokerCamelContext : $r4 = new java.lang.StringBuilder
+org.apache.activemq.camel.component.ActiveMQConfiguration.createConnectionFactory : $z1 = virtualinvoke r0.<org.apache.activemq.camel.component.ActiveMQConfiguration: boolean isUsePooledConnection()>()
+org.apache.activemq.camel.component.ActiveMQConfiguration.createConnectionFactory : virtualinvoke r2.<org.apache.activemq.spring.ActiveMQConnectionFactory: void setBeanName(java.lang.String)>("Camel")
+org.apache.activemq.camel.component.ActiveMQConfiguration.createConnectionFactory : $r8 = virtualinvoke r2.<org.apache.activemq.spring.ActiveMQConnectionFactory: java.lang.String getBeanName()>()
+org.apache.activemq.camel.component.ActiveMQConfiguration.createConnectionFactory : $r14 = r0.<org.apache.activemq.camel.component.ActiveMQConfiguration: org.apache.activemq.camel.component.ActiveMQComponent activeMQComponent>
+org.apache.activemq.camel.component.ActiveMQConfiguration.createConnectionFactory : $r1 = new org.apache.activemq.spring.ActiveMQConnectionFactory
+org.apache.activemq.camel.component.ActiveMQConfiguration.createConnectionFactory : return r13
+org.apache.activemq.camel.component.ActiveMQConfiguration.createConnectionFactory : $z0 = virtualinvoke r0.<org.apache.activemq.camel.component.ActiveMQConfiguration: boolean isUseSingleConnection()>()
+org.apache.activemq.camel.component.ActiveMQConfiguration.createConnectionFactory : r13 = virtualinvoke r0.<org.apache.activemq.camel.component.ActiveMQConfiguration: javax.jms.ConnectionFactory createPooledConnectionFactory(org.apache.activemq.spring.ActiveMQConnectionFactory)>(r2)
+org.apache.activemq.camel.component.ActiveMQConfiguration.createConnectionFactory : $r4 = r0.<org.apache.activemq.camel.component.ActiveMQConfiguration: java.lang.String userName>
+org.apache.activemq.camel.component.ActiveMQConfiguration.createConnectionFactory : $r6 = r0.<org.apache.activemq.camel.component.ActiveMQConfiguration: java.lang.String password>
+org.apache.activemq.camel.component.ActiveMQConfiguration.createConnectionFactory : $r9 = virtualinvoke r0.<org.apache.activemq.camel.component.ActiveMQConfiguration: java.lang.String getBrokerURL()>()
+org.apache.activemq.camel.component.ActiveMQConfiguration.createConnectionFactory : $r15 = r0.<org.apache.activemq.camel.component.ActiveMQConfiguration: org.apache.activemq.camel.component.ActiveMQComponent activeMQComponent>
+org.apache.activemq.camel.component.ActiveMQConfiguration.setActiveMQComponent : r0.<org.apache.activemq.camel.component.ActiveMQConfiguration: org.apache.activemq.camel.component.ActiveMQComponent activeMQComponent> = r1

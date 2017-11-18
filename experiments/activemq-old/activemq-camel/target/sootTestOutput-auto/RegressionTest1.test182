@@ -1,0 +1,10 @@
+org.apache.activemq.camel.CamelDestination.getCamelContext : $r1 = r0.<org.apache.activemq.camel.CamelDestination: org.apache.camel.CamelContext camelContext>
+org.apache.activemq.camel.CamelDestination.getEndpoint : $r1 = r0.<org.apache.activemq.camel.CamelDestination: org.apache.camel.Endpoint endpoint>
+org.apache.activemq.camel.CamelDestination.createSubscriber : $r3 = virtualinvoke r0.<org.apache.activemq.camel.CamelDestination: javax.jms.TopicSubscriber createDurableSubscriber(org.apache.activemq.ActiveMQSession,java.lang.String,java.lang.String,boolean)>(r1, null, r2, z0)
+org.apache.activemq.camel.CamelTopic.createDurableSubscriber : $r4 = new org.apache.activemq.camel.CamelTopicSubscriber
+org.apache.activemq.camel.CamelDestination.resolveCamelContext : r3 = virtualinvoke r1.<org.apache.activemq.ActiveMQSession: org.apache.activemq.ActiveMQConnection getConnection()>()
+org.apache.activemq.camel.CamelDestination.resolveCamelContext : r2 = virtualinvoke r0.<org.apache.activemq.camel.CamelDestination: org.apache.camel.CamelContext getCamelContext()>()
+org.apache.activemq.camel.CamelDestination.resolveCamelContext : if r2 != null goto (branch)
+org.apache.activemq.camel.CamelDestination.resolveEndpoint : $r4 = virtualinvoke r0.<org.apache.activemq.camel.CamelDestination: org.apache.camel.CamelContext resolveCamelContext(org.apache.activemq.ActiveMQSession)>(r1)
+org.apache.activemq.camel.CamelDestination.resolveEndpoint : r2 = virtualinvoke r0.<org.apache.activemq.camel.CamelDestination: org.apache.camel.Endpoint getEndpoint()>()
+org.apache.activemq.camel.CamelDestination.resolveEndpoint : if r2 != null goto return r2

@@ -1,0 +1,12 @@
+org.apache.activemq.camel.component.ActiveMQConfiguration.setBrokerURL : r0.<org.apache.activemq.camel.component.ActiveMQConfiguration: java.lang.String brokerURL> = r1
+org.apache.activemq.camel.component.ActiveMQConfiguration.setUsePooledConnection : r0.<org.apache.activemq.camel.component.ActiveMQConfiguration: boolean usePooledConnection> = z0
+org.apache.activemq.camel.component.ActiveMQComponent.createConfiguration : virtualinvoke r2.<org.apache.activemq.camel.component.ActiveMQConfiguration: void setActiveMQComponent(org.apache.activemq.camel.component.ActiveMQComponent)>(r0)
+org.apache.activemq.camel.component.ActiveMQComponent.createConfiguration : return r2
+org.apache.activemq.camel.component.ActiveMQComponent.createConfiguration : $r1 = new org.apache.activemq.camel.component.ActiveMQConfiguration
+org.apache.activemq.camel.component.ActiveMQComponent.activeMQComponent : $r1 = new org.apache.activemq.camel.component.ActiveMQComponent
+org.apache.activemq.camel.component.ActiveMQComponent.activeMQComponent : return r2
+org.apache.activemq.camel.component.ActiveMQComponent.activeMQComponent : $r3 = virtualinvoke r2.<org.apache.activemq.camel.component.ActiveMQComponent: org.apache.camel.component.jms.JmsConfiguration getConfiguration()>()
+org.apache.activemq.camel.component.ActiveMQComponent.activeMQComponent : $r4 = virtualinvoke r2.<org.apache.activemq.camel.component.ActiveMQComponent: org.apache.camel.component.jms.JmsConfiguration getConfiguration()>()
+org.apache.activemq.camel.component.ActiveMQComponent.setUsePooledConnection : $r1 = virtualinvoke r0.<org.apache.activemq.camel.component.ActiveMQComponent: org.apache.camel.component.jms.JmsConfiguration getConfiguration()>()
+org.apache.activemq.camel.component.ActiveMQComponent.setUsePooledConnection : $r2 = virtualinvoke r0.<org.apache.activemq.camel.component.ActiveMQComponent: org.apache.camel.component.jms.JmsConfiguration getConfiguration()>()
+org.apache.activemq.camel.component.ActiveMQConfiguration.setActiveMQComponent : r0.<org.apache.activemq.camel.component.ActiveMQConfiguration: org.apache.activemq.camel.component.ActiveMQComponent activeMQComponent> = r1

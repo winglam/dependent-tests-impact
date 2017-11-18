@@ -1,0 +1,7 @@
+org.apache.activemq.camel.component.ActiveMQConfiguration.setPassword : r0.<org.apache.activemq.camel.component.ActiveMQConfiguration: java.lang.String password> = r1
+org.apache.activemq.camel.component.ActiveMQComponent.setConfiguration : specialinvoke r0.<org.apache.camel.component.jms.JmsComponent: void setConfiguration(org.apache.camel.component.jms.JmsConfiguration)>(r1)
+org.apache.activemq.camel.component.ActiveMQComponent.setConfiguration : $z0 = r1 instanceof org.apache.activemq.camel.component.ActiveMQConfiguration
+org.apache.activemq.camel.component.ActiveMQComponent.setConfiguration : $r2 = (org.apache.activemq.camel.component.ActiveMQConfiguration) r1
+org.apache.activemq.camel.component.ActiveMQComponent.setPassword : $r3 = virtualinvoke r0.<org.apache.activemq.camel.component.ActiveMQComponent: org.apache.camel.component.jms.JmsConfiguration getConfiguration()>()
+org.apache.activemq.camel.component.ActiveMQComponent.setPassword : $r2 = virtualinvoke r0.<org.apache.activemq.camel.component.ActiveMQComponent: org.apache.camel.component.jms.JmsConfiguration getConfiguration()>()
+org.apache.activemq.camel.component.ActiveMQConfiguration.setActiveMQComponent : r0.<org.apache.activemq.camel.component.ActiveMQConfiguration: org.apache.activemq.camel.component.ActiveMQComponent activeMQComponent> = r1

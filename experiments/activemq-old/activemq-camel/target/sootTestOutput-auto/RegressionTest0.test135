@@ -1,0 +1,7 @@
+org.apache.activemq.camel.CamelConnectionFactory.createActiveMQConnection : return r4
+org.apache.activemq.camel.CamelConnectionFactory.createActiveMQConnection : r5 = virtualinvoke r0.<org.apache.activemq.camel.CamelConnectionFactory: org.apache.camel.CamelContext getCamelContext()>()
+org.apache.activemq.camel.CamelConnectionFactory.createActiveMQConnection : if r5 == null goto return r4
+org.apache.activemq.camel.CamelConnectionFactory.createActiveMQConnection : $r3 = virtualinvoke r0.<org.apache.activemq.camel.CamelConnectionFactory: org.apache.activemq.camel.CamelConnection createActiveMQConnection(org.apache.activemq.transport.Transport,org.apache.activemq.management.JMSStatsImpl)>(r1, r2)
+org.apache.activemq.camel.CamelConnectionFactory.createActiveMQConnection : $r3 = new org.apache.activemq.camel.CamelConnection
+org.apache.activemq.camel.CamelConnectionFactory.getCamelContext : $r1 = r0.<org.apache.activemq.camel.CamelConnectionFactory: org.apache.camel.CamelContext camelContext>
+org.apache.activemq.camel.CamelConnectionFactory.setCamelContext : r0.<org.apache.activemq.camel.CamelConnectionFactory: org.apache.camel.CamelContext camelContext> = r1
