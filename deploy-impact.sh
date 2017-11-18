@@ -1,11 +1,8 @@
 #!/bin/bash
 
-cd dt-impact-tracer/
-ant
-cd ..
+mvn clean package
 
-# DT-Impact
-jar -cf ./impact.jar -C ./dt-impact-tracer/bin .
+mv dt-impact-tracer/target/dt-impact-tracer-1.0.jar ./impact.jar
 
 rm -rf ./experiments/impact-tools/impact.jar
 cp ./impact.jar ./experiments/impact-tools/

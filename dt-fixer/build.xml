@@ -25,11 +25,12 @@
         <pathelement location="libs/powermock-mockito-1.6.1-full.jar"/>
         <pathelement location="libs/soot-trunk.jar"/>
         <pathelement location="libs/util-2.1.2-87d10dac.jar"/>
+        <pathelement location="libs/xstream-1.4.10.jar"/>
     </path>
     <target name="init">
         <mkdir dir="bin"/>
         <copy includeemptydirs="false" todir="bin">
-            <fileset dir="src">
+            <fileset dir="src/main/java/">
                 <exclude name="**/*.launch"/>
                 <exclude name="**/*.java"/>
             </fileset>
@@ -44,7 +45,7 @@
     <target depends="init" name="build-project">
         <echo message="${ant.project.name}: ${ant.file}"/>
         <javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
-            <src path="src"/>
+            <src path="src/main/java/"/>
             <classpath refid="dt-fixer.classpath"/>
         </javac>
     </target>
