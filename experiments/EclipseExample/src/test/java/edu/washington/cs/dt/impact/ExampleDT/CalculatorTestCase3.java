@@ -19,6 +19,10 @@ public class CalculatorTestCase3 {
 	 * 
 	 * getSumTest Independently: FAIL
 	 * 
+	 * 
+	 * [isEvenTest, getExpTest, getSumTest, isNegativeTest, getSubTest]
+	 * [2777, 2222, 2222, 1666, 1111]
+	 * 
 	 * */
 	
 	 //initial values that are set in Calculator class

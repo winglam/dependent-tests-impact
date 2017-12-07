@@ -18,6 +18,10 @@ public class CalculatorTestCase2 {
 	 * 
 	 * getSumTest Independently: PASS
 	 * 
+	 * each test and its corresponding line coverage
+	 * [isEvenTest, getExpTest, getSumTest, isNegativeTest, getSubTest]
+	 * [2777, 2222, 2222, 1666, 1111]
+	 * 
 	 * */
 	
 	 //initial values that are set in Calculator class

@@ -18,6 +18,10 @@ public class CalculatorTestCase1 {
 	 * 
 	 * getSumTest Independently: FAIL - result of running independently does not matter in this case
 	 * 
+	 * each test and its corresponding line coverage
+	 * [isEvenTest, getExpTest, getSumTest, isNegativeTest, getSubTest]
+	 * [3125, 2500, 2500, 1875, 0]
+	 * 
 	 * */
 	
 	 //initial values that are set
