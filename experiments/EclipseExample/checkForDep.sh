@@ -1,3 +1,8 @@
+#this file is used to recompile the sample project and generate sootTestOutput file and call the OneConfigurationRunner
+#"calc-orig-order-1" will have to be modified depending on the test case being used and its contents will have to be modified 
+#only run tests from CalculatorTestCase1, CalculatorTestCase2, or CalculatorTestCase3
+
+
 mvn compile
 mvn test-compile
 mvn install -fn -DskipTests dependency:copy-dependencies
