@@ -1,27 +1,36 @@
-#this file is used to recompile the sample project and generate sootTestOutput file and call the OneConfigurationRunner
-#"calc-orig-order-1" will have to be modified depending on the test case being used and its contents will have to be modified 
-#only run tests from CalculatorTestCase1, CalculatorTestCase2, or CalculatorTestCase3
+#use ./checkForDep.sh to run this script
+#this script will and run test prioritization for test case 1 by default (statement-orig and statement-absolute and statement-absolute-dt-fixed)
+#results will be generated in the EclipseExample/target
 
+#this script will have to be modified depending on the test case being used in lines 37,40, and 43
 
-mvn compile
-mvn test-compile
-mvn install -fn -DskipTests dependency:copy-dependencies
+#can uncomment lines 15 - 33 to recompile the project and generate the sootTestOutput folder
+#be aware if you do this, the "calc-orig-order-1" file will be overwritten and thus need to be edited to this configuration:
+#edu.washington.cs.dt.impact.ExampleDT.CalculatorTestCase1.getSubTest
+#edu.washington.cs.dt.impact.ExampleDT.CalculatorTestCase1.getExpTest
+#edu.washington.cs.dt.impact.ExampleDT.CalculatorTestCase1.getSumTest
+#edu.washington.cs.dt.impact.ExampleDT.CalculatorTestCase1.isEvenTest
+#edu.washington.cs.dt.impact.ExampleDT.CalculatorTestCase1.isNegativeTest
 
-cd target/
-
-java -cp ../../impact-tools/*:dependency/*:classes/:test-classes/ edu.washington.cs.dt.tools.UnitTestFinder --pathOrJarFile test-classes/ --junit3and4=true
-
-mv allunittests.txt calc-orig-order-1
-
-java -cp ../../impact-tools/*:dependency/*:classes/:test-classes/:$JAVA_HOME/jre/lib/*: edu.washington.cs.dt.impact.Main.InstrumentationMain -inputDir test-classes/
-
-java -cp ../../impact-tools/*:dependency/*:classes/:$JAVA_HOME/jre/lib/*: edu.washington.cs.dt.impact.Main.InstrumentationMain -inputDir classes/
-
-java -cp ../../impact-tools/*:dependency/*:sootOutput/: edu.washington.cs.dt.main.ImpactMain -inputTests calc-orig-order-1 
-
-mv sootTestOutput/ sootTestOutput-orig
-
-touch calc-env-files
+#mvn compile
+#mvn test-compile
+#mvn install -fn -DskipTests dependency:copy-dependencies
+#
+#cd target/
+#
+#java -cp ../../impact-tools/*:dependency/*:classes/:test-classes/ edu.washington.cs.dt.tools.UnitTestFinder --pathOrJarFile test-classes/ --junit3and4=true
+#
+#mv allunittests.txt calc-orig-order-1
+#
+#java -cp ../../impact-tools/*:dependency/*:classes/:test-classes/:$JAVA_HOME/jre/lib/*: edu.washington.cs.dt.impact.Main.InstrumentationMain -inputDir test-classes/
+#
+#java -cp ../../impact-tools/*:dependency/*:classes/:$JAVA_HOME/jre/lib/*: edu.washington.cs.dt.impact.Main.InstrumentationMain -inputDir classes/
+#
+#java -cp ../../impact-tools/*:dependency/*:sootOutput/: edu.washington.cs.dt.main.ImpactMain -inputTests calc-orig-order-1 
+#
+#mv sootTestOutput/ sootTestOutput-orig
+#
+#touch calc-env-files
 
 #statement absolute
 java -cp ../../impact-tools/*:dependency/*:classes/:test-classes/ edu.washington.cs.dt.impact.runner.OneConfigurationRunner -technique prioritization -coverage statement -order absolute -origOrder calc-orig-order-1 -testInputDir sootTestOutput-orig/ -filesToDelete calc-env-files -getCoverage -project "CALC1" -testType orig -outputDir . -timesToRun 1
