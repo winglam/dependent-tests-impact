@@ -7,9 +7,12 @@ import edu.washington.cs.dt.impact.ExampleDT.Calculator;
 
 public class CalculatorTestCase3 {
 	/* ALL BASED ON PRIORITIZATION STATEMENT ABSOLUTE
+	 * 
 	 * This test class represents case 3: where getSumTest is the dependent test and depends on getSubTest to come before it and
 	 * isEvenTest to come after it
 	 * 
+	 * Link to write up for this test case:
+	 * https://docs.google.com/document/d/1ddsI5ahHL-jggPKtwdRLmch8RnU9KWjH2f3afDUW1bY/edit?usp=sharing
 	 * 
 	 * Orig list: (getSubTest), getExpTest, (getSumTest), (isEvenTest), isNegativeTest ; PASS
 	 * 
