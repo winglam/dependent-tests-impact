@@ -2,9 +2,9 @@
 #this script will and run test prioritization for test case 1 by default (statement-orig and statement-absolute and statement-absolute-dt-fixed)
 #results will be generated in the EclipseExample/target
 
-#this script will have to be modified depending on the test case being used in lines 37,40, and 43
+#this script will have to be modified depending on the test case being used the GENERATE RESULTS SECTION
 
-#can uncomment lines 15 - 33 to recompile the project and generate the sootTestOutput folder
+#can uncomment lines in the COMPILATION SECTION to recompile the project and generate the sootTestOutput folder
 #be aware if you do this, the "calc-orig-order-1" file will be overwritten and thus need to be edited to this configuration:
 #edu.washington.cs.dt.impact.ExampleDT.CalculatorTestCase1.getSubTest
 #edu.washington.cs.dt.impact.ExampleDT.CalculatorTestCase1.getExpTest
@@ -12,6 +12,8 @@
 #edu.washington.cs.dt.impact.ExampleDT.CalculatorTestCase1.isEvenTest
 #edu.washington.cs.dt.impact.ExampleDT.CalculatorTestCase1.isNegativeTest
 
+
+#COMPILATION SECTION
 #mvn compile
 #mvn test-compile
 #mvn install -fn -DskipTests dependency:copy-dependencies
@@ -32,6 +34,8 @@
 #
 #touch calc-env-files
 
+
+#GENERATE RESULTS SECTION
 #statement absolute
 java -cp ../../impact-tools/*:dependency/*:classes/:test-classes/ edu.washington.cs.dt.impact.runner.OneConfigurationRunner -technique prioritization -coverage statement -order absolute -origOrder calc-orig-order-1 -testInputDir sootTestOutput-orig/ -filesToDelete calc-env-files -getCoverage -project "CALC1" -testType orig -outputDir . -timesToRun 1
 
