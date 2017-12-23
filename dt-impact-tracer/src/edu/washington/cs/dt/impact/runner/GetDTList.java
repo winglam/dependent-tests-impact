@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Random;
 import java.util.Set;
+import java.util.concurrent.*;
 
 import edu.washington.cs.dt.RESULT;
 import edu.washington.cs.dt.impact.data.WrapperTestList;
@@ -44,63 +45,75 @@ public class GetDTList {
 	
 	
 	public static void main(String[] args){
-		//String[] arr = {"-technique prioritization -coverage statement -order original -origOrder /home/user/dependent-tests-impact/experiments/crystalvc/crystal-orig-order -testInputDir /home/user/dependent-tests-impact/experiments/crystalvc/sootTestOutput-orig -filesToDelete /home/user/dependent-tests-impact/experiments/crystalvc/crystal-env-files -project \"Crystal\" -testType orig -outputDir /home/user/dependent-tests-impact/experiments/crystalvc/prioritization-results -timesToRun 1 -getCoverage"};
+		//initialize variables
+		//String[] b = new String[]{"-technique","prioritization","-coverage","statement","-order","absolute","-origOrder","/home/user/dependent-tests-impact/experiments/crystalvc/crystal-orig-order","-testInputDir","/home/user/dependent-tests-impact/experiments/crystalvc/sootTestOutput-orig","-filesToDelete","/home/user/dependent-tests-impact/experiments/crystalvc/crystal-env-files","-project","Crystal","-testType","orig","-outputDir","/home/user/dependent-tests-impact/experiments/prioritization-results","-timesToRun","1","-getCoverage"};
 		
-		String[] b = new String[]{"-technique","prioritization","-coverage","statement","-order","absolute","-origOrder","/home/user/dependent-tests-impact/experiments/crystalvc/crystal-orig-order","-testInputDir","/home/user/dependent-tests-impact/experiments/crystalvc/sootTestOutput-orig","-filesToDelete","/home/user/dependent-tests-impact/experiments/crystalvc/crystal-env-files","-project","Crystal","-testType","orig","-outputDir","/home/user/dependent-tests-impact/experiments/prioritization-results","-timesToRun","1","-getCoverage"};
+		String[] b = new String[]{"-technique","prioritization","-coverage","statement","-order","absolute","-origOrder","/home/user/dependent-tests-impact/experiments/jfreechart-1.0.15/jfreechart-orig-order","-testInputDir","/home/user/dependent-tests-impact/experiments/jfreechart-1.0.15/sootTestOutput-orig","-filesToDelete","/home/user/dependent-tests-impact/experiments/jfreechart-1.0.15/jfreechart-env-files","-project","Joda-Time","-testType","orig","-outputDir","/home/user/dependent-tests-impact/experiments/prioritization-results","-timesToRun","1","-getCoverage"};
 
+		//start OneConfigurationRunner
 		OneConfigurationRunner o_obj = new OneConfigurationRunner();
 		o_obj.main(b);
 		
-		//get changedTests variable from oneconfigurationrunner
-		//Set<String> cTests = o_obj.changedTests;
-		//System.out.println(o_obj.hen[0]);
+		Set<String> changedTestList = o_obj.getStringAr();
+		int numThreadsToUse = 1;
 		
 		
-		Thread t1 = new Thread(new ParaThreads("one", 10));
-		Thread t2 = new Thread(new ParaThreads("two", 4));
-		Thread t3 = new Thread(new ParaThreads("three", 15));
 		
-		t1.start();
-		t2.start();
-		t3.start();
+		//call directoryCopy method
+		GetDTList dtobj = new GetDTList();
+		
+		ArrayList<String> test = dtobj.directoryCopy("/home/user/dependent-tests-impact/experiments/jfreechart-1.0.15", numThreadsToUse);
+		for(String k : test)
+		{
+			System.out.println(k);
+		}
+		
+		//call parallelization class
+		ParaThreads paraobj = new ParaThreads(changedTestList, test, numThreadsToUse, o_obj.getOrigMap(), o_obj.getCurrentOrder(), o_obj.getOrigOrderTestList(), o_obj.getFilesToDelete(), o_obj.getAllDTList());
+		paraobj.runThreads();
 		
 		
 	}
 	    
 	
 	/*	
-	 * TODO 
-	 * This method needs to be edited to take in the number of cores to use and the original repository path
-	 * and create the number of repository paths specified by the number of cores and return those paths
-	 * 
-	 * Currently works to clone 1 path in a hard-coded directory location 
+	 * Takes String of original source directory path and number of threads as an int
+	 * Returns ArrayList of directory paths and clones number of directories as specified by the
+	 * number of threads to use
 	*/
-	public void directoryCopy (String[] args) {
-	        //
-	        // An existing directory to copy.
-	        //
-	        String source = "/home/usr/dependent-test-impact/experiments/crystal";
+	public ArrayList<String> directoryCopy (String sourceString, int numOfThreads) {
+		
+			ArrayList<String> listOfDir = new ArrayList<String>();
+		
+	        // get existing directory to copy.
+	        String source = sourceString;
 	        File srcDir = new File(source);
 
-	        //
-	        // The destination directory to copy to. This directory
-	        // doesn't exists and will be created during the copy
-	        // directory process.
-	        //
-	        String destination = "/home/usr/dependent-test-impact/experiments/crystal5";
-	        File destDir = new File(destination);
-
-	        try {
-	            //
-	            // Copy source directory into destination directory
-	            // including its child directories and files. When
-	            // the destination directory is not exists it will
-	            // be created. This copy process also preserve the
-	            // date information of the file.
-	            //
-	            FileUtils.copyDirectory(srcDir, destDir);
-	        } catch (IOException e) {
-	            e.printStackTrace();
+	        /*
+	         * for each thread, create a new directory path and copy from the source directory 
+	         * to the new path
+	        */
+	        for(int i = 0; i < numOfThreads; i++)
+	        {
+	        	
+	        	String destination = sourceString+i;
+		        File destDir = new File(destination);	        
+		        
+		        try {
+		            /*
+		             * Copy source directory into destination directory
+		             * all subdirectories are copied as well
+		            */
+		            FileUtils.copyDirectory(srcDir, destDir);
+		        } catch (IOException e) {
+		            e.printStackTrace();
+		        }
+		        
+		        //add path to arraylist to return
+		        listOfDir.add(destination);
 	        }
+	        
+	        return listOfDir;
+	        
 	    }
 }
