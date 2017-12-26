@@ -38,41 +38,34 @@ public class GetDTList {
 	 *
 	 *
 	 *Currently can call the OneConfigurationRunner and to generate prioritization-statement-absolute results
-	 *for Crystal. Also can call ParaThreads class to print some test statements in parallel
+	 *for Crystal and Jfreechart. Also calls ParaThreads class with arguments used for parallelization (arguments
+	 *are listed in the TODO section of the ParaThreads class)
 	 *
 	 * 
 	 */
 	
 	
 	public static void main(String[] args){
-		//initialize variables
+		//initialize variables, method should take these as arguments
 		//String[] b = new String[]{"-technique","prioritization","-coverage","statement","-order","absolute","-origOrder","/home/user/dependent-tests-impact/experiments/crystalvc/crystal-orig-order","-testInputDir","/home/user/dependent-tests-impact/experiments/crystalvc/sootTestOutput-orig","-filesToDelete","/home/user/dependent-tests-impact/experiments/crystalvc/crystal-env-files","-project","Crystal","-testType","orig","-outputDir","/home/user/dependent-tests-impact/experiments/prioritization-results","-timesToRun","1","-getCoverage"};
+		String[] b = new String[]{"-technique","prioritization","-coverage","statement","-order","absolute","-origOrder","/home/user/dependent-tests-impact/experiments/activemq-old/activemq-camel/target/activemqCamel-orig-order","-testInputDir","/home/user/dependent-tests-impact/experiments/activemq-old/activemq-camel/target/sootTestOutput-orig","-filesToDelete","/home/user/dependent-tests-impact/experiments/activemq-old/activemq-camel/target/activemqCamel-env-files","-project","ActivemqCamel","-testType","orig","-outputDir","/home/user/dependent-tests-impact/experiments/prioritization-results","-timesToRun","1","-getCoverage"};
+		//String[] b = new String[]{"-technique","prioritization","-coverage","statement","-order","absolute","-origOrder","/home/user/dependent-tests-impact/experiments/jfreechart-1.0.15/jfreechart-orig-order","-testInputDir","/home/user/dependent-tests-impact/experiments/jfreechart-1.0.15/sootTestOutput-orig","-filesToDelete","/home/user/dependent-tests-impact/experiments/jfreechart-1.0.15/jfreechart-env-files","-project","Joda-Time","-testType","orig","-outputDir","/home/user/dependent-tests-impact/experiments/prioritization-results","-timesToRun","1","-getCoverage"};
+		int numThreadsToUse = 2;
 		
-		String[] b = new String[]{"-technique","prioritization","-coverage","statement","-order","absolute","-origOrder","/home/user/dependent-tests-impact/experiments/jfreechart-1.0.15/jfreechart-orig-order","-testInputDir","/home/user/dependent-tests-impact/experiments/jfreechart-1.0.15/sootTestOutput-orig","-filesToDelete","/home/user/dependent-tests-impact/experiments/jfreechart-1.0.15/jfreechart-env-files","-project","Joda-Time","-testType","orig","-outputDir","/home/user/dependent-tests-impact/experiments/prioritization-results","-timesToRun","1","-getCoverage"};
-
 		//start OneConfigurationRunner
-		OneConfigurationRunner o_obj = new OneConfigurationRunner();
-		o_obj.main(b);
-		
-		Set<String> changedTestList = o_obj.getStringAr();
-		int numThreadsToUse = 1;
-		
-		
+		OneConfigurationRunner.main(b);
+		Set<String> changedTestList = OneConfigurationRunner.getStringAr();
 		
 		//call directoryCopy method
-		GetDTList dtobj = new GetDTList();
-		
-		ArrayList<String> test = dtobj.directoryCopy("/home/user/dependent-tests-impact/experiments/jfreechart-1.0.15", numThreadsToUse);
-		for(String k : test)
+		ArrayList<String> list_of_dir = GetDTList.directoryCopy("/home/user/dependent-tests-impact/experiments/activemq-old/activemq-camel/target", numThreadsToUse);
+		for(String k : list_of_dir)
 		{
 			System.out.println(k);
 		}
 		
 		//call parallelization class
-		ParaThreads paraobj = new ParaThreads(changedTestList, test, numThreadsToUse, o_obj.getOrigMap(), o_obj.getCurrentOrder(), o_obj.getOrigOrderTestList(), o_obj.getFilesToDelete(), o_obj.getAllDTList());
+		ParaThreads paraobj = new ParaThreads(changedTestList, list_of_dir, numThreadsToUse, OneConfigurationRunner.getOrigMap(), OneConfigurationRunner.getCurrentOrder(), OneConfigurationRunner.getOrigOrderTestList(), OneConfigurationRunner.getFilesToDelete(), OneConfigurationRunner.getAllDTList());
 		paraobj.runThreads();
-		
-		
 	}
 	    
 	
@@ -81,7 +74,7 @@ public class GetDTList {
 	 * Returns ArrayList of directory paths and clones number of directories as specified by the
 	 * number of threads to use
 	*/
-	public ArrayList<String> directoryCopy (String sourceString, int numOfThreads) {
+	public static ArrayList<String> directoryCopy (String sourceString, int numOfThreads) {
 		
 			ArrayList<String> listOfDir = new ArrayList<String>();
 		
@@ -95,7 +88,6 @@ public class GetDTList {
 	        */
 	        for(int i = 0; i < numOfThreads; i++)
 	        {
-	        	
 	        	String destination = sourceString+i;
 		        File destDir = new File(destination);	        
 		        
@@ -108,12 +100,9 @@ public class GetDTList {
 		        } catch (IOException e) {
 		            e.printStackTrace();
 		        }
-		        
 		        //add path to arraylist to return
 		        listOfDir.add(destination);
 	        }
-	        
 	        return listOfDir;
-	        
 	    }
 }
