@@ -42,82 +42,28 @@ import edu.washington.cs.dt.impact.tools.CrossReferencer;
 import edu.washington.cs.dt.impact.tools.DependentTestFinder;
 import edu.washington.cs.dt.impact.util.Constants.TECHNIQUE;
 
+/*TODO
+ * 
+ * Same functionality as the original OneConfigurationRunner, but this includes a few extra lines
+ * for creating a ParaThreads object and using it to parallelize runDTF from the DependentTestFinder class.
+ * paraObj is used inside the "while(!dtToFix.isEmpty())" section of the code
+ * 
+ * 
+ */
 
 
 public class OneConfigurationRunner extends Runner {
-	
-	public static Set<String> changedTestSet = new HashSet<String>();
-	public static Map<String, RESULT> nameToOrigResultsHen;
-	public static List<String> currentOrderTestListHen;
-	
-	public static void setStringAr (Set<String> a)
-	{
-		for(String test : a)
-		{
-			changedTestSet.add(test);
-		}
-	}
-	
-	public static Set<String> getStringAr()
-	{
-		return changedTestSet;
-	}
-	
-	public static Map<String, RESULT> getOrigMap()
-	{
-		nameToOrigResultsHen = getCurrentOrderTestListResults(origOrderTestList, filesToDelete);
-		return nameToOrigResultsHen;
-	}
-	
-	public static List<String> getOrigOrderTestList()
-	{
-		return origOrderTestList;
-	}
-	
-	public static List<String> getFilesToDelete()
-	{
-		return filesToDelete;
-	}
-	
-	public static List<String> getAllDTList()
-	{
-		return allDTList;
-	}
-	
-	public static List<String> getCurrentOrder()
-	{
-		 Test testObj = null;
-	        if (techniqueName == TECHNIQUE.PRIORITIZATION) {
-	            testObj = new Prioritization(order, outputFileName, testInputDir, coverage, dependentTestFile, false,
-	                    origOrder);
-	        } else if (techniqueName == TECHNIQUE.SELECTION) {
-	            testObj = new Selection(order, outputFileName, testInputDir, coverage, selectionOutput1, selectionOutput2,
-	                    origOrder, dependentTestFile, getCoverage);
-	        } else if (techniqueName == TECHNIQUE.PARALLELIZATION) {
-	            testObj = new Parallelization(order, outputFileName, testInputDir, coverage, dependentTestFile,
-	                    numOfMachines.getValue(), origOrder, timeOrder, getCoverage, origOrderTestList);
-	        } else {
-	            System.err.println("The regression testing technique selected is invalid. Please restart the"
-	                    + " program and try again.");
-	            System.exit(0);
-	        }
-	        
-		for (int i = 0; i < numOfMachines.getValue(); i++) {
-			currentOrderTestListHen = getCurrentTestList(testObj, i);
-		}
-		
-		return currentOrderTestListHen;
-	}
-	
 
     public static void main(String[] args) {
         parseArgs(args);
 
+      //initialize paraObj with number of threads to use, parseArgs needs to be later edited to handle user input for this
+        ParaThreads paraObj = new ParaThreads(1);
         Map<String, RESULT> nameToOrigResults = getCurrentOrderTestListResults(origOrderTestList, filesToDelete);
 
         // capture start time
         double start = System.nanoTime();
-
+        
         // TestListGenerator
         Test testObj = null;
         if (techniqueName == TECHNIQUE.PRIORITIZATION) {
@@ -147,10 +93,76 @@ public class OneConfigurationRunner extends Runner {
             Map<String, RESULT> nameToTestResults = getCurrentOrderTestListResults(currentOrderTestList, filesToDelete);
             // CrossReferencer
             Set<String> changedTests = CrossReferencer.compareResults(nameToOrigResults, nameToTestResults, false);
-            
-            //use setter method
-            setStringAr(changedTests);
+
+            Set<String> fixedDT = new HashSet<>();
+            if (resolveDependences != null) {
+                int counter = 0;
+
+                Set<String> dtToFix = new HashSet<String>();
+                for (String test : changedTests) {
+                    if (currentOrderTestList.contains(test)) {
+                        dtToFix.add(test);
+                    }
+                }
+
+                // TODO there may be a bug in the generation of parallelization orders where tests that needs to come
+                // before a dependent test from the ALL_DT_LIST is not actually putting all tests before the dependent
+                // test. Print botTests in determineSubLists to know for sure if all tests in there are in the
+                // ALL_DT_LIST and is in the current test order.
+                while (!dtToFix.isEmpty()) {
+                    String testName = dtToFix.iterator().next();
+                    System.out.println("Nullifying DTs iteration number / possible iterations left: " + counter + " / "
+                            + dtToFix.size());
+                    counter += 1;
+                    fixedDT.add(testName);
+                    
+                    // DependentTestFinder
+                    //DependentTestFinder.runDTF(testName, nameToOrigResults.get(testName), currentOrderTestList, origOrderTestList, filesToDelete, allDTList);
+                    //allDTList=DependentTestFinder.getAllDTs();
+                    paraObj.setParaVars(changedTests, nameToOrigResults, currentOrderTestList, origOrderTestList, filesToDelete, allDTList);
+                    allDTList = paraObj.runThreads();
+                    
+                    // TestListGenerator
+                    testObj.resetDTList(allDTList);
+                    currentOrderTestList = getCurrentTestList(testObj, i);
+                    // ImpactMain
+                    nameToTestResults = getCurrentOrderTestListResults(currentOrderTestList, filesToDelete);
+                    // Cross Referencer
+                    changedTests = CrossReferencer.compareResults(nameToOrigResults, nameToTestResults, false);
+
+                    dtToFix.clear();
+                    for (String test : changedTests) {
+                        if (currentOrderTestList.contains(test)) {
+                            dtToFix.add(test);
+                        }
+                    }
+               
+                }
+            }
+
+            // capture end time
+            double runTotal = System.nanoTime() - start;
+            testList.setNullifyDTTime(runTotal);
+            testList.setNumNotFixedDT(changedTests);
+            testList.setNumFixedDT(fixedDT.size());
+            testList.setTestList(currentOrderTestList);
+            testList.setTestListSize(currentOrderTestList.size());
+            Map<Double, List<Double>> totalTimeToCumulTime =
+                    setTestListMedianTime(timesToRun, filesToDelete, currentOrderTestList, testList, true);
+            if (allDTList != null) {
+                testList.setDtList(allDTList.toString());
+            }
+
+            if (getCoverage) {
+                // Get coverage each test achieved
+                List<String> coverageEachTest = getCurrentCoverage(testObj, i);
+                testList.setCoverage(coverageEachTest);
+                List<Double> cumulCoverage = getCumulList(coverageEachTest);
+                testList.setAPFD(getAPFD(totalTimeToCumulTime.get(testList.getNewOrderTime()), cumulCoverage));
+            }
+            listTestList.add(testList);
         }
+
         output(false);
     }
 }

@@ -11,11 +11,14 @@ import java.util.concurrent.*;
 import edu.washington.cs.dt.RESULT;
 import edu.washington.cs.dt.impact.data.WrapperTestList;
 import edu.washington.cs.dt.impact.runner.OneConfigurationRunner;
+import edu.washington.cs.dt.impact.technique.Parallelization;
 import edu.washington.cs.dt.impact.technique.Prioritization;
+import edu.washington.cs.dt.impact.technique.Selection;
 import edu.washington.cs.dt.impact.technique.Test;
 import edu.washington.cs.dt.impact.tools.CrossReferencer;
 import edu.washington.cs.dt.impact.tools.DependentTestFinder;
 import edu.washington.cs.dt.impact.util.Constants.COVERAGE;
+import edu.washington.cs.dt.impact.util.Constants.TECHNIQUE;
 import edu.washington.cs.dt.main.ImpactMain;
 
 import org.apache.commons.io.FileUtils;
@@ -23,10 +26,14 @@ import org.apache.commons.io.FileUtils;
 import java.io.File;
 import java.io.IOException;
 
-public class GetDTList {
+public class GetDTList{
 	
 	/*
 	 * TODO
+	 * 
+	 * As of now this class just calls the OneConfigurationRunner with hard-coded arguments.
+	 * This class can still clone directories, but this functionality is commented out and not being used 
+	 * for parallelization.
 	 * 
 	 * This method should call the OneConfigurationRunner to get a list of the tests that had different results
 	 * in the new order. It should also invoke the directoryCopy method in this class to get a list of cloned repo
@@ -36,10 +43,8 @@ public class GetDTList {
 	 * The main method needs to be changed to take in the name of project, the path of the project, the technique 
 	 * being used, the number of cores to be used.
 	 *
-	 *
 	 *Currently can call the OneConfigurationRunner and to generate prioritization-statement-absolute results
-	 *for Crystal and Jfreechart. Also calls ParaThreads class with arguments used for parallelization (arguments
-	 *are listed in the TODO section of the ParaThreads class)
+	 *for Crystal, ActivemqCamel, and Jfreechart
 	 *
 	 * 
 	 */
@@ -47,25 +52,26 @@ public class GetDTList {
 	
 	public static void main(String[] args){
 		//initialize variables, method should take these as arguments
-		//String[] b = new String[]{"-technique","prioritization","-coverage","statement","-order","absolute","-origOrder","/home/user/dependent-tests-impact/experiments/crystalvc/crystal-orig-order","-testInputDir","/home/user/dependent-tests-impact/experiments/crystalvc/sootTestOutput-orig","-filesToDelete","/home/user/dependent-tests-impact/experiments/crystalvc/crystal-env-files","-project","Crystal","-testType","orig","-outputDir","/home/user/dependent-tests-impact/experiments/prioritization-results","-timesToRun","1","-getCoverage"};
-		String[] b = new String[]{"-technique","prioritization","-coverage","statement","-order","absolute","-origOrder","/home/user/dependent-tests-impact/experiments/activemq-old/activemq-camel/target/activemqCamel-orig-order","-testInputDir","/home/user/dependent-tests-impact/experiments/activemq-old/activemq-camel/target/sootTestOutput-orig","-filesToDelete","/home/user/dependent-tests-impact/experiments/activemq-old/activemq-camel/target/activemqCamel-env-files","-project","ActivemqCamel","-testType","orig","-outputDir","/home/user/dependent-tests-impact/experiments/prioritization-results","-timesToRun","1","-getCoverage"};
-		//String[] b = new String[]{"-technique","prioritization","-coverage","statement","-order","absolute","-origOrder","/home/user/dependent-tests-impact/experiments/jfreechart-1.0.15/jfreechart-orig-order","-testInputDir","/home/user/dependent-tests-impact/experiments/jfreechart-1.0.15/sootTestOutput-orig","-filesToDelete","/home/user/dependent-tests-impact/experiments/jfreechart-1.0.15/jfreechart-env-files","-project","Joda-Time","-testType","orig","-outputDir","/home/user/dependent-tests-impact/experiments/prioritization-results","-timesToRun","1","-getCoverage"};
-		int numThreadsToUse = 2;
+		//crystal
+		String[] b = new String[]{"-technique","prioritization","-coverage","statement","-order","absolute","-origOrder","/home/user/dependent-tests-impact/experiments/crystalvc/crystal-orig-order","-testInputDir","/home/user/dependent-tests-impact/experiments/crystalvc/sootTestOutput-orig","-filesToDelete","/home/user/dependent-tests-impact/experiments/crystalvc/crystal-env-files","-project","Crystal","-testType","orig","-outputDir","/home/user/dependent-tests-impact/experiments/prioritization-results","-timesToRun","1","-getCoverage", "-resolveDependences", "/home/user/dependent-tests-impact/experiments/prioritization-dt-list/aasdf.txt"};
+		//activemqCamel
+		//String[] b = new String[]{"-technique","prioritization","-coverage","statement","-order","absolute","-origOrder","/home/user/dependent-tests-impact/experiments/activemq-old/activemq-camel/target/activemqCamel-orig-order","-testInputDir","/home/user/dependent-tests-impact/experiments/activemq-old/activemq-camel/target/sootTestOutput-orig","-filesToDelete","/home/user/dependent-tests-impact/experiments/activemq-old/activemq-camel/target/activemqCamel-env-files","-project","ActivemqCamel","-testType","orig","-outputDir","/home/user/dependent-tests-impact/experiments/prioritization-results","-timesToRun","1","-getCoverage", "-resolveDependences","/home/user/dependent-tests-impact/experiments/prioritization-dt-list/prioritization-activemqCamel.txt"};
+		//jfreechart
+		//String[] b = new String[]{"-technique","prioritization","-coverage","statement","-order","absolute","-origOrder","/home/user/dependent-tests-impact/experiments/jfreechart-1.0.15/jfreechart-orig-order","-testInputDir","/home/user/dependent-tests-impact/experiments/jfreechart-1.0.15/sootTestOutput-orig","-filesToDelete","/home/user/dependent-tests-impact/experiments/jfreechart-1.0.15/jfreechart-env-files","-project","jfreechart","-testType","orig","-outputDir","/home/user/dependent-tests-impact/experiments/prioritization-results","-timesToRun","1","-getCoverage","-resolveDependences","/home/user/dependent-tests-impact/experiments/prioritization-dt-list/prioritization-JFREECHART-statement-absolute-.txt"};
+		
 		
 		//start OneConfigurationRunner
 		OneConfigurationRunner.main(b);
-		Set<String> changedTestList = OneConfigurationRunner.getStringAr();
 		
+		/*
 		//call directoryCopy method
-		ArrayList<String> list_of_dir = GetDTList.directoryCopy("/home/user/dependent-tests-impact/experiments/activemq-old/activemq-camel/target", numThreadsToUse);
+		int numThreadsToUse = 1;
+		ArrayList<String> list_of_dir = GetDTList.directoryCopy("/home/user/dependent-tests-impact/experiments/jfreechart-1.0.15", numThreadsToUse);
 		for(String k : list_of_dir)
 		{
 			System.out.println(k);
 		}
-		
-		//call parallelization class
-		ParaThreads paraobj = new ParaThreads(changedTestList, list_of_dir, numThreadsToUse, OneConfigurationRunner.getOrigMap(), OneConfigurationRunner.getCurrentOrder(), OneConfigurationRunner.getOrigOrderTestList(), OneConfigurationRunner.getFilesToDelete(), OneConfigurationRunner.getAllDTList());
-		paraobj.runThreads();
+		*/
 	}
 	    
 	
@@ -75,9 +81,7 @@ public class GetDTList {
 	 * number of threads to use
 	*/
 	public static ArrayList<String> directoryCopy (String sourceString, int numOfThreads) {
-		
 			ArrayList<String> listOfDir = new ArrayList<String>();
-		
 	        // get existing directory to copy.
 	        String source = sourceString;
 	        File srcDir = new File(source);
