@@ -21,56 +21,99 @@ import edu.washington.cs.dt.impact.util.Constants.TECHNIQUE;
 
 /*
  * TODO 
- * 
- * need to merge results together
- * did not make use of multiple directory paths
+ * does not make use of multiple directory paths
  * 
  * 
  * Right now this class now calls runDTF in DependentTestFinder class in parallelized manner
  * This class needs the list of paths, number of threads, changed test list, hashmap of
  * each test's original result and name, current order test list, original order test list,
- * files to delete, all dt test list
+ * files to delete, all dt test list (invoked by OneConfigurationRunner)
+ * 
+ * TestData implementation still needs to be worked on if DependenTestFinder will be changed
+ * to data objects instead of Strings
  * 
 */
 
-public class ParaThreads extends Runner {
+public class ParaThreads {
 	
 	//list of variables
-	Set<String> changedTests;
-	Map<String, RESULT> nameToOrigResultsListHen;
-	List<String> currentOrderTestListHen;
-	List<String> origOrderTestListHen;
-	List<String> filesToDeleteHen;
-	List<String> allDTListHen;
-	List<String> runDTFOutput;
-	
-	ArrayList<String> paths;
-	ArrayList<Thread> threadList = new ArrayList<Thread>();
-	int threads;
-
+	static Set<String> changedTests;
+	static Map<String, RESULT> nameToOrigResultsListHen;
+	static List<String> currentOrderTestListHen;
+	static List<String> origOrderTestListHen;
+	static List<String> filesToDeleteHen;
+	static List<String> allDTListHen;
+	List<String> runDTFOutput; //output after calling runDTF
+	static boolean started; //flag to indicate if a thread has been started
+	ArrayList<Thread> threadList = new ArrayList<Thread>(); //arraylist of threads
+	int threads; //number of threads to use
+	ConcurrentLinkedQueue<String> q = new ConcurrentLinkedQueue<String>();
 	//q is a shared queue between threads, each thread pops a test off of the queue and
 	//calls runDTF on it
-	ConcurrentLinkedQueue<String> q = new ConcurrentLinkedQueue<String>();
-	//done_q is a shared list between threads that holds elements of allDTList
-	List<String> done_q = Collections.synchronizedList(new ArrayList<String>());
+	List<String> allDTSynchList = Collections.synchronizedList(new ArrayList<String>()); //all runDTFoutputs generated stored here 
 	
-	//constructor
-	public ParaThreads(Set<String> changedTests, ArrayList<String> paths, int threads, Map<String, RESULT> nameToOrigResultsHen, List<String> currentOrderTestListHen,  List<String> origOrderTestListHen, List<String> filesToDeleteHen, List<String> allDTListHen) {
-		this.paths = paths;
+	//variables not being used
+	//List<TestData> done_q = Collections.synchronizedList(new ArrayList<TestData>()); //synch list of parsed strings from allDTList, represented as a TestData object
+	//ArrayList<String> paths; //was used to hold directory paths for each thread
+	
+	//constructor sets number of threads and creates them
+	public ParaThreads(int threads){
 		this.threads = threads;
-		this.changedTests = changedTests;
-		this.nameToOrigResultsListHen = nameToOrigResultsHen;
-		this.currentOrderTestListHen = currentOrderTestListHen;
-		this.origOrderTestListHen = origOrderTestListHen;
-		this.filesToDeleteHen = filesToDeleteHen;
-		this.allDTListHen = allDTListHen;
+		started = false;
+		//create new threads as specified
+		for(int j = 0; j < threads; j++)
+		{
+			threadList.add(new Thread(new Runnable()
+			{
+				//each thread's run method defined here
+				public void run()
+				{
+					System.out.println("\nThread is running!\n");
+					try {
+						while(q.peek() != null)
+						{
+							String test = q.poll();
+							System.out.println("popped off of q: "+test+"\n");
+							DependentTestFinder.runDTF(test, nameToOrigResultsListHen.get(test), currentOrderTestListHen, origOrderTestListHen, filesToDeleteHen, allDTListHen);
+							runDTFOutput = DependentTestFinder.getAllDTs();
+							
+							/*this section is for parsed runDTF output
+							 *get specified parsed values from DependenTestFinder
+							TestData runDTFData = new TestData(DependentTestFinder.getBefore(), DependentTestFinder.getIntended(), DependentTestFinder.getAfter(), DependentTestFinder.getRevealed());
+							//put contents of allDTList (as a TestData object) into shared List (aka done_q)
+							synchronized (done_q)
+							{
+								done_q.add(runDTFData);
+							}
+							*/
+							
+							//for now adding runDTFOutput as a List of strings
+							synchronized (allDTSynchList)
+							{
+								allDTSynchList.addAll(runDTFOutput);
+							}
+						}
+					} 
+					catch (Exception e) {}
+				}
+			}));
+		}
 	}
 	
-	//parellelization method, will parallelize each changedtest to each core in a queue manner
-	//each thread takes from the same queue, and locking is done through ConcurrentLinkedQueue
-	//implementation
-	public void runThreads(){
+	public void setParaVars(Set<String> changedTests, Map<String, RESULT> nameToOrigResultsHen, List<String> currentOrderTestListHen,  List<String> origOrderTestListHen, List<String> filesToDeleteHen, List<String> allDTListHen)
+	{
+		ParaThreads.changedTests = changedTests;
+		ParaThreads.nameToOrigResultsListHen = nameToOrigResultsHen;
+		ParaThreads.currentOrderTestListHen = currentOrderTestListHen;
+		ParaThreads.origOrderTestListHen = origOrderTestListHen;
+		ParaThreads.filesToDeleteHen = filesToDeleteHen;
+		ParaThreads.allDTListHen = allDTListHen;
+	}
+	
+	//runs threads and returns a list of strings that represent allDTList
+	public List<String> runThreads(){
 		
+		//add dependent tests to q
 		for(String i : changedTests)
 		{
 			System.out.printf("\nThe test added is: %s\n", i);
@@ -79,37 +122,15 @@ public class ParaThreads extends Runner {
 		
 		for(int j = 0; j < threads; j++)
 		{
-			//create new thread
-			System.out.printf("\ninside for loop, j is %d\n", j);
-			threadList.add(new Thread(new Runnable()
+			//get illegal thread exception error if a thread is started more than once
+			if(!started)
 			{
-				//each thread's method that is run
-				public void run()
-				{
-					System.out.println("\nThread is running!\n");
-					try {
-						while(q.peek() != null)
-						{
-							String test = q.poll();
-							DependentTestFinder.runDTF(test, nameToOrigResultsListHen.get(test), currentOrderTestListHen, origOrderTestListHen, filesToDeleteHen, allDTListHen);
-							runDTFOutput = DependentTestFinder.getAllDTs();
-							//put contents of allDTList into shared List
-							synchronized (done_q)
-							{
-								done_q.addAll(runDTFOutput);
-							}
-						}
-						//checking contents of done_q
-						for(String s: done_q)
-						{
-							System.out.printf("\nAdded: %s\n", s);
-						}
-					} 
-					catch (Exception e) {}
-				}
-			}));
-			
-			threadList.get(j).start();
+				threadList.get(j).start();
+			}
+			else
+			{
+				threadList.get(j).run();
+			}
 		}
 		
 		//wait for threads to finish
@@ -120,40 +141,9 @@ public class ParaThreads extends Runner {
 			}
 			catch (Exception a) {}
 		}
+		started = true; //flag to switch to use .run() instead of .start()
 		
-		//call TestListGenerator
-		Test testObj = null;
-        if (techniqueName == TECHNIQUE.PRIORITIZATION) {
-            testObj = new Prioritization(order, outputFileName, testInputDir, coverage, dependentTestFile, false,
-                    origOrder);
-        } else if (techniqueName == TECHNIQUE.SELECTION) {
-            testObj = new Selection(order, outputFileName, testInputDir, coverage, selectionOutput1, selectionOutput2,
-                    origOrder, dependentTestFile, getCoverage);
-        } else if (techniqueName == TECHNIQUE.PARALLELIZATION) {
-            testObj = new Parallelization(order, outputFileName, testInputDir, coverage, dependentTestFile,
-                    numOfMachines.getValue(), origOrder, timeOrder, getCoverage, origOrderTestList);
-        } else {
-            System.err.println("The regression testing technique selected is invalid. Please restart the"
-                    + " program and try again.");
-            System.exit(0);
-        }
-		testObj.resetDTList(allDTList);
-        currentOrderTestListHen = getCurrentTestList(testObj, threads);
-        
-        // ImpactMain
-        Map<String, RESULT> nameToTestResults = getCurrentOrderTestListResults(currentOrderTestListHen, filesToDelete);
-        
-        // Cross Referencer
-        changedTests = CrossReferencer.compareResults(nameToOrigResultsListHen, nameToTestResults, false);
-        
-        /* need to feed changedTests back to queue
-        dtToFix.clear();
-        for (String test : changedTests) {
-            if (currentOrderTestListHen.contains(test)) {
-                dtToFix.add(test);
-            }
-        }
-        */
+		return allDTSynchList;
 	}
 	
 }
