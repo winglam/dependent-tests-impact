@@ -21,8 +21,9 @@ import edu.washington.cs.dt.impact.util.Constants.TECHNIQUE;
 
 /*
  * TODO 
- * does not make use of multiple directory paths
- * 
+ * does not make use of multiple directory paths, sometimes extra dts are found 
+ * after running runDTF as opposed to running OneConfigurationRunner normally (without
+ * this class)
  * 
  * Right now this class now calls runDTF in DependentTestFinder class in parallelized manner
  * This class needs the list of paths, number of threads, changed test list, hashmap of
@@ -44,60 +45,20 @@ public class ParaThreads {
 	static List<String> filesToDeleteHen;
 	static List<String> allDTListHen;
 	List<String> runDTFOutput; //output after calling runDTF
-	static boolean started; //flag to indicate if a thread has been started
 	ArrayList<Thread> threadList = new ArrayList<Thread>(); //arraylist of threads
 	int threads; //number of threads to use
 	ConcurrentLinkedQueue<String> q = new ConcurrentLinkedQueue<String>();
 	//q is a shared queue between threads, each thread pops a test off of the queue and
 	//calls runDTF on it
-	List<String> allDTSynchList = Collections.synchronizedList(new ArrayList<String>()); //all runDTFoutputs generated stored here 
+	 List<String> allDTSynchList = Collections.synchronizedList(new ArrayList<String>()); //all runDTFoutputs generated stored here 
 	
 	//variables not being used
 	//List<TestData> done_q = Collections.synchronizedList(new ArrayList<TestData>()); //synch list of parsed strings from allDTList, represented as a TestData object
 	//ArrayList<String> paths; //was used to hold directory paths for each thread
 	
-	//constructor sets number of threads and creates them
+	//constructor sets number of threads
 	public ParaThreads(int threads){
 		this.threads = threads;
-		started = false;
-		//create new threads as specified
-		for(int j = 0; j < threads; j++)
-		{
-			threadList.add(new Thread(new Runnable()
-			{
-				//each thread's run method defined here
-				public void run()
-				{
-					System.out.println("\nThread is running!\n");
-					try {
-						while(q.peek() != null)
-						{
-							String test = q.poll();
-							System.out.println("popped off of q: "+test+"\n");
-							DependentTestFinder.runDTF(test, nameToOrigResultsListHen.get(test), currentOrderTestListHen, origOrderTestListHen, filesToDeleteHen, allDTListHen);
-							runDTFOutput = DependentTestFinder.getAllDTs();
-							
-							/*this section is for parsed runDTF output
-							 *get specified parsed values from DependenTestFinder
-							TestData runDTFData = new TestData(DependentTestFinder.getBefore(), DependentTestFinder.getIntended(), DependentTestFinder.getAfter(), DependentTestFinder.getRevealed());
-							//put contents of allDTList (as a TestData object) into shared List (aka done_q)
-							synchronized (done_q)
-							{
-								done_q.add(runDTFData);
-							}
-							*/
-							
-							//for now adding runDTFOutput as a List of strings
-							synchronized (allDTSynchList)
-							{
-								allDTSynchList.addAll(runDTFOutput);
-							}
-						}
-					} 
-					catch (Exception e) {}
-				}
-			}));
-		}
 	}
 	
 	public void setParaVars(Set<String> changedTests, Map<String, RESULT> nameToOrigResultsHen, List<String> currentOrderTestListHen,  List<String> origOrderTestListHen, List<String> filesToDeleteHen, List<String> allDTListHen)
@@ -120,17 +81,58 @@ public class ParaThreads {
 			q.add(i);
 		}
 		
+		//create new threads as specified
 		for(int j = 0; j < threads; j++)
 		{
-			//get illegal thread exception error if a thread is started more than once
-			if(!started)
+			threadList.add(new Thread(new Runnable()
 			{
-				threadList.get(j).start();
-			}
-			else
-			{
-				threadList.get(j).run();
-			}
+				//each thread's run method defined here
+				public void run()
+				{
+					try {
+						System.out.printf("\nthread is running!\n");
+						while(q.peek() != null)
+						{
+							String test = q.poll();
+							DependentTestFinder.runDTF(test, nameToOrigResultsListHen.get(test), currentOrderTestListHen, origOrderTestListHen, filesToDeleteHen, allDTListHen);
+							runDTFOutput = DependentTestFinder.getAllDTs();
+							/*
+							//this section is for parsed runDTF output
+							//get specified parsed values from DependenTestFinder
+							TestData runDTFData = new TestData(DependentTestFinder.getBefore(), DependentTestFinder.getIntended(), DependentTestFinder.getAfter(), DependentTestFinder.getRevealed());
+							//put contents of allDTList (as a TestData object) into shared List (aka done_q)
+							synchronized (done_q)
+							{
+								if(done_q.isEmpty())
+								{
+									done_q.add(runDTFData);
+								}
+								else{
+								for(TestData x: done_q)
+								{
+									if(!(TestData.isEqual(runDTFData, x)))
+									{
+										done_q.add(runDTFData);
+									}
+								}
+								}
+							}
+							*/	
+							//for now adding runDTFOutput as a List of strings
+							/*
+							//not being used currently as it adds the same dts twice
+							synchronized (allDTSynchList)
+							{
+								allDTSynchList.addAll(runDTFOutput);
+							}
+							*/
+						}
+						System.out.printf("\nthread is done!\n");
+					} 
+					catch (Exception e) {}
+				}
+			}));
+			threadList.get(j).start();
 		}
 		
 		//wait for threads to finish
@@ -141,9 +143,32 @@ public class ParaThreads {
 			}
 			catch (Exception a) {}
 		}
-		started = true; //flag to switch to use .run() instead of .start()
+		threadList.clear(); //clear list as threads cannot be restarted once stopped
 		
-		return allDTSynchList;
+		return runDTFOutput;
+		//return ParaThreads.getListDone(done_q); //if using runDTFData
 	}
 	
+	/*
+	 * This method will convert the TestData class into a List<String> to send back to the
+	 * OneConfigurationRunner. It is not being used currently as this class still runs with
+	 * the DependenTestFinder, which returns a List<String> from the getAllDTs
+	public static List<String> getListDone(List<TestData> allDT)
+	{
+		List<String> listString = new ArrayList<String>();
+		for(TestData d: allDT)
+		{
+			listString.add("Test: " + d.depTest);
+			listString.add("Intended behavior: FAILURE");
+			listString.add("when executed after: [" + d.indTest + "]");
+			listString.add("The revealed different behavior: PASS");
+			listString.add("when executed after: []");
+		}
+		for(String s: listString)
+		{
+			System.out.println("listSTring contains: "+s);
+		}
+		return listString;
+	}
+	*/
 }

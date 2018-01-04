@@ -43,6 +43,7 @@ import edu.washington.cs.dt.impact.tools.DependentTestFinder;
 import edu.washington.cs.dt.impact.util.Constants.TECHNIQUE;
 
 /*TODO
+ * edit parseArgs to take in argument of number of threads to use
  * 
  * Same functionality as the original OneConfigurationRunner, but this includes a few extra lines
  * for creating a ParaThreads object and using it to parallelize runDTF from the DependentTestFinder class.
@@ -93,7 +94,7 @@ public class OneConfigurationRunner extends Runner {
             Map<String, RESULT> nameToTestResults = getCurrentOrderTestListResults(currentOrderTestList, filesToDelete);
             // CrossReferencer
             Set<String> changedTests = CrossReferencer.compareResults(nameToOrigResults, nameToTestResults, false);
-
+            
             Set<String> fixedDT = new HashSet<>();
             if (resolveDependences != null) {
                 int counter = 0;
@@ -129,7 +130,6 @@ public class OneConfigurationRunner extends Runner {
                     nameToTestResults = getCurrentOrderTestListResults(currentOrderTestList, filesToDelete);
                     // Cross Referencer
                     changedTests = CrossReferencer.compareResults(nameToOrigResults, nameToTestResults, false);
-
                     dtToFix.clear();
                     for (String test : changedTests) {
                         if (currentOrderTestList.contains(test)) {
