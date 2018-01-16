@@ -28,6 +28,44 @@ import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+/**
+ * Usages:
+ * Get ALL_DT_LIST for just one test:
+ * <pre>
+ * {@code
+ * DependentTestFinder dtFinder = new DependentTestFinder(dependentTestName, origOrder, newOrder, filesToDelete);
+ * List<String> allDtList = dtFinder.runDTF().dependencyToString();
+ *
+ * // Optional write to file:
+ * DependentTestFinder.writeToFile(dtFinder, FILE);
+ * DependentTestFinder.writeToFile(dtFinder); // Writes to file stored in static field DT_FILE
+ * }
+ * </pre>
+ *
+ * Get ALL_DT_LIST for multiple tests, using same orig/new order:
+ * <pre>
+ * {@code
+ * List<DependentTestFinder> dtFinders = new ArrayList<>();
+ *
+ * For first test:
+ * DependentTestFinder dtFinder = new DependentTestFinder(dependentTestName, origOrder, newOrder, filesToDelete);
+ *
+ * for each extra dt to fix:
+ * for (dependentTestName : dependentTestsToFix) {
+ *     dtFinders.add(dtFinder.runDTF());
+ *     dtFinder = dtFinder.createFromDTFinder(dtFinder, nextDependentTestName);
+ * }
+ *
+ * When done:
+ *
+ * List<String> allDtList = DependentTestFinder.dependenciesToString(dtFinders);
+ *
+ * // Optional write to file:
+ * DependentTestFinder.writeToFile(dtFinders, FILE);
+ * DependentTestFinder.writeToFile(dtFinders); // Writes to file stored in static field DT_FILE
+ *
+ * </pre>
+ */
 public class DependentTestFinder {
     // TODO: Set up way to set this via command line
     private static File DT_FILE;
