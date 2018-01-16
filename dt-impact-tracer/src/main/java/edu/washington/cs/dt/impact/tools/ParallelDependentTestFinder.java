@@ -18,7 +18,6 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -113,7 +112,7 @@ public class ParallelDependentTestFinder {
         this.originalOrder = new TestOrder(originalOrder);
         this.newOrder = new TestOrder(newOrder);
 
-        primeOrder = new TestOrder(generatePrimeOrder(originalOrder, newOrder));
+        primeOrder = new TestOrder(generatePrimeOrder(this.originalOrder, this.newOrder));
 
         this.filesToDelete = filesToDelete;
         knownDependencies = new HashMap<>();
@@ -131,7 +130,7 @@ public class ParallelDependentTestFinder {
         this.originalOrder = new TestOrder(originalOrder);
         this.newOrder = new TestOrder(newOrder);
 
-        primeOrder = new TestOrder(generatePrimeOrder(originalOrder, newOrder));
+        primeOrder = new TestOrder(generatePrimeOrder(this.originalOrder, this.newOrder));
 
         this.filesToDelete = filesToDelete;
         this.knownDependencies = new HashMap<>(knownDependencies);
@@ -176,19 +175,19 @@ public class ParallelDependentTestFinder {
                 filesToDelete);
     }
 
-    private List<String> generatePrimeOrder(final List<String> originalOrder,
-                                            final List<String> newOrder) {
-        final List<String> primeOrder = new ArrayList<>(newOrder);
+    private List<String> generatePrimeOrder(final TestOrder originalOrder,
+                                            final TestOrder newOrder) {
+        final List<String> primeOrder = new ArrayList<>(newOrder.testOrder);
 
-        final int origIndex = originalOrder.indexOf(dependentTestName);
         final int primeIndex = primeOrder.indexOf(dependentTestName);
-
-        // TODO: Make sure no tests are in order twice.
 
         // Get all the tests that come before the test in the original order, and put them before
         // the test in the prime list.
-        if (origIndex != -1 && primeIndex != -1) {
-            primeOrder.addAll(primeIndex, originalOrder.subList(0, origIndex));
+        if (primeIndex != -1) {
+            final List<String> insertTests = originalOrder.getTestsBefore(dependentTestName);
+
+            primeOrder.removeIf(insertTests::contains); // Make sure no tests appear twice.
+            primeOrder.addAll(primeIndex, insertTests);
         }
 
         return primeOrder;
