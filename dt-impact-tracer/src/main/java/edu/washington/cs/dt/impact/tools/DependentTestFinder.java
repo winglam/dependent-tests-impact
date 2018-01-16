@@ -208,4 +208,39 @@ public class DependentTestFinder {
 
         return result;
     }
+
+    // runs orderedTests and determine whether dependentTestName
+    // in the orderTests matches DEPEDENT_TEST_RESULT
+    // returns true if dependentTestName's result in orderedTest
+    // does not match DEPENDENT_TEST_RESULT, false otherwise
+    private boolean isTestResultDifferent(List<String> orderedTests) {
+        FileTools.clearEnv(filesToDelete);
+        TestExecResult result = makeAndRunTestOrder(orderedTests);
+
+        RESULT dtIsolateResult = null;
+        if (result.isTestPassed(dependentTestName)) {
+            dtIsolateResult = RESULT.PASS;
+        } else if (result.isTestError(dependentTestName)) {
+            dtIsolateResult = RESULT.ERROR;
+        } else {
+            dtIsolateResult = RESULT.FAILURE;
+        }
+
+        return !dtIsolateResult.equals(dependentTestResult);
+    }
+
+    // returns true if dependentTestName's result in results is the same as
+    // DEPENDENT_TEST_RESULT and if it is original order, false otherwise
+    private boolean checkTestMatch(boolean isOriginalOrder, TestExecResult results) {
+        boolean testResult;
+        if (dependentTestResult.equals(RESULT.PASS)) {
+            testResult = results.isTestPassed(dependentTestName);
+        } else if (dependentTestResult.equals(RESULT.ERROR)) {
+            testResult = results.isTestError(dependentTestName);
+        } else {
+            testResult = results.isTestFailed(dependentTestName);
+        }
+
+        return testResult == isOriginalOrder;
+    }
 }
