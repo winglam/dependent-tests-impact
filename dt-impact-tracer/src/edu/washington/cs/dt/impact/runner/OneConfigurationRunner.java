@@ -26,6 +26,7 @@
 
 package edu.washington.cs.dt.impact.runner;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -41,13 +42,20 @@ import edu.washington.cs.dt.impact.technique.Test;
 import edu.washington.cs.dt.impact.tools.CrossReferencer;
 import edu.washington.cs.dt.impact.tools.DependentTestFinder;
 import edu.washington.cs.dt.impact.util.Constants.TECHNIQUE;
+import edu.washington.cs.dt.main.Main;
+import edu.washington.cs.dt.util.Files;
+import edu.washington.cs.dt.util.TestExecUtils;
 
 /*TODO
- * edit parseArgs to take in argument of number of threads to use
+ * 
+ * Need to fix DependenTestFinder to switch between using ParaThreads class or not
+ * Problem: methods and variables in DependentTestFinder need to be static since this class calls DTF staticaly
  * 
  * Same functionality as the original OneConfigurationRunner, but this includes a few extra lines
  * for creating a ParaThreads object and using it to parallelize runDTF from the DependentTestFinder class.
  * paraObj is used inside the "while(!dtToFix.isEmpty())" section of the code
+ * 
+ * 
  * 
  * 
  */
@@ -58,8 +66,11 @@ public class OneConfigurationRunner extends Runner {
     public static void main(String[] args) {
         parseArgs(args);
 
-      //initialize paraObj with number of threads to use, parseArgs needs to be later edited to handle user input for this
-        ParaThreads paraObj = new ParaThreads(1);
+        //initialize paraObj with number of threads to use
+        ParaThreads paraObj = new ParaThreads(threads);
+        //initialize dtfObj in case threads not specified
+        DependentTestFinder dtfObj = new DependentTestFinder();
+        
         Map<String, RESULT> nameToOrigResults = getCurrentOrderTestListResults(origOrderTestList, filesToDelete);
 
         // capture start time
@@ -117,12 +128,19 @@ public class OneConfigurationRunner extends Runner {
                     counter += 1;
                     fixedDT.add(testName);
                     
-                    // DependentTestFinder
-                    //DependentTestFinder.runDTF(testName, nameToOrigResults.get(testName), currentOrderTestList, origOrderTestList, filesToDelete, allDTList);
-                    //allDTList=DependentTestFinder.getAllDTs();
-                    paraObj.setParaVars(changedTests, nameToOrigResults, currentOrderTestList, origOrderTestList, filesToDelete, allDTList);
-                    allDTList = paraObj.runThreads();
-                    
+                    //threads is default set to 0, but if specified, use ParaThreads class
+                    if(threads >= 1)
+                    {
+                    	paraObj.setParaVars(changedTests, nameToOrigResults, currentOrderTestList, origOrderTestList, filesToDelete, allDTList);
+                        allDTList = paraObj.runThreads();
+                    }
+                    //if not specified, use default DependentTestFinder 
+                    else
+                    {
+                    	dtfObj.runDTF(testName, nameToOrigResults.get(testName), currentOrderTestList, origOrderTestList, filesToDelete, allDTList);
+                        allDTList=dtfObj.getAllDTs();
+                    }
+
                     // TestListGenerator
                     testObj.resetDTList(allDTList);
                     currentOrderTestList = getCurrentTestList(testObj, i);
@@ -162,7 +180,27 @@ public class OneConfigurationRunner extends Runner {
             }
             listTestList.add(testList);
         }
-
+        
+        //delete tmpfile.txt and tmptestfiles.txt files
+        File x = new File(Main.tmpfile);
+        File y = new File(TestExecUtils.testsfile);
+		if(x.exists()) {
+			Files.deleteFile(Main.tmpfile);
+		}
+		if(y.exists()) {
+			Files.deleteFile(TestExecUtils.testsfile);
+		}
+        for(int t = 0; t < threads; t++)
+        {
+    		File f = new File(Main.tmpfile+Integer.toString(t));
+    		File g = new File(TestExecUtils.testsfile+Integer.toString(t));
+    		if(f.exists()) {
+    			Files.deleteFile(Main.tmpfile+Integer.toString(t));
+    		}
+    		if(g.exists()) {
+    			Files.deleteFile(TestExecUtils.testsfile+Integer.toString(t));
+    		}
+        }
         output(false);
     }
 }
