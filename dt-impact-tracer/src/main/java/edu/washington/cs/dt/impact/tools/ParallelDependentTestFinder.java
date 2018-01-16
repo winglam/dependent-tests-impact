@@ -1,6 +1,6 @@
 /**
  * Copyright 2014 University of Washington. All Rights Reserved.
- * @author Wing Lam
+ * @author Wing Lam, Reed Oei
  *
  *         Determines and outputs what tests needs to run before and
  *         after a particular test in order for that particular test to
@@ -92,104 +92,6 @@ public class ParallelDependentTestFinder {
 
     private static TestExecResult runTestOrder(final List<String> order) {
         return new FixedOrderRunner(order).run().getExecutionRecords().get(0);
-    }
-
-    public static void main(String[] args) {
-        List<String> argsList = new ArrayList<>(Arrays.asList(args));
-
-        String dependentTestName = null;
-        int dependentTestIndex = argsList.indexOf("-dependentTestName");
-        if (dependentTestIndex != -1) {
-            // get index of output file
-            int dependentTestNameIndex = dependentTestIndex + 1;
-            if (dependentTestNameIndex >= argsList.size()) {
-                System.err.println("Dependent test name argument is specified but a test name is not."
-                        + " Please use the format: -dependentTestName aTestName");
-                System.exit(0);
-            }
-            dependentTestName = argsList.get(dependentTestNameIndex);
-        } else {
-            System.err.println("No dependent test name argument is specified."
-                    + " Please use the format: -dependentTestName aTestName");
-            System.exit(0);
-        }
-
-        File currentOrderFile = null;
-        int currentOrderIndex = argsList.indexOf("-currentOrderFile");
-        if (currentOrderIndex != -1) {
-            // get index of output file
-            int currentOrderFileIndex = currentOrderIndex + 1;
-            if (currentOrderFileIndex >= argsList.size()) {
-                System.err.println("Current order file argument is specified but a file name is not."
-                        + " Please use the format: -currentOrderFile aFileName");
-                System.exit(0);
-            }
-            currentOrderFile = new File(argsList.get(currentOrderFileIndex));
-        } else {
-            System.err.println("No current order file argument is specified."
-                    + " Please use the format: -currentOrderFile aFileName");
-            System.exit(0);
-        }
-
-        File originalOrderFile = null;
-        int originalOrderIndex = argsList.indexOf("-originalOrderFile");
-        if (originalOrderIndex != -1) {
-            // get index of output file
-            int originalOrderFileIndex = originalOrderIndex + 1;
-            if (originalOrderFileIndex >= argsList.size()) {
-                System.err.println("Original order file argument is specified but a file name is not."
-                        + " Please use the format: -originalOrderFile aFileName");
-                System.exit(0);
-            }
-            originalOrderFile = new File(argsList.get(originalOrderFileIndex));
-        } else {
-            System.err.println("No original order file argument is specified."
-                    + " Please use the format: -originalOrderFile aFileName");
-            System.exit(0);
-        }
-
-        File filesToDelete = null;
-        int filesToDeleteIndex = argsList.indexOf("-filesToDelete");
-        if (filesToDeleteIndex != -1) {
-            // get index of output file
-            int filesToDeleteFileIndex = filesToDeleteIndex + 1;
-            if (filesToDeleteFileIndex >= argsList.size()) {
-                System.err.println("Files to delete argument is specified but a file name is not."
-                        + " Please use the format: -filesToDelete aFileName");
-                System.exit(0);
-            }
-            filesToDelete = new File(argsList.get(filesToDeleteFileIndex));
-        } else {
-            System.err.println(
-                    "No files to delete argument is specified." + " Please use the format: -filesToDelete aFileName");
-            System.exit(0);
-        }
-
-        int dtListIndex = argsList.indexOf("-dtFile");
-        File dtFile = null;
-        if (dtListIndex != -1) {
-            // get index of output file
-            int dtListFileIndex = dtListIndex + 1;
-            if (dtListFileIndex >= argsList.size()) {
-                System.err.println("DT file argument is specified but a file name is not."
-                        + " Please use the format: -dtFile aFileName");
-                System.exit(0);
-            }
-            dtFile = new File(argsList.get(dtListFileIndex));
-        } else {
-            System.err.println("No DT file argument is specified." + " Please use the format: -dtFile aFileName");
-            System.exit(0);
-        }
-
-        DT_FILE = dtFile;
-
-        ParallelDependentTestFinder dtFinder = new ParallelDependentTestFinder(dependentTestName,
-                FileTools.parseFileToList(originalOrderFile),
-                FileTools.parseFileToList(currentOrderFile),
-                FileTools.parseFileToList(filesToDelete))
-                .runDTF();
-
-        ParallelDependentTestFinder.writeToFile(dtFinder, DT_FILE);
     }
 
     private final String dependentTestName;
