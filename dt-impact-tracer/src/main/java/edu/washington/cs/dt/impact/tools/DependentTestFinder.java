@@ -17,6 +17,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -253,7 +254,7 @@ public class DependentTestFinder {
         // If the result is the same, then the dependencies must be some of the tests in the original order
         // that came before this test.
         if (originalOrder.results.get(dependentTestName) == primeOrder.results.get(dependentTestName)) {
-            // dependentTestSolver(originalOrder.getTestsBefore(dependentTestName), true, new ArrayList<>());
+            dependentTestSolver(originalOrder.getTestsBefore(dependentTestName), true, new ArrayList<>());
         } else {
             // Run the test in isolation
             final Map<String, RESULT> results =
@@ -263,17 +264,112 @@ public class DependentTestFinder {
             // tests, we just need to move some of the new tests to after
             // come before in the original order.
             if (results.get(dependentTestName) == originalOrder.results.get(dependentTestName)) {
-                // dependentTestSolver(newOrder.getTestsBefore(dependentTestName), false, new ArrayList<>());
+                dependentTestSolver(newOrder.getTestsBefore(dependentTestName), false, new ArrayList<>());
             } else {
                 // If the result is still different from the original order, then we must need both
                 // some/all tests from the original order to come before and some/all tests from the
                 // order to come after.
 
-                // dependentTestSolver(newOrder.getTestsBefore(dependentTestName), false, new ArrayList<>());
-                // dependentTestSolver(originalOrder.getTestsBefore(dependentTestName), true, new ArrayList<>());
+                dependentTestSolver(newOrder.getTestsBefore(dependentTestName), false, new ArrayList<>());
+                dependentTestSolver(originalOrder.getTestsBefore(dependentTestName), true, new ArrayList<>());
             }
         }
 
         return this;
+    }
+
+    private void dependentTestSolver(List<String> tests, boolean isOriginalOrder,
+                                     List<String> addOnTests) {
+        tests.removeAll(addOnTests);
+        List<String> topHalf = new LinkedList<>(tests.subList(0, tests.size() / 2));
+        List<String> botHalf = new LinkedList<>(tests.subList(tests.size() / 2, tests.size()));
+
+        while (tests.size() > 1) {
+            topHalf.addAll(addOnTests);
+            topHalf.add(dependentTestName);
+
+            botHalf.addAll(addOnTests);
+            botHalf.add(dependentTestName);
+
+            FileTools.clearEnv(filesToDelete);
+            TestExecResult topResults = makeAndRunTestOrder(topHalf);
+            boolean topResultsMatch = checkTestMatch(isOriginalOrder, topResults);
+
+            FileTools.clearEnv(filesToDelete);
+            TestExecResult botResults = makeAndRunTestOrder(botHalf);
+            boolean botResultsMatch = checkTestMatch(isOriginalOrder, botResults);
+
+            // dependent test depends on more than one test in tests
+            if (topResultsMatch == botResultsMatch) {
+                /* Part of TODO below.
+                List<String> newBeforeTests = new ArrayList<>(beforeTests);
+                List<String> newAfterTests = new ArrayList<>(afterTests);
+                */
+                List<String> newTopList = new ArrayList<>(tests.subList(0, tests.size() / 2));
+                List<String> newBotList = new ArrayList<>(tests.subList(tests.size() / 2, tests.size()));
+
+                // First, find the dependent tests in the top half.
+                // We can skip finding exactly which tests are the dependent tests in the bottom half
+                // for now by simply running all of them.
+                dependentTestSolver(newTopList, isOriginalOrder, newBotList);
+
+                /* TODO: Verify this is unnecessary. I think it is because it just seems to handle dependencies.
+                if (!beforeTests.equals(newBeforeTests)) {
+                    List<String> tempBeforeTests = new ArrayList<>(beforeTests);
+                    beforeTests.removeAll(newBeforeTests);
+                    if (!topAddOnTests.containsAll(beforeTests)) {
+                        beforeTests.removeAll(topAddOnTests);
+                        topAddOnTests.addAll(beforeTests);
+                    }
+                    beforeTests.clear();
+                    beforeTests.addAll(tempBeforeTests);
+                }
+
+                if (!afterTests.equals(newAfterTests)) {
+                    List<String> tempAfterTests = new ArrayList<>(afterTests);
+                    afterTests.removeAll(newAfterTests);
+                    if (!topAddOnTests.containsAll(afterTests)) {
+                        afterTests.removeAll(topAddOnTests);
+                        topAddOnTests.addAll(afterTests);
+                    }
+                    afterTests.clear();
+                    afterTests.addAll(tempAfterTests);
+                }
+                */
+
+                // Now that we know the dependent tests in the top half, those dependencies should
+                // be handled by the knownDependencies variable.
+                List<String> orderedTests = new ArrayList<>(addOnTests);
+                orderedTests.add(dependentTestName);
+                boolean testResult = isTestResultDifferent(orderedTests);
+                if (!((!isOriginalOrder && testResult) || (isOriginalOrder && !testResult))) {
+                    // case of A and B needs to come before C
+                    dependentTestSolver(newBotList, isOriginalOrder, addOnTests);
+                }
+
+                return;
+            }
+
+            // If only one half contains dependent tests, ignore all tests not in that half.
+            if (topResultsMatch) {
+                tests = topHalf;
+            } else {
+                tests = botHalf;
+            }
+
+            tests.removeAll(addOnTests);
+            tests.remove(tests.size() - 1);
+
+            topHalf = new LinkedList<>(tests.subList(0, tests.size() / 2));
+            botHalf = new LinkedList<>(tests.subList(tests.size() / 2, tests.size()));
+        }
+
+        if (!tests.isEmpty()) {
+            if (isOriginalOrder) {
+                addDependency(dependentTestName, tests.get(0));
+            } else {
+                addDependency(tests.get(0), dependentTestName);
+            }
+        }
     }
 }
