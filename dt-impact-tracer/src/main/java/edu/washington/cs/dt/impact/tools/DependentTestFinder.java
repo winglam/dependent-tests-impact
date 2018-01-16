@@ -10,9 +10,13 @@ package edu.washington.cs.dt.impact.tools;
 
 import edu.washington.cs.dt.RESULT;
 import edu.washington.cs.dt.TestExecResult;
+import edu.washington.cs.dt.impact.util.Constants;
 import edu.washington.cs.dt.runners.FixedOrderRunner;
 
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -21,6 +25,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 public class DependentTestFinder {
     // TODO: Set up way to set this via command line
@@ -369,6 +374,87 @@ public class DependentTestFinder {
                 addDependency(dependentTestName, tests.get(0));
             } else {
                 addDependency(tests.get(0), dependentTestName);
+            }
+        }
+    }
+
+    /**
+     * @return A set of tests that must come AFTER the test in question.
+     */
+    private Set<String> getAfterDependencies(final String testName) {
+        return knownDependencies.entrySet().stream()
+                .filter(dependencies -> dependencies.getValue().contains(testName))
+                .map(Map.Entry::getKey)
+                .collect(Collectors.toSet());
+    }
+
+    public static List<String> dependenciesToString(final List<DependentTestFinder> dependencies) {
+        return dependencies.stream()
+                .map(DependentTestFinder::dependencyToString)
+                .reduce(new ArrayList<>(), (a, b) -> {
+                    a.addAll(b);
+                    return a;
+                });
+    }
+
+    public List<String> dependencyToString() {
+        final List<String> result = new ArrayList<>();
+
+        result.add(Constants.TEST_LINE + dependentTestName);
+        result.add("Intended behavior: " + originalOrder.results.get(dependentTestName));
+        // Says when executed before but uses getAfterDependencies because it must be executed
+        // before the tests that come after.
+        result.add("when executed before: " + getAfterDependencies(dependentTestName));
+        result.add("when executed after: " + knownDependencies.get(dependentTestName));
+        result.add("The revealed different behavior: " + newOrder.results.get(dependentTestName));
+
+        return result;
+    }
+
+    public static void writeToFile(final DependentTestFinder dtFinder) {
+        writeToFile(Collections.singletonList(dtFinder));
+    }
+
+    public static void writeToFile(final DependentTestFinder dtFinder, final File outputFile) {
+        writeToFile(Collections.singletonList(dtFinder), outputFile);
+    }
+
+    public static void writeToFile(final List<DependentTestFinder> dtFinders) {
+        writeToFile(dtFinders, DT_FILE);
+    }
+
+    /**
+     * Writes all the dependency information to a file.
+     * @param dtFinders The dtFinders that contain the dependency information we need.
+     */
+    public static void writeToFile(final List<DependentTestFinder> dtFinders, final File outputFile) {
+        if (outputFile != null) {
+            FileWriter output = null;
+            BufferedWriter writer = null;
+            try {
+                output = new FileWriter(outputFile);
+                writer = new BufferedWriter(output);
+
+                for (final DependentTestFinder dtFinder : dtFinders) {
+                    for (final String line : dtFinder.dependencyToString()) {
+                        writer.write(line + "\n");
+                    }
+
+                    writer.write("\n");
+                }
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            } finally {
+                try {
+                    if (writer != null) {
+                        writer.close();
+                    }
+                    if (output != null) {
+                        output.close();
+                    }
+                } catch (IOException e) {
+                }
             }
         }
     }
