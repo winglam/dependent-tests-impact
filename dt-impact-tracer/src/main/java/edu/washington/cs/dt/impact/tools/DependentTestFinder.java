@@ -14,6 +14,7 @@ import edu.washington.cs.dt.runners.FixedOrderRunner;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -242,5 +243,37 @@ public class DependentTestFinder {
         }
 
         return testResult == isOriginalOrder;
+    }
+
+    /**
+     * Finds all the dependencies for the test that this class was initialized with.
+     * @return The new map of dependencies.
+     */
+    public DependentTestFinder runDTF() {
+        // If the result is the same, then the dependencies must be some of the tests in the original order
+        // that came before this test.
+        if (originalOrder.results.get(dependentTestName) == primeOrder.results.get(dependentTestName)) {
+            // dependentTestSolver(originalOrder.getTestsBefore(dependentTestName), true, new ArrayList<>());
+        } else {
+            // Run the test in isolation
+            final Map<String, RESULT> results =
+                    runTestOrder(Collections.singletonList(dependentTestName)).getNameToResultsMap();
+
+            // If the result is the same with no tests before it, then we don't need any of the original
+            // tests, we just need to move some of the new tests to after
+            // come before in the original order.
+            if (results.get(dependentTestName) == originalOrder.results.get(dependentTestName)) {
+                // dependentTestSolver(newOrder.getTestsBefore(dependentTestName), false, new ArrayList<>());
+            } else {
+                // If the result is still different from the original order, then we must need both
+                // some/all tests from the original order to come before and some/all tests from the
+                // order to come after.
+
+                // dependentTestSolver(newOrder.getTestsBefore(dependentTestName), false, new ArrayList<>());
+                // dependentTestSolver(originalOrder.getTestsBefore(dependentTestName), true, new ArrayList<>());
+            }
+        }
+
+        return this;
     }
 }
