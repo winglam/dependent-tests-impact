@@ -2,8 +2,10 @@ package edu.washington.cs.dt.impact.runner;
 
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Queue;
 import java.util.Set;
 import java.util.concurrent.*;
 import java.util.Collection;
@@ -21,14 +23,19 @@ import edu.washington.cs.dt.impact.util.Constants.TECHNIQUE;
 
 /*
  * TODO 
- * does not make use of multiple directory paths, sometimes extra dts are found 
- * after running runDTF as opposed to running OneConfigurationRunner normally (without
- * this class)
  * 
  * Right now this class now calls runDTF in DependentTestFinder class in parallelized manner
- * This class needs the list of paths, number of threads, changed test list, hashmap of
- * each test's original result and name, current order test list, original order test list,
- * files to delete, all dt test list (invoked by OneConfigurationRunner)
+ * 
+ * Constructor needs:
+ * number of threads (which is used to append to the names of the temporary files generated (e.g. LOCK_FILE)
+ * 
+ * When using this class, need to call setParaVars first, which needs:
+ * changed test list, 
+ * hashmap of each test's original result and name, 
+ * current order test list, 
+ * original order test list,
+ * files to delete, 
+ * all dt test list (invoked by OneConfigurationRunner)
  * 
  * TestData implementation still needs to be worked on if DependenTestFinder will be changed
  * to data objects instead of Strings
@@ -44,16 +51,17 @@ public class ParaThreads {
 	static List<String> origOrderTestListHen;
 	static List<String> filesToDeleteHen;
 	static List<String> allDTListHen;
-	List<String> runDTFOutput; //output after calling runDTF
 	ArrayList<Thread> threadList = new ArrayList<Thread>(); //arraylist of threads
 	int threads; //number of threads to use
+	//q (below) is a shared queue between threads, each thread pops a test off of the queue and calls runDTF on it
 	ConcurrentLinkedQueue<String> q = new ConcurrentLinkedQueue<String>();
-	//q is a shared queue between threads, each thread pops a test off of the queue and
-	//calls runDTF on it
-	 List<String> allDTSynchList = Collections.synchronizedList(new ArrayList<String>()); //all runDTFoutputs generated stored here 
-	
+	//allDTSynchList (below) stores allDTList from each thread (thread-safe)
+	List<String> allDTSynchList = Collections.synchronizedList(new ArrayList<String>());
+	//classpaths (below) is a queue of the thread number (as a string) to append to tmp files generated
+	ConcurrentLinkedQueue<String> classpaths = new ConcurrentLinkedQueue<String>();
 	//variables not being used
-	//List<TestData> done_q = Collections.synchronizedList(new ArrayList<TestData>()); //synch list of parsed strings from allDTList, represented as a TestData object
+	//done_q (below) is a synch list of parsed strings from allDTList, represented as a TestData object
+	//List<TestData> done_q = Collections.synchronizedList(new ArrayList<TestData>());
 	//ArrayList<String> paths; //was used to hold directory paths for each thread
 	
 	//constructor sets number of threads
@@ -79,9 +87,9 @@ public class ParaThreads {
 		{
 			System.out.printf("\nThe test added is: %s\n", i);
 			q.add(i);
-		}
+		}	
 		
-		//create new threads as specified
+		//create new threads as specified		
 		for(int j = 0; j < threads; j++)
 		{
 			threadList.add(new Thread(new Runnable()
@@ -90,14 +98,16 @@ public class ParaThreads {
 				public void run()
 				{
 					try {
+						String path = classpaths.poll();
 						System.out.printf("\nthread is running!\n");
 						while(q.peek() != null)
 						{
 							String test = q.poll();
-							DependentTestFinder.runDTF(test, nameToOrigResultsListHen.get(test), currentOrderTestListHen, origOrderTestListHen, filesToDeleteHen, allDTListHen);
-							runDTFOutput = DependentTestFinder.getAllDTs();
+							DependentTestFinder dtf = new DependentTestFinder();
+							dtf.runDTF(test, nameToOrigResultsListHen.get(test), currentOrderTestListHen, origOrderTestListHen, filesToDeleteHen, allDTListHen, path);
+							List<String> runDTFOutput = dtf.getAllDTs();
 							/*
-							//this section is for parsed runDTF output
+							//this section is for parsed version of runDTF output, not being used currently
 							//get specified parsed values from DependenTestFinder
 							TestData runDTFData = new TestData(DependentTestFinder.getBefore(), DependentTestFinder.getIntended(), DependentTestFinder.getAfter(), DependentTestFinder.getRevealed());
 							//put contents of allDTList (as a TestData object) into shared List (aka done_q)
@@ -119,19 +129,18 @@ public class ParaThreads {
 							}
 							*/	
 							//for now adding runDTFOutput as a List of strings
-							/*
-							//not being used currently as it adds the same dts twice
 							synchronized (allDTSynchList)
 							{
 								allDTSynchList.addAll(runDTFOutput);
 							}
-							*/
+							
 						}
 						System.out.printf("\nthread is done!\n");
 					} 
 					catch (Exception e) {}
 				}
 			}));
+			classpaths.add(Integer.toString(j));
 			threadList.get(j).start();
 		}
 		
@@ -143,9 +152,16 @@ public class ParaThreads {
 			}
 			catch (Exception a) {}
 		}
-		threadList.clear(); //clear list as threads cannot be restarted once stopped
-		
-		return runDTFOutput;
+		threadList.clear(); //clear list since threads cannot be restarted once stopped
+		//need deep copy of allDTSynchList since rejoining to main thread
+		List<String> allDTSynchListReturn = new ArrayList<String>();
+		for(String s : allDTSynchList)
+		{
+			allDTSynchListReturn.add(s);
+		}
+		classpaths.clear();
+		allDTSynchList.clear();
+		return allDTSynchListReturn;
 		//return ParaThreads.getListDone(done_q); //if using runDTFData
 	}
 	
