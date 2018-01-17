@@ -10,6 +10,7 @@ package edu.washington.cs.dt.impact.tools;
 
 import edu.washington.cs.dt.RESULT;
 import edu.washington.cs.dt.TestExecResult;
+import edu.washington.cs.dt.impact.data.TestData;
 import edu.washington.cs.dt.impact.util.Constants;
 import edu.washington.cs.dt.runners.FixedOrderRunner;
 
@@ -66,7 +67,6 @@ import java.util.stream.Collectors;
  * </pre>
  */
 public class ParallelDependentTestFinder {
-    // TODO: Set up way to set this via command line
     private static File DT_FILE;
 
     private class TestOrder {
@@ -82,6 +82,10 @@ public class ParallelDependentTestFinder {
             this.testOrder = testOrder;
 
             results = runTestOrder(testOrder).getNameToResultsMap();
+        }
+
+        public RESULT getResult(final String testName) {
+            return results.get(testName);
         }
 
         public List<String> getTestsBefore(final String testName) {
@@ -101,7 +105,8 @@ public class ParallelDependentTestFinder {
 
     private final List<String> filesToDelete;
 
-    private final Map<String, Set<String>> knownDependencies;
+    private final Map<String, TestData> knownDependencies;
+    private final List<TestData> debugLog;
 
     public ParallelDependentTestFinder(final String dependentTestName,
                                        final List<String> originalOrder,
@@ -117,14 +122,15 @@ public class ParallelDependentTestFinder {
         this.filesToDelete = filesToDelete;
         knownDependencies = new HashMap<>();
 
-        dependentTestResult = this.originalOrder.results.get(dependentTestName);
+        dependentTestResult = this.originalOrder.getResult(dependentTestName);
+        debugLog = new ArrayList<>();
     }
 
     public ParallelDependentTestFinder(final String dependentTestName,
                                        final List<String> originalOrder,
                                        final List<String> newOrder,
                                        final List<String> filesToDelete,
-                                       final Map<String, Set<String>> knownDependencies) {
+                                       final Map<String, TestData> knownDependencies) {
         this.dependentTestName = dependentTestName;
 
         this.originalOrder = new TestOrder(originalOrder);
@@ -135,13 +141,15 @@ public class ParallelDependentTestFinder {
         this.filesToDelete = filesToDelete;
         this.knownDependencies = new HashMap<>(knownDependencies);
 
-        dependentTestResult = this.originalOrder.results.get(dependentTestName);
+        dependentTestResult = this.originalOrder.getResult(dependentTestName);
+        debugLog = new ArrayList<>();
     }
 
     private ParallelDependentTestFinder(final String dependentTestName,
                                         final TestOrder originalOrder,
                                         final TestOrder newOrder,
                                         final TestOrder primeOrder,
+                                        final Map<String, TestData> knownDependencies,
                                         final List<String> filesToDelete) {
         this.dependentTestName = dependentTestName;
 
@@ -150,9 +158,10 @@ public class ParallelDependentTestFinder {
         this.primeOrder = primeOrder;
 
         this.filesToDelete = filesToDelete;
-        knownDependencies = new HashMap<>();
-
         dependentTestResult = this.originalOrder.results.get(dependentTestName);
+
+        this.knownDependencies = knownDependencies;
+        debugLog = new ArrayList<>();
     }
 
     /**
@@ -172,6 +181,7 @@ public class ParallelDependentTestFinder {
                 finder.originalOrder,
                 finder.newOrder,
                 finder.primeOrder,
+                knownDependencies,
                 filesToDelete);
     }
 
@@ -208,50 +218,63 @@ public class ParallelDependentTestFinder {
         return runTestOrder(newOrder);
     }
 
-    private void addDependency(final String testName, final String dependency) {
-        knownDependencies.compute(testName, (t, dependencies) -> {
+    /**
+     * Adds a dependency to the known dependencies for the current dependent test.
+     * @param dependency The new dependency
+     * @param result The result of running the test without this dependency in it's proper location.
+     */
+    private void addDependency(final String dependency, final RESULT result, final boolean isBefore) {
+        knownDependencies.compute(dependentTestName, (testName, dependencies) -> {
             if (dependencies == null) {
-                dependencies = new HashSet<>();
+                dependencies = new TestData(dependentTestName,
+                        dependentTestResult,
+                        new HashSet<>(),
+                        new HashSet<>(),
+                        result);
             }
 
-            dependencies.add(dependency);
+            if (isBefore) {
+                dependencies.addBefore(dependency);
+                debugLog.add(new TestData(dependentTestName,
+                        dependentTestResult,
+                        new HashSet<>(),
+                        new HashSet<>(Collections.singletonList(dependency)),
+                        result));
+            } else {
+                dependencies.addAfter(dependency);
+                debugLog.add(new TestData(dependentTestName,
+                        dependentTestResult,
+                        new HashSet<>(Collections.singletonList(dependency)),
+                        new HashSet<>(),
+                        result));
+            }
+
             return dependencies;
         });
     }
 
-    public Map<String, Set<String>> getKnownDependencies() {
+    public List<TestData> getDebugLog() {
+        return debugLog;
+    }
+
+    public Map<String, TestData> getKnownDependencies() {
         return knownDependencies;
     }
 
     /**
      * Takes a list of dtFinders and merges the dependency information from all of them into one map.
      */
-    public static Map<String, Set<String>> mergeDependencies(final List<ParallelDependentTestFinder> dtFinders) {
+    public static Map<String, TestData> mergeDependencies(final List<ParallelDependentTestFinder> dtFinders) {
         return dtFinders.stream()
                 .map(ParallelDependentTestFinder::getKnownDependencies)
                 .reduce(new HashMap<>(), ParallelDependentTestFinder::mergeDependencies);
     }
 
-    /**
-     * Takes two maps of dependencies and combines them. If both maps contain the same key, the sets
-     * of dependencies will be merged.
-     *
-     * Does not modify either of the original maps.
-     * @param a The first map of dependencies.
-     * @param b The second map of dependencies.
-     * @return A map contains all of the dependencies.
-     */
-    public static Map<String, Set<String>> mergeDependencies(final Map<String, Set<String>> a,
-                                                             final Map<String, Set<String>> b) {
-        final Map<String, Set<String>> result = new HashMap<>(a);
+    private static Map<String,TestData> mergeDependencies(final Map<String, TestData> a,
+                                                          final Map<String, TestData> b) {
+        final Map<String, TestData> result = new HashMap<>(a);
 
-        b.forEach((testName, dependencies) ->
-                // If any key is in both maps, then merge the sets using this function.
-                result.merge(testName, dependencies, (aDependencies, bDependencies) -> {
-                    aDependencies.addAll(bDependencies);
-
-                    return aDependencies;
-                }));
+        b.forEach((testName, testData) -> result.merge(testName, testData, TestData::mergeWith));
 
         return result;
     }
@@ -298,7 +321,7 @@ public class ParallelDependentTestFinder {
     public ParallelDependentTestFinder runDTF() {
         // If the result is the same, then the dependencies must be some of the tests in the original order
         // that came before this test.
-        if (originalOrder.results.get(dependentTestName) == primeOrder.results.get(dependentTestName)) {
+        if (dependentTestResult == primeOrder.getResult(dependentTestName)) {
             dependentTestSolver(originalOrder.getTestsBefore(dependentTestName), true, new ArrayList<>());
         } else {
             // Run the test in isolation
@@ -308,7 +331,7 @@ public class ParallelDependentTestFinder {
             // If the result is the same with no tests before it, then we don't need any of the original
             // tests, we just need to move some of the new tests to after
             // come before in the original order.
-            if (results.get(dependentTestName) == originalOrder.results.get(dependentTestName)) {
+            if (results.get(dependentTestName) == dependentTestResult) {
                 dependentTestSolver(newOrder.getTestsBefore(dependentTestName), false, new ArrayList<>());
             } else {
                 // If the result is still different from the original order, then we must need both
@@ -329,6 +352,8 @@ public class ParallelDependentTestFinder {
         List<String> topHalf = new LinkedList<>(tests.subList(0, tests.size() / 2));
         List<String> botHalf = new LinkedList<>(tests.subList(tests.size() / 2, tests.size()));
 
+        TestExecResult dtResult = null;
+
         while (tests.size() > 1) {
             topHalf.addAll(addOnTests);
             topHalf.add(dependentTestName);
@@ -337,19 +362,15 @@ public class ParallelDependentTestFinder {
             botHalf.add(dependentTestName);
 
             FileTools.clearEnv(filesToDelete);
-            TestExecResult topResults = makeAndRunTestOrder(topHalf);
+            final TestExecResult topResults = makeAndRunTestOrder(topHalf);
             boolean topResultsMatch = checkTestMatch(isOriginalOrder, topResults);
 
             FileTools.clearEnv(filesToDelete);
-            TestExecResult botResults = makeAndRunTestOrder(botHalf);
+            final TestExecResult botResults = makeAndRunTestOrder(botHalf);
             boolean botResultsMatch = checkTestMatch(isOriginalOrder, botResults);
 
             // dependent test depends on more than one test in tests
             if (topResultsMatch == botResultsMatch) {
-                /* Part of TODO below.
-                List<String> newBeforeTests = new ArrayList<>(beforeTests);
-                List<String> newAfterTests = new ArrayList<>(afterTests);
-                */
                 List<String> newTopList = new ArrayList<>(tests.subList(0, tests.size() / 2));
                 List<String> newBotList = new ArrayList<>(tests.subList(tests.size() / 2, tests.size()));
 
@@ -357,30 +378,6 @@ public class ParallelDependentTestFinder {
                 // We can skip finding exactly which tests are the dependent tests in the bottom half
                 // for now by simply running all of them.
                 dependentTestSolver(newTopList, isOriginalOrder, newBotList);
-
-                /* TODO: Verify this is unnecessary. I think it is because it just seems to handle dependencies.
-                if (!beforeTests.equals(newBeforeTests)) {
-                    List<String> tempBeforeTests = new ArrayList<>(beforeTests);
-                    beforeTests.removeAll(newBeforeTests);
-                    if (!topAddOnTests.containsAll(beforeTests)) {
-                        beforeTests.removeAll(topAddOnTests);
-                        topAddOnTests.addAll(beforeTests);
-                    }
-                    beforeTests.clear();
-                    beforeTests.addAll(tempBeforeTests);
-                }
-
-                if (!afterTests.equals(newAfterTests)) {
-                    List<String> tempAfterTests = new ArrayList<>(afterTests);
-                    afterTests.removeAll(newAfterTests);
-                    if (!topAddOnTests.containsAll(afterTests)) {
-                        afterTests.removeAll(topAddOnTests);
-                        topAddOnTests.addAll(afterTests);
-                    }
-                    afterTests.clear();
-                    afterTests.addAll(tempAfterTests);
-                }
-                */
 
                 // Now that we know the dependent tests in the top half, those dependencies should
                 // be handled by the knownDependencies variable.
@@ -398,8 +395,10 @@ public class ParallelDependentTestFinder {
             // If only one half contains dependent tests, ignore all tests not in that half.
             if (topResultsMatch) {
                 tests = topHalf;
+                dtResult = topResults;
             } else {
                 tests = botHalf;
+                dtResult = botResults;
             }
 
             tests.removeAll(addOnTests);
@@ -409,11 +408,11 @@ public class ParallelDependentTestFinder {
             botHalf = new LinkedList<>(tests.subList(tests.size() / 2, tests.size()));
         }
 
-        if (!tests.isEmpty()) {
+        if (!tests.isEmpty() && dtResult != null) {
             if (isOriginalOrder) {
-                addDependency(dependentTestName, tests.get(0));
+                addDependency(tests.get(0), dtResult.getResult(dependentTestName).result, true);
             } else {
-                addDependency(tests.get(0), dependentTestName);
+                addDependency(tests.get(0), dtResult.getResult(dependentTestName).result, false);
             }
         }
     }
@@ -423,7 +422,7 @@ public class ParallelDependentTestFinder {
      */
     private Set<String> getAfterDependencies(final String testName) {
         return knownDependencies.entrySet().stream()
-                .filter(dependencies -> dependencies.getValue().contains(testName))
+                .filter(dependencies -> dependencies.getValue().containsAfter(testName))
                 .map(Map.Entry::getKey)
                 .collect(Collectors.toSet());
     }
@@ -437,6 +436,7 @@ public class ParallelDependentTestFinder {
                 });
     }
 
+    // TODO: Finish this so that it uses the TestData toString method.
     public List<String> dependencyToString() {
         final List<String> result = new ArrayList<>();
 
