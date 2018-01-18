@@ -344,19 +344,12 @@ public class ParallelDependentTestFinder {
             }
         }
 
-        if (!verifyDependencies()) {
+        // Should be false (i.e., test result is NOT different), assuming we've found the dependencies.
+        if (isTestResultDifferent(Collections.singletonList(dependentTestName))) {
             throw new DependencyVerificationException("Could not verify dependencies for: " + dependentTestName);
         }
 
         return this;
-    }
-
-    /**
-     * Runs a minimal order using only the dependencies we have found, and returns whether we were
-     * successful.
-     */
-    private boolean verifyDependencies() {
-        return checkTestMatch(true, makeAndRunTestOrder(Collections.singletonList(dependentTestName)));
     }
 
     private void dependentTestSolver(List<String> tests, boolean isOriginalOrder,
@@ -396,9 +389,9 @@ public class ParallelDependentTestFinder {
                 // be handled by the knownDependencies variable.
                 List<String> orderedTests = new ArrayList<>(addOnTests);
                 orderedTests.add(dependentTestName);
-                boolean testResult = isTestResultDifferent(orderedTests);
-                if (!((!isOriginalOrder && testResult) || (isOriginalOrder && !testResult))) {
-                    // case of A and B needs to come before C
+                boolean resultDifferent = isTestResultDifferent(orderedTests);
+                // Original if: if (!((!isOriginalOrder && resultDifferent) || (isOriginalOrder && !resultDifferent))) {
+                if (isOriginalOrder == resultDifferent) {
                     dependentTestSolver(newBotList, isOriginalOrder, addOnTests);
                 }
 
@@ -406,7 +399,9 @@ public class ParallelDependentTestFinder {
             }
 
             // If only one half contains dependent tests, ignore all tests not in that half.
-            if (topResultsMatch) {
+            // If the top results match and we're looking for the before tests, then we want the top half.
+            // If the top results don't match, and we're looking for the after tests, we still want the top half.
+            if (topResultsMatch == isOriginalOrder) {
                 tests = topHalf;
                 dtResult = topResults;
             } else {
