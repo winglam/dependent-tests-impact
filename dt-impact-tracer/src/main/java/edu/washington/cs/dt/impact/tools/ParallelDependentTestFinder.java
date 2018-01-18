@@ -195,7 +195,11 @@ public class ParallelDependentTestFinder {
         if (primeIndex != -1) {
             final List<String> insertTests = originalOrder.getTestsBefore(dependentTestName);
 
-            primeOrder.removeIf(insertTests::contains); // Make sure no tests appear twice.
+            // Make sure no tests appear twice.
+            // It is important to remove the tests from the prime order, then add them back in,
+            // rather than simply checking if they are already there and not adding them again.
+            // This ensures that all possible tests that need to come before are grouped together.
+            primeOrder.removeIf(insertTests::contains);
             primeOrder.addAll(primeIndex, insertTests);
         }
 
@@ -393,6 +397,8 @@ public class ParallelDependentTestFinder {
                 // Original if: if (!((!isOriginalOrder && resultDifferent) || (isOriginalOrder && !resultDifferent))) {
                 if (isOriginalOrder == resultDifferent) {
                     dependentTestSolver(newBotList, isOriginalOrder, addOnTests);
+                } else {
+                    dependentTestSolver(newBotList, isOriginalOrder, new ArrayList<>());
                 }
 
                 return;
