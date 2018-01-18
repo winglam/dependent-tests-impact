@@ -234,7 +234,7 @@ public class ParallelDependentTestFinder {
                         new HashSet<>(),
                         new HashSet<>(),
                         dependentTestResult, // The revealed behavior should be the same for this one, as this is the fixed version.
-                        TestOrderGenerator.generateTestOrder(Collections.singletonList(dependentTestName), knownDependencies));
+                        new ArrayList<>());
             }
 
             if (isBefore) {
