@@ -317,8 +317,10 @@ public class ParallelDependentTestFinder {
     /**
      * Finds all the dependencies for the test that this class was initialized with.
      * @return The new map of dependencies.
+     * @throws DependencyVerificationException If the dependencies calculated do not resolve the issue
+     *         (i.e., the test still has a different result than it did in the original order).
      */
-    public ParallelDependentTestFinder runDTF() {
+    public ParallelDependentTestFinder runDTF() throws DependencyVerificationException {
         // If the result is the same, then the dependencies must be some of the tests in the original order
         // that came before this test.
         if (dependentTestResult == primeOrder.getResult(dependentTestName)) {
@@ -343,7 +345,19 @@ public class ParallelDependentTestFinder {
             }
         }
 
+        if (!verifyDependencies()) {
+            throw new DependencyVerificationException("Could not verify dependencies for: " + dependentTestName);
+        }
+
         return this;
+    }
+
+    /**
+     * Runs a minimal order using only the dependencies we have found, and returns whether we were
+     * successful.
+     */
+    private boolean verifyDependencies() {
+        return checkTestMatch(true, makeAndRunTestOrder(Collections.singletonList(dependentTestName)));
     }
 
     private void dependentTestSolver(List<String> tests, boolean isOriginalOrder,
@@ -436,7 +450,6 @@ public class ParallelDependentTestFinder {
                 });
     }
 
-    // TODO: Finish this so that it uses the TestData toString method.
     public List<String> dependencyToString() {
         final List<String> result = new ArrayList<>();
 
