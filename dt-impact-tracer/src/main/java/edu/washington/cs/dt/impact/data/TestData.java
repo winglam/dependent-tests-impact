@@ -1,6 +1,7 @@
 package edu.washington.cs.dt.impact.data;
 
 import edu.washington.cs.dt.RESULT;
+import edu.washington.cs.dt.TestExecResult;
 
 import java.util.HashSet;
 import java.util.List;
@@ -27,11 +28,23 @@ public class TestData {
 
     @Override
     public String toString() {
-        return  "Test: " + dependentTest + "\n" +
-                "Intended behavior: " + intended + "\n" +
-                "when executed after: " + beforeTests + "\n" +
-                "and executed before: " + afterTests + "\n" +
-                "The revealed behavior: " + revealed + "\n";
+        // If the intended behavior is the revealed behavior, then the before/after tests are the
+        // tests needs before/after to make it have the intended behavior.
+        if (intended == revealed) {
+            return  "Test: " + dependentTest + "\n" +
+                    "Intended behavior: " + intended + "\n" +
+                    "when executed after: " + beforeTests + "\n" +
+                    "and executed before: " + afterTests + "\n";
+
+        } else {
+            // Otherwise, the before/after tests are the tests that cause the revealed behavior to be
+            // different from the intended behavior.
+            return  "Test: " + dependentTest + "\n" +
+                    "Intended behavior: " + intended + "\n" +
+                    "The revealed behavior: " + revealed + "\n" +
+                    "when executed after: " + beforeTests + "\n" +
+                    "and executed before: " + afterTests + "\n";
+        }
     }
 
     public TestData mergeWith(final TestData other) {
