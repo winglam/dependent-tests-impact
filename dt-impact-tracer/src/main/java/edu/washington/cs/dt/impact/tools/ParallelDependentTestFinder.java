@@ -196,9 +196,6 @@ public class ParallelDependentTestFinder {
             final List<String> insertTests = originalOrder.getTestsBefore(dependentTestName);
 
             // Make sure no tests appear twice.
-            // It is important to remove the tests from the prime order, then add them back in,
-            // rather than simply checking if they are already there and not adding them again.
-            // This ensures that all possible tests that need to come before are grouped together.
             primeOrder.removeIf(insertTests::contains);
             primeOrder.addAll(primeIndex, insertTests);
         }
@@ -226,14 +223,18 @@ public class ParallelDependentTestFinder {
      * @param dependency The new dependency
      * @param result The result of running the test without this dependency in it's proper location.
      */
-    private void addDependency(final String dependency, final RESULT result, final boolean isBefore) {
+    private void addDependency(final String dependency,
+                               final RESULT result,
+                               final List<String> testOrder,
+                               final boolean isBefore) {
         knownDependencies.compute(dependentTestName, (testName, dependencies) -> {
             if (dependencies == null) {
                 dependencies = new TestData(dependentTestName,
                         dependentTestResult,
                         new HashSet<>(),
                         new HashSet<>(),
-                        dependentTestResult); // The revealed behavior should be the same for this one, as this is the fixed version.
+                        dependentTestResult, // The revealed behavior should be the same for this one, as this is the fixed version.
+                        TestOrderGenerator.generateTestOrder(Collections.singletonList(dependentTestName), knownDependencies));
             }
 
             if (isBefore) {
@@ -242,14 +243,16 @@ public class ParallelDependentTestFinder {
                         dependentTestResult,
                         new HashSet<>(),
                         new HashSet<>(Collections.singletonList(dependency)),
-                        result));
+                        result,
+                        testOrder));
             } else {
                 dependencies.addAfter(dependency);
                 debugLog.add(new TestData(dependentTestName,
                         dependentTestResult,
                         new HashSet<>(Collections.singletonList(dependency)),
                         new HashSet<>(),
-                        result));
+                        result,
+                        testOrder));
             }
 
             return dependencies;
@@ -327,7 +330,11 @@ public class ParallelDependentTestFinder {
         // If the result is the same, then the dependencies must be some of the tests in the original order
         // that came before this test.
         if (dependentTestResult == primeOrder.getResult(dependentTestName)) {
-            dependentTestSolver(originalOrder.getTestsBefore(dependentTestName), true, new ArrayList<>());
+            dependentTestSolver(originalOrder.getTestsBefore(dependentTestName),
+                    true,
+                    new ArrayList<>(),
+                    newOrder.getResult(dependentTestName),
+                    newOrder.testOrder);
         } else {
             // Run the test in isolation
             final Map<String, RESULT> results =
@@ -337,14 +344,26 @@ public class ParallelDependentTestFinder {
             // tests, we just need to move some of the new tests to after
             // come before in the original order.
             if (results.get(dependentTestName) == dependentTestResult) {
-                dependentTestSolver(newOrder.getTestsBefore(dependentTestName), false, new ArrayList<>());
+                dependentTestSolver(newOrder.getTestsBefore(dependentTestName),
+                        false,
+                        new ArrayList<>(),
+                        newOrder.getResult(dependentTestName),
+                        newOrder.testOrder);
             } else {
                 // If the result is still different from the original order, then we must need both
                 // some/all tests from the original order to come before and some/all tests from the
                 // order to come after.
 
-                dependentTestSolver(newOrder.getTestsBefore(dependentTestName), false, new ArrayList<>());
-                dependentTestSolver(originalOrder.getTestsBefore(dependentTestName), true, new ArrayList<>());
+                dependentTestSolver(newOrder.getTestsBefore(dependentTestName),
+                        false,
+                        new ArrayList<>(),
+                        newOrder.getResult(dependentTestName),
+                        newOrder.testOrder);
+                dependentTestSolver(originalOrder.getTestsBefore(dependentTestName),
+                        true,
+                        new ArrayList<>(),
+                        newOrder.getResult(dependentTestName),
+                        newOrder.testOrder);
             }
         }
 
@@ -357,12 +376,11 @@ public class ParallelDependentTestFinder {
     }
 
     private void dependentTestSolver(List<String> tests, boolean isOriginalOrder,
-                                     List<String> addOnTests) {
+                                     List<String> addOnTests, RESULT revealed,
+                                     List<String> revealingOrder) {
         tests.removeAll(addOnTests);
         List<String> topHalf = new LinkedList<>(tests.subList(0, tests.size() / 2));
         List<String> botHalf = new LinkedList<>(tests.subList(tests.size() / 2, tests.size()));
-
-        TestExecResult dtResult = null;
 
         while (tests.size() > 1) {
             topHalf.addAll(addOnTests);
@@ -387,7 +405,9 @@ public class ParallelDependentTestFinder {
                 // First, find the dependent tests in the top half.
                 // We can skip finding exactly which tests are the dependent tests in the bottom half
                 // for now by simply running all of them.
-                dependentTestSolver(newTopList, isOriginalOrder, newBotList);
+                dependentTestSolver(newTopList, isOriginalOrder, newBotList,
+                        topResults.getResult(dependentTestName).result,
+                        topHalf);
 
                 // Now that we know the dependent tests in the top half, those dependencies should
                 // be handled by the knownDependencies variable.
@@ -396,9 +416,9 @@ public class ParallelDependentTestFinder {
                 boolean resultDifferent = isTestResultDifferent(orderedTests);
                 // Original if: if (!((!isOriginalOrder && resultDifferent) || (isOriginalOrder && !resultDifferent))) {
                 if (isOriginalOrder == resultDifferent) {
-                    dependentTestSolver(newBotList, isOriginalOrder, addOnTests);
+                    dependentTestSolver(newBotList, isOriginalOrder, addOnTests, botResults.getResult(dependentTestName).result, botHalf);
                 } else {
-                    dependentTestSolver(newBotList, isOriginalOrder, new ArrayList<>());
+                    dependentTestSolver(newBotList, isOriginalOrder, new ArrayList<>(), botResults.getResult(dependentTestName).result, botHalf);
                 }
 
                 return;
@@ -409,10 +429,10 @@ public class ParallelDependentTestFinder {
             // If the top results don't match, and we're looking for the after tests, we still want the top half.
             if (topResultsMatch == isOriginalOrder) {
                 tests = topHalf;
-                dtResult = topResults;
+                revealed = topResults.getResult(dependentTestName).result;
             } else {
                 tests = botHalf;
-                dtResult = botResults;
+                revealed = botResults.getResult(dependentTestName).result;
             }
 
             tests.removeAll(addOnTests);
@@ -422,11 +442,11 @@ public class ParallelDependentTestFinder {
             botHalf = new LinkedList<>(tests.subList(tests.size() / 2, tests.size()));
         }
 
-        if (!tests.isEmpty() && dtResult != null) {
+        if (!tests.isEmpty()) {
             if (isOriginalOrder) {
-                addDependency(tests.get(0), dtResult.getResult(dependentTestName).result, true);
+                addDependency(tests.get(0), revealed, revealingOrder, true);
             } else {
-                addDependency(tests.get(0), dtResult.getResult(dependentTestName).result, false);
+                addDependency(tests.get(0), revealed, revealingOrder, false);
             }
         }
     }

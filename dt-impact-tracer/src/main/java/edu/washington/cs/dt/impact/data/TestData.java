@@ -14,16 +14,20 @@ public class TestData {
     private final Set<String> afterTests;
     private final RESULT revealed;
 
+    private final List<String> revealingOrder;
+
     public TestData(final String dependentTest,
                     final RESULT intended,
                     final Set<String> beforeTests,
                     final Set<String> afterTests,
-                    final RESULT revealed) {
+                    final RESULT revealed,
+                    final List<String> revealingOrder) {
         this.dependentTest = dependentTest;
         this.intended = intended;
         this.beforeTests = beforeTests;
         this.afterTests = afterTests;
         this.revealed = revealed;
+        this.revealingOrder = revealingOrder;
     }
 
     @Override
@@ -43,7 +47,8 @@ public class TestData {
                     "Intended behavior: " + intended + "\n" +
                     "The revealed behavior: " + revealed + "\n" +
                     "when executed after: " + beforeTests + "\n" +
-                    "and executed before: " + afterTests + "\n";
+                    "and executed before: " + afterTests + "\n" +
+                    "in the order: " + revealingOrder;
         }
     }
 
