@@ -11,7 +11,6 @@ package edu.washington.cs.dt.impact.tools;
 import edu.washington.cs.dt.RESULT;
 import edu.washington.cs.dt.TestExecResult;
 import edu.washington.cs.dt.impact.data.TestData;
-import edu.washington.cs.dt.impact.util.Constants;
 import edu.washington.cs.dt.runners.FixedOrderRunner;
 
 import java.io.BufferedWriter;
@@ -230,7 +229,7 @@ public class ParallelDependentTestFinder {
                         dependentTestResult,
                         new HashSet<>(),
                         new HashSet<>(),
-                        result);
+                        dependentTestResult); // The revealed behavior should be the same for this one, as this is the fixed version.
             }
 
             if (isBefore) {
@@ -441,46 +440,52 @@ public class ParallelDependentTestFinder {
                 .collect(Collectors.toSet());
     }
 
-    public static List<String> dependenciesToString(final List<ParallelDependentTestFinder> dependencies) {
+    public static String dependenciesToString(final List<ParallelDependentTestFinder> dependencies) {
         return dependencies.stream()
-                .map(ParallelDependentTestFinder::dependencyToString)
-                .reduce(new ArrayList<>(), (a, b) -> {
-                    a.addAll(b);
-                    return a;
-                });
+                .map(ParallelDependentTestFinder::toString)
+                .reduce("", String::concat);
     }
 
-    public List<String> dependencyToString() {
-        final List<String> result = new ArrayList<>();
+    @Override
+    public String toString() {
+        final TestData testData = knownDependencies.get(dependentTestName);
 
-        result.add(Constants.TEST_LINE + dependentTestName);
-        result.add("Intended behavior: " + originalOrder.results.get(dependentTestName));
-        // Says when executed before but uses getAfterDependencies because it must be executed
-        // before the tests that come after.
-        result.add("when executed before: " + getAfterDependencies(dependentTestName));
-        result.add("when executed after: " + knownDependencies.get(dependentTestName));
-        result.add("The revealed different behavior: " + newOrder.results.get(dependentTestName));
-
-        return result;
+        if (testData != null) {
+            return testData.toString();
+        } else {
+            return "";
+        }
     }
 
-    public static void writeToFile(final ParallelDependentTestFinder dtFinder) {
-        writeToFile(Collections.singletonList(dtFinder));
+    private String debugLogToString() {
+        return debugLog.stream()
+                .map(TestData::toString)
+                .collect(Collectors.joining("\n"));
     }
 
-    public static void writeToFile(final ParallelDependentTestFinder dtFinder, final File outputFile) {
-        writeToFile(Collections.singletonList(dtFinder), outputFile);
+    public static void writeToFile(final ParallelDependentTestFinder dtFinder,
+                                   final boolean includeDebugLog) {
+        writeToFile(Collections.singletonList(dtFinder), includeDebugLog);
     }
 
-    public static void writeToFile(final List<ParallelDependentTestFinder> dtFinders) {
-        writeToFile(dtFinders, DT_FILE);
+    public static void writeToFile(final ParallelDependentTestFinder dtFinder,
+                                   final File outputFile,
+                                   final boolean includeDebugLog) {
+        writeToFile(Collections.singletonList(dtFinder), outputFile, includeDebugLog);
+    }
+
+    public static void writeToFile(final List<ParallelDependentTestFinder> dtFinders,
+                                   final boolean includeDebugLog) {
+        writeToFile(dtFinders, DT_FILE, includeDebugLog);
     }
 
     /**
      * Writes all the dependency information to a file.
      * @param dtFinders The dtFinders that contain the dependency information we need.
      */
-    public static void writeToFile(final List<ParallelDependentTestFinder> dtFinders, final File outputFile) {
+    public static void writeToFile(final List<ParallelDependentTestFinder> dtFinders,
+                                   final File outputFile,
+                                   final boolean includeDebugLog) {
         if (outputFile != null) {
             FileWriter output = null;
             BufferedWriter writer = null;
@@ -489,10 +494,11 @@ public class ParallelDependentTestFinder {
                 writer = new BufferedWriter(output);
 
                 for (final ParallelDependentTestFinder dtFinder : dtFinders) {
-                    for (final String line : dtFinder.dependencyToString()) {
-                        writer.write(line + "\n");
+                    if (includeDebugLog) {
+                        writer.write(dtFinder.debugLogToString() + "\n");
                     }
 
+                    writer.write(dtFinder.toString());
                     writer.write("\n");
                 }
 
