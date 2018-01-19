@@ -13,10 +13,6 @@ import edu.washington.cs.dt.TestExecResult;
 import edu.washington.cs.dt.impact.data.TestData;
 import edu.washington.cs.dt.runners.FixedOrderRunner;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -25,49 +21,41 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 /**
  * Usages:
  * Get ALL_DT_LIST for just one test:
  * <pre>
  * {@code
- * DependentTestFinder dtFinder = new DependentTestFinder(dependentTestName, origOrder, newOrder, filesToDelete);
- * List<String> allDtList = dtFinder.runDTF().dependencyToString();
+ * ParallelDependentTestFinder dtFinder = new ParallelDependentTestFinder(dependentTestName, origOrder, newOrder, filesToDelete);
  *
- * // Optional write to file:
- * DependentTestFinder.writeToFile(dtFinder, FILE);
- * DependentTestFinder.writeToFile(dtFinder); // Writes to file stored in static field DT_FILE
+ * Map<String, Set<String>> knownDependencies = dtFinder.runDTF();
+ *
  * }
  * </pre>
  *
- * Get ALL_DT_LIST for multiple tests, using same orig/new order:
+ * Get known dependencies for multiple tests, using same orig/new/prime order:
  * <pre>
  * {@code
  * List<DependentTestFinder> dtFinders = new ArrayList<>();
  *
  * For first test:
- * DependentTestFinder dtFinder = new DependentTestFinder(dependentTestName, origOrder, newOrder, filesToDelete);
+ * ParallelDependentTestFinder dtFinder = new ParallelDependentTestFinder(dependentTestName, origOrder, newOrder, filesToDelete);
  *
- * for each extra dt to fix:
- * for (dependentTestName : dependentTestsToFix) {
- *     dtFinders.add(dtFinder.runDTF());
- *     dtFinder = dtFinder.createFromDTFinder(dtFinder, nextDependentTestName);
+ * Map<String, Set<String>> knownDependencies = dtFinder.runDTF();
+ *
+ * For second, etc.:
+ * ParallelDependentTestFinder dtFinder2 = dtFinder.createFinderFor(nextDependentTestName);
+ *
+ * Map<String, Set<String>> knownDependencies2 = dtFinder.runDTF();
+ *
+ * // merge known dependencies into one map if desired.
+ *
  * }
- *
- * When done:
- *
- * List<String> allDtList = DependentTestFinder.dependenciesToString(dtFinders);
- *
- * // Optional write to file:
- * DependentTestFinder.writeToFile(dtFinders, FILE);
- * DependentTestFinder.writeToFile(dtFinders); // Writes to file stored in static field DT_FILE
  *
  * </pre>
  */
 public class ParallelDependentTestFinder {
-    private static File DT_FILE;
-
     private class TestOrder {
         private final List<String> testOrder;
         private final Map<String, RESULT> results;
@@ -104,8 +92,7 @@ public class ParallelDependentTestFinder {
 
     private final List<String> filesToDelete;
 
-    private final Map<String, TestData> knownDependencies;
-    private final List<TestData> debugLog;
+    private final Map<String, Set<TestData>> knownDependencies;
 
     public ParallelDependentTestFinder(final String dependentTestName,
                                        final List<String> originalOrder,
@@ -122,33 +109,31 @@ public class ParallelDependentTestFinder {
         knownDependencies = new HashMap<>();
 
         dependentTestResult = this.originalOrder.getResult(dependentTestName);
-        debugLog = new ArrayList<>();
     }
 
     public ParallelDependentTestFinder(final String dependentTestName,
                                        final List<String> originalOrder,
+                                       final Map<String, RESULT> originalResults,
                                        final List<String> newOrder,
-                                       final List<String> filesToDelete,
-                                       final Map<String, TestData> knownDependencies) {
+                                       final Map<String, RESULT> newResults,
+                                       final List<String> filesToDelete) {
         this.dependentTestName = dependentTestName;
 
-        this.originalOrder = new TestOrder(originalOrder);
-        this.newOrder = new TestOrder(newOrder);
+        this.originalOrder = new TestOrder(originalOrder, originalResults);
+        this.newOrder = new TestOrder(newOrder, newResults);
 
         primeOrder = new TestOrder(generatePrimeOrder(this.originalOrder, this.newOrder));
 
         this.filesToDelete = filesToDelete;
-        this.knownDependencies = new HashMap<>(knownDependencies);
+        knownDependencies = new HashMap<>();
 
         dependentTestResult = this.originalOrder.getResult(dependentTestName);
-        debugLog = new ArrayList<>();
     }
 
     private ParallelDependentTestFinder(final String dependentTestName,
                                         final TestOrder originalOrder,
                                         final TestOrder newOrder,
                                         final TestOrder primeOrder,
-                                        final Map<String, TestData> knownDependencies,
                                         final List<String> filesToDelete) {
         this.dependentTestName = dependentTestName;
 
@@ -159,8 +144,7 @@ public class ParallelDependentTestFinder {
         this.filesToDelete = filesToDelete;
         dependentTestResult = this.originalOrder.results.get(dependentTestName);
 
-        this.knownDependencies = knownDependencies;
-        debugLog = new ArrayList<>();
+        knownDependencies = new HashMap<>();
     }
 
     /**
@@ -169,18 +153,15 @@ public class ParallelDependentTestFinder {
      * this method makes that unnecessary (could save a lot of time).
      *
      * Also copies filesToDelete.
-     * @param finder The finder that contains the orders/results to use.
      * @param dependentTestName The dependent test that this finder should be trying to find
      *                          dependencies for.
      * @return A new finder that will find dependencies for the dependent test passed in.
      */
-    public ParallelDependentTestFinder createFromFinder(final ParallelDependentTestFinder finder,
-                                                        final String dependentTestName) {
+    public ParallelDependentTestFinder createFinderFor(final String dependentTestName) {
         return new ParallelDependentTestFinder(dependentTestName,
-                finder.originalOrder,
-                finder.newOrder,
-                finder.primeOrder,
-                knownDependencies,
+                originalOrder,
+                newOrder,
+                primeOrder,
                 filesToDelete);
     }
 
@@ -229,28 +210,21 @@ public class ParallelDependentTestFinder {
                                final boolean isBefore) {
         knownDependencies.compute(dependentTestName, (testName, dependencies) -> {
             if (dependencies == null) {
-                dependencies = new TestData(dependentTestName,
-                        dependentTestResult,
-                        new HashSet<>(),
-                        new HashSet<>(),
-                        dependentTestResult, // The revealed behavior should be the same for this one, as this is the fixed version.
-                        new ArrayList<>());
+                dependencies = new HashSet<>();
             }
 
             if (isBefore) {
-                dependencies.addBefore(dependency);
-                debugLog.add(new TestData(dependentTestName,
+                dependencies.add(new TestData(dependentTestName,
                         dependentTestResult,
-                        new HashSet<>(),
                         new HashSet<>(Collections.singletonList(dependency)),
+                        new HashSet<>(),
                         result,
                         testOrder));
             } else {
-                dependencies.addAfter(dependency);
-                debugLog.add(new TestData(dependentTestName,
+                dependencies.add(new TestData(dependentTestName,
                         dependentTestResult,
-                        new HashSet<>(Collections.singletonList(dependency)),
                         new HashSet<>(),
+                        new HashSet<>(Collections.singletonList(dependency)),
                         result,
                         testOrder));
             }
@@ -259,30 +233,8 @@ public class ParallelDependentTestFinder {
         });
     }
 
-    public List<TestData> getDebugLog() {
-        return debugLog;
-    }
-
-    public Map<String, TestData> getKnownDependencies() {
+    public Map<String, Set<TestData>> getKnownDependencies() {
         return knownDependencies;
-    }
-
-    /**
-     * Takes a list of dtFinders and merges the dependency information from all of them into one map.
-     */
-    public static Map<String, TestData> mergeDependencies(final List<ParallelDependentTestFinder> dtFinders) {
-        return dtFinders.stream()
-                .map(ParallelDependentTestFinder::getKnownDependencies)
-                .reduce(new HashMap<>(), ParallelDependentTestFinder::mergeDependencies);
-    }
-
-    private static Map<String,TestData> mergeDependencies(final Map<String, TestData> a,
-                                                          final Map<String, TestData> b) {
-        final Map<String, TestData> result = new HashMap<>(a);
-
-        b.forEach((testName, testData) -> result.merge(testName, testData, TestData::mergeWith));
-
-        return result;
     }
 
     // runs orderedTests and determine whether dependentTestName
@@ -323,10 +275,9 @@ public class ParallelDependentTestFinder {
     /**
      * Finds all the dependencies for the test that this class was initialized with.
      * @return The new map of dependencies.
-     * @throws DependencyVerificationException If the dependencies calculated do not resolve the issue
      *         (i.e., the test still has a different result than it did in the original order).
      */
-    public ParallelDependentTestFinder runDTF() throws DependencyVerificationException {
+    public Map<String, Set<TestData>> runDTF() {
         // If the result is the same, then the dependencies must be some of the tests in the original order
         // that came before this test.
         if (dependentTestResult == primeOrder.getResult(dependentTestName)) {
@@ -367,12 +318,7 @@ public class ParallelDependentTestFinder {
             }
         }
 
-        // Should be false (i.e., test result is NOT different), assuming we've found the dependencies.
-        if (isTestResultDifferent(Collections.singletonList(dependentTestName))) {
-            throw new DependencyVerificationException("Could not verify dependencies for: " + dependentTestName);
-        }
-
-        return this;
+        return knownDependencies;
     }
 
     private void dependentTestSolver(List<String> tests, boolean isOriginalOrder,
@@ -430,9 +376,11 @@ public class ParallelDependentTestFinder {
             if (topResultsMatch == isOriginalOrder) {
                 tests = topHalf;
                 revealed = topResults.getResult(dependentTestName).result;
+                revealingOrder = topHalf;
             } else {
                 tests = botHalf;
                 revealed = botResults.getResult(dependentTestName).result;
+                revealingOrder = botHalf;
             }
 
             tests.removeAll(addOnTests);
@@ -447,94 +395,6 @@ public class ParallelDependentTestFinder {
                 addDependency(tests.get(0), revealed, revealingOrder, true);
             } else {
                 addDependency(tests.get(0), revealed, revealingOrder, false);
-            }
-        }
-    }
-
-    /**
-     * @return A set of tests that must come AFTER the test in question.
-     */
-    private Set<String> getAfterDependencies(final String testName) {
-        return knownDependencies.entrySet().stream()
-                .filter(dependencies -> dependencies.getValue().containsAfter(testName))
-                .map(Map.Entry::getKey)
-                .collect(Collectors.toSet());
-    }
-
-    public static String dependenciesToString(final List<ParallelDependentTestFinder> dependencies) {
-        return dependencies.stream()
-                .map(ParallelDependentTestFinder::toString)
-                .reduce("", String::concat);
-    }
-
-    @Override
-    public String toString() {
-        final TestData testData = knownDependencies.get(dependentTestName);
-
-        if (testData != null) {
-            return testData.toString();
-        } else {
-            return "";
-        }
-    }
-
-    private String debugLogToString() {
-        return debugLog.stream()
-                .map(TestData::toString)
-                .collect(Collectors.joining("\n"));
-    }
-
-    public static void writeToFile(final ParallelDependentTestFinder dtFinder,
-                                   final boolean includeDebugLog) {
-        writeToFile(Collections.singletonList(dtFinder), includeDebugLog);
-    }
-
-    public static void writeToFile(final ParallelDependentTestFinder dtFinder,
-                                   final File outputFile,
-                                   final boolean includeDebugLog) {
-        writeToFile(Collections.singletonList(dtFinder), outputFile, includeDebugLog);
-    }
-
-    public static void writeToFile(final List<ParallelDependentTestFinder> dtFinders,
-                                   final boolean includeDebugLog) {
-        writeToFile(dtFinders, DT_FILE, includeDebugLog);
-    }
-
-    /**
-     * Writes all the dependency information to a file.
-     * @param dtFinders The dtFinders that contain the dependency information we need.
-     */
-    public static void writeToFile(final List<ParallelDependentTestFinder> dtFinders,
-                                   final File outputFile,
-                                   final boolean includeDebugLog) {
-        if (outputFile != null) {
-            FileWriter output = null;
-            BufferedWriter writer = null;
-            try {
-                output = new FileWriter(outputFile);
-                writer = new BufferedWriter(output);
-
-                for (final ParallelDependentTestFinder dtFinder : dtFinders) {
-                    if (includeDebugLog) {
-                        writer.write(dtFinder.debugLogToString() + "\n");
-                    }
-
-                    writer.write(dtFinder.toString());
-                    writer.write("\n");
-                }
-
-            } catch (IOException e) {
-                e.printStackTrace();
-            } finally {
-                try {
-                    if (writer != null) {
-                        writer.close();
-                    }
-                    if (output != null) {
-                        output.close();
-                    }
-                } catch (IOException e) {
-                }
             }
         }
     }
