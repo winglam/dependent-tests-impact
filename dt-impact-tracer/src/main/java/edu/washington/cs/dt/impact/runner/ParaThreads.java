@@ -102,29 +102,81 @@ public class ParaThreads {
 					try {
 						String path = classpaths.poll();
 						System.out.printf("\nthread is running!\n");
-						System.out.println("\n\nHIHIHIHIH "+q.toString());
 						while(q.peek() != null)
 						{
 							String test = q.poll();
+							List<String> dataAsList = new ArrayList<String>();
 							ParallelDependentTestFinder dtFinder = new ParallelDependentTestFinder(test, origOrderTestListHen, currentOrderTestListHen, filesToDeleteHen);
 							Map<String, Set<TestData>> knownDependencies = dtFinder.runDTF();
-							System.out.println("\n\nINSIDE WHILTE LOOP ");
-							//for (String key : knownDependencies.keySet()) {
-							    //System.out.println("\n\nHERE IS SOME TUFF!!\n\n"+key + " " + knownDependencies.get(key)+"\n");
-							//}
+							for(Map.Entry<String, Set<TestData>> entry: knownDependencies.entrySet())
+							{
+								
+								Set<TestData> testdataset = entry.getValue();
+								
+								for(TestData td : testdataset)
+								{
+									String beforeString = "";
+									String afterString = "";
+									beforeString = td.beforeTests.toString() + beforeString;
+									afterString = td.afterTests.toString() + afterString;
+									
+									if(beforeString.equals("[]"))
+									{
+										dataAsList.add("Test: " + afterString.replace("[", "").replace("]", ""));
+										dataAsList.add("Intended behavior: "+RESULT.FAILURE);
+										dataAsList.add("when executed after: [" + td.dependentTest + "]");
+									    dataAsList.add("The revealed different behavior: "+RESULT.PASS);
+								        dataAsList.add("when executed after: []");
+									}
+									else
+									{
+										dataAsList.add("Test: " + td.dependentTest);
+										dataAsList.add("Intended behavior: "+RESULT.FAILURE);
+										dataAsList.add("when executed after: " + beforeString);
+									    dataAsList.add("The revealed different behavior: "+RESULT.PASS);
+								        dataAsList.add("when executed after: []");
+									}
+								}
+							}
 							//DependentTestFinder dtf = new DependentTestFinder();
 							//dtf.runDTF(test, nameToOrigResultsListHen.get(test), currentOrderTestListHen, origOrderTestListHen, filesToDeleteHen, allDTListHen, path);
 							//List<String> runDTFOutput = dtf.getAllDTs();
+							/*
+							//this section is for parsed version of runDTF output, not being used currently
+							//get specified parsed values from DependenTestFinder
+							TestData runDTFData = new TestData(DependentTestFinder.getBefore(), DependentTestFinder.getIntended(), DependentTestFinder.getAfter(), DependentTestFinder.getRevealed());
+							//put contents of allDTList (as a TestData object) into shared List (aka done_q)
+							synchronized (done_q)
+							{
+								if(done_q.isEmpty())
+								{
+									done_q.add(runDTFData);
+								}
+								else{
+								for(TestData x: done_q)
+								{
+									if(!(TestData.isEqual(runDTFData, x)))
+									{
+										done_q.add(runDTFData);
+									}
+								}
+								}
+							}
+							*/
+							System.out.println(dataAsList);
 							//for now adding runDTFOutput as a List of strings
 							synchronized (allDTSynchList)
 							{
 								//allDTSynchList.addAll(runDTFOutput);
+								allDTSynchList.addAll(dataAsList);
 							}
 							
 						}
 						System.out.printf("\nthread is done!\n");
 					} 
-					catch (Exception e) {}
+					catch (Exception e) {
+						System.out.println("\nEncountered an error: "+e+"\n");
+					}
 				}
 			}));
 			classpaths.add(Integer.toString(j));
@@ -151,4 +203,27 @@ public class ParaThreads {
 		return allDTSynchListReturn;
 		//return ParaThreads.getListDone(done_q); //if using runDTFData
 	}
+	
+	/*
+	 * This method will convert the TestData class into a List<String> to send back to the
+	 * OneConfigurationRunner. It is not being used currently as this class still runs with
+	 * the DependenTestFinder, which returns a List<String> from the getAllDTs
+	public static List<String> getListDone(List<TestData> allDT)
+	{
+		List<String> listString = new ArrayList<String>();
+		for(TestData d: allDT)
+		{
+			listString.add("Test: " + d.depTest);
+			listString.add("Intended behavior: FAILURE");
+			listString.add("when executed after: [" + d.indTest + "]");
+			listString.add("The revealed different behavior: PASS");
+			listString.add("when executed after: []");
+		}
+		for(String s: listString)
+		{
+			System.out.println("listSTring contains: "+s);
+		}
+		return listString;
+	}
+	*/
 }
