@@ -367,7 +367,7 @@ public class ParallelDependentTestFinder {
 
                 // Now that we know the dependent tests in the top half, those dependencies should
                 // be handled by the knownDependencies variable.
-                List<String> orderedTests = new ArrayList<>(addOnTests); //CHANGED addOnTests TO newBotList (addOnTests is from previous iteration)
+                List<String> orderedTests = new ArrayList<>(addOnTests);
                 orderedTests.add(dependentTestName);
                 boolean resultDifferent = isTestResultDifferent(orderedTests);
                 // Original if: if (!((!isOriginalOrder && resultDifferent) || (isOriginalOrder && !resultDifferent))) {
@@ -383,7 +383,7 @@ public class ParallelDependentTestFinder {
             // If only one half contains dependent tests, ignore all tests not in that half.
             // If the top results match and we're looking for the before tests, then we want the top half.
             // If the top results don't match, and we're looking for the after tests, we still want the top half.
-            if (topResultsMatch) { //(I GET topResultsMatch is TRUE and isOriginalOrder is FALSE in Case 2
+            if (topResultsMatch) {
                 tests = topHalf;
                 revealed = topResults.getResult(dependentTestName).result;
                 revealingOrder = topHalf;
