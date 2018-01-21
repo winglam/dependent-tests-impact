@@ -61,10 +61,6 @@ public class ParaThreads {
 	List<String> allDTSynchList = Collections.synchronizedList(new ArrayList<String>());
 	//classpaths (below) is a queue of the thread number (as a string) to append to tmp files generated
 	ConcurrentLinkedQueue<String> classpaths = new ConcurrentLinkedQueue<String>();
-	//variables not being used
-	//done_q (below) is a synch list of parsed strings from allDTList, represented as a TestData object
-	//List<TestData> done_q = Collections.synchronizedList(new ArrayList<TestData>());
-	//ArrayList<String> paths; //was used to hold directory paths for each thread
 	
 	//constructor sets number of threads
 	public ParaThreads(int threads){
@@ -138,36 +134,10 @@ public class ParaThreads {
 									}
 								}
 							}
-							//DependentTestFinder dtf = new DependentTestFinder();
-							//dtf.runDTF(test, nameToOrigResultsListHen.get(test), currentOrderTestListHen, origOrderTestListHen, filesToDeleteHen, allDTListHen, path);
-							//List<String> runDTFOutput = dtf.getAllDTs();
-							/*
-							//this section is for parsed version of runDTF output, not being used currently
-							//get specified parsed values from DependenTestFinder
-							TestData runDTFData = new TestData(DependentTestFinder.getBefore(), DependentTestFinder.getIntended(), DependentTestFinder.getAfter(), DependentTestFinder.getRevealed());
-							//put contents of allDTList (as a TestData object) into shared List (aka done_q)
-							synchronized (done_q)
-							{
-								if(done_q.isEmpty())
-								{
-									done_q.add(runDTFData);
-								}
-								else{
-								for(TestData x: done_q)
-								{
-									if(!(TestData.isEqual(runDTFData, x)))
-									{
-										done_q.add(runDTFData);
-									}
-								}
-								}
-							}
-							*/
 							System.out.println(dataAsList);
 							//for now adding runDTFOutput as a List of strings
 							synchronized (allDTSynchList)
 							{
-								//allDTSynchList.addAll(runDTFOutput);
 								allDTSynchList.addAll(dataAsList);
 							}
 							
@@ -201,29 +171,5 @@ public class ParaThreads {
 		classpaths.clear();
 		allDTSynchList.clear();
 		return allDTSynchListReturn;
-		//return ParaThreads.getListDone(done_q); //if using runDTFData
 	}
-	
-	/*
-	 * This method will convert the TestData class into a List<String> to send back to the
-	 * OneConfigurationRunner. It is not being used currently as this class still runs with
-	 * the DependenTestFinder, which returns a List<String> from the getAllDTs
-	public static List<String> getListDone(List<TestData> allDT)
-	{
-		List<String> listString = new ArrayList<String>();
-		for(TestData d: allDT)
-		{
-			listString.add("Test: " + d.depTest);
-			listString.add("Intended behavior: FAILURE");
-			listString.add("when executed after: [" + d.indTest + "]");
-			listString.add("The revealed different behavior: PASS");
-			listString.add("when executed after: []");
-		}
-		for(String s: listString)
-		{
-			System.out.println("listSTring contains: "+s);
-		}
-		return listString;
-	}
-	*/
 }
