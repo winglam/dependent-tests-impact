@@ -1,3 +1,5 @@
+package edu.washington.cs.dt.impact.tools;
+
 /**
  * Copyright 2014 University of Washington. All Rights Reserved.
  * @author Wing Lam, Reed Oei
@@ -6,7 +8,6 @@
  *         after a particular test in order for that particular test to
  *         attain the same specified result in a new test execution order.
  */
-package edu.washington.cs.dt.impact.tools;
 
 import edu.washington.cs.dt.RESULT;
 import edu.washington.cs.dt.TestExecResult;
@@ -178,7 +179,8 @@ public class ParallelDependentTestFinder {
 
             // Make sure no tests appear twice.
             primeOrder.removeIf(insertTests::contains);
-            primeOrder.addAll(primeIndex, insertTests);
+            final int primeIndex2 = primeOrder.indexOf(dependentTestName);
+            primeOrder.addAll(primeIndex2, insertTests);
         }
 
         return primeOrder;
@@ -192,9 +194,13 @@ public class ParallelDependentTestFinder {
      */
     private TestExecResult makeAndRunTestOrder(final List<String> order) {
         List<String> newOrder = new ArrayList<>(order);
-        newOrder.add(dependentTestName);
+        int newIndex = newOrder.indexOf(dependentTestName);
+        if(newIndex == -1)
+        {
+        	newOrder.add(dependentTestName);
+        }
 
-        newOrder = TestOrderGenerator.generateTestOrder(newOrder, knownDependencies);
+        knownDependencies.forEach((key, dependencies) -> dependencies.forEach(dependency -> dependency.fixOrder(newOrder)));
 
         return runTestOrder(newOrder);
     }
@@ -307,7 +313,7 @@ public class ParallelDependentTestFinder {
 
                 dependentTestSolver(newOrder.getTestsBefore(dependentTestName),
                         false,
-                        new ArrayList<>(),
+                        originalOrder.getTestsBefore(dependentTestName),
                         newOrder.getResult(dependentTestName),
                         newOrder.testOrder);
                 dependentTestSolver(originalOrder.getTestsBefore(dependentTestName),
@@ -324,7 +330,11 @@ public class ParallelDependentTestFinder {
     private void dependentTestSolver(List<String> tests, boolean isOriginalOrder,
                                      List<String> addOnTests, RESULT revealed,
                                      List<String> revealingOrder) {
-        tests.removeAll(addOnTests);
+    	List<String> newList = new ArrayList<String>();
+    	for (String s : addOnTests) {
+    	   newList.add(s);
+    	}
+        tests.removeAll(newList); //java doesn't like this (concurrent modification exception when using 1 thread)
         List<String> topHalf = new LinkedList<>(tests.subList(0, tests.size() / 2));
         List<String> botHalf = new LinkedList<>(tests.subList(tests.size() / 2, tests.size()));
 
@@ -357,7 +367,7 @@ public class ParallelDependentTestFinder {
 
                 // Now that we know the dependent tests in the top half, those dependencies should
                 // be handled by the knownDependencies variable.
-                List<String> orderedTests = new ArrayList<>(addOnTests);
+                List<String> orderedTests = new ArrayList<>(addOnTests); //CHANGED addOnTests TO newBotList (addOnTests is from previous iteration)
                 orderedTests.add(dependentTestName);
                 boolean resultDifferent = isTestResultDifferent(orderedTests);
                 // Original if: if (!((!isOriginalOrder && resultDifferent) || (isOriginalOrder && !resultDifferent))) {
@@ -373,7 +383,7 @@ public class ParallelDependentTestFinder {
             // If only one half contains dependent tests, ignore all tests not in that half.
             // If the top results match and we're looking for the before tests, then we want the top half.
             // If the top results don't match, and we're looking for the after tests, we still want the top half.
-            if (topResultsMatch == isOriginalOrder) {
+            if (topResultsMatch) { //(I GET topResultsMatch is TRUE and isOriginalOrder is FALSE in Case 2
                 tests = topHalf;
                 revealed = topResults.getResult(dependentTestName).result;
                 revealingOrder = topHalf;
@@ -382,8 +392,11 @@ public class ParallelDependentTestFinder {
                 revealed = botResults.getResult(dependentTestName).result;
                 revealingOrder = botHalf;
             }
-
-            tests.removeAll(addOnTests);
+            List<String> newList2 = new ArrayList<String>(); //get error when tests.removeAll(addOnTests)
+        	for (String s : addOnTests) {
+        	   newList2.add(s);
+        	}
+            tests.removeAll(newList2);
             tests.remove(tests.size() - 1);
 
             topHalf = new LinkedList<>(tests.subList(0, tests.size() / 2));

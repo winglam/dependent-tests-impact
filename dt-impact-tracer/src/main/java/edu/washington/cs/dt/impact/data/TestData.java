@@ -2,15 +2,16 @@ package edu.washington.cs.dt.impact.data;
 
 import edu.washington.cs.dt.RESULT;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
 public class TestData {
-    private final String dependentTest;
-    private final RESULT intended;
-    private final Set<String> beforeTests;
-    private final Set<String> afterTests;
-    private final RESULT revealed;
+    public final String dependentTest;
+    public final RESULT intended;
+    public final Set<String> beforeTests;
+    public final Set<String> afterTests;
+    public final RESULT revealed;
 
     private final List<String> revealingOrder;
 
@@ -67,7 +68,12 @@ public class TestData {
                 final int testIndex = currentOrder.indexOf(dependency);
 
                 // If this test comes before the dependent test, then we need to move it to after.
-                if (testIndex < index) {
+                /*if (testIndex < index) {
+                    currentOrder.remove(testIndex);
+                    currentOrder.add(index + 1, dependency);
+                }
+                */
+                if (testIndex != -1 && testIndex < index) {
                     currentOrder.remove(testIndex);
                     currentOrder.add(index + 1, dependency);
                 }
