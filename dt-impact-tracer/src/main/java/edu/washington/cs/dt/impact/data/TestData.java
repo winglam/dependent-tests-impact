@@ -4,6 +4,7 @@ import edu.washington.cs.dt.RESULT;
 
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Stream;
 
 public class TestData {
     private final String dependentTest;
@@ -74,4 +75,17 @@ public class TestData {
             }
         }
     }
+
+    /**
+     * @param testOrder The order to get the indices from.
+     * @return a stream containing the indices of each dependency stored in this class, if they are
+     * in the order passed in.
+     */
+    public Stream<Integer> getIndices(final List<String> testOrder) {
+        return Stream.concat(
+                beforeTests.stream().map(testOrder::indexOf),
+                afterTests.stream().map(testOrder::indexOf)
+        );
+    }
 }
+

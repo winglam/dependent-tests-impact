@@ -14,6 +14,7 @@ import edu.washington.cs.dt.impact.data.TestData;
 import edu.washington.cs.dt.runners.FixedOrderRunner;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -21,6 +22,9 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 /**
  * Usages:
@@ -113,6 +117,24 @@ public class ParallelDependentTestFinder {
 
     public ParallelDependentTestFinder(final String dependentTestName,
                                        final List<String> originalOrder,
+                                       final List<String> newOrder,
+                                       final List<String> filesToDelete,
+                                       final Map<String, Set<TestData>> knownDependencies) {
+        this.dependentTestName = dependentTestName;
+
+        this.originalOrder = new TestOrder(originalOrder);
+        this.newOrder = new TestOrder(newOrder);
+
+        primeOrder = new TestOrder(generatePrimeOrder(this.originalOrder, this.newOrder));
+
+        this.filesToDelete = filesToDelete;
+        this.knownDependencies = knownDependencies;
+
+        dependentTestResult = this.originalOrder.getResult(dependentTestName);
+    }
+
+    public ParallelDependentTestFinder(final String dependentTestName,
+                                       final List<String> originalOrder,
                                        final Map<String, RESULT> originalResults,
                                        final List<String> newOrder,
                                        final Map<String, RESULT> newResults,
@@ -126,6 +148,26 @@ public class ParallelDependentTestFinder {
 
         this.filesToDelete = filesToDelete;
         knownDependencies = new HashMap<>();
+
+        dependentTestResult = this.originalOrder.getResult(dependentTestName);
+    }
+
+    public ParallelDependentTestFinder(final String dependentTestName,
+                                       final List<String> originalOrder,
+                                       final Map<String, RESULT> originalResults,
+                                       final List<String> newOrder,
+                                       final Map<String, RESULT> newResults,
+                                       final List<String> filesToDelete,
+                                       final Map<String, Set<TestData>> knownDependencies) {
+        this.dependentTestName = dependentTestName;
+
+        this.originalOrder = new TestOrder(originalOrder, originalResults);
+        this.newOrder = new TestOrder(newOrder, newResults);
+
+        primeOrder = new TestOrder(generatePrimeOrder(this.originalOrder, this.newOrder), originalResults);
+
+        this.filesToDelete = filesToDelete;
+        this.knownDependencies = knownDependencies;
 
         dependentTestResult = this.originalOrder.getResult(dependentTestName);
     }
@@ -194,7 +236,8 @@ public class ParallelDependentTestFinder {
         List<String> newOrder = new ArrayList<>(order);
         newOrder.add(dependentTestName);
 
-        newOrder = TestOrderGenerator.generateTestOrder(newOrder, knownDependencies);
+        knownDependencies.forEach((key, dependencies) ->
+                dependencies.forEach(dependency -> dependency.fixOrder(newOrder)));
 
         return runTestOrder(newOrder);
     }
@@ -278,47 +321,135 @@ public class ParallelDependentTestFinder {
      *         (i.e., the test still has a different result than it did in the original order).
      */
     public Map<String, Set<TestData>> runDTF() {
-        // If the result is the same, then the dependencies must be some of the tests in the original order
-        // that came before this test.
-        if (dependentTestResult == primeOrder.getResult(dependentTestName)) {
-            dependentTestSolver(originalOrder.getTestsBefore(dependentTestName),
-                    true,
-                    new ArrayList<>(),
-                    newOrder.getResult(dependentTestName),
-                    newOrder.testOrder);
+        // If the dt is already in the knownDependencies list, we must have tried the below method
+        // to find dependencies and not found all of them.
+        if (knownDependencies.containsKey(dependentTestName)) {
+            findDependencyInChains();
         } else {
-            // Run the test in isolation
-            final Map<String, RESULT> results =
-                    runTestOrder(Collections.singletonList(dependentTestName)).getNameToResultsMap();
-
-            // If the result is the same with no tests before it, then we don't need any of the original
-            // tests, we just need to move some of the new tests to after
-            // come before in the original order.
-            if (results.get(dependentTestName) == dependentTestResult) {
-                dependentTestSolver(newOrder.getTestsBefore(dependentTestName),
-                        false,
-                        new ArrayList<>(),
-                        newOrder.getResult(dependentTestName),
-                        newOrder.testOrder);
-            } else {
-                // If the result is still different from the original order, then we must need both
-                // some/all tests from the original order to come before and some/all tests from the
-                // order to come after.
-
-                dependentTestSolver(newOrder.getTestsBefore(dependentTestName),
-                        false,
-                        new ArrayList<>(),
-                        newOrder.getResult(dependentTestName),
-                        newOrder.testOrder);
+            // If the result is the same, then the dependencies must be some of the tests in the original order
+            // that came before this test.
+            if (dependentTestResult == primeOrder.getResult(dependentTestName)) {
                 dependentTestSolver(originalOrder.getTestsBefore(dependentTestName),
                         true,
                         new ArrayList<>(),
                         newOrder.getResult(dependentTestName),
                         newOrder.testOrder);
+            } else {
+                // Run the test in isolation
+                final Map<String, RESULT> results =
+                        runTestOrder(Collections.singletonList(dependentTestName)).getNameToResultsMap();
+
+                // If the result is the same with no tests before it, then we don't need any of the original
+                // tests, we just need to move some of the new tests to after
+                // come before in the original order.
+                if (results.get(dependentTestName) == dependentTestResult) {
+                    dependentTestSolver(newOrder.getTestsBefore(dependentTestName),
+                            false,
+                            new ArrayList<>(),
+                            newOrder.getResult(dependentTestName),
+                            newOrder.testOrder);
+                } else {
+                    // If the result is still different from the original order, then we must need both
+                    // some/all tests from the original order to come before and some/all tests from the
+                    // order to come after.
+
+                    dependentTestSolver(newOrder.getTestsBefore(dependentTestName),
+                            false,
+                            new ArrayList<>(),
+                            newOrder.getResult(dependentTestName),
+                            newOrder.testOrder);
+                    dependentTestSolver(originalOrder.getTestsBefore(dependentTestName),
+                            true,
+                            new ArrayList<>(),
+                            newOrder.getResult(dependentTestName),
+                            newOrder.testOrder);
+                }
             }
         }
 
         return knownDependencies;
+    }
+
+    /**
+     * A dependency chain is a list of tests that comes either between two known dependencies, before
+     * all known dependencies, or after all known dependencies. This is useful because we can determine
+     * which lists of tests to perform delta debugging on, given that we did not find all possible
+     * dependent tests the first time.
+     *
+     * Ex. A, B are before dependencies of C.
+     * The test order is F, A, K, J, B, L, C.
+     * The dependency chains are: [F], [K,J], [L]
+     */
+    public List<List<String>> getDependencyChains(final List<String> testOrder) {
+        final List<Integer> indices =
+                knownDependencies.getOrDefault(dependentTestName, Collections.emptySet()).stream()
+                        .flatMap(testData -> testData.getIndices(testOrder))
+                        .sorted()
+                        .collect(Collectors.toList());
+
+        // Add this so that we get all tests that come before other dependencies.
+        indices.add(0, -1);
+
+        final List<List<String>> chains = new ArrayList<>();
+
+        for (int i = 0; i < indices.size(); i++) {
+            int lo = indices.get(i);
+
+            // The last test should be the dependent test, so don't include it.
+            int hi = testOrder.size() - 1;
+
+            if (i + 1 < indices.size()) {
+                hi = indices.get(i + 1);
+            }
+
+            if (lo < hi) {
+                chains.add(new ArrayList<>(testOrder.subList(lo + 1, hi)));
+            }
+        }
+
+        return chains;
+    }
+
+    private Stream<List<String>> getAllDependencyChains() {
+        return getAllDependencyChains(getDependencyChains(newOrder.getTestsBefore(dependentTestName)));
+    }
+
+    /**
+     * Takes each individual dependency chain, and generate all possible subsequences of them, merging
+     * chains together to form single test lists.
+     * Generates all single element chains first (so if there are no cross-chain dependencies,
+     * we don't waste much extra time).
+     *
+     * Returns a stream so that we don't have to generate them all at once (lazy evaluation).
+     *
+     * Ex. Take [1,2,3] and generate [1], [2], [3], [1,2], [1,3], [2,3], [1,2,3]
+     */
+    public Stream<List<String>> getAllDependencyChains(final List<List<String>> dependencyChains) {
+        return Stream.concat(
+                // Add all the single item subsequences.
+                dependencyChains.stream(),
+
+                // Generate the rest of them.
+                IntStream.range(0, dependencyChains.size())
+                        .boxed()
+                        .flatMap(i ->
+                                getAllDependencyChains(dependencyChains.subList(i + 1, dependencyChains.size()))
+                                .map(chain -> {
+                                    final List<String> newChain = new ArrayList<>();
+                                    newChain.addAll(dependencyChains.get(i));
+                                    newChain.addAll(chain);
+                                    return newChain;
+                                }))
+        );
+    }
+
+    private void findDependencyInChains() {
+        getAllDependencyChains().forEachOrdered(chain ->
+                dependentTestSolver(chain,
+                        false,
+                        new ArrayList<>(),
+                        newOrder.getResult(dependentTestName),
+                        newOrder.testOrder));
     }
 
     private void dependentTestSolver(List<String> tests, boolean isOriginalOrder,
@@ -391,10 +522,16 @@ public class ParallelDependentTestFinder {
         }
 
         if (!tests.isEmpty()) {
-            if (isOriginalOrder) {
-                addDependency(tests.get(0), revealed, revealingOrder, true);
-            } else {
-                addDependency(tests.get(0), revealed, revealingOrder, false);
+            // Verify this is a dependency
+            final boolean isDifferentWithout = isTestResultDifferent(Collections.singletonList(dependentTestName));
+            final boolean isDifferentWith = isTestResultDifferent(Arrays.asList(tests.get(0), dependentTestName));
+
+            if (isDifferentWith != isDifferentWithout) {
+                if (isOriginalOrder) {
+                    addDependency(tests.get(0), revealed, revealingOrder, true);
+                } else {
+                    addDependency(tests.get(0), revealed, revealingOrder, false);
+                }
             }
         }
     }
