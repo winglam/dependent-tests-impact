@@ -176,7 +176,8 @@ public class ParallelDependentTestFinder {
                                         final TestOrder originalOrder,
                                         final TestOrder newOrder,
                                         final TestOrder primeOrder,
-                                        final List<String> filesToDelete) {
+                                        final List<String> filesToDelete,
+                                        final Map<String, Set<TestData>> knownDependencies) {
         this.dependentTestName = dependentTestName;
 
         this.originalOrder = originalOrder;
@@ -186,7 +187,7 @@ public class ParallelDependentTestFinder {
         this.filesToDelete = filesToDelete;
         dependentTestResult = this.originalOrder.results.get(dependentTestName);
 
-        knownDependencies = new HashMap<>();
+        this.knownDependencies = knownDependencies;
     }
 
     /**
@@ -204,7 +205,8 @@ public class ParallelDependentTestFinder {
                 originalOrder,
                 newOrder,
                 primeOrder,
-                filesToDelete);
+                filesToDelete,
+                knownDependencies);
     }
 
     private List<String> generatePrimeOrder(final TestOrder originalOrder,
