@@ -18,10 +18,14 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.Set;
+import java.util.Spliterator;
+import java.util.function.Consumer;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
@@ -322,7 +326,7 @@ public class ParallelDependentTestFinder {
      * @return The new map of dependencies.
      *         (i.e., the test still has a different result than it did in the original order).
      */
-    public Map<String, Set<TestData>> runDTF() {
+    public Map<String, Set<TestData>> runDTF() throws DependencyVerificationException {
         // If the dt is already in the knownDependencies list, we must have tried the below method
         // to find dependencies and not found all of them.
         if (knownDependencies.containsKey(dependentTestName)) {
@@ -416,6 +420,18 @@ public class ParallelDependentTestFinder {
         return getAllDependencyChains(getDependencyChains(newOrder.getTestsBefore(dependentTestName)));
     }
 
+    public static <T> List<List<T>> tails(final List<T> list) {
+        final List<List<T>> result = new ArrayList<>();
+        final LinkedList<T> current = new LinkedList<>(list);
+
+        while (!current.isEmpty()) {
+            result.add(new ArrayList<>(current));
+            current.removeFirst();
+        }
+
+        return result;
+    }
+
     /**
      * Takes each individual dependency chain, and generate all possible subsequences of them, merging
      * chains together to form single test lists.
@@ -432,26 +448,36 @@ public class ParallelDependentTestFinder {
                 dependencyChains.stream(),
 
                 // Generate the rest of them.
-                IntStream.range(0, dependencyChains.size())
-                        .boxed()
-                        .flatMap(i ->
-                                getAllDependencyChains(dependencyChains.subList(i + 1, dependencyChains.size()))
-                                .map(chain -> {
-                                    final List<String> newChain = new ArrayList<>();
-                                    newChain.addAll(dependencyChains.get(i));
-                                    newChain.addAll(chain);
-                                    return newChain;
-                                }))
+                tails(dependencyChains).stream()
+                .flatMap(chains ->
+                    getAllDependencyChains(chains.subList(1, chains.size())).map(chain -> {
+                        final List<String> newChain = new ArrayList<>(chains.get(0));
+                        newChain.addAll(chain);
+                        return newChain;
+                    }))
         );
     }
 
-    private void findDependencyInChains() {
-        getAllDependencyChains().forEachOrdered(chain ->
-                dependentTestSolver(chain,
-                        false,
-                        new ArrayList<>(),
-                        newOrder.getResult(dependentTestName),
-                        newOrder.testOrder));
+    private void findDependencyInChains() throws DependencyVerificationException {
+        final Iterator<List<String>> dependencyChains = getAllDependencyChains().iterator();
+        while (dependencyChains.hasNext()) {
+            final List<String> chain = dependencyChains.next();
+
+            dependentTestSolver(chain,
+                    false,
+                    new ArrayList<>(),
+                    newOrder.getResult(dependentTestName),
+                    newOrder.testOrder);
+
+            // Check that we've found all the dependencies, and break out if we have.
+            if (!isTestResultDifferent(Collections.singletonList(dependentTestName)) &&
+                    !isTestResultDifferent(newOrder.testOrder)) {
+                return;
+            }
+        }
+
+        // If we don't find all the dependencies in any of the chains (or any combination of them)
+        throw new DependencyVerificationException(dependentTestName);
     }
 
     private void dependentTestSolver(List<String> tests, boolean isOriginalOrder,
