@@ -67,14 +67,16 @@ public class ParaThreads {
 		this.threads = threads;
 	}
 	
-	public void setParaVars(Set<String> changedTests, Map<String, RESULT> nameToOrigResultsHen, List<String> currentOrderTestListHen,  List<String> origOrderTestListHen, List<String> filesToDeleteHen, List<String> allDTListHen)
+	public void setParaVars(Set<String> changedTests, Map<String, RESULT> nameToOrigResultsHen, 
+			List<String> currentOrderTestListHen,  List<String> origOrderTestListHen, List<String> filesToDeleteHen,
+			List<String> allDTListHen)
 	{
 		ParaThreads.changedTests = changedTests;
 		ParaThreads.nameToOrigResultsListHen = nameToOrigResultsHen;
 		ParaThreads.currentOrderTestListHen = currentOrderTestListHen;
 		ParaThreads.origOrderTestListHen = origOrderTestListHen;
 		ParaThreads.filesToDeleteHen = filesToDeleteHen;
-		ParaThreads.allDTListHen = allDTListHen;
+		ParaThreads.allDTListHen = allDTListHen; 
 	}
 	
 	//runs threads and returns a list of strings that represent allDTList
@@ -102,7 +104,8 @@ public class ParaThreads {
 						{
 							String test = q.poll();
 							List<String> dataAsList = new ArrayList<String>();
-							ParallelDependentTestFinder dtFinder = new ParallelDependentTestFinder(test, origOrderTestListHen, currentOrderTestListHen, filesToDeleteHen);
+							ParallelDependentTestFinder dtFinder = new ParallelDependentTestFinder(test, 
+									origOrderTestListHen, currentOrderTestListHen, filesToDeleteHen);
 							Map<String, Set<TestData>> knownDependencies = dtFinder.runDTF();
 							for(Map.Entry<String, Set<TestData>> entry: knownDependencies.entrySet())
 							{
