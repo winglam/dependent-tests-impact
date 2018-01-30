@@ -54,6 +54,7 @@ public abstract class Runner {
     protected static List<WrapperTestList> listTestList = new ArrayList<>();
     protected static List<String> origOrderTestList = null;
     protected static File timeOrder = null;
+    protected static int threads = 0;
 
     protected static void parseArgs(String[] args) {
         argsList = new ArrayList<String>(Arrays.asList(args));
@@ -77,6 +78,19 @@ public abstract class Runner {
                     + "execution time, if unspecified the output will be sent to System.out\n"
                     + "-help - display this message\n");
             System.exit(0);
+        }
+        //get number of threads
+        int threadIndex = argsList.indexOf("-threads");
+        if (threadIndex != -1) {
+            // get index of technique name
+            int threadNumIndex = threadIndex + 1;
+            if (threadNumIndex >= argsList.size()) {
+                System.err.println("Thread argument is specified but thread number is not."
+                        + " Please use the format: -threads aThreadNumber");
+                System.exit(0);
+            }
+
+            threads = Integer.parseInt(argsList.get(threadNumIndex));            
         }
 
         // get the technique

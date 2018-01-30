@@ -22,12 +22,8 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
 import java.util.Set;
-import java.util.Spliterator;
-import java.util.function.Consumer;
 import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 /**
@@ -121,24 +117,6 @@ public class ParallelDependentTestFinder {
 
     public ParallelDependentTestFinder(final String dependentTestName,
                                        final List<String> originalOrder,
-                                       final List<String> newOrder,
-                                       final List<String> filesToDelete,
-                                       final Map<String, Set<TestData>> knownDependencies) {
-        this.dependentTestName = dependentTestName;
-
-        this.originalOrder = new TestOrder(originalOrder);
-        this.newOrder = new TestOrder(newOrder);
-
-        primeOrder = new TestOrder(generatePrimeOrder(this.originalOrder, this.newOrder));
-
-        this.filesToDelete = filesToDelete;
-        this.knownDependencies = knownDependencies;
-
-        dependentTestResult = this.originalOrder.getResult(dependentTestName);
-    }
-
-    public ParallelDependentTestFinder(final String dependentTestName,
-                                       final List<String> originalOrder,
                                        final Map<String, RESULT> originalResults,
                                        final List<String> newOrder,
                                        final Map<String, RESULT> newResults,
@@ -156,32 +134,11 @@ public class ParallelDependentTestFinder {
         dependentTestResult = this.originalOrder.getResult(dependentTestName);
     }
 
-    public ParallelDependentTestFinder(final String dependentTestName,
-                                       final List<String> originalOrder,
-                                       final Map<String, RESULT> originalResults,
-                                       final List<String> newOrder,
-                                       final Map<String, RESULT> newResults,
-                                       final List<String> filesToDelete,
-                                       final Map<String, Set<TestData>> knownDependencies) {
-        this.dependentTestName = dependentTestName;
-
-        this.originalOrder = new TestOrder(originalOrder, originalResults);
-        this.newOrder = new TestOrder(newOrder, newResults);
-
-        primeOrder = new TestOrder(generatePrimeOrder(this.originalOrder, this.newOrder), originalResults);
-
-        this.filesToDelete = filesToDelete;
-        this.knownDependencies = knownDependencies;
-
-        dependentTestResult = this.originalOrder.getResult(dependentTestName);
-    }
-
     private ParallelDependentTestFinder(final String dependentTestName,
                                         final TestOrder originalOrder,
                                         final TestOrder newOrder,
                                         final TestOrder primeOrder,
-                                        final List<String> filesToDelete,
-                                        final Map<String, Set<TestData>> knownDependencies) {
+                                        final List<String> filesToDelete) {
         this.dependentTestName = dependentTestName;
 
         this.originalOrder = originalOrder;
@@ -191,7 +148,7 @@ public class ParallelDependentTestFinder {
         this.filesToDelete = filesToDelete;
         dependentTestResult = this.originalOrder.results.get(dependentTestName);
 
-        this.knownDependencies = knownDependencies;
+        knownDependencies = new HashMap<>();
     }
 
     /**
@@ -209,8 +166,7 @@ public class ParallelDependentTestFinder {
                 originalOrder,
                 newOrder,
                 primeOrder,
-                filesToDelete,
-                knownDependencies);
+                filesToDelete);
     }
 
     private List<String> generatePrimeOrder(final TestOrder originalOrder,
@@ -226,7 +182,8 @@ public class ParallelDependentTestFinder {
 
             // Make sure no tests appear twice.
             primeOrder.removeIf(insertTests::contains);
-            primeOrder.addAll(primeIndex, insertTests);
+            final int primeIndex2 = primeOrder.indexOf(dependentTestName);
+            primeOrder.addAll(primeIndex2, insertTests);
         }
 
         return primeOrder;
@@ -240,7 +197,11 @@ public class ParallelDependentTestFinder {
      */
     private TestExecResult makeAndRunTestOrder(final List<String> order) {
         List<String> newOrder = new ArrayList<>(order);
-        newOrder.add(dependentTestName);
+        int newIndex = newOrder.indexOf(dependentTestName);
+        if(newIndex == -1)
+        {
+        	newOrder.add(dependentTestName);
+        }
 
         knownDependencies.forEach((key, dependencies) ->
                 dependencies.forEach(dependency -> dependency.fixOrder(newOrder)));
@@ -483,7 +444,11 @@ public class ParallelDependentTestFinder {
     private void dependentTestSolver(List<String> tests, boolean isOriginalOrder,
                                      List<String> addOnTests, RESULT revealed,
                                      List<String> revealingOrder) {
-        tests.removeAll(addOnTests);
+    	List<String> newList = new ArrayList<String>();
+    	for (String s : addOnTests) {
+    	   newList.add(s);
+    	}
+        tests.removeAll(newList); //java doesn't like this (concurrent modification exception when using 1 thread)
         List<String> topHalf = new LinkedList<>(tests.subList(0, tests.size() / 2));
         List<String> botHalf = new LinkedList<>(tests.subList(tests.size() / 2, tests.size()));
 
@@ -532,7 +497,7 @@ public class ParallelDependentTestFinder {
             // If only one half contains dependent tests, ignore all tests not in that half.
             // If the top results match and we're looking for the before tests, then we want the top half.
             // If the top results don't match, and we're looking for the after tests, we still want the top half.
-            if (topResultsMatch == isOriginalOrder) {
+            if (topResultsMatch) {
                 tests = topHalf;
                 revealed = topResults.getResult(dependentTestName).result;
                 revealingOrder = topHalf;
@@ -541,8 +506,11 @@ public class ParallelDependentTestFinder {
                 revealed = botResults.getResult(dependentTestName).result;
                 revealingOrder = botHalf;
             }
-
-            tests.removeAll(addOnTests);
+            List<String> newList2 = new ArrayList<String>(); //get error when tests.removeAll(addOnTests)
+        	for (String s : addOnTests) {
+        	   newList2.add(s);
+        	}
+            tests.removeAll(newList2);
             tests.remove(tests.size() - 1);
 
             topHalf = new LinkedList<>(tests.subList(0, tests.size() / 2));
