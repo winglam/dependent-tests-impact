@@ -45,7 +45,6 @@ import edu.washington.cs.dt.impact.data.TestData;
 */
 
 public class ParaThreads {
-	
 	//list of variables
 	static Set<String> changedTests;
 	static Map<String, RESULT> nameToOrigResultsListHen;
@@ -66,7 +65,6 @@ public class ParaThreads {
 	public ParaThreads(int threads){
 		this.threads = threads;
 	}
-	
 	public void setParaVars(Set<String> changedTests, Map<String, RESULT> nameToOrigResultsHen, 
 			List<String> currentOrderTestListHen,  List<String> origOrderTestListHen, List<String> filesToDeleteHen,
 			List<String> allDTListHen)
@@ -78,10 +76,8 @@ public class ParaThreads {
 		ParaThreads.filesToDeleteHen = filesToDeleteHen;
 		ParaThreads.allDTListHen = allDTListHen; 
 	}
-	
 	//runs threads and returns a list of strings that represent allDTList
 	public List<String> runThreads(){
-		
 		//add dependent tests to q
 		for(String i : changedTests)
 		{
@@ -109,9 +105,7 @@ public class ParaThreads {
 							Map<String, Set<TestData>> knownDependencies = dtFinder.runDTF();
 							for(Map.Entry<String, Set<TestData>> entry: knownDependencies.entrySet())
 							{
-								
 								Set<TestData> testdataset = entry.getValue();
-								
 								for(TestData td : testdataset)
 								{
 									String beforeString = "";
@@ -143,7 +137,6 @@ public class ParaThreads {
 							{
 								allDTSynchList.addAll(dataAsList);
 							}
-							
 						}
 						System.out.printf("\nthread is done!\n");
 					} 
@@ -155,7 +148,6 @@ public class ParaThreads {
 			classpaths.add(Integer.toString(j));
 			threadList.get(j).start();
 		}
-		
 		//wait for threads to finish
 		for(Thread t: threadList)
 		{
