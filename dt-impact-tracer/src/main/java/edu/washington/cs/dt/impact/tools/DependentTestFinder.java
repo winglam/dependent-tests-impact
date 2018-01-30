@@ -161,42 +161,8 @@ public class DependentTestFinder {
 
     public void runDTF(String dependentTestName, RESULT dependentTestResult, List<String> currentOrderTests,
             List<String> originalOrderTests, List<String> filesToDelete, List<String> allDTList) {
-        DEPENDENT_TEST_RESULT = dependentTestResult;
-        CURRENT_ORDER_TESTS = currentOrderTests;
-        ORIGINAL_ORDER_TESTS = originalOrderTests;
-        FILES_TO_DELETE = filesToDelete;
-
-        if (allDTList == null) {
-            ALL_DT_LIST = new ArrayList<String>();
-        } else {
-            ALL_DT_LIST = allDTList;
-        }
-        boolean isOriginalOrder = isTestResultDifferent(dependentTestName, Arrays.asList(dependentTestName));
-        List<String> fullTests;
-        if (isOriginalOrder) {
-            fullTests = ORIGINAL_ORDER_TESTS;
-        } else {
-            fullTests = CURRENT_ORDER_TESTS;
-        }
-
-        List<String> tests = new LinkedList<String>(fullTests);
-        if (tests == null || !tests.contains(dependentTestName)) {
-            throw new RuntimeException("Dependent test missing from test order.");
-        }
-
-        List<String> beforeTests = new ArrayList<String>();
-        List<String> afterTests = new ArrayList<String>();
-        int testNameIndex = ALL_DT_LIST.indexOf(Constants.TEST_LINE + dependentTestName);
-        if (testNameIndex != -1) {
-            isOriginalOrder = determineSubLists(fullTests, testNameIndex, dependentTestName, isOriginalOrder, tests,
-                    beforeTests, afterTests);
-        } else {
-            tests = fullTests.subList(0, fullTests.indexOf(dependentTestName));
-            dependentTestSolver(tests, dependentTestName, isOriginalOrder, beforeTests, afterTests,
-                    new ArrayList<String>(), new ArrayList<String>(), false);
-        }
-
-        checkOrder(isOriginalOrder, dependentTestName, beforeTests, afterTests);
+    	runDTF(dependentTestName, dependentTestResult, currentOrderTests, originalOrderTests, filesToDelete, 
+    			allDTList, "");
     }
     //overloaded
     public void runDTF(String dependentTestName, RESULT dependentTestResult, List<String> currentOrderTests,
@@ -211,7 +177,8 @@ public class DependentTestFinder {
         } else {
             ALL_DT_LIST = allDTList;
         }
-        boolean isOriginalOrder = isTestResultDifferent(dependentTestName, Arrays.asList(dependentTestName), tmptestpath);
+        boolean isOriginalOrder = isTestResultDifferent(dependentTestName, Arrays.asList(dependentTestName), 
+        		tmptestpath);
         List<String> fullTests;
         if (isOriginalOrder) {
             fullTests = ORIGINAL_ORDER_TESTS;
@@ -248,150 +215,13 @@ public class DependentTestFinder {
     // false if the sublist is part of CURRENT_ORDER_TESTS
     private boolean determineSubLists(List<String> fullTests, int testNameIndex, String dependentTestName,
             boolean isOriginalOrder, List<String> tests, List<String> beforeTests, List<String> afterTests) {
-        // go up dependentTest's chain and use either a portion of the original order tests
-        // or a portion of current order tests to get dependent test to pass
-        List<String> botTests = new ArrayList<String>();
-        String currentTest =
-                ALL_DT_LIST.get(testNameIndex + 2).substring(22, ALL_DT_LIST.get(testNameIndex + 2).length() - 1);
-        botTests.add(currentTest);
-        int startIndex = fullTests.indexOf(currentTest) + 1;
-        int independentTestIndex = ALL_DT_LIST.indexOf(Constants.TEST_LINE + currentTest);
-
-        // get all the tests that dependentTestName depends on to come before it
-        while (independentTestIndex != -1) {
-            currentTest = ALL_DT_LIST.get(independentTestIndex + 2).substring(22,
-                    ALL_DT_LIST.get(independentTestIndex + 2).length() - 1);
-            botTests.add(currentTest);
-            independentTestIndex = ALL_DT_LIST.indexOf(Constants.TEST_LINE + currentTest);
-        }
-
-        // add dependentTestName to the list of tests that must
-        // come before it and sort it in ascending order
-        botTests.add(dependentTestName);
-        List<String> descendingOrder = sortTestsDescendingOrder(botTests);
-        botTests.clear();
-        for (int i = descendingOrder.size() - 1; i >= 0; i--) {
-            botTests.add(descendingOrder.get(i));
-        }
-
-        // run just dependentTestName and the tests that must come before it
-        int chainIndex = botTests.size() - 2;
-        boolean chainTestResult = isTestResultDifferent(dependentTestName, botTests);
-        if (chainTestResult) {
-            // just the chain causes dependentTestName to attain a different result
-            // look inside the original order for what it is missing
-            fullTests = ORIGINAL_ORDER_TESTS;
-            isOriginalOrder = true;
-            List<String> fullChainTests = new ArrayList<String>();
-
-            String currentKey = botTests.get(0);
-            Map<String, List<String>> testToChunk = new HashMap<String, List<String>>();
-            for (int j = 1; j < botTests.size(); j++) {
-                int fromIndex = fullTests.indexOf(currentKey);
-                int toIndex = fullTests.indexOf(botTests.get(j));
-                testToChunk.put(currentKey, new ArrayList<String>(fullTests.subList(fromIndex, toIndex)));
-                currentKey = botTests.get(j);
-            }
-
-            // inject tests from the original order into the chain to determine
-            // which part contains the test we need
-            // TODO #1. This is incomplete. If the dependent test requires A and B to run
-            // before it and A and B are in different sections of the chain
-            // this will be unable to identify it.
-            // We need to do delta debugging on the different sections of the chain
-            // identify which sections are relevant to the dependent test.
-            // Then use the depednentTestSolver and change the topAddOn and botAddOn
-            // tests to pin down the tests in each section that is relevant to the dependent test.
-            for (; chainIndex >= 0; chainIndex--) {
-                fullChainTests.addAll(botTests.subList(0, chainIndex));
-                fullChainTests.addAll(testToChunk.get(botTests.get(chainIndex)));
-                fullChainTests.addAll(botTests.subList(chainIndex + 1, botTests.size()));
-
-                boolean fullChainResult = isTestResultDifferent(dependentTestName, fullChainTests);
-                if (!fullChainResult) {
-                    // this current chunk of fullTests contains the test that will prevent
-                    // the dependent test from manifesting
-                    break;
-                }
-                fullChainTests.clear();
-            }
-        } else {
-            // the chain does not cause dependentTestName to attain a different result
-            // but something between the chain or before it is causing it to
-            fullTests = CURRENT_ORDER_TESTS;
-            isOriginalOrder = false;
-            List<String> fullChainTests = new ArrayList<String>();
-
-            String currentKey = botTests.get(0);
-            Map<String, List<String>> testToChunk = new HashMap<String, List<String>>();
-            for (int j = 1; j < botTests.size(); j++) {
-                int toIndex = fullTests.indexOf(botTests.get(j));
-                if (toIndex == -1) {
-                	continue;
-                }
-                int fromIndex = fullTests.indexOf(currentKey);
-                testToChunk.put(currentKey, new ArrayList<String>(fullTests.subList(fromIndex, toIndex)));
-                currentKey = botTests.get(j);
-            }
-
-            // inject tests from the current order into the chain to determine
-            // which part contains the test we need
-            // TODO #2. This is incomplete. If the dependent test requires A and B to run
-            // before it and A and B are in different sections of the chain
-            // this will be unable to identify it.
-            // We need to do delta debugging on the different sections of the chain
-            // identify which sections are relevant to the dependent test.
-            // Then use the depednentTestSolver and change the topAddOn and botAddOn
-            // tests to pin down the tests in each section that is relevant to the dependent test.
-            for (; chainIndex >= 0; chainIndex--) {
-                fullChainTests.addAll(botTests.subList(0, chainIndex));
-                if (testToChunk.get(botTests.get(chainIndex)) != null) {
-                    fullChainTests.addAll(testToChunk.get(botTests.get(chainIndex)));                	
-                }
-                fullChainTests.addAll(botTests.subList(chainIndex + 1, botTests.size()));
-
-                boolean fullChainResult = isTestResultDifferent(dependentTestName, fullChainTests);
-                if (fullChainResult) {
-                    // this current chunk of fullTests contains the test that will cause
-                    // the dependent test to manifest
-                    break;
-                }
-                fullChainTests.clear();
-            }
-        }
-
-        int endIndex = -1;
-        boolean useTopBot = true;
-        List<String> topTests = new ArrayList<String>();
-        if (chainIndex == -1) {
-            // the relevant test is outside of the dependence chain,
-            // use the entire fullTests order to the start of the chain
-            startIndex = 0;
-            endIndex = fullTests.indexOf(botTests.get(0));
-            botTests = new ArrayList<String>(
-                    fullTests.subList(fullTests.indexOf(botTests.get(0)), fullTests.indexOf(dependentTestName)));
-            topTests = new ArrayList<String>();
-        } else {
-            // the relevant test is in between two tests in the dependence chain
-            startIndex = fullTests.indexOf(botTests.get(chainIndex)) + 1;
-            endIndex = fullTests.indexOf(botTests.get(chainIndex + 1));
-            topTests = new ArrayList<String>(botTests.subList(0, botTests.indexOf(botTests.get(chainIndex)) + 1));
-            botTests = new ArrayList<String>(botTests.subList(chainIndex + 1, botTests.size() - 1));
-        }
-
-        if (startIndex > fullTests.indexOf(dependentTestName)) {
-            throw new RuntimeException(currentTest + " is marked to come before " + dependentTestName
-                    + " but is currently coming after it.");
-        }
-
-        tests = fullTests.subList(startIndex, endIndex);
-        dependentTestSolver(tests, dependentTestName, isOriginalOrder, beforeTests, afterTests, topTests, botTests,
-                useTopBot);
-        return isOriginalOrder;
+    		return determineSubLists(fullTests, testNameIndex, dependentTestName,
+    	            isOriginalOrder, tests, beforeTests, afterTests, "");
     }
     //overloaded
     private boolean determineSubLists(List<String> fullTests, int testNameIndex, String dependentTestName,
-            boolean isOriginalOrder, List<String> tests, List<String> beforeTests, List<String> afterTests, String append) {
+            boolean isOriginalOrder, List<String> tests, List<String> beforeTests, List<String> afterTests, 
+            String append) {
         // go up dependentTest's chain and use either a portion of the original order tests
         // or a portion of current order tests to get dependent test to pass
         List<String> botTests = new ArrayList<String>();
@@ -539,123 +369,8 @@ public class DependentTestFinder {
     private void dependentTestSolver(List<String> tests, String dependentTestName, boolean isOriginalOrder,
             List<String> beforeTests, List<String> afterTests, List<String> topAddOnTests, List<String> botAddOnTests,
             boolean useAddOnTests) {
-        tests.removeAll(topAddOnTests);
-        tests.removeAll(botAddOnTests);
-        List<String> topHalf = new LinkedList<String>(tests.subList(0, tests.size() / 2));
-        List<String> botHalf = new LinkedList<String>(tests.subList(tests.size() / 2, tests.size()));
-
-        while (tests.size() > 1) {
-
-            if (useAddOnTests) {
-                topHalf.addAll(0, topAddOnTests);
-                botHalf.addAll(0, topAddOnTests);
-
-                topHalf.addAll(topHalf.size(), botAddOnTests);
-                botHalf.addAll(botHalf.size(), botAddOnTests);
-            }
-
-            topHalf.add(dependentTestName);
-            botHalf.add(dependentTestName);
-
-            FileTools.clearEnv(FILES_TO_DELETE);
-            AbstractTestRunner runner = new FixedOrderRunner(topHalf);
-            boolean topResults =
-                    checkTestMatch(isOriginalOrder, runner.run().getExecutionRecords().get(0), dependentTestName);
-
-            FileTools.clearEnv(FILES_TO_DELETE);
-            runner = new FixedOrderRunner(botHalf);
-            boolean botResults =
-                    checkTestMatch(isOriginalOrder, runner.run().getExecutionRecords().get(0), dependentTestName);
-
-            // dependent test depends on more than one test in tests
-            if (topResults == botResults) {
-
-                // if splitting the tests no longer reveals the dependent test behavior,
-                // then use both sides in the recursive call
-                useAddOnTests = !topResults || useAddOnTests;
-
-                List<String> newBeforeTests = new ArrayList<String>(beforeTests);
-                List<String> newAfterTests = new ArrayList<String>(afterTests);
-                List<String> newTopList = new ArrayList<String>(topHalf);
-                List<String> newBotList = new ArrayList<String>(botHalf);
-
-                // find the test in the bottom half of our current list
-                newTopList.removeAll(topAddOnTests);
-                newTopList.removeAll(botAddOnTests);
-                newTopList.remove(newTopList.size() - 1);
-                newBotList.removeAll(topAddOnTests);
-                newBotList.remove(newBotList.size() - 1);
-                if (topResults) {
-                    // A or B causes the dependent test to manifest
-                    // recursive call with a truncated test list to identify A first
-                    dependentTestSolver(newTopList, dependentTestName, isOriginalOrder, beforeTests, afterTests,
-                            topAddOnTests, botAddOnTests, useAddOnTests);
-                } else {
-                    // A and B causes the dependent test to manifest
-                    // recursive call with the bottom half of tests fixed
-                    dependentTestSolver(newTopList, dependentTestName, isOriginalOrder, beforeTests, afterTests,
-                            topAddOnTests, newBotList, useAddOnTests);
-                }
-
-                if (!beforeTests.equals(newBeforeTests)) {
-                    List<String> tempBeforeTests = new ArrayList<String>(beforeTests);
-                    beforeTests.removeAll(newBeforeTests);
-                    if (!topAddOnTests.containsAll(beforeTests)) {
-                        beforeTests.removeAll(topAddOnTests);
-                        topAddOnTests.addAll(beforeTests);
-                    }
-                    beforeTests.clear();
-                    beforeTests.addAll(tempBeforeTests);
-                }
-
-                if (!afterTests.equals(newAfterTests)) {
-                    List<String> tempAfterTests = new ArrayList<String>(afterTests);
-                    afterTests.removeAll(newAfterTests);
-                    if (!topAddOnTests.containsAll(afterTests)) {
-                        afterTests.removeAll(topAddOnTests);
-                        topAddOnTests.addAll(afterTests);
-                    }
-                    afterTests.clear();
-                    afterTests.addAll(tempAfterTests);
-                }
-
-                List<String> orderedTests = new ArrayList<String>(topAddOnTests);
-                orderedTests.addAll(botAddOnTests);
-                orderedTests.add(dependentTestName);
-                boolean testResult = isTestResultDifferent(dependentTestName, orderedTests);
-                if (!((!isOriginalOrder && testResult) || (isOriginalOrder && !testResult))) {
-                    // case of A and B needs to come before C
-                    dependentTestSolver(newBotList, dependentTestName, isOriginalOrder, beforeTests, afterTests,
-                            topAddOnTests, botAddOnTests, useAddOnTests);
-                } else if (testResult && isOriginalOrder) {
-                    dependentTestSolver(newBotList, dependentTestName, isOriginalOrder, beforeTests, afterTests,
-                            topAddOnTests, botAddOnTests, false);
-                }
-                return;
-            }
-
-            if (topResults) {
-                tests = topHalf;
-            } else {
-                tests = botHalf;
-            }
-
-            if (useAddOnTests) {
-                tests.removeAll(topAddOnTests);
-                tests.removeAll(botAddOnTests);
-            }
-            tests.remove(tests.size() - 1);
-            topHalf = new LinkedList<String>(tests.subList(0, tests.size() / 2));
-            botHalf = new LinkedList<String>(tests.subList(tests.size() / 2, tests.size()));
-        }
-
-        if (!tests.isEmpty() && !beforeTests.contains(tests.get(0)) && !afterTests.contains(tests.get(0))) {
-            if (isOriginalOrder) {
-                beforeTests.add(tests.get(0));
-            } else {
-                afterTests.add(tests.get(0));
-            }
-        }
+    	dependentTestSolver(tests, dependentTestName, isOriginalOrder, beforeTests, afterTests, topAddOnTests,
+    			botAddOnTests, useAddOnTests, "");
     }
     //overloaded
     private void dependentTestSolver(List<String> tests, String dependentTestName, boolean isOriginalOrder,
@@ -1142,21 +857,7 @@ public class DependentTestFinder {
     // returns true if dependentTestName's result in orderedTest
     // does not match DEPENDENT_TEST_RESULT, false otherwise
     private boolean isTestResultDifferent(String dependentTestName, List<String> orderedTests) {
-        FileTools.clearEnv(FILES_TO_DELETE);
-        AbstractTestRunner runner = new FixedOrderRunner(orderedTests);
-        TestExecResults results = runner.run();
-
-        RESULT dtIsolateResult = null;
-        TestExecResult result = results.getExecutionRecords().get(0);
-        if (result.isTestPassed(dependentTestName)) {
-            dtIsolateResult = RESULT.PASS;
-        } else if (result.isTestError(dependentTestName)) {
-            dtIsolateResult = RESULT.ERROR;
-        } else {
-            dtIsolateResult = RESULT.FAILURE;
-        }
-
-        return !dtIsolateResult.equals(DEPENDENT_TEST_RESULT);
+        return isTestResultDifferent(dependentTestName, orderedTests, "");
     }
     //overloaded
     private boolean isTestResultDifferent(String dependentTestName, List<String> orderedTests, String tmpfilepath) {
