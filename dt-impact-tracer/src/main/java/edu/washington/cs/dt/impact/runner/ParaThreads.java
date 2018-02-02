@@ -248,7 +248,7 @@ public class ParaThreads {
 		threadList.clear(); // clear list since threads cannot be restarted once
 							// stopped
 		// need deep copy of allDTSynchList since rejoining to main thread
-		List<String> allDTSynchListReturn = generateDTList(knownDepMap);
+		List<String> allDTSynchListReturn = generateDTList(createDeterministicDependencies(knownDepMap));
 		classpaths.clear();
 		return allDTSynchListReturn;
 	}
