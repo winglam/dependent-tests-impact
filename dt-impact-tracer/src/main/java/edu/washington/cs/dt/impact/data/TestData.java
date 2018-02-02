@@ -2,11 +2,12 @@ package edu.washington.cs.dt.impact.data;
 
 import edu.washington.cs.dt.RESULT;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
 import java.util.Set;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class TestData {
@@ -37,9 +38,14 @@ public class TestData {
      * @param str The string to parse. Should look like "[a, b, c, d]"
      * @return The stream of strings.
      */
-    private static Stream<String> parseStrToStream(final String str) {
-        return Arrays.stream(str.substring(1, str.length() - 1).split(","))
-                .map(String::trim);
+    private static List<String> parseList(final String str) {
+        final List<String> result = new ArrayList<>();
+
+        for (final String e : str.substring(1, str.length() - 1).split(",")) {
+            result.add(e.trim());
+        }
+
+        return result;
     }
 
     /**
@@ -67,22 +73,16 @@ public class TestData {
         final RESULT intended = RESULT.valueOf(intendedLine[1].trim());
 
         final String[] beforeTestsLine = lines[2].split(":");
-        final Set<String> beforeTests =
-                parseStrToStream(beforeTestsLine[1].trim())
-                .collect(Collectors.toSet());
+        final Set<String> beforeTests = new HashSet<>(parseList(beforeTestsLine[1].trim()));
 
         final String[] afterTestsLine = lines[3].split(":");
-        final Set<String> afterTests =
-                parseStrToStream(afterTestsLine[1].trim())
-                .collect(Collectors.toSet());
+        final Set<String> afterTests = new HashSet<>(parseList(afterTestsLine[1].trim()));
 
         final String[] revealedLine = lines[4].split(":");
         final RESULT revealed = RESULT.valueOf(revealedLine[1].trim());
 
         final String[] revealingOrderLine  = lines[5].split(":");
-        final List<String> revealingOrder =
-                parseStrToStream(revealingOrderLine[1].trim())
-                .collect(Collectors.toList());
+        final List<String> revealingOrder = parseList(revealingOrderLine[1].trim());
 
         return new TestData(dependentTest, intended, beforeTests, afterTests, revealed, revealingOrder);
     }
@@ -95,6 +95,22 @@ public class TestData {
                 "and executed before: " + afterTests + "\n" +
                 "The revealed behavior: " + revealed + "\n" +
                 "in the order: " + revealingOrder;
+    }
+
+    public static boolean contains(final Set<TestData> testData, final String test) {
+        return testData.stream().anyMatch(t -> t.hasDependency(test));
+    }
+
+    public boolean hasDependency(final String testName) {
+        return hasBeforeDependency(testName) || hasAfterDependency(testName);
+    }
+
+    public boolean hasBeforeDependency(final String testName) {
+        return beforeTests.contains(testName);
+    }
+
+    public boolean hasAfterDependency(final String testName) {
+        return afterTests.contains(testName);
     }
 
     /**

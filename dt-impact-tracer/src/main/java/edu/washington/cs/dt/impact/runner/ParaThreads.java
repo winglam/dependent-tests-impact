@@ -11,6 +11,7 @@ import java.util.Set;
 import java.util.concurrent.*;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.stream.Collectors;
 
 import edu.washington.cs.dt.RESULT;
 import edu.washington.cs.dt.impact.data.WrapperTestList;
@@ -59,8 +60,6 @@ public class ParaThreads {
 	// q (below) is a shared queue between threads, each thread pops a test off
 	// of the queue and calls runDTF on it
 	ConcurrentLinkedQueue<String> q = new ConcurrentLinkedQueue<String>();
-	// allDTSynchList (below) stores allDTList from each thread (thread-safe)
-	List<String> allDTSynchList = Collections.synchronizedList(new ArrayList<String>());
 	// classpaths (below) is a queue of the thread number (as a string) to
 	// append to tmp files generated
 	ConcurrentLinkedQueue<String> classpaths = new ConcurrentLinkedQueue<String>();
@@ -82,6 +81,114 @@ public class ParaThreads {
 		ParaThreads.allDTListHen = allDTListHen;
 	}
 
+    /**
+     * Make sure that the test order is completely deterministic.
+     * We can do this by finding all tests A, B that depend on the same test C.
+     * If tests A and B do not depend on each other, then we should insert a new "dependency"
+     * so that A and B come in the same order they did in the original order.
+     * @param input The dependency map.
+     * @return A new map of dependencies. Does not modify the original map.
+     */
+	private Map<String, Set<TestData>> createDeterministicDependencies(final Map<String, Set<TestData>> input) {
+        Map<String, Set<TestData>> knownDependencies = new HashMap<>(input);
+
+        for (Map.Entry<String, Set<TestData>> entry : knownDependencies.entrySet()) {
+            final String testName = entry.getKey();
+
+            // The list of tests that need this test (testName) to come before them.
+            final List<String> beforeDependentTests =
+                    knownDependencies.entrySet().stream()
+                            .filter(e -> e.getValue().stream()
+                                    .anyMatch(t -> t.hasBeforeDependency(testName)))
+                            .map(Map.Entry::getKey)
+                            .collect(Collectors.toList());
+
+            makeDependenciesDeterministic(knownDependencies, beforeDependentTests);
+
+            // The list of tests that need this test (testName) to come after them.
+            final List<String> afterDependentTests =
+                    knownDependencies.entrySet().stream()
+                            .filter(e -> e.getValue().stream()
+                                    .anyMatch(t -> t.hasAfterDependency(testName)))
+                            .map(Map.Entry::getKey)
+                            .collect(Collectors.toList());
+
+            makeDependenciesDeterministic(knownDependencies, afterDependentTests);
+        }
+
+        return knownDependencies;
+    }
+
+    private void makeDependenciesDeterministic(final Map<String, Set<TestData>> knownDependencies,
+                                               final List<String> tests) {
+        for (final String test : tests) {
+            final Set<TestData> testData = knownDependencies.get(test);
+
+            for (final String otherTest : tests) {
+                if (!test.equals(otherTest)) {
+                    final Set<TestData> otherTestData = knownDependencies.get(otherTest);
+
+                    // If neither test nor otherTest has each other as a dependency.
+                    if (!TestData.contains(testData, otherTest) && !TestData.contains(otherTestData, test)) {
+                        final int index = origOrderTestListHen.indexOf(test);
+                        final int otherIndex = origOrderTestListHen.indexOf(otherTest);
+
+                        if (index != -1 && otherIndex != -1) {
+                            // This test comes before the other in the original order, so add a
+                            // new dependency to make sure that happens when the test list is
+                            // generated.
+                            if (index < otherIndex) {
+                                otherTestData.add(new TestData(otherTest,
+                                        RESULT.PASS,
+                                        Collections.singleton(test),
+                                        new HashSet<>(),
+                                        RESULT.FAILURE,
+                                        new ArrayList<>()));
+                                knownDependencies.put(otherTest, otherTestData);
+                            } else {
+                                testData.add(new TestData(test,
+                                        RESULT.PASS,
+                                        Collections.singleton(otherTest),
+                                        new HashSet<>(),
+                                        RESULT.FAILURE,
+                                        new ArrayList<>()));
+                                knownDependencies.put(test, testData);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+	private List<String> generateDTList(final Map<String, Set<TestData>> knownDependencies) {
+	    final List<String> result = new ArrayList<>();
+
+        for (Map.Entry<String, Set<TestData>> entry : knownDependencies.entrySet()) {
+            Set<TestData> testdataset = entry.getValue();
+            for (TestData td : testdataset) {
+                String beforeString = td.beforeTests.toString();
+                String afterString = td.afterTests.toString();
+
+                if (beforeString.equals("[]")) {
+                    result.add("Test: " + afterString.replace("[", "").replace("]", ""));
+                    result.add("Intended behavior: " + RESULT.FAILURE);
+                    result.add("when executed after: [" + td.dependentTest + "]");
+                    result.add("The revealed different behavior: " + RESULT.PASS);
+                    result.add("when executed after: []");
+                } else {
+                    result.add("Test: " + td.dependentTest);
+                    result.add("Intended behavior: " + RESULT.FAILURE);
+                    result.add("when executed after: " + beforeString);
+                    result.add("The revealed different behavior: " + RESULT.PASS);
+                    result.add("when executed after: []");
+                }
+            }
+        }
+
+        return result;
+    }
+
 	// runs threads and returns a list of strings that represent allDTList
 	public List<String> runThreads() {
 		// add dependent tests to q
@@ -96,15 +203,15 @@ public class ParaThreads {
 				// each thread's run method defined here
 				public void run() {
 					try {
-						String path = classpaths.poll();
 						System.out.printf("\nthread is running!\n");
-						int numberOfTests = q.size();
+
 						Map<String, Set<TestData>> knownDependencies = new HashMap<>();
 						ParallelDependentTestFinder dtFinder = null;
+
 						while (q.peek() != null) {
 							String test = q.poll();
-							List<String> dataAsList = new ArrayList<String>();
-							if (numberOfTests == q.size() + 1) {
+
+							if (dtFinder == null) {
 								dtFinder = new ParallelDependentTestFinder(test, origOrderTestListHen,
 										currentOrderTestListHen, filesToDeleteHen, knownDepMap);
 								knownDependencies = dtFinder.runDTF();
@@ -112,42 +219,16 @@ public class ParaThreads {
 								dtFinder = dtFinder.createFinderFor(test);
 								knownDependencies = dtFinder.runDTF();
 							}
-							for (Map.Entry<String, Set<TestData>> entry : knownDependencies.entrySet()) {
-								Set<TestData> testdataset = entry.getValue();
-								for (TestData td : testdataset) {
-									String beforeString = "";
-									String afterString = "";
-									beforeString = td.beforeTests.toString() + beforeString;
-									afterString = td.afterTests.toString() + afterString;
+						}
 
-									if (beforeString.equals("[]")) {
-										dataAsList.add("Test: " + afterString.replace("[", "").replace("]", ""));
-										dataAsList.add("Intended behavior: " + RESULT.FAILURE);
-										dataAsList.add("when executed after: [" + td.dependentTest + "]");
-										dataAsList.add("The revealed different behavior: " + RESULT.PASS);
-										dataAsList.add("when executed after: []");
-									} else {
-										dataAsList.add("Test: " + td.dependentTest);
-										dataAsList.add("Intended behavior: " + RESULT.FAILURE);
-										dataAsList.add("when executed after: " + beforeString);
-										dataAsList.add("The revealed different behavior: " + RESULT.PASS);
-										dataAsList.add("when executed after: []");
-									}
-								}
-							}
-							System.out.println(dataAsList);
-							// for now adding runDTFOutput as a List of strings
-							synchronized (allDTSynchList) {
-								allDTSynchList.addAll(dataAsList);
-							}
-						}	
-						
-						knownDependencies.forEach((testName, dependencies) -> 
+						knownDependencies.forEach((testName, dependencies) ->
 							knownDepMap.merge(testName, dependencies, (dep1, dep2) -> {
 								dep2.addAll(dep1);
 								return dep2;
 							}));
-						
+
+                        System.out.println(generateDTList(knownDependencies));
+
 						System.out.printf("\nthread is done!\n");
 					} catch (Exception e) {
 						System.out.println("\nEncountered an error: " + e + "\n");
@@ -167,12 +248,8 @@ public class ParaThreads {
 		threadList.clear(); // clear list since threads cannot be restarted once
 							// stopped
 		// need deep copy of allDTSynchList since rejoining to main thread
-		List<String> allDTSynchListReturn = new ArrayList<String>();
-		for (String s : allDTSynchList) {
-			allDTSynchListReturn.add(s);
-		}
+		List<String> allDTSynchListReturn = generateDTList(knownDepMap);
 		classpaths.clear();
-		allDTSynchList.clear();
 		return allDTSynchListReturn;
 	}
 }
