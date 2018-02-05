@@ -25,6 +25,8 @@ import edu.washington.cs.dt.impact.util.Constants.TECHNIQUE;
 import edu.washington.cs.dt.impact.tools.ParallelDependentTestFinder;
 import edu.washington.cs.dt.impact.data.TestData;
 
+import javax.print.DocFlavor;
+
 /*
  * TODO 
  * 
@@ -54,7 +56,8 @@ public class ParaThreads {
 	static List<String> origOrderTestListHen;
 	static List<String> filesToDeleteHen;
 	static List<String> allDTListHen;
-	ArrayList<Thread> threadList = new ArrayList<Thread>(); // arraylist of
+    private static Map<String, RESULT> nameToNewResults;
+    ArrayList<Thread> threadList = new ArrayList<Thread>(); // arraylist of
 															// threads
 	int threads; // number of threads to use
 	// q (below) is a shared queue between threads, each thread pops a test off
@@ -71,95 +74,16 @@ public class ParaThreads {
 	}
 
 	public void setParaVars(Set<String> changedTests, Map<String, RESULT> nameToOrigResultsHen,
-			List<String> currentOrderTestListHen, List<String> origOrderTestListHen, List<String> filesToDeleteHen,
-			List<String> allDTListHen) {
+                            Map<String, RESULT> nameToNewResults, List<String> currentOrderTestListHen, List<String> origOrderTestListHen, List<String> filesToDeleteHen,
+                            List<String> allDTListHen) {
 		ParaThreads.changedTests = changedTests;
 		ParaThreads.nameToOrigResultsListHen = nameToOrigResultsHen;
+		ParaThreads.nameToNewResults = nameToNewResults;
 		ParaThreads.currentOrderTestListHen = currentOrderTestListHen;
 		ParaThreads.origOrderTestListHen = origOrderTestListHen;
 		ParaThreads.filesToDeleteHen = filesToDeleteHen;
 		ParaThreads.allDTListHen = allDTListHen;
 	}
-
-    /**
-     * Make sure that the test order is completely deterministic.
-     * We can do this by finding all tests A, B that depend on the same test C.
-     * If tests A and B do not depend on each other, then we should insert a new "dependency"
-     * so that A and B come in the same order they did in the original order.
-     * @param input The dependency map.
-     * @return A new map of dependencies. Does not modify the original map.
-     */
-	private Map<String, Set<TestData>> createDeterministicDependencies(final Map<String, Set<TestData>> input) {
-        Map<String, Set<TestData>> knownDependencies = new HashMap<>(input);
-
-        for (Map.Entry<String, Set<TestData>> entry : knownDependencies.entrySet()) {
-            final String testName = entry.getKey();
-
-            // The list of tests that need this test (testName) to come before them.
-            final List<String> beforeDependentTests =
-                    knownDependencies.entrySet().stream()
-                            .filter(e -> e.getValue().stream()
-                                    .anyMatch(t -> t.hasBeforeDependency(testName)))
-                            .map(Map.Entry::getKey)
-                            .collect(Collectors.toList());
-
-            makeDependenciesDeterministic(knownDependencies, beforeDependentTests);
-
-            // The list of tests that need this test (testName) to come after them.
-            final List<String> afterDependentTests =
-                    knownDependencies.entrySet().stream()
-                            .filter(e -> e.getValue().stream()
-                                    .anyMatch(t -> t.hasAfterDependency(testName)))
-                            .map(Map.Entry::getKey)
-                            .collect(Collectors.toList());
-
-            makeDependenciesDeterministic(knownDependencies, afterDependentTests);
-        }
-
-        return knownDependencies;
-    }
-
-    private void makeDependenciesDeterministic(final Map<String, Set<TestData>> knownDependencies,
-                                               final List<String> tests) {
-        for (final String test : tests) {
-            final Set<TestData> testData = knownDependencies.get(test);
-
-            for (final String otherTest : tests) {
-                if (!test.equals(otherTest)) {
-                    final Set<TestData> otherTestData = knownDependencies.get(otherTest);
-
-                    // If neither test nor otherTest has each other as a dependency.
-                    if (!TestData.contains(testData, otherTest) && !TestData.contains(otherTestData, test)) {
-                        final int index = origOrderTestListHen.indexOf(test);
-                        final int otherIndex = origOrderTestListHen.indexOf(otherTest);
-
-                        if (index != -1 && otherIndex != -1) {
-                            // This test comes before the other in the original order, so add a
-                            // new dependency to make sure that happens when the test list is
-                            // generated.
-                            if (index < otherIndex) {
-                                otherTestData.add(new TestData(otherTest,
-                                        RESULT.PASS,
-                                        Collections.singleton(test),
-                                        new HashSet<>(),
-                                        RESULT.FAILURE,
-                                        new ArrayList<>()));
-                                knownDependencies.put(otherTest, otherTestData);
-                            } else {
-                                testData.add(new TestData(test,
-                                        RESULT.PASS,
-                                        Collections.singleton(otherTest),
-                                        new HashSet<>(),
-                                        RESULT.FAILURE,
-                                        new ArrayList<>()));
-                                knownDependencies.put(test, testData);
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
 
 	private List<String> generateDTList(final Map<String, Set<TestData>> knownDependencies) {
 	    final List<String> result = new ArrayList<>();
@@ -167,8 +91,8 @@ public class ParaThreads {
         for (Map.Entry<String, Set<TestData>> entry : knownDependencies.entrySet()) {
             Set<TestData> testdataset = entry.getValue();
             for (TestData td : testdataset) {
-                String beforeString = td.beforeTests.toString();
-                String afterString = td.afterTests.toString();
+                String beforeString = "" + td.beforeTests.toString() + "";
+                String afterString = "" + td.afterTests.toString() + "";
 
                 if (beforeString.equals("[]")) {
                     result.add("Test: " + afterString.replace("[", "").replace("]", ""));
@@ -212,8 +136,10 @@ public class ParaThreads {
 							String test = q.poll();
 
 							if (dtFinder == null) {
-								dtFinder = new ParallelDependentTestFinder(test, origOrderTestListHen,
-										currentOrderTestListHen, filesToDeleteHen, knownDepMap);
+								dtFinder = new ParallelDependentTestFinder(test,
+                                        origOrderTestListHen, nameToOrigResultsListHen,
+										currentOrderTestListHen, nameToNewResults,
+                                        filesToDeleteHen, knownDepMap);
 								knownDependencies = dtFinder.runDTF();
 							} else {
 								dtFinder = dtFinder.createFinderFor(test);
@@ -248,7 +174,7 @@ public class ParaThreads {
 		threadList.clear(); // clear list since threads cannot be restarted once
 							// stopped
 		// need deep copy of allDTSynchList since rejoining to main thread
-		List<String> allDTSynchListReturn = generateDTList(createDeterministicDependencies(knownDepMap));
+		List<String> allDTSynchListReturn = generateDTList(knownDepMap);
 		classpaths.clear();
 		return allDTSynchListReturn;
 	}

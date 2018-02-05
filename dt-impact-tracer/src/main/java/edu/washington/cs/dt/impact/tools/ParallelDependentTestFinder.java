@@ -102,21 +102,6 @@ public class ParallelDependentTestFinder {
 	private final Map<String, Set<TestData>> knownDependencies;
 
 	public ParallelDependentTestFinder(final String dependentTestName, final List<String> originalOrder,
-			final List<String> newOrder, final List<String> filesToDelete) {
-		this.dependentTestName = dependentTestName;
-
-		this.originalOrder = new TestOrder(originalOrder);
-		this.newOrder = new TestOrder(newOrder);
-
-		primeOrder = new TestOrder(generatePrimeOrder(this.originalOrder, this.newOrder));
-
-		this.filesToDelete = filesToDelete;
-		knownDependencies = new HashMap<>();
-
-		dependentTestResult = this.originalOrder.getResult(dependentTestName);
-	}
-
-	public ParallelDependentTestFinder(final String dependentTestName, final List<String> originalOrder,
 			final List<String> newOrder, final List<String> filesToDelete,
 			final Map<String, Set<TestData>> knownDependencies) {
 		this.dependentTestName = dependentTestName;
@@ -128,22 +113,6 @@ public class ParallelDependentTestFinder {
 
 		this.filesToDelete = filesToDelete;
 		this.knownDependencies = knownDependencies;
-
-		dependentTestResult = this.originalOrder.getResult(dependentTestName);
-	}
-
-	public ParallelDependentTestFinder(final String dependentTestName, final List<String> originalOrder,
-			final Map<String, RESULT> originalResults, final List<String> newOrder,
-			final Map<String, RESULT> newResults, final List<String> filesToDelete) {
-		this.dependentTestName = dependentTestName;
-
-		this.originalOrder = new TestOrder(originalOrder, originalResults);
-		this.newOrder = new TestOrder(newOrder, newResults);
-
-		primeOrder = new TestOrder(generatePrimeOrder(this.originalOrder, this.newOrder));
-
-		this.filesToDelete = filesToDelete;
-		knownDependencies = new HashMap<>();
 
 		dependentTestResult = this.originalOrder.getResult(dependentTestName);
 	}

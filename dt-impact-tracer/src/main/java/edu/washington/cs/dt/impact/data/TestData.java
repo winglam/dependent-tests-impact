@@ -6,8 +6,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class TestData {
@@ -95,6 +97,37 @@ public class TestData {
                 "and executed before: " + afterTests + "\n" +
                 "The revealed behavior: " + revealed + "\n" +
                 "in the order: " + revealingOrder;
+    }
+
+    /**
+     * Finds all dependent tests that have the given test as a before dependency.
+     *
+     * Ex. A depends on B to come before, C depends on B to come before.
+     * getBeforeDependentTests(map, "B") == ["A", "C"]
+     */
+    public static List<String> getBeforeDependentTests(final Map<String, Set<TestData>> knownDependencies,
+                                                       final String testName) {
+        return knownDependencies.entrySet().stream()
+                .filter(e -> e.getValue().stream()
+                                .anyMatch(t -> t.hasBeforeDependency(testName)))
+                .map(Map.Entry::getKey)
+                .collect(Collectors.toList());
+    }
+
+    /**
+     * Finds all dependent tests that have the given test as an after dependency.
+     *
+     * Ex. A depends on B to come after, C depends on B to come after.
+     * getAfterDependentTests(map, "B") == ["A", "C"]
+     */
+    public static List<String> getAfterDependentTests(final Map<String, Set<TestData>> knownDependencies,
+                                                      final String testName) {
+
+        return knownDependencies.entrySet().stream()
+                .filter(e -> e.getValue().stream()
+                        .anyMatch(t -> t.hasAfterDependency(testName)))
+                .map(Map.Entry::getKey)
+                .collect(Collectors.toList());
     }
 
     public static boolean contains(final Set<TestData> testData, final String test) {

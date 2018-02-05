@@ -113,7 +113,7 @@ public class OneConfigurationRunner extends Runner {
                     //threads is default set to 0, but if specified, use ParaThreads class
                     if(threads >= 1)
                     {
-                    	paraObj.setParaVars(changedTests, nameToOrigResults, currentOrderTestList, origOrderTestList, filesToDelete, allDTList);
+                    	paraObj.setParaVars(changedTests, nameToOrigResults, nameToTestResults, currentOrderTestList, origOrderTestList, filesToDelete, allDTList);
                         allDTList = paraObj.runThreads();
                     }
                     //if not specified, use default DependentTestFinder 
