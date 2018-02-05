@@ -16,13 +16,13 @@ import edu.washington.cs.dt.runners.FixedOrderRunner;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.UUID;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -75,7 +75,7 @@ public class ParallelDependentTestFinder {
 		public TestOrder(final List<String> testOrder) {
 			this.testOrder = testOrder;
 
-			results = runTestOrder(testOrder).getNameToResultsMap();
+			results = runTestOrder(testOrder, id).getNameToResultsMap();
 		}
 
 		public RESULT getResult(final String testName) {
@@ -87,9 +87,12 @@ public class ParallelDependentTestFinder {
 		}
 	}
 
-	private static TestExecResult runTestOrder(final List<String> order) {
-		return new FixedOrderRunner(order).run().getExecutionRecords().get(0);
+	private static TestExecResult runTestOrder(final List<String> order,
+                                               final String id) {
+		return new FixedOrderRunner(order, id).run().getExecutionRecords().get(0);
 	}
+
+	private final String id = UUID.randomUUID().toString();
 
 	private final String dependentTestName;
 	private final RESULT dependentTestResult;
@@ -207,7 +210,7 @@ public class ParallelDependentTestFinder {
 
         knownDependencies.forEach((key, dependencies) -> dependencies.forEach(dependency -> dependency.fixOrder(newOrder)));
 
-        return runTestOrder(newOrder);
+        return runTestOrder(newOrder, id);
     }
 
 	/**
@@ -310,7 +313,7 @@ public class ParallelDependentTestFinder {
 						newOrder.getResult(dependentTestName), newOrder.testOrder);
 			} else {
 				// Run the test in isolation
-				final Map<String, RESULT> results = runTestOrder(Collections.singletonList(dependentTestName))
+				final Map<String, RESULT> results = runTestOrder(Collections.singletonList(dependentTestName), id)
 						.getNameToResultsMap();
 
 				// If the result is the same with no tests before it, then we
