@@ -91,8 +91,8 @@ public class ParaThreads {
         for (Map.Entry<String, Set<TestData>> entry : knownDependencies.entrySet()) {
             Set<TestData> testdataset = entry.getValue();
             for (TestData td : testdataset) {
-                String beforeString = "" + td.beforeTests.toString() + "";
-                String afterString = "" + td.afterTests.toString() + "";
+                String beforeString = td.beforeTests.toString();
+                String afterString = td.afterTests.toString();
 
                 if (beforeString.equals("[]")) {
                     result.add("Test: " + afterString.replace("[", "").replace("]", ""));
