@@ -2,6 +2,7 @@
 
 # Root directory for our tools and results
 export DT_ROOT=/home/user/dependent-tests-impact/experiments
+export DT_TOOLS_DIR=$DT_ROOT/impact-tools/
 
 # Directory for all the jar files containing the DT-impact tools and its dependencies
 export DT_TOOLS=$DT_ROOT/impact-tools/*
@@ -41,4 +42,4 @@ export PARA_DT_LISTS=$DT_DATA/parallelization-dt-list
 
 # Files containing the minimum number of dependent tests a subject has
 export AUTO_MIN_DTS=$DT_DATA/AUTO_MIN_DTs.txt
-export ORIG_MIN_DTS=$DT_DATA/ORIG_MIN_DTs.txt 
+export ORIG_MIN_DTS=$DT_DATA/ORIG_MIN_DTs.txt

@@ -6,6 +6,9 @@ set -e
 source ./setup-vars.sh
 
 bash ./compile-subj.sh
+if [[ $? -ne 0 ]]; then
+    exit 1
+fi
 
 # Runs commands for "Instructions to setup a subject for test prioritization" section.
 bash ./setup-prio.sh
