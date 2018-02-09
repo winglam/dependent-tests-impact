@@ -1,7 +1,7 @@
 # To use this file, run 'source setup-vars.sh'
 
 # Root directory for our tools and results
-export DT_ROOT=/home/roei/Java/dependent-tests-impact/experiments
+export DT_ROOT=/home/user/dependent-tests-impact/experiments
 export DT_TOOLS_DIR=$DT_ROOT/impact-tools/
 
 # Directory for all the jar files containing the DT-impact tools and its dependencies
