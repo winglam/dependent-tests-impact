@@ -14,6 +14,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
@@ -126,6 +127,16 @@ public class Test {
         }
     }
 
+    private void updateExecMap(final Map<String, List<String>> exec,
+                               final String testName,
+                               final String testsStr) {
+        final List<String> tests = exec.getOrDefault(testName, new ArrayList<>());
+        tests.addAll(Arrays.asList(testsStr.split(Constants.TEST_SEP)));
+        // Make sure the before dependencies are in the order that they were originally.
+        tests.sort(Comparator.comparingInt(origOrderList::indexOf));
+        exec.put(testName, tests);
+    }
+
     private void parseDependentTestsList(List<String> allDTList, Map<String, List<String>> execBefore,
             Map<String, List<String>> execAfter) {
         for (int j = 0; j < allDTList.size();) {
@@ -142,7 +153,7 @@ public class Test {
             String afterTestsStr = line.split(Constants.EXECUTE_AFTER)[1];
             if (afterTestsStr.length() > 2) {
                 afterTestsStr = afterTestsStr.substring(1, afterTestsStr.length() - 1);
-                execAfter.put(testName, Arrays.asList(afterTestsStr.split(Constants.TEST_SEP)));
+                updateExecMap(execAfter, testName, afterTestsStr);
             }
             // revealed behavior line
             j += 2;
@@ -152,7 +163,7 @@ public class Test {
             String beforeTestsStr = line.split(Constants.EXECUTE_AFTER)[1];
             if (beforeTestsStr.length() > 2) {
                 beforeTestsStr = beforeTestsStr.substring(1, beforeTestsStr.length() - 1);
-                execBefore.put(testName, Arrays.asList(beforeTestsStr.split(Constants.TEST_SEP)));
+                updateExecMap(execBefore, testName, beforeTestsStr);
             }
             j += 1;
         }
