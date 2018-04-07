@@ -194,8 +194,6 @@ public class ParallelDependentTestFinder {
         List<String> newOrder = new ArrayList<>(order);
         newOrder.add(dependentTestName);
 
-        newOrder = TestOrderGenerator.generateTestOrder(newOrder, knownDependencies);
-
         return runTestOrder(newOrder);
     }
 

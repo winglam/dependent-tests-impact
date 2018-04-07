@@ -351,7 +351,7 @@ public class FailedTestRemover {
      * @param paths classpath elements
      * @return returns the complete classpath with wildcards expanded
      */
-    private static String buildClassPath(String... paths) {
+    public static String buildClassPath(String... paths) {
         StringBuilder sb = new StringBuilder();
         for (String path : paths) {
             if (path.endsWith("*")) {

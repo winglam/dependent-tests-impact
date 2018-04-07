@@ -12,8 +12,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import edu.washington.cs.dt.impact.tools.FailedTestRemover;
 import soot.Pack;
 import soot.PackManager;
+import soot.Scene;
 import soot.Transform;
 import edu.washington.cs.dt.impact.util.Constants;
 import edu.washington.cs.dt.impact.util.Constants.TECHNIQUE;
@@ -85,13 +87,25 @@ public class InstrumentationMain {
             argsList.remove(techniqueIndex);
         }
 
+        int sootClasspathIndex = argsList.indexOf("--soot-cp");
+        String sootClasspath = System.getProperty("java.class.path");
+        if (sootClasspathIndex != -1) {
+            sootClasspath = FailedTestRemover.buildClassPath(argsList.get(sootClasspathIndex + 1).split(":"));
+            argsList.remove(sootClasspathIndex + 1);
+            argsList.remove(sootClasspathIndex);
+        }
+
         /* add a phase to transformer pack by call Pack.add */
         Pack jtp = PackManager.v().getPack("jtp");
         jtp.add(new Transform("jtp.instrumenter",
                 new Instrumenter(techniqueName)));
 
+        Scene.v().setSootClassPath(sootClasspath);
+
         argsList.add("-keep-line-number");
         argsList.add("-pp");
+        argsList.add("-asm-backend");
+        argsList.add("-allow-phantom-refs");
         String[] sootArgs = argsList.toArray(new String[argsList.size()]);
 
         /*
