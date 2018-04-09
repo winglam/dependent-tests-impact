@@ -222,7 +222,7 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
                 // Case A
                 // Enhanced - unenhanced
                 val = values[i + 1] - values[i];
-            } else if (project.get_fig_NumOfDTs(true, i, 17) && project.get_fig_NumOfDTs(false, i, 18)) {
+            } else if (project.get_fig_NumOfDTs(true, i, 18) && project.get_fig_NumOfDTs(false, i, 18)) {
                 // } else if (project.getName().equals(Constants.CRYSTAL_NAME) && type.equals("auto") && i != 0 && i !=
                 // 6) {
                 // Case B
