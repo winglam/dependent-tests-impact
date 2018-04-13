@@ -29,9 +29,7 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
      * format: Crystal & 0.026 & 0.001 & 0.000 & 0.000 \\
      */
     private static String generate17(ProjectEnhancedResults project, List<GeometricMeanData> fig17Data) {
-        double[] values = project.get_fig17_values();
-        boolean[] unenNumOfDTs = project.get_fig17_NumOfDTs_unen();
-        boolean[] enNumOfDTs = project.get_fig17_NumOfDTs_en();
+        double[] values = project.get_fig_values(17);
         String result = project.getName();
         List<Double> origTime = Arrays.asList(project.getOrig_time());
         List<Double> origCoverage = Arrays.asList(project.getOrig_coverage());
@@ -40,21 +38,23 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
         for (int i = 0; i + 1 < values.length; i += 2) {
             double val;
 
-            if (!unenNumOfDTs[i]) {
+            if (!project.get_fig_NumOfDTs(true, i, 17)) {
                 // Case A
                 // Enhanced - unenhanced
                 val = values[i + 1] - values[i];
-            } else if (unenNumOfDTs[i] && enNumOfDTs[i]) {
+            } else if (project.get_fig_NumOfDTs(true, i, 17) && project.get_fig_NumOfDTs(false, i, 17)) {
                 // } else if (project.getName().equals(Constants.CRYSTAL_NAME) && type.equals("auto") && i != 0 && i !=
                 // 6) {
                 // Case B
                 // Shift_by_enhanced’s_time(orig) - shift_by_unsound’s_time(orig)
-                val = shift_by_time(project.getFig17_time_en()[i], origTime, origCoverage)
-                        - shift_by_time(project.getFig17_time_unen()[i], origTime, origCoverage);
+                val = shift_by_time(project.get_fig_Time(false, i, 17), origTime, origCoverage)
+                        - shift_by_time(project.get_fig_Time(true, i, 17), origTime,
+                                        origCoverage);
             } else {
                 // Case C
                 // Enhanced - shift_by_unsound’s_time(orig)
-                val = values[i + 1] - shift_by_time(project.getFig17_time_unen()[i], origTime, origCoverage);
+                val = values[i + 1] - shift_by_time(project.get_fig_Time(true, i, 17),
+                                                    origTime, origCoverage);
             }
             if (!allowNegatives && val < 0.0) {
                 val = 0.0;
@@ -126,9 +126,7 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
             List<GeometricMeanData> fig18apfd, List<GeometricMeanData> fig18percent,
             PercentWrapper percentComparedToUnenhanced, String type) {
         double[] time = project.get_fig18_time();
-        double[] values = project.get_fig18_values();
-        boolean[] unenNumOfDTs = project.get_fig18_NumOfDTs_unen();
-        boolean[] enNumOfDTs = project.get_fig18_NumOfDTs_en();
+        double[] values = project.get_fig_values(18);
         String result = project.getName() + "       ";
         List<Double> origTime = Arrays.asList(project.getOrig_time());
         List<Double> origCoverage = Arrays.asList(project.getOrig_coverage());
@@ -154,25 +152,25 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
             // }
 
             double percent;
-            if (!unenNumOfDTs[i]) {
+            if (!project.get_fig_NumOfDTs(true, i, 18)) {
                 // Case A
                 // 1 - Enh / (uns)
                 percent = 1 - (time[i + 1] / time[i]);
-            } else if (unenNumOfDTs[i] && enNumOfDTs[i]) {
+            } else if (project.get_fig_NumOfDTs(true, i, 18) && project.get_fig_NumOfDTs(false, i, 18)) {
                 // } else if (project.getName().equals(Constants.CRYSTAL_NAME) && type.equals("auto") && i != 0 && i !=
                 // 6) {
                 // Case B
                 // 1 - (Enh + orig) / (uns + orig)
                 double enOrigTimeVal = listToTime(new ArrayList<Double>(origTime.subList(0,
-                        getHighestIndexInOrigTestList(project.getFig18_en_test_list()[i], origTestList))));
+                        getHighestIndexInOrigTestList(project.get_fig_TestList(false, i, 18), origTestList))));
                 double unenOrigTimeVal = listToTime(new ArrayList<Double>(origTime.subList(0,
-                        getHighestIndexInOrigTestList(project.getFig18_unen_test_list()[i], origTestList))));
+                        getHighestIndexInOrigTestList(project.get_fig_TestList(true, i, 18), origTestList))));
                 percent = 1 - ((time[i + 1] + enOrigTimeVal) / (time[i] + unenOrigTimeVal));
             } else {
                 // Case C
                 // 1 - Enh / (uns + orig)
                 double unenOrigTimeVal = listToTime(new ArrayList<Double>(origTime.subList(0,
-                        getHighestIndexInOrigTestList(project.getFig18_unen_test_list()[i], origTestList))));
+                        getHighestIndexInOrigTestList(project.get_fig_TestList(true, i, 18), origTestList))));
                 percent = 1 - (time[i + 1] / (time[i] + unenOrigTimeVal));
             }
             if (i == 0) {
@@ -220,29 +218,32 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
         for (int i = 0; i + 1 < values.length; i += 2) {
             double val;
 
-            if (!unenNumOfDTs[i]) {
+            if (!project.get_fig_NumOfDTs(true, i, 18)) {
                 // Case A
                 // Enhanced - unenhanced
                 val = values[i + 1] - values[i];
-            } else if (unenNumOfDTs[i] && enNumOfDTs[i]) {
+            } else if (project.get_fig_NumOfDTs(true, i, 18) && project.get_fig_NumOfDTs(false, i, 18)) {
                 // } else if (project.getName().equals(Constants.CRYSTAL_NAME) && type.equals("auto") && i != 0 && i !=
                 // 6) {
                 // Case B
                 // Shift_by_enhanced’s_time(orig) - shift_by_unsound’s_time(orig)
-                int unenIndex = getHighestIndexInOrigTestList(project.getFig18_unen_test_list()[i], origTestList);
-                int enIndex = getHighestIndexInOrigTestList(project.getFig18_en_test_list()[i], origTestList);
+                int unenIndex = getHighestIndexInOrigTestList(project.get_fig_TestList(true, i, 18),
+                                                              origTestList);
+                int enIndex = getHighestIndexInOrigTestList(project.get_fig_TestList(false, i, 18),
+                                                            origTestList);
 
-                val = shift_by_time(project.getFig18_time_en()[i], new ArrayList<Double>(origTime.subList(0, enIndex)),
+                val = shift_by_time(project.get_fig_Time(false, i, 18),
+                                    new ArrayList<Double>(origTime.subList(0,enIndex)),
                         new ArrayList<Double>(origCoverage.subList(0, enIndex)))
-                        - shift_by_time(project.getFig18_time_unen()[i],
+                        - shift_by_time(project.get_fig_Time(true, i, 18),
                                 new ArrayList<Double>(origTime.subList(0, unenIndex)),
                                 new ArrayList<Double>(origCoverage.subList(0, unenIndex)));
             } else {
                 // Case C
                 // Enhanced - shift_by_unsound’s_time(orig)
-                int index = getHighestIndexInOrigTestList(project.getFig18_unen_test_list()[i], origTestList);
+                int index = getHighestIndexInOrigTestList(project.get_fig_TestList(true, i, 18), origTestList);
 
-                val = values[i + 1] - shift_by_time(project.getFig18_time_unen()[i],
+                val = values[i + 1] - shift_by_time(project.get_fig_Time(true, i, 18),
                         new ArrayList<Double>(origTime.subList(0, index)),
                         new ArrayList<Double>(origCoverage.subList(0, index)));
             }
@@ -301,29 +302,29 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
         double enhancedParaSpeedup = 0;
         double unenhancedPara = 0;
         double diffBetweenEnhancedUnenhanced = 0;
-        boolean[] unenNumOfDTs = project.get_fig19_NumOfDTs_orig_unen();
-        boolean[] enNumOfDTs = project.get_fig19_NumOfDTs_orig_en();
         List<Double> origTime = Arrays.asList(project.getOrig_time());
         List<String> origTestList = Arrays.asList(project.getOrig_tests());
 
+        // ORIGINAL ORDER
         // i represents unenhanced, i + 1 represents enhanced
         for (int i = 0; i + 2 <= orig_values.length; i += 2) {
             // enhanced
             enhancedParaSpeedup = orig_values[i + 1];
             unenhancedPara = orig_values[i];
-            if (!unenNumOfDTs[i]) {
+            if (!project.get_fig19_NumOfDTs_orig_unen(i)) {
                 // Case A
                 // 1 - Enh / (uns)
                 diffBetweenEnhancedUnenhanced = 1 - (enhancedParaSpeedup / unenhancedPara);
-            } else if (unenNumOfDTs[i] && enNumOfDTs[i]) {
+            } else if (project.get_fig19_NumOfDTs_orig_unen(i) && project.get_fig19_NumOfDTs_orig_en(i)) {
                 // } else if (project.getName().equals(Constants.CRYSTAL_NAME) && type.equals("auto") && i != 0 && i !=
                 // 6) {
                 // Case B
                 // 1 - (Enh + orig) / (uns + orig)
                 double enOrigTimeVal = listToTime(new ArrayList<Double>(origTime.subList(0,
-                        getHighestIndexInOrigTestList(project.getFig19_en_test_list()[i], origTestList))));
+                        getHighestIndexInOrigTestList(project.get_fig_TestList(false, i, 19, true),
+                                                                               origTestList))));
                 double unenOrigTimeVal = listToTime(new ArrayList<Double>(origTime.subList(0,
-                        getHighestIndexInOrigTestList(project.getFig19_unen_test_list()[i], origTestList))));
+                        getHighestIndexInOrigTestList(project.get_fig_TestList(true, i, 19, true), origTestList))));
                 diffBetweenEnhancedUnenhanced =
                         1 - ((enhancedParaSpeedup + enOrigTimeVal) / (unenhancedPara + unenOrigTimeVal));
             } else {
@@ -331,7 +332,8 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
                 // Case C
                 // 1 - Enh / (uns + orig)
                 double unenOrigTimeVal = listToTime(new ArrayList<Double>(origTime.subList(0,
-                        getHighestIndexInOrigTestList(project.getFig19_unen_test_list()[i], origTestList))));
+                        getHighestIndexInOrigTestList(project.get_fig_TestList(true, i, 19, true),
+                                                      origTestList))));
                 diffBetweenEnhancedUnenhanced = 1 - (enhancedParaSpeedup / (unenhancedPara + unenOrigTimeVal));
             }
 
@@ -366,26 +368,26 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
                     Constants.ORDER.ORIGINAL, null));
             fig19GeoData.add(new GeometricMeanData(i, diffBetweenEnhancedUnenhanced, null, Constants.ORDER.ORIGINAL, null));
         }
-        unenNumOfDTs = project.get_fig19_NumOfDTs_time_unen();
-        enNumOfDTs = project.get_fig19_NumOfDTs_time_en();
 
+        // TIME ORDER
         // i represents unenhanced, i + 1 represents enhanced
         for (int i = 0; i + 2 <= time_values.length; i += 2) {
             enhancedParaSpeedup = time_values[i + 1];
             unenhancedPara = time_values[i];
-            if (!unenNumOfDTs[i]) {
+            if (!project.get_fig19_NumOfDTs_time_unen(i)) {
                 // Case A
                 // 1 - Enh / (uns)
                 diffBetweenEnhancedUnenhanced = 1 - (enhancedParaSpeedup / unenhancedPara);
-            } else if (unenNumOfDTs[i] && enNumOfDTs[i]) {
+            } else if (project.get_fig19_NumOfDTs_time_unen(i) && project.get_fig19_NumOfDTs_time_en(i)) {
                 // } else if (project.getName().equals(Constants.CRYSTAL_NAME) && type.equals("auto") && i != 0 && i !=
                 // 6) {
                 // Case B
                 // 1 - (Enh + orig) / (uns + orig)
                 double enOrigTimeVal = listToTime(new ArrayList<Double>(origTime.subList(0,
-                        getHighestIndexInOrigTestList(project.getFig19_en_test_list()[i], origTestList))));
+                        getHighestIndexInOrigTestList(project.get_fig_TestList(false, i, 19, false), origTestList))));
                 double unenOrigTimeVal = listToTime(new ArrayList<Double>(origTime.subList(0,
-                        getHighestIndexInOrigTestList(project.getFig19_unen_test_list()[i], origTestList))));
+                        getHighestIndexInOrigTestList(project.get_fig_TestList(true, i, 19, false),
+                                                                               origTestList))));
                 diffBetweenEnhancedUnenhanced =
                         1 - ((enhancedParaSpeedup + enOrigTimeVal) / (unenhancedPara + unenOrigTimeVal));
             } else {
@@ -393,7 +395,8 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
                 // Case C
                 // 1 - Enh / (uns + orig)
                 double unenOrigTimeVal = listToTime(new ArrayList<Double>(origTime.subList(0,
-                        getHighestIndexInOrigTestList(project.getFig19_unen_test_list()[i], origTestList))));
+                        getHighestIndexInOrigTestList(project.get_fig_TestList(true, i, 19, false),
+                                                                               origTestList))));
                 diffBetweenEnhancedUnenhanced = 1 - (enhancedParaSpeedup / (unenhancedPara + unenOrigTimeVal));
             }
 
@@ -782,8 +785,8 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
 
         // order will be time or original
         // k = 2, 4, 8, 16 is the number of machines
-        int index = flagsList.indexOf("-numOfMachines");
-        String numMachines_string = flagsList.get(index + 1);
+        int k = flagsList.indexOf("-numOfMachines");
+        String numMachines_string = flagsList.get(k + 1);
         int numMachines = Integer.parseInt(numMachines_string);
 
         currProj.useFig19();
@@ -801,56 +804,30 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
                 getNextLine(file, Constants.ORDER_TIME + " " + order_time, Constants.TEST_ORDER_LIST);
         testStr = testStr.substring(1, testStr.length() - 1);
         String[] test_list = testStr.split(", ");
-        if (resolveDependences == null) { // non-enhanced
-            if (numMachines == 2) {
-                curr_fig19_array[0] = order_time;
-                currProj.setNumTotalDependentTestsPara(orderName.equals("original"), 0, numTotal, false);
-                setTime(currProj, 19, timeInFile, 0, false);
-                currProj.setTestList(19, 0, test_list, false);
-            } else if (numMachines == 4) {
-                curr_fig19_array[2] = order_time;
-                currProj.setNumTotalDependentTestsPara(orderName.equals("original"), 2, numTotal, false);
-                setTime(currProj, 19, timeInFile, 2, false);
-                currProj.setTestList(19, 2, test_list, false);
-            } else if (numMachines == 8) {
-                curr_fig19_array[4] = order_time;
-                currProj.setNumTotalDependentTestsPara(orderName.equals("original"), 4, numTotal, false);
-                setTime(currProj, 19, timeInFile, 4, false);
-                currProj.setTestList(19, 4, test_list, false);
-            } else if (numMachines == 16) {
-                curr_fig19_array[6] = order_time;
-                currProj.setNumTotalDependentTestsPara(orderName.equals("original"), 6, numTotal, false);
-                setTime(currProj, 19, timeInFile, 6, false);
-                currProj.setTestList(19, 6, test_list, false);
-            } else {
-                exitWithError("Unexpected numMachines: " + numMachines);
-            }
-        } else { // enhanced
-            if (numMachines == 2) {
-                curr_fig19_array[1] = order_time;
-                currProj.setNumTotalDependentTestsPara(orderName.equals("original"), 0, numTotal, true);
-                setTime(currProj, 19, timeInFile, 0, true);
-                currProj.setTestList(19, 0, test_list, true);
-            } else if (numMachines == 4) {
-                curr_fig19_array[3] = order_time;
-                currProj.setNumTotalDependentTestsPara(orderName.equals("original"), 2, numTotal, true);
-                setTime(currProj, 19, timeInFile, 2, true);
-                currProj.setTestList(19, 2, test_list, true);
-            } else if (numMachines == 8) {
-                curr_fig19_array[5] = order_time;
-                currProj.setNumTotalDependentTestsPara(orderName.equals("original"), 4, numTotal, true);
-                setTime(currProj, 19, timeInFile, 4, true);
-                currProj.setTestList(19, 4, test_list, true);
-            } else if (numMachines == 16) {
-                curr_fig19_array[7] = order_time;
-                currProj.setNumTotalDependentTestsPara(orderName.equals("original"), 6, numTotal, true);
-                setTime(currProj, 19, timeInFile, 6, true);
-                currProj.setTestList(19, 6, test_list, true);
-            } else {
-                exitWithError("Unexpected numMachines: " + numMachines);
-            }
+
+        int index = -1;
+        boolean isEnhanced = resolveDependences == null;
+
+        if (numMachines == 2) {
+            index = 0;
+        } else if (numMachines == 4) {
+            index = 2;
+        } else if (numMachines == 8) {
+            index = 4;
+        } else if (numMachines == 16) {
+            index = 6;
+        } else {
+            exitWithError("Unexpected numMachines: " + numMachines);
         }
-	}
+
+        if (isEnhanced) {
+            index += 1;
+        }
+        curr_fig19_array[index] = order_time;
+        currProj.setNumTotalDependentTestsPara(orderName.equals("original"), index, numTotal);
+        setTime(currProj, timeInFile, index, orderName.equals("original"));
+        currProj.setTestListPara(orderName.equals("original"), index, test_list);
+    }
 
 	@Override
 	public void doSeleCalculations() {
@@ -861,124 +838,56 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
         String order_time_string = parseFile(file, Constants.ORDER_TIME);
         double order_time = Double.parseDouble(order_time_string);
         currProj.useFig18();
-        double[] fig18_values_array = currProj.get_fig18_values();
+        double[] fig18_values_array = currProj.get_fig_values(18);
         double[] fig18_time_array = currProj.get_fig18_time();
         String testStr =
                 getNextLine(file, Constants.ORDER_TIME + " " + order_time, Constants.TEST_ORDER_LIST);
         testStr = testStr.substring(1, testStr.length() - 1);
         String[] test_list = testStr.split(", ");
 
+        int index = -1;
+        boolean isEnhanced = resolveDependences == null;
+
         // original values, index should be i=0, i+=2
-        if (resolveDependences == null) { // unenhanced
-            if (coverageName.equals("statement")) {
-                if (orderName.equals("original")) {
-                    // S1
-                    fig18_values_array[0] = apfd_value;
-                    fig18_time_array[0] = order_time;
-                    currProj.setNumTotalDependentTests(18, 0, numTotal, false);
-                    setTime(currProj, 18, timeInFile, 0, false);
-                    currProj.setTestList(18, 0, test_list, false);
-                } else if (orderName.equals("absolute")) {
-                    // S2
-                    fig18_values_array[2] = apfd_value;
-                    fig18_time_array[2] = order_time;
-                    currProj.setNumTotalDependentTests(18, 2, numTotal, false);
-                    setTime(currProj, 18, timeInFile, 2, false);
-                    currProj.setTestList(18, 2, test_list, false);
-                } else if (orderName.equals("relative")) {
-                    // S3
-                    fig18_values_array[4] = apfd_value;
-                    fig18_time_array[4] = order_time;
-                    currProj.setNumTotalDependentTests(18, 4, numTotal, false);
-                    setTime(currProj, 18, timeInFile, 4, false);
-                    currProj.setTestList(18, 4, test_list, false);
-                } else {
-                    exitWithError("Unexpected order: " + orderName);
-                }
-            } else if (coverageName.equals("function")) {
-                if (orderName.equals("original")) {
-                    // S4
-                    fig18_values_array[6] = apfd_value;
-                    fig18_time_array[6] = order_time;
-                    currProj.setNumTotalDependentTests(18, 6, numTotal, false);
-                    setTime(currProj, 18, timeInFile, 6, false);
-                    currProj.setTestList(18, 6, test_list, false);
-                } else if (orderName.equals("absolute")) {
-                    // S5
-                    fig18_values_array[8] = apfd_value;
-                    fig18_time_array[8] = order_time;
-                    currProj.setNumTotalDependentTests(18, 8, numTotal, false);
-                    setTime(currProj, 18, timeInFile, 8, false);
-                    currProj.setTestList(18, 8, test_list, false);
-                } else if (orderName.equals("relative")) {
-                    // S6
-                    fig18_values_array[10] = apfd_value;
-                    fig18_time_array[10] = order_time;
-                    currProj.setNumTotalDependentTests(18, 10, numTotal, false);
-                    setTime(currProj, 18, timeInFile, 10, false);
-                    currProj.setTestList(18, 10, test_list, false);
-                } else {
-                    exitWithError("Unexpected order: " + orderName);
-                }
+        if (coverageName.equals("statement")) {
+            if (orderName.equals("original")) {
+                // S1
+                index = 0;
+            } else if (orderName.equals("absolute")) {
+                // S2
+                index = 2;
+            } else if (orderName.equals("relative")) {
+                // S3
+                index = 4;
             } else {
-                exitWithError("Unexpected coverageName: " + coverageName);
+                exitWithError("Unexpected order: " + orderName);
             }
-        } else { // enhanced, index should be i = 1, i+=2
-            if (coverageName.equals("statement")) {
-                if (orderName.equals("original")) {
-                    // S1
-                    fig18_values_array[1] = apfd_value;
-                    fig18_time_array[1] = order_time;
-                    currProj.setNumTotalDependentTests(18, 0, numTotal, true);
-                    setTime(currProj, 18, timeInFile, 0, true);
-                    currProj.setTestList(18, 0, test_list, true);
-                } else if (orderName.equals("absolute")) {
-                    // S2
-                    fig18_values_array[3] = apfd_value;
-                    fig18_time_array[3] = order_time;
-                    currProj.setNumTotalDependentTests(18, 2, numTotal, true);
-                    setTime(currProj, 18, timeInFile, 2, true);
-                    currProj.setTestList(18, 2, test_list, true);
-                } else if (orderName.equals("relative")) {
-                    // S3
-                    fig18_values_array[5] = apfd_value;
-                    fig18_time_array[5] = order_time;
-                    currProj.setNumTotalDependentTests(18, 4, numTotal, true);
-                    setTime(currProj, 18, timeInFile, 4, true);
-                    currProj.setTestList(18, 4, test_list, true);
-                } else {
-                    exitWithError("Unexpected order: " + orderName);
-                }
-            } else if (coverageName.equals("function")) {
-                if (orderName.equals("original")) {
-                    // S4
-                    fig18_values_array[7] = apfd_value;
-                    fig18_time_array[7] = order_time;
-                    currProj.setNumTotalDependentTests(18, 6, numTotal, true);
-                    setTime(currProj, 18, timeInFile, 6, true);
-                    currProj.setTestList(18, 6, test_list, true);
-                } else if (orderName.equals("absolute")) {
-                    // S5
-                    fig18_values_array[9] = apfd_value;
-                    fig18_time_array[9] = order_time;
-                    currProj.setNumTotalDependentTests(18, 8, numTotal, true);
-                    setTime(currProj, 18, timeInFile, 8, true);
-                    currProj.setTestList(18, 8, test_list, true);
-                } else if (orderName.equals("relative")) {
-                    // S6
-                    fig18_values_array[11] = apfd_value;
-                    fig18_time_array[11] = order_time;
-                    currProj.setNumTotalDependentTests(18, 10, numTotal, true);
-                    setTime(currProj, 18, timeInFile, 10, true);
-                    currProj.setTestList(18, 10, test_list, true);
-                } else {
-                    exitWithError("Unexpected order: " + orderName);
-                }
+        } else if (coverageName.equals("function")) {
+            if (orderName.equals("original")) {
+                // S4
+                index = 6;
+            } else if (orderName.equals("absolute")) {
+                // S5
+                index = 8;
+            } else if (orderName.equals("relative")) {
+                // S6
+                index = 10;
             } else {
-                exitWithError("Unexpected coverageName: " + coverageName);
+                exitWithError("Unexpected order: " + orderName);
             }
+        } else {
+            exitWithError("Unexpected coverageName: " + coverageName);
         }
-	}
+
+        if (isEnhanced) {
+            index += 1;
+        }
+        fig18_values_array[index] = apfd_value;
+        fig18_time_array[index] = order_time;
+        currProj.setNumTotalDependentTests(18, index, numTotal);
+        setTime(currProj, 18, timeInFile, index);
+        currProj.setTestList(18, index, test_list);
+    }
 
     @Override
     public void doPrioCalculations() {
@@ -1005,81 +914,43 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
             return;
         }
         currProj.useFig17();
-        double[] fig17_array = currProj.get_fig17_values();
+        double[] fig17_array = currProj.get_fig_values(17);
+
+        int index = -1;
+        boolean isEnhanced = resolveDependences == null;
+
         // original values, index should be i=0, i+=2
-        if (resolveDependences == null) { // orig, unenhanced
-            if (coverageName.equals("statement")) {
-                if (orderName.equals("absolute")) {
-                    // T3
-                    fig17_array[0] = apfd_value;
-                    currProj.setNumTotalDependentTests(17, 0, numTotal, false);
-                    setTime(currProj, 17, timeInFile, 0, false);
-                    currProj.setTestList(17, 0, test_list, false);
-                } else if (orderName.equals("relative")) { // relative
-                    // T4
-                    fig17_array[2] = apfd_value;
-                    currProj.setNumTotalDependentTests(17, 2, numTotal, false);
-                    setTime(currProj, 17, timeInFile, 2, false);
-                    currProj.setTestList(17, 2, test_list, false);
-                } else {
-                    exitWithError("Unexpected order: " + orderName);
-                }
-            } else if (coverageName.equals("function")) {
-                if (orderName.equals("absolute")) {
-                    // T5
-                    fig17_array[4] = apfd_value;
-                    currProj.setNumTotalDependentTests(17, 4, numTotal, false);
-                    setTime(currProj, 17, timeInFile, 4, false);
-                    currProj.setTestList(17, 4, test_list, false);
-                } else if (orderName.equals("relative")) { // relative
-                    // T7
-                    fig17_array[6] = apfd_value;
-                    currProj.setNumTotalDependentTests(17, 6, numTotal, false);
-                    setTime(currProj, 17, timeInFile, 6, false);
-                    currProj.setTestList(17, 6, test_list, false);
-                } else {
-                    exitWithError("Unexpected order: " + orderName);
-                }
+        if (coverageName.equals("statement")) {
+            if (orderName.equals("absolute")) {
+                // T3
+                index = 0;
+            } else if (orderName.equals("relative")) { // relative
+                // T4
+                index = 2;
             } else {
-                exitWithError("Unexpected coverageName: " + coverageName);
+                exitWithError("Unexpected order: " + orderName);
             }
-        } else { // enhanced, index should be i = 1, i+=2
-            if (coverageName.equals("statement")) {
-                if (orderName.equals("absolute")) {
-                    // T3
-                    fig17_array[1] = apfd_value;
-                    currProj.setNumTotalDependentTests(17, 0, numTotal, true);
-                    setTime(currProj, 17, timeInFile, 0, true);
-                    currProj.setTestList(17, 0, test_list, true);
-                } else if (orderName.equals("relative")) {
-                    // T4
-                    fig17_array[3] = apfd_value;
-                    currProj.setNumTotalDependentTests(17, 2, numTotal, true);
-                    setTime(currProj, 17, timeInFile, 2, true);
-                    currProj.setTestList(17, 2, test_list, true);
-                } else {
-                    exitWithError("Unexpected order: " + orderName);
-                }
-            } else if (coverageName.equals("function")) {
-                if (orderName.equals("absolute")) {
-                    // T5
-                    fig17_array[5] = apfd_value;
-                    currProj.setNumTotalDependentTests(17, 4, numTotal, true);
-                    setTime(currProj, 17, timeInFile, 4, true);
-                    currProj.setTestList(17, 4, test_list, true);
-                } else if (orderName.equals("relative")) {
-                    // T7
-                    fig17_array[7] = apfd_value;
-                    currProj.setNumTotalDependentTests(17, 6, numTotal, true);
-                    setTime(currProj, 17, timeInFile, 6, true);
-                    currProj.setTestList(17, 6, test_list, true);
-                } else {
-                    exitWithError("Unexpected order: " + orderName);
-                }
+        } else if (coverageName.equals("function")) {
+            if (orderName.equals("absolute")) {
+                // T5
+                index = 4;
+            } else if (orderName.equals("relative")) { // relative
+                // T7
+                index = 6;
             } else {
-                exitWithError("Unexpected coverageName: " + coverageName);
+                exitWithError("Unexpected order: " + orderName);
             }
+        } else {
+            exitWithError("Unexpected coverageName: " + coverageName);
         }
+
+        if (isEnhanced) {
+            index += 1;
+        }
+        fig17_array[index] = apfd_value;
+        currProj.setNumTotalDependentTests(17, index, numTotal);
+        setTime(currProj, 17, timeInFile, index);
+        currProj.setTestList(17, index, test_list);
     }
 
     private static class PercentWrapper {
@@ -1106,12 +977,18 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
         return doubleArr;
     }
 
-    public static void setTime(ProjectEnhancedResults currProj, int figNum, String timeInFile, int indexOfProj,
-            boolean isEnhanced) {
+    public static void setTime(ProjectEnhancedResults currProj, int figNum, String timeInFile, int indexOfProj) {
         // Get time and coverage information for this configuration
         if (timeInFile != null) {
-            currProj.setTimeInfo(figNum, indexOfProj, strArrayToDoubleArray(getRidSquareBrackets(timeInFile)),
-                    isEnhanced);
+            currProj.setTimeInfo(figNum, indexOfProj, strArrayToDoubleArray(getRidSquareBrackets(timeInFile)));
+        }
+    }
+
+    public static void setTime(ProjectEnhancedResults currProj, String timeInFile, int indexOfProj,
+                               boolean isOriginal) {
+        // Get time and coverage information for this configuration
+        if (timeInFile != null) {
+            currProj.setTimeInfoPara(isOriginal, indexOfProj, strArrayToDoubleArray(getRidSquareBrackets(timeInFile)));
         }
     }
 }

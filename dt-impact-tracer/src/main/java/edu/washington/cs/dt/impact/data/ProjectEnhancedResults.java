@@ -31,82 +31,27 @@ public class ProjectEnhancedResults extends Project {
     // corresponds to P2(Time-Minimized)
     private double[] fig19_time_order;
 
-    private boolean[] fig17_num_DTs_unen;
-    private boolean[] fig18_num_DTs_unen;
-    private boolean[] fig19_num_DTs_time_unen;
-    private boolean[] fig19_num_DTs_orig_unen;
-    private boolean[] fig17_num_DTs_en;
-    private boolean[] fig18_num_DTs_en;
-    private boolean[] fig19_num_DTs_time_en;
-    private boolean[] fig19_num_DTs_orig_en;
+    private boolean[] fig17_num_DTs;
+    private boolean[] fig18_num_DTs;
+    private boolean[] fig19_num_DTs_time;
+    private boolean[] fig19_num_DTs_orig;
+    private Double[][] fig17_time;
+    private Double[][] fig18_time;
+    private Double[][] fig19_time_time;
+    private Double[][] fig19_time_orig;
+
+    private String[][] fig17_test_list;
+    private String[][] fig18_test_list;
+    private String[][] fig19_test_list_time;
+    private String[][] fig19_test_list_orig;
 
     private boolean uses_fig17;
     private boolean uses_fig18;
     private boolean uses_fig19;
 
-    private Double[][] fig17_time_en;
-    private Double[][] fig18_time_en;
-    private Double[][] fig19_time_en;
-    private Double[][] fig17_time_unen;
-    private Double[][] fig18_time_unen;
-    private Double[][] fig19_time_unen;
     private Double[] orig_time;
     private Double[] orig_coverage;
     private String[] orig_tests;
-    private String[][] fig17_en_test_list;
-    private String[][] fig17_unen_test_list;
-    private String[][] fig18_en_test_list;
-    private String[][] fig18_unen_test_list;
-    private String[][] fig19_en_test_list;
-    private String[][] fig19_unen_test_list;
-
-    public Double[][] getFig17_time_en() {
-        return fig17_time_en;
-    }
-
-    public Double[][] getFig19_time_en() {
-        return fig19_time_en;
-    }
-
-    public Double[][] getFig18_time_en() {
-        return fig18_time_en;
-    }
-
-    public Double[][] getFig17_time_unen() {
-        return fig17_time_unen;
-    }
-
-    public Double[][] getFig18_time_unen() {
-        return fig18_time_unen;
-    }
-
-    public String[][] getFig17_en_test_list() {
-        return fig17_en_test_list;
-    }
-
-    public String[][] getFig17_unen_test_list() {
-        return fig17_unen_test_list;
-    }
-
-    public String[][] getFig18_en_test_list() {
-        return fig18_en_test_list;
-    }
-
-    public String[][] getFig18_unen_test_list() {
-        return fig18_unen_test_list;
-    }
-
-    public String[][] getFig19_en_test_list() {
-        return fig19_en_test_list;
-    }
-
-    public String[][] getFig19_unen_test_list() {
-        return fig19_unen_test_list;
-    }
-
-    public Double[][] getFig19_time_unen() {
-        return fig19_time_unen;
-    }
 
     public Double[] getOrig_time() {
         return orig_time;
@@ -141,29 +86,21 @@ public class ProjectEnhancedResults extends Project {
         fig18_percents = new double[6 * 2];
         fig19_orig_order = new double[2 * 4];
         fig19_time_order = new double[2 * 4];
-        fig17_num_DTs_unen = new boolean[4 * 2];
-        fig18_num_DTs_unen = new boolean[6 * 2];
-        fig19_num_DTs_orig_unen = new boolean[4 * 2];
-        fig19_num_DTs_time_unen = new boolean[4 * 2];
-        fig17_num_DTs_en = new boolean[4 * 2];
-        fig18_num_DTs_en = new boolean[6 * 2];
-        fig19_num_DTs_orig_en = new boolean[4 * 2];
-        fig19_num_DTs_time_en = new boolean[4 * 2];
+        fig17_num_DTs = new boolean[4 * 2];
+        fig18_num_DTs = new boolean[6 * 2];
+        fig19_num_DTs_orig = new boolean[4 * 2];
+        fig19_num_DTs_time = new boolean[4 * 2];
         uses_fig17 = false;
         uses_fig18 = false;
         uses_fig19 = false;
-        fig17_time_en = new Double[4 * 2][];
-        fig18_time_en = new Double[6 * 2][];
-        fig19_time_en = new Double[2 * 4][];
-        fig17_time_unen = new Double[4 * 2][];
-        fig18_time_unen = new Double[6 * 2][];
-        fig19_time_unen = new Double[2 * 4][];
-        fig17_en_test_list = new String[4 * 2][];
-        fig17_unen_test_list = new String[4 * 2][];
-        fig18_en_test_list = new String[6 * 2][];
-        fig18_unen_test_list = new String[6 * 2][];
-        fig19_en_test_list = new String[4 * 2][];
-        fig19_unen_test_list = new String[4 * 2][];
+        fig17_time = new Double[4 * 2][];
+        fig18_time = new Double[6 * 2][];
+        fig19_time_time = new Double[2 * 4][];
+        fig19_time_orig = new Double[2 * 4][];
+        fig17_test_list = new String[4 * 2][];
+        fig18_test_list = new String[6 * 2][];
+        fig19_test_list_time = new String[4 * 2][];
+        fig19_test_list_orig = new String[4 * 2][];
     }
 
     public boolean isFig17() {
@@ -195,12 +132,12 @@ public class ProjectEnhancedResults extends Project {
         return name;
     }
 
-    public double[] get_fig17_values() {
-        return fig17_values;
-    }
-
-    public double[] get_fig18_values() {
-        return fig18_values;
+    public double[] get_fig_values(int figNum) {
+        if (figNum == 17) {
+            return fig17_values;
+        } else {
+            return fig18_values;
+        }
     }
 
     public double[] get_fig18_time() {
@@ -238,115 +175,151 @@ public class ProjectEnhancedResults extends Project {
      *
      * @param numTotal is the total number of DTS for that file
      */
-    public void setNumTotalDependentTests(int figNum, int index, int numTotal, boolean isEnhanced) {
-        if (!isEnhanced) {
-            if (figNum == 17) {
-                fig17_num_DTs_unen[index] = numTotal != 0;
-            } else if (figNum == 18) {
-                fig18_num_DTs_unen[index] = numTotal != 0;
+    public void setNumTotalDependentTests(int figNum, int index, int numTotal) {
+        if (figNum == 17) {
+            fig17_num_DTs[index] = numTotal != 0;
+        } else if (figNum == 18) {
+            fig18_num_DTs[index] = numTotal != 0;
+        } else {
+            throw new RuntimeException();
+        }
+    }
+
+    public void setNumTotalDependentTestsPara(boolean isOriginal, int index, int numTotal) {
+        if (isOriginal) {
+            fig19_num_DTs_orig[index] = numTotal != 0;
+        } else {
+            fig19_num_DTs_time[index] = numTotal != 0;
+        }
+    }
+
+    public void setTimeInfo(int figNum, int index, Double[] timeList) {
+        if (figNum == 17) {
+            fig17_time[index] = timeList;
+        } else if (figNum == 18) {
+            fig18_time[index] = timeList;
+        }
+    }
+
+    public void setTimeInfoPara(boolean isOriginal, int index, Double[] timeList) {
+        if (isOriginal) {
+            fig19_time_orig[index] = timeList;
+        } else {
+            fig19_time_time[index] = timeList;
+        }
+    }
+
+    public void setTestList(int figNum, int index, String[] testList) {
+        if (figNum == 17) {
+            fig17_test_list[index] = testList;
+        } else if (figNum == 18) {
+            fig18_test_list[index] = testList;
+        }
+    }
+
+    public void setTestListPara(boolean isOriginal, int index, String[] testList) {
+        if (isOriginal) {
+            fig19_test_list_orig[index] = testList;
+        } else {
+            fig19_test_list_time[index] = testList;
+        }
+    }
+
+    public boolean get_fig_NumOfDTs(boolean unen, int i, int figNum) {
+        if (figNum == 17) {
+            if (unen) {
+                return fig17_num_DTs[i];
             } else {
-                throw new RuntimeException();
+                return fig17_num_DTs[i+1];
             }
         } else {
-            if (figNum == 17) {
-                fig17_num_DTs_en[index] = numTotal != 0;
-            } else if (figNum == 18) {
-                fig18_num_DTs_en[index] = numTotal != 0;
+            if (unen) {
+                return fig18_num_DTs[i];
             } else {
-                throw new RuntimeException();
+                return fig18_num_DTs[i+1];
             }
         }
     }
 
-    public void setNumTotalDependentTestsPara(boolean isOriginal, int index, int numTotal, boolean isEnhanced) {
-        if (!isEnhanced) {
-            if (isOriginal) {
-                fig19_num_DTs_orig_unen[index] = numTotal != 0;
+    public Double[] get_fig_Time(boolean unen, int i, int figNum) {
+        return get_fig_Time(unen, i,figNum, false);
+    }
+
+    public Double[] get_fig_Time(boolean unen, int i, int figNum, boolean isOriginal) {
+        if (figNum == 17) {
+            if (unen) {
+                return fig17_time[i];
             } else {
-                fig19_num_DTs_time_unen[index] = numTotal != 0;
+                return fig17_time[i+1];
+            }
+        } else if (figNum == 18){
+            if (unen) {
+                return fig18_time[i];
+            } else {
+                return fig18_time[i+1];
             }
         } else {
+            int index = -1;
+            if (unen) {
+                index = i;
+            } else {
+                index = i+1;
+            }
             if (isOriginal) {
-                fig19_num_DTs_orig_en[index] = numTotal != 0;
+                return fig19_time_orig[index];
             } else {
-                fig19_num_DTs_time_en[index] = numTotal != 0;
+                return fig19_time_time[index];
             }
         }
     }
 
-    public void setTimeInfo(int figNum, int index, Double[] timeList, boolean isEnhanced) {
+    public String[] get_fig_TestList(boolean unen, int i, int figNum) {
+        return get_fig_TestList(unen, i, figNum, false);
+    }
+
+    public String[] get_fig_TestList(boolean unen, int i, int figNum, boolean isOriginal) {
         if (figNum == 17) {
-            if (isEnhanced) {
-                fig17_time_en[index] = timeList;
+            if (unen) {
+                return fig17_test_list[i];
             } else {
-                fig17_time_unen[index] = timeList;
+                return fig17_test_list[i + 1];
             }
         } else if (figNum == 18) {
-            if (isEnhanced) {
-                fig18_time_en[index] = timeList;
+            if (unen) {
+                return fig18_test_list[i];
             } else {
-                fig18_time_unen[index] = timeList;
+                return fig18_test_list[i + 1];
             }
-        } else { // 19
-            if (isEnhanced) {
-                fig19_time_en[index] = timeList;
+        } else {
+            int index = -1;
+            if (unen) {
+                index = i;
             } else {
-                fig19_time_unen[index] = timeList;
+                index = i + 1;
             }
-        }
-    }
-
-    public void setTestList(int figNum, int index, String[] testList, boolean isEnhanced) {
-        if (figNum == 17) {
-            if (isEnhanced) {
-                fig17_en_test_list[index] = testList;
+            if (isOriginal) {
+                return fig19_test_list_orig[index];
             } else {
-                fig17_unen_test_list[index] = testList;
-            }
-        } else if (figNum == 18) {
-            if (isEnhanced) {
-                fig18_en_test_list[index] = testList;
-            } else {
-                fig18_unen_test_list[index] = testList;
-            }
-        } else { // 19
-            if (isEnhanced) {
-                fig19_en_test_list[index] = testList;
-            } else {
-                fig19_unen_test_list[index] = testList;
+                return fig19_test_list_time[index];
             }
         }
     }
 
-    public boolean[] get_fig17_NumOfDTs_unen() {
-        return fig17_num_DTs_unen;
+
+
+    public boolean get_fig19_NumOfDTs_orig_unen(int i) {
+        return fig19_num_DTs_orig[i];
     }
 
-    public boolean[] get_fig18_NumOfDTs_unen() {
-        return fig18_num_DTs_unen;
+    public boolean get_fig19_NumOfDTs_orig_en(int i) {
+        return fig19_num_DTs_orig[i+1];
     }
 
-    public boolean[] get_fig19_NumOfDTs_orig_unen() {
-        return fig19_num_DTs_orig_unen;
+    public boolean get_fig19_NumOfDTs_time_unen(int i) {
+        return fig19_num_DTs_time[i];
     }
 
-    public boolean[] get_fig19_NumOfDTs_time_unen() {
-        return fig19_num_DTs_time_unen;
-    }
-
-    public boolean[] get_fig17_NumOfDTs_en() {
-        return fig17_num_DTs_en;
-    }
-
-    public boolean[] get_fig18_NumOfDTs_en() {
-        return fig18_num_DTs_en;
-    }
-
-    public boolean[] get_fig19_NumOfDTs_orig_en() {
-        return fig19_num_DTs_orig_en;
-    }
-
-    public boolean[] get_fig19_NumOfDTs_time_en() {
-        return fig19_num_DTs_time_en;
+    public boolean get_fig19_NumOfDTs_time_en(int i) {
+        return fig19_num_DTs_time[i+1];
     }
 }

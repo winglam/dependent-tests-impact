@@ -361,6 +361,7 @@ public abstract class FigureGenerator {
 	 */
 	protected static void parseFiles(File[] files, FigureGenerator fg, boolean ignoreDTFFlag,
 			List<Project> proj_orig_arrayList, List<Project> proj_auto_arrayList) {
+//	    Arrays.sort(files);
         for (File file : files) {
             if (file.isFile()) {
             	FigureGenerator.file = file;
