@@ -18,6 +18,7 @@ import edu.washington.cs.dt.impact.data.WrapperTestList;
 import edu.washington.cs.dt.impact.figure.generator.FigureGenerator;
 import edu.washington.cs.dt.impact.technique.Test;
 import edu.washington.cs.dt.impact.tools.DependentTestFinder;
+import edu.washington.cs.dt.impact.tools.FailedTestRemover;
 import edu.washington.cs.dt.impact.tools.FileTools;
 import edu.washington.cs.dt.impact.util.Constants;
 import edu.washington.cs.dt.impact.util.Constants.COVERAGE;
@@ -54,6 +55,7 @@ public abstract class Runner {
     protected static List<WrapperTestList> listTestList = new ArrayList<>();
     protected static List<String> origOrderTestList = null;
     protected static File timeOrder = null;
+    protected static String classPath = System.getProperty("java.class.path");
 
     protected static void parseArgs(String[] args) {
         argsList = new ArrayList<String>(Arrays.asList(args));
@@ -209,6 +211,19 @@ public abstract class Runner {
                 System.exit(0);
             }
             outputDir = new File(argsList.get(outputDirNameIndex));
+        }
+
+        // get the classpath to run tests with
+        int classPathIndex = argsList.indexOf("-classpath");
+        if (classPathIndex != -1) {
+            int classPathValIndex = classPathIndex + 1;
+            if (classPathValIndex >= argsList.size()) {
+                System.err.println("Classpath argument is specified but a value is not."
+                        + " Please use the format: -classpath classpath");
+                System.exit(0);
+            }
+
+            classPath = FailedTestRemover.buildClassPath(argsList.get(classPathValIndex).split(":"));
         }
 
         // if specified, the output is saved to the file name instead of printed to console

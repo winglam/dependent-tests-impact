@@ -179,7 +179,7 @@ public class RandomizeRunner extends Runner {
                     dtList = new ArrayList<String>(allDTList);
                 }
                 DependentTestFinder.runDTF(testName, nameToOrigResults.get(testName), currentOrderTestList,
-                        origOrderTestList, filesToDelete, dtList);
+                        origOrderTestList, filesToDelete, dtList, classPath);
                 List<String> newDTList = DependentTestFinder.getAllDTs();
                 if ((allDTList == null && !newDTList.isEmpty())
                         || (allDTList != null && allDTList.size() != newDTList.size())) {

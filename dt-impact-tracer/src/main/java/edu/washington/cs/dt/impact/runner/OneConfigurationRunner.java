@@ -107,7 +107,7 @@ public class OneConfigurationRunner extends Runner {
                     fixedDT.add(testName);
                     // DependentTestFinder
                     DependentTestFinder.runDTF(testName, nameToOrigResults.get(testName), currentOrderTestList,
-                            origOrderTestList, filesToDelete, allDTList);
+                            origOrderTestList, filesToDelete, allDTList, classPath);
                     allDTList = DependentTestFinder.getAllDTs();
                     // TestListGenerator
                     testObj.resetDTList(allDTList);

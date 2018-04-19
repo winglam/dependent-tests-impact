@@ -34,6 +34,7 @@ public class DependentTestFinder {
     private static List<String> CURRENT_ORDER_TESTS;
     private static RESULT DEPENDENT_TEST_RESULT;
     private static List<String> ALL_DT_LIST;
+    private static String CLASSPATH;
 
     public static void main(String[] args) {
         List<String> argsList = new ArrayList<String>(Arrays.asList(args));
@@ -155,11 +156,13 @@ public class DependentTestFinder {
         DT_FILE = dtFile;
         runDTF(dependentTestName, dependentTestResult, FileTools.parseFileToList(currentOrderFile),
                 FileTools.parseFileToList(originalOrderFile), FileTools.parseFileToList(filesToDelete),
-                FileTools.parseFileToList(DT_FILE));
+                FileTools.parseFileToList(DT_FILE), System.getProperty("java.class.path"));
     }
 
     public static void runDTF(String dependentTestName, RESULT dependentTestResult, List<String> currentOrderTests,
-            List<String> originalOrderTests, List<String> filesToDelete, List<String> allDTList) {
+            List<String> originalOrderTests, List<String> filesToDelete, List<String> allDTList,
+                              String CLASSPATH) {
+        CLASSPATH = CLASSPATH;
         DEPENDENT_TEST_RESULT = dependentTestResult;
         CURRENT_ORDER_TESTS = currentOrderTests;
         ORIGINAL_ORDER_TESTS = originalOrderTests;
@@ -373,12 +376,12 @@ public class DependentTestFinder {
             botHalf.add(dependentTestName);
 
             FileTools.clearEnv(FILES_TO_DELETE);
-            AbstractTestRunner runner = new FixedOrderRunner(topHalf);
+            AbstractTestRunner runner = new FixedOrderRunner(CLASSPATH, topHalf);
             boolean topResults =
                     checkTestMatch(isOriginalOrder, runner.run().getExecutionRecords().get(0), dependentTestName);
 
             FileTools.clearEnv(FILES_TO_DELETE);
-            runner = new FixedOrderRunner(botHalf);
+            runner = new FixedOrderRunner(CLASSPATH, botHalf);
             boolean botResults =
                     checkTestMatch(isOriginalOrder, runner.run().getExecutionRecords().get(0), dependentTestName);
 
@@ -510,12 +513,12 @@ public class DependentTestFinder {
             botHalf.add(dependentTestName);
 
             FileTools.clearEnv(FILES_TO_DELETE);
-            AbstractTestRunner runner = new FixedOrderRunner(topHalf);
+            AbstractTestRunner runner = new FixedOrderRunner(CLASSPATH, topHalf);
             boolean topResults =
                     checkTestMatch(isOriginalOrder, runner.run().getExecutionRecords().get(0), dependentTestName);
 
             FileTools.clearEnv(FILES_TO_DELETE);
-            runner = new FixedOrderRunner(botHalf);
+            runner = new FixedOrderRunner(CLASSPATH, botHalf);
             boolean botResults =
                     checkTestMatch(isOriginalOrder, runner.run().getExecutionRecords().get(0), dependentTestName);
 
@@ -836,7 +839,7 @@ public class DependentTestFinder {
     // does not match DEPENDENT_TEST_RESULT, false otherwise
     private static boolean isTestResultDifferent(String dependentTestName, List<String> orderedTests) {
         FileTools.clearEnv(FILES_TO_DELETE);
-        AbstractTestRunner runner = new FixedOrderRunner(orderedTests);
+        AbstractTestRunner runner = new FixedOrderRunner(CLASSPATH, orderedTests);
         TestExecResults results = runner.run();
 
         RESULT dtIsolateResult = null;
