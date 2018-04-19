@@ -646,7 +646,7 @@ public abstract class Runner {
             System.out.println("Getting median in iteration: " + (j + 1) + " / " + timesToRun);
             FileTools.clearEnv(filesToDelete);
             List<String> timeEachTest =
-                    ImpactMain.getResults(currentOrderTestList, true).getExecutionRecords().get(0).getValues();
+                    ImpactMain.getResults(classPath, currentOrderTestList, true).getExecutionRecords().get(0).getValues();
             List<Double> cumulTime = getCumulList(timeEachTest);
             double totalTimeNewOrder = getSumStr(timeEachTest);
             totalTimeToCumulTime.put(totalTimeNewOrder, cumulTime);
@@ -720,7 +720,7 @@ public abstract class Runner {
             List<String> filesToDelete) {
         // ImpactMain
         FileTools.clearEnv(filesToDelete);
-        TestExecResults results = ImpactMain.getResults(currentOrderTestList);
+        TestExecResults results = ImpactMain.getResults(classPath, currentOrderTestList);
         return results.getExecutionRecords().get(0).getNameToResultsMap();
     }
 
