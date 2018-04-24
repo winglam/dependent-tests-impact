@@ -554,7 +554,7 @@ public abstract class Runner {
         writeToFile(outputArr, outputDTListSeparately);
         
         if (resolveDependences != null) {
-        	if (allDTList.isEmpty()) {
+            if (allDTList.isEmpty()) {
                 FileWriter output = null;
                 BufferedWriter writer = null;
                 try {
@@ -575,10 +575,10 @@ public abstract class Runner {
                         }
                     } catch (IOException e) {
                     }
-                } 
-        	} else {
-            	DependentTestFinder.printDependenceHelper(allDTList, resolveDependences);        		
-        	}
+                }
+            } else {
+                DependentTestFinder.printDependenceHelper(allDTList, resolveDependences);
+            }
         }
     }
 

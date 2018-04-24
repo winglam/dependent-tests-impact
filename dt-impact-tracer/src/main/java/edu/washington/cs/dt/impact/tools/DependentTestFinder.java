@@ -162,7 +162,7 @@ public class DependentTestFinder {
     public static void runDTF(String dependentTestName, RESULT dependentTestResult, List<String> currentOrderTests,
             List<String> originalOrderTests, List<String> filesToDelete, List<String> allDTList,
                               String CLASSPATH) {
-        CLASSPATH = CLASSPATH;
+        DependentTestFinder.CLASSPATH = CLASSPATH;
         DEPENDENT_TEST_RESULT = dependentTestResult;
         CURRENT_ORDER_TESTS = currentOrderTests;
         ORIGINAL_ORDER_TESTS = originalOrderTests;
