@@ -52,6 +52,8 @@ public class OneConfigurationRunner extends Runner {
         // capture start time
         double start = System.nanoTime();
 
+        boolean hasDependentTest = false;
+
         // TestListGenerator
         Test testObj = null;
         if (techniqueName == TECHNIQUE.PRIORITIZATION) {
@@ -82,6 +84,10 @@ public class OneConfigurationRunner extends Runner {
             // CrossReferencer
             Set<String> changedTests = CrossReferencer.compareResults(nameToOrigResults, nameToTestResults, false);
 
+            if (!changedTests.isEmpty()) {
+                hasDependentTest = true;
+            }
+
             Set<String> fixedDT = new HashSet<>();
             if (resolveDependences != null) {
                 int counter = 0;
@@ -107,7 +113,7 @@ public class OneConfigurationRunner extends Runner {
                     fixedDT.add(testName);
                     // DependentTestFinder
                     DependentTestFinder.runDTF(testName, nameToOrigResults.get(testName), currentOrderTestList,
-                            origOrderTestList, filesToDelete, allDTList);
+                            origOrderTestList, filesToDelete, allDTList, classPath);
                     allDTList = DependentTestFinder.getAllDTs();
                     // TestListGenerator
                     testObj.resetDTList(allDTList);
@@ -147,6 +153,11 @@ public class OneConfigurationRunner extends Runner {
                 testList.setAPFD(getAPFD(totalTimeToCumulTime.get(testList.getNewOrderTime()), cumulCoverage));
             }
             listTestList.add(testList);
+        }
+
+        if (allDTList == null && !hasDependentTest) {
+            System.out.println("No dependent tests found and allDTList is null, setting to empty.");
+            allDTList = new ArrayList<>();
         }
 
         output(false);
