@@ -806,7 +806,7 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
         String[] test_list = testStr.split(", ");
 
         int index = -1;
-        boolean isEnhanced = resolveDependences == null;
+        boolean isEnhanced = resolveDependences != null;
 
         if (numMachines == 2) {
             index = 0;
@@ -846,7 +846,7 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
         String[] test_list = testStr.split(", ");
 
         int index = -1;
-        boolean isEnhanced = resolveDependences == null;
+        boolean isEnhanced = resolveDependences != null;
 
         // original values, index should be i=0, i+=2
         if (coverageName.equals("statement")) {
@@ -917,7 +917,7 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
         double[] fig17_array = currProj.get_fig_values(17);
 
         int index = -1;
-        boolean isEnhanced = resolveDependences == null;
+        boolean isEnhanced = resolveDependences != null;
 
         // original values, index should be i=0, i+=2
         if (coverageName.equals("statement")) {
