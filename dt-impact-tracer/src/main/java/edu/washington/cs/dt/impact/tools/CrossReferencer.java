@@ -160,7 +160,7 @@ public class CrossReferencer {
             String line = br.readLine();
             while (line != null) {
                 while (line != null
-                        && !line.matches("^Pass: [0-9]+, Fail: [0-9]+, Error: [0-9]+$")) {
+                        && !line.matches("^Pass: [0-9]+, Fail: [0-9]+, Error: [0-9]+.*")) {
                     line = br.readLine();
                 }
 
@@ -189,6 +189,8 @@ public class CrossReferencer {
                             testsToResults.put(testAndResult[0], RESULT.FAILURE);
                         } else if (testAndResult[1].equals("ERROR")) {
                             testsToResults.put(testAndResult[0], RESULT.ERROR);
+                        } else if (testAndResult[1].equals("SKIPPED")) {
+                            testsToResults.put(testAndResult[0], RESULT.SKIPPED);
                         }
                     }
                 }
