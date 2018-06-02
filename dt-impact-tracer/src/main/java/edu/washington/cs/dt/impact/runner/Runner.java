@@ -56,6 +56,7 @@ public abstract class Runner {
     protected static List<String> origOrderTestList = null;
     protected static File timeOrder = null;
     protected static String classPath = System.getProperty("java.class.path");
+    protected static boolean postProcessDTs = false;
 
     protected static void parseArgs(String[] args) {
         argsList = new ArrayList<String>(Arrays.asList(args));
@@ -468,6 +469,8 @@ public abstract class Runner {
             }
         }
         origOrderTestList.removeAll(extraFiles);
+
+        postProcessDTs = argsList.contains("-postProcessDTs");
     }
 
     protected static void output(boolean outputDTListSeparately) {
@@ -723,8 +726,11 @@ public abstract class Runner {
         TestExecResults results = ImpactMain.getResults(classPath, currentOrderTestList);
         return results.getExecutionRecords().get(0).getNameToResultsMap();
     }
-
     protected static List<String> getCurrentTestList(Test testObj, int numOfMachines) {
+        return getCurrentTestList(testObj, numOfMachines, true);
+    }
+
+    protected static List<String> getCurrentTestList(Test testObj, int numOfMachines, boolean mergeDTCoverage) {
         // TestListGenerator
         List<String> currentOrderTestList = new LinkedList<String>();
         for (TestFunctionStatement tfs : testObj.getResults(numOfMachines)) {

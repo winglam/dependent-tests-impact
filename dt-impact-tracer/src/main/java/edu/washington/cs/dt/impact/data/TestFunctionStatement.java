@@ -23,9 +23,11 @@ public class TestFunctionStatement extends Observable implements Comparable<Test
     private final Set<String> currentLines;
 
     // lines belonging to this test's and its dependencies'
-    private final Set<Set<String>> setOfCurrentLines;
+    private final LinkedHashSet<Set<String>> setOfCurrentLines;
     // tests that this test depends on
     private final Set<TestFunctionStatement> observers;
+
+    private boolean mergeDTCoverage;
 
     // list of tests that when executed before reveals methodName as a dependent test
     protected Set<TestFunctionStatement> execBefore;
@@ -39,8 +41,9 @@ public class TestFunctionStatement extends Observable implements Comparable<Test
         execBefore = new HashSet<TestFunctionStatement>();
         execAfter = new HashSet<TestFunctionStatement>();
         observers = new HashSet<TestFunctionStatement>();
-        setOfCurrentLines = new HashSet<Set<String>>();
+        setOfCurrentLines = new LinkedHashSet<Set<String>>();
         setOfCurrentLines.add(currentLines);
+        mergeDTCoverage = true;
     }
 
     /**
@@ -80,11 +83,15 @@ public class TestFunctionStatement extends Observable implements Comparable<Test
     }
 
     public long getLineCount() {
-        Set<String> lines = new HashSet<String>();
-        for (Set<String> s : setOfCurrentLines) {
-            lines.addAll(s);
+        if (mergeDTCoverage) {
+            Set<String> lines = new HashSet<String>();
+            for (Set<String> s : setOfCurrentLines) {
+                lines.addAll(s);
+            }
+            return lines.size();
+        } else {
+            return setOfCurrentLines.iterator().next().size();
         }
-        return lines.size();
     }
 
     public String getName() {
@@ -117,11 +124,15 @@ public class TestFunctionStatement extends Observable implements Comparable<Test
     }
 
     public Set<String> getLines() {
-        Set<String> lines = new HashSet<String>();
-        for (Set<String> s : setOfCurrentLines) {
-            lines.addAll(s);
+        if (mergeDTCoverage) {
+            Set<String> lines = new HashSet<String>();
+            for (Set<String> s : setOfCurrentLines) {
+                lines.addAll(s);
+            }
+            return Collections.unmodifiableSet(lines);
+        } else {
+            return setOfCurrentLines.iterator().next();
         }
-        return Collections.unmodifiableSet(lines);
     }
 
     public Set<Set<String>> getTests() {
@@ -130,6 +141,10 @@ public class TestFunctionStatement extends Observable implements Comparable<Test
 
     public void setName(String name) {
         this.methodName = name;
+    }
+
+    public void setMergeDTCoverage(boolean mergeDTCoverage) {
+        this.mergeDTCoverage = mergeDTCoverage;
     }
 
     @Override

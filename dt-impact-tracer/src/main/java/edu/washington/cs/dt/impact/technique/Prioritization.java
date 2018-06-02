@@ -22,7 +22,6 @@ public class Prioritization extends Test {
     /**
      *
      * @param order the order in which to order the tests with
-     * @param outputFileName the name of the output file
      * @param inputTestFolder folder containing all test cases
      * @param coverage the coverage to consider when processing the test cases
      * @param dependentTestsFile the file containing the information
@@ -31,14 +30,14 @@ public class Prioritization extends Test {
      *            if false, the execution result will be printed
      */
     public Prioritization(ORDER order, String outputFilename, File inputTestFolder, COVERAGE coverage,
-            File dependentTestsFile, boolean getCoverage, File origOrder) {
+            File dependentTestsFile, boolean getCoverage, File origOrder, boolean mergeDTsCoverage) {
         this(order, outputFilename, inputTestFolder, coverage, dependentTestsFile, getCoverage, origOrder,
-                new Random().nextInt());
+                new Random().nextInt(), mergeDTsCoverage);
     }
 
     public Prioritization(ORDER order, String outputFilename, File inputTestFolder, COVERAGE coverage,
-            File dependentTestsFile, boolean getCoverage, File origOrder, int seed) {
-        super(inputTestFolder, coverage, dependentTestsFile, origOrder);
+            File dependentTestsFile, boolean getCoverage, File origOrder, int seed, boolean mergeDTsCoverage) {
+        super(inputTestFolder, coverage, dependentTestsFile, origOrder, mergeDTsCoverage);
 
         if (order == ORDER.ABSOLUTE || order == ORDER.RELATIVE) {
             Collections.sort(methodList);
@@ -60,8 +59,9 @@ public class Prioritization extends Test {
     }
 
     public Prioritization(ORDER order, String outputFilename, COVERAGE coverage, List<String> allDTList,
-            boolean getCoverage, List<String> origOrder, File inputTestFolder, boolean randomizeOriginal) {
-        super(coverage, allDTList, inputTestFolder);
+            boolean getCoverage, List<String> origOrder, File inputTestFolder, boolean randomizeOriginal,
+                          boolean mergeDTsCoverage) {
+        super(coverage, allDTList, inputTestFolder, mergeDTsCoverage);
         if (order == ORDER.ABSOLUTE || order == ORDER.RELATIVE) {
             Collections.sort(methodList);
             if (order == ORDER.RELATIVE) {
@@ -82,10 +82,5 @@ public class Prioritization extends Test {
                     + " Compatible orders are: absolute, relative and random.");
             System.exit(0);
         }
-    }
-
-    public Prioritization(ORDER order, String outputFilename, COVERAGE coverage, List<String> allDTList,
-            boolean getCoverage, List<String> origOrder, File inputTestFolder) {
-        this(order, outputFilename, coverage, allDTList, getCoverage, origOrder, inputTestFolder, false);
     }
 }

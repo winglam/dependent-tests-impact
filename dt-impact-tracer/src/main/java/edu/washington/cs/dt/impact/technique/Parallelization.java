@@ -46,8 +46,9 @@ public class Parallelization extends Test {
      * @param timeOrder file specifying the amount of nanoseconds each test takes to execute
      */
     public Parallelization(ORDER order, String outputFileName, File inputTestFolder, COVERAGE coverage,
-            File dependentTestsFile, int k, File origOrder, File timeOrder, boolean getCoverage, List<String> origList) {
-        super(inputTestFolder, coverage, dependentTestsFile, origOrder);
+            File dependentTestsFile, int k, File origOrder, File timeOrder, boolean getCoverage, List<String> origList,
+                           boolean mergeDTsCoverage) {
+        super(inputTestFolder, coverage, dependentTestsFile, origOrder, mergeDTsCoverage);
 
         splitTests = new LinkedList<Standard>();
         if (outputFileName == null) {

@@ -5,6 +5,6 @@ import org.junit.Test;
 public class TestListTest {
     @Test
     public void testFindMinimalPass() {
-        final TestOrderMinimizer
+//        final TestOrderMinimizer
     }
 }
