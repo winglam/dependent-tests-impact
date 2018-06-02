@@ -55,15 +55,6 @@ public class OneConfigurationRunner extends Runner {
 
         boolean hasDependentTest = false;
 
-        // Ensure that if post processing of DTs is turned on then all DT information is hidden before test orders
-        // are generated. Doing so will prevent the proactive application of DT information as the orders are generated.
-//        File tmpDependentTestFile = dependentTestFile;
-//        List<String> tmpAllDTList = allDTList;
-//        if (postProcessDTs) {
-//            dependentTestFile = null;
-//            allDTList = null;
-//        }
-
         // TestListGenerator
         Test testObj = null;
         if (techniqueName == TECHNIQUE.PRIORITIZATION) {
