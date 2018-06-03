@@ -87,10 +87,12 @@ public class Standard {
 
             // record the percent of coverage as xx.xx%
             long displayPercent = (long) ((((double) afterSize) / allLines.size()) * 10000);
+            displayPercent = displayPercent / 100;
+            char remainder = String.valueOf(displayPercent % 100).charAt(0);
             if (includeName) {
-                tfs.setName((tfs.getName() + " : " + displayPercent));
+                tfs.setName((tfs.getName() + " : " + displayPercent + "." + remainder));
             } else {
-                tfs.setName(String.valueOf(displayPercent));
+                tfs.setName(String.valueOf(displayPercent) + "." + remainder);
             }
             coverageList.add(tfs);
         }

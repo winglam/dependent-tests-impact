@@ -154,7 +154,7 @@ public class RandomizeRunner extends Runner {
         }
 
         Test testObj = new Prioritization(order, outputFileName, COVERAGE.STATEMENT, allDTList, getCoverage,
-                origOrderCopy, testInputDir, true);
+                origOrderCopy, testInputDir, true, postProcessDTs);
         List<String> currentOrderTestList = getCurrentTestList(testObj, 0);
 
         // ImpactMain
