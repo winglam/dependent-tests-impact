@@ -43,8 +43,8 @@ public class Selection extends Test {
      *            regarding which test depends on which
      */
     public Selection(ORDER order, String outputFileName, File inputTestFolder, COVERAGE coverage, File selectionOutput1,
-            File selectionOutput2, File origOrder, File dependentTestsFile, boolean getCoverage) {
-        super(inputTestFolder, coverage, dependentTestsFile, origOrder);
+            File selectionOutput2, File origOrder, File dependentTestsFile, boolean getCoverage, boolean mergeDTsCoverage) {
+        super(inputTestFolder, coverage, dependentTestsFile, origOrder, mergeDTsCoverage);
 
         Set<String> changedCoverage = findCoverage(selectionOutput1, selectionOutput2, coverage);
 

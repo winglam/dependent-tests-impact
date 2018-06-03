@@ -26,6 +26,7 @@
 
 package edu.washington.cs.dt.impact.runner;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -58,13 +59,13 @@ public class OneConfigurationRunner extends Runner {
         Test testObj = null;
         if (techniqueName == TECHNIQUE.PRIORITIZATION) {
             testObj = new Prioritization(order, outputFileName, testInputDir, coverage, dependentTestFile, false,
-                    origOrder);
+                    origOrder, !postProcessDTs);
         } else if (techniqueName == TECHNIQUE.SELECTION) {
             testObj = new Selection(order, outputFileName, testInputDir, coverage, selectionOutput1, selectionOutput2,
-                    origOrder, dependentTestFile, getCoverage);
+                    origOrder, dependentTestFile, getCoverage, !postProcessDTs);
         } else if (techniqueName == TECHNIQUE.PARALLELIZATION) {
             testObj = new Parallelization(order, outputFileName, testInputDir, coverage, dependentTestFile,
-                    numOfMachines.getValue(), origOrder, timeOrder, getCoverage, origOrderTestList);
+                    numOfMachines.getValue(), origOrder, timeOrder, getCoverage, origOrderTestList, !postProcessDTs);
         } else {
             System.err.println("The regression testing technique selected is invalid. Please restart the"
                     + " program and try again.");
@@ -79,6 +80,7 @@ public class OneConfigurationRunner extends Runner {
 
             WrapperTestList testList = new WrapperTestList();
             List<String> currentOrderTestList = getCurrentTestList(testObj, i);
+
             // ImpactMain
             Map<String, RESULT> nameToTestResults = getCurrentOrderTestListResults(currentOrderTestList, filesToDelete);
             // CrossReferencer
