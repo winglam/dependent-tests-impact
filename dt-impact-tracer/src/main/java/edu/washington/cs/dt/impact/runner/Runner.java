@@ -224,7 +224,7 @@ public abstract class Runner {
                 System.exit(0);
             }
 
-            classPath = FailedTestRemover.buildClassPath(argsList.get(classPathValIndex).split(":"));
+            classPath = ImpactMain.buildClassPath(argsList.get(classPathValIndex).split(":"));
         }
 
         // if specified, the output is saved to the file name instead of printed to console
