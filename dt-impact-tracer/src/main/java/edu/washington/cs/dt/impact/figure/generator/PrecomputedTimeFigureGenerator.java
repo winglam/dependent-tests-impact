@@ -62,14 +62,14 @@ public class PrecomputedTimeFigureGenerator extends FigureGenerator {
 	@Override
 	public void doParaCalculations() {
 		ProjectPrecomputedDependencesTime currProj = (ProjectPrecomputedDependencesTime) FigureGenerator.currProj;
-		currProj.setParaTime(maxTimeInFile);
+		currProj.setParaTime(avgDepFindTime);
 
 		int index = flagsList.indexOf("-numOfMachines");
 		String numMachines_string = flagsList.get(index + 1);
 		int numMachines = Integer.parseInt(numMachines_string);
 
 		if (numMachines == 16 && orderName.equals("original")) {
-			currProj.setSeleTime(maxTimeInFile);
+			currProj.setSeleTime(avgDepFindTime);
 		}
 	}
 
@@ -77,10 +77,10 @@ public class PrecomputedTimeFigureGenerator extends FigureGenerator {
 	public void doPrioCalculations() {
 		ProjectPrecomputedDependencesTime currProj = (ProjectPrecomputedDependencesTime) FigureGenerator.currProj;
 		if (orderName.equals("original")) {
-				currProj.setSuiteTime(maxTimeInFile);
+			currProj.setSuiteTime(avgDepFindTime);
 		} else {
-			currProj.setPrioTime(maxTimeInFile);
-			currProj.setSeleTime(maxTimeInFile);
+			currProj.setPrioTime(avgDepFindTime);
+			currProj.setSeleTime(avgDepFindTime);
 		}
 	}
 

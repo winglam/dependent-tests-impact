@@ -160,12 +160,18 @@ public abstract class FigureGenerator {
                     }
                 }
             }
-            scanner.close(); // close Scanner before returning
         } catch (FileNotFoundException e) {
+            // Needs to be here and in finally because of the System.exit call.
+            if (scanner != null) {
+                scanner.close();
+            }
+
             e.printStackTrace();
             System.exit(2);
         } finally {
-            scanner.close();
+            if (scanner != null) {
+                scanner.close();
+            }
         }
         return maxTime; // none of the lines contained the keyword
     }
@@ -350,6 +356,7 @@ public abstract class FigureGenerator {
 	protected static File file;
 	protected static String coverageInFile;
 	protected static List<String> flagsList;
+    protected static double avgDepFindTime;
 
 	/**
 	 * @param files
@@ -451,6 +458,8 @@ public abstract class FigureGenerator {
 
 				numOfFixedDTs = parseFileForNumOfDTs(file, Constants.FIXED_DTS);
 				maxTimeInFile = parseFileForMaxTime(file, Constants.TIME_INCL_DTF);
+				avgDepFindTime = parseFileForMaxTime(file, Constants.AVG_DEP_FIND_TIME_STRING);
+
                 if (techniqueName.equals("parallelization")) {
                 	fg.doParaCalculations();
                 } // selection technique, figure 18
@@ -466,7 +475,7 @@ public abstract class FigureGenerator {
         }
 	}
 
-	public abstract void doParaCalculations();
+    public abstract void doParaCalculations();
 	public abstract void doPrioCalculations();
 	public abstract void doSeleCalculations();
 

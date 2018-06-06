@@ -32,6 +32,7 @@ public class Constants {
     public static final String APFD_VALUE = "APFD value:";
     public static final String TEST_ORDER_LIST = "Test order list:";
     public static final String DT_LIST = "Dependent test list:";
+    public static final String AVG_DEP_FIND_TIME_STRING = "Average time to find one dependency:";
 
     public static String getOutputFileName(COVERAGE coverage, TECHNIQUE technique, ORDER order, String project,
             TEST_TYPE test_type, MACHINES machines, DT_SETTING dt_setting, TD_SETTING td_setting) {

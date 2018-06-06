@@ -108,6 +108,8 @@ public class InstrumentationMain {
         argsList.add("-allow-phantom-refs");
         String[] sootArgs = argsList.toArray(new String[argsList.size()]);
 
+        System.out.println(argsList);
+
         /*
          * Give control to Soot to process all options,
          * Instrumenter.internalTransform will get called.

@@ -18,7 +18,6 @@ import edu.washington.cs.dt.impact.data.WrapperTestList;
 import edu.washington.cs.dt.impact.figure.generator.FigureGenerator;
 import edu.washington.cs.dt.impact.technique.Test;
 import edu.washington.cs.dt.impact.tools.DependentTestFinder;
-import edu.washington.cs.dt.impact.tools.FailedTestRemover;
 import edu.washington.cs.dt.impact.tools.FileTools;
 import edu.washington.cs.dt.impact.util.Constants;
 import edu.washington.cs.dt.impact.util.Constants.COVERAGE;
@@ -494,40 +493,16 @@ public abstract class Runner {
         while (i < listTestList.size()) {
             for (; i < listTestList.size(); i++) {
                 WrapperTestList testList = listTestList.get(i);
+
                 testListTime = testList.getNewOrderTime();
                 totalTime += testListTime;
                 maxTime = Math.max(maxTime, testListTime);
-                outputArr.add(Constants.TIME_INCL_DTF + " " + nanosecondToSecond(testList.getNullifyDTTime()) + "\n");
-                outputArr.add(Constants.NUM_TESTS_OUT_OF_ORIG + " " + testList.getTestListSize()
-                        + " / " + origOrderTestList.size() + "\n");
-                outputArr.add(Constants.NUM_NOT_FIXED_DTS + " " + testList.getNumNotFixedDT() + "\n");
-                outputArr.add(Constants.FIXED_DTS + " " + testList.getNumFixedDT() + "\n");
-                if (getCoverage) {
-                    outputArr.add(Constants.APFD_VALUE + " " + testList.getAPFD() + "\n");
-                }
-                outputArr.add(Constants.ORDER_TIME + " " + nanosecondToSecond(testListTime) + "\n");
+
                 if (testList.getTestList() != null) {
                     numTests += testList.getTestList().size();
-                    outputArr.add("\nTest order list:\n");
-                    outputArr.add(testList.getTestList() + "\n");
                 }
-                if (testList.getTimeEachTest() != null) {
-                    outputArr.add("\n" + Constants.TIME_STRING + "\n");
-                    outputArr.add(testList.getTimeEachTest() + "\n");
-                }
-                if (testList.getNumNotFixedDT() != 0) {
-                    outputArr.add("\n" + Constants.NOT_FIXED_DTS + "\n");
-                    outputArr.add(testList.getNotFixedDT() + "\n");
-                }
-                if (testList.getDtList() != null) {
-                    outputArr.add("\n" + Constants.DT_LIST + "\n");
-                    outputArr.add(testList.getDtList() + "\n");
-                }
-                if (getCoverage) {
-                    outputArr.add("\n" + Constants.COVERAGE_STRING + "\n");
-                    outputArr.add(testList.getCoverage() + "\n");
-                }
-                outputArr.add("--------------------------\n");
+
+                outputArr.addAll(testList.output(getCoverage, origOrderTestList));
 
                 // Size of the output array is getting too big. We will write this to a file first then continue4
                 if (outputArr.size() > MAX_ARRAY_SIZE_TO_WRITE) {
@@ -635,7 +610,7 @@ public abstract class Runner {
         }
     }
 
-    protected static String nanosecondToSecond(double nanoseconds) {
+    public static String nanosecondToSecond(double nanoseconds) {
         double sec = nanoseconds / 1E9;
         return String.format("%.3f", sec);
     }

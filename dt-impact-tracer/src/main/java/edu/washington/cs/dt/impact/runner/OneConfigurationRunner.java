@@ -67,7 +67,7 @@ public class OneConfigurationRunner extends Runner {
             testObj = new Parallelization(order, outputFileName, testInputDir, coverage, dependentTestFile,
                     numOfMachines.getValue(), origOrder, timeOrder, getCoverage, origOrderTestList, !postProcessDTs);
         } else {
-            System.err.println("The regression testing technique selected is invalid. Please restart the"
+            System.err.println("The regression testing technique '" + techniqueName + "' is invalid. Please restart the"
                     + " program and try again.");
             System.exit(0);
         }
@@ -90,10 +90,11 @@ public class OneConfigurationRunner extends Runner {
                 hasDependentTest = true;
             }
 
+            int counter = 0;
+
+            double totalDepTime = 0;
             Set<String> fixedDT = new HashSet<>();
             if (resolveDependences != null) {
-                int counter = 0;
-
                 Set<String> dtToFix = new HashSet<String>();
                 for (String test : changedTests) {
                     if (currentOrderTestList.contains(test)) {
@@ -113,9 +114,15 @@ public class OneConfigurationRunner extends Runner {
                     counter += 1;
 
                     fixedDT.add(testName);
+
                     // DependentTestFinder
+                    final long startDepFind = System.nanoTime();
                     DependentTestFinder.runDTF(testName, nameToOrigResults.get(testName), currentOrderTestList,
                             origOrderTestList, filesToDelete, allDTList, classPath);
+                    final long endDepFind = System.nanoTime();
+
+                    totalDepTime += endDepFind - startDepFind;
+
                     allDTList = DependentTestFinder.getAllDTs();
                     // TestListGenerator
                     testObj.resetDTList(allDTList);
@@ -141,6 +148,12 @@ public class OneConfigurationRunner extends Runner {
             testList.setNumFixedDT(fixedDT.size());
             testList.setTestList(currentOrderTestList);
             testList.setTestListSize(currentOrderTestList.size());
+
+            if (counter != 0) {
+                testList.setAvgDepFindTime(totalDepTime / counter / 1E9); // Convert to seconds
+                System.out.println("Average time was: " + testList.getAvgDepFindTime());
+            }
+
             Map<Double, List<Double>> totalTimeToCumulTime =
                     setTestListMedianTime(timesToRun, filesToDelete, currentOrderTestList, testList, true);
             if (allDTList != null) {
