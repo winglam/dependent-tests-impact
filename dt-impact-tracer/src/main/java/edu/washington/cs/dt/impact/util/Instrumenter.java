@@ -7,19 +7,7 @@
 
 package edu.washington.cs.dt.impact.util;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.Stack;
-
+import edu.washington.cs.dt.impact.util.Constants.TECHNIQUE;
 import soot.Body;
 import soot.BodyTransformer;
 import soot.Local;
@@ -44,7 +32,21 @@ import soot.tagkit.VisibilityAnnotationTag;
 import soot.toolkits.graph.ExceptionalUnitGraph;
 import soot.toolkits.graph.UnitGraph;
 import soot.util.Chain;
-import edu.washington.cs.dt.impact.util.Constants.TECHNIQUE;
+
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.nio.file.FileAlreadyExistsException;
+import java.nio.file.Files;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.Stack;
 
 public class Instrumenter extends BodyTransformer{
 
@@ -290,8 +292,12 @@ public class Instrumenter extends BodyTransformer{
         File theDir = new File("selectionOutput");
         // if the directory does not exist, create it
         if (!theDir.exists()) {
-            if (!theDir.mkdir()) {
-                throw new RuntimeException("selectionOutput directory could not be created.");
+            try {
+                Files.createDirectory(theDir.toPath());
+            } catch (FileAlreadyExistsException ignored) {
+                // The directory must have been created in between the check above and our attempt to create it.
+            } catch (IOException e) {
+                throw new RuntimeException(e);
             }
         }
 

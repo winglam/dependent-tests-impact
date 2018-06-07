@@ -7,22 +7,24 @@
 
 package edu.washington.cs.dt.impact.util;
 
+
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.HashSet;
+import java.nio.file.FileAlreadyExistsException;
+import java.nio.file.Files;
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class Tracer {
-    private static Map<String, Set<String>> statements = new HashMap<String, Set<String>>();
-    private static List<String> selectionStatements = new LinkedList<String>();
-    private static Set<String> duplicates = new HashSet<String>();
+    private static Map<String, Set<String>> statements = new ConcurrentHashMap<>();
+    private static final List<String> selectionStatements = Collections.synchronizedList(new LinkedList<>());
+    private static Set<String> duplicates = ConcurrentHashMap.newKeySet();
     private static boolean printLastElement = true;
 
     public static void trace(String str, String methodName) {
@@ -31,18 +33,16 @@ public class Tracer {
             currSet.add(str);
             statements.put(methodName, currSet);
         } else {
-            statements.put(methodName, new HashSet<String>(Arrays.asList(str)));
+            final Set<String> base = ConcurrentHashMap.newKeySet();
+            base.add(str);
+            statements.put(methodName, base);
         }
     }
 
     public static void output(String packageMethodName) {
         File theDir = new File("sootTestOutput");
         // if the directory does not exist, create it
-        if (!theDir.exists()) {
-            if (!theDir.mkdir()) {
-                throw new RuntimeException("Output directory could not be created.");
-            }
-        }
+        tryCreateDirectory(theDir);
 
         FileWriter output = null;
         BufferedWriter writer = null;
@@ -68,6 +68,16 @@ public class Tracer {
             } catch (IOException e) {
                 // Ignore issues during closing
             }
+        }
+    }
+
+    private static void tryCreateDirectory(final File theDir) {
+        try {
+            Files.createDirectory(theDir.toPath());
+        } catch (FileAlreadyExistsException ignored) {
+            // The directory must have been created in between the check above and our attempt to create it.
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
 
@@ -97,12 +107,7 @@ public class Tracer {
         }
 
         File theDir = new File("sootTestOutput");
-        // if the directory does not exist, create it
-        if (!theDir.exists()) {
-            if (!theDir.mkdir()) {
-                throw new RuntimeException("Output directory could not be created.");
-            }
-        }
+        tryCreateDirectory(theDir);
 
         FileWriter output = null;
         BufferedWriter writer = null;
@@ -110,16 +115,17 @@ public class Tracer {
             output = new FileWriter("sootTestOutput" + File.separator + packageMethodName, true);
             writer = new BufferedWriter(output);
 
-            if (selectionStatements.size() > 1) {
-                String prev = selectionStatements.get(0);
-                for (int i = 1; i < selectionStatements.size(); i++) {
-                    writer.write(prev + " >>>>>>>> " + selectionStatements.get(i) + "\n");
-                    prev = selectionStatements.get(i);
+            synchronized (selectionStatements) {
+                if (selectionStatements.size() > 1) {
+                    String prev = selectionStatements.get(0);
+                    for (int i = 1; i < selectionStatements.size(); i++) {
+                        writer.write(prev + " >>>>>>>> " + selectionStatements.get(i) + "\n");
+                        prev = selectionStatements.get(i);
+                    }
+                } else if (selectionStatements.size() == 1) {
+                    writer.write(selectionStatements.get(0) + "\n");
                 }
-            } else if (selectionStatements.size() == 1) {
-                writer.write(selectionStatements.get(0) + "\n");
             }
-
         } catch (Exception e) {
             throw new RuntimeException(e);
         } finally {
