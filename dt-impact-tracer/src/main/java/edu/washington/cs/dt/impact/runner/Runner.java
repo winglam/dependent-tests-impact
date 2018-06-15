@@ -4,6 +4,7 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
@@ -460,13 +461,19 @@ public abstract class Runner {
         origOrderTestList = FileTools.parseFileToList(origOrder);
 
         List<String> extraFiles = new ArrayList<String>(origOrderTestList);
-        for (final File fileEntry : testInputDir.listFiles()) {
-            if (fileEntry.isFile() && !fileEntry.getName().startsWith(".") && !fileEntry.isHidden()) {
-                extraFiles.remove(fileEntry.getName());
-            } else {
-                continue;
-            }
+
+        try {
+            Files.list(testInputDir.toPath()).forEach(path -> {
+                final File fileEntry = path.toFile();
+                if (fileEntry.isFile() && !fileEntry.getName().startsWith(".") && !fileEntry.isHidden()) {
+                    extraFiles.remove(fileEntry.getName());
+                }
+            });
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.exit(1);
         }
+
         origOrderTestList.removeAll(extraFiles);
 
         postProcessDTs = argsList.contains("-postProcessDTs");

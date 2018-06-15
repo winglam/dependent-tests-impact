@@ -87,13 +87,21 @@ public class Parallelization extends Test {
                     TestFunctionStatement currTMD = nameToMethodData.get(key);
                     TestTime currTTD = nameToTimeData.get(key);
                     for (TestFunctionStatement tmd : currTMD.getDependentTests(true)) {
-                        currTTD.addDependentTest(nameToTimeData.get(tmd.getName()), true);
+                        if (nameToTimeData.containsKey(tmd.getName())) {
+                            currTTD.addDependentTest(nameToTimeData.get(tmd.getName()), true);
+                        } else {
+                            throw new RuntimeException("Error: Method " + tmd.getName() + " is not in nameToTimeData. Check the test order time file (usually subject_name-orig/auto-time).");
+                        }
                     }
                     for (TestFunctionStatement tmd : currTMD.getDependentTests(false)) {
-                        currTTD.addDependentTest(nameToTimeData.get(tmd.getName()), false);
+                        if (nameToTimeData.containsKey(tmd.getName())) {
+                            currTTD.addDependentTest(nameToTimeData.get(tmd.getName()), false);
+                        } else {
+                            throw new RuntimeException("Error: Method " + tmd.getName() + " is not in nameToTimeData. Check the test order time file (usually subject_name-orig/auto-time).");
+                        }
                     }
                 }
-                
+
                 List<TestFunctionStatement> filteredMethodList = new ArrayList<TestFunctionStatement>();
                 for (TestFunctionStatement tfs : methodList) {
                 	if (origList.contains(tfs.getName())) {
@@ -129,6 +137,10 @@ public class Parallelization extends Test {
                     }
                 }
 
+                if (sortedList.isEmpty()) {
+                    throw new RuntimeException("List of tests is empty for " + order + " order!");
+                }
+
                 splitTests.add(new Standard(outputFileName + i, sortedList, getCoverage, allCoverageLines));
             }
         } else if (order == ORDER.RANDOM || order == ORDER.ORIGINAL) {
@@ -159,6 +171,9 @@ public class Parallelization extends Test {
                     tests.add(methodList.get(index));
                     counter += 1;
                 }
+                if (tests.isEmpty()) {
+                    throw new RuntimeException("List of tests is empty for " + order + " order!");
+                }
                 splitTests.add(new Standard(outputFileName + j, tests, getCoverage, allCoverageLines));
             }
         } else {
@@ -179,7 +194,7 @@ public class Parallelization extends Test {
             br = new BufferedReader(new FileReader(f));
             String line = br.readLine();
             while (line != null) {
-                while (line != null && !line.matches("^Pass: [0-9]+," + " Fail: [0-9]+, Error: [0-9]+$")) {
+                while (line != null && !line.matches("^Pass: [0-9]+, Fail: [0-9]+, Error: [0-9]+, Skipped: [0-9]+, Ignored: [0-9]+")) {
                     line = br.readLine();
                 }
 

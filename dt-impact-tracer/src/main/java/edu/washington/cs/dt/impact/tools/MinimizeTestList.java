@@ -9,10 +9,16 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.function.Consumer;
+import java.util.function.Function;
 
 public class MinimizeTestList {
-    public static void main(final String[] args) throws IOException {
+    public static void main(final String[] args) throws IOException, MinimizeTestListException {
         final List<String> argsList = new ArrayList<>(Arrays.asList(args));
 
         String classpath = System.getProperty("java.class.path");
@@ -41,7 +47,6 @@ public class MinimizeTestList {
     }
 
     private static TestExecResult runOrder(final String classpath, final List<String> order) {
-
         return new FixedOrderRunner(classpath, order).run().getExecutionRecords().get(0);
     }
 
@@ -50,7 +55,20 @@ public class MinimizeTestList {
     private final String dependentTest;
     private final RESULT expected;
 
-    public MinimizeTestList(final List<String> testOrder, final String classpath, final String dependentTest) {
+    // The key is all tests in the order, and the value is the result of the last test.
+    // This is used to discover flaky tests during runs of this tool.
+    private final Map<List<String>, RESULT> knownRuns = new HashMap<>();
+    private final Set<String> flaky = new HashSet<>();
+
+    private boolean failOnFlakyTests = true;
+
+    public MinimizeTestList(final List<String> testOrder, final String dependentTest)
+            throws MinimizeTestListException {
+        this(testOrder, System.getProperty("java.class.path"), dependentTest);
+    }
+
+    public MinimizeTestList(final List<String> testOrder, final String classpath, final String dependentTest)
+            throws MinimizeTestListException {
         this.testOrder = testOrder;
         this.classpath = classpath;
         this.dependentTest = dependentTest;
@@ -59,42 +77,117 @@ public class MinimizeTestList {
         this.expected = result(testOrder);
     }
 
-    private RESULT result(final List<String> order) {
-        if (!order.contains(dependentTest)) {
-            order.add(dependentTest);
+    private RESULT result(final List<String> order) throws MinimizeTestListException {
+        final List<String> actualOrder = new ArrayList<>(order);
+
+        if (!actualOrder.contains(dependentTest)) {
+            actualOrder.add(dependentTest);
         }
-        return runOrder(classpath, order).getResult(dependentTest).result;
+
+        final TestExecResult results = runOrder(classpath, actualOrder);
+        updateFlakyTests(order, results);
+
+        return results.getResult(dependentTest).result;
     }
 
-    private List<String> run() {
-        final List<String> order = new ArrayList<>(testOrder.subList(0, testOrder.indexOf(dependentTest)));
-        return run(new ArrayList<>(), order);
+    private static <T> List<T> beforeInc(final List<T> ts, final T t) {
+        final int i = ts.indexOf(t);
+
+        if (i != -1) {
+            return new ArrayList<>(ts.subList(0, i + 1));
+        } else {
+            return new ArrayList<>();
+        }
     }
 
-    private List<String> run(final List<String> deps, List<String> order) {
-        while (true) {
-            final List<String> topHalf = new ArrayList<>(order.subList(0, order.size() / 2));
-            topHalf.addAll(0, deps);
+    private static <T> Function<List<T>, List<T>> modify(final Consumer<List<T>> f) {
+        return base -> {
+            f.accept(base);
+            return base;
+        };
+    }
 
-            final List<String> botHalf = new ArrayList<>(order.subList(order.size() / 2, order.size()));
-            botHalf.addAll(0, deps);
+    private static <T> Function<List<T>, List<T>> prependAll(final List<T> toAdd) {
+        return modify(base -> base.addAll(0, toAdd));
+    }
 
-            final RESULT topResult = result(topHalf);
-            final RESULT botResult = result(botHalf);
+    private static <T> List<T> prependAll(final List<T> toAdd, final List<T> ts) {
+        return prependAll(toAdd).apply(ts);
+    }
 
-            if (topResult == expected && botResult != expected) {
-                order = topHalf;
-            } else if (topResult != expected &&  botResult == expected) {
-                order = botHalf;
+    private static <T> List<T> topHalf(final List<T> ts) {
+        return new ArrayList<>(ts.subList(0, ts.size() / 2));
+    }
+
+    private static <T> List<T> botHalf(final List<T> ts) {
+        return new ArrayList<>(ts.subList(ts.size() / 2, ts.size()));
+    }
+
+    private void updateFlakyTests(final List<String> order, final TestExecResult results)
+            throws MinimizeTestListException {
+        for (final String testName : results.getAllTests()) {
+            final RESULT testResult = results.getResult(testName).result;
+
+            if (flaky.contains(testName)) {
+                return;
+            }
+
+            final List<String> testsBefore = beforeInc(order, testName);
+
+            if (knownRuns.containsKey(testsBefore) && !knownRuns.get(testsBefore).equals(testResult)) {
+                flaky.add(testName);
+
+                if (failOnFlakyTests) {
+                    throw new MinimizeTestListException("Found flaky test '" + testName + "'. " +
+                            "Result was '" + knownRuns.get(testsBefore) + "' before but is '" +
+                            testResult + "' now, when run in the order " + testsBefore);
+                }
             } else {
-                // It's not 100% obvious what to do in this case (could have weird dependencies that are hard to deal with).
-                // But sequential will definitely work (barring flakiness for other reasons).
-                return runSequential(deps, order);
+                knownRuns.put(testsBefore, testResult);
             }
         }
     }
 
-    private List<String> runSequential(final List<String> deps, final List<String> testOrder) {
+    public List<String> run() throws MinimizeTestListException {
+        return run(new ArrayList<>(), beforeInc(testOrder, dependentTest));
+    }
+
+    private List<String> run(final List<String> deps, List<String> order)
+            throws MinimizeTestListException {
+        final int origSize = order.size();
+
+        while (order.size() > 1) {
+            final RESULT topResult = result(prependAll(deps, topHalf(order)));
+            final RESULT botResult = result(prependAll(deps, botHalf(order)));
+
+            if (topResult == expected && botResult != expected) {
+                order = topHalf(order);
+            } else if (topResult != expected && botResult == expected) {
+                order = botHalf(order);
+            } else {
+                // It's not 100% obvious what to do in this case (could have weird dependencies that are hard to deal with).
+                // But sequential will definitely work (except because of flakiness for other reasons).
+                return runSequential(deps, order);
+            }
+        }
+
+        final RESULT orderResult = result(order);
+        if (order.size() == 1 || orderResult == expected) {
+            return new ArrayList<>(order);
+        } else {
+            if (order.isEmpty()) {
+                throw new MinimizeTestListException("No tests in order that could be dependency " +
+                        "(order was originally  " + origSize + "tests long).");
+            } else {
+                throw new MinimizeTestListException("Could not find dependencies. There is only one " +
+                        "test left but the result '" + orderResult +
+                        "' does not match expected '" + expected + "'");
+            }
+        }
+    }
+
+    private List<String> runSequential(final List<String> deps, final List<String> testOrder)
+            throws MinimizeTestListException {
         final List<String> remainingTests = new ArrayList<>(testOrder);
 
         while (!remainingTests.isEmpty()) {
