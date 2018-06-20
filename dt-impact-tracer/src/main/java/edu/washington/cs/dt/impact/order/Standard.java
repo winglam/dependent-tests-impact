@@ -72,12 +72,22 @@ public class Standard {
         }
     }
 
+    // record the percent of coverage as xx.xx%
+    public static String formatPercent(final double value) {
+        long displayPercent = (long) (value * 10000);
+
+        char remainder = String.valueOf(displayPercent % 100).charAt(0);
+        displayPercent = displayPercent / 100;
+
+        return displayPercent + "." + remainder;
+    }
+
     // Used to get the percent coverage each test is responsible for based on their current
     // order in methodList
     public List<TestFunctionStatement> getCoverage(boolean includeName) {
         // TODO does not work with parallelization, not sure why.
-        Set<String> allLinesCpy = new HashSet<String>(allLines);
-        List<TestFunctionStatement> coverageList = new LinkedList<TestFunctionStatement>();
+        Set<String> allLinesCpy = new HashSet<>(allLines);
+        List<TestFunctionStatement> coverageList = new LinkedList<>();
         while (methodList.size() > 0) {
             TestFunctionStatement tfs = methodList.remove(0);
             tfs.reset();
@@ -86,13 +96,12 @@ public class Standard {
             int afterSize = beforeSize - allLinesCpy.size();
 
             // record the percent of coverage as xx.xx%
-            long displayPercent = (long) ((((double) afterSize) / allLines.size()) * 10000);
-            displayPercent = displayPercent / 100;
-            char remainder = String.valueOf(displayPercent % 100).charAt(0);
+            final String displayPercent = formatPercent((double)afterSize / allLines.size());
+
             if (includeName) {
-                tfs.setName((tfs.getName() + " : " + displayPercent + "." + remainder));
+                tfs.setName((tfs.getName() + " : " + displayPercent));
             } else {
-                tfs.setName(String.valueOf(displayPercent) + "." + remainder);
+                tfs.setName(displayPercent);
             }
             coverageList.add(tfs);
         }

@@ -6,10 +6,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import com.google.common.base.Preconditions;
 import edu.washington.cs.dt.impact.data.GeometricMeanData;
 import edu.washington.cs.dt.impact.data.Project;
 import edu.washington.cs.dt.impact.data.ProjectEnhancedResults;
@@ -29,10 +31,52 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
      * format: Crystal & 0.026 & 0.001 & 0.000 & 0.000 \\
      */
     private static String generate17(ProjectEnhancedResults project, List<GeometricMeanData> fig17Data) {
+        final List<Double> values = generate17Values(project);
+        return generate17WithValues(project, fig17Data, values);
+    }
+
+    public static String generate17WithValues(ProjectEnhancedResults project,
+                                              List<GeometricMeanData> fig17Data,
+                                              List<Double> valuesList) {
+        final Iterator<Double> valuesIt = valuesList.iterator();
+
         double[] values = project.get_fig_values(17);
-        String result = project.getName();
+        StringBuilder result = new StringBuilder(project.getName());
+
+        // i represents unenhanced, i + 1 represents enhanced
+        for (int i = 0; i + 1 < values.length; i += 2) {
+            double val = valuesIt.next();
+
+            if (i == 0) {
+                fig17Data.add(new GeometricMeanData(i, val, null, Constants.ORDER.ABSOLUTE, Constants.COVERAGE.STATEMENT));
+            } else if (i == 2) {
+                fig17Data.add(new GeometricMeanData(i, val, null, Constants.ORDER.RELATIVE, Constants.COVERAGE.STATEMENT));
+            } else if (i == 4) {
+                fig17Data.add(new GeometricMeanData(i, val, null, Constants.ORDER.ABSOLUTE, Constants.COVERAGE.FUNCTION));
+            } else if (i == 6) {
+                fig17Data.add(new GeometricMeanData(i, val, null, Constants.ORDER.RELATIVE, Constants.COVERAGE.FUNCTION));
+            }
+
+            String output = apfdFormat.format(val);
+            if (output.equals("-.00")) {
+                output = ".00";
+            }
+            result.append(" & ");
+            if (val >= 0.0 || output.equals(".00")) {
+                result.append("\\pMinus");// + output;
+            }
+            result.append(output);
+        }
+        result.append(" \\\\"); // "\\"
+        return result.toString();
+    }
+
+    public static List<Double> generate17Values(ProjectEnhancedResults project) {
+        double[] values = project.get_fig_values(17);
         List<Double> origTime = Arrays.asList(project.getOrig_time());
         List<Double> origCoverage = Arrays.asList(project.getOrig_coverage());
+
+        final List<Double> result = new ArrayList<>();
 
         // i represents unenhanced, i + 1 represents enhanced
         for (int i = 0; i + 1 < values.length; i += 2) {
@@ -49,37 +93,20 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
                 // Shift_by_enhanced’s_time(orig) - shift_by_unsound’s_time(orig)
                 val = shift_by_time(project.get_fig_Time(false, i, 17), origTime, origCoverage)
                         - shift_by_time(project.get_fig_Time(true, i, 17), origTime,
-                                        origCoverage);
+                        origCoverage);
             } else {
                 // Case C
                 // Enhanced - shift_by_unsound’s_time(orig)
                 val = values[i + 1] - shift_by_time(project.get_fig_Time(true, i, 17),
-                                                    origTime, origCoverage);
+                        origTime, origCoverage);
             }
             if (!allowNegatives && val < 0.0) {
                 val = 0.0;
             }
-            if (i == 0) {
-                fig17Data.add(new GeometricMeanData(i, val, null, Constants.ORDER.ABSOLUTE, Constants.COVERAGE.STATEMENT));            	
-            } else if (i == 2) {
-                fig17Data.add(new GeometricMeanData(i, val, null, Constants.ORDER.RELATIVE, Constants.COVERAGE.STATEMENT));
-            } else if (i == 4) {
-                fig17Data.add(new GeometricMeanData(i, val, null, Constants.ORDER.ABSOLUTE, Constants.COVERAGE.FUNCTION));
-            } else if (i == 6) {
-                fig17Data.add(new GeometricMeanData(i, val, null, Constants.ORDER.RELATIVE, Constants.COVERAGE.FUNCTION));
-            }
 
-            String output = apfdFormat.format(val);
-            if (output.equals("-.00")) {
-                output = ".00";
-            }
-            result += " & ";
-            if (val >= 0.0 || output.equals(".00")) {
-                result += "\\pMinus";// + output;
-            }
-            result += output;
+            result.add(val);
         }
-        result += " \\\\"; // "\\"
+
         return result;
     }
 
@@ -125,12 +152,126 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
     private static String generate18(ProjectEnhancedResults project, double orig_time_value,
             List<GeometricMeanData> fig18apfd, List<GeometricMeanData> fig18percent,
             PercentWrapper percentComparedToUnenhanced, String type) {
+        final List<Double> values = generate18Values(project);
+
+        return generate18WithValues(project, orig_time_value, fig18apfd, fig18percent, percentComparedToUnenhanced, type, values);
+    }
+
+    public static String generate18WithValues(ProjectEnhancedResults project,
+                                              double orig_time_value,
+                                              List<GeometricMeanData> fig18apfd,
+                                              List<GeometricMeanData> fig18percent,
+                                              PercentWrapper percentComparedToUnenhanced,
+                                              String type,
+                                              final List<Double> valueList) {
         double[] time = project.get_fig18_time();
         double[] values = project.get_fig_values(18);
-        String result = project.getName() + "       ";
+        StringBuilder result = new StringBuilder(project.getName() + "       ");
+
+        final Iterator<Double> valuesIt = valueList.iterator();
+
+        // i represents unenhanced, i + 1 represents enhanced
+        for (int i = 0; i + 1 < time.length; i += 2) {
+            // enhancedParaSpeedup,2,3 correspond to either S1,S2,S3 or S4,S5,S6
+            // enhanced - unenhanced
+            /*
+             * double enhancedParaSpeedup = (percentages[i + 1] - percentages[i]) / orig_value * 100;
+             * double unenhancedPara = (percentages[i + 3] - percentages[i + 2]) / orig_value * 100;
+             * double diffBetweenEnhancedUnenhanced = (percentages[i + 5] - percentages[i + 4]) / orig_value * 100;
+             * // the max. of these 3 values
+             * double percent = Math.max(enhancedParaSpeedup, Math.max(unenhancedPara, diffBetweenEnhancedUnenhanced));
+             */
+
+            // For case B and C
+            // List<String> unenTest = Arrays.asList(project.getFig18_unenhanced_tests()[i]);
+            // int highestIndex = -1;
+            // for (String test : unenTest) {
+            // highestIndex = Math.max(origTest.indexOf(test), highestIndex);
+            // }
+
+            double percent = valuesIt.next();
+
+            if (i == 0) {
+                fig18percent.add(new GeometricMeanData(i, percent, null, Constants.ORDER.ORIGINAL, Constants.COVERAGE.STATEMENT));
+            } else if (i == 2) {
+                fig18percent.add(new GeometricMeanData(i, percent, null, Constants.ORDER.ABSOLUTE, Constants.COVERAGE.STATEMENT));
+            } else if (i == 4) {
+                fig18percent.add(new GeometricMeanData(i, percent, null, Constants.ORDER.RELATIVE, Constants.COVERAGE.STATEMENT));
+            } else if (i == 6) {
+                fig18percent.add(new GeometricMeanData(i, percent, null, Constants.ORDER.ORIGINAL, Constants.COVERAGE.FUNCTION));
+            } else if (i == 8) {
+                fig18percent.add(new GeometricMeanData(i, percent, null, Constants.ORDER.ABSOLUTE, Constants.COVERAGE.FUNCTION));
+            } else if (i == 10) {
+                fig18percent.add(new GeometricMeanData(i, percent, null, Constants.ORDER.RELATIVE, Constants.COVERAGE.FUNCTION));
+            }
+            percent *= 100;
+
+            // Increase in runtime of enhanced compared to unenhanced
+            percentComparedToUnenhanced.percent += (time[i + 1] - time[i]) / orig_time_value;
+            percentComparedToUnenhanced.numPercents += 1;
+
+            if (!allowNegatives && percent < 0.0) {
+                percent = 0.0;
+            }
+            result.append(" & ");
+            String output = percentFormat.format(percent);
+            if (output.equals("-0")) {
+                output = "0";
+            }
+            // if (percent >= 0.0 || output.equals("0")) {
+            // result += "\\pMinus";
+            // if (output.length() == 1) // single digit number, #\%
+            // {
+            // result += "\\z";
+            // }
+            // } else { // negative
+            // if (output.length() == 2) {// single digit number, #\%
+            // result += "\\z";
+            // }
+            // }
+
+            result.append(output).append("\\%"); // "\%"
+        }
+        // i represents unenhanced, i + 1 represents enhanced
+        for (int i = 0; i + 1 < values.length; i += 2) {
+            double val = valuesIt.next();
+
+            if (i == 0) {
+                fig18apfd.add(new GeometricMeanData(i, val, null, Constants.ORDER.ORIGINAL, Constants.COVERAGE.STATEMENT));
+            } else if (i == 2) {
+                fig18apfd.add(new GeometricMeanData(i, val, null, Constants.ORDER.ABSOLUTE, Constants.COVERAGE.STATEMENT));
+            } else if (i == 4) {
+                fig18apfd.add(new GeometricMeanData(i, val, null, Constants.ORDER.RELATIVE, Constants.COVERAGE.STATEMENT));
+            } else if (i == 6) {
+                fig18apfd.add(new GeometricMeanData(i, val, null, Constants.ORDER.ORIGINAL, Constants.COVERAGE.FUNCTION));
+            } else if (i == 8) {
+                fig18apfd.add(new GeometricMeanData(i, val, null, Constants.ORDER.ABSOLUTE, Constants.COVERAGE.FUNCTION));
+            } else if (i == 10) {
+                fig18apfd.add(new GeometricMeanData(i, val, null, Constants.ORDER.RELATIVE, Constants.COVERAGE.FUNCTION));
+            }
+
+            String output = apfdFormat.format(val);
+            if (output.equals("-.00")) {
+                output = ".00";
+            }
+            result.append(" & ");
+            // if (val >= 0.0 || output.equals(".00")) {
+            // result += "\\pMinus";
+            // }
+            result.append(output);
+        }
+        result.append(" \\\\"); // "\\"
+        return result.toString();
+    }
+
+    public static List<Double> generate18Values(ProjectEnhancedResults project) {
+        double[] time = project.get_fig18_time();
+        double[] values = project.get_fig_values(18);
         List<Double> origTime = Arrays.asList(project.getOrig_time());
         List<Double> origCoverage = Arrays.asList(project.getOrig_coverage());
         List<String> origTestList = Arrays.asList(project.getOrig_tests());
+
+        final List<Double> result = new ArrayList<>();
 
         // i represents unenhanced, i + 1 represents enhanced
         for (int i = 0; i + 1 < time.length; i += 2) {
@@ -173,47 +314,10 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
                         getHighestIndexInOrigTestList(project.get_fig_TestList(true, i, 18), origTestList))));
                 percent = 1 - (time[i + 1] / (time[i] + unenOrigTimeVal));
             }
-            if (i == 0) {
-                fig18percent.add(new GeometricMeanData(i, percent, null, Constants.ORDER.ORIGINAL, Constants.COVERAGE.STATEMENT));
-            } else if (i == 2) {
-                fig18percent.add(new GeometricMeanData(i, percent, null, Constants.ORDER.ABSOLUTE, Constants.COVERAGE.STATEMENT));
-            } else if (i == 4) {
-                fig18percent.add(new GeometricMeanData(i, percent, null, Constants.ORDER.RELATIVE, Constants.COVERAGE.STATEMENT));
-            } else if (i == 6) {
-                fig18percent.add(new GeometricMeanData(i, percent, null, Constants.ORDER.ORIGINAL, Constants.COVERAGE.FUNCTION));
-            } else if (i == 8) {
-                fig18percent.add(new GeometricMeanData(i, percent, null, Constants.ORDER.ABSOLUTE, Constants.COVERAGE.FUNCTION));
-            } else if (i == 10) {
-                fig18percent.add(new GeometricMeanData(i, percent, null, Constants.ORDER.RELATIVE, Constants.COVERAGE.FUNCTION));
-            }
-            percent *= 100;
 
-            // Increase in runtime of enhanced compared to unenhanced
-            percentComparedToUnenhanced.percent += (time[i + 1] - time[i]) / orig_time_value;
-            percentComparedToUnenhanced.numPercents += 1;
-
-            if (!allowNegatives && percent < 0.0) {
-                percent = 0.0;
-            }
-            result += " & ";
-            String output = percentFormat.format(percent);
-            if (output.equals("-0")) {
-                output = "0";
-            }
-            // if (percent >= 0.0 || output.equals("0")) {
-            // result += "\\pMinus";
-            // if (output.length() == 1) // single digit number, #\%
-            // {
-            // result += "\\z";
-            // }
-            // } else { // negative
-            // if (output.length() == 2) {// single digit number, #\%
-            // result += "\\z";
-            // }
-            // }
-
-            result += output + "\\%"; // "\%"
+            result.add(percent);
         }
+
         // i represents unenhanced, i + 1 represents enhanced
         for (int i = 0; i + 1 < values.length; i += 2) {
             double val;
@@ -228,16 +332,16 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
                 // Case B
                 // Shift_by_enhanced’s_time(orig) - shift_by_unsound’s_time(orig)
                 int unenIndex = getHighestIndexInOrigTestList(project.get_fig_TestList(true, i, 18),
-                                                              origTestList);
+                        origTestList);
                 int enIndex = getHighestIndexInOrigTestList(project.get_fig_TestList(false, i, 18),
-                                                            origTestList);
+                        origTestList);
 
                 val = shift_by_time(project.get_fig_Time(false, i, 18),
-                                    new ArrayList<Double>(origTime.subList(0,enIndex)),
+                        new ArrayList<Double>(origTime.subList(0,enIndex)),
                         new ArrayList<Double>(origCoverage.subList(0, enIndex)))
                         - shift_by_time(project.get_fig_Time(true, i, 18),
-                                new ArrayList<Double>(origTime.subList(0, unenIndex)),
-                                new ArrayList<Double>(origCoverage.subList(0, unenIndex)));
+                        new ArrayList<Double>(origTime.subList(0, unenIndex)),
+                        new ArrayList<Double>(origCoverage.subList(0, unenIndex)));
             } else {
                 // Case C
                 // Enhanced - shift_by_unsound’s_time(orig)
@@ -251,31 +355,9 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
                 val = 0.0;
             }
 
-            if (i == 0) {
-            	fig18apfd.add(new GeometricMeanData(i, val, null, Constants.ORDER.ORIGINAL, Constants.COVERAGE.STATEMENT));
-            } else if (i == 2) {
-            	fig18apfd.add(new GeometricMeanData(i, val, null, Constants.ORDER.ABSOLUTE, Constants.COVERAGE.STATEMENT));
-            } else if (i == 4) {
-            	fig18apfd.add(new GeometricMeanData(i, val, null, Constants.ORDER.RELATIVE, Constants.COVERAGE.STATEMENT));
-            } else if (i == 6) {
-            	fig18apfd.add(new GeometricMeanData(i, val, null, Constants.ORDER.ORIGINAL, Constants.COVERAGE.FUNCTION));
-            } else if (i == 8) {
-            	fig18apfd.add(new GeometricMeanData(i, val, null, Constants.ORDER.ABSOLUTE, Constants.COVERAGE.FUNCTION));
-            } else if (i == 10) {
-            	fig18apfd.add(new GeometricMeanData(i, val, null, Constants.ORDER.RELATIVE, Constants.COVERAGE.FUNCTION));
-            }
-            
-            String output = apfdFormat.format(val);
-            if (output.equals("-.00")) {
-                output = ".00";
-            }
-            result += " & ";
-            // if (val >= 0.0 || output.equals(".00")) {
-            // result += "\\pMinus";
-            // }
-            result += output;
+            result.add(val);
         }
-        result += " \\\\"; // "\\"
+
         return result;
     }
 
@@ -295,15 +377,91 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
      * a private method that generates Figure 19
      */
     private static String generate19(ProjectEnhancedResults project, double orig_time_value,
-            List<GeometricMeanData> fig19GeoData, PercentWrapper percentComparedToUnenhanced) {
+                                     List<GeometricMeanData> fig19GeoData, PercentWrapper percentComparedToUnenhanced) {
+        final List<Double> values = generate19Values(project);
+
+        return generate19WithValues(project, orig_time_value, fig19GeoData, percentComparedToUnenhanced, values);
+    }
+
+    public static String generate19WithValues(ProjectEnhancedResults project, double orig_time_value,
+                                              List<GeometricMeanData> fig19GeoData,
+                                              PercentWrapper percentComparedToUnenhanced,
+                                              final List<Double> values) {
+        final StringBuilder result = new StringBuilder(project.getName());
+
         double[] orig_values = project.get_fig19_orig();
         double[] time_values = project.get_fig19_time();
-        String result = project.getName();
+
+        final Iterator<Double> valuesIt = values.iterator();
+
+        for (int i = 0; i + 2 <= orig_values.length; i += 2) {
+            double diffBetweenEnhancedUnenhanced = valuesIt.next();
+            double enhancedParaSpeedup = orig_values[i + 1];
+            double unenhancedPara = orig_values[i];
+
+            // Increase in runtime of enhanced compared to unenhanced
+            percentComparedToUnenhanced.percent += (enhancedParaSpeedup - unenhancedPara) / orig_time_value;
+            percentComparedToUnenhanced.numPercents += 1;
+
+            String output = timeFormat.format(diffBetweenEnhancedUnenhanced);
+            if (output.equals("-0\\%")) {
+                output = "0\\%";
+            }
+
+            result.append(" & ");
+
+            result.append(output);
+            // result += " & " + timeFormat.format(enhancedParaSpeedup) + " $\\rightarrow$ " +
+            // timeFormat.format(unenhancedPara);
+            fig19GeoData.add(new GeometricMeanData(getK(i), enhancedParaSpeedup, Constants.TD_SETTING.OMITTED_TD,
+                    Constants.ORDER.ORIGINAL, null));
+            fig19GeoData.add(new GeometricMeanData(getK(i), unenhancedPara, Constants.TD_SETTING.GIVEN_TD,
+                    Constants.ORDER.ORIGINAL, null));
+            fig19GeoData.add(new GeometricMeanData(i, diffBetweenEnhancedUnenhanced, null, Constants.ORDER.ORIGINAL, null));
+        }
+
+        // TIME ORDER
+        // i represents unenhanced, i + 1 represents enhanced
+        for (int i = 0; i + 2 <= time_values.length; i += 2) {
+            double enhancedParaSpeedup = time_values[i + 1];
+            double unenhancedPara = time_values[i];
+            double diffBetweenEnhancedUnenhanced = valuesIt.next();
+
+            // Increase in runtime of enhanced compared to unenhanced
+            percentComparedToUnenhanced.percent += (enhancedParaSpeedup - unenhancedPara) / orig_time_value;
+            percentComparedToUnenhanced.numPercents += 1;
+
+            String output = timeFormat.format(diffBetweenEnhancedUnenhanced);
+            if (output.equals("-0\\%")) {
+                output = "0\\%";
+            }
+
+            result.append(" & ");
+
+            result.append(output);
+            // result += " & " + timeFormat.format(enhancedParaSpeedup) + " $\\rightarrow$ " +
+            // timeFormat.format(unenhancedPara);
+            fig19GeoData.add(new GeometricMeanData(getK(i), enhancedParaSpeedup, Constants.TD_SETTING.OMITTED_TD,
+                    Constants.ORDER.TIME, null));
+            fig19GeoData.add(new GeometricMeanData(getK(i), unenhancedPara, Constants.TD_SETTING.GIVEN_TD,
+                    Constants.ORDER.TIME, null));
+            fig19GeoData.add(new GeometricMeanData(i, diffBetweenEnhancedUnenhanced, null, Constants.ORDER.TIME, null));
+        }
+        result.append("\\\\");
+
+        return result.toString();
+    }
+
+    public static List<Double> generate19Values(ProjectEnhancedResults project) {
+        double[] orig_values = project.get_fig19_orig();
+        double[] time_values = project.get_fig19_time();
         double enhancedParaSpeedup = 0;
         double unenhancedPara = 0;
         double diffBetweenEnhancedUnenhanced = 0;
         List<Double> origTime = Arrays.asList(project.getOrig_time());
         List<String> origTestList = Arrays.asList(project.getOrig_tests());
+
+        final List<Double> result = new ArrayList<>();
 
         // ORIGINAL ORDER
         // i represents unenhanced, i + 1 represents enhanced
@@ -337,36 +495,7 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
                 diffBetweenEnhancedUnenhanced = 1 - (enhancedParaSpeedup / (unenhancedPara + unenOrigTimeVal));
             }
 
-            // Increase in runtime of enhanced compared to unenhanced
-            percentComparedToUnenhanced.percent += (enhancedParaSpeedup - unenhancedPara) / orig_time_value;
-            percentComparedToUnenhanced.numPercents += 1;
-
-            String output = timeFormat.format(diffBetweenEnhancedUnenhanced);
-            if (output.equals("-0\\%")) {
-                output = "0\\%";
-            }
-
-            result += " & ";
-            // if (diffBetweenEnhancedUnenhanced >= 0.0 || output.equals("0\\%")) {
-            // result += "\\pMinus";
-            // if (output.length() == 3) // single digit number, #\%
-            // {
-            // result += "\\z";
-            // }
-            // } else { // negative
-            // if (output.length() == 4) {// single digit number, #\%
-            // result += "\\z";
-            // }
-            // }
-
-            result += output;
-            // result += " & " + timeFormat.format(enhancedParaSpeedup) + " $\\rightarrow$ " +
-            // timeFormat.format(unenhancedPara);
-            fig19GeoData.add(new GeometricMeanData(getK(i), enhancedParaSpeedup, Constants.TD_SETTING.OMITTED_TD,
-                    Constants.ORDER.ORIGINAL, null));
-            fig19GeoData.add(new GeometricMeanData(getK(i), unenhancedPara, Constants.TD_SETTING.GIVEN_TD,
-                    Constants.ORDER.ORIGINAL, null));
-            fig19GeoData.add(new GeometricMeanData(i, diffBetweenEnhancedUnenhanced, null, Constants.ORDER.ORIGINAL, null));
+            result.add(diffBetweenEnhancedUnenhanced);
         }
 
         // TIME ORDER
@@ -400,39 +529,32 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
                 diffBetweenEnhancedUnenhanced = 1 - (enhancedParaSpeedup / (unenhancedPara + unenOrigTimeVal));
             }
 
-            // Increase in runtime of enhanced compared to unenhanced
-            percentComparedToUnenhanced.percent += (enhancedParaSpeedup - unenhancedPara) / orig_time_value;
-            percentComparedToUnenhanced.numPercents += 1;
-
-            String output = timeFormat.format(diffBetweenEnhancedUnenhanced);
-            if (output.equals("-0\\%")) {
-                output = "0\\%";
-            }
-
-            result += " & ";
-            // if (diffBetweenEnhancedUnenhanced >= 0.0 || output.equals("0\\%")) {
-            // result += "\\pMinus";
-            // if (output.length() == 3) // single digit number, #\%
-            // {
-            // result += "\\z";
-            // }
-            // } else { // negative
-            // if (output.length() == 4) {// single digit number, #\%
-            // result += "\\z";
-            // }
-            // }
-
-            result += output;
-            // result += " & " + timeFormat.format(enhancedParaSpeedup) + " $\\rightarrow$ " +
-            // timeFormat.format(unenhancedPara);
-            fig19GeoData.add(new GeometricMeanData(getK(i), enhancedParaSpeedup, Constants.TD_SETTING.OMITTED_TD,
-                    Constants.ORDER.TIME, null));
-            fig19GeoData.add(new GeometricMeanData(getK(i), unenhancedPara, Constants.TD_SETTING.GIVEN_TD,
-                    Constants.ORDER.TIME, null));
-            fig19GeoData.add(new GeometricMeanData(i, diffBetweenEnhancedUnenhanced, null, Constants.ORDER.TIME, null));
+            result.add(diffBetweenEnhancedUnenhanced);
         }
-        result += "\\\\";
+
         return result;
+    }
+
+    public static EnhancedResults setup(final boolean allowNegatives, final String directoryName, final String outputDirectoryName) {
+        EnhancedResultsFigureGenerator.allowNegatives = allowNegatives;
+
+        EnhancedResultsFigureGenerator.outputDirectoryName = outputDirectoryName;
+
+        File directory = new File(directoryName);
+        File[] fList = directory.listFiles();
+        // create a list of project Objects that each have a diff project name
+        List<Project> proj_orig_arrayList = new ArrayList<>();
+        List<Project> proj_auto_arrayList = new ArrayList<>();
+
+        // Call super's parse file method and let it parse the files for information and
+        // then call doParaCalculations, doSeleCalculations, or doPrioCalculations for each file
+        parseFiles(fList, new EnhancedResultsFigureGenerator(), true, proj_orig_arrayList, proj_auto_arrayList);
+
+        PercentWrapper percentRuntime = new PercentWrapper();
+
+        Preconditions.checkArgument(proj_orig_arrayList.size() == 1);
+        Preconditions.checkArgument(proj_auto_arrayList.size() == 1);
+        return new EnhancedResults((ProjectEnhancedResults) proj_orig_arrayList.get(0), (ProjectEnhancedResults) proj_auto_arrayList.get(0));
     }
 
     /*
@@ -953,7 +1075,7 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
         currProj.setTestList(17, index, test_list);
     }
 
-    private static class PercentWrapper {
+    static class PercentWrapper {
         public double percent;
         public int numPercents;
 
