@@ -1,5 +1,6 @@
 package edu.washington.cs.dt.impact.tools;
 
+import com.google.common.base.Preconditions;
 import com.google.common.collect.Lists;
 import com.reedoei.eunomia.functional.Func;
 import com.reedoei.eunomia.string.Context;
@@ -103,6 +104,8 @@ public class PitResultAnalyzer extends StandardMain {
     private List<Double> averageResults(final String origOrAuto, final Path resultFilesPath, final Path mutationsPath)
             throws IOException, DocumentException {
         final List<MutationGroup> mutationGroups = createMutationGroups(mutationsPath);
+        Preconditions.checkState(!mutationGroups.isEmpty(), "No mutation groups generated!");
+
         generateResults(resultFilesPath, mutationGroups);
 
         final Constants.TECHNIQUE technique = getTechnique(resultFilesPath);

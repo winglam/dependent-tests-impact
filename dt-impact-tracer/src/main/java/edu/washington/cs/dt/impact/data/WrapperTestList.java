@@ -1,10 +1,12 @@
 package edu.washington.cs.dt.impact.data;
 
+import edu.washington.cs.dt.RESULT;
 import edu.washington.cs.dt.impact.runner.Runner;
 import edu.washington.cs.dt.impact.util.Constants;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 public class WrapperTestList {
@@ -19,6 +21,8 @@ public class WrapperTestList {
     private String dtList;
     private int testListSize;
     private double avgDepFindTime = -1; // -1 if we didn't look for dependent tests at all. Time is in seconds.
+    private Map<String, RESULT> origOrderResults;
+    private Map<String, RESULT> testOrderResults;
 
     public int getTestListSize() {
         return testListSize;
@@ -137,6 +141,16 @@ public class WrapperTestList {
             outputArr.add(getTestList() + "\n");
         }
 
+        if (getOrigOrderResults() != null) {
+            outputArr.add("\nOriginal order results:\n");
+            outputArr.add(getOrigOrderResults() + "\n");
+        }
+
+        if (getTestOrderResults() != null) {
+            outputArr.add("\nTest order results:\n");
+            outputArr.add(getTestOrderResults() + "\n");
+        }
+
         if (getTimeEachTest() != null) {
             outputArr.add("\n" + Constants.TIME_STRING + "\n");
             outputArr.add(getTimeEachTest() + "\n");
@@ -160,5 +174,21 @@ public class WrapperTestList {
         outputArr.add("--------------------------\n");
 
         return outputArr;
+    }
+
+    public void setOrigOrderResults(final Map<String,RESULT> nameToOrigResults) {
+        origOrderResults = nameToOrigResults;
+    }
+
+    public Map<String, RESULT> getOrigOrderResults() {
+        return origOrderResults;
+    }
+
+    public void setTestOrderResults(final Map<String,RESULT> nameToTestResults) {
+        testOrderResults = nameToTestResults;
+    }
+
+    public Map<String, RESULT> getTestOrderResults() {
+        return testOrderResults;
     }
 }

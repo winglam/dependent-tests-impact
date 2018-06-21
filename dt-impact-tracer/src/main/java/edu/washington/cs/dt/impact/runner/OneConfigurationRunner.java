@@ -82,6 +82,10 @@ public class OneConfigurationRunner extends Runner {
 
             // ImpactMain
             Map<String, RESULT> nameToTestResults = getCurrentOrderTestListResults(currentOrderTestList, filesToDelete);
+
+            testList.setOrigOrderResults(nameToOrigResults);
+            testList.setTestOrderResults(nameToTestResults);
+
             // CrossReferencer
             Set<String> changedTests = CrossReferencer.compareResults(nameToOrigResults, nameToTestResults, false);
 
