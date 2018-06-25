@@ -1,6 +1,15 @@
 package edu.washington.cs.dt.impact.runner;
 
+import com.reedoei.eunomia.collections.MapUtil;
+import com.reedoei.eunomia.functional.Func;
+import com.reedoei.eunomia.string.matching.LineMatch;
+import com.reedoei.eunomia.string.searching.Searcher;
+import com.reedoei.eunomia.string.searching.StringSearch;
+import com.reedoei.eunomia.util.FileUtil;
+import com.sun.org.apache.regexp.internal.RE;
+import edu.washington.cs.dt.RESULT;
 import edu.washington.cs.dt.impact.figure.generator.PrecomputedTimeFigureGenerator;
+import edu.washington.cs.dt.impact.util.Constants;
 import org.hamcrest.Matchers;
 import org.junit.After;
 import org.junit.Before;
@@ -10,6 +19,7 @@ import org.junit.rules.TemporaryFolder;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.IOException;
 import java.io.PrintStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -19,13 +29,16 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
+import java.util.function.Function;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assume.assumeThat;
 import static org.junit.Assume.assumeTrue;
 
@@ -53,33 +66,44 @@ public class OneConfigurationRunnerTest {
     public void tearDown() {
         System.setOut(stdOut);
     }
-//
-//    @Test
-//    public void testOutputResults() throws Exception {
-//        final File resultsDir = temporaryFolder.newFolder();
-//
-//        runOneConfigRunner("crystal", "orig", "statement", "relative", resultsDir, false);
-//
-//        final Path outputFile =
-//                Files.list(resultsDir.toPath())
-//                .findFirst()
-//                .orElseThrow(() -> new IllegalStateException("No result files generated!"));
-//
-//        // Test that the lines exists AND that we can read them.
-//        assertTrue(new StringSearch(FileUtil.readFile(outputFile))
-//                .search(Searcher.contains("Original order results:"))
-//                .findFirst()
-//                .flatMap(LineMatch::nextLine)
-//                .map(l -> MapUtil.valueRead(RESULT::valueOf, l.get()))
-//                .isPresent());
-//
-//        assertTrue(new StringSearch(FileUtil.readFile(outputFile))
-//                .search(Searcher.contains("Test order results:"))
-//                .findFirst()
-//                .flatMap(LineMatch::nextLine)
-//                .map(l -> MapUtil.valueRead(RESULT::valueOf, l.get()))
-//                .isPresent());
-//    }
+
+    private <K, V> Map<K, V> hasLineMap(final Path outputFile,
+                                   final String str,
+                                   final Function<String, Map<K, V>> reader)
+            throws IOException {
+        final Optional<Map<K, V>> m =
+                new StringSearch(FileUtil.readFile(outputFile))
+                .search(Searcher.contains(str))
+                .findFirst()
+                .flatMap(LineMatch::nextLine)
+                .map(l -> reader.apply(l.get()));
+
+        assertTrue(m.isPresent());
+
+        // Shouldn't actually need this, as we asserted m is present above.
+        return m.orElseThrow(() -> new RuntimeException("Couldn't parse!"));
+    }
+
+    @Test
+    public void testOutputResults() throws Exception {
+        final File resultsDir = temporaryFolder.newFolder();
+
+        runOneConfigRunner("crystal", "orig", "statement", "relative", resultsDir, false);
+
+        final Path outputFile =
+                Files.list(resultsDir.toPath())
+                .findFirst()
+                .orElseThrow(() -> new IllegalStateException("No result files generated!"));
+
+        // Test that the lines exists AND that we can read them.
+        hasLineMap(outputFile, "Original order results:", MapUtil.valueReader(RESULT::valueOf));
+        hasLineMap(outputFile, "Test order results:", MapUtil.valueReader(RESULT::valueOf));
+
+        final Map<String, RESULT> resultsMap = hasLineMap(outputFile, Constants.ISOLATION_RESULTS, MapUtil.valueReader(RESULT::valueOf));
+        final Map<String, Long> timeMap = hasLineMap(outputFile, Constants.ISOLATION_TIMES, MapUtil.valueReader(Long::parseLong));
+
+        assertEquals(resultsMap.keySet(), timeMap.keySet());
+    }
 
     @Test
     public void testCrystalPrecomputedTimeIsAverageTime() throws Exception {

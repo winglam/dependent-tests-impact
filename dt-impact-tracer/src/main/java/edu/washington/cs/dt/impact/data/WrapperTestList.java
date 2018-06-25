@@ -1,13 +1,18 @@
 package edu.washington.cs.dt.impact.data;
 
 import edu.washington.cs.dt.RESULT;
+import edu.washington.cs.dt.TestExecResult;
 import edu.washington.cs.dt.impact.runner.Runner;
 import edu.washington.cs.dt.impact.util.Constants;
+import edu.washington.cs.dt.runners.FixedOrderRunner;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.TreeMap;
 
 public class WrapperTestList {
     private Set<String> notFixedDT;
@@ -20,9 +25,13 @@ public class WrapperTestList {
     private double newOrderTime;
     private String dtList;
     private int testListSize;
+
     private double avgDepFindTime = -1; // -1 if we didn't look for dependent tests at all. Time is in seconds.
     private Map<String, RESULT> origOrderResults;
     private Map<String, RESULT> testOrderResults;
+
+    private final Map<String, RESULT> isolationResults = new HashMap<>();
+    private final Map<String, Long> isolationTimes = new HashMap<>();
 
     public int getTestListSize() {
         return testListSize;
@@ -159,6 +168,12 @@ public class WrapperTestList {
         if (getNumNotFixedDT() != 0) {
             outputArr.add("\n" + Constants.NOT_FIXED_DTS + "\n");
             outputArr.add(getNotFixedDT() + "\n");
+
+            outputArr.add("\n" + Constants.ISOLATION_RESULTS + "\n");
+            outputArr.add(getIsolationResults() + "\n");
+
+            outputArr.add("\n" + Constants.ISOLATION_TIMES + "\n");
+            outputArr.add(getIsolationTimes() + "\n");
         }
 
         if (getDtList() != null) {
@@ -190,5 +205,25 @@ public class WrapperTestList {
 
     public Map<String, RESULT> getTestOrderResults() {
         return testOrderResults;
+    }
+
+    public void isolationResult(final String changedTest, final String classPath) {
+        final TestExecResult result =
+                new FixedOrderRunner(classPath, Collections.singletonList(changedTest))
+                .run().getExecutionRecords().get(0);
+
+        final RESULT testResult = result.getResult(changedTest).result;
+        isolationResults.put(changedTest, testResult);
+
+        final long time = result.getResult(changedTest).getExecTime();
+        isolationTimes.put(changedTest, time);
+    }
+
+    public Map<String, Long> getIsolationTimes() {
+        return isolationTimes;
+    }
+
+    public Map<String, RESULT> getIsolationResults() {
+        return isolationResults;
     }
 }

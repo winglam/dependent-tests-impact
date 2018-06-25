@@ -321,7 +321,7 @@ public class FailedTestRemover {
             builder.append("# There were no tests that failed to compiled.");
         } else {
             for (final String methodName : removedMethods) {
-                builder.append(methodName + "\n");
+                builder.append(methodName).append("\n");
             }
         }
 

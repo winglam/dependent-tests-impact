@@ -27,12 +27,15 @@
 package edu.washington.cs.dt.impact.runner;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
 import edu.washington.cs.dt.RESULT;
+import edu.washington.cs.dt.TestExecResult;
+import edu.washington.cs.dt.TestExecResults;
 import edu.washington.cs.dt.impact.data.WrapperTestList;
 import edu.washington.cs.dt.impact.technique.Parallelization;
 import edu.washington.cs.dt.impact.technique.Prioritization;
@@ -41,6 +44,7 @@ import edu.washington.cs.dt.impact.technique.Test;
 import edu.washington.cs.dt.impact.tools.CrossReferencer;
 import edu.washington.cs.dt.impact.tools.DependentTestFinder;
 import edu.washington.cs.dt.impact.util.Constants.TECHNIQUE;
+import edu.washington.cs.dt.runners.FixedOrderRunner;
 
 public class OneConfigurationRunner extends Runner {
 
@@ -91,6 +95,11 @@ public class OneConfigurationRunner extends Runner {
 
             if (!changedTests.isEmpty()) {
                 hasDependentTest = true;
+            }
+
+            // Run the dependent tests in isolation to get the time/stuff for those
+            for (final String changedTest : changedTests) {
+                testList.isolationResult(changedTest, classPath);
             }
 
             int counter = 0;
