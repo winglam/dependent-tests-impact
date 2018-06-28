@@ -51,22 +51,7 @@ public class EnhancedResultAverager {
         System.out.printf("\rGenerating results for path %s", resultFilesPath);
 
         final Path outputPath = Files.createTempDirectory("output");
-        final EnhancedResults results =
-                EnhancedResultsFigureGenerator.setup(true, resultFilesPath, outputPath);
-
-        switch (technique) {
-            case PRIORITIZATION:
-                return results.prioValues(origOrAuto);
-
-            case SELECTION:
-                return results.seleValues(origOrAuto);
-
-            case PARALLELIZATION:
-                return results.paraValues(origOrAuto);
-
-            default:
-                throw new IllegalArgumentException("Unhandled technique: " + technique);
-        }
+        return EnhancedResultsFigureGenerator.setup(true, resultFilesPath, outputPath).values(origOrAuto);
     }
 
     public String latexString() throws IOException {
@@ -96,5 +81,9 @@ public class EnhancedResultAverager {
 
     public List<Double> means() {
         return Func.map(Averager::mean, averagers);
+    }
+
+    public List<Averager<Double>> getAveragers() {
+        return averagers;
     }
 }

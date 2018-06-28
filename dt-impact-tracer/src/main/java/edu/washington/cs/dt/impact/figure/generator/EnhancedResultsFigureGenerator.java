@@ -552,9 +552,20 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
 
         PercentWrapper percentRuntime = new PercentWrapper();
 
-        Preconditions.checkArgument(proj_orig_arrayList.size() == 1);
-        Preconditions.checkArgument(proj_auto_arrayList.size() == 1);
-        return new EnhancedResults((ProjectEnhancedResults) proj_orig_arrayList.get(0), (ProjectEnhancedResults) proj_auto_arrayList.get(0));
+        Preconditions.checkArgument(proj_orig_arrayList.size() <= 1, "This method should be used to analyze at most one project at a time!");
+        Preconditions.checkArgument(proj_auto_arrayList.size() <= 1, "This method should be used to analyze at most one project at a time!");
+
+        ProjectEnhancedResults origProj = null;
+        if (!proj_orig_arrayList.isEmpty()) {
+            origProj = (ProjectEnhancedResults) proj_orig_arrayList.get(0);
+        }
+
+        ProjectEnhancedResults autoProj = null;
+        if (!proj_auto_arrayList.isEmpty()) {
+            autoProj = (ProjectEnhancedResults) proj_auto_arrayList.get(0);
+        }
+
+        return new EnhancedResults(origProj, autoProj, directory);
     }
 
     /*

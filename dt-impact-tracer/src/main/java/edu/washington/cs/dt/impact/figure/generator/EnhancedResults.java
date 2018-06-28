@@ -38,10 +38,14 @@ public class EnhancedResults {
     private final ProjectEnhancedResults origProj;
     private final ProjectEnhancedResults autoProj;
 
+    private final Path resultFilesPath;
+
     public EnhancedResults(final ProjectEnhancedResults origProj,
-                           final ProjectEnhancedResults autoProj) {
+                           final ProjectEnhancedResults autoProj,
+                           final Path resultFilesPath) {
         this.origProj = origProj;
         this.autoProj = autoProj;
+        this.resultFilesPath = resultFilesPath;
     }
 
     private ProjectEnhancedResults getProject(final String origOrAuto) {
@@ -62,6 +66,20 @@ public class EnhancedResults {
             return autoProj;
         } else {
             return origProj;
+        }
+    }
+
+    public List<Double> values(final String origOrAuto) throws IOException {
+        final Constants.TECHNIQUE technique = getTechnique(resultFilesPath);
+        switch (technique) {
+            case PRIORITIZATION:
+                return prioValues(origOrAuto);
+            case SELECTION:
+                return seleValues(origOrAuto);
+            case PARALLELIZATION:
+                return paraValues(origOrAuto);
+            default:
+                throw new IllegalArgumentException("Unhandled technique: " + technique);
         }
     }
 
