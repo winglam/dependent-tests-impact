@@ -1,7 +1,7 @@
 package edu.washington.cs.dt.impact.tools;
 
 import com.github.javaparser.JavaParser;
-import com.github.javaparser.ParseException;
+import com.github.javaparser.Position;
 import com.github.javaparser.ast.CompilationUnit;
 import com.github.javaparser.ast.PackageDeclaration;
 import com.github.javaparser.ast.body.BodyDeclaration;
@@ -9,10 +9,30 @@ import com.github.javaparser.ast.body.ClassOrInterfaceDeclaration;
 import com.github.javaparser.ast.body.MethodDeclaration;
 import com.github.javaparser.ast.body.Parameter;
 import com.github.javaparser.ast.body.TypeDeclaration;
+import com.github.javaparser.ast.visitor.ModifierVisitor;
+import com.github.javaparser.ast.visitor.Visitable;
 
-import javax.tools.*;
-import java.io.*;
-import java.util.*;
+import javax.tools.Diagnostic;
+import javax.tools.DiagnosticCollector;
+import javax.tools.JavaCompiler;
+import javax.tools.JavaFileObject;
+import javax.tools.StandardJavaFileManager;
+import javax.tools.ToolProvider;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Date;
+import java.util.List;
+import java.util.Locale;
+import java.util.Objects;
+import java.util.Optional;
 
 public class FailedTestRemover {
     private static final String AUTO_REMOVED_METHODS_FILEPATH = "auto-removed-methods.txt";
@@ -20,156 +40,6 @@ public class FailedTestRemover {
 
     private final List<JavaFile> javaFiles = new ArrayList<>();
     private final List<String> removedMethods = new ArrayList<>();
-
-    /**
-     * The basic Java file which supports compiling/removing methods.
-     */
-    private class JavaFile {
-        private CompilationUnit compilationUnit;
-        private List<ClassOrInterfaceDeclaration> classList = new ArrayList<>();
-        private final String filename;
-        private final String classPath;
-        private final String outfileName;
-
-        private JavaFile(String filename, String classPath, String outfileName) {
-            this.filename = filename;
-            this.classPath = classPath;
-            this.outfileName = outfileName;
-        }
-
-        private void open() throws IOException, ParseException {
-            final File sourceFile = new File(filename);
-            compilationUnit = JavaParser.parse(sourceFile);
-        }
-
-        private String getFilename() {
-            return filename;
-        }
-
-        /**
-         * Finds all classes/interfaces in the file and saves them.
-         */
-        private void loadClassList() {
-            classList.clear();
-
-            for (final TypeDeclaration typeDeclaration : compilationUnit.getTypes()) {
-                if (typeDeclaration instanceof ClassOrInterfaceDeclaration) {
-                    classList.add((ClassOrInterfaceDeclaration) typeDeclaration);
-                }
-            }
-        }
-
-        private void writeFile() throws IOException {
-            final FileOutputStream outputStream = new FileOutputStream(outfileName);
-
-            outputStream.write(compilationUnit.toString().getBytes());
-            outputStream.flush();
-
-            outputStream.close();
-        }
-
-        private MethodDeclaration findMethodAt(final long line) {
-            for (final ClassOrInterfaceDeclaration classDeclaration : classList) {
-                for (final BodyDeclaration bodyDeclaration : classDeclaration.getMembers()) {
-                    if (bodyDeclaration instanceof MethodDeclaration) {
-                        final MethodDeclaration method = (MethodDeclaration)bodyDeclaration;
-
-                        if (method.getBeginLine() <= line && method.getEndLine() >= line) {
-                            return method;
-                        }
-                    }
-                }
-            }
-
-            return null;
-        }
-
-        /**
-         * Attempts to remove the method declaration.
-         * @param method The method declaration to remove.
-         * @return A String of the fully qualified name of the method removed if found, null otherwise.
-         */
-        private String removeMethod(final MethodDeclaration method) {
-            for (final ClassOrInterfaceDeclaration classDeclaration : classList) {
-                final boolean success = classDeclaration.getMembers().remove(method);
-
-                if (success) {
-                    return createRemovedMethodString(compilationUnit.getPackage(), classDeclaration, method);
-                }
-            }
-
-            return null;
-        }
-
-        /**
-         * Writes the file to the output filename, then tries to compile the output file.
-         */
-        private DiagnosticCollector<JavaFileObject> tryCompile()
-                throws IOException, ParseException {
-            writeAndReloadCompilationUnit();
-
-            return compile();
-        }
-
-        private void writeAndReloadCompilationUnit() throws IOException, ParseException {
-            writeFile();
-
-            compilationUnit = JavaParser.parse(new FileInputStream(outfileName));
-            loadClassList();
-        }
-
-        private DiagnosticCollector<JavaFileObject> compile() throws IOException {
-            final File file = new File(outfileName);
-
-            final JavaCompiler javaCompiler = ToolProvider.getSystemJavaCompiler();
-            final List<String> compilerOptions =
-                    new ArrayList<>(Arrays.asList("-classpath", classPath));
-
-            final DiagnosticCollector<JavaFileObject> diagnostics = new DiagnosticCollector<>();
-            final StandardJavaFileManager fileManager =
-                    javaCompiler.getStandardFileManager(diagnostics, null, null);
-
-            final Iterable<? extends JavaFileObject> fileObjects =
-                    fileManager.getJavaFileObjectsFromFiles(Arrays.asList(file));
-
-            final JavaCompiler.CompilationTask compilationTask =
-                    javaCompiler.getTask(null, fileManager, diagnostics, compilerOptions, null, fileObjects);
-            compilationTask.call();
-
-            fileManager.close();
-
-            return diagnostics;
-        }
-
-        private List<MethodDeclaration> getMethodsWithErrors(DiagnosticCollector<JavaFileObject> diagnostics)
-                throws Exception {
-            final List<MethodDeclaration> methodsWithErrors = new ArrayList<>();
-
-            for (Diagnostic diagnostic : diagnostics.getDiagnostics()) {
-                final MethodDeclaration method = findMethodAt(diagnostic.getLineNumber());
-                if (diagnostic.getKind() == Diagnostic.Kind.ERROR) {
-                    if (method != null) {
-                        if (!methodsWithErrors.contains(method)) {
-                            methodsWithErrors.add(method);
-                        }
-                    } else {
-                        throw new Exception("An error has occurred in an unknown method:\n"
-                                + " Message: " + diagnostic.getMessage(Locale.getDefault()) + "\n"
-                                + " Source: " + diagnostic.getSource() + "\n"
-                                + " Code: " + diagnostic.getCode() + "\n"
-                                + " Kind: " + diagnostic.getKind() + "\n"
-                                + " Line: " + diagnostic.getLineNumber()
-                                + " Position: " + diagnostic.getPosition() + "\n");
-                    }
-                } else {
-                    System.out.println("Ignoring the following diagnostic: "
-                            + diagnostic.getMessage(Locale.getDefault()));
-                }
-            }
-
-            return methodsWithErrors;
-        }
-    }
 
     public static void main(final String[] args) throws Exception {
         if (args.length < 2) {
@@ -198,49 +68,52 @@ public class FailedTestRemover {
 
         System.out.println("Started running at: " + new Date().toString());
         System.out.println("Trying to compile " + filenames);
-        System.out.println("Classpath is: " + classPath);
+//        System.out.println("Classpath is: " + classPath);
         System.out.println();
 
         FailedTestRemover failedTestRemover = new FailedTestRemover(filenames, classPath);
         failedTestRemover.run();
     }
 
-    private FailedTestRemover(final List<String> filenames, final String classPath)
-            throws IOException, ParseException {
+    private FailedTestRemover(final List<String> filenames, final String classPath) throws IOException {
+        final Path outdirPath = Paths.get(OUT_DIR);
+        if (!Files.isDirectory(outdirPath)) {
+            Files.deleteIfExists(outdirPath);
+            Files.createDirectory(outdirPath);
+        }
+
         for (final String filename : filenames) {
             final File file = new File(filename);
-            javaFiles.add(new JavaFile(filename, classPath, OUT_DIR + "/" + file.getName()));
+            javaFiles.add(new JavaFile(filename, classPath, outdirPath.resolve(file.getName())));
         }
     }
 
     /**
      * Ex: For int f(int a, int b), returns "int a, int b"
-     * @returns A string containing the parameters separated by commas.
+     * @return A string containing the parameters separated by commas.
      */
     private static String getParametersAsString(final MethodDeclaration method) {
-        String result = "";
+        StringBuilder result = new StringBuilder();
 
         for (int i = 0; i < method.getParameters().size(); i++) {
             final Parameter parameter = method.getParameters().get(i);
 
-            result += parameter.toString();
+            result.append(parameter.toString());
 
             if (i != (method.getParameters().size() - 1)) {
-                result += ", ";
+                result.append(", ");
             }
         }
 
-        return result;
+        return result.toString();
     }
 
     /**
-     * @returns The fully qualified name of this method: packageName.className.methodName(paramNames)
+     * @return The fully qualified name of this method: packageName.className.methodName(paramNames)
      */
-    private static String createRemovedMethodString(final PackageDeclaration packageDeclaration,
+    private static String createRemovedMethodString(final String packageName,
                                                     final ClassOrInterfaceDeclaration classDeclaration,
                                                     final MethodDeclaration method) {
-        final String packageName = packageDeclaration != null ? packageDeclaration.getPackageName() + "." : "";
-
         // Not using .getDeclarationAsString because it includes the return type, which wouldn't work with concatting below
         final String methodName = method.getName() + "(" + getParametersAsString(method) + ")";
 
@@ -261,7 +134,6 @@ public class FailedTestRemover {
 
     /**
      * Tries to repeatedly compile the file until there were no errors that occurred during compilation.
-     * @throws Exception
      */
     private void run(final JavaFile javaFile) throws Exception {
         int errorCount = -1;
@@ -358,7 +230,7 @@ public class FailedTestRemover {
                 path = path.substring(0, path.length() - 1);
                 File pathFile = new File(path);
                 System.out.println(path);
-                for (File file : pathFile.listFiles()) {
+                for (File file : Objects.requireNonNull(pathFile.listFiles())) {
                     if (file.isFile() && file.getName().endsWith(".jar")) {
                         sb.append(path);
                         sb.append(file.getName());
@@ -371,5 +243,179 @@ public class FailedTestRemover {
             }
         }
         return sb.toString();
+    }
+
+    private final class MethodRemoverVisitor extends ModifierVisitor<Void> {
+        private final MethodDeclaration method;
+
+        private boolean found = false;
+
+        MethodRemoverVisitor(final MethodDeclaration method) {
+            this.method = method;
+        }
+
+        @Override
+        public Visitable visit(MethodDeclaration n, Void arg) {
+            if (n.getSignature().equals(method.getSignature())) {
+                this.found = true;
+
+                return null;
+            }
+
+            return super.visit(n, arg);
+        }
+
+        boolean succeeded() {
+            return found;
+        }
+    }
+
+    /**
+     * The basic Java file which supports compiling/removing methods.
+     */
+    private final class JavaFile {
+        private CompilationUnit compilationUnit;
+        private List<ClassOrInterfaceDeclaration> classList = new ArrayList<>();
+        private final String filename;
+        private final String classPath;
+        private final Path outfileName;
+
+        private JavaFile(String filename, String classPath, Path outfileName) {
+            this.filename = filename;
+            this.classPath = classPath;
+            this.outfileName = outfileName;
+        }
+
+        private void open() throws IOException {
+            final File sourceFile = new File(filename);
+            compilationUnit = JavaParser.parse(sourceFile);
+        }
+
+        private String getFilename() {
+            return filename;
+        }
+
+        /**
+         * Finds all classes/interfaces in the file and saves them.
+         */
+        private void loadClassList() {
+            classList.clear();
+
+            for (final TypeDeclaration typeDeclaration : compilationUnit.getTypes()) {
+                if (typeDeclaration instanceof ClassOrInterfaceDeclaration) {
+                    classList.add((ClassOrInterfaceDeclaration) typeDeclaration);
+                }
+            }
+        }
+
+        private void writeFile() throws IOException {
+            Files.write(outfileName, compilationUnit.toString().getBytes());
+        }
+
+        private MethodDeclaration findMethodAt(final long line) {
+            for (final ClassOrInterfaceDeclaration classDeclaration : classList) {
+                for (final BodyDeclaration bodyDeclaration : classDeclaration.getMembers()) {
+                    if (bodyDeclaration instanceof MethodDeclaration) {
+                        final MethodDeclaration method = (MethodDeclaration)bodyDeclaration;
+                        final Position begin = method.getBegin().orElseThrow(() -> new RuntimeException("Cannot get start line for " + method.getSignature()));
+                        final Position end = method.getEnd().orElseThrow(() -> new RuntimeException("Cannot get end line for " + method.getSignature()));
+
+                        if (begin.line <= line && end.line >= line) {
+                            return method;
+                        }
+                    }
+                }
+            }
+
+            return null;
+        }
+
+        /**
+         * Attempts to remove the method declaration.
+         * @param method The method declaration to remove.
+         * @return A String of the fully qualified name of the method removed if found, null otherwise.
+         */
+        private String removeMethod(final MethodDeclaration method) {
+            for (final ClassOrInterfaceDeclaration classDeclaration : classList) {
+                final MethodRemoverVisitor remover = new MethodRemoverVisitor(method);
+                classDeclaration.accept(remover, null);
+
+                final Optional<PackageDeclaration> packageDec = compilationUnit.getPackageDeclaration();
+
+                if (remover.succeeded()) {
+                    return createRemovedMethodString(packageDec.map(PackageDeclaration::getNameAsString).orElse(""), classDeclaration, method);
+                }
+            }
+
+            return null;
+        }
+
+        /**
+         * Writes the file to the output filename, then tries to compile the output file.
+         */
+        private DiagnosticCollector<JavaFileObject> tryCompile() throws IOException {
+            writeAndReloadCompilationUnit();
+
+            return compile();
+        }
+
+        private void writeAndReloadCompilationUnit() throws IOException {
+            writeFile();
+
+            compilationUnit = JavaParser.parse(new FileInputStream(outfileName.toFile()));
+            loadClassList();
+        }
+
+        private DiagnosticCollector<JavaFileObject> compile() throws IOException {
+            final File file = outfileName.toFile();
+
+            final JavaCompiler javaCompiler = ToolProvider.getSystemJavaCompiler();
+            final List<String> compilerOptions =
+                    new ArrayList<>(Arrays.asList("-classpath", classPath));
+
+            final DiagnosticCollector<JavaFileObject> diagnostics = new DiagnosticCollector<>();
+            final StandardJavaFileManager fileManager =
+                    javaCompiler.getStandardFileManager(diagnostics, null, null);
+
+            final Iterable<? extends JavaFileObject> fileObjects =
+                    fileManager.getJavaFileObjectsFromFiles(Collections.singletonList(file));
+
+            final JavaCompiler.CompilationTask compilationTask =
+                    javaCompiler.getTask(null, fileManager, diagnostics, compilerOptions, null, fileObjects);
+            compilationTask.call();
+
+            fileManager.close();
+
+            return diagnostics;
+        }
+
+        private List<MethodDeclaration> getMethodsWithErrors(DiagnosticCollector<JavaFileObject> diagnostics)
+                throws Exception {
+            final List<MethodDeclaration> methodsWithErrors = new ArrayList<>();
+
+            for (Diagnostic diagnostic : diagnostics.getDiagnostics()) {
+                if (diagnostic.getKind() == Diagnostic.Kind.ERROR) {
+                    final MethodDeclaration method = findMethodAt(diagnostic.getLineNumber());
+                    if (method != null) {
+                        if (!methodsWithErrors.contains(method)) {
+                            methodsWithErrors.add(method);
+                        }
+                    } else {
+                        throw new Exception("An error has occurred in an unknown method:\n"
+                                + " Message: " + diagnostic.getMessage(Locale.getDefault()) + "\n"
+                                + " Source: " + diagnostic.getSource() + "\n"
+                                + " Code: " + diagnostic.getCode() + "\n"
+                                + " Kind: " + diagnostic.getKind() + "\n"
+                                + " Line: " + diagnostic.getLineNumber()
+                                + " Position: " + diagnostic.getPosition() + "\n");
+                    }
+                } else {
+                    System.out.println("Ignoring the following diagnostic: "
+                            + diagnostic.getMessage(Locale.getDefault()));
+                }
+            }
+
+            return methodsWithErrors;
+        }
     }
 }

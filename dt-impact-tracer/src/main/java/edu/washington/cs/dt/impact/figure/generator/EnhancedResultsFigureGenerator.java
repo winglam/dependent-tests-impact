@@ -2,6 +2,7 @@
 package edu.washington.cs.dt.impact.figure.generator;
 
 import java.io.File;
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -535,13 +536,12 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
         return result;
     }
 
-    public static EnhancedResults setup(final boolean allowNegatives, final String directoryName, final String outputDirectoryName) {
+    public static EnhancedResults setup(final boolean allowNegatives, final Path directory, final Path outputDirectory) {
         EnhancedResultsFigureGenerator.allowNegatives = allowNegatives;
 
-        EnhancedResultsFigureGenerator.outputDirectoryName = outputDirectoryName;
+        EnhancedResultsFigureGenerator.outputDirectoryName = outputDirectory.toAbsolutePath().toString();
 
-        File directory = new File(directoryName);
-        File[] fList = directory.listFiles();
+        File[] fList = directory.toFile().listFiles();
         // create a list of project Objects that each have a diff project name
         List<Project> proj_orig_arrayList = new ArrayList<>();
         List<Project> proj_auto_arrayList = new ArrayList<>();

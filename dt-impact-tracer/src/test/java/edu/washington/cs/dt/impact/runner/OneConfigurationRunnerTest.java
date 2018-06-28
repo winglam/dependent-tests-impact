@@ -1,12 +1,10 @@
 package edu.washington.cs.dt.impact.runner;
 
 import com.reedoei.eunomia.collections.MapUtil;
-import com.reedoei.eunomia.functional.Func;
 import com.reedoei.eunomia.string.matching.LineMatch;
 import com.reedoei.eunomia.string.searching.Searcher;
 import com.reedoei.eunomia.string.searching.StringSearch;
 import com.reedoei.eunomia.util.FileUtil;
-import com.sun.org.apache.regexp.internal.RE;
 import edu.washington.cs.dt.RESULT;
 import edu.washington.cs.dt.impact.figure.generator.PrecomputedTimeFigureGenerator;
 import edu.washington.cs.dt.impact.util.Constants;

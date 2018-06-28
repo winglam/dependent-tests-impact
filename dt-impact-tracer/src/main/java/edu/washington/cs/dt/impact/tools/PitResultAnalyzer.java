@@ -1,19 +1,15 @@
 package edu.washington.cs.dt.impact.tools;
 
-import com.reedoei.eunomia.data.Frequency;
+import com.reedoei.eunomia.collections.ListUtil;
+import com.reedoei.eunomia.collections.PairStream;
 import com.reedoei.eunomia.functional.Func;
 import com.reedoei.eunomia.string.Context;
 import com.reedoei.eunomia.string.matching.LineMatch;
 import com.reedoei.eunomia.string.searching.Searcher;
 import com.reedoei.eunomia.string.searching.StringSearch;
 import com.reedoei.eunomia.util.FileUtil;
-import com.reedoei.eunomia.collections.ListUtil;
-import com.reedoei.eunomia.collections.PairStream;
 import com.reedoei.eunomia.util.StandardMain;
 import com.reedoei.eunomia.util.StringUtil;
-import com.reedoei.eunomia.util.Util;
-import edu.washington.cs.dt.impact.figure.generator.EnhancedResults;
-import edu.washington.cs.dt.impact.figure.generator.EnhancedResultsFigureGenerator;
 import edu.washington.cs.dt.impact.util.Constants;
 import org.dom4j.DocumentException;
 
@@ -24,12 +20,9 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Optional;
 import java.util.function.Function;
-import java.util.stream.Collectors;
 
 public class PitResultAnalyzer extends StandardMain {
     private Path outputDir;
@@ -45,14 +38,14 @@ public class PitResultAnalyzer extends StandardMain {
 
     @Override
     protected void run() throws Exception {
-        final Path basePath = Paths.get(getRequiredArg("basePath"));
+        final Path basePath = Paths.get(getArgRequired("basePath"));
 
         final Path origMutationsPath = basePath.resolve("target").resolve("pit").resolve("orig");
         final Path autoMutationsPath = basePath.resolve("target").resolve("pit").resolve("auto");
 
         run(origMutationsPath, autoMutationsPath,
-            Paths.get(getRequiredArg("resultFiles")),
-            Paths.get(getRequiredArg("outputDir")));
+            Paths.get(getArgRequired("resultFiles")),
+            Paths.get(getArgRequired("outputDir")));
     }
 
     private void run(final Path origMutationsPath, final Path autoMutationsPath, final Path resultFilesPath, final Path outputDir)
@@ -60,35 +53,11 @@ public class PitResultAnalyzer extends StandardMain {
         this.outputDir = outputDir;
         this.resultFilesPath = resultFilesPath;
 
-        final List<Double> origAverages = averageResults("orig", origMutationsPath);
-        final List<Double> autoAverages = averageResults("auto", autoMutationsPath);
-
-        System.out.println(latexString("orig", origAverages));
-        System.out.println(latexString("auto", autoAverages));
+        System.out.println(averageResults("orig", origMutationsPath).latexString());
+        System.out.println(averageResults("auto", autoMutationsPath).latexString());
     }
 
-    private String latexString(final String origOrAuto, final List<Double> values)
-            throws IOException {
-        final EnhancedResults results = EnhancedResultsFigureGenerator.setup(true,
-                resultFilesPath.toString(), outputDir.toString());
-        final Constants.TECHNIQUE technique = getTechnique();
-
-        switch (technique) {
-            case PRIORITIZATION:
-                return results.generatePrioString(origOrAuto, values);
-
-            case SELECTION:
-                return results.generateSeleString(origOrAuto, values);
-
-            case PARALLELIZATION:
-                return results.generateParaString(origOrAuto, values);
-
-            default:
-                throw new IllegalArgumentException("Unhandled technique: " + technique);
-        }
-    }
-
-    private List<Double> averageResults(final String origOrAuto, final Path mutationsPath)
+    private EnhancedResultAverager averageResults(final String origOrAuto, final Path mutationsPath)
             throws IOException, DocumentException {
         final MutantMatrix mutantMatrix = MutantMatrix.fromPath(mutationsPath);
 
@@ -96,67 +65,22 @@ public class PitResultAnalyzer extends StandardMain {
 
         generateResults(mutationGroups);
 
-        final Constants.TECHNIQUE technique = getTechnique();
-
         // TODO: Record this information somewhere if this is what we end up doing.
-        System.out.printf("Using %d mutation groups for %s %s results\n", mutationGroups.size(), origOrAuto, technique);
+        System.out.printf("Using %d mutation groups for %s results\n", mutationGroups.size(), origOrAuto);
 
-        final List<Double> result = mutationGroups.stream()
-                .map(g -> results(origOrAuto, technique, g))
-                .reduce((current, newVals) -> Util.zipWith((a, b) -> a + b, current, newVals))
-                .map(totals -> Func.map(t -> t / mutationGroups.size(), totals))
-                .orElseThrow(() -> new IllegalStateException("Not enough mutation groups or some other error occurred when calculating averages"));
+        final EnhancedResultAverager averager = new EnhancedResultAverager(origOrAuto, resultFilesPath);
+
+        mutationGroups.forEach(m -> {
+            try {
+                averager.add(outputPath(m));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
 
         // To end the line we print out in results()
         System.out.println();
-        return result;
-    }
-
-    /**
-     * @return The guessed technique based on the files in the resultFilesPath.
-     */
-    private Constants.TECHNIQUE getTechnique() throws IOException {
-        // Use a frequency map instead of stopping at the first one because
-        // selection/parallelization results folders will have one prioritization file in them
-        // for the original order.
-        final Map<Constants.TECHNIQUE, Integer> freqMap = new HashMap<>();
-
-        final Frequency<Constants.TECHNIQUE> frequency = Frequency.empty();
-
-        for (final Path path : Files.list(resultFilesPath).collect(Collectors.toList())) {
-            for (final Constants.TECHNIQUE technique : Constants.TECHNIQUE.values()) {
-                if (path.toFile().getName().contains(technique.name())) {
-                    frequency.count(technique);
-                }
-            }
-        }
-
-        return frequency.max()
-                .orElseThrow(() -> new IllegalArgumentException("Result path does not contain any files with any of " +
-                        Arrays.toString(Constants.TECHNIQUE.values()) + " in their name."));
-    }
-
-    private List<Double> results(final String origOrAuto, final Constants.TECHNIQUE technique, final MutantMatrix.MutationGroup mutationGroup) {
-        System.out.printf("\rGenerating results for group %d.", mutationGroup.getIndex());
-
-        final Path outputPath = outputPath(mutationGroup);
-
-        final EnhancedResults results =
-                EnhancedResultsFigureGenerator.setup(true, outputPath.toString(), outputDir.toString());
-
-        switch (technique) {
-            case PRIORITIZATION:
-                return results.prioValues(origOrAuto);
-
-            case SELECTION:
-                return results.seleValues(origOrAuto);
-
-            case PARALLELIZATION:
-                return results.paraValues(origOrAuto);
-
-            default:
-                throw new IllegalArgumentException("Unhandled technique: " + technique);
-        }
+        return averager;
     }
 
     private Path outputPath(final MutantMatrix.MutationGroup mutationGroup) {
@@ -180,8 +104,7 @@ public class PitResultAnalyzer extends StandardMain {
 
         final File[] files = resultFilesPath.toFile().listFiles();
         if (files != null) {
-            PairStream.product(Arrays.asList(files), mutationGroups)
-                    .forEach(this::processGroup);
+            PairStream.product(Arrays.asList(files), mutationGroups).forEach(this::processGroup);
         }
     }
 

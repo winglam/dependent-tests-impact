@@ -1,11 +1,40 @@
 package edu.washington.cs.dt.impact.figure.generator;
 
+import com.reedoei.eunomia.data.Frequency;
 import edu.washington.cs.dt.impact.data.ProjectEnhancedResults;
+import edu.washington.cs.dt.impact.util.Constants;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class EnhancedResults {
+    /**
+     * @return The guessed technique based on the files in the resultFilesPath.
+     */
+    public static Constants.TECHNIQUE getTechnique(final Path resultFilesPath) throws IOException {
+        // Use a frequency map instead of stopping at the first one because
+        // selection/parallelization results folders will have one prioritization file in them
+        // for the original order.
+        final Frequency<Constants.TECHNIQUE> frequency = Frequency.empty();
+
+        for (final Path path : Files.list(resultFilesPath).collect(Collectors.toList())) {
+            for (final Constants.TECHNIQUE technique : Constants.TECHNIQUE.values()) {
+                if (path.toFile().getName().contains(technique.name())) {
+                    frequency.count(technique);
+                }
+            }
+        }
+
+        return frequency.max()
+                .orElseThrow(() -> new IllegalArgumentException("Result path does not contain any files with any of " +
+                        Arrays.toString(Constants.TECHNIQUE.values()) + " in their name."));
+    }
+
     private final ProjectEnhancedResults origProj;
     private final ProjectEnhancedResults autoProj;
 
