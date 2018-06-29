@@ -2,6 +2,9 @@ package edu.washington.cs.dt.impact.tools.detectors;
 
 import com.reedoei.eunomia.collections.MapUtil;
 import edu.washington.cs.dt.TestExecResult;
+import edu.washington.cs.dt.TestExecResults;
+import edu.washington.cs.dt.TestExecResultsDelta;
+import edu.washington.cs.dt.TestExecResultsDifferentior;
 import edu.washington.cs.dt.runners.FixedOrderRunner;
 
 import java.util.ArrayList;
@@ -14,13 +17,13 @@ public class NondeterministicDetector extends Detector {
     }
 
     @Override
-    public List<String> detectionRound() {
+    public List<TestExecResultsDelta> detectionRound() {
         final List<String> roundOrder = new ArrayList<>(tests);
         Collections.shuffle(roundOrder);
 
         final TestExecResult firstRun = new FixedOrderRunner(classpath, roundOrder).run().getExecutionRecords().get(0);
-        final TestExecResult secondRun = new FixedOrderRunner(classpath, roundOrder).run().getExecutionRecords().get(0);
+        final TestExecResults secondRun = new FixedOrderRunner(classpath, roundOrder).run();
 
-        return new ArrayList<>(MapUtil.diff(firstRun.getNameToResultsMap(), secondRun.getNameToResultsMap()));
+        return new TestExecResultsDifferentior(firstRun, secondRun).diffResults();
     }
 }

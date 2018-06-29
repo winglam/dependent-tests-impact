@@ -1,7 +1,9 @@
 package edu.washington.cs.dt.impact.tools.detectors;
 
+import com.reedoei.eunomia.functional.Func;
 import com.reedoei.eunomia.io.CaptureOutStream;
 import com.reedoei.eunomia.io.CapturedOutput;
+import edu.washington.cs.dt.TestExecResultsDelta;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -21,25 +23,32 @@ public abstract class Detector {
         this.rounds = rounds;
     }
 
-    public abstract List<String> detectionRound();
+    public abstract List<TestExecResultsDelta> detectionRound();
 
-    public List<String> newTests(final List<String> roundResult) {
-        tests.removeAll(roundResult);
+    public List<String> newTests(final List<TestExecResultsDelta> roundResult) {
+//        for (final TestExecResultsDelta delta : roundResult) {
+//            tests.remove(delta.testName);
+//        }
+
         return tests;
     }
 
-    public List<String> detect() {
-        final List<String> result = new ArrayList<>();
+    public List<TestExecResultsDelta> detect() {
+        final List<TestExecResultsDelta> result = new ArrayList<>();
 
         int i = 0;
         while (i < rounds) {
-            final CapturedOutput<List<String>> run = new CaptureOutStream<>(this::detectionRound).run();
+            final CapturedOutput<List<TestExecResultsDelta>> run = new CaptureOutStream<>(this::detectionRound).run();
 
             if (run.hadError()) {
                 System.out.printf("Run %d had an error. Full log is shown below:\n", i);
                 System.out.println(run.stringOutput());
             } else {
-                final List<String> currentRoundResult = run.valueRequired();
+                final List<TestExecResultsDelta> currentRoundResult = run.valueRequired();
+                // Make sure we don't get duplicates.
+                for (final TestExecResultsDelta delta : result) {
+                    currentRoundResult.removeIf(curDelta -> delta.testName.equals(curDelta.testName));
+                }
 
                 System.out.printf("[INFO] Found %d tests in round %d of %d\n", currentRoundResult.size(), i, rounds);
 
@@ -58,6 +67,6 @@ public abstract class Detector {
     }
 
     public void writeTo(final Path path) throws IOException {
-        Files.write(path, String.join(System.lineSeparator(), detect()).getBytes());
+        Files.write(path, String.join(System.lineSeparator(), Func.map(TestExecResultsDelta::toString, detect())).getBytes());
     }
 }
