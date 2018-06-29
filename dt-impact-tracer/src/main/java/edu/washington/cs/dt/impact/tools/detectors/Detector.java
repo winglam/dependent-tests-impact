@@ -44,9 +44,9 @@ public abstract class Detector {
                 System.out.printf("[INFO] Found %d tests in round %d of %d\n", currentRoundResult.size(), i, rounds);
 
                 if (!currentRoundResult.isEmpty()) {
+                    result.addAll(currentRoundResult);
                     i = 0;
                 } else {
-                    result.addAll(currentRoundResult);
                     i++;
                 }
 
