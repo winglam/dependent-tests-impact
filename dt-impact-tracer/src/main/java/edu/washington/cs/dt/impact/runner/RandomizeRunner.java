@@ -143,10 +143,8 @@ public class RandomizeRunner extends Runner {
         boolean didFindNewTests = false;
         WrapperTestList testList = new WrapperTestList();
 
-        List<String> origOrderCopy = new ArrayList<>();
-        for (String s : origOrderTestList) {
-            origOrderCopy.add(s.toString());
-        }
+        List<String> origOrderCopy = new ArrayList<>(origOrderTestList);
+
         int randomNumToRemove = rand.nextInt(origOrderCopy.size() - 1) + 1;
         for (int j = 0; j < randomNumToRemove; j++) {
             int randomNumSelected = rand.nextInt(origOrderCopy.size());
