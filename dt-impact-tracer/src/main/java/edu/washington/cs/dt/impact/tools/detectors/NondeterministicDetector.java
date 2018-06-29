@@ -1,6 +1,5 @@
 package edu.washington.cs.dt.impact.tools.detectors;
 
-import com.reedoei.eunomia.collections.MapUtil;
 import edu.washington.cs.dt.TestExecResult;
 import edu.washington.cs.dt.TestExecResults;
 import edu.washington.cs.dt.TestExecResultsDelta;
