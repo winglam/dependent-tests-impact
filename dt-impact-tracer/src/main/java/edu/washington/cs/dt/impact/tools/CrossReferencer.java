@@ -183,15 +183,7 @@ public class CrossReferencer {
 
                     for (String s : testResults) {
                         String[] testAndResult = s.split("=");
-                        if (testAndResult[1].equals("PASS")) {
-                            testsToResults.put(testAndResult[0], RESULT.PASS);
-                        } else if (testAndResult[1].equals("FAILURE")) {
-                            testsToResults.put(testAndResult[0], RESULT.FAILURE);
-                        } else if (testAndResult[1].equals("ERROR")) {
-                            testsToResults.put(testAndResult[0], RESULT.ERROR);
-                        } else if (testAndResult[1].equals("SKIPPED")) {
-                            testsToResults.put(testAndResult[0], RESULT.SKIPPED);
-                        }
+                        testsToResults.put(testAndResult[0], FileTools.getRESULTFromString(testAndResult[1]));
                     }
                 }
                 line = br.readLine();

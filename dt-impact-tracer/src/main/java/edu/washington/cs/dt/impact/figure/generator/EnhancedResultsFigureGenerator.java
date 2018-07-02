@@ -365,6 +365,7 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
     private static double shift_by_time(Double[] enhancedTime, List<Double> origTime, List<Double> origCoverage) {
         List<Double> totalTime = new ArrayList<Double>(Arrays.asList(enhancedTime));
         int enhancedSize = totalTime.size();
+        if (!useIsolationData || useIsolationData )
         totalTime.addAll(origTime);
         List<Double> totalCoverage = new ArrayList<Double>();
         for (int j = 0; j < enhancedSize; j++) {
@@ -850,6 +851,7 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
     }
 
     private static String outputDirectoryName;
+    protected static boolean useIsolationData;
 
     /**
      * @param args
@@ -858,6 +860,8 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
         List<String> argsList = new ArrayList<String>(Arrays.asList(args));
 
         allowNegatives = argsList.contains("-allowNegatives");
+        useIsolationData= argsList.contains("-useIsolationData");
+
 
         String directoryName = mustGetArgName(argsList, "-directory");
         // name of directory where files should be outputted

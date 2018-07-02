@@ -18,6 +18,8 @@ import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
 
+import edu.washington.cs.dt.RESULT;
+
 public class FileTools {
 
     public static void main(String[] args) {
@@ -65,6 +67,19 @@ public class FileTools {
         for (String s : f2Set) {
             System.out.println(s);
         }
+    }
+
+    public static RESULT getRESULTFromString(String s) {
+        if (s.equals("PASS")) {
+            return RESULT.PASS;
+        } else if (s.equals("FAILURE")) {
+            return RESULT.FAILURE;
+        } else if (s.equals("ERROR")) {
+            return RESULT.ERROR;
+        } else if (s.equals("SKIPPED")) {
+            return RESULT.SKIPPED;
+        }
+        return null;
     }
 
     // returns a list of Strings where each String is a line of the file

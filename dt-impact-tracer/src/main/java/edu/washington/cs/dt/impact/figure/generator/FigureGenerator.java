@@ -15,6 +15,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
+import edu.washington.cs.dt.RESULT;
+import edu.washington.cs.dt.impact.data.IsolationInfo;
 import edu.washington.cs.dt.impact.data.Project;
 import edu.washington.cs.dt.impact.data.ProjectEnhancedResults;
 import edu.washington.cs.dt.impact.data.ProjectNumDependentTests;
@@ -95,7 +97,7 @@ public abstract class FigureGenerator {
      *
      * @return the data value without any leading or trailing whitespaces, null if keyword not found
      */
-    public static int parseFileForNumOfDTs(File file, String keyword) {
+    public static int parseFileForKeywordNum(File file, String keyword) {
         int numDTs = 0;
         Scanner scanner = null;
         try {
@@ -145,6 +147,60 @@ public abstract class FigureGenerator {
         }
         return DTs; // none of the lines contained the keyword
     }
+
+    public static Map<String, String> parseFileForResult(File file, String keyword) {
+        Map<String, String> namesToResults = new HashMap<>();
+        Scanner scanner = null;
+        try {
+            scanner = new Scanner(file);
+            while (scanner.hasNextLine()) {
+                String currLine = scanner.nextLine();
+                if (currLine.contains(keyword)) {
+                    // Ex. [randoop.jfreechart.RandoopTest1.test300, randoop.jfreechart.RandoopTest4.test270, randoop.jfreechart.RandoopTest0.test79]
+                    currLine = scanner.nextLine();
+                    currLine = currLine.substring(1, currLine.length() - 1);
+                    for (String s : Arrays.asList(currLine.split(", "))) {
+                        String[] nameToResult = s.split("=");
+                        namesToResults.put(nameToResult[0].trim(), nameToResult[1].trim());
+                    }
+                }
+            }
+            scanner.close(); // close Scanner before returning
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+            System.exit(2);
+        } finally {
+            scanner.close();
+        }
+        return namesToResults; // none of the lines contained the keyword
+    }
+
+    public static Map<String, RESULT> convertStrMapToRESULTMap(Map<String, String> map) {
+        Map<String, RESULT> namesToResults = new HashMap<>();
+        for (String s : map.keySet()) {
+            RESULT result = FileTools.getRESULTFromString(map.get(s));
+            namesToResults.put(s, result);
+        }
+        return namesToResults;
+    }
+
+    public static Map<String, Long> convertStrMapToLongMap(Map<String, String> map) {
+        Map<String, Long> namesToResults = new HashMap<>();
+        for (String s : map.keySet()) {
+            namesToResults.put(s, Long.parseLong(map.get(s)));
+        }
+        return namesToResults;
+    }
+
+    public static Map<String, IsolationInfo> convertMapsToIsolationDataMap(Map<String, RESULT> namesToResults,
+                                                                  Map<String, Long> nameToTime) {
+        Map<String, IsolationInfo> namesToIsolationData = new HashMap<>();
+        for (String s : namesToResults.keySet()) {
+            namesToIsolationData.put(s, new IsolationInfo(nameToTime.get(s), namesToResults.get(s)));
+        }
+        return namesToIsolationData;
+    }
+
 
     public static double parseFileForMaxTime(File file, String keyword) {
         double maxTime = 0.0;
@@ -357,8 +413,18 @@ public abstract class FigureGenerator {
 	protected static String coverageInFile;
 	protected static List<String> flagsList;
     protected static double avgDepFindTime;
+    protected static Map<String, IsolationInfo> dtToIsolationInfo = new HashMap<>();
 
-	/**
+    // Pipe Test order result and original order result through.
+    // Within ProjectEnhanced result do calculation for (3) and (4)
+    
+    // (1) Check if original orders are the same between unenhanced and enhanced
+    // (2) Assuming is same, otherwise output error to file
+    // (3) Compare unenhanced to original order and get tests with different result and first test in unenhanced
+    // that is different
+    // (4) Repeat above with enhanced order
+
+    /**
 	 * @param files
 	 * @param fg
 	 * @param ignoreDTFFlag false to ignore files that have the -dependentTestFile flag.
@@ -452,13 +518,20 @@ public abstract class FigureGenerator {
 				// get the number of dts
 				totalDTs = parseFileForDTs(file, Constants.NOT_FIXED_DTS, false);
 
-				numTotal = parseFileForNumOfDTs(file, Constants.NUM_NOT_FIXED_DTS);
+				numTotal = parseFileForKeywordNum(file, Constants.NUM_NOT_FIXED_DTS);
 
 				timeInFile =  getFlagsLine(file, Constants.TIME_STRING, false);
 
-				numOfFixedDTs = parseFileForNumOfDTs(file, Constants.FIXED_DTS);
+				numOfFixedDTs = parseFileForKeywordNum(file, Constants.FIXED_DTS);
 				maxTimeInFile = parseFileForMaxTime(file, Constants.TIME_INCL_DTF);
 				avgDepFindTime = parseFileForMaxTime(file, Constants.AVG_DEP_FIND_TIME_STRING);
+
+				Map<String, RESULT> namesToResults = convertStrMapToRESULTMap(
+				        parseFileForResult(file, Constants.ISOLATION_RESULTS));
+                Map<String, Long> namesToTime = convertStrMapToLongMap(
+                        parseFileForResult(file, Constants.ISOLATION_TIMES));
+
+                dtToIsolationInfo = convertMapsToIsolationDataMap(namesToResults, namesToTime);
 
                 if (techniqueName.equals("parallelization")) {
                 	fg.doParaCalculations();
