@@ -417,7 +417,7 @@ public abstract class FigureGenerator {
 
     // Pipe Test order result and original order result through.
     // Within ProjectEnhanced result do calculation for (3) and (4)
-    
+
     // (1) Check if original orders are the same between unenhanced and enhanced
     // (2) Assuming is same, otherwise output error to file
     // (3) Compare unenhanced to original order and get tests with different result and first test in unenhanced
@@ -526,8 +526,8 @@ public abstract class FigureGenerator {
 				maxTimeInFile = parseFileForMaxTime(file, Constants.TIME_INCL_DTF);
 				avgDepFindTime = parseFileForMaxTime(file, Constants.AVG_DEP_FIND_TIME_STRING);
 
-				Map<String, RESULT> namesToResults = convertStrMapToRESULTMap(
-				        parseFileForResult(file, Constants.ISOLATION_RESULTS));
+                Map<String, RESULT> namesToResults = convertStrMapToRESULTMap(
+                        parseFileForResult(file, Constants.ISOLATION_RESULTS));
                 Map<String, Long> namesToTime = convertStrMapToLongMap(
                         parseFileForResult(file, Constants.ISOLATION_TIMES));
 

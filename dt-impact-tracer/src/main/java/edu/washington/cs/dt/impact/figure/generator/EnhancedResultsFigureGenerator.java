@@ -365,7 +365,6 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
     private static double shift_by_time(Double[] enhancedTime, List<Double> origTime, List<Double> origCoverage) {
         List<Double> totalTime = new ArrayList<Double>(Arrays.asList(enhancedTime));
         int enhancedSize = totalTime.size();
-        if (!useIsolationData || useIsolationData )
         totalTime.addAll(origTime);
         List<Double> totalCoverage = new ArrayList<Double>();
         for (int j = 0; j < enhancedSize; j++) {
