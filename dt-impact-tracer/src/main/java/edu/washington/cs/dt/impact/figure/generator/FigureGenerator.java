@@ -545,7 +545,6 @@ public abstract class FigureGenerator {
                 for (int i = 0; i < testNames.size(); i++) {
                     allTestTimes.put(testNames.get(i), testTimes[i]);
                 }
-
                 allTestToInfo = convertMapsToIsolationDataMap(allTestResults, allTestTimes);
 
                 Map<String, RESULT> origTestResults= convertStrMapToRESULTMap(

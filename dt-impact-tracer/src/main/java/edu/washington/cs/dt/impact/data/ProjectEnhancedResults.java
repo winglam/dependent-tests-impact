@@ -62,6 +62,12 @@ public class ProjectEnhancedResults extends Project {
     private TestToInfoWrapper[] dt_info;
     private TestToInfoWrapper[] orig_test_info;
 
+    // For test parallelization only
+    private TestToInfoWrapper[] all_test_info_time;
+    private TestToInfoWrapper[] dt_info_time;
+    private TestToInfoWrapper[] orig_test_info_time;
+
+
     public class TestToInfoWrapper {
         public Map<String, TestInfo> testToInfo;
         public TestToInfoWrapper() {
@@ -155,7 +161,104 @@ public class ProjectEnhancedResults extends Project {
 
     public void useFig19() {
         uses_fig19 = true;
-        initInfo(2 * 4);
+        int size = 2 * 4;
+        initInfo(size);
+        if (all_test_info_time == null)
+            all_test_info_time = new TestToInfoWrapper[size];
+        if (orig_test_info_time == null)
+            orig_test_info_time = new TestToInfoWrapper[size];
+        if (dt_info_time == null)
+            dt_info_time = new TestToInfoWrapper[size];
+    }
+
+    public Map<String, TestInfo> get_all_test_info(boolean unen, int i, int figNum, boolean isOriginal) {
+        TestToInfoWrapper retVal;
+        if (figNum == 17) {
+            if (unen) {
+                retVal = all_test_info[i];
+            } else {
+                retVal = all_test_info[i+1];
+            }
+        } else if (figNum == 18){
+            if (unen) {
+                retVal = all_test_info[i];
+            } else {
+                retVal = all_test_info[i+1];
+            }
+        } else {
+            int index = -1;
+            if (unen) {
+                index = i;
+            } else {
+                index = i+1;
+            }
+            if (isOriginal) {
+                retVal = all_test_info[index];
+            } else {
+                retVal = all_test_info_time[index];
+            }
+        }
+        return retVal.testToInfo;
+    }
+
+    public Map<String, TestInfo> get_orig_info(boolean unen, int i, int figNum, boolean isOriginal) {
+        TestToInfoWrapper retVal;
+        if (figNum == 17) {
+            if (unen) {
+                retVal = orig_test_info[i];
+            } else {
+                retVal = orig_test_info[i+1];
+            }
+        } else if (figNum == 18){
+            if (unen) {
+                retVal = orig_test_info[i];
+            } else {
+                retVal = orig_test_info[i+1];
+            }
+        } else {
+            int index = -1;
+            if (unen) {
+                index = i;
+            } else {
+                index = i+1;
+            }
+            if (isOriginal) {
+                retVal = orig_test_info[index];
+            } else {
+                retVal = orig_test_info_time[index];
+            }
+        }
+        return retVal.testToInfo;
+    }
+
+    public Map<String, TestInfo> get_dt_info(boolean unen, int i, int figNum, boolean isOriginal) {
+        TestToInfoWrapper retVal;
+        if (figNum == 17) {
+            if (unen) {
+                retVal = dt_info[i];
+            } else {
+                retVal = dt_info[i+1];
+            }
+        } else if (figNum == 18){
+            if (unen) {
+                retVal = dt_info[i];
+            } else {
+                retVal = dt_info[i+1];
+            }
+        } else {
+            int index = -1;
+            if (unen) {
+                index = i;
+            } else {
+                index = i+1;
+            }
+            if (isOriginal) {
+                retVal = dt_info[index];
+            } else {
+                retVal = dt_info_time[index];
+            }
+        }
+        return retVal.testToInfo;
     }
 
     public void addAllTestsInfo(Map<String, TestInfo> testsInfo, int index) {

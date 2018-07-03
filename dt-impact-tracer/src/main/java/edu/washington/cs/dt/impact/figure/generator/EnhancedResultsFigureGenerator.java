@@ -365,13 +365,26 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
     private static double shift_by_time(Double[] enhancedTime, List<Double> origTime, List<Double> origCoverage) {
         List<Double> totalTime = new ArrayList<Double>(Arrays.asList(enhancedTime));
         int enhancedSize = totalTime.size();
-        totalTime.addAll(origTime);
-        List<Double> totalCoverage = new ArrayList<Double>();
-        for (int j = 0; j < enhancedSize; j++) {
-            totalCoverage.add(0.0);
+        if (useIsolationData) {
+            // TODO if isolation is still different than original order
+            // Coverage should be: X + (Isolation cost) + (Original order tests)
+
+            // Coverage should be: X + (Isolation cost)
+
+            return -1.0;
+        } else {
+            totalTime.addAll(origTime);
+            // TODO Coverage should be the non-DTs from the enhanced/unenhanced order then the remaining tests from
+            // original order
+            // Coverage should be: X + (Original order tests)
+            // X = (Enhanced/unenhanced tests that are ran already) - One dependent test
+            List<Double> totalCoverage = new ArrayList<Double>();
+            for (int j = 0; j < enhancedSize; j++) {
+                totalCoverage.add(0.0);
+            }
+            totalCoverage.addAll(origCoverage);
+            return Runner.getAPFD(Runner.getCumulListDouble(totalTime), Runner.getCumulListDouble(totalCoverage));
         }
-        totalCoverage.addAll(origCoverage);
-        return Runner.getAPFD(Runner.getCumulListDouble(totalTime), Runner.getCumulListDouble(totalCoverage));
     }
 
     /*
