@@ -1,6 +1,7 @@
 package edu.washington.cs.dt.impact.data;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -57,9 +58,19 @@ public class ProjectEnhancedResults extends Project {
     private Double[] orig_coverage;
     private String[] orig_tests;
 
-    private List<Map<String, TestInfo>> all_test_info;
-    private List<Map<String, TestInfo>> dt_info;
-    private List<Map<String, TestInfo>> orig_test_info;
+    private TestToInfoWrapper[] all_test_info;
+    private TestToInfoWrapper[] dt_info;
+    private TestToInfoWrapper[] orig_test_info;
+
+    public class TestToInfoWrapper {
+        public Map<String, TestInfo> testToInfo;
+        public TestToInfoWrapper() {
+            testToInfo = new HashMap<>();
+        }
+        public TestToInfoWrapper(Map<String, TestInfo> testToInfo) {
+            this.testToInfo = testToInfo;
+        }
+    }
 
     public Double[] getOrig_time() {
         return orig_time;
@@ -109,10 +120,15 @@ public class ProjectEnhancedResults extends Project {
         fig18_test_list = new String[6 * 2][];
         fig19_test_list_time = new String[4 * 2][];
         fig19_test_list_orig = new String[4 * 2][];
+    }
 
-        all_test_info = new ArrayList<>();
-        orig_test_info = new ArrayList<>();
-        dt_info = new ArrayList<>();
+    private void initInfo(int size) {
+        if (all_test_info == null)
+            all_test_info = new TestToInfoWrapper[size];
+        if (orig_test_info == null)
+            orig_test_info = new TestToInfoWrapper[size];
+        if (dt_info == null)
+            dt_info = new TestToInfoWrapper[size];
     }
 
     public boolean isFig17() {
@@ -129,14 +145,27 @@ public class ProjectEnhancedResults extends Project {
 
     public void useFig17() {
         uses_fig17 = true;
+        initInfo(4 * 2);
     }
 
     public void useFig18() {
         uses_fig18 = true;
+        initInfo(6 * 2);
     }
 
     public void useFig19() {
         uses_fig19 = true;
+        initInfo(2 * 4);
+    }
+
+    public void addAllTestsInfo(Map<String, TestInfo> testsInfo, int index) {
+        all_test_info[index] = new TestToInfoWrapper(testsInfo);
+    }
+    public void addIsolationInfo(Map<String, TestInfo> testsInfo, int index) {
+        dt_info[index] = new TestToInfoWrapper(testsInfo);
+    }
+    public void addOrigInfo(Map<String, TestInfo> testsInfo, int index) {
+        orig_test_info[index] = new TestToInfoWrapper(testsInfo);
     }
 
     @Override

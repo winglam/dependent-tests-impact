@@ -417,13 +417,12 @@ public abstract class FigureGenerator {
     protected static Map<String, TestInfo> allTestToInfo = new HashMap<>();
     protected static Map<String, TestInfo> origToInfo = new HashMap<>();
 
-    // X Pipe Test order result and original order result through.
-    // Within ProjectEnhanced result do calculation for (3) and (4)
+    // Do calculation for 1-4 before generateLatexString in EnhancedResultsFigureGenerator.main
 
-    // Need to save the three maps to ProjectEnhancedResults
+    // Need to handle paralleization time and original order like the other info
 
     // (1) Check if original orders are the same between unenhanced and enhanced
-    // (2) Assuming is same, otherwise output error to file
+    // (2) Assuming is same, otherwise output error message
     // (3) Compare unenhanced to original order and get tests with different result and first test in unenhanced
     // that is different
     // (4) Repeat above with enhanced order

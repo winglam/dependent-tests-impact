@@ -963,6 +963,10 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
         currProj.setNumTotalDependentTestsPara(orderName.equals("original"), index, numTotal);
         setTime(currProj, timeInFile, index, orderName.equals("original"));
         currProj.setTestListPara(orderName.equals("original"), index, test_list);
+
+        currProj.addAllTestsInfo(allTestToInfo, index);
+        currProj.addIsolationInfo(dtToInfo, index);
+        currProj.addOrigInfo(origToInfo, index);
     }
 
 	@Override
@@ -1023,6 +1027,10 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
         currProj.setNumTotalDependentTests(18, index, numTotal);
         setTime(currProj, 18, timeInFile, index);
         currProj.setTestList(18, index, test_list);
+
+        currProj.addAllTestsInfo(allTestToInfo, index);
+        currProj.addIsolationInfo(dtToInfo, index);
+        currProj.addOrigInfo(origToInfo, index);
     }
 
     @Override
@@ -1087,6 +1095,10 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
         currProj.setNumTotalDependentTests(17, index, numTotal);
         setTime(currProj, 17, timeInFile, index);
         currProj.setTestList(17, index, test_list);
+
+        currProj.addAllTestsInfo(allTestToInfo, index);
+        currProj.addIsolationInfo(dtToInfo, index);
+        currProj.addOrigInfo(origToInfo, index);
     }
 
     static class PercentWrapper {
