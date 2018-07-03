@@ -8,11 +8,11 @@ import edu.washington.cs.dt.RESULT;
  * This class is meant to contain the time a dependent test ran in isolation and the test execution result of a
  * dependent test in isolation.
  */
-public class IsolationInfo {
+public class TestInfo {
     private long isolationTime;
     private RESULT isolationResult;
 
-    public IsolationInfo(long isolationTime, RESULT isolationResult) {
+    public TestInfo(long isolationTime, RESULT isolationResult) {
         this.isolationResult = isolationResult;
         this.isolationTime = isolationTime;
     }

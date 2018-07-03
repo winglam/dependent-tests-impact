@@ -83,11 +83,11 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
         for (int i = 0; i + 1 < values.length; i += 2) {
             double val;
 
-            if (!project.get_fig_NumOfDTs(true, i, 17)) {
+            if (!project.containsDT(true, i, 17)) {
                 // Case A
                 // Enhanced - unenhanced
                 val = values[i + 1] - values[i];
-            } else if (project.get_fig_NumOfDTs(true, i, 17) && project.get_fig_NumOfDTs(false, i, 17)) {
+            } else if (project.containsDT(true, i, 17) && project.containsDT(false, i, 17)) {
                 // } else if (project.getName().equals(Constants.CRYSTAL_NAME) && type.equals("auto") && i != 0 && i !=
                 // 6) {
                 // Case B
@@ -294,11 +294,11 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
             // }
 
             double percent;
-            if (!project.get_fig_NumOfDTs(true, i, 18)) {
+            if (!project.containsDT(true, i, 18)) {
                 // Case A
                 // 1 - Enh / (uns)
                 percent = 1 - (time[i + 1] / time[i]);
-            } else if (project.get_fig_NumOfDTs(true, i, 18) && project.get_fig_NumOfDTs(false, i, 18)) {
+            } else if (project.containsDT(true, i, 18) && project.containsDT(false, i, 18)) {
                 // } else if (project.getName().equals(Constants.CRYSTAL_NAME) && type.equals("auto") && i != 0 && i !=
                 // 6) {
                 // Case B
@@ -323,11 +323,11 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
         for (int i = 0; i + 1 < values.length; i += 2) {
             double val;
 
-            if (!project.get_fig_NumOfDTs(true, i, 18)) {
+            if (!project.containsDT(true, i, 18)) {
                 // Case A
                 // Enhanced - unenhanced
                 val = values[i + 1] - values[i];
-            } else if (project.get_fig_NumOfDTs(true, i, 18) && project.get_fig_NumOfDTs(false, i, 18)) {
+            } else if (project.containsDT(true, i, 18) && project.containsDT(false, i, 18)) {
                 // } else if (project.getName().equals(Constants.CRYSTAL_NAME) && type.equals("auto") && i != 0 && i !=
                 // 6) {
                 // Case B
@@ -1097,20 +1097,6 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
             percent = 0.0;
             numPercents = 0;
         }
-    }
-
-    private static List<String> getRidSquareBrackets(String line) {
-        String lineNoBrackets = line.substring(1, line.length() - 1);
-        String[] elements = lineNoBrackets.split(",");
-        return Arrays.asList(elements);
-    }
-
-    private static Double[] strArrayToDoubleArray(List<String> strArr) {
-        Double[] doubleArr = new Double[strArr.size()];
-        for (int i = 0; i < strArr.size(); i++) {
-            doubleArr[i] = Double.valueOf(strArr.get(i));
-        }
-        return doubleArr;
     }
 
     public static void setTime(ProjectEnhancedResults currProj, int figNum, String timeInFile, int indexOfProj) {

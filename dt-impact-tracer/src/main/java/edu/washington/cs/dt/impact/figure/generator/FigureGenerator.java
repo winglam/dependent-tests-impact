@@ -16,7 +16,7 @@ import java.util.Map;
 import java.util.Scanner;
 
 import edu.washington.cs.dt.RESULT;
-import edu.washington.cs.dt.impact.data.IsolationInfo;
+import edu.washington.cs.dt.impact.data.TestInfo;
 import edu.washington.cs.dt.impact.data.Project;
 import edu.washington.cs.dt.impact.data.ProjectEnhancedResults;
 import edu.washington.cs.dt.impact.data.ProjectNumDependentTests;
@@ -192,11 +192,11 @@ public abstract class FigureGenerator {
         return namesToResults;
     }
 
-    public static Map<String, IsolationInfo> convertMapsToIsolationDataMap(Map<String, RESULT> namesToResults,
-                                                                  Map<String, Long> nameToTime) {
-        Map<String, IsolationInfo> namesToIsolationData = new HashMap<>();
+    public static Map<String, TestInfo> convertMapsToIsolationDataMap(Map<String, RESULT> namesToResults,
+                                                                      Map<String, Long> nameToTime) {
+        Map<String, TestInfo> namesToIsolationData = new HashMap<>();
         for (String s : namesToResults.keySet()) {
-            namesToIsolationData.put(s, new IsolationInfo(nameToTime.get(s), namesToResults.get(s)));
+            namesToIsolationData.put(s, new TestInfo(nameToTime.get(s), namesToResults.get(s)));
         }
         return namesToIsolationData;
     }
@@ -413,10 +413,14 @@ public abstract class FigureGenerator {
 	protected static String coverageInFile;
 	protected static List<String> flagsList;
     protected static double avgDepFindTime;
-    protected static Map<String, IsolationInfo> dtToIsolationInfo = new HashMap<>();
+    protected static Map<String, TestInfo> dtToInfo = new HashMap<>();
+    protected static Map<String, TestInfo> allTestToInfo = new HashMap<>();
+    protected static Map<String, TestInfo> origToInfo = new HashMap<>();
 
-    // Pipe Test order result and original order result through.
+    // X Pipe Test order result and original order result through.
     // Within ProjectEnhanced result do calculation for (3) and (4)
+
+    // Need to save the three maps to ProjectEnhancedResults
 
     // (1) Check if original orders are the same between unenhanced and enhanced
     // (2) Assuming is same, otherwise output error to file
@@ -531,7 +535,25 @@ public abstract class FigureGenerator {
                 Map<String, Long> namesToTime = convertStrMapToLongMap(
                         parseFileForResult(file, Constants.ISOLATION_TIMES));
 
-                dtToIsolationInfo = convertMapsToIsolationDataMap(namesToResults, namesToTime);
+                dtToInfo = convertMapsToIsolationDataMap(namesToResults, namesToTime);
+
+                Map<String, RESULT> allTestResults= convertStrMapToRESULTMap(
+                        parseFileForResult(file, Constants.ALL_TEST_RESULTS));
+
+                Long[] testTimes = strArrayToLongArray(getRidSquareBrackets(timeInFile));
+                List<String> testNames = getRidSquareBrackets(getFlagsLine(file, Constants.TEST_ORDER_LIST, false));
+                Map<String, Long> allTestTimes = new HashMap<>();
+                for (int i = 0; i < testNames.size(); i++) {
+                    allTestTimes.put(testNames.get(i), testTimes[i]);
+                }
+
+                allTestToInfo = convertMapsToIsolationDataMap(allTestResults, allTestTimes);
+
+                Map<String, RESULT> origTestResults= convertStrMapToRESULTMap(
+                        parseFileForResult(file, Constants.ORIG_TEST_RESULTS));
+                // TODO we should output the time for each test in original order too and use that instead
+                origToInfo = convertMapsToIsolationDataMap(origTestResults, allTestTimes);
+
 
                 if (techniqueName.equals("parallelization")) {
                 	fg.doParaCalculations();
@@ -547,6 +569,29 @@ public abstract class FigureGenerator {
             }
         }
 	}
+
+    protected static List<String> getRidSquareBrackets(String line) {
+        String lineNoBrackets = line.substring(1, line.length() - 1);
+        String[] elements = lineNoBrackets.split(",");
+        return Arrays.asList(elements);
+    }
+
+    protected static Double[] strArrayToDoubleArray(List<String> strArr) {
+        Double[] doubleArr = new Double[strArr.size()];
+        for (int i = 0; i < strArr.size(); i++) {
+            doubleArr[i] = Double.valueOf(strArr.get(i));
+        }
+        return doubleArr;
+    }
+
+    protected static Long[] strArrayToLongArray(List<String> strArr) {
+        Long[] longArr = new Long[strArr.size()];
+        for (int i = 0; i < strArr.size(); i++) {
+            longArr[i] = Long.valueOf(strArr.get(i));
+        }
+        return longArr;
+    }
+
 
     public abstract void doParaCalculations();
 	public abstract void doPrioCalculations();

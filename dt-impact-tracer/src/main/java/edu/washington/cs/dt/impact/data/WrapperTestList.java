@@ -146,17 +146,17 @@ public class WrapperTestList {
         outputArr.add(Constants.ORDER_TIME + " " + Runner.nanosecondToSecond(getNewOrderTime()) + "\n");
 
         if (getTestList() != null) {
-            outputArr.add("\nTest order list:\n");
+            outputArr.add("\n" + Constants.TEST_ORDER_LIST + "\n");
             outputArr.add(getTestList() + "\n");
         }
 
         if (getOrigOrderResults() != null) {
-            outputArr.add("\nOriginal order results:\n");
+            outputArr.add("\n" + Constants.ORIG_TEST_RESULTS +"\n");
             outputArr.add(getOrigOrderResults() + "\n");
         }
 
         if (getTestOrderResults() != null) {
-            outputArr.add("\nTest order results:\n");
+            outputArr.add("\n" + Constants.ALL_TEST_RESULTS +"\n");
             outputArr.add(getTestOrderResults() + "\n");
         }
 

@@ -1,5 +1,9 @@
 package edu.washington.cs.dt.impact.data;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
 public class ProjectEnhancedResults extends Project {
     private double orig_time_value;
     private double orig_apfd_value;
@@ -53,6 +57,10 @@ public class ProjectEnhancedResults extends Project {
     private Double[] orig_coverage;
     private String[] orig_tests;
 
+    private List<Map<String, TestInfo>> all_test_info;
+    private List<Map<String, TestInfo>> dt_info;
+    private List<Map<String, TestInfo>> orig_test_info;
+
     public Double[] getOrig_time() {
         return orig_time;
     }
@@ -101,6 +109,10 @@ public class ProjectEnhancedResults extends Project {
         fig18_test_list = new String[6 * 2][];
         fig19_test_list_time = new String[4 * 2][];
         fig19_test_list_orig = new String[4 * 2][];
+
+        all_test_info = new ArrayList<>();
+        orig_test_info = new ArrayList<>();
+        dt_info = new ArrayList<>();
     }
 
     public boolean isFig17() {
@@ -225,7 +237,7 @@ public class ProjectEnhancedResults extends Project {
         }
     }
 
-    public boolean get_fig_NumOfDTs(boolean unen, int i, int figNum) {
+    public boolean containsDT(boolean unen, int i, int figNum) {
         if (figNum == 17) {
             if (unen) {
                 return fig17_num_DTs[i];
@@ -304,6 +316,8 @@ public class ProjectEnhancedResults extends Project {
             }
         }
     }
+
+
 
 
 
