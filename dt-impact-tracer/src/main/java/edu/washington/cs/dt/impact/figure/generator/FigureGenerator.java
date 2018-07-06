@@ -551,7 +551,6 @@ public abstract class FigureGenerator {
 
                 Map<String, RESULT> origTestResults = convertStrMapToRESULTMap(
                         parseFileForResult(file, Constants.ORIG_TEST_RESULTS));
-                // TODO we should output the time for each test in original order too and use that instead
                 origToInfo = convertMapsToIsolationDataMap(origTestResults, origOrderTimes);
 
                 if (techniqueName.equals("parallelization")) {

@@ -227,11 +227,6 @@ public class ProjectEnhancedResults extends Project {
     }
 
     public boolean setup() {
-        // Do calculation for 1-4 before generateLatexString in EnhancedResultsFigureGenerator.main
-
-        // TODO: Does this need to be done still?
-        // Need to handle paralleization time and original order like the other info
-
         for (int i = 0; i < dt_info.length; i++) {
             TestToInfoWrapper testToInfoWrapper = dt_info[i];
             Preconditions.checkNotNull(testToInfoWrapper, "Missing dt_info data for: " + i);
