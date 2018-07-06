@@ -50,7 +50,7 @@ public class Parallelization extends Test {
                            boolean mergeDTsCoverage) {
         super(inputTestFolder, coverage, dependentTestsFile, origOrder, mergeDTsCoverage);
 
-        splitTests = new LinkedList<Standard>();
+        splitTests = new LinkedList<>();
         if (outputFileName == null) {
             throw new RuntimeException("Test parallelization cannot be ran" + " without a specified output file name.");
         }
@@ -62,16 +62,14 @@ public class Parallelization extends Test {
             } else if (order == ORDER.TIME) {
                 Map<String, TestFunctionStatement> nameToMethodData = getNameToMethodData(methodList);
                 methodList.clear();
-                Map<String, TestTime> nameToTimeData = new HashMap<String, TestTime>();
+                Map<String, TestTime> nameToTimeData = new HashMap<>();
 
                 // create TestTimeDatas instead of TestMethodDatas
                 Map<String, Long> testNameToTime = processFile(timeOrder);
-                Set<String> extraFiles = new HashSet<String>(testNameToTime.keySet());
+                Set<String> extraFiles = new HashSet<>(testNameToTime.keySet());
                 for (final File fileEntry : inputTestFolder.listFiles()) {
                     if (fileEntry.isFile() && !fileEntry.getName().startsWith(".") && !fileEntry.isHidden()) {
                         extraFiles.remove(fileEntry.getName());
-                    } else {
-                        continue;
                     }
                 }
                 testNameToTime.keySet().removeAll(extraFiles);
@@ -114,7 +112,7 @@ public class Parallelization extends Test {
             }
 
             // create k test list each representing a machine
-            List<TestList> tmdLists = new ArrayList<TestList>();
+            List<TestList> tmdLists = new ArrayList<>();
             for (int i = 0; i < k; i++) {
                 tmdLists.add(new TestList());
             }
@@ -130,7 +128,7 @@ public class Parallelization extends Test {
                 Map<String, TestFunctionStatement> nameToMethodData = getNameToMethodData(tmdLists.get(i).getTestList());
 
                 // Sort the list with respect to the original order
-                List<TestFunctionStatement> sortedList = new ArrayList<TestFunctionStatement>();
+                List<TestFunctionStatement> sortedList = new ArrayList<>();
                 for (final String name : origList) {
                     if (nameToMethodData.keySet().contains(name)) {
                         sortedList.add(nameToMethodData.get(name));
@@ -183,6 +181,8 @@ public class Parallelization extends Test {
         }
     }
 
+    private static final String search = "^Pass: [0-9]+, Fail: [0-9]+, Error: [0-9]+(, Skipped: [0-9]+, Ignored: [0-9]+)?";
+
     private Map<String, Long> processFile(File f) {
         if (!f.isFile()) {
             throw new RuntimeException(f.getName() + " file is invalid.");
@@ -190,11 +190,14 @@ public class Parallelization extends Test {
 
         Map<String, Long> testsToResults = new HashMap<String, Long>();
         BufferedReader br;
+
+        boolean foundLine = false;
         try {
             br = new BufferedReader(new FileReader(f));
             String line = br.readLine();
             while (line != null) {
-                while (line != null && !line.matches("^Pass: [0-9]+, Fail: [0-9]+, Error: [0-9]+, Skipped: [0-9]+, Ignored: [0-9]+")) {
+                while (line != null && !line.matches(search)) {
+                    foundLine = true;
                     line = br.readLine();
                 }
 
@@ -226,6 +229,10 @@ public class Parallelization extends Test {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
+        }
+
+        if (!foundLine) {
+            throw new RuntimeException("Could not locate results line in file: " + f + " (looking for: " + search + ")");
         }
 
         return testsToResults;

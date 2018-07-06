@@ -1,8 +1,21 @@
-
 package edu.washington.cs.dt.impact.figure.generator;
 
+import com.google.common.base.Preconditions;
+import edu.washington.cs.dt.impact.data.GeometricMeanData;
+import edu.washington.cs.dt.impact.data.Project;
+import edu.washington.cs.dt.impact.data.ProjectEnhancedResults;
+import edu.washington.cs.dt.impact.data.TestFunctionStatement;
+import edu.washington.cs.dt.impact.data.TestInfo;
+import edu.washington.cs.dt.impact.runner.Runner;
+import edu.washington.cs.dt.impact.technique.Prioritization;
+import edu.washington.cs.dt.impact.util.Constants;
+import org.apache.commons.lang3.ArrayUtils;
+
 import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -12,15 +25,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import com.google.common.base.Preconditions;
-import edu.washington.cs.dt.impact.data.GeometricMeanData;
-import edu.washington.cs.dt.impact.data.Project;
-import edu.washington.cs.dt.impact.data.ProjectEnhancedResults;
-import edu.washington.cs.dt.impact.runner.Runner;
-import edu.washington.cs.dt.impact.util.Constants;
-
 public class EnhancedResultsFigureGenerator extends FigureGenerator {
-
     /*
      * a private method to generate a line of LaTeX needed for figure 17
      *
@@ -34,6 +39,39 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
     private static String generate17(ProjectEnhancedResults project, List<GeometricMeanData> fig17Data) {
         final List<Double> values = generate17Values(project);
         return generate17WithValues(project, fig17Data, values);
+    }
+
+    public static String formatValue(final double value) {
+        return formatValue(value, useCoverage);
+    }
+
+    private static String formatValue(double value, boolean useCoverage) {
+        final StringBuilder result = new StringBuilder();
+
+        if (useCoverage) {
+            String output = apfdFormat.format(value);
+            if (output.equals("-.00")) {
+                output = ".00";
+            }
+            result.append(" & ");
+            if (value >= 0.0 || output.equals(".00")) {
+                result.append("\\pMinus");// + output;
+            }
+            result.append(output);
+        } else {
+            value *= 100;
+            if (!allowNegatives && value < 0.0) {
+                value = 0.0;
+            }
+            result.append(" & ");
+            String output = percentFormat.format(value);
+            if (output.equals("-0")) {
+                output = "0";
+            }
+            result.append(output).append("\\%"); // "\%"
+        }
+
+        return result.toString();
     }
 
     public static String generate17WithValues(ProjectEnhancedResults project,
@@ -58,15 +96,7 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
                 fig17Data.add(new GeometricMeanData(i, val, null, Constants.ORDER.RELATIVE, Constants.COVERAGE.FUNCTION));
             }
 
-            String output = apfdFormat.format(val);
-            if (output.equals("-.00")) {
-                output = ".00";
-            }
-            result.append(" & ");
-            if (val >= 0.0 || output.equals(".00")) {
-                result.append("\\pMinus");// + output;
-            }
-            result.append(output);
+            result.append(formatValue(val));
         }
         result.append(" \\\\"); // "\\"
         return result.toString();
@@ -74,8 +104,6 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
 
     public static List<Double> generate17Values(ProjectEnhancedResults project) {
         double[] values = project.get_fig_values(17);
-        List<Double> origTime = Arrays.asList(project.getOrig_time());
-        List<Double> origCoverage = Arrays.asList(project.getOrig_coverage());
 
         final List<Double> result = new ArrayList<>();
 
@@ -86,20 +114,17 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
             if (!project.containsDT(true, i, 17)) {
                 // Case A
                 // Enhanced - unenhanced
-                val = values[i + 1] - values[i];
+                val = calculate(values[i + 1], values[i]);
             } else if (project.containsDT(true, i, 17) && project.containsDT(false, i, 17)) {
                 // } else if (project.getName().equals(Constants.CRYSTAL_NAME) && type.equals("auto") && i != 0 && i !=
                 // 6) {
                 // Case B
                 // Shift_by_enhanced’s_time(orig) - shift_by_unsound’s_time(orig)
-                val = shift_by_time(project.get_fig_Time(false, i, 17), origTime, origCoverage)
-                        - shift_by_time(project.get_fig_Time(true, i, 17), origTime,
-                        origCoverage);
+                val = calculate(shift_by_time(project, false, i, 17), shift_by_time(project, true, i, 17));
             } else {
                 // Case C
                 // Enhanced - shift_by_unsound’s_time(orig)
-                val = values[i + 1] - shift_by_time(project.get_fig_Time(true, i, 17),
-                        origTime, origCoverage);
+                val = calculate(values[i + 1], shift_by_time(project, true, i, 17));
             }
             if (!allowNegatives && val < 0.0) {
                 val = 0.0;
@@ -205,20 +230,10 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
             } else if (i == 10) {
                 fig18percent.add(new GeometricMeanData(i, percent, null, Constants.ORDER.RELATIVE, Constants.COVERAGE.FUNCTION));
             }
-            percent *= 100;
 
             // Increase in runtime of enhanced compared to unenhanced
             percentComparedToUnenhanced.percent += (time[i + 1] - time[i]) / orig_time_value;
             percentComparedToUnenhanced.numPercents += 1;
-
-            if (!allowNegatives && percent < 0.0) {
-                percent = 0.0;
-            }
-            result.append(" & ");
-            String output = percentFormat.format(percent);
-            if (output.equals("-0")) {
-                output = "0";
-            }
             // if (percent >= 0.0 || output.equals("0")) {
             // result += "\\pMinus";
             // if (output.length() == 1) // single digit number, #\%
@@ -231,7 +246,7 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
             // }
             // }
 
-            result.append(output).append("\\%"); // "\%"
+            result.append(formatValue(percent, false));
         }
         // i represents unenhanced, i + 1 represents enhanced
         for (int i = 0; i + 1 < values.length; i += 2) {
@@ -251,26 +266,27 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
                 fig18apfd.add(new GeometricMeanData(i, val, null, Constants.ORDER.RELATIVE, Constants.COVERAGE.FUNCTION));
             }
 
-            String output = apfdFormat.format(val);
-            if (output.equals("-.00")) {
-                output = ".00";
-            }
-            result.append(" & ");
-            // if (val >= 0.0 || output.equals(".00")) {
-            // result += "\\pMinus";
-            // }
-            result.append(output);
+            result.append(formatValue(val));
         }
         result.append(" \\\\"); // "\\"
         return result.toString();
     }
 
+    private static double calculate(final double a, final double b) {
+        return calculate(a, b, useCoverage);
+    }
+
+    private static double calculate(double a, double b, boolean useCoverage) {
+        if (useCoverage) {
+            return a - b;
+        } else {
+            return 1 - (a / b);
+        }
+    }
+
     public static List<Double> generate18Values(ProjectEnhancedResults project) {
         double[] time = project.get_fig18_time();
         double[] values = project.get_fig_values(18);
-        List<Double> origTime = Arrays.asList(project.getOrig_time());
-        List<Double> origCoverage = Arrays.asList(project.getOrig_coverage());
-        List<String> origTestList = Arrays.asList(project.getOrig_tests());
 
         final List<Double> result = new ArrayList<>();
 
@@ -297,23 +313,20 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
             if (!project.containsDT(true, i, 18)) {
                 // Case A
                 // 1 - Enh / (uns)
-                percent = 1 - (time[i + 1] / time[i]);
+                percent = calculate(time[i + 1], time[i], false);
             } else if (project.containsDT(true, i, 18) && project.containsDT(false, i, 18)) {
                 // } else if (project.getName().equals(Constants.CRYSTAL_NAME) && type.equals("auto") && i != 0 && i !=
                 // 6) {
                 // Case B
                 // 1 - (Enh + orig) / (uns + orig)
-                double enOrigTimeVal = listToTime(new ArrayList<Double>(origTime.subList(0,
-                        getHighestIndexInOrigTestList(project.get_fig_TestList(false, i, 18), origTestList))));
-                double unenOrigTimeVal = listToTime(new ArrayList<Double>(origTime.subList(0,
-                        getHighestIndexInOrigTestList(project.get_fig_TestList(true, i, 18), origTestList))));
-                percent = 1 - ((time[i + 1] + enOrigTimeVal) / (time[i] + unenOrigTimeVal));
+                double enTimeVal = shift_by_time(project, false, i, 18, false, false);
+                double unenTimeVal = shift_by_time(project, true, i, 18, false, false);
+                percent = calculate(enTimeVal, unenTimeVal, false);
             } else {
                 // Case C
                 // 1 - Enh / (uns + orig)
-                double unenOrigTimeVal = listToTime(new ArrayList<Double>(origTime.subList(0,
-                        getHighestIndexInOrigTestList(project.get_fig_TestList(true, i, 18), origTestList))));
-                percent = 1 - (time[i + 1] / (time[i] + unenOrigTimeVal));
+                double unenTimeVal = shift_by_time(project, true, i, 18, false, false);
+                percent = calculate(time[i + 1], unenTimeVal, false);
             }
 
             result.add(percent);
@@ -326,31 +339,16 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
             if (!project.containsDT(true, i, 18)) {
                 // Case A
                 // Enhanced - unenhanced
-                val = values[i + 1] - values[i];
+                val = calculate(values[i + 1], values[i]);
             } else if (project.containsDT(true, i, 18) && project.containsDT(false, i, 18)) {
-                // } else if (project.getName().equals(Constants.CRYSTAL_NAME) && type.equals("auto") && i != 0 && i !=
-                // 6) {
                 // Case B
                 // Shift_by_enhanced’s_time(orig) - shift_by_unsound’s_time(orig)
-                int unenIndex = getHighestIndexInOrigTestList(project.get_fig_TestList(true, i, 18),
-                        origTestList);
-                int enIndex = getHighestIndexInOrigTestList(project.get_fig_TestList(false, i, 18),
-                        origTestList);
-
-                val = shift_by_time(project.get_fig_Time(false, i, 18),
-                        new ArrayList<Double>(origTime.subList(0,enIndex)),
-                        new ArrayList<Double>(origCoverage.subList(0, enIndex)))
-                        - shift_by_time(project.get_fig_Time(true, i, 18),
-                        new ArrayList<Double>(origTime.subList(0, unenIndex)),
-                        new ArrayList<Double>(origCoverage.subList(0, unenIndex)));
+                val = calculate(shift_by_time(project, false, i, 18),
+                        shift_by_time(project, true, i, 18));
             } else {
                 // Case C
                 // Enhanced - shift_by_unsound’s_time(orig)
-                int index = getHighestIndexInOrigTestList(project.get_fig_TestList(true, i, 18), origTestList);
-
-                val = values[i + 1] - shift_by_time(project.get_fig_Time(true, i, 18),
-                        new ArrayList<Double>(origTime.subList(0, index)),
-                        new ArrayList<Double>(origCoverage.subList(0, index)));
+                val = calculate(values[i + 1], shift_by_time(project, true, i, 18));
             }
             if (!allowNegatives && val < 0.0) {
                 val = 0.0;
@@ -362,28 +360,111 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
         return result;
     }
 
-    private static double shift_by_time(Double[] enhancedTime, List<Double> origTime, List<Double> origCoverage) {
-        List<Double> totalTime = new ArrayList<Double>(Arrays.asList(enhancedTime));
-        int enhancedSize = totalTime.size();
-        if (useIsolationData) {
-            // TODO if isolation is still different than original order
-            // Coverage should be: X + (Isolation cost) + (Original order tests)
+    private static List<Double> orderCoverage(final ProjectEnhancedResults project, final List<String> testNames) {
+        try {
+            final Path file = Files.createTempFile("output", "file");
 
-            // Coverage should be: X + (Isolation cost)
+            final Path origOrder = Files.createTempFile("orig", "order");
+            Files.write(origOrder, String.join(System.lineSeparator(), testNames).getBytes());
 
-            return -1.0;
-        } else {
-            totalTime.addAll(origTime);
-            // TODO Coverage should be the non-DTs from the enhanced/unenhanced order then the remaining tests from
-            // original order
-            // Coverage should be: X + (Original order tests)
-            // X = (Enhanced/unenhanced tests that are ran already) - One dependent test
-            List<Double> totalCoverage = new ArrayList<Double>();
-            for (int j = 0; j < enhancedSize; j++) {
-                totalCoverage.add(0.0);
+            final Prioritization fixedOrder = new Prioritization(Constants.ORDER.ORIGINAL,
+                    file.toAbsolutePath().toString(), sootOutput(project), project.getCoverageType(),
+                    null, true, origOrder.toFile(), false);
+
+            final List<Double> result = new ArrayList<>();
+            for (final TestFunctionStatement tfs : fixedOrder.getOrderObj().getCoverage(false)) {
+                result.add(Double.valueOf(tfs.getName()));
             }
-            totalCoverage.addAll(origCoverage);
+            return result;
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return new ArrayList<>();
+    }
+
+    private static File sootOutput(ProjectEnhancedResults project) {
+        if (project.getTestType().equals("orig")) {
+            return sootOutputOrig.toFile();
+        } else {
+            return sootOutputAuto.toFile();
+        }
+    }
+
+    private static double shift_by_time(ProjectEnhancedResults project, boolean unen, int i, int figNum) {
+        return shift_by_time(project, unen, i, figNum, false);
+    }
+
+    private static double shift_by_time(ProjectEnhancedResults project, boolean unen, int i, int figNum, boolean isOriginal) {
+        return shift_by_time(project, unen, i, figNum, isOriginal, useCoverage);
+    }
+
+    private static double shift_by_time(ProjectEnhancedResults project, boolean unen,
+                                        int i, int figNum, boolean isOriginal, boolean useCoverage) {
+        Double[] enhancedTime = project.get_fig_Time(unen, i, figNum, isOriginal);
+
+        final Map<String, TestInfo> dt_info = project.get_dt_info(unen, i, figNum, isOriginal);
+        final Map<String, TestInfo> orig_info = project.get_orig_info(unen, i, figNum, isOriginal);
+
+        List<String> order = Arrays.asList(project.get_fig_TestList(unen, i, figNum, isOriginal));
+        List<String> origOrder = Arrays.asList(project.getOrig_tests());
+
+        // This is the order that "actually" gets run.
+        // E.g., if there is a dependent test, it is the (un)enhanced order up to that dependent
+        // test, followed by the test in isolation (if enabled), and finally the original order if still necessary
+        List<String> actualOrder = new ArrayList<>();
+
+        List<Double> totalTime = new ArrayList<>();
+
+        final String dt = project.get_first_dt(unen, i, figNum, isOriginal);
+        final int dtIndex = order.indexOf(dt);
+
+        if (dtIndex == -1) {
+            totalTime.addAll(Arrays.asList(enhancedTime));
+            actualOrder.addAll(order);
+        } else {
+            totalTime.addAll(Arrays.asList(enhancedTime).subList(0, dtIndex + 1));
+            actualOrder.addAll(order.subList(0, dtIndex + 1));
+        }
+
+        if (dt != null) {
+            if (useIsolationData) {
+                totalTime.add((double) dt_info.get(dt).getTime());
+                actualOrder.add(dt);
+
+                // if isolation is still different than original order
+                if (!dt_info.get(dt).getResult().equals(orig_info.get(dt).getResult())) {
+                    addOrigTests(order, actualOrder, orig_info, origOrder, totalTime);
+                }
+            } else {
+                addOrigTests(order, actualOrder, orig_info, origOrder, totalTime);
+            }
+        }
+
+        if (useCoverage) {
+            List<Double> totalCoverage = orderCoverage(project, actualOrder);
             return Runner.getAPFD(Runner.getCumulListDouble(totalTime), Runner.getCumulListDouble(totalCoverage));
+        } else {
+            return listToTime(totalTime);
+        }
+    }
+
+    private static void addOrigTests(List<String> order,
+                                     List<String> actualOrder, Map<String, TestInfo> origInfo,
+                                     List<String> origOrder, List<Double> totalTime) {
+        // We only need ot run enough tests from the original order to cover the selected tests.
+        // e.g. If we only select A and C from the original order of A,B,C,D, to verify our results
+        // we only need to run A,B,C (excluding D).
+        final List<String> toCover = new ArrayList<>(order);
+
+        for (final String testName : origOrder) {
+            if (!toCover.isEmpty()) {
+                totalTime.add((double) origInfo.get(testName).getTime());
+                actualOrder.add(testName);
+                toCover.remove(testName);
+            } else {
+                break;
+            }
         }
     }
 
@@ -417,14 +498,8 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
             percentComparedToUnenhanced.percent += (enhancedParaSpeedup - unenhancedPara) / orig_time_value;
             percentComparedToUnenhanced.numPercents += 1;
 
-            String output = timeFormat.format(diffBetweenEnhancedUnenhanced);
-            if (output.equals("-0\\%")) {
-                output = "0\\%";
-            }
+            result.append(formatValue(diffBetweenEnhancedUnenhanced));
 
-            result.append(" & ");
-
-            result.append(output);
             // result += " & " + timeFormat.format(enhancedParaSpeedup) + " $\\rightarrow$ " +
             // timeFormat.format(unenhancedPara);
             fig19GeoData.add(new GeometricMeanData(getK(i), enhancedParaSpeedup, Constants.TD_SETTING.OMITTED_TD,
@@ -445,14 +520,8 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
             percentComparedToUnenhanced.percent += (enhancedParaSpeedup - unenhancedPara) / orig_time_value;
             percentComparedToUnenhanced.numPercents += 1;
 
-            String output = timeFormat.format(diffBetweenEnhancedUnenhanced);
-            if (output.equals("-0\\%")) {
-                output = "0\\%";
-            }
+            result.append(formatValue(diffBetweenEnhancedUnenhanced));
 
-            result.append(" & ");
-
-            result.append(output);
             // result += " & " + timeFormat.format(enhancedParaSpeedup) + " $\\rightarrow$ " +
             // timeFormat.format(unenhancedPara);
             fig19GeoData.add(new GeometricMeanData(getK(i), enhancedParaSpeedup, Constants.TD_SETTING.OMITTED_TD,
@@ -469,84 +538,45 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
     public static List<Double> generate19Values(ProjectEnhancedResults project) {
         double[] orig_values = project.get_fig19_orig();
         double[] time_values = project.get_fig19_time();
-        double enhancedParaSpeedup = 0;
-        double unenhancedPara = 0;
-        double diffBetweenEnhancedUnenhanced = 0;
-        List<Double> origTime = Arrays.asList(project.getOrig_time());
-        List<String> origTestList = Arrays.asList(project.getOrig_tests());
 
         final List<Double> result = new ArrayList<>();
 
         // ORIGINAL ORDER
         // i represents unenhanced, i + 1 represents enhanced
         for (int i = 0; i + 2 <= orig_values.length; i += 2) {
-            // enhanced
-            enhancedParaSpeedup = orig_values[i + 1];
-            unenhancedPara = orig_values[i];
-            if (!project.get_fig19_NumOfDTs_orig_unen(i)) {
-                // Case A
-                // 1 - Enh / (uns)
-                diffBetweenEnhancedUnenhanced = 1 - (enhancedParaSpeedup / unenhancedPara);
-            } else if (project.get_fig19_NumOfDTs_orig_unen(i) && project.get_fig19_NumOfDTs_orig_en(i)) {
-                // } else if (project.getName().equals(Constants.CRYSTAL_NAME) && type.equals("auto") && i != 0 && i !=
-                // 6) {
-                // Case B
-                // 1 - (Enh + orig) / (uns + orig)
-                double enOrigTimeVal = listToTime(new ArrayList<Double>(origTime.subList(0,
-                        getHighestIndexInOrigTestList(project.get_fig_TestList(false, i, 19, true),
-                                                                               origTestList))));
-                double unenOrigTimeVal = listToTime(new ArrayList<Double>(origTime.subList(0,
-                        getHighestIndexInOrigTestList(project.get_fig_TestList(true, i, 19, true), origTestList))));
-                diffBetweenEnhancedUnenhanced =
-                        1 - ((enhancedParaSpeedup + enOrigTimeVal) / (unenhancedPara + unenOrigTimeVal));
-            } else {
-                // orig
-                // Case C
-                // 1 - Enh / (uns + orig)
-                double unenOrigTimeVal = listToTime(new ArrayList<Double>(origTime.subList(0,
-                        getHighestIndexInOrigTestList(project.get_fig_TestList(true, i, 19, true),
-                                                      origTestList))));
-                diffBetweenEnhancedUnenhanced = 1 - (enhancedParaSpeedup / (unenhancedPara + unenOrigTimeVal));
-            }
-
-            result.add(diffBetweenEnhancedUnenhanced);
+            result.add(paraResults(project, orig_values, i, true));
         }
 
         // TIME ORDER
         // i represents unenhanced, i + 1 represents enhanced
         for (int i = 0; i + 2 <= time_values.length; i += 2) {
-            enhancedParaSpeedup = time_values[i + 1];
-            unenhancedPara = time_values[i];
-            if (!project.get_fig19_NumOfDTs_time_unen(i)) {
-                // Case A
-                // 1 - Enh / (uns)
-                diffBetweenEnhancedUnenhanced = 1 - (enhancedParaSpeedup / unenhancedPara);
-            } else if (project.get_fig19_NumOfDTs_time_unen(i) && project.get_fig19_NumOfDTs_time_en(i)) {
-                // } else if (project.getName().equals(Constants.CRYSTAL_NAME) && type.equals("auto") && i != 0 && i !=
-                // 6) {
-                // Case B
-                // 1 - (Enh + orig) / (uns + orig)
-                double enOrigTimeVal = listToTime(new ArrayList<Double>(origTime.subList(0,
-                        getHighestIndexInOrigTestList(project.get_fig_TestList(false, i, 19, false), origTestList))));
-                double unenOrigTimeVal = listToTime(new ArrayList<Double>(origTime.subList(0,
-                        getHighestIndexInOrigTestList(project.get_fig_TestList(true, i, 19, false),
-                                                                               origTestList))));
-                diffBetweenEnhancedUnenhanced =
-                        1 - ((enhancedParaSpeedup + enOrigTimeVal) / (unenhancedPara + unenOrigTimeVal));
-            } else {
-                // orig
-                // Case C
-                // 1 - Enh / (uns + orig)
-                double unenOrigTimeVal = listToTime(new ArrayList<Double>(origTime.subList(0,
-                        getHighestIndexInOrigTestList(project.get_fig_TestList(true, i, 19, false),
-                                                                               origTestList))));
-                diffBetweenEnhancedUnenhanced = 1 - (enhancedParaSpeedup / (unenhancedPara + unenOrigTimeVal));
-            }
-
-            result.add(diffBetweenEnhancedUnenhanced);
+            result.add(paraResults(project, time_values, i, false));
         }
 
         return result;
+    }
+
+    private static double paraResults(ProjectEnhancedResults project, double[] values, int i,
+                                      boolean isOriginal) {
+        double enhancedParaSpeedup = values[i + 1];
+        double unenhancedPara = values[i];
+        double diffBetweenEnhancedUnenhanced;
+
+        if (!project.containsDT(true, i, 19, isOriginal)) {
+            // Case A. Neither have dts.
+            diffBetweenEnhancedUnenhanced = calculate(enhancedParaSpeedup, unenhancedPara, false);
+        } else if (project.containsDT(true, i, 19, isOriginal) && project.containsDT(false, i, 19, isOriginal)) {
+            // Case B, both enhanced and unenhanced have dts
+            double enTimeVal = shift_by_time(project, false, i, 19, isOriginal, false);
+            double unenTimeVal = shift_by_time(project, true, i, 19, isOriginal, false);
+            diffBetweenEnhancedUnenhanced = calculate(enTimeVal, unenTimeVal, false);
+        } else {
+            // Case C. Just the unenhanced has a dt
+            double unenTimeVal = shift_by_time(project, true, i, 19, isOriginal, false);
+            diffBetweenEnhancedUnenhanced = calculate(enhancedParaSpeedup, unenTimeVal, false);
+        }
+
+        return diffBetweenEnhancedUnenhanced;
     }
 
     public static EnhancedResults setup(final boolean allowNegatives, final Path directory, final Path outputDirectory) {
@@ -647,9 +677,13 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
         	functionRel.add(Constants.ORDER.RELATIVE.toString());
         	functionRel.add(Constants.COVERAGE.FUNCTION.toString());
         	addToGeoMean(covOrdToVals, functionRel, geometricMeans, 3);
-       	
-        	latexString += addGeoString(geometricMeans, null);
-        	
+
+        	if (useCoverage) {
+        	    latexString += addGeoString(geometricMeans, null);
+            } else {
+                latexString += addGeoString(null, geometricMeans);
+            }
+
             if (type.equals("orig")) {
                 getMeanOfDiffs("priorHumanWritten", fig17GeoData, false);
             } else if (type.equals("auto")) {
@@ -667,8 +701,14 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
         	selectionParseGeoMeans(fig18GeoDataAPFD, geometricMeansAPFD);
         	selectionParseGeoMeans(fig18GeoDataPercent, geometricMeansTime);
 
-            latexString += addGeoString(geometricMeansAPFD, geometricMeansTime);
-        	
+        	if (useCoverage) {
+                latexString += addGeoString(geometricMeansAPFD, geometricMeansTime);
+            } else {
+        	    double[] allTimes = ArrayUtils.addAll(geometricMeansTime, geometricMeansAPFD);
+
+        	    latexString += addGeoString(null, allTimes);
+            }
+
             if (type.equals("orig")) {
                 getMeanOfDiffs("seleHumanWrittenPercent", fig18GeoDataPercent, true);
                 getMeanOfDiffs("seleHumanWrittenAPFD", fig18GeoDataAPFD, false);
@@ -827,13 +867,9 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
     		Set<String> key = new HashSet<String>();
     		key.add(data.getCoverage().toString());
     		key.add(data.getOrder().toString());
-    		
-    		Set<Double> currVals = covOrderToVals.get(key);
-    		if (currVals == null) {
-    			currVals = new HashSet<>();
-    			covOrderToVals.put(key, currVals);
-    		}
-    		currVals.add(data.getValue());
+
+            Set<Double> currVals = covOrderToVals.computeIfAbsent(key, k -> new HashSet<>());
+            currVals.add(data.getValue());
     	}
     	return covOrderToVals;
     }
@@ -864,6 +900,10 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
 
     private static String outputDirectoryName;
     protected static boolean useIsolationData;
+    private static Path sootOutputOrig;
+    private static Path sootOutputAuto;
+    private static boolean useCoverage;
+
 
     /**
      * @param args
@@ -872,22 +912,32 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
         List<String> argsList = new ArrayList<String>(Arrays.asList(args));
 
         allowNegatives = argsList.contains("-allowNegatives");
-        useIsolationData= argsList.contains("-useIsolationData");
-
+        useIsolationData = argsList.contains("-useIsolationData");
+        useCoverage = argsList.contains("-useCoverage");
 
         String directoryName = mustGetArgName(argsList, "-directory");
         // name of directory where files should be outputted
         outputDirectoryName = mustGetArgName(argsList, "-outputDirectory");
 
+        if (useCoverage) {
+            final Path dtSubj = Paths.get(mustGetArgName(argsList, "-dtSubj"));
+
+            sootOutputOrig = dtSubj.resolve("sootTestOutput-orig");
+            sootOutputAuto = dtSubj.resolve("sootTestOutput-auto");
+        }
+
         File directory = new File(directoryName);
         File[] fList = directory.listFiles();
         // create a list of project Objects that each have a diff project name
-        List<Project> proj_orig_arrayList = new ArrayList<Project>();
-        List<Project> proj_auto_arrayList = new ArrayList<Project>();
+        List<Project> proj_orig_arrayList = new ArrayList<>();
+        List<Project> proj_auto_arrayList = new ArrayList<>();
 
         // Call super's parse file method and let it parse the files for information and
         // then call doParaCalculations, doSeleCalculations, or doPrioCalculations for each file
         parseFiles(fList, new EnhancedResultsFigureGenerator(), true, proj_orig_arrayList, proj_auto_arrayList);
+
+        if (!setupProjects(proj_orig_arrayList)) return;
+        if (!setupProjects(proj_auto_arrayList)) return;
 
         PercentWrapper percentRuntime = new PercentWrapper();
 
@@ -925,7 +975,18 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
         writeToLatexFile(autoLatexString, autoOutputFilename, false);
     }
 
-	@Override
+    private static boolean setupProjects(List<Project> projects) {
+        for (final Project results : projects) {
+            final ProjectEnhancedResults projResults = (ProjectEnhancedResults) results;
+            if (!projResults.setup()) {
+                System.out.println("[ERROR] Could not setup project: " + projResults.getName());
+                return false;
+            }
+        }
+        return true;
+    }
+
+    @Override
 	public void doParaCalculations() {
 		ProjectEnhancedResults currProj = (ProjectEnhancedResults) FigureGenerator.currProj;
         String order_time_string = parseFile(file, Constants.ORDER_TIME_PARA);
@@ -977,9 +1038,14 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
         setTime(currProj, timeInFile, index, orderName.equals("original"));
         currProj.setTestListPara(orderName.equals("original"), index, test_list);
 
-        currProj.addAllTestsInfo(allTestToInfo, index);
-        currProj.addIsolationInfo(dtToInfo, index);
-        currProj.addOrigInfo(origToInfo, index);
+        currProj.addAllTestsInfo(allTestToInfo, index, orderName.equals("original"));
+        currProj.addIsolationInfo(dtToInfo, index, orderName.equals("original"));
+        currProj.addOrigInfo(origToInfo, index, orderName.equals("original"));
+
+        if (coverageInFile != null) {
+            currProj.setCoverage(19, strArrayToDoubleArray(getRidSquareBrackets(coverageInFile)), index, orderName.equals("original"));
+            currProj.setCoverageType(Constants.COVERAGE.valueOf(coverageName.toUpperCase()));
+        }
     }
 
 	@Override
@@ -1035,7 +1101,7 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
         if (isEnhanced) {
             index += 1;
         }
-        fig18_values_array[index] = apfd_value;
+        fig18_values_array[index] = useCoverage ? apfd_value : order_time;
         fig18_time_array[index] = order_time;
         currProj.setNumTotalDependentTests(18, index, numTotal);
         setTime(currProj, 18, timeInFile, index);
@@ -1044,6 +1110,9 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
         currProj.addAllTestsInfo(allTestToInfo, index);
         currProj.addIsolationInfo(dtToInfo, index);
         currProj.addOrigInfo(origToInfo, index);
+
+        currProj.setCoverage(18, strArrayToDoubleArray(getRidSquareBrackets(coverageInFile)), index);
+        currProj.setCoverageType(Constants.COVERAGE.valueOf(coverageName.toUpperCase()));
     }
 
     @Override
@@ -1070,6 +1139,7 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
             currProj.setOrig_tests(test_list);
             return;
         }
+
         currProj.useFig17();
         double[] fig17_array = currProj.get_fig_values(17);
 
@@ -1104,7 +1174,7 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
         if (isEnhanced) {
             index += 1;
         }
-        fig17_array[index] = apfd_value;
+        fig17_array[index] = useCoverage ? apfd_value : order_time;
         currProj.setNumTotalDependentTests(17, index, numTotal);
         setTime(currProj, 17, timeInFile, index);
         currProj.setTestList(17, index, test_list);
@@ -1112,6 +1182,10 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
         currProj.addAllTestsInfo(allTestToInfo, index);
         currProj.addIsolationInfo(dtToInfo, index);
         currProj.addOrigInfo(origToInfo, index);
+
+        currProj.setCoverage(17, strArrayToDoubleArray(getRidSquareBrackets(coverageInFile)), index);
+        currProj.setCoverageType(Constants.COVERAGE.valueOf(coverageName.toUpperCase()));
+        currProj.setTestType(testType);
     }
 
     static class PercentWrapper {

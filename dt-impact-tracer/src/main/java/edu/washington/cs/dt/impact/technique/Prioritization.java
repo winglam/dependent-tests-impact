@@ -83,4 +83,8 @@ public class Prioritization extends Test {
             System.exit(0);
         }
     }
+
+    public Standard getOrderObj() {
+        return orderObj;
+    }
 }

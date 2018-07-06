@@ -25,7 +25,7 @@ public class Constants {
 
     // for Figures 17, 18, and 19
     public static final String ARGUMENT_STRING = "The following arguments were used to generate this output.";
-    public static final String ORIG_TEST_RESULTS = "Test order results:";
+    public static final String ORIG_TEST_RESULTS = "Original order results:";
     public static final String ALL_TEST_RESULTS = "Test order results:";
     public static final String TIME_STRING = "Time each test takes to run in the new order:";
     public static final String COVERAGE_STRING = "Coverage test list:";
@@ -39,6 +39,7 @@ public class Constants {
     public static final String MUTANT_LIST = "Mutant list:";
     public static final String ISOLATION_RESULTS = "Isolation results:";
     public static final String ISOLATION_TIMES = "Isolation times:";
+    public static final String ORIG_TEST_TIMES = "Original order times:";
 
     public static String getOutputFileName(COVERAGE coverage, TECHNIQUE technique, ORDER order, String project,
             TEST_TYPE test_type, MACHINES machines, DT_SETTING dt_setting, TD_SETTING td_setting) {

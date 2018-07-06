@@ -12,7 +12,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import java.util.TreeMap;
 
 public class WrapperTestList {
     private Set<String> notFixedDT;
@@ -28,6 +27,7 @@ public class WrapperTestList {
 
     private double avgDepFindTime = -1; // -1 if we didn't look for dependent tests at all. Time is in seconds.
     private Map<String, RESULT> origOrderResults;
+    private Map<String, Long> origOrderTimes = new HashMap<>();
     private Map<String, RESULT> testOrderResults;
 
     private final Map<String, RESULT> isolationResults = new HashMap<>();
@@ -151,8 +151,11 @@ public class WrapperTestList {
         }
 
         if (getOrigOrderResults() != null) {
-            outputArr.add("\n" + Constants.ORIG_TEST_RESULTS +"\n");
+            outputArr.add("\n" + Constants.ORIG_TEST_RESULTS + "\n");
             outputArr.add(getOrigOrderResults() + "\n");
+
+            outputArr.add("\n" + Constants.ORIG_TEST_TIMES + "\n");
+            outputArr.add(getOrigOrderTimes() + "\n");
         }
 
         if (getTestOrderResults() != null) {
@@ -191,8 +194,15 @@ public class WrapperTestList {
         return outputArr;
     }
 
-    public void setOrigOrderResults(final Map<String,RESULT> nameToOrigResults) {
-        origOrderResults = nameToOrigResults;
+    private Map<String, Long> getOrigOrderTimes() {
+        return origOrderTimes;
+    }
+
+    public void setOrigOrderResults(final TestExecResult nameToOrigResults) {
+        origOrderResults = nameToOrigResults.getNameToResultsMap();
+
+        nameToOrigResults.getAllTests().forEach(testName ->
+                origOrderTimes.put(testName, nameToOrigResults.getResult(testName).getExecTime()));
     }
 
     public Map<String, RESULT> getOrigOrderResults() {

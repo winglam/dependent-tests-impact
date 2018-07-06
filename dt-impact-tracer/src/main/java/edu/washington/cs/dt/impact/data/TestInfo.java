@@ -9,18 +9,18 @@ import edu.washington.cs.dt.RESULT;
  * dependent test in isolation.
  */
 public class TestInfo {
-    private long isolationTime;
-    private RESULT isolationResult;
+    private final long time;
+    private final RESULT result;
 
-    public TestInfo(long isolationTime, RESULT isolationResult) {
-        this.isolationResult = isolationResult;
-        this.isolationTime = isolationTime;
+    public TestInfo(long time, RESULT result) {
+        this.result = result;
+        this.time = time;
     }
 
-    public long getIsolationTime() {
-        return isolationTime;
+    public long getTime() {
+        return time;
     }
-    public RESULT getIsolationResult() {
-        return isolationResult;
+    public RESULT getResult() {
+        return result;
     }
 }

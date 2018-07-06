@@ -51,7 +51,8 @@ public class OneConfigurationRunner extends Runner {
     public static void main(String[] args) {
         parseArgs(args);
 
-        Map<String, RESULT> nameToOrigResults = getCurrentOrderTestListResults(origOrderTestList, filesToDelete);
+        TestExecResult origResults = getCurrentOrderTestListResults(origOrderTestList, filesToDelete);
+        Map<String, RESULT> nameToOrigResults = origResults.getNameToResultsMap();
 
         // capture start time
         double start = System.nanoTime();
@@ -85,9 +86,10 @@ public class OneConfigurationRunner extends Runner {
             List<String> currentOrderTestList = getCurrentTestList(testObj, i);
 
             // ImpactMain
-            Map<String, RESULT> nameToTestResults = getCurrentOrderTestListResults(currentOrderTestList, filesToDelete);
+            Map<String, RESULT> nameToTestResults =
+                    getCurrentOrderTestListResults(currentOrderTestList, filesToDelete).getNameToResultsMap();
 
-            testList.setOrigOrderResults(nameToOrigResults);
+            testList.setOrigOrderResults(origResults);
             testList.setTestOrderResults(nameToTestResults);
 
             // CrossReferencer
@@ -140,7 +142,7 @@ public class OneConfigurationRunner extends Runner {
                     testObj.resetDTList(allDTList);
                     currentOrderTestList = getCurrentTestList(testObj, i);
                     // ImpactMain
-                    nameToTestResults = getCurrentOrderTestListResults(currentOrderTestList, filesToDelete);
+                    nameToTestResults = getCurrentOrderTestListResults(currentOrderTestList, filesToDelete).getNameToResultsMap();
                     // Cross Referencer
                     changedTests = CrossReferencer.compareResults(nameToOrigResults, nameToTestResults, false);
 

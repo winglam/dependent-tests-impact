@@ -38,9 +38,13 @@ public class Test {
     protected List<String> origOrderList = null;
 
     public Test(File folder, COVERAGE coverage, File dependentTestsFile, File origOrder, boolean mergeDTsCoverage) {
-    	origOrderList = FileTools.parseFileToList(origOrder);
-        allCoverageLines = new HashSet<String>();
-        testToAllLines = new HashMap<String, Set<String>>();
+        this(folder, coverage, dependentTestsFile, FileTools.parseFileToList(origOrder), mergeDTsCoverage);
+    }
+
+    public Test(File folder, COVERAGE coverage, File dependentTestsFile, List<String> origOrder, boolean mergeDTsCoverage) {
+        origOrderList = origOrder;
+        allCoverageLines = new HashSet<>();
+        testToAllLines = new HashMap<>();
         if (allMethodList == null) {
             setAllLines(folder);
             allMethodList = listFilesForFolder(coverage);
@@ -48,7 +52,7 @@ public class Test {
         for (TestFunctionStatement tfs : allMethodList) {
             tfs.setMergeDTCoverage(mergeDTsCoverage);
         }
-        methodList = new ArrayList<TestFunctionStatement>(allMethodList);
+        methodList = new ArrayList<>(allMethodList);
         if (dependentTestsFile != null) {
             processDependentTests(dependentTestsFile, null, allMethodList);
         }

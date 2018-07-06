@@ -14,7 +14,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
+import com.reedoei.eunomia.collections.ListUtil;
+import com.reedoei.eunomia.collections.StreamUtil;
+import com.reedoei.eunomia.string.matching.LineMatch;
+import com.reedoei.eunomia.string.searching.Searcher;
+import com.reedoei.eunomia.string.searching.StringSearch;
+import com.reedoei.eunomia.util.SystemUtil;
 import edu.washington.cs.dt.RESULT;
 import edu.washington.cs.dt.impact.data.TestInfo;
 import edu.washington.cs.dt.impact.data.Project;
@@ -150,27 +157,22 @@ public abstract class FigureGenerator {
 
     public static Map<String, String> parseFileForResult(File file, String keyword) {
         Map<String, String> namesToResults = new HashMap<>();
-        Scanner scanner = null;
-        try {
-            scanner = new Scanner(file);
+        try (Scanner scanner = new Scanner(file)) {
             while (scanner.hasNextLine()) {
                 String currLine = scanner.nextLine();
                 if (currLine.contains(keyword)) {
                     // Ex. [randoop.jfreechart.RandoopTest1.test300, randoop.jfreechart.RandoopTest4.test270, randoop.jfreechart.RandoopTest0.test79]
                     currLine = scanner.nextLine();
                     currLine = currLine.substring(1, currLine.length() - 1);
-                    for (String s : Arrays.asList(currLine.split(", "))) {
+                    for (String s : currLine.split(", ")) {
                         String[] nameToResult = s.split("=");
                         namesToResults.put(nameToResult[0].trim(), nameToResult[1].trim());
                     }
                 }
             }
-            scanner.close(); // close Scanner before returning
         } catch (FileNotFoundException e) {
             e.printStackTrace();
             System.exit(2);
-        } finally {
-            scanner.close();
         }
         return namesToResults; // none of the lines contained the keyword
     }
@@ -196,7 +198,12 @@ public abstract class FigureGenerator {
                                                                       Map<String, Long> nameToTime) {
         Map<String, TestInfo> namesToIsolationData = new HashMap<>();
         for (String s : namesToResults.keySet()) {
-            namesToIsolationData.put(s, new TestInfo(nameToTime.get(s), namesToResults.get(s)));
+            if (nameToTime.containsKey(s)) {
+                namesToIsolationData.put(s, new TestInfo(nameToTime.get(s), namesToResults.get(s)));
+            } else {
+                System.out.println();
+                throw new IllegalStateException("Found result for " + s + " but no time.");
+            }
         }
         return namesToIsolationData;
     }
@@ -417,16 +424,6 @@ public abstract class FigureGenerator {
     protected static Map<String, TestInfo> allTestToInfo = new HashMap<>();
     protected static Map<String, TestInfo> origToInfo = new HashMap<>();
 
-    // Do calculation for 1-4 before generateLatexString in EnhancedResultsFigureGenerator.main
-
-    // Need to handle paralleization time and original order like the other info
-
-    // (1) Check if original orders are the same between unenhanced and enhanced
-    // (2) Assuming is same, otherwise output error message
-    // (3) Compare unenhanced to original order and get tests with different result and first test in unenhanced
-    // that is different
-    // (4) Repeat above with enhanced order
-
     /**
 	 * @param files
 	 * @param fg
@@ -440,6 +437,8 @@ public abstract class FigureGenerator {
 //	    Arrays.sort(files);
         for (File file : files) {
             if (file.isFile()) {
+                System.out.print("\r[INFO] Processing " + file);
+
             	FigureGenerator.file = file;
 				// String containing all the flags
 				flagsInFile = getFlagsLine(file, Constants.ARGUMENT_STRING, false);
@@ -523,7 +522,7 @@ public abstract class FigureGenerator {
 
 				numTotal = parseFileForKeywordNum(file, Constants.NUM_NOT_FIXED_DTS);
 
-				timeInFile =  getFlagsLine(file, Constants.TIME_STRING, false);
+				timeInFile = String.valueOf(parseLists(file, Constants.TIME_STRING));
 
 				numOfFixedDTs = parseFileForKeywordNum(file, Constants.FIXED_DTS);
 				maxTimeInFile = parseFileForMaxTime(file, Constants.TIME_INCL_DTF);
@@ -534,24 +533,26 @@ public abstract class FigureGenerator {
                 Map<String, Long> namesToTime = convertStrMapToLongMap(
                         parseFileForResult(file, Constants.ISOLATION_TIMES));
 
+                Map<String, Long> origOrderTimes = convertStrMapToLongMap(
+                        parseFileForResult(file, Constants.ORIG_TEST_TIMES));
+
                 dtToInfo = convertMapsToIsolationDataMap(namesToResults, namesToTime);
 
                 Map<String, RESULT> allTestResults= convertStrMapToRESULTMap(
                         parseFileForResult(file, Constants.ALL_TEST_RESULTS));
 
                 Long[] testTimes = strArrayToLongArray(getRidSquareBrackets(timeInFile));
-                List<String> testNames = getRidSquareBrackets(getFlagsLine(file, Constants.TEST_ORDER_LIST, false));
+                List<String> testNames = parseLists(file, Constants.TEST_ORDER_LIST);
                 Map<String, Long> allTestTimes = new HashMap<>();
                 for (int i = 0; i < testNames.size(); i++) {
                     allTestTimes.put(testNames.get(i), testTimes[i]);
                 }
                 allTestToInfo = convertMapsToIsolationDataMap(allTestResults, allTestTimes);
 
-                Map<String, RESULT> origTestResults= convertStrMapToRESULTMap(
+                Map<String, RESULT> origTestResults = convertStrMapToRESULTMap(
                         parseFileForResult(file, Constants.ORIG_TEST_RESULTS));
                 // TODO we should output the time for each test in original order too and use that instead
-                origToInfo = convertMapsToIsolationDataMap(origTestResults, allTestTimes);
-
+                origToInfo = convertMapsToIsolationDataMap(origTestResults, origOrderTimes);
 
                 if (techniqueName.equals("parallelization")) {
                 	fg.doParaCalculations();
@@ -566,12 +567,29 @@ public abstract class FigureGenerator {
                 }
             }
         }
+
+        System.out.println();
 	}
+
+    private static List<String> parseLists(File file, String searchString) {
+        try {
+            return StreamUtil.removeEmpty(
+                    new StringSearch(file.toPath())
+                    .search(Searcher.contains(searchString))
+                    .map(LineMatch::nextLine))
+                    .flatMap(l -> ListUtil.read(l.get()).stream())
+                    .collect(Collectors.toList());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return new ArrayList<>();
+    }
 
     protected static List<String> getRidSquareBrackets(String line) {
         String lineNoBrackets = line.substring(1, line.length() - 1);
         String[] elements = lineNoBrackets.split(",");
-        return Arrays.asList(elements);
+        return Arrays.stream(elements).map(String::trim).collect(Collectors.toList());
     }
 
     protected static Double[] strArrayToDoubleArray(List<String> strArr) {

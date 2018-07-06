@@ -83,7 +83,7 @@ public class RandomizeRunner extends Runner {
 
         boolean printTestLists = argsList.contains("-printTestLists");
 
-        Map<String, RESULT> nameToOrigResults = getCurrentOrderTestListResults(origOrderTestList, filesToDelete);
+        Map<String, RESULT> nameToOrigResults = getCurrentOrderTestListResults(origOrderTestList, filesToDelete).getNameToResultsMap();
 
         // capture start time
         double start = System.nanoTime();
@@ -156,7 +156,7 @@ public class RandomizeRunner extends Runner {
         List<String> currentOrderTestList = getCurrentTestList(testObj, 0);
 
         // ImpactMain
-        Map<String, RESULT> nameToTestResults = getCurrentOrderTestListResults(currentOrderTestList, filesToDelete);
+        Map<String, RESULT> nameToTestResults = getCurrentOrderTestListResults(currentOrderTestList, filesToDelete).getNameToResultsMap();
         // CrossReferencer
         Set<String> changedTests = CrossReferencer.compareResults(nameToOrigResults, nameToTestResults, false);
 
@@ -190,7 +190,7 @@ public class RandomizeRunner extends Runner {
                 testObj.resetDTList(allDTList);
                 currentOrderTestList = getCurrentTestList(testObj, 0);
                 // ImpactMain
-                nameToTestResults = getCurrentOrderTestListResults(currentOrderTestList, filesToDelete);
+                nameToTestResults = getCurrentOrderTestListResults(currentOrderTestList, filesToDelete).getNameToResultsMap();
                 // Cross Referencer
                 changedTests = CrossReferencer.compareResults(nameToOrigResults, nameToTestResults, false);
             }
