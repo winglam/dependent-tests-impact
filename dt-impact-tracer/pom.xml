@@ -7,7 +7,7 @@
     <parent>
         <groupId>edu.washington.cs.dt</groupId>
         <artifactId>dt-impact</artifactId>
-        <version>1.0.4</version>
+        <version>1.0.4-SNAPSHOT</version>
     </parent>
     <artifactId>dt-impact-tracer</artifactId>
     <packaging>jar</packaging>
@@ -18,8 +18,21 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <maven.javadoc.skip>true</maven.javadoc.skip>
-        <gpg.skip>true</gpg.skip>
+        <!-- <gpg.skip>true</gpg.skip> -->
     </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.6.0</version>
+                <configuration>
+                    <additionalClasspathElements>${basedir}/lib/dtdetector-1.2.0.jar</additionalClasspathElements>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
     <repositories>
         <repository>

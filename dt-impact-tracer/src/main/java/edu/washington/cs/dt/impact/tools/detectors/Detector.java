@@ -1,8 +1,8 @@
 package edu.washington.cs.dt.impact.tools.detectors;
 
 import com.reedoei.eunomia.functional.Func;
-import com.reedoei.eunomia.io.CaptureOutStream;
-import com.reedoei.eunomia.io.CapturedOutput;
+import com.reedoei.eunomia.io.capture.CaptureOutStream;
+import com.reedoei.eunomia.io.capture.CapturedOutput;
 import com.reedoei.eunomia.io.files.FileUtil;
 import edu.washington.cs.dt.TestExecResultsDelta;
 
@@ -34,6 +34,7 @@ public abstract class Detector {
         return tests;
     }
 
+    // TODO: Maybe make this return a stream instead.
     public List<TestExecResultsDelta> detect() {
         final List<TestExecResultsDelta> result = new ArrayList<>();
 

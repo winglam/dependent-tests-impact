@@ -1,5 +1,6 @@
 package edu.washington.cs.dt.impact.tools;
 
+import com.reedoei.eunomia.functional.TriConsumer;
 import edu.washington.cs.dt.impact.figure.generator.EnhancedResults;
 import edu.washington.cs.dt.impact.util.Constants;
 
@@ -12,6 +13,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.function.BiConsumer;
 
 public class EnhancedResultManager {
     private final Map<Constants.TECHNIQUE, EnhancedResultAverager> origAveragers = new HashMap<>();
@@ -66,6 +68,31 @@ public class EnhancedResultManager {
 
             default:
                 throw new IllegalArgumentException("Unknown test type: " + origOrAuto);
+        }
+    }
+
+    public void forEach(final TriConsumer<String, Constants.TECHNIQUE, EnhancedResultAverager> consumer) {
+        origAveragers.forEach((technique, averager) -> consumer.accept("orig", technique, averager));
+        autoAveragers.forEach((technique, averager) -> consumer.accept("auto", technique, averager));
+    }
+
+    public void forEach(final Constants.TECHNIQUE technique, final BiConsumer<String, EnhancedResultAverager> consumer) {
+        origAveragers.forEach((t, averager) -> {
+            if (t == technique) {
+                consumer.accept("orig", averager);
+            }
+        });
+
+        autoAveragers.forEach((t, averager) -> {
+            if (t == technique) {
+                consumer.accept("auto", averager);
+            }
+        });
+    }
+
+    public void addAll(final List<Path> paths) throws IOException {
+        for (final Path path : paths) {
+            add(path);
         }
     }
 }

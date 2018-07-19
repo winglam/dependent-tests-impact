@@ -437,7 +437,7 @@ public abstract class FigureGenerator {
 //	    Arrays.sort(files);
         for (File file : files) {
             if (file.isFile()) {
-                System.out.print("\r[INFO] Processing " + file);
+//                System.out.print("\r[INFO] Processing " + file.getName());
 
             	FigureGenerator.file = file;
 				// String containing all the flags
@@ -567,7 +567,7 @@ public abstract class FigureGenerator {
             }
         }
 
-        System.out.println();
+//        System.out.println();
 	}
 
     private static List<String> parseLists(File file, String searchString) {

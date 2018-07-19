@@ -25,6 +25,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+// TODO: add something to generate and output results to a csv or json or something for a bunch of folders.
 public class EnhancedResultsFigureGenerator extends FigureGenerator {
     /*
      * a private method to generate a line of LaTeX needed for figure 17

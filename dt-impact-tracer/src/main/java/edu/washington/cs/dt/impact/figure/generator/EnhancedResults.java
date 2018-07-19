@@ -22,7 +22,7 @@ public class EnhancedResults {
         // for the original order.
         final Frequency<Constants.TECHNIQUE> frequency = Frequency.empty();
 
-        for (final Path path : Files.list(resultFilesPath).collect(Collectors.toList())) {
+        for (final Path path : Files.walk(resultFilesPath).collect(Collectors.toList())) {
             for (final Constants.TECHNIQUE technique : Constants.TECHNIQUE.values()) {
                 if (path.toFile().getName().contains(technique.name())) {
                     frequency.count(technique);

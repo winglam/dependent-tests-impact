@@ -48,9 +48,12 @@ public class EnhancedResultAverager {
     }
 
     private List<Double> results(final Path resultFilesPath) throws IOException {
-        System.out.printf("\rGenerating results for path %s", resultFilesPath);
+        System.out.printf("[INFO] Generating results for %s\n", resultFilesPath);
 
         final Path outputPath = Files.createTempDirectory("output");
+
+//        System.out.println(values);
+
         return EnhancedResultsFigureGenerator.setup(true, resultFilesPath, outputPath).values(origOrAuto);
     }
 

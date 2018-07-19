@@ -8,7 +8,6 @@ import com.github.javaparser.ast.body.BodyDeclaration;
 import com.github.javaparser.ast.body.ClassOrInterfaceDeclaration;
 import com.github.javaparser.ast.body.MethodDeclaration;
 import com.github.javaparser.ast.body.Parameter;
-import com.github.javaparser.ast.body.TypeDeclaration;
 import com.github.javaparser.ast.visitor.ModifierVisitor;
 import com.github.javaparser.ast.visitor.Visitable;
 
@@ -19,7 +18,6 @@ import javax.tools.JavaFileObject;
 import javax.tools.StandardJavaFileManager;
 import javax.tools.ToolProvider;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -297,19 +295,22 @@ public class FailedTestRemover {
 
         /**
          * Finds all classes/interfaces in the file and saves them.
+         * @param outfileName
          */
-        private void loadClassList() {
-            classList.clear();
+        private void loadClassList(final Path outfileName) throws IOException {
+            compilationUnit = JavaParser.parse(outfileName.toFile());
 
-            for (final TypeDeclaration typeDeclaration : compilationUnit.getTypes()) {
-                if (typeDeclaration instanceof ClassOrInterfaceDeclaration) {
-                    classList.add((ClassOrInterfaceDeclaration) typeDeclaration);
-                }
-            }
+            classList.clear();
+            classList.addAll(compilationUnit.findAll(ClassOrInterfaceDeclaration.class));
         }
 
-        private void writeFile() throws IOException {
+        private Path writeFile() throws IOException {
             Files.write(outfileName, compilationUnit.toString().getBytes());
+            return outfileName;
+        }
+
+        public void writeAndReloadCompilationUnit() throws IOException {
+            loadClassList(writeFile());
         }
 
         private MethodDeclaration findMethodAt(final long line) {
@@ -354,16 +355,9 @@ public class FailedTestRemover {
          * Writes the file to the output filename, then tries to compile the output file.
          */
         private DiagnosticCollector<JavaFileObject> tryCompile() throws IOException {
-            writeAndReloadCompilationUnit();
+            loadClassList(writeFile());
 
             return compile();
-        }
-
-        private void writeAndReloadCompilationUnit() throws IOException {
-            writeFile();
-
-            compilationUnit = JavaParser.parse(new FileInputStream(outfileName.toFile()));
-            loadClassList();
         }
 
         private DiagnosticCollector<JavaFileObject> compile() throws IOException {
