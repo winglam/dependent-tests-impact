@@ -232,6 +232,12 @@ public class Instrumenter extends BodyTransformer{
 
                     if (!duplicates.contains(current)) {
                         List<Unit> children = ug.getSuccsOf(current);
+                        children.sort((c1, c2) -> {
+                            final int compareLine = Integer.compare(c1.getJavaSourceStartLineNumber(), c2.getJavaSourceStartLineNumber());
+                            final int compareColumn = Integer.compare(c1.getJavaSourceStartColumnNumber(), c2.getJavaSourceStartColumnNumber());
+
+                            return compareLine != 0 ? compareLine : compareColumn;
+                        });
                         // don't check identity statements (parameters)
                         if (!(stmt instanceof IdentityStmt)) {
                             for (Unit u : children) {
