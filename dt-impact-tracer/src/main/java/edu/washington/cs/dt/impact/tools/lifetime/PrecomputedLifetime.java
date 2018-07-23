@@ -9,20 +9,20 @@ import edu.washington.cs.dt.impact.data.TechniqueValues;
 import edu.washington.cs.dt.impact.tools.EnhancedResultAverager;
 import edu.washington.cs.dt.impact.tools.EnhancedResultManager;
 import edu.washington.cs.dt.impact.util.Constants;
-import org.checkerframework.checker.initialization.qual.Initialized;
-import org.checkerframework.checker.nullness.qual.NonNull;
-import org.checkerframework.checker.nullness.qual.UnknownKeyFor;
 
 import java.io.IOException;
-import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.text.ChoiceFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
+import java.time.Instant;
+import java.time.temporal.ChronoField;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -37,6 +37,20 @@ public class PrecomputedLifetime extends StandardMain {
 
         resultPaths = Paths.get(getArgRequired("paths"));
         startDate = new SimpleDateFormat("yyyy-MM-dd").parse(getArgRequired("start-date"));
+    }
+
+    private static String formatDate(final Instant instant) {
+        return String.format("%s-%s-%s",
+                instant.get(ChronoField.YEAR),
+                instant.get(ChronoField.MONTH_OF_YEAR),
+                instant.get(ChronoField.DAY_OF_MONTH));
+    }
+
+    public PrecomputedLifetime(final Date startDate, final Path resultPaths) {
+        super(new String[] {"--paths", resultPaths.toString(), "--start-date", formatDate(startDate.toInstant())});
+
+        this.startDate = startDate;
+        this.resultPaths = resultPaths;
     }
 
     public static void main(final String[] args) {
@@ -64,7 +78,7 @@ public class PrecomputedLifetime extends StandardMain {
             writeValues(outputPath, values);
         }
 
-        calculateResults(readValues(outputPath));
+//        calculateResults(readValues(outputPath));
     }
 
     private void writeValues(final Path outputPath, final TechniqueValues<List<Path>> values) throws IOException {
@@ -127,7 +141,10 @@ public class PrecomputedLifetime extends StandardMain {
         manager.forEach(Constants.TECHNIQUE.SELECTION, (testType, a) -> seleAverager.addAll(lifetimes(a)));
         manager.forEach(Constants.TECHNIQUE.PARALLELIZATION, (testType, a) -> paraAverager.addAll(lifetimes(a)));
 
-        System.out.println();
+        System.out.println("Prioritization cutoff(min): " + prioAverager.getValues().stream().min(Comparator.comparingInt(Integer::intValue)));
+        System.out.println("Selection cutoff(min): " + prioAverager.getValues().stream().min(Comparator.comparingInt(Integer::intValue)));
+        System.out.println("Parallelization cutoff(min): " + prioAverager.getValues().stream().min(Comparator.comparingInt(Integer::intValue)));
+
         System.out.println("Prioritization cutoff: " + (int)prioAverager.mean());
         System.out.println("Selection cutoff: " + (int)seleAverager.mean());
         System.out.println("Parallelization cutoff: " + (int)paraAverager.mean());
