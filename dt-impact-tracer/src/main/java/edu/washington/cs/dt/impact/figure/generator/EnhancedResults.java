@@ -1,5 +1,6 @@
 package edu.washington.cs.dt.impact.figure.generator;
 
+import com.reedoei.eunomia.collections.ListUtil;
 import com.reedoei.eunomia.data.Frequency;
 import edu.washington.cs.dt.impact.data.ProjectEnhancedResults;
 import edu.washington.cs.dt.impact.util.Constants;
@@ -11,28 +12,41 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class EnhancedResults {
     /**
      * @return The guessed technique based on the files in the resultFilesPath.
      */
-    public static Constants.TECHNIQUE getTechnique(final Path resultFilesPath) throws IOException {
-        // Use a frequency map instead of stopping at the first one because
-        // selection/parallelization results folders will have one prioritization file in them
-        // for the original order.
-        final Frequency<Constants.TECHNIQUE> frequency = Frequency.empty();
+    public static Constants.TECHNIQUE getTechnique(final Path resultFilesPath) {
+        try {
+            // Use a frequency map instead of stopping at the first one because
+            // selection/parallelization results folders will have one prioritization file in them
+            // for the original order.
+            final Frequency<Constants.TECHNIQUE> frequency = Frequency.empty();
 
-        for (final Path path : Files.walk(resultFilesPath).collect(Collectors.toList())) {
-            for (final Constants.TECHNIQUE technique : Constants.TECHNIQUE.values()) {
-                if (path.toFile().getName().contains(technique.name())) {
-                    frequency.count(technique);
+            for (final Path path : Files.walk(resultFilesPath).collect(Collectors.toList())) {
+                for (final Constants.TECHNIQUE technique : Constants.TECHNIQUE.values()) {
+                    if (path.toFile().getName().contains(technique.name())) {
+                        frequency.count(technique);
+                    }
                 }
             }
-        }
 
-        return frequency.max()
-                .orElseThrow(() -> new IllegalArgumentException("Result path does not contain any files with any of " +
-                        Arrays.toString(Constants.TECHNIQUE.values()) + " in their name."));
+            return frequency.max()
+                    .orElseThrow(() -> new IllegalArgumentException("Result path does not contain any files with any of " +
+                            Arrays.toString(Constants.TECHNIQUE.values()) + " in their name."));
+        } catch (IOException e) {
+            final String filename = resultFilesPath.getFileName().toString();
+            switch (filename) {
+                case "prioritization-results":
+                    return Constants.TECHNIQUE.PRIORITIZATION;
+                case "selection-results":
+                    return Constants.TECHNIQUE.SELECTION;
+                default:
+                    return Constants.TECHNIQUE.PARALLELIZATION;
+            }
+        }
     }
 
     private final ProjectEnhancedResults origProj;
@@ -46,6 +60,30 @@ public class EnhancedResults {
         this.origProj = origProj;
         this.autoProj = autoProj;
         this.resultFilesPath = resultFilesPath;
+    }
+
+    public boolean containsDTs(final boolean unen) {
+        final Constants.TECHNIQUE technique = getTechnique(resultFilesPath);
+
+        return containsDTs(origProj, unen, technique) || containsDTs(autoProj, unen, technique);
+    }
+
+    private boolean containsDTs(final ProjectEnhancedResults project, final boolean unen, final Constants.TECHNIQUE technique) {
+        final int figNum = Constants.TECHNIQUE_FIGNUMS.technique(technique);
+
+        return IntStream.range(0, project.getLength(figNum))
+                // Unenhanced is even, enhanced is odd.
+                .filter(i -> unen ? i % 2 == 0 : i % 2 != 0)
+                .anyMatch(i -> {
+                    for (final boolean isOriginal : ListUtil.fromArray(true, false)) {
+                        // Ignore the unen argument, we handle it by filtering above.
+                        if (project.containsDT(true, i, figNum, isOriginal)) {
+                            return true;
+                        }
+                    }
+
+                    return false;
+                });
     }
 
     private ProjectEnhancedResults getProject(final String origOrAuto) {

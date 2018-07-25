@@ -7,7 +7,13 @@
 
 package edu.washington.cs.dt.impact.tools;
 
+import edu.washington.cs.dt.impact.data.Project;
+import edu.washington.cs.dt.impact.figure.generator.FigureGenerator;
+import org.apache.commons.lang3.tuple.ImmutablePair;
+import org.apache.commons.lang3.tuple.Pair;
+
 import java.io.File;
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
@@ -15,12 +21,56 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
-import edu.washington.cs.dt.impact.data.Project;
-import edu.washington.cs.dt.impact.figure.generator.FigureGenerator;
-
 public class GetAllUniqueDTs extends FigureGenerator {
 	private static Map<String, HashSet<String>> autoTestNames;
 	private static Map<String, HashSet<String>> origTestNames;
+
+	public static Pair<Map<String, Integer>, Map<String, Integer>> run(final String priorDirectoryName,
+																	   final String seleDirectoryName,
+																	   final String paraDirectoryName) {
+		return run(priorDirectoryName, seleDirectoryName, paraDirectoryName, null, null);
+	}
+
+	public static Pair<Map<String, Integer>, Map<String, Integer>> run(final String priorDirectoryName,
+																	   final String seleDirectoryName,
+																	   final String paraDirectoryName,
+																	   final File origDTFile,
+																	   final File autoDTFile) {
+		File[] prioDirList = new File(priorDirectoryName).listFiles();
+		File[] seleDirList = new File(seleDirectoryName).listFiles();
+		File[] paraDirList = new File(paraDirectoryName).listFiles();
+
+		autoTestNames = new TreeMap<>();
+		origTestNames = new TreeMap<>();
+
+		// create a list of project Objects that each have a diff project name
+		List<Project> proj_orig_arrayList = new ArrayList<>();
+		List<Project> proj_auto_arrayList = new ArrayList<>();
+
+		// Call super's parse file method and let it parse the files for information and
+		// then call doParaCalculations, doSeleCalculations, or doPrioCalculations for each file
+		if (prioDirList != null) {
+			parseFiles(prioDirList, new GetAllUniqueDTs(), false, proj_orig_arrayList, proj_auto_arrayList);
+		}
+
+		if (seleDirList != null) {
+			parseFiles(seleDirList, new GetAllUniqueDTs(), false, proj_orig_arrayList, proj_auto_arrayList);
+		}
+
+		if (paraDirList != null) {
+			parseFiles(paraDirList, new GetAllUniqueDTs(), false, proj_orig_arrayList, proj_auto_arrayList);
+		}
+
+		TreeMap<String, Integer> origExistingMap =
+				origDTFile != null ? parseExistingDTFile(FileTools.parseFileToList(origDTFile)) : new TreeMap<>();
+		mergeMaps(origExistingMap, origTestNames);
+
+		TreeMap<String, Integer> autoExistingMap =
+				autoDTFile != null ? parseExistingDTFile(FileTools.parseFileToList(autoDTFile)) : new TreeMap<>();
+		mergeMaps(autoExistingMap, autoTestNames);
+
+		return ImmutablePair.of(origExistingMap, autoExistingMap);
+	}
 
     public static void main(String[] args) {
 		List<String> argsList = new ArrayList<String>(Arrays.asList(args));
@@ -30,41 +80,22 @@ public class GetAllUniqueDTs extends FigureGenerator {
 		String paraDirectoryName = mustGetArgName(argsList, "-paraDirectory");
 
 		String origMinDTFileName = mustGetArgName(argsList, "-minBoundOrigDTFile"); 
-		String autoMinDTFileName = mustGetArgName(argsList, "-minBoundAutoDTFile"); 
+		String autoMinDTFileName = mustGetArgName(argsList, "-minBoundAutoDTFile");
 
-        File[] prioDirList = new File(priorDirectoryName).listFiles();
-        File[] seleDirList = new File(seleDirectoryName).listFiles();
-        File[] paraDirList = new File(paraDirectoryName).listFiles();
+		File origDTFile = new File(origMinDTFileName);
+		File autoDTFile = new File(autoMinDTFileName);
+		final Pair<Map<String, Integer>, Map<String, Integer>> result = run(priorDirectoryName, seleDirectoryName, paraDirectoryName, origDTFile, autoDTFile);
+		final Map<String, Integer> origExistingMap = result.getLeft();
+		final Map<String, Integer> autoExistingMap = result.getRight();
 
-        autoTestNames = new TreeMap<String, HashSet<String>>();
-        origTestNames = new TreeMap<String, HashSet<String>>();
-
-        // create a list of project Objects that each have a diff project name
-        List<Project> proj_orig_arrayList = new ArrayList<Project>();
-        List<Project> proj_auto_arrayList = new ArrayList<Project>();
-
-        // Call super's parse file method and let it parse the files for information and
-        // then call doParaCalculations, doSeleCalculations, or doPrioCalculations for each file
-        parseFiles(prioDirList, new GetAllUniqueDTs(), false, proj_orig_arrayList, proj_auto_arrayList);
-        parseFiles(seleDirList, new GetAllUniqueDTs(), false, proj_orig_arrayList, proj_auto_arrayList);
-        parseFiles(paraDirList, new GetAllUniqueDTs(), false, proj_orig_arrayList, proj_auto_arrayList);
-
-        File origDTFile = new File(origMinDTFileName);
-        TreeMap<String, Integer> origExistingMap = parseExistingDTFile(FileTools.parseFileToList(origDTFile));
-        mergeMaps(origExistingMap, origTestNames);
-
-        StringBuilder sb = new StringBuilder();
-        for (String key : origExistingMap.keySet()) {
-        	sb.append(key);
-        	sb.append("|");
-        	sb.append(origExistingMap.get(key));
-        	sb.append("\n");
-        }
-        FileTools.printStringToFile(sb.toString(), origDTFile, false);
-
-        File autoDTFile = new File(autoMinDTFileName);
-        TreeMap<String, Integer> autoExistingMap = parseExistingDTFile(FileTools.parseFileToList(autoDTFile));
-        mergeMaps(autoExistingMap, autoTestNames);
+		StringBuilder sb = new StringBuilder();
+		for (String key : origExistingMap.keySet()) {
+			sb.append(key);
+			sb.append("|");
+			sb.append(origExistingMap.get(key));
+			sb.append("\n");
+		}
+		FileTools.printStringToFile(sb.toString(), origDTFile, false);
 
         StringBuilder autoSb = new StringBuilder();
         for (String key : autoExistingMap.keySet()) {
@@ -100,6 +131,10 @@ public class GetAllUniqueDTs extends FigureGenerator {
         	}
         	existingMap.put(key, value);
         }
+    }
+
+	public static TreeMap<String, Integer> parseExistingDTFile(final Path path) {
+	    return parseExistingDTFile(FileTools.parseFileToList(path.toFile()));
     }
 
     private static TreeMap<String, Integer> parseExistingDTFile(List<String> contents) {

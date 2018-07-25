@@ -553,6 +553,10 @@ public abstract class FigureGenerator {
                         parseFileForResult(file, Constants.ORIG_TEST_RESULTS));
                 origToInfo = convertMapsToIsolationDataMap(origTestResults, origOrderTimes);
 
+//                if (resolveDependences == null && (totalDTs == null || totalDTs.size() == 0)) {
+//                    continue;
+//                }
+
                 if (techniqueName.equals("parallelization")) {
                 	fg.doParaCalculations();
                 } // selection technique, figure 18

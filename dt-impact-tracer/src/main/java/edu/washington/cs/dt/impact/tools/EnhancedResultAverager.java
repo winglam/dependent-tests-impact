@@ -1,6 +1,7 @@
 package edu.washington.cs.dt.impact.tools;
 
 import com.google.common.base.Preconditions;
+import com.reedoei.eunomia.collections.ListUtil;
 import com.reedoei.eunomia.functional.Func;
 import com.reedoei.eunomia.math.Averager;
 import com.reedoei.eunomia.util.Util;
@@ -20,12 +21,15 @@ import java.util.stream.Collectors;
 
 public class EnhancedResultAverager {
     private final List<Averager<Double>> averagers = new ArrayList<>();
+
     private final String origOrAuto;
     private final Constants.TECHNIQUE technique;
-    private final List<Path> resultFilesPaths = new ArrayList<>();
 
-    public EnhancedResultAverager(final String origOrAuto, final Path resultFilesPath) throws IOException {
-        this(origOrAuto, EnhancedResults.getTechnique(resultFilesPath));
+    private final List<Path> resultFilesPaths = new ArrayList<>();
+    private final List<EnhancedResults> enhancedResults = new ArrayList<>();
+
+    public EnhancedResultAverager(final String origOrAuto, final Path resultFilesParent) throws IOException {
+        this(origOrAuto, EnhancedResults.getTechnique(resultFilesParent));
     }
 
     public EnhancedResultAverager(final String origOrAuto, final Constants.TECHNIQUE technique) {
@@ -35,9 +39,28 @@ public class EnhancedResultAverager {
 
     public EnhancedResultAverager add(final Path resultFilesPath) throws IOException {
         resultFilesPaths.add(resultFilesPath);
-        addValues(results(resultFilesPath));
+
+        final EnhancedResults results = getResults(resultFilesPath);
+        enhancedResults.add(results);
+
+        addValues(results.values(origOrAuto));
 
         return this;
+    }
+
+    public List<EnhancedResults> enhancedResults() {
+        return enhancedResults;
+    }
+
+    private EnhancedResults getResults(final Path resultFilesPath) throws IOException {
+//        checkFiles(resultFilesParent);
+//        checkFilesSimple(resultFilesParent);
+
+        System.out.printf("[INFO] Generating %s results for %s\n", origOrAuto, resultFilesPath);
+
+        final Path outputPath = Files.createTempDirectory("output");
+
+        return EnhancedResultsFigureGenerator.setup(true, resultFilesPath, outputPath);
     }
 
     private void ensureAveragerCapacity(final int size) {
@@ -49,19 +72,6 @@ public class EnhancedResultAverager {
     private void addValues(final List<Double> values) {
         ensureAveragerCapacity(values.size());
         Util.zipWith(Averager::add, averagers, values);
-    }
-
-    private List<Double> results(final Path resultFilesPath) throws IOException {
-//        checkFiles(resultFilesPath);
-//        checkFilesSimple(resultFilesPath);
-
-        System.out.printf("[INFO] Generating results for %s\n", resultFilesPath);
-
-        final Path outputPath = Files.createTempDirectory("output");
-
-//        System.out.println(values);
-
-        return EnhancedResultsFigureGenerator.setup(true, resultFilesPath, outputPath).values(origOrAuto);
     }
 
     private void checkFilesSimple(final Path resultFilesPath) throws IOException {
@@ -151,10 +161,10 @@ public class EnhancedResultAverager {
     }
 
     public List<Double> means() {
-        return Func.map(Averager::mean, averagers);
+        return ListUtil.map(Averager::mean, averagers);
     }
 
-    public List<Averager<Double>> getAveragers() {
+    public List<Averager<Double>> averagers() {
         return averagers;
     }
 }

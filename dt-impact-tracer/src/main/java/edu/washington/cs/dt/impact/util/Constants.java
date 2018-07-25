@@ -7,7 +7,12 @@
 
 package edu.washington.cs.dt.impact.util;
 
+import edu.washington.cs.dt.impact.data.TechniqueValues;
+
 public class Constants {
+    public static final TechniqueValues<Integer> TECHNIQUE_FIGNUMS =
+            new TechniqueValues<>(17, 18, 19);
+
     public static final TECHNIQUE DEFAULT_TECHNIQUE = TECHNIQUE.PRIORITIZATION;
     public static final String DEFAULT_TEST_DIR = "sootTestOutput";
     public static final String TEST_LINE = "Test: ";

@@ -578,6 +578,16 @@ public class ProjectEnhancedResults extends Project {
         }
     }
 
+    public int getLength(int figNum) {
+        if (figNum == 17) {
+            return fig17_num_DTs.length;
+        } else if (figNum == 18) {
+            return fig18_num_DTs.length;
+        } else {
+            return fig19_num_DTs_time.length;
+        }
+    }
+
     public boolean containsDT(boolean unen, int i, int figNum) {
         return containsDT(unen, i, figNum, false);
     }
