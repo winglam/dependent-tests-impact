@@ -129,28 +129,23 @@ public abstract class FigureGenerator {
     }
     
     public static List<String> parseFileForDTs(File file, String keyword, boolean findLast) {
-        List<String> DTs = new ArrayList<String>();
-        Scanner scanner = null;
-        try {
-            scanner = new Scanner(file);
+        List<String> DTs = new ArrayList<>();
+        try (Scanner scanner = new Scanner(file)) {
             while (scanner.hasNextLine()) {
                 String currLine = scanner.nextLine();
                 if (currLine.contains(keyword)) {
-                	// Ex. [randoop.jfreechart.RandoopTest1.test300, randoop.jfreechart.RandoopTest4.test270, randoop.jfreechart.RandoopTest0.test79]
-                	currLine = scanner.nextLine();
-                	currLine = currLine.substring(1, currLine.length() - 1);
-                	if (findLast) {
-                		DTs.clear();
-                	}
-                	DTs.addAll(Arrays.asList(currLine.split(", ")));
+                    // Ex. [randoop.jfreechart.RandoopTest1.test300, randoop.jfreechart.RandoopTest4.test270, randoop.jfreechart.RandoopTest0.test79]
+                    currLine = scanner.nextLine();
+                    currLine = currLine.substring(1, currLine.length() - 1);
+                    if (findLast) {
+                        DTs.clear();
+                    }
+                    DTs.addAll(Arrays.asList(currLine.split(", ")));
                 }
             }
-            scanner.close(); // close Scanner before returning
         } catch (FileNotFoundException e) {
             e.printStackTrace();
             System.exit(2);
-        } finally {
-            scanner.close();
         }
         return DTs; // none of the lines contained the keyword
     }
@@ -423,6 +418,7 @@ public abstract class FigureGenerator {
     protected static Map<String, TestInfo> dtToInfo = new HashMap<>();
     protected static Map<String, TestInfo> allTestToInfo = new HashMap<>();
     protected static Map<String, TestInfo> origToInfo = new HashMap<>();
+    protected static List<String> dtList;
 
     /**
 	 * @param files
@@ -434,9 +430,15 @@ public abstract class FigureGenerator {
 	 */
 	protected static void parseFiles(File[] files, FigureGenerator fg, boolean ignoreDTFFlag,
 			List<Project> proj_orig_arrayList, List<Project> proj_auto_arrayList) {
+	    parseFiles(files, fg, ignoreDTFFlag, proj_orig_arrayList, proj_auto_arrayList, "");
+    }
+
+    protected static void parseFiles(final File[] files, final FigureGenerator fg,
+                                   final boolean ignoreDTFFlag, final List<Project> proj_orig_arrayList,
+                                   final List<Project> proj_auto_arrayList, final String filter) {
 //	    Arrays.sort(files);
         for (File file : files) {
-            if (file.isFile()) {
+            if (file.isFile() && file.getName().contains(filter)) {
 //                System.out.print("\r[INFO] Processing " + file.getName());
 
             	FigureGenerator.file = file;
@@ -524,6 +526,8 @@ public abstract class FigureGenerator {
 
 				timeInFile = String.valueOf(parseLists(file, Constants.TIME_STRING));
 
+                dtList = parseFileForDTs(file, Constants.DT_LIST, true);
+
 				numOfFixedDTs = parseFileForKeywordNum(file, Constants.FIXED_DTS);
 				maxTimeInFile = parseFileForMaxTime(file, Constants.TIME_INCL_DTF);
 				avgDepFindTime = parseFileForMaxTime(file, Constants.AVG_DEP_FIND_TIME_STRING);
@@ -552,10 +556,6 @@ public abstract class FigureGenerator {
                 Map<String, RESULT> origTestResults = convertStrMapToRESULTMap(
                         parseFileForResult(file, Constants.ORIG_TEST_RESULTS));
                 origToInfo = convertMapsToIsolationDataMap(origTestResults, origOrderTimes);
-
-//                if (resolveDependences == null && (totalDTs == null || totalDTs.size() == 0)) {
-//                    continue;
-//                }
 
                 if (techniqueName.equals("parallelization")) {
                 	fg.doParaCalculations();

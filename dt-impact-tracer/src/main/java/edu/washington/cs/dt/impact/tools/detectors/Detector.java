@@ -34,7 +34,6 @@ public abstract class Detector {
         return tests;
     }
 
-    // TODO: Maybe make this return a stream instead.
     public List<TestExecResultsDelta> detect() {
         final List<TestExecResultsDelta> result = new ArrayList<>();
 

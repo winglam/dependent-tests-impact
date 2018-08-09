@@ -25,6 +25,16 @@ public class TechniqueValues<T> {
         this.para = supplier.get();
     }
 
+    public T figNum(final int figNum) {
+        if (figNum == 17) {
+            return prio();
+        } else if (figNum == 18) {
+            return sele();
+        } else {
+            return para();
+        }
+    }
+
     public T technique(final Constants.TECHNIQUE technique) {
         switch (technique) {
             case PRIORITIZATION:

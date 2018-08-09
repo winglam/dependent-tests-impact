@@ -11,17 +11,17 @@ import java.util.Collections;
 import java.util.List;
 
 public class NondeterministicDetector extends Detector {
+    private final TestExecResult firstRun;
+
     public NondeterministicDetector(final String classpath, final List<String> tests, final int rounds) {
         super(classpath, tests, rounds);
+
+        firstRun = new FixedOrderRunner(classpath, tests).run().getExecutionRecords().get(0);
     }
 
     @Override
     public List<TestExecResultsDelta> detectionRound() {
-        final List<String> roundOrder = new ArrayList<>(tests);
-        Collections.shuffle(roundOrder);
-
-        final TestExecResult firstRun = new FixedOrderRunner(classpath, roundOrder).run().getExecutionRecords().get(0);
-        final TestExecResults secondRun = new FixedOrderRunner(classpath, roundOrder).run();
+        final TestExecResults secondRun = new FixedOrderRunner(classpath, tests).run();
 
         return new TestExecResultsDifferentior(firstRun, secondRun).diffResults();
     }

@@ -1,18 +1,26 @@
 package edu.washington.cs.dt.impact.figure.generator;
 
 import com.reedoei.eunomia.collections.ListUtil;
+import com.reedoei.eunomia.collections.StreamUtil;
 import com.reedoei.eunomia.data.Frequency;
+import com.reedoei.eunomia.io.files.FileUtil;
 import edu.washington.cs.dt.impact.data.ProjectEnhancedResults;
+import edu.washington.cs.dt.impact.data.TestInfo;
 import edu.washington.cs.dt.impact.util.Constants;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
+import java.util.Optional;
+import java.util.function.Supplier;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 public class EnhancedResults {
     /**
@@ -34,7 +42,7 @@ public class EnhancedResults {
             }
 
             return frequency.max()
-                    .orElseThrow(() -> new IllegalArgumentException("Result path does not contain any files with any of " +
+                    .orElseThrow(() -> new IllegalArgumentException("Path " + resultFilesPath + " does not contain any files with any of " +
                             Arrays.toString(Constants.TECHNIQUE.values()) + " in their name."));
         } catch (IOException e) {
             final String filename = resultFilesPath.getFileName().toString();
@@ -62,10 +70,15 @@ public class EnhancedResults {
         this.resultFilesPath = resultFilesPath;
     }
 
+    public Path resultFilesPath() {
+        return resultFilesPath;
+    }
+
     public boolean containsDTs(final boolean unen) {
         final Constants.TECHNIQUE technique = getTechnique(resultFilesPath);
 
-        return containsDTs(origProj, unen, technique) || containsDTs(autoProj, unen, technique);
+        return (origProj != null && containsDTs(origProj, unen, technique)) ||
+               (autoProj != null && containsDTs(autoProj, unen, technique));
     }
 
     private boolean containsDTs(final ProjectEnhancedResults project, final boolean unen, final Constants.TECHNIQUE technique) {
@@ -77,7 +90,7 @@ public class EnhancedResults {
                 .anyMatch(i -> {
                     for (final boolean isOriginal : ListUtil.fromArray(true, false)) {
                         // Ignore the unen argument, we handle it by filtering above.
-                        if (project.containsDT(true, i, figNum, isOriginal)) {
+                        if (project.getFigNumDTs(figNum, isOriginal)[i]) {
                             return true;
                         }
                     }
@@ -121,8 +134,28 @@ public class EnhancedResults {
         }
     }
 
+    private List<Double> readOrGenerate(final String technique, final String origOrAuto,
+                                        final Supplier<List<Double>> generator) {
+        final Path outputFile = Paths.get("cached")
+                .resolve(resultFilesPath.toString().replace("/", "-").substring(1)
+                        + "-" + technique
+                        + "-" + origOrAuto);
+
+        try {
+            if (Files.exists(outputFile)) {
+                return ListUtil.read(Double::parseDouble, FileUtil.readFile(outputFile));
+            }
+        } catch (IOException ignored) {}
+
+        final List<Double> values = generator.get();
+        try {
+            Files.write(outputFile, values.toString().getBytes());
+        } catch (IOException ignored) {}
+        return values;
+    }
+
     public List<Double> prioValues(final String origOrAuto) {
-        return EnhancedResultsFigureGenerator.generate17Values(getProject(origOrAuto));
+        return readOrGenerate("prio", origOrAuto, () -> EnhancedResultsFigureGenerator.generate17Values(getProject(origOrAuto)));
     }
 
     public String generatePrioString(final String origOrAuto, final List<Double> values) {
@@ -130,7 +163,7 @@ public class EnhancedResults {
     }
 
     public List<Double> seleValues(final String origOrAuto) {
-        return EnhancedResultsFigureGenerator.generate18Values(getProject(origOrAuto));
+        return readOrGenerate("sele", origOrAuto, () -> EnhancedResultsFigureGenerator.generate18Values(getProject(origOrAuto)));
     }
 
     public String generateSeleString(final String origOrAuto, final List<Double> values) {
@@ -146,7 +179,7 @@ public class EnhancedResults {
     }
 
     public List<Double> paraValues(final String origOrAuto) {
-        return EnhancedResultsFigureGenerator.generate19Values(getProject(origOrAuto));
+        return readOrGenerate("para", origOrAuto, () -> EnhancedResultsFigureGenerator.generate19Values(getProject(origOrAuto)));
     }
 
     public String generateParaString(final String origOrAuto, final List<Double> values) {
@@ -160,5 +193,26 @@ public class EnhancedResults {
         return EnhancedResultsFigureGenerator.generate19WithValues(proj, orig_time_value,
                 new ArrayList<>(), new EnhancedResultsFigureGenerator.PercentWrapper(),
                 values);
+    }
+
+    private Optional<Double> runtime(final ProjectEnhancedResults proj, final int i, final int figNum, final boolean isOriginal) {
+        // Ignoring unen argument, because it only affects the index, and we're iterate over all values of it anyway
+        final Collection<TestInfo> values = proj.get_orig_info(true, i, figNum, isOriginal).values();
+        if (values.isEmpty()) {
+            return Optional.empty();
+        } else {
+            return Optional.of(values.stream().mapToDouble(t -> t.getTime() / 1E9).sum());
+        }
+    }
+
+    private Stream<Double> runtimes(final int figNum, final ProjectEnhancedResults proj) {
+        return StreamUtil.removeEmpty(
+                IntStream.range(0, proj.getLength(figNum)).boxed()
+                         .flatMap(i -> Stream.of(runtime(proj, i, figNum, true),
+                                    runtime(proj, i, figNum, false))));
+    }
+
+    public Stream<Double> runtimes(final int figNum, final String origOrAuto) {
+        return runtimes(figNum, getProject(origOrAuto));
     }
 }

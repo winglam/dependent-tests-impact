@@ -1,6 +1,7 @@
 package edu.washington.cs.dt.impact.figure.generator;
 
 import com.google.common.base.Preconditions;
+import com.reedoei.eunomia.math.MathUtil;
 import edu.washington.cs.dt.impact.data.GeometricMeanData;
 import edu.washington.cs.dt.impact.data.Project;
 import edu.washington.cs.dt.impact.data.ProjectEnhancedResults;
@@ -16,6 +17,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -402,43 +404,62 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
 
     private static double shift_by_time(ProjectEnhancedResults project, boolean unen,
                                         int i, int figNum, boolean isOriginal, boolean useCoverage) {
-        Double[] enhancedTime = project.get_fig_Time(unen, i, figNum, isOriginal);
-
-        final Map<String, TestInfo> dt_info = project.get_dt_info(unen, i, figNum, isOriginal);
-        final Map<String, TestInfo> orig_info = project.get_orig_info(unen, i, figNum, isOriginal);
+        final Map<String, TestInfo> isolationInfo = project.get_dt_info(unen, i, figNum, isOriginal);
+        final Map<String, TestInfo> origInfo = project.get_orig_info(unen, i, figNum, isOriginal);
+        final Map<String, TestInfo> orderInfo = project.get_all_test_info(unen, i, figNum, isOriginal);
 
         List<String> order = Arrays.asList(project.get_fig_TestList(unen, i, figNum, isOriginal));
         List<String> origOrder = Arrays.asList(project.getOrig_tests());
+
+        final List<String> dtList = project.getDtLists();
 
         // This is the order that "actually" gets run.
         // E.g., if there is a dependent test, it is the (un)enhanced order up to that dependent
         // test, followed by the test in isolation (if enabled), and finally the original order if still necessary
         List<String> actualOrder = new ArrayList<>();
-
         List<Double> totalTime = new ArrayList<>();
 
-        final String dt = project.get_first_dt(unen, i, figNum, isOriginal);
-        final int dtIndex = order.indexOf(dt);
+        for (final String testName : order) {
+            final TestInfo testInfo = orderInfo.get(testName);
+            final TestInfo origTestInfo = origInfo.get(testName);
+            final TestInfo isolationTestInfo = isolationInfo.get(testName);
 
-        if (dtIndex == -1) {
-            totalTime.addAll(Arrays.asList(enhancedTime));
-            actualOrder.addAll(order);
-        } else {
-            totalTime.addAll(Arrays.asList(enhancedTime).subList(0, dtIndex + 1));
-            actualOrder.addAll(order.subList(0, dtIndex + 1));
-        }
+            actualOrder.add(testName);
+            totalTime.add(testInfo.getTime() / 1E9);
 
-        if (dt != null) {
-            if (useIsolationData) {
-                totalTime.add((double) dt_info.get(dt).getTime());
-                actualOrder.add(dt);
-
-                // if isolation is still different than original order
-                if (!dt_info.get(dt).getResult().equals(orig_info.get(dt).getResult())) {
-                    addOrigTests(order, actualOrder, orig_info, origOrder, totalTime);
+            if (!origTestInfo.getResult().equals(testInfo.getResult())) {
+                boolean known = false;
+                for (final String s : dtList) {
+                    if (s.contains(testName)) {
+                        known = true;
+                        break;
+                    }
                 }
-            } else {
-                addOrigTests(order, actualOrder, orig_info, origOrder, totalTime);
+
+                try {
+                    if (known) {
+                        final String s = "Known dependent test: " + testName + "\n";
+                        Files.write(Paths.get("dt-log.txt"), s.getBytes(), StandardOpenOption.APPEND);
+                    } else {
+                        final String s = "Unknown dependent test: " + testName + "\n";
+                        Files.write(Paths.get("dt-log.txt"), s.getBytes(), StandardOpenOption.APPEND);
+                    }
+                } catch (IOException ignored) {}
+
+                // Try running in isolation
+                if (useIsolationData) {
+                    actualOrder.add(testName);
+                    totalTime.add(testInfo.getTime() / 1E9);
+
+                    // Running in isolation doesn't fix it, so rerun all tests now.
+                    if (!origTestInfo.getResult().equals(isolationTestInfo.getResult())) {
+                        addOrigTests(order, actualOrder, origInfo, origOrder, totalTime);
+                        break;
+                    }
+                } else {
+                    addOrigTests(order, actualOrder, origInfo, origOrder, totalTime);
+                    break;
+                }
             }
         }
 
@@ -446,7 +467,7 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
             List<Double> totalCoverage = orderCoverage(project, actualOrder);
             return Runner.getAPFD(Runner.getCumulListDouble(totalTime), Runner.getCumulListDouble(totalCoverage));
         } else {
-            return listToTime(totalTime);
+            return MathUtil.sum(totalTime);
         }
     }
 
@@ -460,7 +481,7 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
 
         for (final String testName : origOrder) {
             if (!toCover.isEmpty()) {
-                totalTime.add((double) origInfo.get(testName).getTime());
+                totalTime.add(origInfo.get(testName).getTime() / 1E9);
                 actualOrder.add(testName);
                 toCover.remove(testName);
             } else {
@@ -580,8 +601,10 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
         return diffBetweenEnhancedUnenhanced;
     }
 
-    public static EnhancedResults setup(final boolean allowNegatives, final Path directory, final Path outputDirectory) {
+    public static EnhancedResults setup(final boolean allowNegatives, final String origOrAuto, final Path directory, final Path outputDirectory) {
         EnhancedResultsFigureGenerator.allowNegatives = allowNegatives;
+        useIsolationData = true;
+        useCoverage = false;
 
         EnhancedResultsFigureGenerator.outputDirectoryName = outputDirectory.toAbsolutePath().toString();
 
@@ -590,9 +613,18 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
         List<Project> proj_orig_arrayList = new ArrayList<>();
         List<Project> proj_auto_arrayList = new ArrayList<>();
 
+        final String filter;
+        if (origOrAuto.equals("auto")) {
+            filter = "-AUTO-";
+        } else if (origOrAuto.equals("orig")) {
+            filter = "-ORIG-";
+        } else {
+            filter = "";
+        }
+
         // Call super's parse file method and let it parse the files for information and
         // then call doParaCalculations, doSeleCalculations, or doPrioCalculations for each file
-        parseFiles(fList, new EnhancedResultsFigureGenerator(), true, proj_orig_arrayList, proj_auto_arrayList);
+        parseFiles(fList, new EnhancedResultsFigureGenerator(), true, proj_orig_arrayList, proj_auto_arrayList, filter);
 
         PercentWrapper percentRuntime = new PercentWrapper();
 
@@ -900,7 +932,7 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
     }
 
     private static String outputDirectoryName;
-    protected static boolean useIsolationData;
+    protected static boolean useIsolationData = true;
     private static Path sootOutputOrig;
     private static Path sootOutputAuto;
     private static boolean useCoverage;
@@ -913,7 +945,7 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
         List<String> argsList = new ArrayList<String>(Arrays.asList(args));
 
         allowNegatives = argsList.contains("-allowNegatives");
-        useIsolationData = argsList.contains("-useIsolationData");
+        useIsolationData = !argsList.contains("-noIsolationData");
         useCoverage = argsList.contains("-useCoverage");
 
         String directoryName = mustGetArgName(argsList, "-directory");
@@ -1038,6 +1070,7 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
         currProj.setNumTotalDependentTestsPara(orderName.equals("original"), index, numTotal);
         setTime(currProj, timeInFile, index, orderName.equals("original"));
         currProj.setTestListPara(orderName.equals("original"), index, test_list);
+        currProj.setDtList(19, index, dtList, orderName.equals("original"));
 
         currProj.addAllTestsInfo(allTestToInfo, index, orderName.equals("original"));
         currProj.addIsolationInfo(dtToInfo, index, orderName.equals("original"));
@@ -1107,6 +1140,7 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
         currProj.setNumTotalDependentTests(18, index, numTotal);
         setTime(currProj, 18, timeInFile, index);
         currProj.setTestList(18, index, test_list);
+        currProj.setDtList(18, index, dtList);
 
         currProj.addAllTestsInfo(allTestToInfo, index);
         currProj.addIsolationInfo(dtToInfo, index);
@@ -1179,6 +1213,7 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
         currProj.setNumTotalDependentTests(17, index, numTotal);
         setTime(currProj, 17, timeInFile, index);
         currProj.setTestList(17, index, test_list);
+        currProj.setDtList(17, index, dtList);
 
         currProj.addAllTestsInfo(allTestToInfo, index);
         currProj.addIsolationInfo(dtToInfo, index);

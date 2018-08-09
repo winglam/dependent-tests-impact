@@ -4,7 +4,9 @@ import com.google.common.base.Preconditions;
 import com.reedoei.eunomia.collections.ListUtil;
 import edu.washington.cs.dt.impact.util.Constants;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class ProjectEnhancedResults extends Project {
@@ -69,6 +71,11 @@ public class ProjectEnhancedResults extends Project {
     private String[] fig18FirstDt;
     private String[] fig19OrigFirstDt;
     private String[] fig19TimeFirstDt;
+
+    private List<List<String>> fig17DtLists;
+    private List<List<String>> fig18DtLists;
+    private List<List<String>> fig19DtListsOrig;
+    private List<List<String>> fig19DtListsTime;
 
     private TestToInfoWrapper[] all_test_info;
     private TestToInfoWrapper[] dt_info;
@@ -156,6 +163,51 @@ public class ProjectEnhancedResults extends Project {
         return testType;
     }
 
+    public void setDtList(final int figNum, final int i, final List<String> dtList) {
+        setDtList(figNum, i, dtList, false);
+    }
+
+    public void setDtList(final int figNum, final int index, final List<String> dtList, final boolean isOriginal) {
+        if (figNum == 17) {
+            fig17DtLists.set(index, dtList);
+        } else if (figNum == 18) {
+            fig18DtLists.set(index, dtList);
+        } else {
+            if (isOriginal) {
+                fig19DtListsOrig.set(index, dtList);
+            } else {
+                fig19DtListsTime.set(index, dtList);
+            }
+        }
+    }
+
+    public List<String> getDtList(boolean unen, int i, int figNum, boolean isOriginal) {
+        int index = unen ? i : i + 1;
+
+        if (figNum == 17) {
+            return fig17DtLists.get(index);
+        } else if (figNum == 18) {
+            return fig18DtLists.get(index);
+        } else {
+            if (isOriginal) {
+                return fig19DtListsOrig.get(index);
+            } else {
+                return fig19DtListsTime.get(index);
+            }
+        }
+    }
+
+    public List<String> getDtLists() {
+        final List<String> allDtLists = new ArrayList<>();
+
+        fig17DtLists.forEach(allDtLists::addAll);
+        fig18DtLists.forEach(allDtLists::addAll);
+        fig19DtListsOrig.forEach(allDtLists::addAll);
+        fig19DtListsTime.forEach(allDtLists::addAll);
+
+        return allDtLists;
+    }
+
     public class TestToInfoWrapper {
         public Map<String, TestInfo> testToInfo;
         public TestToInfoWrapper() {
@@ -220,10 +272,25 @@ public class ProjectEnhancedResults extends Project {
         fig19TimeFirstDt = new String[2 * 4];
         fig19OrigFirstDt= new String[2 * 4];
 
+        fig17DtLists = newList(4 * 2);
+        fig18DtLists = newList(6 * 2);
+        fig19DtListsOrig = newList(4 * 2);
+        fig19DtListsTime = newList(4 * 2);
+
         fig17Coverages = new Double[4 * 2][];
         fig18Coverages = new Double[6 * 2][];
         fig19TimeCoverages = new Double[2 * 4][];
         fig19OrigCoverages= new Double[2 * 4][];
+    }
+
+    private List<List<String>> newList(final int n) {
+        final List<List<String>> result = new ArrayList<>();
+
+        for (int i = 0; i < n; i++) {
+            result.add(new ArrayList<>());
+        }
+
+        return result;
     }
 
     public boolean setup() {
@@ -385,6 +452,11 @@ public class ProjectEnhancedResults extends Project {
     }
 
     public Map<String, TestInfo> get_orig_info(boolean unen, int i, int figNum, boolean isOriginal) {
+        if ((isOriginal && orig_test_info_time == null) ||
+                (!isOriginal && orig_test_info == null)) {
+            return new HashMap<>();
+        }
+
         TestToInfoWrapper retVal;
         if (figNum == 17) {
             if (unen) {
@@ -411,7 +483,12 @@ public class ProjectEnhancedResults extends Project {
                 retVal = orig_test_info_time[index];
             }
         }
-        return retVal.testToInfo;
+
+        if (retVal != null && retVal.testToInfo != null) {
+            return retVal.testToInfo;
+        } else {
+            return new HashMap<>();
+        }
     }
 
     public Map<String, TestInfo> get_dt_info(boolean unen, int i, int figNum, boolean isOriginal) {
@@ -604,6 +681,20 @@ public class ProjectEnhancedResults extends Project {
                 return fig19_num_DTs_orig[index];
             } else {
                 return fig19_num_DTs_time[index];
+            }
+        }
+    }
+
+    public boolean[] getFigNumDTs(int figNum, boolean isOriginal) {
+        if (figNum == 17) {
+            return fig17_num_DTs;
+        } else if (figNum == 18) {
+            return fig18_num_DTs;
+        } else {
+            if (isOriginal) {
+                return fig19_num_DTs_orig;
+            } else {
+                return fig19_num_DTs_time;
             }
         }
     }

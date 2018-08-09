@@ -4,9 +4,7 @@ import com.reedoei.eunomia.collections.ListUtil;
 import com.reedoei.eunomia.io.files.FileUtil;
 import com.reedoei.eunomia.math.Averager;
 import com.reedoei.eunomia.util.StandardMain;
-import com.reedoei.eunomia.util.Util;
 import edu.washington.cs.dt.impact.data.TechniqueValues;
-import edu.washington.cs.dt.impact.figure.generator.EnhancedResults;
 import edu.washington.cs.dt.impact.tools.EnhancedResultAverager;
 import edu.washington.cs.dt.impact.tools.EnhancedResultManager;
 import edu.washington.cs.dt.impact.util.Constants;
@@ -15,45 +13,28 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.time.Duration;
-import java.time.Instant;
-import java.time.temporal.ChronoField;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class PrecomputedLifetime extends StandardMain {
-    private final Date startDate;
     private List<Integer> versionDays = new ArrayList<>();
     private final Path resultPaths;
 
-    private final Path outputPath;
-
-    private PrecomputedLifetime(final String[] args) throws ParseException {
+    private PrecomputedLifetime(final String[] args) {
         super(args);
 
         resultPaths = Paths.get(getArgRequired("paths"));
-        startDate = new SimpleDateFormat("yyyy-MM-dd").parse(getArgRequired("start-date"));
-        outputPath = resultPaths.resolve("results-paths");
     }
 
-    private static String formatDate(final Instant instant) {
-        return String.format("%s-%s-%s",
-                instant.get(ChronoField.YEAR),
-                instant.get(ChronoField.MONTH_OF_YEAR),
-                instant.get(ChronoField.DAY_OF_MONTH));
-    }
-
-    public PrecomputedLifetime(final Date startDate, final Path resultPaths) {
+    public PrecomputedLifetime(final Path resultPaths) {
         super(new String[0]);
 
-        this.startDate = startDate;
         this.resultPaths = resultPaths;
-        this.outputPath = resultPaths.resolve("results-paths");
     }
 
     public static void main(final String[] args) {
@@ -66,9 +47,43 @@ public class PrecomputedLifetime extends StandardMain {
         System.exit(0);
     }
 
+    private static TechniqueValues<Averager<Integer>> combineAveragers(final TechniqueValues<Averager<Integer>> a,
+                                                                       final TechniqueValues<Averager<Integer>> b) {
+        a.prio().addAll(b.prio().getValues());
+        a.sele().addAll(b.sele().getValues());
+        a.para().addAll(b.para().getValues());
+
+        return a;
+    }
+
     @Override
     protected void run() throws Exception {
-        calculateResults();
+        final TechniqueValues<Averager<Integer>> averaged =
+                Files.list(resultPaths)
+                        .flatMap(this::lifetimesFromPath)
+                        .reduce(new TechniqueValues<>(Averager::new),
+                                PrecomputedLifetime::combineAveragers);
+
+        System.out.println("Prio lifetime: " + averaged.prio().mean());
+        System.out.println("Sele lifetime: " + averaged.sele().mean());
+        System.out.println("Para lifetime: " + averaged.para().mean());
+
+        final Averager<Integer> overall = new Averager<>(averaged.prio().getValues());
+        overall.addAll(averaged.sele().getValues());
+        overall.addAll(averaged.para().getValues());
+        System.out.println("Overall lifetime: " + overall.mean());
+    }
+
+    private Stream<TechniqueValues<Averager<Integer>>> lifetimesFromPath(Path path) {
+        if (Files.isDirectory(path)) {
+            try {
+                System.out.println("[INFO] Getting lifetimes from " + path);
+                return Stream.of(generateLifetimes(path));
+            } catch (IOException ignored) {
+            }
+        }
+
+        return Stream.empty();
     }
 
     private void writeValues(final Path outputPath, final TechniqueValues<List<Path>> values) throws IOException {
@@ -87,76 +102,21 @@ public class PrecomputedLifetime extends StandardMain {
         return new TechniqueValues<>(prio, sele, para);
     }
 
-    public TechniqueValues<Averager<Double>> calculateResults() throws IOException {
-//        if (!Files.exists(outputPath)) {
-//            System.out.println("[INFO] Generating cutoffs");
-//
-//            final TechniqueValues<List<Path>> values =
-//                    generateLifetimes()
-//                            .splitAtCutoff(resultPaths)
-//                            .fmap(p -> Util.appendAll(p.getLeft(), p.getRight()));
-//
-//            writeValues(outputPath, values);
-//        }
-
-        return calculateResults(selectPaths());
-    }
-
-    private TechniqueValues<List<Path>> selectPaths() throws IOException {
-        final List<Path> paths = Files.list(resultPaths)
-                .filter(path -> {
-                    if (Files.isDirectory(path)) {
-                        final long days = Duration.between(startDate.toInstant(), Lifetimes.dateFromDir(path).toInstant()).toDays();
-                        return days < 30; // Within a month
-                    } else {
-                        return false;
-                    }
-                })
-                .collect(Collectors.toList());
-
-        return new TechniqueValues<>(
-                ListUtil.filter(p -> EnhancedResults.getTechnique(p) == Constants.TECHNIQUE.PRIORITIZATION, paths),
-                ListUtil.filter(p -> EnhancedResults.getTechnique(p) == Constants.TECHNIQUE.SELECTION, paths),
-                ListUtil.filter(p -> EnhancedResults.getTechnique(p) == Constants.TECHNIQUE.PARALLELIZATION, paths));
-    }
-
-    private TechniqueValues<Averager<Double>> calculateResults(final TechniqueValues<List<Path>> values) {
-        final TechniqueValues<Averager<Double>> resultAveragers = new TechniqueValues<>(Averager::new);
-
-        final EnhancedResultManager manager = new EnhancedResultManager();
-
-        values.forEach((technique, paths) -> {
-            try {
-                manager.addAll(paths);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-
-        manager.forEach((testType, technique, averager) -> {
-            final List<Double> allValues =
-                    averager.averagers().stream()
-                            .flatMap(a -> a.getValues().stream())
-                            .collect(Collectors.toList());
-
-            resultAveragers.technique(technique).addAll(allValues);
-//                System.out.printf("%s (%s): %s\n", technique, testType, averager.latexString());
-        });
-
-        return resultAveragers;
-    }
-
-    private Lifetimes generateLifetimes() throws IOException {
+    private TechniqueValues<Averager<Integer>> generateLifetimes(final Path resultPaths) throws IOException {
         versionDays = new ArrayList<>();
 
         final EnhancedResultManager manager = new EnhancedResultManager();
 
+        final Date startDate = Lifetimes.dateFromDir(resultPaths);
+
         Files.list(resultPaths).forEach(path -> {
-            versionDays.add(Math.toIntExact(Duration.between(startDate.toInstant(), Lifetimes.dateFromDir(path).toInstant()).toDays()));
-            try {
-                manager.add(path);
-            } catch (IOException e) {
-                e.printStackTrace();
+            if (Files.isDirectory(path)) {
+                versionDays.add(Math.toIntExact(Duration.between(startDate.toInstant(), Lifetimes.dateFromDir(path).toInstant()).toDays()));
+                try {
+                    manager.add(path.toAbsolutePath());
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         });
 
@@ -194,7 +154,7 @@ public class PrecomputedLifetime extends StandardMain {
         System.out.println("Selection cutoff: " + (int)seleAverager.mean());
         System.out.println("Parallelization cutoff: " + (int)paraAverager.mean());
 
-        return new Lifetimes(startDate, prioAverager, seleAverager, paraAverager);
+        return new TechniqueValues<>(prioDTNumAverager, seleDTNumAverager, paraDTNumAverager);
     }
 
     private Integer dtNumLifetimes(final EnhancedResultAverager e) {

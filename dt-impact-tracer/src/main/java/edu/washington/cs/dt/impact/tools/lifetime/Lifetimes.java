@@ -44,6 +44,34 @@ public class Lifetimes {
         this.paraAverager = paraAverager;
     }
 
+    public Averager<Integer> prioAverager() {
+        return prioAverager;
+    }
+
+    public Averager<Integer> seleAverager() {
+        return seleAverager;
+    }
+
+    public Averager<Integer> paraAverager() {
+        return paraAverager;
+    }
+
+    public TechniqueValues<Averager<Integer>> techniqueAveragers() {
+        return new TechniqueValues<>(prioAverager(), seleAverager(), paraAverager());
+    }
+
+    public double prioLifetime() {
+        return prioAverager.mean();
+    }
+
+    public double seleLifetime() {
+        return seleAverager.mean();
+    }
+
+    public double paraLifetime() {
+        return paraAverager.mean();
+    }
+
     private Date cutoff(final Averager<Integer> averager) {
         return Date.from(startDate.toInstant().plus(Duration.ofDays((long) averager.mean())));
     }

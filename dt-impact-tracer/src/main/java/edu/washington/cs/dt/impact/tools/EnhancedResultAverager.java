@@ -3,6 +3,7 @@ package edu.washington.cs.dt.impact.tools;
 import com.google.common.base.Preconditions;
 import com.reedoei.eunomia.collections.ListUtil;
 import com.reedoei.eunomia.functional.Func;
+import com.reedoei.eunomia.io.files.FileUtil;
 import com.reedoei.eunomia.math.Averager;
 import com.reedoei.eunomia.util.Util;
 import edu.washington.cs.dt.impact.figure.generator.EnhancedResults;
@@ -12,6 +13,7 @@ import edu.washington.cs.dt.impact.util.Constants;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -43,9 +45,42 @@ public class EnhancedResultAverager {
         final EnhancedResults results = getResults(resultFilesPath);
         enhancedResults.add(results);
 
+        System.out.printf("[INFO] Generating %s results for %s\n", origOrAuto, Paths.get("").toAbsolutePath().relativize(resultFilesPath));
+
+//        addValues(getValues(resultFilesPath));
         addValues(results.values(origOrAuto));
 
         return this;
+    }
+
+    private List<Double> getValues(final Path resultFilesPath) throws IOException {
+        final Path outputFile = Paths.get("cached")
+                .resolve(resultFilesPath.toString().replace("/", "-").substring(1)
+                        + "-" + techniqueStr()
+                        + "-" + origOrAuto);
+
+        try {
+            if (Files.exists(outputFile)) {
+                return ListUtil.read(Double::parseDouble, FileUtil.readFile(outputFile));
+            }
+        } catch (IOException ignored) {}
+
+        final List<Double> values = getResults(resultFilesPath).values(origOrAuto);
+
+        try {
+            Files.write(outputFile, values.toString().getBytes());
+        } catch (IOException ignored) {}
+        return values;
+    }
+
+    private String techniqueStr() {
+        if (technique == Constants.TECHNIQUE.PRIORITIZATION) {
+            return "prio";
+        } else if (technique == Constants.TECHNIQUE.SELECTION) {
+            return "sele";
+        } else {
+            return "para";
+        }
     }
 
     public List<EnhancedResults> enhancedResults() {
@@ -56,11 +91,9 @@ public class EnhancedResultAverager {
 //        checkFiles(resultFilesParent);
 //        checkFilesSimple(resultFilesParent);
 
-        System.out.printf("[INFO] Generating %s results for %s\n", origOrAuto, resultFilesPath);
-
         final Path outputPath = Files.createTempDirectory("output");
 
-        return EnhancedResultsFigureGenerator.setup(true, resultFilesPath, outputPath);
+        return EnhancedResultsFigureGenerator.setup(true, origOrAuto, resultFilesPath, outputPath);
     }
 
     private void ensureAveragerCapacity(final int size) {
@@ -141,7 +174,7 @@ public class EnhancedResultAverager {
         final Path outputPath = Files.createTempDirectory("output");
         final EnhancedResults results =
                 // We only need the results files paths for the subject name, so we can just use the first one.
-                EnhancedResultsFigureGenerator.setup(true, resultFilesPaths.get(0), outputPath);
+                EnhancedResultsFigureGenerator.setup(true, origOrAuto, resultFilesPaths.get(0), outputPath);
 
         final List<Double> values = Func.map(Averager::mean, averagers);
 
