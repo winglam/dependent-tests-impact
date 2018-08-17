@@ -56,6 +56,9 @@ public class Parallelization extends Test {
         }
 
         if (order == ORDER.RELATIVE || order == ORDER.ABSOLUTE || order == ORDER.TIME) {
+            boolean filteredMethodListEmpty = false;
+            boolean nameToMethodDataEmpty = false;
+
             Collections.sort(methodList);
             if (order == ORDER.RELATIVE) {
                 methodList = new Relative(outputFileName, methodList, getCoverage, allCoverageLines).getMethodList();
@@ -63,6 +66,8 @@ public class Parallelization extends Test {
                 Map<String, TestFunctionStatement> nameToMethodData = getNameToMethodData(methodList);
                 methodList.clear();
                 Map<String, TestTime> nameToTimeData = new HashMap<>();
+
+                nameToMethodDataEmpty = nameToMethodData.isEmpty();
 
                 // create TestTimeDatas instead of TestMethodDatas
                 Map<String, Long> testNameToTime = processFile(timeOrder);
@@ -106,6 +111,8 @@ public class Parallelization extends Test {
                 		filteredMethodList.add(tfs);
                 	}
                 }
+
+                filteredMethodListEmpty = filteredMethodList.isEmpty();
                 
                 methodList = filteredMethodList;
                 Collections.sort(methodList);
@@ -136,7 +143,20 @@ public class Parallelization extends Test {
                 }
 
                 if (sortedList.isEmpty()) {
-                    throw new RuntimeException("List of tests is empty for " + order + " order!");
+                    final String causeStr;
+                    if (nameToMethodDataEmpty) {
+                        causeStr = "nameToMethodData is empty.";
+                    } else if (filteredMethodListEmpty)  {
+                        causeStr = "filteredMethodList is empty.";
+                    } else if (methodList.isEmpty()) {
+                        causeStr = "method list is empty.";
+                    } else {
+                        causeStr = "unknown.";
+                    }
+
+                    final String message = "List of tests is empty for " + order + " order (" + i + "! " +
+                            "Probable cause: " + causeStr;
+                    throw new RuntimeException("List of tests is empty for " + order + " order (" + i + "!");
                 }
 
                 splitTests.add(new Standard(outputFileName + i, sortedList, getCoverage, allCoverageLines));

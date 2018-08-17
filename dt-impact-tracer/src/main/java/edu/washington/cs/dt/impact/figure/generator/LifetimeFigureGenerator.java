@@ -49,7 +49,7 @@ public class LifetimeFigureGenerator extends StandardMain {
 
     public String latexString(final LifetimeFigureData lifetimeFigureData) {
         final List<TestTypeValues<LifetimeFigureData.SubjectLifetimeData>> subjectLifetimeData = lifetimeFigureData.subjectLifetimeData();
-        subjectLifetimeData.sort(Comparator.comparing(v -> v.orig().properties().getProperty("subject.name")));
+        subjectLifetimeData.sort(Comparator.comparing(v -> v.orig().properties().getProperty("subject.formal_name")));
 
         final LatexTable prioTable =
                 createTable("Test prioritization", subjectLifetimeData, "prio", s -> s.averagers().prio());
@@ -67,7 +67,7 @@ public class LifetimeFigureGenerator extends StandardMain {
                                   final List<TestTypeValues<LifetimeFigureData.SubjectLifetimeData>> subjectLifetimeData,
                                   final String techniqueName,
                                   final Function<LifetimeFigureData.SubjectLifetimeData, Averager<Double>> f) {
-        final List<String> rows = ListUtil.map(s -> s.orig().property("subject.name"), subjectLifetimeData);
+        final List<String> rows = ListUtil.map(s -> s.orig().property("subject.formal_name"), subjectLifetimeData);
 
         final LatexTable table =
                 new LatexTable(ListUtil.fromArray("Orig DTs", "Auto DTs", "Avg. Speedup (Orig)", "Avg. Speedup (Auto)"), rows)
@@ -90,11 +90,14 @@ public class LifetimeFigureGenerator extends StandardMain {
         ratio.setMinimumFractionDigits(1);
         ratio.setMaximumFractionDigits(1);
 
-//        table.addTotalRow("Average", CellType.DEFAULT, true)
-//             .setupCell("Orig DTs", "Average", ratio.format(origDtNumbers.getAverage()))
-//             .setupCell("Orig DTs", "Average", CellType.VALUE) // For some reason, must do this to get the show override to work
-//             .setupCell("Auto DTs", "Average", ratio.format(autoDtNumbers.getAverage()))
-//             .setupCell("Auto DTs", "Average", CellType.VALUE); // For some reason, must do this to get the show override to work
+        table.addTotalRow("\\textbf{Average}", CellType.DEFAULT, true)
+             .setupCell("Orig DTs", "\\textbf{Average}", ratio.format(origDtNumbers.getAverage()))
+             .setupCell("Auto DTs", "\\textbf{Average}", ratio.format(autoDtNumbers.getAverage()));
+
+        table.getCell("Orig DTs", "\\textbf{Average}").isBold = true;
+        table.getCell("Auto DTs", "\\textbf{Average}").isBold = true;
+        table.getCell("Avg. Speedup (Orig)", "\\textbf{Average}").isBold = true;
+        table.getCell("Avg. Speedup (Auto)", "\\textbf{Average}").isBold = true;
 
         return table;
     }
@@ -115,9 +118,9 @@ public class LifetimeFigureGenerator extends StandardMain {
 
             dtNumbers.getLeft().add(origDtNum);
 
-            final Integer autoDtNum = Integer.valueOf(subject.orig().property("subject." + techniqueName + ".auto.dts"));
-            values.put("Auto DTs", origDtNum);
-            totals.put("Auto DTs", origDtNum);
+            final Integer autoDtNum = Integer.valueOf(subject.auto().property("subject." + techniqueName + ".auto.dts"));
+            values.put("Auto DTs", autoDtNum);
+            totals.put("Auto DTs", autoDtNum);
 
             dtNumbers.getRight().add(autoDtNum);
 

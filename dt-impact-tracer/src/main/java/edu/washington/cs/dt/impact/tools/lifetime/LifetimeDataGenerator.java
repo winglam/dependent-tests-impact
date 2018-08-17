@@ -67,7 +67,7 @@ public class LifetimeDataGenerator {
                     if (Files.isDirectory(path)) {
 //                        final Constants.TECHNIQUE technique = EnhancedResults.getTechnique(path);
                         final long days = Duration.between(startDate.toInstant(), Lifetimes.dateFromDir(path).toInstant()).toDays();
-                        return days < 7; // one week // cutoff(); // technique(technique);
+                        return days >= 0 && days < 7; // one week // cutoff(); // technique(technique);
                     } else {
                         return false;
                     }

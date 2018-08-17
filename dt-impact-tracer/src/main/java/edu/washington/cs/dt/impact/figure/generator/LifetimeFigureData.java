@@ -147,8 +147,6 @@ public class LifetimeFigureData extends FileCache<LifetimeFigureData> {
 
             averagers.forEach(this::addAveragerValues);
 
-            // TODO: MODIFY THIS SO THAT WE CAN GET THE PROPERTIES FOR THE START DATE
-            // TODO: ADD START DATE TO THE PROPERTIES FILES
             this.properties = subjectProperties(path);
         }
 

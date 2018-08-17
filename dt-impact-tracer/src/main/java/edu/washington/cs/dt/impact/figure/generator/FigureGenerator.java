@@ -5,6 +5,9 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -557,6 +560,8 @@ public abstract class FigureGenerator {
                         parseFileForResult(file, Constants.ORIG_TEST_RESULTS));
                 origToInfo = convertMapsToIsolationDataMap(origTestResults, origOrderTimes);
 
+                calculateRerunsNecessary(resolveDependences == null, dtToInfo, allTestToInfo, origToInfo);
+
                 if (techniqueName.equals("parallelization")) {
                 	fg.doParaCalculations();
                 } // selection technique, figure 18
@@ -573,6 +578,24 @@ public abstract class FigureGenerator {
 
 //        System.out.println();
 	}
+
+    private static void calculateRerunsNecessary(final boolean unen,
+                                                 final Map<String,TestInfo> isolationInfo,
+                                                 final Map<String,TestInfo> reorderingInfo,
+                                                 final Map<String,TestInfo> origInfo) {
+	    boolean rerunAll = false;
+
+        for (final String testName : reorderingInfo.keySet()) {
+            if (!reorderingInfo.get(testName).getResult().equals(origInfo.get(testName).getResult())) {
+                if (!isolationInfo.containsKey(testName) ||
+                    !isolationInfo.get(testName).getResult().equals(origInfo.get(testName).getResult())) {
+                    rerunAll = true;
+                }
+            }
+        }
+
+        System.out.println((unen ? "unenhanced" : "enhanced") + " " + (rerunAll ? "rerun" : "no-rerun"));
+    }
 
     private static List<String> parseLists(File file, String searchString) {
         try {

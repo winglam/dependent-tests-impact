@@ -15,11 +15,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
-import java.util.regex.Pattern;
-import java.util.stream.Collectors;
 
 public class EnhancedResultAverager {
     private final List<Averager<Double>> averagers = new ArrayList<>();
@@ -88,9 +84,6 @@ public class EnhancedResultAverager {
     }
 
     private EnhancedResults getResults(final Path resultFilesPath) throws IOException {
-//        checkFiles(resultFilesParent);
-//        checkFilesSimple(resultFilesParent);
-
         final Path outputPath = Files.createTempDirectory("output");
 
         return EnhancedResultsFigureGenerator.setup(true, origOrAuto, resultFilesPath, outputPath);
@@ -105,67 +98,6 @@ public class EnhancedResultAverager {
     private void addValues(final List<Double> values) {
         ensureAveragerCapacity(values.size());
         Util.zipWith(Averager::add, averagers, values);
-    }
-
-    private void checkFilesSimple(final Path resultFilesPath) throws IOException {
-        final Constants.TECHNIQUE technique = EnhancedResults.getTechnique(resultFilesPath);
-
-        final int count = Math.toIntExact(Files.list(resultFilesPath).count());
-
-        final int target;
-        if (technique == Constants.TECHNIQUE.PRIORITIZATION) {
-            target = 18;
-        } else if (technique == Constants.TECHNIQUE.SELECTION) {
-            target = 26;
-        } else {
-            target = 18;
-        }
-
-        if (count != target) {
-            throw new IllegalStateException("Missing some files in " + resultFilesPath);
-        }
-    }
-
-    private void checkFiles(final Path resultFilesPath) throws IOException {
-        final Constants.TECHNIQUE technique = EnhancedResults.getTechnique(resultFilesPath);
-
-        final Set<String> paths =
-                Files.list(resultFilesPath)
-                        .map(Path::getFileName)
-                        .map(Path::toString)
-                        .collect(Collectors.toSet());
-
-        final Set<Pattern> patterns =
-                filenames("[A-Za-z0-9_]+", technique).stream()
-                .map(Pattern::compile)
-                .collect(Collectors.toSet());
-
-        for (final Pattern pattern : patterns) {
-            if (paths.stream().noneMatch(pattern.asPredicate())) {
-                System.out.println("Missing file: " + pattern.toString());
-            }
-        }
-    }
-
-    private Set<String> filenames(final String projectName, final Constants.TECHNIQUE technique) {
-        final Set<String> results = new HashSet<>();
-
-        for (final Constants.TEST_TYPE testType : Constants.TEST_TYPE.values()) {
-            for (final Constants.COVERAGE coverage : Constants.COVERAGE.values()) {
-                for (final Constants.ORDER order : Constants.ORDER.values()) {
-                    for (final Constants.MACHINES machines : Constants.MACHINES.values()) {
-                        for (final Constants.DT_SETTING dtSetting : Constants.DT_SETTING.values()) {
-                            for (final Constants.TD_SETTING tdSetting : Constants.TD_SETTING.values()) {
-                                results.add(Constants.getOutputFileName(coverage, technique, order, projectName,
-                                        testType, machines, dtSetting, tdSetting));
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
-        return results;
     }
 
     public String latexString() throws IOException {

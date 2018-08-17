@@ -118,16 +118,21 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
                 // Case A
                 // Enhanced - unenhanced
                 val = calculate(values[i + 1], values[i]);
+
+                System.out.println("case a prio " + val);
             } else if (project.containsDT(true, i, 17) && project.containsDT(false, i, 17)) {
                 // } else if (project.getName().equals(Constants.CRYSTAL_NAME) && type.equals("auto") && i != 0 && i !=
                 // 6) {
                 // Case B
                 // Shift_by_enhanced’s_time(orig) - shift_by_unsound’s_time(orig)
                 val = calculate(shift_by_time(project, false, i, 17), shift_by_time(project, true, i, 17));
+                System.out.println("case b prio " + val);
             } else {
                 // Case C
                 // Enhanced - shift_by_unsound’s_time(orig)
                 val = calculate(values[i + 1], shift_by_time(project, true, i, 17));
+
+                System.out.println("case c prio " + val);
             }
             if (!allowNegatives && val < 0.0) {
                 val = 0.0;
@@ -317,6 +322,7 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
                 // Case A
                 // 1 - Enh / (uns)
                 percent = calculate(time[i + 1], time[i], false);
+                System.out.println("case a sele " + percent);
             } else if (project.containsDT(true, i, 18) && project.containsDT(false, i, 18)) {
                 // } else if (project.getName().equals(Constants.CRYSTAL_NAME) && type.equals("auto") && i != 0 && i !=
                 // 6) {
@@ -325,11 +331,13 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
                 double enTimeVal = shift_by_time(project, false, i, 18, false, false);
                 double unenTimeVal = shift_by_time(project, true, i, 18, false, false);
                 percent = calculate(enTimeVal, unenTimeVal, false);
+                System.out.println("case b sele " + percent);
             } else {
                 // Case C
                 // 1 - Enh / (uns + orig)
                 double unenTimeVal = shift_by_time(project, true, i, 18, false, false);
                 percent = calculate(time[i + 1], unenTimeVal, false);
+                System.out.println("case c sele " + percent);
             }
 
             result.add(percent);
@@ -343,15 +351,18 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
                 // Case A
                 // Enhanced - unenhanced
                 val = calculate(values[i + 1], values[i]);
+                System.out.println("case a sele " + val);
             } else if (project.containsDT(true, i, 18) && project.containsDT(false, i, 18)) {
                 // Case B
                 // Shift_by_enhanced’s_time(orig) - shift_by_unsound’s_time(orig)
                 val = calculate(shift_by_time(project, false, i, 18),
                         shift_by_time(project, true, i, 18));
+                System.out.println("case b sele " + val);
             } else {
                 // Case C
                 // Enhanced - shift_by_unsound’s_time(orig)
                 val = calculate(values[i + 1], shift_by_time(project, true, i, 18));
+                System.out.println("case c sele " + val);
             }
             if (!allowNegatives && val < 0.0) {
                 val = 0.0;
@@ -411,8 +422,6 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
         List<String> order = Arrays.asList(project.get_fig_TestList(unen, i, figNum, isOriginal));
         List<String> origOrder = Arrays.asList(project.getOrig_tests());
 
-        final List<String> dtList = project.getDtLists();
-
         // This is the order that "actually" gets run.
         // E.g., if there is a dependent test, it is the (un)enhanced order up to that dependent
         // test, followed by the test in isolation (if enabled), and finally the original order if still necessary
@@ -421,30 +430,33 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
 
         for (final String testName : order) {
             final TestInfo testInfo = orderInfo.get(testName);
+            actualOrder.add(testName);
+            totalTime.add(testInfo.getTime() / 1E9);
+        }
+
+        for (final String testName : order) {
+            final TestInfo testInfo = orderInfo.get(testName);
             final TestInfo origTestInfo = origInfo.get(testName);
             final TestInfo isolationTestInfo = isolationInfo.get(testName);
 
-            actualOrder.add(testName);
-            totalTime.add(testInfo.getTime() / 1E9);
-
             if (!origTestInfo.getResult().equals(testInfo.getResult())) {
-                boolean known = false;
-                for (final String s : dtList) {
-                    if (s.contains(testName)) {
-                        known = true;
-                        break;
-                    }
-                }
-
-                try {
-                    if (known) {
-                        final String s = "Known dependent test: " + testName + "\n";
-                        Files.write(Paths.get("dt-log.txt"), s.getBytes(), StandardOpenOption.APPEND);
-                    } else {
-                        final String s = "Unknown dependent test: " + testName + "\n";
-                        Files.write(Paths.get("dt-log.txt"), s.getBytes(), StandardOpenOption.APPEND);
-                    }
-                } catch (IOException ignored) {}
+//                boolean known = false;
+//                for (final String s : dtList) {
+//                    if (s.contains(testName)) {
+//                        known = true;
+//                        break;
+//                    }
+//                }
+//
+//                try {
+//                    if (known) {
+//                        final String s = "Known dependent test: " + testName + "\n";
+//                        Files.write(Paths.get("dt-log.txt"), s.getBytes(), StandardOpenOption.APPEND);
+//                    } else {
+//                        final String s = "Unknown dependent test: " + testName + "\n";
+//                        Files.write(Paths.get("dt-log.txt"), s.getBytes(), StandardOpenOption.APPEND);
+//                    }
+//                } catch (IOException ignored) {}
 
                 // Try running in isolation
                 if (useIsolationData) {
@@ -453,11 +465,11 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
 
                     // Running in isolation doesn't fix it, so rerun all tests now.
                     if (!origTestInfo.getResult().equals(isolationTestInfo.getResult())) {
-                        addOrigTests(order, actualOrder, origInfo, origOrder, totalTime);
+                        addOrigTests(order, actualOrder, orderInfo, origInfo, origOrder, totalTime);
                         break;
                     }
                 } else {
-                    addOrigTests(order, actualOrder, origInfo, origOrder, totalTime);
+                    addOrigTests(order, actualOrder, orderInfo, origInfo, origOrder, totalTime);
                     break;
                 }
             }
@@ -472,7 +484,7 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
     }
 
     private static void addOrigTests(List<String> order,
-                                     List<String> actualOrder, Map<String, TestInfo> origInfo,
+                                     List<String> actualOrder, final Map<String, TestInfo> orderInfo, Map<String, TestInfo> origInfo,
                                      List<String> origOrder, List<Double> totalTime) {
         // We only need ot run enough tests from the original order to cover the selected tests.
         // e.g. If we only select A and C from the original order of A,B,C,D, to verify our results
@@ -481,8 +493,14 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
 
         for (final String testName : origOrder) {
             if (!toCover.isEmpty()) {
-                totalTime.add(origInfo.get(testName).getTime() / 1E9);
-                actualOrder.add(testName);
+                if (origInfo.containsKey(testName)) {
+                    totalTime.add(origInfo.get(testName).getTime() / 1E9);
+                    actualOrder.add(testName);
+                } else if (orderInfo.containsKey(testName)) {
+                    totalTime.add(orderInfo.get(testName).getTime() / 1E9);
+                    actualOrder.add(testName);
+                }
+
                 toCover.remove(testName);
             } else {
                 break;
@@ -587,15 +605,18 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
         if (!project.containsDT(true, i, 19, isOriginal)) {
             // Case A. Neither have dts.
             diffBetweenEnhancedUnenhanced = calculate(enhancedParaSpeedup, unenhancedPara, false);
+            System.out.println("case a para " + diffBetweenEnhancedUnenhanced);
         } else if (project.containsDT(true, i, 19, isOriginal) && project.containsDT(false, i, 19, isOriginal)) {
             // Case B, both enhanced and unenhanced have dts
             double enTimeVal = shift_by_time(project, false, i, 19, isOriginal, false);
             double unenTimeVal = shift_by_time(project, true, i, 19, isOriginal, false);
             diffBetweenEnhancedUnenhanced = calculate(enTimeVal, unenTimeVal, false);
+            System.out.println("case b para " + diffBetweenEnhancedUnenhanced);
         } else {
             // Case C. Just the unenhanced has a dt
             double unenTimeVal = shift_by_time(project, true, i, 19, isOriginal, false);
             diffBetweenEnhancedUnenhanced = calculate(enhancedParaSpeedup, unenTimeVal, false);
+            System.out.println("case c para " + diffBetweenEnhancedUnenhanced);
         }
 
         return diffBetweenEnhancedUnenhanced;
