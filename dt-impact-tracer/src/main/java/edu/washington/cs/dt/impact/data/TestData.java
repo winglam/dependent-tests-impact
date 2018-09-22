@@ -10,6 +10,31 @@ public class TestData {
     private final RESULT intended;
     private final Set<String> beforeTests;
     private final Set<String> afterTests;
+
+    public String getDependentTest() {
+        return dependentTest;
+    }
+
+    public RESULT getIntended() {
+        return intended;
+    }
+
+    public Set<String> getBeforeTests() {
+        return beforeTests;
+    }
+
+    public Set<String> getAfterTests() {
+        return afterTests;
+    }
+
+    public RESULT getRevealed() {
+        return revealed;
+    }
+
+    public List<String> getRevealingOrder() {
+        return revealingOrder;
+    }
+
     private final RESULT revealed;
 
     private final List<String> revealingOrder;
