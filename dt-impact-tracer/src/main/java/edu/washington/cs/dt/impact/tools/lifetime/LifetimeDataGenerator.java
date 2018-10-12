@@ -1,12 +1,9 @@
 package edu.washington.cs.dt.impact.tools.lifetime;
 
-import com.reedoei.eunomia.collections.ListUtil;
 import com.reedoei.eunomia.math.Averager;
 import edu.washington.cs.dt.impact.data.TechniqueValues;
-import edu.washington.cs.dt.impact.figure.generator.EnhancedResults;
 import edu.washington.cs.dt.impact.figure.generator.LifetimeFigureData;
 import edu.washington.cs.dt.impact.tools.EnhancedResultManager;
-import edu.washington.cs.dt.impact.util.Constants;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -61,8 +58,8 @@ public class LifetimeDataGenerator {
         this.startDate = new SimpleDateFormat("yyyy-MM-dd").parse(properties.getProperty("subject.start_date"));
     }
 
-    private TechniqueValues<List<Path>> selectPaths(final Date startDate) throws IOException {
-        final List<Path> paths = Files.list(resultPaths)
+    private List<Path> selectPaths(final Date startDate) throws IOException {
+        return Files.list(resultPaths)
                 .filter(path -> {
                     if (Files.isDirectory(path)) {
 //                        final Constants.TECHNIQUE technique = EnhancedResults.getTechnique(path);
@@ -73,11 +70,6 @@ public class LifetimeDataGenerator {
                     }
                 })
                 .collect(Collectors.toList());
-
-        return new TechniqueValues<>(
-                ListUtil.filter(p -> EnhancedResults.getTechnique(p) == Constants.TECHNIQUE.PRIORITIZATION, paths),
-                ListUtil.filter(p -> EnhancedResults.getTechnique(p) == Constants.TECHNIQUE.SELECTION, paths),
-                ListUtil.filter(p -> EnhancedResults.getTechnique(p) == Constants.TECHNIQUE.PARALLELIZATION, paths));
     }
 
     public TechniqueValues<Averager<Double>> calculateResults(final boolean orig) throws IOException {
@@ -95,18 +87,16 @@ public class LifetimeDataGenerator {
         return calculateResults(orig, selectPaths(startDate));
     }
 
-    private TechniqueValues<Averager<Double>> calculateResults(final boolean orig, final TechniqueValues<List<Path>> techniquePaths) {
+    private TechniqueValues<Averager<Double>> calculateResults(final boolean orig, final List<Path> techniquePaths) {
         final TechniqueValues<Averager<Double>> resultAveragers = new TechniqueValues<>(Averager::new);
 
         final EnhancedResultManager manager = new EnhancedResultManager();
 
-        techniquePaths.forEach((technique, paths) -> {
-            try {
-                manager.addAll(paths);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
+        try {
+            manager.addAll(techniquePaths);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         manager.forEach((testType, technique, averager) -> {
             if (orig && testType.equals("orig")) {

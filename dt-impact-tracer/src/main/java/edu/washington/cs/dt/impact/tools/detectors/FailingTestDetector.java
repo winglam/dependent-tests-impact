@@ -3,6 +3,7 @@ package edu.washington.cs.dt.impact.tools.detectors;
 import com.reedoei.eunomia.util.StandardMain;
 import edu.washington.cs.dt.RESULT;
 import edu.washington.cs.dt.TestExecResult;
+import edu.washington.cs.dt.main.ImpactMain;
 import edu.washington.cs.dt.runners.FixedOrderRunner;
 
 import java.io.IOException;
@@ -59,6 +60,8 @@ public class FailingTestDetector extends StandardMain {
     private Set<String> notPassingTests() throws IOException {
         final List<String> tests = Files.readAllLines(testList, Charset.defaultCharset());
         final Set<String> notPassingTests = new HashSet<>();
+
+        ImpactMain.skipMissingTests = true;
 
         while (true) {
             final TestExecResult result = new FixedOrderRunner(classpath, tests).run().getExecutionRecords().get(0);

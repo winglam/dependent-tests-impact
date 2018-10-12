@@ -36,7 +36,7 @@ public class PrecomputedTimeFigureGenerator extends FigureGenerator {
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < proj_orig_arrayList.size(); i++) {
         	ProjectPrecomputedDependencesTime origProj = (ProjectPrecomputedDependencesTime) proj_orig_arrayList.get(i);
-        	ProjectPrecomputedDependencesTime autoProj = (ProjectPrecomputedDependencesTime) proj_orig_arrayList.get(i);
+        	ProjectPrecomputedDependencesTime autoProj = (ProjectPrecomputedDependencesTime) proj_auto_arrayList.get(i);
         	sb.append(origProj.getName());
         	sb.append(" & ");
         	sb.append(origProj.getSuiteAvgTime());

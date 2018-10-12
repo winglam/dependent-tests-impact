@@ -54,7 +54,7 @@ public class EnhancedResultManager {
         Files.list(resultDir).forEach(p -> {
             try {
                 if (Files.isDirectory(p)) {
-                    if (has(p, "-ORIG-") && has(p, "-AUTO-")) {
+                    if (has(p, "-ORIG-")) {
                         origAveragers.technique(EnhancedResults.getTechnique(p)).add(p);
                     }
 

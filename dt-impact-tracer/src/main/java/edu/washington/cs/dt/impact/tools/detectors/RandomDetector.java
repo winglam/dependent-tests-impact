@@ -4,6 +4,7 @@ import edu.washington.cs.dt.TestExecResult;
 import edu.washington.cs.dt.TestExecResults;
 import edu.washington.cs.dt.TestExecResultsDelta;
 import edu.washington.cs.dt.TestExecResultsDifferentior;
+import edu.washington.cs.dt.main.ImpactMain;
 import edu.washington.cs.dt.runners.FixedOrderRunner;
 
 import java.util.ArrayList;
@@ -15,6 +16,8 @@ public class RandomDetector extends Detector {
 
     public RandomDetector(final String classpath, final List<String> tests, final int rounds) {
         super(classpath, tests, rounds);
+
+        ImpactMain.skipMissingTests = true;
 
         origResults = new FixedOrderRunner(classpath, tests).run().getExecutionRecords().get(0);
     }

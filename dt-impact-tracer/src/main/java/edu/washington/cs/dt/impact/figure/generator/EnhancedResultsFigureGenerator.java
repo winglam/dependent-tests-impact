@@ -119,20 +119,20 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
                 // Enhanced - unenhanced
                 val = calculate(values[i + 1], values[i]);
 
-                System.out.println("case a prio " + val);
+                writeCase("a", "prio", project, val);
             } else if (project.containsDT(true, i, 17) && project.containsDT(false, i, 17)) {
                 // } else if (project.getName().equals(Constants.CRYSTAL_NAME) && type.equals("auto") && i != 0 && i !=
                 // 6) {
                 // Case B
                 // Shift_by_enhanced’s_time(orig) - shift_by_unsound’s_time(orig)
                 val = calculate(shift_by_time(project, false, i, 17), shift_by_time(project, true, i, 17));
-                System.out.println("case b prio " + val);
+                writeCase("b", "prio", project, val);
             } else {
                 // Case C
                 // Enhanced - shift_by_unsound’s_time(orig)
                 val = calculate(values[i + 1], shift_by_time(project, true, i, 17));
 
-                System.out.println("case c prio " + val);
+                writeCase("c", "prio", project, val);
             }
             if (!allowNegatives && val < 0.0) {
                 val = 0.0;
@@ -142,6 +142,15 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
         }
 
         return result;
+    }
+
+    private static void writeCase(final String caseName, final String techniqueName,
+                                  final ProjectEnhancedResults project, final double val) {
+        final String output = String.format("case %s %s %s %s %s\n", caseName, techniqueName, project.getTestType(), project.getName(), val);
+        System.out.print(output);
+        try {
+            Files.write(Paths.get("cases.txt"), output.getBytes(), StandardOpenOption.APPEND);
+        } catch (IOException ignored) {}
     }
 
     /*
@@ -322,7 +331,7 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
                 // Case A
                 // 1 - Enh / (uns)
                 percent = calculate(time[i + 1], time[i], false);
-                System.out.println("case a sele " + percent);
+                writeCase("a", "sele", project, percent);
             } else if (project.containsDT(true, i, 18) && project.containsDT(false, i, 18)) {
                 // } else if (project.getName().equals(Constants.CRYSTAL_NAME) && type.equals("auto") && i != 0 && i !=
                 // 6) {
@@ -331,13 +340,13 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
                 double enTimeVal = shift_by_time(project, false, i, 18, false, false);
                 double unenTimeVal = shift_by_time(project, true, i, 18, false, false);
                 percent = calculate(enTimeVal, unenTimeVal, false);
-                System.out.println("case b sele " + percent);
+                writeCase("b", "sele", project, percent);
             } else {
                 // Case C
                 // 1 - Enh / (uns + orig)
                 double unenTimeVal = shift_by_time(project, true, i, 18, false, false);
                 percent = calculate(time[i + 1], unenTimeVal, false);
-                System.out.println("case c sele " + percent);
+                writeCase("c", "sele", project, percent);
             }
 
             result.add(percent);
@@ -351,18 +360,18 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
                 // Case A
                 // Enhanced - unenhanced
                 val = calculate(values[i + 1], values[i]);
-                System.out.println("case a sele " + val);
+                writeCase("a", "sele", project, val);
             } else if (project.containsDT(true, i, 18) && project.containsDT(false, i, 18)) {
                 // Case B
                 // Shift_by_enhanced’s_time(orig) - shift_by_unsound’s_time(orig)
                 val = calculate(shift_by_time(project, false, i, 18),
                         shift_by_time(project, true, i, 18));
-                System.out.println("case b sele " + val);
+                writeCase("b", "sele", project, val);
             } else {
                 // Case C
                 // Enhanced - shift_by_unsound’s_time(orig)
                 val = calculate(values[i + 1], shift_by_time(project, true, i, 18));
-                System.out.println("case c sele " + val);
+                writeCase("c", "sele", project, val);
             }
             if (!allowNegatives && val < 0.0) {
                 val = 0.0;
@@ -413,8 +422,8 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
         return shift_by_time(project, unen, i, figNum, isOriginal, useCoverage);
     }
 
-    private static double shift_by_time(ProjectEnhancedResults project, boolean unen,
-                                        int i, int figNum, boolean isOriginal, boolean useCoverage) {
+    public static double shift_by_time(ProjectEnhancedResults project, boolean unen,
+                                       int i, int figNum, boolean isOriginal, boolean useCoverage) {
         final Map<String, TestInfo> isolationInfo = project.get_dt_info(unen, i, figNum, isOriginal);
         final Map<String, TestInfo> origInfo = project.get_orig_info(unen, i, figNum, isOriginal);
         final Map<String, TestInfo> orderInfo = project.get_all_test_info(unen, i, figNum, isOriginal);
@@ -422,6 +431,25 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
         List<String> order = Arrays.asList(project.get_fig_TestList(unen, i, figNum, isOriginal));
         List<String> origOrder = Arrays.asList(project.getOrig_tests());
 
+        return shift_by_time(isolationInfo, origInfo, orderInfo, order, origOrder, useCoverage, project);
+
+    }
+
+    public static double shift_by_time(final Map<String, TestInfo> isolationInfo,
+                                       final Map<String, TestInfo> origInfo,
+                                       final Map<String, TestInfo> orderInfo,
+                                       final List<String> order,
+                                       final List<String> origOrder) {
+        return shift_by_time(isolationInfo, origInfo, orderInfo, order, origOrder, false, null);
+    }
+
+    public static double shift_by_time(final Map<String, TestInfo> isolationInfo,
+                                       final Map<String, TestInfo> origInfo,
+                                       final Map<String, TestInfo> orderInfo,
+                                       final List<String> order,
+                                       final List<String> origOrder,
+                                       final boolean useCoverage,
+                                       final ProjectEnhancedResults project) {
         // This is the order that "actually" gets run.
         // E.g., if there is a dependent test, it is the (un)enhanced order up to that dependent
         // test, followed by the test in isolation (if enabled), and finally the original order if still necessary
@@ -440,24 +468,6 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
             final TestInfo isolationTestInfo = isolationInfo.get(testName);
 
             if (!origTestInfo.getResult().equals(testInfo.getResult())) {
-//                boolean known = false;
-//                for (final String s : dtList) {
-//                    if (s.contains(testName)) {
-//                        known = true;
-//                        break;
-//                    }
-//                }
-//
-//                try {
-//                    if (known) {
-//                        final String s = "Known dependent test: " + testName + "\n";
-//                        Files.write(Paths.get("dt-log.txt"), s.getBytes(), StandardOpenOption.APPEND);
-//                    } else {
-//                        final String s = "Unknown dependent test: " + testName + "\n";
-//                        Files.write(Paths.get("dt-log.txt"), s.getBytes(), StandardOpenOption.APPEND);
-//                    }
-//                } catch (IOException ignored) {}
-
                 // Try running in isolation
                 if (useIsolationData) {
                     actualOrder.add(testName);
@@ -605,18 +615,18 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
         if (!project.containsDT(true, i, 19, isOriginal)) {
             // Case A. Neither have dts.
             diffBetweenEnhancedUnenhanced = calculate(enhancedParaSpeedup, unenhancedPara, false);
-            System.out.println("case a para " + diffBetweenEnhancedUnenhanced);
+            writeCase("a", "para", project, diffBetweenEnhancedUnenhanced);
         } else if (project.containsDT(true, i, 19, isOriginal) && project.containsDT(false, i, 19, isOriginal)) {
             // Case B, both enhanced and unenhanced have dts
             double enTimeVal = shift_by_time(project, false, i, 19, isOriginal, false);
             double unenTimeVal = shift_by_time(project, true, i, 19, isOriginal, false);
             diffBetweenEnhancedUnenhanced = calculate(enTimeVal, unenTimeVal, false);
-            System.out.println("case b para " + diffBetweenEnhancedUnenhanced);
+            writeCase("b", "para", project, diffBetweenEnhancedUnenhanced);
         } else {
             // Case C. Just the unenhanced has a dt
             double unenTimeVal = shift_by_time(project, true, i, 19, isOriginal, false);
             diffBetweenEnhancedUnenhanced = calculate(enhancedParaSpeedup, unenTimeVal, false);
-            System.out.println("case c para " + diffBetweenEnhancedUnenhanced);
+            writeCase("c", "para", project, diffBetweenEnhancedUnenhanced);
         }
 
         return diffBetweenEnhancedUnenhanced;
@@ -1101,6 +1111,7 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
             currProj.setCoverage(19, strArrayToDoubleArray(getRidSquareBrackets(coverageInFile)), index, orderName.equals("original"));
             currProj.setCoverageType(Constants.COVERAGE.valueOf(coverageName.toUpperCase()));
         }
+        currProj.setTestType(testType);
     }
 
 	@Override
@@ -1169,6 +1180,7 @@ public class EnhancedResultsFigureGenerator extends FigureGenerator {
 
         currProj.setCoverage(18, strArrayToDoubleArray(getRidSquareBrackets(coverageInFile)), index);
         currProj.setCoverageType(Constants.COVERAGE.valueOf(coverageName.toUpperCase()));
+        currProj.setTestType(testType);
     }
 
     @Override
