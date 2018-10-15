@@ -1,4 +1,6 @@
-This file explains how to reproduce figures 5, 10, 11, and 12 in our paper.
+A quickstart guideline for how to use our tools can be found in this [link](https://sites.google.com/view/test-dependence-impact/guidelines-for-adding-a-new-subject).
+
+<!-- This file explains how to reproduce figures 5, 10, 11, and 12 in our paper.
 
 You need:
  * Java 7 (the version of Soot that we use does not work with Java 8).
@@ -98,4 +100,4 @@ The detailed results include the pre-computed dependences that were generated, t
 Figure 4 is generated from running [cloc](https://github.com/AlDanial/cloc) on the
 subjects' source and test directories and 
 [ExamDiff Pro](http://www.prestosoft.com/edp_examdiffpro.asp) between the two 
-revisions of our subjects.
+revisions of our subjects. -->
