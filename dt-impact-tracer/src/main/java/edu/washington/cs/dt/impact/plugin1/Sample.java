@@ -7,6 +7,7 @@ import edu.washington.cs.dt.impact.Main.InstrumentationMain;
 import edu.washington.cs.dt.impact.tools.detectors.FailingTestDetector;
 import edu.washington.cs.dt.main.ImpactMain;
 import edu.washington.cs.dt.tools.UnitTestFinder;
+import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.text.StrSubstitutor;
 import org.apache.maven.cli.MavenCli;
 import org.apache.maven.project.MavenProject;
@@ -44,6 +45,7 @@ public class Sample extends TestPlugin {
         setupPaths(project);
         gatherDependencies();
         setupTestPrioritization(project);
+        setupTestSelection(project);
     }
 
     private void setupPaths(MavenProject project){
@@ -208,12 +210,26 @@ public class Sample extends TestPlugin {
 
 
 
-        // SECTION 4: Run Instrumented Tests
+        // SECTION 4: Copy Any Resource Files From dtClass & dtTests (e.g. Configuration Files - Exclude *.class Files)
+        // TODO
+
+
+        // SECTION 5: Run Instrumented Tests
         TestPluginPlugin.mojo().getLog().info("Running Instrumented Tests");
-	args = new String[]{
+	    args = new String[]{
                 "-classpath", dtLibs + ":" + dtTools + ":" + dtSubjectSource + "/sootOutput/",
                 "-inputTests", dtResults + "/orig-order.txt"};
         ImpactMain.main(args);
+
+
+
+        // SECTION 6: Move Resultant Files To Result
+        try {
+            FileUtils.moveDirectory(new File(dtSubjectSource + "/sootTestOutput"), new File(dtResults + "/sootTestOutput-orig"));
+            FileUtils.deleteDirectory(new File(dtSubjectSource + "/sootOutput"));
+        } catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
     // Setup A Subject For Test Selection
