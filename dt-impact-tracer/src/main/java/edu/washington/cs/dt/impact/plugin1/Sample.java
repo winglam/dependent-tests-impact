@@ -147,7 +147,8 @@ public class Sample extends TestPlugin {
             // Runtime Exec
             String command = "java -cp " + dtTools + ":" + buildClassPath(JAVA_HOME + "/jre/lib/*") + ":" +
                     " edu.washington.cs.dt.impact.Main.InstrumentationMain" +
-                    " -inputDir " + dtTests  + " --soot-cp " + dtLibs + ":" + dtClass + ":" + dtTests + ":" + buildClassPath(JAVA_HOME + "/jre/lib/*");
+                    " -inputDir " + dtTests  +
+                    " --soot-cp " + dtLibs + ":" + dtClass + ":" + dtTests + ":" + buildClassPath(JAVA_HOME + "/jre/lib/*");
             Process p = Runtime.getRuntime().exec(command);
 
             // Stream Readers
@@ -156,16 +157,18 @@ public class Sample extends TestPlugin {
 
             // Read Command Output
             TestPluginPlugin.mojo().getLog().info("Command Input Stream For: java -cp dtTools:JAVA_HOME/jre/lib/*:" +
-                    "edu.washington.cs.dt.impact.Main.InstrumentationMain" +
-                    " -inputDir dtTests --soot-cp dtLibs:dtClass:dtTests:JAVA_HOME/jre/lib/*");
+                    " edu.washington.cs.dt.impact.Main.InstrumentationMain" +
+                    " -inputDir dtTests" +
+                    " --soot-cp dtLibs:dtClass:dtTests:JAVA_HOME/jre/lib/*");
             while ((subprocessOutput = stdInput.readLine()) != null) {
                 TestPluginPlugin.mojo().getLog().info(subprocessOutput);
             }
 
             // Read Command Errors
             TestPluginPlugin.mojo().getLog().info("Command Error: Stream For: java -cp dtTools:JAVA_HOME/jre/lib/*:" +
-                    "edu.washington.cs.dt.impact.Main.InstrumentationMain" +
-                    " -inputDir dtTests --soot-cp dtLibs:dtClass:dtTests:JAVA_HOME/jre/lib/*");
+                    " edu.washington.cs.dt.impact.Main.InstrumentationMain" +
+                    " -inputDir dtTests" +
+                    " --soot-cp dtLibs:dtClass:dtTests:JAVA_HOME/jre/lib/*");
             TestPluginPlugin.mojo().getLog().info(subprocessOutput);
             while ((subprocessOutput = stdError.readLine()) != null) {
                 TestPluginPlugin.mojo().getLog().error(subprocessOutput);
@@ -181,7 +184,8 @@ public class Sample extends TestPlugin {
             // Runtime Exec
             String command = "java -cp " + dtTools + ":" + buildClassPath(JAVA_HOME + "/jre/lib/*") + ":" +
                     " edu.washington.cs.dt.impact.Main.InstrumentationMain" +
-                    " -inputDir " + dtClass  + " --soot-cp " + dtLibs + ":" + dtClass + ":" + buildClassPath(JAVA_HOME + "/jre/lib/*");
+                    " -inputDir " + dtClass  +
+                    " --soot-cp " + dtLibs + ":" + dtClass + ":" + buildClassPath(JAVA_HOME + "/jre/lib/*");
             Process p = Runtime.getRuntime().exec(command);
 
             // Stream Readers
@@ -190,16 +194,18 @@ public class Sample extends TestPlugin {
 
             // Read Command Output
             TestPluginPlugin.mojo().getLog().info("Command Input Stream For: java -cp dtTools:JAVA_HOME/jre/lib/*:" +
-                    "edu.washington.cs.dt.impact.Main.InstrumentationMain" +
-                    " -inputDir dtClass --soot-cp dtLibs:dtClass:JAVA_HOME/jre/lib/*");
+                    " edu.washington.cs.dt.impact.Main.InstrumentationMain" +
+                    " -inputDir dtClass" +
+                    " --soot-cp dtLibs:dtClass:JAVA_HOME/jre/lib/*");
             while ((subprocessOutput = stdInput.readLine()) != null) {
                 TestPluginPlugin.mojo().getLog().info(subprocessOutput);
             }
 
             // Read Command Errors
             TestPluginPlugin.mojo().getLog().info("Command Error Stream For: java -cp dtTools:JAVA_HOME/jre/lib/*:" +
-                    "edu.washington.cs.dt.impact.Main.InstrumentationMain" +
-                    " -inputDir dtClass --soot-cp dtLibs:dtClass:JAVA_HOME/jre/lib/*");
+                    " edu.washington.cs.dt.impact.Main.InstrumentationMain" +
+                    " -inputDir dtClass" +
+                    " --soot-cp dtLibs:dtClass:JAVA_HOME/jre/lib/*");
             while ((subprocessOutput = stdError.readLine()) != null) {
                 TestPluginPlugin.mojo().getLog().error(subprocessOutput);
             }
@@ -234,7 +240,109 @@ public class Sample extends TestPlugin {
 
     // Setup A Subject For Test Selection
     private void setupTestSelection(MavenProject project){
-       
+        // SECTION 1: Instrument Test & Source Files
+        String JAVA_HOME = expandEnvVars("${JAVA_HOME}");
+        // Instrument Test Files
+        subprocessOutput = null;
+        try {
+            // Runtime Exec
+            String command = "java -cp " + dtTools + ":" + buildClassPath(JAVA_HOME + "/jre/lib/*") + ":" +
+                    " edu.washington.cs.dt.impact.Main.InstrumentationMain" +
+                    " -inputDir " + dtTests  +
+                    " --soot-cp " + dtLibs + ":" + dtClass + ":" + dtTests + ":" + buildClassPath(JAVA_HOME + "/jre/lib/*" +
+                    " -technique selection");
+            Process p = Runtime.getRuntime().exec(command);
+
+            // Stream Readers
+            BufferedReader stdInput = new BufferedReader(new InputStreamReader(p.getInputStream()));
+            BufferedReader stdError = new BufferedReader(new InputStreamReader(p.getErrorStream()));
+
+            // Read Command Output
+            TestPluginPlugin.mojo().getLog().info("Command Input Stream For: java -cp dtTools:JAVA_HOME/jre/lib/*:" +
+                    " edu.washington.cs.dt.impact.Main.InstrumentationMain" +
+                    " -inputDir dtTests" +
+                    " --soot-cp dtLibs:dtClass:dtTests:JAVA_HOME/jre/lib/*" +
+                    " -technique selection");
+            while ((subprocessOutput = stdInput.readLine()) != null) {
+                TestPluginPlugin.mojo().getLog().info(subprocessOutput);
+            }
+
+            // Read Command Errors
+            TestPluginPlugin.mojo().getLog().info("Command Error: Stream For: java -cp dtTools:JAVA_HOME/jre/lib/*:" +
+                    " edu.washington.cs.dt.impact.Main.InstrumentationMain" +
+                    " -inputDir dtTests" +
+                    " --soot-cp dtLibs:dtClass:dtTests:JAVA_HOME/jre/lib/*"
+                    " -technique selection");
+            TestPluginPlugin.mojo().getLog().info(subprocessOutput);
+            while ((subprocessOutput = stdError.readLine()) != null) {
+                TestPluginPlugin.mojo().getLog().error(subprocessOutput);
+            }
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        // Instrument Source Files
+        subprocessOutput = null;
+        try {
+            // Runtime Exec
+            String command = "java -cp " + dtTools + ":" + buildClassPath(JAVA_HOME + "/jre/lib/*") + ":" +
+                    " edu.washington.cs.dt.impact.Main.InstrumentationMain" +
+                    " -inputDir " + dtClass  +
+                    " --soot-cp " + dtLibs + ":" + dtClass + ":" + buildClassPath(JAVA_HOME + "/jre/lib/*" +
+                    " -technique selection");
+            Process p = Runtime.getRuntime().exec(command);
+
+            // Stream Readers
+            BufferedReader stdInput = new BufferedReader(new InputStreamReader(p.getInputStream()));
+            BufferedReader stdError = new BufferedReader(new InputStreamReader(p.getErrorStream()));
+
+            // Read Command Output
+            TestPluginPlugin.mojo().getLog().info("Command Input Stream For: java -cp dtTools:JAVA_HOME/jre/lib/*:" +
+                    " edu.washington.cs.dt.impact.Main.InstrumentationMain" +
+                    " -inputDir dtClass" +
+                    " --soot-cp dtLibs:dtClass:JAVA_HOME/jre/lib/*" +
+                    " -technique selection");
+            while ((subprocessOutput = stdInput.readLine()) != null) {
+                TestPluginPlugin.mojo().getLog().info(subprocessOutput);
+            }
+
+            // Read Command Errors
+            TestPluginPlugin.mojo().getLog().info("Command Error Stream For: java -cp dtTools:JAVA_HOME/jre/lib/*:" +
+                    " edu.washington.cs.dt.impact.Main.InstrumentationMain" +
+                    " -inputDir dtClass" +
+                    " --soot-cp dtLibs:dtClass:JAVA_HOME/jre/lib/*" +
+                    " -technique selection");
+            while ((subprocessOutput = stdError.readLine()) != null) {
+                TestPluginPlugin.mojo().getLog().error(subprocessOutput);
+            }
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+
+        // SECTION 2: Copy Any Resource Files From dtClass & dtTests (e.g. Configuration Files - Exclude *.class Files)
+        // TODO
+
+
+        // SECTION 3: Run Instrumented Tests
+        TestPluginPlugin.mojo().getLog().info("Running Instrumented Tests");
+        args = new String[]{
+                "-classpath", dtLibs + ":" + dtTools + ":" + dtSubjectSource + "/sootOutput/",
+                "-inputTests", dtResults + "/orig-order.txt"};
+        ImpactMain.main(args);
+
+
+
+        // SECTION 4: Move Resultant Files To Result
+        try {
+            FileUtils.moveDirectory(new File(dtSubjectSource + "/sootTestOutput"), new File(dtResults + "/sootTestOutput-orig-selection"));
+            FileUtils.deleteDirectory(new File(dtSubjectSource + "/sootOutput"));
+        } catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
     /**
