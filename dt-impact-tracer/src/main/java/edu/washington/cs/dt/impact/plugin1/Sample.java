@@ -271,7 +271,7 @@ public class Sample extends TestPlugin {
             TestPluginPlugin.mojo().getLog().info("Command Error: Stream For: java -cp dtTools:JAVA_HOME/jre/lib/*:" +
                     " edu.washington.cs.dt.impact.Main.InstrumentationMain" +
                     " -inputDir dtTests" +
-                    " --soot-cp dtLibs:dtClass:dtTests:JAVA_HOME/jre/lib/*"
+                    " --soot-cp dtLibs:dtClass:dtTests:JAVA_HOME/jre/lib/*" + 
                     " -technique selection");
             TestPluginPlugin.mojo().getLog().info(subprocessOutput);
             while ((subprocessOutput = stdError.readLine()) != null) {
