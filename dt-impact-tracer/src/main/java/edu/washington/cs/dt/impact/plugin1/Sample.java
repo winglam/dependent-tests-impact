@@ -153,11 +153,18 @@ public class Sample extends TestPlugin {
             BufferedReader stdError = new BufferedReader(new InputStreamReader(p.getErrorStream()));
 
             // Read Command Output
+            TestPluginPlugin.mojo().getLog().info("Command Input Stream For: java -cp dtTools:JAVA_HOME/jre/lib/*:" +
+                    "edu.washington.cs.dt.impact.Main.InstrumentationMain" +
+                    " -inputDir dtTests --soot-cp dtLibs:dtClass:dtTests:JAVA_HOME/jre/lib/*");
             while ((subprocessOutput = stdInput.readLine()) != null) {
                 TestPluginPlugin.mojo().getLog().info(subprocessOutput);
             }
 
             // Read Command Errors
+            TestPluginPlugin.mojo().getLog().info("Command Error: Stream For: java -cp dtTools:JAVA_HOME/jre/lib/*:" +
+                    "edu.washington.cs.dt.impact.Main.InstrumentationMain" +
+                    " -inputDir dtTests --soot-cp dtLibs:dtClass:dtTests:JAVA_HOME/jre/lib/*");
+            TestPluginPlugin.mojo().getLog().info(subprocessOutput);
             while ((subprocessOutput = stdError.readLine()) != null) {
                 TestPluginPlugin.mojo().getLog().error(subprocessOutput);
             }
@@ -166,7 +173,6 @@ public class Sample extends TestPlugin {
             e.printStackTrace();
         }
 
-        /*
         // Instrument Source Files
         subprocessOutput = null;
         try {
@@ -181,11 +187,17 @@ public class Sample extends TestPlugin {
             BufferedReader stdError = new BufferedReader(new InputStreamReader(p.getErrorStream()));
 
             // Read Command Output
+            TestPluginPlugin.mojo().getLog().info("Command Input Stream For: java -cp dtTools:JAVA_HOME/jre/lib/*:" +
+                    "edu.washington.cs.dt.impact.Main.InstrumentationMain" +
+                    " -inputDir dtClass --soot-cp dtLibs:dtClass:JAVA_HOME/jre/lib/*");
             while ((subprocessOutput = stdInput.readLine()) != null) {
                 TestPluginPlugin.mojo().getLog().info(subprocessOutput);
             }
 
             // Read Command Errors
+            TestPluginPlugin.mojo().getLog().info("Command Error Stream For: java -cp dtTools:JAVA_HOME/jre/lib/*:" +
+                    "edu.washington.cs.dt.impact.Main.InstrumentationMain" +
+                    " -inputDir dtClass --soot-cp dtLibs:dtClass:JAVA_HOME/jre/lib/*");
             while ((subprocessOutput = stdError.readLine()) != null) {
                 TestPluginPlugin.mojo().getLog().error(subprocessOutput);
             }
@@ -193,16 +205,14 @@ public class Sample extends TestPlugin {
         catch (IOException e) {
             e.printStackTrace();
         }
-        */
+
 
 
         // SECTION 4: Run Instrumented Tests
-        /*
         args = new String[]{
                 "-classpath", dtLibs + ":" + dtSubject + "/sootOutput/",
-                "-inputTests", dtResults + "orig-order"};
+                "-inputTests", dtResults + "/orig-order"};
         ImpactMain.main(args);
-        */
     }
 
     // Setup A Subject For Test Selection
