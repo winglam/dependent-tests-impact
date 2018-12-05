@@ -209,107 +209,16 @@ public class Sample extends TestPlugin {
 
 
         // SECTION 4: Run Instrumented Tests
-        args = new String[]{
-                "-classpath", dtLibs + ":" + dtSubject + "/sootOutput/",
-                "-inputTests", dtResults + "/orig-order"};
+        TestPluginPlugin.mojo().getLog().info("Running Instrumented Tests");
+	args = new String[]{
+                "-classpath", dtLibs + ":" + dtTools + ":" + dtSubjectSource + "/sootOutput/",
+                "-inputTests", dtResults + "/orig-order.txt"};
         ImpactMain.main(args);
     }
 
     // Setup A Subject For Test Selection
     private void setupTestSelection(MavenProject project){
-        // SECTION 1: Find Human Written Tests (old version, original tests)
-        try {
-            // Generates orig-order.txt
-            final List<String> tests = JavaConverters.bufferAsJavaList(TestLocator.tests(project).toBuffer());
-            FileWriter writer = new FileWriter(new File(dtResults + "/orig-order.txt"));
-            for(String str: tests) {
-                writer.write(str);
-                writer.write(System.getProperty("line.separator"));
-            }
-            writer.close();
-        } catch(Exception e){
-            e.printStackTrace();
-        }
-
-
-
-        // SECTION 2: Alienate Failing Tests
-        args = new String[]{
-                "--classpath", dtClass + ":" + dtTests + ":" + dtLibs,
-                "--tests", dtResults + "/orig-order.txt",
-                "--output", dtResults + "/ignore-order.txt"};
-        FailingTestDetector.outputFailedTests(project,
-                dtResults + "/orig-order.txt",
-                dtResults + "/ignore-order.txt");
-
-
-
-        // SECTION 3: Instrument Test & Source Files
-        String JAVA_HOME = expandEnvVars("${JAVA_HOME}");
-        // Instrument Test Files
-        subprocessOutput = null;
-        try {
-            // Runtime Exec
-            String command = "java -cp " + dtTools + ":" + buildClassPath(JAVA_HOME + "/jre/lib/*") + ":" +
-                    " edu.washington.cs.dt.impact.Main.InstrumentationMain" +
-                    " -inputDir " + dtTests  + " --soot-cp " + dtLibs + ":" + dtClass + ":" + dtTests + ":" + buildClassPath(JAVA_HOME + "/jre/lib/*");
-            Process p = Runtime.getRuntime().exec(command);
-
-            // Stream Readers
-            BufferedReader stdInput = new BufferedReader(new InputStreamReader(p.getInputStream()));
-            BufferedReader stdError = new BufferedReader(new InputStreamReader(p.getErrorStream()));
-
-            // Read Command Output
-            while ((subprocessOutput = stdInput.readLine()) != null) {
-                TestPluginPlugin.mojo().getLog().info(subprocessOutput);
-            }
-
-            // Read Command Errors
-            while ((subprocessOutput = stdError.readLine()) != null) {
-                TestPluginPlugin.mojo().getLog().error(subprocessOutput);
-            }
-        }
-        catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        /*
-        // Instrument Source Files
-        subprocessOutput = null;
-        try {
-            // Runtime Exec
-            String command = "java -cp " + dtTools + ":" + buildClassPath(JAVA_HOME + "/jre/lib/*") + ":" +
-                    " edu.washington.cs.dt.impact.Main.InstrumentationMain" +
-                    " -inputDir " + dtClass  + " --soot-cp " + dtLibs + ":" + dtClass + ":" + buildClassPath(JAVA_HOME + "/jre/lib/*");
-            Process p = Runtime.getRuntime().exec(command);
-
-            // Stream Readers
-            BufferedReader stdInput = new BufferedReader(new InputStreamReader(p.getInputStream()));
-            BufferedReader stdError = new BufferedReader(new InputStreamReader(p.getErrorStream()));
-
-            // Read Command Output
-            while ((subprocessOutput = stdInput.readLine()) != null) {
-                TestPluginPlugin.mojo().getLog().info(subprocessOutput);
-            }
-
-            // Read Command Errors
-            while ((subprocessOutput = stdError.readLine()) != null) {
-                TestPluginPlugin.mojo().getLog().error(subprocessOutput);
-            }
-        }
-        catch (IOException e) {
-            e.printStackTrace();
-        }
-        */
-
-
-        // SECTION 4: Run Instrumented Tests
-        /*
-        args = new String[]{
-                "-classpath", dtLibs + ":" + dtSubject + "/sootOutput/",
-                "-inputTests", dtResults + "orig-order"};
-        ImpactMain.main(args);
-        */
+       
     }
 
     /**
