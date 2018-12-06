@@ -351,12 +351,10 @@ public class Sample extends TestPlugin {
     // Setup A Subject For Test Selection
     private void setupTestParallelization(MavenProject project){
         // SECTION 1: Calculate Runtimes For Tests
-        //java -cp $DT_TOOLS: edu.washington.cs.dt.main.ImpactMain
-        // -classpath $DT_LIBS:$DT_CLASS:$DT_TESTS: -inputTests $DT_SUBJ/$SUBJ_NAME-orig-order -getTime > $DT_SUBJ/$SUBJ_NAME-orig-time.txt
         TestPluginPlugin.mojo().getLog().info("Calculating Runtimes For Tests");
         args = new String[]{
                 "-classpath", dtLibs + ":" + dtTools + ":" + dtClass + ":" + dtTests,
-                "-inputTests", dtResults + "/orig-order.txt" +
+                "-inputTests", dtResults + "/orig-order.txt",
                 "-getTime"};
         PrintStream stdout = System.out;
         try {
@@ -369,9 +367,10 @@ public class Sample extends TestPlugin {
         System.setOut(stdout);
 
 
+        
         // SECTION 2: Move Resultant Files To Result
         try {
-            
+
         } catch (Exception e){
             e.printStackTrace();
         }
