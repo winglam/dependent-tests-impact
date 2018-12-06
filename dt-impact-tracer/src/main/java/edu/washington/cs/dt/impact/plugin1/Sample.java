@@ -55,6 +55,7 @@ public class Sample extends TestPlugin {
         dtSubject = dtSubjectSource.concat("/target");
         dtTools = buildClassPath(dtSubjectSource.concat("/lib/*"));
         dtResults = dtSubjectSource.concat("/results");
+        FileUtils.deleteQuietly(new File(dtResults));
         new File(dtResults).mkdirs();
 
         dtLibs = buildClassPath(dtSubject.concat("/dependency/*"));
@@ -232,11 +233,6 @@ public class Sample extends TestPlugin {
         // SECTION 6: Move Resultant Files To Result
         try {
             FileUtils.moveDirectory(new File(dtSubjectSource + "/sootTestOutput"), new File(dtResults + "/sootTestOutput-orig"));
-        } catch (Exception e){
-            e.printStackTrace();
-        }
-
-        try {
             FileUtils.deleteDirectory(new File(dtSubjectSource + "/sootOutput"));
         } catch (Exception e){
             e.printStackTrace();
@@ -344,11 +340,6 @@ public class Sample extends TestPlugin {
         // SECTION 4: Move Resultant Files To Result
         try {
             FileUtils.moveDirectory(new File(dtSubjectSource + "/sootTestOutput"), new File(dtResults + "/sootTestOutput-orig-selection"));
-        } catch (Exception e){
-            e.printStackTrace();
-        }
-
-        try {
             FileUtils.deleteDirectory(new File(dtSubjectSource + "/sootOutput"));
         } catch (Exception e){
             e.printStackTrace();
