@@ -232,6 +232,11 @@ public class Sample extends TestPlugin {
         // SECTION 6: Move Resultant Files To Result
         try {
             FileUtils.moveDirectory(new File(dtSubjectSource + "/sootTestOutput"), new File(dtResults + "/sootTestOutput-orig"));
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+
+        try {
             FileUtils.deleteDirectory(new File(dtSubjectSource + "/sootOutput"));
         } catch (Exception e){
             e.printStackTrace();
@@ -339,6 +344,11 @@ public class Sample extends TestPlugin {
         // SECTION 4: Move Resultant Files To Result
         try {
             FileUtils.moveDirectory(new File(dtSubjectSource + "/sootTestOutput"), new File(dtResults + "/sootTestOutput-orig-selection"));
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+
+        try {
             FileUtils.deleteDirectory(new File(dtSubjectSource + "/sootOutput"));
         } catch (Exception e){
             e.printStackTrace();
