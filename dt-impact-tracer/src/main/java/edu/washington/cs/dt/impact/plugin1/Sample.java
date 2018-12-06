@@ -367,10 +367,10 @@ public class Sample extends TestPlugin {
         System.setOut(stdout);
 
 
-        
+
         // SECTION 2: Move Resultant Files To Result
         try {
-
+            FileUtils.moveDirectory(new File(dtSubjectSource + "/orig-time,txt"), new File(dtResults + "/orig-time.txt"));
         } catch (Exception e){
             e.printStackTrace();
         }
