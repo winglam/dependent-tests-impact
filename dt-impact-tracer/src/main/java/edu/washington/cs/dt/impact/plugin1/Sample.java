@@ -455,10 +455,10 @@ public class Sample extends TestPlugin {
         }
 
         TestPluginPlugin.mojo().getLog().info("Generating Pre-computed Dependencies");
-        for (String k : TESTTYPES){
-            for (String i : COVERGAES)
-                for (String j : PRIOORDERS){
-                    String precomputeFlag = "-resolveDependences" + prioDTLists + "/prioritization-" + k + "-" + i + "-" + j + ".txt";
+        for (String k : TESTTYPES) {
+            for (String i : COVERGAES) {
+                for (String j : PRIOORDERS) {
+                    String precomputeFlag = "-resolveDependences " + prioDTLists + "/prioritization-" + k + "-" + i + "-" + j + ".txt";
                     String postProcessFlag = "";
 
                     args = new String[]{
@@ -476,9 +476,10 @@ public class Sample extends TestPlugin {
                             "-classpath", classpath,
                             precomputeFlag,
                             postProcessFlag};
-                    TestPluginPlugin.mojo().getLog().info("OneConfigurationRunner Parameters\n\t" +  StringUtils.join(args, "\n\t"));
+                    TestPluginPlugin.mojo().getLog().info("OneConfigurationRunner Parameters\n\t" + StringUtils.join(args, "\n\t"));
                     OneConfigurationRunner.main(args);
                 }
+            }
         }
     }
 
