@@ -459,7 +459,7 @@ public class Sample extends TestPlugin {
                             "-technique", "prioritization",
                             "-coverage", i,
                             "-order", j,
-                            "-orig-order", dtResults + "/" + k + "-order.txt",
+                            "-origOrder", dtResults + "/" + k + "-order.txt",
                             "-testInputDir", dtResults + "/sootTestOutput-" + k,
                             "-filesToDelete", "",
                             "-getCoverage",
