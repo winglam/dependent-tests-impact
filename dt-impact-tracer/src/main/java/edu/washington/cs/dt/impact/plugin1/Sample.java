@@ -452,7 +452,7 @@ public class Sample extends TestPlugin {
         for (String k : TESTTYPES){
             for (String i : COVERGAES)
                 for (String j : PRIOORDERS){
-                    String precomputeFlag = "-resolveDependences" + prioDTLists + "/prioritization-" + k + i + j + ".txt";
+                    String precomputeFlag = "-resolveDependences" + prioDTLists + "/prioritization-" + k + "-" + i + "-" + j + ".txt";
                     String postProcessFlag = "";
 
                     args = new String[]{
