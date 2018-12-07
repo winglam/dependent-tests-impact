@@ -4,10 +4,12 @@ import com.reedoei.testrunner.mavenplugin.TestPlugin;
 import com.reedoei.testrunner.mavenplugin.TestPluginPlugin;
 import com.reedoei.testrunner.testobjects.TestLocator;
 import edu.washington.cs.dt.impact.Main.InstrumentationMain;
+import edu.washington.cs.dt.impact.runner.OneConfigurationRunner;
 import edu.washington.cs.dt.impact.tools.detectors.FailingTestDetector;
 import edu.washington.cs.dt.main.ImpactMain;
 import edu.washington.cs.dt.tools.UnitTestFinder;
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.text.StrSubstitutor;
 import org.apache.maven.cli.MavenCli;
 import org.apache.maven.project.MavenProject;
@@ -430,7 +432,7 @@ public class Sample extends TestPlugin {
 
         // SECTION 2: Move Resultant Files To Result
         try {
-            FileUtils.moveDirectory(new File(dtSubjectSource + "/orig-time.txt"), new File(dtResults + "/orig-time.txt"));
+            FileUtils.moveFile(new File(dtSubjectSource + "/orig-time.txt"), new File(dtResults + "/orig-time.txt"));
         } catch (Exception e){
             e.printStackTrace();
         }
@@ -438,7 +440,7 @@ public class Sample extends TestPlugin {
 
     // Run Precomputed Dependencies
     private void runPrecomputedDependencies(MavenProject project){
-        String classpath = dtLibs  + ":" + dtTests + ":" + dtClass;
+        String classpath = dtLibs  + ":" + dtTools + ":" + dtTests + ":" + dtClass;
 
         runTestPrioritization(project, classpath);
     }
@@ -451,11 +453,26 @@ public class Sample extends TestPlugin {
             for (String i : COVERGAES)
                 for (String j : PRIOORDERS){
                     String precomputeFlag = "-resolveDependences" + prioDTLists + "/prioritization-" + k + i + j + ".txt";
-                    String postProcessFlat = "";
+                    String postProcessFlag = "";
 
-
+                    args = new String[]{
+                            "-technique", "prioritization",
+                            "-coverage", i,
+                            "-order", j,
+                            "-orig-order", dtResults + "/" + k + "-order.txt",
+                            "-testInputDir", dtResults + "/sootTestOutput-" + k,
+                            "-filesToDelete", "",
+                            "-getCoverage",
+                            "-project", "",
+                            "-testType", k,
+                            "-outputDir", prioResults,
+                            "-timeToRun", Integer.toString(MEDIANTIMES),
+                            "-classpath", classpath,
+                            precomputeFlag,
+                            postProcessFlag};
+                    TestPluginPlugin.mojo().getLog().info("OneConfigurationRunner Parameters\n\t" +  StringUtils.join(args, "\n\t"));
+                    OneConfigurationRunner.main(args);
                 }
-
         }
     }
 
