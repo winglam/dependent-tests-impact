@@ -35,7 +35,7 @@ public class Sample extends TestPlugin {
     static final String[] COVERGAES = { "statement", "function" };
     static final int[] MACHINES = { 2, 4, 8, 16};
 
-    static final String[] PRIOORDERS = { "original", "relative" };
+    static final String[] PRIOORDERS = { "absolute", "relative" };
     static final String[] SELEORDERS = { "original", "absolute", "relative "};
 
     static final String prioDir = "prioritization-results";
