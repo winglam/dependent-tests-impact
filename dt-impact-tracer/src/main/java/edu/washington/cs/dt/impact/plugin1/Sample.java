@@ -25,6 +25,25 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Sample extends TestPlugin {
+    // Constants For runPrecomputedDependencies
+    static final int MEDIANTIMES = 5;
+    static final int RANDOMTIMES = 100;
+
+    static final String[] TESTTYPES = { "orig" };
+    static final String[] COVERGAES = { "statement", "function" };
+    static final int[] MACHINES = { 2, 4, 8, 16};
+
+    static final String[] PRIOORDERS = { "original", "relative" };
+    static final String[] SELEORDERS = { "original", "absolute", "relative "};
+
+    static final String prioDir = "prioritization-results";
+    static final String seleDir = "selection-results";
+    static final String paraDir = "parallelization-results";
+
+    static final String prioList = "prioritization-dt-list";
+    static final String seleList = "selection-dt-list";
+    static final String paraList = "parallelization-dt-list";
+
     // Args (Re-Declared Upon Each Use)
     String[] args = {};
 
@@ -36,6 +55,7 @@ public class Sample extends TestPlugin {
     String dtSubjectSource, dtSubject, dtTools, dtResults, dtLibs, dtClass, dtTests;
 
     // Output Directories
+    String dtData, prioResults, seleResults, paraResults, prioDTLists, seleDTLists, paraDTLists;
     String subprocessOutput;
 
     // Extraneous Directories (Not Used, But May Be Useful Later
@@ -47,6 +67,8 @@ public class Sample extends TestPlugin {
         setupTestPrioritization(project);
         setupTestSelection(project);
         setupTestParallelization(project);
+
+        runPrecomputedDependencies(project);
     }
 
     private void setupPaths(MavenProject project){
@@ -56,13 +78,15 @@ public class Sample extends TestPlugin {
         dtSubject = dtSubjectSource.concat("/target");
         dtTools = buildClassPath(dtSubjectSource.concat("/lib/*"));
         dtResults = dtSubjectSource.concat("/results");
-        FileUtils.deleteQuietly(new File(dtResults));
-        new File(dtResults).mkdirs();
+            FileUtils.deleteQuietly(new File(dtResults));
+            new File(dtResults).mkdirs();
 
         dtLibs = buildClassPath(dtSubject.concat("/dependency/*"));
         dtClass = dtSubject.concat("/classes");
         dtTests = dtSubject.concat("/test-classes");
 
+        // Output Main Directories
+        TestPluginPlugin.mojo().getLog().info("Main Directories: " );
         TestPluginPlugin.mojo().getLog().info("dtSubjectSource: " + dtSubjectSource);
         TestPluginPlugin.mojo().getLog().info("dtSubject: " + dtSubject);
         TestPluginPlugin.mojo().getLog().info("dtTools: " + dtTools);
@@ -71,11 +95,41 @@ public class Sample extends TestPlugin {
         TestPluginPlugin.mojo().getLog().info("dtClass: " + dtClass);
         TestPluginPlugin.mojo().getLog().info("dtTests: " + dtTests);
 
+
+
+        // Output Directories
+        dtData = dtResults.concat("/data");
+            new File(dtData).mkdirs();
+        prioResults = dtResults.concat("/prioritization-results");
+            new File(prioResults).mkdirs();
+        seleResults = dtResults.concat("/selection-results");
+            new File(seleResults).mkdirs();
+        paraResults = dtResults.concat("/parallelization-results");
+            new File(paraResults).mkdirs();
+
+        prioDTLists = dtData.concat("/prioritization-dt-lists");
+            new File(prioDTLists).mkdirs();
+        seleDTLists = dtData.concat("/selection-dt-lists");
+            new File(seleDTLists).mkdirs();
+        paraDTLists = dtData.concat("/parallelization-dt-lists");
+            new File(paraDTLists).mkdirs();
+
+        // Print Output Directories
+        TestPluginPlugin.mojo().getLog().info("Main Directories: " );
+        TestPluginPlugin.mojo().getLog().info("dtData: " + dtData);
+        TestPluginPlugin.mojo().getLog().info("prioResults: " + prioResults);
+        TestPluginPlugin.mojo().getLog().info("seleResults: " + seleResults);
+        TestPluginPlugin.mojo().getLog().info("paraResults: " + paraResults);
+        TestPluginPlugin.mojo().getLog().info("prioDTLists: " + prioDTLists);
+        TestPluginPlugin.mojo().getLog().info("seleDTLists: " + seleDTLists);
+        TestPluginPlugin.mojo().getLog().info("paraDTLists: " + paraDTLists);
+
+
         // Extraneous Directories (Not Used, But May Be Useful Later
         dtTestSource = project.getBuild().getTestSourceDirectory();
 
+        TestPluginPlugin.mojo().getLog().info("Extraneous Directories: " );
         TestPluginPlugin.mojo().getLog().info("dtTestSource: " + dtTestSource);
-
 
         //export DT_ROOT=/home/jgxue2/Test-Second-Bash-Script-V2
         //export DT_SUBJ_ROOT=$DT_ROOT/elastic-job-lite-old-6d6e460a10b535c149c0f670ec562be027b8808d
@@ -346,6 +400,12 @@ public class Sample extends TestPlugin {
         } catch (Exception e){
             e.printStackTrace();
         }
+
+        try {
+            FileUtils.moveDirectory(new File(dtSubjectSource + "/selectionOutput"), new File(dtResults + "/selectionOutput"));
+        } catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
     // Setup A Subject For Test Selection
@@ -373,6 +433,29 @@ public class Sample extends TestPlugin {
             FileUtils.moveDirectory(new File(dtSubjectSource + "/orig-time,txt"), new File(dtResults + "/orig-time.txt"));
         } catch (Exception e){
             e.printStackTrace();
+        }
+    }
+
+    // Run Precomputed Dependencies
+    private void runPrecomputedDependencies(MavenProject project){
+        String classpath = dtLibs  + ":" + dtTests + ":" + dtClass;
+
+        runTestPrioritization(project, classpath);
+    }
+
+    // Run Test Prioritization
+    private void runTestPrioritization(MavenProject project, String classpath){
+        TestPluginPlugin.mojo().getLog().info("Generating Pre-computed Dependencies");
+
+        for (String k : TESTTYPES){
+            for (String i : COVERGAES)
+                for (String j : PRIOORDERS){
+                    String precomputeFlag = "-resolveDependences" + prioDTLists + "/prioritization-" + k + i + j + ".txt";
+                    String postProcessFlat = "";
+
+                    
+                }
+
         }
     }
 
