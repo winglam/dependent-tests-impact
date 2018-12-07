@@ -115,7 +115,7 @@ public class Sample extends TestPlugin {
             new File(paraDTLists).mkdirs();
 
         // Print Output Directories
-        TestPluginPlugin.mojo().getLog().info("Main Directories: " );
+        TestPluginPlugin.mojo().getLog().info("Output Directories: " );
         TestPluginPlugin.mojo().getLog().info("dtData: " + dtData);
         TestPluginPlugin.mojo().getLog().info("prioResults: " + prioResults);
         TestPluginPlugin.mojo().getLog().info("seleResults: " + seleResults);
@@ -430,7 +430,7 @@ public class Sample extends TestPlugin {
 
         // SECTION 2: Move Resultant Files To Result
         try {
-            FileUtils.moveDirectory(new File(dtSubjectSource + "/orig-time,txt"), new File(dtResults + "/orig-time.txt"));
+            FileUtils.moveDirectory(new File(dtSubjectSource + "/orig-time.txt"), new File(dtResults + "/orig-time.txt"));
         } catch (Exception e){
             e.printStackTrace();
         }
@@ -453,7 +453,7 @@ public class Sample extends TestPlugin {
                     String precomputeFlag = "-resolveDependences" + prioDTLists + "/prioritization-" + k + i + j + ".txt";
                     String postProcessFlat = "";
 
-                    
+
                 }
 
         }
