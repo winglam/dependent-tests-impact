@@ -5,6 +5,7 @@ import com.reedoei.testrunner.mavenplugin.TestPluginPlugin;
 import com.reedoei.testrunner.testobjects.TestLocator;
 import edu.washington.cs.dt.impact.Main.InstrumentationMain;
 import edu.washington.cs.dt.impact.runner.OneConfigurationRunner;
+import edu.washington.cs.dt.impact.runner.Runner;
 import edu.washington.cs.dt.impact.tools.detectors.FailingTestDetector;
 import edu.washington.cs.dt.main.ImpactMain;
 import edu.washington.cs.dt.tools.UnitTestFinder;
@@ -476,6 +477,7 @@ public class Sample extends TestPlugin {
                             "-classpath", classpath,
                             precomputeFlag,
                             postProcessFlag};
+                    Runner.nullOutputFileName();
                     TestPluginPlugin.mojo().getLog().info("OneConfigurationRunner Parameters\n\t" + StringUtils.join(args, "\n\t"));
                     OneConfigurationRunner.main(args);
                 }

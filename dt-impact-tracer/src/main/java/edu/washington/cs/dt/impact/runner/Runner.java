@@ -58,6 +58,10 @@ public abstract class Runner {
     protected static String classPath = System.getProperty("java.class.path");
     protected static boolean postProcessDTs = false;
 
+    public static void nullOutputFileName(){
+        outputFileName = null;
+    }
+
     protected static void parseArgs(String[] args) {
         argsList = new ArrayList<String>(Arrays.asList(args));
         if (argsList.contains("-help")) {
