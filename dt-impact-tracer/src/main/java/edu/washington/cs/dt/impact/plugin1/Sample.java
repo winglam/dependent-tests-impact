@@ -447,8 +447,10 @@ public class Sample extends TestPlugin {
 
     // Run Test Prioritization
     private void runTestPrioritization(MavenProject project, String classpath){
-        TestPluginPlugin.mojo().getLog().info("Generating Pre-computed Dependencies");
+        // env-files Direcory
+        new File(dtResults + "/env-files");
 
+        TestPluginPlugin.mojo().getLog().info("Generating Pre-computed Dependencies");
         for (String k : TESTTYPES){
             for (String i : COVERGAES)
                 for (String j : PRIOORDERS){
@@ -461,7 +463,7 @@ public class Sample extends TestPlugin {
                             "-order", j,
                             "-origOrder", dtResults + "/" + k + "-order.txt",
                             "-testInputDir", dtResults + "/sootTestOutput-" + k,
-                            "-filesToDelete", "",
+                            "-filesToDelete", dtResults + "/env-files",
                             "-getCoverage",
                             "-project", "",
                             "-testType", k,
