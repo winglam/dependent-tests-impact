@@ -448,7 +448,11 @@ public class Sample extends TestPlugin {
     // Run Test Prioritization
     private void runTestPrioritization(MavenProject project, String classpath){
         // env-files Direcory
-        new File(dtResults + "/env-files").mkdirs();
+        try {
+            new File(dtResults + "/env-files").createNewFile();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         TestPluginPlugin.mojo().getLog().info("Generating Pre-computed Dependencies");
         for (String k : TESTTYPES){
