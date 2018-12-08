@@ -459,7 +459,7 @@ public class Sample extends TestPlugin {
         for (String k : TESTTYPES) {
             for (String i : COVERGAES) {
                 for (String j : PRIOORDERS) {
-                    String precomputeFlag = "-resolveDependences " + prioDTLists + "/prioritization-" + "" + "-" + k + "-" + i + "-" + j + ".txt";
+                    String precomputeFlag = prioDTLists + "/prioritization-" + "" + "-" + k + "-" + i + "-" + j + ".txt";
                     String postProcessFlag = "";
 
                     args = new String[]{
@@ -475,7 +475,7 @@ public class Sample extends TestPlugin {
                             "-outputDir", prioResults,
                             "-timeToRun", Integer.toString(MEDIANTIMES),
                             "-classpath", classpath,
-                            precomputeFlag,
+                            "-resolveDependences", precomputeFlag,
                             postProcessFlag};
                     Runner.nullOutputFileName();
                     TestPluginPlugin.mojo().getLog().info("OneConfigurationRunner Parameters\n\t" + StringUtils.join(args, "\n\t"));
