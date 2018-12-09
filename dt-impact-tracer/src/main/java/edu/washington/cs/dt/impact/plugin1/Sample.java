@@ -6,6 +6,7 @@ import com.reedoei.testrunner.testobjects.TestLocator;
 import edu.washington.cs.dt.impact.Main.InstrumentationMain;
 import edu.washington.cs.dt.impact.runner.OneConfigurationRunner;
 import edu.washington.cs.dt.impact.runner.Runner;
+import edu.washington.cs.dt.impact.tools.OutputPrecomputedDependences;
 import edu.washington.cs.dt.impact.tools.detectors.FailingTestDetector;
 import edu.washington.cs.dt.main.ImpactMain;
 import edu.washington.cs.dt.tools.UnitTestFinder;
@@ -38,14 +39,6 @@ public class Sample extends TestPlugin {
 
     static final String[] PRIOORDERS = { "absolute", "relative" };
     static final String[] SELEORDERS = { "original", "absolute", "relative "};
-
-    static final String prioDir = "prioritization-results";
-    static final String seleDir = "selection-results";
-    static final String paraDir = "parallelization-results";
-
-    static final String prioList = "prioritization-dt-list";
-    static final String seleList = "selection-dt-list";
-    static final String paraList = "parallelization-dt-list";
 
     // Args (Re-Declared Upon Each Use)
     String[] args = {};
@@ -126,6 +119,7 @@ public class Sample extends TestPlugin {
         TestPluginPlugin.mojo().getLog().info("prioDTLists: " + prioDTLists);
         TestPluginPlugin.mojo().getLog().info("seleDTLists: " + seleDTLists);
         TestPluginPlugin.mojo().getLog().info("paraDTLists: " + paraDTLists);
+
 
 
         // Extraneous Directories (Not Used, But May Be Useful Later
@@ -446,7 +440,14 @@ public class Sample extends TestPlugin {
         runTestPrioritization(project, classpath);
         runTestParallelization(project, classpath);
 
-        
+        TestPluginPlugin.mojo().getLog().info("Generating dt-lists");
+        args = new String[]{
+                "-prioDirectory", prioResults,
+                "-paraDirectory", paraResults,
+                "-prioOutputDirectory", prioDTLists,
+                "-seleOutputDirectory", seleDTLists,
+                "-paraOutputDirectory", paraDTLists};
+        OutputPrecomputedDependences.main(args);
     }
 
     // Run Test Prioritization
