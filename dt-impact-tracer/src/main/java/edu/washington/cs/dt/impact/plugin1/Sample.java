@@ -22,6 +22,7 @@ import java.io.*;
 import java.net.URL;
 import java.net.URLClassLoader;
 import java.nio.file.FileSystems;
+import java.nio.file.Files;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
@@ -48,10 +49,10 @@ public class Sample extends TestPlugin {
     MavenCli cli = new MavenCli(classRealm.getWorld());
 
     // Main Directories
-    String dtSubjectSource, dtSubject, dtTools, dtResults, dtLibs, dtClass, dtTests;
+    String dtSubjectSource, dtSubject, dtTools, dtLibs, dtClass, dtTests;
 
     // Output Directories
-    String dtData, prioResults, seleResults, paraResults, prioDTLists, seleDTLists, paraDTLists;
+    String dtResults, dtData, prioResults, seleResults, paraResults, prioDTLists, seleDTLists, paraDTLists;
     String subprocessOutput;
 
     // Extraneous Directories (Not Used, But May Be Useful Later
@@ -73,10 +74,6 @@ public class Sample extends TestPlugin {
 
         dtSubject = dtSubjectSource.concat("/target");
         dtTools = buildClassPath(dtSubjectSource.concat("/lib/*"));
-        dtResults = dtSubjectSource.concat("/results");
-            FileUtils.deleteQuietly(new File(dtResults));
-            new File(dtResults).mkdirs();
-
         dtLibs = buildClassPath(dtSubject.concat("/dependency/*"));
         dtClass = dtSubject.concat("/classes");
         dtTests = dtSubject.concat("/test-classes");
@@ -86,7 +83,6 @@ public class Sample extends TestPlugin {
         TestPluginPlugin.mojo().getLog().info("dtSubjectSource: " + dtSubjectSource);
         TestPluginPlugin.mojo().getLog().info("dtSubject: " + dtSubject);
         TestPluginPlugin.mojo().getLog().info("dtTools: " + dtTools);
-        TestPluginPlugin.mojo().getLog().info("dtResults: " + dtResults);
         TestPluginPlugin.mojo().getLog().info("dtLibs: " + dtLibs);
         TestPluginPlugin.mojo().getLog().info("dtClass: " + dtClass);
         TestPluginPlugin.mojo().getLog().info("dtTests: " + dtTests);
@@ -94,6 +90,9 @@ public class Sample extends TestPlugin {
 
 
         // Output Directories
+        dtResults = dtSubjectSource.concat("/results");
+            FileUtils.deleteQuietly(new File(dtResults));
+            new File(dtResults).mkdirs();
         dtData = dtResults.concat("/data");
             new File(dtData).mkdirs();
         prioResults = dtResults.concat("/prioritization-results");
@@ -112,6 +111,7 @@ public class Sample extends TestPlugin {
 
         // Print Output Directories
         TestPluginPlugin.mojo().getLog().info("Output Directories: " );
+        TestPluginPlugin.mojo().getLog().info("dtResults: " + dtResults);
         TestPluginPlugin.mojo().getLog().info("dtData: " + dtData);
         TestPluginPlugin.mojo().getLog().info("prioResults: " + prioResults);
         TestPluginPlugin.mojo().getLog().info("seleResults: " + seleResults);
@@ -143,7 +143,7 @@ public class Sample extends TestPlugin {
         //export DT_TEST_SRC=$DT_ROOT/elastic-job-lite-old-6d6e460a10b535c149c0f670ec562be027b8808d/elastic-job-lite-core/src/test/java
     }
 
-    // Gather The Dependencies Of The Subject
+    // Compile & Gather The Dependencies Of The Subject
     private void gatherDependencies(){
         TestPluginPlugin.mojo().getLog().info("Gathering Dependencies Of The Subject");
 
@@ -165,7 +165,7 @@ public class Sample extends TestPlugin {
 
     // Setup A Subject For Test Prioritization
     private void setupTestPrioritization(MavenProject project){
-        // SECTION 1: Find Human Written Tests (old version, original tests)
+        TestPluginPlugin.mojo().getLog().info("Finding Human Written Tests (old version, original tests)");
         try {
             // Generates orig-order.txt
             final List<String> tests = JavaConverters.bufferAsJavaList(TestLocator.tests(project).toBuffer());
@@ -181,7 +181,7 @@ public class Sample extends TestPlugin {
 
 
 
-        // SECTION 2: Alienate Failing Tests
+        TestPluginPlugin.mojo().getLog().info("Locating Failed Tests");
         args = new String[]{
                 "--classpath", dtClass + ":" + dtTests + ":" + dtLibs,
                 "--tests", dtResults + "/orig-order.txt",
@@ -192,9 +192,22 @@ public class Sample extends TestPlugin {
 
 
 
-        // SECTION 3: Instrument Test & Source Files
+        TestPluginPlugin.mojo().getLog().info("Removing Failed Tests");
+        try {
+            List<String> origOrder = Files.readAllLines(new File(dtResults + "/orig-order.txt").toPath());
+            List<String> ignoreOrder = Files.readAllLines(new File(dtResults + "/orig-order.txt").toPath());
+            origOrder.remove("com.dangdang.ddframe.job.lite.integrate.std.dataflow.OneOffDataflowElasticJobTest.assertJobInit");
+            origOrder.removeAll(ignoreOrder);
+
+            Files.write(new File(dtResults + "/orig-order.txt").toPath(), origOrder);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+
         String JAVA_HOME = expandEnvVars("${JAVA_HOME}");
-        // Instrument Test Files
+        TestPluginPlugin.mojo().getLog().info("Test Prioritization: Instrumenting Test Files");
         subprocessOutput = null;
         try {
             // Runtime Exec
@@ -231,7 +244,9 @@ public class Sample extends TestPlugin {
             e.printStackTrace();
         }
 
-        // Instrument Source Files
+
+
+        TestPluginPlugin.mojo().getLog().info("Test Prioritization: Instrumenting Source Files");
         subprocessOutput = null;
         try {
             // Runtime Exec
@@ -269,12 +284,11 @@ public class Sample extends TestPlugin {
 
 
 
-        // SECTION 4: Copy Any Resource Files From dtClass & dtTests (e.g. Configuration Files - Exclude *.class Files)
-        // TODO
+        // TODO: Copy Any Resource Files From dtClass & dtTests (e.g. Configuration Files - Exclude *.class Files)
 
 
-        // SECTION 5: Run Instrumented Tests
-        TestPluginPlugin.mojo().getLog().info("Running Instrumented Tests");
+
+        TestPluginPlugin.mojo().getLog().info("Test Prioritization: Running Instrumented Tests");
 	    args = new String[]{
                 "-classpath", dtLibs + ":" + dtTools + ":" + dtSubjectSource + "/sootOutput/",
                 "-inputTests", dtResults + "/orig-order.txt"};
@@ -282,7 +296,7 @@ public class Sample extends TestPlugin {
 
 
 
-        // SECTION 6: Move Resultant Files To Result
+        TestPluginPlugin.mojo().getLog().info("Cleaning Up Files");
         try {
             FileUtils.moveDirectory(new File(dtSubjectSource + "/sootTestOutput"), new File(dtResults + "/sootTestOutput-orig"));
             FileUtils.deleteDirectory(new File(dtSubjectSource + "/sootOutput"));
@@ -293,9 +307,8 @@ public class Sample extends TestPlugin {
 
     // Setup A Subject For Test Selection
     private void setupTestSelection(MavenProject project){
-        // SECTION 1: Instrument Test & Source Files
         String JAVA_HOME = expandEnvVars("${JAVA_HOME}");
-        // Instrument Test Files
+        TestPluginPlugin.mojo().getLog().info("Test Selection: Instrumenting Test Files");
         subprocessOutput = null;
         try {
             // Runtime Exec
@@ -335,7 +348,9 @@ public class Sample extends TestPlugin {
             e.printStackTrace();
         }
 
-        // Instrument Source Files
+
+
+        TestPluginPlugin.mojo().getLog().info("Test Selection: Instrumenting Source Files");
         subprocessOutput = null;
         try {
             // Runtime Exec
@@ -376,13 +391,11 @@ public class Sample extends TestPlugin {
 
 
 
-        // SECTION 2: Copy Any Resource Files From dtClass & dtTests (e.g. Configuration Files - Exclude *.class Files)
-        // TODO
+        // TODO: Copy Any Resource Files From dtClass & dtTests (e.g. Configuration Files - Exclude *.class Files)
 
 
 
-        // SECTION 3: Run Instrumented Tests
-        TestPluginPlugin.mojo().getLog().info("Running Instrumented Tests");
+        TestPluginPlugin.mojo().getLog().info("Test Selection: Running Instrumented Tests");
         args = new String[]{
                 "-classpath", dtLibs + ":" + dtTools + ":" + dtSubjectSource + "/sootOutput/",
                 "-inputTests", dtResults + "/orig-order.txt"};
@@ -390,7 +403,7 @@ public class Sample extends TestPlugin {
 
 
 
-        // SECTION 4: Move Resultant Files To Result
+        TestPluginPlugin.mojo().getLog().info("Cleaning Up Files");
         try {
             FileUtils.moveDirectory(new File(dtSubjectSource + "/sootTestOutput"), new File(dtResults + "/sootTestOutput-orig-selection"));
             FileUtils.deleteDirectory(new File(dtSubjectSource + "/sootOutput"));
@@ -407,8 +420,7 @@ public class Sample extends TestPlugin {
 
     // Setup A Subject For Test Selection
     private void setupTestParallelization(MavenProject project){
-        // SECTION 1: Calculate Runtimes For Tests
-        TestPluginPlugin.mojo().getLog().info("Calculating Runtimes For Tests");
+        TestPluginPlugin.mojo().getLog().info("Test Parallelization: Calculating Runtimes For Tests");
         args = new String[]{
                 "-classpath", dtLibs + ":" + dtTools + ":" + dtClass + ":" + dtTests,
                 "-inputTests", dtResults + "/orig-order.txt",
@@ -425,7 +437,7 @@ public class Sample extends TestPlugin {
 
 
 
-        // SECTION 2: Move Resultant Files To Result
+        TestPluginPlugin.mojo().getLog().info("Cleaning Up Files");
         try {
             FileUtils.moveFile(new File(dtSubjectSource + "/orig-time.txt"), new File(dtResults + "/orig-time.txt"));
         } catch (Exception e){
@@ -459,7 +471,9 @@ public class Sample extends TestPlugin {
             e.printStackTrace();
         }
 
-        TestPluginPlugin.mojo().getLog().info("Generating Pre-computed Dependencies For Test Prioritization");
+
+
+        TestPluginPlugin.mojo().getLog().info("Test Prioritization: Generating Pre-computed Dependencies");
         for (String k : TESTTYPES) {
             for (String i : COVERGAES) {
                 for (String j : PRIOORDERS) {
@@ -488,6 +502,9 @@ public class Sample extends TestPlugin {
             }
         }
 
+
+
+        TestPluginPlugin.mojo().getLog().info("Cleaning Up Files");
         FileUtils.deleteQuietly(new File("tmpfile.txt"));
         FileUtils.deleteQuietly(new File("tmptestfiles.txt"));
     }
@@ -501,7 +518,9 @@ public class Sample extends TestPlugin {
             e.printStackTrace();
         }
 
-        TestPluginPlugin.mojo().getLog().info("Generating Pre-computed Dependencies For Test Parallelization");
+
+
+        TestPluginPlugin.mojo().getLog().info("Test Parallelization: Generating Pre-computed Dependencies");
         for (String j : TESTTYPES) {
             for (String k : MACHINES) {
                 String precomputeFlag;
@@ -554,6 +573,9 @@ public class Sample extends TestPlugin {
             }
         }
 
+
+
+        TestPluginPlugin.mojo().getLog().info("Cleaning Up Files");
         FileUtils.deleteQuietly(new File("tmpfile.txt"));
         FileUtils.deleteQuietly(new File("tmptestfiles.txt"));
     }
