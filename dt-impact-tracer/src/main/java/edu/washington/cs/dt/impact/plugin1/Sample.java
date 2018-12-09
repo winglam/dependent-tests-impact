@@ -445,6 +445,8 @@ public class Sample extends TestPlugin {
 
         runTestPrioritization(project, classpath);
         runTestParallelization(project, classpath);
+
+        
     }
 
     // Run Test Prioritization
@@ -456,7 +458,7 @@ public class Sample extends TestPlugin {
             e.printStackTrace();
         }
 
-        TestPluginPlugin.mojo().getLog().info("Generating Pre-computed Dependencies");
+        TestPluginPlugin.mojo().getLog().info("Generating Pre-computed Dependencies For Test Prioritization");
         for (String k : TESTTYPES) {
             for (String i : COVERGAES) {
                 for (String j : PRIOORDERS) {
@@ -498,12 +500,16 @@ public class Sample extends TestPlugin {
             e.printStackTrace();
         }
 
-        TestPluginPlugin.mojo().getLog().info("Generating Pre-computed Dependencies");
+        TestPluginPlugin.mojo().getLog().info("Generating Pre-computed Dependencies For Test Parallelization");
         for (String j : TESTTYPES) {
             for (String k : MACHINES) {
-                String precomputeFlag = prioDTLists + "/parallelization-" + "" + "-" + j + "-" + k + "-original.txt";
-                String postProcessFlag = "";
+                String precomputeFlag;
+                String postProcessFlag;
 
+                // Original Order
+                TestPluginPlugin.mojo().getLog().info("Original Order");
+                precomputeFlag =  prioDTLists + "/parallelization-" + "" + "-" + j + "-" + k + "-original.txt";
+                postProcessFlag = "";
                 args = new String[]{
                         "-technique", "parallelization",
                         "-order", "original",
@@ -514,7 +520,30 @@ public class Sample extends TestPlugin {
                         "-testType", j,
                         "-numOfMachines", k,
                         "-outputDir", paraResults,
-                        "-timeToRun", Integer.toString(MEDIANTIMES),
+                        "-timesToRun", Integer.toString(MEDIANTIMES),
+                        "-classpath", classpath,
+                        "-resolveDependences", precomputeFlag,
+                        postProcessFlag};
+                Runner.nullOutputFileName();
+                TestPluginPlugin.mojo().getLog().info("OneConfigurationRunner Parameters\n\t" + StringUtils.join(args, "\n\t"));
+                OneConfigurationRunner.main(args);
+
+                // Time Order
+                TestPluginPlugin.mojo().getLog().info("Time Order");
+                precomputeFlag =  prioDTLists + "/parallelization-" + "" + "-" + j + "-" + k + "-time.txt";
+                postProcessFlag = "";
+                args = new String[]{
+                        "-technique", "parallelization",
+                        "-order", "time",
+                        "-timeOrder", dtResults + "/" + j + "-time.txt",
+                        "-origOrder", dtResults + "/" + j + "-order.txt",
+                        "-testInputDir", dtResults + "/sootTestOutput-" + j,
+                        "-filesToDelete", dtResults + "/env-files",
+                        "-project", "",
+                        "-testType", j,
+                        "-numOfMachines", k,
+                        "-outputDir", paraResults,
+                        "-timesToRun", Integer.toString(MEDIANTIMES),
                         "-classpath", classpath,
                         "-resolveDependences", precomputeFlag,
                         postProcessFlag};
