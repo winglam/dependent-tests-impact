@@ -195,7 +195,7 @@ public class Sample extends TestPlugin {
         TestPluginPlugin.mojo().getLog().info("Removing Failed Tests");
         try {
             List<String> origOrder = Files.readAllLines(new File(dtResults + "/orig-order.txt").toPath());
-            List<String> ignoreOrder = Files.readAllLines(new File(dtResults + "/orig-order.txt").toPath());
+            List<String> ignoreOrder = Files.readAllLines(new File(dtResults + "/ignore-order.txt").toPath());
             origOrder.remove("com.dangdang.ddframe.job.lite.integrate.std.dataflow.OneOffDataflowElasticJobTest.assertJobInit");
             origOrder.removeAll(ignoreOrder);
 

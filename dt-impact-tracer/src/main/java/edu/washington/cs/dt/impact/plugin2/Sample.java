@@ -109,7 +109,7 @@ public class Sample extends TestPlugin {
         TestPluginPlugin.mojo().getLog().info("Removing Failed Tests");
         try {
             List<String> origOrder = Files.readAllLines(new File(newDTResults + "/orig-order.txt").toPath());
-            List<String> ignoreOrder = Files.readAllLines(new File(newDTResults + "/orig-order.txt").toPath());
+            List<String> ignoreOrder = Files.readAllLines(new File(newDTResults + "/ignore-order.txt").toPath());
             origOrder.removeAll(ignoreOrder);
 
             Files.write(new File(newDTResults + "/orig-order.txt").toPath(), origOrder);
