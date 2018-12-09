@@ -34,7 +34,7 @@ public class Sample extends TestPlugin {
 
     static final String[] TESTTYPES = { "orig" };
     static final String[] COVERGAES = { "statement", "function" };
-    static final int[] MACHINES = { 2, 4, 8, 16};
+    static final String[] MACHINES = { "2", "4", "8", "16"};
 
     static final String[] PRIOORDERS = { "absolute", "relative" };
     static final String[] SELEORDERS = { "original", "absolute", "relative "};
@@ -444,11 +444,12 @@ public class Sample extends TestPlugin {
         String classpath = dtLibs  + ":" + dtTools + ":" + dtTests + ":" + dtClass;
 
         runTestPrioritization(project, classpath);
+        runTestParallelization(project, classpath);
     }
 
     // Run Test Prioritization
     private void runTestPrioritization(MavenProject project, String classpath){
-        // env-files Direcory
+        // env-files Directory
         try {
             new File(dtResults + "/env-files").createNewFile();
         } catch (IOException e) {
@@ -483,6 +484,48 @@ public class Sample extends TestPlugin {
                 }
             }
         }
+
+        FileUtils.deleteQuietly(new File("tmpfile.txt"));
+        FileUtils.deleteQuietly(new File("tmptestfiles.txt"));
+    }
+
+    // Run Test Parallelization
+    private void runTestParallelization(MavenProject project, String classpath){
+        // env-files Directory
+        try {
+            new File(dtResults + "/env-files").createNewFile();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        TestPluginPlugin.mojo().getLog().info("Generating Pre-computed Dependencies");
+        for (String j : TESTTYPES) {
+            for (String k : MACHINES) {
+                String precomputeFlag = prioDTLists + "/parallelization-" + "" + "-" + j + "-" + k + "-original.txt";
+                String postProcessFlag = "";
+
+                args = new String[]{
+                        "-technique", "parallelization",
+                        "-order", "original",
+                        "-origOrder", dtResults + "/" + j + "-order.txt",
+                        "-testInputDir", dtResults + "/sootTestOutput-" + j,
+                        "-filesToDelete", dtResults + "/env-files",
+                        "-project", "",
+                        "-testType", j,
+                        "-numOfMachines", k,
+                        "-outputDir", paraResults,
+                        "-timeToRun", Integer.toString(MEDIANTIMES),
+                        "-classpath", classpath,
+                        "-resolveDependences", precomputeFlag,
+                        postProcessFlag};
+                Runner.nullOutputFileName();
+                TestPluginPlugin.mojo().getLog().info("OneConfigurationRunner Parameters\n\t" + StringUtils.join(args, "\n\t"));
+                OneConfigurationRunner.main(args);
+            }
+        }
+
+        FileUtils.deleteQuietly(new File("tmpfile.txt"));
+        FileUtils.deleteQuietly(new File("tmptestfiles.txt"));
     }
 
     /**
