@@ -82,8 +82,6 @@ public class FailingTestDetector extends StandardMain {
             if (beforeSize == afterSize) {
                 break;
             }
-
-
         }
 
         return notPassingTests;
