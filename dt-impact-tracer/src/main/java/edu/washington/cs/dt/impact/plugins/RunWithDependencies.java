@@ -47,9 +47,6 @@ public class RunWithDependencies {
     String newDTSubjectSource, newDTSubject, newDTTools, newDTLibs, newDTClass, newDTTests;
     String subprocessOutput;
 
-    // New Version Output Directories
-    String newDTResults, newDTData, newPrioResults, newSeleResults, newParaResults, newPrioDTLists, newSeleDTLists, newParaDTLists;
-
     public void execute(MavenProject project) {
         // Project Setup
         setupPaths(project);
@@ -95,26 +92,6 @@ public class RunWithDependencies {
         newDTLibs = buildClassPath(newDTSubject.concat("/dependency/*"));
         newDTClass = newDTSubject.concat("/classes");
         newDTTests = newDTSubject.concat("/test-classes");
-
-        // New Version Results
-        newDTResults = newDTSubjectSource.concat("/results");
-        FileUtils.deleteQuietly(new File(newDTResults));
-        new File(newDTResults).mkdirs();
-        newDTData = newDTResults.concat("/data");
-        new File(newDTData).mkdirs();
-        newPrioResults = newDTResults.concat("/prioritization-results");
-        new File(newPrioResults).mkdirs();
-        newSeleResults = newDTResults.concat("/selection-results");
-        new File(newSeleResults).mkdirs();
-        newParaResults = newDTResults.concat("/parallelization-results");
-        new File(newParaResults).mkdirs();
-
-        newPrioDTLists = newDTData.concat("/prioritization-dt-lists");
-        new File(newPrioDTLists).mkdirs();
-        newSeleDTLists = newDTData.concat("/selection-dt-lists");
-        new File(newSeleDTLists).mkdirs();
-        newParaDTLists = dtData.concat("/parallelization-dt-lists");
-        new File(newParaDTLists).mkdirs();
     }
 
     // Compile & Gather The Dependencies Of The Subject
@@ -141,19 +118,19 @@ public class RunWithDependencies {
     private void gatherTests(MavenProject project) {
         TestPluginPlugin.info("Moving Test Info From The Old Version To The New Version");
         try {
-            FileUtils.moveFile(new File(dtResults + "/orig-order.txt"), new File(newDTResults + "/orig-order.txt"));
-            FileUtils.moveFile(new File(dtResults + "/ignore-order.txt"), new File(newDTResults + "/ignore-order.txt"));
+            FileUtils.moveFile(new File(dtResults + "/orig-order.txt"), new File(newDTSubjectSource + "/orig-order.txt"));
+            FileUtils.moveFile(new File(dtResults + "/ignore-order.txt"), new File(newDTSubjectSource + "/ignore-order.txt"));
         } catch (IOException e) {
             e.printStackTrace();
         }
 
         TestPluginPlugin.info("Removing Failed Tests");
         try {
-            List<String> origOrder = Files.readAllLines(new File(newDTResults + "/orig-order.txt").toPath());
-            List<String> ignoreOrder = Files.readAllLines(new File(newDTResults + "/ignore-order.txt").toPath());
+            List<String> origOrder = Files.readAllLines(new File(newDTSubjectSource + "/orig-order.txt").toPath());
+            List<String> ignoreOrder = Files.readAllLines(new File(newDTSubjectSource + "/ignore-order.txt").toPath());
             origOrder.removeAll(ignoreOrder);
 
-            Files.write(new File(newDTResults + "/orig-order.txt").toPath(), origOrder);
+            Files.write(new File(newDTSubjectSource + "/orig-order.txt").toPath(), origOrder);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -161,26 +138,26 @@ public class RunWithDependencies {
         TestPluginPlugin.info("Removing Missing Tests");
         humanWrittenTests(project);
         try {
-            List<String> origOrder = Files.readAllLines(new File(newDTResults + "/orig-order.txt").toPath());
-            List<String> newOrigOrder = Files.readAllLines(new File(newDTResults + "/new-orig-order.txt").toPath());
+            List<String> origOrder = Files.readAllLines(new File(newDTSubjectSource + "/orig-order.txt").toPath());
+            List<String> newOrigOrder = Files.readAllLines(new File(newDTSubjectSource + "/new-orig-order.txt").toPath());
 
             List<String> missingTests = new ArrayList<>(origOrder);
             missingTests.removeAll(newOrigOrder);
             origOrder.removeAll(missingTests);
 
-            Files.write(new File(newDTResults + "/orig-order.txt").toPath(), origOrder);
-            FileUtils.deleteQuietly(new File(newDTResults + "/new-orig-order.txt"));
+            Files.write(new File(newDTSubjectSource + "/orig-order.txt").toPath(), origOrder);
+            FileUtils.deleteQuietly(new File(newDTSubjectSource + "/new-orig-order.txt"));
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
     private void humanWrittenTests(MavenProject project){
-        TestPluginPlugin.info("Finding Human Written Tests (old version, original tests)");
+        TestPluginPlugin.info("Finding Human Written Tests (new version, original tests)");
         try {
             // Generates orig-order.txt
             final List<String> tests = JavaConverters.bufferAsJavaList(TestLocator.tests(project).toBuffer());
-            FileWriter writer = new FileWriter(new File(newDTResults + "/new-orig-order.txt"));
+            FileWriter writer = new FileWriter(new File(newDTSubjectSource + "/new-orig-order.txt"));
             for(String str: tests) {
                 writer.write(str);
                 writer.write(System.getProperty("line.separator"));
@@ -249,7 +226,7 @@ public class RunWithDependencies {
     private void runTestPrioritization(String classpath){
         // Create env-files File
         try {
-            new File(newDTResults + "/env-files").createNewFile();
+            new File(newDTSubjectSource + "/env-files").createNewFile();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -264,12 +241,12 @@ public class RunWithDependencies {
                     "-technique", "prioritization",
                     "-coverage", "statement",
                     "-order", "original",
-                    "-origOrder", newDTResults + "/" + k + "-order.txt",
+                    "-origOrder", newDTSubjectSource + "/" + k + "-order.txt",
                     "-testInputDir", dtResults + "/sootTestOutput-" + k,
-                    "-filesToDelete", newDTResults + "/env-files",
+                    "-filesToDelete", newDTSubjectSource + "/env-files",
                     "-project", "",
                     "-testType", k,
-                    "-outputDir", newPrioResults,
+                    "-outputDir", prioResults,
                     "-timeToRun", Integer.toString(MEDIANTIMES),
                     "-classpath", classpath,
                     "-getCoverage",
@@ -285,13 +262,13 @@ public class RunWithDependencies {
                             "-technique", "prioritization",
                             "-coverage", i,
                             "-order", j,
-                            "-origOrder", newDTResults + "/" + k + "-order.txt",
+                            "-origOrder", newDTSubjectSource + "/" + k + "-order.txt",
                             "-testInputDir", dtResults + "/sootTestOutput-" + k,
-                            "-filesToDelete", newDTResults + "/env-files",
+                            "-filesToDelete", newDTSubjectSource + "/env-files",
                             "-getCoverage",
                             "-project", "",
                             "-testType", k,
-                            "-outputDir", newPrioResults,
+                            "-outputDir", prioResults,
                             "-timeToRun", Integer.toString(MEDIANTIMES),
                             "-classpath", classpath,
                             postProcessFlag};
@@ -304,16 +281,16 @@ public class RunWithDependencies {
                             "-technique", "prioritization",
                             "-coverage", i,
                             "-order", j,
-                            "-origOrder", newDTResults + "/" + k + "-order.txt",
+                            "-origOrder", newDTSubjectSource + "/" + k + "-order.txt",
                             "-testInputDir", dtResults + "/sootTestOutput-" + k,
-                            "-filesToDelete", newDTResults + "/env-files",
+                            "-filesToDelete", newDTSubjectSource + "/env-files",
                             "-getCoverage",
                             "-project", "",
                             "-testType", k,
-                            "-outputDir", newPrioResults,
+                            "-outputDir", prioResults,
                             "-timeToRun", Integer.toString(MEDIANTIMES),
                             "-classpath", classpath,
-                            "-dependentTestFile", newPrioDTLists + "/prioritization-" + "" + "-" + k + "-" + i + "-" + j + ".txt",
+                            "-dependentTestFile", prioDTLists + "/prioritization-" + "" + "-" + k + "-" + i + "-" + j + ".txt",
                             postProcessFlag};
                     Runner.nullOutputFileName();
                     TestPluginPlugin.info("OneConfigurationRunner Parameters\n\t" + StringUtils.join(args, "\n\t"));
@@ -327,7 +304,7 @@ public class RunWithDependencies {
     private void runTestSelection(String classpath){
         // Create env-files File
         try {
-            new File(newDTResults + "/env-files").createNewFile();
+            new File(newDTSubjectSource + "/env-files").createNewFile();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -342,12 +319,12 @@ public class RunWithDependencies {
                     "-technique", "prioritization",
                     "-coverage", "statement",
                     "-order", "original",
-                    "-origOrder", newDTResults + "/" + k + "-order.txt",
+                    "-origOrder", newDTSubjectSource + "/" + k + "-order.txt",
                     "-testInputDir", dtResults + "/sootTestOutput-" + k + "-selection",
-                    "-filesToDelete", newDTResults + "/env-files",
+                    "-filesToDelete", newDTSubjectSource + "/env-files",
                     "-project", "",
                     "-testType", k,
-                    "-outputDir", newSeleResults,
+                    "-outputDir", seleResults,
                     "-timeToRun", Integer.toString(MEDIANTIMES),
                     "-classpath", classpath,
                     "-getCoverage",
@@ -363,15 +340,15 @@ public class RunWithDependencies {
                             "-technique", "selection",
                             "-coverage", i,
                             "-order", j,
-                            "-origOrder", newDTResults + "/" + k + "-order.txt",
+                            "-origOrder", newDTSubjectSource + "/" + k + "-order.txt",
                             "-testInputDir", dtResults + "/sootTestOutput-" + k + "-selection",
-                            "-filesToDelete", newDTResults + "/env-files",
+                            "-filesToDelete", newDTSubjectSource + "/env-files",
                             "-project", "",
                             "-testType", k,
                             "-oldVersCFG", dtResults + "/selectionOutput",
-                            "-newVersCFG", newDTResults + "/selectionOutput",
+                            "-newVersCFG", newDTSubjectSource + "/selectionOutput",
                             "-getCoverage",
-                            "-outputDir", newSeleResults,
+                            "-outputDir", seleResults,
                             "-timeToRun", Integer.toString(MEDIANTIMES),
                             "-classpath", classpath,
                             postProcessFlag};
@@ -384,18 +361,18 @@ public class RunWithDependencies {
                             "-technique", "selection",
                             "-coverage", i,
                             "-order", j,
-                            "-origOrder", newDTResults + "/" + k + "-order.txt",
+                            "-origOrder", newDTSubjectSource + "/" + k + "-order.txt",
                             "-testInputDir", dtResults + "/sootTestOutput-" + k + "-selection",
-                            "-filesToDelete", newDTResults + "/env-files",
+                            "-filesToDelete", newDTSubjectSource + "/env-files",
                             "-project", "",
                             "-testType", k,
                             "-oldVersCFG", dtResults + "/selectionOutput",
-                            "-newVersCFG", newDTResults + "/selectionOutput",
+                            "-newVersCFG", newDTSubjectSource + "/selectionOutput",
                             "-getCoverage",
-                            "-outputDir", newSeleResults,
+                            "-outputDir", seleResults,
                             "-timeToRun", Integer.toString(MEDIANTIMES),
                             "-classpath", classpath,
-                            "-dependentTestFile", newSeleDTLists + "/selection-" + "" + "-" + k + "-" + i + "-" + j + ".txt",
+                            "-dependentTestFile", seleDTLists + "/selection-" + "" + "-" + k + "-" + i + "-" + j + ".txt",
                             postProcessFlag};
                     Runner.nullOutputFileName();
                     TestPluginPlugin.info("OneConfigurationRunner Parameters\n\t" + StringUtils.join(args, "\n\t"));
@@ -409,7 +386,7 @@ public class RunWithDependencies {
     private void runTestParallelization(String classpath){
         // Create env-files File
         try {
-            new File(newDTResults + "/env-files").createNewFile();
+            new File(newDTSubjectSource + "/env-files").createNewFile();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -424,12 +401,12 @@ public class RunWithDependencies {
                     "-technique", "prioritization",
                     "-coverage", "statement",
                     "-order", "original",
-                    "-origOrder", newDTResults + "/" + j + "-order.txt",
+                    "-origOrder", newDTSubjectSource + "/" + j + "-order.txt",
                     "-testInputDir", dtResults + "/sootTestOutput-" + j,
-                    "-filesToDelete", newDTResults + "/env-files",
+                    "-filesToDelete", newDTSubjectSource + "/env-files",
                     "-project", "",
                     "-testType", j,
-                    "-outputDir", newParaResults,
+                    "-outputDir", paraResults,
                     "-timeToRun", Integer.toString(MEDIANTIMES),
                     "-classpath", classpath,
                     "-getCoverage",
@@ -451,13 +428,13 @@ public class RunWithDependencies {
                             "-technique", "parallelization",
                             "-order", order,
                             "-timeOrder", timeFlag,
-                            "-origOrder", newDTResults + "/" + j + "-order.txt",
+                            "-origOrder", newDTSubjectSource + "/" + j + "-order.txt",
                             "-testInputDir", dtResults + "/sootTestOutput-" + j,
-                            "-filesToDelete", newDTResults + "/env-files",
+                            "-filesToDelete", newDTSubjectSource + "/env-files",
                             "-project", "",
                             "-testType", j,
                             "-numOfMachines", k,
-                            "-outputDir", newParaResults,
+                            "-outputDir", paraResults,
                             "-timeToRun", Integer.toString(MEDIANTIMES),
                             "-classpath", classpath,
                             postProcessFlag};
@@ -470,16 +447,16 @@ public class RunWithDependencies {
                             "-technique", "parallelization",
                             "-order", order,
                             "-timeOrder", timeFlag,
-                            "-origOrder", newDTResults + "/" + j + "-order.txt",
+                            "-origOrder", newDTSubjectSource + "/" + j + "-order.txt",
                             "-testInputDir", dtResults + "/sootTestOutput-" + j,
-                            "-filesToDelete", newDTResults + "/env-files",
+                            "-filesToDelete", newDTSubjectSource + "/env-files",
                             "-project", "",
                             "-testType", j,
                             "-numOfMachines", k,
-                            "-outputDir", newParaResults,
+                            "-outputDir", paraResults,
                             "-timeToRun", Integer.toString(MEDIANTIMES),
                             "-classpath", classpath,
-                            "-dependentTestFile", newParaDTLists + "/parallelization-" + "" + "-" + j + "-" + k + "-" + order + ".txt",
+                            "-dependentTestFile", paraDTLists + "/parallelization-" + "" + "-" + j + "-" + k + "-" + order + ".txt",
                             postProcessFlag};
                     Runner.nullOutputFileName();
                     TestPluginPlugin.info("OneConfigurationRunner Parameters\n\t" + StringUtils.join(args, "\n\t"));
