@@ -74,8 +74,8 @@ public class RunWithDependencies {
         dtTests = dtSubject.concat("/test-classes");
 
         // Old Version Data
-        dtData = dtResults.concat("/data");
         dtResults = dtSubjectSource.concat("/results");
+        dtData = dtResults.concat("/data");
         prioResults = dtResults.concat("/prioritization-results");
         seleResults = dtResults.concat("/selection-results");
         paraResults = dtResults.concat("/parallelization-results");
