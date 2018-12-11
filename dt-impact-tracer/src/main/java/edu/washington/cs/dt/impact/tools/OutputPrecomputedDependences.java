@@ -13,6 +13,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import com.google.common.collect.Streams;
 
 import edu.washington.cs.dt.impact.data.Project;
 import edu.washington.cs.dt.impact.figure.generator.FigureGenerator;

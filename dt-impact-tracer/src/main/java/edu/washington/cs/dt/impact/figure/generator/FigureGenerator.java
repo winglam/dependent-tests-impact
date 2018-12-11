@@ -1,10 +1,6 @@
 package edu.washington.cs.dt.impact.figure.generator;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
@@ -20,11 +16,6 @@ import java.util.Scanner;
 import java.util.stream.Collectors;
 
 import com.reedoei.eunomia.collections.ListUtil;
-import com.reedoei.eunomia.collections.StreamUtil;
-import com.reedoei.eunomia.string.matching.LineMatch;
-import com.reedoei.eunomia.string.searching.Searcher;
-import com.reedoei.eunomia.string.searching.StringSearch;
-import com.reedoei.eunomia.util.SystemUtil;
 import edu.washington.cs.dt.RESULT;
 import edu.washington.cs.dt.impact.data.TestInfo;
 import edu.washington.cs.dt.impact.data.Project;
@@ -598,13 +589,27 @@ public abstract class FigureGenerator {
     }
 
     private static List<String> parseLists(File file, String searchString) {
+        // StringSearch
         try {
-            return StreamUtil.removeEmpty(
-                    new StringSearch(file.toPath())
-                    .search(Searcher.contains(searchString))
-                    .map(LineMatch::nextLine))
-                    .flatMap(l -> ListUtil.read(l.get()).stream())
-                    .collect(Collectors.toList());
+            List<String> output = new ArrayList<>();
+
+            BufferedReader br = new BufferedReader(new FileReader(file));
+            String line;
+            boolean searchStringFound = false;
+
+            // Append The Line After SearchString Into Output
+            while ((line = br.readLine()) != null) {
+                if (searchStringFound){
+                    output.addAll(ListUtil.read(line));
+                    searchStringFound = false;
+                }
+
+                if (line.contains(searchString)){
+                    searchStringFound = true;
+                }
+            }
+
+            return output;
         } catch (IOException e) {
             e.printStackTrace();
         }
