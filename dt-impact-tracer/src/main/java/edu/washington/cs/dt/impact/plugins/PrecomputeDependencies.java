@@ -16,6 +16,7 @@ import scala.collection.JavaConverters;
 
 import java.io.*;
 import java.nio.file.Files;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
@@ -27,7 +28,7 @@ public class PrecomputeDependencies {
 
     static final String[] TESTTYPES = { "orig" };
     static final String[] COVERGAES = { "statement", "function" };
-    static final String[] MACHINES = { "2", "4", "8", "16"};
+    static String[] MACHINES = { "2", "4", "8", "16" };
 
     static final String[] PRIOORDERS = { "absolute", "relative" };
     static final String[] SELEORDERS = { "original", "absolute", "relative "};
@@ -83,6 +84,7 @@ public class PrecomputeDependencies {
         new File(dtSubject).mkdirs();
         dtTools = buildClassPath(dtSubjectSource.concat("/lib/*"));
         dtLibs = buildClassPath(dtSubject.concat("/dependency/*"));
+        new File(dtLibs).mkdirs();
         dtClass = dtSubject.concat("/classes");
         dtTests = dtSubject.concat("/test-classes");
 
@@ -198,6 +200,24 @@ public class PrecomputeDependencies {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+        // Adjust MACHINES (Less Tests Than Number Of Cores)
+        int numInvalidEntries = 0;
+        for (String num : MACHINES){
+            try {
+                if ((int)Files.lines(new File(dtResults + "/orig-order.txt").toPath()).count() < Integer.parseInt(num)){
+                    numInvalidEntries++;
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+        String[] temp = new String[MACHINES.length - numInvalidEntries];
+        for (int i = 0; i < temp.length; i++){
+            temp[i] = MACHINES[i];
+        }
+        MACHINES = temp;
     }
 
     // Setup A Subject For Test Prioritization
