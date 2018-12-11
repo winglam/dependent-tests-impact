@@ -80,6 +80,7 @@ public class PrecomputeDependencies {
         dtSubjectSource = System.getProperty("user.dir");
 
         dtSubject = dtSubjectSource.concat("/target");
+        new File(dtSubject).mkdirs();
         dtTools = buildClassPath(dtSubjectSource.concat("/lib/*"));
         dtLibs = buildClassPath(dtSubject.concat("/dependency/*"));
         dtClass = dtSubject.concat("/classes");

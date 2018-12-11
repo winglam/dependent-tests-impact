@@ -36,22 +36,6 @@
 
     <build>
         <plugins>
-			<plugin>
-                <groupId>com.reedoei</groupId>
-                <artifactId>testrunner-maven-plugin</artifactId>
-                <version>0.1-SNAPSHOT</version>
-                <configuration>
-                    <className>edu.washington.cs.dt.impact.plugins.PrecomputeDependencies</className>
-                </configuration>
-                <dependencies>
-                    <dependency>
-                        <groupId>edu.washington.cs.dt</groupId>
-                        <artifactId>dt-impact-tracer</artifactId>
-                        <version>1.0.5.3</version>
-                    </dependency>
-                </dependencies>
-            </plugin>
-			
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
