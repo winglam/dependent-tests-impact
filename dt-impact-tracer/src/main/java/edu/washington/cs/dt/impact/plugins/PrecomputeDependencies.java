@@ -81,10 +81,9 @@ public class PrecomputeDependencies {
         dtSubjectSource = System.getProperty("user.dir");
 
         dtSubject = dtSubjectSource.concat("/target");
-        new File(dtSubject).mkdirs();
+            new File(dtSubject).mkdirs();
         dtTools = buildClassPath(dtSubjectSource.concat("/lib/*"));
         dtLibs = buildClassPath(dtSubject.concat("/dependency/*"));
-        new File(dtLibs).mkdirs();
         dtClass = dtSubject.concat("/classes");
         dtTests = dtSubject.concat("/test-classes");
 
@@ -600,6 +599,7 @@ public class PrecomputeDependencies {
             if (path.endsWith("*")) {
                 path = path.substring(0, path.length() - 1);
                 File pathFile = new File(path);
+                pathFile.mkdirs();
                 System.out.println(path);
                 for (File file : Objects.requireNonNull(pathFile.listFiles())) {
                     if (file.isFile() && file.getName().endsWith(".jar")) {
