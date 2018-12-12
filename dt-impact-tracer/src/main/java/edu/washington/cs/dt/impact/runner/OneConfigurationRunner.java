@@ -179,7 +179,15 @@ public class OneConfigurationRunner extends Runner {
                 List<String> coverageEachTest = getCurrentCoverage(testObj, i);
                 testList.setCoverage(coverageEachTest);
                 List<Double> cumulCoverage = getCumulList(coverageEachTest);
-                testList.setAPFD(getAPFD(totalTimeToCumulTime.get(testList.getNewOrderTime()), cumulCoverage));
+
+                try {
+                    testList.setAPFD(getAPFD(totalTimeToCumulTime.get(testList.getNewOrderTime()), cumulCoverage));
+                } catch (IllegalArgumentException e) {
+                    // This will occur when there are too few tests selected.
+                    // Currently, the APFD is not used, so this is not important. If it is, this should be
+                    // handled (TODO) properly in the results methods.
+                    testList.setAPFD(-1.0);
+                }
             }
             listTestList.add(testList);
         }

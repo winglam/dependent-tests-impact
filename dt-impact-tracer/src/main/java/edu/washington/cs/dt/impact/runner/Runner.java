@@ -578,6 +578,7 @@ public abstract class Runner {
             String dirPath = outputDir.getCanonicalPath() + System.getProperty("file.separator"); // / or \
             String filePathName = dirPath + outputFileName;
             File outputFile = new File(filePathName);
+            System.out.println("Writing results to " + filePathName);
 
             // Loop until outputFile is one that does not exist already
             int k = 1;
