@@ -58,6 +58,12 @@ public class RunWithDependencies {
 
         // Run With Dependencies
         String classpath = newDTLibs  + ":" + newDTTools + ":" + newDTTests + ":" + newDTClass;
+        try {
+            // TODO: -dependentTestFile is static, so it doesn't get reset between runs -> dependent tests alway re-ordered even without dependent test file
+            new File(newDTSubjectSource + "/emptyDependentTestFile.txt").createNewFile();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         runTestPrioritization(classpath);
         runTestSelection(classpath);
         runTestParallelization(classpath);
@@ -234,6 +240,7 @@ public class RunWithDependencies {
 
             for (String i : COVERGAES) {
                 for (String j : PRIOORDERS) {
+                    // TODO: -dependentTestFile is static, so it doesn't get reset between runs -> dependent tests always re-ordered even without dependent test file
                     TestPluginPlugin.info("Running Prioritization Without Dependent Test File");
                     args = new String[]{
                             "-technique", "prioritization",
@@ -248,6 +255,7 @@ public class RunWithDependencies {
                             "-outputDir", prioResults,
                             "-timeToRun", Integer.toString(MEDIANTIMES),
                             "-classpath", classpath,
+                            "-dependentTestFile", newDTSubjectSource + "/emptyDependentTestFile.txt",
                             postProcessFlag};
                     Runner.nullOutputFileName();
                     TestPluginPlugin.info("OneConfigurationRunner Parameters\n\t" + StringUtils.join(args, "\n\t"));
@@ -312,6 +320,7 @@ public class RunWithDependencies {
 
             for (String i : COVERGAES) {
                 for (String j : SELEORDERS) {
+                    // TODO: -dependentTestFile is static, so it doesn't get reset between runs -> dependent tests always re-ordered even without dependent test file
                     TestPluginPlugin.info("Running Selection Without Dependent Test File");
                     args = new String[]{
                             "-technique", "selection",
@@ -328,6 +337,7 @@ public class RunWithDependencies {
                             "-outputDir", seleResults,
                             "-timeToRun", Integer.toString(MEDIANTIMES),
                             "-classpath", classpath,
+                            "-dependentTestFile", newDTSubjectSource + "/emptyDependentTestFile.txt",
                             postProcessFlag};
                     Runner.nullOutputFileName();
                     TestPluginPlugin.info("OneConfigurationRunner Parameters\n\t" + StringUtils.join(args, "\n\t"));
@@ -400,6 +410,7 @@ public class RunWithDependencies {
                         timeFlag = dtResults + "/" + j + "-time.txt";
                     }
 
+                    // TODO: -dependentTestFile is static, so it doesn't get reset between runs -> dependent tests always re-ordered even without dependent test file
                     TestPluginPlugin.info("Running Parallelization Without Dependent Test File");
                     args = new String[]{
                             "-technique", "parallelization",
@@ -414,6 +425,7 @@ public class RunWithDependencies {
                             "-outputDir", paraResults,
                             "-timeToRun", Integer.toString(MEDIANTIMES),
                             "-classpath", classpath,
+                            "-dependentTestFile", newDTSubjectSource + "/emptyDependentTestFile.txt",
                             postProcessFlag};
                     Runner.nullOutputFileName();
                     TestPluginPlugin.info("OneConfigurationRunner Parameters\n\t" + StringUtils.join(args, "\n\t"));
