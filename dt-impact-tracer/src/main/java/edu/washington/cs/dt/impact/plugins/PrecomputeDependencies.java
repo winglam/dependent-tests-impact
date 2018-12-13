@@ -407,8 +407,8 @@ public class PrecomputeDependencies {
 
         // Cleanup Files
         TestPluginPlugin.info("Cleaning Up Files");
-        FileUtils.deleteQuietly(new File("tmpfile.txt"));
-        FileUtils.deleteQuietly(new File("tmptestfiles.txt"));
+        FileUtils.deleteQuietly(new File(dtSubjectSource + "/tmpfile.txt"));
+        FileUtils.deleteQuietly(new File(dtSubjectSource + "/tmptestfiles.txt"));
     }
 
     // Run Test Parallelization

@@ -295,8 +295,8 @@ public class RunWithDependencies {
 
         // Cleanup Files
         TestPluginPlugin.info("Cleaning Up Files");
-        FileUtils.deleteQuietly(new File("tmpfile.txt"));
-        FileUtils.deleteQuietly(new File("tmptestfiles.txt"));
+        FileUtils.deleteQuietly(new File(newDTSubjectSource + "/tmpfile.txt"));
+        FileUtils.deleteQuietly(new File(newDTSubjectSource + "/tmptestfiles.txt"));
     }
 
     // Run Test Selection With Dependencies
