@@ -61,10 +61,16 @@ public class PrecomputeDependencies {
         setupTestParallelization();
 
         // Precompute Dependencies
+        try {
+            new File(dtResults + "/env-files").createNewFile();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         String classpath = dtLibs  + ":" + dtTools + ":" + dtTests + ":" + dtClass;
         runTestPrioritization(classpath);
         runTestParallelization(classpath);
 
+        // Extracts dt-lists & Outputs Files To Necessary Locations
         TestPluginPlugin.info("Generating dt-lists");
         args = new String[]{
                 "-prioDirectory", prioResults,
@@ -369,13 +375,6 @@ public class PrecomputeDependencies {
 
     // Run Test Prioritization
     private void runTestPrioritization(String classpath){
-        // Create env-files File
-        try {
-            new File(dtResults + "/env-files").createNewFile();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
         // Generate Precomputed Dependences
         TestPluginPlugin.info("Test Prioritization: Generating Precomputed Dependencies");
         for (String k : TESTTYPES) {
@@ -414,13 +413,6 @@ public class PrecomputeDependencies {
 
     // Run Test Parallelization
     private void runTestParallelization(String classpath){
-        // Create env-files File
-        try {
-            new File(dtResults + "/env-files").createNewFile();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
         // Run Precomputed Dependencies
         TestPluginPlugin.info("Test Parallelization: Generating Precomputed Dependencies");
         for (String j : TESTTYPES) {

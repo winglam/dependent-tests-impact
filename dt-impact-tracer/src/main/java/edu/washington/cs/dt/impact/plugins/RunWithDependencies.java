@@ -57,13 +57,15 @@ public class RunWithDependencies {
         setupTestSelection();
 
         // Run With Dependencies
-        String classpath = newDTLibs  + ":" + newDTTools + ":" + newDTTests + ":" + newDTClass;
         try {
+            new File(newDTSubjectSource + "/env-files").createNewFile();
+
             // TODO: -dependentTestFile is static, so it doesn't get reset between runs -> dependent tests alway re-ordered even without dependent test file
             new File(newDTSubjectSource + "/emptyDependentTestFile.txt").createNewFile();
         } catch (IOException e) {
             e.printStackTrace();
         }
+        String classpath = newDTLibs  + ":" + newDTTools + ":" + newDTTests + ":" + newDTClass;
         runTestPrioritization(classpath);
         runTestSelection(classpath);
         runTestParallelization(classpath);
@@ -207,13 +209,6 @@ public class RunWithDependencies {
 
     // Run Test Prioritization With Dependencies
     private void runTestPrioritization(String classpath){
-        // Create env-files File
-        try {
-            new File(newDTSubjectSource + "/env-files").createNewFile();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
         // Run Technique With Dependencies
         TestPluginPlugin.info("Test Prioritization: Running With Dependencies");
         for (String k : TESTTYPES) {
@@ -287,13 +282,6 @@ public class RunWithDependencies {
 
     // Run Test Selection With Dependencies
     private void runTestSelection(String classpath){
-        // Create env-files File
-        try {
-            new File(newDTSubjectSource + "/env-files").createNewFile();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
         // Run Technique With Dependencies
         TestPluginPlugin.info("Test Selection: Running With Dependencies");
         for (String k : TESTTYPES) {
@@ -371,13 +359,6 @@ public class RunWithDependencies {
 
     // Run Test Parallelization With Dependencies
     private void runTestParallelization(String classpath){
-        // Create env-files File
-        try {
-            new File(newDTSubjectSource + "/env-files").createNewFile();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
         // Run Technique With Dependencies
         TestPluginPlugin.info("Test Parallelization: Running With Dependencies");
         for (String j : TESTTYPES) {
