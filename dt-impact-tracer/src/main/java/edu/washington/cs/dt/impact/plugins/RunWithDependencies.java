@@ -157,7 +157,7 @@ public class RunWithDependencies {
         }
 
         // Adjust MACHINES (Less Tests Than Number Of Cores)
-        MACHINES = Helper.adjustMachineCount(MACHINES, newDTSubjectSource + "/orig-order.txt");
+        MACHINES = Helper.adjustMachineCount(MACHINES, newDTResults + "/orig-order.txt");
     }
 
     private void humanWrittenTests(MavenProject project){
@@ -215,7 +215,7 @@ public class RunWithDependencies {
         // Clean Up Files
         try {
             FileUtils.moveDirectory(new File(newDTSubjectSource + "/sootOutput"), new File(newDTResults + "/sootOutput"));
-            FileUtils.moveDirectory(new File(dtSubjectSource + "/selectionOutput"), new File(dtResults + "/selectionOutput"));
+            FileUtils.moveDirectory(new File(newDTSubjectSource + "/selectionOutput"), new File(dtResults + "/selectionOutput"));
         } catch (Exception e) {
             e.printStackTrace();
         }
