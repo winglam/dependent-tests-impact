@@ -12,6 +12,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
+import edu.washington.cs.dt.impact.data.TestFunctionStatement;
 import edu.washington.cs.dt.impact.order.Relative;
 import edu.washington.cs.dt.impact.order.Standard;
 import edu.washington.cs.dt.impact.util.Constants.COVERAGE;
@@ -33,6 +34,9 @@ public class Prioritization extends Test {
             File dependentTestsFile, boolean getCoverage, File origOrder, boolean mergeDTsCoverage) {
         this(order, outputFilename, inputTestFolder, coverage, dependentTestsFile, getCoverage, origOrder,
                 new Random().nextInt(), mergeDTsCoverage);
+        for (TestFunctionStatement testFunctionStatement : methodList) {
+            System.out.println(testFunctionStatement.getName() + "\t" + testFunctionStatement.getLineCount());
+        }
     }
 
     public Prioritization(ORDER order, String outputFilename, File inputTestFolder, COVERAGE coverage,
