@@ -43,10 +43,13 @@ public class Standard {
     public void applyDeps() {
         List<TestFunctionStatement> orderedListOfTests = new LinkedList<TestFunctionStatement>();
         Set<String> alreadyAddedTests = new HashSet<String>();
+        System.out.println(methodList);
         for (TestFunctionStatement test : methodList) {
+            System.out.println(test.getName() + ": " + test.getDependentTests(true) + " " + test.getDependentTests(false));
             applyDepsHelper(orderedListOfTests, test, alreadyAddedTests);
         }
         methodList = orderedListOfTests;
+        System.out.println(methodList);
     }
 
     // If newTest is not in orderedListOfTests, adds newTest as the last
