@@ -10,6 +10,9 @@
 package edu.washington.cs.dt.impact.tools;
 
 import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -24,6 +27,8 @@ public class OutputPrecomputedDependences extends FigureGenerator {
 	private static String priorOutputDirectoryName = null;
 	private static String seleOutputDirectoryName = null;
 	private static String paraOutputDirectoryName = null;
+
+	private int maxMachines = 0;
 
 	public static void main(String[] args) {
 		List<String> argsList = new ArrayList<String>(Arrays.asList(args));
@@ -56,9 +61,10 @@ public class OutputPrecomputedDependences extends FigureGenerator {
 		int numMachines = Integer.parseInt(numMachines_string);
 
 		outputDependences(techniqueName, numMachines, null, paraOutputDirectoryName);
-		if (numMachines == 16 && orderName.equals("original")) {
+		if (numMachines > maxMachines && orderName.equals("original")) {
 			outputDependences("selection", numMachines, "function", seleOutputDirectoryName);
 			outputDependences("selection", numMachines, "statement", seleOutputDirectoryName);
+			maxMachines = numMachines;
 		}
 	}
 
@@ -99,7 +105,7 @@ public class OutputPrecomputedDependences extends FigureGenerator {
             fileContents.append("\n");
         }
 
-        writeToLatexFile(fileContents.toString(), outputDirStr + File.separator + fileName.toString(), false);
+		writeToLatexFile(fileContents.toString(), outputDirStr + File.separator + fileName.toString(), false);
 	}
 
 	@Override
