@@ -91,6 +91,7 @@ public class FailingTestDetector extends StandardMain {
                 break;
             }
         }
+        System.out.println();
 
         return notPassingTests;
     }

@@ -71,8 +71,6 @@ public class AutoCleanerMain extends StandardMain {
 
             System.out.println("Compiling " + (errorCount == 0 ? "succeeded" : "failed")
                                        + " with " + errorCount + " errors.");
-
-            System.out.println(diagnostics.getDiagnostics());
             errorCount = 0;
         }
 
@@ -133,11 +131,13 @@ public class AutoCleanerMain extends StandardMain {
         JavaFile victimJavaFile = getJavaFile(victimTestName, testFiles, true, testBinaryPath);
 
         // Check if we pass in isolation before fix
+        System.out.println("[INFO] Found and compiling victim test.");
         compile(victimJavaFile);
+        System.out.println("[INFO] Running victim test in isolation without code from cleaner.");
         didTestsPass(Arrays.asList(victimTestName));
 
         // Do our fix
-        System.out.println("[INFO] Applying fix...");
+        System.out.println("[INFO] Applying code from cleaner and recompiling.");
         MethodDeclaration victimMethod = victimJavaFile.getMethodDeclaration(victimTestName);
         NodeList<Statement> victimStmts = victimMethod.getBody().get().getStatements();
         victimStmts.add(0, cleanerBlock);
@@ -147,12 +147,13 @@ public class AutoCleanerMain extends StandardMain {
 
         // Check if we pass in isolation after fix
         compile(victimJavaFile);
+        System.out.println("[INFO] Running victim test in isolation with code from cleaner.");
         boolean passInIsolationAfterFix = didTestsPass(Arrays.asList(victimTestName));
         if (!passInIsolationAfterFix) {
             System.out.println("[ERROR] Fix was unsuccessful. Test still fails in isolation.");
             return;
         } else {
-            System.out.println("[INFO] Fix was successful! Fixed file: " + testBinaryPath);
+            System.out.println("[INFO] Fix was successful! Fixed file:\n" + testBinaryPath);
         }
 
         // Check if we pass in the whole test class
