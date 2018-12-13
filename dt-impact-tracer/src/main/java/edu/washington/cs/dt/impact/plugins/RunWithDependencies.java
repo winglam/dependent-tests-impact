@@ -112,7 +112,7 @@ public class RunWithDependencies {
         new File(newPrioResults).mkdirs();
         newSeleResults = newDTResults.concat("/selection-results");
         new File(newSeleResults).mkdirs();
-        newParaResults = newParaResults.concat("/parallelization-results");
+        newParaResults = newDTResults.concat("/parallelization-results");
         new File(newParaResults).mkdirs();
     }
 
