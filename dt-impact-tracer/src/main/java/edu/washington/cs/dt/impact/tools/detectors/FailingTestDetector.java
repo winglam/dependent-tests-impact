@@ -1,11 +1,5 @@
 package edu.washington.cs.dt.impact.tools.detectors;
 
-import com.reedoei.eunomia.util.StandardMain;
-import edu.washington.cs.dt.RESULT;
-import edu.washington.cs.dt.TestExecResult;
-import edu.washington.cs.dt.main.ImpactMain;
-import edu.washington.cs.dt.runners.FixedOrderRunner;
-
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
@@ -16,16 +10,25 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+import com.reedoei.eunomia.util.StandardMain;
+import edu.washington.cs.dt.RESULT;
+import edu.washington.cs.dt.TestExecResult;
+import edu.washington.cs.dt.main.ImpactMain;
+import edu.washington.cs.dt.runners.FixedOrderRunner;
+
 public class FailingTestDetector extends StandardMain {
     private final String classpath;
-    private final Path testList;
-    private final Path outputPath;
+    private Path testList = null;
+    private List<String> tests;
+    private Path outputPath = null;
 
-    public FailingTestDetector(final String[] args) {
+    public FailingTestDetector(final String[] args) throws IOException {
         super(args);
 
         this.classpath = getClasspathArg();
         this.testList = Paths.get(getArgRequired("tests"));
+        this.tests = Files.readAllLines(testList, Charset.defaultCharset());
+
         this.outputPath = Paths.get(getArgRequired("output"));
     }
 
@@ -57,17 +60,30 @@ public class FailingTestDetector extends StandardMain {
         Files.write(outputPath, String.join(System.lineSeparator(), allOutput).getBytes());
     }
 
-    private Set<String> notPassingTests() throws IOException {
-        final List<String> tests = Files.readAllLines(testList, Charset.defaultCharset());
+    public FailingTestDetector(String classpath, List<String> tests) {
+        super(new String[0]);
+        this.classpath = classpath;
+        this.tests = tests;
+    }
+
+    public void setTestList(List<String> tests) {
+        this.tests = tests;
+    }
+
+    public Set<String> notPassingTests() throws IOException {
         final Set<String> notPassingTests = new HashSet<>();
 
         ImpactMain.skipMissingTests = true;
 
         while (true) {
+            if (tests.isEmpty()) {
+                break;
+            }
             final TestExecResult result = new FixedOrderRunner(classpath, tests).run().getExecutionRecords().get(0);
 
             final int beforeSize = tests.size();
             notPassingTests.addAll(tests.stream().filter(t -> !result.getResult(t).result.equals(RESULT.PASS)).collect(Collectors.toList()));
+
             tests.removeAll(notPassingTests);
             final int afterSize = tests.size();
 
