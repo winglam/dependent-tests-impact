@@ -25,7 +25,7 @@ public class RunWithDependencies {
 
     static final String[] TESTTYPES = { "orig" };
     static final String[] COVERGAES = { "statement", "function" };
-    static final String[] MACHINES = { "2", "4", "8", "16"};
+    static String[] MACHINES = { "2", "4", "8", "16"};
 
     static final String[] PRIOORDERS = { "absolute", "relative" };
     static final String[] SELEORDERS = { "original", "absolute", "relative "};
@@ -151,6 +151,24 @@ public class RunWithDependencies {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+        // Adjust MACHINES (Less Tests Than Number Of Cores)
+        int numInvalidEntries = 0;
+        for (String num : MACHINES){
+            try {
+                if ((int)Files.lines(new File(newDTSubjectSource + "/orig-order.txt").toPath()).count() < Integer.parseInt(num)){
+                    numInvalidEntries++;
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+        String[] temp = new String[MACHINES.length - numInvalidEntries];
+        for (int i = 0; i < temp.length; i++){
+            temp[i] = MACHINES[i];
+        }
+        MACHINES = temp;
     }
 
     private void humanWrittenTests(MavenProject project){
