@@ -28,7 +28,7 @@ public class RunWithDependencies {
     static String[] MACHINES = { "2", "4", "8", "16"};
 
     static final String[] PRIOORDERS = { "absolute", "relative" };
-    static final String[] SELEORDERS = { "original", "absolute", "relative "};
+    static final String[] SELEORDERS = { "original", "absolute", "relative"};
 
     // Args (Re-Declared Upon Each Use)
     String[] args = {};
