@@ -121,8 +121,8 @@ public class RunWithDependencies {
         // Move Test Info From Old Version To The New Version
         TestPluginPlugin.info("Moving Test Info From The Old Version To The New Version");
         try {
-            FileUtils.moveFile(new File(dtResults + "/orig-order.txt"), new File(newDTResults + "/orig-order.txt"));
-            FileUtils.moveFile(new File(dtResults + "/ignore-order.txt"), new File(newDTResults + "/ignore-order.txt"));
+            FileUtils.copyFile(new File(dtResults + "/orig-order.txt"), new File(newDTResults + "/orig-order.txt"));
+            FileUtils.copyFile(new File(dtResults + "/ignore-order.txt"), new File(newDTResults + "/ignore-order.txt"));
         } catch (IOException e) {
             e.printStackTrace();
         }
