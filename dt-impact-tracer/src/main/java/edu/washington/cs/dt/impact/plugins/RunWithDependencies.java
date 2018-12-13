@@ -215,7 +215,7 @@ public class RunWithDependencies {
         // Clean Up Files
         try {
             FileUtils.moveDirectory(new File(newDTSubjectSource + "/sootOutput"), new File(newDTResults + "/sootOutput"));
-            FileUtils.moveDirectory(new File(newDTSubjectSource + "/selectionOutput"), new File(dtResults + "/selectionOutput"));
+            FileUtils.moveDirectory(new File(newDTSubjectSource + "/selectionOutput"), new File(newDTResults + "/selectionOutput"));
         } catch (Exception e) {
             e.printStackTrace();
         }
