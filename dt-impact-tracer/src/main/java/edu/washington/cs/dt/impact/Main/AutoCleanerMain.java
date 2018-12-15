@@ -6,12 +6,10 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
-import java.util.Set;
 import java.util.stream.Stream;
-
 import javax.tools.Diagnostic;
 import javax.tools.DiagnosticCollector;
 import javax.tools.JavaFileObject;
@@ -34,6 +32,7 @@ public class AutoCleanerMain extends StandardMain {
     private final String victimTestName;
     private final Path testFilesPath;
     private final Path testBinaryPath;
+    private final FailingTestDetector detector;
 
     public AutoCleanerMain(final String[] args) throws Exception {
         super(args);
@@ -43,43 +42,35 @@ public class AutoCleanerMain extends StandardMain {
         this.victimTestName = getArgRequired("victimTestName");
         this.testFilesPath = Paths.get(getArgRequired("tests"));
         this.testBinaryPath = Paths.get(getArgRequired("testBinaryPath"));
+        detector = new FailingTestDetector(classpath);
     }
 
     private boolean didTestsPass(List<String> tests) throws IOException {
-        FailingTestDetector detector = getFailingTestDetector(classpath, tests);
-        Set<String> failedTest = detector.notPassingTests();
-        return failedTest.isEmpty();
-    }
-
-    private FailingTestDetector detector;
-    private FailingTestDetector getFailingTestDetector(String classpath, List<String> tests) {
-        if (detector == null) {
-            detector = new FailingTestDetector(classpath, new ArrayList<>(tests));
-        } else {
-            detector.setTestList(new ArrayList<>(tests));
-        }
-        return detector;
+        boolean retVal = detector.notPassingTests(new ArrayList<>(tests)).isEmpty();
+        System.out.println();
+        return retVal;
     }
 
     private void compile(final JavaFile javaFile) throws Exception {
         int errorCount = -1;
-        while (errorCount != 0) {
-            System.out.println("Trying to compile: " + javaFile.getFilename());
-            final DiagnosticCollector<JavaFileObject> diagnostics = javaFile.tryCompile();
+        System.out.println("Trying to compile: " + javaFile.getFilename());
+        final DiagnosticCollector<JavaFileObject> diagnostics = javaFile.tryCompile();
 
-            errorCount = FailedTestRemover.getDiagnosticCount(diagnostics, Diagnostic.Kind.ERROR);
+        errorCount = FailedTestRemover.getDiagnosticCount(diagnostics, Diagnostic.Kind.ERROR);
 
-            System.out.println("Compiling " + (errorCount == 0 ? "succeeded" : "failed")
-                                       + " with " + errorCount + " errors.");
-            errorCount = 0;
+        System.out.println("Compiling " + (errorCount == 0 ? "succeeded" : "failed")
+                                   + " with " + errorCount + " errors.");
+
+        if (errorCount != 0) {
+            System.out.println(String.format("Failed compilation at %s. Reason: %s", new Date().toString(), diagnostics.getDiagnostics()));
+        } else {
+            System.out.println("Successfully compiled at: " + new Date().toString());
         }
-
-        System.out.println("Successfully compiled at: " + new Date().toString());
         System.out.println();
     }
 
     private JavaFile getJavaFile(String testName, List<Path> testFiles, boolean saveOrigFile, Path outputPath) throws IOException {
-        // For each test source files, find the cleaner and victim test name
+        // For each source file in testFiles, find and return the JavaFile containing testName
         for (Path p : testFiles) {
             if (!p.getFileName().toString().endsWith(".java")) {
                 continue;
@@ -94,22 +85,25 @@ public class AutoCleanerMain extends StandardMain {
                 saveOrigFile(p);
             }
 
-            // Copy the compiled binary to the correct location
+            // loadClassList will compile the binary to the location of outputPath
             // TODO a better way should be implemented to look up the location of the
             // binary file using the source file that we found, fixed, and recompiled
             JavaFile jFile = new JavaFile(p.getFileName().toString(), classpath, outputPath);
-
             jFile.loadClassList(p);
+
             if (jFile.getMethodDeclaration(testName) != null) {
                 return jFile;
             }
         }
-        return null;
+        throw new RuntimeException(
+                String.format("Could not find source file of method name: %s. " +
+                                      "Please double check that the path of -tests " +
+                                      "contains a file that contains the method name.", testName));
     }
 
     private void saveOrigFile(Path filePath) throws IOException {
         Path parent = filePath.getParent();
-        Path copyFilePath = Paths.get(parent.toString(), filePath.getFileName().toString() + ".orig");
+        Path copyFilePath = parent.resolve(filePath.getFileName().toString() + ".orig");
         Files.copy(filePath, copyFilePath,
                    StandardCopyOption.REPLACE_EXISTING);
     }
@@ -130,11 +124,13 @@ public class AutoCleanerMain extends StandardMain {
 
         JavaFile victimJavaFile = getJavaFile(victimTestName, testFiles, true, testBinaryPath);
 
-        // Check if we pass in isolation before fix
+        // Compile the test without our fix
         System.out.println("[INFO] Found and compiling victim test.");
         compile(victimJavaFile);
+
+        // Check if we pass in isolation before fix
         System.out.println("[INFO] Running victim test in isolation without code from cleaner.");
-        didTestsPass(Arrays.asList(victimTestName));
+        didTestsPass(Collections.singletonList(victimTestName));
 
         // Do our fix
         System.out.println("[INFO] Applying code from cleaner and recompiling.");
@@ -148,7 +144,7 @@ public class AutoCleanerMain extends StandardMain {
         // Check if we pass in isolation after fix
         compile(victimJavaFile);
         System.out.println("[INFO] Running victim test in isolation with code from cleaner.");
-        boolean passInIsolationAfterFix = didTestsPass(Arrays.asList(victimTestName));
+        boolean passInIsolationAfterFix = didTestsPass(Collections.singletonList(victimTestName));
         if (!passInIsolationAfterFix) {
             System.out.println("[ERROR] Fix was unsuccessful. Test still fails in isolation.");
             return;

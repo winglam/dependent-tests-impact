@@ -43,7 +43,7 @@ edu.washington.cs.dt.impact.Main.AutoCleanerMain \
 + ```-cleanerTestName```: fully qualified method name of the cleaner.
 + ```-victimTestName```: fully qualified method name of the victim.
 + ```-classpath```: classpath of compiled source and test code of the subject and the libs that the subject depends on. Libs can be expressed with `*` as the program will expand such wildcards.
-+ ```-testBinaryPath```: directory containing the compiled victim test.
++ ```-testBinaryPath```: path to where the fixed test file should be outputted to. For the sake of simplicity, this file path should be in the same directory as the compiled binary of the unfixed version (e.g., target/test-classes/.../TestFile.java).
 
 
 Standard out from running the tool:

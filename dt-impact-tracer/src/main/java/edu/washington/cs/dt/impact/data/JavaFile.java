@@ -67,10 +67,10 @@ public class JavaFile {
 
     /**
      * Finds all classes/interfaces in the file and saves them.
-     * @param outfileName
+     * @param fileToParse
      */
-    public void loadClassList(final Path outfileName) throws IOException {
-        compilationUnit = JavaParser.parse(outfileName.toFile());
+    public void loadClassList(final Path fileToParse) throws IOException {
+        compilationUnit = JavaParser.parse(fileToParse.toFile());
 
         classList.clear();
         classList.addAll(compilationUnit.findAll(ClassOrInterfaceDeclaration.class));
@@ -121,10 +121,11 @@ public class JavaFile {
     }
 
     public void writeAndReloadCompilationUnit() throws IOException {
-        loadClassList(writeFile());
+        writeFile();
+        loadClassList(outfileName);
     }
 
-    public MethodDeclaration findMethodAt(final long line) {
+    private MethodDeclaration findMethodAt(final long line) {
         for (final ClassOrInterfaceDeclaration classDeclaration : classList) {
             for (final BodyDeclaration bodyDeclaration : classDeclaration.getMembers()) {
                 if (bodyDeclaration instanceof MethodDeclaration) {
@@ -158,10 +159,10 @@ public class JavaFile {
     }
 
     private String getFullyQualifiedMethodName(MethodDeclaration method, ClassOrInterfaceDeclaration classDec) {
-        String packageName = compilationUnit.getPackageDeclaration().get().getName().toString();
-        String className = classDec.getNameAsString();
-        String fullMethodName = String.format("%s.%s.%s", packageName, className, method.getName().getIdentifier());
-        return fullMethodName;
+        return String.format("%s.%s.%s",
+                             compilationUnit.getPackageDeclaration().get().getName().toString(),
+                             classDec.getNameAsString(),
+                             method.getName().getIdentifier());
     }
 
 
@@ -221,8 +222,7 @@ public class JavaFile {
      * Writes the file to the output filename, then tries to compile the output file.
      */
     public DiagnosticCollector<JavaFileObject> tryCompile() throws IOException {
-        loadClassList(writeFile());
-
+        writeAndReloadCompilationUnit();
         return compile();
     }
 
