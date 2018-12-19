@@ -1,58 +1,37 @@
 package edu.washington.cs.dt.impact.plugins;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.util.List;
+
 import com.reedoei.testrunner.mavenplugin.TestPluginPlugin;
 import com.reedoei.testrunner.testobjects.TestLocator;
-import edu.washington.cs.dt.impact.runner.OneConfigurationRunner;
-import edu.washington.cs.dt.impact.runner.Runner;
 import edu.washington.cs.dt.impact.tools.OutputPrecomputedDependences;
 import edu.washington.cs.dt.impact.tools.detectors.FailingTestDetector;
-import edu.washington.cs.dt.main.ImpactMain;
 import org.apache.commons.io.FileUtils;
-import org.apache.commons.lang3.StringUtils;
 import org.apache.maven.cli.MavenCli;
 import org.apache.maven.project.MavenProject;
 import org.codehaus.plexus.classworlds.realm.ClassRealm;
 import scala.collection.JavaConverters;
 
-import java.io.*;
-import java.nio.file.Files;
-import java.util.List;
-
-import edu.washington.cs.dt.impact.plugins.Helper;
-
-public class PrecomputeDependencies {
-    // Constants
-    static final int MEDIANTIMES = 5;
-    static final int RANDOMTIMES = 100;
-
-    static final String[] TESTTYPES = { "orig" };
-    static final String[] COVERGAES = { "statement", "function" };
-    static String[] MACHINES = { "2", "4", "8", "16" };
-
-    static final String[] PRIOORDERS = { "absolute", "relative" };
-    static final String[] SELEORDERS = { "original", "absolute", "relative "};
+public class PrecomputeDependencies extends Plugins {
+    private Mode RunMode = Mode.DEBUG;
 
     // Args (Re-Declared Upon Each Use)
-    String[] args = {};
+    private String[] args = {};
 
     // MavenCli Variables
-    ClassRealm classRealm = (ClassRealm) Thread.currentThread().getContextClassLoader();
-    MavenCli cli = new MavenCli(classRealm.getWorld());
+    private ClassRealm classRealm = (ClassRealm) Thread.currentThread().getContextClassLoader();
+    private MavenCli cli = new MavenCli(classRealm.getWorld());
 
-    // Main Directories
-    String dtSubjectSource, dtSubject, dtTools, dtLibs, dtClass, dtTests;
-
-    // Output Directories
-    String dtResults, dtData, prioResults, seleResults, paraResults, prioDTLists, seleDTLists, paraDTLists;
-    String subprocessOutput;
-
-    // Extraneous Directories (Not Used, But May Be Useful Later
-    String dtTestSource;
+    private String subprocessOutput;
 
     public void execute(MavenProject project) {
         // Project Setup
-        setupPaths(project);
-        Helper.gatherDependencies(cli, dtSubjectSource);
+        setupOldVers(project);
+        gatherDependencies(cli, dtSubjectSource);
         gatherTests(project);
 
         // Setup Test Algorithms
@@ -81,41 +60,6 @@ public class PrecomputeDependencies {
         OutputPrecomputedDependences.main(args);
     }
 
-    private void setupPaths(MavenProject project){
-        // Main Directories
-        dtSubjectSource = System.getProperty("user.dir");
-
-        dtSubject = dtSubjectSource.concat("/target");
-            new File(dtSubject).mkdirs();
-        dtTools = Helper.buildClassPath(dtSubjectSource.concat("/lib/*"));
-        dtLibs = Helper.buildClassPath(dtSubject.concat("/dependency/*"));
-        dtClass = dtSubject.concat("/classes");
-        dtTests = dtSubject.concat("/test-classes");
-
-        // Output Directories
-        dtResults = dtSubjectSource.concat("/results");
-        FileUtils.deleteQuietly(new File(dtResults));
-        new File(dtResults).mkdirs();
-        dtData = dtResults.concat("/data");
-        new File(dtData).mkdirs();
-        prioResults = dtResults.concat("/prioritization-results");
-        new File(prioResults).mkdirs();
-        seleResults = dtResults.concat("/selection-results");
-        new File(seleResults).mkdirs();
-        paraResults = dtResults.concat("/parallelization-results");
-        new File(paraResults).mkdirs();
-
-        prioDTLists = dtData.concat("/prioritization-dt-lists");
-        new File(prioDTLists).mkdirs();
-        seleDTLists = dtData.concat("/selection-dt-lists");
-        new File(seleDTLists).mkdirs();
-        paraDTLists = dtData.concat("/parallelization-dt-lists");
-        new File(paraDTLists).mkdirs();
-
-        // Extraneous Directories (Not Used, But May Be Useful Later
-        dtTestSource = project.getBuild().getTestSourceDirectory();
-    }
-
     private void gatherTests(MavenProject project){
         humanWrittenTests(project);
         handleFailedTests(project);
@@ -123,79 +67,78 @@ public class PrecomputeDependencies {
 
     private void humanWrittenTests(MavenProject project){
         TestPluginPlugin.info("Finding Human Written Tests (old version, original tests)");
-        try {
-            // Generates orig-order.txt
-            final List<String> tests = JavaConverters.bufferAsJavaList(TestLocator.tests(project).toBuffer());
-            FileWriter writer = new FileWriter(new File(dtResults + "/orig-order.txt"));
-            for(String str: tests) {
-                writer.write(str);
-                writer.write(System.getProperty("line.separator"));
+        String origOrderFile = dtResults + "/orig-order.txt";
+
+        if (!new File(origOrderFile).isFile()) {
+            try {
+                // Generates orig-order.txt
+                final List<String> tests = JavaConverters.bufferAsJavaList(TestLocator.tests(project).toBuffer());
+                FileWriter writer = new FileWriter(new File(origOrderFile));
+                for(String str: tests) {
+                    writer.write(str);
+                    writer.write(System.getProperty("line.separator"));
+                }
+                writer.close();
+            } catch(Exception e){
+                e.printStackTrace();
             }
-            writer.close();
-        } catch(Exception e){
-            e.printStackTrace();
+        } else {
+            TestPluginPlugin.info(String.format("The relevant files already exist. " +
+                                                        "Skipping finding human written tests.\n" +
+                                                        "  %s\n", origOrderFile));
         }
     }
 
     private void handleFailedTests(MavenProject project){
         // Locate Failed Tests
         TestPluginPlugin.info("Locating Failed Tests");
-        args = new String[]{
-                "--classpath", dtClass + ":" + dtTests + ":" + dtLibs,
-                "--tests", dtResults + "/orig-order.txt",
-                "--output", dtResults + "/ignore-order.txt"};
-        FailingTestDetector.outputFailedTests(project,
-                dtResults + "/orig-order.txt",
-                dtResults + "/ignore-order.txt");
 
-        // Remove Failed Tests
-        TestPluginPlugin.info("Removing Failed Tests");
-        try {
-            List<String> origOrder = Files.readAllLines(new File(dtResults + "/orig-order.txt").toPath());
-            List<String> ignoreOrder = Files.readAllLines(new File(dtResults + "/ignore-order.txt").toPath());
-            origOrder.remove("com.dangdang.ddframe.job.lite.integrate.std.dataflow.OneOffDataflowElasticJobTest.assertJobInit");
-            origOrder.removeAll(ignoreOrder);
+        String origOrderFile = dtResults + "/orig-order.txt";
+        String ignoreOrderFile = dtResults + "/ignore-order.txt";
 
-            Files.write(new File(dtResults + "/orig-order.txt").toPath(), origOrder);
-        } catch (IOException e) {
-            e.printStackTrace();
+        if (!new File(origOrderFile).isFile() || !new File(ignoreOrderFile).isFile()) {
+            args = new String[]{
+                    "--classpath", dtClass + ":" + dtTests + ":" + dtLibs,
+                    "--tests", origOrderFile,
+                    "--output", ignoreOrderFile};
+            FailingTestDetector.outputFailedTests(project, origOrderFile, ignoreOrderFile);
+
+            // Remove Failed Tests
+            TestPluginPlugin.info("Removing Failed Tests");
+            try {
+                List<String> origOrder = Files.readAllLines(new File(origOrderFile).toPath());
+                List<String> ignoreOrder = Files.readAllLines(new File(ignoreOrderFile).toPath());
+                origOrder.removeAll(ignoreOrder);
+
+                Files.write(new File(origOrderFile).toPath(), origOrder);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } else {
+            TestPluginPlugin.info(String.format("The relevant files already exist. " +
+                                                        "Skipping locating and removing failed tests.\n" +
+                                                        "  %s\n  %s\n", origOrderFile, ignoreOrderFile));
         }
 
         // Adjust MACHINES (Less Tests Than Number Of Cores)
-        MACHINES = Helper.adjustMachineCount(MACHINES, dtResults + "/orig-order.txt");
+        MACHINES = adjustMachineCount(MACHINES, origOrderFile);
     }
 
     // Setup A Subject For Test Prioritization
     private void setupTestPrioritization(){
-        String JAVA_HOME = Helper.expandEnvVars("${JAVA_HOME}");
+        String JAVA_HOME = expandEnvVars("${JAVA_HOME}");
 
         // Instrument Test Files
         TestPluginPlugin.info("Test Prioritization: Instrumenting Test Files");
         subprocessOutput = null;
         try {
             // Runtime Exec
-            String command = "java -cp " + dtTools + ":" + Helper.buildClassPath(JAVA_HOME + "/jre/lib/*") + ":" +
+            String command = "java -cp " + dtTools + ":" + buildClassPath(JAVA_HOME + "/jre/lib/*") + ":" +
                     " edu.washington.cs.dt.impact.Main.InstrumentationMain" +
                     " -inputDir " + dtTests  +
-                    " --soot-cp " + dtLibs + ":" + dtClass + ":" + dtTests + ":" + Helper.buildClassPath(JAVA_HOME + "/jre/lib/*");
+                    " --soot-cp " + dtLibs + ":" + dtClass + ":" + dtTests + ":" + buildClassPath(JAVA_HOME + "/jre/lib/*");
             Process p = Runtime.getRuntime().exec(command);
-
-            // Stream Readers
-            BufferedReader stdInput = new BufferedReader(new InputStreamReader(p.getInputStream()));
-            BufferedReader stdError = new BufferedReader(new InputStreamReader(p.getErrorStream()));
-
-            // Read Command Output
-            TestPluginPlugin.info("Command Input Stream For: " + command);
-            while ((subprocessOutput = stdInput.readLine()) != null) {
-                TestPluginPlugin.info(subprocessOutput);
-            }
-
-            // Read Command Errors
-            TestPluginPlugin.info("Command Error: Stream For: " + command);
-            TestPluginPlugin.info(subprocessOutput);
-            while ((subprocessOutput = stdError.readLine()) != null) {
-                TestPluginPlugin.mojo().getLog().error(subprocessOutput);
-            }
+            printProcessMessages(p, RunMode, subprocessOutput);
         }
         catch (IOException e) {
             e.printStackTrace();
@@ -206,27 +149,12 @@ public class PrecomputeDependencies {
         subprocessOutput = null;
         try {
             // Runtime Exec
-            String command = "java -cp " + dtTools + ":" + Helper.buildClassPath(JAVA_HOME + "/jre/lib/*") + ":" +
+            String command = "java -cp " + dtTools + ":" + buildClassPath(JAVA_HOME + "/jre/lib/*") + ":" +
                     " edu.washington.cs.dt.impact.Main.InstrumentationMain" +
                     " -inputDir " + dtClass  +
-                    " --soot-cp " + dtLibs + ":" + dtClass + ":" + Helper.buildClassPath(JAVA_HOME + "/jre/lib/*");
+                    " --soot-cp " + dtLibs + ":" + dtClass + ":" + buildClassPath(JAVA_HOME + "/jre/lib/*");
             Process p = Runtime.getRuntime().exec(command);
-
-            // Stream Readers
-            BufferedReader stdInput = new BufferedReader(new InputStreamReader(p.getInputStream()));
-            BufferedReader stdError = new BufferedReader(new InputStreamReader(p.getErrorStream()));
-
-            // Read Command Output
-            TestPluginPlugin.info("Command Input Stream For: " + command);
-            while ((subprocessOutput = stdInput.readLine()) != null) {
-                TestPluginPlugin.info(subprocessOutput);
-            }
-
-            // Read Command Errors
-            TestPluginPlugin.info("Command Error Stream For: " + command);
-            while ((subprocessOutput = stdError.readLine()) != null) {
-                TestPluginPlugin.mojo().getLog().error(subprocessOutput);
-            }
+            printProcessMessages(p, RunMode, subprocessOutput);
         }
         catch (IOException e) {
             e.printStackTrace();
@@ -239,7 +167,7 @@ public class PrecomputeDependencies {
         args = new String[]{
                 "-classpath", dtLibs + ":" + dtTools + ":" + dtSubjectSource + "/sootOutput/",
                 "-inputTests", dtResults + "/orig-order.txt"};
-        ImpactMain.main(args);
+        runImpactMain(args, dtResults + "/output/prioritization-orig-order.log");
 
         // Clean Up Files
         TestPluginPlugin.info("Cleaning Up Files");
@@ -253,36 +181,20 @@ public class PrecomputeDependencies {
 
     // Setup A Subject For Test Selection
     private void setupTestSelection(){
-        String JAVA_HOME = Helper.expandEnvVars("${JAVA_HOME}");
+        String JAVA_HOME = expandEnvVars("${JAVA_HOME}");
 
         // Instrument Test Files
         TestPluginPlugin.info("Test Selection: Instrumenting Test Files");
         subprocessOutput = null;
         try {
             // Runtime Exec
-            String command = "java -cp " + dtTools + ":" + Helper.buildClassPath(JAVA_HOME + "/jre/lib/*") + ":" +
+            String command = "java -cp " + dtTools + ":" + buildClassPath(JAVA_HOME + "/jre/lib/*") + ":" +
                     " edu.washington.cs.dt.impact.Main.InstrumentationMain" +
                     " -inputDir " + dtTests  +
-                    " --soot-cp " + dtLibs + ":" + dtClass + ":" + dtTests + ":" + Helper.buildClassPath(JAVA_HOME + "/jre/lib/*") +
+                    " --soot-cp " + dtLibs + ":" + dtClass + ":" + dtTests + ":" + buildClassPath(JAVA_HOME + "/jre/lib/*") +
                     " -technique selection";
             Process p = Runtime.getRuntime().exec(command);
-
-            // Stream Readers
-            BufferedReader stdInput = new BufferedReader(new InputStreamReader(p.getInputStream()));
-            BufferedReader stdError = new BufferedReader(new InputStreamReader(p.getErrorStream()));
-
-            // Read Command Output
-            TestPluginPlugin.info("Command Input Stream For: " + command);
-            while ((subprocessOutput = stdInput.readLine()) != null) {
-                TestPluginPlugin.info(subprocessOutput);
-            }
-
-            // Read Command Errors
-            TestPluginPlugin.info("Command Error: Stream For: " + command);
-            TestPluginPlugin.info(subprocessOutput);
-            while ((subprocessOutput = stdError.readLine()) != null) {
-                TestPluginPlugin.mojo().getLog().error(subprocessOutput);
-            }
+            printProcessMessages(p, RunMode, subprocessOutput);
         }
         catch (IOException e) {
             e.printStackTrace();
@@ -293,28 +205,13 @@ public class PrecomputeDependencies {
         subprocessOutput = null;
         try {
             // Runtime Exec
-            String command = "java -cp " + dtTools + ":" + Helper.buildClassPath(JAVA_HOME + "/jre/lib/*") + ":" +
+            String command = "java -cp " + dtTools + ":" + buildClassPath(JAVA_HOME + "/jre/lib/*") + ":" +
                     " edu.washington.cs.dt.impact.Main.InstrumentationMain" +
                     " -inputDir " + dtClass  +
-                    " --soot-cp " + dtLibs + ":" + dtClass + ":" + Helper.buildClassPath(JAVA_HOME + "/jre/lib/*") +
+                    " --soot-cp " + dtLibs + ":" + dtClass + ":" + buildClassPath(JAVA_HOME + "/jre/lib/*") +
                     " -technique selection";
             Process p = Runtime.getRuntime().exec(command);
-
-            // Stream Readers
-            BufferedReader stdInput = new BufferedReader(new InputStreamReader(p.getInputStream()));
-            BufferedReader stdError = new BufferedReader(new InputStreamReader(p.getErrorStream()));
-
-            // Read Command Output
-            TestPluginPlugin.info("Command Input Stream For: " + command);
-            while ((subprocessOutput = stdInput.readLine()) != null) {
-                TestPluginPlugin.info(subprocessOutput);
-            }
-
-            // Read Command Errors
-            TestPluginPlugin.info("Command Error Stream For: " + command);
-            while ((subprocessOutput = stdError.readLine()) != null) {
-                TestPluginPlugin.mojo().getLog().error(subprocessOutput);
-            }
+            printProcessMessages(p, RunMode, subprocessOutput);
         }
         catch (IOException e) {
             e.printStackTrace();
@@ -327,8 +224,7 @@ public class PrecomputeDependencies {
         args = new String[]{
                 "-classpath", dtLibs + ":" + dtTools + ":" + dtSubjectSource + "/sootOutput/",
                 "-inputTests", dtResults + "/orig-order.txt"};
-        ImpactMain.main(args);
-
+        runImpactMain(args, dtResults + "/output/selection-orig-order.log");
 
         // Clean Up Files
         TestPluginPlugin.info("Cleaning Up Files");
@@ -348,28 +244,30 @@ public class PrecomputeDependencies {
 
     // Setup A Subject For Test Selection
     private void setupTestParallelization(){
-        // Calculate Runtimes
-        TestPluginPlugin.info("Test Parallelization: Calculating Runtimes For Tests");
-        args = new String[]{
-                "-classpath", dtLibs + ":" + dtTools + ":" + dtClass + ":" + dtTests,
-                "-inputTests", dtResults + "/orig-order.txt",
-                "-getTime"};
-        PrintStream stdout = System.out;
-        try {
-            PrintStream out = new PrintStream(new FileOutputStream("orig-time.txt"));
-            System.setOut(out);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-        ImpactMain.main(args);
-        System.setOut(stdout);
 
-        // Clean Up Files
-        TestPluginPlugin.info("Cleaning Up Files");
-        try {
-            FileUtils.moveFile(new File(dtSubjectSource + "/orig-time.txt"), new File(dtResults + "/orig-time.txt"));
-        } catch (Exception e){
-            e.printStackTrace();
+        String origTimeFile = dtResults + "/orig-time.txt";
+
+        if (!new File(origTimeFile).isFile()) {
+            // Calculate Runtimes
+            TestPluginPlugin.info("Test Parallelization: Calculating Runtimes For Tests");
+            args = new String[]{
+                    "-classpath", dtLibs + ":" + dtTools + ":" + dtClass + ":" + dtTests,
+                    "-inputTests", dtResults + "/orig-order.txt",
+                    "-getTime"};
+
+            runImpactMain(args, "orig-time.txt");
+
+            // Clean Up Files
+            TestPluginPlugin.info("Cleaning Up Files");
+            try {
+                FileUtils.moveFile(new File(dtSubjectSource + "/orig-time.txt"), new File(origTimeFile));
+            } catch (Exception e){
+                e.printStackTrace();
+            }
+        } else {
+            TestPluginPlugin.info(String.format("The relevant files already exist. " +
+                                                        "Skipping getting time of tests.\n" +
+                                                        "  %s\n", origTimeFile));
         }
     }
 
@@ -380,7 +278,8 @@ public class PrecomputeDependencies {
         for (String k : TESTTYPES) {
             for (String i : COVERGAES) {
                 for (String j : PRIOORDERS) {
-                    String precomputeFlag = prioDTLists + "/prioritization-" + "" + "-" + k + "-" + i + "-" + j + ".txt";
+                    String fileName = "prioritization-" + projectName + "-" + k + "-" + i + "-" + j + ".txt";
+                    String precomputeFlag = prioDTLists + "/" + fileName;
                     String postProcessFlag = "";
 
                     args = new String[]{
@@ -391,16 +290,14 @@ public class PrecomputeDependencies {
                             "-testInputDir", dtResults + "/sootTestOutput-" + k,
                             "-filesToDelete", dtResults + "/env-files",
                             "-getCoverage",
-                            "-project", "",
+                            "-project", projectName,
                             "-testType", k,
                             "-outputDir", prioResults,
                             "-timeToRun", Integer.toString(MEDIANTIMES),
                             "-classpath", classpath,
                             "-resolveDependences", precomputeFlag,
                             postProcessFlag};
-                    Runner.nullOutputFileName();
-                    TestPluginPlugin.info("OneConfigurationRunner Parameters\n\t" + StringUtils.join(args, "\n\t"));
-                    OneConfigurationRunner.main(args);
+                    runOneConfigurationRunner(args, dtResults + "/output/" + fileName);
                 }
             }
         }
@@ -422,7 +319,8 @@ public class PrecomputeDependencies {
 
                 // Original Order
                 TestPluginPlugin.info("Original Order");
-                precomputeFlag =  prioDTLists + "/parallelization-" + "" + "-" + j + "-" + k + "-original.txt";
+                String origFileName = "parallelization-" + projectName + "-" + j + "-" + k + "-original.txt";
+                precomputeFlag =  prioDTLists + "/" + origFileName;
                 postProcessFlag = "";
                 args = new String[]{
                         "-technique", "parallelization",
@@ -430,7 +328,7 @@ public class PrecomputeDependencies {
                         "-origOrder", dtResults + "/" + j + "-order.txt",
                         "-testInputDir", dtResults + "/sootTestOutput-" + j,
                         "-filesToDelete", dtResults + "/env-files",
-                        "-project", "",
+                        "-project", projectName,
                         "-testType", j,
                         "-numOfMachines", k,
                         "-outputDir", paraResults,
@@ -438,13 +336,12 @@ public class PrecomputeDependencies {
                         "-classpath", classpath,
                         "-resolveDependences", precomputeFlag,
                         postProcessFlag};
-                Runner.nullOutputFileName();
-                TestPluginPlugin.info("OneConfigurationRunner Parameters\n\t" + StringUtils.join(args, "\n\t"));
-                OneConfigurationRunner.main(args);
+                runOneConfigurationRunner(args, dtResults + "/output/" + origFileName);
 
                 // Time Order
                 TestPluginPlugin.info("Time Order");
-                precomputeFlag =  prioDTLists + "/parallelization-" + "" + "-" + j + "-" + k + "-time.txt";
+                String timeFileName = "parallelization-" + projectName + "-" + j + "-" + k + "-time.txt";
+                precomputeFlag =  prioDTLists + "/" + timeFileName;
                 postProcessFlag = "";
                 args = new String[]{
                         "-technique", "parallelization",
@@ -453,7 +350,7 @@ public class PrecomputeDependencies {
                         "-origOrder", dtResults + "/" + j + "-order.txt",
                         "-testInputDir", dtResults + "/sootTestOutput-" + j,
                         "-filesToDelete", dtResults + "/env-files",
-                        "-project", "",
+                        "-project", projectName,
                         "-testType", j,
                         "-numOfMachines", k,
                         "-outputDir", paraResults,
@@ -461,9 +358,7 @@ public class PrecomputeDependencies {
                         "-classpath", classpath,
                         "-resolveDependences", precomputeFlag,
                         postProcessFlag};
-                Runner.nullOutputFileName();
-                TestPluginPlugin.info("OneConfigurationRunner Parameters\n\t" + StringUtils.join(args, "\n\t"));
-                OneConfigurationRunner.main(args);
+                runOneConfigurationRunner(args, dtResults + "/output/" + timeFileName);
             }
         }
 
