@@ -1,20 +1,28 @@
 package edu.washington.cs.dt.impact.tools.detectors;
 
+import com.reedoei.eunomia.util.StandardMain;
+import com.reedoei.testrunner.data.results.Result;
+import com.reedoei.testrunner.data.results.TestResult;
+import com.reedoei.testrunner.data.results.TestRunResult;
+import com.reedoei.testrunner.runner.Runner;
+import com.reedoei.testrunner.runner.RunnerFactory;
+import edu.washington.cs.dt.RESULT;
+import edu.washington.cs.dt.TestExecResult;
+import edu.washington.cs.dt.main.ImpactMain;
+import edu.washington.cs.dt.runners.FixedOrderRunner;
+import org.apache.commons.io.FileUtils;
+import org.apache.maven.project.MavenProject;
+import scala.Option;
+
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
-
-import com.reedoei.eunomia.util.StandardMain;
-import edu.washington.cs.dt.RESULT;
-import edu.washington.cs.dt.TestExecResult;
-import edu.washington.cs.dt.main.ImpactMain;
-import edu.washington.cs.dt.runners.FixedOrderRunner;
 
 public class FailingTestDetector extends StandardMain {
     private final String classpath;
@@ -82,5 +90,51 @@ public class FailingTestDetector extends StandardMain {
         }
 
         return notPassingTests;
+    }
+
+    public static void outputFailedTests(MavenProject p, String testsPath, String outputPath){
+        List<String> failedTestList = new ArrayList<>();
+
+        // Runner Factory
+        Option<Runner> from = RunnerFactory.from(p);
+        if (from.isDefined()) {
+            Runner runner = from.get();
+            try {
+                String encoding = null;
+                List<String> tests = FileUtils.readLines(new File(testsPath), encoding);
+
+                // Runner
+                if (runner.runList(tests).isSuccess()){
+                    TestRunResult result = runner.runList(tests).get();
+                    Map<String, TestResult> resultsMap = result.results();
+
+                    // Parse Results
+                    for (Map.Entry<String, TestResult> entry : resultsMap.entrySet()) {
+                        String key = entry.getKey();
+                        TestResult value = entry.getValue();
+
+                        // ERROR || FAILURE
+                        if (value.result().equals(Result.ERROR) || value.result().equals(Result.FAILURE)){
+                            failedTestList.add(key);
+                        }
+                    }
+                }
+            } catch(Exception e){
+                e.printStackTrace();
+            }
+        }
+
+        // Output "ERROR" || "FAILURE" Tests To File
+        try {
+            // Generates orig-order.txt
+            FileWriter writer = new FileWriter(new File(outputPath));
+            for(String str: failedTestList) {
+                writer.write(str);
+                writer.write(System.getProperty("line.separator"));
+            }
+            writer.close();
+        } catch(Exception e){
+            e.printStackTrace();
+        }
     }
 }
